@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>생활정보 모음 · 운영 대시보드</title>
+<style>
+  :root{ color-scheme: light; }
+  *{box-sizing:border-box}
+  body{margin:0;background:#f4f6fb;color:#1f2a3d;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6;padding:18px}
+  h1{font-size:20px;margin:0}
+  .sub{color:#6b7790;font-size:13px;margin:4px 0 18px}
+  .grid{display:grid;gap:14px}
+  .cards{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
+  .card{background:#fff;border:1px solid #e4e9f2;border-radius:14px;padding:16px}
+  .card .k{font-size:12px;color:#6b7790;font-weight:600}
+  .card .v{font-size:22px;font-weight:800;margin-top:4px}
+  .card .v small{font-size:13px;font-weight:600;color:#6b7790}
+  .sect{background:#fff;border:1px solid #e4e9f2;border-radius:16px;padding:18px;margin-top:16px}
+  .sect h2{font-size:15px;margin:0 0 12px;color:#2a4a73}
+  .chk{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed #eef1f7;font-size:15px}
+  .chk:last-child{border-bottom:none}
+  .chk input{width:20px;height:20px;accent-color:#06b07a;flex:none;cursor:pointer}
+  .chk label{cursor:pointer;flex:1}
+  .chk.done label{color:#9aa6bd;text-decoration:line-through}
+  .bar{height:10px;background:#eef1f7;border-radius:6px;overflow:hidden;margin:6px 0 14px}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,#4d9de0,#06d6a0);width:0;transition:width .3s}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .links a{display:inline-block;text-decoration:none;background:#eef4fc;color:#1b6fc2;border:1px solid #d6e4f6;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700}
+  .links a.go{background:#06b07a;color:#fff;border-color:#06b07a}
+  .links a.ad{background:#fff5e6;color:#b9770a;border-color:#ffe0a8}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  .pill{display:inline-block;background:#eef9f4;color:#06875c;border:1px solid #bfead8;border-radius:20px;padding:2px 10px;font-size:12px;font-weight:700}
+  .pill.wait{background:#fff5e6;color:#b9770a;border-color:#ffe0a8}
+  ul.ref{margin:6px 0 0;padding-left:18px;font-size:14px;color:#3a4763}
+  ul.ref li{margin:5px 0}
+  .step{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:8px 0}
+  .step b{flex:none;width:62px;color:#4d9de0}
+  .reset{float:right;font-size:12px;color:#9aa6bd;background:none;border:none;cursor:pointer;text-decoration:underline}
+  .note{font-size:12px;color:#9aa6bd;margin-top:8px}
+</style>
+</head>
+<body>
+  <h1>📊 생활정보 모음 · 운영 대시보드</h1>
+  <div class="sub" id="today">—</div>
+
+  <div class="grid cards">
+    <div class="card"><div class="k">발행 글</div><div class="v">14<small>편</small></div></div>
+    <div class="card"><div class="k">애드센스</div><div class="v" style="font-size:16px"><span class="pill wait">심사 중</span></div></div>
+    <div class="card"><div class="k">자동 글감 추천</div><div class="v" style="font-size:16px">매일 <small>08:00</small></div></div>
+    <div class="card"><div class="k">목표</div><div class="v">월 100<small>만원</small></div></div>
+  </div>
+
+  <div class="sect">
+    <h2>✅ 오늘의 체크리스트 <button class="reset" onclick="resetToday()">오늘 초기화</button></h2>
+    <div class="bar"><i id="prog"></i></div>
+    <div id="list"></div>
+    <div class="note">체크 상태는 이 기기에 저장되며, 날짜가 바뀌면 자동으로 새로 시작됩니다.</div>
+  </div>
+
+  <div class="two">
+    <div class="sect">
+      <h2>🔗 빠른 링크</h2>
+      <div class="links">
+        <a class="go" href="https://www.blogger.com/blog/posts/4026928033017788339" target="_blank" rel="noopener">✍️ Blogger 글쓰기</a>
+        <a href="https://www.blogger.com/blog/stats/4026928033017788339" target="_blank" rel="noopener">📈 방문 통계</a>
+        <a class="ad" href="https://adsense.google.com/adsense/u/0/pub-3606922238918518/home" target="_blank" rel="noopener">💰 애드센스 상태</a>
+        <a href="https://lifeinfo8975.blogspot.com/" target="_blank" rel="noopener">🌐 내 블로그</a>
+        <a href="https://www.threads.com/@magsori8975" target="_blank" rel="noopener">🧵 쓰레드</a>
+      </div>
+      <h2 style="margin-top:16px">🧰 내 도구 (폴더의 파일 더블클릭)</h2>
+      <ul class="ref">
+        <li>블로그_글HTML_생성기.html — 글 작성</li>
+        <li>OSMU_변환기.html — 네이버·쓰레드 재가공</li>
+        <li>지식인_답변헬퍼.html — 지식인 답변 초안</li>
+      </ul>
+    </div>
+
+    <div class="sect">
+      <h2>🎯 월 100만원 단계</h2>
+      <div class="step"><b>1단계</b><span>글 50편 · 애드센스 승인 · 일 100~300 방문 → 월 1~5만원</span></div>
+      <div class="step"><b>2단계</b><span>글 100~150편 · 상위노출 등장 · 일 1~3천 방문 → 월 10~30만원</span></div>
+      <div class="step"><b>3단계</b><span>글 200편+ · 효자글 5~10개 · 일 8천~1.3만 방문 → <b>월 100만원권</b></span></div>
+      <h2 style="margin-top:16px">📌 빠른 참고</h2>
+      <ul class="ref">
+        <li><b>제목 공식</b>: [메인 키워드] + [연관 검색어] + [숫자/총정리]</li>
+        <li><b>고단가 분야</b>: 정부지원금·대출·연금·세금·건강</li>
+        <li><b>안전 수칙</b>: 쓰레드/지식인 하루 1~5개만, 링크 1개, 정책 위반 금지</li>
+        <li><b>정확성</b>: 지원금·세금 수치는 발행 전 공식사이트 확인</li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+  var ITEMS=[
+    "오늘 글감 확인 (아침 8시 자동 추천)",
+    "고단가 글 1편 작성·발행 (글HTML 생성기)",
+    "발행 글에 썸네일 삽입",
+    "OSMU 변환기로 네이버·쓰레드용 변환",
+    "쓰레드 1~2개 게시",
+    "지식인 답변 2~3개 (안전형)",
+    "애드센스 심사 상태 확인"
+  ];
+  function todayKey(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+  function load(){
+    var raw=localStorage.getItem('lsg_dash');
+    var data={};try{data=JSON.parse(raw)||{};}catch(e){data={};}
+    if(data.date!==todayKey()){data={date:todayKey(),checked:[]};localStorage.setItem('lsg_dash',JSON.stringify(data));}
+    return data;
+  }
+  function save(data){localStorage.setItem('lsg_dash',JSON.stringify(data));}
+  function render(){
+    var data=load();
+    var list=document.getElementById('list');list.innerHTML='';
+    ITEMS.forEach(function(t,i){
+      var on=data.checked.indexOf(i)>=0;
+      var row=document.createElement('div');row.className='chk'+(on?' done':'');
+      row.innerHTML='<input type="checkbox" '+(on?'checked':'')+' id="c'+i+'"><label for="c'+i+'">'+t+'</label>';
+      row.querySelector('input').addEventListener('change',function(){toggle(i);});
+      list.appendChild(row);
+    });
+    var pct=Math.round(data.checked.length/ITEMS.length*100);
+    document.getElementById('prog').style.width=pct+'%';
+  }
+  function toggle(i){
+    var data=load();var idx=data.checked.indexOf(i);
+    if(idx>=0)data.checked.splice(idx,1);else data.checked.push(i);
+    save(data);render();
+  }
+  function resetToday(){var data=load();data.checked=[];save(data);render();}
+  var now=new Date();
+  var days=['일','월','화','수','목','금','토'];
+  document.getElementById('today').textContent=
+    now.getFullYear()+'년 '+(now.getMonth()+1)+'월 '+now.getDate()+'일 ('+days[now.getDay()]+') · 오늘도 한 걸음씩!';
+  render();
+</script>
+</body>
+</html>

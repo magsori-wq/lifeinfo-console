@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>생활정보 모음 · 통합 운영 콘솔</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;background:#0f1626;color:#e8edf7;display:flex;flex-direction:column;height:100vh}
+  .top{display:flex;align-items:center;gap:14px;padding:10px 18px;background:#111a2e;border-bottom:1px solid #2a3a5e;flex:none}
+  .brand{font-weight:800;font-size:16px;white-space:nowrap}
+  .brand .dot{color:#06d6a0}
+  nav{display:flex;gap:6px;flex-wrap:wrap}
+  nav button{cursor:pointer;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;border-radius:9px;padding:8px 14px;font-size:13px;font-weight:700;font-family:inherit}
+  nav button.active{background:#4d9de0;color:#fff;border-color:#4d9de0}
+  .stage{flex:1;position:relative;background:#0f1626;overflow:hidden}
+  iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#0f1626}
+  .panel{position:absolute;inset:0;overflow:auto;padding:26px;display:none}
+  .panel.show{display:block}
+  iframe.show{display:block}
+  iframe{display:none}
+  /* dispatch panel */
+  .d-wrap{max-width:760px;margin:0 auto}
+  .d-wrap h2{font-size:20px;margin:0 0 6px}
+  .d-wrap p.sub{color:#9fb0d0;font-size:13px;margin:0 0 18px}
+  .card{background:#16203a;border:1px solid #2a3a5e;border-radius:14px;padding:18px;margin-bottom:16px}
+  .card h3{margin:0 0 6px;font-size:15px;color:#7fc1ff}
+  .card p{margin:0 0 12px;color:#9fb0d0;font-size:13px}
+  label{display:block;font-size:12px;color:#9fb0d0;margin:10px 0 5px;font-weight:600}
+  input,select,textarea{width:100%;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit}
+  textarea{min-height:90px;resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:10px;padding:12px 16px;font-size:14px;font-weight:800;font-family:inherit}
+  .btn.go{background:#06d6a0;color:#04221a}
+  .btn.alt{background:#4d9de0;color:#fff}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .out{white-space:pre-wrap;background:#0c1220;border:1px dashed #2a3a5e;border-radius:10px;padding:14px;font-size:13px;color:#cdd8ee;margin-top:12px;display:none}
+  .note{font-size:12px;color:#ffd166;margin-top:10px}
+  .links a{color:#7fc1ff}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">📊 생활정보 모음 <span class="dot">·</span> 운영 콘솔</div>
+    <nav id="nav">
+      <button data-t="dashboard" class="active">대시보드</button>
+      <button data-t="generator">글 생성기</button>
+      <button data-t="osmu">OSMU 변환기</button>
+      <button data-t="jisikin">지식인 헬퍼</button>
+      <button data-t="dispatch">⚡ Claude 디스패치</button>
+    </nav>
+  </div>
+
+  <div class="stage">
+    <iframe id="f_dashboard" class="show" src="dashboard.html"></iframe>
+    <iframe id="f_generator" src="generator.html"></iframe>
+    <iframe id="f_osmu" src="osmu.html"></iframe>
+    <iframe id="f_jisikin" src="jisikin.html"></iframe>
+
+    <div id="p_dispatch" class="panel">
+      <div class="d-wrap">
+        <h2>⚡ Claude 디스패치</h2>
+        <p class="sub">버튼을 누르면 작업용 프롬프트가 <b>자동 생성·복사</b>되고 Claude가 새 탭으로 열립니다. 붙여넣기(Ctrl+V)만 하면 실행돼요. (공개 사이트라 보안상 API 직접호출 대신 이 방식을 씁니다.)</p>
+
+        <div class="card">
+          <h3>① 고단가 글 초안 만들기</h3>
+          <p>주제만 넣으면 제목 공식·소제목·정확성 점검까지 포함한 작성 프롬프트를 만듭니다.</p>
+          <label>오늘 글 주제 / 키워드</label>
+          <input id="topic" placeholder="예: 근로장려금 / 기초연금 / 연말정산 환급 / 양산 통도 맛집">
+          <div class="row">
+            <button class="btn go" onclick="dispatch('post')">프롬프트 복사 + Claude 열기</button>
+            <button class="btn alt" onclick="onlyCopy('post')">프롬프트만 복사</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>② 오늘의 글감 3개 추천</h3>
+          <p>40~60대 고단가 키워드로 오늘 쓸 글감 3개와 제목을 추천받습니다.</p>
+          <div class="row">
+            <button class="btn go" onclick="dispatch('ideas')">프롬프트 복사 + Claude 열기</button>
+            <button class="btn alt" onclick="onlyCopy('ideas')">프롬프트만 복사</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>③ OSMU 재가공 / 지식인 답변</h3>
+          <p>구글 글을 네이버·쓰레드로 변환하거나, 지식인 답변 초안을 요청합니다. (구글 글 내용/질문을 함께 붙여넣어 보내세요)</p>
+          <div class="row">
+            <button class="btn alt" onclick="dispatch('osmu')">OSMU 변환 요청</button>
+            <button class="btn alt" onclick="dispatch('qa')">지식인 답변 요청</button>
+          </div>
+        </div>
+
+        <div class="out" id="out"></div>
+        <div class="note">⚠️ 지원금·세금·대출 글은 발행 전 공식 사이트(복지로·홈택스·정부24)에서 최신 수치 확인 필수.</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // 탭 전환
+  var nav=document.getElementById('nav');
+  var iframes=['dashboard','generator','osmu','jisikin'];
+  nav.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    var t=b.dataset.t;
+    [].forEach.call(nav.children,function(x){x.classList.toggle('active',x===b);});
+    iframes.forEach(function(n){document.getElementById('f_'+n).classList.toggle('show',n===t);});
+    document.getElementById('p_dispatch').classList.toggle('show',t==='dispatch');
+  });
+
+  // 프롬프트 생성
+  function buildPrompt(kind){
+    var topic=(document.getElementById('topic').value||'(주제 입력)').trim();
+    if(kind==='post'){
+      return "당신은 한국 수익형 블로그 '생활정보 모음'의 작가입니다. 아래 주제로 블로그 글을 써주세요.\n\n"+
+      "주제: "+topic+"\n타겟: 40~60대\n\n요구사항:\n"+
+      "1) 제목은 [메인 키워드]+[연관 검색어]+[숫자/총정리] 공식으로.\n"+
+      "2) 도입부 2~3문장(검색 의도 자극) + 소제목 4개 + 각 소제목 본문.\n"+
+      "3) 지원금·세금·대출이면 자격/금액/신청기간/방법을 정확히, 그리고 '발행 전 공식 사이트에서 최신 확인' 안내 포함.\n"+
+      "4) 마지막에 '함께 보면 좋은 글' 내부링크 2개 자리도 표시.\n"+
+      "5) 사실 확인이 필요한 최신 수치는 웹 검색으로 확인해서 반영.\n"+
+      "결과는 바로 '글HTML 생성기'에 넣을 수 있게 소제목/본문 형태로 정리해줘.";
+    }
+    if(kind==='ideas'){
+      return "수익형 블로그 '생활정보 모음'(40~60대 타겟)에 오늘 쓸 고단가 글감 3개를 추천해줘.\n"+
+      "정부지원금/금융·대출·연금/건강/세금/지역(양산·통도) 맛집 중에서 골고루.\n"+
+      "각 글감마다: 제목(제목 공식 적용) + 왜 지금 좋은지 한 줄 + 핵심 소제목 3개.\n"+
+      "이미 쓴 주제(유튜브 해지, 카카오톡 차단, 정부24 등본, 실업급여, 알뜰폰, 전입신고, 건강보험 환급금, 과태료, 휴면예금, 인스타 삭제, 토익, 카뱅 모임통장, 근로장려금, 기초연금)는 제외.";
+    }
+    if(kind==='osmu'){
+      return "아래 구글 블로그 글을 ①네이버 블로그용(중복 회피 위해 도입부 살짝 바꿔서)과 ②쓰레드용 짧은 글로 재가공해줘. 원본 링크도 넣어줘.\n\n[여기에 구글 블로그 글 내용과 원본 URL을 붙여넣으세요]\n주제 참고: "+topic;
+    }
+    if(kind==='qa'){
+      return "네이버 지식인 답변 초안을 만들어줘. 질문에 진짜 도움이 되는 답을 먼저 쓰고, 마지막에 내 블로그 글 링크 1개를 자연스럽게. 광고처럼 보이지 않게.\n\n[여기에 지식인 질문 내용과 내 블로그 글 제목/URL을 붙여넣으세요]\n주제 참고: "+topic;
+    }
+    return '';
+  }
+  function showOut(txt){var o=document.getElementById('out');o.style.display='block';o.textContent=txt;}
+  function onlyCopy(kind){var p=buildPrompt(kind);navigator.clipboard.writeText(p);showOut(p);}
+  function dispatch(kind){
+    var p=buildPrompt(kind);
+    navigator.clipboard.writeText(p).then(function(){},function(){});
+    showOut(p);
+    window.open('https://claude.ai/new','_blank','noopener');
+  }
+</script>
+</body>
+</html>

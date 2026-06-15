@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글 HTML 생성기</title>
+<style>
+  :root{ --bg:#0f1626; --panel:#16203a; --panel2:#1d2a4a; --line:#2a3a5e;
+    --txt:#e8edf7; --sub:#9fb0d0; --accent:#4d9de0; --accent2:#06d6a0; --danger:#ff5a5f; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6}
+  header{padding:22px 24px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#15233b,#0f1626)}
+  header h1{margin:0;font-size:20px}
+  header p{margin:6px 0 0;color:var(--sub);font-size:13px}
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:70vh}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+  .left{padding:20px 24px;border-right:1px solid var(--line);overflow:auto}
+  .right{padding:20px 24px;overflow:auto;background:#0c1220}
+  label{display:block;font-size:12px;color:var(--sub);margin:14px 0 5px;font-weight:600}
+  input,textarea,select{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--txt);
+    border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit}
+  textarea{resize:vertical;min-height:70px}
+  .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .formula{background:var(--panel);border:1px dashed var(--accent);border-radius:10px;padding:12px;margin-top:8px}
+  .formula .t{font-size:15px;font-weight:700;color:#fff;word-break:keep-all}
+  .formula small{color:var(--sub)}
+  .sec{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:10px}
+  .sec .hd{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .sec .hd b{font-size:13px;color:var(--accent2)}
+  .btn{cursor:pointer;border:none;border-radius:9px;padding:10px 14px;font-size:13px;font-weight:700;font-family:inherit}
+  .btn.add{background:var(--accent);color:#fff;margin-top:10px}
+  .btn.gen{background:var(--accent2);color:#04221a;width:100%;padding:14px;font-size:15px;margin-top:16px}
+  .btn.copy{background:var(--accent);color:#fff}
+  .btn.mini{background:#33425f;color:#cdd8ee;padding:6px 9px;font-size:12px}
+  .btn.x{background:transparent;color:var(--danger);padding:4px 8px;font-size:18px;line-height:1}
+  .out{width:100%;min-height:220px;font-family:ui-monospace,Consolas,monospace;font-size:12px;white-space:pre;overflow:auto}
+  .bar{display:flex;gap:8px;align-items:center;margin:10px 0}
+  .tag{font-size:11px;color:var(--sub)}
+  .hint{font-size:11px;color:var(--sub);margin-top:4px}
+  .preview{background:#fff;color:#1a2230;border-radius:10px;padding:18px;margin-top:8px}
+  h3.s{margin:18px 0 12px;font-size:14px;color:var(--accent)}
+  .ok{color:var(--accent2)}
+</style>
+</head>
+<body>
+<header>
+  <h1>📝 글 HTML 생성기</h1>
+  <p>제목·소제목만 입력하면 <b>목차 + 바로가기 버튼 + 내부링크 + SEO 구조</b>가 들어간 Blogger용 HTML을 만들어 드립니다. (Blogger 글쓰기 → 연필▾ → HTML 보기 → 붙여넣기)</p>
+</header>
+
+<div class="wrap">
+  <div class="left">
+    <h3 class="s">1) 제목 공식</h3>
+    <div class="row">
+      <div><label>메인 키워드</label><input id="kw" placeholder="유튜브 프리미엄 해지"></div>
+      <div><label>연관 검색어</label><input id="rel0" placeholder="안됨 해결책"></div>
+      <div><label>숫자 / 총정리</label><input id="num" placeholder="3가지 총정리"></div>
+    </div>
+    <div class="formula">
+      <small>완성 제목 ↓</small>
+      <div class="t" id="titlePrev">유튜브 프리미엄 해지 안됨 해결책 3가지 총정리</div>
+    </div>
+
+    <h3 class="s">2) 카테고리 & 도입부</h3>
+    <label>카테고리(라벨)</label>
+    <input id="cat" placeholder="생활·IT">
+    <label>도입부 (1~2문장, 검색 의도 자극)</label>
+    <textarea id="intro" placeholder="유튜브 프리미엄을 해지하려는데 버튼이 안 보이시나요? 오늘은 ..."></textarea>
+
+    <h3 class="s">3) 바로가기 버튼 (CTA)</h3>
+    <div class="row" style="grid-template-columns:1fr 1fr">
+      <div><label>버튼 문구</label><input id="ctaTxt" placeholder="👉 해지 방법 바로보기"></div>
+      <div><label>버튼 링크(URL)</label><input id="ctaUrl" placeholder="#sec1 또는 https://..."></div>
+    </div>
+    <div class="hint">링크에 <b>#sec1</b>처럼 쓰면 같은 글의 해당 소제목으로 점프합니다(목차 효과). 비우면 첫 소제목으로 연결됩니다.</div>
+
+    <h3 class="s">4) 소제목 + 내용</h3>
+    <div id="secs"></div>
+    <button class="btn add" onclick="addSec()">+ 소제목 추가</button>
+
+    <h3 class="s">5) 마무리</h3>
+    <textarea id="outro" placeholder="해지는 가입한 경로에서 하는 것이 핵심입니다. ..."></textarea>
+
+    <h3 class="s">6) 함께 보면 좋은 글 (내부 링크)</h3>
+    <textarea id="rel" placeholder="제목 | URL  형식으로 한 줄에 하나씩&#10;건강보험 환급금 조회 신청 방법 | https://lifeinfo8975.blogspot.com/2026/06/blog-post_923.html"></textarea>
+    <div class="hint">내부 링크는 체류시간·페이지뷰(=광고 노출)를 높여 SEO와 수익에 도움이 됩니다. 2~3개 권장.</div>
+
+    <button class="btn gen" onclick="gen()">⚙️ Blogger HTML 생성하기</button>
+  </div>
+
+  <div class="right">
+    <h3 class="s">생성된 HTML <span class="ok" id="okmsg"></span></h3>
+    <div class="bar">
+      <button class="btn copy" onclick="copyOut()">📋 HTML 복사</button>
+      <span class="tag">→ Blogger 글쓰기 → 연필▾ → HTML 보기 → 붙여넣기</span>
+    </div>
+    <textarea class="out" id="out" readonly placeholder="왼쪽에서 입력 후 '생성하기'를 누르세요."></textarea>
+
+    <h3 class="s">미리보기</h3>
+    <div class="preview" id="prev"><span style="color:#888">생성하면 여기에 미리보기가 표시됩니다.</span></div>
+  </div>
+</div>
+
+<script>
+  var kw=document.getElementById('kw'),rel0=document.getElementById('rel0'),num=document.getElementById('num');
+  function titleStr(){
+    var parts=[kw.value.trim(),rel0.value.trim(),num.value.trim()].filter(Boolean);
+    return parts.join(' ');
+  }
+  function upT(){document.getElementById('titlePrev').textContent=titleStr()||'(제목이 여기에 표시됩니다)';}
+  [kw,rel0,num].forEach(function(e){e.addEventListener('input',upT)});
+
+  var secs=document.getElementById('secs');
+  function addSec(h,b){
+    var i=secs.children.length+1;
+    var d=document.createElement('div');d.className='sec';
+    d.innerHTML='<div class="hd"><b>소제목 '+i+'</b><button class="btn x" title="삭제" onclick="this.closest(\'.sec\').remove()">×</button></div>'+
+      '<input class="sh" placeholder="소제목 (예: 기본 해지 방법)" />'+
+      '<textarea class="sb" placeholder="이 소제목의 설명. 줄바꿈은 자동으로 문단이 됩니다. 목록은 줄 앞에 - 를 붙이세요." style="margin-top:8px"></textarea>';
+    secs.appendChild(d);
+    if(h)d.querySelector('.sh').value=h;
+    if(b)d.querySelector('.sb').value=b;
+  }
+  addSec('기본 해지 방법','앱을 열고 프로필을 누릅니다.\n- 멤버십 관리로 이동\n- 해지 선택\n결제일 전에 미리 해지하면 손해가 없습니다.');
+  addSec('해지가 안 될 때','가입한 경로가 아닌 곳에서 해지하면 막힙니다. 아이폰에서 가입했다면 설정에서 해지하세요.');
+
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function bodyHtml(txt){
+    var lines=(txt||'').split(/\n/),html='',inUl=false;
+    lines.forEach(function(ln){
+      ln=ln.trim();
+      if(!ln){return;}
+      if(ln.indexOf('- ')===0){
+        if(!inUl){html+='<ul>';inUl=true;}
+        html+='<li>'+esc(ln.slice(2))+'</li>';
+      }else{
+        if(inUl){html+='</ul>';inUl=false;}
+        html+='<p>'+esc(ln)+'</p>';
+      }
+    });
+    if(inUl)html+='</ul>';
+    return html;
+  }
+
+  function gen(){
+    var title=titleStr();
+    var cat=document.getElementById('cat').value.trim();
+    var intro=document.getElementById('intro').value.trim();
+    var outro=document.getElementById('outro').value.trim();
+    var ctaTxt=document.getElementById('ctaTxt').value.trim()||'👉 자세히 보기';
+    var ctaUrl=document.getElementById('ctaUrl').value.trim();
+    var sArr=[];
+    secs.querySelectorAll('.sec').forEach(function(s){
+      var h=s.querySelector('.sh').value.trim();
+      var b=s.querySelector('.sb').value;
+      if(h)sArr.push({h:h,b:b});
+    });
+    if(!ctaUrl)ctaUrl=sArr.length?'#sec1':'#';
+
+    var css='<style>\n'+
+      '.lsg{max-width:720px;margin:0 auto;font-size:17px;line-height:1.85;color:#222;word-break:keep-all}\n'+
+      '.lsg .cat{display:inline-block;background:#4d9de0;color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px}\n'+
+      '.lsg h2{font-size:23px;margin:34px 0 14px;padding-left:12px;border-left:5px solid #4d9de0;line-height:1.35}\n'+
+      '.lsg p{margin:0 0 14px}\n'+
+      '.lsg ul{margin:0 0 16px;padding-left:22px}\n'+
+      '.lsg li{margin:6px 0}\n'+
+      '.lsg .toc{background:#f4f7fc;border:1px solid #e0e8f4;border-radius:12px;padding:16px 20px;margin:18px 0 26px}\n'+
+      '.lsg .toc b{display:block;font-size:14px;color:#4d9de0;margin-bottom:8px}\n'+
+      '.lsg .toc a{display:block;color:#2a4a73;text-decoration:none;padding:4px 0;font-size:15px}\n'+
+      '.lsg .toc a:hover{text-decoration:underline}\n'+
+      '.lsg .cta{display:block;text-align:center;background:linear-gradient(90deg,#4d9de0,#06d6a0);color:#fff !important;'+
+      'font-weight:800;font-size:17px;padding:15px 18px;border-radius:12px;text-decoration:none;margin:22px 0;box-shadow:0 4px 14px rgba(77,157,224,.35)}\n'+
+      '.lsg .top{display:inline-block;font-size:13px;color:#8a97ab;text-decoration:none;margin:2px 0 6px}\n'+
+      '.lsg .end{background:#fff8e6;border:1px solid #ffe2a8;border-radius:12px;padding:16px 20px;margin-top:24px}\n'+
+      '.lsg .rel{background:#f4f7fc;border:1px solid #e0e8f4;border-radius:12px;padding:14px 20px;margin-top:22px}\n'+
+      '.lsg .rel b{display:block;font-size:14px;color:#4d9de0;margin-bottom:8px}\n'+
+      '.lsg .rel a{display:block;color:#2a4a73;text-decoration:none;padding:5px 0;font-size:15px;font-weight:600}\n'+
+      '</style>';
+
+    var toc='<div class="toc"><b>📑 목차</b>';
+    sArr.forEach(function(s,i){toc+='<a href="#sec'+(i+1)+'">'+(i+1)+'. '+esc(s.h)+'</a>';});
+    toc+='</div>';
+
+    var cta='<a class="cta" href="'+esc(ctaUrl)+'">'+esc(ctaTxt)+'</a>';
+
+    var body='<div class="lsg" id="top">';
+    if(cat)body+='<span class="cat">'+esc(cat)+'</span>';
+    if(intro)body+='<p>'+esc(intro)+'</p>';
+    body+=toc;
+    body+=cta;
+    body+='\n<!-- ▼▼ 광고 추천 위치 1 (도입부 아래) ▼▼ -->\n';
+    sArr.forEach(function(s,i){
+      body+='<h2 id="sec'+(i+1)+'">'+esc(s.h)+'</h2>';
+      body+=bodyHtml(s.b);
+      if(i===0){body+='\n<!-- ▼▼ 광고 추천 위치 2 (첫 소제목 뒤) ▼▼ -->\n';}
+      body+='<a class="top" href="#top">▲ 맨 위로</a>';
+    });
+    if(outro){body+='<div class="end"><b>✅ 마무리</b><p style="margin:8px 0 0">'+esc(outro)+'</p></div>';}
+    var relRaw=document.getElementById('rel').value.split(/\n/);
+    var relItems=[];
+    relRaw.forEach(function(ln){
+      ln=ln.trim(); if(!ln)return;
+      var parts=ln.split(/\s*[|]\s*/);
+      if(parts.length>=2){relItems.push({t:parts[0].trim(),u:parts.slice(1).join('|').trim()});}
+    });
+    if(relItems.length){
+      body+='<div class="rel"><b>🔗 함께 보면 좋은 글</b>';
+      relItems.forEach(function(r){body+='<a href="'+esc(r.u)+'">▸ '+esc(r.t)+'</a>';});
+      body+='</div>';
+    }
+    body+='\n<!-- ▼▼ 광고 추천 위치 3 (글 끝) ▼▼ -->\n';
+    body+='</div>';
+
+    var full=css+'\n'+body;
+    document.getElementById('out').value=full;
+    document.getElementById('prev').innerHTML=full;
+    document.getElementById('okmsg').textContent='✓ 생성 완료 — 제목: '+title;
+    document.getElementById('out').scrollIntoView({behavior:'smooth'});
+  }
+
+  function copyOut(){
+    var o=document.getElementById('out');
+    if(!o.value){alert('먼저 생성하기를 누르세요.');return;}
+    o.select();
+    navigator.clipboard.writeText(o.value).then(function(){
+      document.getElementById('okmsg').textContent='✓ 복사됨! Blogger HTML 보기에 붙여넣으세요.';
+    },function(){document.execCommand('copy');});
+  }
+  upT();
+</script>
+</body>
+</html>

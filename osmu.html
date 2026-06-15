@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSMU 변환기 · 생활정보 모음</title>
+<style>
+  :root{--bg:#0f1626;--panel:#16203a;--line:#2a3a5e;--txt:#e8edf7;--sub:#9fb0d0;--accent:#4d9de0;--accent2:#06d6a0;--naver:#03c75a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6}
+  header{padding:20px 24px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#15233b,#0f1626)}
+  header h1{margin:0;font-size:20px}
+  header p{margin:6px 0 0;color:var(--sub);font-size:13px}
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+  .left{padding:20px 24px;border-right:1px solid var(--line)}
+  .right{padding:20px 24px;background:#0c1220}
+  label{display:block;font-size:12px;color:var(--sub);margin:14px 0 5px;font-weight:600}
+  input,textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit}
+  textarea{resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:9px;padding:12px 14px;font-size:14px;font-weight:700;font-family:inherit}
+  .gen{background:var(--accent2);color:#04221a;width:100%;margin-top:16px;padding:14px;font-size:15px}
+  .copy{background:var(--accent);color:#fff;font-size:13px;padding:9px 12px}
+  .copy.n{background:var(--naver)}
+  h3.s{margin:18px 0 10px;font-size:14px;color:var(--accent)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:18px}
+  .card .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .card .hd b{font-size:14px}
+  .out{width:100%;min-height:150px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;white-space:pre-wrap}
+  .tag{font-size:11px;color:var(--sub)}
+  .tip{font-size:11px;color:#ffd166;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🔁 OSMU 변환기 — 한 번 쓰고 여러 곳에</h1>
+  <p>구글 블로그 글을 <b>네이버 블로그용 텍스트</b>와 <b>쓰레드용 짧은 글</b>로 자동 변환합니다. (HTML 또는 일반 텍스트 모두 OK)</p>
+</header>
+
+<div class="wrap">
+  <div class="left">
+    <h3 class="s">1) 글 정보</h3>
+    <label>글 제목</label>
+    <input id="title" placeholder="유튜브 프리미엄 해지 방법 안됨 해결책 3가지 총정리">
+    <label>구글 블로그 원본 URL</label>
+    <input id="url" placeholder="https://lifeinfo8975.blogspot.com/2026/06/3.html">
+    <label>본문 (구글 블로그 글 전체를 복사해 붙여넣기 — HTML/텍스트 무관)</label>
+    <textarea id="src" style="min-height:240px" placeholder="여기에 글 본문을 붙여넣으세요. '글HTML 생성기'로 만든 HTML을 그대로 넣어도 됩니다."></textarea>
+    <button class="btn gen" onclick="run()">🔁 변환하기</button>
+    <div class="tip">※ 네이버는 '복사 글(중복)'에 약합니다. 변환 후 도입부 1~2문장만 살짝 바꿔서 올리면 더 안전합니다.</div>
+  </div>
+
+  <div class="right">
+    <div class="card">
+      <div class="hd"><b style="color:var(--naver)">📗 네이버 블로그용</b><button class="btn copy n" onclick="cp('outN','네이버')">📋 복사</button></div>
+      <textarea class="out" id="outN" readonly placeholder="변환하면 네이버 블로그에 붙여넣을 텍스트가 생성됩니다."></textarea>
+      <div class="tag">네이버 블로그 글쓰기에 붙여넣기 → 맨 아래 원본 링크 자동 포함</div>
+    </div>
+    <div class="card">
+      <div class="hd"><b style="color:#fff">🧵 쓰레드용 요약</b><button class="btn copy" onclick="cp('outT','쓰레드')">📋 복사</button></div>
+      <textarea class="out" id="outT" readonly style="min-height:120px" placeholder="짧은 쓰레드 게시글이 생성됩니다."></textarea>
+      <div class="tag">쓰레드 글쓰기에 붙여넣기 (하루 1~2개씩 권장)</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function parseSrc(raw){
+    var title=document.getElementById('title').value.trim();
+    var heads=[],paras=[],intro='';
+    var looksHtml=/<\/?(p|h2|h3|ul|li|div|br)\b/i.test(raw);
+    if(looksHtml){
+      var doc=new DOMParser().parseFromString(raw,'text/html');
+      var root=doc.querySelector('.lsg')||doc.body;
+      root.querySelectorAll('.toc, .cta, .top, style, script').forEach(function(e){e.remove();});
+      var nodes=root.querySelectorAll('h2,h3,p,li');
+      var curList=[];
+      nodes.forEach(function(n){
+        var t=n.textContent.trim();
+        if(!t)return;
+        if(n.tagName==='H2'||n.tagName==='H3'){heads.push(t);paras.push({type:'h',text:t});}
+        else if(n.tagName==='LI'){paras.push({type:'li',text:t});}
+        else{paras.push({type:'p',text:t}); if(!intro)intro=t;}
+      });
+    }else{
+      raw.split(/\n/).forEach(function(ln){
+        ln=ln.trim(); if(!ln)return;
+        if(ln.indexOf('- ')===0){paras.push({type:'li',text:ln.slice(2)});}
+        else if(ln.length<28 && !/[.!?]$/.test(ln)){heads.push(ln);paras.push({type:'h',text:ln});}
+        else{paras.push({type:'p',text:ln}); if(!intro)intro=ln;}
+      });
+    }
+    return {title:title,heads:heads,paras:paras,intro:intro};
+  }
+
+  function run(){
+    var url=document.getElementById('url').value.trim();
+    var raw=document.getElementById('src').value;
+    if(!raw.trim()){alert('본문을 붙여넣으세요.');return;}
+    var d=parseSrc(raw);
+
+    // ===== 네이버용 =====
+    var n=(d.title?('['+d.title+']\n\n'):'');
+    d.paras.forEach(function(p){
+      if(p.type==='h')n+='\n■ '+p.text+'\n';
+      else if(p.type==='li')n+=' • '+p.text+'\n';
+      else n+=p.text+'\n';
+    });
+    n+='\n──────────────\n';
+    n+='※ 이 글의 원본(더 자세히)\n'+(url||'(원본 URL을 입력하세요)')+'\n';
+    document.getElementById('outN').value=n.trim();
+
+    // ===== 쓰레드용 =====
+    var hook=d.title? d.title.replace(/총정리|방법|\(.*?\)/g,'').trim() : '오늘의 생활정보';
+    var t=hook+' 👇\n';
+    if(d.intro)t+=d.intro.slice(0,60).replace(/\s+\S*$/,'')+'…\n';
+    var pts=d.heads.filter(function(h){return !/마무리|목차/.test(h);}).slice(0,3);
+    if(pts.length)t+='\n✅ '+pts.join('\n✅ ')+'\n';
+    t+='\n👉 자세히: '+(url||'(원본 URL)');
+    document.getElementById('outT').value=t;
+  }
+
+  function cp(id,label){
+    var o=document.getElementById(id);
+    if(!o.value){alert('먼저 변환하기를 누르세요.');return;}
+    o.select(); navigator.clipboard.writeText(o.value);
+    o.nextElementSibling; alert(label+'용 텍스트를 복사했습니다!');
+  }
+</script>
+</body>
+</html>

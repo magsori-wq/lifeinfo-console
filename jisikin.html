@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지식인 답변 헬퍼 · 생활정보 모음</title>
+<style>
+  :root{--bg:#0f1626;--panel:#16203a;--line:#2a3a5e;--txt:#e8edf7;--sub:#9fb0d0;--accent:#4d9de0;--accent2:#06d6a0;--warn:#ffd166;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6}
+  header{padding:20px 24px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#15233b,#0f1626)}
+  header h1{margin:0;font-size:20px}
+  header p{margin:6px 0 0;color:var(--sub);font-size:13px}
+  .warnbox{margin:0;padding:12px 24px;background:#3a2f12;color:#ffe6a3;font-size:12.5px;border-bottom:1px solid var(--line)}
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+  .left{padding:20px 24px;border-right:1px solid var(--line)}
+  .right{padding:20px 24px;background:#0c1220}
+  label{display:block;font-size:12px;color:var(--sub);margin:14px 0 5px;font-weight:600}
+  input,textarea{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit}
+  textarea{resize:vertical}
+  .btn{cursor:pointer;border:none;border-radius:9px;padding:12px 14px;font-size:14px;font-weight:700;font-family:inherit}
+  .gen{background:var(--accent2);color:#04221a;flex:1;padding:14px;font-size:15px}
+  .re{background:#33425f;color:#cdd8ee}
+  .copy{background:var(--accent);color:#fff;font-size:13px;padding:9px 12px}
+  .row{display:flex;gap:10px;margin-top:16px}
+  h3.s{margin:18px 0 10px;font-size:14px;color:var(--accent)}
+  .out{width:100%;min-height:240px;font-size:14px;line-height:1.7;white-space:pre-wrap;background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:14px}
+  .tip{font-size:11px;color:var(--sub);margin-top:8px}
+  ul.rules{margin:6px 0 0;padding-left:18px;font-size:12.5px;color:#ffe6a3}
+  ul.rules li{margin:3px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1>💬 지식인 답변 헬퍼 (안전형)</h1>
+  <p>질문에 <b>진짜 도움이 되는 답변 초안</b>을 빠르게 만들어 줍니다. 표현을 매번 다르게 섞어 '복붙 스팸' 패턴을 피합니다.</p>
+</header>
+<div class="warnbox">
+  ⚠️ <b>안전 수칙</b> — 네이버는 링크 도배를 강하게 제재합니다. 아래를 지키세요:
+  <ul class="rules">
+    <li>질문과 <b>정말 관련된</b> 글에만, 답변 끝에 <b>1개</b>만 링크. (광고처럼 보이면 삭제·제재)</li>
+    <li>하루 <b>3~5개</b>까지만. 한 번에 몰아서 X.</li>
+    <li>링크 없이 순수 도움 답변도 섞으세요(계정 신뢰도↑).</li>
+  </ul>
+</div>
+
+<div class="wrap">
+  <div class="left">
+    <h3 class="s">입력</h3>
+    <label>질문 내용 (요지만 붙여넣기)</label>
+    <textarea id="q" placeholder="예: 유튜브 프리미엄 해지하려는데 버튼이 안 보여요. 어떻게 하나요?"></textarea>
+    <label>핵심 답변 포인트 (한 줄에 하나씩)</label>
+    <textarea id="pts" style="min-height:120px" placeholder="가입한 경로에서 해지해야 함&#10;아이폰 가입은 설정-구독에서 해지&#10;해지해도 남은 기간은 사용 가능"></textarea>
+    <label>관련 블로그 글 제목</label>
+    <input id="bt" placeholder="유튜브 프리미엄 해지 방법 총정리">
+    <label>블로그 글 URL</label>
+    <input id="bu" placeholder="https://lifeinfo8975.blogspot.com/2026/06/3.html">
+    <div class="row">
+      <button class="btn gen" onclick="gen()">💬 답변 초안 생성</button>
+      <button class="btn re" onclick="gen()" title="표현 다시 섞기">🎲 표현 바꾸기</button>
+    </div>
+  </div>
+
+  <div class="right">
+    <h3 class="s">답변 초안 <button class="btn copy" style="float:right" onclick="cp()">📋 복사</button></h3>
+    <div class="out" id="out" contenteditable="true">왼쪽을 채우고 '답변 초안 생성'을 누르세요. 생성 후 직접 더 다듬어도 됩니다(추천).</div>
+    <div class="tip">생성된 글은 자유롭게 수정 가능합니다. 본인 말투로 한두 군데 바꾸면 가장 안전합니다.</div>
+  </div>
+</div>
+
+<script>
+  var greet=[
+    "안녕하세요. 같은 고민 해보셔서 답변 남겨요.",
+    "안녕하세요! 저도 겪어본 부분이라 정리해드릴게요.",
+    "안녕하세요. 말씀하신 상황, 이렇게 해결하시면 됩니다.",
+    "안녕하세요~ 어렵지 않으니 순서대로 보시면 돼요."
+  ];
+  var bridge=[
+    "핵심만 말씀드리면 이렇습니다.",
+    "요점은 다음과 같아요.",
+    "정리하면 이렇습니다.",
+    "아래 순서대로 확인해보세요."
+  ];
+  var close=[
+    "도움이 되셨길 바랍니다. 잘 해결되시길 바라요!",
+    "어렵지 않으니 천천히 해보세요. 응원합니다!",
+    "위 내용대로 하시면 해결되실 거예요. 화이팅!",
+    "필요하시면 더 자세한 건 아래 글을 참고하세요."
+  ];
+  var linkLead=[
+    "혹시 더 자세한 순서가 필요하시면 제가 정리해둔 글이 있어 같이 남겨요.",
+    "이미지까지 단계별로 정리해둔 글이 있어서 참고용으로 남깁니다.",
+    "더 꼼꼼히 보고 싶으시면 아래 글이 도움이 될 거예요."
+  ];
+  function pick(a){return a[Math.floor(Math.random()*a.length)];}
+
+  function gen(){
+    var pts=document.getElementById('pts').value.split(/\n/).map(function(s){return s.trim();}).filter(Boolean);
+    var bt=document.getElementById('bt').value.trim();
+    var bu=document.getElementById('bu').value.trim();
+    if(!pts.length){alert('핵심 답변 포인트를 한 줄에 하나씩 입력하세요.');return;}
+
+    var body=pick(greet)+'\n\n'+pick(bridge)+'\n';
+    pts.forEach(function(p,i){ body+='\n'+(i+1)+'. '+p; });
+    body+='\n\n'+pick(close);
+    if(bu){
+      body+='\n\n'+pick(linkLead)+'\n👉 '+(bt?bt+'\n':'')+bu;
+    }
+    document.getElementById('out').innerText=body;
+  }
+  function cp(){
+    var o=document.getElementById('out');
+    var t=o.innerText;
+    if(!t.trim()){alert('먼저 생성하세요.');return;}
+    navigator.clipboard.writeText(t).then(function(){alert('복사했습니다! 지식인 답변창에 붙여넣으세요.');});
+  }
+</script>
+</body>
+</html>
