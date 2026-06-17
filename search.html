@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1626">
+<title>생활정보 통합검색 · 생활정보 모음</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;background:#0f1626;color:#e8edf7;min-height:100vh}
+  .wrap{max-width:760px;margin:0 auto;padding:18px 14px 60px}
+  h1{font-size:19px;margin:0 0 4px;font-weight:800}
+  h1 .dot{color:#06d6a0}
+  .sub{color:#9fb0d0;font-size:13px;margin:0 0 16px;line-height:1.6}
+  .searchbox{position:sticky;top:0;z-index:5;background:#0f1626;padding:10px 0 12px}
+  .ipt{position:relative}
+  .ipt input{width:100%;background:#16203a;border:1px solid #2a3a5e;color:#e8edf7;border-radius:12px;padding:15px 44px 15px 16px;font-size:16px;font-family:inherit}
+  .ipt input:focus{outline:none;border-color:#4d9de0}
+  .ipt .clr{position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;border:none;background:#2a3a5e;color:#cdd8ee;border-radius:50%;width:26px;height:26px;font-size:15px;line-height:1;display:none}
+  .hint{font-size:11.5px;color:#6f80a3;margin-top:7px;line-height:1.6}
+  .cats{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 4px}
+  .cats button{cursor:pointer;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;border-radius:20px;padding:7px 13px;font-size:12.5px;font-weight:700;font-family:inherit}
+  .cats button.active{background:#4d9de0;color:#fff;border-color:#4d9de0}
+  .meta{font-size:12px;color:#9fb0d0;margin:14px 2px 8px}
+  .card{display:block;text-decoration:none;background:#16203a;border:1px solid #2a3a5e;border-radius:14px;padding:15px 16px;margin-bottom:11px;transition:border-color .15s}
+  .card:hover{border-color:#4d9de0}
+  .pill{display:inline-block;font-size:11px;font-weight:800;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:8px}
+  .card h3{margin:0 0 7px;font-size:16px;color:#e8edf7;line-height:1.4;font-weight:700}
+  .card h3 mark{background:#3a5a2a;color:#bff0a0;padding:0 2px;border-radius:3px}
+  .card p{margin:0;color:#9fb0d0;font-size:13.5px;line-height:1.65}
+  .card .go{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;color:#7fc1ff}
+  .empty{text-align:center;color:#6f80a3;font-size:14px;padding:40px 10px;line-height:1.8}
+  .empty a{color:#7fc1ff}
+  .load{text-align:center;color:#9fb0d0;font-size:14px;padding:40px 10px}
+  .spin{display:inline-block;width:22px;height:22px;border:3px solid #2a3a5e;border-top-color:#4d9de0;border-radius:50%;animation:sp .8s linear infinite;vertical-align:-5px;margin-right:8px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .foot{text-align:center;color:#5a6b8c;font-size:11.5px;margin-top:24px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🔎 생활정보 통합검색 <span class="dot">·</span> 생활정보 모음</h1>
+  <p class="sub">필요한 정보를 한 번에 찾으세요. 띄어쓰기·유사어·초성으로 검색되고, 각 글 요약을 먼저 보여드립니다.</p>
+
+  <div class="searchbox">
+    <div class="ipt">
+      <input id="q" type="search" placeholder="예: 소비쿠폰, 임플란트, 여권, ㅈㅌㅊㅅ(자동차세)" autocomplete="off">
+      <button class="clr" id="clr" aria-label="지우기">×</button>
+    </div>
+    <div class="hint">💡 띄어쓰기 무관 · 유사어 자동 확장(예: ‘패스포트→여권’, ‘치아→임플란트’) · 초성 검색 지원</div>
+    <div class="cats" id="cats"></div>
+  </div>
+
+  <div class="meta" id="meta"></div>
+  <div id="results"><div class="load"><span class="spin"></span>글 목록을 불러오는 중…</div></div>
+
+  <div class="foot">데이터: 생활정보 모음 블로그 실시간 연동 · 새 글이 발행되면 자동 반영됩니다.</div>
+</div>
+
+<script>
+var FEED="https://lifeinfo8975.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=150&callback=__feed";
+var POSTS=[], curCat="전체";
+
+/* 카테고리 색상 (카테고리 페이지와 동일 계열) */
+var CAT_COLOR={
+  "정부지원":"#2BC4B0","금융":"#4D9DE0","연금":"#4D9DE0","국민연금":"#4D9DE0",
+  "건강보험":"#E76F51","건강검진":"#E76F51","국가건강검진":"#E76F51","실손보험":"#E76F51",
+  "실비청구":"#E76F51","노인장기요양보험":"#E76F51","요양등급":"#E76F51",
+  "여행":"#7C5CE0","자동차세":"#2EB67D","위택스":"#2EB67D","청년월세지원":"#2BC4B0",
+  "청년정책":"#2BC4B0","새출발기금":"#2BC4B0","에너지바우처":"#2BC4B0","소상공인":"#2BC4B0"
+};
+function catColor(c){return CAT_COLOR[c]||"#5b6b86";}
+
+/* 유사어 사전 — 검색어를 관련어로 확장 */
+var SYN=[
+  ["여권","패스포트","passport","해외여행"],
+  ["임플란트","치아","치과","틀니","임플"],
+  ["주택연금","역모기지","노후","연금"],
+  ["국민연금","노령연금","연금"],
+  ["기초연금","노령연금"],
+  ["소비쿠폰","민생회복","민생","상품권","지역화폐"],
+  ["고유가","유가","기름값","유류"],
+  ["보조금","지원금","정부지원","혜택"],
+  ["실업급여","고용보험","실직"],
+  ["근로장려금","근로장려","ektc"],
+  ["건강검진","건강검사","검진"],
+  ["환급금","환급","돌려받기","숨은돈","숨은 돈"],
+  ["자동차세","차세","자동차"],
+  ["재산세","집세금","부동산세"],
+  ["과태료","범칙금","벌금","딱지"],
+  ["전입신고","이사","확정일자"],
+  ["등본","주민등록","정부24"],
+  ["알뜰폰","통신비","요금제"],
+  ["로밍","유심","이심","데이터","esim"],
+  ["트래블카드","트래블","환전","해외카드"],
+  ["면세","면세점","면세한도"],
+  ["마일리지","항공","항공권"],
+  ["휴양림","숲","캠핑","자연휴양림","숲나들e"],
+  ["캠핑장","야영장","고캠핑","캠핑"],
+  ["ktx","기차","코레일","열차"],
+  ["통행료","하이패스","고속도로"],
+  ["렌터카","렌트카","자차"],
+  ["축제","행사","페스티벌"],
+  ["주차","공항주차","인천공항"],
+  ["카카오톡","카톡","차단"],
+  ["유튜브","프리미엄","구독해지"],
+  ["인스타그램","인스타","계정삭제"],
+  ["토익","어학","성적표"],
+  ["모임통장","카카오뱅크","회비","카뱅"]
+];
+function expand(tok){
+  var out=[tok];
+  SYN.forEach(function(g){
+    if(g.indexOf(tok)>=0){ g.forEach(function(w){ if(out.indexOf(w)<0) out.push(w); }); }
+    else { for(var i=0;i<g.length;i++){ if(g[i].indexOf(tok)>=0||tok.indexOf(g[i])>=0){ g.forEach(function(w){ if(out.indexOf(w)<0) out.push(w);}); break; } } }
+  });
+  return out;
+}
+
+function norm(s){return (s||"").toLowerCase().replace(/\s+/g,"").replace(/[·,./|()\[\]~!?\-]/g,"");}
+var CHO=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+function toCho(s){var r="";for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);if(c>=0xAC00&&c<=0xD7A3)r+=CHO[Math.floor((c-0xAC00)/588)];else r+=s[i];}return r;}
+function isAllCho(s){return /^[ㄱ-ㅎ]+$/.test(s);}
+
+/* 본문에서 요약(첫 문단) 추출 */
+function summarize(html){
+  var d=document.createElement("div"); d.innerHTML=html||"";
+  var ps=d.querySelectorAll("p");
+  for(var i=0;i<ps.length;i++){
+    var t=(ps[i].textContent||"").trim();
+    if(t.length>=25) return t.length>140? t.slice(0,138)+"…":t;
+  }
+  var all=(d.textContent||"").replace(/\s+/g," ").trim();
+  return all.length>140? all.slice(0,138)+"…":all;
+}
+
+window.__feed=function(json){
+  try{
+    var es=(json.feed&&json.feed.entry)||[];
+    POSTS=es.map(function(e){
+      var url="";(e.link||[]).forEach(function(l){if(l.rel==="alternate")url=l.href;});
+      var cat=((e.category||[])[0]||{}).term||"기타";
+      var title=(e.title&&e.title.$t)||"(제목 없음)";
+      var content=(e.content&&e.content.$t)||(e.summary&&e.summary.$t)||"";
+      var summary=summarize(content);
+      var hayRaw=title+" "+summary+" "+cat;
+      return {title:title,url:url,cat:cat,summary:summary,hay:norm(hayRaw),hayTitle:norm(title),cho:toCho(hayRaw.replace(/\s+/g,""))};
+    }).filter(function(p){return p.url;});
+    buildCats(); render();
+  }catch(err){ fail(); }
+};
+function fail(){
+  document.getElementById("results").innerHTML=
+    '<div class="empty">목록을 불러오지 못했습니다.<br>잠시 후 새로고침하거나, '+
+    '<a href="https://lifeinfo8975.blogspot.com/" target="_blank" rel="noopener">블로그에서 직접 검색</a>해 주세요.</div>';
+}
+
+function buildCats(){
+  var counts={}; POSTS.forEach(function(p){counts[p.cat]=(counts[p.cat]||0)+1;});
+  var order=Object.keys(counts).sort(function(a,b){return counts[b]-counts[a];});
+  var box=document.getElementById("cats");
+  box.innerHTML="";
+  var all=document.createElement("button"); all.textContent="전체 "+POSTS.length; all.className="active";
+  all.onclick=function(){curCat="전체";setActive(all);render();}; box.appendChild(all);
+  order.forEach(function(c){
+    var b=document.createElement("button"); b.textContent=c+" "+counts[c];
+    b.onclick=function(){curCat=c;setActive(b);render();}; box.appendChild(b);
+  });
+}
+function setActive(btn){[].forEach.call(document.getElementById("cats").children,function(x){x.classList.toggle("active",x===btn);});}
+
+function score(p,tokens,choMode){
+  if(choMode){ return p.cho.indexOf(tokens[0])>=0?1:0; }
+  var s=0;
+  for(var i=0;i<tokens.length;i++){
+    var variants=expand(tokens[i]).map(norm).filter(Boolean);
+    var hit=0,tHit=0;
+    for(var v=0;v<variants.length;v++){
+      if(!variants[v])continue;
+      if(p.hayTitle.indexOf(variants[v])>=0){tHit=1;hit=1;}
+      else if(p.hay.indexOf(variants[v])>=0){hit=1;}
+    }
+    if(!hit) return 0;          /* 모든 토큰이 매칭돼야 함(AND) */
+    s += tHit?3:1;
+  }
+  return s;
+}
+
+function hl(text,tokens){
+  if(!tokens.length) return esc(text);
+  var out=esc(text);
+  var words=[]; tokens.forEach(function(t){expand(t).forEach(function(w){if(w.length>=2)words.push(w);});});
+  words.sort(function(a,b){return b.length-a.length;});
+  words.forEach(function(w){
+    try{var re=new RegExp("("+w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi");out=out.replace(re,"<mark>$1</mark>");}catch(e){}
+  });
+  return out;
+}
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function render(){
+  var raw=document.getElementById("q").value.trim();
+  var nq=norm(raw);
+  var choMode=isAllCho(raw.replace(/\s+/g,"")) && raw.replace(/\s+/g,"").length>=2;
+  var tokens = choMode ? [raw.replace(/\s+/g,"")] : raw.split(/\s+/).map(norm).filter(Boolean);
+
+  var list=POSTS.filter(function(p){return curCat==="전체"||p.cat===curCat;});
+  if(tokens.length){
+    list=list.map(function(p){return {p:p,sc:score(p,tokens,choMode)};})
+             .filter(function(x){return x.sc>0;})
+             .sort(function(a,b){return b.sc-a.sc;})
+             .map(function(x){return x.p;});
+  }
+
+  var meta=document.getElementById("meta");
+  meta.textContent = raw ? ('“'+raw+'” 검색 결과 '+list.length+'건') : (curCat==="전체"?('전체 '+list.length+'편'):(curCat+' '+list.length+'편'));
+
+  var box=document.getElementById("results");
+  if(!list.length){
+    box.innerHTML='<div class="empty">검색 결과가 없습니다.<br>다른 단어로 검색하거나 카테고리를 눌러보세요.</div>';
+    return;
+  }
+  var htmlTokens = choMode? [] : tokens.length? raw.split(/\s+/).filter(Boolean):[];
+  box.innerHTML=list.map(function(p){
+    return '<a class="card" href="'+p.url+'" target="_blank" rel="noopener">'+
+      '<span class="pill" style="background:'+catColor(p.cat)+'">'+esc(p.cat)+'</span>'+
+      '<h3>'+hl(p.title,htmlTokens)+'</h3>'+
+      '<p>'+hl(p.summary,htmlTokens)+'</p>'+
+      '<span class="go">자세히 보기 →</span>'+
+    '</a>';
+  }).join("");
+}
+
+/* 입력 처리 */
+var q=document.getElementById("q"), clr=document.getElementById("clr"), tmr;
+q.addEventListener("input",function(){
+  clr.style.display=q.value?"block":"none";
+  clearTimeout(tmr); tmr=setTimeout(render,140);
+});
+clr.onclick=function(){q.value="";clr.style.display="none";render();q.focus();};
+
+/* 피드 로드 (JSONP) */
+(function(){
+  var s=document.createElement("script"); s.src=FEED; s.onerror=fail;
+  document.body.appendChild(s);
+  setTimeout(function(){ if(!POSTS.length) fail(); },8000);
+})();
+</script>
+</body>
+</html>
