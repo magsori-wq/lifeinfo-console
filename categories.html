@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1626">
+<title>카테고리 · 생활정보 모음</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;background:#0f1626;color:#e8edf7}
+  .wrap{max-width:760px;margin:0 auto;padding:16px 14px 60px}
+  h1{font-size:18px;margin:0 0 4px;font-weight:800}
+  .sub{color:#9fb0d0;font-size:13px;margin:0 0 16px;line-height:1.6}
+  .tools{display:flex;gap:8px;align-items:center;margin:0 0 14px;flex-wrap:wrap}
+  .tools button{cursor:pointer;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:700;font-family:inherit}
+  .cat{border:1px solid #2a3a5e;border-radius:14px;overflow:hidden;margin:0 0 12px;background:#131c30}
+  .cat-h{display:flex;align-items:center;gap:10px;cursor:pointer;padding:13px 16px;color:#fff;font-weight:800;font-size:16px;user-select:none}
+  .cat-h .code{font-size:12px;font-weight:800;background:rgba(255,255,255,.22);padding:2px 8px;border-radius:6px}
+  .cat-h .cnt{margin-left:auto;font-size:12.5px;font-weight:700;opacity:.92}
+  .cat-h .arw{transition:transform .2s;font-size:13px;opacity:.9}
+  .cat.collapsed .arw{transform:rotate(-90deg)}
+  .cat-body{padding:6px 14px 12px}
+  .cat.collapsed .cat-body{display:none}
+  .sub{margin:8px 0 2px}
+  .sub-h{font-size:13px;font-weight:800;color:#9fb0d0;margin:12px 2px 4px;display:flex;gap:8px;align-items:center}
+  .sub-h .code{font-size:11px;font-weight:700;color:#7fc1ff;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px}
+  .post{display:block;text-decoration:none;border-radius:10px;padding:9px 11px;margin:5px 0;background:#16203a;border:1px solid #233252}
+  .post:hover{border-color:#4d9de0}
+  .post .pcode{font-size:11px;font-weight:700;color:#8a97ab;margin-right:6px}
+  .post .ptitle{font-size:14.5px;font-weight:600;color:#e8edf7}
+  .post .pdesc{display:block;margin-top:3px;font-size:12.5px;color:#9fb0d0;line-height:1.55}
+  .load{text-align:center;color:#9fb0d0;padding:40px 10px;font-size:14px}
+  .foot{text-align:center;color:#5a6b8c;font-size:11.5px;margin-top:20px;line-height:1.7}
+  /* light theme (블로그 임베드: ?theme=light) */
+  html[data-theme="light"] body{background:#f7f9fc;color:#1f2a3d}
+  html[data-theme="light"] .sub{color:#5b6b86}
+  html[data-theme="light"] .tools button{background:#fff;border-color:#d7e0ee;color:#3a4a63}
+  html[data-theme="light"] .cat{background:#fff;border-color:#e2e8f2;box-shadow:0 1px 3px rgba(20,40,80,.04)}
+  html[data-theme="light"] .sub-h{color:#5b6b86}
+  html[data-theme="light"] .sub-h .code{color:#1b6fc2;border-color:#d7e0ee}
+  html[data-theme="light"] .post{background:#f7f9fc;border-color:#e2e8f2}
+  html[data-theme="light"] .post .ptitle{color:#1f2a3d}
+  html[data-theme="light"] .post .pdesc{color:#5b6b86}
+  html[data-theme="light"] .load,html[data-theme="light"] .foot{color:#8a97ab}
+</style>
+<script>(function(){try{if(new URLSearchParams(location.search).get('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+</head>
+<body>
+<div class="wrap">
+  <h1>🗂️ 카테고리 (코드 색인)</h1>
+  <p class="sub">분야별 코드로 정리한 전체 글입니다. 대분류를 눌러 펼치고 접을 수 있습니다.</p>
+  <div class="tools">
+    <button id="exp">전체 펼치기</button>
+    <button id="col">전체 접기</button>
+    <span id="meta" style="font-size:12.5px;color:#9fb0d0"></span>
+  </div>
+  <div id="tree"><div class="load">⏳ 데이터를 불러오는 중…</div></div>
+  <div class="foot">단일 데이터(lifeinfo_db) 기반 · 새 글이 등록되면 자동 반영됩니다.</div>
+</div>
+<script>
+var DB="lifeinfo_db.txt?t="+Date.now();
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+fetch(DB).then(function(r){return r.json();}).then(render).catch(fail);
+function fail(){document.getElementById("tree").innerHTML='<div class="load">목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>';}
+function render(db){
+  var byCat={};
+  db.posts.forEach(function(p){(byCat[p.sub]=byCat[p.sub]||[]).push(p);});
+  document.getElementById("meta").textContent="총 "+db.count+"편 · 대분류 "+db.taxonomy.length+"개";
+  var html=db.taxonomy.map(function(c){
+    var ccnt=db.posts.filter(function(p){return p.cat===c.code;}).length;
+    var body=c.subs.map(function(s){
+      var list=(byCat[s.code]||[]);
+      if(!list.length) return "";
+      var items=list.map(function(p){
+        return '<a class="post" href="'+p.url+'" target="_blank" rel="noopener">'+
+          '<span class="pcode">'+p.code+'</span><span class="ptitle">'+esc(p.title)+'</span>'+
+          '<span class="pdesc">'+esc(p.desc||"")+'</span></a>';
+      }).join("");
+      return '<div class="sub"><div class="sub-h"><span class="code">'+s.code+'</span>'+esc(s.name)+
+             ' <span style="font-weight:600;opacity:.8">('+list.length+')</span></div>'+items+'</div>';
+    }).join("");
+    return '<div class="cat" data-cat="'+c.code+'">'+
+      '<div class="cat-h" style="background:'+c.color+'" onclick="this.parentNode.classList.toggle(\'collapsed\')">'+
+      '<span class="arw">▾</span><span class="code">'+c.code+'</span>'+esc(c.name)+
+      '<span class="cnt">'+ccnt+'편</span></div>'+
+      '<div class="cat-body">'+body+'</div></div>';
+  }).join("");
+  document.getElementById("tree").innerHTML=html;
+}
+document.getElementById("exp").onclick=function(){document.querySelectorAll(".cat").forEach(function(c){c.classList.remove("collapsed");});};
+document.getElementById("col").onclick=function(){document.querySelectorAll(".cat").forEach(function(c){c.classList.add("collapsed");});};
+</script>
+</body>
+</html>
