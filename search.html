@@ -36,7 +36,29 @@
   .spin{display:inline-block;width:22px;height:22px;border:3px solid #2a3a5e;border-top-color:#4d9de0;border-radius:50%;animation:sp .8s linear infinite;vertical-align:-5px;margin-right:8px}
   @keyframes sp{to{transform:rotate(360deg)}}
   .foot{text-align:center;color:#5a6b8c;font-size:11.5px;margin-top:24px;line-height:1.7}
+  /* 라이트 테마 (블로그 임베드용: ?theme=light) */
+  html[data-theme="light"] body{background:#f7f9fc;color:#1f2a3d}
+  html[data-theme="light"] .searchbox{background:#f7f9fc}
+  html[data-theme="light"] .sub{color:#5b6b86}
+  html[data-theme="light"] .ipt input{background:#fff;border-color:#d7e0ee;color:#1f2a3d}
+  html[data-theme="light"] .ipt input:focus{border-color:#4d9de0}
+  html[data-theme="light"] .ipt .clr{background:#d7e0ee;color:#3a4a63}
+  html[data-theme="light"] .hint{color:#8a97ab}
+  html[data-theme="light"] .cats button{background:#fff;border-color:#d7e0ee;color:#3a4a63}
+  html[data-theme="light"] .cats button.active{background:#4d9de0;color:#fff;border-color:#4d9de0}
+  html[data-theme="light"] .meta{color:#5b6b86}
+  html[data-theme="light"] .card{background:#fff;border-color:#e2e8f2;box-shadow:0 1px 3px rgba(20,40,80,.04)}
+  html[data-theme="light"] .card:hover{border-color:#4d9de0}
+  html[data-theme="light"] .card h3{color:#1f2a3d}
+  html[data-theme="light"] .card h3 mark{background:#dff5cf;color:#3a6a1a}
+  html[data-theme="light"] .card p{color:#5b6b86}
+  html[data-theme="light"] .card .go{color:#1b6fc2}
+  html[data-theme="light"] .empty,html[data-theme="light"] .load{color:#8a97ab}
+  html[data-theme="light"] .empty a{color:#1b6fc2}
+  html[data-theme="light"] .foot{color:#9aa7bd}
+  html[data-theme="light"] .spin{border-color:#dce3ef;border-top-color:#4d9de0}
 </style>
+<script>(function(){try{var p=new URLSearchParams(location.search);if(p.get('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 </head>
 <body>
 <div class="wrap">
