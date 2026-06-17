@@ -22,8 +22,11 @@
   .cats button{cursor:pointer;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;border-radius:20px;padding:7px 12px;font-size:12.5px;font-weight:700;font-family:inherit}
   .cats button.active{background:#4d9de0;color:#fff;border-color:#4d9de0}
   .meta{font-size:12px;color:#9fb0d0;margin:14px 2px 8px}
-  .card{display:block;text-decoration:none;background:#16203a;border:1px solid #2a3a5e;border-radius:14px;padding:15px 16px;margin-bottom:11px;transition:border-color .15s}
+  .card{display:flex;gap:13px;align-items:flex-start;text-decoration:none;background:#16203a;border:1px solid #2a3a5e;border-radius:14px;padding:14px 15px;margin-bottom:11px;transition:border-color .15s}
   .card:hover{border-color:#4d9de0}
+  .card .thumb{flex:none;width:112px;aspect-ratio:1200/630;border-radius:10px;object-fit:cover;background:#0c1220;border:1px solid #233252}
+  .card .cbody{flex:1;min-width:0}
+  @media(max-width:480px){.card .thumb{width:88px}}
   .pill{display:inline-block;font-size:11px;font-weight:800;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:8px}
   .pill .c{opacity:.85;font-weight:700;margin-right:5px}
   .card h3{margin:0 0 7px;font-size:16px;color:#e8edf7;line-height:1.4;font-weight:700}
@@ -43,6 +46,7 @@
   html[data-theme="light"] .cats button.active{background:#4d9de0;color:#fff;border-color:#4d9de0}
   html[data-theme="light"] .meta{color:#5b6b86}
   html[data-theme="light"] .card{background:#fff;border-color:#e2e8f2;box-shadow:0 1px 3px rgba(20,40,80,.04)}
+  html[data-theme="light"] .card .thumb{background:#eef2f8;border-color:#e2e8f2}
   html[data-theme="light"] .card h3{color:#1f2a3d}
   html[data-theme="light"] .card p{color:#5b6b86}
   html[data-theme="light"] .card .go{color:#1b6fc2}
@@ -98,7 +102,7 @@ fetch(DB).then(function(r){return r.json();}).then(function(db){
   db.taxonomy.forEach(function(c){CATCOLOR[c.name]=c.color;});
   POSTS=db.posts.map(function(p){
     var hayRaw=p.title+" "+(p.desc||"")+" "+(p.tags||[]).join(" ")+" "+p.catName+" "+p.subName+" "+p.code;
-    return {title:p.title,url:p.url,cat:p.catName,sub:p.subName,code:p.code,summary:p.desc||"",
+    return {title:p.title,url:p.url,cat:p.catName,sub:p.subName,code:p.code,summary:p.desc||"",thumb:p.thumb||"",
             hay:norm(hayRaw),hayTitle:norm(p.title+" "+(p.tags||[]).join(" ")),cho:toCho((p.title).replace(/\s+/g,""))};
   });
   buildCats(db.taxonomy); render();
@@ -145,10 +149,13 @@ function render(){
   var ht=choMode?[]:raw.split(/\s+/).filter(Boolean);
   box.innerHTML=list.map(function(p){
     return '<a class="card" href="'+p.url+'" target="_blank" rel="noopener">'+
+      (p.thumb?('<img class="thumb" loading="lazy" alt="" src="thumbs/'+esc(p.thumb)+'" onerror="this.style.display=\'none\'">'):'')+
+      '<span class="cbody">'+
       '<span class="pill" style="background:'+(CATCOLOR[p.cat]||"#5b6b86")+'"><span class="c">'+p.code+'</span>'+esc(p.cat)+'</span>'+
       '<h3>'+hl(p.title,ht)+'</h3>'+
       '<p>'+hl(p.summary,ht)+'</p>'+
-      '<span class="go">자세히 보기 →</span></a>';
+      '<span class="go">자세히 보기 →</span>'+
+      '</span></a>';
   }).join("");
 }
 var q=document.getElementById("q"),clr=document.getElementById("clr"),tmr;
