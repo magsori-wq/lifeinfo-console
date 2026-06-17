@@ -24,8 +24,11 @@
   .sub{margin:8px 0 2px}
   .sub-h{font-size:13px;font-weight:800;color:#9fb0d0;margin:12px 2px 4px;display:flex;gap:8px;align-items:center}
   .sub-h .code{font-size:11px;font-weight:700;color:#7fc1ff;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px}
-  .post{display:block;text-decoration:none;border-radius:10px;padding:9px 11px;margin:5px 0;background:#16203a;border:1px solid #233252}
+  .post{display:flex;gap:10px;align-items:flex-start;text-decoration:none;border-radius:10px;padding:9px 11px;margin:5px 0;background:#16203a;border:1px solid #233252}
   .post:hover{border-color:#4d9de0}
+  .post .pthumb{flex:none;width:72px;aspect-ratio:1200/630;border-radius:7px;object-fit:cover;background:#0c1220;border:1px solid #233252}
+  .post .pbody{flex:1;min-width:0}
+  @media(max-width:480px){.post .pthumb{width:60px}}
   .post .pcode{font-size:11px;font-weight:700;color:#8a97ab;margin-right:6px}
   .post .ptitle{font-size:14.5px;font-weight:600;color:#e8edf7}
   .post .pdesc{display:block;margin-top:3px;font-size:12.5px;color:#9fb0d0;line-height:1.55}
@@ -39,6 +42,7 @@
   html[data-theme="light"] .sub-h{color:#5b6b86}
   html[data-theme="light"] .sub-h .code{color:#1b6fc2;border-color:#d7e0ee}
   html[data-theme="light"] .post{background:#f7f9fc;border-color:#e2e8f2}
+  html[data-theme="light"] .post .pthumb{background:#eef2f8;border-color:#e2e8f2}
   html[data-theme="light"] .post .ptitle{color:#1f2a3d}
   html[data-theme="light"] .post .pdesc{color:#5b6b86}
   html[data-theme="light"] .load,html[data-theme="light"] .foot{color:#8a97ab}
@@ -73,8 +77,11 @@ function render(db){
       if(!list.length) return "";
       var items=list.map(function(p){
         return '<a class="post" href="'+p.url+'" target="_blank" rel="noopener">'+
+          (p.thumb?('<img class="pthumb" loading="lazy" alt="" src="thumbs/'+esc(p.thumb)+'" onerror="this.style.display=\'none\'">'):'')+
+          '<span class="pbody">'+
           '<span class="pcode">'+p.code+'</span><span class="ptitle">'+esc(p.title)+'</span>'+
-          '<span class="pdesc">'+esc(p.desc||"")+'</span></a>';
+          '<span class="pdesc">'+esc(p.desc||"")+'</span>'+
+          '</span></a>';
       }).join("");
       return '<div class="sub"><div class="sub-h"><span class="code">'+s.code+'</span>'+esc(s.name)+
              ' <span style="font-weight:600;opacity:.8">('+list.length+')</span></div>'+items+'</div>';
