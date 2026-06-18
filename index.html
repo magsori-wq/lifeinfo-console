@@ -51,6 +51,7 @@
       <button data-t="osmu">OSMU</button>
       <button data-t="jisikin">지식인</button>
       <button data-t="dashboard">대시보드</button>
+      <button data-t="about">ℹ️ 소개</button>
     </nav>
   </div>
 
@@ -101,6 +102,45 @@
       </div>
     </div>
 
+    <div id="p_about" class="panel">
+      <div class="d-wrap">
+        <h2>ℹ️ 생활정보 모음 소개</h2>
+        <p class="sub">정부지원금·세금·연금·건강보험·생활행정·여행처럼 <b>‘몰라서 손해 보기 쉬운’ 정보</b>를 누구나 바로 행동할 수 있게 쉽고 정확하게 정리하는 블로그입니다.</p>
+
+        <div class="card">
+          <h3>어떤 블로그인가요?</h3>
+          <p>복잡한 제도와 흩어진 공식 정보를 한곳에 모아 <b>신청·조회·발급·계산</b>까지 실제로 끝낼 수 있게 안내합니다. 어려운 행정 용어 대신 자격·금액·신청기간·신청방법을 표와 단계별 순서로 풀어 드립니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>누구에게 도움이 되나요?</h3>
+          <p>특히 <b>40~60대</b> 독자가 자주 찾는 주제를 중심으로 다룹니다. 지원금을 챙기려는 분, 세금·연금을 정확히 알고 싶은 분, 가족의 혜택을 대신 알아보는 분 모두에게 길잡이가 되고자 합니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>다루는 분야</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+            <span style="background:#2BC4B0;color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px">정부지원</span>
+            <span style="background:#4D9DE0;color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px">세금·금융</span>
+            <span style="background:#E76F51;color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px">건강·보험</span>
+            <span style="background:#2EB67D;color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px">생활·행정</span>
+            <span style="background:#4361C9;color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px">IT·디지털</span>
+            <span style="background:#7C5CE0;color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px">해외여행</span>
+            <span style="background:#15A371;color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px">국내여행</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>우리의 약속</h3>
+          <p>· <b>정확성 우선</b> — 가능한 한 공식 출처(.go.kr)로 수치·기간 확인<br>
+          · <b>투명한 기준</b> — 글마다 ‘정보 기준일·출처’ 표기<br>
+          · <b>빠른 수정</b> — 변경·오류 제보 시 신속 반영</p>
+        </div>
+
+        <div class="note">운영자: 이상곤 · 문의는 각 글의 댓글 또는 운영자 프로필로 남겨 주세요.</div>
+      </div>
+    </div>
+
     <iframe id="f_search" src="search.html"></iframe>
     <iframe id="f_categories" src="categories.html"></iframe>
     <iframe id="f_generator" src="generator.html"></iframe>
@@ -120,6 +160,7 @@
     [].forEach.call(nav.children,function(x){x.classList.toggle('active',x===b);});
     iframes.forEach(function(n){document.getElementById('f_'+n).classList.toggle('show',n===t);});
     document.getElementById('p_dispatch').classList.toggle('show',t==='dispatch');
+    document.getElementById('p_about').classList.toggle('show',t==='about');
   });
 
   var CAT_URL="https://lifeinfo8975.blogspot.com/p/blog-page_15.html";
