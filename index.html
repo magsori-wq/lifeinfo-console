@@ -96,6 +96,13 @@
         </div>
 
         <div class="card">
+          <h3>🛡️ 댓글 대응 — 검증·답변 초안</h3>
+          <p>부정견해·사실오류 댓글을 <b>웹·유튜브로 정밀검증</b>해 출처 단 답변 초안과 메일을 만듭니다. <b>게시는 항상 승인 후</b>(자동 반박 금지).</p>
+          <button class="btn go" onclick="dispatchComments()">🤖 Claude에게 맡기기 (프롬프트 복사)</button>
+          <p class="note">복사된 프롬프트를 <b>Claude Code(데스크톱 앱)</b>에 붙여넣으면 → 최근 댓글 점검 → 검증 리포트 + 답변 초안 2종 → <b>Gmail 초안</b>으로 받아봅니다. 댓글 게시·삭제는 건별 확인 후 진행.</p>
+        </div>
+
+        <div class="card">
           <h3>🚀 바로가기 (발행·관리)</h3>
           <p>Claude가 만든 글을 여기서 발행하고 상태를 확인하세요.</p>
           <div class="links">
@@ -233,6 +240,17 @@
       "1) C:\\lifeinfo 에서 `python -m studio.pipeline trends` 실행 → 구글뉴스 트렌드 글감 갱신.\n"+
       "2) webapp/trends.txt 의 fetched_at 이 방금 시각으로 갱신됐고 카테고리별 항목이 수집됐는지 확인해 알려줘.\n"+
       "3) 끝나면 deploy.bat 실행(배포 push)을 안내해줘. push는 내가 직접 한다.";
+    navigator.clipboard.writeText(p).then(toast,function(){});
+    showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
+  }
+  function dispatchComments(){
+    var p="생활정보 모음 블로그 댓글을 점검·대응해줘. (가드레일: 게시 전 반드시 내 승인)\n\n"+
+      "1) 최근 댓글 수집: Blogger 댓글 피드(lifeinfo8975.blogspot.com/feeds/comments/default?alt=json)로 신규 댓글 읽기. (네이버는 Chrome 확장 연결돼 있으면 관리화면에서 읽기)\n"+
+      "2) 분류: 각 댓글을 [호평/질문/부정견해/사실오류/악성·스팸]으로 라벨. 부정견해·사실오류만 대응 대상.\n"+
+      "3) 정밀검증: 대상 댓글 주장을 웹·유튜브로 조사(WebSearch/WebFetch/deep-research)해 사실/부분사실/오류 판정 + 1차 출처(.go.kr 등)·기준일 첨부.\n"+
+      "4) 산출: 댓글별 검증 리포트 + 답변 초안 2종(공손·보완형 / 팩트·간결형, 싸우지 않는 톤, 출처 1개 자연 삽입).\n"+
+      "5) 전달: 결과를 magsori@gmail.com Gmail 초안으로 저장(발송 X). 댓글 게시·삭제는 내가 승인한 것만 브라우저로 진행.\n\n"+
+      "원칙: 검증 안 된 자동 반박 금지, 정확성 우선(출처 없으면 게시 안 함), 악성·명예훼손성은 반박 대신 삭제/숨김/무대응 제안.";
     navigator.clipboard.writeText(p).then(toast,function(){});
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
