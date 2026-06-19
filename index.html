@@ -45,6 +45,7 @@
     <div class="brand">📊 운영 콘솔 <span class="dot">·</span> 생활정보 모음</div>
     <nav id="nav">
       <button data-t="dispatch" class="active">⚡ 디스패치</button>
+      <button data-t="trends">📰 글감</button>
       <button data-t="search">🔎 검색</button>
       <button data-t="categories">🗂️ 분류</button>
       <button data-t="generator">글 생성기</button>
@@ -141,6 +142,14 @@
       </div>
     </div>
 
+    <div id="p_trends" class="panel">
+      <div class="d-wrap">
+        <h2>📰 구글뉴스 트렌드 글감 <span style="font-size:12px;color:#9fb0d0" id="trendFresh">—</span></h2>
+        <p class="sub">카테고리별 <b>지금 이슈</b>를 보고, <b>✍️ 이 주제로</b>를 누르면 글 작성 프롬프트(제목공식+내부링크+채널 연계 지시 포함)가 복사되고 Claude가 열립니다.</p>
+        <div id="trendBox"><p class="note">불러오는 중…</p></div>
+      </div>
+    </div>
+
     <iframe id="f_search" src="search.html"></iframe>
     <iframe id="f_categories" src="categories.html"></iframe>
     <iframe id="f_generator" src="generator.html"></iframe>
@@ -161,6 +170,8 @@
     iframes.forEach(function(n){document.getElementById('f_'+n).classList.toggle('show',n===t);});
     document.getElementById('p_dispatch').classList.toggle('show',t==='dispatch');
     document.getElementById('p_about').classList.toggle('show',t==='about');
+    document.getElementById('p_trends').classList.toggle('show',t==='trends');
+    if(t==='trends')loadTrends();
   });
 
   var CAT_URL="https://lifeinfo8975.blogspot.com/p/blog-page_15.html";
@@ -172,8 +183,9 @@
       "1) 제목은 [메인 키워드]+[연관 검색어]+[숫자/총정리] 공식으로.\n"+
       "2) 도입부 2~3문장(검색 의도 자극) + 소제목 4개 + 각 소제목 본문.\n"+
       "3) 지원금·세금·대출·연금이면 자격/금액/신청기간/방법을 정확히, '발행 전 공식 사이트에서 최신 확인' 안내 포함.\n"+
-      "4) 마지막에 '함께 보면 좋은 글' 내부링크 2개 자리 표시.\n"+
-      "5) 최신 수치는 웹 검색으로 확인해 반영.\n"+
+      "4) 체류시간↑ 위한 내부 연계: 카테고리 페이지("+CAT_URL+")에서 같은 분야 관련글 2~3개를 골라 본문 중간(자연스러운 맥락)과 끝 '함께 보면 좋은 글'에 내부링크+버튼으로 연결(앵커텍스트는 관련글 제목).\n"+
+      "5) 채널 연계: 네이버 블로그·쓰레드용으로도 재가공 가능하게 핵심 3줄 요약을 따로 덧붙여줘(OSMU 확산용).\n"+
+      "6) 최신 수치는 웹 검색으로 확인해 반영.\n"+
       "결과는 블로그스팟 HTML 본문(.lsg 양식: 카테고리 pill+목차+CTA버튼+표+마무리+관련글)으로 바로 붙여넣을 수 있게 정리해줘.";
     }
     if(kind==='ideas'){
@@ -198,6 +210,66 @@
     navigator.clipboard.writeText(p).then(function(){toast();},function(){});
     showOut(p);
     window.open('https://claude.ai/new','_blank','noopener');
+  }
+
+  /* ---------- 📰 트렌드 글감 (trends.txt = 구글뉴스 RSS 수집물) ---------- */
+  var _trendsLoaded=false;
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function freshLabel(iso){
+    if(!iso)return '';
+    var d=new Date(iso.replace(' ','T')), h=Math.round((Date.now()-d.getTime())/3600000);
+    if(isNaN(h))return '';
+    return '· 기준: '+(h<1?'1시간 이내':(h<24?h+'시간 전':Math.round(h/24)+'일 전'))+(h>=24?' (새로고침 권장)':'');
+  }
+  function trendWrite(title){
+    document.getElementById('topic').value=title;     // 디스패치 주제칸 채움
+    dispatch('post');                                  // 기존 흐름 재사용(프롬프트=내부링크+채널연계 포함)
+  }
+  function loadTrends(){
+    if(_trendsLoaded)return; _trendsLoaded=true;
+    fetch('trends.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(d){
+      document.getElementById('trendFresh').textContent=freshLabel(d.fetched_at);
+      var box=document.getElementById('trendBox'); box.innerHTML='';
+      // 🔥 핫이슈
+      if(d.hot&&d.hot.length){
+        var hc=document.createElement('div'); hc.className='card';
+        hc.innerHTML='<h3>🔥 지금 가장 많이 다뤄지는 이슈</h3>';
+        d.hot.forEach(function(h){
+          var row=document.createElement('div'); row.style.cssText='display:flex;gap:8px;align-items:flex-start;margin:8px 0;font-size:13px';
+          row.innerHTML='<span style="flex:1;color:#cdd8ee"><b style="color:#ffd166">#'+esc(h.keyword)+'</b> '+esc(h.title)+' <span style="color:#9fb0d0">· '+esc(h.cat)+'</span></span>';
+          var b=document.createElement('button'); b.className='btn alt'; b.style.cssText='width:auto;margin:0;padding:7px 11px;font-size:12px'; b.textContent='✍️ 이 주제로';
+          b.onclick=function(){trendWrite(h.title);};
+          row.appendChild(b); hc.appendChild(row);
+        });
+        box.appendChild(hc);
+      }
+      // 카테고리별
+      d.categories.forEach(function(c){
+        var card=document.createElement('div'); card.className='card';
+        var head='<h3>'+esc(c.label)+'</h3>';
+        if(!c.fetchable){
+          card.innerHTML=head+'<p class="note" style="margin:0">개인화 항목이라 자동 수집이 안 됩니다. 구글뉴스 앱/웹에서 직접 확인하세요.</p>';
+          box.appendChild(card); return;
+        }
+        if(c.angle)head+='<p style="margin:0 0 8px;color:#7fc1ff;font-size:12px">💡 블로그 각도: '+esc(c.angle)+'</p>';
+        card.innerHTML=head;
+        if(!c.items||!c.items.length){
+          card.innerHTML+='<p class="note" style="margin:0">'+(c.error?'수집 오류':'표시할 항목이 없습니다')+'</p>';
+          box.appendChild(card); return;
+        }
+        c.items.forEach(function(it){
+          var row=document.createElement('div'); row.style.cssText='display:flex;gap:8px;align-items:flex-start;margin:7px 0;font-size:13px;border-top:1px solid #22304e;padding-top:7px';
+          row.innerHTML='<span style="flex:1;color:#e8edf7">'+esc(it.title)+(it.source?' <span style="color:#9fb0d0;font-size:11px">· '+esc(it.source)+'</span>':'')+'</span>';
+          var b=document.createElement('button'); b.className='btn alt'; b.style.cssText='width:auto;margin:0;padding:7px 11px;font-size:12px;white-space:nowrap'; b.textContent='✍️ 이 주제로';
+          b.onclick=function(){trendWrite(it.title);};
+          row.appendChild(b); card.appendChild(row);
+        });
+        box.appendChild(card);
+      });
+    }).catch(function(){
+      _trendsLoaded=false;
+      document.getElementById('trendBox').innerHTML='<p class="note">트렌드를 불러올 수 없습니다. PC에서 <b>python -m studio.pipeline trends</b> 실행 후 deploy.bat 하면 채워집니다.</p>';
+    });
   }
 </script>
 </body>
