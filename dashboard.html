@@ -89,6 +89,36 @@
   table.perf .pc{display:inline-block;font-size:9px;font-weight:800;color:#04221a;padding:1px 6px;border-radius:9px;margin-right:6px;vertical-align:middle}
   table.perf a{color:#cdd8ee;text-decoration:none}
   table.perf a:hover{color:#7fc1ff}
+  /* 채널별 현황 */
+  .chan-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.chan-grid{grid-template-columns:1fr}}
+  .chan{background:#0c1220;border:1px solid #2a3a5e;border-left:4px solid #4d9de0;border-radius:12px;padding:13px}
+  .chan h3{margin:0 0 9px;font-size:14px;display:flex;align-items:center;gap:7px}
+  .chan h3 .auto{margin-left:auto;font-size:10px;font-weight:700;color:#06d6a0;background:#0c3a2c;border:1px solid #1f6b52;border-radius:20px;padding:1px 8px}
+  .chan .big{font-size:24px;font-weight:800;margin-bottom:8px}
+  .chan .idline{margin-bottom:8px}
+  .chan .idline input{width:100%;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:7px;padding:8px 9px;font-size:13px;font-family:inherit}
+  .chan .mrow{display:flex;gap:8px;margin-bottom:8px}
+  .chan .mrow .mi{flex:1}
+  .chan .mrow label{display:block;font-size:10px;color:#9fb0d0;margin:0 0 3px}
+  .chan .mrow input{width:100%;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:7px;padding:7px;font-size:13px;font-family:inherit}
+  .chan textarea{width:100%;height:40px;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:7px;padding:7px;font-size:12px;resize:vertical;margin-bottom:8px;font-family:inherit}
+  .chan .clinks{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .chan .clinks a{font-size:11px;font-weight:700;text-decoration:none;background:#16203a;border:1px solid #2a3a5e;color:#cdd8ee;border-radius:7px;padding:6px 9px}
+  /* OSMU 교차발행 매트릭스 */
+  .osmu-sum{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;margin-bottom:10px}
+  .osmu-sum span{color:#cdd8ee}.osmu-sum b{color:#06d6a0}
+  .osmu-wrap{max-height:430px;overflow:auto;border:1px solid #2a3a5e;border-radius:10px}
+  table.osmu{width:100%;border-collapse:collapse;font-size:12px}
+  table.osmu th{position:sticky;top:0;background:#1b2742;color:#7fc1ff;font-size:11px;padding:8px 5px;z-index:1}
+  table.osmu th:first-child{text-align:left}
+  table.osmu td{padding:6px 5px;border-bottom:1px solid #22304e;text-align:center}
+  table.osmu td:first-child{text-align:left;white-space:normal;min-width:150px}
+  table.osmu tr:last-child td{border-bottom:none}
+  table.osmu input{width:18px;height:18px;accent-color:#06d6a0;cursor:pointer}
+  table.osmu .pc{display:inline-block;font-size:9px;font-weight:800;color:#04221a;padding:1px 6px;border-radius:9px;margin-right:6px;vertical-align:middle}
+  table.osmu a{color:#cdd8ee;text-decoration:none}
+  table.osmu a:hover{color:#7fc1ff}
 </style>
 </head>
 <body>
@@ -168,6 +198,34 @@
       </tr></thead><tbody id="perfBody"><tr><td colspan="5" class="empty">불러오는 중…</td></tr></tbody></table>
     </div>
     <div class="note">💡 노출·클릭은 GSC에서만 제공돼 붙여넣기로 반영합니다(숫자 셀을 눌러 직접 수정 가능). 댓글은 블로그에서 자동으로 가져옵니다.</div>
+  </div>
+
+  <!-- 채널별 현황 -->
+  <div class="sect">
+    <h2>📣 채널별 현황 <span class="tag man">수기 + 링크</span></h2>
+    <p class="note" style="margin:0 0 10px">채널 ID/핸들과 지표를 적어두면 이 기기에 저장돼요. 구글 Blogger만 글 수가 자동 반영됩니다.</p>
+    <div class="chan-grid" id="chanGrid"></div>
+  </div>
+
+  <!-- OSMU 교차발행 추적 -->
+  <div class="sect">
+    <h2>🔁 OSMU 교차발행 추적 <span class="tag man">직접 체크</span></h2>
+    <div class="osmu-sum" id="osmuSum">—</div>
+    <div class="perf-ctl">
+      <select id="osmuFilter">
+        <option value="">전체 글</option>
+        <option value="naver">네이버 미발행만</option>
+        <option value="threads">쓰레드 미발행만</option>
+        <option value="insta">인스타 미발행만</option>
+        <option value="jisikin">지식인 미발행만</option>
+      </select>
+    </div>
+    <div class="osmu-wrap">
+      <table class="osmu"><thead><tr>
+        <th>글</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>지식인</th>
+      </tr></thead><tbody id="osmuBody"><tr><td colspan="5" class="empty">불러오는 중…</td></tr></tbody></table>
+    </div>
+    <div class="note">💡 글을 각 채널에 재가공·게시했으면 체크하세요. 빈 칸이 곧 '오늘 할 OSMU 작업'입니다. (디스패치 → OSMU 변환으로 초안 생성)</div>
   </div>
 
   <!-- 지표 기록 (수기) -->
@@ -334,6 +392,8 @@
     renderPerf();
     fetchComments().then(function(r){PERF.comments=r.map;PERF.matched=r.matched;renderPerf();})
       .catch(function(){PERF.comments={};PERF.matched=0;renderPerf();});
+    renderChannels(posts.length);
+    renderOsmu();
   }
   function perfRows(){
     var perf=loadPerf();
@@ -423,6 +483,87 @@
     document.getElementById('gscMsg').textContent='✅ '+applied+'개 글 반영'+(unmatched?(' · 매칭 안 됨 '+unmatched+'줄(이 블로그 글 URL 아님)'):'');
   }
   document.getElementById('perfSort').addEventListener('change',renderPerf);
+
+  /* ---------- 채널별 현황 + OSMU 교차발행 (수기, localStorage) ---------- */
+  var OSMU_CH=[['naver','네이버'],['threads','쓰레드'],['insta','인스타'],['jisikin','지식인']];
+  var CHAN_DEF=[
+    {key:'blogger',name:'구글 Blogger',icon:'🔵',color:'#06b07a',auto:true,
+      links:function(){return [{t:'글쓰기',u:'https://www.blogger.com/blog/posts/4026928033017788339'},{t:'통계',u:'https://www.blogger.com/blog/stats/4026928033017788339'},{t:'블로그',u:'https://lifeinfo8975.blogspot.com/'}];}},
+    {key:'naver',name:'네이버 블로그',icon:'🟢',color:'#2DB400',idLabel:'블로그 ID',m:[['이웃','m1'],['게시글','m2']],
+      links:function(id){return id?[{t:'블로그',u:'https://blog.naver.com/'+id},{t:'글쓰기',u:'https://blog.naver.com/'+id+'?Redirect=Write'}]:[];}},
+    {key:'threads',name:'쓰레드',icon:'🧵',color:'#9aa6bd',idLabel:'핸들(@ 제외)',idDefault:'magsori8975',m:[['팔로워','m1'],['게시물','m2']],
+      links:function(id){return id?[{t:'프로필',u:'https://www.threads.com/@'+id}]:[];}},
+    {key:'insta',name:'인스타그램',icon:'📸',color:'#C13584',idLabel:'핸들(@ 제외)',m:[['팔로워','m1'],['게시물','m2']],
+      links:function(id){return id?[{t:'프로필',u:'https://www.instagram.com/'+id+'/'}]:[];}},
+    {key:'jisikin',name:'지식인',icon:'❓',color:'#19CE60',m:[['답변','m1'],['채택','m2']],
+      links:function(){return [{t:'내 활동',u:'https://kin.naver.com/mynotes/index.naver'},{t:'답변할 질문',u:'https://kin.naver.com/qna/list.naver'}];}}
+  ];
+  function loadChan(){try{return JSON.parse(localStorage.getItem('lsg_channels'))||{};}catch(e){return {};}}
+  function saveChan(o){localStorage.setItem('lsg_channels',JSON.stringify(o));}
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function renderChannels(blogCount){
+    var data=loadChan();var g=document.getElementById('chanGrid');g.innerHTML='';
+    CHAN_DEF.forEach(function(c){
+      var cd=data[c.key]||{};
+      var id=(c.key==='threads'&&cd.id===undefined)?(c.idDefault||''):(cd.id||'');
+      var div=document.createElement('div');div.className='chan';div.style.borderLeftColor=c.color;
+      var h='<h3>'+c.icon+' '+c.name+(c.auto?'<span class="auto">자동</span>':'')+'</h3>';
+      if(c.auto){
+        h+='<div class="big">'+(blogCount!=null?blogCount:'…')+'<span style="font-size:12px;color:#9fb0d0;font-weight:600"> 편 발행</span></div>';
+      }else{
+        if(c.idLabel)h+='<div class="idline"><input data-ck="'+c.key+'" data-f="id" placeholder="'+c.idLabel+'" value="'+esc(id)+'"></div>';
+        h+='<div class="mrow">'+c.m.map(function(mm){
+          return '<div class="mi"><label>'+mm[0]+'</label><input type="number" inputmode="numeric" data-ck="'+c.key+'" data-f="'+mm[1]+'" value="'+(cd[mm[1]]||'')+'"></div>';
+        }).join('')+'</div>';
+        h+='<textarea data-ck="'+c.key+'" data-f="note" placeholder="메모 / 최근 활동일">'+esc(cd.note)+'</textarea>';
+      }
+      h+='<div class="clinks"></div>';
+      div.innerHTML=h;g.appendChild(div);
+      var lc=div.querySelector('.clinks');
+      var links=c.links(id)||[];
+      links.forEach(function(l){var a=document.createElement('a');a.href=l.u;a.target='_blank';a.rel='noopener';a.textContent=l.t;lc.appendChild(a);});
+      if(!c.auto&&!links.length&&c.idLabel){var s=document.createElement('span');s.style.cssText='font-size:11px;color:#9fb0d0';s.textContent='↑ ID 입력 시 바로가기 생성';lc.appendChild(s);}
+    });
+    [].forEach.call(g.querySelectorAll('input,textarea'),function(el){
+      el.addEventListener('change',function(){
+        var d=loadChan();var k=el.getAttribute('data-ck');d[k]=d[k]||{};
+        var f=el.getAttribute('data-f');
+        d[k][f]= el.type==='number'? (parseInt(String(el.value).replace(/[^0-9]/g,''),10)||0) : el.value;
+        saveChan(d);
+        if(f==='id')renderChannels(blogCount);
+      });
+    });
+  }
+  function loadOsmu(){try{return JSON.parse(localStorage.getItem('lsg_osmu'))||{};}catch(e){return {};}}
+  function saveOsmu(o){localStorage.setItem('lsg_osmu',JSON.stringify(o));}
+  function renderOsmu(){
+    if(!PERF.posts.length)return;
+    var data=loadOsmu();var filter=document.getElementById('osmuFilter').value;
+    var counts={};OSMU_CH.forEach(function(c){counts[c[0]]=0;});
+    PERF.posts.forEach(function(p){var r=data[p.code]||{};OSMU_CH.forEach(function(c){if(r[c[0]])counts[c[0]]++;});});
+    var tot=PERF.posts.length;
+    document.getElementById('osmuSum').innerHTML=OSMU_CH.map(function(c){
+      return '<span>'+c[1]+' <b>'+counts[c[0]]+'</b>/'+tot+' ('+Math.round(counts[c[0]]/tot*100)+'%)</span>';
+    }).join('');
+    var rows=PERF.posts.slice();
+    if(filter)rows=rows.filter(function(p){return !(data[p.code]||{})[filter];});
+    var b=document.getElementById('osmuBody');b.innerHTML='';
+    if(!rows.length){b.innerHTML='<tr><td colspan="5" class="empty">해당 채널은 모든 글이 완료됐어요 🎉</td></tr>';return;}
+    rows.forEach(function(p){
+      var r=data[p.code]||{};var col=PERF.colors[p.cat]||'#4d9de0';
+      var tds=OSMU_CH.map(function(ch){return '<td><input type="checkbox" data-oc="'+p.code+'" data-ch="'+ch[0]+'" '+(r[ch[0]]?'checked':'')+'></td>';}).join('');
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td><span class="pc" style="background:'+col+'">'+p.code+'</span><a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a></td>'+tds;
+      b.appendChild(tr);
+    });
+    [].forEach.call(b.querySelectorAll('input[type=checkbox]'),function(cb){
+      cb.addEventListener('change',function(){
+        var d=loadOsmu();var k=cb.getAttribute('data-oc');d[k]=d[k]||{};
+        d[k][cb.getAttribute('data-ch')]=cb.checked?1:0;saveOsmu(d);renderOsmu();
+      });
+    });
+  }
+  document.getElementById('osmuFilter').addEventListener('change',renderOsmu);
 
   /* ---------- 지표 기록(수기, localStorage) ---------- */
   function loadKpi(){try{return JSON.parse(localStorage.getItem('lsg_kpi'))||[];}catch(e){return [];}}
