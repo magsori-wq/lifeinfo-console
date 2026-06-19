@@ -119,6 +119,15 @@
   table.osmu .pc{display:inline-block;font-size:9px;font-weight:800;color:#04221a;padding:1px 6px;border-radius:9px;margin-right:6px;vertical-align:middle}
   table.osmu a{color:#cdd8ee;text-decoration:none}
   table.osmu a:hover{color:#7fc1ff}
+  /* 연계 도구 */
+  .link-tools select,.link-tools input{width:100%;background:#0c1220;border:1px solid #2a3a5e;color:#e8edf7;border-radius:8px;padding:9px;font-size:14px;font-family:inherit}
+  .link-tools input{font-size:13px;margin:4px 0}
+  .link-sub{font-size:13px;color:#7fc1ff;font-weight:700;margin:14px 0 6px;display:flex;align-items:center;gap:7px}
+  .link-tools .rl{font-size:13px;padding:6px 0;border-bottom:1px dashed #2a3a5e;color:#cdd8ee}
+  .link-tools .rl:last-child{border-bottom:none}
+  .link-tools .rl .pc{display:inline-block;font-size:9px;font-weight:800;color:#04221a;padding:1px 6px;border-radius:9px;margin-right:6px;vertical-align:middle}
+  .copybox{background:#0c1220;border:1px solid #2a3a5e;border-radius:8px;padding:9px;font-size:11px;color:#9fb0d0;font-family:monospace;white-space:pre-wrap;word-break:break-all;max-height:108px;overflow:auto;margin:8px 0 6px}
+  .cbtn{cursor:pointer;border:none;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:800;background:#4d9de0;color:#fff;font-family:inherit}
 </style>
 </head>
 <body>
@@ -233,6 +242,26 @@
       </tr></thead><tbody id="osmuBody"><tr><td colspan="5" class="empty">불러오는 중…</td></tr></tbody></table>
     </div>
     <div class="note">💡 글을 각 채널에 재가공·게시했으면 체크하세요. 빈 칸이 곧 '오늘 할 OSMU 작업'입니다. (디스패치 → OSMU 변환으로 초안 생성)</div>
+  </div>
+
+  <!-- 연계 도구 (내부링크 + 채널 교차링크) -->
+  <div class="sect link-tools">
+    <h2>🔗 연계 도구 — 체류·노출 ↑ <span class="tag live">DB 실시간</span></h2>
+    <p class="note" style="margin:0 0 8px">글을 고르면 ①같은 분야 <b>관련글 내부링크</b>와 ②<b>채널 교차링크</b> HTML을 만들어 줍니다. 본문 끝에 붙여 넣으면 독자가 글 사이를 오가 체류시간이 늘어요.</p>
+    <select id="linkPost"><option>불러오는 중…</option></select>
+
+    <div class="link-sub">📎 관련글 내부링크 <span style="color:#9fb0d0;font-weight:400;font-size:11px">(같은 중분류·태그 기준 자동 추천)</span></div>
+    <div id="relList"></div>
+    <div class="copybox" id="relBox">—</div>
+    <button class="cbtn" id="relCopy">📋 '함께 보면 좋은 글' HTML 복사</button>
+
+    <div class="link-sub">🔀 채널 교차링크 <span style="color:#9fb0d0;font-weight:400;font-size:11px">(이 글의 네이버·쓰레드 버전 URL 입력 → 저장)</span></div>
+    <input id="lkNaver" placeholder="네이버 블로그 글 URL (선택)">
+    <input id="lkThreads" placeholder="쓰레드 글 URL (선택)">
+    <input id="lkJisikin" placeholder="지식인 답변 URL (선택)">
+    <div class="copybox" id="chBox">URL을 입력하면 교차링크 HTML이 생성됩니다.</div>
+    <button class="cbtn" id="chCopy">📋 '다른 채널에서 보기' HTML 복사</button>
+    <div class="note" style="margin-top:8px">💡 구글 본문엔 <b>채널 교차링크</b>를, 네이버·쓰레드 글엔 위 '관련글'과 <b>원본(구글) 링크</b>를 넣으면 채널끼리 유입이 돕니다.</div>
   </div>
 
   <!-- 지표 기록 (수기) -->
@@ -420,6 +449,7 @@
       .catch(function(){PERF.comments={};PERF.matched=0;renderPerf();});
     renderChannels(posts.length);
     renderOsmu();
+    initLinkTool();
   }
   function perfRows(){
     var perf=loadPerf();
@@ -590,6 +620,87 @@
     });
   }
   document.getElementById('osmuFilter').addEventListener('change',renderOsmu);
+
+  /* ---------- 🔗 연계 도구 (관련글 내부링크 + 채널 교차링크) ---------- */
+  function _ltoks(t){return new Set((t||'').split(/[\s,·\-—()\[\]\/'"]+/).filter(function(w){return w.length>=2&&!/^\d+$/.test(w);}));}
+  function relScore(target,cand){
+    if(cand.code===target.code)return -1;
+    var s=0;
+    if(target.sub&&cand.sub===target.sub)s+=4;
+    else if(target.cat&&cand.cat===target.cat)s+=2;
+    var tt=new Set(target.tags||[]),ov=0; (cand.tags||[]).forEach(function(x){if(tt.has(x))ov++;}); s+=2*ov;
+    var a=_ltoks(target.title),to=0; _ltoks(cand.title).forEach(function(x){if(a.has(x))to++;}); s+=to;
+    return s;
+  }
+  function relatedFor(code,n){
+    var t=null; PERF.posts.forEach(function(p){if(p.code===code)t=p;}); if(!t)return [];
+    return PERF.posts.map(function(p){return {p:p,s:relScore(t,p)};})
+      .filter(function(x){return x.s>0;})
+      .sort(function(a,b){return (b.s-a.s)||(a.p.code<b.p.code?-1:1);})
+      .slice(0,n||3).map(function(x){return x.p;});
+  }
+  function loadLinks(){try{return JSON.parse(localStorage.getItem('lsg_links'))||{};}catch(e){return {};}}
+  function saveLinksAll(o){localStorage.setItem('lsg_links',JSON.stringify(o));}
+  function relBlock(rel){
+    return '<div class="rel"><b>🔗 함께 보면 좋은 글</b>'+rel.map(function(p){
+      return '<a href="'+p.url+'">▸ '+p.title+'</a>';}).join('')+'</div>';
+  }
+  function chBlock(urls){
+    var names={naver:'네이버 블로그',threads:'쓰레드',jisikin:'지식인'};
+    var parts=['naver','threads','jisikin'].filter(function(k){return urls[k];})
+      .map(function(k){return '<a href="'+urls[k]+'">▸ '+names[k]+'</a>';});
+    return parts.length?'<div class="rel"><b>🔗 다른 채널에서도 보기</b>'+parts.join('')+'</div>':'';
+  }
+  function copyHtml(btn,text){
+    if(!text)return;
+    navigator.clipboard.writeText(text).then(function(){
+      var o=btn.textContent; btn.textContent='✅ 복사됨!'; setTimeout(function(){btn.textContent=o;},1500);
+    },function(){});
+  }
+  function curCode(){return document.getElementById('linkPost').value;}
+  function initLinkTool(){
+    var sel=document.getElementById('linkPost'); sel.innerHTML='';
+    PERF.posts.forEach(function(p){
+      var o=document.createElement('option'); o.value=p.code; o.textContent=p.code+' · '+p.title; sel.appendChild(o);
+    });
+    sel.addEventListener('change',renderLinkTool);
+    document.getElementById('relCopy').addEventListener('click',function(){copyHtml(this,document.getElementById('relBox').dataset.html);});
+    ['lkNaver','lkThreads','lkJisikin'].forEach(function(id){document.getElementById(id).addEventListener('input',saveChannelLinks);});
+    document.getElementById('chCopy').addEventListener('click',function(){copyHtml(this,document.getElementById('chBox').dataset.html);});
+    renderLinkTool();
+  }
+  function renderLinkTool(){
+    var code=curCode(); if(!code)return;
+    var rel=relatedFor(code,3), rl=document.getElementById('relList'); rl.innerHTML='';
+    if(!rel.length)rl.innerHTML='<div class="rl" style="color:#6b7790">겹치는 관련글이 아직 없습니다.</div>';
+    rel.forEach(function(p){
+      var d=document.createElement('div'); d.className='rl';
+      d.innerHTML='<span class="pc" style="background:'+(PERF.colors[p.cat]||'#4d9de0')+'">'+p.code+'</span>'+p.title;
+      rl.appendChild(d);
+    });
+    var rb=rel.length?relBlock(rel):'';
+    var relBox=document.getElementById('relBox'); relBox.textContent=rb||'관련글 없음'; relBox.dataset.html=rb;
+    var links=loadLinks()[code]||{};
+    document.getElementById('lkNaver').value=links.naver||'';
+    document.getElementById('lkThreads').value=links.threads||'';
+    document.getElementById('lkJisikin').value=links.jisikin||'';
+    renderChannelBlock();
+  }
+  function saveChannelLinks(){
+    var code=curCode(); if(!code)return;
+    var all=loadLinks();
+    all[code]={naver:document.getElementById('lkNaver').value.trim(),
+               threads:document.getElementById('lkThreads').value.trim(),
+               jisikin:document.getElementById('lkJisikin').value.trim()};
+    saveLinksAll(all); renderChannelBlock();
+  }
+  function renderChannelBlock(){
+    var urls={naver:document.getElementById('lkNaver').value.trim(),
+              threads:document.getElementById('lkThreads').value.trim(),
+              jisikin:document.getElementById('lkJisikin').value.trim()};
+    var b=chBlock(urls), box=document.getElementById('chBox');
+    box.textContent=b||'URL을 입력하면 교차링크 HTML이 생성됩니다.'; box.dataset.html=b;
+  }
 
   /* ---------- 지표 기록(수기, localStorage) ---------- */
   function loadKpi(){try{return JSON.parse(localStorage.getItem('lsg_kpi'))||[];}catch(e){return [];}}
