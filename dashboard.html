@@ -153,6 +153,13 @@
     <div class="note" id="qualityNote"></div>
   </div>
 
+  <!-- 자산 현황 -->
+  <div class="sect">
+    <h2>🎨 자산 현황 <span class="tag live">DB 실시간</span></h2>
+    <div id="assets"><div class="empty">불러오는 중…</div></div>
+    <div class="note" id="assetsNote"></div>
+  </div>
+
   <!-- 최근 등록 글 -->
   <div class="sect">
     <h2>🆕 최근 등록 글 <span class="tag live">DB 실시간</span></h2>
@@ -323,6 +330,25 @@
     document.getElementById('qualityNote').textContent= missing.length
       ? '⚠️ 보완 필요 '+missing.length+'편: '+missing.slice(0,6).map(function(p){return p.code;}).join(', ')+(missing.length>6?' 외':'')
       : '✅ 모든 글이 썸네일·설명·태그를 갖췄습니다.';
+    // 자산 현황 (썸네일/버튼/영상 보유율 — DB thumb + assets)
+    var withThumb2=posts.filter(function(p){return p.thumb;}).length;
+    var withBtn=posts.filter(function(p){return p.assets&&p.assets.button;}).length;
+    var withVid=posts.filter(function(p){return p.assets&&p.assets.video;}).length;
+    var av=document.getElementById('assets');av.innerHTML='';
+    [['썸네일',withThumb2],['버튼',withBtn],['영상',withVid]].forEach(function(x){
+      var p=pct(x[1],total);
+      var row=document.createElement('div');row.className='qrow';
+      row.innerHTML='<span class="ql">'+x[0]+'</span>'+
+        '<span class="track"><i style="width:'+p+'%"></i></span>'+
+        '<span class="qn'+(p<100?' qbad':'')+'">'+x[1]+'/'+total+' ('+p+'%)</span>';
+      av.appendChild(row);
+    });
+    var needBtn=posts.filter(function(p){return !(p.assets&&p.assets.button);});
+    var needVid=posts.filter(function(p){return !(p.assets&&p.assets.video);});
+    document.getElementById('assetsNote').innerHTML=
+      (needBtn.length||needVid.length)
+        ? '🎬 버튼 미보유 '+needBtn.length+'편 · 영상 미보유 '+needVid.length+'편 — studio로 생성 후 deploy하면 자동 반영됩니다.'
+        : '✅ 모든 글이 썸네일·버튼·영상을 갖췄습니다.';
     // 최근 등록 (배열 끝 5편)
     var catColor={};tax.forEach(function(t){catColor[t.code]=t.color;});
     var rec=posts.slice(-5).reverse();
