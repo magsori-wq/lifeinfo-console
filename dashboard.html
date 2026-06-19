@@ -98,8 +98,8 @@
   .chan .big{font-size:24px;font-weight:800;margin-bottom:8px}
   .chan .idline{margin-bottom:8px}
   .chan .idline input{width:100%;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:7px;padding:8px 9px;font-size:13px;font-family:inherit}
-  .chan .mrow{display:flex;gap:8px;margin-bottom:8px}
-  .chan .mrow .mi{flex:1}
+  .chan .mrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  .chan .mrow .mi{flex:1;min-width:88px}
   .chan .mrow label{display:block;font-size:10px;color:#9fb0d0;margin:0 0 3px}
   .chan .mrow input{width:100%;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:7px;padding:7px;font-size:13px;font-family:inherit}
   .chan textarea{width:100%;height:40px;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:7px;padding:7px;font-size:12px;resize:vertical;margin-bottom:8px;font-family:inherit}
@@ -183,6 +183,7 @@
       <a href="https://www.blogger.com/blog/stats/4026928033017788339" target="_blank" rel="noopener">📊 Blogger 방문통계</a>
       <a href="https://search.google.com/search-console" target="_blank" rel="noopener">🔍 서치콘솔(색인·노출)</a>
       <a class="ad" href="https://adsense.google.com/adsense/u/0/pub-3606922238918518/home" target="_blank" rel="noopener">💰 애드센스 수익</a>
+      <a class="ad" href="https://adpost.naver.com" target="_blank" rel="noopener">💚 애드포스트(네이버)</a>
       <a class="go" href="https://lifeinfo8975.blogspot.com/" target="_blank" rel="noopener">🌐 내 블로그</a>
     </div>
   </div>
@@ -545,7 +546,7 @@
   var CHAN_DEF=[
     {key:'blogger',name:'구글 Blogger',icon:'🔵',color:'#06b07a',auto:true,
       links:function(){return [{t:'글쓰기',u:'https://www.blogger.com/blog/posts/4026928033017788339'},{t:'통계',u:'https://www.blogger.com/blog/stats/4026928033017788339'},{t:'블로그',u:'https://lifeinfo8975.blogspot.com/'}];}},
-    {key:'naver',name:'네이버 블로그',icon:'🟢',color:'#2DB400',idLabel:'블로그 ID',m:[['이웃','m1'],['게시글','m2']],
+    {key:'naver',name:'네이버 블로그',icon:'🟢',color:'#2DB400',idLabel:'블로그 ID',m:[['이웃','m1'],['게시글','m2'],['애드포스트(원)','m3']],
       links:function(id){return id?[{t:'블로그',u:'https://blog.naver.com/'+id},{t:'글쓰기',u:'https://blog.naver.com/'+id+'?Redirect=Write'}]:[];}},
     {key:'threads',name:'쓰레드',icon:'🧵',color:'#9aa6bd',idLabel:'핸들(@ 제외)',idDefault:'magsori8975',m:[['팔로워','m1'],['게시물','m2']],
       links:function(id){return id?[{t:'프로필',u:'https://www.threads.com/@'+id}]:[];}},
