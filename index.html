@@ -86,6 +86,16 @@
         </div>
 
         <div class="card">
+          <h3>⚙️ 운영 루틴 — 트렌드 갱신 → 배포</h3>
+          <p>두 줄 명령(<b>트렌드 수집 + 배포</b>)을 한 번에. 브라우저는 PC 명령을 직접 못 돌리니 아래 중 하나로 실행하세요.</p>
+          <button class="btn go" onclick="dispatchRoutine()">🤖 Claude에게 맡기기 (프롬프트 복사)</button>
+          <button class="btn alt" onclick="copyRoutine()">📋 터미널 명령 복사</button>
+          <p class="note">· <b>가장 빠름</b>: PC에서 <b>C:\lifeinfo\update_trends.bat</b> 더블클릭 → 갱신+배포 한 방.<br>
+          · <b>Claude에게 맡기기</b>: 복사된 프롬프트를 <b>Claude Code(데스크톱 앱)</b>에 붙여넣으면 트렌드를 갱신해 줍니다(배포 push는 직접).<br>
+          · <b>터미널 명령 복사</b>: 명령창(cmd)에 붙여넣고 Enter.</p>
+        </div>
+
+        <div class="card">
           <h3>🚀 바로가기 (발행·관리)</h3>
           <p>Claude가 만든 글을 여기서 발행하고 상태를 확인하세요.</p>
           <div class="links">
@@ -210,6 +220,21 @@
     navigator.clipboard.writeText(p).then(function(){toast();},function(){});
     showOut(p);
     window.open('https://claude.ai/new','_blank','noopener');
+  }
+
+  /* ---------- ⚙️ 운영 루틴 (트렌드 갱신 → 배포) ---------- */
+  var ROUTINE_CMD='cd /d C:\\lifeinfo && python -m studio.pipeline trends && deploy.bat';
+  function copyRoutine(){
+    navigator.clipboard.writeText(ROUTINE_CMD).then(toast,function(){});
+    showOut('터미널(cmd)에 붙여넣고 Enter:\n\n'+ROUTINE_CMD);
+  }
+  function dispatchRoutine(){
+    var p="생활정보 모음 운영 루틴을 실행해줘.\n\n"+
+      "1) C:\\lifeinfo 에서 `python -m studio.pipeline trends` 실행 → 구글뉴스 트렌드 글감 갱신.\n"+
+      "2) webapp/trends.txt 의 fetched_at 이 방금 시각으로 갱신됐고 카테고리별 항목이 수집됐는지 확인해 알려줘.\n"+
+      "3) 끝나면 deploy.bat 실행(배포 push)을 안내해줘. push는 내가 직접 한다.";
+    navigator.clipboard.writeText(p).then(toast,function(){});
+    showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
 
   /* ---------- 📰 트렌드 글감 (trends.txt = 구글뉴스 RSS 수집물) ---------- */
