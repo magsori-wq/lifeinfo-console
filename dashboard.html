@@ -3,138 +3,498 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>생활정보 모음 · 운영 대시보드</title>
+<title>생활정보 모음 · 모니터링</title>
 <style>
-  :root{ color-scheme: light; }
   *{box-sizing:border-box}
-  body{margin:0;background:#f4f6fb;color:#1f2a3d;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6;padding:18px}
-  h1{font-size:20px;margin:0}
-  .sub{color:#6b7790;font-size:13px;margin:4px 0 18px}
-  .grid{display:grid;gap:14px}
-  .cards{grid-template-columns:repeat(4,1fr)}
-  @media(max-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
-  .card{background:#fff;border:1px solid #e4e9f2;border-radius:14px;padding:16px}
-  .card .k{font-size:12px;color:#6b7790;font-weight:600}
-  .card .v{font-size:22px;font-weight:800;margin-top:4px}
-  .card .v small{font-size:13px;font-weight:600;color:#6b7790}
-  .sect{background:#fff;border:1px solid #e4e9f2;border-radius:16px;padding:18px;margin-top:16px}
-  .sect h2{font-size:15px;margin:0 0 12px;color:#2a4a73}
-  .chk{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed #eef1f7;font-size:15px}
-  .chk:last-child{border-bottom:none}
-  .chk input{width:20px;height:20px;accent-color:#06b07a;flex:none;cursor:pointer}
-  .chk label{cursor:pointer;flex:1}
-  .chk.done label{color:#9aa6bd;text-decoration:line-through}
-  .bar{height:10px;background:#eef1f7;border-radius:6px;overflow:hidden;margin:6px 0 14px}
-  .bar > i{display:block;height:100%;background:linear-gradient(90deg,#4d9de0,#06d6a0);width:0;transition:width .3s}
-  .links{display:flex;flex-wrap:wrap;gap:10px}
-  .links a{display:inline-block;text-decoration:none;background:#eef4fc;color:#1b6fc2;border:1px solid #d6e4f6;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:700}
+  body{margin:0;background:#0f1626;color:#e8edf7;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6;padding:16px}
+  h1{font-size:18px;margin:0}
+  .sub{color:#9fb0d0;font-size:12px;margin:4px 0 16px}
+  .sect{background:#16203a;border:1px solid #2a3a5e;border-radius:14px;padding:16px;margin-top:14px}
+  .sect h2{font-size:14px;margin:0 0 12px;color:#7fc1ff;display:flex;align-items:center;gap:8px}
+  .sect h2 .tag{margin-left:auto;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+  .tag.live{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52}
+  .tag.ext{background:#3a2f12;color:#ffd166;border:1px solid #5a4a1a}
+  .tag.man{background:#26314f;color:#9fb0d0;border:1px solid #3a4a6e}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+  .card{background:#16203a;border:1px solid #2a3a5e;border-radius:14px;padding:14px}
+  .card .k{font-size:11px;color:#9fb0d0;font-weight:600}
+  .card .v{font-size:24px;font-weight:800;margin-top:4px}
+  .card .v small{font-size:12px;font-weight:600;color:#9fb0d0}
+  .bar{height:10px;background:#0c1220;border-radius:6px;overflow:hidden;margin:8px 0}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,#4d9de0,#06d6a0);width:0;transition:width .4s}
+  /* category distribution */
+  .cat{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:13px}
+  .cat .name{flex:none;width:104px;color:#cdd8ee;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cat .track{flex:1;height:14px;background:#0c1220;border-radius:7px;overflow:hidden}
+  .cat .track > i{display:block;height:100%;border-radius:7px;width:0;transition:width .5s}
+  .cat .n{flex:none;width:34px;text-align:right;font-weight:800;color:#e8edf7}
+  /* quality */
+  .qrow{display:flex;align-items:center;gap:10px;font-size:13px;margin:7px 0}
+  .qrow .ql{flex:none;width:96px;color:#9fb0d0}
+  .qrow .track{flex:1;height:12px;background:#0c1220;border-radius:6px;overflow:hidden}
+  .qrow .track > i{display:block;height:100%;background:#06d6a0;width:0;transition:width .5s}
+  .qrow .qn{flex:none;width:64px;text-align:right;font-weight:700}
+  .qbad{color:#ff8a8a}
+  ul.posts{list-style:none;margin:6px 0 0;padding:0}
+  ul.posts li{padding:8px 0;border-bottom:1px dashed #2a3a5e;font-size:13px}
+  ul.posts li:last-child{border-bottom:none}
+  ul.posts a{color:#cdd8ee;text-decoration:none}
+  ul.posts a:hover{color:#7fc1ff;text-decoration:underline}
+  ul.posts .pcode{display:inline-block;font-size:10px;font-weight:800;color:#04221a;padding:1px 7px;border-radius:10px;margin-right:7px;vertical-align:middle}
+  .links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .links a{display:block;text-align:center;text-decoration:none;background:#16203a;border:1px solid #2a3a5e;border-radius:10px;padding:12px 8px;font-size:13px;font-weight:700;color:#cdd8ee}
   .links a.go{background:#06b07a;color:#fff;border-color:#06b07a}
-  .links a.ad{background:#fff5e6;color:#b9770a;border-color:#ffe0a8}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media(max-width:720px){.two{grid-template-columns:1fr}}
-  .pill{display:inline-block;background:#eef9f4;color:#06875c;border:1px solid #bfead8;border-radius:20px;padding:2px 10px;font-size:12px;font-weight:700}
-  .pill.wait{background:#fff5e6;color:#b9770a;border-color:#ffe0a8}
-  ul.ref{margin:6px 0 0;padding-left:18px;font-size:14px;color:#3a4763}
-  ul.ref li{margin:5px 0}
-  .step{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:8px 0}
-  .step b{flex:none;width:62px;color:#4d9de0}
-  .reset{float:right;font-size:12px;color:#9aa6bd;background:none;border:none;cursor:pointer;text-decoration:underline}
-  .note{font-size:12px;color:#9aa6bd;margin-top:8px}
+  .links a.ad{background:#3a2f12;color:#ffd166;border-color:#5a4a1a}
+  .chk{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed #2a3a5e;font-size:14px}
+  .chk:last-child{border-bottom:none}
+  .chk input{width:19px;height:19px;accent-color:#06d6a0;flex:none;cursor:pointer}
+  .chk label{cursor:pointer;flex:1}
+  .chk.done label{color:#6b7790;text-decoration:line-through}
+  .reset{margin-left:auto;font-size:11px;color:#9fb0d0;background:none;border:none;cursor:pointer;text-decoration:underline}
+  .step{display:flex;gap:10px;align-items:flex-start;font-size:13px;margin:8px 0}
+  .step b{flex:none;width:54px;color:#4d9de0}
+  .step.now{background:#0c3a2c;border-radius:8px;padding:8px 10px;margin:6px 0}
+  .note{font-size:11px;color:#9fb0d0;margin-top:10px}
+  /* KPI log */
+  .kform{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+  @media(max-width:640px){.kform{grid-template-columns:repeat(2,1fr)}}
+  .kform input{width:100%;background:#0c1220;border:1px solid #2a3a5e;color:#e8edf7;border-radius:8px;padding:9px;font-size:14px;font-family:inherit}
+  .kform .full{grid-column:1/-1}
+  .kbtn{cursor:pointer;border:none;border-radius:9px;padding:11px;font-size:14px;font-weight:800;background:#4d9de0;color:#fff;width:100%}
+  table.kpi{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+  table.kpi th,table.kpi td{padding:7px 6px;border-bottom:1px solid #2a3a5e;text-align:right}
+  table.kpi th:first-child,table.kpi td:first-child{text-align:left;color:#9fb0d0}
+  table.kpi th{color:#7fc1ff;font-size:11px}
+  .kdel{color:#ff8a8a;cursor:pointer;background:none;border:none;font-size:11px}
+  .empty{color:#6b7790;font-size:12px;text-align:center;padding:10px}
+  /* 글별 성과 */
+  .perf-sum{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:#cdd8ee;margin-bottom:12px}
+  .perf-sum b{color:#06d6a0}
+  .perf-ctl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .perf-ctl select,.pbtn{background:#0c1220;border:1px solid #2a3a5e;color:#e8edf7;border-radius:9px;padding:9px 12px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:none}
+  .pbtn.link{color:#7fc1ff}
+  .gsc-box{display:none;background:#0c1220;border:1px solid #2a3a5e;border-radius:10px;padding:12px;margin-bottom:12px}
+  .gsc-box.show{display:block}
+  .gsc-box textarea{width:100%;height:88px;background:#0f1626;border:1px solid #2a3a5e;color:#e8edf7;border-radius:8px;padding:10px;font-size:12px;font-family:monospace;resize:vertical}
+  .perf-wrap{max-height:430px;overflow:auto;border:1px solid #2a3a5e;border-radius:10px}
+  table.perf{width:100%;border-collapse:collapse;font-size:12px}
+  table.perf th{position:sticky;top:0;background:#1b2742;color:#7fc1ff;font-size:11px;padding:8px 6px;text-align:right;z-index:1}
+  table.perf th:first-child{text-align:left}
+  table.perf td{padding:8px 6px;border-bottom:1px solid #22304e;text-align:right;white-space:nowrap}
+  table.perf td:first-child{text-align:left;white-space:normal;min-width:150px}
+  table.perf tr:last-child td{border-bottom:none}
+  table.perf td.edit{cursor:pointer}
+  table.perf td.edit:hover{background:#22304e}
+  table.perf .pc{display:inline-block;font-size:9px;font-weight:800;color:#04221a;padding:1px 6px;border-radius:9px;margin-right:6px;vertical-align:middle}
+  table.perf a{color:#cdd8ee;text-decoration:none}
+  table.perf a:hover{color:#7fc1ff}
 </style>
 </head>
 <body>
-  <h1>📊 생활정보 모음 · 운영 대시보드</h1>
+  <h1>📡 생활정보 모음 · 모니터링</h1>
   <div class="sub" id="today">—</div>
 
-  <div class="grid cards">
-    <div class="card"><div class="k">발행 글</div><div class="v">14<small>편</small></div></div>
-    <div class="card"><div class="k">애드센스</div><div class="v" style="font-size:16px"><span class="pill wait">심사 중</span></div></div>
-    <div class="card"><div class="k">자동 글감 추천</div><div class="v" style="font-size:16px">매일 <small>08:00</small></div></div>
-    <div class="card"><div class="k">목표</div><div class="v">월 100<small>만원</small></div></div>
+  <!-- 핵심 지표 (DB 실시간) -->
+  <div class="cards">
+    <div class="card"><div class="k">발행 글</div><div class="v" id="kTotal">…<small>편</small></div></div>
+    <div class="card"><div class="k">200편까지</div><div class="v" id="kRemain">…<small>편</small></div></div>
+    <div class="card"><div class="k">카테고리</div><div class="v" id="kCats">…<small>분야</small></div></div>
+    <div class="card"><div class="k">콘텐츠 품질</div><div class="v" id="kQual">…<small>%</small></div></div>
   </div>
 
+  <!-- 목표 진행 -->
   <div class="sect">
-    <h2>✅ 오늘의 체크리스트 <button class="reset" onclick="resetToday()">오늘 초기화</button></h2>
-    <div class="bar"><i id="prog"></i></div>
-    <div id="list"></div>
+    <h2>🎯 목표 진행도 <span class="tag live">DB 실시간</span></h2>
+    <div class="bar"><i id="goalBar"></i></div>
+    <div class="sub" id="goalText" style="margin:0">—</div>
+  </div>
+
+  <!-- 카테고리별 발행 현황 -->
+  <div class="sect">
+    <h2>🗂️ 카테고리별 발행 현황 <span class="tag live">DB 실시간</span></h2>
+    <div id="catDist"><div class="empty">불러오는 중…</div></div>
+  </div>
+
+  <!-- 콘텐츠 품질 점검 -->
+  <div class="sect">
+    <h2>🩺 콘텐츠 품질 점검 <span class="tag live">DB 실시간</span></h2>
+    <div id="quality"><div class="empty">불러오는 중…</div></div>
+    <div class="note" id="qualityNote"></div>
+  </div>
+
+  <!-- 최근 등록 글 -->
+  <div class="sect">
+    <h2>🆕 최근 등록 글 <span class="tag live">DB 실시간</span></h2>
+    <ul class="posts" id="recent"><li class="empty">불러오는 중…</li></ul>
+  </div>
+
+  <!-- 성과 모니터링 (외부 콘솔) -->
+  <div class="sect">
+    <h2>📈 성과 모니터링 <span class="tag ext">외부 콘솔</span></h2>
+    <p class="note" style="margin:0 0 10px">방문·노출·수익·색인 수치는 자동으로 가져올 수 없어요. 아래 버튼으로 각 공식 콘솔을 열어 확인하세요.</p>
+    <div class="links">
+      <a href="https://www.blogger.com/blog/stats/4026928033017788339" target="_blank" rel="noopener">📊 Blogger 방문통계</a>
+      <a href="https://search.google.com/search-console" target="_blank" rel="noopener">🔍 서치콘솔(색인·노출)</a>
+      <a class="ad" href="https://adsense.google.com/adsense/u/0/pub-3606922238918518/home" target="_blank" rel="noopener">💰 애드센스 수익</a>
+      <a class="go" href="https://lifeinfo8975.blogspot.com/" target="_blank" rel="noopener">🌐 내 블로그</a>
+    </div>
+  </div>
+
+  <!-- 글별 성과 (노출·클릭·댓글) -->
+  <div class="sect">
+    <h2>🏆 글별 성과 <span class="tag live">댓글 자동</span></h2>
+    <div class="perf-sum" id="perfSum">불러오는 중…</div>
+    <div class="perf-ctl">
+      <select id="perfSort">
+        <option value="imp">노출 많은순</option>
+        <option value="clk">클릭 많은순</option>
+        <option value="ctr">CTR 높은순</option>
+        <option value="com">댓글 많은순</option>
+        <option value="code">코드순</option>
+      </select>
+      <button class="pbtn" onclick="toggleGsc()">📥 GSC 실적 붙여넣기</button>
+      <a class="pbtn link" href="https://search.google.com/search-console/performance/search-analytics" target="_blank" rel="noopener">🔍 서치콘솔</a>
+    </div>
+    <div class="gsc-box" id="gscBox">
+      <p class="note" style="margin:0 0 8px">서치콘솔 → <b>실적</b> → <b>페이지</b> 탭 → <b>내보내기</b>한 표(또는 표 영역을 복사)를 그대로 붙여넣고 적용하세요. 블로그 글 URL이 든 줄만 자동 인식하며, 노출·클릭을 자동 판별합니다(% 무시).</p>
+      <textarea id="gscText" placeholder="여기에 GSC 페이지 실적(CSV/표)을 붙여넣기…"></textarea>
+      <button class="kbtn" onclick="applyGsc()">실적 반영</button>
+      <div class="note" id="gscMsg"></div>
+    </div>
+    <div class="perf-wrap">
+      <table class="perf"><thead><tr>
+        <th>글</th><th>노출</th><th>클릭</th><th>CTR</th><th>댓글</th>
+      </tr></thead><tbody id="perfBody"><tr><td colspan="5" class="empty">불러오는 중…</td></tr></tbody></table>
+    </div>
+    <div class="note">💡 노출·클릭은 GSC에서만 제공돼 붙여넣기로 반영합니다(숫자 셀을 눌러 직접 수정 가능). 댓글은 블로그에서 자동으로 가져옵니다.</div>
+  </div>
+
+  <!-- 지표 기록 (수기) -->
+  <div class="sect">
+    <h2>✍️ 주간 지표 기록 <span class="tag man">직접 입력</span></h2>
+    <p class="note" style="margin:0 0 10px">위 콘솔에서 본 숫자를 가볍게 적어두면 추세가 쌓입니다. (이 기기에 저장 · 빈칸은 0)</p>
+    <div class="kform">
+      <input id="kDate" type="date">
+      <input id="kVisit" type="number" inputmode="numeric" placeholder="일 방문수">
+      <input id="kImp" type="number" inputmode="numeric" placeholder="GSC 노출수">
+      <input id="kRev" type="number" inputmode="numeric" placeholder="애드센스 누적(원)">
+      <button class="kbtn full" onclick="addKpi()">＋ 기록 추가</button>
+    </div>
+    <table class="kpi"><thead><tr><th>날짜</th><th>방문</th><th>노출</th><th>수익(원)</th><th></th></tr></thead>
+      <tbody id="kpiBody"></tbody></table>
+  </div>
+
+  <!-- 오늘의 체크리스트 -->
+  <div class="sect">
+    <h2>✅ 오늘의 운영 체크리스트 <button class="reset" onclick="resetToday()">오늘 초기화</button></h2>
+    <div class="bar"><i id="chkBar"></i></div>
+    <div id="chkList"></div>
     <div class="note">체크 상태는 이 기기에 저장되며, 날짜가 바뀌면 자동으로 새로 시작됩니다.</div>
   </div>
 
-  <div class="two">
-    <div class="sect">
-      <h2>🔗 빠른 링크</h2>
-      <div class="links">
-        <a class="go" href="https://www.blogger.com/blog/posts/4026928033017788339" target="_blank" rel="noopener">✍️ Blogger 글쓰기</a>
-        <a href="https://www.blogger.com/blog/stats/4026928033017788339" target="_blank" rel="noopener">📈 방문 통계</a>
-        <a class="ad" href="https://adsense.google.com/adsense/u/0/pub-3606922238918518/home" target="_blank" rel="noopener">💰 애드센스 상태</a>
-        <a href="https://lifeinfo8975.blogspot.com/" target="_blank" rel="noopener">🌐 내 블로그</a>
-        <a href="https://www.threads.com/@magsori8975" target="_blank" rel="noopener">🧵 쓰레드</a>
-      </div>
-      <h2 style="margin-top:16px">🧰 내 도구 (폴더의 파일 더블클릭)</h2>
-      <ul class="ref">
-        <li>블로그_글HTML_생성기.html — 글 작성</li>
-        <li>OSMU_변환기.html — 네이버·쓰레드 재가공</li>
-        <li>지식인_답변헬퍼.html — 지식인 답변 초안</li>
-      </ul>
-    </div>
-
-    <div class="sect">
-      <h2>🎯 월 100만원 단계</h2>
-      <div class="step"><b>1단계</b><span>글 50편 · 애드센스 승인 · 일 100~300 방문 → 월 1~5만원</span></div>
-      <div class="step"><b>2단계</b><span>글 100~150편 · 상위노출 등장 · 일 1~3천 방문 → 월 10~30만원</span></div>
-      <div class="step"><b>3단계</b><span>글 200편+ · 효자글 5~10개 · 일 8천~1.3만 방문 → <b>월 100만원권</b></span></div>
-      <h2 style="margin-top:16px">📌 빠른 참고</h2>
-      <ul class="ref">
-        <li><b>제목 공식</b>: [메인 키워드] + [연관 검색어] + [숫자/총정리]</li>
-        <li><b>고단가 분야</b>: 정부지원금·대출·연금·세금·건강</li>
-        <li><b>안전 수칙</b>: 쓰레드/지식인 하루 1~5개만, 링크 1개, 정책 위반 금지</li>
-        <li><b>정확성</b>: 지원금·세금 수치는 발행 전 공식사이트 확인</li>
-      </ul>
-    </div>
+  <!-- 목표 로드맵 -->
+  <div class="sect">
+    <h2>🪜 월 100만원 로드맵</h2>
+    <div class="step" id="step1"><b>1단계</b><span>글 50편 · 애드센스 승인 · 일 100~300 방문 → 월 1~5만원</span></div>
+    <div class="step" id="step2"><b>2단계</b><span>글 100~150편 · 상위노출 등장 · 일 1~3천 방문 → 월 10~30만원</span></div>
+    <div class="step" id="step3"><b>3단계</b><span>글 200편+ · 효자글 5~10개 · 일 8천~1.3만 방문 → <b>월 100만원권</b></span></div>
+    <div class="note">📌 고단가 분야: 정부지원금·대출·연금·세금·건강 · 제목 = [메인 키워드]+[연관 검색어]+[숫자/총정리]</div>
   </div>
 
+  <div class="sub" id="dbInfo" style="margin-top:14px"></div>
+
 <script>
-  var ITEMS=[
-    "오늘 글감 확인 (아침 8시 자동 추천)",
-    "고단가 글 1편 작성·발행 (글HTML 생성기)",
-    "발행 글에 썸네일 삽입",
-    "OSMU 변환기로 네이버·쓰레드용 변환",
-    "쓰레드 1~2개 게시",
-    "지식인 답변 2~3개 (안전형)",
-    "애드센스 심사 상태 확인"
-  ];
-  function todayKey(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
-  function load(){
-    var raw=localStorage.getItem('lsg_dash');
-    var data={};try{data=JSON.parse(raw)||{};}catch(e){data={};}
-    if(data.date!==todayKey()){data={date:todayKey(),checked:[]};localStorage.setItem('lsg_dash',JSON.stringify(data));}
-    return data;
-  }
-  function save(data){localStorage.setItem('lsg_dash',JSON.stringify(data));}
-  function render(){
-    var data=load();
-    var list=document.getElementById('list');list.innerHTML='';
-    ITEMS.forEach(function(t,i){
-      var on=data.checked.indexOf(i)>=0;
-      var row=document.createElement('div');row.className='chk'+(on?' done':'');
-      row.innerHTML='<input type="checkbox" '+(on?'checked':'')+' id="c'+i+'"><label for="c'+i+'">'+t+'</label>';
-      row.querySelector('input').addEventListener('change',function(){toggle(i);});
-      list.appendChild(row);
-    });
-    var pct=Math.round(data.checked.length/ITEMS.length*100);
-    document.getElementById('prog').style.width=pct+'%';
-  }
-  function toggle(i){
-    var data=load();var idx=data.checked.indexOf(i);
-    if(idx>=0)data.checked.splice(idx,1);else data.checked.push(i);
-    save(data);render();
-  }
-  function resetToday(){var data=load();data.checked=[];save(data);render();}
+  var GOAL=200;
   var now=new Date();
   var days=['일','월','화','수','목','금','토'];
   document.getElementById('today').textContent=
     now.getFullYear()+'년 '+(now.getMonth()+1)+'월 '+now.getDate()+'일 ('+days[now.getDay()]+') · 오늘도 한 걸음씩!';
-  render();
+
+  /* ---------- DB 실시간 지표 ---------- */
+  function pct(a,b){return b?Math.round(a/b*100):0;}
+  function setStep(n,total){
+    var s1=document.getElementById('step1'),s2=document.getElementById('step2'),s3=document.getElementById('step3');
+    [s1,s2,s3].forEach(function(s){s.classList.remove('now');});
+    if(total>=200)s3.classList.add('now');
+    else if(total>=100)s2.classList.add('now');
+    else s1.classList.add('now');
+  }
+  fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(db){
+    var posts=db.posts||[];
+    var total=posts.length;
+    var tax=db.taxonomy||[];
+    // 카드
+    document.getElementById('kTotal').innerHTML=total+'<small>편</small>';
+    document.getElementById('kRemain').innerHTML=Math.max(0,GOAL-total)+'<small>편</small>';
+    document.getElementById('kCats').innerHTML=tax.length+'<small>분야</small>';
+    var withThumb=posts.filter(function(p){return p.thumb;}).length;
+    var withDesc=posts.filter(function(p){return p.desc;}).length;
+    var withTags=posts.filter(function(p){return p.tags&&p.tags.length;}).length;
+    var qual=total?Math.round((withThumb+withDesc+withTags)/(total*3)*100):0;
+    document.getElementById('kQual').innerHTML=qual+'<small>%</small>';
+    // 목표 진행
+    document.getElementById('goalBar').style.width=Math.min(100,pct(total,GOAL))+'%';
+    document.getElementById('goalText').textContent=
+      total+' / '+GOAL+'편 ('+pct(total,GOAL)+'%) · 200편까지 '+Math.max(0,GOAL-total)+'편 남았어요';
+    setStep(null,total);
+    // 카테고리별 분포
+    var byCat={};
+    posts.forEach(function(p){byCat[p.cat]=(byCat[p.cat]||0)+1;});
+    var maxN=Math.max.apply(null,tax.map(function(t){return byCat[t.code]||0;}).concat([1]));
+    var cd=document.getElementById('catDist');cd.innerHTML='';
+    tax.forEach(function(t){
+      var n=byCat[t.code]||0;
+      var row=document.createElement('div');row.className='cat';
+      row.innerHTML='<span class="name">'+t.code+'. '+t.name+'</span>'+
+        '<span class="track"><i style="background:'+t.color+';width:'+(n/maxN*100)+'%"></i></span>'+
+        '<span class="n">'+n+'</span>';
+      cd.appendChild(row);
+    });
+    // 품질
+    var q=document.getElementById('quality');q.innerHTML='';
+    [['썸네일',withThumb],['설명문',withDesc],['태그',withTags]].forEach(function(x){
+      var p=pct(x[1],total);
+      var row=document.createElement('div');row.className='qrow';
+      row.innerHTML='<span class="ql">'+x[0]+'</span>'+
+        '<span class="track"><i style="width:'+p+'%"></i></span>'+
+        '<span class="qn'+(p<100?' qbad':'')+'">'+x[1]+'/'+total+'</span>';
+      q.appendChild(row);
+    });
+    var missing=posts.filter(function(p){return !p.thumb||!p.desc||!(p.tags&&p.tags.length);});
+    document.getElementById('qualityNote').textContent= missing.length
+      ? '⚠️ 보완 필요 '+missing.length+'편: '+missing.slice(0,6).map(function(p){return p.code;}).join(', ')+(missing.length>6?' 외':'')
+      : '✅ 모든 글이 썸네일·설명·태그를 갖췄습니다.';
+    // 최근 등록 (배열 끝 5편)
+    var catColor={};tax.forEach(function(t){catColor[t.code]=t.color;});
+    var rec=posts.slice(-5).reverse();
+    var ul=document.getElementById('recent');ul.innerHTML='';
+    rec.forEach(function(p){
+      var li=document.createElement('li');
+      li.innerHTML='<span class="pcode" style="background:'+(catColor[p.cat]||'#4d9de0')+'">'+p.code+'</span>'+
+        '<a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a>';
+      ul.appendChild(li);
+    });
+    // 글별 성과 초기화 (댓글 자동 + GSC 수기)
+    initPerf(posts, catColor);
+    // DB 정보
+    document.getElementById('dbInfo').textContent=
+      '데이터 기준일: '+(db.updated||'—')+' · 단일 원본(lifeinfo_db) 기반 — 새 글이 등록·배포되면 자동 반영됩니다.';
+  }).catch(function(){
+    document.getElementById('kTotal').innerHTML='–';
+    ['catDist','quality','recent'].forEach(function(id){
+      document.getElementById(id).innerHTML='<div class="empty">데이터를 불러올 수 없습니다. 배포된 콘솔(github.io)에서 열어 주세요. (로컬 file:// 더블클릭은 보안상 조회 불가)</div>';
+    });
+    document.getElementById('goalText').textContent='데이터 연결 실패';
+    document.getElementById('perfSum').textContent='데이터 연결 실패';
+    document.getElementById('perfBody').innerHTML='<tr><td colspan="5" class="empty">배포된 콘솔(github.io)에서 열어 주세요.</td></tr>';
+  });
+
+  /* ---------- 글별 성과 (댓글 자동 JSONP + GSC 수기) ---------- */
+  var PERF={posts:[],colors:{},comments:null,matched:null};
+  function norm(u){return (u||'').replace(/^https?:\/\//,'').replace(/\/+$/,'').toLowerCase();}
+  function loadPerf(){try{return JSON.parse(localStorage.getItem('lsg_perf'))||{};}catch(e){return {};}}
+  function savePerf(o){localStorage.setItem('lsg_perf',JSON.stringify(o));}
+  function fmtN(n){return (n||0).toLocaleString('ko-KR');}
+
+  function jsonp(url){return new Promise(function(res,rej){
+    var cb='__lsgcb'+(jsonp._i=(jsonp._i||0)+1);
+    var s=document.createElement('script');
+    var t=setTimeout(function(){cleanup();rej(new Error('timeout'));},9000);
+    function cleanup(){clearTimeout(t);try{delete window[cb];}catch(e){window[cb]=undefined;}if(s.parentNode)s.parentNode.removeChild(s);}
+    window[cb]=function(d){cleanup();res(d);};
+    s.onerror=function(){cleanup();rej(new Error('script error'));};
+    s.src=url+(url.indexOf('?')>=0?'&':'?')+'alt=json-in-script&callback='+cb;
+    document.head.appendChild(s);
+  });}
+  function fetchComments(){
+    // Blogger 포스트 피드를 페이지네이션(150개씩)으로 모아 글별 댓글수 맵 생성 (200편 목표 대비 캡 회피)
+    var FEED='https://lifeinfo8975.blogspot.com/feeds/posts/default';
+    var map={},start=1,batch=150;
+    function step(){
+      return jsonp(FEED+'?max-results='+batch+'&start-index='+start).then(function(d){
+        var ent=(d&&d.feed&&d.feed.entry)||[];
+        ent.forEach(function(e){
+          var alt=((e.link||[]).filter(function(l){return l.rel==='alternate';})[0])||{};
+          if(!alt.href)return;
+          var t=e['thr$total']; var n=t?parseInt(t['$t'],10):0;
+          map[norm(alt.href)]=isNaN(n)?0:n;
+        });
+        if(ent.length>=batch && start<3000){start+=batch;return step();}
+        return null;
+      });
+    }
+    return step().then(function(){
+      var matched=PERF.posts.filter(function(p){return map.hasOwnProperty(norm(p.url));}).length;
+      return {map:map,matched:matched};
+    });
+  }
+  function initPerf(posts,colors){
+    PERF.posts=posts;PERF.colors=colors;
+    renderPerf();
+    fetchComments().then(function(r){PERF.comments=r.map;PERF.matched=r.matched;renderPerf();})
+      .catch(function(){PERF.comments={};PERF.matched=0;renderPerf();});
+  }
+  function perfRows(){
+    var perf=loadPerf();
+    return PERF.posts.map(function(p){
+      var pv=perf[p.code]||{};var imp=pv.imp||0,clk=pv.clk||0;
+      var key=norm(p.url);
+      var com=PERF.comments? (PERF.comments.hasOwnProperty(key)?PERF.comments[key]:null) : undefined;
+      return {p:p,imp:imp,clk:clk,ctr:imp?clk/imp*100:0,com:com};
+    });
+  }
+  function renderPerf(){
+    var rs=perfRows();
+    var sort=document.getElementById('perfSort').value;
+    rs.sort(function(a,b){
+      if(sort==='code')return a.p.code<b.p.code?-1:1;
+      if(sort==='ctr')return b.ctr-a.ctr;
+      if(sort==='com')return (b.com||0)-(a.com||0);
+      return (b[sort]||0)-(a[sort]||0);
+    });
+    var totImp=0,totClk=0,totCom=0;
+    rs.forEach(function(r){totImp+=r.imp;totClk+=r.clk;if(typeof r.com==='number')totCom+=r.com;});
+    var avgCtr=totImp?(totClk/totImp*100):0;
+    var ready=PERF.comments!=null;
+    document.getElementById('perfSum').innerHTML=
+      '총 노출 <b>'+fmtN(totImp)+'</b> · 총 클릭 <b>'+fmtN(totClk)+'</b> · 평균 CTR <b>'+avgCtr.toFixed(2)+'%</b> · 총 댓글 <b>'+(ready?fmtN(totCom):'…')+'</b>'+
+      (ready&&PERF.matched!=null?' <span style="color:#9fb0d0">(댓글 매칭 '+PERF.matched+'/'+PERF.posts.length+')</span>':'');
+    var b=document.getElementById('perfBody');b.innerHTML='';
+    rs.forEach(function(r){
+      var p=r.p,c=PERF.colors[p.cat]||'#4d9de0';
+      var com=r.com===undefined?'…':(r.com===null?'–':fmtN(r.com));
+      var tr=document.createElement('tr');
+      tr.innerHTML=
+        '<td><span class="pc" style="background:'+c+'">'+p.code+'</span><a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a></td>'+
+        '<td class="edit" data-code="'+p.code+'" data-f="imp">'+(r.imp?fmtN(r.imp):'·')+'</td>'+
+        '<td class="edit" data-code="'+p.code+'" data-f="clk">'+(r.clk?fmtN(r.clk):'·')+'</td>'+
+        '<td>'+(r.imp?r.ctr.toFixed(1)+'%':'·')+'</td>'+
+        '<td>'+com+'</td>';
+      b.appendChild(tr);
+    });
+    [].forEach.call(b.querySelectorAll('td.edit'),function(td){
+      td.addEventListener('click',function(){editCell(td.getAttribute('data-code'),td.getAttribute('data-f'));});
+    });
+  }
+  function editCell(code,f){
+    var perf=loadPerf();var cur=(perf[code]||{})[f]||0;
+    var v=prompt(code+' '+(f==='imp'?'노출수':'클릭수')+' 입력:',cur);
+    if(v===null)return;
+    v=parseInt(String(v).replace(/[^0-9]/g,''),10);if(isNaN(v))v=0;
+    perf[code]=perf[code]||{};perf[code][f]=v;savePerf(perf);renderPerf();
+  }
+  function gscFields(rest){
+    if(rest.indexOf('\t')>=0)return rest.split(/\t+/);   // 표 복사: 탭 구분
+    var out=[],cur='',inq=false;                          // CSV: 따옴표 인식 콤마 분할
+    for(var i=0;i<rest.length;i++){var ch=rest[i];
+      if(ch==='"'){inq=!inq;continue;}
+      if(ch===','&&!inq){out.push(cur);cur='';continue;}
+      cur+=ch;
+    }
+    out.push(cur);return out;
+  }
+  function toggleGsc(){document.getElementById('gscBox').classList.toggle('show');}
+  function applyGsc(){
+    var txt=document.getElementById('gscText').value||'';
+    var perf=loadPerf();
+    var byUrl={};PERF.posts.forEach(function(p){byUrl[norm(p.url)]=p.code;});
+    var applied=0,unmatched=0;
+    txt.split(/\r?\n/).forEach(function(line){
+      var m=line.match(/https?:\/\/[^\s,";]+/);
+      if(!m)return;
+      var rest=line.replace(m[0],' ').trim();
+      // 구분자 자동 감지: 탭 있으면 표 복사→탭분할, 없으면 CSV→따옴표 인식 콤마분할(따옴표 안 콤마=천단위 보존)
+      var fields=gscFields(rest);
+      var ints=[];
+      fields.forEach(function(fd){
+        fd=fd.trim();
+        if(!fd||fd.indexOf('%')>=0)return;          // 빈칸·CTR(%) 무시
+        var clean=fd.replace(/,/g,'');              // 천단위 콤마 제거
+        if(/^\d+$/.test(clean))ints.push(parseInt(clean,10)); // 정수(노출·클릭)만, 게재순위(소수) 제외
+      });
+      if(ints.length<2)return;                      // 판별 불가 -> 비파괴 스킵(기존값 보존)
+      var imp=Math.max(ints[0],ints[1]),clk=Math.min(ints[0],ints[1]); // 노출>=클릭 불변식으로 판별
+      var code=byUrl[norm(m[0])];
+      if(!code){unmatched++;return;}
+      perf[code]=perf[code]||{};perf[code].imp=imp;perf[code].clk=clk;applied++;
+    });
+    savePerf(perf);renderPerf();
+    document.getElementById('gscMsg').textContent='✅ '+applied+'개 글 반영'+(unmatched?(' · 매칭 안 됨 '+unmatched+'줄(이 블로그 글 URL 아님)'):'');
+  }
+  document.getElementById('perfSort').addEventListener('change',renderPerf);
+
+  /* ---------- 지표 기록(수기, localStorage) ---------- */
+  function loadKpi(){try{return JSON.parse(localStorage.getItem('lsg_kpi'))||[];}catch(e){return [];}}
+  function saveKpi(a){localStorage.setItem('lsg_kpi',JSON.stringify(a));}
+  function fmt(n){return (n||0).toLocaleString('ko-KR');}
+  function renderKpi(){
+    var a=loadKpi().sort(function(x,y){return x.date<y.date?1:-1;});
+    var b=document.getElementById('kpiBody');b.innerHTML='';
+    if(!a.length){b.innerHTML='<tr><td colspan="5" class="empty">아직 기록이 없습니다.</td></tr>';return;}
+    a.slice(0,8).forEach(function(r){
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td>'+r.date+'</td><td>'+fmt(r.visits)+'</td><td>'+fmt(r.imp)+'</td><td>'+fmt(r.rev)+'</td>'+
+        '<td><button class="kdel" data-d="'+r.date+'">삭제</button></td>';
+      b.appendChild(tr);
+    });
+    [].forEach.call(b.querySelectorAll('.kdel'),function(btn){
+      btn.addEventListener('click',function(){
+        saveKpi(loadKpi().filter(function(r){return r.date!==btn.dataset.d;}));renderKpi();
+      });
+    });
+  }
+  function addKpi(){
+    var date=document.getElementById('kDate').value;
+    if(!date){alert('날짜를 선택하세요.');return;}
+    var rec={date:date,
+      visits:+document.getElementById('kVisit').value||0,
+      imp:+document.getElementById('kImp').value||0,
+      rev:+document.getElementById('kRev').value||0};
+    var a=loadKpi().filter(function(r){return r.date!==date;});
+    a.push(rec);saveKpi(a);
+    document.getElementById('kVisit').value='';document.getElementById('kImp').value='';document.getElementById('kRev').value='';
+    renderKpi();
+  }
+  (function(){var d=new Date();document.getElementById('kDate').value=
+    d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);})();
+  renderKpi();
+
+  /* ---------- 오늘의 체크리스트 (localStorage) ---------- */
+  var ITEMS=[
+    "오늘의 글감 확인 (디스패치 → 글감 추천)",
+    "고단가 글 1편 작성·발행 (글 생성기)",
+    "발행 글에 썸네일 삽입 + deploy.bat 배포",
+    "OSMU 변환으로 네이버·쓰레드용 재가공",
+    "쓰레드 1~2개 게시 (안전 범위)",
+    "지식인 답변 2~3개 (안전형)",
+    "성과 모니터링 확인 (방문·노출·수익·색인)"
+  ];
+  function todayKey(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+  function loadChk(){
+    var data={};try{data=JSON.parse(localStorage.getItem('lsg_dash'))||{};}catch(e){data={};}
+    if(data.date!==todayKey()){data={date:todayKey(),checked:[]};localStorage.setItem('lsg_dash',JSON.stringify(data));}
+    return data;
+  }
+  function saveChk(d){localStorage.setItem('lsg_dash',JSON.stringify(d));}
+  function renderChk(){
+    var data=loadChk();var list=document.getElementById('chkList');list.innerHTML='';
+    ITEMS.forEach(function(t,i){
+      var on=data.checked.indexOf(i)>=0;
+      var row=document.createElement('div');row.className='chk'+(on?' done':'');
+      row.innerHTML='<input type="checkbox" '+(on?'checked':'')+' id="c'+i+'"><label for="c'+i+'">'+t+'</label>';
+      row.querySelector('input').addEventListener('change',function(){toggleChk(i);});
+      list.appendChild(row);
+    });
+    document.getElementById('chkBar').style.width=Math.round(data.checked.length/ITEMS.length*100)+'%';
+  }
+  function toggleChk(i){
+    var data=loadChk();var idx=data.checked.indexOf(i);
+    if(idx>=0)data.checked.splice(idx,1);else data.checked.push(i);
+    saveChk(data);renderChk();
+  }
+  function resetToday(){var data=loadChk();data.checked=[];saveChk(data);renderChk();}
+  renderChk();
 </script>
 </body>
 </html>
