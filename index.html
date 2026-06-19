@@ -133,6 +133,16 @@
         </div>
 
         <div class="card">
+          <h3>🟢 네이버 발행 — 브라우저 자동화</h3>
+          <p>네이버 글쓰기 <b>API는 2020년 종료</b>돼 자동게시는 불가합니다. 대신 ①PC에서 <b>네이버 글쓰기 패키지</b>를 만들고(붙여넣기용) ②<b>Claude+Chrome</b>으로 글쓰기 화면을 조작합니다. <b>게시는 항상 승인 후.</b></p>
+          <button class="btn go" onclick="dispatchNaver()">🤖 Claude에게 맡기기 (브라우저 자동화 프롬프트)</button>
+          <button class="btn alt" onclick="copyNaverDraft()">📋 패키지 생성 명령 복사</button>
+          <p class="note">· <b>패키지 생성(PC)</b>: <b>python -m studio.pipeline naver-draft --code &lt;코드&gt; --file &lt;네이버용 변형본&gt; --open</b> → 제목·변형본·관련글·태그가 클립보드에 복사되고 글쓰기 창이 열립니다. 붙여넣기 한 번.<br>
+          · <b>변형본이 없으면</b> 먼저 위 ③ <b>OSMU 변환</b>으로 네이버용을 만든 뒤 <code>--file</code>로 넣으세요(구글 원문 그대로 금지=저품질).<br>
+          · 게시 후 URL: <b>naver-link --code &lt;코드&gt; --url &lt;URL&gt;</b> → 콘솔 연계도구 교차링크에 입력.</p>
+        </div>
+
+        <div class="card">
           <h3>🛡️ 댓글 대응 — 검증·답변 초안</h3>
           <p>부정견해·사실오류 댓글을 <b>웹·유튜브로 정밀검증</b>해 출처 단 답변 초안과 메일을 만듭니다. <b>게시는 항상 승인 후</b>(자동 반박 금지).</p>
           <button class="btn go" onclick="dispatchComments()">🤖 Claude에게 맡기기 (프롬프트 복사)</button>
@@ -268,6 +278,7 @@
     {ic:'✍️',name:'글 작성·글감추천',st:'live',gl:'고단가 글 초안(제목공식·내부링크·검증)',meta:'디스패치 ①②',go:function(){goTab('dispatch');}},
     {ic:'🎨',name:'자산 스튜디오',st:'live',gl:'썸네일·버튼·영상·로고를 코드로 생성',meta:'PC: studio.pipeline',go:function(){goTab('dashboard');}},
     {ic:'🔁',name:'OSMU 확산',st:'live',gl:'구글 글을 네이버·쓰레드용으로 재가공',meta:'OSMU 탭',go:function(){goTab('osmu');}},
+    {ic:'🟢',name:'네이버 발행',st:'live',gl:'API 종료 → 반자동 패키지 + 브라우저 자동화로 게시',meta:'디스패치 🟢 · studio naver-draft',go:function(){goTab('dispatch');}},
     {ic:'❓',name:'지식인 답변',st:'live',gl:'도움 우선 답변 + 자연스러운 글 링크',meta:'지식인 탭',go:function(){goTab('jisikin');}},
     {ic:'🔗',name:'연계 도구',st:'live',gl:'관련글 내부링크+채널 교차링크로 체류↑',meta:'모니터링 → 연계도구',go:function(){goTab('dashboard');}},
     {ic:'📡',name:'모니터링',st:'live',gl:'발행·품질·자산·성과·채널 한눈에',meta:'모니터링 탭',go:function(){goTab('dashboard');}},
@@ -276,8 +287,7 @@
     {ic:'✏️',name:'수기 기록',st:'man',gl:'채널 지표·OSMU 추적·주간 KPI 누적',meta:'모니터링 내 카드(이 기기 저장)',go:function(){goTab('dashboard');}}
   ];
   var BLOCKED=[
-    {ic:'💰',name:'애드센스 자동조회',gl:'수익 자동 조회(로컬 전용·비배포)',why:'대기: GCP 프로젝트+OAuth → studio/.secrets/client_secret.json 준비 시 빌드'},
-    {ic:'🟢',name:'네이버 글쓰기 API',gl:'네이버 변형본 자동 게시',why:'대기: developers.naver.com 앱 등록 → studio/.secrets/naver_client.json 준비 시 빌드'}
+    {ic:'💰',name:'애드센스 자동조회',gl:'수익 자동 조회(로컬 전용·비배포)',why:'대기: GCP 프로젝트+OAuth → studio/.secrets/client_secret.json 준비 시 빌드'}
   ];
   function renderNav(){
     var f=document.getElementById('flowBox');if(!f||f.dataset.done)return;f.dataset.done='1';
@@ -369,6 +379,24 @@
       "1) C:\\lifeinfo 소스 변경 전체를 git add -A 후 커밋(메시지=오늘 작업 요약) → origin main 으로 push.\n"+
       "2) 이어서 deploy.bat 으로 콘솔·썸네일·자산을 배포 저장소(C:\\lifeinfo-deploy)에 복사·커밋·push 하도록 안내.\n"+
       "3) 변경 없으면 커밋 생략. push에 로그인이 필요하면 알려줘. (가장 빠른 방법은 커밋배포.bat 더블클릭)";
+    navigator.clipboard.writeText(p).then(toast,function(){});
+    showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
+  }
+  /* ---------- 🟢 네이버 발행 (API 종료 → 반자동 + 브라우저 자동화) ---------- */
+  var NAVER_DRAFT_CMD='cd /d C:\\lifeinfo && python -m studio.pipeline naver-draft --code <코드> --file <네이버용_변형본.txt> --open';
+  function copyNaverDraft(){
+    navigator.clipboard.writeText(NAVER_DRAFT_CMD).then(toast,function(){});
+    showOut('터미널(cmd)에 붙여넣고 <코드>·<파일>만 바꿔 Enter:\n\n'+NAVER_DRAFT_CMD+
+      '\n\n예) python -m studio.pipeline naver-draft --code D2-03 --file 네이버용_K패스.txt --open');
+  }
+  function dispatchNaver(){
+    var p="생활정보 모음 — 네이버 블로그에 글을 발행해줘. (가드레일: 게시 전 반드시 내 승인)\n\n"+
+      "전제: 네이버 글쓰기 API는 2020년 종료 → 브라우저 자동화로 진행. Chrome에 네이버 로그인 세션 + claude-in-chrome 확장 연결 필요.\n"+
+      "1) 발행할 글 코드를 받으면 PC에서 `python -m studio.pipeline naver-draft --code <코드> --file <네이버용 변형본>` 로 패키지 생성(변형본 없으면 OSMU 변환부터). 구글 원문 그대로 금지(저품질).\n"+
+      "2) 네이버 글쓰기 화면을 열어 제목·본문(변형본) 붙여넣기 + 카테고리 선택 + 이미지 1장(thumbs_naver) 추가.\n"+
+      "3) 게시 전 미리보기를 내게 확인받고, 승인하면 발행.\n"+
+      "4) 발행 후 URL을 `python -m studio.pipeline naver-link --code <코드> --url <URL>` 로 기록 안내.\n\n"+
+      "원칙: 하루 1~2개·사람 속도(비정상탐지 회피), 외부링크는 글당 1개(맨 아래), 모든 게시는 건별 승인.";
     navigator.clipboard.writeText(p).then(toast,function(){});
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
