@@ -180,7 +180,7 @@
         <h3 class="nav-sec">🤖 에이전트 — 목표 · 상태 <span style="font-size:11px;color:#9fb0d0;font-weight:400">(누르면 이동)</span></h3>
         <div class="agrid" id="agentBox"></div>
 
-        <h3 class="nav-sec">⏳ 자격증명 대기 — 다음 빌드</h3>
+        <h3 class="nav-sec">⏳ 자격증명 대기 / 외부 연동</h3>
         <div class="agrid" id="blockBox"></div>
         <div class="note" style="color:#9fb0d0">💡 상태 배지: <b style="color:#06d6a0">LIVE</b> 작동중 · <b style="color:#9fb0d0">수기</b> 수동기록 · <b style="color:#ffd166">설계만</b> 자격증명 대기. 흐름·이력은 <code>LIFEINFO_메커니즘_플로우차트.md</code>에 누적됩니다.</div>
       </div>
@@ -284,11 +284,10 @@
     {ic:'📡',name:'모니터링',st:'live',gl:'발행·품질·자산·성과·채널 한눈에',meta:'모니터링 탭',go:function(){goTab('dashboard');}},
     {ic:'🛡️',name:'댓글 대응',st:'live',gl:'부정·오류 댓글 정밀검증→출처 단 초안',meta:'디스패치 🛡️ → Gmail',go:function(){goDispatch(function(){dispatchComments();});}},
     {ic:'🔎',name:'검색·분류',st:'live',gl:'발행 글 탐색(검색/카테고리 트리)',meta:'검색·분류 탭',go:function(){goTab('search');}},
+    {ic:'💰',name:'애드센스 수익·승인',st:'live',gl:'수익·승인상태 자동조회(로컬 전용) + 매일 승인 자동확인',meta:'PC: adsense.py status/fetch · 작업스케줄러 10시',go:function(){window.open('https://adsense.google.com/adsense/u/0/pub-3606922238918518/home','_blank','noopener');}},
     {ic:'✏️',name:'수기 기록',st:'man',gl:'채널 지표·OSMU 추적·주간 KPI 누적',meta:'모니터링 내 카드(이 기기 저장)',go:function(){goTab('dashboard');}}
   ];
-  var BLOCKED=[
-    {ic:'💰',name:'애드센스 자동조회',gl:'수익 자동 조회(로컬 전용·비배포)',why:'대기: GCP 프로젝트+OAuth → studio/.secrets/client_secret.json 준비 시 빌드'}
-  ];
+  var BLOCKED=[];  // 자격증명 대기 트랙 없음(애드센스 연결 완료, 네이버는 반자동+브라우저)
   function renderNav(){
     var f=document.getElementById('flowBox');if(!f||f.dataset.done)return;f.dataset.done='1';
     FLOW.forEach(function(s,i){
@@ -307,6 +306,12 @@
       c.onclick=a.go;ab.appendChild(c);
     });
     var bb=document.getElementById('blockBox');
+    if(!BLOCKED.length){
+      var ok=document.createElement('div');ok.className='acard';ok.style.cursor='default';
+      ok.innerHTML='<h4>✅ 대기 중인 자격증명 없음<span class="st live">완료</span></h4>'+
+        '<p class="gl">모든 트랙 연결됨 — 애드센스 자동조회 연결(승인 검토중), 네이버는 반자동+브라우저로 운영.</p>';
+      bb.appendChild(ok);
+    }
     BLOCKED.forEach(function(a){
       var c=document.createElement('div');c.className='acard blk';
       c.innerHTML='<h4>'+a.ic+' '+a.name+'<span class="st plan">설계만</span></h4>'+
