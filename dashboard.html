@@ -248,6 +248,15 @@
   <!-- OSMU 최근 발행 로그 -->
   <div class="sect">
     <h2>🔁 OSMU 최근 발행 로그 <span class="tag live">DB · 최근순</span></h2>
+    <div class="perf-ctl">
+      <select id="osmuLogFilter">
+        <option value="">전체 채널</option>
+        <option value="naver">네이버</option>
+        <option value="threads">쓰레드</option>
+        <option value="insta">인스타</option>
+        <option value="jisikin">지식인</option>
+      </select>
+    </div>
     <div class="osmu-wrap">
       <table class="osmu"><thead><tr>
         <th>날짜</th><th>글</th><th>채널</th>
@@ -630,32 +639,41 @@
     [].forEach.call(b.querySelectorAll('input[type=checkbox]'),function(cb){
       cb.addEventListener('change',function(){
         var d=loadOsmu();var k=cb.getAttribute('data-oc');d[k]=d[k]||{};
-        d[k][cb.getAttribute('data-ch')]=cb.checked?1:0;saveOsmu(d);renderOsmu();
+        d[k][cb.getAttribute('data-ch')]=cb.checked?1:0;saveOsmu(d);renderOsmu();renderOsmuLog();
       });
     });
   }
   document.getElementById('osmuFilter').addEventListener('change',renderOsmu);
 
   /* ---------- 🔁 OSMU 최근 발행 로그 (DB osmu_at 기준, 최근순) ---------- */
+  function osmuChannels(p){
+    var o=p.osmu||{};var loc=(loadOsmu()[p.code])||{};
+    return {naver:o.naver||'', threads:o.threads||'', insta:!!loc.insta, jisikin:!!loc.jisikin};
+  }
   function renderOsmuLog(){
     var b=document.getElementById('osmuLogBody'); if(!b||!PERF.posts.length)return;
+    var fEl=document.getElementById('osmuLogFilter');var filter=fEl?fEl.value:'';
     function naverId(p){var m=(((p.osmu||{}).naver)||'').match(/(\d{6,})/);return m?m[1]:'';}
-    var rows=PERF.posts.filter(function(p){return p.osmu&&(p.osmu.naver||p.osmu.threads);});
+    var rows=PERF.posts.filter(function(p){var c=osmuChannels(p);return c.naver||c.threads||c.insta||c.jisikin;});
     rows.forEach(function(p){var at=p.osmu_at||{};p._d=[at.naver,at.threads].filter(Boolean).sort().pop()||'';});
+    if(filter)rows=rows.filter(function(p){return !!osmuChannels(p)[filter];});
     rows.sort(function(a,b){if(b._d!==a._d)return (b._d||'').localeCompare(a._d||'');return naverId(b).localeCompare(naverId(a));});
     b.innerHTML='';
-    if(!rows.length){b.innerHTML='<tr><td colspan="3" class="empty">아직 OSMU 교차발행 기록이 없습니다.</td></tr>';return;}
+    if(!rows.length){b.innerHTML='<tr><td colspan="3" class="empty">해당 조건의 OSMU 기록이 없습니다.</td></tr>';return;}
     rows.forEach(function(p){
-      var col=PERF.colors[p.cat]||'#4d9de0';var o=p.osmu||{};var ch=[];
-      if(o.naver)ch.push('<a href="'+o.naver+'" target="_blank" rel="noopener" style="color:#2DB400;font-weight:700;text-decoration:none">🟢 네이버</a>');
-      if(o.threads)ch.push('<a href="'+o.threads+'" target="_blank" rel="noopener" style="color:#7fc1ff;font-weight:700;text-decoration:none">🧵 쓰레드</a>');
+      var col=PERF.colors[p.cat]||'#4d9de0';var c=osmuChannels(p);var ch=[];
+      if(c.naver)ch.push('<a href="'+c.naver+'" target="_blank" rel="noopener" style="color:#2DB400;font-weight:700;text-decoration:none">🟢 네이버</a>');
+      if(c.threads)ch.push('<a href="'+c.threads+'" target="_blank" rel="noopener" style="color:#7fc1ff;font-weight:700;text-decoration:none">🧵 쓰레드</a>');
+      if(c.insta)ch.push('<span style="color:#E1306C;font-weight:700">📷 인스타</span>');
+      if(c.jisikin)ch.push('<span style="color:#9fb0d0;font-weight:700">❓ 지식인</span>');
       var tr=document.createElement('tr');
       tr.innerHTML='<td style="white-space:nowrap;color:#9fb0d0;font-size:12px">'+(p._d||'—')+'</td>'+
         '<td><span class="pc" style="background:'+col+'">'+p.code+'</span><a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a></td>'+
-        '<td style="white-space:nowrap">'+ch.join(' · ')+'</td>';
+        '<td style="white-space:nowrap">'+(ch.join(' · ')||'—')+'</td>';
       b.appendChild(tr);
     });
   }
+  if(document.getElementById('osmuLogFilter'))document.getElementById('osmuLogFilter').addEventListener('change',renderOsmuLog);
 
   /* ---------- 🔗 연계 도구 (관련글 내부링크 + 채널 교차링크) ---------- */
   function _ltoks(t){return new Set((t||'').split(/[\s,·\-—()\[\]\/'"]+/).filter(function(w){return w.length>=2&&!/^\d+$/.test(w);}));}
