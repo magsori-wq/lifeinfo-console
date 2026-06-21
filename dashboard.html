@@ -245,6 +245,17 @@
     <div class="note">💡 <b>네이버·쓰레드</b>는 <code>naver-link</code>/<code>threads-link</code>로 기록하면 ✓가 <b>자동 표시</b>(DB 동기화, ✓ 클릭=게시글). <b>인스타·지식인</b>은 게시 후 직접 체크하세요. 빈 칸이 곧 '오늘 할 OSMU 작업'.</div>
   </div>
 
+  <!-- OSMU 최근 발행 로그 -->
+  <div class="sect">
+    <h2>🔁 OSMU 최근 발행 로그 <span class="tag live">DB · 최근순</span></h2>
+    <div class="osmu-wrap">
+      <table class="osmu"><thead><tr>
+        <th>날짜</th><th>글</th><th>채널</th>
+      </tr></thead><tbody id="osmuLogBody"><tr><td colspan="3" class="empty">불러오는 중…</td></tr></tbody></table>
+    </div>
+    <div class="note">💡 네이버·쓰레드 교차발행을 <b>최근 발행순</b>으로 모아 봅니다. 날짜는 <code>naver-link</code>/<code>threads-link</code> 기록일.</div>
+  </div>
+
   <!-- 연계 도구 (내부링크 + 채널 교차링크) -->
   <div class="sect link-tools">
     <h2>🔗 연계 도구 — 체류·노출 ↑ <span class="tag live">DB 실시간</span></h2>
@@ -450,6 +461,7 @@
       .catch(function(){PERF.comments={};PERF.matched=0;renderPerf();});
     renderChannels(posts.length);
     renderOsmu();
+    renderOsmuLog();
     initLinkTool();
   }
   function perfRows(){
@@ -623,6 +635,27 @@
     });
   }
   document.getElementById('osmuFilter').addEventListener('change',renderOsmu);
+
+  /* ---------- 🔁 OSMU 최근 발행 로그 (DB osmu_at 기준, 최근순) ---------- */
+  function renderOsmuLog(){
+    var b=document.getElementById('osmuLogBody'); if(!b||!PERF.posts.length)return;
+    function naverId(p){var m=(((p.osmu||{}).naver)||'').match(/(\d{6,})/);return m?m[1]:'';}
+    var rows=PERF.posts.filter(function(p){return p.osmu&&(p.osmu.naver||p.osmu.threads);});
+    rows.forEach(function(p){var at=p.osmu_at||{};p._d=[at.naver,at.threads].filter(Boolean).sort().pop()||'';});
+    rows.sort(function(a,b){if(b._d!==a._d)return (b._d||'').localeCompare(a._d||'');return naverId(b).localeCompare(naverId(a));});
+    b.innerHTML='';
+    if(!rows.length){b.innerHTML='<tr><td colspan="3" class="empty">아직 OSMU 교차발행 기록이 없습니다.</td></tr>';return;}
+    rows.forEach(function(p){
+      var col=PERF.colors[p.cat]||'#4d9de0';var o=p.osmu||{};var ch=[];
+      if(o.naver)ch.push('<a href="'+o.naver+'" target="_blank" rel="noopener" style="color:#2DB400;font-weight:700;text-decoration:none">🟢 네이버</a>');
+      if(o.threads)ch.push('<a href="'+o.threads+'" target="_blank" rel="noopener" style="color:#7fc1ff;font-weight:700;text-decoration:none">🧵 쓰레드</a>');
+      var tr=document.createElement('tr');
+      tr.innerHTML='<td style="white-space:nowrap;color:#9fb0d0;font-size:12px">'+(p._d||'—')+'</td>'+
+        '<td><span class="pc" style="background:'+col+'">'+p.code+'</span><a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a></td>'+
+        '<td style="white-space:nowrap">'+ch.join(' · ')+'</td>';
+      b.appendChild(tr);
+    });
+  }
 
   /* ---------- 🔗 연계 도구 (관련글 내부링크 + 채널 교차링크) ---------- */
   function _ltoks(t){return new Set((t||'').split(/[\s,·\-—()\[\]\/'"]+/).filter(function(w){return w.length>=2&&!/^\d+$/.test(w);}));}
