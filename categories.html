@@ -69,7 +69,7 @@ function fail(){document.getElementById("tree").innerHTML='<div class="load">목
 function render(db){
   var byCat={};
   db.posts.forEach(function(p){(byCat[p.sub]=byCat[p.sub]||[]).push(p);});
-  document.getElementById("meta").textContent="총 "+db.count+"편 · 대분류 "+db.taxonomy.length+"개";
+  document.getElementById("meta").textContent="총 "+db.posts.length+"편 · 대분류 "+db.taxonomy.length+"개";
   var html=db.taxonomy.map(function(c){
     var ccnt=db.posts.filter(function(p){return p.cat===c.code;}).length;
     var body=c.subs.map(function(s){
