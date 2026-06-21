@@ -113,6 +113,16 @@
         </div>
 
         <div class="card">
+          <h3>📝 게시 — Blogger 초안 생성(API)</h3>
+          <p>작성한 글 HTML 파일을 <b>Blogger 초안</b>으로 바로 올립니다(<code>publish-post</code>). <b>기본은 초안</b>이며 미리보기 확인 후 사람이 발행합니다(라이브는 <code>--publish</code>).</p>
+          <button class="btn go" onclick="dispatchPublish()">🤖 Claude에게 맡기기 (초안 생성 프롬프트)</button>
+          <button class="btn alt" onclick="copyPublish()">📋 게시 명령 복사</button>
+          <p class="note">· <b>명령(PC)</b>: <b>python studio/blogger.py publish-post --code &lt;코드&gt; --file &lt;글_HTML.txt&gt;</b> → 제목·라벨은 DB 코드에서 자동, 초안 생성.<br>
+          · <b>먼저 확인</b>: <code>--dry-run</code>을 붙이면 제목·라벨·본문길이만 확인(게시 안 함). 확인 후 빼고 실행.<br>
+          · <b>라이브 발행</b>은 <code>--publish</code> 명시(미지정 시 항상 초안). 초안은 Blogger에서 미리보기 후 게시.</p>
+        </div>
+
+        <div class="card">
           <h3>⚙️ 운영 루틴 — 트렌드 갱신 → 배포</h3>
           <p>두 줄 명령(<b>트렌드 수집 + 배포</b>)을 한 번에. 브라우저는 PC 명령을 직접 못 돌리니 아래 중 하나로 실행하세요.</p>
           <button class="btn go" onclick="dispatchRoutine()">🤖 Claude에게 맡기기 (프롬프트 복사)</button>
@@ -267,7 +277,7 @@
     {t:'✍️ 글 작성',d:'주제 입력 → 제목공식·내부링크·검증 포함 초안 프롬프트',go:function(){goTab('dispatch');}},
     {t:'🎨 자산 생성',d:'썸네일·버튼·영상 (PC: studio 파이프라인 / 현황은 모니터링)',go:function(){goTab('dashboard');}},
     {t:'🗂️ DB·배포',d:'lifeinfo_db.txt 레코드 추가 → update_trends.bat / deploy.bat',go:function(){goDispatch(function(){copyRoutine();});}},
-    {t:'📝 발행',d:'Blogger 글쓰기로 본문 붙여넣어 발행',go:function(){window.open('https://www.blogger.com/blog/posts/4026928033017788339','_blank','noopener');}},
+    {t:'📝 발행',d:'publish-post로 Blogger 초안 생성 → 미리보기 후 발행',go:function(){goDispatch(function(){dispatchPublish();});}},
     {t:'🔁 OSMU 확산',d:'네이버·쓰레드·지식인으로 재가공',go:function(){goTab('osmu');}},
     {t:'📡 모니터링',d:'발행·품질·성과·채널 현황 + 연계 도구',go:function(){goTab('dashboard');}},
     {t:'🛡️ 댓글·대응',d:'부정·오류 댓글 검증 → 출처 단 답변 초안 → Gmail',go:function(){goDispatch(function(){dispatchComments();});}}
@@ -276,6 +286,7 @@
   var AGENTS=[
     {ic:'📰',name:'트렌드 글감',st:'live',gl:'매일 이슈 기반 글감 공급',meta:'글감 탭 · studio trends',go:function(){goTab('trends');}},
     {ic:'✍️',name:'글 작성·글감추천',st:'live',gl:'고단가 글 초안(제목공식·내부링크·검증)',meta:'디스패치 ①②',go:function(){goTab('dispatch');}},
+    {ic:'📝',name:'발행(초안 자동)',st:'live',gl:'publish-post로 Blogger 초안 생성(기본 초안·미리보기 후 발행)',meta:'디스패치 📝 · studio blogger publish-post',go:function(){goDispatch(function(){dispatchPublish();});}},
     {ic:'🎨',name:'자산 스튜디오',st:'live',gl:'썸네일·버튼·영상·로고를 코드로 생성',meta:'PC: studio.pipeline',go:function(){goTab('dashboard');}},
     {ic:'🔁',name:'OSMU 확산',st:'live',gl:'구글 글을 네이버·쓰레드용으로 재가공',meta:'OSMU 탭',go:function(){goTab('osmu');}},
     {ic:'🟢',name:'네이버 발행',st:'live',gl:'API 종료 → 반자동 패키지 + 브라우저 자동화로 게시',meta:'디스패치 🟢 · studio naver-draft',go:function(){goTab('dispatch');}},
@@ -333,7 +344,8 @@
       "4) 체류시간↑ 위한 내부 연계: 카테고리 페이지("+CAT_URL+")에서 같은 분야 관련글 2~3개를 골라 본문 중간(자연스러운 맥락)과 끝 '함께 보면 좋은 글'에 내부링크+버튼으로 연결(앵커텍스트는 관련글 제목).\n"+
       "5) 채널 연계: 네이버 블로그·쓰레드용으로도 재가공 가능하게 핵심 3줄 요약을 따로 덧붙여줘(OSMU 확산용).\n"+
       "6) 최신 수치는 웹 검색으로 확인해 반영.\n"+
-      "결과는 블로그스팟 HTML 본문(.lsg 양식: 카테고리 pill+목차+CTA버튼+표+마무리+관련글)으로 바로 붙여넣을 수 있게 정리해줘.";
+      "결과는 블로그스팟 HTML 본문(.lsg 양식: 카테고리 pill+목차+CTA버튼+표+마무리+관련글)으로 바로 붙여넣을 수 있게 정리해줘.\n\n"+
+      "[발행] 완성 본문을 `<코드>_글_HTML.txt`로 저장한 뒤 → `python studio/blogger.py publish-post --code <코드> --file <그 파일> --dry-run`로 확인 → 이상 없으면 --dry-run 빼고 실행해 Blogger 초안 생성 → 미리보기 확인 후 발행. 이어서 DB 레코드 추가→validate→deploy(6~8단계). (기본 초안, 라이브는 --publish)";
     }
     if(kind==='ideas'){
       return "수익형 블로그 '생활정보 모음'(40~60대 타겟)에 오늘 쓸 고단가 글감 3개를 추천해줘.\n"+
@@ -402,6 +414,24 @@
       "3) 게시 전 미리보기를 내게 확인받고, 승인하면 발행.\n"+
       "4) 발행 후 URL을 `python -m studio.pipeline naver-link --code <코드> --url <URL>` 로 기록 안내.\n\n"+
       "원칙: 하루 1~2개·사람 속도(비정상탐지 회피), 외부링크는 글당 1개(맨 아래), 모든 게시는 건별 승인.";
+    navigator.clipboard.writeText(p).then(toast,function(){});
+    showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
+  }
+  /* ---------- 📝 발행 (Blogger API 초안 생성 — studio/blogger.py publish-post) ---------- */
+  var PUBLISH_CMD='cd /d C:\\lifeinfo && python studio/blogger.py publish-post --code <코드> --file <글_HTML.txt> --dry-run';
+  function copyPublish(){
+    navigator.clipboard.writeText(PUBLISH_CMD).then(toast,function(){});
+    showOut('터미널(cmd)에 붙여넣고 <코드>·<파일>만 바꿔 Enter (먼저 --dry-run으로 확인):\n\n'+PUBLISH_CMD+
+      '\n\n· 확인되면 --dry-run 빼고 실행 → 초안 생성\n· 라이브 발행은 끝에 --publish 추가(미지정 시 항상 초안)\n예) python studio/blogger.py publish-post --code A2-07 --file 풍수해보험_글_HTML.txt');
+  }
+  function dispatchPublish(){
+    var p="생활정보 모음 — 작성한 글을 Blogger 초안으로 올려줘. (가드레일: 기본 초안, 라이브 발행은 내 승인 후 --publish)\n\n"+
+      "1) 완성한 본문 HTML을 `<코드>_글_HTML.txt`(예: 풍수해보험_글_HTML.txt)로 저장.\n"+
+      "2) python studio/blogger.py publish-post --code <코드> --file <그 파일> --dry-run 으로 제목·라벨·본문길이 확인.\n"+
+      "3) 이상 없으면 --dry-run 빼고 실행 → Blogger 초안 생성(제목·라벨은 DB 코드에서 자동).\n"+
+      "4) 생성된 편집/미리보기 URL을 내게 주고, 미리보기 렌더(빈 글 아님) 확인 후 내가 '게시'를 누른다(승인 시 --publish).\n"+
+      "5) 이어서 DB 레코드 추가 → validate_db → deploy(6~8단계)로 콘솔·카테고리까지 반영.\n\n"+
+      "원칙: 기본 초안 유지(무인 라이브 게시 금지), 외부 행동은 건별 승인.";
     navigator.clipboard.writeText(p).then(toast,function(){});
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
