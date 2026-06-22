@@ -175,6 +175,13 @@
     <ul class="posts" id="recent"><li class="empty">불러오는 중…</li></ul>
   </div>
 
+  <!-- 색인 현황 (서치콘솔 URL Inspection API) -->
+  <div class="sect">
+    <h2>🔍 색인 현황 <span class="tag live" id="idxTag">서치콘솔 API</span></h2>
+    <p class="note" id="idxNote" style="margin:0 0 10px">색인 상태 불러오는 중…</p>
+    <ul class="posts" id="idxList"></ul>
+  </div>
+
   <!-- 성과 모니터링 (외부 콘솔) -->
   <div class="sect">
     <h2>📈 성과 모니터링 <span class="tag ext">외부 콘솔</span></h2>
@@ -792,6 +799,30 @@
   (function(){var d=new Date();document.getElementById('kDate').value=
     d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);})();
   renderKpi();
+
+  /* ---------- 🔍 색인 현황 (searchconsole.py inspect → index_status.json) ---------- */
+  function renderIndexStatus(){
+    var tag=document.getElementById('idxTag'), note=document.getElementById('idxNote'), list=document.getElementById('idxList');
+    if(!tag||!note||!list)return;
+    fetch('index_status.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+      var ok=d.indexed||0, tot=d.total||0, pct=tot?Math.round(ok/tot*100):0;
+      tag.textContent='점검: '+(d.checked_at||'-');
+      note.innerHTML='색인 완료 <b>'+ok+' / '+tot+'편</b> ('+pct+'%). 미색인·오류 글은 디스패치 <b>🔍 색인 점검</b>으로 요청하세요. (색인 \'요청\'은 브라우저 1클릭, 결과는 며칠 뒤 반영)';
+      var posts=d.posts||{}, rows=Object.keys(posts).map(function(c){
+        var p=posts[c]; return {code:c,indexed:(p.verdict==='PASS'),err:(p.verdict==='ERROR'),state:p.state||p.verdict||'',url:p.url||''};
+      });
+      rows.sort(function(a,b){return (a.indexed?1:0)-(b.indexed?1:0);}); // 미색인 먼저
+      list.innerHTML=rows.map(function(r){
+        var ic=r.indexed?'✅':(r.err?'⚠️':'⛔');
+        return '<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+ic+' '+esc(r.code)+'</a> <span style="color:#8a97ab;font-size:13px">'+esc(r.state)+'</span></li>';
+      }).join('')||'<li class="empty">데이터 없음</li>';
+    }).catch(function(){
+      tag.textContent='미점검';
+      note.innerHTML='아직 색인 상태를 가져오지 않았습니다. PC에서 <b>python studio/searchconsole.py inspect</b> 실행 → <b>deploy</b> 하면 여기에 글별 ✓/✗가 표시됩니다. (최초 1회 <b>auth</b> 동의 필요)';
+      list.innerHTML='';
+    });
+  }
+  renderIndexStatus();
 
   /* ---------- 오늘의 체크리스트 (localStorage) ---------- */
   var ITEMS=[

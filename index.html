@@ -164,7 +164,9 @@
           <p>구글 <b>서치콘솔</b>에서 신규글이 색인됐는지 확인하고, 안 된 글은 <b>색인 생성을 요청</b>합니다. 색인 요청은 공식 API가 없어(브라우저 1클릭이 한계) <b>Claude+Chrome</b>으로 진행합니다.</p>
           <button class="btn go" onclick="dispatchIndex()">🤖 Claude에게 맡기기 (색인 점검·요청 프롬프트)</button>
           <a class="btn alt" href="https://search.google.com/search-console?resource_id=https://lifeinfo8975.blogspot.com/" target="_blank" rel="noopener">🔎 서치콘솔 URL 검사 열기</a>
-          <p class="note">· <b>Claude에게 맡기기</b>: 복사된 프롬프트를 <b>Claude Code</b>에 붙여넣으면 → DB 최근글을 GSC URL 검사로 점검 → '리디렉션 오류'는 <b>실시간 테스트</b>로 과거데이터(stale) 여부 판별 → 미색인 글 색인 요청(하루 ~10건).<br>
+          <button class="btn alt" onclick="copyIndexInspect()">📋 색인상태 조회 명령 복사 (API)</button>
+          <p class="note">· <b>색인상태 자동 표시(API)</b>: PC에서 <b>python studio/searchconsole.py inspect</b> 실행 → <code>index_status.json</code> 생성 → deploy 하면 <b>모니터링 탭 '🔍 색인 현황'</b>에 글별 ✓/✗ 표시. (최초 1회 <code>searchconsole.py auth</code> 동의 + GCP에서 'Search Console API' 사용설정)<br>
+          · <b>Claude에게 맡기기</b>: 복사된 프롬프트를 <b>Claude Code</b>에 붙여넣으면 → DB 최근글을 GSC URL 검사로 점검 → '리디렉션 오류'는 <b>실시간 테스트</b>로 과거데이터(stale) 여부 판별 → 미색인 글 색인 요청(하루 ~10건).<br>
           · <b>일괄 경로</b>: <b>sitemap.xml</b>(65편 전체)이 기본 색인 경로 — 개별 URL 요청은 신규글 가속용 보조입니다. sitemap이 '가져올 수 없음'이면 재제출.<br>
           · <b>한계</b>: 색인 '요청'은 자동 API 불가(JobPosting/Broadcast 전용) → 사람/Claude 브라우저 1클릭. 결과는 며칠 뒤 반영.</p>
         </div>
@@ -460,6 +462,15 @@
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   /* ---------- 🔍 색인 (서치콘솔 색인 점검·요청 — Claude+Chrome) ---------- */
+  var INDEX_INSPECT_CMD='cd /d C:\\lifeinfo && python studio/searchconsole.py inspect';
+  function copyIndexInspect(){
+    navigator.clipboard.writeText(INDEX_INSPECT_CMD).then(toast,function(){});
+    showOut('터미널(cmd)에 붙여넣고 Enter (색인상태 조회 → index_status.json):\n\n'+INDEX_INSPECT_CMD+
+      '\n\n· 최초 1회: python studio/searchconsole.py auth (브라우저 동의, webmasters.readonly)\n'+
+      '· GCP(lifeinfo-adsense)에서 \'Google Search Console API\' 사용설정 필요\n'+
+      '· 조회 후 deploy 하면 모니터링 탭 \'🔍 색인 현황\'에 글별 ✓/✗ 반영\n'+
+      '· 최근 N편만: python studio/searchconsole.py inspect --limit 15');
+  }
   function dispatchIndex(){
     var p="생활정보 모음 — 구글 서치콘솔에서 신규글 색인을 점검하고 색인 생성을 요청해줘. (Chrome 확장 연결 필요)\n\n"+
       "전제: Chrome에 magsori@gmail.com 로그인 + claude-in-chrome 확장 연결. 속성 = https://lifeinfo8975.blogspot.com/ (URL 접두어).\n"+
