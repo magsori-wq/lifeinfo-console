@@ -117,7 +117,7 @@
           <p>작성한 글 HTML 파일을 <b>Blogger 초안</b>으로 바로 올립니다(<code>publish-post</code>). <b>기본은 초안</b>이며 미리보기 확인 후 사람이 발행합니다(라이브는 <code>--publish</code>).</p>
           <button class="btn go" onclick="dispatchPublish()">🤖 Claude에게 맡기기 (초안 생성 프롬프트)</button>
           <button class="btn alt" onclick="copyPublish()">📋 게시 명령 복사</button>
-          <p class="note">· <b>명령(PC)</b>: <b>python studio/blogger.py publish-post --code &lt;코드&gt; --file &lt;글_HTML.txt&gt;</b> → 제목·라벨은 DB 코드에서 자동, 초안 생성.<br>
+          <p class="note">· <b>명령(PC)</b>: <b>python studio/blogger.py publish-post --code &lt;코드&gt; --file posts/&lt;글_HTML.txt&gt;</b> → 제목·라벨은 DB 코드에서 자동, 초안 생성.<br>
           · <b>먼저 확인</b>: <code>--dry-run</code>을 붙이면 제목·라벨·본문길이만 확인(게시 안 함). 확인 후 빼고 실행.<br>
           · <b>라이브 발행</b>은 <code>--publish</code> 명시(미지정 시 항상 초안). 초안은 Blogger에서 미리보기 후 게시.</p>
         </div>
@@ -360,7 +360,7 @@
       "5) 채널 연계: 네이버 블로그·쓰레드용으로도 재가공 가능하게 핵심 3줄 요약을 따로 덧붙여줘(OSMU 확산용).\n"+
       "6) 최신 수치는 웹 검색으로 확인해 반영.\n"+
       "결과는 블로그스팟 HTML 본문(.lsg 양식: 카테고리 pill+목차+CTA버튼+표+마무리+관련글)으로 바로 붙여넣을 수 있게 정리해줘.\n\n"+
-      "[발행] 완성 본문을 `<코드>_글_HTML.txt`로 저장한 뒤 → `python studio/blogger.py publish-post --code <코드> --file <그 파일> --dry-run`로 확인 → 이상 없으면 --dry-run 빼고 실행해 Blogger 초안 생성 → 미리보기 확인 후 발행. 이어서 DB 레코드 추가→validate→deploy(6~8단계). (기본 초안, 라이브는 --publish)";
+      "[발행] 완성 본문을 `posts/<코드>_글_HTML.txt`로 저장한 뒤 → `python studio/blogger.py publish-post --code <코드> --file <그 파일> --dry-run`로 확인 → 이상 없으면 --dry-run 빼고 실행해 Blogger 초안 생성 → 미리보기 확인 후 발행. 이어서 DB 레코드 추가→validate→deploy(6~8단계). (기본 초안, 라이브는 --publish)";
     }
     if(kind==='ideas'){
       return "수익형 블로그 '생활정보 모음'(40~60대 타겟)에 오늘 쓸 고단가 글감 3개를 추천해줘.\n"+
@@ -415,11 +415,11 @@
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   /* ---------- 🟢 네이버 발행 (API 종료 → 반자동 + 브라우저 자동화) ---------- */
-  var NAVER_DRAFT_CMD='cd /d C:\\lifeinfo && python -m studio.pipeline naver-draft --code <코드> --file <네이버용_변형본.txt> --open';
+  var NAVER_DRAFT_CMD='cd /d C:\\lifeinfo && python -m studio.pipeline naver-draft --code <코드> --file osmu/<네이버용_변형본.txt> --open';
   function copyNaverDraft(){
     navigator.clipboard.writeText(NAVER_DRAFT_CMD).then(toast,function(){});
     showOut('터미널(cmd)에 붙여넣고 <코드>·<파일>만 바꿔 Enter:\n\n'+NAVER_DRAFT_CMD+
-      '\n\n예) python -m studio.pipeline naver-draft --code D2-03 --file 네이버용_K패스.txt --open');
+      '\n\n예) python -m studio.pipeline naver-draft --code D2-03 --file osmu/네이버용_K패스.txt --open');
   }
   function dispatchNaver(){
     var p="생활정보 모음 — 네이버 블로그에 글을 발행해줘. (가드레일: 게시 전 반드시 내 승인)\n\n"+
@@ -433,15 +433,15 @@
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   /* ---------- 📝 발행 (Blogger API 초안 생성 — studio/blogger.py publish-post) ---------- */
-  var PUBLISH_CMD='cd /d C:\\lifeinfo && python studio/blogger.py publish-post --code <코드> --file <글_HTML.txt> --dry-run';
+  var PUBLISH_CMD='cd /d C:\\lifeinfo && python studio/blogger.py publish-post --code <코드> --file posts/<글_HTML.txt> --dry-run';
   function copyPublish(){
     navigator.clipboard.writeText(PUBLISH_CMD).then(toast,function(){});
     showOut('터미널(cmd)에 붙여넣고 <코드>·<파일>만 바꿔 Enter (먼저 --dry-run으로 확인):\n\n'+PUBLISH_CMD+
-      '\n\n· 확인되면 --dry-run 빼고 실행 → 초안 생성\n· 라이브 발행은 끝에 --publish 추가(미지정 시 항상 초안)\n예) python studio/blogger.py publish-post --code A2-07 --file 풍수해보험_글_HTML.txt');
+      '\n\n· 확인되면 --dry-run 빼고 실행 → 초안 생성\n· 라이브 발행은 끝에 --publish 추가(미지정 시 항상 초안)\n예) python studio/blogger.py publish-post --code A2-07 --file posts/풍수해보험_글_HTML.txt');
   }
   function dispatchPublish(){
     var p="생활정보 모음 — 작성한 글을 Blogger 초안으로 올려줘. (가드레일: 기본 초안, 라이브 발행은 내 승인 후 --publish)\n\n"+
-      "1) 완성한 본문 HTML을 `<코드>_글_HTML.txt`(예: 풍수해보험_글_HTML.txt)로 저장.\n"+
+      "1) 완성한 본문 HTML을 `posts/<코드>_글_HTML.txt`(예: posts/풍수해보험_글_HTML.txt)로 저장.\n"+
       "2) python studio/blogger.py publish-post --code <코드> --file <그 파일> --dry-run 으로 제목·라벨·본문길이 확인.\n"+
       "3) 이상 없으면 --dry-run 빼고 실행 → Blogger 초안 생성(제목·라벨은 DB 코드에서 자동).\n"+
       "4) 생성된 편집/미리보기 URL을 내게 주고, 미리보기 렌더(빈 글 아님) 확인 후 내가 '게시'를 누른다(승인 시 --publish).\n"+
