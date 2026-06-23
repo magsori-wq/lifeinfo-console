@@ -160,6 +160,13 @@
       </div>
     </div>
     <ul class="posts" id="hlList" style="margin-top:10px"></ul>
+    <div id="pipeRow" style="margin-top:11px;padding-top:11px;border-top:1px solid #2a3a5e;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <button id="pipeBtn" style="background:#22406e;border:1px solid #36598f;color:#cfe1ff;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer">🚀 발행 진행 보드 열기</button>
+      <div style="flex:1;min-width:150px">
+        <div id="pipeLabel" style="font-size:12px;color:#9fb0d0;margin-bottom:3px">발행 진행: -</div>
+        <div style="height:8px;background:#0b1322;border-radius:6px;overflow:hidden"><i id="pipeBar" style="display:block;height:100%;width:0;background:linear-gradient(90deg,#4D9DE0,#06D6A0);transition:width .3s"></i></div>
+      </div>
+    </div>
   </div>
 
   <!-- 목표 진행 -->
@@ -901,6 +908,23 @@
     });
   }
   renderHealth();
+
+  /* ---------- 🚀 발행 진행 보드 연동 (pipeline_board.html, localStorage 공유) ---------- */
+  function renderPipe(){
+    var label=document.getElementById('pipeLabel'), bar=document.getElementById('pipeBar');
+    if(!label)return;
+    var s={};try{s=JSON.parse(localStorage.getItem('lsg_pipeline'))||{};}catch(e){}
+    var done=s.done||0, total=s.total||12;
+    if(!s.code){label.innerHTML='발행 진행: <span style="color:#6b7a99">진행 중인 글 없음 — 보드에서 \'새 글 시작\'</span>';bar.style.width='0%';return;}
+    bar.style.width=Math.round(done/total*100)+'%';
+    if(s.complete)label.innerHTML='발행 진행: <b style="color:#06d6a0">✅ '+esc(s.code)+' 완료 ('+done+'/'+total+')</b>';
+    else label.innerHTML='발행 진행: <b>'+esc(s.code)+'</b> · '+done+'/'+total+' 단계';
+  }
+  document.getElementById('pipeBtn').addEventListener('click',function(){
+    window.open('pipeline_board.html','pboard','width=470,height=730');
+  });
+  window.addEventListener('storage',function(e){if(e.key==='lsg_pipeline')renderPipe();});
+  renderPipe();
 
   /* ---------- 오늘의 체크리스트 (localStorage) ---------- */
   var ITEMS=[

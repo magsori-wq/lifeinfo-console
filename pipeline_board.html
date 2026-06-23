@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🚀 발행 진행 보드</title>
+<style>
+  body{margin:0;background:#0f1626;color:#e8edf7;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;padding:14px;font-size:14px}
+  h1{font-size:15px;margin:0 0 4px;color:#7fc1ff;display:flex;align-items:center;gap:6px}
+  .sub{color:#9fb0d0;font-size:11px;margin:0 0 12px}
+  .art{background:#16203a;border:1px solid #2a3a5e;border-radius:10px;padding:9px 11px;margin-bottom:10px;display:flex;gap:8px;align-items:center}
+  .art input{flex:1;background:#0b1322;border:1px solid #2a3a5e;border-radius:7px;color:#e8edf7;padding:6px 8px;font-size:12px}
+  .art button{background:#22406e;border:1px solid #36598f;color:#cfe1ff;border-radius:7px;padding:6px 10px;font-size:12px;cursor:pointer;white-space:nowrap}
+  .art button:hover{background:#2c4f86}
+  .bar{height:9px;background:#0b1322;border-radius:6px;overflow:hidden;margin:0 0 3px}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,#4D9DE0,#06D6A0);width:0;transition:width .3s}
+  .cnt{font-size:12px;color:#9fb0d0;margin:0 0 12px;text-align:right}
+  ul{list-style:none;margin:0;padding:0}
+  li{display:flex;align-items:center;gap:9px;padding:8px 6px;border-bottom:1px dashed #243049}
+  li:last-child{border-bottom:none}
+  li.done{opacity:.62}
+  li.done .lbl{text-decoration:line-through}
+  li input[type=checkbox]{width:17px;height:17px;cursor:pointer;accent-color:#06d6a0;flex:none}
+  li input[disabled]{cursor:not-allowed}
+  .num{font-size:11px;color:#6b7a99;width:18px;text-align:right;flex:none}
+  .who{font-size:10px;font-weight:800;padding:1px 6px;border-radius:9px;flex:none}
+  .who.ai{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52}
+  .who.me{background:#3a2f12;color:#ffd166;border:1px solid #5a4a1a}
+  .lbl{font-size:13px}
+  .star{color:#ff8e8e;font-weight:800;margin-left:3px}
+  .auto{font-size:10px;color:#6b7a99;margin-left:auto;flex:none}
+  .banner{display:none;margin-top:12px;background:#0c3a2c;border:1px solid #1f6b52;color:#06d6a0;border-radius:10px;padding:11px;text-align:center;font-weight:800}
+  .banner.show{display:block}
+  .foot{font-size:10.5px;color:#6b7a99;margin-top:12px;line-height:1.6}
+</style>
+</head>
+<body>
+  <h1>🚀 발행 진행 보드</h1>
+  <p class="sub">글 1편의 12단계를 추적 — 🤖 Claude / 🧑 사용자(★=꼭 필요). 빠뜨림·실수 방지.</p>
+
+  <div class="art">
+    <input id="artCode" placeholder="코드·제목 (예: D3-04 국민연금)" readonly>
+    <button id="newBtn">＋ 새 글 시작</button>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="cnt" id="cnt">0 / 12</div>
+
+  <ul id="steps"></ul>
+
+  <div class="banner" id="banner">✅ 발행 완료! 안전망 신호등에 반영됩니다.</div>
+
+  <p class="foot">자동 감지: ⑨ DB+검증(글 코드가 DB에 있고 신호등 green) · ⑫ 색인 실측(서치콘솔 PASS). 나머지는 직접 체크하세요.<br>
+  진행 상태는 이 브라우저에 저장(localStorage)되고, dashboard 신호등 카드와 실시간 연동됩니다.</p>
+
+<script>
+  var STEPS=[
+    {n:1, who:'ai', t:'글감 선정 (트렌드+면밀한 사고)'},
+    {n:2, who:'me', t:'글감 승인/수정', star:true},
+    {n:3, who:'ai', t:'코드 배정 (A1-01 형식)'},
+    {n:4, who:'ai', t:'본문 작성 + 팩트체크'},
+    {n:5, who:'ai', t:'썸네일 생성'},
+    {n:6, who:'ai', t:'관련글 내부링크 블록'},
+    {n:7, who:'ai', t:'Blogger 초안 생성'},
+    {n:8, who:'me', t:'미리보기 → 라이브 발행', star:true},
+    {n:9, who:'ai', t:'DB 반영 + 검증', auto:'db'},
+    {n:10,who:'ai', t:'배포 (콘솔·카테고리)'},
+    {n:11,who:'me', t:'서치콘솔 색인 요청', star:true},
+    {n:12,who:'ai', t:'색인 반영 실측', auto:'idx'}
+  ];
+  var KEY='lsg_pipeline';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{};}catch(e){return {};}}
+  function save(s){localStorage.setItem(KEY,JSON.stringify(s));}
+  var AUTO={db:false, idx:false};  // 자동 감지 결과
+
+  function detect(){
+    var s=load(), code=(s.code||'').trim().split(' ')[0];
+    if(!code)return Promise.resolve();
+    var p1=fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(db){
+      var inDb=(db.posts||[]).some(function(p){return p.code===code;});
+      return fetch('health.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).then(function(h){
+        AUTO.db = inDb && (h.light==='green');
+      }).catch(function(){AUTO.db=inDb;});
+    }).catch(function(){});
+    var p2=fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).then(function(d){
+      var po=(d.posts||{})[code]; AUTO.idx = !!(po && po.verdict==='PASS');
+    }).catch(function(){AUTO.idx=false;});
+    return Promise.all([p1,p2]);
+  }
+
+  function isDone(st, checked){
+    if(st.auto==='db') return AUTO.db || checked.indexOf(st.n)>=0;
+    if(st.auto==='idx')return AUTO.idx|| checked.indexOf(st.n)>=0;
+    return checked.indexOf(st.n)>=0;
+  }
+
+  function render(){
+    var s=load(), checked=s.checked||[];
+    document.getElementById('artCode').value=s.code||'';
+    var ul=document.getElementById('steps'); ul.innerHTML='';
+    var done=0;
+    STEPS.forEach(function(st){
+      var d=isDone(st,checked); if(d)done++;
+      var auto=(st.auto && (st.auto==='db'?AUTO.db:AUTO.idx));
+      var li=document.createElement('li'); if(d)li.className='done';
+      li.innerHTML='<input type="checkbox" '+(d?'checked':'')+(auto?' disabled':'')+'>'
+        +'<span class="num">'+st.n+'</span>'
+        +'<span class="who '+st.who+'">'+(st.who==='ai'?'🤖':'🧑')+'</span>'
+        +'<span class="lbl">'+st.t+(st.star?'<span class="star">★</span>':'')+'</span>'
+        +(st.auto?'<span class="auto">'+(auto?'자동✓':'자동감지')+'</span>':'');
+      if(!auto){
+        li.querySelector('input').addEventListener('change',function(){toggle(st.n);});
+      }
+      ul.appendChild(li);
+    });
+    document.getElementById('bar').style.width=Math.round(done/STEPS.length*100)+'%';
+    document.getElementById('cnt').textContent=done+' / '+STEPS.length+(s.code?' — '+s.code:'');
+    document.getElementById('banner').className='banner'+(done===STEPS.length && s.code?' show':'');
+    // dashboard 연동용: 합계 기록
+    s.done=done; s.total=STEPS.length; s.complete=(done===STEPS.length && !!s.code);
+    save(s);
+  }
+
+  function toggle(n){
+    var s=load(); s.checked=s.checked||[];
+    var i=s.checked.indexOf(n);
+    if(i>=0)s.checked.splice(i,1); else s.checked.push(n);
+    save(s); render();
+  }
+  function newArticle(){
+    var v=prompt('새 글의 코드·제목을 입력하세요 (예: D3-04 국민연금 예상수령액)');
+    if(v===null)return;
+    save({code:v.trim(), checked:[]});
+    AUTO={db:false,idx:false};
+    detect().then(render);
+  }
+  document.getElementById('newBtn').addEventListener('click',newArticle);
+  // 다른 창(dashboard)에서 바뀌면 갱신
+  window.addEventListener('storage',function(e){if(e.key===KEY){AUTO={db:false,idx:false};detect().then(render);}});
+  detect().then(render);
+</script>
+</body>
+</html>
