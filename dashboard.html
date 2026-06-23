@@ -224,6 +224,18 @@
     <div class="note">💡 노출·클릭은 GSC에서만 제공돼 붙여넣기로 반영합니다(숫자 셀을 눌러 직접 수정 가능). 댓글은 블로그에서 자동으로 가져옵니다.</div>
   </div>
 
+  <!-- OSMU 확산 — 오늘 할 일 -->
+  <div class="sect">
+    <h2>📅 OSMU 확산 — 오늘 할 일 <span class="tag live">DB 자동 · 우선순위</span></h2>
+    <p class="note" id="osmuTodoSummary" style="margin:0 0 10px">불러오는 중…</p>
+    <div id="osmuTodoToday"></div>
+    <details style="margin-top:12px">
+      <summary style="cursor:pointer;font-weight:700;color:#1f9d63">📋 미게시 전체 보기 (우선순위순)</summary>
+      <ol id="osmuTodoAll" style="margin:10px 0 0;padding-left:22px;font-size:14px;line-height:1.9"></ol>
+    </details>
+    <div class="note">💡 우선순위(연금·건강·지원금·여행…)로 자동 정렬. <b>매일 위 2편</b>씩 네이버·쓰레드 게시 → <code>naver-link</code>/<code>threads-link</code> 기록하면 <b>목록에서 자동 제외</b>(=체크 완료). 안전수칙 하루 1~2편.</div>
+  </div>
+
   <!-- 채널별 현황 -->
   <div class="sect">
     <h2>📣 채널별 현황 <span class="tag man">수기 + 링크</span></h2>
@@ -478,7 +490,28 @@
     renderChannels(posts.length);
     renderOsmu();
     renderOsmuLog();
+    renderOsmuTodo(posts);
     initLinkTool();
+  }
+  /* ---------- 📅 OSMU 확산 오늘 할 일 (DB osmu 자동·우선순위) ---------- */
+  function renderOsmuTodo(posts){
+    var PRI=['A3-01','A3-02','B3-01','B3-02','C1-01','C2-01','C1-02','C3-02','C3-01','A1-01','A1-03','A2-04','A2-01','A2-07','A2-06','A2-05','A1-04','A1-02','A2-02','A2-03','F1-02','F1-05','F3-01','F3-02','F3-05','F2-01','F1-04','F3-03','F2-04','F2-06','F2-02','F2-03','F2-05','F2-07','F1-01','F1-03','F3-04','B1-01','D3-01','B2-01','E1-01','D1-01','D1-02','D2-01','B2-02','E2-01','E2-02','E2-03','E3-01','G1-04','G1-03','G2-01','G1-01','G1-05','G1-02'];
+    function rank(c){var i=PRI.indexOf(c);return i<0?999:i;}
+    var sum=document.getElementById('osmuTodoSummary'),today=document.getElementById('osmuTodoToday'),all=document.getElementById('osmuTodoAll');
+    if(!sum||!today||!all)return;
+    var todo=posts.filter(function(p){return !(p.osmu&&p.osmu.naver);});
+    todo.sort(function(a,b){return rank(a.code)-rank(b.code);});
+    var total=posts.length,done=total-todo.length,pct=total?Math.round(done/total*100):0;
+    sum.innerHTML='네이버 게시 <b>'+done+' / '+total+'편</b> ('+pct+'%) · 미게시 <b>'+todo.length+'편</b>. 아래 <b>2편</b>이 오늘 차례입니다.';
+    today.innerHTML=todo.slice(0,2).map(function(p){
+      return '<div style="background:#f1f8f4;border:1px solid #d6ebde;border-radius:10px;padding:10px 14px;margin:6px 0">'
+        +'<b style="color:#1f9d63">▶ '+esc(p.code)+'</b> '+esc(p.title)
+        +'<br><a href="'+esc(p.url)+'" target="_blank" rel="noopener" style="font-size:13px;color:#1b6fc2">원본 보기</a>'
+        +' · <span style="font-size:13px;color:#8a97ab">'+esc(p.catName)+'</span></div>';
+    }).join('')||'<div class="empty">🎉 미게시 글이 없습니다 — 전부 네이버 확산 완료!</div>';
+    all.innerHTML=todo.map(function(p,i){
+      return '<li'+(i<2?' style="font-weight:700;color:#1f9d63"':'')+'>'+esc(p.code)+' · '+esc(p.title)+'</li>';
+    }).join('');
   }
   function perfRows(){
     var perf=loadPerf();
