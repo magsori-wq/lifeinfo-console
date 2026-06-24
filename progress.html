@@ -69,6 +69,12 @@ li.wait svg{color:#4a586e}
 .advice .ai{display:flex;gap:8px;padding:7px 11px;font-size:12px;line-height:1.5;border-bottom:1px dashed #243049}
 .advice .ai:last-child{border-bottom:none}
 .advice .ic{flex:none}
+.prow{display:flex;align-items:center;gap:6px;padding:5px 3px;border-bottom:1px dashed #243049;font-size:11.5px}
+.prow:last-child{border-bottom:none}
+.pcd{color:#7fc1ff;font-weight:700;flex:none;width:46px}
+.ptt{flex:1;color:#cdd6e0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nd{background:#3a2f12;color:#ffd166;border-radius:5px;padding:0 5px;font-size:9.5px;flex:none}
+.pact{color:#06d6a0;font-size:10px;flex:none;font-weight:700}
 </style>
 </head>
 <body>
@@ -84,7 +90,7 @@ const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[
 const fnum=n=>Number(n).toLocaleString('ko-KR');
 async function jget(u){try{const r=await fetch(u+'?'+Date.now(),{cache:'no-store'});return await r.json()}catch(e){return null}}
 async function load(){
-  const [h,db,pg,collab,idx]=await Promise.all([jget('health.json'),jget('lifeinfo_db.txt'),jget('progress.json'),jget('collab.json'),jget('index_status.json')]);
+  const [h,db,pg,collab,idx,pend]=await Promise.all([jget('health.json'),jget('lifeinfo_db.txt'),jget('progress.json'),jget('collab.json'),jget('index_status.json'),jget('pending.json')]);
   const recs=db?(Array.isArray(db)?db:(db.posts||[])):[];
   const count=db&&db.count?db.count:recs.length;
   const light=h?h.light:'gray', pass=h?h.pass:0, total=h?(h.pass+h.warn+h.fail):0;
@@ -132,6 +138,13 @@ async function load(){
   if(oNv>oTh) adv.push('OSMU 쓰레드 '+oTh+'/'+oNv+' — '+(oNv-oTh)+'편 미게시(rate-limit 보류분 재시도 필요).');
   if(collab&&collab.uncommitted>=10) adv.push('미커밋 '+collab.uncommitted+'파일 — 발행 완료 후 세션별 커밋 분리 권장.');
   const adviceHtml=adv.length?'<div class="advice">'+adv.map(t=>'<div class="ai"><span class="ic">💡</span><span>'+esc(t)+'</span></div>').join('')+'</div>':'<div class="pcode none">현재 조치 필요 항목 없음</div>';
+  // 📋 미결 관리 — 글별(pending.json: DB osmu + index_status에서 계산)
+  const pc=(pend&&pend.counts)||{};
+  const pendRows=(pend&&pend.actionable||[]).map(a=>
+    '<div class="prow"><span class="pcd">'+esc(a.code)+'</span><span class="ptt">'+esc(a.title)+'</span>'
+    +(a.need||[]).map(n=>'<span class="nd">'+esc(n)+'</span>').join('')
+    +'<span class="pact">'+esc(a.action)+'</span></div>').join('');
+  const pendHtml='<div class="cnt">OSMU 대기 '+(pc.osmu_pending||0)+'편 · 색인 대기 '+(pc.index_pending||0)+'편 / 전체 '+(pc.total||0)+'편</div>'+(pendRows||'<div class="pcode none">미결 없음</div>');
   document.getElementById('board').innerHTML=
    '<div class="hd"><div class="t"><h1>진행현황</h1><span class="date">'+esc(date)+'</span></div>'
    +'<span class="badge '+bcls+'">'+CHECK+esc(blab)+'</span></div>'
@@ -155,6 +168,8 @@ async function load(){
    +'<div class="div"></div>'
    +'<div class="sec">🤝 협업 — 세션별 역할·진행<span class="auto">git 자동분류</span></div>'+collabHtml
    +'<div class="sec">💡 시스템 조언<span class="auto">라이브 도출</span></div>'+adviceHtml
+   +'<div class="div"></div>'
+   +'<div class="sec">📋 미결 관리 (글별)<span class="auto">DB+색인 자동집계</span></div>'+pendHtml
    +'<div class="sec">다음</div><div class="next">'+next+'</div>'
    +'<div class="upd">자동 갱신 5초 · '+new Date().toLocaleTimeString('ko-KR')+'</div>';
 }
