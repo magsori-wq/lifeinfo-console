@@ -161,7 +161,7 @@
     </div>
     <ul class="posts" id="hlList" style="margin-top:10px"></ul>
     <div id="pipeRow" style="margin-top:11px;padding-top:11px;border-top:1px solid #2a3a5e;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-      <button id="pipeBtn" style="background:#22406e;border:1px solid #36598f;color:#cfe1ff;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer">🚀 발행 진행 보드 열기</button>
+      <button id="pipeBtn" style="background:#22406e;border:1px solid #36598f;color:#cfe1ff;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer">📊 진행현황 보드 열기</button>
       <div style="flex:1;min-width:150px">
         <div id="pipeLabel" style="font-size:12px;color:#9fb0d0;margin-bottom:3px">발행 진행: -</div>
         <div style="height:8px;background:#0b1322;border-radius:6px;overflow:hidden"><i id="pipeBar" style="display:block;height:100%;width:0;background:linear-gradient(90deg,#4D9DE0,#06D6A0);transition:width .3s"></i></div>
@@ -921,7 +921,7 @@
     else label.innerHTML='발행 진행: <b>'+esc(s.code)+'</b> · '+done+'/'+total+' 단계';
   }
   document.getElementById('pipeBtn').addEventListener('click',function(){
-    window.open('pipeline_board.html','pboard','width=470,height=730');
+    window.open('progress.html','pboard','width=490,height=820');
   });
   window.addEventListener('storage',function(e){if(e.key==='lsg_pipeline')renderPipe();});
   renderPipe();

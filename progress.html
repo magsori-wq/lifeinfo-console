@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>진행현황 — 생활정보 모음</title>
+<style>
+:root{--bg:#0e1620;--card:#18222e;--card2:#13202d;--line:#26323f;--txt:#e6edf3;--mut:#8a97a6;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR','Malgun Gothic',sans-serif;padding:12px;font-size:14px;-webkit-font-smoothing:antialiased}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;max-width:470px;margin:0 auto}
+.hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.hd .t{display:flex;align-items:center;gap:8px}
+.hd h1{font-size:16px;font-weight:600}
+.date{font-size:12px;color:var(--mut);font-weight:400}
+.badge{font-size:12px;font-weight:500;padding:4px 10px;border-radius:8px;display:inline-flex;align-items:center;gap:5px}
+.b-green{background:rgba(63,185,80,.16);color:var(--ok)}
+.b-warn{background:rgba(210,153,34,.16);color:var(--warn)}
+.b-bad{background:rgba(248,81,73,.16);color:var(--bad)}
+.sec{font-size:11px;color:var(--mut);letter-spacing:.05em;margin:14px 0 7px;display:flex;align-items:center;gap:6px}
+.sec .auto{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52;border-radius:7px;padding:1px 7px;font-size:10px;font-weight:700;letter-spacing:0}
+.row{display:flex;align-items:center;gap:9px;padding:3px 0;font-size:13px;line-height:1.4}
+.row svg{width:15px;height:15px;flex:none}
+.row.done svg{color:var(--ok)}
+.row.warn svg{color:var(--warn)}
+.row .mut{color:var(--mut)}
+.metrics{display:flex;gap:7px;margin:11px 0 2px}
+.m{flex:1;background:var(--card2);border-radius:9px;padding:8px 10px}
+.m .l{font-size:11px;color:var(--mut)}
+.m .v{font-size:18px;font-weight:600;margin-top:2px}
+.m .v small{font-size:12px;color:var(--mut);font-weight:400}
+.div{border-top:1px solid var(--line);margin:13px 0 2px}
+.next .row svg{color:var(--mut)}
+.pcode{font-size:12.5px;font-weight:600;margin:2px 0 6px}
+.pcode .none{color:var(--mut);font-weight:400}
+.bar{height:8px;background:#0b1322;border-radius:6px;overflow:hidden;margin:0 0 4px}
+.bar > i{display:block;height:100%;background:linear-gradient(90deg,#4D9DE0,#06D6A0);width:0;transition:width .3s}
+.cnt{font-size:11.5px;color:var(--mut);text-align:right;margin:0 0 6px}
+ul{list-style:none}
+li{display:flex;align-items:center;gap:8px;padding:5px 4px;border-bottom:1px dashed #243049;font-size:12.5px}
+li:last-child{border-bottom:none}
+li.on{opacity:.62}
+li.on .lbl{text-decoration:line-through}
+li svg{width:15px;height:15px;flex:none}
+li.on svg{color:var(--ok)}
+li.now svg{color:#7fc1ff}
+li.wait svg{color:#4a586e}
+.num{font-size:11px;color:#6b7a99;width:16px;text-align:right;flex:none}
+.who{font-size:10px;font-weight:800;padding:1px 5px;border-radius:8px;flex:none}
+.who.ai{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52}
+.who.me{background:#3a2f12;color:#ffd166;border:1px solid #5a4a1a}
+.lbl{font-size:12.5px}
+.star{color:#ff8e8e;font-weight:800;margin-left:2px}
+.banner{display:none;margin-top:9px;background:#0c3a2c;border:1px solid #1f6b52;color:#06d6a0;border-radius:9px;padding:9px;text-align:center;font-weight:700;font-size:12.5px}
+.banner.show{display:block}
+.upd{font-size:11px;color:var(--mut);text-align:right;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="card" id="board" role="status">불러오는 중…</div>
+<script>
+const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>';
+const LOAD='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/></svg>';
+const NOWI='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>';
+const WAIT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>';
+const DOT='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3.2"/></svg>';
+const STEPS=[{n:1,who:'ai',t:'글감 선정'},{n:2,who:'me',t:'글감 승인',star:1},{n:3,who:'ai',t:'코드 배정'},{n:4,who:'ai',t:'본문 작성 + 팩트체크'},{n:5,who:'ai',t:'썸네일 생성'},{n:6,who:'ai',t:'관련글 내부링크'},{n:7,who:'ai',t:'Blogger 초안'},{n:8,who:'me',t:'라이브 발행',star:1},{n:9,who:'ai',t:'DB 반영 + 검증'},{n:10,who:'ai',t:'배포 (콘솔·카테고리)'},{n:11,who:'me',t:'서치콘솔 색인 요청',star:1},{n:12,who:'ai',t:'색인 반영 실측'}];
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const fnum=n=>Number(n).toLocaleString('ko-KR');
+async function jget(u){try{const r=await fetch(u+'?'+Date.now(),{cache:'no-store'});return await r.json()}catch(e){return null}}
+async function load(){
+  const [h,db,pg]=await Promise.all([jget('health.json'),jget('lifeinfo_db.txt'),jget('progress.json')]);
+  const recs=db?(Array.isArray(db)?db:(db.posts||[])):[];
+  const count=db&&db.count?db.count:recs.length;
+  const light=h?h.light:'gray', pass=h?h.pass:0, total=h?(h.pass+h.warn+h.fail):0;
+  const avg=pg&&pg.avg?fnum(pg.avg):'—', date=pg&&pg.updated?pg.updated:'';
+  const bcls=light==='green'?'b-green':light==='red'?'b-bad':'b-warn';
+  const blab=light==='green'?'신호등 green':light==='red'?'신호등 red':'신호등 warn';
+  const today=(pg&&pg.today||[]).map(it=>'<div class="row '+(it.done?'done':'warn')+'">'+(it.done?CHECK:LOAD)+'<span>'+esc(it.t)+'</span></div>').join('');
+  const next=(pg&&pg.next||[]).map(t=>'<div class="row">'+DOT+'<span class="mut">'+esc(t)+'</span></div>').join('');
+  const pl=(pg&&pg.pipeline)||{}, checked=pl.checked||[], done=typeof pl.done==='number'?pl.done:checked.length;
+  const nowN=pl.code?(STEPS.find(s=>checked.indexOf(s.n)<0)||{}).n:0;
+  let pubHtml;
+  if(pl.code){
+    const pct=Math.round(done/12*100);
+    const lis=STEPS.map(st=>{
+      const on=checked.indexOf(st.n)>=0, now=(!on&&st.n===nowN);
+      const ic=on?CHECK:(now?NOWI:WAIT), cls=on?'on':(now?'now':'wait');
+      return '<li class="'+cls+'">'+ic+'<span class="num">'+st.n+'</span>'
+        +'<span class="who '+st.who+'">'+(st.who==='ai'?'🤖':'🧑')+'</span>'
+        +'<span class="lbl">'+esc(st.t)+(st.star?'<span class="star">★</span>':'')+'</span></li>';
+    }).join('');
+    pubHtml='<div class="pcode">'+esc(pl.code)+'</div><div class="bar"><i style="width:'+pct+'%"></i></div>'
+      +'<div class="cnt">'+done+' / 12 단계'+(pl.note?' · '+esc(pl.note):'')+'</div><ul>'+lis+'</ul>'
+      +'<div class="banner'+(done===12?' show':'')+'">✅ 발행 완료</div>';
+  }else{
+    pubHtml='<div class="pcode none">진행 중인 발행 없음</div>';
+  }
+  document.getElementById('board').innerHTML=
+   '<div class="hd"><div class="t"><h1>진행현황</h1><span class="date">'+esc(date)+'</span></div>'
+   +'<span class="badge '+bcls+'">'+CHECK+esc(blab)+'</span></div>'
+   +'<div class="sec">오늘 한 일</div>'+today
+   +'<div class="metrics">'
+   +'<div class="m"><div class="l">검사 통과</div><div class="v">'+pass+' <small>/ '+total+'</small></div></div>'
+   +'<div class="m"><div class="l">블로그 글</div><div class="v">'+count+' <small>편</small></div></div>'
+   +'<div class="m"><div class="l">평균 본문</div><div class="v">'+avg+' <small>자</small></div></div>'
+   +'</div>'
+   +'<div class="div"></div>'
+   +'<div class="sec">발행 진행 (글 1편 · 12단계)<span class="auto">🤖 자동</span></div>'+pubHtml
+   +'<div class="sec">다음</div><div class="next">'+next+'</div>'
+   +'<div class="upd">자동 갱신 5초 · '+new Date().toLocaleTimeString('ko-KR')+'</div>';
+}
+load(); setInterval(load,5000);
+</script>
+</body>
+</html>
