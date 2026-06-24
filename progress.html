@@ -55,6 +55,20 @@ li.wait svg{color:#4a586e}
 .banner{display:none;margin-top:9px;background:#0c3a2c;border:1px solid #1f6b52;color:#06d6a0;border-radius:9px;padding:9px;text-align:center;font-weight:700;font-size:12.5px}
 .banner.show{display:block}
 .upd{font-size:11px;color:var(--mut);text-align:right;margin-top:12px}
+.agent{background:var(--card2);border-radius:10px;padding:9px 11px;margin-bottom:7px}
+.agent .ah{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600}
+.agent .st{font-size:10px;font-weight:700;padding:1px 7px;border-radius:7px;margin-left:auto}
+.st.active{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52}
+.st.uncommitted{background:#3a2f12;color:#ffd166;border:1px solid #5a4a1a}
+.st.idle{background:#222c3a;color:#6b7a99;border:1px solid #2e3a4a}
+.agent .role{font-size:11px;color:var(--mut);margin:3px 0 1px}
+.agent .own{font-size:10.5px;color:#5a6b80}
+.agent .act{font-size:11px;color:#aeb9c7;margin-top:4px;padding-left:7px;border-left:2px solid #2a3a4d;line-height:1.5}
+.agent .act .d{color:var(--mut);font-size:10px}
+.advice{background:#13202d;border:1px solid #2a3a4d;border-radius:9px}
+.advice .ai{display:flex;gap:8px;padding:7px 11px;font-size:12px;line-height:1.5;border-bottom:1px dashed #243049}
+.advice .ai:last-child{border-bottom:none}
+.advice .ic{flex:none}
 </style>
 </head>
 <body>
@@ -70,7 +84,7 @@ const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[
 const fnum=n=>Number(n).toLocaleString('ko-KR');
 async function jget(u){try{const r=await fetch(u+'?'+Date.now(),{cache:'no-store'});return await r.json()}catch(e){return null}}
 async function load(){
-  const [h,db,pg]=await Promise.all([jget('health.json'),jget('lifeinfo_db.txt'),jget('progress.json')]);
+  const [h,db,pg,collab,idx]=await Promise.all([jget('health.json'),jget('lifeinfo_db.txt'),jget('progress.json'),jget('collab.json'),jget('index_status.json')]);
   const recs=db?(Array.isArray(db)?db:(db.posts||[])):[];
   const count=db&&db.count?db.count:recs.length;
   const light=h?h.light:'gray', pass=h?h.pass:0, total=h?(h.pass+h.warn+h.fail):0;
@@ -101,6 +115,23 @@ async function load(){
     pubHtml='<div class="pcode none">진행 중인 발행 없음</div>';
   }
   const osmuLi=oRecent.map(r=>'<div class="row done">'+CHECK+'<span>'+esc(r.code)+' '+esc((r.title||'').slice(0,15))+'</span><span class="mut" style="margin-left:auto;font-size:10.5px">'+(r.osmu.naver?'네이버 ':'')+(r.osmu.threads?'쓰레드':'')+'</span></div>').join('');
+  // 🤝 협업 — 세션별(collab.json: 정체성=레지스트리·활동=git log·상태=git status)
+  const stLab={active:'활동중',uncommitted:'미커밋',idle:'대기'};
+  const collabHtml=(collab&&collab.agents||[]).map(a=>{
+    const acts=(a.recent||[]).map(r=>'<div class="act">'+esc((r.s||'').slice(0,40))+' <span class="d">'+esc(r.d||'')+'</span></div>').join('');
+    return '<div class="agent"><div class="ah">'+esc(a.emoji||'')+'<span>'+esc(a.name||'')+'</span><span class="st '+(a.state||'idle')+'">'+(stLab[a.state]||a.state||'')+'</span></div>'
+      +'<div class="role">'+esc(a.role||'')+'</div><div class="own">담당 '+esc(a.owns||'')+'</div>'+acts+'</div>';
+  }).join('');
+  // 💡 시스템 조언 — 라이브 데이터 조건에서만 도출(하드코딩 일반론 금지)
+  const adv=[];
+  if(idx&&typeof idx.indexed==='number'){
+    if(idx.indexed===0){const cr=Object.values(idx.posts||{}).filter(p=>p&&p.lastCrawl).length;
+      adv.push('색인 0/'+idx.total+' — 크롤 '+cr+'편·미크롤 '+(idx.total-cr)+'편. GSC 일일한도+OSMU 백링크로 점진(재검토는 색인 잡힌 뒤).');}
+    else adv.push('색인 '+idx.indexed+'/'+idx.total+'편.');
+  }
+  if(oNv>oTh) adv.push('OSMU 쓰레드 '+oTh+'/'+oNv+' — '+(oNv-oTh)+'편 미게시(rate-limit 보류분 재시도 필요).');
+  if(collab&&collab.uncommitted>=10) adv.push('미커밋 '+collab.uncommitted+'파일 — 발행 완료 후 세션별 커밋 분리 권장.');
+  const adviceHtml=adv.length?'<div class="advice">'+adv.map(t=>'<div class="ai"><span class="ic">💡</span><span>'+esc(t)+'</span></div>').join('')+'</div>':'<div class="pcode none">현재 조치 필요 항목 없음</div>';
   document.getElementById('board').innerHTML=
    '<div class="hd"><div class="t"><h1>진행현황</h1><span class="date">'+esc(date)+'</span></div>'
    +'<span class="badge '+bcls+'">'+CHECK+esc(blab)+'</span></div>'
@@ -119,6 +150,9 @@ async function load(){
    +'<div class="m"><div class="l">쓰레드</div><div class="v">'+oTh+' <small>편</small></div></div>'
    +'<div class="m"><div class="l">교차링크</div><div class="v">'+omAll.length+' <small>편</small></div></div>'
    +'</div>'+osmuLi
+   +'<div class="div"></div>'
+   +'<div class="sec">🤝 협업 — 세션별 역할·진행<span class="auto">git 자동분류</span></div>'+collabHtml
+   +'<div class="sec">💡 시스템 조언<span class="auto">라이브 도출</span></div>'+adviceHtml
    +'<div class="sec">다음</div><div class="next">'+next+'</div>'
    +'<div class="upd">자동 갱신 5초 · '+new Date().toLocaleTimeString('ko-KR')+'</div>';
 }
