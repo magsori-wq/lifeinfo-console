@@ -80,6 +80,9 @@ async function load(){
   const today=(pg&&pg.today||[]).map(it=>'<div class="row '+(it.done?'done':'warn')+'">'+(it.done?CHECK:LOAD)+'<span>'+esc(it.t)+'</span></div>').join('');
   const next=(pg&&pg.next||[]).map(t=>'<div class="row">'+DOT+'<span class="mut">'+esc(t)+'</span></div>').join('');
   const pl=(pg&&pg.pipeline)||{}, checked=pl.checked||[], done=typeof pl.done==='number'?pl.done:checked.length;
+  const omAll=recs.filter(r=>r.osmu&&typeof r.osmu==='object');
+  const oNv=omAll.filter(r=>r.osmu.naver).length, oTh=omAll.filter(r=>r.osmu.threads).length;
+  const oRecent=omAll.slice(-4).reverse();
   const nowN=pl.code?(STEPS.find(s=>checked.indexOf(s.n)<0)||{}).n:0;
   let pubHtml;
   if(pl.code){
@@ -97,6 +100,7 @@ async function load(){
   }else{
     pubHtml='<div class="pcode none">진행 중인 발행 없음</div>';
   }
+  const osmuLi=oRecent.map(r=>'<div class="row done">'+CHECK+'<span>'+esc(r.code)+' '+esc((r.title||'').slice(0,15))+'</span><span class="mut" style="margin-left:auto;font-size:10.5px">'+(r.osmu.naver?'네이버 ':'')+(r.osmu.threads?'쓰레드':'')+'</span></div>').join('');
   document.getElementById('board').innerHTML=
    '<div class="hd"><div class="t"><h1>진행현황</h1><span class="date">'+esc(date)+'</span></div>'
    +'<span class="badge '+bcls+'">'+CHECK+esc(blab)+'</span></div>'
@@ -108,6 +112,13 @@ async function load(){
    +'</div>'
    +'<div class="div"></div>'
    +'<div class="sec">발행 진행 (글 1편 · 12단계)<span class="auto">🤖 자동</span></div>'+pubHtml
+   +'<div class="div"></div>'
+   +'<div class="sec">OSMU 확산 (네이버·쓰레드)<span class="auto">🤖 DB 자동집계</span></div>'
+   +'<div class="metrics">'
+   +'<div class="m"><div class="l">네이버</div><div class="v">'+oNv+' <small>편</small></div></div>'
+   +'<div class="m"><div class="l">쓰레드</div><div class="v">'+oTh+' <small>편</small></div></div>'
+   +'<div class="m"><div class="l">교차링크</div><div class="v">'+omAll.length+' <small>편</small></div></div>'
+   +'</div>'+osmuLi
    +'<div class="sec">다음</div><div class="next">'+next+'</div>'
    +'<div class="upd">자동 갱신 5초 · '+new Date().toLocaleTimeString('ko-KR')+'</div>';
 }
