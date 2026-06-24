@@ -75,6 +75,9 @@ li.wait svg{color:#4a586e}
 .ptt{flex:1;color:#cdd6e0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .nd{background:#3a2f12;color:#ffd166;border-radius:5px;padding:0 5px;font-size:9.5px;flex:none}
 .pact{color:#06d6a0;font-size:10px;flex:none;font-weight:700}
+.ch{font-size:9.5px;font-weight:800;border-radius:4px;padding:1px 4px;flex:none;margin-left:3px}
+.ch.on{background:#0c3a2c;color:#06d6a0}
+.ch.off{background:#3a1216;color:#f0707a}
 </style>
 </head>
 <body>
@@ -140,10 +143,12 @@ async function load(){
   const adviceHtml=adv.length?'<div class="advice">'+adv.map(t=>'<div class="ai"><span class="ic">💡</span><span>'+esc(t)+'</span></div>').join('')+'</div>':'<div class="pcode none">현재 조치 필요 항목 없음</div>';
   // 📋 미결 관리 — 글별(pending.json: DB osmu + index_status에서 계산)
   const pc=(pend&&pend.counts)||{};
-  const pendRows=(pend&&pend.actionable||[]).map(a=>
-    '<div class="prow"><span class="pcd">'+esc(a.code)+'</span><span class="ptt">'+esc(a.title)+'</span>'
-    +(a.need||[]).map(n=>'<span class="nd">'+esc(n)+'</span>').join('')
-    +'<span class="pact">'+esc(a.action)+'</span></div>').join('');
+  const cb=(ok,l)=>'<span class="ch '+(ok?'on':'off')+'">'+l+(ok?'✓':'✗')+'</span>';
+  const pendRows=(pend&&pend.actionable||[]).map(a=>{
+    const c=a.ch||{};
+    return '<div class="prow"><span class="pcd">'+esc(a.code)+'</span><span class="ptt">'+esc(a.title)+'</span>'
+    +cb(true,'G')+cb(c.n,'N')+cb(c.t,'T')+'</div>';
+  }).join('');
   const pendHtml='<div class="cnt">OSMU 대기 '+(pc.osmu_pending||0)+'편 · 색인 대기 '+(pc.index_pending||0)+'편 / 전체 '+(pc.total||0)+'편</div>'+(pendRows||'<div class="pcode none">미결 없음</div>');
   document.getElementById('board').innerHTML=
    '<div class="hd"><div class="t"><h1>진행현황</h1><span class="date">'+esc(date)+'</span></div>'
@@ -169,7 +174,7 @@ async function load(){
    +'<div class="sec">🤝 협업 — 세션별 역할·진행<span class="auto">git 자동분류</span></div>'+collabHtml
    +'<div class="sec">💡 시스템 조언<span class="auto">라이브 도출</span></div>'+adviceHtml
    +'<div class="div"></div>'
-   +'<div class="sec">📋 미결 관리 (글별)<span class="auto">DB+색인 자동집계</span></div>'+pendHtml
+   +'<div class="sec">📋 미결 관리 — 3채널 매칭<span class="auto">G구글·N네이버·T쓰레드</span></div>'+pendHtml
    +'<div class="sec">다음</div><div class="next">'+next+'</div>'
    +'<div class="upd">자동 갱신 5초 · '+new Date().toLocaleTimeString('ko-KR')+'</div>';
 }
