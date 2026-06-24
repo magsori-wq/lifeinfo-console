@@ -144,12 +144,14 @@ async function load(){
    +'<div class="div"></div>'
    +'<div class="sec">발행 진행 (글 1편 · 12단계)<span class="auto">🤖 자동</span></div>'+pubHtml
    +'<div class="div"></div>'
-   +'<div class="sec">OSMU 확산 (네이버·쓰레드)<span class="auto">🤖 DB 자동집계</span></div>'
+   +'<div class="sec">📡 3채널 발행 현황 (구글·네이버·쓰레드)<span class="auto">🤖 DB 자동집계</span></div>'
    +'<div class="metrics">'
+   +'<div class="m"><div class="l">구글(원본)</div><div class="v">'+count+' <small>편</small></div></div>'
    +'<div class="m"><div class="l">네이버</div><div class="v">'+oNv+' <small>편</small></div></div>'
    +'<div class="m"><div class="l">쓰레드</div><div class="v">'+oTh+' <small>편</small></div></div>'
-   +'<div class="m"><div class="l">교차링크</div><div class="v">'+omAll.length+' <small>편</small></div></div>'
-   +'</div>'+osmuLi
+   +'</div>'
+   +'<div class="cnt">확산 커버리지 · 네이버 '+(count?Math.round(oNv/count*100):0)+'% · 쓰레드 '+(count?Math.round(oTh/count*100):0)+'% · 교차링크 완료 '+omAll.length+'편</div>'
+   +osmuLi
    +'<div class="div"></div>'
    +'<div class="sec">🤝 협업 — 세션별 역할·진행<span class="auto">git 자동분류</span></div>'+collabHtml
    +'<div class="sec">💡 시스템 조언<span class="auto">라이브 도출</span></div>'+adviceHtml
