@@ -180,7 +180,18 @@ async function load(){
    +'<div class="sec">다음</div><div class="next">'+next+'</div>'
    +'<div class="upd">자동 갱신 5초 · '+new Date().toLocaleTimeString('ko-KR')+'</div>';
 }
-load(); setInterval(load,5000);
+// 코드 자동 반영: 자기 자신(progress.html)을 주기적으로 fetch→해시 비교, 바뀌면 1회 reload
+const _hash=s=>{let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return h;};
+let _selfHash=null;
+async function checkVersion(){
+  try{
+    const t=await(await fetch('progress.html?'+Date.now(),{cache:'no-store'})).text();
+    const h=_hash(t);
+    if(_selfHash===null){_selfHash=h;return;}      // 첫 호출=기준선 저장
+    if(h!==_selfHash) location.reload();            // 코드 변경 감지 → 자동 새로고침
+  }catch(e){}
+}
+load(); checkVersion(); setInterval(load,5000); setInterval(checkVersion,15000);
 </script>
 </body>
 </html>
