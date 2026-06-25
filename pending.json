@@ -9,21 +9,6 @@
  },
  "actionable": [
   {
-   "code": "H1-01",
-   "title": "현대차 보스턴다이내믹스 지분 100% 인수 IPO 일정",
-   "need": [
-    "쓰레드",
-    "색인"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": false
-   }
-  },
-  {
    "code": "A1-01",
    "title": "민생회복 소비쿠폰 신청 방법 대상 금액 사용처 총정리",
    "need": [
@@ -206,6 +191,21 @@
   {
    "code": "A3-02",
    "title": "국민연금 예상 수령액 조회 방법 수령나이 총정리",
+   "need": [
+    "OSMU",
+    "색인"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "B1-01",
+   "title": "자동차세 조회 납부 방법 연납 할인 총정리",
    "need": [
     "OSMU",
     "색인"
