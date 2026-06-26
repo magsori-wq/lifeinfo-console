@@ -2,12 +2,27 @@
  "rev": "3458fd7",
  "counts": {
   "total": 72,
-  "osmu_done": 25,
-  "osmu_pending": 47,
+  "osmu_done": 26,
+  "osmu_pending": 46,
   "indexed": 0,
   "index_pending": 72
  },
  "actionable": [
+  {
+   "code": "C1-04",
+   "title": "건강보험 수가 개편 2026 진찰료 인상 CT MRI ",
+   "need": [
+    "쓰레드",
+    "색인"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": false
+   }
+  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -191,21 +206,6 @@
   {
    "code": "B1-01",
    "title": "자동차세 조회 납부 방법 연납 할인 총정리",
-   "need": [
-    "OSMU",
-    "색인"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "B2-01",
-   "title": "휴면예금 조회 숨은 내 돈 찾기 방법 총정리",
    "need": [
     "OSMU",
     "색인"
