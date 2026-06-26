@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-06-26T09:00:12",
+ "checked_at": "2026-06-26T12:23:42",
  "light": "yellow",
- "pass": 9,
- "warn": 1,
+ "pass": 8,
+ "warn": 2,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 70편"
+   "msg": "count 일치: 71편"
   },
   {
    "level": "PASS",
@@ -15,11 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 70/70"
-  },
-  {
-   "level": "PASS",
-   "msg": "고아 썸네일 없음"
+   "msg": "thumb 1:1 정합 통과: 71/71"
   },
   {
    "level": "PASS",
@@ -35,15 +31,19 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 70편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 71편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "내부링크 실효성 통과: posts/ 71개 파일의 내부링크 모두 실제 글"
+   "msg": "내부링크 실효성 통과: posts/ 74개 파일의 내부링크 모두 실제 글"
   },
   {
    "level": "WARN",
    "msg": "A1: 일련번호 비연속 [2, 3, 4] (영구PID라 허용되나 확인 권장)"
+  },
+  {
+   "level": "WARN",
+   "msg": "미사용 썸네일 2개: 70_knee.png, 70_naeil_card.png"
   }
  ]
 }
