@@ -2,8 +2,8 @@
  "rev": "c711d36",
  "counts": {
   "total": 74,
-  "osmu_done": 35,
-  "osmu_pending": 39,
+  "osmu_done": 36,
+  "osmu_pending": 38,
   "indexed": 0,
   "index_pending": 74
  },
@@ -114,21 +114,6 @@
    }
   },
   {
-   "code": "A3-01",
-   "title": "기초연금 수급자격 소득기준 신청방법 총정리",
-   "need": [
-    "OSMU",
-    "색인"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
    "code": "A3-02",
    "title": "국민연금 예상 수령액 조회 방법 수령나이 총정리",
    "need": [
@@ -206,6 +191,21 @@
   {
    "code": "C3-02",
    "title": "노인장기요양보험 등급 신청 방법 본인부담금 총정리",
+   "need": [
+    "OSMU",
+    "색인"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "D1-01",
+   "title": "정부24 주민등록등본 인터넷 발급 방법 무료 출력 총정",
    "need": [
     "OSMU",
     "색인"
