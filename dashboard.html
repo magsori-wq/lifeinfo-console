@@ -381,6 +381,7 @@
     else if(total>=100)s2.classList.add('now');
     else s1.classList.add('now');
   }
+  function renderDB(first){
   fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(db){
     var posts=db.posts||[];
     var total=posts.length;
@@ -455,8 +456,8 @@
         '<a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a>';
       ul.appendChild(li);
     });
-    // 글별 성과 초기화 (댓글 자동 + GSC 수기)
-    initPerf(posts, catColor);
+    // 글별 성과 초기화 (댓글 자동 + GSC 수기) — 최초 1회만(주기 갱신 때 JSONP 중복 방지)
+    if(first)initPerf(posts, catColor);
     // DB 정보
     document.getElementById('dbInfo').textContent=
       '데이터 기준일: '+(db.updated||'—')+' · 단일 원본(lifeinfo_db) 기반 — 새 글이 등록·배포되면 자동 반영됩니다.';
@@ -469,6 +470,8 @@
     document.getElementById('perfSum').textContent='데이터 연결 실패';
     document.getElementById('perfBody').innerHTML='<tr><td colspan="5" class="empty">배포된 콘솔(github.io)에서 열어 주세요.</td></tr>';
   });
+  }
+  renderDB(true);
 
   /* ---------- 글별 성과 (댓글 자동 JSONP + GSC 수기) ---------- */
   var PERF={posts:[],colors:{},comments:null,matched:null};
@@ -925,6 +928,16 @@
   });
   window.addEventListener('storage',function(e){if(e.key==='lsg_pipeline')renderPipe();});
   renderPipe();
+
+  /* ---------- 🔄 자동 갱신 (progress.html checkVersion과 동등 — 수동 새로고침 불필요) ----------
+     dashboard.html은 HTML이 정적이라 self-hash reload가 안 통한다(데이터는 별도 .json/db).
+     → 데이터 파일을 주기적으로 재fetch+재렌더(initPerf는 first-only로 제외). 5초마다. */
+  setInterval(function(){
+    renderDB(false);       // 총편수·카테고리·품질·최근글 (DB)
+    renderIndexStatus();   // 색인 현황 (index_status.json)
+    renderHealth();        // 안전망 신호등 (health.json)
+    renderPipe();          // 발행 진행 (localStorage)
+  }, 5000);
 
   /* ---------- 오늘의 체크리스트 (localStorage) ---------- */
   var ITEMS=[
