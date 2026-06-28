@@ -1,11 +1,11 @@
 {
  "rev": "c711d36",
  "counts": {
-  "total": 76,
+  "total": 77,
   "osmu_done": 53,
-  "osmu_pending": 23,
+  "osmu_pending": 24,
   "indexed": 0,
-  "index_pending": 76
+  "index_pending": 77
  },
  "actionable": [
   {
@@ -26,6 +26,21 @@
   {
    "code": "D2-01",
    "title": "자동차 과태료 범칙금 조회 납부 방법 차이점 총정리",
+   "need": [
+    "OSMU",
+    "색인"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "D2-05",
+   "title": "자동차 정기검사 예약 방법 비용 과태료 주기 총정리 (",
    "need": [
     "OSMU",
     "색인"
@@ -191,21 +206,6 @@
   {
    "code": "F2-04",
    "title": "렌터카 예약 비교 방법 자차보험 면책 주의사항 총정리",
-   "need": [
-    "OSMU",
-    "색인"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "F2-05",
-   "title": "고속도로 통행료 미납 조회 납부 방법 하이패스 총정리",
    "need": [
     "OSMU",
     "색인"
