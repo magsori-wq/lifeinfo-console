@@ -2,8 +2,8 @@
  "rev": "c711d36",
  "counts": {
   "total": 74,
-  "osmu_done": 36,
-  "osmu_pending": 38,
+  "osmu_done": 37,
+  "osmu_pending": 37,
   "indexed": 0,
   "index_pending": 74
  },
@@ -174,21 +174,6 @@
    }
   },
   {
-   "code": "C3-01",
-   "title": "실손보험 청구 방법 서류 기한 총정리 (실손24)",
-   "need": [
-    "OSMU",
-    "색인"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
    "code": "C3-02",
    "title": "노인장기요양보험 등급 신청 방법 본인부담금 총정리",
    "need": [
@@ -206,6 +191,21 @@
   {
    "code": "D1-01",
    "title": "정부24 주민등록등본 인터넷 발급 방법 무료 출력 총정",
+   "need": [
+    "OSMU",
+    "색인"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "D1-02",
+   "title": "전입신고 인터넷 신청 방법 확정일자 받기 총정리",
    "need": [
     "OSMU",
     "색인"
