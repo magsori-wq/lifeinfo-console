@@ -1,0 +1,41 @@
+{
+ "updated": "2026-06-29T06:45:52",
+ "tasks": {
+  "lifeinfo_trends_daily": {
+   "label": "트렌드 갱신 + 배포",
+   "when": "매일 09:00",
+   "scheduled": true,
+   "state": "idle",
+   "last_run": "06-28 09:00",
+   "next_run": "06-29 09:00",
+   "ok": true,
+   "sched_state": "Ready"
+  },
+  "AdSense_Approval_Check": {
+   "label": "애드센스 승인 감시",
+   "when": "매일 09:00",
+   "scheduled": true,
+   "state": "idle",
+   "last_run": "06-28 09:00",
+   "next_run": "06-29 09:00",
+   "ok": true,
+   "sched_state": "Ready"
+  },
+  "deploy": {
+   "label": "콘솔 배포",
+   "when": "수동/발행 시",
+   "scheduled": false,
+   "state": "done",
+   "started": "2026-06-28T22:56:44",
+   "ok": true,
+   "result": "0",
+   "ended": "2026-06-28T22:56:56"
+  },
+  "draft_gen": {
+   "label": "AI 초안 생성(헤드리스)",
+   "when": "온디맨드",
+   "scheduled": false,
+   "state": "idle"
+  }
+ }
+}
