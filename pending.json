@@ -2,27 +2,12 @@
  "rev": "c711d36",
  "counts": {
   "total": 79,
-  "osmu_done": 70,
-  "osmu_pending": 9,
+  "osmu_done": 71,
+  "osmu_pending": 8,
   "indexed": 0,
   "index_pending": 79
  },
  "actionable": [
-  {
-   "code": "E2-03",
-   "title": "인스타그램 계정 삭제 비활성화 방법 차이점 총정리",
-   "need": [
-    "OSMU",
-    "색인"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "E3-01",
    "title": "토익 성적표 재발급 유효기간 점수 환산 방법 총정리",
@@ -202,6 +187,20 @@
   {
    "code": "A2-02",
    "title": "에너지바우처 신청 자격 금액 사용기간 총정리",
+   "need": [
+    "색인"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-03",
+   "title": "새출발기금 신청 자격 채무조정 방법 총정리",
    "need": [
     "색인"
    ],
