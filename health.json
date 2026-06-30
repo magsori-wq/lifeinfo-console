@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-06-30T15:23:26",
+ "checked_at": "2026-06-30T15:58:14",
  "light": "yellow",
- "pass": 7,
- "warn": 3,
+ "pass": 8,
+ "warn": 2,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 82편"
+   "msg": "count 일치: 83편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 82/82"
+   "msg": "thumb 1:1 정합 통과: 83/83"
   },
   {
    "level": "PASS",
@@ -27,7 +27,11 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 81개 코드 모두 DB.osmu 일치"
+   "msg": "OSMU 교차링크 연계 통과: 82개 코드 모두 DB.osmu 일치"
+  },
+  {
+   "level": "PASS",
+   "msg": "매니페스트 신선도 통과: 83편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -40,10 +44,6 @@
   {
    "level": "WARN",
    "msg": "미사용 썸네일 1개: 70_naeil_card.png"
-  },
-  {
-   "level": "WARN",
-   "msg": "매니페스트 신선도: 제목·URL·썸네일 불일치 1건 → 'python -m studio.pipeline manifest' 재생성 권장"
   }
  ]
 }
