@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-06-30T09:32:12",
+ "checked_at": "2026-06-30T15:10:35",
  "light": "yellow",
- "pass": 8,
- "warn": 2,
+ "pass": 7,
+ "warn": 3,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 81편"
+   "msg": "count 일치: 82편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 81/81"
+   "msg": "thumb 1:1 정합 통과: 82/82"
   },
   {
    "level": "PASS",
@@ -31,10 +31,6 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 81편 DB와 일치"
-  },
-  {
-   "level": "PASS",
    "msg": "내부링크 실효성 통과: posts/ 76개 파일의 내부링크 모두 실제 글"
   },
   {
@@ -44,6 +40,10 @@
   {
    "level": "WARN",
    "msg": "미사용 썸네일 1개: 70_naeil_card.png"
+  },
+  {
+   "level": "WARN",
+   "msg": "매니페스트 신선도: 제목·URL·썸네일 불일치 1건 → 'python -m studio.pipeline manifest' 재생성 권장"
   }
  ]
 }
