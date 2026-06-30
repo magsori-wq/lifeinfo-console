@@ -2,27 +2,12 @@
  "rev": "277fe3f",
  "counts": {
   "total": 81,
-  "osmu_done": 80,
-  "osmu_pending": 1,
+  "osmu_done": 81,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 81
  },
  "actionable": [
-  {
-   "code": "F1-03",
-   "title": "여권 재발급 갱신 방법 온라인 신청 총정리",
-   "need": [
-    "OSMU",
-    "색인"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -194,6 +179,20 @@
   {
    "code": "A3-02",
    "title": "국민연금 예상 수령액 조회 방법 수령나이 총정리",
+   "need": [
+    "색인"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "B1-01",
+   "title": "자동차세 조회 납부 방법 연납 할인 총정리",
    "need": [
     "색인"
    ],
