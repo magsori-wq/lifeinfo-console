@@ -72,6 +72,16 @@
     <span style="color:#8a97ab">※ 구글은 “색인요청 버튼을 눌렀는지”를 외부에 알려주지 않으므로, 완료 체크는 <b>사용자가 진행을 기록</b>하는 용도입니다(자동 판별 불가).</span>
   </div>
 
+  <details style="background:#101a30;border:1px solid #2a3a5e;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#9fb0d0;margin-bottom:10px">
+    <summary style="cursor:pointer;color:#cdd8ee;font-weight:700">❓ ‘미발견 / 리다이렉트’는 왜 뜨고, 어떻게 하나요?</summary>
+    <div style="margin-top:8px;line-height:1.8">
+      <b style="color:#ff8a8a">⛔ 미발견(URL unknown)</b> = 구글이 아직 <b>크롤을 안 해서 모른다</b>는 뜻(요청을 눌렀어도 처리 전엔 이렇게 보입니다). 신규 블로그는 크롤이 느립니다.<br>
+      <b style="color:#ffd166">⚠️ 리다이렉트(Redirect error)</b> = 구글은 <b>모바일 우선</b>으로 크롤하는데, 블로그스팟은 모바일 접속 시 <b>?m=1로 302 이동</b>합니다(그 페이지의 대표주소<code>canonical</code>는 깨끗한 URL). <b>블로그스팟 기본 동작</b>이라 구글이 대개 <code>canonical</code>로 통합하며, 시간이 지나면 해소되는 경우가 많습니다.<br>
+      <b style="color:#7fc1ff">근본 해법</b> = ① <b>시간</b>(신규 사이트는 2~6주) ② <b>트래픽·백링크</b>(네이버·쓰레드 OSMU가 도움) ③ 꾸준한 발행 ④ 보조로 <b>‘실제 URL 테스트’ 후 색인요청</b>.<br>
+      <span style="color:#8a97ab">※ ?m=1을 테마 스크립트로 강제 제거하는 방법이 돌지만, 효과가 확실치 않고 <b>테마 편집이 애드센스 위젯과 충돌해 저장이 막힐 수</b> 있어 이 블로그에선 권장하지 않습니다. 손대지 말고 시간·트래픽으로 푸는 게 안전합니다.</span>
+    </div>
+  </details>
+
   <div class="toolbar">
     <input type="search" id="q" placeholder="제목·코드 검색">
     <button class="fbtn on" data-f="all">전체</button>
