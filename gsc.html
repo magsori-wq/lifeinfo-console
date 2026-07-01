@@ -45,6 +45,7 @@
 </style>
 </head>
 <body>
+  <div id="toast" style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#1b3358;color:#cfe4ff;border:1px solid #4d9de0;border-radius:10px;padding:10px 16px;font-size:13px;font-weight:700;opacity:0;transition:opacity .2s;z-index:99;pointer-events:none"></div>
   <h1>🔍 색인 관리 <span id="tag">로딩…</span></h1>
   <p class="sub">전체 글의 색인 상태 확인 + GSC URL 검사 바로가기 + 색인요청 완료 체크(브라우저 저장). 체크 상태는 이 기기 브라우저에 저장됩니다.</p>
 
@@ -84,6 +85,7 @@
 
 <script>
   var RESOURCE='https://lifeinfo8975.blogspot.com/';   // GSC URL 접두어 속성
+  var PROP_DASH='https://search.google.com/search-console?resource_id='+encodeURIComponent(RESOURCE);
   var LSKEY='gsc_req_v1';
   var CAT={A:'#2BC4B0',B:'#4D9DE0',C:'#E76F51',D:'#2EB67D',E:'#4361C9',F:'#7C5CE0',G:'#E8A33D'};
   var req=load(), all=[], filt='all';
@@ -91,7 +93,7 @@
   function load(){try{return JSON.parse(localStorage.getItem(LSKEY)||'{}');}catch(e){return {};}}
   function save(){localStorage.setItem(LSKEY,JSON.stringify(req));}
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function gscUrl(u){return 'https://search.google.com/search-console/inspect?resource_id='+encodeURIComponent(RESOURCE)+'&id='+encodeURIComponent(u);}
+  function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.style.opacity='1';clearTimeout(toast._t);toast._t=setTimeout(function(){t.style.opacity='0';},2600);}
 
   function stInfo(state){
     var s=(state||'').toLowerCase();
@@ -112,7 +114,7 @@
     document.getElementById('tag').textContent='점검: '+(idx.checked_at||'미점검');
     all=(db.posts||[]).map(function(p){
       var ix=posts[p.code]||{};
-      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:p.url||ix.url||'',state:ix.state||''};
+      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:p.url||ix.url||'',state:ix.state||'',link:ix.link||''};
     });
     render();
   }).catch(function(){
@@ -136,7 +138,9 @@
         +'<td><span class="pcode" style="background:'+col+'">'+esc(p.code)+'</span></td>'
         +'<td><a class="ttl" href="'+esc(p.url)+'" target="_blank" rel="noopener" title="'+esc(p.title)+'">'+esc(p.title)+'</a></td>'
         +'<td><span class="st '+si.c+'">'+si.t+'</span></td>'
-        +'<td><a class="act gsc" href="'+esc(gscUrl(p.url))+'" target="_blank" rel="noopener">GSC 검사</a>'
+        +'<td>'+(p.link
+            ? '<a class="act gsc" href="'+esc(p.link)+'" target="_blank" rel="noopener">GSC 검사</a>'
+            : '<a class="act gsc" href="'+esc(PROP_DASH)+'" target="_blank" rel="noopener" data-copy="'+esc(p.url)+'">GSC 검사</a>')
         +'<a class="act open" href="'+esc(p.url)+'" target="_blank" rel="noopener">글</a></td>'
         +'</tr>');
     });
@@ -154,6 +158,13 @@
     var code=c.dataset.c;
     if(c.checked)req[code]=1; else delete req[code];
     save(); render();
+  });
+  // GSC 폴백: 정식 링크가 없으면 URL 복사 후 GSC 속성 대시보드 열기(상단 검사창에 붙여넣기)
+  document.getElementById('rows').addEventListener('click',function(e){
+    var a=e.target.closest('a.gsc[data-copy]'); if(!a)return;
+    var u=a.getAttribute('data-copy');
+    try{navigator.clipboard.writeText(u);}catch(_){}
+    toast('URL 복사됨 → GSC 상단 검사창에 붙여넣기(Ctrl+V) + Enter');
   });
   document.getElementById('q').addEventListener('input',render);
   document.querySelectorAll('.fbtn[data-f]').forEach(function(b){
