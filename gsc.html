@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>생활정보 모음 · 색인 관리</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#0f1626;color:#e8edf7;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6;padding:16px}
+  h1{font-size:18px;margin:0}
+  .sub{color:#9fb0d0;font-size:12px;margin:4px 0 14px}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+  @media(max-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+  .card{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;padding:12px}
+  .card .k{font-size:11px;color:#9fb0d0;font-weight:600}
+  .card .v{font-size:23px;font-weight:800;margin-top:2px}
+  .card .v small{font-size:12px;font-weight:600;color:#9fb0d0}
+  .bar{grid-column:1/-1;height:9px;background:#0c1220;border-radius:6px;overflow:hidden}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,#4d9de0,#06d6a0);width:0;transition:width .4s}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+  .toolbar input[type=search]{flex:1;min-width:140px;background:#0b1322;border:1px solid #2a3a5e;color:#e8edf7;border-radius:9px;padding:9px 12px;font-size:14px}
+  .fbtn{background:#16203a;border:1px solid #2a3a5e;color:#cdd8ee;border-radius:9px;padding:8px 12px;font-size:13px;font-weight:700;cursor:pointer}
+  .fbtn.on{background:#1b3358;border-color:#4d9de0;color:#cfe4ff}
+  .note{background:#101a30;border:1px solid #2a3a5e;border-radius:10px;padding:10px 13px;font-size:12.5px;color:#9fb0d0;margin-bottom:10px}
+  .note b{color:#cdd8ee}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{position:sticky;top:0;background:#101a30;color:#7fc1ff;font-size:11px;text-align:left;padding:9px 8px;border-bottom:1px solid #2a3a5e;white-space:nowrap}
+  tbody td{padding:9px 8px;border-bottom:1px solid #1e2b47;vertical-align:middle}
+  tbody tr:hover{background:#131d33}
+  tr.done{opacity:.62}
+  .pcode{display:inline-block;font-size:10px;font-weight:800;color:#04221a;padding:1px 7px;border-radius:10px;white-space:nowrap}
+  .ttl{color:#dbe4f5;text-decoration:none;display:block;max-width:360px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ttl:hover{color:#7fc1ff}
+  .st{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap}
+  .st.ok{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52}
+  .st.wait{background:#26314f;color:#9fb0d0;border:1px solid #3a4a6e}
+  .st.err{background:#3a2f12;color:#ffd166;border:1px solid #5a4a1a}
+  .st.no{background:#3a1a1a;color:#ff8a8a;border:1px solid #6b2a2a}
+  .act{display:inline-block;font-size:11.5px;font-weight:700;text-decoration:none;padding:5px 9px;border-radius:8px;white-space:nowrap}
+  .act.gsc{background:#1b3358;color:#cfe4ff;border:1px solid #33598f}
+  .act.open{background:#16203a;color:#9fb0d0;border:1px solid #2a3a5e;margin-left:4px}
+  .ck{width:19px;height:19px;accent-color:#06d6a0;cursor:pointer}
+  .foot{color:#6b7790;font-size:11px;margin-top:12px;line-height:1.7}
+  #tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:#26314f;color:#9fb0d0;border:1px solid #3a4a6e}
+</style>
+</head>
+<body>
+  <h1>🔍 색인 관리 <span id="tag">로딩…</span></h1>
+  <p class="sub">전체 글의 색인 상태 확인 + GSC URL 검사 바로가기 + 색인요청 완료 체크(브라우저 저장). 체크 상태는 이 기기 브라우저에 저장됩니다.</p>
+
+  <div class="cards">
+    <div class="card"><div class="k">전체 글</div><div class="v" id="cTot">–</div></div>
+    <div class="card"><div class="k">색인됨</div><div class="v" id="cIdx" style="color:#06d6a0">–</div></div>
+    <div class="card"><div class="k">요청완료(체크)</div><div class="v" id="cReq" style="color:#7fc1ff">–<small id="cReqPct"></small></div></div>
+    <div class="card"><div class="k">미색인·미요청</div><div class="v" id="cTodo" style="color:#ffd166">–</div></div>
+    <div class="bar"><i id="reqBar"></i></div>
+  </div>
+
+  <div class="note">
+    <b>사용법</b> — ① 각 줄 <b>[GSC 검사]</b>를 누르면 서치콘솔 URL 검사 화면이 그 주소로 열립니다 → 거기서 <b>‘색인 생성 요청’</b> 버튼 클릭. ② 요청했으면 왼쪽 <b>체크박스</b>를 켜 두면 진행이 기록됩니다. ③ 실제 색인 여부(색인됨/발견/오류)는 PC에서 <b>python studio/searchconsole.py inspect</b> → <b>deploy</b> 후 갱신됩니다.
+  </div>
+
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="제목·코드 검색">
+    <button class="fbtn on" data-f="all">전체</button>
+    <button class="fbtn" data-f="notidx">미색인만</button>
+    <button class="fbtn" data-f="notreq">미요청만</button>
+    <button class="fbtn" data-f="req">요청완료</button>
+    <button class="fbtn" id="clr" title="이 기기의 체크 기록 초기화">체크 초기화</button>
+  </div>
+
+  <table>
+    <thead><tr>
+      <th style="width:34px">완료</th><th style="width:58px">코드</th><th>제목</th>
+      <th style="width:96px">색인상태</th><th style="width:150px">GSC / 글</th>
+    </tr></thead>
+    <tbody id="rows"><tr><td colspan="5" style="padding:20px;color:#6b7790">불러오는 중…</td></tr></tbody>
+  </table>
+
+  <p class="foot">
+    ※ GSC 검사 링크는 <b>URL 접두어 속성</b>(https://lifeinfo8975.blogspot.com/) 기준입니다. 속성이 다르면 상단 <code>RESOURCE</code> 값을 수정하세요.<br>
+    ※ 색인 ‘요청’ 자체는 구글 서치콘솔에서만 가능(자동화 불가). 이 페이지는 요청 <b>진행 관리용</b>이며 체크는 브라우저(localStorage)에 저장됩니다.
+  </p>
+
+<script>
+  var RESOURCE='https://lifeinfo8975.blogspot.com/';   // GSC URL 접두어 속성
+  var LSKEY='gsc_req_v1';
+  var CAT={A:'#2BC4B0',B:'#4D9DE0',C:'#E76F51',D:'#2EB67D',E:'#4361C9',F:'#7C5CE0',G:'#E8A33D'};
+  var req=load(), all=[], filt='all';
+
+  function load(){try{return JSON.parse(localStorage.getItem(LSKEY)||'{}');}catch(e){return {};}}
+  function save(){localStorage.setItem(LSKEY,JSON.stringify(req));}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function gscUrl(u){return 'https://search.google.com/search-console/inspect?resource_id='+encodeURIComponent(RESOURCE)+'&id='+encodeURIComponent(u);}
+
+  function stInfo(state){
+    var s=(state||'').toLowerCase();
+    if(s.indexOf('indexed')>=0 && s.indexOf('not indexed')<0) return {c:'ok',t:'✅ 색인됨'};
+    if(s.indexOf('discover')>=0) return {c:'wait',t:'⏳ 발견·대기'};
+    if(s.indexOf('crawled')>=0) return {c:'wait',t:'⏳ 크롤·미색인'};
+    if(s.indexOf('redirect')>=0) return {c:'err',t:'⚠️ 리다이렉트'};
+    if(s.indexOf('unknown')>=0) return {c:'no',t:'⛔ 미발견'};
+    if(!state) return {c:'wait',t:'– 미점검'};
+    return {c:'wait',t:esc(state)};
+  }
+
+  Promise.all([
+    fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}),
+    fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():{posts:{}};}).catch(function(){return {posts:{}};})
+  ]).then(function(res){
+    var db=res[0], idx=res[1]||{}, posts=idx.posts||{};
+    document.getElementById('tag').textContent='점검: '+(idx.checked_at||'미점검');
+    all=(db.posts||[]).map(function(p){
+      var ix=posts[p.code]||{};
+      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:p.url||ix.url||'',state:ix.state||''};
+    });
+    render();
+  }).catch(function(){
+    document.getElementById('rows').innerHTML='<tr><td colspan="5" style="padding:20px;color:#ff8a8a">데이터 로드 실패 (lifeinfo_db.txt)</td></tr>';
+  });
+
+  function render(){
+    var q=(document.getElementById('q').value||'').toLowerCase().replace(/\s/g,'');
+    var idxCnt=0, reqCnt=0, todo=0, out=[];
+    all.forEach(function(p){
+      var si=stInfo(p.state), isIdx=(si.c==='ok'), isReq=!!req[p.code];
+      if(isIdx)idxCnt++; if(isReq)reqCnt++; if(!isIdx&&!isReq)todo++;
+      // 필터
+      if(filt==='notidx'&&isIdx)return;
+      if(filt==='notreq'&&isReq)return;
+      if(filt==='req'&&!isReq)return;
+      if(q){var hay=(p.code+p.title).toLowerCase().replace(/\s/g,'');if(hay.indexOf(q)<0)return;}
+      var col=CAT[p.cat]||'#8a97ab';
+      out.push('<tr class="'+(isReq?'done':'')+'">'
+        +'<td><input type="checkbox" class="ck" data-c="'+esc(p.code)+'" '+(isReq?'checked':'')+'></td>'
+        +'<td><span class="pcode" style="background:'+col+'">'+esc(p.code)+'</span></td>'
+        +'<td><a class="ttl" href="'+esc(p.url)+'" target="_blank" rel="noopener" title="'+esc(p.title)+'">'+esc(p.title)+'</a></td>'
+        +'<td><span class="st '+si.c+'">'+si.t+'</span></td>'
+        +'<td><a class="act gsc" href="'+esc(gscUrl(p.url))+'" target="_blank" rel="noopener">GSC 검사</a>'
+        +'<a class="act open" href="'+esc(p.url)+'" target="_blank" rel="noopener">글</a></td>'
+        +'</tr>');
+    });
+    document.getElementById('rows').innerHTML=out.join('')||'<tr><td colspan="5" style="padding:20px;color:#6b7790">해당 없음</td></tr>';
+    var tot=all.length;
+    document.getElementById('cTot').textContent=tot;
+    document.getElementById('cIdx').textContent=idxCnt;
+    document.getElementById('cReq').innerHTML=reqCnt+'<small id="cReqPct"> / '+tot+'</small>';
+    document.getElementById('cTodo').textContent=todo;
+    document.getElementById('reqBar').style.width=(tot?Math.round(reqCnt/tot*100):0)+'%';
+  }
+
+  document.getElementById('rows').addEventListener('change',function(e){
+    var c=e.target.closest('.ck'); if(!c)return;
+    var code=c.dataset.c;
+    if(c.checked)req[code]=1; else delete req[code];
+    save(); render();
+  });
+  document.getElementById('q').addEventListener('input',render);
+  document.querySelectorAll('.fbtn[data-f]').forEach(function(b){
+    b.addEventListener('click',function(){
+      filt=b.dataset.f;
+      document.querySelectorAll('.fbtn[data-f]').forEach(function(x){x.classList.toggle('on',x===b);});
+      render();
+    });
+  });
+  document.getElementById('clr').addEventListener('click',function(){
+    if(confirm('이 기기에 저장된 색인요청 체크 기록을 모두 지울까요?')){req={};save();render();}
+  });
+</script>
+</body>
+</html>
