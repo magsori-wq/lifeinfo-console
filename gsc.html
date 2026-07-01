@@ -43,6 +43,7 @@
   .act.gsc{background:#1b3358;color:#cfe4ff;border:1px solid #33598f}
   .act.open{background:#16203a;color:#9fb0d0;border:1px solid #2a3a5e;margin-left:4px}
   .ck{width:19px;height:19px;accent-color:#06d6a0;cursor:pointer}
+  .rec{font-size:10px;font-weight:700;padding:1px 6px;border-radius:10px;background:#123047;color:#7fc1ff;border:1px solid #1f5a7f;white-space:nowrap;margin-left:4px}
   .foot{color:#6b7790;font-size:11px;margin-top:12px;line-height:1.7}
   #tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:#26314f;color:#9fb0d0;border:1px solid #3a4a6e}
 </style>
@@ -89,9 +90,12 @@
     <button class="fbtn on" data-f="all">전체</button>
     <button class="fbtn" data-f="notidx">미색인만</button>
     <button class="fbtn" data-f="notreq">미요청만</button>
-    <button class="fbtn" data-f="req">요청완료</button>
+    <button class="fbtn" data-f="req">완료체크</button>
+    <button class="fbtn" data-f="logged">📋 기록됨</button>
+    <button class="fbtn" data-f="notlog">미기록</button>
     <button class="fbtn" id="clr" title="이 기기의 체크 기록 초기화">체크 초기화</button>
   </div>
+  <p id="logNote" style="font-size:11.5px;color:#7fc1ff;margin:-4px 0 10px"></p>
 
   <table>
     <thead><tr>
@@ -131,13 +135,15 @@
 
   Promise.all([
     fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}),
-    fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():{posts:{}};}).catch(function(){return {posts:{}};})
+    fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():{posts:{}};}).catch(function(){return {posts:{}};}),
+    fetch('gsc_requested.json?t='+Date.now()).then(function(r){return r.ok?r.json():{urls:[]};}).catch(function(){return {urls:[]};})
   ]).then(function(res){
-    var db=res[0], idx=res[1]||{}, posts=idx.posts||{};
+    var db=res[0], idx=res[1]||{}, posts=idx.posts||{}, reqSet={};
+    ((res[2]||{}).urls||[]).forEach(function(u){reqSet[u]=1;});
     document.getElementById('tag').textContent='점검: '+(idx.checked_at||'미점검');
     all=(db.posts||[]).map(function(p){
-      var ix=posts[p.code]||{};
-      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:p.url||ix.url||'',state:ix.state||'',link:ix.link||''};
+      var ix=posts[p.code]||{}, u=p.url||ix.url||'';
+      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:u,state:ix.state||'',link:ix.link||'',logged:!!reqSet[u]};
     });
     render();
   }).catch(function(){
@@ -146,14 +152,16 @@
 
   function render(){
     var q=(document.getElementById('q').value||'').toLowerCase().replace(/\s/g,'');
-    var idxCnt=0, reqCnt=0, todo=0, out=[];
+    var idxCnt=0, reqCnt=0, todo=0, logCnt=0, out=[];
     all.forEach(function(p){
       var si=stInfo(p.state), isIdx=(si.c==='ok'), isReq=!!req[p.code];
-      if(isIdx)idxCnt++; if(isReq)reqCnt++; if(!isIdx&&!isReq)todo++;
+      if(isIdx)idxCnt++; if(isReq)reqCnt++; if(!isIdx&&!isReq)todo++; if(p.logged)logCnt++;
       // 필터
       if(filt==='notidx'&&isIdx)return;
       if(filt==='notreq'&&isReq)return;
       if(filt==='req'&&!isReq)return;
+      if(filt==='logged'&&!p.logged)return;
+      if(filt==='notlog'&&p.logged)return;
       if(q){var hay=(p.code+p.title).toLowerCase().replace(/\s/g,'');if(hay.indexOf(q)<0)return;}
       var col=CAT[p.cat]||'#8a97ab';
       out.push('<tr class="'+(isReq?'done':'')+'">'
@@ -161,7 +169,7 @@
         +'<td><span class="pcode" style="background:'+col+'">'+esc(p.code)+'</span></td>'
         +'<td><a class="ttl" href="'+esc(p.url)+'" target="_blank" rel="noopener" title="'+esc(p.title)+'">'+esc(p.title)+'</a>'
         +'<div class="url"><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.url)+'</a></div></td>'
-        +'<td><span class="st '+si.c+'">'+si.t+'</span></td>'
+        +'<td><span class="st '+si.c+'">'+si.t+'</span>'+(p.logged?' <span class="rec" title="요청 로그(gsc_requested.json)에 기록된 글">📋 기록</span>':'')+'</td>'
         +'<td>'+(p.link
             ? '<a class="act gsc" href="'+esc(p.link)+'" target="_blank" rel="noopener">GSC 검사</a>'
             : '<a class="act gsc" href="'+esc(PROP_DASH)+'" target="_blank" rel="noopener" data-copy="'+esc(p.url)+'">GSC 검사</a>')
@@ -175,6 +183,8 @@
     document.getElementById('cReq').innerHTML=reqCnt+'<small id="cReqPct"> / '+tot+'</small>';
     document.getElementById('cTodo').textContent=todo;
     document.getElementById('reqBar').style.width=(tot?Math.round(reqCnt/tot*100):0)+'%';
+    var ln=document.getElementById('logNote');
+    if(ln)ln.innerHTML='📋 요청 로그 기록 <b>'+logCnt+'</b>편 (gsc_requested.json) · 나머지 '+(tot-logCnt)+'편은 <b>[미기록]</b> 필터로 확인 → 우선 요청 대상. <span style="color:#8a97ab">※ 로그는 6월분 기준이라 오늘 요청분은 아직 미반영일 수 있음.</span>';
   }
 
   document.getElementById('rows').addEventListener('change',function(e){
