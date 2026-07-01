@@ -2,8 +2,8 @@
  "rev": "2b749a3",
  "counts": {
   "total": 87,
-  "osmu_done": 85,
-  "osmu_pending": 2,
+  "osmu_done": 86,
+  "osmu_pending": 1,
   "indexed": 0,
   "index_pending": 87
  },
@@ -11,21 +11,6 @@
   {
    "code": "B2-05",
    "title": "2026 햇살론 종류 조건 한도 금리 신청 방법 총정리",
-   "need": [
-    "OSMU",
-    "색인"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "C1-07",
-   "title": "백내장 수술 비용 건강보험 실손보험 다초점렌즈 본인부담",
    "need": [
     "OSMU",
     "색인"
@@ -195,6 +180,20 @@
   {
    "code": "A3-01",
    "title": "기초연금 수급자격 소득기준 신청방법 총정리",
+   "need": [
+    "색인"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A3-02",
+   "title": "국민연금 예상 수령액 조회 방법 수령나이 총정리",
    "need": [
     "색인"
    ],
