@@ -1,13 +1,28 @@
 {
  "rev": "6eedf92",
  "counts": {
-  "total": 85,
+  "total": 86,
   "osmu_done": 84,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 0,
-  "index_pending": 85
+  "index_pending": 86
  },
  "actionable": [
+  {
+   "code": "C1-07",
+   "title": "백내장 수술 비용 건강보험 실손보험 다초점렌즈 본인부담",
+   "need": [
+    "OSMU",
+    "색인"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "D3-04",
    "title": "전세보증금 반환보증 가입 방법 보증료 HUG HF SG",
@@ -180,20 +195,6 @@
   {
    "code": "A3-01",
    "title": "기초연금 수급자격 소득기준 신청방법 총정리",
-   "need": [
-    "색인"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A3-02",
-   "title": "국민연금 예상 수령액 조회 방법 수령나이 총정리",
    "need": [
     "색인"
    ],
