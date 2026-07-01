@@ -154,7 +154,7 @@
     var q=(document.getElementById('q').value||'').toLowerCase().replace(/\s/g,'');
     var idxCnt=0, reqCnt=0, todo=0, logCnt=0, out=[];
     all.forEach(function(p){
-      var si=stInfo(p.state), isIdx=(si.c==='ok'), isReq=!!req[p.code];
+      var si=stInfo(p.state), isIdx=(si.c==='ok'), isReq=(!!req[p.code]||p.logged);
       if(isIdx)idxCnt++; if(isReq)reqCnt++; if(!isIdx&&!isReq)todo++; if(p.logged)logCnt++;
       // 필터
       if(filt==='notidx'&&isIdx)return;
@@ -165,7 +165,7 @@
       if(q){var hay=(p.code+p.title).toLowerCase().replace(/\s/g,'');if(hay.indexOf(q)<0)return;}
       var col=CAT[p.cat]||'#8a97ab';
       out.push('<tr class="'+(isReq?'done':'')+'">'
-        +'<td><input type="checkbox" class="ck" data-c="'+esc(p.code)+'" '+(isReq?'checked':'')+'></td>'
+        +'<td><input type="checkbox" class="ck" data-c="'+esc(p.code)+'" '+(isReq?'checked':'')+(p.logged?' disabled title="요청 로그에 기록됨 — 자동 완료(고정)"':'')+'></td>'
         +'<td><span class="pcode" style="background:'+col+'">'+esc(p.code)+'</span></td>'
         +'<td><a class="ttl" href="'+esc(p.url)+'" target="_blank" rel="noopener" title="'+esc(p.title)+'">'+esc(p.title)+'</a>'
         +'<div class="url"><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.url)+'</a></div></td>'
@@ -184,7 +184,7 @@
     document.getElementById('cTodo').textContent=todo;
     document.getElementById('reqBar').style.width=(tot?Math.round(reqCnt/tot*100):0)+'%';
     var ln=document.getElementById('logNote');
-    if(ln)ln.innerHTML='📋 요청 로그 기록 <b>'+logCnt+'</b>편 (gsc_requested.json) · 나머지 '+(tot-logCnt)+'편은 <b>[미기록]</b> 필터로 확인 → 우선 요청 대상. <span style="color:#8a97ab">※ 로그는 6월분 기준이라 오늘 요청분은 아직 미반영일 수 있음.</span>';
+    if(ln)ln.innerHTML='📋 요청 로그 기록 <b>'+logCnt+'</b>편은 <b>자동 완료</b>(체크 고정) · 나머지 <b>'+(tot-logCnt)+'</b>편은 <b>[미기록]</b> 필터로 확인 → 우선 요청 대상. <span style="color:#8a97ab">※ 로그는 6월분 기준이라 오늘 요청분은 아직 미반영.</span>';
   }
 
   document.getElementById('rows').addEventListener('change',function(e){
