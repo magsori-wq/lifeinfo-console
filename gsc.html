@@ -62,14 +62,16 @@
 
   <div class="note">
     <b>📌 색인요청 사용법 (순서대로)</b>
+    <div style="background:#3a2f12;border:1px solid #5a4a1a;color:#ffd166;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:12px"><b>⚠️ 가장 중요</b> — ‘URL 검사’·‘실제 URL 테스트’는 <b>상태 조회일 뿐, 요청이 아닙니다.</b> 반드시 파란 <b>‘색인 생성 요청’</b> 버튼을 눌러 <b>“색인 생성을 요청했습니다”</b> 팝업까지 봐야 진짜 요청됩니다. (페이지 공개 상태만 보고 닫으면 요청 안 됨!)</div>
     <ol style="margin:8px 0 4px;padding-left:20px;line-height:1.9">
-      <li><b>[미요청만]</b> 필터를 눌러 아직 요청 안 한 글만 봅니다.</li>
-      <li>각 줄 <b>[GSC 검사]</b> 클릭 → 구글 서치콘솔 <b>URL 검사</b> 화면이 <b>그 글 주소로 자동</b> 열립니다. (동시에 왼쪽 <b>‘완료’가 자동 체크</b>됩니다)</li>
-      <li>열린 서치콘솔 화면에서 <b>파란 ‘색인 생성 요청’</b> 버튼을 <b>꼭 클릭</b> → “색인 생성을 요청했습니다” 안내가 뜨면 그 글은 끝.</li>
-      <li>혹시 요청을 <b>안 했으면</b> 돌아와 그 줄의 <b>체크를 해제</b>하세요. (완료 표시는 진행 관리용 — 이 기기 브라우저에 저장)</li>
-      <li>실제 색인 여부(✅색인됨/⏳발견/⚠️리다이렉트/⛔미발견)는 며칠 뒤 PC에서 <b>python studio/searchconsole.py inspect → deploy</b> 하면 <b>색인상태</b> 칸에 갱신됩니다.</li>
+      <li><b>[미요청만]</b> 필터로 아직 요청 안 한 글만 봅니다.</li>
+      <li>각 줄 <b>[GSC 검사]</b> 클릭 → 서치콘솔 <b>URL 검사</b> 화면이 열립니다(URL 자동 복사). <span style="color:#9fb0d0">— 여기까진 조회일 뿐, 요청 아님</span></li>
+      <li>그 화면에서 <b>파란 ‘색인 생성 요청’</b> 버튼 클릭 → <b>“색인 생성을 요청했습니다”</b> 팝업 확인.</li>
+      <li>콘솔로 돌아와 <b>그 줄 ‘완료’를 직접 체크</b> — <b>실제로 요청한 글만</b> 체크해야 진행이 정확합니다.</li>
+      <li><b>하루 약 10건 한도</b>가 있어 초과 시 "할당량 초과"가 뜹니다 → 나눠서 진행.</li>
+      <li>실제 색인 여부(✅색인/⏳발견/⚠️리다이렉트/⛔미발견)는 며칠 뒤 PC에서 <b>searchconsole.py inspect → deploy</b> 하면 <b>색인상태</b> 칸에 갱신됩니다.</li>
     </ol>
-    <span style="color:#8a97ab">※ 구글은 “색인요청 버튼을 눌렀는지”를 외부에 알려주지 않으므로, 완료 체크는 <b>사용자가 진행을 기록</b>하는 용도입니다(자동 판별 불가).</span>
+    <span style="color:#8a97ab">※ 완료 체크는 <b>자동이 아니라 직접</b> 합니다(구글은 요청 여부를 외부에 안 알려줌). 예전에 조회만 하고 체크된 게 있으면 아래 <b>[체크 초기화]</b>로 지우고 다시 정확히 관리하세요.</span>
   </div>
 
   <details style="background:#101a30;border:1px solid #2a3a5e;border-radius:10px;padding:8px 13px;font-size:12.5px;color:#9fb0d0;margin-bottom:10px">
@@ -181,16 +183,13 @@
     if(c.checked)req[code]=1; else delete req[code];
     save(); render();
   });
-  // [GSC 검사] 클릭 → 완료 자동 체크 + (폴백이면) URL 복사
+  // [GSC 검사] 클릭 → URL 복사 + 안내 (자동 체크 안 함: '완료'는 실제 '색인 생성 요청' 클릭 후 직접 체크)
   document.getElementById('rows').addEventListener('click',function(e){
     var a=e.target.closest('a.gsc'); if(!a)return;
-    var tr=a.closest('tr'), cb=tr&&tr.querySelector('.ck'), code=cb&&cb.dataset.c;
-    var fallback=a.hasAttribute('data-copy');
-    if(fallback){try{navigator.clipboard.writeText(a.getAttribute('data-copy'));}catch(_){}}
-    if(code && !req[code]){req[code]=1;save();setTimeout(render,60);}  // 새 탭 이동 후 재렌더
-    toast(fallback
-      ? 'URL 복사됨 → GSC 검사창에 붙여넣기 후 \'색인 생성 요청\' 클릭 (완료 자동 체크·미요청이면 해제)'
-      : 'GSC 열림 → \'색인 생성 요청\' 버튼 클릭 (완료 자동 체크·미요청이면 해제)');
+    var lnk=a.closest('tr').querySelector('.url a');
+    var u=a.getAttribute('data-copy')||(lnk?lnk.getAttribute('href'):'');
+    if(u){try{navigator.clipboard.writeText(u);}catch(_){}}
+    toast('GSC 열림(URL 복사됨) → 파란 \'색인 생성 요청\' 버튼을 꼭 누르세요 → 그 뒤 여기서 \'완료\'를 직접 체크');
   });
   document.getElementById('q').addEventListener('input',render);
   document.querySelectorAll('.fbtn[data-f]').forEach(function(b){
