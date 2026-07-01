@@ -93,6 +93,7 @@
     <button class="fbtn" data-f="req">완료체크</button>
     <button class="fbtn" data-f="logged">📋 기록됨</button>
     <button class="fbtn" data-f="notlog">미기록</button>
+    <button class="fbtn" id="exp" title="내가 체크했지만 로그에 아직 없는 코드를 복사 → PC에서 gsc_log.py add 로 누적">완료→로그 복사</button>
     <button class="fbtn" id="clr" title="이 기기의 체크 기록 초기화">체크 초기화</button>
   </div>
   <p id="logNote" style="font-size:11.5px;color:#7fc1ff;margin:-4px 0 10px"></p>
@@ -208,6 +209,14 @@
       document.querySelectorAll('.fbtn[data-f]').forEach(function(x){x.classList.toggle('on',x===b);});
       render();
     });
+  });
+  document.getElementById('exp').addEventListener('click',function(){
+    // 내가 체크(req)했지만 로그엔 아직 없는 코드 = 새로 로그에 누적할 대상
+    var codes=all.filter(function(p){return req[p.code] && !p.logged;}).map(function(p){return p.code;});
+    if(!codes.length){toast('새로 누적할 코드가 없습니다 (체크했지만 로그에 없는 글 없음)');return;}
+    var s=codes.join(' ');
+    try{navigator.clipboard.writeText('python studio/gsc_log.py add '+s);}catch(_){}
+    toast(codes.length+'개 코드 복사됨 → PC 터미널에 붙여넣기 실행 후 deploy');
   });
   document.getElementById('clr').addEventListener('click',function(){
     if(confirm('이 기기에 저장된 색인요청 체크 기록을 모두 지울까요?')){req={};save();render();}
