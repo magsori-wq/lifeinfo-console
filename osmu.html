@@ -47,7 +47,7 @@
     <label>본문 (구글 블로그 글 전체를 복사해 붙여넣기 — HTML/텍스트 무관)</label>
     <textarea id="src" style="min-height:240px" placeholder="여기에 글 본문을 붙여넣으세요. '글HTML 생성기'로 만든 HTML을 그대로 넣어도 됩니다."></textarea>
     <button class="btn gen" onclick="run()">🔁 변환하기</button>
-    <div class="tip">※ 네이버는 '복사 글(중복)'에 약합니다. 변환 후 도입부 1~2문장만 살짝 바꿔서 올리면 더 안전합니다.</div>
+    <div class="tip">※ 위험은 개수가 아니라 <b>중복문서(원본 복붙)·자동화 스팸·과도한 상업성</b>. 변환 후 문장·구성을 제대로 변형해서 올리세요(도입부만 바꾸는 것보다 안전).</div>
   </div>
 
   <div class="right">
@@ -59,7 +59,7 @@
     <div class="card">
       <div class="hd"><b style="color:#fff">🧵 쓰레드용 요약</b><button class="btn copy" onclick="cp('outT','쓰레드')">📋 복사</button></div>
       <textarea class="out" id="outT" readonly style="min-height:120px" placeholder="짧은 쓰레드 게시글이 생성됩니다."></textarea>
-      <div class="tag">쓰레드 글쓰기에 붙여넣기 (하루 1~2개씩 권장)</div>
+      <div class="tag">쓰레드 글쓰기에 붙여넣기 — 개수는 노출·지수 반응 보며 점진 증량</div>
     </div>
   </div>
 </div>
@@ -124,7 +124,7 @@
     var o=document.getElementById(id);
     if(!o.value){alert('먼저 변환하기를 누르세요.');return;}
     o.select(); navigator.clipboard.writeText(o.value);
-    o.nextElementSibling; alert(label+'용 텍스트를 복사했습니다!');
+    alert(label+'용 텍스트를 복사했습니다!');
   }
 </script>
 </body>

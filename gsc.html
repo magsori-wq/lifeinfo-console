@@ -117,7 +117,7 @@
   var PROP_DASH='https://search.google.com/search-console?resource_id='+encodeURIComponent(RESOURCE);
   var LSKEY='gsc_req_v1';
   var CAT={A:'#2BC4B0',B:'#4D9DE0',C:'#E76F51',D:'#2EB67D',E:'#4361C9',F:'#7C5CE0',G:'#E8A33D'};
-  var req=load(), all=[], filt='all';
+  var req=load(), all=[], filt='all', logGen='';
 
   function load(){try{return JSON.parse(localStorage.getItem(LSKEY)||'{}');}catch(e){return {};}}
   function save(){localStorage.setItem(LSKEY,JSON.stringify(req));}
@@ -142,6 +142,7 @@
   ]).then(function(res){
     var db=res[0], idx=res[1]||{}, posts=idx.posts||{}, reqSet={};
     ((res[2]||{}).urls||[]).forEach(function(u){reqSet[u]=1;});
+    logGen=(res[2]||{}).generated||'';
     document.getElementById('tag').textContent='점검: '+(idx.checked_at||'미점검');
     all=(db.posts||[]).map(function(p){
       var ix=posts[p.code]||{}, u=p.url||ix.url||'';
@@ -173,6 +174,7 @@
         +'<div class="url"><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.url)+'</a></div></td>'
         +'<td><span class="st '+si.c+'">'+si.t+'</span>'+(p.logged?' <span class="rec" title="요청 로그(gsc_requested.json)에 기록된 글">📋 기록</span>':'')+'</td>'
         +'<td><a class="act gsc" href="'+esc(PROP_DASH)+'" target="_blank" rel="noopener" data-copy="'+esc(p.url+'?m=1')+'">GSC 검사(?m=1)</a>'
+        +(p.link?'<a class="act open" href="'+esc(p.link)+'" target="_blank" rel="noopener" title="GSC URL 검사 결과창 바로 열기(클린 URL 상태 확인용 — 색인 요청은 ?m=1 붙여넣기로)">검사창↗</a>':'')
         +'<a class="act open" href="'+esc(p.url)+'" target="_blank" rel="noopener">글</a></td>'
         +'</tr>');
     });
@@ -184,7 +186,7 @@
     document.getElementById('cTodo').textContent=todo;
     document.getElementById('reqBar').style.width=(tot?Math.round(reqCnt/tot*100):0)+'%';
     var ln=document.getElementById('logNote');
-    if(ln)ln.innerHTML='📋 요청 로그 기록 <b>'+logCnt+'</b>편은 <b>자동 완료</b>(체크 고정) · 나머지 <b>'+(tot-logCnt)+'</b>편은 <b>[미기록]</b> 필터로 확인 → 우선 요청 대상. <span style="color:#8a97ab">※ 로그는 6월분 기준이라 오늘 요청분은 아직 미반영.</span>';
+    if(ln)ln.innerHTML='📋 요청 로그 기록 <b>'+logCnt+'</b>편은 <b>자동 완료</b>(체크 고정) · 나머지 <b>'+(tot-logCnt)+'</b>편은 <b>[미기록]</b> 필터로 확인 → 우선 요청 대상. <span style="color:#8a97ab">'+(logGen?'※ 로그 기준: '+esc(logGen)+' (이후 요청분은 gsc_log.py add → deploy 후 반영).':'※ 요청 로그 파일 없음 — gsc_log.py add로 누적하세요.')+'</span>';
   }
 
   document.getElementById('rows').addEventListener('change',function(e){
@@ -198,8 +200,7 @@
     var a=e.target.closest('a.gsc'); if(!a)return;
     var lnk=a.closest('tr').querySelector('.url a');
     var u=a.getAttribute('data-copy')||(lnk?lnk.getAttribute('href'):'');
-    if(u){try{navigator.clipboard.writeText(u);}catch(_){}}
-    toast('?m=1 URL 복사됨 → GSC 상단 검사창에 붙여넣기(Ctrl+V)+Enter → 실제 URL 테스트 → 색인 생성 요청 → 여기서 완료 체크');
+    if(u){navigator.clipboard.writeText(u).then(function(){toast('?m=1 URL 복사됨 → GSC 상단 검사창에 붙여넣기(Ctrl+V)+Enter → 실제 URL 테스트 → 색인 생성 요청 → 여기서 완료 체크');},function(){toast('복사 실패 — 아래 ?m=1 주소를 직접 복사하세요');});}
   });
   document.getElementById('q').addEventListener('input',render);
   document.querySelectorAll('.fbtn[data-f]').forEach(function(b){
@@ -214,8 +215,7 @@
     var codes=all.filter(function(p){return req[p.code] && !p.logged;}).map(function(p){return p.code;});
     if(!codes.length){toast('새로 누적할 코드가 없습니다 (체크했지만 로그에 없는 글 없음)');return;}
     var s=codes.join(' ');
-    try{navigator.clipboard.writeText('python studio/gsc_log.py add '+s);}catch(_){}
-    toast(codes.length+'개 코드 복사됨 → PC 터미널에 붙여넣기 실행 후 deploy');
+    navigator.clipboard.writeText('python studio/gsc_log.py add '+s).then(function(){toast(codes.length+'개 코드 복사됨 → PC 터미널에 붙여넣기 실행 후 deploy');},function(){toast('복사 실패 — 직접 실행: python studio/gsc_log.py add '+s);});
   });
   document.getElementById('clr').addEventListener('click',function(){
     if(confirm('이 기기에 저장된 색인요청 체크 기록을 모두 지울까요?')){req={};save();render();}

@@ -169,8 +169,8 @@
     </div>
   </div>
 
-  <!-- 백그라운드 작업 (작업스케줄러 + 하트비트 → tasks.json) -->
-  <div class="sect">
+  <!-- 백그라운드 작업 (작업스케줄러 + 하트비트 → tasks.json · 로컬 전용) -->
+  <div class="sect" id="tasksSect">
     <h2>⚙️ 백그라운드 작업 <span class="tag live" id="tasksTag">실행중·완료 실시간</span></h2>
     <p class="note" id="tasksNote" style="margin:0 0 10px">작업 상태 불러오는 중…</p>
     <ul class="posts" id="taskList"></ul>
@@ -374,10 +374,14 @@
 
 <script>
   var GOAL=200;
-  var now=new Date();
   var days=['일','월','화','수','목','금','토'];
-  document.getElementById('today').textContent=
-    now.getFullYear()+'년 '+(now.getMonth()+1)+'월 '+now.getDate()+'일 ('+days[now.getDay()]+') · 오늘도 한 걸음씩!';
+  function renderToday(){ // 자정 넘김 대비: 주기 갱신 때마다 재계산
+    var now=new Date();
+    document.getElementById('today').textContent=
+      now.getFullYear()+'년 '+(now.getMonth()+1)+'월 '+now.getDate()+'일 ('+days[now.getDay()]+') · 오늘도 한 걸음씩!';
+  }
+  renderToday();
+  var IS_LOCAL=(location.hostname==='localhost'||location.hostname==='127.0.0.1')&&location.protocol!=='file:';
 
   /* ---------- DB 실시간 지표 ---------- */
   function pct(a,b){return b?Math.round(a/b*100):0;}
@@ -388,8 +392,12 @@
     else if(total>=100)s2.classList.add('now');
     else s1.classList.add('now');
   }
-  function renderDB(first){
-  fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(db){
+  var perfInited=false, dbLastText=null;
+  function renderDB(){
+  return fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.text();}).then(function(txt){
+    if(txt===dbLastText)return; // 내용 동일하면 재파싱·재렌더 생략(5초 주기 DOM 재구축 방지)
+    var db=JSON.parse(txt);
+    dbLastText=txt;
     var posts=db.posts||[];
     var total=posts.length;
     var tax=db.taxonomy||[];
@@ -415,7 +423,7 @@
     tax.forEach(function(t){
       var n=byCat[t.code]||0;
       var row=document.createElement('div');row.className='cat';
-      row.innerHTML='<span class="name">'+t.code+'. '+t.name+'</span>'+
+      row.innerHTML='<span class="name">'+esc(t.code)+'. '+esc(t.name)+'</span>'+
         '<span class="track"><i style="background:'+t.color+';width:'+(n/maxN*100)+'%"></i></span>'+
         '<span class="n">'+n+'</span>';
       cd.appendChild(row);
@@ -459,16 +467,17 @@
     var ul=document.getElementById('recent');ul.innerHTML='';
     rec.forEach(function(p){
       var li=document.createElement('li');
-      li.innerHTML='<span class="pcode" style="background:'+(catColor[p.cat]||'#4d9de0')+'">'+p.code+'</span>'+
-        '<a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a>';
+      li.innerHTML='<span class="pcode" style="background:'+(catColor[p.cat]||'#4d9de0')+'">'+esc(p.code)+'</span>'+
+        '<a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a>';
       ul.appendChild(li);
     });
-    // 글별 성과 초기화 (댓글 자동 + GSC 수기) — 최초 1회만(주기 갱신 때 JSONP 중복 방지)
-    if(first)initPerf(posts, catColor);
+    // 글별 성과 초기화 — 성공한 첫 로드에서 1회만(JSONP 중복 방지, 첫 fetch 실패 후에도 복구 가능)
+    if(!perfInited&&posts.length){perfInited=true;initPerf(posts, catColor);}
     // DB 정보
     document.getElementById('dbInfo').textContent=
       '데이터 기준일: '+(db.updated||'—')+' · 단일 원본(lifeinfo_db) 기반 — 새 글이 등록·배포되면 자동 반영됩니다.';
   }).catch(function(){
+    if(dbLastText!==null)return; // last-good-wins: 이미 렌더된 화면은 일시 실패로 지우지 않음
     document.getElementById('kTotal').innerHTML='–';
     ['catDist','quality','recent'].forEach(function(id){
       document.getElementById(id).innerHTML='<div class="empty">데이터를 불러올 수 없습니다. 배포된 콘솔(github.io)에서 열어 주세요. (로컬 file:// 더블클릭은 보안상 조회 불가)</div>';
@@ -478,7 +487,7 @@
     document.getElementById('perfBody').innerHTML='<tr><td colspan="5" class="empty">배포된 콘솔(github.io)에서 열어 주세요.</td></tr>';
   });
   }
-  renderDB(true);
+  renderDB();
 
   /* ---------- 글별 성과 (댓글 자동 JSONP + GSC 수기) ---------- */
   var PERF={posts:[],colors:{},comments:null,matched:null};
@@ -581,9 +590,9 @@
       var com=r.com===undefined?'…':(r.com===null?'–':fmtN(r.com));
       var tr=document.createElement('tr');
       tr.innerHTML=
-        '<td><span class="pc" style="background:'+c+'">'+p.code+'</span><a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a></td>'+
-        '<td class="edit" data-code="'+p.code+'" data-f="imp">'+(r.imp?fmtN(r.imp):'·')+'</td>'+
-        '<td class="edit" data-code="'+p.code+'" data-f="clk">'+(r.clk?fmtN(r.clk):'·')+'</td>'+
+        '<td><span class="pc" style="background:'+c+'">'+esc(p.code)+'</span><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></td>'+
+        '<td class="edit" data-code="'+esc(p.code)+'" data-f="imp">'+(r.imp?fmtN(r.imp):'·')+'</td>'+
+        '<td class="edit" data-code="'+esc(p.code)+'" data-f="clk">'+(r.clk?fmtN(r.clk):'·')+'</td>'+
         '<td>'+(r.imp?r.ctr.toFixed(1)+'%':'·')+'</td>'+
         '<td>'+com+'</td>';
       b.appendChild(tr);
@@ -707,10 +716,10 @@
     rows.forEach(function(p){
       var r=data[p.code]||{};var o=p.osmu||{};var col=PERF.colors[p.cat]||'#4d9de0';
       var tds=OSMU_CH.map(function(ch){var k=ch[0];
-        if(k==='naver'||k==='threads'){var u=o[k];return '<td>'+(u?'<a href="'+u+'" target="_blank" rel="noopener" title="게시글 보기" style="color:#06d6a0;font-weight:800;text-decoration:none">✓</a>':'<span style="color:#3a4a6e">–</span>')+'</td>';}
-        return '<td><input type="checkbox" data-oc="'+p.code+'" data-ch="'+k+'" '+(r[k]?'checked':'')+'></td>';}).join('');
+        if(k==='naver'||k==='threads'){var u=o[k];return '<td>'+(u?'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="게시글 보기" style="color:#06d6a0;font-weight:800;text-decoration:none">✓</a>':'<span style="color:#3a4a6e">–</span>')+'</td>';}
+        return '<td><input type="checkbox" data-oc="'+esc(p.code)+'" data-ch="'+k+'" '+(r[k]?'checked':'')+'></td>';}).join('');
       var tr=document.createElement('tr');
-      tr.innerHTML='<td><span class="pc" style="background:'+col+'">'+p.code+'</span><a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a></td>'+tds;
+      tr.innerHTML='<td><span class="pc" style="background:'+col+'">'+esc(p.code)+'</span><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></td>'+tds;
       b.appendChild(tr);
     });
     [].forEach.call(b.querySelectorAll('input[type=checkbox]'),function(cb){
@@ -739,13 +748,13 @@
     if(!rows.length){b.innerHTML='<tr><td colspan="3" class="empty">해당 조건의 OSMU 기록이 없습니다.</td></tr>';return;}
     rows.forEach(function(p){
       var col=PERF.colors[p.cat]||'#4d9de0';var c=osmuChannels(p);var ch=[];
-      if(c.naver)ch.push('<a href="'+c.naver+'" target="_blank" rel="noopener" style="color:#2DB400;font-weight:700;text-decoration:none">🟢 네이버</a>');
-      if(c.threads)ch.push('<a href="'+c.threads+'" target="_blank" rel="noopener" style="color:#7fc1ff;font-weight:700;text-decoration:none">🧵 쓰레드</a>');
+      if(c.naver)ch.push('<a href="'+esc(c.naver)+'" target="_blank" rel="noopener" style="color:#2DB400;font-weight:700;text-decoration:none">🟢 네이버</a>');
+      if(c.threads)ch.push('<a href="'+esc(c.threads)+'" target="_blank" rel="noopener" style="color:#7fc1ff;font-weight:700;text-decoration:none">🧵 쓰레드</a>');
       if(c.insta)ch.push('<span style="color:#E1306C;font-weight:700">📷 인스타</span>');
       if(c.jisikin)ch.push('<span style="color:#9fb0d0;font-weight:700">❓ 지식인</span>');
       var tr=document.createElement('tr');
-      tr.innerHTML='<td style="white-space:nowrap;color:#9fb0d0;font-size:12px">'+(p._d||'—')+'</td>'+
-        '<td><span class="pc" style="background:'+col+'">'+p.code+'</span><a href="'+p.url+'" target="_blank" rel="noopener">'+p.title+'</a></td>'+
+      tr.innerHTML='<td style="white-space:nowrap;color:#9fb0d0;font-size:12px">'+esc(p._d||'—')+'</td>'+
+        '<td><span class="pc" style="background:'+col+'">'+esc(p.code)+'</span><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></td>'+
         '<td style="white-space:nowrap">'+(ch.join(' · ')||'—')+'</td>';
       b.appendChild(tr);
     });
@@ -806,7 +815,7 @@
     if(!rel.length)rl.innerHTML='<div class="rl" style="color:#6b7790">겹치는 관련글이 아직 없습니다.</div>';
     rel.forEach(function(p){
       var d=document.createElement('div'); d.className='rl';
-      d.innerHTML='<span class="pc" style="background:'+(PERF.colors[p.cat]||'#4d9de0')+'">'+p.code+'</span>'+p.title;
+      d.innerHTML='<span class="pc" style="background:'+(PERF.colors[p.cat]||'#4d9de0')+'">'+esc(p.code)+'</span>'+esc(p.title);
       rl.appendChild(d);
     });
     var rb=rel.length?relBlock(rel):'';
@@ -871,13 +880,18 @@
   renderKpi();
 
   /* ---------- 🔍 색인 현황 (searchconsole.py inspect → index_status.json) ---------- */
+  var idxLastText=null;
   function renderIndexStatus(){
     var tag=document.getElementById('idxTag'), note=document.getElementById('idxNote'), list=document.getElementById('idxList');
     if(!tag||!note||!list)return;
-    fetch('index_status.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+    return fetch('index_status.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(txt){
+      if(txt===idxLastText)return; // 내용 동일하면 재렌더 생략
+      var d=JSON.parse(txt);
+      idxLastText=txt;
       var ok=d.indexed||0, tot=d.total||0, pct=tot?Math.round(ok/tot*100):0;
+      var when=d.checked_at?' <span style="color:#8a97ab">('+esc(String(d.checked_at).slice(5))+' 실측)</span>':''; // 스냅샷 시점 표기(노후 데이터 자가표시)
       tag.textContent='점검: '+(d.checked_at||'-');
-      note.innerHTML='색인 완료 <b>'+ok+' / '+tot+'편</b> ('+pct+'%). 미색인·오류 글은 디스패치 <b>🔍 색인 점검</b>으로 요청하세요. (색인 \'요청\'은 브라우저 1클릭, 결과는 며칠 뒤 반영)';
+      note.innerHTML='색인 완료 <b>'+ok+' / '+tot+'편</b> ('+pct+'%)'+when+'. 미색인·오류 글은 디스패치 <b>🔍 색인 점검</b>으로 요청하세요. (색인 \'요청\'은 브라우저 1클릭, 결과는 며칠 뒤 반영)';
       var posts=d.posts||{}, rows=Object.keys(posts).map(function(c){
         var p=posts[c]; return {code:c,indexed:(p.verdict==='PASS'),err:(p.verdict==='ERROR'),state:p.state||p.verdict||'',url:p.url||''};
       });
@@ -887,6 +901,7 @@
         return '<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+ic+' '+esc(r.code)+'</a> <span style="color:#8a97ab;font-size:13px">'+esc(r.state)+'</span></li>';
       }).join('')||'<li class="empty">데이터 없음</li>';
     }).catch(function(){
+      if(idxLastText!==null)return; // last-good-wins
       tag.textContent='미점검';
       note.innerHTML='아직 색인 상태를 가져오지 않았습니다. PC에서 <b>python studio/searchconsole.py inspect</b> 실행 → <b>deploy</b> 하면 여기에 글별 ✓/✗가 표시됩니다. (최초 1회 <b>auth</b> 동의 필요)';
       list.innerHTML='';
@@ -895,11 +910,15 @@
   renderIndexStatus();
 
   /* ---------- 🚦 안전망 신호등 (validate_db.py --emit → health.json) ---------- */
+  var hlLastText=null;
   function renderHealth(){
     var light=document.getElementById('hlLight'), sum=document.getElementById('hlSummary'),
         note=document.getElementById('hlNote'), list=document.getElementById('hlList'), tag=document.getElementById('hlTag');
     if(!light)return;
-    fetch('health.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+    return fetch('health.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(txt){
+      if(txt===hlLastText)return; // 내용 동일하면 재렌더 생략
+      var d=JSON.parse(txt);
+      hlLastText=txt;
       var color=d.light||'green';
       light.className='tl '+color;
       sum.textContent={green:'🟢 정상 — 모든 검사 통과',yellow:'🟡 주의 — 경고 있음(배포는 가능)',red:'🔴 위험 — 검사 실패(배포·작업 차단)'}[color]||color;
@@ -910,6 +929,7 @@
         return '<li>'+ic+' '+esc(c.msg)+'</li>';
       }).join('')||'<li class="empty">데이터 없음</li>';
     }).catch(function(){
+      if(hlLastText!==null)return; // last-good-wins
       light.className='tl';
       sum.textContent='상태 미수집';
       tag.textContent='미점검';
@@ -919,28 +939,40 @@
   }
   renderHealth();
 
-  /* ---------- 🚀 발행 진행 보드 연동 (pipeline_board.html, localStorage 공유) ---------- */
+  /* ---------- 🚀 발행 진행 (progress.json pipeline — bake.py가 발행 때 갱신) ---------- */
+  var pipeLastText=null;
   function renderPipe(){
     var label=document.getElementById('pipeLabel'), bar=document.getElementById('pipeBar');
     if(!label)return;
-    var s={};try{s=JSON.parse(localStorage.getItem('lsg_pipeline'))||{};}catch(e){}
-    var done=s.done||0, total=s.total||12;
-    if(!s.code){label.innerHTML='발행 진행: <span style="color:#6b7a99">진행 중인 글 없음 — 보드에서 \'새 글 시작\'</span>';bar.style.width='0%';return;}
-    bar.style.width=Math.round(done/total*100)+'%';
-    if(s.complete)label.innerHTML='발행 진행: <b style="color:#06d6a0">✅ '+esc(s.code)+' 완료 ('+done+'/'+total+')</b>';
-    else label.innerHTML='발행 진행: <b>'+esc(s.code)+'</b> · '+done+'/'+total+' 단계';
+    return fetch('progress.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(txt){
+      if(txt===pipeLastText)return; // 내용 동일하면 재렌더 생략
+      var s=(JSON.parse(txt)||{}).pipeline||{};
+      pipeLastText=txt;
+      var done=s.done||0, total=s.total||15;
+      if(!s.code){label.innerHTML='발행 진행: <span style="color:#6b7a99">진행 중인 글 없음</span>';bar.style.width='0%';return;}
+      bar.style.width=Math.round(done/total*100)+'%';
+      if(done>=total)label.innerHTML='발행 진행: <b style="color:#06d6a0">✅ '+esc(s.code)+' 완료 ('+done+'/'+total+')</b>'+(s.note?' <span style="color:#9fb0d0;font-size:11px">— '+esc(s.note)+'</span>':'');
+      else label.innerHTML='발행 진행: <b>'+esc(s.code)+'</b> · '+done+'/'+total+' 단계'+(s.note?' <span style="color:#9fb0d0;font-size:11px">— '+esc(s.note)+'</span>':'');
+    }).catch(function(){
+      if(pipeLastText!==null)return; // last-good-wins
+      label.innerHTML='발행 진행: <span style="color:#6b7a99">데이터 없음 (publish-flow/bake 후 표시)</span>';bar.style.width='0%';
+    });
   }
   document.getElementById('pipeBtn').addEventListener('click',function(){
     window.open('progress.html','pboard','width=490,height=820');
   });
-  window.addEventListener('storage',function(e){if(e.key==='lsg_pipeline')renderPipe();});
   renderPipe();
 
-  /* ---------- ⚙️ 백그라운드 작업 (tasks_status.py → tasks.json: 하트비트 + 스케줄 메타) ---------- */
+  /* ---------- ⚙️ 백그라운드 작업 (tasks_status.py → tasks.json: 하트비트 + 스케줄 메타)
+     tasks.json은 로컬 전용(github.io 배포 제외) → 비로컬에선 섹션 숨김+폴링 안 함(무한 404 방지) ---------- */
+  var tasksLastText=null;
   function renderTasks(){
     var note=document.getElementById('tasksNote'), list=document.getElementById('taskList'), tag=document.getElementById('tasksTag');
-    if(!list)return;
-    fetch('tasks.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+    if(!list||!IS_LOCAL)return;
+    return fetch('tasks.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(txt){
+      if(txt===tasksLastText)return; // 내용 동일하면 재렌더 생략
+      var d=JSON.parse(txt);
+      tasksLastText=txt;
       var tk=d.tasks||{}, keys=Object.keys(tk);
       var ST={running:{i:'🔄',t:'실행중',c:'#4D9DE0'},done:{i:'✅',t:'완료',c:'#06d6a0'},
               fail:{i:'⛔',t:'실패',c:'#ff5c5c'},stale:{i:'⚠️',t:'중단(응답없음)',c:'#ffd166'},
@@ -964,22 +996,31 @@
           +'<span style="color:#8a97ab;font-size:12px">'+esc(meta.join(' · '))+'</span></li>';
       }).join('')||'<li class="empty">등록된 작업 없음</li>';
     }).catch(function(){
+      if(tasksLastText!==null)return; // last-good-wins
       tag.textContent='미수집';
-      note.innerHTML='아직 작업 상태가 없습니다. PC에서 <b>python studio/tasks_status.py</b> 실행(또는 deploy) 하면 표시됩니다.';
+      note.innerHTML='아직 작업 상태가 없습니다. 이 섹션은 <b>로컬(localhost) 전용</b> — PC에서 <b>python studio/tasks_status.py</b>를 실행하면 표시됩니다.';
       list.innerHTML='';
     });
   }
-  renderTasks();
+  if(IS_LOCAL)renderTasks();
+  else{var _ts=document.getElementById('tasksSect');if(_ts)_ts.style.display='none';}
 
   /* ---------- 🔄 자동 갱신 (progress.html checkVersion과 동등 — 수동 새로고침 불필요) ----------
      dashboard.html은 HTML이 정적이라 self-hash reload가 안 통한다(데이터는 별도 .json/db).
-     → 데이터 파일을 주기적으로 재fetch+재렌더(initPerf는 first-only로 제외). 5초마다. */
+     → 데이터 파일을 주기적으로 재fetch+재렌더(응답 텍스트 동일하면 재렌더 생략). 5초마다.
+     busy 가드: 이전 주기 미완료면 스킵(느린 망에서 fetch 중첩·역순 렌더 방지) */
+  var refreshBusy=false;
   setInterval(function(){
-    renderDB(false);       // 총편수·카테고리·품질·최근글 (DB)
-    renderIndexStatus();   // 색인 현황 (index_status.json)
-    renderHealth();        // 안전망 신호등 (health.json)
-    renderPipe();          // 발행 진행 (localStorage)
-    renderTasks();         // ⚙️ 백그라운드 작업 (tasks.json) — 실행중→완료 실시간
+    if(refreshBusy)return;
+    refreshBusy=true;
+    renderToday();           // 날짜(자정 넘김 반영)
+    Promise.all([
+      renderDB(),            // 총편수·카테고리·품질·최근글 (DB)
+      renderIndexStatus(),   // 색인 현황 (index_status.json)
+      renderHealth(),        // 안전망 신호등 (health.json)
+      renderPipe(),          // 발행 진행 (progress.json)
+      renderTasks()          // ⚙️ 백그라운드 작업 (tasks.json · 로컬 전용)
+    ]).then(function(){refreshBusy=false;},function(){refreshBusy=false;});
   }, 5000);
 
   /* ---------- 오늘의 체크리스트 (localStorage) ---------- */

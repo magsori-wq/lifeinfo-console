@@ -294,7 +294,7 @@
     {t:'🗂️ DB·배포',d:'lifeinfo_db.txt 레코드 추가 → update_trends.bat / deploy.bat',go:function(){goDispatch(function(){copyRoutine();});}},
     {t:'📝 발행',d:'publish-post로 Blogger 초안 생성 → 미리보기 후 발행',go:function(){goDispatch(function(){dispatchPublish();});}},
     {t:'🔁 OSMU 확산',d:'네이버·쓰레드·지식인으로 재가공',go:function(){goTab('osmu');}},
-    {t:'🔍 색인 점검',d:'서치콘솔 신규글 색인 확인·요청 (Claude+Chrome)',go:function(){goDispatch(function(){dispatchIndex();});}},
+    {t:'🔍 색인 점검',d:'색인관리 탭 — 상태 확인 + ?m=1 색인요청 + 로그',go:function(){goTab('gsc');}},
     {t:'📡 모니터링',d:'발행·품질·성과·채널 현황 + 연계 도구',go:function(){goTab('dashboard');}},
     {t:'🛡️ 댓글·대응',d:'부정·오류 댓글 검증 → 출처 단 답변 초안 → Gmail',go:function(){goDispatch(function(){dispatchComments();});}}
   ];
@@ -310,7 +310,7 @@
     {ic:'🔗',name:'연계 도구',st:'live',gl:'관련글 내부링크+채널 교차링크로 체류↑',meta:'모니터링 → 연계도구',go:function(){goTab('dashboard');}},
     {ic:'📡',name:'모니터링',st:'live',gl:'발행·품질·자산·성과·채널 한눈에',meta:'모니터링 탭',go:function(){goTab('dashboard');}},
     {ic:'🛡️',name:'댓글 대응',st:'live',gl:'부정·오류 댓글 정밀검증→출처 단 초안',meta:'디스패치 🛡️ → Gmail',go:function(){goDispatch(function(){dispatchComments();});}},
-    {ic:'🔍',name:'색인 점검',st:'live',gl:'서치콘솔 신규글 색인 확인·요청(stale 판별·sitemap)',meta:'디스패치 🔍 · Claude+Chrome',go:function(){goDispatch(function(){dispatchIndex();});}},
+    {ic:'🔍',name:'색인 점검',st:'live',gl:'색인상태 확인 + ?m=1 색인요청(클린 URL은 302로 불가) + 요청 로그',meta:'색인관리 탭 · searchconsole.py inspect · gsc_log',go:function(){goTab('gsc');}},
     {ic:'🔎',name:'검색·분류',st:'live',gl:'발행 글 탐색(검색/카테고리 트리)',meta:'검색·분류 탭',go:function(){goTab('search');}},
     {ic:'💰',name:'애드센스 수익·승인',st:'live',gl:'수익·승인상태 자동조회(로컬 전용) + 매일 승인 자동확인',meta:'PC: adsense.py status/fetch · 작업스케줄러 매일 9시(adsense_watch)',go:function(){window.open('https://adsense.google.com/adsense/u/0/pub-3606922238918518/home','_blank','noopener');}},
     {ic:'✏️',name:'수기 기록',st:'man',gl:'채널 지표·OSMU 추적·주간 KPI 누적',meta:'모니터링 내 카드(이 기기 저장)',go:function(){goTab('dashboard');}}
@@ -474,15 +474,13 @@
       '· 최근 N편만: python studio/searchconsole.py inspect --limit 15');
   }
   function dispatchIndex(){
-    var p="생활정보 모음 — 구글 서치콘솔에서 신규글 색인을 점검하고 색인 생성을 요청해줘. (Chrome 확장 연결 필요)\n\n"+
-      "전제: Chrome에 magsori@gmail.com 로그인 + claude-in-chrome 확장 연결. 속성 = https://lifeinfo8975.blogspot.com/ (URL 접두어).\n"+
-      "1) webapp/lifeinfo_db.txt 에서 최근 발행글 URL을 뽑는다(신규글 우선, 고단가 글 다음).\n"+
-      "2) 서치콘솔 상단 'URL 검사'에 URL을 하나씩 넣어 상태 확인.\n"+
-      "3) '리디렉션 오류'가 떠도 단정하지 말고 우측 '실제 URL 테스트(실시간)'로 현재 상태 확인 — '등록할 수 있음'이면 과거데이터(stale)이니 재크롤로 해소된다(설정 건드리지 말 것).\n"+
-      "4) '발견됨-색인 안 됨' 또는 미색인 글은 '색인 생성 요청' 클릭 → '색인 생성 요청됨' 확인. 하루 약 10건 한도(같은 URL 반복 무의미).\n"+
-      "5) Sitemaps에서 sitemap.xml 상태 확인, '가져올 수 없음'이면 직접 열어 정상인지 보고 재제출.\n"+
-      "6) 결과 요약: 점검한 글 수, 색인 요청한 글, stale로 판정된 글, sitemap 상태.\n\n"+
-      "원칙: 색인 '요청'은 공식 API 없음→브라우저 1클릭이 한계(무인 자동 금지), sitemap.xml이 전체 일괄 경로(개별요청은 보조), 하루 10건 제한 준수, 설정 변경은 내 승인 후.";
+    var p="생활정보 모음 — 구글 서치콘솔 색인을 점검하고 ?m=1 방식으로 색인 요청을 진행해줘. (검증된 SOP, 2026-07-01)\n\n"+
+      "⚠️ 핵심: 클린 URL은 검사 시 모바일 302(?m=1) 때문에 '리디렉션 오류' → 색인 불가. 색인 요청은 반드시 URL 끝에 ?m=1 붙인 주소로 한다.\n"+
+      "1) python studio/searchconsole.py inspect 로 전체 색인상태 조회(→ index_status.json, deploy 시 콘솔 반영).\n"+
+      "2) 미색인·미요청 글은 콘솔 '🔍 색인관리' 탭에서 [GSC 검사(?m=1)] 버튼으로 ?m=1 주소 복사 → GSC 검사창 붙여넣기 → 실제 URL 테스트 → '색인 생성 요청'. 하루 약 10건 한도.\n"+
+      "3) 요청한 글은 python studio/gsc_log.py add <코드…> 로 로그 누적 → deploy(색인관리 탭 '📋 기록' 자동 완료).\n"+
+      "4) 결과 요약: 색인/전체, 새로 요청한 글, 남은 미요청 글.\n\n"+
+      "원칙: 색인 '요청' 자체는 자동화 불가(브라우저 1클릭), 클린 URL로 요청 금지(302로 실패), 하루 10건 한도 준수, 진행 관리는 색인관리(gsc) 탭 기준.";
     navigator.clipboard.writeText(p).then(toast,function(){});
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
