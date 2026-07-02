@@ -1,13 +1,28 @@
 {
  "rev": "5ce291f",
  "counts": {
-  "total": 89,
+  "total": 90,
   "osmu_done": 89,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 89
+  "index_pending": 90
  },
  "actionable": [
+  {
+   "code": "G3-02",
+   "title": "부산 송정해수욕장 여행 서핑 해변열차 주차 총정리 (2",
+   "need": [
+    "OSMU",
+    "색인"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -179,20 +194,6 @@
   {
    "code": "A3-02",
    "title": "국민연금 예상 수령액 조회 방법 수령나이 총정리",
-   "need": [
-    "색인"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "B1-01",
-   "title": "자동차세 조회 납부 방법 연납 할인 총정리",
    "need": [
     "색인"
    ],
