@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-02T19:48:00",
+ "checked_at": "2026-07-02T22:29:44",
  "light": "yellow",
- "pass": 9,
- "warn": 3,
+ "pass": 7,
+ "warn": 9,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 93편"
+   "msg": "count 일치: 88편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 93/93"
+   "msg": "thumb 1:1 정합 통과: 88/88"
   },
   {
    "level": "PASS",
@@ -27,31 +27,47 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 93개 코드 모두 DB.osmu 일치"
+   "msg": "posts_index 신선도 통과: 88편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 93편 DB와 일치"
-  },
-  {
-   "level": "PASS",
-   "msg": "posts_index 신선도 통과: 93편 DB와 일치"
-  },
-  {
-   "level": "PASS",
-   "msg": "내부링크 실효성 통과: posts/ 76개 파일의 내부링크 모두 실제 글"
+   "msg": "내부링크 실효성 통과: posts/ 77개 파일의 내부링크 모두 실제 글"
   },
   {
    "level": "WARN",
-   "msg": "A1: 일련번호 비연속 [2, 3, 4, 5, 6] (영구PID라 허용되나 확인 권장)"
+   "msg": "A1: 일련번호 비연속 [2, 3, 4, 5] (영구PID라 허용되나 확인 권장)"
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 1개: travelins2.png"
+   "msg": "미사용 썸네일 7개: 70_naeil_card.png, 75_wetax.png, hotel_refund.png, ott.png, seasonal_food.png, smartpass.png, travelins2.png"
   },
   {
    "level": "WARN",
-   "msg": "중분류 F2(국내여행) 9편 → 6~7편 초과, 분가 검토(규칙 §5)"
+   "msg": "중분류 F2(국내여행) 8편 → 6~7편 초과, 분가 검토(규칙 §5)"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: _naver_posts.json 코드 F1-06가 DB에 없음(오타·삭제 확인)"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: _naver_posts.json 코드 F2-09가 DB에 없음(오타·삭제 확인)"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: _naver_posts.json 코드 G4-02가 DB에 없음(오타·삭제 확인)"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: _naver_posts.json 코드 A1-06가 DB에 없음(오타·삭제 확인)"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: _naver_posts.json 코드 E2-06가 DB에 없음(오타·삭제 확인)"
+  },
+  {
+   "level": "WARN",
+   "msg": "매니페스트 신선도: 잔존 5편(A1-06, E2-06, F1-06, F2-09, G4-02) → 'python -m studio.pipeline manifest' 재생성 권장"
   }
  ]
 }
