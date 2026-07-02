@@ -252,7 +252,7 @@
     <div id="p_trends" class="panel">
       <div class="d-wrap">
         <h2>📰 구글뉴스 트렌드 글감 <span style="font-size:12px;color:#9fb0d0" id="trendFresh">—</span></h2>
-        <p class="sub">카테고리별 <b>지금 이슈</b>를 보고, <b>✍️ 이 주제로</b>를 누르면 글 작성 프롬프트(제목공식+내부링크+채널 연계 지시 포함)가 복사되고 Claude가 열립니다.</p>
+        <p class="sub">카테고리별 <b>지금 이슈</b>를 확인하고 판단하세요 — <b>🔗 원문</b>(뉴스 열기) · <b>🔎 발행판단</b>(원문 확인 후 블로그 적합성·중복·팩트검증 따져 발행 추천/보류/부적합 판정) · <b>✍️ 작성</b>(바로 글 작성). 각 버튼이 프롬프트를 복사하고 Claude를 엽니다.</p>
         <div id="trendBox"><p class="note">불러오는 중…</p></div>
       </div>
     </div>
@@ -498,6 +498,38 @@
     document.getElementById('topic').value=title;     // 디스패치 주제칸 채움
     dispatch('post');                                  // 기존 흐름 재사용(프롬프트=내부링크+채널연계 포함)
   }
+  // 🔎 발행 판단: 원문 확인 → 블로그 적합성·중복·고단가·팩트검증 평가 → 발행 추천/보류/부적합 판정(아직 글은 안 씀)
+  function buildJudgePrompt(title,url){
+    return "당신은 한국 수익형 블로그 '생활정보 모음'(40~60대 타깃)의 편집장입니다. 아래 트렌드 주제를 '우리 블로그로 발행할 가치가 있는지' 먼저 판단해주세요. (이 단계에서는 아직 본문을 쓰지 마세요.)\n\n"+
+    "주제: "+title+"\n"+(url?("원문(구글뉴스): "+url+"\n"):"")+
+    "\n판단 절차:\n"+
+    "1) 원문과 최신 자료를 웹에서 확인해 사실관계·시의성을 파악.\n"+
+    "2) 블로그 DNA 적합성 평가: (a) 행동요구형·정보성·how-to로 바꿀 수 있는가(단순 속보·가십·정치공방·경기결과는 부적합) (b) 40~60대에게 실용적인가 (c) 광고 단가 높은 분야(지원금·금융·건강·세금·여행·구독 등)에 붙는가 (d) 공식 1차 출처로 수치·자격·기준일을 검증할 수 있는가 (e) 이미 발행한 글("+CAT_URL+")과 중복되지 않는가.\n"+
+    "3) 결론을 맨 앞에: 【발행 추천 / 보류 / 부적합】 중 하나 + 3줄 이내 근거.\n"+
+    "4) '발행 추천'이면: 제목 공식([메인 키워드]+[연관 검색어]+[숫자/총정리]) 적용 제목안 1개 + 어떤 정보성 앵글로 바꿀지 + 핵심 소제목 3개.\n\n"+
+    "내가 발행하기로 하면 그때 본문 작성으로 진행해줘. (라이브 발행은 사람이 최종 승인)";
+  }
+  function trendJudge(title,url){
+    document.getElementById('topic').value=title;      // 판단 통과 시 바로 '작성'으로 이어가기 쉽게
+    var p=buildJudgePrompt(title,url);
+    navigator.clipboard.writeText(p).then(toast,function(){});
+    showOut(p);
+    window.open('https://claude.ai/new','_blank','noopener');
+  }
+  // 트렌드 항목 공통 액션: 🔗 원문 · 🔎 발행판단 · ✍️ 작성
+  function trendActions(row,title,url){
+    if(url){
+      var a=document.createElement('a'); a.href=url; a.target='_blank'; a.rel='noopener';
+      a.className='btn alt'; a.style.cssText='width:auto;margin:0;padding:7px 9px;font-size:12px;white-space:nowrap;text-decoration:none;display:inline-block'; a.textContent='🔗 원문';
+      row.appendChild(a);
+    }
+    var bj=document.createElement('button'); bj.className='btn go'; bj.style.cssText='width:auto;margin:0;padding:7px 11px;font-size:12px;white-space:nowrap'; bj.textContent='🔎 발행판단';
+    bj.onclick=function(){trendJudge(title,url);};
+    row.appendChild(bj);
+    var bw=document.createElement('button'); bw.className='btn alt'; bw.style.cssText='width:auto;margin:0;padding:7px 9px;font-size:12px;white-space:nowrap'; bw.textContent='✍️ 작성';
+    bw.onclick=function(){trendWrite(title);};
+    row.appendChild(bw);
+  }
   function loadTrends(){
     if(_trendsLoaded)return; _trendsLoaded=true;
     fetch('trends.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(d){
@@ -508,11 +540,9 @@
         var hc=document.createElement('div'); hc.className='card';
         hc.innerHTML='<h3>🔥 지금 가장 많이 다뤄지는 이슈</h3>';
         d.hot.forEach(function(h){
-          var row=document.createElement('div'); row.style.cssText='display:flex;gap:8px;align-items:flex-start;margin:8px 0;font-size:13px';
-          row.innerHTML='<span style="flex:1;color:#cdd8ee"><b style="color:#ffd166">#'+esc(h.keyword)+'</b> '+esc(h.title)+' <span style="color:#9fb0d0">· '+esc(h.cat)+'</span></span>';
-          var b=document.createElement('button'); b.className='btn alt'; b.style.cssText='width:auto;margin:0;padding:7px 11px;font-size:12px'; b.textContent='✍️ 이 주제로';
-          b.onclick=function(){trendWrite(h.title);};
-          row.appendChild(b); hc.appendChild(row);
+          var row=document.createElement('div'); row.style.cssText='display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;margin:8px 0;font-size:13px';
+          row.innerHTML='<span style="flex:1;min-width:180px;color:#cdd8ee"><b style="color:#ffd166">#'+esc(h.keyword)+'</b> '+esc(h.title)+' <span style="color:#9fb0d0">· '+esc(h.cat)+'</span></span>';
+          trendActions(row,h.title,h.url); hc.appendChild(row);
         });
         box.appendChild(hc);
       }
@@ -531,11 +561,9 @@
           box.appendChild(card); return;
         }
         c.items.forEach(function(it){
-          var row=document.createElement('div'); row.style.cssText='display:flex;gap:8px;align-items:flex-start;margin:7px 0;font-size:13px;border-top:1px solid #22304e;padding-top:7px';
-          row.innerHTML='<span style="flex:1;color:#e8edf7">'+esc(it.title)+(it.source?' <span style="color:#9fb0d0;font-size:11px">· '+esc(it.source)+'</span>':'')+'</span>';
-          var b=document.createElement('button'); b.className='btn alt'; b.style.cssText='width:auto;margin:0;padding:7px 11px;font-size:12px;white-space:nowrap'; b.textContent='✍️ 이 주제로';
-          b.onclick=function(){trendWrite(it.title);};
-          row.appendChild(b); card.appendChild(row);
+          var row=document.createElement('div'); row.style.cssText='display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;margin:7px 0;font-size:13px;border-top:1px solid #22304e;padding-top:7px';
+          row.innerHTML='<span style="flex:1;min-width:180px;color:#e8edf7">'+esc(it.title)+(it.source?' <span style="color:#9fb0d0;font-size:11px">· '+esc(it.source)+'</span>':'')+'</span>';
+          trendActions(row,it.title,it.url); card.appendChild(row);
         });
         box.appendChild(card);
       });
