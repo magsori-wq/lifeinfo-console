@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-03T18:03:46",
+ "checked_at": "2026-07-03T18:04:09",
  "light": "yellow",
  "pass": 8,
- "warn": 12,
+ "warn": 13,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 96편"
+   "msg": "count 일치: 97편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 96/96"
+   "msg": "thumb 1:1 정합 통과: 97/97"
   },
   {
    "level": "PASS",
@@ -27,11 +27,11 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 96편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 97편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 96편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 97편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -43,7 +43,7 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 3개: hotel_refund.png, seasonal_food.png, travelins2.png"
+   "msg": "미사용 썸네일 2개: seasonal_food.png, travelins2.png"
   },
   {
    "level": "WARN",
@@ -51,7 +51,7 @@
   },
   {
    "level": "WARN",
-   "msg": "중분류 F2(국내여행) 8편 → 6~7편 초과, 분가 검토(규칙 §5)"
+   "msg": "중분류 F2(국내여행) 9편 → 6~7편 초과, 분가 검토(규칙 §5)"
   },
   {
    "level": "WARN",
@@ -63,7 +63,11 @@
   },
   {
    "level": "WARN",
-   "msg": "OSMU: _naver_posts.json 코드 F2-09가 DB에 없음(오타·삭제 확인)"
+   "msg": "OSMU: F2-09 naver 게시기록 있으나 DB.osmu 반영 누락 → 콘솔 교차링크 안 뜸"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: F2-09 threads 게시기록 있으나 DB.osmu 반영 누락 → 콘솔 교차링크 안 뜸"
   },
   {
    "level": "WARN",
