@@ -1,11 +1,11 @@
 {
  "rev": "00965de",
  "counts": {
-  "total": 92,
+  "total": 93,
   "osmu_done": 90,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 92
+  "index_pending": 93
  },
  "actionable": [
   {
@@ -26,6 +26,21 @@
   {
    "code": "A2-09",
    "title": "긴급복지지원제도 신청 방법 생계 의료 지원 금액 위기사",
+   "need": [
+    "OSMU",
+    "색인"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "B3-03",
+   "title": "노란우산공제 가입 방법 소득공제 한도 폐업 공제금 총정",
    "need": [
     "OSMU",
     "색인"
@@ -181,20 +196,6 @@
   {
    "code": "A2-07",
    "title": "풍수해보험 가입 방법 보험료 정부지원 대상 보장 총정리",
-   "need": [
-    "색인"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A3-01",
-   "title": "기초연금 수급자격 소득기준 신청방법 총정리",
    "need": [
     "색인"
    ],
