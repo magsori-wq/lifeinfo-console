@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-03T18:04:09",
+ "checked_at": "2026-07-03T18:04:31",
  "light": "yellow",
  "pass": 8,
- "warn": 13,
+ "warn": 14,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 97편"
+   "msg": "count 일치: 98편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 97/97"
+   "msg": "thumb 1:1 정합 통과: 98/98"
   },
   {
    "level": "PASS",
@@ -27,11 +27,11 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 97편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 98편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 97편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 98편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -43,7 +43,7 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 2개: seasonal_food.png, travelins2.png"
+   "msg": "미사용 썸네일 1개: travelins2.png"
   },
   {
    "level": "WARN",
@@ -71,7 +71,11 @@
   },
   {
    "level": "WARN",
-   "msg": "OSMU: _naver_posts.json 코드 G4-02가 DB에 없음(오타·삭제 확인)"
+   "msg": "OSMU: G4-02 naver 게시기록 있으나 DB.osmu 반영 누락 → 콘솔 교차링크 안 뜸"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: G4-02 threads 게시기록 있으나 DB.osmu 반영 누락 → 콘솔 교차링크 안 뜸"
   },
   {
    "level": "WARN",

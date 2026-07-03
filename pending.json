@@ -1,13 +1,13 @@
 {
  "rev": "00965de",
  "counts": {
-  "total": 97,
+  "total": 98,
   "osmu_done": 93,
-  "osmu_pending": 4,
+  "osmu_pending": 5,
   "indexed": 0,
-  "index_pending": 97,
+  "index_pending": 98,
   "index_requested": 93,
-  "index_todo": 4
+  "index_todo": 5
  },
  "actionable": [
   {
@@ -61,6 +61,22 @@
   {
    "code": "F2-09",
    "title": "펜션 호텔 예약 취소 수수료 환불 규정 총정리 (202",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "G4-02",
+   "title": "7월 제철 과일 수산물 총정리 (수박 복숭아 민어 전복",
    "need": [
     "OSMU",
     "색인요청"
@@ -197,21 +213,6 @@
   {
    "code": "A2-05",
    "title": "노인일자리 시니어인턴십 신청 자격 활동비 방법 총정리 ",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-06",
-   "title": "국민취업지원제도 구직촉진수당 신청 방법 자격 총정리 (",
    "need": [
     "색인대기"
    ],
