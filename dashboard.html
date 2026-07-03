@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
 <title>생활정보 모음 · 모니터링</title>
 <style>
   *{box-sizing:border-box}
@@ -880,11 +882,21 @@
   renderKpi();
 
   /* ---------- 🔍 색인 현황 (searchconsole.py inspect → index_status.json) ---------- */
-  var idxLastText=null;
+  var idxLastText=null, idxTitleMap=null;
+  function _idxTitleMap(){ // 코드→제목: 코드만 보면 뭔 글인지 모르니 DB에서 제목을 붙인다
+    if(idxTitleMap)return Promise.resolve(idxTitleMap);
+    return fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(db){
+      idxTitleMap={}; (db.posts||[]).forEach(function(p){idxTitleMap[p.code]=p.title||'';}); return idxTitleMap;
+    }).catch(function(){return {};});
+  }
   function renderIndexStatus(){
     var tag=document.getElementById('idxTag'), note=document.getElementById('idxNote'), list=document.getElementById('idxList');
     if(!tag||!note||!list)return;
-    return fetch('index_status.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(txt){
+    return Promise.all([
+      fetch('index_status.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.text();}),
+      _idxTitleMap()
+    ]).then(function(res){
+      var txt=res[0], tmap=res[1]||{};
       if(txt===idxLastText)return; // 내용 동일하면 재렌더 생략
       var d=JSON.parse(txt);
       idxLastText=txt;
@@ -893,12 +905,13 @@
       tag.textContent='점검: '+(d.checked_at||'-');
       note.innerHTML='색인 완료 <b>'+ok+' / '+tot+'편</b> ('+pct+'%)'+when+'. 미색인·오류 글은 디스패치 <b>🔍 색인 점검</b>으로 요청하세요. (색인 \'요청\'은 브라우저 1클릭, 결과는 며칠 뒤 반영)';
       var posts=d.posts||{}, rows=Object.keys(posts).map(function(c){
-        var p=posts[c]; return {code:c,indexed:(p.verdict==='PASS'),err:(p.verdict==='ERROR'),state:p.state||p.verdict||'',url:p.url||''};
+        var p=posts[c]; return {code:c,indexed:(p.verdict==='PASS'),err:(p.verdict==='ERROR'),state:p.state||p.verdict||'',url:p.url||'',title:tmap[c]||''};
       });
       rows.sort(function(a,b){return (a.indexed?1:0)-(b.indexed?1:0);}); // 미색인 먼저
       list.innerHTML=rows.map(function(r){
         var ic=r.indexed?'✅':(r.err?'⚠️':'⛔');
-        return '<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+ic+' '+esc(r.code)+'</a> <span style="color:#8a97ab;font-size:13px">'+esc(r.state)+'</span></li>';
+        var tt=r.title?' <span style="color:#cdd8ee">'+esc(r.title.length>26?r.title.slice(0,26)+'…':r.title)+'</span>':' <span style="color:#6b7790">(제목 없음)</span>';
+        return '<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+ic+' '+esc(r.code)+'</a>'+tt+' <span style="color:#8a97ab;font-size:13px">'+esc(r.state)+'</span></li>';
       }).join('')||'<li class="empty">데이터 없음</li>';
     }).catch(function(){
       if(idxLastText!==null)return; // last-good-wins
