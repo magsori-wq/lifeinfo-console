@@ -1,21 +1,40 @@
 {
  "rev": "00965de",
  "counts": {
-  "total": 93,
+  "total": 94,
   "osmu_done": 93,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 93
+  "index_pending": 94,
+  "index_requested": 93,
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "A1-06",
+   "title": "국민내일배움카드 신청 방법 발급 자격 지원금액 총정리 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -26,10 +45,11 @@
    "code": "A1-03",
    "title": "근로장려금 신청 자격 금액 지급일 총정리",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -40,10 +60,11 @@
    "code": "A1-04",
    "title": "청년월세지원 신청 자격 금액 신청방법 총정리",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -54,10 +75,11 @@
    "code": "A1-05",
    "title": "청년미래적금 가입조건 정부기여금 신청 방법 총정리 (2",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -68,10 +90,11 @@
    "code": "A2-01",
    "title": "보조금24 정부지원금 조회 신청 방법 총정리 (내가 받",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -82,10 +105,11 @@
    "code": "A2-02",
    "title": "에너지바우처 신청 자격 금액 사용기간 총정리",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -96,10 +120,11 @@
    "code": "A2-03",
    "title": "새출발기금 신청 자격 채무조정 방법 총정리",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -110,10 +135,11 @@
    "code": "A2-04",
    "title": "실업급여 신청 방법 조건 지급액 총정리",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -124,10 +150,11 @@
    "code": "A2-05",
    "title": "노인일자리 시니어인턴십 신청 자격 활동비 방법 총정리 ",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -138,10 +165,11 @@
    "code": "A2-06",
    "title": "국민취업지원제도 구직촉진수당 신청 방법 자격 총정리 (",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -152,10 +180,11 @@
    "code": "A2-07",
    "title": "풍수해보험 가입 방법 보험료 정부지원 대상 보장 총정리",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -166,10 +195,11 @@
    "code": "A2-08",
    "title": "집중호우 수해 재난지원금 신청 방법 특별재난지역 지원 ",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
@@ -180,24 +210,11 @@
    "code": "A2-09",
    "title": "긴급복지지원제도 신청 방법 생계 의료 지원 금액 위기사",
    "need": [
-    "색인"
+    "색인대기"
    ],
-   "action": "색인 요청",
+   "action": "색인 반영 대기",
    "osmu": true,
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A3-01",
-   "title": "기초연금 수급자격 소득기준 신청방법 총정리",
-   "need": [
-    "색인"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
