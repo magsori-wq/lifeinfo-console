@@ -2,30 +2,14 @@
  "rev": "00965de",
  "counts": {
   "total": 98,
-  "osmu_done": 95,
-  "osmu_pending": 3,
+  "osmu_done": 96,
+  "osmu_pending": 2,
   "indexed": 0,
   "index_pending": 98,
   "index_requested": 93,
   "index_todo": 5
  },
  "actionable": [
-  {
-   "code": "F1-06",
-   "title": "인천공항 스마트패스 등록 방법 전용라인 출국시간 단축 ",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "F2-09",
    "title": "펜션 호텔 예약 취소 수수료 환불 규정 총정리 (202",
@@ -76,6 +60,21 @@
   {
    "code": "E2-06",
    "title": "OTT 요금제 비교 2026 (넷플릭스 티빙 웨이브 디",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "F1-06",
+   "title": "인천공항 스마트패스 등록 방법 전용라인 출국시간 단축 ",
    "need": [
     "색인요청"
    ],
