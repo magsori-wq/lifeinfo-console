@@ -1,41 +1,25 @@
 {
- "rev": "89e57d4",
+ "rev": "1517132",
  "counts": {
   "total": 101,
-  "osmu_done": 99,
-  "osmu_pending": 2,
+  "osmu_done": 100,
+  "osmu_pending": 1,
   "indexed": 0,
   "index_pending": 101,
-  "index_requested": 99,
-  "index_todo": 2
+  "index_requested": 101,
+  "index_todo": 0
  },
  "actionable": [
-  {
-   "code": "D4-01",
-   "title": "공연 티켓 취소 환불 수수료 기준 총정리 (관람일 며칠",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "D4-02",
    "title": "헬스장 PT 등록 해지 환불 규정 위약금 계산법 총정리",
    "need": [
     "OSMU",
-    "색인요청"
+    "색인대기"
    ],
    "action": "OSMU 확산",
    "osmu": false,
-   "idxst": "todo",
+   "idxst": "req",
    "ch": {
     "g": true,
     "n": false,
@@ -210,6 +194,21 @@
   {
    "code": "A2-07",
    "title": "풍수해보험 가입 방법 보험료 정부지원 대상 보장 총정리",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-08",
+   "title": "집중호우 수해 재난지원금 신청 방법 특별재난지역 지원 ",
    "need": [
     "색인대기"
    ],
