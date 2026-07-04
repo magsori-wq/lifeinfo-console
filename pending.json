@@ -1,31 +1,15 @@
 {
- "rev": "f797974",
+ "rev": "3b84f33",
  "counts": {
   "total": 99,
-  "osmu_done": 98,
-  "osmu_pending": 1,
+  "osmu_done": 99,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 99,
-  "index_requested": 98,
-  "index_todo": 1
+  "index_requested": 99,
+  "index_todo": 0
  },
  "actionable": [
-  {
-   "code": "G3-03",
-   "title": "부산 미술관 전시 관람 가이드 (시립 현대미술관 관람료",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -209,6 +193,21 @@
   {
    "code": "A2-08",
    "title": "집중호우 수해 재난지원금 신청 방법 특별재난지역 지원 ",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-09",
+   "title": "긴급복지지원제도 신청 방법 생계 의료 지원 금액 위기사",
    "need": [
     "색인대기"
    ],
