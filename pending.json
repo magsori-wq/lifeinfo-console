@@ -1,9 +1,9 @@
 {
- "rev": "a8cf8e2",
+ "rev": "6d89571",
  "counts": {
   "total": 106,
-  "osmu_done": 102,
-  "osmu_pending": 4,
+  "osmu_done": 103,
+  "osmu_pending": 3,
   "indexed": 0,
   "index_pending": 106,
   "index_requested": 102,
@@ -43,8 +43,8 @@
    }
   },
   {
-   "code": "B2-06",
-   "title": "주택담보대출 갈아타기 대환대출 신청 방법 조건 총정리 ",
+   "code": "B2-07",
+   "title": "주택청약통장 청년주택드림 조건 금리 소득공제 전환 총정",
    "need": [
     "OSMU",
     "색인요청"
@@ -59,19 +59,18 @@
    }
   },
   {
-   "code": "B2-07",
-   "title": "주택청약통장 청년주택드림 조건 금리 소득공제 전환 총정",
+   "code": "B2-06",
+   "title": "주택담보대출 갈아타기 대환대출 신청 방법 조건 총정리 ",
    "need": [
-    "OSMU",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false
+    "n": true,
+    "t": true
    }
   },
   {
