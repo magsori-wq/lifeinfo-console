@@ -1,9 +1,9 @@
 {
- "rev": "6d89571",
+ "rev": "e458f23",
  "counts": {
   "total": 106,
-  "osmu_done": 103,
-  "osmu_pending": 3,
+  "osmu_done": 104,
+  "osmu_pending": 2,
   "indexed": 0,
   "index_pending": 106,
   "index_requested": 102,
@@ -13,22 +13,6 @@
   {
    "code": "A1-07",
    "title": "상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "A3-03",
-   "title": "국민연금 추납 임의가입 방법 못 낸 기간 채워 수령액 ",
    "need": [
     "OSMU",
     "색인요청"
@@ -56,6 +40,21 @@
     "g": true,
     "n": false,
     "t": false
+   }
+  },
+  {
+   "code": "A3-03",
+   "title": "국민연금 추납 임의가입 방법 못 낸 기간 채워 수령액 ",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
    }
   },
   {
