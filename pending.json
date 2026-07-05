@@ -1,13 +1,13 @@
 {
- "rev": "73b9b38",
+ "rev": "c108c68",
  "counts": {
-  "total": 104,
+  "total": 105,
   "osmu_done": 102,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 104,
+  "index_pending": 105,
   "index_requested": 102,
-  "index_todo": 2
+  "index_todo": 3
  },
  "actionable": [
   {
@@ -29,6 +29,22 @@
   {
    "code": "B2-06",
    "title": "주택담보대출 갈아타기 대환대출 신청 방법 조건 총정리 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "B2-07",
+   "title": "주택청약통장 청년주택드림 조건 금리 소득공제 전환 총정",
    "need": [
     "OSMU",
     "색인요청"
@@ -195,21 +211,6 @@
   {
    "code": "A2-06",
    "title": "국민취업지원제도 구직촉진수당 신청 방법 자격 총정리 (",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-07",
-   "title": "풍수해보험 가입 방법 보험료 정부지원 대상 보장 총정리",
    "need": [
     "색인대기"
    ],
