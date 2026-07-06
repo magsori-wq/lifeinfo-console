@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-06T12:31:40",
+ "checked_at": "2026-07-06T12:38:50",
  "light": "yellow",
- "pass": 10,
- "warn": 3,
+ "pass": 9,
+ "warn": 5,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 108편"
+   "msg": "count 일치: 109편"
   },
   {
    "level": "PASS",
@@ -15,11 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 108/108"
-  },
-  {
-   "level": "PASS",
-   "msg": "고아 썸네일 없음"
+   "msg": "thumb 1:1 정합 통과: 109/109"
   },
   {
    "level": "PASS",
@@ -35,15 +31,15 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 108편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 109편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 108편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 109편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "내부링크 실효성 통과: posts/ 92개 파일의 내부링크 모두 실제 글"
+   "msg": "내부링크 실효성 통과: posts/ 93개 파일의 내부링크 모두 실제 글"
   },
   {
    "level": "WARN",
@@ -51,7 +47,15 @@
   },
   {
    "level": "WARN",
+   "msg": "미사용 썸네일 1개: 89_caregiver.png"
+  },
+  {
+   "level": "WARN",
    "msg": "중분류 A2(복지서비스) 10편 → 6~7편 초과, 분가 검토(규칙 §5)"
+  },
+  {
+   "level": "WARN",
+   "msg": "중분류 C1(건강보험·치과) 8편 → 6~7편 초과, 분가 검토(규칙 §5)"
   },
   {
    "level": "WARN",
