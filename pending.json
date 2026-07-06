@@ -1,9 +1,9 @@
 {
- "rev": "06de2a9",
+ "rev": "d155090",
  "counts": {
   "total": 106,
-  "osmu_done": 104,
-  "osmu_pending": 2,
+  "osmu_done": 105,
+  "osmu_pending": 1,
   "indexed": 9,
   "index_pending": 97,
   "index_requested": 97,
@@ -13,21 +13,6 @@
   {
    "code": "A1-07",
    "title": "상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2",
-   "need": [
-    "OSMU"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "done",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "B2-07",
-   "title": "주택청약통장 청년주택드림 조건 금리 소득공제 전환 총정",
    "need": [
     "OSMU"
    ],
@@ -208,6 +193,21 @@
   {
    "code": "A2-09",
    "title": "긴급복지지원제도 신청 방법 생계 의료 지원 금액 위기사",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A3-01",
+   "title": "기초연금 수급자격 소득기준 신청방법 총정리",
    "need": [
     "색인대기"
    ],
