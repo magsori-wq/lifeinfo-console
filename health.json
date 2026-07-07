@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-07T06:00:11",
+ "checked_at": "2026-07-07T13:33:27",
  "light": "yellow",
- "pass": 10,
- "warn": 4,
+ "pass": 8,
+ "warn": 6,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 110편"
+   "msg": "count 일치: 111편"
   },
   {
    "level": "PASS",
@@ -15,11 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 110/110"
-  },
-  {
-   "level": "PASS",
-   "msg": "고아 썸네일 없음"
+   "msg": "thumb 1:1 정합 통과: 111/111"
   },
   {
    "level": "PASS",
@@ -31,19 +27,15 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 109개 코드 모두 DB.osmu 일치"
+   "msg": "OSMU 교차링크 연계 통과: 110개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 110편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 111편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 110편 DB와 일치"
-  },
-  {
-   "level": "PASS",
-   "msg": "내부링크 실효성 통과: posts/ 93개 파일의 내부링크 모두 실제 글"
+   "msg": "posts_index 신선도 통과: 111편 DB와 일치"
   },
   {
    "level": "WARN",
@@ -51,7 +43,11 @@
   },
   {
    "level": "WARN",
-   "msg": "중분류 A2(복지서비스) 10편 → 6~7편 초과, 분가 검토(규칙 §5)"
+   "msg": "미사용 썸네일 1개: 91_scalping.png"
+  },
+  {
+   "level": "WARN",
+   "msg": "중분류 A2(복지서비스) 11편 → 6~7편 초과, 분가 검토(규칙 §5)"
   },
   {
    "level": "WARN",
@@ -60,6 +56,10 @@
   {
    "level": "WARN",
    "msg": "중분류 F2(국내여행) 9편 → 6~7편 초과, 분가 검토(규칙 §5)"
+  },
+  {
+   "level": "WARN",
+   "msg": "내부링크 끊김: D4-03_글_HTML.txt -> https://lifeinfo8975.blogspot.com/2026/06/2026-16-8.html (DB에 없는 글 주소)"
   }
  ]
 }
