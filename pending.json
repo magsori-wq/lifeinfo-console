@@ -1,15 +1,31 @@
 {
  "rev": "a81fffb",
  "counts": {
-  "total": 113,
+  "total": 114,
   "osmu_done": 113,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 1,
-  "index_pending": 112,
+  "index_pending": 113,
   "index_requested": 111,
-  "index_todo": 1
+  "index_todo": 2
  },
  "actionable": [
+  {
+   "code": "D4-03",
+   "title": "콘서트 암표 방지법 시행 정가 예매 취소표 신고 방법 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "C1-09",
    "title": "건강보험 본인부담상한제 환급 신청 방법 대상 상한액 총",
@@ -193,21 +209,6 @@
   {
    "code": "A2-10",
    "title": "기초생활수급자 생계급여 조건 소득인정액 금액 신청 방법",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A3-01",
-   "title": "기초연금 수급자격 소득기준 신청방법 총정리",
    "need": [
     "색인대기"
    ],
