@@ -1,15 +1,31 @@
 {
  "rev": "a81fffb",
  "counts": {
-  "total": 112,
+  "total": 113,
   "osmu_done": 112,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 89,
-  "index_pending": 23,
+  "index_pending": 24,
   "index_requested": 22,
-  "index_todo": 1
+  "index_todo": 2
  },
  "actionable": [
+  {
+   "code": "D1-03",
+   "title": "학교폭력 신고 방법 117 절차 학폭위 가해학생 조치 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "C1-09",
    "title": "건강보험 본인부담상한제 환급 신청 방법 대상 상한액 총",
@@ -193,21 +209,6 @@
   {
    "code": "E1-01",
    "title": "알뜰폰 요금제 비교 추천 가입 방법 총정리 (통신비 절",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "E2-02",
-   "title": "카카오톡 차단 확인 방법 무료로 알아보는 3가지",
    "need": [
     "색인대기"
    ],
