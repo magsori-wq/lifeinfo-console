@@ -1,12 +1,12 @@
 {
  "rev": "a81fffb",
  "counts": {
-  "total": 114,
+  "total": 115,
   "osmu_done": 113,
-  "osmu_pending": 1,
-  "indexed": 1,
-  "index_pending": 113,
-  "index_requested": 111,
+  "osmu_pending": 2,
+  "indexed": 111,
+  "index_pending": 4,
+  "index_requested": 2,
   "index_todo": 2
  },
  "actionable": [
@@ -27,23 +27,24 @@
    }
   },
   {
-   "code": "C1-09",
-   "title": "건강보험 본인부담상한제 환급 신청 방법 대상 상한액 총",
+   "code": "F4-05",
+   "title": "국립자연휴양림 예약 방법 성수기 추첨 낙첨 잔여객실 선",
    "need": [
+    "OSMU",
     "색인요청"
    ],
-   "action": "색인 요청",
-   "osmu": true,
+   "action": "OSMU 확산",
+   "osmu": false,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": true,
-    "t": true
+    "n": false,
+    "t": false
    }
   },
   {
-   "code": "A1-02",
-   "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
+   "code": "E2-07",
+   "title": "2026 월드컵 16강 8강 일정 무료 중계 보는 법 ",
    "need": [
     "색인대기"
    ],
@@ -57,158 +58,8 @@
    }
   },
   {
-   "code": "A1-03",
-   "title": "근로장려금 신청 자격 금액 지급일 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-04",
-   "title": "청년월세지원 신청 자격 금액 신청방법 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-05",
-   "title": "청년미래적금 가입조건 정부기여금 신청 방법 총정리 (2",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-06",
-   "title": "국민내일배움카드 신청 방법 발급 자격 지원금액 총정리 ",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-07",
-   "title": "상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-01",
-   "title": "보조금24 정부지원금 조회 신청 방법 총정리 (내가 받",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-02",
-   "title": "에너지바우처 신청 자격 금액 사용기간 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-04",
-   "title": "실업급여 신청 방법 조건 지급액 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-05",
-   "title": "노인일자리 시니어인턴십 신청 자격 활동비 방법 총정리 ",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-06",
-   "title": "국민취업지원제도 구직촉진수당 신청 방법 자격 총정리 (",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-10",
-   "title": "기초생활수급자 생계급여 조건 소득인정액 금액 신청 방법",
+   "code": "E3-01",
+   "title": "토익 성적표 재발급 유효기간 점수 환산 방법 총정리",
    "need": [
     "색인대기"
    ],
