@@ -1,45 +1,28 @@
 {
- "rev": "a81fffb",
+ "rev": "cf85a6c",
  "counts": {
   "total": 115,
-  "osmu_done": 113,
-  "osmu_pending": 2,
+  "osmu_done": 115,
+  "osmu_pending": 0,
   "indexed": 111,
   "index_pending": 4,
-  "index_requested": 2,
-  "index_todo": 2
+  "index_requested": 4,
+  "index_todo": 0
  },
  "actionable": [
   {
    "code": "D4-03",
    "title": "콘서트 암표 방지법 시행 정가 예매 취소표 신고 방법 ",
    "need": [
-    "OSMU",
-    "색인요청"
+    "색인대기"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "F4-05",
-   "title": "국립자연휴양림 예약 방법 성수기 추첨 낙첨 잔여객실 선",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
+    "n": true,
+    "t": true
    }
   },
   {
@@ -60,6 +43,21 @@
   {
    "code": "E3-01",
    "title": "토익 성적표 재발급 유효기간 점수 환산 방법 총정리",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "F4-05",
+   "title": "국립자연휴양림 예약 방법 성수기 추첨 낙첨 잔여객실 선",
    "need": [
     "색인대기"
    ],
