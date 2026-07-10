@@ -1,15 +1,31 @@
 {
  "rev": "35b74c8",
  "counts": {
-  "total": 118,
+  "total": 119,
   "osmu_done": 118,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 111,
-  "index_pending": 7,
+  "index_pending": 8,
   "index_requested": 7,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "C4-06",
+   "title": "틀니 건강보험 적용 대상 비용 본인부담금 부분틀니 완전",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-08",
    "title": "자녀장려금 자격 소득기준 지급액 신청방법 총정리 (20",
