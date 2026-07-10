@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-07-10T06:00:11",
+ "checked_at": "2026-07-10T15:05:09",
  "light": "yellow",
- "pass": 10,
- "warn": 4,
+ "pass": 9,
+ "warn": 5,
  "fail": 0,
  "checks": [
   {
@@ -16,10 +16,6 @@
   {
    "level": "PASS",
    "msg": "thumb 1:1 정합 통과: 115/115"
-  },
-  {
-   "level": "PASS",
-   "msg": "고아 썸네일 없음"
   },
   {
    "level": "PASS",
@@ -60,6 +56,10 @@
   {
    "level": "WARN",
    "msg": "F2: 일련번호 비연속 [1, 3, 4, 5, 8] (영구PID라 허용되나 확인 권장)"
+  },
+  {
+   "level": "WARN",
+   "msg": "미사용 썸네일 1개: 95_catastrophic.png"
   }
  ]
 }
