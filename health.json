@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-11T15:34:42",
+ "checked_at": "2026-07-11T16:01:18",
  "light": "yellow",
  "pass": 10,
- "warn": 5,
+ "warn": 6,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 121편"
+   "msg": "count 일치: 122편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 121/121"
+   "msg": "thumb 1:1 정합 통과: 122/122"
   },
   {
    "level": "PASS",
@@ -31,19 +31,19 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 119개 코드 모두 DB.osmu 일치"
+   "msg": "OSMU 교차링크 연계 통과: 120개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 121편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 122편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 121편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 122편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "내부링크 실효성 통과: posts/ 96개 파일의 내부링크 모두 실제 글"
+   "msg": "내부링크 실효성 통과: posts/ 97개 파일의 내부링크 모두 실제 글"
   },
   {
    "level": "WARN",
@@ -51,7 +51,7 @@
   },
   {
    "level": "WARN",
-   "msg": "A2: 일련번호 비연속 [1, 2, 4, 5, 6, 10, 11] (영구PID라 허용되나 확인 권장)"
+   "msg": "A2: 일련번호 비연속 [1, 2, 4, 5, 6, 10, 11, 12] (영구PID라 허용되나 확인 권장)"
   },
   {
    "level": "WARN",
@@ -60,6 +60,10 @@
   {
    "level": "WARN",
    "msg": "F2: 일련번호 비연속 [1, 3, 4, 5, 8] (영구PID라 허용되나 확인 권장)"
+  },
+  {
+   "level": "WARN",
+   "msg": "중분류 A2(생계·근로 지원) 8편 → 6~7편 초과, 분가 검토(규칙 §5)"
   },
   {
    "level": "WARN",
