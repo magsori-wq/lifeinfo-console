@@ -1,15 +1,31 @@
 {
- "rev": "1d1d8d2",
+ "rev": "f837aa3",
  "counts": {
-  "total": 122,
+  "total": 123,
   "osmu_done": 121,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 117,
-  "index_pending": 5,
+  "index_pending": 6,
   "index_requested": 5,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "C1-11",
+   "title": "퇴직 후 건강보험료 임의계속가입 조정신청 피부양자 등재",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "C4-06",
    "title": "틀니 건강보험 적용 대상 비용 본인부담금 부분틀니 완전",
