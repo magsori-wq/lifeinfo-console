@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-13T06:00:11",
+ "checked_at": "2026-07-13T14:48:12",
  "light": "yellow",
- "pass": 11,
- "warn": 6,
+ "pass": 10,
+ "warn": 7,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 123편"
+   "msg": "count 일치: 124편"
   },
   {
    "level": "PASS",
@@ -15,11 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 123/123"
-  },
-  {
-   "level": "PASS",
-   "msg": "고아 썸네일 없음"
+   "msg": "thumb 1:1 정합 통과: 124/124"
   },
   {
    "level": "PASS",
@@ -39,15 +35,15 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 123편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 124편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 123편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 124편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "내부링크 실효성 통과: posts/ 98개 파일의 내부링크 모두 실제 글"
+   "msg": "내부링크 실효성 통과: posts/ 99개 파일의 내부링크 모두 실제 글"
   },
   {
    "level": "WARN",
@@ -64,6 +60,10 @@
   {
    "level": "WARN",
    "msg": "F2: 일련번호 비연속 [1, 3, 4, 5, 8] (영구PID라 허용되나 확인 권장)"
+  },
+  {
+   "level": "WARN",
+   "msg": "미사용 썸네일 1개: 59_car_bond.png"
   },
   {
    "level": "WARN",

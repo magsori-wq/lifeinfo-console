@@ -1,15 +1,31 @@
 {
  "rev": "9931c3e",
  "counts": {
-  "total": 123,
+  "total": 124,
   "osmu_done": 123,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 119,
-  "index_pending": 4,
+  "index_pending": 5,
   "index_requested": 4,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "A3-04",
+   "title": "국민연금 조기노령연금 연기연금 신청 방법 감액률 증액률",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "C1-11",
    "title": "퇴직 후 건강보험료 임의계속가입 조정신청 피부양자 등재",
