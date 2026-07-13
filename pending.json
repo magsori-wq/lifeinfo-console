@@ -2,28 +2,27 @@
  "rev": "d4e8787",
  "counts": {
   "total": 125,
-  "osmu_done": 124,
-  "osmu_pending": 1,
+  "osmu_done": 125,
+  "osmu_pending": 0,
   "indexed": 120,
   "index_pending": 5,
-  "index_requested": 4,
-  "index_todo": 1
+  "index_requested": 5,
+  "index_todo": 0
  },
  "actionable": [
   {
    "code": "A1-09",
    "title": "국가장학금 2학기 신청 1차 마감(6/22) 놓쳤다면?",
    "need": [
-    "OSMU",
-    "색인요청"
+    "색인대기"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false
+    "n": true,
+    "t": true
    }
   },
   {
