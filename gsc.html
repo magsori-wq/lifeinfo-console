@@ -144,9 +144,9 @@
     ((res[2]||{}).urls||[]).forEach(function(u){reqSet[u]=1;});
     logGen=(res[2]||{}).generated||'';
     document.getElementById('tag').textContent='점검: '+(idx.checked_at||'미점검');
-    all=(db.posts||[]).map(function(p){
+    all=(db.posts||[]).map(function(p,i){
       var ix=posts[p.code]||{}, u=p.url||ix.url||'';
-      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:u,state:ix.state||'',link:ix.link||'',logged:!!reqSet[u]};
+      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:u,state:ix.state||'',link:ix.link||'',logged:!!reqSet[u],oi:i};
     });
     render();
   }).catch(function(){
