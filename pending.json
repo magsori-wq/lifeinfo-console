@@ -1,15 +1,31 @@
 {
- "rev": "d4e8787",
+ "rev": "d77580c",
  "counts": {
-  "total": 125,
+  "total": 126,
   "osmu_done": 125,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 120,
-  "index_pending": 5,
+  "index_pending": 6,
   "index_requested": 5,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "B4-05",
+   "title": "퇴직금 계산 방법 퇴직소득세 지급기한 중간정산 총정리 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-09",
    "title": "국가장학금 2학기 신청 1차 마감(6/22) 놓쳤다면?",
