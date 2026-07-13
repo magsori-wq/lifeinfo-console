@@ -153,10 +153,18 @@
     document.getElementById('rows').innerHTML='<tr><td colspan="5" style="padding:20px;color:#ff8a8a">데이터 로드 실패 (lifeinfo_db.txt)</td></tr>';
   });
 
+  // 신규 요청건(미요청·미색인)을 맨 위로, 그다음 요청·대기, 색인됨은 아래. 각 그룹 내 최신 발행순.
+  function rank(p){
+    var isIdx=(stInfo(p.state).c==='ok'), isReq=(!!req[p.code]||p.logged);
+    if(!isIdx&&!isReq)return 0;   // 미요청·미색인 = 신규 요청건 → 최상위
+    if(!isIdx&&isReq)return 1;    // 요청함·크롤 대기
+    return 2;                     // 색인됨
+  }
   function render(){
     var q=(document.getElementById('q').value||'').toLowerCase().replace(/\s/g,'');
     var idxCnt=0, reqCnt=0, todo=0, logCnt=0, out=[];
-    all.forEach(function(p){
+    var view=all.slice().sort(function(a,b){var d=rank(a)-rank(b);return d!==0?d:b.oi-a.oi;});
+    view.forEach(function(p){
       var si=stInfo(p.state), isIdx=(si.c==='ok'), isReq=(!!req[p.code]||p.logged);
       if(isIdx)idxCnt++; if(isReq)reqCnt++; if(!isIdx&&!isReq)todo++; if(p.logged)logCnt++;
       // 필터
