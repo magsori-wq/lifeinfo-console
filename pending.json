@@ -1,15 +1,31 @@
 {
- "rev": "5dde5f7",
+ "rev": "d4e8787",
  "counts": {
-  "total": 124,
+  "total": 125,
   "osmu_done": 124,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 120,
-  "index_pending": 4,
+  "index_pending": 5,
   "index_requested": 4,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "A1-09",
+   "title": "국가장학금 2학기 신청 1차 마감(6/22) 놓쳤다면?",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A3-04",
    "title": "국민연금 조기노령연금 연기연금 신청 방법 감액률 증액률",
