@@ -1,31 +1,15 @@
 {
  "rev": "9931c3e",
  "counts": {
-  "total": 125,
+  "total": 124,
   "osmu_done": 124,
-  "osmu_pending": 1,
-  "indexed": 119,
-  "index_pending": 6,
-  "index_requested": 4,
-  "index_todo": 2
+  "osmu_pending": 0,
+  "indexed": 120,
+  "index_pending": 4,
+  "index_requested": 3,
+  "index_todo": 1
  },
  "actionable": [
-  {
-   "code": "B2-08",
-   "title": "자동차 채권 미환급금 조회 환급 방법 총정리",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "A3-04",
    "title": "국민연금 조기노령연금 연기연금 신청 방법 감액률 증액률",
@@ -35,21 +19,6 @@
    "action": "색인 요청",
    "osmu": true,
    "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "C1-11",
-   "title": "퇴직 후 건강보험료 임의계속가입 조정신청 피부양자 등재",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
    "ch": {
     "g": true,
     "n": true,
