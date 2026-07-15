@@ -1,28 +1,29 @@
 {
- "rev": "cc6cf13",
+ "rev": "99b3bd9",
  "counts": {
-  "total": 133,
+  "total": 134,
   "osmu_done": 133,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 21,
-  "index_pending": 112,
-  "index_requested": 111,
+  "index_pending": 113,
+  "index_requested": 112,
   "index_todo": 1
  },
  "actionable": [
   {
-   "code": "D4-04",
-   "title": "프로야구 티켓 예매 방법 구단별 예매처 취소 환불 총정",
+   "code": "F2-09",
+   "title": "고속버스 시외버스 예매 방법 경로우대 할인 취소 수수료",
    "need": [
+    "OSMU",
     "색인요청"
    ],
-   "action": "색인 요청",
-   "osmu": true,
+   "action": "OSMU 확산",
+   "osmu": false,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": true,
-    "t": true
+    "n": false,
+    "t": false
    }
   },
   {
