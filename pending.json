@@ -1,43 +1,29 @@
 {
- "rev": "c4359e6",
+ "rev": "b87a050",
  "counts": {
-  "total": 131,
+  "total": 132,
   "osmu_done": 131,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 21,
-  "index_pending": 110,
-  "index_requested": 108,
-  "index_todo": 2
+  "index_pending": 111,
+  "index_requested": 110,
+  "index_todo": 1
  },
  "actionable": [
   {
-   "code": "C1-09",
-   "title": "건강보험 본인부담상한제 환급 신청 방법 대상 상한액 총",
+   "code": "B2-08",
+   "title": "디딤돌 버팀목 전세자금대출 조건 금리 한도 신청 방법 ",
    "need": [
+    "OSMU",
     "색인요청"
    ],
-   "action": "색인 요청",
-   "osmu": true,
+   "action": "OSMU 확산",
+   "osmu": false,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "C4-06",
-   "title": "틀니 건강보험 적용 대상 비용 본인부담금 부분틀니 완전",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
+    "n": false,
+    "t": false
    }
   },
   {
@@ -208,6 +194,21 @@
   {
    "code": "A2-05",
    "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-06",
+   "title": "노인맞춤돌봄서비스 신청 방법 대상 서비스 내용 총정리 ",
    "need": [
     "색인대기"
    ],
