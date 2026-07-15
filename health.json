@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-07-15T16:00:35",
+ "checked_at": "2026-07-15T16:50:14",
  "light": "yellow",
- "pass": 11,
- "warn": 5,
+ "pass": 10,
+ "warn": 6,
  "fail": 0,
  "checks": [
   {
@@ -19,15 +19,11 @@
   },
   {
    "level": "PASS",
-   "msg": "고아 썸네일 없음"
-  },
-  {
-   "level": "PASS",
    "msg": "URL 형식·중복 통과"
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (281개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (286개 확산링크)"
   },
   {
    "level": "PASS",
@@ -35,7 +31,7 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 132개 코드 모두 DB.osmu 일치"
+   "msg": "OSMU 교차링크 연계 통과: 133개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
@@ -60,6 +56,10 @@
   {
    "level": "WARN",
    "msg": "F2: 일련번호 비연속 [1, 3, 4, 5, 8] (영구PID라 허용되나 확인 권장)"
+  },
+  {
+   "level": "WARN",
+   "msg": "미사용 썸네일 1개: 111_bus.png"
   },
   {
    "level": "WARN",

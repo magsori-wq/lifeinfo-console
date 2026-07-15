@@ -1,36 +1,19 @@
 {
- "rev": "b87a050",
+ "rev": "cc6cf13",
  "counts": {
   "total": 133,
-  "osmu_done": 132,
-  "osmu_pending": 1,
+  "osmu_done": 133,
+  "osmu_pending": 0,
   "indexed": 21,
   "index_pending": 112,
-  "index_requested": 110,
-  "index_todo": 2
+  "index_requested": 111,
+  "index_todo": 1
  },
  "actionable": [
   {
    "code": "D4-04",
    "title": "프로야구 티켓 예매 방법 구단별 예매처 취소 환불 총정",
    "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "B2-08",
-   "title": "디딤돌 버팀목 전세자금대출 조건 금리 한도 신청 방법 ",
-   "need": [
-    "쓰레드",
     "색인요청"
    ],
    "action": "색인 요청",
@@ -39,7 +22,7 @@
    "ch": {
     "g": true,
     "n": true,
-    "t": false
+    "t": true
    }
   },
   {
@@ -210,6 +193,21 @@
   {
    "code": "A2-05",
    "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-06",
+   "title": "노인맞춤돌봄서비스 신청 방법 대상 서비스 내용 총정리 ",
    "need": [
     "색인대기"
    ],
