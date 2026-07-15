@@ -1,31 +1,15 @@
 {
- "rev": "0c0e77a",
+ "rev": "c4359e6",
  "counts": {
   "total": 131,
-  "osmu_done": 130,
-  "osmu_pending": 1,
+  "osmu_done": 131,
+  "osmu_pending": 0,
   "indexed": 21,
   "index_pending": 110,
-  "index_requested": 107,
-  "index_todo": 3
+  "index_requested": 108,
+  "index_todo": 2
  },
  "actionable": [
-  {
-   "code": "C1-12",
-   "title": "산정특례 등록 신청 방법 대상 질환 본인부담률 총정리 ",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "C1-09",
    "title": "건강보험 본인부담상한제 환급 신청 방법 대상 상한액 총",
@@ -209,6 +193,21 @@
   {
    "code": "A2-04",
    "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-05",
+   "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
    "need": [
     "색인대기"
    ],
