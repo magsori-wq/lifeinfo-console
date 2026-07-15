@@ -1,15 +1,31 @@
 {
  "rev": "5a75e85",
  "counts": {
-  "total": 135,
+  "total": 136,
   "osmu_done": 135,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 21,
-  "index_pending": 114,
+  "index_pending": 115,
   "index_requested": 114,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "F2-10",
+   "title": "여객선 배편 예매 방법 가보고싶은섬 승선 신분증 차량선",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -193,21 +209,6 @@
   {
    "code": "A2-06",
    "title": "노인맞춤돌봄서비스 신청 방법 대상 서비스 내용 총정리 ",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A3-01",
-   "title": "기초연금 수급자격 소득기준 신청방법 총정리",
    "need": [
     "색인대기"
    ],
