@@ -1,34 +1,18 @@
 {
- "rev": "5a75e85",
+ "rev": "801955a",
  "counts": {
   "total": 141,
-  "osmu_done": 137,
-  "osmu_pending": 4,
+  "osmu_done": 138,
+  "osmu_pending": 3,
   "indexed": 21,
   "index_pending": 120,
-  "index_requested": 116,
-  "index_todo": 4
+  "index_requested": 117,
+  "index_todo": 3
  },
  "actionable": [
   {
    "code": "A3-06",
    "title": "장애인연금 신청 방법 자격 소득기준 지급액 총정리 (2",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "B1-05",
-   "title": "생애최초 주택 취득세 감면 신청 방법 요건 한도 총정리",
    "need": [
     "OSMU",
     "색인요청"
@@ -212,6 +196,21 @@
   {
    "code": "A2-03",
    "title": "기초생활수급자 생계급여 조건 소득인정액 금액 신청 방법",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-04",
+   "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
    "need": [
     "색인대기"
    ],
