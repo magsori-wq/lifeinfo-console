@@ -2,33 +2,17 @@
  "rev": "5a75e85",
  "counts": {
   "total": 138,
-  "osmu_done": 135,
-  "osmu_pending": 3,
+  "osmu_done": 136,
+  "osmu_pending": 2,
   "indexed": 21,
   "index_pending": 117,
-  "index_requested": 114,
-  "index_todo": 3
+  "index_requested": 115,
+  "index_todo": 2
  },
  "actionable": [
   {
    "code": "A3-06",
    "title": "장애인연금 신청 방법 자격 소득기준 지급액 총정리 (2",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "D4-05",
-   "title": "영화 호프 예매 방법 상영관 IMAX 돌비시네마 스크린",
    "need": [
     "OSMU",
     "색인요청"
@@ -211,6 +195,21 @@
   {
    "code": "A2-04",
    "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-05",
+   "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
    "need": [
     "색인대기"
    ],
