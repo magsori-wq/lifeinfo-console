@@ -1,18 +1,34 @@
 {
  "rev": "801955a",
  "counts": {
-  "total": 141,
+  "total": 142,
   "osmu_done": 140,
-  "osmu_pending": 1,
-  "indexed": 21,
-  "index_pending": 120,
-  "index_requested": 117,
-  "index_todo": 3
+  "osmu_pending": 2,
+  "indexed": 12,
+  "index_pending": 130,
+  "index_requested": 129,
+  "index_todo": 1
  },
  "actionable": [
   {
    "code": "A3-06",
    "title": "장애인연금 신청 방법 자격 소득기준 지급액 총정리 (2",
+   "need": [
+    "OSMU",
+    "색인대기"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "C1-13",
+   "title": "의료급여 1종 2종 차이 본인부담금 대상 신청 방법 총",
    "need": [
     "OSMU",
     "색인요청"
@@ -24,36 +40,6 @@
     "g": true,
     "n": false,
     "t": false
-   }
-  },
-  {
-   "code": "B2-09",
-   "title": "은행대리업 우체국 대출 신청 방법 대상지역 한도 금리 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "F2-10",
-   "title": "여객선 배편 예매 방법 가보고싶은섬 승선 신분증 차량선",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
    }
   },
   {
@@ -209,6 +195,21 @@
   {
    "code": "A2-04",
    "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-05",
+   "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
    "need": [
     "색인대기"
    ],
