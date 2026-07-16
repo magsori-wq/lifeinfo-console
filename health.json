@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-16T17:54:35",
+ "checked_at": "2026-07-16T21:30:11",
  "light": "yellow",
  "pass": 10,
- "warn": 8,
+ "warn": 9,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 143편"
+   "msg": "count 일치: 144편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 143/143"
+   "msg": "thumb 1:1 정합 통과: 144/144"
   },
   {
    "level": "PASS",
@@ -35,11 +35,11 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 143편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 144편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 143편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 144편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -56,6 +56,10 @@
   {
    "level": "WARN",
    "msg": "F2: 일련번호 비연속 [1, 3, 4, 5, 8, 9, 10] (영구PID라 허용되나 확인 권장)"
+  },
+  {
+   "level": "WARN",
+   "msg": "F4: 일련번호 비연속 [1, 2, 3, 4, 5, 6, 8] (영구PID라 허용되나 확인 권장)"
   },
   {
    "level": "WARN",
