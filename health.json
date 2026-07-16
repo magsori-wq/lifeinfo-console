@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-07-16T21:30:11",
+ "checked_at": "2026-07-17T04:44:39",
  "light": "yellow",
- "pass": 10,
- "warn": 9,
+ "pass": 11,
+ "warn": 8,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 144편"
+   "msg": "count 일치: 145편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,11 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 144/144"
+   "msg": "thumb 1:1 정합 통과: 145/145"
+  },
+  {
+   "level": "PASS",
+   "msg": "고아 썸네일 없음"
   },
   {
    "level": "PASS",
@@ -23,7 +27,7 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (307개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (310개 확산링크)"
   },
   {
    "level": "PASS",
@@ -31,15 +35,15 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 140개 코드 모두 DB.osmu 일치"
+   "msg": "OSMU 교차링크 연계 통과: 141개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 144편 DB와 일치"
+   "msg": "매니페스트 신선도 통과: 145편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 144편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 145편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -59,14 +63,6 @@
   },
   {
    "level": "WARN",
-   "msg": "F4: 일련번호 비연속 [1, 2, 3, 4, 5, 6, 8] (영구PID라 허용되나 확인 권장)"
-  },
-  {
-   "level": "WARN",
-   "msg": "미사용 썸네일 1개: 117_pettravel.png"
-  },
-  {
-   "level": "WARN",
    "msg": "중분류 A1(지원금·수당) 9편 → 6~7편 초과, 분가 검토(규칙 §5)"
   },
   {
@@ -80,6 +76,10 @@
   {
    "level": "WARN",
    "msg": "중분류 E2(앱·계정) 8편 → 6~7편 초과, 분가 검토(규칙 §5)"
+  },
+  {
+   "level": "WARN",
+   "msg": "중분류 F4(국내 숙박·레저) 8편 → 6~7편 초과, 분가 검토(규칙 §5)"
   }
  ]
 }
