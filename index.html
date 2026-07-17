@@ -71,6 +71,7 @@
     <div class="brand">📊 운영 콘솔 <span class="dot">·</span> 생활정보 모음</div>
     <nav id="nav">
       <button data-t="dispatch" class="active">⚡ 디스패치</button>
+      <button data-t="progress">📋 발행대기</button>
       <button data-t="nav">🗺️ 네비게이터</button>
       <button data-t="trends">📰 글감</button>
       <button data-t="search">🔎 검색</button>
@@ -263,6 +264,7 @@
     <iframe id="f_osmu" src="osmu.html"></iframe>
     <iframe id="f_jisikin" src="jisikin.html"></iframe>
     <iframe id="f_dashboard" src="dashboard.html"></iframe>
+    <iframe id="f_progress" src="progress.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
   </div>
 
@@ -270,7 +272,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['search','categories','generator','osmu','jisikin','dashboard','gsc'];
+  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','gsc'];
   nav.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b)return;
     var t=b.dataset.t;
