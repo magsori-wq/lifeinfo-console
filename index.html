@@ -81,6 +81,7 @@
       <button data-t="jisikin">지식인</button>
       <button data-t="dashboard">📡 모니터링</button>
       <button data-t="gsc">🔍 색인관리</button>
+      <button data-t="adsense">📋 애드센스 승인</button>
       <button data-t="about">ℹ️ 소개</button>
     </nav>
   </div>
@@ -266,13 +267,14 @@
     <iframe id="f_dashboard" src="dashboard.html"></iframe>
     <iframe id="f_progress" src="progress.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
+    <iframe id="f_adsense" src="adsense.html"></iframe>
   </div>
 
   <div class="copied" id="copied">복사됨! Claude에 붙여넣기 하세요</div>
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','gsc'];
+  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','gsc','adsense'];
   nav.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b)return;
     var t=b.dataset.t;
