@@ -170,22 +170,22 @@
       "id": "T1",
       "cat": "⑥ 정책·기술 요건 (일회성 확인)",
       "title": "기술요건 회귀 확인: robots 크롤러 미차단·SSL/HTTPS 리디렉션·코드 head 배치·사이트 live·로그인불필요",
-      "status": "todo",
-      "note": "대부분 이미 정상. 공식 요건 #7"
+      "status": "done",
+      "note": "실측 정상: 홈200·로그인불필요 / http→https / robots Mediapartners전면허용·Sitemap명시·ads.txt미차단 / ads.txt pub일치 / AdSense코드 head배치 / sitemap 146loc"
     },
     {
       "id": "T2",
       "cat": "⑥ 정책·기술 요건 (일회성 확인)",
       "title": "광고 배치 점검: 어떤 화면도 광고>콘텐츠 아니게 · dead-end 없게 · 유틸/짧은 페이지 자동광고 확인",
-      "status": "todo",
-      "note": "공식 요건 #3·#4"
+      "status": "done",
+      "note": "정황 정상: 자동광고 코드 정상, 홈 가시텍스트 약1.2만자=본문우위, 전페이지 공통메뉴로 dead-end 없음, 유틸페이지도 U1로 콘텐츠화. ※실제 광고밀도는 승인후 광고 서빙시 최종확인"
     },
     {
       "id": "T3",
       "cat": "⑥ 정책·기술 요건 (일회성 확인)",
       "title": "탐색·레이아웃 UX 재확인(내비게이션 명확·정돈)",
-      "status": "todo",
-      "note": "홈 실측은 양호. 공식 요건 #6"
+      "status": "done",
+      "note": "실측 정상: 필수페이지 5개(소개·문의·통합검색·카테고리·개인정보) 전부 메뉴 링크, 상단 메뉴 구조 존재"
     },
     {
       "id": "R1",
