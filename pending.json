@@ -1,15 +1,31 @@
 {
- "rev": "f5cb361",
+ "rev": "21a2e8b",
  "counts": {
-  "total": 150,
+  "total": 151,
   "osmu_done": 150,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 8,
-  "index_pending": 142,
+  "index_pending": 143,
   "index_requested": 141,
-  "index_todo": 1
+  "index_todo": 2
  },
  "actionable": [
+  {
+   "code": "A2-07",
+   "title": "아이돌봄서비스 정부지원 신청 방법 자격 이용요금 총정리",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "F1-07",
    "title": "미국 ESTA 신청 방법 수수료 유효기간 승인 거부 사",
@@ -193,21 +209,6 @@
   {
    "code": "A2-04",
    "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-05",
-   "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
    "need": [
     "색인대기"
    ],
