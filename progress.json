@@ -1,7 +1,17 @@
 {
- "updated": "2026-07-24",
+ "updated": "2026-07-25",
  "avg": 3023,
  "today": [
+  {
+   "t": "C2-07 국가암검진 대상 무료 검진 항목 6대암 주기 — 발행 진행 시작(0단계 보드 seed)",
+   "done": false,
+   "who": "ai"
+  },
+  {
+   "t": "C2-07 국가암검진 대상 무료 검진 항목 6대 — 발행 승인 완료, 라이브 발행 대기 (0단계 보드 seed)",
+   "done": false,
+   "who": "ai"
+  },
   {
    "t": "A5-04 2027년 최저임금 10,700원 확정, 내 월급 실수 — 발행·DB 등록·배포",
    "done": true
@@ -9,15 +19,21 @@
   {
    "t": "A5-04 2027년 최저임금 10,700원 확정, 내 월급 실수 — 발행·DB 등록·배포",
    "done": true
+  },
+  {
+   "t": "C2-07 국가암검진 대상 무료 검진 항목 6대암 주기 총정리 ( — 발행·DB 등록·배포",
+   "done": true
   }
  ],
  "next": [
+  "C2-07 발행: python -m studio.pipeline publish-flow --code C2-07 --file posts/국가암검진_글_HTML.txt --publish",
+  "A5-04 OSMU 마무리: osmu-finish(naver+threads) + 인스타 링크기록 + GSC 색인요청",
   "OSMU: 인스타그램 115편 확산(최대 backlog) + 네이버·쓰레드 잔여 2편(A3-06·F4-08)",
   "1~2주 뒤 searchconsole inspect로 색인 12편 증가 여부만 모니터",
   "AdSense 재신청·색인 재요청 금지 (승인 시 발행큐 10건부터 재개)"
  ],
  "pipeline": {
-  "code": "A5-04 · 2027년 최저임금 10,700원 확",
+  "code": "C2-07 · 국가암검진 대상 무료 검진 항목 6대",
   "checked": [
    1,
    2,
