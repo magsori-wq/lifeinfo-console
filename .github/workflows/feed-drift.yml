@@ -1,0 +1,57 @@
+name: 피드 드리프트 검사
+
+# 라이브 Blogger 피드와 lifeinfo_db.txt 를 대조한다. 읽기 전용 — 아무것도 수정하지 않는다.
+#
+# 왜 Actions 에서 돌리는가:
+#   Claude Code 웹 컨테이너의 프록시가 blogspot.com 을 차단한다(실측: CONNECT 403).
+#   Actions 러너에는 그 제약이 없으므로, 라이브 데이터가 필요한 검사는 여기서 한다.
+#
+# 검출하는 것:
+#   - 발행됐는데 DB 에 없는 글   (register_post 누락 → 콘솔·색인에서 빠짐)
+#   - DB 에는 있는데 라이브에 없는 글 (삭제·임시보관)
+#   - 제목이 어긋난 글
+
+on:
+  schedule:
+    # 매일 22:00 UTC = 한국시간 07:00
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 피드를 한 번만 긁는다. --json-out 으로 사람용 출력과 리포트를 동시에 얻고,
+      # 종료 코드로 판정한다. (스크립트를 여러 번 호출하면 피드를 중복 요청하고
+      # 요약 패널도 중복 기록된다.)
+      # set +e 가 필요한 이유: Actions 의 기본 셸은 bash -e 라서, 스크립트가 0 이
+      # 아닌 코드로 끝나면 그 자리에서 스텝이 중단되어 rc 를 읽을 수 없다.
+      - name: 드리프트 검사
+        run: |
+          set +e
+          python tools/feed_drift.py --json-out feed_drift.json
+          rc=$?
+          set -e
+          case "$rc" in
+            0) echo "드리프트 없음" ;;
+            1) echo "::error::라이브와 DB 가 어긋났다. 요약 패널을 확인하라."; exit 1 ;;
+            2) echo "::warning::피드에 접근하지 못했다. 일시적 장애일 수 있으니 다음 회차를 기다린다." ;;
+            *) echo "::error::예상치 못한 종료 코드 $rc"; exit 1 ;;
+          esac
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: feed-drift-report
+          path: feed_drift.json
+          retention-days: 30
+          if-no-files-found: warn

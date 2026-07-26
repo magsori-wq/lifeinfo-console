@@ -1,0 +1,48 @@
+name: 콘솔 정합성 검사
+
+# 왜 필요한가:
+#   deploy.bat 은 `git add` 로 추가·수정만 한다. 로컬에서 파일을 지워도 저장소에서는
+#   지워지지 않으므로, 로컬 selfcheck 는 저장소의 실제 상태를 볼 수 없다.
+#   이 검사는 저장소를 직접 본다. 실측 예: 로컬은 "고아 썸네일 없음" 인데
+#   저장소에는 59_car_bond.png 가 남아 있었다.
+
+on:
+  push:
+    branches: ['**']
+    paths:
+      - '*.html'
+      - '*.json'
+      - 'lifeinfo_db.txt'
+      - 'thumbs/**'
+      - 'tools/**'
+      - '.github/workflows/console-check.yml'
+  pull_request:
+  schedule:
+    # 매일 21:10 UTC = 한국시간 06:10 (로컬 헬스체크가 06:00 에 도는 직후)
+    - cron: '10 21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 한 번만 실행한다 — 두 번 호출하면 GITHUB_STEP_SUMMARY 에 결과가 중복 기록된다.
+      - name: 정합성 검사
+        run: python tools/console_check.py --json-out console_check.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: console-check-report
+          path: console_check.json
+          retention-days: 30
+          if-no-files-found: warn
