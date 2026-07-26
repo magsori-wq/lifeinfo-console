@@ -1,0 +1,60 @@
+name: 공식 링크 부패 검사
+
+# 생활정보 글은 본문마다 🏛️ 공식 안내(.go.kr) 링크를 싣는다. 정부 사이트는 개편이
+# 잦아 링크가 조용히 죽고, 독자가 404를 만나면 신뢰도·체류시간에 직격이다.
+# YMYL 주제라 애드센스 심사에도 불리하다.
+#
+# 링크는 저장소가 아니라 Blogger 본문에 있으므로 피드에서 본문을 받아 검사한다.
+# Claude Code 웹 컨테이너는 프록시가 blogspot 을 막지만 Actions 러너는 막히지 않는다.
+
+on:
+  schedule:
+    # 매월 1일 22:30 UTC = 한국시간 2일 07:30
+    # (SKILL.md 의 '매월 1일 정보 재검증' 주기와 맞춘다)
+    - cron: '30 22 1 * *'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: '검사할 글 수 (0 = 전체). 부분 검사면 미참조 썸네일 판정은 생략된다'
+        required: false
+        default: '0'
+
+permissions:
+  contents: read
+
+jobs:
+  linkrot:
+    runs-on: ubuntu-latest
+    # 153편 x 링크 여러 개를 외부 사이트에 확인하므로 넉넉히 잡는다
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      # 한 번만 실행한다 — 두 번 호출하면 외부 사이트를 두 번 두드리고
+      # 요약 패널도 중복 기록된다.
+      # set +e 가 필요한 이유: Actions 기본 셸이 bash -e 라서 0 이 아닌 종료 코드에서
+      # 스텝이 그 자리에 멈춰 rc 를 읽을 수 없다.
+      - name: 링크 검사
+        run: |
+          set +e
+          python tools/link_rot.py --limit "${{ inputs.limit || 0 }}" --json-out link_rot.json
+          rc=$?
+          set -e
+          case "$rc" in
+            0) echo "죽은 링크 없음" ;;
+            1) echo "::error::죽은 링크(404/410)가 있다. 요약 패널의 목록을 수정하라."; exit 1 ;;
+            2) echo "::warning::피드에 접근하지 못했다. 일시적 장애일 수 있으니 다음 회차를 기다린다." ;;
+            *) echo "::error::예상치 못한 종료 코드 $rc"; exit 1 ;;
+          esac
+
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: link-rot-report
+          path: link_rot.json
+          retention-days: 90
+          if-no-files-found: warn
