@@ -281,7 +281,7 @@
 
   <!-- OSMU 교차발행 추적 -->
   <div class="sect">
-    <h2>🔁 OSMU 교차발행 추적 <span class="tag man">네이버·쓰레드 자동(DB) · 인스타·지식인 수기</span></h2>
+    <h2>🔁 OSMU 교차발행 추적 <span class="tag man">네이버·쓰레드·인스타 자동(DB) · 지식인 수기</span></h2>
     <div class="osmu-sum" id="osmuSum">—</div>
     <div class="perf-ctl">
       <select id="osmuFilter">
@@ -297,7 +297,7 @@
         <th>글</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>지식인</th>
       </tr></thead><tbody id="osmuBody"><tr><td colspan="5" class="empty">불러오는 중…</td></tr></tbody></table>
     </div>
-    <div class="note">💡 <b>네이버·쓰레드</b>는 <code>naver-link</code>/<code>threads-link</code>로 기록하면 ✓가 <b>자동 표시</b>(DB 동기화, ✓ 클릭=게시글). <b>인스타·지식인</b>은 게시 후 직접 체크하세요. 빈 칸이 곧 '오늘 할 OSMU 작업'.</div>
+    <div class="note">💡 <b>네이버·쓰레드·인스타</b>는 DB(<code>osmu</code>)에 URL이 기록되면 ✓가 <b>자동 표시</b>(✓ 클릭=게시글). DB 기록이 없는 인스타와 <b>지식인</b>은 게시 후 직접 체크하세요. 빈 칸이 곧 '오늘 할 OSMU 작업'.</div>
   </div>
 
   <!-- OSMU 최근 발행 로그 -->
@@ -652,6 +652,12 @@
 
   /* ---------- 채널별 현황 + OSMU 교차발행 (수기, localStorage) ---------- */
   var OSMU_CH=[['naver','네이버'],['threads','쓰레드'],['insta','인스타'],['jisikin','지식인']];
+  // 대시보드 내부 채널키 → DB osmu 키 매핑. 지식인은 DB에 기록되지 않으므로 없다.
+  // 인스타는 DB(osmu.instagram)에 기록이 쌓였으므로(54편) 수기 체크가 아니라 자동 판정으로 옮긴다.
+  var OSMU_DBKEY={naver:'naver',threads:'threads',insta:'instagram'};
+  function osmuUrl(o,k){var dk=OSMU_DBKEY[k];return dk?(o[dk]||''):'';}
+  // DB에 URL이 있으면 그것이 정답, 없으면 수기 체크(localStorage)로 보완한다.
+  function osmuDone(o,r,k){return !!osmuUrl(o,k)||!!r[k];}
   var CHAN_DEF=[
     {key:'blogger',name:'구글 Blogger',icon:'🔵',color:'#06b07a',auto:true,
       links:function(){return [{t:'글쓰기',u:'https://www.blogger.com/blog/posts/4026928033017788339'},{t:'통계',u:'https://www.blogger.com/blog/stats/4026928033017788339'},{t:'블로그',u:'https://lifeinfo8975.blogspot.com/'}];}},
@@ -706,19 +712,24 @@
     if(!PERF.posts.length)return;
     var data=loadOsmu();var filter=document.getElementById('osmuFilter').value;
     var counts={};OSMU_CH.forEach(function(c){counts[c[0]]=0;});
-    PERF.posts.forEach(function(p){var r=data[p.code]||{};var o=p.osmu||{};OSMU_CH.forEach(function(c){var k=c[0];var done=(k==='naver'||k==='threads')?!!o[k]:!!r[k];if(done)counts[k]++;});});
+    PERF.posts.forEach(function(p){var r=data[p.code]||{};var o=p.osmu||{};OSMU_CH.forEach(function(c){if(osmuDone(o,r,c[0]))counts[c[0]]++;});});
     var tot=PERF.posts.length;
     document.getElementById('osmuSum').innerHTML=OSMU_CH.map(function(c){
       return '<span>'+c[1]+' <b>'+counts[c[0]]+'</b>/'+tot+' ('+Math.round(counts[c[0]]/tot*100)+'%)</span>';
     }).join('');
     var rows=PERF.posts.slice();
-    if(filter)rows=rows.filter(function(p){var o=p.osmu||{};var done=(filter==='naver'||filter==='threads')?!!o[filter]:!!(data[p.code]||{})[filter];return !done;});
+    if(filter)rows=rows.filter(function(p){return !osmuDone(p.osmu||{},data[p.code]||{},filter);});
     var b=document.getElementById('osmuBody');b.innerHTML='';
     if(!rows.length){b.innerHTML='<tr><td colspan="5" class="empty">해당 채널은 모든 글이 완료됐어요 🎉</td></tr>';return;}
     rows.forEach(function(p){
       var r=data[p.code]||{};var o=p.osmu||{};var col=PERF.colors[p.cat]||'#4d9de0';
       var tds=OSMU_CH.map(function(ch){var k=ch[0];
-        if(k==='naver'||k==='threads'){var u=o[k];return '<td>'+(u?'<a href="'+esc(u)+'" target="_blank" rel="noopener" title="게시글 보기" style="color:#06d6a0;font-weight:800;text-decoration:none">✓</a>':'<span style="color:#3a4a6e">–</span>')+'</td>';}
+        // DB에 게시 URL이 있으면 클릭 가능한 ✓ (인스타도 이제 여기에 해당)
+        var u=osmuUrl(o,k);
+        if(u)return '<td><a href="'+esc(u)+'" target="_blank" rel="noopener" title="게시글 보기" style="color:#06d6a0;font-weight:800;text-decoration:none">✓</a></td>';
+        // 네이버·쓰레드는 DB 전용 — 수기 체크를 두지 않는다
+        if(k==='naver'||k==='threads')return '<td><span style="color:#3a4a6e">–</span></td>';
+        // 인스타(DB 기록 없는 글)·지식인은 수기 체크로 보완
         return '<td><input type="checkbox" data-oc="'+esc(p.code)+'" data-ch="'+k+'" '+(r[k]?'checked':'')+'></td>';}).join('');
       var tr=document.createElement('tr');
       tr.innerHTML='<td><span class="pc" style="background:'+col+'">'+esc(p.code)+'</span><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.title)+'</a></td>'+tds;
@@ -736,7 +747,7 @@
   /* ---------- 🔁 OSMU 최근 발행 로그 (DB osmu_at 기준, 최근순) ---------- */
   function osmuChannels(p){
     var o=p.osmu||{};var loc=(loadOsmu()[p.code])||{};
-    return {naver:o.naver||'', threads:o.threads||'', insta:!!loc.insta, jisikin:!!loc.jisikin};
+    return {naver:o.naver||'', threads:o.threads||'', insta:o.instagram||!!loc.insta, jisikin:!!loc.jisikin};
   }
   function renderOsmuLog(){
     var b=document.getElementById('osmuLogBody'); if(!b||!PERF.posts.length)return;

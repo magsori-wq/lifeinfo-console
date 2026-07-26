@@ -28,8 +28,9 @@ body{color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','N
 .row.done svg{color:var(--ok)}
 .row.warn svg{color:var(--warn)}
 .row .mut{color:var(--mut)}
-.metrics{display:flex;gap:7px;margin:11px 0 2px}
-.m{flex:1;background:var(--card2);border-radius:9px;padding:8px 10px}
+.metrics{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0 2px}
+/* 채널이 4개가 되어 490px 팝업에서 눌리므로, 좁아지면 2x2로 감싸게 한다 */
+.m{flex:1 1 96px;background:var(--card2);border-radius:9px;padding:8px 10px}
 .m .l{font-size:11px;color:var(--mut)}
 .m .v{font-size:18px;font-weight:600;margin-top:2px}
 .m .v small{font-size:12px;color:var(--mut);font-weight:400}
@@ -124,7 +125,7 @@ const LOAD='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wi
 const NOWI='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>';
 const WAIT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>';
 const DOT='<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3.2"/></svg>';
-const STEPS=[{n:1,who:'ai',t:'글감 선정'},{n:2,who:'me',t:'글감 승인',star:1},{n:3,who:'ai',t:'코드 배정'},{n:4,who:'ai',t:'본문 작성 + 팩트체크'},{n:5,who:'ai',t:'썸네일 생성'},{n:6,who:'ai',t:'관련글 내부링크'},{n:7,who:'ai',t:'Blogger 초안'},{n:8,who:'me',t:'라이브 발행',star:1},{n:9,who:'ai',t:'DB 반영 + 검증'},{n:10,who:'ai',t:'배포 (콘솔·카테고리)'},{n:11,who:'me',t:'네이버 확산',star:1},{n:12,who:'me',t:'쓰레드 확산',star:1},{n:13,who:'ai',t:'채널 교차링크'},{n:14,who:'me',t:'서치콘솔 색인 요청',star:1},{n:15,who:'ai',t:'색인 반영 실측'}];
+const STEPS=[{n:1,who:'ai',t:'글감 선정'},{n:2,who:'me',t:'글감 승인',star:1},{n:3,who:'ai',t:'코드 배정'},{n:4,who:'ai',t:'본문 작성 + 팩트체크'},{n:5,who:'ai',t:'썸네일 생성'},{n:6,who:'ai',t:'관련글 내부링크'},{n:7,who:'ai',t:'Blogger 초안'},{n:8,who:'me',t:'라이브 발행',star:1},{n:9,who:'ai',t:'DB 반영 + 검증'},{n:10,who:'ai',t:'배포 (콘솔·카테고리)'},{n:11,who:'me',t:'네이버 확산',star:1},{n:12,who:'me',t:'쓰레드 확산',star:1},{n:13,who:'me',t:'인스타 확산',star:1},{n:14,who:'ai',t:'채널 교차링크'},{n:15,who:'me',t:'서치콘솔 색인 요청',star:1},{n:16,who:'ai',t:'색인 반영 실측'}];
 const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const fnum=n=>Number(n).toLocaleString('ko-KR');
 async function load(){
@@ -141,10 +142,28 @@ async function load(){
   const pl=(pg&&pg.pipeline)||{};
   const _cc=(pl.code||'').split(' ')[0], _cur=recs.find(r=>r.code===_cc);
   let checked=(pl.checked||[]).slice();
-  if(_cur&&_cur.osmu){if(_cur.osmu.naver&&checked.indexOf(11)<0)checked.push(11);if(_cur.osmu.threads&&checked.indexOf(12)<0)checked.push(12);if(_cur.osmu.naver&&_cur.osmu.threads&&checked.indexOf(13)<0)checked.push(13);}
+  // 확산 단계(11~14)는 보드 시드값을 쓰지 않고 DB의 osmu 기록에서 그대로 도출한다.
+  //   · DB osmu 는 "실제로 게시된 것"의 기록이므로 확산 여부의 유일한 정답이다.
+  //   · 예전 코드는 DB에서 체크를 추가만 하고 제거하지 않아, board_seed 가 미리 찍어둔
+  //     낡은 checked 값이 그대로 남아 미게시 글을 확산 완료로 표시했다.
+  //     (실측: C2-07 은 osmu 기록이 없는데 checked 에 11·12·13 이 들어 있었다)
+  //   · 인스타를 13단계로 넣으면서 번호가 한 칸씩 밀렸으므로, 낡은 번호를 그대로
+  //     신뢰하면 단계 의미까지 어긋난다. 도출로 바꾸면 이 문제가 함께 사라진다.
+  // 교차링크(14)는 네이버·쓰레드 기준을 유지한다 — 인스타는 54/153편으로 확산률이 낮아
+  // 조건에 넣으면 대부분의 글에서 교차링크가 미완으로 뒤집힌다.
+  if(_cur){
+    const om=_cur.osmu||{};
+    const derived={11:!!om.naver,12:!!om.threads,13:!!om.instagram,14:!!(om.naver&&om.threads)};
+    checked=checked.filter(n=>!(n in derived));
+    Object.keys(derived).forEach(k=>{if(derived[k])checked.push(+k);});
+    checked.sort((a,b)=>a-b);
+  }
   const done=checked.length;
   const omAll=recs.filter(r=>r.osmu&&typeof r.osmu==='object');
-  const oNv=omAll.filter(r=>r.osmu.naver).length, oTh=omAll.filter(r=>r.osmu.threads).length;
+  const oNv=omAll.filter(r=>r.osmu.naver).length, oTh=omAll.filter(r=>r.osmu.threads).length, oIn=omAll.filter(r=>r.osmu.instagram).length;
+  // 미결 관리의 I 칩은 DB에서 직접 도출한다. pending.json 의 ch 는 {g,n,t} 만 담고
+  // 있어서(pending 생성기가 아직 인스타를 모른다) ch.i 를 믿으면 게시한 글도 ✗ 로 나온다.
+  const osmuByCode={}; recs.forEach(r=>{if(r.code)osmuByCode[r.code]=r.osmu||{};});
   const oRecent=omAll.slice(-4).reverse();
   const nowN=pl.code?(STEPS.find(s=>checked.indexOf(s.n)<0)||{}).n:0;
   let pubHtml;
@@ -163,7 +182,7 @@ async function load(){
   }else{
     pubHtml='<div class="pcode none">진행 중인 발행 없음</div>';
   }
-  const osmuLi=oRecent.map(r=>'<div class="row done">'+CHECK+'<span>'+esc(r.code)+' '+esc((r.title||'').slice(0,15))+'</span><span class="mut" style="margin-left:auto;font-size:10.5px">'+(r.osmu.naver?'네이버 ':'')+(r.osmu.threads?'쓰레드':'')+'</span></div>').join('');
+  const osmuLi=oRecent.map(r=>'<div class="row done">'+CHECK+'<span>'+esc(r.code)+' '+esc((r.title||'').slice(0,15))+'</span><span class="mut" style="margin-left:auto;font-size:10.5px">'+(r.osmu.naver?'네이버 ':'')+(r.osmu.threads?'쓰레드 ':'')+(r.osmu.instagram?'인스타':'')+'</span></div>').join('');
   // 🤝 협업 — 세션별(collab.json: 정체성=레지스트리·활동=git log·상태=git status)
   const stLab={active:'활동중',uncommitted:'미커밋',idle:'대기'};
   const collabHtml=(collab&&collab.agents||[]).map(a=>{
@@ -180,6 +199,7 @@ async function load(){
     else adv.push('색인 '+idx.indexed+'/'+idx.total+'편'+iDt+'.');
   }
   if(oNv>oTh) adv.push('OSMU 쓰레드 '+oTh+'/'+oNv+' — '+(oNv-oTh)+'편 미게시(rate-limit 보류분 재시도 필요).');
+  if(oTh>oIn) adv.push('OSMU 인스타 '+oIn+'/'+oTh+' — 쓰레드 확산 대비 '+(oTh-oIn)+'편 미확산(카드뉴스 backlog).');
   if(collab&&collab.uncommitted>=10) adv.push('미커밋 '+collab.uncommitted+'파일 — 발행 완료 후 세션별 커밋 분리 권장.');
   const adviceHtml=adv.length?'<div class="advice">'+adv.map(t=>'<div class="ai"><span class="ic">💡</span><span>'+esc(t)+'</span></div>').join('')+'</div>':'<div class="pcode none">현재 조치 필요 항목 없음</div>';
   // 📋 미결 관리 — 글별(pending.json: DB osmu + index_status에서 계산)
@@ -188,7 +208,7 @@ async function load(){
   const pendRows=(pend&&pend.actionable||[]).map(a=>{
     const c=a.ch||{};
     return '<div class="prow"><span class="pcd">'+esc(a.code)+'</span><span class="ptt">'+esc(a.title)+'</span>'
-    +cb(c.g!==false,'G')+cb(c.n,'N')+cb(c.t,'T')+'</div>';
+    +cb(c.g!==false,'G')+cb(c.n,'N')+cb(c.t,'T')+cb((osmuByCode[a.code]||{}).instagram,'I')+'</div>';
   }).join('');
   // 표시는 상위 14편으로 잘려 있음(pending.py) → 남은 수는 counts로 계산해 "…외 N편"
   const pendListed=(pend&&pend.actionable||[]).length;
@@ -229,19 +249,20 @@ async function load(){
    +'<div class="div"></div>'
    +'<div class="sec">발행 진행 (글 1편 · '+STEPS.length+'단계, 확산 포함)<span class="auto">🤖 자동</span></div>'+pubHtml
    +'<div class="div"></div>'
-   +'<div class="sec">📡 3채널 발행 현황 (구글·네이버·쓰레드)<span class="auto">🤖 DB 자동집계</span></div>'
+   +'<div class="sec">📡 4채널 발행 현황 (구글·네이버·쓰레드·인스타)<span class="auto">🤖 DB 자동집계</span></div>'
    +'<div class="metrics">'
    +'<div class="m"><div class="l">구글(원본)</div><div class="v">'+count+' <small>편</small></div></div>'
    +'<div class="m"><div class="l">네이버</div><div class="v">'+oNv+' <small>편</small></div></div>'
    +'<div class="m"><div class="l">쓰레드</div><div class="v">'+oTh+' <small>편</small></div></div>'
+   +'<div class="m"><div class="l">인스타</div><div class="v">'+oIn+' <small>편</small></div></div>'
    +'</div>'
-   +'<div class="cnt">확산 커버리지 · 네이버 '+(count?Math.round(oNv/count*100):0)+'% · 쓰레드 '+(count?Math.round(oTh/count*100):0)+'% · 교차링크 완료 '+omAll.length+'편</div>'
+   +'<div class="cnt">확산 커버리지 · 네이버 '+(count?Math.round(oNv/count*100):0)+'% · 쓰레드 '+(count?Math.round(oTh/count*100):0)+'% · 인스타 '+(count?Math.round(oIn/count*100):0)+'% · 교차링크 완료 '+omAll.length+'편</div>'
    +osmuLi
    +'<div class="div"></div>'
    +'<div class="sec">🤝 협업 — 세션별 역할·진행<span class="auto">git 자동분류</span></div>'+collabHtml
    +'<div class="sec">💡 시스템 조언<span class="auto">라이브 도출</span></div>'+adviceHtml
    +'<div class="div"></div>'
-   +'<div class="sec">📋 미결 관리 — 3채널 매칭<span class="auto">G구글·N네이버·T쓰레드</span></div>'+pendHtml
+   +'<div class="sec">📋 미결 관리 — 4채널 매칭<span class="auto">G구글·N네이버·T쓰레드·I인스타</span></div>'+pendHtml
    +'<div class="sec">다음</div><div class="next">'+next+'</div>'
    +'<div class="upd" id="upd"></div>';
   tick();
