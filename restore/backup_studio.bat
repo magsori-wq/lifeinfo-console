@@ -59,8 +59,12 @@ mkdir "%DST%" 2>nul
 
 REM ---- 1) copy, excluding anything credential-shaped -----------
 REM /XF excludes files by pattern, /XD excludes directories.
-set XF=/XF client_secret*.json client_secrets*.json credentials*.json token*.json token*.pickle service_account*.json *.pem *.key *.p12 *.pfx .env
-set XD=/XD __pycache__ .venv venv .git node_modules
+REM Wildcards on BOTH sides. An earlier version used token*.json, which does
+REM NOT match studio\.secrets\blogger_token.json - real tokens got staged and
+REM were only caught by the human reading the file list. Directory exclusions
+REM matter just as much: .secrets\ is where they actually live.
+set XF=/XF *token*.json *token*.pickle *secret*.json *credential*.json *oauth*.json *service_account*.json *apikey*.json *.pem *.key *.p12 *.pfx .env
+set XD=/XD __pycache__ .venv venv .git node_modules .secrets secrets .credentials .keys
 
 echo [1/5] copying studio\ ...
 if exist "%SRC%\studio" robocopy "%SRC%\studio" "%DST%\studio" /E /R:1 /W:1 /NFL /NDL /NJH /NJS %XF% %XD% >nul
@@ -77,12 +81,17 @@ for %%F in (CLAUDE.md deploy.bat requirements.txt) do (
 REM ---- 2) .gitignore ------------------------------------------
 echo [2/5] writing .gitignore ...
 > "%DST%\.gitignore" echo # Blogger / Google API credentials - never commit
->> "%DST%\.gitignore" echo client_secret*.json
->> "%DST%\.gitignore" echo client_secrets*.json
->> "%DST%\.gitignore" echo credentials*.json
->> "%DST%\.gitignore" echo token*.json
->> "%DST%\.gitignore" echo token*.pickle
->> "%DST%\.gitignore" echo service_account*.json
+>> "%DST%\.gitignore" echo # Patterns are wildcarded on both sides: the real files are named
+>> "%DST%\.gitignore" echo # blogger_token.json / adsense_token.json, which token*.json misses.
+>> "%DST%\.gitignore" echo .secrets/
+>> "%DST%\.gitignore" echo secrets/
+>> "%DST%\.gitignore" echo .credentials/
+>> "%DST%\.gitignore" echo *token*.json
+>> "%DST%\.gitignore" echo *token*.pickle
+>> "%DST%\.gitignore" echo *secret*.json
+>> "%DST%\.gitignore" echo *credential*.json
+>> "%DST%\.gitignore" echo *oauth*.json
+>> "%DST%\.gitignore" echo *service_account*.json
 >> "%DST%\.gitignore" echo .env
 >> "%DST%\.gitignore" echo .env.*
 >> "%DST%\.gitignore" echo.
@@ -103,48 +112,55 @@ echo [2/5] writing .gitignore ...
 >> "%DST%\.gitignore" echo *.log
 
 REM ---- 3) credential scan (filenames + contents) ---------------
-REM Matches secret VALUES, not identifiers. Naming a variable refresh_token or
-REM reading os.environ["CLIENT_SECRET"] is correct practice and must not trip
-REM this - otherwise the guard blocks every run and the backup never happens.
-REM PowerShell is used because batch findstr regex cannot express these.
+REM The scan lives in scan_secrets.py, not inline here. An inline PowerShell
+REM version broke on batch caret/quote escaping, printed parser errors, and then
+REM still reported "clean - no credential patterns found" - a scan that never
+REM ran reporting success is the worst possible failure. A separate Python file
+REM has no escaping problem and can be tested directly.
+REM
+REM FAIL-CLOSED: any outcome other than a clean exit 0 stops the run. Missing
+REM Python, missing scanner, a crash - all abort. Never proceed on "unknown".
 echo [3/5] scanning for credentials ...
-set SCAN=%DST%\_credscan.txt
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
- "$pat = @(" ^
- "  '-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----'," ^
- "  '[0-9]{10,}-[a-z0-9]{20,}\.apps\.googleusercontent\.com'," ^
- "  'GOCSPX-[A-Za-z0-9_\-]{15,}'," ^
- "  '\"client_secret\"\s*:\s*\"[^\"]{10,}\"'," ^
- "  '\"refresh_token\"\s*:\s*\"[^\"]{20,}\"'," ^
- "  '\"private_key\"\s*:\s*\"-----BEGIN'" ^
- ") -join '|';" ^
- "Get-ChildItem -Path '%DST%' -Recurse -File -Include *.json,*.txt,*.py,*.bat,*.md,*.cfg,*.ini,*.yaml,*.yml,*.ps1 -ErrorAction SilentlyContinue |" ^
- " Select-String -Pattern $pat -List -ErrorAction SilentlyContinue |" ^
- " ForEach-Object { $_.Path } | Set-Content -Encoding ASCII '%SCAN%'"
 
-set HITS=0
-if exist "%SCAN%" (
-  for /f "usebackq delims=" %%F in ("%SCAN%") do (
-    echo    [SECRET] %%F
-    set /a HITS+=1
-  )
-  del "%SCAN%" >nul 2>&1
+if not exist "%~dp0scan_secrets.py" (
+  echo    fetching scan_secrets.py ...
+  powershell -NoProfile -Command "try{Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/magsori-wq/lifeinfo-console/main/restore/scan_secrets.py' -OutFile '%~dp0scan_secrets.py'}catch{exit 1}"
+)
+if not exist "%~dp0scan_secrets.py" (
+  echo [STOP] scan_secrets.py is missing and could not be downloaded.
+  echo        Nothing was committed. Put it next to this .bat and retry.
+  goto :end
 )
 
-if not "%HITS%"=="0" (
+where python >nul 2>&1
+if errorlevel 1 (
+  echo [STOP] python is not on PATH, so the credential scan cannot run.
+  echo        Refusing to continue - a backup without the scan risks
+  echo        committing tokens. Nothing was committed.
+  goto :end
+)
+
+python "%~dp0scan_secrets.py" "%DST%"
+set RC=%ERRORLEVEL%
+
+if "%RC%"=="1" (
   echo.
   echo ==========================================================
-  echo  STOPPED - %HITS% file^(s^) above look like they contain a
-  echo  credential. Nothing has been committed or pushed.
+  echo  STOPPED - credentials found. Nothing was committed.
   echo.
-  echo  Review each one. If a file legitimately needs to live in
-  echo  the repo, strip the secret out of it first and have the
-  echo  code read the value from an environment variable instead.
-  echo  Then delete %DST% and run this again.
+  echo  Delete the offending files from %DST%
+  echo  ^(the originals in C:\lifeinfo are untouched^), then run
+  echo     python "%~dp0scan_secrets.py" "%DST%"
+  echo  again until it reports clean, and re-run this script.
   echo ==========================================================
   goto :end
 )
-echo    clean - no credential patterns found.
+if not "%RC%"=="0" (
+  echo.
+  echo [STOP] the scan itself failed ^(exit %RC%^). Refusing to continue -
+  echo        an unverified folder is treated as unsafe. Nothing was committed.
+  goto :end
+)
 
 REM ---- 4) what is about to be committed ------------------------
 echo [4/5] contents to be committed:
