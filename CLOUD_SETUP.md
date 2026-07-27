@@ -74,9 +74,18 @@
 > `git reset --hard origin/main` 후 재배포로 해소. 이 폴더는 순수 파생물이라
 > 병합 없이 리셋해도 잃는 것이 없다.)
 
-**예외** — `deploy.bat` 의 robocopy 대상은 `webapp/*` · `thumbs/` · `logo` · `buttons` ·
-`videos` 뿐이다(deploy.bat 확인). 따라서 `tools/` · `.github/workflows/` · `restore/` ·
-`docs/` 는 console 에 직접 push 해도 충돌하지 않는다. 자동화 도구를 그렇게 넣었다.
+**부분 예외** — `deploy.bat` 의 robocopy 대상은 `webapp/*` · `thumbs/` · `logo` ·
+`buttons` · `videos` 뿐이다(deploy.bat 확인). 따라서 `tools/` · `.github/workflows/` ·
+`restore/` · `docs/` · 루트 `*.md` 는 **내용이 겹치지 않으므로 병합 충돌이 없다.**
+
+> ⚠️ 다만 **fast-forward 거부는 여전히 생긴다.** 내용이 안 겹쳐도 console `main` 이
+> 앞서 있으면 `C:\lifeinfo-deploy` 의 push 는 거부된다. 그래서 클라우드가 console 에
+> 무언가 push 했다면, 다음 배포 전에 한 줄이 필요하다:
+> ```
+> cd C:\lifeinfo-deploy && git pull origin main
+> ```
+> 내용 충돌이 없으니 이건 깨끗한 fast-forward 이고, `reset --hard` 까지 갈 일이 아니다.
+> (`webapp/*` 를 양쪽에서 만졌을 때만 reset 이 필요했다.)
 
 | 작업 | 클라우드 | PC |
 |---|---|---|
