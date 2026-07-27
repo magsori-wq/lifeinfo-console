@@ -8,8 +8,8 @@
 
 > **Windows 재설치·포맷·초기화를 하지 말아 주세요.**
 >
-> `C:\lifeinfo` 폴더에 백업이 없는 업무 데이터가 있습니다.
-> 이 폴더가 사라지면 복구할 수 없습니다.
+> `C:\lifeinfo` 폴더에 아직 백업하지 못한 최근 작업이 있습니다.
+> 이 폴더가 사라지면 그 부분은 복구할 수 없습니다.
 >
 > 재설치가 꼭 필요하다고 판단되시면 **작업 전에 반드시 연락 주세요.**
 > `C:\lifeinfo` 폴더 전체를 USB에 복사한 뒤에 진행하겠습니다.
@@ -50,6 +50,8 @@ bcdedit /deletevalue {default} safeboot
 
 - `C:\lifeinfo\studio\`
 - `C:\lifeinfo\posts\`
+
+(원격 저장소에도 백업이 있지만 며칠 뒤처져 있어, 최근 작업은 이 폴더에만 있습니다.)
 
 ### 요청 3 — 외부 모니터를 주 디스플레이로 설정
 
@@ -103,9 +105,16 @@ bcdedit /deletevalue {default} safeboot
 
 # 복구 직후 반드시 할 일
 
-1. **`studio\` 를 private GitHub 저장소에 백업.**
-   현재 `lifeinfo-console` 은 GitHub Pages 공개 저장소이므로 자격증명이 섞이면
-   유출됩니다. `studio\` 는 반드시 private 쪽으로.
+1. **미커밋 작업을 `lifeinfo-source`(private)에 push.**
+   `studio\` 는 이미 그 저장소에 백업돼 있고 `.gitignore` 가 토큰을 막고 있다.
+   문제는 백업이 **뒤처진다**는 것 — 사고 당시 미커밋 파일이 77개였다.
+   ```
+   cd C:\lifeinfo
+   git add -A
+   git commit -m "미커밋 작업 반영"
+   git push origin main
+   ```
+   작업을 마칠 때 push까지 확인하는 습관이 이번 사고의 실질적 대책이다.
 2. `C:\lifeinfo\CLAUDE.md` 에 아래 규칙 추가 — 같은 사고 재발 방지:
 
    > **디스플레이 안전 규칙**: 이 PC는 노트북 내장 패널이 고장나 **외부 모니터

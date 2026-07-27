@@ -3,11 +3,19 @@ REM ==============================================================
 REM  Back up studio/ to a PRIVATE repository - credential-safe by design
 REM  ASCII only (project rule for .bat files)
 REM
-REM  WHY THIS EXISTS
-REM    studio/ (the whole publish pipeline), posts/ and CLAUDE.md have never
-REM    been in any git repository. The 2026-07-26 lockout showed the cost:
-REM    the console, DB and thumbnails were all safe on GitHub while the tools
-REM    existed on exactly one machine.
+REM  SUPERSEDED - 2026-07-27. You probably do not need this.
+REM    It was written on a wrong premise: that studio/ existed on one machine
+REM    only. In fact the private repo magsori-wq/lifeinfo-source already holds
+REM    studio/, posts/, thumbs_naver/ and CLAUDE.md, with credentials already
+REM    excluded by its .gitignore. C:\lifeinfo is a clone of THAT repo.
+REM
+REM    The real gap was staleness, not absence - that backup lagged by four
+REM    days. The fix is a habit, not a script:
+REM        cd C:\lifeinfo && git add -A && git commit && git push
+REM
+REM    Kept only for a one-off export to a brand-new repository. For a
+REM    pre-commit credential check, use scan_secrets.py directly:
+REM        python scan_secrets.py C:\lifeinfo
 REM
 REM  WHY IT DOES NOT TOUCH C:\lifeinfo
 REM    C:\lifeinfo already participates in the lifeinfo-console git setup that

@@ -8,16 +8,32 @@
 
 ## 1. 무엇이 문제였나
 
+> ### ⚠️ 2026-07-27 정정
+>
+> 이 문서는 처음에 **"`studio/` 는 어떤 저장소에도 없다"** 는 전제로 쓰였다. **틀렸다.**
+> private 저장소 **`magsori-wq/lifeinfo-source`** 가 이미 존재하고, `studio/`(131개) ·
+> `posts/`(108개) · `thumbs_naver/` · `webapp/` · `CLAUDE.md` 전체를 담고 있다.
+> 자격증명 위생도 이미 갖춰져 있었다 — `.gitignore` 에 `studio/.secrets/`,
+> `*_token.json`, `*_client.json` 이 진작 들어 있고 커밋된 비밀은 없다.
+>
+> 오판의 원인: `lifeinfo-console` 의 git 이력만 확인하고 "추적된 적 없음" 을
+> **"백업이 없음"** 으로 넘겨짚었다. 실제 구조는 2단이다 —
+> `lifeinfo-source`(private, 전체) → `deploy.bat` → `lifeinfo-console`(public, 배포 subset).
+
 | 항목 | 사고 당시 상태 |
 |---|---|
 | 콘솔·DB·썸네일 | ✅ 공개 저장소에 백업 (07-26 06:00까지 무손실) |
-| `studio/` 발행 파이프라인 | ❌ **PC에만 존재. 백업 없음** |
-| `posts/` .lsg 원본 108개 | ❌ PC에만 존재 (단 발행본에서 회수 가능) |
-| `deploy.bat`, `CLAUDE.md` | ❌ PC에만 존재 |
-| Blogger API 자격증명 | ❌ PC에만 존재 (재발급 필요) |
+| `studio/` · `posts/` · `CLAUDE.md` | ✅ **`lifeinfo-source`(private)에 백업됨** |
+| 단, 그 백업의 최신 커밋 | ⚠️ **2026-07-23 17:51 — 4일치 누락** |
+| Blogger API 자격증명 | ❌ PC에만 존재 (의도된 설계 — 재발급으로 복구) |
 | **작업 가능한 장소** | ❌ **그 PC 앞뿐** |
 
-마지막 항목이 핵심이다. 데이터가 살아 있어도 **작업할 곳이 없으면 운영은 멈춘다.**
+**진짜 위험은 "백업이 없다" 가 아니라 "백업이 뒤처진다" 였다.** 사고 시점에
+`collab.json` 은 `uncommitted: 77` 이었고, 실제로 `lifeinfo-source` 에는 최근 발행
+3편의 원고, 대기 글 원고, 썸네일 126~131 이 빠져 있었다.
+
+그리고 마지막 항목은 그대로 유효하다 — 데이터가 살아 있어도 **작업할 곳이 없으면
+운영은 멈춘다.** 이것이 클라우드 환경을 만드는 이유다.
 
 ---
 
@@ -108,23 +124,28 @@ Blogger API 발행도 같은 제약을 받을 가능성이 크다 → **Phase 2 
 - [x] 프록시 제약 실측 및 문서화
 - [x] 이 계획 문서
 
-### Phase 1 — 완료 (2026-07-27)
+### Phase 1 — 이미 되어 있었음 (정정)
 
-- [x] `lifeinfo-studio` **private** 저장소 생성
-- [x] `studio/`, `posts/`, `references/`, `thumbs_naver/`, `CLAUDE.md` 이관
-      (`restore/backup_studio.bat` + `restore/scan_secrets.py`)
-- [x] 자격증명 차단 확인 — 스캔 "깨끗함" 후 사람이 파일 목록 검토하고 push
+- [x] private 저장소 — **`lifeinfo-source`** 가 이 세션 전부터 존재
+- [x] `studio/`, `posts/`, `thumbs_naver/`, `CLAUDE.md` 이관 완료
+- [x] 자격증명 차단 — `.gitignore` 에 이미 반영, 커밋된 비밀 없음(스캔 확인)
+- [ ] **`lifeinfo-source` 를 최신화** ← 실제로 남은 일. 로컬 미커밋 ~77개를 push
 - [ ] `CLAUDE.md` 에 디스플레이 안전 규칙 추가 (아래 §5)
 
-> **1차 실행에서 실제로 토큰이 새어나갔다.** `studio/.secrets/` 의 OAuth 토큰 4개가
-> 커밋 목록에 올랐고, 사람이 목록을 읽고 중단시켜 막았다. 원인은 두 가지였다 —
-> 제외 패턴이 `token*.json` 으로 앞을 고정해 `blogger_token.json` 을 놓쳤고,
-> 인라인 PowerShell 스캔이 이스케이프 오류로 실행되지 않았는데도 "clean" 을
-> 출력했다. **검사가 돌지 않고 통과를 보고하는 것이 가장 위험한 실패 방식이다.**
-> 지금은 스캔이 별도 파이썬 파일로 분리되고 호출부가 fail-closed 다.
+새 저장소를 만들 필요가 없었다. `restore/backup_studio.bat` 은 이 오판 위에서 만든
+것이므로 **일상 운영에는 쓰지 않는다** — 필요한 것은 스크립트가 아니라
+`cd C:\lifeinfo && git add -A && git commit && git push` 습관이다.
+
+> 그 스크립트를 만드는 과정에서 자격증명 게이트의 실패 방식 두 가지를 실측으로
+> 배웠고, 그건 남길 가치가 있다. `restore/scan_secrets.py` 는 어느 폴더에든 쓸 수
+> 있으므로 커밋 전 점검용으로 계속 유효하다.
 >
-> 교훈: 자동 게이트가 통과했다고 해서 사람 검토를 생략하면 안 된다.
-> `[4/5]` 의 파일 목록 확인 단계가 실제로 사고를 막았다.
+> **1차 실행에서 실제로 토큰이 스테이징됐다.** `studio/.secrets/` 의 OAuth 토큰
+> 4개가 목록에 올랐고 사람이 읽고 중단시켰다. 원인은 ① 제외 패턴을
+> `token*.json` 으로 앞을 고정해 `blogger_token.json` 을 놓친 것 ② 인라인
+> PowerShell 스캔이 이스케이프 오류로 실행되지 않았는데 "clean" 을 출력한 것.
+> **검사가 돌지 않고 통과를 보고하는 것이 가장 위험한 실패 방식이다.**
+> 자동 게이트가 통과했다고 사람 검토를 생략하면 안 된다는 근거가 됐다.
 
 ### Phase 2 — 클라우드 발행 검증
 
