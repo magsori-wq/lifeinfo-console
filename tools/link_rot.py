@@ -188,8 +188,10 @@ def verdict(code):
         return "error"
     if code in (404, 410):
         return "dead"          # 확실히 사라진 페이지
-    if code in (401, 403, 429):
-        return "blocked"       # 봇 차단일 가능성이 높다 — 오탐 위험이라 실패로 안 침
+    if code in (401, 403, 406, 429):
+        # 봇 차단일 가능성이 높다 — 오탐 위험이라 실패로 안 침.
+        # 406 은 실측(kamis.or.kr)에서 나왔다: 콘텐츠 협상 거부 = 사실상 봇 차단.
+        return "blocked"
     if 500 <= code < 600:
         return "server"        # 서버 일시 장애일 수 있다
     if 200 <= code < 400:
@@ -343,11 +345,25 @@ def main():
     #    낼 수 없고, 그 목록을 믿고 지우면 살아 있는 글의 이미지가 깨진다.
     used_assets = sorted({u for u in refs if classify(u) == "asset"})
     thumb_names = {os.path.basename(urllib.parse.urlparse(u).path) for u in used_assets}
-    complete = (not args.limit) and len(entries) >= total
+    # 전수 판정의 3개 조건. 셋 중 하나라도 어긋나면 '안 쓰인다' 는 결론을 낼 수 없다.
+    #   ① 글을 다 봤는가(--limit 없음)  ② 피드를 다 받았는가  ③ asset 링크를 수집했는가
+    # ③ 이 실측 사고를 냈다(2026-07-27): --only official 로 돌리면 이미지 링크를 아예
+    # 모으지 않아 thumb_names 가 0개가 되고, 그 상태로 "저장소 썸네일 154개는 삭제해도
+    # 안전" 이라고 보고했다. 그대로 지웠으면 발행된 전 글의 이미지가 깨졌다.
+    scope = args.only or ["official", "external", "internal", "asset"]
+    saw_assets = "asset" in scope
+    complete = (not args.limit) and len(entries) >= total and saw_assets
     never = []
     print()
     print("본문이 실제로 참조하는 썸네일 %d개" % len(thumb_names))
-    if not complete:
+    if not saw_assets:
+        print("  ⚠️ 이번 실행은 이미지(asset) 링크를 검사 범위에서 제외했다(--only %s)."
+              % " ".join(scope))
+        print("     따라서 미참조 썸네일 판정을 생략한다 — 수집하지 않은 것을")
+        print("     '안 쓰인다' 로 단정하면 살아 있는 이미지를 전부 지우게 된다.")
+        print("     썸네일 정리 판단은 asset 을 포함해 전수로 돌려야 한다:")
+        print("       python tools/link_rot.py            (범위 지정 없이 전체)")
+    elif not complete:
         print("  ⚠️ 전수 검사가 아니므로(글 %d/%d편) 미참조 썸네일 판정은 생략한다." %
               (len(entries), total))
         print("     일부만 보고 '안 쓰인다'고 단정하면 살아 있는 이미지를 지우게 된다.")
@@ -379,7 +395,8 @@ def main():
         "checked_posts": len(entries), "unique_links": len(urls),
         "ok": ok, "dead": dead, "moved": moved, "blocked": blocked,
         "server": server, "ssl": ssl_bad, "errors": errs,
-        "scope": args.only or ["official", "external", "internal", "asset"],
+        "scope": scope,
+        "asset_in_scope": saw_assets,   # false 면 unreferenced_thumbs 를 신뢰하지 말 것
         "referenced_thumbs": sorted(thumb_names),
         "unreferenced_thumbs": never,
         "full_scan": complete,   # false 면 unreferenced_thumbs 를 신뢰하지 말 것
