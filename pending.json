@@ -1,18 +1,34 @@
 {
  "rev": "2174fba",
  "counts": {
-  "total": 155,
+  "total": 156,
   "osmu_done": 152,
-  "osmu_pending": 3,
+  "osmu_pending": 4,
   "indexed": 7,
-  "index_pending": 148,
+  "index_pending": 149,
   "index_requested": 143,
-  "index_todo": 5
+  "index_todo": 6
  },
  "actionable": [
   {
    "code": "A3-07",
    "title": "국민연금 임의계속가입 조건 보험료 신청 방법 손익 총정",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "B3-04",
+   "title": "퇴직연금 IRP 연금 수령 방법 연금소득세 일시금 세금",
    "need": [
     "OSMU",
     "색인요청"
@@ -197,21 +213,6 @@
   {
    "code": "A1-09",
    "title": "국가장학금 2학기 신청 1차 마감(6/22) 놓쳤다면?",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-10",
-   "title": "한부모가족 지원 아동양육비 신청 방법 소득기준 지원 대",
    "need": [
     "색인대기"
    ],
