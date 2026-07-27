@@ -163,26 +163,48 @@ if not "%RC%"=="0" (
 )
 
 REM ---- 4) what is about to be committed ------------------------
+REM Nothing is STAGED before the confirmation. An earlier version ran
+REM `git add -A` here, so aborting at the prompt left a .git whose index still
+REM held the files - including, on the first real run, four OAuth tokens. They
+REM were never committed, but `git ls-files` still listed them, and any later
+REM commit from that folder would have picked them up. A dry run previews the
+REM same list without touching the index.
 echo [4/5] contents to be committed:
 pushd "%DST%"
 git init -q
-git add -A
 echo.
-git -c core.quotepath=off status --short
+git -c core.quotepath=off add -A --dry-run
 echo.
-for /f %%C in ('git diff --cached --name-only ^| find /c /v ""') do echo    total %%C files
+for /f %%C in ('git add -A --dry-run ^| find /c /v ""') do echo    total %%C files
 echo.
-echo Review the list above. Nothing has been pushed yet.
+echo Review the list above. Nothing is staged and nothing has been pushed yet.
 set /p OK=Type YES to commit and push:
 if /i not "%OK%"=="YES" (
-  echo Aborted. %DST% is left in place for inspection.
+  echo.
+  echo Aborted - nothing was staged, committed or pushed.
+  echo Delete the staging folder before retrying:
+  echo    rmdir /s /q "%DST%"
   popd
   goto :end
 )
 
-REM ---- 5) commit and push -------------------------------------
-echo [5/5] committing and pushing ...
+REM ---- 5) stage, commit and push -------------------------------
+REM Staging happens HERE, only after the confirmation - step 4 previewed with
+REM a dry run and left the index untouched on purpose.
+echo [5/5] staging, committing and pushing ...
+git add -A
+if errorlevel 1 (
+  echo [STOP] git add failed. Nothing was committed.
+  popd
+  goto :end
+)
 git -c user.useConfigOnly=false commit -q -m "initial backup of studio pipeline, posts and harness rules"
+if errorlevel 1 (
+  echo [STOP] commit failed - nothing to commit, or git identity is unset.
+  echo        Set it with: git config --global user.email you@example.com
+  popd
+  goto :end
+)
 git branch -M main
 git remote add origin "%REPO%"
 git push -u origin main
