@@ -5,7 +5,14 @@ name: 공식 링크 부패 검사
 # YMYL 주제라 애드센스 심사에도 불리하다.
 #
 # 링크는 저장소가 아니라 Blogger 본문에 있으므로 피드에서 본문을 받아 검사한다.
-# Claude Code 웹 컨테이너는 프록시가 blogspot 을 막지만 Actions 러너는 막히지 않는다.
+#
+# ⚠️ 이 워크플로는 공식(.go.kr) 링크를 검사하지 않는다 — 일부러다.
+#    2026-07-27 첫 실행(전체 800링크, 11분 39초) 결과: 공식 링크 139개가 타임아웃했고
+#    bokjiro·hometax·busanjin·easylaw 등 **실제로 살아 있는 사이트**였다. Actions 러너가
+#    미국에 있어 한국 정부 사이트가 해외 IP를 막거나 극도로 느린 탓이다.
+#    노이즈 139건에 진짜 죽은 링크 2건이 묻히면 리포트를 아무도 안 본다.
+#    → 공식 링크는 한국 IP(사용자 PC)에서: python tools/link_rot.py --only official
+#    실제로 이번에 찾은 죽은 링크 2건은 둘 다 external 이었으므로 여기서도 잡힌다.
 
 on:
   schedule:
@@ -18,6 +25,8 @@ on:
         description: '검사할 글 수 (0 = 전체). 부분 검사면 미참조 썸네일 판정은 생략된다'
         required: false
         default: '0'
+
+# 전체 800링크 중 공식을 빼면 훨씬 빨라진다(첫 실행 11분 39초 → 공식 제외분 감소).
 
 permissions:
   contents: read
@@ -41,7 +50,9 @@ jobs:
       - name: 링크 검사
         run: |
           set +e
-          python tools/link_rot.py --limit "${{ inputs.limit || 0 }}" --json-out link_rot.json
+          python tools/link_rot.py --limit "${{ inputs.limit || 0 }}" \
+            --only external --only internal --only asset \
+            --json-out link_rot.json
           rc=$?
           set -e
           case "$rc" in
