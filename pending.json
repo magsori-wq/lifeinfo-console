@@ -1,15 +1,31 @@
 {
- "rev": "c066129",
+ "rev": "2174fba",
  "counts": {
-  "total": 153,
+  "total": 154,
   "osmu_done": 152,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 7,
-  "index_pending": 146,
+  "index_pending": 147,
   "index_requested": 143,
-  "index_todo": 3
+  "index_todo": 4
  },
  "actionable": [
+  {
+   "code": "A3-07",
+   "title": "국민연금 임의계속가입 조건 보험료 신청 방법 손익 총정",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "C2-07",
    "title": "국가암검진 대상 무료 검진 항목 6대암 주기 총정리 (",
@@ -195,21 +211,6 @@
   {
    "code": "A2-02",
    "title": "에너지바우처 신청 자격 금액 사용기간 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-03",
-   "title": "기초생활수급자 생계급여 조건 소득인정액 금액 신청 방법",
    "need": [
     "색인대기"
    ],
