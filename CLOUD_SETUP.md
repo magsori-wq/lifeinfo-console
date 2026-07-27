@@ -108,13 +108,23 @@ Blogger API 발행도 같은 제약을 받을 가능성이 크다 → **Phase 2 
 - [x] 프록시 제약 실측 및 문서화
 - [x] 이 계획 문서
 
-### Phase 1 — PC 복귀 직후 (가장 급함)
+### Phase 1 — 완료 (2026-07-27)
 
-- [ ] `lifeinfo-studio` **private** 저장소 생성
-- [ ] `studio/`, `posts/`, `references/`, `CLAUDE.md` 를 그 저장소로 이관
-      → **이것만 끝나도 이번 사고의 재발 위험은 대부분 사라진다**
-- [ ] 자격증명이 커밋되지 않았는지 확인 (`git log -p` 로 이력 점검)
+- [x] `lifeinfo-studio` **private** 저장소 생성
+- [x] `studio/`, `posts/`, `references/`, `thumbs_naver/`, `CLAUDE.md` 이관
+      (`restore/backup_studio.bat` + `restore/scan_secrets.py`)
+- [x] 자격증명 차단 확인 — 스캔 "깨끗함" 후 사람이 파일 목록 검토하고 push
 - [ ] `CLAUDE.md` 에 디스플레이 안전 규칙 추가 (아래 §5)
+
+> **1차 실행에서 실제로 토큰이 새어나갔다.** `studio/.secrets/` 의 OAuth 토큰 4개가
+> 커밋 목록에 올랐고, 사람이 목록을 읽고 중단시켜 막았다. 원인은 두 가지였다 —
+> 제외 패턴이 `token*.json` 으로 앞을 고정해 `blogger_token.json` 을 놓쳤고,
+> 인라인 PowerShell 스캔이 이스케이프 오류로 실행되지 않았는데도 "clean" 을
+> 출력했다. **검사가 돌지 않고 통과를 보고하는 것이 가장 위험한 실패 방식이다.**
+> 지금은 스캔이 별도 파이썬 파일로 분리되고 호출부가 fail-closed 다.
+>
+> 교훈: 자동 게이트가 통과했다고 해서 사람 검토를 생략하면 안 된다.
+> `[4/5]` 의 파일 목록 확인 단계가 실제로 사고를 막았다.
 
 ### Phase 2 — 클라우드 발행 검증
 
