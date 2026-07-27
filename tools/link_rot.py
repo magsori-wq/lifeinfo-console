@@ -37,7 +37,10 @@ import html
 import json
 import os
 import re
+import ssl
 import sys
+import threading
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -112,6 +115,60 @@ def classify(url):
     return "external"
 
 
+# ------------------------------------------------------------------ 요청 예절·TLS
+# 같은 호스트로 가는 요청 사이에 두는 최소 간격(초).
+# 실측(2026-07-27): 워커 8개가 한 호스트를 몰아쳐 blog.naver.com 의 우리 OSMU 링크
+# 72건이 429, 우리 블로그 내부링크 5건이 503 으로 떨어졌다. 전부 살아 있는 링크였다.
+# 네이버만 특수처리하지 않고 호스트 공통으로 간격을 두면 두 증상이 함께 사라진다.
+HOST_GAP = 1.5
+_host_locks = {}
+_host_last = {}
+_host_guard = threading.Lock()
+
+
+def host_wait(host):
+    """같은 호스트로 가는 요청을 직렬화하고 최소 간격을 둔다."""
+    if not host:
+        return
+    with _host_guard:
+        lock = _host_locks.setdefault(host, threading.Lock())
+    lock.acquire()
+    try:
+        gap = HOST_GAP - (time.monotonic() - _host_last.get(host, 0.0))
+        if gap > 0:
+            time.sleep(gap)
+    finally:
+        _host_last[host] = time.monotonic()
+        lock.release()
+
+
+_legacy_ctx = None
+
+
+def legacy_ctx():
+    """구형 TLS 서버용 완화 컨텍스트. SSL 오류가 났을 때의 재시도에만 쓴다.
+
+    국내 공공 사이트는 DH 키가 짧거나(DH_KEY_TOO_SMALL) 레거시 재협상만 지원하거나
+    (UNSAFE_LEGACY_RENEGOTIATION_DISABLED) 중간 인증서가 빠진 경우가 흔하다. 브라우저는
+    열리는데 파이썬만 거부해 'SSL 실패' 로 쌓이고, 그러면 그 링크의 실제 상태코드를
+    영영 알 수 없다. 여기서 하는 일은 페이지 생존 확인뿐이고 받은 내용을 신뢰해 쓰지
+    않으므로 검증 완화가 허용된다. 기본 경로는 그대로 엄격하게 둔다.
+    """
+    global _legacy_ctx
+    if _legacy_ctx is None:
+        c = ssl.create_default_context()
+        try:
+            c.set_ciphers("DEFAULT:@SECLEVEL=1")
+        except ssl.SSLError:
+            pass
+        # OP_LEGACY_SERVER_CONNECT 상수는 파이썬 3.12+ 에만 있다(러너는 3.11)
+        c.options |= getattr(ssl, "OP_LEGACY_SERVER_CONNECT", 0x4)
+        c.check_hostname = False
+        c.verify_mode = ssl.CERT_NONE
+        _legacy_ctx = c
+    return _legacy_ctx
+
+
 # ------------------------------------------------------------------ 검사
 def encode_url(u):
     """URL 의 비ASCII 문자를 퍼센트 인코딩한다.
@@ -139,39 +196,61 @@ def encode_url(u):
 
 
 def probe(url, timeout=20):
-    """(분류, 상태코드, 최종URL, 메모) 반환. HEAD 를 먼저 쓰고 막히면 GET 으로 재시도."""
+    """(분류, 상태코드, 최종URL, 메모) 반환. HEAD 로 먼저 보고 GET 으로 반드시 재확인."""
+    original = url
     url = encode_url(url)
+    host = (urllib.parse.urlparse(url).hostname or "").lower()
+    note = {"v": ""}
 
-    def request(method):
+    def raw(method, ctx):
+        host_wait(host)
         req = urllib.request.Request(url, method=method, headers={
             "User-Agent": UA,
             "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
             "Accept-Language": "ko-KR,ko;q=0.9",
         })
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as r:
             return r.getcode(), r.geturl()
+
+    def request(method):
+        try:
+            return raw(method, None)
+        except urllib.error.HTTPError:
+            raise                       # 상태코드가 왔다 = TLS 문제가 아니다
+        except Exception as e:
+            if classify_error(e) != "ssl":
+                raise
+            code, final = raw(method, legacy_ctx())
+            note["v"] = "구형 TLS 로만 접속됨"
+            return code, final
 
     try:
         code, final = request("HEAD")
     except urllib.error.HTTPError as e:
-        # HEAD 를 거부하는 서버가 많다 — GET 으로 다시 본다
-        if e.code in (403, 405, 400, 501, 500):
+        # 🔴 HEAD 응답은 믿을 수 없다. 실측(2026-07-27): law.go.kr·nid.or.kr·newspim 은
+        #    HEAD 에 404 를 주면서 GET 에는 200 을 준다. 예전엔 404 를 GET 재확인 없이
+        #    '죽음' 으로 확정해 첫 리포트의 죽은링크 6건 중 4건이 오탐이었다.
+        #    그래서 레이트리밋(429)만 빼고 어떤 상태코드든 GET 으로 다시 본다.
+        if e.code != 429:
             try:
                 code, final = request("GET")
             except urllib.error.HTTPError as e2:
-                return verdict(e2.code), e2.code, url, ""
+                return verdict(e2.code), e2.code, original, note["v"]
             except Exception as e2:
-                return classify_error(e2), None, url, type(e2).__name__
+                return classify_error(e2), None, original, type(e2).__name__
         else:
-            return verdict(e.code), e.code, url, ""
+            return verdict(e.code), e.code, original, note["v"]
     except Exception as e:
         try:
             code, final = request("GET")
         except urllib.error.HTTPError as e2:
-            return verdict(e2.code), e2.code, url, ""
+            return verdict(e2.code), e2.code, original, note["v"]
         except Exception as e2:
-            return classify_error(e2), None, url, "%s: %s" % (type(e2).__name__, e2)
-    return verdict(code), code, final, ""
+            return classify_error(e2), None, original, "%s: %s" % (type(e2).__name__, e2)
+    # 퍼센트 인코딩만 달라진 것을 '이전된 링크' 로 오해하지 않도록 원래 주소로 되돌린다
+    if final and final.rstrip("/") == url.rstrip("/"):
+        final = original
+    return verdict(code), code, final, note["v"]
 
 
 def classify_error(e):
