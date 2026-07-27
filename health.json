@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-07-27T13:03:50",
+ "checked_at": "2026-07-27T13:07:45",
  "light": "yellow",
- "pass": 11,
- "warn": 12,
+ "pass": 10,
+ "warn": 13,
  "fail": 0,
  "checks": [
   {
@@ -32,10 +32,6 @@
   {
    "level": "PASS",
    "msg": "OSMU 교차링크 연계 통과: 152개 코드 모두 DB.osmu 일치"
-  },
-  {
-   "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 153편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -96,6 +92,10 @@
   {
    "level": "WARN",
    "msg": "중분류 F4(국내 숙박·레저) 8편 → 6~7편 초과, 분가 검토(규칙 §5)"
+  },
+  {
+   "level": "WARN",
+   "msg": "매니페스트 신선도: 제목·URL·썸네일 불일치 3건 → 'python -m studio.pipeline manifest' 재생성 권장"
   }
  ]
 }
