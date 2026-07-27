@@ -1,141 +1,43 @@
 {
- "rev": "2174fba",
+ "rev": "0367d0f",
  "counts": {
-  "total": 160,
-  "osmu_done": 152,
-  "osmu_pending": 8,
+  "total": 161,
+  "osmu_done": 161,
+  "osmu_pending": 0,
   "indexed": 7,
-  "index_pending": 153,
+  "index_pending": 154,
   "index_requested": 143,
-  "index_todo": 10
+  "index_todo": 11
  },
  "actionable": [
   {
    "code": "A3-07",
    "title": "국민연금 임의계속가입 조건 보험료 신청 방법 손익 총정",
    "need": [
-    "OSMU",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false
+    "n": true,
+    "t": true
    }
   },
   {
    "code": "A3-08",
    "title": "국민연금 분할연금 신청 방법 자격 이혼 배우자 수령액 ",
    "need": [
-    "OSMU",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "B3-04",
-   "title": "퇴직연금 IRP 연금 수령 방법 연금소득세 일시금 세금",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "C2-07",
-   "title": "국가암검진 대상 무료 검진 항목 6대암 주기 총정리 (",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "D1-04",
-   "title": "상속포기 한정승인 차이 신청 방법 기간 서류 총정리 (",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "F1-08",
-   "title": "보조배터리 기내 반입 규정 총정리 — 1인 2개 제한·",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "F2-11",
-   "title": "국내선 LCC 수하물 규정 총정리 — 무료 위탁·기내 ",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
-  {
-   "code": "F4-09",
-   "title": "국립공원 대피소 예약 방법 총정리 — 추첨제 신청 일정",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
+    "n": true,
+    "t": true
    }
   },
   {
@@ -155,8 +57,113 @@
    }
   },
   {
+   "code": "B3-04",
+   "title": "퇴직연금 IRP 연금 수령 방법 연금소득세 일시금 세금",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "C2-07",
+   "title": "국가암검진 대상 무료 검진 항목 6대암 주기 총정리 (",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "D1-04",
+   "title": "상속포기 한정승인 차이 신청 방법 기간 서류 총정리 (",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "E1-02",
+   "title": "어르신 휴대폰 요금감면 신청 방법 대상 감면액 총정리 ",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
    "code": "F1-07",
    "title": "미국 ESTA 신청 방법 수수료 유효기간 승인 거부 사",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "F1-08",
+   "title": "보조배터리 기내 반입 규정 총정리 — 1인 2개 제한·",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "F2-11",
+   "title": "국내선 LCC 수하물 규정 총정리 — 무료 위탁·기내 ",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "F4-09",
+   "title": "국립공원 대피소 예약 방법 총정리 — 추첨제 신청 일정",
    "need": [
     "색인요청"
    ],
@@ -202,21 +209,6 @@
   {
    "code": "A1-04",
    "title": "청년월세지원 신청 자격 금액 신청방법 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-05",
-   "title": "청년미래적금 가입조건 정부기여금 신청 방법 총정리 (2",
    "need": [
     "색인대기"
    ],
