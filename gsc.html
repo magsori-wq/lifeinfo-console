@@ -45,6 +45,14 @@
   .ck{width:19px;height:19px;accent-color:#06d6a0;cursor:pointer}
   .rec{font-size:10px;font-weight:700;padding:1px 6px;border-radius:10px;background:#123047;color:#7fc1ff;border:1px solid #1f5a7f;white-space:nowrap;margin-left:4px}
   .foot{color:#6b7790;font-size:11px;margin-top:12px;line-height:1.7}
+  .tabs{display:flex;gap:8px;margin:0 0 12px;border-bottom:1px solid #2a3a5e;padding-bottom:0}
+  .tb{background:none;border:0;border-bottom:3px solid transparent;color:#9fb0d0;font-size:14px;font-weight:700;padding:8px 14px;cursor:pointer;font-family:inherit}
+  .tb.on{color:#7fc1ff;border-bottom-color:#4d9de0}
+  .hide{display:none}
+  .dtxt{font-size:11.5px;color:#8ef0cf;background:#0c2a22;border:1px solid #1f5a48;border-radius:7px;padding:5px 8px;margin-top:4px;line-height:1.55;max-width:520px}
+  .dtxt.stale{color:#ffd166;background:#33290e;border-color:#5a4a1a}
+  .act.cp{background:#0c3a2c;color:#8ef0cf;border:1px solid #1f6b52}
+  .act.ed{background:#16203a;color:#cdd8ee;border:1px solid #2a3a5e;margin-left:4px}
   #tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:#26314f;color:#9fb0d0;border:1px solid #3a4a6e}
 </style>
 </head>
@@ -53,6 +61,12 @@
   <h1>🔍 색인 관리 <span id="tag">로딩…</span></h1>
   <p class="sub">전체 글의 색인 상태 확인 + GSC URL 검사 바로가기 + 색인요청 완료 체크(브라우저 저장). 체크 상태는 이 기기 브라우저에 저장됩니다.</p>
 
+  <div class="tabs">
+    <button class="tb on" data-v="idx">🔍 색인요청</button>
+    <button class="tb" data-v="desc">📝 검색설명</button>
+  </div>
+
+<div id="viewIdx">
   <div class="cards">
     <div class="card"><div class="k">전체 글</div><div class="v" id="cTot">–</div></div>
     <div class="card"><div class="k">색인됨</div><div class="v" id="cIdx" style="color:#06d6a0">–</div></div>
@@ -111,6 +125,57 @@
     ※ GSC 검사 링크는 <b>URL 접두어 속성</b>(https://lifeinfo8975.blogspot.com/) 기준입니다. 속성이 다르면 상단 <code>RESOURCE</code> 값을 수정하세요.<br>
     ※ 색인 ‘요청’ 자체는 구글 서치콘솔에서만 가능(자동화 불가). 이 페이지는 요청 <b>진행 관리용</b>이며 체크는 브라우저(localStorage)에 저장됩니다.
   </p>
+</div><!-- /viewIdx -->
+
+<div id="viewDesc" class="hide">
+  <div class="cards">
+    <div class="card"><div class="k">전체 글</div><div class="v" id="dTot">–</div></div>
+    <div class="card"><div class="k">설명 있음</div><div class="v" id="dOk" style="color:#06d6a0">–</div></div>
+    <div class="card"><div class="k">문구 준비됨(붙일 것)</div><div class="v" id="dPend" style="color:#ffd166">–</div></div>
+    <div class="card"><div class="k">문구 없음</div><div class="v" id="dNone" style="color:#9fb0d0">–</div></div>
+    <div class="bar"><i id="dBar"></i></div>
+  </div>
+
+  <div class="note">
+    <b>📝 검색 설명 입력 방법</b>
+    <div style="background:#0c3a2c;border:1px solid #1f6b52;color:#8ef0cf;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:12px">
+      <b>왜 넣나</b> — 문구 <b>1개가 태그 2개</b>를 채웁니다(2026-07-28 실측): 검색결과 스니펫 <code>meta description</code> + <b>카톡·쓰레드 링크 공유 미리보기</b> <code>og:description</code>.
+      안 넣으면 og 가 <b>161편 전부 같은 블로그 공통문구</b>로 뜹니다.
+    </div>
+    <ol style="margin:8px 0 4px;padding-left:20px;line-height:1.9">
+      <li><b>[문구 복사]</b> 클릭 → 클립보드에 들어갑니다.</li>
+      <li><b>[편집화면↗]</b> 클릭 → 그 글 편집기가 <b>바로</b> 열립니다(글 목록에서 찾을 필요 없음).</li>
+      <li>오른쪽 <b>글 설정 → 검색 설명</b> 펼치기 → 입력칸에 <b>Ctrl+V</b>.</li>
+      <li>오른쪽 위 <b>[업데이트]</b> 클릭 ← <b>이걸 눌러야 저장됩니다.</b></li>
+      <li>반영 확인은 <code>python -m studio.seodesc scan</code> → deploy. <b>체크박스는 없습니다</b> — 라이브를 실제로 긁어서 판정합니다.</li>
+    </ol>
+    <span style="color:#8a97ab">※ Blogger API 는 검색 설명을 <b>읽지도 쓰지도 못합니다</b>(2026-07-28 실측). 그래서 이 작업만은 자동 발행 경로로 안 되고, 편집화면에서 넣어야 합니다. 입력 상한 <b>150자</b>, 권장 70~120자.</span>
+  </div>
+
+  <div class="toolbar">
+    <input type="search" id="dq" placeholder="제목·코드 검색">
+    <button class="fbtn on" data-df="all">전체</button>
+    <button class="fbtn" data-df="pend">📋 문구 준비됨</button>
+    <button class="fbtn" data-df="nodesc">설명 없음</button>
+    <button class="fbtn" data-df="notext">문구 없음</button>
+    <button class="fbtn" data-df="idx">색인된 글</button>
+    <button class="fbtn" data-df="ok">완료</button>
+  </div>
+  <p id="dNote" style="font-size:11.5px;color:#7fc1ff;margin:-4px 0 10px"></p>
+
+  <table>
+    <thead><tr>
+      <th style="width:58px">코드</th><th>제목 / 준비된 문구</th>
+      <th style="width:96px">색인</th><th style="width:104px">설명상태</th><th style="width:172px">작업</th>
+    </tr></thead>
+    <tbody id="drows"><tr><td colspan="5" style="padding:20px;color:#6b7790">불러오는 중…</td></tr></tbody>
+  </table>
+
+  <p class="foot">
+    ※ 문구는 <code>webapp/seo_desc.json</code>(계획), 라이브 실측은 <code>webapp/seo_desc_status.json</code>(현실)에 있습니다. 색인 관리가 <code>index_status.json</code>을 쓰는 것과 같은 구조입니다.<br>
+    ※ <b>제목이 바뀐 글</b>은 설명이 낡은 것이므로 🔴로 표시됩니다(<code>title_at_write</code> 대조).
+  </p>
+</div><!-- /viewDesc -->
 
 <script>
   var RESOURCE='https://lifeinfo8975.blogspot.com/';   // GSC URL 접두어 속성
@@ -118,6 +183,7 @@
   var LSKEY='gsc_req_v1';
   var CAT={A:'#2BC4B0',B:'#4D9DE0',C:'#E76F51',D:'#2EB67D',E:'#4361C9',F:'#7C5CE0',G:'#E8A33D'};
   var req=load(), all=[], filt='all', logGen='';
+  var dPosts={}, blogId='', descGen='', dfilt='all';
 
   function load(){try{return JSON.parse(localStorage.getItem(LSKEY)||'{}');}catch(e){return {};}}
   function save(){localStorage.setItem(LSKEY,JSON.stringify(req));}
@@ -138,17 +204,24 @@
   Promise.all([
     fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}),
     fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():{posts:{}};}).catch(function(){return {posts:{}};}),
-    fetch('gsc_requested.json?t='+Date.now()).then(function(r){return r.ok?r.json():{urls:[]};}).catch(function(){return {urls:[]};})
+    fetch('gsc_requested.json?t='+Date.now()).then(function(r){return r.ok?r.json():{urls:[]};}).catch(function(){return {urls:[]};}),
+    fetch('seo_desc.json?t='+Date.now()).then(function(r){return r.ok?r.json():{posts:{}};}).catch(function(){return {posts:{}};}),
+    fetch('seo_desc_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():{posts:{}};}).catch(function(){return {posts:{}};})
   ]).then(function(res){
     var db=res[0], idx=res[1]||{}, posts=idx.posts||{}, reqSet={};
     ((res[2]||{}).urls||[]).forEach(function(u){reqSet[u]=1;});
     logGen=(res[2]||{}).generated||'';
+    var plan=(res[3]||{}).posts||{}, dst=(res[4]||{});
+    dPosts=dst.posts||{}; blogId=dst.blogId||''; descGen=dst.checked_at||'';
     document.getElementById('tag').textContent='점검: '+(idx.checked_at||'미점검');
     all=(db.posts||[]).map(function(p,i){
-      var ix=posts[p.code]||{}, u=p.url||ix.url||'';
-      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:u,state:ix.state||'',link:ix.link||'',logged:!!reqSet[u],oi:i};
+      var ix=posts[p.code]||{}, u=p.url||ix.url||'', pl=plan[p.code]||null, ds=dPosts[p.code]||{};
+      return {code:p.code,cat:(p.cat||p.code[0]),title:p.title||'',url:u,state:ix.state||'',link:ix.link||'',logged:!!reqSet[u],oi:i,
+              text:pl?pl.text:'', tlen:pl?pl.len:0, src:pl?pl.src:'',
+              stale:!!(pl&&pl.title_at_write&&pl.title_at_write!==(p.title||'')),
+              dstate:ds.state||'', dlen:ds.live_len||0, postId:ds.postId||''};
     });
-    render();
+    render(); renderDesc();
   }).catch(function(){
     document.getElementById('rows').innerHTML='<tr><td colspan="5" style="padding:20px;color:#ff8a8a">데이터 로드 실패 (lifeinfo_db.txt)</td></tr>';
   });
@@ -227,6 +300,84 @@
   });
   document.getElementById('clr').addEventListener('click',function(){
     if(confirm('이 기기에 저장된 색인요청 체크 기록을 모두 지울까요?')){req={};save();render();}
+  });
+
+  /* ===== 📝 검색설명 탭 =====
+     체크박스를 두지 않는다 — '넣었다'는 사람 기억이 아니라 seodesc.py 가 라이브를
+     긁어서 판정한 결과(dstate)만 믿는다. 색인상태를 GSC API 로만 믿는 것과 같다. */
+  function dInfo(p){
+    if(p.dstate==='ok')     return {c:'ok',  t:'✅ 있음 '+p.dlen+'자'};
+    if(p.dstate==='shared') return {c:'err', t:'⚠️ 공통문구'};
+    if(p.dstate==='none')   return {c:'no',  t:'❌ 없음'};
+    if(p.dstate==='err')    return {c:'wait',t:'– 조회실패'};
+    return {c:'wait',t:'– 미점검'};
+  }
+  // 붙일 것(문구는 썼는데 라이브에 아직 없음) → 맨 위. 그다음 문구 없는 글. 완료는 아래.
+  function drank(p){
+    if(p.text&&p.dstate!=='ok') return 0;
+    if(!p.text&&p.dstate!=='ok') return 1;
+    return 2;
+  }
+  function renderDesc(){
+    var q=(document.getElementById('dq').value||'').toLowerCase().replace(/\s/g,'');
+    var tot=all.length, nOk=0, nPend=0, nNone=0, nStale=0, out=[];
+    var view=all.slice().sort(function(a,b){var d=drank(a)-drank(b);return d!==0?d:b.oi-a.oi;});
+    view.forEach(function(p){
+      var done=(p.dstate==='ok');
+      if(done)nOk++; if(p.text&&!done)nPend++; if(!p.text)nNone++; if(p.stale)nStale++;
+      if(dfilt==='pend'  && !(p.text&&!done))return;
+      if(dfilt==='nodesc'&& done)return;
+      if(dfilt==='notext'&& p.text)return;
+      if(dfilt==='idx'   && stInfo(p.state).c!=='ok')return;
+      if(dfilt==='ok'    && !done)return;
+      if(q){var hay=(p.code+p.title).toLowerCase().replace(/\s/g,'');if(hay.indexOf(q)<0)return;}
+      var di=dInfo(p), si=stInfo(p.state), col=CAT[p.cat]||'#8a97ab';
+      var edit=(blogId&&p.postId)?('https://www.blogger.com/blog/post/edit/'+blogId+'/'+p.postId):'';
+      out.push('<tr class="'+(done?'done':'')+'">'
+        +'<td><span class="pcode" style="background:'+col+'">'+esc(p.code)+'</span></td>'
+        +'<td><a class="ttl" href="'+esc(p.url)+'" target="_blank" rel="noopener" title="'+esc(p.title)+'">'+esc(p.title)+'</a>'
+        +(p.text?('<div class="dtxt'+(p.stale?' stale':'')+'">'+(p.stale?'🔴 <b>제목이 바뀐 글 — 설명 재작성 필요</b><br>':'')+esc(p.text)+' <span style="color:#6b7790">('+p.tlen+'자)</span></div>'):'')
+        +'</td>'
+        +'<td><span class="st '+si.c+'">'+si.t+'</span></td>'
+        +'<td><span class="st '+di.c+'">'+di.t+'</span></td>'
+        +'<td>'+(p.text?'<a class="act cp" href="#" data-cp="'+esc(p.code)+'">문구 복사</a>':'<span style="font-size:11px;color:#6b7790">문구 없음</span>')
+        +(edit?('<a class="act ed" href="'+esc(edit)+'" target="_blank" rel="noopener" title="이 글 편집화면을 바로 엽니다">편집화면↗</a>'):'')
+        +'</td></tr>');
+    });
+    document.getElementById('drows').innerHTML=out.join('')||'<tr><td colspan="5" style="padding:20px;color:#6b7790">해당 없음</td></tr>';
+    document.getElementById('dTot').textContent=tot;
+    document.getElementById('dOk').textContent=nOk;
+    document.getElementById('dPend').textContent=nPend;
+    document.getElementById('dNone').textContent=nNone;
+    document.getElementById('dBar').style.width=(tot?Math.round(nOk/tot*100):0)+'%';
+    document.getElementById('dNote').innerHTML='✅ <b>'+nOk+'</b>편 반영됨 · 📋 문구 준비돼 아직 안 붙인 글 <b>'+nPend+'</b>편'
+      +(nStale?(' · 🔴 제목 바뀌어 재작성 필요 <b>'+nStale+'</b>편'):'')
+      +' <span style="color:#8a97ab">'+(descGen?('※ 라이브 점검: '+esc(descGen)+' (반영 후 <code>python -m studio.seodesc scan</code> → deploy 하면 갱신)'):'※ 아직 스캔 전 — <code>python -m studio.seodesc scan</code> 실행 필요.')+'</span>';
+  }
+
+  document.getElementById('drows').addEventListener('click',function(e){
+    var a=e.target.closest('a.cp'); if(!a)return;
+    e.preventDefault();
+    var p=null; all.forEach(function(x){if(x.code===a.dataset.cp)p=x;});
+    if(!p||!p.text)return;
+    navigator.clipboard.writeText(p.text).then(function(){
+      toast(p.code+' 문구 복사됨('+p.tlen+'자) → [편집화면↗] → 글 설정 → 검색 설명 → Ctrl+V → 업데이트');
+    },function(){toast('복사 실패 — 문구를 직접 선택해 복사하세요');});
+  });
+  document.getElementById('dq').addEventListener('input',renderDesc);
+  document.querySelectorAll('.fbtn[data-df]').forEach(function(b){
+    b.addEventListener('click',function(){
+      dfilt=b.dataset.df;
+      document.querySelectorAll('.fbtn[data-df]').forEach(function(x){x.classList.toggle('on',x===b);});
+      renderDesc();
+    });
+  });
+  document.querySelectorAll('.tb').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.tb').forEach(function(x){x.classList.toggle('on',x===b);});
+      document.getElementById('viewIdx').classList.toggle('hide',b.dataset.v!=='idx');
+      document.getElementById('viewDesc').classList.toggle('hide',b.dataset.v!=='desc');
+    });
   });
 </script>
 </body>
