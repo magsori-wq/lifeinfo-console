@@ -77,10 +77,10 @@
 
   <div class="note">
     <b>📌 색인요청 사용법 (순서대로)</b>
-    <div style="background:#3a2f12;border:1px solid #5a4a1a;color:#ffd166;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:12px"><b>⚠️ 핵심</b> — 클린 URL은 모바일 302(<code>?m=1</code>) 때문에 "리디렉션 오류"로 <b>색인 안 됨</b>. 반드시 <b>끝에 <code>?m=1</code> 붙인 주소</b>로 색인 요청해야 합니다(GSC가 색인 가능으로 확인함). [GSC 검사] 버튼이 <b>?m=1 주소를 자동 복사</b>해 줍니다.</div>
+    <div style="background:#3a2f12;border:1px solid #5a4a1a;color:#ffd166;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:12px"><b>⚠️ 핵심 (2026-07-28 정정)</b> — 색인 요청은 <b>클린 URL</b>(<code>?m=1</code> 없는 주소)로 합니다. 예전 안내는 "반드시 <code>?m=1</code>"이었으나 <b>그 전제가 사라졌습니다</b>: 실측 결과 <b>리디렉션 오류 0편</b>이고, <b>클린 URL 로 검사한 7편이 “색인됨”</b>으로 확인됩니다. <code>?m=1</code>로 요청하면 모바일 대체 주소를 등록하게 됩니다.</div>
     <ol style="margin:8px 0 4px;padding-left:20px;line-height:1.9">
       <li><b>[미요청만]</b> 필터로 아직 요청 안 한 글만 봅니다.</li>
-      <li>각 줄 <b>[GSC 검사(?m=1)]</b> 클릭 → GSC 열림 + <b>?m=1 주소 자동 복사</b> → GSC <b>상단 검사창에 붙여넣기(Ctrl+V)+Enter</b></li>
+      <li>각 줄 <b>[GSC 검사]</b> 클릭 → GSC 열림 + <b>클린 URL 자동 복사</b> → GSC <b>상단 검사창에 붙여넣기(Ctrl+V)+Enter</b></li>
       <li><b>실제 URL 테스트</b> → "URL을 Google에 등록할 수 있음"(초록) 확인 → <b>파란 ‘색인 생성 요청’</b> 클릭 → <b>“색인 생성을 요청했습니다”</b> 팝업 확인.</li>
       <li>콘솔로 돌아와 <b>그 줄 ‘완료’를 직접 체크</b> — <b>실제로 요청한 글만</b> 체크.</li>
       <li><b>하루 약 10건 한도</b>가 있어 초과 시 "할당량 초과"가 뜹니다 → 나눠서 진행.</li>
@@ -94,9 +94,10 @@
     <div style="margin-top:8px;line-height:1.8">
       <b style="color:#ff8a8a">⛔ 미발견(URL unknown)</b> = 구글이 아직 <b>크롤을 안 해서 모른다</b>는 뜻(요청을 눌렀어도 처리 전엔 이렇게 보입니다). 신규 블로그는 크롤이 느립니다.<br>
       <b style="color:#ffd166">⚠️ 리다이렉트(Redirect error)</b> = 구글은 <b>모바일 우선</b>으로 크롤하는데, 블로그스팟은 모바일 접속 시 <b>?m=1로 302 이동</b>합니다(그 페이지의 대표주소<code>canonical</code>는 깨끗한 URL). <b>블로그스팟 기본 동작</b>이라 구글이 대개 <code>canonical</code>로 통합하며, 시간이 지나면 해소되는 경우가 많습니다.<br>
-      <b style="color:#06d6a0">✅ 실전 해법(GSC 검증됨)</b> = 색인 요청은 <b>반드시 <code>?m=1</code> 붙인 주소</b>로! 클린 URL은 302로 실패하지만 <code>?m=1</code>은 "가져오기 성공·색인 생성 가능"으로 확인됨(canonical이 클린 URL이라 통합). [GSC 검사] 버튼이 자동으로 ?m=1을 복사합니다.<br>
+      <b style="color:#06d6a0">✅ 정정된 해법(2026-07-28 실측)</b> = 색인 요청은 <b>클린 URL</b>로 합니다. 옛 안내(“반드시 <code>?m=1</code>”)의 근거였던 <b>리디렉션 오류가 지금 0편</b>이고, <b>클린 URL 로 검사한 7편이 “Submitted and indexed”</b>로 확인됩니다(<code>A2-01·B1-01·D1-01·D1-02·D3-03·F2-08·H1-01</code>). <code>?m=1</code>로 요청하면 색인시키려는 주소가 아니라 모바일 대체 주소를 등록하게 됩니다.<br>
+      <span style="color:#8a97ab">※ 정확히 말하면 <code>index_status.json</code>은 <b>우리가 제출한 URL(클린)</b>과 그 판정만 담습니다 — 구글이 고른 대표주소(google-selected canonical) 필드는 없습니다. 위 문장은 “클린 URL 로 물었더니 색인됨이라고 답했다”까지가 실측 범위입니다.</span><br>
       <b style="color:#7fc1ff">그 외</b> = 시간(신규 2~6주) · 트래픽/백링크(OSMU) · 꾸준한 발행.<br>
-      <span style="color:#8a97ab">※ ?m=1 색인이 나중에 빠질 수 있다는 보고도 있어 100% 영구보장은 아님. 다만 지금 시도할 검증된 방법. / ?m=1 <b>테마 스크립트 강제 제거·커스텀 도메인</b>은 효과 불확실(도메인도 같은 오류 보고)이라 권장하지 않음.</span>
+      <span style="color:#8a97ab">※ 🔴 <b>지금은 색인 재요청 자체가 레버가 아닙니다</b> — 크롤은 되는데 색인이 안 되는 상태(크롤·미색인 126편)라 재요청은 같은 판정을 반복시킵니다. 레버는 본문 원본가치·OSMU 유입·시간입니다. / <code>?m=1</code> 테마 스크립트 강제 제거·커스텀 도메인은 효과 불확실이라 권장하지 않음.</span>
     </div>
   </details>
 
@@ -254,8 +255,8 @@
         +'<td><a class="ttl" href="'+esc(p.url)+'" target="_blank" rel="noopener" title="'+esc(p.title)+'">'+esc(p.title)+'</a>'
         +'<div class="url"><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.url)+'</a></div></td>'
         +'<td><span class="st '+si.c+'">'+si.t+'</span>'+(p.logged?' <span class="rec" title="요청 로그(gsc_requested.json)에 기록된 글">📋 기록</span>':'')+'</td>'
-        +'<td><a class="act gsc" href="'+esc(PROP_DASH)+'" target="_blank" rel="noopener" data-copy="'+esc(p.url+'?m=1')+'">GSC 검사(?m=1)</a>'
-        +(p.link?'<a class="act open" href="'+esc(p.link)+'" target="_blank" rel="noopener" title="GSC URL 검사 결과창 바로 열기(클린 URL 상태 확인용 — 색인 요청은 ?m=1 붙여넣기로)">검사창↗</a>':'')
+        +'<td><a class="act gsc" href="'+esc(PROP_DASH)+'" target="_blank" rel="noopener" data-copy="'+esc(p.url)+'">GSC 검사</a>'
+        +(p.link?'<a class="act open" href="'+esc(p.link)+'" target="_blank" rel="noopener" title="GSC URL 검사 결과창 바로 열기(클린 URL 기준)">검사창↗</a>':'')
         +'<a class="act open" href="'+esc(p.url)+'" target="_blank" rel="noopener">글</a></td>'
         +'</tr>');
     });

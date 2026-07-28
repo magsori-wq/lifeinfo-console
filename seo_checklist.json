@@ -1,19 +1,10 @@
 {
- "checked_at": "2026-07-28T12:32:05",
- "pass": 4,
- "warn": 3,
- "fail": 4,
+ "checked_at": "2026-07-28T17:06:56",
+ "pass": 6,
+ "warn": 2,
+ "fail": 3,
  "light": "red",
  "items": [
-  {
-   "key": "meta_desc",
-   "title": "글별 메타 설명(description)",
-   "level": "FAIL",
-   "detail": "표본 5편 전부 <meta name='description'> 태그 자체가 없음",
-   "action": "Blogger 설정 → 메타 태그 → '검색 설명 사용' ON → 글마다 검색 설명 입력",
-   "risk": "없음(설정 스위치)",
-   "ref": "구글노출_실행가이드_2026.md 핵심④"
-  },
   {
    "key": "h1_title",
    "title": "H1 = 글 제목인가 (테마 계층)",
@@ -27,7 +18,7 @@
    "key": "index_rate",
    "title": "색인율",
    "level": "FAIL",
-   "detail": "7/153편 색인(4.6%) · 크롤했으나 미색인 118 · 미발견 28 (기준일 2026-07-27)",
+   "detail": "7/162편 색인(4.3%) · 크롤했으나 미색인 126 · 미발견 29 (기준일 2026-07-28)",
    "action": "위 항목들을 고친 뒤 색인 요청. 고치기 전 요청은 같은 판정을 반복시킨다",
    "risk": "없음",
    "ref": "python -m studio.searchconsole inspect 로 갱신"
@@ -38,15 +29,6 @@
    "level": "FAIL",
    "detail": "최근 14일 하루 최대 9편 · 역대 최대 24편(2026-06-16)",
    "action": "CLAUDE.md 규칙 = 하루 1편 기본. publish.yml 게이트가 3편부터 차단",
-   "risk": "없음",
-   "ref": ""
-  },
-  {
-   "key": "og_desc",
-   "title": "og:description 글별 고유성",
-   "level": "WARN",
-   "detail": "표본 5편이 **모두 같은 문구**(블로그 공통 설명)를 쓴다",
-   "action": "글별 검색 설명을 입력하면 글마다 달라진다",
    "risk": "없음",
    "ref": ""
   },
@@ -63,9 +45,27 @@
    "key": "slug",
    "title": "URL 슬러그에 키워드",
    "level": "WARN",
-   "detail": "15/161편(9%)만 의미 있는 슬러그",
+   "detail": "15/162편(9%)만 의미 있는 슬러그",
    "action": "⚠️ 기존 글 URL 은 절대 바꾸지 말 것(색인·링크 붕괴). 새 글 발행 시 '검색어 설정'에 영문 키워드 지정",
    "risk": "🔴 기존 글 변경은 금지",
+   "ref": ""
+  },
+  {
+   "key": "meta_desc",
+   "title": "글별 메타 설명(description)",
+   "level": "PASS",
+   "detail": "표본 5편 전부 존재",
+   "action": "",
+   "risk": "",
+   "ref": ""
+  },
+  {
+   "key": "og_desc",
+   "title": "og:description 글별 고유성",
+   "level": "PASS",
+   "detail": "표본에서 5종의 서로 다른 설명 확인",
+   "action": "",
+   "risk": "",
    "ref": ""
   },
   {
@@ -81,7 +81,7 @@
    "key": "sitemap",
    "title": "sitemap 등재",
    "level": "PASS",
-   "detail": "161편 전부 등재",
+   "detail": "162편 전부 등재",
    "action": "",
    "risk": "",
    "ref": ""
