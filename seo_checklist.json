@@ -1,19 +1,10 @@
 {
- "checked_at": "2026-07-28T17:06:56",
- "pass": 6,
+ "checked_at": "2026-07-29T12:36:50",
+ "pass": 7,
  "warn": 2,
- "fail": 3,
+ "fail": 2,
  "light": "red",
  "items": [
-  {
-   "key": "h1_title",
-   "title": "H1 = 글 제목인가 (테마 계층)",
-   "level": "FAIL",
-   "detail": "표본 5편 전부 H1 이 글 제목이 아님(블로그 이름이 H1 차지, 글 제목은 H3). A1-02 → H1=생활정보 모음 - ‘몰라서 손해 보기 쉬운’ 정보를 누구나 바… / A1-03 → H1=생활정보 모음 - ‘몰라서 손해 보기 쉬운’ 정보를 누구나 바…",
-   "action": "테마 → HTML 편집: Blog1 위젯의 <h3 class='post-title entry-title'> → h1, Header1 위젯의 블로그명 h1 은 홈에서만(b:if data:view.isHomepage)",
-   "risk": "🔴 있음 — 편집 전 테마 백업 필수",
-   "ref": "인기글 위젯도 post-title 을 쓰므로 entry-title 로 구분"
-  },
   {
    "key": "index_rate",
    "title": "색인율",
@@ -64,6 +55,15 @@
    "title": "og:description 글별 고유성",
    "level": "PASS",
    "detail": "표본에서 5종의 서로 다른 설명 확인",
+   "action": "",
+   "risk": "",
+   "ref": ""
+  },
+  {
+   "key": "h1_title",
+   "title": "H1 = 글 제목인가 (테마 계층)",
+   "level": "PASS",
+   "detail": "표본 5편 모두 H1 이 글 제목",
    "action": "",
    "risk": "",
    "ref": ""
