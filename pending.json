@@ -1,15 +1,31 @@
 {
- "rev": "b467af8",
+ "rev": "ff0f8ad",
  "counts": {
-  "total": 163,
+  "total": 164,
   "osmu_done": 163,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 6,
-  "index_pending": 157,
-  "index_requested": 153,
+  "index_pending": 158,
+  "index_requested": 154,
   "index_todo": 4
  },
  "actionable": [
+  {
+   "code": "F1-09",
+   "title": "중국 무비자 입국 조건 체류기간 30일 계산법 총정리 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A5-04",
    "title": "2027년 최저임금 10,700원 확정, 내 월급 실수",
@@ -23,21 +39,6 @@
    "ch": {
     "g": true,
     "n": false,
-    "t": true
-   }
-  },
-  {
-   "code": "D2-08",
-   "title": "고령운전자 운전면허 자진반납 지원금 신청 방법 대상 금",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
     "t": true
    }
   },
