@@ -1,15 +1,31 @@
 {
  "rev": "2ca0b43",
  "counts": {
-  "total": 167,
+  "total": 168,
   "osmu_done": 167,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 5,
-  "index_pending": 162,
+  "index_pending": 163,
   "index_requested": 157,
-  "index_todo": 5
+  "index_todo": 6
  },
  "actionable": [
+  {
+   "code": "A5-05",
+   "title": "일손부족일자리 동행 인센티브 신청 방법 대상 50~64",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A5-04",
    "title": "2027년 최저임금 10,700원 확정, 내 월급 실수",
@@ -194,21 +210,6 @@
   {
    "code": "A1-09",
    "title": "국가장학금 2학기 신청 1차 마감(6/22) 놓쳤다면?",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-10",
-   "title": "한부모가족 지원 아동양육비 신청 방법 소득기준 지원 대",
    "need": [
     "색인대기"
    ],
