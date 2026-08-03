@@ -31,7 +31,8 @@
    "cmd": "python -c \"import urllib.request as u;print(u.urlopen('https://www.longtermcare.or.kr',timeout=30).status)\"",
    "owner": "claude",
    "state": "blocked",
-   "flag": "longtermcare.or.kr 45초 타임아웃 2회. 열리면 급여한도 고시 대조. 🔴안 열리면 그날은 손대지 않는다(추정 금지)"
+   "flag": "longtermcare.or.kr 45초 타임아웃 2회. 열리면 급여한도 고시 대조. 🔴안 열리면 그날은 손대지 않는다(추정 금지)",
+   "due": "2026-08-04"
   },
   {
    "id": "unverified-5",
@@ -66,20 +67,21 @@
   {
    "id": "insta-osmu",
    "added": "2026-08-03",
-   "what": "인스타 미확산 82편 — 준비 2편(C3-03·C3-01)은 인스타 발행 세션에서 진행 중",
+   "what": "인스타 미확산 82편 — 준비 2편(C3-03·C3-01) 2026-08-03 완료 게시. 남은 80편은 카드 미제작.",
    "cmd": "python -m studio.insta_post --list",
    "owner": "user",
    "state": "todo",
-   "flag": "🔴80편은 카드 미제작. 다음 회차 선정 5편 = 인스타확산_다음회차_2026-08-03.md"
+   "flag": "다음 회차 선정 5편 = 인스타확산_다음회차_2026-08-03.md"
   },
   {
    "id": "insta-next5",
    "added": "2026-08-03",
-   "what": "다음 회차 카드 제작 5편 — C1-09·B2-01·A5-02(재고사진 OK) · D3-03·F2-08(사진 소싱 필요)",
+   "what": "인스타 다음 회차 카드 5편 — 선정·사진계획 완료, 제작은 작업 세션",
    "cmd": "cat 인스타확산_다음회차_2026-08-03.md",
-   "owner": "claude",
+   "owner": "user",
    "state": "todo",
-   "flag": "만들면 studio/insta_post.py PLAN 에 줄 추가할 것 — 안 하면 --list 에 안 잡혀 만든 적 없는 것과 같다"
+   "flag": "관제탑에서 만들지 말 것. 만든 뒤 studio/insta_post.py PLAN 에 줄 추가",
+   "note": 46
   },
   {
    "id": "chuseok-2026-rail",
@@ -89,6 +91,17 @@
    "cmd": "python tools/chuseok_rail_check.py",
    "owner": "claude",
    "state": "wait"
+  },
+  {
+   "id": "osmu-f4-10",
+   "added": "2026-08-03",
+   "what": "F4-10 여행 취소 위약금 — OSMU 확산 (보드 14/15, 남은 건 15단계뿐)",
+   "cmd": "python -m studio.pipeline naver-draft --code F4-10 --open",
+   "owner": "user",
+   "state": "done",
+   "flag": "작업 세션이 진행. 첨부=thumbs_naver/144_tour_cancel_fee.png · 원고는 요약본 금지(원문 표·계산예시 전부 반영)",
+   "done_at": "2026-08-03",
+   "result": "네이버·쓰레드·인스타 3채널 완료 + 교차링크 라이브 확인(다른 세션 진행)"
   }
  ]
 }

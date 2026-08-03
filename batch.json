@@ -642,11 +642,169 @@
     "라이브 반영",
     "피드 재확인"
    ]
+  },
+  "today0803": {
+   "title": "🗓️ 2026-08-03 세션 — 진행 확인",
+   "note": "이 대화에서 나온 모든 항목. done=실측으로 확인함 · doing=기다리는 중 · todo=아직 · blocked=막힘",
+   "items": [
+    {
+     "code": "검색설명",
+     "title": "검색설명 169/169 — D2-08·F1-09 붙임 + F4-10 발행과 동시",
+     "state": "done",
+     "note": "라이브 meta description 직접 확인. 붙일것 0"
+    },
+    {
+     "code": "watch",
+     "title": "재확인 대기 목록 신설 (watch.json + studio/watch.py)",
+     "state": "done",
+     "note": "훅·selfcheck 10)·야간루틴 0단계 3군데 배선, cwd 두 곳 재검증"
+    },
+    {
+     "code": "훅배선버그",
+     "title": "훅 import 실패를 삼켜 7건을 '0건' 거짓초록불로 보고 → 수정",
+     "state": "done",
+     "note": "파일경로 import + 실패 시 개수 대신 실패 표기"
+    },
+    {
+     "code": "콘솔배포",
+     "title": "deploy.bat 실행 — 8단계 통과, 커밋 5579dda",
+     "state": "done",
+     "note": "watch.json 76줄·seo_desc_status 반영. 썸네일 168/168 200"
+    },
+    {
+     "code": "F4-10발행",
+     "title": "F4-10 여행 취소 위약금 라이브 발행",
+     "state": "done",
+     "note": "HTTP 200 · 라벨 여행 · 표 9=div.tw 9 · 한눈에 박스 · 썸네일"
+    },
+    {
+     "code": "F4-10표",
+     "title": "F4-10 표 9개 가로스크롤 포장 (07-30 초안이라 빠져 있었음)",
+     "state": "done",
+     "note": "table_wrap 멱등 확인"
+    },
+    {
+     "code": "F4-10도입부",
+     "title": "F4-10 첫 화면 수치 0개 → 9개",
+     "state": "done",
+     "note": "본문에 있던 숫자만 이동, 새 수치 안 만듦"
+    },
+    {
+     "code": "F4-10DB",
+     "title": "F4-10 DB 등록 count 169 · validate green · 콘솔 push",
+     "state": "done",
+     "note": "register_post 자동"
+    },
+    {
+     "code": "F4-10색인",
+     "title": "F4-10 색인 생성 요청 기록 (gsc_requested 170건)",
+     "state": "done",
+     "note": "미요청 0편으로 떨어짐"
+    },
+    {
+     "code": "checkonly",
+     "title": "publish-flow --check-only 신설 — 검사와 Blogger 생성 분리",
+     "state": "done",
+     "note": "F4-11로 실증: 초안 안 늘고 표 8개 미포장 검출"
+    },
+    {
+     "code": "대기초안표",
+     "title": "대기 초안 4편 표 포장 (F4-11 8·D2-09 7·F1-11 7·F2-12 기존)",
+     "state": "done",
+     "note": "다음 발행은 check-only 한 번이면 됨"
+    },
+    {
+     "code": "인스타선정",
+     "title": "인스타 다음 회차 5편 선정·사진계획 문서화",
+     "state": "done",
+     "note": "인스타확산_다음회차_2026-08-03.md — 제작은 작업 세션"
+    },
+    {
+     "code": "색인갱신",
+     "title": "색인관리에 F4-10 반영 (총 169편)",
+     "state": "done",
+     "note": "inspect --limit 3"
+    },
+    {
+     "code": "커밋",
+     "title": "미커밋 변경분 커밋·푸시 (색인·미결·watch·studio 일부)",
+     "state": "done",
+     "note": "4c33b05 커밋·푸시 완료"
+    },
+    {
+     "code": "배포2",
+     "title": "콘솔 재배포 — 배포본이 아직 168편/169건",
+     "state": "todo",
+     "note": "deploy.bat 은 사용자 실행. 색인·요청기록이 라이브 콘솔에 아직 없음"
+    },
+    {
+     "code": "초안삭제",
+     "title": "낡은 Blogger 초안 정리 — 6419(F4-10 낡음) + 5687(F4-11)",
+     "state": "todo",
+     "note": "삭제는 사용자 실행. F4-11 초안은 표 포장 전 본문일 수 있어 확인 필요"
+    },
+    {
+     "code": "OSMU",
+     "title": "F4-10 OSMU 확산 — 보드 15/15 남은 단계",
+     "state": "todo",
+     "note": "작업 세션 인계 (watch: osmu-f4-10)"
+    },
+    {
+     "code": "인스타제작",
+     "title": "인스타 카드 5편 제작",
+     "state": "todo",
+     "note": "작업 세션 인계 (watch: insta-next5)"
+    },
+    {
+     "code": "야간루틴",
+     "title": "야간 검증 루틴 첫 실행 확인 (오늘 22:30)",
+     "state": "doing",
+     "note": "PC 켜져 있어야 돎. 내일 아침 카톡·note·라이브 무변경 3가지 확인"
+    },
+    {
+     "code": "리다이렉트",
+     "title": "REDIRECT_ERROR 7편 + SERVER_ERROR 1편 재조회",
+     "state": "doing",
+     "note": "우리 쪽 결함 없음 확인됨. 2026-08-06 이후 inspect"
+    },
+    {
+     "code": "애드센스",
+     "title": "AdSense 재검토 심사 결과",
+     "state": "doing",
+     "note": "08-03 접수 GETTING_READY. 중복 요청 금지"
+    },
+    {
+     "code": "C3-02",
+     "title": "C3-02 노인장기요양 급여한도 6개 값 정정",
+     "state": "blocked",
+     "note": "longtermcare.or.kr 타임아웃. 안 열리면 손대지 않는다"
+    },
+    {
+     "code": "미검증5",
+     "title": "미검증 5편 재시도 (F4-04 숙박 우선)",
+     "state": "todo",
+     "note": "공정위 고시 2025-12-18 개정 가능성"
+    },
+    {
+     "code": "도입부56",
+     "title": "도입부 수치 남은 56편",
+     "state": "todo",
+     "note": "본문 수치도 빈약해 공식 조사 선행 필요"
+    }
+   ]
   }
  },
- "updated": "2026-08-03 19:11:54",
+ "updated": "2026-08-03 21:58:45",
  "current": null,
  "log": [
+  {
+   "t": "21:58:45",
+   "text": "✅ 커밋 완료 — 미커밋 변경분 커밋·푸시 (색인·미결·watch·studio "
+  },
+  {
+   "t": "21:56:16",
+   "text": "📋 배치 '🗓️ 2026-08-03 세션 — 진행 확인' 등록 — 24항목"
+  },
   {
    "t": "19:11:54",
    "text": "✅ 5 애드센스재신청 완료 — AdSense 검토 요청 (판단은 사용자)"
@@ -798,14 +956,6 @@
   {
    "t": "16:23:19",
    "text": "✅ D4-02 완료 — 헬스장 PT 등록 해지 환불 규정 위약금 계산법 총정리 (공정"
-  },
-  {
-   "t": "16:23:13",
-   "text": "✅ D2-06 완료 — 자동차보험 갱신 비교 방법 다이렉트 할인특약 총정리 (2026"
-  },
-  {
-   "t": "16:23:05",
-   "text": "✅ D2-02 완료 — 운전면허 갱신 방법 적성검사 기간 비용 총정리 (2026)"
   }
  ]
 }
