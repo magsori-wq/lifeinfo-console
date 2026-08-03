@@ -1,0 +1,76 @@
+{
+ "version": 1,
+ "updated": "2026-08-03",
+ "items": [
+  {
+   "id": "redirect-error",
+   "added": "2026-08-03",
+   "what": "REDIRECT_ERROR 8편 — 구글 재크롤 결과 재조회",
+   "due": "2026-08-06",
+   "cmd": "python studio/searchconsole.py inspect",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "우리 쪽 결함 없음으로 결론난 건. 그때도 그대로면 Blogger 응답 지연(본문 14만자)을 의심할 것",
+   "note": 28
+  },
+  {
+   "id": "adsense-review",
+   "added": "2026-08-03",
+   "what": "AdSense 재검토 심사 결과 (2026-08-03 접수 · 며칠~2·4주)",
+   "due": "2026-08-06",
+   "cmd": "python studio/adsense.py status",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "🚫중복 요청 금지(감점·쿨다운). adsense_watch 는 READY 일 때만 울리므로 침묵=진행중 아님",
+   "note": 41
+  },
+  {
+   "id": "c3-02",
+   "added": "2026-08-03",
+   "what": "C3-02 노인장기요양 급여한도 6개 값 — 공식 확인 불가로 미정정",
+   "cmd": "python -c \"import urllib.request as u;print(u.urlopen('https://www.longtermcare.or.kr',timeout=30).status)\"",
+   "owner": "claude",
+   "state": "blocked",
+   "flag": "longtermcare.or.kr 45초 타임아웃 2회. 열리면 급여한도 고시 대조. 🔴안 열리면 그날은 손대지 않는다(추정 금지)"
+  },
+  {
+   "id": "unverified-5",
+   "added": "2026-08-03",
+   "what": "미검증 5편 재시도 — F4-04 숙박 · C4-06 틀니 · D4-01 공연 · F2-01 KTX · B2-03 채권",
+   "cmd": "cat posts/_fact/*.md 2>/dev/null | head -5   # 근거 파일 위치",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "F4-04 숙박 우선 — 공정위 소비자분쟁해결기준 2025-12-18 개정으로 표가 낡았을 가능성",
+   "note": 26
+  },
+  {
+   "id": "intro-numbers",
+   "added": "2026-08-03",
+   "what": "도입부 수치 남은 56편 — 본문 수치도 빈약해 공식 조사가 선행돼야 함",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "새 수치를 만들지 않는다. 공식 확인이 된 글만 앞으로 올린다",
+   "note": 31
+  },
+  {
+   "id": "nightly-first-run",
+   "added": "2026-08-03",
+   "what": "야간 검증 루틴 첫 실행 확인 (2026-08-03 22:30)",
+   "due": "2026-08-04",
+   "cmd": "python -m studio.note list | tail -3",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "확인 3가지: ①카카오톡 도착 ②콘솔 미결 기록 ③라이브 글이 안 바뀌었는지. 로컬 루틴이라 PC 꺼져 있었으면 안 돎",
+   "note": 37
+  },
+  {
+   "id": "insta-osmu",
+   "added": "2026-08-03",
+   "what": "인스타 미확산 82편 — OSMU 확산",
+   "cmd": "python -m studio.insta_post --next",
+   "owner": "user",
+   "state": "todo",
+   "flag": "대면 세션에서는 게시가 사용자 몫. Claude 는 카드·캡션 준비와 기록만"
+  }
+ ]
+}
