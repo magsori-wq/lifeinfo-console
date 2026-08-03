@@ -72,6 +72,7 @@
     <nav id="nav">
       <button data-t="dispatch" class="active">⚡ 디스패치</button>
       <button data-t="progress">📋 발행대기</button>
+      <button data-t="batch">🔧 배치보드</button>
       <button data-t="nav">🗺️ 네비게이터</button>
       <button data-t="trends">📰 글감</button>
       <button data-t="search">🔎 검색</button>
@@ -267,6 +268,7 @@
     <iframe id="f_jisikin" src="jisikin.html"></iframe>
     <iframe id="f_dashboard" src="dashboard.html"></iframe>
     <iframe id="f_progress" src="progress.html"></iframe>
+    <iframe id="f_batch" src="batch.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
     <iframe id="f_seo" src="seo.html"></iframe>
     <iframe id="f_adsense" src="adsense.html"></iframe>
@@ -276,7 +278,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','gsc','seo','adsense'];
+  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','batch','gsc','seo','adsense'];
   nav.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b)return;
     var t=b.dataset.t;
@@ -301,6 +303,7 @@
     {t:'📝 발행',d:'publish-post로 Blogger 초안 생성 → 미리보기 후 발행',go:function(){goDispatch(function(){dispatchPublish();});}},
     {t:'🔁 OSMU 확산',d:'네이버·쓰레드·지식인으로 재가공',go:function(){goTab('osmu');}},
     {t:'🔍 색인 점검',d:'색인관리 탭 — 상태 확인 + ?m=1 색인요청 + 로그',go:function(){goTab('gsc');}},
+    {t:'🔧 배치보드',d:'여러 편을 도는 긴 작업의 진척·현재 단계·최근 활동 (studio/batchboard.py)',go:function(){goTab('batch');}},
     {t:'📡 모니터링',d:'발행·품질·성과·채널 현황 + 연계 도구',go:function(){goTab('dashboard');}},
     {t:'🛡️ 댓글·대응',d:'부정·오류 댓글 검증 → 출처 단 답변 초안 → Gmail',go:function(){goDispatch(function(){dispatchComments();});}}
   ];
