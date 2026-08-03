@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-03",
+ "updated": "2026-08-04",
  "items": [
   {
    "id": "redirect-error",
@@ -76,12 +76,13 @@
   {
    "id": "insta-next5",
    "added": "2026-08-03",
-   "what": "인스타 다음 회차 카드 5편 — 선정·사진계획 완료, 제작은 작업 세션",
-   "cmd": "cat 인스타확산_다음회차_2026-08-03.md",
-   "owner": "user",
+   "what": "인스타 다음 5편(C1-09·B2-01·A5-02·D3-03·F2-08) 카드 제작 — 선정·사진계획 완료(인스타확산_다음회차_2026-08-03.md). 2026-08-03 22:5x 시도했으나 insta_preflight 실패(물리메모리 여유 1.13GB, Chrome 2.9GB 점유) — Chrome 정리 후 재시도.",
+   "cmd": "python -m studio.insta_preflight",
+   "owner": "claude",
    "state": "todo",
    "flag": "관제탑에서 만들지 말 것. 만든 뒤 studio/insta_post.py PLAN 에 줄 추가",
-   "note": 46
+   "note": 46,
+   "due": "2026-08-04"
   },
   {
    "id": "chuseok-2026-rail",
@@ -102,6 +103,16 @@
    "flag": "작업 세션이 진행. 첨부=thumbs_naver/144_tour_cancel_fee.png · 원고는 요약본 금지(원문 표·계산예시 전부 반영)",
    "done_at": "2026-08-03",
    "result": "네이버·쓰레드·인스타 3채널 완료 + 교차링크 라이브 확인(다른 세션 진행)"
+  },
+  {
+   "id": "unblock-routes",
+   "added": "2026-08-04",
+   "what": "막힌 수치 5건 — 미시도 공식 경로(행정규칙·elis·심평원)로 재시도",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "law.go.kr 은 브라우저 필요(정적 요청은 검색창만 잡힌다). 별표는 lsBylInfoPLinkR.do → img alt",
+   "note": 47
   }
  ]
 }
