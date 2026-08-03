@@ -30,9 +30,11 @@
    "what": "C3-02 노인장기요양 급여한도 6개 값 — 공식 확인 불가로 미정정",
    "cmd": "python -c \"import urllib.request as u;print(u.urlopen('https://www.longtermcare.or.kr',timeout=30).status)\"",
    "owner": "claude",
-   "state": "blocked",
+   "state": "done",
    "flag": "longtermcare.or.kr 45초 타임아웃 2회. 열리면 급여한도 고시 대조. 🔴안 열리면 그날은 손대지 않는다(추정 금지)",
-   "due": "2026-08-04"
+   "due": "2026-08-04",
+   "done_at": "2026-08-04",
+   "result": "law.go.kr DRF API로 고시2025-247(시행2026-01-01) 원문 확인, 라이브 6개값 정정 완료(2026-08-04)"
   },
   {
    "id": "unverified-5",
@@ -67,11 +69,11 @@
   {
    "id": "insta-osmu",
    "added": "2026-08-03",
-   "what": "인스타 미확산 82편 — 준비 2편(C3-03·C3-01) 2026-08-03 완료 게시. 남은 80편은 카드 미제작.",
+   "what": "인스타 카드 제작·게시 (미확산 80편)",
    "cmd": "python -m studio.insta_post --list",
    "owner": "user",
    "state": "todo",
-   "flag": "다음 회차 선정 5편 = 인스타확산_다음회차_2026-08-03.md"
+   "flag": "다음 회차 5편 선정·사진계획 완료 = 인스타확산_다음회차_2026-08-03.md"
   },
   {
    "id": "insta-next5",
@@ -113,6 +115,15 @@
    "state": "todo",
    "flag": "law.go.kr 은 브라우저 필요(정적 요청은 검색창만 잡힌다). 별표는 lsBylInfoPLinkR.do → img alt",
    "note": 47
+  },
+  {
+   "id": "crawl-watch",
+   "added": "2026-08-04",
+   "what": "색인요청분 크롤 감시 — 하루 25편씩(대기 165편 · 미크롤 35편)",
+   "cmd": "python -m studio.crawl_watch --limit 25",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "야간 루틴 0단계에 붙어 자동 실행됨. 🆕크롤 변화가 뜨면 그 줄을 카톡 보고에 옮긴다. 재요청은 하지 않는다"
   }
  ]
 }
