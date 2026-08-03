@@ -66,11 +66,29 @@
   {
    "id": "insta-osmu",
    "added": "2026-08-03",
-   "what": "인스타 미확산 82편 — OSMU 확산",
-   "cmd": "python -m studio.insta_post --next",
+   "what": "인스타 미확산 82편 — 준비 2편(C3-03·C3-01)은 인스타 발행 세션에서 진행 중",
+   "cmd": "python -m studio.insta_post --list",
    "owner": "user",
    "state": "todo",
-   "flag": "대면 세션에서는 게시가 사용자 몫. Claude 는 카드·캡션 준비와 기록만"
+   "flag": "🔴80편은 카드 미제작. 다음 회차 선정 5편 = 인스타확산_다음회차_2026-08-03.md"
+  },
+  {
+   "id": "insta-next5",
+   "added": "2026-08-03",
+   "what": "다음 회차 카드 제작 5편 — C1-09·B2-01·A5-02(재고사진 OK) · D3-03·F2-08(사진 소싱 필요)",
+   "cmd": "cat 인스타확산_다음회차_2026-08-03.md",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "만들면 studio/insta_post.py PLAN 에 줄 추가할 것 — 안 하면 --list 에 안 잡혀 만든 적 없는 것과 같다"
+  },
+  {
+   "id": "chuseok-2026-rail",
+   "added": "2026-08-03",
+   "what": "2026 추석 특별예매 일정 공지 확인 — 8/3 현재 코레일 보도자료·SR 공지 어디에도 없음. 공지가 뜨면 F2-12 후속글 착수",
+   "due": "2026-08-10",
+   "cmd": "python tools/chuseok_rail_check.py",
+   "owner": "claude",
+   "state": "wait"
   }
  ]
 }
