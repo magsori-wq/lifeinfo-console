@@ -94,11 +94,13 @@
     <summary style="cursor:pointer;color:#cdd8ee;font-weight:700">❓ ‘미발견 / 리다이렉트’는 왜 뜨고, 어떻게 하나요?</summary>
     <div style="margin-top:8px;line-height:1.8">
       <b style="color:#ff8a8a">⛔ 미발견(URL unknown)</b> = 구글이 아직 <b>크롤을 안 해서 모른다</b>는 뜻(요청을 눌렀어도 처리 전엔 이렇게 보입니다). 신규 블로그는 크롤이 느립니다.<br>
-      <b style="color:#ffd166">⚠️ 리다이렉트(Redirect error)</b> = 구글은 <b>모바일 우선</b>으로 크롤하는데, 블로그스팟은 모바일 접속 시 <b>?m=1로 302 이동</b>합니다(그 페이지의 대표주소<code>canonical</code>는 깨끗한 URL). <b>블로그스팟 기본 동작</b>이라 구글이 대개 <code>canonical</code>로 통합하며, 시간이 지나면 해소되는 경우가 많습니다.<br>
-      <b style="color:#06d6a0">✅ 정정된 해법(2026-07-28 실측)</b> = 색인 요청은 <b>클린 URL</b>로 합니다. 옛 안내(“반드시 <code>?m=1</code>”)의 근거였던 <b>리디렉션 오류가 지금 0편</b>이고, <b>클린 URL 로 검사한 7편이 “Submitted and indexed”</b>로 확인됩니다(<code>A2-01·B1-01·D1-01·D1-02·D3-03·F2-08·H1-01</code>). <code>?m=1</code>로 요청하면 색인시키려는 주소가 아니라 모바일 대체 주소를 등록하게 됩니다.<br>
+      <b style="color:#ffd166">⚠️ 리다이렉트(Redirect error) = 고장이 아닙니다</b> — 블로그스팟은 모바일 접속 시 <b>?m=1로 302 이동</b>하고, 구글은 모바일 우선으로 크롤하므로 이 표시가 뜹니다. Blogger 커뮤니티 Product Expert 답변(<a href="https://support.google.com/blogger/thread/377434077" target="_blank" rel="noopener" style="color:#ffd166">스레드↗</a>, 2026-08-04 원문 확인): <b>“실제 오류가 아니라 검색 콘솔의 표시 오류”</b>이고 <b>“It comes and goes on its own”</b>(저절로 생겼다 없어진다). 처방은 커스텀 robots.txt 제거(우리는 기본값이라 해당 없음)와 <b>콘텐츠 품질·홍보</b>이지 기술이 아닙니다.<br>
+      <span style="color:#8a97ab">※ 2026-08-04 실측으로 기술 원인 9개를 지웠습니다 — 페이지 내 리디렉션 코드 없음 · canonical 정확 · 맞춤 리디렉션 5건 무해 · 사이트맵 171건 전수 · robots.txt 기본값 · <code>X-Robots-Tag: all</code> · 맞춤 도메인 없음 · 수동 조치 없음 · 페이지 무게가 색인된 글과 동일 · 별도 모바일 테마 없음(<code>isMobile:false / isMobileRequest:true</code>). <b>다시 기술을 의심하지 마세요.</b><br>
+      ※ 다만 <b>SERVER_ERROR·NOT_FOUND·차단</b>은 표시 오류가 아니라 진짜 이상입니다. 위 크롤 건강 배너가 그 둘을 갈라서 보여줍니다.</span><br>
+      <b style="color:#06d6a0">✅ 색인 요청은 클린 URL로</b> — <b>클린 URL 로 검사한 7편이 “Submitted and indexed”</b>로 확인됩니다(<code>A2-01·B1-01·D1-01·D1-02·D3-03·F2-08·H1-01</code>, 2026-07-28 실측). <code>?m=1</code>로 요청하면 색인시키려는 주소가 아니라 모바일 대체 주소를 등록하게 됩니다. 커뮤니티에 “<code>?m=1</code>을 제출하라”는 조언이 돌지만 <b>필수가 아니고</b>(원문도 “optionally”), 우리 실측은 클린 URL 쪽입니다.<br>
       <span style="color:#8a97ab">※ 정확히 말하면 <code>index_status.json</code>은 <b>우리가 제출한 URL(클린)</b>과 그 판정만 담습니다 — 구글이 고른 대표주소(google-selected canonical) 필드는 없습니다. 위 문장은 “클린 URL 로 물었더니 색인됨이라고 답했다”까지가 실측 범위입니다.</span><br>
       <b style="color:#7fc1ff">그 외</b> = 시간(신규 2~6주) · 트래픽/백링크(OSMU) · 꾸준한 발행.<br>
-      <span style="color:#8a97ab">※ 🔴 <b>지금은 색인 재요청 자체가 레버가 아닙니다</b> — 크롤은 되는데 색인이 안 되는 상태(크롤·미색인 126편)라 재요청은 같은 판정을 반복시킵니다. 레버는 본문 원본가치·OSMU 유입·시간입니다. / <code>?m=1</code> 테마 스크립트 강제 제거·커스텀 도메인은 효과 불확실이라 권장하지 않음.</span>
+      <span style="color:#8a97ab">※ <b>재요청은 크롤을 부르지만 색인을 만들지는 못합니다</b> — 2026-08-04 대조 실험: 5편을 요청하니 당일 1편 크롤·1편 <code>Discovered</code> 이동, 같은 시각 대조군 8편은 <b>8/8 무변화</b>였습니다. 즉 요청 자체는 듣습니다. 다만 크롤된 130편 중 색인은 5편이라 <b>진짜 벽은 색인 판정</b>이고, 그 레버는 본문 원본가치·OSMU 유입·시간입니다. / <code>?m=1</code> 테마 스크립트 강제 제거·커스텀 도메인은 권장하지 않음(우리는 이미 반응형 단일 테마).</span>
     </div>
   </details>
 
@@ -272,9 +274,14 @@
      못 가져간 것이면 기술 문제이고, 가져갔는데 색인이 안 된 것이면 콘텐츠 문제다.
      2026-07-31~08-04 예약 크롤 10건이 전부 실패했는데 나흘간 아무도 몰랐다 —
      그 나흘 동안 발행도 보강도 했지만 구글은 아무것도 가져가지 못했다. */
-  var FETCH_FAIL={REDIRECT_ERROR:1,SERVER_ERROR:1,NOT_FOUND:1,ACCESS_DENIED:1,
-    ACCESS_FORBIDDEN:1,BLOCKED_ROBOTS_TXT:1,BLOCKED_4XX:1,INTERNAL_CRAWL_ERROR:1,
-    INVALID_URL:1,SOFT_404:1};
+  /* 🔴 REDIRECT_ERROR 는 경보가 아니다 (2026-08-04, Blogger 커뮤니티 원문 확인).
+     블로거가 모바일 요청을 .html?m=1 로 302 보내서 생기는 **표시 오류**이고
+     "It comes and goes on its own" — 저절로 생겼다 없어진다. 기술로 고칠 것이 아니다.
+     이걸 붉게 칠하면 화면이 늘 붉고, 그러면 진짜 이상이 묻힌다.
+     출처: support.google.com/blogger/thread/377434077 */
+  var BENIGN={REDIRECT_ERROR:1};
+  var HARD_FAIL={SERVER_ERROR:1,NOT_FOUND:1,ACCESS_DENIED:1,ACCESS_FORBIDDEN:1,
+    BLOCKED_ROBOTS_TXT:1,BLOCKED_4XX:1,INTERNAL_CRAWL_ERROR:1,INVALID_URL:1,SOFT_404:1};
   function renderCrawlHealth(posts, dbPosts){
     var rows=[];
     dbPosts.forEach(function(p){
@@ -283,10 +290,11 @@
     });
     rows.sort(function(a,b){ return a.crawl<b.crawl?1:(a.crawl>b.crawl?-1:0); });
     var recent=rows.slice(0,12);
-    var fail=0, ok=0, unknown=0, lastOk='', lastFail='';
+    var fail=0, ok=0, unknown=0, benign=0, lastFail='';
     recent.forEach(function(r){
-      if(FETCH_FAIL[r.fetch]){ fail++; if(!lastFail) lastFail=r.crawl; }
-      else if(r.fetch==='SUCCESSFUL'){ ok++; if(!lastOk) lastOk=r.crawl; }
+      if(HARD_FAIL[r.fetch]){ fail++; if(!lastFail) lastFail=r.crawl; }
+      else if(BENIGN[r.fetch]) benign++;
+      else if(r.fetch==='SUCCESSFUL') ok++;
       else unknown++;   /* 옛 기록엔 fetch 필드가 없다(2026-08-03 이전 조회분) */
     });
     var el=document.getElementById('crawlHealth');
@@ -294,22 +302,28 @@
 
     var bad=fail>0;
     var head=bad
-      ? '🔴 <b>구글이 와서 가져가지 못하고 있다</b> — 최근 크롤 '+recent.length+'편 중 <b>실패 '+fail+'편</b>'
-      : (ok? '🟢 <b>크롤 정상</b> — 최근 크롤 '+recent.length+'편 중 실패 0'
-           : '· 크롤 판정 보류 — 조회 기록이 오래됐다');
+      ? '🔴 <b>크롤 실패 '+fail+'편</b> — 서버·차단·주소 문제다. 이건 진짜 이상이다'
+      : (benign? '⚠️ <b>Redirect error '+benign+'편 — 경보 아님</b> (블로거의 알려진 표시 오류)'
+               : (ok? '🟢 <b>크롤 정상</b> — 최근 '+recent.length+'편 이상 없음'
+                    : '· 크롤 판정 보류 — 조회 기록이 오래됐다'));
     var why=bad
-      ? '<div style="margin:6px 0 0">이 상태에서는 <b>발행·보강·색인요청이 전부 헛돈다</b> — 구글이 와도 못 가져가기 때문이다.<br>'
-        +'확인: GSC → URL 검사 → <b>실제 URL 테스트</b>(지금 되는지 직접 본다) → 되면 그 화면에서 <b>색인 생성 요청</b>.</div>'
-      : '';
+      ? '<div style="margin:6px 0 0">확인: GSC → URL 검사 → <b>실제 URL 테스트</b>로 지금 되는지 직접 본다.</div>'
+      : (benign
+        ? '<div style="margin:6px 0 0">블로거가 모바일 요청을 <code>.html?m=1</code> 로 302 보내서 생기는 <b>표시 오류</b>다. '
+          +'Blogger 커뮤니티 Product Expert: <b>“실제 오류가 아니라 표시 오류이고 저절로 생겼다 없어진다”</b>.<br>'
+          +'<b>기술로 고칠 것이 아니다</b> — 레버는 콘텐츠·OSMU·시간이다. '
+          +'<a href="https://support.google.com/blogger/thread/377434077" target="_blank" rel="noopener" style="color:#ffd166">출처 스레드↗</a></div>'
+        : '');
     var cells=recent.map(function(r){
-      var m = FETCH_FAIL[r.fetch] ? '🔴' : (r.fetch==='SUCCESSFUL' ? '✅' : '·');
+      var m = HARD_FAIL[r.fetch] ? '🔴' : (BENIGN[r.fetch] ? '⚠️' : (r.fetch==='SUCCESSFUL' ? '✅' : '·'));
       var f = r.fetch || '(옛 기록 — fetch 미저장)';
       return '<tr><td class="c">'+m+' '+esc(r.code)+'</td><td style="font-size:12.5px">'+esc(f)+'</td>'
         +'<td style="font-size:12.5px;color:#8a97ab">'+esc(r.crawl)+'</td>'
         +'<td class="n">'+esc(r.title.slice(0,34))+'</td></tr>';
     }).join('');
-    el.innerHTML='<div style="background:'+(bad?'#3a1f1f':'#0c3a2c')+';border:1px solid '
-      +(bad?'#7a3a3a':'#1f6b52')+';color:'+(bad?'#ffb3b3':'#8ef0cf')
+    var tone = bad ? ['#3a1f1f','#7a3a3a','#ffb3b3']
+                   : (benign ? ['#3a2f12','#5a4a1a','#ffd166'] : ['#0c3a2c','#1f6b52','#8ef0cf']);
+    el.innerHTML='<div style="background:'+tone[0]+';border:1px solid '+tone[1]+';color:'+tone[2]
       +';border-radius:10px;padding:11px 13px;margin:0 0 12px;font-size:13px">'
       +head+why
       +'<details style="margin-top:8px"><summary style="cursor:pointer;font-size:12.5px">최근 크롤 '+recent.length+'편 보기</summary>'

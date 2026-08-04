@@ -9,9 +9,11 @@
    "due": "2026-08-06",
    "cmd": "python studio/searchconsole.py inspect",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "flag": "우리 쪽 결함 없음으로 결론난 건. 그때도 그대로면 Blogger 응답 지연(본문 14만자)을 의심할 것",
-   "note": 28
+   "note": 28,
+   "done_at": "2026-08-04",
+   "result": "2026-08-04 종결 — Blogger 커뮤니티 스레드 377434077 원문 확인 결과 REDIRECT_ERROR 는 '실제 오류가 아니라 검색 콘솔의 표시 오류'이고 저절로 왔다 간다. 기술 원인 9개를 실측으로 지웠고(리디렉션 코드·canonical·맞춤리디렉션·사이트맵·robots·헤더·도메인·수동조치·무게·모바일테마) 우리 설정은 이미 권장 상태다. '본문 14만자 응답지연' 가설도 배제 — 실패 137~162KB/1.4초 vs 성공 133~135KB/1.2초로 차이 없음. 감시 기준을 KNOWN_BENIGN 으로 낮춰 crawl_health·crawl-watch·콘솔 4곳에 반영"
   },
   {
    "id": "adsense-review",

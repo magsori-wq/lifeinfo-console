@@ -307,7 +307,11 @@
      색인 여부보다 앞선 질문이다: 못 가져가면 발행도 보강도 색인요청도 전부 헛돈다.
      정상이면 아무것도 그리지 않는다 — 늘 떠 있는 경고는 곧 벽지가 된다. */
   (function(){
-    var FAIL={REDIRECT_ERROR:1,SERVER_ERROR:1,NOT_FOUND:1,ACCESS_DENIED:1,ACCESS_FORBIDDEN:1,
+    /* 🔴 REDIRECT_ERROR 는 뺐다 (2026-08-04). 블로거가 모바일 요청을 ?m=1 로 302 보내서
+       생기는 표시 오류이고 저절로 왔다 간다(Blogger 커뮤니티 Product Expert 답변,
+       support.google.com/blogger/thread/377434077). 이걸로 띠를 띄우면 거의 매일 붉고,
+       그러면 진짜 이상이 났을 때 아무도 안 본다. */
+    var FAIL={SERVER_ERROR:1,NOT_FOUND:1,ACCESS_DENIED:1,ACCESS_FORBIDDEN:1,
       BLOCKED_ROBOTS_TXT:1,BLOCKED_4XX:1,INTERNAL_CRAWL_ERROR:1,INVALID_URL:1,SOFT_404:1};
     fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
     .then(function(j){
