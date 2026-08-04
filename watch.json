@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-04",
+ "updated": "2026-08-05",
  "items": [
   {
    "id": "redirect-error",
@@ -44,9 +44,11 @@
    "what": "미검증 5편 재시도 — F4-04 숙박 · C4-06 틀니 · D4-01 공연 · F2-01 KTX · B2-03 채권",
    "cmd": "cat posts/_fact/*.md 2>/dev/null | head -5   # 근거 파일 위치",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "flag": "F4-04 숙박 우선 — 공정위 소비자분쟁해결기준 2025-12-18 개정으로 표가 낡았을 가능성",
-   "note": 26
+   "note": 26,
+   "done_at": "2026-08-04",
+   "result": "5/5 완료 — F4-04·D4-01·C4-06·B2-03은 unblock 배치(작업세션)에서 완료, F2-01(KTX)은 야간루틴이 직접 검증(코레일 공식페이지 원문 대조) 완료. 오류 0건 발견, F2-01은 평일/주말 스케줄 구분 누락 1건 발견(요일무관 급하지않음, note 기록)"
   },
   {
    "id": "intro-numbers",
@@ -69,17 +71,6 @@
    "note": 37,
    "done_at": "2026-08-04",
    "result": "실행 확인됨 — lifeinfo-nightly-verify lastRunAt 2026-08-03T13:33:52Z(KST 22:33), 출력이 note 47·48(야간검증 08-03)로 기록됨. 라이브 무변경 확인(selfcheck 라이브 170편·orphan 0·죽은url 0). 카카오톡 도착 여부는 이 세션에서 확인 불가"
-  },
-  {
-   "id": "insta-next5",
-   "added": "2026-08-03",
-   "what": "인스타 다음 5편(C1-09·B2-01·A5-02·D3-03·F2-08) 카드·캡션 제작 완료(2026-08-04), PLAN 등록·게이트 통과. 남은 건 게시뿐.",
-   "cmd": "python -m studio.insta_post --list",
-   "owner": "user",
-   "state": "todo",
-   "flag": "게시 후 python -m studio.pipeline insta-link --code <코드> --url <URL> 로 기록",
-   "note": 46,
-   "due": "2026-08-04"
   },
   {
    "id": "chuseok-2026-rail",
@@ -107,9 +98,11 @@
    "what": "막힌 수치 5건 — 미시도 공식 경로(행정규칙·elis·심평원)로 재시도",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "flag": "law.go.kr 은 브라우저 필요(정적 요청은 검색창만 잡힌다). 별표는 lsBylInfoPLinkR.do → img alt",
-   "note": 47
+   "note": 47,
+   "done_at": "2026-08-04",
+   "result": "batchboard unblock 6/7 완료 확인(작업세션이 처리): F4-04·D4-01·C3-02·C4-06·B2-03 전부 done. 남은 A-3(REDIRECT_ERROR 8편)은 우리 결함 아님, 구글 재크롤 대기(2026-08-06 재조회 예정)라 watch 대상 아님"
   },
   {
    "id": "crawl-watch",
@@ -140,14 +133,6 @@
    "note": 53
   },
   {
-   "id": "insta-osmu",
-   "added": "2026-08-04",
-   "what": "인스타 미확산 — 준비 완료 5편(C1-09·B2-01·A5-02·D3-03·F2-08)은 게시만 남음. 그 외는 카드 미제작.",
-   "cmd": "python -m studio.insta_post --list",
-   "owner": "user",
-   "state": "todo"
-  },
-  {
    "id": "label-at-publish",
    "added": "2026-08-04",
    "what": "발행 시 라벨 자동부착이 실제로 도는지 확인 — 2026-08-04 수정(코드 첫 글자로 라벨 결정 + 발행 직후 되읽기). F1-11(12:48 발행)이 라벨을 갖고 나온 것은 정황상 맞지만 gh 가 없어 Actions 로그로 확정 못 함(발행 세션이 직접 넣었을 수도). 다음 발행 후 sync-labels dry-run 이 '수정 대상 0편'이면 확정, 1편 이상이면 Actions 가 옛 코드를 쓰고 있거나 경로가 다른 것이니 publish.yml 이 어느 커밋을 체크아웃하는지 확인할 것. 발행 로그에 'DB 레코드가 아직 없어 코드 첫 글자로 표준 라벨을 정했다' 와 '되읽기 검증' 이 찍히면 새 코드가 돈 것이다",
@@ -166,6 +151,23 @@
    "owner": "user",
    "state": "todo",
    "note": 60
+  },
+  {
+   "id": "insta-osmu",
+   "added": "2026-08-04",
+   "what": "인스타 미확산 — F2-08(제주 렌터카) 1편만 게시 남음(카드·캡션 준비 완료). 그 외 78편은 카드 미제작.",
+   "cmd": "python -m studio.insta_post --code F2-08",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "dupcheck-green-miss",
+   "added": "2026-08-05",
+   "what": "dupcheck 가 B1-04(주민세)·A4-03(집중호우 재난지원금) 중복을 🟢 신규로 통과 — 토큰화/유사어 보강 검토. 2026-08-04 오전브리핑에서 발견(사람이 DB 제목을 직접 읽어서야 걸림)",
+   "due": "2026-08-08",
+   "cmd": "python -m studio.dupcheck \"주민세 개인분 사업소분 납부 방법 기간 총정리\"",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
