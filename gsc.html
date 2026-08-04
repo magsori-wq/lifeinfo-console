@@ -181,33 +181,48 @@
 
 <div id="viewRe" class="hide">
   <div class="note">
-    <b>🔄 색인 재요청 — '고쳤는데 구글이 아직 못 본 글'만</b>
+    <b>🔄 색인 재요청 — 구글이 아직 못 본 글만</b>
+    <div id="rExp" class="hide" style="background:#2a1f3a;border:1px solid #5b4a7a;color:#d9c2ff;border-radius:8px;padding:9px 12px;margin:8px 0;font-size:12px"></div>
     <div style="background:#0c3a2c;border:1px solid #1f6b52;color:#8ef0cf;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:12px">
-      <b>왜 지금은 해볼 만한가 (2026-07-29 실측)</b> — 색인된 7편의 <b>마지막 크롤이 7/6~7/7</b>인데,
-      원본가치 주입은 <b>7/18~21</b>, 검색설명 162편은 <b>7/28</b>, H1 계층 수정은 <b>7/29</b>였습니다.
-      즉 <b>구글이 읽은 건 개선 전 원고</b>이고 <b>주입 이후 재크롤된 색인글은 0편</b>입니다.
-      "같은 걸 또 들이미는" 게 아니라 <b>새 내용을 보여주는</b> 요청이라 의미가 있습니다.
+      <b>1순위가 왜 '미크롤'인가 (2026-08-04 실측)</b> — 색인 대기 중 <b>35편은 구글이
+      URL 존재 자체를 모릅니다</b>(<code>URL is unknown to Google</code>). 사이트맵에는 171건 전수
+      등재돼 있고, 7/30 이후 요청분은 100% 크롤됐습니다. 즉 <b>7/14~7/27 요청분만 통째로 유실</b>된
+      것이라, 이건 "같은 걸 또 들이미는" 요청이 아니라 <b>처음 알리는</b> 요청입니다.
+    </div>
+    <div style="background:#3a1f1f;border:1px solid #7a3a3a;color:#ffb3b3;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:12px">
+      🔴 <b>다만 기대치를 낮추세요 — 이미 한 번 해봤고 결과가 나빴습니다.</b>
+      2026-07-29 에 10편을 재요청했는데, 6일 뒤 실측(8/4)에서 <b>크롤된 건 1편(D1-01)뿐</b>입니다.
+      나머지 9편은 마지막 크롤이 전부 재요청 이전이거나 없습니다. 그때 미크롤이던 2편 중
+      1편은 여전히 <code>unknown</code>, 1편은 <code>Discovered</code>로만 이동했습니다
+      (구글이 알게는 됐으나 안 옴). <b>재요청은 재크롤을 앞당기는 약한 신호</b>이고,
+      진짜 레버는 여전히 <b>OSMU 유입·원본가치·시간</b>입니다.
     </div>
     <div style="background:#3a2f12;border:1px solid #5a4a1a;color:#ffd166;border-radius:8px;padding:8px 11px;margin:8px 0;font-size:12px">
       ⚠️ <b>전량 요청 금지.</b> 예전에 고친 것 없이 전량 요청했다가 Coverage 에
-      <code>유효성 검사: 실패함</code>이 찍혔습니다. 여기 뜬 <b>1·2순위만</b>, 하루 한도(약 10건)에 맞춰 나눠 요청하세요.
-      3순위(공통 개선만 적용된 나머지)는 <b>일부러 뺐습니다</b>.
+      <code>유효성 검사: 실패함</code>이 찍혔습니다. <b>여기 뜬 줄만</b> 하루 한도(약 10건)에 맞춰.
+      회색 줄은 <b>일부러 잠근 것</b>이라 누르면 안 됩니다.
     </div>
     <ol style="margin:8px 0 4px;padding-left:20px;line-height:1.9">
-      <li>배치 <b>①</b>부터 — 각 줄 <b>[GSC 검사]</b> 클릭 → GSC 열림 + <b>클린 URL 자동 복사</b></li>
-      <li>GSC 상단 검사창에 <b>Ctrl+V</b> + Enter → <b>실제 URL 테스트</b> → <b>색인 생성 요청</b></li>
-      <li>그 줄 <b>완료</b> 체크(브라우저 로컬 기록) · 하루 한도 넘으면 다음 날 배치 ②</li>
-      <li>며칠 뒤 <code>python -m studio.searchconsole inspect</code> 로 실제 반영 확인</li>
+      <li>각 줄 <b>[검사창↗]</b> 클릭 → <b>그 글의 GSC 검사 화면이 바로</b> 열립니다(붙여넣기 불필요)</li>
+      <li>거기서 <b>색인 생성 요청</b> 클릭</li>
+      <li>그 줄 <b>완료</b> 체크 → 아래 <b>[기록 명령 복사]</b> → 터미널에 붙여넣기(파일에 남습니다)</li>
+      <li>판정은 <code>python -m studio.crawl_watch</code> 가 매일 밤 자동으로 합니다</li>
     </ol>
-    <span style="color:#8a97ab">※ 목록은 <code>python -m studio.reindex --emit</code> 이 만듭니다(<code>webapp/reindex.json</code>).
-      기준 = <b>마지막 크롤 &lt; 최신 개선일</b> → 구글이 개선을 아직 못 본 글.</span>
+    <span style="color:#8a97ab">※ 목록은 <code>python -m studio.reindex --emit</code> 이 만듭니다.
+      🔴 색인 요청은 <b>API가 없습니다</b>(URL 검사 API는 읽기 전용, Indexing API는 채용공고·방송 전용)
+      — 누르는 것은 사람이고, 이 화면은 <b>클릭을 최단으로 줄이고 기록을 자동화</b>할 뿐입니다.</span>
   </div>
 
   <div class="cards">
-    <div class="card"><div class="k">1순위 · 색인된 글</div><div class="v" id="rT1">–</div></div>
-    <div class="card"><div class="k">2순위 · 원본가치 주입</div><div class="v" id="rT2">–</div></div>
-    <div class="card"><div class="k">요청 대상 합계</div><div class="v" id="rTot">–</div></div>
-    <div class="card"><div class="k">3순위(보류)</div><div class="v" id="rHold" style="color:#8a97ab">–</div></div>
+    <div class="card"><div class="k">1순위 · 구글이 모름</div><div class="v" id="rT1">–</div></div>
+    <div class="card"><div class="k">2순위 · 개선 전 원고</div><div class="v" id="rT2">–</div></div>
+    <div class="card"><div class="k">지금 누를 것</div><div class="v" id="rTot">–</div></div>
+    <div class="card"><div class="k">잠김 · 보류</div><div class="v" id="rHold" style="color:#8a97ab">–</div></div>
+  </div>
+
+  <div style="display:flex;gap:8px;align-items:center;margin:0 0 10px">
+    <button id="rCopy" class="fbtn" style="cursor:pointer">📋 기록 명령 복사</button>
+    <span style="font-size:11.5px;color:#8a97ab">체크한 줄을 <code>python -m studio.reindex done …</code> 한 줄로 만들어 복사합니다</span>
   </div>
 
   <table>
@@ -218,7 +233,7 @@
     <tbody id="rrows"><tr><td colspan="6" style="padding:20px;color:#6b7790">불러오는 중…</td></tr></tbody>
   </table>
   <p class="foot">
-    ※ 완료 체크는 <b>브라우저 로컬 기록</b>이라 PC를 바꾸면 사라집니다 — 진실원은 며칠 뒤 <code>inspect</code> 실측입니다.<br>
+    ※ 완료 체크는 <b>브라우저 로컬 기록</b>입니다 — 파일에 남기려면 반드시 <b>[기록 명령 복사]</b>까지 하세요.<br>
     ※ 요청했다고 색인이 보장되지 않습니다. <b>재크롤을 앞당기는 것</b>이지, 색인 여부는 여전히 구글 판단입니다.
   </p>
 </div><!-- /viewRe -->
@@ -443,27 +458,47 @@
     fetch('reindex.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(j){
       var tb=document.getElementById('rrows');
       if(!j||!j.targets){ tb.innerHTML='<tr><td colspan="6" style="padding:20px;color:#6b7790">reindex.json 없음 — <code>python -m studio.reindex --emit</code> 을 먼저 실행하세요.</td></tr>'; return; }
-      var c=j.counts||{}, done=reDone();
-      document.getElementById('rT1').textContent=(c.tier1_indexed||0)+'편';
-      document.getElementById('rT2').textContent=(c.tier2_v0||0)+'편';
-      document.getElementById('rTot').textContent=(c.targets||0)+'편 / '+(c.batches||0)+'일';
-      document.getElementById('rHold').textContent=(c.tier3_hold||0)+'편';
-      if(typeof c.requested==='number'){
-        document.getElementById('rTot').innerHTML=(c.targets||0)+'편 <small style="font-size:12px;color:#06d6a0">· 요청 '+c.requested+' / 남은 '+c.remain+'</small>';
-      }
+      var c=j.counts||{}, done=reDone(), ex=j.experiment||{};
+      document.getElementById('rT1').textContent=(c.tier1_nocrawl!=null?c.tier1_nocrawl:c.tier1_indexed||0)+'편';
+      document.getElementById('rT2').textContent=(c.tier2_stale!=null?c.tier2_stale:c.tier2_v0||0)+'편';
+      document.getElementById('rTot').innerHTML=(c.targets||0)+'편'
+        +(typeof c.requested==='number'?' <small style="font-size:12px;color:#06d6a0">· 요청 '+c.requested+' / 남은 '+c.remain+'</small>':'');
+      document.getElementById('rHold').textContent=((c.control||0)+(c.paused||0)+(c.prior||0))+' · '+(c.tier3_hold||0)+'편';
+
+      /* 🔬 실험이 열려 있으면 왜 5편뿐인지 화면에 적는다. 안 적으면 "왜 35편이 아니지?"를
+         볼 때마다 다시 묻게 되고, 결국 누군가 전량 눌러 실험이 깨진다. */
+      var eb=document.getElementById('rExp');
+      if(ex.open){
+        eb.classList.remove('hide');
+        eb.innerHTML='🔬 <b>실험 진행 중 — 판정 '+esc(ex.due||'')+'</b> ('+esc(ex.watch||'')+')<br>'
+          +esc(ex.why||'')+'<br><b>회색 줄은 대조군입니다. 하나라도 더 누르면 판정이 불가능해집니다.</b>';
+      } else { eb.classList.add('hide'); }
+
       tb.innerHTML=j.targets.map(function(t){
         /* 진실원은 reindex.json 의 requested_at(파일) — localStorage 체크는 보조일 뿐이다.
            둘 중 하나라도 있으면 '요청함'으로 본다. */
         var ok=!!t.requested_at||!!done[t.code];
-        return '<tr'+(ok?' style="opacity:.45"':'')+'>'
-          +'<td><span class="st '+(t.tier===1?'ok':'warn')+'">'+(t.batch||1)+'차</span></td>'
+        var lock=(t.phase==='control'||t.phase==='paused'||t.phase==='prior');
+        var LT={control:['🚫대조군','대조군 — 누르면 실험이 깨진다'],
+                paused:['⏸보류','실험 기간 동안만 보류'],
+                prior:['↩︎기요청','2026-07-29 에 이미 재요청된 글 — 실험군·대조군 어디에도 안 넣는다']};
+        var tag=lock?'<span class="st warn" title="'+esc(LT[t.phase][1])+'">'+LT[t.phase][0]+'</span>'
+                 :'<span class="st '+(t.tier===1?'ok':'warn')+'">'+(t.batch||1)+'차</span>';
+        return '<tr'+(lock?' style="opacity:.32"':(ok?' style="opacity:.45"':''))+'>'
+          +'<td>'+tag+'</td>'
           +'<td><b>'+esc(t.code)+'</b></td>'
           +'<td><div>'+esc(t.title)+'</div><div style="font-size:11px;color:#8a97ab;margin-top:2px">'+esc(t.why)+'</div></td>'
           +'<td style="font-size:11.5px">'+(t.last_crawl?esc(t.last_crawl):'<span style="color:#ff8a8a">없음</span>')
-          +(t.requested_at?'<div style="color:#06d6a0;font-size:10.5px;margin-top:2px">✓ '+esc(t.requested_at)+' 요청</div>':'')+'</td>'
-          +'<td><a class="act gsc" href="'+esc(PROP_DASH)+'" target="_blank" rel="noopener" data-copy="'+esc(t.url)+'">GSC 검사</a>'
-          +'<a class="act open" href="'+esc(t.url)+'" target="_blank" rel="noopener">글</a></td>'
-          +'<td style="text-align:center"><input type="checkbox" data-re="'+esc(t.code)+'"'+(ok?' checked':'')+'></td></tr>';
+          +(t.first_request?'<div style="font-size:10.5px;color:#8a97ab;margin-top:2px">최초요청 '+esc(t.first_request)+'</div>':'')
+          +(t.requested_at?'<div style="color:#06d6a0;font-size:10.5px;margin-top:2px">✓ '+esc(t.requested_at)+' 재요청</div>':'')+'</td>'
+          /* 🔴 t.gsc = GSC 가 준 그 글의 검사 딥링크. 예전엔 속성 대시보드를 열고 URL 을
+             클립보드로 넘겨 사람이 붙여넣게 했다 — 한 단계가 통째로 없어진다. */
+          +'<td>'+(lock?'<span style="color:#6b7790;font-size:11.5px">누르지 말 것</span>'
+              :(t.gsc?'<a class="act open" href="'+esc(t.gsc)+'" target="_blank" rel="noopener" title="이 글의 GSC 검사 화면을 바로 연다">검사창↗</a>'
+                     :'<a class="act gsc" href="'+esc(PROP_DASH)+'" target="_blank" rel="noopener" data-copy="'+esc(t.url)+'">GSC 검사</a>')
+              +'<a class="act open" href="'+esc(t.url)+'" target="_blank" rel="noopener">글</a>')+'</td>'
+          +'<td style="text-align:center">'+(lock?'—'
+              :'<input type="checkbox" data-re="'+esc(t.code)+'"'+(ok?' checked':'')+'>')+'</td></tr>';
       }).join('');
       tb.querySelectorAll('input[data-re]').forEach(function(cb){
         cb.addEventListener('change',function(){ reSet(cb.dataset.re,cb.checked); renderRe(); });
@@ -472,6 +507,18 @@
       document.getElementById('rrows').innerHTML='<tr><td colspan="6" style="padding:20px;color:#ff8a8a">reindex.json 로드 실패</td></tr>';
     });
   }
+
+  /* 📋 체크한 줄 → 기록 명령. localStorage 체크는 PC 를 바꾸면 사라지므로 여기서
+     끊긴다 — 파일(reindex.json)까지 이어야 다음 세션이 안다. 정적 페이지라 파일을
+     직접 못 쓰니, 사람이 한 번 붙여넣는 것으로 잇는다. */
+  document.getElementById('rCopy').addEventListener('click',function(){
+    var d=reDone(), codes=Object.keys(d);
+    if(!codes.length){ toast('체크된 줄이 없습니다'); return; }
+    var cmd='python -m studio.reindex done '+codes.join(' ');
+    navigator.clipboard.writeText(cmd).then(function(){
+      toast('복사됨 — 터미널에 붙여넣으세요 ('+codes.length+'편)');
+    },function(){ window.prompt('복사해서 터미널에 붙여넣으세요', cmd); });
+  });
 
   document.querySelectorAll('.tb').forEach(function(b){
     b.addEventListener('click',function(){
