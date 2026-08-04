@@ -69,22 +69,13 @@
    "result": "실행 확인됨 — lifeinfo-nightly-verify lastRunAt 2026-08-03T13:33:52Z(KST 22:33), 출력이 note 47·48(야간검증 08-03)로 기록됨. 라이브 무변경 확인(selfcheck 라이브 170편·orphan 0·죽은url 0). 카카오톡 도착 여부는 이 세션에서 확인 불가"
   },
   {
-   "id": "insta-osmu",
+   "id": "insta-next5",
    "added": "2026-08-03",
-   "what": "인스타 카드 제작·게시 (미확산 80편)",
+   "what": "인스타 다음 5편(C1-09·B2-01·A5-02·D3-03·F2-08) 카드·캡션 제작 완료(2026-08-04), PLAN 등록·게이트 통과. 남은 건 게시뿐.",
    "cmd": "python -m studio.insta_post --list",
    "owner": "user",
    "state": "todo",
-   "flag": "다음 회차 5편 선정·사진계획 완료 = 인스타확산_다음회차_2026-08-03.md"
-  },
-  {
-   "id": "insta-next5",
-   "added": "2026-08-03",
-   "what": "인스타 다음 5편(C1-09·B2-01·A5-02·D3-03·F2-08) 카드 제작 — 선정·사진계획 완료(인스타확산_다음회차_2026-08-03.md). 2026-08-03 22:5x 시도했으나 insta_preflight 실패(물리메모리 여유 1.13GB, Chrome 2.9GB 점유) — Chrome 정리 후 재시도.",
-   "cmd": "python -m studio.insta_preflight",
-   "owner": "claude",
-   "state": "todo",
-   "flag": "관제탑에서 만들지 말 것. 만든 뒤 studio/insta_post.py PLAN 에 줄 추가",
+   "flag": "게시 후 python -m studio.pipeline insta-link --code <코드> --url <URL> 로 기록",
    "note": 46,
    "due": "2026-08-04"
   },
@@ -145,6 +136,14 @@
    "owner": "claude",
    "state": "wait",
    "note": 53
+  },
+  {
+   "id": "insta-osmu",
+   "added": "2026-08-04",
+   "what": "인스타 미확산 — 준비 완료 5편(C1-09·B2-01·A5-02·D3-03·F2-08)은 게시만 남음. 그 외는 카드 미제작.",
+   "cmd": "python -m studio.insta_post --list",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
