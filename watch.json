@@ -144,6 +144,16 @@
    "cmd": "python -m studio.insta_post --list",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "label-at-publish",
+   "added": "2026-08-04",
+   "what": "발행 시 라벨 자동부착이 실제로 도는지 확인 — 2026-08-04 수정(코드 첫 글자로 라벨 결정 + 발행 직후 되읽기). F1-11(12:48 발행)이 라벨을 갖고 나온 것은 정황상 맞지만 gh 가 없어 Actions 로그로 확정 못 함(발행 세션이 직접 넣었을 수도). 다음 발행 후 sync-labels dry-run 이 '수정 대상 0편'이면 확정, 1편 이상이면 Actions 가 옛 코드를 쓰고 있거나 경로가 다른 것이니 publish.yml 이 어느 커밋을 체크아웃하는지 확인할 것. 발행 로그에 'DB 레코드가 아직 없어 코드 첫 글자로 표준 라벨을 정했다' 와 '되읽기 검증' 이 찍히면 새 코드가 돈 것이다",
+   "due": "2026-08-05",
+   "cmd": "python studio/blogger.py sync-labels",
+   "owner": "claude",
+   "state": "wait",
+   "note": 55
   }
  ]
 }
