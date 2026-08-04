@@ -72,6 +72,10 @@
     <nav id="nav">
       <button data-t="dispatch" class="active">⚡ 디스패치</button>
       <button data-t="progress">📋 발행대기</button>
+      <!-- 🔴 색인관리를 앞으로 당겼다 (2026-08-04). 15개 중 12번째라 아무도 안 열었고,
+           그 안에 '구글이 우리 글을 가져가고 있는가'가 들어 있다. 크롤이 막히면 발행도
+           보강도 헛도는데, 그 사실이 가장 안 보이는 자리에 있었다. -->
+      <button data-t="gsc">🔍 색인관리</button>
       <button data-t="batch">🔧 배치보드</button>
       <button data-t="nav">🗺️ 네비게이터</button>
       <button data-t="trends">📰 글감</button>
@@ -81,12 +85,17 @@
       <button data-t="osmu">OSMU</button>
       <button data-t="jisikin">지식인</button>
       <button data-t="dashboard">📡 모니터링</button>
-      <button data-t="gsc">🔍 색인관리</button>
       <button data-t="seo">🔧 SEO점검</button>
       <button data-t="adsense">📋 애드센스 승인</button>
       <button data-t="about">ℹ️ 소개</button>
     </nav>
   </div>
+
+  <!-- 🚨 크롤 경고띠 (2026-08-04) — 탭에 들어가야만 아는 정보는 없는 것과 같다.
+       2026-07-31 이후 예약 크롤 10건이 전부 실패했는데 나흘간 아무도 몰랐고,
+       그 나흘 동안 발행도 보강도 했지만 구글은 아무것도 가져가지 못했다.
+       정상일 때는 아무것도 그리지 않는다 — 늘 떠 있는 배너는 곧 안 보이게 된다. -->
+  <div id="crawlAlert"></div>
 
   <div class="stage">
     <div id="p_dispatch" class="panel show">
@@ -293,6 +302,37 @@
 
   /* ---------- 🗺️ 네비게이터 (LIFEINFO_메커니즘_플로우차트.md 의 화면 구현) ---------- */
   function goTab(t){var b=document.querySelector('nav button[data-t="'+t+'"]');if(b)b.click();}
+
+  /* 🚨 크롤 경고띠 — '구글이 우리 글을 가져가고 있는가'를 첫 화면에서 바로 보이게.
+     색인 여부보다 앞선 질문이다: 못 가져가면 발행도 보강도 색인요청도 전부 헛돈다.
+     정상이면 아무것도 그리지 않는다 — 늘 떠 있는 경고는 곧 벽지가 된다. */
+  (function(){
+    var FAIL={REDIRECT_ERROR:1,SERVER_ERROR:1,NOT_FOUND:1,ACCESS_DENIED:1,ACCESS_FORBIDDEN:1,
+      BLOCKED_ROBOTS_TXT:1,BLOCKED_4XX:1,INTERNAL_CRAWL_ERROR:1,INVALID_URL:1,SOFT_404:1};
+    fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+    .then(function(j){
+      if(!j||!j.posts) return;
+      var rows=[];
+      for(var c in j.posts){
+        var v=j.posts[c], lc=(v.lastCrawl||'').slice(0,10);
+        if(lc) rows.push({code:c, crawl:lc, fetch:v.fetch||''});
+      }
+      rows.sort(function(a,b){return a.crawl<b.crawl?1:(a.crawl>b.crawl?-1:0);});
+      var recent=rows.slice(0,12), fail=0, last='';
+      recent.forEach(function(r){ if(FAIL[r.fetch]){fail++; if(!last)last=r.crawl;} });
+      if(!fail) return;                       // 정상이면 조용히 아무것도 안 한다
+      var el=document.getElementById('crawlAlert');
+      el.innerHTML='<div style="background:#3a1f1f;border-bottom:1px solid #7a3a3a;color:#ffb3b3;'
+        +'padding:10px 16px;font-size:13.5px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">'
+        +'<b>🔴 구글이 우리 글을 가져가지 못하고 있다</b>'
+        +'<span style="color:#e59a9a">최근 크롤 '+recent.length+'편 중 실패 '+fail+'편 · 마지막 실패 '+last+'</span>'
+        +'<span style="color:#e59a9a">이 상태에서는 발행·보강·색인요청이 전부 헛돈다</span>'
+        +'<button id="caGo" style="margin-left:auto;background:#7a3a3a;border:1px solid #a05555;'
+        +'color:#ffe0e0;border-radius:7px;padding:5px 12px;cursor:pointer;font-size:12.5px">색인관리에서 보기 →</button>'
+        +'</div>';
+      document.getElementById('caGo').addEventListener('click',function(){ goTab('gsc'); });
+    }).catch(function(){});
+  })();
   function goDispatch(fn){goTab('dispatch');if(fn)setTimeout(function(){try{fn();}catch(e){}},80);}
   // 일일 운영 루프 (클릭 → 해당 도구)
   var FLOW=[
