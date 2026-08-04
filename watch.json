@@ -62,9 +62,11 @@
    "due": "2026-08-04",
    "cmd": "python -m studio.note list | tail -3",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "flag": "확인 3가지: ①카카오톡 도착 ②콘솔 미결 기록 ③라이브 글이 안 바뀌었는지. 로컬 루틴이라 PC 꺼져 있었으면 안 돎",
-   "note": 37
+   "note": 37,
+   "done_at": "2026-08-04",
+   "result": "실행 확인됨 — lifeinfo-nightly-verify lastRunAt 2026-08-03T13:33:52Z(KST 22:33), 출력이 note 47·48(야간검증 08-03)로 기록됨. 라이브 무변경 확인(selfcheck 라이브 170편·orphan 0·죽은url 0). 카카오톡 도착 여부는 이 세션에서 확인 불가"
   },
   {
    "id": "insta-osmu",
@@ -124,6 +126,15 @@
    "owner": "claude",
    "state": "todo",
    "flag": "야간 루틴 0단계에 붙어 자동 실행됨. 🆕크롤 변화가 뜨면 그 줄을 카톡 보고에 옮긴다. 재요청은 하지 않는다"
+  },
+  {
+   "id": "kakao-nightly-report",
+   "added": "2026-08-04",
+   "what": "야간 검증 루틴 보고가 카카오톡으로 실제 도착했는지 확인 (08-03 22:33분 실행분) — 루틴 실행·note 기록·라이브 무변경은 확인됐고 카톡 도착만 미확인. 안 왔으면 daily_report 전송 경로가 조용히 끊긴 것",
+   "due": "2026-08-04",
+   "owner": "user",
+   "state": "todo",
+   "note": 37
   }
  ]
 }
