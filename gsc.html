@@ -102,6 +102,11 @@
     </div>
   </details>
 
+  <!-- 🔴 크롤 건강 (2026-08-04 신설) — '구글이 와서 실제로 가져갔는가'.
+       색인 여부보다 앞에 있는 질문이다. 크롤이 막히면 발행·보강·색인요청이 전부 헛돈다.
+       실제로 7/31~8/04 예약 크롤 10건이 전부 실패했는데 나흘간 아무도 몰랐다. -->
+  <div id="crawlHealth"></div>
+
   <div class="toolbar">
     <input type="search" id="q" placeholder="제목·코드 검색">
     <button class="fbtn on" data-f="all">전체</button>
@@ -262,6 +267,62 @@
     return {c:'wait',t:esc(state)};
   }
 
+  /* ===== 🚦 크롤 건강 =====
+     '색인됐나' 이전에 '구글이 와서 가져갔나'를 먼저 본다. 둘은 조치가 정반대다:
+     못 가져간 것이면 기술 문제이고, 가져갔는데 색인이 안 된 것이면 콘텐츠 문제다.
+     2026-07-31~08-04 예약 크롤 10건이 전부 실패했는데 나흘간 아무도 몰랐다 —
+     그 나흘 동안 발행도 보강도 했지만 구글은 아무것도 가져가지 못했다. */
+  var FETCH_FAIL={REDIRECT_ERROR:1,SERVER_ERROR:1,NOT_FOUND:1,ACCESS_DENIED:1,
+    ACCESS_FORBIDDEN:1,BLOCKED_ROBOTS_TXT:1,BLOCKED_4XX:1,INTERNAL_CRAWL_ERROR:1,
+    INVALID_URL:1,SOFT_404:1};
+  function renderCrawlHealth(posts, dbPosts){
+    var rows=[];
+    dbPosts.forEach(function(p){
+      var ix=posts[p.code]||{}; var lc=(ix.lastCrawl||'').slice(0,10);
+      if(lc) rows.push({code:p.code,title:p.title||'',crawl:lc,fetch:ix.fetch||'',at:ix.at||''});
+    });
+    rows.sort(function(a,b){ return a.crawl<b.crawl?1:(a.crawl>b.crawl?-1:0); });
+    var recent=rows.slice(0,12);
+    var fail=0, ok=0, unknown=0, lastOk='', lastFail='';
+    recent.forEach(function(r){
+      if(FETCH_FAIL[r.fetch]){ fail++; if(!lastFail) lastFail=r.crawl; }
+      else if(r.fetch==='SUCCESSFUL'){ ok++; if(!lastOk) lastOk=r.crawl; }
+      else unknown++;   /* 옛 기록엔 fetch 필드가 없다(2026-08-03 이전 조회분) */
+    });
+    var el=document.getElementById('crawlHealth');
+    if(!recent.length){ el.innerHTML=''; return; }
+
+    var bad=fail>0;
+    var head=bad
+      ? '🔴 <b>구글이 와서 가져가지 못하고 있다</b> — 최근 크롤 '+recent.length+'편 중 <b>실패 '+fail+'편</b>'
+      : (ok? '🟢 <b>크롤 정상</b> — 최근 크롤 '+recent.length+'편 중 실패 0'
+           : '· 크롤 판정 보류 — 조회 기록이 오래됐다');
+    var why=bad
+      ? '<div style="margin:6px 0 0">이 상태에서는 <b>발행·보강·색인요청이 전부 헛돈다</b> — 구글이 와도 못 가져가기 때문이다.<br>'
+        +'확인: GSC → URL 검사 → <b>실제 URL 테스트</b>(지금 되는지 직접 본다) → 되면 그 화면에서 <b>색인 생성 요청</b>.</div>'
+      : '';
+    var cells=recent.map(function(r){
+      var m = FETCH_FAIL[r.fetch] ? '🔴' : (r.fetch==='SUCCESSFUL' ? '✅' : '·');
+      var f = r.fetch || '(옛 기록 — fetch 미저장)';
+      return '<tr><td class="c">'+m+' '+esc(r.code)+'</td><td style="font-size:12.5px">'+esc(f)+'</td>'
+        +'<td style="font-size:12.5px;color:#8a97ab">'+esc(r.crawl)+'</td>'
+        +'<td class="n">'+esc(r.title.slice(0,34))+'</td></tr>';
+    }).join('');
+    el.innerHTML='<div style="background:'+(bad?'#3a1f1f':'#0c3a2c')+';border:1px solid '
+      +(bad?'#7a3a3a':'#1f6b52')+';color:'+(bad?'#ffb3b3':'#8ef0cf')
+      +';border-radius:10px;padding:11px 13px;margin:0 0 12px;font-size:13px">'
+      +head+why
+      +'<details style="margin-top:8px"><summary style="cursor:pointer;font-size:12.5px">최근 크롤 '+recent.length+'편 보기</summary>'
+      +'<table style="margin-top:8px"><tr><th style="width:92px">코드</th><th style="width:170px">가져오기</th>'
+      +'<th style="width:92px">크롤일</th><th>제목</th></tr>'+cells+'</table>'
+      +'<div style="font-size:11.5px;color:#8a97ab;margin-top:8px">'
+      +'※ 이 표는 <code>index_status.json</code> 의 <b>예약 크롤</b> 기록이다. '
+      +'GSC 실시간 테스트는 여기 남지 않는다 — 실시간이 통과해도 예약 크롤은 따로 실패할 수 있다.<br>'
+      +'※ 자동 감시: 깃허브 <b>크롤 감시</b> 워크플로가 하루 2회(07:10·19:10) 확인하고, '
+      +'실패하면 이슈를 만들어 메일로 알린다. 회복하면 그 이슈를 닫는다.</div>'
+      +'</details></div>';
+  }
+
   Promise.all([
     fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}),
     fetch('index_status.json?t='+Date.now()).then(function(r){return r.ok?r.json():{posts:{}};}).catch(function(){return {posts:{}};}),
@@ -282,6 +343,7 @@
               stale:!!(pl&&pl.title_at_write&&pl.title_at_write!==(p.title||'')),
               dstate:ds.state||'', dlen:ds.live_len||0, postId:ds.postId||''};
     });
+    renderCrawlHealth(posts, db.posts||[]);
     render(); renderDesc(); renderRe();
   }).catch(function(){
     document.getElementById('rows').innerHTML='<tr><td colspan="5" style="padding:20px;color:#ff8a8a">데이터 로드 실패 (lifeinfo_db.txt)</td></tr>';
