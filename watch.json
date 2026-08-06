@@ -185,7 +185,7 @@
    "id": "seodesc-a2-13",
    "added": "2026-08-05",
    "what": "🔴A2-13(2027 기준 중위소득) 라이브 검색설명이 글과 무관한 내부 운영 메모('수동 조치가 있으면 나머지 전부가 무의미합니다...' 150자)다. 교체 문구 120자를 seo_desc.json 에 등록해 뒀으니 편집화면 우측 [설정]>[검색 설명]에 붙여넣고 [업데이트]. 편집화면 https://www.blogger.com/blog/post/edit/4026928033017788339/3329047236664273523 · 클립보드 재복사는 python -m studio.seodesc list 로 문구 확인 후 수동",
-   "due": "2026-08-05",
+   "due": "2026-08-07",
    "cmd": "python -m studio.seodesc scan --only A2-13",
    "owner": "user",
    "state": "todo"
@@ -197,8 +197,10 @@
    "due": "2026-08-06",
    "cmd": "python -m studio.daily_report",
    "owner": "user",
-   "state": "todo",
-   "note": 17
+   "state": "done",
+   "note": 17,
+   "done_at": "2026-08-06",
+   "result": "08-06 22:30 야간루틴에서 KakaotalkChat-MemoChat 정상 발송·수신 확인(2회 연속 성공: 08-05,08-06). 커넥터 문제 해소로 판단, 종료"
   },
   {
    "id": "chuseok-train-2026",
@@ -250,6 +252,15 @@
    "flag": "✅이건 '기존 글 재요청'과 다른 일이다 — 이미 읽은 글을 다시 읽히는 게 아니라 새 URL 의 존재를 알리는 것이고, 발행 절차의 일부다. 중단 결정(reindex-batch2)은 여기 적용되지 않는다. | 왜 5일이나 방치됐나: 8/04 실험의 대조군 잠금이 tier1·미요청 전체를 걸어서 8/05 발행분까지 끌려들어갔다. 2026-08-06 EXP_EXEMPT 로 수정 — 실험 중 새 글을 발행하면 그 코드를 reindex.py EXP_EXEMPT 에 추가할 것(DB 에 발행일 필드가 없어 자동 판별 불가).",
    "done_at": "2026-08-06",
    "result": "2026-08-06 사용자가 D2-10·D4-07 색인 생성 요청 완료. reindex.json requested 에 2026-08-06 기록 + gsc_requested.json 178건으로 재생성(보드 step15 자동체크). 두 글은 8/05 발행인데 'URL is unknown to Google' 상태였다 = 구글이 존재를 몰랐다. 8/04 실험의 대조군 잠금(tier1·미요청 전체)이 8/05 발행분까지 끌어가 5일간 방치된 것이며, reindex.py EXP_EXEMPT 로 수정 완료. ⚠️다음 확인: 이 2편에 lastCrawl 이 찍히는지(실험 5편은 요청 당일 100% 크롤됐으므로 신규 글도 곧 올 것으로 예상되나 실측 전까지 단정하지 않는다) — crawl-watch 8/07 실행분에서 확인."
+  },
+  {
+   "id": "f4-12-push",
+   "added": "2026-08-06",
+   "what": "F4-12 발행 전제조건: 소스 13커밋 미푸시라 Actions 러너에 초안이 없다. push 후 Actions publish 실행(file 칸에 서울고궁관람_글_HTML.txt 를 반드시 입력 — 기본값 posts/F4-12_글_HTML.txt 는 없음)",
+   "due": "2026-08-07",
+   "cmd": "git rev-list --count origin/main..HEAD",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
