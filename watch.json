@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-06",
+ "updated": "2026-08-08",
  "items": [
   {
    "id": "redirect-error",
@@ -108,14 +108,15 @@
   {
    "id": "crawl-watch",
    "added": "2026-08-04",
-   "what": "색인요청분 크롤 감시 — 하루 25편씩(대기 170편 · 미크롤 31편)",
+   "what": "색인요청분 크롤 감시 — 하루 25편씩(대기 172편 · 미크롤 32편)",
    "cmd": "python -m studio.crawl_watch --limit 25",
    "owner": "claude",
-   "state": "todo",
+   "state": "wait",
    "flag": "야간 루틴 0단계 자동 실행. 🆕크롤 변화가 뜨면 카톡 보고에 옮긴다. 재요청은 하지 않는다. | 2026-08-06 실행: 25편 중 크롤 0편, 상태 이동 6건(전진 2·후퇴 4). 어제 역행한 D4-04 가 오늘 복귀 = flapping 계속. 개별 코드의 하루치 이동으로 원인을 읽지 말 것. | 🆕2026-08-07 확인할 것: D2-10·D4-07 (8/06 색인요청한 신규 2편)에 lastCrawl 이 찍혔는가. 실험 5편은 요청 당일 100% 크롤됐으나 그건 기존 글이었다 — 신규 글도 같은지는 아직 모른다. 실측 전까지 단정 금지.",
    "done_at": "2026-08-05",
    "result": "2026-08-05 실행 완료(25편). 변화 10건 — A5-04 첫 크롤 2026-08-01(단 REDIRECT_ERROR=블로거 표시오류) · 상태 역행 5편(D4-04 B2-09 B4-06 A2-07 C2-07: Discovered -> URL unknown) · 전진 2편(F2-10 F4-08). 대기 170 · 미크롤 31",
-   "due": "2026-08-07"
+   "due": "2026-08-08",
+   "note": 72
   },
   {
    "id": "kakao-nightly-report",
@@ -256,9 +257,55 @@
   {
    "id": "f4-12-push",
    "added": "2026-08-06",
-   "what": "F4-12 발행 전제조건: 소스 13커밋 미푸시라 Actions 러너에 초안이 없다. push 후 Actions publish 실행(file 칸에 서울고궁관람_글_HTML.txt 를 반드시 입력 — 기본값 posts/F4-12_글_HTML.txt 는 없음)",
+   "what": "발행 전제조건(3편 공통): 초안 3개가 origin/main 에 없어 Actions 러너가 못 읽는다. F4-12 는 커밋됐으나 미푸시(13커밋), F4-13·D1-05 는 아예 미추적(??). git add 후 push 필요. Actions publish 의 file 칸에 루트 한글 파일명을 반드시 입력 — 기본값 posts/<코드>_글_HTML.txt 는 3편 다 없음. F4-12=서울고궁관람_글_HTML.txt / F4-13=서울세계불꽃축제_글_HTML.txt / D1-05=주민등록사실조사_글_HTML.txt",
    "due": "2026-08-07",
-   "cmd": "git rev-list --count origin/main..HEAD",
+   "cmd": "git ls-tree -r --name-only origin/main | grep -E '서울고궁관람_글_HTML|서울세계불꽃축제_글_HTML|주민등록사실조사_글_HTML'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "thumbs-155-156-404",
+   "added": "2026-08-07",
+   "what": "F4-13·D1-05 썸네일이 github.io 404 (155_fireworks.png · 156_resident_survey.png). 로컬 thumbs/·thumbs_naver/·C:\\lifeinfo-deploy\\thumbs 에는 있으나 배포가 안 됐다 → 이대로 발행하면 글 상단 이미지가 깨진다. deploy.bat 1회 실행으로 해소(154_palace.png 는 이미 200)",
+   "due": "2026-08-07",
+   "cmd": "curl -s -o /dev/null -w \"155 %{http_code}\\n\" https://magsori-wq.github.io/lifeinfo-console/thumbs/155_fireworks.png; curl -s -o /dev/null -w \"156 %{http_code}\\n\" https://magsori-wq.github.io/lifeinfo-console/thumbs/156_resident_survey.png",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "chuseok-hospital",
+   "added": "2026-08-07",
+   "what": "추석 문 여는 병원·약국·응급실 글감(C3-06) 발행 검토 — 08-07 브리핑 후보②",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.dupcheck \"추석 명절 문 여는 병원 약국 응급실 조회 방법 총정리\"",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "chuseok-rail-2026",
+   "added": "2026-08-07",
+   "what": "코레일·SRT 2026 추석 승차권 예매 공지 확인 후 글감 재검토(2026-08-06까지 공지 없음 확인)",
+   "due": "2026-08-14",
+   "cmd": "브라우저로 https://www.korail.com/ticket/guest/notice 열어 공지 목록에 '추석' 포함 공지 확인",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "b3-04-tax-tier-gap",
+   "added": "2026-08-07",
+   "what": "B3-04(퇴직연금 IRP) 라이브 본문에 2026년 신설 3단계 퇴직소득세 감면구간(20년초과 수령시 50%감면) 누락 — 현재 10년이내30%·11년차부터40%까지만 서술",
+   "due": "2026-08-10",
+   "cmd": "python -m studio.note list 로 note 상세 확인 후 대면 세션에서 dry-run→미리보기→승인→update-post 로 반영",
+   "owner": "user",
+   "state": "todo",
+   "note": 73
+  },
+  {
+   "id": "thumbs-158-404",
+   "added": "2026-08-08",
+   "what": "A1-12(근로장려금 반기신청) 썸네일 158_eitc_semiannual.png 이 github.io 에 아직 없다 — 로컬 thumbs/·thumbs_naver/ 에만 생성됨(2026-08-08 PREP). 배포 전에 발행하면 글 상단 이미지가 깨진다. deploy.bat 1회로 155·156 과 함께 해소된다(별도 항목인 이유: thumbs-155-156-404 의 확인 명령이 155·156 만 curl 해서, 그 항목을 done 처리해도 158 은 검증되지 않는다)",
+   "due": "2026-08-08",
+   "cmd": "curl -s -o /dev/null -w \"158 %{http_code}\\n\" https://magsori-wq.github.io/lifeinfo-console/thumbs/158_eitc_semiannual.png",
    "owner": "user",
    "state": "todo"
   }
