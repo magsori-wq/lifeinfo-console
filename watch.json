@@ -257,11 +257,14 @@
   {
    "id": "f4-12-push",
    "added": "2026-08-06",
-   "what": "발행 전제조건(3편 공통): 초안 3개가 origin/main 에 없어 Actions 러너가 못 읽는다. F4-12 는 커밋됐으나 미푸시(13커밋), F4-13·D1-05 는 아예 미추적(??). git add 후 push 필요. Actions publish 의 file 칸에 루트 한글 파일명을 반드시 입력 — 기본값 posts/<코드>_글_HTML.txt 는 3편 다 없음. F4-12=서울고궁관람_글_HTML.txt / F4-13=서울세계불꽃축제_글_HTML.txt / D1-05=주민등록사실조사_글_HTML.txt",
-   "due": "2026-08-07",
-   "cmd": "git ls-tree -r --name-only origin/main | grep -E '서울고궁관람_글_HTML|서울세계불꽃축제_글_HTML|주민등록사실조사_글_HTML'",
+   "what": "발행 전제조건(대기 5편 공통): 초안 5개 중 단 하나도 origin/main 에 없어 Actions 러너가 못 읽는다. 2026-08-08 09:1x 실측 — F4-12(서울고궁관람)만 추적됨=커밋 완료·미푸시(미푸시 13커밋), 나머지 4개(서울세계불꽃축제·주민등록사실조사·국립공원탐방로예약제·근로장려금반기신청)는 미추적(??). 따라서 4개는 git add 필요 + 전체 push 필요. 🔴 Actions publish 의 file 칸에 루트 한글 파일명을 반드시 입력 — 기본값 posts/<코드>_글_HTML.txt 는 5편 다 없다. F4-12=서울고궁관람_글_HTML.txt / F4-13=서울세계불꽃축제_글_HTML.txt / D1-05=주민등록사실조사_글_HTML.txt / F4-14=국립공원탐방로예약제_글_HTML.txt / A1-12=근로장려금반기신청_글_HTML.txt",
+   "due": "2026-08-08",
+   "cmd": "git ls-tree -r --name-only origin/main | grep -E '서울고궁관람_글_HTML|서울세계불꽃축제_글_HTML|주민등록사실조사_글_HTML|국립공원탐방로예약제_글_HTML|근로장려금반기신청_글_HTML'",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "flag": "5편 전부 origin/main 에 없음 — 푸시 전에는 Actions 발행이 파일을 못 찾아 실패한다",
+   "done_at": "2026-08-08",
+   "result": "2026-08-08 해소. 실측: 미푸시 커밋은 이미 0건이었고(누군가 푸시함) F4-12 만 원격에 있었다. 나머지 4개(서울세계불꽃축제·주민등록사실조사·국립공원탐방로예약제·근로장려금반기신청)가 미추적 상태여서 커밋+푸시했다. 썸네일 8장(155~158, thumbs+thumbs_naver)도 함께. 원격 확인 결과 5편 전부 origin/main 에 존재. ⚠️남은 조건: Actions publish 의 file 칸에 루트 한글 파일명을 그대로 입력할 것 — 기본값 posts/<코드>_글_HTML.txt 에는 5편 다 없다."
   },
   {
    "id": "thumbs-155-156-404",
@@ -270,7 +273,9 @@
    "due": "2026-08-07",
    "cmd": "curl -s -o /dev/null -w \"155 %{http_code}\\n\" https://magsori-wq.github.io/lifeinfo-console/thumbs/155_fireworks.png; curl -s -o /dev/null -w \"156 %{http_code}\\n\" https://magsori-wq.github.io/lifeinfo-console/thumbs/156_resident_survey.png",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-08",
+   "result": "2026-08-08 09:0x 실측: 155_fireworks.png 200 · 156_resident_survey.png 200. 배포 완료돼 해소."
   },
   {
    "id": "chuseok-hospital",
@@ -307,7 +312,27 @@
    "due": "2026-08-08",
    "cmd": "curl -s -o /dev/null -w \"158 %{http_code}\\n\" https://magsori-wq.github.io/lifeinfo-console/thumbs/158_eitc_semiannual.png",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-08",
+   "result": "2026-08-08 09:0x 실측: 158_eitc_semiannual.png 200. 대기 5편 썸네일 154·155·156·157·158 전부 200 확인."
+  },
+  {
+   "id": "a1-12-dupcheck-red",
+   "added": "2026-08-08",
+   "what": "[승인 시점 참고 · 할 일 아님] A1-12(근로장려금 반기신청)의 dupcheck 🔴강한중복(vs A1-03)은 2026-08-08 실측 오탐이다 — 발행 가능. ①겹침 1.00 은 공유 키워드가 '근로장려금' 하나뿐이라 나온 min측 비율 artifact ②bodydup --live 0.048(비교 192편) ③A1-03 라이브 본문의 '반기' 3회는 전부 FAQ 한 문단이고 상반기·하반기·정산·9월1 은 0회 ④A1-12 도입부가 'A1-03 을 먼저 보라'고 내부링크로 명시 = 저자가 관계를 이미 정리했다. 같은 이유로 F4-14 의 🟡(vs F4-09)도 오탐 — F4-09 본문이 '탐방로는 대피소와 별도 예약'이라며 넘긴 짝 글이다. 관련 = watch dupcheck-green-miss(그쪽은 🟢 오탐, 이쪽은 🔴 오탐 = 같은 토큰화 약점의 양면).",
+   "cmd": "python -m studio.bodydup --file 근로장려금반기신청_글_HTML.txt --code A1-12 --live",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "dupcheck 🔴 를 근거로 A1-12 를 되돌리지 말 것 — 실측으로 오탐 확인됨"
+  },
+  {
+   "id": "seodesc-queue5",
+   "added": "2026-08-08",
+   "what": "[발행 직후 할 일] 대기 5편은 seo_desc.json 에 문구가 없다(2026-08-08 실측: posts 177편 = 발행분과 정확히 일치, 5편 전부 없음). 🔴 선등록은 불가능하다 — seodesc set 이 'DB에 없는 코드'로 거부하고, DB 레코드는 발행 후에야 생긴다. 따라서 발행 직후 register_post 가 끝난 뒤 아래 문구로 set 하고 편집화면에 붙여넣을 것. 초안 도입부에서 검증한 수치만 썼다. ▶F4-12: 서울 고궁 관람료와 통합관람권 6,000원의 손익분기를 정리했습니다. 만 65세 이상은 무료인데 창덕궁 후원만 5,000원을 따로 내야 하고, 후원 예약은 6일 전 오전 10시에 열립니다. ▶F4-13: 서울세계불꽃축제 2026은 9월 5일 여의도 한강공원에서 열립니다. 올해 노들섬은 전 구역이 유료(1인 11만~22만원)로 바뀌었고, 골든티켓 400명 응모는 8월 23일 마감입니다. ▶D1-05: 주민등록 사실조사 비대면 참여는 9월 7일 24시 마감입니다. '참여 안 하면 과태료 50만원'은 사실과 다릅니다 — 주민등록법 조문 기준 50·10·5만원 구분과 정부24 앱 참여 방법을 정리했습니다. ▶F4-14: 국립공원 탐방로예약제 대상 구간과 구간별 마감 시각을 예약시스템에서 직접 확인해 정리했습니다. 북한산 우이령은 2026년 4월부터 평일 예약이 불필요하고, 설악산 흘림골은 10~11월만 예약제입니다. ▶A1-12: 근로장려금 반기신청 상반기분은 9월 1~15일에만 열립니다. 12월 30일에 들어오는 돈은 연간산정액의 35%이고 나머지는 2027년 6월 정산 때 정해집니다.",
+   "cmd": "python -m studio.seodesc set --code <발행한코드> --text \"<위 문구>\" --src \"본문 도입부 검증 수치\"",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "발행 전에는 set 이 거부된다 — 반드시 DB 반영 후 실행"
   }
  ]
 }
