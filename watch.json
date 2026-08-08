@@ -333,6 +333,16 @@
    "owner": "claude",
    "state": "wait",
    "flag": "발행 전에는 set 이 거부된다 — 반드시 DB 반영 후 실행"
+  },
+  {
+   "id": "bodydup-dblag",
+   "added": "2026-08-08",
+   "what": "🐛 bodydup 이 '발행 직후 ~ register_post 전' 창에서 거짓 [차단]을 낸다 — 자기 코드를 DB 에서 못 찾아 자기 자신과 비교한다(2026-08-08 F4-12 실측: 차단 → 몇 분 뒤 같은 명령이 🟢 0.051). fail-closed 게이트라 사람이 정당한 발행을 되돌릴 위험. 처방 후보 ①라이브 URL 로 자기 글 식별 ②DB 미등록 시 '발행 직후일 수 있음' 안내로 문구 변경.",
+   "due": "2026-08-13",
+   "cmd": "python -m studio.bodydup --file 서울고궁관람_글_HTML.txt --code F4-12 --live",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "재현 조건이 좁아 급하지 않다. 다만 발행이 몰리는 날에 정확히 이 창이 열린다 — 오늘 4편이 더 나가므로 그때 또 볼 수 있다. 그 경우 register_post 를 먼저 돌리고 재확인할 것(게이트를 무시하지 말고 다시 재라)."
   }
  ]
 }
