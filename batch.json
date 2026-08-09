@@ -1667,44 +1667,32 @@
    ]
   },
   "publish0808": {
-   "title": "🚀 Fold 발행 지시서 — 남은 3편 (게이트 통과 · 명령 그대로 실행)",
-   "note": "📋 Fold 작업 세션은 이것만 하면 된다: ①이 카드들을 읽는다 ②오늘 1편을 고른다(순서 권고 A1-12 → F4-13 → F4-15) ③실행 직전 python -m studio.pace 로 오늘 발행 수를 다시 잰다 ④카드의 gh 명령을 **그대로** 실행하고 gh run watch <runId> 로 끝까지 본다 ⑤발행 후 git pull → OSMU 3채널 → seodesc set + 편집화면 붙여넣기 안내 → 색인요청(신규글 O) ⑥batchboard mark --id publish0808 --code <코드> --state done 으로 닫는다. ※'이어서 할까요' 묻지 말고 OSMU 안내까지 계속. 💡명령을 재구성하지 말 것 — 재구성이 곧 빠뜨림이다. ✅gh 인증 완료(magsori-wq·workflow 스코프). 🔴함정 4개: ①file 을 비우면 실패한다(초안이 루트 한글 파일명이라 기본값 posts/<코드>_글_HTML.txt 에 없다) ②초안 첫 줄에 '<!-- 코드 제목' 주석이 없으면 워크플로 본문중복 검사가 조용히 스킵된다 — 그래서 bodydup 실측값을 카드에 미리 넣었다(전부 🟢) ③발행 직후 register_post 전에 bodydup 을 다시 돌리면 자기 자신과 비교해 거짓 [차단]이 뜬다(watch bodydup-dblag) — 되돌리지 말고 DB 등록 후 재확인 ④dupcheck 경고 3건은 전부 실측 오탐, 근거가 카드에 있다. 🔴페이스: 하루 1편이 기본. 상한 5편은 코드 한계이지 목표가 아니다 — 하루 3편 이상이 색인붕괴 117→10 의 직접 원인이었다. 🎛️역할: 관제탑=게이트·승인표·명령작성·기록 / Fold=발행 실행·OSMU / 사람=검색설명 붙여넣기·색인요청 클릭. 관제탑은 발행 버튼을 누르지 않는다(CLAUDE.md).",
+   "title": "🚀 Fold 발행 지시서 — 미발행 3편 (2026-08-09 재발행)",
+   "note": "📋 Fold 가 할 일: ①이 카드를 연다 ②오늘 1편만 고른다(순서는 카드 제목의 순위) ③실행 직전 python -m studio.pace 로 오늘 발행 수를 다시 잰다 ④카드의 gh 명령을 **그대로** 실행 → gh run watch 로 끝까지 본다 ⑤git pull → DB 등록 확인 → OSMU 3채널 → seodesc set + 편집화면 붙여넣기 안내 → 색인요청 ⑥batchboard mark --id publish0808 --code <코드> --state done. ※'이어서 할까요' 묻지 말고 OSMU 안내까지 계속. ※명령을 재구성하지 말 것 — 재구성이 곧 빠뜨림이다. ✅gh 인증 완료(magsori-wq·workflow 스코프). ✅2026-08-09 이번 재발행에서 고친 것: 초안 3편 전부 첫 줄에 '<!-- 코드 제목 -->' 주석이 없어 **워크플로의 본문중복 검사가 조용히 스킵되고 있었다**(D1-05 annotation 으로 발각). 3편 모두 주석을 넣어 이제 게이트가 실제로 돈다. 🔴함정: ①file 을 비우면 실패한다(초안이 루트 한글 파일명이라 기본값 posts/<코드>_글_HTML.txt 에 없다) ②발행 직후 register_post 전에 bodydup 을 다시 돌리면 자기 자신과 비교해 거짓 [차단]이 뜬다(watch bodydup-dblag) — 되돌리지 말고 DB 등록 후 재확인 ③dupcheck 경고는 A1-12·F4-13 둘 다 실측 오탐, 근거가 카드에 있다. 🔴페이스: 오늘 이미 1편(D1-05). 하루 1편이 기본이고 상한 5편은 코드 한계이지 목표가 아니다 — 하루 3편 이상이 색인붕괴 117→10 의 직접 원인이었다. 🎛️관제탑=게이트·승인표·명령작성·기록 / Fold=발행 실행·OSMU / 사람=검색설명 붙여넣기·색인요청 클릭.",
    "items": [
-    {
-     "code": "F4-12",
-     "state": "done",
-     "title": "✅ F4-12 서울 고궁 관람료 — 발행 완료 (2026-08-08)",
-     "note": "url=https://lifeinfo8975.blogspot.com/2026/08/2026_0323600102.html · DB 등록 완료. 인스타 카드 6장·쓰레드 이미지까지 다른 세션이 제작 완료."
-    },
-    {
-     "code": "D1-05",
-     "state": "done",
-     "title": "✅ D1-05 주민등록 사실조사 — 발행 완료 (2026-08-09)",
-     "note": "url=https://lifeinfo8975.blogspot.com/2026/08/2026-24-9-7.html · Actions run 31273485632 전 단계 통과 · DB 179편 · seo_desc 113자 등록. 🔴남은 손일: 검색설명 붙여넣기(watch seodesc-d1-05, 클립보드에 복사됨) · OSMU 3채널 · 색인요청. ⚠️이 건은 관제탑이 직접 눌렀다 — 규칙 위반이다(CLAUDE.md 「관제탑은 발행 버튼을 누르지 않는다」). 앞으로는 아래 카드처럼 명령만 넘긴다."
-    },
     {
      "code": "A1-12",
      "state": "todo",
-     "title": "⏰ A1-12 근로장려금 반기신청 — 1순위 (9/1~15 신청)",
-     "note": "■ Fold 가 이 한 줄로 발행한다 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=A1-12 -f mode=live -f confirm=PUBLISH -f file='근로장려금반기신청_글_HTML.txt' -f title='근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~15일 신청·12월 지급·정산 (2026 근로소득자 전용)'   그다음  gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status ■ 게이트 실측(2026-08-08) ─ bodydup --live 0.048 🟢(비교 193편) · 썸네일 158_eitc_semiannual.png · 원격 파일 확인됨 ■ 🔴🔴 dupcheck 가 A1-03 대비 '강한중복'(겹침 1.00)을 띄우지만 실측 오탐이다. 되돌리지 말 것 ─ ①공유 키워드가 '근로장려금' 하나뿐이라 나온 min측 비율 artifact ②bodydup 0.048 ③A1-03 라이브 본문의 '반기'는 FAQ 한 문단 3회뿐, 상반기·하반기·정산·9월 은 0회 ④A1-12 도입부가 'A1-03 을 먼저 보라'고 내부링크로 명시. 근거 = watch a1-12-dupcheck-red ■ 발행 후 ─ seodesc set: 근로장려금 반기신청 상반기분은 9월 1~15일에만 열립니다. 12월 30일에 들어오는 돈은 연간산정액의 35%이고 나머지는 2027년 6월 정산 때 정해집니다."
+     "title": "⏰ 1순위 · A1-12 근로장려금 반기신청 (9/1~15 신청)",
+     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=A1-12 -f mode=live -f confirm=PUBLISH -f file='근로장려금반기신청_글_HTML.txt' -f title='근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~15일 신청·12월 지급·정산 (2026 근로소득자 전용)' → 이어서 gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status ■ 게이트 실측 2026-08-09 ─ bodydup --live 0.048 🟢(비교 195편) · 원격 초안 확인 · 첫 줄 코드주석 추가 완료(워크플로 내용대조가 이제 실제로 돈다) · 썸네일 158_eitc_semiannual.png ■ 🔴dupcheck 가 A1-03 대비 '강한중복'(겹침 1.00)을 띄워도 되돌리지 말 것 — 공유 키워드가 '근로장려금' 하나뿐이라 나온 min측 비율 artifact 다. bodydup 0.048 · A1-03 본문의 '반기'는 FAQ 한 문단 3회뿐(상반기·하반기·정산·9월 은 0회) · A1-12 도입부가 A1-03 을 내부링크로 명시. 근거 = watch a1-12-dupcheck-red ■ 발행 후 seodesc set 문구 ─ 근로장려금 반기신청 상반기분은 9월 1~15일에만 열립니다. 12월 30일에 들어오는 돈은 연간산정액의 35%이고 나머지는 2027년 6월 정산 때 정해집니다."
     },
     {
      "code": "F4-13",
      "state": "todo",
-     "title": "F4-13 서울세계불꽃축제 2026 (9/5 여의도)",
-     "note": "■ 발행 명령 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-13 -f mode=live -f confirm=PUBLISH -f file='서울세계불꽃축제_글_HTML.txt' -f title='서울세계불꽃축제 2026 관람 방법 총정리 — 노들섬 유료존 요금·골든티켓 응모 (9월 5일 여의도 한강공원)' ■ 게이트 실측(2026-08-08) ─ bodydup --live 0.034 🟢 · dupcheck 🟡 vs G3-03(부산 미술관)은 '관람' 한 단어 겹침의 오탐, 주제 무관 · 썸네일 155_fireworks.png ■ ⏰9월 5일 행사라 8월 중 발행해야 값을 한다(골든티켓 응모 8/23 마감) ■ 발행 후 seodesc set: 서울세계불꽃축제 2026은 9월 5일 여의도 한강공원에서 열립니다. 올해 노들섬은 전 구역이 유료(1인 11만~22만원)로 바뀌었고, 골든티켓 400명 응모는 8월 23일 마감입니다."
-    },
-    {
-     "code": "F4-14",
-     "state": "done",
-     "title": "✅ F4-14 국립공원 탐방로예약제 — 발행 완료",
-     "note": "url=https://lifeinfo8975.blogspot.com/2026/08/2026_0858180513.html · DB 등록 완료(2026-08-09 09:24 커밋 'F4-14 DB 등록 — 라이브에만 있던 1편을 맞춤'). 라이브가 먼저였고 DB 가 뒤따라온 건이라 관제탑 보드가 반나절 낡아 있었다 — 보드를 믿기 전에 pace·DB 를 재는 이유다."
+     "title": "⏰ 2순위 · F4-13 서울세계불꽃축제 2026 (9/5 행사 · 8/23 응모마감)",
+     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-13 -f mode=live -f confirm=PUBLISH -f file='서울세계불꽃축제_글_HTML.txt' -f title='서울세계불꽃축제 2026 관람 방법 총정리 — 노들섬 유료존 요금·골든티켓 응모 (9월 5일 여의도 한강공원)' → 이어서 gh run watch <runId> ■ 게이트 실측 2026-08-09 ─ bodydup --live 0.034 🟢(비교 195편) · 원격 초안 확인 · 첫 줄 코드주석 추가 완료 · 썸네일 155_fireworks.png ■ dupcheck 🟡 vs G3-03(부산 미술관)은 '관람' 한 단어 겹침의 오탐, 주제 무관 ■ ⏰골든티켓 응모가 8월 23일 마감이라 그전에 나가야 값을 한다 ■ 발행 후 seodesc set 문구 ─ 서울세계불꽃축제 2026은 9월 5일 여의도 한강공원에서 열립니다. 올해 노들섬은 전 구역이 유료(1인 11만~22만원)로 바뀌었고, 골든티켓 400명 응모는 8월 23일 마감입니다."
     },
     {
      "code": "F4-15",
      "state": "todo",
-     "title": "F4-15 국토종주 자전거길 인증수첩 — 게이트 통과",
-     "note": "■ 발행 명령 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-15 -f mode=live -f confirm=PUBLISH -f file='국토종주자전거길인증_글_HTML.txt' -f title='국토종주 자전거길 인증수첩 구입 완주 인증 방법 총정리 (2026 · 사이버인증 앱)' ■ 게이트 ─ dupcheck 🟢 신규(2026-08-09 실측) · 썸네일 159_bike_cert.png · 원격 파일 확인됨 · bodydup --live 0.029 🟢(비교 195편, 2026-08-09 실측) ■ 기한 없는 글이라 위 3편 뒤로."
+     "title": "3순위 · F4-15 국토종주 자전거길 인증수첩 (기한 없음)",
+     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-15 -f mode=live -f confirm=PUBLISH -f file='국토종주자전거길인증_글_HTML.txt' -f title='국토종주 자전거길 인증수첩 구입 완주 인증 방법 총정리 (2026 · 사이버인증 앱)' → 이어서 gh run watch <runId> ■ 게이트 실측 2026-08-09 ─ bodydup --live 0.029 🟢(비교 195편) · dupcheck 🟢 신규 · 원격 초안 확인 · 첫 줄 코드주석 추가 완료 · 썸네일 159_bike_cert.png ■ 기한이 없으니 위 둘 뒤로. 발행 후 seodesc 문구는 본문 도입부에서 뽑아 쓸 것(관제탑이 아직 안 만들었다 — 만들면 이 카드에 붙인다)."
+    },
+    {
+     "code": "후속-OSMU",
+     "state": "todo",
+     "title": "📌 발행 끝난 3편의 남은 손일 — D1-05 · F4-14 · F4-12",
+     "note": "발행은 끝났는데 후속이 남아 있다(2026-08-09 pending 실측). ▶D1-05 주민등록 사실조사: OSMU 3채널 전부 · 색인요청 · 검색설명 붙여넣기(watch seodesc-d1-05, 문구는 seo_desc.json 에 등록됨) ▶F4-14 국립공원 탐방로예약제: OSMU 3채널 전부 · 색인요청 ▶F4-12 서울 고궁: 쓰레드만 남음 · 색인요청. ※색인요청은 신규 글이라 해도 된다(기존 글 재요청 중단 결정과 별개 — 구글이 URL 존재를 모르는 상태를 알리는 것이라 성격이 다르다)."
     }
    ],
    "steps": [
@@ -1720,7 +1708,7 @@
    ]
   }
  },
- "updated": "2026-08-09 13:18:05",
+ "updated": "2026-08-09 13:35:33",
  "current": {
   "batch": "unblock",
   "code": "C3-02",
@@ -1730,6 +1718,10 @@
   "since": "01:31"
  },
  "log": [
+  {
+   "t": "13:35:33",
+   "text": "📋 배치 '🚀 Fold 발행 지시서 — 미발행 3편 (2026-08-09 재발행)' 등록 — 4항목"
+  },
   {
    "t": "13:18:05",
    "text": "📋 배치 '🚀 Fold 발행 지시서 — 남은 3편 (게이트 통과 · 명령 그대로 실행)' 등록 — 6항목"
@@ -1885,10 +1877,6 @@
   {
    "t": "01:34:29",
    "text": "🔸 A-3 진행중 — REDIRECT_ERROR 8편"
-  },
-  {
-   "t": "01:34:29",
-   "text": "⬜ F2-01 대기 — KTX 예매 취소 수수료"
   }
  ]
 }
