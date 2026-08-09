@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-09",
+ "updated": "2026-08-10",
  "items": [
   {
    "id": "redirect-error",
@@ -19,7 +19,7 @@
    "id": "adsense-review",
    "added": "2026-08-03",
    "what": "AdSense 재검토 심사 결과 (2026-08-03 접수 · 며칠~2·4주)",
-   "due": "2026-08-10",
+   "due": "2026-08-13",
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
    "state": "wait",
@@ -77,7 +77,7 @@
    "id": "chuseok-2026-rail",
    "added": "2026-08-03",
    "what": "2026 추석 특별예매 일정 공지 확인 — 8/3 현재 코레일 보도자료·SR 공지 어디에도 없음. 공지가 뜨면 F2-12 후속글 착수",
-   "due": "2026-08-10",
+   "due": "2026-08-13",
    "cmd": "python tools/chuseok_rail_check.py",
    "owner": "claude",
    "state": "wait"
@@ -115,7 +115,7 @@
    "flag": "야간 루틴 0단계 자동 실행. 🆕크롤 변화가 뜨면 카톡 보고에 옮긴다. 재요청은 하지 않는다. | 2026-08-06 실행: 25편 중 크롤 0편, 상태 이동 6건(전진 2·후퇴 4). 어제 역행한 D4-04 가 오늘 복귀 = flapping 계속. 개별 코드의 하루치 이동으로 원인을 읽지 말 것. | 🆕2026-08-07 확인할 것: D2-10·D4-07 (8/06 색인요청한 신규 2편)에 lastCrawl 이 찍혔는가. 실험 5편은 요청 당일 100% 크롤됐으나 그건 기존 글이었다 — 신규 글도 같은지는 아직 모른다. 실측 전까지 단정 금지. | 2026-08-09 실행: 25편 중 크롤 0편. 상태 이동 8건(전진 7 = unknown→discovered · 후퇴 1 = E2-08). 대기 172편 · 미크롤 32편. 신규 3편(D1-05·F4-12·F4-14)은 전부 Discovered-not indexed = 발견은 됐고 크롤 대기.",
    "done_at": "2026-08-05",
    "result": "2026-08-05 실행 완료(25편). 변화 10건 — A5-04 첫 크롤 2026-08-01(단 REDIRECT_ERROR=블로거 표시오류) · 상태 역행 5편(D4-04 B2-09 B4-06 A2-07 C2-07: Discovered -> URL unknown) · 전진 2편(F2-10 F4-08). 대기 170 · 미크롤 31",
-   "due": "2026-08-10",
+   "due": "2026-08-11",
    "note": 72
   },
   {
@@ -191,7 +191,9 @@
    "due": "2026-08-07",
    "cmd": "python -m studio.seodesc scan --only A2-13",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-10",
+   "result": "라이브 120자로 확인, 계획 문구와 일치(mismatch 해소) — 2026-08-10"
   },
   {
    "id": "kakao-connector",
@@ -291,9 +293,9 @@
   {
    "id": "chuseok-rail-2026",
    "added": "2026-08-07",
-   "what": "코레일·SRT 2026 추석 승차권 예매 공지 확인 후 글감 재검토(2026-08-06까지 공지 없음 확인)",
+   "what": "2026 추석 KTX·SRT 명절 승차권 예매 공지 — 코레일 보도자료에 뜨면 글감 착수(오늘 확인 결과 미공지, 2차출처만 존재해 보류)",
    "due": "2026-08-14",
-   "cmd": "브라우저로 https://www.korail.com/ticket/guest/notice 열어 공지 목록에 '추석' 포함 공지 확인",
+   "cmd": "브라우저로 https://info.korail.com/info/selectBbsNttList.do?bbsNo=199&key=911 열어 '추석' 검색",
    "owner": "claude",
    "state": "wait"
   },
@@ -353,8 +355,10 @@
    "due": "2026-08-09",
    "cmd": "powershell -c \"Test-Path \\\"$env:APPDATA\\GitHub CLI\\hosts.yml\\\"\"",
    "owner": "user",
-   "state": "todo",
-   "flag": "확인 방법 = 위 cmd 가 True 를 내면 완료(gh auth status 보다 확실하다 — 파일 존재가 진실원). | 이게 되면 Fold 가 터미널에서 발행 트리거·Actions 로그 확인을 전부 한다. 안 되면 대안은 GitHub 웹에서 사람이 Run workflow 를 직접 누르는 것(입력값 전문 = 콘솔 배치보드 publish0808 카드). | gh 2.97.0 은 이미 설치돼 있다(C:\\Program Files\\GitHub CLI\\gh.exe) — 설치가 아니라 인증만 남았다."
+   "state": "done",
+   "flag": "확인 방법 = 위 cmd 가 True 를 내면 완료(gh auth status 보다 확실하다 — 파일 존재가 진실원). | 이게 되면 Fold 가 터미널에서 발행 트리거·Actions 로그 확인을 전부 한다. 안 되면 대안은 GitHub 웹에서 사람이 Run workflow 를 직접 누르는 것(입력값 전문 = 콘솔 배치보드 publish0808 카드). | gh 2.97.0 은 이미 설치돼 있다(C:\\Program Files\\GitHub CLI\\gh.exe) — 설치가 아니라 인증만 남았다.",
+   "done_at": "2026-08-09",
+   "result": "hosts.yml 생성 확인 + gh auth status 로그인 확인(magsori-wq, workflow scope 포함) — 2026-08-09"
   },
   {
    "id": "gsc-5xx-c3-05",
@@ -382,8 +386,10 @@
    "due": "2026-08-09",
    "cmd": "python -m studio.seodesc scan --only D1-05",
    "owner": "user",
-   "state": "todo",
-   "flag": "🔴Blogger API 로는 이 필드를 못 쓴다(2026-07-28 실측: posts().patch 에 customMetaData 를 넣으면 200 OK 가 와도 라이브에 안 붙는다). 사람이 편집화면에서 넣는 방법뿐이다. | 확인은 위 cmd 가 '공통문구 0' 을 낼 때 완료."
+   "state": "done",
+   "flag": "🔴Blogger API 로는 이 필드를 못 쓴다(2026-07-28 실측: posts().patch 에 customMetaData 를 넣으면 200 OK 가 와도 라이브에 안 붙는다). 사람이 편집화면에서 넣는 방법뿐이다. | 확인은 위 cmd 가 '공통문구 0' 을 낼 때 완료.",
+   "done_at": "2026-08-10",
+   "result": "라이브 105자로 확인, 계획 문구와 일치 — 2026-08-10"
   },
   {
    "id": "f4-14-actions-commit",
