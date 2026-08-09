@@ -1,58 +1,29 @@
 {
- "rev": "73e50f3",
+ "rev": "862b2c8",
  "counts": {
-  "total": 181,
+  "total": 182,
   "osmu_done": 181,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 5,
-  "index_pending": 176,
-  "index_requested": 173,
-  "index_todo": 3
+  "index_pending": 177,
+  "index_requested": 176,
+  "index_todo": 1
  },
  "actionable": [
   {
-   "code": "D1-05",
-   "title": "2026 주민등록 사실조사 비대면 참여 방법 정부24 ",
+   "code": "F4-13",
+   "title": "서울세계불꽃축제 2026 관람 방법 총정리 — 노들섬 ",
    "need": [
+    "OSMU",
     "색인요청"
    ],
-   "action": "색인 요청",
-   "osmu": true,
+   "action": "OSMU 확산",
+   "osmu": false,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "F4-12",
-   "title": "서울 고궁 관람료 통합관람권 창덕궁 후원 예약 방법 총",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "F4-14",
-   "title": "국립공원 탐방로예약제 신청 방법 총정리 (2026 가을",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
+    "n": false,
+    "t": false
    }
   },
   {
@@ -208,6 +179,36 @@
   {
    "code": "A2-02",
    "title": "에너지바우처 신청 자격 금액 사용기간 총정리",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-03",
+   "title": "기초생활수급자 생계급여 조건 소득인정액 금액 신청 방법",
+   "need": [
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "A2-04",
+   "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
    "need": [
     "색인대기"
    ],
