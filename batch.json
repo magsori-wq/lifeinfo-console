@@ -1679,38 +1679,50 @@
    ]
   },
   "publish0808": {
-   "title": "🚀 Fold 발행 지시서 — 대기 1편(F4-15) + 밀린 후속",
-   "note": "📋Fold 순서: 카드의 gh 명령 그대로 실행 → gh run watch → git pull·DB 확인 → OSMU 3채널 → seodesc set + 편집화면 붙여넣기 → 색인요청 → batchboard mark. 명령을 재구성하지 말 것. 🔴F4-15 는 **내일** 낼 것 — 오늘 3편(D1-05·A1-12·F4-13)은 예외 승인분이고 4편째는 예외의 예외가 된다. F4-15 는 기한이 없다. 🔴override_daily_limit 은 2026-08-09 F4-13 1회용이었다 — 복사해 쓰지 말 것. ✅오늘 배운 것(다시 밟지 말 것): ①file 은 반드시 루트 한글 파일명으로 넣는다(비우면 posts/<코드>_글_HTML.txt 를 찾다 죽는다) ②워크플로를 고쳤으면 push 완료를 확인한 뒤 실행한다(러너는 origin/main 을 쓴다 — 9분 시차로 실패한 실측) ③**발행이 도는 동안 관제탑은 webapp/* 를 커밋·푸시하지 않는다** — A1-12 때 그걸 어겨 러너 커밋이 깨지고 progress.json 이 유실돼 DB 의 short 가 빈 채로 굳었다. F4-13 에서 지켰더니 전 단계가 깨끗이 통과했다(같은 워크플로·같은 날 대조). ⚠️미해결: 페이스 임계값이 두 곳에 있다 — pace.py DAILY_HARD=5 vs publish.yml n>=2(3편째 차단). 실효 상한은 3편이며 어디로 통일할지는 사용자 결정 대기.",
+   "title": "🚀 Fold 발행 지시서 — 대기 3편(B1-07·F4-16·F4-15)",
+   "note": "📋Fold 순서: 카드의 gh 명령 그대로 실행 → gh run watch → git pull·DB 확인 → OSMU 3채널 → seodesc set + 편집화면 붙여넣기 → 색인요청 → batchboard mark. 명령을 재구성하지 말 것. 🔴발행 상한이 2편으로 내려왔다(2026-08-09 사용자 지시, pace.DAILY_HARD=2 가 단일 진실원 · 3편째 차단) — 대기 3편은 최소 이틀에 나눠 낸다. 하루 1편이 기본 페이스다. 이전 노트의 '임계값이 두 곳에 갈려 있다'는 미해결 항목은 해소됐다(publish.yml 이 pace 에서 직접 읽는다). 🔴override_daily_limit 은 2026-08-09 F4-13 1회용이었다 — 복사해 쓰지 말 것. 🔴승인 직전에 python -m studio.pace 로 오늘 편수를 다시 잴 것(보드 값은 스냅샷이다 — 2026-08-09 에 F4-14 가 이미 라이브인데 보드는 반나절 todo 였다). 🔴발행이 도는 동안 관제탑·다른 PC 세션은 webapp/* 를 커밋·푸시하지 않는다(A1-12 에서 러너 커밋이 깨져 progress.json 이 유실됐다). ✅2026-08-10 06시 게이트 전수 실측: 세 편 모두 bodydup --live 🟢(0.028~0.034) · dupcheck 🟢 · heading OK · 썸네일 github.io 200 · 첫 줄 코드주석 있음 · 바이라인 있음. ⚠️V0(원본가치)는 코드가 안 막는다 — 카드마다 근거를 적어뒀으니 승인자가 최종 판단할 것. ✅2026-08-10 조치: F4-16·B1-07 초안과 썸네일이 저장소에 없어 러너가 못 찾을 상태였다 → 커밋 62b186b 로 추가·푸시함(F4-15 는 원래 추적 중).",
    "items": [
     {
-     "code": "A1-12",
-     "state": "done",
-     "title": "⏰ 1순위 · A1-12 근로장려금 반기신청 (9/1~15 신청)",
-     "note": "발행 완료(gh Actions, dupcheck🔴 오탐이었으나 워크플로 버그 확인·이부장이 수정). DB등록·네이버·쓰레드·인스타·검색설명·색인요청 전부 완료."
+     "code": "B1-07",
+     "state": "todo",
+     "title": "⏰ 1순위 · B1-07 주민세 사업소분 (신고기한 8/31 — 지나면 가치 0)",
+     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B1-07 -f mode=live -f confirm=PUBLISH -f file='주민세사업소분_글_HTML.txt' -f title='주민세 사업소분 신고 납부 방법 세액 계산 면세 기준 총정리 (2026년 8월 31일 신고기한)' → 이어서 gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status ■ 게이트 실측 2026-08-10 ─ bodydup --live 0.028 🟢(비교 197편) · dupcheck 🟢 · heading OK(h2 시작·건너뛰기 없음) · 첫 줄 코드주석 있음 · 썸네일 161_bizoffice_tax.png github.io 200 · V0 = 계산예시 4가지 + 함정 8가지 + 바이라인 있음 ■ 🔴 dupcheck 🟢 는 그대로 믿지 말 것 — B1-04(주민세 개인분)가 이미 있고 dupcheck 가 주민세 중복을 놓친 전력이 있다(watch dupcheck-green-miss). 사람이 대조한 결과 '개인분 vs 사업소분'으로 하위주제가 다르고 제목에 구분이 명시돼 있으며 본문 유사도 0.028 이라 별개 글로 판단했다. ■ 초안·썸네일은 2026-08-10 에 저장소에 추가됐다(커밋 62b186b) — 그 전에는 origin/main 에 없어 러너가 못 찾았다."
     },
     {
-     "code": "F4-13",
-     "state": "done",
-     "title": "✅ F4-13 서울세계불꽃축제 — 발행 완료 (2026-08-09 · 예외 승인 3편째)",
-     "note": "발행 완료(gh Actions, 편수게이트 override_daily_limit=I-KNOW로 사용자 직접 실행). DB등록·네이버·쓰레드·인스타·검색설명·색인요청 전부 완료."
+     "code": "F4-16",
+     "state": "todo",
+     "title": "2순위 · F4-16 템플스테이 예약 (가을 시즌 — 9월 프로그램 예약마감 있음)",
+     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-16 -f mode=live -f confirm=PUBLISH -f file='템플스테이예약_글_HTML.txt' -f title='템플스테이 예약 방법 총정리 — 체험형·휴식형·당일형 차이와 사찰별 참가비·환불 규정 (2026 가을)' → 이어서 gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status ■ 게이트 실측 2026-08-10 ─ bodydup --live 0.034 🟢(비교 197편) · dupcheck 🟢 · heading OK · 첫 줄 코드주석 있음 · 썸네일 160_templestay.png github.io 200 · V0 = 사찰 3곳 참가비 비교 + 환불 계산예시 + 놓치기 쉬운 9가지 + 바이라인 있음 ■ 하드 기한은 없지만 본문이 인용한 프로그램이 9월에 몰려 있다(신흥사 한가위 9/24~25 는 5일 전 예약마감, 마곡사 할인 9/30~10/31) — F4-15 보다 앞에 두는 이유다. ■ 초안·썸네일은 2026-08-10 커밋 62b186b 로 저장소에 추가됐다."
     },
     {
      "code": "F4-15",
      "state": "todo",
      "title": "3순위 · F4-15 국토종주 자전거길 인증수첩 (기한 없음)",
-     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-15 -f mode=live -f confirm=PUBLISH -f file='국토종주자전거길인증_글_HTML.txt' -f title='국토종주 자전거길 인증수첩 구입 완주 인증 방법 총정리 (2026 · 사이버인증 앱)' → 이어서 gh run watch <runId> ■ 게이트 실측 2026-08-09 ─ bodydup --live 0.029 🟢(비교 195편) · dupcheck 🟢 신규 · 원격 초안 확인 · 첫 줄 코드주석 추가 완료 · 썸네일 159_bike_cert.png ■ 기한이 없으니 위 둘 뒤로. 발행 후 seodesc 문구는 본문 도입부에서 뽑아 쓸 것(관제탑이 아직 안 만들었다 — 만들면 이 카드에 붙인다)."
+     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-15 -f mode=live -f confirm=PUBLISH -f file='국토종주자전거길인증_글_HTML.txt' -f title='국토종주 자전거길 인증수첩 구입 완주 인증 방법 총정리 (2026 · 사이버인증 앱)' → 이어서 gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status ■ 게이트 실측 2026-08-10 ─ bodydup --live 0.029 🟢(비교 197편) · dupcheck 🟢 · heading OK · 첫 줄 코드주석 있음 · 썸네일 159_bike_cert.png github.io 200 · V0 = 종이스탬프 vs 앱 판단형 비교 + 거리로 고르는 첫 코스 + 놓치기 쉬운 7가지 + 바이라인 있음 ■ 기한이 없으니 위 둘 뒤로."
+    },
+    {
+     "code": "A1-12",
+     "state": "done",
+     "title": "✅ A1-12 근로장려금 반기신청 — 발행 완료 (2026-08-09)",
+     "note": "DB등록·네이버·쓰레드·인스타·검색설명·색인요청 전부 완료. ⚠️ 이 건에서 관제탑이 발행 중 webapp/* 를 푸시해 러너 커밋이 깨졌고 progress.json 유실 → DB 의 short 가 빈 채로 굳었다."
+    },
+    {
+     "code": "F4-13",
+     "state": "done",
+     "title": "✅ F4-13 서울세계불꽃축제 — 발행 완료 (2026-08-09 · 예외 승인 3편째)",
+     "note": "DB등록·네이버·쓰레드·인스타·검색설명·색인요청 전부 완료. override_daily_limit=I-KNOW 는 이 1회용이었다 — 복사해 쓰지 말 것."
     },
     {
      "code": "후속-OSMU",
      "state": "done",
-     "title": "📌 발행 끝난 3편의 남은 손일 — D1-05 · F4-14 · F4-12",
-     "note": "D1-05·F4-14·F4-12 전부 OSMU 3채널·검색설명·색인요청 완료 확인"
+     "title": "📌 D1-05 · F4-14 · F4-12 후속 — 완료",
+     "note": "OSMU 3채널·검색설명·색인요청 완료 확인."
     },
     {
      "code": "밀린-후속",
-     "state": "todo",
-     "title": "📌 발행 끝난 글들의 밀린 후속 — 검색설명·색인요청·쓰레드",
-     "note": "2026-08-09 실측. ▶D1-05 주민등록 사실조사: 검색설명 붙여넣기(seo_desc.json 에 113자 등록됨, watch seodesc-d1-05) · 색인요청 ▶F4-14 국립공원 탐방로예약제: OSMU 3채널 · 색인요청 ▶F4-12 서울 고궁: 쓰레드 · 색인요청 ▶F4-13 서울세계불꽃축제: OSMU 3채널 · 검색설명 · 색인요청. ※색인요청은 신규 글이므로 해도 된다 — 기존 글 재요청 중단 결정(watch reindex-batch2)과 별개다. 구글이 URL 존재를 모르는 상태를 알리는 것이라 성격이 다르고, 8/04 실험에서 요청 당일 100% 크롤이 확인됐다. ※검색설명은 Blogger API 로 못 쓴다(200 OK 가 와도 안 붙는다) — seodesc set 으로 등록만 하고 편집화면 붙여넣기는 사람 몫."
+     "state": "done",
+     "title": "📌 밀린 후속(검색설명·색인요청·쓰레드) — 2026-08-10 실측으로 전부 해소",
+     "note": "실측 근거(2026-08-10 selfcheck·pending.json): OSMU 미확산 0 · 색인 미요청(todo) 0 · 검색설명 붙일 것 0(반영 182/182) · 라이브 182편 orphan 0. D1-05·F4-14·F4-12·F4-13 의 남은 손일이 개별 항목으로 남아 있지 않다. 남은 177건은 전부 '요청함·색인 반영 대기'라 기다리는 항목이지 할 일이 아니다."
     }
    ],
    "steps": [
@@ -1726,7 +1738,7 @@
    ]
   }
  },
- "updated": "2026-08-09 17:02:44",
+ "updated": "2026-08-10 09:17:23",
  "current": {
   "batch": "unblock",
   "code": "C3-02",
@@ -1736,6 +1748,10 @@
   "since": "01:31"
  },
  "log": [
+  {
+   "t": "09:17:23",
+   "text": "📋 배치 '🚀 Fold 발행 지시서 — 대기 3편(B1-07·F4-16·F4-15)' 등록 — 7항목"
+  },
   {
    "t": "17:02:44",
    "text": "✅ F4-13 완료 — ✅ F4-13 서울세계불꽃축제 — 발행 완료 (2026-08-"
@@ -1891,10 +1907,6 @@
   {
    "t": "11:06:11",
    "text": "📋 배치 '🙋 사용자가 직접 해야 하는 일' 등록 — 15항목"
-  },
-  {
-   "t": "10:46:47",
-   "text": "✅ A5-04 OSMU 완료 — A5-04 2027 최저임금 — 네이버만 빠짐(쓰레드·인스타는"
   }
  ]
 }
