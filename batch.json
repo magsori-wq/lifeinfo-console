@@ -1679,9 +1679,9 @@
    "items": [
     {
      "code": "B1-07",
-     "state": "todo",
+     "state": "done",
      "title": "⏰ 1순위 · B1-07 주민세 사업소분 (신고기한 8/31 — 지나면 가치 0)",
-     "note": "■ 이 명령을 그대로 실행 ─ gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B1-07 -f mode=live -f confirm=PUBLISH -f file='주민세사업소분_글_HTML.txt' -f title='주민세 사업소분 신고 납부 방법 세액 계산 면세 기준 총정리 (2026년 8월 31일 신고기한)' → 이어서 gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status ■ 게이트 실측 2026-08-10 ─ bodydup --live 0.028 🟢(비교 197편) · dupcheck 🟢 · heading OK(h2 시작·건너뛰기 없음) · 첫 줄 코드주석 있음 · 썸네일 161_bizoffice_tax.png github.io 200 · V0 = 계산예시 4가지 + 함정 8가지 + 바이라인 있음 ■ 🔴 dupcheck 🟢 는 그대로 믿지 말 것 — B1-04(주민세 개인분)가 이미 있고 dupcheck 가 주민세 중복을 놓친 전력이 있다(watch dupcheck-green-miss). 사람이 대조한 결과 '개인분 vs 사업소분'으로 하위주제가 다르고 제목에 구분이 명시돼 있으며 본문 유사도 0.028 이라 별개 글로 판단했다. ■ 초안·썸네일은 2026-08-10 에 저장소에 추가됐다(커밋 62b186b) — 그 전에는 origin/main 에 없어 러너가 못 찾았다."
+     "note": "라이브+DB+검색설명+OSMU3채널(naver/threads/insta) 전부 완료, 2026-08-10"
     },
     {
      "code": "F4-16",
@@ -1733,9 +1733,13 @@
    ]
   }
  },
- "updated": "2026-08-10 15:23:23",
+ "updated": "2026-08-10 15:33:44",
  "current": null,
  "log": [
+  {
+   "t": "15:33:44",
+   "text": "✅ B1-07 완료 — ⏰ 1순위 · B1-07 주민세 사업소분 (신고기한 8/31 "
+  },
   {
    "t": "15:23:23",
    "text": "✅ A3-02 완료 — 국민연금 예상 수령액 조회 방법 수령나이 총정리"
@@ -1891,10 +1895,6 @@
   {
    "t": "13:15:10",
    "text": "✅ H1-01 완료 — 현대차 보스턴다이내믹스 지분 100% 인수 IPO 일정 총정리"
-  },
-  {
-   "t": "13:15:10",
-   "text": "✅ D1-02 완료 — 전입신고 인터넷 신청 방법 확정일자 받기 총정리"
   }
  ]
 }
