@@ -1,15 +1,31 @@
 {
- "rev": "ad53c87",
+ "rev": "a458035",
  "counts": {
-  "total": 182,
+  "total": 183,
   "osmu_done": 182,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 5,
-  "index_pending": 177,
+  "index_pending": 178,
   "index_requested": 177,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "A2-14",
+   "title": "전기요금 복지할인 신청 방법 총정리 (기초생활수급자·장",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -193,21 +209,6 @@
   {
    "code": "A2-04",
    "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-05",
-   "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
    "need": [
     "색인대기"
    ],
