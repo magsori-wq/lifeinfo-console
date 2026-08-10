@@ -1,15 +1,31 @@
 {
  "rev": "4887651",
  "counts": {
-  "total": 183,
+  "total": 184,
   "osmu_done": 183,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 5,
-  "index_pending": 178,
+  "index_pending": 179,
   "index_requested": 178,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "B1-07",
+   "title": "주민세 사업소분 신고 납부 방법 세액 계산 면세 기준 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -193,21 +209,6 @@
   {
    "code": "A2-04",
    "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-05",
-   "title": "문화누리카드 신청 방법 잔액 조회 사용처 총정리 (20",
    "need": [
     "색인대기"
    ],
