@@ -398,8 +398,10 @@
    "due": "2026-08-11",
    "cmd": "python studio/feedcheck.py",
    "owner": "user",
-   "state": "todo",
-   "flag": "재발 감시는 feedcheck 로 된다 — orphan 이 0 이 아니면 같은 일이 또 난 것이다. 원인 규명만 Actions 로그가 필요하다."
+   "state": "done",
+   "flag": "재발 감시는 feedcheck 로 된다 — orphan 이 0 이 아니면 같은 일이 또 난 것이다. 원인 규명만 Actions 로그가 필요하다.",
+   "done_at": "2026-08-10",
+   "result": "원인 확정(gh 인증 후 Actions 로그 전수 대조): F4-14 발행 시각(2026-08-08 08:46:59 UTC) 전후로 publish.yml 실행 이력이 전혀 없음(그 시간대 유일한 워크플로는 크롤감시뿐, 다음 발행런은 10시간 뒷 19:03:41Z). 즉 Actions 커밋백 스텝이 실패한 게 아니라 애초에 Actions를 거치지 않고 브라우저(claude-in-chrome, 대체 경로)로 직접 게시됐다 — 그 경로엔 DB 자동등록이 없어 orphan이 난 것. 다음날 발행루틴이 feedcheck로 잡아 register_post로 이미 수동 등록 완료(커밋 81fdf21). 재발 방지책 불필요 — feedcheck orphan 감시가 설계대로 작동함. 결론: 버그 아님, 경로 차이."
   },
   {
    "id": "publish-queue4",
