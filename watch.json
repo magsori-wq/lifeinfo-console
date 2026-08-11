@@ -215,11 +215,12 @@
   {
    "id": "chuseok-train-2026",
    "added": "2026-08-05",
-   "what": "2026 추석(9/25) KTX·SRT 명절 승차권 예매 일정 공식 공지 확인 — 뜨면 대중 관심사 레인 최우선 글감(8/5 보류: 공식 미고지, 2차출처만 존재)",
-   "due": "2026-08-14",
-   "cmd": "python -m studio.dupcheck \"추석 기차표 예매 코레일 SRT 명절 승차권\"",
+   "what": "2026 추석 KTX·SRT 명절 승차권 예매 일정 공식 발표 확인 — 발표되면 즉시 글감 착수(추석 9/25, 예매는 통상 3~4주 전)",
+   "due": "2026-08-20",
+   "cmd": "python -c \"import urllib.request as u;h=u.urlopen(u.Request('https://etk.srail.kr/bt/notice.html',headers={'User-Agent':'Mozilla/5.0'}),timeout=25).read().decode('utf-8','ignore');print('추석 공지 떴음 -> 글감 착수' if '추석' in h else '아직 없음')\"",
    "owner": "claude",
-   "state": "wait"
+   "state": "wait",
+   "note": 0
   },
   {
    "id": "a2-14-kepco-limit",
@@ -372,15 +373,6 @@
    "flag": "확인 방법 = 위 cmd 가 True 를 내면 완료(gh auth status 보다 확실하다 — 파일 존재가 진실원). | 이게 되면 Fold 가 터미널에서 발행 트리거·Actions 로그 확인을 전부 한다. 안 되면 대안은 GitHub 웹에서 사람이 Run workflow 를 직접 누르는 것(입력값 전문 = 콘솔 배치보드 publish0808 카드). | gh 2.97.0 은 이미 설치돼 있다(C:\\Program Files\\GitHub CLI\\gh.exe) — 설치가 아니라 인증만 남았다.",
    "done_at": "2026-08-09",
    "result": "hosts.yml 생성 확인 + gh auth status 로그인 확인(magsori-wq, workflow scope 포함) — 2026-08-09"
-  },
-  {
-   "id": "gsc-5xx-c3-05",
-   "added": "2026-08-08",
-   "what": "GSC '서버 오류(5xx)' 새 사유 알림(8/08 메일 4건) — 실측 규모는 177편 중 1편(C3-05)뿐이고 그 URL은 지금 HTTP 200(146KB 정상)이다. 5xx는 Googlebot이 2026-08-03 05:16Z 크롤 때 받은 응답(fetch=SERVER_ERROR, 모바일). 즉 라이브 장애가 아니라 그 시점 Blogger 응답 문제로 보이나 단정하지 않는다. 할 일 = 재크롤에서 5xx가 풀리는지 확인. 색인요청은 하지 않는다(reindex-batch2 중단 결정 유효).",
-   "due": "2026-08-18",
-   "cmd": "python -m studio.crawl_watch --codes C3-05",
-   "owner": "claude",
-   "state": "wait"
   },
   {
    "id": "d2-03-kpass-temp-rate",
@@ -536,6 +528,36 @@
    "cmd": "start https://www.kosaf.go.kr/ko/notice.do",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "gsc-crawled-not-indexed",
+   "added": "2026-08-11",
+   "what": "GSC '크롤링됨-현재 색인이 생성되지 않음' 추이 감시 — 유일하게 실질적인 미색인 카테고리(콘텐츠 품질 판단, 8/06 120편→8/11 193편으로 증가). 나머지 5개 이유(서버오류1·404 1·발견됨대기32·대체페이지76·리디렉션20)는 전부 확인됨/무해. 🔴이메일 브리핑이 'GSC 경고 N건'을 요약해도 그 표현을 그대로 믿지 말고, 반드시 직접 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&pages=ALL_URLS&hl=ko 열어 6개 이유별 실제 건수·트렌드를 볼 것(2026-08-11 실측: 이메일이 '이미 아는 문제 4건'이라 요약했지만 실제론 신규 카테고리가 섞여 있었음).",
+   "due": "2026-08-14",
+   "cmd": "브라우저로 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&pages=ALL_URLS&hl=ko 열어 '크롤링됨-현재 색인이 생성되지 않음' 건수 확인",
+   "owner": "claude",
+   "state": "todo",
+   "note": 99
+  },
+  {
+   "id": "v0inject-pace5",
+   "added": "2026-08-11",
+   "what": "V0 보강 야간 준비 페이스 5편/일로 상향 확인 — 1파 15편이 3일 안에 소진될 예정(1~2편/일 기준 8~15일에서 단축). 소진됐으면 2파(83편 중 다음 우선순위) 등록할 것.",
+   "due": "2026-08-14",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "note": 101
+  },
+  {
+   "id": "b201-limit-fix",
+   "added": "2026-08-11",
+   "what": "B2-01 휴면예금 비대면한도 1000만원→2000만원 정정(공식 kinfa.or.kr 확인됨)",
+   "due": "2026-08-12",
+   "cmd": "python studio/blogger.py update-post --code B2-01 (한도 문구 수정 후 dry-run/미리보기/승인)",
+   "owner": "user",
+   "state": "todo",
+   "note": 107
   }
  ]
 }
