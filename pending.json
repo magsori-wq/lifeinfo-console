@@ -1,15 +1,31 @@
 {
  "rev": "9fcfc51",
  "counts": {
-  "total": 185,
+  "total": 186,
   "osmu_done": 185,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 5,
-  "index_pending": 180,
+  "index_pending": 181,
   "index_requested": 180,
-  "index_todo": 0
+  "index_todo": 1
  },
  "actionable": [
+  {
+   "code": "F4-16",
+   "title": "템플스테이 예약 방법 총정리 (체험형·휴식형·당일형 차",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
@@ -193,21 +209,6 @@
   {
    "code": "A2-03",
    "title": "기초생활수급자 생계급여 조건 소득인정액 금액 신청 방법",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-04",
-   "title": "평생교육바우처 신청 방법 대상 금액 사용처 총정리 (2",
    "need": [
     "색인대기"
    ],
