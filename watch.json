@@ -215,16 +215,6 @@
    "result": "08-06 22:30 야간루틴에서 KakaotalkChat-MemoChat 정상 발송·수신 확인(2회 연속 성공: 08-05,08-06). 커넥터 문제 해소로 판단, 종료"
   },
   {
-   "id": "chuseok-train-2026",
-   "added": "2026-08-05",
-   "what": "2026 추석 KTX·SRT 명절 승차권 예매 일정 공식 발표 확인 — 발표되면 즉시 글감 착수(추석 9/25, 예매는 통상 3~4주 전)",
-   "due": "2026-08-20",
-   "cmd": "python -c \"import urllib.request as u;h=u.urlopen(u.Request('https://etk.srail.kr/bt/notice.html',headers={'User-Agent':'Mozilla/5.0'}),timeout=25).read().decode('utf-8','ignore');print('추석 공지 떴음 -> 글감 착수' if '추석' in h else '아직 없음')\"",
-   "owner": "claude",
-   "state": "wait",
-   "note": 0
-  },
-  {
    "id": "a2-14-kepco-limit",
    "added": "2026-08-06",
    "what": "A2-14(전기요금 복지할인) 글감 — 한전 공식 '복지할인 월 한도(여름철 7~9월 포함)' 수치를 아직 확보하지 못했다. 2026-08-06 00:0x 시도: ①home.kepco.co.kr 딥링크 CYHHNP00201.do → HTTP 404 (08-05 브리핑과 동일) ②브라우저로 home.kepco.co.kr 메인 → 비대화형 세션이라 navigation denied/failed. 🔴사이트가 죽었다고 단정하지 말 것 — ②는 세션 권한 게이트일 수 있어 '미확인'이다. 대화형 세션에서 사람이 한 번 열어 현행 복지할인 안내 경로를 찾아주면 그때 초안 착수. 수치 확보 전에는 글을 쓰지 않는다(검색요약·뉴스·블로그 대체 금지).",
@@ -303,15 +293,6 @@
    "cmd": "python -m studio.dupcheck \"추석 명절 문 여는 병원 약국 응급실 조회 방법 총정리\"",
    "owner": "claude",
    "state": "todo"
-  },
-  {
-   "id": "chuseok-rail-2026",
-   "added": "2026-08-07",
-   "what": "2026 추석 KTX·SRT 명절 승차권 예매 공지 — 코레일 보도자료에 뜨면 글감 착수(오늘 확인 결과 미공지, 2차출처만 존재해 보류)",
-   "due": "2026-08-14",
-   "cmd": "브라우저로 https://info.korail.com/info/selectBbsNttList.do?bbsNo=199&key=911 열어 '추석' 검색",
-   "owner": "claude",
-   "state": "wait"
   },
   {
    "id": "b3-04-tax-tier-gap",
@@ -568,7 +549,9 @@
    "due": "2026-08-12",
    "cmd": "grep -c 'id=\"ymyl-disclaimer\"' 어르신무료예방접종_글_HTML.txt",
    "owner": "user",
-   "state": "blocked"
+   "state": "done",
+   "done_at": "2026-08-12",
+   "result": "초안에 건강용 YMYL 면책 블록 삽입 완료(Claude가 직접 처리, 발행은 별도)"
   },
   {
    "id": "gsc-validation-0811",
@@ -600,20 +583,30 @@
    "state": "todo"
   },
   {
-   "id": "v0inject-before-reapply",
-   "added": "2026-08-12",
-   "what": "재검토 요청 전 게이트 - V0 보강 12편(todo) 실행 완료 + blocked 3건(A1-03·A4-01·B2-01) 정리. 이게 끝나기 전에는 애드센스 재검토 요청을 누르지 않는다(4번째 반려 사유=고유성 부족, 보강 실행 0건 상태로 재신청 = 사이클 소모) (8/18=재요청 가능횟수 소진 해제일, 8/19=이 게이트 자체 기한 — 둘 다 V0 실행 없이는 누르지 않는다)",
-   "due": "2026-08-19",
-   "cmd": "python -m studio.batchboard",
-   "owner": "user",
-   "state": "todo"
-  },
-  {
    "id": "a104-seodesc-paste",
    "added": "2026-08-12",
    "what": "A1-04(청년월세지원) 검색설명 수정문 Blogger 편집화면에 붙여넣기 — 클립보드에 이미 복사됨(2026-08-12). 문구: '청년월세지원은 매달 최대 20만원씩 최대 24개월, 총 480만원을 받는 제도입니다. 2026년 신규 신청기간은 3월 30일~5월 29일이고 생애 1회만 지원됩니다. 자격·제외대상을 정리했습니다.'",
    "due": "2026-08-13",
    "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/973458078142650004 열어 설정>검색 설명에 붙여넣기 후 업데이트",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "reapply-gate-axisB",
+   "added": "2026-08-12",
+   "what": "재검토 요청 전 게이트 - 축B(콘텐츠 고유성) 보강 완료 필요. V0 5요소는 자체발명 기준이었음이 08-12 밝혀져 폐기됨(정밀검증 보고서 참조) - 실제 구글 요구는 'enough unique content'뿐. adsense0812 배치의 B1-format(형식 획일성 대조)·B2-compare(공식출처만의 경쟁비교)가 끝나기 전에는 재검토 요청 버튼을 누르지 않는다",
+   "due": "2026-08-19",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "user",
+   "state": "todo",
+   "note": 109
+  },
+  {
+   "id": "adsense-axisb-fold-howto",
+   "added": "2026-08-12",
+   "what": "축B(형식통일성 B1-format) 조사는 Fold 세션과 병행 — 새 Fold 대화에서 '배치보드 adsense0812 열어서 B1-format 지시서(order)대로 진행해줘'라고만 말하면 됨. 관제탑은 B2-compare(경쟁 콘텐츠 고유성 비교)를 동시 진행 중",
+   "due": "2026-08-13",
+   "cmd": "python -m studio.batchboard order --id adsense0812",
    "owner": "user",
    "state": "todo"
   }
