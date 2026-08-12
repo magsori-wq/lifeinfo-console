@@ -37,6 +37,18 @@
   .links a.ad{background:#3a2f12;color:#ffd166;border-color:#5a4a1a}
   .out{white-space:pre-wrap;background:#0c1220;border:1px dashed #2a3a5e;border-radius:10px;padding:13px;font-size:12px;color:#cdd8ee;margin-top:12px;display:none}
   .note{font-size:12px;color:#ffd166;margin-top:10px;line-height:1.6}
+  .mt-count{font-size:12px;color:#9fb0d0;margin:0 0 14px}
+  .mtrow{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;margin:0 0 10px;background:#16203a;border:1px solid #2a3a5e;border-radius:12px;cursor:pointer}
+  .mtrow.done{opacity:.45}
+  .mtrow.done .mtwhat{text-decoration:line-through}
+  .mtchk{width:19px;height:19px;flex:none;margin-top:2px;accent-color:#06d6a0}
+  .mtbody{display:flex;flex-direction:column;gap:5px;font-size:13.5px;line-height:1.55}
+  .mtwhat{color:#e8edf7}
+  .mtdue{font-size:11px;color:#9fb0d0;font-weight:700}
+  .mtdue.over{color:#ff6b6b}
+  .mtcmd{font-size:11.5px;color:#7ee0c9;font-family:ui-monospace,Consolas,monospace;word-break:break-all;background:#0c1220;border-radius:6px;padding:4px 7px;margin-top:2px}
+  .mtnote{font-size:11.5px;color:#9fb0d0;margin:0 0 14px}
+  .mtempty{color:#9fb0d0;font-size:13px;padding:20px;text-align:center;background:#16203a;border:1px dashed #2a3a5e;border-radius:12px}
   .copied{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#06d6a0;color:#04221a;font-weight:800;padding:11px 20px;border-radius:24px;font-size:14px;display:none;z-index:20}
   /* 🗺️ 네비게이터 */
   .nav-sec{font-size:14px;color:#7fc1ff;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
@@ -70,7 +82,8 @@
   <div class="top">
     <div class="brand">📊 운영 콘솔 <span class="dot">·</span> 생활정보 모음</div>
     <nav id="nav">
-      <button data-t="dispatch" class="active">⚡ 디스패치</button>
+      <button data-t="mytasks" class="active">🙋 내가 할 일</button>
+      <button data-t="dispatch">⚡ 디스패치</button>
       <button data-t="progress">📋 발행대기</button>
       <!-- 🔴 색인관리를 앞으로 당겼다 (2026-08-04). 15개 중 12번째라 아무도 안 열었고,
            그 안에 '구글이 우리 글을 가져가고 있는가'가 들어 있다. 크롤이 막히면 발행도
@@ -98,7 +111,15 @@
   <div id="crawlAlert"></div>
 
   <div class="stage">
-    <div id="p_dispatch" class="panel show">
+    <div id="p_mytasks" class="panel show">
+      <div class="d-wrap">
+        <h2>🙋 내가 할 일</h2>
+        <p class="sub">watch.json 에서 사용자(owner=user) 몫으로 등록된 미완료 항목입니다. 체크는 이 브라우저에만 저장됩니다(안 사라짐 방지) — 실제 완료 처리는 <code>watch.py done</code> 이 유일한 진실원입니다.</p>
+        <div id="mtCount" class="mt-count"></div>
+        <div id="mtList"></div>
+      </div>
+    </div>
+    <div id="p_dispatch" class="panel">
       <div class="d-wrap">
         <h2>⚡ Claude 디스패치 <span style="font-size:13px;color:#9fb0d0">(폰에서 바로 작업)</span></h2>
         <p class="sub">버튼을 누르면 작업용 프롬프트가 <b>자동 복사</b>되고 Claude가 열립니다. Claude 입력창에 <b>붙여넣기(길게 눌러 붙여넣기)</b> → 실행 → 결과를 복사해 아래 <b>Blogger 글쓰기</b>로 붙여 발행하세요.</p>
@@ -297,8 +318,48 @@
     document.getElementById('p_nav').classList.toggle('show',t==='nav');
     document.getElementById('p_about').classList.toggle('show',t==='about');
     document.getElementById('p_trends').classList.toggle('show',t==='trends');
+    document.getElementById('p_mytasks').classList.toggle('show',t==='mytasks');
     if(t==='trends')loadTrends();
   });
+
+  /* ---------- 🙋 내가 할 일 (2026-08-12 사용자 지시 — 별도 탭, progress.html 아님) ----------
+     진실원=webapp/watch.json(owner=user, state!=done). 체크는 localStorage 전용(비지속) —
+     같은 관례를 progress.html '내가 할 일' 섹션과 공유(거기 있던 것을 요청에 따라 여기로 이전). */
+  (function(){
+    function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+    function mtChecked(){try{return JSON.parse(localStorage.getItem('mytask_checked')||'{}');}catch(e){return {};}}
+    window.mtToggle=function(el,id){
+      var s=mtChecked();
+      if(el.checked) s[id]=true; else delete s[id];
+      localStorage.setItem('mytask_checked', JSON.stringify(s));
+      var row=el.closest('.mtrow'); if(row) row.classList.toggle('done', el.checked);
+    };
+    function render(items){
+      var today=new Date().toISOString().slice(0,10);
+      var checked=mtChecked();
+      var mine=(items||[]).filter(function(w){return w.owner==='user'&&w.state!=='done';})
+        .sort(function(a,b){return (a.due||'9999').localeCompare(b.due||'9999');});
+      document.getElementById('mtCount').textContent=mine.length+'건';
+      if(!mine.length){
+        document.getElementById('mtList').innerHTML='<div class="mtempty">🎉 지금 사용자가 할 일 없음</div>';
+        return;
+      }
+      document.getElementById('mtList').innerHTML=mine.map(function(w){
+        var overdue=w.due&&w.due<today, isToday=w.due===today;
+        var dueLab=w.due?(isToday?'오늘':(overdue?esc(w.due)+' 지남':esc(w.due))):'';
+        var ck=checked[w.id]?' checked':'', doneCls=checked[w.id]?' done':'';
+        return '<label class="mtrow'+doneCls+'">'
+          +'<input type="checkbox" class="mtchk"'+ck+' onchange="mtToggle(this,\''+esc(w.id)+'\')">'
+          +'<span class="mtbody"><span class="mtwhat">'+esc(w.what||'')+'</span>'
+          +(dueLab?'<span class="mtdue'+(overdue?' over':'')+'">⏰ '+dueLab+'</span>':'')
+          +(w.cmd?'<span class="mtcmd">▸ '+esc(w.cmd)+'</span>':'')
+          +'</span></label>';
+      }).join('');
+    }
+    fetch('watch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+      .then(function(j){render(j&&j.items);})
+      .catch(function(){document.getElementById('mtList').innerHTML='<div class="mtempty">불러오기 실패</div>';});
+  })();
 
   /* ---------- 🗺️ 네비게이터 (LIFEINFO_메커니즘_플로우차트.md 의 화면 구현) ---------- */
   function goTab(t){var b=document.querySelector('nav button[data-t="'+t+'"]');if(b)b.click();}
