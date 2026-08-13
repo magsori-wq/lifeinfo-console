@@ -2,8 +2,8 @@
  "rev": "8172ac0",
  "counts": {
   "total": 189,
-  "osmu_done": 187,
-  "osmu_pending": 2,
+  "osmu_done": 188,
+  "osmu_pending": 1,
   "indexed": 5,
   "index_pending": 184,
   "index_requested": 181,
@@ -11,8 +11,8 @@
  },
  "actionable": [
   {
-   "code": "C2-06",
-   "title": "어르신 무료 예방접종 대상 독감 폐렴구균 위탁의료기관 ",
+   "code": "D4-08",
+   "title": "벌초 대행 신청 방법 산림조합 벌초도우미 요금 할인 총",
    "need": [
     "OSMU",
     "색인요청"
@@ -27,18 +27,18 @@
    }
   },
   {
-   "code": "D4-08",
-   "title": "벌초 대행 신청 방법 산림조합 벌초도우미 요금 할인 총",
+   "code": "C2-06",
+   "title": "어르신 무료 예방접종 대상 독감 폐렴구균 위탁의료기관 ",
    "need": [
-    "OSMU",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false
    }
   },
