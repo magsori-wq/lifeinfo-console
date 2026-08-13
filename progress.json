@@ -134,7 +134,7 @@
   "[하네스결함] 표시줄·훅 무발효 근본원인 발견(2026-08-13): 이 세션의 harness 작업디렉토리가 C:\\lifeinfo\\.claude\\worktrees\\<name> 인데, 이 워크트리에 실제 저장소 체크아웃이 없고(_v0audit 등 스크래치 파일만 존재) .claude/settings.json 도 없어 statusLine·SessionStart·Stop 훅이 전부 무발효였다. .claude/settings.json 은 실제로 git 커밋(ebbacab)에 포함돼있지만 이 워크트리엔 체크아웃 안됨(worktree 자체가 정상 git worktree add 산출물이 아니라 비어있는 격리 스크래치로 보임). 임시조치: 이 워크트리에 settings.json 수동 복사해 이번 세션은 정상화됨(statusline.py·run_checks.py 재실행 확인). 근본조치 미정 — 매 세션 워크트리가 이렇게 비어있다면 새 세션마다 재발한다. 사용자 지시: 'C:\\lifeinfo에서 직접 켤 것'이 이 문제를 원천 회피하는 유일한 방법일 수 있음"
  ],
  "pipeline": {
-  "code": "C2-06 · 어르신 무료 예방접종 대상 독감 폐렴",
+  "code": "A3-03 · 국민연금 추납 임의가입 방법 못 낸 기간 채",
   "checked": [
    1,
    2,
@@ -145,10 +145,14 @@
    7,
    8,
    9,
-   10
+   10,
+   11,
+   12,
+   13,
+   14
   ],
-  "done": 10,
+  "done": 14,
   "total": 16,
-  "note": "발행·DB·배포 완료 / 색인·OSMU(네이버·쓰레드·인스타·교차링크) 남음"
+  "note": "발행 완료 + OSMU 확산(naver·threads·instagram) / 색인 대기"
  }
 }
