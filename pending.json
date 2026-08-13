@@ -1,15 +1,31 @@
 {
- "rev": "5827da2",
+ "rev": "6f73f44",
  "counts": {
-  "total": 188,
+  "total": 189,
   "osmu_done": 187,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 5,
-  "index_pending": 183,
+  "index_pending": 184,
   "index_requested": 181,
-  "index_todo": 2
+  "index_todo": 3
  },
  "actionable": [
+  {
+   "code": "C2-06",
+   "title": "어르신 무료 예방접종 대상 독감 폐렴구균 위탁의료기관 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "D4-08",
    "title": "벌초 대행 신청 방법 산림조합 벌초도우미 요금 할인 총",
@@ -194,21 +210,6 @@
   {
    "code": "A1-12",
    "title": "근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-02",
-   "title": "에너지바우처 신청 자격 금액 사용기간 총정리",
    "need": [
     "색인대기"
    ],
