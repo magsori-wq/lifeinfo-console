@@ -598,11 +598,11 @@
   {
    "id": "reapply-gate-axisB",
    "added": "2026-08-12",
-   "what": "재검토 요청 전 게이트 - 축B(콘텐츠 고유성) 보강 완료 필요. V0 5요소는 자체발명 기준이었음이 08-12 밝혀져 폐기됨(정밀검증 보고서 참조) - 실제 구글 요구는 'enough unique content'뿐. adsense0812 배치의 B1-format(형식 획일성 대조)·B2-compare(공식출처만의 경쟁비교)가 끝나기 전에는 재검토 요청 버튼을 누르지 않는다",
+   "what": "재검토 요청 전 게이트(갱신) - 축A(101/101)·축B 조사(B1-format+B2-compare) 전부 완료됨(adsense0812 6/6). B2-compare가 찾은 처방(실전 경험 디테일 주입)은 A2-01·B2-04·C1-02 3편 파일럿 완료(V0 처방 1~3호). ⚠️ 재검토 요청은 아직 누르지 않는다 — 파일럿 효과(색인·체류시간) 관찰 기간 필요 + 8/18까지 요청횟수 소진 상태라 물리적으로도 불가. 다음 판단: 파일럿 몇 편 더 확대할지, 언제 요청 누를지는 사용자 판단",
    "due": "2026-08-19",
    "cmd": "python -m studio.batchboard show",
    "owner": "user",
-   "state": "todo",
+   "state": "wait",
    "note": 109
   },
   {
@@ -612,7 +612,9 @@
    "due": "2026-08-13",
    "cmd": "python -m studio.batchboard order --id adsense0812",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-13",
+   "result": "B1-format Fold가 완료(2026-08-12 17:29, 결론=템플릿 획일성 문제아님). adsense0812 배치 6/6(100%) 마감됨"
   },
   {
    "id": "briefing-adsense-fixed-line",
@@ -678,7 +680,9 @@
    "due": "2026-08-13",
    "cmd": "git add 학자금대출2학기_글_HTML.txt thumbs/166_student_loan.png thumbs_naver/166_student_loan.png; git commit -m 'B2-10 학자금대출 초안·썸네일'; git push origin main   (PowerShell — && 는 5.1에서 파서 에러)",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-13",
+   "result": "커밋 a2bf510에서 처리 완료(초안·썸네일·queue.json 반영, 원격 푸시됨)"
   },
   {
    "id": "d4-09-commit-draft",
@@ -687,7 +691,9 @@
    "due": "2026-08-13",
    "cmd": "git add 코스트코연회비_글_HTML.txt thumbs/165_costco_membership.png thumbs_naver/165_costco_membership.png; git commit -m 'D4-09 코스트코 연회비 초안·썸네일'; git push origin main",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-13",
+   "result": "커밋 a2bf510에서 처리 완료(초안·썸네일·queue.json 반영, 원격 푸시됨)"
   },
   {
    "id": "a109-seodesc-stale",
@@ -697,6 +703,15 @@
    "cmd": "python -m studio.seodesc scan --only A1-09",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "statusline-worktree-recheck",
+   "added": "2026-08-13",
+   "what": "표시줄(진행바)이 다시 안 보이면 → 새 세션의 워크트리에 .claude/settings.json이 또 없는 것. 즉시 재적용 명령 아래 cmd 그대로 실행하면 30초 내 복구됨",
+   "due": "2026-08-20",
+   "cmd": "python -c \"import shutil,glob,os; [shutil.copy('C:/lifeinfo/.claude/settings.json', os.path.join(w,'.claude','settings.json')) for w in glob.glob('C:/lifeinfo/.claude/worktrees/*') if os.path.isdir(os.path.join(w,'.claude')) and not os.path.exists(os.path.join(w,'.claude','settings.json'))]; print('복구 완료')\"",
+   "owner": "claude",
+   "state": "wait"
   }
  ]
 }

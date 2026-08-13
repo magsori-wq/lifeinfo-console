@@ -12,9 +12,15 @@
   .top{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#111a2e;border-bottom:1px solid #2a3a5e;flex:none;flex-wrap:wrap;position:sticky;top:0;z-index:5}
   .brand{font-weight:800;font-size:15px;white-space:nowrap}
   .brand .dot{color:#06d6a0}
-  nav{display:flex;gap:6px;flex-wrap:wrap}
+  nav{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
   nav button{cursor:pointer;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;border-radius:9px;padding:9px 13px;font-size:13px;font-weight:700;font-family:inherit}
   nav button.active{background:#4d9de0;color:#fff;border-color:#4d9de0}
+  /* 대분류(그룹) 탭 — 살짝 옅게 둬서 그 아래 실제 탭(leaf)과 위계 차이를 준다 */
+  .navgroups{display:flex;gap:6px;flex-wrap:wrap}
+  .navgroups .grouptab{background:#0f1626;border-color:#26324f;color:#9fb0d0;padding:7px 12px;font-size:12.5px}
+  .navgroups .grouptab.active{background:#1c2c4d;color:#fff;border-color:#4d9de0}
+  .leafrow{display:flex;gap:6px;flex-wrap:wrap}
+  .leafrow.hide{display:none}
   .stage{flex:1;position:relative;background:#0f1626;min-height:60vh}
   iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#0f1626;display:none}
   iframe.show{display:block}
@@ -82,25 +88,48 @@
   <div class="top">
     <div class="brand">📊 운영 콘솔 <span class="dot">·</span> 생활정보 모음</div>
     <nav id="nav">
-      <button data-t="mytasks" class="active">🙋 내가 할 일</button>
-      <button data-t="dispatch">⚡ 디스패치</button>
-      <button data-t="progress">📋 발행대기</button>
-      <!-- 🔴 색인관리를 앞으로 당겼다 (2026-08-04). 15개 중 12번째라 아무도 안 열었고,
-           그 안에 '구글이 우리 글을 가져가고 있는가'가 들어 있다. 크롤이 막히면 발행도
-           보강도 헛도는데, 그 사실이 가장 안 보이는 자리에 있었다. -->
-      <button data-t="gsc">🔍 색인관리</button>
-      <button data-t="batch">🔧 배치보드</button>
-      <button data-t="nav">🗺️ 네비게이터</button>
-      <button data-t="trends">📰 글감</button>
-      <button data-t="search">🔎 검색</button>
-      <button data-t="categories">🗂️ 분류</button>
-      <button data-t="generator">글 생성기</button>
-      <button data-t="osmu">OSMU</button>
-      <button data-t="jisikin">지식인</button>
-      <button data-t="dashboard">📡 모니터링</button>
-      <button data-t="seo">🔧 SEO점검</button>
-      <button data-t="adsense">📋 애드센스 승인</button>
-      <button data-t="about">ℹ️ 소개</button>
+      <!-- 🔴 2026-08-13 사용자 지시: "메인탭도 연관된작업들은 서브탭으로 들어가 작업할수
+           있도록" — 15개가 한 줄에 다 펼쳐져 있어 원하는 걸 찾으려면 계속 훑어야 했다.
+           위(대분류 6개) → 아래(그 안의 실제 탭) 2단 구조로 묶는다. data-t 를 쓰는 기존
+           패널/iframe 전환 로직은 그대로 두고, 어느 그룹에 속하느냐만 새로 씌운 것이다. -->
+      <div class="navgroups" id="navgroups">
+        <button class="grouptab active" data-g="today">🙋 오늘 할 일</button>
+        <button class="grouptab" data-g="manage">📊 운영 관리</button>
+        <button class="grouptab" data-g="content">✍️ 콘텐츠 제작</button>
+        <button class="grouptab" data-g="browse">🔎 탐색</button>
+        <button class="grouptab" data-g="monitor">📡 모니터링</button>
+        <button class="grouptab" data-g="info">🗺️ 안내</button>
+      </div>
+      <div class="leafrow" data-group="today">
+        <button data-t="mytasks" class="active">🙋 내가 할 일</button>
+        <button data-t="dispatch">⚡ 디스패치</button>
+        <button data-t="progress">📋 발행대기</button>
+      </div>
+      <!-- 🔴 색인관리를 이 그룹 맨 앞에 둔다 (2026-08-04 근거 유지). "구글이 우리 글을
+           가져가고 있는가"는 발행·보강보다 먼저 봐야 할 질문이다. -->
+      <div class="leafrow hide" data-group="manage">
+        <button data-t="gsc">🔍 색인관리</button>
+        <button data-t="batch">🔧 배치보드</button>
+        <button data-t="seo">🔧 SEO점검</button>
+        <button data-t="adsense">📋 애드센스 승인</button>
+      </div>
+      <div class="leafrow hide" data-group="content">
+        <button data-t="trends">📰 글감</button>
+        <button data-t="generator">글 생성기</button>
+        <button data-t="osmu">OSMU</button>
+        <button data-t="jisikin">지식인</button>
+      </div>
+      <div class="leafrow hide" data-group="browse">
+        <button data-t="search">🔎 검색</button>
+        <button data-t="categories">🗂️ 분류</button>
+      </div>
+      <div class="leafrow hide" data-group="monitor">
+        <button data-t="dashboard">📡 모니터링</button>
+      </div>
+      <div class="leafrow hide" data-group="info">
+        <button data-t="nav">🗺️ 네비게이터</button>
+        <button data-t="about">ℹ️ 소개</button>
+      </div>
     </nav>
   </div>
 
@@ -309,10 +338,14 @@
 <script>
   var nav=document.getElementById('nav');
   var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','batch','gsc','seo','adsense'];
-  nav.addEventListener('click',function(e){
-    var b=e.target.closest('button'); if(!b)return;
+  // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
+  var TAB_GROUP={};
+  document.querySelectorAll('.leafrow').forEach(function(row){
+    row.querySelectorAll('button[data-t]').forEach(function(b){ TAB_GROUP[b.dataset.t]=row.dataset.group; });
+  });
+  function selectTab(b){
     var t=b.dataset.t;
-    [].forEach.call(nav.children,function(x){x.classList.toggle('active',x===b);});
+    document.querySelectorAll('.leafrow button').forEach(function(x){x.classList.toggle('active',x===b);});
     iframes.forEach(function(n){document.getElementById('f_'+n).classList.toggle('show',n===t);});
     document.getElementById('p_dispatch').classList.toggle('show',t==='dispatch');
     document.getElementById('p_nav').classList.toggle('show',t==='nav');
@@ -320,7 +353,36 @@
     document.getElementById('p_trends').classList.toggle('show',t==='trends');
     document.getElementById('p_mytasks').classList.toggle('show',t==='mytasks');
     if(t==='trends')loadTrends();
+    localStorage.setItem('console.tab', t);
+  }
+  function selectGroup(g, opts){
+    opts=opts||{};
+    document.querySelectorAll('.grouptab').forEach(function(x){x.classList.toggle('active',x.dataset.g===g);});
+    document.querySelectorAll('.leafrow').forEach(function(row){row.classList.toggle('hide',row.dataset.group!==g);});
+    localStorage.setItem('console.group', g);
+    if(opts.autoLeaf){
+      // 그룹을 눌러서 들어왔는데 그 안에 활성 탭이 하나도 없으면(다른 그룹 탭만
+      // active 였던 상태) 첫 leaf 를 자동으로 열어준다 — 빈 화면 방지.
+      var row=document.querySelector('.leafrow[data-group="'+g+'"]');
+      var hasActive=row&&row.querySelector('button.active');
+      if(row&&!hasActive){ selectTab(row.querySelector('button[data-t]')); }
+    }
+  }
+  nav.addEventListener('click',function(e){
+    var gb=e.target.closest('.grouptab');
+    if(gb){ selectGroup(gb.dataset.g, {autoLeaf:true}); return; }
+    var b=e.target.closest('.leafrow button'); if(!b)return;
+    selectGroup(TAB_GROUP[b.dataset.t]);
+    selectTab(b);
   });
+  // 새로고침해도 마지막으로 보던 그룹·탭을 기억한다(2026-08-13, 스크롤/탐색 반복 줄이기).
+  (function(){
+    var savedTab=localStorage.getItem('console.tab');
+    if(savedTab && TAB_GROUP[savedTab]){
+      var btn=document.querySelector('.leafrow button[data-t="'+savedTab+'"]');
+      if(btn){ selectGroup(TAB_GROUP[savedTab]); selectTab(btn); }
+    }
+  })();
 
   /* ---------- 🙋 내가 할 일 (2026-08-12 사용자 지시 — 별도 탭, progress.html 아님) ----------
      진실원=webapp/watch.json(owner=user, state!=done). 체크는 localStorage 전용(비지속) —
