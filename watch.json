@@ -712,6 +712,37 @@
    "cmd": "python -c \"import shutil,glob,os; [shutil.copy('C:/lifeinfo/.claude/settings.json', os.path.join(w,'.claude','settings.json')) for w in glob.glob('C:/lifeinfo/.claude/worktrees/*') if os.path.isdir(os.path.join(w,'.claude')) and not os.path.exists(os.path.join(w,'.claude','settings.json'))]; print('복구 완료')\"",
    "owner": "claude",
    "state": "wait"
+  },
+  {
+   "id": "d408-c206-followup",
+   "added": "2026-08-13",
+   "what": "D4-08 벌초대행·C2-06 예방접종 발행 후속 — 검색설명 실제 반영 확인(seodesc scan), 네이버/쓰레드 게시 확인되면 naver-link/threads-link 기록, 교차링크(blogger.py crosslink), 색인요청",
+   "due": "2026-08-16",
+   "cmd": "python -m studio.seodesc scan --only D4-08 C2-06 후 python -m studio.reindex 로 두 코드 상태 확인",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "thread-realphoto-d408c206",
+   "added": "2026-08-13",
+   "what": "D4-08·C2-06 쓰레드 첨부이미지 아직 미제작 — instagram-photo-template-sop 7번 규칙(실사진+본문슬라이드 비율, 표지비율 금지) 따라 studio/_thread_img_<슬러그>.py 새로 만들 것. 참고구현=_thread_img_nursingcare.py. F2-03은 06-24 게시(규칙 생기기 전)라 예외, 신규 갱신 불필요",
+   "due": "2026-08-14",
+   "cmd": "ls insta/thread/thread_D4-08* insta/thread/thread_C2-06* 2>&1로 파일 존재 확인",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-13",
+   "result": "D4-08 쓰레드 이미지 제작 완료(실사진+본문슬라이드 비율 SOP 준수, 육안검증 완료). C2-06은 1편만 원칙에 따라 이어서 별도 진행 예정"
+  },
+  {
+   "id": "thread-realphoto-c206",
+   "added": "2026-08-13",
+   "what": "C2-06(예방접종) 쓰레드 이미지 아직 미제작 — D4-08 완료 후 1편만 원칙 따라 이어서 진행. instagram-photo-template-sop 7번 규칙(실사진+본문슬라이드 비율) 준수, 참고=_thread_img_beolcho.py(D4-08, 방금 완성)",
+   "due": "2026-08-14",
+   "cmd": "ls insta/thread/thread_C2-06* 2>&1로 파일 존재 확인",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-13",
+   "result": "C2-06 쓰레드 이미지 제작 완료(실사진+본문슬라이드 비율 SOP 준수, 육안검증 완료). D4-08·C2-06 둘 다 끝남"
   }
  ]
 }
