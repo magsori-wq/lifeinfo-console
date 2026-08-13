@@ -1,8 +1,11 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><link rel="icon" href="data:,"><title>애드센스 승인 대시보드 — 생활정보 모음</title><style>
-:root{--bg:#0e1620;--card:#18222e;--card2:#13202d;--line:#26323f;--txt:#e6edf3;--mut:#8a97a6;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--blue:#7fc1ff}
+/* 2026-08-13 콘솔 공통 팔레트로 통일(사용자 지시 — 탭마다 화면형식이 제각각) —
+   index.html·categories.html·dashboard.html·search.html 이 이미 쓰던 #0f1626 계열이
+   진실원. 변수명은 유지해 아래 규칙은 손 안 댐. */
+:root{--bg:#0f1626;--card:#16203a;--card2:#0c1220;--line:#2a3a5e;--txt:#e8edf7;--mut:#9fb0d0;--ok:#06d6a0;--warn:#ffd166;--bad:#ff5c5c;--blue:#7fc1ff}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg)}
-body{color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR','Malgun Gothic',sans-serif;padding:14px;font-size:14px;-webkit-font-smoothing:antialiased}
+body{color:var(--txt);font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;padding:14px;font-size:14px;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1080px;margin:0 auto}
 .hd{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:4px}
 .hd h1{font-size:19px;font-weight:700}

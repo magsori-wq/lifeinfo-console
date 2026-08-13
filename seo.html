@@ -5,37 +5,40 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>🔧 SEO·애드센스 준비 점검 · 생활정보 모음</title>
 <style>
+/* 2026-08-13 콘솔 공통 팔레트로 통일(사용자 지시 — 탭마다 화면형식이 제각각).
+   빨강/노랑/초록 신호등은 이 페이지의 핵심 의미라 없애지 않고, 색만 다른 탭의
+   상태색(ok=#06d6a0·warn=#ffd166·bad=#ff5c5c)에 맞춘다. */
 *{box-sizing:border-box}
-body{margin:0;padding:16px;background:#0d1526;color:#cdd8ee;
-     font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif;font-size:14px;line-height:1.6}
+body{margin:0;padding:16px;background:#0f1626;color:#e8edf7;
+     font-family:'Noto Sans KR',"Malgun Gothic","맑은 고딕",system-ui,sans-serif;font-size:14px;line-height:1.6}
 header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
 h1{font-size:18px;margin:0;font-weight:800}
-.sub{color:#7f8db0;font-size:12px}
+.sub{color:#9fb0d0;font-size:12px}
 .light{display:inline-block;padding:4px 12px;border-radius:999px;font-weight:800;font-size:13px}
-.light.red{background:#3a1620;color:#ff8fa3;border:1px solid #6d2437}
-.light.yellow{background:#3a3116;color:#ffd479;border:1px solid #6d5a24}
-.light.green{background:#163a25;color:#6ee7a0;border:1px solid #246d43}
+.light.red{background:#3a1f1f;color:#ff5c5c;border:1px solid #7a3a3a}
+.light.yellow{background:#3a2f12;color:#ffd166;border:1px solid #5a4a1a}
+.light.green{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52}
 .tally{display:flex;gap:8px;margin:12px 0 18px;flex-wrap:wrap}
 .tally div{background:#16203a;border:1px solid #2a3a5e;border-radius:10px;padding:8px 14px;font-weight:700}
-.tally .f{color:#ff8fa3}.tally .w{color:#ffd479}.tally .p{color:#6ee7a0}
+.tally .f{color:#ff5c5c}.tally .w{color:#ffd166}.tally .p{color:#06d6a0}
 .card{background:#131c31;border:1px solid #2a3a5e;border-radius:12px;padding:14px 16px;margin-bottom:10px}
-.card.FAIL{border-left:5px solid #e5484d}
-.card.WARN{border-left:5px solid #f5a524}
-.card.PASS{border-left:5px solid #30a46c;opacity:.72}
+.card.FAIL{border-left:5px solid #ff5c5c}
+.card.WARN{border-left:5px solid #ffd166}
+.card.PASS{border-left:5px solid #06d6a0;opacity:.72}
 .t{font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .badge{font-size:11px;padding:2px 8px;border-radius:6px;font-weight:800}
-.badge.FAIL{background:#3a1620;color:#ff8fa3}
-.badge.WARN{background:#3a3116;color:#ffd479}
-.badge.PASS{background:#163a25;color:#6ee7a0}
+.badge.FAIL{background:#3a1f1f;color:#ff5c5c}
+.badge.WARN{background:#3a2f12;color:#ffd166}
+.badge.PASS{background:#0c3a2c;color:#06d6a0}
 .d{margin-top:6px;color:#b7c4e0}
 .act{margin-top:8px;padding:9px 12px;background:#101a2e;border:1px dashed #2f4573;border-radius:8px;font-size:13px}
 .act b{color:#7fc1ff}
-.risk{margin-top:5px;font-size:12px;color:#ffb4bd}
-.ref{margin-top:5px;font-size:12px;color:#7f8db0}
+.risk{margin-top:5px;font-size:12px;color:#ff9494}
+.ref{margin-top:5px;font-size:12px;color:#9fb0d0}
 .note{margin:18px 0 8px;padding:12px 14px;background:#101a2e;border:1px solid #2a3a5e;border-radius:10px;font-size:13px;color:#b7c4e0}
 .note b{color:#7fc1ff}
 code{background:#0a1526;padding:1px 6px;border-radius:5px;color:#9ecbff;font-size:12px}
-.err{background:#3a1620;border:1px solid #6d2437;color:#ff8fa3;padding:12px;border-radius:10px}
+.err{background:#3a1f1f;border:1px solid #7a3a3a;color:#ff5c5c;padding:12px;border-radius:10px}
 a{color:#7fc1ff}
 </style>
 </head>

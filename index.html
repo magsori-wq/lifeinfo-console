@@ -26,9 +26,23 @@
   iframe.show{display:block}
   .panel{position:absolute;inset:0;overflow:auto;padding:18px;display:none}
   .panel.show{display:block}
-  .d-wrap{max-width:760px;margin:0 auto}
+  /* 2026-08-13 사용자 지시: "운영관리 탭과 화면구성이 달라 일목요연하지 않다" —
+     운영관리(gsc·batch·seo·adsense) 쪽 페이지는 전부 1080px 폭의 KPI 대시보드
+     톤이었는데 이 "오늘 할 일" 그룹(내가할일·디스패치)만 760px 좁은 폼이었다.
+     폭만 맞추고, 내가할일 패널엔 아래에서 KPI 카드 요약을 새로 추가한다. */
+  .d-wrap{max-width:1080px;margin:0 auto}
   .d-wrap h2{font-size:19px;margin:0 0 6px}
   .d-wrap p.sub{color:#9fb0d0;font-size:13px;margin:0 0 16px;line-height:1.6}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 18px}
+  .kpi{background:#0c1220;border:1px solid #2a3a5e;border-top:3px solid #3a4a63;border-radius:12px;padding:12px 14px}
+  .kpi.bad{border-top-color:#ff5c5c}
+  .kpi.warn{border-top-color:#ffd166}
+  .kpi.ok{border-top-color:#06d6a0}
+  .kpi .kv{font-size:24px;font-weight:800;line-height:1.2}
+  .kpi.bad .kv{color:#ff5c5c}
+  .kpi.warn .kv{color:#ffd166}
+  .kpi.ok .kv{color:#06d6a0}
+  .kpi .kl{font-size:11.5px;color:#9fb0d0;margin-top:3px;font-weight:700}
   .card{background:#16203a;border:1px solid #2a3a5e;border-radius:14px;padding:16px;margin-bottom:14px}
   .card h3{margin:0 0 6px;font-size:15px;color:#7fc1ff}
   .card p{margin:0 0 10px;color:#9fb0d0;font-size:13px;line-height:1.6}
@@ -152,6 +166,7 @@
       <div class="d-wrap">
         <h2>⚡ Claude 디스패치 <span style="font-size:13px;color:#9fb0d0">(폰에서 바로 작업)</span></h2>
         <p class="sub">버튼을 누르면 작업용 프롬프트가 <b>자동 복사</b>되고 Claude가 열립니다. Claude 입력창에 <b>붙여넣기(길게 눌러 붙여넣기)</b> → 실행 → 결과를 복사해 아래 <b>Blogger 글쓰기</b>로 붙여 발행하세요.</p>
+        <div id="dspKpi" class="kpi-grid"></div>
 
         <div class="card">
           <h3>① 고단가 글 초안 만들기</h3>
@@ -258,6 +273,7 @@
       <div class="d-wrap">
         <h2>🗺️ 운영 네비게이터 <span style="font-size:13px;color:#9fb0d0">전체 흐름 한눈에</span></h2>
         <p class="sub">매일의 운영 루프와 각 에이전트의 <b>목표·상태</b>입니다. <b>카드/단계를 누르면 해당 도구로 바로 이동</b>합니다. (출처: <code>LIFEINFO_메커니즘_플로우차트.md</code>)</p>
+        <div id="navKpi" class="kpi-grid"></div>
 
         <div class="card">
           <h3>🔄 매일 운영 루프 <span style="font-size:11px;color:#9fb0d0;font-weight:400">— 위에서 아래로, 끝나면 다시 글감으로</span></h3>
@@ -316,6 +332,7 @@
       <div class="d-wrap">
         <h2>📰 구글뉴스 트렌드 글감 <span style="font-size:12px;color:#9fb0d0" id="trendFresh">—</span></h2>
         <p class="sub">카테고리별 <b>지금 이슈</b>를 확인하고 판단하세요 — <b>🔗 원문</b>(뉴스 열기) · <b>🔎 발행판단</b>(원문 확인 후 블로그 적합성·중복·팩트검증 따져 발행 추천/보류/부적합 판정) · <b>✍️ 작성</b>(바로 글 작성). 각 버튼이 프롬프트를 복사하고 Claude를 엽니다.</p>
+        <div id="trendKpi" class="kpi-grid"></div>
         <div id="trendBox"><p class="note">불러오는 중…</p></div>
       </div>
     </div>
@@ -401,7 +418,16 @@
       var checked=mtChecked();
       var mine=(items||[]).filter(function(w){return w.owner==='user'&&w.state!=='done';})
         .sort(function(a,b){return (a.due||'9999').localeCompare(b.due||'9999');});
-      document.getElementById('mtCount').textContent=mine.length+'건';
+      // 2026-08-13: 운영관리 탭과 같은 KPI 카드 형식으로 통일(문장 한 줄 대신 숫자 카드).
+      var overN=mine.filter(function(w){return w.due&&w.due<today;}).length;
+      var todayN=mine.filter(function(w){return w.due===today;}).length;
+      var doneN=mine.filter(function(w){return checked[w.id];}).length;
+      document.getElementById('mtCount').innerHTML='<div class="kpi-grid">'
+        +'<div class="kpi'+(mine.length?'':' ok')+'"><div class="kv">'+mine.length+'</div><div class="kl">전체 할 일</div></div>'
+        +'<div class="kpi'+(overN?' bad':' ok')+'"><div class="kv">'+overN+'</div><div class="kl">기한 지남</div></div>'
+        +'<div class="kpi'+(todayN?' warn':' ok')+'"><div class="kv">'+todayN+'</div><div class="kl">오늘 마감</div></div>'
+        +'<div class="kpi ok"><div class="kv">'+doneN+'</div><div class="kl">체크 완료</div></div>'
+        +'</div>';
       if(!mine.length){
         document.getElementById('mtList').innerHTML='<div class="mtempty">🎉 지금 사용자가 할 일 없음</div>';
         return;
@@ -461,6 +487,27 @@
     }).catch(function(){});
   })();
   function goDispatch(fn){goTab('dispatch');if(fn)setTimeout(function(){try{fn();}catch(e){}},80);}
+
+  /* 📊 디스패치 상단 KPI — 2026-08-13 사용자 지시: 다른 그룹(운영관리)과 같은
+     대시보드 형식으로. 오늘 페이스·발행대기·미결을 숫자로 먼저 보여준다. */
+  (function(){
+    var el=document.getElementById('dspKpi'); if(!el) return;
+    Promise.all([
+      fetch('pace.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+      fetch('queue.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
+      fetch('pending.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})
+    ]).then(function(res){
+      var pace=res[0]||{}, queue=res[1]||{}, pend=res[2]||{};
+      var today=pace.count||0, hard=pace.hard||2;
+      var qn=(queue.items||[]).length;
+      var pc=pend.counts||{};
+      el.innerHTML=
+        '<div class="kpi'+(today>=hard?' bad':today>0?' warn':' ok')+'"><div class="kv">'+today+' <small style="font-size:13px;color:#9fb0d0">/ '+hard+'</small></div><div class="kl">오늘 발행</div></div>'
+        +'<div class="kpi'+(qn>0?' warn':' ok')+'"><div class="kv">'+qn+'</div><div class="kl">발행 대기</div></div>'
+        +'<div class="kpi'+((pc.index_pending||0)>0?' warn':' ok')+'"><div class="kv">'+(pc.index_pending||0)+'</div><div class="kl">색인 대기</div></div>'
+        +'<div class="kpi ok"><div class="kv">'+(pc.total||0)+'</div><div class="kl">전체 발행글</div></div>';
+    }).catch(function(){});
+  })();
   // 일일 운영 루프 (클릭 → 해당 도구)
   var FLOW=[
     {t:'📰 글감 발굴',d:'구글뉴스 트렌드에서 오늘 쓸 주제 고르기',go:function(){goTab('trends');}},
@@ -493,6 +540,17 @@
   ];
   var BLOCKED=[];  // 자격증명 대기 트랙 없음(애드센스 연결 완료, 네이버는 반자동+브라우저)
   function renderNav(){
+    // 2026-08-13: 운영관리 탭과 같은 KPI 카드로 에이전트 현황을 먼저 보여준다.
+    var nk=document.getElementById('navKpi');
+    if(nk){
+      var liveN=AGENTS.filter(function(a){return a.st==='live';}).length;
+      var manN=AGENTS.filter(function(a){return a.st==='man';}).length;
+      nk.innerHTML=
+        '<div class="kpi ok"><div class="kv">'+liveN+'</div><div class="kl">🟢 LIVE 에이전트</div></div>'
+        +'<div class="kpi'+(manN?' warn':' ok')+'"><div class="kv">'+manN+'</div><div class="kl">✏️ 수기 기록</div></div>'
+        +'<div class="kpi'+(BLOCKED.length?' bad':' ok')+'"><div class="kv">'+BLOCKED.length+'</div><div class="kl">⏳ 자격증명 대기</div></div>'
+        +'<div class="kpi ok"><div class="kv">'+FLOW.length+'</div><div class="kl">🔄 운영 루프 단계</div></div>';
+    }
     var f=document.getElementById('flowBox');if(!f||f.dataset.done)return;f.dataset.done='1';
     FLOW.forEach(function(s,i){
       var d=document.createElement('div');d.className='fstep';
@@ -710,6 +768,14 @@
     if(_trendsLoaded)return; _trendsLoaded=true;
     fetch('trends.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(d){
       document.getElementById('trendFresh').textContent=freshLabel(d.fetched_at);
+      // 2026-08-13: 운영관리 탭과 같은 KPI 카드로 요약을 먼저 보여준다.
+      var cats=d.categories||[], hotN=(d.hot||[]).length;
+      var itemN=cats.reduce(function(s,c){return s+((c.items||[]).length);},0);
+      var kEl=document.getElementById('trendKpi');
+      if(kEl) kEl.innerHTML=
+        '<div class="kpi'+(hotN?' warn':' ok')+'"><div class="kv">'+hotN+'</div><div class="kl">🔥 핫이슈</div></div>'
+        +'<div class="kpi ok"><div class="kv">'+itemN+'</div><div class="kl">전체 후보</div></div>'
+        +'<div class="kpi ok"><div class="kv">'+cats.length+'</div><div class="kl">카테고리</div></div>';
       var box=document.getElementById('trendBox'); box.innerHTML='';
       // 🔥 핫이슈
       if(d.hot&&d.hot.length){
