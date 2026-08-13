@@ -27,10 +27,10 @@
   .panel{position:absolute;inset:0;overflow:auto;padding:18px;display:none}
   .panel.show{display:block}
   /* 2026-08-13 사용자 지시: "운영관리 탭과 화면구성이 달라 일목요연하지 않다" —
-     운영관리(gsc·batch·seo·adsense) 쪽 페이지는 전부 1080px 폭의 KPI 대시보드
-     톤이었는데 이 "오늘 할 일" 그룹(내가할일·디스패치)만 760px 좁은 폼이었다.
-     폭만 맞추고, 내가할일 패널엔 아래에서 KPI 카드 요약을 새로 추가한다. */
-  .d-wrap{max-width:1080px;margin:0 auto}
+     760px 좁은 폼이었던 걸 넓혔다. 재수정("가운데로 화면이 몰려있잖아!"):
+     gsc·batch·seo 등 운영관리 대부분은 폭 제한이 없다. 1080px 가운데정렬도
+     adsense.html 혼자만의 패턴이었다 — 폭 제한을 없애 화면을 꽉 채운다. */
+  .d-wrap{width:100%}
   .d-wrap h2{font-size:19px;margin:0 0 6px}
   .d-wrap p.sub{color:#9fb0d0;font-size:13px;margin:0 0 16px;line-height:1.6}
   .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 18px}

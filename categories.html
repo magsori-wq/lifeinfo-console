@@ -8,8 +8,10 @@
 <style>
   *{box-sizing:border-box}
   body{margin:0;font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;background:#0f1626;color:#e8edf7}
-  /* 2026-08-13 사용자 지시로 콘솔 공통(운영관리) 폭·KPI 형식에 맞춤 */
-  .wrap{max-width:1080px;margin:0 auto;padding:16px 14px 60px}
+  /* 2026-08-13 콘솔 공통(운영관리) 폭·KPI 형식에 맞춤. 재수정("가운데로 화면이
+     몰려있잖아!"): gsc·batch·seo 등 대부분은 폭 제한이 없어 화면을 꽉 채운다 —
+     1080px 가운데정렬은 adsense.html 혼자만의 패턴이었다. */
+  .wrap{width:100%;padding:16px 14px 60px}
   h1{font-size:19px;margin:0 0 4px;font-weight:800}
   .sub{color:#9fb0d0;font-size:13px;margin:0 0 16px;line-height:1.6}
   .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 16px}

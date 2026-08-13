@@ -1677,47 +1677,34 @@
    ]
   },
   "publish0808": {
-   "title": "🚀 Fold 발행 지시서 — 오늘(8/13) 2편 + 대기 2편",
-   "note": "페이스상한(하루2편) 준수. D4-08·C2-06 먼저, D4-09·B2-10은 내일 이후",
+   "title": "발행 지시서 — D4-08 벌초대행 → C2-06 어르신예방접종 (오늘 상한 2편), D4-09·B2-10은 내일 이후",
+   "note": "발행 후 멈추지 말고 이어서 진행: DB 반영(register_post) → 검색설명 확인(seodesc) → OSMU 3채널 준비(naver-draft/threads/insta) → 색인요청 데이터 반영(gsc_log). 갈림길 질문 금지, 실제 게시 버튼만 사람 손. 순서 지키고 상한 초과분(D4-09·B2-10)은 오늘 절대 건드리지 말 것 — pace.py DAILY_HARD=2.",
    "items": [
     {
-     "code": "B1-07",
-     "state": "done",
-     "note": "라이브+DB+검색설명+OSMU3채널 전부 완료(2026-08-10)"
-    },
-    {
-     "code": "A1-12",
-     "state": "done",
-     "note": "완료(2026-08-10 계열)"
-    },
-    {
-     "code": "F4-13",
-     "state": "done",
-     "note": "완료(2026-08-10 계열)"
-    },
-    {
      "code": "D4-08",
+     "title": "벌초대행 — 오늘 1번째 발행",
      "state": "todo",
-     "note": "발행대기 1순위(등록 08-11, 가장 오래됨) — gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D4-08 -f mode=live -f confirm=PUBLISH -f file='벌초대행신청_글_HTML.txt' -f title='벌초 대행 신청 방법 산림조합 벌초도우미 요금 할인 총정리 (2026)'"
+     "note": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D4-08 -f mode=live -f confirm=PUBLISH -f file='벌초대행신청_글_HTML.txt' -f title='벌초 대행 신청 방법 산림조합 벌초도우미 요금 할인 총정리 (2026 추석 9월 25일)'  # 실행 후: gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status"
     },
     {
      "code": "C2-06",
+     "title": "어르신 무료 예방접종 — 오늘 2번째(마지막) 발행",
      "state": "todo",
-     "note": "발행대기 2순위(YMYL 면책블록 삽입 완료·게이트 통과 확인됨) — gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=C2-06 -f mode=live -f confirm=PUBLISH -f file='어르신무료예방접종_글_HTML.txt' -f title='어르신 무료 예방접종 대상 독감 폐렴구균 위탁의료기관 찾기 총정리'"
+     "note": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=C2-06 -f mode=live -f confirm=PUBLISH -f file='어르신무료예방접종_글_HTML.txt' -f title='어르신 무료 예방접종 대상 독감 폐렴구균 위탁의료기관 찾기 총정리 (2026)'  # D4-08 완료·확인 후 실행 (오늘 페이스 상한 2편 중 마지막)"
     },
     {
      "code": "D4-09",
-     "state": "todo",
-     "note": "오늘 페이스상한(2편) 초과분 — 내일 이후로 미룰 것. 코스트코 연회비, 등록 08-12"
+     "title": "코스트코 연회비 — 오늘 발행 금지(상한 초과분)",
+     "state": "blocked",
+     "note": "오늘 페이스 상한 2편(D4-08·C2-06)을 이미 채운다 — 절대 오늘 누르지 말 것. 내일 이후 pace.py로 오늘 발행수 0인지 확인 후: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D4-09 -f mode=live -f confirm=PUBLISH -f file='코스트코연회비_글_HTML.txt' -f title='코스트코 연회비 골드스타 이그제큐티브 차이 2% 리워드 손익분기 환불 총정리 (2026 · 43,000원 vs 86,000원)'"
     },
     {
      "code": "B2-10",
-     "state": "todo",
-     "note": "오늘 페이스상한(2편) 초과분 — 내일 이후로 미룰 것. 학자금대출 2학기, 등록 08-13"
+     "title": "학자금대출 2학기 — 오늘 발행 금지(상한 초과분)",
+     "state": "blocked",
+     "note": "오늘 페이스 상한 2편(D4-08·C2-06)을 이미 채운다 — 절대 오늘 누르지 말 것. D4-09 다음 순번, 내일 이후: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B2-10 -f mode=live -f confirm=PUBLISH -f file='학자금대출2학기_글_HTML.txt' -f title='학자금대출 신청 방법 취업 후 상환 일반 상환 차이 생활비대출 한도 총정리 (2026년 2학기 금리 1.7%)'"
     }
-   ],
-   "order": "[Fold 세션 작업지시서 — publish0808 · 2026-08-13]\n\n오늘 발행 페이스 상한은 2편(studio/pace.py DAILY_HARD=2, 3편째부터 게이트 차단).\n발행대기 큐(pubqueue) 4편 중 등록일이 가장 오래된 2편만 오늘 발행한다.\n\n## 오늘 발행할 것 (순서대로)\n1. D4-08 벌초 대행 신청 (등록 08-11, 가장 오래됨)\n2. C2-06 어르신 무료 예방접종 (YMYL 면책블록 이미 삽입·게이트 통과 확인됨)\n\n각 항목의 정확한 명령은 batchboard의 해당 코드 note에 이미 적혀 있다:\n  python -m studio.batchboard show   # 로 확인 후 note에 있는\n  gh workflow run publish.yml ... 명령을 그대로 복사해 실행\n  gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status   # 로 결과 확인\n\n## 오늘 발행하지 말 것\n- D4-09(코스트코 연회비)·B2-10(학자금대출) — 페이스 상한 초과분. 내일 이후로.\n\n## 발행 후 할 일 (각 편마다)\nDB 반영 확인 → 검색설명(seodesc) → OSMU 3채널(naver/threads/insta) 준비 →\n색인요청. 발행-DB-OSMU까지는 확인 없이 이어서 진행(사용자 지시 기억:\n\"멈추지말고! 이어서 할까요? 갈림길 질문 금지\").\n\n## 완료 처리\npython -m studio.batchboard mark --id publish0808 --code <코드> --state done --note \"<결과>\"\n\n## 주의\n- 관제탑(이부장)이 아니라 이 세션(Fold)이 발행 버튼을 누른다.\n- 발행이 도는 동안 관제탑은 webapp/*를 푸시하지 않는 규칙이 있다(과거 A1-12\n  사고) — 혹시 발행 중 충돌 에러가 나면 그쪽 문제이지 이 지시서 문제가 아니다.",
-   "order_at": "2026-08-13 11:18"
+   ]
   },
   "v0inject": {
    "title": "🎯 원본가치(V0) 보강 — 색인193편 근본처방",
@@ -2083,7 +2070,7 @@
    ]
   }
  },
- "updated": "2026-08-13 11:19:08",
+ "updated": "2026-08-13 13:05:46",
  "current": {
   "batch": "insta0805",
   "code": "A3-03",
@@ -2093,6 +2080,10 @@
   "since": "11:11"
  },
  "log": [
+  {
+   "t": "13:05:46",
+   "text": "📋 배치 '발행 지시서 — D4-08 벌초대행 → C2-06 어르신예방접종 (오늘 상한 2편), D4-09·B2-10은 내일 이후' 등록 — 4항목"
+  },
   {
    "t": "11:19:08",
    "text": "🔸 A3-03 진행중 — 국민연금 추납 임의가입 방법 못 낸 기간 채워 수령액 늘리기 "
@@ -2248,10 +2239,6 @@
   {
    "t": "17:58:56",
    "text": "⬜ A4-02 대기 — 풍수해보험 가입 방법 보험료 정부지원 대상 보장 총정리 (20"
-  },
-  {
-   "t": "17:54:47",
-   "text": "▶ A4-01 새출발기금 인스타 발행 — 5/8단계 · 카드6장+캡션 준비완료 → 게시 단계. 새 짧은 Desktop 대화에서 이 1편만 진행할 것"
   }
  ]
 }
