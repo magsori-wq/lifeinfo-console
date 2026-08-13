@@ -80,7 +80,7 @@
    "id": "chuseok-2026-rail",
    "added": "2026-08-03",
    "what": "2026 추석 특별예매 일정 공지 확인 — 8/3 현재 코레일 보도자료·SR 공지 어디에도 없음. 공지가 뜨면 F2-12 후속글 착수",
-   "due": "2026-08-13",
+   "due": "2026-08-20",
    "cmd": "python tools/chuseok_rail_check.py",
    "owner": "claude",
    "state": "wait"
@@ -574,8 +574,8 @@
    "cmd": "python studio/adsense.py status  # + https://www.google.com/adsense/new/sites 에서 lifeinfo8975.blogspot.com 상세 열람",
    "owner": "user",
    "state": "done",
-   "done_at": "2026-08-12",
-   "result": "콘솔 직접 열람 완료(2026-08-12 오전). 사유=「가치가 별로 없는 콘텐츠」 단 1건으로 08-02와 동일, 새 항목 없음. 승인상태=주의 필요 / Ads.txt=승인됨 / 최종업데이트=08-12 08:12 KST / 정책센터=위반 없음. 공식 4대 사유 중 3번(enough unique content)만 남음. 결론: 08-03 보강은 검토됐고 실패 -> V0 보강 실행이 답(v0inject 15건 중 done 0). 상세=애드센스_반려_정밀검증_2026-08-12.md"
+   "done_at": "2026-08-13",
+   "result": "콘솔 확인 완료(08-13): 사유=가치가 별로 없는 콘텐츠(08-02와 동일, 새 위반 없음). 단 재검토 요청 버튼은 횟수 소진으로 08-18까지 잠김 → adsense-reopen-0818로 이관"
   },
   {
    "id": "gmail-8975-relay",
@@ -743,6 +743,35 @@
    "state": "done",
    "done_at": "2026-08-13",
    "result": "C2-06 쓰레드 이미지 제작 완료(실사진+본문슬라이드 비율 SOP 준수, 육안검증 완료). D4-08·C2-06 둘 다 끝남"
+  },
+  {
+   "id": "publish-d409-b210-0814",
+   "added": "2026-08-13",
+   "what": "D4-09(코스트코 연회비)·B2-10(학자금대출 신청) 발행 — 08-13 상한 2편 도달로 보류, 준비 완료 상태",
+   "due": "2026-08-14",
+   "cmd": "python -m studio.pace && gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D4-09 -f mode=live -f confirm=PUBLISH -f file='코스트코연회비_글_HTML.txt' -f title='<제목>'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "adsense-reopen-0818",
+   "added": "2026-08-13",
+   "what": "애드센스 사이트 재검토 요청 가능일 도래 — 08-12 반려 사유는 '가치가 별로 없는 콘텐츠'(08-02와 동일, 새 위반 없음). 08-03 보강 이후 추가 보강 여부 확인 후에만 검토 요청 누를 것",
+   "due": "2026-08-18",
+   "cmd": "AdSense 콘솔 사이트 상세에서 검토 요청 버튼 확인 (사용자 판단으로 클릭)",
+   "owner": "user",
+   "state": "wait"
+  },
+  {
+   "id": "gsc-recheck-0813b",
+   "added": "2026-08-13",
+   "what": "GSC 유효성 검사 4건 진행중(메일 실측 4건 확인 08-13): 리디렉션오류20p·크롤링됨미색인193p·대체페이지76p 는 8/11 09시대 시작, 발견됨미색인32p 는 8/13 07:57 시작(더 늦게 시작해 결과도 늦게 옴). 재요청 금지 — 결과 메일 올 때까지 대기만 할 것.",
+   "due": "2026-08-20",
+   "cmd": "python -m studio.searchconsole inspect 로 색인수 재측정 + Gmail search_threads 'from:sc-noreply@google.com 색인 생성 문제가 해결 newer_than:3d' 로 결과메일 확인",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-13",
+   "result": "정밀검증 완료(08-13): 콘솔UI(8/7 캐시, 색인39)는 낡음. 실측 API(189편 전수, 8/13 19:19~19:42)=색인 4/189. 사유분포: 크롤됐지만미색인121(64%)·리디렉션오류31·발견됨26·unknown6·5xx1·색인됨4. 표본 curl 재확인: GSC가 5xx/404/리디렉션오류로 보고한 URL 중 다수가 지금은 실제 200 OK — Google API 자체도 캐시 지연. 진짜 무게중심은 121편 크롤후미색인(콘텐츠가치 문제, 기술문제 아님) — 기존 gsc-crawled-not-indexed 결론과 일치, 그쪽으로 추적 이관"
   }
  ]
 }
