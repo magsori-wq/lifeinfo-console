@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-13",
+ "updated": "2026-08-14",
  "items": [
   {
    "id": "redirect-error",
@@ -747,15 +747,6 @@
    "result": "C2-06 쓰레드 이미지 제작 완료(실사진+본문슬라이드 비율 SOP 준수, 육안검증 완료). D4-08·C2-06 둘 다 끝남"
   },
   {
-   "id": "publish-d409-b210-0814",
-   "added": "2026-08-13",
-   "what": "D4-09(코스트코 연회비)·B2-10(학자금대출 신청) 발행 — 08-13 상한 2편 도달로 보류, 준비 완료 상태",
-   "due": "2026-08-14",
-   "cmd": "python -m studio.pace && gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D4-09 -f mode=live -f confirm=PUBLISH -f file='코스트코연회비_글_HTML.txt' -f title='<제목>'",
-   "owner": "claude",
-   "state": "todo"
-  },
-  {
    "id": "adsense-reopen-0818",
    "added": "2026-08-13",
    "what": "애드센스 사이트 재검토 요청 가능일 도래 — 08-12 반려 사유는 '가치가 별로 없는 콘텐츠'(08-02와 동일, 새 위반 없음). 08-03 보강 이후 추가 보강 여부 확인 후에만 검토 요청 누를 것",
@@ -796,11 +787,96 @@
   {
    "id": "cleanup-agitated-dirac",
    "added": "2026-08-13",
-   "what": "이부장 세션(오늘, agitated-dirac-98e910) 종료 후 그 유령 워크트리 폴더 삭제 — 2026-08-13 클론사고 원인이던 2달 전(06-21) 고아 워크트리. 이 세션이 살아있는 동안은 사용중이라 삭제 불가(실측 확인됨), 세션 끝난 뒤에만 지워짐",
+   "what": "유령 워크트리 agitated-dirac-98e910 삭제 — 2026-08-14 00:11 실측: 옛 창을 닫은 뒤에도 Remove-Item 이 '다른 프로세스에서 사용 중'으로 실패(IOException). 잠금 주체는 그 폴더를 cwd 로 쓰는 잔여 세션·serena 이거나 그 경로에 들어가 있는 터미널/탐색기 창. 프로세스 열거·종료는 금지이므로 재부팅 후 삭제가 정답. 급하지 않음 — 미등록 고아라 거기서 세션만 안 켜면 무해",
    "due": "2026-08-14",
-   "cmd": "Remove-Item -Path 'C:\\lifeinfo\\.claude\\worktrees\\agitated-dirac-98e910' -Recurse -Force  # PowerShell 창에 직접 입력(이부장 세션은 이미 종료된 상태여야 함)",
+   "cmd": "재부팅 직후(세션 켜기 전) PowerShell: Remove-Item -Path 'C:\\lifeinfo\\.claude\\worktrees\\agitated-dirac-98e910' -Recurse -Force  # 성공하면 watch done",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "skill-pace-limit-stale",
+   "added": "2026-08-14",
+   "what": "계정 스킬 lifeinfo-blog 의 발행 상한이 5로 낡음 — CLAUDE.md·studio/pace.DAILY_HARD 는 2026-08-09 사용자 지시로 2다. 스킬 §0.5 표와 본문 두 곳에 '6편째부터 차단(상한 5편)'이 그대로 남아 Desktop 세션만 옛 상한으로 움직인다. selfcheck 9)는 원본↔패키지 일치만 보므로 이 드리프트를 못 잡는다. 고칠 것 = C:\\lifeinfo\\lifeinfo-blog\\SKILL.md 의 상한 문구 → 재패키징 → Claude Desktop 설정>스킬에서 교체(업로드는 사람 손)",
+   "due": "2026-08-21",
+   "cmd": "grep -n '상한 5\\|6편째' C:/lifeinfo/lifeinfo-blog/SKILL.md",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "publish-d409-0814",
+   "added": "2026-08-14",
+   "what": "D4-09(코스트코) 발행 — 게이트 5종 전수 통과. 🔴실행은 사용자 손: gh 발행 트리거가 자동모드 분류기에 차단됨(이과장 세션 2회 실측, ! 접두사도 동일). GitHub 웹 Actions 화면으로 실행. 🔴title 칸은 '보드용 짧은 제목'이고 실제 글 제목은 post_title(비우면 발행큐에서 자동) — 처음 만든 명령줄이 이걸 혼동했었다. 지시서=batchboard order --id publish0814",
+   "due": "2026-08-14",
+   "cmd": "GitHub>Actions>글 발행>Run workflow: code=D4-09 · title=코스트코 연회비 골드스타 vs 이그제큐티브 · mode=live · confirm=PUBLISH · file=코스트코연회비_글_HTML.txt · post_title 비움",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "발행 완료 실측 — 라이브 피드에 2026-08-14 01:31 KST 게시 확인(코스트코 연회비 골드스타 이그제큐티브…). 오늘 발행 1편. 남은 후속은 d409-seodesc-paste(검색설명 아직 공통문구 상태)와 배치 osmu0814"
+  },
+  {
+   "id": "publish-b210-0814",
+   "added": "2026-08-14",
+   "what": "B2-10(학자금대출 2학기) 발행 — 게이트 전수 통과(제목중복 신규 · 본문중복 0.032/205편 · 제목계층 OK · 썸네일 github.io 200 · 초안/썸네일 저장소 추적됨 · 바이라인 有). 🔴그런데 오늘(08-14)은 발행하지 않는다 — 배치 publish0814 의 결정: 08-13 이 이미 2/2 였고 이틀 연속 상한을 채우는 것이 색인 117→10 붕괴의 그 패턴이라 B2-10 을 blocked 로 잡아 두었다. 사용자가 '둘 다'라고 말할 때만 푼다. → 08-15 첫 편으로 발행. 🔴실행은 사용자 손: gh workflow run 은 자동모드 분류기에 차단되므로 GitHub 웹 Actions 화면으로. title 칸은 보드용 짧은 제목이고 실제 글 제목은 post_title(비우면 자동). 승인 직전 python -m studio.pace 재실행 필수",
+   "due": "2026-08-15",
+   "cmd": "python -m studio.pace 로 오늘 편수 확인 → GitHub>Actions>글 발행>Run workflow: code=B2-10 · title=학자금대출 2학기 · mode=live · confirm=PUBLISH · file=학자금대출2학기_글_HTML.txt · post_title 비움",
+   "owner": "user",
+   "state": "wait"
+  },
+  {
+   "id": "d409-seodesc-paste",
+   "added": "2026-08-14",
+   "what": "D4-09(코스트코 연회비) 검색설명 붙여넣기 — 발행 직후라 아직 블로그 공통문구 상태(state=shared). 문구는 클립보드에 복사해 둠. Blogger API 로는 쓸 수 없어 사람이 편집화면에 붙여야 한다",
+   "due": "2026-08-14",
+   "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/2087552997475664363 열어 설정>검색 설명에 붙여넣고 업데이트 → python -m studio.seodesc scan --only D4-09 로 확인",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "부착 확인 — seo_desc_status.json 09:18 재스캔: D4-09 state=ok · live_len 102자 · og_len 102자 (블로그 공통문구는 52자라 별개 설명이 붙어 있음). ⚠️단 09:0x 스캔에서는 '공통문구 1'로 나왔다가 09:18에 ok 로 뒤집혔다 — 반영 지연으로 보이나 다음 야간 selfcheck 8)에서 한 번 더 확인할 것"
+  },
+  {
+   "id": "dupcheck-token-gap",
+   "added": "2026-08-14",
+   "what": "dupcheck 오탐 — 글감 선정 시 dupcheck 녹색을 최종통과로 믿지 말고 핵심명사 grep 병행(C3-02·E2-04 실측 미검출)",
+   "due": "2026-08-15",
+   "cmd": "python -m studio.dupcheck \"노인장기요양 등급 신청 방법 판정 절차 등급별 혜택 총정리\"",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "commit-drafts-f417-d106",
+   "added": "2026-08-14",
+   "what": "F4-17(안동탈춤)·D1-06(수능원서) 초안+썸네일이 저장소에 미추적 — 이 상태로 publish.yml 을 돌리면 러너가 origin/main 을 체크아웃하므로 '파일 없음'으로 실패한다. 대상 4개: 안동국제탈춤페스티벌_글_HTML.txt · 수능응시원서접수_글_HTML.txt · thumbs/167_andong_maskdance.png · thumbs/168_csat_application.png. 썸네일은 커밋 후 deploy.bat 1회로 github.io 에 올라가야 200 이 된다(2026-08-14 실측 둘 다 404). 커밋은 사용자 요청 시에만 하는 규칙이라 관제탑이 임의로 하지 않았다. 같은 패턴 3회째 — 근본수리는 pubqueue-untracked-draft 항목",
+   "due": "2026-08-14",
+   "cmd": "git add 안동국제탈춤페스티벌_글_HTML.txt 수능응시원서접수_글_HTML.txt thumbs/167_andong_maskdance.png thumbs/168_csat_application.png && git commit -m '발행대기 초안·썸네일 추적: F4-17, D1-06' && git push origin main",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-searchadvisor",
+   "added": "2026-08-14",
+   "what": "네이버 서치어드바이저 등록 — 🔴미등록 확인됨(2026-08-14 라이브 head 실측: naver-site-verification 태그 0건, adsense 태그만 2개). 절차 7단계=①사이트 등록(끝 슬래시까지) ②소유확인은 반드시 'HTML 태그' 방식(블로그스팟은 루트 파일 업로드 불가) ③테마>HTML 편집에서 <head> 바로 아래 meta 삽입(편집 전 테마 백업 필수) ④소유확인(5~10분 뒤 재시도 가능) ⑤사이트맵 sitemap.xml ⑥RSS feeds/posts/default?alt=rss ⑦웹페이지 최적화 진단. 기대치=네이버는 자사 블로그 우선이라 통합검색 노출은 제한적이지만, 미등록이면 웹수집 대상에서 아예 빠진다",
+   "due": "2026-08-19",
+   "cmd": "https://searchadvisor.naver.com/console/board 에서 등록 → 확인은 curl -s https://lifeinfo8975.blogspot.com/ | grep -c naver-site-verification (1 이면 삽입 성공)",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "custom-url-slug",
+   "added": "2026-08-14",
+   "what": "맞춤 URL(영문 슬러그) — 🔴2026-08-14 실측으로 한 단계 진전: 초안(draft)으로는 검증 불가하다. Blogger 는 초안에 URL 을 안 주고(응답 url=블로그 루트) **퍼머링크를 최초 발행 시점에 제목에서 만든다**. 임시 초안 1건으로 insert→patch 를 실제로 돌려 확인했고 초안은 삭제 완료(postId 1085970539040838247). → 검증은 '다음 실제 발행'에 접어 넣는 수밖에 없다. 방식: publish-flow 가 insert(title=영문슬러그, isDraft=False) 로 발행한 직후 같은 실행 안에서 patch(title=한글제목). 실패 시 라이브에 영문 제목이 남으므로 patch 결과를 반드시 확인하고, 실패하면 즉시 재patch. 대상 후보=B2-10(발행 대기 중). 🔴계정 스킬 SKILL.md 에만 넣으면 Actions 경로가 안 읽는다 — studio/pipeline.py cmd_publish_flow 에 내려야 적용된다",
+   "due": "2026-08-19",
+   "cmd": "결정 후: studio/pipeline.py cmd_publish_flow 에 insert(영문)→patch(한글) 2단계 반영 → B2-10 발행으로 URL 실측 → 안 되면 되돌리고 Blogger UI 수동 지정으로 대체",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "adsense-recheck-0818",
+   "added": "2026-08-14",
+   "what": "AdSense 재검토 요청 — 🔴2026-08-14 실측: '사이트 검토 요청 가능 횟수가 모두 사용되어 더 이상 요청할 수 없습니다. 2026년 8월 18일부터 다시 요청할 수 있습니다.' 즉 08-18 이전에는 물리적으로 불가. 08-12 처방 6/6 은 이미 완료(정부링크 101건 정정 포함). 남은 4일(08-14~17)은 콘텐츠 실전디테일 주입에 쓰고, 08-18 에 그 결과를 근거로 요청할 것. 횟수 제한이 있으므로 '달라진 게 있을 때' 넣는다",
+   "due": "2026-08-18",
+   "cmd": "AdSense > 사이트 > lifeinfo8975.blogspot.com > '문제를 수정했음을 확인합니다' 체크 > 검토 요청  (넣기 전 python studio/adsense.py status 로 상태 재확인)",
+   "owner": "user",
+   "state": "wait"
   }
  ]
 }
