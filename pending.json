@@ -1,18 +1,34 @@
 {
- "rev": "511df52",
+ "rev": "985fdff",
  "counts": {
-  "total": 191,
+  "total": 192,
   "osmu_done": 190,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 4,
-  "index_pending": 187,
+  "index_pending": 188,
   "index_requested": 184,
-  "index_todo": 3
+  "index_todo": 4
  },
  "actionable": [
   {
    "code": "B2-10",
    "title": "학자금대출 신청 방법 취업 후 상환 일반 상환 차이 생",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "D1-06",
+   "title": "2027학년도 수능 응시원서 접수 방법 총정리 — 사전",
    "need": [
     "OSMU",
     "색인요청"
@@ -194,21 +210,6 @@
   {
    "code": "A1-11",
    "title": "교육급여와 초중고 교육비 지원 차이 총정리 (2026 ",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-12",
-   "title": "근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~",
    "need": [
     "색인대기"
    ],

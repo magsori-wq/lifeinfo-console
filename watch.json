@@ -974,25 +974,6 @@
    "cmd": "코레일 letskorail.com · SR etk.srail.kr 공지사항에서 '추석 특별' 검색 — 뜨면 pubqueue add --lane info",
    "owner": "claude",
    "state": "wait"
-  },
-  {
-   "id": "f2-13-commit",
-   "added": "2026-08-14",
-   "what": "F2-13 초안·썸네일 커밋·푸시 + deploy (Actions 발행 선행조건)",
-   "due": "2026-08-15",
-   "cmd": "python studio/selfcheck.py",
-   "owner": "user",
-   "state": "todo"
-  },
-  {
-   "id": "b2-10-empty-body",
-   "added": "2026-08-14",
-   "what": "B2-10(학자금대출) 라이브 본문이 완전히 비어 발행됨 - post-body div 내용 0. 로컬 초안(학자금대출2학기_글_HTML.txt, 30907바이트)은 정상. update-post로 재주입 필요(대면 승인 게이트)",
-   "due": "2026-08-15",
-   "cmd": "python -m studio.blogger update-post --code B2-10 --file 학자금대출2학기_글_HTML.txt (미리보기->승인 후 실행, 이후 getByPath로 본문 재확인)",
-   "owner": "user",
-   "state": "todo",
-   "note": 119
   }
  ]
 }
