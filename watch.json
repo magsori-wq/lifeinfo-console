@@ -520,7 +520,7 @@
    "id": "gsc-crawled-not-indexed",
    "added": "2026-08-11",
    "what": "GSC '크롤링됨-현재 색인이 생성되지 않음' 추이 감시 — 유일하게 실질적인 미색인 카테고리(콘텐츠 품질 판단, 8/06 120편→8/11 193편으로 증가). 나머지 5개 이유(서버오류1·404 1·발견됨대기32·대체페이지76·리디렉션20)는 전부 확인됨/무해. 🔴이메일 브리핑이 'GSC 경고 N건'을 요약해도 그 표현을 그대로 믿지 말고, 반드시 직접 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&pages=ALL_URLS&hl=ko 열어 6개 이유별 실제 건수·트렌드를 볼 것(2026-08-11 실측: 이메일이 '이미 아는 문제 4건'이라 요약했지만 실제론 신규 카테고리가 섞여 있었음).",
-   "due": "2026-08-14",
+   "due": "2026-08-18",
    "cmd": "브라우저로 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&pages=ALL_URLS&hl=ko 열어 '크롤링됨-현재 색인이 생성되지 않음' 건수 확인",
    "owner": "claude",
    "state": "todo",
@@ -597,7 +597,9 @@
    "due": "2026-08-14",
    "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/973458078142650004 열어 설정>검색 설명에 붙여넣기 후 업데이트 → python -m studio.seodesc scan --only A1-04 로 확인",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "라이브 반영 완료(2026-08-14 관제탑, claude-in-chrome 직접 입력). 사실오류 해소: '2026년부터 상시 신청'(92자) → '신규 신청기간 3월 30일~5월 29일·생애 1회'(109자). 라이브 meta description 실측 확인. ⚠️경위: JS 네이티브 setter 로 값만 넣으면 Blogger 가 dirty 로 인식 못 해 업데이트가 무반영된다. 실제 키입력(click→ctrl+a→type) 후 업데이트 버튼을 **좌표로** 눌러야 저장됐다(ref 는 재렌더로 무효화됨)."
   },
   {
    "id": "reapply-gate-axisB",
@@ -664,9 +666,9 @@
    "due": "2026-08-14",
    "cmd": "python studio/blogger.py update-post --code F3-03",
    "owner": "claude",
-   "state": "todo",
-   "done_at": "2026-08-12",
-   "result": "cmd 재작성을 위해 재등록"
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "라이브 정정 완료(2026-08-14 관제탑). law.go.kr 브라우저로 현행 별표2 직접 확인 후 6곳 교체·라이브 12개 항목 실측 검증. ①세율근거 '단일 간이세율 20%'→'별표2 제4호 15%' + 품목별 세율 TIP 신설(18/19/21/47/45%) ②계산표 $400x20%=$80 → x15%=$60, 최종 $56→$42, 미신고 $112→$84 ③원화환산 7.8만/15.7만→5.9만/11.8만 ④실효세율 14%→10.5% ⑤가방 손익 175.8만/24만이득→173.9만/26만이득 ⑥TIP $1,000 세액 $200(28만)→$150(21만), 감면 8.4만→6.3만. 🔴본문의 '미화 1,000달러 이하이므로 단일세율' 은 **삭제**했다 — 관세법 제81조④가 '총액이 대통령령으로 정하는 금액 이하'라고만 하고 시행령 제96조에 그 금액이 없어 출처를 확인하지 못했다(1회 시도 후 중단, CLAUDE.md 규칙). 검증된 별표2 제4호만으로 서술. 교차링크·관련글·FAQ 보존 확인."
   },
   {
    "id": "skillmd-v0-section-stale",
@@ -779,7 +781,9 @@
    "due": "2026-08-14",
    "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/275084984218665980 열어 설정>검색 설명에 Ctrl+V 후 업데이트 → python -m studio.seodesc scan --only A1-09 로 확인",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "라이브 반영 완료(2026-08-14 관제탑, claude-in-chrome 직접 입력). 새 문구 113자 실측 확인 — 제목(2차 시작 8/12~9/9)과 정합. 근거=본문 2장 한국장학재단 2026.8.7 게시 안내."
   },
   {
    "id": "h101-boston-dynamics-check",
@@ -913,7 +917,82 @@
    "due": "2026-08-15",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"  # 이후 curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/167_andong_maskdance.png 로 200 확인",
    "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "deploy.bat 실행 완료(2026-08-14 관제탑, 사용자 지시 '내 몫 니가해'). 배포 커밋 1711eff..c34ddf9. 실측: 167_andong_maskdance.png·168_csat_application.png 둘 다 404→200. deploy.bat 6단계 크롤체크도 전 글 썸네일 191개 200 확인. ⚠️배포 전 C:\\lifeinfo-deploy 가 원격과 갈라져 있어(로컬4·원격2) 백업브랜치 backup-before-reset-20260814(6c6b82f) 만든 뒤 origin/main 으로 정합함 — 로컬4는 D4-09 OSMU·콘솔 파생 커밋이고 원본 데이터는 소스 DB에 전부 있음을 확인 후 진행."
+  },
+  {
+   "id": "publish0815-neworder",
+   "added": "2026-08-14",
+   "what": "이과장(작업 세션)에게 신규게시 지시서 전달됨 — publish0815 배치. D1-06(수능원서, 사전입력 8/20 시작이라 최우선)·F4-17(안동탈춤)을 각각 블로그스팟→네이버→쓰레드→인스타 4채널까지. 기존 미확산 backlog 은 별도 세션 담당이라 제외. 관제탑은 발행 버튼을 누르지 않는다 — 진행 확인만.",
+   "due": "2026-08-16",
+   "cmd": "python -m studio.batchboard show   # publish0815 진행률 확인 (2편 x 4채널)",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "b210-finish",
+   "added": "2026-08-14",
+   "what": "B2-10(학자금대출 2학기) 발행 후속 마감 — 2건. ①검색설명: 라이브가 블로그 공통문구(52자 '정부지원금·세금·연금...')를 그대로 쓰고 있다. seo_desc.json 에 계획문은 있으니 편집화면에 붙이기만 하면 된다. ②OSMU 네이버·쓰레드·인스타 3채널 전부 미확산. 🔴쓰레드 첨부는 썸네일 금지·실사진(insta/thread/thread_B2-10_*.png). 🔴네이버는 thumbs_naver/166_student_loan.png 재사용·요약본 금지·파이프테이블 금지. 이과장(신규게시 4채널) 담당.",
+   "due": "2026-08-15",
+   "cmd": "python -m studio.seodesc scan --only B2-10   # 공통문구면 아직 미부착 / 확산은 python -m studio.osmu_manifest table --code B2-10 --open",
+   "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "c206-insta",
+   "added": "2026-08-14",
+   "what": "C2-06(어르신 무료 예방접종) 인스타만 미확산 — 네이버·쓰레드·검색설명(114자)은 완료됐다. 인스타 카드 6장+캡션 제작 후 게시·기록. 🔴insta0805 배치(74편 backlog)에는 이 코드가 없다 — 08-05 스냅샷 이후 발행분이라 어느 보드에도 안 잡혀 있었다. 이과장(신규게시 4채널) 담당.",
+   "due": "2026-08-16",
+   "cmd": "python -m studio.osmu_manifest show --code C2-06   # 3채널 파일 준비 상태 / 게시 후 python -m studio.pipeline insta-link --code C2-06 --url <URL>",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pcenv-3tasks",
+   "added": "2026-08-14",
+   "what": "PC 환경 정비 3건(전부 🙋사용자 GUI 작업, 급하지 않음). ①크롬 메모리 절약 모드 켜기 — 점3개>설정>성능. 탭을 닫지 않고 메모리 반납(인스타 카드작업 메모리 압박에 직접 도움) ②ETU Home 프로필 끄기 — 트레이 ETU>설정>Home 체크 해제. GUI 로 해야 안전(SaveProfilesOnExit 가 종료 시 덮어씀) ③Ctrl+Alt+F 스냅샷 복원 — 원인은 08-05 에 규명됨(단축키가 어디에도 등록돼 있지 않다: ETU 프로필 13개에도 없고 .lnk 도 없다. 윈도우 단축키는 .lnk 의 '바로 가기 키'로만 등록된다). 등록부터 해야 테스트가 성립한다. ※배치 pcenv0803 이 어느 세션 소관도 아니어서 11일간 방치되던 것을 watch 로 옮김(2026-08-14).",
+   "due": "2026-08-31",
+   "cmd": "수동 GUI 작업 3건 — 끝나면 python -m studio.watch done --id pcenv-3tasks --result '<한 것>'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "blocked-figures",
+   "added": "2026-08-14",
+   "what": "막힌 수치 재시도 5편 + 확보된 값 반영 1편(배치 pending0803 미검증5 · intro 2건을 통합. 어느 세션 소관도 아니어서 방치되던 것을 2026-08-14 이관). 🟢바로 되는 것: C3-02 노인장기요양 — 급여한도 6개 값을 이미 확보했다(보건복지부 고시 2025-247). 라이브 정정 → 도입부 수치 반영까지 가능. 🔴재시도 필요: F4-04 숙박(공정위 고시 2025-12-18 개정 가능성이라 우선) · C4-06 틀니 · D4-01 공연 · F2-01 KTX · B2-03 채권. ⚠️공식 확인 실패 = 그 수치는 쓰지 않는다. 1회 시도하고 안 되면 그 항목을 빼거나 미결로 남긴다 — 근처값·작년값·2차출처 대체 금지.",
+   "due": "2026-08-18",
+   "cmd": "python studio/blogger.py update-post --code C3-02 --dry-run   # C3-02 먼저(값 확보됨) / 나머지 5편은 공식 출처 재시도",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "chuseok-booking",
+   "added": "2026-08-14",
+   "what": "2026 추석 특별예매 일정 공지 감시 — 뜨면 F2-12 후속글 착수(글감 기회). 08-03 확인 시점엔 코레일·SR 어디에도 공지가 없었다. 추석 연휴가 9월 말이고(F4-17 안동탈춤 자료 기준 9/24~10/4 가 추석 연휴) 특별예매는 통상 한 달 전쯤 공지되므로 **8월 하순이 관측 구간**이다. 배치 pending0803 에서 doing 인 채 방치되던 것을 2026-08-14 watch 로 이관.",
+   "due": "2026-08-20",
+   "cmd": "코레일 letskorail.com · SR etk.srail.kr 공지사항에서 '추석 특별' 검색 — 뜨면 pubqueue add --lane info",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "f2-13-commit",
+   "added": "2026-08-14",
+   "what": "F2-13 초안·썸네일 커밋·푸시 + deploy (Actions 발행 선행조건)",
+   "due": "2026-08-15",
+   "cmd": "python studio/selfcheck.py",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "b2-10-empty-body",
+   "added": "2026-08-14",
+   "what": "B2-10(학자금대출) 라이브 본문이 완전히 비어 발행됨 - post-body div 내용 0. 로컬 초안(학자금대출2학기_글_HTML.txt, 30907바이트)은 정상. update-post로 재주입 필요(대면 승인 게이트)",
+   "due": "2026-08-15",
+   "cmd": "python -m studio.blogger update-post --code B2-10 --file 학자금대출2학기_글_HTML.txt (미리보기->승인 후 실행, 이후 getByPath로 본문 재확인)",
+   "owner": "user",
+   "state": "todo",
+   "note": 119
   }
  ]
 }
