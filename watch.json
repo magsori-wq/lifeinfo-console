@@ -118,7 +118,7 @@
    "flag": "야간 루틴 0단계 자동 실행. 🆕크롤 변화가 뜨면 카톡 보고에 옮긴다. 재요청은 하지 않는다. | 2026-08-06 실행: 25편 중 크롤 0편, 상태 이동 6건(전진 2·후퇴 4). 어제 역행한 D4-04 가 오늘 복귀 = flapping 계속. 개별 코드의 하루치 이동으로 원인을 읽지 말 것. | 2026-08-07 확인할 것: D2-10·D4-07 (8/06 색인요청한 신규 2편)에 lastCrawl 이 찍혔는가. 실험 5편은 요청 당일 100% 크롤됐으나 그건 기존 글이었다 — 신규 글도 같은지는 아직 모른다. 실측 전까지 단정 금지. | 2026-08-09 실행: 25편 중 크롤 0편. 상태 이동 8건(전진 7 = unknown→discovered · 후퇴 1 = E2-08). 대기 172편 · 미크롤 32편. 신규 3편(D1-05·F4-12·F4-14)은 전부 Discovered-not indexed = 발견은 됐고 크롤 대기. | 2026-08-12 실행: 25편 중 크롤 0편, 상태이동 7건(전진6=unknown->discovered: E1-02,B2-08,D4-04,D4-05,F4-08,A2-11 / 후퇴1=discovered->unknown: D4-07). 대기181 미크롤32. | 2026-08-13 실행: 25편 중 크롤 0편, 상태이동 8건(전진4=unknown->discovered: A4-05,F2-10,B2-09,F4-07 / 후퇴4=discovered->unknown: D4-04,C1-13,A1-10,F2-11). 대기184 미크롤32. 여전히 신규 크롤 0 — flapping만 계속, 순증가 없음.",
    "done_at": "2026-08-13",
    "result": "2026-08-13 실행: 25편 중 크롤 0편, 상태이동 8건(전진4·후퇴4). 대기184 미크롤32. 순증가 없음.",
-   "due": "2026-08-14",
+   "due": "2026-08-15",
    "note": 72
   },
   {
@@ -424,8 +424,10 @@
    "due": "2026-08-14",
    "cmd": "python -m studio.pubqueue list 로 draft·thumb 파일명 확인 → git ls-files --error-unmatch <draft> (종료코드 1 이면 저장소에 없음 = 클라우드 발행 실패)",
    "owner": "claude",
-   "state": "todo",
-   "flag": "큐에 넣는 것과 저장소에 올리는 것이 별개라서 생긴 구멍이다 | 2026-08-13 재확인: F4-17 초안+썸네일 미추적 재발 확인(2회째, 08-10과 같은 패턴). 이번엔 커밋 안 하고 note로만 기록(커밋은 사용자 요청 시에만 규칙) — F4-17 발행 전 git add 필요."
+   "state": "done",
+   "flag": "큐에 넣는 것과 저장소에 올리는 것이 별개라서 생긴 구멍이다 | 2026-08-13 재확인: F4-17 초안+썸네일 미추적 재발 확인(2회째, 08-10과 같은 패턴). 이번엔 커밋 안 하고 note로만 기록(커밋은 사용자 요청 시에만 규칙) — F4-17 발행 전 git add 필요.",
+   "done_at": "2026-08-14",
+   "result": "근본수리 완료(2026-08-14 관제탑): selfcheck 에 '12) 큐 파일 추적' 상시검사 추가. 큐의 미발행 항목마다 draft·thumbs/<thumb> 가 origin/main 에 있는지 git cat-file 로 확인하고, 없으면 🔴미추적 / 커밋만 되고 push 안 됐으면 🟡로 갈라 보고한다(fetch 안 한 세션 오탐 방지). 실패경로 실측 검증함(존재하지 않는 경로·실제 미추적 파일 둘 다 잡힘)."
   },
   {
    "id": "insta-session-howto",
@@ -531,8 +533,10 @@
    "due": "2026-08-14",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "todo",
-   "note": 101
+   "state": "done",
+   "note": 101,
+   "done_at": "2026-08-14",
+   "result": "무의미해져 종료: v0inject 배치는 2026-08-12 note 109 로 전면 동결됐다(V0 프레임 폐기). 1파 소진·2파 등록 자체가 성립하지 않는다. 후속은 배치보드의 동결 아닌 콘텐츠 배치가 대체한다."
   },
   {
    "id": "b201-limit-fix",
@@ -589,9 +593,9 @@
   {
    "id": "a104-seodesc-paste",
    "added": "2026-08-12",
-   "what": "A1-04(청년월세지원) 검색설명 수정문 Blogger 편집화면에 붙여넣기 — 클립보드에 이미 복사됨(2026-08-12). 문구: '청년월세지원은 매달 최대 20만원씩 최대 24개월, 총 480만원을 받는 제도입니다. 2026년 신규 신청기간은 3월 30일~5월 29일이고 생애 1회만 지원됩니다. 자격·제외대상을 정리했습니다.'",
-   "due": "2026-08-13",
-   "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/973458078142650004 열어 설정>검색 설명에 붙여넣기 후 업데이트",
+   "what": "A1-04(청년월세지원) 검색설명 붙여넣기 — 🔴라이브 설명에 사실오류가 살아있다. 현재 라이브: '2026년부터 상시 신청으로 바뀌었고' ← 08-12 복지로 실측 정정본은 신규 신청기간 3/30~5/29 고정이다. 붙일 문구(109자, seo_desc.json 기록됨): '청년월세지원은 매달 최대 20만원씩 최대 24개월, 총 480만원을 받는 제도입니다. 2026년 신규 신청기간은 3월 30일~5월 29일이고 생애 1회만 지원됩니다. 자격·제외대상을 정리했습니다.'",
+   "due": "2026-08-14",
+   "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/973458078142650004 열어 설정>검색 설명에 붙여넣기 후 업데이트 → python -m studio.seodesc scan --only A1-04 로 확인",
    "owner": "user",
    "state": "todo"
   },
@@ -671,7 +675,9 @@
    "due": "2026-08-14",
    "cmd": "notepad C:\\Users\\magso\\.claude\\scheduled-tasks\\lifeinfo-nightly-verify\\SKILL.md  # 2b 섹션 수정 또는 삭제, note 109 참고",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "2b 섹션 전면 교체 완료(관제탑, 2026-08-14). V0 폐기 명시 + 보드명 하드코딩 제거(배치보드 ❄️동결 표시를 읽어 판단하도록 변경) + 현재 처방=실전디테일(troubleshoot) 박스로 갱신. 같은 자리가 또 낡는 것을 막기 위해 보드 id를 문서에서 뺐다."
   },
   {
    "id": "b2-10-commit-draft",
@@ -769,9 +775,9 @@
   {
    "id": "a109-seodesc-paste",
    "added": "2026-08-13",
-   "what": "A1-09(국가장학금 2차신청) 검색설명 수정문 Blogger 편집화면에 붙여넣기 — 클립보드에 복사됨(2026-08-13 야간검증)",
+   "what": "A1-09(국가장학금) 검색설명 재작성 완료 — 붙여넣기만 남음. 🔴옛 문구는 제목이 '1차 마감 안내'였을 때 것이라 지금 제목(2차 시작 8/12~9/9)과 어긋난다. 새 문구(113자, seo_desc.json 기록됨·클립보드 복사됨): '2026년 2학기 국가장학금 2차 신청이 8월 12일 시작돼 9월 9일 오후 6시에 마감됩니다. 재학생·복학생은 물론 신입생·편입생·재입학생도 이 기간에 신청하며, 놓치면 이번 학기는 받을 수 없습니다.' 근거=본문 2장(한국장학재단 2026.8.7 게시 안내)",
    "due": "2026-08-14",
-   "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/275084984218665980 열어 설정>검색 설명에 붙여넣기 후 업데이트",
+   "cmd": "https://www.blogger.com/blog/post/edit/4026928033017788339/275084984218665980 열어 설정>검색 설명에 Ctrl+V 후 업데이트 → python -m studio.seodesc scan --only A1-09 로 확인",
    "owner": "user",
    "state": "todo"
   },
@@ -849,16 +855,18 @@
    "due": "2026-08-14",
    "cmd": "git add 안동국제탈춤페스티벌_글_HTML.txt 수능응시원서접수_글_HTML.txt thumbs/167_andong_maskdance.png thumbs/168_csat_application.png && git commit -m '발행대기 초안·썸네일 추적: F4-17, D1-06' && git push origin main",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "커밋·push 완료 확인(2026-08-14 관제탑 실측): 4개 파일 전부 origin/main 에 존재(git cat-file), ahead/behind 0. 커밋 e389a2e. 남은 건 썸네일 2개의 github.io 배포뿐 → 새 항목 deploy-thumbs-167-168 로 분리."
   },
   {
    "id": "naver-searchadvisor",
    "added": "2026-08-14",
-   "what": "네이버 서치어드바이저 등록 — 🔴미등록 확인됨(2026-08-14 라이브 head 실측: naver-site-verification 태그 0건, adsense 태그만 2개). 절차 7단계=①사이트 등록(끝 슬래시까지) ②소유확인은 반드시 'HTML 태그' 방식(블로그스팟은 루트 파일 업로드 불가) ③테마>HTML 편집에서 <head> 바로 아래 meta 삽입(편집 전 테마 백업 필수) ④소유확인(5~10분 뒤 재시도 가능) ⑤사이트맵 sitemap.xml ⑥RSS feeds/posts/default?alt=rss ⑦웹페이지 최적화 진단. 기대치=네이버는 자사 블로그 우선이라 통합검색 노출은 제한적이지만, 미등록이면 웹수집 대상에서 아예 빠진다",
+   "what": "네이버 서치어드바이저 등록 — 🔴🔴2026-08-14 전수 실측 끝에 '애드센스 승인 전에는 불가능' 확정. 연쇄: 애드센스 사이트 반려(NEEDS_ATTENTION) → 블로거가 AdSense1 위젯을 서버검증 못 함 → **테마 저장 자체가 막힘** → 블로그 구조 변경(메타태그·새 위젯)이 전부 불가. 시도·결과: ①편집기 삽입+저장=AdSense1 not valid ②위젯 settings 블록만 비우고 저장=동일오류(XML 문제 아님) ③위젯 제거 후 복원='복원할 수 없습니다'(테마가 data:widgets.AdSense 를 7곳에서 참조) ④레이아웃 HTML 가젯=레이아웃엔 저장되나 라이브 렌더링 안 됨(새 위젯을 테마에 못 씀). 블로거 수익탭 원문: '귀하의 블로그가 광고를 게재할 준비가 되어있지 않으며 주의가 필요합니다'. 소유확인 태그 값은 아래 보관. 준비된 파일=C:\\Users\\magso\\Downloads\\BBB_이것을선택.xml(원본+태그), 원본백업=C:\\lifeinfo\\backup\\theme_원본_2026-08-14.xml",
    "due": "2026-08-19",
-   "cmd": "https://searchadvisor.naver.com/console/board 에서 등록 → 확인은 curl -s https://lifeinfo8975.blogspot.com/ | grep -c naver-site-verification (1 이면 삽입 성공)",
-   "owner": "user",
-   "state": "todo"
+   "cmd": "선행조건: 애드센스 승인(08-18 재검토). 승인 후 → 테마>HTML편집에서 <head> 아래 <meta content='db8b4ab701d9cf8a2067b26ef1c2910dd2bfaee1' name='naver-site-verification'/> 삽입·저장 → curl -s https://lifeinfo8975.blogspot.com/ | grep -c naver-site-verification (1이면 성공) → 서치어드바이저에서 소유확인",
+   "owner": "claude",
+   "state": "blocked"
   },
   {
    "id": "custom-url-slug",
@@ -877,6 +885,35 @@
    "cmd": "AdSense > 사이트 > lifeinfo8975.blogspot.com > '문제를 수정했음을 확인합니다' 체크 > 검토 요청  (넣기 전 python studio/adsense.py status 로 상태 재확인)",
    "owner": "user",
    "state": "wait"
+  },
+  {
+   "id": "blogger-theme-locked",
+   "added": "2026-08-14",
+   "what": "🔴🔴 블로그 구조 변경 불가 상태 — 애드센스 반려가 블로거 테마 저장을 막고 있다(2026-08-14 실측). 영향 범위가 네이버 태그만이 아니다: 테마 수정·새 위젯 추가·레이아웃 변경이 라이브에 반영되지 않는다. 즉 **디자인/구조 관련 작업은 승인 전까지 전부 대기**다. 글 발행·본문 수정(update-post)은 영향 없음(정상 작동 확인 — D4-09 발행·검색설명 반영 성공). 승인되면 이 항목부터 해제하고 밀린 구조 작업(네이버 태그 등)을 처리할 것",
+   "due": "2026-08-19",
+   "cmd": "애드센스 승인 후 확인: 테마>HTML편집에서 아무 것도 안 고치고 저장 눌러 오류 없이 저장되는지 → 되면 이 watch done 처리하고 naver-searchadvisor 재개",
+   "owner": "claude",
+   "state": "blocked"
+  },
+  {
+   "id": "a201-detail0814-conflict",
+   "added": "2026-08-14",
+   "what": "A2-01 실전디테일(③거절탈락사유) 적용 여부 — 지시서 detail0814 내 '재주입금지(pilot0812 완료)'와 '조문인용 지침'이 모순돼 관제탑 확인 필요",
+   "due": "2026-08-15",
+   "cmd": "관제탑에 A2-01이 pilot0812에서 이미 처리됐는지 확인 후, 필요시 이 세션에 재지시",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-14",
+   "result": "배치보드 detail0814 order_at 11:32 자체에 정정 근거 있음 — pilot0812(08-12)에서 A2-01/B2-04/C1-02 실전디테일 이미 완료 확인(라이브 HTML 대조). A2-01 초안 폐기, 재작업 불필요"
+  },
+  {
+   "id": "deploy-thumbs-167-168",
+   "added": "2026-08-14",
+   "what": "F4-17·D1-06 썸네일 2개가 github.io 404 — deploy.bat 1회 필요. 발행 자체는 막히지 않지만(러너는 origin/main 을 보므로 커밋만으로 충분) 발행되면 글 상단 이미지가 안 뜬다. 실측 2026-08-14: thumbs/167_andong_maskdance.png·168_csat_application.png 둘 다 404. deploy.bat 은 사용자 실행 원칙(연속 push=Pages 배포한도)이라 관제탑이 임의 실행하지 않는다.",
+   "due": "2026-08-15",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"  # 이후 curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/167_andong_maskdance.png 로 200 확인",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
