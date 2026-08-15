@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-14",
+ "updated": "2026-08-15",
  "items": [
   {
    "id": "redirect-error",
@@ -974,6 +974,63 @@
    "cmd": "코레일 letskorail.com · SR etk.srail.kr 공지사항에서 '추석 특별' 검색 — 뜨면 pubqueue add --lane info",
    "owner": "claude",
    "state": "wait"
+  },
+  {
+   "id": "f2-13-commit",
+   "added": "2026-08-14",
+   "what": "F2-13 초안·썸네일 커밋·푸시 + deploy (Actions 발행 선행조건)",
+   "due": "2026-08-15",
+   "cmd": "python studio/selfcheck.py",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "b2-10-empty-body",
+   "added": "2026-08-14",
+   "what": "B2-10(학자금대출) 라이브 본문이 완전히 비어 발행됨 - post-body div 내용 0. 로컬 초안(학자금대출2학기_글_HTML.txt, 30907바이트)은 정상. update-post로 재주입 필요(대면 승인 게이트)",
+   "due": "2026-08-15",
+   "cmd": "python -m studio.blogger update-post --code B2-10 --file 학자금대출2학기_글_HTML.txt (미리보기->승인 후 실행, 이후 getByPath로 본문 재확인)",
+   "owner": "user",
+   "state": "done",
+   "note": 119,
+   "done_at": "2026-08-15",
+   "result": "update-post로 본문 재주입 완료. 라이브 확인: 페이지 크기 107688→140388바이트, post-body div에 정상 콘텐츠(썸네일·표·계산예시 등) 렌더링 확인. HTTP 200. URL 슬러그(student-loan-application-2026) 유지됨"
+  },
+  {
+   "id": "f417-publish",
+   "added": "2026-08-15",
+   "what": "F4-17 안동국제탈춤페스티벌 라이브 발행 — 게이트 전수 통과, 승인만 남음(오늘 페이스 1/2 여유 1편)",
+   "due": "2026-08-15",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-17 -f mode=live -f confirm=PUBLISH -f file='안동국제탈춤페스티벌_글_HTML.txt' -f title='안동국제탈춤페스티벌 2026 관람 방법 총정리 — 입장료·하회마을 관람료·65세 무료 (9월 24일~10월 4일 추석 연휴 개막)'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "thumb-169-170-deploy",
+   "added": "2026-08-15",
+   "what": "썸네일 169_chuseok_train·170_lease_report 가 github.io 404 — F2-13·D1-07 발행 전에 deploy.bat 1회 필요(본문 상단 이미지가 그 URL을 씀)",
+   "due": "2026-08-16",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}\\n' https://magsori-wq.github.io/lifeinfo-console/thumbs/169_chuseok_train.png",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "index-snapshot-drift",
+   "added": "2026-08-15",
+   "what": "색인 스냅샷 191편 != DB 192편 (1편 색인추적 누락)",
+   "due": "2026-08-16",
+   "cmd": "python studio/searchconsole.py inspect",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "koyuga-0831",
+   "added": "2026-08-15",
+   "what": "A1-02 고유가 피해지원금 사용기한(8/31 소멸 여부) 공식 확인 후 본문 마감안내 갱신 - 현재 근거는 2차출처(블로그)뿐",
+   "due": "2026-08-18",
+   "cmd": "정부24·소관부처 공고에서 사용기한 확인 후 python studio/blogger.py update-post --code A1-02",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }
