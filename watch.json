@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-15",
+ "updated": "2026-08-16",
  "items": [
   {
    "id": "redirect-error",
@@ -1083,6 +1083,15 @@
    "cmd": "git log --oneline -20 --stat | head -40   # 휩쓸린 커밋이 또 있는지 확인",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "deploy-thumbs-169-172",
+   "added": "2026-08-16",
+   "what": "발행대기 썸네일 배포 완료 — 169·170·171·172 네 개 404→200(2026-08-16 관제탑, 사용자 지시로 deploy.bat 실행). 배포 커밋 d272095..38b26ad. 전 글 193개 200 통과. 이로써 publish0816 발행 차단 사유 2건(상한·썸네일)이 모두 해제됨.",
+   "due": "2026-08-16",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/171_caribbeanbay.png",
+   "owner": "claude",
+   "state": "done"
   }
  ]
 }
