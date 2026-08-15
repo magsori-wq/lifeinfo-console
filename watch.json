@@ -115,10 +115,10 @@
    "cmd": "python -m studio.crawl_watch --limit 25",
    "owner": "claude",
    "state": "wait",
-   "flag": "야간 루틴 0단계 자동 실행. 🆕크롤 변화가 뜨면 카톡 보고에 옮긴다. 재요청은 하지 않는다. | 2026-08-06 실행: 25편 중 크롤 0편, 상태 이동 6건(전진 2·후퇴 4). 어제 역행한 D4-04 가 오늘 복귀 = flapping 계속. 개별 코드의 하루치 이동으로 원인을 읽지 말 것. | 2026-08-07 확인할 것: D2-10·D4-07 (8/06 색인요청한 신규 2편)에 lastCrawl 이 찍혔는가. 실험 5편은 요청 당일 100% 크롤됐으나 그건 기존 글이었다 — 신규 글도 같은지는 아직 모른다. 실측 전까지 단정 금지. | 2026-08-09 실행: 25편 중 크롤 0편. 상태 이동 8건(전진 7 = unknown→discovered · 후퇴 1 = E2-08). 대기 172편 · 미크롤 32편. 신규 3편(D1-05·F4-12·F4-14)은 전부 Discovered-not indexed = 발견은 됐고 크롤 대기. | 2026-08-12 실행: 25편 중 크롤 0편, 상태이동 7건(전진6=unknown->discovered: E1-02,B2-08,D4-04,D4-05,F4-08,A2-11 / 후퇴1=discovered->unknown: D4-07). 대기181 미크롤32. | 2026-08-13 실행: 25편 중 크롤 0편, 상태이동 8건(전진4=unknown->discovered: A4-05,F2-10,B2-09,F4-07 / 후퇴4=discovered->unknown: D4-04,C1-13,A1-10,F2-11). 대기184 미크롤32. 여전히 신규 크롤 0 — flapping만 계속, 순증가 없음.",
-   "done_at": "2026-08-13",
-   "result": "2026-08-13 실행: 25편 중 크롤 0편, 상태이동 8건(전진4·후퇴4). 대기184 미크롤32. 순증가 없음.",
-   "due": "2026-08-15",
+   "flag": "야간 루틴 0단계 자동 실행. 🆕크롤 변화가 뜨면 카톡 보고에 옮긴다. 재요청은 하지 않는다. | 2026-08-06 실행: 25편 중 크롤 0편, 상태 이동 6건(전진 2·후퇴 4). 어제 역행한 D4-04 가 오늘 복귀 = flapping 계속. 개별 코드의 하루치 이동으로 원인을 읽지 말 것. | 2026-08-07 확인할 것: D2-10·D4-07 (8/06 색인요청한 신규 2편)에 lastCrawl 이 찍혔는가. 실험 5편은 요청 당일 100% 크롤됐으나 그건 기존 글이었다 — 신규 글도 같은지는 아직 모른다. 실측 전까지 단정 금지. | 2026-08-09 실행: 25편 중 크롤 0편. 상태 이동 8건(전진 7 = unknown→discovered · 후퇴 1 = E2-08). 대기 172편 · 미크롤 32편. 신규 3편(D1-05·F4-12·F4-14)은 전부 Discovered-not indexed = 발견은 됐고 크롤 대기. | 2026-08-12 실행: 25편 중 크롤 0편, 상태이동 7건(전진6=unknown->discovered: E1-02,B2-08,D4-04,D4-05,F4-08,A2-11 / 후퇴1=discovered->unknown: D4-07). 대기181 미크롤32. | 2026-08-13 실행: 25편 중 크롤 0편, 상태이동 8건(전진4=unknown->discovered: A4-05,F2-10,B2-09,F4-07 / 후퇴4=discovered->unknown: D4-04,C1-13,A1-10,F2-11). 대기184 미크롤32. 여전히 신규 크롤 0 — flapping만 계속, 순증가 없음. | 2026-08-15 실행: 25편 중 크롤 0편, 상태이동 6건(전진1·후퇴5). 대기184 미크롤32. flapping 계속, 순증가 없음.",
+   "done_at": "2026-08-15",
+   "result": "2026-08-15 실행: 25편 중 크롤 0편, 상태이동 6건(전진1=unknown->discovered: C1-12 / 후퇴5=discovered->unknown: F1-08,E1-02,F4-08,F4-07,B4-06). 대기184 미크롤32. 순증가 없음.",
+   "due": "2026-08-16",
    "note": 72
   },
   {
@@ -188,8 +188,10 @@
    "due": "2026-08-12",
    "cmd": "python -m studio.batchboard show",
    "owner": "user",
-   "state": "todo",
-   "note": 61
+   "state": "done",
+   "note": 61,
+   "done_at": "2026-08-15",
+   "result": "watch 에서 종료(2026-08-15): 인스타 backlog 는 배치보드 insta0805 가 진실원이고 담당(인스타 세션)도 붙어 있다. watch 에 중복으로 들고 있으면 '내 차례' 화면만 지저분해지고 숫자가 갈린다(보드 77항목 vs watch '74편')."
   },
   {
    "id": "seodesc-a2-13",
@@ -830,7 +832,9 @@
    "due": "2026-08-15",
    "cmd": "python -m studio.pace 로 오늘 편수 확인 → GitHub>Actions>글 발행>Run workflow: code=B2-10 · title=학자금대출 2학기 · mode=live · confirm=PUBLISH · file=학자금대출2학기_글_HTML.txt · post_title 비움",
    "owner": "user",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-15",
+   "result": "발행 완료 확인(2026-08-15): B2-10 라이브 URL 존재. 검색설명도 08-15 해결. 남은 것은 네이버·쓰레드뿐이고 그건 watch b210-naver-threads 가 들고 있다."
   },
   {
    "id": "d409-seodesc-paste",
@@ -937,7 +941,9 @@
    "due": "2026-08-15",
    "cmd": "python -m studio.seodesc scan --only B2-10   # 공통문구면 아직 미부착 / 확산은 python -m studio.osmu_manifest table --code B2-10 --open",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-15",
+   "result": "검색설명 부분 완료(2026-08-15 관제탑): B2-10 라이브 115자 반영 실측 확인. ⚠️단 OSMU 3채널(네이버·쓰레드·인스타)은 여전히 미확산 — 이과장 몫으로 남는다."
   },
   {
    "id": "c206-insta",
@@ -946,7 +952,9 @@
    "due": "2026-08-16",
    "cmd": "python -m studio.osmu_manifest show --code C2-06   # 3채널 파일 준비 상태 / 게시 후 python -m studio.pipeline insta-link --code C2-06 --url <URL>",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-15",
+   "result": "담당 정정(2026-08-15 사용자 지시 '인스타 미발행은 이과장 아냐'): 인스타 미확산은 전부 인스타 세션 몫이다. C2-06 을 insta0805 배치에 항목으로 추가했으므로 watch 로 따로 들고 있을 이유가 없다. 보드에서 추적한다."
   },
   {
    "id": "pcenv-3tasks",
@@ -982,7 +990,9 @@
    "due": "2026-08-15",
    "cmd": "python studio/selfcheck.py",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-15",
+   "result": "완료 확인(2026-08-15): 추석기차표예매_글_HTML.txt 가 origin/main 에 존재(git cat-file 확인). 썸네일 169_chuseok_train.png 도 큐에 등록됨. 클라우드 발행 선행조건 충족 — 발행 자체는 pubqueue/publish 보드 소관."
   },
   {
    "id": "b2-10-empty-body",
@@ -1003,7 +1013,9 @@
    "due": "2026-08-15",
    "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F4-17 -f mode=live -f confirm=PUBLISH -f file='안동국제탈춤페스티벌_글_HTML.txt' -f title='안동국제탈춤페스티벌 2026 관람 방법 총정리 — 입장료·하회마을 관람료·65세 무료 (9월 24일~10월 4일 추석 연휴 개막)'",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-15",
+   "result": "완료 확인(2026-08-15 관제탑 실측): F4-17 라이브 발행 + OSMU 4채널 전부 완료(naver·threads·instagram ✅) + 검색설명 111자 반영. 더 볼 것 없음."
   },
   {
    "id": "thumb-169-170-deploy",
@@ -1020,6 +1032,55 @@
    "what": "색인 스냅샷 191편 != DB 192편 (1편 색인추적 누락)",
    "due": "2026-08-16",
    "cmd": "python studio/searchconsole.py inspect",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "koyuga-0831",
+   "added": "2026-08-15",
+   "what": "A1-02 고유가 피해지원금 사용기한(8/31 소멸 여부) 공식 확인 후 본문 마감안내 갱신 - 현재 근거는 2차출처(블로그)뿐",
+   "due": "2026-08-18",
+   "cmd": "정부24·소관부처 공고에서 사용기한 확인 후 python studio/blogger.py update-post --code A1-02",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "d304-insta-post",
+   "added": "2026-08-15",
+   "what": "D3-04(전세보증금 반환보증) 인스타 게시 — 🙋사용자 손이 필요한 유일한 단계. 카드 6장+캡션 전부 완성돼 있고 게시만 남았다. 파일: insta/leaseguarantee_01_cover~06_cta.png (순서대로 첨부) · 캡션 insta/캡션_전세보증금반환보증.txt. 게시 직후 그리드 1회 육안 확인(중복게시 방지, 2026-07-12 사고).",
+   "due": "2026-08-15",
+   "cmd": "python -m studio.insta_post --code D3-04   # 게시시트 재출력 / 게시 후: python -m studio.pipeline insta-link --code D3-04 --url <URL>",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-15",
+   "result": "watch 에서 종료(2026-08-15): D3-04 게시 대기는 배치보드 blocked 상태로 이미 추적되고, python -m studio.myturn 이 카드 경로까지 뽑아준다. 두 곳에 두면 한 곳이 뒤처진다."
+  },
+  {
+   "id": "b210-osmu",
+   "added": "2026-08-15",
+   "what": "B2-10(학자금대출 2학기) OSMU 3채널 미확산 — 네이버·쓰레드·인스타 전부. 검색설명은 08-15 해결됐다. 🔴쓰레드 첨부는 썸네일 금지·실사진(insta/thread/thread_B2-10_*.png) · 네이버는 thumbs_naver/166_student_loan.png 재사용·요약본 금지·파이프테이블 금지. 이과장(신규게시 4채널) 담당.",
+   "due": "2026-08-17",
+   "cmd": "python -m studio.osmu_manifest table --code B2-10 --open",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-15",
+   "result": "분리 정정(2026-08-15): 인스타는 insta0805 보드로 이관(인스타 세션 몫). 남은 네이버·쓰레드만 이과장 몫으로 watch b210-naver-threads 에 재등록."
+  },
+  {
+   "id": "b210-naver-threads",
+   "added": "2026-08-15",
+   "what": "B2-10(학자금대출 2학기) 네이버·쓰레드 확산 — 이과장 몫. 인스타는 인스타 세션(insta0805 보드)이 맡으므로 여기서 하지 말 것. 🔴쓰레드 첨부는 썸네일 금지·실사진(insta/thread/thread_B2-10_*.png) · 네이버는 thumbs_naver/166_student_loan.png 재사용·요약본 금지·파이프테이블 금지. 검색설명은 08-15 해결됨.",
+   "due": "2026-08-17",
+   "cmd": "python -m studio.pipeline naver-draft --code B2-10 --open",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "concurrent-commit-guard",
+   "added": "2026-08-15",
+   "what": "동시 커밋 충돌 대책 — 세션 3개(관제탑·이과장·인스타B)가 같은 저장소에 커밋하면서 2026-08-15 에 실제 사고 발생(관제탑 스테이징분이 이과장 커밋 33ca1d7 에 휩쓸림). 코드 손실은 없었으나 이력이 어긋났다. 검토안: ①커밋 직전 git status 로 남의 스테이징 확인 ②파일 소유권 명시(관제탑=studio/·세션=자기 산출물) ③또는 세션별 add 경로 강제. 경위=note 참조.",
+   "due": "2026-08-18",
+   "cmd": "git log --oneline -20 --stat | head -40   # 휩쓸린 커밋이 또 있는지 확인",
    "owner": "claude",
    "state": "todo"
   }
