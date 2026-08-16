@@ -482,8 +482,10 @@
    "due": "2026-08-14",
    "cmd": "cat 인스타확산_다음회차_2026-08-10.md",
    "owner": "claude",
-   "state": "todo",
-   "note": 92
+   "state": "done",
+   "note": 92,
+   "done_at": "2026-08-16",
+   "result": "무의미해져 종료(2026-08-16): 08-10 에 고른 5편(G4-01·F4-04·D4-01·F2-03·C2-01)은 그 뒤 전부 게시 완료됐다. 인스타 진행은 배치 insta0815b 가 진실원이고 회차 선정도 거기서 한다 — watch 에 중복으로 들고 있을 이유가 없다."
   },
   {
    "id": "dupcheck-miss-0810",
@@ -932,7 +934,9 @@
    "due": "2026-08-16",
    "cmd": "python -m studio.batchboard show   # publish0815 진행률 확인 (2편 x 4채널)",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "완료(2026-08-16): 이과장이 publish0815 를 2/2 로 마쳤고(D1-06·F4-17 발행+4채널) 후속 지시서 publish0816 도 발급됨. 이 감시 항목의 목적은 달성됐다."
   },
   {
    "id": "b210-finish",
@@ -963,7 +967,9 @@
    "due": "2026-08-31",
    "cmd": "수동 GUI 작업 3건 — 끝나면 python -m studio.watch done --id pcenv-3tasks --result '<한 것>'",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "3건 중 2건 해소·1건 분리(2026-08-16). ①Ctrl+Alt+F 스냅샷 복원 — 08-05 진단이 '단축키 미등록'이라 했으나 오진이었다. .lnk 는 정상 등록돼 있었고(바탕화면이 OneDrive 리디렉션이라 남의 프로필처럼 보인 것) 진짜 원인은 스크립트의 따옴표 버그였다. 수리 후 4/4 정상 열림 확인. ②ETU Home 프로필 → watch etu-home-profile 로 분리(사용자 GUI). ③크롬 절약모드는 별건이라 이 항목에서 뺀다 — 필요하면 다시 등록."
   },
   {
    "id": "blocked-figures",
@@ -1024,7 +1030,9 @@
    "due": "2026-08-16",
    "cmd": "curl -s -o /dev/null -w '%{http_code}\\n' https://magsori-wq.github.io/lifeinfo-console/thumbs/169_chuseok_train.png",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "완료 확인(2026-08-16): 169_chuseok_train·170_lease_report 둘 다 github.io 200 실측. 08-16 deploy.bat 실행분에 포함됐다."
   },
   {
    "id": "index-snapshot-drift",
@@ -1033,7 +1041,9 @@
    "due": "2026-08-16",
    "cmd": "python studio/searchconsole.py inspect",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "해소(2026-08-16): 누락 3편(D1-06·F4-17·F4-18) inspect 로 등록. DB 194편 = index_status 194편 일치. 넷 다 Discovered-not indexed 상태."
   },
   {
    "id": "koyuga-0831",
@@ -1092,6 +1102,39 @@
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/171_caribbeanbay.png",
    "owner": "claude",
    "state": "done"
+  },
+  {
+   "id": "etu-home-profile",
+   "added": "2026-08-16",
+   "what": "ETU Home 프로필 끄기 — 폴더복원 시 '홈' 창이 3개 뜨는 마지막 원인. 🙋사용자 GUI 1회. 2026-08-16 실측 확정: 복원 스크립트는 이제 정상(4/4 열림, D:\\ 포함)인데 그와 별개로 CLSID_MSGraphHomeFolder(윈도우11 탐색기 '홈') 창이 3개 붙는다. ETU settings.json 프로필 13개 중 [1]Home(Win+E · Action=Open · Path='' · 켜짐)과 [3]Open(Shift+Ctrl+T · Path=None · 켜짐)이 빈 경로라 홈을 연다. 처리: 트레이 ETU 아이콘 > 설정 > 프로필 목록에서 Home 체크 해제(또는 Path 를 실제 폴더로 지정). ※SaveProfilesOnExit=False 라 종료 시 덮어쓰기 위험은 없음(08-05 우려는 해소). 관제탑이 파일을 직접 고칠 수도 있으나 PC 환경 설정이라 사용자 확인 후 진행.",
+   "due": "2026-08-20",
+   "cmd": "트레이 ETU > 설정 > Home 프로필 체크 해제 → 이후 Ctrl+Alt+F 눌러 홈 창이 안 뜨는지 확인",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "관제탑이 직접 처리 완료(2026-08-16 사용자 지시 '고쳐줘'). settings.json 에서 Home 프로필 IsEnabled=false. 적용 확인은 watch etu-home-verify 로 분리(ETU 재시작 필요)."
+  },
+  {
+   "id": "etu-home-verify",
+   "added": "2026-08-16",
+   "what": "ETU Home 프로필 끔 — 적용 확인 대기. 관제탑이 settings.json 에서 Home(Win+E·Path 빈값) IsEnabled=false 로 변경 완료(2026-08-16, 백업 있음). 🔴ETU 가 설정을 메모리에 들고 있어 **ETU 재시작 후에야 적용**된다. 트레이 ETU 우클릭 종료 후 재실행(또는 다음 재부팅) → Ctrl+Alt+F 눌러 '홈' 창이 3개 안 뜨는지 확인. 복원 스크립트 자체는 이미 4/4 정상(따옴표 버그 수리 완료). 되돌리려면 settings.json.bak_before_home_off_20260816.",
+   "due": "2026-08-17",
+   "cmd": "ETU 재시작 후 Ctrl+Alt+F → 탐색기 창이 스냅샷 폴더만 열리고 '홈'이 안 뜨면 성공. 실패 시 studio 로 _restore_log.txt 확인",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "종결(2026-08-16): Home 프로필 끄기는 **오히려 악화**(홈 2개→6개)라 되돌렸고, 진짜 원인은 WindowHook 이었다. WindowHook=False + restore_folders.ps1 을 Start-Process -FilePath 방식으로 교체 후 5/5 복원 성공 실측."
+  },
+  {
+   "id": "explorer-snapshot-verify",
+   "added": "2026-08-16",
+   "what": "폴더복원 최종 확인 — 3개 수리가 다 끝났는지 실사용으로 판정. ①restore_folders.ps1 따옴표 버그(D:\\ 깨짐) 수리 ②ETU Home 프로필 끔(재시작 필요) ③snap_explorer.ps1 + 5분 주기 스케줄로 '이전 폴더'를 실제로 기억하게 함. 확인법: 폴더 몇 개를 원하는 순서로 열어두고 5분 이상 기다린 뒤(또는 수동 실행) 탐색기를 다 닫고 Ctrl+Alt+F → 같은 폴더가 같은 순서로 오면 성공. ⚠️ETU 를 아직 재시작 안 했으면 홈 창이 남아 있을 수 있다(그건 ② 미적용이지 ③ 실패가 아니다).",
+   "due": "2026-08-17",
+   "cmd": "powershell -File C:\\Users\\magso\\tools\\snap_explorer.ps1  # 수동 스냅샷 / 로그=C:\\Users\\magso\\tools\\_restore_log.txt",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "완료(2026-08-16): 5/5 경로 그대로 복원 실측 확인. 스냅샷 5분 주기 + 홈창 가드도 작동. 남은 트레이드오프는 WindowHook off 로 인한 '탭 대신 창' 뿐이며, 탭 병합이 더 중요하면 WindowHook 을 되돌리고 복원 정확도를 포기하는 선택이 있다."
   }
  ]
 }
