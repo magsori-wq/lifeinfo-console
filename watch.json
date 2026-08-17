@@ -1184,6 +1184,45 @@
    "cmd": "python studio/selfcheck.py  # 9) 스킬 동기 가 '동기본 어긋남 0' 이면 완료",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "gh-workflow-stale-draft-bug",
+   "added": "2026-08-17",
+   "what": "gh workflow run 발행 트리거가 로컬 미푸시 초안 대신 origin 옛버전을 쓰는 구조적 위험 — D4-10 실제 사고(제목·도입부 옛것으로 라이브됨, update-post로 사후정정). 재발방지책 검토 필요(예: 발행 승인표에 'git status 클린' 확인 항목 추가, 또는 워크플로 자체에 대상 draft 파일 push 여부 사전검사 추가)",
+   "due": "2026-08-20",
+   "cmd": "git log --oneline -5 -- studio/pipeline.py .github/workflows/publish.yml",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-hooking-doc",
+   "added": "2026-08-17",
+   "what": "유튜브(오리나) 네이버 수익화 기법 5페이지 조사문서가 저장소에 없다 — 대화로만 전달됨. 저장소 루트/워크트리/Downloads/Desktop/Documents/Temp 전수 검색 0건(2026-08-17 16:4x 관제탑 실측). 다음 세션이 못 보므로 같은 조사를 다시 하게 된다. 만든 세션이 C:\\lifeinfo 아래 .md 로 내려야 한다. 내려오면 검증할 것 2가지: ①'이번 주 즉시 적용' 체크리스트에 GPT 본문생성·복붙·다편발행이 들어있으면 제거(스팸정책 scaled content abuse 원문 = generative AI tools to generate many pages without adding value / AdSense = Automatically generated content without manual review) ②'네이버 데이터랩 인기유입검색어' 메뉴명 실재 확인 — 데이터랩은 검색어트렌드·쇼핑인사이트이고 유입검색어는 블로그통계/크리에이터어드바이저 쪽일 수 있다. 절차 1단계 메뉴명이 틀리면 작업세션이 즉시 막힌다. 수치(69->18208 조회, 월 90만원)는 8/20 무료특강 리드젠 콘텐츠의 자체공개값 = 실행 근거로 인용 금지.",
+   "due": "2026-08-18",
+   "cmd": "ls C:/lifeinfo/*네이버*수익* C:/lifeinfo/*후킹* C:/lifeinfo/*오리나* 2>/dev/null || echo 미도착",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "네이버 애드포스트는 승인됨·구글 애드센스는 4회 반려(unique content 부족) — 채널을 섞지 말 것"
+  },
+  {
+   "id": "osmu-3channel-not-code-gated",
+   "added": "2026-08-17",
+   "what": "'블로그스팟 발행 직후 네이버·쓰레드·인스타 3채널 한번에 안내' 규칙이 CLAUDE.md 프로즈+메모리에만 있고 코드 게이트가 없다 — D4-10 실제 사고(네이버만 진행하고 쓰레드·인스타 안내 누락, 사용자가 지적). osmu_manifest.py(table 명령)는 이미 있지만 발행 워크플로·pipeline.py 어디서도 자동 호출 안 됨. 검토: register_post 또는 발행 직후 단계에 osmu_manifest table 자동 출력을 코드로 박을 것(검색설명 handoff가 _seodesc_handoff()로 코드화된 것과 같은 방식).",
+   "due": "2026-08-20",
+   "cmd": "grep -n osmu_manifest studio/pipeline.py studio/blogger.py",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-17",
+   "result": "osmu_manifest.py table 재설계로 해결(cc335c8) — 게시완료 채널은 라이브URL, 미게시는 워크트리 미러 복사된 클릭가능 파일링크로 표를 낸다. 후속=osmu-table-clickable-links-done"
+  },
+  {
+   "id": "osmu-table-clickable-links-done",
+   "added": "2026-08-17",
+   "what": "'OSMU 3채널 안내=클릭가능한 표' 코드화 완료(2026-08-17). studio/osmu_manifest.py table 명령 재설계: HTML 분할화면·browser 열기 완전 폐기, 표 셀에 직접 마크다운 링크(게시완료=라이브URL/미게시=로컬파일)를 걸고 참조파일을 세션 워크트리로 자동 미러 복사(_link_base·_mirror_into_linkbase). D4-10·F2-13 실측 검증 완료, 커밋 cc335c8. 이전 osmu-3channel-not-code-gated watch 항목의 후속 완결.",
+   "due": "2026-08-18",
+   "cmd": "python -m studio.osmu_manifest table --code <코드>",
+   "owner": "claude",
+   "state": "done"
   }
  ]
 }
