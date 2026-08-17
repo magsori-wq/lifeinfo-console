@@ -2607,9 +2607,141 @@
    "owner": "전원(번호별 담당 표기)",
    "order": "🗓️ 오늘 진행 계획 — 번호순으로 하나씩 지운다 (2026-08-17)\n\n이 보드는 지시서가 아니라 **오늘 하루의 체크리스트**다. 상세 지시는 각 담당 보드에 있다.\n  · 이과장  → python -m studio.batchboard order --id publish0816\n  · 인스타  → python -m studio.batchboard order --id insta0815b\n\n■ 왜 만들었나 (사장님: \"뭘 하면 너도 나도 까먹고 아예 무신경하잖아\")\n  일감이 배치·watch·지시서에 흩어져 있어 \"지금 뭐부터\"가 안 보였다. 번호를 붙여\n  한 곳에 모으고, 끝나면 지운다. 표시줄·콘솔·Stop 하네스가 같은 목록을 본다.\n\n■ 지우는 법\n    python -m studio.batchboard mark --id today0817 --code <번호> --state done --note \"<실측>\"\n  🔴 note 에 **무엇을 실측했는지** 적을 것. 'done' 만 있으면 기록이 아니다.\n\n■ 담당 경계 (2026-08-17 확정 — 더 안 바꾼다)\n  **새로 낸 글이면 이과장이 4채널을 끝까지. 옛 글 인스타만 인스타 세션.**\n\n■ 🔴 끝냈으면 그 자리에서 보고해라 — 물어봐야 아는 것은 관제가 아니다\n  오늘 실측 사고: 이과장이 B2-10 네이버·쓰레드 게시·기록·교차링크를 다 끝냈는데\n  보드가 그대로였고, 사장님이 \"확인해!\" 라고 말해서야 관제탑이 알았다.\n  완료를 늦게 아는 것은 거짓 완료만큼 나쁘다 — 다음 일감이 그만큼 늦게 나간다.\n  → `sessionaudit` 에 **침묵 완료 감지**를 넣었다(2026-08-17). 실물(DB url·osmu)이\n    끝났는데 보드가 열려 있으면 🟡 로 잡힌다. 계획 보드는 제목에서 글 코드를 뽑아 본다.",
    "order_at": "2026-08-17 19:29"
+  },
+  "today0818": {
+   "title": "🗓️ 2026-08-18 진행 계획 — 실데이터에서 파생(손으로 적지 않는다)",
+   "items": [
+    {
+     "code": "01",
+     "title": "[관제탑] 색인요청분 크롤 감시 — 하루 25편씩(대기 184편 · 미크롤 32편)",
+     "state": "todo",
+     "note": "watch crawl-watch · $ python -m studio.crawl_watch --limit 25",
+     "derived": true
+    },
+    {
+     "code": "02",
+     "title": "[관제탑] GSC '크롤링됨-현재 색인이 생성되지 않음' 추이 감시 — 유일하게 실질적인 ",
+     "state": "todo",
+     "note": "watch gsc-crawled-not-indexed · $ 브라우저로 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo897",
+     "derived": true
+    },
+    {
+     "code": "03",
+     "title": "[관제탑] GSC 색인문제 검증 결과 대기 - 8/11 09:18~09:21 구글이 확인 ",
+     "state": "todo",
+     "note": "watch gsc-validation-0811 · $ python -m studio.searchconsole inspect",
+     "derived": true
+    },
+    {
+     "code": "04",
+     "title": "[사장님] 애드센스 사이트 재검토 요청 가능일 도래 — 08-12 반려 사유는 '가치가 별",
+     "state": "todo",
+     "note": "watch adsense-reopen-0818 · $ AdSense 콘솔 사이트 상세에서 검토 요청 버튼 확인 (사용자 판단으로 클릭)",
+     "derived": true
+    },
+    {
+     "code": "05",
+     "title": "[사장님] AdSense 재검토 요청 — 🔴2026-08-14 실측: '사이트 검토 요청 ",
+     "state": "todo",
+     "note": "watch adsense-recheck-0818 · $ AdSense > 사이트 > lifeinfo8975.blogspot.com > '문제를 수정했음을 확인합니다' 체크 > 검토 요청  (넣기 전 python stu",
+     "derived": true
+    },
+    {
+     "code": "06",
+     "title": "[관제탑] A1-02 고유가 피해지원금 사용기한(8/31 소멸 여부) 공식 확인 후 본문 ",
+     "state": "todo",
+     "note": "watch koyuga-0831 · $ 정부24·소관부처 공고에서 사용기한 확인 후 python studio/blogger.py update-post --code A1-02",
+     "derived": true
+    },
+    {
+     "code": "07",
+     "title": "[관제탑] 동시 커밋 충돌 대책 — 세션 3개(관제탑·이과장·인스타B)가 같은 저장소에 커",
+     "state": "todo",
+     "note": "watch concurrent-commit-guard · $ git log --oneline -20 --stat | head -40   # 휩쓸린 커밋이 또 있는지 확인",
+     "derived": true
+    },
+    {
+     "code": "08",
+     "title": "[사장님] 계정 스킬 lifeinfo-blog 재업로드 — 발행 상한 5편(옛값)이 적혀 ",
+     "state": "todo",
+     "note": "watch skill-upload-0817 · $ python studio/selfcheck.py   # 9) 스킬 동기 가 '내용일치 예 ✅' 로 바뀌면 완료",
+     "derived": true
+    },
+    {
+     "code": "09",
+     "title": "[사장님] 계정 스킬 lifeinfo-blog 교체 — Desktop 이 읽는 사본이 발행",
+     "state": "todo",
+     "note": "watch skill-resync · $ python studio/selfcheck.py  # 9) 스킬 동기 가 '동기본 어긋남 0' 이면 완료",
+     "derived": true
+    },
+    {
+     "code": "10",
+     "title": "[관제탑] 유튜브(오리나) 네이버 수익화 기법 5페이지 조사문서가 저장소에 없다 — 대화로",
+     "state": "todo",
+     "note": "watch naver-hooking-doc · $ ls C:/lifeinfo/*네이버*수익* C:/lifeinfo/*후킹* C:/lifeinfo/*오리나* 2>/dev/null || echo 미도착",
+     "derived": true
+    },
+    {
+     "code": "11",
+     "title": "[사장님] 네이버 성과 숫자 넣기 — 지금 우리는 네이버가 어떻게 되고 있는지 전혀 모른다",
+     "state": "todo",
+     "note": "watch naver-stat-daily · $ python -m studio.naverstat add --views <조회수> [--visitors <방문자>] [--revenue <애드포스트 원>] [--k",
+     "derived": true
+    },
+    {
+     "code": "12",
+     "title": "[관제탑] 콘솔 정합성 검사 워크플로가 2026-08-15부터 모든 push 에서 RED ",
+     "state": "todo",
+     "note": "watch console-check-false-red · $ gh run list -R magsori-wq/lifeinfo-console -w '콘솔 정합성 검사' -L 3   # 수정 후 초록인지",
+     "derived": true
+    },
+    {
+     "code": "13",
+     "title": "[사장님] 인스타 계정 카테고리가 '음식점'으로 돼 있다 — 생활정보 블로그인데 프로필에 ",
+     "state": "todo",
+     "note": "watch insta-category-wrong · $ https://www.instagram.com/accounts/professional_account_settings/ → 카테고리 [변경]",
+     "derived": true
+    },
+    {
+     "code": "14",
+     "title": "[이과장] 발행 대기 4편 — 다음 D1-07",
+     "state": "todo",
+     "note": "오늘 발행 0/2 · 하루 1편이 기본. 순서는 지시서(publish0816)가 시효순으로 정해 뒀다. 대기: D1-07 F4-19 F1-12 B4-08",
+     "derived": true
+    },
+    {
+     "code": "15",
+     "title": "[인스타세션] 인스타 카드 제작 — 미확산 28편",
+     "state": "todo",
+     "note": "다음: A4-01 A5-03 A4-02 B1-02 B4-01 B4-02 · $ python -m studio.insta_post --next --stage",
+     "derived": true
+    },
+    {
+     "code": "16",
+     "title": "[사장님] 인스타 게시 13건 — 카드·캡션 준비 완료",
+     "state": "todo",
+     "note": "다음: D3-04 B1-02 F2-01 D2-04 B4-01 B3-01 · $ python -m studio.insta_post --next --stage (카드 6장만 든 폴더 생성 + 캡션 클립보드 + 탐색기)",
+     "derived": true
+    },
+    {
+     "code": "17",
+     "title": "[관제탑] 색인 미요청 8편 — 관찰만(손일 아님)",
+     "state": "todo",
+     "note": "🔴사람에게 누르라고 시키지 말 것 — reindex 누적 수율 2%(41편 중 1편), 이미 크롤됐는데 색인 안 된 글 122편. 레버는 재요청이 아니라 OSMU·본문보강·시간이다. 확인 $ python -m studio.reindex · 대상: F4-15 D4-09 B2-10 D1-06 F4-17 F4-18 F2-13 D4-10",
+     "derived": true
+    },
+    {
+     "code": "18",
+     "title": "[사장님] 네이버 유입검색어·애드포스트 수익 확인",
+     "state": "todo",
+     "note": "방문자는 naverstat fetch 가 자동수집한다(오늘 0). 로그인 화면 안의 유입검색어·수익만 사람 몫 — 화면 캡처를 주시면 관제탑이 읽어 넣는다.",
+     "derived": true
+    }
+   ],
+   "owner": "전원(번호별 담당 표기)"
   }
  },
- "updated": "2026-08-17 23:42:28",
+ "updated": "2026-08-18 00:12:15",
  "current": {
   "batch": "today0817",
   "code": "완료",
