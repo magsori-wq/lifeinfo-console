@@ -50,10 +50,16 @@ def check_html_refs():
     for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
         name = os.path.basename(f)
         text = open(f, encoding="utf-8", errors="replace").read()
+        # 🔴 예시로 '보여주는' HTML 은 참조가 아니다 (2026-08-18 오탐 수정).
+        #    batch.html 의 교차링크 샘플 `&lt;a href="네이버URL"&gt;` 을 실제 링크로 읽어
+        #    2026-08-15 부터 모든 push 가 RED 였다(메일 11건/2일). 지울 수 없는 빨간불은
+        #    무시되는 빨간불이 된다. 이스케이프된 태그 구간과 <pre>/<code> 를 먼저 걷어낸다.
+        scan = re.sub(r"&lt;.*?&gt;", " ", text, flags=re.S)
+        scan = re.sub(r"<(pre|code)\b.*?</\1>", " ", scan, flags=re.S | re.I)
         refs = set()
-        refs |= set(re.findall(r"fetch\(\s*'([^']+)'", text))
-        refs |= set(re.findall(r'fetch\(\s*"([^"]+)"', text))
-        for m in re.findall(r'(?:src|href)=["\']([^"\']+)["\']', text):
+        refs |= set(re.findall(r"fetch\(\s*'([^']+)'", scan))
+        refs |= set(re.findall(r'fetch\(\s*"([^"]+)"', scan))
+        for m in re.findall(r'(?:src|href)=["\']([^"\']+)["\']', scan):
             if m.startswith(("http", "//", "#", "mailto:", "javascript:", "data:")):
                 continue
             refs.add(m)
