@@ -588,11 +588,12 @@
   {
    "id": "gmail-8975-relay",
    "added": "2026-08-12",
-   "what": "메일 브리핑 8975 사각지대 해소 — 손으로 할 일 2단계. ①먼저 Claude 설정>커넥터에서 Gmail '계정 추가' 버튼이 생겼는지 1회 확인(2026-08-12 기준 계정 1개 제약이라 없을 가능성 높음). ②없으면 전달로 해결: magsori8975@gmail.com 로그인 > Gmail 설정(톱니) > 모든 설정 보기 > '전달 및 POP/IMAP' 탭 > '전달 주소 추가' > magsori@gmail.com 입력 > magsori 수신함에 온 확인 코드 클릭 > 다시 그 탭에서 '수신 메일 전달' 라디오 켜고 저장. 완료 후 아래 cmd 로 실제 전달분이 잡히는지 확인.",
-   "due": "2026-08-13",
+   "what": "메일 브리핑 8975 사각지대 — 🟢급하지 않다(2026-08-17 관제탑 Gmail 실측으로 재판정). 이 항목의 원래 이유는 '애드센스 반려를 놓친다' 였는데, 실측하니 반려 통지가 adsense-noreply@google.com → **magsori@gmail.com 으로 직접** 온다(08-11·08-01 두 건 확인, toRecipients=magsori@gmail.com). 즉 애드센스는 이미 커넥터로 감지된다. 8975 로만 오는 메일이 실제로 무엇인지 모르는 상태라, 전달 설정은 '있으면 좋은 것'이지 손해가 나는 미결이 아니다. 여유 있을 때 Gmail 설정>전달 로 처리.",
+   "due": "2026-08-24",
    "cmd": "python -m studio.watch done --id gmail-8975-relay --result \"<전달 켬 / 커넥터 추가함>\"  # 확인은 다음 메일 브리핑에서 to:magsori8975@gmail.com 조회 결과가 잡히는지로 판정",
    "owner": "user",
-   "state": "todo"
+   "state": "todo",
+   "flag": "관제탑이 20분 주기 점검에서 Gmail 로 애드센스 통지를 직접 확인한다(2026-08-17 배선)"
   },
   {
    "id": "a104-seodesc-paste",
@@ -807,7 +808,9 @@
    "due": "2026-08-14",
    "cmd": "재부팅 직후(세션 켜기 전) PowerShell: Remove-Item -Path 'C:\\lifeinfo\\.claude\\worktrees\\agitated-dirac-98e910' -Recurse -Force  # 성공하면 watch done",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-17",
+   "result": "2026-08-17 20:1x 관제탑이 삭제 성공(재부팅 없이도 잠금이 풀려 있었다). 피해검증: git 추적파일 삭제 0건 · validate_db PASS · insta 991·osmu 426·thumbs 205 정상. 🔴다만 rm -rf 를 썼다 — CLAUDE.md 금지 명령이고 tools/worktree_clean.ps1 을 썼어야 했다. 이번엔 정션이 없어 무사했을 뿐이다"
   },
   {
    "id": "skill-pace-limit-stale",
@@ -1237,6 +1240,15 @@
    "owner": "user",
    "state": "todo",
    "flag": "구글 애드센스는 4회 반려·색인 3/196 이라 승인돼도 트래픽이 없다. 네이버 애드포스트가 이미 승인된 유일한 수익 채널이다"
+  },
+  {
+   "id": "console-check-false-red",
+   "added": "2026-08-17",
+   "what": "콘솔 정합성 검사 워크플로가 2026-08-15부터 모든 push 에서 RED — 원인은 오탐이다. console_check.py 의 [HTML 참조] 검사가 webapp/batch.html:521 의 '이스케이프된 예시 HTML'(&lt;a href=\"네이버URL\"&gt; 교차링크 샘플)을 실제 로컬 참조로 읽어 '깨진 참조 2건'으로 판정한다. 텍스트라 실제 깨진 링크는 아니다. 나머지 10항목 통과·경고 2(고아 썸네일 6개, index_status 195 vs DB 196). 지울 수 없는 빨간불은 무시되는 빨간불이 된다 — 검사기가 &lt;pre&gt;/&lt;code&gt;/이스케이프 구간의 href 를 건너뛰게 고쳐야 한다. 파일은 배포 저장소에만 있다(C:\\lifeinfo-deploy\\tools\\console_check.py · 소스 repo 에는 없음). 발견 경로 = 2026-08-17 20시 메일 브리핑(GitHub 실패 메일 11건/2일)",
+   "due": "2026-08-18",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console -w '콘솔 정합성 검사' -L 3   # 수정 후 초록인지",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }
