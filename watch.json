@@ -1249,6 +1249,36 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -w '콘솔 정합성 검사' -L 3   # 수정 후 초록인지",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "threads-bio-link",
+   "added": "2026-08-17",
+   "what": "쓰레드 프로필에 블로그스팟 링크 걸기 — 지금 비어 있다(2026-08-17 관제탑 브라우저 실측. +2 는 링크가 아니라 '관심사' 태그였다). 인스타는 이미 걸려 있다(📌 lifeinfo8975.blogspot.com). 쓰레드 최근 조회수 6,514회인데 프로필을 눌러도 갈 곳이 없다. 🔴이게 지금 가장 큰 레버인 이유: 이미 게시된 쓰레드 43편의 본문 링크가 네이버로 나갔고 쓰레드는 게시 직후 짧은 시간만 수정돼 되돌릴 수 없다 — 프로필 링크는 그 43편을 본 사람까지 블로그스팟으로 보낸다.",
+   "due": "2026-08-18",
+   "cmd": "쓰레드 앱/웹 → 프로필 → 프로필 편집 → 링크 → https://lifeinfo8975.blogspot.com  (끝나면 watch done --id threads-bio-link)",
+   "owner": "user",
+   "state": "done",
+   "flag": "계정 설정 변경이라 Claude 가 임의로 하지 않는다",
+   "done_at": "2026-08-17",
+   "result": "✅사장님이 직접 처리 완료(2026-08-17 21:1x~21:2x). 내 최초 판정('링크 비어 있음')이 맞았고, 그 뒤 내가 '오판정이었다'고 취소한 것이 오히려 틀렸다 — 사장님이 그 사이에 넣으신 것을 내가 '원래 있었던 것'으로 오독했다. 현재 상태: 프로필에 lifeinfo8975.blogspot.com 표시 · 링크 수정 화면에 https://lifeinfo8975.blogspot.com 입력됨. 🔴교훈: 상태가 변했을 가능성을 먼저 의심할 것. 두 관측이 다르면 내가 틀린 게 아니라 세상이 바뀐 것일 수 있다."
+  },
+  {
+   "id": "travel-halloween-2026",
+   "added": "2026-08-17",
+   "what": "에버랜드·롯데월드 2026 할로윈 기간·요금 공지 확인 → 공지됐으면 etc 레인 초안 작성(08-17 조회 실패: 롯데월드 본문 미제공·에버랜드 시스템 에러)",
+   "due": "2026-08-28",
+   "cmd": "python -c \"import urllib.request;print(urllib.request.urlopen('https://adventure.lotteworld.com/kor/event/eventList/list.do',timeout=20).status)\" ; 그리고 everland.com 축제목록 재조회",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "travel-chuseok-toll",
+   "added": "2026-08-17",
+   "what": "추석(9/25) 연휴 고속도로 통행료 면제 발표 확인 → 발표되면 etc 레인 초안(dupcheck 🟢 신규 확인됨)",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.dupcheck \"추석 연휴 고속도로 통행료 면제 휴게소 총정리\" ; 국토부·도로공사 공지 확인",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }
