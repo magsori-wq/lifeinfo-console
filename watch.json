@@ -524,7 +524,7 @@
    "id": "gsc-crawled-not-indexed",
    "added": "2026-08-11",
    "what": "GSC '크롤링됨-현재 색인이 생성되지 않음' 추이 감시 — 유일하게 실질적인 미색인 카테고리(콘텐츠 품질 판단, 8/06 120편→8/11 193편으로 증가). 나머지 5개 이유(서버오류1·404 1·발견됨대기32·대체페이지76·리디렉션20)는 전부 확인됨/무해. 🔴이메일 브리핑이 'GSC 경고 N건'을 요약해도 그 표현을 그대로 믿지 말고, 반드시 직접 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&pages=ALL_URLS&hl=ko 열어 6개 이유별 실제 건수·트렌드를 볼 것(2026-08-11 실측: 이메일이 '이미 아는 문제 4건'이라 요약했지만 실제론 신규 카테고리가 섞여 있었음).",
-   "due": "2026-08-18",
+   "due": "2026-08-25",
    "cmd": "브라우저로 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&pages=ALL_URLS&hl=ko 열어 '크롤링됨-현재 색인이 생성되지 않음' 건수 확인",
    "owner": "claude",
    "state": "todo",
@@ -572,7 +572,9 @@
    "due": "2026-08-18",
    "cmd": "python -m studio.searchconsole inspect",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "8/11 시작한 유효성 검사 → 8/15 '실패함'(GSC 콘솔 배너 실측) · 리디렉션 오류는 메일로 '일부 해결되지 않음'(8/17 18:46). 예상된 결과다 — 우리가 고친 기술적 결함이 없으므로 검증이 통과할 근거도 없었다. 리디렉션 오류 32건은 Googlebot-Smartphone 의 ?m=1 302 1홉(블로거 전역 동작, 색인된 글도 동일)이라 원인이 아님이 이미 확정돼 있다. 조치 불요 — 재검증 버튼을 다시 누르지 말 것."
   },
   {
    "id": "adsense-reject-0812",
