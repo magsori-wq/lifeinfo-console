@@ -13,9 +13,9 @@ th{opacity:.6;font-weight:600;font-size:12px}
 .empty{opacity:.4;font-size:13px}
 </style>
 <h1>📅 일자별 처리내역 — 무엇을 했고 결과가 무엇이었나</h1>
-<p class="sub">근거 = 라이브 피드(발행일) · git(큐·커밋) · DB(확산) · index_status(색인) · seo_desc(검색설명). 파일 수정시각은 쓰지 않는다(2026-08-01 워크트리 복구로 초기화됨). 생성 2026-08-17 20:32</p>
+<p class="sub">근거 = 라이브 피드(발행일) · git(큐·커밋) · DB(확산) · index_status(색인) · seo_desc(검색설명). 파일 수정시각은 쓰지 않는다(2026-08-01 워크트리 복구로 초기화됨). 생성 2026-08-17 21:03</p>
 <div class="day"><div class="dh">2026-08-17
-<span class="chip">발행 1</span><span class="chip">큐 1</span><span class="chip">커밋 68</span>
+<span class="chip">발행 1</span><span class="chip">큐 1</span><span class="chip">커밋 80</span>
 <span class="chip">루틴 발행루틴 · 오전브리핑</span>
 </div>
 <table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
@@ -38,7 +38,8 @@ th{opacity:.6;font-weight:600;font-size:12px}
 <tr><td class="n">15</td><td>⏭️</td><td style="color:#7b8aa8">[관제탑] 초안 생성이 pubqueue 를 우회한다 — 게이트 밖에서 만들어진다</td><td class="note">🔴관제탑 오탐. 큐 이력을 git 전 리비전으로 재니 23건 적재(08-05~08-17)이고 레인 규칙(LANE_MAX_PER_RUN=1)도 13일 전부 준수 ✅. 내가 본 &#x27;5건&#x27;은 queue.json 이 발행분을 자동 제거(_active)한 결과인데 그 자기정리를 알면서 전체 이력과 비교했다. 우회 </td></tr>
 <tr><td class="n">16</td><td>⏭️</td><td style="color:#7b8aa8">[관제탑] 발행루틴 보고서가 2건뿐 — 09:05 루틴이 기록을 안 남긴다</td><td class="note">🔴대체로 오탐. 발행루틴(lifeinfo-publish 09:05)은 CLAUDE.md 상 &#x27;대면·수동&#x27;이라 예약 실행에서 발행하지 않는 것이 정상이고, 보고서 2건은 &#x27;왜 발행 안 했는지&#x27;를 기록한 것이다(08-17 보고서 실독). 루틴 정상 → 별건의 진짜 문제(보고서 git 미추적)는 93 으로 분</td></tr>
 <tr><td class="n">17</td><td>✅</td><td style="color:#3ddc97">[관제탑] GSC 색인요청 수율 1.6% — 요청·결과 대조 감시가 없다</td><td class="note">🔴또 만들 뻔했다 — studio/reindex.py 가 이미 수율을 재고 있었다(07-29 요청10→재크롤1 10% · 08-04 5→0 · 08-06 26→0 · 누적 41편 중 1편=2%). &#x27;이미 크롤됐는데 색인 안 된 글 122편&#x27;과 &#x27;재요청은 레버가 아니다(레버는 OSMU·본문보강·시간)&#x27;까지</td></tr>
-<tr><td class="n">20</td><td>⬜</td><td style="color:#9fb0d0">[이과장] 네이버 얕은 원고 보강 5편 (수익 채널 유일 레버)</td><td class="note">실측: 네이버 원고 183개 중 53편이 3,500바이트 미만(중앙값 4,396·오늘 D4-10 은 8,011). 확산은 195/196 끝났고 색인 레버는 수율 2%로 닫혔다 — 남은 변수는 체류·완독이고 그게 홈판 지표다. 가장 얕은 5편: 차량유지비1717·대상포진1878·건강보험수가1935·연금저축</td></tr>
+<tr><td class="n">20</td><td>✅</td><td style="color:#3ddc97">[이과장] 네이버 얕은 원고 보강 5편 (수익 채널 유일 레버)</td><td class="note">5/5 완료(20:39~20:50, 11분). 실측 전→후: D2-04 차량유지비 1717→6337 · C2-02 대상포진 1878→5904 · C1-04 건강보험수가 1935→8900 · B3-02 연금저축IRP 2047→6050 · C4-03 무릎인공관절 2130→7889. 전부 목표(5000바이트)</td></tr>
+<tr><td class="n">21</td><td>⬜</td><td style="color:#9fb0d0">[사장님] 네이버 보강 원고 5편 교체 붙여넣기</td><td class="note">이과장이 20:50 에 5편 보강 완료(전→후 3~4.6배). 네이버는 API 없고 확장도 차단이라 붙여넣기만 사람 손이다. 대상: D2-04 차량유지비 · C2-02 대상포진 · C1-04 건강보험수가 · B3-02 연금저축IRP · C4-03 무릎인공관절. ⚠️한 번에 5편 — 네이버 대량 수정은 그</td></tr>
 <tr><td class="n">93</td><td>✅</td><td style="color:#3ddc97">[관제탑] 루틴 산출 보고서가 전부 git 미추적 — 다음 세션·클라우드가 못 본다</td><td class="note">실측: 보고서 76개 중 66 추적·10 미추적(.gitignore 규칙 아님, 단순 미커밋). 10건 소급 커밋 완료 → 미추적 0 확인. &#x27;전부 미추적&#x27;이라 한 내 최초 보고는 과장이었다(특정 파일명만 조회한 결과)</td></tr>
 </table>
 </div>
