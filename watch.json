@@ -1248,7 +1248,9 @@
    "due": "2026-08-18",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -w '콘솔 정합성 검사' -L 3   # 수정 후 초록인지",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "console_check.py 가 이스케이프 태그·pre/code 를 걷어낸 뒤 참조를 수집하도록 수정. 08-17 23:21 실행 success 실측(직전 6회 연속 failure). 실패 0·경고 2·YELLOW. 배포 저장소 커밋 푸시 완료."
   },
   {
    "id": "threads-bio-link",

@@ -2683,48 +2683,41 @@
     },
     {
      "code": "11",
-     "title": "[관제탑] 콘솔 정합성 검사 워크플로가 2026-08-15부터 모든 push 에서 RED ",
-     "state": "todo",
-     "note": "watch console-check-false-red · $ gh run list -R magsori-wq/lifeinfo-console -w '콘솔 정합성 검사' -L 3   # 수정 후 초록인지",
-     "derived": true
-    },
-    {
-     "code": "12",
      "title": "[사장님] 인스타 계정 카테고리가 '음식점'으로 돼 있다 — 생활정보 블로그인데 프로필에 ",
      "state": "todo",
      "note": "watch insta-category-wrong · $ https://www.instagram.com/accounts/professional_account_settings/ → 카테고리 [변경]",
      "derived": true
     },
     {
-     "code": "13",
+     "code": "12",
      "title": "[이과장] 발행 대기 5편 — 다음 D1-07",
      "state": "todo",
      "note": "오늘 발행 0/2 · 하루 1편이 기본. 순서는 지시서(publish0816)가 시효순으로 정해 뒀다. 대기: D1-07 F4-19 F1-12 B4-08 D3-05",
      "derived": true
     },
     {
-     "code": "14",
+     "code": "13",
      "title": "[인스타세션] 인스타 카드 제작 — 미확산 28편",
      "state": "todo",
      "note": "다음: A4-01 A5-03 A4-02 B1-02 B4-01 B4-02 · $ python -m studio.insta_post --next --stage",
      "derived": true
     },
     {
-     "code": "15",
+     "code": "14",
      "title": "[사장님] 인스타 게시 13건 — 카드·캡션 준비 완료",
      "state": "todo",
      "note": "다음: D3-04 B1-02 F2-01 D2-04 B4-01 B3-01 · $ python -m studio.insta_post --next --stage (카드 6장만 든 폴더 생성 + 캡션 클립보드 + 탐색기)",
      "derived": true
     },
     {
-     "code": "16",
+     "code": "15",
      "title": "[관제탑] 색인 미요청 8편 — 관찰만(손일 아님)",
      "state": "todo",
      "note": "🔴사람에게 누르라고 시키지 말 것 — reindex 누적 수율 2%(41편 중 1편), 이미 크롤됐는데 색인 안 된 글 122편. 레버는 재요청이 아니라 OSMU·본문보강·시간이다. 확인 $ python -m studio.reindex · 대상: F4-15 D4-09 B2-10 D1-06 F4-17 F4-18 F2-13 D4-10",
      "derived": true
     },
     {
-     "code": "17",
+     "code": "16",
      "title": "[사장님] 네이버 유입검색어·애드포스트 수익 확인",
      "state": "todo",
      "note": "방문자는 naverstat fetch 가 자동수집한다(오늘 4). 로그인 화면 안의 유입검색어·수익만 사람 몫 — 화면 캡처를 주시면 관제탑이 읽어 넣는다.",
@@ -2736,7 +2729,7 @@
    "order_at": "2026-08-18 00:34"
   }
  },
- "updated": "2026-08-18 06:02:17",
+ "updated": "2026-08-18 08:22:30",
  "current": {
   "batch": "today0817",
   "code": "완료",
