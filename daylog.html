@@ -1,0 +1,155 @@
+<title>📅 일자별 처리내역</title>
+<style>
+body{background:#0f1626;color:#dbe3f0;font-family:'Malgun Gothic',sans-serif;margin:0;padding:20px}
+h1{font-size:20px;margin:0 0 4px}.sub{opacity:.6;font-size:13px;margin:0 0 18px}
+.day{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;padding:14px 16px;margin:0 0 14px}
+.dh{font-size:16px;font-weight:700;margin:0 0 8px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.chip{font-size:11px;background:#222f4e;border:1px solid #33436b;border-radius:20px;padding:1px 9px;opacity:.85}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0}
+th,td{border-bottom:1px solid #24314f;padding:5px 7px;text-align:left;vertical-align:top}
+th{opacity:.6;font-weight:600;font-size:12px}
+.n{color:#4D9DE0;font-weight:700}.ok{color:#3ddc97}.no{color:#e05a5a}
+.note{font-size:12px;opacity:.6;line-height:1.5}
+.empty{opacity:.4;font-size:13px}
+</style>
+<h1>📅 일자별 처리내역 — 무엇을 했고 결과가 무엇이었나</h1>
+<p class="sub">근거 = 라이브 피드(발행일) · git(큐·커밋) · DB(확산) · index_status(색인) · seo_desc(검색설명). 파일 수정시각은 쓰지 않는다(2026-08-01 워크트리 복구로 초기화됨). 생성 2026-08-17 20:07</p>
+<div class="day"><div class="dh">2026-08-17
+<span class="chip">발행 1</span><span class="chip">큐 1</span><span class="chip">커밋 64</span>
+<span class="chip">루틴 발행루틴 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>D4-10</td><td>쿠팡 와우 멤버십 해지 환불 방법 가입 혜택 총정리 (2026)</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">?</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: B4-08(info)</div>
+<table><tr><th>#</th><th></th><th>항목</th><th>결과(실측 기록)</th></tr>
+<tr><td class="n">01</td><td>⬜</td><td style="color:#9fb0d0">[사장님] 메일 브리핑 8975 사각지대 해소 — 손으로 할 일 2단계. ①먼저 Claud 🔴기한</td><td class="note">watch gmail-8975-relay · $ python -m studio.watch done --id gmail-8975-relay --result &quot;&lt;전달 켬 / 커넥터 추가함&gt;&quot;  # 확인은 다음 메일</td></tr>
+<tr><td class="n">02</td><td>⬜</td><td style="color:#9fb0d0">[사장님] 유령 워크트리 agitated-dirac-98e910 삭제 — 2026-08-1 🔴기한</td><td class="note">watch cleanup-agitated-dirac · $ 재부팅 직후(세션 켜기 전) PowerShell: Remove-Item -Path &#x27;C:\lifeinfo\.claude\worktrees\agitated-dira</td></tr>
+<tr><td class="n">03</td><td>⬜</td><td style="color:#9fb0d0">[이과장] 발행 대기 4편 — 다음 D1-07</td><td class="note">오늘 발행 1/2 · 하루 1편이 기본. 순서는 지시서(publish0816)가 시효순으로 정해 뒀다. 대기: D1-07 F4-19 F1-12 B4-08</td></tr>
+<tr><td class="n">04</td><td>⬜</td><td style="color:#9fb0d0">[인스타세션] 인스타 카드 제작 — 미확산 28편</td><td class="note">다음: A4-01 A5-03 A4-02 B1-02 B4-01 B4-02 · $ python -m studio.insta_post --next --stage</td></tr>
+<tr><td class="n">05</td><td>⬜</td><td style="color:#9fb0d0">[사장님] 인스타 게시 13건 — 카드·캡션 준비 완료</td><td class="note">다음: D3-04 B1-02 F2-01 D2-04 B4-01 B3-01 · $ python -m studio.insta_post --next --stage (카드 6장만 든 폴더 생성 + 캡션 클립보드 + 탐색기)</td></tr>
+<tr><td class="n">06</td><td>⬜</td><td style="color:#9fb0d0">[사장님] GSC 색인요청 8편</td><td class="note">서치콘솔 URL검사 → 색인 생성 요청. 끝나면 gsc_log add 로 기록. 대상: F4-15 D4-09 B2-10 D1-06 F4-17 F4-18 F2-13 D4-10</td></tr>
+<tr><td class="n">07</td><td>⬜</td><td style="color:#9fb0d0">[사장님] 네이버 유입검색어·애드포스트 수익 확인</td><td class="note">방문자는 naverstat fetch 가 자동수집한다(오늘 27). 로그인 화면 안의 유입검색어·수익만 사람 몫 — 화면 캡처를 주시면 관제탑이 읽어 넣는다.</td></tr>
+<tr><td class="n">08</td><td>✅</td><td style="color:#3ddc97">[이과장] B2-10 네이버·쓰레드 확산</td><td class="note">관제탑 실측: 네이버 224381349229(HTTP200) · 쓰레드 DcIziXCgRUv · 교차링크 라이브에 두 URL 모두 확인 · watch b210-naver-threads 닫힘. 4채널 중 인스타는 인스타세션이 선행 완료(DcEwbLHE8S1)</td></tr>
+<tr><td class="n">09</td><td>✅</td><td style="color:#3ddc97">[이과장] D4-10 보드 마감 기록</td><td class="note">이과장 18:33 커밋 7ce92ee — publish0816 D4-10 마감 반영. 관제탑 실측: 보드 currents 가 B2-10 1단계로 넘어감(정체 해소)</td></tr>
+<tr><td class="n">10</td><td>🚫</td><td style="color:#e05a5a">[사장님] 애드센스 재검토 요청</td><td class="note">🔴색인요청을 사장님 손일로 올린 것 자체가 틀렸다. reindex 실측: 누적 수율 2%(41편 중 1편) · 이미 크롤됐는데 색인 안 된 글 122편. 구글은 읽고 나서 색인 안 하기로 한 것이라 재요청으로 다시 읽혀도 같은 판정이다. 애드센스 재검토(10번)는 유효하되, 색인요청 손일은 권하지 않는다</td></tr>
+<tr><td class="n">11</td><td>🚫</td><td style="color:#e05a5a">[관제탑] 계정 스킬 동기(Desktop 사본 14일 낡음)</td><td class="note">패키징 스크립트(quick_validate.py·package_skill.py)가 이 PC에 없어 재생성 불가. 🟡위험 낮음 — publish.yml 이 pace.py DAILY_HARD=2 를 코드로 읽으므로 스킬이 5라 적혀 있어도 3편째는 실제로 막힌다(실측 확인)</td></tr>
+<tr><td class="n">12</td><td>⬜</td><td style="color:#9fb0d0">[관제탑] pushcheck 를 발행 트리거에 강제할지 결정</td><td class="note">오늘 만들었으나 호출부 0 — 게이트가 아니라 수동 명령이다. 러너는 PC 작업트리를 못 보므로 원리상 러너 강제 불가. 강제하려면 gh 를 감싸는 래퍼(studio.trigger)가 필요한데 그건 발행 경로 변경이라 사장님 승인 사항. 결정 전까지는 지시서의 &#x27;트리거 직전 손으로 1회&#x27;가 유일한 방어</td></tr>
+<tr><td class="n">13</td><td>⬜</td><td style="color:#9fb0d0">[관제탑] 연결된 MCP 배선 — Gmail(애드센스 반려 감지)·카톡 보고</td><td class="note">오늘 제안만 하고 아무것도 안 했다. ①Gmail(magsori@ 연결됨) = 애드센스 반려 통지의 유일한 실질 감지 경로(adsense_watch 는 READY 일 때만 울림, 4회 반려 전부 메일이 먼저 알림) ②KakaotalkChat-MemoChat = 작업세션 문제 보고 창구인데 아무 데도 안 </td></tr>
+<tr><td class="n">14</td><td>🔄</td><td style="color:#e08b1e">[관제탑] 내가 &#x27;하겠다&#x27;고 한 것은 그 자리에서 보드에 등록</td><td class="note">2026-08-17 사장님 지적: &#x27;매번 뭘 하겠다고 하고 까먹고 반복이잖아. 기억하지 말고 기록하여 확인하라고 한 거잖아.&#x27; 오늘 세션에서 내 약속이 대화에만 있었다(검색설명 4편·네이버 측정·MCP 배선·pushcheck 배선). CLAUDE.md 와 20분 루틴 프롬프트에 규칙으로 내렸다</td></tr>
+<tr><td class="n">15</td><td>⏭️</td><td style="color:#7b8aa8">[관제탑] 초안 생성이 pubqueue 를 우회한다 — 게이트 밖에서 만들어진다</td><td class="note">🔴관제탑 오탐. 큐 이력을 git 전 리비전으로 재니 23건 적재(08-05~08-17)이고 레인 규칙(LANE_MAX_PER_RUN=1)도 13일 전부 준수 ✅. 내가 본 &#x27;5건&#x27;은 queue.json 이 발행분을 자동 제거(_active)한 결과인데 그 자기정리를 알면서 전체 이력과 비교했다. 우회 </td></tr>
+<tr><td class="n">16</td><td>⏭️</td><td style="color:#7b8aa8">[관제탑] 발행루틴 보고서가 2건뿐 — 09:05 루틴이 기록을 안 남긴다</td><td class="note">🔴대체로 오탐. 발행루틴(lifeinfo-publish 09:05)은 CLAUDE.md 상 &#x27;대면·수동&#x27;이라 예약 실행에서 발행하지 않는 것이 정상이고, 보고서 2건은 &#x27;왜 발행 안 했는지&#x27;를 기록한 것이다(08-17 보고서 실독). 루틴 정상 → 별건의 진짜 문제(보고서 git 미추적)는 93 으로 분</td></tr>
+<tr><td class="n">17</td><td>✅</td><td style="color:#3ddc97">[관제탑] GSC 색인요청 수율 1.6% — 요청·결과 대조 감시가 없다</td><td class="note">🔴또 만들 뻔했다 — studio/reindex.py 가 이미 수율을 재고 있었다(07-29 요청10→재크롤1 10% · 08-04 5→0 · 08-06 26→0 · 누적 41편 중 1편=2%). &#x27;이미 크롤됐는데 색인 안 된 글 122편&#x27;과 &#x27;재요청은 레버가 아니다(레버는 OSMU·본문보강·시간)&#x27;까지</td></tr>
+<tr><td class="n">93</td><td>✅</td><td style="color:#3ddc97">[관제탑] 루틴 산출 보고서가 전부 git 미추적 — 다음 세션·클라우드가 못 본다</td><td class="note">실측: 보고서 76개 중 66 추적·10 미추적(.gitignore 규칙 아님, 단순 미커밋). 10건 소급 커밋 완료 → 미추적 0 확인. &#x27;전부 미추적&#x27;이라 한 내 최초 보고는 과장이었다(특정 파일명만 조회한 결과)</td></tr>
+</table>
+</div>
+<div class="day"><div class="dh">2026-08-16
+<span class="chip">발행 2</span><span class="chip">큐 1</span><span class="chip">커밋 32</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>F2-13</td><td>추석 기차표 예매 방법 노선별 일정 결제기한 위약금 총정리 (2026 사전예매 9월</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Discovered - currently not</span></td></tr>
+<tr><td class='n'>2</td><td>F4-18</td><td>캐리비안베이 예약 방법 시즌별 요금 할인 준비물 총정리</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Discovered - currently not</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: F1-12(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-15
+<span class="chip">발행 2</span><span class="chip">큐 4</span><span class="chip">커밋 47</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>F4-17</td><td>안동국제탈춤페스티벌 2026 관람 방법 총정리 — 입장료·하회마을 관람료·65세 무</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Discovered - currently not</span></td></tr>
+<tr><td class='n'>2</td><td>D1-06</td><td>2027학년도 수능 응시원서 접수 방법 총정리 — 사전입력 8/20~9/3 · 방문</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Discovered - currently not</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: D1-07(info) · D4-10(user) · F4-18(user) · F4-19(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-14
+<span class="chip">발행 2</span><span class="chip">큐 2</span><span class="chip">커밋 21</span>
+<span class="chip">루틴 발행루틴 · 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>B2-10</td><td>학자금대출 신청 방법 취업 후 상환 일반 상환 차이 생활비대출 한도 총정리 (202</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">URL is unknown to Google</span></td></tr>
+<tr><td class='n'>2</td><td>D4-09</td><td>코스트코 연회비 골드스타 이그제큐티브 차이 2% 리워드 손익분기 환불 총정리 (20</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: D1-06(info) · F2-13(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-13
+<span class="chip">발행 2</span><span class="chip">큐 2</span><span class="chip">커밋 62</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>C2-06</td><td>어르신 무료 예방접종 대상 독감 폐렴구균 위탁의료기관 찾기 총정리 (2026)</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+<tr><td class='n'>2</td><td>D4-08</td><td>벌초 대행 신청 방법 산림조합 벌초도우미 요금 할인 총정리 (2026 추석 9월 2</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: B2-10(info) · F4-17(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-12
+<span class="chip">발행 0</span><span class="chip">큐 2</span><span class="chip">커밋 23</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<div class="note">📥 큐 적재: C2-06(info) · D4-09(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-11
+<span class="chip">발행 2</span><span class="chip">큐 1</span><span class="chip">커밋 13</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>F4-15</td><td>국토종주 자전거길 인증수첩 구입·완주 인증 방법 총정리 (2026)</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+<tr><td class='n'>2</td><td>F4-16</td><td>템플스테이 예약 방법 총정리 (체험형·휴식형·당일형 차이 2026)</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: D4-08(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-10
+<span class="chip">발행 3</span><span class="chip">큐 3</span><span class="chip">커밋 25</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>A1-11</td><td>교육급여와 초중고 교육비 지원 차이 총정리 (2026 신청 방법)</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+<tr><td class='n'>2</td><td>B1-07</td><td>주민세 사업소분 신고 납부 방법 세액 계산 면세 기준 총정리 (2026)</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+<tr><td class='n'>3</td><td>A2-14</td><td>전기요금 복지할인 신청 방법 총정리 (기초생활수급자·장애인·유공자 여름철 한도 20</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: A1-11(user) · A2-14(user) · B1-07(info)</div>
+</div>
+<div class="day"><div class="dh">2026-08-09
+<span class="chip">발행 3</span><span class="chip">큐 1</span><span class="chip">커밋 20</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>F4-13</td><td>서울세계불꽃축제 2026 관람 방법 총정리 — 노들섬 유료존 요금·골든티켓 응모 (</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+<tr><td class='n'>2</td><td>A1-12</td><td>근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~15일 신청·12월 지급·정산</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+<tr><td class='n'>3</td><td>D1-05</td><td>2026 주민등록 사실조사 비대면 참여 방법 정부24 앱 과태료 총정리 (9월 7일</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: F4-16(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-08
+<span class="chip">발행 2</span><span class="chip">큐 2</span><span class="chip">커밋 4</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>F4-14</td><td>국립공원 탐방로예약제 신청 방법 총정리 (2026 가을 단풍 설악산 흘림골·북한산 </td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+<tr><td class='n'>2</td><td>F4-12</td><td>서울 고궁 관람료 통합관람권 창덕궁 후원 예약 방법 총정리 (2026)</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: A1-12(info) · F4-15(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-07
+<span class="chip">발행 0</span><span class="chip">큐 2</span><span class="chip">커밋 0</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<div class="note">📥 큐 적재: D1-05(info) · F4-14(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-06
+<span class="chip">발행 0</span><span class="chip">큐 1</span><span class="chip">커밋 6</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<div class="note">📥 큐 적재: F4-13(etc)</div>
+</div>
+<div class="day"><div class="dh">2026-08-05
+<span class="chip">발행 2</span><span class="chip">큐 1</span><span class="chip">커밋 0</span>
+<span class="chip">루틴 여행맛거리 · 오전브리핑</span>
+</div>
+<table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
+<tr><td class='n'>1</td><td>D2-10</td><td>노후 경유차 조기폐차 지원금 신청 방법 4등급 5등급 금액 조건 총정리 (2026년</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Discovered - currently not</span></td></tr>
+<tr><td class='n'>2</td><td>D4-07</td><td>추석 선물세트 사전예약 할인 상품권 총정리 (2026 이마트 롯데마트 8월 6일 시</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">URL is unknown to Google</span></td></tr>
+</table>
+<div class="note">📥 큐 적재: F4-12(etc)</div>
+</div>

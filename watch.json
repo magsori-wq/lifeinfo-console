@@ -982,7 +982,9 @@
    "due": "2026-08-18",
    "cmd": "python studio/blogger.py update-post --code C3-02 --dry-run   # C3-02 먼저(값 확보됨) / 나머지 5편은 공식 출처 재시도",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-17",
+   "result": "실측 재확인(08-17) 결과 6개 전부 이미 종결돼 있었다 — C3-02(라이브값 공식 6개 일치, 08-17 확인) · F4-04(kca.go.kr 일치, 08-04) · D4-01(kca.go.kr 일치, 08-04) · C4-06(기준일헤지로 표준일치) · B2-03(전제 안맞아 종결, 08-04) · F2-01(KORAIL 공식표 일치, 08-12). watch 항목이 각 배치의 기완료 기록을 반영 못 하고 낡아 있었음"
   },
   {
    "id": "chuseok-booking",
@@ -1087,7 +1089,9 @@
    "due": "2026-08-17",
    "cmd": "python -m studio.pipeline naver-draft --code B2-10 --open",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-17",
+   "result": "네이버(224381349229)·쓰레드(DcIziXCgRUv) 게시완료, 교차링크 라이브반영 확인. 인스타는 인스타세션이 이미 완료(DcEwbLHE8S1)"
   },
   {
    "id": "concurrent-commit-guard",
