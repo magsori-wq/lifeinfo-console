@@ -174,7 +174,16 @@
           <div style="height:10px;background:#232c44;border-radius:8px;overflow:hidden;margin:8px 0 12px">
             <div id="mtPlanBar" style="height:100%;width:0;background:linear-gradient(90deg,#4D9DE0,#3ddc97);transition:width .3s"></div>
           </div>
-          <div id="mtPlanList"></div>
+          <div id="mtPlanBadges" style="margin:0 0 10px"></div>
+          <div id="mtPlanCols" style="display:grid;grid-template-columns:1.15fr .85fr;gap:14px">
+            <div><div class="mtcolh">남은 일 <span id="mtLeftN"></span></div><div id="mtPlanList"></div></div>
+            <div><div class="mtcolh">완료 <span id="mtDoneN"></span></div><div id="mtPlanDone"></div></div>
+          </div>
+          <style>
+          .mtcolh{font-size:13px;font-weight:700;opacity:.75;border-bottom:1px solid #2a3a5e;padding:0 0 6px;margin:0 0 8px}
+          .mtown{font-size:12px;font-weight:700;margin:10px 0 4px;letter-spacing:.2px}
+          @media(max-width:900px){#mtPlanCols{grid-template-columns:1fr}}
+          </style>
         </div>
         <div id="mtCount" class="mt-count"></div>
         <div id="mtList"></div>
@@ -492,22 +501,49 @@
       document.getElementById('mtPlanWrap').style.display='';
       document.getElementById('mtPlanPct').textContent=done+' / '+its.length+' ('+pct+'%)';
       document.getElementById('mtPlanBar').style.width=pct+'%';
-      document.getElementById('mtPlanList').innerHTML=its.map(function(x){
-        var o=ownerOf(x.title), fin=(x.state==='done'||x.state==='skip');
-        var ico=fin?'✅':(x.state==='doing'?'🔄':(x.state==='blocked'?'🚫':'⬜'));
+      var open=its.filter(function(x){return x.state!=='done'&&x.state!=='skip';});
+      var fin =its.filter(function(x){return x.state==='done'||x.state==='skip';});
+      document.getElementById('mtLeftN').textContent='('+open.length+')';
+      document.getElementById('mtDoneN').textContent='('+fin.length+')';
+      // 담당별 배지 — 누구에게 몇 건 남았는지 한 줄로
+      var cnt={};
+      open.forEach(function(x){var o=ownerOf(x.title);cnt[o[0]]=(cnt[o[0]]||0)+1;});
+      document.getElementById('mtPlanBadges').innerHTML=Object.keys(cnt).map(function(k){
+        var col=(Object.keys(OWN).map(function(z){return OWN[z];}).filter(function(v){return v[0]===k;})[0]||['','#7b8aa8'])[1];
+        return '<span style="display:inline-block;margin:0 6px 0 0;font-size:12px;font-weight:700;color:'+col
+          +';border:1px solid '+col+'55;background:'+col+'12;border-radius:20px;padding:2px 10px">'+esc(k)+' '+cnt[k]+'</span>';
+      }).join('')||'<span style="opacity:.5;font-size:12px">남은 일 없음 🎉</span>';
+      // 좌: 담당별로 묶어 — 사장님이 맨 위(내 것부터 보인다)
+      var ORD=['🙋 사장님','이과장','인스타 세션','관제탑','기타'], html='';
+      ORD.forEach(function(name){
+        var g=open.filter(function(x){return ownerOf(x.title)[0]===name;});
+        if(!g.length) return;
+        var col=ownerOf(g[0].title)[1];
+        html+='<div class="mtown" style="color:'+col+'">'+esc(name)+' · '+g.length+'</div>';
+        html+=g.map(function(x){
+          var ico=x.state==='doing'?'🔄':(x.state==='blocked'?'🚫':'⬜');
+          var t=esc(String(x.title||'').split(']').slice(1).join(']').trim()||x.title||'');
+          return '<div class="mtrow" style="border-left:3px solid '+col+';padding:7px 10px;margin:0 0 5px;'
+            +'border-radius:8px;background:#16203a;'+(x.state==='blocked'?'opacity:.55;':'cursor:pointer;')+'" '
+            +(x.state==='blocked'?'':'onclick="mtCopyDone(''+bid+'',''+esc(x.code)+'',this)"')+'>'
+            +'<span style="margin-right:5px">'+ico+'</span><b>'+circ(x.code)+'</b> '+t
+            +(x.note?'<div style="font-size:11.5px;opacity:.55;margin-top:3px;line-height:1.45">'+esc(String(x.note).slice(0,120))+'</div>':'')
+            +'<div class="mtpmsg" style="font-size:12px;color:#3ddc97;margin-top:3px"></div></div>';
+        }).join('');
+      });
+      document.getElementById('mtPlanList').innerHTML=html||'<div class="mtempty">🎉 남은 일 없음</div>';
+      // 우: 완료 — 무엇을 얻었나(note)가 핵심
+      document.getElementById('mtPlanDone').innerHTML=fin.map(function(x){
+        var o=ownerOf(x.title), sk=x.state==='skip';
         var t=esc(String(x.title||'').split(']').slice(1).join(']').trim()||x.title||'');
-        return '<div class="mtrow'+(fin?' done':'')+'" style="border-left:3px solid '+o[1]
-          +';padding:8px 10px;margin:0 0 6px;border-radius:8px;background:#16203a;'
-          +(fin?'opacity:.45;':'cursor:pointer;')+'" '
-          +(fin?'':'onclick="mtCopyDone(\''+bid+'\',\''+esc(x.code)+'\',this)"')+'>'
-          +'<span style="font-size:15px;margin-right:6px">'+ico+'</span>'
-          +'<b style="font-size:15px">'+circ(x.code)+'</b> '
-          +'<span style="font-size:11px;color:'+o[1]+';font-weight:700">'+o[0]+'</span> '
-          +'<span'+(fin?' style="text-decoration:line-through"':'')+'>'+t+'</span>'
-          +(x.note?'<div style="font-size:12px;opacity:.6;margin-top:3px">'+esc(String(x.note).slice(0,150))+'</div>':'')
-          +'<div class="mtpmsg" style="font-size:12px;color:#3ddc97;margin-top:3px"></div>'
+        return '<div style="border-left:3px solid '+(sk?'#7b8aa8':'#3ddc97')+';padding:7px 10px;margin:0 0 5px;'
+          +'border-radius:8px;background:#141d33;opacity:.9">'
+          +'<span style="margin-right:5px">'+(sk?'⏭️':'✅')+'</span><b>'+circ(x.code)+'</b> '
+          +'<span style="text-decoration:line-through;opacity:.65">'+t+'</span>'
+          +'<span style="font-size:11px;color:'+o[1]+';margin-left:6px">'+esc(o[0])+'</span>'
+          +(x.note?'<div style="font-size:11.5px;opacity:.6;margin-top:3px;line-height:1.45">'+esc(String(x.note).slice(0,140))+'</div>':'')
           +'</div>';
-      }).join('');
+      }).join('')||'<div class="mtempty">아직 지운 것이 없습니다</div>';
     }).catch(function(){});
   })();
 
