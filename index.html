@@ -158,6 +158,23 @@
       <div class="d-wrap">
         <h2>🙋 내가 할 일</h2>
         <p class="sub">watch.json 에서 사용자(owner=user) 몫으로 등록된 미완료 항목입니다. 체크는 이 브라우저에만 저장됩니다(안 사라짐 방지) — 실제 완료 처리는 <code>watch.py done</code> 이 유일한 진실원입니다.</p>
+        <!-- 🗓️ 오늘 진행 계획 (2026-08-17 사용자 지시 "내가 할일 탭에 프로그레스처럼 보여줘,
+             체크하면서 진행할 수 있도록"). 진실원 = batch.json 의 today<MMDD> 배치.
+             🔴 체크박스는 화면 표시일 뿐이다 — 정적 페이지는 batch.json 에 쓸 수 없다.
+             그래서 클릭하면 완료 처리 **명령을 클립보드에 복사**한다. 그걸 터미널에 붙이면
+             데이터가 바뀌고 다음 새로고침에 항목이 사라진다. (localStorage 체크만 남기면
+             데이터와 갈라진다 — 색인관리 체크박스에서 이미 겪은 실패다.) -->
+        <div id="mtPlanWrap" style="display:none;margin:0 0 22px">
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+            <h3 style="margin:0;font-size:16px">🗓️ 오늘 진행 계획</h3>
+            <span id="mtPlanPct" style="font-size:13px;opacity:.75"></span>
+            <span style="font-size:12px;opacity:.55">클릭 = 완료 명령 복사 → 터미널에 붙여넣기</span>
+          </div>
+          <div style="height:10px;background:#232c44;border-radius:8px;overflow:hidden;margin:8px 0 12px">
+            <div id="mtPlanBar" style="height:100%;width:0;background:linear-gradient(90deg,#4D9DE0,#3ddc97);transition:width .3s"></div>
+          </div>
+          <div id="mtPlanList"></div>
+        </div>
         <div id="mtCount" class="mt-count"></div>
         <div id="mtList"></div>
       </div>
@@ -447,6 +464,47 @@
     fetch('watch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
       .then(function(j){render(j&&j.items);})
       .catch(function(){document.getElementById('mtList').innerHTML='<div class="mtempty">불러오기 실패</div>';});
+
+    /* 🗓️ 오늘 진행 계획 — batch.json 의 today<MMDD>. 진행바 + 담당별 색.
+       체크박스가 아니라 '완료 명령 복사' 다. 정적 페이지는 데이터를 못 고치므로,
+       고칠 수 있는 곳(터미널)으로 넘겨준다. */
+    var OWN={'[사장님]':['🙋 사장님','#3ddc97'],'[이과장]':['이과장','#4D9DE0'],
+             '[인스타':['인스타 세션','#e08b1e'],'[관제탑]':['관제탑','#9b8cf5']};
+    function ownerOf(t){for(var k in OWN){if((t||'').indexOf(k)===0)return OWN[k];}return ['기타','#7b8aa8'];}
+    var CIRC='⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮';
+    function circ(c){var n=parseInt(c,10);return (n>=0&&n<CIRC.length)?CIRC[n]:c;}
+    window.mtCopyDone=function(bid,code,el){
+      var cmd='python -m studio.batchboard mark --id '+bid+' --code '+code+' --state done --note "<실측>"';
+      (navigator.clipboard?navigator.clipboard.writeText(cmd):Promise.reject()).then(function(){
+        el.dataset.msg='📋 복사됨 — 터미널에 붙여넣기';
+      },function(){ window.prompt('아래를 복사해 터미널에 붙여넣으세요', cmd); });
+      var b=el.querySelector('.mtpmsg'); if(b){b.textContent='📋 복사됨 — 터미널에 붙여넣고 새로고침';}
+    };
+    var td=new Date(), bid='today'+String(td.getMonth()+1).padStart(2,'0')+String(td.getDate()).padStart(2,'0');
+    fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){
+      var b=j&&j.batches&&j.batches[bid]; if(!b||!b.items||!b.items.length) return;
+      var its=b.items, done=its.filter(function(x){return x.state==='done'||x.state==='skip';}).length;
+      var pct=Math.round(100*done/its.length);
+      document.getElementById('mtPlanWrap').style.display='';
+      document.getElementById('mtPlanPct').textContent=done+' / '+its.length+' ('+pct+'%)';
+      document.getElementById('mtPlanBar').style.width=pct+'%';
+      document.getElementById('mtPlanList').innerHTML=its.map(function(x){
+        var o=ownerOf(x.title), fin=(x.state==='done'||x.state==='skip');
+        var ico=fin?'✅':(x.state==='doing'?'🔄':(x.state==='blocked'?'🚫':'⬜'));
+        var t=esc(String(x.title||'').split(']').slice(1).join(']').trim()||x.title||'');
+        return '<div class="mtrow'+(fin?' done':'')+'" style="border-left:3px solid '+o[1]
+          +';padding:8px 10px;margin:0 0 6px;border-radius:8px;background:#16203a;'
+          +(fin?'opacity:.45;':'cursor:pointer;')+'" '
+          +(fin?'':'onclick="mtCopyDone(\''+bid+'\',\''+esc(x.code)+'\',this)"')+'>'
+          +'<span style="font-size:15px;margin-right:6px">'+ico+'</span>'
+          +'<b style="font-size:15px">'+circ(x.code)+'</b> '
+          +'<span style="font-size:11px;color:'+o[1]+';font-weight:700">'+o[0]+'</span> '
+          +'<span'+(fin?' style="text-decoration:line-through"':'')+'>'+t+'</span>'
+          +(x.note?'<div style="font-size:12px;opacity:.6;margin-top:3px">'+esc(String(x.note).slice(0,150))+'</div>':'')
+          +'<div class="mtpmsg" style="font-size:12px;color:#3ddc97;margin-top:3px"></div>'
+          +'</div>';
+      }).join('');
+    }).catch(function(){});
   })();
 
   /* ---------- 🗺️ 네비게이터 (LIFEINFO_메커니즘_플로우차트.md 의 화면 구현) ---------- */
