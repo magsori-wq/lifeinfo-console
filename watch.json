@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-16",
+ "updated": "2026-08-17",
  "items": [
   {
    "id": "redirect-error",
@@ -60,7 +60,7 @@
    "state": "todo",
    "flag": "새 수치를 만들지 않는다. 공식 확인이 된 글만 앞으로 올린다",
    "note": 89,
-   "due": "2026-08-15",
+   "due": "2026-08-19",
    "cmd": "python -m studio.note list"
   },
   {
@@ -115,10 +115,10 @@
    "cmd": "python -m studio.crawl_watch --limit 25",
    "owner": "claude",
    "state": "wait",
-   "flag": "야간 루틴 0단계 자동 실행. 🆕크롤 변화가 뜨면 카톡 보고에 옮긴다. 재요청은 하지 않는다. | 2026-08-06 실행: 25편 중 크롤 0편, 상태 이동 6건(전진 2·후퇴 4). 어제 역행한 D4-04 가 오늘 복귀 = flapping 계속. 개별 코드의 하루치 이동으로 원인을 읽지 말 것. | 2026-08-07 확인할 것: D2-10·D4-07 (8/06 색인요청한 신규 2편)에 lastCrawl 이 찍혔는가. 실험 5편은 요청 당일 100% 크롤됐으나 그건 기존 글이었다 — 신규 글도 같은지는 아직 모른다. 실측 전까지 단정 금지. | 2026-08-09 실행: 25편 중 크롤 0편. 상태 이동 8건(전진 7 = unknown→discovered · 후퇴 1 = E2-08). 대기 172편 · 미크롤 32편. 신규 3편(D1-05·F4-12·F4-14)은 전부 Discovered-not indexed = 발견은 됐고 크롤 대기. | 2026-08-12 실행: 25편 중 크롤 0편, 상태이동 7건(전진6=unknown->discovered: E1-02,B2-08,D4-04,D4-05,F4-08,A2-11 / 후퇴1=discovered->unknown: D4-07). 대기181 미크롤32. | 2026-08-13 실행: 25편 중 크롤 0편, 상태이동 8건(전진4=unknown->discovered: A4-05,F2-10,B2-09,F4-07 / 후퇴4=discovered->unknown: D4-04,C1-13,A1-10,F2-11). 대기184 미크롤32. 여전히 신규 크롤 0 — flapping만 계속, 순증가 없음. | 2026-08-15 실행: 25편 중 크롤 0편, 상태이동 6건(전진1·후퇴5). 대기184 미크롤32. flapping 계속, 순증가 없음.",
+   "flag": "야간 루틴 0단계 자동 실행. 🆕크롤 변화가 뜨면 카톡 보고에 옮긴다. 재요청은 하지 않는다. | 2026-08-06 실행: 25편 중 크롤 0편, 상태 이동 6건(전진 2·후퇴 4). 어제 역행한 D4-04 가 오늘 복귀 = flapping 계속. 개별 코드의 하루치 이동으로 원인을 읽지 말 것. | 2026-08-07 확인할 것: D2-10·D4-07 (8/06 색인요청한 신규 2편)에 lastCrawl 이 찍혔는가. 실험 5편은 요청 당일 100% 크롤됐으나 그건 기존 글이었다 — 신규 글도 같은지는 아직 모른다. 실측 전까지 단정 금지. | 2026-08-09 실행: 25편 중 크롤 0편. 상태 이동 8건(전진 7 = unknown→discovered · 후퇴 1 = E2-08). 대기 172편 · 미크롤 32편. 신규 3편(D1-05·F4-12·F4-14)은 전부 Discovered-not indexed = 발견은 됐고 크롤 대기. | 2026-08-12 실행: 25편 중 크롤 0편, 상태이동 7건(전진6=unknown->discovered: E1-02,B2-08,D4-04,D4-05,F4-08,A2-11 / 후퇴1=discovered->unknown: D4-07). 대기181 미크롤32. | 2026-08-13 실행: 25편 중 크롤 0편, 상태이동 8건(전진4=unknown->discovered: A4-05,F2-10,B2-09,F4-07 / 후퇴4=discovered->unknown: D4-04,C1-13,A1-10,F2-11). 대기184 미크롤32. 여전히 신규 크롤 0 — flapping만 계속, 순증가 없음. | 2026-08-15 실행: 25편 중 크롤 0편, 상태이동 6건(전진1·후퇴5). 대기184 미크롤32. flapping 계속, 순증가 없음. | 2026-08-17 실행: 25편 중 크롤 0편. 상태이동 11건(전진4=A4-05,C1-13,A1-10,A2-07 · 후퇴7). 대기185 미크롤32. 크롤 순증가 0 — 회차를 거듭해도 flapping만 반복, 추세 없음.",
    "done_at": "2026-08-15",
    "result": "2026-08-15 실행: 25편 중 크롤 0편, 상태이동 6건(전진1=unknown->discovered: C1-12 / 후퇴5=discovered->unknown: F1-08,E1-02,F4-08,F4-07,B4-06). 대기184 미크롤32. 순증가 없음.",
-   "due": "2026-08-16",
+   "due": "2026-08-18",
    "note": 72
   },
   {
@@ -341,7 +341,7 @@
    "id": "bodydup-dblag",
    "added": "2026-08-08",
    "what": "🐛 bodydup 이 '발행 직후 ~ register_post 전' 창에서 거짓 [차단]을 낸다 — 자기 코드를 DB 에서 못 찾아 자기 자신과 비교한다(2026-08-08 F4-12 실측: 차단 → 몇 분 뒤 같은 명령이 🟢 0.051). fail-closed 게이트라 사람이 정당한 발행을 되돌릴 위험. 처방 후보 ①라이브 URL 로 자기 글 식별 ②DB 미등록 시 '발행 직후일 수 있음' 안내로 문구 변경.",
-   "due": "2026-08-16",
+   "due": "2026-08-20",
    "cmd": "python -m studio.bodydup --file 서울고궁관람_글_HTML.txt --code F4-12 --live",
    "owner": "claude",
    "state": "todo",
@@ -734,7 +734,9 @@
    "due": "2026-08-16",
    "cmd": "python -m studio.seodesc scan --only D4-08 C2-06 후 python -m studio.reindex 로 두 코드 상태 확인",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "실측 완료 — D4-08·C2-06 둘 다: 검색설명 state=ok(반영), OSMU 3채널(네이버/쓰레드/인스타) 전부 기록됨, 라이브 본문에 교차링크박스 확인(WebFetch), gsc_requested.json에 URL 등재됨(색인요청 완료). pending.json actionable 14건에도 미포함. 후속 조치 불필요."
   },
   {
    "id": "thread-realphoto-d408c206",
@@ -856,7 +858,9 @@
    "due": "2026-08-15",
    "cmd": "python -m studio.dupcheck \"노인장기요양 등급 신청 방법 판정 절차 등급별 혜택 총정리\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-16",
+   "result": "재현 확인: '노인장기요양 등급 신청 방법 판정 절차 등급별 혜택 총정리' -> dupcheck 🟢신규, 그러나 DB에 C3-02(노인장기요양보험 등급 신청 방법 본인부담금 총정리) 기존. 핵심명사(장기요양+등급+신청) grep 병행 필요함을 재확인."
   },
   {
    "id": "commit-drafts-f417-d106",
@@ -1135,6 +1139,51 @@
    "state": "done",
    "done_at": "2026-08-16",
    "result": "완료(2026-08-16): 5/5 경로 그대로 복원 실측 확인. 스냅샷 5분 주기 + 홈창 가드도 작동. 남은 트레이드오프는 WindowHook off 로 인한 '탭 대신 창' 뿐이며, 탭 병합이 더 중요하면 WindowHook 을 되돌리고 복원 정확도를 포기하는 선택이 있다."
+  },
+  {
+   "id": "etu-restore-settled",
+   "added": "2026-08-16",
+   "what": "ETU 폴더복원 — 현재값으로 관찰 중(확정 아님). 설정: Gap=150·Settle=700·예열1200 / ETU WindowHook=False·ReuseTabs=False. 🔴결과가 재현되지 않았다: 사용자 실사용 1회 5/5 · 관제탑 콜드시험 3회는 3~4/5(홈 2~3개). 나는 이 차이를 '내 반복시험이 ETU를 오염시켰다'로 설명했으나 **미측정 가설**이다 — 결론에 맞는 1건만 채택한 것일 수 있다. → 다음 판정은 **사용자 평상시 사용**에서 나온다. 관제탑이 다시 시험해서 재지 말 것. 포기한 것: insta·thumbs_naver 탭 순서(Gap 400 으로 맞추려다 4/5 로 깨짐). 경위=tools/pc/README.md",
+   "due": "2026-08-23",
+   "cmd": "type C:\\lifeinfo\\tools\\pc\\README.md   # 재시도 전 필독. 사용자가 '또 홈이 뜬다'고 하면 그때 재개",
+   "owner": "user",
+   "state": "wait"
+  },
+  {
+   "id": "pc-perf-unresolved",
+   "added": "2026-08-16",
+   "what": "PC 체감 성능(화면 버벅임·브라우저 로딩 지연) — 원인 미규명. 🔴2026-08-16 에 내가 세 가지를 권고했다가 전부 근거 부족으로 철회했다: ①iGPU 드라이버 노후(메모리에 '무혐의·닫힌 경로'라 적혀 있었음) ②NVIDIA 디스플레이 컨테이너(커널 드라이버 nvlddmkm 은 별개로 Running, MX250 에 물린 화면 0대) ③전원계획(콘센트 시 CPU 최대 100%로 이미 안 눌림). 유일하게 안 깨진 후보는 esifsvc(Intel Dynamic Tuning, 현재 Disabled)이나 **아직 측정 안 함**. ⛔재조사 전 필독: memory escalation-trap-pc-issues(앱→성능→GPU→안전부팅 번짐 경로, 07-26 에 이 끝에서 화면 상실) · pc-freeze-diagnosis. ⛔안전모드·bcdedit·드라이버 제거/롤백·GPU 비활성화 절대 금지. 사용자가 먼저 요청할 때만 착수.",
+   "due": "2026-09-30",
+   "cmd": "먼저 memory escalation-trap-pc-issues 를 읽고, 측정 없이는 권고하지 말 것",
+   "owner": "user",
+   "state": "blocked"
+  },
+  {
+   "id": "perf-log-review",
+   "added": "2026-08-16",
+   "what": "PC 버벅임 — 로그 수집 후 통계 분석 (2026-08-16 사용자 합의: '며칠 지켜보고 통계를 내어 처리방안을 연구하자'). 수집 중: perf_watch 5분 주기 자동 샘플 + 사용자가 버벅일 때 바탕화면 '지금느림.bat'. 🔴판정의 핵심은 자동샘플이 아니라 **사용자가 찍은 증상 건수**다 — 증상 기록이 0건이면 비교 대상이 없어 아무것도 못 가린다. 5건 이상 쌓이면 분석. 08-16 초기값(증상 1건, 표본 얕음): 페이징 16.8→105 · GPU 3→8.7 이 튐(둘 다 🔴). CPU 8.7→12.4(🟡). 대기스레드·디스크·메모리는 변화 없음 → CPU/디스크 병목은 아닐 가능성. ⛔분석 전 필독: memory escalation-trap-pc-issues(앱→성능→GPU→안전부팅 번짐, 07-26 에 화면 상실) · 측정 없이 권고 금지.",
+   "due": "2026-08-20",
+   "cmd": "powershell -File C:\\Users\\magso\\tools\\perf_report.ps1   # 증상 5건 미만이면 며칠 더 모을 것",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "skill-upload-0817",
+   "added": "2026-08-17",
+   "what": "계정 스킬 lifeinfo-blog 재업로드 — 발행 상한 5편(옛값)이 적혀 있던 것을 2편으로 고치고 AdSense 반려 상태를 갱신했다. Desktop 이 읽는 사본은 아직 08-03 판이라 업로드 전까지 옛 상한을 배운다(라이브 발행 클릭을 하는 표면이 바로 그것). Claude Desktop 설정 > 스킬 에서 lifeinfo-blog 삭제 후 C:\\lifeinfo\\lifeinfo-blog.skill 업로드(설정창이 .skill 을 안 받으면 lifeinfo-blog.zip). 업로드 후 목록에 lifeinfo-blog 가 1개인지 확인. ⚠️ 업로드 직후엔 selfcheck 가 여전히 '내용일치 아니오'일 수 있다 — Desktop 동기본은 앱 세션이 돌 때 갱신되는 것으로 보인다. 업로드 → Desktop 세션 한 번 열기 → 재실행 순서로 확인하고, 그래도 아니오면 실패로 단정하지 말고 selfcheck 가 찍어주는 동기본 경로의 수정시각을 볼 것.",
+   "due": "2026-08-18",
+   "cmd": "python studio/selfcheck.py   # 9) 스킬 동기 가 '내용일치 예 ✅' 로 바뀌면 완료",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "skill-resync",
+   "added": "2026-08-17",
+   "what": "계정 스킬 lifeinfo-blog 교체 — Desktop 이 읽는 사본이 발행 상한을 5로 가르치고 있다(코드·원본은 2). 패키지는 2026-08-17 재생성 완료(C:\\lifeinfo\\lifeinfo-blog.skill). 남은 것은 교체 클릭뿐: Claude Desktop 설정 > 스킬 에서 lifeinfo-blog 삭제 후 그 파일 업로드. 설정창이 .skill 을 안 받으면 lifeinfo-blog.zip. 업로드 후 목록에 lifeinfo-blog 가 1개인지 확인(삭제 없이 추가하면 낡은 것이 남는다)",
+   "due": "2026-08-18",
+   "cmd": "python studio/selfcheck.py  # 9) 스킬 동기 가 '동기본 어긋남 0' 이면 완료",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
