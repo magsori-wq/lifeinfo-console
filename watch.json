@@ -1386,10 +1386,21 @@
    "id": "naver-verify-meta",
    "added": "2026-08-18",
    "what": "네이버 사이트 소유확인 메타태그(db8b4ab701d9cf8a2067b26ef1c2910dd2bfaee1) 를 Blogger 테마 head 에 넣어야 한다. 삽입은 성공하나 저장이 'The widget settings in widget with id AdSense1 is not valid' 로 거부됨. 🔴수정 없는 원본 테마로도 같은 오류 = 내 편집 탓이 아니라 Blogger 쪽 AdSense 위젯 문제. 해소 방법 = 레이아웃에서 AdSense 위젯 재저장 또는 위젯 임시 제거 후 테마 저장 → 재추가. 광고 설정 접촉이라 사장님 승인 필요",
-   "due": "2026-08-19",
+   "due": "2026-08-18",
    "cmd": "curl -sSL https://lifeinfo8975.blogspot.com/ | grep -o naver-site-verification",
    "owner": "user",
-   "state": "blocked"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "B안 완료(2026-08-18 11:2x). 테마에서 AdSense1·AdSense2 위젯 블록 제거(위젯 15→13, 태그 균형 유지, 2620자 삭제) + head 에 네이버 메타태그 삽입(94자) → 저장 성공(오류 없음). 라이브 실측: 홈·글페이지 모두 <meta content='db8b4ab701d9cf8a2067b26ef1c2910dd2bfaee1' name='naver-site-verification'/> 확인. 애드센스 스크립트(adsbygoogle.js)는 블로그 설정 레벨이라 그대로 유지됨. 남은 것 = 네이버 서치어드바이저에서 '소유확인' 버튼 클릭(사장님 손 — searchadvisor.naver.com 은 자동화 접근 차단)"
+  },
+  {
+   "id": "adsense-widget-restore",
+   "added": "2026-08-18",
+   "what": "애드센스 승인되면 광고 가젯 2개 복구 — 2026-08-18 네이버 소유확인을 위해 테마에서 AdSense1·AdSense2 위젯을 제거했다(당시 미승인이라 광고 미게재, 실손실 0). 복구 = Blogger 레이아웃 → '광고' 섹션 → 가젯 추가 → 애드센스, 본문 상단·하단 2곳",
+   "due": "2026-09-30",
+   "cmd": "python studio/adsense.py status",
+   "owner": "claude",
+   "state": "wait"
   }
  ]
 }
