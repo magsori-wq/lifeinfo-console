@@ -1381,6 +1381,15 @@
    "cmd": "python -m studio.selfcheck",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "naver-verify-meta",
+   "added": "2026-08-18",
+   "what": "네이버 사이트 소유확인 메타태그(db8b4ab701d9cf8a2067b26ef1c2910dd2bfaee1) 를 Blogger 테마 head 에 넣어야 한다. 삽입은 성공하나 저장이 'The widget settings in widget with id AdSense1 is not valid' 로 거부됨. 🔴수정 없는 원본 테마로도 같은 오류 = 내 편집 탓이 아니라 Blogger 쪽 AdSense 위젯 문제. 해소 방법 = 레이아웃에서 AdSense 위젯 재저장 또는 위젯 임시 제거 후 테마 저장 → 재추가. 광고 설정 접촉이라 사장님 승인 필요",
+   "due": "2026-08-19",
+   "cmd": "curl -sSL https://lifeinfo8975.blogspot.com/ | grep -o naver-site-verification",
+   "owner": "user",
+   "state": "blocked"
   }
  ]
 }
