@@ -1372,6 +1372,15 @@
    "cmd": "https://www.google.com/search?q=site%3Ablog.naver.com%2Fmagsori8975",
    "owner": "claude",
    "state": "wait"
+  },
+  {
+   "id": "account-skill-reupload",
+   "added": "2026-08-18",
+   "what": "계정 스킬 lifeinfo-blog 재업로드 — 저장소 사본(lifeinfo-blog/SKILL.md)의 '검색설명은 유일하게 사람이 붙여넣기' 문장을 2026-08-18 에 교정했으나 claude.ai 계정 쪽은 Claude 가 못 고친다. 재업로드 전까지 Desktop 세션은 계속 틀린 것을 배운다",
+   "due": "2026-08-19",
+   "cmd": "python -m studio.selfcheck",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
