@@ -1323,6 +1323,55 @@
    "cmd": "curl -sS -o /dev/null -w '%{http_code}\\n' -L https://lifeinfo8975.blogspot.com/2026/07/2026-160.html",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "adsense-gate-backlink",
+   "added": "2026-08-18",
+   "what": "재검토 게이트 ① 외부 링크 ≥1 (현재 0) — GSC 링크 보고서. 외부링크 0 이 '가치 없는 콘텐츠' 판정의 가장 강한 근거다",
+   "due": "2026-08-21",
+   "cmd": "https://search.google.com/search-console/links?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "naver-index-rate 로 교체 — GSC 링크보고서가 미집계라 지표로 쓸 수 없음이 실측으로 확인됨"
+  },
+  {
+   "id": "adsense-gate-clicks",
+   "added": "2026-08-18",
+   "what": "재검토 게이트 ② 28일 검색 클릭 ≥20 (현재 2회/2개월) — GSC 실적",
+   "due": "2026-08-25",
+   "cmd": "https://search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "adsense-gate-indexed",
+   "added": "2026-08-18",
+   "what": "재검토 게이트 ③ 색인 생성됨 ≥60 (현재 37, 최종크롤 전부 7/13 이전)",
+   "due": "2026-08-25",
+   "cmd": "python -m studio.searchconsole inspect",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "naver-backlink-why",
+   "added": "2026-08-18",
+   "what": "A1 네이버 189편 원본링크가 왜 GSC 외부링크로 안 잡히는지 실측 — ①네이버 글이 구글에 색인돼 있나 ②링크에 nofollow 가 붙나. 결과에 따라 제3 채널 필요 여부가 갈린다",
+   "due": "2026-08-19",
+   "cmd": "python -c \"import urllib.request;print(urllib.request.urlopen('https://blog.naver.com/magsori8975').status)\"",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "실측 완료: 네이버 링크는 nofollow 아님·Googlebot 허용(robots.txt 는 Yeti/GPTBot/ClaudeBot 만 차단)·meta robots=index,follow. 네이버 글 39/196편(20%)이 구글 색인. 우리 블로그스팟 내부링크도 글당 2개 이상 실재. → GSC 링크보고서 외부0·내부0 은 '링크 없음'이 아니라 '미집계'다. 급한 것은 새 채널이 아니라 네이버 글 색인율(20%) 끌어올리기 = 얕은 원고 39편 보강."
+  },
+  {
+   "id": "naver-index-rate",
+   "added": "2026-08-18",
+   "what": "재검토 게이트 ① (교체) 네이버 글 구글 색인 39/196편(20%) → 80편 이상. 네이버 글에 blogspot dofollow 링크가 이미 걸려 있으므로, 네이버 글이 색인되면 그게 곧 외부링크다",
+   "due": "2026-08-25",
+   "cmd": "https://www.google.com/search?q=site%3Ablog.naver.com%2Fmagsori8975",
+   "owner": "claude",
+   "state": "wait"
   }
  ]
 }
