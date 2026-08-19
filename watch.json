@@ -343,7 +343,7 @@
    "id": "bodydup-dblag",
    "added": "2026-08-08",
    "what": "🐛 bodydup 이 '발행 직후 ~ register_post 전' 창에서 거짓 [차단]을 낸다 — 자기 코드를 DB 에서 못 찾아 자기 자신과 비교한다(2026-08-08 F4-12 실측: 차단 → 몇 분 뒤 같은 명령이 🟢 0.051). fail-closed 게이트라 사람이 정당한 발행을 되돌릴 위험. 처방 후보 ①라이브 URL 로 자기 글 식별 ②DB 미등록 시 '발행 직후일 수 있음' 안내로 문구 변경.",
-   "due": "2026-08-20",
+   "due": "2026-08-25",
    "cmd": "python -m studio.bodydup --file 서울고궁관람_글_HTML.txt --code F4-12 --live",
    "owner": "claude",
    "state": "todo",
@@ -729,7 +729,7 @@
    "id": "statusline-worktree-recheck",
    "added": "2026-08-13",
    "what": "표시줄(진행바)이 다시 안 보이면 → 새 세션의 워크트리에 .claude/settings.json이 또 없는 것. 즉시 재적용 명령 아래 cmd 그대로 실행하면 30초 내 복구됨",
-   "due": "2026-08-20",
+   "due": "2026-08-27",
    "cmd": "python -c \"import shutil,glob,os; [shutil.copy('C:/lifeinfo/.claude/settings.json', os.path.join(w,'.claude','settings.json')) for w in glob.glob('C:/lifeinfo/.claude/worktrees/*') if os.path.isdir(os.path.join(w,'.claude')) and not os.path.exists(os.path.join(w,'.claude','settings.json'))]; print('복구 완료')\"",
    "owner": "claude",
    "state": "wait"
@@ -902,7 +902,7 @@
    "id": "custom-url-slug",
    "added": "2026-08-14",
    "what": "맞춤 URL(영문 슬러그) — 🔴2026-08-14 실측으로 한 단계 진전: 초안(draft)으로는 검증 불가하다. Blogger 는 초안에 URL 을 안 주고(응답 url=블로그 루트) **퍼머링크를 최초 발행 시점에 제목에서 만든다**. 임시 초안 1건으로 insert→patch 를 실제로 돌려 확인했고 초안은 삭제 완료(postId 1085970539040838247). → 검증은 '다음 실제 발행'에 접어 넣는 수밖에 없다. 방식: publish-flow 가 insert(title=영문슬러그, isDraft=False) 로 발행한 직후 같은 실행 안에서 patch(title=한글제목). 실패 시 라이브에 영문 제목이 남으므로 patch 결과를 반드시 확인하고, 실패하면 즉시 재patch. 대상 후보=B2-10(발행 대기 중). 🔴계정 스킬 SKILL.md 에만 넣으면 Actions 경로가 안 읽는다 — studio/pipeline.py cmd_publish_flow 에 내려야 적용된다",
-   "due": "2026-08-19",
+   "due": "2026-08-22",
    "cmd": "결정 후: studio/pipeline.py cmd_publish_flow 에 insert(영문)→patch(한글) 2단계 반영 → B2-10 발행으로 URL 실측 → 안 되면 되돌리고 Blogger UI 수동 지정으로 대체",
    "owner": "claude",
    "state": "todo"
@@ -1188,7 +1188,7 @@
    "id": "perf-log-review",
    "added": "2026-08-16",
    "what": "PC 버벅임 — 로그 수집 후 통계 분석 (2026-08-16 사용자 합의: '며칠 지켜보고 통계를 내어 처리방안을 연구하자'). 수집 중: perf_watch 5분 주기 자동 샘플 + 사용자가 버벅일 때 바탕화면 '지금느림.bat'. 🔴판정의 핵심은 자동샘플이 아니라 **사용자가 찍은 증상 건수**다 — 증상 기록이 0건이면 비교 대상이 없어 아무것도 못 가린다. 5건 이상 쌓이면 분석. 08-16 초기값(증상 1건, 표본 얕음): 페이징 16.8→105 · GPU 3→8.7 이 튐(둘 다 🔴). CPU 8.7→12.4(🟡). 대기스레드·디스크·메모리는 변화 없음 → CPU/디스크 병목은 아닐 가능성. ⛔분석 전 필독: memory escalation-trap-pc-issues(앱→성능→GPU→안전부팅 번짐, 07-26 에 화면 상실) · 측정 없이 권고 금지.",
-   "due": "2026-08-20",
+   "due": "2026-08-23",
    "cmd": "powershell -File C:\\Users\\magso\\tools\\perf_report.ps1   # 증상 5건 미만이면 며칠 더 모을 것",
    "owner": "claude",
    "state": "wait"
@@ -1220,7 +1220,7 @@
    "id": "gh-workflow-stale-draft-bug",
    "added": "2026-08-17",
    "what": "gh workflow run 발행 트리거가 로컬 미푸시 초안 대신 origin 옛버전을 쓰는 구조적 위험 — D4-10 실제 사고(제목·도입부 옛것으로 라이브됨, update-post로 사후정정). 재발방지책 검토 필요(예: 발행 승인표에 'git status 클린' 확인 항목 추가, 또는 워크플로 자체에 대상 draft 파일 push 여부 사전검사 추가)",
-   "due": "2026-08-20",
+   "due": "2026-08-22",
    "cmd": "git log --oneline -5 -- studio/pipeline.py .github/workflows/publish.yml",
    "owner": "claude",
    "state": "todo"
@@ -1818,6 +1818,15 @@
    "owner": "claude",
    "state": "todo",
    "note": 145
+  },
+  {
+   "id": "draft-link-rot-0820",
+   "added": "2026-08-20",
+   "what": "OSMU 원고 3개가 DB에 없는 원본 URL을 가리킨다(재발행으로 permalink 변경) — selfcheck 6b) 실측. 대상: 네이버초안_E2-06.txt·네이버초안_F1-06.txt·네이버초안_G4-02.txt. 조치 ①로컬 원고 파일의 원본링크를 현재 URL로 교체 ②이미 게시된 네이버·쓰레드 글이면 그 라이브 본문도 사람이 직접 고쳐야 함(네이버는 API 없음).",
+   "due": "2026-08-22",
+   "cmd": "python studio/selfcheck.py | grep -A5 '6b)'",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }
