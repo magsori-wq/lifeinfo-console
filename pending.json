@@ -1,15 +1,31 @@
 {
- "rev": "8dcbd6f",
+ "rev": "f6cc6b5",
  "counts": {
-  "total": 196,
+  "total": 197,
   "osmu_done": 196,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 2,
-  "index_pending": 194,
+  "index_pending": 195,
   "index_requested": 186,
-  "index_todo": 8
+  "index_todo": 9
  },
  "actionable": [
+  {
+   "code": "B4-08",
+   "title": "종합부동산세 합산배제 부부 공동명의 1주택 특례 신청 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "B2-10",
    "title": "학자금대출 신청 방법 취업 후 상환 일반 상환 차이 생",
@@ -193,21 +209,6 @@
   {
    "code": "A1-06",
    "title": "국민내일배움카드 신청 방법 발급 자격 지원금액 총정리 ",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-07",
-   "title": "상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2",
    "need": [
     "색인대기"
    ],
