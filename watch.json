@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-18",
+ "updated": "2026-08-20",
  "items": [
   {
    "id": "redirect-error",
@@ -636,7 +636,9 @@
    "due": "2026-08-19",
    "cmd": "cat ~/.claude/scheduled-tasks/daily-email-briefing/SKILL.md 열어 [출력] 섹션에 애드센스 고정줄 추가",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-19",
+   "result": "반영 완료 — daily-email-briefing SKILL.md 에 '0. 애드센스 상태 고정줄'(adsense.py status 실행 후 출력 그대로) + 출력 형식 첫 줄에 '📌 애드센스:' 추가. '이 세션에서 직접 못 고침'은 틀린 전제였다 — ~/.claude/scheduled-tasks 는 편집 가능하다"
   },
   {
    "id": "a201-pilot-effect",
@@ -770,7 +772,9 @@
    "due": "2026-08-18",
    "cmd": "AdSense 콘솔 사이트 상세에서 검토 요청 버튼 확인 (사용자 판단으로 클릭)",
    "owner": "user",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 오후 실측으로 전제 무효. 위 adsense-recheck-0818 과 동일 사유 — 누를 버튼이 없다."
   },
   {
    "id": "gsc-recheck-0813b",
@@ -821,7 +825,9 @@
    "due": "2026-08-21",
    "cmd": "grep -n '상한 5\\|6편째' C:/lifeinfo/lifeinfo-blog/SKILL.md",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 교체 완료·화면 실측 검증(skill-resync 와 중복 항목이었음). 계정 스킬 본문에서 확인: 검색설명='Claude 가 직접 주입(사람에게 넘기지 말 것)' ✅ · 발행 상한 2편 ✅ · 목록에 lifeinfo-blog 1개 ✅"
   },
   {
    "id": "publish-d409-0814",
@@ -881,11 +887,12 @@
   {
    "id": "naver-searchadvisor",
    "added": "2026-08-14",
-   "what": "네이버 서치어드바이저 등록 — 🔴🔴2026-08-14 전수 실측 끝에 '애드센스 승인 전에는 불가능' 확정. 연쇄: 애드센스 사이트 반려(NEEDS_ATTENTION) → 블로거가 AdSense1 위젯을 서버검증 못 함 → **테마 저장 자체가 막힘** → 블로그 구조 변경(메타태그·새 위젯)이 전부 불가. 시도·결과: ①편집기 삽입+저장=AdSense1 not valid ②위젯 settings 블록만 비우고 저장=동일오류(XML 문제 아님) ③위젯 제거 후 복원='복원할 수 없습니다'(테마가 data:widgets.AdSense 를 7곳에서 참조) ④레이아웃 HTML 가젯=레이아웃엔 저장되나 라이브 렌더링 안 됨(새 위젯을 테마에 못 씀). 블로거 수익탭 원문: '귀하의 블로그가 광고를 게재할 준비가 되어있지 않으며 주의가 필요합니다'. 소유확인 태그 값은 아래 보관. 준비된 파일=C:\\Users\\magso\\Downloads\\BBB_이것을선택.xml(원본+태그), 원본백업=C:\\lifeinfo\\backup\\theme_원본_2026-08-14.xml",
+   "what": "네이버 서치어드바이저 등록·소유확인 — ✅이미 완료돼 있었다(26.06.22 등록, 2026-08-18 캡처 실측). 08-18 오전에 소유확인 메타태그 넣겠다고 테마에서 AdSense 위젯 2개를 제거한 작업은 불필요했던 일이다(라이브 손상 0·미승인이라 실손실 0, 복구는 adsense-widget-restore). 실제 문제는 등록이 아니라 사이트맵·RSS 미제출이었다 → naver-sitemap-submit 으로 이관.",
    "due": "2026-08-19",
-   "cmd": "선행조건: 애드센스 승인(08-18 재검토). 승인 후 → 테마>HTML편집에서 <head> 아래 <meta content='db8b4ab701d9cf8a2067b26ef1c2910dd2bfaee1' name='naver-site-verification'/> 삽입·저장 → curl -s https://lifeinfo8975.blogspot.com/ | grep -c naver-site-verification (1이면 성공) → 서치어드바이저에서 소유확인",
+   "cmd": "searchadvisor.naver.com > 사이트관리 > lifeinfo8975.blogspot.com 클릭 → '요청>사이트맵 제출'과 '검증>웹페이지 최적화' 화면 캡처 (캡처는 C:\\ProgramData\\Windows Master Store\\Circle to Act 에 저장됨)",
    "owner": "claude",
-   "state": "blocked"
+   "state": "done",
+   "flag": "등록·소유확인은 이미 완료. 테마를 다시 손대지 말 것"
   },
   {
    "id": "custom-url-slug",
@@ -903,7 +910,9 @@
    "due": "2026-08-18",
    "cmd": "AdSense > 사이트 > lifeinfo8975.blogspot.com > '문제를 수정했음을 확인합니다' 체크 > 검토 요청  (넣기 전 python studio/adsense.py status 로 상태 재확인)",
    "owner": "user",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 오후 실측으로 전제 무효 판정. 애드센스 사이트 상세에 재검토 요청 버튼·체크박스가 존재하지 않는다(조작요소 전수 열거: 사이트삭제/지금해결하기/안내링크뿐). '08-18부터 요청 가능' 문구는 그대로 떠 있으나 버튼이 없고, 시차도 아니다(PT 기준으로도 이미 08-18). 사이트가 'Blogger에 연결됨'이라 사용자 재검토 창구가 제공되지 않는 것으로 추정. 근거=애드센스_반려_재조사_2026-08-18_오후.md"
   },
   {
    "id": "blogger-theme-locked",
@@ -1063,7 +1072,9 @@
    "due": "2026-08-18",
    "cmd": "정부24·소관부처 공고에서 사용기한 확인 후 python studio/blogger.py update-post --code A1-02",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "mois.go.kr 공식 확인: 사용기한 2026.8.31.(월) 1·2차 동일. 라이브 본문 이미 정확 — 수정불필요"
   },
   {
    "id": "d304-insta-post",
@@ -1102,7 +1113,7 @@
    "id": "concurrent-commit-guard",
    "added": "2026-08-15",
    "what": "동시 커밋 충돌 대책 — 세션 3개(관제탑·이과장·인스타B)가 같은 저장소에 커밋하면서 2026-08-15 에 실제 사고 발생(관제탑 스테이징분이 이과장 커밋 33ca1d7 에 휩쓸림). 코드 손실은 없었으나 이력이 어긋났다. 검토안: ①커밋 직전 git status 로 남의 스테이징 확인 ②파일 소유권 명시(관제탑=studio/·세션=자기 산출물) ③또는 세션별 add 경로 강제. 경위=note 참조.",
-   "due": "2026-08-18",
+   "due": "2026-08-25",
    "cmd": "git log --oneline -20 --stat | head -40   # 휩쓸린 커밋이 또 있는지 확인",
    "owner": "claude",
    "state": "todo"
@@ -1183,16 +1194,21 @@
    "due": "2026-08-18",
    "cmd": "python studio/selfcheck.py   # 9) 스킬 동기 가 '내용일치 예 ✅' 로 바뀌면 완료",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 교체 완료·화면 실측 검증(skill-resync 와 중복 항목이었음). 계정 스킬 본문에서 확인: 검색설명='Claude 가 직접 주입(사람에게 넘기지 말 것)' ✅ · 발행 상한 2편 ✅ · 목록에 lifeinfo-blog 1개 ✅"
   },
   {
    "id": "skill-resync",
    "added": "2026-08-17",
-   "what": "계정 스킬 lifeinfo-blog 교체 — Desktop 이 읽는 사본이 발행 상한을 5로 가르치고 있다(코드·원본은 2). 패키지는 2026-08-17 재생성 완료(C:\\lifeinfo\\lifeinfo-blog.skill). 남은 것은 교체 클릭뿐: Claude Desktop 설정 > 스킬 에서 lifeinfo-blog 삭제 후 그 파일 업로드. 설정창이 .skill 을 안 받으면 lifeinfo-blog.zip. 업로드 후 목록에 lifeinfo-blog 가 1개인지 확인(삭제 없이 추가하면 낡은 것이 남는다)",
+   "what": "계정 스킬 lifeinfo-blog 교체 — 🔴2026-08-18 화면 실측으로 확정: 계정에 올라간 사본이 검색설명을 **'사람이 붙여야 함 / 유일한 방법은 사람이 편집화면에서 붙여넣기'** 라고 가르치고 있다. 이는 2026-08-17 사용자 지시('붙이는 것은 Claude 몫이다, 떠넘기지 말 것')와 정반대다. 발행 상한은 이미 2편으로 맞아 있으므로 남은 드리프트는 검색설명 1건이다. 목록의 '마지막 업데이트 26.8.18' 을 최신이라는 뜻으로 읽지 말 것 — 그 날짜에도 옛 검색설명 문구가 들어 있었다. 올릴 파일 = C:\\lifeinfo\\lifeinfo-blog.skill (원본 3파일과 sha256 일치 확인).",
    "due": "2026-08-18",
-   "cmd": "python studio/selfcheck.py  # 9) 스킬 동기 가 '동기본 어긋남 0' 이면 완료",
+   "cmd": "claude.ai > 설정 > 스킬 > lifeinfo-blog 클릭 > 우측 ⋮ > [교체] > C:\\lifeinfo\\lifeinfo-blog.skill 선택",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "flag": "🔴삭제 불필요 — ⋮ 메뉴에 '교체'가 있다(2026-08-18 화면 확인). 지우고 다시 올리면 스킬 ID가 바뀐다",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 교체 완료·화면 실측 검증. 계정 스킬 본문에서 확인: 검색설명 행 = 'Blogger API 로 못 쓴다 → Claude 가 claude-in-chrome 으로 직접 주입(사람에게 넘기지 말 것)' ✅ / 옛 문구 '사람이 붙여야 함'·'유일한 방법은 사람이 편집화면에서 붙여넣기' 소멸 확인 ✅ / 발행 상한 2편 ✅ / 목록에 lifeinfo-blog 1개(중복 없음) ✅. ⚠️정정: ⋮>교체 를 써도 스킬 ID 는 바뀐다(skill_01Rw9ce…→skill_016daV6i…). 내가 '교체하면 ID 가 보존된다'고 말한 것은 틀렸다 — 실무상 문제는 없다(목록에 1개, 내용 최신)."
   },
   {
    "id": "gh-workflow-stale-draft-bug",
@@ -1207,7 +1223,7 @@
    "id": "naver-hooking-doc",
    "added": "2026-08-17",
    "what": "유튜브(오리나) 네이버 수익화 기법 5페이지 조사문서가 저장소에 없다 — 대화로만 전달됨. 저장소 루트/워크트리/Downloads/Desktop/Documents/Temp 전수 검색 0건(2026-08-17 16:4x 관제탑 실측). 다음 세션이 못 보므로 같은 조사를 다시 하게 된다. 만든 세션이 C:\\lifeinfo 아래 .md 로 내려야 한다. 내려오면 검증할 것 2가지: ①'이번 주 즉시 적용' 체크리스트에 GPT 본문생성·복붙·다편발행이 들어있으면 제거(스팸정책 scaled content abuse 원문 = generative AI tools to generate many pages without adding value / AdSense = Automatically generated content without manual review) ②'네이버 데이터랩 인기유입검색어' 메뉴명 실재 확인 — 데이터랩은 검색어트렌드·쇼핑인사이트이고 유입검색어는 블로그통계/크리에이터어드바이저 쪽일 수 있다. 절차 1단계 메뉴명이 틀리면 작업세션이 즉시 막힌다. 수치(69->18208 조회, 월 90만원)는 8/20 무료특강 리드젠 콘텐츠의 자체공개값 = 실행 근거로 인용 금지.",
-   "due": "2026-08-18",
+   "due": "2026-08-21",
    "cmd": "ls C:/lifeinfo/*네이버*수익* C:/lifeinfo/*후킹* C:/lifeinfo/*오리나* 2>/dev/null || echo 미도착",
    "owner": "claude",
    "state": "todo",
@@ -1380,7 +1396,9 @@
    "due": "2026-08-19",
    "cmd": "python -m studio.selfcheck",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 교체 완료·화면 실측 검증(skill-resync 와 중복 항목이었음). 계정 스킬 본문에서 확인: 검색설명='Claude 가 직접 주입(사람에게 넘기지 말 것)' ✅ · 발행 상한 2편 ✅ · 목록에 lifeinfo-blog 1개 ✅"
   },
   {
    "id": "naver-verify-meta",
@@ -1396,11 +1414,390 @@
   {
    "id": "adsense-widget-restore",
    "added": "2026-08-18",
-   "what": "애드센스 승인되면 광고 가젯 2개 복구 — 2026-08-18 네이버 소유확인을 위해 테마에서 AdSense1·AdSense2 위젯을 제거했다(당시 미승인이라 광고 미게재, 실손실 0). 복구 = Blogger 레이아웃 → '광고' 섹션 → 가젯 추가 → 애드센스, 본문 상단·하단 2곳",
+   "what": "애드센스 수동 광고 위젯 2개 복구 — 🟢급하지 않다(2026-08-18 오후 화면 실측으로 재판정). ①레이아웃의 '광고' 섹션에는 **가젯 추가 링크가 없다** — '레이아웃>광고>가젯추가' 경로는 이 블로그에 존재하지 않는다. 복구하려면 테마 HTML 로 <b:widget id='AdSense1'> 블록을 되돌려야 하는데, 그건 오전에 'AdSense1 is not valid' 로 저장이 거부됐던 바로 그 작업이라 승인 전엔 또 막힐 공산이 크다. ②그리고 **자동 광고가 켜져 있다**(adsense.py status = 자동광고 True). 자동 광고는 승인 후 구글이 런타임에 광고 자리를 삽입하므로, 소스 HTML 에 ins.adsbygoogle 가 없는 것은 자동광고 사이트에서 정상이다. 내가 이를 '광고 자리 0개=심사 전 복구 필수'로 읽은 것은 과한 해석이었다. → 승인된 뒤에 선택적으로 복구한다.",
+   "due": "2026-10-01",
+   "cmd": "승인 후: 테마>HTML편집에서 backup/theme_원본_2026-08-14.xml 의 AdSense1·AdSense2 블록을 되돌려 저장",
+   "owner": "user",
+   "state": "wait",
+   "flag": "🔴승인 전에는 시도하지 말 것 — 저장이 거부되고 테마만 위험해진다. 자동광고가 대신 담당한다"
+  },
+  {
+   "id": "naver-sitemap-submit",
+   "added": "2026-08-18",
+   "what": "네이버 서치어드바이저 사이트맵·RSS 제출 — 2026-08-18 캡처 실측으로 확정: 사이트는 26.06.22 등록·소유확인 완료인데 '제출된 사이트맵/RSS 둘 다 데이터가 없습니다'. 그래서 두 달간 콘텐츠 노출/클릭·사이트진단이 전부 '정보 없음'. 우리 쪽 자산은 정상(curl 실측: sitemap.xml 200·loc 196개 = 전 글 수록 / rss.xml 200·item 25개 본문포함). 즉 네이버에 목록을 준 적이 없을 뿐이다. 제출 2건이면 끝난다.",
+   "due": "2026-08-18",
+   "cmd": "searchadvisor > 사이트관리 > lifeinfo8975.blogspot.com > 요청 > RSS제출에 https://lifeinfo8975.blogspot.com/rss.xml 입력·확인 → 사이트맵제출에 https://lifeinfo8975.blogspot.com/sitemap.xml 입력·확인",
+   "owner": "user",
+   "state": "done",
+   "flag": "제출 후 며칠 뒤 '리포트 > 콘텐츠 노출/클릭'에 숫자가 생기는지 캡처로 확인 — 애드센스 게이트③(네이버글 구글색인 39→80편)과 직결",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 완료(캡처 실측). 사이트맵 https://lifeinfo8975.blogspot.com/sitemap.xml 등록 12:22:24 · RSS https://lifeinfo8975.blogspot.com/rss.xml 등록 12:22:00. 중간에 '사이트맵/RSS 형식이 올바르지 않습니다' 오류가 1회 났으나 주소 미입력 문제였고, 크기 문제 아님(720KB rss.xml 그대로 통과). 우리 자산 실측: sitemap 23KB·loc196 / rss 720KB·item25, 둘 다 XML 유효·Yeti UA 200·robots 차단 없음."
+  },
+  {
+   "id": "naver-collect-check",
+   "added": "2026-08-18",
+   "what": "네이버 수집 시작 확인 — 08-18 12:22 사이트맵(196편)·RSS 제출 직후 상태는 '콘텐츠 노출/클릭 정보 없음 · 사이트진단 정보 없음'(등록 26.06.22 이후 두 달간 0). 제출이 실제로 수집으로 이어지는지가 관건이다. 숫자가 생기면 네이버 검색 유입 라인이 열린 것이고, 2주 지나도 0이면 제출 외의 다른 벽이 있다는 뜻.",
+   "due": "2026-08-25",
+   "cmd": "searchadvisor > 사이트관리 > lifeinfo8975.blogspot.com > 리포트 > 콘텐츠 노출/클릭 · 사이트 진단 화면 캡처 (Claude 는 naver.com 접근 불가)",
+   "owner": "user",
+   "state": "wait",
+   "flag": "애드센스 재검토 게이트③(네이버글 구글색인 39→80편)과 별개 지표 — 이건 블로그스팟의 네이버 유입이다"
+  },
+  {
+   "id": "envreport-docx-regen",
+   "added": "2026-08-18",
+   "what": "클로드환경설정_전수조사 워드본 재생성 — 2026-08-18 오후에 원본 .md 의 §6(네이버 접근수단 표)을 정정했는데, docs/클로드환경설정_전수조사_2026-08-18.docx 가 **워드에서 열려 있어** PermissionError 로 재생성 실패했다. 지금 워드본은 정정 전 내용(=claude-in-chrome 으로 네이버가 된다는 틀린 서술)을 담고 있다. 파일을 닫고 한 줄 돌리면 끝.",
+   "due": "2026-08-18",
+   "cmd": "python tools/md2docx.py 클로드환경설정_전수조사_2026-08-18.md",
+   "owner": "claude",
+   "state": "done",
+   "flag": "워드가 그 파일을 잡고 있으면 또 실패한다 — 사장님이 닫으신 뒤 실행",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 재생성 성공(워드 닫힌 뒤). docx 안에서 'This site is not allowed due to safety restrictions' 행 확인 = §6 정정분 반영됨."
+  },
+  {
+   "id": "skill-drift-recheck",
+   "added": "2026-08-18",
+   "what": "계정 스킬 드리프트 재점검 — 오늘 실측으로 드러난 함정: 스킬 목록의 '마지막 업데이트' 날짜가 오늘이어도 내용은 낡을 수 있다(08-18 자로 찍혀 있는데 검색설명은 08-17 지시 이전 문구였다). 날짜 말고 **본문 문구**로 판정해야 한다. 표준이 바뀔 때마다 계정 사본도 같이 늙으므로 주기적으로 본다.",
+   "due": "2026-09-01",
+   "cmd": "claude.ai > 설정 > 스킬 > lifeinfo-blog 본문에서 확인: '사람에게 넘기지 말 것'(검색설명) · '상한 2편'(페이스) 두 문구가 살아 있는가",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "판정 기준은 날짜가 아니라 문구다. claude-in-chrome 으로 Claude 가 직접 확인 가능(claude.ai 는 안 막힌다)"
+  },
+  {
+   "id": "naver-paste-5",
+   "added": "2026-08-18",
+   "what": "네이버 보강 원고 5편 붙여넣기 — 이과장이 08-17 20:50 에 보강 완료(전→후 3~4.6배: D2-04 1717→6337 · C2-02 1878→5904 등). 네이버는 글쓰기 API 가 없고 claude-in-chrome 도 차단이라 **붙여넣기만 사람 손**이다. 이게 지금 색인·수익 라인의 실제 병목이다 — 원고는 있는데 반영이 안 돼 있다.",
+   "due": "2026-08-18",
+   "cmd": "python -m studio.batchboard order --id today0817   (20번 note 에 대상 5편 코드)",
+   "owner": "user",
+   "state": "done",
+   "flag": "🔴이걸 하기 전에는 나머지 34편 원고를 더 만들지 않는다 — 붙여넣기 대기만 쌓인다",
+   "done_at": "2026-08-18",
+   "result": "2026-08-18 5/5 붙여넣기 완료·라이브 실측 검증. 각 글에서 새 원고의 특징 문장이 확인됨: D2-04 '연 1만 5천km를 달릴 때…' · C2-02 '생백신은 8~15만원에 예방효과 약 50%…' · C1-04 '2026년 6월 25일 발표된 건강보험 수가 대개편…' · B3-02 '연금저축과 IRP를 합쳐 연 900만원까지…' · C4-03 '무릎이 아파 걷기 힘들고…'. 5편 모두 ✅. 부수 성과: 붙여넣는 도중 사장님이 '넓이가 다르다'로 원고의 강제 개행 결함을 잡아냈고, studio/naverwrap.py 로 5편 158줄을 펴고 naver.py 에 재발 감시를 붙였다."
+  },
+  {
+   "id": "naver-boost-yield",
+   "added": "2026-08-18",
+   "what": "네이버 보강 5편의 구글 색인 수율 측정 — 🔴기준선 고정됨(2026-08-18 16:1x, 붙여넣기 직후 실측): D2-04 ❌ · C2-02 ❌ · C1-04 ✅ · B3-02 ❌ · C4-03 ❌ = **1/5 색인**. 3주 뒤 이 표와 대조해 몇 편이 새로 색인됐는지 본다. 2편 이상 늘면 나머지 34편으로 확대, 변화 없으면 네이버 원고 보강은 구글 색인 레버가 아니므로 접는다(네이버 자체 유입 가치는 별개로 남는다). ⚠️측정법 주의: 구글 검색 결과를 fetch() 로 받으면 가짜 logNo 도 같은 응답이 온다(2026-08-18 실측) — 반드시 실제 탐색 후 DOM 의 a[href] 를 읽을 것.",
+   "due": "2026-09-08",
+   "cmd": "google.com 에서 \"<logNo>\" site:blog.naver.com 검색 → 결과에 그 URL 이 나오면 색인. logNo: 224329092599 224322383850 224328295065 224329009441 224328286053",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "기준선 1/5. 대조군 = 보강 안 한 네이버 글 전체(39/196)"
+  },
+  {
+   "id": "v0-controlled-trial",
+   "added": "2026-08-18",
+   "what": "V0 대조군 실험 — 🔴명단 고정 완료(2026-08-18): V0_대조군_명단_2026-08-18.md. 모집단=구글이 읽고도 안 실은 123편(fetch SUCCESSFUL + Crawled-not-indexed). 배정은 무작위가 아니라 결정적(sha1 코드 짝수=처방)이라 재현된다. 처방군 A1-02 B1-01 C1-02 C4-05 D1-01 D1-03 E1-01 E2-01 E2-06 F1-02 / 대조군 A1-03 B1-02 C1-04 C1-08 C2-02 E2-02 F1-01 G1-01 G1-02 G4-01. 대조군은 손대지 않는다.",
+   "due": "2026-09-17",
+   "cmd": "python -m studio.searchconsole inspect 후 두 그룹의 lastCrawl 갱신·state 변화 비교 (명단=V0_대조군_명단_2026-08-18.md)",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "🔴대조군 10편을 어떤 이유로도 보강하지 말 것 — 손대면 실험이 죽는다"
+  },
+  {
+   "id": "thin-content-merge-hold",
+   "added": "2026-08-18",
+   "what": "🚫보류: 얇은 글 통합·noindex(A안) — 2026-08-18 검토 후 **하지 않기로** 결정. 보류 이유 2가지: ①선정 필터가 무의미하다 — 기준으로 삼으려던 '28일 노출 0'이 사이트 전체 노출 2회라 196편 거의 전부가 해당된다. 즉 '데이터 기반'으로 포장한 임의 선택이 된다 ②결과를 못 읽는다 — n=6~8(4%)로 사이트 단위 품질 신호를 판정할 수 없고, GSC 에 이미 '리디렉션 오류 33건'이 있는데 리디렉션을 새로 추가하면 4주 뒤 변화가 통합 효과인지 노이즈인지 구분 불가. 부수 발견: 글별 noindex 를 쓰려면 블로거 '맞춤 robots 헤더 태그'를 켜야 하는데(현재 꺼짐 — 실측: 글에 robots meta 없음·헤더 X-Robots-Tag: all) 잘못 켜면 블로그 전체가 noindex 된다. 다시 하려면: 규모를 키우고(≥30편) 리디렉션 없는 방식으로, 그리고 노출이 아닌 다른 선정 기준을 찾은 뒤.",
+   "due": "2026-10-01",
+   "cmd": "이 항목은 '다시 꺼내지 말 것' 기록이다. 재검토하려면 위 보류 사유 2가지가 해소됐는지부터 확인",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "삭제안(A③)은 검토조차 하지 않았다 — 네이버 애드포스트가 유일한 승인 수익채널이라 유입을 끊을 수 없다"
+  },
+  {
+   "id": "adsense-button-recheck",
+   "added": "2026-08-18",
+   "what": "애드센스 재검토 버튼 복귀 감시 — 2026-08-18 16:2x 재확인: 여전히 버튼 없음, 배너 문구도 그대로('요청 가능 횟수 소진 · 2026년 8월 18일부터 다시 요청 가능'). shadow DOM 까지 훑어 조작요소 전수 열거했고 검토요청 버튼·체크박스 0. 같은 화면의 정책 절은 '위반사항을 수정했으면 사이트 검토를 요청할 수 있습니다' 라고 하고 08-02 에는 버튼이 있었으므로, 할당량 리셋 반영 지연으로 본다.",
+   "due": "2026-08-21",
+   "cmd": "애드센스 > 사이트 > lifeinfo8975.blogspot.com 상세에서 노란 배너 소멸 여부 확인(claude-in-chrome)",
+   "owner": "claude",
+   "state": "done",
+   "flag": "🔴버튼이 돌아와도 누르지 말 것 — 게이트 3개 미달(글단위 색인 2/60·클릭 0/20·네이버색인 39/80)",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 04:5x 버튼 복귀 확인 — 노란 배너('요청 가능 횟수 소진') **사라짐**, '문제를 수정했음을 확인합니다' 체크박스 + '검토 요청' 버튼 **둘 다 살아 있음**(shadow DOM 전수 + 캡처 확인). → 08-18 에 세운 추정('할당량 리셋 반영 지연')이 **실측으로 확인**됐다. 함께 폐기된 추정: 'Blogger에 연결됨이라 버튼이 아예 없다'(08-18 초안, 같은 날 뒤집음). 리셋 주기 참고: 08-12 반려 → 08-19 복귀 = 약 7일."
+  },
+  {
+   "id": "docx-regen-reinvest",
+   "added": "2026-08-18",
+   "what": "재조사 워드본 재생성 — 자기정정분(1절 '왜 버튼이 없나'를 Blogger연결 추정 → 할당량 리셋 지연으로 교체) 이 워드본에 아직 안 들어갔다. 파일이 워드에서 열려 있어 PermissionError. .md 원본은 최신이다.",
+   "due": "2026-08-18",
+   "cmd": "python tools/md2docx.py 애드센스_반려_재조사_2026-08-18_오후.md",
+   "owner": "claude",
+   "state": "done",
+   "flag": "워드를 닫으신 뒤 한 줄이면 끝",
+   "done_at": "2026-08-18",
+   "result": "새 통합문서(애드센스_최종_수정계획_2026-08-18)로 대체 — 옛 파일 재생성 불필요. 워드 락도 회피됨(새 파일명)."
+  },
+  {
+   "id": "briefing-missing-0819",
+   "added": "2026-08-19",
+   "what": "오전브리핑 파일 미생성 — 2026-08-19 daily-topics(09:01)가 오전브리핑_2026-08-19.md 를 안 남겼다(08-16/17/18 은 존재). 상류 루틴 무성공 실패 의심 — selfcheck 9b) 루틴 동기는 '파일이 실제로 나왔는지'를 검사하지 않는다",
+   "due": "2026-08-20",
+   "cmd": "ls -t 오전브리핑_*.md | head -3",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-validation-discovered",
+   "added": "2026-08-19",
+   "what": "GSC 유효성 검사 추적 — 「발견됨·현재 색인 생성 안 됨」 32편. 2026-08-13 시작, 08-19 현재 접수중 32 · 실패함 0 으로 진행 중이다. 대상 32편은 최종 크롤링이 전부 '해당사항 없음' = 구글이 URL 만 알고 한 번도 안 읽은 글이다(index_status 의 Discovered 29 + unknown 4 와 정합). 통과하면 글 단위 색인이 2 → 최대 34 로 움직일 수 있는 **유일한 진행형 변수**다. 🔴이미 돌고 있으므로 재요청·재검사를 새로 누르지 말 것.",
+   "due": "2026-08-26",
+   "cmd": "https://search.google.com/search-console/index/validation?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&item_key=CAMYFiAC&hl=ko 에서 접수중/실패함 편수 확인",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "앞서 실패한 유효성 검사(리디렉션 오류 0/4)와 다른 건이다 — 섞지 말 것"
+  },
+  {
+   "id": "redirect-error-reopen",
+   "added": "2026-08-19",
+   "what": "🚨「리디렉션 오류」무해 판정 재검토 — 2026-08-19 월별 분포로 드러남: 8월 발행 28편 중 25편(89%)이 리디렉션 오류이고 크롤·미색인은 0편. 6월 글은 리디렉션 오류 0편·크롤미색인 82편. 즉 정적 표시오류가 아니라 시간이 갈수록 커져 지금은 신규 글을 통째로 삼킨다(6월 글은 크롤돼서 '가치없음' 판정이라도 받았는데 8월 글은 평가 단계에 못 갔다). GSC 유효성 검사도 8/11 시작→8/15 실패 확정. 이 문서(색인모니터링.md 08-04 회차)의 'KNOWN_BENIGN·다시 의심하지 말 것' 결론과 충돌한다.",
+   "due": "2026-08-19",
+   "cmd": "GSC URL 검사에 8월 글 URL 입력 → '실시간 테스트' → 페이지 가져오기 결과 확인(리디렉션이면 원인설, 200 이면 경유상태). 08-05 회차는 7월 글 B2-04 로만 했다",
+   "owner": "claude",
+   "state": "done",
+   "flag": "🔴결론 나기 전까지 무해로도 원인으로도 단정하지 말 것",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 검증 완료 — 리디렉션 오류는 원인이 아니다. 더 근본적인 사실이 나왔다: lastCrawl 을 7/10 기준으로 가르면 7/10 이전 크롤 44편 중 색인 2편(4.5%), **7/10 이후 크롤 119편 중 색인 0편(0.0%)**. 색인된 2편은 둘 다 마지막 크롤이 2026-07-06 이다. 즉 버킷(리디렉션오류/크롤미색인) 구분과 무관하게 7/10 이후 크롤된 것은 아무것도 색인되지 않는다. 실패 4편 vs 색인 2편을 본문길이·h2·표·링크·.go.kr·OSMU·사이트맵 전 축으로 대조했으나 차이 0(D1-02 색인 6128자 vs B1-01 실패 6242자)."
+  },
+  {
+   "id": "gsc-validation-crawled",
+   "added": "2026-08-19",
+   "what": "GSC 유효성 검사 추적(크롤링됨·미색인 199편) — 2026-08-19 세부정보 실측: 상태는 '실패함'으로 뜨지만 실제는 **실패 6 · 접수중 193**이다. GSC 는 몇 건만 실패해도 전체를 실패함으로 표시한다. 즉 대다수가 아직 판정 전이다. 검사 시작 8/11. 목록 대부분이 ?m=1 URL(최종 크롤 7/27~8/1). 🔴화면의 '새로운 유효성 검사 시작' 버튼을 누르면 접수중 193 이 초기화된다 — 누르지 말 것.",
+   "due": "2026-08-26",
+   "cmd": "https://search.google.com/search-console/index/validation?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&item_key=CAMYDyAC&hl=ko 또는 drilldown 에서 세부정보 보기 → 접수중/실패함 추이",
+   "owner": "claude",
+   "state": "done",
+   "flag": "'유효성 검사 통과율 0/4' 라는 기존 서술은 리디렉션오류 검사의 한 시점 스냅샷이었다 — 과장이었음",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 — 이 검사는 8/15 에 실패로 종료됐으므로 8/26 에 숫자가 움직일 이유가 없다. 기다림이 무의미하다고 판단해 새 검사 시작으로 전환(watch gsc-revalidation-click)."
+  },
+  {
+   "id": "gsc-revalidation-hold",
+   "added": "2026-08-19",
+   "what": "🚫「새로운 유효성 검사 시작」 버튼 누르지 말 것 — 2026-08-19 정밀 대조 결론. 실패 6개 URL(글 4편)을 clean/?m=1 양쪽으로 열어 canonical·og:url·본문자수를 색인된 2편과 대조했다. ?m=1 이 clean URL 을 canonical 로 정확히 가리키고 본문도 동일 — 중복 처리에 결함이 없고, 실패분과 색인분이 모든 축에서 같다. 즉 고칠 것이 없으므로 재검사해도 같은 판정이다. 게다가 구글은 이미 8/13~14 에 B1-01·D3-03 을 재크롤하고 같은 판정을 냈다. 누르면 진행 중인 접수중 193(크롤미색인)·32(발견미색인) 검사가 교체된다.",
+   "due": "2026-08-26",
+   "cmd": "누르지 않는다. 08-26 에 진행 중인 두 검사 결과를 먼저 본다",
+   "owner": "user",
+   "state": "done",
+   "flag": "구글 메일이 '조치 후 재검사'를 안내하지만, 이 버킷은 기술 결함을 고쳐 통과시키는 종류가 아니다(품질 판정)",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 판단 뒤집음 — 누르기로 결정. 보류 근거 4개 중 3개가 같은 날 실측으로 무너졌다. ①'고칠 것 없다'=절반만 맞음(canonical 은 정상이나 8/12 정부링크 정정 101건·8/14 실전디테일 주입은 실제 콘텐츠 개선이고 구글이 말하는 조치는 그쪽) ②'이미 재평가했다'=6 URL 만 했고 193 은 안 왔다. 6/199 를 전체로 일반화한 표본 오류 ③'접수중 193 교체'=검증 안 한 내 추정 ④'하루 1편 6.6개월'=내가 직접 정정한 하한선. 결정적 비대칭: crawled-not-indexed 는 재크롤 없이는 영구 접수중이고, 재검사는 199개를 큐에 올리는 유일한 재크롤 유인이다. 잃는 것은 8/15 에 이미 종료된 검사의 잔여 상태뿐."
+  },
+  {
+   "id": "indexed2-do-not-touch",
+   "added": "2026-08-19",
+   "what": "🔴색인된 2편(D1-02·H1-01)을 당분간 손대지 말 것 — 2026-08-19 추적으로 드러난 위험. 두 편은 08-14 08:09 에 바이라인+실전디테일/사실오류정정을 받았는데 구글의 마지막 크롤은 아직 2026-07-06 이다. 즉 현재 색인 상태는 7/06 판정의 잔존이지 재평가 통과가 아니다. 같은 날 같은 처방을 받은 B1-01 은 8/14 재크롤 후 미색인으로 실패했다. 글을 수정하면 사이트맵 lastmod 가 갱신돼 재크롤 유인이 생기므로, 추가 수정은 재평가를 앞당겨 색인 2→0 이 될 수 있다.",
    "due": "2026-09-30",
-   "cmd": "python studio/adsense.py status",
+   "cmd": "python -m studio.searchconsole inspect 후 D1-02·H1-01 의 lastCrawl 이 7/06 에서 움직였는지, verdict 가 PASS 를 유지하는지 확인",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "추정이다 — 확정은 ①8/14 수정 ②마지막크롤 7/06 ③같은 처방 받은 B1-01 재크롤 후 실패. 그래도 위험이 실재하므로 보수적으로 간다"
+  },
+  {
+   "id": "inspect-mobile-url-blindspot",
+   "added": "2026-08-19",
+   "what": "🔴색인 모니터링 사각지대 — index_status.json 은 DB 의 clean URL 만 inspect 해서, 구글이 따로 크롤하는 ?m=1 URL 을 못 본다. 2026-08-19 실측 증거: GSC 실패 6건 중 D2-02·F1-01 은 ?m=1 만 8/13~14 에 크롤됐는데 우리 lastCrawl 은 둘 다 7/12 에 멈춰 있다(clean 이 최근 크롤된 B1-01·D3-03 만 일치). 그래서 '재크롤 하루 1편' 같은 우리 크롤 통계는 하한선이지 실제값이 아니다. 결론 방향(크롤이 적다·재크롤분은 전부 미색인)은 안 바뀌지만 숫자를 그대로 인용하면 틀린다.",
+   "due": "2026-08-26",
+   "cmd": "studio/searchconsole.py inspect 에 ?m=1 변형을 포함하거나, 크롤 통계 출력에 '(clean URL 기준, ?m=1 미포함)' 을 명시",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "숫자를 고치는 게 아니라 무엇을 센 숫자인지 밝히는 게 먼저다"
+  },
+  {
+   "id": "gsc-revalidation-click",
+   "added": "2026-08-19",
+   "what": "🙋「크롤링됨 – 현재 색인이 생성되지 않음」 새 유효성 검사 시작 — 2026-08-19 결정. 화면 우측 상단 '새로운 유효성 검사 시작'. 🔴「발견됨·미색인」(32편) 은 누르지 말 것 — 8/13 시작·실패 0·진행 중이라 새로 시작하면 진짜로 버려진다. 누른 직후 접수중/실패함 숫자를 캡처해 기록할 것: 193 이 유지되는지 0 으로 리셋되는지가 '재시작하면 접수중이 교체된다'는 내 추정의 답이다. 어느 쪽이든 다음 세션이 같은 논쟁을 반복하지 않는다.",
+   "due": "2026-08-19",
+   "cmd": "GSC > 페이지 색인 생성 > 크롤링됨-현재 색인이 생성되지 않음 > 세부정보 보기 > 우측 상단 [새로운 유효성 검사 시작]",
+   "owner": "user",
+   "state": "done",
+   "flag": "🔴크롤링됨 쪽만. 발견됨(32편) 검사는 살아 있으니 건드리지 말 것",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 04:35 클릭 완료·화면 실측. 클릭 전: 실패함(8/11 시작→8/15 실패) · 접수중 193 · 실패 6. 클릭 후: **시작됨(26.8.19) · 접수중 199 · 실패 0**. 🔴내 추정 ③('재시작하면 접수중 193이 교체·손실된다')은 **틀렸다**. 접수중은 교체가 아니라 실패 6건까지 흡수해 199 전부가 다시 접수중이 됐고 실패 카운터도 0으로 초기화됐다. 즉 재시작은 순수 이득이었다. 발견됨·미색인(32편) 검사는 건드리지 않았다."
+  },
+  {
+   "id": "gsc-revalidation-result",
+   "added": "2026-08-19",
+   "what": "새 유효성 검사(크롤링됨·미색인 199편) 결과 추적 — 2026-08-19 04:35 시작, 접수중 199 · 실패 0 에서 출발. 이전 회차(8/11~8/15)는 5일간 6건만 판정되고 그 6건이 전부 실패했다. 이번엔 몇 건이 판정되고 그중 통과가 나오는지가 핵심이다. 통과가 1건이라도 나오면 '7/10 이후 크롤된 것은 아무것도 색인되지 않는다'는 진술이 깨진다 — 그게 지금 우리가 가진 가장 큰 미지수다.",
+   "due": "2026-08-26",
+   "cmd": "https://search.google.com/search-console/index/validation?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&item_key=CAMYDyAC&hl=ko (또는 drilldown>세부정보 보기) 에서 접수중/실패함 확인",
+   "owner": "claude",
+   "state": "wait",
+   "flag": "이전 회차 대비: 판정 건수(6건보다 많은가) · 통과 발생 여부(0에서 벗어나는가)"
+  },
+  {
+   "id": "a5-06-carryover",
+   "added": "2026-08-19",
+   "what": "재고 1편 빠지면 A5-06 체불임금 대지급금(8/20 시행·도산 3→6개월분) 최우선 준비 — 초안·썸네일 없음, 준비부터",
+   "due": "2026-08-20",
+   "cmd": "python -m studio.pubqueue list",
    "owner": "claude",
    "state": "wait"
+  },
+  {
+   "id": "adsense-reapply-after-0826",
+   "added": "2026-08-19",
+   "what": "🙋애드센스 재검토 요청 — 조건부 대기. 버튼은 2026-08-19 에 복귀했다(체크박스+검토요청 살아 있음). 그러나 지금 누르지 않는다: ①08-12 반려 이후 GSC 지표가 하나도 안 움직였다(색인 2/196 · 28일 클릭 0 · 노출 2) ②반려 사유가 'unique content 부족'인데 구글이 판정을 뒤집을 근거는 자기가 색인한 페이지이고, 그게 지금 2편뿐이다 ③우리가 한 개선(정부링크 101건·V0 6편·바이라인 4편)을 구글이 읽고 반영한 흔적이 0이다 — 오히려 B1-01 은 개선 직후 재크롤에서 미색인 판정을 받았다. 🔴애드센스 재검토는 GSC 재검사와 비대칭이다: 횟수 제한(08-12 반려→08-19 복귀 = 약 7일) · 취소 불가 · 결과가 몇 주 뒤. 어제 GSC 를 누른 논리를 여기 그대로 옮기면 안 된다.",
+   "due": "2026-08-26",
+   "cmd": "watch gsc-revalidation-result 먼저 확인 → 통과 1건 이상이면 재검토 요청 검토, 통과 0 이면 계속 대기. 요청은 AdSense > 사이트 > lifeinfo8975.blogspot.com > '문제를 수정했음을 확인합니다' 체크 > 검토 요청",
+   "owner": "user",
+   "state": "wait",
+   "flag": "게이트 ①(색인 60편)은 현 구조에서 몇 달짜리다. 8/26 결과가 그 게이트를 고칠지 말지도 함께 답한다"
+  },
+  {
+   "id": "gsc-validation-canonical76",
+   "added": "2026-08-19",
+   "what": "🆕문서에 없던 유효성 검사 — 「적절한 표준 태그가 포함된 대체 페이지」 76편. 2026-08-11 18:21 에 시작됐다는 GSC 메일이 있는데(magsori@gmail.com), 우리 색인모니터링.md·note·watch 어디에도 기록이 없다. 결과 메일도 오지 않았으므로 아직 진행 중이거나 조용히 끝났다. 현재 이 버킷은 72편(08-11 당시 76편)이고, ?m=1 짝들이 모이는 자리다. 상태를 확인해 기록할 것.",
+   "due": "2026-08-26",
+   "cmd": "https://search.google.com/search-console/index/validation?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&item_key=CAMYECAC&hl=ko (대체페이지 = N16) — 안 열리면 drilldown 에서 세부정보 보기",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "08-11 에 사람이 검사 3건을 시작했는데 우리 문서에 기록이 없었다 — 조치는 그 자리에서 기록할 것"
+  },
+  {
+   "id": "b408-osmu",
+   "added": "2026-08-19",
+   "what": "B4-08 종부세 합산배제 OSMU 3채널 — 2026-08-19 발행 완료(라이브 200·DB 197편·검색설명 이미 반영)인데 DB osmu 가 비어 있다. 네이버·쓰레드·인스타 전부 미확산. 자산은 다 있다: 네이버 첨부 thumbs_naver/175_property_tax_exclusion.png · 쓰레드 실사진 insta/thread/thread_B4-08_proptaxexclusion.png. 신규 글이므로 이과장이 4채널을 끝까지 한다. 🆕네이버 원고는 만든 뒤 반드시 naverwrap --write 로 줄바꿈을 펼 것.",
+   "due": "2026-08-20",
+   "cmd": "python -m studio.osmu_manifest table --code B4-08 --open",
+   "owner": "claude",
+   "state": "done",
+   "flag": "발행 직후 batchboard mark 를 빠뜨렸다 — 다음부터는 발행한 세션이 그 자리에서 마킹",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 12:2x 완결 확인 — 내가 '미확산'이라 등록한 것이 애초에 낡은 스냅샷이었다. git pull 후 실측: DB osmu 3채널 전부 기록됨 · 라이브 네이버 224383158255(200)·쓰레드 DcNL5wvAUit(200)·인스타 DcNMHTOkdnB(200) · 원본글 class=rel 교차링크에 네이버·쓰레드 URL 실재. 이과장이 이미 끝내 놓았다."
+  },
+  {
+   "id": "explorer-pin-verify",
+   "added": "2026-08-19",
+   "what": "폴더복원 고정 — 2026-08-19 사장님 실사용 확인: 7/7 정상 열림(홈 창만 별도로 뜸). 추가 지시 2건 반영함: ①창 위치·크기도 고정(_pinned_explorer_layout.json, 다 연 뒤 경로 매칭해 적용) ②속도 — 추측 말고 로그에 구간별 실측(열기/정착/배치)이 찍히게 하고 예열만 1200→800 으로 줄였다. 🔴7개가 같은 좌표인 것은 정상 — ETU ReuseTabs=True 라 한 창의 탭으로 합쳐져서 host 창 하나의 좌표다. ⚠️ETU WindowHook·ReuseTabs 가 True 로 되돌아가 있다(mem_optimize 가 explorer 재시작할 때 원복) — 그런데도 고정 목록으로 7/7 성공했다.",
+   "due": "2026-08-22",
+   "cmd": "Ctrl+Alt+F → ①7개가 그 순서로 ②창 위치·크기가 같은지 ③마지막 줄의 소요시간(예: '2.6초 — 열기 1850ms · 정착 700 · 배치 60') 알려주기",
+   "owner": "user",
+   "state": "done",
+   "flag": "🔴폴더가 누락되기 시작하면 예열을 800→1200 으로 되돌릴 것. 다음 속도 튜닝은 로그 실측값을 보고 한다",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 완료. 폴더 7/7 복원·순서 지정대로·창 위치크기 백그라운드 적용 작동. 스크립트 소요 35.6초→3.8초(계측 4회로 버그 2개 수리: $Warm/$warm 변수 충돌, Document.Folder.Self.Path COM 블로킹). 체감 30초는 ETU 탭 생성 비용이며 ETU 를 쓰는 한 못 줄인다(확정). 사장님이 현재 상태로 사용하기로 결정."
+  },
+  {
+   "id": "explorer-etu-decision",
+   "added": "2026-08-19",
+   "what": "폴더복원 — '탭이냐 속도냐' 선택이 남았다. 2026-08-19 사장님 실측: ETU 켠 상태 복원은 체감 20~30초, ETU 안 쓰고 개별 탐색기 창이면 10초 이내. 스크립트 자체는 두 경우 다 5초(로그 실측)이므로 차이는 전부 ETU 의 '창 7개 생성→7번 후킹→탭 병합→원본 파괴' 과정이다. 코드는 개별 창 모드에 맞춰 이미 고쳤다(apply_layout 의 break 제거 — 창마다 좌표 적용). 남은 것은 사장님 선택이다: ①ETU 켜고 탭 유지+20~30초 ②ETU 끄고 개별 창+10초. ②를 고르면 ETU 끈 뒤 pin_explorer.ps1 을 다시 돌려야 창별 좌표가 저장된다(지금 고정값 7개가 전부 같은 것은 탭이라 호스트 창 하나의 값이기 때문).",
+   "due": "2026-08-22",
+   "cmd": "선택 후 알려주기. ②라면: ETU 끔 → 원하는 배치로 창 열기 → powershell -File C:\\Users\\magso\\tools\\pin_explorer.ps1",
+   "owner": "user",
+   "state": "done",
+   "flag": "🔴settings.json 을 직접 고치는 것은 무효다 — ETU 가 메모리 값으로 덮어쓴다. GUI/트레이에서만 먹는다",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 결정: ETU 유지 + 현재 상태로 사용. 사장님 판단 '그냥 사용할게, 불안해'. 레지스트리(SeparateProcess·ShowRecent·ShowFrequent)는 제안만 하고 **실행하지 않았다** — 확인함(SeparateProcess=0, 나머지 기본값 그대로). 최종: 폴더 7/7·홈 1개·순서 지정대로·위치크기 복원 작동·체감 30초(ETU 쓰는 한 못 줄임, 확정)."
+  },
+  {
+   "id": "etu-profile-restore",
+   "added": "2026-08-19",
+   "what": "ETU 프로필 복원 — 순서만 남았다. 2026-08-19 실측 결과: IMPORT 성공(프로필 20개·복원 7개·Open 꺼짐), 폴더 7/7·홈 1개로 정확도는 얻었으나 **속도는 안 줄었다**(ETU 프로필 30초+ vs 스크립트 20~30초 vs ETU 끄고 개별창 10초). 🔴가설 기각: 병합 사이클이 원인이 아니라 **탭 7개를 만드는 것 자체가 비싸다**. ETU 를 쓰는 한 속도는 못 줄인다 — 다시 시도하지 말 것. 남은 것은 순서: 복원 2~7 의 Delay 가 전부 120ms 로 같아 경쟁 상태였고, ETU_전체프로필_순서고정.json 에서 0·900·1800…5400 계단식으로 바꿔뒀다. 또 실측: IMPORT 는 전체 교체다(7개짜리를 넣으면 아무것도 안 들어간다).",
+   "due": "2026-08-20",
+   "cmd": "ETU > IMPORT > C:\\lifeinfo\\tools\\pc\\ETU_전체프로필_순서고정.json > 목록에 복원 1~7 확인 > SAVE > 탐색기 닫고 Shift+Ctrl+T",
+   "owner": "user",
+   "state": "done",
+   "flag": "속도는 기대하지 말 것(확정). 이번 목적은 순서만이다. Auto save 꺼져 있어 SAVE 필수",
+   "done_at": "2026-08-19",
+   "result": "2026-08-19 종결. IMPORT 성공(프로필 20개·복원 7개·Open 꺼짐) 확인. 속도 가설은 기각됐고(ETU 프로필 30초+ = 스크립트와 동일, 병합이 아니라 탭 생성 자체가 비쌈) 순서만 얻었다. 두 경로(Ctrl+Alt+F 스크립트 · Shift+Ctrl+T ETU 프로필) 모두 사장님 지정 순서로 맞춰 둔 상태로 종료."
+  },
+  {
+   "id": "routine-model-sonnet5",
+   "added": "2026-08-19",
+   "what": "루틴 5개 모델을 Sonnet 5 로 변경 — Desktop 「루틴」 화면에서 루틴마다 모델 선택. 실측(세션 jsonl): daily-email-briefing 08:08/20:08 opus-5 · daily-topics 09:01 opus-5 · publish 09:05 opus-5 · travel-prep 21:07 opus-5 · daily-publish 23:55 opus-5 / nightly-verify 22:33 은 이미 sonnet-5",
+   "due": "2026-08-20",
+   "cmd": "python studio/routine_model.py",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "skill-reupload-0819",
+   "added": "2026-08-19",
+   "what": "계정 스킬 lifeinfo-blog 재업로드 — 발행 상한 5 반영본. 패키지는 재생성 완료(lifeinfo-blog.skill). Desktop 설정>스킬에서 '교체'",
+   "due": "2026-08-20",
+   "cmd": "python studio/selfcheck.py | grep '9)'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "routine-skill-backup",
+   "added": "2026-08-19",
+   "what": "루틴 SKILL.md 5개가 저장소 밖(~/.claude/scheduled-tasks)에만 있다 — 루틴 UI 에서 편집하면 통째로 덮어써진다(2026-08-03 실제 사고). 저장소에 백업 사본을 두고 selfcheck 로 대조할지 결정",
+   "due": "2026-08-26",
+   "cmd": "ls ~/.claude/scheduled-tasks/*/SKILL.md",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-19",
+   "result": "docs/루틴백업/ 에 7개 SKILL.md 백업 완료(2,617~7,015자). 재실행하면 변경분만 '(갱신)'으로 보고하므로 대조 겸용 — python tools/make_routine_guides.py --backup"
+  },
+  {
+   "id": "loop-advisor-consult",
+   "added": "2026-08-19",
+   "what": "루프 엔지니어링 적용안에 대해 어드바이저 자문 재시도(2026-08-19 첫 시도 시 과부하로 실패). 사장님 지시 '어드바이저와 상의'",
+   "due": "2026-08-19",
+   "cmd": "advisor 재호출 후 검토안 갱신",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-19",
+   "result": "어드바이저 자문 완료 — 구멍 3개(src fail-closed·reported_at·야간보고 백스톱) 지적받아 전부 봉합(bf5078f). 루프 간격은 고정 25분이 아니라 루틴 발화 기준 동적으로 조정"
+  },
+  {
+   "id": "loopeng-mcp-map",
+   "added": "2026-08-19",
+   "what": "루프엔지니어링 보고서 ④ MCP 연동 매핑표 — claude-in-chrome·Drive 등이 발행 파이프라인 어느 단계에 붙는지 1페이지. 시작하지 않았음(참고 등록)",
+   "due": "2026-09-02",
+   "cmd": "cat docs/보고서/루프엔지니어링_영상분석_적용안_2026-08-19.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "loopeng-trigger",
+   "added": "2026-08-19",
+   "what": "루프엔지니어링 보고서 ① 트리거 확장 — 리서치 단계(색인 현황·트렌드) 시간 기반 트리거 후보 검토. 발행 트리거는 계속 사람. 시작하지 않았음",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.searchconsole inspect",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "loopeng-stopcond",
+   "added": "2026-08-19",
+   "what": "루프엔지니어링 보고서 종료조건 — 발행 페이스(횟수 기반)에 조건 기반 지표 추가 여부. 🔴색인 2/196 인 지금 얹으면 발행이 사실상 잠기고 사장님이 올린 상한 5를 되내리는 셈이 된다. 색인이 회복된 뒤에만 재논의",
+   "due": "2026-09-16",
+   "cmd": "python -m studio.pace",
+   "owner": "user",
+   "state": "wait"
+  },
+  {
+   "id": "loopeng-review4w",
+   "added": "2026-08-19",
+   "what": "루프엔지니어링 4주 파일럿 리뷰 — v0check 검사자가 실제로 잡아낸 V0 미흡 건수와 그 뒤 색인·반려 변화",
+   "due": "2026-09-16",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naverdup-cleanup",
+   "added": "2026-08-19",
+   "what": "네이버 관련글 블록 중복 59편 정리 — 두 번째(블로그스팟 링크) 블록만 삭제. 보드 naverdup0819. 원인은 봉합됐으므로 새 글은 재발 없음",
+   "due": "2026-08-26",
+   "cmd": "python -m studio.batchboard order --id naverdup0819",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "routine-weekly-limit-0819",
+   "added": "2026-08-20",
+   "what": "2026-08-19 밤 루틴 4개(20:09 브리핑·21:07 travel-prep·22:33 nightly-verify·00:00 daily-publish)가 주간 사용량 한도로 빈손 종료 — 마지막 발화 'You've hit your weekly limit · resets 1am (Asia/Seoul)'. 예약작업은 '성공'으로 끝나고 산출물만 없어 경보가 0이다. 8/20 09:01 daily-topics 부터 정상 복귀했는지 확인",
+   "due": "2026-08-20",
+   "cmd": "python studio/routine_model.py --days 2",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }

@@ -1,18 +1,18 @@
 {
- "rev": "f6cc6b5",
+ "rev": "4a042d1",
  "counts": {
-  "total": 197,
-  "osmu_done": 196,
+  "total": 198,
+  "osmu_done": 197,
   "osmu_pending": 1,
   "indexed": 2,
-  "index_pending": 195,
+  "index_pending": 196,
   "index_requested": 186,
-  "index_todo": 9
+  "index_todo": 10
  },
  "actionable": [
   {
-   "code": "B4-08",
-   "title": "종합부동산세 합산배제 부부 공동명의 1주택 특례 신청 ",
+   "code": "A5-06",
+   "title": "체불임금 대지급금 신청 방법 자격 지급 한도 절차 총정",
    "need": [
     "OSMU",
     "색인요청"
@@ -29,6 +29,21 @@
   {
    "code": "B2-10",
    "title": "학자금대출 신청 방법 취업 후 상환 일반 상환 차이 생",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "B4-08",
+   "title": "종합부동산세 합산배제 부부 공동명의 1주택 특례 신청 ",
    "need": [
     "색인요청"
    ],
@@ -194,21 +209,6 @@
   {
    "code": "A1-05",
    "title": "청년미래적금 가입조건 정부기여금 신청 방법 총정리 (2",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-06",
-   "title": "국민내일배움카드 신청 방법 발급 자격 지원금액 총정리 ",
    "need": [
     "색인대기"
    ],
