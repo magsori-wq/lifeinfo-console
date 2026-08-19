@@ -185,6 +185,17 @@
           @media(max-width:900px){#mtPlanCols{grid-template-columns:1fr}}
           </style>
         </div>
+        <!-- 🧹 직접 처리할 묶음 (2026-08-20) — 담당이 사장님인 batch.json 배치.
+             '내가 할 일' 탭이 watch.json 만 읽어서, 네이버 중복정리 59편 같은 묶음이
+             배치보드 안쪽에 묻혀 한 줄도 안 떴다. 사장님이 보는 화면은 콘솔이다. -->
+        <div id="mtLotWrap" style="display:none;margin:0 0 22px">
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+            <h3 style="margin:0;font-size:16px">🧹 직접 처리할 묶음</h3>
+            <span id="mtLotPct" style="font-size:13px;opacity:.75"></span>
+            <span style="font-size:12px;opacity:.55">클릭 = 완료 명령 복사 → 터미널에 붙여넣기</span>
+          </div>
+          <div id="mtLotList" style="margin:10px 0 0"></div>
+        </div>
         <div id="mtCount" class="mt-count"></div>
         <div id="mtList"></div>
       </div>
@@ -477,6 +488,59 @@
     fetch('watch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
       .then(function(j){render(j&&j.items);})
       .catch(function(){document.getElementById('mtList').innerHTML='<div class="mtempty">불러오기 실패</div>';});
+
+    /* 🧹 직접 처리할 묶음 — batch.json 중 담당이 사장님/사용자인 미완료 배치.
+       진실원은 batch.json 하나다(새 상태파일을 만들지 않는다).
+       체크가 아니라 '완료 명령 복사' — 정적 페이지는 데이터를 못 고친다. */
+    window.mtLotCopy=function(bid,code,el){
+      var cmd='python -m studio.batchboard mark --id '+bid+' --code '+code+' --state done --note "완료"';
+      (navigator.clipboard?navigator.clipboard.writeText(cmd):Promise.reject())
+        .then(function(){el.textContent='복사됨 ✓';setTimeout(function(){el.textContent='완료 명령 복사';},1600);})
+        .catch(function(){window.prompt('복사하세요',cmd);});
+    };
+    fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+      .then(function(j){
+        var B=(j&&j.batches)||{}, lots=[];
+        Object.keys(B).forEach(function(bid){
+          var b=B[bid]; if(b.frozen) return;
+          var who=String(b.owner||'');
+          if(who.indexOf('사장님')<0 && who.indexOf('사용자')<0) return;
+          var its=b.items||[];
+          var left=its.filter(function(x){return x.state!=='done'&&x.state!=='skip';});
+          if(!left.length) return;
+          lots.push({id:bid,title:b.title||'',left:left,total:its.length});
+        });
+        if(!lots.length) return;
+        var totL=0,totA=0;
+        lots.forEach(function(L){totL+=L.left.length;totA+=L.total;});
+        document.getElementById('mtLotWrap').style.display='';
+        document.getElementById('mtLotPct').textContent=
+          '남은 '+totL+' / '+totA+' ('+Math.round(100*(totA-totL)/(totA||1))+'% 완료)';
+        document.getElementById('mtLotList').innerHTML=lots.map(function(L){
+          var pct=Math.round(100*(L.total-L.left.length)/(L.total||1));
+          var rows=L.left.slice(0,5).map(function(x){
+            var note=esc(String(x.note||''));
+            var url=(String(x.note||'').match(/https?:\/\/\S+/)||[''])[0];
+            return '<div class="mtrow" style="cursor:default">'
+              +'<span class="mtbody">'
+              +'<span class="mtwhat"><b>'+esc(x.code||'')+'</b> '+esc(String(x.title||'').slice(0,52))+'</span>'
+              +(url?'<a class="mtcmd" href="'+esc(url)+'" target="_blank" rel="noopener">▸ '+esc(url)+'</a>':
+                    (note?'<span class="mtcmd">'+note.slice(0,110)+'</span>':''))
+              +'<span class="mtdue" style="cursor:pointer;color:#7ee0c9" '
+              +'onclick="mtLotCopy(\''+esc(L.id)+'\',\''+esc(x.code||'')+'\',this)">완료 명령 복사</span>'
+              +'</span></div>';
+          }).join('');
+          return '<div style="margin:0 0 16px">'
+            +'<div style="font-size:13.5px;font-weight:700;margin:0 0 6px">'+esc(L.title)
+            +' <span style="opacity:.6;font-weight:400">— 남은 '+L.left.length+' / '+L.total+'</span></div>'
+            +'<div style="height:8px;background:#232c44;border-radius:6px;overflow:hidden;margin:0 0 10px">'
+            +'<div style="height:100%;width:'+pct+'%;background:linear-gradient(90deg,#4D9DE0,#3ddc97)"></div></div>'
+            +rows
+            +(L.left.length>5?'<div class="mtnote">… 외 '+(L.left.length-5)+'건 · 전체 목록: '
+              +'<code>python -m studio.batchboard order --id '+esc(L.id)+'</code></div>':'')
+            +'</div>';
+        }).join('');
+      }).catch(function(){});
 
     /* 🗓️ 오늘 진행 계획 — batch.json 의 today<MMDD>. 진행바 + 담당별 색.
        체크박스가 아니라 '완료 명령 복사' 다. 정적 페이지는 데이터를 못 고치므로,
