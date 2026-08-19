@@ -83,7 +83,9 @@
    "due": "2026-08-20",
    "cmd": "python tools/chuseok_rail_check.py",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-20",
+   "result": "08-20 확인: 코레일 공식 보도자료(2026-08-14 게시, '코레일, 추석 연휴 승차권 9월 3일부터 예매') 확인됨 — 교통약자 사전예매 9/3~4, 일반 국민 예매 9/7~11(오전7시~오후1시, 코레일톡/홈페이지만). 이미 F2-13(추석 기차표, 08-16 발행)이 이 일정을 정확히 반영해 발행되어 있음(제목·본문 사전예매9/3·일반예매9/7 일치, note135 08-16 야간검증에서도 오류 0건 확인). 추가 후속글 불필요 — F2-13이 그 역할을 이미 함."
   },
   {
    "id": "osmu-f4-10",
@@ -805,7 +807,9 @@
    "due": "2026-08-20",
    "cmd": "WebSearch '현대차 보스턴다이내믹스 IPO 나스닥 2027' 로 최신 보도 확인 후 라이브 수치와 대조",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-20",
+   "result": "야간검증 08-20 재확인: 지분 100%인수(2026-07-16 완료) 변동없음, IPO시점은 여전히 미확정(업계 전망 2027~2028년, 나스닥, 기업가치 최대 70조원 추정) — 라이브 서술(미확정 표기)과 여전히 일치. note 140(08-17)과 동일 결론, 사실오류 없음."
   },
   {
    "id": "cleanup-agitated-dirac",
@@ -1007,7 +1011,9 @@
    "due": "2026-08-20",
    "cmd": "코레일 letskorail.com · SR etk.srail.kr 공지사항에서 '추석 특별' 검색 — 뜨면 pubqueue add --lane info",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-20",
+   "result": "위와 동일 — 코레일 공식 공지 확인됨(2026-08-14 게시), F2-13이 이미 그 내용을 정확히 반영해 발행됨. SR(SRT)측 공지는 아직 없음(코레일만 발표)."
   },
   {
    "id": "f2-13-commit",
@@ -1538,7 +1544,9 @@
    "due": "2026-08-20",
    "cmd": "ls -t 오전브리핑_*.md | head -3",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-20",
+   "result": "08-20 22:33 재확인: 오전브리핑_2026-08-19.md 파일이 지금은 존재함(생성 시각 지연이었던 것으로 보임) — 08-19 09:01 실행분은 결국 정상 산출됨. 단 08-20 09:01 분은 새로 흔적이 없어 별도 항목(routine-weekly-limit-0819)으로 계속 추적."
   },
   {
    "id": "gsc-validation-discovered",
@@ -1635,7 +1643,9 @@
    "due": "2026-08-20",
    "cmd": "python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-20",
+   "result": "08-20 확인: A5-06(체불임금 대지급금) 오늘 발행 완료됨(라이브 URL 확인, pace.py 기준 오늘 발행 1편=A5-06). 재고 소진 우려 해소. 단 발행 직후 검증에서 금액 오류 발견 — 별도 note 145 기록(도산대지급금 2100만→3150만원 정정 필요, watch 신규 등록 권장)."
   },
   {
    "id": "adsense-reapply-after-0826",
@@ -1794,10 +1804,20 @@
    "id": "routine-weekly-limit-0819",
    "added": "2026-08-20",
    "what": "2026-08-19 밤 루틴 4개(20:09 브리핑·21:07 travel-prep·22:33 nightly-verify·00:00 daily-publish)가 주간 사용량 한도로 빈손 종료 — 마지막 발화 'You've hit your weekly limit · resets 1am (Asia/Seoul)'. 예약작업은 '성공'으로 끝나고 산출물만 없어 경보가 0이다. 8/20 09:01 daily-topics 부터 정상 복귀했는지 확인",
-   "due": "2026-08-20",
+   "due": "2026-08-21",
    "cmd": "python studio/routine_model.py --days 2",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "a5-06-amount-fix",
+   "added": "2026-08-20",
+   "what": "A5-06 도산대지급금 상한액 정정 — 라이브 '2,100만원'→'3,150만원'(2026-08-20 개정법 시행, 6개월분 확대와 동시 인상). 출처: 고용노동부 08-19 보도자료",
+   "due": "2026-08-21",
+   "cmd": "python -m studio.note list | grep -i A5-06",
+   "owner": "claude",
+   "state": "todo",
+   "note": 145
   }
  ]
 }
