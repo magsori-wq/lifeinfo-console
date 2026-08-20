@@ -1,18 +1,34 @@
 {
  "rev": "b0808f1",
  "counts": {
-  "total": 198,
+  "total": 199,
   "osmu_done": 197,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 2,
-  "index_pending": 196,
+  "index_pending": 197,
   "index_requested": 186,
-  "index_todo": 10
+  "index_todo": 11
  },
  "actionable": [
   {
    "code": "A5-06",
    "title": "체불임금 대지급금 신청 방법 자격 지급 한도 절차 총정",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "C2-08",
+   "title": "가을철 발열성질환 예방수칙 총정리 (쯔쯔가무시증 SFT",
    "need": [
     "OSMU",
     "색인요청"
@@ -194,21 +210,6 @@
   {
    "code": "A1-04",
    "title": "청년월세지원 신청 자격 금액 신청방법 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-05",
-   "title": "청년미래적금 가입조건 정부기여금 신청 방법 총정리 (2",
    "need": [
     "색인대기"
    ],
