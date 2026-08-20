@@ -1865,6 +1865,15 @@
    "cmd": "python -m studio.watch",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "myturn-osmu-blind",
+   "added": "2026-08-20",
+   "what": "myturn 이 OSMU 준비완료·미게시 글을 못 본다 — insta_ready 를 '배치 항목이 blocked' 로만 파생해서, 배치에 없는 글(A5-06: 새벽 발행·마킹 누락)은 3채널 원고·이미지가 다 만들어져 있어도 사장님 화면에 안 뜬다. 만들어놓고 사라지는 일감이 생긴다. DB osmu 공백 + 산출물 존재로 직접 파생하도록 고칠 것",
+   "due": "2026-08-22",
+   "cmd": "python -m studio.myturn | grep A5-06",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }

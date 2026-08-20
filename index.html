@@ -125,6 +125,7 @@
       <div class="leafrow hide" data-group="manage">
         <button data-t="gsc">🔍 색인관리</button>
         <button data-t="batch">🔧 배치보드</button>
+        <button data-t="orders">📄 작업지시</button>
         <button data-t="seo">🔧 SEO점검</button>
         <button data-t="adsense">📋 애드센스 승인</button>
       </div>
@@ -386,6 +387,7 @@
     <iframe id="f_dashboard" src="dashboard.html"></iframe>
     <iframe id="f_progress" src="progress.html"></iframe>
     <iframe id="f_batch" src="batch.html"></iframe>
+    <iframe id="f_orders" src="orders.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
     <iframe id="f_seo" src="seo.html"></iframe>
     <iframe id="f_adsense" src="adsense.html"></iframe>
@@ -395,7 +397,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','batch','gsc','seo','adsense'];
+  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','batch','orders','gsc','seo','adsense'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){

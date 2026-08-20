@@ -1,0 +1,113 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>작업지시</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:18px;background:#0e1526;color:#e6ecf7;
+     font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:14px;line-height:1.6}
+h1{font-size:19px;margin:0 0 4px}
+.sub{color:#8fa0bd;font-size:13px;margin:0 0 18px}
+.sub b{color:#cfd8e6}
+.day{margin:0 0 26px}
+.dayhd{display:flex;align-items:baseline;gap:10px;margin:0 0 10px;
+       border-bottom:1px solid #2a3a5e;padding-bottom:6px}
+.daytitle{font-size:16px;font-weight:700;color:#f0b26b}
+.daycnt{color:#7d8ca8;font-size:12px}
+.today .daytitle{color:#5fd3a0}
+.card{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;
+      padding:13px 15px;margin:0 0 11px}
+.card.stale{opacity:.55}
+.cardhd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 7px}
+.who{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;
+     background:#4D9DE022;border:1px solid #4D9DE066;color:#9fc9ee;white-space:nowrap}
+.who.leegwajang{background:#e08b1e22;border-color:#e08b1e66;color:#f0b26b}
+.who.insta{background:#c2569622;border-color:#c2569666;color:#e59ac0}
+.who.boss{background:#5fd3a022;border-color:#5fd3a066;color:#8ee5be}
+.bid{font-family:Consolas,monospace;font-size:12px;color:#7d8ca8}
+.btitle{font-weight:700;flex:1;min-width:180px}
+.pct{font-size:12px;color:#8fa0bd;white-space:nowrap}
+.bar{height:5px;background:#232c44;border-radius:6px;overflow:hidden;margin:0 0 9px}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,#3b6ea5,#4D9DE0)}
+.bar>i.full{background:linear-gradient(90deg,#2f8f68,#5fd3a0)}
+details summary{cursor:pointer;color:#f0b26b;font-size:13px;font-weight:700;
+                list-style:none;padding:4px 0}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ ";color:#7d8ca8}
+details[open] summary::before{content:"▾ "}
+pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
+    font-size:12.5px;line-height:1.62;color:#cfd8e6;margin:8px 0 0;
+    background:#0e1526;border:1px solid #223052;border-radius:8px;padding:11px 13px;
+    max-height:520px;overflow:auto}
+.none{color:#7d8ca8;font-size:13px;padding:10px 0}
+.frozen{font-size:12px;color:#8fa0bd;background:#4d5a7022;border:1px solid #4d5a7055;
+        border-radius:8px;padding:6px 9px;margin:0 0 8px}
+.foot{color:#5f6f8c;font-size:12px;border-top:1px solid #223052;padding-top:10px;margin-top:22px}
+code{background:#1b2540;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px;
+     font-family:Consolas,monospace;font-size:12px;color:#9fc9ee}
+</style></head><body>
+<h1>📄 작업지시</h1>
+<p class="sub">지시서 등록일 기준 최신순 · 세션별로 구분. 진실원은 <b>batch.json</b> 하나이며
+이 화면은 그것을 그대로 읽습니다(별도 파일 없음). 등록은
+<code>python -m studio.batchboard order --id &lt;배치&gt; --file &lt;파일&gt;</code></p>
+<div id="out"><p class="none">불러오는 중…</p></div>
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function whoClass(o){
+  o=o||'';
+  if(o.indexOf('이과장')>=0||o.indexOf('작업')>=0) return 'leegwajang';
+  if(o.indexOf('인스타')>=0) return 'insta';
+  if(o.indexOf('사장님')>=0||o.indexOf('사용자')>=0) return 'boss';
+  return '';
+}
+function dayOf(s){ // "2026-08-20 17:30" -> "2026-08-20"
+  var m=String(s||'').match(/\d{4}-\d{2}-\d{2}/); return m?m[0]:'(일시 미기록)';
+}
+fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
+  var out=document.getElementById('out');
+  if(!d||!d.batches){out.innerHTML='<p class="none">batch.json 을 읽지 못했습니다.</p>';return;}
+  var rows=[];
+  Object.keys(d.batches).forEach(function(id){
+    var b=d.batches[id];
+    if(!b.order) return;                    // 지시서 없는 배치는 이 화면에 안 뜬다
+    var items=b.items||[], done=0;
+    items.forEach(function(it){if(it.state==='done')done++;});
+    rows.push({id:id,b:b,done:done,total:items.length,day:dayOf(b.order_at)});
+  });
+  if(!rows.length){out.innerHTML='<p class="none">등록된 지시서가 없습니다.</p>';return;}
+  rows.sort(function(x,y){return (y.b.order_at||'').localeCompare(x.b.order_at||'');});
+  var days=[],map={};
+  rows.forEach(function(r){ if(!map[r.day]){map[r.day]=[];days.push(r.day);} map[r.day].push(r); });
+  var today=new Date();
+  var td=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')
+        +'-'+String(today.getDate()).padStart(2,'0');
+  var h='';
+  days.forEach(function(day){
+    var list=map[day], isT=(day===td);
+    h+='<div class="day'+(isT?' today':'')+'"><div class="dayhd">'
+      +'<span class="daytitle">'+esc(day)+(isT?' · 오늘':'')+'</span>'
+      +'<span class="daycnt">지시서 '+list.length+'건</span></div>';
+    list.forEach(function(r){
+      var b=r.b, pct=r.total?Math.round(r.done*100/r.total):0;
+      var stale=(!isT && pct===100);
+      h+='<div class="card'+(stale?' stale':'')+'">'
+        +'<div class="cardhd">'
+        +'<span class="who '+whoClass(b.owner)+'">'+esc(b.owner||'담당 미지정')+'</span>'
+        +'<span class="btitle">'+esc(b.title||r.id)+'</span>'
+        +'<span class="bid">'+esc(r.id)+'</span>'
+        +'<span class="pct">'+r.done+' / '+r.total+' · '+pct+'%</span></div>'
+        +'<div class="bar"><i class="'+(pct===100?'full':'')+'" style="width:'+pct+'%"></i></div>';
+      if(b.frozen) h+='<div class="frozen">❄️ 동결됨 — '+esc(b.frozen)+'</div>';
+      h+='<details'+(isT?' open':'')+'><summary>작업 지시 ('+esc(b.order_at||'일시 미기록')+' 등록)</summary>'
+        +'<pre>'+esc(b.order)+'</pre></details></div>';
+    });
+    h+='</div>';
+  });
+  h+='<p class="foot">이 화면은 지시서가 <b>등록된</b> 배치만 보여줍니다. '
+    +'세션은 <code>python -m studio.batchboard order --id &lt;배치&gt;</code> 로 같은 내용을 읽습니다 — '
+    +'워크트리에서 돌 때는 <code>git pull origin main</code> 을 먼저 해야 최신을 봅니다.</p>';
+  out.innerHTML=h;
+}).catch(function(e){
+  document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';
+});
+</script></body></html>
