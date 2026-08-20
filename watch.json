@@ -1795,7 +1795,7 @@
    "id": "naverdup-cleanup",
    "added": "2026-08-19",
    "what": "네이버 관련글 블록 중복 59편 정리 — 두 번째(블로그스팟 링크) 블록만 삭제. 보드 naverdup0819. 원인은 봉합됐으므로 새 글은 재발 없음",
-   "due": "2026-08-26",
+   "due": "2026-08-27",
    "cmd": "python -m studio.batchboard order --id naverdup0819",
    "owner": "user",
    "state": "todo"
@@ -1826,6 +1826,15 @@
    "due": "2026-08-22",
    "cmd": "python studio/selfcheck.py | grep -A5 '6b)'",
    "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "gemini-billing-prepay",
+   "added": "2026-08-20",
+   "what": "Gemini API 결제 후불→선불 전환 (Google AI Studio) — 2026-09-14 마감. 미조치 시 Gemini API 사용 중단 가능. 출처: CloudPlatform-noreply@google.com 2026-08-19 07:07 KST 메일 '[조치 필요] 2026년 9월 14일까지 Google AI Studio에서 Gemini API 결제를 업데이트하세요'",
+   "due": "2026-09-10",
+   "cmd": "https://aistudio.google.com/ → 결제(Billing) 설정에서 선불(prepaid) 전환 여부 확인",
+   "owner": "user",
    "state": "todo"
   }
  ]
