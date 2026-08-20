@@ -1836,6 +1836,15 @@
    "cmd": "https://aistudio.google.com/ → 결제(Billing) 설정에서 선불(prepaid) 전환 여부 확인",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "routine-guide-policy",
+   "added": "2026-08-20",
+   "what": "루틴 지침서 정책 확정 — UI '지침' 칸에 붙여넣지 않는다(사본 6벌 방지). 진짜 지침=SKILL.md 하나, 게이트는 session_rules.py 로 가리킴. docs/루틴지침은 사람이 읽는 개요. 2026-08-27 에 SKILL.md 7개가 새 게이트를 따라왔는지 재확인",
+   "due": "2026-08-27",
+   "cmd": "grep -L v0check ~/.claude/scheduled-tasks/*/SKILL.md",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }
