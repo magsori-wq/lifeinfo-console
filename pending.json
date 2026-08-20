@@ -1,13 +1,13 @@
 {
- "rev": "b0808f1",
+ "rev": "8e71964",
  "counts": {
-  "total": 199,
+  "total": 200,
   "osmu_done": 197,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 2,
-  "index_pending": 197,
+  "index_pending": 198,
   "index_requested": 186,
-  "index_todo": 11
+  "index_todo": 12
  },
  "actionable": [
   {
@@ -29,6 +29,22 @@
   {
    "code": "C2-08",
    "title": "가을철 발열성질환 예방수칙 총정리 (쯔쯔가무시증 SFT",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "D3-05",
+   "title": "전세 계약갱신청구권 행사 방법 5% 상한 묵시적 갱신 ",
    "need": [
     "OSMU",
     "색인요청"
@@ -195,21 +211,6 @@
   {
    "code": "A1-03",
    "title": "근로장려금 신청 자격 금액 지급일 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-04",
-   "title": "청년월세지원 신청 자격 금액 신청방법 총정리",
    "need": [
     "색인대기"
    ],

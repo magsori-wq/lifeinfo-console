@@ -1874,6 +1874,33 @@
    "cmd": "python -m studio.myturn | grep A5-06",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "gsc-index-c208-a506",
+   "added": "2026-08-20",
+   "what": "C2-08·A5-06 GSC 색인요청(둘 다 URL is unknown to Google) — 대면세션이므로 사장님이 URL검사→색인생성요청, 이후 gsc_log add 로 기록",
+   "due": "2026-08-21",
+   "cmd": "python studio/searchconsole.py inspect --limit 5",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "seodesc-drift-a506-b408",
+   "added": "2026-08-20",
+   "what": "검색설명 라이브 문구가 기록과 다름 2편(A5-06·B4-08) — 누가 손으로 고쳤는지 확인 후 기록 정정 또는 재입력(브라우저 직접)",
+   "due": "2026-08-21",
+   "cmd": "python -m studio.seodesc list",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insta0815b-false-done",
+   "added": "2026-08-20",
+   "what": "insta0815b 거짓완료 9건 — done 인데 DB osmu.instagram 없음(G1-02·03·06·G2-01·02 등). 인스타 세션에 실측 재보고 지시",
+   "due": "2026-08-21",
+   "cmd": "python -m studio.sessionaudit",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }
