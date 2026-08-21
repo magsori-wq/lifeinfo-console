@@ -108,6 +108,7 @@
            패널/iframe 전환 로직은 그대로 두고, 어느 그룹에 속하느냐만 새로 씌운 것이다. -->
       <div class="navgroups" id="navgroups">
         <button class="grouptab active" data-g="today">🙋 오늘 할 일</button>
+        <button class="grouptab" data-g="approval">📋 전자결재</button>
         <button class="grouptab" data-g="manage">📊 운영 관리</button>
         <button class="grouptab" data-g="content">✍️ 콘텐츠 제작</button>
         <button class="grouptab" data-g="browse">🔎 탐색</button>
@@ -122,10 +123,13 @@
       </div>
       <!-- 🔴 색인관리를 이 그룹 맨 앞에 둔다 (2026-08-04 근거 유지). "구글이 우리 글을
            가져가고 있는가"는 발행·보강보다 먼저 봐야 할 질문이다. -->
+      <div class="leafrow hide" data-group="approval">
+        <button data-t="approval">📋 결재함</button>
+        <button data-t="orders">📄 작업지시</button>
+      </div>
       <div class="leafrow hide" data-group="manage">
         <button data-t="gsc">🔍 색인관리</button>
         <button data-t="batch">🔧 배치보드</button>
-        <button data-t="orders">📄 작업지시</button>
         <button data-t="seo">🔧 SEO점검</button>
         <button data-t="adsense">📋 애드센스 승인</button>
       </div>
@@ -387,6 +391,7 @@
     <iframe id="f_dashboard" src="dashboard.html"></iframe>
     <iframe id="f_progress" src="progress.html"></iframe>
     <iframe id="f_batch" src="batch.html"></iframe>
+    <iframe id="f_approval" src="approval.html"></iframe>
     <iframe id="f_orders" src="orders.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
     <iframe id="f_seo" src="seo.html"></iframe>
@@ -397,7 +402,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','batch','orders','gsc','seo','adsense'];
+  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','orders','gsc','seo','adsense'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){

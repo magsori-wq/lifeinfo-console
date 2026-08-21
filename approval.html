@@ -1,0 +1,251 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>전자결재</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:18px;background:#0e1526;color:#e6ecf7;
+     font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:14px;line-height:1.6}
+h1{font-size:19px;margin:0 0 4px}
+.sub{color:#8fa0bd;font-size:13px;margin:0 0 16px}
+code{background:#1b2540;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px;
+     font-family:Consolas,monospace;font-size:12px;color:#9fc9ee;cursor:pointer}
+code:hover{border-color:#4D9DE0;color:#cfe6fa}
+.sec{font-size:15px;font-weight:700;margin:26px 0 10px;padding-bottom:6px;
+     border-bottom:1px solid #2a3a5e;color:#f0b26b}
+.sec .n{font-size:12px;color:#7d8ca8;font-weight:400;margin-left:8px}
+.card{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;padding:12px 14px;margin:0 0 10px}
+.card.wait{border-color:#e08b1e66;background:#e08b1e0d}
+.card.boss{border-color:#5fd3a066;background:#5fd3a00d}
+.card.rej{border-color:#c0392b66;background:#c0392b0d}
+.hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.who{font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap}
+.w-boss{background:#5fd3a022;border:1px solid #5fd3a066;color:#8ee5be}
+.w-lee{background:#4D9DE022;border:1px solid #4D9DE066;color:#9fc9ee}
+.w-work{background:#e08b1e22;border:1px solid #e08b1e66;color:#f0b26b}
+.w-rt{background:#c2569622;border:1px solid #c2569666;color:#e59ac0}
+.code{font-family:Consolas,monospace;font-size:12px;color:#7d8ca8}
+.ttl{font-weight:700;flex:1;min-width:170px}
+.meta{color:#8fa0bd;font-size:12.5px;margin-top:3px}
+.steps{display:flex;flex-wrap:wrap;gap:3px;margin:8px 0 4px}
+.st{font-size:11px;padding:2px 7px;border-radius:5px;background:#232c44;color:#6b7a96;white-space:nowrap}
+.st.done{background:#2f8f6833;color:#8ee5be}
+.st.now{background:#e08b1e33;color:#f0b26b;font-weight:700;box-shadow:0 0 0 1px #e08b1e66}
+.st.no{background:#c0392b33;color:#f0928a;font-weight:700}
+.none{color:#7d8ca8;font-size:13px;padding:8px 0}
+.why{color:#f0928a;font-size:12.5px;margin-top:5px;white-space:pre-wrap;word-break:break-word}
+.note{color:#a9b6cc;font-size:12.5px;margin-top:5px;white-space:pre-wrap;word-break:break-word}
+.foot{color:#5f6f8c;font-size:12px;border-top:1px solid #223052;padding-top:10px;margin-top:24px}
+.flow{background:#131c31;border:1px solid #223052;border-radius:10px;padding:10px 13px;
+      margin:0 0 16px;font-size:12.5px;color:#a9b6cc;line-height:1.9}
+.flow b{color:#f0b26b}
+.act{display:inline-block;border:0;border-radius:8px;padding:6px 14px;font-size:13px;
+     font-weight:700;cursor:pointer;margin-right:6px;font-family:inherit}
+.act.ok{background:#2f8f68;color:#fff}
+.act.ok:hover{background:#37a87b}
+.act.no{background:#4d5a70;color:#dbe3ef}
+.act.no:hover{background:#5d6d88}
+.act:disabled{opacity:.4;cursor:not-allowed}
+.srv{font-size:12px;padding:6px 10px;border-radius:8px;margin:0 0 14px}
+.srv.on{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
+.srv.off{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
+.copied{position:fixed;right:16px;bottom:16px;background:#2f8f68;color:#fff;
+        padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:.2s}
+.copied.on{opacity:1}
+</style></head><body>
+<h1>📋 전자결재 — 지시 · 보고 · 승인 · 반려 · 재지시</h1>
+<p class="sub">진실원은 <b>batch.json · queue.json · topicprop.json · v0check.json</b>.
+이 화면은 그것들을 <b>읽기만</b> 합니다 — 별도 상태파일을 만들지 않습니다.
+<b>명령을 클릭하면 복사</b>됩니다.</p>
+
+<div class="flow">
+① 루틴 글감 제안 → ② <b>이부장 선별·검증</b> → ③ <b>사장님 글감 승인</b> → ④ 이부장 지시서
+→ ⑤ 작업세션 초안·큐 → ⑥ <b>이부장 V0 검사</b>(반려/통과) → ⑦ <b>사장님 발행 승인</b> → ⑧ 발행·완료보고 → ④로 복귀
+</div>
+
+<div id="out"><p class="none">불러오는 중…</p></div>
+<div class="copied" id="cp">복사됨</div>
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
+function copy(el){navigator.clipboard.writeText(el.textContent);
+  var c=document.getElementById('cp');c.classList.add('on');
+  setTimeout(function(){c.classList.remove('on');},900);}
+var API='http://127.0.0.1:8001', SRV=false;
+function btn(action,code,label,cls){
+  return '<button class="act '+cls+'" data-a="'+action+'" data-c="'+code+'" '
+       + (SRV?'':'disabled ')+'onclick="approve(this)">'+label+'</button>';}
+async function approve(el){
+  // 🔴 confirm()/prompt() 를 쓰지 않는다 — iframe(콘솔 index.html) 안에서 조용히 무시돼
+  //    버튼이 '눌리지 않는' 것처럼 보인다(2026-08-21 사장님 지적). 2단계 클릭으로 대체.
+  var a=el.dataset.a, c=el.dataset.c;
+  if(a==='topic_drop' && !el.dataset.armed){
+    var box=document.createElement('div');
+    box.style.cssText='margin-top:8px';
+    box.innerHTML='<input class="whyin" placeholder="제외 사유를 적어주세요(필수)" '
+      +'style="width:60%;min-width:220px;padding:6px 9px;border-radius:7px;border:1px solid #2a3a5e;'
+      +'background:#0e1526;color:#e6ecf7;font-family:inherit;font-size:13px">'
+      +'<button class="act no" style="margin-left:6px">제외 확정</button>';
+    el.parentNode.appendChild(box); el.dataset.armed='1'; el.disabled=true;
+    var inp=box.querySelector('.whyin'), ok=box.querySelector('button');
+    inp.focus();
+    ok.onclick=function(){ var w=inp.value.trim();
+      if(!w){ inp.style.borderColor='#c0392b'; toast('🔴 사유 없이는 제외하지 않습니다'); return; }
+      ok.disabled=true; ok.textContent='처리 중…'; send(a,c,w,ok); };
+    return;
+  }
+  if(a!=='topic_drop' && !el.dataset.armed){
+    el.dataset.armed='1'; el.dataset.old=el.textContent;
+    el.textContent='정말? 한 번 더 누르세요';
+    el.style.background='#c0392b';
+    setTimeout(function(){ if(el.dataset.armed==='1'){ el.dataset.armed='';
+      el.textContent=el.dataset.old; el.style.background=''; } }, 6000);
+    return;
+  }
+  send(a,c,null,el);
+}
+async function send(a,c,why,el){
+  el.disabled=true; var old=el.textContent; el.textContent='처리 중…';
+  try{
+    var r=await fetch(API+'/api/approve',{method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({action:a,code:c,why:why})});
+    var d=await r.json();
+    if(d.ok){ toast('✅ '+c+' 결재 완료 — 목록을 새로 읽습니다');
+      setTimeout(function(){location.reload();},1100); }
+    else { toast('🔴 실패: '+String(d.error||'').slice(0,90));
+      el.disabled=false; el.textContent=old; }
+  }catch(e){ toast('🔴 결재 서버에 닿지 않습니다 — start_approve_server.bat 을 실행하세요');
+    el.disabled=false; el.textContent=old; }
+}
+function toast(m){var c=document.getElementById('cp');c.textContent=m;
+  c.classList.add('on');setTimeout(function(){c.classList.remove('on');},2200);}
+function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+  .catch(function(){return null;});}
+function arr(x){return !x?[]:(Array.isArray(x)?x:(x.items||x.queue||Object.values(x)));}
+
+fetch(API+'/api/ping').then(function(r){return r.ok;}).catch(function(){return false;})
+ .then(function(up){ SRV=up;
+  var d=document.createElement('div');
+  d.className='srv '+(up?'on':'off');
+  d.innerHTML = up
+    ? '🟢 결재 서버 연결됨 — 아래 버튼으로 바로 결재하실 수 있습니다.'
+    : '🔴 결재 서버가 꺼져 있어 버튼이 비활성입니다. 터미널에서 <b>python -m studio.approve_server</b> 를 한 번 실행하세요. (명령 복사는 그대로 됩니다)';
+  var o=document.getElementById('out'); o.parentNode.insertBefore(d,o);
+ return Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
+             j('lifeinfo_db.txt'),j('pace.json')]).then(function(a){
+  var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{};
+  var byc={}; (DB.posts||[]).forEach(function(p){byc[p.code]=p;});
+  var v0={}; V.forEach(function(x){v0[x.code]=x;});
+  var H='';
+
+  var boss=[], lee=[];
+  T.forEach(function(t){
+    if(t.state==='picked') boss.push({act:'topic_approve',c:t.code,t:t.title,
+      why:'글감 승인 대기(③) · '+(t.why||''),
+      cmd:'python -m studio.topicprop approve --code '+t.code});
+    if(t.state==='proposed') lee.push({act:'topic_pick',c:t.code,t:t.title,
+      why:'이부장 선별 대기(②) — 특별이슈급인가로 판단',
+      cmd:'python -m studio.topicprop pick --code '+t.code});
+  });
+  Q.forEach(function(q){
+    var v=v0[q.code];
+    if(!v) lee.push({act:'v0',c:q.code,t:q.title,
+      why:'V0 검사 대기(⑥) — 작성자가 아닌 이부장이 반박 검토한다',
+      cmd:'python -m studio.v0check ask --code '+q.code});
+    else if(v.verdict==='pass' && !q.go) boss.push({act:'publish_go',c:q.code,t:q.title,
+      why:'발행 승인 대기(⑦) · V0 통과 — 이 원고를 지금 내는가',
+      cmd:'python -m studio.pubqueue go --code '+q.code});
+  });
+
+  H+='<div class="sec">🙋 사장님 결재 대기<span class="n">'+boss.length+'건</span></div>';
+  H+= boss.length? boss.map(function(x){return '<div class="card boss"><div class="hd">'
+      +'<span class="who w-boss">사장님</span><span class="ttl">'+esc(x.t||'')+'</span>'
+      +'<span class="code">'+esc(x.c)+'</span></div>'
+      +'<div class="meta">'+esc(x.why)+'</div>'
+      +'<div style="margin-top:9px">'
+      +btn(x.act,x.c,x.act==='publish_go'?'⑦ 발행 승인':'③ 글감 승인','ok')
+      +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
+      +'</div><div style="margin-top:7px">'+cmd(x.cmd)+'</div></div>';}).join('')
+    : '<p class="none">없음 — 지금 사장님 결재를 기다리는 건이 없습니다.</p>';
+
+  H+='<div class="sec">🪪 이부장 결재 대기<span class="n">'+lee.length+'건</span></div>';
+  H+= lee.length? lee.map(function(x){return '<div class="card wait"><div class="hd">'
+      +'<span class="who w-lee">이부장</span><span class="ttl">'+esc(x.t||'')+'</span>'
+      +'<span class="code">'+esc(x.c)+'</span></div>'
+      +'<div class="meta">'+esc(x.why)+'</div>'
+      +(x.act==='topic_pick'?'<div style="margin-top:9px">'
+        +btn('topic_pick',x.c,'② 선별','ok')+btn('topic_drop',x.c,'제외','no')+'</div>':'')
+      +'<div style="margin-top:7px">'+cmd(x.cmd)+'</div></div>';}).join('')
+    : '<p class="none">없음.</p>';
+
+  var rej=V.filter(function(x){return x.verdict==='fail';});
+  H+='<div class="sec">⛔ 반려 — 재작업 후 재검사<span class="n">'+rej.length+'건</span></div>';
+  H+= rej.length? rej.map(function(x){return '<div class="card rej"><div class="hd">'
+      +'<span class="who w-work">작업세션 재작업</span>'
+      +'<span class="ttl">'+esc(x.title||'')+'</span>'
+      +'<span class="code">'+esc(x.code)+'</span></div>'
+      +'<div class="meta">검사자 '+esc(x.by||'')+' · '+esc(x.at||'')+'</div>'
+      +'<div class="why">'+esc(x.why||'')+'</div>'
+      +'<div style="margin-top:7px">'
+      +cmd('python -m studio.v0check pass --code '+x.code+' --by 이부장(관제탑) --why <재검사 근거>')
+      +'</div></div>';}).join('')
+    : '<p class="none">없음.</p>';
+
+  var LAB=['①제안','②선별','③글감승인','④지시서','⑤초안·큐','⑥V0검사','⑦발행승인','⑧발행'];
+  function stepOf(code){
+    var t=T.filter(function(x){return x.code===code;})[0];
+    var q=Q.filter(function(x){return x.code===code;})[0];
+    var v=v0[code], p=byc[code];
+    if(p&&p.url) return 8;
+    if(q&&q.go) return 7;
+    if(v&&v.verdict==='fail') return -6;
+    if(v&&v.verdict==='pass') return 7;
+    if(q) return 6;
+    if(t&&t.state==='approved') return 4;
+    if(t&&t.state==='picked') return 3;
+    if(t) return 2;
+    return 1;
+  }
+  var docs={};
+  T.forEach(function(t){docs[t.code]={code:t.code,title:t.title};});
+  Q.forEach(function(q){docs[q.code]={code:q.code,title:q.title};});
+  V.forEach(function(v){if(!docs[v.code])docs[v.code]={code:v.code,title:v.title};});
+  var list=Object.keys(docs).map(function(k){return docs[k];})
+           .filter(function(d){return !(byc[d.code]&&byc[d.code].url);});
+  H+='<div class="sec">📑 진행 중 문서 — 결재선 위치<span class="n">'+list.length+'건</span></div>';
+  H+= list.length? list.map(function(d){
+      var s=stepOf(d.code), rejd=(s<0), cur=Math.abs(s);
+      return '<div class="card'+(rejd?' rej':'')+'"><div class="hd">'
+       +'<span class="ttl">'+esc(d.title||'')+'</span>'
+       +'<span class="code">'+esc(d.code)+'</span></div>'
+       +'<div class="steps">'+LAB.map(function(l,i){
+           var n=i+1, cls=(rejd&&n===6)?'no':(n<cur?'done':(n===cur?'now':''));
+           return '<span class="st '+cls+'">'+l+'</span>';}).join('')+'</div></div>';}).join('')
+    : '<p class="none">진행 중 문서가 없습니다.</p>';
+
+  var bs=Object.keys(B.batches||{}).map(function(id){return {id:id,b:B.batches[id]};})
+          .filter(function(x){return x.b.order;})
+          .sort(function(x,y){return (y.b.order_at||'').localeCompare(x.b.order_at||'');});
+  H+='<div class="sec">📄 지시서 — 최신순<span class="n">'+bs.length+'건</span></div>';
+  bs.slice(0,8).forEach(function(x){
+    var it=x.b.items||[], done=it.filter(function(i){return i.state==='done';}).length;
+    var rep=it.filter(function(i){return i.note;}).slice(-2);
+    H+='<div class="card"><div class="hd">'
+      +'<span class="who '+(((x.b.owner||'').indexOf('루틴')>=0)?'w-rt':'w-work')+'">'
+      +esc(x.b.owner||'담당 미지정')+'</span>'
+      +'<span class="ttl">'+esc(x.b.title||x.id)+'</span>'
+      +'<span class="code">'+esc(x.id)+' · '+done+'/'+it.length+'</span></div>'
+      +'<div class="meta">지시 등록 '+esc(x.b.order_at||'일시 미기록')+'</div>'
+      + rep.map(function(i){return '<div class="note">↩ <b>'+esc(i.code||'')+'</b> '
+          +esc(String(i.note).slice(0,190))+'</div>';}).join('')
+      +'<div style="margin-top:7px">'+cmd('python -m studio.batchboard order --id '+x.id)+'</div></div>';
+  });
+
+  H+='<div class="foot">오늘 발행 '+(P.count!=null?P.count:'?')+'편 / 상한 '+(P.hard||5)
+    +' · 재고 '+(P.backlog!=null?P.backlog:'?')+'/'+(P.backlog_max||5)
+    +' · 🔴 결재는 두 번이다 — ③ 글감 승인(쓸 만한 글감인가) 과 ⑦ 발행 승인(이 원고를 지금 내는가)은 다른 결정이다.</div>';
+  document.getElementById('out').innerHTML=H;
+}).catch(function(e){
+  document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';});
+ });
+</script></body></html>

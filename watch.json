@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-20",
+ "updated": "2026-08-21",
  "items": [
   {
    "id": "redirect-error",
@@ -1891,7 +1891,9 @@
    "due": "2026-08-21",
    "cmd": "python -m studio.seodesc list",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-21",
+   "result": "실측 결과 드리프트 아님. seodesc scan(담당 도구)으로 재확인 → A5-06·B4-08 둘 다 state=ok, 라이브에 설명 정상 존재. 대신 진짜 미결이 따로 있었다: D3-05 가 shared(미부착) 상태였고 2026-08-21 05:3x 브라우저 직접 입력으로 해소(live_len 113·og_len 113·state ok). 전체 200/200 설명 있음·공통문구 0"
   },
   {
    "id": "insta0815b-false-done",
@@ -1899,6 +1901,75 @@
    "what": "insta0815b 거짓완료 9건 — done 인데 DB osmu.instagram 없음(G1-02·03·06·G2-01·02 등). 인스타 세션에 실측 재보고 지시",
    "due": "2026-08-21",
    "cmd": "python -m studio.sessionaudit",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-21",
+   "result": "2026-08-21 05:0x 해소 완료. 실제 게시(HTTP 200) 확인 후 관제탑이 6건(G1-02·G1-03·G1-06·G2-01·G2-02·G3-03) insta-link 기록, 나머지 5건(C1-04·C4-01·C4-03·C4-04·C4-05)은 인스타 세션이 커밋 bd7b067 로 기록. 현재 insta_post --list 완료 94/대기 0, 보드 done 중 URL 없음 0건. 재발 방지 3중: validate_db 12) 채널정합(Stop 하네스) · sessionaudit 7) · batchboard mark 자동기록"
+  },
+  {
+   "id": "insta-graph-api-feasibility",
+   "added": "2026-08-21",
+   "what": "인스타 게시 자동화 가능성 조사 — 지금은 13편(카드 6장×13)을 사장님이 앱에서 손으로 올리신다. Instagram Graph API 에 콘텐츠 게시(캐러셀 포함) 기능이 있고 계정이 이미 프로페셔널(프로필 '음식점 · AI 크리에이터')로 보이므로 조건이 맞을 수 있다. 확인할 것: ①Facebook 페이지 연결 여부 ②Meta 앱·토큰 발급 절차 ③이미지 공개 URL 요구조건(우리 카드는 로컬인데 thumbs/ 는 github.io 로 공개 배포되므로 같은 방식이 되는지) ④레이트리밋. 🔴되는지 재기 전에 '가능하다' 고 말하지 말 것",
+   "due": "2026-08-23",
+   "cmd": "python -m studio.insta_post --list",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0check-queue4",
+   "added": "2026-08-21",
+   "what": "발행 대기 4편(D1-07·F4-19·F1-12·B4-09) 전부 V0 미검사 — v0check gate 4건 모두 exit 1. 이 게이트가 안 풀리면 사장님이 go 를 찍어도 발행이 막힌다. 검사는 이부장(관제탑) 몫 — 작성자는 자기 글을 검사할 수 없다",
+   "due": "2026-08-21",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "순서 = V0 검사(이부장) → 사장님 go → 발행. go 부터 찍으면 벽에 부딪힌다"
+  },
+  {
+   "id": "pubqueue-go-4",
+   "added": "2026-08-21",
+   "what": "발행 대기 4편에 사장님 발행 승인(go) 도장이 없어 2026-08-21 발행 루틴이 0편으로 끝났다. 원고 확인 후 승인하실 것 — 단 V0 검사(watch v0check-queue4)가 먼저 끝나야 실제 발행이 통과한다",
+   "due": "2026-08-21",
+   "cmd": "python -m studio.pubqueue go --code <코드>",
+   "owner": "user",
+   "state": "wait",
+   "flag": "작업 세션이 스스로 찍지 않는다. 우회(--force-go)는 규칙을 깨는 것"
+  },
+  {
+   "id": "covered-briefing-parse",
+   "added": "2026-08-21",
+   "what": "covered_topics ④ 가 오전브리핑을 조용히 놓친다 — 파서가 '### ① 제목' 또는 '### 1. 제목' 형식만 읽는데(studio/covered_topics.py:127) 08-19·08-20 브리핑은 '### 코드 — 제목' 이라 매칭 0건. 레인 간 중복을 막으라고 만든 버킷이 최근 이틀치를 못 본 채 정상처럼 보였다. 고칠 방향 두 갈래: ①파서를 '### 아무거나' 로 넓히기 ②브리핑 서식을 템플릿으로 고정. 지금은 topicprop.json 이 실질 진실원이라 영향이 제한적이지만, 브리핑을 근거로 삼는 루틴이 남아 있으면 그대로 샌다.",
+   "due": "2026-08-25",
+   "cmd": "python studio/covered_topics.py | grep -A8 '④ 최근'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "d1-07-penalty-table",
+   "added": "2026-08-21",
+   "what": "D1-07 전월세신고제 — 과태료 지연기간별 구간표 보강 필요. V0 검사에서 '2만~30만원 범위만 있고 구간표가 없다'고 지적했는데, 구글 검색 실측(2026-08-21)에서 상위 경쟁 글(네이버블로그 happysongpa)이 구간표를 실제로 싣고 있음을 확인: 1억 미만 3개월이하 2만원/6개월이하 4만원 · 1~3억 3만/8만 · 3~5억 4만/12만. 즉 독자가 가장 궁금한 '내가 3개월 늦었으면 얼마인가'에 경쟁자는 답하고 우리는 못 한다 = 검색 경쟁 열위. 출처는 부동산거래신고법 시행령 별표. 공식 확인 후 표 추가하고 발행할 것",
+   "due": "2026-08-22",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "keyword-tool-access",
+   "added": "2026-08-21",
+   "what": "키워드 검색량 도구 — Claude 자동 접근 불가 4종 실측(2026-08-21). ①네이버 검색광고 키워드도구=확장이 naver.com 도메인 차단 ②블랙키위=로그인·크레딧 유료 전환(URL 형식도 변경) ③키워드마스터(whereispost.com)=광고 시청 게이트, 8시간 액세스 ④Google Trends=429 레이트리밋(구글 검색 반복 후). 결론: 검색량 숫자는 자동으로 못 얻는다. 대신 구글 검색 결과의 경쟁 도메인·정보 낡음 분석은 브라우저로 가능하고 실제로 4편 판정에 썼다. 재시도할 것: Google Trends(시간 두고) · Google Ads Keyword Planner(Ads 계정 필요 여부 확인). 🔴 사장님께 손일을 넘기기 전에 그 수치가 실제로 판단을 바꾸는지부터 잴 것",
+   "due": "2026-08-24",
+   "cmd": "브라우저로 trends.google.co.kr 열어 429 해소 확인",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-21",
+   "result": "2026-08-21 실측 완료. 자동 접근 가능한 것은 Google Trends 하나뿐이다 — 탭 그룹으로 열어 4개 키워드 비교 차트를 실제로 받았다(증여세가 스케일을 잡아먹을 만큼 압도적, 나머지 3개는 바닥). 단 불안정하다: 연속 조회하면 429 → '죄송합니다 문제가 발생했습니다'로 떨어지고, 시계열은 실패해도 지역별 관심도는 나오는 식으로 부분 실패한다(설악산 케이블카 = 강원도 100). 조회 사이에 간격을 둬야 한다. 나머지 3종은 불가 확정: 네이버 검색광고=도메인 차단 · 블랙키위=로그인·크레딧 유료 · 키워드마스터=광고 시청 게이트(8시간 액세스). 🔴 검색량 절대값은 못 얻는다 — 대신 구글 검색 상위 경쟁 분석(도메인 유형·정보 낡음)이 실제 판정에 더 결정적이었다"
+  },
+  {
+   "id": "trends-rate-limit",
+   "added": "2026-08-21",
+   "what": "Google Trends 조회 간격 규칙 — 연속 조회 시 429/오류. 키워드 비교는 한 URL에 최대 5개까지 넣어 1회로 끝내고, 추가 조회가 필요하면 간격을 둘 것. 시계열이 실패해도 지역별 관심도는 나오는 부분실패가 있으므로 '안 나왔다'를 '데이터 없음'으로 오독하지 말 것",
+   "due": "2026-08-28",
+   "cmd": "브라우저로 trends.google.co.kr 4키워드 비교 URL 1회 조회",
    "owner": "claude",
    "state": "todo"
   }
