@@ -1,18 +1,18 @@
 {
- "rev": "31f23b6",
+ "rev": "f05399a",
  "counts": {
-  "total": 203,
-  "osmu_done": 201,
-  "osmu_pending": 2,
+  "total": 204,
+  "osmu_done": 203,
+  "osmu_pending": 1,
   "indexed": 2,
-  "index_pending": 201,
+  "index_pending": 202,
   "index_requested": 199,
-  "index_todo": 2
+  "index_todo": 3
  },
  "actionable": [
   {
-   "code": "D1-07",
-   "title": "전월세 신고제 신고 방법 대상 기준 과태료 총정리 (2",
+   "code": "B4-09",
+   "title": "부모 자식 간 계좌이체 증여세 기준 차용증 쓰는 법 총",
    "need": [
     "OSMU",
     "색인요청"
@@ -27,19 +27,33 @@
    }
   },
   {
-   "code": "F1-12",
-   "title": "태국 입국카드 TDAC 작성 방법 총정리 (2026 도",
+   "code": "D1-07",
+   "title": "전월세 신고제 신고 방법 대상 기준 과태료 총정리 (2",
    "need": [
-    "OSMU",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "F1-12",
+   "title": "태국 입국카드 TDAC 작성 방법 총정리 (2026 도",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
    }
   },
   {
@@ -195,21 +209,6 @@
   {
    "code": "A1-12",
    "title": "근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A2-01",
-   "title": "보조금24 정부지원금 조회 신청 방법 총정리 (내가 받",
    "need": [
     "색인대기"
    ],

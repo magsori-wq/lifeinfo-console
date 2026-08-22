@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-21",
+ "updated": "2026-08-22",
  "items": [
   {
    "id": "redirect-error",
@@ -1997,6 +1997,15 @@
    "what": "키워드 게이트가 무인 루틴에서 구조적으로 실행 불가 — 크롬 확장에 브라우저 2대가 연결되면 어느 쪽을 쓸지 사람이 골라야 하는데 예약 루틴엔 사람이 없다. 2026-08-21 travel-prep 에서 실제로 막혀 G4-03 키워드를 미측정으로 남겼다. 대면 세션이 whereispost.com/keyword 로 '가을 전어'를 재고 topicprop/pubqueue facts 에 'KW=...' 를 붙이면 해소된다. 아니면 게이트를 무인 실행에서 면제하고 발행 승인 단계로 옮길 것 — 이부장 판단",
    "due": "2026-08-22",
    "cmd": "python -m studio.pubqueue list   # G4-03 메모에 KW= 가 붙어 있으면 해소",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "publishyml-board-seed-missing",
+   "added": "2026-08-22",
+   "what": "🔴 클라우드 발행(Actions publish.yml)에 board_seed --step 호출이 없다 — 발행은 정상인데 progress.html 의 '발행 파이프라인 15단계' 가 텅 빈 채로 남는다(2026-08-22 사장님 'D1-07·F1-12 발행 완료했는데 확인 안 되?' 로 드러남. 실측: progress.json pipeline.code=F1-12·step=None). 원인=창구가 터미널 publish-flow → Actions 로 바뀌면서 publish-flow 안에 있던 board_seed 전진 고리만 빠졌다. 발행할 때마다 반복된다. 조치=publish.yml 의 '변경분 커밋·푸시' 앞에 board_seed --code <> --title <> --step 15 한 줄 추가. ⚠️러너가 webapp/* 를 쓰므로 커밋 스텝보다 앞에 있어야 한다. 임시로 관제탑이 손으로 채운 상태(D1-07 15/15)",
+   "due": "2026-08-23",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/progress.json',encoding='utf-8'));p=d.get('pipeline') or {};print('보드:',p.get('code'),'단계',p.get('done'))\"  # 최근 발행 코드가 떠 있고 done 이 15 면 해소",
    "owner": "claude",
    "state": "todo"
   }
