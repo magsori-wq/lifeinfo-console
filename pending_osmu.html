@@ -1,0 +1,207 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>미결사항</title>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;padding:11px 13px;background:#0e1526;color:#e6ecf7;overflow:hidden;
+     font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:13.5px;line-height:1.5;
+     display:flex;flex-direction:column;gap:8px}
+.hdrow{display:flex;align-items:baseline;gap:12px;flex:0 0 auto}
+h1{font-size:17px;margin:0}
+.tip{color:#7d8ca8;font-size:11.5px}
+.srv{font-size:12px;padding:5px 11px;border-radius:8px;flex:0 0 auto}
+.srv.on{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
+.srv.off{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
+/* 4분할 — 본문은 스크롤하지 않고 각 칸만 흐른다 */
+.grid{flex:1;min-height:0;overflow:hidden;display:grid;gap:9px;
+      grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.pane{background:#131c31;border:1px solid #223052;border-radius:11px;height:100%;
+      display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.ph{display:flex;align-items:center;gap:7px;padding:8px 12px;flex:0 0 auto;
+    border-bottom:1px solid #223052;background:#16203a;font-weight:700;font-size:13.5px}
+.ph .cnt{margin-left:auto;font-size:11.5px;font-weight:400;color:#8fa0bd;
+         background:#0e1526;border:1px solid #2a3a5e;border-radius:20px;padding:1px 9px}
+.pb{flex:1;min-height:0;overflow-y:auto;padding:9px 11px}
+.pb::-webkit-scrollbar{width:9px}
+.pb::-webkit-scrollbar-thumb{background:#2a3a5e;border-radius:6px}
+.card{background:#16203a;border:1px solid #2a3a5e;border-radius:10px;padding:9px 11px;margin:0 0 8px}
+.hd{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:5px}
+.code{font-family:Consolas,monospace;font-size:11.5px;color:#7d8ca8}
+.ttl{font-weight:700;flex:1;min-width:150px;font-size:13px}
+.files{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.f{background:#1b2540;border:1px solid #2a3a5e;border-radius:7px;padding:3px 9px;
+   font-size:11.5px;color:#9fc9ee;cursor:pointer;font-family:Consolas,monospace;
+   max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.f:hover{border-color:#4D9DE0;color:#cfe6fa;background:#22304f}
+.f.img{color:#e59ac0;border-color:#c2569655}
+.f.miss{color:#f0928a;border-color:#c0392b55;cursor:not-allowed;opacity:.6}
+.none{color:#7d8ca8;font-size:12.5px;padding:6px 0}
+.lt{display:inline-block;width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+.lt-done{background:#2f8f68;box-shadow:0 0 6px #2f8f6899}
+.lt-ready{background:#e0a01e;box-shadow:0 0 6px #e0a01e99}
+.lt-todo{background:#c0392b;box-shadow:0 0 6px #c0392b99}
+.card.l-ready{border-color:#e0a01e55;background:#e0a01e0d}
+.card.l-todo{border-color:#c0392b55;background:#c0392b0d}
+.card.l-done{border-color:#2f8f6855;background:#2f8f680d}
+.sig{display:flex;gap:9px;flex:0 0 auto;margin:0}
+.sg{flex:1;background:#141d33;border:1px solid #22304f;border-radius:10px;padding:6px 11px;
+    display:flex;align-items:center;gap:8px}
+.sg .n{font-size:21px;font-weight:800;font-variant-numeric:tabular-nums}
+.sg .l{font-size:11.5px;color:#8fa0bd;line-height:1.25}
+.sg.g .n{color:#5fd3a0} .sg.y .n{color:#f0b26b} .sg.r .n{color:#f0928a}
+.badge{font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;white-space:nowrap}
+.b-wait{background:#e08b1e22;border:1px solid #e08b1e66;color:#f0b26b}
+.b-ok{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
+.b-todo{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
+/* 뷰어 — 파일을 클릭하면 아래에서 열린다(모달 금지: iframe 에서 막힌다) */
+#viewer{flex:0 0 auto;display:none;background:#131c31;border:1px solid #2a3a5e;
+        border-radius:11px;max-height:46vh;overflow:hidden;flex-direction:column}
+#viewer.on{display:flex}
+#vh{display:flex;align-items:center;gap:9px;padding:7px 12px;border-bottom:1px solid #223052;
+    background:#16203a;flex:0 0 auto}
+#vname{font-family:Consolas,monospace;font-size:12px;color:#9fc9ee;flex:1;
+       overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#vbody{flex:1;min-height:0;overflow:auto;padding:10px 13px}
+#vtext{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
+       font-size:12.5px;line-height:1.65;color:#cfd8e6;margin:0}
+#vimg{max-width:100%;border-radius:8px;display:block;margin:0 auto}
+.btn{border:0;border-radius:7px;padding:5px 13px;font-size:12.5px;font-weight:700;
+     cursor:pointer;font-family:inherit;background:#2f8f68;color:#fff}
+.btn:hover{background:#37a87b}
+.btn.g{background:#4d5a70;color:#dbe3ef}
+.btn.g:hover{background:#5d6d88}
+.toast{position:fixed;right:16px;bottom:16px;background:#2f8f68;color:#fff;
+       padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:.2s;z-index:9}
+.toast.on{opacity:1}
+@media(max-width:900px){body{overflow:auto}
+  .grid{grid-template-columns:1fr;grid-template-rows:none}.pane{max-height:420px}}
+</style></head><body>
+<div class="hdrow"><h1>🗂️ 미결사항</h1>
+ <span class="tip">파일을 클릭하면 아래에서 열립니다 · <b>전체 복사</b>로 바로 붙여넣기</span></div>
+<div id="srv" class="srv off">결재 서버 확인 중…</div>
+<div class="sig" id="sig"></div>
+<div class="grid" id="out"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
+
+<div id="viewer">
+  <div id="vh"><span id="vname"></span>
+    <button class="btn" onclick="copyAll()">📋 전체 복사</button>
+    <button class="btn g" onclick="closeV()">닫기</button></div>
+  <div id="vbody"><pre id="vtext"></pre><img id="vimg" style="display:none"></div>
+</div>
+<div class="toast" id="tst">복사됨</div>
+<script>
+var API=null, RAW='';
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function toast(m){var t=document.getElementById('tst');t.textContent=m;
+  t.classList.add('on');setTimeout(function(){t.classList.remove('on');},1600);}
+function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+  .catch(function(){return null;});}
+
+function closeV(){document.getElementById('viewer').classList.remove('on');}
+function copyAll(){ if(!RAW){toast('복사할 텍스트가 없습니다');return;}
+  navigator.clipboard.writeText(RAW).then(function(){toast('✅ 전체 복사됨 — 붙여넣으세요');},
+    function(){toast('🔴 복사 실패');}); }
+
+async function openFile(path, isImg){
+  if(!API){toast('🔴 결재 서버가 꺼져 있습니다');return;}
+  var v=document.getElementById('viewer');
+  document.getElementById('vname').textContent=path;
+  var t=document.getElementById('vtext'), im=document.getElementById('vimg');
+  v.classList.add('on');
+  if(isImg){ RAW=''; t.style.display='none'; im.style.display='block';
+    im.src=API+'/api/file?path='+encodeURIComponent(path); return; }
+  im.style.display='none'; t.style.display='block'; t.textContent='읽는 중…';
+  try{
+    var r=await fetch(API+'/api/file?path='+encodeURIComponent(path));
+    var d=await r.json();
+    if(d.ok){ RAW=d.text; t.textContent=d.text;
+      document.getElementById('vname').textContent=path+'  ('+d.size.toLocaleString()+'자)'; }
+    else { RAW=''; t.textContent='🔴 '+(d.error||'읽지 못했습니다'); }
+  }catch(e){ RAW=''; t.textContent='🔴 서버에 닿지 않습니다: '+e.message; }
+}
+
+function fileChip(path, label, isImg, exists){
+  if(exists===false) return '<span class="f miss" title="파일 없음">✕ '+esc(label)+'</span>';
+  return '<span class="f'+(isImg?' img':'')+'" onclick="openFile('
+    +JSON.stringify(path).replace(/"/g,'&quot;')+','+(isImg?'true':'false')+')">'
+    +(isImg?'🖼 ':'📄 ')+esc(label)+'</span>';
+}
+
+(async function(){
+  // 서버 탐색 — /api/pending 을 응답하는 최신 서버만 채택한다(옛 프로세스 자동 배제)
+  for (var port of [8003, 8002, 8001]) {
+    try { var r=await fetch('http://127.0.0.1:'+port+'/api/pending');
+      if(r.ok){ API='http://127.0.0.1:'+port; break; } } catch(e){}
+  }
+  var sv=document.getElementById('srv');
+  if(!API){ sv.className='srv off';
+    sv.innerHTML='🔴 파일 서버가 꺼져 있습니다. 터미널에서 '
+      +'<b>python -m studio.approve_server</b> 를 실행하세요.';
+    document.getElementById('out').innerHTML=''; return; }
+  sv.className='srv on';
+  sv.innerHTML='🟢 연결됨 ('+API.split(':')[2]+') — '
+    +'<b style="color:#5fd3a0">🟢완료</b> · <b style="color:#f0b26b">🟡게시대기(사장님 차례)</b> · '
+    +'<b style="color:#f0928a">🔴미준비(작업세션 차례)</b> · 파일을 클릭하면 아래에서 열립니다.';
+
+  var D=await (await fetch(API+'/api/pending')).json();
+  var CH=[['naver','📗','네이버'],['threads','🧵','쓰레드'],['instagram','📸','인스타']];
+  var cnt={done:0,ready:0,todo:0};
+  (D.posts||[]).forEach(function(p){ CH.forEach(function(x){
+     var l=(p.ch[x[0]]||{}).light; if(l) cnt[l]++; });});
+
+  document.getElementById('sig').innerHTML =
+      '<div class="sg y"><span class="lt lt-ready"></span><span class="n">'+cnt.ready+'</span>'
+    + '<span class="l">게시 대기<br>사장님 차례</span></div>'
+    + '<div class="sg r"><span class="lt lt-todo"></span><span class="n">'+cnt.todo+'</span>'
+    + '<span class="l">미준비<br>작업세션 차례</span></div>'
+    + '<div class="sg g"><span class="lt lt-done"></span><span class="n">'
+    + (D.publish||[]).filter(function(x){return x.go;}).length+'</span>'
+    + '<span class="l">⑦승인 완료<br>발행 가능</span></div>'
+    + '<div class="sg"><span class="n" style="color:#9fc9ee">'+(D.posts||[]).length+'</span>'
+    + '<span class="l">후속 남은 글<br>OSMU 미완</span></div>';
+
+  function chips(files){
+    return (files||[]).map(function(f){
+      if(!f.exists) return '<span class="f miss" title="파일 없음">✕ '+esc(f.label)+'</span>';
+      return '<span class="f'+(f.img?' img':'')+'" onclick="openFile('
+        +JSON.stringify(f.path).replace(/"/g,'&quot;')+','+(f.img?'true':'false')+')">'
+        +(f.img?'🖼 ':'📄 ')+esc(f.label)+'</span>';}).join('');
+  }
+  function pane(icon,title,n,body){
+    return '<div class="pane"><div class="ph">'+icon+' '+title
+      +'<span class="cnt">'+n+'</span></div><div class="pb">'+body+'</div></div>';}
+
+  var H='';
+  // ① 글 발행 대기
+  var pb=(D.publish||[]);
+  H+=pane('📢','글 발행 대기',pb.length+'건', pb.length? pb.map(function(q){
+      return '<div class="card l-'+q.light+'"><div class="hd">'
+        +'<span class="lt lt-'+q.light+'"></span>'
+        +'<span class="ttl">'+esc(String(q.title||'').slice(0,40))+'</span>'
+        +'<span class="code">'+esc(q.code)+'</span>'
+        +'<span class="badge '+(q.go?'b-ok':'b-wait')+'">'+(q.go?'⑦승인':'승인대기')+'</span>'
+        +'<span class="badge '+(q.v0==='pass'?'b-ok':'b-wait')+'">'
+        +(q.v0?(q.v0==='pass'?'V0✓':'V0✕'):'V0-')+'</span></div>'
+        +'<div class="files">'+chips(q.files)+'</div></div>';}).join('')
+    : '<p class="none">✅ 발행 대기 없음.</p>');
+
+  // ②③④ 채널별
+  CH.forEach(function(x){
+    var key=x[0], rows=(D.posts||[]).filter(function(p){return (p.ch[key]||{}).light!=='done';});
+    var body = rows.length? rows.map(function(p){
+      var c=p.ch[key]||{};
+      return '<div class="card l-'+c.light+'"><div class="hd">'
+        +'<span class="lt lt-'+c.light+'"></span>'
+        +'<span class="ttl">'+esc(String(p.title||'').slice(0,36))+'</span>'
+        +'<span class="code">'+esc(p.code)+'</span>'
+        +'<span class="badge '+(c.light==='ready'?'b-wait':'b-todo')+'">'
+        +(c.light==='ready'?'🟡 게시만 하면 됨':'🔴 자산 미준비')+'</span></div>'
+        +'<div class="files">'+(c.files&&c.files.length? chips(c.files)
+          : '<span class="f miss">✕ 매니페스트 미등록 — osmu_manifest set --code '+esc(p.code)+'</span>')
+        +'</div></div>';}).join('') : '<p class="none">✅ 전부 확산됨.</p>';
+    H+=pane(x[1],x[2]+' 미확산',rows.length+'건',body);
+  });
+  document.getElementById('out').innerHTML=H;
+})();
+</script></body></html>

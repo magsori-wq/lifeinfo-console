@@ -1972,6 +1972,33 @@
    "cmd": "브라우저로 trends.google.co.kr 4키워드 비교 URL 1회 조회",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "topicprop-approval-revert",
+   "added": "2026-08-21",
+   "what": "B2-11 승인이 조용히 picked 로 되돌아갔다(2026-08-21 2회째). 관제탑이 approve 를 실행해 '[승인]' 출력까지 봤는데 이후 파일에는 picked 로 남아 있었다. bake 는 무해함을 실험으로 확인(approve→approved, bake 후에도 approved). 남은 용의자는 다른 세션의 pick 재실행이다 — CLAUDE.md 에 2026-08-20 B4-09 가 같은 방식으로 되돌아간 사고가 기록돼 있고 _set_state 에 하향 차단이 이미 들어 있는데도 재발했다. 확인할 것: ①_DOWNGRADE_OK 에 picked 가 열려 있는지 ②pick 명령이 approved 를 통과시키는 경로가 있는지 ③되돌림을 로그로 남겨 누가 했는지 보이게",
+   "due": "2026-08-23",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/topicprop.json',encoding='utf-8'));print([(i['code'],i['state']) for i in d['items']])\"",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "g403-price-unmeasured",
+   "added": "2026-08-21",
+   "what": "G4-03(가을 전어) 산지별 시세 미확보 — KAMIS 수산물 소매가격에 전어 품목은 있으나 값 추출 2회 실패(WebFetch), 수협 계통판매통계 경로는 미시도. 초안은 금액을 빼고 '현장 시세 확인'으로 처리했다. 시세표를 넣으려면 브라우저로 KAMIS 전어를 1회 조회하면 된다. ※서천 홍원항 축제 일정·체험비는 서천군 공식에 없어 비교표에서 제외함(언론뿐)",
+   "due": "2026-08-24",
+   "cmd": "curl -s 'https://gwangyang.go.kr/tour/board.es?mid=a31301000000&bid=0044' | grep -o '제[0-9]*회 광양전어축제'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "kwgate-headless",
+   "added": "2026-08-21",
+   "what": "키워드 게이트가 무인 루틴에서 구조적으로 실행 불가 — 크롬 확장에 브라우저 2대가 연결되면 어느 쪽을 쓸지 사람이 골라야 하는데 예약 루틴엔 사람이 없다. 2026-08-21 travel-prep 에서 실제로 막혀 G4-03 키워드를 미측정으로 남겼다. 대면 세션이 whereispost.com/keyword 로 '가을 전어'를 재고 topicprop/pubqueue facts 에 'KW=...' 를 붙이면 해소된다. 아니면 게이트를 무인 실행에서 면제하고 발행 승인 단계로 옮길 것 — 이부장 판단",
+   "due": "2026-08-22",
+   "cmd": "python -m studio.pubqueue list   # G4-03 메모에 KW= 가 붙어 있으면 해소",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }

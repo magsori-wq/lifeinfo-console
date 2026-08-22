@@ -1,0 +1,182 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>색인 보드</title>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;padding:11px 13px;background:#0e1526;color:#e6ecf7;overflow:hidden;
+     font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:13.5px;line-height:1.5;
+     display:flex;flex-direction:column;gap:8px}
+.hdrow{display:flex;align-items:baseline;gap:12px;flex:0 0 auto}
+h1{font-size:17px;margin:0}
+.tip{color:#7d8ca8;font-size:11.5px}
+.sig{display:flex;gap:9px;flex:0 0 auto}
+.sg{flex:1;background:#141d33;border:1px solid #22304f;border-radius:10px;padding:6px 12px;
+    display:flex;align-items:center;gap:9px}
+.sg .n{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.05}
+.sg .l{font-size:11.5px;color:#8fa0bd;line-height:1.25}
+.sg.g .n{color:#5fd3a0} .sg.y .n{color:#f0b26b} .sg.r .n{color:#f0928a} .sg.b .n{color:#9fc9ee}
+.lt{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+.lt-g{background:#2f8f68;box-shadow:0 0 6px #2f8f6899}
+.lt-y{background:#e0a01e;box-shadow:0 0 6px #e0a01e99}
+.lt-r{background:#c0392b;box-shadow:0 0 6px #c0392b99}
+.grid{flex:1;min-height:0;overflow:hidden;display:grid;gap:9px;
+      grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.pane{background:#131c31;border:1px solid #223052;border-radius:11px;height:100%;
+      display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.ph{display:flex;align-items:center;gap:7px;padding:8px 12px;flex:0 0 auto;
+    border-bottom:1px solid #223052;background:#16203a;font-weight:700;font-size:13.5px}
+.ph .cnt{margin-left:auto;font-size:11.5px;font-weight:400;color:#8fa0bd;
+         background:#0e1526;border:1px solid #2a3a5e;border-radius:20px;padding:1px 9px}
+.pb{flex:1;min-height:0;overflow-y:auto;padding:8px 11px}
+.pb::-webkit-scrollbar{width:9px}
+.pb::-webkit-scrollbar-thumb{background:#2a3a5e;border-radius:6px}
+.row{display:flex;align-items:center;gap:8px;padding:5px 2px;border-bottom:1px solid #1d2740;
+     font-size:12.5px}
+.row:last-child{border-bottom:0}
+.row .c{font-family:Consolas,monospace;font-size:11px;color:#7d8ca8;flex:0 0 46px}
+.row .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .d{font-family:Consolas,monospace;font-size:11px;color:#8fa0bd;flex:0 0 auto}
+.age{font-size:10.5px;padding:1px 7px;border-radius:20px;white-space:nowrap;font-weight:700}
+.a-new{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
+.a-mid{background:#e08b1e22;border:1px solid #e08b1e66;color:#f0b26b}
+.a-old{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
+.none{color:#7d8ca8;font-size:12.5px;padding:6px 0}
+.bar{display:flex;height:9px;border-radius:6px;overflow:hidden;margin:4px 0 9px}
+.bar i{display:block;height:100%}
+.lg{display:flex;flex-wrap:wrap;gap:8px;font-size:11.5px;color:#a9b6cc}
+.lg b{font-weight:700}
+.warn{background:#c0392b14;border:1px solid #c0392b44;border-radius:9px;padding:7px 11px;
+      font-size:11.5px;color:#f0b0a6;margin-bottom:8px;line-height:1.5}
+code{background:#1b2540;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px;
+     font-family:Consolas,monospace;font-size:11.5px;color:#9fc9ee;cursor:pointer}
+code:hover{border-color:#4D9DE0}
+.toast{position:fixed;right:16px;bottom:16px;background:#2f8f68;color:#fff;padding:8px 14px;
+       border-radius:8px;font-size:13px;opacity:0;transition:.2s;z-index:9}
+.toast.on{opacity:1}
+@media(max-width:900px){body{overflow:auto}
+  .grid{grid-template-columns:1fr;grid-template-rows:none}.pane{max-height:420px}}
+</style></head><body>
+<div class="hdrow"><h1>🔍 색인 보드</h1>
+  <span class="tip">색인 요청일·경과일을 함께 봅니다 · 명령을 클릭하면 복사</span></div>
+<div class="sig" id="sig"></div>
+<div class="grid" id="out"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
+<div class="toast" id="tst">복사됨</div>
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+  .catch(function(){return null;});}
+function toast(m){var t=document.getElementById('tst');t.textContent=m;
+  t.classList.add('on');setTimeout(function(){t.classList.remove('on');},1500);}
+function copy(el){navigator.clipboard.writeText(el.textContent);toast('복사됨');}
+function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
+function days(d){ if(!d) return null;
+  var t=Date.parse(String(d).slice(0,10)); if(isNaN(t)) return null;
+  return Math.floor((Date.now()-t)/86400000); }
+function ageChip(n){ if(n==null) return '';
+  var c = n<=7?'a-new':(n<=21?'a-mid':'a-old');
+  return '<span class="age '+c+'">'+n+'일 경과</span>'; }
+
+(async function(){
+  var a=await Promise.all([j('index_status.json'),j('reindex.json'),
+                           j('gsc_requested.json'),j('lifeinfo_db.txt'),j('gsc_monitor.json'),j('pub_dates.json'),j('gsc_req_dates.json')]);
+  var IX=a[0]||{}, RI=a[1]||{}, GR=a[2]||{}, DB=a[3]||{posts:[]}, GM=a[4]||{},
+      PD=(a[5]||{}).dates||{}, RQ=a[6]||{}, RQD=(a[6]||{}).dates||{},
+      BULK=new Set((a[6]||{}).bulk_dates||[]);
+  var posts=IX.posts||{}, reqd=RI.requested||{}, urls=new Set(GR.urls||[]);
+  var meta={}; (DB.posts||[]).forEach(function(p){ if(p.code) meta[p.code]=p; });
+
+  // 상태별 분류
+  var g=[],y=[],r=[],st={};
+  Object.keys(posts).forEach(function(c){
+    var p=posts[c]||{}, s=p.state||'?';
+    st[s]=(st[s]||0)+1;
+    var m=meta[c]||{}, item={code:c,title:m.title||'',state:s,
+      lastCrawl:p.lastCrawl, req:reqd[c]||RQD[c]||null, inUrls:urls.has(m.url), pub:PD[c]||null};
+    if(s==='Submitted and indexed') g.push(item);
+    else if(item.req || item.inUrls) y.push(item);
+    else r.push(item);
+  });
+  y.sort(function(x,z){return String(z.req||'').localeCompare(String(x.req||''));});
+
+  var stale=y.concat(r).filter(function(x){var d=days(x.pub); return d!=null && d>=14;}).length;
+  var idx=GM.index_current!=null?GM.index_current:g.length;
+  var tot=GM.index_total||Object.keys(posts).length;
+  document.getElementById('sig').innerHTML =
+      '<div class="sg g"><span class="lt lt-g"></span><span class="n">'+g.length+'</span>'
+    + '<span class="l">색인 완료<br>전체 '+tot+'편 중</span></div>'
+    + '<div class="sg y"><span class="lt lt-y"></span><span class="n">'+y.length+'</span>'
+    + '<span class="l">요청함 · 대기<br>크롤을 기다리는 중</span></div>'
+    + '<div class="sg r"><span class="lt lt-r"></span><span class="n">'+r.length+'</span>'
+    + '<span class="l">미요청<br>실제 할 일</span></div>'
+    + '<div class="sg b"><span class="n">'+idx+' <span style="font-size:13px;color:#6b7a96">/ 60</span></span>'
+    + '<span class="l">애드센스 게이트 ①<br>'+Math.round(idx*100/60)+'% · 기준 60편</span></div>'
+    + '<div class="sg r"><span class="n">'+stale+'</span>'
+    + '<span class="l">발행 14일↑ 미색인<br>독려 대상</span></div>';
+
+  function pane(icon,title,n,body){
+    return '<div class="pane"><div class="ph">'+icon+' '+title
+      +'<span class="cnt">'+n+'</span></div><div class="pb">'+body+'</div></div>';}
+  function rows(list, showReq){
+    if(!list.length) return '<p class="none">없음.</p>';
+    // 🔴 발행일을 함께 보여준다 (2026-08-21 사장님 지시:
+    //    "그렇게 해야 언제 글 발행인지를 알고 독려하여 빠짐없이 진행할 수 있다").
+    //    발행일은 DB 에 없어서 studio/pubdates.py 가 라이브 피드에서 받아 온다.
+    list.sort(function(a,b){return String(b.pub||'').localeCompare(String(a.pub||''));});
+    return list.slice(0,150).map(function(x){
+      var dp=days(x.pub), dr=days(x.req);
+      return '<div class="row"><span class="c">'+esc(x.code)+'</span>'
+        +'<span class="t">'+esc(String(x.title).slice(0,26))+'</span>'
+        + (x.pub? '<span class="d">발행 '+esc(x.pub)+'</span>'+ageChip(dp)
+                : '<span class="d" style="color:#6b7a96">발행일 미상</span>')
+        + (showReq ? (x.req? '<span class="d" style="color:#f0b26b">· 요청 '+esc(x.req)
+             +(BULK.has(x.req)?' <span title="로그 일괄 기록일 — 실제 요청일 아님" style="color:#8e6b3a">(일괄)</span>':'')
+             +'</span>'
+                           : '<span class="d" style="color:#6b7a96">· 요청일 미기록</span>') : '')
+        +'</div>';}).join('');
+  }
+
+  // ① 상태 분포
+  var order=['Submitted and indexed','Crawled - currently not indexed',
+             'Discovered - currently not indexed','Redirect error',
+             'URL is unknown to Google','Server error (5xx)'];
+  var col={'Submitted and indexed':'#2f8f68','Crawled - currently not indexed':'#e0a01e',
+           'Discovered - currently not indexed':'#c26596','Redirect error':'#4d5a70',
+           'URL is unknown to Google':'#c0392b','Server error (5xx)':'#8e44ad'};
+  var total=Object.keys(posts).length||1;
+  var barH='<div class="bar">'+order.map(function(k){
+      var n=st[k]||0; if(!n) return '';
+      return '<i style="width:'+(n*100/total)+'%;background:'+col[k]+'" title="'+k+' '+n+'"></i>';
+    }).join('')+'</div>';
+  var lgH='<div class="lg">'+order.map(function(k){
+      var n=st[k]||0; if(!n) return '';
+      return '<span><b style="color:'+col[k]+'">■</b> '+esc(k.split(' - ')[0])+' <b>'+n+'</b></span>';
+    }).join('')+'</div>';
+  var yv=(RI.yield||[]);
+  var yH = yv.length? '<div style="margin-top:11px;font-size:11.5px;color:#8fa0bd;font-weight:700">'
+      +'📉 재요청 회차별 수율 — 이게 낮으면 재요청은 레버가 아니다</div>'
+      + yv.map(function(v){
+        return '<div class="row"><span class="c">'+esc(v.date)+'</span>'
+          +'<span class="t">'+v.n+'건 요청 → 재크롤 '+v.crawled+'건</span>'
+          +'<span class="d" style="color:'+(v.rate>=30?'#8ee5be':'#f0928a')+'">'+v.rate+'%</span>'
+          +'</div>';}).join('') : '';
+  H1 = '<div class="warn">🔴 <b>크롤됐는데 색인 안 됨 '+(st['Crawled - currently not indexed']||0)
+      +'편</b> — 구글이 <b>읽어보고 색인하지 않기로 결정</b>한 것이다. 크롤 실패(기술 문제)가 아니라 '
+      +'콘텐츠 가치 판정이고, 애드센스 반려 사유(고유 콘텐츠 부족)와 같은 신호다. '
+      +'재요청·편수 늘리기로는 움직이지 않는다.</div>'
+      + barH + lgH + yH;
+
+  var H = pane('📊','색인 상태 분포', total+'편', H1)
+    + pane('🟡','요청함 · 크롤 대기', y.length+'건',
+        '<div class="warn" style="background:#e0a01e14;border-color:#e0a01e44;color:#f0c58a">'
+        +'요청일이 오래됐는데 색인이 안 되면 <b>재요청이 아니라 본문을 손봐야 한다</b>. '
+        +'요청 자체는 이미 접수돼 있다.</div>' + rows(y,true))
+    + pane('🔴','미요청 — 실제 할 일', r.length+'건',
+        (r.length? '<div style="margin-bottom:7px">'
+          +cmd('python -m studio.searchconsole inspect')+' 로 상태를 새로 읽은 뒤, '
+          +'GSC 에서 요청하고 '+cmd('python studio/gsc_log.py add <URL>')+' 로 기록합니다.</div>' : '')
+        + rows(r,false))
+    + pane('🟢','색인 완료', g.length+'건', rows(g,false));
+  document.getElementById('out').innerHTML=H;
+})();
+</script></body></html>

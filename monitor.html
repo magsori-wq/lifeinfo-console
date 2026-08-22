@@ -1,0 +1,181 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>관제</title>
+<style>
+/* 🔴 스크린패드(서브모니터) 전용 — 가로로 넓고 세로가 짧은 화면이 전제다.
+   사장님이 항상 띄워두고 곁눈으로 보시는 화면이라 규칙이 셋이다:
+     ① 스크롤하지 않는다  ② 글씨가 커야 한다  ③ 발행 절차 순서대로 왼쪽→오른쪽 */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;padding:8px 10px;background:#0b1120;color:#e6ecf7;overflow:hidden;
+     font-family:"Malgun Gothic",-apple-system,sans-serif;
+     display:flex;flex-direction:column;gap:7px}
+.top{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.ttl{font-size:15px;font-weight:800;letter-spacing:-.3px}
+.clock{font-family:Consolas,monospace;font-size:13px;color:#8fa0bd}
+.upd{margin-left:auto;font-size:11.5px;color:#5f6f8c}
+.dot{width:7px;height:7px;border-radius:50%;background:#2f8f68;display:inline-block;
+     animation:bl 2s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* 흐름 스트립 — 발행 절차를 왼쪽에서 오른쪽으로 */
+.strip{flex:0 0 auto;display:grid;gap:7px;
+       grid-template-columns:repeat(6,1fr)}
+.tile{background:#141d33;border:1px solid #22304f;border-radius:11px;padding:8px 11px;
+      display:flex;flex-direction:column;gap:2px;min-height:0}
+.tile .lab{font-size:11px;color:#8fa0bd;font-weight:700;letter-spacing:.2px}
+.tile .big{font-size:26px;font-weight:800;line-height:1.05;font-variant-numeric:tabular-nums}
+.tile .sml{font-size:11px;color:#7d8ca8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ok .big{color:#5fd3a0}   .warn .big{color:#f0b26b}   .bad .big{color:#f0928a}
+.idle .big{color:#6b7a96}
+.tile.ok{border-color:#2f8f6855;background:#2f8f680d}
+.tile.warn{border-color:#e08b1e55;background:#e08b1e0d}
+.tile.bad{border-color:#c0392b55;background:#c0392b0d}
+
+/* 본체 — 좌: 지금 발행 파이프라인 / 우: 대기열·채널 */
+.main{flex:1;min-height:0;display:grid;gap:7px;grid-template-columns:1.35fr 1fr}
+.box{background:#141d33;border:1px solid #22304f;border-radius:11px;
+     display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.bh{padding:6px 11px;border-bottom:1px solid #22304f;background:#18223c;
+    font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:7px;flex:0 0 auto}
+.bh .n{margin-left:auto;font-weight:400;color:#8fa0bd;font-size:11px}
+.bb{flex:1;min-height:0;overflow-y:auto;padding:8px 11px}
+.bb::-webkit-scrollbar{width:7px}
+.bb::-webkit-scrollbar-thumb{background:#2a3a5e;border-radius:6px}
+
+/* 파이프라인 단계 */
+.pipe{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 2px}
+.stp{font-size:11px;padding:3px 8px;border-radius:6px;background:#1d2740;color:#6b7a96;
+     white-space:nowrap;border:1px solid transparent}
+.stp.done{background:#2f8f6826;color:#8ee5be;border-color:#2f8f6844}
+.stp.now{background:#e08b1e2e;color:#f7c98a;font-weight:800;border-color:#e08b1e88;
+         box-shadow:0 0 0 1px #e08b1e44}
+.pcode{font-size:14px;font-weight:800;color:#f0b26b}
+.pnote{font-size:11.5px;color:#a9b6cc;margin-top:5px;line-height:1.45}
+.row{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid #1d2740;
+     font-size:12px}
+.row:last-child{border-bottom:0}
+.row .c{font-family:Consolas,monospace;font-size:11px;color:#7d8ca8;flex:0 0 auto}
+.row .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill{font-size:10.5px;font-weight:700;padding:1px 8px;border-radius:20px;white-space:nowrap}
+.p-go{background:#2f8f6826;border:1px solid #2f8f6866;color:#8ee5be}
+.p-no{background:#e08b1e26;border:1px solid #e08b1e66;color:#f0b26b}
+.p-w{background:#c2569626;border:1px solid #c2569666;color:#e59ac0}
+.none{color:#6b7a96;font-size:12px;padding:6px 0}
+@media(max-height:420px){.tile .big{font-size:21px}.strip{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:1100px){.strip{grid-template-columns:repeat(3,1fr)}.main{grid-template-columns:1fr}}
+</style></head><body>
+<div class="top"><span class="dot"></span><span class="ttl">관제 — 발행 진행</span>
+  <span class="clock" id="clk"></span>
+  <span class="upd" id="upd">…</span></div>
+<div class="strip" id="strip"></div>
+<div class="main">
+  <div class="box"><div class="bh">🚀 지금 발행 파이프라인<span class="n" id="pn"></span></div>
+    <div class="bb" id="pipe"><p class="none">불러오는 중…</p></div></div>
+  <div class="box"><div class="bh">📋 발행 대기 · 채널 확산<span class="n" id="qn"></span></div>
+    <div class="bb" id="side"></div></div>
+</div>
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+  .catch(function(){return null;});}
+function arr(x){return !x?[]:(Array.isArray(x)?x:(x.items||x.queue||Object.values(x)));}
+function tile(cls,lab,big,sml){
+  return '<div class="tile '+cls+'"><div class="lab">'+lab+'</div>'
+    +'<div class="big">'+big+'</div><div class="sml">'+esc(sml||'')+'</div></div>';}
+
+function todayList(P){
+  var ps=P.posts||[];
+  var h='<div style="margin-top:11px;padding-top:8px;border-top:1px solid #22304f">'
+   +'<div style="font-size:11.5px;color:#8fa0bd;font-weight:700;margin-bottom:5px">'
+   +'📌 오늘 나간 글 '+ps.length+'편 (상한 '+(P.hard||5)+')</div>';
+  h += ps.length? ps.map(function(x){
+      return '<div class="row"><span class="c">'+esc(String(x.published||'').slice(11,16))+'</span>'
+        +'<span class="t">'+esc(String(x.title||'').slice(0,44))+'</span></div>';}).join('')
+    : '<p class="none">아직 없습니다.</p>';
+  var lane=P.lanes||{};
+  h += '<div style="margin-top:8px;font-size:11.5px;color:#7d8ca8">재고 레인 — '
+    + Object.keys(lane).map(function(k){
+        return esc(lane[k].label||k)+' '+(lane[k].n||0)+'편';}).join(' · ')+'</div>';
+  return h+'</div>';
+}
+var LAB16=['글감','코드','작성','팩트','관련글','썸네일','초안','미리보기','발행','DB',
+           'validate','배포','카테고리','네이버','쓰레드','인스타'];
+
+async function load(){
+  var a=await Promise.all([j('pace.json'),j('progress.json'),j('queue.json'),
+        j('topicprop.json'),j('v0check.json'),j('lifeinfo_db.txt'),j('session_state.json')]);
+  var P=a[0]||{},PR=a[1]||{},Q=arr(a[2]),T=arr(a[3]),V=arr(a[4]),DB=a[5]||{posts:[]},SS=a[6]||{};
+  var v0={}; V.forEach(function(x){v0[x.code]=x;});
+
+  // 결재 대기 계산
+  var boss=0, lee=0;
+  T.forEach(function(t){ if(t.state==='picked')boss++; if(t.state==='proposed')lee++; });
+  Q.forEach(function(q){ var v=v0[q.code];
+    if(!v) lee++; else if(v.verdict==='pass' && !q.go) boss++; });
+
+  // 채널 미확산
+  var mn=0,mt=0,mi=0,live=0;
+  (DB.posts||[]).forEach(function(p){ if(!p.code||!p.url)return; live++;
+    var o=p.osmu||{}; if(!o.naver)mn++; if(!o.threads)mt++; if(!o.instagram)mi++; });
+
+  // 세션
+  var ss=SS.sessions||{}, wait=0, work=0;
+  Object.keys(ss).forEach(function(k){ if(ss[k].state==='waiting')wait++; else if(ss[k].state==='working')work++; });
+
+  var cnt=P.count!=null?P.count:0, hard=P.hard||5, bl=P.backlog!=null?P.backlog:Q.length;
+  var goN=Q.filter(function(q){return q.go;}).length;
+  var pcls = cnt>=hard?'bad':(cnt>=3?'warn':'ok');
+  document.getElementById('strip').innerHTML =
+      tile(pcls,'오늘 발행',cnt+' <span style="font-size:14px;color:#6b7a96">/ '+hard+'</span>',
+           (P.posts&&P.posts[0]?P.posts[0].title:'아직 없음'))
+    + tile(boss?'warn':'ok','사장님 결재',boss+'건', boss?'승인 대기 중':'대기 없음')
+    + tile(lee?'warn':'ok','이부장 결재',lee+'건', lee?'선별·V0 검사':'대기 없음')
+    + tile(bl>=5?'bad':'ok','발행 대기',bl+'건','⑦도장 '+goN+'건 · 상한 '+(P.backlog_max||5))
+    + tile((mn+mt+mi)?'warn':'ok','미확산',(mn+mt+mi)+'건','네'+mn+' 쓰'+mt+' 인'+mi)
+    + tile(wait?'warn':(work?'ok':'idle'),'세션',work+' <span style="font-size:14px;color:#6b7a96">/ '+(work+wait)+'</span>',
+           wait? wait+'곳 대기 중':'전부 작업 중');
+
+  // 파이프라인
+  var pl=PR.pipeline||{}, ck=pl.checked||[], tot=pl.total||16, dn=pl.done||ck.length;
+  document.getElementById('pn').textContent = dn+' / '+tot+' 단계';
+  document.getElementById('pipe').innerHTML = pl.code
+    ? '<div class="pcode">'+esc(pl.code)+'</div>'
+      +'<div class="pipe">'+LAB16.map(function(l,i){
+          var n=i+1, c=ck.indexOf(n)>=0?'done':(n===dn+1?'now':'');
+          return '<span class="stp '+c+'">'+n+'.'+l+'</span>';}).join('')+'</div>'
+      +(pl.note?'<div class="pnote">'+esc(pl.note)+'</div>':'')
+      +'<div class="pnote" style="color:#6b7a96;margin-top:8px">라이브 '+live+'편 · 갱신 '
+        +esc((PR.updated||'').slice(5,16))+'</div>'
+      + todayList(P)
+    : '<p class="none">진행 중인 발행이 없습니다.</p>' + todayList(P);
+
+  // 우측 — 발행 대기 + 채널
+  var s='';
+  s += Q.length? Q.map(function(q){
+      var v=v0[q.code];
+      return '<div class="row"><span class="c">'+esc(q.code)+'</span>'
+        +'<span class="t">'+esc(String(q.title||'').slice(0,30))+'</span>'
+        +'<span class="pill '+(q.go?'p-go':'p-no')+'">'+(q.go?'⑦승인':'대기')+'</span>'
+        +'<span class="pill '+(v&&v.verdict==='pass'?'p-go':'p-no')+'">'
+        +(v?(v.verdict==='pass'?'V0✓':'V0✕'):'V0-')+'</span></div>';}).join('')
+    : '<p class="none">발행 대기 없음.</p>';
+  s += '<div style="margin-top:9px;padding-top:7px;border-top:1px solid #22304f">'
+     + '<div class="row"><span class="t">📗 네이버 미확산</span>'
+     + '<span class="pill '+(mn?'p-w':'p-go')+'">'+mn+'편</span></div>'
+     + '<div class="row"><span class="t">🧵 쓰레드 미확산</span>'
+     + '<span class="pill '+(mt?'p-w':'p-go')+'">'+mt+'편</span></div>'
+     + '<div class="row"><span class="t">📸 인스타 미확산</span>'
+     + '<span class="pill '+(mi?'p-w':'p-go')+'">'+mi+'편</span></div></div>';
+  Object.keys(ss).forEach(function(k){
+    if(ss[k].state!=='waiting') return;
+    s += '<div class="row"><span class="c">⏸</span><span class="t">'+esc(k)
+       + ' 대기</span><span class="pill p-w">지시 필요</span></div>';});
+  document.getElementById('qn').textContent = Q.length+'건 대기';
+  document.getElementById('side').innerHTML = s;
+  document.getElementById('upd').textContent = '자동 갱신 20초 · ' + new Date().toTimeString().slice(0,8);
+}
+function clock(){document.getElementById('clk').textContent=new Date().toTimeString().slice(0,5);}
+clock(); setInterval(clock,10000);
+load(); setInterval(load,20000);
+</script></body></html>

@@ -116,7 +116,8 @@
         <button class="grouptab" data-g="info">🗺️ 안내</button>
       </div>
       <div class="leafrow" data-group="today">
-        <button data-t="mytasks" class="active">🙋 내가 할 일</button>
+        <button data-t="ctrl" class="active">🖥️ 관제</button>
+        <button data-t="mytasks">🙋 내가 할 일</button>
         <button data-t="daylog">📅 일자별 처리내역</button>
         <button data-t="dispatch">⚡ 디스패치</button>
         <button data-t="progress">📋 발행대기</button>
@@ -125,9 +126,11 @@
            가져가고 있는가"는 발행·보강보다 먼저 봐야 할 질문이다. -->
       <div class="leafrow hide" data-group="approval">
         <button data-t="approval">📋 결재함</button>
+        <button data-t="pendosmu">🗂️ 미결사항</button>
         <button data-t="orders">📄 작업지시</button>
       </div>
       <div class="leafrow hide" data-group="manage">
+        <button data-t="idxboard">🔍 색인 보드</button>
         <button data-t="gsc">🔍 색인관리</button>
         <button data-t="batch">🔧 배치보드</button>
         <button data-t="seo">🔧 SEO점검</button>
@@ -389,10 +392,13 @@
     <iframe id="f_osmu" src="osmu.html"></iframe>
     <iframe id="f_jisikin" src="jisikin.html"></iframe>
     <iframe id="f_dashboard" src="dashboard.html"></iframe>
+    <iframe id="f_ctrl" src="monitor.html"></iframe>
     <iframe id="f_progress" src="progress.html"></iframe>
     <iframe id="f_batch" src="batch.html"></iframe>
     <iframe id="f_approval" src="approval.html"></iframe>
+    <iframe id="f_pendosmu" src="pending_osmu.html"></iframe>
     <iframe id="f_orders" src="orders.html"></iframe>
+    <iframe id="f_idxboard" src="index_board.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
     <iframe id="f_seo" src="seo.html"></iframe>
     <iframe id="f_adsense" src="adsense.html"></iframe>
@@ -402,7 +408,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','orders','gsc','seo','adsense'];
+  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','pendosmu','orders','idxboard','gsc','seo','adsense'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){
