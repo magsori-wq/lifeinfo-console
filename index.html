@@ -135,6 +135,9 @@
         <button data-t="batch">🔧 배치보드</button>
         <button data-t="seo">🔧 SEO점검</button>
         <button data-t="adsense">📋 애드센스 승인</button>
+        <!-- 2026-08-23 사용자 지시: "내가 원치않은 이상현상은 운영콘솔에 기록하고
+             별도의 운영관리의 서브탭에 로그를 남기고 문제 발생시 로그분석" -->
+        <button data-t="incidents">🚨 이상현상</button>
       </div>
       <div class="leafrow hide" data-group="content">
         <button data-t="trends">📰 글감</button>
@@ -398,6 +401,7 @@
     <iframe id="f_approval" src="approval.html"></iframe>
     <iframe id="f_pendosmu" src="pending_osmu.html"></iframe>
     <iframe id="f_orders" src="orders.html"></iframe>
+    <iframe id="f_incidents" src="incidents.html"></iframe>
     <iframe id="f_idxboard" src="index_board.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
     <iframe id="f_seo" src="seo.html"></iframe>
@@ -408,7 +412,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','pendosmu','orders','idxboard','gsc','seo','adsense'];
+  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','pendosmu','orders','idxboard','gsc','seo','adsense','incidents'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){

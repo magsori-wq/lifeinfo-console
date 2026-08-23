@@ -1,0 +1,101 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>이상현상 로그</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:18px;background:#0e1526;color:#e6ecf7;
+     font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:14px;line-height:1.6}
+h1{font-size:19px;margin:0 0 4px}
+.sub{color:#8fa0bd;font-size:13px;margin:0 0 16px}
+.sub b{color:#cfd8e6}
+code{background:#1b2540;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px;
+     font-family:Consolas,monospace;font-size:12px;color:#9fc9ee}
+.kpis{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 18px}
+.kpi{background:#16203a;border:1px solid #2a3a5e;border-radius:10px;padding:9px 14px;min-width:104px}
+.kpi .n{font-size:20px;font-weight:700;line-height:1.2}
+.kpi .l{font-size:11.5px;color:#8fa0bd}
+.kpi.bad .n{color:#ff8080}.kpi.warn .n{color:#f0b26b}.kpi.ok .n{color:#5fd3a0}
+.card{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;
+      padding:13px 15px;margin:0 0 11px;border-left-width:4px}
+.card.high{border-left-color:#e05c5c}
+.card.mid{border-left-color:#f0b26b}
+.card.low{border-left-color:#4D9DE0}
+.card.fixed{opacity:.62}
+.hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 6px}
+.title{font-weight:700;flex:1;min-width:200px}
+.at{font-family:Consolas,monospace;font-size:12px;color:#7d8ca8;white-space:nowrap}
+.tag{font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px;white-space:nowrap}
+.st-open{background:#e05c5c22;border:1px solid #e05c5c66;color:#ff9a9a}
+.st-watching{background:#f0b26b22;border:1px solid #f0b26b66;color:#f0b26b}
+.st-fixed{background:#5fd3a022;border:1px solid #5fd3a066;color:#8ee5be}
+.kind{background:#4D9DE022;border:1px solid #4D9DE066;color:#9fc9ee}
+.recur{background:#c2569622;border:1px solid #c2569666;color:#e59ac0}
+dl{margin:8px 0 0;display:grid;grid-template-columns:78px 1fr;gap:5px 10px}
+dt{color:#7d8ca8;font-size:12.5px}
+dd{margin:0;color:#cfd8e6;font-size:13px;word-break:break-word}
+dd.ev{font-family:Consolas,monospace;font-size:12px;color:#a9b8d0;
+      background:#0e1526;border:1px solid #223052;border-radius:7px;padding:8px 10px}
+dd.none{color:#ff9a9a}
+.none{color:#7d8ca8;font-size:13px;padding:14px 0}
+.foot{color:#5f6f8c;font-size:12px;border-top:1px solid #223052;padding-top:10px;margin-top:22px}
+</style></head><body>
+<h1>🚨 이상현상 로그</h1>
+<p class="sub">사장님이 <b>원치 않은 일</b>이 일어나면 여기에 남깁니다. 할 일(배치보드·미결)과
+다른 그릇입니다 — 할 일은 끝나면 사라져야 하고, <b>사고는 끝나도 남아야</b> 재발을 잴 수 있습니다.<br>
+기록 <code>python -m studio.incident add</code> ·
+분석 <code>python -m studio.incident analyze</code> · 진실원 <b>incidents.json</b></p>
+<div class="kpis" id="kpis"></div>
+<div id="out"><p class="none">불러오는 중…</p></div>
+<p class="foot" id="foot"></p>
+<script>
+var KINDS={session:"세션 소실·중단",deploy:"배포·푸시",rule:"규칙 드리프트",
+           publish:"발행·게이트",data:"데이터 정합",external:"외부 서비스",
+           pc:"PC·환경",other:"기타"};
+var STATE={open:["st-open","🔴 미해결"],watching:["st-watching","🟡 관찰"],
+           fixed:["st-fixed","✅ 완결"]};
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function row(dt,dd,cls){
+  if(!dd) return '';
+  return '<dt>'+dt+'</dt><dd class="'+(cls||'')+'">'+esc(dd)+'</dd>';
+}
+function render(d){
+  var xs=(d.incidents||[]);
+  var open=xs.filter(function(x){return x.state==='open';}).length;
+  var watch=xs.filter(function(x){return x.state==='watching';}).length;
+  var noguard=xs.filter(function(x){return !x.guard;}).length;
+  var recur=xs.filter(function(x){return (x.recur||1)>1;}).length;
+  document.getElementById('kpis').innerHTML=
+    '<div class="kpi'+(open?' bad':' ok')+'"><div class="n">'+open+'</div><div class="l">미해결</div></div>'+
+    '<div class="kpi'+(watch?' warn':' ok')+'"><div class="n">'+watch+'</div><div class="l">관찰 중</div></div>'+
+    '<div class="kpi'+(noguard?' bad':' ok')+'"><div class="n">'+noguard+'</div><div class="l">재발방지 배선 없음</div></div>'+
+    '<div class="kpi'+(recur?' bad':' ok')+'"><div class="n">'+recur+'</div><div class="l">재발</div></div>'+
+    '<div class="kpi"><div class="n">'+xs.length+'</div><div class="l">전체 기록</div></div>';
+  if(!xs.length){document.getElementById('out').innerHTML=
+    '<p class="none">기록 없음 — 이상현상이 없었거나, 아직 남기지 않았습니다.</p>';return;}
+  var h='';
+  xs.forEach(function(x){
+    var st=STATE[x.state]||['st-open','?'];
+    h+='<div class="card '+esc(x.severity||'mid')+(x.state==='fixed'?' fixed':'')+'">'
+      +'<div class="hd"><span class="title">'+esc(x.title)+'</span>'
+      +'<span class="at">'+esc(x.at)+'</span></div>'
+      +'<div class="hd"><span class="tag '+st[0]+'">'+st[1]+'</span>'
+      +'<span class="tag kind">'+esc(KINDS[x.kind]||x.kind)+'</span>'
+      +((x.recur||1)>1?'<span class="tag recur">재발 '+x.recur+'회</span>':'')
+      +'</div><dl>'
+      +row('발견',x.detected)
+      +row('근거',x.evidence,'ev')
+      +row('원인',x.cause)
+      +row('조치',x.fix)
+      +(x.guard?row('재발방지',x.guard)
+               :'<dt>재발방지</dt><dd class="none">🔴 배선 없음 — 고쳤어도 코드로 막지 않으면 또 납니다</dd>')
+      +'</dl></div>';
+  });
+  document.getElementById('out').innerHTML=h;
+  document.getElementById('foot').textContent='갱신 '+(d.generated||'');
+}
+fetch('incidents.json?'+Date.now()).then(function(r){return r.json();})
+  .then(render).catch(function(e){
+    document.getElementById('out').innerHTML=
+      '<p class="none">incidents.json 을 읽지 못했습니다 ('+esc(e)+')</p>';});
+</script></body></html>

@@ -1,0 +1,50 @@
+{
+ "generated": "2026-08-23 13:27",
+ "incidents": [
+  {
+   "id": "20260823-rule-세션-훅이-최상위-행동지시-4개를-한-번도-주입하지",
+   "at": "2026-08-23 12:40",
+   "kind": "rule",
+   "severity": "high",
+   "title": "세션 훅이 최상위 행동지시 4개를 한 번도 주입하지 않고 있었다",
+   "detected": "사장님 지시 '매번 재실행할때마다 다른 이부장이 되지 않도록' → 훅 출력과 CLAUDE.md 절 목록을 대조",
+   "evidence": "CLAUDE.md 최상위 절 14개 중 훅 HEAD 문자열에 하드코딩된 것은 일부뿐. 누락 = 추측금지(08-06) 보드등록(08-17) 하네스가동(08-21) 담당도구(08-21). 같은 날 이 세션이 그 증상을 재현 — claude plugin list/claude mcp list 를 안 돌리고 카운터만 보고 두 번 틀림",
+   "cause": "2026-07-31 재설계가 코드 게이트(GATES)만 실시간 조회로 바꾸고 행동지시는 문자열로 남겨둠 — 같은 병의 반쪽이 남아 있었다",
+   "fix": "session_rules.directive_lines() 추가 — CLAUDE.md 제목을 정규식으로 실시간 추출(14개 확인), 주입문 5243→6311자",
+   "guard": "제목만 '## ...(필수|지시|최상위|엄중경고|금지)...' 형식으로 쓰면 훅 수정 없이 자동 주입. CLAUDE.md L17 에 배선·함정 기록. 커밋 d84d2c0",
+   "state": "fixed",
+   "logged": "2026-08-23 13:27",
+   "recur": 1
+  },
+  {
+   "id": "20260823-deploy-deploy-bat-push-거부---클라우드-발행",
+   "at": "2026-08-23 13:11",
+   "kind": "deploy",
+   "severity": "high",
+   "title": "deploy.bat push 거부 — 클라우드 발행이 배포 저장소에 직접 push 해 원격이 앞서 있었다",
+   "detected": "사장님이 deploy.bat 실패 화면을 붙여넣으심(같은 화면을 두 번)",
+   "evidence": "배포 클론이 원격보다 6커밋 뒤처짐(B4-09·D1-07·F1-12·F4-19·D3-05·C2-08 등록분) · 양쪽이 건드린 파일 38개 전부 겹침 · 소스/배포로컬/배포원격 모두 204편으로 고유 콘텐츠 0",
+   "cause": "deploy.bat 이 'PC가 유일한 기록자' 전제로 쓰였는데 2026-08-03 발행 창구가 GitHub Actions 로 바뀌며 register_post 가 lifeinfo-console 에 직접 push 하게 됨. fetch/pull 단계가 없었다",
+   "fix": "배포 클론을 origin/main 에 맞추고 재배포 — 성공(원격 HEAD 3b5c077)",
+   "guard": "studio/deploysync.py 신설 + deploy.bat 0d 단계(robocopy 앞에서 정렬) + selfcheck 16) 배포 동기 상시감시 + push 실패 오진 문구 수정(fetch first 를 rate limit/로그인 문제로 안내하던 것)",
+   "state": "fixed",
+   "logged": "2026-08-23 13:27",
+   "recur": 1
+  },
+  {
+   "id": "20260822-session-windows-터미널-크래시로-이부장-세션이-사장님",
+   "at": "2026-08-22 20:43",
+   "kind": "session",
+   "severity": "high",
+   "title": "Windows 터미널 크래시로 이부장 세션이 사장님 의사와 무관하게 닫힘",
+   "detected": "사장님이 '왜 세션이 닫혔냐' 고 물으심 — 그 전까지 아무 데도 안 남았다",
+   "evidence": "Application Error 1000 @20:43:02 WindowsTerminal.exe 1.24.2607.10001 / 모듈 Windows.UI.Xaml.dll / 예외 0xc000027b · 이어서 1001 MoAppCrash. 세션기록 마지막 쓰기 20:43:10(8초 뒤). 재부팅 없음(마지막 부팅 08-20 16:31) · System 로그 18~24시 6건뿐(절전·종료 0) · routine_reap 은 매 홀수시 :16 이라 무관하고 대화형은 KEEP interactive",
+   "cause": "Windows 터미널(호스트 앱) 크래시 — 그 안의 Claude Code 가 함께 내려감. 최근 21일 중 1회로 재발 패턴 아님",
+   "fix": "기록 파일 19.86MB 온전함을 확인하고 claude --resume 복구 경로 안내",
+   "guard": "메모리 session-died-check-event-log.md — 다음에 세션이 닫히면 프로세스를 뒤지지 말고(금지) 이벤트로그 1000/1001 을 보는 5단계 절차",
+   "state": "fixed",
+   "logged": "2026-08-23 13:27",
+   "recur": 1
+  }
+ ]
+}
