@@ -71,6 +71,19 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 .copied{position:fixed;right:16px;bottom:16px;background:#2f8f68;color:#fff;
         padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:.2s}
 .copied.on{opacity:1}
+.pv{margin-top:8px}
+.pv>summary{cursor:pointer;font-size:13px;color:#8fb4e8;padding:4px 0}
+.pvs{background:#0e1526;border:1px solid #22304d;border-radius:8px;padding:10px 12px;
+  margin:6px 0;font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-all}
+.pvs b{display:block;color:#8fb4e8;margin-bottom:5px;font-size:12px}
+.pv-btn{background:#2a3a5e;color:#cfe0f7}
+#pvm{display:none;position:fixed;inset:0;background:rgba(3,7,15,.82);z-index:99;
+  align-items:center;justify-content:center;padding:24px}
+#pvw{background:#0e1526;border:1px solid #2a3a5e;border-radius:14px;width:min(860px,96vw);
+  height:min(88vh,1000px);display:flex;flex-direction:column;overflow:hidden}
+#pvt{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #22304d}
+#pvh{flex:1;font-size:13px;color:#cfe0f7}
+#pvb{flex:1;width:100%;border:0;background:#fff}
 </style></head><body>
 <div class="hdrow"><h1>📋 전자결재</h1>
  <span class="tip">승인 버튼은 <b>두 번</b> 눌러야 실행됩니다 · 명령을 클릭하면 복사</span></div>
@@ -79,6 +92,10 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 → ⑥ <b>이부장 V0검사</b> → ⑦ <b>사장님 발행승인</b> → ⑧ 발행·보고 → ④
 </div>
 <div id="out" class="grid"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
+<div id="pvm" onclick="if(event.target===this)pvclose()"><div id="pvw">
+<div id="pvt"><span id="pvh"></span>
+<button class="act no" onclick="pvclose()">닫기 (Esc)</button></div>
+<iframe id="pvb" sandbox=""></iframe></div></div>
 <div class="copied" id="cp">복사됨</div>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
@@ -87,7 +104,32 @@ function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
 function copy(el){navigator.clipboard.writeText(el.textContent);
   var c=document.getElementById('cp');c.classList.add('on');
   setTimeout(function(){c.classList.remove('on');},900);}
-var API='http://127.0.0.1:8001', SRV=false;
+var API='http://127.0.0.1:8011', SRV=false;
+// 📄 원고 미리보기 (2026-08-23 사장님 지시) — 발행은 되돌리기 어려운 결재인데
+//    그전에는 제목·코드·V0 근거만 보고 눌러야 했다. 원고를 보고 누르신다.
+//    본문은 srcdoc + sandbox 로 격리해 띄운다(초안의 <style> 이 결재함 화면을 망가뜨리지 않게).
+async function preview(code){
+  var m=document.getElementById('pvm'), b=document.getElementById('pvb'),
+      h=document.getElementById('pvh');
+  h.textContent=code+' 원고를 읽는 중…'; b.srcdoc=''; m.style.display='flex';
+  try{
+    var r=await fetch(API+'/api/draft?code='+encodeURIComponent(code)+'&t='+Date.now());
+    var d=await r.json();
+    if(!d.ok){
+      // 실행 중인 서버가 /api/draft 를 모르면 'not found' 를 준다 = 옛 코드로 떠 있는 것.
+      // 원인을 정확히 말해 준다(막연한 에러는 사장님이 손쓸 데가 없다).
+      h.textContent = (d.error==='not found')
+        ? '🔴 결재 서버가 옛 버전으로 떠 있습니다 — start_approve_server.bat 을 한 번 다시 실행해 주세요'
+        : '🔴 '+(d.error||'초안을 읽지 못했습니다');
+      return; }
+    h.textContent=code+' · '+d.file+' · 본문 '+d.chars.toLocaleString()+'자';
+    b.srcdoc='<meta charset="utf-8"><base target="_blank">'
+      +'<div style="background:#fff;color:#222;padding:16px 12px">'+d.html+'</div>';
+  }catch(e){ h.textContent='🔴 결재 서버에 닿지 않습니다 — start_approve_server.bat 을 다시 실행하세요'; }
+}
+function pvclose(){var m=document.getElementById('pvm');m.style.display='none';
+  document.getElementById('pvb').srcdoc='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')pvclose();});
 function btn(action,code,label,cls){
   return '<button class="act '+cls+'" data-a="'+action+'" data-c="'+code+'" '
        + (SRV?'':'disabled ')+'onclick="approve(this)">'+label+'</button>';}
@@ -120,8 +162,18 @@ async function approve(el){
   }
   send(a,c,null,el);
 }
+// 🔴 실패했으면 버튼을 **처음 상태로** 되돌린다 (2026-08-23 사장님 지적).
+//    전에는 var old=el.textContent 를 여기서 읽었는데, 그 시점 글씨는 이미
+//    '정말? 한 번 더 누르세요' 다. 그래서 전송이 실패하면 그 문구로 복원됐고,
+//    armed 도 '1' 로 남아 **몇 번을 눌러도 같은 문구에 굳었다.**
+//    사장님이 본 것은 '두 번째 클릭이 안 먹는' 게 아니라 '실패가 안 보이는' 것이었다.
+function disarm(el, label){
+  el.disabled=false; el.dataset.armed=''; el.style.background='';
+  el.textContent = label || el.dataset.old || el.textContent;
+}
 async function send(a,c,why,el){
-  el.disabled=true; var old=el.textContent; el.textContent='처리 중…';
+  var back = el.dataset.old || el.textContent;      // 무장 전 원래 글씨
+  el.disabled=true; el.textContent='처리 중…';
   try{
     var r=await fetch(API+'/api/approve',{method:'POST',
       headers:{'Content-Type':'application/json'},
@@ -129,10 +181,17 @@ async function send(a,c,why,el){
     var d=await r.json();
     if(d.ok){ toast('✅ '+c+' 결재 완료 — 목록을 새로 읽습니다');
       setTimeout(function(){location.reload();},1100); }
-    else { toast('🔴 실패: '+String(d.error||'').slice(0,90));
-      el.disabled=false; el.textContent=old; }
-  }catch(e){ toast('🔴 결재 서버에 닿지 않습니다 — start_approve_server.bat 을 실행하세요');
-    el.disabled=false; el.textContent=old; }
+    else { toast('🔴 실패: '+String(d.error||'').slice(0,90)); disarm(el, back); }
+  }catch(e){
+    // 화면을 연 뒤 서버가 꺼졌을 수 있다 — 배너도 함께 '꺼짐'으로 되돌려
+    // 버튼만 살아 있는 것처럼 보이지 않게 한다.
+    toast('🔴 결재 서버가 꺼져 있습니다 — start_approve_server.bat 을 실행해 주세요');
+    var b=document.querySelector('.srv');
+    if(b){ b.className='srv off';
+      b.innerHTML='🔴 결재 서버가 꺼졌습니다(포트 8011) — <b>start_approve_server.bat</b> 을 '
+        +'실행하신 뒤 이 화면을 새로고침해 주세요.'; }
+    disarm(el, back);
+  }
 }
 function toast(m){var c=document.getElementById('cp');c.textContent=m;
   c.classList.add('on');setTimeout(function(){c.classList.remove('on');},2200);}
@@ -140,17 +199,33 @@ function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.js
   .catch(function(){return null;});}
 function arr(x){return !x?[]:(Array.isArray(x)?x:(x.items||x.queue||Object.values(x)));}
 
-fetch(API+'/api/ping').then(function(r){return r.ok;}).catch(function(){return false;})
- .then(function(up){ SRV=up;
+async function findServer(){
+  // 🔴 전자결재는 8011 하나만 본다 (2026-08-23 사장님 지시로 고정).
+  //    여러 자리를 훑던 판을 버린 이유 — 포트가 떠돌면 '어디에 떴나'를 매번
+  //    확인해야 하고, 옛 서버가 남은 자리를 폴백으로 두면 새 기능이 없는 쪽에
+  //    조용히 붙는다. 자리를 못 박으면 그 두 가지가 통째로 사라진다.
+  var url='http://127.0.0.1:8011';
+  try{
+    var r=await fetch(url+'/api/ping?t='+Date.now());
+    if(!r.ok) return null;
+    var d=await r.json();
+    return (d&&d.ok) ? url : null;
+  }catch(e){ return null; }
+}
+findServer().then(function(url){ SRV=!!url; if(url) API=url;
+  return SRV; })
+ .then(function(up){
   var d=document.createElement('div');
   d.className='srv '+(up?'on':'off');
   d.innerHTML = up
-    ? '🟢 결재 서버 연결됨 — 아래 버튼으로 바로 결재하실 수 있습니다.'
+    ? '🟢 결재 서버 연결됨('+API.replace('http://127.0.0.1:','포트 ')+') — 아래 버튼으로 바로 결재하실 수 있습니다.'
     : '🔴 결재 서버가 꺼져 있어 버튼이 비활성입니다. 터미널에서 <b>python -m studio.approve_server</b> 를 한 번 실행하세요. (명령 복사는 그대로 됩니다)';
   var o=document.getElementById('out'); o.parentNode.insertBefore(d,o);
  return Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
-             j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json')]).then(function(a){
+             j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
+             j('watch.json'),j('pending.json')]).then(function(a){
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
+  var W=arr(a[7]), PEND=(a[8]||{}).actionable||[];
   var byc={}; (DB.posts||[]).forEach(function(p){byc[p.code]=p;});
   var v0={}; V.forEach(function(x){v0[x.code]=x;});
   var H='';
@@ -162,11 +237,30 @@ fetch(API+'/api/ping').then(function(r){return r.ok;}).catch(function(){return f
   T.forEach(function(t){
     if(t.state==='picked') boss.push({act:'topic_approve',c:t.code,t:t.title,
       why:'글감 승인 대기(③) · '+(t.why||''),
+      sum:t.summary||'', facts:t.facts||'',
       cmd:'python -m studio.topicprop approve --code '+t.code});
     if(t.state==='proposed') lee.push({act:'topic_pick',c:t.code,t:t.title,
       why:'이부장 선별 대기(②) — 특별이슈급인가로 판단',
       cmd:'python -m studio.topicprop pick --code '+t.code});
   });
+  // 🔴 모든 승인 사항을 이 칸 하나로 모은다 (2026-08-23 사장님 지시).
+  //    전에는 글감(③)·발행(⑦) 두 종만 올라오고, 사장님 몫인 색인요청·게시·설정변경은
+  //    watch.json 에만 있어서 결재함과 myturn 두 군데를 봐야 했다. 한 군데서 끝내신다.
+  var TODAY=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+  W.forEach(function(w){
+    if(w.owner!=='user' || w.state==='done') return;
+    if((w.due||'9999')>TODAY) return;          // 기한 전은 올리지 않는다(다 보이면 아무것도 안 하게 된다)
+    boss.push({act:(w.state==='blocked'?'watch_blocked':'watch_done'),c:w.id,t:w.what||w.id,
+      why:'조치 대기 · 기한 '+(w.due||'')+(w.state==='blocked'?' · 🚫막힘':''),
+      cmd:w.cmd||('python -m studio.watch done --id '+w.id)});
+  });
+  PEND.forEach(function(x){
+    if(x.osmu) return;                          // 이미 확산된 건 제외
+    boss.push({act:'osmu',c:x.code,t:x.title,
+      why:'게시 대기 · 원고·이미지 제작 완료, 게시만 남음 ('+(x.need||[]).join(' · ')+')',
+      cmd:'python -m studio.osmu_manifest table --code '+x.code+' --open'});
+  });
+
   Q.forEach(function(q){
     var v=v0[q.code];
     if(!v) lee.push({act:'v0',c:q.code,t:q.title,
@@ -207,15 +301,33 @@ fetch(API+'/api/ping').then(function(r){return r.ok;}).catch(function(){return f
       +'<span class="cnt">'+n+'</span></div><div class="pb">'+body+'</div></div>';}
 
   // ① 사장님 결재 — 가장 자주 보는 칸이라 왼쪽 전체를 준다
+  // 🔴 순서 — '버튼으로 지금 끝나는 것'을 맨 위로. (2026-08-23)
+  //    조치 항목의 설명이 길어서 그냥 두면 발행 승인 버튼이 화면 밖으로 밀린다.
+  //    가장 되돌리기 어려운 결재가 가장 안 보이는 자리에 가는 것은 위험하다.
+  var ORD={publish_go:0,topic_approve:1,watch_done:2,osmu:3,watch_blocked:4};
+  // ⚠️ ORD[..]||9 로 쓰면 안 된다 — publish_go 의 0 이 falsy 라 9 로 밀려 맨 뒤로 간다
+  //    (2026-08-23 실제로 그렇게 넣었다가 발행 승인 카드가 화면에서 사라졌다).
+  function ord(a){return (a in ORD)?ORD[a]:9;}
+  boss.sort(function(x,y){return ord(x.act)-ord(y.act);});
+  var BADGE={publish_go:'⑦ 발행',topic_approve:'③ 글감',
+             watch_done:'🔧 조치',watch_blocked:'🚫 막힘',osmu:'📮 게시'};
+  var LABEL={publish_go:'⑦ 발행 승인',topic_approve:'③ 글감 승인',watch_done:'✔ 완료 처리'};
   var bossBody = boss.length? boss.map(function(x){return '<div class="card boss"><div class="hd">'
-      +'<span class="who w-boss">'+(x.act==='publish_go'?'⑦ 발행':'③ 글감')+'</span>'
-      +'<span class="ttl">'+esc(x.t||'')+'</span>'
+      +'<span class="who w-boss">'+(BADGE[x.act]||'결재')+'</span>'
+      +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
       +'<div class="meta">'+esc(String(x.why).slice(0,150))+'</div>'
-      +'<div style="margin-top:8px">'
-      +btn(x.act,x.c,x.act==='publish_go'?'⑦ 발행 승인':'③ 글감 승인','ok')
-      +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
-      +'</div><div style="margin-top:6px">'+cmd(x.cmd)+'</div></div>';}).join('')
+      +(x.act==='topic_approve'&&(x.sum||x.facts)
+        ? '<details class="pv"><summary>📄 초안 설명·근거 보기</summary>'
+          +(x.sum?'<div class="pvs"><b>초안 구성</b>'+esc(x.sum)+'</div>':'')
+          +(x.facts?'<div class="pvs"><b>확인한 수치·출처</b>'+esc(x.facts)+'</div>':'')
+          +'</details>' : '')
+      +(LABEL[x.act]?'<div style="margin-top:8px">'
+        +btn(x.act,x.c,LABEL[x.act],'ok')
+        +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
+        +(x.act==='publish_go'?'<button class="act pv-btn" data-c="'+x.c+'" onclick="preview(this.dataset.c)">📄 원고 미리보기</button>':'')
+        +'</div>':'')
+      +'<div style="margin-top:6px">'+cmd(x.cmd)+'</div></div>';}).join('')
     : '<p class="none">✅ 없음 — 지금 사장님 결재를 기다리는 건이 없습니다.</p>';
   H+=pane('🙋','사장님 결재 대기',boss.length+'건',bossBody);
 

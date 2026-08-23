@@ -1998,7 +1998,9 @@
    "due": "2026-08-23",
    "cmd": "python -m studio.topicprop table   # A5-07·A5-08·G4-03 facts 에 KW= 가 붙었는지 확인",
    "owner": "claude",
-   "state": "blocked"
+   "state": "done",
+   "done_at": "2026-08-23",
+   "result": "①번으로 결정: 무인 루틴에서 KW 실측을 면제하고 사람이 있는 이부장 선별·검증 단계로 옮겼다. ②(deviceId 고정)를 안 고른 이유는 그 값이 브라우저 재연결마다 유지되는지 확인되지 않았고, 확인 안 된 전제 위에 게이트를 세우면 같은 결함이 다시 난다는 것이다. 실행: 3개 루틴 SKILL(daily-topics·daily-publish·travel-prep)의 [키워드] 블록을 '너는 재지 않는다 · facts 에 KW=미측정 만 적고 멈추지 말 것'으로 교체 + topicprop._verify_one 에 KW 미측정 🟡 게이트를 코드로 박음(프로즈로 두면 잊힌다). 실측 확인: topicprop verify 가 A5-07 에 '🟡 키워드 미측정' 을 띄운다."
   },
   {
    "id": "publishyml-board-seed-missing",
@@ -2015,6 +2017,24 @@
    "what": "콘솔 정합성 검사(lifeinfo-console) RED — 08-21 21:34 마지막 성공 후 08-22 03:27·05:43·20:02·21:31 4회 연속 실패(gh run list 실측, 사이 성공 없음). 원인=검사기 오탐: tools/console_check.py:60 의 fetch 정규식이 pending_osmu.html:134 fetch('http://127.0.0.1:'+port+'/api/pending') 에서 리터럴 'http://127.0.0.1:' 만 잘라 로컬 파일로 취급 → '깨진 로컬 참조' FAIL. 페이지는 정상(try/catch 로컬 API 탐지). 🔴고치기 전에 먼저 볼 것: console_check 에는 이미 LOCAL_ONLY={'tasks.json'} 과 'dashboard.html 은 IS_LOCAL 게이트로 github.io 에선 숨긴다'(46~47행) 라는 기존 관용구가 있다. 정규식을 느슨하게 푸는 것보다 pending_osmu.html 이 애초에 배포 대상이 맞는지·LOCAL_ONLY 계열로 다뤄야 하는지부터 판단할 것. 파일은 console 저장소에만 있어 deploy 경유(사장님/이부장) 처리",
    "due": "2026-08-23",
    "cmd": "cd /c/lifeinfo-deploy && python tools/console_check.py",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topicprop-a507",
+   "added": "2026-08-23",
+   "what": "A5-07(추석 휴일근로수당) 사장님 승인 회신 처리 — 승인나면 topicprop approve 후 draft0823 지시서에 줄 추가, 반려면 사유와 함께 drop",
+   "due": "2026-08-24",
+   "cmd": "python -m studio.topicprop list",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "routine-skill-drift",
+   "added": "2026-08-23",
+   "what": "예약 루틴 SKILL.md 와 저장소 사본(backup/routine_skills/)이 갈라진 것을 자동으로 잡는 검사가 없다 — selfcheck 9b) 는 발행 게이트 문구만 대조해서 '틀린 숫자·빠진 담당 도구'를 영영 못 본다(2026-08-23 실측: 색인 루틴이 '실측 37'(전체 URL 수)을 들고 있었는데 9b 는 계속 ✅). selfcheck 에 사본 대조 검사 1개를 추가할 것",
+   "due": "2026-08-27",
+   "cmd": "python studio/selfcheck.py",
    "owner": "claude",
    "state": "todo"
   }
