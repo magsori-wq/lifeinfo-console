@@ -2037,6 +2037,15 @@
    "cmd": "python studio/selfcheck.py",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "seodesc-g403-blocked",
+   "added": "2026-08-23",
+   "what": "G4-03 검색설명 미반영 - 새 Blogger 에디터(글:수정 UI) 업데이트 버튼 클릭이 어떤 방식으로도(실클릭·JS합성dispatch·Enter키) batchexecute 네트워크 요청을 발생시키지 않음. 텍스트입력은 인식(115/150자 카운터 갱신)되나 저장 안됨. 이전 세션 성공방식이 이번엔 실패 - 에디터 UI 변경 추정.",
+   "due": "2026-08-24",
+   "cmd": "python -m studio.seodesc scan --only G4-03",
+   "owner": "claude",
+   "state": "blocked"
   }
  ]
 }

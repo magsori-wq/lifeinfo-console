@@ -77,14 +77,14 @@ h1{font-size:17px;margin:0}
   .grid{grid-template-columns:1fr;grid-template-rows:none}.pane{max-height:420px}}
 </style></head><body>
 <div class="hdrow"><h1>🗂️ 미결사항</h1>
- <span class="tip">파일을 클릭하면 아래에서 열립니다 · <b>전체 복사</b>로 바로 붙여넣기</span></div>
+ <span class="tip">파일을 클릭하면 아래에서 열립니다 · 원고는 <b>전체 복사</b>, 이미지는 <b>🖼 이미지 복사</b>(네이버에서 Ctrl+V)</span></div>
 <div id="srv" class="srv off">결재 서버 확인 중…</div>
 <div class="sig" id="sig"></div>
 <div class="grid" id="out"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
 
 <div id="viewer">
   <div id="vh"><span id="vname"></span>
-    <button class="btn" onclick="copyAll()">📋 전체 복사</button>
+    <button class="btn" id="cpbtn" onclick="copyAll()">📋 전체 복사</button>
     <button class="btn g" onclick="closeV()">닫기</button></div>
   <div id="vbody"><pre id="vtext"></pre><img id="vimg" style="display:none"></div>
 </div>
@@ -99,9 +99,44 @@ function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.js
   .catch(function(){return null;});}
 
 function closeV(){document.getElementById('viewer').classList.remove('on');}
-function copyAll(){ if(!RAW){toast('복사할 텍스트가 없습니다');return;}
+
+// 🔴 이미지도 복사되게 한다 (2026-08-23 사장님 신고).
+//    전에는 이미지를 열면 RAW='' 라 [전체 복사] 가 "복사할 텍스트가 없습니다" 만 뱉었다.
+//    그래서 네이버 글에 썸네일을 붙여넣을 방법이 없었다 — 원고는 복사되는데 그림만 안 됐다.
+//    클립보드는 텍스트와 이미지를 한 번에 담아 네이버 에디터가 둘 다 받게 하지는 못한다.
+//    → 보고 있는 것에 따라 버튼이 바뀐다: 원고면 텍스트, 이미지면 PNG 를 담는다.
+//    ※ 127.0.0.1 은 보안 컨텍스트라 navigator.clipboard.write 가 동작한다.
+async function toPng(blob){
+  // 클립보드가 확실히 받는 형식은 PNG 뿐이다. 다른 형식이면 캔버스로 굽는다.
+  if (blob.type === 'image/png') return blob;
+  var url = URL.createObjectURL(blob);
+  try {
+    var img = await new Promise(function(res, rej){
+      var i = new Image(); i.onload = function(){res(i);}; i.onerror = rej; i.src = url; });
+    var c = document.createElement('canvas');
+    c.width = img.naturalWidth; c.height = img.naturalHeight;
+    c.getContext('2d').drawImage(img, 0, 0);
+    return await new Promise(function(res){ c.toBlob(res, 'image/png'); });
+  } finally { URL.revokeObjectURL(url); }
+}
+async function copyAll(){
+  var im = document.getElementById('vimg');
+  if (im && im.style.display !== 'none' && im.getAttribute('src')) {
+    try {
+      var r = await fetch(im.src);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      var b = await toPng(await r.blob());
+      await navigator.clipboard.write([new ClipboardItem({'image/png': b})]);
+      toast('✅ 이미지 복사됨 — 네이버 글쓰기에서 Ctrl+V');
+    } catch(e) {
+      toast('🔴 이미지 복사 실패: ' + (e && e.message ? e.message : e));
+    }
+    return;
+  }
+  if (!RAW) { toast('복사할 텍스트가 없습니다'); return; }
   navigator.clipboard.writeText(RAW).then(function(){toast('✅ 전체 복사됨 — 붙여넣으세요');},
-    function(){toast('🔴 복사 실패');}); }
+    function(){toast('🔴 복사 실패');});
+}
 
 async function openFile(path, isImg){
   if(!API){toast('🔴 결재 서버가 꺼져 있습니다');return;}
@@ -109,9 +144,13 @@ async function openFile(path, isImg){
   document.getElementById('vname').textContent=path;
   var t=document.getElementById('vtext'), im=document.getElementById('vimg');
   v.classList.add('on');
+  var cb=document.getElementById('cpbtn');
   if(isImg){ RAW=''; t.style.display='none'; im.style.display='block';
+    if(cb) cb.textContent='🖼 이미지 복사';
     im.src=API+'/api/file?path='+encodeURIComponent(path); return; }
-  im.style.display='none'; t.style.display='block'; t.textContent='읽는 중…';
+  if(cb) cb.textContent='📋 전체 복사';
+  im.style.display='none'; im.removeAttribute('src');
+  t.style.display='block'; t.textContent='읽는 중…';
   try{
     var r=await fetch(API+'/api/file?path='+encodeURIComponent(path));
     var d=await r.json();
@@ -130,7 +169,10 @@ function fileChip(path, label, isImg, exists){
 
 (async function(){
   // 서버 탐색 — /api/pending 을 응답하는 최신 서버만 채택한다(옛 프로세스 자동 배제)
-  for (var port of [8003, 8002, 8001]) {
+  // 🔴 8011 이 전자결재 전용 고정 포트다(2026-08-23). 이 화면도 같은 서버를 쓴다.
+  //    옛 포트를 앞에 두면 이전 세션이 남긴 낡은 서버에 먼저 붙는다 —
+  //    실제로 이 화면이 8003(옛 서버)에 붙어 있었다. 새 자리를 먼저 본다.
+  for (var port of [8011, 8012, 8013, 8003, 8002, 8001]) {
     try { var r=await fetch('http://127.0.0.1:'+port+'/api/pending');
       if(r.ok){ API='http://127.0.0.1:'+port; break; } } catch(e){}
   }
