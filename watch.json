@@ -2046,6 +2046,37 @@
    "cmd": "python -m studio.seodesc scan --only G4-03",
    "owner": "claude",
    "state": "blocked"
+  },
+  {
+   "id": "seodesc-a507-blocked",
+   "added": "2026-08-23",
+   "what": "A5-07 검색설명 미반영 - Blogger 새 에디터에서 값 설정+업데이트 클릭까지 했으나 저장 RPC(Me2Pwc)가 발생하지 않음(G4-03때와 다른 실패양상, Dg3Ate/FYl0fd만 발생). 라이브 meta는 여전히 공통문구",
+   "due": "2026-08-24",
+   "cmd": "python -m studio.seodesc scan --only A5-07",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-23",
+   "result": "재시도 성공 - 원인은 select-all+backspace가 텍스트영역에 실제로 반영 안되는 현상(0.5s 재클릭+native-setter로 빈값 초기화 후 실키입력으로 해결). 라이브 meta 확인 완료, seodesc scan 공통문구 0"
+  },
+  {
+   "id": "crosslink-gate-2026-08-23",
+   "added": "2026-08-23",
+   "what": "쓰레드/인스타 원고 교차링크 누락 — 사장님이 G4-03에서 직접 잡음(블로그·네이버 URL이 캡션에 전혀 없었음). 전수스캔(crosslinkcheck --scan) 결과 과거 발행분 60건 위반(대부분 인스타 캡션). 오늘 3편(G4-03·A5-07·B4-09)은 수정+URL추가하다 쓰레드 500자 한도 초과 사고까지 겹쳐 트림 완료. studio/crosslinkcheck.py 신설해 session_rules GATES 등록 + insta_post.py --code 하드게이트로 연결(발행 이후 신규편은 이제 차단됨). 과거 60건 소급수정 여부는 정책 판단 필요 — thumbcheck.py 처럼 시행일 이후만 적용할지, 라이브 인스타 캡션까지 손댈지 결정 바람.",
+   "due": "2026-08-24",
+   "cmd": "python -m studio.crosslinkcheck --scan",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-23",
+   "result": "이부장이 즉시 반영 - crosslinkcheck.py에 SINCE=2026-08-23 레거시 라인 추가(70건 소급 안 함, 시행 후만 하드차단) + selfcheck 6c) 상시감시 추가. G4-03·A5-07·B4-09 3편 모두 3채널 정상화 완료"
+  },
+  {
+   "id": "crosslink-legacy-70",
+   "added": "2026-08-23",
+   "what": "쓰레드·인스타 원고 교차링크 레거시 70건 — crosslinkcheck 가 소급하지 않기로 한 과거 원고. 그 글을 손볼 일이 생기면(재발행·본문보강·OSMU 재제작) 그때 함께 블로그·네이버 URL 을 넣는다. 일괄 정리는 하지 않는다 — 이미 게시된 네이버·쓰레드 글 본문은 사람이 직접 고쳐야 해서 비용이 크다",
+   "due": "2026-09-30",
+   "cmd": "python -m studio.crosslinkcheck",
+   "owner": "claude",
+   "state": "wait"
   }
  ]
 }

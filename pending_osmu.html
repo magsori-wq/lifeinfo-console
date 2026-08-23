@@ -81,6 +81,7 @@ h1{font-size:17px;margin:0}
 <div id="srv" class="srv off">결재 서버 확인 중…</div>
 <div class="sig" id="sig"></div>
 <div class="grid" id="out"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
+<details id="donebox" style="flex:0 0 auto;margin-top:8px"><summary style="cursor:pointer;color:#7fb0e0;font-size:13px;padding:6px 10px;background:#111a2c;border:1px solid #223052;border-radius:9px">✅ 확산 완료 <span id="donen">0</span>건 — 펼쳐 보기</summary><div id="donelist" style="max-height:220px;overflow-y:auto;padding:8px 4px"></div></details>
 
 <div id="viewer">
   <div id="vh"><span id="vname"></span>
@@ -186,8 +187,15 @@ function fileChip(path, label, isImg, exists){
     +'<b style="color:#5fd3a0">🟢완료</b> · <b style="color:#f0b26b">🟡게시대기(사장님 차례)</b> · '
     +'<b style="color:#f0928a">🔴미준비(작업세션 차례)</b> · 파일을 클릭하면 아래에서 열립니다.';
 
+  // 🔴 처리하면 그 자리에서 사라지게 한다 (2026-08-23 사장님 지시).
+  //    채널 패널은 원래도 done 을 걸러냈지만 **새로고침을 해야** 반영됐다.
+  //    사장님이 네이버에 게시하고 세션이 URL 을 기록해도 화면은 그대로였다 —
+  //    '처리 즉시'가 체감되지 않는다. 20초마다 데이터만 다시 읽어 그린다.
+  //    ⚠️ 뷰어(원고·이미지)가 열려 있으면 건너뛴다 — 보고 있는 걸 지우면 안 된다.
   var D=await (await fetch(API+'/api/pending')).json();
   var CH=[['naver','📗','네이버'],['threads','🧵','쓰레드'],['instagram','📸','인스타']];
+
+  function render(D){
   var cnt={done:0,ready:0,todo:0};
   (D.posts||[]).forEach(function(p){ CH.forEach(function(x){
      var l=(p.ch[x[0]]||{}).light; if(l) cnt[l]++; });});
@@ -244,6 +252,43 @@ function fileChip(path, label, isImg, exists){
         +'</div></div>';}).join('') : '<p class="none">✅ 전부 확산됨.</p>';
     H+=pane(x[1],x[2]+' 미확산',rows.length+'건',body);
   });
+
+  // ⑤ ✅ 확산 완료 — 지운 것을 버리지 않고 여기로 옮긴다
+  //    "미결에서 지워주고 **완료 항목으로 관리**해" (2026-08-23 사장님 지시).
+  //    미결 목록에서 빠지는 것만으로는 '한 일'이 어디에도 안 남는다.
+  var doneRows=[];
+  (D.posts||[]).forEach(function(p){ CH.forEach(function(x){
+    var c=p.ch[x[0]]||{};
+    if(c.light==='done') doneRows.push({code:p.code,title:p.title,ch:x[2],icon:x[1],url:c.url});
+  });});
+  var dbody = doneRows.length? doneRows.map(function(r){
+      return '<div class="card l-done"><div class="hd">'
+        +'<span class="lt lt-done"></span>'
+        +'<span class="ttl">'+esc(String(r.title||'').slice(0,32))+'</span>'
+        +'<span class="code">'+esc(r.code)+'</span>'
+        +'<span class="badge b-ok">'+r.icon+' '+r.ch+'</span></div>'
+        +(r.url? '<div class="files"><a class="f" target="_blank" rel="noopener" href="'
+            +esc(r.url)+'">🔗 게시글 열기</a></div>'
+          : '')
+        +'</div>';}).join('')
+    : '<p class="none">아직 확산 완료된 채널이 없습니다.</p>';
+  // 그리드는 2x2 = 4칸 고정이다. 5번째 패널을 넣으면 레이아웃이 깨지고
+  // **완료가 미결을 밀어낸다**(2026-08-23 실측 — 오늘 아침 결재함 정렬에서
+  // 겪은 것과 같은 실수다). 완료는 참고 정보이므로 그리드 밖 접이식 줄에 둔다.
+  document.getElementById('donen').textContent=doneRows.length;
+  document.getElementById('donelist').innerHTML=dbody;
+
   document.getElementById('out').innerHTML=H;
+  }
+
+  render(D);
+  // 20초마다 다시 읽는다. 뷰어가 열려 있으면 그 회차는 건너뛴다.
+  setInterval(async function(){
+    if(document.getElementById('viewer').classList.contains('on')) return;
+    try{
+      var r=await fetch(API+'/api/pending');
+      if(r.ok) render(await r.json());
+    }catch(e){}
+  }, 20000);
 })();
 </script></body></html>
