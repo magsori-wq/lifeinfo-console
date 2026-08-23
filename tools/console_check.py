@@ -39,6 +39,23 @@ def load_json(path):
         return json.load(f)
 
 
+# 절대 URL·스킴 참조는 '저장소 안의 파일'이 아니므로 존재 검사 대상이 아니다.
+# 🔴 이 규칙은 원래 src/href 추출에만 걸려 있었고 fetch() 쪽에는 빠져 있었다
+#    (2026-08-23 수정). 추출 경로가 둘인데 규칙이 한쪽에만 있으면, 규칙 밖의
+#    경로가 조용히 샌다 — 실제로 그렇게 샜다:
+#      pending_osmu.html 의 fetch('http://127.0.0.1:'+port+'/api/pending') 에서
+#      정규식이 문자열 리터럴 'http://127.0.0.1:' 만 잘라내 로컬 경로로 취급 →
+#      "깨진 로컬 참조" FAIL → 08-22 03:27 부터 모든 push 가 RED 였다.
+#    그래서 규칙을 함수 하나로 모아 **모든 추출 경로가 같은 문을 지나가게** 한다.
+#    새 추출 경로를 추가할 때도 반드시 이 함수를 통과시킬 것.
+_NOT_LOCAL = ("http://", "https://", "//", "#", "mailto:", "javascript:", "data:", "blob:")
+
+
+def _is_local_ref(ref):
+    """저장소 안의 파일을 가리키는 참조인가 (절대 URL·스킴이면 아니다)."""
+    return bool(ref) and not ref.startswith(_NOT_LOCAL)
+
+
 # ---------------------------------------------------------------- 1. HTML 참조
 def check_html_refs():
     """콘솔 페이지가 참조하는 로컬 파일이 실제로 저장소에 있는지."""
@@ -57,12 +74,12 @@ def check_html_refs():
         scan = re.sub(r"&lt;.*?&gt;", " ", text, flags=re.S)
         scan = re.sub(r"<(pre|code)\b.*?</\1>", " ", scan, flags=re.S | re.I)
         refs = set()
-        refs |= set(re.findall(r"fetch\(\s*'([^']+)'", scan))
-        refs |= set(re.findall(r'fetch\(\s*"([^"]+)"', scan))
-        for m in re.findall(r'(?:src|href)=["\']([^"\']+)["\']', scan):
-            if m.startswith(("http", "//", "#", "mailto:", "javascript:", "data:")):
-                continue
-            refs.add(m)
+        for pat in (r"fetch\(\s*'([^']+)'",
+                    r'fetch\(\s*"([^"]+)"',
+                    r'(?:src|href)=["\']([^"\']+)["\']'):
+            for m in re.findall(pat, scan):
+                if _is_local_ref(m):
+                    refs.add(m)
         for r in sorted(refs):
             p = r.split("?")[0].split("#")[0]
             if not p or p.startswith("/"):
