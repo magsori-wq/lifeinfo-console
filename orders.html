@@ -3,28 +3,21 @@
 <title>작업지시</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;padding:18px;background:#0e1526;color:#e6ecf7;
-     font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:14px;line-height:1.6}
-h1{font-size:19px;margin:0 0 4px}
-.sub{color:#8fa0bd;font-size:13px;margin:0 0 18px}
+html,body{height:100%}
+body{margin:0;padding:14px;background:#0e1526;color:#e6ecf7;
+     font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:14px;line-height:1.6;
+     display:flex;flex-direction:column;overflow:hidden}
+h1{font-size:18px;margin:0 0 2px;flex:0 0 auto}
+.sub{color:#8fa0bd;font-size:12px;margin:0 0 10px;flex:0 0 auto}
 .sub b{color:#cfd8e6}
-.day{margin:0 0 26px}
-.dayhd{display:flex;align-items:baseline;gap:10px;margin:0 0 10px;
-       border-bottom:1px solid #2a3a5e;padding-bottom:6px}
-.daytitle{font-size:16px;font-weight:700;color:#f0b26b}
-.daycnt{color:#7d8ca8;font-size:12px}
-.today .daytitle{color:#5fd3a0}
+.sub code{background:#1b2540;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px;
+     font-family:Consolas,monospace;font-size:11.5px;color:#9fc9ee}
 .card{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;
       padding:13px 15px;margin:0 0 11px}
 .card.stale{opacity:.55}
 .cardhd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 7px}
-.who{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;
-     background:#4D9DE022;border:1px solid #4D9DE066;color:#9fc9ee;white-space:nowrap}
-.who.leegwajang{background:#e08b1e22;border-color:#e08b1e66;color:#f0b26b}
-.who.insta{background:#c2569622;border-color:#c2569666;color:#e59ac0}
-.who.boss{background:#5fd3a022;border-color:#5fd3a066;color:#8ee5be}
 .bid{font-family:Consolas,monospace;font-size:12px;color:#7d8ca8}
-.btitle{font-weight:700;flex:1;min-width:180px}
+.btitle{font-weight:700;flex:1;min-width:160px}
 .pct{font-size:12px;color:#8fa0bd;white-space:nowrap}
 .bar{height:5px;background:#232c44;border-radius:6px;overflow:hidden;margin:0 0 9px}
 .bar>i{display:block;height:100%;background:linear-gradient(90deg,#3b6ea5,#4D9DE0)}
@@ -37,28 +30,59 @@ details[open] summary::before{content:"▾ "}
 pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
     font-size:12.5px;line-height:1.62;color:#cfd8e6;margin:8px 0 0;
     background:#0e1526;border:1px solid #223052;border-radius:8px;padding:11px 13px;
-    max-height:520px;overflow:auto}
+    max-height:420px;overflow:auto}
 .none{color:#7d8ca8;font-size:13px;padding:10px 0}
 .frozen{font-size:12px;color:#8fa0bd;background:#4d5a7022;border:1px solid #4d5a7055;
         border-radius:8px;padding:6px 9px;margin:0 0 8px}
-.foot{color:#5f6f8c;font-size:12px;border-top:1px solid #223052;padding-top:10px;margin-top:22px}
-code{background:#1b2540;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px;
-     font-family:Consolas,monospace;font-size:12px;color:#9fc9ee}
+/* 🔴 27인치 모니터 4분할(2026-08-24 사장님 지시 "4분할등을 하여 보여줘 —
+   그안에 스크롤하면 한화면에 바로 확인할수 있도록해"). 담당 4종을 항상
+   고정된 2x2 칸에 앉히고(데이터가 몇 건이든 칸 수는 안 변한다), 페이지
+   자체는 스크롤되지 않으며(overflow:hidden) 칸 안에서만 스크롤한다. */
+.grid{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;
+      grid-template-rows:1fr 1fr;gap:12px}
+.col{background:#131c31;border:1px solid #223052;border-radius:12px;
+     display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.colhd{padding:10px 14px;border-bottom:1px solid #223052;background:#16203a;
+       border-radius:12px 12px 0 0;display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.colhd .who{font-size:13px;font-weight:700;white-space:nowrap}
+.colhd .n{margin-left:auto;color:#7d8ca8;font-size:12px;white-space:nowrap}
+.col.leegwajang .colhd{border-left:4px solid #e08b1e}
+.col.insta .colhd{border-left:4px solid #c25696}
+.col.gwanjetap .colhd{border-left:4px solid #9b8cf5}
+.col.boss .colhd{border-left:4px solid #5fd3a0}
+.col.leegwajang .who{color:#f0b26b}
+.col.insta .who{color:#e59ac0}
+.col.gwanjetap .who{color:#b8a8ff}
+.col.boss .who{color:#8ee5be}
+.colbody{padding:12px 14px;overflow-y:auto;flex:1;min-height:0}
+.colbody .card:last-child{margin-bottom:0}
+@media(max-width:1100px){
+  body{overflow:auto;height:auto}
+  .grid{grid-template-columns:1fr;grid-template-rows:none;height:auto}
+  .col{max-height:70vh}
+}
 </style></head><body>
 <h1>📄 작업지시</h1>
-<p class="sub">지시서 등록일 기준 최신순 · 세션별로 구분. 진실원은 <b>batch.json</b> 하나이며
-이 화면은 그것을 그대로 읽습니다(별도 파일 없음). 등록은
-<code>python -m studio.batchboard order --id &lt;배치&gt; --file &lt;파일&gt;</code></p>
-<div id="out"><p class="none">불러오는 중…</p></div>
+<p class="sub">담당(세션) 4분할 — 한 화면에 전부, 칸 안에서만 스크롤. 진실원은 <b>batch.json</b> 하나이며
+이 화면은 그것을 그대로 읽습니다. 등록은 <code>python -m studio.batchboard order --id &lt;배치&gt; --file &lt;파일&gt;</code>
+· 워크트리에서 돌 때는 <code>git pull origin main</code> 먼저.</p>
+<div id="out" style="flex:1;min-height:0"><p class="none">불러오는 중…</p></div>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
-function whoClass(o){
+// 🔴 담당 문자열은 자유 텍스트라 종류가 계속 늘어난다("전원(번호별 담당 표기)",
+// "예약 루틴 7개(...)", "(미지정)" 등). 4분할을 지키려면 항상 이 4버킷 중
+// 하나로 정규화해야 한다 — 5번째 칸을 만들지 않는다.
+var BUCKETS=[
+  {key:'leegwajang', label:'이과장(작업 세션)', test:function(o){return o.indexOf('이과장')>=0;}},
+  {key:'insta',       label:'인스타 세션',        test:function(o){return o.indexOf('인스타')>=0;}},
+  {key:'gwanjetap',   label:'관제탑(이부장)',      test:function(o){return o.indexOf('관제탑')>=0||o.indexOf('이부장')>=0;}},
+  {key:'boss',         label:'사장님 · 기타',       test:function(){return true;}}  // 나머지 전부(사람 손·전원·예약루틴·미지정)
+];
+function bucketOf(o){
   o=o||'';
-  if(o.indexOf('이과장')>=0||o.indexOf('작업')>=0) return 'leegwajang';
-  if(o.indexOf('인스타')>=0) return 'insta';
-  if(o.indexOf('사장님')>=0||o.indexOf('사용자')>=0) return 'boss';
-  return '';
+  for(var i=0;i<BUCKETS.length;i++){ if(BUCKETS[i].test(o)) return BUCKETS[i]; }
+  return BUCKETS[BUCKETS.length-1];
 }
 function dayOf(s){ // "2026-08-20 17:30" -> "2026-08-20"
   var m=String(s||'').match(/\d{4}-\d{2}-\d{2}/); return m?m[0]:'(일시 미기록)';
@@ -72,40 +96,47 @@ fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).
     if(!b.order) return;                    // 지시서 없는 배치는 이 화면에 안 뜬다
     var items=b.items||[], done=0;
     items.forEach(function(it){if(it.state==='done')done++;});
-    rows.push({id:id,b:b,done:done,total:items.length,day:dayOf(b.order_at)});
+    rows.push({id:id,b:b,done:done,total:items.length,day:dayOf(b.order_at),
+               owner:b.owner||'담당 미지정'});
   });
-  if(!rows.length){out.innerHTML='<p class="none">등록된 지시서가 없습니다.</p>';return;}
-  rows.sort(function(x,y){return (y.b.order_at||'').localeCompare(x.b.order_at||'');});
-  var days=[],map={};
-  rows.forEach(function(r){ if(!map[r.day]){map[r.day]=[];days.push(r.day);} map[r.day].push(r); });
   var today=new Date();
   var td=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')
         +'-'+String(today.getDate()).padStart(2,'0');
-  var h='';
-  days.forEach(function(day){
-    var list=map[day], isT=(day===td);
-    h+='<div class="day'+(isT?' today':'')+'"><div class="dayhd">'
-      +'<span class="daytitle">'+esc(day)+(isT?' · 오늘':'')+'</span>'
-      +'<span class="daycnt">지시서 '+list.length+'건</span></div>';
-    list.forEach(function(r){
-      var b=r.b, pct=r.total?Math.round(r.done*100/r.total):0;
-      var stale=(!isT && pct===100);
-      h+='<div class="card'+(stale?' stale':'')+'">'
-        +'<div class="cardhd">'
-        +'<span class="who '+whoClass(b.owner)+'">'+esc(b.owner||'담당 미지정')+'</span>'
-        +'<span class="btitle">'+esc(b.title||r.id)+'</span>'
-        +'<span class="bid">'+esc(r.id)+'</span>'
-        +'<span class="pct">'+r.done+' / '+r.total+' · '+pct+'%</span></div>'
-        +'<div class="bar"><i class="'+(pct===100?'full':'')+'" style="width:'+pct+'%"></i></div>';
-      if(b.frozen) h+='<div class="frozen">❄️ 동결됨 — '+esc(b.frozen)+'</div>';
-      h+='<details'+(isT?' open':'')+'><summary>작업 지시 ('+esc(b.order_at||'일시 미기록')+' 등록)</summary>'
-        +'<pre>'+esc(b.order)+'</pre></details></div>';
-    });
-    h+='</div>';
+  // 항상 4버킷 전부 만든다 — 데이터가 없어도 빈 칸으로 보여 "칸이 왜 사라졌지"를 없앤다.
+  var byB={}; BUCKETS.forEach(function(bk){byB[bk.key]=[];});
+  rows.forEach(function(r){ byB[bucketOf(r.owner).key].push(r); });
+  Object.keys(byB).forEach(function(k){
+    byB[k].sort(function(x,y){return (y.b.order_at||'').localeCompare(x.b.order_at||'');});
   });
-  h+='<p class="foot">이 화면은 지시서가 <b>등록된</b> 배치만 보여줍니다. '
-    +'세션은 <code>python -m studio.batchboard order --id &lt;배치&gt;</code> 로 같은 내용을 읽습니다 — '
-    +'워크트리에서 돌 때는 <code>git pull origin main</code> 을 먼저 해야 최신을 봅니다.</p>';
+  var h='<div class="grid">';
+  BUCKETS.forEach(function(bk){
+    var list=byB[bk.key];
+    var td2=0,dd2=0; list.forEach(function(r){td2+=r.total;dd2+=r.done;});
+    var opct=td2?Math.round(100*dd2/td2):0;
+    h+='<div class="col '+bk.key+'"><div class="colhd"><span class="who">'+esc(bk.label)+'</span>'
+      +'<span class="n">'+(list.length?list.length+'건 · '+dd2+'/'+td2+' · '+opct+'%':'')+'</span></div>'
+      +'<div class="colbody">';
+    if(!list.length){
+      h+='<p class="none">지시서 없음</p>';
+    } else {
+      list.forEach(function(r){
+        var b=r.b, pct=r.total?Math.round(r.done*100/r.total):0;
+        var isT=(r.day===td), stale=(!isT && pct===100);
+        h+='<div class="card'+(stale?' stale':'')+'">'
+          +'<div class="cardhd">'
+          +'<span class="btitle">'+esc(b.title||r.id)+'</span>'
+          +'<span class="bid">'+esc(r.id)+'</span>'
+          +'<span class="pct">'+r.done+' / '+r.total+' · '+pct+'%</span></div>'
+          +'<div class="bar"><i class="'+(pct===100?'full':'')+'" style="width:'+pct+'%"></i></div>';
+        if(b.frozen) h+='<div class="frozen">❄️ 동결됨 — '+esc(b.frozen)+'</div>';
+        h+='<details'+(isT?' open':'')+'><summary>'+esc(r.day)+(isT?' · 오늘':'')+' — 작업 지시 ('
+          +esc(b.order_at||'일시 미기록')+' 등록)</summary>'
+          +'<pre>'+esc(b.order)+'</pre></details></div>';
+      });
+    }
+    h+='</div></div>';
+  });
+  h+='</div>';
   out.innerHTML=h;
 }).catch(function(e){
   document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';

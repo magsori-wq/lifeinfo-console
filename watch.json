@@ -596,8 +596,10 @@
    "due": "2026-08-24",
    "cmd": "python -m studio.watch done --id gmail-8975-relay --result \"<전달 켬 / 커넥터 추가함>\"  # 확인은 다음 메일 브리핑에서 to:magsori8975@gmail.com 조회 결과가 잡히는지로 판정",
    "owner": "user",
-   "state": "todo",
-   "flag": "관제탑이 20분 주기 점검에서 Gmail 로 애드센스 통지를 직접 확인한다(2026-08-17 배선)"
+   "state": "done",
+   "flag": "관제탑이 20분 주기 점검에서 Gmail 로 애드센스 통지를 직접 확인한다(2026-08-17 배선)",
+   "done_at": "2026-08-24",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "a104-seodesc-paste",
@@ -1262,8 +1264,10 @@
    "due": "2026-08-18",
    "cmd": "python -m studio.naverstat add --views <조회수> [--visitors <방문자>] [--revenue <애드포스트 원>] [--kw \"유입검색어1,유입검색어2\"]",
    "owner": "user",
-   "state": "todo",
-   "flag": "구글 애드센스는 4회 반려·색인 3/196 이라 승인돼도 트래픽이 없다. 네이버 애드포스트가 이미 승인된 유일한 수익 채널이다"
+   "state": "done",
+   "flag": "구글 애드센스는 4회 반려·색인 3/196 이라 승인돼도 트래픽이 없다. 네이버 애드포스트가 이미 승인된 유일한 수익 채널이다",
+   "done_at": "2026-08-24",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "console-check-false-red",
@@ -1334,8 +1338,10 @@
    "due": "2026-08-18",
    "cmd": "https://www.instagram.com/accounts/professional_account_settings/ → 카테고리 [변경]",
    "owner": "user",
-   "state": "todo",
-   "flag": "카테고리 변경은 웹에서 가능(설정>프로페셔널 계정>카테고리 변경) — Claude 가 승인 후 대신 할 수 있다"
+   "state": "done",
+   "flag": "카테고리 변경은 웹에서 가능(설정>프로페셔널 계정>카테고리 변경) — Claude 가 승인 후 대신 할 수 있다",
+   "done_at": "2026-08-24",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "gsc-validate-5xx-404",
@@ -1344,7 +1350,9 @@
    "due": "2026-08-19",
    "cmd": "curl -sS -o /dev/null -w '%{http_code}\\n' -L https://lifeinfo8975.blogspot.com/2026/07/2026-160.html",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "사장님 실측(2026-08-24 21:16~21:56, 스크린샷 확인): 서버오류(5xx)·찾을수없음(404) 둘 다 GSC 유효성검사 상태=시작됨(26.8.24)"
   },
   {
    "id": "adsense-gate-backlink",
@@ -1722,7 +1730,9 @@
    "due": "2026-08-20",
    "cmd": "python studio/routine_model.py",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "skill-reupload-0819",
@@ -1809,7 +1819,9 @@
    "due": "2026-08-21",
    "cmd": "python studio/routine_model.py --days 2",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): routinelog 배치 6/7 정상 진행 중 — 08-20 이후 정상 복귀 확인"
   },
   {
    "id": "a5-06-amount-fix",
@@ -1828,7 +1840,9 @@
    "due": "2026-08-22",
    "cmd": "python studio/selfcheck.py | grep -A5 '6b)'",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): selfcheck 6b) 원고 636개 · 죽은 원본링크 0개 — 해소됨"
   },
   {
    "id": "gemini-billing-prepay",
@@ -1855,7 +1869,9 @@
    "due": "2026-08-20",
    "cmd": "python studio/selfcheck.py | grep '9) 스킬'",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): selfcheck 9) 스킬 동기 — 원본=동기본 일치 확인"
   },
   {
    "id": "claude-watch-triage",
@@ -1882,7 +1898,9 @@
    "due": "2026-08-21",
    "cmd": "python studio/searchconsole.py inspect --limit 5",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측 확인(이부장 2026-08-24): C2-08·A5-06 URL 둘 다 gsc_requested.json에 이미 존재 — 색인요청 완료됨"
   },
   {
    "id": "seodesc-drift-a506-b408",
@@ -1922,8 +1940,10 @@
    "due": "2026-08-21",
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
-   "state": "todo",
-   "flag": "순서 = V0 검사(이부장) → 사장님 go → 발행. go 부터 찍으면 벽에 부딪힌다"
+   "state": "done",
+   "flag": "순서 = V0 검사(이부장) → 사장님 go → 발행. go 부터 찍으면 벽에 부딪힌다",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): D1-07·F4-19·F1-12·B4-09 v0check list 전부 🟢 pass(08-21 완료됨)"
   },
   {
    "id": "pubqueue-go-4",
@@ -1932,8 +1952,10 @@
    "due": "2026-08-21",
    "cmd": "python -m studio.pubqueue go --code <코드>",
    "owner": "user",
-   "state": "wait",
-   "flag": "작업 세션이 스스로 찍지 않는다. 우회(--force-go)는 규칙을 깨는 것"
+   "state": "done",
+   "flag": "작업 세션이 스스로 찍지 않는다. 우회(--force-go)는 규칙을 깨는 것",
+   "done_at": "2026-08-24",
+   "result": "실측 확인(이부장 2026-08-24): 그 시점(08-21) 큐 4편은 이후 전부 처리됨 — 현재 발행대기는 B2-11 1편뿐이고 이미 go 도장 있음(python -m studio.pubqueue list)"
   },
   {
    "id": "covered-briefing-parse",
@@ -1951,7 +1973,9 @@
    "due": "2026-08-22",
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): 라이브 페이지에 2만/4만/3만/12만원 구간표 전부 확인됨"
   },
   {
    "id": "keyword-tool-access",
@@ -1980,7 +2004,9 @@
    "due": "2026-08-23",
    "cmd": "python -c \"import json;d=json.load(open('webapp/topicprop.json',encoding='utf-8'));print([(i['code'],i['state']) for i in d['items']])\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): B2-11 현재 approved 상태 안정적으로 유지 중, 재발 없음(발행대기까지 정상 진행)"
   },
   {
    "id": "g403-price-unmeasured",
@@ -2029,7 +2055,9 @@
    "due": "2026-08-24",
    "cmd": "python -m studio.topicprop list",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): topicprop.json A5-07 state=approved"
   },
   {
    "id": "routine-skill-drift",
@@ -2047,7 +2075,9 @@
    "due": "2026-08-24",
    "cmd": "python -m studio.seodesc scan --only G4-03",
    "owner": "claude",
-   "state": "blocked"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "실측(이부장 08-24): seodesc scan --only G4-03 → 공통문구 0, 실제 설명 반영 확인"
   },
   {
    "id": "seodesc-a507-blocked",
@@ -2109,6 +2139,53 @@
    "state": "done",
    "done_at": "2026-08-24",
    "result": "사장님 결정(2026-08-24): 선택지 2 — KW 는 참고 지표로 두고 승인을 막지 않는다. 광고를 보게 해서 8시간 창을 여는 것은 사장님 시간 낭비이고, KW 는 있으면 좋지만 없다고 발행을 막을 지표가 아니다. 코드 반영: topicprop._verify_one 문구를 '재라' → '참고 지표·측정하러 가지 마라' 로 교체, 루틴 SKILL 3개(daily-topics·daily-publish·travel-prep)도 갱신. 다음 세션이 광고벽에 다시 부딪히지 않는다."
+  },
+  {
+   "id": "insta-caption-naver-a309-f113",
+   "added": "2026-08-24",
+   "what": "A3-09/F1-13 인스타 캡션에 네이버 링크 추가 - 게시당시 네이버 미라이브라 빠짐, 편집모달 로딩무한대기로 1차시도 실패",
+   "due": "2026-08-25",
+   "cmd": "python -m studio.crosslinkcheck A3-09; python -m studio.crosslinkcheck F1-13",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insta-caption-naver-link",
+   "added": "2026-08-24",
+   "what": "A3-09·F1-13 인스타 캡션에 네이버 링크가 빠져 있다 — 네이버를 인스타보다 늦게 게시해서 캡션 작성 시점에 URL이 없었다. 이과장이 인스타 편집으로 고치려 했으나 편집 모달이 로딩 무한대기로 실패(2026-08-24). 재시도하거나, 안 되면 그대로 둔다(인스타 캡션 URL은 원래 클릭이 안 되고 바이오링크가 주 경로다 — 손해가 작다). 🔴재발 방지가 더 중요하다: 캡션에 네이버 링크를 넣으려면 **네이버를 인스타보다 먼저 게시**해야 한다. crosslinkcheck 는 '이미 라이브인 채널만' 요구하므로 이 순서 문제를 못 잡는다",
+   "due": "2026-08-27",
+   "cmd": "python -m studio.crosslinkcheck A3-09",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "중복 등록이라 접는다 — 이과장이 먼저 만든 insta-caption-naver-a309-f113 으로 일원화. 내 항목에만 있던 재발 방지 근거를 그쪽 note 로 옮겼다."
+  },
+  {
+   "id": "osmu-order-naver-first",
+   "added": "2026-08-24",
+   "what": "🔴 OSMU 게시 순서 규칙: 네이버를 인스타·쓰레드보다 **먼저** 게시한다. 2026-08-24 사고 — 네이버를 나중에 올려서 A3-09·F1-13 인스타 캡션에 네이버 링크가 빠졌고, 인스타 편집 모달이 로딩 무한대기라 사후 수정도 실패했다(인스타는 고치기 가장 어려운 채널이다). crosslinkcheck 는 '이미 라이브인 채널만' 요구하므로 이 순서 문제를 구조적으로 못 잡는다 — 캡션 작성 시점에 네이버가 없으면 검사도 통과한다. 조치안: ①osmu 지시서 기본 순서를 네이버→쓰레드→인스타로 명시 ②crosslinkcheck 에 '네이버 미라이브 상태에서 인스타 캡션을 확정하면 경고' 추가 검토. 판단·구현은 관제탑",
+   "due": "2026-08-27",
+   "cmd": "python -m studio.crosslinkcheck",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "mediaart-yangsan-2026",
+   "added": "2026-08-24",
+   "what": "G2-03 후보 — 2026 국가유산 미디어아트 '양산 통도사' 회차의 공식 일정·관람시간·산문 입장마감 확인. 2026-08-24 현재 공식(kh.or.kr 연간일정)은 2025년분만 게시, khs.go.kr 보도자료 제목검색 3회 실패. 뉴스의 9/28~10/18은 2차출처라 사용 금지. 승인되더라도 이 값 확인 전에는 초안 착수 금지",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.topicprop list | grep G2-03; curl -s 'https://www.kh.or.kr/visit/kor/content.do?key=2501130003' | head -c 2000",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "routine-model-recheck-0824",
+   "added": "2026-08-24",
+   "what": "루틴 모델 재확인 — 사장님이 21:22 재변경. 23:55 daily-publish 실행 결과로 반영 여부 확인(opus-5면 진짜 버그 확정)",
+   "due": "2026-08-25",
+   "cmd": "python studio/routine_model.py",
+   "owner": "claude",
+   "state": "wait"
   }
  ]
 }
