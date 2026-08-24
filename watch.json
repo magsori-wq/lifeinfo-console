@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-23",
+ "updated": "2026-08-24",
  "items": [
   {
    "id": "redirect-error",
@@ -2018,7 +2018,9 @@
    "due": "2026-08-23",
    "cmd": "cd /c/lifeinfo-deploy && python tools/console_check.py",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "해소 확인(2026-08-24 메일브리핑 실측): 오탐 수정 커밋 30c00aa(fetch 참조에 절대URL 필터) 이후 08-23 06:27·07:53·19:21·21:31·22:22 5회 연속 success. 마지막 실패는 08-23 04:31(run 32618075314, 신호등 RED · batch.html/pending_osmu.html http://127.0.0.1: 2건)"
   },
   {
    "id": "topicprop-a507",
@@ -2077,6 +2079,36 @@
    "cmd": "python -m studio.crosslinkcheck",
    "owner": "claude",
    "state": "wait"
+  },
+  {
+   "id": "github-app-claude-perms",
+   "added": "2026-08-24",
+   "what": "GitHub App 'Claude' 권한 업데이트 요청 — 2026-08-21 23:32 메일(noreply@github.com, 미읽음). 수락하지 않아도 기존 권한은 유지되므로 발행 워크플로(gh workflow run)는 지금도 정상. 사장님이 https://github.com/settings/installations/108936792/permissions/update 에서 요청 내용을 보고 수락/무시 결정. 🔴어떤 권한을 더 달라는지 화면에서 확인 전에는 수락하지 말 것",
+   "due": "2026-08-27",
+   "cmd": "gh api /user/installations --jq '.installations[]|select(.app_slug==\"claude\")|{id,app_slug,permissions}'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "seodesc-e209-drift",
+   "added": "2026-08-24",
+   "what": "E2-09 검색설명 계획≠현실 — seo_desc.json 기록(101자 '112 일원화 발표' 후킹문)과 라이브(117자 '여신거래 안심차단 해제 영업점 방문' 함정 포함)가 다른 문구다. 🔴라이브가 결함인 게 아니다: 라이브 쪽이 더 길고 주제적합하며 공통문구도 아니다(seodesc scan --only E2-09 = 설명있음207·공통문구0·없음0). 즉 계획 파일이 뒤처진 것. A5-07=seodesc-a507-blocked · G4-03=seodesc-g403-blocked 로 이미 추적 중이고 E2-09만 빠져 있었다. 판단 필요: 라이브 문구를 계획으로 승격(set)할지, 계획 문구를 라이브에 밀어넣을지. 승격이면 편집화면 조작 없이 끝난다",
+   "due": "2026-08-25",
+   "cmd": "python -m studio.seodesc scan --only E2-09",
+   "owner": "claude",
+   "state": "todo",
+   "flag": "라이브 손대기 전 먼저 어느 쪽이 정본인지 정할 것 — 라이브가 더 낫다"
+  },
+  {
+   "id": "kwgate-adwall",
+   "added": "2026-08-24",
+   "what": "키워드마스터(whereispost.com/keyword)가 광고 잠금벽으로 막혔다 — '짧은 광고 보기 → 8시간 해제'. 2026-08-23 에 KW 측정을 무인 루틴에서 대면(이부장)으로 옮겼는데, 대면에서도 못 잰다. 나는 광고를 클릭하지 않는다(3자 광고 상호작용). 선택지 ①사장님이 그 사이트에서 광고 1회 보고 8시간 창을 열어 주시면 그 안에 내가 잰다 ②KW 게이트를 🟡 경고로만 두고 승인 판단의 참고로 쓴다(지금 상태) ③다른 무료 검색량 도구를 찾는다. 판단은 사장님 몫",
+   "due": "2026-08-27",
+   "cmd": "python -m studio.topicprop verify",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-24",
+   "result": "사장님 결정(2026-08-24): 선택지 2 — KW 는 참고 지표로 두고 승인을 막지 않는다. 광고를 보게 해서 8시간 창을 여는 것은 사장님 시간 낭비이고, KW 는 있으면 좋지만 없다고 발행을 막을 지표가 아니다. 코드 반영: topicprop._verify_one 문구를 '재라' → '참고 지표·측정하러 가지 마라' 로 교체, 루틴 SKILL 3개(daily-topics·daily-publish·travel-prep)도 갱신. 다음 세션이 광고벽에 다시 부딪히지 않는다."
   }
  ]
 }

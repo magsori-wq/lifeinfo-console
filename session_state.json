@@ -3,11 +3,11 @@
   "routinelog": {
    "reads": 0,
    "last_order_at": "2026-08-21 12:06",
-   "last_read": "2026-08-23 21:22",
+   "last_read": "2026-08-24 09:12",
    "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
    "state": "working",
-   "last_report": "2026-08-24 00:12",
-   "last_what": "[정정] C1-14 연휴 범위 9/24~26 → 9/24~27 로 갱신(공휴일 3일 + 9/27 일요일, 출처 우주항공청 2026년 월력요항). 일요일이 빠지면 '어느 날 문 여는가' 라는 글의 전제가 반쪽이 되므로"
+   "last_report": "2026-08-24 09:12",
+   "last_what": "발행 없음(정상) — 오늘 승인분은 E2-09 1편뿐이고 pub0824 배치가 이미 100% 완료. 큐의 B2-11 은 go 도장이 있으나 why 에 '오늘 발행하지 않는다(사장님 지시: 오늘은 E2-09 만)' 명"
   },
   "publish0816": {
    "state": "waiting",
@@ -91,7 +91,22 @@
    "state": "working",
    "last_report": "2026-08-23 17:09",
    "last_what": "실측 완료 - seodesc scan --only A5-07: 공통문구 0, 라이브 meta curl 재확인 완료"
+  },
+  "pub0824": {
+   "state": "working",
+   "reads": 0,
+   "last_report": "2026-08-24 04:33",
+   "last_what": "라이브 발행 완료(run 32660912838, 게이트 레이스로 1차 실패->2회차 성공) + 검색설명 확인(seodesc scan 공통문구 0) + OSMU 3채널 준비완료(crosslinkcheck 통과)"
+  },
+  "draft0824": {
+   "reads": 0,
+   "last_order_at": "2026-08-24 12:55",
+   "last_read": "2026-08-24 13:01",
+   "owner": "이과장(작업 세션)",
+   "state": "working",
+   "last_report": "2026-08-24 13:18",
+   "last_what": "gov.uk 원문 직접확인해 제안당시 미확인 3건(한국국적자적용/유효기간/처리시간) 전부 확정. Immigration Rules Appendix ETA National List에서 South Korea 2025-01"
   }
  },
- "updated": "2026-08-24 00:12"
+ "updated": "2026-08-24 13:18"
 }
