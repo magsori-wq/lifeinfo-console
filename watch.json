@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-24",
+ "updated": "2026-08-25",
  "items": [
   {
    "id": "redirect-error",
@@ -1827,7 +1827,7 @@
    "id": "a5-06-amount-fix",
    "added": "2026-08-20",
    "what": "A5-06 도산대지급금 상한액 정정 — 라이브 '2,100만원'→'3,150만원'(2026-08-20 개정법 시행, 6개월분 확대와 동시 인상). 출처: 고용노동부 08-19 보도자료",
-   "due": "2026-08-21",
+   "due": "2026-08-25",
    "cmd": "python -m studio.note list | grep -i A5-06",
    "owner": "claude",
    "state": "todo",
@@ -2186,6 +2186,15 @@
    "cmd": "python studio/routine_model.py",
    "owner": "claude",
    "state": "wait"
+  },
+  {
+   "id": "pub-b2-11-retry-0825",
+   "added": "2026-08-25",
+   "what": "B2-11 발행 재시도 — 권한 분류기가 gh workflow run(라이브 발행 트리거)을 막음. 게이트는 전부 통과(go도장·V0·pushcheck), 1차 실패 원인은 Blogger API 일시 503(진짜 중복 아님). 아래 명령을 사장님이 직접 실행해주시거나, 이과장 창에서 실행되면 완료 확인만 해주세요.",
+   "due": "2026-08-25",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B2-11 -f mode=live -f confirm=PUBLISH -f file='신생아특례대출_글_HTML.txt' -f title='신생아 특례대출 신청 자격 소득요건 순자산 한도 금리 총정리 (2026, 2년 내 출산)'",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
