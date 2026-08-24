@@ -187,7 +187,7 @@ async function send(a,c,why,el){
       body:JSON.stringify({action:a,code:c,why:why})});
     var d=await r.json();
     if(d.ok){ toast('✅ '+c+' 결재 완료 — 목록을 새로 읽습니다');
-      setTimeout(function(){location.reload();},1100); }
+      setTimeout(refresh,600); }  // 전체 새로고침 대신 refresh() — 깜빡임 없이 갱신
     else { toast('🔴 실패: '+String(d.error||'').slice(0,90)); disarm(el, back); }
   }catch(e){
     // 화면을 연 뒤 서버가 꺼졌을 수 있다 — 배너도 함께 '꺼짐'으로 되돌려
@@ -219,13 +219,23 @@ async function findServer(){
     return (d&&d.ok) ? url : null;
   }catch(e){ return null; }
 }
+// 🔴 실시간 반영(2026-08-24 사장님 지시 "실시간으로 업데이트하고 처리결과도
+//    실시간으로 반영해줘") — 예전엔 결재 성공 시에만 새로고침됐고, 다른 세션이
+//    board 를 바꿔도 이 화면은 그대로였다. 지금은 refresh() 로 묶어 주기적으로
+//    다시 읽는다. 무장(armed) 중인 버튼이 있으면 화면이 갈아엎여 그 상태가
+//    풀리므로, 그 사이는 건너뛴다(사람이 두 번째 클릭 하려는 순간 안 뺏는다).
+var REFRESHING=false;
+function refresh(){
+  if(document.querySelector('.act[data-armed="1"]')) return;  // 결재 확인 대기 중이면 스킵
+  REFRESHING=true;
 findServer().then(function(url){ SRV=!!url; if(url) API=url;
   return SRV; })
  .then(function(up){
+  var old=document.querySelector('.srv'); if(old) old.remove();
   var d=document.createElement('div');
   d.className='srv '+(up?'on':'off');
   d.innerHTML = up
-    ? '🟢 결재 서버 연결됨('+API.replace('http://127.0.0.1:','포트 ')+') — 아래 버튼으로 바로 결재하실 수 있습니다.'
+    ? '🟢 결재 서버 연결됨('+API.replace('http://127.0.0.1:','포트 ')+') — 아래 버튼으로 바로 결재하실 수 있습니다. <span style="opacity:.6;font-weight:400">· 30초마다 자동 새로고침</span>'
     : '🔴 결재 서버가 꺼져 있어 버튼이 비활성입니다. 터미널에서 <b>python -m studio.approve_server</b> 를 한 번 실행하세요. (명령 복사는 그대로 됩니다)';
   var o=document.getElementById('out'); o.parentNode.insertBefore(d,o);
  return Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
@@ -295,7 +305,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     return 1;
   }
   var docs={};
-  T.forEach(function(t){docs[t.code]={code:t.code,title:t.title};});
+  // 🔴 dropped(제외)된 글감은 "진행 중 문서"에서 뺀다 — 예전엔 발행된 것만 걸러내고
+  // dropped 는 그대로 남아 낡은 상태로 보였다(2026-08-24 실측 발견: F2-14·A1-13이
+  // 이미 제외 처리됐는데도 화면엔 여전히 "②선별" 단계로 떠 있었다).
+  T.forEach(function(t){if(t.state!=='dropped') docs[t.code]={code:t.code,title:t.title};});
   Q.forEach(function(q){docs[q.code]={code:q.code,title:q.title};});
   V.forEach(function(v){if(!docs[v.code])docs[v.code]={code:v.code,title:v.title};});
   var list=Object.keys(docs).map(function(k){return docs[k];})
@@ -393,7 +406,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   H+=pane('📄','지시서 · 세션',bs.length+'건',ordBody);
 
   document.getElementById('out').innerHTML=H;
+  REFRESHING=false;
 }).catch(function(e){
-  document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';});
+  document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';
+  REFRESHING=false;});
  });
+}
+refresh();
+setInterval(refresh, 30000);
 </script></body></html>
