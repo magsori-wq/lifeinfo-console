@@ -1175,7 +1175,9 @@
    "due": "2026-08-23",
    "cmd": "type C:\\lifeinfo\\tools\\pc\\README.md   # 재시도 전 필독. 사용자가 '또 홈이 뜬다'고 하면 그때 재개",
    "owner": "user",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-25",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "pc-perf-unresolved",
@@ -2194,6 +2196,60 @@
    "due": "2026-08-25",
    "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B2-11 -f mode=live -f confirm=PUBLISH -f file='신생아특례대출_글_HTML.txt' -f title='신생아 특례대출 신청 자격 소득요건 순자산 한도 금리 총정리 (2026, 2년 내 출산)'",
    "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-validate-5xx404-result",
+   "added": "2026-08-25",
+   "what": "GSC 유효성 검사 결과 추적 - 서버오류(5xx) 1페이지 / 찾을수없음(404) 1페이지. 2026-08-24 14:21·14:22 UTC 구글이 확인 시작 메일 발송(magsori@gmail.com 실측). watch gsc-validate-5xx-404(08-19 done)에서 누르기로 했던 그 검사가 실제로 시작된 것. 대상 2건은 08-19 실측 당시 이미 200 이었으므로 통과가 기대되나, 이 저장소 이력상 유효성 검사 통과율은 0/4 다. 결과 메일이 오면 성공/실패를 기록하고, 실패면 해당 URL 을 다시 열어 실제 응답코드부터 재측정할 것",
+   "due": "2026-08-30",
+   "cmd": "python -m studio.searchconsole inspect --only-recent 2>&1 | head -20   # 또는 결과 메일 도착 확인(daily-email-briefing)",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "waiting-vs-blocked-semantics",
+   "added": "2026-08-25",
+   "what": "⏸ '대기' 판정이 새 규칙과 부딪힌다 — 2026-08-25 09:07 실측. sessionstate 는 '두 번 읽고 보고 없음'을 waiting 으로 본다. 그런데 08-25 신설 규칙 「막히면 그 자리에 남아 대기한다」 아래에서는 **반복해서 읽는 것이 올바른 행동**이다. 지금 화면은 '올바르게 대기 중' 과 '멍하니 멈춤' 을 구분 못 한다. 구분자는 있다 — batchboard now 로 막힘을 남겼는가. (보고O+반복읽기=⏸정상대기, 관제탑이 새 지시 줄 차례 / 보고X+반복읽기=⚠️진짜 이상). pub0824c 가 지금 후자였다(last_report 없음, 내가 대신 now 로 채움). 조치안=sessionstate waiting 판정에 last_report·now 유무를 섞어 두 상태를 갈라 표시.",
+   "due": "2026-08-26",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/session_state.json',encoding='utf-8'))['sessions'];print({k:(v.get('state'),v.get('reads'),bool(v.get('last_report'))) for k,v in d.items()})\"",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topic-a2-15-earlypay",
+   "added": "2026-08-25",
+   "what": "A2-15(추석 조기지급일) 핵심 숫자 미확정 — 2026년 국민연금·기초연금·아동수당 실제 조기지급일은 복지부 보도자료가 아직 안 나왔다(2026-08-25 확인). 발표 전에는 연휴 전 마지막 영업일을 계산해 써넣지 말 것. 발표되면 그 날짜로 초안 확정.",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.topicprop table  # A2-15 상태 확인 후, 보도자료 조회: WebSearch allowed_domains=[mohw.go.kr] '추석 기초연금 국민연금 조기지급 2026'",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "seodesc-drift-0825",
+   "added": "2026-08-25",
+   "what": "A3-09·F1-13 검색설명 라이브 문구가 기록과 다름 — 둘 다 08-24 발행 큐에서 나간 글이라 lifeinfo-publish 3b(검색설명 반영)가 어제 안 붙었을 가능성. selfcheck 8) 이 잡은 드리프트 5편 중 2편",
+   "due": "2026-08-25",
+   "cmd": "python -m studio.seodesc scan --only A3-09",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "covered-travelreport-parse",
+   "added": "2026-08-25",
+   "what": "covered_topics ⑤ 가 여행보고서의 두 번째 후보를 놓친다 — 파서가 '## ■ 오늘 신규 선정 주제' 아래 **첫 굵은 줄 1개만** 집는다. 실측 2026-08-25: G4-04 는 등재됐는데 같은 보고서의 G2-03 은 ⑤에 안 잡혔다(서식은 08-23 보고서와 동일, travel-prep 루틴이 추측으로 고치지 않고 사실만 보고). 🔴 [[covered-briefing-parse]](④ 오전브리핑)와 **같은 뿌리**다 — 파서가 특정 서식 하나만 읽어서 중복 게이트 버킷이 조용히 비어 있다. 지금은 G/F/H 가 travel-prep 전담이라 레인 간 충돌 위험이 낮지만, 담당이 겹치는 순간 그대로 샌다. 두 건을 한 번에 고칠 것",
+   "due": "2026-08-27",
+   "cmd": "python studio/covered_topics.py | grep -A12 '⑤'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "routine-model-reverts",
+   "added": "2026-08-25",
+   "what": "🔴 루틴 모델이 되돌아간다 — 사장님 변경이 두 번 다 유지되지 않았다(2026-08-25 routine_model.py 이력 실측). ①08-19 변경은 **먹혔다**: 그날 저녁 4개 루틴(briefing오후 20:09·travel-prep 21:08·nightly-verify 22:33·daily-publish 08-20 00:00)이 sonnet-5 로 돌았다. ②그런데 08-20 아침부터 nightly-verify 하나만 빼고 **전부 opus-5 로 되돌아갔다**(travel-prep 은 08-19 sonnet → 08-20 opus 로 실제로 뒤집힘). ③08-24 21:22 재변경은 **아예 안 먹었다** — 그 뒤 돌아간 4개(daily-publish 00:00·briefing 08:09·topics 09:01·publish 09:05) 전부 opus-5. 즉 지금 6/7 이 opus-5 다. 모델은 서버(루틴 화면)에만 있고 로컬 scheduled-tasks/*/SKILL.md 에는 필드가 없음을 확인했다(프론트매터 대조). 원인·nightly-verify 만 면역인 이유는 **미확인 — 추측하지 말 것**. ⚠️ 루틴을 UI 에서 다시 만들면 SKILL.md 가 통째로 덮어써진다(2026-08-03 실측 5752→747바이트) — restore/scheduled-tasks_20260825/ 에 7개 백업 완료",
+   "due": "2026-08-26",
+   "cmd": "python studio/routine_model.py --days 3",
+   "owner": "claude",
    "state": "todo"
   }
  ]
