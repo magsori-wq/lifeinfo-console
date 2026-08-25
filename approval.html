@@ -110,6 +110,9 @@ function copy(el){navigator.clipboard.writeText(el.textContent);
   var c=document.getElementById('cp');c.classList.add('on');
   setTimeout(function(){c.classList.remove('on');},900);}
 var API='http://127.0.0.1:8011', SRV=false;
+// 이 화면을 '본 PC' 에서 보고 있는가. github.io 등 원격이면 결재서버에 절대 닿지 않는다.
+var REMOTE=!(location.hostname==='localhost'||location.hostname==='127.0.0.1'
+             ||location.protocol==='file:');
 // 📄 원고 미리보기 (2026-08-23 사장님 지시) — 발행은 되돌리기 어려운 결재인데
 //    그전에는 제목·코드·V0 근거만 보고 눌러야 했다. 원고를 보고 누르신다.
 //    본문은 srcdoc + sandbox 로 격리해 띄운다(초안의 <style> 이 결재함 화면을 망가뜨리지 않게).
@@ -236,7 +239,13 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   d.className='srv '+(up?'on':'off');
   d.innerHTML = up
     ? '🟢 결재 서버 연결됨('+API.replace('http://127.0.0.1:','포트 ')+') — 아래 버튼으로 바로 결재하실 수 있습니다. <span style="opacity:.6;font-weight:400">· 30초마다 자동 새로고침</span>'
-    : '🔴 결재 서버가 꺼져 있어 버튼이 비활성입니다. 터미널에서 <b>python -m studio.approve_server</b> 를 한 번 실행하세요. (명령 복사는 그대로 됩니다)';
+    : (REMOTE
+       // 🔴 다른 PC 에서는 서버를 켜라고 하면 안 된다 (2026-08-25 사장님 신고).
+       //    127.0.0.1 은 '보는 PC 자신'이라, 그 PC 에 저장소가 없으면 실행할 것도 없다.
+       //    틀린 안내를 주면 사장님이 되지도 않는 일을 시도하신다.
+       ? '📄 <b>읽기 전용</b> — 여기는 본 PC 가 아니라 결재 버튼이 동작하지 않습니다. '
+         + '내용 확인과 <b>명령 복사</b>는 그대로 됩니다. 결재는 본 PC(C:\lifeinfo)에서 하세요.'
+       : '🔴 결재 서버가 꺼져 있어 버튼이 비활성입니다. 터미널에서 <b>python -m studio.approve_server</b> 를 한 번 실행하세요. (명령 복사는 그대로 됩니다)');
   var o=document.getElementById('out'); o.parentNode.insertBefore(d,o);
  return Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
              j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),

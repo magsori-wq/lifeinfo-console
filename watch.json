@@ -1832,8 +1832,10 @@
    "due": "2026-08-25",
    "cmd": "python -m studio.note list | grep -i A5-06",
    "owner": "claude",
-   "state": "todo",
-   "note": 145
+   "state": "done",
+   "note": 145,
+   "done_at": "2026-08-25",
+   "result": "1차 출처 확보 완료 — 고용노동부 2026-08-19 보도자료 원문에 6개월분·3,150만원 명시. docs/A5-06_1차출처_고용노동부보도자료_20260819.md 에 전문 정리. 반영 지시는 fix0824a5-06 지시서로"
   },
   {
    "id": "draft-link-rot-0820",
@@ -2196,7 +2198,9 @@
    "due": "2026-08-25",
    "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B2-11 -f mode=live -f confirm=PUBLISH -f file='신생아특례대출_글_HTML.txt' -f title='신생아 특례대출 신청 자격 소득요건 순자산 한도 금리 총정리 (2026, 2년 내 출산)'",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-25",
+   "result": "발행 완료 — 2026-08-25 09:5x 라이브 확인(HTTP 200, https://lifeinfo8975.blogspot.com/2026/08/2026-2.html). DB 210편. 검색설명도 반영됨(이과장 커밋 ed5aa6e)"
   },
   {
    "id": "gsc-validate-5xx404-result",
@@ -2205,7 +2209,8 @@
    "due": "2026-08-30",
    "cmd": "python -m studio.searchconsole inspect --only-recent 2>&1 | head -20   # 또는 결과 메일 도착 확인(daily-email-briefing)",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-25"
   },
   {
    "id": "waiting-vs-blocked-semantics",
@@ -2249,6 +2254,87 @@
    "what": "🔴 루틴 모델이 되돌아간다 — 사장님 변경이 두 번 다 유지되지 않았다(2026-08-25 routine_model.py 이력 실측). ①08-19 변경은 **먹혔다**: 그날 저녁 4개 루틴(briefing오후 20:09·travel-prep 21:08·nightly-verify 22:33·daily-publish 08-20 00:00)이 sonnet-5 로 돌았다. ②그런데 08-20 아침부터 nightly-verify 하나만 빼고 **전부 opus-5 로 되돌아갔다**(travel-prep 은 08-19 sonnet → 08-20 opus 로 실제로 뒤집힘). ③08-24 21:22 재변경은 **아예 안 먹었다** — 그 뒤 돌아간 4개(daily-publish 00:00·briefing 08:09·topics 09:01·publish 09:05) 전부 opus-5. 즉 지금 6/7 이 opus-5 다. 모델은 서버(루틴 화면)에만 있고 로컬 scheduled-tasks/*/SKILL.md 에는 필드가 없음을 확인했다(프론트매터 대조). 원인·nightly-verify 만 면역인 이유는 **미확인 — 추측하지 말 것**. ⚠️ 루틴을 UI 에서 다시 만들면 SKILL.md 가 통째로 덮어써진다(2026-08-03 실측 5752→747바이트) — restore/scheduled-tasks_20260825/ 에 7개 백업 완료",
    "due": "2026-08-26",
    "cmd": "python studio/routine_model.py --days 3",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "routine-model-set-sonnet",
+   "added": "2026-08-25",
+   "what": "🙋 사장님 조치 — Claude Desktop 「루틴」 화면에서 아래 6개 루틴의 모델을 Sonnet 5 로 재설정. (모델은 서버에만 있어 Claude 가 못 바꾼다. 로컬 SKILL.md 에 필드 없음을 확인함) ① daily-email-briefing ② lifeinfo-daily-topics ③ lifeinfo-publish ④ lifeinfo-travel-prep ⑤ lifeinfo-daily-publish ⑥ lifeinfo-index-check / lifeinfo-nightly-verify 는 이미 sonnet-5 라 건드리지 말 것. ⚠️ 두 번(08-19·08-24) 바꿨는데 두 번 다 되돌아갔으므로, 바꾼 뒤 반드시 다음 날 검증할 것. ✅ SKILL.md 7개는 restore/scheduled-tasks_20260825/ 에 백업 완료 — UI 가 덮어써도 되돌릴 수 있다",
+   "due": "2026-08-26",
+   "cmd": "python studio/routine_model.py --days 3",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-redirect-validation-0817",
+   "added": "2026-08-25",
+   "what": "🔴 GSC 리디렉션 오류 유효성 검사 = 통과율 0/17 로 갱신 (사장님 캡처 2026-08-25 09:55 실측). 화면: 페이지 색인 생성 > 리디렉션 오류 > 유효성 검사 세부정보. 상태 '실패함' · 시작 26.8.11 · 실패 26.8.15 · 접수중 29 · 실패함 17(이전 기록은 4였다). 예시 URL 10개 최종크롤 8.4~8.11. → 기존 결론('유효성 검사는 레버가 아니다, 통과율 0/4')이 **더 강해졌다**: 17/17 전부 실패. 원인은 이미 확정돼 있다 — Redirect error 는 블로거의 표시 오류라 재크롤되면 무조건 다시 걸린다([[indexing-not-a-technical-problem]]). ⛔ '새로운 유효성 검사 시작' 버튼을 누르지 말 것. 이 항목은 조치가 아니라 **기록**이다 — 다음 세션이 이 화면을 보고 또 누르려 하면 이걸 보여줄 것",
+   "due": "2026-08-28",
+   "cmd": "cat 색인정밀분석_2026-08-25.md | head -40",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-redirect-recheck-trigger",
+   "added": "2026-08-25",
+   "what": "GSC 리디렉션 오류 유효성 검사를 '언제 다시 눌러볼 수 있나' 의 판정 조건. 지금 누르면 안 되는 이유는 '금지'가 아니라 '구조적으로 통과 불가'다 — Redirect error 는 최근 크롤된 글에만 붙고(2026-08-25 실측: 최근14일 크롤 23편 중 20편 / 31일+ 전 크롤 120편 중 0편), 검사는 재크롤을 부르므로 재크롤→재발→실패가 반복된다. 실측 통과율 0/17. 🔴 판정 조건: index_status.json 의 Redirect error 건수가 **스스로** 줄어들면(현재 47편 → 20편 이하) 표시 오류가 걷힌 것이므로 그때는 눌러볼 값이 있다. 그 전에는 눌러도 실패만 쌓인다(손해는 없지만 얻는 것도 없다). ⚠️ 이 수치는 우리 조치로 못 바꾼다 — 구글 커뮤니티 공식 답변 'It comes and goes on its own'",
+   "due": "2026-09-08",
+   "cmd": "python -c \"import json,io,collections;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'))['posts'];print(collections.Counter(v.get('state') for v in d.values()))\"",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "autoitem-seodesc-falsepos",
+   "added": "2026-08-25",
+   "what": "🔴 batchboard mark --state done 의 미결 자동생성이 오탐을 낸다 — 2026-08-25 실측: B2-11 발행 직후 done 처리하자 'B2-11-seodesc(라이브에 아직 안 붙었다)' 가 자동 생성됐는데, 같은 시각 seodesc scan --only B2-11 은 ✅210·없음 0 이었고 라이브 meta 도 91자로 붙어 있었다. 원인 추정 = 자동생성이 발행 직후 스냅샷(seo_desc_status.json)을 읽는데 그 파일이 아직 갱신 전이다. 🔴 왜 고쳐야 하나: 오탐이 반복되면 세션이 자동생성 항목을 습관적으로 닫는다 — 그러면 **진짜 누락도 같이 닫힌다**(link_rot 오탐 139건에서 배운 것과 같은 계열). 고칠 방향 후보 ①자동생성 전에 담당 도구(seodesc scan --only <코드>)를 실제로 1회 돌려 확인 ②생성을 즉시가 아니라 N분 뒤로 미루기. ①이 맞다 — 스냅샷을 믿지 말고 담당 도구로 재라는 것이 이 저장소 원칙이다",
+   "due": "2026-08-27",
+   "cmd": "python -m studio.seodesc scan --only B2-11",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "a506-source-0512-attrib",
+   "added": "2026-08-25",
+   "what": "A5-06 본문 §2 가 '고용노동부 보도자료(2026-05-12 등록)에 따르면 개정 임금채권보장법이 8월 20일부터 시행' 이라고 인용한다. 05-12 보도자료는 실재한다(「체불임금, 국가가 대신 지급하고 사업주의 책임도 끝까지 묻겠습니다」, 조회 10,019 — 목록에서 확인). 시행 사실만 그쪽에 귀속하고 수치(6개월분·3,150만)는 08-19 보도자료로 따로 출처를 달았으므로 **틀린 인용은 아니다.** 다만 그 절 제목이 '3개월분에서 6개월분으로' 라서 독자가 05-12 를 수치의 근거로 오해할 여지가 있다. 🔴 확인 안 한 것: 05-12 보도자료에 '6개월분' 이 실제로 들어 있는지. 확인되면 그대로 두고, 없으면 그 문장의 출처를 08-19 로 바꿀 것. 경미하므로 다른 일 없을 때 처리",
+   "due": "2026-08-29",
+   "cmd": "curl -s -L -A 'Mozilla/5.0' 'https://lifeinfo8975.blogspot.com/2026/08/2026-6.html' | grep -o '2026-05-12'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "ai-disclosure-missing",
+   "added": "2026-08-25",
+   "what": "🔴 구글이 명시적으로 묻는 항목 하나를 우리가 충족하지 않는다 — AI 활용 공개. 원문: 'Is the use of automation, including AI-generation, self-evident to visitors through disclosures or in other ways?' (구글 helpful content 자가진단 'How' 질문, 2026-08-25 취득). 실측: 라이브 본문에 AI·인공지능·자동 생성·생성형 0회. 바이라인(Who)은 있는데 공개(How)만 없다. 🔴 애드센스 반려 사유와도 맞물린다 — 게시자 정책은 'Automatically generated content without manual review or curation' 에 광고를 금지한다. 즉 '사람이 검수했다'는 사실 자체가 우리 방어인데 그걸 독자에게도 구글에게도 안 밝히고 있다. 조치안=바이라인에 한 줄 추가(예: 'AI 도구로 초안을 작성하고 공식 자료 대조·검수를 사람이 했습니다'). 210편 전체에 소급할지, 신규분부터 할지는 사장님 결정. ⚠️ 공개 문구는 사실이어야 한다 — 실제 절차와 다르게 쓰면 그게 더 나쁘다",
+   "due": "2026-08-26",
+   "cmd": "curl -s -L -A 'Mozilla/5.0' 'https://lifeinfo8975.blogspot.com/2026/08/2026-6.html' | grep -c 'AI'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "byline-stale-a506",
+   "added": "2026-08-25",
+   "what": "A5-06 바이라인이 오늘 낡았다 — '공식 확인이 안 된 수치(개정 후 상한 금액 등)는 싣지 않았습니다' 라고 쓰여 있는데, 2026-08-25 10:3x 에 1차 출처를 확보해 3,150만원·6개월분을 실었다. 바이라인이 본문과 반대말을 한다. 🔴 이건 신뢰 문구라 틀리면 특히 나쁘다(구글 helpful content 의 'clear sourcing' 항목에 직접 걸린다). 고칠 문구=고용노동부 2026-08-19 보도자료를 직접 확인해 상한액·지급범위를 반영했다는 취지로. 같은 형태의 낡은 바이라인이 다른 글에도 있는지 함께 볼 것",
+   "due": "2026-08-26",
+   "cmd": "python -m studio.seodesc list 2>/dev/null | head -3; curl -s -L -A 'Mozilla/5.0' 'https://lifeinfo8975.blogspot.com/2026/08/2026-6.html' | grep -o '싣지 않았습니다'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "console-remote-readonly",
+   "added": "2026-08-25",
+   "what": "다른 PC(github.io)에서 콘솔 결재·미결 화면이 서버에 못 닿는 문제 — 2026-08-25 사장님 신고 '파일서버가 꺼져있다'. 원인=127.0.0.1 은 보는 PC 자신이라 본 PC 의 approve_server(8011)에 구조적으로 닿을 수 없다. 조치=①pending_osmu 에 읽기 전용 폴백(queue.json·lifeinfo_db.txt·watch.json 정적 파생)을 붙여 화면이 비지 않게 함 ②approval 안내문을 원격이면 '본 PC에서 하세요'로 바꿈(전에는 그 PC에서 서버를 켜라는 틀린 안내였다). 🔴 남은 판단: LAN 접근을 열지(bind 0.0.0.0) 말지는 사장님 결정 — 인증 없는 결재 서버라 열면 같은 망의 누구나 발행 승인을 찍을 수 있다. 권고=열지 말 것. 원격에서는 읽기 전용으로 보고 결재는 본 PC에서",
+   "due": "2026-08-27",
+   "cmd": "python -c \"print('본 PC에서: python -m studio.approve_server 실행 후 http://127.0.0.1:8011')\"",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "deploygate-osmu-falsepos",
+   "added": "2026-08-25",
+   "what": "🔴 deploy.bat 0d) 가 OSMU 링크 기록 때마다 배포를 막는다 — 2026-08-25 실측(사장님이 실제로 막혀 프롬프트 앞에서 대기). 원인=threads-link/naver-link/insta-link 가 콘솔로 자동 push 하는데(설계된 동작), 그 커밋 메시지가 'B2-11 OSMU(threads): …' 라 게이트의 자동커밋 패턴에 안 걸리고 '사람이 만든 듯한 로컬 커밋'으로 잡힌다. 실제 내용은 파일 19개 전부 소스 webapp/ 에 있는 파생이라 고유 콘텐츠가 0이다. 🔴 OSMU 기록마다 재발한다 — 사장님이 매번 막히신다. 고칠 방향=메시지가 아니라 **내용으로 판정**할 것(커밋에 담긴 파일이 전부 소스 webapp/ 에 있으면 파생). 메시지 패턴을 추가하는 방식은 자유 문자열이라 언제든 또 어긋난다 ⛔⛔ 고칠 때 주의: cmd.exe 는 배치 파일을 **실행 중에 줄 단위로 다시 읽는다.** 사장님이 deploy.bat 의 pause 프롬프트 앞에 계신 동안 그 파일을 편집하면 남은 실행이 깨진다. 반드시 배포가 완전히 끝난 것을 확인한 뒤에 손댈 것.",
+   "due": "2026-08-26",
+   "cmd": "git -C C:/lifeinfo-deploy log --oneline origin/main..HEAD",
    "owner": "claude",
    "state": "todo"
   }
