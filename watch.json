@@ -2355,6 +2355,24 @@
    "cmd": "powershell -c \"$d=[Environment]::GetFolderPath('Desktop'); foreach($f in 'resume_leebujang.bat','start_leebujang.bat'){ $a=(Get-FileHash \\\"$d\\\\\").Hash; $b=(Get-FileHash \\\"C:\\lifeinfo\\\\\").Hash; \\\"$f $(if($a -eq $b){'OK'}else{'DIFF'})\\\" }\"",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "b2-11-insta-remains",
+   "added": "2026-08-25",
+   "what": "B2-11 인스타 미게시 — 이과장 커밋 898a5c2 가 'OSMU 3채널 완료' 라고 적었으나 실측은 2채널이다(naver ✅ threads ✅ instagram ❌). 라이브 교차링크도 네이버·쓰레드 둘만 실려 있다(표준 형식이 그 둘만 싣는 것이므로 교차링크 자체는 정상). 🔴 이 부류는 하네스가 구조적으로 못 잡는다 — 데이터 정합성은 맞고 문장만 앞서 있다(CLAUDE.md 「기록은 사실보다 앞서지 않는다」). 다음 세션이 git log 를 근거로 '3채널 끝났다'고 판단할 위험이 있어 남긴다. ⚠️ 이미 나간 커밋은 고치지 않는다(이력 재작성이 더 나쁘다). 인스타 대기는 B4-02 와 B2-11 둘",
+   "due": "2026-08-26",
+   "cmd": "python -m studio.insta_post --list | tail -4",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "g2-03-hold-until-sept",
+   "added": "2026-08-25",
+   "what": "🙋 G2-03(양산 통도사 미디어아트) 보류 여부 — 사장님 판단. V0 재검사에서 원본가치 0/5 로 재반려됐다(사실정정은 정확히 했으나 '확인 못함'이 16회, FAQ 3문 전부 미확인). 제목이 파는 관람시간·요금이 아직 세상에 없다. 🔴 이부장 권고=보류. 개막 1~2주 전(9월 중순) 국가유산진흥원 '진행중인 행사'에 통도사 상세가 열리면 관람시간·입장마감·관람료·주차가 전부 쓸 수 있게 되고 그때 제목이 정직해진다. 행사는 9.28~10.18 이라 시간이 있다. 지금 통과시키려면 12지역표에 휴무 열(철원=추석당일 휴무가 실제 헛걸음 방지)+동시개최를 선택형으로 바꾸면 되지만, 제목 문제는 남는다",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.v0check gate --code G2-03",
+   "owner": "user",
+   "state": "wait"
   }
  ]
 }
