@@ -2260,7 +2260,7 @@
   {
    "id": "routine-model-set-sonnet",
    "added": "2026-08-25",
-   "what": "🙋 사장님 조치 — Claude Desktop 「루틴」 화면에서 아래 6개 루틴의 모델을 Sonnet 5 로 재설정. (모델은 서버에만 있어 Claude 가 못 바꾼다. 로컬 SKILL.md 에 필드 없음을 확인함) ① daily-email-briefing ② lifeinfo-daily-topics ③ lifeinfo-publish ④ lifeinfo-travel-prep ⑤ lifeinfo-daily-publish ⑥ lifeinfo-index-check / lifeinfo-nightly-verify 는 이미 sonnet-5 라 건드리지 말 것. ⚠️ 두 번(08-19·08-24) 바꿨는데 두 번 다 되돌아갔으므로, 바꾼 뒤 반드시 다음 날 검증할 것. ✅ SKILL.md 7개는 restore/scheduled-tasks_20260825/ 에 백업 완료 — UI 가 덮어써도 되돌릴 수 있다",
+   "what": "🙋 사장님 조치 — Claude Desktop 「루틴」 화면에서 아래 6개 루틴의 모델을 Sonnet 5 로 재설정. (모델은 서버에만 있어 Claude 가 못 바꾼다. 로컬 SKILL.md 에 필드 없음을 확인함) ① daily-email-briefing ② lifeinfo-daily-topics ③ lifeinfo-publish ④ lifeinfo-travel-prep ⑤ lifeinfo-daily-publish ⑥ lifeinfo-index-check / lifeinfo-nightly-verify 는 이미 sonnet-5 라 건드리지 말 것. ⚠️ 두 번(08-19·08-24) 바꿨는데 두 번 다 되돌아갔으므로, 바꾼 뒤 반드시 다음 날 검증할 것. ✅ SKILL.md 7개는 restore/scheduled-tasks_20260825/ 에 백업 완료 — UI 가 덮어써도 되돌릴 수 있다 🔴 2026-08-25 재확인 — Claude 가 못 한다는 것을 **세 가지로 검증**했다: ①로컬 scheduled-tasks/*/SKILL.md 프론트매터에 model 필드 없음 ②claude.ai 웹 /scheduled-task 는 \"예약된 작업이 아직 없습니다\" (우리 루틴 7개가 웹에 없다 = Desktop 전용) ③~/.claude 전체에서 루틴의 모델값을 담은 파일 grep 0건. → 설정은 Claude Desktop 앱 안에만 있다. **사장님 손이 유일한 경로다.** 사장님 지시(2026-08-25 \"루틴 모델 6개 Sonnet 5 전환\")를 받았으나 실행 수단이 없어 이 항목으로 남긴다.",
    "due": "2026-08-26",
    "cmd": "python studio/routine_model.py --days 3",
    "owner": "user",
@@ -2335,6 +2335,24 @@
    "what": "🔴 deploy.bat 0d) 가 OSMU 링크 기록 때마다 배포를 막는다 — 2026-08-25 실측(사장님이 실제로 막혀 프롬프트 앞에서 대기). 원인=threads-link/naver-link/insta-link 가 콘솔로 자동 push 하는데(설계된 동작), 그 커밋 메시지가 'B2-11 OSMU(threads): …' 라 게이트의 자동커밋 패턴에 안 걸리고 '사람이 만든 듯한 로컬 커밋'으로 잡힌다. 실제 내용은 파일 19개 전부 소스 webapp/ 에 있는 파생이라 고유 콘텐츠가 0이다. 🔴 OSMU 기록마다 재발한다 — 사장님이 매번 막히신다. 고칠 방향=메시지가 아니라 **내용으로 판정**할 것(커밋에 담긴 파일이 전부 소스 webapp/ 에 있으면 파생). 메시지 패턴을 추가하는 방식은 자유 문자열이라 언제든 또 어긋난다 ⛔⛔ 고칠 때 주의: cmd.exe 는 배치 파일을 **실행 중에 줄 단위로 다시 읽는다.** 사장님이 deploy.bat 의 pause 프롬프트 앞에 계신 동안 그 파일을 편집하면 남은 실행이 깨진다. 반드시 배포가 완전히 끝난 것을 확인한 뒤에 손댈 것.",
    "due": "2026-08-26",
    "cmd": "git -C C:/lifeinfo-deploy log --oneline origin/main..HEAD",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "monitor-grep-buffering",
+   "added": "2026-08-25",
+   "what": "🔴 Monitor 에 grep 을 물릴 때 --line-buffered 를 빠뜨리면 **조용히 아무것도 안 나온다** — 2026-08-25 실측. 내가 'python -u -m studio.watchloop | grep -vE \"^👁️ 관제 시작\"' 로 관제 모니터를 걸었는데, 2시간 동안 변화가 수십 건 있었는데도 출력이 **0KB** 였다. python -u 로 파이썬 버퍼는 껐지만 **grep 자체가 버퍼링**해서 이벤트가 grep 안에 갇혔다. 살아 있는데 눈이 먼 상태라 더 나쁘다 — '조용하다=평온하다'로 오독하게 만든다. ✅ 규칙: Monitor 파이프의 모든 단계가 줄 단위로 flush 해야 한다(grep 은 --line-buffered, awk 는 fflush(), head 는 아예 못 쓴다). 확인법=TaskOutput 으로 출력 크기가 0KB 인지 본다. 같은 실수를 다른 곳에도 했는지 훑을 것",
+   "due": "2026-08-27",
+   "cmd": "grep -rn 'Monitor\\|run_in_background' studio/*.py tools/*.ps1 2>/dev/null | grep -i grep | grep -v line-buffered",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "desktop-launcher-sync",
+   "added": "2026-08-25",
+   "what": "바탕화면 런처는 저장소와 **별개 파일**이다 — 저장소만 고치면 사장님 화면은 안 바뀐다. 2026-08-25 실측: start_leebujang.bat 을 저장소에서 고쳤는데 바탕화면 사본은 해시가 달라 옛 버전(claude 만 실행=새 세션)이 그대로였다. 그래서 사장님이 '다른 이부장이 파견왔다'를 계속 겪으셨다. 바탕화면 경로는 OneDrive 리디렉션이라 C:\\Users\\magso\\Desktop 이 아니다 — [Environment]::GetFolderPath('Desktop') 으로 실측할 것([[desktop-path-onedrive-redirected]]). 🔴 남은 것: 'lifeinfo 시작.lnk' 도 cmd /k cd /d C:\\lifeinfo && claude.exe 로 **새 세션**을 연다. 사장님이 그걸 이어가기용으로 쓰고 계시면 같은 사고가 반복된다 — 이름을 바꾸거나 resume 을 가리키도록 물어볼 것. 조치=런처를 고칠 때마다 바탕화면 사본도 함께 복사하고 해시로 확인",
+   "due": "2026-08-27",
+   "cmd": "powershell -c \"$d=[Environment]::GetFolderPath('Desktop'); foreach($f in 'resume_leebujang.bat','start_leebujang.bat'){ $a=(Get-FileHash \\\"$d\\\\\").Hash; $b=(Get-FileHash \\\"C:\\lifeinfo\\\\\").Hash; \\\"$f $(if($a -eq $b){'OK'}else{'DIFF'})\\\" }\"",
    "owner": "claude",
    "state": "todo"
   }
