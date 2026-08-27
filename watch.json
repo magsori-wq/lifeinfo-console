@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-25",
+ "updated": "2026-08-27",
  "items": [
   {
    "id": "redirect-error",
@@ -2121,7 +2121,9 @@
    "due": "2026-08-27",
    "cmd": "gh api /user/installations --jq '.installations[]|select(.app_slug==\"claude\")|{id,app_slug,permissions}'",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "확인 완료(2026-08-27 이부장 실측) — 발행에 영향 없다. gh 토큰 스코프에 'workflow' 살아 있고(gist,read:org,repo,workflow), publish.yml 조회·실행 권한 정상(workflow list 3건·run list 응답). GitHub App installations 조회만 403 인데 그건 사용자 토큰으로는 원래 못 보는 API 다(문서 확인). 🔴 어제 B2-11 을 막은 것은 GitHub 권한이 아니라 **Claude Code 로컬 권한 분류기**였다 — 다른 문제이고 .claude/settings.local.json allow 에 'Bash(gh workflow run *)' 를 넣어야 풀린다(Claude 는 self-grant 불가). 메일 수락 여부는 급하지 않다"
   },
   {
    "id": "seodesc-e209-drift",
@@ -2392,7 +2394,9 @@
    "due": "2026-08-25",
    "cmd": "python -m studio.v0check gate --code A2-15",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "해소 — 이부장이 반려 사유(2018 복지부 보도자료 URL 미확인)를 직접 풀었다(2026-08-27 브라우저 실측). 「기초연금 국민연금 아동수당 가정양육수당 9월21일 조기지급」 2018-09-18 · 기초연금과 · list_no=346127. 전문=docs/A2-15_1차출처_복지부_2018조기지급.md. 이과장이 붙이면 통과. 사장님 판단 불필요"
   },
   {
    "id": "v0reject-g2-03",
@@ -2401,7 +2405,67 @@
    "due": "2026-08-25",
    "cmd": "python -m studio.v0check gate --code G2-03",
    "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "V0 통과로 해소 — 검사자 V0검사관(4차) · [먼저 — 08-25 반려는 낡은 판을 본 것이다] 반려 도장의 by 가 'V0검사관(재등록·결재함 배선)' 이고 at 15:23 은 재등록 시각이다. 실제 검사 대상은 ff38027(13:55) 판이었다: 그 판 "
+  },
+  {
+   "id": "navergate-recount-0827",
+   "added": "2026-08-27",
+   "what": "게이트 3번(네이버 글 구글색인) 재측정 필요 — 43/80 은 2026-08-21 측정값이고 08-27 주간보고에 그대로 실렸다. 네이버·구글 페이징은 브라우저가 있어야 해서 무인 루틴이 못 잰다(curl 418 · 확장은 naver.com 차단)",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.navergate urls   # 브라우저로 열어 &filter=0 로 생략 풀고 끝페이지까지 센 뒤: navergate count --file <> -> navergate set --n <>",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "재측정 완료(2026-08-27 14:20 이부장 브라우저 실측) — **43편, 08-21 과 동일**. 방법: google site:blog.naver.com/magsori8975 &filter=0 로 start=0~40 다섯 페이지를 브라우저로 열고, get_page_text 로는 URL 이 축약돼 못 세므로 javascript_tool 로 a[href] 에서 글 ID 를 뽑아 navergate count 에 넘겼다. 🔴 도구 결함 하나 고침 — ID 를 보관하지 않아 '같은 43인지 우연히 43인지' 구별이 안 됐다. set --ids 를 추가해 다음 측정부터 델타(들어옴/빠짐)를 본다. 🔴 판정 변화 없음: 게이트 3조건 전부 미달(색인 2/60 · 클릭 0/20 · 네이버 43/80) — 재검토 버튼 누르지 않는다"
+  },
+  {
+   "id": "ai-disclosure-wording",
+   "added": "2026-08-27",
+   "what": "🙋 AI 활용 공개 문구 승인 — 사장님이 정하실 것 두 가지. [배경] 구글 helpful content 자가진단이 명시적으로 묻는다: 'Is the use of automation, including AI-generation, self-evident to visitors through disclosures?' 그리고 게시자 정책은 'Automatically generated content without manual review or curation' 에 광고를 금지한다. 🔴 즉 사람이 검수했다는 사실 자체가 우리 방어인데 그걸 안 밝히고 있다(실측 2026-08-27: 라이브 최근 3편 AI 언급 0회). [현재 바이라인] '글쓴이 이상곤 · 이 글의 수치·절차·연락처는 정부 부처와 공공기관 공식 자료를 직접 확인해 정리했으며, 본문에 출처와 기준일을 표기했습니다.' [이부장 제안 문구] '글쓴이 이상곤 · 이 글은 AI 도구로 초안을 작성한 뒤, 수치·절차·연락처를 정부 부처와 공공기관 공식 자료로 직접 대조·검수해 정리했습니다. 본문에 출처와 기준일을 표기했으며, 공식 확인이 안 된 수치는 싣지 않았습니다.' → 실제 절차(작업세션 초안 → 1차출처 대조 → V0 반박검사 → 사장님 발행승인)와 정합한다. ⚠️ 문구는 반드시 사실이어야 한다 — 실제와 다르게 쓰면 그게 더 나쁘다. [결정할 것] ①문구 확정 ②소급 범위: 210편 전체 소급 / 신규분부터 / 주력 글만. 🔴 소급은 update-post 로 라이브를 고치는 것이라 편수만큼 시간이 든다. [이미 한 것] pubqueue 게이트에 경고 배선 완료(차단 아님 — 문구가 안 정해진 채 막으면 세션이 아무 말이나 지어 넣는다)",
+   "due": "2026-08-28",
+   "cmd": "curl -s -L -A 'Mozilla/5.0' https://lifeinfo8975.blogspot.com/2026/08/2026-2.html | grep -c 'AI'",
+   "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "pub-c209-g404-trigger-0827",
+   "added": "2026-08-27",
+   "what": "🚀 C2-09·G4-04 발행 — 승인은 08-25 15:19 에 이미 끝났다(go도장). 막힌 것은 읽을 세션이 없다는 것뿐이다. 바탕화면 start_leegwajang.bat 을 더블클릭하면 새 이과장 세션이 열리면서 지시서 pub0827 을 손에 쥐고 시작한다(git pull·gh 인증·지시서 존재를 먼저 자가점검한다).",
+   "due": "2026-08-27",
+   "cmd": "start_leegwajang.bat",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "perm-gh-workflow-run",
+   "added": "2026-08-27",
+   "what": "⚠️ 정정(2026-08-27 16:0x) — 앞서 '권한 분류기가 gh workflow run 을 막는다'고 단정했으나 **근거가 없었다.** 실측: publish.yml 실행 이력에 08-26·08-27 run 이 0건 = 시도 자체가 없었다. 막힌 흔적이 아니라 시도 흔적이 없는 것이다. 또 대조군도 반대다 — B2-11 은 08-24 22:38 에 bodydup 라이브피드 503(fail-closed)으로 실패했다가 08-25 09:55 재시도로 **성공 발행**됐다(run 32795530627, DB url·OSMU 3채널 확인). 권한은 영구 장벽이 아니었다. → 사장님이 /permissions 에 한 줄 넣으실 필요는 **지금은 없다.** 이과장에게 '시도하고 막히면 거부 문구 원문을 남겨라'로 지시했으므로, 그 문구가 오면 그때 판단한다.",
+   "due": "2026-08-28",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow=publish.yml --limit 5",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "pub0827-why-stalled",
+   "added": "2026-08-27",
+   "what": "pub0827(C2-09.G4-04 라이브 발행) 미실행 원인 = 시도 자체가 없음. gh run list 최근실행 08-25T00:55(B2-11 success)뿐, 08-26/27 publish.yml 실행 0건. session_state.pub0827 은 읽음 2회(15:12,15:28)뿐 last_report 필드가 아예 없음(batchboard now/mark 보고 0건) - 즉 지시서를 읽고도 실행도 보고도 안 됨. 원인 후보: pub0827 order 자체가 '워크트리가 08-25에 멈춘 batch.json 사본을 읽던 버그(ce95a0b로 수정)'를 먼저 설명하고 있어 실제 실행 이과장 세션이 그 문서를 다 읽기도 전에 세션이 끊겼을 가능성. 대조군 B2-11: 08-24 22:38 gh run 32733914721 실패(사유=bodydup 503 일시장애, 사유가 fail-closed이지 진짜 중복아님) -> 재시도 08-25 09:55 gh run 32795530627 성공. 즉 막혀도 재시도/직접실행으로 뚫린 전례 있음. 그러나 pub0827은 그 재시도 시도 자체가 0건이라 권한이 벽이었다는 근거가 데이터에 없음. 관제탑 자신이 남긴 최신 watch(pub-c209-g404-trigger-0827, 08-27, state=todo)의 진단이 가장 유력: 권한이 아니라 '지시서를 실행할 살아있는 이과장 세션이 아예 없다' - 처방은 start_leegwajang.bat 더블클릭으로 새 세션 기동. 이 처방이 아직 미이행(state=todo).",
+   "due": "2026-08-28",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow=publish.yml --limit 5; python -m studio.sessionstate; python -m studio.watch --id pub-c209-g404-trigger-0827",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "g2-03-organizer-fix",
+   "added": "2026-08-27",
+   "what": "G2-03 발행 전 필수 수정 — 주최·주관 출처 없음(V0 4차 🟢통과의 조건). kh.or.kr 3개 페이지 실측 grep '주최' 전부 0건(연간일정 2503060001 / 진행중인행사 2407260001 / 진주성상세 combine/brd/1079/history/705). 그런데 L49 가 1절 표를 '연간일정 페이지에 게시된 내용'이라 못 박고 그 표 L55 에 '국가유산청 주최·국가유산진흥원 주관'이 들어있다. L43 도입부·L78 '체계로 바뀐 것으로 보입니다'도 같은 뿌리(지난 반려 지적·미이행). 조치 = L55 행+L78 문장 삭제하고 L43 주최수식 제거(권장), 또는 1차출처를 찾아 각주. 경미 2건 동봉: L45 목차와 h2(L69·L83) 문구 불일치(3절 h2 를 목차에 맞출 것) · AI 활용 공개 문구 없음(가점항목)",
+   "due": "2026-08-27",
+   "cmd": "grep -n '주최\\|바뀐 것으로 보' C:/lifeinfo/양산통도사국가유산미디어아트2026.txt",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "판정 정정 — 삭제 아님. 주최 문구는 실재 공식 문구(kh.or.kr key=2501130002 원문 확인). 고칠 것은 출처 지목 L49·L124 두 줄뿐이고 L43·L55·L75·L78 은 유지. 지시서 draft0825 【3】에 반영"
   }
  ]
 }
