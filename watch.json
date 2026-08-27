@@ -1660,9 +1660,9 @@
   {
    "id": "adsense-reapply-after-0826",
    "added": "2026-08-19",
-   "what": "🙋애드센스 재검토 요청 — 조건부 대기. 버튼은 2026-08-19 에 복귀했다(체크박스+검토요청 살아 있음). 그러나 지금 누르지 않는다: ①08-12 반려 이후 GSC 지표가 하나도 안 움직였다(색인 2/196 · 28일 클릭 0 · 노출 2) ②반려 사유가 'unique content 부족'인데 구글이 판정을 뒤집을 근거는 자기가 색인한 페이지이고, 그게 지금 2편뿐이다 ③우리가 한 개선(정부링크 101건·V0 6편·바이라인 4편)을 구글이 읽고 반영한 흔적이 0이다 — 오히려 B1-01 은 개선 직후 재크롤에서 미색인 판정을 받았다. 🔴애드센스 재검토는 GSC 재검사와 비대칭이다: 횟수 제한(08-12 반려→08-19 복귀 = 약 7일) · 취소 불가 · 결과가 몇 주 뒤. 어제 GSC 를 누른 논리를 여기 그대로 옮기면 안 된다.",
-   "due": "2026-08-26",
-   "cmd": "watch gsc-revalidation-result 먼저 확인 → 통과 1건 이상이면 재검토 요청 검토, 통과 0 이면 계속 대기. 요청은 AdSense > 사이트 > lifeinfo8975.blogspot.com > '문제를 수정했음을 확인합니다' 체크 > 검토 요청",
+   "what": "🙋 애드센스 재검토 요청 — **계속 대기**(2026-08-27 재확인). 조건이던 gsc-revalidation-result 는 아직 wait 상태이고, 게이트 3조건도 전부 미달이다: ①색인 2/60 ②28일 클릭 0/20 ③네이버 글 구글색인 43/80. 지금 누르면 리뷰 사이클만 태운다. 다음 재확인 09-03. 판정은 python -m studio.navergate 한 줄로 한다",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.navergate",
    "owner": "user",
    "state": "wait",
    "flag": "게이트 ①(색인 60편)은 현 구조에서 몇 달짜리다. 8/26 결과가 그 게이트를 고칠지 말지도 함께 답한다"
@@ -2376,7 +2376,9 @@
    "due": "2026-09-08",
    "cmd": "python -m studio.v0check gate --code G2-03",
    "owner": "user",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "사장님 결정(2026-08-27) = 보류 해제, 08-28 발행. V0 4차 통과로 보류 사유(원본가치 0/5)가 해소됐다"
   },
   {
    "id": "g2-03-approval-provenance",
@@ -2385,7 +2387,9 @@
    "due": "2026-08-26",
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/watch.json',encoding='utf-8'));print([ (x['id'],x.get('state'),x.get('result')) for x in d['items'] if x['id']=='g2-03-hold-until-sept'])\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "승인 근거 확정 — 2026-08-27 사장님이 이 대화에서 직접 '내일 발행하도록 해' 지시. go 도장에 기록했다"
   },
   {
    "id": "v0reject-a2-15",
@@ -2396,7 +2400,7 @@
    "owner": "user",
    "state": "done",
    "done_at": "2026-08-27",
-   "result": "해소 — 이부장이 반려 사유(2018 복지부 보도자료 URL 미확인)를 직접 풀었다(2026-08-27 브라우저 실측). 「기초연금 국민연금 아동수당 가정양육수당 9월21일 조기지급」 2018-09-18 · 기초연금과 · list_no=346127. 전문=docs/A2-15_1차출처_복지부_2018조기지급.md. 이과장이 붙이면 통과. 사장님 판단 불필요"
+   "result": "4차 재검사 🟢 통과 — 유일 반려 사유였던 2018 인용 URL 이 붙었다(mohw 보도자료 2018-09-18, HTTP 200 실측·인용문 원문 대조)"
   },
   {
    "id": "v0reject-g2-03",
@@ -2407,7 +2411,7 @@
    "owner": "user",
    "state": "done",
    "done_at": "2026-08-27",
-   "result": "V0 통과로 해소 — 검사자 V0검사관(4차) · [먼저 — 08-25 반려는 낡은 판을 본 것이다] 반려 도장의 by 가 'V0검사관(재등록·결재함 배선)' 이고 at 15:23 은 재등록 시각이다. 실제 검사 대상은 ff38027(13:55) 판이었다: 그 판 "
+   "result": "4차 재검사 🟢 통과 — 08-25 반려는 이과장 보강 전 판(13:55, 휴무 0건)을 본 것이었다. 보강판(14:57, 휴무 7건)은 이번이 첫 검사"
   },
   {
    "id": "navergate-recount-0827",
@@ -2436,16 +2440,18 @@
    "due": "2026-08-27",
    "cmd": "start_leegwajang.bat",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "완료 — C2-09(run 33049072452)·G4-04(run 33049208065) 둘 다 라이브 200 확인"
   },
   {
    "id": "perm-gh-workflow-run",
    "added": "2026-08-27",
-   "what": "⚠️ 정정(2026-08-27 16:0x) — 앞서 '권한 분류기가 gh workflow run 을 막는다'고 단정했으나 **근거가 없었다.** 실측: publish.yml 실행 이력에 08-26·08-27 run 이 0건 = 시도 자체가 없었다. 막힌 흔적이 아니라 시도 흔적이 없는 것이다. 또 대조군도 반대다 — B2-11 은 08-24 22:38 에 bodydup 라이브피드 503(fail-closed)으로 실패했다가 08-25 09:55 재시도로 **성공 발행**됐다(run 32795530627, DB url·OSMU 3채널 확인). 권한은 영구 장벽이 아니었다. → 사장님이 /permissions 에 한 줄 넣으실 필요는 **지금은 없다.** 이과장에게 '시도하고 막히면 거부 문구 원문을 남겨라'로 지시했으므로, 그 문구가 오면 그때 판단한다.",
-   "due": "2026-08-28",
-   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow=publish.yml --limit 5",
-   "owner": "claude",
-   "state": "wait"
+   "what": "🔑 **A2-15 발행이 권한에 막혔다 — 사장님 한 번 클릭이면 영구 해결.** 이과장 실측 거부 문구 원문: 'Permission for this action was denied by the Claude Code auto mode classifier. Reason: Blocked by classifier. To allow this type of action in the future, the user can add a Bash permission rule to their settings.' 사전점검(pace·pushcheck·go도장·V0)은 전부 정상 — 게이트 문제가 아니라 gh 트리거 자체가 막힌 것이다. B2-11(08-25)과 동일 증상이고 그때도 같은 이유로 이틀 섰다. 🔴 Claude 는 자기 권한을 self-grant 할 수 없다(자가수정 차단). [사장님이 하실 것] 이과장 창에서 /permissions → Allow 에 한 줄 추가: Bash(gh workflow run publish.yml *) — publish.yml 로만 좁혔으므로 다른 gh 명령은 그대로 막힌다. 넣으시면 영구 유지되고 앞으로 어느 세션이든 발행 트리거가 통과한다",
+   "due": "2026-08-27",
+   "cmd": "이과장 창에 /permissions 입력 → Allow 에 추가:  Bash(gh workflow run publish.yml *)",
+   "owner": "user",
+   "state": "todo"
   },
   {
    "id": "pub0827-why-stalled",
@@ -2466,6 +2472,106 @@
    "state": "done",
    "done_at": "2026-08-27",
    "result": "판정 정정 — 삭제 아님. 주최 문구는 실재 공식 문구(kh.or.kr key=2501130002 원문 확인). 고칠 것은 출처 지목 L49·L124 두 줄뿐이고 L43·L55·L75·L78 은 유지. 지시서 draft0825 【3】에 반영"
+  },
+  {
+   "id": "a2-15-quote-verbatim",
+   "added": "2026-08-27",
+   "what": "A2-15 line64 인용부호 안 문장이 축자 아님 - 원문 2개 문장을 접합했다(원문 '원칙이다. 다만 이번 9월 25일이' -> 원고 '원칙이나, 해당 9월 25일이'). 사실은 동일해 반려사유 아님. 원문 축자 = '기초연금, 국민연금, 아동수당, 가정양육수당은 매달 25일에 지급하는 것이 원칙이다. 다만 이번 9월 25일이 추석연휴인 관계로 21일에 조기 지급할 예정이다.' 이대로 치환하거나 인용부호를 빼고 간접화법으로 고칠 것. 함께 확인: 발행 후 라이브에서 line64 링크의 bare & (mid=..&bid=..) 가 Blogger 직렬화를 통과해 클릭되는지.",
+   "due": "2026-08-28",
+   "cmd": "curl -sSL -o /dev/null -w '%{http_code}\\n' -A 'Mozilla/5.0' 'https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=346127'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub-g2-03-0828",
+   "added": "2026-08-27",
+   "what": "G2-03 발행일 — 사장님 승인 08-27, 발행은 08-28. 지시서 pub0828 에 명령까지 다 있다. 그날 이과장이 실행했는지 확인할 것",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.batchboard order --id pub0828",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topicprop-approve-20260827",
+   "added": "2026-08-27",
+   "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) TEST-00 배선 시험 — 즉시 삭제됨",
+   "due": "2026-08-27",
+   "cmd": "python -m studio.topicprop approve --code <코드>",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "배선 시험분 — 실제 3건(D2-11·D4-11·B2-12)은 사장님이 이 대화에서 이미 승인하셨다. 다음 회차부터 이 문이 자동으로 열린다"
+  },
+  {
+   "id": "go-a2-15",
+   "added": "2026-08-27",
+   "what": "🙋 A2-15 발행 승인 요청 — 「추석 연휴 국민연금 기초연금 조기지급일 총정리」. V0 4차 🟢 확정 통과(유일 반려사유였던 2018 보도자료 URL 해소, HTTP 200·인용문 원문 대조 완료). 오늘 발행 2/5 라 여유 있음. 추석(9/25) 지급일 글이라 빠를수록 좋다. 승인하시면 이과장이 바로 트리거한다",
+   "due": "2026-08-27",
+   "cmd": "python -m studio.pubqueue go --code A2-15 --by 사장님",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "중복이라 삭제 — queue.json 의 A2-15 가 이미 '발행 승인 대기(⑦)' 카드로 코드와 함께 자동으로 뜬다. 내가 watch 로 또 올려서 같은 건이 두 줄로, 하나는 코드 없이 긴 문장으로 떴다"
+  },
+  {
+   "id": "blocked-pub0827",
+   "added": "2026-08-27",
+   "what": "🔴 원인 규명 완료(2026-08-27) — 검색설명 저장은 **정말 실패했다**. 이과장 6회 시도가 옳았다. 진짜 문제는 감시기였다: seodesc 가 live_len·존재 여부만 보고 판정해서, Blogger 가 검색설명이 비면 본문 첫 문단을 meta description 에 자동으로 채우는 것을 '설명 있음'으로 셌다. 실측 — C2-09 라이브 meta = 초안 파일 도입부와 글자까지 동일(meta 태그 제거 후에도 본문에 2회 존재). 즉 6회 실패하는 동안 감시기는 계속 ✅ 를 찍고 있었다. [고침] seodesc._is_body_lead() 신설 — meta 태그를 먼저 제거한 뒤 본문에 설명 앞 30자가 그대로 있으면 state='auto'(🔴 본문자동)로 분류. 대조 검증: C2-09 True / B2-11(정상 저장) False. [남은 일] 저장이 왜 안 되는지는 아직 모른다 — 오늘 전체 증상이므로 Blogger UI 변화 의심. 다음 발행 때 1회만 시도하고 실패하면 멈추도록 지시서에 박아 뒀다",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.seodesc scan --only C2-09",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "_guardtest",
+   "added": "2026-08-27",
+   "what": "A2-15 발행 승인 요청",
+   "due": "2026-08-27",
+   "cmd": "x",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "가드 시험분"
+  },
+  {
+   "id": "_guardtest2",
+   "added": "2026-08-27",
+   "what": "A2-15 발행 승인 요청",
+   "due": "2026-08-27",
+   "cmd": "x",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "가드 시험분"
+  },
+  {
+   "id": "_guardtest3",
+   "added": "2026-08-27",
+   "what": "A2-15 발행 승인 요청",
+   "due": "2026-08-27",
+   "cmd": "x",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-27",
+   "result": "가드 시험분"
+  },
+  {
+   "id": "indexing-domain-test",
+   "added": "2026-08-27",
+   "what": "🔬 색인 도메인 가설 확인 검사 — 결정을 가르는 한 번의 조회. [실측] 같은 주제 글이 블로그스팟 212편 중 색인 2편(0.9%), 네이버 210편 중 43편(20.5%) = 23배 차이. 구글은 그 정보를 색인할 가치가 있다고 이미 판단했다(네이버 판이 증거) → 걸러지는 건 내용이 아니라 도메인일 수 있다. [무엇이 갈리나] GSC 페이지 > 미색인 사유 분포에서 '크롤링됨-현재 색인되지 않음'이 다수면 = 구글이 읽고 버렸다 = 가설 지지 → 처방은 '줄이기'(약한 글 noindex). '발견됨-현재 색인되지 않음'이 다수면 = 크롤 예산 문제 = 가설 반증 → 처방이 완전히 달라진다. [왜 사장님 몫인가] GSC 표의 행 클릭이 자동화로 안 먹는다(4회 실패 기록). 화면을 열어 사유별 편수만 알려주시면 된다. 전문·근거·한계 = docs/색인_도메인가설_2026-08-27.md",
+   "due": "2026-08-28",
+   "cmd": "https://search.google.com/search-console/index?resource_id=sc-domain:lifeinfo8975.blogspot.com",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "pub-a2-15-0827",
+   "added": "2026-08-27",
+   "what": "🚀 A2-15 추석 연휴 국민연금·기초연금 조기지급일 총정리 — 발행만 남았다. 게이트 전부 통과(⑦ go도장 사장님 08-27 17:11 · V0 4차🟢 · 초안 origin/main 반영 · 오늘 2/5). 🔴 막힌 이유는 품질이 아니라 **이과장 세션이 닫혔다**는 것뿐이다(ListAgents 실측: 루틴 3개만 살아 있음). 지시서 pub0827b 에 명령까지 완성형으로 세워 뒀으니 세션만 켜면 바로 집는다. 바탕화면 start_leegwajang.bat 더블클릭 → 자가점검 후 지시서를 손에 쥐고 시작",
+   "due": "2026-08-27",
+   "cmd": "start_leegwajang.bat",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }

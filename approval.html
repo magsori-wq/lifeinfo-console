@@ -276,7 +276,15 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   W.forEach(function(w){
     if(w.owner!=='user' || w.state==='done') return;
     if((w.due||'9999')>TODAY) return;          // 기한 전은 올리지 않는다(다 보이면 아무것도 안 하게 된다)
-    boss.push({act:(w.state==='blocked'?'watch_blocked':'watch_done'),c:w.id,t:w.what||w.id,
+    // 🔴 코드만 보이면 사장님이 그 내용을 다시 찾아야 한다 (2026-08-27 지시).
+    //    what 안에 글 코드(A2-15 같은)가 있으면 **그 글 제목을 카드 제목에 붙인다.**
+    //    "제발!!" 이라고 하실 만큼 반복된 지적이다 — 코드는 주소지 내용이 아니다.
+    var _cd=(w.what||'').match(/([A-H]\d-\d{2})/);
+    var _ttl='';
+    if(_cd){ var _p=(Q.filter(function(y){return y.code===_cd[1];})[0])
+                 ||(T.filter(function(y){return y.code===_cd[1];})[0]);
+             if(_p&&_p.title) _ttl=_cd[1]+' '+_p.title+' — '; }
+    boss.push({act:(w.state==='blocked'?'watch_blocked':'watch_done'),c:w.id,t:_ttl+(w.what||w.id),
       why:'조치 대기 · 기한 '+(w.due||'')+(w.state==='blocked'?' · 🚫막힘':''),
       cmd:w.cmd||('python -m studio.watch done --id '+w.id)});
   });
@@ -304,7 +312,11 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     var q=Q.filter(function(x){return x.code===code;})[0];
     var v=v0[code], p=byc[code];
     if(p&&p.url) return 8;
-    if(q&&q.go) return 7;
+    // 🔴 도장이 찍혔으면 ⑦은 끝난 것이다 — ⑧(발행 차례)로 넘긴다 (2026-08-27 사장님 화면 지적).
+    //    예전엔 go 가 있어도 7 을 돌려줘 **승인 대기와 승인 완료가 화면에서 똑같이 보였다.**
+    //    실제로 A2-15·G2-03 이 도장을 받고도 "⑦발행승인"에 서 있어, 사장님이 이미 누르신
+    //    결재를 다시 누르실 것처럼 보였다. 승인이 끝났는데 끝난 티가 안 나면 결재함의 의미가 없다.
+    if(q&&q.go) return 8;
     if(v&&v.verdict==='fail') return -6;
     if(v&&v.verdict==='pass') return 7;
     if(q) return 6;

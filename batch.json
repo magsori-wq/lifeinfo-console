@@ -1259,31 +1259,150 @@
     {
      "code": "C2-09",
      "title": "추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 총정리 (2026 · 9월 24~26일) 발행",
-     "state": "todo",
-     "note": "go도장 있음(사장님 2026-08-25) · 오늘 발행 0/5 · 초안/게이트 재확인 후 트리거"
+     "state": "done",
+     "note": "run 33049072452 라이브 200 확인: https://lifeinfo8975.blogspot.com/2026/08/2026-9-2426.html",
+     "at": "2026-08-27 16:21"
     },
     {
      "code": "G4-04",
      "title": "가을 대하 흰다리새우 구별 방법 시세 원산지 총정리 (2026 제철) 발행",
-     "state": "todo",
-     "note": "go도장 있음(사장님 2026-08-25) · 오늘 발행 0/5 · 초안/게이트 재확인 후 트리거"
+     "state": "done",
+     "note": "run 33049208065 라이브 200 확인: https://lifeinfo8975.blogspot.com/2026/08/2026_01362669608.html (오늘 2편째, 기본페이스 1편 초과 — 사장님 승인분 2건이라 정상)",
+     "at": "2026-08-27 16:21"
     }
    ],
    "owner": "이과장(작업 세션)",
-   "order": "🚀 pub0827 — C2-09 · G4-04 라이브 발행 (2026-08-27 16:0x 이부장 · 재발급)\n\n앞선 판 첫머리에 \"워크트리 사본 버그 때문에 이 지시서가 안 닿았다\"고 적었는데 **그건 이번 건의\n원인이 아니었다.** 버그는 실재해서 고쳤지만(ce95a0b), 네가 못 본 게 아니다 — 15:28 에 두 번 읽었다.\n혼선을 준 문단은 뺐다. 아래가 전부다.\n\n━━━ 사전 확인 완료 — 다시 재지 않아도 된다 (2026-08-27 재측정) ━━━\n  · go 도장 : C2-09 2026-08-25 15:19:13 사장님 · G4-04 2026-08-25 15:19:43 사장님\n  · V0      : 둘 다 🟢 3차(확정) 통과\n  · pace    : 오늘 발행 0편 / 상한 5 · 재고 4/5\n  · 초안    : 둘 다 origin/main 에 있음(git cat-file 확인) → stale-draft 위험 없음\n  · Actions : 08-26·08-27 publish.yml 실행 0건 — 아직 아무도 시도하지 않았다\n\n━━━ 실행 — 1편씩, 완료 확인 후 다음 편 ━━━\n\n1) C2-09\ngh workflow run publish.yml -R magsori-wq/lifeinfo-source \\\n  -f code=C2-09 -f mode=live -f confirm=PUBLISH \\\n  -f file='추석연휴문여는병원약국.txt' \\\n  -f title='추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 총정리 (2026 · 9월 24~26일)'\n\ngh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status\n\n2) G4-04 (C2-09 라이브 200 확인 후)\ngh workflow run publish.yml -R magsori-wq/lifeinfo-source \\\n  -f code=G4-04 -f mode=live -f confirm=PUBLISH \\\n  -f file='가을대하흰다리새우구별법시세원산지.txt' \\\n  -f title='가을 대하 흰다리새우 구별 방법 시세 원산지 총정리 (2026 제철)'\n\n━━━ 실패하면 ━━━\n🔴 08-24 에 B2-11 이 같은 명령으로 한 번 실패했었다 — 원인은 중복이 아니라\n   **bodydup 이 라이브 피드 503 을 받아 fail-closed** 로 멈춘 것이었고, 재시도(08-25 09:55)로\n   그대로 성공했다. 그러니 「중복 검사」 단계 실패는 **일시장애를 먼저 의심하고 1회 재시도**하라.\n\n⛔ 명령이 아예 실행되지 않고 거부되면(권한 분류기 등), 화면에 뜬 문구를\n   **한 글자도 바꾸지 말고** 그대로 옮겨 남겨라. 추측해서 요약하지 마라:\n\n   python -m studio.batchboard now --batch pub0827 --step 1 \\\n     --what \"gh workflow run 거부됨. 문구 원문: <그대로>\"\n\n   그리고 이 배치에 남아 계속 폴링하라. 다른 배치로 옮기지 마라.\n\n━━━ 발행 후 ━━━\n묻지 말고 이어간다 — 검색설명 → OSMU 3채널 → 색인.\n남은 단계는 `python -m studio.autoflow --order pub0827` 이 뽑아 준다.\n끝나면 `batchboard mark --note \"<실측 한 줄>\"`.",
-   "order_at": "2026-08-27 15:51"
+   "order": "📢 발행 후속 지시서 (2026-08-27 16:21 자동 생성) — 담당: 이과장(작업 세션)\n\n🔴 이 문서는 **손으로 쓴 것이 아니라 데이터에서 파생**됐다.\n   DB·매니페스트·검색설명·색인 스냅샷을 읽어 남은 단계만 뽑았다.\n   네가 한 단계를 끝내고 기록하면 다음 생성 때 그 줄은 저절로 사라진다.\n   재생성: python -m studio.autoflow --order <이 배치>\n\n🔴🔴 **묻지 말고 이어서 하라.** 발행은 한 글을 끝내는 연속 작업이다.\n   '이어서 할까요?' 로 멈추지 않는다(사장님 지시 2026-08-21).\n   막히면 멈추지 말고 batchboard now 로 남기고 다음 글로 넘어간다.\n\n============================================================\n■ 남은 일 — 최신 발행분부터 4편\n============================================================\n\n1) [G4-04] 가을 대하 흰다리새우 구별 방법 시세 원산지 총정리 (2026 제철)\n   남은 단계: 네이버 · 쓰레드 · 인스타 · 색인추적\n  🔴 매니페스트 미등록 — 먼저: python -m studio.osmu_manifest set --code G4-04 --slug <한글슬러그> --eng <영문키>\n\n2) [C2-09] 추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 총정리 (2026 · 9월 24~26일)\n   남은 단계: 네이버 · 쓰레드 · 인스타 · 색인추적\n  🔴 매니페스트 미등록 — 먼저: python -m studio.osmu_manifest set --code C2-09 --slug <한글슬러그> --eng <영문키>\n\n3) [B2-11] 신생아 특례대출 신청 자격 소득요건 순자산 한도 금리 총정리 (2026, 2년 내 출산)\n   남은 단계: 색인요청\n  🟡 네이버 · 쓰레드 · 인스타 는 **자산이 이미 준비됐다 — 사장님 게시 차례다.**\n     ⛔ 다시 만들지 마라(중복 제작). 게시되면 URL 만 기록한다.\n  ▸ 색인  python -m studio.searchconsole inspect  후 gsc_log add 로 기록\n  ▸ 게시 후 기록  python -m studio.pipeline naver-link|threads-link|insta-link --code B2-11 --url <URL>\n  ▸ 3채널이 이미 다 기록됐다 — 교차링크가 안 걸려 있으면 python studio/blogger.py crosslink --code B2-11\n\n4) [F1-13] 영국 ETA 전자여행허가 신청 방법 수수료 유효기간 총정리 (2026)\n   남은 단계: 색인요청\n  🟡 네이버 · 쓰레드 · 인스타 는 **자산이 이미 준비됐다 — 사장님 게시 차례다.**\n     ⛔ 다시 만들지 마라(중복 제작). 게시되면 URL 만 기록한다.\n  ▸ 색인  python -m studio.searchconsole inspect  후 gsc_log add 로 기록\n  ▸ 게시 후 기록  python -m studio.pipeline naver-link|threads-link|insta-link --code F1-13 --url <URL>\n  ▸ 3채널이 이미 다 기록됐다 — 교차링크가 안 걸려 있으면 python studio/blogger.py crosslink --code F1-13\n\n============================================================\n■ 끝나면\n============================================================\n  python -m studio.batchboard mark --id <배치> --code <코드> --state done \\\n    --note \"<실측 한 줄 — 게시 URL 을 적으면 DB 에 자동 기록된다>\"\n  마킹하면 다음 지시가 그 자리에서 따라 나온다.\n\n\n■ 게이트는 이 문서에 적지 않는다 — python studio/session_rules.py",
+   "order_at": "2026-08-27 16:21"
+  },
+  "today0827": {
+   "title": "🗓️ 2026-08-27 관제 기록 — 발견·수리·발행",
+   "note": "",
+   "items": [
+    {
+     "code": "01",
+     "title": "[관제탑] 🔴 seodesc 가 실패를 성공으로 읽고 있었다 — 본문자동 판별 신설",
+     "state": "done",
+     "note": "이과장 검색설명 저장 6회 실패 중에도 scan 은 '✅ 없음 0'. 원인=live_len·존재만 판정. Blogger 는 검색설명이 비면 본문 첫 문단을 meta 에 자동 삽입한다. 실측 C2-09 라이브 meta = 초안 도입부와 글자 동일. _is_body_lead() 신설, 대조검증 C2-09 True / B2-11 False. 집계에 '🔴 본문자동' 칸 추가 (a37d886)"
+    },
+    {
+     "code": "02",
+     "title": "[관제탑] ⚠️ 검색설명이 왜 저장 안 되는지는 아직 모른다",
+     "state": "todo",
+     "note": "오늘 전체 증상(C2-09·G4-04 둘 다, 브라우저 5회+API 1회). Blogger UI 변화 의심. 다음 발행은 1회만 시도하고 멈추도록 지시서에 박음. watch blocked-pub0827"
+    },
+    {
+     "code": "03",
+     "title": "[관제탑] 🔴 색인 도메인 가설 — 같은 글이 네이버에서 23배 더 색인된다",
+     "state": "todo",
+     "note": "블로그스팟 212편 중 2편(0.9%) vs 네이버 210편 중 43편(20.5%). 구글은 그 정보를 색인할 가치가 있다고 이미 판단했다 → 걸러지는 건 도메인. 확인검사=GSC 미색인 사유 분포(크롤링됨-미색인이면 가설지지→줄이기 / 발견됨-미색인이면 반증→크롤예산). 사장님 결재함 indexing-domain-test. 전문 docs/색인_도메인가설_2026-08-27.md"
+    },
+    {
+     "code": "04",
+     "title": "[관제탑] 루프 감시 신설 — loopcheck (⓪~⑨)",
+     "state": "done",
+     "note": "오늘 루프가 네 군데서 끊겼는데 관제탑이 하나도 못 찾았다(전부 사장님이 지적). 데이터엔 다 있었고 묻는 곳이 없었다. 세션훅·selfcheck 17)·수동 3곳 배선. 첫 실행에서 publish0816·pub0823 이 4일째 대기였음이 드러남"
+    },
+    {
+     "code": "05",
+     "title": "[관제탑] 보드가 세션마다 갈려 있었다 — batchboard 공용화",
+     "state": "done",
+     "note": "워크트리 세션이 자기 사본 batch.json 을 읽어 지시가 안 닿고 보고가 안 돌아왔다. _board_root() 로 본체를 가리키게 수정(ce95a0b). ⓪ 검사가 낡은 사본을 쓰는 살아있는 세션을 잡는다(판정=세션 트랜스크립트 mtime, 파일 mtime 으로는 못 잡힌다)"
+    },
+    {
+     "code": "06",
+     "title": "[관제탑] 막힘 미보고가 마지막 사각지대였다 — ④b 신설",
+     "state": "done",
+     "note": "이과장이 batchboard now 에 정확히 적었는데 결재함엔 안 올렸고, 세션 상태는 working 이라 대기 검사에도 안 걸렸다. 이제 now 본문의 막힘 신호를 직접 읽는다. 판정기준 2회 축소(owner=claude 메모는 이행 아님 · watch id 로만 매칭)"
+    },
+    {
+     "code": "07",
+     "title": "[관제탑] 승인요청을 결재함으로 자동 등록 + 사전확인 가드",
+     "state": "done",
+     "note": "topicprop kakao 가 문구 만드는 자리에서 _to_approval() 로 결재함 등록. watch add --owner user 는 _preflight_user() 로 이미 발행·도장 여부를 확인해 경고(A2-15 를 없는 결재로 올린 사고 재발 방지)"
+    },
+    {
+     "code": "08",
+     "title": "[관제탑] 플로우차트 15일치 변경이력 보충",
+     "state": "done",
+     "note": "08-12 이후 멈춰 있었다. 단일 진실원이라 적어 놓고 방치. 08-27 4줄 추가"
+    },
+    {
+     "code": "09",
+     "title": "[발행] C2-09·G4-04 라이브 · A2-15 지시 · G2-03 내일",
+     "state": "todo",
+     "note": "C2-09 run 33049072452 · G4-04 run 33049208065 라이브 200. A2-15 = pub0827b(도장 17:11 사장님). G2-03 = pub0828(사장님 '내일 발행'). 오늘 2/5"
+    },
+    {
+     "code": "10",
+     "title": "[글감] 승인 3건 → 초안 지시 draft0827",
+     "state": "todo",
+     "note": "D2-11(전기차 충전요금·🔴mcee.go.kr 원자료 재확인 조건)·D4-11(상품권 환불)·B2-12(가산금리). 반려 3건 사유 기록됨(F2-15 입법예고 단계 / A3-11 하드이슈 없음 / C3-06 8월 시의성 없음)"
+    }
+   ]
+  },
+  "pub0827b": {
+   "title": "🚀 A2-15 발행 — 사장님 승인 완료(08-27 17:11)",
+   "note": "",
+   "items": [
+    {
+     "code": "A2-15",
+     "title": "추석 연휴 국민연금 기초연금 조기지급일 총정리 (2026 · 9월 25일 추석)",
+     "state": "todo",
+     "note": "⑦ go도장 사장님 2026-08-27 17:11(콘솔 결재함) · V0 4차·확정 🟢 · 초안 origin/main 반영 확인 · 발행 직전 pace 재측정"
+    }
+   ],
+   "owner": "이과장(작업 세션)",
+   "order": "🚀 pub0827b — A2-15 발행 (오늘) · 사장님 승인 완료\n\n━━━ 게이트 (다시 재지 않아도 된다) ━━━\n  · ⑦ go 도장 : 사장님 2026-08-27 17:11 (콘솔 결재함에서 직접 누르심)\n  · ⑥ V0      : 🟢 4차·확정 통과. 유일 반려 사유였던 2018 인용 URL 이 해소됐다\n                 (mohw 보도자료 2018-09-18 · HTTP 200 117,304B · 인용문 원문 대조 완료)\n  · 초안      : 추석연휴국민연금기초연금조기지급일.txt — origin/main 반영 확인(URL 삽입 1건)\n  · pace      : 발행 직전 `python -m studio.pace` 로 다시 재라(오늘 이미 2편 나갔다)\n\n━━━ 실행 ━━━\ngh workflow run publish.yml -R magsori-wq/lifeinfo-source \\\n  -f code=A2-15 -f mode=live -f confirm=PUBLISH \\\n  -f file='추석연휴국민연금기초연금조기지급일.txt' \\\n  -f title='추석 연휴 국민연금 기초연금 조기지급일 총정리 (2026 · 9월 25일 추석)'\n\ngh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status\n\n━━━ 발행 후 ━━━\n🔴 **검색설명은 오늘 저장이 안 된다** — 네가 6회 시도해 전부 실패한 그 증상이다.\n   A2-15 도 같은 벽에 부딪힐 가능성이 크다. **1회만 시도**하고 안 되면 멈춰라.\n   반복 시도로 시간을 태우지 마라 — 원인은 내가 규명 중이다(watch blocked-pub0827).\n   실패하면 `batchboard now --batch pub0827b` 에 그렇게 적고 다음으로 넘어가라.\n\n그 외 후속은 평소대로 — OSMU 3채널 → 색인.\n  $ python -m studio.autoflow --order pub0827b\n끝나면 `batchboard mark --note \"<실측 한 줄>\"`.\n\n━━━ 발행 후 손볼 것 1건 (반려 아님 · 검사관이 분리해 둠) ━━━\nwatch a2-15-quote-verbatim — line64 인용부호 안 문장이 축자가 아니다(원문 두 문장을 접합).\n사실·의미는 같아 반려 사유가 아니다. watch 에 원문 축자 문장이 그대로 들어 있으니\n발행 후 치환만 하면 된다. 지금 발행을 막지 마라.",
+   "order_at": "2026-08-27 18:15"
   }
  },
- "updated": "2026-08-27 16:14:04",
+ "updated": "2026-08-27 18:20:08",
  "current": {
-  "batch": "draft0825",
-  "code": "G2-03",
+  "batch": "pub0827b",
+  "code": "",
   "title": "",
-  "step": 6,
-  "what": "막힘: 이부장 권고=보류. 사실정정은 완료(2025기간 10.03 등)했으나 원본가치 0/5(미확인 16회, FAQ 3문 전부 확인못함) — 채우려면 kh.or.kr 12지역 휴무표+마지막주말 비교로 가능하나, 이부장은 '그래도 제목이 파는 관람시간·요금이 세상에 없으니 9월중순 재개막공지 전까지 보류'를 권고. 사장님 결정(보류 유지 vs 지금 채워서 재제출) 대기 — 그 전까지 손대지 않음",
-  "since": "11:28"
+  "step": 1,
+  "what": "gh workflow run 거부됨. 문구 원문: Permission for this action was denied by the Claude Code auto mode classifier. Reason: Blocked by classifier. If you have other tasks that don't depend on this action, continue working on those. IMPORTANT: You *may* attempt to accomplish this action using other tools that might naturally be used to accomplish this goal, e.g. using head instead of cat. But you *should not* attempt to work around this denial in malicious ways, e.g. do not use your ability to run tests to execute non-test actions. You should only try to work around this restriction in reasonable ways that do not attempt to bypass the intent behind this denial. If you believe this capability is essential to complete the user's request, STOP and explain to the user what you were trying to do and why you need this permission. Let the user decide how to proceed. To allow this type of action in the future, the user can add a Bash permission rule to their settings.",
+  "since": "18:20"
  },
  "log": [
+  {
+   "t": "18:20:08",
+   "text": "▶   — 1/7단계 · gh workflow run 거부됨. 문구 원문: Permission for this action was denied by the Claude Code auto mode classifier. Reason: Blocked by classifier. If you have other tasks that don't depend on this action, continue working on those. IMPORTANT: You *may* attempt to accomplish this action using other tools that might naturally be used to accomplish this goal, e.g. using head instead of cat. But you *should not* attempt to work around this denial in malicious ways, e.g. do not use your ability to run tests to execute non-test actions. You should only try to work around this restriction in reasonable ways that do not attempt to bypass the intent behind this denial. If you believe this capability is essential to complete the user's request, STOP and explain to the user what you were trying to do and why you need this permission. Let the user decide how to proceed. To allow this type of action in the future, the user can add a Bash permission rule to their settings."
+  },
+  {
+   "t": "18:15:58",
+   "text": "📄 pub0827b 작업 지시 등록(1222자, 2026-08-27 18:15)"
+  },
+  {
+   "t": "18:15:57",
+   "text": "🏷️ pub0827b 담당=이과장(작업 세션)"
+  },
+  {
+   "t": "18:15:57",
+   "text": "📋 배치 '🚀 A2-15 발행 — 사장님 승인 완료(08-27 17:11)' 등록 — 1항목"
+  },
+  {
+   "t": "17:47:33",
+   "text": "📋 배치 '🗓️ 2026-08-27 관제 기록 — 발견·수리·발행' 등록 — 10항목"
+  },
+  {
+   "t": "16:48:46",
+   "text": "▶   — 2/7단계 · 막힘 확정: 검색설명 저장이 C2-09·G4-04 둘 다 실패 — 포스트별 문제 아니라 오늘 전체 증상. 총 6회 시도(브라우저 5회 서로다른탭·API직접패치 1회) 전부 searchDescription=None 유지. 재현조건: 필드에 정상타이핑(글자수 카운터 정확) → 업데이트 클릭 → API재조회해도 미반영. 부작용: 첫 시도 탭에서 body에디터 contenteditable 미마운트(무한스피너) 재현, 이후 탭에서 필드에 잔존텍스트 누적되어 150자 초과 뒤섞임 현상도 1회 관찰(관련성 불명). 브라우저 탭이 Update 클릭 직후 반복적으로 freeze. 본문 자체는 정상 라이브(200). 이 배치의 핵심(발행)은 완료됐으니 검색설명은 별도 재시도가 필요하면 나중에 — 지금은 OSMU 준비로 이어간다"
+  },
+  {
+   "t": "16:45:15",
+   "text": "▶   — 2/7단계 · 막힘: C2-09 검색설명 저장 실패 — 브라우저 4회(탭3개) + API직접패치 1회, 총 5회 시도 전부 실패. 매번 필드 정상입력(76/150자 확인) 후 업데이트 클릭했으나 API재조회 시 searchDescription=None 지속. API patch도 200 OK 받았지만 미반영(customMetaData와 동일 증상, searchDescription 필드도 동일 문제 확인 — 새 발견). 브라우저 탭이 Update 클릭 직후 반복적으로 freeze(CDP screenshot timeout). 본문 발행·라이브는 정상(200), 검색설명만 이 증상. G4-04로 동일 증상 재현되는지 확인 후 보고 예정"
+  },
+  {
+   "t": "16:21:17",
+   "text": "📄 pub0827 작업 지시 등록(2042자, 2026-08-27 16:21)"
+  },
+  {
+   "t": "16:21:07",
+   "text": "✅ G4-04 완료 — 가을 대하 흰다리새우 구별 방법 시세 원산지 총정리 (2026"
+  },
   {
    "t": "16:14:04",
    "text": "✅ C2-09 완료 — 추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 총정리 "
@@ -1407,42 +1526,6 @@
   {
    "t": "14:47:39",
    "text": "📄 draft0825 작업 지시 등록(28104자, 2026-08-25 14:47)"
-  },
-  {
-   "t": "14:42:20",
-   "text": "✅ C2-09 완료 — 추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 총정리 "
-  },
-  {
-   "t": "14:39:23",
-   "text": "✅ G4-04 완료 — 가을 대하 흰다리새우 구별 방법 시세 원산지 총정리 (2026"
-  },
-  {
-   "t": "14:08:56",
-   "text": "⬜ G4-04 대기 — 가을 대하 흰다리새우 구별 방법 시세 원산지 총정리 (2026"
-  },
-  {
-   "t": "14:08:55",
-   "text": "📄 draft0825 작업 지시 등록(26725자, 2026-08-25 14:08)"
-  },
-  {
-   "t": "14:07:53",
-   "text": "⬜ C2-09 대기 — 추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 총정리 "
-  },
-  {
-   "t": "14:07:53",
-   "text": "📄 draft0825 작업 지시 등록(24769자, 2026-08-25 14:07)"
-  },
-  {
-   "t": "14:06:58",
-   "text": "⬜ G2-03 대기 — 양산 통도사 국가유산 미디어아트 2026 관람 방법 주차 입장"
-  },
-  {
-   "t": "14:06:57",
-   "text": "📄 draft0825 작업 지시 등록(21865자, 2026-08-25 14:06)"
-  },
-  {
-   "t": "14:06:06",
-   "text": "⬜ A2-15 대기 — 추석 연휴 국민연금 기초연금 조기지급일 총정리 (2026 · "
   }
  ],
  "currents": {
@@ -1485,6 +1568,22 @@
    "step": 6,
    "what": "막힘: 이부장 권고=보류. 사실정정은 완료(2025기간 10.03 등)했으나 원본가치 0/5(미확인 16회, FAQ 3문 전부 확인못함) — 채우려면 kh.or.kr 12지역 휴무표+마지막주말 비교로 가능하나, 이부장은 '그래도 제목이 파는 관람시간·요금이 세상에 없으니 9월중순 재개막공지 전까지 보류'를 권고. 사장님 결정(보류 유지 vs 지금 채워서 재제출) 대기 — 그 전까지 손대지 않음",
    "since": "11:28"
+  },
+  "pub0827": {
+   "batch": "pub0827",
+   "code": "",
+   "title": "",
+   "step": 2,
+   "what": "막힘 확정: 검색설명 저장이 C2-09·G4-04 둘 다 실패 — 포스트별 문제 아니라 오늘 전체 증상. 총 6회 시도(브라우저 5회 서로다른탭·API직접패치 1회) 전부 searchDescription=None 유지. 재현조건: 필드에 정상타이핑(글자수 카운터 정확) → 업데이트 클릭 → API재조회해도 미반영. 부작용: 첫 시도 탭에서 body에디터 contenteditable 미마운트(무한스피너) 재현, 이후 탭에서 필드에 잔존텍스트 누적되어 150자 초과 뒤섞임 현상도 1회 관찰(관련성 불명). 브라우저 탭이 Update 클릭 직후 반복적으로 freeze. 본문 자체는 정상 라이브(200). 이 배치의 핵심(발행)은 완료됐으니 검색설명은 별도 재시도가 필요하면 나중에 — 지금은 OSMU 준비로 이어간다",
+   "since": "16:45"
+  },
+  "pub0827b": {
+   "batch": "pub0827b",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "gh workflow run 거부됨. 문구 원문: Permission for this action was denied by the Claude Code auto mode classifier. Reason: Blocked by classifier. If you have other tasks that don't depend on this action, continue working on those. IMPORTANT: You *may* attempt to accomplish this action using other tools that might naturally be used to accomplish this goal, e.g. using head instead of cat. But you *should not* attempt to work around this denial in malicious ways, e.g. do not use your ability to run tests to execute non-test actions. You should only try to work around this restriction in reasonable ways that do not attempt to bypass the intent behind this denial. If you believe this capability is essential to complete the user's request, STOP and explain to the user what you were trying to do and why you need this permission. Let the user decide how to proceed. To allow this type of action in the future, the user can add a Bash permission rule to their settings.",
+   "since": "18:20"
   }
  }
 }
