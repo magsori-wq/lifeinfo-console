@@ -1,18 +1,34 @@
 {
- "rev": "13eb36d",
+ "rev": "0bc6fc6",
  "counts": {
-  "total": 211,
+  "total": 212,
   "osmu_done": 210,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 2,
-  "index_pending": 209,
+  "index_pending": 210,
   "index_requested": 204,
-  "index_todo": 5
+  "index_todo": 6
  },
  "actionable": [
   {
    "code": "C2-09",
    "title": "추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "G4-04",
+   "title": "가을 대하 흰다리새우 구별 방법 시세 원산지 총정리 (",
    "need": [
     "OSMU",
     "색인요청"
@@ -194,21 +210,6 @@
   {
    "code": "A1-09",
    "title": "국가장학금 2학기 2차 신청 시작(8/12~9/9) —",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-10",
-   "title": "한부모가족 지원 아동양육비 신청 방법 소득기준 지원 대",
    "need": [
     "색인대기"
    ],
