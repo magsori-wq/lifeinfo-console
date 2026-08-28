@@ -128,6 +128,7 @@
         <button data-t="approval">📋 결재함</button>
         <button data-t="pendosmu">🗂️ 미결사항</button>
         <button data-t="orders">📄 작업지시</button>
+        <button data-t="reports">📢 보고</button>
       </div>
       <div class="leafrow hide" data-group="manage">
         <button data-t="idxboard">🔍 색인 보드</button>
@@ -401,6 +402,7 @@
     <iframe id="f_approval" src="approval.html"></iframe>
     <iframe id="f_pendosmu" src="pending_osmu.html"></iframe>
     <iframe id="f_orders" src="orders.html"></iframe>
+    <iframe id="f_reports" src="reports.html"></iframe>
     <iframe id="f_incidents" src="incidents.html"></iframe>
     <iframe id="f_idxboard" src="index_board.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
@@ -412,7 +414,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','pendosmu','orders','idxboard','gsc','seo','adsense','incidents'];
+  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','pendosmu','orders','reports','idxboard','gsc','seo','adsense','incidents'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){

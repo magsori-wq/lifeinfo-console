@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-27",
+ "updated": "2026-08-28",
  "items": [
   {
    "id": "redirect-error",
@@ -615,12 +615,13 @@
   {
    "id": "reapply-gate-axisB",
    "added": "2026-08-12",
-   "what": "재검토 요청 전 게이트(갱신) - 축A(101/101)·축B 조사(B1-format+B2-compare) 전부 완료됨(adsense0812 6/6). B2-compare가 찾은 처방(실전 경험 디테일 주입)은 A2-01·B2-04·C1-02 3편 파일럿 완료(V0 처방 1~3호). ⚠️ 재검토 요청은 아직 누르지 않는다 — 파일럿 효과(색인·체류시간) 관찰 기간 필요 + 8/18까지 요청횟수 소진 상태라 물리적으로도 불가. 다음 판단: 파일럿 몇 편 더 확대할지, 언제 요청 누를지는 사용자 판단",
-   "due": "2026-08-19",
-   "cmd": "python -m studio.batchboard show",
-   "owner": "user",
+   "what": "애드센스 재검토 시점 감시 — 🔴 사장님 몫이 아니다(2026-08-28 사장님 지시 '안 해도 되는 건은 올리지 말고 이부장이 처리해'). 지금 신청하면 5번째 반려다: 색인 2/60 · 28일 클릭 0/20 · 네이버 글 구글색인 43/80 전부 미달. 관제탑이 주기적으로 재고, 세 숫자가 다 차면 그때 사장님께 올린다. 판정은 python -m studio.navergate 한 줄",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.navergate",
+   "owner": "claude",
    "state": "wait",
-   "note": 109
+   "note": 109,
+   "_orig": "재검토 요청 전 게이트(갱신) - 축A(101/101)·축B 조사(B1-format+B2-compare) 전부 완료됨(adsense0812 6/6). B2-compare가 찾은 처방(실전 경험 디테일 주입)은 A2-01·B2-04·C1-02 3편 파일럿 완료(V0 처방 1~3호). ⚠️ 재검토 요청은 아직 누르지 않는다 — 파일럿 효과(색인·체류시간) 관찰 기간 필요 + 8/18까지 요청횟수 소진 상태라 물리적으로도 불가. 다음 판단: 파일럿 몇 편 더 확대할지, 언제 요청 누를지는 사용자 판단"
   },
   {
    "id": "adsense-axisb-fold-howto",
@@ -1452,12 +1453,13 @@
   {
    "id": "naver-collect-check",
    "added": "2026-08-18",
-   "what": "네이버 수집 시작 확인 — 08-18 12:22 사이트맵(196편)·RSS 제출 직후 상태는 '콘텐츠 노출/클릭 정보 없음 · 사이트진단 정보 없음'(등록 26.06.22 이후 두 달간 0). 제출이 실제로 수집으로 이어지는지가 관건이다. 숫자가 생기면 네이버 검색 유입 라인이 열린 것이고, 2주 지나도 0이면 제출 외의 다른 벽이 있다는 뜻.",
+   "what": "【무엇】 8월 18일에 네이버에 우리 블로그 글 196편 목록을 제출했습니다.\n       네이버가 그걸 실제로 가져갔는지 아직 확인을 못 했습니다.\n       (Claude 는 네이버 사이트에 접속 자체가 막혀 있어 볼 수가 없습니다)\n【하실 일】 네이버 서치어드바이저에 로그인해서 화면 하나만 캡처해 주십시오.\n       사이트관리 → lifeinfo8975.blogspot.com → 리포트 → '콘텐츠 노출/클릭'\n       캡처는 그냥 두시면 제가 찾아 읽습니다(사장님 캡처 폴더를 압니다).\n【왜】 숫자가 생겼으면 네이버 검색에서 사람이 들어오기 시작한 것입니다.\n       2주가 지났는데도 0 이면 제출 말고 다른 문제가 있다는 뜻이라 방향을 바꿔야 합니다.",
    "due": "2026-08-25",
    "cmd": "searchadvisor > 사이트관리 > lifeinfo8975.blogspot.com > 리포트 > 콘텐츠 노출/클릭 · 사이트 진단 화면 캡처 (Claude 는 naver.com 접근 불가)",
    "owner": "user",
    "state": "wait",
-   "flag": "애드센스 재검토 게이트③(네이버글 구글색인 39→80편)과 별개 지표 — 이건 블로그스팟의 네이버 유입이다"
+   "flag": "애드센스 재검토 게이트③(네이버글 구글색인 39→80편)과 별개 지표 — 이건 블로그스팟의 네이버 유입이다",
+   "_orig": "네이버 수집 시작 확인 — 08-18 12:22 사이트맵(196편)·RSS 제출 직후 상태는 '콘텐츠 노출/클릭 정보 없음 · 사이트진단 정보 없음'(등록 26.06.22 이후 두 달간 0). 제출이 실제로 수집으로 이어지는지가 관건이다. 숫자가 생기면 네이버 검색 유입 라인이 열린 것이고, 2주 지나도 0이면 제출 외의 다른 벽이 있다는 뜻."
   },
   {
    "id": "envreport-docx-regen",
@@ -1809,8 +1811,8 @@
    "id": "naverdup-cleanup",
    "added": "2026-08-19",
    "what": "네이버 관련글 블록 중복 59편 정리 — 두 번째(블로그스팟 링크) 블록만 삭제. 보드 naverdup0819. 원인은 봉합됐으므로 새 글은 재발 없음",
-   "due": "2026-08-27",
-   "cmd": "python -m studio.batchboard order --id naverdup0819",
+   "due": "2026-09-04",
+   "cmd": "start C:\\lifeinfo\\osmu\\_네이버중복정리_체크리스트.html",
    "owner": "user",
    "state": "todo"
   },
@@ -2262,11 +2264,12 @@
   {
    "id": "routine-model-set-sonnet",
    "added": "2026-08-25",
-   "what": "🙋 사장님 조치 — Claude Desktop 「루틴」 화면에서 아래 6개 루틴의 모델을 Sonnet 5 로 재설정. (모델은 서버에만 있어 Claude 가 못 바꾼다. 로컬 SKILL.md 에 필드 없음을 확인함) ① daily-email-briefing ② lifeinfo-daily-topics ③ lifeinfo-publish ④ lifeinfo-travel-prep ⑤ lifeinfo-daily-publish ⑥ lifeinfo-index-check / lifeinfo-nightly-verify 는 이미 sonnet-5 라 건드리지 말 것. ⚠️ 두 번(08-19·08-24) 바꿨는데 두 번 다 되돌아갔으므로, 바꾼 뒤 반드시 다음 날 검증할 것. ✅ SKILL.md 7개는 restore/scheduled-tasks_20260825/ 에 백업 완료 — UI 가 덮어써도 되돌릴 수 있다 🔴 2026-08-25 재확인 — Claude 가 못 한다는 것을 **세 가지로 검증**했다: ①로컬 scheduled-tasks/*/SKILL.md 프론트매터에 model 필드 없음 ②claude.ai 웹 /scheduled-task 는 \"예약된 작업이 아직 없습니다\" (우리 루틴 7개가 웹에 없다 = Desktop 전용) ③~/.claude 전체에서 루틴의 모델값을 담은 파일 grep 0건. → 설정은 Claude Desktop 앱 안에만 있다. **사장님 손이 유일한 경로다.** 사장님 지시(2026-08-25 \"루틴 모델 6개 Sonnet 5 전환\")를 받았으나 실행 수단이 없어 이 항목으로 남긴다.",
+   "what": "【무엇】 매일 자동으로 도는 루틴 7개 중 3개가 비싼 모델을 쓰고 있습니다.\n       (2026-08-28 실측 — 전에 6개라고 알려드렸는데 3개는 이미 바뀌어 있었습니다)\n       바꿔야 할 것: 1번(메일 브리핑) · 2번(글감 제안) · 3번(발행구)\n【하실 일】 Claude Desktop 왼쪽 '루틴' 메뉴 → 위 3개를 하나씩 열어\n       모델을 Sonnet 5 로 바꾸고 저장하시면 됩니다.\n       (모델 설정은 서버에만 있어서 Claude 가 못 바꿉니다)\n【왜】 이 루틴들은 매일 도는데 비싼 모델이라 사용량을 많이 씁니다.\n       실제로 어제 루틴 하나가 사용량 한도에 걸려 아무 일도 못 하고 끝났습니다.\n       그러면 글감 제안이 0 이 되고, 며칠 지나면 쓸 글이 없어집니다.",
    "due": "2026-08-26",
    "cmd": "python studio/routine_model.py --days 3",
    "owner": "user",
-   "state": "todo"
+   "state": "todo",
+   "_orig": "🙋 사장님 조치 — Claude Desktop 「루틴」 화면에서 아래 6개 루틴의 모델을 Sonnet 5 로 재설정. (모델은 서버에만 있어 Claude 가 못 바꾼다. 로컬 SKILL.md 에 필드 없음을 확인함) ① daily-email-briefing ② lifeinfo-daily-topics ③ lifeinfo-publish ④ lifeinfo-travel-prep ⑤ lifeinfo-daily-publish ⑥ lifeinfo-index-check / lifeinfo-nightly-verify 는 이미 sonnet-5 라 건드리지 말 것. ⚠️ 두 번(08-19·08-24) 바꿨는데 두 번 다 되돌아갔으므로, 바꾼 뒤 반드시 다음 날 검증할 것. ✅ SKILL.md 7개는 restore/scheduled-tasks_20260825/ 에 백업 완료 — UI 가 덮어써도 되돌릴 수 있다 🔴 2026-08-25 재확인 — Claude 가 못 한다는 것을 **세 가지로 검증**했다: ①로컬 scheduled-tasks/*/SKILL.md 프론트매터에 model 필드 없음 ②claude.ai 웹 /scheduled-task 는 \"예약된 작업이 아직 없습니다\" (우리 루틴 7개가 웹에 없다 = Desktop 전용) ③~/.claude 전체에서 루틴의 모델값을 담은 파일 grep 0건. → 설정은 Claude Desktop 앱 안에만 있다. **사장님 손이 유일한 경로다.** 사장님 지시(2026-08-25 \"루틴 모델 6개 Sonnet 5 전환\")를 받았으나 실행 수단이 없어 이 항목으로 남긴다."
   },
   {
    "id": "gsc-redirect-validation-0817",
@@ -2307,11 +2310,12 @@
   {
    "id": "ai-disclosure-missing",
    "added": "2026-08-25",
-   "what": "🔴 구글이 명시적으로 묻는 항목 하나를 우리가 충족하지 않는다 — AI 활용 공개. 원문: 'Is the use of automation, including AI-generation, self-evident to visitors through disclosures or in other ways?' (구글 helpful content 자가진단 'How' 질문, 2026-08-25 취득). 실측: 라이브 본문에 AI·인공지능·자동 생성·생성형 0회. 바이라인(Who)은 있는데 공개(How)만 없다. 🔴 애드센스 반려 사유와도 맞물린다 — 게시자 정책은 'Automatically generated content without manual review or curation' 에 광고를 금지한다. 즉 '사람이 검수했다'는 사실 자체가 우리 방어인데 그걸 독자에게도 구글에게도 안 밝히고 있다. 조치안=바이라인에 한 줄 추가(예: 'AI 도구로 초안을 작성하고 공식 자료 대조·검수를 사람이 했습니다'). 210편 전체에 소급할지, 신규분부터 할지는 사장님 결정. ⚠️ 공개 문구는 사실이어야 한다 — 실제 절차와 다르게 쓰면 그게 더 나쁘다",
-   "due": "2026-08-26",
-   "cmd": "curl -s -L -A 'Mozilla/5.0' 'https://lifeinfo8975.blogspot.com/2026/08/2026-6.html' | grep -c 'AI'",
-   "owner": "user",
-   "state": "todo"
+   "what": "AI 활용 공개 — 실제 반영 작업(관제탑 몫). 🔴 사장님 결재는 ai-disclosure-wording 한 줄로 충분하다(문구 번호 + 범위 번호). 사장님이 고르시면 이 항목에서 내가 반영한다: 바이라인 문구 교체 → publish 경로에 배선 → 범위가 Ⓑ/Ⓒ면 update-post 로 소급. 두 줄로 나뉘어 있어 사장님 결재함에 같은 건이 두 번 뜨던 것을 정리",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.seodesc list",
+   "owner": "claude",
+   "state": "wait",
+   "_orig": "🔴 구글이 명시적으로 묻는 항목 하나를 우리가 충족하지 않는다 — AI 활용 공개. 원문: 'Is the use of automation, including AI-generation, self-evident to visitors through disclosures or in other ways?' (구글 helpful content 자가진단 'How' 질문, 2026-08-25 취득). 실측: 라이브 본문에 AI·인공지능·자동 생성·생성형 0회. 바이라인(Who)은 있는데 공개(How)만 없다. 🔴 애드센스 반려 사유와도 맞물린다 — 게시자 정책은 'Automatically generated content without manual review or curation' 에 광고를 금지한다. 즉 '사람이 검수했다'는 사실 자체가 우리 방어인데 그걸 독자에게도 구글에게도 안 밝히고 있다. 조치안=바이라인에 한 줄 추가(예: 'AI 도구로 초안을 작성하고 공식 자료 대조·검수를 사람이 했습니다'). 210편 전체에 소급할지, 신규분부터 할지는 사장님 결정. ⚠️ 공개 문구는 사실이어야 한다 — 실제 절차와 다르게 쓰면 그게 더 나쁘다"
   },
   {
    "id": "byline-stale-a506",
@@ -2427,11 +2431,12 @@
   {
    "id": "ai-disclosure-wording",
    "added": "2026-08-27",
-   "what": "🙋 AI 활용 공개 문구 승인 — 사장님이 정하실 것 두 가지. [배경] 구글 helpful content 자가진단이 명시적으로 묻는다: 'Is the use of automation, including AI-generation, self-evident to visitors through disclosures?' 그리고 게시자 정책은 'Automatically generated content without manual review or curation' 에 광고를 금지한다. 🔴 즉 사람이 검수했다는 사실 자체가 우리 방어인데 그걸 안 밝히고 있다(실측 2026-08-27: 라이브 최근 3편 AI 언급 0회). [현재 바이라인] '글쓴이 이상곤 · 이 글의 수치·절차·연락처는 정부 부처와 공공기관 공식 자료를 직접 확인해 정리했으며, 본문에 출처와 기준일을 표기했습니다.' [이부장 제안 문구] '글쓴이 이상곤 · 이 글은 AI 도구로 초안을 작성한 뒤, 수치·절차·연락처를 정부 부처와 공공기관 공식 자료로 직접 대조·검수해 정리했습니다. 본문에 출처와 기준일을 표기했으며, 공식 확인이 안 된 수치는 싣지 않았습니다.' → 실제 절차(작업세션 초안 → 1차출처 대조 → V0 반박검사 → 사장님 발행승인)와 정합한다. ⚠️ 문구는 반드시 사실이어야 한다 — 실제와 다르게 쓰면 그게 더 나쁘다. [결정할 것] ①문구 확정 ②소급 범위: 210편 전체 소급 / 신규분부터 / 주력 글만. 🔴 소급은 update-post 로 라이브를 고치는 것이라 편수만큼 시간이 든다. [이미 한 것] pubqueue 게이트에 경고 배선 완료(차단 아님 — 문구가 안 정해진 채 막으면 세션이 아무 말이나 지어 넣는다)",
+   "what": "【무엇】 구글이 '이 글을 AI 로 만들었다면 독자에게 밝혔는가'를 봅니다.\n       우리 글에는 그 문구가 한 줄도 없습니다. 애드센스 반려 사유와도 맞물립니다.\n       🔴 우리는 AI 초안을 사람이 공식 자료로 대조·검수합니다. 그건 문제가 아닙니다.\n          문제는 그 사실을 안 밝히고 있다는 것입니다. 밝히는 게 오히려 방어가 됩니다.\n【하실 일】 번호 두 개만 골라 주시면 됩니다.\n       [어떤 문구로]\n        ① 'AI 도구로 초안을 작성한 뒤, 수치·절차·연락처를 정부 부처와 공공기관\n           공식 자료로 직접 대조·검수해 정리했습니다.'  ← 권고\n        ② 'AI 도구로 초안을 쓰고 사람이 공식 자료로 대조·검수했습니다.'  (짧은 판)\n        ③ 사장님이 직접 문구를 주심\n       [어디까지 붙일까]\n        Ⓐ 앞으로 쓰는 글부터만  ← 권고 (오늘 바로 시행, 기존 글 손 안 댐)\n        Ⓑ 잘 쓴 글 15편만 소급\n        Ⓒ 213편 전부 소급\n【왜 ①+Ⓐ 를 권하나】\n       · ①은 우리가 실제로 하는 일과 정확히 같습니다. 문구가 사실이 아니면 더 나쁩니다.\n       · Ⓒ는 213편을 하나씩 고치는 일인데, 지금 구글에 올라간 글이 2편뿐이라\n         전부 고쳐도 구글이 볼 글이 없습니다. 시간만 듭니다.\n       · 구글이 묻는 건 '공개가 있는가'이지 '몇 편에 있는가'가 아닙니다.",
    "due": "2026-08-28",
    "cmd": "curl -s -L -A 'Mozilla/5.0' https://lifeinfo8975.blogspot.com/2026/08/2026-2.html | grep -c 'AI'",
    "owner": "user",
-   "state": "todo"
+   "state": "todo",
+   "_orig": "🙋 AI 활용 공개 문구 승인 — 사장님이 정하실 것 두 가지. [배경] 구글 helpful content 자가진단이 명시적으로 묻는다: 'Is the use of automation, including AI-generation, self-evident to visitors through disclosures?' 그리고 게시자 정책은 'Automatically generated content without manual review or curation' 에 광고를 금지한다. 🔴 즉 사람이 검수했다는 사실 자체가 우리 방어인데 그걸 안 밝히고 있다(실측 2026-08-27: 라이브 최근 3편 AI 언급 0회). [현재 바이라인] '글쓴이 이상곤 · 이 글의 수치·절차·연락처는 정부 부처와 공공기관 공식 자료를 직접 확인해 정리했으며, 본문에 출처와 기준일을 표기했습니다.' [이부장 제안 문구] '글쓴이 이상곤 · 이 글은 AI 도구로 초안을 작성한 뒤, 수치·절차·연락처를 정부 부처와 공공기관 공식 자료로 직접 대조·검수해 정리했습니다. 본문에 출처와 기준일을 표기했으며, 공식 확인이 안 된 수치는 싣지 않았습니다.' → 실제 절차(작업세션 초안 → 1차출처 대조 → V0 반박검사 → 사장님 발행승인)와 정합한다. ⚠️ 문구는 반드시 사실이어야 한다 — 실제와 다르게 쓰면 그게 더 나쁘다. [결정할 것] ①문구 확정 ②소급 범위: 210편 전체 소급 / 신규분부터 / 주력 글만. 🔴 소급은 update-post 로 라이브를 고치는 것이라 편수만큼 시간이 든다. [이미 한 것] pubqueue 게이트에 경고 배선 완료(차단 아님 — 문구가 안 정해진 채 막으면 세션이 아무 말이나 지어 넣는다)\n\n─── 🔴 이부장 정리(2026-08-28) — 번호 두 개만 답해 주시면 끝납니다 ───\n[문구] ① 제안문구 그대로(위 참조)  ② 짧게: '글쓴이 이상곤 · AI 도구로 초안을 쓰고 사람이 공식 자료로 대조·검수했습니다.'  ③ 사장님이 직접 주시는 문구\n[범위] Ⓐ 신규분부터만(소급 0편·즉시 시행)  Ⓑ 주력 글만 소급(V0 통과 15편)  Ⓒ 전체 213편 소급\n🔴 권고 = ①+Ⓐ. 근거 셋: (1)①이 실제 절차와 정확히 맞아 사실이다 — 문구가 실제와 다르면 그게 더 나쁘다. (2)Ⓒ는 라이브 213편을 update-post 로 고치는 것이라 편수만큼 시간이 드는데, 지금 색인이 2/213 이라 소급해도 구글이 볼 글이 없다. 신규분부터 붙이고 색인이 살아나면 Ⓑ로 넓히는 편이 낫다. (3)구글이 묻는 것은 '공개가 있는가'이지 '몇 편에 있는가'가 아니다.\n실측(2026-08-28): 라이브 3편 AI 언급 0회. 앞서 4회로 보인 것은 이미지 URL 안 문자열 오탐이었다."
   },
   {
    "id": "pub-c209-g404-trigger-0827",
@@ -2451,7 +2456,9 @@
    "due": "2026-08-27",
    "cmd": "이과장 창에 /permissions 입력 → Allow 에 추가:  Bash(gh workflow run publish.yml *)",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-28",
+   "result": "✅ 해결(2026-08-27) — 사장님이 이과장 워크트리 .claude/settings.local.json 에 'Bash(gh workflow run publish.yml *)' 직접 추가(allow 66→67, JSON 무결성 정상 실측). 재시도에서 거부 없이 한 번에 통과, 세션 재시작도 불필요했다. 08-25 B2-11 부터 막혀 있던 벽이 끝났다. ⚠️ 남은 것: 이 규칙은 그 워크트리 전용이라 다른 워크트리에서 새 세션이 뜨면 또 막힌다 — 본체 C:\\lifeinfo\\.claude\\settings.local.json 에도 넣을지는 사장님 판단(watch perm-gh-main-repo 로 별도 등록)"
   },
   {
    "id": "pub0827-why-stalled",
@@ -2558,11 +2565,12 @@
   {
    "id": "indexing-domain-test",
    "added": "2026-08-27",
-   "what": "🔬 색인 도메인 가설 확인 검사 — 결정을 가르는 한 번의 조회. [실측] 같은 주제 글이 블로그스팟 212편 중 색인 2편(0.9%), 네이버 210편 중 43편(20.5%) = 23배 차이. 구글은 그 정보를 색인할 가치가 있다고 이미 판단했다(네이버 판이 증거) → 걸러지는 건 내용이 아니라 도메인일 수 있다. [무엇이 갈리나] GSC 페이지 > 미색인 사유 분포에서 '크롤링됨-현재 색인되지 않음'이 다수면 = 구글이 읽고 버렸다 = 가설 지지 → 처방은 '줄이기'(약한 글 noindex). '발견됨-현재 색인되지 않음'이 다수면 = 크롤 예산 문제 = 가설 반증 → 처방이 완전히 달라진다. [왜 사장님 몫인가] GSC 표의 행 클릭이 자동화로 안 먹는다(4회 실패 기록). 화면을 열어 사유별 편수만 알려주시면 된다. 전문·근거·한계 = docs/색인_도메인가설_2026-08-27.md",
+   "what": "【무엇】 우리 블로그 글이 구글에 거의 안 올라갑니다. 213편 중 2편뿐입니다.\n       그런데 같은 내용을 올린 네이버 글은 43편이 올라가 있습니다. 23배 차이입니다.\n       구글이 '내용이 나빠서' 거르는 게 아니라 '우리 사이트라서' 거르는 것일 수 있습니다.\n【하실 일】 서치콘솔 화면을 열어 숫자 두 개만 알려주십시오. 5분이면 됩니다.\n       ① 왼쪽 메뉴 '페이지' 클릭\n       ② 아래로 내리면 '페이지가 색인이 생성되지 않은 이유' 표가 나옵니다\n       ③ 거기서 두 줄의 숫자를 알려주십시오:\n          · '크롤링됨 - 현재 색인이 생성되지 않음'  → ___ 편\n          · '검색됨 - 현재 색인이 생성되지 않음'    → ___ 편\n【왜】 이 숫자로 앞으로 할 일이 완전히 갈립니다.\n       앞 숫자가 크면 = 구글이 읽어보고 버린 것 → 글을 더 쓰지 말고 약한 글을 정리해야 합니다\n       뒤 숫자가 크면 = 구글이 아예 안 읽은 것 → 전혀 다른 처방입니다\n       지금은 어느 쪽인지 몰라서 헛수고를 하고 있을 수 있습니다.",
    "due": "2026-08-28",
    "cmd": "https://search.google.com/search-console/index?resource_id=sc-domain:lifeinfo8975.blogspot.com",
    "owner": "user",
-   "state": "todo"
+   "state": "todo",
+   "_orig": "🔬 색인 도메인 가설 확인 검사 — 결정을 가르는 한 번의 조회. [실측] 같은 주제 글이 블로그스팟 212편 중 색인 2편(0.9%), 네이버 210편 중 43편(20.5%) = 23배 차이. 구글은 그 정보를 색인할 가치가 있다고 이미 판단했다(네이버 판이 증거) → 걸러지는 건 내용이 아니라 도메인일 수 있다. [무엇이 갈리나] GSC 페이지 > 미색인 사유 분포에서 '크롤링됨-현재 색인되지 않음'이 다수면 = 구글이 읽고 버렸다 = 가설 지지 → 처방은 '줄이기'(약한 글 noindex). '발견됨-현재 색인되지 않음'이 다수면 = 크롤 예산 문제 = 가설 반증 → 처방이 완전히 달라진다. [왜 사장님 몫인가] GSC 표의 행 클릭이 자동화로 안 먹는다(4회 실패 기록). 화면을 열어 사유별 편수만 알려주시면 된다. 전문·근거·한계 = docs/색인_도메인가설_2026-08-27.md"
   },
   {
    "id": "pub-a2-15-0827",
@@ -2570,6 +2578,116 @@
    "what": "🚀 A2-15 추석 연휴 국민연금·기초연금 조기지급일 총정리 — 발행만 남았다. 게이트 전부 통과(⑦ go도장 사장님 08-27 17:11 · V0 4차🟢 · 초안 origin/main 반영 · 오늘 2/5). 🔴 막힌 이유는 품질이 아니라 **이과장 세션이 닫혔다**는 것뿐이다(ListAgents 실측: 루틴 3개만 살아 있음). 지시서 pub0827b 에 명령까지 완성형으로 세워 뒀으니 세션만 켜면 바로 집는다. 바탕화면 start_leegwajang.bat 더블클릭 → 자가점검 후 지시서를 손에 쥐고 시작",
    "due": "2026-08-27",
    "cmd": "start_leegwajang.bat",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-28",
+   "result": "✅ 발행 완료(2026-08-27) — run 33059234383 · 라이브 200 · DB url 등록 실측 확인. https://lifeinfo8975.blogspot.com/2026/08/2026-9-25_01419575530.html"
+  },
+  {
+   "id": "d211-ev-rate-unverified",
+   "added": "2026-08-28",
+   "what": "D2-11(승인됨) 전기차 공공충전요금 5단계 개편 — 초안 작성 보류. 공식 확인 실패 2건: (1) 최종 kWh 단가 5개(295.0/307.2/325.6/348.4/393.1)가 뉴스에만 있다. 기후에너지환경부 보도자료 원문(2026-04-29)은 행정예고안이라 값이 다르다(294.3/306.0/324.4/347.2/391.9). (2) 시행일도 갈린다 — 뉴스는 2026-08-01, 부처 원문은 법령 시행 2026-11-12. 즉 이 글의 '왜 지금'까지 미확인이다. 실측 경로 6개 전부 확정본 없음: korea.kr 정책브리핑 / mcee.go.kr 보도자료 상세 / mcee 게시판 '충전요금' 검색(2026-07 확정 보도자료 없음, 최신 06-11) / 도메인한정 검색 / law.go.kr admrul 3개 질의(고시 미등재) / ev.or.kr 요금페이지 404. 하드룰(공식 확인 실패=그 수치 안 씀)에 따라 미작성. 2차출처 대체 금지",
+   "due": "2026-09-04",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' 'https://www.mcee.go.kr/home/web/board/list.do?menuId=10598&boardMasterId=939&searchKey=title&searchValue=%EC%B6%A9%EC%A0%84%EC%9A%94%EA%B8%88' ; echo ' <- mcee 보도자료 충전요금 검색. 2026-07 이후 확정 보도자료가 올라왔으면 5개 구간 단가·시행일을 원문에서 옮겨 D2-11 초안 작성'",
+   "owner": "claude",
+   "state": "blocked"
+  },
+  {
+   "id": "flu-2627-not-published",
+   "added": "2026-08-28",
+   "what": "글감 후보 대기 — C 건강·의료 '2026-2027절기 인플루엔자 국가예방접종'. 시즌 앵커로 강하지만 오늘(08-28) 기준 질병관리청 예방접종도우미 사업안내 페이지가 아직 2025-2026절기다. 뉴스에는 '9월 21일 시작·14세까지 확대'가 도는데 공식 페이지 미게시라 facts 에 못 쓴다 — D2-11 과 같은 함정이라 제안 자체를 보류했다. 공식 페이지가 절기 갱신되면 대상 연령·출생일 기준·대상별 순차 일정을 원문에서 받아 topicprop add --lane info --rank rec 로 제안할 것",
+   "due": "2026-09-08",
+   "cmd": "curl -s -L -A 'Mozilla/5.0' 'https://nip.kdca.go.kr/irhp/mngm/goVcntMngm.do?menuCd=333&menuLv=3' | grep -o '2026~2027\\|2026-2027\\|2025~2026' | sort -u",
+   "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "perm-gh-main-repo",
+   "added": "2026-08-28",
+   "what": "🔑 gh 발행 권한을 **본체에도** 넣을지 — 사장님 판단. 08-27 에 넣으신 규칙은 워크트리 bold-mirzakhani-88033f 전용이다. 이과장이 다른 워크트리에서 새로 뜨면 같은 벽에 또 막힌다(그때마다 파일을 다시 고쳐야 한다). 본체 C:\\lifeinfo\\.claude\\settings.local.json 의 permissions.allow 에 같은 한 줄을 넣어두면 반복이 없다. 급하지 않으므로 다음에 막힐 때 하셔도 된다 — 그때 제가 VS Code 로 같은 자리를 열어 드린다",
+   "due": "2026-09-04",
+   "cmd": "python -c \"import json;d=json.load(open(r'C:\\lifeinfo\\.claude\\settings.local.json',encoding='utf-8'));print([x for x in d['permissions']['allow'] if 'gh ' in x] or '아직 없음')\"",
+   "owner": "user",
+   "state": "wait"
+  },
+  {
+   "id": "console-health-0828",
+   "added": "2026-08-28",
+   "what": "운영콘솔 전수점검: tools/check_webapp_js.py 통과(node v24, 실제 검사됨·스킵 아님), selfcheck 18)도 동일 결과. approval/progress/batch/dashboard 4개 화면 전부 HTTP 200, fetch 대상 json/txt 전부 존재·파싱 정상(gsc_monitor·index_status·navergate·batch·lifeinfo_db·pace·pending·queue·session_state·topicprop·v0check·watch·health·progress·tasks 등). categories/search는 lifeinfo_db.txt를 fetch, seo/gsc/incidents/orders는 각자 json fetch 정상 확인. batch/daylog는 정적 bake(fetch 0, 설계상 정상). osmu/generator/jisikin은 백엔드 데이터 없는 순수 클라이언트 도구라 fetch 없음 — 정상. 화면 깨짐 추가 발견 없음. 단, 이번 점검과 별개로 selfcheck가 상시 잡던 미결(6c 교차링크 A2-15 누락, 큐 파일 미추적 2건, 세션보고 어긋남 4건)은 그대로 남아있음 — 화면 문제 아님.",
+   "due": "2026-08-29",
+   "cmd": "python tools/check_webapp_js.py",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "seodesc-rootcause-0828",
+   "added": "2026-08-28",
+   "what": "원인 미확정. 확정된 것: (a) 경계=B2-11(08-25, 정상저장·distinct) ↔ C2-09/G4-04/A2-15(08-27, 전부 body-lead=Blogger자동채움, 진짜 설명 저장 0건). (b) 같은 증상이 08-24 G4-03·A5-07에도 있었고 그때는 '0.5s재클릭+native-setter초기화+실키입력' 워크다운으로 뚫렸으나 08-27엔 그 기법 포함 8회(브라우저6+API2) 전부 실패. (c) 이과장 실측보고(batch.json log[14][15]): 업데이트 버튼 클릭 직후 브라우저 탭이 반복 freeze(CDP screenshot timeout)+같은 세션에서 본문에디터 무한스피너 1회 재현 — 08-27 세션 자체의 Blogger 편집기 로딩이 전반적으로 불안정했을 가능성. API PATCH(searchDescription 필드 포함)는 200 OK 인데도 미반영 — 이건 07-28 already-known customMetaData 한계와 같은 부류(신규 아님). (d) 저장소 커밋 이력엔 이 구간에 blogger.py/pipeline.py/publish.yml 변경이 없다 — 원인은 우리 코드가 아니라 Blogger 편집기 쪽/그날 세션 환경이다. (e) 부수 발견: seodesc._is_body_lead()가 html.unescape 없이 태그만 벗겨 비교해서, 본문에 원본 엔티티(&#183;)가 살아있는 A2-15를 'distinct(성공)'으로 오판 중 — 실제로는 A2-15도 C2-09/G4-04와 동일한 body-lead(자동채움) 실패다. 다음 발행 때 재현되면: CDP 네트워크탭을 열어 Update 클릭 직후 실제 RPC(batchexecute)가 발생하는지 vs 탭 자체가 멈추는지부터 구분할 것 — 그게 client freeze(로컬/확장 문제)인지 Blogger 서버측 응답 지연인지를 가른다.",
+   "due": "2026-08-29",
+   "cmd": "python -m studio.seodesc scan --only C2-09 G4-04 A2-15   # 상태 재확인 + 다음 발행 시 CDP network 탭으로 Update 클릭 직후 batchexecute RPC 발생 여부 확인",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "gh-cursor-perm-0828",
+   "added": "2026-08-28",
+   "what": "GitHub App 'Cursor' 가 magsori-wq 계정에 추가 권한을 요청함(2026-08-28 04:45 KST 메일). 메일에 어떤 권한인지 안 적혀 있어 화면에서 확인 필요. 무시하면 현재 권한 그대로 유지되고 아무 일도 안 생긴다 — 즉 급하지 않다. Cursor 를 지금 안 쓰시면 무시가 안전. 발신 noreply@github.com(정상 발신처)",
+   "due": "2026-08-28",
+   "cmd": "start https://github.com/settings/installations/123145053/permissions/update",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-a2-15-0828",
+   "added": "2026-08-28",
+   "what": "A2-15 네이버 게시 — 원고 완성, 붙여넣기만 남았습니다. 이것이 안 올라가면 승인하신 G2-03 발행이 setgate 에 막혀 못 나갑니다(4채널 세트 미완 3편 중 1편). 원고=osmu\\네이버용_국민연금기초연금조기지급일.txt · 첨부=thumbs_naver\\A2-15 · 게시 후 URL 을 아래 명령으로 기록하면 자동 반영됩니다",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.pipeline naver-draft --code A2-15 --open",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-c2-09-0828",
+   "added": "2026-08-28",
+   "what": "C2-09 네이버 게시 — 원고 완성, 붙여넣기만 남았습니다. 이것이 안 올라가면 승인하신 G2-03 발행이 setgate 에 막혀 못 나갑니다(4채널 세트 미완 3편 중 1편). 원고=osmu\\네이버용_추석연휴문여는병원약국.txt · 게시 후 URL 기록하면 자동 반영",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.pipeline naver-draft --code C2-09 --open",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-g4-04-0828",
+   "added": "2026-08-28",
+   "what": "G4-04 네이버 게시 — 원고 완성, 붙여넣기만 남았습니다. 이것이 안 올라가면 승인하신 G2-03 발행이 setgate 에 막혀 못 나갑니다(4채널 세트 미완 3편 중 1편). 원고=osmu\\네이버용_가을대하흰다리새우구별법시세원산지.txt · 게시 후 URL 기록하면 자동 반영",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.pipeline naver-draft --code G4-04 --open",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "approval-naver-bucket-blind-0828",
+   "added": "2026-08-28",
+   "what": "🔴 결재함 '📣네이버' 칸이 구조적으로 절대 안 뜬다 — 2026-08-28 routine 3/C 실측. approval.html:330 'if(x.osmu) return;' 과 approvalcount.rows() 'not x.get(osmu)' 가 둘 다 osmu 를 게이트로 쓰는데, pending.py:57 의 osmu 는 isinstance(p.osmu, dict) = '채널이 하나라도 있으면 True' 다. 즉 쓰레드만 올라간 글은 osmu=True 라 네이버가 비어 있어도 통째로 걸러진다. 실측: A2-15/C2-09/G4-04 셋 다 ch.n=False·need 에 '네이버' 가 있는데 결재함 5건에 하나도 없었다(전부 ☑조치). 그래서 사장님 승인(⑦)까지 끝난 G2-03 이 setgate 에 막혀 있는데 푸는 사람에게 요청이 안 갔다. 두 곳이 같은 오판을 하므로 '화면과 도구가 갈렸다' 가 아니라 공유 로직 결함이다 — 고칠 때 approval.html 과 approvalcount.py 를 반드시 같이 고칠 것. 판정은 osmu 유무가 아니라 ch.n===false 하나로 충분하다. 임시 우회로 naver-post-*-0828 3건을 owner=user watch 로 올려 ☑조치 칸에 띄워 뒀다",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.approvalcount",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub0828-order-missing",
+   "added": "2026-08-28",
+   "what": "🔴 G2-03 발행 지시서 pub0828 이 존재하지 않는다 — 2026-08-28 routine 3/C 실측. watch pub-g2-03-0828 은 '지시서 pub0828 에 명령까지 다 있다' 고 적혀 있으나 batchboard order --id pub0828 = '[없음] 등록된 적이 없거나 이름이 다르다'. 즉 ⑦ 도장(사장님 승인 08-27)은 찍혔는데 ④ 지시가 발급된 적이 없어 이과장이 받을 것이 없었다. pub0827 미실행 원인('실행할 살아있는 이과장 세션이 없다')과 별개의 두 번째 구멍이다. 🔴 단 지금 지시서를 내도 setgate 가 막는다(4채널 미완 A2-15·G4-04·C2-09, 셋 다 네이버만 남음) — 네이버 3건이 올라간 뒤에 발급할 것. 순서: 네이버 게시 → setgate 초록 → pub0828 발급",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insta-post-set-0828",
+   "added": "2026-08-28",
+   "what": "인스타 3편(A2-15·G4-04·C2-09) 게시 — 카드·캡션 제작 완료, 게시만 남았습니다. 네이버 3건과 이 3편이 다 올라가야 setgate 가 풀려 승인하신 G2-03 이 발행됩니다. ⚠️ 08-24 지시상 인스타는 이과장 몫인데 지금 살아 있는 이과장 세션이 없습니다(watch pub0827-why-stalled, 처방=start_leegwajang.bat 더블클릭, 아직 미이행). 세션을 띄우시거나 앱에서 직접 올리시면 됩니다. 🔴 1편씩만 — 5편 동시 진행은 PC 프리즈 재발 계기였습니다(watch insta-session-howto)",
+   "due": "2026-08-28",
+   "cmd": "python -m studio.insta_post --next",
    "owner": "user",
    "state": "todo"
   }

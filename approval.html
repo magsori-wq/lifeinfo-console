@@ -89,6 +89,16 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 #pvt{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #22304d}
 #pvh{flex:1;font-size:13px;color:#cfe0f7}
 #pvb{flex:1;width:100%;border:0;background:#fff}
+    /* 🔴 결재 카드가 제목 70자·설명 150자로 잘라 버려서, 관제탑이 쉬운 말로 써 놓은
+       "무엇을 · 하실 일 · 왜" 가 화면에 한 줄도 안 보였다(2026-08-28 사장님 지적:
+       "1번이 결재대기의 어떤 내용이고 뭘 조치해야 하는지는 안 보이지?").
+       읽으라고 쓴 글이 안 읽히면 안 쓴 것과 같다. 줄바꿈을 살려 전문을 그대로 편다. */
+    .num{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;
+      margin-right:8px;padding:0 6px;border-radius:12px;background:#2d6cdf;color:#fff;
+      font:700 13px/1 -apple-system,sans-serif;flex:0 0 auto}
+    .plain{white-space:pre-wrap;word-break:break-word;margin:8px 0 0;padding:10px 12px;
+      background:#0f1620;border:1px solid #24344a;border-radius:8px;color:#cfe3f5;
+      font:13.5px/1.75 -apple-system,"Malgun Gothic",sans-serif}
 </style></head><body>
 <div class="hdrow"><h1>📋 전자결재</h1>
  <span class="tip">승인 버튼은 <b>두 번</b> 눌러야 실행됩니다 · 명령을 클릭하면 복사</span></div>
@@ -253,6 +263,26 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
   var W=arr(a[7]), PEND=(a[8]||{}).actionable||[];
   var byc={}; (DB.posts||[]).forEach(function(p){byc[p.code]=p;});
+  // 🔴 이과장 보고를 화면이 **읽을 수 있는데 안 읽고 있었다** (2026-08-28 사장님 지적).
+  //    batch.json 은 이미 위에서 B 로 받아온다. 그 안 currents[].what 과 items[].note 에
+  //    "인스타 카드 6장(미착수)" 같은 실제 진행상황이 들어 있는데, OSMU 카드는 그걸 안 보고
+  //    '원고·이미지 제작 완료, 게시만 남음' 이라는 문구를 **하드코딩**해 사장님께 올렸다.
+  //    데이터는 손 닿는 곳에 있었고 코드가 안 집었다. 여기서 잇는다.
+  var rep={};                                  // code → 가장 최근 보고 한 줄
+  (function(){
+    var bs=(B.batches)||{}, cur=(B.currents)||{};
+    Object.keys(cur).forEach(function(k){
+      var c=cur[k]||{}, w=String(c.what||'');
+      var m=w.match(/([A-H]\d-\d{2})/);          // 보고문 안의 글 코드
+      var code=c.code||(m&&m[1]);
+      if(code&&w) rep[code]={t:c.since||'',s:'진행중',w:w,b:k};
+    });
+    Object.keys(bs).forEach(function(k){
+      ((bs[k].items)||[]).forEach(function(it){
+        if(it.code&&it.note&&!rep[it.code]) rep[it.code]={t:'',s:it.state||'',w:String(it.note),b:k};
+      });
+    });
+  })();
   var v0={}; V.forEach(function(x){v0[x.code]=x;});
   var H='';
   var SS=Object.keys((SSJ.sessions)||{}).map(function(k){
@@ -285,14 +315,34 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
                  ||(T.filter(function(y){return y.code===_cd[1];})[0]);
              if(_p&&_p.title) _ttl=_cd[1]+' '+_p.title+' — '; }
     boss.push({act:(w.state==='blocked'?'watch_blocked':'watch_done'),c:w.id,t:_ttl+(w.what||w.id),
+      full:(w.what||''),
       why:'조치 대기 · 기한 '+(w.due||'')+(w.state==='blocked'?' · 🚫막힘':''),
       cmd:w.cmd||('python -m studio.watch done --id '+w.id)});
   });
+  // 🔴 OSMU 는 이제 대부분 **이과장 몫**이다 (2026-08-28 사장님 지적: "왜 내 결재대기에 있는데!").
+  //    이 자리는 오래 "OSMU 게시는 사람 손 = 사장님 몫" 이라는 전제로 굳어 있었다. 두 군데가 틀렸다:
+  //    ① 2026-08-24 사장님 지시로 **쓰레드·인스타는 이과장이 직접 게시**한다. 네이버만 사람 손이다
+  //       (네이버는 글쓰기 API 종료 + 확장이 도메인 차단 = 기술적으로 불가능).
+  //    ② "원고·이미지 제작 완료" 가 사실이 아니었다 — 실측 A2-15 는 인스타 카드가 미착수인데도
+  //       "게시만 남음" 으로 사장님 결재함에 올라갔다. 끝나지도 않은 일을 사장님께 올린 것이다.
+  //    → 네이버가 남은 것만 사장님께, 나머지는 이부장·이과장 칸으로 보낸다.
   PEND.forEach(function(x){
     if(x.osmu) return;                          // 이미 확산된 건 제외
-    boss.push({act:'osmu',c:x.code,t:x.title,
-      why:'게시 대기 · 원고·이미지 제작 완료, 게시만 남음 ('+(x.need||[]).join(' · ')+')',
-      cmd:'python -m studio.osmu_manifest table --code '+x.code+' --open'});
+    var ch=x.ch||{}, needN=(ch.n===false);      // 네이버 미게시 = 사람 손이 필요한 유일한 채널
+    var card={act:'osmu',c:x.code,t:x.title,
+      cmd:'python -m studio.osmu_manifest table --code '+x.code+' --open'};
+    var r=rep[x.code];
+    // 🔴 문구를 지어내지 않는다 — 이과장이 실제로 쓴 보고를 그대로 싣는다.
+    card.full=r ? ('【이과장 보고 '+(r.t||'')+' · '+r.b+'】\n'+r.w) : '';
+    if(needN){
+      card.why=r ? ('네이버 게시 대기 — 아래는 이과장이 남긴 실제 진행상황입니다')
+                 : ('네이버 게시 대기 — 네이버는 API·자동화가 막혀 사람이 붙여넣어야 합니다'
+                    +' (나머지 채널은 이과장이 진행). 남은 것: '+((x.need||[]).join(' · ')||'-'));
+      boss.push(card);
+    }else{
+      card.why='OSMU 진행 중 — 이과장 몫입니다. 남은 것: '+((x.need||[]).join(' · ')||'-');
+      lee.push(card);
+    }
   });
 
   Q.forEach(function(q){
@@ -356,7 +406,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    "이미 했으면 확인"(=사람이 실제로 끝낸 뒤 보고하는 것) 으로 — 2026-08-24 사장님 지적.
   var LABEL={publish_go:'⑦ 발행 승인',topic_approve:'③ 글감 승인',watch_done:'☑ 조치 끝냈으면 확인'};
   var BTN_CLS={watch_done:'confirm'};  // 나머지는 기존대로 승인 초록('ok')
-  var bossBody = boss.length? boss.map(function(x){return '<div class="card boss"><div class="hd">'
+  // 🔴 번호를 붙인다 (2026-08-28 사장님 지시: "뭐가 매칭이 안 되잖아! 넘버링을 해줘!").
+  //    관제탑은 채팅에서 "1번"이라 부르는데 화면에는 번호가 없어 사장님이 매번 대조하셔야 했다.
+  //    번호는 이 목록의 순서다 — 항목이 처리되면 뒤 번호가 당겨진다. 그래서 관제탑은
+  //    보고할 때 **번호와 함께 코드·제목을 반드시 같이** 적는다(번호만 쓰면 어긋난다).
+  var bossBody = boss.length? boss.map(function(x,_i){return '<div class="card boss"><div class="hd">'
+      +'<span class="num">'+(_i+1)+'</span>'
       +'<span class="who w-boss">'+(BADGE[x.act]||'결재')+'</span>'
       +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
@@ -366,6 +421,8 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
           +(x.sum?'<div class="pvs"><b>초안 구성</b>'+esc(x.sum)+'</div>':'')
           +(x.facts?'<div class="pvs"><b>확인한 수치·출처</b>'+esc(x.facts)+'</div>':'')
           +'</details>' : '')
+      +(x.full&&x.full.length>70
+        ? '<pre class="plain">'+esc(x.full)+'</pre>' : '')
       +(x.act==='watch_done'?'<div class="meta" style="color:#7fb8e8">'
         +'☝️ 이 버튼은 <b>조치를 대신 해주지 않습니다</b> — 위 내용을 실제로 이미 끝내셨을 때만 눌러주세요.</div>':'')
       +(LABEL[x.act]?'<div style="margin-top:8px">'
@@ -379,9 +436,14 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
 
   // ② 이부장 결재 + 반려 — 한 칸에 묶는다(둘 다 관제탑 몫)
   var leeBody = (lee.length? lee.map(function(x){return '<div class="card wait"><div class="hd">'
-      +'<span class="who w-lee">'+(x.act==='topic_pick'?'② 선별':'⑥ V0')+'</span>'
+      +'<span class="who w-lee">'+(x.act==='topic_pick'?'② 선별':x.act==='osmu'?'📣 OSMU':'⑥ V0')+'</span>'
       +'<span class="ttl">'+esc(x.t||'')+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
+      +(x.why?'<div class="meta">'+esc(String(x.why).slice(0,150))+'</div>':'')
+      // 🔴 이과장 보고 전문 — boss 칸에만 있던 것을 여기도 그린다(2026-08-28).
+      //    보고가 데이터에 있어도 화면이 안 그리면 없는 것과 같다.
+      +(x.full&&x.full.length>70
+        ? '<pre class="plain">'+esc(x.full)+'</pre>' : '')
       +(x.act==='topic_pick'?'<div style="margin-top:8px">'
         +btn('topic_pick',x.c,'② 선별','ok')+btn('topic_drop',x.c,'제외','no')+'</div>':'')
       +'<div style="margin-top:6px">'+cmd(x.cmd)+'</div></div>';}).join('')
