@@ -10,7 +10,23 @@ body{margin:0;padding:12px 14px;background:#0e1526;color:#e6ecf7;overflow:hidden
    한 화면에서 보고, 분할된 화면 안에서 스크롤할 수 있게") — 본문은 스크롤하지 않고
    각 패널만 독립 스크롤한다. */
 .grid{flex:1;min-height:0;overflow:hidden;display:grid;gap:10px;
-      grid-template-columns:1.1fr 1fr;grid-template-rows:1fr 1fr}
+      grid-template-columns:1.05fr .95fr .9fr;grid-template-rows:1fr 1fr}
+/* 🗒️ 미결사항 서브탭 (2026-08-28 사장님: "전자결재의 서브탭으로 미결사항
+   우측에 만들어 붙여!") — 우측 열 하나를 통으로 쓴다. 조치한 줄은
+   지우지 않고 ✅ 로 남긴다("완료된 내용만 체크하여 볼 수 있도록"). */
+/* 🔴 자리를 못 박는다. span 만 주면 자동배치가 3열을 먼저 채워
+   미결사항이 하단 중앙으로 밀린다(2026-08-28 브라우저로 실제 확인). */
+.grid>.pane:nth-child(1){grid-area:1/1}
+.grid>.pane:nth-child(2){grid-area:1/2}
+.grid>.pane:nth-child(3){grid-area:2/1}
+.grid>.pane:nth-child(4){grid-area:2/2}
+.grid>.pane.side{grid-area:1/3/3/4}
+.tdi{display:flex;gap:8px;padding:7px 9px;border-bottom:1px solid #1c2842}
+.tdi:last-child{border-bottom:0}
+.tdi.fin{opacity:.5}
+.tdi.fin .tt{text-decoration:line-through;text-decoration-color:#5b6b8c}
+.tdi .ck{flex:0 0 17px;font-size:13px}
+.tdi .tt{font-size:12.5px;line-height:1.5;word-break:break-word}
 .pane{background:#131c31;border:1px solid #223052;border-radius:12px;height:100%;
       display:flex;flex-direction:column;min-height:0;overflow:hidden}
 .ph{display:flex;align-items:center;gap:8px;padding:9px 13px;flex:0 0 auto;
@@ -23,7 +39,10 @@ body{margin:0;padding:12px 14px;background:#0e1526;color:#e6ecf7;overflow:hidden
 .pb::-webkit-scrollbar-thumb:hover{background:#3b4f7a}
 @media(max-width:900px){body{overflow:auto}
   .grid{grid-template-columns:1fr;grid-template-rows:none}
-  .pane{max-height:440px}}
+  .pane{max-height:440px}
+  .grid>.pane:nth-child(1),.grid>.pane:nth-child(2),
+  .grid>.pane:nth-child(3),.grid>.pane:nth-child(4),
+  .grid>.pane.side{grid-area:auto}}
 h1{font-size:17px;margin:0;flex:0 0 auto}
 .sub{display:none}
 .hdrow{display:flex;align-items:baseline;gap:12px;flex:0 0 auto}
@@ -327,7 +346,24 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //       "게시만 남음" 으로 사장님 결재함에 올라갔다. 끝나지도 않은 일을 사장님께 올린 것이다.
   //    → 네이버가 남은 것만 사장님께, 나머지는 이부장·이과장 칸으로 보낸다.
   PEND.forEach(function(x){
-    if(x.osmu) return;                          // 이미 확산된 건 제외
+    // 🔴 `x.osmu` 는 **채널 하나라도 있으면 True** 다(pending.py: isinstance(osmu, dict)).
+    //    그래서 쓰레드만 올린 글은 네이버가 비어 있어도 여기서 걸러졌고,
+    //    내가 만든 "네이버 남은 것만 사장님 칸" 배선은 **한 번도 뜬 적이 없다.**
+    //    2026-08-28 3번(C) 발행구 루틴이 잡아 줬다 — 사람이 아니라 루틴이 찾았다.
+    //    판정은 osmu 플래그가 아니라 **채널별 ch 로** 한다.
+    var _ch = x.ch || {};
+    if (_ch.n !== false) return;                // 네이버가 이미 올라갔으면 사장님 몫 아님
+    // 🔴 같은 글이 watch 로도 올라와 있으면 **두 번 세지 않는다** (2026-08-28 사장님:
+    //    "전부 제각각이네! 조치 필요 20건, 결재대기 13건, 임시탭 13건").
+    //    3번(C) 루틴이 naver-post-<코드>-0828 로 결재함에 올렸고, 여기서도 같은 글을
+    //    또 올려 13건으로 부풀었다. studio/approvalcount.py 에는 이 제거가 이미
+    //    들어 있었는데 화면에만 없었다 — 같은 것을 두 곳에서 세면 반드시 갈린다.
+    if(W.some(function(w){
+        return w.owner==='user' && w.state!=='done'
+            && (w.due||'9999')<=TODAY
+            && (String(w.id||'').indexOf(x.code)>=0
+                || String(w.what||'').slice(0,60).indexOf(x.code)>=0);
+      })) return;
     var ch=x.ch||{}, needN=(ch.n===false);      // 네이버 미게시 = 사람 손이 필요한 유일한 채널
     var card={act:'osmu',c:x.code,t:x.title,
       cmd:'python -m studio.osmu_manifest table --code '+x.code+' --open'};
@@ -395,7 +431,11 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   // 🔴 순서 — '버튼으로 지금 끝나는 것'을 맨 위로. (2026-08-23)
   //    조치 항목의 설명이 길어서 그냥 두면 발행 승인 버튼이 화면 밖으로 밀린다.
   //    가장 되돌리기 어려운 결재가 가장 안 보이는 자리에 가는 것은 위험하다.
-  var ORD={publish_go:0,topic_approve:1,watch_done:2,osmu:3,watch_blocked:4};
+  // 🔴 '막힘'을 위로 올린다 (2026-08-28). blocked 는 **지금 아무것도 못 하는 상태**라
+  //    가장 급한데 맨 아래에 있었다 — 실측: deploy.bat 이 막혔다는 항목이 10번째로
+  //    밀려 사장님 화면에서 스크롤해야 보였다. 되돌리기 어려운 발행승인(publish_go)
+  //    다음 자리로 둔다.
+  var ORD={publish_go:0,watch_blocked:1,topic_approve:2,watch_done:3,osmu:4};
   // ⚠️ ORD[..]||9 로 쓰면 안 된다 — publish_go 의 0 이 falsy 라 9 로 밀려 맨 뒤로 간다
   //    (2026-08-23 실제로 그렇게 넣었다가 발행 승인 카드가 화면에서 사라졌다).
   function ord(a){return (a in ORD)?ORD[a]:9;}
@@ -487,6 +527,39 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         +'<div style="margin-top:5px">'+cmd('python -m studio.batchboard order --id '+x.id)+'</div></div>';
     }).join('');
   H+=pane('📄','지시서 · 세션',bs.length+'건',ordBody);
+
+  // 🗒️ 미결사항 — 오늘 진행과정 (2026-08-28 사장님 지시)
+  //    "조치한 내용 지우지 말고 그대로 두고 완료된 내용만 체크하여 볼 수 있도록"
+  //    -> 끝난 줄도 남기고 ✅ + 취소선으로만 표시한다.
+  // 🔴 **가장 최근 today 배치**를 고른다. 처음엔 첫 today 를 잡아 08-17 것이 떴다 —
+  //    JS 문법 검사로는 절대 안 잡히는 종류라 데이터로 시뮬레이션해서 발견했다.
+  // 🔴 `bs` 를 쓰면 안 된다 — 그것은 **지시서(order)가 걸린 배치만** 담는다.
+  //    2026-08-28 실측: today0828 은 목록만 있고 order 가 없어 빠졌고,
+  //    그 바람에 08-18 배치가 떴다. 원본 B.batches 에서 직접 고른다.
+  var TD=null, _tk=Object.keys(B.batches||{})
+      .filter(function(k){return String(k).indexOf('today')===0;}).sort().reverse();
+  if(_tk.length) TD={id:_tk[0], b:B.batches[_tk[0]]};
+  var tdBody;
+  if(TD && TD.b && (TD.b.items||[]).length){
+    var tit=TD.b.items, tdn=tit.filter(function(i){
+      return i.state==='done'||i.state==='skip';}).length;
+    var tpct=Math.round(100*tdn/tit.length);
+    var rows=tit.slice().sort(function(a,b){
+      var fa=(a.state==='done'||a.state==='skip')?1:0;
+      var fb=(b.state==='done'||b.state==='skip')?1:0; return fa-fb;
+    }).map(function(i){
+      var fin=(i.state==='done'||i.state==='skip');
+      var ck=i.state==='done'?'✅':(i.state==='skip'?'⏭️':(i.state==='doing'?'🔵':'⬜'));
+      return '<div class="tdi'+(fin?' fin':'')+'"><div class="ck">'+ck+'</div>'
+        +'<div class="tt">'+esc(String(i.title||''))+'</div></div>';
+    }).join('');
+    tdBody='<div class="sub2">'+esc(String(TD.b.title||TD.id))+' — '+tpct+'% ('
+      +tdn+'/'+tit.length+')</div>'+rows
+      +'<div style="margin-top:9px">'+cmd('python -m studio.batchboard order --id '+TD.id)+'</div>';
+    H+=pane('🗒️','미결사항',tdn+'/'+tit.length,tdBody,'side');
+  } else {
+    H+=pane('🗒️','미결사항','0건','<p class="none">오늘 배치가 없습니다.</p>','side');
+  }
 
   document.getElementById('out').innerHTML=H;
   REFRESHING=false;
