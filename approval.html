@@ -138,6 +138,34 @@ function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
 function copy(el){navigator.clipboard.writeText(el.textContent);
   var c=document.getElementById('cp');c.classList.add('on');
   setTimeout(function(){c.classList.remove('on');},900);}
+// 🔄 재확인 버튼 (2026-08-29 사장님 지시: "조치 밑에 재확인 버튼을 만들고").
+//    URL 이면 새 탭으로 열고, 명령이면 서버(/api/recheck)에 그 항목의 cmd 를
+//    그대로 실행시켜 결과를 카드 아래에 펼친다. 자유 명령을 안 보낸다 —
+//    서버가 watch.json 에서 id 로 자기가 적어둔 cmd 를 찾아 그것만 돌린다.
+var _rcSeq=0;
+function recheckBtn(id,cmdText){
+  var isUrl=/^https?:\/\//.test(String(cmdText||''));
+  var rid='rc'+(_rcSeq++);
+  return '<button class="act no" data-id="'+esc(id)+'" data-rid="'+rid+'" '
+    +'onclick="recheck(this)">🔄 재확인'+(isUrl?' (새 탭)':'')+'</button>'
+    +'<pre class="plain" id="'+rid+'" style="display:none;margin-top:6px"></pre>';
+}
+function recheck(btn){
+  var id=btn.dataset.id, rid=btn.dataset.rid, out=document.getElementById(rid);
+  btn.disabled=true; var old=btn.textContent; btn.textContent='… 확인 중';
+  fetch(API+'/api/recheck?id='+encodeURIComponent(id)+'&t='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(d){
+      btn.disabled=false; btn.textContent=old;
+      if(d.kind==='url'){ window.open(d.output,'_blank','noopener'); return; }
+      out.style.display='block';
+      out.textContent=(d.ok===false?'⚠️ ':'')+(d.output||'(빈 응답)');
+    })
+    .catch(function(e){
+      btn.disabled=false; btn.textContent=old;
+      out.style.display='block'; out.textContent='⚠️ 재확인 실패: '+e.message;
+    });
+}
 var API='http://127.0.0.1:8011', SRV=false;
 // 이 화면을 '본 PC' 에서 보고 있는가. github.io 등 원격이면 결재서버에 절대 닿지 않는다.
 var REMOTE=!(location.hostname==='localhost'||location.hostname==='127.0.0.1'
@@ -470,7 +498,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
         +(x.act==='publish_go'?'<button class="act pv-btn" data-c="'+x.c+'" onclick="preview(this.dataset.c)">📄 원고 미리보기</button>':'')
         +'</div>':'')
-      +'<div style="margin-top:6px">'+cmd(x.cmd)+'</div></div>';}).join('')
+      +'<div style="margin-top:6px">'+cmd(x.cmd)+'</div>'
+      +((x.act==='watch_done'||x.act==='watch_blocked')&&x.cmd
+        ? '<div style="margin-top:6px">'+recheckBtn(x.c,x.cmd)+'</div>' : '')
+      +'</div>';}).join('')
     : '<p class="none">✅ 없음 — 지금 사장님 결재를 기다리는 건이 없습니다.</p>';
   H+=pane('🙋','사장님 결재 대기',boss.length+'건',bossBody);
 
