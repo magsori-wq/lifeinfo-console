@@ -1,0 +1,226 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0e1526">
+<title>운영콘솔 · 모바일</title>
+<!--
+  📱 스마트폰 전용 운영콘솔 (2026-08-31 사장님 지시)
+     "운영콘솔 외부 스마트폰으로 최적화된 화면구성하여 pc 와 별개로 확인할수있게해! 갤럭시"
+
+  🔴 왜 approval.html 을 반응형으로 고치지 않고 따로 만들었나
+     그 화면은 6분할 + 결재 버튼 + 원고 미리보기까지 얹혀 있어 폰에서는
+     세로로 길게 쌓이기만 한다. 게다가 **밖에서는 결재 버튼이 동작하지 않는다**
+     (결재서버 127.0.0.1:8011 은 그 PC 안에서만 닿는다). 즉 폰에서 필요한 것은
+     '누르는 화면'이 아니라 **'지금 어떤가'를 스크롤 없이 보는 화면**이다.
+
+  🔴 설계 원칙 세 가지
+     ① 첫 화면에 답이 있어야 한다 — 사장님 몫 · 오늘 발행 · 안 읽은 지시서.
+        상세는 접어 두고 눌러야 펴진다(스크롤을 많이 하면 시간낭비다).
+     ② 버튼 대신 **명령 복사** — 탭하면 클립보드로. 리모트 세션에 붙여넣으시면 된다.
+     ③ 데이터는 기존 json 그대로 읽는다. **새 상태파일을 만들지 않는다**
+        (같은 것을 두 곳에 두면 반드시 한 곳이 뒤처진다).
+
+  🔴 갤럭시 기준 — 폭 360~430px, 상단 노치/하단 제스처바를 env(safe-area) 로 피한다.
+     터치 타깃은 44px 이상. 글씨는 14px 이상(작으면 밖에서 못 읽는다).
+-->
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:#0e1526;color:#e6ecf7;
+  font-family:-apple-system,"Malgun Gothic",sans-serif;font-size:15px;line-height:1.55}
+body{padding:calc(10px + env(safe-area-inset-top)) 12px calc(24px + env(safe-area-inset-bottom))}
+h1{font-size:16px;margin:0 0 2px;display:flex;align-items:center;gap:7px}
+.upd{color:#7d8ca8;font-size:11.5px;margin-bottom:11px}
+/* 요약 타일 — 첫 화면에서 이것만 보고도 판단이 서야 한다 */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:13px}
+.tile{background:#16203a;border:1px solid #2a3a5e;border-radius:11px;padding:9px 6px;text-align:center}
+.tile .v{font-size:21px;font-weight:800;line-height:1.15}
+.tile .k{font-size:11px;color:#8fa0bd;margin-top:2px}
+.tile.hot{border-color:#ff6b6b66;background:#ff6b6b12}
+.tile.hot .v{color:#ff9d9d}
+.tile.ok .v{color:#8ee5be}
+.tile.warn{border-color:#e08b1e66;background:#e08b1e12}
+.tile.warn .v{color:#f0b26b}
+sec{display:block;margin-bottom:11px}
+details{background:#131c31;border:1px solid #223052;border-radius:12px;overflow:hidden}
+details[open]{border-color:#2a3a5e}
+summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:700;font-size:14.5px;
+  display:flex;align-items:center;gap:8px;min-height:46px}
+summary::-webkit-details-marker{display:none}
+summary .n{margin-left:auto;font-size:12px;font-weight:400;color:#8fa0bd;
+  background:#0e1526;border:1px solid #2a3a5e;border-radius:20px;padding:1px 10px}
+summary .n.hot{color:#ff9d9d;border-color:#ff6b6b66}
+.body{padding:0 12px 12px}
+.card{background:#16203a;border:1px solid #2a3a5e;border-radius:10px;padding:11px 12px;margin-bottom:8px}
+.card:last-child{margin-bottom:0}
+.card.boss{border-color:#5fd3a066;background:#5fd3a00d}
+.card.un{border-color:#ff6b6b66;background:#ff6b6b0d}
+.t{font-weight:700;font-size:14px;line-height:1.45;word-break:keep-all}
+.m{color:#8fa0bd;font-size:12px;margin-top:4px;word-break:break-all}
+.w{color:#a9b6cc;font-size:12.5px;margin-top:6px;white-space:pre-wrap;word-break:break-word}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px;
+  white-space:nowrap;margin-right:5px}
+.b-un{background:#ff6b6b22;border:1px solid #ff6b6b66;color:#ff9d9d}
+.b-rd{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
+.b-wait{background:#c2569622;border:1px solid #c2569666;color:#e59ac0}
+.b-go{background:#5fd3a022;border:1px solid #5fd3a066;color:#8ee5be}
+.b-no{background:#e08b1e22;border:1px solid #e08b1e66;color:#f0b26b}
+/* 명령 — 탭하면 복사된다. 폰에서 타이핑은 못 하시니 이게 유일한 실행 경로다 */
+.cmd{display:block;width:100%;text-align:left;margin-top:8px;background:#1b2540;
+  border:1px solid #2a3a5e;border-radius:8px;padding:10px 11px;color:#9fc9ee;
+  font-family:Consolas,monospace;font-size:12px;word-break:break-all;min-height:44px}
+.cmd:active{background:#22304d}
+.none{color:#7d8ca8;font-size:13px;padding:4px 0}
+.foot{color:#5f6f8c;font-size:11.5px;margin-top:16px;text-align:center;line-height:1.7}
+.foot a{color:#8fb4e8}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(22px + env(safe-area-inset-bottom));
+  background:#2f8f68;color:#fff;padding:9px 18px;border-radius:22px;font-size:13px;
+  opacity:0;transition:.2s;pointer-events:none;z-index:9}
+#toast.on{opacity:1}
+</style></head><body>
+
+<h1>📱 운영콘솔 <span style="font-size:12px;font-weight:400;color:#8fa0bd">모바일</span></h1>
+<div class="upd" id="upd">불러오는 중…</div>
+<div id="app"></div>
+<div class="foot">
+  읽기 전용입니다 — 결재 버튼은 본 PC 에서만 동작합니다.<br>
+  명령을 탭하면 복사됩니다. 리모트 세션에 붙여넣으십시오.<br>
+  <a href="approval.html">PC 화면 보기</a> · <a href="javascript:location.reload()">새로고침</a>
+</div>
+<div id="toast"></div>
+
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+  .catch(function(){return null;});}
+function cmd(c){return '<button class="cmd" onclick="cp(this)" data-c="'+esc(c)+'">'+esc(c)+'</button>';}
+function cp(b){
+  var t=b.dataset.c;
+  // 🔴 navigator.clipboard 는 https 나 localhost 에서만 동작한다. github.io 는 https 라 되지만
+  //    안 될 때를 대비해 textarea 폴백을 둔다 — 폰에서 복사가 안 되면 아무것도 못 하신다.
+  var ok=function(){var e=document.getElementById('toast');e.textContent='복사됨';
+    e.className='on';setTimeout(function(){e.className='';},1100);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(ok,function(){fb(t,ok);});
+  }else fb(t,ok);
+}
+function fb(t,ok){
+  var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity=0;
+  document.body.appendChild(a);a.select();
+  try{document.execCommand('copy');ok();}catch(e){}
+  document.body.removeChild(a);
+}
+function sec(icon,title,n,body,hot,open){
+  return '<sec><details'+(open?' open':'')+'><summary>'+icon+' '+title
+    +'<span class="n'+(hot?' hot':'')+'">'+n+'</span></summary><div class="body">'+body+'</div></details></sec>';
+}
+function dt(s){s=String(s||'');return /^\d{4}-\d{2}-\d{2}/.test(s)?s:'';}
+
+Promise.all([j('batch.json'),j('queue.json'),j('watch.json'),j('session_state.json'),
+             j('pace.json'),j('topicprop.json'),j('v0check.json')])
+.then(function(a){
+  var B=a[0]||{}, Q=a[1]||{}, W=a[2]||{}, SSJ=a[3]||{}, P=a[4]||{}, T=a[5]||{}, V=a[6]||{};
+  var qi=(Q.items||[]), wi=(W.items||[]), ti=(T.items||[]);
+  var v0={}; ((V.items)||[]).forEach(function(x){v0[x.code]=x.verdict;});
+  var today=new Date().toISOString().slice(0,10);
+
+  // ── 사장님 몫: ⑦발행승인 대기 + 오늘까지인 watch + ③글감승인
+  var boss=[];
+  qi.forEach(function(it){
+    if(!it.go) boss.push({t:it.title,c:it.code,
+      why:'⑦ 발행 승인 대기'+(v0[it.code]?' · V0 '+v0[it.code]:''),
+      cmd:'python -m studio.pubqueue go --code '+it.code});
+  });
+  ti.forEach(function(x){
+    if(x.state==='picked') boss.push({t:x.title,c:x.code,why:'③ 글감 승인 대기',
+      cmd:'python -m studio.topicprop approve --code '+x.code});
+  });
+  wi.forEach(function(x){
+    if(x.owner==='user'&&x.state!=='done'&&dt(x.due)&&x.due<=today)
+      boss.push({t:x.what,c:x.id,why:'☑ 조치 (기한 '+x.due+')',cmd:x.cmd||''});
+  });
+  var bossBody = boss.length? boss.map(function(x){
+      return '<div class="card boss"><div class="t">'+esc(String(x.t).slice(0,90))+'</div>'
+        +'<div class="m">'+esc(x.why)+' · '+esc(x.c)+'</div>'
+        +(x.cmd?cmd(x.cmd):'')+'</div>';}).join('')
+    : '<p class="none">✅ 사장님이 지금 하실 것은 없습니다.</p>';
+
+  // ── 지시서: 읽음/안읽음. 판정 주체는 batch.json (approval.html 과 같은 기준)
+  function rst(id){
+    var v=((SSJ.sessions)||{})[id]||{}, b=((B.batches)||{})[id]||{};
+    var oa=dt(b.order_at)||dt(v.last_order_at), lr=dt(v.last_read);
+    if(!b.order&&!v.last_order_at) return {k:'none',lab:'지시서 없음'};
+    if(!lr) return {k:'un',lab:'🔴 안 읽음'};
+    if(oa&&lr<oa) return {k:'un',lab:'🔴 새 지시 안 읽음'};
+    return {k:'rd',lab:'✅ 읽음'+(v.reads?' '+v.reads:'')};
+  }
+  var bs=Object.keys(B.batches||{}).map(function(id){return {id:id,b:B.batches[id]};})
+          .filter(function(x){return x.b.order;})
+          .sort(function(x,y){return String(y.b.order_at||'').localeCompare(String(x.b.order_at||''));});
+  var unread=bs.filter(function(x){return rst(x.id).k==='un';}).length;
+  var ordBody = bs.length? bs.map(function(x){
+      var r=rst(x.id), it=x.b.items||[],
+          dn=it.filter(function(i){return i.state==='done';}).length;
+      return '<div class="card'+(r.k==='un'?' un':'')+'">'
+        +'<span class="badge '+(r.k==='un'?'b-un':'b-rd')+'">'+esc(r.lab)+'</span>'
+        +'<span class="badge b-no">'+dn+'/'+it.length+'</span>'
+        +'<div class="t" style="margin-top:6px">'+esc(String(x.b.title||x.id).slice(0,60))+'</div>'
+        +'<div class="m">'+esc(String(x.b.owner||'미지정'))+' · '+esc(x.id)+'</div></div>';
+    }).join('') : '<p class="none">지시서가 없습니다.</p>';
+
+  // ── 보고: 세션이 실제로 쓴 것만. 문구를 지어내지 않는다.
+  var reps=[];
+  Object.keys((B.currents)||{}).forEach(function(k){
+    var c=(B.currents)[k]||{};
+    if(c.what) reps.push({id:k,t:String(c.since||''),w:String(c.what)});
+  });
+  Object.keys((SSJ.sessions)||{}).forEach(function(k){
+    var v=SSJ.sessions[k]||{};
+    if(v.last_what&&!reps.some(function(r){return r.id===k;}))
+      reps.push({id:k,t:String(v.last_report||''),w:String(v.last_what)});
+  });
+  reps.sort(function(x,y){return String(y.t).localeCompare(String(x.t));});
+  var repBody = reps.length? reps.slice(0,12).map(function(r){
+      return '<div class="card"><div class="m">'+esc(r.id)+' · '+esc(String(r.t).slice(5,16))+'</div>'
+        +'<div class="w">'+esc(r.w.slice(0,300))+'</div></div>';}).join('')
+    : '<p class="none">보고가 없습니다.</p>';
+
+  // ── 발행 대기
+  var qBody = qi.length? qi.map(function(it){
+      return '<div class="card">'
+        +'<span class="badge '+(it.go?'b-go':'b-wait')+'">'+(it.go?'⑦승인 완료':'⑦승인 대기')+'</span>'
+        +(v0[it.code]?'<span class="badge b-no">V0 '+esc(v0[it.code])+'</span>':'')
+        +'<div class="t" style="margin-top:6px">'+esc(String(it.title).slice(0,70))+'</div>'
+        +'<div class="m">'+esc(it.code)+' · '+esc(it.lane||'')+'</div></div>';}).join('')
+    : '<p class="none">발행 대기가 없습니다.</p>';
+
+  // ── 요약 타일
+  // 🔴 pace.json 은 bake 가 구울 때 갱신된다. 날짜가 바뀐 직후에는 **어제 값**이 남아 있다
+  //    (2026-08-31 01:2x 실측: 오늘 0편인데 파일엔 08-30 의 1편이 그대로 있었다).
+  //    낡은 값을 오늘 것처럼 보이면 판단이 틀어진다 — 다르면 숫자 대신 그렇다고 말한다.
+  var stale=(dt(P.date)&&P.date!==today);
+  var pc=(P.count==null?'?':P.count), ph=(P.hard==null?5:P.hard);
+  if(stale){ pc='—'; }
+  var mine=boss.length;
+  var H='<div class="tiles">'
+    +'<div class="tile'+(mine?' hot':' ok')+'"><div class="v">'+mine+'</div><div class="k">내 결재</div></div>'
+    +'<div class="tile'+(stale?'':(pc>=ph?' hot':(pc>0?' warn':' ok')))+'"><div class="v">'+pc+'/'+ph+'</div>'
+    +'<div class="k">'+(stale?'발행(갱신전)':'오늘 발행')+'</div></div>'
+    +'<div class="tile'+(unread?' hot':' ok')+'"><div class="v">'+unread+'</div><div class="k">안 읽은 지시</div></div>'
+    +'</div>';
+
+  H+=sec('🙋','내 결재',boss.length+'건',bossBody,boss.length>0,true);
+  H+=sec('📄','지시서',bs.length+'건'+(unread?' · 🔴'+unread:''),ordBody,unread>0,unread>0);
+  H+=sec('📢','보고',reps.length+'건',repBody,false,false);
+  H+=sec('📋','발행 대기',qi.length+'편 · 재고 '+(P.backlog==null?'?':P.backlog)+'/5',qBody,false,false);
+
+  document.getElementById('app').innerHTML=H;
+  document.getElementById('upd').textContent=
+    '갱신 '+String(B.updated||'').slice(0,16)+' · 발행일 기준 '+String(P.date||'-');
+})
+.catch(function(e){
+  document.getElementById('app').innerHTML=
+    '<p class="none">🔴 데이터를 불러오지 못했습니다: '+esc(e.message)+'</p>';
+});
+// 화면을 켜 두고 계실 수 있으니 주기 갱신. 폰 배터리를 생각해 60초로 둔다.
+setInterval(function(){location.reload();},60000);
+</script></body></html>

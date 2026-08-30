@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-30",
+ "updated": "2026-08-31",
  "items": [
   {
    "id": "redirect-error",
@@ -3324,7 +3324,9 @@
    "due": "2026-08-30",
    "cmd": "python -m studio.v0check --code G4-05",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "V0 재검사 이미 완료·통과 확인(2026-08-30T17:19, V0검사관: 반려했던 3곳 정확히 고쳐짐·조문 일치) — 야간검증 루틴에서 재확인"
   },
   {
    "id": "blocked-pub0830a",
@@ -3382,6 +3384,26 @@
    "due": "2026-08-31",
    "cmd": "본문 sec7 공식 확인 문구를 '기후에너지환경부 2026-04-29 행정예고 원문 + 대한민국 정책브리핑(korea.kr) 2026-07-09 개편안 카드뉴스 기준'으로 수정. 대조자료 = docs/d211_1차출처_기후에너지환경부_20260830.md",
    "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "f115-hold-until-drain",
+   "added": "2026-08-31",
+   "what": "F1-15(해외 여권 분실) 선별 완료했으나 재고 5/5 라 사장님께 올리지 않고 보류. 추석 9/25 앵커라 시한이 있다 — 승인된 3건(A5-09·B2-12·F1-14) 중 하나라도 배출되면 그때 topicprop kakao 로 올릴 것",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.topicprop verify",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-31",
+   "result": "보류 취소 — 사장님 지적으로 재측정. pubqueue add 게이트는 pace.backlog(), 즉 queue.json 만 센다(현재 2건). 승인해도 못 들어간다고 한 것은 틀렸다. 승인 요청 정상 상신."
+  },
+  {
+   "id": "topicprop-approve-20260831",
+   "added": "2026-08-31",
+   "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) F1-15 해외 여행 중 여권 분실 신고 절차 재외공관 임시여행증명서 총정리 (2026 ·",
+   "due": "2026-08-31",
+   "cmd": "python -m studio.topicprop approve --code <코드>",
+   "owner": "user",
    "state": "todo"
   }
  ]
