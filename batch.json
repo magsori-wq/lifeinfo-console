@@ -782,8 +782,8 @@
      "code": "D4-11",
      "title": "유효기간 지난 상품권 환불 방법 (라이브 발행)",
      "state": "done",
-     "note": "라이브 발행 완료 + 4채널 완결 실측 — 블로그 215편 포함 · 네이버 224395152780 · 쓰레드 DcqNeg1gX8a(이미지 오류로 재게시) · 인스타 DcqKnmqEVsr · 라이브 교차링크 새 URL 반영 확인 · setgate 미완 없음",
-     "at": "2026-08-30 18:55"
+     "note": "3채널(쓰레드·인스타·네이버) 전부 osmu에 URL 기록 확인됨 — 쓰레드는 compose버그로 내가 게시 못했으나 다른 경로로 이미 게시됨(URL DcqNeg1gX8a). setgate 4채널 미완 없음, crosslink 재적용(idempotent), 발행보드 20/20. 색인요청만 남음(사용자 몫). 커밋+푸시 928fb87",
+     "at": "2026-08-31 01:46"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -798,13 +798,13 @@
      "code": "D2-11",
      "title": "전기차 공공충전요금 개편 (라이브 발행)",
      "state": "doing",
-     "note": "보류 해제(2026-08-30 19:04) — 1차출처 확인 완료. 수치·시행일 검증됨(korea.kr 정책브리핑 2026-07-09, 초안값과 100% 일치 / 324.4·347.2는 mcee 4-29 원문 '현행' 칸으로 배치 정확). 단 초안이 4곳에서 '확정 보도자료(2026-07-01) 원문 직접 확인'이라 적었는데 부처 게시판엔 그 문서가 없다(최신 06-11) → 출처 문구 정정 후 발행하도록 지시서 갱신",
-     "at": "2026-08-30 19:04"
+     "note": "🧵 쓰레드 해법 지시서에 내림(02:1x) — 클립보드는 정상이다. 관제탑이 어제 같은 PC에서 이 절차로 실제 게시했다. 핵심: ①타이핑 금지(compose가 ASCII 드롭) ②stdin 파이프 금지(cp949) — threadsdraft 최신판 사용 ③링크 2개면 카드 X를 두 번 ④이미지는 SetDataObject(img,true)+STA. 3회 넘게 재시도 말고 관측 남기고 대기할 것",
+     "at": "2026-08-31 02:12"
     }
    ],
    "owner": "이과장(작업 세션)",
-   "order": "🚀 오늘(2026-08-31) 발행한다 — 사장님 지시 (관제탑 갱신 00:2x)\n\n사장님이 밖에서 \"이과장에게 글발행지시해! 오늘 31일이야\" 라고 하셨다.\n날짜가 바뀌어 발행 카운터가 리셋됐다. 지금 재서 확인한 게이트다:\n\n  ✅ 오늘 발행     0편 / 상한 5   (2026-08-31 기준으로 실측)\n  ✅ 4채널 세트    미완 없음 — 다음 글을 시작해도 된다\n  ✅ 사장님 go도장 2026-08-30T16:55:17\n  ✅ 수치·시행일   1차출처 검증 완료 (docs/d211_1차출처_기후에너지환경부_20260830.md)\n  ⚠️ 실행 직전에 다시 재라 — 위는 00:2x 스냅샷이다.\n\n▶ 순서는 그대로다. **출처 문구 정정이 먼저다.**\n  수치는 손대지 마라. 고치는 것은 출처 서술 네 곳뿐이다(아래 원래 지시 참조).\n  정정 → 푸시 → 게이트 재측정 → 발행 → 라이브 확인 → 보드 마킹.\n\n📱 **끝나거나 막히면 사장님께 카톡으로 알려라** — 지금 외출 중이시고\n   콘솔은 읽기 전용이라 보드에만 적으면 모르신 채 계신다.\n   도구 = KakaotalkChat-MemoChat (200자). 보드 기록과 **둘 다** 한다.\n   ⚠️ PushNotification 은 휴대폰에 안 뜬다(2026-08-30 실측) — 카톡만 쓴다.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n(아래는 원래 지시서)\n\n📮 pub0830d — 이과장(작업 세션) 앞 지시서\n\n━━━ 무엇을 ━━━\n  [D2-11] D2-11 라이브 발행 — 전기차 공공충전요금 개편 (사장님 go 승인 2026-08-30 16:55)\n  왜: 동결 통과 대상이고 사장님이 승인하셨다. 앞 글이 4채널 완결됐으니 이제 다음 편 차례다(한 편씩 완결 규칙).\n\n━━━ 어떻게 ━━━\n  🔴 **발행 창구는 GitHub Actions.** 터미널 publish-flow --publish 는 게이트가 막는다.\ngh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D2-11 -f mode=live -f confirm=PUBLISH -f file='전기차공공충전요금개편.txt' -f title='전기차 공공충전요금 개편 총정리 (2026년 8월 시행)'\n그다음 gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status.\n【사전 확인 완료 — 다시 재지 마라】 go 도장 ✅16:55:17 · V0 🟢pass(첨부 hwpx 전 수치 대조) · heading OK · dupcheck 🟢 · bodydup 🟢0.056 · 초안 origin/main 푸시 확인 · 오늘 발행 0/5(08-31 재측정) · setgate 4채널 미완 없음(직전 글 완결).\n🔴 **발행 중 webapp/* 커밋·푸시 금지** — 러너도 lifeinfo_db.txt 를 고친다(2026-08-09 사고).\n【발행 후 — 묻지 말고 이어간다】\n ①gh run view 마지막 스텝 ✓ ②progress.json 의 pipeline.code 확인\n ③검색설명 — 🔴 CLAUDE.md 함정 ④(본문 에디터 로드 대기)를 반드시 지켜라. 그거 하나 빠뜨려 8회 실패했다: 편집화면 → get_page_text 로 본문 보이는지 확인 → 스피너면 편집 URL 새로고침 → 그 뒤에야 타이핑 → batchexecute 200 → seodesc scan 으로 라이브 재조회\n ④OSMU 3채널 — 쓰레드는 `python -m studio.threadsdraft --code D2-11` 한 줄이면\n   원고가 클립보드에 들어가고 첨부 이미지 경로·500자·교차링크까지 한 번에 검사된다(08-30 신설).\n   ⚠️ 이 명령은 **발행 후**에 쓴다(DB 에 글이 등록돼야 돈다).\n   ⚠️ 첨부는 반드시 insta/thread/thread_D2-11_*.png — thumbs/ 썸네일 재탕 금지(코드가 막는다).\n   ⚠️ 08-30 에 옆 파일을 집어 엉뚱한 카드가 게시된 사고가 있었다. 경로를 눈으로 대조할 것.\n   네이버는 python -m studio.pipeline naver-draft --code D2-11.\n ⑤URL 기록: naver-link / threads-link / insta-link → 끝나면 blogger.py crosslink\n  🔴 한 번에 **한 편**만 한다. 끝내고 보고한 뒤 다음을 받는다.\n\n━━━ 지금 걸린 게이트 (실행 직전에 다시 재라) ━━━\n  🔗 4채널 세트 : ✅ 미완 없음\n  ⏱️ 발행 페이스 : python -m studio.pace 로 그 자리에서 재라\n  ⛔ 게이트를 스스로 뚫지 마라(--force 류). 막히면 멈추고 보고한다.\n\n━━━ 네 권한 (python -m studio.roles 로 언제든 확인) ━━━\n\n━━━ 발행 진행 보드 (20단계 — 반드시 전진시킨다) ━━━\n  🔴 2026-08-28 사장님 지시: *\"발행 진행 절차를 엄격히 준수하도록 해!\"*\n     전에는 보드가 안 전진해도 아무도 몰랐다 — 어떤 글이 20단계 중 11개만\n     찍힌 채 발행까지 갔다. 원인은 `--step` 에 매번 `--title` 을 요구해\n     지시서만 든 세션이 찍을 수 없었던 것이다(오늘 고쳤다).\n  시작:  python -m studio.board_seed --code <코드> --title \"<짧은제목>\" --start\n  전진:  python -m studio.board_seed --code <코드> --step <N>      ← 제목 불필요\n  단계:  python -c \"from studio import board_seed as b;\n         print(*['%d %s'%(i,s) for i,s in enumerate(b.STEPS_PUBLISH,1)],sep=chr(10))\"\n  🔴 한 단계 끝낼 때마다 찍는다. 몰아서 찍지 마라 — 어디서 멈췄는지 못 본다.\n\n━━━ 보고 경로 ━━━\n  끝냄  : python -m studio.batchboard mark --batch pub0830d --step <N> --note \"<실측 한 줄>\"\n  진행중: python -m studio.batchboard now  --batch pub0830d --step <N> --what \"<지금 무엇>\"\n  🔴 note 는 **실측 한 줄**이다 — 무엇을 어떻게 확인했는지. 느낌이 아니라 출력.\n\n━━━ 막히면 ━━━\n  1. 거부·실패 문구를 **한 글자도 바꾸지 말고** `batchboard now` 에 남긴다\n  2. 사람 손이 필요하면 결재함에도:\n     python -m studio.watch add --id blocked-pub0830d --owner user --due <오늘> \\\n        --what \"<무엇이 왜 막혔나>\" --cmd \"<사장님이 그대로 실행할 한 줄>\"\n  3. **그 자리에 남아 이 배치를 계속 폴링한다.** 다른 배치로 옮기지 않는다.\n\n━━━ 이 지시서가 전부다 ━━━\n  🔴 관제탑은 **메시지로 지시하지 않는다.** 채널이 둘이면 어느 것이 최신인지\n     알 수 없고, 메시지는 이력에 안 남아 다음 세션이 못 본다.\n     새 지시는 이 배치의 지시서가 **갱신되는 것**으로만 온다.\n     python -m studio.batchboard order --id pub0830d",
-   "order_at": "2026-08-31 01:23"
+   "order": "🧵 쓰레드 게시 — 막힌 자리를 뚫는 절차 (관제탑 2026-08-31 02:1x)\n\n네 보고를 읽었다. \"Threads compose 버그 + Windows 클립보드 동시장애(시스템레벨)\"\n라고 판단했는데 — 🔴 **클립보드는 정상이다.** 관제탑이 어제(08-30 19시경)\n같은 PC 에서 직전 글(상품권 환불) 쓰레드를 이 방법으로 **실제로 게시했다.** 재시도를 멈춘 판단은\n옳았다(같은 것을 반복해서 얻을 게 없다). 방법이 달랐을 뿐이다.\n\n━━━ 왜 안 됐나 ━━━\n  ⛔ **타이핑하지 마라.** `computer type` 으로 넣으면 Threads compose 가\n     ASCII(공백·숫자·영문)를 드롭한다 — 네가 관측한 그대로다. 이건 실제 버그다.\n  ⛔ **stdin 파이프로 클립보드에 넣지 마라.** PowerShell 5.1 이 표준입력을\n     cp949 로 읽어 한글이 깨진다. 어제 사장님 작성창에 깨진 글이 붙었다.\n     → `studio/threadsdraft.py` 를 08-30 에 **임시파일 + Get-Content -Encoding UTF8**\n       로 고쳤다. 최신을 받아라(git pull). 옛 판을 쓰면 또 깨진다.\n\n━━━ 되는 절차 (관제탑이 어제 이대로 성공) ━━━\n  1) 원고를 클립보드에:\n       python -m studio.threadsdraft --code D2-11\n     → 484자급이면 통과. 첨부 경로·500자·교차링크까지 한 번에 검사된다.\n     ✅ 확인법(중요): Get-Clipboard 를 콘솔에 찍지 마라 — **터미널이 cp949 라 깨져 보인다.**\n        깨진 게 아니라 출력이 깨지는 것이다. 파일로 내려 파이썬으로 읽어 확인하라:\n        powershell -NoProfile -Command \"Get-Clipboard -Raw | Out-File -FilePath $env:TEMP\\c.txt -Encoding utf8\"\n        그 뒤 파이썬으로 utf-8-sig 로 열어 길이·첫 줄을 본다.\n  2) 브라우저: threads.com/@magsori8975 → 왼쪽 **「새로운 스레드」** 클릭\n     (프로필의 \"새로운 소식이 있나요?\" 를 누르면 답글 탭으로 새기 쉽다)\n  3) 작성창 클릭 → **ctrl+v** (타이핑 아님)\n  4) 🔴 **링크 카드를 닫아라.** 본문에 URL 이 2개면 카드가 **연달아 두 번** 뜬다.\n     하나 닫으면 다음 링크로 카드가 다시 생긴다 — 카드 우상단 X 를 **두 번** 눌러라.\n     카드가 다 사라져야 이미지 아이콘이 나온다.\n  5) 이미지는 **클립보드로** 넣는다(file_upload 는 세션공유 파일만 허용돼 막힌다):\n       powershell -NoProfile -STA -Command \"Add-Type -AssemblyName System.Windows.Forms,System.Drawing; $img=[System.Drawing.Image]::FromFile('C:\\lifeinfo\\insta\\thread\\thread_D2-11_<eng>.png'); [System.Windows.Forms.Clipboard]::SetDataObject($img,$true); [System.Windows.Forms.Clipboard]::ContainsImage()\"\n     🔴 `SetImage` 가 아니라 **`SetDataObject($img,$true)`** 다 — 두 번째 인자가\n        persist 이고, 이게 없으면 PowerShell 이 끝나는 순간 클립보드가 비워진다.\n     🔴 `-STA` 를 빠뜨리지 마라. 마지막 True 출력으로 실제 적재를 확인한다.\n  6) 텍스트 영역의 **빈 곳**(링크 아닌 자리) 클릭 → **ctrl+v** → 이미지가 붙는다\n  7) 게시 → 잠시 뒤 프로필에서 URL 을 얻는다:\n       document.querySelectorAll('a[href*=\"/post/\"]') 의 첫 href\n  8) 기록: python -m studio.pipeline threads-link --code D2-11 --url <URL>\n     → 그다음 python studio/blogger.py crosslink --code D2-11\n\n━━━ 그래도 안 되면 ━━━\n  ⛔ 3회 넘게 재시도하지 마라. 어느 단계에서 무엇이 관측됐는지(요소·좌표·응답)를\n     batchboard now 에 적고 결재함(watch --owner user)에 올린 뒤 **그 자리에서 대기**하라.\n     관제탑이 브라우저를 직접 잡아 뚫는다 — 어제도 그렇게 했다.\n\n━━━ 나머지 3채널 ━━━\n  인스타 카드 6장·네이버 원고는 **네가 이미 끝냈다**(사장님 게시 대기). 잘했다.\n  쓰레드만 채우면 4채널 세트가 완결되고 다음 글로 갈 수 있다.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n(아래는 앞선 지시서)\n\n🚀 오늘(2026-08-31) 발행한다 — 사장님 지시 (관제탑 갱신 00:2x)\n\n사장님이 밖에서 \"이과장에게 글발행지시해! 오늘 31일이야\" 라고 하셨다.\n날짜가 바뀌어 발행 카운터가 리셋됐다. 지금 재서 확인한 게이트다:\n\n  ✅ 오늘 발행     0편 / 상한 5   (2026-08-31 기준으로 실측)\n  ✅ 4채널 세트    미완 없음 — 다음 글을 시작해도 된다\n  ✅ 사장님 go도장 2026-08-30T16:55:17\n  ✅ 수치·시행일   1차출처 검증 완료 (docs/d211_1차출처_기후에너지환경부_20260830.md)\n  ⚠️ 실행 직전에 다시 재라 — 위는 00:2x 스냅샷이다.\n\n▶ 순서는 그대로다. **출처 문구 정정이 먼저다.**\n  수치는 손대지 마라. 고치는 것은 출처 서술 네 곳뿐이다(아래 원래 지시 참조).\n  정정 → 푸시 → 게이트 재측정 → 발행 → 라이브 확인 → 보드 마킹.\n\n📱 **끝나거나 막히면 사장님께 카톡으로 알려라** — 지금 외출 중이시고\n   콘솔은 읽기 전용이라 보드에만 적으면 모르신 채 계신다.\n   도구 = KakaotalkChat-MemoChat (200자). 보드 기록과 **둘 다** 한다.\n   ⚠️ PushNotification 은 휴대폰에 안 뜬다(2026-08-30 실측) — 카톡만 쓴다.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n(아래는 원래 지시서)\n\n📮 pub0830d — 이과장(작업 세션) 앞 지시서\n\n━━━ 무엇을 ━━━\n  [D2-11] D2-11 라이브 발행 — 전기차 공공충전요금 개편 (사장님 go 승인 2026-08-30 16:55)\n  왜: 동결 통과 대상이고 사장님이 승인하셨다. 앞 글이 4채널 완결됐으니 이제 다음 편 차례다(한 편씩 완결 규칙).\n\n━━━ 어떻게 ━━━\n  🔴 **발행 창구는 GitHub Actions.** 터미널 publish-flow --publish 는 게이트가 막는다.\ngh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D2-11 -f mode=live -f confirm=PUBLISH -f file='전기차공공충전요금개편.txt' -f title='전기차 공공충전요금 개편 총정리 (2026년 8월 시행)'\n그다음 gh run watch <runId> -R magsori-wq/lifeinfo-source --exit-status.\n【사전 확인 완료 — 다시 재지 마라】 go 도장 ✅16:55:17 · V0 🟢pass(첨부 hwpx 전 수치 대조) · heading OK · dupcheck 🟢 · bodydup 🟢0.056 · 초안 origin/main 푸시 확인 · 오늘 발행 0/5(08-31 재측정) · setgate 4채널 미완 없음(직전 글 완결).\n🔴 **발행 중 webapp/* 커밋·푸시 금지** — 러너도 lifeinfo_db.txt 를 고친다(2026-08-09 사고).\n【발행 후 — 묻지 말고 이어간다】\n ①gh run view 마지막 스텝 ✓ ②progress.json 의 pipeline.code 확인\n ③검색설명 — 🔴 CLAUDE.md 함정 ④(본문 에디터 로드 대기)를 반드시 지켜라. 그거 하나 빠뜨려 8회 실패했다: 편집화면 → get_page_text 로 본문 보이는지 확인 → 스피너면 편집 URL 새로고침 → 그 뒤에야 타이핑 → batchexecute 200 → seodesc scan 으로 라이브 재조회\n ④OSMU 3채널 — 쓰레드는 `python -m studio.threadsdraft --code D2-11` 한 줄이면\n   원고가 클립보드에 들어가고 첨부 이미지 경로·500자·교차링크까지 한 번에 검사된다(08-30 신설).\n   ⚠️ 이 명령은 **발행 후**에 쓴다(DB 에 글이 등록돼야 돈다).\n   ⚠️ 첨부는 반드시 insta/thread/thread_D2-11_*.png — thumbs/ 썸네일 재탕 금지(코드가 막는다).\n   ⚠️ 08-30 에 옆 파일을 집어 엉뚱한 카드가 게시된 사고가 있었다. 경로를 눈으로 대조할 것.\n   네이버는 python -m studio.pipeline naver-draft --code D2-11.\n ⑤URL 기록: naver-link / threads-link / insta-link → 끝나면 blogger.py crosslink\n  🔴 한 번에 **한 편**만 한다. 끝내고 보고한 뒤 다음을 받는다.\n\n━━━ 지금 걸린 게이트 (실행 직전에 다시 재라) ━━━\n  🔗 4채널 세트 : ✅ 미완 없음\n  ⏱️ 발행 페이스 : python -m studio.pace 로 그 자리에서 재라\n  ⛔ 게이트를 스스로 뚫지 마라(--force 류). 막히면 멈추고 보고한다.\n\n━━━ 네 권한 (python -m studio.roles 로 언제든 확인) ━━━\n\n━━━ 발행 진행 보드 (20단계 — 반드시 전진시킨다) ━━━\n  🔴 2026-08-28 사장님 지시: *\"발행 진행 절차를 엄격히 준수하도록 해!\"*\n     전에는 보드가 안 전진해도 아무도 몰랐다 — 어떤 글이 20단계 중 11개만\n     찍힌 채 발행까지 갔다. 원인은 `--step` 에 매번 `--title` 을 요구해\n     지시서만 든 세션이 찍을 수 없었던 것이다(오늘 고쳤다).\n  시작:  python -m studio.board_seed --code <코드> --title \"<짧은제목>\" --start\n  전진:  python -m studio.board_seed --code <코드> --step <N>      ← 제목 불필요\n  단계:  python -c \"from studio import board_seed as b;\n         print(*['%d %s'%(i,s) for i,s in enumerate(b.STEPS_PUBLISH,1)],sep=chr(10))\"\n  🔴 한 단계 끝낼 때마다 찍는다. 몰아서 찍지 마라 — 어디서 멈췄는지 못 본다.\n\n━━━ 보고 경로 ━━━\n  끝냄  : python -m studio.batchboard mark --batch pub0830d --step <N> --note \"<실측 한 줄>\"\n  진행중: python -m studio.batchboard now  --batch pub0830d --step <N> --what \"<지금 무엇>\"\n  🔴 note 는 **실측 한 줄**이다 — 무엇을 어떻게 확인했는지. 느낌이 아니라 출력.\n\n━━━ 막히면 ━━━\n  1. 거부·실패 문구를 **한 글자도 바꾸지 말고** `batchboard now` 에 남긴다\n  2. 사람 손이 필요하면 결재함에도:\n     python -m studio.watch add --id blocked-pub0830d --owner user --due <오늘> \\\n        --what \"<무엇이 왜 막혔나>\" --cmd \"<사장님이 그대로 실행할 한 줄>\"\n  3. **그 자리에 남아 이 배치를 계속 폴링한다.** 다른 배치로 옮기지 않는다.\n\n━━━ 이 지시서가 전부다 ━━━\n  🔴 관제탑은 **메시지로 지시하지 않는다.** 채널이 둘이면 어느 것이 최신인지\n     알 수 없고, 메시지는 이력에 안 남아 다음 세션이 못 본다.\n     새 지시는 이 배치의 지시서가 **갱신되는 것**으로만 온다.\n     python -m studio.batchboard order --id pub0830d",
+   "order_at": "2026-08-31 02:12"
   },
   "remote0830": {
    "title": "🛰️ 리모트 인계 — 2026-08-30 저녁(사장님 외출)",
@@ -821,16 +821,44 @@
    "order_at": "2026-08-30 19:16"
   }
  },
- "updated": "2026-08-31 01:23:47",
+ "updated": "2026-08-31 02:12:03",
  "current": {
-  "batch": "pub0830a",
+  "batch": "pub0830d",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "D4-11 쓰레드 재시도(5분 대기 후) — 여전히 버그 재현. ASCII 프로브 'A B' 타이핑 → 필드엔 빈 줄(\\n)만 남음. 새 탭(746015328)에서 재확인, 5분 전과 동일 증상. 사장님 요청대로 5분 대기 후 1회만 재시도, 추가 재시도는 안 함(재시도 금지 규칙).",
-  "since": "17:21"
+  "what": "D2-11 사후발견: 출처정정 4곳(커밋5554e39) grep패턴이 좁아서 '2026년 7월 1일'(하이픈없는표기) 2곳(FAQ섹션)을 놓쳤다 — 이미 라이브였음. 발견 즉시 로컬수정+커밋(8d9e100)+push, blogger.py update-post로 라이브도 갱신 완료. curl 재확인: '확정' 검색결과 1건뿐이고 그것도 내가 수정한 '확인하지 못했습니다' 문장. bodydup 재확인 0.045 이상없음.",
+  "since": "01:58"
  },
  "log": [
+  {
+   "t": "02:12:03",
+   "text": "🔸 D2-11 진행중 — 전기차 공공충전요금 개편 (라이브 발행)"
+  },
+  {
+   "t": "02:12:03",
+   "text": "📄 pub0830d 작업 지시 등록(6213자, 2026-08-31 02:12)"
+  },
+  {
+   "t": "02:04:12",
+   "text": "🔸 D2-11 진행중 — 전기차 공공충전요금 개편 (라이브 발행)"
+  },
+  {
+   "t": "02:02:29",
+   "text": "▶   — 1/7단계 · D2-11 사후발견: 출처정정 4곳(커밋5554e39) grep패턴이 좁아서 '2026년 7월 1일'(하이픈없는표기) 2곳(FAQ섹션)을 놓쳤다 — 이미 라이브였음. 발견 즉시 로컬수정+커밋(8d9e100)+push, blogger.py update-post로 라이브도 갱신 완료. curl 재확인: '확정' 검색결과 1건뿐이고 그것도 내가 수정한 '확인하지 못했습니다' 문장. bodydup 재확인 0.045 이상없음."
+  },
+  {
+   "t": "01:58:16",
+   "text": "▶   — 1/7단계 · D2-11 쓰레드 게시 재시도 — 여전히 동일 버그. ASCII프로브 'A B' → 빈줄만. threadsdraft 클립보드 복사도 rc=1 실패, PowerShell Set-Clipboard 직접 실행도 'Requested Clipboard operation did not succeed'(ExternalException)로 실패 — Threads뿐 아니라 Windows 클립보드 자체가 지금 막혀있다. 프로세스 조사는 금지규칙이라 안 함. 원고+이미지는 게이트통과 상태(threadsdraft 확인: 483/500자·이미지경로 정상). 재시도 중단하고 대기."
+  },
+  {
+   "t": "01:52:31",
+   "text": "🔸 D2-11 진행중 — 전기차 공공충전요금 개편 (라이브 발행)"
+  },
+  {
+   "t": "01:46:36",
+   "text": "✅ D4-11 완료 — 유효기간 지난 상품권 환불 방법 (라이브 발행)"
+  },
   {
    "t": "01:23:47",
    "text": "📄 pub0830d 작업 지시 등록(3448자, 2026-08-31 01:23)"
@@ -962,34 +990,6 @@
   {
    "t": "16:34:53",
    "text": "📋 배치 '✍️ F1-14 초안 — 해외여행 축산물 반입 과태료 (추석 4주 전)' 등록 — 1항목"
-  },
-  {
-   "t": "16:34:53",
-   "text": "🏷️ draft0830a 담당=이과장(작업 세션)"
-  },
-  {
-   "t": "16:34:29",
-   "text": "📄 draft0830a 작업 지시 등록(2336자, 2026-08-30 16:34)"
-  },
-  {
-   "t": "16:34:29",
-   "text": "📋 배치 '✍️ A5-09 초안 — 퇴직금 미지급 신고·처벌 (2026-09-18 시행)' 등록 — 1항목"
-  },
-  {
-   "t": "16:33:19",
-   "text": "🗄️ 완료 배치 2개 아카이브(today0818, today0828)"
-  },
-  {
-   "t": "16:33:05",
-   "text": "✅ K1 완료 — 🔧 [관제탑] 색인 2/214 파고들기 — S4 와 짝"
-  },
-  {
-   "t": "16:33:04",
-   "text": "⚪ S9 판정완료·해당없음 — ⛔ [사장님·하지 말 것] 애드센스 재검토 버튼"
-  },
-  {
-   "t": "16:33:04",
-   "text": "✅ S5 완료 — 🔐 [사장님 5순위] GitHub App 'Cursor' 권한"
   }
  ],
  "currents": {
@@ -1064,6 +1064,14 @@
    "step": 1,
    "what": "D4-11 쓰레드 재시도(5분 대기 후) — 여전히 버그 재현. ASCII 프로브 'A B' 타이핑 → 필드엔 빈 줄(\\n)만 남음. 새 탭(746015328)에서 재확인, 5분 전과 동일 증상. 사장님 요청대로 5분 대기 후 1회만 재시도, 추가 재시도는 안 함(재시도 금지 규칙).",
    "since": "17:21"
+  },
+  "pub0830d": {
+   "batch": "pub0830d",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "D2-11 사후발견: 출처정정 4곳(커밋5554e39) grep패턴이 좁아서 '2026년 7월 1일'(하이픈없는표기) 2곳(FAQ섹션)을 놓쳤다 — 이미 라이브였음. 발견 즉시 로컬수정+커밋(8d9e100)+push, blogger.py update-post로 라이브도 갱신 완료. curl 재확인: '확정' 검색결과 1건뿐이고 그것도 내가 수정한 '확인하지 못했습니다' 문장. bodydup 재확인 0.045 이상없음.",
+   "since": "01:58"
   }
  }
 }

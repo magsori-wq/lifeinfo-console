@@ -68,6 +68,11 @@ summary .n.hot{color:#ff9d9d;border-color:#ff6b6b66}
   border:1px solid #2a3a5e;border-radius:8px;padding:10px 11px;color:#9fc9ee;
   font-family:Consolas,monospace;font-size:12px;word-break:break-all;min-height:44px}
 .cmd:active{background:#22304d}
+/* 원고 복사 버튼 — 명령보다 크게. 폰에서 이걸 누르는 게 주된 동작이다 */
+.cmd.big{font-family:inherit;font-size:14px;color:#cfe0f7;background:#22304d;
+  border-color:#3b6ea5;padding:13px 12px;min-height:52px;line-height:1.5}
+.cmd.big b{color:#8ee5be;font-weight:700}
+.cmd.big .sub{color:#8fa0bd;font-size:11.5px}
 .none{color:#7d8ca8;font-size:13px;padding:4px 0}
 .foot{color:#5f6f8c;font-size:11.5px;margin-top:16px;text-align:center;line-height:1.7}
 .foot a{color:#8fb4e8}
@@ -93,6 +98,23 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
 function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
   .catch(function(){return null;});}
 function cmd(c){return '<button class="cmd" onclick="cp(this)" data-c="'+esc(c)+'">'+esc(c)+'</button>';}
+// 🔴 원고 복사 (2026-08-31 사장님 지시 "운영콘솔을 통해 복사 붙여 넣기 하면 되잖아").
+//    원고는 수천 자라 HTML 속성에 담으면 이스케이프·개행에서 반드시 깨진다.
+//    배열에 두고 **인덱스로만** 참조한다.
+var TXT=[];
+function txtBtn(label,text,note){
+  var i=TXT.push(text)-1;
+  return '<button class="cmd big" onclick="cpi('+i+')">📋 '+esc(label)+' 복사'
+    +' <b>'+text.length+'자</b>'+(note?'<br><span class="sub">'+esc(note)+'</span>':'')+'</button>';
+}
+function cpi(i){
+  var t=TXT[i], ok=function(){var e=document.getElementById('toast');
+    e.textContent='복사됨 '+t.length+'자';e.className='on';
+    setTimeout(function(){e.className='';},1400);};
+  if(navigator.clipboard&&navigator.clipboard.writeText)
+    navigator.clipboard.writeText(t).then(ok,function(){fb(t,ok);});
+  else fb(t,ok);
+}
 function cp(b){
   var t=b.dataset.c;
   // 🔴 navigator.clipboard 는 https 나 localhost 에서만 동작한다. github.io 는 https 라 되지만
@@ -116,9 +138,10 @@ function sec(icon,title,n,body,hot,open){
 function dt(s){s=String(s||'');return /^\d{4}-\d{2}-\d{2}/.test(s)?s:'';}
 
 Promise.all([j('batch.json'),j('queue.json'),j('watch.json'),j('session_state.json'),
-             j('pace.json'),j('topicprop.json'),j('v0check.json')])
+             j('pace.json'),j('topicprop.json'),j('v0check.json'),j('osmu_text.json')])
 .then(function(a){
   var B=a[0]||{}, Q=a[1]||{}, W=a[2]||{}, SSJ=a[3]||{}, P=a[4]||{}, T=a[5]||{}, V=a[6]||{};
+  var OT=a[7]||{};
   var qi=(Q.items||[]), wi=(W.items||[]), ti=(T.items||[]);
   var v0={}; ((V.items)||[]).forEach(function(x){v0[x.code]=x.verdict;});
   var today=new Date().toISOString().slice(0,10);
@@ -208,7 +231,24 @@ Promise.all([j('batch.json'),j('queue.json'),j('watch.json'),j('session_state.js
     +'<div class="tile'+(unread?' hot':' ok')+'"><div class="v">'+unread+'</div><div class="k">안 읽은 지시</div></div>'
     +'</div>';
 
+  // ── 🙋 올릴 것 — 원고를 **여기서 바로 복사**한다(드라이브·문서 거칠 필요 없다)
+  var ot=(OT.items||[]);
+  var otN=ot.reduce(function(s,x){return s+(x.channels||[]).length;},0);
+  var otBody = ot.length? ot.map(function(it){
+      return '<div class="card"><div class="t">'+esc(String(it.title).slice(0,60))+'</div>'
+        +'<div class="m">'+esc(it.code)+' · <a href="'+esc(it.url)+'" style="color:#8fb4e8">라이브 글</a></div>'
+        + (it.channels||[]).map(function(c){
+            var note='';
+            if(c.cards&&c.cards.length) note='카드 '+c.cards.length+'장 (파일명 끝 번호가 게시 순서)';
+            else if(c.img) note='첨부 '+c.img;
+            else if(c.key==='naver') note='표·목록이 많아 PC 권장';
+            return txtBtn(c.label+' 원고',c.text,note);
+          }).join('')
+        +'</div>';}).join('')
+    : '<p class="none">올릴 원고가 없습니다.</p>';
+
   H+=sec('🙋','내 결재',boss.length+'건',bossBody,boss.length>0,true);
+  H+=sec('📤','올릴 것 — 원고 복사',otN?otN+'채널':'0',otBody,otN>0,otN>0);
   H+=sec('📄','지시서',bs.length+'건'+(unread?' · 🔴'+unread:''),ordBody,unread>0,unread>0);
   H+=sec('📢','보고',reps.length+'건',repBody,false,false);
   H+=sec('📋','발행 대기',qi.length+'편 · 재고 '+(P.backlog==null?'?':P.backlog)+'/5',qBody,false,false);
