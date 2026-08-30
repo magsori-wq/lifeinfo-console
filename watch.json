@@ -3420,6 +3420,15 @@
    "state": "done",
    "done_at": "2026-08-31",
    "result": "관제탑이 직접 게시 완료 — https://www.threads.com/@magsori8975/post/DcrXe7UE2Wd. 클립보드 잠김은 풀렸다(ExternalException 아님, 그냥 비어 있었음). 절차: threadsdraft 483자 → 새로운스레드 → ctrl+v → 링크카드 X → SetDataObject(img,true)+STA → ctrl+v → 게시"
+  },
+  {
+   "id": "naver-post-d211-0831",
+   "added": "2026-08-31",
+   "what": "D2-11 전기차 공공충전요금 개편 — 네이버 블로그 게시 (원고 준비완료, 게이트 통과). 네이버는 API 종료+확장 차단으로 Claude가 게시 불가 — 사람 손 필요.",
+   "due": "2026-08-31",
+   "cmd": "C:\\lifeinfo\\naver_post.bat 더블클릭 → 코드 D2-11 입력 → 원고 자동탐색+클립보드 세팅+글쓰기창 열림 → 붙여넣기·게시 → URL 확보되면 python -m studio.pipeline naver-link --code D2-11 --url <URL> 로 기록",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }
