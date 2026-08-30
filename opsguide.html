@@ -1,0 +1,216 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>운영관리 지침 — 오탐과 정리</title><style>
+:root{--bg:#0f1115;--fg:#e6e8ee;--dim:#9aa3b2;--line:#232833;--card:#161a21;
+      --accent:#4da3ff;--warn:#ffb454;--red:#ff6b6b;--ok:#4ec9a6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:15px/1.75 "Malgun Gothic","맑은 고딕",system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 20px 80px}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+     border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:24px}
+.top h1{font-size:22px;margin:0}
+.top .src{color:var(--dim);font-size:12px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+h2{font-size:19px;margin:34px 0 12px;padding-top:14px;border-top:1px solid var(--line)}
+h3{font-size:16px;margin:22px 0 8px;color:var(--accent)}
+h4{font-size:15px;margin:16px 0 6px;color:var(--dim)}
+p{margin:10px 0}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:4px 0}
+code{background:#1c2029;border:1px solid var(--line);border-radius:4px;
+     padding:1px 5px;font-family:Consolas,monospace;font-size:13px;color:#ffd479}
+pre{background:#12151b;border:1px solid var(--line);border-radius:8px;
+    padding:12px 14px;overflow-x:auto}
+pre code{background:none;border:0;padding:0;color:#cfd6e4;font-size:13px}
+blockquote{margin:12px 0;padding:10px 14px;border-left:3px solid var(--accent);
+           background:var(--card);border-radius:0 8px 8px 0;color:#c8cedb}
+blockquote p{margin:4px 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;
+      overflow-x:auto;white-space:nowrap}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;white-space:normal}
+th{background:#1a1f28;color:var(--dim);font-weight:600}
+tr:nth-child(even) td{background:#13161d}
+hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+a{color:var(--accent)}
+strong{color:#fff}
+em{color:var(--dim)}
+.gen{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);
+     color:var(--dim);font-size:12px}
+</style></head><body><div class=wrap><div class=top><h1>운영관리 지침 — 오탐과 정리</h1><span class=src>원본 docs/운영관리지침_오탐과정리_2026-08-30.md</span><a href="index.html">← 콘솔</a></div><blockquote><p><strong>사장님 지시 2026-08-30</strong>: *&quot;오늘 정리한 것 결과 나오면 문서로 기록하고,</p><p>운영콘솔에 저장하여 운영관리 지침으로 사용해!&quot;*</p><p>이 문서는 <strong>규칙집이 아니다</strong>(그건 <code>CLAUDE.md</code>). 2026-08-30 하루에 실측으로</p><p>잡아낸 것을 <strong>다음에 같은 일이 생겼을 때 쓰는 절차</strong>로 정리한 것이다.</p></blockquote>
+<hr>
+<h2>1. 그날 무슨 일이 있었나 — 숫자로</h2>
+<pre><code>루프 정체        22건  →  7건   (하루)
+그중 오탐         6종            (거짓 빨간불)
+실제로 해결       12건 + 배치 12항목</code></pre>
+<p>🔴 <strong>핵심 발견: 21건의 &quot;문제&quot; 중 9건(43%)이 관제탑이 만든 감시도구 자체의 버그였다.</strong></p>
+<p>루틴·작업 세션이 거짓말한 게 아니라, **그걸 검사하는 코드가 멀쩡한 것을 빨간불로</p>
+<p>만들었다.<strong> 순수 오보고(거짓완료 1 + 거짓실패 3 + 침묵완료 5 = 9건)와 </strong>정확히 같은</p>
+<p>규모**였다.</p>
+<hr>
+<h2>2. 오탐 6종 — 전부 같은 병이었다</h2>
+<table>
+<tr><th>#</th><th>도구</th><th>무엇을 잘못 봤나</th><th>결과</th></tr>
+<tr><td>1</td><td><code>loopcheck ③</code></td><td><strong>큐 진입을 안 봤다</strong> — 승인 도장과 &#x27;발행됐나&#x27;만 봄</td><td>큐에서 게이트·V0를 다 통과한 글이 계속 &quot;초안·큐로 안 갔다&quot;</td></tr>
+<tr><td>2</td><td><code>loopcheck ④</code></td><td>배치가 사라지면 <strong>후속 검사 없이</strong> 정체로 올림</td><td>끝난 보고 3건이 7~8일째 빨간불</td></tr>
+<tr><td>3</td><td><code>loopcheck ⓪</code></td><td><strong>보드 사본 mtime</strong>을 봄 — <code>_board_root()</code> 이후 보드는 공유됨</td><td>pull 직후 커밋 몇 번에 다시 켜짐</td></tr>
+<tr><td>4</td><td><code>routine_model</code></td><td><strong>옛 실행 기록</strong>을 봄 — 일시중지 여부는 서버에 있어 모름</td><td>멈춘 루틴에 &quot;모델 바꾸세요&quot;를 나흘간 안내</td></tr>
+<tr><td>5</td><td><code>insta_post</code></td><td><code>crosslinkcheck</code> 결과를 <strong>채널 구분 없이</strong> 순회</td><td>쓰레드 실패가 무관한 인스타 게시를 영구 차단</td></tr>
+<tr><td>6</td><td><code>seodesc</code></td><td>넣은 문구가 본문 도입부와 비슷하면 못 구분</td><td>실제 성공을 <code>state=auto</code>(실패)로 표시</td></tr>
+</table>
+<h3>공통 패턴 — 한 문장</h3>
+<blockquote><p><strong>판정기가 자기가 안 보는 필드 때문에 멀쩡한 것을 빨간불로 만든다.</strong></p></blockquote>
+<p>같은 계열의 과거 사고:</p>
+<ul><li><code>autoflow</code>가 DB에 없는 <code>crosslink</code> 필드를 추측 → <strong>201편 전부</strong> 미결</li><li><code>index_status</code>의 크롤 필드를 <code>last_crawl</code>로 넘겨짚음 → <strong>175건 전부 &quot;0%&quot;</strong> 가짜 결론</li><li><code>link_rot</code> 오탐 139건 · <code>agentcheck</code>이 <code>v0</code>의 기록 절을 못 찾아 실패 판정</li></ul>
+<h3>🔴 왜 이게 치명적인가</h3>
+<p><strong>지울 수 없는 빨간불은 무시되는 빨간불이 된다.</strong></p>
+<p>실측: <code>loopcheck</code> 표에 오탐 3건이 섞여 있던 날, **진짜 보고(<code>seodesc0828</code>)가 48시간</p>
+<p>방치**됐다. 이과장이 성공을 보고했는데 관제탑이 안 읽었다. 표가 길어지면 진짜가 묻힌다.</p>
+<p><strong>오탐은 성가신 게 아니라 감시망 자체를 죽인다.</strong></p>
+<hr>
+<h2>3. 오탐을 만들지 않는 5가지 — 판정기를 만들 때</h2>
+<h3>① 스키마를 추측하지 마라 — <code>ls</code>·<code>list(one)</code>로 눈으로 봐라</h3>
+<p><code>index_status.json</code>의 <code>posts</code>는 <strong>dict</strong>다(list 아님). <code>_items()</code>로 읽어 0건이 나왔다.</p>
+<p><strong>오탐 감시기를 만들면서 그 함정을 다시 밟았다.</strong></p>
+<p>필드명도 같다 — <code>lastCrawl</code>(카멜)이지 <code>last_crawl</code>(스네이크)이 아니다.</p>
+<h3>② 전건(100%)·영건(0%)이면 발견이 아니라 매칭 버그다</h3>
+<p><code>CLAUDE.md</code> 475행에 <strong>8일 전부터 문장으로 있었는데 지켜지지 않았다.</strong></p>
+<p>→ 2026-08-30에 <strong>코드로 집행</strong>하게 했다: <code>python -m studio.falsepos</code></p>
+<h3>③ 0이 목표인 지표를 &quot;의심&quot;으로 띄우지 마라</h3>
+<p>미결 0건은 <strong>좋은 상태</strong>다. 그걸 매번 ⚠️로 띄우면 그 도구 자신이 소음이 된다 —</p>
+<p>막으려던 병에 스스로 걸린다. <code>falsepos</code>의 <code>zero_ok</code> 플래그가 그 자리다.</p>
+<h3>④ 임계값은 한 곳에만 둔다</h3>
+<p><code>loopcheck ⓪</code>의 임계가 <strong>60초</strong>여서 커밋할 때마다 켜졌다 → <code>STALE_RULE_HOURS = 12</code>.</p>
+<p><code>pace</code> 상수가 워크플로와 <strong>열흘간 갈라졌던</strong> 그 병을 반복하지 않는다.</p>
+<h3>⑤ 만든 도구가 실제로 잡는지 검증해라</h3>
+<p><code>falsepos</code>가 <strong>만든 당일 조용히 죽어 있었다</strong> — <code>loopcheck.rows()</code>를 불렀는데 실제</p>
+<p>이름은 <code>scan()</code>이었고, 예외를 삼키게 해 둬서 실패해도 아무 말이 없었다.</p>
+<p><strong>검증 방법</strong>: 일부러 오탐을 넣어 잡히는지 본다.</p>
+<pre><code>틀린 필드명        → 🔴 잡음
+전건 100%          → 🔴 잡음
+영건 + 목표 아님    → 🔴 잡음
+영건 + 목표 0      → 조용함   ← 소음 억제까지 확인</code></pre>
+<hr>
+<h2>4. 미결을 닫는 절차 — <strong>근거를 대고 닫는다</strong></h2>
+<p>🔴 <strong>&quot;오래됐으니 닫는다&quot;로 가면 발행 대기 중인 글을 조용히 잃는다.</strong></p>
+<h3>순서</h3>
+<pre><code>1. 그 배치·항목의 실제 내용을 읽는다        (제목만 보지 않는다)
+2. 미완 항목마다 지금 상태를 실측한다        (담당 도구로)
+3. 이미 해결됐으면 → 근거를 note 에 적고 done
+4. 낡았으면(수치·대상이 바뀜) → 그 사실을 note 에 적고 done
+5. 하면 안 되는 것이면 → skip + 사유         (열어두면 누군가 실행한다)
+6. 살아 있으면 → 담당에 맞는 곳으로 옮긴다   (사장님 몫이면 watch --owner user)
+7. 배치가 미완 0건이 되면 그때 닫는다</code></pre>
+<h3>실제 사례 (2026-08-30)</h3>
+<table>
+<tr><th>항목</th><th>지시서에 적힌 것</th><th>실측</th><th>처리</th></tr>
+<tr><td>인스타 카드 제작</td><td>미확산 <strong>28편</strong></td><td><strong>3편</strong>(211/214 확산 완료)</td><td>done — 수치가 낡음</td></tr>
+<tr><td>pushcheck 강제 결정</td><td>&quot;결정할 것&quot;</td><td><strong>이미 게이트로 강제 중</strong></td><td>done — 결정할 게 없음</td></tr>
+<tr><td>애드센스 재검토</td><td>&quot;요청&quot;</td><td><strong>3조건 전부 미달</strong>(2/60·0/20·43/80)</td><td>🔴 <strong>skip</strong> — 열어두면 누를 위험</td></tr>
+<tr><td>발행 4편</td><td>&quot;라이브 · 지시 · 내일&quot;</td><td>4편 전부 DB에 url</td><td>done</td></tr>
+<tr><td>네이버 원고 교체</td><td>&quot;붙여넣기&quot;</td><td>Claude가 구조적으로 못 함</td><td>→ <code>watch --owner user</code> 이관</td></tr>
+</table>
+<p>⚠️ <strong>네이버·인스타처럼 Claude가 구조적으로 못 하는 일을 보드에 두면 영원히 안 닫힌다.</strong></p>
+<p>결재함(<code>watch --owner user</code>)이 그 자리다.</p>
+<hr>
+<h2>5. 상태를 판정할 때 쓰는 도구 — 임시 스크립트 금지</h2>
+<table>
+<tr><th>무엇을</th><th>무엇으로</th></tr>
+<tr><td>지금 전체 상태</td><td><code>python -m studio.now</code></td></tr>
+<tr><td>결재 대기 건수</td><td><code>python -m studio.approvalcount</code></td></tr>
+<tr><td>루프가 멈춘 곳</td><td><code>python -m studio.loopcheck</code></td></tr>
+<tr><td><strong>판정기 오탐</strong></td><td><code>python -m studio.falsepos</code></td></tr>
+<tr><td>세션 보고 진위</td><td><code>python -m studio.sessionaudit</code></td></tr>
+<tr><td>세션 대기 상태</td><td><code>python -m studio.sessionstate</code></td></tr>
+<tr><td>검색설명</td><td><code>python -m studio.seodesc scan --only &lt;코드&gt;</code></td></tr>
+<tr><td>인스타 현황</td><td><code>python -m studio.insta_post --list</code></td></tr>
+<tr><td>발행 페이스</td><td><code>python -m studio.pace</code></td></tr>
+<tr><td>4채널 완결</td><td><code>python -m studio.setgate</code></td></tr>
+<tr><td>애드센스 3조건</td><td><code>python -m studio.navergate</code></td></tr>
+<tr><td>루틴 모델</td><td><code>python studio/routine_model.py --days 3</code></td></tr>
+<tr><td>하네스</td><td><code>python validate_db.py</code> · <code>python studio/selfcheck.py</code></td></tr>
+</table>
+<p>🔴 <strong>도구가 있는데 임시 grep·정규식으로 판정하지 마라.</strong> 2026-08-21에 하루 네 번</p>
+<p>틀린 원인이 그것이었다. <strong>도구가 없으면 그 자리에서 만들어 커밋한다</strong> — 임시로 때우면</p>
+<p>다음 세션이 같은 실수를 반복한다.</p>
+<hr>
+<h2>6. 그날 확정된 사실 2가지 — 다시 헤매지 않도록</h2>
+<h3>① 검색설명 주입 — 함정은 3개가 아니라 <strong>4개</strong>였다</h3>
+<p><strong>8회 연속 실패</strong>했고 알려진 함정 ①②③(JS setter 금지·좌표 클릭·라이브 재조회)을 다</p>
+<p>지켜도 안 됐다.</p>
+<blockquote><p>🔴 **④ 본문 에디터가 &quot;로드 중…&quot; 스피너일 때 우측 검색 설명만 건드리면</p><p>Blogger가 저장을 받지 않는다.** 편집기엔 들어가는데 라이브는 그대로라</p><p>①번 증상과 똑같아 구분이 안 됐다.</p></blockquote>
+<p><strong>절차</strong>: 편집화면 → <code>get_page_text</code>로 <strong>본문이 보이는지 확인</strong> → 30초 넘게 스피너면</p>
+<p><strong>편집 URL 새로고침</strong> → 다시 확인 → <strong>그 뒤에야</strong> 검색 설명 타이핑 →</p>
+<p><code>batchexecute 200</code> 확인 → <code>seodesc scan</code>으로 라이브 재조회.</p>
+<p>실측: 이 절차로 <strong>G2-03·C2-09·G4-04·A2-15 4편 연속 성공</strong>, 214편 전체 정상.</p>
+<p>⚠️ <code>state=auto</code>로 나와도 <strong>라이브 meta가 맞으면 성공이다.</strong></p>
+<h3>② 루틴 모델 — 「루틴 편집」 창의 <code>⌄ 기본값</code></h3>
+<p><strong>11일을 썼다.</strong> 사장님이 여러 번 바꾸셨는데 매번 다음 실행에 opus로 되돌아갔다.</p>
+<pre><code>Desktop 「루틴」 → 루틴 클릭 → ✏️편집 → 「루틴 편집」 창
+  → 지침 입력창 **오른쪽 아래 모서리**의  ⌄ 기본값     ← 모델 선택
+     (왼쪽의  🔄 자동  = 권한 모드. 둘이 나란히)
+  → Sonnet 5 → 🔴 [저장] 버튼</code></pre>
+<ul><li>🔴 <strong>「기본값」 = 계정 기본 모델(Opus 5)을 따른다는 뜻</strong>이다.</li><li>🔴 <strong>실행 창 하단의 모델 선택은 그 세션 임시다</strong> — 실측: 세션이 실행 중</li></ul>
+<p>  opus 47회 → sonnet 10회로 전환됐지만, 루틴 설정은 그대로였다.</p>
+<ul><li>⚠️ 모델 picker는 <strong>루틴 목록 화면에 없다.</strong> 편집 창을 열어야 보인다.</li></ul>
+<p>🔴 <strong>관제탑의 잘못</strong>: 공식 문서가 *&quot;instructions input includes pickers&quot;* 라 적은 것을</p>
+<p>보고 <strong>&quot;입력창 위&quot;</strong> 라고 안내했다. 실제는 <strong>아래쪽 모서리</strong>다.</p>
+<p><strong>화면을 안 보고 위치를 말하지 마라</strong> — 그날만 경로 추측으로 세 번 틀렸다</p>
+<p>(백업 파일명 · 배포 저장소 구조 · 이것).</p>
+<hr>
+<h2>7. 경로·스키마를 추측하지 않기 위한 확인 목록</h2>
+<p>그날 세 번 틀렸다. 다음에 쓸 것:</p>
+<table>
+<tr><th>무엇</th><th>실제</th></tr>
+<tr><td>루틴 백업 파일명</td><td><code>restore/scheduled-tasks_YYYYMMDD/&lt;폴더명&gt;.SKILL.md</code> (평면, 폴더 아님)</td></tr>
+<tr><td>배포 저장소 레이아웃</td><td><code>webapp/*</code> → 배포 저장소의 <strong>루트</strong> (<code>webapp/</code> 하위 아님)</td></tr>
+<tr><td><code>index_status.json</code></td><td><code>posts</code>는 <strong>dict</strong>(코드→상태), 필드는 <code>lastCrawl</code>(카멜)</td></tr>
+<tr><td>루틴 모델 설정</td><td>서버(루틴 편집 창)에만 있음. <code>SKILL.md</code> frontmatter에 넣어도 무효</td></tr>
+<tr><td>루틴 앱 표시명</td><td><code>1-Daily email briefing</code> ≠ 폴더명 <code>daily-email-briefing</code></td></tr>
+</table>
+<p><strong>공통 규칙</strong>: <code>ls</code>·<code>list(dict)</code>로 <strong>먼저 보고</strong> 말한다. 문서 표현만 믿지 않는다.</p>
+<hr>
+<h2>8. 그날 실제로 정리한 결과 — 숫자와 방법</h2>
+<p>사장님 지시: *&quot;오늘 결재함 미조치 및 미결사항 완벽 정리해야 해!&quot;*</p>
+<pre><code>watch 오늘 볼 것    46건  →   0건 ✅
+배치                25개  →   4개
+결재 대기            3건  →   2건   (내일 보실 발행승인 2편)
+루프 정체           22건  →   7건</code></pre>
+<h3>무엇을 어떻게 갈랐나</h3>
+<p><strong>watch 기한초과 42건</strong>을 하나씩 실측했다 — 각 항목의 <code>cmd</code> 를 <strong>실제로 돌려서</strong>:</p>
+<table>
+<tr><th>분류</th><th>건수</th><th>처리</th></tr>
+<tr><td>✅ 해결됨</td><td>16</td><td>근거를 <code>--result</code> 에 붙여 done</td></tr>
+<tr><td>🔄 살아있음</td><td>20</td><td>기한 재설정 — 지표 09-03 · 작업 09-06 · 큰작업 09-13</td></tr>
+<tr><td>🙋 사람 손</td><td>3</td><td><code>owner=user</code> 로 결재함 이관</td></tr>
+<tr><td>❓ 못 쟀다</td><td>3</td><td>우선순위 판단으로 접거나 이관</td></tr>
+</table>
+<p>🔴 <strong>&quot;못 쟀다&quot;를 미결로 남기지 않았다.</strong> 확인 방법이 없으면 <strong>접는 것도 판정이다</strong> —</p>
+<p><code>utm-ig-attribution</code>(6일 진전 0)·<code>insta-graph-api-feasibility</code>(7일 진전 0)는</p>
+<p>*&quot;지금 우선순위가 아니다, 조건이 바뀌면 다시 연다&quot;* 는 사유를 적고 닫았다.</p>
+<p>그냥 두면 영원히 기한만 밀리는 항목이 된다.</p>
+<p><strong>배치 25개</strong>: 완료분을 아카이브(지우는 게 아니라 <code>batch_archive.json</code> 으로 이동)하고,</p>
+<p>날짜 계획 보드(<code>today0817</code>·<code>today0818</code>·<code>today0827</code>·<code>today0828</code>)의 미완 항목을</p>
+<p><strong>하나씩 실측해</strong> 닫았다. 남은 4개는 <code>routinelog</code>(상시 채널) + 동결 3개다.</p>
+<h3>🔴 남은 루프 7건은 &quot;정체&quot;가 아니다</h3>
+<p>표에 숫자가 남아 있다고 다 문제인 것은 아니다. 뜯어보면:</p>
+<table>
+<tr><th>남은 것</th><th>실제</th></tr>
+<tr><td>D4-11 · D2-11</td><td>사장님이 <strong>내일 보시기로 한 정상 대기</strong></td></tr>
+<tr><td>pub0824c · nvfix0828</td><td>인스타 미확산 3편의 파생 — 그 3편은 사장님 손</td></tr>
+<tr><td>publish0816 · pub0828</td><td><strong>세션 상태 잔재</strong> — 배치는 이미 닫혔고 세션이 다시 보고하면 풀린다</td></tr>
+<tr><td>B2-12</td><td>오늘 출처 확보 + 지시서(<code>draft0830c</code>) 발급 — <strong>진행 중</strong></td></tr>
+</table>
+<p><strong>표를 0으로 만드는 것이 목적이 아니다.</strong> 각 줄이 무엇인지 알고, 정상 대기인지</p>
+<p>진짜 멈춤인지 가르는 것이 목적이다.</p>
+<h3>정리하면서 나온 부산물</h3>
+<ul><li>🔴 <strong>루틴 글감 제안서의 법조문 오류율 75%</strong>(4건 중 3건) — <code>source</code> 에이전트로</li></ul>
+<p>  전건 확인해 지시서에 정정을 박았다. 표본이 작아 구조 변경은 보류하고</p>
+<p>  <code>watch topicprop-fact-quality</code> 로 다음 3~4건을 더 본다.</p>
+<ul><li>🔴 **<code>archive</code> 가 <code>routinelog</code> 까지 옮기려 했다** — 루틴 7개가 매 실행마다 보고하는</li></ul>
+<p>  상시 채널이라 항목이 전부 done 되는 것이 정상인데, 그때마다 대상 맨 위에 잡혔다.</p>
+<p>  <code>ARCHIVE_KEEP</code> 보호를 코드에 넣었다.</p>
+<ul><li>🔴 **<code>watch</code> 가 워크트리에서 사본에 쓰고 있었다** — <code>batchboard</code> 는 08-27 에 같은</li></ul>
+<p>  이유로 고쳤는데 <code>watch</code> 만 빠져 있었다. 사장님이 *&quot;1번 루틴만 워크트리에 체크가</p>
+<p>  되어 있는데 왜일까?&quot;* 라고 물으신 덕에 찾았다.</p>
+<hr>
+<p>*작성: 이부장(관제탑) · 2026-08-30 · 근거는 전부 그날 실측·커밋 기록*</p>
+<p>*규칙 자체는 <code>CLAUDE.md</code>가 진실원이다. 이 문서는 그 규칙을 쓰는 절차다.*</p><div class=gen>🔴 이 화면은 <b>파생</b>이다 — 고칠 곳은 <code>docs/운영관리지침_오탐과정리_2026-08-30.md</code> 이고, 고친 뒤 <code>python tools/md2console.py docs/운영관리지침_오탐과정리_2026-08-30.md --out webapp/opsguide.html</code> 로 다시 굽는다. HTML 을 직접 고치면 다음 굽기에서 사라진다.</div></div></body></html>

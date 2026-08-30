@@ -140,6 +140,12 @@
         <!-- 2026-08-23 사용자 지시: "내가 원치않은 이상현상은 운영콘솔에 기록하고
              별도의 운영관리의 서브탭에 로그를 남기고 문제 발생시 로그분석" -->
         <button data-t="incidents">🚨 이상현상</button>
+        <!-- 2026-08-30 사장님 지시: "오늘 정리한 것 결과 나오면 문서로 기록하고,
+             운영콘솔에 저장하여 운영관리 지침으로 사용해!"
+             🔴 이 화면은 파생이다 — 원본은 docs/운영관리지침_오탐과정리_2026-08-30.md 이고
+             `python tools/md2console.py <md> --out webapp/opsguide.html` 로 굽는다.
+             HTML 을 직접 고치면 다음 굽기에서 사라진다. -->
+        <button data-t="opsguide">📘 운영지침</button>
       </div>
       <div class="leafrow hide" data-group="content">
         <button data-t="trends">📰 글감</button>
@@ -406,6 +412,7 @@
     <iframe id="f_orders" src="orders.html"></iframe>
     <iframe id="f_reports" src="reports.html"></iframe>
     <iframe id="f_incidents" src="incidents.html"></iframe>
+    <iframe id="f_opsguide" src="opsguide.html"></iframe>
     <iframe id="f_idxboard" src="index_board.html"></iframe>
     <iframe id="f_gsc" src="gsc.html"></iframe>
     <iframe id="f_seo" src="seo.html"></iframe>
@@ -416,7 +423,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','temp','pendosmu','orders','reports','idxboard','gsc','seo','adsense','incidents'];
+  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','temp','pendosmu','orders','reports','idxboard','gsc','seo','adsense','incidents','opsguide'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){
