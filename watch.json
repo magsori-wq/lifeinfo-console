@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-29",
+ "updated": "2026-08-30",
  "items": [
   {
    "id": "redirect-error",
@@ -2859,7 +2859,9 @@
    "due": "2026-08-30",
    "cmd": "python -m studio.pace",
    "owner": "user",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "fix-crosslink-0828",
@@ -2920,11 +2922,13 @@
   {
    "id": "worktree-cleanup-approve-0828",
    "added": "2026-08-28",
-   "what": "🧹 워크트리 정리 승인 요청 (보호장치 넣고 다시 올림) — 25개 중 **활동 중 3개는 자동으로 건너뜁니다**. 【무엇이 바뀌었나】 앞서 '25개 전부 안전'이라 올렸는데 틀렸습니다. bold-mirzakhani(17:46) · sweet-heyrovsky(17:30) · heuristic-cori(14:38) 에서 오늘 세션이 활동 중이었습니다. 세션 기록(jsonl)이 워크트리 **밖**에 있어 첫 조사가 놓쳤습니다. 【지금】 worktree_clean.ps1 에 활동 감지를 넣었고, 실제로 그 3개를 [SKIP] 하는 것을 확인했습니다. 【실행하면】 22개가 정리되고 약 27GB 를 회수합니다(전체 30.9GB 중 활동 3개분 제외). 【안전】 ①정션 0건 확인(2026-08-01 사고 원인) ②main 에 없는 고유 커밋 0개 ③끝나면 추적파일 손실을 git 으로 검증해 늘었으면 exit 1 ④브랜치는 남아 되돌릴 수 있음. ⛔ rm -rf 로 지우지 마십시오.",
-   "due": "2026-08-29",
-   "cmd": "powershell -File C:/lifeinfo/tools/worktree_clean.ps1 -Remove",
+   "what": "🧹 워크트리 정리 (2026-08-30 실측으로 전면 정정) — 【08-28 요청은 낡았다】 그때 '25개 중 22개·27GB' 라고 올렸으나 오늘 재보니 워크트리는 4개뿐이다(21개는 그 사이 이미 정리됨). 【지금 대상 2개·3.38GB】 frosty-swartz-81916e(1.69GB, 마지막활동 08-29 18:51) · nice-mcclintock-ca1d02(1.69GB, 08-29 20:12). 【자동 SKIP 2개】 bold-mirzakhani-88033f(12:35 활동중) · infallible-fermi-79085c(12:39 활동중) — 코드가 건너뛴다. 【안전 검증 끝】 정션 0건 · main에 없는 고유커밋 0개(둘 다) · 미커밋은 .agents/·.codex/·AGENTS.md 공통 도구파일뿐 · 브랜치는 남아 복구 가능 · 사라진 추적파일 0개. 【긴급하지 않음】 C: 여유 502.6GB/952.1GB. 【관제탑이 실행 시도했으나 권한 분류기가 차단 — 사장님 손이 필요】 ⛔ rm -rf 금지, 반드시 아래 스크립트로.",
+   "due": "2026-08-30",
+   "cmd": "powershell -NoProfile -ExecutionPolicy Bypass -File C:/lifeinfo/tools/worktree_clean.ps1 -Remove",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "완료 2026-08-30 12:5x 사장님 직접 실행. 실측 검증: frosty-swartz-81916e·nice-mcclintock-ca1d02 2개 제거 확인(디렉토리 삭제됨) · 활동중 2개 bold-mirzakhani(12:35)·infallible-fermi(12:39) 보호장치가 정상 SKIP · 추적파일 손실 0->0 · 브랜치 claude/frosty-swartz-81916e·claude/nice-mcclintock-ca1d02 둘 다 보존(되돌릴 수 있음) · C: 여유 502.6GB -> 505.8GB (+3.2GB, 예측 3.38GB와 일치). 08-28 요청서의 '25개·27GB'는 낡은 수치였고 실제는 4개 중 2개였다."
   },
   {
    "id": "audit-monitors-0828",
@@ -2962,7 +2966,9 @@
    "due": "2026-08-29",
    "cmd": "notepad C:\\lifeinfo\\docs\\네이버_수집현황_보고서_20260829.md",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "naver-recheck-20260912",
@@ -2985,10 +2991,75 @@
   {
    "id": "gsc-validation-0829-5types",
    "added": "2026-08-29",
-   "what": "🆕 2026-08-29 19:13~19:14 KST 에 GSC 유효성 검사 5건이 동시에 시작됐다(구글 확인시작 메일 5통·magsori@gmail.com 실측). 대상: 리디렉션 오류 46p · 리디렉션이 포함된 페이지 2p · 서버 오류(5xx) 1p · 찾을 수 없음(404) 1p · 크롤링됨-현재 색인이 생성되지 않음 201p. 같은 날 이부장이 사장님 캡처 9장으로 색인미생성 사유분석 보고서를 낸 직후다(커밋 3837b64). 🔴 이 중 '리디렉션 오류'는 watch gsc-redirect-recheck-trigger 가 '건수가 47→20 이하로 스스로 줄기 전에는 누르지 말 것(통과율 0/17)' 이라 적어둔 바로 그 검사다 — 결과가 또 전량 실패로 나오는지, 아니면 이번엔 다른지가 그 판정의 실증이 된다. 핵심은 201p 크롤미색인 검사다: 통과가 1건이라도 나오면 '7/10 이후 크롤된 것은 색인되지 않는다'가 깨진다",
+   "what": "🆕 2026-08-29 19:13~19:14 KST GSC 유효성 검사 5건 동시 시작(구글 확인시작 메일 5통·magsori@gmail.com 실측). 대상: 리디렉션 오류 46p · 리디렉션 포함 2p · 서버오류(5xx) 1p · 404 1p · 크롤링됨-미색인 201p. 🔴🔴 이 편수는 전부 GSC 화면의 **URL 총계**다(라벨·보관·?m=1 변형 포함) — 2026-08-30 정정: 크롤링됨-미색인은 글 단위로 **123편**, 색인생성됨은 36 이 아니라 **2편**이다. 검사 결과를 볼 때 URL 수와 글 편수를 섞지 말 것. 🔴 '리디렉션 오류'는 watch gsc-redirect-recheck-trigger 가 '47→20 이하로 스스로 줄기 전에는 누르지 말 것(통과율 0/17)' 이라 적어둔 바로 그 검사다 — 또 전량 실패인지가 그 판정의 실증이 된다. 【핵심은 크롤미색인 검사】 통과가 1건이라도 나오면 '7/10 이후 크롤된 것은 색인되지 않는다'가 깨진다. 그때는 색인 전략을 다시 짠다.",
    "due": "2026-09-05",
-   "cmd": "python -m studio.searchconsole inspect 2>&1 | tail -20   # 결과 메일은 daily-email-briefing 이 잡는다",
+   "cmd": "python -m studio.searchconsole inspect 2>&1 | tail -20",
    "owner": "claude",
+   "state": "wait"
+  },
+  {
+   "id": "pc-boot-slow-0830",
+   "added": "2026-08-30",
+   "what": "PC 부팅 지연 — 【원인 2가지】①08-29 윈도우 업데이트 3건 후 08-30 07:13~07:25 자동 4연속 재부팅(MoUsoCoreWorker→TrustedInstaller×3) ②H: USB(VendorCo 29.3GB FAT32) 컨트롤러 에러. 전원끊김(Event41)·Critical 0건 = 하드웨어 고장 아님. 【사장님 조치 2026-08-30】 USB 를 뽑는 대신 **복구**하심 — 실측 확인: HealthStatus Warning→Healthy · OperationalStatus 'Full Repair Needed'→OK · 여유 25.7GB 그대로(데이터 보존). 【남은 관찰】 고쳐진 것은 결과(파일시스템)이고 원인(연결 끊김 ID=11, 60일 6건)은 chkdsk 로 고쳐지지 않는다. 재발하면 포트·장치 문제로 확정 → 그때는 다른 USB 포트로 옮기거나 사용 중단. 재발 없으면 접촉 문제였던 것. 【부팅 속도 검증】 다음 재부팅 때 체감 비교 — 업데이트 마무리가 끝났으므로 정상 속도로 돌아와야 정상이다.",
+   "due": "2026-09-03",
+   "cmd": "powershell -NoProfile -Command \"Get-Volume -DriveLetter H | Select-Object HealthStatus,OperationalStatus; $o=Get-CimInstance Win32_OperatingSystem; '마지막부팅: '+$o.LastBootUpTime; $e=Get-WinEvent -FilterHashtable @{LogName='System';ProviderName='disk';Id=11;StartTime=(Get-Date).AddDays(-4)} -EA SilentlyContinue; if($e){'ID=11 재발 '+@($e).Count+'건 - 포트/장치 문제 확정'}else{'ID=11 재발 0건 - 접촉 문제였음'}\"",
+   "owner": "user",
+   "state": "wait"
+  },
+  {
+   "id": "freeze-expiry-measure-0830",
+   "added": "2026-08-30",
+   "what": "동결(08-28~08-30) 실측: 라이브 신규발행 0건(마지막 발행 G2-03 08-28 12:00, 이후 08-29·08-30 0편) — 허용 6편 중 4편(G2-03·A2-15·G4-04·C2-09)은 이미 08-27~28 발행분이고 4채널(블→네→쓰→인) 전부 완결. D4-11·D2-11은 큐 대기 중이나 go도장 없음·V0검사 미실시(dupcheck🟢 bodydup🟢 heading OK). 애드센스 3조건 전부 미달(색인2/60·클릭0/20·네이버43/80). setgate 통과(4채널 미완 없음)이므로 해제 즉시 다음 발행은 채널게이트엔 안 걸리나 D4-11/D2-11은 V0+go 없으면 발행 불가",
+   "due": "2026-08-30",
+   "cmd": "python validate_db.py && python studio/selfcheck.py && python -m studio.pace && python -m studio.setgate && python -m studio.navergate",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-d4-11",
+   "added": "2026-08-30",
+   "what": "🔴 V0 반려 확인 요청 — D4-11 「유효기간 지난 상품권 환불 방법 반환율 90% 95% 잔액 환불 기준 총」. 검사자 V0검사관 · 2026-08-30T13:34. 사유 요약: V0 4요소는 충분(계산예시 3개 원단위·판단형 비교표에 '서로 대체되나' 행·제3조 적용제외=탈락사유·할인구매 잔액 함정). 그러나 함정 박스 1개가 원문과 반대다: 제5조5항 단서의 통지의무 예외는 '전자형 상품권'(제2조1항1호=전자카드 등)뿐인데 초안 line126 은 '문자·메신저로 받은 전자형 상품권은 통지 의무의 예외'라 써 모바일 상품권(제2조1항2호)까지 예외로 묶었다 — 이 글 주 독자(휴대폰 문자함 상품권)의 통지받을 권리를 없다고 알린다. 같은 초안 line55 는 같은 물건을 '모바일 상품권'이라 불러 자기모 … 🔴 전문은 `python -m studio.v0check gate --code D4-11` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-08-30",
+   "cmd": "python -m studio.v0check gate --code D4-11",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 반려 사유(line126 통지의무 예외 오독) 해소 확인. 교체된 박스를 std.txt 원문과 대조: 제5조5항 본문(30일 전 통지 포함 3회 이상·도래/연장가능여부/경과후 잔액반환 내용·이메일 또는 문자메시지) "
+  },
+  {
+   "id": "fix-d4-11-notice-0830",
+   "added": "2026-08-30",
+   "what": "D4-11 line126 통지의무 박스 정정 완료 — 문자/메신저=모바일 상품권(제2조1항2호)이라 제5조5항 단서 예외 아님. V0 재검사 필요",
+   "due": "2026-08-30",
+   "cmd": "python -m studio.v0check --code D4-11",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-boost-priority-0830",
+   "added": "2026-08-30",
+   "what": "GSC 크롤링됨-미색인 123편 중 V0 보강 우선순위 상위15 산출 완료 — 사장님 승인 대기 중인 제안(아직 batchboard 미등록)",
+   "due": "2026-08-31",
+   "cmd": "python -m studio.batchboard order --id boost0830",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pubqueue-go-0831",
+   "added": "2026-08-30",
+   "what": "🙋 발행 승인 2편 — 동결 해제 후 첫 발행. D4-11(유효기간 지난 상품권 환불 방법) · D2-11(전기차 공공충전요금 개편 2026년 8월 시행). 【게이트 전부 통과】 heading OK · dupcheck 🟢 · bodydup 🟢(0.027/0.056) · V0 🟢 pass 둘 다(검사관 도장 2026-08-30). 【남은 것은 ⑦ 사장님 발행 승인 하나뿐】 승인하시면 이과장이 gh workflow run 으로 발행. 【사장님이 원고를 내일 보시겠다고 하심 2026-08-30】",
+   "due": "2026-08-31",
+   "cmd": "python -m studio.pubqueue go --code D4-11 && python -m studio.pubqueue go --code D2-11",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-boost-approve-0831",
+   "added": "2026-08-30",
+   "what": "🙋 방향 승인 — 색인 보강 15편을 이과장에게 내릴지. 【진단】 크롤은 왔는데 색인 안 된 글 123편(글단위. GSC화면 201은 URL총계였다 — 08-30 정정). 【결핍 패턴】 상위 15편 라이브 실측: 계산예시 없음 11편 · 탈락사유 없음 6편 / 비교표·함정은 13편씩 이미 있음. 즉 '내 경우 얼마인가'와 '안 되는 경우'가 빠져 있다 = 애드센스 반려 사유와 같은 자리. 【1~5위】 B1-01 자동차세 · B2-04 ISA · A5-01 실업급여 · E1-01 알뜰폰 · E2-02 카톡차단. 【승인하시면】 관제탑이 boost0830 배치로 지시서를 만든다. 라이브 본문 수정이라 무인 루틴 아닌 작업 세션 몫.",
+   "due": "2026-08-31",
+   "cmd": "start http://localhost:8000/../docs/GSC_색인미생성_사유분석_20260829.md",
+   "owner": "user",
    "state": "todo"
   }
  ]
