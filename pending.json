@@ -1,15 +1,31 @@
 {
- "rev": "ea87023",
+ "rev": "5554e39",
  "counts": {
-  "total": 215,
+  "total": 216,
   "osmu_done": 215,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 2,
-  "index_pending": 213,
+  "index_pending": 214,
   "index_requested": 204,
-  "index_todo": 9
+  "index_todo": 10
  },
  "actionable": [
+  {
+   "code": "D2-11",
+   "title": "전기차 공공충전요금 개편 총정리 (2026년 8월 시행",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A2-15",
    "title": "추석 연휴 국민연금 기초연금 조기지급일 총정리 (202",
@@ -193,21 +209,6 @@
   {
    "code": "A1-05",
    "title": "청년미래적금 가입조건 정부기여금 신청 방법 총정리 (2",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-06",
-   "title": "국민내일배움카드 신청 방법 발급 자격 지원금액 총정리 ",
    "need": [
     "색인대기"
    ],
