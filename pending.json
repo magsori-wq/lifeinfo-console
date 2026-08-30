@@ -1,15 +1,31 @@
 {
- "rev": "6aa36cf",
+ "rev": "a1fe96e",
  "counts": {
-  "total": 216,
+  "total": 217,
   "osmu_done": 216,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 2,
-  "index_pending": 214,
+  "index_pending": 215,
   "index_requested": 204,
-  "index_todo": 10
+  "index_todo": 11
  },
  "actionable": [
+  {
+   "code": "G4-05",
+   "title": "산에서 밤 도토리 버섯 주우면 처벌될까 총정리 (202",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A2-15",
    "title": "추석 연휴 국민연금 기초연금 조기지급일 총정리 (202",
@@ -193,21 +209,6 @@
   {
    "code": "A1-04",
    "title": "청년월세지원 신청 자격 금액 신청방법 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-05",
-   "title": "청년미래적금 가입조건 정부기여금 신청 방법 총정리 (2",
    "need": [
     "색인대기"
    ],
