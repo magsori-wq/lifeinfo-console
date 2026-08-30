@@ -194,16 +194,21 @@ Promise.all([j('batch.json'),j('queue.json'),j('watch.json'),j('session_state.js
   var reps=[];
   Object.keys((B.currents)||{}).forEach(function(k){
     var c=(B.currents)[k]||{};
-    if(c.what) reps.push({id:k,t:String(c.since||''),w:String(c.what)});
+    if(c.what) reps.push({id:k,t:String(c.since||''),w:String(c.what),
+                          who:String((((B.batches)||{})[k]||{}).owner||'')});
   });
   Object.keys((SSJ.sessions)||{}).forEach(function(k){
     var v=SSJ.sessions[k]||{};
     if(v.last_what&&!reps.some(function(r){return r.id===k;}))
-      reps.push({id:k,t:String(v.last_report||''),w:String(v.last_what)});
+      reps.push({id:k,t:String(v.last_report||''),w:String(v.last_what),
+                 who:String(v.owner||(((B.batches)||{})[k]||{}).owner||'')});
   });
   reps.sort(function(x,y){return String(y.t).localeCompare(String(x.t));});
   var repBody = reps.length? reps.slice(0,12).map(function(r){
-      return '<div class="card"><div class="m">'+esc(r.id)+' · '+esc(String(r.t).slice(5,16))+'</div>'
+      var w=String(r.who||'미지정');
+      return '<div class="card">'
+        +'<span class="badge '+(w.indexOf('루틴')>=0?'b-wait':'b-rd')+'">'+esc(w.slice(0,14))+'</span>'
+        +'<div class="m" style="margin-top:5px">'+esc(r.id)+' · '+esc(String(r.t).slice(5,16))+'</div>'
         +'<div class="w">'+esc(r.w.slice(0,300))+'</div></div>';}).join('')
     : '<p class="none">보고가 없습니다.</p>';
 

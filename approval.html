@@ -626,20 +626,33 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     }).join('') : '<p class="none">지시서가 없습니다.</p>');
 
   // 오른쪽 = 보고. 🔴 문구를 지어내지 않는다 — 세션이 실제로 쓴 것만 싣는다.
+  // 🔴 **보고자를 함께 싣는다** (2026-08-31 사장님 지시 "보고탭에 보고자 색인을 첨부해!").
+  //    그전에는 배치 id(pub0830d 같은 것)만 있어서 **누가 올린 보고인지 알 수 없었다.**
+  //    그래서 오늘 "이과장은 왜 보고를 안 했나" 라는 물음이 나왔는데 — 이과장은 보고했고
+  //    화면이 그것을 이과장 것으로 보여주지 않았을 뿐이다. 담당은 데이터에 이미 있었다
+  //    (batch.owner · session_state.owner). 화면이 안 집었다.
+  function whoOf(id){
+    var b=((B.batches)||{})[id]||{}, v=((SSJ.sessions)||{})[id]||{};
+    return String(b.owner||v.owner||'미지정');
+  }
   var repRows=[];
   Object.keys((B.currents)||{}).forEach(function(k){
     var c=(B.currents)[k]||{};
-    if(c.what) repRows.push({id:k,t:String(c.since||''),w:String(c.what),src:'진행'});
+    if(c.what) repRows.push({id:k,t:String(c.since||''),w:String(c.what),src:'진행',who:whoOf(k)});
   });
   SS.forEach(function(x){
     if(x.rep && !repRows.some(function(r){return r.id===x.id;}))
-      repRows.push({id:x.id,t:x.repAt,w:x.rep,src:'보고'});
+      repRows.push({id:x.id,t:x.repAt,w:x.rep,src:'보고',who:x.own||whoOf(x.id)});
   });
   repRows.sort(function(a,b){return (b.t||'').localeCompare(a.t||'');});
   var colRep = (repRows.length? repRows.slice(0,10).map(function(r){
+        var w=String(r.who||'미지정');
+        // 보고자 배지 색 — 루틴/사장님/작업 세션을 한눈에 가른다
+        var wc = w.indexOf('루틴')>=0 ? 'w-rt' : (w.indexOf('사장님')>=0 ? 'w-boss' : 'w-work');
         return '<div class="card"><div class="hd">'
+          +'<span class="who '+wc+'">'+esc(w.slice(0,14))+'</span>'
           +'<span class="who w-rep">'+esc(r.src)+'</span>'
-          +'<span class="ttl" style="font-weight:400;font-size:12.5px">'+esc(r.id)+'</span>'
+          +'<span class="ttl" style="font-weight:400;font-size:12px">'+esc(r.id)+'</span>'
           +'<span class="code">'+esc(String(r.t||'').slice(5,16))+'</span></div>'
           +'<div class="note">'+esc(r.w.slice(0,190))+'</div></div>';}).join('')
       : '<p class="none">보고가 없습니다.</p>')
