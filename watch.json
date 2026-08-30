@@ -3355,7 +3355,9 @@
    "due": "2026-08-31",
    "cmd": "python -m studio.pubqueue list; cat 전기차공공충전요금개편_글_HTML.txt 2>/dev/null | grep -E '295\\.0|294\\.3|324\\.4|347\\.2|시행'",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-31",
+   "result": "확인 완료. d211-ev-rate-unverified 는 2026-08-30 이미 done — 새 초안의 최종 수치(295.0/307.2/325.6/348.4/393.1)·시행일(8/1)이 korea.kr 정책브리핑 카드뉴스(2026-07-09)와 일치, 개편전 값(324.4/347.2)은 mcee.go.kr 4-29 행정예고 '현행'칸과 일치 확인됨(agent 재검증) — 옛 블록 사유(뉴스단가 vs 행정예고 불일치, 시행일 8/1 vs 11/12)는 이미 해소된 상태였음. 남은 것은 출처 문구 과장 표현뿐이었고 그것도 d211-source-citation-fix 로 정정 완료. 두 기록 모순 없음 — 발행 진행에 문제 없었음."
   },
   {
    "id": "falsepos-readgate-0830",
@@ -3384,7 +3386,9 @@
    "due": "2026-08-31",
    "cmd": "본문 sec7 공식 확인 문구를 '기후에너지환경부 2026-04-29 행정예고 원문 + 대한민국 정책브리핑(korea.kr) 2026-07-09 개편안 카드뉴스 기준'으로 수정. 대조자료 = docs/d211_1차출처_기후에너지환경부_20260830.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-31",
+   "result": "정정 완료(2 라운드). ①발행전 4곳(도입부·경고박스·공식링크박스·출처박스) 커밋 5554e39 — mcee.go.kr '확정 보도자료(2026-07-01)' 단독인용을 'korea.kr 정책브리핑(2026-07-09 카드뉴스)+mcee.go.kr 4-29 행정예고 원문' 병기로 교체. ②발행후 자체 재검토에서 FAQ 섹션 2곳을 grep 패턴(하이픈 날짜)이 놓친 것 발견(2026년 7월 1일 표기) — 커밋 8d9e100, blogger.py update-post --code D2-11 로 라이브 본문도 직접 패치(dry-run 확인 후 실행). curl로 라이브 재조회해 옛 문구 완전히 사라진 것 확인함."
   },
   {
    "id": "f115-hold-until-drain",
@@ -3403,6 +3407,15 @@
    "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) F1-15 해외 여행 중 여권 분실 신고 절차 재외공관 임시여행증명서 총정리 (2026 ·",
    "due": "2026-08-31",
    "cmd": "python -m studio.topicprop approve --code <코드>",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "blocked-pub0830d-threads",
+   "added": "2026-08-31",
+   "what": "D2-11 쓰레드 게시가 자동화로 안 된다 — Threads compose 필드가 ASCII(공백·숫자·영문) 입력을 드롭하고, 동시에 Windows 클립보드(Set-Clipboard)도 ExternalException으로 막혀있다. 40분+ 지속, 새 탭 여러개서 재현. 원고·이미지는 이미 준비 완료",
+   "due": "2026-08-31",
+   "cmd": "osmu/쓰레드용_전기차공공충전요금개편.txt 내용을 threads.com에서 직접 붙여넣기(또는 타이핑)로 게시 → insta/thread/thread_D2-11_evcharge.png 첨부 → 게시 후 URL을 python -m studio.pipeline threads-link --code D2-11 --url <URL> 로 기록. 참고: PC 재부팅이나 크롬 재시작으로 클립보드/입력 문제가 풀릴 수도 있음",
    "owner": "user",
    "state": "todo"
   }
