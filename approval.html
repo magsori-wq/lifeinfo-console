@@ -20,7 +20,22 @@ body{margin:0;padding:12px 14px;background:#0e1526;color:#e6ecf7;overflow:hidden
 .grid>.pane:nth-child(2){grid-area:1/2}
 .grid>.pane:nth-child(3){grid-area:2/1}
 .grid>.pane:nth-child(4){grid-area:2/2}
-.grid>.pane.side{grid-area:1/3/3/4}
+/* 🔴 6분할 (2026-08-30 사장님 지시 "화면을 6분할하면 지시서와 보고서를 나누어 볼 수 있음").
+   그전에는 미결사항(.side)이 **우측 열을 세로로 통으로** 써서 칸이 5개뿐이었고,
+   그래서 지시서·보고를 한 칸 안에 좌우로 우겨넣어야 했다. 미결을 한 칸으로 줄이면
+   2×3 이 온전히 6칸이 되고, 지시서와 보고가 **각각 제 칸**을 갖는다.
+   ⚠️ 미결사항이 길어지면 pane 안에서 스크롤된다(모든 pane 이 독립 스크롤이다). */
+.grid>.pane.side{grid-area:1/3}
+.grid>.pane.rep{grid-area:2/3}
+/* 📄 지시서 ↔ 📢 보고 좌우 분할 (2026-08-30 사장님 지시
+   "지시서세션옆에 보고내용탭을 이동하고 실시간으로 지시서/보고서를 같이 확인").
+   한 pane 안을 두 칸으로 가른다 — 격자에 새 칸을 만들면 다른 패널이 눌린다. */
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px;align-items:start}
+.split2>.sp{min-width:0}
+@media(max-width:1100px){.split2{grid-template-columns:1fr}}
+/* 🔴 안 읽음은 빨강 — 지금 손대야 할 자리다. 읽음/대기와 한눈에 갈려야 한다. */
+.who.w-un{background:#ff6b6b22;border:1px solid #ff6b6b66;color:#ff9d9d}
+.who.w-rep{background:#4D9DE022;border:1px solid #4D9DE055;color:#9ecbf0}
 .tdi{display:flex;gap:8px;padding:7px 9px;border-bottom:1px solid #1c2842}
 .tdi:last-child{border-bottom:0}
 .tdi.fin{opacity:.5}
@@ -42,7 +57,7 @@ body{margin:0;padding:12px 14px;background:#0e1526;color:#e6ecf7;overflow:hidden
   .pane{max-height:440px}
   .grid>.pane:nth-child(1),.grid>.pane:nth-child(2),
   .grid>.pane:nth-child(3),.grid>.pane:nth-child(4),
-  .grid>.pane.side{grid-area:auto}}
+  .grid>.pane.side,.grid>.pane.rep{grid-area:auto}}
 h1{font-size:17px;margin:0;flex:0 0 auto}
 .sub{display:none}
 .hdrow{display:flex;align-items:baseline;gap:12px;flex:0 0 auto}
@@ -332,9 +347,42 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   })();
   var v0={}; V.forEach(function(x){v0[x.code]=x;});
   var H='';
-  var SS=Object.keys((SSJ.sessions)||{}).map(function(k){
-    var v=SSJ.sessions[k]; return {id:k,s:v.state,last:(v.last_read||'').slice(5,16)};})
-    .sort(function(x,y){return (x.s==='waiting'?0:1)-(y.s==='waiting'?0:1);});
+  // 🔴 읽음/안읽음 (2026-08-30 사장님 지시 "지시서세션에 읽음,읽지않음을 표시하고 실시간 반영")
+  //    데이터는 **이미 있었다** — session_state.json 의 last_order_at·last_read·reads.
+  //    화면이 last_read 만 집어 시각을 찍고 끝냈다. 그래서 "새 지시가 올라왔는데
+  //    아직 안 읽은 세션" 이 화면상 읽은 것과 구분되지 않았다.
+  //    판정: 지시서 등록시각 > 마지막 읽은시각 이면 **안 읽음**.
+  //    (둘 다 "YYYY-MM-DD HH:MM" 고정폭이라 문자열 비교가 곧 시간 비교다.)
+  // 🔴 판정 주체는 **batch.json** 이다 — session_state 가 아니다 (2026-08-30 실측으로 정정).
+  //    처음엔 session_state 만 돌았는데, 그러면 **한 번도 안 읽은 새 지시서가 아예
+  //    목록에 없다**(그 파일은 세션이 읽을 때 비로소 생긴다). 오늘 낸 지시서 4개
+  //    (draft0830a/b/c·pub0830d)가 통째로 빠졌다 — 가장 중요한 '안 읽음'이 안 보였다.
+  // 🔴 `last_order_at` 에 "일시 기록 안 됨" 같은 **문자열**이 들어 있다(실측 2건).
+  //    날짜로 비교하면 한글이 숫자보다 커서 늘 '안 읽음'으로 오판한다. 형식을 먼저 본다.
+  function _dt(s){ s=String(s||''); return /^\d{4}-\d{2}-\d{2}/.test(s)? s : ''; }
+  function rst(id){
+    var v=((SSJ.sessions)||{})[id]||{}, b=((B.batches)||{})[id]||{};
+    var oa=_dt(b.order_at)||_dt(v.last_order_at), lr=_dt(v.last_read);
+    if(!b.order && !v.last_order_at) return {k:'none', lab:'지시서 없음', tip:''};
+    if(!lr)   return {k:'un', lab:'🔴 한 번도 안 읽음',
+                      tip:oa?('등록 '+oa.slice(5,16)):'등록시각 미기록'};
+    if(oa && lr<oa) return {k:'un', lab:'🔴 새 지시 안 읽음',
+                      tip:'등록 '+oa.slice(5,16)+' · 마지막 읽음 '+lr.slice(5,16)};
+    return {k:'rd', lab:'✅ 읽음'+(v.reads?' '+v.reads+'회':''),
+            tip:'읽음 '+lr.slice(5,16)+(oa?'':' · 등록시각 미기록')};
+  }
+  // 세션 목록 = session_state ∪ (지시서가 걸린 배치). 합집합이라야 새 지시서가 뜬다.
+  var _sid={}; Object.keys((SSJ.sessions)||{}).forEach(function(k){_sid[k]=1;});
+  Object.keys((B.batches)||{}).forEach(function(k){ if((B.batches[k]||{}).order) _sid[k]=1; });
+  var SS=Object.keys(_sid).map(function(k){
+    var v=((SSJ.sessions)||{})[k]||{}, b=((B.batches)||{})[k]||{};
+    return {id:k,s:v.state||'working',last:_dt(v.last_read).slice(5,16),r:rst(k),
+            rep:String(v.last_what||''),repAt:String(v.last_report||''),
+            own:String(b.owner||v.owner||'')};})
+    .sort(function(x,y){
+      // 안 읽은 것을 맨 위로 — 그게 지금 손대야 할 자리다. 그 다음이 대기.
+      var a=(x.r.k==='un'?0:1)-(y.r.k==='un'?0:1);
+      return a || (x.s==='waiting'?0:1)-(y.s==='waiting'?0:1);});
 
   var boss=[], lee=[];
   T.forEach(function(t){
@@ -538,26 +586,77 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     : '<p class="none">진행 중 문서가 없습니다.</p>';
   H+=pane('📑','진행 중 문서',list.length+'건',docBody);
 
-  // ④ 지시서 + 세션 상태
-  var ordBody = (SS.length? '<div class="sub2">🤖 세션·루틴 상태</div>'
-      + SS.map(function(x){return '<div class="card" style="padding:7px 11px"><div class="hd">'
-        +'<span class="who '+(x.s==='waiting'?'w-rt':'w-work')+'">'
-        +(x.s==='waiting'?'⏸ 대기':'▶ 작업')+'</span>'
-        +'<span class="ttl" style="font-weight:400">'+esc(x.id)+'</span>'
-        +'<span class="code">'+esc(x.last||'')+'</span></div></div>';}).join('') : '')
-    + '<div class="sub2" style="margin-top:10px">📄 지시서 — 최신순</div>'
-    + bs.slice(0,6).map(function(x){
+  // ④ 지시서 + 세션 상태 + 보고 — **좌우로 나란히** (2026-08-30 사장님 지시
+  //    "지시서세션옆에 보고내용탭을 이동하고 실시간으로 지시서/보고서를 같이 확인")
+  //    보고는 별도 탭(reports.html)에 있어서 지시서와 대조하려면 화면을 오갔다.
+  //    ⚠️ reports.html 은 **없애지 않는다** — 거기엔 전체 이력 122건이 있고,
+  //       여기는 '지금 살아 있는 것'만 실시간으로 나란히 보는 자리다.
+  var unread = SS.filter(function(x){return x.r.k==='un';}).length;
+
+  // 세션 줄 — 🔴 **안 읽음과 대기만 펼친다.** 처음엔 31개를 전부 폈더니 그것만으로
+  //    pane 이 꽉 차서 정작 주인공인 지시서·보고가 스크롤 아래로 묻혔다(2026-08-30 화면 확인).
+  //    "같이 확인하도록" 이 요구인데 같이 안 보이면 고친 게 아니다.
+  function ssLine(x){
+    return '<div class="card" style="padding:6px 10px"><div class="hd">'
+      +'<span class="who '+(x.r.k==='un'?'w-un':(x.s==='waiting'?'w-rt':'w-work'))+'"'
+      +(x.r.tip?' title="'+esc(x.r.tip)+'"':'')+'>'+esc(x.r.lab)+'</span>'
+      +'<span class="ttl" style="font-weight:400;font-size:12.5px">'+esc(x.id)+'</span>'
+      +'<span class="code">'+(x.s==='waiting'?'⏸':'▶')+' '+esc(x.last||'')+'</span>'
+      +'</div></div>';
+  }
+  var ssHot = SS.filter(function(x){return x.r.k==='un'||x.s==='waiting';});
+  var ssRest= SS.filter(function(x){return !(x.r.k==='un'||x.s==='waiting');});
+  var ssRow = (ssHot.length? ssHot.map(ssLine).join('')
+               : '<p class="none">안 읽음·대기 없음 — 전부 진행 중입니다.</p>')
+    + (ssRest.length? '<details style="margin-top:5px"><summary class="why" style="cursor:pointer">'
+        +'읽은 세션 '+ssRest.length+'건 펼치기</summary>'+ssRest.map(ssLine).join('')+'</details>' : '');
+
+  // 왼쪽 = 지시서
+  var colOrd = (bs.length? bs.slice(0,8).map(function(x){
       var it=x.b.items||[], dn=it.filter(function(i){return i.state==='done';}).length;
-      var rep=it.filter(function(i){return i.note;}).slice(-1);
+      var r=rst(x.id);
       return '<div class="card"><div class="hd">'
-        +'<span class="who '+(((x.b.owner||'').indexOf('루틴')>=0)?'w-rt':'w-work')+'">'
-        +esc(String(x.b.owner||'미지정').slice(0,14))+'</span>'
-        +'<span class="ttl" style="font-size:13px">'+esc(String(x.b.title||x.id).slice(0,42))+'</span>'
+        +'<span class="who '+(r.k==='un'?'w-un':(((x.b.owner||'').indexOf('루틴')>=0)?'w-rt':'w-work'))+'"'
+        +(r.tip?' title="'+esc(r.tip)+'"':'')+'>'+esc(r.lab)+'</span>'
+        +'<span class="ttl" style="font-size:12.5px">'+esc(String(x.b.title||x.id).slice(0,34))+'</span>'
         +'<span class="code">'+dn+'/'+it.length+'</span></div>'
-        + rep.map(function(i){return '<div class="note">↩ '+esc(String(i.note).slice(0,110))+'</div>';}).join('')
-        +'<div style="margin-top:5px">'+cmd('python -m studio.batchboard order --id '+x.id)+'</div></div>';
-    }).join('');
-  H+=pane('📄','지시서 · 세션',bs.length+'건',ordBody);
+        +'<div class="why" style="font-size:11.5px">'+esc(String(x.b.owner||'미지정').slice(0,16))
+        +' · '+esc(x.id)+'</div>'
+        +'<div style="margin-top:4px">'+cmd('python -m studio.batchboard order --id '+x.id)+'</div></div>';
+    }).join('') : '<p class="none">지시서가 없습니다.</p>');
+
+  // 오른쪽 = 보고. 🔴 문구를 지어내지 않는다 — 세션이 실제로 쓴 것만 싣는다.
+  var repRows=[];
+  Object.keys((B.currents)||{}).forEach(function(k){
+    var c=(B.currents)[k]||{};
+    if(c.what) repRows.push({id:k,t:String(c.since||''),w:String(c.what),src:'진행'});
+  });
+  SS.forEach(function(x){
+    if(x.rep && !repRows.some(function(r){return r.id===x.id;}))
+      repRows.push({id:x.id,t:x.repAt,w:x.rep,src:'보고'});
+  });
+  repRows.sort(function(a,b){return (b.t||'').localeCompare(a.t||'');});
+  var colRep = (repRows.length? repRows.slice(0,10).map(function(r){
+        return '<div class="card"><div class="hd">'
+          +'<span class="who w-rep">'+esc(r.src)+'</span>'
+          +'<span class="ttl" style="font-weight:400;font-size:12.5px">'+esc(r.id)+'</span>'
+          +'<span class="code">'+esc(String(r.t||'').slice(5,16))+'</span></div>'
+          +'<div class="note">'+esc(r.w.slice(0,190))+'</div></div>';}).join('')
+      : '<p class="none">보고가 없습니다.</p>')
+    + '<div class="why" style="margin-top:6px;font-size:11px">전체 이력은 📢 보고 탭</div>';
+
+  // 🔴 6분할 — 지시서와 보고가 **각각 제 칸**을 쓴다 (2026-08-30 사장님 지시
+  //    "화면을 6분할하면 지시서와 보고서를 나누어 볼 수 있음").
+  //    한 칸 안에 좌우로 우겨넣었더니 카드가 좁아 보고문이 서너 줄에서 잘렸다.
+  //    미결사항이 쓰던 우측 세로 칸을 반으로 나눠 자리를 만들었다(CSS .side/.rep).
+  //    세션 상태는 보조라 지시서 칸 아래에 접어 둔다 — 읽음 여부는 카드마다 배지로 붙는다.
+  H+=pane('📄','지시서',bs.length+'건'+(unread?' · 🔴'+unread:''),
+      colOrd
+      + '<details style="margin-top:9px"'+(unread?' open':'')+'>'
+      + '<summary class="sub2" style="cursor:pointer">🤖 세션·루틴 상태'
+      + (unread? ' <span style="color:#ff6b6b">· 안 읽음 '+unread+'</span>' : '')
+      + '</summary>' + ssRow + '</details>');
+  H+=pane('📢','보고',repRows.length+'건',colRep,'rep');
 
   // 🗒️ 미결사항 — 오늘 진행과정 (2026-08-28 사장님 지시)
   //    "조치한 내용 지우지 말고 그대로 두고 완료된 내용만 체크하여 볼 수 있도록"

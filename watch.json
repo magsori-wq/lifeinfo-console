@@ -2666,7 +2666,9 @@
    "due": "2026-09-04",
    "cmd": "curl -s -o /dev/null -w '%{http_code}' 'https://www.mcee.go.kr/home/web/board/list.do?menuId=10598&boardMasterId=939&searchKey=title&searchValue=%EC%B6%A9%EC%A0%84%EC%9A%94%EA%B8%88' ; echo ' <- mcee 보도자료 충전요금 검색. 2026-07 이후 확정 보도자료가 올라왔으면 5개 구간 단가·시행일을 원문에서 옮겨 D2-11 초안 작성'",
    "owner": "claude",
-   "state": "blocked"
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "재검증 완료(2026-08-30, agent). 초안의 최종 5단계 수치(295.0/307.2/325.6/348.4/393.1)·시행일(8/1)은 korea.kr 정책브리핑 카드뉴스(2026-07-09, newsId=148967839, 정부 공식 포털)와 일치하고, 개편 전 2단계 값(324.4/347.2)은 mcee.go.kr 4/29 행정예고 원문의 '현행' 칸과 정확히 일치 — 수치는 그대로 써도 됨. 단 초안이 인용한 'mcee.go.kr 확정 보도자료(2026-07-01) 원문'이라는 특정 문서는 부처 자체 보도자료 게시판(menuId=10598,boardMasterId=939) 검색으로 못 찾음(최신 게시물 6/11, 7~8월 없음) — 언론 다수가 같은 제목·날짜를 인용하나 원문 URL 미확인. 상세 = docs/d211_1차출처_기후에너지환경부_20260830.md"
   },
   {
    "id": "flu-2627-not-published",
@@ -3244,7 +3246,9 @@
    "due": "2026-09-02",
    "cmd": "claude.ai > 설정 > 스킬 > lifeinfo-blog 에서 C:/lifeinfo/lifeinfo-blog/SKILL.md 내용으로 교체",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "✅ 완료 2026-08-30 사장님이 claude.ai 계정 스킬 lifeinfo-blog 를 교체하셨다. 올리기 직전 오늘 확정분을 반영했다 — 검색설명 함정 ④(본문 에디터 로드 대기 · 8회 실패의 진짜 원인) · state=auto 여도 라이브 meta 가 맞으면 성공(체커 한계) · Actions 러너에는 클립보드가 없으니 로컬에서 seodesc set. 이로써 문서 네 표면(CLAUDE.md · 루틴 SKILL 7개 · Desktop Code · 계정 스킬)이 같은 판이 됐다."
   },
   {
    "id": "insta-category-fix",
@@ -3298,7 +3302,9 @@
    "due": "2026-08-31",
    "cmd": "python -m studio.setgate && python -m studio.batchboard show",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "✅ 지시서 발급 2026-08-30: D4-11 이 4채널 완결(블로그·네이버·쓰레드·인스타 전부 URL 기록)돼 순서가 왔다. pub0830d 로 이과장에게 내렸다."
   },
   {
    "id": "v0reject-g4-05",
@@ -3307,6 +3313,75 @@
    "due": "2026-08-30",
    "cmd": "python -m studio.v0check gate --code G4-05",
    "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 통과 — 반려했던 3곳이 정확히 고쳐졌고 새 문장도 조문과 일치한다. law.go.kr DRF API 원문(MST=285139)으로 세 문장 전부 재실측: [1] 제73조③ 본문 '1년 이상 10년 이하의 징"
+  },
+  {
+   "id": "fix-g405-law-0830",
+   "added": "2026-08-30",
+   "what": "G4-05 법조문 3건 정정 완료 — ①채종림 행(500만원 과태료→제73조③1호 1년이상 10년이하 징역) ②미수 행(벌금형 없음→제1항과 같은 형·형법 제25조② 감경) ③제75조① 단서 반영. V0 재검사 필요",
+   "due": "2026-08-30",
+   "cmd": "python -m studio.v0check --code G4-05",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "blocked-pub0830a",
+   "added": "2026-08-30",
+   "what": "D4-11 라이브 발행 트리거가 권한 분류기에 막혔다(이과장 세션). 게이트는 전부 통과 — go도장 16:55:03 · V0 🟢 · pace 0/5 · 초안 origin/main 푸시 확인 · 4채널 세트 미완 없음. 아래 한 줄만 실행하시면 발행됩니다.",
+   "due": "2026-08-30",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D4-11 -f mode=live -f confirm=PUBLISH -f file='상품권환불_글_HTML.txt' -f title='유효기간 지난 상품권 환불 방법 반환율 90% 95% 잔액 환불 기준 총정리 (2026 추석 상품권)'",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "D4-11 발행 완료 · 4채널 완결(블로그 215편에 포함, osmu naver/threads/instagram 전부 URL 기록). 실측으로 확인 후 닫음"
+  },
+  {
+   "id": "osmu-splitview-0830",
+   "added": "2026-08-30",
+   "what": "OSMU 안내 분할화면 미이행 — 2026-08-14 사장님 지시(3채널 원고를 나란히 + 이미지 미리보기)가 문서에만 있고 코드에 없다. table 표는 이행됨",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.osmu_manifest table --code D4-11",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "d211-block-vs-approved-check",
+   "added": "2026-08-30",
+   "what": "D2-11 이 🚫막힘(d211-ev-rate-unverified, 공식단가 불일치·시행일 불일치로 초안작성 보류) 상태인 채로, 이후 새 초안이 만들어져 dupcheck🟢·bodydup🟢·V0🟢·사장님 go도장(16:55:17)까지 받고 pub0830d 지시서(0%)로 나가 있다. 두 기록이 모순 — 새 초안이 옛 블록 사유(뉴스단가 vs 행정예고안단가 불일치, 시행일 8/1 vs 11/12 불일치)를 실제로 해소했는지 확인 후 d211-ev-rate-unverified 를 닫거나, 못 해소했으면 발행 전에 pub0830d 실행을 멈출 것",
+   "due": "2026-08-31",
+   "cmd": "python -m studio.pubqueue list; cat 전기차공공충전요금개편_글_HTML.txt 2>/dev/null | grep -E '295\\.0|294\\.3|324\\.4|347\\.2|시행'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "falsepos-readgate-0830",
+   "added": "2026-08-30",
+   "what": "falsepos 회귀규칙 추가 — ①읽음판정이 session_state 만 보면 새 지시서가 통째로 빠진다(오늘 4건) ②last_order_at 에 '일시 기록 안 됨' 같은 비날짜 문자열이 섞여 있다(2건). 둘 다 오탐을 만들었다",
+   "due": "2026-08-31",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "d211-source-citation-overstated",
+   "added": "2026-08-30",
+   "what": "D2-11 초안 출처문구 'mcee.go.kr 확정 보도자료(2026-07-01 발표) 원문 기준'이 과장됨 — 그 문서를 부처 게시판에서 직접 못 찾았다(검색결과 최신 6/11, 7~8월 없음). 수치·시행일 자체는 korea.kr 정책브리핑 카드뉴스(2026-07-09)+mcee.go.kr 4/29 예고 원문으로 뒷받침되어 맞으나, 본문 출처 표기 문구만 'mcee.go.kr' 단독 인용에서 정정 필요",
+   "due": "2026-08-31",
+   "cmd": "본문 sec7 공식 확인 페이지의 출처 문구를 '기후에너지환경부 2026-04-29 행정예고 원문 + 대한민국 정책브리핑(korea.kr) 2026-07-09 개편안 카드뉴스 기준'으로 수정 후 발행. 원문 대조는 docs/d211_1차출처_기후에너지환경부_20260830.md 참고",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-30",
+   "result": "owner 재설정을 위해 취소 — 아래 재등록"
+  },
+  {
+   "id": "d211-source-citation-fix",
+   "added": "2026-08-30",
+   "what": "D2-11(pub0830d 발행대기) 초안 출처문구 'mcee.go.kr 확정 보도자료(2026-07-01 발표) 원문 기준'이 과장됨 — 그 특정 문서를 부처 보도자료 게시판(menuId=10598,boardMasterId=939)에서 직접 못 찾음(검색 최신 6/11, 7~8월 게시물 없음). 수치·시행일 자체는 korea.kr 정책브리핑 카드뉴스(2026-07-09)+mcee.go.kr 4/29 행정예고 원문(현행 칸)으로 뒷받침되어 맞음 — 발행 자체를 막을 사유는 아니고, 발행 전(또는 발행 직후) 본문 출처 문구만 정정하면 됨",
+   "due": "2026-08-31",
+   "cmd": "본문 sec7 공식 확인 문구를 '기후에너지환경부 2026-04-29 행정예고 원문 + 대한민국 정책브리핑(korea.kr) 2026-07-09 개편안 카드뉴스 기준'으로 수정. 대조자료 = docs/d211_1차출처_기후에너지환경부_20260830.md",
+   "owner": "claude",
    "state": "todo"
   }
  ]

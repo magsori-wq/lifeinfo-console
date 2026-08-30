@@ -429,10 +429,27 @@
   document.querySelectorAll('.leafrow').forEach(function(row){
     row.querySelectorAll('button[data-t]').forEach(function(b){ TAB_GROUP[b.dataset.t]=row.dataset.group; });
   });
+  // 🔴 iframe 캐시 무효화 (2026-08-30 실제 사고)
+  //    approval.html 을 고쳐 배포했는데 **사장님 화면은 옛 화면 그대로**였다.
+  //    iframe src 에 버전이 없어 브라우저가 캐시본을 계속 썼다. 화면 안의
+  //    "30초마다 자동 새로고침" 은 **데이터(fetch)** 만 다시 받지 HTML 은 안 받는다.
+  //    → 탭을 열 때 최신을 받는다. 단 **1분 안에 다시 열면 그대로 둔다** —
+  //      탭을 오갈 때마다 리로드하면 스크롤·펼침 상태가 날아가고 느려진다.
+  var _fload={};
+  function freshFrame(n){
+    var f=document.getElementById('f_'+n); if(!f) return;
+    var now=Date.now();
+    if(_fload[n] && now-_fload[n] < 60000) return;
+    if(!f.dataset.base) f.dataset.base=String(f.getAttribute('src')||'').split('?')[0];
+    if(!f.dataset.base) return;
+    f.src=f.dataset.base+'?t='+now;
+    _fload[n]=now;
+  }
   function selectTab(b){
     var t=b.dataset.t;
     document.querySelectorAll('.leafrow button').forEach(function(x){x.classList.toggle('active',x===b);});
     iframes.forEach(function(n){document.getElementById('f_'+n).classList.toggle('show',n===t);});
+    freshFrame(t);
     document.getElementById('p_dispatch').classList.toggle('show',t==='dispatch');
     document.getElementById('p_nav').classList.toggle('show',t==='nav');
     document.getElementById('p_about').classList.toggle('show',t==='about');
