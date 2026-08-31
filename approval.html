@@ -30,6 +30,11 @@ body{margin:0;padding:12px 14px;background:#0e1526;color:#e6ecf7;overflow:hidden
    ⚠️ 미결사항이 길어지면 pane 안에서 스크롤된다(모든 pane 이 독립 스크롤이다). */
 .grid>.pane.side{grid-area:1/3}
 .grid>.pane.rep{grid-area:2/3}
+/* 📤 올릴 것 — 미결(side) 칸을 위아래로 나눠 쓴다. 새 열을 만들면 다 눌린다 */
+.grid{grid-template-rows:1fr 1fr}
+.grid>.pane.side{grid-area:1/3}
+.grid>.pane.osmu{grid-area:1/3;align-self:end;max-height:46%}
+.grid>.pane.side{max-height:52%;align-self:start}
 /* 📄 지시서 ↔ 📢 보고 좌우 분할 (2026-08-30 사장님 지시
    "지시서세션옆에 보고내용탭을 이동하고 실시간으로 지시서/보고서를 같이 확인").
    한 pane 안을 두 칸으로 가른다 — 격자에 새 칸을 만들면 다른 패널이 눌린다. */
@@ -166,6 +171,25 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
 function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
+// 🔴 원고 탭-복사 (2026-08-31). 원고는 수천 자라 HTML 속성에 담으면 깨진다 — 배열 참조.
+var TXT=[];
+function txtBtn(label,text,note){
+  var i=TXT.push(text)-1;
+  return '<button class="act ok" style="margin:6px 6px 0 0" onclick="cpi('+i+')">📋 '
+    +esc(label)+' 복사 '+text.length+'자</button>'
+    +(note?'<div class="meta">'+esc(note)+'</div>':'');
+}
+function cpi(i){
+  var x=TXT[i];
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(x).then(toast,function(){fbcp(x);});
+  } else fbcp(x);
+}
+function fbcp(x){var a=document.createElement('textarea');a.value=x;a.style.position='fixed';
+  a.style.opacity=0;document.body.appendChild(a);a.select();
+  try{document.execCommand('copy');toast();}catch(e){}document.body.removeChild(a);}
+function toast(){var e=document.querySelector('.copied');if(!e)return;
+  e.textContent='복사됨';e.classList.add('on');setTimeout(function(){e.classList.remove('on');},1100);}
 function copy(el){navigator.clipboard.writeText(el.textContent);
   var c=document.getElementById('cp');c.classList.add('on');
   setTimeout(function(){c.classList.remove('on');},900);}
@@ -686,6 +710,34 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       + (unread? ' <span style="color:#ff6b6b">· 안 읽음 '+unread+'</span>' : '')
       + '</summary>' + ssRow + '</details>');
   H+=pane('📢','보고',repRows.length+'건',colRep,'rep');
+
+  // 🔴 「📤 올릴 것」 — PC 결재함에도 넣는다 (2026-08-31 사장님: "운영콘솔에 반영한게 맞어?")
+  //    그전에는 m.html(모바일)에만 있었다. 사장님이 주로 보시는 결재함에는
+  //    **섹션 자체가 없어서** 아무것도 안 보였는데 나는 "반영했다"고 답했다.
+  var ot=(OT.items||[]);
+  var otBody = ot.length? ot.map(function(it){
+      var on = it.active!==false;
+      var st = (it.status||[]).map(function(s){
+        return '<span class="st'+(s.ok?' done':'')+'">'+(s.ok?'✅':'⏳')+' '+esc(s.label)+'</span>';
+      }).join('');
+      return '<div class="card'+(on?' boss':'')+'"'+(on?'':' style="opacity:.45"')+'>'
+        +'<div class="hd"><span class="who '+(on?'w-boss':'w-rt')+'">'
+        +(on?'① 지금 올릴 것':'②+ 대기')+'</span>'
+        +'<span class="ttl" style="font-size:13px">'+esc(String(it.title).slice(0,48))+'</span>'
+        +'<span class="code">'+esc(it.code)+'</span></div>'
+        +'<div class="steps">'+st+'</div>'
+        + (on ? (it.channels||[]).map(function(c){
+              var note='';
+              if(c.cards&&c.cards.length) note='카드 '+c.cards.length+'장 · 파일명 끝 번호가 게시 순서';
+              else if(c.img) note='첨부 insta/thread/'+c.img;
+              else if(c.key==='naver') note='첨부 thumbs_naver/ (밝은 톤, 재사용)';
+              return txtBtn(c.label+' 원고', c.text, note);
+            }).join('')
+          : '<div class="meta">앞 글을 끝내면 열립니다 — 명령도 순서 아닌 글은 거부합니다.</div>')
+        +'</div>';}).join('')
+    : '<p class="none">올릴 원고가 없습니다.</p>';
+  H+=pane('📤','올릴 것 — 원고 복사',
+          ot.length? ot.length+'편' : '0', otBody, 'osmu');
 
   // 🗒️ 미결사항 — 오늘 진행과정 (2026-08-28 사장님 지시)
   //    "조치한 내용 지우지 말고 그대로 두고 완료된 내용만 체크하여 볼 수 있도록"

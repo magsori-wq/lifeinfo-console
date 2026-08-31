@@ -58,6 +58,11 @@ summary .n.hot{color:#ff9d9d;border-color:#ff6b6b66}
 .card.un{border-color:#ff6b6b66;background:#ff6b6b0d}
 /* 순서가 아직 아닌 글 — 흐리게. 버튼 자체를 안 그리므로 누를 것이 없다 */
 .card.off{opacity:.45}
+/* 4채널 진행 — 무엇이 찼고 무엇이 남았는지 한눈에 */
+.chs{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0 3px}
+.ch{font-size:11.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;
+  background:#232c44;border:1px solid #2a3a5e;color:#8fa0bd}
+.ch.ok{background:#2f8f6822;border-color:#2f8f6866;color:#8ee5be}
 .t{font-weight:700;font-size:14px;line-height:1.45;word-break:keep-all}
 .m{color:#8fa0bd;font-size:12px;margin-top:4px;word-break:break-all}
 .w{color:#a9b6cc;font-size:12.5px;margin-top:6px;white-space:pre-wrap;word-break:break-word}
@@ -249,9 +254,15 @@ Promise.all([j('batch.json'),j('queue.json'),j('watch.json'),j('session_state.js
   //    seq 1 번만 활성, 나머지는 버튼을 눌러도 반응하지 않는다.
   var otBody = ot.length? ot.map(function(it){
       var on = it.active!==false;
+      // 🔴 4채널을 다 보인다 — 미게시만 보이면 얼마나 남았는지 모른다(2026-08-31 사장님)
+      var st = (it.status||[]).map(function(s){
+        return '<span class="ch'+(s.ok?' ok':'')+'">'+(s.ok?'✅':'⏳')+' '+esc(s.label)+'</span>';
+      }).join('');
       return '<div class="card'+(on?'':' off')+'">'
         +'<span class="badge '+(on?'b-go':'b-wait')+'">'+(on?'① 지금 올릴 것':'②+ 대기')+'</span>'
+        +(it.left?'<span class="badge b-no">'+it.left+'채널 남음</span>':'')
         +'<div class="t" style="margin-top:6px">'+esc(String(it.title).slice(0,60))+'</div>'
+        +'<div class="chs">'+st+'</div>'
         +'<div class="m">'+esc(it.code)+' · <a href="'+esc(it.url)+'" style="color:#8fb4e8">라이브 글</a></div>'
         + (on ? (it.channels||[]).map(function(c){
             var note='';
