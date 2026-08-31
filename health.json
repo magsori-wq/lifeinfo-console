@@ -1,7 +1,7 @@
 {
- "checked_at": "2026-08-31T06:01:01",
+ "checked_at": "2026-09-01T06:00:11",
  "light": "yellow",
- "pass": 12,
+ "pass": 15,
  "warn": 3,
  "fail": 0,
  "checks": [
@@ -23,11 +23,15 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (653개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (657개 확산링크)"
   },
   {
    "level": "PASS",
    "msg": "대분류 8개 (7±2 이내)"
+  },
+  {
+   "level": "PASS",
+   "msg": "OSMU 교차링크 연계 통과: 220개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
@@ -52,6 +56,14 @@
   {
    "level": "PASS",
    "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
+  },
+  {
+   "level": "PASS",
+   "msg": "초안 코드 1:1 통과: 108종"
+  },
+  {
+   "level": "PASS",
+   "msg": "소스 구문 통과: 418개 .py"
   },
   {
    "level": "WARN",

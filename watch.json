@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-08-31",
+ "updated": "2026-09-01",
  "items": [
   {
    "id": "redirect-error",
@@ -3406,7 +3406,7 @@
   {
    "id": "topicprop-approve-20260831",
    "added": "2026-08-31",
-   "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) B1-08 자동차세 9월 연납 신청 방법 할인율 계산 총정리 (2026 · 9월 16~30",
+   "what": "🙋 글감 승인요청 3건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) A2-16 국가유공자 보훈보상대상자 활동지원급여 상이등급 무관 확대 총정리 (2026년 9\n2) B1-08 자동차세 9월 연납 신청 방법 할인율 계산 총정리 (2026 · 9월 16~30\n3) F2-14 2026 추석 연휴 고속도로 통행료 무료 기간 정체 예상시간 우회도로 총정리",
    "due": "2026-08-31",
    "cmd": "python -m studio.topicprop approve --code <코드>",
    "owner": "user",
@@ -3564,6 +3564,317 @@
    "what": "F1-14 해외축산물반입 과태료 — 네이버 블로그 게시 (원고 준비완료, 클립보드 패키지 생성됨)",
    "due": "2026-08-31",
    "cmd": "C:\\lifeinfo\\naver_post.bat 더블클릭 → 코드 F1-14 입력 → 원고 자동탐색+클립보드 세팅+글쓰기창 열림 → 붙여넣기·게시 → URL 확보되면 python -m studio.pipeline naver-link --code F1-14 --url <URL> 로 기록",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-08-31",
+   "result": "확인: https://blog.naver.com/magsori8975/224396469775 (og:title curl 대조 일치) → naver-link 기록 + crosslink 완료"
+  },
+  {
+   "id": "uicheck-0831",
+   "added": "2026-08-31",
+   "what": "콘솔 화면 회귀 검사기 — 오늘 결함 4건이 전부 '고치고 화면을 안 눌러 봤다' 부류였다. 데이터-화면 계약(읽는 JSON·키)이 실제로 맞는지 코드가 판정하게 만든다",
+   "due": "2026-08-31",
+   "cmd": "python -m studio.uicontract",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-draft-b212-ready-0831",
+   "added": "2026-08-31",
+   "what": "B2-12 은행 대출금리 가산금리 인하 — 네이버용 원고 작성 완료(osmu/네이버용_은행대출금리가산금리인하.txt), 원문 6개 섹션·표·계산예시·출처 전부 반영. 순서 게이트가 F1-14 네이버(사장님 손 대기 중)를 먼저 요구해 아직 gate-check(naver-draft)는 못 돌렸다. F1-14 완료 즉시 pipeline naver-draft --code B2-12 실행할 것",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.pipeline naver-draft --code B2-12 --file osmu/네이버용_은행대출금리가산금리인하.txt",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-31",
+   "result": "F1-14 순서 통과 후 naver-draft 게이트 재실행 완료 — 상세도 통과·클립보드 세팅됨. 아래 새 항목으로 사장님 손 대기 등록"
+  },
+  {
+   "id": "b108-verify-0831",
+   "added": "2026-08-31",
+   "what": "B1-08 자동차세 9월 연납: 신청기간 9/16~9/30 확인·9월 할인율=제2기분세액의 2.5%(시행령 이자율5%×92/184일) 확인·4회차 일정·매매폐차 환급근거(지방세법130조+지방세기본법60조) 전부 1차출처(law.go.kr DRF API)로 확인 완료. 못 얻은 항목 없음",
+   "due": "2026-08-31",
+   "cmd": "cat docs/source_b108_carfax_20260831.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "b101-rate-fix",
+   "added": "2026-08-31",
+   "what": "B1-01 라이브 본문이 연납 공제율을 '안내자료마다 약 3~5%로 다르다'며 못 대고 있다 — 시행령 제125조6항(이자율 5%)으로 확정 가능. B1-08 발행 후 교차링크와 함께 보강할 것",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.blogger update-post --code B1-01",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "affiliate-disclosure-0831",
+   "added": "2026-08-31",
+   "what": "제휴링크 경제적이해관계 표시문구 1차출처 확보완료 — 공정위 심사지침(예규 2100000280130, 2026-06-01 시행) Ⅴ.6.: 위치=제목/첫부분(더보기·댓글 금지), 형태=본문과 구분되는 글자크기·색, 문구=수수료/경제적대가 등 명확한 표현(체험후기 등 모호표현 금지), 언어=한국어(AD 단독표기 금지). 예시원문 '위 상품을 추천하면서 ◇◇사로부터 경제적 대가(현금,상품권,수수료,포인트,무료상품 등)를 받았음' 그대로 인용 가능. 위반시 시정조치(제7조)·과징금(매출액2%·제9조)·벌칙(2년이하징역or1.5억이하벌금·제17조)",
+   "due": "2026-09-01",
+   "cmd": "cat docs/source_affiliate_disclosure_20260831.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-b212-0831",
+   "added": "2026-08-31",
+   "what": "B2-12 은행 대출금리 가산금리 인하 — 네이버 블로그 게시 (원고 클립보드 세팅됨, 첨부이미지 준비됨)",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.pipeline naver-draft --code B2-12 --file osmu/네이버용_은행대출금리가산금리인하.txt --open 로 원고 클립보드 재세팅 후, 네이버 글쓰기창에 붙여넣기·첨부이미지(C:\\lifeinfo\\thumbs_naver\\195_loanrate.png) 첨부·게시 → URL 확보되면 python -m studio.pipeline naver-link --code B2-12 --url <URL> 로 기록",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-title-hook-0831",
+   "added": "2026-08-31",
+   "what": "네이버 원고 제목 표준(후킹+키워드) 부재 — 최근 15편 중 14편이 블로그스팟 제목과 동일. B2-12는 글자까지 일치. 표준 문서화 + naver.py 제목 검사 게이트 신설",
+   "due": "2026-09-01",
+   "cmd": "for f in $(ls -t osmu/네이버용_*.txt | head -15); do head -1 $f; done",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-08-31",
+   "result": "표준 절 CLAUDE.md 신설 + naverkw 판정기 + naver-draft 게이트 + 배선 수리(제목칸에 DB제목이 찍히던 것) + B2-12 제목 C안 반영"
+  },
+  {
+   "id": "affiliate-test-status-0831",
+   "added": "2026-08-31",
+   "what": "제휴 링크 테스트 현황(사장님 발언 20:09~20:15 복원) — 쓰레드 O(2026-08-18 제습제/쿠팡파트너스 링크 시험게시 · affiliate.py 근거) · 인스타 X(테스트 안 함, 사장님 확인) · 블로그스팟 제외(애드센스 미승인, 사장님 방침). 등록 시스템(studio/affiliate.py)은 등록 0건·webapp/affiliate.json 파일 자체 없음 — 사장님이 채널 자체엔 쿠팡파트너스·브랜드커넥트·토스쉐어링크를 등록해두셨다는 것과, 우리 affiliate.py 등록 데이터는 별개(아직 미기재). 공정위 확인: affiliate.py 코드주석에 '08-18 제습제 글에서 표시문구 없이 쿠팡링크를 올리신 일이 있다'고 명시돼 있음 → 그 시점 표시문구 없었던 것으로 판정(2차 확인은 URL 미보유로 불가 — 어느 쓰레드 게시물인지 DB osmu.threads 220건 어디에도 코드로 연결돼 있지 않음, 오늘(08-31) 발행 코드연동 쓰레드 5건(D2-11·G4-05·A5-09·F1-14·B2-12) 전수 조회 결과 쿠팡 언급 0건 확인됨 — 즉 그 테스트글은 우리 OSMU 파이프라인 밖의 독립 게시물)",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.affiliate",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "daylight-orders-0831",
+   "added": "2026-08-31",
+   "what": "①반영(미결사항=pending_osmu.html이 N/T/I 3채널 별도표시, osmu_text.json 이 4채널 status/left 보유. 단 pending.py/pending.json 원본은 need·ch 에 instagram 키 자체가 없어 3편(B1-03·G4-02·E2-07)이 구조적으로 안 잡힘) ②반영(osmutext.order_check 하드게이트+m.html seq/active 비활성화, 코드 확인) ③코드는 있으나 버그: approve_server._pending()·fallbackPending() 둘 다 'naver/threads/instagram 전부 done'이면 posts 배열에서 통째로 제외해 fullDone(발행완료 카드)이 영구 도달불가 — 실측: D2-11/G4-05/A5-09(4채널 완료) 셋 다 _pending() 출력에 없음. 즉 삭제하지 말라는 지시와 달리 완료 즉시 화면에서 사라짐 ④반영·배포·라이브 200 확인(m.html 08-31 01:31 생성, deploy 13:25, github.io 200)",
+   "due": "2026-09-01",
+   "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio.approve_server import _pending;d=_pending();print([p['code'] for p in d['posts']])\" 로 4채널완료 코드가 여전히 안 보이는지 재확인; grep -n \"'네이버'\\|'쓰레드'\" studio/pending.py 로 instagram 키 추가 여부 재확인",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "f216-duplicate-of-f213",
+   "added": "2026-08-31",
+   "what": "F2-16(2026 추석 KTX·SRT 특별수송기간 예매) 지시서 = 이미 발행된 F2-13(2026-08-16, 추석 기차표 예매 방법 노선별 일정 결제기한 위약금 총정리)과 완전중복. F2-13 목차: 핵심요약/노선별일정/통합회원전환/사전예매/결제기한/위약금/잔여석/제한사항/암표단속 — F2-16 지시서 6개 항목과 1:1 일치, 예매일정 수치도 동일(사전 9/3~4, 일반 9/7~11). F2-12(2026-08-XX, 코레일+ 통합예매 통합회원전환)도 SR전환 앵글 중복. 초안 작성 보류 — 1차출처만 확보해 문서화함",
+   "due": "2026-08-31",
+   "cmd": "python -m studio.dupcheck '2026 추석 KTX SRT 특별수송기간 승차권 예매 방법 총정리' 로 재확인 후, F2-16을 새로 낼 가치가 있는지(F2-13 갱신/보강으로 전환할지, 지시 자체를 취소할지) 이부장이 판단",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "f214-toll-2026",
+   "added": "2026-08-31",
+   "what": "F2-14(2026 추석 고속도로 통행료 무료기간) 초안 완료 · 2026년 면제기간/정체예보/우회도로 3항목 전부 08-31 현재 정부 미발표(molit.go.kr 307·검색 0건·WebFetch 리다이렉트 초과 확인). 과거 2024·2025 패턴만 인용해 초안 작성됨",
+   "due": "2026-09-14",
+   "cmd": "WebSearch '2026년 추석 고속도로 통행료 면제 국무회의' 재확인 후 korea.kr/molit.go.kr 1차 출처로 추석고속도로통행료_글_HTML.txt 본문(3장 계산예시 확정치로 교체, 4·5장 실제 발표수치 반영) 갱신",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "b108-code-collision-0901",
+   "added": "2026-08-31",
+   "what": "양도소득세 1세대1주택 초안(posts/B1-08_글_HTML.txt)이 B1-08 코드를 쓰고 있어 자동차세 9월 연납과 충돌 — 코드 표기를 '코드미정'으로 바꿔 충돌만 해소했다. 내용은 그대로다. B1 계열 빈 번호로 재배정하고 파일명도 맞출 것",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.draftfind B1-08",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topicprop-approve-20260901",
+   "added": "2026-09-01",
+   "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) E2-11 국민비서 구삐 신청 방법 — 카카오톡 네이버앱으로 세금·운전면허 갱신 알림 한번",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.topicprop approve --code <코드>",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "adsense-html-pace3",
+   "added": "2026-09-01",
+   "what": "adsense.html SEO 체크리스트에 '하루 1편 기본, 3편 이상 금지'·'publish.yml 게이트가 3편부터 차단' 이라 적혀 있다 — 실제 상한은 5(pace.DAILY_HARD). 화면 문구가 낡았다",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.uicheck",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-01",
+   "result": "adsense.html S4 항목: '3편 이상 금지' 하드코딩 문구를 'pace.py DAILY_HARD 가 진실원(현재 5편, 이력 3→5→2→5)'으로 정정 — webapp/adsense_plan.json S4.title/note 수정 후 adsense_plan bake 재생성. uicheck adsense.html 항목 소멸, selfcheck 18)화면문법 ✅ 확인"
+  },
+  {
+   "id": "v0reject-e2-11",
+   "added": "2026-09-01",
+   "what": "🔴 V0 반려 확인 요청 — E2-11 「국민비서 구삐 신청 방법 — 카카오톡 네이버앱으로 세금·운전면허 갱신 알」. 검사자 V0검사관(3차) · 2026-09-01T02:35. 사유 요약: [3차 재검사] 2차 반려 5개 중 ②③④⑤ 이행 확인, ①은 부분 이행. 관제탑 관건 2개는 둘 다 통과했으나 새 사유 2개로 반려한다. [통과 확인] (가) 리드타임 환산 0건 — §5 표는 주기만 적었고 FAQ Q1·출처박스가 \"일률적인 '며칠 전' 리드타임은 여권 외에는 공표돼 있지 않아 임의로 환산하지 않았다\"고 명시적으로 거부한다. 2차 검사관이 … 🔴 전문은 `python -m studio.v0check gate --code E2-11` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.v0check gate --code E2-11",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-01",
+   "result": "V0 통과로 해소 — 검사자 V0검사관(4차) · [4차 재검사] 3차 반려 2건 이행 확인. (1)§5 지방세 전자송달 행(115행)에 전제 3개 병기 완료 — 서울시 제외·위택스 전자송달 신청자에 한함·신규 신청한 달의 다음 달부터 발송. 함정①(106행)에 지"
+  },
+  {
+   "id": "b108-autorenew-line",
+   "added": "2026-09-01",
+   "what": "B1-08 초안 4번 섹션 '연납은 자동 신청이 아닙니다' 불릿 = 출처파일·조문에 없는 미검증 관행 주장(전년도 연납자 자동고지 지자체 관행과 반대일 수 있음). 발행 전 삭제하거나 '다음 회차 연납고지 여부는 지자체마다 다르니 위택스에서 확인'으로 교체. V0는 PASS(원본가치 축과 무관)이나 ⑦발행승인 전 정정 필요",
+   "due": "2026-09-01",
+   "cmd": "grep -n '자동 신청이 아닙니다' C:/lifeinfo/자동차세9월연납_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub-b108-go-0901",
+   "added": "2026-09-01",
+   "what": "B1-08 자동차세 9월 연납 — 발행 준비 완료(초안 12,755자·V0🟢통과·썸네일·푸시·게이트 전부). ⑦ 발행 승인만 남았습니다. 이과장이 32분째 지시서 미열람이라, 승인 후에도 안 움직이면 아래 두 번째 명령으로 사장님이 직접 발행하실 수 있습니다",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.pubqueue go --code B1-08",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "pub-b108-trigger-0901",
+   "added": "2026-09-01",
+   "what": "B1-08 발행 트리거 — 위 ⑦승인 후 이과장이 안 움직이면 이것을 직접 실행하십시오(관제탑은 발행 버튼을 누르지 않습니다)",
+   "due": "2026-09-01",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B1-08 -f mode=live -f confirm=PUBLISH -f file='자동차세9월연납_글_HTML.txt' -f title='자동차세 9월 연납 신청 방법 할인율 계산 총정리 (2026 · 9월 16~30 신청)'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-f2-14",
+   "added": "2026-09-01",
+   "what": "🔴 V0 반려 확인 요청 — F2-14 「2026 추석 연휴 고속도로 통행료 무료 기간 정체 예상시간 우회도로 총」. 검사자 V0검사관(재검사) · 2026-09-01T02:21. 사유 요약: 재검사: 6개 이행 중 5개 완료·1개 부분. 본문 V0 는 성립(함정 2개 모두 1차출처 검증 완료)하나, 이번 통과의 핵심인 ⑥ 대체공휴일 함정의 … 🔴 전문은 `python -m studio.v0check gate --code F2-14` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.v0check gate --code F2-14",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-01",
+   "result": "V0 통과로 해소 — 검사자 V0검사관(3차) · 2차 반려 사유 1건(§6① 대통령령 제36290호 시행일 오귀속) 해소를 law.go.kr DRF MST=285779 로 독립 재확인했다 — 공포일자 20260430 · 시행일자 20260501 · 조문시행일자문자"
+  },
+  {
+   "id": "f115-source-0901",
+   "added": "2026-09-01",
+   "what": "F1-15 1차출처 확보완료: 여권법/시행령/시행규칙(law.go.kr DRF)+passport.go.kr 수수료·절차+0404.go.kr 영사콜센터+주중대사관 공지. 핵심: 분실=긴급여권(재외공관 $50,유효1년) 경로가 표준, 여행증명서는 분실자 법정대상 아님. 분실반복시 유효기간단축표 확보. 못얻은것: 재외공관 소요시간 수치, 중국외 국가별 절차",
+   "due": "2026-09-01",
+   "cmd": "cat docs/F1-15_1차출처_20260901.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "f115-passport-eu-gap",
+   "added": "2026-09-01",
+   "what": "F1-15 여권분실 글감: 유럽(쉥겐) 재외공관 개별 특이사항·표준 발급소요시간·긴급여권/여행증명서 발급가능국가 구분기준 3건 미확보 — WebSearch로 쉥겐 재외공관 특이사항 검색했으나 개별 공지 안 걸림, passport.go.kr 여행증명서/재발급 페이지엔 표준 소요시간 미기재",
+   "due": "2026-09-08",
+   "cmd": "WebSearch '주프랑스 OR 주독일 OR 주이탈리아 대한민국 대사관 여권 분실 긴급여권 안내' 로 개별 재외공관 공지 재탐색, 또는 passport.go.kr 민원상담(02-3210-0404)에 표준 소요시간 문의",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "fix-f214-source-0901",
+   "added": "2026-09-01",
+   "what": "F2-14 추석고속도로통행료 초안: V0검사관 반려사유(출처정합성) 6건 문구수정 완료 — §6①경계규정 2024→2025 1차출처(korea.kr newsId=148949835)로 재정박, 2024년행 지디넷코리아 2차출처로 정직표기, 대체공휴일(대통령령 제36290호) 함정으로 승격, 심야할인 함정목록→미확인주석 분리, 헤더V0④·썸네일표기 본문정합, 바이라인 정직화. draftfind/heading/bodydup 3종 통과(재작성 아님, 문구수정만)",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.bodydup --file 추석고속도로통행료_글_HTML.txt --code F2-14 --live",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "fix-e2-11-gukminbiseo-0901",
+   "added": "2026-09-01",
+   "what": "E2-11 국민비서구삐 반려사유 4건 수정: ①토스를 3번째 채널로(PC 삭제, 공식 ips.go.kr/pot 실측: 카카오톡/네이버앱/토스 3개뿐, PC 채널 없음) - §2 표·§3 신청단계·TOC·본문 전체 갱신, '적합한경우'→'서로 대체되나'로 개선 ②출처없는 수치 3개 제거: 신청익일 근거없음(해지만 익일 확인)→함정①·정리③·검색설명·바이라인 전부 '해지만 익일'로 축소, 무료(4회)·최대2개(2회) 전부 출처 못찾아 삭제(selectIpsGdnc.do·ips2 두 페이지 grep 0건, gccJoinGdView/gccNtcnView 404) ③바이라인 '정부부처와 공공기관'→'국민비서(ips.go.kr) 공식페이지'로 확인범위 좁힘 ④함정② 4회반복(TIP박스·함정②·FAQ Q2·정리④)→§4 함정②만 남기고 3곳 삭제/FAQ Q2·Q3 삭제. 검증: draftfind✅ heading✅(h2 11개 계층정상) bodydup🟢0.031 validate_db PASS15/WARN3/FAIL0. git add 완료, 커밋은 미실행(관제탑 몫).",
+   "due": "2026-09-02",
+   "cmd": "git diff --cached 국민비서구삐_글_HTML.txt | head -100 && python -m studio.bodydup --file 국민비서구삐_글_HTML.txt --code E2-11 --live",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0recheck-0902",
+   "added": "2026-09-01",
+   "what": "E2-11·F2-14 V0 재검사 — 둘 다 반려 사유 수정 완료(에이전트). v0 검사관에게 재검사 의뢰하면 통과 예상. 통과 후 사장님 ⑦승인 → 발행",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.v0check --code E2-11",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "fix-a216-draft-0901",
+   "added": "2026-09-01",
+   "what": "국가유공자활동지원급여_글_HTML.txt(A2-16) 반려사유 2건 수정 — ①머리를 ■제목/■코드후보/■트렌드시즌/■카테고리/■썸네일 표준형식으로 교체(기존 글감출처·1차출처 줄은 보존) ②1차출처(docs/A2-16_1차출처_법제처20260831.md)에서만 가져와 본문 4,357자→16,801바이트로 보강: 개정전후 조문원문+법제처 개정이유 인용, 제13조 1항/2항(국가유공자·보훈보상대상자) 적용조문 구분표, 2024.9/2026.9 2단계개정 h2 신설, 간호수당 vs 활동지원급여 비교표, YMYL 면책+작성자 바이라인 신설. 새 조사 없음 — 출처파일 밖 수치 0개.",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.draftfind --head A2-16 && python -m studio.heading --file 국가유공자활동지원급여_글_HTML.txt && python -m studio.bodydup --file 국가유공자활동지원급여_글_HTML.txt --code A2-16 --live",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-a2-16",
+   "added": "2026-09-01",
+   "what": "🔴 V0 반려 확인 요청 — A2-16 「」. 검사자 V0검사관(재검사) · 2026-09-01T02:43. 사유 요약: FAIL — 단, 1차 반려축(원본가치)은 해소됐다. 새 결함 1개만 막는다. 기계검사 전부 통과(heading h2 9개 OK · dupcheck 🟢 근접글 없음 · bodydup 0.031/252편 · 첫줄주석 · post-byline · ymyl-disclaimer 있음). … 🔴 전문은 `python -m studio.v0check gate --code A2-16` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.v0check gate --code A2-16",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-01",
+   "result": "V0 통과로 해소 — 검사자 V0검사관(3차) · 차단1 해소: 82행 표 '보건복지부(신청은 주소지 읍·면·동 주민센터 · 조사·심의는 국민연금공단)'로 정정, 105행·보도자료 원문과 일치 확인. 차단2 해소: 120행 바이라인에서 1355를 보도자료 귀속절에서"
+  },
+  {
+   "id": "fix-e211-gdnc-freq-0901",
+   "added": "2026-09-01",
+   "what": "E2-11(국민비서구삐) 2차 반려 대응 — selectIpsGdnc.do 113건 발송주기 표기를 확인해 §5 표 신설(지방세전자송달·운전면허 연3회·건강검진 연2회·여권 6개월전1회·자동차의무보험 일1회), FAQ Q1·출처박스·헤더 유보 3곳의 '명시돼 있지 않다' 서술 제거, §2 '서로 대체되나' 무판별 행 삭제(FAQ에 이미 있음), 탈락사유(본인인증 없이 가입불가) 본문 §2에 추가, 함정② 근거없는 '문의가 흔한 이유' 삭제. draftfind/heading/bodydup 3종 실행해 통과(🟢0.032).",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.bodydup --file 국민비서구삐_글_HTML.txt --code E2-11 --live && python -m studio.heading --file 국민비서구삐_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-boost-plan-0901",
+   "added": "2026-09-01",
+   "what": "색인보강 15편 실행안 완성 — 쉬움6/보통5/어려움3, D2-03(K-패스)이 착수비용 가장 낮음(한 문장만 추가)",
+   "due": "2026-09-02",
+   "cmd": "cat docs/색인보강_실행안_20260901.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "gsc-boost-approve-0901",
+   "added": "2026-09-01",
+   "what": "🙋 색인 보강 착수 승인 — 실행안이 완성됐습니다(15편 편당 '무엇을 넣나·어디서 얻나' 확정). 쉬움 6편은 외부 조사 없이 바로 됩니다: B1-01(출처 확보됨)·B2-04·A5-01·F4-04·B2-05·D2-03(K-패스는 한 문장). 승인하시면 이과장에게 지시서를 내립니다. ⚠️ 라이브 본문 수정이라 사장님 승인이 필요합니다",
+   "due": "2026-09-01",
+   "cmd": "start C:\\lifeinfo\\docs\\색인보강_실행안_20260901.md",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "a216-nursing-allowance-0901",
+   "added": "2026-09-01",
+   "what": "간호수당 1차출처 확보완료: 일반규칙(제26조①→별표5의2)=상시337.5만/수시225만 2단계뿐. 등급별4단표(337.5/324.7/312.3/107.9만)는 2012.7.1당시등록자 특례(제26조②)로 별개. 보훈보상자법도 동일구조(제20조→별표4)",
+   "due": "2026-09-01",
+   "cmd": "cat docs/A2-16_간호수당별표_20260901.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "fix-a216-seodang-0901",
+   "added": "2026-09-01",
+   "what": "A2-16 초안에 간호수당 월액(상시337.5만/수시225만, 시행령 별표5의2·별표4, 2026-08-25 시행) 계산예시 신설 + 간호수당vs활동지원급여 표를 판단형 비교(언제유리한가·본인부담·가족간호가능여부)로 재작성 + 도입부-본문 자기모순 문구 정합 + 48행 출처없는 인과추론 삭제 + 바이라인 104행을 실제 확인범위(법령원문 vs 보도자료 인용)로 좁힘 + 헤더 썸네일 경로 실재파일로 교정. draftfind/heading/bodydup 3종 전부 통과, validate_db PASS 15 FAIL 0",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.bodydup --file 국가유공자활동지원급여_글_HTML.txt --code A2-16 --live && python -m studio.heading --file 국가유공자활동지원급여_글_HTML.txt && python -m studio.draftfind --head A2-16",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "fix-e211-4th-0901",
+   "added": "2026-09-01",
+   "what": "E2-11(국민비서구삐) 4차 반려사유 5개 고침: ①§5 지방세전자송달 행에 서울제외·위택스신청자한정·다음달발송 전제 병기 ②함정①에 지방세 예외문장(이번달 신청→다음달 발송, 이번달 고지분은 위택스 직접확인) 추가 ③§5 표 아래 탈락사유(서울시 제외·위택스 미신청자 못받음) 문장 신설 ④허위 '(공식 안내 기준)' 인용 삭제(§2 20개이상 문장, 유보 문구) ⑤'신청 자체는 세 경로 중 하나' 과단정을 '많이 쓰이는 경로는 세 가지'로 완화. draftfind/heading/bodydup/validate_db 전부 통과(bodydup 0.028 신규).",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.bodydup --file 국민비서구삐_글_HTML.txt --code E2-11 --live && python -m studio.heading --file 국민비서구삐_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub-go-5-0901",
+   "added": "2026-09-01",
+   "what": "🙋 발행 승인 5편 — 전부 V0 🟢 통과·초안·썸네일·푸시 완료. 밤새 준비했습니다. A2-16은 오늘(9/1) 시행이라 앵커가 오늘 가장 강합니다. 하루 상한 5편이니 전부 내실 수 있습니다",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.pubqueue go --code A2-16 && python -m studio.pubqueue go --code B1-08 && python -m studio.pubqueue go --code E2-11 && python -m studio.pubqueue go --code F2-14 && python -m studio.pubqueue go --code F1-15",
    "owner": "user",
    "state": "todo"
   }

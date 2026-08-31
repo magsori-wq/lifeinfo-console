@@ -1,0 +1,75 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>변경 로그 — 생활정보 모음</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#080d18;color:#e6ecf7;font:14px/1.6 -apple-system,"Malgun Gothic",sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:14px}
+h1{font-size:19px;margin:0 0 2px}
+.sub{color:#8a97ab;font-size:12px;margin-bottom:12px}
+.bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.bar button{background:#111c33;color:#cfe0f7;border:1px solid #22334f;border-radius:8px;
+  padding:6px 12px;font:inherit;font-size:12px;cursor:pointer}
+.bar button.on{background:#1c3a5e;border-color:#3b6ea8;color:#fff}
+.hr{color:#7fb8e8;font-size:12px;font-weight:700;margin:14px 0 6px;
+  border-bottom:1px solid #1b2740;padding-bottom:4px}
+.row{display:grid;grid-template-columns:52px 90px 96px 1fr;gap:8px;padding:5px 8px;
+  border-radius:7px;align-items:baseline}
+.row:hover{background:#0e1626}
+.t{color:#8a97ab;font-variant-numeric:tabular-nums;font-size:12px}
+.k{font-size:12px;white-space:nowrap}
+.w{color:#7f9bc4;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.x{font-size:13px}
+.none{color:#8a97ab;padding:20px;text-align:center}
+.k-발행{color:#8ef0cf}.k-커밋{color:#9db4d4}.k-지시서{color:#ffd166}
+.k-보고{color:#7fd1ff}.k-글감{color:#c9a6ff}.k-결재올림{color:#ff9aa6}.k-열람{color:#8a97ab}
+</style></head><body><div class="wrap">
+<h1>🕐 변경 로그</h1>
+<div class="sub" id="sub">불러오는 중…</div>
+<div class="bar">
+  <button data-h="3" class="on">최근 3시간</button>
+  <button data-h="12">12시간</button>
+  <button data-h="24">하루</button>
+  <button data-h="48">이틀</button>
+</div>
+<div id="out"></div></div>
+<script>
+var DATA=null, HOURS=3;
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function render(){
+  if(!DATA){return;}
+  var now=new Date(), lim=new Date(now.getTime()-HOURS*3600*1000);
+  var rows=(DATA.items||[]).filter(function(x){
+    return new Date(x.at.replace(/-/g,'/'))>=lim; }).reverse();
+  document.getElementById('sub').textContent=
+    '갱신 '+DATA.updated+' · '+rows.length+'건 — 사장님이 자리를 비우신 동안 무엇이 달라졌는지';
+  if(!rows.length){document.getElementById('out').innerHTML=
+    '<p class="none">그 시간에는 아무 일도 없었습니다.</p>';return;}
+  var H='', lastD='';
+  rows.forEach(function(x){
+    var d=x.at.slice(0,10), hm=x.at.slice(11);
+    if(d!==lastD){H+='<div class="hr">'+esc(d)+'</div>';lastD=d;}
+    var kind=String(x.kind||''), cls=kind.replace(/^[^가-힣a-zA-Z]+/,'').trim();
+    H+='<div class="row"><span class="t">'+esc(hm)+'</span>'
+      +'<span class="k k-'+esc(cls)+'">'+esc(kind)+'</span>'
+      +'<span class="w">'+esc(x.who)+'</span>'
+      +'<span class="x">'+esc(x.what)+'</span></div>';
+  });
+  document.getElementById('out').innerHTML=H;
+}
+document.querySelectorAll('.bar button').forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll('.bar button').forEach(function(o){o.classList.remove('on');});
+    b.classList.add('on'); HOURS=+b.dataset.h; render();};
+});
+function load(){
+  fetch('timeline.json?t='+Date.now(),{cache:'no-store'})
+    .then(function(r){return r.json();})
+    .then(function(d){DATA=d;render();})
+    .catch(function(){document.getElementById('sub').textContent=
+      'timeline.json 을 못 읽었습니다 — python -m studio.timeline --bake';});
+}
+load(); setInterval(load, 20000);
+</script></body></html>

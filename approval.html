@@ -82,6 +82,10 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 .hd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
 .who{font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap}
 .w-boss{background:#5fd3a022;border:1px solid #5fd3a066;color:#8ee5be}
+/* ✅ 끝난 결재 — 지우지 않고 남긴다(2026-08-31 사장님 지시). 흐리게 두어
+   지금 하실 것과 구분되되, 무엇을 승인하셨는지 자취가 남는다 */
+.card.boss.fin{opacity:.5;border-color:#2f8f6844}
+.who.w-fin{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
 .w-lee{background:#4D9DE022;border:1px solid #4D9DE066;color:#9fc9ee}
 .w-work{background:#e08b1e22;border:1px solid #e08b1e66;color:#f0b26b}
 .w-rt{background:#c2569622;border:1px solid #c2569666;color:#e59ac0}
@@ -135,6 +139,9 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 .pvs{background:#0e1526;border:1px solid #22304d;border-radius:8px;padding:10px 12px;
   margin:6px 0;font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-all}
 .pvs b{display:block;color:#8fb4e8;margin-bottom:5px;font-size:12px}
+.pvs .oi{display:inline;color:#7ee0a8;font-size:13px;margin:0}
+.pvs.gov{border-color:#2d4a35;background:#0d1a12}
+.pvs.gov b{color:#7ee0a8}
 .pv-btn{background:#2a3a5e;color:#cfe0f7}
 #pvm{display:none;position:fixed;inset:0;background:rgba(3,7,15,.82);z-index:99;
   align-items:center;justify-content:center;padding:24px}
@@ -165,7 +172,15 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 <div id="pvm" onclick="if(event.target===this)pvclose()"><div id="pvw">
 <div id="pvt"><span id="pvh"></span>
 <button class="act no" onclick="pvclose()">닫기 (Esc)</button></div>
-<iframe id="pvb" sandbox=""></iframe></div></div>
+<!-- 🔴 sandbox 는 **비워 두면 안 된다** (2026-09-01 실측·사장님 발견).
+     sandbox="" 는 모든 제한을 거는 값이라 **srcdoc 문서가 렌더되지 않는다** —
+     화면에 흰 여백만 남고 사장님은 "뭘 보고 승인하냐" 를 다시 물으셔야 했다.
+     대조군: progress.html 의 qpv-fr 은 sandbox 가 아예 없어 같은 방식으로 잘 그린다.
+     allow-same-origin 만 준다 — allow-scripts 를 주지 않으므로 초안 안의
+     스크립트 태그는 여전히 실행되지 않는다(격리 목적은 그대로 지킨다).
+     🔴 이 주석에 스크립트 태그 문자열을 그대로 쓰면 파서가 거기서 끊는다 —
+        2026-09-01 에 실제로 그렇게 화면을 죽였다. 낱말로 쓸 것. -->
+<iframe id="pvb" sandbox="allow-same-origin"></iframe></div></div>
 <div class="copied" id="cp">복사됨</div>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
@@ -237,10 +252,26 @@ async function preview(code){
     var d=await r.json();
     if(!d.ok){
       // 실행 중인 서버가 /api/draft 를 모르면 'not found' 를 준다 = 옛 코드로 떠 있는 것.
-      // 원인을 정확히 말해 준다(막연한 에러는 사장님이 손쓸 데가 없다).
-      h.textContent = (d.error==='not found')
-        ? '🔴 결재 서버가 옛 버전으로 떠 있습니다 — start_approve_server.bat 을 한 번 다시 실행해 주세요'
-        : '🔴 '+(d.error||'초안을 읽지 못했습니다');
+      // 🔴 2026-08-31 추가 — 글감(③)에서 '발행 대기 목록에 없는 코드' 가 오는 것도
+      //    같은 신호다. 새 서버는 글감 단계면 초안을 코드로 찾아 주거나
+      //    '아직 초안이 없습니다' 라고 답한다. 그 문구가 오면 옛 서버다.
+      var er = String(d.error||'초안을 읽지 못했습니다');
+      var stale = (d.error==='not found') || er.indexOf('발행 대기 목록에 없는') >= 0;
+      var msg = stale
+        ? '결재 서버가 옛 버전으로 떠 있습니다'
+        : er;
+      h.textContent = '🔴 ' + (stale ? msg + ' — 서버를 다시 켜 주세요' : msg);
+      // 🔴 오류인데 흰 여백만 크게 남던 것을 고친다 — 무엇을 하면 되는지 본문에 적는다.
+      var hint = stale
+        ? '<p>바탕화면이나 <code>C:\lifeinfo</code> 의 '
+          + '<b>start_approve_server.bat</b> 을 한 번 실행하신 뒤 이 화면을 새로고침해 주세요.</p>'
+          + '<p style="color:#666">서버가 켜진 채로 코드가 바뀌면 옛 코드가 계속 답합니다. '
+          + '제가 프로세스를 다루지 않기로 돼 있어 이것만은 사장님 손이 필요합니다.</p>'
+        : '<p style="color:#666">위 「📄 본문 미리보기」 의 구성·수치·출처를 보고 판단하셔도 됩니다.</p>';
+      b.srcdoc='<meta charset="utf-8">'
+        + '<div style="background:#fff;color:#222;padding:26px 22px;font:15px/1.75 system-ui,sans-serif">'
+        + '<div style="font-size:17px;font-weight:700;margin-bottom:12px">'
+        + msg.replace(/</g,'&lt;') + '</div>' + hint + '</div>';
       return; }
     h.textContent=code+' · '+d.file+' · 본문 '+d.chars.toLocaleString()+'자';
     b.srcdoc='<meta charset="utf-8"><base target="_blank">'
@@ -326,13 +357,23 @@ async function findServer(){
   //    여러 자리를 훑던 판을 버린 이유 — 포트가 떠돌면 '어디에 떴나'를 매번
   //    확인해야 하고, 옛 서버가 남은 자리를 폴백으로 두면 새 기능이 없는 쪽에
   //    조용히 붙는다. 자리를 못 박으면 그 두 가지가 통째로 사라진다.
-  var url='http://127.0.0.1:8011';
-  try{
-    var r=await fetch(url+'/api/ping?t='+Date.now());
-    if(!r.ok) return null;
-    var d=await r.json();
-    return (d&&d.ok) ? url : null;
-  }catch(e){ return null; }
+  //    🔴 2026-08-31 단서 하나 — 그 자리에 **옛 서버**가 앉아 있고 창이 없어
+  //    끌 수가 없으면(서버는 창 없이 돈다) 영원히 옛 코드가 답한다. 실제로 그랬다.
+  //    그래서 8011 이 옛 세대면 옆자리(8012·8013)의 새 세대를 고른다.
+  //    판정은 ping.topic_draft 하나뿐 — 새 서버만 그 키를 준다.
+  var ports=[8011,8012,8013], older=null;
+  for(var i=0;i<ports.length;i++){
+    var url='http://127.0.0.1:'+ports[i];
+    try{
+      var r=await fetch(url+'/api/ping?t='+Date.now());
+      if(!r.ok) continue;
+      var d=await r.json();
+      if(!(d&&d.ok)) continue;
+      if(d.topic_draft) return url;      // 새 세대 — 바로 쓴다
+      if(!older) older=url;              // 옛 세대 — 새 것이 없을 때만
+    }catch(e){}
+  }
+  return older;
 }
 // 🔴 실시간 반영(2026-08-24 사장님 지시 "실시간으로 업데이트하고 처리결과도
 //    실시간으로 반영해줘") — 예전엔 결재 성공 시에만 새로고침됐고, 다른 세션이
@@ -424,12 +465,40 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       var a=(x.r.k==='un'?0:1)-(y.r.k==='un'?0:1);
       return a || (x.s==='waiting'?0:1)-(y.s==='waiting'?0:1);});
 
+  // 🔴 2026-08-31 사장님 지시 — "승인 전에 이 글이 어떤 내용이 될지 본문으로 보여라".
+  //    데이터(summary)는 이미 ①②③ 구성으로 들어와 있었는데 **화면이 한 덩어리로
+  //    뭉개서** 읽히지 않았다. 그래서 "어떤 내용인지도 모르는데 승인만 하면 되냐"는
+  //    말씀이 나왔다. 새 데이터를 만드는 게 아니라 있는 것을 본문처럼 펴는 일이다.
+  function outline(t){
+    var e = esc(String(t||''));
+    e = e.replace(/([①②③④⑤⑥⑦⑧⑨⑩])/g, '<br><b class="oi">$1</b> ');
+    return e.replace(/^<br>/, '');
+  }
+  //    출처는 ' / ' 와 ' · ' 로 끊어 한 줄에 하나씩 — 조문·기준일을 눈으로 짚으시게.
+  function govline(t){
+    var e = esc(String(t||''));
+    return e.replace(/\s+\/\s+/g, '<br>').replace(/\s+·\s+/g, '<br>');
+  }
+
   var boss=[], lee=[];
   T.forEach(function(t){
     if(t.state==='picked') boss.push({act:'topic_approve',c:t.code,t:t.title,
       why:'글감 승인 대기(③) · '+(t.why||''),
       sum:t.summary||'', facts:t.facts||'',
       cmd:'python -m studio.topicprop approve --code '+t.code});
+    // 🔴 **승인 완료된 글감을 지우지 않는다** (2026-08-31 사장님 지시:
+    //    "결재대기에 글감승인 완료된것 지우지마! 승인완료라고 색인해!")
+    //    전에는 approved 가 되면 목록에서 그냥 사라져 **무엇을 승인하셨는지 자취가 없었다.**
+    //    버튼은 빼고 ✅ 배지만 남긴다 — 다시 누를 일은 없지만 승인한 사실은 남아야 한다.
+    //    🔴 **초안 설명·근거도 그대로 들고 온다** (2026-08-31 사장님 지적:
+    //       "초안설명근거가 부족하여 미리보기가 없는건가?"). 부족해서가 아니라
+    //       내가 승인완료 카드를 만들 때 sum·facts 를 안 넘겨서 없었던 것이다.
+    //       승인하신 근거는 승인 뒤에 더 필요하다 — 초안이 그 약속대로 나왔는지
+    //       대조하실 자리가 여기다.
+    if(t.state==='approved' && !(byc[t.code]||{}).url)
+      boss.push({act:'', c:t.code, t:t.title, done:true,
+        sum:t.summary||'', facts:t.facts||'',
+        why:'✅ 글감 승인완료 — 초안 작업 대기', cmd:''});
     if(t.state==='proposed') lee.push({act:'topic_pick',c:t.code,t:t.title,
       why:'이부장 선별 대기(②) — 특별이슈급인가로 판단',
       cmd:'python -m studio.topicprop pick --code '+t.code});
@@ -566,16 +635,19 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    관제탑은 채팅에서 "1번"이라 부르는데 화면에는 번호가 없어 사장님이 매번 대조하셔야 했다.
   //    번호는 이 목록의 순서다 — 항목이 처리되면 뒤 번호가 당겨진다. 그래서 관제탑은
   //    보고할 때 **번호와 함께 코드·제목을 반드시 같이** 적는다(번호만 쓰면 어긋난다).
-  var bossBody = boss.length? boss.map(function(x,_i){return '<div class="card boss"><div class="hd">'
-      +'<span class="num">'+(_i+1)+'</span>'
-      +'<span class="who w-boss">'+(BADGE[x.act]||'결재')+'</span>'
+  var bossBody = boss.length? boss.map(function(x,_i){return '<div class="card boss'+(x.done?' fin':'')+'"><div class="hd">'
+      +(x.done?'<span class="num" style="background:#2f8f68">✓</span>'
+              :'<span class="num">'+(_i+1)+'</span>')
+      +'<span class="who '+(x.done?'w-fin':'w-boss')+'">'+(x.done?'✅ 승인완료':(BADGE[x.act]||'결재'))+'</span>'
       +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
       +'<div class="meta">'+esc(String(x.why).slice(0,150))+'</div>'
-      +(x.act==='topic_approve'&&(x.sum||x.facts)
-        ? '<details class="pv"><summary>📄 초안 설명·근거 보기</summary>'
-          +(x.sum?'<div class="pvs"><b>초안 구성</b>'+esc(x.sum)+'</div>':'')
-          +(x.facts?'<div class="pvs"><b>확인한 수치·출처</b>'+esc(x.facts)+'</div>':'')
+      // 🔴 판정은 **act 가 아니라 내용 유무로** 한다. act 로 걸면 승인완료·조치 카드처럼
+      //    act 가 없는 줄에서 근거가 있어도 통째로 안 보인다(2026-08-31 실측 사고).
+      +((x.sum||x.facts)
+        ? '<details class="pv" data-k="pv-'+esc(x.c)+'"><summary>📄 본문 미리보기</summary>'
+          +(x.sum?'<div class="pvs"><b>이 글은 이렇게 됩니다</b>'+outline(x.sum)+'</div>':'')
+          +(x.facts?'<div class="pvs gov"><b>🏛 확인한 수치·출처</b>'+govline(x.facts)+'</div>':'')
           +'</details>' : '')
       +(x.full&&x.full.length>70
         ? '<pre class="plain">'+esc(x.full)+'</pre>' : '')
@@ -584,14 +656,28 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +(LABEL[x.act]?'<div style="margin-top:8px">'
         +btn(x.act,x.c,LABEL[x.act],BTN_CLS[x.act]||'ok')
         +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
-        +(x.act==='publish_go'?'<button class="act pv-btn" data-c="'+x.c+'" onclick="preview(this.dataset.c)">📄 원고 미리보기</button>':'')
+        // 🔴 2026-08-31 — ③ 글감승인에도 붙인다. 08-23 사장님 지시가
+        //    "글감은 미리보기 **혹은 초안**을 볼 수 있도록" 이었는데 ⑦에만 달고
+        //    ③은 설명·근거로만 뒀다. 절반만 이행된 채 8일이 지났다.
+        //    초안이 아직 없으면 서버가 "승인하시면 생산합니다" 로 답한다.
+        +((x.act==='publish_go'||x.act==='topic_approve')
+          ?'<button class="act pv-btn" data-c="'+x.c+'" onclick="preview(this.dataset.c)">📄 '
+           +(x.act==='topic_approve'?'초안 원고 보기':'원고 미리보기')+'</button>':'')
         +'</div>':'')
-      +'<div style="margin-top:6px">'+cmd(x.cmd)+'</div>'
+      +(x.cmd?'<div style="margin-top:6px">'+cmd(x.cmd)+'</div>':'')
       +((x.act==='watch_done'||x.act==='watch_blocked')&&x.cmd
         ? '<div style="margin-top:6px">'+recheckBtn(x.c,x.cmd)+'</div>' : '')
       +'</div>';}).join('')
     : '<p class="none">✅ 없음 — 지금 사장님 결재를 기다리는 건이 없습니다.</p>';
-  H+=pane('🙋','사장님 결재 대기',boss.length+'건',bossBody);
+  // 🔴 2026-08-31 — 배지가 boss.length(승인완료 ✅ 카드 포함)를 세는 바람에
+  //    화면 8건 vs approvalcount 7건 으로 갈렸다. 08-28 사장님 지적
+  //    "내 눈에는 4건인데 넌 뭘 보고 5건이라고 하는 거야?" 와 같은 병의 재발이다.
+  //    승인완료 카드는 **남기되**(사장님 지시 "지우지 마") **세지는 않는다** —
+  //    사장님이 하실 일이 아니기 때문이다. 판정 기준을 approvalcount 와 맞춘다.
+  var bossTodo = boss.filter(function(x){return !x.done;}).length;
+  var bossBadge = bossTodo + '건' + (boss.length>bossTodo
+      ? ' <span style="opacity:.55">(+완료 '+(boss.length-bossTodo)+')</span>' : '');
+  H+=pane('🙋','사장님 결재 대기',bossBadge,bossBody);
 
   // ② 이부장 결재 + 반려 — 한 칸에 묶는다(둘 다 관제탑 몫)
   var leeBody = (lee.length? lee.map(function(x){return '<div class="card wait"><div class="hd">'
@@ -772,7 +858,21 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     H+=pane('🗒️','미결사항','0건','<p class="none">오늘 배치가 없습니다.</p>','side');
   }
 
+  // 🔴 **펼쳐 놓으신 것을 다시 접지 않는다** (2026-08-31 실측 사고).
+  //    30초마다 innerHTML 을 통째로 갈아끼우니 열어 둔 <details> 가 매번 닫혔다.
+  //    사장님이 「📄 초안 설명·근거 보기」를 펴도 곧 접히니 **아예 없는 것처럼 보였다**
+  //    ("초안설명근거가 부족하여 미리보기가 없는건가?"). 데이터는 내내 있었다.
+  //    → 갈아끼우기 직전에 열린 것을 적어 두고, 그린 뒤 같은 자리를 다시 편다.
+  var _open = {};
+  try{
+    document.querySelectorAll('#out details[open]').forEach(function(d,i){
+      var k=(d.getAttribute('data-k')||('i'+i)); _open[k]=1; });
+  }catch(e){}
   document.getElementById('out').innerHTML=H;
+  try{
+    document.querySelectorAll('#out details').forEach(function(d,i){
+      var k=(d.getAttribute('data-k')||('i'+i)); if(_open[k]) d.open=true; });
+  }catch(e){}
   REFRESHING=false;
 }).catch(function(e){
   document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';

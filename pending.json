@@ -1,31 +1,15 @@
 {
- "rev": "1cd8782",
+ "rev": "01e1647",
  "counts": {
   "total": 220,
-  "osmu_done": 219,
-  "osmu_pending": 1,
+  "osmu_done": 220,
+  "osmu_pending": 0,
   "indexed": 2,
   "index_pending": 218,
   "index_requested": 204,
   "index_todo": 14
  },
  "actionable": [
-  {
-   "code": "B2-12",
-   "title": "은행 대출금리 가산금리 인하 총정리 (2026년 7월 ",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false
-   }
-  },
   {
    "code": "A2-15",
    "title": "추석 연휴 국민연금 기초연금 조기지급일 총정리 (202",
@@ -74,6 +58,21 @@
   {
    "code": "B2-11",
    "title": "신생아 특례대출 신청 자격 소득요건 순자산 한도 금리 ",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true
+   }
+  },
+  {
+   "code": "B2-12",
+   "title": "은행 대출금리 가산금리 인하 총정리 (2026년 7월 ",
    "need": [
     "색인요청"
    ],
@@ -165,7 +164,6 @@
    "code": "F1-14",
    "title": "해외여행 축산물 반입 신고 안 하면 과태료 총정리 (2",
    "need": [
-    "네이버",
     "색인요청"
    ],
    "action": "색인 요청",
@@ -173,7 +171,7 @@
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": true
    }
   },
