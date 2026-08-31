@@ -1,0 +1,189 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>세션 정지 사건 — 원인과 조치 (2026-08-31)</title><style>
+:root{--bg:#0f1115;--fg:#e6e8ee;--dim:#9aa3b2;--line:#232833;--card:#161a21;
+      --accent:#4da3ff;--warn:#ffb454;--red:#ff6b6b;--ok:#4ec9a6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:15px/1.75 "Malgun Gothic","맑은 고딕",system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 20px 80px}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+     border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:24px}
+.top h1{font-size:22px;margin:0}
+.top .src{color:var(--dim);font-size:12px}
+.top a{color:var(--accent);text-decoration:none;font-size:13px}
+h2{font-size:19px;margin:34px 0 12px;padding-top:14px;border-top:1px solid var(--line)}
+h3{font-size:16px;margin:22px 0 8px;color:var(--accent)}
+h4{font-size:15px;margin:16px 0 6px;color:var(--dim)}
+p{margin:10px 0}
+ul,ol{margin:10px 0;padding-left:22px}
+li{margin:4px 0}
+code{background:#1c2029;border:1px solid var(--line);border-radius:4px;
+     padding:1px 5px;font-family:Consolas,monospace;font-size:13px;color:#ffd479}
+pre{background:#12151b;border:1px solid var(--line);border-radius:8px;
+    padding:12px 14px;overflow-x:auto}
+pre code{background:none;border:0;padding:0;color:#cfd6e4;font-size:13px}
+blockquote{margin:12px 0;padding:10px 14px;border-left:3px solid var(--accent);
+           background:var(--card);border-radius:0 8px 8px 0;color:#c8cedb}
+blockquote p{margin:4px 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;
+      overflow-x:auto;white-space:nowrap}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;white-space:normal}
+th{background:#1a1f28;color:var(--dim);font-weight:600}
+tr:nth-child(even) td{background:#13161d}
+hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+a{color:var(--accent)}
+strong{color:#fff}
+em{color:var(--dim)}
+.gen{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);
+     color:var(--dim);font-size:12px}
+</style></head><body><div class=wrap><div class=top><h1>세션 정지 사건 — 원인과 조치 (2026-08-31)</h1><span class=src>원본 docs/세션정지_원인과조치_2026-08-31.md</span><a href="index.html">← 콘솔</a></div><blockquote><p>사장님 지시: *&quot;안 된 문제 분명 해명하고, 향후 이런 일이 안 되도록 해!</p><p>문제에 대한 상세 설명 있어야 돼!!&quot;*</p><p>이 문서는 그 해명이다. 추정은 적지 않았고, 모든 숫자는 그날 실제로 돌린 명령의</p><p>출력이다. 근거를 못 댄 항목은 &quot;못 쟀다&quot;고 적었다.</p></blockquote>
+<hr>
+<h2>1. 무슨 일이 있었나</h2>
+<p><code>2026-08-31 07:41</code> 이후 이과장(작업 세션)이 <strong>7시간 가까이 아무것도 하지 않았다.</strong></p>
+<p>그동안 관제탑은 지시서를 세 건 만들어 보드에 올렸고, 그 지시서는 <strong>한 번도 읽히지 않았다.</strong></p>
+<p>사장님이 *&quot;이과장 대기 중인데 진짜 할 게 없는 거야?&quot;*, *&quot;왜 안 읽냐고!&quot;*,</p>
+<p>*&quot;이과장을 움직이게 해!&quot;* 라고 세 번 물으신 뒤에야 관제탑이 원인을 찾았다.</p>
+<h3>그날 이과장이 움직인 시각 (실측 — git log · session_state.json)</h3>
+<table>
+<tr><th>시각</th><th>한 일</th><th><strong>무엇이 깨웠나</strong></th></tr>
+<tr><td>01:46 · 05:15</td><td>remote0830 · pub0830d 읽음</td><td>사장님이 창에 입력</td></tr>
+<tr><td>06:18 ~ 07:41</td><td>초안 3편 · 검색설명 · 쓰레드 · 인스타 · 네이버 원고</td><td><strong>연속 작업</strong>(한 턴이 다음 턴을 이어감)</td></tr>
+<tr><td><strong>07:41 → 13:53</strong></td><td><strong>정지 (6시간 12분)</strong></td><td><strong>아무도 안 깨움</strong></td></tr>
+<tr><td>13:53 · 14:00</td><td>G4-05 · A5-09 네이버 기록</td><td>사장님이 <strong>URL을 이과장 창에 붙이심</strong></td></tr>
+<tr><td>14:34</td><td>pub0831f114 읽음 → F1-14 후속 착수</td><td><strong>관제탑이 SendMessage로 깨움</strong></td></tr>
+<tr><td>14:38</td><td>F1-14 검색설명 라이브 반영</td><td>그 흐름의 연속</td></tr>
+</table>
+<p><strong>예외가 없다.</strong> 깨우는 입력이 있으면 100% 움직였고, 없으면 100% 멈췄다.</p>
+<p>고장도, 변덕도, 능력 문제도 아니다.</p>
+<hr>
+<h2>2. 근본 원인 — <strong>없는 기능을 있다고 믿었다</strong></h2>
+<p>이 저장소의 설계 문장은 이것이다(<code>CLAUDE.md</code> 「📮 지시는 세션이 스스로 받아가게 만든다」):</p>
+<blockquote><p>*&quot;세션이 늘 읽던 배치를 읽기만 하면 새 배치가 목록에 뜬다. 사람이 옮길 일이 없다.&quot;*</p></blockquote>
+<p><strong>그런데 &quot;늘 읽는&quot; 동작이 존재하지 않는다.</strong> 당사자에게 직접 물어 확인했다(2026-08-31 14:4x):</p>
+<blockquote><p>③에 가깝습니다 — 저는 <strong>턴이 있을 때만</strong> 동작합니다(사용자 메시지, 다른 세션의</p><p>cross-session-message, 또는 진행 중이던 작업의 다음 단계). 턴 사이에는 제가 스스로</p><p>깨어나 batchboard order를 재확인하는 <strong>백그라운드 타이머가 없습니다.</strong></p><p>즉 &quot;5분마다 폴링&quot;은 제 쪽에서 자체적으로는 불가능하고, 누군가(사용자·다른 세션·</p><p>예약된 wakeup)가 저를 깨워줘야 그 시점에 order를 다시 읽습니다.</p></blockquote>
+<h3>데이터에도 그대로 남아 있었다</h3>
+<p><code>session_state.json</code> 의 <code>reads</code> 는 <strong>같은 지시서를 몇 번 읽었는가</strong>를 세는 값이다.</p>
+<pre><code>draft0830a   reads=0   last_read 06:18
+draft0830b   reads=0   last_read 06:30
+draft0830c   reads=0   last_read 06:35
+pub0830d     reads=0   last_read 05:15
+pub0831g405  reads=0   last_read 06:45</code></pre>
+<p><strong>전부 0이다. 한 번 읽고 다시 안 읽었다.</strong> 폴링이 일어난 적이 없다는 뜻이고,</p>
+<p>이 값은 처음부터 그렇게 기록돼 있었다. <strong>아무도 안 봤을 뿐이다.</strong></p>
+<h3>그래서 실제로는 이런 구조였다</h3>
+<pre><code>관제탑 ──(지시서)──&gt; 보드 ──(???)──&gt; 이과장
+                            ↑
+                     이 화살표가 없다.
+                     지금까지 이 자리를 사장님이 메우고 계셨다.</code></pre>
+<p>사장님이 URL을 붙이시거나 창에 무엇을 치실 때마다 이과장이 살아났다.</p>
+<p><strong>사장님이 시스템의 타이머 역할을 하고 계셨고, 그것을 아무도 설계하지 않았다.</strong></p>
+<hr>
+<h2>3. 왜 이렇게 오래 못 찾았나 — 관제탑의 잘못</h2>
+<p>원인 자체보다 이쪽이 더 문제다. 그날 관제탑이 같은 방식으로 <strong>네 번</strong> 틀렸다.</p>
+<table>
+<tr><th>단정</th><th>실제</th><th>필요했던 것</th></tr>
+<tr><td>&quot;이과장 세션이 없다&quot;</td><td>있었다(offline 표기였을 뿐)</td><td><code>ListAgents</code> 한 번</td></tr>
+<tr><td>&quot;offline이라 메시지를 못 받는다&quot;</td><td><strong>바로 전달됐다</strong></td><td><code>SendMessage</code> 한 번</td></tr>
+<tr><td>&quot;이과장이 보고를 안 했다&quot;</td><td>결재함에 정확히 올려놨다</td><td><code>approvalcount</code> 한 줄</td></tr>
+<tr><td>&quot;결재 5건&quot;</td><td>2건 → 5건 → 3건으로 세 번 말함</td><td>매번 다시 세기</td></tr>
+</table>
+<p><strong>넷 다 &quot;없다·안 된다&quot;는 부정 단정이었고, 넷 다 시도 한 번이면 뒤집혔다.</strong></p>
+<p>그리고 <code>Lee Gwajang 작업 세션</code> 이라는 <strong>이름만 보고</strong> 그것이 이과장이라 단정했는데,</p>
+<p>실제 이과장은 이름이 무작위 조합어인 워크트리 세션(<code>bold-mirzakhani-88033f-43</code>)이었다.</p>
+<p>살아 있는 세션들에게 <strong>&quot;당신이 이과장이면 보드를 읽어달라&quot;</strong> 고 물었더니</p>
+<p>루틴1은 *&quot;저는 이과장이 아닙니다&quot;* 라고 근거까지 대며 답했고,</p>
+<p>이과장은 *&quot;맞습니다, 착수합니다&quot;* 라고 답했다. <strong>묻는 것이 답이었다.</strong></p>
+<h3>하네스는 왜 못 잡았나</h3>
+<p><code>validate_db</code> 는 그날 내내 <strong>PASS 13 / FAIL 0</strong> 이었다.</p>
+<p>하네스는 <strong>데이터 정합성</strong>을 검사하지 <strong>관제탑의 문장</strong>을 검사하지 않는다.</p>
+<p>이 사실은 <code>CLAUDE.md</code> 「🩺 하네스는 데이터를 검사하지 내 말을 검사하지 않는다」에</p>
+<p>2026-08-28에 이미 적혀 있었고, 그날 또 어겼다.</p>
+<p>같은 병에 대한 규칙이 <code>CLAUDE.md</code> 에 <strong>9개</strong> 있다(실측). 규칙을 더 쓰는 것으로는</p>
+<p>고쳐지지 않는다는 뜻이다 — 이 저장소에서 실제로 작동한 것은 언제나 <strong>코드 게이트</strong>였다.</p>
+<hr>
+<h2>4. 무엇을 고쳤나 (전부 코드)</h2>
+<h3>4-1. 관제탑이 이과장의 타이머가 된다 — <strong>핵심 조치</strong></h3>
+<p>세션은 스스로 못 깨어난다. 그러면 <strong>깨우는 것이 관제탑의 일</strong>이어야 한다.</p>
+<p>관제탑 세션에 <strong>감시기(Monitor)</strong> 를 상주시킨다. 30초 주기로 셋을 본다.</p>
+<table>
+<tr><th>감시 대상</th><th>알림 조건</th></tr>
+<tr><td>이과장 커밋</td><td><code>origin/main</code> 에 새 커밋(관제탑 것 제외)</td></tr>
+<tr><td>새 보고</td><td><code>session_state.last_report</code> 가 갱신</td></tr>
+<tr><td><strong>지시서 미열람</strong></td><td>**지시서를 낸 지 20분이 지나도 <code>last_read</code> 가 그 전**</td></tr>
+</table>
+<p>세 번째가 이번 사건을 직접 막는다. 20분이 지나면 관제탑에게 알림이 오고,</p>
+<p>관제탑이 <code>SendMessage</code> 로 깨운다. <strong>같은 배치로 두 번 울리지 않는다.</strong></p>
+<blockquote><p>⚠️ 한계: 감시기는 <strong>관제탑 세션이 살아 있는 동안만</strong> 돈다. 세션이 죽으면 같이 죽는다.</p><p>그래서 아래 4-2가 예비다.</p></blockquote>
+<h3>4-2. Stop 훅 — 감시기가 죽어도 놓치지 않는다</h3>
+<p><code>run_checks.py</code> → <code>wrapup_check.py</code> 는 <strong>매 턴 끝에</strong> 무조건 돈다.</p>
+<p>여기에 <strong>&quot;내가 마지막으로 본 뒤 올라온 보고&quot;</strong> 를 띄우게 했다.</p>
+<p>커서(<code>webapp/_seen_reports.json</code>)를 남겨 <strong>본 것은 다시 안 뜬다.</strong></p>
+<p>실측: 첫 실행 32건 표시 → 커서 저장 → 두 번째 실행 0건.</p>
+<h3>4-3. 기록하면 보고까지 자동 — 6분 딜레이의 원인</h3>
+<p><code>naver-link</code>·<code>threads-link</code>·<code>insta-link</code> 가 이렇게 출력했다.</p>
+<pre><code>[OK] pipeline 보드 갱신(발행 16단계에 OSMU 반영)
+[OK] 보드 bake 반영(3채널·미결 자동 갱신)</code></pre>
+<p><strong>&quot;보드가 두 번 갱신됐다&quot;고 말하니 보고까지 된 것처럼 보인다.</strong></p>
+<p>실제로는 진행보드만 전진하고 배치 보고(<code>batchboard mark --note</code>)는 하지 않았다.</p>
+<p>그래서 A5-09 일이 14:00에 끝났는데 관제탑은 14:06까지 몰랐다.</p>
+<p>→ <code>_report_batch()</code> 를 붙여 <strong>그 코드를 담은 열린 배치를 찾아 자동으로 보고</strong>한다.</p>
+<p>→ 오해를 부른 두 줄은 <strong>&quot;⚠️ 이것은 보고가 아니다&quot;</strong> 로 문구를 고쳤다.</p>
+<p><strong>세 채널 전부 실제 명령으로 검증했다</strong>(백업 → 상태 재현 → 실행 → 파일 재조회 → 복원).</p>
+<table>
+<tr><th>채널</th><th>DB 기록</th><th>자동 보고</th></tr>
+<tr><td>네이버</td><td>✅</td><td>✅ <code>naver 게시·기록 완료 — &lt;URL&gt;</code></td></tr>
+<tr><td>쓰레드</td><td>✅</td><td>✅ <code>threads 게시·기록 완료 — &lt;URL&gt;</code></td></tr>
+<tr><td>인스타</td><td>✅</td><td>✅ <code>instagram 게시·기록 완료 — &lt;URL&gt;</code></td></tr>
+</table>
+<h3>4-4. 승인이 곧 지시가 된다</h3>
+<p><code>pubqueue go</code>(사장님 발행 승인)가 <strong>그 자리에서 배치·담당·지시서를 만든다.</strong></p>
+<p>전에는 승인 05:16 → 관제탑이 지시서 06:29, <strong>1시간 13분</strong>이 비었고</p>
+<p>그것도 사장님이 물으셔서 움직인 것이었다.</p>
+<p>⚠️ 처음 만들 때 두 가지를 틀렸고 둘 다 고쳤다.</p>
+<ul><li>서브프로세스를 5개 띄워 <strong>PowerShell 창이 5번 떴다</strong>(사장님: *&quot;키보드 잡아먹는 범인&quot;*)</li></ul>
+<p>  → 같은 프로세스에서 함수 호출로 바꿔 <strong>창 0개</strong>. 사장님이 화면으로 확인하셨다.</p>
+<ul><li><code>set</code> 게이트가 거부했는데 <strong>반환값을 안 보고 &quot;✅ 발급&quot;을 찍었다</strong>(거짓 성공).</li></ul>
+<p>  → 반환값 확인 + <strong>파일을 다시 읽어</strong> 실제로 들어갔는지 확인.</p>
+<h3>4-5. 콘솔이 스스로 최신을 받는다</h3>
+<p>화면을 고쳐도 사장님은 옛 화면을 보셨다. <code>refresh()</code> 는 <strong>데이터(json)만</strong> 다시 그리고</p>
+<p>HTML은 처음 받은 것을 계속 썼기 때문이다.</p>
+<p>→ <code>webapp/*.html</code> <strong>19개 전부</strong>에 <code>no-store</code> 메타 + <strong>HEAD 3초 감지</strong>를 넣었다.</p>
+<p>본문을 안 받아 수백 바이트이고, <code>Last-Modified</code> 가 바뀐 순간 리로드한다.</p>
+<p><strong>강력새로고침이 필요 없다.</strong> 자동갱신 <strong>on/off 스위치</strong>도 상단에 달았다(선택은 저장됨).</p>
+<h3>4-6. 확산 순서를 코드로 박았다</h3>
+<p>미확산이 둘 이상이면 *&quot;어느 것부터&quot;* 를 고민해야 했다.</p>
+<p>→ 먼저 발행된 글부터 <code>seq</code> 를 매기고 <strong>①만 활성</strong>. 화면 세 곳(결재함·미결사항·모바일)에 표시.</p>
+<p>→ 화면만이 아니라 <strong>명령도 거부한다</strong>: <code>naver-draft --code &lt;순서 아닌 글&gt;</code> → <code>[거부]</code>.</p>
+<p>우회는 <code>--force-order I-KNOW</code>.</p>
+<hr>
+<h2>5. 앞으로 이렇게 돈다</h2>
+<pre><code>사장님 승인(⑦ go)
+   └→ pubqueue go 가 그 자리에서 지시서 발급 (사람 개입 0)
+        └→ 20분 안에 안 읽히면 감시기가 관제탑에게 알림
+             └→ 관제탑이 SendMessage 로 깨움
+                  └→ 이과장이 지시서를 읽고 실행
+                       └→ *-link 가 기록 + 보고를 함께 (빠뜨릴 수 없음)
+                            └→ 감시기가 30초 안에 관제탑에게 알림
+                                 └→ 관제탑이 다음 지시</code></pre>
+<p><strong>사람 손이 남는 자리는 셋뿐이다</strong> — 글감 승인(③), 발행 승인(⑦), 네이버·인스타 게시.</p>
+<p>앞의 둘은 판단이라 사람이 해야 하고, 뒤는 기술적으로 자동화가 막혀 있다</p>
+<p>(네이버 글쓰기 API 2020 종료 + 확장이 도메인 차단, 인스타 업로드는 네이티브 OS 창).</p>
+<hr>
+<h2>6. 재발하면 어디를 보나</h2>
+<table>
+<tr><th>증상</th><th>볼 곳</th></tr>
+<tr><td>세션이 안 움직인다</td><td><code>session_state.json</code> 의 <code>reads</code>·<code>last_read</code> — 지시서 시각보다 이전이면 안 읽은 것</td></tr>
+<tr><td>지시서가 안 닿는다</td><td><code>ListAgents</code> → <strong>살아 있는 세션에 &quot;당신이 X면&quot; 하고 물어라.</strong> 이름으로 찍지 말 것</td></tr>
+<tr><td>보고가 없다</td><td><code>python -m studio.sessionstate</code> · Stop 훅의 「📢 새 보고」</td></tr>
+<tr><td>어디서 멈췄나</td><td><code>python -m studio.loopcheck</code> — 8단계 이음매별 정체일수</td></tr>
+<tr><td>화면이 안 바뀐다</td><td>3초 자기갱신이 돈다. 그래도 안 바뀌면 배포(github.io)를 안 한 것</td></tr>
+</table>
+<h3>🔴 다음 세션이 반드시 알아야 할 것</h3>
+<ol><li><strong>세션은 스스로 깨어나지 않는다.</strong> &quot;보드에 올리면 알아서 가져간다&quot;는 <strong>사실이 아니다.</strong></li></ol>
+<p>   깨우는 것은 관제탑의 일이고, 감시기가 그 신호를 준다.</p>
+<ol><li>**<code>offline</code> 은 &quot;못 받는다&quot;가 아니다.** Remote Control 세션은 그 상태에서도 받는다.</li></ol>
+<p>   보내보는 것이 유일한 확인이다.</p>
+<ol><li><strong>세션 이름으로 누구인지 판정하지 마라.</strong> 이과장의 이름은 무작위 조합어였고,</li></ol>
+<p>   그럴듯한 이름(<code>Lee Gwajang 작업 세션</code>)을 가진 쪽은 응답이 없었다. <strong>물어봐라.</strong></p>
+<ol><li><strong>&quot;안 된다·없다·못 한다&quot;는 시도한 뒤에만 말한다.</strong> 그날 네 번 다 시도 한 번이면 뒤집혔다.</li></ol>
+<hr>
+<p>*작성: 이부장(관제탑) · 2026-08-31 · 모든 수치는 그날 실행한 명령의 출력이다.*</p><div class=gen>🔴 이 화면은 <b>파생</b>이다 — 고칠 곳은 <code>docs/세션정지_원인과조치_2026-08-31.md</code> 이고, 고친 뒤 <code>python tools/md2console.py docs/세션정지_원인과조치_2026-08-31.md --out webapp/incident0831.html</code> 로 다시 굽는다. HTML 을 직접 고치면 다음 굽기에서 사라진다.</div></div></body></html>

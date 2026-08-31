@@ -3406,7 +3406,7 @@
   {
    "id": "topicprop-approve-20260831",
    "added": "2026-08-31",
-   "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) F1-15 해외 여행 중 여권 분실 신고 절차 재외공관 임시여행증명서 총정리 (2026 ·",
+   "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) B1-08 자동차세 9월 연납 신청 방법 할인율 계산 총정리 (2026 · 9월 16~30",
    "due": "2026-08-31",
    "cmd": "python -m studio.topicprop approve --code <코드>",
    "owner": "user",
@@ -3547,6 +3547,24 @@
    "due": "2026-08-31",
    "cmd": "python -c \"import json,io;db=json.load(io.open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([(p['code'],p.get('short')) for p in db['posts'] if p['code']=='A5-09'])\"",
    "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "incident-0831-report",
+   "added": "2026-08-31",
+   "what": "세션 정지 사건(이과장 7시간 멈춤) 원인·조치 보고서 — 읽으시면 닫힙니다. 【원인】세션은 스스로 못 깨어난다. '보드에 올리면 알아서 가져간다'는 기능이 없었고 지금까지 사장님이 그 타이머 역할을 하고 계셨다(reads=0 이 증거). 【조치】관제탑 감시기가 20분 미열람을 잡아 깨운다 · Stop 훅이 새 보고를 띄운다 · 기록하면 보고까지 자동 · 승인이 곧 지시 · 콘솔 3초 자기갱신 · 확산 순서 코드 게이트",
+   "due": "2026-08-31",
+   "cmd": "start http://localhost:8000/incident0831.html",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-f114-0831",
+   "added": "2026-08-31",
+   "what": "F1-14 해외축산물반입 과태료 — 네이버 블로그 게시 (원고 준비완료, 클립보드 패키지 생성됨)",
+   "due": "2026-08-31",
+   "cmd": "C:\\lifeinfo\\naver_post.bat 더블클릭 → 코드 F1-14 입력 → 원고 자동탐색+클립보드 세팅+글쓰기창 열림 → 붙여넣기·게시 → URL 확보되면 python -m studio.pipeline naver-link --code F1-14 --url <URL> 로 기록",
+   "owner": "user",
    "state": "todo"
   }
  ]
