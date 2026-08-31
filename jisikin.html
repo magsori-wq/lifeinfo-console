@@ -116,5 +116,28 @@
     navigator.clipboard.writeText(t).then(function(){alert('복사했습니다! 지식인 답변창에 붙여넣으세요.');});
   }
 </script>
+
+<script>
+/* 🔴 화면이 바뀌면 스스로 새로 받는다 (2026-08-31 사장님 명령 "제발좀 실시간 반영좀 하라고!")
+   콘솔 화면은 대부분 데이터(json)만 다시 그리고 HTML 은 처음 받은 것을 계속 썼다.
+   그래서 관제탑이 화면을 고쳐도 사장님은 옛 화면을 보셨고 매번 강력새로고침을 하셔야 했다.
+   HEAD 는 본문을 안 받는다(헤더 수백 바이트) — 3초마다 해도 부담이 없고,
+   Last-Modified 가 바뀐 **그 순간** 리로드하므로 체감은 실시간이다.
+   ⚠️ iframe 안에서도 그대로 동작한다(index.html 의 탭들이 전부 iframe 이다). */
+(function(){
+  var tag = null;
+  function look(){
+    fetch(location.pathname + '?v=' + Date.now(), {method:'HEAD', cache:'no-store'})
+      .then(function(r){
+        if(!r.ok) return;
+        var cur = (r.headers.get('Last-Modified')||'') + '/' + (r.headers.get('Content-Length')||'');
+        if(tag === null){ tag = cur; return; }
+        if(cur !== tag){ tag = cur; location.replace(location.pathname + '?t=' + Date.now()); }
+      }).catch(function(){});
+  }
+  look();
+  setInterval(look, 3000);
+})();
+</script>
 </body>
 </html>
