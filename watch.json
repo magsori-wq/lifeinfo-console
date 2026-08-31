@@ -3366,7 +3366,9 @@
    "due": "2026-08-31",
    "cmd": "python -m studio.falsepos",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-08-31",
+   "result": "완료 — 읽음판정은 batch.json 주체로 고쳤고(session_state 만 보면 새 지시서가 빠짐), last_order_at 비날짜 문자열도 _dt() 로 거른다. approval.html·m.html 양쪽 반영"
   },
   {
    "id": "d211-source-citation-overstated",
@@ -3506,6 +3508,42 @@
    "state": "done",
    "done_at": "2026-08-31",
    "result": "트리거 재시도 성공 — 처음엔 권한분류기에 막혔으나 재시도 시 통과됨(비결정적이었던 듯). run: https://github.com/magsori-wq/lifeinfo-source/actions/runs/33337394201"
+  },
+  {
+   "id": "setgate-stage-blind",
+   "added": "2026-08-31",
+   "what": "batchboard set 게이트가 코드만 보고 '같은 일 두 번'으로 판정한다 — 초안(draft)과 발행(pub)은 다른 단계인데 구분을 못 해 자동 발급이 막혔다(2026-08-31 06:46 두 건). 지금은 --force 로 통과시키는데, 단계를 보게 고치는 것이 옳다",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.batchboard set --id pub테스트 --title t --items <파일>",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-g405-0831",
+   "added": "2026-08-31",
+   "what": "G4-05 산림임산물채취 처벌 총정리 — 네이버 블로그 게시 (원고 준비완료, 클립보드 패키지 생성됨)",
+   "due": "2026-08-31",
+   "cmd": "G4-05 네이버 게시 — ① 지금 올릴 차례. 원고는 콘솔 「📤 올릴 것」에서 탭 한 번에 복사됩니다(또는 세션에 'G4-05 원고' 라고만 하시면 클립보드에 넣어 드립니다). 첨부: C:\\lifeinfo\thumbs_naver\u000192_forest_foraging.png",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-a509-0831b",
+   "added": "2026-08-31",
+   "what": "A5-09 퇴직금 미지급 신고처벌 — 네이버 블로그 게시 (원고 준비완료, 클립보드 패키지 생성됨)",
+   "due": "2026-08-31",
+   "cmd": "A5-09 네이버 게시 — ② G4-05 를 끝낸 뒤 차례. 원고는 콘솔 「📤 올릴 것」에서 탭 한 번에 복사됩니다. 첨부: C:\\lifeinfo\thumbs_naver\u000193_severance.png",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "a509-short-empty-0831",
+   "added": "2026-08-31",
+   "what": "A5-09 DB short 가 빈 문자열 — 발행 워크플로 2회 rebase 충돌 실패(run 33337394201·33337532318)로 progress.json seed 가 저장소에 못 올라간 뒤 register_post 가 빈 값을 굳혔다. progress.html·야간 카톡 보고에서 이 글이 빠진다. 하네스가 못 잡는 부류(validate_db 검사항목 아님).",
+   "due": "2026-08-31",
+   "cmd": "python -c \"import json,io;db=json.load(io.open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([(p['code'],p.get('short')) for p in db['posts'] if p['code']=='A5-09'])\"",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }

@@ -1,4 +1,7 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0e1526">
 <title>운영콘솔 · 모바일</title>
@@ -53,6 +56,8 @@ summary .n.hot{color:#ff9d9d;border-color:#ff6b6b66}
 .card:last-child{margin-bottom:0}
 .card.boss{border-color:#5fd3a066;background:#5fd3a00d}
 .card.un{border-color:#ff6b6b66;background:#ff6b6b0d}
+/* 순서가 아직 아닌 글 — 흐리게. 버튼 자체를 안 그리므로 누를 것이 없다 */
+.card.off{opacity:.45}
 .t{font-weight:700;font-size:14px;line-height:1.45;word-break:keep-all}
 .m{color:#8fa0bd;font-size:12px;margin-top:4px;word-break:break-all}
 .w{color:#a9b6cc;font-size:12.5px;margin-top:6px;white-space:pre-wrap;word-break:break-word}
@@ -239,16 +244,24 @@ Promise.all([j('batch.json'),j('queue.json'),j('watch.json'),j('session_state.js
   // ── 🙋 올릴 것 — 원고를 **여기서 바로 복사**한다(드라이브·문서 거칠 필요 없다)
   var ot=(OT.items||[]);
   var otN=ot.reduce(function(s,x){return s+(x.channels||[]).length;},0);
+  // 🔴 순서대로만 누를 수 있게 한다 (2026-08-31 사장님 제안).
+  //    미확산이 둘 이상이면 '어느 것부터'를 고민해야 한다 — 고민 자체를 없앤다.
+  //    seq 1 번만 활성, 나머지는 버튼을 눌러도 반응하지 않는다.
   var otBody = ot.length? ot.map(function(it){
-      return '<div class="card"><div class="t">'+esc(String(it.title).slice(0,60))+'</div>'
+      var on = it.active!==false;
+      return '<div class="card'+(on?'':' off')+'">'
+        +'<span class="badge '+(on?'b-go':'b-wait')+'">'+(on?'① 지금 올릴 것':'②+ 대기')+'</span>'
+        +'<div class="t" style="margin-top:6px">'+esc(String(it.title).slice(0,60))+'</div>'
         +'<div class="m">'+esc(it.code)+' · <a href="'+esc(it.url)+'" style="color:#8fb4e8">라이브 글</a></div>'
-        + (it.channels||[]).map(function(c){
+        + (on ? (it.channels||[]).map(function(c){
             var note='';
             if(c.cards&&c.cards.length) note='카드 '+c.cards.length+'장 (파일명 끝 번호가 게시 순서)';
             else if(c.img) note='첨부 '+c.img;
             else if(c.key==='naver') note='표·목록이 많아 PC 권장';
             return txtBtn(c.label+' 원고',c.text,note);
           }).join('')
+          : '<div class="m" style="margin-top:7px">앞 글을 끝내면 여기가 열립니다 — '
+            +'한 글을 4채널로 완결한 뒤 다음 글로 갑니다.</div>')
         +'</div>';}).join('')
     : '<p class="none">올릴 원고가 없습니다.</p>';
 
@@ -267,5 +280,20 @@ Promise.all([j('batch.json'),j('queue.json'),j('watch.json'),j('session_state.js
     '<p class="none">🔴 데이터를 불러오지 못했습니다: '+esc(e.message)+'</p>';
 });
 // 화면을 켜 두고 계실 수 있으니 주기 갱신. 폰 배터리를 생각해 60초로 둔다.
-setInterval(function(){location.reload();},60000);
+// 🔴 location.reload() 는 **캐시된 HTML 을 다시 쓴다** (2026-08-31 사장님 지적:
+//    "반영을 해도 운영콘솔에 보이지 않는데 매번 강력 새로고침을 해야 하나?").
+//    데이터(json)는 ?t= 로 매번 새로 받는데 HTML 은 그대로였다.
+//    → 쿼리를 바꿔 **다른 주소**로 만들면 브라우저가 새로 받는다.
+// 🔴 HEAD 로 바뀐 것만 감지한다 — 60초 통짜 리로드는 낭비였다(2026-08-31).
+//    폰이라 주기는 6초로 둔다(PC 는 3초). HEAD 는 헤더만 받아 수백 바이트다.
+var _selfTag = null;
+setInterval(function(){
+  fetch(location.pathname + '?v=' + Date.now(), {method:'HEAD', cache:'no-store'})
+    .then(function(r){
+      if(!r.ok) return;
+      var tag = (r.headers.get('Last-Modified')||'') + '/' + (r.headers.get('Content-Length')||'');
+      if(_selfTag === null){ _selfTag = tag; return; }
+      if(tag !== _selfTag){ location.replace(location.pathname + '?t=' + Date.now()); }
+    }).catch(function(){});
+}, 6000);
 </script></body></html>

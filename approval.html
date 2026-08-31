@@ -1,4 +1,7 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>전자결재</title>
 <style>
 *{box-sizing:border-box}
@@ -105,6 +108,18 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 .act.confirm:hover{background:#5aacea}
 .act:disabled{opacity:.4;cursor:not-allowed}
 .srv{font-size:12px;padding:5px 11px;border-radius:8px;flex:0 0 auto}
+/* 🔵 자동갱신 on/off (2026-08-31 사장님: "on/off스위치를 만들어 주던지?")
+   끄면 화면이 절대 안 바뀐다 — 읽는 중에 리로드돼 자리를 잃는 일이 없다.
+   선택은 localStorage 에 남아 다음에 열어도 유지된다. */
+#autosw{margin-left:auto;display:flex;align-items:center;gap:7px;flex:0 0 auto;
+  font-size:12px;color:#8fa0bd;cursor:pointer;user-select:none;white-space:nowrap}
+#autosw .kn{width:38px;height:20px;border-radius:20px;background:#2a3a5e;position:relative;
+  transition:.15s;border:1px solid #3b4f7a}
+#autosw .kn::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;
+  border-radius:50%;background:#8fa0bd;transition:.15s}
+#autosw.on .kn{background:#2f8f68;border-color:#37a87b}
+#autosw.on .kn::after{left:20px;background:#fff}
+#autosw.on{color:#8ee5be}
 .srv.on{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
 .srv.off{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
 .copied{position:fixed;right:16px;bottom:16px;background:#2f8f68;color:#fff;
@@ -135,7 +150,8 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
       font:13.5px/1.75 -apple-system,"Malgun Gothic",sans-serif}
 </style></head><body>
 <div class="hdrow"><h1>📋 전자결재</h1>
- <span class="tip">승인 버튼은 <b>두 번</b> 눌러야 실행됩니다 · 명령을 클릭하면 복사</span></div>
+ <span class="tip">승인 버튼은 <b>두 번</b> 눌러야 실행됩니다 · 명령을 클릭하면 복사</span><label id="autosw" class="on" title="끄면 화면이 저절로 바뀌지 않습니다"><span class="kn"></span><span id="autolab">자동갱신 켜짐</span></label>
+</div>
 <div class="flow">
 ① 제안 → ② <b>이부장 선별</b> → ③ <b>사장님 글감승인</b> → ④ 지시서 → ⑤ 초안·큐
 → ⑥ <b>이부장 V0검사</b> → ⑦ <b>사장님 발행승인</b> → ⑧ 발행·보고 → ④
@@ -321,9 +337,9 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var o=document.getElementById('out'); o.parentNode.insertBefore(d,o);
  return Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
              j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
-             j('watch.json'),j('pending.json')]).then(function(a){
+             j('watch.json'),j('pending.json'),j('osmu_text.json')]).then(function(a){
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
-  var W=arr(a[7]), PEND=(a[8]||{}).actionable||[];
+  var W=arr(a[7]), PEND=(a[8]||{}).actionable||[], OT=a[9]||{};
   var byc={}; (DB.posts||[]).forEach(function(p){byc[p.code]=p;});
   // 🔴 이과장 보고를 화면이 **읽을 수 있는데 안 읽고 있었다** (2026-08-28 사장님 지적).
   //    batch.json 은 이미 위에서 B 로 받아온다. 그 안 currents[].what 과 items[].note 에
@@ -712,5 +728,78 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
  });
 }
 refresh();
-setInterval(refresh, 30000);
+setInterval(function(){ if(AUTO) refresh(); }, 30000);
+
+// 🔴 **화면(HTML)이 바뀌면 스스로 새로 받는다** (2026-08-31 사장님 지적:
+//    "반영을 해도 운영콘솔에 보이지 않는데, 이것도 매번 내가 새로고침,
+//     강력새로고침을 해야 보이는게 어쩔수 없는 한계인가?")
+//    한계가 아니었다. refresh() 는 **데이터(json)만** 다시 그리고 HTML 은
+//    처음 받은 것을 계속 쓴다. 그래서 관제탑이 화면을 고쳐도 사장님은 옛 화면을
+//    보셨고, 매번 Ctrl+Shift+R 을 누르셔야 했다.
+//    → 자기 자신을 no-store 로 받아 길이가 달라졌을 때만 리로드한다.
+//      매번 리로드하면 스크롤·펼침 상태가 날아가므로 **바뀐 순간에만** 한다.
+// 🔴 **HEAD 로 3초마다 확인한다 — 서버 재시작이 필요 없다** (2026-08-31)
+//    처음엔 SSE(결재서버 푸시)로 만들었는데, 그 서버는 **창 없이** 돌고 있어
+//    사장님이 닫을 수가 없다(*"결제서버가 안보이는데 어떻게 닫을수 있지!"*).
+//    프로세스 종료는 이 저장소가 금지한다 — 즉 재시작을 요구하는 순간
+//    아무도 못 하는 일이 된다. **재시작이 필요 없는 방법으로 바꾼다.**
+//    HEAD 는 본문을 안 받는다(헤더만, 수백 바이트). 3초마다 해도 부담이 없고,
+//    Last-Modified 가 바뀐 **그 순간** 리로드하므로 체감은 실시간이다.
+//    ⚠️ SSE 쪽도 남겨 뒀다 — 서버가 언젠가 재시작되면 그때 저절로 붙는다.
+var _selfTag = null;
+function checkSelf(){
+  fetch(location.pathname + '?v=' + Date.now(), {method:'HEAD', cache:'no-store'})
+    .then(function(r){
+      if(!r.ok) return;
+      var tag = (r.headers.get('Last-Modified') || '') + '/' +
+                (r.headers.get('Content-Length') || '');
+      if(_selfTag === null){ _selfTag = tag; return; }
+      if(tag !== _selfTag){
+        _selfTag = tag;
+        location.replace(location.pathname + '?t=' + Date.now());
+      }
+    })
+    .catch(function(){});
+}
+checkSelf();
+// 🔵 스위치 — 기본 켜짐. 끄면 아무것도 저절로 안 바뀐다.
+var AUTO = (localStorage.getItem('console.auto') !== 'off');
+function paintSw(){
+  var el = document.getElementById('autosw');
+  if(!el) return;
+  el.classList.toggle('on', AUTO);
+  document.getElementById('autolab').textContent = AUTO ? '자동갱신 켜짐' : '자동갱신 꺼짐';
+}
+(function(){
+  var el = document.getElementById('autosw');
+  if(!el) return;
+  paintSw();
+  el.addEventListener('click', function(){
+    AUTO = !AUTO;
+    localStorage.setItem('console.auto', AUTO ? 'on' : 'off');
+    paintSw();
+    if(AUTO){ refresh(); checkSelf(); }   // 다시 켜면 즉시 따라잡는다
+  });
+})();
+var _selfTimer = setInterval(function(){ if(AUTO) checkSelf(); }, 3000);
+
+// 🔴 **로컬은 폴링을 기다리지 않는다 — 서버가 밀어준다** (2026-08-31 사장님 지적:
+//    "30초가 아닌 실시간 반영할 수 있잖아 로컬호스트는?")
+//    결재 서버(8011)가 webapp/ 을 지켜보다가 파일이 바뀌는 **그 순간** 신호를 보낸다.
+//    신호를 받으면 30초를 기다리지 않고 바로 새로 받는다.
+//    ⚠️ 원격(github.io)에서는 이 서버에 닿지 못한다 — 그쪽은 위 30초 자기갱신이
+//       그대로 동작하므로 아무것도 잃지 않는다.
+(function(){
+  if(REMOTE) return;                       // 밖에서는 서버가 없다
+  try{
+    var es = new EventSource(API + '/api/watch-stream');
+    es.addEventListener('changed', function(){
+      // 데이터만 바뀐 경우가 대부분이라 먼저 다시 그리고,
+      // 화면(HTML) 자체가 바뀌었으면 checkSelf 가 리로드한다.
+      try{ refresh(); }catch(e){}
+      checkSelf();
+    });
+    es.onerror = function(){ /* 서버가 꺼지면 폴링만 남는다 — 조용히 둔다 */ };
+  }catch(e){}
+})();
 </script></body></html>
