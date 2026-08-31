@@ -1,15 +1,31 @@
 {
- "rev": "5864bd8",
+ "rev": "847266b",
  "counts": {
-  "total": 218,
+  "total": 219,
   "osmu_done": 218,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 2,
-  "index_pending": 216,
+  "index_pending": 217,
   "index_requested": 204,
-  "index_todo": 12
+  "index_todo": 13
  },
  "actionable": [
+  {
+   "code": "F1-14",
+   "title": "해외여행 축산물 반입 신고 안 하면 과태료 총정리 (2",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
   {
    "code": "A2-15",
    "title": "추석 연휴 국민연금 기초연금 조기지급일 총정리 (202",
@@ -193,21 +209,6 @@
   {
    "code": "A1-02",
    "title": "고유가 피해지원금 2차 신청 대상 금액 사용처 총정리",
-   "need": [
-    "색인대기"
-   ],
-   "action": "색인 반영 대기",
-   "osmu": true,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "A1-03",
-   "title": "근로장려금 신청 자격 금액 지급일 총정리",
    "need": [
     "색인대기"
    ],
