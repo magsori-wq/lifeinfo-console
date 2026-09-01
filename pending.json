@@ -1,13 +1,13 @@
 {
- "rev": "f3e22956",
+ "rev": "f7450890",
  "counts": {
-  "total": 222,
+  "total": 223,
   "osmu_done": 220,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 1,
-  "index_pending": 221,
+  "index_pending": 222,
   "index_requested": 205,
-  "index_todo": 16
+  "index_todo": 17
  },
  "actionable": [
   {
@@ -29,6 +29,22 @@
   {
    "code": "B1-08",
    "title": "자동차세 9월 연납 신청 방법 할인율 계산 총정리 (2",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "E2-11",
+   "title": "국민비서 구삐 신청 방법 — 카카오톡 네이버앱으로 세금",
    "need": [
     "OSMU",
     "색인요청"
@@ -195,21 +211,6 @@
   {
    "code": "F1-14",
    "title": "해외여행 축산물 반입 신고 안 하면 과태료 총정리 (2",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "G2-03",
-   "title": "양산 통도사 국가유산 미디어아트 2026 관람 방법 총",
    "need": [
     "색인요청"
    ],
