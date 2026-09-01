@@ -1,13 +1,13 @@
 {
- "rev": "6cd585bc",
+ "rev": "aa5d161f",
  "counts": {
-  "total": 224,
+  "total": 225,
   "osmu_done": 220,
-  "osmu_pending": 4,
+  "osmu_pending": 5,
   "indexed": 1,
-  "index_pending": 223,
+  "index_pending": 224,
   "index_requested": 205,
-  "index_todo": 18
+  "index_todo": 19
  },
  "actionable": [
   {
@@ -45,6 +45,22 @@
   {
    "code": "E2-11",
    "title": "국민비서 구삐 신청 방법 — 카카오톡 네이버앱으로 세금",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false
+   }
+  },
+  {
+   "code": "F1-15",
+   "title": "해외여행 여권 분실 신고 절차 긴급여권 발급 총정리 (",
    "need": [
     "OSMU",
     "색인요청"
@@ -197,21 +213,6 @@
   {
    "code": "E2-09",
    "title": "추석 명절 스미싱 보이스피싱 예방 신고 방법 총정리 (",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true
-   }
-  },
-  {
-   "code": "F1-13",
-   "title": "영국 ETA 전자여행허가 신청 방법 수수료 유효기간 총",
    "need": [
     "색인요청"
    ],
