@@ -3904,6 +3904,51 @@
    "cmd": "python -c \"import io,json;print(len(json.load(io.open('webapp/audit.json',encoding='utf-8'))['items']))\"",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "approve-autopush-0901",
+   "added": "2026-09-01",
+   "what": "결재 즉시 원격 반영 배선 — 다음 결재 때 [결재-동기화] ✅ 줄이 실제로 찍히는지 확인. 12:17 도장이 origin 에 안 가서 이과장이 발행을 보류했던 자리",
+   "due": "2026-09-02",
+   "cmd": "git log --oneline -3 --grep='결재:' && git status --short webapp/queue.json",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "browser-disconnect-a216-0901",
+   "added": "2026-09-01",
+   "what": "A2-16 발행 후속(검색설명 삽입·쓰레드/인스타 게시)이 claude-in-chrome 미연결로 막힘 — list_connected_browsers 2회 확인 결과 빈 배열(실제 미연결). 브라우저 재연결되면 이어서 진행",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.seodesc scan --only A2-16 로 재확인 후 편집화면에서 직접 삽입",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-a216-0901",
+   "added": "2026-09-01",
+   "what": "A2-16 국가유공자·보훈보상대상자 활동지원급여 — 네이버 블로그 게시 (원고 클립보드 세팅됨, 첨부이미지 준비됨)",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.pipeline naver-draft --code A2-16 --file osmu/네이버용_국가유공자활동지원급여.txt 로 원고 클립보드 재세팅 후, 네이버 글쓰기창에 붙여넣기·첨부이미지(C:\\lifeinfo\\thumbs_naver\\199_veteran_support.png) 첨부·게시 → URL 확보되면 python -m studio.pipeline naver-link --code A2-16 --url <URL> 로 기록",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "insta-post-a216-0901",
+   "added": "2026-09-01",
+   "what": "A2-16 국가유공자·보훈보상대상자 활동지원급여 — 인스타 카드뉴스 6장 게시 (카드 insta/a216_01_cover.png~06_cta.png, 캡션 insta/캡션_국가유공자활동지원급여.txt)",
+   "due": "2026-09-01",
+   "cmd": "카드 6장(insta/a216_01_cover.png ~ a216_06_cta.png) 순서대로 업로드 + 캡션(insta/캡션_국가유공자활동지원급여.txt) 붙여넣기 → 게시 → URL 확보되면 python -m studio.pipeline insta-link --code A2-16 --url <URL> 로 기록",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "thread-post-a216-0901",
+   "added": "2026-09-01",
+   "what": "A2-16 쓰레드 게시 — claude-in-chrome 미연결로 대기 중(list_connected_browsers 재확인 빈 배열). 원고(osmu/쓰레드용_국가유공자활동지원급여.txt, 473자)·첨부이미지(insta/thread/thread_A2-16_veteran.png) 준비 완료. 브라우저 재연결되는 대로 직접 게시",
+   "due": "2026-09-01",
+   "cmd": "python -m studio.threadsdraft --code A2-16 로 클립보드 세팅 후 threads.com 에서 붙여넣기·이미지첨부·게시 → python -m studio.pipeline threads-link --code A2-16 --url <URL>",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }

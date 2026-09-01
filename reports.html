@@ -21,9 +21,20 @@
       details>summary{cursor:pointer;color:#8fa6bd;font-size:12.5px;margin:6px 0 0 14px}
     </style>
 <h2>📢 보고 — 세션별</h2>
-<div class='n'>세션(담당)별로 묶어 폅니다. 오늘 2건 · 전체 135건. 읽기 전용이며 <code>batch.json</code> 에서 구워집니다 — 여기서 고치지 마십시오.</div>
-<div class='ses'>(담당 미지정)<span class='cnt'>오늘 1건 · 전체 62건</span></div>
-<div class='r  today'><div class='hd'><span class='t'>2026-09-01 02:22</span><span class='k'>진행</span><span class='b'>pub0901b108</span></div><div class='w'>B1-08 발행 실행됨 — 승인 회수 이후 아님, 회수 통보 받기 전 이미 트리거했으나 V0 게이트에 막혀 실제로는 미발행. 실측: gh run 33416479706 publish-flow 실행 단계 X(exit 1) '[차단] B1-08 는 V0 검사를 받지 않았다' — 원인은 v0check.json 의 B1-08 pass(01:39)가 로컬에만 있고 origin/main 에 커밋·푸시 안 돼 러너가 못 봄(git diff 로 확인). DB 에 B1-08 없음·pubqueue 에 그대로 남아있음 = 라이브 미발행 확정. 승인 회수 통보(관제탑 임의 go였음) 확인, 오늘 B1-08·F1-15 추가 작업 중단하고 대기</div></div>
+<div class='n'>세션(담당)별로 묶어 폅니다. 오늘 2건 · 전체 138건. 읽기 전용이며 <code>batch.json</code> 에서 구워집니다 — 여기서 고치지 마십시오.</div>
+<div class='ses'>이과장(작업 세션)<span class='cnt'>오늘 2건 · 전체 8건</span></div>
+<div class='r  today'><div class='hd'><span class='t'>2026-09-01 04:39</span><span class='k'>진행</span><span class='b'>remote0830</span></div><div class='w'>낡은 인계서 확인 완료 — 목록 4건(D2-11/B2-12/A5-09/F1-14) 전부 이미 발행+대부분 4채널 완결(실측). B2-12/F1-14는 네이버만 남아 watch 등록·사장님 손 대기 중. 오늘 발행 5/5(상한) 도달·큐 0건 — 신규 착수 없음, 더 진행할 항목 없음</div></div>
+<div class='r  today'><div class='hd'><span class='t'>2026-09-01 02:22</span><span class='k'>진행</span><span class='b'>pub0901b108</span></div><div class='w'>대기 — A2-16 3채널(네이버·쓰레드·인스타) 게시 URL 전부 필요, setgate 재확인으로 이해 완료(원고·카드 완성은 게이트 통과 조건 아님). 쓰레드는 claude-in-chrome 재연결 시 직접 게시+threads-link. 네이버·인스타는 결재함(naver-post-a216-0901, insta-post-a216-0901) 사장님 처리 대기. 게이트 우회 안 함, 이 자리에서 폴링</div></div>
+<details><summary>이전 보고 6건 펼치기</summary>
+<div class='r '><div class='hd'><span class='t'>12:42</span><span class='k'>진행</span><span class='b'>osmu0901a216</span></div><div class='w'>네이버 원고 작성완료·결재함 등록(이전 pub0901a216에서 처리) · 인스타 카드6장+캡션 생성·결재함(insta-post-a216-0901) 등록 완료 · 쓰레드 원고+이미지 생성 완료했으나 claude-in-chrome 미연결로 게시 보류(watch thread-post-a216-0901, owner claude) — 재연결 시 직접 게시</div></div>
+<div class='r '><div class='hd'><span class='t'>12:25</span><span class='k'>진행</span><span class='b'>pub0901a216</span></div><div class='w'>A2-16 라이브 발행 완료(HTTP 200)+DB등록+네이버 원고 작성·게이트통과·결재함 등록(naver-post-a216-0901). 검색설명·쓰레드·인스타는 claude-in-chrome 미연결로 보류 — watch(browser-disconnect-a216-0901) 등록. 재연결 시 이어서 진행, 그 전엔 이 배치에서 대기</div></div>
+<div class='r '><div class='hd'><span class='t'>01:44</span><span class='k'>진행</span><span class='b'>draft0831f115</span></div><div class='w'>F1-15 초안 착수 — 1차출처 미확보 확인, source 에이전트 구동</div></div>
+<div class='r done'><div class='hd'><span class='t'>-</span><span class='k'>완료</span><span class='c'>REMOTE</span><span class='b'>remote0830</span></div><div class='w'>인계서 목록 4건(D2-11/B2-12/A5-09/F1-14) 전부 이미 발행+OSMU 완료 확인 — 이과장 보고(08-31 15:27). 배치 목적 달성</div></div>
+<div class='r done'><div class='hd'><span class='t'>-</span><span class='k'>완료</span><span class='c'>F1-15</span><span class='b'>draft0831f115</span></div><div class='w'>F1-15 초안 작성 완료·해외여행여권분실_글_HTML.txt·머리형식 통과(draftfind)·heading OK·bodydup🟢0.027(252편)·썸네일 200_passport_loss.png 생성·pubqueue 등록 완료(대기 5/5). 핵심 정정: 통념(분실=여행증명서)과 달리 표준경로는 재발급→긴급여권(시행령§16 대상자 미포함 확인)</div></div>
+<div class='r done'><div class='hd'><span class='t'>-</span><span class='k'>완료</span><span class='c'>A2-16</span><span class='b'>pub0901a216</span></div><div class='w'>라이브 확인: https://lifeinfo8975.blogspot.com/2026/09/2026-9-1.html HTTP 200 · DB 등록 완료(gh run 33466249750 전 단계 ✓) · 네이버 원고 작성·게이트통과·결재함(naver-post-a216-0901) 등록 완료 · 검색설명/쓰레드/인스타는 claude-in-chrome 미연결로 진행중(watch browser-disconnect-a216-0901)</div></div>
+</details>
+<div class='ses'>(담당 미지정)<span class='cnt'>오늘 0건 · 전체 61건</span></div>
+<div class='n' style='margin-left:14px'>오늘 보고 없음</div>
 <details><summary>이전 보고 61건 펼치기</summary>
 <div class='r '><div class='hd'><span class='t'>2026-08-31 15:27</span><span class='k'>진행</span><span class='b'>pub0831b212</span></div><div class='w'>B2-12 라이브 발행·검색설명 이미 완료(이전 세그먼트) — 쓰레드 첨부이미지(thread_B2-12_loanrate.png) 생성 완료, 쓰레드 게시 진행 중</div></div>
 <div class='r '><div class='hd'><span class='t'>2026-08-31 14:48</span><span class='k'>진행</span><span class='b'>pub0831f114</span></div><div class='w'>쓰레드 게시 진행 중 — 방금 게시 버튼 클릭, URL 확인 중. 다음: threads-link 기록 → 네이버 원고 작성 → 인스타 카드 제작</div></div>
@@ -85,13 +96,6 @@
 <div class='r done'><div class='hd'><span class='t'>-</span><span class='k'>완료</span><span class='c'>assetback</span><span class='b'>tower0831</span></div><div class='w'>사장님 지적 '글감후보는 자원이 들어간 생산품'. drop 7건에 제외 사유가 하나도 없다(why 에 추천 사유가 그대로). A2-16 은 9/1 시행이라 오늘 아니면 놓칠 뻔했다. 결재함 등록 완료</div></div>
 <div class='r done'><div class='hd'><span class='t'>-</span><span class='k'>완료</span><span class='c'>recall</span><span class='b'>tower0831</span></div><div class='w'>89.8MB 세션에서 08-31 사장님 발언 20건 복원. 제휴 3사·문구 A안·재고 하한 3편·제목 C안이 전부 거기 있었다</div></div>
 <div class='r '><div class='hd'><span class='t'>-</span><span class='k'>doing</span><span class='c'>dropgate</span><span class='b'>tower0831</span></div><div class='w'>drop 이 추천 사유를 덮어써 제외 사유가 사라진다. --why 필수화 + drop_why 분리 저장. fixer 에이전트에 지시함</div></div>
-</details>
-<div class='ses'>이과장(작업 세션)<span class='cnt'>오늘 1건 · 전체 4건</span></div>
-<div class='r  today'><div class='hd'><span class='t'>2026-09-01 04:39</span><span class='k'>진행</span><span class='b'>remote0830</span></div><div class='w'>낡은 인계서 확인 완료 — 목록 4건(D2-11/B2-12/A5-09/F1-14) 전부 이미 발행+대부분 4채널 완결(실측). B2-12/F1-14는 네이버만 남아 watch 등록·사장님 손 대기 중. 오늘 발행 5/5(상한) 도달·큐 0건 — 신규 착수 없음, 더 진행할 항목 없음</div></div>
-<details><summary>이전 보고 3건 펼치기</summary>
-<div class='r '><div class='hd'><span class='t'>01:44</span><span class='k'>진행</span><span class='b'>draft0831f115</span></div><div class='w'>F1-15 초안 착수 — 1차출처 미확보 확인, source 에이전트 구동</div></div>
-<div class='r done'><div class='hd'><span class='t'>-</span><span class='k'>완료</span><span class='c'>REMOTE</span><span class='b'>remote0830</span></div><div class='w'>인계서 목록 4건(D2-11/B2-12/A5-09/F1-14) 전부 이미 발행+OSMU 완료 확인 — 이과장 보고(08-31 15:27). 배치 목적 달성</div></div>
-<div class='r done'><div class='hd'><span class='t'>-</span><span class='k'>완료</span><span class='c'>F1-15</span><span class='b'>draft0831f115</span></div><div class='w'>F1-15 초안 작성 완료·해외여행여권분실_글_HTML.txt·머리형식 통과(draftfind)·heading OK·bodydup🟢0.027(252편)·썸네일 200_passport_loss.png 생성·pubqueue 등록 완료(대기 5/5). 핵심 정정: 통념(분실=여행증명서)과 달리 표준경로는 재발급→긴급여권(시행령§16 대상자 미포함 확인)</div></div>
 </details>
 <div class='ses'>사장님(네이버 직접 수정 — API 없음)<span class='cnt'>오늘 0건 · 전체 59건</span></div>
 <div class='n' style='margin-left:14px'>오늘 보고 없음</div>
