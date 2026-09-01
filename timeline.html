@@ -14,7 +14,7 @@ h1{font-size:19px;margin:0 0 2px}
 .bar button.on{background:#1c3a5e;border-color:#3b6ea8;color:#fff}
 .hr{color:#7fb8e8;font-size:12px;font-weight:700;margin:14px 0 6px;
   border-bottom:1px solid #1b2740;padding-bottom:4px}
-.row{display:grid;grid-template-columns:52px 90px 96px 1fr;gap:8px;padding:5px 8px;
+.row{display:grid;grid-template-columns:52px 90px 96px 92px 1fr;gap:8px;padding:5px 8px;
   border-radius:7px;align-items:baseline}
 .row:hover{background:#0e1626}
 .t{color:#8a97ab;font-variant-numeric:tabular-nums;font-size:12px}
@@ -22,6 +22,9 @@ h1{font-size:19px;margin:0 0 2px}
 .w{color:#7f9bc4;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .x{font-size:13px}
 .none{color:#8a97ab;padding:20px;text-align:center}
+.to{color:#6fa8dc;font-size:11px;white-space:nowrap}
+.to:empty::before{content:""}
+.unread{color:#ff6b6b;font-weight:700}
 .k-발행{color:#8ef0cf}.k-커밋{color:#9db4d4}.k-지시서{color:#ffd166}
 .k-보고{color:#7fd1ff}.k-글감{color:#c9a6ff}.k-결재올림{color:#ff9aa6}.k-열람{color:#8a97ab}
 </style></head><body><div class="wrap">
@@ -52,10 +55,13 @@ function render(){
     var d=x.at.slice(0,10), hm=x.at.slice(11);
     if(d!==lastD){H+='<div class="hr">'+esc(d)+'</div>';lastD=d;}
     var kind=String(x.kind||''), cls=kind.replace(/^[^가-힣a-zA-Z]+/,'').trim();
+    var to=x.to?('→ '+esc(x.to)):'';
+    var whatCls=(/\[미열람\]/.test(x.what||''))?'x unread':'x';
     H+='<div class="row"><span class="t">'+esc(hm)+'</span>'
       +'<span class="k k-'+esc(cls)+'">'+esc(kind)+'</span>'
       +'<span class="w">'+esc(x.who)+'</span>'
-      +'<span class="x">'+esc(x.what)+'</span></div>';
+      +'<span class="to">'+to+'</span>'
+      +'<span class="'+whatCls+'">'+esc(x.what)+'</span></div>';
   });
   document.getElementById('out').innerHTML=H;
 }

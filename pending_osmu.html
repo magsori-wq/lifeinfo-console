@@ -133,14 +133,25 @@ async function fallbackPending(){
   });
   out.reverse();
 
-  // ③ 사장님 조치 필요 — watch.json 파생(서버와 동일 규칙)
-  var acts=(((w&&w.items)||[]).filter(function(x){
-      return (x.owner==='user') && ((x.state||'todo')!=='done'); })
-    .map(function(x){ return {id:x.id||'', what:x.what||'', due:x.due||'',
-      cmd:x.cmd||'', state:x.state||'todo'}; })
-    .sort(function(a,b){ return (a.due||'9999-99-99').localeCompare(b.due||'9999-99-99'); }));
+  // ③ 사장님 조치 필요 — watch.json 파생.
+  //    🔴 2026-09-01 사고: 여기 주석이 "서버와 동일 규칙"이라 적혀 있었는데
+  //    실은 studio/approvalcount.py(결재함 건수 진실원)에 있는
+  //    `due<=오늘` 조건이 이 화면에는 없었다 — 기한이 안 온 16건이 섞여
+  //    "25건"으로 부풀었다(사장님 캡처로 실측). 여기서도 같은 기준으로 자른다.
+  var __today=new Date().toISOString().slice(0,10);
+  var __userItems=((w&&w.items)||[]).filter(function(x){
+      return (x.owner==='user') && ((x.state||'todo')!=='done'); });
+  function __actMap(x){ return {id:x.id||'', what:x.what||'', due:x.due||'',
+      cmd:x.cmd||'', state:x.state||'todo'}; }
+  function __actSort(a,b){ return (a.due||'9999-99-99').localeCompare(b.due||'9999-99-99'); }
+  // due 가 오늘 이하(=도래)인 것만 "조치 필요" 건수에 센다(approvalcount.py 와 동일).
+  var acts=__userItems.filter(function(x){ return String(x.due||'9999')<=__today; })
+    .map(__actMap).sort(__actSort);
+  // 기한이 아직 안 온 것은 버리지 않고 접힌 섹션으로 넘긴다(따로 보여줌).
+  var actsFuture=__userItems.filter(function(x){ return String(x.due||'9999')>__today; })
+    .map(__actMap).sort(__actSort);
 
-  return {ok:true, publish:pub, posts:out, actions:acts, readonly:true};
+  return {ok:true, publish:pub, posts:out, actions:acts, actionsFuture:actsFuture, readonly:true};
 }
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
@@ -326,11 +337,32 @@ function fileChip(path, label, isImg, exists){
         +esc(String(a.what||'').slice(0,300))
         +(a.cmd?'<br><code style="color:#8fd6a0;font-size:11px">'+esc(a.cmd)+'</code>':'')
         +'</span></div>';}).join('');
+    var futHtml='';
+    var Af=(D.actionsFuture||[]);
+    if(Af.length){
+      var frows=Af.map(function(a){
+        return '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;'
+          +'border-top:1px solid #1b2740">'
+          +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:11px;font-weight:700;'
+          +'min-width:64px">'+esc(a.due||'기한 없음')+'</span>'
+          +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:11px;min-width:150px">'
+          +esc(a.id)+'</span>'
+          +'<span style="flex:1 1 auto;color:#cfe0f2;font-size:12px;line-height:1.45">'
+          +esc(String(a.what||'').slice(0,300))
+          +(a.cmd?'<br><code style="color:#8fd6a0;font-size:11px">'+esc(a.cmd)+'</code>':'')
+          +'</span></div>';}).join('');
+      // 🔴 기본 접힘 — "너무 많은 글을 보여주니 다 읽을 수가 없어"(2026-08-27 사장님 지적).
+      //    기한 도래분(위 박스)만 펼쳐 보이고, 기한 전은 여기 접어 둔다.
+      futHtml='<details style="background:#0f1626;border:1px solid #223052;'
+        +'border-radius:9px;margin-top:6px"><summary style="cursor:pointer;color:#7fb0e0;'
+        +'font-size:12px;padding:6px 10px">⏳ 기한 전 '+Af.length+'건 — 펼쳐 보기</summary>'
+        +'<div style="max-height:220px;overflow-y:auto">'+frows+'</div></details>';
+    }
     box.innerHTML='<details open style="background:#1a1206;border:1px solid #4a3a12;'
       +'border-radius:9px"><summary style="cursor:pointer;color:#ffd479;font-size:13px;'
       +'font-weight:700;padding:8px 10px">🙋 사장님 조치 필요 '+A.length+'건'
       +' — 펼침/접기</summary><div style="max-height:260px;overflow-y:auto">'
-      +rows+'</div></details>';
+      +rows+'</div></details>'+futHtml;
   })();
 
   var H='';

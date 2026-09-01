@@ -680,22 +680,22 @@
      "code": "daily-email-briefing",
      "title": "메일 브리핑 (08:08 / 20:08)",
      "state": "done",
-     "note": "20시 브리핑: 애드센스 계정READY·사이트NEEDS_ATTENTION(변화없음·새 통지 0). GitHub publish.yml 실패메일 2건=run 33337394201/33337532318(a1fe96e·d0cdbb4)로 watch a509-short-empty-0831 기보고분과 동일, 이후 33360515719·33362458101 성공. 구글/GSC 메일 0건. 8975 전달분 0건=사각지대. 신규 조치항목 없음",
-     "at": "2026-08-31 20:10"
+     "note": "08:0x 브리핑: 애드센스 계정READY/사이트NEEDS_ATTENTION(반려유지·메일없음). GitHub 발행WF 실패 3건 중 2건은 기보고(a509 rebase충돌), 신규 1건=run 33416479706(08-31 16:53Z) B1-08 V0게이트 차단 — v0 도장 커밋 2753faa 가 01:55, 런은 01:52 시작이라 러너가 도장 전 origin/main 을 봤다(게이트 정상작동·시스템이상 아님). 구글 'publ' 로그인 통지 08-31 23:14(메일 자체가 조치불요 명시). 토스비즈 가입·인증 완료. 8975 전달분 0건=사각지대.",
+     "at": "2026-09-01 08:11"
     },
     {
      "code": "lifeinfo-daily-topics",
      "title": "A·B 글감 제안 (09:01)",
      "state": "done",
-     "note": "A3-10(국민연금 보험료율 인상, 추천) + B1-08(자동차세 9월 연납, 후보) topicprop 등록 · dupcheck 둘 다 🟡(오탐 판단, 강한중복 없음) · 오전브리핑_2026-08-31.md 저장 완료 · 이부장 선별 대기",
-     "at": "2026-08-31 09:06"
+     "note": "9/1 A·B 담당 특별이슈 재검토(재산세2기·근로장려금반기·국가장학금2차·예보한도1억·2026세제개편안 전부 기발행/시의성없음/확정전으로 실측 배제) → 오늘 신규 topicprop 제안 없음(빈손). 재고 5/5 상한도달. 오전브리핑_2026-09-01.md 저장",
+     "at": "2026-09-01 09:06"
     },
     {
      "code": "lifeinfo-publish",
      "title": "발행구 (09:05)",
      "state": "done",
-     "note": "발행구(3/C) 확인: validate_db PASS13·selfcheck 조치필요4/참고9. 발행대기 2건(F1-14,B2-12) 전부 V0🟢·go도장(사장님06:46)·이과장지시서(pub0831f114,pub0831b212) 기 등록됨→추가조치 불필요. A5-09·G4-05는 오늘 이미 라이브(pace 3/5, url 확인). A5-09 DB.short 공백은 watch a509-short-empty-0831(owner=claude,오늘기한)에 이미 등록돼 있어 중복등록 안 함. 오늘 발행 3/5·재고 2/5로 페이스 정상.",
-     "at": "2026-08-31 09:08"
+     "note": "3/C 발행구 확인: 재고5(E2-11·B1-08·F2-14·A2-16·F1-15) 전부 V0🟢·게이트 통과. 결재함(watch pub-go-5-0901)에 이미 일괄승인요청 등록돼 있음(오늘자, 신규 등록 불필요). B1-08은 코드충돌(posts/B1-08 다른글)·미검증 문구 2건 별도 플래그 확인, 오늘 발행 0/5.",
+     "at": "2026-09-01 09:07"
     },
     {
      "code": "lifeinfo-travel-prep",
@@ -808,28 +808,30 @@
    "note": "",
    "items": [
     {
-     "code": "관제탑",
-     "title": "Stop 훅에 loopcheck+sessionwatch 물리기 — 묻지 않아도 감지되게",
-     "state": "todo",
-     "note": "지금은 validate_db 만 돈다. 이과장 9.6시간 미열람을 사장님이 물어야 알았다"
+     "code": "TOWER-1",
+     "title": "Stop 훅에 loopcheck+sessionwatch 물리기",
+     "state": "done",
+     "note": "run_checks.py INFO_CHECKS 에 추가. 실측으로 작동 확인 — 미열람 30·60분, 진행없음 30·60·88분을 실제로 알렸다"
     },
     {
-     "code": "관제탑",
+     "code": "TOWER-2",
      "title": "adsense.html '3편 이상 금지' 문구 갱신(실제 상한 5)",
-     "state": "todo",
-     "note": "uicheck 가 잡은 진짜 1건 · watch adsense-html-pace3"
+     "state": "done",
+     "note": "pace.py DAILY_HARD 지목형으로 교체(에이전트). uicheck 에서 항목 사라짐 — 화면 25개 전부 ✅"
     },
     {
-     "code": "관제탑",
+     "code": "TOWER-3",
      "title": "미리보기 sandbox 수정 실제 렌더 확인",
      "state": "todo",
-     "note": "브라우저 확장 끊겨 미확인 — 붙으면 즉시 확인"
+     "note": "sandbox='' → allow-same-origin 으로 고쳤으나 브라우저 확장이 끊겨(list_connected_browsers 빈 목록) 실제로 눌러 확인 못 함. 붙으면 즉시"
     }
    ],
-   "owner": "이부장(관제탑)"
+   "owner": "이부장(관제탑)",
+   "order": "【09-01 관제탑 할 일】 담당: 이부장(관제탑) — 내 몫이라 다른 세션은 건드리지 않는다\n\n■ 무엇을\n ① Stop 훅에 loopcheck+sessionwatch 물리기 → ✅ 완료(run_checks.py INFO_CHECKS)\n ② adsense.html '3편 이상 금지' 문구 갱신 → ✅ 완료(pace.py DAILY_HARD 지목형으로)\n ③ 미리보기 sandbox 수정 실제 렌더 확인 → ⬜ 미완\n\n■ 어떻게 (③)\n approval.html 의 <iframe id=\"pvb\"> 를 sandbox=\"\" → sandbox=\"allow-same-origin\" 으로 고쳤다.\n 대조군 근거: progress.html 의 qpv-fr 은 sandbox 가 없어 같은 srcdoc 방식으로 잘 그린다.\n 🔴 그러나 **실제로 눌러 확인하지 못했다** — 브라우저 확장이 끊겨 있다\n (list_connected_browsers 가 빈 목록 = 실제 미연결).\n\n■ 지금 걸린 게이트\n 없음. 화면 문법은 selfcheck 18) ✅ · uicheck 25개 화면 ✅.\n\n■ 보고 경로\n python -m studio.batchboard mark --id today0901 --code 관제탑 --state done --note \"<실측 한 줄>\"\n\n■ 막히면\n 브라우저가 다시 붙으면 결재함에서 「📄 원고 미리보기」를 눌러 본문이 뜨는지 확인한다.\n 안 뜨면 sandbox 가 원인이 아니므로 다른 곳을 봐야 한다 — 추정으로 닫지 말 것.\n 확인 못 한 채로 \"고쳤다\"고 보고하지 않는다(2026-09-01 에 그것으로 여러 번 틀렸다).",
+   "order_at": "2026-09-01 09:09"
   }
  },
- "updated": "2026-09-01 04:39:49",
+ "updated": "2026-09-01 09:09:18",
  "current": {
   "batch": "pub0901b108",
   "code": "",
@@ -839,6 +841,34 @@
   "since": "01:55"
  },
  "log": [
+  {
+   "t": "09:09:18",
+   "text": "📄 today0901 작업 지시 등록(812자, 2026-09-01 09:09)"
+  },
+  {
+   "t": "09:09:18",
+   "text": "🏷️ today0901 담당=이부장(관제탑)"
+  },
+  {
+   "t": "09:09:18",
+   "text": "📋 배치 '09-01 관제탑 할 일' 등록 — 3항목"
+  },
+  {
+   "t": "09:08:40",
+   "text": "📄 today0901 작업 지시 등록(812자, 2026-09-01 09:08)"
+  },
+  {
+   "t": "09:07:35",
+   "text": "✅ lifeinfo-publish 완료 — 발행구 (09:05)"
+  },
+  {
+   "t": "09:06:28",
+   "text": "✅ lifeinfo-daily-topics 완료 — A·B 글감 제안 (09:01)"
+  },
+  {
+   "t": "08:11:35",
+   "text": "✅ daily-email-briefing 완료 — 메일 브리핑 (08:08 / 20:08)"
+  },
   {
    "t": "04:39:49",
    "text": "✅ REMOTE 완료 — 리모트 환경 확인 후 대기 중인 지시서 진행"
@@ -970,34 +1000,6 @@
   {
    "t": "14:28:49",
    "text": "🔸 F1-14 진행중 — 해외여행 축산물 반입 신고 안 하면 과태료 총정리 (2026 "
-  },
-  {
-   "t": "14:07:33",
-   "text": "📄 pub0831g405 작업 지시 등록(999자, 2026-08-31 14:07)"
-  },
-  {
-   "t": "09:08:58",
-   "text": "✅ lifeinfo-publish 완료 — 발행구 (09:05)"
-  },
-  {
-   "t": "09:06:59",
-   "text": "✅ lifeinfo-daily-topics 완료 — A·B 글감 제안 (09:01)"
-  },
-  {
-   "t": "08:10:44",
-   "text": "✅ daily-email-briefing 완료 — 메일 브리핑 (08:08 / 20:08)"
-  },
-  {
-   "t": "07:41:04",
-   "text": "✅ G4-05 완료 — 산에서 밤 도토리 버섯 주우면 처벌될까 총정리 (2026 가을"
-  },
-  {
-   "t": "07:40:21",
-   "text": "🔧 미결 항목 자동 생성: G4-05-seodesc"
-  },
-  {
-   "t": "07:00:27",
-   "text": "📄 pub0831b212 작업 지시 등록(1753자, 2026-08-31 07:00)"
   }
  ],
  "currents": {

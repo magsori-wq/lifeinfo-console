@@ -3877,6 +3877,33 @@
    "cmd": "python -m studio.pubqueue go --code A2-16 && python -m studio.pubqueue go --code B1-08 && python -m studio.pubqueue go --code E2-11 && python -m studio.pubqueue go --code F2-14 && python -m studio.pubqueue go --code F1-15",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "timeline-who-to-0901",
+   "added": "2026-09-01",
+   "what": "변경로그(timeline)에 수신자(to)·지시서 읽음여부 추가 — 지시서 줄에 → 이과장/이부장 등 수신자와 [읽음 N회]/[미열람] 태그, timeline.html 에 화살표 열+미열람 빨강 강조",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.timeline --days 1",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "ui-approvalcount-align-0901",
+   "added": "2026-09-01",
+   "what": "미결사항 탭(pending_osmu.html) 사장님 조치필요 필터에 due<=오늘 조건 누락 — 결재함(9건)과 25건으로 갈렸다. fallbackPending()·approve_server._pending() 둘 다 approvalcount.py 와 같은 due 필터로 맞추고, 기한 전 항목은 접힌 ⏳섹션으로. uicheck.py에 세 파일(pending_osmu.html·approve_server.py·approvalcount.py)의 due 조건 동기화 회귀검사 추가. 대조: due<=오늘 4건 + 기한전 16건 = 20건(구버전 owner=user 전체), approvalcount 도 ☑조치 4건으로 일치.",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.uicheck",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "audit-actor-0901",
+   "added": "2026-09-01",
+   "what": "감사로그(actor) 배선 — pubqueue go/ungo·topicprop approve/drop·watch done 에 studio.audit 연결, LIFEINFO_ACTOR 없으면 세션(CLI) 로 기록(사람 기본값 금지)",
+   "due": "2026-09-02",
+   "cmd": "python -c \"import io,json;print(len(json.load(io.open('webapp/audit.json',encoding='utf-8'))['items']))\"",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }
