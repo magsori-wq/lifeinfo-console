@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-09-01T04:06:05",
+ "checked_at": "2026-09-02T06:00:12",
  "light": "yellow",
  "pass": 14,
- "warn": 3,
+ "warn": 4,
  "fail": 0,
  "checks": [
   {
@@ -23,7 +23,7 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (657개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (672개 확산링크)"
   },
   {
    "level": "PASS",
@@ -59,7 +59,7 @@
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 422개 .py"
+   "msg": "소스 구문 통과: 435개 .py"
   },
   {
    "level": "WARN",
@@ -72,6 +72,10 @@
   {
    "level": "WARN",
    "msg": "중분류 15/29개가 6~7편 초과 — 분가 검토(규칙 §5): F4 19편, F1 15편, B2 12편, A2 12편, F2 11편, D4 11편, D2 11편, A1 11편, E2 10편, C2 9편, B4 9편, A3 9편, C1 8편, B1 8편, A5 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: F1-15 threads 링크 불일치 — 로그=https://www.threads.com/@magsori8975/post/Dcu-YDRgTeD vs DB.osmu=https://www.threads.com/@magsori8975/post/DcvYotUAXpg"
   }
  ]
 }

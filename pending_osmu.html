@@ -107,6 +107,8 @@ async function fallbackPending(){
   var q=await j('queue.json'), db=await j('lifeinfo_db.txt'), w=await j('watch.json');
   // 🔴 확산 순서(seq)는 osmu_text.json 이 정한다 — 화면이 따로 세지 않는다
   try{ window.__OSMUTEXT__ = await j('osmu_text.json'); }catch(e){}
+  // 🤖 에이전트 실행 현황 — studio/agentwatch.py 가 굽는다(없으면 패널이 안 뜬다)
+  try{ window.__AGENTS__ = await j('agents.json'); }catch(e){}
   try{ window.__TOPICPROP__ = await j('topicprop.json'); }catch(e){}
   if(!q && !db) return null;
   var posts=(db&&db.posts)||[];
@@ -238,10 +240,26 @@ function fileChip(path, label, isImg, exists){
   // 🔴 8011 이 전자결재 전용 고정 포트다(2026-08-23). 이 화면도 같은 서버를 쓴다.
   //    옛 포트를 앞에 두면 이전 세션이 남긴 낡은 서버에 먼저 붙는다 —
   //    실제로 이 화면이 8003(옛 서버)에 붙어 있었다. 새 자리를 먼저 본다.
+  // 🔴🔴 **응답만 오면 잡으면 옛 서버가 이긴다** (2026-09-02 사장님이 화면으로 잡으심).
+  //     그날 이 화면이 8011(옛 세대)에 붙어 "조치 필요 14건" 을 보였는데,
+  //     실제로는 **0건 + 기한 전 14건** 이었다(새 서버 8012 는 그렇게 준다).
+  //     옛 서버는 기한 구분을 안 하므로 오늘 할 일이 없는데도 14건으로 보인다.
+  //     approval.html 은 어제 세대 판정을 role 로 고쳤는데 **이 화면은 안 고쳤다** —
+  //     같은 병을 두 화면에 뒀다가 한쪽만 고친 것이다.
+  //     ⚠️ 세대 표시는 ping.role — 새 서버만 준다. 없는 키로 판정하면 조용히 옛 것이 이긴다.
+  var _older=null;
   for (var port of [8011, 8012, 8013, 8003, 8002, 8001]) {
-    try { var r=await fetch('http://127.0.0.1:'+port+'/api/pending');
-      if(r.ok){ API='http://127.0.0.1:'+port; break; } } catch(e){}
+    var _u='http://127.0.0.1:'+port;
+    try {
+      var pg=await fetch(_u+'/api/ping?t='+Date.now());
+      if(!pg.ok) continue;
+      var pd=await pg.json();
+      if(!(pd&&pd.ok)) continue;
+      if(pd.role){ API=_u; break; }          // 새 세대 — 바로 쓴다
+      if(!_older) _older=_u;                 // 옛 세대 — 새 것이 없을 때만
+    } catch(e){}
   }
+  if(!API) API=_older;
   // 🔴 글감 제안은 **서버 경로에서도** 읽는다 (2026-08-31 실측 결함).
   //    전에는 fallbackPending() 안에서만 실어서, 결재서버가 떠 있으면
   //    「글감 승인완료」 칸이 승인된 글이 있는데도 늘 0건이었다(F1-15).
@@ -392,7 +410,15 @@ function fileChip(path, label, isImg, exists){
   // ②③④ 채널별
   CH.forEach(function(x){
     var key=x[0], rows=(D.posts||[]).filter(function(p){return (p.ch[key]||{}).light!=='done';});
-    rows = rows.slice().sort(function(a,b){ return (PIDX[b.code]||0)-(PIDX[a.code]||0); });
+    // 🔴 **지금 게시할 수 있는 것을 앞으로** (2026-09-01 사장님: "인스타 미확산 확인하세요?").
+    //    확산 순서는 '먼저 발행된 글부터'가 규칙인데, 자산이 없는 옛 backlog(todo)가
+    //    그 규칙 때문에 맨 앞을 막고 있었다. 사장님 눈에는 ① 자리에 '자산 미준비'가
+    //    떠 있으니 할 수 있는 일이 안 보인다. ready(게시만 하면 됨)를 먼저 세우고,
+    //    그 안에서만 발행 순서를 지킨다 — todo 는 애초에 게시가 불가능하다.
+    rows = rows.slice().sort(function(a,b){
+      var ra=((a.ch[key]||{}).light==='ready')?0:1, rb=((b.ch[key]||{}).light==='ready')?0:1;
+      if(ra!==rb) return ra-rb;
+      return (PIDX[b.code]||0)-(PIDX[a.code]||0); });
     // ⚠️ D.posts 는 **최신 먼저**라 인덱스가 큰 쪽이 먼저 발행된 글이다(내림차순).
     //    실측으로 확인: 오름차순으로 두었더니 A5-09 가 ① 로 나와 osmutext 판정(G4-05)과 어긋났다.
     var body = rows.length? rows.map(function(p, _i){
@@ -413,6 +439,32 @@ function fileChip(path, label, isImg, exists){
           : '<span class="f miss">✕ 매니페스트 미등록 — osmu_manifest set --code '+esc(p.code)+'</span>')
         +'</div></div>';}).join('') : '<p class="none">✅ 전부 확산됨.</p>';
     H+=pane(x[1],x[2]+' 미확산',rows.length+'건',body);
+  });
+
+  // 🤖 에이전트 실행 현황 (2026-09-01 사장님 "에이전트 실행 상황 어떻게 하면 내가 알 수 있을지")
+  //    관제탑이 에이전트를 띄우면 완료 알림은 관제탑에게만 온다 — 사장님은
+  //    "맡겼습니다" 라는 말만 듣고 진행을 볼 수 없었다. 여기서 보이게 한다.
+  //    데이터는 studio/agentwatch.py 가 굽는다(트랜스크립트 본문은 안 읽는다).
+  (function(){
+    var AG=(window.__AGENTS__||{}), it=(AG.items||[]);
+    if(!it.length) return;
+    var run=it.filter(function(x){return String(x.state||'').indexOf('도는')>=0;});
+    var body='<div style="padding:4px 2px">'
+      +'<div style="margin-bottom:8px;font-weight:700">'
+      +(run.length? '🟢 지금 '+run.length+'개가 돌고 있습니다' : '✅ 지금 도는 에이전트 없음')
+      +' <span style="opacity:.6;font-weight:400">· '+esc(AG.updated||'')+' 기준</span></div>'
+      + it.slice(0,8).map(function(x){
+          var on=String(x.state||'').indexOf('도는')>=0;
+          return '<div class="card l-'+(on?'ready':'done')+'"><div class="hd">'
+            +'<span class="badge '+(on?'b-wait':'b-todo')+'">'+esc(x.state)+'</span>'
+            +'<span class="ttl">'+esc(x.id)+'</span>'
+            +'<span class="code">'+esc(x.at)+'</span>'
+            +(x.doing? '<span class="badge b-todo">'+esc(x.doing)+'</span>':'')
+            +'</div></div>';}).join('')
+      +'</div>';
+    H+=pane('🤖','에이전트 실행', (run.length? run.length+'개 실행 중':'대기'), body);
+  })();
+  (function(){
   });
 
   // 🧾 글감 승인완료 — 승인하셨으나 아직 발행 안 된 글 (2026-08-31 사장님 지시:

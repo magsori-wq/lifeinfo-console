@@ -369,7 +369,14 @@ async function findServer(){
       if(!r.ok) continue;
       var d=await r.json();
       if(!(d&&d.ok)) continue;
-      if(d.topic_draft) return url;      // 새 세대 — 바로 쓴다
+      // 🔴 **판정 키가 실제 응답과 달랐다** (2026-09-01 실측).
+      //    `topic_draft` 를 봤는데 **어느 서버도 그 키를 주지 않는다**(실측:
+      //    8011·8012 둘 다 없음). 그래서 새 서버가 8012 에 떠 있는데도 화면은
+      //    늘 8011(옛 세대)을 골랐고, 조치필요가 28건(실제 12건)으로 보였다.
+      //    지금 세대 표시는 `role`(관리자 배지와 함께 넣은 것)이다.
+      //    ⚠️ 다음에 세대를 나눌 때도 **실제 /api/ping 응답을 눈으로 확인하고**
+      //       그 키를 쓸 것. 없는 키로 판정하면 조용히 옛 서버가 이긴다.
+      if(d.role || d.topic_draft) return url;   // 새 세대 — 바로 쓴다
       if(!older) older=url;              // 옛 세대 — 새 것이 없을 때만
     }catch(e){}
   }
@@ -392,6 +399,13 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   d.className='srv '+(up?'on':'off');
   d.innerHTML = up
     ? '🟢 결재 서버 연결됨('+API.replace('http://127.0.0.1:','포트 ')+') — 아래 버튼으로 바로 결재하실 수 있습니다. <span style="opacity:.6;font-weight:400">· 30초마다 자동 새로고침</span>'
+      // 🔁 **서버 다시 켜기** (2026-09-01 사장님 지시 "ON/OFF 스위치 만들어줘").
+      //    자동 재적재가 실패하면 서버가 옛 코드로 계속 돌아 화면이 틀린 숫자를 보인다
+      //    (실측: 조치필요 28건인데 실제 12건). 그때 bat 창을 찾아 닫았다 켜는 대신
+      //    여기서 한 번에 끝낸다. 프로세스를 죽이지 않는다 — 같은 PID 로 갈아탄다.
+      + ' <button id="srvReload" style="margin-left:10px;padding:3px 10px;border-radius:8px;'
+      + 'border:1px solid #2a3a5e;background:#1b2540;color:#cfe0ff;cursor:pointer;font-size:12px">'
+      + '🔁 서버 다시 켜기</button>'
     : (REMOTE
        // 🔴 다른 PC 에서는 서버를 켜라고 하면 안 된다 (2026-08-25 사장님 신고).
        //    127.0.0.1 은 '보는 PC 자신'이라, 그 PC 에 저장소가 없으면 실행할 것도 없다.
@@ -400,6 +414,13 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
          + '내용 확인과 <b>명령 복사</b>는 그대로 됩니다. 결재는 본 PC(C:\lifeinfo)에서 하세요.'
        : '🔴 결재 서버가 꺼져 있어 버튼이 비활성입니다. 터미널에서 <b>python -m studio.approve_server</b> 를 한 번 실행하세요. (명령 복사는 그대로 됩니다)');
   var o=document.getElementById('out'); o.parentNode.insertBefore(d,o);
+  var rb=document.getElementById('srvReload');
+  if(rb) rb.onclick=function(){
+    rb.disabled=true; rb.textContent='다시 켜는 중…';
+    fetch(API+'/api/reload',{method:'POST'})
+      .then(function(){ toast('🔁 서버를 다시 켰습니다 — 5초 뒤 새로고침합니다'); })
+      .catch(function(){ toast('🔁 재시작 신호를 보냈습니다 — 5초 뒤 새로고침합니다'); })
+      .then(function(){ setTimeout(function(){ location.reload(); }, 5000); }); };
  return Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
              j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
              j('watch.json'),j('pending.json'),j('osmu_text.json')]).then(function(a){
@@ -518,9 +539,15 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     if(_cd){ var _p=(Q.filter(function(y){return y.code===_cd[1];})[0])
                  ||(T.filter(function(y){return y.code===_cd[1];})[0]);
              if(_p&&_p.title) _ttl=_cd[1]+' '+_p.title+' — '; }
-    boss.push({act:(w.state==='blocked'?'watch_blocked':'watch_done'),c:w.id,t:_ttl+(w.what||w.id),
+    // 🔴 **조치와 승인은 다른 일이다** (2026-09-02 사장님: "조치사항이지 승인요청이 아닌데").
+    //    watch 로 올린 것이 전부 '☑ 조치 끝냈으면 확인' 으로 떴다 — 아직 안 하신 일을
+    //    "끝냈으면 확인" 이라고 물은 셈이다. kind=approve 면 승인 카드로 세운다.
+    var _isAp = (w.kind==='approve');
+    boss.push({act:(w.state==='blocked'?'watch_blocked':(_isAp?'watch_approve':'watch_done')),
+      c:w.id,t:_ttl+(w.what||w.id),
       full:(w.what||''),
-      why:'조치 대기 · 기한 '+(w.due||'')+(w.state==='blocked'?' · 🚫막힘':''),
+      why:(_isAp?'승인 대기 · 기한 ':'조치 대기 · 기한 ')+(w.due||'')
+          +(w.state==='blocked'?' · 🚫막힘':''),
       cmd:w.cmd||('python -m studio.watch done --id '+w.id)});
   });
   // 🔴 OSMU 는 이제 대부분 **이과장 몫**이다 (2026-08-28 사장님 지적: "왜 내 결재대기에 있는데!").
@@ -620,16 +647,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    가장 급한데 맨 아래에 있었다 — 실측: deploy.bat 이 막혔다는 항목이 10번째로
   //    밀려 사장님 화면에서 스크롤해야 보였다. 되돌리기 어려운 발행승인(publish_go)
   //    다음 자리로 둔다.
-  var ORD={publish_go:0,watch_blocked:1,topic_approve:2,watch_done:3,osmu:4};
+  var ORD={publish_go:0,watch_blocked:1,watch_approve:2,topic_approve:3,watch_done:4,osmu:5};
   // ⚠️ ORD[..]||9 로 쓰면 안 된다 — publish_go 의 0 이 falsy 라 9 로 밀려 맨 뒤로 간다
   //    (2026-08-23 실제로 그렇게 넣었다가 발행 승인 카드가 화면에서 사라졌다).
   function ord(a){return (a in ORD)?ORD[a]:9;}
   boss.sort(function(x,y){return ord(x.act)-ord(y.act);});
   var BADGE={publish_go:'⑦ 발행',topic_approve:'③ 글감',
-             watch_done:'🔧 조치',watch_blocked:'🚫 막힘',osmu:'📮 게시'};
+             watch_done:'🔧 조치',watch_approve:'🙋 승인',watch_blocked:'🚫 막힘',osmu:'📮 게시'};
   // 🔴 watch_done 문구는 "완료 처리"(=버튼이 일을 끝내는 것처럼 읽힘) 대신
   //    "이미 했으면 확인"(=사람이 실제로 끝낸 뒤 보고하는 것) 으로 — 2026-08-24 사장님 지적.
-  var LABEL={publish_go:'⑦ 발행 승인',topic_approve:'③ 글감 승인',watch_done:'☑ 조치 끝냈으면 확인'};
+  var LABEL={publish_go:'⑦ 발행 승인',topic_approve:'③ 글감 승인',watch_approve:'🙋 승인합니다',watch_done:'☑ 조치 끝냈으면 확인'};
   var BTN_CLS={watch_done:'confirm'};  // 나머지는 기존대로 승인 초록('ok')
   // 🔴 번호를 붙인다 (2026-08-28 사장님 지시: "뭐가 매칭이 안 되잖아! 넘버링을 해줘!").
   //    관제탑은 채팅에서 "1번"이라 부르는데 화면에는 번호가 없어 사장님이 매번 대조하셔야 했다.
