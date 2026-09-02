@@ -790,8 +790,9 @@
     {
      "code": "TOWER-3",
      "title": "미리보기 sandbox 수정 실제 렌더 확인",
-     "state": "todo",
-     "note": "sandbox='' → allow-same-origin 으로 고쳤으나 브라우저 확장이 끊겨(list_connected_browsers 빈 목록) 실제로 눌러 확인 못 함. 붙으면 즉시"
+     "state": "done",
+     "note": "브라우저로 실제 클릭 확인 — iframe sandbox='allow-same-origin' 정상 렌더(F4-20 초안 미리보기 모달에 본문 출력됨). 09-01 에 확장이 끊겨 못 하던 것",
+     "at": "2026-09-03 05:08"
     }
    ],
    "owner": "이부장(관제탑)",
@@ -931,7 +932,7 @@
    "order_at": "2026-09-02 14:13"
   }
  },
- "updated": "2026-09-03 00:04:50",
+ "updated": "2026-09-03 05:08:39",
  "current": {
   "batch": "osmu0901set",
   "code": "",
@@ -941,6 +942,10 @@
   "since": "13:17"
  },
  "log": [
+  {
+   "t": "05:08:39",
+   "text": "✅ TOWER-3 완료 — 미리보기 sandbox 수정 실제 렌더 확인"
+  },
   {
    "t": "00:04:50",
    "text": "✅ lifeinfo-daily-publish 완료 — C·D·E 글감·초안 (23:55)"
@@ -1096,10 +1101,6 @@
   {
    "t": "05:53:42",
    "text": "📄 boost0902 작업 지시 등록(2982자, 2026-09-02 05:53)"
-  },
-  {
-   "t": "05:52:37",
-   "text": "✅ B1-01 완료 — 자동차세 — 세액 계산·연납 할인액"
   }
  ],
  "currents": {
