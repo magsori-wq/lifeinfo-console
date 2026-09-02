@@ -4155,6 +4155,125 @@
    "due": "2026-09-03",
    "cmd": "python -m studio.sessionsize",
    "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-02",
+   "result": "boost0902 6/6 완료로 교체 적기 도달 — sessionsize 가 '🔁 지금이 교체 적기(잡고 있는 일 없음)' 로 자동 전환됨(310MB). 사장님께 안내함"
+  },
+  {
+   "id": "publish-fail-b108-0901",
+   "added": "2026-09-02",
+   "what": "B1-08 발행 워크플로 2회 실패(run 33409...·33416479706, 커밋 39ad99d) — 가드 '체크아웃과 origin/main 이 다르다(PC 세션 동시 커밋)'. 라이브는 정상(HTTP 200)·DB short 정상이라 A5-09 형 손상은 아니다. 러너의 '변경분 커밋·푸시' 가 안 돈 상태이므로 발행 후 상태파일(progress.json·pending 등)이 저장소에 반영됐는지 확인 필요",
+   "due": "2026-09-02",
+   "cmd": "gh run view 33416479706 -R magsori-wq/lifeinfo-source --log-failed | grep -i error",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "source-boost-0902",
+   "added": "2026-09-02",
+   "what": "색인보강 3편(E1-01·E3-02·A4-03) 1차출처 조사 완료 — E1-01 요금표+미성년자/외국인 거절사유 확보(연체사유 미확보), E3-02 국비지원 여부 확보(교육비는 지시대로 미조사), A4-03 신고기한10일+공공기관중복배제 확보(합산금액 600만원은 별표가 이미지첨부라 미확보)",
+   "due": "2026-09-03",
+   "cmd": "ls docs/source_boost_*_20260902.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topicprop-approve-20260902",
+   "added": "2026-09-02",
+   "what": "🙋 글감 승인요청 1건 — 이부장 선별·검증 완료. 승인하실 번호로 답 주시면 초안 작업이 시작됩니다.\n1) B1-09 2026 재산세 2기분(9월) 납부기한 계산 총정리 — 주택·토지 대상 세액 확",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.topicprop approve --code <코드>",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-02",
+   "result": "③글감승인 카드(B1-09)가 결재함에 이미 있어 중복 — 화면이 같은 것을 두 번 묻고 있었다. topicprop._to_approval 이 이제 중복 등록을 하지 않는다"
+  },
+  {
+   "id": "source-boost2-0902",
+   "added": "2026-09-02",
+   "what": "색인보강 어려운 3편(D1-03·C4-05·A3-02) 1차출처 조사 완료 — D1-03·A3-02 완전확보, C4-05는 실손거절구조만 확보(급여수가 원화금액 미확보)",
+   "due": "2026-09-03",
+   "cmd": "ls docs/source_boost_*_20260902.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-b1-09",
+   "added": "2026-09-02",
+   "what": "🔴 V0 반려 확인 요청 — B1-09 「2026 재산세 2기분(9월) 납부기한 계산 총정리 — 주택·토지 대상 」. 검사자 V0검사관 · 2026-09-02T13:19. 사유 요약: 산수·세율표·공정시장가액비율·납기표는 law.go.kr 원문과 전부 일치(수정 불필요). 그러나 결론 2곳이 조문과 어긋난다. … 🔴 전문은 `python -m studio.v0check gate --code B1-09` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.v0check gate --code B1-09",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-02",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 통과. 반려 4건 전부 해소 + 가점 1건, 부작용 없음(law.go.kr DRF API 원문 + 산수 독립 재계산으로 전건 확인). [해소1] 함정②에 지방세기본법 제55조④ '납세고지서별·세목별 45만원 "
+  },
+  {
+   "id": "stock-low-0902",
+   "added": "2026-09-02",
+   "what": "재고 1편(하한 3) — 루틴 2번이 09:01 정상 실행됐는데 글감 제안 0건. 루틴은 '특별이슈급만' 올리라고 돼 있고 재고 상태를 모른다. 재고가 하한 아래면 루틴에 알려주는 배선이 없다",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.pace && python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub-b109-approve",
+   "added": "2026-09-02",
+   "what": "🙋 B1-09 발행 승인 — 2026 재산세 2기분(9월) 납부기한 계산 총정리. V0 통과(반려 4곳 정정 완료·law.go.kr 원문 대조) · heading OK · bodydup 🟢0.032(257편) · 납기 9/16~30 임박",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.pubqueue go --code B1-09",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "done_at": "2026-09-02",
+   "result": "중복 — ⑦발행승인이 큐에서 자동으로 뜨고 있었다. 관제탑이 확인 없이 또 올렸다"
+  },
+  {
+   "id": "watcher-cleanup-0902",
+   "added": "2026-09-02",
+   "what": "감시기 34개 전수조사 완료 — 죽음(0참조) 5개(agentmon·pubwatch·watchloop·tokenwatch·seocheck), 진짜 겹침 1쌍(watchloop/pubwatch/agentmon = 9일간 3번 재발명), 프롬프트가 의심한 6쌍은 전부 겹치지 않음(확인함). 매턴(Stop훅) 34개중 5개=2.17초, 전체=5.63초. 1초 넘는 것 thumbcheck 1.59초 1개뿐",
+   "due": "2026-09-03",
+   "cmd": "cat docs/감시기_정리안_20260902.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub-b109-blocked",
+   "added": "2026-09-02",
+   "what": "🙋 B1-09 발행이 4시간 묶였습니다 — 담당(이과장) 세션이 274분째 조용합니다. 도장(14:10)·게이트 전부 통과, 명령 한 줄이면 나갑니다. ①제가 발행(권고) ②이과장 세션 재시작 ③사장님이 Actions에서. 아래 명령은 ①을 허락하실 때 그대로 실행하시면 됩니다",
+   "due": "2026-09-02",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B1-09 -f mode=live -f confirm=PUBLISH -f file='재산세2기분_글_HTML.txt' -f title='2026 재산세 2기분(9월) 납부기한 계산 총정리 — 주택·토지'",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo"
+  },
+  {
+   "id": "source-autumn-0902",
+   "added": "2026-09-02",
+   "what": "F4-20 단풍 2026미발표(forest.go.kr 09-02 최신목록에 없음, weather.go.kr '서비스기간아님')→2025-10-01 산림청 발표치 확보. G3-04 핑크뮬리 2025-11-10 낙동강관리본부 드론영상으로 존치 확인, 2026개화·입장료·운영시간은 미확보",
+   "due": "2026-09-03",
+   "cmd": "ls docs/source_f420_autumn_20260902.md docs/source_g304_pinkmuhly_20260902.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topic-f420-timing",
+   "added": "2026-09-02",
+   "what": "🙋 F4-20(단풍) 판단 필요 — 2026년 산림청 예측지도가 아직 미발표입니다(09-02 확인). 지금 쓰면 2025년 값만 실리고 '예측'이 아니게 됩니다. ①발표 후로 미룸(권고) ②2025 실제치 + 평년 추세로 지금 발행. G3-04 핑크뮬리는 실존 확인돼 바로 진행 가능합니다",
+   "due": "2026-09-02",
+   "cmd": "python -m studio.topicprop drop --code F4-20 --why '2026 예측 미발표 — 발표 후 재상정'",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo"
+  },
+  {
+   "id": "sec-passkey-mfa-0901",
+   "added": "2026-09-02",
+   "what": "보안 알림 2건 본인 여부 확인 — ①Google 계정 새 패스키 추가(09-01 15:55 KST) ②OpenAI MFA 설정 변경(09-01 14:18 KST)+새 로그인 3건(ChatGPT Web·Android, Seongnam-si KR). 시각·위치가 사장님 작업시간과 일치해 본인 조작으로 보이나 확인 안 됨",
+   "due": "2026-09-02",
+   "cmd": "https://myaccount.google.com/notifications 열어 패스키 추가가 본인인지 확인 (아니면 즉시 비밀번호 변경·세션 로그아웃)",
+   "owner": "user",
    "state": "todo"
   }
  ]

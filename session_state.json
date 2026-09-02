@@ -1,13 +1,13 @@
 {
  "sessions": {
   "routinelog": {
-   "reads": 0,
+   "reads": 1,
    "last_order_at": "2026-08-21 12:06",
-   "last_read": "2026-08-30 15:22",
+   "last_read": "2026-09-02 20:10",
    "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
    "state": "working",
-   "last_report": "2026-09-02 00:09",
-   "last_what": "6번 초안준비: 신규 글감 2건 제안(C3-07 장기요양보험료율 인상 rec/공식 mohw.go.kr 확정치, E2-12 엠세이퍼 명의도용방지 alt/KAIT 공식 가이드) — dupcheck 둘 다 🟢. 재고 0/",
+   "last_report": "2026-09-03 00:04",
+   "last_what": "글감 제안 2건 등록 — 추천 C2-10(청년 마음건강검사 확대, 20-34세 2년주기) · 후보 E2-12(AI 딥보이스 보이스피싱 대처법). dupcheck 둘 다 🟢, 출처 bokjiro.go.kr/mohw.g",
    "reads_since_report": 0
   },
   "publish0816": {
@@ -350,9 +350,55 @@
   "boost0902": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-09-02 05:52",
-   "last_what": "라이브 본문에 계산예시 2개 삽입 완료(claude-in-chrome CodeMirror 편집, blogger.py 스크립트는 권한분류기 차단됨). 라이브 재조회로 확인: 164,000원·400,000원·4.58%·"
+   "last_report": "2026-09-02 06:21",
+   "last_what": "저소득층 환급 한 문장 삽입 완료(claude-in-chrome, cm.replaceRange로 기존 일반청년 예시 안 건드리고 정밀삽입). 첫 업데이트클릭이 실제로 저장 안 됐던 것을 클라우드아이콘(취소선→체크)으",
+   "reads": 1,
+   "last_order_at": "2026-09-02 06:16",
+   "last_read": "2026-09-02 06:16",
+   "owner": "이과장(작업 세션)"
+  },
+  "boost0902b": {
+   "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-09-02 12:17",
+   "last_what": "재난지원금 신고기한(제9조②연장⑦)+중복배제(제6조5호, 공공기관 보상만·민간보험 조항 없음 확인) .src박스 삽입. 금액(600만원 등)은 별표1 이미지첨부로 미확보 — 지시대로 미기재, 지자체 공고 확인 안내로",
+   "reads": 1,
+   "last_order_at": "2026-09-02 12:13",
+   "last_read": "2026-09-02 12:14",
+   "owner": "이과장(작업 세션)"
+  },
+  "draft0902": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-09-02 12:17",
+   "last_read": "2026-09-02 12:18",
+   "owner": "이과장(작업 세션)",
+   "state": "working",
+   "last_report": "2026-09-02 16:50",
+   "last_what": "초안 완성·V0 통과(14:0x)·사장님 도장 14:10 — pub0902 로 이관"
+  },
+  "draft0902b": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-09-02 12:42",
+   "last_read": "2026-09-02 12:43",
+   "owner": "이과장(작업 세션)",
+   "state": "working",
+   "last_report": "2026-09-02 12:45",
+   "last_what": "자동차세9월연납_글_HTML.txt 의 id=ymyl-disclaimer 템플릿을 재산세 문맥으로 바꿔 추가(위택스·관할지자체 최종고지 안내). AI활용공개는 경고전용(non-blocking)이고 참고할 기존 실제 "
+  },
+  "v0fix0902": {
+   "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-09-02 13:33",
+   "last_what": "45만원 가산세 예외·도시지역분/지방교육세 표·과세기준일 반영, heading OK, bodydup 0.032 신규, commit 08625b8"
+  },
+  "pub0902b109": {
+   "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-09-02 16:50",
+   "last_what": "pub0902 와 중복 지시 — 그쪽으로 단일화"
   }
  },
- "updated": "2026-09-02 05:52"
+ "updated": "2026-09-03 00:04"
 }

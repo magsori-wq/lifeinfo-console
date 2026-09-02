@@ -296,6 +296,62 @@
    "target": "gsc-boost-go-0902",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-02T06:22:06",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "session-swap-0902",
+   "detail": "boost0902 6/6 완료로 교체 적기 도달 — sessionsize 가 '🔁 지금이 교체 적기(잡고 있는 일 없음)' 로 자동 전환됨(310MB). 사장님께 안내함",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T12:38:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topicprop-approve-20260902",
+   "detail": "③글감승인 카드(B1-09)가 결재함에 이미 있어 중복 — 화면이 같은 것을 두 번 묻고 있었다. topicprop._to_approval 이 이제 중복 등록을 하지 않는다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T12:38:36",
+   "actor": "사장님",
+   "action": "topicprop.approve",
+   "target": "B1-09",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T12:41:55",
+   "actor": "세션(CLI)",
+   "action": "topicprop.approve",
+   "target": "B1-09",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T13:41:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-b1-09",
+   "detail": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 통과. 반려 4건 전부 해소 + 가점 1건, 부작용 없음(law.go.kr DRF API 원문 + 산수 독립 재계산으로 전건 확인). [해소1] 함정②에 지방세기본법 제55조④ '납세고지서별·세목별 45만원 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T13:42:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-b109-approve",
+   "detail": "중복 — ⑦발행승인이 큐에서 자동으로 뜨고 있었다. 관제탑이 확인 없이 또 올렸다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T14:10:31",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "B1-09",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }

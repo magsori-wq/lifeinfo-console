@@ -1,0 +1,92 @@
+{
+ "updated": "2026-09-03 03:03",
+ "ok": false,
+ "problems": [
+  {
+   "gate": "결재 종류",
+   "msg": "🔴 adsense-reapply-after-0826 는 승인을 구하는데 '조치' 로 뜬다 — watch add --kind approve 로 올릴 것"
+  }
+ ],
+ "gates": [
+  {
+   "mod": "pipeline",
+   "kind": "발행 창구 — 로컬 라이브 발행 금지(창구=GitHub Actions publish.yml)",
+   "what": "True"
+  },
+  {
+   "mod": "heading",
+   "kind": "본문 제목 계층 — h1 금지·h2 시작·단계 건너뛰기 금지",
+   "what": "True"
+  },
+  {
+   "mod": "pace",
+   "kind": "발행 페이스 — 오늘 몇 편째인지",
+   "what": "True"
+  },
+  {
+   "mod": "bodydup",
+   "kind": "본문 내용 중복 — 라이브 전체와 대조(--live 필수)",
+   "what": "True"
+  },
+  {
+   "mod": "pushcheck",
+   "kind": "초안 푸시 — 러너는 origin/main 만 본다(미푸시=옛 버전 발행)",
+   "what": "True"
+  },
+  {
+   "mod": "dupcheck",
+   "kind": "제목 키워드 중복",
+   "what": "False"
+  },
+  {
+   "mod": "naverkw",
+   "kind": "네이버 제목 — 원문 복사 금지·후킹·실검색어(자동완성으로 잰다)",
+   "what": "False"
+  },
+  {
+   "mod": "seodesc",
+   "kind": "검색설명 — API 불가. Claude 가 브라우저로 직접 넣는다(사용자에게 넘기지 말 것)",
+   "what": "False"
+  },
+  {
+   "mod": "threadimg",
+   "kind": "쓰레드 첨부 — 썸네일 재탕 금지·실사진을 insta/thread 에",
+   "what": "True"
+  },
+  {
+   "mod": "thumbcheck",
+   "kind": "우리동네(G) 썸네일 — 템플릿 금지·실사진(make_photo). 고유색으로 판정",
+   "what": "True"
+  },
+  {
+   "mod": "topicprop",
+   "kind": "글감 승인 — 루틴이 큐에 바로 못 넣는다(제안→이부장 선별→사장님 카톡 승인)",
+   "what": "True"
+  },
+  {
+   "mod": "draftfind",
+   "kind": "초안 게이트 — 초안 없는 글감은 결재함에 못 올린다(뭘 보고 승인하나)",
+   "what": "True"
+  },
+  {
+   "mod": "v0check",
+   "kind": "V0 검사자 — 발행 전 원본가치 반박 검토. 🔴작성자는 자기 글을 검사할 수 없다",
+   "what": "True"
+  },
+  {
+   "mod": "pubqueue",
+   "kind": "발행 승인 — 사장님 2차 승인(pubqueue go). 글감 승인과 다른 결정이다",
+   "what": "True"
+  },
+  {
+   "mod": "crosslinkcheck",
+   "kind": "쓰레드·인스타 원고 교차링크 — 블로그·네이버 URL 리터럴 텍스트 필수 + 쓰레드 500자 한도",
+   "what": "True"
+  },
+  {
+   "mod": "affiliate",
+   "kind": "제휴 링크 표시 — 쿠팡·토스 링크가 있으면 대가성 문구가 **맨 앞**에(공정위 예규 제499호)",
+   "what": "True"
+  }
+ ]
+}
