@@ -1040,7 +1040,12 @@
     var ports=[8011,8012,8013];
     for(var i=0;i<ports.length;i++){
       try{
-        var r = await fetch('http://127.0.0.1:'+ports[i]+'/api/ping?t='+Date.now(), {cache:'no-store'});
+        // 🔴 타임아웃 (2026-09-03) — 휴대폰엔 127.0.0.1 이 없다. 없으면 브라우저
+        //    기본 타임아웃(수십 초)까지 매달린다. approval.html 과 같은 자리다.
+        var _ac=new AbortController(); var _to=setTimeout(function(){_ac.abort();},1200);
+        var r = await fetch('http://127.0.0.1:'+ports[i]+'/api/ping?t='+Date.now(),
+                            {cache:'no-store', signal:_ac.signal});
+        clearTimeout(_to);
         if(!r.ok) continue;
         var d = await r.json();
         if(d && d.ok && d.role==='admin'){

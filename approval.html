@@ -396,7 +396,14 @@ async function findServer(){
   for(var i=0;i<ports.length;i++){
     var url='http://127.0.0.1:'+ports[i];
     try{
-      var r=await fetch(url+'/api/ping?t='+Date.now());
+      // 🔴 **타임아웃을 건다** (2026-09-03 사장님: "핸드폰에서 안 보여").
+      //    휴대폰에는 127.0.0.1:8011 이 없다. 타임아웃이 없으면 브라우저 기본값
+      //    (수십 초)까지 기다리고, **그동안 화면이 통째로 비어 있었다** —
+      //    데이터 로드가 이 탐색 뒤에 붙어 있었기 때문이다(아래 참조).
+      //    ⚠️ 사장님은 "안 보인다" 고만 아신다. 원인이 서버 탐색인 줄 알 수 없다.
+      var _ac=new AbortController(); var _to=setTimeout(function(){_ac.abort();},1200);
+      var r=await fetch(url+'/api/ping?t='+Date.now(),{signal:_ac.signal});
+      clearTimeout(_to);
       if(!r.ok) continue;
       var d=await r.json();
       if(!(d&&d.ok)) continue;
@@ -422,6 +429,16 @@ var REFRESHING=false;
 function refresh(){
   if(document.querySelector('.act[data-armed="1"]')) return;  // 결재 확인 대기 중이면 스킵
   REFRESHING=true;
+// 🔴 **데이터부터 받는다 — 서버 탐색을 기다리지 않는다** (2026-09-03).
+//    예전에는 findServer() 체인 **뒤에** Promise.all(데이터) 이 붙어 있었다.
+//    PC 에서는 서버가 즉시 응답해 티가 안 났는데, 휴대폰에서는 127.0.0.1 이
+//    없어 타임아웃까지 화면이 **완전히 비었다.** 결재함을 밖에서 보시라고
+//    만들어 놓고 정작 밖에서 안 보였던 것이다.
+//    ⚠️ 서버는 **버튼 활성화**에만 쓰인다(SRV). 데이터와 아무 관계가 없다.
+var DATA = Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
+             j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
+             j('watch.json'),j('pending.json'),j('osmu_text.json')]);
+
 findServer().then(function(url){ SRV=!!url; if(url) API=url;
   return SRV; })
  .then(function(up){
@@ -452,9 +469,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       .then(function(){ toast('🔁 서버를 다시 켰습니다 — 5초 뒤 새로고침합니다'); })
       .catch(function(){ toast('🔁 재시작 신호를 보냈습니다 — 5초 뒤 새로고침합니다'); })
       .then(function(){ setTimeout(function(){ location.reload(); }, 5000); }); };
- return Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
-             j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
-             j('watch.json'),j('pending.json'),j('osmu_text.json')]).then(function(a){
+ return DATA.then(function(a){
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
   var W=arr(a[7]), PEND=(a[8]||{}).actionable||[], OT=a[9]||{};
   var byc={}; (DB.posts||[]).forEach(function(p){byc[p.code]=p;});
