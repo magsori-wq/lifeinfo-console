@@ -111,12 +111,13 @@ function render(){
       + '<span class="tag go">🚀 발행만 남음</span>'
       + '<div class="ttl">' + esc(x.title) + '</div>'
       + '<div class="code">' + esc(x.code) + ' · 승인 ' + esc(at) + '</div>'
-      + '<a class="btn go" href="' + GH + 'publish.yml" target="_blank" rel="noopener">'
+      // 🔴 go.yml 로 보낸다 — **입력이 없다**(2026-09-03 사장님 "어떻게 사용해야
+      //    할지 모르겠어"). publish.yml 은 code·mode·confirm·file 을 손으로 쳐야 했다.
+      //    휴대폰에서 그걸 치는 것은 사람이 할 일이 아니다.
+      + '<a class="btn go" href="' + GH + 'go.yml" target="_blank" rel="noopener">'
       + '🚀 발행하기</a>'
-      + '<div class="hint">Run workflow 에 넣을 값<br>'
-      + 'code <b>' + esc(x.code) + '</b> · mode <b>live</b> · confirm <b>PUBLISH</b>'
-      + (x.draft ? '<br>file <b>' + esc(x.draft) + '</b>' : '')
-      + '</div></div>';
+      + '<div class="hint">화면에서 <b>Run workflow</b> → 초록 버튼만 누르세요.<br>'
+      + '입력할 것 없습니다 — 승인된 글을 스스로 찾아 발행합니다.</div></div>';
   }
 
   /* ② 사장님 결재 대기 */
