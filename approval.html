@@ -80,6 +80,8 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 .ext{display:inline-block;margin-top:6px;padding:5px 10px;border-radius:6px;
   background:#2f81f7;color:#fff;text-decoration:none;font-weight:600;font-size:12px}
 .ext:hover{background:#4f95ff}
+.ext.pub{background:#d29922}
+.ext.pub:hover{background:#e3a72f}
 .exthint{font-size:11px;color:#8b96a5;margin-left:6px}
 .card.boss{border-color:#5fd3a066;background:#5fd3a00d}
 .card.rej{border-color:#c0392b66;background:#c0392b0d}
@@ -198,6 +200,18 @@ function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
 //    ⚠️ 파라미터를 URL 로 미리 채울 수 없다(GitHub 제약) — 화면까지 보내고
 //       입력할 값을 카드에 함께 적어 둔다.
 var GH_APPROVE='https://github.com/magsori-wq/lifeinfo-source/actions/workflows/approve.yml';
+// 🔴 **발행은 결재와 다른 워크플로다** (2026-09-03 사장님: "발행승인 내용은 안 보이는데").
+//    approve.yml 은 도장만 찍는다. 실제 발행은 publish.yml 이 한다 —
+//    도장이 이미 찍힌 글은 '승인' 이 아니라 '발행' 버튼이 필요하다.
+//    이걸 빼먹어서 사장님이 휴대폰에서 누를 것을 못 찾으셨다.
+var GH_PUBLISH='https://github.com/magsori-wq/lifeinfo-source/actions/workflows/publish.yml';
+function pubLink(code, file, title){
+  return '<a class="ext pub" href="'+GH_PUBLISH+'" target="_blank" rel="noopener">'
+    +'🚀 휴대폰에서 발행</a>'
+    +'<div class="exthint" style="margin-top:4px">Run workflow 에 넣을 값 —'
+    +' code <b>'+esc(code)+'</b> · mode <b>live</b> · confirm <b>PUBLISH</b>'
+    +(file?' · file <b>'+esc(file)+'</b>':'')+'</div>';
+}
 function extLink(target, act){
   return '<a class="ext" href="'+GH_APPROVE+'" target="_blank" rel="noopener">'
     +'📱 외부에서 승인</a> <span class="exthint">Run workflow → '
@@ -618,6 +632,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     else if(v.verdict==='pass' && !q.go) boss.push({act:'publish_go',c:q.code,t:q.title,
       why:'발행 승인 대기(⑦) · V0 통과 — 이 원고를 지금 내는가',
       cmd:'python -m studio.pubqueue go --code '+q.code});
+    // 🔴 **도장은 찍혔는데 안 나간 글** — 이 칸이 없어서 사장님이 휴대폰에서
+    //    누를 것을 못 찾으셨다(2026-09-03 "발행승인 내용은 안 보이는데").
+    //    ⑦ 승인 카드는 도장을 찍으면 사라진다. 그런데 ⑧ 발행은 남아 있다 —
+    //    그 사이가 화면에 아예 없었다. 09-02 에 B1-09 이 그 구멍에서 4시간 섰다.
+    else if(v.verdict==='pass' && q.go) boss.push({act:'publish_run',c:q.code,t:q.title,
+      why:'⑧ 발행 대기 — 승인 완료('+String((q.go&&q.go.at)||'').slice(0,16).replace('T',' ')
+          +') · 실행만 남았다',
+      draft:q.draft||'', cmd:"gh workflow run publish.yml -R magsori-wq/lifeinfo-source"
+          +" -f code="+q.code+" -f mode=live -f confirm=PUBLISH"
+          +(q.draft?" -f file='"+q.draft+"'":"")});
   });
 
   var rejList=V.filter(function(x){return x.verdict==='fail';});
@@ -664,12 +688,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    가장 급한데 맨 아래에 있었다 — 실측: deploy.bat 이 막혔다는 항목이 10번째로
   //    밀려 사장님 화면에서 스크롤해야 보였다. 되돌리기 어려운 발행승인(publish_go)
   //    다음 자리로 둔다.
-  var ORD={publish_go:0,watch_blocked:1,watch_approve:2,topic_approve:3,watch_done:4,osmu:5};
+  var ORD={publish_run:0,publish_go:0,watch_blocked:1,watch_approve:2,topic_approve:3,watch_done:4,osmu:5};
   // ⚠️ ORD[..]||9 로 쓰면 안 된다 — publish_go 의 0 이 falsy 라 9 로 밀려 맨 뒤로 간다
   //    (2026-08-23 실제로 그렇게 넣었다가 발행 승인 카드가 화면에서 사라졌다).
   function ord(a){return (a in ORD)?ORD[a]:9;}
   boss.sort(function(x,y){return ord(x.act)-ord(y.act);});
-  var BADGE={publish_go:'⑦ 발행',topic_approve:'③ 글감',
+  var BADGE={publish_run:'🚀 ⑧ 발행 실행',publish_go:'⑦ 발행',topic_approve:'③ 글감',
              watch_done:'🔧 조치',watch_approve:'🙋 승인',watch_blocked:'🚫 막힘',osmu:'📮 게시'};
   // 🔴 watch_done 문구는 "완료 처리"(=버튼이 일을 끝내는 것처럼 읽힘) 대신
   //    "이미 했으면 확인"(=사람이 실제로 끝낸 뒤 보고하는 것) 으로 — 2026-08-24 사장님 지적.
@@ -709,7 +733,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
            +(x.act==='topic_approve'?'초안 원고 보기':'원고 미리보기')+'</button>':'')
         +'</div>':'')
       // 📱 외부 결재 — 밖에서도 누르실 수 있게(2026-09-03 사장님 지시)
-      +(x.done?'':'<div style="margin-top:6px">'+extLink(
+      +(x.act==='publish_run'
+        ? '<div style="margin-top:8px">'+pubLink(x.c, x.draft, x.t)+'</div>'
+        : '')
+      +(x.done||x.act==='publish_run'?'':'<div style="margin-top:6px">'+extLink(
           x.c,   // 발행은 글 코드, 결재함은 id — 둘 다 c 에 들어 있다
           x.act==='publish_go'?'publish_go':'approve')+'</div>')
       +(x.cmd?'<div style="margin-top:6px">'+cmd(x.cmd)+'</div>':'')
