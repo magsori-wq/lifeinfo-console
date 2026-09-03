@@ -360,6 +360,38 @@
    "target": "pub-b109-blocked",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-03T09:10:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b109-dispatch-stalled-0903",
+   "detail": "루틴이 같은 것을 발견해 등록. 이미 조치 완료 — go.yml(입력 없는 발행)·m.html(휴대폰 결재함)·카톡 통지. 남은 것은 사장님 손 하나뿐이라 관제탑 미결로 둘 이유가 없다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T12:21:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topic-f420-timing",
+   "detail": "F4-20 을 09-03 12:13 에 deferred 로 내렸다(초안 없음). 판단할 대상이 사라져 이 요청도 함께 종결 — 2026 산림청 예측지도가 나오면 그때 초안과 함께 다시 올린다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T13:04:35",
+   "actor": "세션(CLI)",
+   "action": "topicprop.approve",
+   "target": "Z9-98",
+   "detail": "테스트: proposed에서 바로 approve",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T15:30:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "anthropic-send-0903",
+   "detail": "국문·영문 본문 준비 완료 — 다시 올린다",
+   "via": "cli"
   }
  ]
 }

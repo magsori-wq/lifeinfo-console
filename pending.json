@@ -1,9 +1,9 @@
 {
- "rev": "10334f59",
+ "rev": "d622e55",
  "counts": {
   "total": 226,
-  "osmu_done": 225,
-  "osmu_pending": 1,
+  "osmu_done": 226,
+  "osmu_pending": 0,
   "indexed": 1,
   "index_pending": 225,
   "index_requested": 205,
@@ -11,19 +11,53 @@
  },
  "actionable": [
   {
-   "code": "B1-09",
-   "title": "2026 재산세 2기분(9월) 납부기한 계산 총정리 —",
+   "code": "B1-03",
+   "title": "위택스 장애 지방세 납부기한 연장 총정리 (7월 7일까",
    "need": [
-    "OSMU",
-    "색인요청"
+    "인스타",
+    "색인대기"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false,
+    "n": true,
+    "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "E2-07",
+   "title": "2026 월드컵 16강 8강 일정 무료 중계 보는 법 ",
+   "need": [
+    "인스타",
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "G4-02",
+   "title": "7월 제철 과일 수산물 총정리 (수박 복숭아 민어 전복",
+   "need": [
+    "인스타",
+    "색인대기"
+   ],
+   "action": "색인 반영 대기",
+   "osmu": true,
+   "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
     "i": false
    }
   },
@@ -108,6 +142,23 @@
    }
   },
   {
+   "code": "B1-09",
+   "title": "2026 재산세 2기분(9월) 납부기한 계산 총정리 —",
+   "need": [
+    "네이버",
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": true,
+    "i": true
+   }
+  },
+  {
    "code": "B2-11",
    "title": "신생아 특례대출 신청 자격 소득요건 순자산 한도 금리 ",
    "need": [
@@ -174,54 +225,6 @@
   {
    "code": "D4-11",
    "title": "유효기간 지난 상품권 환불 방법 반환율 90% 95% ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "E2-09",
-   "title": "추석 명절 스미싱 보이스피싱 예방 신고 방법 총정리 (",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "E2-11",
-   "title": "국민비서 구삐 신청 방법 — 카카오톡 네이버앱으로 세금",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "F1-13",
-   "title": "영국 ETA 전자여행허가 신청 방법 수수료 유효기간 총",
    "need": [
     "색인요청"
    ],

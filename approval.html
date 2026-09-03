@@ -511,6 +511,15 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   function rst(id){
     var v=((SSJ.sessions)||{})[id]||{}, b=((B.batches)||{})[id]||{};
     var oa=_dt(b.order_at)||_dt(v.last_order_at), lr=_dt(v.last_read);
+    // 🔴 **보고가 있으면 읽은 것이다** (2026-09-03 정합성 검사).
+    //    `reads` 는 `batchboard order` 를 실행할 때만 오른다 — 다른 방식으로 읽으면
+    //    기록이 안 남는다. 그래서 **보고를 마친 배치 3개**(v0fix0902·pub0902b109·
+    //    osmu0903)가 화면에 "🔴 한 번도 안 읽음" 으로 떴다.
+    //    ⚠️ 진짜 신호는 **보고**다 — 관제탑이 이것으로 오늘 여러 번 오판했다.
+    //       `orderwatch` 는 이미 이 기준으로 고쳤고(보고>지시), 화면도 맞춘다.
+    var rp=_dt(v.last_report);
+    if(rp && (!oa || rp>=oa)) return {k:'rd', lab:'✅ 보고함',
+                      tip:'보고 '+rp.slice(5,16)+(oa?(' · 지시 '+oa.slice(5,16)):'')};
     if(!b.order && !v.last_order_at) return {k:'none', lab:'지시서 없음', tip:''};
     if(!lr)   return {k:'un', lab:'🔴 한 번도 안 읽음',
                       tip:oa?('등록 '+oa.slice(5,16)):'등록시각 미기록'};
@@ -651,6 +660,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     //    누를 것을 못 찾으셨다(2026-09-03 "발행승인 내용은 안 보이는데").
     //    ⑦ 승인 카드는 도장을 찍으면 사라진다. 그런데 ⑧ 발행은 남아 있다 —
     //    그 사이가 화면에 아예 없었다. 09-02 에 B1-09 이 그 구멍에서 4시간 섰다.
+    // 🔴 **이미 발행된 글에는 발행 카드를 띄우지 않는다** (2026-09-03 정합성 검사).
+    //    B1-09 이 라이브에 있는데 "🚀 발행실행" 카드가 떠 있었다 — 화면이 queue 를
+    //    돌면서 `byc[code].url`(발행 여부)을 한 번도 확인하지 않았다.
+    //    ⚠️ publish.yml 의 중복 가드가 실제 재발행은 막는다. **화면만 틀린 것**이다.
+    //       그래도 사장님이 잘못된 실행 카드를 보시는 것 자체가 결함이다.
+    else if(v.verdict==='pass' && q.go && (byc[q.code]||{}).url){ /* 발행 완료 — 카드 없음 */ }
     else if(v.verdict==='pass' && q.go) boss.push({act:'publish_run',c:q.code,t:q.title,
       why:'⑧ 발행 대기 — 승인 완료('+String((q.go&&q.go.at)||'').slice(0,16).replace('T',' ')
           +') · 실행만 남았다',

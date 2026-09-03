@@ -1680,13 +1680,12 @@
   {
    "id": "adsense-reapply-after-0826",
    "added": "2026-08-19",
-   "what": "🙋 애드센스 재검토 요청 — **계속 대기**(2026-08-27 재확인). 조건이던 gsc-revalidation-result 는 아직 wait 상태이고, 게이트 3조건도 전부 미달이다: ①색인 2/60 ②28일 클릭 0/20 ③네이버 글 구글색인 43/80. 지금 누르면 리뷰 사이클만 태운다. 다음 재확인 09-03. 판정은 python -m studio.navergate 한 줄로 한다",
-   "due": "2026-09-03",
+   "what": "애드센스 재검토 — **누르지 않는다**(3조건 미달). 09-03 재확인: ①색인 2/60 ②28일 클릭 0/20 ③네이버 글 구글색인 43/80. 조건이 차면 그때 사장님께 올린다. 판정 = python -m studio.navergate",
+   "due": "2026-09-10",
    "cmd": "python -m studio.navergate",
-   "owner": "user",
+   "owner": "claude",
    "state": "wait",
-   "flag": "게이트 ①(색인 60편)은 현 구조에서 몇 달짜리다. 8/26 결과가 그 게이트를 고칠지 말지도 함께 답한다",
-   "kind": "approve"
+   "flag": "게이트 ①(색인 60편)은 현 구조에서 몇 달짜리다. 8/26 결과가 그 게이트를 고칠지 말지도 함께 답한다"
   },
   {
    "id": "gsc-validation-canonical76",
@@ -3045,11 +3044,12 @@
   {
    "id": "pc-boot-slow-0830",
    "added": "2026-08-30",
-   "what": "PC 부팅 지연 — 【원인 2가지】①08-29 윈도우 업데이트 3건 후 08-30 07:13~07:25 자동 4연속 재부팅(MoUsoCoreWorker→TrustedInstaller×3) ②H: USB(VendorCo 29.3GB FAT32) 컨트롤러 에러. 전원끊김(Event41)·Critical 0건 = 하드웨어 고장 아님. 【사장님 조치 2026-08-30】 USB 를 뽑는 대신 **복구**하심 — 실측 확인: HealthStatus Warning→Healthy · OperationalStatus 'Full Repair Needed'→OK · 여유 25.7GB 그대로(데이터 보존). 【남은 관찰】 고쳐진 것은 결과(파일시스템)이고 원인(연결 끊김 ID=11, 60일 6건)은 chkdsk 로 고쳐지지 않는다. 재발하면 포트·장치 문제로 확정 → 그때는 다른 USB 포트로 옮기거나 사용 중단. 재발 없으면 접촉 문제였던 것. 【부팅 속도 검증】 다음 재부팅 때 체감 비교 — 업데이트 마무리가 끝났으므로 정상 속도로 돌아와야 정상이다.",
+   "what": "🙋 H: USB 계속 쓸까요? — 09-03 실측: 파일시스템 Healthy·OK(복구 유지), 그런데 연결끊김(disk ID=11)이 4일간 1건 재발했습니다. 이전 빈도(60일 6건)와 비슷해 급하진 않습니다. 권고: ①다른 USB 포트로 옮긴다(간단·권고) ②그대로 쓰고 중요 파일만 백업. ※부팅 속도는 08-31 이후 재부팅이 없어 아직 못 쟀습니다 — 다음 재부팅 때 제가 잽니다",
    "due": "2026-09-03",
-   "cmd": "powershell -NoProfile -Command \"Get-Volume -DriveLetter H | Select-Object HealthStatus,OperationalStatus; $o=Get-CimInstance Win32_OperatingSystem; '마지막부팅: '+$o.LastBootUpTime; $e=Get-WinEvent -FilterHashtable @{LogName='System';ProviderName='disk';Id=11;StartTime=(Get-Date).AddDays(-4)} -EA SilentlyContinue; if($e){'ID=11 재발 '+@($e).Count+'건 - 포트/장치 문제 확정'}else{'ID=11 재발 0건 - 접촉 문제였음'}\"",
+   "cmd": "(포트를 옮기셨으면 이 카드를 승인해 주세요 — 이후 재발 여부는 제가 감시합니다)",
    "owner": "user",
-   "state": "wait"
+   "state": "wait",
+   "kind": "approve"
   },
   {
    "id": "freeze-expiry-measure-0830",
@@ -4268,7 +4268,9 @@
    "cmd": "python -m studio.topicprop drop --code F4-20 --why '2026 예측 미발표 — 발표 후 재상정'",
    "owner": "user",
    "kind": "approve",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "F4-20 을 09-03 12:13 에 deferred 로 내렸다(초안 없음). 판단할 대상이 사라져 이 요청도 함께 종결 — 2026 산림청 예측지도가 나오면 그때 초안과 함께 다시 올린다"
   },
   {
    "id": "sec-passkey-mfa-0901",
@@ -4289,6 +4291,127 @@
    "state": "done",
    "done_at": "2026-09-03",
    "result": "루틴이 같은 것을 발견해 등록. 이미 조치 완료 — go.yml(입력 없는 발행)·m.html(휴대폰 결재함)·카톡 통지. 남은 것은 사장님 손 하나뿐이라 관제탑 미결로 둘 이유가 없다"
+  },
+  {
+   "id": "naver-post-b1-09-0903",
+   "added": "2026-09-03",
+   "what": "B1-09 네이버 — **원고가 아직 없다**(이과장 작성 중). 원고가 나오면 사장님께 '붙여넣기+게시' 로 올린다. 그전에는 올리지 않는다",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.pipeline naver-draft --code B1-09 --open",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topic-cand-0903",
+   "added": "2026-09-03",
+   "what": "9월 글감 후보 8건(신규4·기존deferred4) — docs/글감후보_20260903.md",
+   "due": "2026-09-04",
+   "cmd": "cat docs/글감후보_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "dupcheck-miss-typhoon-flood",
+   "added": "2026-09-03",
+   "what": "dupcheck 이 D2-07(자동차 침수 자차보험·장마)과 사실상 동일한 태풍판 제목을 🟢신규로 오판함 — 계절어만 바꾸면 매칭을 피함",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.dupcheck \"태풍 피해 자동차보험 자기차량손해 처리 방법 침수 전손 총정리 (2026 가을 태풍철)\"  # D2-07 과 동일소재인데 🟢로 나옴",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insp-collab-0903",
+   "added": "2026-09-03",
+   "what": "세션 협업 구조 검사 — 🔴4건(읽음 기록 불완전·관제탑 조회 오류·주소 중복·깨우기 구조) 🟡2건",
+   "due": "2026-09-04",
+   "cmd": "cat docs/검사_세션협업_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insp-pub-0903",
+   "added": "2026-09-03",
+   "what": "발행라인(4~8) 정밀검사 — RED 3건: V0 자기검사 가드가 데이터필드 없어 무력화(pubqueue add에 by 필드 없음) · pushcheck(D4-10 사고 재발방지 도구)가 실제 발행경로 어디에도 안 물림 · approve.yml publish_go 가 pubqueue._auto_order 우회해 원격승인 시 지시서 자동생성 안 됨",
+   "due": "2026-09-04",
+   "cmd": "cat docs/검사_발행라인_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insp-mine-0903",
+   "added": "2026-09-03",
+   "what": "관제탑 재확인: 발행라인 🔴3건 전부 사실 — ①큐에 작성자(by/author) 필드 없어 V0 자기검사 가드가 항상 통과 ②pushcheck 실행 호출 0건 ③approve.yml 이 queue.json 을 직접 써서 _auto_order 우회(다음 지시서 자동생성 빠짐)",
+   "due": "2026-09-04",
+   "cmd": "cat docs/검사_발행라인_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insp-osmu-0903",
+   "added": "2026-09-03",
+   "what": "OSMU확산·기록 정밀검사 — 인스타 크로스링크 표본 20/20(+보조16 중 15/15) 100% 누락 확인(blogger.py CH_NAMES, 오늘 838d11b로 수정됨). 🔴새로 드러난 건: CLAUDE.md L144·selfcheck 6c(08-23)는 '크로스링크=네이버쓰레드뿐, 인스타 대상아님'을 실측 확정했는데 오늘 수정이 정반대(인스타 추가)로 뒤집음 — 정책충돌, 판단 필요. F2-14는 박스 자체가 없음(3채널 다 게시됐는데). insta_post.PLAN(107개 고정)이 실제 인스타보유 223편 중 116편 못 봄, 미게시 3편(B1-03·G4-02·E2-07) 전부 사각지대. threadimg·crosslinkcheck 게이트는 샌드박스 시험 정상.",
+   "due": "2026-09-04",
+   "cmd": "cat docs/검사_확산기록_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insp-topic-0903",
+   "added": "2026-09-03",
+   "what": "글감라인(①~③) 정밀검사 완료 -- 🔴 2건(pick이 draftfind 안거침→초안없는 글감이 결재함③카드에 뜸 / approve가 picked 요구안함→선별·검증 전체우회) · 🟡 4건(topicprop끼리 dupcheck 안됨 / 화면·active() 판정기준 다름 / pubqueue fail-open 분기 / dupcheck 계절어오탐 재확인)",
+   "due": "2026-09-04",
+   "cmd": "cat docs/검사_글감라인_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insp-count-0903",
+   "added": "2026-09-03",
+   "what": "건수 정합성 검사 — 🔴1건: priority 가 watch.json 만 세서 approvalcount(3건)와 갈린다(2건). 사장님이 '왜 몇 번 바뀌는데' 라고 물으신 자리",
+   "due": "2026-09-04",
+   "cmd": "cat docs/검사_건수정합_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "insp-cp-0903",
+   "added": "2026-09-03",
+   "what": "CP 정합성 검사 — 🔴3건: ①approval.html 이 이미 발행된 B1-09 에 재발행 카드(publish_run)를 띄움 ②결재대기 건수가 화면4/approvalcount3/priority2 로 갈림 ③pending.py 가 인스타만 빠진 완료글 3편(B1-03·G4-02·E2-07)을 조기 continue 로 건너뛰어 CP 어디에도 안 뜸 · 🟡1건 지시서 읽음배지가 last_report 미반영",
+   "due": "2026-09-04",
+   "cmd": "cat docs/검사_CP정합성_20260903.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-b109-missing",
+   "added": "2026-09-03",
+   "what": "B1-09 네이버 원고 파일이 없다 — 이과장은 '원고 완성·클립보드 적재' 로 보고했으나 osmu/ 에 네이버용_재산세2기분.txt 가 없다(인스타용·쓰레드용만 있음). 클립보드에만 넣고 파일로 안 남긴 것으로 보인다. 4채널 세트가 이것 하나로 미완이다",
+   "due": "2026-09-03",
+   "cmd": "ls osmu/*재산세2기분* && python -m studio.pipeline naver-draft --code B1-09",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "anthropic-send-0903",
+   "added": "2026-09-03",
+   "what": "🙋 앤트로픽 발송 — 09-03 오류 3건 보고서가 준비됐습니다. 권고: ①터미널에 /feedback 을 치시면 초안이 뜨고 검토 후 보내집니다(세션 맥락이 함께 가서 재현 근거가 붙습니다) ②메일로 보내시려면 docs/앤트로픽_메일_20260903.md 본문을 복사하시고, 수신처는 Claude 앱 설정→지원에서 여시는 게 확실합니다(제가 주소를 추측하지 않았습니다)",
+   "due": "2026-09-03",
+   "cmd": "C:/Program Files/Git/feedback",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "국문·영문 본문 준비 완료 — 다시 올린다"
+  },
+  {
+   "id": "anthropic-send2-0903",
+   "added": "2026-09-03",
+   "what": "🙋 앤트로픽 발송 — 국문·영문 본문이 준비됐습니다(오류 3건·구조적 원인 4가지·회신요청 4가지). 권고: ①터미널에 /feedback — 초안이 뜨고 검토 후 보내집니다. 세션 맥락이 함께 가서 재현 근거가 붙습니다 ②메일로 보내시려면 docs/앤트로픽_메일_20260903.md(국문) 또는 _EN_(영문) 본문을 복사하시고, 수신처는 Claude 앱 설정→지원에서 여시는 게 확실합니다 — 제가 주소를 추측하지 않았습니다",
+   "due": "2026-09-03",
+   "cmd": "notepad docs\\앤트로픽_메일_EN_20260903.md",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo"
   }
  ]
 }
