@@ -4349,7 +4349,9 @@
    "due": "2026-09-03",
    "cmd": "python -m studio.pipeline naver-draft --code B1-09 --open",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "원고 osmu/네이버용_재산세2기분.txt 로 이동+최신본문 반영, naver-draft 재실행해 클립보드 최신화 완료"
   },
   {
    "id": "topic-cand-0903",
@@ -4464,6 +4466,66 @@
    "state": "done",
    "done_at": "2026-09-03",
    "result": "전송 완료 — /feedback receipt c98bb273-c205-4223-a4ad-63d2607e5be4. 사장님이 09-03 15:4x 에 보내셨고 로컬 큐가 비었다(실측). 결재함에 남을 이유가 없다"
+  },
+  {
+   "id": "v0reject-d1-08",
+   "added": "2026-09-03",
+   "what": "🔴 V0 반려 확인 요청 — D1-08 「2026년 10월 개천절 대체공휴일 확정 — 10월 3~5일 연휴 총정리」. 검사자 V0검사관 · 2026-09-03T16:04. 사유 요약: V0 실질은 충족(함정=국군의날 법정공휴일 아님, 제2조 목록 부재+제4조 국무회의 심의 — 1차출처 확인). 요일(10/3 토·10/4 일·10/5 월·10/9 금)·조문(제2조 각 호, 제3조①1~3호, 제4조)·기계검사(heading OK·bodydup 0.047·dupcheck 신규·관련글 200) 전부 통과. 단 근거법령 오류 1건으로 반려: 2절 tip 박스가 '「공휴일에 관한 법률」 개정에 따라 노동절·제헌절이 추가'라 했으나, 법률(MST 283311, 2026-02-10 공포·05-11 시행) 제2조에 노동절이 없다 … 🔴 전문은 `python -m studio.v0check gate --code D1-08` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.v0check gate --code D1-08",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "V0 통과로 해소 — 검사자 V0검사관(2차) · 1차 반려 2건 모두 해소 · 1차출처(law.go.kr DRF API, OC=test) 재확인. [해소1] 2절 tip(line 75)이 노동절=「관공서의 공휴일에 관한 규정」(대통령령 MST 285779) 제2조"
+  },
+  {
+   "id": "sessionload-0903",
+   "added": "2026-09-03",
+   "what": "세션 jsonl(이부장 127MB·이과장 347MB) 은 부하 원인이 아니다(못 잼: 프로세스 메모리 제외) — 자동훅(SessionStart/Stop) 9개 전부 getmtime/getsize/seek(400KB) 만 쓰고 전체 read 없음, 각 500ms~1s, Stop훅 총 4.75s. 디스크 여유 515GB/953GB 로 492MB 무관. WER 이벤트로그: 09-02 당일 Resource-Exhaustion-Detector(저메모리종료) 0건, Application Error(1000) 0건. 유일한 커널 이벤트는 LiveKernelEvent bugcheck 141(WATCHDOG_TIMEOUT)인데 덤프 시각이 09-01 02:33 이고 09-02 는 그 재보고(WER 큐 재시도)뿐 — 세션파일과 무관한 OS/드라이버 워치독",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.sessionsize; cd ~/.claude/projects/C--lifeinfo && python3 -c \"import glob,os,time; [print(f, round(os.path.getsize(f)/1e6,1),'MB') for f in sorted(glob.glob('*/*.jsonl')+glob.glob('*.jsonl'), key=lambda x:-os.path.getsize(x))[:5]]\"",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "device-seongnam-0903",
+   "added": "2026-09-03",
+   "what": "성남시 표시 기기 6건 차단 요청 — 사장님은 부산에 계신다. ⚠️ 실측: 이 PC 의 IP 는 지금 Goyang-si(LG POWERCOMM)로 잡힌다. 8/20·8/29 는 Busan, 9/3 은 Seongnam-si — 같은 PC 가 조회 시점마다 다른 도시로 나온다. 즉 위치 표시는 IP 추정치다. Claude 에는 '지역 차단' 기능이 없고 기기 제거만 된다. 6건이 이 PC 것이면 지우는 순간 Remote Control(이과장 세션 연결)이 끊긴다 — 다시 로그인하면 복구된다.",
+   "due": "2026-09-03",
+   "cmd": "claude.ai/new#settings/account → 신뢰할 수 있는 기기 → 각 항목 제거 · 확실히 끊으려면 비밀번호 변경 + 전체 세션 로그아웃(사장님 손 — Claude 는 비밀번호를 못 다룬다)",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "성남시 표시 기기 6건 전부 제거 완료(브라우저 실행·화면 확인). 부산 항목은 남김. 실측: 이 PC IP 는 Goyang-si 로 잡혀 위치 표시는 IP 추정치임"
+  },
+  {
+   "id": "preview-api-0903",
+   "added": "2026-09-03",
+   "what": "결재함 미리보기 안 열림 원인=포트/서버가 아니라 렌더분기. pv-btn 이 LABEL[x.act] 게이트 안에 갇혀 publish_run(⑧)·rej(반려) 카드는 버튼이 아예 안 그려졌다(8011 API 는 그때도 200). approval.html 에 byq 인덱스+facts 전달+pv-btn 게이트 분리로 고침, falsepos.RULES 에 회귀규칙(_r_preview_affordance_alive) 추가",
+   "due": "2026-09-04",
+   "cmd": "curl -s 'http://127.0.0.1:8011/api/draft?code=D1-08' | head -c 200 && python -m studio.falsepos --quiet; echo exit=0",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-b1-09-0903b",
+   "added": "2026-09-03",
+   "what": "B1-09(재산세2기분) 네이버 게시 — 원고 갱신됨(도시지역분·지방교육세 299,400원 사례 포함), 클립보드 붙여넣기+게시. 첨부는 thumbs_naver/201_property_tax_2nd.png",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.pipeline naver-draft --code B1-09 --open",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "publish-go-d1-08",
+   "added": "2026-09-03",
+   "what": "⑦ 발행 승인 — D1-08 「2026 개천절 대체공휴일 총정리 (10월 3일~5일 연휴 · 법 요건 3가지)」 · V0 2차 통과(law.go.kr DRF 원문 대조) · 기계검사 전부 통과(heading OK · bodydup 0.047 · dupcheck 신규) · 오늘 1편 발행됨(상한 5)",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.pubqueue go --code D1-08",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "중복 등록이라 철회 — 큐에 이미 ⑦발행승인 카드가 있다(gatecheck 지적). 승인은 그 카드에서 하시면 된다"
   }
  ]
 }

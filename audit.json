@@ -416,6 +416,54 @@
    "target": "anthropic-send2-0903",
    "detail": "전송 완료 — /feedback receipt c98bb273-c205-4223-a4ad-63d2607e5be4. 사장님이 09-03 15:4x 에 보내셨고 로컬 큐가 비었다(실측). 결재함에 남을 이유가 없다",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-03T16:55:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "device-seongnam-0903",
+   "detail": "성남시 표시 기기 6건 전부 제거 완료(브라우저 실행·화면 확인). 부산 항목은 남김. 실측: 이 PC IP 는 Goyang-si 로 잡혀 위치 표시는 IP 추정치임",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T17:09:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-d1-08",
+   "detail": "이과장이 근거법령 2군데 정정 완료(커밋 331c967) — V0 2차 검사 진행 중. 사장님 조치 불필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T17:12:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-d1-08",
+   "detail": "V0 통과로 해소 — 검사자 V0검사관(2차) · 1차 반려 2건 모두 해소 · 1차출처(law.go.kr DRF API, OC=test) 재확인. [해소1] 2절 tip(line 75)이 노동절=「관공서의 공휴일에 관한 규정」(대통령령 MST 285779) 제2조",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T17:15:02",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "A3-10",
+   "detail": "지금 쓸 이유 약함 — 9.5%는 2026-01-01 이미 시행(법률 20903호 부칙 제1조), 8개월 지난 구정보다. 기준소득월액 고시(제2026-31호)도 7월 시행분으로 2개월 지났다. 지금 새로 생긴 기한·개정 없음. ※살릴 각도 = 2027년 1월 10% 재인상(4개월 앞) + 부칙 제4조가 2032년 12.5%로 규정(시중에 도는 '13%'와 다름 = 함정거리). 그 각도로 재제안 가능. 근거=docs/source_a3-10_국민연금요율_20260903.md",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T17:16:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "publish-go-d1-08",
+   "detail": "중복 등록이라 철회 — 큐에 이미 ⑦발행승인 카드가 있다(gatecheck 지적). 승인은 그 카드에서 하시면 된다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-03T17:17:11",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D1-08",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }

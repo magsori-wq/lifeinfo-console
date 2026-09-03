@@ -473,6 +473,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
   var W=arr(a[7]), PEND=(a[8]||{}).actionable||[], OT=a[9]||{};
   var byc={}; (DB.posts||[]).forEach(function(p){byc[p.code]=p;});
+  // 🔴 2026-09-03 — publish_run(⑧)·반려(rej) 카드가 미리보기를 못 낸 원인.
+  //    facts/sum 은 queue.json 행에만 있는데, 그 두 카드는 queue 행을 다시 안 들여다봤다.
+  //    코드로 바로 찾을 수 있게 미리 인덱스를 만든다(byc 와 같은 방식).
+  var byq={}; Q.forEach(function(q){byq[q.code]=q;});
   // 🔴 이과장 보고를 화면이 **읽을 수 있는데 안 읽고 있었다** (2026-08-28 사장님 지적).
   //    batch.json 은 이미 위에서 B 로 받아온다. 그 안 currents[].what 과 items[].note 에
   //    "인스타 카드 6장(미착수)" 같은 실제 진행상황이 들어 있는데, OSMU 카드는 그걸 안 보고
@@ -669,6 +673,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     else if(v.verdict==='pass' && q.go) boss.push({act:'publish_run',c:q.code,t:q.title,
       why:'⑧ 발행 대기 — 승인 완료('+String((q.go&&q.go.at)||'').slice(0,16).replace('T',' ')
           +') · 실행만 남았다',
+      // 🔴 2026-09-03 — 이 카드는 facts 를 안 실어 「📄 본문 미리보기」가 통째로 안 떴고,
+      //    아래 LABEL 게이트 때문에 「📄 원고 미리보기」 버튼도 안 떴다(둘 다 렌더 자체가
+      //    없었다 — 클릭이 실패한 게 아니라 있어야 할 것이 없었다). facts 를 실어 전자를 고친다.
+      facts:q.facts||'',
       draft:q.draft||'', cmd:"gh workflow run publish.yml -R magsori-wq/lifeinfo-source"
           +" -f code="+q.code+" -f mode=live -f confirm=PUBLISH"
           +(q.draft?" -f file='"+q.draft+"'":"")});
@@ -754,14 +762,17 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +(LABEL[x.act]?'<div style="margin-top:8px">'
         +btn(x.act,x.c,LABEL[x.act],BTN_CLS[x.act]||'ok')
         +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
-        // 🔴 2026-08-31 — ③ 글감승인에도 붙인다. 08-23 사장님 지시가
-        //    "글감은 미리보기 **혹은 초안**을 볼 수 있도록" 이었는데 ⑦에만 달고
-        //    ③은 설명·근거로만 뒀다. 절반만 이행된 채 8일이 지났다.
-        //    초안이 아직 없으면 서버가 "승인하시면 생산합니다" 로 답한다.
-        +((x.act==='publish_go'||x.act==='topic_approve')
-          ?'<button class="act pv-btn" data-c="'+x.c+'" onclick="preview(this.dataset.c)">📄 '
-           +(x.act==='topic_approve'?'초안 원고 보기':'원고 미리보기')+'</button>':'')
         +'</div>':'')
+      // 🔴 2026-09-03 — pv-btn 을 LABEL 게이트 **밖으로** 뺀다. `LABEL` 에는
+      //    publish_go·topic_approve·watch_approve·watch_done 4개만 있어서, 그 안에
+      //    갇혀 있던 이 버튼이 `publish_run`(⑧ 발행 실행) 카드에서는 **아예 렌더되지도
+      //    않았다** — 클릭이 실패한 게 아니라 버튼 자체가 없었다("화면에서 안 열린다"의
+      //    실체). ③⑦⑧ 모두 초안이 존재할 수 있는 자리이므로 여기서 함께 판단한다.
+      //    08-31 지시("글감은 미리보기 혹은 초안을 볼 수 있도록")의 나머지 절반.
+      +((x.act==='publish_go'||x.act==='topic_approve'||x.act==='publish_run')
+        ?'<div style="margin-top:8px"><button class="act pv-btn" data-c="'+x.c+'" '
+         +'onclick="preview(this.dataset.c)">📄 '
+         +(x.act==='topic_approve'?'초안 원고 보기':'원고 미리보기')+'</button></div>':'')
       // 📱 외부 결재 — 밖에서도 누르실 수 있게(2026-09-03 사장님 지시)
       +(x.act==='publish_run'
         ? '<div style="margin-top:8px">'+pubLink(x.c, x.draft, x.t)+'</div>'
@@ -799,10 +810,20 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +'<div style="margin-top:6px">'+cmd(x.cmd)+'</div></div>';}).join('')
     : '<p class="none">✅ 없음.</p>')
     + (rejList.length? '<div class="sub2" style="margin-top:10px">⛔ 반려 — 재작업 후 재검사</div>'
-       + rejList.map(function(x){return '<div class="card rej"><div class="hd">'
+       + rejList.map(function(x){
+         // 🔴 2026-09-03 — 반려 카드도 원고가 여전히 queue.json 에 남아 있는데
+         //    (재승인 전까지 지워지지 않는다) 미리보기 수단이 하나도 없었다.
+         //    D1-08 이 지금 이 상태다 — byq 로 그 행의 facts·draft 를 끌어온다.
+         var qr=byq[x.code]||{};
+         return '<div class="card rej"><div class="hd">'
          +'<span class="who w-work">재작업</span><span class="ttl">'+esc(x.title||'')+'</span>'
          +'<span class="code">'+esc(x.code)+'</span></div>'
-         +'<div class="why">'+esc(String(x.why||'').slice(0,220))+'</div></div>';}).join('') : '');
+         +'<div class="why">'+esc(String(x.why||'').slice(0,220))+'</div>'
+         +(qr.facts?'<details class="pv" data-k="pv-rej-'+esc(x.code)+'"><summary>📄 본문 미리보기</summary>'
+           +'<div class="pvs gov"><b>🏛 확인한 수치·출처</b>'+govline(qr.facts)+'</div></details>':'')
+         +(qr.draft?'<div style="margin-top:8px"><button class="act pv-btn" data-c="'+x.code+'" '
+           +'onclick="preview(this.dataset.c)">📄 초안 원고 보기</button></div>':'')
+         +'</div>';}).join('') : '');
   H+=pane('🪪','이부장 결재 대기',lee.length+(rejList.length?' + 반려 '+rejList.length:'')+'건',leeBody);
 
   // ③ 진행 중 문서 — 결재선 위치

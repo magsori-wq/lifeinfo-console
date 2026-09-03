@@ -1,13 +1,13 @@
 {
- "rev": "1966b05",
+ "rev": "3dfdf5b8",
  "counts": {
-  "total": 226,
+  "total": 227,
   "osmu_done": 226,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 1,
-  "index_pending": 225,
+  "index_pending": 226,
   "index_requested": 205,
-  "index_todo": 20
+  "index_todo": 21
  },
  "actionable": [
   {
@@ -24,6 +24,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "D1-08",
+   "title": "2026년 10월 개천절 대체공휴일 확정 — 10월 3",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -209,22 +226,6 @@
   {
    "code": "D2-11",
    "title": "전기차 공공충전요금 개편 총정리 (2026년 8월 시행",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "D4-11",
-   "title": "유효기간 지난 상품권 환불 방법 반환율 90% 95% ",
    "need": [
     "색인요청"
    ],
