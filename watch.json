@@ -4526,6 +4526,36 @@
    "state": "done",
    "done_at": "2026-09-03",
    "result": "중복 등록이라 철회 — 큐에 이미 ⑦발행승인 카드가 있다(gatecheck 지적). 승인은 그 카드에서 하시면 된다"
+  },
+  {
+   "id": "gate-test-dup2",
+   "added": "2026-09-03",
+   "what": "⑦ 발행 승인 — B4-10 부가세. 권고: 승인",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.pubqueue go --code B4-10",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "게이트 시험용 — 삭제"
+  },
+  {
+   "id": "title-stale-0903",
+   "added": "2026-09-03",
+   "what": "발행 시 -f title 이 무시되고 queue.json 의 옛 제목이 라이브에 나갔다(D1-08 실측, 이과장이 update-post 로 정정). 발행 경로가 워크플로 입력이 아니라 queue.json 저장값을 title source 로 쓴다 — pubqueue add 시점 제목이 stale 해지면 그대로 나간다",
+   "due": "2026-09-04",
+   "cmd": "grep -n 'title' studio/pipeline.py | grep -i queue",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "progress-html-syntax-0903",
+   "added": "2026-09-03",
+   "what": "콘솔 progress.html script#1 SyntaxError('<<' 토큰) — 화면이 안 열림(selfcheck 18번 검사). 야간검증 루틴 범위 밖이라 기록만",
+   "due": "2026-09-04",
+   "cmd": "python studio/selfcheck.py 로 재확인 후 webapp/progress.html 의 <script> 블록에서 '<<' 문자를 찾아 수정",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }

@@ -1,9 +1,9 @@
 {
- "rev": "3dfdf5b8",
+ "rev": "296636f",
  "counts": {
   "total": 227,
-  "osmu_done": 226,
-  "osmu_pending": 1,
+  "osmu_done": 227,
+  "osmu_pending": 0,
   "indexed": 1,
   "index_pending": 226,
   "index_requested": 205,
@@ -24,23 +24,6 @@
     "g": true,
     "n": true,
     "t": true,
-    "i": false
-   }
-  },
-  {
-   "code": "D1-08",
-   "title": "2026년 10월 개천절 대체공휴일 확정 — 10월 3",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
     "i": false
    }
   },
@@ -219,6 +202,23 @@
    "ch": {
     "g": true,
     "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "D1-08",
+   "title": "2026년 10월 개천절 대체공휴일 확정 — 10월 3",
+   "need": [
+    "네이버",
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
     "t": true,
     "i": true
    }
