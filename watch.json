@@ -4278,6 +4278,17 @@
    "cmd": "https://myaccount.google.com/notifications 열어 패스키 추가가 본인인지 확인 (아니면 즉시 비밀번호 변경·세션 로그아웃)",
    "owner": "user",
    "state": "todo"
+  },
+  {
+   "id": "b109-dispatch-stalled-0903",
+   "added": "2026-09-03",
+   "what": "B1-09(재산세2기분) 사장님 발행승인(⑦, 2026-09-02 14:10:31) 완료·지시서 pub0902 로 이과장에 배정됐으나 20시간+(1221분) 무응답 — 발행이 아직 안 나갔다. selfcheck 17)·18f)·orderwatch 전부 같은 결함 지목.",
+   "due": "2026-09-03",
+   "cmd": "python -m studio.orderwatch",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-03",
+   "result": "루틴이 같은 것을 발견해 등록. 이미 조치 완료 — go.yml(입력 없는 발행)·m.html(휴대폰 결재함)·카톡 통지. 남은 것은 사장님 손 하나뿐이라 관제탑 미결로 둘 이유가 없다"
   }
  ]
 }
