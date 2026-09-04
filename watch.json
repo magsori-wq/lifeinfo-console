@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-03",
+ "updated": "2026-09-04",
  "items": [
   {
    "id": "redirect-error",
@@ -3050,8 +3050,10 @@
    "due": "2026-09-03",
    "cmd": "(포트를 옮기셨으면 이 카드를 승인해 주세요 — 이후 재발 여부는 제가 감시합니다)",
    "owner": "user",
-   "state": "wait",
-   "kind": "approve"
+   "state": "done",
+   "kind": "approve",
+   "done_at": "2026-09-04",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "freeze-expiry-measure-0830",
@@ -4554,6 +4556,15 @@
    "what": "콘솔 progress.html script#1 SyntaxError('<<' 토큰) — 화면이 안 열림(selfcheck 18번 검사). 야간검증 루틴 범위 밖이라 기록만",
    "due": "2026-09-04",
    "cmd": "python studio/selfcheck.py 로 재확인 후 webapp/progress.html 의 <script> 블록에서 '<<' 문자를 찾아 수정",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0-queue-0904",
+   "added": "2026-09-04",
+   "what": "발행 준비구(3번 루틴) 09-04 점검 — 큐 3편 중 V0 승인 완료 0편. B4-10: 5차 정정(L13 검색설명 103자, 커밋 d35b328) 20:11 완료 — V0검사관 4차 반려(20:09) 이후 수정이라 재검사 필요. E2-10·D3-06: 09-03 초안 등록 후 V0 검사 이력 자체 없음(v0check list 미등재). 셋 다 go 도장 없음 — 발행 준비구 몫이 아니라 이부장 V0 검사가 먼저다.",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.v0check gate --code B4-10 (재검사) ; python -m studio.v0check gate --code E2-10 ; python -m studio.v0check gate --code D3-06 (초검사)",
    "owner": "claude",
    "state": "todo"
   }
