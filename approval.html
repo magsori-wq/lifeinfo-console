@@ -171,8 +171,8 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
  <span class="tip">승인 버튼은 <b>두 번</b> 눌러야 실행됩니다 · 명령을 클릭하면 복사</span><label id="autosw" class="on" title="끄면 화면이 저절로 바뀌지 않습니다"><span class="kn"></span><span id="autolab">자동갱신 켜짐</span></label>
 </div>
 <div class="flow">
-① 제안 → ② <b>이부장 선별</b> → ③ <b>사장님 글감승인</b> → ④ 지시서 → ⑤ 초안·큐
-→ ⑥ <b>이부장 V0검사</b> → ⑦ <b>사장님 발행승인</b> → ⑧ 발행·보고 → ④
+① 제안 → ② <b>이부장 선별</b> → ③ 지시서 → ④ 초안·큐
+→ ⑤ <b>이부장 V0검사</b> → ⑥ <b>사장님 발행승인</b> → ⑦ 발행 → ⑧ OSMU 4채널
 </div>
 <div id="out" class="grid"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
 <div id="pvm" onclick="if(event.target===this)pvclose()"><div id="pvw">
@@ -191,7 +191,32 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
-function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
+// 🔴 **URL 은 클릭해서 열리게 한다** (2026-09-04 사장님: "링크 걸어줘")
+//    `cmd` 는 원래 '클릭하면 복사되는 명령'이라 전부 <code> 로 감쌌는데,
+//    사람이 **열어야 하는 주소**(보안 확인 페이지 등)까지 복사만 되고 있었다.
+//    사장님은 그 URL 을 손으로 긁어 주소창에 붙이셔야 했다.
+//    → http(s) 로 시작하는 토막은 <a> 로 만든다. 나머지는 그대로 복사용.
+//    ⚠️ 명령 안에 URL 이 섞인 경우(예: curl "https://…")도 그 부분만 링크가 된다 —
+//       복사 동작은 <code> 클릭으로 그대로 남는다.
+// 🔴 **설명 본문 안의 URL 도 클릭되게 한다** (2026-09-04 사장님: "링크 걸어줘")
+//    사장님이 실제로 보시는 것은 `cmd` 가 아니라 카드 설명(full)이다.
+//    거기 적힌 주소(보안 확인 페이지 등)를 손으로 긁어 붙이고 계셨다.
+function linkify(t){
+  return String(t).replace(/(https?:\/\/[^\s"'<>()]+)/g, function(u){
+    return '<a href="'+u+'" target="_blank" rel="noopener" '
+         + 'style="color:#7ab8ff;text-decoration:underline">'+u+'</a>';
+  });
+}
+
+function cmd(c){
+  var t = esc(c);
+  t = t.replace(/(https?:\/\/[^\s"'<>()]+)/g, function(u){
+    return '<a href="'+u+'" target="_blank" rel="noopener" '
+         + 'onclick="event.stopPropagation()" '
+         + 'style="color:#7ab8ff;text-decoration:underline">'+u+'</a>';
+  });
+  return '<code onclick="copy(this)">'+t+'</code>';
+}
 
 // 📱 **외부 결재 링크** (2026-09-03 사장님: "외부에서 승인할 수 있도록")
 //    CP 라이브는 읽기 전용이고 결재 버튼은 PC 안 8011 서버에만 있다.
@@ -459,7 +484,17 @@ j('gates.json').then(function(g){
   d.className = 'gatebanner';
   d.style.cssText = 'background:#3a1d1d;border:1px solid #7a3030;border-radius:10px;'
     + 'padding:12px 16px;margin:10px 0;line-height:1.7';
-  d.innerHTML = '<b style="color:#ff9b9b">🚨 게이트 자가검사 ' + ps.length + '건 — 화면이 사실과 다를 수 있습니다</b>'
+  // 🔴 **심각도에 맞춰 말한다** (2026-09-04) — 🟡 만 있는데 🚨 "화면이 사실과
+  //    다를 수 있습니다" 라고 겁을 줬다. 경보가 무뎌지는 가장 빠른 길이다.
+  var _red = ps.some(function(x){
+    return String(typeof x === 'string' ? x : (x.msg || '')).indexOf('🔴') >= 0;
+  });
+  d.style.background = _red ? '#3a1d1d' : '#332b18';
+  d.style.borderColor = _red ? '#7a3030' : '#6b5a2c';
+  d.innerHTML = '<b style="color:' + (_red ? '#ff9b9b' : '#e8c979') + '">'
+    + (_red ? '🚨 게이트 자가검사 ' + ps.length + '건 — 화면이 사실과 다를 수 있습니다'
+            : '🟡 게이트 참고 ' + ps.length + '건 — 급하지 않습니다')
+    + '</b>'
     + '<div style="font-size:13px;color:#e6b8b8;margin-top:6px">'
     + ps.map(function(x){
         return '· ' + String(typeof x === 'string' ? x : (x.msg || x.kind || JSON.stringify(x)))
@@ -608,7 +643,11 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         cmd:'python -m studio.batchboard set --id draft'+t.code.toLowerCase().replace('-','')+' --title "초안 '+t.code+'" --items <items.json>'});
       return;
     }
-    if(t.state==='picked') boss.push({act:'topic_approve',c:t.code,t:t.title,
+    // 🔴 **글감 승인 폐지** (2026-09-04 사장님: "3은 이부장이 선별하는 과정 아냐?")
+    //    선별은 이부장 책임이고 사장님은 발행만 승인하신다.
+    //    picked 인데 초안이 없으면 위에서 이미 lee 로 갔다. 초안이 있으면
+    //    그대로 ④큐 → ⑤V0 → ⑥발행승인으로 흘러가므로 여기서 멈출 이유가 없다.
+    if(false && t.state==='picked') boss.push({act:'topic_approve',c:t.code,t:t.title,
       why:'글감 승인 대기(③) · '+(t.why||''),
       sum:t.summary||'', facts:t.facts||'',
       cmd:'python -m studio.topicprop approve --code '+t.code});
@@ -729,22 +768,31 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   });
 
   var rejList=V.filter(function(x){return x.verdict==='fail';});
-  var LAB=['①제안','②선별','③글감','④지시','⑤초안','⑥V0','⑦발행승인','⑧발행'];
+  // 🔴 **새 8단계** (2026-09-04 사장님 지시로 글감승인 폐지)
+  //    사장님: "3은 이부장이 선별하는 과정 아냐?" — 선별은 이부장 책임이고
+  //    사장님은 발행만 승인하신다. 옛 ③(사장님 글감승인)이 빠지고 한 칸씩 당겨졌다.
+  //    ⚠️ 이 배열을 고치면 stepOf() 도 같이 고칠 것 — 인덱스가 어긋나면
+  //       "진행 중 문서"가 엉뚱한 단계에서 멈춰 보인다(실제로 그랬다).
+  var LAB=['①제안','②선별','③지시','④초안','⑤V0','⑥발행승인','⑦발행','⑧OSMU'];
   function stepOf(code){
     var t=T.filter(function(x){return x.code===code;})[0];
     var q=Q.filter(function(x){return x.code===code;})[0];
     var v=v0[code], p=byc[code];
-    if(p&&p.url) return 8;
+    if(p&&p.url&&p.osmu&&p.osmu.naver&&p.osmu.threads&&p.osmu.instagram) return 8;
+    if(p&&p.url) return 7;
     // 🔴 도장이 찍혔으면 ⑦은 끝난 것이다 — ⑧(발행 차례)로 넘긴다 (2026-08-27 사장님 화면 지적).
     //    예전엔 go 가 있어도 7 을 돌려줘 **승인 대기와 승인 완료가 화면에서 똑같이 보였다.**
     //    실제로 A2-15·G2-03 이 도장을 받고도 "⑦발행승인"에 서 있어, 사장님이 이미 누르신
     //    결재를 다시 누르실 것처럼 보였다. 승인이 끝났는데 끝난 티가 안 나면 결재함의 의미가 없다.
-    if(q&&q.go) return 8;
-    if(v&&v.verdict==='fail') return -6;
-    if(v&&v.verdict==='pass') return 7;
-    if(q) return 6;
-    if(t&&t.state==='approved') return 4;
-    if(t&&t.state==='picked') return 3;
+    if(q&&q.go) return 7;
+    if(v&&v.verdict==='fail') return -5;
+    if(v&&v.verdict==='pass') return 6;
+    if(q) return 5;
+    // 🔴 picked = 이부장 선별 끝 = 지시서 단계(③). 옛 판정은 여기서 3(글감승인)을
+    //    돌려줘 **초안이 나와도 "사장님 승인 대기"로 멈춰 보였다.**
+    //    사장님: "블로그스팟은 발행승인 하면 이과장이 일괄처리할 수 있는데,
+    //    진행중 문서에서 걸리잖아?" — 바로 이 자리다.
+    if(t&&(t.state==='picked'||t.state==='approved')) return 3;
     if(t) return 2;
     return 1;
   }
@@ -802,7 +850,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
           +(x.facts?'<div class="pvs gov"><b>🏛 확인한 수치·출처</b>'+govline(x.facts)+'</div>':'')
           +'</details>' : '')
       +(x.full&&x.full.length>70
-        ? '<pre class="plain">'+esc(x.full)+'</pre>' : '')
+        ? '<pre class="plain">'+linkify(esc(x.full))+'</pre>' : '')
       +(x.act==='watch_done'?'<div class="meta" style="color:#7fb8e8">'
         +'☝️ 이 버튼은 <b>조치를 대신 해주지 않습니다</b> — 위 내용을 실제로 이미 끝내셨을 때만 눌러주세요.</div>':'')
       +(LABEL[x.act]?'<div style="margin-top:8px">'
@@ -850,7 +898,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       // 🔴 이과장 보고 전문 — boss 칸에만 있던 것을 여기도 그린다(2026-08-28).
       //    보고가 데이터에 있어도 화면이 안 그리면 없는 것과 같다.
       +(x.full&&x.full.length>70
-        ? '<pre class="plain">'+esc(x.full)+'</pre>' : '')
+        ? '<pre class="plain">'+linkify(esc(x.full))+'</pre>' : '')
       +(x.act==='topic_pick'?'<div style="margin-top:8px">'
         +btn('topic_pick',x.c,'② 선별','ok')+btn('topic_drop',x.c,'제외','no')+'</div>':'')
       +'<div style="margin-top:6px">'+cmd(x.cmd)+'</div></div>';}).join('')

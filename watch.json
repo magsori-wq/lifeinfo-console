@@ -1833,7 +1833,7 @@
    "id": "naverdup-cleanup",
    "added": "2026-08-19",
    "what": "네이버 관련글 블록 중복 59편 정리 — 두 번째(블로그스팟 링크) 블록만 삭제. 보드 naverdup0819. 원인은 봉합됐으므로 새 글은 재발 없음",
-   "due": "2026-09-04",
+   "due": "2026-09-14",
    "cmd": "start C:\\lifeinfo\\osmu\\_네이버중복정리_체크리스트.html",
    "owner": "user",
    "state": "todo"
@@ -2688,7 +2688,9 @@
    "due": "2026-09-04",
    "cmd": "python -c \"import json;d=json.load(open(r'C:\\lifeinfo\\.claude\\settings.local.json',encoding='utf-8'));print([x for x in d['permissions']['allow'] if 'gh ' in x] or '아직 없음')\"",
    "owner": "user",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-04",
+   "result": "사장님이 본체 .claude/settings.local.json 에 gh 4줄 추가·저장하셨다(2026-09-04 17:31). JSON 구문 검사 통과 — allow 70줄, gh workflow run/run list/run watch/run view. 앞으로 어느 워크트리에서 세션이 새로 떠도 같은 벽에 안 막힌다"
   },
   {
    "id": "console-health-0828",
@@ -4331,7 +4333,9 @@
    "due": "2026-09-02",
    "cmd": "https://myaccount.google.com/notifications 열어 패스키 추가가 본인인지 확인 (아니면 즉시 비밀번호 변경·세션 로그아웃)",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-04",
+   "result": "운영콘솔 전자결재함에서 완료 처리"
   },
   {
    "id": "b109-dispatch-stalled-0903",
@@ -4594,13 +4598,13 @@
   {
    "id": "v0reject-e2-10",
    "added": "2026-09-04",
-   "what": "🔴 V0 반려 확인 요청 — E2-10 「카드 포인트 계좌입금 신청 방법 총정리 (2026 즉시입금 카드사·대표포」. 검사자 V0검사관(재등록) · 2026-09-04T16:14. 사유 요약: 2021-01-05 금융위 자료를 2026 기준이라 표기 · 롯데카드 분류 원문과 불일치 · V0 실질이 별첨3 재정리. 전문은 v0check gate 로. … 🔴 전문은 `python -m studio.v0check gate --code E2-10` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "what": "🔴 V0 반려 확인 요청 — E2-10 「카드 포인트 계좌입금 신청 방법 총정리 (2026 즉시입금 카드사·대표포」. 검사자 V0검사관(2차) · 2026-09-04T20:12. 사유 요약: 본문 5개 사유는 전부 해소(원문 대조 확인). 남은 1건 = 발행경로 제목. webapp/queue.json 의 E2-10 title 이 옛 제목 '(2026 즉시입금 카드사·대표포인트 확인)' 그대로이고 facts 도 '비씨/신한/우리/KB국민/NH농협 즉시입금'(롯데 누락)이다. publish.yml L195-204 제목 우선순위는 post_title -> DB레코드 -> queue.json 인데 E2-10 은 DB 에 없다(grep -c 0). CLAUDE.md 문서화 명령은 -f title= (WANT_TITLE) 이라 p … 🔴 전문은 `python -m studio.v0check gate --code E2-10` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
    "due": "2026-09-04",
    "cmd": "python -m studio.v0check gate --code E2-10",
    "owner": "user",
    "state": "done",
    "done_at": "2026-09-04",
-   "result": "반려 확인 — 이과장이 e210fix 지시서로 정정 중(1차출처 2021-01-05 표기 정정·롯데 3분류 교정·V0 축 재설정). 정정 끝나면 재검사 후 발행 승인으로 올라간다. 사장님 조치 불필요"
+   "result": "V0 통과로 해소 — 검사자 V0검사관(2차) · 반려 6건 전부 해소 확인(본문 5 + 발행경로 1). [본문·PDF 원문 대조] 별첨3 Q7 5분류가 원문과 일치 — 00:30~23:30 비씨/신한/우리/KB국민/NH농협(주말·공휴일 포함) · 08:00~22:"
   },
   {
    "id": "v0reject-d3-06",
@@ -4611,7 +4615,7 @@
    "owner": "user",
    "state": "done",
    "done_at": "2026-09-04",
-   "result": "반려 확인 — 이과장이 d306fix 지시서로 정정 중. 3행 판정표(단독/연립·다세대/아파트등) 이미 초안에 반영된 것 확인. 정정 끝나면 재검사 후 발행 승인으로 올라간다. 사장님 조치 불필요"
+   "result": "V0 통과로 해소 — 검사자 V0검사관(2차) · 반려 4건 전부 해소·1차출처 재대조 완료(law.go.kr DRF, OC=test). ①3행 판정표 신설 — 단독주택(별표2 해당없음·제17조 밖·제10조①1호 대상)/연립·다세대(별표2 1호 나·다목·제17조 적"
   },
   {
    "id": "cp-audit-0904",
@@ -4621,6 +4625,43 @@
    "cmd": "python tools/check_webapp_js.py && sed -n '133,140p' webapp/progress.html",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "docflow-0904",
+   "added": "2026-09-04",
+   "what": "E2-10·D3-06 정정 파일 반영 확인(그레프 완료, v0 재검사 필요) · C2-11 1차출처 날짜 대조 완료(오류 없음, v0 최초검사 필요) · docflow 는 Agent 도구가 없어 v0 을 직접 못 띄운다 — 관제탑이 띄워야 함",
+   "due": "2026-09-05",
+   "cmd": "python -m studio.v0check; python -m studio.approvalcount",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "d1-08-title-drift-0904",
+   "added": "2026-09-04",
+   "what": "D1-08 제목 드리프트 미해소 — 라이브는 정정됐으나 DB(lifeinfo_db.txt)는 옛 제목 그대로. DB: '2026년 10월 개천절 대체공휴일 확정 — 10월 3~5일 연휴 총정리 (한글날 10월 9일 포함)' / LIVE: '2026 개천절 대체공휴일 총정리 (10월 3일~5일 연휴 · 법 요건 3가지)'. 이 때문에 09-03 23:48 피드 드리프트 검사가 실패했고(2회 재시도 모두 실패) 고치지 않으면 오늘 23:50 에도 또 실패한다. 원인 배선은 watch title-stale-0903 참조 — 이 항목은 남은 데이터 정정분이다.",
+   "due": "2026-09-04",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['title'] for p in db['posts'] if p.get('code')=='D1-08'])\" 로 DB 제목이 라이브와 같아졌는지 확인",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-c2-11",
+   "added": "2026-09-04",
+   "what": "🔴 V0 반려 확인 요청 — C2-11 「본인부담상한액 초과금 환급 총정리 (226만명·3조760억, 9월 2일부」. 검사자 V0검사관 · 2026-09-04T22:16. 사유 요약: 함정3종(요양병원120일=제외아닌 더높은상한액/비급여·선별급여 비합산/체납공제 10-8 미시행)은 실질 인정 — V0요소 자체는 충족. 그러나 ①본문 사실오류: sec3 표 '사후환급=사전급여 대상 제외한 나머지'는 틀렸다. 보도자료 붙임1은 '사전급여 적용금액 제외'(금액이지 사람이 아님)이고 붙임4 사례1의 A씨는 사전급여 780만원을 받고도 사후환급 1,020만원을 추가로 받았다 — 사전급여 받은 독자가 '나는 대상 아니다'로 읽고 신청을 건너뛴다(YMYL 금액표 오류) ②출처박스가 스스로와 모순: '소득구간별 상한액표는 원문 … 🔴 전문은 `python -m studio.v0check gate --code C2-11` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.v0check gate --code C2-11",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "a504-ltc-rate-fix-0904",
+   "added": "2026-09-04",
+   "what": "A5-04(2027년 최저임금) 라이브 본문 장기요양보험료율 12.95%->13.14% 정정 필요(2026년 확정치, mohw.go.kr 2025-11-04 보도자료 1차확인). 공제표 약10400원->약10565원, 공제합계·실수령액도 소폭 재계산 필요",
+   "due": "2026-09-05",
+   "cmd": "python studio/blogger.py update-post --code A5-04 (본문 12.95%->13.14% 및 관련 금액 재계산 후 미리보기->사용자승인->반영)",
+   "owner": "claude",
+   "state": "todo",
+   "note": 192
   }
  ]
 }
