@@ -4516,7 +4516,9 @@
    "due": "2026-09-03",
    "cmd": "python -m studio.pipeline naver-draft --code B1-09 --open",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-04",
+   "result": "완료 — 사장님이 게시하셨고 URL(blog.naver.com/magsori8975/224400940778) 기록·crosslink 확인. 라이브에 네이버·쓰레드·인스타 3링크 다 있다. B1-09 4채널 완결"
   },
   {
    "id": "publish-go-d1-08",
@@ -4565,6 +4567,54 @@
    "what": "발행 준비구(3번 루틴) 09-04 점검 — 큐 3편 중 V0 승인 완료 0편. B4-10: 5차 정정(L13 검색설명 103자, 커밋 d35b328) 20:11 완료 — V0검사관 4차 반려(20:09) 이후 수정이라 재검사 필요. E2-10·D3-06: 09-03 초안 등록 후 V0 검사 이력 자체 없음(v0check list 미등재). 셋 다 go 도장 없음 — 발행 준비구 몫이 아니라 이부장 V0 검사가 먼저다.",
    "due": "2026-09-04",
    "cmd": "python -m studio.v0check gate --code B4-10 (재검사) ; python -m studio.v0check gate --code E2-10 ; python -m studio.v0check gate --code D3-06 (초검사)",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub-trigger-b4-10",
+   "added": "2026-09-04",
+   "what": "🚀 B4-10 발행 트리거 — 사장님이 직접 실행. 권고: 실행하십시오. ⑦승인은 이미 하셨고(go 도장 15:14:40) V0 5차 통과·게이트 전부 통과했는데, 이과장 세션이 'Blocked by classifier' 로 워크플로 실행이 거부됐다. 세션 권한 경계라 다른 세션이 대신 못 누른다",
+   "due": "2026-09-04",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=B4-10 -f mode=live -f confirm=PUBLISH -f file='부가세2기예정신고_글_HTML.txt' -f title='2026 부가가치세 2기 예정신고 예정고지 총정리 (법정기한 10월 25일, 실제 마감은 26일)'",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "done_at": "2026-09-04",
+   "result": "1번 ⑧발행실행 카드와 중복 — 내가 올린 것이 큐 카드와 겹쳤다. 큐 카드에서 누르시면 된다"
+  },
+  {
+   "id": "v0check-approval-wiring-0904",
+   "added": "2026-09-04",
+   "what": "v0check._to_approval 이 거짓 성공을 찍는다. subprocess.run(watch add, capture_output=True) 의 returncode 를 안 보고 '결재함에 올렸다'를 무조건 print(studio/v0check.py L162-169). 실제로는 2026-09-03 watch add 에 붙은 '이미 발행대기 큐에 있으면 거부' 가드에 막혀 등록이 안 된다. 실측: v0reject-* 는 09-03 d1-08 까지만 있고, 오늘 반려한 E2-10·D3-06 은 둘 다 queue.json 에 있어 watch.json 미등록(grep 0건). 영향은 결재함 boss 카드 1장뿐 — approval.html 은 v0check.json 의 rejList/stepOf(-6) 로 반려를 따로 표시하고 gate 도 exit 1 로 막으므로 발행은 안 된다. 고칠 것 둘: ①returncode 확인 후에만 성공 문구를 찍을 것(안 되면 '결재함 등록 실패'라고 크게) ②큐에 있는 코드의 V0 반려는 결재함 중복이 아니라 반려 사유 전달이므로 가드 예외로 둘지 판단",
+   "due": "2026-09-04",
+   "cmd": "grep -o 'v0reject-e2-10\\|v0reject-d3-06' webapp/watch.json ; python -m studio.watch add --id v0reject-d3-06-x --owner user --due 2026-09-04 --what t --cmd t",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-e2-10",
+   "added": "2026-09-04",
+   "what": "🔴 V0 반려 확인 요청 — E2-10 「카드 포인트 계좌입금 신청 방법 총정리 (2026 즉시입금 카드사·대표포」. 검사자 V0검사관(재등록) · 2026-09-04T16:14. 사유 요약: 2021-01-05 금융위 자료를 2026 기준이라 표기 · 롯데카드 분류 원문과 불일치 · V0 실질이 별첨3 재정리. 전문은 v0check gate 로. … 🔴 전문은 `python -m studio.v0check gate --code E2-10` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.v0check gate --code E2-10",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-d3-06",
+   "added": "2026-09-04",
+   "what": "🔴 V0 반려 확인 요청 — D3-06 「가정용 소화기 내용연수 확인 방법 총정리 (2026 분말소화기 10년·아」. 검사자 V0검사관(재등록) · 2026-09-04T16:14. 사유 요약: 적용범위 사실오류 — 단독주택은 시행령 별표2 특정소방대상물에 없다(전수+grep 확인). 그런데 tip 은 '단독주택은 소유자 본인'이라 하고 같은 글 함정②는 단독주택을 제10조에 둔다 = 자기모순. 통과조건: 제17조① 적용범위를 3행 판정표(단독/연립·다세대/아파트등)로 세울 것. 전문은 v0check gate 로. … 🔴 전문은 `python -m studio.v0check gate --code D3-06` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-04",
+   "cmd": "python -m studio.v0check gate --code D3-06",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "cp-audit-0904",
+   "added": "2026-09-04",
+   "what": "progress.html 이 09-01 01:57(e379878)부터 3일·69커밋째 미해결 git merge conflict marker(<<<<<<< HEAD/=======/>>>>>>> origin/main, L135-139)를 그대로 물고 있어 script#1 SyntaxError로 화면 전체가 죽어있다(node --check 확인). 부수: index_board.html 은 pub_dates.json 이 08-21 이후 14일째 안 구워져 낡은 색인추이를 보여줌. selfcheck 10)재확인대기는 watch.py의 'from studio import audit' 상대경로 문제로 항상 검사실패(ModuleNotFoundError: No module named studio)로 조용히 죽어있음.",
+   "due": "2026-09-05",
+   "cmd": "python tools/check_webapp_js.py && sed -n '133,140p' webapp/progress.html",
    "owner": "claude",
    "state": "todo"
   }

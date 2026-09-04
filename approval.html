@@ -439,6 +439,39 @@ var DATA = Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v
              j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
              j('watch.json'),j('pending.json'),j('osmu_text.json')]);
 
+// 🔴 **화면이 스스로 이상을 알린다** (2026-09-04 사장님: "cp 관리 똑바로 못해!?")
+//    `studio/gatecheck.py` 가 bake 마다 돌아 `gates.json` 을 굽는데
+//    **어느 화면도 그것을 읽지 않았다** — 데이터는 있고 아무도 안 봤다.
+//    그래서 09-04 결재함 11건 중 4건(중복 1·완료 1·초안없음 2)이
+//    사장님이 물으실 때까지 그대로 떠 있었다.
+//    관제탑이 매번 도구를 돌려야 발견되는 구조면 반드시 빠진다 —
+//    **화면이 열릴 때마다 저절로 보이게 한다.**
+j('gates.json').then(function(g){
+  if(!g) return;
+  var ps = g.problems || [];
+  if(!ps.length) return;
+  // 🔴 **기존 배너를 지우고 새로 그린다** — 30초마다 자동 갱신되므로
+  //    지우지 않으면 화면에 계속 쌓인다(2026-09-04 실측: 두 번 떴다).
+  //    `.srv` 배너가 이미 같은 방식으로 처리하고 있었는데 그것을 안 따라 했다.
+  var _old = document.querySelector('.gatebanner');
+  if(_old) _old.remove();
+  var d = document.createElement('div');
+  d.className = 'gatebanner';
+  d.style.cssText = 'background:#3a1d1d;border:1px solid #7a3030;border-radius:10px;'
+    + 'padding:12px 16px;margin:10px 0;line-height:1.7';
+  d.innerHTML = '<b style="color:#ff9b9b">🚨 게이트 자가검사 ' + ps.length + '건 — 화면이 사실과 다를 수 있습니다</b>'
+    + '<div style="font-size:13px;color:#e6b8b8;margin-top:6px">'
+    + ps.map(function(x){
+        return '· ' + String(typeof x === 'string' ? x : (x.msg || x.kind || JSON.stringify(x)))
+                 .replace(/</g,'&lt;');
+      }).join('<br>')
+    + '</div><div style="font-size:12px;color:#c99;margin-top:8px">'
+    + '확인: <code>python -m studio.gatecheck</code> · 구운 시각 ' + (g.updated||'?') + '</div>';
+  var host = document.querySelector('.srv') || document.body.firstElementChild;
+  if(host && host.parentNode) host.parentNode.insertBefore(d, host.nextSibling);
+  else document.body.insertBefore(d, document.body.firstChild);
+});
+
 findServer().then(function(url){ SRV=!!url; if(url) API=url;
   return SRV; })
  .then(function(up){
@@ -562,6 +595,19 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
 
   var boss=[], lee=[];
   T.forEach(function(t){
+    // 🔴 **초안 없는 글감은 사장님 결재함에 올리지 않는다** (2026-09-04)
+    //    사장님이 두 번 지적하셨다 — 08-31 "승인을 뭘 보고 승인하냐구? 초안도
+    //    안 보았는데!" / 09-04 "결재대기 11건인데 이거 맞어?"(G4-06·C2-11 이
+    //    초안 없이 떠 있었다). `topicprop kakao` 에는 게이트가 있는데 이 화면이
+    //    state 를 직접 읽어 우회하고 있었다.
+    //    판정은 topicprop.json 의 `draft` 필드(studio/draftfind 가 구움)만 본다.
+    //    ⚠️ 여기서 다시 세지 마라 — 같은 것을 두 곳에서 세면 반드시 갈린다.
+    if(t.state==='picked' && t.draft===false){
+      lee.push({act:'topic_draft',c:t.code,t:t.title,
+        why:'초안이 없다 — 이과장에게 초안을 지시하고, 나온 뒤에 사장님께 올린다',
+        cmd:'python -m studio.batchboard set --id draft'+t.code.toLowerCase().replace('-','')+' --title "초안 '+t.code+'" --items <items.json>'});
+      return;
+    }
     if(t.state==='picked') boss.push({act:'topic_approve',c:t.code,t:t.title,
       why:'글감 승인 대기(③) · '+(t.why||''),
       sum:t.summary||'', facts:t.facts||'',
