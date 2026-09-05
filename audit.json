@@ -824,6 +824,78 @@
    "target": "naverstats-kw-more-0905",
    "detail": "naver-stats-check 에 통합 — 둘 다 네이버 통계 캡처라 한 번에 하시는 게 맞다. 통합 항목에 크리에이터 어드바이저 '더보기' 절차를 포함시켰다.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:28:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-drift-fix-0906",
+   "detail": "배포 완료(2026-09-06 04:2x, 사장님 지시 '돌려줘'). 실측: 소스·배포본 D1-08 제목이 '2026 개천절 대체공휴일 총정리 (10월 3일~5일 연휴 · 법 요건 3가지)' 로 일치, 양쪽 234편. 오늘 밤 드리프트 검사는 통과한다. 배포 부가검사도 전부 정상 — 카테고리 페이지 234편 갱신 · 썸네일 234개 github.io 200 · 블로거 초안 찌꺼기 0.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:32:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "prod-G4-06-0905",
+   "detail": "aff-issue-0906 으로 통합 — 발급 대상이 2글 4상품이라 한 장으로 묶었다. 크롬 쇼핑링크 탭에서 한 번에 하시는 게 맞다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:32:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "prod-0905b",
+   "detail": "aff-issue-0906 으로 통합 — 위와 같다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:42:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "f216-duplicate-of-f213",
+   "detail": "실측 확인 — F2-16 은 topicprop 에서 이미 dropped(08-31, 사유: F2-13 과 중복). 처리가 끝난 일을 가리키는 미결이었다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:42:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thread-post-a216-0901",
+   "detail": "실측 확인 — DB osmu 에 3채널(네이버·쓰레드·인스타)이 전부 있다. 게시가 끝난 뒤 미결만 남아 있었다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:42:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thread-post-b108-0901",
+   "detail": "실측 확인 — DB osmu 에 3채널(네이버·쓰레드·인스타)이 전부 있다. 게시가 끝난 뒤 미결만 남아 있었다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:42:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-b109-missing",
+   "detail": "실측 확인 — DB osmu 에 3채널(네이버·쓰레드·인스타)이 전부 있다. 게시가 끝난 뒤 미결만 남아 있었다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:45:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aff-issue-0906",
+   "detail": "우선순위 밀림 — G4-06(추석 성수품)·D3-06(소화기)은 네이버 유입이 0인 글이다. 유입 상위 글 조사가 끝나 그쪽을 먼저 올린다(aff-issue-0906b). 이 4상품은 해당 글에 유입이 생기면 그때 발급받는다. 조사메모는 docs/affiliate_G4-06.md·affiliate_D3-06.md 에 그대로 남아 있다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T04:45:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "prod-navertraffic-0906",
+   "detail": "aff-issue-0906b 로 통합 — 5편에 필요한 상품이 5개로 겹쳐서 상품 기준으로 다시 묶었다(글 기준이 아니라).",
+   "via": "cli"
   }
  ]
 }
