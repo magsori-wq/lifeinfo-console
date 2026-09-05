@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-09-05T11:45:17",
+ "checked_at": "2026-09-06T04:27:06",
  "light": "yellow",
- "pass": 14,
- "warn": 3,
+ "pass": 13,
+ "warn": 5,
  "fail": 0,
  "checks": [
   {
@@ -23,15 +23,11 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (695개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (699개 확산링크)"
   },
   {
    "level": "PASS",
    "msg": "대분류 8개 (7±2 이내)"
-  },
-  {
-   "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 234편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -55,11 +51,11 @@
   },
   {
    "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 118종"
+   "msg": "초안 코드 1:1 통과: 119종"
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 460개 .py"
+   "msg": "소스 구문 통과: 462개 .py"
   },
   {
    "level": "WARN",
@@ -67,11 +63,19 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 6개: 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png, 139_personal_rehab.png, 208_bond_refund.png"
+   "msg": "미사용 썸네일 7개: 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png, 139_personal_rehab.png, 208_bond_refund.png, 211_biff_ticketing.png"
   },
   {
    "level": "WARN",
    "msg": "중분류 16/29개가 6~7편 초과 — 분가 검토(규칙 §5): F4 19편, F1 15편, B2 12편, A2 12편, F2 11편, E2 11편, D4 11편, D2 11편, A1 11편, C2 10편, B4 10편, B1 9편, A5 9편, A3 9편, D1 8편, C1 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "OSMU: F1-15 threads 링크 불일치 — 로그=https://www.threads.com/@magsori8975/post/Dcu-YDRgTeD vs DB.osmu=https://www.threads.com/@magsori8975/post/DcvYotUAXpg"
+  },
+  {
+   "level": "WARN",
+   "msg": "매니페스트 신선도: 제목·URL·썸네일 불일치 1건 → 'python -m studio.pipeline manifest' 재생성 권장"
   }
  ]
 }

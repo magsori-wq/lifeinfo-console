@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-05",
+ "updated": "2026-09-06",
  "items": [
   {
    "id": "redirect-error",
@@ -1583,8 +1583,10 @@
    "due": "2026-09-06",
    "cmd": "start https://search.google.com/search-console",
    "owner": "user",
-   "state": "todo",
-   "flag": "앞서 실패한 유효성 검사(리디렉션 오류 0/4)와 다른 건이다 — 섞지 말 것"
+   "state": "done",
+   "flag": "앞서 실패한 유효성 검사(리디렉션 오류 0/4)와 다른 건이다 — 섞지 말 것",
+   "done_at": "2026-09-06",
+   "result": "이부장 판단 — 내린다. 유효성 검사는 효과 0 으로 실측됐고(리디렉션 재확인 4건 전부 실패), 이 확인은 '7/10 이후 크롤된 것은 색인 안 된다' 가설을 검증하는 용도다. 그런데 가설이 깨지든 유지되든 처방은 바뀌지 않는다 — 색인 2/227 의 레버는 원본가치이지 재크롤 요청이 아니다(전수조사 2026-08-18 확정). 사장님 손을 쓸 값어치가 없다."
   },
   {
    "id": "redirect-error-reopen",
@@ -3219,9 +3221,9 @@
   {
    "id": "naver-stats-check",
    "added": "2026-08-30",
-   "what": "🙋 네이버 유입검색어·애드포스트 수익 확인 (today0817/05 에서 이관) — 네이버는 Claude 가 못 연다(robots.txt 차단 + 확장 프로그램이 naver.com 도메인 전체를 막는다. 2026-08-18 4회 재현). 서치어드바이저 유입검색어와 애드포스트 수익은 사장님만 보실 수 있다. 캡처해 주시면 판독한다. 캡처 폴더 = C:/ProgramData/Windows Master Store/Circle to Act",
+   "what": "🙋 네이버 통계 2가지 캡처 (Claude 는 네이버를 못 연다 — robots.txt 차단 + 확장이 naver.com 전체를 막는다) ①서치어드바이저 → 유입검색어·애드포스트 수익 ②크리에이터 어드바이저 → 유입분석 → 유입검색어 분석 → '더보기' 클릭 후 전체 (현재 10건뿐이라 판단이 얇습니다). 캡처만 해주시면 판독합니다. 캡처 폴더 = C:/ProgramData/Windows Master Store/Circle to Act",
    "due": "2026-09-06",
-   "cmd": "start https://searchadvisor.naver.com",
+   "cmd": "start https://searchadvisor.naver.com  그리고  start https://creator-advisor.naver.com",
    "owner": "user",
    "state": "todo"
   },
@@ -3232,7 +3234,9 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.naverstat",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "이부장 판단 — 대상이 특정되지 않아 사장님이 실행하실 수 없는 항목이었다. 실측: naver_rel.json 15건(08-20)·naver_dup.json 197건(08-19)이고 '어느 5편'인지가 어디에도 없다. osmu/ 의 최신 원고는 전부 신규 글 원고이지 보강본이 아니다. 대상을 이부장이 확정한 뒤 다시 올린다(watch naver-rewrite-target-0906)."
   },
   {
    "id": "ops-guide-0830",
@@ -4711,7 +4715,9 @@
    "due": "2026-09-05",
    "cmd": "python -m studio.affiliate block --code F1-15 --channel threads",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "이부장 결정 — 붙이지 않는다. 재게시하면 쓰레드 URL이 바뀌어 DB osmu.threads·교차링크·crosslink 정합을 다시 맞춰야 하는데, 얻는 것은 링크 1개 수익뿐이다(누락은 위반이 아니다). 비용>이득. 다음 글부터 threadsdraft 게이트가 막으므로 재발하지 않는다."
   },
   {
    "id": "aff-channel-0905",
@@ -4742,7 +4748,9 @@
    "cmd": "creator-advisor.naver.com → 유입분석 → 유입검색어 분석 탭 → '더보기' 클릭 → 캡처해서 보내기",
    "owner": "user",
    "kind": "action",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "naver-stats-check 에 통합 — 둘 다 네이버 통계 캡처라 한 번에 하시는 게 맞다. 통합 항목에 크리에이터 어드바이저 '더보기' 절차를 포함시켰다."
   },
   {
    "id": "naverstats-visitor-recheck-0905",
@@ -4835,7 +4843,9 @@
    "due": "2026-09-05",
    "cmd": "python -m studio.dupcheck \"자동차 채권 미환급금 조회 환급 신청 방법 총정리 (지역개발채권·도시철도채권 숨은 돈)\"",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "이부장 결정 — 권장② 채택. D2-12 폐기(topicprop drop), 2023년 개정 내용은 B2-03 라이브에 update-post 로 얹는다. 지시서 boost0906b203 을 이과장에게 냈다. 초안 파일은 지우지 않고 자료로 둔다."
   },
   {
    "id": "dupcheck-paren-blind-0905",
@@ -4853,7 +4863,9 @@
    "due": "2026-09-05",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -w '피드 드리프트 검사' -L 3 --json databaseId,conclusion,createdAt",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "원인 규명 완료 — 드리프트 1건 = D1-08 제목 불일치(retitled). 라이브 실측 확인 후 소스 DB 정정(커밋 69a226b). 배포 저장소 반영은 deploy-drift-fix-0906 으로 이관"
   },
   {
    "id": "regionbond-treasury-banks-20260905",
@@ -4870,6 +4882,97 @@
    "what": "지역개발채권 소멸시효 근거가 D2-12 초안과 법령 조사 결과가 어긋난다 — 대조 필요. ▷초안 src 블록: '지역개발채권 소멸시효(원금10년·이자5년)는 강원특별자치도 정부24 공식 안내를 근거로 확인'. ▷조례 원문(source 에이전트, docs/source_regionbond_20260905.md): 강원특별자치도 지역개발기금 설치 조례에는 **소멸시효 조항이 아예 없다**(제6조는 상환·이율만). 원금10년/이자5년을 조례로 직접 정한 곳은 **경기도**(제15조)다. 강원은 조항이 없어 지방재정법 제82조 일반원칙 5년 적용 여지(에이전트도 이건 추정이라고 명시). ▷즉 초안이 '강원 근거'라고 쓴 수치는 실제로는 경기 조례 값일 가능성이 크다. 정부24 강원 안내 페이지를 직접 열어 대조할 것. ▷확정된 것: 도시철도채권은 도시철도법 제20조④에 '원금 및 이자의 소멸시효는 상환일부터 기산하여 5년' 이 직접 있어 강행규정 — 초안 주장 맞다. ▷B2-03 에도 같은 문제: 표가 지역개발채권 원금시효 10년을 일반값처럼 싣는다. 보강 시 '시도 조례마다 다르다' 로 고칠 것. ▷추가 확인: 안심상속 원스톱서비스 조회항목에 지방채·지역개발채권·도시철도채권 **없음**(정부24 공식) — 두 글 어디에도 상속인 조회 경로를 쓰면 안 된다",
    "due": "2026-09-06",
    "cmd": "grep -n -A4 '강원특별자치도 지역개발기금' docs/source_regionbond_20260905.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "pub-a510-blocked-0905",
+   "added": "2026-09-05",
+   "what": "[pub0905a] A5-10 발행이 세트 게이트에 막혔다 — 앞 글 G2-04 의 네이버 원고 없음 + 인스타 미게시. 조치 진행 중: 네이버 원고는 에이전트 작성 중, 인스타 게시는 이과장(카드 6장 제작 완료). 사장님 손은 아니다",
+   "due": "2026-09-05",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "threads-a510-badurl-0905",
+   "added": "2026-09-05",
+   "what": "🔴 A5-10 쓰레드 URL 이 죽은 임시 ID — Dc56ArbgVA(10자) curl 302. 정상은 11자(G2-04 Dc51nSBAUc6 는 200). 게시 직후 DOM 에서 읽은 낙관적 렌더링 값이다(2026-08-31 과 같은 사고). 실제 URL 을 다시 잡아 threads-link 로 덮어써야 하고, 그 전에는 crosslink 를 돌리면 안 된다 — 라이브에 죽은 링크가 들어간다",
+   "due": "2026-09-05",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://www.threads.com/@magsori8975/post/<정정된ID>",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-05",
+   "result": "오판이었다 — 302 는 임시 ID 가 아니라 **게시 직후 전파 지연**이었다. 같은 URL(Dc56ArbgVA)이 몇 분 뒤 200 이 됐다. 🔴 교훈: 게시 직후 302 를 '죽은 URL' 로 단정하지 말 것. 임시 ID 판정은 **몇 분 뒤 재확인**으로 한다(2026-08-31 사고는 진짜 임시 ID 였고 재확인해도 302 였다)"
+  },
+  {
+   "id": "source-c-goldentime-0906",
+   "added": "2026-09-06",
+   "what": "환절기 심뇌혈관질환 골든타임 글감 팩트체크 결과 — 뇌졸중4.5h/3~6h·심근경색3h/90분 원문확보, 환절기증가율·FAST명칭·129역할·권역센터현황 4건은 확인실패로 미기재",
+   "due": "2026-09-06",
+   "cmd": "cat C:/lifeinfo/tmp_source_goldentime.md",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "C2-13 제안에 반영 완료(topicprop add)"
+  },
+  {
+   "id": "g304-biff2026-guide",
+   "added": "2026-09-06",
+   "what": "BIFF 2026 예매안내 상세 페이지(page_num=11395)가 09-06 시점 coming soon 상태 - 로그인/결제수단/대기열 등 실전팁 원문 미공개. 1차 예매(9/17 14시) 직전 재조회 필요",
+   "due": "2026-09-17",
+   "cmd": "curl -s -A Mozilla/5.0 'https://www.biff.kr/kor/addon/10000001/page.asp?page_num=11395' | grep -c commingsoon",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "source-cde-newtopic-0906",
+   "added": "2026-09-06",
+   "what": "C/D/E 신규 글감 후보 조사 결과 — 모바일 신분증 민간개방 확대(2026 하반기 4개 은행 앱 추가·삼성카드)",
+   "due": "2026-09-06",
+   "cmd": "cat C:/lifeinfo/tmp_source_newtopic.md",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "E2-13 제안에 반영 완료(topicprop add, 하반기 개시일은 확인실패 명시)"
+  },
+  {
+   "id": "v0reject-g3-04",
+   "added": "2026-09-06",
+   "what": "🔴 V0 반려 확인 요청 — G3-04 「2026 부산국제영화제 BIFF 예매 방법 티켓팅 일정 총정리 (10월 」. 검사자 V0검사관 · 2026-09-06T04:16. 사유 요약: 사실오류 없음(수수료 3구간=biff.kr 보도자료 첨부이미지와 완전일치·요일 7개·1차2차 프로그램 목록 일치·관련글 D4-05/F4-13 실재·썸네일 실사진 CINEMA TICKETS 소재적합). 반려 사유는 재정리다: 본문 6개 절이 보도자료 1건에 1:1 대응하고 3절은 스스로 '공식 예매 안내 원문'이라 이름 붙인 불릿 복사다. 작성자 몫은 곱셈 1회(1,000x2=2,000)·날짜 뺄셈 1회·목차/CTA뿐. 1차2차 표는 선택지가 아니라 조회표라 판단형비교가 아니고, 함정2는 공식 수수료 이미지의 ※문구를 굵게 옮긴 것이 … 🔴 전문은 `python -m studio.v0check gate --code G3-04` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.v0check gate --code G3-04",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "이부장 검토 완료 — 반려 타당. 사실오류 0건이나 ①디지털취약계층 현장창구(65세이상·장애인 한정좌석) 누락으로 3절이 '매진·취소표뿐'이라 불완전 서술 ②개폐막식 9,000x2=18,000원 계산 없음 ③바이라인이 '정부부처 공식자료·연락처'라는데 출처는 민간 BIFF 1곳·연락처 없음. 보강 지시서 draft0906g304 갱신·이과장 통보 완료. 사장님 확인 불필요."
+  },
+  {
+   "id": "drift-cause-deploy-0906",
+   "added": "2026-09-06",
+   "what": "드리프트 검사 2일 연속 실패의 원인 확정 = 배포 미반영. D1-08 제목이 소스(C:\\lifeinfo)에는 정정돼 있으나 배포본(C:\\lifeinfo-deploy\\lifeinfo_db.txt)은 옛 제목 그대로다. 드리프트 워크플로는 배포 저장소(lifeinfo-console)를 체크아웃하므로 deploy.bat 이 돌기 전까지 매일 밤 계속 실패한다. 워크플로 버그가 아니라 미배포다.",
+   "due": "2026-09-06",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "deploy-drift-fix-0906 과 같은 건이라 통합 — 원인·조치·명령이 동일하다(배포 미반영, deploy.bat 1회). 결재함에 같은 일이 두 줄로 뜨면 사장님이 두 번 하신 줄 아신다."
+  },
+  {
+   "id": "deploy-drift-fix-0906",
+   "added": "2026-09-06",
+   "what": "D1-08 제목 드리프트 — 소스 DB 는 정정 완료(커밋 69a226b). 그런데 피드 드리프트 검사는 배포 저장소 루트의 lifeinfo_db.txt 를 읽으므로, deploy.bat 을 한 번 돌려야 실제로 해소된다. 안 돌리면 오늘 밤 22:00 UTC(07:00 KST) 검사가 3회째 실패한다",
+   "due": "2026-09-06",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-rewrite-target-0906",
+   "added": "2026-09-06",
+   "what": "네이버 보강 대상 5편을 실제로 확정한다 — naver_rel(15건·08-20)·naver_dup(197건·08-19)에서 어느 것이 지금도 유효한지 재측정하고, 보강 원고가 실제로 있는지 osmu/ 대조. 대상이 확정되면 그때 결재함에 올린다.",
+   "due": "2026-09-09",
+   "cmd": "python -m studio.naverstat",
    "owner": "claude",
    "state": "todo"
   }
