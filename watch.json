@@ -4818,6 +4818,15 @@
    "cmd": "grep -n '신규 사업' 양산신중년고용지원금_글_HTML.txt; python -m studio.v0check --code G2-04",
    "owner": "claude",
    "state": "todo"
+  },
+  {
+   "id": "a510-precision-0905",
+   "added": "2026-09-05",
+   "what": "A5-10 발행 후 정밀도 보강 2건(V0검사관 비차단 지적) — ①'창구가 약 5개월 반'은 실제 5개월 24일 ②제18조의2②·제18조의4②(급여 지급분 한도에서만 사업주 면책)를 안 실어, 통상임금이 상한을 넘는 근로자의 차액을 사업주가 계속 부담한다는 점이 안 보인다. 틀린 서술은 아니라 발행은 막지 않는다",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.v0check --code A5-10",
+   "owner": "claude",
+   "state": "todo"
   }
  ]
 }

@@ -237,10 +237,26 @@ function pubLink(code, file, title){
     +' code <b>'+esc(code)+'</b> · mode <b>live</b> · confirm <b>PUBLISH</b>'
     +(file?' · file <b>'+esc(file)+'</b>':'')+'</div>';
 }
+// 📱🔴 **휴대폰 승인은 클릭 한 번이어야 한다** (2026-09-05 사장님 지시)
+//    사장님: *"승인하기만 누르면 되지 깃허브에 왜 들어가서 또 하게 해"*
+//
+//    전에는 Actions 워크플로 페이지로만 보냈다 — 거기서 [Run workflow] 를 누르고
+//    **target·action·why 3칸을 손으로 입력**해야 했다(4단계).
+//    GitHub 은 workflow_dispatch 폼을 URL 로 미리 채울 수 없다. 그런데 **이슈는 된다.**
+//    → 제목을 미리 채운 이슈 링크를 준다. 사장님은 [Submit] 한 번만 누르시면 되고,
+//      approve.yml 의 `issues: [opened]` 트리거가 받아 도장을 찍고 이슈를 닫는다.
+//    🔴 저장소가 PRIVATE 이고 워크플로가 작성자를 대조하므로 남이 열 수 없다.
+var GH_ISSUE='https://github.com/magsori-wq/lifeinfo-source/issues/new';
 function extLink(target, act){
-  return '<a class="ext" href="'+GH_APPROVE+'" target="_blank" rel="noopener">'
-    +'📱 외부에서 승인</a> <span class="exthint">Run workflow → '
-    +'<b>'+esc(target)+'</b> / '+act+'</span>';
+  var t = '결재: ' + target + ' / ' + act;
+  var body = '이 이슈를 열면 자동으로 결재됩니다. 내용을 고치지 마세요.' + '\n\n'
+    + '· 대상: ' + target + '\n'
+    + '· 동작: ' + act + '\n'
+    + '· 처리되면 댓글이 달리고 이슈가 자동으로 닫힙니다.';
+  var href = GH_ISSUE + '?title=' + encodeURIComponent(t)
+           + '&body=' + encodeURIComponent(body);
+  return '<a class="ext" href="'+href+'" target="_blank" rel="noopener">'
+    +'📱 휴대폰으로 승인</a> <span class="exthint">클릭 → <b>Submit</b> 한 번이면 끝</span>';
 }
 // 🔴 원고 탭-복사 (2026-08-31). 원고는 수천 자라 HTML 속성에 담으면 깨진다 — 배열 참조.
 var TXT=[];
