@@ -1,9 +1,9 @@
 {
- "rev": "8e935459",
+ "rev": "2c2fa4a",
  "counts": {
   "total": 232,
-  "osmu_done": 231,
-  "osmu_pending": 1,
+  "osmu_done": 232,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 232,
   "index_requested": 206,
@@ -24,23 +24,6 @@
     "g": true,
     "n": true,
     "t": true,
-    "i": false
-   }
-  },
-  {
-   "code": "C2-11",
-   "title": "본인부담상한액 초과금 환급 총정리 (226만명·3조76",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
     "i": false
    }
   },
@@ -225,6 +208,22 @@
   {
    "code": "C2-09",
    "title": "추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 ",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "C2-11",
+   "title": "본인부담상한액 초과금 환급 총정리 (226만명·3조76",
    "need": [
     "색인요청"
    ],
