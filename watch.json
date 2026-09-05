@@ -4651,7 +4651,9 @@
    "due": "2026-09-04",
    "cmd": "python -m studio.v0check gate --code C2-11",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-05",
+   "result": "V0 통과로 해소 — 검사자 V0검사관(3차) · 붙임1·붙임4 원문 축자대조: (a)sec3표 '사전급여 적용금액 제외'(사람 아닌 금액)로 정정 + A씨 중복수급 계산예시(780+1020=1800, 89+1800=1889) 원문일치 (b)소득분위별 상한액표 7행"
   },
   {
    "id": "a504-ltc-rate-fix-0904",
@@ -4671,7 +4673,9 @@
    "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=G4-06 -f mode=live -f confirm=PUBLISH -f file='추석농축산물할인_글_HTML.txt' -f title='정부지원 590억 추석 농축산물 할인 총정리 (9월 3일~23일, 어디서 얼마나 싸게 사나)'",
    "owner": "user",
    "kind": "approve",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-05",
+   "result": "해소 — D3-06·E2-10 발행 완료"
   },
   {
    "id": "thread-g406-wait",
@@ -4716,6 +4720,74 @@
    "due": "2026-09-06",
    "cmd": "1) https://campaign.naver.com (또는 in.naver.com) 로그인 후 브랜드커넥트 메뉴 확인 2) 네이버 블로그 관리 > 고객센터 > 운영정책 검색 3) https://partners.coupang.com 로그인 후 공지사항 17번 열람",
    "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "pub-blocked-0905",
+   "added": "2026-09-05",
+   "what": "🚨 D3-06 발행 — 사장님이 ①(관제탑 실행)을 허락하셨으나 **권한 분류기가 gh workflow run 을 차단**했다(2026-09-05 14:5x 실측). 관제탑이 우회하면 안 되는 종류다. 아래 명령을 사장님 입력창에서 앞에 ! 를 붙여 실행하시면 된다. 끝나면 E2-10 도 같은 방식(code·file·title 만 바꿈).",
+   "due": "2026-09-05",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D3-06 -f mode=live -f confirm=PUBLISH -f file='가정용소화기내용연수_글_HTML.txt' -f title='가정용 소화기 내용연수 확인 방법 총정리 (2026 분말소화기 10년·아파트도 해당)'",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "done_at": "2026-09-05",
+   "result": "D3-06·E2-10 둘 다 발행 완료(15:0x). 사장님이 ① 허락하셨고, 권한 분류기에 한 번 막힌 뒤 사장님이 명령을 직접 주셔서 실행됨"
+  },
+  {
+   "id": "naverstats-kw-more-0905",
+   "added": "2026-09-05",
+   "what": "네이버 통계 도구 — 유입검색어 '더보기'로 나머지 검색어 캡처해서 전달(현재 10건뿐이라 판단이 얇음)",
+   "due": "2026-09-05",
+   "cmd": "creator-advisor.naver.com → 유입분석 → 유입검색어 분석 탭 → '더보기' 클릭 → 캡처해서 보내기",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo"
+  },
+  {
+   "id": "naverstats-visitor-recheck-0905",
+   "added": "2026-09-05",
+   "what": "네이버 통계 — 며칠 뒤 방문자 분석(성별연령별) 재캡처해서 40~60대 타깃 가정 재검증(지금 표본 47명·1일치뿐이라 결론 보류중)",
+   "due": "2026-09-08",
+   "cmd": "creator-advisor.naver.com → 통합데이터 → 방문 사용자 분석 → 성별연령별 조회수 → 캡처",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo"
+  },
+  {
+   "id": "v0recheck-c211-0905",
+   "added": "2026-09-05",
+   "what": "C2-11 재검사 결과: pass · sec3 사후환급 대상 오류(a)·소득분위표 누락(b)·출처박스 모순(c) 3건 모두 원문 대조로 해소 확인, 새 오류 없음",
+   "due": "2026-09-05",
+   "cmd": "python -m studio.v0check",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "docflow-blocked-0905",
+   "added": "2026-09-05",
+   "what": "새 지시서(A5-10 초안·D3-06/E2-10 OSMU) 등록이 batchboard order 게이트에 막힘 — pub0905d306·pub0905e210(이과장) 완료보고 미기록. 대신 찍지 않는다(규칙).",
+   "due": "2026-09-05",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "docflow-0905-1500",
+   "added": "2026-09-05",
+   "what": "밀린 것 정리: ②A5-10·G2-04 선별(픽)·D2-12 제외 / ⑤C2-11 3차 재검사 pass(원문대조 완료) → 사장님 go 확인 / ③새 지시서는 pub0905d306·e210 완료보고 게이트에 막혀 미등록 — 이과장 보고 대기 중",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.now",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naverlayout-origin-hole",
+   "added": "2026-09-05",
+   "what": "naverlayout 의 origin(원문 링크) 정규식이 헐겁다 — '함께 보면 좋은 글'의 다른 글 URL 로도 통과한다(B1-09 사고가 이 구멍). 해당 글 자신의 URL 인지 봐야 한다. E2-10 작업 에이전트가 발견",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.naverlayout",
+   "owner": "claude",
    "state": "todo"
   }
  ]
