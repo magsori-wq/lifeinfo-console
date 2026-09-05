@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-04",
+ "updated": "2026-09-05",
  "items": [
   {
    "id": "redirect-error",
@@ -4662,6 +4662,61 @@
    "owner": "claude",
    "state": "todo",
    "note": 192
+  },
+  {
+   "id": "pub-stalled-0905",
+   "added": "2026-09-05",
+   "what": "🚨 발행 승인 3건(D3-06·G4-06·E2-10)이 30분째 안 나갔다. 사장님은 11:57~11:58 에 이미 승인하셨다. 권고: 아래 명령을 직접 실행하시거나, 이 PC의 어느 세션이 이과장인지 알려주십시오(lifeinfo-65 [a901a9] / lifeinfo-d9 [9abf77] 중). 이유: '이과장' 이름을 이 PC의 다른 세션이 주장해 시스템이 사칭 경고로 전송을 막았다 — 발행은 되돌릴 수 없어 주소가 확실할 때만 지시한다",
+   "due": "2026-09-05",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=G4-06 -f mode=live -f confirm=PUBLISH -f file='추석농축산물할인_글_HTML.txt' -f title='정부지원 590억 추석 농축산물 할인 총정리 (9월 3일~23일, 어디서 얼마나 싸게 사나)'",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo"
+  },
+  {
+   "id": "thread-g406-wait",
+   "added": "2026-09-05",
+   "what": "G4-06 쓰레드 게시 대기 — 사장님 지시(09-05): '기다려 이과장이 할 수 있을 때까지'. 세트 게이트로 D3-06·E2-10 승인분이 함께 대기 중이지만 우회하지 않는다. 서버는 정상 확인(threads.com 200/1.26초) — 이과장 브라우저 세션 문제",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "setgate-hand-stale",
+   "added": "2026-09-05",
+   "what": "setgate.HAND 가 낡았다 — 네이버·인스타를 '원고만 있으면 통과'로 본다(게시는 사람 몫이라는 전제). 그런데 2026-08-24 사장님 지시로 인스타 게시는 이과장 몫이 됐고 오늘 roles 도 고쳤다. 지금 G4-06 이 네이버·인스타 게시 없이 통과하고 있다. ⚠️ 지금 고치면 게이트가 넓어져 승인분이 더 막히니 승인 3건이 다 나간 뒤에 손댈 것",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.setgate && grep -n 'HAND' studio/setgate.py",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "prod-G4-06-0905",
+   "added": "2026-09-05",
+   "what": "G4-06 제휴 상품 2건 순위 확정 — 1위 접이식 쇼핑카트(26,800원) 2위 냉동보관 지퍼백(22,400원/9,400원). 검색어·제휴사 docs/affiliate_G4-06.md 기여도순위 절 참고",
+   "due": "2026-09-05",
+   "cmd": "크롬 「쇼핑링크」 탭 그룹 → 쿠팡 파트너스 → '접이식 쇼핑카트' 검색 → 링크 발급 (2순위: '냉동보관 지퍼백')",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "aff-f115-threads-0905",
+   "added": "2026-09-05",
+   "what": "F1-15(여권분실) 쓰레드에 제휴 링크·표시문구가 빠진 채 게시됨 — 네이버는 붙었는데 쓰레드만 누락. 붙이려면 재게시 필요(URL 바뀜) · 안 붙이면 그대로 두면 됨(위반 아님, 수익만 0)",
+   "due": "2026-09-05",
+   "cmd": "python -m studio.affiliate block --code F1-15 --channel threads",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "aff-channel-0905",
+   "added": "2026-09-05",
+   "what": "제휴 채널 3건 1차출처 확인 필요: ①네이버 브랜드커넥트가 무엇이고 우리가 쓸 수 있는지(campaign.naver.com 또는 네이버 인플루언서센터 로그인) ②네이버 블로그 자체 운영정책이 쿠팡·토스 제휴링크를 제한하는지(블로그 고객센터 운영정책) ③쿠팡파트너스 활동금지사이트 목록(partners.coupang.com 공지 17번, 인스타/쓰레드 포함여부)",
+   "due": "2026-09-06",
+   "cmd": "1) https://campaign.naver.com (또는 in.naver.com) 로그인 후 브랜드커넥트 메뉴 확인 2) 네이버 블로그 관리 > 고객센터 > 운영정책 검색 3) https://partners.coupang.com 로그인 후 공지사항 17번 열람",
+   "owner": "user",
+   "state": "todo"
   }
  ]
 }

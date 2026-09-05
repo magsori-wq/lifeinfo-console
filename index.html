@@ -156,6 +156,7 @@
         <button data-t="generator">글 생성기</button>
         <button data-t="osmu">OSMU</button>
         <button data-t="jisikin">지식인</button>
+        <button data-t="naverstats">📊 네이버통계</button>
       </div>
       <div class="leafrow hide" data-group="browse">
         <button data-t="search">🔎 검색</button>
@@ -409,6 +410,7 @@
     <iframe id="f_generator" src="generator.html"></iframe>
     <iframe id="f_osmu" src="osmu.html"></iframe>
     <iframe id="f_jisikin" src="jisikin.html"></iframe>
+    <iframe id="f_naverstats" src="naverstats.html"></iframe>
     <iframe id="f_dashboard" src="dashboard.html"></iframe>
     <iframe id="f_ctrl" src="monitor.html"></iframe>
     <iframe id="f_progress" src="progress.html"></iframe>
@@ -430,7 +432,7 @@
 
 <script>
   var nav=document.getElementById('nav');
-  var iframes=['ctrl','search','categories','generator','osmu','jisikin','dashboard','progress','batch','approval','temp','pendosmu','orders','reports','idxboard','gsc','seo','adsense','incidents','opsguide'];
+  var iframes=['ctrl','search','categories','generator','osmu','jisikin','naverstats','dashboard','progress','batch','approval','temp','pendosmu','orders','reports','idxboard','gsc','seo','adsense','incidents','opsguide'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){

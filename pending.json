@@ -1,13 +1,13 @@
 {
- "rev": "9d5ed621",
+ "rev": "5fed03ed",
  "counts": {
-  "total": 229,
-  "osmu_done": 228,
+  "total": 230,
+  "osmu_done": 229,
   "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 229,
+  "index_pending": 230,
   "index_requested": 206,
-  "index_todo": 23
+  "index_todo": 24
  },
  "actionable": [
   {
@@ -24,6 +24,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "D3-06",
+   "title": "가정용 소화기 내용연수 확인 방법 총정리 (2026 분",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -65,16 +82,16 @@
    "code": "G4-06",
    "title": "정부지원 590억 추석 농축산물 할인 총정리 (9월 3",
    "need": [
-    "OSMU",
+    "인스타",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
-    "t": false,
+    "n": true,
+    "t": true,
     "i": false
    }
   },
@@ -209,22 +226,6 @@
   {
    "code": "B4-10",
    "title": "2026 부가가치세 2기 예정신고 예정고지 총정리 (법",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "C2-09",
-   "title": "추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 ",
    "need": [
     "색인요청"
    ],

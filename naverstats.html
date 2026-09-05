@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>네이버 통계 · 생활정보 모음</title>
+<style>
+  :root{--bg:#0f1626;--panel:#16203a;--line:#2a3a5e;--txt:#e8edf7;--sub:#9fb0d0;--accent:#4d9de0;--accent2:#06d6a0;--warn:#ffd166;--bad:#ff6b6b;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;line-height:1.6}
+  header{padding:20px 24px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#15233b,#0f1626)}
+  header h1{margin:0;font-size:20px}
+  header p{margin:6px 0 0;color:var(--sub);font-size:13px}
+  .warnbox{margin:0;padding:12px 24px;background:#12283a;color:#bfe3ff;font-size:12.5px;border-bottom:1px solid var(--line)}
+  .wrap{padding:20px 24px;max-width:1100px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:18px}
+  .card h3{margin:0 0 10px;font-size:15px;color:var(--accent)}
+  .meta{font-size:11.5px;color:var(--sub);margin-bottom:10px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+  th{color:var(--sub);font-weight:600;font-size:12px}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;background:#0c1220;color:var(--sub);border:1px solid var(--line)}
+  .hit{color:var(--accent2)}
+  .weak{color:var(--warn)}
+  .empty{padding:14px;background:#12283a;border:1px dashed var(--line);border-radius:10px;font-size:13px;color:var(--sub)}
+  .empty code{background:#0c1220;padding:2px 6px;border-radius:6px;color:#bfe3ff}
+  .empty pre{background:#0c1220;border-radius:8px;padding:10px;overflow-x:auto;font-size:12px;color:#cdd8ee}
+  .badge-ok{color:var(--accent2)}
+  .badge-no{color:var(--sub)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+  .sec-note{font-size:12px;color:var(--sub);margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <h1>📊 네이버 크리에이터 어드바이저 통계</h1>
+  <p>사람이 옮겨 적은 네이버 유입·조회수·방문자 데이터를 종합판단합니다. 글발행·제목 결정 시 참고 자료입니다.</p>
+</header>
+<div class="warnbox">
+  ℹ️ Claude 는 네이버 화면을 직접 열 수 없습니다(로그인 필요 + 확장 차단). 사장님이 화면을 보고
+  옮겨 적으면 세션이 <code>python -m studio.creatoradvisor import ...</code> 로 저장·분석하고,
+  이 화면은 그 결과를 <b>정적으로</b> 보여줍니다(발행마다 자동 갱신 — 직접 fetch 아님).
+</div>
+
+<div class="wrap" id="wrap">
+  <p class="meta">불러오는 중…</p>
+</div>
+
+<script>
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function fmt(n){return n==null?'?':n.toLocaleString();}
+function pct(n){return n==null?'?':n.toFixed(1)+'%';}
+
+fetch('naver_analytics_summary.json?t='+Date.now()).then(function(r){return r.json();}).then(render).catch(function(e){
+  document.getElementById('wrap').innerHTML = '<div class="empty">데이터를 불러오지 못했습니다 — naver_analytics_summary.json 이 아직 안 구워졌을 수 있습니다.</div>';
+});
+
+function render(d){
+  var w = document.getElementById('wrap');
+  var has = d.keywords || d.posts || d.visitors || d.daily;
+  if(!has){
+    w.innerHTML =
+      '<div class="empty">'
+      +'<b>아직 입력된 데이터가 없습니다.</b><br><br>'
+      +'네이버 크리에이터 어드바이저(creator-advisor.naver.com)에 로그인해서 화면을 보고,\n'
+      +'검색어·조회수·방문자 표를 메모장에 옮겨 적어 세션에 전달해 주세요. 형식:<br>'
+      +'<pre>연말정산 환급금|3200|410   ← 검색어|노출수|클릭수\n'
+      +'https://blog.naver.com/magsori8975/224329406305|1520   ← 글URL|조회수\n'
+      +'연령_40대|29                ← 구분|값</pre>'
+      +'세션이 <code>python -m studio.creatoradvisor import --type keywords --file &lt;파일&gt;</code> 로 저장하고 나면 이 화면에 자동으로 뜹니다.'
+      +'</div>';
+    return;
+  }
+  var html = '';
+  html += '<p class="meta">최근 반영: '+esc(d.baked_at||'?')+'</p>';
+
+  if(d.keywords){
+    var k = d.keywords;
+    html += '<div class="card"><h3>🔎 유입 검색어 — 노출/클릭 기여도</h3>';
+    html += '<div class="meta">'+esc(k.imported_at)+' · period='+esc(k.period||'?')+' · 이 묶음 합계 노출 '+fmt(k.total_impressions)+' · 클릭 '+fmt(k.total_clicks)+'</div>';
+    html += '<table><tr><th>검색어</th><th class="num">노출기여</th><th class="num">클릭기여</th><th class="num">CTR</th></tr>';
+    (k.rows||[]).forEach(function(r){
+      html += '<tr><td>'+esc(r.kw)+'</td><td class="num">'+pct(r.exp_share)+'</td><td class="num">'+pct(r.clk_share)+'</td><td class="num">'+pct(r.ctr)+'</td></tr>';
+    });
+    html += '</table>';
+    if((k.proven||[]).length){
+      html += '<p class="sec-note hit">🔹 다음 제목 후킹 재사용 후보: '+k.proven.map(function(r){return esc(r.kw);}).join(' · ')+'</p>';
+    }
+    if((k.opportunities||[]).length){
+      html += '<p class="sec-note weak">🔸 제목·후킹 재검토 후보(노출 대비 클릭 약함): '+k.opportunities.map(function(r){return esc(r.kw);}).join(' · ')+'</p>';
+    }
+    html += '</div>';
+  }
+
+  if(d.posts){
+    var p = d.posts;
+    html += '<div class="card"><h3>📈 조회수 순위 — DB 대조</h3>';
+    html += '<div class="meta">'+esc(p.imported_at)+' · period='+esc(p.period||'?')+'</div>';
+    html += '<table><tr><th class="num">조회수</th><th>코드</th><th>제목</th><th>카테고리</th></tr>';
+    (p.rows||[]).forEach(function(r){
+      var ok = !!r.code;
+      html += '<tr><td class="num">'+fmt(r.views)+'</td><td class="'+(ok?'badge-ok':'badge-no')+'">'+esc(r.code||'미매칭')+'</td><td>'+esc(r.title||'-')+'</td><td>'+esc(r.catName||'-')+'</td></tr>';
+    });
+    html += '</table>';
+    if((p.cat_sum||[]).length){
+      html += '<p class="sec-note">카테고리별 합산: '+p.cat_sum.map(function(x){return esc(x[0])+' '+fmt(x[1]);}).join(' · ')+'</p>';
+    }
+    html += '</div>';
+  }
+
+  if(d.visitors){
+    var v = d.visitors;
+    html += '<div class="card"><h3>👥 방문자 분석</h3>';
+    html += '<div class="meta">'+esc(v.imported_at)+' · period='+esc(v.period||'?')+'</div>';
+    html += '<div class="grid2">';
+    Object.keys(v.groups||{}).forEach(function(g){
+      html += '<div><b>'+esc(g)+'</b><table>';
+      (v.groups[g]||[]).sort(function(a,b){return (b.value||0)-(a.value||0);}).forEach(function(it){
+        html += '<tr><td>'+esc(it.label)+'</td><td class="num">'+fmt(it.value)+'</td></tr>';
+      });
+      html += '</table></div>';
+    });
+    html += '</div></div>';
+  }
+
+  if(d.daily){
+    var dd = d.daily;
+    html += '<div class="card"><h3>📅 일별 조회수 추이</h3>';
+    html += '<div class="meta">'+esc(dd.imported_at)+'</div>';
+    html += '<table><tr><th>날짜</th><th class="num">조회수</th></tr>';
+    (dd.rows||[]).forEach(function(r){
+      html += '<tr><td>'+esc(r.date)+'</td><td class="num">'+fmt(r.views)+'</td></tr>';
+    });
+    html += '</table></div>';
+  }
+
+  w.innerHTML = html;
+}
+</script>
+</body>
+</html>
