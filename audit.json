@@ -952,6 +952,302 @@
    "target": "F3-08",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:02:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-a6-02",
+   "detail": "V0 통과로 해소 — 검사자 이부장V0검사관2차 · 1차FAIL 사유 2건 실제 해소 확인: ①산수모순 — 표(L77)를 '각 항목 700만원 상한, 합산 1,000만원 상한'으로 재표현, 본문 전체(L64/77/101/127/129/138) 재검색해 700+700=",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:03:25",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "c2-13-blocks-a6-02-kakao-0906",
+   "detail": "정정: A6-02는 topicprop kakao와 무관하게 pubqueue 경로로 이미 결재함(⑦발행승인 3번)에 정상 등록됨 — approvalcount로 확인. C2-13 자체는 여전히 초안 없음(별개 사안, daily-publish 루틴 담당)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:06:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pubtitle-source-0906",
+   "detail": "조치 완료(커밋 838a9c0, 사장님 지시). ①publish.yml pre 3b) 신설 — 라이브로 나갈 제목이 초안 첫 줄과 다르면 출처 이름을 대고 경고(차단 안 함). declared 의 '-->' 제거도 함께. ②CLAUDE.md 트리거 예시에 -f post_title 추가 + title(보드용)/post_title(라이브용) 구분 명시. 검증: 워크플로 코드를 추출해 격리 트리에서 D1-08 사고 재현→경고 출력, 제목 일치→침묵, 주석없음→침묵. YAML 파싱·임베드 파이썬 compile PASS. 다음 발행 런 로그에서 3b) 가 실제로 도는지 확인할 것",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:07:00",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "A6-02",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:24:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "blocked-setgate-0906",
+   "detail": "id 규약 미준수로 재등록 — loopcheck 는 결재함을 **id 로만** 대조한다(what 본문은 안 본다). id 에 배치명이 없어 '막힘 미보고'가 계속 떴다. blocked-pub0906f308 로 다시 올린다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:25:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine-model-verify-0831",
+   "detail": "실측 확인 — routine_model.py 결과 4번(travel-prep) 09-05 21:08 claude-sonnet-5 로 정상 실행. 저장이 유지되고 있다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:25:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine-1a-paused",
+   "detail": "실측 확인 — 1번(A) 오전 09-06 08:09 정상 실행 중. 일시중지 해제되어 있다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:25:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "progress-html-syntax-0903",
+   "detail": "실측 확인 — selfcheck 18) 화면 문법 ✅ 정상 · tools/check_webapp_js.py 정상 · 충돌마커 0건.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:25:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "stock-low-0902",
+   "detail": "실측 확인 — pace.need()/stock_line() 배선 완료(09-05)로 세션훅이 재고부족을 자동 표시한다. 현재 재고도 하한 충족.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:25:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "audit-monitors-0828",
+   "detail": "무의미해짐 — 지목된 배치(gscdate0821·draft0823·pub0828 등)가 전부 소멸했고, 오늘 falsepos 0건·loopcheck 실물 확인으로 도구는 정상 동작한다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:25:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "chuseok-hospital",
+   "detail": "무의미해짐 — dupcheck 🔴 강한중복(C2-09 이미 발행)이고 코드 C3-06 은 08-27 에 다른 글감으로 재사용·drop 됐다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:39:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-a6-02",
+   "detail": "이부장 검토 완료 — 반려 타당. 5건 전부 law.go.kr 원문으로 확인된 법령 오류다(①소급 3개월 창 누락으로 계산표 과대 ②재직 중 수령 시 퇴직자 대지급금이 막히는 사실 누락 ③1회 한정 누락 ④일용근로자 제외를 '1개월 이상 필수'로 오기 ⑤저소득 요건 금액 없음). 재작업 지시서 fix0906a602 등록·이과장 담당. 사장님 확인 불필요.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:42:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "blocked-pub0906f308",
+   "detail": "상태 알림용이라 결재함에서 내린다 — 사장님이 하실 것이 없는 항목이다. 진행은 loopcheck ⑧ 와 배치보드가 계속 보여준다. 이과장에게 세 경로로 깨우기 완료(LEE·lifeinfo-68·lifeinfo-a2).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "uicheck-0831",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "audit-actor-0901",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "approve-autopush-0901",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naverlayout-origin-hole",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "bodydup-dblag",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-audit-0904",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-queue-0904",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0904",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0recheck-c211-0905",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-a510-blocked-0905",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-g2-04-v0-0905",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thread-g406-wait",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ui-approvalcount-align-0901",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "affiliate-test-status-0831",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-boost-0902",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-boost2-0902",
+   "detail": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "overdue-survey-0830",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "daylight-orders-0831",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0905-1500",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-gate-clicks",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-gate-indexed",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-index-rate",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "f214-toll-2026",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:53:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "travel-chuseok-toll",
+   "detail": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복).",
+   "via": "cli"
   }
  ]
 }

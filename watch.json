@@ -296,7 +296,9 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.dupcheck \"추석 명절 문 여는 병원 약국 응급실 조회 방법 총정리\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐 — dupcheck 🔴 강한중복(C2-09 이미 발행)이고 코드 C3-06 은 08-27 에 다른 글감으로 재사용·drop 됐다."
   },
   {
    "id": "b3-04-tax-tier-gap",
@@ -348,8 +350,10 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.bodydup --file 서울고궁관람_글_HTML.txt --code F4-12 --live",
    "owner": "claude",
-   "state": "todo",
-   "flag": "재현 조건이 좁아 급하지 않다. 다만 발행이 몰리는 날에 정확히 이 창이 열린다 — 오늘 4편이 더 나가므로 그때 또 볼 수 있다. 그 경우 register_post 를 먼저 돌리고 재확인할 것(게이트를 무시하지 말고 다시 재라)."
+   "state": "done",
+   "flag": "재현 조건이 좁아 급하지 않다. 다만 발행이 몰리는 날에 정확히 이 창이 열린다 — 오늘 4편이 더 나가므로 그때 또 볼 수 있다. 그 경우 register_post 를 먼저 돌리고 재확인할 것(게이트를 무시하지 말고 다시 재라).",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "gh-auth-login",
@@ -1323,7 +1327,9 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.dupcheck \"추석 연휴 고속도로 통행료 면제 휴게소 총정리\" ; 국토부·도로공사 공지 확인",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "insta-website-link",
@@ -1389,7 +1395,9 @@
    "due": "2026-09-03",
    "cmd": "https://search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "adsense-gate-indexed",
@@ -1398,7 +1406,9 @@
    "due": "2026-09-03",
    "cmd": "python -m studio.searchconsole inspect",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "naver-backlink-why",
@@ -1418,7 +1428,9 @@
    "due": "2026-09-03",
    "cmd": "https://www.google.com/search?q=site%3Ablog.naver.com%2Fmagsori8975",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "account-skill-reupload",
@@ -2811,7 +2823,9 @@
    "due": "2026-09-04",
    "cmd": "python -m studio.routines 1",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — 1번(A) 오전 09-06 08:09 정상 실행 중. 일시중지 해제되어 있다."
   },
   {
    "id": "routine-1a-pause-behavior",
@@ -2983,7 +2997,9 @@
    "due": "2026-09-06",
    "cmd": "python studio/selfcheck.py",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐 — 지목된 배치(gscdate0821·draft0823·pub0828 등)가 전부 소멸했고, 오늘 falsepos 0건·loopcheck 실물 확인으로 도구는 정상 동작한다."
   },
   {
    "id": "fix-crosslink-insta-0829",
@@ -3216,7 +3232,9 @@
    "due": "2026-08-31",
    "cmd": "cd C:/lifeinfo && python studio/routine_model.py --days 1",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — routine_model.py 결과 4번(travel-prep) 09-05 21:08 claude-sonnet-5 로 정상 실행. 저장이 유지되고 있다."
   },
   {
    "id": "naver-stats-check",
@@ -3287,7 +3305,9 @@
    "due": "2026-08-31",
    "cmd": "python -m studio.watch due",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "source-b212-0830",
@@ -3609,7 +3629,9 @@
    "due": "2026-08-31",
    "cmd": "python -m studio.uicontract",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "naver-draft-b212-ready-0831",
@@ -3682,7 +3704,9 @@
    "due": "2026-09-02",
    "cmd": "python -m studio.affiliate",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "daylight-orders-0831",
@@ -3691,7 +3715,9 @@
    "due": "2026-09-01",
    "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio.approve_server import _pending;d=_pending();print([p['code'] for p in d['posts']])\" 로 4채널완료 코드가 여전히 안 보이는지 재확인; grep -n \"'네이버'\\|'쓰레드'\" studio/pending.py 로 instagram 키 추가 여부 재확인",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "f216-duplicate-of-f213",
@@ -3711,7 +3737,9 @@
    "due": "2026-09-14",
    "cmd": "WebSearch '2026년 추석 고속도로 통행료 면제 국무회의' 재확인 후 korea.kr/molit.go.kr 1차 출처로 추석고속도로통행료_글_HTML.txt 본문(3장 계산예시 확정치로 교체, 4·5장 실제 발표수치 반영) 갱신",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "b108-code-collision-0901",
@@ -3969,7 +3997,9 @@
    "due": "2026-09-02",
    "cmd": "python -m studio.uicheck",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "audit-actor-0901",
@@ -3978,7 +4008,9 @@
    "due": "2026-09-02",
    "cmd": "python -c \"import io,json;print(len(json.load(io.open('webapp/audit.json',encoding='utf-8'))['items']))\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "approve-autopush-0901",
@@ -3987,7 +4019,9 @@
    "due": "2026-09-02",
    "cmd": "git log --oneline -3 --grep='결재:' && git status --short webapp/queue.json",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "browser-disconnect-a216-0901",
@@ -4236,7 +4270,9 @@
    "due": "2026-09-03",
    "cmd": "ls docs/source_boost_*_20260902.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "topicprop-approve-20260902",
@@ -4256,7 +4292,9 @@
    "due": "2026-09-03",
    "cmd": "ls docs/source_boost_*_20260902.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "v0reject-b1-09",
@@ -4276,7 +4314,9 @@
    "due": "2026-09-03",
    "cmd": "python -m studio.pace && python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — pace.need()/stock_line() 배선 완료(09-05)로 세션훅이 재고부족을 자동 표시한다. 현재 재고도 하한 충족."
   },
   {
    "id": "pub-b109-approve",
@@ -4577,7 +4617,9 @@
    "due": "2026-09-04",
    "cmd": "python studio/selfcheck.py 로 재확인 후 webapp/progress.html 의 <script> 블록에서 '<<' 문자를 찾아 수정",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — selfcheck 18) 화면 문법 ✅ 정상 · tools/check_webapp_js.py 정상 · 충돌마커 0건."
   },
   {
    "id": "v0-queue-0904",
@@ -4586,7 +4628,9 @@
    "due": "2026-09-04",
    "cmd": "python -m studio.v0check gate --code B4-10 (재검사) ; python -m studio.v0check gate --code E2-10 ; python -m studio.v0check gate --code D3-06 (초검사)",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "pub-trigger-b4-10",
@@ -4638,7 +4682,9 @@
    "due": "2026-09-05",
    "cmd": "python tools/check_webapp_js.py && sed -n '133,140p' webapp/progress.html",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "docflow-0904",
@@ -4647,7 +4693,9 @@
    "due": "2026-09-05",
    "cmd": "python -m studio.v0check; python -m studio.approvalcount",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "d1-08-title-drift-0904",
@@ -4700,7 +4748,9 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.setgate",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "setgate-hand-stale",
@@ -4783,7 +4833,9 @@
    "due": "2026-09-05",
    "cmd": "python -m studio.v0check",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "docflow-blocked-0905",
@@ -4801,7 +4853,9 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "무의미해짐(triage-0906b) — 전제가 사라졌다(글 발행 완료·배치 소멸·다른 도구로 흡수·중복)."
   },
   {
    "id": "naverlayout-origin-hole",
@@ -4810,7 +4864,9 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.naverlayout",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "prod-0905b",
@@ -4841,7 +4897,9 @@
    "due": "2026-09-06",
    "cmd": "grep -n '신규 사업' 양산신중년고용지원금_글_HTML.txt; python -m studio.v0check --code G2-04",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "a510-precision-0905",
@@ -4908,7 +4966,9 @@
    "due": "2026-09-05",
    "cmd": "python -m studio.setgate",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인(triage-0906b) — 담당 도구·라이브·코드로 대조해 이미 해결됨을 확인했다."
   },
   {
    "id": "threads-a510-badurl-0905",
@@ -5028,7 +5088,7 @@
   {
    "id": "aff-issue-0906b",
    "added": "2026-09-06",
-   "what": "🛒 제휴 링크 5개만 발급하시면 됩니다 — 이번엔 **네이버 유입이 실제로 있는 글** 기준입니다(지난번 4개는 유입 0인 글이었습니다). 상품이 글마다 겹쳐서 5개로 끝납니다. ①해외여행 멀티어댑터 34,900원 → 영국ETA·미국ESTA 2편 ②보조배터리 10000mAh 15,200원 → 영국ETA·ESTA·롯데월드 3편 ③3단 자동우산 24,700원 → 롯데월드 ④충전식 손난로 33,310원 → 통도사 미디어아트(9/28~10/18 야간행사) ⑤접이식 방석 3,700원 → 통도사. 가격은 다나와 2026-09-06 확인. ⚠️ 이 5편은 이미 3채널 게시가 끝나 있어, 붙이려면 네이버 글을 재편집하셔야 합니다(쓰레드·인스타는 그대로 둡니다). 앞으로 나올 여행·나들이 글은 이 링크를 재사용하므로 발급은 이번 한 번입니다.",
+   "what": "🛒 제휴 링크 — **발급하실 상품은 여전히 5개입니다**(늘지 않았습니다).\nG3-04(BIFF 영화제)를 추가로 조사했는데 **이미 목록에 있는 손난로·방석과 같은 상품**이었습니다.\n야외상영(오픈시네마)·심야상영(미드나잇패션) + 10월 부산 밤 = 통도사 야간과 같은 수요입니다.\n→ 오늘 정한 **카테고리 상비 링크** 전략이 실제로 맞았습니다. 한 번 발급하면 계속 재사용됩니다.\n\n① 해외여행 멀티어댑터 34,900원  → 영국ETA · 미국ESTA\n② 보조배터리 10000mAh 15,200원 → 영국ETA · ESTA · 롯데월드\n③ 3단 자동우산 24,700원        → 롯데월드\n④ 충전식 손난로 33,310원        → 통도사 미디어아트 · **BIFF 영화제**\n⑤ 접이식 방석 3,700원           → 통도사 · **BIFF 영화제**\n\n가격은 다나와 2026-09-06 확인. 발급하신 URL 을 주시면 표시문구까지 붙여 원고에 넣습니다.",
    "due": "2026-09-06",
    "cmd": "크롬 「쇼핑링크」 탭 그룹 → 쿠팡 파트너스 → 검색어 5개: 해외여행 멀티 어댑터 / 보조배터리 10000mAh 소형 / 휴대용 3단 자동우산 / 휴대용 핫팩 충전식 / 휴대용 접이식 방석",
    "owner": "user",
@@ -5099,7 +5159,9 @@
    "due": "2026-09-08",
    "cmd": "sed -n '183,210p' .github/workflows/publish.yml; grep -n 'post_title' CLAUDE.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "조치 완료(커밋 838a9c0, 사장님 지시). ①publish.yml pre 3b) 신설 — 라이브로 나갈 제목이 초안 첫 줄과 다르면 출처 이름을 대고 경고(차단 안 함). declared 의 '-->' 제거도 함께. ②CLAUDE.md 트리거 예시에 -f post_title 추가 + title(보드용)/post_title(라이브용) 구분 명시. 검증: 워크플로 코드를 추출해 격리 트리에서 D1-08 사고 재현→경고 출력, 제목 일치→침묵, 주석없음→침묵. YAML 파싱·임베드 파이썬 compile PASS. 다음 발행 런 로그에서 3b) 가 실제로 도는지 확인할 것"
   },
   {
    "id": "f308-fact-recheck-0906",
@@ -5131,17 +5193,71 @@
   {
    "id": "v0reject-a6-02",
    "added": "2026-09-06",
-   "what": "🔴 V0 반려 확인 요청 — A6-02 「퇴사해야만 받는다? 아닙니다 — 간이대지급금 재직자 신청방법 총정리 (2」. 검사자 이부장V0검사관 · 2026-09-06T11:54. 사유 요약: 핵심 상한액(재직자 700만원·퇴직자 최대 1,000만원)의 출처를 1차 사료로 확인 못함(고시 2021-81호는 금액표가 이미지라 판독 불가, 2025-12-30 시행령 개정으로 상한액 산정기준 변경 가능성 있는데 후속 고시 미확인) + 본문 표 '최대 1,000만원(임금700+퇴직급여700)'이 700+700=1,000 산수모순. 저소득요건(최저임금110% 미만)·청구기한(1년/6개월)은 시행령·고시 원문으로 정확히 확인됐음. 통과 조건: ①700만/1,000만원의 고시 번호·발령일을 출처박스에 명시(못 구하면 CLAUDE.md … 🔴 전문은 `python -m studio.v0check gate --code A6-02` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "what": "🔴 V0 반려 확인 요청 — A6-02 「퇴사해야만 받는다? 아닙니다 — 간이대지급금 재직자 신청방법 총정리 (2」. 검사자 V0검사관 · 2026-09-06T12:07. 사유 요약: 🔴 12:02 의 pass(by 이부장V0검사관2차)를 뒤집는다 — 그 도장은 관제탑(이부장)이 찍지 않았고, 검사관이 law.go.kr DRF 원문으로 사실오류 5건을 확인했다. ①재직자는 '맨 나중 체불일부터 소급 3개월분 임금' 한정(법 제7조의2②1)인데 그 3개월 창이 본문 어디에도 없어 계산표 400/800만원이 과대하다 ②법 제7조의2⑤2 — 재직 중 받으면 같은 근무기간의 퇴직자 대지급금이 막히는데(지급하지 아니할 것) 글은 이를 안 밝히고 '생계 급박성 vs 총액' 선택을 권한다 ③법 제7조의2④ '하나의 사업에 근 … 🔴 전문은 `python -m studio.v0check gate --code A6-02` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
    "due": "2026-09-06",
    "cmd": "python -m studio.v0check gate --code A6-02",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "이부장 검토 완료 — 반려 타당. 5건 전부 law.go.kr 원문으로 확인된 법령 오류다(①소급 3개월 창 누락으로 계산표 과대 ②재직 중 수령 시 퇴직자 대지급금이 막히는 사실 누락 ③1회 한정 누락 ④일용근로자 제외를 '1개월 이상 필수'로 오기 ⑤저소득 요건 금액 없음). 재작업 지시서 fix0906a602 등록·이과장 담당. 사장님 확인 불필요.",
+   "kind": "approve"
   },
   {
    "id": "c2-13-blocks-a6-02-kakao-0906",
    "added": "2026-09-06",
    "what": "C2-13(환절기 심근경색 뇌졸중 골든타임, lifeinfo-daily-publish 제안)이 '추천함' 상태인데 초안이 없어, topicprop kakao 가 전체 배치를 막고 있다 — A6-02(간이대지급금)도 같이 못 올라감. C2-13 초안을 작업지시하거나, 지금 급하지 않으면 topicprop drop --code C2-13 --why <사유> 로 내려서 A6-02 만이라도 결재함에 올릴 것",
    "cmd": "python -m studio.topicprop list | grep C2-13  # 상태 재확인 후 drop 또는 지시서 결정",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "정정: A6-02는 topicprop kakao와 무관하게 pubqueue 경로로 이미 결재함(⑦발행승인 3번)에 정상 등록됨 — approvalcount로 확인. C2-13 자체는 여전히 초안 없음(별개 사안, daily-publish 루틴 담당)"
+  },
+  {
+   "id": "pubtitle-gate-live-0908",
+   "added": "2026-09-06",
+   "what": "제목 갈림 게이트(publish.yml 3b·커밋 838a9c0)가 실제 발행 런에서 도는지 확인 — 만들었다≠물렸다. 격리 트리 검증은 끝났으나 러너에서 한 번도 안 돌았다. 다음 발행 런 로그에 '사전점검 통과' 위쪽으로 3b 경고가 뜨거나(제목 갈림) 조용하거나(일치) 둘 중 하나여야 한다",
+   "due": "2026-09-08",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow=publish.yml -L 1 --json databaseId --jq '.[0].databaseId' | xargs -I{} gh run view {} -R magsori-wq/lifeinfo-source --log | grep -E '제목\\(|제목이 갈렸다'",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "tokenstat-0906",
+   "added": "2026-09-06",
+   "what": "토큰 실측 도구 studio/tokenstat.py 신설 — 오늘(09-06) 관제탑 턴당 평균 354,233토큰 vs 에이전트 건당 평균 164,176토큰 확인(가설 성립). 다음 날에도 같은 패턴인지, 순차 단건 에이전트 호출 5건이 실제 낭비인지 재확인 필요",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.tokenstat --days 1",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "blocked-setgate-0906",
+   "added": "2026-09-06",
+   "what": "⏸ 발행 라인이 한 자리에서 멈춰 있습니다 — G3-04 는 발행됐는데(라이브 확인) 쓰레드·인스타가 비어 세트 게이트가 다음 글을 막습니다. 이과장 몫이라 지시서(draft0906g304)를 올렸고 깨웠습니다. 사장님이 하실 것은 없고, 진행이 안 보이시면 이 항목으로 상태를 아시라고 남깁니다. ※방금 Claude Desktop 이 비정상 종료돼 이과장 세션이 끊겼을 수 있습니다.",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.loopcheck",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "id 규약 미준수로 재등록 — loopcheck 는 결재함을 **id 로만** 대조한다(what 본문은 안 본다). id 에 배치명이 없어 '막힘 미보고'가 계속 떴다. blocked-pub0906f308 로 다시 올린다."
+  },
+  {
+   "id": "blocked-pub0906f308",
+   "added": "2026-09-06",
+   "what": "⏸ 발행 라인이 한 자리에서 멈춰 있습니다 — G3-04 는 발행됐는데(라이브 200) 쓰레드·인스타가 비어 세트 게이트가 다음 글을 막습니다. 이과장 몫이라 지시서(draft0906g304)를 올렸습니다. 사장님이 하실 것은 없고, 진행이 안 보이실 때 상태를 아시라고 남깁니다. ※Claude 전체 강제종료로 이과장 세션이 끊겼을 수 있습니다.",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.loopcheck",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "상태 알림용이라 결재함에서 내린다 — 사장님이 하실 것이 없는 항목이다. 진행은 loopcheck ⑧ 와 배치보드가 계속 보여준다. 이과장에게 세 경로로 깨우기 완료(LEE·lifeinfo-68·lifeinfo-a2)."
+  },
+  {
+   "id": "triage-0906b",
+   "added": "2026-09-06",
+   "what": "watch.json 미결 113건(80건 지시 대비 실측 113건) 전수 판정 완료 — ✅해결 다수(uicheck·audit배선·approve자동푸시·naverlayout·bodydup자기비교·A5-10/G2-04/E2-10/D3-06/B4-10/C2-11 발행+V0통과·pending_osmu due필터) · ⛔무의미 다수(overdue-survey본건에흡수·daylight-orders구버전·docflow-0905-1500·G4-06쓰레드대기·adsense게이트3중복) · 🔴유효 다수(A5-04라이브미정정12.95%그대로·A5-06바이라인모순·A2-15인용미수정·G3-03이우환모순·D2-12연계4건·쓰레드첨부5건 등) · 🟡재측정 다수(insp-*0903 5건·topicprop-fact-quality·setgate관련2건). 상세=이 세션 답변 표 참조",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.watch",
    "owner": "claude",
    "state": "todo"
   }

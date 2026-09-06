@@ -816,7 +816,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   // 🔴 dropped(제외)된 글감은 "진행 중 문서"에서 뺀다 — 예전엔 발행된 것만 걸러내고
   // dropped 는 그대로 남아 낡은 상태로 보였다(2026-08-24 실측 발견: F2-14·A1-13이
   // 이미 제외 처리됐는데도 화면엔 여전히 "②선별" 단계로 떠 있었다).
-  T.forEach(function(t){if(t.state!=='dropped') docs[t.code]={code:t.code,title:t.title};});
+  // 🔴🔴 **보류(deferred)를 '멈춘 것'과 구분한다** (2026-09-06 사장님 지적)
+  //    사장님이 *"F4-20 은 어제부터 진척이 없어?"* 라고 **두 번** 물으셨다.
+  //    그 글은 막힌 게 아니라 기다리는 중이다 — 산림청 단풍 예측지도가 미발표라
+  //    09-02 에 `deferred` + 재등판일 09-24 로 정해 둔 것이다.
+  //    그런데 화면은 dropped 만 걸러내고 **deferred 는 그대로 단계바로 보여줘**
+  //    멈춘 것처럼 보였다. 기다리는 것과 막힌 것이 같아 보이면 물어보셔야 알 수 있다.
+  T.forEach(function(t){if(t.state!=='dropped')
+    docs[t.code]={code:t.code,title:t.title,
+                  defer:(t.state==='deferred'?(t.until||''):''),
+                  why:(t.state==='deferred'?(t.decision||t.why||''):'')};});
   Q.forEach(function(q){docs[q.code]={code:q.code,title:q.title};});
   V.forEach(function(v){if(!docs[v.code])docs[v.code]={code:v.code,title:v.title};});
   var list=Object.keys(docs).map(function(k){return docs[k];})
@@ -939,9 +948,17 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   // ③ 진행 중 문서 — 결재선 위치
   var docBody = list.length? list.map(function(d){
       var st=stepOf(d.code), rejd=(st<0), cur=Math.abs(st);
-      return '<div class="card'+(rejd?' rej':'')+'"><div class="hd">'
+      var head='<div class="card'+(rejd?' rej':'')+'"><div class="hd">'
        +'<span class="ttl">'+esc(String(d.title||'').slice(0,52))+'</span>'
-       +'<span class="code">'+esc(d.code)+'</span></div>'
+       +'<span class="code">'+esc(d.code)+'</span></div>';
+      // 🔴 보류 중이면 단계바를 그리지 않는다 — 그리면 '멈춘 것'으로 읽힌다
+      if(d.defer){
+        return head+'<div class="steps"><span class="st now">⏳ '+esc(d.defer)
+          +' 재개 예정</span></div>'
+          +(d.why?'<div style="font-size:12px;opacity:.75;padding:2px 0 4px">'
+                 +esc(String(d.why).slice(0,90))+'</div>':'')+'</div>';
+      }
+      return head
        +'<div class="steps">'+LAB.map(function(l,i){
            var n=i+1, c=(rejd&&n===6)?'no':(n<cur?'done':(n===cur?'now':''));
            return '<span class="st '+c+'">'+l+'</span>';}).join('')+'</div></div>';}).join('')
