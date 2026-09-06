@@ -896,6 +896,70 @@
    "target": "prod-navertraffic-0906",
    "detail": "aff-issue-0906b 로 통합 — 5편에 필요한 상품이 5개로 겹쳐서 상품 기준으로 다시 묶었다(글 기준이 아니라).",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-06T11:46:00",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "d1-08-title-drift-0904",
+   "detail": "해소 확인(2026-09-06 실측). DB 제목이 라이브와 일치 — 커밋 69a226b(09-06 04:18) 로 정정, 배포 ca74635(04:27). 피드 드리프트 검사 09-05T23:35Z 런 success 로 end-to-end 확인. 로컬 재현: feed_drift.py 234편=234편 rc=0",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T11:46:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "drift-fail-0906",
+   "detail": "중복 등록분 — 같은 건이 이미 5회 보고돼 있었다(title-stale-0903·d1-08-title-drift-0904·drift-fail-0905·drift-cause-deploy-0906·deploy-drift-fix-0906). 내가 실패 런 날짜만 보고 검사기를 안 돌린 채 새로 등록했다. 실제로는 등록 시점(08:08)에 이미 04:18 커밋으로 해소돼 있었다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T11:46:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "title-stale-0903",
+   "detail": "진단이 틀렸음을 실측으로 확인 → 정정본 pubtitle-source-0906 으로 이관. -f title 은 무시된 것이 아니라 원래 '발행보드용 짧은 제목' 입력이다(publish.yml L23 description). 라이브 제목 입력칸은 post_title(L36)이고 이건 설계대로 동작했다. 실제 결함은 따로 있다 — post_title 을 비우면 queue.json 저장 제목이 그대로 라이브로 나간다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T11:50:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-g3-04",
+   "detail": "V0 통과로 해소 — 검사자 V0검사관 · 3차 검사 통과 — 2차 반려 요구 3건 전부 이행 확인. (1)line134 바이라인이 '공식 보도자료(콜센터 안내 포함)를 직접 확인해'로 바뀌어 하지 않은 전화확인 주장이 사라졌고 line126 출처박스('콜센",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T11:51:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-f3-08",
+   "detail": "V0 통과로 해소 — 검사자 이부장 · 재검사 통과. ①카타르항공 분류 정정 확인 — 공식공지 CM202606090002529359 Q8 이 카타르·에티하드·에어아스타나를 '스타얼라이언스 항공사 외 제휴항공사'로 규정하고 종료일을 '추후 별도 안내 예정'",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T11:56:06",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G3-04",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T11:57:38",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "F3-08",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-06T12:02:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-a6-02",
+   "detail": "V0 통과로 해소 — 검사자 이부장V0검사관2차 · 1차FAIL 사유 2건 실제 해소 확인: ①산수모순 — 표(L77)를 '각 항목 700만원 상한, 합산 1,000만원 상한'으로 재표현, 본문 전체(L64/77/101/127/129/138) 재검색해 700+700=",
+   "via": "cli"
   }
  ]
 }

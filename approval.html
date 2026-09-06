@@ -1104,7 +1104,22 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     document.querySelectorAll('#out details[open]').forEach(function(d,i){
       var k=(d.getAttribute('data-k')||('i'+i)); _open[k]=1; });
   }catch(e){}
-  document.getElementById('out').innerHTML=H;
+  // 🔴🔴 **스크롤이 30초마다 맨 위로 튀었다** (2026-09-06 사장님 지적)
+  //
+  //    사장님: *"결재대기 스크롤하면 계속 튀어 맨 위로 올라가는 문제 있어?"*
+  //
+  //    이 줄이 30초마다 **DOM 을 통째 갈아끼우므로** 브라우저가 스크롤을
+  //    0 으로 되돌렸다. 결재 항목이 여러 건이면 읽는 도중 계속 끜긴다.
+  //    펌침/접힘은 이미 보존하고 있었는데(바로 위) **스크롤은 빠져 있었다.**
+  //
+  //    → ① 내용이 같으면 **아예 건드리지 않는다**(깜빡임도 사라진다)
+  //      ② 달라졌을 때만 갈아끼우고 스크롤을 제자리로 되돌린다.
+  var _out = document.getElementById('out');
+  if(_out.dataset.sig === H.length + ':' + H.slice(0,120)){ REFRESHING=false; return; }
+  var _sy = (window.pageYOffset || document.documentElement.scrollTop || 0);
+  _out.innerHTML=H;
+  _out.dataset.sig = H.length + ':' + H.slice(0,120);
+  if(_sy > 0){ try{ window.scrollTo(0, _sy); }catch(e){} }
   try{
     document.querySelectorAll('#out details').forEach(function(d,i){
       var k=(d.getAttribute('data-k')||('i'+i)); if(_open[k]) d.open=true; });

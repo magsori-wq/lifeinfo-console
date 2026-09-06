@@ -4566,7 +4566,9 @@
    "due": "2026-09-04",
    "cmd": "grep -n 'title' studio/pipeline.py | grep -i queue",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "진단이 틀렸음을 실측으로 확인 → 정정본 pubtitle-source-0906 으로 이관. -f title 은 무시된 것이 아니라 원래 '발행보드용 짧은 제목' 입력이다(publish.yml L23 description). 라이브 제목 입력칸은 post_title(L36)이고 이건 설계대로 동작했다. 실제 결함은 따로 있다 — post_title 을 비우면 queue.json 저장 제목이 그대로 라이브로 나간다"
   },
   {
    "id": "progress-html-syntax-0903",
@@ -4654,7 +4656,9 @@
    "due": "2026-09-04",
    "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['title'] for p in db['posts'] if p.get('code')=='D1-08'])\" 로 DB 제목이 라이브와 같아졌는지 확인",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "해소 확인(2026-09-06 실측). DB 제목이 라이브와 일치 — 커밋 69a226b(09-06 04:18) 로 정정, 배포 ca74635(04:27). 피드 드리프트 검사 09-05T23:35Z 런 success 로 end-to-end 확인. 로컬 재현: feed_drift.py 234편=234편 rc=0"
   },
   {
    "id": "v0reject-c2-11",
@@ -4955,9 +4959,9 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.v0check gate --code G3-04",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "done_at": "2026-09-06",
-   "result": "이부장 검토 완료 — 반려 타당. 사실오류 0건이나 ①디지털취약계층 현장창구(65세이상·장애인 한정좌석) 누락으로 3절이 '매진·취소표뿐'이라 불완전 서술 ②개폐막식 9,000x2=18,000원 계산 없음 ③바이라인이 '정부부처 공식자료·연락처'라는데 출처는 민간 BIFF 1곳·연락처 없음. 보강 지시서 draft0906g304 갱신·이과장 통보 완료. 사장님 확인 불필요."
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 3차 검사 통과 — 2차 반려 요구 3건 전부 이행 확인. (1)line134 바이라인이 '공식 보도자료(콜센터 안내 포함)를 직접 확인해'로 바뀌어 하지 않은 전화확인 주장이 사라졌고 line126 출처박스('콜센"
   },
   {
    "id": "drift-cause-deploy-0906",
@@ -5036,6 +5040,110 @@
    "what": "네이버 유입 57건(1일치) 전수대조: 유입 최상위 10편(15일 조회수 상위) 전부 C안(후킹+실검색어) 미달 — 6편 블로그스팟과 제목 글자까지 동일, 4편 후킹장치 0. 전체 매칭 177편 중 표준통과 9편(5%), 08-31 이후 5편 중 2편(40%)만 통과. A2-15(최고클릭 20.26/90.46=22%)는 실제 최다클릭 검색어 '생계급여'가 제목 괄호 안(문자51)에 있고, naverkw.title_words()가 괄호를 통째로 지워 검색어 점검 대상에서도 빠짐 — 이 코드적 결함이 사장님 가설(제목·키워드 문제)을 직접 뒷받침. 표본: 키워드 57건=2026-09-04 하루치, total_clicks 90.46(소수=네이버 가중치).",
    "due": "2026-09-06",
    "cmd": "python -m studio.naverkw --file 오사마리보고 없음: python3 재실행 필요시 이 대화의 code_to_file2.json 매핑 스크립트로 재계산 (담당 도구 자체에 '전수 대조' 커맨드 없음 — naverkw는 단발 제목 1개만 검사)",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "drift-fail-0906",
+   "added": "2026-09-06",
+   "what": "피드 드리프트 검사(lifeinfo-console)가 2일 연속 실패 — 09-03·09-04 23:46Z 런 annotation = '라이브와 DB 가 어긋났다. 요약 패널을 확인하라.' (09-02 는 성공). 라이브 피드와 lifeinfo_db.txt 불일치이므로 어느 편이 어긋났는지 실측 후 정합 필요. 메일 브리핑에서 발견",
+   "due": "2026-09-06",
+   "cmd": "gh run view 33930740879 -R magsori-wq/lifeinfo-console --log-failed | grep -A20 '드리프트 검사' ; python studio/selfcheck.py",
+   "owner": "claude",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "중복 등록분 — 같은 건이 이미 5회 보고돼 있었다(title-stale-0903·d1-08-title-drift-0904·drift-fail-0905·drift-cause-deploy-0906·deploy-drift-fix-0906). 내가 실패 런 날짜만 보고 검사기를 안 돌린 채 새로 등록했다. 실제로는 등록 시점(08:08)에 이미 04:18 커밋으로 해소돼 있었다"
+  },
+  {
+   "id": "orderwatch-unattended-limit-0906",
+   "added": "2026-09-06",
+   "what": "orderwatch 가 정체 지시서(boost0906b203, 이과장 288분째)를 SendMessage 로 깨우라고 안내하지만, 무인 루틴(scheduled-task) 세션에는 SendMessage 자체가 구조적으로 없다(ccd_session_mgmt send_message 툴 설명에 명시: 'Unavailable in unattended sessions'). 즉 루틴이 발견해도 깨울 수 없다 — 관제탑(대화형 세션)이 직접 깨워야 한다.",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.orderwatch 로 정체 지시서 확인 후 이부장(대화형) 이 SendMessage 로 담당을 깨울 것",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-f3-08",
+   "added": "2026-09-06",
+   "what": "🔴 V0 반려 확인 요청 — F3-08 「아시아나 마일리지 대한항공 통합 전 소진 방법 유효기간 총정리 (2026」. 검사자 이부장 · 2026-09-06T09:20. 사유 요약: 1차출처 대조 결과 사실오류 2건 확인 — ①카타르항공을 스타얼라이언스 10/31 그룹에 넣었으나 아시아나 공식Q&A(flyasiana C/KR/KO notice CM202606090002529359)는 카타르항공을 스타얼라이언스 비회원 별도제휴사로 분류하고 그 종료일을 '추후 안내 예정'(미정)이라 명시함 — 본문 표(2장)와 함정②(6장)에 중복 게재. ②5장 유효기간(10년/12년) 인용 출처 URL(m.flyasiana.com/C/PH/KO/.../CM202311220001981715)이 KR리전에는 존재하지않고(302→er … 🔴 전문은 `python -m studio.v0check gate --code F3-08` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.v0check gate --code F3-08",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "V0 통과로 해소 — 검사자 이부장 · 재검사 통과. ①카타르항공 분류 정정 확인 — 공식공지 CM202606090002529359 Q8 이 카타르·에티하드·에어아스타나를 '스타얼라이언스 항공사 외 제휴항공사'로 규정하고 종료일을 '추후 별도 안내 예정'"
+  },
+  {
+   "id": "art-uiwhan-conflict-0906",
+   "added": "2026-09-06",
+   "what": "부산미술관(G3-03) 원고 안에 모순 — '관람료: 소장품전 무료 (이우환 공간 3,000원)' 바로 다음 줄에 '이우환 공간은 정상·무료'라고 적혀 있다. 둘 중 하나가 틀렸다. 제목에 '무료'를 쓰려면 이것부터 풀어야 한다(지금 제목안은 무료 단정을 뺐다). 공식 확인: 부산시립미술관 홈페이지.",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.naverkw --title \"부산시립미술관 입장료 주차부터 보세요 — 현대미술관 F1963 관람시간 휴관일 총정리 (2026)\"",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-title-fix-0906",
+   "added": "2026-09-06",
+   "what": "📝 네이버 글 제목 4편 교체 (사장님 승인 2026-09-06) — 제목만 바꾸시면 됩니다. 본문은 그대로.\n① 롯데월드  blog.naver.com/magsori8975/224352030079\n   → 롯데월드 매직패스 종류부터 고르세요 — 자유이용권 예매 할인 요금 총정리 (2026)\n② 동백전   blog.naver.com/magsori8975/224330786740\n   → 동백전 캐시백 한도부터 확인하세요 — 앱 설치 충전 사용처 신청 방법 총정리 (2026)\n③ 미국ESTA blog.naver.com/magsori8975/224355370512\n   → ESTA 유효기간 MRZ 입력에서 막히셨나요 — 미국 ESTA 신청 수수료 40달러 거부 사유 (2026)\n④ 부산미술관 blog.naver.com/magsori8975/224336005320\n   → 부산시립미술관 입장료 주차부터 보세요 — 현대미술관 F1963 관람시간 휴관일 총정리 (2026)\n※ 원고 파일 첫 줄은 이미 새 제목으로 고쳐 뒀습니다. 2주 뒤 유입 변화를 재서 효과를 판정합니다.",
+   "due": "2026-09-06",
+   "cmd": "start https://blog.naver.com/magsori8975/224352030079",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "pubtitle-source-0906",
+   "added": "2026-09-06",
+   "what": "구조 결함(루틴은 진단·보고까지 — 수정은 이부장/이과장). 라이브 제목이 queue.json 저장값에서 나온다: publish.yml L189 순서 = post_title 입력 → DB레코드 → 발행큐. post_title 을 비우면 pubqueue add 시점의 제목이 그대로 라이브로 나가고, 원고 제목이 그 뒤에 바뀌어도 큐는 안 따라간다. 🔴 CLAUDE.md 의 표준 트리거 예시가 -f title 만 쓰고 -f post_title 을 안 쓴다 → 문서대로 하면 항상 큐 경로를 탄다. D1-08 실측: 09-03 런 로그 '제목(발행큐): 2026년 10월 개천절…(한글날 10월 9일 포함)' 로 발행 → 이과장이 라이브를 '2026 개천절 대체공휴일 총정리…' 로 정정 → DB 는 안 따라가 드리프트 3일. 제목이 두 곳에 있는 계열(F1-14 네이버 제목·라벨 42종·pace 상수와 같은 병). 【권고】①CLAUDE.md 트리거 예시에 -f post_title 추가 ②publish.yml 이 큐 제목을 쓸 때 초안 파일 제목과 다르면 경고",
+   "due": "2026-09-08",
+   "cmd": "sed -n '183,210p' .github/workflows/publish.yml; grep -n 'post_title' CLAUDE.md",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "f308-fact-recheck-0906",
+   "added": "2026-09-06",
+   "what": "F3-08 사실오류 2건 1차출처 재검증 완료 — ①카타르항공 분류(비회원제휴/미정) 정정확인 ②유효기간 인용 출처(깨진 PH URL) 삭제 후 재서술 정정확인, 기존 3항목(전환비율1:1·0.82/탈퇴시각/발권거절Q7) 훼손없음",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.bodydup --file 아시아나마일리지대한항공통합_글_HTML.txt --code F3-08 --live",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "routine-triage-0906",
+   "added": "2026-09-06",
+   "what": "루틴 미결 10건 실측 판정 — 해결4(routine-1a-paused 재개됨·routine-model-verify-0831 sonnet5확정·stock-low-0902 need()배선완료·progress-html-syntax-0903 conflict marker제거) · 유효2(gsc-crawled-not-indexed 125/227 55% 여전·briefing-gsc-window-0901 SKILL.md 미반영) · 재측정필요1(topicprop-fact-quality: C2-13/A6-02 원문검증 통과·A6-01/B5-01은 초안전 재검증 미완, 08-30 대비 오류율 0/4로 개선) · 무의미2(chuseok-hospital dupcheck강한중복0.67+코드재사용·audit-monitors-0828 구체배치 전부소멸) · 1건은 세부9종 중 집계재확인만(session-falsereport-measure-0830, sessionaudit 재실행 1건만 남음)",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.watch",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "g3-04-timetable-0911",
+   "added": "2026-09-06",
+   "what": "G3-04 line70 상자 제목 '상영시간표는 아직 공개 전입니다' 는 2026-09-11 17시가 지나면 거짓이 된다(본문엔 '(2026-09-06 기준 미공개)' 가 붙어 있으나 제목은 맨 현재형). 그 시점까지 미발행이면 제목을 '상영시간표 공개는 9월 11일(금) 17시' 로 바꿀 것. line122·line126 은 문장 안에 작성시점이 박혀 있어 그대로 둬도 된다",
+   "due": "2026-09-11",
+   "cmd": "grep -n '아직 공개 전' C:/lifeinfo/부산국제영화제BIFF예매_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-a6-02",
+   "added": "2026-09-06",
+   "what": "🔴 V0 반려 확인 요청 — A6-02 「퇴사해야만 받는다? 아닙니다 — 간이대지급금 재직자 신청방법 총정리 (2」. 검사자 이부장V0검사관 · 2026-09-06T11:54. 사유 요약: 핵심 상한액(재직자 700만원·퇴직자 최대 1,000만원)의 출처를 1차 사료로 확인 못함(고시 2021-81호는 금액표가 이미지라 판독 불가, 2025-12-30 시행령 개정으로 상한액 산정기준 변경 가능성 있는데 후속 고시 미확인) + 본문 표 '최대 1,000만원(임금700+퇴직급여700)'이 700+700=1,000 산수모순. 저소득요건(최저임금110% 미만)·청구기한(1년/6개월)은 시행령·고시 원문으로 정확히 확인됐음. 통과 조건: ①700만/1,000만원의 고시 번호·발령일을 출처박스에 명시(못 구하면 CLAUDE.md … 🔴 전문은 `python -m studio.v0check gate --code A6-02` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.v0check gate --code A6-02",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "V0 통과로 해소 — 검사자 이부장V0검사관2차 · 1차FAIL 사유 2건 실제 해소 확인: ①산수모순 — 표(L77)를 '각 항목 700만원 상한, 합산 1,000만원 상한'으로 재표현, 본문 전체(L64/77/101/127/129/138) 재검색해 700+700="
+  },
+  {
+   "id": "c2-13-blocks-a6-02-kakao-0906",
+   "added": "2026-09-06",
+   "what": "C2-13(환절기 심근경색 뇌졸중 골든타임, lifeinfo-daily-publish 제안)이 '추천함' 상태인데 초안이 없어, topicprop kakao 가 전체 배치를 막고 있다 — A6-02(간이대지급금)도 같이 못 올라감. C2-13 초안을 작업지시하거나, 지금 급하지 않으면 topicprop drop --code C2-13 --why <사유> 로 내려서 A6-02 만이라도 결재함에 올릴 것",
+   "cmd": "python -m studio.topicprop list | grep C2-13  # 상태 재확인 후 drop 또는 지시서 결정",
    "owner": "claude",
    "state": "todo"
   }
