@@ -1,13 +1,13 @@
 {
- "rev": "1bf1f800",
+ "rev": "382986ef",
  "counts": {
-  "total": 236,
-  "osmu_done": 235,
-  "osmu_pending": 1,
+  "total": 237,
+  "osmu_done": 237,
+  "osmu_pending": 0,
   "indexed": 0,
-  "index_pending": 236,
+  "index_pending": 237,
   "index_requested": 206,
-  "index_todo": 30
+  "index_todo": 31
  },
  "actionable": [
   {
@@ -41,23 +41,6 @@
     "g": true,
     "n": true,
     "t": true,
-    "i": false
-   }
-  },
-  {
-   "code": "F3-08",
-   "title": "아시아나 마일리지 대한항공 통합 전 소진 방법 유효기간",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
     "i": false
    }
   },
@@ -145,6 +128,22 @@
   {
    "code": "A5-10",
    "title": "배우자 출산휴가 출산 전 사용 유산·사산휴가 신청 방법",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A6-02",
+   "title": "퇴사해야만 받는다? 아닙니다 — 간이대지급금 재직자 신",
    "need": [
     "색인요청"
    ],

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-06",
+ "updated": "2026-09-07",
  "items": [
   {
    "id": "redirect-error",
@@ -1508,8 +1508,10 @@
    "due": "2026-09-01",
    "cmd": "claude.ai > 설정 > 스킬 > lifeinfo-blog 본문에서 확인: '사람에게 넘기지 말 것'(검색설명) · '상한 2편'(페이스) 두 문구가 살아 있는가",
    "owner": "claude",
-   "state": "wait",
-   "flag": "판정 기준은 날짜가 아니라 문구다. claude-in-chrome 으로 Claude 가 직접 확인 가능(claude.ai 는 안 막힌다)"
+   "state": "done",
+   "flag": "판정 기준은 날짜가 아니라 문구다. claude-in-chrome 으로 Claude 가 직접 확인 가능(claude.ai 는 안 막힌다)",
+   "done_at": "2026-09-06",
+   "result": "selfcheck 9) 가 상시 추적하므로 이 항목은 중복이다 — 9) 는 날짜가 아니라 본문 문구로 판정한다('내용일치 예'). 현재 원본·동기본이 4곳 어긋나지만 내용은 같다. 실제 드리프트가 생기면 9) 가 매 세션 알린다."
   },
   {
    "id": "naver-paste-5",
@@ -2281,7 +2283,9 @@
    "due": "2026-09-06",
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/session_state.json',encoding='utf-8'))['sessions'];print({k:(v.get('state'),v.get('reads'),bool(v.get('last_report'))) for k,v in d.items()})\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "이부장 판정 — 규칙을 확정한다. ⏸대기(waiting)=지시서를 읽고 다음 지시를 기다리는 상태 · 🚫막힘(blocked)=권한·게이트·외부장애로 지금 아무것도 못 하는 상태. 판정 기준은 '내가 지금 할 수 있는 일이 있는가' 하나다. 있으면 대기가 아니라 미실행이고, 없으면 막힘이다. loopcheck 는 이미 이 기준으로 ④(막힘 미보고)와 세션대기를 나눠 본다."
   },
   {
    "id": "topic-a2-15-earlypay",
@@ -2573,7 +2577,9 @@
    "due": "2026-09-06",
    "cmd": "curl -sSL -o /dev/null -w '%{http_code}\\n' -A 'Mozilla/5.0' 'https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=346127'",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "야간검증 09-06: mohw.go.kr board.es 링크(mid=a10503000000&bid=0027&act=view&list_no=346127) curl 200 확인 — 라이브에서 클릭 가능. 단 line64 인용부호 축자 불일치(원문 접합 오류)는 라이브 본문 수정 사안이라 이 루틴에서 반영 안 함, 관제탑/승인게이트로 인계."
   },
   {
    "id": "pub-g2-03-0828",
@@ -3565,7 +3571,9 @@
    "due": "2026-09-03",
    "cmd": "python -m studio.batchboard set --id pub테스트 --title t --items <파일>",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "고쳤다 — batchboard set 의 중복 판정이 코드만 보던 것을 배치 id 접두어(draft/pub/osmu/boost/fix)로 단계를 읽어 같은 단계일 때만 막게 했다. 오늘 이것 때문에 두 번 막혀 --force 로 우회했었다(게이트를 깨는 습관이 거기서 생긴다). 접두어를 못 읽으면 예전대로 막는다(안전한 쪽)."
   },
   {
    "id": "naver-post-g405-0831",
@@ -3988,7 +3996,9 @@
    "due": "2026-09-02",
    "cmd": "python -m studio.timeline --days 1",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — timeline.json 에 to 필드가 400건 들어 있다. 수신자 표기가 배선됐다."
   },
   {
    "id": "ui-approvalcount-align-0901",
@@ -4072,7 +4082,9 @@
    "due": "2026-09-04",
    "cmd": "python -m studio.setgate && python -m studio.myturn | head -20",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "시험 운영 결과 — 확산이 밀리지 않았다. 2026-09-06 실측: G3-04 발행 당일 4채널 완결 · F3-08 발행 당일 쓰레드까지 완료(인스타 진행 중). '준비 기준' 유지한다. 편수 완충(②안)으로 전환할 이유가 없다."
   },
   {
    "id": "naver-post-b108-0901",
@@ -4114,7 +4126,9 @@
    "due": "2026-09-03",
    "cmd": "python -m studio.affiliate",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — 이미 배선돼 있다(커밋 3dec947). pubqueue.py L377-385 가 research_state 를 불러 초안 적재 때 경고한다(차단 아님). 오늘 G3-04 적재 시 no_fit 이라 경고가 안 뜬 것은 맞는 동작이다."
   },
   {
    "id": "naver-post-e211-0901",
@@ -4165,7 +4179,9 @@
    "due": "2026-09-02",
    "cmd": "python -m studio.loopcheck | grep -c '안 나갔다' && python studio/selfcheck.py | grep '안 나간'",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — selfcheck 17) 이 loop.json 캐시를 읽지 않고 loopcheck.py 를 직접 import 해서 돌린다(L870-874, '판정은 loopcheck 하나만 쓴다 — 로직 복제 금지'). 오탐 원인이 제거됐다."
   },
   {
    "id": "briefing-gsc-window-0901",
@@ -4443,7 +4459,9 @@
    "due": "2026-09-04",
    "cmd": "cat docs/검사_발행라인_20260903.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "🔴3건 전부 해결됨을 실측 확인. ①큐 작성자 필드 — pubqueue add --by 배선됨. 오늘 G3-04·A6-02·F3-08 전부 by=이과장 기록. V0 자기검사 가드가 실제로 발동해 A6-02 반려 도장을 거부했다(fail-closed 첫 작동). 추가로 v0check 에 audit.record 를 넣어 누가 찍었는지 남게 했다. ②pushcheck — pipeline.py L355 에서 실제 호출(publish + file + 러너 아닐 때). ③approve.yml — 존재하고 issues 트리거 배선됨. ⚠️ insp-mine-0903 과 같은 건이라 그쪽도 함께 닫는다."
   },
   {
    "id": "insp-mine-0903",
@@ -4452,7 +4470,9 @@
    "due": "2026-09-04",
    "cmd": "cat docs/검사_발행라인_20260903.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "insp-pub-0903 과 동일 건(같은 문서·같은 cmd). 그쪽에 실측 근거를 적었다."
   },
   {
    "id": "insp-osmu-0903",
@@ -4479,7 +4499,9 @@
    "due": "2026-09-04",
    "cmd": "cat docs/검사_건수정합_20260903.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — approvalcount 를 오늘 10회 넘게 돌렸고 매번 화면(approval.html)과 같은 숫자가 나왔다(7건→5건→7건). 판정 기준이 boss 배열과 같은 순서·조건으로 맞춰져 있다. 어긋남 재현 안 됨."
   },
   {
    "id": "insp-cp-0903",
@@ -4651,7 +4673,9 @@
    "due": "2026-09-04",
    "cmd": "grep -o 'v0reject-e2-10\\|v0reject-d3-06' webapp/watch.json ; python -m studio.watch add --id v0reject-d3-06-x --owner user --due 2026-09-04 --what t --cmd t",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — 배선이 작동한다. webapp/watch.json 에 v0reject-* 항목이 17건 쌓여 있고, 오늘만 3건(g3-04·f3-08·a6-02)이 반려 도장과 함께 자동 등록됐다. '거짓 성공' 증상은 재현되지 않는다. ※오늘 v0check 에 audit.record 도 추가해 누가 찍었는지 감사 로그에 남는다."
   },
   {
    "id": "v0reject-e2-10",
@@ -4759,7 +4783,9 @@
    "due": "2026-09-08",
    "cmd": "python -m studio.setgate && grep -n 'HAND' studio/setgate.py",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "실측 확인 — 오늘 setgate.HAND 를 ('naver',) 로 고쳤다(인스타는 이과장 몫이라 게시 URL 을 요구한다). gatecheck 도 같이 맞췄고 회귀 규칙 _r_gatecheck_matches_setgate_0906 을 넣었다."
   },
   {
    "id": "prod-G4-06-0905",
@@ -4928,7 +4954,9 @@
    "due": "2026-09-06",
    "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio import dupcheck as d;print(sorted(d.sig('자동차 채권 미환급금 조회 환급 신청 방법 총정리 (지역개발채권·도시철도채권 숨은 돈)')[0]))\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "고쳤다 — dupcheck.sig() 는 09-05 에, naverkw.title_words() 는 09-06 에 고쳤다. 연도만 든 괄호는 통째로 지우고 나머지는 껍데기만 벗긴다. 검증: A2-15 제목에서 '생계급여'(하루 클릭의 22.4%를 만든 낱말)가 잡힌다. 🔴 같은 병이 두 도구에 따로 있었다 — 하나 고칠 때 전수로 찾지 않은 것이 오늘의 교훈이다."
   },
   {
    "id": "drift-fail-0905",
@@ -5088,11 +5116,13 @@
   {
    "id": "aff-issue-0906b",
    "added": "2026-09-06",
-   "what": "🛒 제휴 링크 — **발급하실 상품은 여전히 5개입니다**(늘지 않았습니다).\nG3-04(BIFF 영화제)를 추가로 조사했는데 **이미 목록에 있는 손난로·방석과 같은 상품**이었습니다.\n야외상영(오픈시네마)·심야상영(미드나잇패션) + 10월 부산 밤 = 통도사 야간과 같은 수요입니다.\n→ 오늘 정한 **카테고리 상비 링크** 전략이 실제로 맞았습니다. 한 번 발급하면 계속 재사용됩니다.\n\n① 해외여행 멀티어댑터 34,900원  → 영국ETA · 미국ESTA\n② 보조배터리 10000mAh 15,200원 → 영국ETA · ESTA · 롯데월드\n③ 3단 자동우산 24,700원        → 롯데월드\n④ 충전식 손난로 33,310원        → 통도사 미디어아트 · **BIFF 영화제**\n⑤ 접이식 방석 3,700원           → 통도사 · **BIFF 영화제**\n\n가격은 다나와 2026-09-06 확인. 발급하신 URL 을 주시면 표시문구까지 붙여 원고에 넣습니다.",
-   "due": "2026-09-06",
+   "what": "🛒 제휴 링크 **5개**만 발급하시면 됩니다 — 상품은 안 늘었고 붙는 글만 늘었습니다.\n쿠팡·네이버가 Claude 에게 차단돼 있어 발급만 사장님 계정 몫입니다.\n\n① 해외여행 멀티어댑터  34,900원 → 영국ETA · 미국ESTA · **아시아나마일리지**\n② 보조배터리 10000mAh 15,200원 → 영국ETA · ESTA · 롯데월드 · **아시아나마일리지**\n③ 3단 자동우산        24,700원 → 롯데월드\n④ 충전식 손난로        33,310원 → 통도사 미디어아트 · **BIFF 영화제**\n⑤ 접이식 방석          3,700원 → 통도사 · **BIFF 영화제**\n\n가격은 다나와 2026-09-06 확인. 발급하신 URL 을 주시면 표시문구까지 붙여 원고에 넣습니다.\n🔴 지금 237편 중 제휴가 붙은 글은 F1-15 **1편뿐**입니다 — 이 5개가 그 병목입니다.\n⚠️ ①②④⑤ 가 붙을 글 4편(F3-08·G3-04 포함)은 이미 게시돼 네이버 재편집이 필요합니다.",
+   "due": "2026-09-07",
    "cmd": "크롬 「쇼핑링크」 탭 그룹 → 쿠팡 파트너스 → 검색어 5개: 해외여행 멀티 어댑터 / 보조배터리 10000mAh 소형 / 휴대용 3단 자동우산 / 휴대용 핫팩 충전식 / 휴대용 접이식 방석",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-07",
+   "result": "사장님이 쿠팡 링크 5개를 발급해 주셨다(2026-09-07). 6편 12자리에 등록 완료 — F1-13·F1-07·F3-08(어댑터+보조배터리) · F4-08(보조배터리+우산) · G2-03·G3-04(손난로+방석). ⚠️ 쿠팡이 차단돼 링크 대상 상품명을 검증하지 못했다 — 요청한 번호 순서대로 매칭했고 사장님 확인을 받는 중이다."
   },
   {
    "id": "title-kw-audit-0906",
@@ -5170,7 +5200,9 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.bodydup --file 아시아나마일리지대한항공통합_글_HTML.txt --code F3-08 --live",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-06",
+   "result": "완료 — 사실오류 2건 정정을 1차출처로 확인했고(카타르항공 분류 CM202606090002529359 Q8 · 유효기간 출처 CM202509300002526466), V0 통과 후 11:57 사장님 승인, 발행 완료. 쓰레드·인스타까지 게시됐고 네이버 원고도 완성돼 결재함(naver-post-f308)에 올렸다."
   },
   {
    "id": "routine-triage-0906",
@@ -5199,7 +5231,7 @@
    "owner": "user",
    "state": "done",
    "done_at": "2026-09-06",
-   "result": "이부장 검토 완료 — 반려 타당. 5건 전부 law.go.kr 원문으로 확인된 법령 오류다(①소급 3개월 창 누락으로 계산표 과대 ②재직 중 수령 시 퇴직자 대지급금이 막히는 사실 누락 ③1회 한정 누락 ④일용근로자 제외를 '1개월 이상 필수'로 오기 ⑤저소득 요건 금액 없음). 재작업 지시서 fix0906a602 등록·이과장 담당. 사장님 확인 불필요.",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 2차검사: diff만 대조. 반려 5건 전부 정정 확인 — ①소급3개월 창 반영, 계산표 540/890만원으로 축소(1차 400/800만원 과대 해소) ②법7조의2⑤2 인용해 재청구 차단·되돌릴수없음 명시(퇴직급여는",
    "kind": "approve"
   },
   {
@@ -5259,6 +5291,93 @@
    "due": "2026-09-06",
    "cmd": "python -m studio.watch",
    "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-f308",
+   "added": "2026-09-06",
+   "what": "F3-08(아시아나 마일리지 통합) 네이버 원고 준비 완료 — 클립보드에 본문 복사됨. 게시 부탁드립니다",
+   "due": "2026-09-06",
+   "cmd": "python -m studio.pipeline naver-draft --code F3-08 --file 'osmu/네이버용_아시아나마일리지대한항공통합.txt'  (다시 클립보드에 복사 → blog.naver.com 글쓰기에서 붙여넣기 → 카테고리(여행) 선택 → 게시 → URL을 세션에 전달)",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-07",
+   "result": "네이버 게시 확인 — https://blog.naver.com/magsori8975/224403144155 (og:title 대조 일치), crosslink 반영 완료"
+  },
+  {
+   "id": "c213-goldenhour-recheck",
+   "added": "2026-09-06",
+   "what": "C2-13(심뇌혈관 골든타임) 1차 출처 조사 중 확인 못한 4건: 1)119 신고시 병원 사전연락 절차 원문 2)FAST 약어 한국 공식출처 부재 확인 3)e-gen 질환별 시술가능병원 필터 부재 확인 4)야간주말 시술가능병원 변동 공식서술 부재. docs/c213_1차출처_심뇌혈관골든타임_20260906.md 참조",
+   "due": "2026-09-20",
+   "cmd": "curl -s -A Mozilla/5.0 'https://www.e-gen.or.kr/egen/search_hospital.do' | grep -o '진료과|응급실|시술' | sort -u",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "topicprop-state-drift-0906",
+   "added": "2026-09-06",
+   "what": "topicprop.json approved 8건(G4-03·F2-14·F1-15·F1-13·G4-04·G2-03·G4-05·F1-14) 전부 실제로는 이미 발행완료인데 state가 approved로 남아 발행 후 갱신이 안 되는 것으로 보임",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.topicprop table 및 webapp/topicprop.json 의 published 여부 대조 후 state 갱신 로직 확인",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "jagalchi-date-0906",
+   "added": "2026-09-06",
+   "what": "G1-99 부산 자갈치축제 2026 정확 개최일 미공지(9/6 확인시 '10월 예정'만) — 과거 패턴상 9월 말경 공지 예상, 발표되면 draft 작업 진행",
+   "due": "2026-09-20",
+   "cmd": "WebFetch https://www.visitbusan.net/null/board/view.do?boardId=BBS_0000009&menuCd=DOM_000000204012000000&dataSid=3096 로 정확 일자 재확인",
+   "owner": "claude",
+   "state": "todo"
+  },
+  {
+   "id": "naver-post-a602",
+   "added": "2026-09-07",
+   "what": "A6-02(간이대지급금 재직자) 네이버 원고 대기 — F3-08 네이버 게시 먼저 부탁드립니다(순서 규칙). F3-08 게시 후 이 명령으로 준비됩니다",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.pipeline naver-draft --code A6-02 --file 'osmu/네이버용_간이대지급금재직자신청.txt'  (F3-08 완료 후 실행 → 클립보드 복사 → blog.naver.com 글쓰기에서 붙여넣기 → 카테고리(정부지원) 선택 → 게시 → URL을 세션에 전달)",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-07",
+   "result": "F3-08 게시 완료 확인 → A6-02 naver-draft 실행, 클립보드 준비 완료(제목검사 통과, 첨부 thumbs_naver/213_wage_advance.png)"
+  },
+  {
+   "id": "naver-post-a602-ready",
+   "added": "2026-09-07",
+   "what": "A6-02(간이대지급금 재직자) 네이버 원고 클립보드 준비 완료 — 게시 부탁드립니다",
+   "due": "2026-09-07",
+   "cmd": "blog.naver.com 글쓰기 → 제목 붙여넣기 → 본문 붙여넣기(클립보드, 이미 복사됨) → 카테고리(정부지원) 선택 → 첨부: C:\\lifeinfo\\thumbs_naver\\213_wage_advance.png → 게시 → URL을 세션에 전달",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "naver-auth-0907",
+   "added": "2026-09-07",
+   "what": "네이버: 아이디 lees**** 가 사장님 휴대전화 본인인증(010-3***-8***)으로 인증됨 2026-09-06 22:29 KST — 본인 계정이 맞는지 확인 필요(아니면 이통사/아이핀 문의)",
+   "due": "2026-09-07",
+   "cmd": "네이버 메일 확인: account_noreply@navercorp.com 2026-09-06 '회원님의 개인정보로 본인인증이 발생했습니다'",
+   "owner": "user",
+   "state": "todo"
+  },
+  {
+   "id": "v0reject-c2-13",
+   "added": "2026-09-07",
+   "what": "🔴 V0 반려 확인 요청 — C2-13 「환절기 심근경색 뇌졸중 골든타임 응급실 찾는 방법 총정리 (2026)」. 검사자 v0agent · 2026-09-07T05:21. 사유 요약: 본문 자기모순: 바이라인·출처박스가 '골든타임 수치·증상 목록을 질병관리청·대한뇌졸중학회 공식 자료로 확인해 정리했다'(line143,147)고 명시하지만 본문 어디에도 편측마비·언어장애·시야장애·어지럼증·두통 등 증상 목록 섹션이 없다(FAST 대체용으로 넣기로 한 것이 실제로 빠짐) — 신뢰 문구가 본문과 반대말을 하는 사고. 추가로 sec1 표의 '도착 골든타임(심근경색120분·뇌졸중180분, 보건복지부·질병관리청 제2차종합계획 인용)'은 1차출처 문서(c213_1차출처)에서도 실제 인용문·URL 없이 서술로만 존재해 다른 모 … 🔴 전문은 `python -m studio.v0check gate --code C2-13` 로 읽으십시오(길어서 여기 안 싣습니다). 확인하시면 이 항목을 완료 처리해 주시고, **반려가 과하다고 보시면 그렇게 말씀해 주십시오** — 이부장이 판정을 다시 봅니다. 이 항목이 열려 있는 동안 그 글은 발행되지 않습니다.",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.v0check gate --code C2-13",
+   "owner": "user",
+   "state": "done",
+   "done_at": "2026-09-07",
+   "result": "V0 통과로 해소 — 검사자 v0agent · 1차 반려 2건 모두 실측 확인: ①sec4에 대한뇌졸중학회·보건복지부 원문 증상목록(편측마비·언어장애·시야장애·어지럼증·두통, 가슴통증·식은땀·호흡곤란 등)이 실제로 들어와 byline·src박스의 '증상 목록' "
+  },
+  {
+   "id": "toss-catalog-check-0907",
+   "added": "2026-09-07",
+   "what": "🔍 토스쇼핑에 우리 추천 상품이 있는지 확인 — 토스 쉐어링크 수수료가 **10%** 로 확인됐습니다(원문: sharelink.toss.im, 2026-09-07 취득). 쿠팡보다 유리할 수 있는데, 토스쇼핑 카탈로그에 그 상품이 있어야 합니다. 봇 차단(shopping.toss.im 403)이라 로그인한 브라우저에서만 검색됩니다. 확인할 상품 5개: 해외여행 멀티어댑터 / 보조배터리 10000mAh / 3단 자동우산 / 충전식 손난로 / 접이식 방석. 있는 것만 알려주시면 토스 링크로 바꾸거나 병기하겠습니다.",
+   "due": "2026-09-08",
+   "cmd": "start https://sharelink.toss.im/home",
+   "owner": "user",
    "state": "todo"
   }
  ]
