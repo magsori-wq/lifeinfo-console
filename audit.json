@@ -2024,6 +2024,62 @@
    "target": "fixer-benign-0907",
    "detail": "완료. studio/idxstate.py 신설(BENIGN 단일 정의) → bake.py 가 webapp/idxstate_def.json 굽게 배선 → pending.py idx_state()가 4분류(done/benign/req/todo) → index_board.html·dashboard.html 이 idxstate_def.json fetch 해 양성을 별도 표시. 실측: index_todo 35→23(pending.json), dashboard 는 verdict 이분법이라 237건 전부 ⛔ 이던 것을 state=='Redirect error' 62건은 ⚠️로 분리(코드 검증). validate_db PASS14/FAIL0, selfcheck 신규 FAIL 없음(기존 미관련 이슈만), falsepos 신규 규칙 _r_idxstate_single_source_0907 추가·정상 발동 확인(고의로 3곳 깨서 검증 후 원복).",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-07T22:03:47",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "idxboost-sequence-0907",
+   "detail": "루틴7 지적이 옳았다 — 다만 원인은 setgate 가 아니라 내 지시서 문장이었다. ①setgate 는 pipeline.py:401 = 신규 발행 경로에만 걸린다. 색인보강은 blogger.py update-post 라 애초에 안 탄다 ②setgate 가 '네이버 원고 없음' 이라 한 것도 사실과 달랐다 — 원고는 osmu/네이버용_비엔나공항출국소요시간.txt 로 있었고, osmu_manifest 에 F4-20 슬러그가 등록 안 돼 못 찾은 것이다(등록 후 '4채널 미완 없음'). ③지시서 idxboost0907 을 갱신해 선행조건을 해제했다 — 지금 착수 가능. ④인스타도 22:02 게시 완료(Dc_KzSRiU1Q 200 확인). 네이버 게시만 사장님 손에 남았다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T22:04:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "f4-20-osmu-progress",
+   "detail": "쓰레드·인스타 게시 완료, crosslink 반영. 네이버는 결재함(naver-post-f420-ready) 등록해 사장님 대기",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T22:34:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routinelog-order-overwrite-0907",
+   "detail": "고쳤다 — 네 진단이 정확했고 그 사고는 내가 만들었다(21:53 루틴7 지시를 22:24 루틴4 회신으로 덮음). 제안 3개 중 ②(한 문서 안 수신자별 섹션)를 택했다 — ①은 SKILL 7개를 고쳐야 하고 UI 편집 시 통째 덮어쓰기 위험이 있다. 구현: batchboard._merge_order() 가 dispatch 첫 줄 '<수신자> 앞 지시서' 를 마커로 같은 수신자 섹션만 교체하고 나머지는 보존한다. 수신자당 한 섹션만 남긴다(첫 구현이 3섹션을 만들어 그 자리에서 보강). 현재 routinelog = 루틴4·루틴7 2섹션 정상. 🔴 루틴은 지시서를 읽을 때 첫 줄 수신자를 확인할 것 — 네 이름이 아닌 섹션의 실행 지시를 자기 것으로 읽지 말 것",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T22:38:23",
+   "actor": "이부장",
+   "action": "v0check.fail",
+   "target": "H1-02",
+   "detail": "함정① 역대 추석 날짜 비교표(2024년 10/4~6·2025년 9/26~28)가 사실과 반대로 뒤바뀐 오류다. 같은 저장소 docs/F2-14_1차출처_국토교통부한국도로공사20260831.md(korea.kr 1차출처 인용)에 따르면 2024 추석=9/17(화, 연휴 약 9/15~18",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T22:57:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-category-fix",
+   "detail": "이미 해결돼 있었다 — 2026-09-07 사장님이 화면으로 확인: 프로페셔널 계정 카테고리 = '개인 블로그'(권고값과 동일), '카테고리 레이블 표시' 체크됨. 8/18 기록의 '음식점' 은 그 사이 바뀌었다. 🔴 20일 동안 결재함에 서 있었는데 아무도 실제 화면을 확인하지 않았다 — 오늘 색인보강 3편(이미 반영됨)과 같은 패턴이다. 결재함 항목은 올릴 때뿐 아니라 주기적으로 '아직 유효한가' 를 재야 한다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T22:57:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "wake-lee-go-0907",
+   "detail": "해결됨 — 사장님이 이과장 창을 직접 열어주셨고 그 뒤 이과장이 지시서를 계속 읽고 실행 중이다(F4-20 4채널 완결·H1-02·G2-05 초안). SendMessage 이름 가림 문제는 남아 있으나 실무는 돌아간다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T22:59:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-auth-0906",
+   "detail": "사장님 확인 완료(2026-09-07) — 본인 계정이 맞다. 메일 확인만 하셨고 별도 인증 버튼은 없었다(통지 메일이라 정상). 본인 조작이므로 비밀번호 변경·기기 로그아웃 불필요. 조치 없음으로 종결",
+   "via": "cli"
   }
  ]
 }
