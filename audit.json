@@ -1824,6 +1824,54 @@
    "target": "D1-09",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:23:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-d109-ready",
+   "detail": "게시 완료 — https://blog.naver.com/magsori8975/224403768745 (사장님 게시, 2026-09-07). naver-link 기록·crosslink 삽입·라이브 실측 확인 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:24:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-d109-ready",
+   "detail": "네이버 게시 확인 — https://blog.naver.com/magsori8975/224403768745 (og:title 대조 일치), crosslink 반영 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:37:42",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "E2-14",
+   "detail": "계산예시(1차200+2차400+3차1000=누적1600만원)·판단형체크리스트(6유형×실제화면)·탈락사유(공정거래법 비적용 원문인용+1372안내)·함정(계도기간 유보표기+신고=제재이지 보상아님) 4요소 전부 실질. 법조문 law.go.kr DRF 원문대조: 전자상거래법§21의2·§13⑥(",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:37:57",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "A1-14",
+   "detail": "계산예시(자녀1명 30만→20만 상한/15만→15만/자녀2명→40만)·탈락사유(자료제출거부·채무자20만원이상이행시중지·부정수급시반환+처벌)·판단형비교(10/29전후 신청, 결정일기준 vs 신청일기준)·함정(지급기간 만19세/만18세 불일치 원문그대로 병기+옛정보 함정) 4요소 전부 실질",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:40:55",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "A1-14",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:41:18",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "E2-14",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }
