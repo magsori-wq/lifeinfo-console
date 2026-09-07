@@ -5434,7 +5434,9 @@
    "due": "2026-09-08",
    "cmd": "start https://sharelink.toss.im/home",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-07",
+   "result": "해결됨 — 2026-09-07 토스 Open API 연동 후 실제 카탈로그를 조회해 3개 상품을 등록했다(3단 자동우산 9,900원 리뷰281 · 무선 손난로 10,790원 리뷰56 ×2). 즉 '카탈로그에 있는지' 는 확인됐다. 남은 것은 그 링크를 원고에 붙이는 것이고 그건 aff-block-paste-0907 이 추적한다."
   },
   {
    "id": "connect-terms-0907",
@@ -5619,6 +5621,26 @@
    "by": "이부장",
    "done_at": "2026-09-07",
    "result": "네이버 게시 확인 — https://blog.naver.com/magsori8975/224403768745 (og:title 대조 일치), crosslink 반영 완료"
+  },
+  {
+   "id": "pub-e214-tomorrow",
+   "added": "2026-09-07",
+   "what": "E2-14(다크패턴) 발행 — 사장님 ⑦승인 완료(2026-09-07 16:41, go 도장 원격 확인). 오늘 이미 4편 발행해서 하루로 미뤘다. 내일 첫 건으로 낸다. V0 통과(법조문 전수 대조 오류 0건).",
+   "due": "2026-09-08",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=E2-14 -f mode=live -f confirm=PUBLISH -f file='다크패턴규제신고방법_글_HTML.txt' -f title='다크패턴 신고' -f post_title='그냥 마케팅 아니었다 — 다크패턴 신고 방법과 과태료 (2026)'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-post-a114-ready",
+   "added": "2026-09-07",
+   "what": "📝 A1-14(양육비 선지급제 소득기준 폐지) 네이버 게시 — 제목·카테고리·첨부는 아래 명령 출력에 나옵니다. 첨부=C:\\lifeinfo\\thumbs_naver\\217n_childsupport.png(네이버 전용 후킹 썸네일). 🔴 아래 명령을 **먼저 돌리십시오** — 그 순간 클립보드에 담깁니다. 【권고】 게시 후 URL 만 주시면 기록하겠습니다.",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.pipeline naver-draft --code A1-14 --file osmu/네이버용_양육비선지급제소득기준폐지.txt",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
