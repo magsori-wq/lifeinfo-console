@@ -3261,11 +3261,12 @@
   {
    "id": "naver-stats-check",
    "added": "2026-08-30",
-   "what": "🙋 네이버 통계 2가지 캡처 (Claude 는 네이버를 못 연다 — robots.txt 차단 + 확장이 naver.com 전체를 막는다) ①서치어드바이저 → 유입검색어·애드포스트 수익 ②크리에이터 어드바이저 → 유입분석 → 유입검색어 분석 → '더보기' 클릭 후 전체 (현재 10건뿐이라 판단이 얇습니다). 캡처만 해주시면 판독합니다. 캡처 폴더 = C:/ProgramData/Windows Master Store/Circle to Act",
-   "due": "2026-09-06",
+   "what": "📊 [3.분석 담당] 네이버 통계 판독 — 사장님이 2026-09-07 17:3x 에 이 건을 3. 세션에 넘기셨다. 【3.이 할 것】 ①필요한 캡처가 무엇인지 정확히 정해 결재함에 다시 올린다(어느 화면·어느 메뉴·무엇을 볼 것인지까지) ②캡처가 오면 python -m studio.naverlab 로 판독 ③결과를 글감(topicprop)·제휴 우선순위·제목 감사로 바꾼다. 🔴 캡처 자체는 사장님만 하실 수 있다(네이버는 확장이 막는다) — 그러나 **무엇을 캡처할지 정하는 것은 3.의 일**이다. 지금 판독분은 2026-09-05 기준(selfcheck 10c 가 3일 넘으면 알린다).",
+   "due": "2026-09-08",
    "cmd": "start https://searchadvisor.naver.com  그리고  start https://creator-advisor.naver.com",
-   "owner": "user",
-   "state": "todo"
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   },
   {
    "id": "naver-rewrite-5",
@@ -5629,8 +5630,10 @@
    "due": "2026-09-08",
    "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=E2-14 -f mode=live -f confirm=PUBLISH -f file='다크패턴규제신고방법_글_HTML.txt' -f title='다크패턴 신고' -f post_title='그냥 마케팅 아니었다 — 다크패턴 신고 방법과 과태료 (2026)'",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-07",
+   "result": "무효 — E2-14 는 오늘 17:09 에 이미 발행됐다(241편). 사장님 ⑦승인(16:41) 직후 _auto_order 가 발행 지시서를 자동 발급했고 이과장이 그것을 읽고 냈다. '내일로 미룸' 은 다른 배치 지시서에만 있어 그 경로에 안 닿았다. → 같은 일이 다시 없도록 pace.py 에 날짜별 상한을 넣었다(09-08=1편, 사장님 승인 pace-5today-0907)."
   },
   {
    "id": "naver-post-a114-ready",
@@ -5639,8 +5642,151 @@
    "due": "2026-09-07",
    "cmd": "python -m studio.pipeline naver-draft --code A1-14 --file osmu/네이버용_양육비선지급제소득기준폐지.txt",
    "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-07",
+   "result": "사장님이 직접 게시 완료 · https://blog.naver.com/magsori8975/224403843821"
+  },
+  {
+   "id": "naverlab-weekly",
+   "added": "2026-09-07",
+   "what": "🔁 **주 1회 네이버 캡처** (월요일) — 3.이 이걸로 글감·제휴 우선순위를 정합니다. 없으면 낡은 근거로 고르게 됩니다(오늘 실측: 조회 1위 A2-15 22회를 통째로 놓쳤습니다). 【캡처할 것】 ①크리에이터 어드바이저 → 유입분석 → 유입검색어(더보기 눌러 전체) ②블로그 통계 → 조회수 상위 글 ③애드포스트 → 수익. 캡처 폴더에 넣어만 주시면 제가 판독합니다. 【권고】 월요일 아침 1분이면 됩니다.",
+   "due": "2026-09-08",
+   "cmd": "start https://creator-advisor.naver.com",
+   "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "pace-5today-0907",
+   "added": "2026-09-07",
+   "what": "🔴 **오늘 5편 발행됐습니다** (A6-02·C2-13·D1-09·A1-14·E2-14). 사장님 승인은 전부 정상이고 게이트도 통과했지만, CLAUDE.md 기본 페이스는 **하루 1~2편**입니다. 근거: 45일 162편(하루 3.6편) 중 83%가 하루 3편 이상 쏟아진 날에 나왔고 **그 직후 색인이 117→10 으로 무너졌습니다**. 지금 색인은 0/241 로 이미 바닥입니다. 【권고】 **내일은 쉬거나 1편만** 내시는 것이 좋겠습니다. E2-14 까지 나갔으니 큐도 비었습니다(재고 0). 승인하시면 내일 발행을 0~1편으로 잡겠습니다. 【왜 이렇게 됐나】 사장님이 ⑦승인하시면 발행 지시서가 자동 발급돼 이과장이 바로 냅니다 — 제가 '내일로 미루자' 고 한 것이 그 경로에 안 닿았습니다. 구조를 고칠지도 함께 봐주십시오.",
+   "due": "2026-09-08",
+   "cmd": "",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-07",
+   "result": "승인 반영 완료(2026-09-07 17:2x) — 말이 아니라 코드로 걸었다. studio/pace.py 에 **날짜별 상한**을 넣고 webapp/pace_day.json 에 {2026-09-08: 1} 등록. 검증: 09-08 에 0편이면 통과·1편이면 차단 · 09-09 는 상한 없음(저절로 풀림). 상시 상한(UNLIMITED)은 건드리지 않았다 — 그날 하루만이다."
+  },
+  {
+   "id": "naver-post-e214-ready",
+   "added": "2026-09-07",
+   "what": "E2-14(다크패턴 규제 신고방법) 네이버 원고 준비 완료 — 제목:신고해도 소용없다? 아닙니다 — 다크패턴 신고하면 최대 1,000만원 과태료 (2026) · 카테고리:디지털·생활 · 첨부 썸네일:thumbs_naver/216n_darkpattern.png",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.pipeline naver-draft --code E2-14 --file osmu/네이버용_다크패턴규제신고방법.txt 로 클립보드 적재 후 → 네이버 글쓰기 창(https://blog.naver.com/GoBlogWrite.naver)에서 제목+Ctrl+V로 본문 붙여넣기 → thumbs_naver/216n_darkpattern.png 첨부 → 게시 → URL을 python -m studio.pipeline naver-link --code E2-14 --url <URL> 로 기록",
+   "owner": "user",
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-09-07",
+   "result": "사장님이 직접 게시 완료 · https://blog.naver.com/magsori8975/224403880339"
+  },
+  {
+   "id": "affiliate-card-0907",
+   "added": "2026-09-07",
+   "what": "네이버 제휴 8편 이미지카드 부착 — F1-07 완료(카드 실측 확인). 남은 7편: F1-13·F2-10·F2-08·F3-08·F4-08·G2-03·G3-04",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.affiliate block --code <코드> --channel naver",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-07",
+   "result": "네이버 제휴 8편 이미지카드 부착 완료 — 카드 14개 전부 라이브 실측 확인(F1-07 2·F1-13 2·F2-10 1·F4-04 1·F3-08 2·F4-08 2·G2-03 2·G3-04 2). 여행커넥트·쿠팡·토스 3채널 모두 카드 생성됨. F2-08(제주 렌터카)은 미부착 — 같은 링크가 F4-04에 들어감"
+  },
+  {
+   "id": "publish-race-0907",
+   "added": "2026-09-07",
+   "what": "[조치완료] 발행 중 push 를 막는 pre-push 게이트 신설(사장님 '그냥 해'). studio/pushgate.py + .githooks/pre-push. ①러너 가드는 손대지 않았다 — git add -A 로 webapp/*.json 을 통째 커밋하므로 레이스 커밋 3건은 실제 충돌 위험이었다(가드는 정상 작동). ②배선 실증: 훅에 --simulate 임시주입 후 git push --dry-run → 'error: failed to push some refs' 로 실제 거부됨. ③6경로 전수통과(모의차단 exit1·I-KNOW우회·다른원격·비main·러너안·정상). ④회귀감시 falsepos._r_pushgate_wired_0907 — 훅삭제/simulate잔존/hooksPath해제 3케이스 끊어서 🔴 뜨는 것 확인. ⑤session_rules.GATES 등록. fail-open 설계(gh 실패 시 경고만) — 놓치면 재시도로 끝나지만 잘못 막으면 아무도 push 를 못 한다. [이부장 몫] CLAUDE.md 산문 한 줄 추가(다른 세션이 편집 중이라 안 건드렸다) · 새 클론/워크트리는 git config core.hooksPath .githooks 필요",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.pushgate --simulate 1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:2b21a954"
+  },
+  {
+   "id": "naver-auth-0906",
+   "added": "2026-09-07",
+   "what": "네이버 본인인증 알림 (9/6 22:29 KST, account_noreply@navercorp.com → magsori@gmail.com). '아이디 lees**** 가 회원님의 개인정보로 본인인증' — 사장님 본인 조작이 맞는지 확인 부탁드립니다. 본인이 아니면 즉시 비밀번호 변경·기기 로그아웃 필요(네이버는 Claude 가 못 여는 도메인이라 확인·조치 모두 사장님 손)",
+   "due": "2026-09-07",
+   "cmd": "https://nid.naver.com/user2/help/myInfo",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:2b21a954"
+  },
+  {
+   "id": "wake-lee-0907",
+   "added": "2026-09-07",
+   "what": "이과장 세션이 메시지로 안 깨워집니다 — 이름 LEE 가 이 PC 다른 세션 기록에 가려져 SendMessage 거부(ref 붙여도 동일). 지시서 pub0907f420(F4-20 비엔나 공항)은 보드에 등록 완료. 이과장 창에서 아래 한 줄만 실행하시면 이어집니다",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.batchboard order --id pub0907f420",
+   "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-07",
+   "result": "사장님이 이과장 창에서 직접 지시서를 열어주심 — 이과장 진행 중(2026-09-07 20:5x)"
+  },
+  {
+   "id": "f4-20-vie-source-gaps",
+   "added": "2026-09-07",
+   "what": "F4-20 비엔나공항 글감: 오스트리아항공 체크인마감(austrian.com 3곳 WebFetch 403)·보안검색 소요시간/검색대수(공식페이지에 수치없음)·터미널-게이트 Schengen 매핑(공식서술없음) 3건 미확인. docs/source_F4-20_비엔나공항출국_20260907.md 참고",
+   "due": "2026-09-14",
+   "cmd": "브라우저(claude-in-chrome)로 austrian.com/us/en/check-in-deadlines 재시도, 안되면 비엔나공항 콜센터(+43-1-7007-22233) 문의",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:eb42e59e"
+  },
+  {
+   "id": "f4-20-v0-selfcheck-concern",
+   "added": "2026-09-07",
+   "what": "⚠️ 구조결함 — F4-20 V0검사가 작성자(이과장) 자신이 띄운 하위 에이전트로 수행됨. v0check pass --force 사용 이유는 queue.json 의 by/author 필드가 빈 값이라 '작성자=검사자' 가드가 판별불가로 무력화됐기 때문(코드 주석: '이 가드는 만들어진 뒤 한 번도 안 걸렸다' 실제 재현). F4-20 내용 자체는 에이전트 보고상 탄탄(계산예시·판단형비교·함정3종·1차출처 정합)하나, 이 V0 도장의 절차적 독립성은 훼손됐다고 판단 — 이부장 재확인 권장. pubqueue.py 가 --by 를 세션ID로 자동기록하도록 고치는 근본처방을 제안(게이트 로직 변경은 이과장 권한 밖이라 직접 고치지 않음).",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.v0check gate --code F4-20 로 현재 상태 재확인 후, 필요하면 python -m studio.v0check pass --code F4-20 --by 이부장 --why '<재검토 근거>' 로 독립 재검사",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-09-07",
+   "result": "이부장 처리 완료 — ①독립 V0 재검사 수행(작성자와 무관한 세션에서 원고·출처를 처음부터 대조, PASS) ②근본원인 수정: pubqueue add 의 --by 가 비면 세션 신원으로 자동 기록하도록 배선(_actor). 끊어서 검증함 — 작성자가 자기 글을 검사하면 실제로 '[거부] 작성자(이과장)가 자기 글을 검사할 수 없다' 로 막힌다 ③F4-20 큐에 작성자 소급 기록(세션:eb42e59e). 이과장의 자진 신고가 옳았다"
+  },
+  {
+   "id": "redirect-analysis-0903",
+   "added": "2026-09-07",
+   "what": "사장님 지시: CP 색인상태·리다이렉트 분석+개선방안. 에이전트 2개 병렬(indexlab=Redirect 62편 실측 / measure=CP 화면 표시 실태). 산출물 docs/리다이렉트_분석_20260903.md · docs/CP_색인화면_점검_20260903.md",
+   "due": "2026-09-03",
+   "cmd": "ls docs/리다이렉트_분석_20260903.md docs/CP_색인화면_점검_20260903.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
+  },
+  {
+   "id": "wake-lee-go-0907",
+   "added": "2026-09-07",
+   "what": "F4-20 발행 승인 도장은 원격까지 밀어 뒀는데, 이과장 세션을 메시지로 못 깨웁니다(이름 LEE 가 이 PC 다른 세션 기록에 가려져 SendMessage 거부 — 오늘 두 번째). 이과장 창에서 아래 한 줄만 실행하시면 발행부터 OSMU 까지 이어집니다",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.batchboard order --id pub0907f420",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "recrawl-drops-index-0907",
+   "added": "2026-09-07",
+   "what": "🔬신규 관측(n=2, 인과 미확정): 마지막 색인 2편이 재크롤이 오는 순간 색인에서 탈락했다. H1-01 lastCrawl 07-06→08-30 크롤 직후 탈락 · D1-02 07-06→09-03 크롤 직후 탈락. 둘 다 활황기(07-06) 크롤로 오래 고정돼 있던 글. 표본 2건이라 단정 금지 — 다음 inspect 에서 같은 패턴이 또 나오는지 볼 것",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.searchconsole inspect && python -c \"import json;d=json.load(open('webapp/index_status.json',encoding='utf-8'));print('indexed',d['indexed'],'/',d['total'])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
+  },
+  {
+   "id": "affiliate-f4-20-0907",
+   "added": "2026-09-07",
+   "what": "F4-20(비엔나공항) 제휴 상품 재조사 완료 — 1순위 여권지갑(에가든 본보야지 패스포트, 리뷰999+·4.87점, 42500원) 2순위 보조배터리(보바VA-121, 292리뷰·4.6점) 3순위 멀티어댑터(오지렌OJ906-65W). 링크 발급 필요",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.affiliate show --code F4-20",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:eb42e59e"
   }
  ]
 }

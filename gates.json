@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-07 08:10",
+ "updated": "2026-09-07 12:31",
  "ok": true,
  "problems": [],
  "gates": [
@@ -81,6 +81,11 @@
   {
    "mod": "affiliate",
    "kind": "제휴 링크 표시 — 쿠팡·토스 링크가 있으면 대가성 문구가 **맨 앞**에(공정위 예규 제499호)",
+   "what": "True"
+  },
+  {
+   "mod": "pushgate",
+   "kind": "발행 중 push 금지 — run 이 도는 동안 밀면 그 발행이 실패한다(pre-push 훅)",
    "what": "True"
   }
  ]

@@ -431,7 +431,19 @@ function fileChip(path, label, isImg, exists){
         +'<div class="hd">'
         +'<span class="lt lt-'+c.light+'"></span>'
         +'<span class="badge '+(first?'b-wait':'b-todo')+'">'+(first?'① 지금':'②+ 대기')+'</span>'
-        +'<span class="ttl">'+esc(String(p.title||'').slice(0,36))+'</span>'
+        // 🔴 **채널 제목을 우선 보여준다** (2026-09-07 사장님 화면 지적)
+        //    이 카드가 **블로그스팟 제목**을 보여주고 있었다. 그대로 붙이시면
+        //    네이버에 원문 제목이 들어가 **C안(후킹+실검색어) 위반**이 된다.
+        //    실측 E2-14: 카드 "속았다면 신고하세요 — 다크패턴 규제 6대 유형" vs
+        //    네이버 원고 "신고해도 소용없다? 아닙니다 — … 최대 1,000만원 과태료".
+        //    ch_title 은 osmutext 가 **원고 첫 줄**에서 뽑는다 — 없으면 DB 제목.
+        +(function(){var T=window.__OSMUTEXT__,ct='';
+          try{((T&&T.items)||[]).forEach(function(t){ if(t.code!==p.code)return;
+            (t.channels||[]).forEach(function(c2){ if(c2.key===key&&c2.ch_title) ct=c2.ch_title; });
+          });}catch(e){}
+          return '<span class="ttl">'+esc(String(ct||p.title||'').slice(0,44))
+            +(ct?' <b style="color:#7fc1ff">'+(key==='naver'?'네이버 제목':'채널 제목')+'</b>':'')
+            +'</span>';})()
         +'<span class="code">'+esc(p.code)+'</span>'
         +'<span class="badge '+(c.light==='ready'?'b-wait':'b-todo')+'">'
         +(c.light==='ready'?'🟡 게시만 하면 됨':'🔴 자산 미준비')+'</span></div>'
