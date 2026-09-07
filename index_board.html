@@ -82,15 +82,20 @@ function ageChip(n){ if(n==null) return '';
 
 (async function(){
   var a=await Promise.all([j('index_status.json'),j('reindex.json'),
-                           j('gsc_requested.json'),j('lifeinfo_db.txt'),j('gsc_monitor.json'),j('pub_dates.json'),j('gsc_req_dates.json')]);
+                           j('gsc_requested.json'),j('lifeinfo_db.txt'),j('gsc_monitor.json'),j('pub_dates.json'),j('gsc_req_dates.json'),
+                           j('idxstate_def.json')]);
   var IX=a[0]||{}, RI=a[1]||{}, GR=a[2]||{}, DB=a[3]||{posts:[]}, GM=a[4]||{},
       PD=(a[5]||{}).dates||{}, RQ=a[6]||{}, RQD=(a[6]||{}).dates||{},
       BULK=new Set((a[6]||{}).bulk_dates||[]);
+  // 🔴 양성(Redirect error 등) 판정 = studio/idxstate.py 단일 진실원을 구운 파일 하나만 본다.
+  //    여기서 다시 목록을 적지 않는다(docs/CP_색인화면_점검_20260903.md — 화면마다 각자
+  //    정의해서 절반만 반영되던 그 병).
+  var IXDEF=a[7]||{}, BENIGN_STATES=new Set(IXDEF.benign_states||['Redirect error']);
   var posts=IX.posts||{}, reqd=RI.requested||{}, urls=new Set(GR.urls||[]);
   var meta={}; (DB.posts||[]).forEach(function(p){ if(p.code) meta[p.code]=p; });
 
-  // 상태별 분류
-  var g=[],y=[],r=[],st={};
+  // 상태별 분류 — g=색인완료 · y=요청함대기 · bn=양성(조치불필요) · r=미요청(진짜 할 일)
+  var g=[],y=[],bn=[],r=[],st={};
   Object.keys(posts).forEach(function(c){
     var p=posts[c]||{}, s=p.state||'?';
     st[s]=(st[s]||0)+1;
@@ -98,10 +103,12 @@ function ageChip(n){ if(n==null) return '';
       lastCrawl:p.lastCrawl, req:reqd[c]||RQD[c]||null, inUrls:urls.has(m.url), pub:PD[c]||null};
     if(s==='Submitted and indexed') g.push(item);
     else if(item.req || item.inUrls) y.push(item);
+    else if(BENIGN_STATES.has(s)) bn.push(item);
     else r.push(item);
   });
   y.sort(function(x,z){return String(z.req||'').localeCompare(String(x.req||''));});
 
+  // 🔴 stale(독려 대상)에서 양성(bn)은 뺀다 — 손대도 소용없는 것을 독려하지 않는다.
   var stale=y.concat(r).filter(function(x){var d=days(x.pub); return d!=null && d>=14;}).length;
   var idx=GM.index_current!=null?GM.index_current:g.length;
   var tot=GM.index_total||Object.keys(posts).length;
@@ -112,6 +119,9 @@ function ageChip(n){ if(n==null) return '';
     + '<span class="l">요청함 · 대기<br>크롤을 기다리는 중</span></div>'
     + '<div class="sg r"><span class="lt lt-r"></span><span class="n">'+r.length+'</span>'
     + '<span class="l">미요청<br>실제 할 일</span></div>'
+    + '<div class="sg y" title="Redirect error — Blogger 표시 오류(조치불필요), 재조사·재요청 금지">'
+    + '<span class="lt" style="background:#4d5a70"></span><span class="n">'+bn.length+'</span>'
+    + '<span class="l">양성(Redirect error)<br>조치불필요</span></div>'
     + '<div class="sg b"><span class="n">'+idx+' <span style="font-size:13px;color:#6b7a96">/ 60</span></span>'
     + '<span class="l">애드센스 게이트 ①<br>'+Math.round(idx*100/60)+'% · 기준 60편</span></div>'
     + '<div class="sg r"><span class="n">'+stale+'</span>'
@@ -179,6 +189,13 @@ function ageChip(n){ if(n==null) return '';
           +cmd('python -m studio.searchconsole inspect')+' 로 상태를 새로 읽은 뒤, '
           +'GSC 에서 요청하고 '+cmd('python studio/gsc_log.py add <URL>')+' 로 기록합니다.</div>' : '')
         + rows(r,false))
+    + pane('⚠️','양성 — Redirect error(조치불필요)', bn.length+'건',
+        (bn.length? '<div class="warn" style="background:#4d5a7018;border-color:#4d5a7055;color:#aab6ca">'
+          +'Blogger 가 모바일 요청을 <b>?m=1 로 302</b> 보내서 생기는 <b>검색콘솔 표시 오류</b>입니다 — '
+          +'저절로 왔다 갑니다(<a href="https://support.google.com/blogger/thread/377434077" '
+          +'target="_blank" rel="noopener" style="color:#c9d3e6">Blogger 커뮤니티 원문↗</a>). '
+          +'재요청·재조사는 필요 없습니다.</div>' : '')
+        + rows(bn,false))
     + pane('🟢','색인 완료', g.length+'건', rows(g,false));
   document.getElementById('out').innerHTML=H;
 })();

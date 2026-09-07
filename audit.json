@@ -2000,6 +2000,30 @@
    "target": "F4-20",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-07T21:45:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-index-redirect-0907",
+   "detail": "이부장 판단 완료 — ①C+E 채택하되 순서를 뒤집었다(E→C). BENIGN 정의가 gsc.html·index.html 두 곳에 각자 박혀 있고 화면 3곳은 개념 자체를 모른다 — C 를 먼저 하면 세 번째 정의가 생긴다(pace 상수·라벨 42종과 같은 병). fixer 에 지시서 발급 완료 ②gsc-boost-plan-0901 은 이미 done 이다(루틴7 정보 낡음). 진짜 문제는 '계획은 09-01 에 섰는데 실행 지시가 6일째 안 난 것' — 내 몫이었다. 상위 3편(B1-01·B2-04·A5-01, 새 수치 불필요)을 결재함 idx-boost-3-0907 로 올렸다 ③recrawl-drops-index-0907 감시 지속(n=2, 09-14 재확인). ※루틴7 커밋 태그 오류(2ff418a8 을 [이부장]으로)는 이력 재작성 없이 이 기록으로 남긴다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T21:47:14",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "idx-boost-3-0907",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T21:52:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fixer-benign-0907",
+   "detail": "완료. studio/idxstate.py 신설(BENIGN 단일 정의) → bake.py 가 webapp/idxstate_def.json 굽게 배선 → pending.py idx_state()가 4분류(done/benign/req/todo) → index_board.html·dashboard.html 이 idxstate_def.json fetch 해 양성을 별도 표시. 실측: index_todo 35→23(pending.json), dashboard 는 verdict 이분법이라 237건 전부 ⛔ 이던 것을 state=='Redirect error' 62건은 ⚠️로 분리(코드 검증). validate_db PASS14/FAIL0, selfcheck 신규 FAIL 없음(기존 미관련 이슈만), falsepos 신규 규칙 _r_idxstate_single_source_0907 추가·정상 발동 확인(고의로 3곳 깨서 검증 후 원복).",
+   "via": "cli"
   }
  ]
 }

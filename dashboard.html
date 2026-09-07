@@ -893,34 +893,48 @@
   renderKpi();
 
   /* ---------- 🔍 색인 현황 (searchconsole.py inspect → index_status.json) ---------- */
-  var idxLastText=null, idxTitleMap=null;
+  var idxLastText=null, idxTitleMap=null, idxDef=null;
   function _idxTitleMap(){ // 코드→제목: 코드만 보면 뭔 글인지 모르니 DB에서 제목을 붙인다
     if(idxTitleMap)return Promise.resolve(idxTitleMap);
     return fetch('lifeinfo_db.txt?t='+Date.now()).then(function(r){return r.json();}).then(function(db){
       idxTitleMap={}; (db.posts||[]).forEach(function(p){idxTitleMap[p.code]=p.title||'';}); return idxTitleMap;
     }).catch(function(){return {};});
   }
+  // 🔴 양성(Redirect error 등) 정의 = studio/idxstate.py 단일 진실원을 구운 파일 하나만 본다
+  //    (docs/CP_색인화면_점검_20260903.md — 이 화면은 verdict 이분법이라 237건 전부 ⛔로
+  //    뜨던 것을 여기서 고친다. 정의를 여기 다시 적지 않는다).
+  function _idxDef(){
+    if(idxDef)return Promise.resolve(idxDef);
+    return fetch('idxstate_def.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).then(function(d){
+      idxDef=d; return d;
+    }).catch(function(){return (idxDef={});});
+  }
   function renderIndexStatus(){
     var tag=document.getElementById('idxTag'), note=document.getElementById('idxNote'), list=document.getElementById('idxList');
     if(!tag||!note||!list)return;
     return Promise.all([
       fetch('index_status.json?t='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.text();}),
-      _idxTitleMap()
+      _idxTitleMap(), _idxDef()
     ]).then(function(res){
-      var txt=res[0], tmap=res[1]||{};
+      var txt=res[0], tmap=res[1]||{}, def=res[2]||{};
+      var benignStates={}; (def.benign_states||['Redirect error']).forEach(function(s){benignStates[s]=1;});
       if(txt===idxLastText)return; // 내용 동일하면 재렌더 생략
       var d=JSON.parse(txt);
       idxLastText=txt;
       var ok=d.indexed||0, tot=d.total||0, pct=tot?Math.round(ok/tot*100):0;
       var when=d.checked_at?' <span style="color:#8a97ab">('+esc(String(d.checked_at).slice(5))+' 실측)</span>':''; // 스냅샷 시점 표기(노후 데이터 자가표시)
       tag.textContent='점검: '+(d.checked_at||'-');
-      note.innerHTML='색인 완료 <b>'+ok+' / '+tot+'편</b> ('+pct+'%)'+when+'. 미색인·오류 글은 디스패치 <b>🔍 색인 점검</b>으로 요청하세요. (색인 \'요청\'은 브라우저 1클릭, 결과는 며칠 뒤 반영)';
+      note.innerHTML='색인 완료 <b>'+ok+' / '+tot+'편</b> ('+pct+'%)'+when+'. 미색인·오류 글은 디스패치 <b>🔍 색인 점검</b>으로 요청하세요. '
+        +'(색인 \'요청\'은 브라우저 1클릭, 결과는 며칠 뒤 반영) '
+        +'<span style="color:#8a97ab">⚠️ 는 Redirect error 등 <b>조치불필요한 양성</b>입니다(Blogger 표시 오류) — 재요청 대상이 아닙니다.</span>';
       var posts=d.posts||{}, rows=Object.keys(posts).map(function(c){
-        var p=posts[c]; return {code:c,indexed:(p.verdict==='PASS'),err:(p.verdict==='ERROR'),state:p.state||p.verdict||'',url:p.url||'',title:tmap[c]||''};
+        var p=posts[c], st=p.state||p.verdict||'';
+        return {code:c,indexed:(p.verdict==='PASS'),err:(p.verdict==='ERROR'),
+                benign:!!benignStates[st],state:st,url:p.url||'',title:tmap[c]||''};
       });
       rows.sort(function(a,b){return (a.indexed?1:0)-(b.indexed?1:0);}); // 미색인 먼저
       list.innerHTML=rows.map(function(r){
-        var ic=r.indexed?'✅':(r.err?'⚠️':'⛔');
+        var ic=r.indexed?'✅':(r.benign?'⚠️':(r.err?'⚠️':'⛔'));
         var tt=r.title?' <span style="color:#cdd8ee">'+esc(r.title.length>26?r.title.slice(0,26)+'…':r.title)+'</span>':' <span style="color:#6b7790">(제목 없음)</span>';
         return '<li><a href="'+esc(r.url)+'" target="_blank" rel="noopener">'+ic+' '+esc(r.code)+'</a>'+tt+' <span style="color:#8a97ab;font-size:13px">'+esc(r.state)+'</span></li>';
       }).join('')||'<li class="empty">데이터 없음</li>';

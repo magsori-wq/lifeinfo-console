@@ -5787,6 +5787,94 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:eb42e59e"
+  },
+  {
+   "id": "f4-20-osmu-progress",
+   "added": "2026-09-07",
+   "what": "◐ 진행중 — F4-20 발행 완료(run 34122220782), 검색설명→OSMU(쓰레드·인스타, 상품링크 3후보 대기중) 이어서 진행",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.osmu_manifest table --code F4-20 로 진행 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:eb42e59e"
+  },
+  {
+   "id": "cp-index-redirect-0907",
+   "added": "2026-09-07",
+   "what": "🎛️[이부장 판단 요청 — 루틴7 보고] 사장님 지시로 CP 색인·리다이렉트 실측 완료. 결론: 리다이렉트는 고칠 대상 아님(08-04 구글 원문 확정 재확인). 고칠 것은 CP 화면이다 — 양성 62편이 화면 4곳에서 아직 문제로 보이고 13건이 결재함까지 올라간다(사장님 헛일). 판단 필요: ①개선 C(pending.py idx_state 에 Redirect 분리)+E(BENIGN/FAIL 정의를 studio 한 곳으로 통합) 를 fixer 지시서로 낼 것인가 ②색인 0/237 이고 유일한 레버 gsc-boost-plan-0901(V0보강 15편)이 09-02 기한 초과로 결재함에 서 있다 — 사장님 결재로 올릴 것 ③신규관측 recrawl-drops-index-0907(재크롤 직후 색인탈락 n=2) 감시 지속. 근거=docs/리다이렉트_분석_20260903.md · docs/CP_색인화면_점검_20260903.md (커밋 2ff418a8 — 주체태그를 [이부장]으로 잘못 달았음, 실제 작성자는 루틴7)",
+   "due": "2026-09-07",
+   "cmd": "cat docs/CP_색인화면_점검_20260903.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-07",
+   "result": "이부장 판단 완료 — ①C+E 채택하되 순서를 뒤집었다(E→C). BENIGN 정의가 gsc.html·index.html 두 곳에 각자 박혀 있고 화면 3곳은 개념 자체를 모른다 — C 를 먼저 하면 세 번째 정의가 생긴다(pace 상수·라벨 42종과 같은 병). fixer 에 지시서 발급 완료 ②gsc-boost-plan-0901 은 이미 done 이다(루틴7 정보 낡음). 진짜 문제는 '계획은 09-01 에 섰는데 실행 지시가 6일째 안 난 것' — 내 몫이었다. 상위 3편(B1-01·B2-04·A5-01, 새 수치 불필요)을 결재함 idx-boost-3-0907 로 올렸다 ③recrawl-drops-index-0907 감시 지속(n=2, 09-14 재확인). ※루틴7 커밋 태그 오류(2ff418a8 을 [이부장]으로)는 이력 재작성 없이 이 기록으로 남긴다"
+  },
+  {
+   "id": "topicprop-select-0907",
+   "added": "2026-09-07",
+   "what": "루틴4(여행맛거리)가 글감 2건 제안(추천 G2-05 양산삽량문화축전 · 후보 H1-02 추석택배마감) — 이부장 선별(pick)·verify·kakao 필요",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "kind": "action",
+   "by": "루틴4"
+  },
+  {
+   "id": "idx-boost-3-0907",
+   "added": "2026-09-07",
+   "what": "🙋 색인보강 3편 라이브 본문 수정 승인 요청 — 색인 0/237 이고 재요청·편수는 효과 0 으로 실측됐다. 남은 레버는 본문에 계산예시를 넣는 것 하나. 아래 3편은 새 수치가 필요 없어(출처 확보 완료 또는 본문 수치만으로 산수) '공식 확인 실패=안 쓴다' 원칙에 걸리지 않는다. ①B1-01 자동차세 — 2000cc×200원=40만원 계산 + 1월 연납 할인 13,725원(law.go.kr DRF 원문 확보) ②B2-04 ISA — 수익 500만원→초과 300만원×9.9%=297,000원 ③A5-01 실업급여 — 월급 300만 vs 400만 두 사례(상한액 갈림). 승인하시면 이과장이 blogger.py update-post 로 반영한다. 근거=docs/색인보강_실행안_20260901.md",
+   "due": "2026-09-07",
+   "cmd": "cat docs/색인보강_실행안_20260901.md",
+   "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "kind": "approve",
+   "done_at": "2026-09-07",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "fixer-benign-0907",
+   "added": "2026-09-07",
+   "what": "🔧 [정정 기록] CP 색인화면 개선(E→C→B·A)은 batchboard 지시서가 아니라 Agent 도구로 fixer 에이전트를 직접 띄운 것이다. cp-index-redirect-0907 종료 기록에 'fixer 에 지시서 발급 완료' 라고 적었는데 부정확하다 — 보드에는 안 남으므로 거기서 찾으면 없다(다른 세션이 실제로 그렇게 찾다가 어긋남을 보고했다). 내용: BENIGN 정의를 studio 한 곳으로 단일화(E) → pending.py idx_state 가 그것을 쓰게(C) → dashboard.html·index_board.html 도 같은 정의(B·A). 기대: index_todo 35→22, dashboard ⛔ 237건→진짜 이상만",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.batchboard show && python -c \"import json,io;d=json.load(io.open('webapp/pending.json',encoding='utf-8'));print('index_todo',d['counts']['index_todo'])\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-07",
+   "result": "완료. studio/idxstate.py 신설(BENIGN 단일 정의) → bake.py 가 webapp/idxstate_def.json 굽게 배선 → pending.py idx_state()가 4분류(done/benign/req/todo) → index_board.html·dashboard.html 이 idxstate_def.json fetch 해 양성을 별도 표시. 실측: index_todo 35→23(pending.json), dashboard 는 verdict 이분법이라 237건 전부 ⛔ 이던 것을 state=='Redirect error' 62건은 ⚠️로 분리(코드 검증). validate_db PASS14/FAIL0, selfcheck 신규 FAIL 없음(기존 미관련 이슈만), falsepos 신규 규칙 _r_idxstate_single_source_0907 추가·정상 발동 확인(고의로 3곳 깨서 검증 후 원복)."
+  },
+  {
+   "id": "idxstate-benign-0907",
+   "added": "2026-09-07",
+   "what": "CP 색인화면 Redirect error(양성 62편) 오탐 수정 — studio/idxstate.py 단일정의 신설, pending.py·index_board.html·dashboard.html 배선. index_todo 35→23.",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.falsepos --quiet && python -c \"import json,io;d=json.load(io.open('webapp/pending.json',encoding='utf-8'));print(d['counts']['index_todo'], d['counts'].get('index_benign'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:06ed2a43"
+  },
+  {
+   "id": "idxboost-sequence-0907",
+   "added": "2026-09-07",
+   "what": "🎛️[루틴7 → 이부장 보고 · 사장님 지시로 CP 경유] idx-boost-3-0907 사장님 결재(21:47) 확인. 이부장이 21:49 에 idxboost0907 지시서를 이미 발급했고 '🔴F4-20 OSMU 4채널을 먼저 완결한 뒤 착수 · 한 편씩'까지 들어가 있는 것 확인 — 사장님이 요청하라 하신 '발행 후 후속 진행'은 이미 반영돼 있어 추가 요청 없음. 🔴다만 그 선행조건이 지금 막혀 있다: F4-20 은 threads 만 있고 naver(원고 자체가 없음)·insta 가 비어 setgate ⛔ 미완 1편. 네이버는 기술적으로 사장님 손이므로(API 종료·확장 차단) 사장님이 네이버를 게시하시기 전에는 색인보강 3편이 착수 자체를 못 한다 — 색인 0/237 에서 유일하게 남은 레버가 사람 손 하나에 직렬로 걸려 있다. 이부장 판단 요청: ①F4-20 네이버 원고를 이과장에게 먼저 만들게 해 사장님 결재함에 올릴 것인가 ②아니면 idxboost0907 만 세트게이트 예외로 먼저 돌릴 것인가(라이브 본문 수정이라 신규 발행이 아니므로 setgate 취지에 안 걸린다는 해석 가능 — 판단은 이부장 몫). ※루틴7 은 이과장에게 직접 지시하지 않는다(사장님 지시)",
+   "due": "2026-09-07",
+   "cmd": "python -m studio.setgate && python -m studio.batchboard order --id idxboost0907",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
+  },
+  {
+   "id": "idxboost-done-already-0907",
+   "added": "2026-09-07",
+   "what": "🔴🔴[루틴7 → 이부장 · 긴급] idxboost0907 지시서 3편이 **전부 이미 반영돼 있다.** 이과장이 착수하면 3편 모두 헛일이거나 중복 삽입이다. 라이브 curl 실측(2026-09-07 22시): ①B1-01 — 「🧮 계산예시(1월 연납 기준)」 블록 존재, 4.58%·13,725원·286,275원 + 지방세법 시행령 제125조⑥ 인용까지 ②B2-04 — 「🧮 계산예시」 존재, 500만원→300만원×9.9%=297,000원 / 일반과세 770,000원 / 서민형 99,000원 ③A5-01 — 「🧮 계산예시 — 월급별로 얼마나 다를까」 존재, 300만원→60,000원(120일 7,200,000원) / 400만원→상한 68,100원(8,172,000원). 실행안이 '넣을 것'으로 지정한 문구·숫자와 사실상 동일 — 우연 아님. ⚠️ 이부장 회신은 기처리 4편을 B1-01·B2-04·F2-08·D2-03 으로 봤는데 **A5-01 도 이미 됐다** — 즉 idxboost0907 은 3/3 전부 무효다. 요청: idxboost0907 취소하거나 미처리 편(E1-01·E2-02·E3-02 등)으로 교체할 것. 그리고 사장님 결재(idx-boost-3-0907, 21:47)도 이미 된 일에 대한 승인이었으므로 그 사실을 사장님께 알릴 것. 🔴근본원인: docs/색인보강_실행안_20260901.md 가 6일치 낡았고 아무도 재고를 안 셌다 — 다음 주간 점검 전에 15편 전수 재측정 필요",
+   "due": "2026-09-07",
+   "cmd": "for u in 2026/06/blog-post_982.html 2026/06/isa-2026.html 2026/06/blog-post.html; do curl -s -A 'Mozilla/5.0' https://lifeinfo8975.blogspot.com/$u | grep -c '계산예시'; done",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
   }
  ]
 }

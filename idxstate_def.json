@@ -1,0 +1,21 @@
+{
+ "benign_states": [
+  "Redirect error"
+ ],
+ "benign_fetch": [
+  "REDIRECT_ERROR"
+ ],
+ "hard_fail_fetch": [
+  "ACCESS_DENIED",
+  "ACCESS_FORBIDDEN",
+  "BLOCKED_4XX",
+  "BLOCKED_ROBOTS_TXT",
+  "INTERNAL_CRAWL_ERROR",
+  "INVALID_URL",
+  "NOT_FOUND",
+  "SERVER_ERROR",
+  "SOFT_404"
+ ],
+ "note": "Redirect error 는 Blogger 검색콘솔 표시 오류(2026-08-04 원문 확인) — 조치 불필요. 정의는 studio/idxstate.py 한 곳뿐, 화면은 이 파일을 fetch 해서 같은 판정을 쓴다.",
+ "source": "https://support.google.com/blogger/thread/377434077"
+}
