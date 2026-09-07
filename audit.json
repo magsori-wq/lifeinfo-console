@@ -2112,6 +2112,94 @@
    "target": "label-owner-mismatch-0907",
    "detail": "3차 재검증 완료 — 이부장이 처방①(폴백) 채택. _label_sections 안에서 me 가 섹션 수신자 집합에 없으면 None 으로 떨어뜨려 중립 표기. 실측 3경우 전부 정상: ①routinelog 주경로=중립 ▸(틀린 경고 사라짐) ②--actor 루틴7=✅/⚠️ 정상 ③owner=이과장 배치 주경로=✅/⚠️ 정상. 자기 지시에 '실행하지 마라' 가 붙던 회귀 해소 확인. 남은 것은 order-section-handoff-0907 의 ④(SKILL --actor 안내)와 처방②(code→루틴N 매핑) — 둘 다 틀린 경고가 아니라 미완이므로 급하지 않다",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:06:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-thumb-swap-0908",
+   "detail": "사장님 완료(2026-09-08 00:0x) — 네이버 글 5편 대표 이미지를 실사진 썸네일로 교체하심(비엔나공항·롯데월드·동백전·미국ESTA·부산미술관)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:07:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "affiliate-f4-20-0907",
+   "detail": "사장님 링크 발급 완료(2026-09-07 23:5x) — https://link.coupang.com/a/gQ5HPLbK32 루미볼트 멀티어댑터 PD45W 4구. affiliate add 등록 · 네이버 카드 반영 확인(라이브 실측) · 쓰레드 재게시 준비 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:24:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "shopconnect-fee-unknown",
+   "detail": "사장님 화면 실측으로 확인(2026-09-08) — 쇼핑 커넥트 수수료는 **상품마다 다르고** 카드에 '수수료 N%' 로 표시된다. 실측: ASUS 키보드 10% · 마우스 14%. 쿠팡(~3%)의 3~4배다. 판매자 설정이고 매월 1일 바뀌므로 원고에 요율을 적지 않는다. product 에이전트 지침 반영",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:42:51",
+   "actor": "이부장",
+   "action": "v0check.pass",
+   "target": "H1-02",
+   "detail": "재검사 통과 — 1차 반려 사유(함정① 역대 추석 비교표가 2024/2025 뒤바뀜)가 정정됐다. 라이브 초안 실측: '2024년 9/15~18(추석 9/17 화) · 2025년 10/4~7(추석 10/6 월) · 2026년 9/24~26(추석 9/25 금)' — docs/F2-14_1",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:42:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-h1-02",
+   "detail": "V0 통과로 해소 — 검사자 이부장 · 재검사 통과 — 1차 반려 사유(함정① 역대 추석 비교표가 2024/2025 뒤바뀜)가 정정됐다. 라이브 초안 실측: '2024년 9/15~18(추석 9/17 화) · 2025년 10/4~7(추석 10/6 월) · ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:49:52",
+   "actor": "관제탑",
+   "action": "v0check.pass",
+   "target": "ZZ-TEST",
+   "detail": "테스트",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:56:18",
+   "actor": "이부장",
+   "action": "v0check.pass",
+   "target": "E2-15",
+   "detail": "계산예시(Pro/Max5x/Max20x 단위당 가격 20/20/10달러)+판단형비교(Free/Pro/Max 선택기준)+함정3종(72시간설·Opus배수·자동전환 오해 모두 공식미확인 명시) 3개 항목 충족. 전 수치 support.claude.com/anthropic.com/pricing",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T00:57:52",
+   "actor": "이부장",
+   "action": "v0check.pass",
+   "target": "G2-05",
+   "detail": "함정 실질주입: 검색상위 '9/26~28' 기사가 2025년(작년) 보도임을 게재일자로 직접 확인·명시(경남일보 2025-09-15자), 2024~2026 3개년 날짜표+판단포인트로 매년 재확인 유도. 미확정 2건(세부프로그램 시간표·주차)은 지어내지 않고 명시적 보류. G 실사진(고유",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T01:03:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "inspect-mobile-url-blindspot",
+   "detail": "코드 반영 완료(2026-09-08) — searchconsole.py inspect 출력에 '⚠️ clean URL 기준이다 — Blogger 의 ?m=1 변형은 포함하지 않았다 / GSC 화면의 URL 단위 숫자는 이보다 크다' 두 줄 추가. 루틴7이 같은 날 그 차이를 실측했다(우리 125 글단위 vs GSC 222 URL단위 = 차이 97). ⚠️ ?m=1 을 조회 대상에 넣지는 않았다 — canonical 정상(0/237)이고 Blogger 전역 동작이라 끄면 모바일 경험이 바뀐다. 숫자의 범위를 밝히는 것까지만 한다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T01:03:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "order-section-handoff-0907",
+   "detail": "4차 재검증 완료(이부장 b3870b5a) — ③④ 둘 다 해소. _handoff 가 mark --code 로 수신자를 찾는다(routines.find). 실측 4경우 전부 의도대로: 루틴7 code→✅/⚠️ 정상 · 루틴3 code→중립(섹션에 루틴3 없음, 올바른 폴백) · code 없음→중립 · 모르는 code→중립. 실제 지시서(01:00)에서도 ✅/⚠️ 확인. SKILL 7개는 손대지 않았다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T01:03:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "mark-actor-from-code-0908",
+   "detail": "이부장이 요청대로 반영·검증 완료(b3870b5a). _handoff 시그니처에 code 추가·호출부에서 ns.code 전달·routines.find 로 루틴N 유추·실패 시 owner 폴백. 실측 4경우 정상. SKILL 무수정으로 해결됨",
+   "via": "cli"
   }
  ]
 }

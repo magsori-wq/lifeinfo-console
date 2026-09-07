@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-07",
+ "updated": "2026-09-08",
  "items": [
   {
    "id": "redirect-error",
@@ -1659,8 +1659,10 @@
    "due": "2026-09-12",
    "cmd": "studio/searchconsole.py inspect 에 ?m=1 변형을 포함하거나, 크롤 통계 출력에 '(clean URL 기준, ?m=1 미포함)' 을 명시",
    "owner": "claude",
-   "state": "todo",
-   "flag": "숫자를 고치는 게 아니라 무엇을 센 숫자인지 밝히는 게 먼저다"
+   "state": "done",
+   "flag": "숫자를 고치는 게 아니라 무엇을 센 숫자인지 밝히는 게 먼저다",
+   "done_at": "2026-09-08",
+   "result": "코드 반영 완료(2026-09-08) — searchconsole.py inspect 출력에 '⚠️ clean URL 기준이다 — Blogger 의 ?m=1 변형은 포함하지 않았다 / GSC 화면의 URL 단위 숫자는 이보다 크다' 두 줄 추가. 루틴7이 같은 날 그 차이를 실측했다(우리 125 글단위 vs GSC 222 URL단위 = 차이 97). ⚠️ ?m=1 을 조회 대상에 넣지는 않았다 — canonical 정상(0/237)이고 Blogger 전역 동작이라 끄면 모바일 경험이 바뀐다. 숫자의 범위를 밝히는 것까지만 한다"
   },
   {
    "id": "gsc-revalidation-click",
@@ -5446,7 +5448,7 @@
   {
    "id": "connect-terms-0907",
    "added": "2026-09-07",
-   "what": "🔴 네이버 브랜드커넥트 약관 동의 2건 — 이것만 하시면 여행 커넥트가 열립니다. 【왜 급한가】 여행 패키지 100만원 × 3% = 건당 3만원입니다. 지금 붙이는 쿠팡·토스 소품(1,000원 안팎)의 30배입니다. 게다가 '링크 발급한 상품이 아니어도 24시간 내 예약이면 인정'이라 여행 글에 링크 하나만 걸면 됩니다. 우리 유입 상위가 영국ETA·미국ESTA(해외여행)라 정확히 맞습니다. 【하실 것】 브랜드 커넥트 → 쇼핑 커넥트 → '시작하기' / 브랜드 커넥트 → 여행 커넥트 → '시작하기'. 약관 동의 두 번이면 끝납니다. 상세: docs/source_affiliate_partners_20260907.md",
+   "what": "🔴 네이버 **여행 커넥트** 시작 여부만 확인하시면 됩니다 — 쇼핑 커넥트는 2026-09-08 사장님 화면으로 **이미 열려 있음이 확인**됐습니다(상품 찾기·수수료 배지 표시). 상단 「여행 커넥트」 탭을 눌러 상품 목록이 나오면 끝, 「시작하기」가 뜨면 그것만 누르시면 됩니다. 【왜】 여행 패키지 100만원 × 3% = 건당 3만원 · 링크 발급한 상품이 아니어도 24시간 내 예약이면 인정 · 우리 유입 상위가 영국ETA·미국ESTA(해외여행) · 프로모션 +2%p 는 9/30 까지",
    "due": "2026-09-08",
    "cmd": "start https://brandconnect.naver.com/988330275521216/affiliate/products",
    "owner": "user",
@@ -5793,8 +5795,10 @@
    "due": "2026-09-07",
    "cmd": "python -m studio.affiliate show --code F4-20",
    "owner": "user",
-   "state": "todo",
-   "by": "세션:eb42e59e"
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-09-08",
+   "result": "사장님 링크 발급 완료(2026-09-07 23:5x) — https://link.coupang.com/a/gQ5HPLbK32 루미볼트 멀티어댑터 PD45W 4구. affiliate add 등록 · 네이버 카드 반영 확인(라이브 실측) · 쓰레드 재게시 준비 완료"
   },
   {
    "id": "f4-20-osmu-progress",
@@ -5971,8 +5975,10 @@
    "due": "2026-09-07",
    "cmd": "python -m studio.v0check gate --code H1-02",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-08",
+   "result": "V0 통과로 해소 — 검사자 이부장 · 재검사 통과 — 1차 반려 사유(함정① 역대 추석 비교표가 2024/2025 뒤바뀜)가 정정됐다. 라이브 초안 실측: '2024년 9/15~18(추석 9/17 화) · 2025년 10/4~7(추석 10/6 월) · "
   },
   {
    "id": "prod-G2-05-0907",
@@ -6011,8 +6017,10 @@
    "due": "2026-09-08",
    "cmd": "grep -n '_label_sections' studio/batchboard.py; sed -n '715,719p' studio/batchboard.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-08",
+   "result": "4차 재검증 완료(이부장 b3870b5a) — ③④ 둘 다 해소. _handoff 가 mark --code 로 수신자를 찾는다(routines.find). 실측 4경우 전부 의도대로: 루틴7 code→✅/⚠️ 정상 · 루틴3 code→중립(섹션에 루틴3 없음, 올바른 폴백) · code 없음→중립 · 모르는 code→중립. 실제 지시서(01:00)에서도 ✅/⚠️ 확인. SKILL 7개는 손대지 않았다"
   },
   {
    "id": "shopconnect-fee-unknown",
@@ -6021,8 +6029,10 @@
    "due": "2026-09-14",
    "cmd": "grep -n '쇼핑 커넥트' .claude/agents/product.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-08",
+   "result": "사장님 화면 실측으로 확인(2026-09-08) — 쇼핑 커넥트 수수료는 **상품마다 다르고** 카드에 '수수료 N%' 로 표시된다. 실측: ASUS 키보드 10% · 마우스 14%. 쿠팡(~3%)의 3~4배다. 판매자 설정이고 매월 1일 바뀌므로 원고에 요율을 적지 않는다. product 에이전트 지침 반영"
   },
   {
    "id": "label-owner-mismatch-0907",
@@ -6043,8 +6053,84 @@
    "due": "2026-09-08",
    "cmd": "explorer C:\\lifeinfo\\thumbs_naver",
    "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-08",
+   "result": "사장님 완료(2026-09-08 00:0x) — 네이버 글 5편 대표 이미지를 실사진 썸네일로 교체하심(비엔나공항·롯데월드·동백전·미국ESTA·부산미술관)"
+  },
+  {
+   "id": "a217-energy-voucher-source",
+   "added": "2026-09-08",
+   "what": "A2-17 에너지바우처: 하절기 잔액 이월 여부·당겨쓰기 제도 1차 확인 미완(콜센터 1600-3190 통화 또는 브라우저로 FAQ boardId=1106 확인 필요) — 사용기한·지원금액·지원대상·차감방식은 확인완료(docs/source_A2-17_에너지바우처_20260908.md)",
+   "due": "2026-09-10",
+   "cmd": "콜센터 1600-3190 통화 후 통화일자·응답 내용을 docs/source_A2-17_에너지바우처_20260908.md 에 추가, 또는 https://www.energyv.or.kr/board/boardDetail.do?mstBoardId=43&mstBoardType=02002&boardId=1106 를 브라우저로 열어 '하절기 당겨쓰기' FAQ 본문 확인",
+   "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "세션:eb42e59e"
+  },
+  {
+   "id": "v0recheck-h1-02",
+   "added": "2026-09-08",
+   "what": "H1-02 정정 완료 — 2024/2025 추석 연휴 날짜 뒤바뀜 수정(commit 4f643c14). V0 재검사 요청",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.v0check gate --code H1-02",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:eb42e59e"
+  },
+  {
+   "id": "mark-actor-from-code-0908",
+   "added": "2026-09-08",
+   "what": "🔧[루틴7 → 이부장 요청 · 사장님 지시] ④를 SKILL 안내가 아니라 **mark 쪽**에서 고쳐 주십시오. 【왜 SKILL 안내로는 안 되나(실측)】루틴 7개 중 batchboard order 안내는 1개(lifeinfo-publish)뿐이고 mark 안내는 7개 전부다 — 루틴은 order 를 거의 안 치고 **mark 뒤 _handoff 주 경로**로 지시서를 본다(루틴7도 그랬다). 그런데 mark 는 --actor 를 안 받는다(usage 확인). 즉 SKILL 에 --actor 를 넣어도 6개는 쓸 자리가 없다. 【처방 — SKILL 을 안 건드려도 된다】mark 는 이미 --code <루틴폴더명> 을 받고 있고 studio/routines.py 에 매핑이 있다. 실측: routines.find('lifeinfo-index-check')→루틴7 · ('lifeinfo-publish')→루틴3 · ('daily-email-briefing')→루틴1 — **지시서 수신자 표기와 정확히 일치한다.** 구현: ①_handoff(d,bid,b) 시그니처에 code 추가(정의 697줄·호출 1768줄에서 ns.code 전달) ②722줄에서 me 를 code→routines.find→'루틴%d' 로 만들고, 못 찾으면 기존 owner 로 폴백. 불일치 시 중립 처리는 _label_sections 안에 이미 있으므로 안전하다. 【부수】SKILL 3개(lifeinfo-daily-publish·daily-topics·publish)는 --code <> 플레이스홀더라 루틴이 실제 루틴명으로 채워야 이 배선이 먹는다 — '<네 루틴명>' 으로 바꿔 두면 더 확실하다. 【검증법】python -c \"from studio import routines as R;print(R.find('lifeinfo-index-check'))\" 로 매핑 확인 후, routinelog 에 섹션 2개 이상인 상태에서 mark 하면 자기 섹션에 ✅ 남의 섹션에 ⚠️ 가 떠야 한다(지금은 둘 다 중립 ▸). ※루틴은 보고까지가 몫이라 고치지 않았다(roles 📣). 근거=docs/지시서_섹션분리_검증_20260907.md",
+   "due": "2026-09-08",
+   "cmd": "python -c \"from studio import routines as R;print(R.find('lifeinfo-index-check'))\"; grep -n 'def _handoff\\|_handoff(d' studio/batchboard.py; sed -n '722p' studio/batchboard.py",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-08",
+   "result": "이부장이 요청대로 반영·검증 완료(b3870b5a). _handoff 시그니처에 code 추가·호출부에서 ns.code 전달·routines.find 로 루틴N 유추·실패 시 owner 폴백. 실측 4경우 정상. SKILL 무수정으로 해결됨"
+  },
+  {
+   "id": "mq-duplicate-crawl-0908",
+   "added": "2026-09-08",
+   "what": "🔬[신규 관측 · 루틴7] GSC 화면(사장님 캡처 09-08)에서 확인 — **?m=1 이 독립 URL 로 크롤·색인 판정을 따로 받는다.** 「크롤링됨-미색인」 예시가 클린/?m=1 쌍으로 나오고 **최종 크롤 날짜가 쌍끼리 같다**(546:9.3/9.3 · 16:9.2/9.2 · 100-ipo:8.30/8.30 · 24_018:8.18/8.18). 모수 대조: 우리 index_status 크롤됨-미색인 125(글 단위) vs GSC 222(URL 단위) = 차이 97 = ?m=1 변형. 🔴우리는 ?m=1 을 한 번도 조회한 적이 없어(237편 중 0편) 이 중복이 집계에 안 보였다. 함의: 같은 글이 URL 2개로 크롤돼 **크롤 예산이 절반으로 쪼개진다** — 색인 0/237 인 지금 의미 있는 관찰. ⚠️단 레버인지 미확인 — ?m=1 은 Blogger 전역 동작이고 canonical 정상(gCanonical≠uCanonical 0/237), 모바일 테마도 권장 상태로 이미 확인됨. **끄는 방법이 있는지부터 미확인이다. 손대기 전에 그것부터 확인할 것.** 함께 확인된 것: 유효성검사 8.19→9.5 실패(접수중 215·실패 7) · 서버오류 5xx 영향 0·통과 ✅ · 메시지 9.7 '일부 해결되지 않음'. ⛔새 유효성 검사 시작 버튼 누르지 말 것(통과율 0/4). 근거=docs/GSC화면_판독_20260908.md",
+   "due": "2026-09-14",
+   "cmd": "cat docs/GSC화면_판독_20260908.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
+  },
+  {
+   "id": "gsc-indexed-34-vs-0-0908",
+   "added": "2026-09-08",
+   "what": "🔴🔴[루틴7 → 이부장 · 최우선] GSC 정밀검증에서 **우리 감시가 반대로 판정하고 있을 가능성**을 찾았다. GSC 「색인이 생성된 페이지」=34편(우리 본문 글, 라벨 아님)인데 우리 index_status.json 은 같은 URL 을 전부 'Crawled - not indexed' 로 본다. **lastCrawl 은 양쪽이 정확히 일치**(F2-05 7/13·F1-01 7/12·D2-03 7/12·E2-05 7/12·A1-04 7/12·D2-02 7/12·A3-03 7/13·E3-02 7/15) = 같은 대상을 보는데 색인 판정만 갈린다. → 매주 보고해 온 '색인 0/237' 이 틀렸을 수 있고 애드센스 게이트 ①의 근거가 흔들린다. 🔴🔴애드센스 직결 발견: 색인된 34편은 **전부 최종크롤 7/10~7/13** 이고, 색인보강 6편의 lastCrawl 도 D2-03 7/12·B2-05 7/13·F4-04 7/14·A5-01 7/19·B2-04 7/20·B1-01 8/14 라 **8월에 넣은 계산예시를 구글이 못 봤다.** '보강해도 반려된다' 가 아니라 **보강이 도달하지 않았다** 일 수 있다. ⚠️단정 금지 — 미확인 2가지: ①애드센스 심사가 GSC 색인을 보는지(Mediapartners-Google 은 별개) ②GSC 34 vs inspect 0 중 어느 쪽이 현재 진실인지. 이부장 판단 요청: 어느 쪽을 진실원으로 삼을지, 그리고 확정 전까지 양쪽 병기 보고 여부. 근거=docs/GSC정밀검증_20260908.md",
+   "due": "2026-09-08",
+   "cmd": "cat docs/GSC정밀검증_20260908.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
+  },
+  {
+   "id": "gatecheck-pace-rootbug-0908",
+   "added": "2026-09-08",
+   "what": "게이트 전수검증(실측관): pace.py L311 이 정의되지 않은 ROOT 변수를 참조해 NameError 가 나고, 그 결과 오늘(2026-09-08) 사장님이 승인한 그날상한 1편(webapp/pace_day.json)이 조용히 무력화된다. 실제 CLI(publish-flow --check-only)에서도 재현 확인. 상시상한(UNLIMITED)과는 별개 문제. 고칠 자리: studio/pace.py 311행의 ROOT 를 BASE 로 교체.",
+   "due": "2026-09-08",
+   "cmd": "python -c \"from studio import pace; pace.today_posts=lambda:('2026-09-08',[{'title':'x'}]); print(pace.check())\"  # 경고문에 ROOT 오류가 뜨면 아직 안 고쳐진 것",
+   "owner": "claude",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:06ed2a43"
+  },
+  {
+   "id": "gatecheck-falsepos-2tuple-0908",
+   "added": "2026-09-08",
+   "what": "게이트 전수검증(실측관): studio/falsepos.py 의 _r_boss_gate_alive(313,317,320행)가 2-튜플을 반환한다. main()은 4-튜플 언패킹을 기대해서, watch._boss_gate 가 실제로 사라지는 사고가 나면 falsepos·selfcheck 20)이 경고 대신 파이썬 크래시로 죽는다(재현 확인). 지금은 _boss_gate 가 살아있어 무해. 고칠 자리: 세 곳을 4-튜플(마크,이름,메시지,이유)로.",
+   "due": "2026-09-15",
+   "cmd": "python -c \"from studio import falsepos, watch as w; del w._boss_gate; falsepos.main([])\"  # ValueError 크래시가 나면 아직 안 고쳐진 것",
+   "owner": "claude",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:06ed2a43"
   }
  ]
 }
