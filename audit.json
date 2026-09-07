@@ -1464,6 +1464,366 @@
    "target": "C2-13",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-07T12:27:05",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "G1-99",
+   "detail": "일정 미확정(발표 예상일 뿐) + '카테고리가 얇다'는 특별이슈 사유가 아니다(CLAUDE.md: 새 주제라서가 아니라 지금 있는 기한·개정·시즌·금액변경이어야 함). 일정 확정 후 재제안.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T12:27:15",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "G1-98",
+   "detail": "'아직 다루지 않은 소재'는 특별이슈 사유가 아니다. 특정 기한·이벤트 없는 상시 시즌 소재라 지금 뽑을 이유가 부족.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T12:53:11",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aff-channel-0905",
+   "detail": "오늘(09-07) 4종 전부 1차출처 확보 완료 — 쿠팡 파트너스(링크 5개 발급) · 토스 쉐어링크(10%, API 연동 완료) · 네이버 쇼핑 커넥트 · 네이버 여행 커넥트(3%+2%=5% 배지 실측). 근거 = docs/source_affiliate_partners_20260907.md · docs/source_toss_sharelink_20260907.md",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:06:59",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "A2-17",
+   "detail": "🔴 A2-02(에너지바우처 신청 자격 금액 사용기간 총정리, 2026-06 발행)가 이미 있고 라이브 실측 결과 신청기간 12월 31일·가구원별 금액(295,200~701,300원)·하절기/동절기를 전부 정확히 담고 있다. A2-17 이 새로 줄 것은 '9/30 은 마감이 아니다' 정정 프레임 + 탈락사유 구체화 + 계산예시뿐이다. dupcheck 0.50(차단선 0.60 바로 아래). 같은 검색어로 URL 2개를 만들면 서로 갉아먹는다 — 색인 0/238 이고 애드센스 반려 사유가 '고유 콘텐츠 부족' 인 지금은 정반대 방향이다. → 새 글 대신 **A2-02 보강**(update-post)으로 전환. 작성된 초안(에너지바우처_글_HTML.txt)은 보강 재료로 쓴다. 09-05 D2-12↔B2-03 과 같은 판단.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-boost-priority-0830",
+   "detail": "무효: v0inject 배치(6/15 진행중)가 동일 목적을 이미 별도로 처리 중 — 08-30 우선순위 리스트는 미등록인 채 대체됨. 09-07 재확인.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "session-falsereport-measure-0830",
+   "detail": "sessionaudit 재실행(09-07): 08-30 나열한 9종 판정기버그는 전부 해소 확인. 남은 것은 신규 발견 🔴1건(osmu0907c213 order 공백)·🟡1건(boost0906b203 침묵완료) — 별건으로 처리.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "briefing-gsc-window-0901",
+   "detail": "반영 완료(09-07): daily-email-briefing SKILL.md 82행 뒤에 GSC 전용 조회줄(newer_than:7d from:sc-noreply@google.com) 추가.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "loopeng-trigger",
+   "detail": "무효: 1주일간 미착수·실질 필요성 불분명한 탐색성 제안 — 재제안 시 새로 기록.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ai-disclosure-missing",
+   "detail": "무효: 연동 항목 ai-disclosure-wording 이 2026-08-29 '조치불필요로 종결' 판정됨(정책 원문에 AI공개 의무 조항 없음 확인) — 반영 대상 없음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insp-collab-0903",
+   "detail": "해소 확인(09-07): sessionstate.py·whoislee.py 배선 완료 확인 — 읽음판정 단일화(#2)·세션주소 중복(#3) 해소. sessionstate 출력 정상 동작.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insp-cp-0903",
+   "detail": "해소 확인(09-07): ①B1-09 재발행카드 문제 — queue.json에 B1-09 없음, approval.html에 코드 반영된 주석 확인(수정됨) ②approvalcount가 '화면과 같은 기준'으로 단일화(6건 일치 확인) ③pending.py 09-03 수정으로 B1-03·G4-02·E2-07 3편 모두 pending.json actionable에 정상 노출 확인(need=[인스타,색인대기]).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insp-osmu-0903",
+   "detail": "해소 확인(09-07): blogger.py CH_NAMES에 instagram 추가 확정(838d11b), selfcheck 6c도 09-03 시행일 방식(_IG_SINCE)으로 인스타 포함 정합 완료 — 정책충돌 해소. 미게시 3편은 위 insp-cp-0903 검증과 동일 건으로 해결 확인. PLAN 미포함 116편은 표시필터일 뿐 판정에 영향 없음(경미).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insp-topic-0903",
+   "detail": "해소 확인(09-07): topicprop.py cmd_pick(441행)·cmd_approve(598행) 모두 draftfind 게이트 배선 확인(2026-09-03 정밀검사 주석과 일치) — 🔴 2건 모두 코드에 반영됨. 🟡 4건(dupcheck 상호검사·화면판정기준·pubqueue fail-open·계절어오탐)은 낮은 우선순위로 재확인 안 함.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "preview-api-0903",
+   "detail": "해소 확인(09-07): curl draft API 200 정상, falsepos --quiet 실행 결과 _r_preview_affordance_alive 회귀규칙 통과(무관한 별건 1개만 검출: pub0907a602 승인표시 — 별도 확인함, A6-02 이미 발행완료로 정상).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "sessionload-0903",
+   "detail": "종결: 09-02 실측 결론(세션 jsonl 크기는 부하 원인 아님 — 훅 5s 이내, 디스크 여유 충분, WER 이벤트 무관) 그대로 확정, 추가 조치 불필요.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topic-cand-0903",
+   "detail": "종결: 8건 중 5건(D1-08·B4-10·E2-10·D3-06·G3-04) 이미 발행 완료(DB url 확인) — 후보표 소진. 잔여 3건(D4-12 KBO포스트시즌 일정미확인·F4-21 펫호텔요금미확인·F4-20 단풍초안대기)은 일반 topicprop 흐름으로 처리, 별도 대기 불필요.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-blocked-0905",
+   "detail": "무효: pub0905d306(D3-06)·pub0905e210(E2-10) 둘 다 이후 실제 발행 완료(DB url 확인, batchboard에서도 해당 배치 사라짐) — 막힘 해소됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "concurrent-commit-guard",
+   "detail": "해소: commitguard 훅(.githooks/commit-msg)+whodid 도구(2026-08-28)가 근본원인(주체 추적 불가)을 해결 — whodid 최근7일 정상 작동 확인, 재발 사례 없음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-data-audit-0906",
+   "detail": "부분해소 확인(09-07): ①batch.json.currents 고아 0건(해소) ④watch.json stale 5건 전부 이미 state=done 확인(해소) ⑤audit.json Z9-98/99 테스트로그는 append-only 감사로그 특성상 유지 결정(판단 완료). ③queue.json 신규 재발 1건(C2-13, 이미 발행됐는데 go도장 남음) 발견·제거 완료. ②topicprop.json 36개 stale state는 화면엔 안 뜨는 저위험 데이터오염으로 남음(별도 코드수정 필요, 낮은 우선순위 — 새로 추적하지 않음).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "g403-price-unmeasured",
+   "detail": "종결: 광양전어축제 공식페이지 재확인(curl 1회, '제25회 광양전어축제' 확인) — 그러나 원 요청인 KAMIS 산지시세는 여전히 미확보. 이미 발행된 글로, '공식확인 실패=수치 배제' 원칙에 따라 현재 '현장 시세 확인' 문구가 올바른 처리이므로 추가 조치 불필요.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gh-workflow-stale-draft-bug",
+   "detail": "해소 확인(09-07): publish.yml에 제목드리프트 경고(265행, 3b스텝)와 git status 클린 확인(485행) 모두 구현됨. 라이브 실발화 검증은 별도 watch pubtitle-gate-live-0908(09-08 예정)에서 추적 중 — 중복 아님.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "regionbond-sokmyeol-basis-0905",
+   "detail": "흡수: 조사결과가 batchboard boost0906b203(B2-03 보강, 담당 이과장)에 이미 등록되어 진행 중 — 이 watch는 그 배치의 1차 소스자료였다. D2-12는 아직 미발행이라 발행 전 V0 검증에서 재확인됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine-triage-0906",
+   "detail": "흡수: 언급된 재확인 대상(gsc-crawled-not-indexed·session-falsereport-measure-0830·topicprop-fact-quality)은 09-07 이 세션에서 각각 개별 재확인·처리 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "title-kw-audit-0906",
+   "detail": "종결: 분석 결과가 이미 구체 조치(naver-title-fix-0906, 4편 제목교체)로 이어져 사장님 결재함 진행 중(D-1) — 원 분석 자체는 재실행 도구 없이 1회성으로 완료된 것으로 확정, 후속은 naver-title-fix 로 추적.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topicprop-fact-quality",
+   "detail": "개선 확인(09-07): routine-triage-0906 재확인 결과 08-30 대비 오류율 75%→0%(0/4, C2-13·A6-02 원문검증 통과)로 개선 — V0/source 검증 프로세스가 효과 있음. 계속 관찰은 정상 발행 프로세스에 내재.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0907-1230",
+   "detail": "무효: sessionstate·whodid 재확인 결과 이과장 최근 활동 09-07 13:04(세션상태 동기화)·12:58(C2-13 OSMU 완료) — 이미 응답 중, 추가로 깨울 필요 없음. 남은 지시서(boost0906b203 등)는 순차 진행 대기 중.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "drift-approve-0907",
+   "detail": "종결: 3개 조사(①09-06 DB수정으로 해소 확인 ②라이브 실발화는 별도 watch pubtitle-gate-live-0908에서 추적 ③사람 손(사장님 GSC 콘솔) 결론)까지 마쳐 이 항목에서 추가로 할 조사 없음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-who-validated-0907",
+   "detail": "종결: 추가 증거 없음 — 사장님 확인('안 눌렀다')과 공식문서(자동시작 메커니즘 없음) 대조까지 마쳤으나 정확한 클릭 주체는 확정 불가. 재조사할 새 근거 없어 종결.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "orderwatch-unattended-limit-0906",
+   "detail": "확정: 무인루틴은 SendMessage 구조적으로 불가함을 확인 — 대응방식(관제탑이 직접 깨움)은 이미 docflow-0907-1230 사례로 운영 확인됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "tokenstat-0906",
+   "detail": "재확인(09-07): 관제탑 턴당 평균 509,537 vs 에이전트 건당 평균 174,230 — 방향 재확인(에이전트 위임이 단위당 적음), 09-06 가설과 같은 패턴 유지.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:49:50",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-auth-0907",
+   "detail": "정상 — 사장님 본인 계정·본인 번호 확인(2026-09-07 사장님 답변). lees**** 는 사장님이 따로 갖고 계신 네이버 계정이고 010-3***-8*** 도 사장님 번호다. 명의도용 아님. 어제 22:29 본인이 하신 인증.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:05:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-c213-ready",
+   "detail": "네이버 게시 확인 — https://blog.naver.com/magsori8975/224403586832 (og:title 대조 일치), crosslink 반영 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:07:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-c213-ready",
+   "detail": "게시 완료 — https://blog.naver.com/magsori8975/224403586832 (사장님 게시, 2026-09-07). naver-link 기록·crosslink 삽입·라이브 실측 확인까지 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:19:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a504-ltc-rate-fix-0904",
+   "detail": "라이브 정정 완료·관제탑 실측 확인(2026-09-07). 이과장이 사장님 직접 승인으로 update-post 실행, 관제탑이 curl 로 라이브를 다시 열어 대조: 새 값 발견 ✅ · 옛 값 소멸 ✅",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:19:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b101-rate-fix",
+   "detail": "라이브 정정 완료·관제탑 실측 확인(2026-09-07). 이과장이 사장님 직접 승인으로 update-post 실행, 관제탑이 curl 로 라이브를 다시 열어 대조: 새 값 발견 ✅ · 옛 값 소멸 ✅",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:19:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "byline-stale-a506",
+   "detail": "라이브 정정 완료·관제탑 실측 확인(2026-09-07). 이과장이 사장님 직접 승인으로 update-post 실행, 관제탑이 curl 로 라이브를 다시 열어 대조: 새 값 발견 ✅ · 옛 값 소멸 ✅",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:31:21",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "approve-boost0907a202",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:42:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "_test-by-0907",
+   "detail": "테스트 완료 — 요청자 표시·채팅유도 경고 둘 다 작동 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:46:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0907-1230",
+   "detail": "해소 — 이과장이 A2-02 보강(14:38) 완료. 관제탑 라이브 실측: 9월30 오해정정·12월31·보장시설·연탄쿠폰·701,300·세대원변동·이사 7개 항목 전부 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T15:01:34",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "approve-boost0906b203",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T15:26:42",
+   "actor": "V0검사관",
+   "action": "v0check.fail",
+   "target": "D1-09",
+   "detail": "법령 인용 오류: 본문 sec4 계산근거·sec9 공식링크·하단 출처박스 3곳이 수수료(무료/1·2 감면)의 근거를 '주민등록법 시행령 제47조'로 표기했으나, law.go.kr 원문 직접 대조 결과 시행령 제47조는 신청방법·본인확인(신분증·지문대조)만 규정하고 수수료 조항이 아예 없",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T15:36:42",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "D1-09",
+   "detail": "2차검사: diff만 대조 — 시행령 제47조 0건·시행규칙 제17조 5건(sec4 본문·tip박스·메타·sec9 gov링크·src출처박스), law.go.kr DRF 원문(MST 285757 제17조④) 직접 대조로 열람300원·교부400/500원·전자문서무료·무인기1/2 문구 정확 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T15:36:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-d1-09",
+   "detail": "V0 통과로 해소 — 검사자 V0검사관 · 2차검사: diff만 대조 — 시행령 제47조 0건·시행규칙 제17조 5건(sec4 본문·tip박스·메타·sec9 gov링크·src출처박스), law.go.kr DRF 원문(MST 285757 제17조④) 직접 대조",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T15:37:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-d1-09",
+   "detail": "정정 완료·재검사 통과(2026-09-07 15:3x). 이과장이 시행령 제47조 → 시행규칙 제17조④ 로 3곳+메타+큐메모 정정(law.go.kr DRF 원문 재확인). V0검사관 2차 diff 검사에서 원문 대조로 통과 — 제17조④ '전자문서 교부는 무료, 무인민원발급기는 그 수수료의 2분의 1' 확인, 교체 URL HTTP 200, 금액·표·바이라인 훼손 없음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T15:38:39",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D1-09",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }

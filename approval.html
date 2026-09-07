@@ -690,7 +690,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var TODAY=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
   W.forEach(function(w){
     if(w.owner!=='user' || w.state==='done') return;
-    if((w.due||'9999')>TODAY) return;          // 기한 전은 올리지 않는다(다 보이면 아무것도 안 하게 된다)
+    // 🔴🔴 **승인 요청은 기한과 무관하게 즉시 올린다** (2026-09-07 사장님 지적:
+    //    "이과장 승인요청이 cp에 바로 올라오지 않네!").
+    //    기한 필터는 **조치**를 위한 것이다 — 다 보이면 아무것도 안 하게 되므로 도래분만.
+    //    그러나 **승인은 지금 답이 필요한 것**이라 하루 늦으면 요청이 하루 늦는다.
+    //    ⚠️ studio/approvalcount.py 도 같은 조건이다 — 두 곳을 함께 고친다.
+    if(w.kind!=='approve' && (w.due||'9999')>TODAY) return;
     // 🔴 코드만 보이면 사장님이 그 내용을 다시 찾아야 한다 (2026-08-27 지시).
     //    what 안에 글 코드(A2-15 같은)가 있으면 **그 글 제목을 카드 제목에 붙인다.**
     //    "제발!!" 이라고 하실 만큼 반복된 지적이다 — 코드는 주소지 내용이 아니다.
@@ -706,7 +711,11 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     boss.push({act:(w.state==='blocked'?'watch_blocked':(_isAp?'watch_approve':'watch_done')),
       c:w.id,t:_ttl+(w.what||w.id),
       full:(w.what||''),
+      // 🔴 **누가 올렸는지 보인다** (2026-09-07 사장님 지시로 이부장·이과장 둘 다
+      //    결재함에 올리게 됐다). 요청자가 안 보이면 사장님이 누구에게 답해야 할지,
+      //    승인 뒤 누가 이어서 진행하는지 알 수 없다.
       why:(_isAp?'승인 대기 · 기한 ':'조치 대기 · 기한 ')+(w.due||'')
+          +(w.by?(' · 올린이 '+w.by):'')
           +(w.state==='blocked'?' · 🚫막힘':''),
       cmd:w.cmd||('python -m studio.watch done --id '+w.id)});
   });
