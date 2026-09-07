@@ -2080,6 +2080,38 @@
    "target": "naver-auth-0906",
    "detail": "사장님 확인 완료(2026-09-07) — 본인 계정이 맞다. 메일 확인만 하셨고 별도 인증 버튼은 없었다(통지 메일이라 정상). 본인 조작이므로 비밀번호 변경·기기 로그아웃 불필요. 조치 없음으로 종결",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-07T23:21:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-f420-ready",
+   "detail": "사장님 게시 완료(2026-09-07 23:1x) — https://blog.naver.com/magsori8975/224404172501 (190KB 실측). naver-link 기록·crosslink 갱신 완료, 4채널 미완 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T23:23:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-title-fix-0906",
+   "detail": "사장님 완료(2026-09-07 23:1x) — 4편 전부 라이브 실측 확인: 롯데월드/동백전/ESTA/부산미술관 모두 새 제목으로 반영됨(curl og:title 대조). 2주 뒤 유입 변화를 재서 효과 판정",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T23:46:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "order-section-bugs-0907",
+   "detail": "이부장 수정 9726f55f 재검증 완료 — ①중복호출 해소(호출부 1곳, 4회 누적에도 섹션 3개 중복 없음) ②읽기필터 해소(_label_sections 신설·cmd_order 배선·CLI --actor, 실제 실행으로 '네 것이 아니다' 경고 확인). 두 결함 다 실측으로 닫는다. 단 새 구멍 2개는 order-section-handoff-0907 로 분리해 올렸다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T23:55:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "label-owner-mismatch-0907",
+   "detail": "3차 재검증 완료 — 이부장이 처방①(폴백) 채택. _label_sections 안에서 me 가 섹션 수신자 집합에 없으면 None 으로 떨어뜨려 중립 표기. 실측 3경우 전부 정상: ①routinelog 주경로=중립 ▸(틀린 경고 사라짐) ②--actor 루틴7=✅/⚠️ 정상 ③owner=이과장 배치 주경로=✅/⚠️ 정상. 자기 지시에 '실행하지 마라' 가 붙던 회귀 해소 확인. 남은 것은 order-section-handoff-0907 의 ④(SKILL --actor 안내)와 처방②(code→루틴N 매핑) — 둘 다 틀린 경고가 아니라 미완이므로 급하지 않다",
+   "via": "cli"
   }
  ]
 }

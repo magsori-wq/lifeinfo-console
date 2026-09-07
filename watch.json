@@ -5233,7 +5233,9 @@
    "due": "2026-09-06",
    "cmd": "start https://blog.naver.com/magsori8975/224352030079",
    "owner": "user",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-07",
+   "result": "사장님 완료(2026-09-07 23:1x) — 4편 전부 라이브 실측 확인: 롯데월드/동백전/ESTA/부산미술관 모두 새 제목으로 반영됨(curl og:title 대조). 2주 뒤 유입 변화를 재서 효과 판정"
   },
   {
    "id": "pubtitle-source-0906",
@@ -5893,8 +5895,10 @@
    "due": "2026-09-07",
    "cmd": "python -m studio.pipeline naver-draft --code F4-20 --file osmu/네이버용_비엔나공항출국소요시간.txt 로 클립보드 적재 후 → 네이버 글쓰기 창(https://blog.naver.com/GoBlogWrite.naver)에서 제목+Ctrl+V로 본문 붙여넣기 → thumbs_naver/218n_vienna.png 첨부 → 게시 → URL을 python -m studio.pipeline naver-link --code F4-20 --url <URL> 로 기록",
    "owner": "user",
-   "state": "todo",
-   "by": "세션:eb42e59e"
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-09-07",
+   "result": "사장님 게시 완료(2026-09-07 23:1x) — https://blog.naver.com/magsori8975/224404172501 (190KB 실측). naver-link 기록·crosslink 갱신 완료, 4채널 미완 없음"
   },
   {
    "id": "slug-autoreg-0907",
@@ -5955,8 +5959,10 @@
    "due": "2026-09-08",
    "cmd": "cat docs/지시서_섹션분리_검증_20260907.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-07",
+   "result": "이부장 수정 9726f55f 재검증 완료 — ①중복호출 해소(호출부 1곳, 4회 누적에도 섹션 3개 중복 없음) ②읽기필터 해소(_label_sections 신설·cmd_order 배선·CLI --actor, 실제 실행으로 '네 것이 아니다' 경고 확인). 두 결함 다 실측으로 닫는다. 단 새 구멍 2개는 order-section-handoff-0907 로 분리해 올렸다"
   },
   {
    "id": "v0reject-h1-02",
@@ -5997,6 +6003,48 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:81e84494"
+  },
+  {
+   "id": "order-section-handoff-0907",
+   "added": "2026-09-07",
+   "what": "🔴[루틴7 → 이부장] 지시서 섹션 라벨이 **주 경로에 안 걸렸다.** ①②는 재검증으로 해소 확인(order-section-bugs-0907 닫음). 남은 것 2개: ③batchboard.py:715~719 _handoff() 가 print(order.rstrip()) 로 지시서를 **라벨 없이** 찍는다 — _label_sections 호출부는 1094줄(cmd_order) 하나뿐이다. 🔴그런데 루틴이 지시서를 보는 주 경로가 바로 이 _handoff 다(지시서 자신이 '마킹하면 이 문서가 그 자리에서 따라 나온다. 마킹하고 끝내지 말고 반드시 읽어라' 고 안내한다 — 루틴7도 그 경로로 읽었다). 즉 섹션이 쌓이면 mark 뒤에 남의 지시를 그대로 읽게 되어 원래 위험이 그대로 남는다 ④루틴 SKILL.md 7개 중 batchboard order 언급 1개·--actor 안내 0개 — 루틴이 직접 쳐도 actor 가 없어 중립 표기만 나오고 '네 것이 아니다' 경고를 못 본다. 처방: ③719줄을 _label_sections(order,<수신자>) 로(수신자는 mark --code 값에서 유추 가능 — 루틴명과 같다) ④SKILL 7개 보고 절에 --actor <루틴N> 추가(dispatch.py 는 이미 --actor 를 쓴다). ※루틴은 보고까지가 몫이라 고치지 않았다(roles 📣). 근거=docs/지시서_섹션분리_검증_20260907.md 하단 '재검증'",
+   "due": "2026-09-08",
+   "cmd": "grep -n '_label_sections' studio/batchboard.py; sed -n '715,719p' studio/batchboard.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
+  },
+  {
+   "id": "shopconnect-fee-unknown",
+   "added": "2026-09-07",
+   "what": "🔧 브랜드커넥트 **쇼핑 커넥트** 수수료를 모른다 — 3채널 비교(토스 10% vs 커넥트 ? vs 쿠팡 ~3%)에서 커넥트 칸이 비어 1순위 판단이 부정확하다. 여행 커넥트 3~5%(+프로모션 2%p, ~9/30)는 techm.kr 2차 출처이고 쇼핑 커넥트는 자료 자체가 없다. 사장님이 brandconnect.naver.com 로그인 시 상품별 수수료가 보이므로 다음에 들어가실 때 확인 요청 — 확인되면 product 에이전트 지침의 표를 채운다",
+   "due": "2026-09-14",
+   "cmd": "grep -n '쇼핑 커넥트' .claude/agents/product.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "label-owner-mismatch-0907",
+   "added": "2026-09-07",
+   "what": "🔴🔴[루틴7 → 이부장 · 2차 재검증] ③은 걸렸으나 **새 오류가 생겼다.** batchboard.py:722 가 수신자를 b.get('owner') 로 잡는데, owner 와 지시서 수신자(actor)는 다른 축이다. 실측: routinelog.owner='예약 루틴 7개 (관제탑이 읽고 확인)' vs order 섹션 수신자=['루틴7','루틴4'] → 일치 False → **모든 섹션에 '⚠️ 네 것이 아니다. 실행하지 마라'** 가 붙는다. 즉 루틴7이 mark 뒤 자기 지시서를 봐도 실행하지 말라고 뜬다. 🔴라벨이 없던 것보다 나쁘다 — 없으면 루틴이 판단해서 읽지만 틀린 경고는 맞는 지시를 안 하게 만든다. owner 가 수신자와 같은 배치(pub0907f420 owner=이과장)에서는 우연히 맞아서, **여러 수신자가 공유하는 routinelog 에서만 터진다 — 정작 이 기능이 필요한 곳이다.** 처방: ①폴백 먼저 — me 가 어느 섹션 수신자와도 안 맞으면 경고 대신 중립(▸). 이부장이 _merge_order 에 세운 원칙('수신자를 못 읽으면 옛 동작 그대로 — 판별 못 하는데 합치면 더 나쁘다')이 라벨 쪽엔 빠져 있다 ②수신자는 owner 가 아니라 mark --code 로 — 루틴 배치 code 는 루틴 폴더명이고 studio/routines.py:57 에 (7,'G','lifeinfo-index-check',…) 매핑이 있다 ③또는 mark 에도 --actor. ※루틴은 보고까지가 몫이라 고치지 않았다. 근거=docs/지시서_섹션분리_검증_20260907.md '2차 재검증'",
+   "due": "2026-09-08",
+   "cmd": "python -c \"import json,sys;sys.stdout.reconfigure(encoding='utf-8');from studio.batchboard import _label_sections,_actor_of,_ORDER_SEP as S;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];print('owner',repr(b.get('owner')));print('섹션',[_actor_of(x) for x in b['order'].split(S.strip(chr(10))) if x.strip()])\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-07",
+   "result": "3차 재검증 완료 — 이부장이 처방①(폴백) 채택. _label_sections 안에서 me 가 섹션 수신자 집합에 없으면 None 으로 떨어뜨려 중립 표기. 실측 3경우 전부 정상: ①routinelog 주경로=중립 ▸(틀린 경고 사라짐) ②--actor 루틴7=✅/⚠️ 정상 ③owner=이과장 배치 주경로=✅/⚠️ 정상. 자기 지시에 '실행하지 마라' 가 붙던 회귀 해소 확인. 남은 것은 order-section-handoff-0907 의 ④(SKILL --actor 안내)와 처방②(code→루틴N 매핑) — 둘 다 틀린 경고가 아니라 미완이므로 급하지 않다"
+  },
+  {
+   "id": "naver-thumb-swap-0908",
+   "added": "2026-09-07",
+   "what": "🖼️ 네이버 글 5편 대표 이미지 교체 — 실사진 썸네일 준비 완료(이부장 육안 검수 통과). ①비엔나공항 224404172501 ← 218n_vienna.png(공항 백팩) ②롯데월드 224352030079 ← 118n_lotteworld.png(대관람차) ③동백전 224330786740 ← 50n_dongbaekjeon.png(카드결제 단말기) ④미국ESTA 224355370512 ← 100n_esta.png(공항 터미널) ⑤부산미술관 224336005320 ← 80n_busanart.png(미술관 전시실). 파일 위치 C:/lifeinfo/thumbs_naver/. 방법: 글 수정 → 본문 맨 위 이미지 삭제 → 새 이미지 첨부 → 발행. ⚠️ ESTA·비엔나 글에는 제휴 카드가 있으니 맨 위 이미지만 바꿀 것",
+   "due": "2026-09-08",
+   "cmd": "explorer C:\\lifeinfo\\thumbs_naver",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
