@@ -169,7 +169,10 @@ function card(it){
     if(pt.body){
       var row=document.createElement('div');
       row.className='btns'; row.style.marginTop='8px';
-      row.innerHTML='<button class="b-copy">📄 원고 열기</button>';
+      // 🔴 2026-09-08 사장님 방침: *"네이버 글발행은 폰으로 가능하지만 번거러워!
+      //    폰발행 가능하도록만 이해하고 네이버글은 pc에서 발행할께"*
+      //    → 숨기지 않는다(무엇이 남았는지는 보셔야 한다). **표시만** 바꾼다.
+      row.innerHTML='<button class="b-copy">📄 원고 열기 <small>(PC 권장)</small></button>';
       row.querySelector('button').onclick=function(){openSheet(it);};
       d.appendChild(row);
     }
