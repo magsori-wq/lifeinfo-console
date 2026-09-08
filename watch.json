@@ -6389,6 +6389,26 @@
    "kind": "approve",
    "state": "todo",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "naver-post-e104-ready",
+   "added": "2026-09-08",
+   "what": "E1-04 네이버 게시 준비완료 — 제목: 몰라서 못 받는다? 아닙니다 — 갤럭시S26 온누리상품권 신청 마감 9월 30일 (2026) / 카테고리: 생활정보 / 첨부: thumbs_naver/221n_s26benefit.png / 태그: #갤럭시S26 #온누리상품권 #갤럭시구매혜택 #삼성닷컴 #삼성닷컴온누리 #생활정보",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.pipeline naver-draft --code E1-04 --file osmu/네이버용_갤럭시S26구매혜택.txt",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:eb42e59e"
+  },
+  {
+   "id": "afflink-e1-04",
+   "added": "2026-09-08",
+   "what": "E1-04(갤럭시S26 구매혜택) 제휴상품 링크 발급 — 1순위: 비하겐 ZETTA GaN PD PPS 고속충전기 35W 2포트 18,900원(리뷰255·4.7) · 2순위: 팬택 30W 1포트 C타입 충전기+60W케이블 10,900원(리뷰194·4.7). S26 박스에 충전기 미포함이라 관련성 높음. 근거: docs/affiliate_E1-04.md",
+   "due": "2026-09-08",
+   "cmd": "토스쇼핑에서 '비하겐 ZETTA GaN PD PPS 35W' 검색해 쉐어링크 발급(1순위) 또는 쿠팡파트너스에서 '팬택 30W C타입 충전기' 검색해 링크 발급(2순위)",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:eb42e59e"
   }
  ]
 }

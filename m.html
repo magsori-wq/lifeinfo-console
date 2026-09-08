@@ -101,6 +101,17 @@ function copy(txt,msg){
   }
 }
 
+// 🔴 **번호만 보내면 안 된다** (2026-09-08 사장님 지적)
+//    *"1번 승인이라고 하면 계속 1번이 되니 코드와 제목을 붙어 넣어야 해!?"*
+//    맞다 — 목록이 바뀌면 1번이 다른 것이 된다. 실제로 아까 1번은 E1-04 였고
+//    지금은 D4-07 이다. 그 사이에 승인하면 **엉뚱한 것이 나간다.**
+//    그래서 복사 문구에 **id 와 제목 앞부분**을 함께 넣는다.
+function label(it){
+  var t=String(it.what||'').replace(/[
+]+/g,' ').replace(/^[^\wㄱ-힣]+/,'').slice(0,26);
+  return (it.id||('#'+it.no))+' ('+t+')';
+}
+
 var PICK={};   // 선택한 번호 — 🔴 하나씩 복사하면 클립보드가 덮어써진다
                //    (2026-09-08 사장님이 7건을 누르셨는데 마지막 하나만 남았다)
 
@@ -130,18 +141,18 @@ function card(it){
       copy(it.what||'', '📋 복사됨 — 네이버·앱에 붙여넣으세요');
     };
     d.querySelector('.b-no').onclick=function(){
-      copy(it.no+'번 끝냈어', '📋 "'+it.no+'번 끝냈어" 복사됨 — 이부장 창에 붙여넣으면 지웁니다');
+      copy('끝냈어: '+label(it), '📋 복사됨 — 이부장 창에 붙여넣으면 지웁니다');
     };
     return d;
   }
   var sel=d.querySelector('.b-sel');
   sel.onclick=function(){
     if(PICK[it.no]){ delete PICK[it.no]; sel.className='b-sel'; d.classList.remove('sel'); }
-    else { PICK[it.no]={no:it.no,hard:hard}; sel.className='b-sel on'; d.classList.add('sel'); }
+    else { PICK[it.no]={no:it.no,hard:hard,label:label(it)}; sel.className='b-sel on'; d.classList.add('sel'); }
     bar();
   };
   d.querySelector('.b-no').onclick=function(){
-    copy(it.no+'번 반려 — ', '📋 "'+it.no+'번 반려" 복사됨 — 사유를 이어 쓰고 보내세요');
+    copy('반려: '+label(it)+' — ', '📋 복사됨 — 사유를 이어 쓰고 보내세요');
   };
   return d;
 }
@@ -157,8 +168,8 @@ function bar(){
     +'<button class="b-no" id="clr" style="flex:0 0 88px">해제</button>';
   document.getElementById('clr').onclick=function(){PICK={};render();};
   document.getElementById('send').onclick=function(){
-    var txt=ns.join(',')+'번 승인';
-    copy(txt, '📋 "'+txt+'" 복사됨 — 이부장 창에 붙여넣으세요'
+    var txt='승인: '+ns.map(function(n){return PICK[n].label;}).join(' / ');
+    copy(txt, '📋 복사됨 — 이부장 창에 붙여넣으세요'
       +(hard.length?' (되돌릴 수 없는 건은 이부장이 다시 여쭙습니다)':''));
   };
 }
