@@ -36,6 +36,23 @@ button{flex:1;min-height:52px;                            /* 🔴 손가락 크�
 .b-go{background:var(--go);color:#fff}
 .b-no{background:#2a3550;color:var(--tx);flex:0 0 96px}
 .done{opacity:.45}
+.card.hard{border-color:#8b3a3a;background:#1d1520}
+.card.wait{opacity:.62;border-style:dashed}
+.waittag{display:inline-block;background:#2a3550;color:var(--dim);font-size:13px;
+  font-weight:700;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.hardtag{display:inline-block;background:#8b3a3a;color:#ffe;font-size:13px;
+  font-weight:700;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.card.sel{border-color:var(--go);box-shadow:0 0 0 2px #2f81f755}
+.b-sel{background:#2a3550;color:var(--tx)}
+.b-sel.on{background:var(--ok);color:#fff}
+#bar{position:fixed;left:0;right:0;bottom:0;background:#141c30;
+  border-top:1px solid var(--line);padding:12px 12px calc(12px + env(safe-area-inset-bottom));
+  display:none;gap:8px;z-index:50}
+#bar.on{display:flex}
+#bar button{min-height:54px;font-size:17px}
+.why{background:#151d33;border:1px solid var(--line);border-radius:12px;
+  padding:12px 14px;margin:0 0 14px;font-size:14.5px;color:var(--dim);line-height:1.65}
+.why b{color:var(--tx)}
 .hint{color:var(--dim);font-size:14px;padding:10px 4px 0;line-height:1.7}
 .empty{text-align:center;color:var(--dim);padding:50px 0;font-size:17px}
 #toast{position:fixed;left:12px;right:12px;bottom:22px;background:#1c2540;
@@ -56,6 +73,7 @@ a.plain{color:var(--go);text-decoration:none}
   <div class="hint" id="hint"></div>
 </main>
 
+<div id="bar"></div>
 <div id="toast"></div>
 
 <script>
@@ -80,39 +98,74 @@ function copy(txt,msg){
   }
 }
 
+var PICK={};   // 선택한 번호 — 🔴 하나씩 복사하면 클립보드가 덮어써진다
+               //    (2026-09-08 사장님이 7건을 누르셨는데 마지막 하나만 남았다)
+
 function card(it){
-  var d=document.createElement('div');d.className='card';
+  var hard = it.risk==='hard';
+  var act  = it.act !== false;          // 🔴 이미 승인돼 진행 중이면 누를 것이 없다
+  var d=document.createElement('div');
+  d.className='card'+(hard&&act?' hard':'')+(act?'':' wait');
   d.innerHTML=
-    '<div class="top"><div class="no">'+it.no+'</div>'
+    (act?(hard?'<div class="hardtag">🔴 되돌릴 수 없음 — 라이브가 나갑니다</div>':'')
+        :'<div class="waittag">✅ 승인하셨습니다 — 이과장이 진행 중</div>')
+    +'<div class="top"><div class="no">'+it.no+'</div>'
     +'<div class="kind">'+it.kind+'</div>'
     +'<div class="cid">'+(it.id||'')+'</div></div>'
     +'<p class="what">'+esc(it.what||'')+'</p>'
-    +'<div class="btns">'
-    +'<button class="b-go">✅ 승인</button>'
+    +(act?('<div class="btns">'
+    +'<button class="b-sel">'+(hard?'✅ 승인 요청':'✅ 승인')+'</button>'
     +'<button class="b-no">반려</button>'
-    +'</div>';
-  d.querySelector('.b-go').onclick=function(){
-    copy(it.no+'번 승인', '📋 "'+it.no+'번 승인" 복사됨 — 이부장 창에 붙여넣으세요');
-    d.classList.add('done');
+    +'</div>'):'');
+  if(!act) return d;                    // 버튼이 없으니 여기서 끝
+  var sel=d.querySelector('.b-sel');
+  sel.onclick=function(){
+    if(PICK[it.no]){ delete PICK[it.no]; sel.className='b-sel'; d.classList.remove('sel'); }
+    else { PICK[it.no]={no:it.no,hard:hard}; sel.className='b-sel on'; d.classList.add('sel'); }
+    bar();
   };
   d.querySelector('.b-no').onclick=function(){
     copy(it.no+'번 반려 — ', '📋 "'+it.no+'번 반려" 복사됨 — 사유를 이어 쓰고 보내세요');
   };
   return d;
 }
+
+function bar(){
+  var ns=Object.keys(PICK).map(Number).sort(function(a,b){return a-b;});
+  var b=document.getElementById('bar');
+  if(!ns.length){b.className='';return;}
+  var hard=ns.filter(function(n){return PICK[n].hard;});
+  b.className='on';
+  b.innerHTML='<button class="b-go" id="send">📤 '+ns.length+'건 이부장에게'
+    +(hard.length?' <small>('+hard.length+'건 확인받음)</small>':'')+'</button>'
+    +'<button class="b-no" id="clr" style="flex:0 0 88px">해제</button>';
+  document.getElementById('clr').onclick=function(){PICK={};render();};
+  document.getElementById('send').onclick=function(){
+    var txt=ns.join(',')+'번 승인';
+    copy(txt, '📋 "'+txt+'" 복사됨 — 이부장 창에 붙여넣으세요'
+      +(hard.length?' (되돌릴 수 없는 건은 이부장이 다시 여쭙습니다)':''));
+  };
+}
+
 function esc(s){return String(s).replace(/[&<>]/g,function(c){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
 
 function render(){
   var L=document.getElementById('list');L.innerHTML='';
+  PICK={};bar();
   var items=(DATA&&DATA.items)||[];
-  document.getElementById('cnt').textContent=items.length?items.length+'건':'';
+  var todo=items.filter(function(x){return x.act!==false;}).length;
+  document.getElementById('cnt').textContent=todo?todo+'건':'';
   document.getElementById('gen').textContent=DATA?('기준 '+DATA.generated):'';
   if(!items.length){L.innerHTML='<div class="empty">✅ 결재할 것이 없습니다</div>';return;}
+  if(!todo){L.innerHTML='<div class="empty">✅ 누를 것이 없습니다<br><span style="font-size:14px">아래는 진행 중입니다</span></div>';}
   items.forEach(function(it){L.appendChild(card(it));});
   document.getElementById('hint').innerHTML=
-    '버튼을 누르면 <b>문구가 복사</b>됩니다. 이부장 창에 붙여넣으면 제가 처리합니다.<br>'
-    +'여러 건은 이어서 쓰셔도 됩니다 — <b>“1,3번 승인”</b><br><br>'
+    '<b>왜 복사인가</b> — 이 화면은 파일만 올려둔 곳이라 서버가 없습니다. '
+    +'버튼이 보낼 데가 없어서, 대신 <b>문구를 복사</b>해 이부장 창에 붙여넣으시면 '
+    +'제가 처리합니다.<br><br>'
+    +'🔴 <b>되돌릴 수 없는 건</b>(라이브 발행)은 제가 <b>무엇이 나가는지 다시 보여드리고</b> '
+    +'확인받은 뒤에 진행합니다. 탭 한 번으로 나가지 않습니다.<br><br>'
     +'<a class="plain" href="progress.html">📊 진행현황</a> &nbsp;·&nbsp; '
     +'<a class="plain" href="approval.html">🖥️ PC 결재함</a>';
 }

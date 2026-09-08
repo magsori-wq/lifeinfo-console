@@ -6374,8 +6374,21 @@
    "cmd": "python -m studio.tosslink link 142651137",
    "owner": "user",
    "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-08",
+   "result": "사장님 승인(폰 ①번 방식 첫 테스트) → 이부장이 tosslink 로 발급 완료: https://toss.im/_m/PcNGFnvt (302 확인) · affiliate 등록 완료"
+  },
+  {
+   "id": "naver-aff-d407",
+   "added": "2026-09-08",
+   "what": "🛒 D4-07 네이버 글에 제휴 링크 붙이기 — 이미 게시된 글 수정입니다(본문 그대로, 두 곳만 추가)\n\n【맨 앞에 한 줄 추가】\n🔗 이 콘텐츠는 토스쇼핑 쉐어링크 활동의 일환으로, 링크를 통한 구매가 발생하면 일정 수수료를 지급받습니다.\n\n【맨 뒤에 두 줄 추가 — 링크는 단독으로 붙여넣어야 카드가 뜹니다】\n정원장 6년근 장홍삼 에브리데이 스틱 실속형 10g 110포\nhttps://toss.im/_m/PcNGFnvt\n\n🔴 링크는 빈 줄에 **링크만** 붙여넣으십시오. 상품명과 같이 붙이면 자동감지가 꺼져 파란 텍스트만 됩니다(09-07 실측).\n🔴 대가성 문구가 맨 앞이어야 합니다 — 공정위 예규 제499호가 '더보기 안·본문 중간'을 부적절 예시로 콕 집었습니다.\n※ 추석 9/25 까지 17일 남았습니다.",
+   "due": "2026-09-08",
+   "cmd": "python -m studio.affiliate block --code D4-07 --channel naver",
+   "owner": "user",
+   "kind": "approve",
    "state": "todo",
-   "by": "이부장"
+   "by": "세션:06ed2a43"
   }
  ]
 }
