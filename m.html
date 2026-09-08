@@ -40,6 +40,9 @@ button{flex:1;min-height:52px;                            /* 🔴 손가락 크�
 .card.wait{opacity:.62;border-style:dashed}
 .waittag{display:inline-block;background:#2a3550;color:var(--dim);font-size:13px;
   font-weight:700;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.handtag{display:inline-block;background:#2d4a3a;color:#b8e6c8;font-size:13px;
+  font-weight:700;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.b-copy{background:#2d6a4a;color:#fff}
 .hardtag{display:inline-block;background:#8b3a3a;color:#ffe;font-size:13px;
   font-weight:700;padding:3px 9px;border-radius:7px;margin-bottom:8px}
 .card.sel{border-color:var(--go);box-shadow:0 0 0 2px #2f81f755}
@@ -104,20 +107,33 @@ var PICK={};   // 선택한 번호 — 🔴 하나씩 복사하면 클립보드�
 function card(it){
   var hard = it.risk==='hard';
   var act  = it.act !== false;          // 🔴 이미 승인돼 진행 중이면 누를 것이 없다
+  var hand = it.hand === true;          // 🔴 사장님이 **직접** 하실 일 — 승인이 아니다
   var d=document.createElement('div');
   d.className='card'+(hard&&act?' hard':'')+(act?'':' wait');
   d.innerHTML=
-    (act?(hard?'<div class="hardtag">🔴 되돌릴 수 없음 — 라이브가 나갑니다</div>':'')
+    (act?(hand?'<div class="handtag">✋ 사장님이 직접 하실 일 — 승인이 아닙니다</div>'
+              :(hard?'<div class="hardtag">🔴 되돌릴 수 없음 — 라이브가 나갑니다</div>':''))
         :'<div class="waittag">✅ 승인하셨습니다 — 이과장이 진행 중</div>')
     +'<div class="top"><div class="no">'+it.no+'</div>'
     +'<div class="kind">'+it.kind+'</div>'
     +'<div class="cid">'+(it.id||'')+'</div></div>'
     +'<p class="what">'+esc(it.what||'')+'</p>'
     +(act?('<div class="btns">'
-    +'<button class="b-sel">'+(hard?'✅ 승인 요청':'✅ 승인')+'</button>'
-    +'<button class="b-no">반려</button>'
+    +(hand?'<button class="b-copy">📋 할 일 복사</button>'
+          :'<button class="b-sel">'+(hard?'✅ 승인 요청':'✅ 승인')+'</button>')
+    +'<button class="b-no">'+(hand?'끝냄':'반려')+'</button>'
     +'</div>'):'');
   if(!act) return d;                    // 버튼이 없으니 여기서 끝
+  if(hand){
+    // 승인이 아니라 **할 일**이다 — 내용을 통째로 복사해 폰에서 바로 쓰시게 한다
+    d.querySelector('.b-copy').onclick=function(){
+      copy(it.what||'', '📋 복사됨 — 네이버·앱에 붙여넣으세요');
+    };
+    d.querySelector('.b-no').onclick=function(){
+      copy(it.no+'번 끝냈어', '📋 "'+it.no+'번 끝냈어" 복사됨 — 이부장 창에 붙여넣으면 지웁니다');
+    };
+    return d;
+  }
   var sel=d.querySelector('.b-sel');
   sel.onclick=function(){
     if(PICK[it.no]){ delete PICK[it.no]; sel.className='b-sel'; d.classList.remove('sel'); }
