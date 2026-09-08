@@ -6529,6 +6529,16 @@
    "kind": "action",
    "state": "todo",
    "by": "세션:88de804b"
+  },
+  {
+   "id": "fix-c2-14-gate-0909",
+   "added": "2026-09-09",
+   "what": "C2-14 독감예방접종 초안이 pubqueue add 게이트(정리·태그·본문마커 3종)에 막혀 있었다. 표준블록 3종 추가(정리 3줄 요약·태그 6개 naverkw 검증·▼본문HTML 마커 분리)로 게이트 통과, 큐 등록(대기1건). validate_db FAIL 0. 상품매칭 미조사 경고는 별건(affiliate none/조사 필요).",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:06ed2a43"
   }
  ]
 }
