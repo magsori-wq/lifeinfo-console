@@ -6561,6 +6561,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:ce43703c"
+  },
+  {
+   "id": "validation-check-0910",
+   "added": "2026-09-09",
+   "what": "📅[중간 점검 · 루틴7 정기실행일] 유효성검사(9/8 시작) 결과가 **이미 나왔을 수 있다** — 과거 회차 소요가 4일(8.11→8.15)이었으므로 빠르면 **9/12** 종료다. 9/10(목)은 루틴7 정기 실행일이므로 그날 한 번 본다. 【확인 절차 4단계 — 그대로 실행하면 된다】①python -m studio.searchconsole inspect (약 25분, 완주 확인: partial 필드가 없어야 함) ②python -c \"import json;from collections import Counter;b=json.load(open('docs/유효성검사_기준선_20260908.json',encoding='utf-8'));d=json.load(open('webapp/index_status.json',encoding='utf-8'));print('기준선',b['state_분포']);print('현재  ',dict(Counter(v.get('state') for v in d['posts'].values())))\" ③GSC 화면에서 유효성검사 2건의 '상태/접수중/실패함' 확인 — **API 에 없어 브라우저 필요**(claude-in-chrome 또는 사장님 캡처). URL = search.google.com/search-console/index/validation?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&hl=ko ④보고. 【기준선(9/8)】리디렉션오류 접수중63·실패0 / 크롤됨-미색인 접수중222·실패0 (⚠️둘 다 **URL 총계**이지 편수가 아니다 — 글 단위는 각 62편·125편) / index_status 09-07: total237·색인0·크롤됨미색인125·Redirect62·발견됨43·미발견7. 【판정 주의】'통과' 여도 색인된 게 아니다 — 통과는 그 사유가 해소됐다는 뜻이고 색인 여부는 index_status 로 따로 본다. 옛 회차는 실패 34건·7건으로 통과 0 이었다. 【아직 진행중이면】아무것도 누르지 말고 validation-result-0915 로 넘긴다. 재시작하면 카운터가 초기화된다.",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.searchconsole inspect",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:ce43703c"
   }
  ]
 }
