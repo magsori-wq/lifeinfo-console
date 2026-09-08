@@ -136,10 +136,28 @@ function card(it){
     +'</div>'):'');
   if(!act) return d;                    // 버튼이 없으니 여기서 끝
   if(hand){
-    // 승인이 아니라 **할 일**이다 — 내용을 통째로 복사해 폰에서 바로 쓰시게 한다
+    // 승인이 아니라 **할 일**이다 — 내용을 복사해 폰에서 바로 쓰시게 한다
     d.querySelector('.b-copy').onclick=function(){
       copy(it.full||it.what||'', '📋 복사됨 — 네이버·앱에 붙여넣으세요');
     };
+    // 🔴 네이버 **게시** 건은 칸이 셋이다 — 한 덩어리로 주면 폰에서 손으로
+    //    잘라내셔야 한다(2026-09-08 사장님: "화면이 작아 복붙하기 힘들어!").
+    var pt = it.parts||{};
+    if(pt.body){
+      var row=document.createElement('div');
+      row.className='btns'; row.style.marginTop='8px';
+      row.innerHTML='<button class="b-copy">📝 제목</button>'
+        +'<button class="b-copy">📄 본문</button>'
+        +'<button class="b-sel">🖼️ 이미지</button>';
+      var bs=row.querySelectorAll('button');
+      bs[0].onclick=function(){copy(pt.title,'📝 제목 복사됨 — 네이버 제목칸에');};
+      bs[1].onclick=function(){copy(pt.body,'📄 본문 복사됨('+pt.body.length+'자) — 네이버 본문칸에');};
+      bs[2].onclick=function(){
+        if(pt.image) window.open(pt.image,'_blank');
+        else toast('이미지가 없습니다');
+      };
+      d.appendChild(row);
+    }
     d.querySelector('.b-no').onclick=function(){
       copy('끝냈어: '+label(it), '📋 복사됨 — 이부장 창에 붙여넣으면 지웁니다');
     };
