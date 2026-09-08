@@ -107,9 +107,9 @@ function copy(txt,msg){
 //    지금은 D4-07 이다. 그 사이에 승인하면 **엉뚱한 것이 나간다.**
 //    그래서 복사 문구에 **id 와 제목 앞부분**을 함께 넣는다.
 function label(it){
-  var t=String(it.what||'').replace(/[
-]+/g,' ').replace(/^[^\wㄱ-힣]+/,'').slice(0,26);
-  return (it.id||('#'+it.no))+' ('+t+')';
+  var t = String(it.what || '').split(/\s+/).join(' ')
+            .replace(/^[^0-9A-Za-z가-힣]+/, '').slice(0, 26);
+  return (it.id || ('#' + it.no)) + ' (' + t + ')';
 }
 
 var PICK={};   // 선택한 번호 — 🔴 하나씩 복사하면 클립보드가 덮어써진다
