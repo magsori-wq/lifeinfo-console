@@ -1,151 +1,131 @@
-<!doctype html>
+<!doctype html><html lang="ko"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CP 모바일 결재</title>
-<!--
-  📱 휴대폰 전용 결재함 (2026-09-03 사장님 지시 "외부에서 승인할 수 있도록")
-
-  🔴 왜 따로 만드나 — approval.html 이 휴대폰에서 **세 번 연속 안 보였다.**
-     그때마다 진단이 틀렸다: ①캐시 ②모바일 CSS ③서버 탐색 대기(이건 실제로
-     고쳤다). 그래도 안 보였다. 원인을 계속 좁히는 것보다 **확실히 도는 것을
-     주는 것**이 낫다 — 사장님 시간을 더 쓰지 않는다.
-
-  🔴 이 페이지의 규칙 — 안 되는 이유를 없앤다
-     · **순수 ES5** — async/await·화살표함수·템플릿리터럴·옵셔널체이닝 전부 안 쓴다
-       (구형 모바일 브라우저는 이런 문법에서 스크립트가 통째로 죽는다 =
-        화면이 완전히 빈다. 유력한 원인이었다)
-     · **localhost 를 부르지 않는다** — 휴대폰에 127.0.0.1 은 없다
-     · **XHR 하나로 파일 3개만** 읽는다 — 실패해도 나머지는 그린다
-     · CSS 는 한 열 고정. 그리드·미디어쿼리 없음
-     · 외부 폰트·라이브러리 없음
-
-  ⚠️ 여기서 결재를 **처리하지 않는다.** GitHub Actions 로 보낼 뿐이다
-     (라이브는 읽기 전용이고 그게 맞다).
--->
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1424">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>결재함</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;padding:12px 12px 40px;background:#0d1117;color:#e6edf3;
-     font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-h1{font-size:18px;margin:0 0 4px}
-.sub{color:#8b949e;font-size:12px;margin:0 0 14px}
-.card{border:1px solid #30363d;border-radius:10px;padding:12px;margin:0 0 12px;
-      background:#161b22}
-.card.go{border-color:#d2992266;background:#d299220d}
-.card.ap{border-color:#3fb95066;background:#3fb9500d}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;
-     border-radius:20px;margin:0 0 8px}
-.tag.go{background:#d2992233;color:#e3a72f}
-.tag.ap{background:#3fb95033;color:#5fd37a}
-.ttl{font-weight:700;font-size:15px;margin:0 0 4px}
-.code{color:#8b949e;font-size:12px}
-.why{color:#adbac7;font-size:13px;margin:8px 0 0;white-space:pre-wrap}
-a.btn{display:block;text-align:center;margin:12px 0 0;padding:13px;
-      border-radius:9px;text-decoration:none;font-weight:700;font-size:15px}
-a.go{background:#d29922;color:#1c1206}
-a.ap{background:#238636;color:#fff}
-.hint{font-size:12px;color:#8b949e;margin:8px 0 0;word-break:break-all}
-.hint b{color:#e6edf3}
-.none{color:#8b949e;text-align:center;padding:28px 0}
-.err{background:#4a1d1d;border:1px solid #f85149;padding:10px;border-radius:8px;
-     font-size:13px;margin:0 0 12px}
-.ft{margin:22px 0 0;font-size:12px;color:#6e7681;text-align:center}
-.ft a{color:#58a6ff}
-</style>
+/* 🔴 폰 전용. Galaxy S23 Ultra 기준(CSS 폭 412px).
+   PC 화면(approval.html)은 그대로 두고 여기만 크게 만든다 —
+   기존 화면을 고치면 PC 가 깨진다. */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0d1424;--card:#151d33;--line:#243150;--tx:#e8eefc;--dim:#94a3c4;
+      --go:#2f81f7;--warn:#f0b429;--ok:#2ea043}
+html,body{margin:0;background:var(--bg);color:var(--tx);
+  font-family:-apple-system,"Malgun Gothic",sans-serif;
+  font-size:17px;line-height:1.6;                       /* 🔴 14px→17px */
+  padding-bottom:env(safe-area-inset-bottom)}
+header{position:sticky;top:0;z-index:9;background:#0d1424ee;backdrop-filter:blur(8px);
+  padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:21px;display:flex;align-items:center;gap:8px}
+.gen{color:var(--dim);font-size:13px;margin-top:2px}
+main{padding:12px 12px 90px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:14px;margin-bottom:12px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.no{flex:0 0 34px;height:34px;border-radius:10px;background:var(--go);color:#fff;
+  font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+.kind{font-size:14px;font-weight:700;color:var(--warn)}
+.cid{font-family:monospace;font-size:13px;color:var(--dim);margin-left:auto}
+.what{font-size:16px;word-break:break-word;margin:0 0 12px}
+.btns{display:flex;gap:8px}
+button{flex:1;min-height:52px;                            /* 🔴 손가락 크기 */
+  border:0;border-radius:12px;font-size:16px;font-weight:700;
+  font-family:inherit;cursor:pointer}
+.b-go{background:var(--go);color:#fff}
+.b-no{background:#2a3550;color:var(--tx);flex:0 0 96px}
+.done{opacity:.45}
+.hint{color:var(--dim);font-size:14px;padding:10px 4px 0;line-height:1.7}
+.empty{text-align:center;color:var(--dim);padding:50px 0;font-size:17px}
+#toast{position:fixed;left:12px;right:12px;bottom:22px;background:#1c2540;
+  border:1px solid var(--go);border-radius:12px;padding:14px 16px;font-size:16px;
+  opacity:0;transition:.2s;pointer-events:none;z-index:99}
+#toast.on{opacity:1}
+.sec{margin:22px 4px 10px;font-size:15px;color:var(--dim);font-weight:700}
+a.plain{color:var(--go);text-decoration:none}
+</style></head><body>
 
-<h1>📋 CP 결재 — 휴대폰</h1>
-<p class="sub" id="sub">불러오는 중…</p>
-<div id="out"></div>
-<p class="ft">
-  전체 화면: <a href="approval.html">approval.html</a> ·
-  <a href="javascript:location.reload()">새로고침</a>
-</p>
+<header>
+  <h1>🙋 결재함 <span id="cnt" style="color:var(--dim);font-size:16px"></span></h1>
+  <div class="gen" id="gen">불러오는 중…</div>
+</header>
+
+<main>
+  <div id="list"></div>
+  <div class="hint" id="hint"></div>
+</main>
+
+<div id="toast"></div>
 
 <script>
-/* 순수 ES5 — 구형 브라우저에서도 파싱된다 */
-var GH = 'https://github.com/magsori-wq/lifeinfo-source/actions/workflows/';
-var out = document.getElementById('out');
-var sub = document.getElementById('sub');
-var got = {}, need = 3, done = 0;
+// 🔴 번호는 여기서 매기지 않는다. approvalcount.bake_json() 이 구운 것을 그대로 쓴다.
+//    화면이 자기 순서로 매기면 도구와 갈린다 — 이 저장소가 결재 건수로 여섯 번 겪은 병.
+var DATA=null;
 
-function esc(s){
-  return String(s == null ? '' : s)
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.className='on';
+  clearTimeout(window._tt);window._tt=setTimeout(function(){t.className='';},2600);}
+
+// 클립보드 — https 가 아니면 navigator.clipboard 가 없다. 폴백을 둔다.
+function copy(txt,msg){
+  function ok(){toast(msg);}
+  if(navigator.clipboard&&window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(ok,fallback);
+  }else{fallback();}
+  function fallback(){
+    var ta=document.createElement('textarea');ta.value=txt;
+    ta.style.position='fixed';ta.style.opacity=0;document.body.appendChild(ta);
+    ta.select();try{document.execCommand('copy');ok();}catch(e){toast('복사 실패 — 길게 눌러 복사해 주세요');}
+    document.body.removeChild(ta);
+  }
 }
-function get(name, key){
-  var x = new XMLHttpRequest();
-  x.open('GET', name + '?t=' + (new Date()).getTime(), true);
-  x.onreadystatechange = function(){
-    if (x.readyState !== 4) return;
-    try { got[key] = JSON.parse(x.responseText); } catch(e){ got[key] = null; }
-    done++;
-    if (done >= need) render();
+
+function card(it){
+  var d=document.createElement('div');d.className='card';
+  d.innerHTML=
+    '<div class="top"><div class="no">'+it.no+'</div>'
+    +'<div class="kind">'+it.kind+'</div>'
+    +'<div class="cid">'+(it.id||'')+'</div></div>'
+    +'<p class="what">'+esc(it.what||'')+'</p>'
+    +'<div class="btns">'
+    +'<button class="b-go">✅ 승인</button>'
+    +'<button class="b-no">반려</button>'
+    +'</div>';
+  d.querySelector('.b-go').onclick=function(){
+    copy(it.no+'번 승인', '📋 "'+it.no+'번 승인" 복사됨 — 이부장 창에 붙여넣으세요');
+    d.classList.add('done');
   };
-  try { x.send(); } catch(e){ done++; if (done >= need) render(); }
+  d.querySelector('.b-no').onclick=function(){
+    copy(it.no+'번 반려 — ', '📋 "'+it.no+'번 반려" 복사됨 — 사유를 이어 쓰고 보내세요');
+  };
+  return d;
 }
-function today(){
-  var d = new Date(), m = d.getMonth()+1, day = d.getDate();
-  return d.getFullYear() + '-' + (m<10?'0':'') + m + '-' + (day<10?'0':'') + day;
-}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
 
 function render(){
-  var q = (got.q && got.q.items) || [];
-  var w = (got.w && got.w.items) || [];
-  var db = (got.db && got.db.posts) || [];
-  var live = {}, i, n = 0, h = '';
-  for (i = 0; i < db.length; i++) if (db[i].url) live[db[i].code] = 1;
-
-  if (!got.q && !got.w) {
-    out.innerHTML = '<div class="err">데이터를 못 받았습니다. '
-      + '통신 상태를 확인하고 새로고침해 주세요.</div>';
-    sub.textContent = '';
-    return;
-  }
-
-  /* ① 도장 찍혔는데 아직 안 나간 글 = 발행만 남음 */
-  for (i = 0; i < q.length; i++) {
-    var x = q[i];
-    if (!x.go || live[x.code]) continue;
-    n++;
-    var at = String((x.go && x.go.at) || '').slice(0,16).replace('T',' ');
-    h += '<div class="card go">'
-      + '<span class="tag go">🚀 발행만 남음</span>'
-      + '<div class="ttl">' + esc(x.title) + '</div>'
-      + '<div class="code">' + esc(x.code) + ' · 승인 ' + esc(at) + '</div>'
-      // 🔴 go.yml 로 보낸다 — **입력이 없다**(2026-09-03 사장님 "어떻게 사용해야
-      //    할지 모르겠어"). publish.yml 은 code·mode·confirm·file 을 손으로 쳐야 했다.
-      //    휴대폰에서 그걸 치는 것은 사람이 할 일이 아니다.
-      + '<a class="btn go" href="' + GH + 'go.yml" target="_blank" rel="noopener">'
-      + '🚀 발행하기</a>'
-      + '<div class="hint">화면에서 <b>Run workflow</b> → 초록 버튼만 누르세요.<br>'
-      + '입력할 것 없습니다 — 승인된 글을 스스로 찾아 발행합니다.</div></div>';
-  }
-
-  /* ② 사장님 결재 대기 */
-  var t = today();
-  for (i = 0; i < w.length; i++) {
-    var v = w[i];
-    if (v.owner !== 'user') continue;
-    if ((v.state || 'todo') === 'done') continue;
-    if (String(v.due || '9999') > t) continue;
-    n++;
-    var isAp = (v.kind === 'approve');
-    h += '<div class="card ap">'
-      + '<span class="tag ap">' + (isAp ? '🙋 승인 요청' : '☑ 조치 확인') + '</span>'
-      + '<div class="ttl">' + esc(String(v.what || '').split('—')[0].slice(0,60)) + '</div>'
-      + '<div class="code">' + esc(v.id) + ' · 기한 ' + esc(v.due || '') + '</div>'
-      + '<div class="why">' + esc(String(v.what || '').slice(0,400)) + '</div>'
-      + '<a class="btn ap" href="' + GH + 'approve.yml" target="_blank" rel="noopener">'
-      + '🙋 승인하기</a>'
-      + '<div class="hint">Run workflow 에 넣을 값<br>'
-      + 'target <b>' + esc(v.id) + '</b> · action <b>approve</b></div>'
-      + '</div>';
-  }
-
-  out.innerHTML = n ? h : '<p class="none">✅ 결재하실 것이 없습니다.</p>';
-  sub.textContent = n + '건 · ' + (new Date()).toLocaleString('ko-KR');
+  var L=document.getElementById('list');L.innerHTML='';
+  var items=(DATA&&DATA.items)||[];
+  document.getElementById('cnt').textContent=items.length?items.length+'건':'';
+  document.getElementById('gen').textContent=DATA?('기준 '+DATA.generated):'';
+  if(!items.length){L.innerHTML='<div class="empty">✅ 결재할 것이 없습니다</div>';return;}
+  items.forEach(function(it){L.appendChild(card(it));});
+  document.getElementById('hint').innerHTML=
+    '버튼을 누르면 <b>문구가 복사</b>됩니다. 이부장 창에 붙여넣으면 제가 처리합니다.<br>'
+    +'여러 건은 이어서 쓰셔도 됩니다 — <b>“1,3번 승인”</b><br><br>'
+    +'<a class="plain" href="progress.html">📊 진행현황</a> &nbsp;·&nbsp; '
+    +'<a class="plain" href="approval.html">🖥️ PC 결재함</a>';
 }
 
-get('queue.json', 'q');
-get('watch.json', 'w');
-get('lifeinfo_db.txt', 'db');
+function load(){
+  fetch('approval_m.json?t='+Date.now()).then(function(r){return r.json();})
+   .then(function(d){DATA=d;render();})
+   .catch(function(){document.getElementById('gen').textContent='🔴 데이터를 못 읽었습니다';});
+}
+load();
+setInterval(load, 60000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)load();});
+
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
 </script>
+</body></html>

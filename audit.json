@@ -2296,6 +2296,46 @@
    "target": "blocked-g205-pace-0908",
    "detail": "해소됨 — 사장님이 2026-09-08 오전에 오늘 상한을 푸셨고('오늘 상한 — 푸시겠습니까? ok') pace_day.json 의 09-08 항목을 제거했다. G2-05 는 그 뒤 정상 발행됐다(DB url 확인). 이과장이 막힘을 정확히 보고한 것이 옳았다",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-08T13:09:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "navertitle-top3-0908",
+   "detail": "5편으로 다시 올림(navertitle-top5-0908) — F1-13·B2-02 도 조회가 있는데 빠져 있었다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T13:22:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "blocked-f420-affiliate-link",
+   "detail": "확인 시도 — 아래 참조",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T13:32:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "order-e104-pending-0908",
+   "detail": "E2-15 4채널 완료(13:29 인스타 게시)로 게이트가 풀려 지시서 등록 완료. 우회하지 않고 기다린 것이 맞았다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T13:56:16",
+   "actor": "이부장",
+   "action": "v0check.pass",
+   "target": "E1-04",
+   "detail": "계산예시(자급제 S26 1,254,000원×20%=250,800원·S26+ 1,452,000원×25%=363,000원, 삼성닷컴 제품가+이벤트페이지 원문과 대조해 검증됨) + 탈락/함정 4종(해외직구·중고 제외, 취소시 회수, 명의불일치 반려, 통화일 3일룰)이 실질 포함. 네이버플러스",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T13:57:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "navertitle-top5-0908",
+   "detail": "사장님이 5편 제목 교체 완료(navertitlecheck --views 실측: 대상 10편 중 같은 제목 0편). 네이버 전용 썸네일 5장도 새 제목으로 교체 완료 — F1-13·G2-03 은 실사진(고유색 10,024·35,380)",
+   "via": "cli"
   }
  ]
 }
