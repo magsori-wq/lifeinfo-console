@@ -58,6 +58,28 @@ button{flex:1;min-height:52px;                            /* 🔴 손가락 크�
 .why b{color:var(--tx)}
 .hint{color:var(--dim);font-size:14px;padding:10px 4px 0;line-height:1.7}
 .empty{text-align:center;color:var(--dim);padding:50px 0;font-size:17px}
+/* 🔴 원고 보기 — PC CP 처럼 **열고·복사하고·닫기** (2026-09-08 사장님)
+   *"pc의 cp처럼 네이버원고,첨부이미지을 열고 복붙하고, 닫기할수 있도록 하면
+     내가 pc와 폰 구분없이 헷갈리지 않을거 같은데!"*
+   대화창에서 긴 글을 손으로 긁는 것이 폰에서 가장 힘든 일이다. */
+#sheet{position:fixed;inset:0;background:#0d1424;z-index:200;display:none;
+  flex-direction:column}
+#sheet.on{display:flex}
+#sheet .sh{display:flex;align-items:center;gap:10px;padding:14px 14px 10px;
+  border-bottom:1px solid var(--line);flex:0 0 auto}
+#sheet .sh b{font-size:17px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#sheet .sx{flex:0 0 auto;background:#2a3550;color:var(--tx);border:0;border-radius:10px;
+  min-height:44px;padding:0 16px;font-size:16px;font-weight:700;font-family:inherit}
+#sheet .sb{flex:1 1 auto;overflow:auto;padding:12px 14px 20px;-webkit-overflow-scrolling:touch}
+#sheet .fld{margin-bottom:16px}
+#sheet .fh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+#sheet .fh span{font-size:14px;color:var(--dim);font-weight:700}
+#sheet .fh button{flex:0 0 auto;min-height:42px;padding:0 14px;font-size:15px;
+  background:var(--go);color:#fff;border:0;border-radius:10px;font-family:inherit;font-weight:700}
+#sheet pre{margin:0;background:#0a0f1c;border:1px solid var(--line);border-radius:10px;
+  padding:12px;font-size:14px;line-height:1.65;white-space:pre-wrap;word-break:break-word;
+  max-height:44vh;overflow:auto;font-family:inherit;color:var(--tx)}
+#sheet img{width:100%;border-radius:10px;border:1px solid var(--line)}
 #toast{position:fixed;left:12px;right:12px;bottom:22px;background:#1c2540;
   border:1px solid var(--go);border-radius:12px;padding:14px 16px;font-size:16px;
   opacity:0;transition:.2s;pointer-events:none;z-index:99}
@@ -76,6 +98,7 @@ a.plain{color:var(--go);text-decoration:none}
   <div class="hint" id="hint"></div>
 </main>
 
+<div id="sheet"></div>
 <div id="bar"></div>
 <div id="toast"></div>
 
@@ -146,16 +169,8 @@ function card(it){
     if(pt.body){
       var row=document.createElement('div');
       row.className='btns'; row.style.marginTop='8px';
-      row.innerHTML='<button class="b-copy">📝 제목</button>'
-        +'<button class="b-copy">📄 본문</button>'
-        +'<button class="b-sel">🖼️ 이미지</button>';
-      var bs=row.querySelectorAll('button');
-      bs[0].onclick=function(){copy(pt.title,'📝 제목 복사됨 — 네이버 제목칸에');};
-      bs[1].onclick=function(){copy(pt.body,'📄 본문 복사됨('+pt.body.length+'자) — 네이버 본문칸에');};
-      bs[2].onclick=function(){
-        if(pt.image) window.open(pt.image,'_blank');
-        else toast('이미지가 없습니다');
-      };
+      row.innerHTML='<button class="b-copy">📄 원고 열기</button>';
+      row.querySelector('button').onclick=function(){openSheet(it);};
       d.appendChild(row);
     }
     d.querySelector('.b-no').onclick=function(){
@@ -190,6 +205,40 @@ function bar(){
     copy(txt, '📋 복사됨 — 이부장 창에 붙여넣으세요'
       +(hard.length?' (되돌릴 수 없는 건은 이부장이 다시 여쭙습니다)':''));
   };
+}
+
+// 📄 원고 시트 — 열고 · 복사하고 · 닫기 (PC CP 와 같은 조작)
+//    🔴 폰에서 가장 힘든 일이 **긴 글을 손으로 긁는 것**이다.
+//    칸마다 복사 버튼을 두어 손으로 선택할 일이 없게 한다.
+function openSheet(it){
+  var pt = it.parts||{}, sh=document.getElementById('sheet');
+  var h = '<div class="sh"><b>'+esc(it.id||'')+'</b>'
+        + '<button class="sx" id="shx">닫기</button></div><div class="sb">';
+  if(pt.image){
+    h += '<div class="fld"><div class="fh"><span>🖼️ 첨부 이미지</span>'
+       + '<button id="fi">새 탭에서 열기</button></div>'
+       + '<img src="'+esc(pt.image)+'" alt=""></div>';
+  }
+  if(pt.title){
+    h += '<div class="fld"><div class="fh"><span>📝 제목칸</span>'
+       + '<button id="ft">복사</button></div><pre>'+esc(pt.title)+'</pre></div>';
+  }
+  if(pt.body){
+    h += '<div class="fld"><div class="fh"><span>📄 본문 ('+pt.body.length+'자)</span>'
+       + '<button id="fb">복사</button></div><pre>'+esc(pt.body)+'</pre></div>';
+  }
+  h += '</div>';
+  sh.innerHTML=h; sh.className='on';
+  document.body.style.overflow='hidden';
+  document.getElementById('shx').onclick=closeSheet;
+  var e;
+  if((e=document.getElementById('fi'))) e.onclick=function(){window.open(pt.image,'_blank');};
+  if((e=document.getElementById('ft'))) e.onclick=function(){copy(pt.title,'📝 제목 복사됨 — 네이버 제목칸에 붙여넣으세요');};
+  if((e=document.getElementById('fb'))) e.onclick=function(){copy(pt.body,'📄 본문 복사됨 — 네이버 본문칸에 붙여넣으세요');};
+}
+function closeSheet(){
+  document.getElementById('sheet').className='';
+  document.body.style.overflow='';
 }
 
 function esc(s){return String(s).replace(/[&<>]/g,function(c){
