@@ -219,9 +219,39 @@ async function openFile(path, isImg){
   if(cb) cb.textContent='📋 전체 복사';
   im.style.display='none'; im.removeAttribute('src');
   t.style.display='block'; t.textContent='읽는 중…';
+  // 🔴🔴 **완성본이 있으면 그것을 보여준다** (2026-09-08 사장님 발견)
+  //    이 화면은 원고 **파일을 서버 API 로 직접** 읽는다. 그런데 나갈 원고는
+  //    파일 그대로가 아니다 — `studio/osmutext._finish_naver` 가 ①원문 링크
+  //    ②「함께 보면 좋은 글」 ③해시태그 ④교차링크 ⑤제휴를 채워 완성한다.
+  //    그래서 사장님이 이 화면에서 복사하시면 **반쪽 원고**가 나갔다.
+  //    실측 G2-05: 파일 2,411자(자리표시자·관련글·제휴 없음)
+  //              vs 완성본 3,097자(전부 있음).
+  //    → osmu_text.json(완성본)에 같은 채널 원고가 있으면 **그것을 쓴다.**
+  var _fin = (function(){
+    try{
+      var m = /(?:네이버용|쓰레드용|캡션)_/.test(path) ? path : '';
+      if(!m) return null;
+      var key = /네이버용/.test(path) ? 'naver'
+              : (/쓰레드용/.test(path) ? 'threads' : 'instagram');
+      var items = (window.__OSMUTEXT__ && window.__OSMUTEXT__.items) || [];
+      for(var i=0;i<items.length;i++){
+        for(var k=0;k<(items[i].channels||[]).length;k++){
+          var c = items[i].channels[k];
+          if(c.key===key && c.text && c.text.length > 200){
+            // 파일명 슬러그가 이 글의 것인지 확인
+            if(items[i].slug && path.indexOf(items[i].slug) >= 0) return c.text;
+          }
+        }
+      }
+    }catch(e){}
+    return null;
+  })();
   try{
     var r=await fetch(API+'/api/file?path='+encodeURIComponent(path));
     var d=await r.json();
+    if(_fin){ RAW=_fin; t.textContent=_fin;
+      document.getElementById('vname').textContent=path+'  ('+_fin.length.toLocaleString()+'자 · 완성본)';
+      return; }
     if(d.ok){ RAW=d.text; t.textContent=d.text;
       document.getElementById('vname').textContent=path+'  ('+d.size.toLocaleString()+'자)'; }
     else { RAW=''; t.textContent='🔴 '+(d.error||'읽지 못했습니다'); }
