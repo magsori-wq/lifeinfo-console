@@ -230,6 +230,15 @@ function openSheet(it){
     h += '<div class="fld"><div class="fh"><span>📄 본문 ('+pt.body.length+'자)</span>'
        + '<button id="fb">복사</button></div><pre>'+esc(pt.body)+'</pre></div>';
   }
+  // 🔴 제휴 링크는 **단독으로** 붙여넣어야 네이버 카드가 뜬다 (2026-09-08 G2-05 사고).
+  //    본문과 같이 붙이면 자동감지가 꺼져 파란 텍스트로만 들어간다.
+  if(pt.afflink){
+    h += '<div class="fld"><div class="fh"><span>🔗 제휴 링크 — <b>단독으로</b> 붙여넣기</span>'
+       + '<button id="fa">복사</button></div><pre>'+esc(pt.afflink)+'</pre>'
+       + '<div style="font-size:13px;color:var(--dim);margin-top:6px">'
+       + '본문의 <b>[여기에 제휴 링크를…]</b> 자리를 지우고, 그 빈 줄에 <b>이것만</b> 붙여넣으세요.<br>'
+       + '상품명과 같이 붙이면 카드가 안 뜹니다.</div></div>';
+  }
   h += '</div>';
   sh.innerHTML=h; sh.className='on';
   document.body.style.overflow='hidden';
@@ -238,6 +247,7 @@ function openSheet(it){
   if((e=document.getElementById('fi'))) e.onclick=function(){window.open(pt.image,'_blank');};
   if((e=document.getElementById('ft'))) e.onclick=function(){copy(pt.title,'📝 제목 복사됨 — 네이버 제목칸에 붙여넣으세요');};
   if((e=document.getElementById('fb'))) e.onclick=function(){copy(pt.body,'📄 본문 복사됨 — 네이버 본문칸에 붙여넣으세요');};
+  if((e=document.getElementById('fa'))) e.onclick=function(){copy(pt.afflink,'🔗 링크만 복사됨 — 빈 줄에 이것만 붙여넣으세요');};
 }
 function closeSheet(){
   document.getElementById('sheet').className='';
