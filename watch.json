@@ -6434,6 +6434,16 @@
    "by": "이과장",
    "done_at": "2026-09-08",
    "result": "중복 요청이라 종결 — 사장님이 이미 15:31경 승인하셨다(이부장이 제목 불일치를 보고하자 '폰에서 할수있어! 승인'). 정정 지시서 fixtitle-e104 준비돼 있고 pub0908e104 완료보고 게이트만 풀리면 올라간다"
+  },
+  {
+   "id": "bug-threadsdraft-affiliate-dup",
+   "added": "2026-09-08",
+   "what": "구조결함: studio/threadsdraft.py L243 이 '수수료를 제공받습니다' 문자열로만 중복삽입을 막는데, affiliate.block()이 실제로 생성하는 문구는 채널마다 다르다(예: 쓰레드용 '[광고] ... 수수료를 지급받습니다'). 문구가 다르면 이미 손으로 넣은 고지+링크가 있어도 자동병합이 또 붙여 500자 초과(실측 E1-04: 608/500). 원고에 고지블록을 미리 넣지 말고 도구의 자동병합만 쓰는 게 안전한 우회이지만, 근본 수정은 감지 문자열을 affiliate.block()이 실제 반환하는 head 문구로 통일하거나 URL 중복 여부로 감지하는 것",
+   "due": "2026-09-15",
+   "cmd": "python -c \"from studio import affiliate; import re; print(affiliate.block('E1-04','threads')[0])\" 로 실제 head 문구 확인 후 threadsdraft.py L243 의 검사 문자열을 그와 일치시킬 것",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:eb42e59e"
   }
  ]
 }
