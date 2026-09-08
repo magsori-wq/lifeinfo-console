@@ -2200,6 +2200,62 @@
    "target": "mark-actor-from-code-0908",
    "detail": "이부장이 요청대로 반영·검증 완료(b3870b5a). _handoff 시그니처에 code 추가·호출부에서 ns.code 전달·routines.find 로 루틴N 유추·실패 시 owner 폴백. 실측 4경우 정상. SKILL 무수정으로 해결됨",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-08T09:12:31",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "A6-03",
+   "detail": "제외 사유는 주제 값어치가 아니라 시점과 재고다. ①왜 지금이 약하다 — 2026-07-01 시행분이라 2개월이 지났고 기한·개정·시즌 어느 것도 지금이 아니다(CLAUDE.md 선별 기준: 특별이슈급인가) ②2026-09-08 새벽 루틴7 GSC 전수조사로 크롤 병목이 구글 공식 문서로 확인됐다 — 'Google wanted to crawl but this was expected to overload the site; therefore rescheduled the crawl'. 302 가 크롤 예산 40%를 먹고 신규 크롤이 하루 3편이다. **발행 속도를 낮추는 것이 지금 유일하게 근거 있는 조치**다 ③재고 3편(H1-02·G2-05·E2-15)이 이미 있고 오늘 상한은 사장님 승인으로 1편이다. ⚠️ 주제 자체는 우리 DNA(몰라서 못 받는 제도)에 맞다 — 대상 확대를 모르는 사람이 실제로 있다. 시점이 맞을 때(예산 소진 임박·연말 신청 마감 등 '지금' 이 생길 때) 다시 올릴 것",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T09:56:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "connect-terms-0907",
+   "detail": "이미 해결돼 있었다 — 여행 커넥트가 작동 중이다. 실측(2026-09-08): affiliate.json 에 naver.me 링크 4건 등록(IMZvxkcW·5Negdlax·xVRUltQX·5Z13OHLK)이고 09-07 에 그 링크들로 라이브 카드까지 붙었다(F1-07 미동부캐나다·F1-13 영국일주·F2-10 울릉도·F4-04 제주). 즉 약관 동의도 링크 발급도 이미 끝난 상태였고, 내가 결재함에 '시작 여부 확인' 으로 올린 것이 낡은 정보였다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T09:56:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-a602-ready",
+   "detail": "이미 게시됨 — DB osmu.naver 에 https://blog.naver.com/magsori8975/224403146688 존재(2026-09-08 실측). 결재함에 '게시 준비 완료' 로 남아 있었으나 사장님이 이미 게시하셨다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T10:27:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "validation-owner-0915",
+   "detail": "담당 지정 완료 — 이중으로 건다. ①1차 = 루틴5(야간검증, 매일 22:30). 9/15 는 화요일이라 루틴5 만 확실히 돈다. selfcheck 10) 재확인대기가 watch due 를 띄우므로 그 자리에서 받는다 ②2차 = 루틴7(09-17 목). 1차가 놓치면 이틀 뒤 받는다 ③관제탑은 살아 있으면 그전에 본다(세션훅이 매번 띄운다). ⚠️ 결과가 9/12~9/25 예상이므로 9/15 에 아직 안 나왔을 수 있다 — 그때는 판정하지 말고 watch snooze --due 로 미룰 것. 억지로 결론 내지 마라",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T10:42:35",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "H1-02",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T10:42:58",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G2-05",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-08T10:43:25",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "E2-15",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }
