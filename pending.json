@@ -1,13 +1,13 @@
 {
- "rev": "9dcdea61",
+ "rev": "41dd3400",
  "counts": {
-  "total": 244,
-  "osmu_done": 242,
-  "osmu_pending": 2,
+  "total": 245,
+  "osmu_done": 244,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 244,
+  "index_pending": 245,
   "index_requested": 157,
-  "index_todo": 25,
+  "index_todo": 26,
   "index_benign": 62
  },
  "actionable": [
@@ -45,8 +45,8 @@
    }
   },
   {
-   "code": "G2-05",
-   "title": "9월 말이라 생각하셨다면? 아닙니다 — 2026 양산삽",
+   "code": "E2-15",
+   "title": "클로드 5시간마다 리셋인데 왜 또 막혔을까 — 사용량 ",
    "need": [
     "OSMU",
     "색인요청"
@@ -75,23 +75,6 @@
     "g": true,
     "n": true,
     "t": true,
-    "i": false
-   }
-  },
-  {
-   "code": "H1-02",
-   "title": "2026 추석 택배, 이미 늦었다? 아닙니다 — 특별관",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
     "i": false
    }
   },
@@ -226,6 +209,22 @@
   {
    "code": "C2-09",
    "title": "추석 연휴 문 여는 병원 약국 찾는 방법 진료비 가산 ",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "C2-11",
+   "title": "본인부담상한액 초과금 환급 총정리 (226만명·3조76",
    "need": [
     "색인요청"
    ],
