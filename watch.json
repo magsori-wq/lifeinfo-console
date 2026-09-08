@@ -6473,8 +6473,10 @@
    "cmd": "승인하시면 이부장이 토스로 발급합니다 — 채팅에 '승인: afflink-f1-08' 이라고만 보내십시오",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-08",
+   "result": "사장님 승인 → 이부장 발급 완료: https://toss.im/_m/55rbLkCj (302 확인) · 필립스 DLP7721C 74Wh 26,900원 · affiliate 등록 완료"
   },
   {
    "id": "afflink-f2-11",
@@ -6484,8 +6486,10 @@
    "cmd": "승인하시면 이부장이 토스로 발급합니다 — 채팅에 '승인: afflink-f2-11' 이라고만 보내십시오",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-08",
+   "result": "사장님 승인 → 이부장 발급 완료: https://toss.im/_m/98PMXX4g (302 확인) · 로에드 손저울 7,870원·리뷰299 · affiliate 등록. 2순위 캐리어는 권고대로 보류(토스·다나와 25% 가격차 미해소)"
   },
   {
    "id": "afflink-f4-14-issued",
@@ -6497,6 +6501,28 @@
    "kind": "approve",
    "state": "todo",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "naver-title-fix-a2-15-0908",
+   "added": "2026-09-08",
+   "what": "🎯 네이버 제목 감사(3.분석) — A2-15 네이버 글이 실제 유입 1위 검색어를 제목에 안 쓰고 있음. 현재: '추석 연휴 국민연금 기초연금 조기지급일 총정리(2026·9월25일 추석·아동수당 생계급여 포함)' → 제안: '생계급여 추석전 지급 되나요? — 기초생계비 조기지급·국민연금 기초연금 총정리 (2026)'. naverkw 대조로 실유입 검색어(클릭 5.41%+2.7%+2.7%) 3개가 이 제목에 다 들어감(자동완성으로도 실검색어 확인됨). 제목을 앞쪽 배치로 바꾸면 검색 매칭이 더 좋아짐.",
+   "due": "2026-09-08",
+   "cmd": "https://blog.naver.com/PostWrite.naver?blogId=magsori8975&logNo=224394116930 (또는 글 관리에서 수정) → 제목만 교체 → 저장",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:88de804b"
+  },
+  {
+   "id": "naverlab-capture-0908",
+   "added": "2026-09-08",
+   "what": "🔁 3.분석 담당 — 네이버 캡처 갱신 요청(현재 09-04 데이터, 4일 지남). ①크리에이터 어드바이저 → 유입분석 → 유입검색어 분석 → '더보기' 끝까지(전체) ②같은 화면 → 통합데이터 → 조회수 순위(최근) ③애드포스트(adpost.naver.com) 수익 리포트 있으면 캡처, 없으면 없다고만 말씀해주셔도 됩니다",
+   "due": "2026-09-08",
+   "cmd": "start https://creator-advisor.naver.com  그리고  start https://adpost.naver.com",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:88de804b"
   }
  ]
 }
