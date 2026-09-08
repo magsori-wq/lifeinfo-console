@@ -6539,6 +6539,16 @@
    "owner": "claude",
    "state": "done",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "naver-post-c214-ready",
+   "added": "2026-09-09",
+   "what": "C2-14(독감 예방접종) 네이버 클립보드 준비완료 — 제목·본문 자동복사됨, 썸네일 thumbs_naver/223n_flu.png 첨부 후 게시",
+   "due": "2026-09-09",
+   "cmd": "python -m studio.pipeline naver-draft --code C2-14 --file osmu/네이버용_대상자시작일.txt",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:eb42e59e"
   }
  ]
 }
