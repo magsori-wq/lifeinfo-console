@@ -6771,8 +6771,10 @@
    "due": "2026-09-10",
    "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=A3-12 -f mode=live -f confirm=PUBLISH -f file='국민연금보험료율인상실수령액.txt' -f title='A3-12 국민연금 보험료율 인상' -f post_title='27년 만에 오른 국민연금 보험료율 9.5% — 내 월급 실수령액 얼마나 줄까 (2026)'",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "무효 — 이 항목을 올린 04:40 시점에 A3-12 는 이미 발행 중이었고 04:41 에 완료됐다(라이브 200). 관제탑이 SendMessage 실패를 '실행자 없음'으로 오판해 사장님께 없는 일을 시킬 뻔했다. 누르셨으면 중복 발행 시도가 됐다."
   },
   {
    "id": "naver-post-a312-ready",
