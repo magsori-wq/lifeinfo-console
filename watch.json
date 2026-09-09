@@ -6817,6 +6817,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "property-compare-0910",
+   "added": "2026-09-10",
+   "what": "✅[확인 완료 · 루틴7] 사장님 지시로 GSC 두 속성을 대조했다 — **데이터가 같다.** 【등록 속성 2개】①https://lifeinfo8975.blogspot.com/ (URL 접두어) = 우리 searchconsole.py 의 SITE_URL ②sc-domain:lifeinfo8975.blogspot.com (도메인) = 사장님 캡처 화면. 둘 다 siteOwner. 【대조 결과】·검색 실적 90일: 클릭 2 · 노출 120 · 노출페이지 48 — **완전 동일** ·색인 판정(URL Inspection API, 상태가 서로 다른 5편 샘플 A1-02·F2-05·A4-05·C3-04·B1-01): **5/5 동일**. 【🔴내 의심이 틀렸다】9/10 에 내가 '속성이 sc-domain 이라 데이터가 다를 수 있다' 고 했는데 **아니다.** 두 속성은 같은 것을 본다. 그러므로 내 9/8 기록(접수중222·실패0)과 캡처(215·7)의 차이는 **속성 탓이 아니라 서로 다른 회차**다: 8.29~9.5 회차(215/7, 실패 종료·메일 9/6 통지) vs 9.8 회차(222/0, 사장님이 9/8 시작·진행 중으로 추정). 【남은 확인】9.8 회차 결과 = validation-result-0915(9/15 루틴5). ⚠️단 '9.8 회차가 진행 중' 은 추정이다 — 유효성 검사 상태는 API 에 없어 브라우저·캡처로만 확인된다.",
+   "due": "2026-09-10",
+   "cmd": "python -c \"import sys;sys.path.insert(0,'studio');import searchconsole as SC;from googleapiclient.discovery import build;wm=build('webmasters','v3',credentials=SC._load_creds(),cache_discovery=False);[print(s['siteUrl'],s.get('permissionLevel')) for s in wm.sites().list().execute().get('siteEntry',[])]\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴7"
   }
  ]
 }
