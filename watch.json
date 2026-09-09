@@ -6677,6 +6677,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "fix-reports-unify-0909",
+   "added": "2026-09-09",
+   "what": "보고 화면 2종(webapp/approval.html 📢보고 패널, webapp/reports.html) 통일 — studio/reports.py 에 REP_ORDER(3./이과장/예약 루틴/이부장/사장님/담당미지정)·group_of()·badge_of() 신설(유일 판정처). bake()가 webapp/rep_groups.json 을 굽고 approval.html 이 그걸 fetch 해서 REP_GROUPS 를 파생(하드코딩 제거). reports.html 배지색 통일(w-rt/w-boss/w-work), 제목 '보고 · 전체 이력', 480px 미디어쿼리, 상호 안내 문구(결재함↔보고탭). 커밋 bcd988fc(결재함쪽 폴백) + 다른세션 c9c508f0(공유저장소 스테이지 편입, diff 0 확인) + e666591b(재굽기).",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.reports && grep -o \"<div class='ses'>[^<]*\" webapp/reports.html && python -m studio.approvalcount && python -m studio.falsepos && python validate_db.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:06ed2a43"
   }
  ]
 }
