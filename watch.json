@@ -5793,8 +5793,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.searchconsole inspect && python -c \"import json;d=json.load(open('webapp/index_status.json',encoding='utf-8'));print('indexed',d['indexed'],'/',d['total'])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "측정 불가로 종결. 【관측하려던 것】재크롤이 오면 색인에서 탈락하는 패턴(9/7 표본 n=2: H1-01 08-30 재크롤 직후 탈락 · D1-02 09-03 재크롤 직후 탈락). 이부장 지시 = 09-10 inspect 완주 후 표본이 3건 이상 되면 보고, 그전엔 단정 금지. 【결과】**표본을 늘릴 수 없다.** 오늘 inspect 완주 결과 색인 0/248 로 **탈락할 색인이 남아 있지 않다.** 재크롤이 와도 빠질 것이 없으므로 이 패턴은 더 이상 관측 대상이 아니다. 【남기는 것】n=2 관측 자체는 docs/색인절벽_20260713.md 에 기록돼 있다. 만약 앞으로 색인이 다시 생기면(1편이라도) 그때 이 관측을 재개할 것 — 그 시점에 새 watch 를 걸면 된다. 단정하지 않는다: 표본 2건으로는 인과를 말할 수 없고, 지금은 재볼 방법도 없다."
   },
   {
    "id": "affiliate-f4-20-0907",
