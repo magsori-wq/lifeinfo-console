@@ -6759,6 +6759,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "pub-a312-run-0910",
+   "added": "2026-09-10",
+   "what": "🚀 A3-12 발행 실행만 남았다 — 사장님 ⑦승인 완료(04:38)·게이트 전수 통과. 이과장 세션이 안 닿아(사칭 경고) 실행자가 없다. 이과장 세션 ID를 주시면 이부장이 깨우고, 급하시면 아래 명령을 그대로 실행하셔도 된다.",
+   "due": "2026-09-10",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=A3-12 -f mode=live -f confirm=PUBLISH -f file='국민연금보험료율인상실수령액.txt' -f title='A3-12 국민연금 보험료율 인상' -f post_title='27년 만에 오른 국민연금 보험료율 9.5% — 내 월급 실수령액 얼마나 줄까 (2026)'",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
