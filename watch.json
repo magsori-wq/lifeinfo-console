@@ -6608,8 +6608,10 @@
    "what": "📊 3.분석 정기보고(이부장 열람용) — ①글감: A6-02 결재대기·F4-20 선별대기(둘 다 09-04 네이버 실검색어 근거) ②제목감사: A2-15 실유입 1위 키워드가 네이버 제목에 없음 → 수정안 결재함 등록(naver-title-fix-a2-15-0908) ③제휴: 유입 상위 5편 전부 '붙일 것 없음'(구조적, product 에이전트 확인) ④데이터: 09-04 캡처가 5일째 최신 — naverlab-capture-0908로 갱신 요청 중. 다음 분석 때 이 항목을 갱신할 것(새 항목 만들지 않음).",
    "cmd": "python -m studio.naverlab && python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:88de804b"
+   "state": "done",
+   "by": "세션:88de804b",
+   "done_at": "2026-09-09",
+   "result": "정정: watch(owner=claude)는 CP 어느 화면에도 안 뜬다는 걸 확인(approval.html·pending_osmu.html 둘 다 owner=user만 필터). batchboard naverlab0909(담당=3.)로 옮김 — reports.html에서 실제로 보임(3. 6건)"
   },
   {
    "id": "workflow-quote-title-bug-0909",
