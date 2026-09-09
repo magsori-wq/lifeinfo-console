@@ -30,6 +30,16 @@ main{padding:12px 12px 90px}
    (2026-09-09 사장님 "읽고 확인하기가 어렵다"). 기계 id 는 .cidline 으로 아래에 작게. */
 .kind{font-size:17px;font-weight:800;color:var(--tx);word-break:break-word}
 .wholine{font-size:14px;color:var(--dim);margin:2px 0 6px}
+/* 🔴 "올린이" 배지 — 2026-09-09 사장님 지시 "결재올릴때 누가 결재올렸는지
+   알아야 하는게 기본이잖아?". .wholine(처리 주체: "✋ 사장님이 직접" 등)과는
+   다른 것이다 — 이건 **올린 사람**. 색 규칙은 reports.html 의 .who 배지와
+   똑같이 맞춘다(루틴=핑크·사장님=초록·나머지=주황) — 보고 패널과 결재함을
+   같은 색으로 읽으시게. */
+.byline{font-size:13px;color:var(--dim);margin:0 0 4px;display:flex;align-items:center;gap:6px}
+.bytag{font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:10px}
+.bytag.bt-rt{background:#c2569622;border:1px solid #c2569666;color:#e59ac0}
+.bytag.bt-boss{background:#5fd3a022;border:1px solid #5fd3a066;color:#8ee5be}
+.bytag.bt-work{background:#e08b1e22;border:1px solid #e08b1e66;color:#f0b26b}
 .cidline{font-family:monospace;font-size:12px;color:#5d6c8f;margin:0 0 10px}
 .what{font-size:15px;color:var(--dim);word-break:break-word;margin:0 0 12px}
 .btns{display:flex;gap:8px}
@@ -141,6 +151,15 @@ function label(it){
   return (it.id || ('#' + it.no)) + ' (' + t + ')';
 }
 
+// 🔴 "올린이" 배지 색 — reports.html 의 group_of()/badge_of() 와 같은 규칙
+//    (루틴=핑크·사장님=초록·나머지=주황). approval.html 의 repWc() 도 동일하다 —
+//    세 파일에 같은 규칙을 각각 두는 것은 CSS 를 못 나눠 쓰는 HTML 의 한계다
+//    (studio/reports.py badge_of() 주석 참고).
+function byWc(w){w=String(w||'');
+  if(w.indexOf('루틴')>=0) return 'bt-rt';
+  if(w.indexOf('사장님')>=0) return 'bt-boss';
+  return 'bt-work';}
+
 var PICK={};   // 선택한 번호 — 🔴 하나씩 복사하면 클립보드가 덮어써진다
                //    (2026-09-08 사장님이 7건을 누르셨는데 마지막 하나만 남았다)
 
@@ -161,6 +180,10 @@ function card(it){
         :'<div class="waittag">✅ 승인하셨습니다 — 이과장이 진행 중</div>')
     +'<div class="top"><div class="no">'+it.no+'</div>'
     +'<div class="kind">'+esc(doText)+'</div></div>'
+    // 🔴 올린이 — 누가 이 결재를 올렸는지(2026-09-09). 없으면(옛 항목·자동집계)
+    //    줄 자체를 안 그린다 — 빈 라벨은 소음이다.
+    +(it.by?'<div class="byline">올린이 <span class="bytag '+byWc(it.by)+'">'
+           +esc(it.by)+'</span></div>':'')
     +(it.who?'<div class="wholine">'+esc(it.who)+'</div>':'')
     +'<div class="cidline">'+esc(it.id||'')+'</div>'
     +'<p class="what">'+esc(subText)+'</p>'

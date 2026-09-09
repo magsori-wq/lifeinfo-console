@@ -6699,12 +6699,12 @@
    "by": "세션:06ed2a43"
   },
   {
-   "id": "test-by-0909",
+   "id": "fix-approval-by-0909",
    "added": "2026-09-09",
-   "what": "배선 검증",
-   "due": "2026-09-09",
-   "cmd": "echo ok",
-   "owner": "user",
+   "what": "결재함 카드에 '올린이' 표시 배선 — watch.py _resolve_by()가 --by 없으면 studio.whoami 등록(역할명) 우선조회, 없으면 세션ID·미상 순 폴백. approvalcount.py에 _by_for()(kind별 출처: watch=자기by, 발행실행=queue.go.by, 발행승인=queue.by, 글감=topicprop.src, 네이버=빈값)를 추가해 bake_json()·main() 모두에 by 반영. m.html에 .byline/.bytag 배지(reports.html과 같은 색규칙) 신설, approval.html은 boss.push()마다 by 필드를 추가하고 기존 '· 올린이' 텍스트를 배지(repWc 재사용)로 옮김. 기존 13건 소급 안 함(빈 값 유지). 검증: watch add 왕복테스트(폴백+whoami해석 둘 다 확인 후 원상복구), approvalcount 출력 4건 유지, bake_json diff는 by필드+타임스탬프뿐, node --check 양쪽 스크립트 통과, validate_db FAIL0, falsepos 0/0. rows() 튜플·kind 문자열 불변, 승인판정 로직 불변, deploy/push 안 함.",
+   "due": "2026-09-10",
+   "cmd": "python -c \"from studio import approvalcount as a; a.bake_json()\" && python -m studio.approvalcount",
+   "owner": "claude",
    "state": "todo",
    "by": "세션:06ed2a43"
   }

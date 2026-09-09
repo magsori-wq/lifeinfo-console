@@ -687,7 +687,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     //       대조하실 자리가 여기다.
     if(t.state==='approved' && !(byc[t.code]||{}).url)
       boss.push({act:'', c:t.code, t:t.title, done:true,
-        sum:t.summary||'', facts:t.facts||'',
+        sum:t.summary||'', facts:t.facts||'', by:t.src||'',
         why:'✅ 글감 승인완료 — 초안 작업 대기', cmd:''});
     if(t.state==='proposed') lee.push({act:'topic_pick',c:t.code,t:t.title,
       why:'이부장 선별 대기(②) — 특별이슈급인가로 판단',
@@ -723,8 +723,11 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       // 🔴 **누가 올렸는지 보인다** (2026-09-07 사장님 지시로 이부장·이과장 둘 다
       //    결재함에 올리게 됐다). 요청자가 안 보이면 사장님이 누구에게 답해야 할지,
       //    승인 뒤 누가 이어서 진행하는지 알 수 없다.
+      // 🔴 2026-09-09 — 문장 속에 묻혀 있던 것을 **뱃지**로 뺀다(x.by).
+      //    "카드에 누가 올렸는지 알아야 하는게 기본이잖아?" — 읽으려면 .meta 를
+      //    끝까지 읽어야 하는 것과, 카드 머리에서 색으로 바로 보이는 것은 다르다.
+      by:w.by||'',
       why:(_isAp?'승인 대기 · 기한 ':'조치 대기 · 기한 ')+(w.due||'')
-          +(w.by?(' · 올린이 '+w.by):'')
           +(w.state==='blocked'?' · 🚫막힘':''),
       cmd:w.cmd||('python -m studio.watch done --id '+w.id)});
   });
@@ -778,6 +781,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       cmd:'python -m studio.v0check ask --code '+q.code});
     else if(v.verdict==='pass' && !q.go) boss.push({act:'publish_go',c:q.code,t:q.title,
       why:'발행 승인 대기(⑦) · V0 통과 — 이 원고를 지금 내는가',
+      by:q.by||'',   // 🔴 이 원고를 큐에 올린 사람(2026-09-09) — studio/approvalcount.py _by_for() 와 같은 출처
       cmd:'python -m studio.pubqueue go --code '+q.code});
     // 🔴 **도장은 찍혔는데 안 나간 글** — 이 칸이 없어서 사장님이 휴대폰에서
     //    누를 것을 못 찾으셨다(2026-09-03 "발행승인 내용은 안 보이는데").
@@ -805,6 +809,9 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       why:'⑧ 발행 대기 — 승인 완료('+String((q.go&&q.go.at)||'').slice(0,16).replace('T',' ')
           +') · 실행만 남았다',
       waited:_waited,
+      // 🔴 승인해서 지금 이 상태가 된 사람(2026-09-09) — 대부분 '사장님'이다.
+      //    studio/approvalcount.py _by_for() 의 발행실행 규칙과 같다.
+      by:(q.go&&q.go.by)||'',
       // 🔴 2026-09-03 — 이 카드는 facts 를 안 실어 「📄 본문 미리보기」가 통째로 안 떴고,
       //    아래 LABEL 게이트 때문에 「📄 원고 미리보기」 버튼도 안 떴다(둘 다 렌더 자체가
       //    없었다 — 클릭이 실패한 게 아니라 있어야 할 것이 없었다). facts 를 실어 전자를 고친다.
@@ -941,6 +948,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +(x.done?'<span class="num" style="background:#2f8f68">✓</span>'
               :'<span class="num">'+(_i+1)+'</span>')
       +'<span class="who '+(x.done?'w-fin':'w-boss')+'">'+(x.done?'✅ 승인완료':(BADGE[x.act]||'결재'))+'</span>'
+      // 🔴 **누가 올렸는지** (2026-09-09 사장님 지시 "결재올릴때 누가 결재올렸는지
+      //    알아야 하는게 기본이잖아?"). repWc() 와 같은 색 규칙 — 보고 패널·결재함이
+      //    같은 색으로 읽힌다. 없으면(옛 항목·자동집계) 뱃지를 안 그린다.
+      +(x.by?'<span class="who '+repWc(x.by)+'">올린이 '+esc(x.by)+'</span>':'')
       +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
       // 🔴 do·who — BADGE 옆에 사람이 읽는 행동 문장을 덧그린다(2026-09-09).
