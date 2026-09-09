@@ -1,13 +1,13 @@
 {
- "rev": "10f688aa",
+ "rev": "4a7a72f7",
  "counts": {
-  "total": 247,
+  "total": 248,
   "osmu_done": 247,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 247,
+  "index_pending": 248,
   "index_requested": 156,
-  "index_todo": 8,
+  "index_todo": 9,
   "index_benign": 83
  },
  "actionable": [
@@ -58,6 +58,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "H1-04",
+   "title": "작년엔 20만원대였는데? 아닙니다 — 2026 추석 차",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -206,20 +223,6 @@
   {
    "code": "A1-12",
    "title": "근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~",
-   "need": [],
-   "action": "확인",
-   "osmu": true,
-   "idxst": "benign",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A1-14",
-   "title": "소득 있으면 못 받는다? 아닙니다 — 양육비 선지급제 ",
    "need": [],
    "action": "확인",
    "osmu": true,
