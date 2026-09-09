@@ -6601,6 +6601,25 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "naverlab-report-0909",
+   "added": "2026-09-09",
+   "what": "📊 3.분석 정기보고(이부장 열람용) — ①글감: A6-02 결재대기·F4-20 선별대기(둘 다 09-04 네이버 실검색어 근거) ②제목감사: A2-15 실유입 1위 키워드가 네이버 제목에 없음 → 수정안 결재함 등록(naver-title-fix-a2-15-0908) ③제휴: 유입 상위 5편 전부 '붙일 것 없음'(구조적, product 에이전트 확인) ④데이터: 09-04 캡처가 5일째 최신 — naverlab-capture-0908로 갱신 요청 중. 다음 분석 때 이 항목을 갱신할 것(새 항목 만들지 않음).",
+   "cmd": "python -m studio.naverlab && python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:88de804b"
+  },
+  {
+   "id": "workflow-quote-title-bug-0909",
+   "added": "2026-09-09",
+   "what": "구조 결함: publish.yml 이 제목을 '${{ }}' 로 bash run: 블록에 직접 삽입한다(입력 정규화 82행 · publish-flow 실행 417행 근처). 제목에 리터럴 큰따옴표(\")가 있으면 셸이 그 지점에서 인용을 끊어 뒤 텍스트가 unrecognized arguments 로 잘린다. H1-04 발행 시 실측(run 34307651635·34307782175·34307942072 3회 연속 실패). 지금까지 발행된 글 중 제목에 \"가 있던 사례는 0건이라 처음 걸린 것. 근본 수정은 GITHUB_OUTPUT/env 파일 경유로 바꿔야 한다(직접 ${{ }} 셸 삽입 금지) — 이건 코드/게이트 변경이라 이과장 권한 밖, 이부장/사장님 판단 필요. 임시 우회: 제목에 리터럴 큰따옴표를 쓰지 않는다.",
+   "due": "2026-09-16",
+   "cmd": "grep -n 'inputs\\.' .github/workflows/publish.yml | grep -v GITHUB_OUTPUT",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:eb42e59e"
   }
  ]
 }
