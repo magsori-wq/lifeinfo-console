@@ -1,13 +1,13 @@
 {
- "rev": "36dafa73",
+ "rev": "76c2706d",
  "counts": {
-  "total": 250,
+  "total": 251,
   "osmu_done": 250,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 250,
+  "index_pending": 251,
   "index_requested": 156,
-  "index_todo": 11,
+  "index_todo": 12,
   "index_benign": 83
  },
  "actionable": [
@@ -25,6 +25,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "B2-13",
+   "title": "새마을금고도 1억원 보호? 절반만 맞습니다 — 예금자보",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -210,22 +227,6 @@
   {
    "code": "G4-06",
    "title": "정부지원 590억 추석 농축산물 할인 총정리 (9월 3",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "H1-04",
-   "title": "작년엔 20만원대였는데? 아닙니다 — 2026 추석 차",
    "need": [
     "색인요청"
    ],
