@@ -106,6 +106,15 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 .none{color:#7d8ca8;font-size:13px;padding:8px 0}
 .why{color:#f0928a;font-size:12.5px;margin-top:5px;white-space:pre-wrap;word-break:break-word}
 .note{color:#a9b6cc;font-size:12.5px;margin-top:5px;white-space:pre-wrap;word-break:break-word}
+/* 📢 보고 — 세션별 칸 (2026-09-09 사장님 지시 "화면 분할하여 직관적으로").
+   .pane.rep 자체가 3열 그리드의 1/3 폭이라 좁다 — 칸을 넓게 늘어놓지 않고
+   auto-fill 로 접어 좁은 화면에서는 1열, 넓으면 2열로 저절로 나뉜다. */
+.repcols{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.repcol{border-left:2px solid #223052;padding-left:8px;min-width:0}
+.repcol .rchd{font-size:12px;font-weight:700;color:#dbe3ef;margin-bottom:6px;
+  display:flex;align-items:baseline;gap:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.repcol .rchd small{font-weight:400;color:#7d8ca8}
+.repcol .card{padding:8px 9px;margin-bottom:7px}
 .foot{color:#5f6f8c;font-size:12px;border-top:1px solid #223052;padding-top:10px;margin-top:24px}
 .flow{background:#131c31;border:1px solid #223052;border-radius:9px;padding:6px 11px;
       font-size:11.5px;color:#a9b6cc;line-height:1.5;flex:0 0 auto}
@@ -889,25 +898,39 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var HUWHO={publish_run:'승인 → 이과장이 발행',publish_go:'승인 → 이과장이 발행',
              topic_approve:'승인 → 이과장이 진행',osmu:'✋ 사장님이 직접(세션은 네이버를 못 엽니다)'};
   var HANDS_ON_ACT={watch_blocked:1,watch_approve:1,watch_done:1};
+  // 🔴 id 접두사 힌트(2026-09-09) — kind 만으로는 "네이버는 세션이 못 연다"가
+  //    안 보이는 경우가 있다. 발행 직후 글은 📣네이버(osmu) 가 아니라 watch_done
+  //    (id="naver-post-…")로 도착한다(H1-04 실측). studio/approvalcount.py 의
+  //    _IDENT_HINT 와 같은 목록 — 새로 정하지 않고 같은 판정을 옮긴다.
+  var IDENT_HINT=[['naver-post-','📝 네이버에 게시'],['naver-aff-','🔗 네이버 글에 링크 붙이기'],
+    ['adpost-capture','📸 네이버 화면 캡처'],['naverlab-','📸 네이버 화면 캡처'],
+    ['naverstats-','📸 네이버 화면 캡처']];
+  var IDENT_WHO='✋ 사장님이 직접(세션은 네이버를 못 엽니다)';
+  function identHint(id){
+    var s=String(id||'');
+    for(var i=0;i<IDENT_HINT.length;i++){ if(s.indexOf(IDENT_HINT[i][0])===0) return IDENT_HINT[i][1]; }
+    return '';
+  }
   // studio/approvalcount.py 의 _first_clause() 와 같은 규칙(중복이지만 이쪽은
   // 스냅샷이 아니라 이 화면이 이미 들고 있는 x.full 에서 바로 뽑으므로 안전하다).
   function firstClause(t){
-    t=String(t||'');
+    t=String(t||'').replace(/^[A-H]\d-\d{2}(\([^)]{0,20}\))?\s*/,'');
     var delims=[' — ',' (','：',' · ',': ','\n'], cut=t.length;
     delims.forEach(function(d){var i=t.indexOf(d); if(i>0 && i<cut) cut=i;});
     t=t.slice(0,cut).trim();
     if(!t || !/[가-힣]/.test(t)) return '';
-    return t.slice(0,24);
+    if(t.length>24){ var sp=t.slice(0,24).lastIndexOf(' '); t=sp>0?t.slice(0,sp).trim():''; }
+    return (t && /[가-힣]/.test(t)) ? t : '';
   }
   function humanDo(x){
     if(HUDO[x.act]) return HUDO[x.act];
     if(x.act==='watch_blocked') return firstClause(x.full)||'🚧 막힘 확인';
-    if(HANDS_ON_ACT[x.act]) return firstClause(x.full)||'✋ 확인이 필요합니다';
+    if(HANDS_ON_ACT[x.act]) return identHint(x.c)||firstClause(x.full)||'✋ 확인이 필요합니다';
     return '';
   }
   function humanWho(x){
     if(HUWHO[x.act]) return HUWHO[x.act];
-    if(HANDS_ON_ACT[x.act]) return '✋ 사장님이 직접';
+    if(HANDS_ON_ACT[x.act]) return identHint(x.c)?IDENT_WHO:'✋ 사장님이 직접';
     return '';
   }
   // 🔴 번호를 붙인다 (2026-08-28 사장님 지시: "뭐가 매칭이 안 되잖아! 넘버링을 해줘!").
@@ -1086,18 +1109,39 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       repRows.push({id:x.id,t:x.repAt,w:x.rep,src:'보고',who:x.own||whoOf(x.id)});
   });
   repRows.sort(function(a,b){return (b.t||'').localeCompare(a.t||'');});
-  var colRep = (repRows.length? repRows.slice(0,10).map(function(r){
-        var w=String(r.who||'미지정');
-        // 보고자 배지 색 — 루틴/사장님/작업 세션을 한눈에 가른다
-        var wc = w.indexOf('루틴')>=0 ? 'w-rt' : (w.indexOf('사장님')>=0 ? 'w-boss' : 'w-work');
-        return '<div class="card"><div class="hd">'
-          +'<span class="who '+wc+'">'+esc(w.slice(0,14))+'</span>'
-          +'<span class="who w-rep">'+esc(r.src)+'</span>'
-          +'<span class="ttl" style="font-weight:400;font-size:12px">'+esc(r.id)+'</span>'
-          +'<span class="code">'+esc(String(r.t||'').slice(5,16))+'</span></div>'
-          +'<div class="note">'+esc(r.w.slice(0,190))+'</div></div>';}).join('')
+  // 🔴 **세션별 칸으로 나눈다** (2026-09-09 사장님 지시: "전자결재의 보고탭을
+  //    화면 분할하여 직관적으로 확인 되도록 해줘"). repRows(판정 로직)는 그대로 —
+  //    표시만 세션별로 묶는다. 배지 색 로직(wc)은 기존 것을 그대로 재사용한다.
+  function repWc(w){return w.indexOf('루틴')>=0 ? 'w-rt' : (w.indexOf('사장님')>=0 ? 'w-boss' : 'w-work');}
+  function repCard(r){
+    var w=String(r.who||'미지정');
+    return '<div class="card"><div class="hd">'
+      +'<span class="who '+repWc(w)+'">'+esc(w.slice(0,14))+'</span>'
+      +'<span class="who w-rep">'+esc(r.src)+'</span>'
+      +'<span class="ttl" style="font-weight:400;font-size:12px">'+esc(r.id)+'</span>'
+      +'<span class="code">'+esc(String(r.t||'').slice(5,16))+'</span></div>'
+      +'<div class="note">'+esc(r.w.slice(0,190))+'</div></div>';
+  }
+  // 순서 고정: 3. → 이과장 → 예약 루틴 → 이부장 → (담당 미지정=나머지 전부).
+  // 뒤 그룹일수록 넓게 잡되(카톡 미지정 캐치올) 앞에서 이미 집힌 행은 다시 안 잡는다.
+  var REP_GROUPS=[['3.',function(w){return w.indexOf('3.')===0;}],
+    ['이과장',function(w){return w.indexOf('이과장')>=0;}],
+    ['예약 루틴',function(w){return w.indexOf('루틴')>=0;}],
+    ['이부장',function(w){return w.indexOf('이부장')>=0;}],
+    ['(담당 미지정)',function(){return true;}]];
+  var _seen={}, repCols=[];
+  REP_GROUPS.forEach(function(g){
+    var rows=repRows.filter(function(r){return !_seen[r.id] && g[1](String(r.who||'미지정'));});
+    rows.forEach(function(r){_seen[r.id]=1;});
+    if(!rows.length) return;
+    repCols.push('<div class="repcol"><div class="rchd">'+esc(g[0])
+      +' <small>'+rows.length+'건</small></div>'
+      +rows.slice(0,2).map(repCard).join('')+'</div>');
+  });
+  var colRep = (repCols.length? '<div class="repcols">'+repCols.join('')+'</div>'
       : '<p class="none">보고가 없습니다.</p>')
-    + '<div class="why" style="margin-top:6px;font-size:11px">전체 이력은 📢 보고 탭</div>';
+    + '<div class="why" style="margin-top:8px;font-size:13px;color:#e8c979;font-weight:700">'
+    + '⬆️ 지금 진행 중인 것만입니다 · 전체 이력은 📢 보고 탭에서 보세요</div>';
 
   // 🔴 6분할 — 지시서와 보고가 **각각 제 칸**을 쓴다 (2026-08-30 사장님 지시
   //    "화면을 6분할하면 지시서와 보고서를 나누어 볼 수 있음").
@@ -1110,7 +1154,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       + '<summary class="sub2" style="cursor:pointer">🤖 세션·루틴 상태'
       + (unread? ' <span style="color:#ff6b6b">· 안 읽음 '+unread+'</span>' : '')
       + '</summary>' + ssRow + '</details>');
-  H+=pane('📢','보고',repRows.length+'건',colRep,'rep');
+  H+=pane('📢','보고 · 지금 진행 중',repRows.length+'건',colRep,'rep');
 
   // 🔴 「📤 올릴 것」 — PC 결재함에도 넣는다 (2026-08-31 사장님: "운영콘솔에 반영한게 맞어?")
   //    그전에는 m.html(모바일)에만 있었다. 사장님이 주로 보시는 결재함에는

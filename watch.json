@@ -6667,6 +6667,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "fix-report-panel-split-0909",
+   "added": "2026-09-09",
+   "what": "보고 패널(webapp/approval.html 📢) 세션별 분할 — 3./이과장/예약 루틴/이부장/(담당 미지정) 순 칸, 칸당 최근 2건, 판정 로직(repRows)은 안 바꾸고 표시만 분리. 패널 제목 '보고 · 지금 진행 중'으로, 전체 이력 안내를 강조. m.html 은 해당 패널이 없어 미변경. 커밋 bcd988fc.",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.approvalcount && python -m studio.falsepos && python validate_db.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:06ed2a43"
   }
  ]
 }
