@@ -6719,6 +6719,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "e104-db-title-drift-0909",
+   "added": "2026-09-09",
+   "what": "E1-04 제목 드리프트 재발(D1-08 과 같은 모양) — 라이브는 정정 제목('혜택 등록, 깜빡하면 끝입니다 — 갤럭시 S26 구매혜택 온누리상품권 등록 마감 9월 30일')인데 DB(lifeinfo_db.txt)는 옛 제목('갤럭시 S26 구매혜택 등록 마감 총정리 …') 그대로. 09-08 23:53Z 피드 드리프트 검사 실패(run 34292588407)의 유일한 사유. 배포본(C:\\lifeinfo-deploy\\lifeinfo_db.txt)도 함께 고쳐야 검사가 통과한다(2026-09-06 D1-08 때 실측).",
+   "due": "2026-09-09",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 100 --json name,conclusion,createdAt --jq '[.[]|select(.name|test(\"드리프트\"))][0]'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:dac37373"
   }
  ]
 }
