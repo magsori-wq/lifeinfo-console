@@ -6799,12 +6799,22 @@
   {
    "id": "naver-post-e303-ready",
    "added": "2026-09-10",
-   "what": "E3-03 네이버 게시 준비완료 — 제목: 24개월 지나면 위약금 0원? 절반만 맞습니다 — 알뜰폰 번호이동 위약금 진짜 계산법 (2026) · 카테고리: 디지털·통신 · 첨부: thumbs_naver/227_mnp_altteulpon.png · 태그: #알뜰폰번호이동 #휴대폰위약금 #통신비절약 #선택약정할인 #번호이동방법 #생활정보",
+   "what": "E3-03 네이버 게시 준비완료 — 제목: 24개월 지나면 위약금 0원? 절반만 맞습니다 — 알뜰폰 번호이동 위약금 진짜 계산법 (2026) · 카테고리: 디지털·통신 · 첨부(네이버 전용): thumbs_naver/227n_mnp_altteulpon.png · 태그: #알뜰폰번호이동 #휴대폰위약금 #통신비절약 #선택약정할인 #번호이동방법 #생활정보 · ⚠️ A3-12 네이버가 먼저 나가야 이 원고가 자동 클립보드 적재된다(확산순서 게이트)",
    "due": "2026-09-10",
    "cmd": "python -m studio.pipeline naver-draft --code E3-03",
    "owner": "user",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "b213-fact-0910",
+   "added": "2026-09-10",
+   "what": "B2-13: 새마을금고 대위변제한도=1억원(2025.9.1시행, 시행령46조4항, 대통령령35687호)이 맞다 — V0가 개정전 스냅샷(efYd 20250708)을 봐서 5천만원으로 오판. docs/source_B2-13_새마을금고보호한도_20260910.md 참고",
+   "due": "2026-09-10",
+   "cmd": "curl -s 'https://www.law.go.kr/DRF/lawService.do?OC=test&target=law&MST=272995&type=JSON' | grep -o '1억원' | head -1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
