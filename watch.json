@@ -4895,7 +4895,9 @@
    "cmd": "creator-advisor.naver.com → 통합데이터 → 방문 사용자 분석 → 성별연령별 조회수 → 캡처",
    "owner": "user",
    "kind": "action",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-09",
+   "result": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다"
   },
   {
    "id": "v0recheck-c211-0905",
@@ -5664,8 +5666,10 @@
    "due": "2026-09-08",
    "cmd": "start https://creator-advisor.naver.com",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-09",
+   "result": "아래 통합본으로 대체(naver-capture-0909)"
   },
   {
    "id": "pace-5today-0907",
@@ -6347,8 +6351,10 @@
    "due": "2026-09-09",
    "cmd": "캡처 후: python -m studio.naverlab",
    "owner": "user",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-09",
+   "result": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다"
   },
   {
    "id": "order-e104-pending-0908",
@@ -6529,8 +6535,10 @@
    "cmd": "start https://creator-advisor.naver.com  그리고  start https://adpost.naver.com",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:88de804b"
+   "state": "done",
+   "by": "세션:88de804b",
+   "done_at": "2026-09-09",
+   "result": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다"
   },
   {
    "id": "fix-c2-14-gate-0909",
@@ -6549,8 +6557,10 @@
    "due": "2026-09-09",
    "cmd": "python -m studio.pipeline naver-draft --code C2-14 --file osmu/네이버용_대상자시작일.txt",
    "owner": "user",
-   "state": "todo",
-   "by": "세션:eb42e59e"
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-09-09",
+   "result": "이미 완료 — 사장님이 2026-09-09 새벽에 게시하셨다: https://blog.naver.com/magsori8975/224405492563 · navercheck 온전 1/1(원문·관련글·교차링크·태그) · 교차링크 갱신까지 끝났다"
   },
   {
    "id": "url-vs-post-count-0909",
@@ -6571,6 +6581,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:ce43703c"
+  },
+  {
+   "id": "pushgate-hook-hang-0909",
+   "added": "2026-09-09",
+   "what": "🔴 studio/pushgate.py 가 09-09 d3417b9c 에서 '게이트파일 동기화 push 도우미'로 전면 재작성됐는데, .githooks/pre-push 는 여전히 이 파일을 그대로 pre-push 훅으로 실행한다(exec pushgate.py $@, 057d1394 이후 미수정). push() 내부가 자체적으로 git push origin main 을 다시 호출하므로, 실제 push 안에서 훅이 또 push 를 걸어 중첩/지연이 생긴다 — 실측: git push 가 반복해서 'failed to push some refs'+타임아웃을 내다가 재시도하면 이미 반영돼 있다(exit 124인데 rev-list 는 0/0). draft0909h104 가 이 증상으로 45분+ 정체됐다(loopcheck ④). 여러 세션이 같은 C:\\lifeinfo 워킹디렉토리에서 동시에 push 해 경합이 커진다.",
+   "due": "2026-09-09",
+   "cmd": "python -c \"import subprocess;print(subprocess.run(['git','log','-p','-1','057d1394','--','.githooks/pre-push'],cwd='C:/lifeinfo',capture_output=True,text=True,encoding='utf-8').stdout[:3000])\" 로 원래 의도(러너 실행중 차단) 재확인 후, pushgate.py 를 훅 전용/동기화 도우미 전용으로 분리하거나 .githooks/pre-push 에서 직접 호출하지 않도록 정리",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:4fd86d64"
+  },
+  {
+   "id": "naver-capture-0909",
+   "added": "2026-09-09",
+   "what": "📱 네이버 캡처 — 한 화면에서 3장. 캡처 4건이 따로 올라와 있던 것을 하나로 합쳤습니다(네 번 하실 일이 아닙니다).\n\n【1】 크리에이터 어드바이저 → 유입분석 → 유입검색어 (더보기 눌러 전체)\n【2】 같은 사이트 → 통합데이터 → 조회수 상위 글\n【3】 애드포스트 → 수입 탭 (기간 기본값 그대로)\n\n【왜 필요한가】 지금 판독분이 09-04 기준으로 5일 낡았습니다. 제휴 상품을 '리뷰수 많은 것부터'라는 잠정 기준으로 고르고 있는데, 【3】이 있으면 그 기준을 실적 순으로 바꿀 수 있습니다. 네이버는 확장이 막아 캡처가 유일한 경로입니다.\n【시간】 3장, 1분. 캡처 폴더에 넣어만 주시면 제가 판독합니다.\n※ 방문자 성별연령 분석은 표본이 47명뿐이라 이번엔 뺐습니다 — 표본이 쌓이면 다시 올리겠습니다.",
+   "due": "2026-09-09",
+   "cmd": "start https://creator-advisor.naver.com  ·  캡처 후: python -m studio.naverlab",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:06ed2a43"
   }
  ]
 }
