@@ -6687,6 +6687,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "chrome-infobar-off-0909",
+   "added": "2026-09-09",
+   "what": "🖥️ 크롬 '디버깅을 시작함' 배너 끄기 — 자동화는 그대로 되고 배너만 사라진다. 관리자 PowerShell 에서 아래 한 줄 → 크롬 완전 종료 후 재실행 → chrome://policy 에서 확인. ⚠️ 이 PC 는 Windows 11 Home 이라 정책이 무시될 수 있다(요건: Pro·AD도메인·크롬 클라우드관리). 안 먹으면 되돌리기: Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Policies\\Google\\Chrome' -Name CommandLineFlagSecurityWarningsEnabled",
+   "due": "2026-09-09",
+   "cmd": "New-Item -Path 'HKLM:\\SOFTWARE\\Policies\\Google\\Chrome' -Force | Out-Null; New-ItemProperty -Path 'HKLM:\\SOFTWARE\\Policies\\Google\\Chrome' -Name CommandLineFlagSecurityWarningsEnabled -Value 0 -PropertyType DWord -Force",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:06ed2a43"
   }
  ]
 }
