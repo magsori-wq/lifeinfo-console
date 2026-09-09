@@ -1,16 +1,33 @@
 {
- "rev": "51928968",
+ "rev": "b7f6a489",
  "counts": {
-  "total": 248,
+  "total": 249,
   "osmu_done": 248,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 248,
+  "index_pending": 249,
   "index_requested": 156,
-  "index_todo": 9,
+  "index_todo": 10,
   "index_benign": 83
  },
  "actionable": [
+  {
+   "code": "A3-12",
+   "title": "27년 만에 오른 국민연금 보험료율 9.5% — 내 월",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "B1-03",
    "title": "위택스 장애 지방세 납부기한 연장 총정리 (7월 7일까",
@@ -208,20 +225,6 @@
   {
    "code": "A1-11",
    "title": "교육급여와 초중고 교육비 지원 차이 총정리 (2026 ",
-   "need": [],
-   "action": "확인",
-   "osmu": true,
-   "idxst": "benign",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A1-12",
-   "title": "근로장려금 반기신청 방법 총정리 — 상반기분 9월 1~",
    "need": [],
    "action": "확인",
    "osmu": true,
