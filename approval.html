@@ -780,9 +780,22 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     //    ⚠️ publish.yml 의 중복 가드가 실제 재발행은 막는다. **화면만 틀린 것**이다.
     //       그래도 사장님이 잘못된 실행 카드를 보시는 것 자체가 결함이다.
     else if(v.verdict==='pass' && q.go && (byc[q.code]||{}).url){ /* 발행 완료 — 카드 없음 */ }
-    else if(v.verdict==='pass' && q.go) boss.push({act:'publish_run',c:q.code,t:q.title,
+    else if(v.verdict==='pass' && q.go) (function(){
+      // 🔴 **승인 후 얼마나 서 있는지** (2026-09-09 사장님 지적: "결재함내용을 보다
+      //    직관적으로"). approvalcount.py 의 _wait 계산과 같은 방식 — 두 곳에서 다르게
+      //    재지 않도록 임계값·문구를 그대로 맞춘다(1시간~: N시간째, 2시간~: 🔴).
+      var _waited='';
+      try{
+        var _at=String((q.go&&q.go.at)||'').slice(0,19);
+        if(_at){
+          var _h=(Date.now()-new Date(_at).getTime())/3600000;
+          if(_h>=1) _waited=(_h>=2?'🔴':'')+Math.round(_h)+'시간째';
+        }
+      }catch(e){}
+      boss.push({act:'publish_run',c:q.code,t:q.title,
       why:'⑧ 발행 대기 — 승인 완료('+String((q.go&&q.go.at)||'').slice(0,16).replace('T',' ')
           +') · 실행만 남았다',
+      waited:_waited,
       // 🔴 2026-09-03 — 이 카드는 facts 를 안 실어 「📄 본문 미리보기」가 통째로 안 떴고,
       //    아래 LABEL 게이트 때문에 「📄 원고 미리보기」 버튼도 안 떴다(둘 다 렌더 자체가
       //    없었다 — 클릭이 실패한 게 아니라 있어야 할 것이 없었다). facts 를 실어 전자를 고친다.
@@ -790,6 +803,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       draft:q.draft||'', cmd:"gh workflow run publish.yml -R magsori-wq/lifeinfo-source"
           +" -f code="+q.code+" -f mode=live -f confirm=PUBLISH"
           +(q.draft?" -f file='"+q.draft+"'":"")});
+    })();
   });
 
   var rejList=V.filter(function(x){return x.verdict==='fail';});
@@ -865,6 +879,37 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    "이미 했으면 확인"(=사람이 실제로 끝낸 뒤 보고하는 것) 으로 — 2026-08-24 사장님 지적.
   var LABEL={publish_go:'⑦ 발행 승인',topic_approve:'③ 글감 승인',watch_approve:'🙋 승인합니다',watch_done:'☑ 조치 끝냈으면 확인'};
   var BTN_CLS={watch_done:'confirm'};  // 나머지는 기존대로 승인 초록('ok')
+  // 🔴 **읽자마자 무엇인지** — 2026-09-09 사장님 지적("읽고 확인하기가 어렵다").
+  //    BADGE 는 8단계 번호(③⑦⑧)라 남겨 두되, 그 옆에 **사람 행동 문장**을 덧그린다.
+  //    approvalcount.py 의 humanize() 와 **같은 판단**이지만 여기서 그 결과(approval_m.json)를
+  //    fetch 해 오지 않는다 — 그건 bake 스냅샷이라 방금 go 도장을 받은 카드가 옛 kind 로
+  //    남아 있을 수 있다(스테일). 이 화면이 이미 판정한 x.act 에서 **바로** 파생한다.
+  var HUDO={publish_run:'🚀 발행합니다',publish_go:'📄 원고를 보고 승인',
+            topic_approve:'💡 글감 승인',osmu:'📝 네이버에 게시'};
+  var HUWHO={publish_run:'승인 → 이과장이 발행',publish_go:'승인 → 이과장이 발행',
+             topic_approve:'승인 → 이과장이 진행',osmu:'✋ 사장님이 직접(세션은 네이버를 못 엽니다)'};
+  var HANDS_ON_ACT={watch_blocked:1,watch_approve:1,watch_done:1};
+  // studio/approvalcount.py 의 _first_clause() 와 같은 규칙(중복이지만 이쪽은
+  // 스냅샷이 아니라 이 화면이 이미 들고 있는 x.full 에서 바로 뽑으므로 안전하다).
+  function firstClause(t){
+    t=String(t||'');
+    var delims=[' — ',' (','：',' · ',': ','\n'], cut=t.length;
+    delims.forEach(function(d){var i=t.indexOf(d); if(i>0 && i<cut) cut=i;});
+    t=t.slice(0,cut).trim();
+    if(!t || !/[가-힣]/.test(t)) return '';
+    return t.slice(0,24);
+  }
+  function humanDo(x){
+    if(HUDO[x.act]) return HUDO[x.act];
+    if(x.act==='watch_blocked') return firstClause(x.full)||'🚧 막힘 확인';
+    if(HANDS_ON_ACT[x.act]) return firstClause(x.full)||'✋ 확인이 필요합니다';
+    return '';
+  }
+  function humanWho(x){
+    if(HUWHO[x.act]) return HUWHO[x.act];
+    if(HANDS_ON_ACT[x.act]) return '✋ 사장님이 직접';
+    return '';
+  }
   // 🔴 번호를 붙인다 (2026-08-28 사장님 지시: "뭐가 매칭이 안 되잖아! 넘버링을 해줘!").
   //    관제탑은 채팅에서 "1번"이라 부르는데 화면에는 번호가 없어 사장님이 매번 대조하셔야 했다.
   //    번호는 이 목록의 순서다 — 항목이 처리되면 뒤 번호가 당겨진다. 그래서 관제탑은
@@ -875,6 +920,14 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +'<span class="who '+(x.done?'w-fin':'w-boss')+'">'+(x.done?'✅ 승인완료':(BADGE[x.act]||'결재'))+'</span>'
       +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
+      // 🔴 do·who — BADGE 옆에 사람이 읽는 행동 문장을 덧그린다(2026-09-09).
+      +(x.done? '' : (function(){
+          var _do=humanDo(x), _who=humanWho(x);
+          return (_do?'<div style="font-size:15px;font-weight:700;margin:2px 0 2px;color:#e8eefc">'
+              +esc(_do)+(x.waited?' <span style="color:#ff9b9b;font-size:13px;font-weight:700;margin-left:6px">'
+              +esc(x.waited)+' 대기</span>':'')+'</div>':'')
+            +(_who?'<div style="font-size:13px;color:#9fb0cf;margin:0 0 6px">'+esc(_who)+'</div>':'');
+        })())
       +'<div class="meta">'+esc(String(x.why).slice(0,150))+'</div>'
       // 🔴 판정은 **act 가 아니라 내용 유무로** 한다. act 로 걸면 승인완료·조치 카드처럼
       //    act 가 없는 줄에서 근거가 있어도 통째로 안 보인다(2026-08-31 실측 사고).

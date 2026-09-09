@@ -23,12 +23,15 @@ h1{margin:0;font-size:21px;display:flex;align-items:center;gap:8px}
 main{padding:12px 12px 90px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
   padding:14px;margin-bottom:12px}
-.top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:2px}
 .no{flex:0 0 34px;height:34px;border-radius:10px;background:var(--go);color:#fff;
   font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
-.kind{font-size:14px;font-weight:700;color:var(--warn)}
-.cid{font-family:monospace;font-size:13px;color:var(--dim);margin-left:auto}
-.what{font-size:16px;word-break:break-word;margin:0 0 12px}
+/* 🔴 .kind 는 이제 사람 행동 문장(do)을 담는다 — 8단계 kind 문자열은 안 보인다
+   (2026-09-09 사장님 "읽고 확인하기가 어렵다"). 기계 id 는 .cidline 으로 아래에 작게. */
+.kind{font-size:17px;font-weight:800;color:var(--tx);word-break:break-word}
+.wholine{font-size:14px;color:var(--dim);margin:2px 0 6px}
+.cidline{font-family:monospace;font-size:12px;color:#5d6c8f;margin:0 0 10px}
+.what{font-size:15px;color:var(--dim);word-break:break-word;margin:0 0 12px}
 .btns{display:flex;gap:8px}
 button{flex:1;min-height:52px;                            /* 🔴 손가락 크기 */
   border:0;border-radius:12px;font-size:16px;font-weight:700;
@@ -130,7 +133,10 @@ function copy(txt,msg){
 //    지금은 D4-07 이다. 그 사이에 승인하면 **엉뚱한 것이 나간다.**
 //    그래서 복사 문구에 **id 와 제목 앞부분**을 함께 넣는다.
 function label(it){
-  var t = String(it.what || '').split(/\s+/).join(' ')
+  // 🔴 it.sub 가 있으면 그걸 쓴다 — it.what 은 '🔴3시간째' 같은 대기 표시가 앞에
+  //    붙어 있을 수 있어(2026-09-09), 붙여넣을 승인 문구에는 안 어울린다.
+  var src = it.sub != null ? it.sub : it.what;
+  var t = String(src || '').split(/\s+/).join(' ')
             .replace(/^[^0-9A-Za-z가-힣]+/, '').slice(0, 26);
   return (it.id || ('#' + it.no)) + ' (' + t + ')';
 }
@@ -144,14 +150,20 @@ function card(it){
   var hand = it.hand === true;          // 🔴 사장님이 **직접** 하실 일 — 승인이 아니다
   var d=document.createElement('div');
   d.className='card'+(hard&&act?' hard':'')+(act?'':' wait');
+  // 🔴 do·who·waited — approvalcount.humanize() 가 정한 문장 그대로 그린다
+  //    (2026-09-09 "직관적으로 확인" 지시). kind·id 는 아래로 내리고 지우지는 않는다.
+  var doText = it.do || it.kind || '';
+  var subText = it.sub != null ? it.sub : (it.what || '');
   d.innerHTML=
     (act?(hand?'<div class="handtag">✋ 사장님이 직접 하실 일 — 승인이 아닙니다</div>'
-              :(hard?'<div class="hardtag">🔴 되돌릴 수 없음 — 라이브가 나갑니다</div>':''))
+              :(hard?'<div class="hardtag">🔴 되돌릴 수 없음 — 라이브가 나갑니다'
+                    +(it.waited?' · '+esc(it.waited)+' 대기':'')+'</div>':''))
         :'<div class="waittag">✅ 승인하셨습니다 — 이과장이 진행 중</div>')
     +'<div class="top"><div class="no">'+it.no+'</div>'
-    +'<div class="kind">'+it.kind+'</div>'
-    +'<div class="cid">'+(it.id||'')+'</div></div>'
-    +'<p class="what">'+esc(it.what||'')+'</p>'
+    +'<div class="kind">'+esc(doText)+'</div></div>'
+    +(it.who?'<div class="wholine">'+esc(it.who)+'</div>':'')
+    +'<div class="cidline">'+esc(it.id||'')+'</div>'
+    +'<p class="what">'+esc(subText)+'</p>'
     +(act?('<div class="btns">'
     +(hand?'<button class="b-copy">📋 할 일 복사</button>'
           :'<button class="b-sel">'+(hard?'✅ 승인 요청':'✅ 승인')+'</button>')

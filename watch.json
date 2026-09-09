@@ -6643,8 +6643,10 @@
    "cmd": "start https://blog.naver.com/magsori8975",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-09",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "naver-post-h104-ready",
@@ -6655,6 +6657,16 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:eb42e59e"
+  },
+  {
+   "id": "fix-approval-readable-0909",
+   "added": "2026-09-09",
+   "what": "결재함 카드 직관성 개선 — studio/approvalcount.py 에 humanize(kind,ident,what,risk) 신설(8단계 kind 문자열→do/who/waited/sub 사람 문장). webapp/m.html 카드 헤더를 do 로 교체, id 는 cidline 로 축소. webapp/approval.html 은 approval_m.json 재조회 없이 x.act 에서 동일 판단 파생(HUDO/HUWHO/firstClause, 스테일 방지). 커밋 b2142edb. 검증: falsepos 0/0, validate_db FAIL 0, node --check 구문 통과, bake_json 스키마 확인.",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.approvalcount && python -c \"from studio import approvalcount as a; import json,io; d=json.load(io.open(a.bake_json()[0],encoding='utf-8')); print([set(['do','who','sub','waited'])<=set(it) for it in d['items']])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:06ed2a43"
   }
  ]
 }
