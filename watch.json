@@ -6707,6 +6707,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:06ed2a43"
+  },
+  {
+   "id": "fix-reports-visibility-0909",
+   "added": "2026-09-09",
+   "what": "보고 탭(reports.html) 시인성 3종 수정: ①본문 160자 초과시 '·'경계에서 접기(head+rest==원문 라운드트립 검증됨) ②본문 첫머리(완료/판정/대기/막힘/🔴)를 결론 배지로 시각 옆에 표시(원문 안 지움) ③PC(>=900px) 2열 grid 분할, 폰(<=480px)은 기존 1열 유지. 섹션 순서·REP_ORDER·판정범위(collect())는 안 건드림",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.reports && grep -c \"class='cc \" webapp/reports.html && grep -c \"grid2\" webapp/reports.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
