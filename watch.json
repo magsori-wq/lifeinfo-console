@@ -6867,6 +6867,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:699404bd"
+  },
+  {
+   "id": "c215-fix-before-publish",
+   "added": "2026-09-10",
+   "what": "🔴 C2-15 는 사장님 승인(12:23) 났지만 **표 수정 전이다** — 벌쏘임 71.9% 가 뱀물림 행에도 걸쳐 보인다(실제 56.8%). 지금은 4채널 게이트(B2-13 네이버)가 발행을 막고 있어 시간이 있지만, 그 게이트가 풀리면 잘못된 표가 나간다. 발행 전에 fix0910c215 완료를 반드시 확인할 것",
+   "due": "2026-09-10",
+   "cmd": "python -c \"import io,json; b=json.load(io.open('webapp/batch.json',encoding='utf-8'))['batches']['fix0910c215']; print([i['state'] for i in b['items']])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
