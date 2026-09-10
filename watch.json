@@ -7442,6 +7442,17 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "threadimg-gate-0911",
+   "added": "2026-09-11",
+   "what": "threadsdraft.py 에 첨부 이미지 하드차단 추가(threadimg.check 재사용, --force-thumb I-KNOW 우회) — 화면경고뿐이던 게이트가 실행을 막게 됨. threadimg.scan()을 4분류(위반/놓친것/레거시/ok)로 나눠 게시된 6건(G4-05·A5-09·F1-14·B2-12·B1-09·H1-02)은 수정불가로 조치대상에서 빼고 selfcheck 11)도 맞춰 고침. falsepos에 회귀규칙 _r_threadimg_attach_gate_0911 추가",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.threadimg",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
