@@ -7509,6 +7509,17 @@
    "by": "이부장",
    "done_at": "2026-09-11",
    "result": "V0 통과로 해소 — 검사자 이부장 · 반려 4건 전부 수정 확인(이부장 재검사). ①함정2 반전 — SPAF 공지 원문 '시야가 확인된 일부 객석에 한하여 판매·추가 객석 오픈 예정'을 그대로 반영, '다시 볼 기회 없다' 삭제 ②예매기간 '9/11 1"
+  },
+  {
+   "id": "xlinkgate-pre-0911",
+   "added": "2026-09-11",
+   "what": "관련글(함께 보면 좋은 글) 제목↔URL 정합 검사를 발행 전 게이트 2곳에 물림 — pubqueue add(큐 적재 거부, --force 우회)·publish-flow(하드 차단, --force-xlink I-KNOW 우회). 판정은 studio/xlinkcheck.scan_file() 한 곳만 재사용. 감지력 실측(관련글 URL 2개 스왑 후 원상복구, 종료코드로 확인)·오탐 0(정상 초안 통과) 확인. falsepos.RULES 에 _r_xlinkcheck_pregate_wired_0911 회귀규칙 추가(제거 시뮬레이션으로 탐지 확인). validate_db·selfcheck 정상. 기존 라이브 10건은 손대지 않음(관제탑 판단 몫).",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.xlinkcheck",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
