@@ -6800,8 +6800,10 @@
    "due": "2026-09-11",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 100 --json name,conclusion,createdAt --jq '[.[]|select(.name|test(\"드리프트\"))][0]'",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:dac37373"
+   "state": "done",
+   "by": "세션:dac37373",
+   "done_at": "2026-09-11",
+   "result": "DB 제목을 라이브 정정본에 맞추고 배포본까지 반영 → 피드 드리프트 검사 수동 실행 결과 success(run 34541297666). 직전 09-09 회차는 failure 였다"
   },
   {
    "id": "publish-argparse-fail-0909",
