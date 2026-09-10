@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-09-11T06:00:12",
+ "checked_at": "2026-09-11T08:13:22",
  "light": "yellow",
- "pass": 15,
- "warn": 3,
+ "pass": 14,
+ "warn": 4,
  "fail": 0,
  "checks": [
   {
@@ -32,10 +32,6 @@
   {
    "level": "PASS",
    "msg": "OSMU 교차링크 연계 통과: 255개 코드 모두 DB.osmu 일치"
-  },
-  {
-   "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 255편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -76,6 +72,10 @@
   {
    "level": "WARN",
    "msg": "중분류 17/30개가 6~7편 초과 — 분가 검토(규칙 §5): F4 20편, F1 15편, E2 13편, C2 13편, B2 13편, F2 12편, A2 12편, A1 12편, D4 11편, D2 11편, B4 11편, A3 10편, D1 9편, B1 9편, A5 9편, F3 8편, C1 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "매니페스트 신선도: 제목·URL·썸네일 불일치 1건 → 'python -m studio.pipeline manifest' 재생성 권장"
   }
  ]
 }
