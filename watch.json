@@ -7097,6 +7097,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "pubbatch-single-0910",
+   "added": "2026-09-10",
+   "what": "발행배치 판정 단일화. batchboard.py: is_publish_batch(bid,b) 신설(gh workflow run/publish.yml 있거나 id가 pub로 시작 — 제목 문자열 안 봄), _unreported()가 이걸 호출하게 리팩터. sessionaudit.py: '침묵 완료'의 url&&naver&&threads 분기(else)만 is_publish_batch 로 게이트 — insta_b 분기(instagram 신호)는 그대로 둠(별개 신호라 안 건드림). gatecheck.py: t3 변수 충돌(92행/102행) 해소(뒤엣것 t5로), 회귀검사 _g_sessionaudit_silent 신설(①크로스링크류 안 잡힘 ②pub배치 여전히 잡힘 ③insta배치 여전히 잡힘 — 3종 확인). 검증: gatecheck 0건(초안게이트 무관 WARN 2건만) · sessionaudit xlink0910a312 오탐 해소(EXIT 0) · validate_db FAIL 0 · ordercheck 0건.",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.gatecheck && python -m studio.sessionaudit",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "falsepos-triage-0910",
+   "added": "2026-09-10",
+   "what": "falsepos 6건(실제 falsepos 자체 출력은 4건 — selfcheck 카운팅이 footer 요약줄 2~3개를 건수로 겹쳐 세어 6~7건으로 부풀림, 별도 버그). 4건 판정: ①A3-12-seodesc 낡은승인표시=진짜오탐(-seodesc 서브코드를 게시코드처럼 취급, seo_desc_status state=ok로 이미 완료 확인됨) ②B2-13-seodesc 동일=진짜오탐(state=ok) ③pub0910e402(E4-02) 낡은승인표시=정상지목(실제로 taxonomy에 E4 중분류가 없어 13:22 발행 실패, 14:06 B4-11로 재배정됨 — pub0910e402 지시서는 죽은 코드 E4-02로 재실행을 유도하는 낡은 지시서, 닫아야 함) ④담당표기 이과장/이과장(작업세션) 2갈래=진짜오탐(owner_variants()가 norm_owner()로 이미 그룹핑된 것만 보고하므로 정상화가 되면 반드시 뜨고 정상화가 깨지면 오히려 조용해지는 반대논리 버그. batchboard order 실측으로 두 라벨 모두 형제배치 정상 노출 확인). 처방: falsepos.py _r_stale_approved_label_0906 에서 -seodesc/-naver/-threads/-instagram 접미 서브코드는 base코드로 환원해 판정하거나 batchboard._live_state() 재사용할 것. _r_owner_variants_0907 은 raw diversity가 아니라 norm_owner('이과장(작업 세션)')==norm_owner('이과장') 같은 자기검증(회귀테스트)으로 바꿀 것. pub0910e402 는 batchboard 에서 닫고 B4-11 로 안내를 넘길 것(falsepos 코드수정 아님, 운영조치).",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-xlink-format-0910",
+   "added": "2026-09-10",
+   "what": "네이버 원고 5편(E3-03·B2-13·F2-17·C2-15·A3-12)의 교차링크 블록을 H1-04 표준 형식(제휴링크용 여러줄 형식→ '· 문구  URL' 한줄 형식)으로 통일. H1-04 자체도 블로그원문 URL이 본문 끝 '👉' 안내줄과 크로스링크 블록에 중복 존재 = 기존 표준 패턴 확인, 5편도 동일 구조라 손대지 않음. 관련링크(함께 보면 좋은 글) 섹션은 지시 범위 밖이라 추가하지 않음",
+   "due": "2026-09-10",
+   "cmd": "tail -20 osmu/네이버용_알뜰폰번호이동위약금.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

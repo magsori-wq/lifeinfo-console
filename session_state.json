@@ -811,15 +811,14 @@
    "last_what": "이과장이 13:19 에 원고 작성 완료(9,068자, osmu/네이버용_예금자보호한도1억원.txt) — 관제탑 실측 확인. 4채널 게이트 풀림"
   },
   "pub0910e402": {
-   "state": "waiting",
-   "reads_since_report": 4,
-   "last_report": "2026-09-10 13:22",
-   "last_what": "⚠️ 구조 결함 — E4-02 발행 사전점검이 저장소 건드리기 전에 실패(런 34436824955): '미정의 중분류 E4 — taxonomy 에 없음'. E 카테고리는 E1(통신·요금)·E2(앱·계정)·E3(자격·",
+   "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-09-10 14:47",
+   "last_what": "🔴 코드 재배정으로 무효 — E4-02 는 taxonomy 에 없는 중분류라 발행 사전점검이 막혔고(런 34436824955), 2026-09-10 에 B4-11 로 재배정했다. 이 지시서의 'gh workflow ",
    "reads": 4,
    "last_order_at": "2026-09-10 13:23",
    "last_read": "2026-09-10 14:42",
-   "owner": "이과장(작업 세션)",
-   "waiting_since": "2026-09-10 14:42"
+   "owner": "이과장(작업 세션)"
   },
   "b": {
    "state": "working",
@@ -836,8 +835,8 @@
   "agents0910": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-09-10 14:10",
-   "last_what": "26장 고침·건너뜀 0 · ordercheck 54건→2건 · validate_db FAIL 0 · 커밋 9b01cede. 남은 2건은 pubqueue add --title 누락(별개 성격)"
+   "last_report": "2026-09-10 14:44",
+   "last_what": "(AG-14 색인) 미요청 14편 = 9편 구글이 알고도 미색인(레버없음) + 3편 최근발행 시간문제 + 2편 추적누락(자동해소). 스냅샷 2편 차이는 inspect 12:39 후 13:24 발행한 정상 시차. 발견"
   },
   "xlink0910a312": {
    "reads": 2,
@@ -875,5 +874,5 @@
    "last_what": "⏸ 대기 — 사장님 직접 지시(이 세션)로 쓰레드는 네이버 URL 붙을 때까지 보류. 블로그 링크만으로 게시 금지 지시받음. B4-11 발행 블로킹은 사장님도 인지·승인."
   }
  },
- "updated": "2026-09-10 14:42"
+ "updated": "2026-09-10 14:47"
 }
