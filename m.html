@@ -108,6 +108,7 @@ a.plain{color:var(--go);text-decoration:none}
 
 <main>
   <div id="list"></div>
+  <div id="actions"></div>
   <div class="hint" id="hint"></div>
 </main>
 
@@ -292,6 +293,25 @@ function closeSheet(){
 function esc(s){return String(s).replace(/[&<>]/g,function(c){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
 
+// 🔴 「☑️ 미결 조치」 — 결재 건수(DATA.count/cnt)에는 안 들어간다(2026-09-10
+//    사장님 "결재함이 지저분해지고 일이 남은 것 같아"). 접힌 상태로 두되
+//    지우지 않는다 — 사장님이 무엇이 남았는지는 보셔야 한다.
+//    studio/approvalcount.bake_json() 의 DATA.actions 를 그대로 그린다(새로 세지 않는다).
+function renderActions(){
+  var box=document.getElementById('actions');
+  var acts=(DATA&&DATA.actions)||[];
+  if(!acts.length){box.innerHTML='';return;}
+  var body=acts.map(function(a){
+    return '<div class="card" style="opacity:.85">'
+      +'<div class="cidline">'+esc(a.id||'')+'</div>'
+      +'<p class="what">'+esc(a.sub||a.what||'')+'</p></div>';
+  }).join('');
+  box.innerHTML='<details style="margin:14px 4px"><summary class="sec" style="cursor:pointer">'
+    +'☑️ 미결 조치 '+acts.length+'건 펼치기 '
+    +'<span style="opacity:.6;font-weight:400;font-size:13px">(결재 건수에 안 들어감)</span>'
+    +'</summary>'+body+'</details>';
+}
+
 function render(){
   var L=document.getElementById('list');L.innerHTML='';
   PICK={};bar();
@@ -299,6 +319,7 @@ function render(){
   var todo=items.filter(function(x){return x.act!==false;}).length;
   document.getElementById('cnt').textContent=todo?todo+'건':'';
   document.getElementById('gen').textContent=DATA?('기준 '+DATA.generated):'';
+  renderActions();
   if(!items.length){L.innerHTML='<div class="empty">✅ 결재할 것이 없습니다</div>';return;}
   if(!todo){L.innerHTML='<div class="empty">✅ 누를 것이 없습니다<br><span style="font-size:14px">아래는 진행 중입니다</span></div>';}
   items.forEach(function(it){L.appendChild(card(it));});

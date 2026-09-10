@@ -2984,6 +2984,230 @@
    "target": "B5-02",
    "detail": "사장님 topic_pick 승인(2026-09-10, 커밋 dbf91021) 후 이부장이 중복 발견해 취소 — 발행대기 B3-05(국민연금 반환일시금 세금, V0검사대기)와 주제 동일. 승인 시점엔 B3-05가 큐에 있는 게 표에 안 보였음. 🔴사장님 승인분 취소 — 보고 필요",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:48:53",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "tripconnect-links-0907",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:48:54",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "B3-05",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a603-dup-check-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 나라배움카드 판정 완료 · topicprop drop 됨",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b213-fact-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): V0 반려 철회에 반영 · B2-13 발행 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b213-naver-ready-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): B2-13 네이버 게시 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:11",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b411-recode-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): B4-11 발행 + OSMU 3채널 완료 · V0 pass",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "c215-fix-before-publish",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl 로 56.8%·71.9% 정확 분리 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "e402-fail-cause-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): B4-11 재배정·발행까지 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "falsepos-fix-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): falsepos 재실행 1건(E4-02만)으로 일치",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-approval-by-0909",
+   "detail": "실측 확인(2026-09-10 이부장 판정): approvalcount 정상 출력 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-approval-readable-0909",
+   "detail": "실측 확인(2026-09-10 이부장 판정): do/who/sub/waited 필드 정상",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-report-panel-split-0909",
+   "detail": "실측 확인(2026-09-10 이부장 판정): reports.py 세션별 그룹 정상",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-reports-visibility-0909",
+   "detail": "실측 확인(2026-09-10 이부장 판정): grid2=3 · cc class=10 반영 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-property-split-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): property-compare-0910 이 해소",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-rel-url-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): grep 으로 관련글 URL 실재 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-xlink-5drafts-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 원고 5편 전부 교차링크 블록 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ordercmd-fix-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): ordercheck 재실행 정상 0건",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "osmu-c215-f217-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 두 코드 다 발행+다채널 게시로 종료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "property-compare-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 자체 완결 리포트",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub0910-v0pending",
+   "detail": "실측 확인(2026-09-10 이부장 판정): C2-15·B4-11·F2-17 전부 V0 pass",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pubbatch-single-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): gatecheck·sessionaudit 재실행 일치",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "seodesc-sync-0910",
+   "detail": "실측 확인(2026-09-10 이부장 판정): B2-13 라이브 meta curl 대조 완전 일치",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a312",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b213",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b411",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-c215",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-e303",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T17:49:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-f217",
+   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
+   "via": "cli"
   }
  ]
 }
