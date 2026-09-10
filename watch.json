@@ -2368,7 +2368,7 @@
    "id": "gsc-redirect-recheck-trigger",
    "added": "2026-08-25",
    "what": "GSC 리디렉션 오류 유효성 검사를 '언제 다시 눌러볼 수 있나' 의 판정 조건. 지금 누르면 안 되는 이유는 '금지'가 아니라 '구조적으로 통과 불가'다 — Redirect error 는 최근 크롤된 글에만 붙고(2026-08-25 실측: 최근14일 크롤 23편 중 20편 / 31일+ 전 크롤 120편 중 0편), 검사는 재크롤을 부르므로 재크롤→재발→실패가 반복된다. 실측 통과율 0/17. 🔴 판정 조건: index_status.json 의 Redirect error 건수가 **스스로** 줄어들면(현재 47편 → 20편 이하) 표시 오류가 걷힌 것이므로 그때는 눌러볼 값이 있다. 그 전에는 눌러도 실패만 쌓인다(손해는 없지만 얻는 것도 없다). ⚠️ 이 수치는 우리 조치로 못 바꾼다 — 구글 커뮤니티 공식 답변 'It comes and goes on its own'",
-   "due": "2026-09-08",
+   "due": "2026-09-16",
    "cmd": "python -c \"import json,io,collections;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'))['posts'];print(collections.Counter(v.get('state') for v in d.values()))\"",
    "owner": "claude",
    "state": "wait"
@@ -4064,7 +4064,7 @@
    "id": "browser-disconnect-a216-0901",
    "added": "2026-09-01",
    "what": "OSMU 3채널(네이버·쓰레드·인스타) 게시 완료 확인(09-07). 검색설명만 남음 — seodesc scan 결과 state=shared(공통문구, 개별 설명 미삽입). 브라우저(claude-in-chrome) 있는 세션에서 편집화면 직접 삽입 필요.",
-   "due": "2026-09-09",
+   "due": "2026-09-11",
    "cmd": "python -m studio.seodesc scan --only A2-16 로 재확인 후 편집화면에서 직접 삽입",
    "owner": "claude",
    "state": "todo"
@@ -4982,7 +4982,7 @@
    "id": "a510-precision-0905",
    "added": "2026-09-05",
    "what": "A5-10 발행 후 정밀도 보강 2건(V0검사관 비차단 지적) — ①'창구가 약 5개월 반'은 실제 5개월 24일 ②제18조의2②·제18조의4②(급여 지급분 한도에서만 사업주 면책)를 안 실어, 통상임금이 상한을 넘는 근로자의 차액을 사업주가 계속 부담한다는 점이 안 보인다. 틀린 서술은 아니라 발행은 막지 않는다",
-   "due": "2026-09-08",
+   "due": "2026-09-12",
    "cmd": "python -m studio.v0check --code A5-10",
    "owner": "claude",
    "state": "todo"
@@ -5130,7 +5130,7 @@
    "id": "naver-rewrite-target-0906",
    "added": "2026-09-06",
    "what": "네이버 보강 대상 5편을 실제로 확정한다 — naver_rel(15건·08-20)·naver_dup(197건·08-19)에서 어느 것이 지금도 유효한지 재측정하고, 보강 원고가 실제로 있는지 osmu/ 대조. 대상이 확정되면 그때 결재함에 올린다.",
-   "due": "2026-09-09",
+   "due": "2026-09-13",
    "cmd": "python -m studio.naverstat",
    "owner": "claude",
    "state": "todo"
@@ -5230,7 +5230,9 @@
    "due": "2026-09-08",
    "cmd": "python -m studio.naverkw --title \"부산시립미술관 입장료 주차부터 보세요 — 현대미술관 F1963 관람시간 휴관일 총정리 (2026)\"",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-10",
+   "result": "라이브 G3-03 재조회 -- 표·본문 모두 이우환공간 3,000원으로 일치, 무료 모순 문구 없음"
   },
   {
    "id": "naver-title-fix-0906",
@@ -5314,7 +5316,9 @@
    "due": "2026-09-08",
    "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow=publish.yml -L 1 --json databaseId --jq '.[0].databaseId' | xargs -I{} gh run view {} -R magsori-wq/lifeinfo-source --log | grep -E '제목\\(|제목이 갈렸다'",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-10",
+   "result": "최신 run 34401358348 로그에서 3b 게이트 실행+사전점검 통과 확인"
   },
   {
    "id": "tokenstat-0906",
@@ -5382,7 +5386,7 @@
    "id": "topicprop-state-drift-0906",
    "added": "2026-09-06",
    "what": "topicprop.json approved 8건(G4-03·F2-14·F1-15·F1-13·G4-04·G2-03·G4-05·F1-14) 전부 실제로는 이미 발행완료인데 state가 approved로 남아 발행 후 갱신이 안 되는 것으로 보임",
-   "due": "2026-09-08",
+   "due": "2026-09-13",
    "cmd": "python -m studio.topicprop table 및 webapp/topicprop.json 의 published 여부 대조 후 state 갱신 로직 확인",
    "owner": "claude",
    "state": "todo"
@@ -5498,7 +5502,9 @@
    "due": "2026-09-08",
    "cmd": "python -m studio.affiliate | grep -A2 F1-07",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-10",
+   "result": "docs/affiliate_F1-07.md 확인 -- 전략이 쿠팡 어댑터 링크로 전환, 원 대상 소멸"
   },
   {
    "id": "aff-block-paste-0907",
@@ -5513,7 +5519,7 @@
    "id": "seodesc-drift-d1-08-0907",
    "added": "2026-09-07",
    "what": "D1-08 검색설명이 제목 정정(69a226b, D1-08 라이브 제목=2026 개천절 대체공휴일 총정리) 이후에도 낡은 문구 그대로 — selfcheck 8) 제목드리프트 1편",
-   "due": "2026-09-08",
+   "due": "2026-09-12",
    "cmd": "python -m studio.seodesc scan --only D1-08",
    "owner": "claude",
    "state": "todo"
@@ -5522,7 +5528,7 @@
    "id": "bake-stale-cp-0907",
    "added": "2026-09-07",
    "what": "CP 화면 2개가 실측 데이터 없이 낡은 값을 보여준다(uicheck 18b): incidents.html←incidents.json 14일째 안구워짐, index_board.html←gsc_req_dates.json 16일째 안구워짐",
-   "due": "2026-09-08",
+   "due": "2026-09-12",
    "cmd": "python -m studio.uicheck",
    "owner": "claude",
    "state": "todo"
@@ -5531,7 +5537,7 @@
    "id": "falsepos-a6-02-queue-bug-0907",
    "added": "2026-09-07",
    "what": "falsepos 3)모순규칙이 pub0907a602(A6-02 발행완료·4채널 완결·이미 발행돼 queue.json 에서 빠진 항목)를 '낡은 승인표시(go도장없음)'로 오탐. A6-02 는 setgate 상 4채널 완결 확인됨 — 규칙이 완료후 queue.json 이탈을 go없음으로 오판",
-   "due": "2026-09-08",
+   "due": "2026-09-11",
    "cmd": "python -m studio.falsepos",
    "owner": "claude",
    "state": "todo"
@@ -5540,7 +5546,7 @@
    "id": "thimg-b1-09-0907",
    "added": "2026-09-07",
    "what": "쓰레드 첨부 규칙 위반 — B1-09(2026-09-03 발행) insta/thread/thread_B1-09_*.png 없음. 기존 thimg-0831-4(G4-05·A5-09·F1-14·B2-12)에는 없던 신규건",
-   "due": "2026-09-09",
+   "due": "2026-09-12",
    "cmd": "python -m studio.threadimg B1-09",
    "owner": "claude",
    "state": "todo"
@@ -5717,8 +5723,10 @@
    "due": "2026-09-07",
    "cmd": "python -m studio.pushgate --simulate 1",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:2b21a954"
+   "state": "done",
+   "by": "세션:2b21a954",
+   "done_at": "2026-09-10",
+   "result": "pushgate.py 전문 확인(push 호출 없음) + simulate 1 로 정상 차단 재현"
   },
   {
    "id": "naver-auth-0906",
@@ -5773,8 +5781,10 @@
    "due": "2026-09-03",
    "cmd": "ls docs/리다이렉트_분석_20260903.md docs/CP_색인화면_점검_20260903.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "산출물 문서 2개(리다이렉트_분석, CP_색인화면_점검) 존재 확인"
   },
   {
    "id": "wake-lee-go-0907",
@@ -5843,9 +5853,11 @@
    "due": "2026-09-07",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "루틴4"
+   "by": "루틴4",
+   "done_at": "2026-09-10",
+   "result": "G2-05, H1-02 둘 다 DB에 라이브 URL 있음(이미 발행 완료)"
   },
   {
    "id": "idx-boost-3-0907",
@@ -5879,8 +5891,10 @@
    "due": "2026-09-08",
    "cmd": "python -m studio.falsepos --quiet && python -c \"import json,io;d=json.load(io.open('webapp/pending.json',encoding='utf-8'));print(d['counts']['index_todo'], d['counts'].get('index_benign'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-10",
+   "result": "idxstate.py 존재, pending.py 배선 확인, index_benign 필드 작동(index_todo=12·index_benign=83)"
   },
   {
    "id": "idxboost-sequence-0907",
@@ -5901,8 +5915,10 @@
    "due": "2026-09-07",
    "cmd": "for u in 2026/06/blog-post_982.html 2026/06/isa-2026.html 2026/06/blog-post.html; do curl -s -A 'Mozilla/5.0' https://lifeinfo8975.blogspot.com/$u | grep -c '계산예시'; done",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "batchboard show -- idxboost0907 동결 상태, order 텍스트에 착수금지 조치 그대로 반영됨"
   },
   {
    "id": "naver-post-f420-ready",
@@ -5935,8 +5951,10 @@
    "due": "2026-09-07",
    "cmd": "cat docs/색인보강_재고재측정_20260907.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "같은 배치 order 텍스트에 재측정 결과 반영, 산출물 문서 존재 확인"
   },
   {
    "id": "blocked-f420-affiliate-link",
@@ -6013,8 +6031,10 @@
    "due": "2026-09-09",
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/session_state.json',encoding='utf-8'));s=d['sessions'];print({k:(v.get('reads')) for k,v in list(s.items())[:5]})\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "소스 확인 -- touch_read 는 읽기(no --file) 분기에만 있고 --file 등록 분기엔 없음"
   },
   {
    "id": "factcheck-f4-20-vienna-0907",
@@ -6091,8 +6111,10 @@
    "due": "2026-09-08",
    "cmd": "python -m studio.v0check gate --code H1-02",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:eb42e59e"
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-09-10",
+   "result": "v0check gate --code H1-02 실행 -- [통과] 검사자 이부장 2026-09-08T00:42"
   },
   {
    "id": "mark-actor-from-code-0908",
@@ -6123,8 +6145,10 @@
    "due": "2026-09-08",
    "cmd": "cat docs/GSC정밀검증_20260908.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "짝항목 gsc34-is-july-snapshot 결론(0이 사실) 코드로 재검증, 채택"
   },
   {
    "id": "gatecheck-pace-rootbug-0908",
@@ -6134,8 +6158,10 @@
    "cmd": "python -c \"from studio import pace; pace.today_posts=lambda:('2026-09-08',[{'title':'x'}]); print(pace.check())\"  # 경고문에 ROOT 오류가 뜨면 아직 안 고쳐진 것",
    "owner": "claude",
    "kind": "approve",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-10",
+   "result": "수정커밋 2c85e658 확인 + pace.check() 재현 실행, NameError 없음"
   },
   {
    "id": "gatecheck-falsepos-2tuple-0908",
@@ -6165,14 +6191,16 @@
    "due": "2026-09-08",
    "cmd": "cat docs/GSC정밀검증_20260908.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "핵심주장(urlInspection API vs 배치리포트) 소스라인 searchconsole.py:172 대조로 확인"
   },
   {
    "id": "crawl-fix-proposal-0908",
    "added": "2026-09-08",
    "what": "📋[루틴7 → 이부장] 크롤 병목 개선안 (사장님 지시). ※지시서 발급은 이부장 몫이라 제안·판단요청 형식으로 올린다(roles 📣). 【문제 확정】302 가 크롤요청의 40%(788/1970·90일) → 부하 2배로 보임 → 구글 공식 '과부하 우려로 크롤 재조정' → 발견됨-미색인 41편·미크롤 50편 → 신규발견 하루 3.0편(발행은 1~5편). 【전수 판정】①?m=1 302 끄기 ❌불가(Blogger 설정 이미 데스크톱인데 발생) ②**발행속도 낮추기 ✅유일하게 근거 있음** ③색인재요청 ❌금지(공식 no need to resubmit·수율2%) ④유효성검사 ❌금지(통과율0/4) ⑤사이트맵 정리 ❌**할 것 없음** — 실측 242URL=DB242편·?m=1 0·라벨0·누락0·잉여0 이미 최적 ⑥커스텀도메인 ⚠️미검증·기대낮음 ⑦외부링크 ⚠️진행중(네이버 OSMU 43편). 【⛔⛔절대 금지 — 함정 경고】robots.txt 로 ?m=1 차단하지 말 것. '302 가 낭비니 막자' 는 생각이 자연스럽게 나오지만 **?m=1 은 Googlebot-Smartphone(크롤 76%)이 실제로 콘텐츠를 받는 URL** 이다(clean 은 302 로 튕기고 ?m=1 만 200). 막으면 주 크롤러가 본문을 아예 못 읽는다. 【실행 제안】발행 하루 1편으로 낮추고 밀린 91편(미크롤50+발견41) 소진까지 유지 — 발행0이면 30일·1편이면 45일·3편 이상이면 영영 안 줄어든다. 이건 CLAUDE.md 에 이미 있던 규칙이고 이제 숫자 근거가 생긴 것. ⚠️단 이 처방은 41+50편에만 듣는다 — **크롤됨-미색인 222편은 구글이 원인을 안 밝히므로 풀린다는 근거가 없다. 거기까지 약속하지 말 것.** 【이부장 결정사항】①발행 하루1편 전환 여부(사장님 승인) ②커스텀도메인 검증 가치 ③금지목록(재요청·유효성검사·robots)을 게이트로 박을지. 근거=docs/크롤병목_개선안_20260908.md",
-   "due": "2026-09-08",
+   "due": "2026-09-15",
    "cmd": "cat docs/크롤병목_개선안_20260908.md",
    "owner": "claude",
    "state": "todo",
@@ -6573,8 +6601,10 @@
    "due": "2026-09-09",
    "cmd": "grep -c '정정 (2026-09-09)' docs/222편_정체_20260908.md docs/종합판단_색인_20260908.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "grep -c 정정배너 7개 문서 전부 확인(2개는 실제 파일명 재탐색 후 확인)"
   },
   {
    "id": "validation-check-0910",
@@ -6595,8 +6625,10 @@
    "due": "2026-09-09",
    "cmd": "python -c \"import subprocess;print(subprocess.run(['git','log','-p','-1','057d1394','--','.githooks/pre-push'],cwd='C:/lifeinfo',capture_output=True,text=True,encoding='utf-8').stdout[:3000])\" 로 원래 의도(러너 실행중 차단) 재확인 후, pushgate.py 를 훅 전용/동기화 도우미 전용으로 분리하거나 .githooks/pre-push 에서 직접 호출하지 않도록 정리",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:4fd86d64"
+   "state": "done",
+   "by": "세션:4fd86d64",
+   "done_at": "2026-09-10",
+   "result": "수정커밋 0062ec1d 확인, 현재 파일은 복원본(push 재귀 없음) 확인"
   },
   {
    "id": "naver-capture-0909",
@@ -6638,8 +6670,10 @@
    "due": "2026-09-09",
    "cmd": "python -m studio.batchboard order --id routinelog --actor 루틴7",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-10",
+   "result": "whoami 실행 -- 3. 주소가 오늘(09-10 05:00) cbd80b 로 최신 자기등록됨, 구조적 해결책 가동 확인"
   },
   {
    "id": "navertitle-fix-0909",
@@ -6730,7 +6764,7 @@
    "id": "e104-db-title-drift-0909",
    "added": "2026-09-09",
    "what": "E1-04 제목 드리프트 재발(D1-08 과 같은 모양) — 라이브는 정정 제목('혜택 등록, 깜빡하면 끝입니다 — 갤럭시 S26 구매혜택 온누리상품권 등록 마감 9월 30일')인데 DB(lifeinfo_db.txt)는 옛 제목('갤럭시 S26 구매혜택 등록 마감 총정리 …') 그대로. 09-08 23:53Z 피드 드리프트 검사 실패(run 34292588407)의 유일한 사유. 배포본(C:\\lifeinfo-deploy\\lifeinfo_db.txt)도 함께 고쳐야 검사가 통과한다(2026-09-06 D1-08 때 실측).",
-   "due": "2026-09-09",
+   "due": "2026-09-11",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 100 --json name,conclusion,createdAt --jq '[.[]|select(.name|test(\"드리프트\"))][0]'",
    "owner": "claude",
    "state": "todo",
@@ -6740,7 +6774,7 @@
    "id": "publish-argparse-fail-0909",
    "added": "2026-09-09",
    "what": "발행 워크플로 실패 사유가 게이트가 아닌 건이 있다 — run 34307942072(09-09 03:39) 는 studio.pipeline: error: unrecognized arguments: '20만원대였는데? 아닙니다 — 2026 추석 차례상 비용 전통시장 vs 대형마트 총정리'. 즉 게이트 차단이 아니라 publish.yml 이 post_title 을 파이프라인에 넘길 때 인자로 쪼개진 호출 결함이다(제목에 '?' 와 공백이 들어간 C안 후킹 제목). 같은 창에서 03:34·03:36 도 같은 'publish-flow 실행' 스텝에서 실패했으나 로그에서 사유 문자열을 뽑지 못했다 — 같은 원인인지는 확인하지 못했다. 나머지 3건은 정상 게이트(C2-14 V0 미검사 · E1-04 사장님 승인 미획득 · G2-05 url 미생성).",
-   "due": "2026-09-09",
+   "due": "2026-09-13",
    "cmd": "gh run view 34307942072 -R magsori-wq/lifeinfo-source --log-failed | grep -i 'unrecognized'",
    "owner": "claude",
    "state": "todo",

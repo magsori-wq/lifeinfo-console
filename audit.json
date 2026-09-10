@@ -2752,6 +2752,150 @@
    "target": "idem-live-test-0910",
    "detail": "1st",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "flu-2627-not-published",
+   "detail": "KDCA 페이지 2026-2027절기로 갱신 확인 + C2-14 이미 제안·picked 상태로 진행 중",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:11",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "art-uiwhan-conflict-0906",
+   "detail": "라이브 G3-03 재조회 -- 표·본문 모두 이우환공간 3,000원으로 일치, 무료 모순 문구 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:11",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pubtitle-gate-live-0908",
+   "detail": "최신 run 34401358348 로그에서 3b 게이트 실행+사전점검 통과 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:11",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aff-f107-rate-0907",
+   "detail": "docs/affiliate_F1-07.md 확인 -- 전략이 쿠팡 어댑터 링크로 전환, 원 대상 소멸",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "publish-race-0907",
+   "detail": "pushgate.py 전문 확인(push 호출 없음) + simulate 1 로 정상 차단 재현",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "redirect-analysis-0903",
+   "detail": "산출물 문서 2개(리다이렉트_분석, CP_색인화면_점검) 존재 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topicprop-select-0907",
+   "detail": "G2-05, H1-02 둘 다 DB에 라이브 URL 있음(이미 발행 완료)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "idxstate-benign-0907",
+   "detail": "idxstate.py 존재, pending.py 배선 확인, index_benign 필드 작동(index_todo=12·index_benign=83)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "idxboost-done-already-0907",
+   "detail": "batchboard show -- idxboost0907 동결 상태, order 텍스트에 착수금지 조치 그대로 반영됨",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "boost-recount-0907",
+   "detail": "같은 배치 order 텍스트에 재측정 결과 반영, 산출물 문서 존재 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "reads-counts-writes-0907",
+   "detail": "소스 확인 -- touch_read 는 읽기(no --file) 분기에만 있고 --file 등록 분기엔 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0recheck-h1-02",
+   "detail": "v0check gate --code H1-02 실행 -- [통과] 검사자 이부장 2026-09-08T00:42",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-indexed-34-vs-0-0908",
+   "detail": "짝항목 gsc34-is-july-snapshot 결론(0이 사실) 코드로 재검증, 채택",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatecheck-pace-rootbug-0908",
+   "detail": "수정커밋 2c85e658 확인 + pace.check() 재현 실행, NameError 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc34-is-july-snapshot-0908",
+   "detail": "핵심주장(urlInspection API vs 배치리포트) 소스라인 searchconsole.py:172 대조로 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "url-vs-post-count-0909",
+   "detail": "grep -c 정정배너 7개 문서 전부 확인(2개는 실제 파일명 재탐색 후 확인)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pushgate-hook-hang-0909",
+   "detail": "수정커밋 0062ec1d 확인, 현재 파일은 복원본(push 재귀 없음) 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-10T12:54:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "msg-misrouted-0909",
+   "detail": "whoami 실행 -- 3. 주소가 오늘(09-10 05:00) cbd80b 로 최신 자기등록됨, 구조적 해결책 가동 확인",
+   "via": "cli"
   }
  ]
 }
