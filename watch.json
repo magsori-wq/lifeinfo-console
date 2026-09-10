@@ -7169,6 +7169,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-e303",
+   "added": "2026-09-10",
+   "what": "🔗 E3-03 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E3-03 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdFG7OVE9JV/ / 쓰레드에 네이버 링크 **답글**(본문 수정 불가): https://www.threads.com/@magsori8975/post/DdFGUNXEx23",
+   "due": "2026-09-10",
+   "cmd": "python studio/blogger.py crosslink --code E3-03",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "seodesc-sync-0910",
+   "added": "2026-09-10",
+   "what": "검색설명 기록 32편(A1-14·A3-09·A3-12·A5-07·A5-10·A6-02·B2-12·B2-13·B4-10·C2-11·C2-13·C2-14·D1-08·D1-09·D3-06·E1-04·E2-09·E2-10·E2-15·E3-03·F1-13·F1-14·F2-17·F3-08·F4-20·G2-03·G2-04·G2-05·G4-03·G4-05·G4-06·H1-02)을 라이브 값으로 역동기화 완료(라이브는 안 건드림). A2-15 는 판정기 오탐(엔티티 unescape 누락)으로 확인·studio/seodesc.py _same_text() 로 수정(다른 세션 d709135c 와 동시에 같은 수정 — 중복 없이 검증만). CLAUDE.md 검색설명 SOP 절 끝에 'set 으로 기록 갱신' 단계 추가. 🔴 sync 도중 webapp/seo_desc.json 이 다른 프로세스에 06:01 스냅샷으로 되돌아가는 레이스를 실측 — 재실행 후 즉시 커밋으로 봉합. rescan(--only 32편) 결과 mismatch 0 확인, validate_db FAIL 0.",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.seodesc scan",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
