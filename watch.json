@@ -7035,6 +7035,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-f217",
+   "added": "2026-09-10",
+   "what": "🔗 F2-17 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F2-17",
+   "due": "2026-09-10",
+   "cmd": "python studio/blogger.py crosslink --code F2-17",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "ordercmd-fix-0910",
+   "added": "2026-09-10",
+   "what": "살아있는 지시서 26개(routinelog·osmu0901a216·idxboost0907·pub0909c214·draft0909h104·kwcap0909·draft0909a603·draft0909e303·draft0909a312·draft0909b213·ent0909·ent3-0909·osmu0909h104·draft0910f217·draft0910c215·draft0910e402·fix0910b213·pub0910a312·pub0910e303·pub0910b213·fix0910c215·pub0910e402·pub0910c215·osmu0910b213·draft0910a604·draft0910b502)의 'mark --batch <id> --step <N>' 죽은 명령을 'mark --id <id> --code <코드> --state done' 실문법으로 교체. 코드 없는 배치(routinelog·idxboost0907·kwcap0909·ent0909·ent3-0909)는 --code <코드> 플레이스홀더로 남김(단일 코드가 없어서). ordercheck 54건→2건(남은 2건은 mark 아니고 pubqueue add --title 누락, 이번 임무 범위 밖). validate_db FAIL 0.",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.ordercheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "b411-recode-0910",
+   "added": "2026-09-10",
+   "what": "E4-02→B4-11 재배정 완료(초안 1·2행 주석 + queue.json code 필드). validate_db FAIL 0(PASS15·WARN3, B4-11 무관). publish-flow --check-only 로 taxonomy 오류(미정의 중분류 E4) 사라짐 확인 — 다음 게이트인 V0 검사(v0check ask) 미완료로 현재는 발행 불가(정상 절차, 이번 임무 범위 밖). 커밋 중 사고: reset --soft HEAD~1 이 동시 진행 중이던 다른 세션 커밋(9b01cede)을 되돌릴 뻔했으나 reset --mixed 9b01cede 로 즉시 복구·검증함(워킹트리 무손상).",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
