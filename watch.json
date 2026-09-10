@@ -7376,6 +7376,27 @@
    "owner": "user",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "xlink-b305",
+   "added": "2026-09-10",
+   "what": "🔗 B3-05 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B3-05",
+   "due": "2026-09-10",
+   "cmd": "python studio/blogger.py crosslink --code B3-05",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "deploy-thumb-b305-0910",
+   "added": "2026-09-10",
+   "what": "B3-05(국민연금 반환일시금 세금) 썸네일 231_nps_refund.png 이 github.io 404 — 라이브 글 상단 이미지가 깨진 상태입니다. 파일은 C:\\lifeinfo\\thumbs 에 이미 있고(26,833바이트) validate_db FAIL 0 · 원격 동기 완료라 deploy.bat 한 번이면 해소됩니다. 해소 전까지 콘솔 정합성 검사가 push 마다 RED — 09-10 09:04~09:24 UTC 7회 연속 실패의 유일한 ⛔ 사유가 이 파일입니다(나머지는 경고 2건).",
+   "due": "2026-09-10",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
