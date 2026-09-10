@@ -7207,12 +7207,22 @@
   {
    "id": "xlink-b411",
    "added": "2026-09-10",
-   "what": "🔗 B4-11 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-11 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdGL63FEZAy/",
+   "what": "🔗 B4-11 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-11",
    "due": "2026-09-10",
    "cmd": "python studio/blogger.py crosslink --code B4-11",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "draft-dispatch-0910",
+   "added": "2026-09-10",
+   "what": "글감4건 처리: G3-05 신규 지시서 발급(facts포함) · A6-04는 이미 사장님 승인+지시서 있었는데 내가 --force로 부실판(출처URL없음 오기재)으로 덮어썼다가 원문 복원함(diff에서 7188자 복구, facts 두 URL 확인) · E4-02 드랍(dupcheck🔴1.00, B4-11과 중복, 승인이력없음-문제없음) · B5-02는 사장님이 이미 topic_pick 승인(dbf91021)했는데 이부장이 B3-05(발행대기,V0검사대기)와 주제중복 발견해 취소함(승인분 취소 — 사장님께 보고 필요) · 재고 1/99",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.orderwatch",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
