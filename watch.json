@@ -7355,6 +7355,17 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "topicprop-drain-0910",
+   "added": "2026-09-10",
+   "what": "topicprop 소진판정 배선 복구: studio/topicprop.py에 is_exhausted(code) 공개함수 신설(발행 or 큐진입=소진), active()를 이 함수로 재구성. gatecheck.py _g_picked_needs_draft()가 topicprop.json 원본을 직접 훑어 발행된 23건(picked+published)을 '초안없음'으로 오탐하던 것을 is_exhausted()로 거르게 수정. approval.html 이과장 섹션도 같은 패턴(picked&&draft===false)이라 byc[t.code].url·byq[t.code] 배제 추가. falsepos.py에 회귀규칙 _r_gatecheck_draftgate_excludes_published_0910 추가(실제 게이트를 돌려 재발 감지). topicprop.py/gatecheck.py 수정분은 동시세션 커밋 16a10887에 이미 실려 있었고(git add -A 스윕), falsepos.py/approval.html만 커밋 90ec5866으로 별도 커밋함. 검증: gatecheck 오탐 4건(A3-12·B2-13·F2-17·C2-15)→0건, is_exhausted() 끊어서 발행4코드 True/살아있는제안2코드 False 확인, validate_db FAIL 0, bake로 gates.json ok=true 확인. topicprop.json 자체는 미수정(기록이므로).",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.gatecheck",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
