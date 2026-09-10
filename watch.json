@@ -6845,8 +6845,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.pipeline naver-draft --code E3-03",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "게시 완료(2026-09-10 15:0x) — osmu.naver = https://blog.naver.com/magsori8975/224407193119 DB 기록됨"
   },
   {
    "id": "b213-fact-0910",
@@ -6875,8 +6877,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.pipeline naver-draft --code B2-13",
    "owner": "user",
-   "state": "blocked",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "게시 완료(2026-09-10 15:1x) — osmu.naver = https://blog.naver.com/magsori8975/224407202758 DB 기록됨"
   },
   {
    "id": "source-e402-nts0901",
@@ -7187,6 +7191,26 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.seodesc scan",
    "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-b213",
+   "added": "2026-09-10",
+   "what": "🔗 B2-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B2-13 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdFJIJxEyuO/ / 쓰레드에 네이버 링크 **답글**(본문 수정 불가): https://www.threads.com/@magsori8975/post/DdFIm5UE0Gf",
+   "due": "2026-09-10",
+   "cmd": "python studio/blogger.py crosslink --code B2-13",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "naver-post-zztest",
+   "added": "2026-09-10",
+   "what": "시험 — E3-03 네이버 게시 준비완료",
+   "due": "2026-09-10",
+   "cmd": "echo test",
+   "owner": "user",
    "state": "todo",
    "by": "이부장"
   }
