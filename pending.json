@@ -1,13 +1,13 @@
 {
- "rev": "45b96f0a",
+ "rev": "de97e754",
  "counts": {
-  "total": 254,
+  "total": 255,
   "osmu_done": 254,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 254,
+  "index_pending": 255,
   "index_requested": 156,
-  "index_todo": 15,
+  "index_todo": 16,
   "index_benign": 83
  },
  "actionable": [
@@ -25,6 +25,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "B3-05",
+   "title": "국민연금 반환일시금 세금 — 기타소득세 20%? 아닙니",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -208,22 +225,6 @@
   {
    "code": "E2-10",
    "title": "카드 포인트 계좌입금 신청 방법 총정리 (여신금융협회·",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "E3-03",
-   "title": "24개월 지나면 위약금 0원? 절반만 맞습니다 — 알뜰",
    "need": [
     "색인요청"
    ],
