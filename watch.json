@@ -7125,6 +7125,18 @@
    "due": "2026-09-10",
    "cmd": "tail -20 osmu/네이버용_알뜰폰번호이동위약금.txt",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "형식통일 5편 완료·커밋됨(동시작업 경합으로 [이부장] 8f81bb64에 편입, 내용은 검증완료). H1-04도 블로그원문 URL이 본문끝 안내줄+교차링크블록에 중복 존재=기존 표준패턴 확인, 5편도 동일구조라 손대지 않음"
+  },
+  {
+   "id": "backlog-triage-0910",
+   "added": "2026-09-10",
+   "what": "적체 재실측: watch(claude몫 30건) 중 ✅완료19 ⏳남음9 ❓판정불가2, board정체(currents 11건) 중 ✅완료(실작업끝·mark만필요)8 ⏳진짜정체1(pub0910e402) 잡음(고아포인터)2(b,zzz). 닫아도되는 watch id: a1-12-dupcheck-red,dupcheck-miss-typhoon-flood,fix-approval-readable-0909,fix-report-panel-split-0909,fix-reports-unify-0909,fix-approval-by-0909,fix-reports-visibility-0909,gsc-property-split-0910,b213-fact-0910,property-compare-0910,pub0910-v0pending,c215-fix-before-publish,xlink-a312,e402-fail-cause-0910,xlink-f217,ordercmd-fix-0910,b411-recode-0910,xlink-c215,naver-xlink-5drafts-0910. 닫아도되는 board currents: draft0903,naverlab0909,fix0910b213,draft0910e402,draft0910f217,pub0910a312,xlink0910a312(A3-12 실물완료,mark만),osmu0901a216(frozen이라 unfreeze 먼저 필요, A2-16 3채널 DB확인상 실물완료).",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.watch due",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
