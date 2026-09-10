@@ -7330,6 +7330,27 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "afflink-c2-15",
+   "added": "2026-09-10",
+   "what": "C2-15(벌쏘임·뱀물림) 제휴링크(동국제약 바이트케어, docs/affiliate_C2-15.md) 발급 대기 — 사장님이 발급하시면 answer 확인 후 affiliate add로 기록하고 쓰레드 답글로 추가, 완료 시 알림",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.affiliate 로 C2-15 상태 확인 — links 채워지면 즉시 처리",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "approval-kind-split-0910",
+   "added": "2026-09-10",
+   "what": "결재함/조치 분류 완료 — watch.json 미결 13건에 kind(approve 4/action 9) 부여. studio/approvalcount.rows()는 kind=approve만 결재 건수로 세도록 수정, action_rows() 신설(조치는 별도 접힘구역, due로 안 거름). approval.html·m.html에 '미결 조치 N건 펼치기' 접힘 블록 추가(grid 레이아웃 깨지지 않게 boss pane 내부에 details로 nest). watch.py cmd_add에 owner=user인데 kind 없으면 경고(차단은 아님) 추가. daily-email-briefing SKILL.md에 '--owner user면 --kind action 필수' 지침 한 줄 추가(경로: C:\\Users\\magso\\.claude\\scheduled-tasks\\daily-email-briefing\\SKILL.md, 백업 SKILL.md.bak_20260910). ⚠️ approvalcount.py/approval.html/m.html 편집분은 작업 중 다른 동시 프로세스의 git add -A 커밋(47de1a55)에 이미 실려 커밋됐음을 확인함 — 내 커밋은 watch.py 나머지 한 건(9fb83391)뿐.",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.approvalcount",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
