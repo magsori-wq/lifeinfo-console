@@ -2,8 +2,8 @@
  "rev": "bb5cce1e",
  "counts": {
   "total": 253,
-  "osmu_done": 251,
-  "osmu_pending": 2,
+  "osmu_done": 252,
+  "osmu_pending": 1,
   "indexed": 0,
   "index_pending": 253,
   "index_requested": 156,
@@ -58,23 +58,6 @@
     "g": true,
     "n": true,
     "t": true,
-    "i": false
-   }
-  },
-  {
-   "code": "F2-17",
-   "title": "2026 추석 민생안정대책 총정리 — KTX 운임 인하",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
     "i": false
    }
   },
@@ -238,6 +221,24 @@
     "g": true,
     "n": false,
     "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "F2-17",
+   "title": "2026 추석 민생안정대책 총정리 — KTX 운임 인하",
+   "need": [
+    "네이버",
+    "쓰레드",
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": true
    }
   }
