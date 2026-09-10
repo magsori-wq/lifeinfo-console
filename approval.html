@@ -413,7 +413,13 @@ async function send(a,c,why,el){
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({action:a,code:c,why:why})});
     var d=await r.json();
-    if(d.ok){ toast('✅ '+c+' 결재 완료 — 목록을 새로 읽습니다');
+    if(d.ok && d.already){
+      // 🔴 2026-09-10 사장님 지적: "두번,세번 다 누르면 명령이 실행되네! 버그야?"
+      //    서버가 이미 반영됐음을 조용히 알려준다 — 실패가 아니다.
+      toast('✅ '+c+' 이미 승인됨'+(d.at?(' ('+d.at+')'):''));
+      setTimeout(refresh,600);
+    }
+    else if(d.ok){ toast('✅ '+c+' 결재 완료 — 목록을 새로 읽습니다');
       setTimeout(refresh,600); }  // 전체 새로고침 대신 refresh() — 깜빡임 없이 갱신
     else { toast('🔴 실패: '+String(d.error||'').slice(0,90)); disarm(el, back); }
   }catch(e){
