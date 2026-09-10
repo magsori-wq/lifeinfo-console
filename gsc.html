@@ -300,10 +300,26 @@
     var el=document.getElementById('crawlHealth');
     if(!recent.length){ el.innerHTML=''; return; }
 
+    /* 🔴 2026-09-11: 배너가 '최근 12편 중 N편'을 전체처럼 보여줬다(사장님 캡처로 발견).
+       실측 그날: 화면 "Redirect error 11편" · 실제 전체 83편/251편(33%).
+       표본 숫자만 크게 띄우면 규모를 33%나 작게 읽는다 — 전체를 같이 적는다. */
+    var allBenign=0, allKnown=0;
+    dbPosts.forEach(function(p){
+      var ix=posts[p.code]||{};
+      if(!ix.fetch && !ix.state) return;
+      allKnown++;
+      if(BENIGN[ix.fetch]) allBenign++;
+    });
+
     var bad=fail>0;
     var head=bad
       ? '🔴 <b>크롤 실패 '+fail+'편</b> — 서버·차단·주소 문제다. 이건 진짜 이상이다'
-      : (benign? '⚠️ <b>Redirect error '+benign+'편 — 경보 아님</b> (블로거의 알려진 표시 오류)'
+      : (benign? '⚠️ <b>Redirect error — 경보 아님</b> (블로거의 알려진 표시 오류)'
+                 +'<div style="margin:4px 0 0;font-size:12.5px;color:#8a97ab">'
+                 +'최근 크롤 '+recent.length+'편 중 <b style="color:#ffd166">'+benign+'편</b>'
+                 +' · 전체 <b style="color:#ffd166">'+allBenign+'편</b> / '+allKnown+'편'
+                 +(allKnown? ' ('+Math.round(allBenign*100/allKnown)+'%)':'')
+                 +' — 위 표는 <b>최근 12편만</b> 보여준다</div>'
                : (ok? '🟢 <b>크롤 정상</b> — 최근 '+recent.length+'편 이상 없음'
                     : '· 크롤 판정 보류 — 조회 기록이 오래됐다'));
     var why=bad
