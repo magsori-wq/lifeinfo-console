@@ -5487,9 +5487,11 @@
    "due": "2026-09-10",
    "cmd": "start https://brandconnect.naver.com/988330275521216/affiliate/products",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "gate-order-a6-0907",
@@ -7252,6 +7254,16 @@
    "what": "CP실측검증(17:25~17:44 스냅샷): 어긋남 1건 확정 — approval_m.json(폰 결재함, 17:25 굽힘)이 6건인데 실시간 approvalcount는 7건(B3-05 발행승인 17:39:50 V0통과 후 추가, IRREVERSIBLE·되돌릴수없음 등급인데 폰 화면엔 아직 안 뜸). pub0910e402 배치 제목에 'E4-02...사장님 승인완료' 잔존(실제는 E4-02 skip, B4-11로 재배정되어 거기서 승인됨 — falsepos가 이미 잡음). 나머지 일치: watch due 43건(claude37+user6, selfcheck와 정확히 일치)·pace.json(오늘6편·재고1·B3-05, 라이브 재실측과 100% 일치)·osmu_text.json(C2-15 쓰레드 501자, 실제 osmu/쓰레드용_*.txt와 바이트단위 일치)·tripconnect-links-0907(문서 4/10과 일치)·derivedguard(이상없음). 결재함 6개 항목 자체는 전부 state=todo로 완료된 것 없음(끝난 일이 남아있는 오탐은 이번엔 없었음).",
    "due": "2026-09-11",
    "cmd": "python -m studio.approvalcount && python -c \"import json,io;d=json.load(io.open('webapp/approval_m.json',encoding='utf-8'));print('baked count=',d['count'],'generated=',d['generated'])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "claude-backlog-0910b",
+   "added": "2026-09-10",
+   "what": "관제탑 몫 37건 정리 결과 — 끝났다(닫아도 됨) 27건: a603-dup-check-0910·b213-fact-0910·b213-naver-ready-0910·b411-recode-0910·c215-fix-before-publish·e402-fail-cause-0910·falsepos-fix-0910·fix-approval-by-0909·fix-approval-readable-0909·fix-report-panel-split-0909·fix-reports-unify-0909·fix-reports-visibility-0909·gsc-property-split-0910·naver-rel-url-0910·naver-xlink-5drafts-0910·ordercmd-fix-0910·osmu-c215-f217-0910·property-compare-0910·pub0910-v0pending·pubbatch-single-0910·seodesc-sync-0910·xlink-a312·xlink-b213·xlink-b411·xlink-c215·xlink-e303·xlink-f217. 남았다 10건(그대로 유지): f115-passport-eu-gap·naver-boost-yield·naver-stats-check·webuniq-0908·a217-energy-voucher-source·adsense-reapply-after-0826(게이트 미달 상시감시)·crosslink-threads-3-policy·dupcheck-miss-typhoon-flood(재현확인 D2-07 여전히 미탐지)·thimg-0831-4(5건 위반 그대로)·triage-0906b. 판정불가 0건.",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.watch due",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
