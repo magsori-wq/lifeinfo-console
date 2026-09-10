@@ -6955,6 +6955,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "ordergate-retro-code-0910",
+   "added": "2026-09-10",
+   "what": "🔴 batchboard order 게이트 오탐 — 지시서 본문의 **회고 문장 속 코드**(예: '오늘 C2-15 표 수정도…')를 실행 대상으로 보고 '한 번에 한 편' 위반으로 거부한다. 실행 명령(gh workflow run)에 있는 코드만 세야 한다. 오늘 E4-02 발행 지시서가 이것 때문에 두 번 거부됐다",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.batchboard order --id <배치> --file <회고문장에 다른 코드가 든 지시서>",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "report-gap-0910",
+   "added": "2026-09-10",
+   "what": "보고누락 원인규명: batch.json done 25건 중 32%(8건)가 이과장 자가마킹 없이 관제탑 발견으로 닫힘. 헤드라인 산출물(초안/발행/게시)은 10/10 정상, 부가작업(fix·재확인·레거시)은 8/8 누락. 주원인=구조(약70%, 동시배치 다중+7000자 보일러플레이트에 mark명령 희석+정합성점검 부재) > 이과장(15%, 우선순위) = 관제탑(15%, loopcheck가 git내용 미확인). 근거=docs/보고누락_원인규명_20260910.md",
+   "due": "2026-09-11",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/batch.json',encoding='utf-8'));b=d['batches'];print([k for k,v in b.items() for it in v.get('items',[]) if it.get('state')=='todo' and v.get('order_at')])\" 로 재고 로직 A/B/C 반영여부 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-a312-crosslink-fix",
+   "added": "2026-09-10",
+   "what": "🔗 A3-12 네이버 글에 교차링크가 빠졌습니다 — 사장님이 지적하신 그 글입니다(224407078247). 직전 H1-04 에는 있었는데 이번엔 원고 자체에 없었습니다(게이트가 그 항목을 안 보고 있었고, 방금 추가했습니다). 네이버 글 수정 화면에서 본문 맨 아래에 아래 3줄을 붙여 주십시오. 🔗 다른 채널에서도 보기 / ▸ 블로그 원문 https://lifeinfo8975.blogspot.com/2026/09/27-95-2026.html / ▸ 쓰레드 https://www.threads.com/@magsori8975/post/DdFDyjMEyvZ  ⚠️ 링크는 각각 한 줄에 단독으로 붙여넣어야 카드가 뜹니다(2026-09-07 확립)",
+   "due": "2026-09-10",
+   "cmd": "https://blog.naver.com/magsori8975/224407078247",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
