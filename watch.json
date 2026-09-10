@@ -6955,16 +6955,6 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
-  },
-  {
-   "id": "ordergate-retro-code-0910",
-   "added": "2026-09-10",
-   "what": "🔴 batchboard order 게이트 오탐 — 지시서 본문의 **회고 문장 속 코드**(예: '오늘 C2-15 표 수정도…')를 실행 대상으로 보고 '한 번에 한 편' 위반으로 거부한다. 실행 명령(gh workflow run)에 있는 코드만 세야 한다. 오늘 E4-02 발행 지시서가 이것 때문에 두 번 거부됐다",
-   "due": "2026-09-11",
-   "cmd": "python -m studio.batchboard order --id <배치> --file <회고문장에 다른 코드가 든 지시서>",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
   }
  ]
 }
