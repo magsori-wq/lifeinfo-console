@@ -7453,6 +7453,17 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-title-audit-0911",
+   "added": "2026-09-11",
+   "what": "관련글 링크의 제목↔URL 정합 전수 검사 도구가 없다. 09-11 에 즉흥 스크립트로 3번 오탐(HTML의 <a href= 를 제목으로 · '※ 이 글의 원본:' 안내문구를 제목으로). '함께 보면 좋은 글' 절만 파싱해 DB 제목과 대조하는 담당 도구를 만들 것",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.selfcheck",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
