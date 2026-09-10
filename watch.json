@@ -329,8 +329,10 @@
    "what": "[승인 시점 참고 · 할 일 아님] A1-12(근로장려금 반기신청)의 dupcheck 🔴강한중복(vs A1-03)은 2026-08-08 실측 오탐이다 — 발행 가능. ①겹침 1.00 은 공유 키워드가 '근로장려금' 하나뿐이라 나온 min측 비율 artifact ②bodydup --live 0.048(비교 192편) ③A1-03 라이브 본문의 '반기' 3회는 전부 FAQ 한 문단이고 상반기·하반기·정산·9월1 은 0회 ④A1-12 도입부가 'A1-03 을 먼저 보라'고 내부링크로 명시 = 저자가 관계를 이미 정리했다. 같은 이유로 F4-14 의 🟡(vs F4-09)도 오탐 — F4-09 본문이 '탐방로는 대피소와 별도 예약'이라며 넘긴 짝 글이다. 관련 = watch dupcheck-green-miss(그쪽은 🟢 오탐, 이쪽은 🔴 오탐 = 같은 토큰화 약점의 양면).",
    "cmd": "python -m studio.bodydup --file 근로장려금반기신청_글_HTML.txt --code A1-12 --live",
    "owner": "claude",
-   "state": "wait",
-   "flag": "dupcheck 🔴 를 근거로 A1-12 를 되돌리지 말 것 — 실측으로 오탐 확인됨"
+   "state": "done",
+   "flag": "dupcheck 🔴 를 근거로 A1-12 를 되돌리지 말 것 — 실측으로 오탐 확인됨",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): A1-12 3채널 전부 발행 완료·파일도 posts/ 로 이동"
   },
   {
    "id": "seodesc-queue5",
@@ -4472,7 +4474,9 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.dupcheck \"태풍 피해 자동차보험 자기차량손해 처리 방법 침수 전손 총정리 (2026 가을 태풍철)\"  # D2-07 과 동일소재인데 🟢로 나옴",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 09-05 괄호핵심어 수정(8a9cfcab) 이후 재실행하니 🟢오판→🟡, 재현 안 됨"
   },
   {
    "id": "insp-collab-0903",
@@ -6707,8 +6711,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.approvalcount && python -c \"from studio import approvalcount as a; import json,io; d=json.load(io.open(a.bake_json()[0],encoding='utf-8')); print([set(['do','who','sub','waited'])<=set(it) for it in d['items']])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 검증 cmd 결과 전부 True"
   },
   {
    "id": "fix-report-panel-split-0909",
@@ -6717,8 +6723,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.approvalcount && python -m studio.falsepos && python validate_db.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): reports·approvalcount·falsepos·validate_db 전부 정상, 커밋 반영 확인"
   },
   {
    "id": "fix-reports-unify-0909",
@@ -6727,8 +6735,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.reports && grep -o \"<div class='ses'>[^<]*\" webapp/reports.html && python -m studio.approvalcount && python -m studio.falsepos && python validate_db.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 같은 커밋으로 해소·도구 정상 동작 확인"
   },
   {
    "id": "chrome-infobar-off-0909",
@@ -6747,8 +6757,10 @@
    "due": "2026-09-10",
    "cmd": "python -c \"from studio import approvalcount as a; a.bake_json()\" && python -m studio.approvalcount",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): bake_json 정상 실행 확인"
   },
   {
    "id": "fix-reports-visibility-0909",
@@ -6757,8 +6769,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.reports && grep -c \"class='cc \" webapp/reports.html && grep -c \"grid2\" webapp/reports.html",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 같은 커밋으로 해소·도구 정상 동작 확인"
   },
   {
    "id": "e104-db-title-drift-0909",
@@ -6835,8 +6849,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.batchboard order --id routinelog --actor 루틴7",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 같은 날 property-compare-0910(루틴7)이 '두 속성 데이터 같다'로 답함"
   },
   {
    "id": "naver-post-e303-ready",
@@ -6855,8 +6871,10 @@
    "due": "2026-09-10",
    "cmd": "curl -s 'https://www.law.go.kr/DRF/lawService.do?OC=test&target=law&MST=272995&type=JSON' | grep -o '1억원' | head -1",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): law.go.kr MST=272995 직접 조회로 1억원 확인·B2-13 발행 완료"
   },
   {
    "id": "property-compare-0910",
@@ -6865,8 +6883,10 @@
    "due": "2026-09-10",
    "cmd": "python -c \"import sys;sys.path.insert(0,'studio');import searchconsole as SC;from googleapiclient.discovery import build;wm=build('webmasters','v3',credentials=SC._load_creds(),cache_discovery=False);[print(s['siteUrl'],s.get('permissionLevel')) for s in wm.sites().list().execute().get('siteEntry',[])]\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴7"
+   "state": "done",
+   "by": "루틴7",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 자체 완결. 남은 확인은 validation-result-0915 로 분리돼 있음"
   },
   {
    "id": "naver-post-b213-ready",
@@ -6895,8 +6915,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:3e34ca81"
+   "state": "done",
+   "by": "세션:3e34ca81",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): v0check list — C2-15·B4-11·F2-17 전부 🟢pass"
   },
   {
    "id": "a1-04-recheck-0910",
@@ -6915,8 +6937,10 @@
    "due": "2026-09-10",
    "cmd": "python -c \"import io,json; b=json.load(io.open('webapp/batch.json',encoding='utf-8'))['batches']['fix0910c215']; print([i['state'] for i in b['items']])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): fix0910c215 배치 done·C2-15 표 수정 후 V0 재통과·라이브 반영 확인"
   },
   {
    "id": "mysid-wrong-0910",
@@ -6995,8 +7019,10 @@
    "due": "2026-09-10",
    "cmd": "python studio/blogger.py crosslink --code A3-12",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 라이브 curl 확인 — 교차링크 블록 붙어 있음"
   },
   {
    "id": "crosslink-audit-0910",
@@ -7025,8 +7051,10 @@
    "due": "2026-09-10",
    "cmd": "gh run view 34436824955 -R magsori-wq/lifeinfo-source --log-failed",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): b411-recode-0910 으로 이어져 해결(B4-11 재배정 검증됨)"
   },
   {
    "id": "osmu-c215-f217-0910",
@@ -7045,8 +7073,10 @@
    "due": "2026-09-10",
    "cmd": "python studio/blogger.py crosslink --code F2-17",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 라이브 curl 확인 — 교차링크 블록 붙어 있음"
   },
   {
    "id": "ordercmd-fix-0910",
@@ -7055,8 +7085,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.ordercheck",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): ordercheck 재실행 ✅ 463종 정상 0건"
   },
   {
    "id": "b411-recode-0910",
@@ -7065,8 +7097,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): pubqueue 에 B4-11 정상 표시·validate_db FAIL 0"
   },
   {
    "id": "xlink-c215",
@@ -7075,8 +7109,10 @@
    "due": "2026-09-10",
    "cmd": "python studio/blogger.py crosslink --code C2-15",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 라이브 curl 확인 — 교차링크 블록 붙어 있음"
   },
   {
    "id": "naver-xlink-5drafts-0910",
@@ -7085,8 +7121,10 @@
    "due": "2026-09-10",
    "cmd": "grep -l '다른 채널에서도 보기' osmu/네이버용_*.txt",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-10",
+   "result": "실측 확인(2026-09-10 이부장 판정): 네이버 원고 5편 전부 교차링크 블록 확인(H1-04 형식으로 통일까지 완료)"
   },
   {
    "id": "index-gap-0910",
@@ -7136,6 +7174,16 @@
    "what": "적체 재실측: watch(claude몫 30건) 중 ✅완료19 ⏳남음9 ❓판정불가2, board정체(currents 11건) 중 ✅완료(실작업끝·mark만필요)8 ⏳진짜정체1(pub0910e402) 잡음(고아포인터)2(b,zzz). 닫아도되는 watch id: a1-12-dupcheck-red,dupcheck-miss-typhoon-flood,fix-approval-readable-0909,fix-report-panel-split-0909,fix-reports-unify-0909,fix-approval-by-0909,fix-reports-visibility-0909,gsc-property-split-0910,b213-fact-0910,property-compare-0910,pub0910-v0pending,c215-fix-before-publish,xlink-a312,e402-fail-cause-0910,xlink-f217,ordercmd-fix-0910,b411-recode-0910,xlink-c215,naver-xlink-5drafts-0910. 닫아도되는 board currents: draft0903,naverlab0909,fix0910b213,draft0910e402,draft0910f217,pub0910a312,xlink0910a312(A3-12 실물완료,mark만),osmu0901a216(frozen이라 unfreeze 먼저 필요, A2-16 3채널 DB확인상 실물완료).",
    "due": "2026-09-10",
    "cmd": "python -m studio.watch due",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "seodesc-drift-0910",
+   "added": "2026-09-10",
+   "what": "검색설명 라이브≠기록 35편(전수확인 33편 재검·+2편 신규): 진짜 32편·오탐 1편(A2-15,entity차이뿐). 원인=발행시 seo_desc.json 1회 자동기록 후 '브라우저 직접 주입'으로 라이브만 개선되고 기록은 갱신 안 됨(3f5b2276·18359b99 등 주입커밋이 seo_desc.json 미터치 확인). 라이브는 이미 양호(state=ok, 더 나은 후킹형)라 되돌릴 필요 없음. 처방: ①32편 seodesc set으로 기록을 라이브값에 역동기화 ②주입 SOP에 'set으로 기록' 단계 추가(재발방지) ③cmd_scan의 mismatch 비교를 _same_head(entity unescape)로 바꿔 A2-15류 오탐 제거",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.seodesc scan",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
