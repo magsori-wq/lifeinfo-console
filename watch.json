@@ -6887,6 +6887,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "approve-idempotent-0910",
+   "added": "2026-09-10",
+   "what": "결재 중복승인 버그 수정: approve_server.py 에 _already_done() 실행전 검사 추가(publish_go·topic_approve·topic_pick·topic_drop·watch_done·watch_approve). 이미 반영된 결재는 재실행하지 않고 {already:true,at:<시각>} 로 조용히 성공 응답. approval.html send() 는 already 응답을 '✅ 이미 승인됨(시각)' 토스트로 표시. 실측: publish_go C2-15 연속 2회 호출 → 1회만 반영, 2회차 already=true·커밋 없음. watch_done 테스트항목 연속 2회 호출 → 1회차만 result 기록, 2회차는 result 안 덮어씀·already=true. 정상 승인 경로(첫 실행)는 그대로 작동 확인.",
+   "due": "2026-09-11",
+   "cmd": "curl -s -X POST http://127.0.0.1:8011/api/approve -H 'Content-Type: application/json' -d '{\"action\":\"publish_go\",\"code\":\"C2-15\"}' # already:true 이면 정상(회귀 없음)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
