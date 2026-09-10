@@ -7129,6 +7129,46 @@
    "by": "이부장",
    "done_at": "2026-09-10",
    "result": "형식통일 5편 완료·커밋됨(동시작업 경합으로 [이부장] 8f81bb64에 편입, 내용은 검증완료). H1-04도 블로그원문 URL이 본문끝 안내줄+교차링크블록에 중복 존재=기존 표준패턴 확인, 5편도 동일구조라 손대지 않음"
+  },
+  {
+   "id": "nps-refund-rate-20260910",
+   "added": "2026-09-10",
+   "what": "국민연금 반환일시금 계산용 3년만기 정기예금 평균이자율의 연도별 실수치(%)를 법령 원문에서 못 찾음 — 시행령 제50조는 산정방식만 규정, 수치는 공단이 매년 별도 고시",
+   "due": "2026-09-17",
+   "cmd": "국민연금공단 콜센터(1355) 문의 또는 minwon.nps.or.kr 반환일시금 모의계산 화면을 claude-in-chrome으로 열어 실제 적용 이자율 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "a603-dup-check-0910",
+   "added": "2026-09-10",
+   "what": "판정 C — 나라배움카드는 moel.go.kr·gov.kr·work24.go.kr 어디에도 문자열이 없음(3곳 직접 확인). 국민내일배움카드의 공식 대체명은 직업능력개발계좌뿐. A6-03은 이 제목으로 쓰지 않음 — 이름을 출처로 못 대거나(C), 내용을 채우면 A1-06과 같은 제도가 됨. dupcheck는 제목키워드만 봐서 놓침.",
+   "due": "2026-09-10",
+   "cmd": "cat docs/source_A6-03_나라배움카드_20260910.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "falsepos-fix-0910",
+   "added": "2026-09-10",
+   "what": "falsepos 오탐 3건 수정(a6e6dfc7). ①-seodesc/-naver 등 서브코드를 batchboard._live_state()에 위임해 A3-12-seodesc·B2-13-seodesc 오탐 해소 ②owner_variants 논리 역전 정정 — norm_owner가 실제 페어(이과장/이과장(작업 세션), 이부장/이부장(관제탑))를 여전히 같은 값으로 묶는지 직접 검증하도록 변경 ③selfcheck.py가 falsepos stdout을 문자열로 재파싱하다 요약줄+안내줄까지 이중집계해 '6건'이라 잘못 말하던 것을 falsepos.summarize() API 신설로 해결. 회귀규칙 2건 신규 append(_r_stale_label_delegates_live_state_0910, _r_selfcheck_uses_falsepos_summarize_0910) + owner_variants는 제자리 정정으로 자체 회귀검사. 검증 4종: falsepos 4→1건(E4-02는 지시 범위 밖 별개 실제문제, 코드 재배정 후 배치제목 미갱신) · selfcheck 오탐 카운트 falsepos와 일치(🔴1·⚠️0) · validate_db FAIL 0 · gatecheck 🔴0건. E4-02 건은 미해결로 남김(이번 지시 범위 밖).",
+   "due": "2026-09-10",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-rel-url-0910",
+   "added": "2026-09-10",
+   "what": "네이버 원고 4편(E3-03·B2-13·F2-17·C2-15) 관련글 줄에 URL 보완 완료. A3-12는 이미 게시돼 제외(수정 불가). 못 찾은 것 없음(B2-11·D1-09 부분일치로 각 1건씩 확정). studio/naver.py 에 URL누락 경고 게이트 추가 완료(끊어서 확인함)",
+   "due": "2026-09-10",
+   "cmd": "grep -A3 '함께 보면 좋은 글' osmu/네이버용_알뜰폰번호이동위약금.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
