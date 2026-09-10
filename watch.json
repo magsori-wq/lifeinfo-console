@@ -6907,6 +6907,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:6cfa517f"
+  },
+  {
+   "id": "dupcheck-lowdenom-0910",
+   "added": "2026-09-10",
+   "what": "dupcheck.check() 저분모 오탐 고침 — base(분모)<=2 이고 base_s∩base_o 가 비면 STRONG(0.60) 못 넘게 캡. E4-02(국세청 환급서비스)↔A3-06(장애인연금) 겹침 '최대' 하나로 score=1.00 오탐이던 것을 0.59 관련주의로 정정. 187편 전수 자기대조: 등급변경 5쌍(전부 진짜 오탐 — A3-06↔A2-13·A5-04·F4-11 '최대'/'700원' 우연매칭, F4-08↔A2-07 '여름방학' 파생, F4-17↔D1-08 '10월·연휴'), 기존 확정사례(A2-03↔A2-13 0.67·C4-03↔C4-04 0.60·G1-03↔G2-01 0.60·B2-03 지역개발채권 1.00) 전부 불변. falsepos.RULES 에 회귀 규칙 _r_dupcheck_lowdenom_0910 추가(E4-02 예시가 다시 STRONG 넘으면 잡음). validate_db·selfcheck 정상(무관 사전이슈만).",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.dupcheck \"국세청 원클릭 환급서비스, 모르고 놓친 적 있나요? — 최대 5년 치 세금 환급금 무료 조회 (2026)\" --json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
