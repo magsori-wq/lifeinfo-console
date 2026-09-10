@@ -662,7 +662,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   // 🔴🔴 **결재함은 kind=approve 만 센다 — 조치는 별도 접힘 구역으로**
   //    (2026-09-10 사장님 지적: "결재함이 지저분해지고 일이 남은 것 같아").
   //    studio/approvalcount.py rows()/action_rows() 와 같은 조건 — 두 곳을 함께 고친다.
-  var boss=[], lee=[], actions=[];
+  var boss=[], lee=[], actions=[], actionsFutureN=0;
   T.forEach(function(t){
     // 🔴 **초안 없는 글감은 사장님 결재함에 올리지 않는다** (2026-09-04)
     //    사장님이 두 번 지적하셨다 — 08-31 "승인을 뭘 보고 승인하냐구? 초안도
@@ -720,8 +720,17 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     //    ⚠️ studio/approvalcount.py 도 같은 조건이다 — 두 곳을 함께 고친다.
     // 🔴 승인(kind=approve)이 아니면 결재 건수에 넣지 않는다 — 「☑️ 미결 조치」로 보낸다.
     //    지우지 않는다: 사장님이 무엇이 남았는지 보셔야 한다(접힌 구역이라 눈에는 안 띈다).
+    // 🔴🔴 **기한 도래분만 보인다** (2026-09-11). 그전엔 여기가 기한을 안 봐서
+    //    studio/approvalcount.action_rows() 와 같은 자료라던 주석과 달리 실제로는
+    //    12건(전부) vs 미결사항 탭 5건(도래분)으로 갈려 있었다 — 같은 것을 두
+    //    곳에서 정의한 결과다. 판정 조건은 studio.approvalcount.is_action_due()
+    //    와 같다(파이썬을 못 불러 그대로 옮겨 적는다 — uicheck 가 대조한다).
     if(w.kind!=='approve'){
-      actions.push({id:w.id, what:w.what||w.id, due:w.due||'', blocked:(w.state==='blocked'), by:w.by||''});
+      if(String(w.due||'9999')<=TODAY){
+        actions.push({id:w.id, what:w.what||w.id, due:w.due||'', blocked:(w.state==='blocked'), by:w.by||''});
+      } else {
+        actionsFutureN++;               // 기한 전 — 목록은 안 싣는다(펼쳐도 압도됨), 개수만
+      }
       return;
     }
     // 🔴 코드만 보이면 사장님이 그 내용을 다시 찾아야 한다 (2026-08-27 지시).
@@ -1047,7 +1056,8 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   }).join('') : '<p class="none">✅ 없음</p>';
   var actionsDetails = '<details style="margin-top:10px"><summary class="why" style="cursor:pointer">'
     +'☑️ 미결 조치 '+actions.length+'건 펼치기 '
-    +'<span style="opacity:.6;font-weight:400">(결재 건수에 안 들어감 — 사장님이 언젠가 하실 일)</span>'
+    +'<span style="opacity:.6;font-weight:400">(결재 건수에 안 들어감 — 기한 도래분만'
+    +(actionsFutureN?' · 기한 전 '+actionsFutureN+'건 별도(미결사항 탭)':'')+')</span>'
     +'</summary>'+actionsBody+'</details>';
   H+=pane('🙋','사장님 결재 대기',bossBadge,bossBody+actionsDetails);
 

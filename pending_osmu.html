@@ -140,9 +140,13 @@ async function fallbackPending(){
   //    실은 studio/approvalcount.py(결재함 건수 진실원)에 있는
   //    `due<=오늘` 조건이 이 화면에는 없었다 — 기한이 안 온 16건이 섞여
   //    "25건"으로 부풀었다(사장님 캡처로 실측). 여기서도 같은 기준으로 자른다.
+  //    🔴🔴 2026-09-11 — kind==='approve' 도 뺀다. 그전엔 승인 건까지 섞여
+  //    "조치"로 잡혔다(studio.approvalcount.is_action_due() 와 같은 조건 —
+  //    파이썬을 못 부르므로 조건을 그대로 옮겨 적는다. uicheck 가 대조한다).
   var __today=new Date().toISOString().slice(0,10);
   var __userItems=((w&&w.items)||[]).filter(function(x){
-      return (x.owner==='user') && ((x.state||'todo')!=='done'); });
+      return (x.owner==='user') && ((x.state||'todo')!=='done')
+          && (x.kind||'')!=='approve'; });
   function __actMap(x){ return {id:x.id||'', what:x.what||'', due:x.due||'',
       cmd:x.cmd||'', state:x.state||'todo'}; }
   function __actSort(a,b){ return (a.due||'9999-99-99').localeCompare(b.due||'9999-99-99'); }

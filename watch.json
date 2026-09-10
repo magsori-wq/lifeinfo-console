@@ -7464,6 +7464,39 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "seodesc-h104-0911",
+   "added": "2026-09-11",
+   "what": "H1-04 검색설명 미부착 — live_len 0, og_len 52(블로그 공통문구가 그대로 노출 중). 발행 2일 경과. claude-in-chrome 으로 붙이고 seodesc set 으로 기록까지 갱신할 것",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.seodesc scan --only H1-04",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-h104-live-0911",
+   "added": "2026-09-11",
+   "what": "H1-04 라이브 2곳에 죽은 관련글 링크(404) — 독자가 '함께 보면 좋은 글'을 누르면 404를 만납니다. 로컬 원고 3개는 고쳤습니다. ①네이버 글(224406257888) 맨 아래 '함께 보면 좋은 글' 줄의 URL 을 아래 주소로 교체 — 사장님 손(30초) ②블로그스팟 본문도 같은 오류인데 update-post 는 본문 전체 교체라 이부장이 차이 확인 후 별도 진행",
+   "due": "2026-09-11",
+   "cmd": "https://lifeinfo8975.blogspot.com/2026/09/2026_0188069694.html",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "falsepos-fix-0911",
+   "added": "2026-09-11",
+   "what": "uicheck·falsepos 오탐 2건 수정 + 진짜 드리프트(action 카운트 12 vs 5) 해소. approvalcount.is_action_due()를 단일 규칙으로 approve_server.py가 위임, pending_osmu.html·approval.html JS는 같은 조건(kind!=approve && due<=오늘)으로 거울. action_rows()=5(due도래분)·action_future_count()=7, 폰 approval_m.json에 action_future_count 필드 추가. uicheck·falsepos는 selftest_due_behavior() 합성데이터 실행으로 판정(문자열매칭 제거). 감지력 확인: rows()에 due필터 주입→양쪽 다 잡음→원복 확인함.",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
