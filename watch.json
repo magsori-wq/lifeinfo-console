@@ -7431,6 +7431,17 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "audit-conflict-0911",
+   "added": "2026-09-11",
+   "what": "uicheck·falsepos 결재함 due 규칙 경고 2종 모두 오탐 확정(코드+실측). 진짜 문제는 따로 있음: 조치(action) 건수를 세는 3자리(pending_osmu.html·approve_server.py·approvalcount.action_rows) 중 앞 둘만 due<=오늘로 거르고 09-10 신설된 action_rows()는 안 걸러 결재함 12건 vs 미결사항탭/폰 5건으로 갈림(실측). 세션보고 2건(draft0909h104·osmu0909h104)은 같은 사실(H1-04 검색설명 미부착, 발행 2일 경과)이 각기 다른 보고에 언급 안 돼 사각지대. OSMU 원고(네이버용_추석차례상비용전통시장vs대형마트.txt=H1-04)의 '관련글' 교차링크가 H1-02 옛 permalink(2026_01628010759, 404)를 가리키고, 이미 게시된 라이브 네이버 글(logNo 224406257888)에도 그 죽은 링크가 실제로 박혀 있음(curl로 확인). 상세=docs/조사_판정기모순_20260911.md",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.uicheck && python -m studio.falsepos && python -m studio.sessionaudit",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
