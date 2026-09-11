@@ -7586,6 +7586,17 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "afflink-h1-06-naver",
+   "added": "2026-09-11",
+   "what": "권고: H1-06 네이버 게시 — 원고·태그·전용썸네일 준비 완료, naver-draft 게이트 전부 통과(상세도✅·제목✅). 제목: 이자벨 위페르 SPAF 2026 〈새〉 예매 — 14시 매진 떠도 포기는 이릅니다 / 첨부: thumbs_naver/233n_spaf_naver.png / 태그: #서울국제공연예술제 #SPAF2026 #이자벨위페르 #서강대메리홀 #SPAF예매. 예매가 오늘 14시 오픈이라 빠를수록 유입에 유리합니다.",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.pipeline naver-draft --code H1-06 --file osmu/네이버용_예매오픈이바로오늘이자벨위페르주연새SPAF20.txt",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
