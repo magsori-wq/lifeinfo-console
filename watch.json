@@ -8010,9 +8010,19 @@
   {
    "id": "threads-reply-newtab-0911",
    "added": "2026-09-11",
-   "what": "쓰레드 답글 붙여넣기가 새 탭에서만 안 들어간다(조사)",
+   "what": "쓰레드 답글 붙여넣기가 새 탭에서만 안 들어간다 — 원인 조사(상세: docs/일일_문제기록.md 09-11 쓰레드 답글 절)",
    "due": "2026-09-12",
-   "cmd": "python -m studio.batchboard show",
+   "cmd": "grep -n -A12 '쓰레드 답글 붙여넣기가 새 탭' docs/일일_문제기록.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "ig-caption-url-drop-0911",
+   "added": "2026-09-11",
+   "what": "인스타 캡션 편집 시 교차링크 블록이 사라진다 — 원인 조사(상세: docs/일일_문제기록.md 09-11 인스타 캡션 절)",
+   "due": "2026-09-12",
+   "cmd": "grep -n -A8 '인스타 캡션 편집 시 교차링크' docs/일일_문제기록.md",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
