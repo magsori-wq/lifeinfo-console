@@ -7535,6 +7535,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "v0reject-g3-05",
+   "added": "2026-09-11",
+   "what": "🔴 V0 반려 확인 요청 — G3-05 「2026 진주남강유등축제 일정·관람료·프로그램 총정리 (개천절 연휴 · 」. 검사자 V0검사관 · 2026-09-11T09:18. 사유 요약: 내용은 통과(§3 부교 편도vs종일권 손익분기 계산예시(6000÷2000=3회)+4인가족 24000원 대조=판단형비교, §4 불꽃놀이 특정3일만=함정) — 본문은 고치지 말 것. 반려 사유는 기술 결함 2곳: ①2줄 img src 호스트가 lifeinfo8975.blogspot.com/thumbs/232_jinju_lantern.png 인데 실측 404(대기초안 42건 중 G3-05만 이 패턴, 나머지 전부 magsori-wq.github.io/lifeinfo-console/thumbs/ 사용=200) → 그 호스트로 교체할 것.  … 🔴 전문은 `python -m studio.v0check gate --code G3-05` 로 읽으십시오(길어서 여기 안 싣습니다). 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다.",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.v0check gate --code G3-05",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
