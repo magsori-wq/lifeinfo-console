@@ -8026,6 +8026,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "preflight-input-repeat-0911",
+   "added": "2026-09-11",
+   "what": "발행 워크플로 사전점검 실패 09-11 4건 전부 '입력값' 문제(게이트는 정상, 전부 1~2분 뒤 재시도 성공) — ①H1-06 01:26Z 본문 파일 origin 미반영(82776e5 푸시 뒤 성공) ②G3-05 02:30Z·C4-08 06:42Z title 입력('G3-05 진주유등축제' 식 코드+약칭)이 파일 제목과 단어 0개 겹침으로 사전점검 실패 — 같은 사유 하루 2회 ③E4-03 07:40Z 미정의 중분류 E4(09-10 05:49Z와 같은 사유 재발, b4a11e4 taxonomy 신설로 해소). ②가 반복 = 지시서(dispatch)의 gh 명령 예시가 title 칸에 '코드+약칭'을 넣게 가르치는지 확인할 것",
+   "due": "2026-09-12",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 10 --json conclusion,createdAt,databaseId",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d0519052"
+  },
+  {
+   "id": "blogger-about-tabs-0911",
+   "added": "2026-09-11",
+   "what": "Browser 1 에 Blogger 소개페이지 편집 탭 2개(746021178·746021183)가 남아 있다 — 저장은 17:29 끝났는데 unsaved 표시가 남아 이동 시 Leave site? 가 뜬다. tabs_close 타임아웃(20:1x). 확인창은 없음(스크린샷). 이 탭으로 이동하지 말 것 · 정리 방법 확인",
+   "due": "2026-09-12",
+   "cmd": "python -c \"print('tabs_context_mcp 로 746021178·746021183 존재 여부 확인')\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
