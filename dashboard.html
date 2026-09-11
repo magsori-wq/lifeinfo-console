@@ -374,6 +374,7 @@
 
   <div class="sub" id="dbInfo" style="margin-top:14px"></div>
 
+<script src="cp_clip.js"></script>
 <script>
   var GOAL=200;
   var days=['일','월','화','수','목','금','토'];
@@ -806,9 +807,9 @@
   }
   function copyHtml(btn,text){
     if(!text)return;
-    navigator.clipboard.writeText(text).then(function(){
+    cpCopy(text,function(){
       var o=btn.textContent; btn.textContent='✅ 복사됨!'; setTimeout(function(){btn.textContent=o;},1500);
-    },function(){});
+    });
   }
   function curCode(){return document.getElementById('linkPost').value;}
   function initLinkTool(){

@@ -64,6 +64,7 @@
   </div>
 </div>
 
+<script src="cp_clip.js"></script>
 <script>
   function parseSrc(raw){
     var title=document.getElementById('title').value.trim();
@@ -123,8 +124,8 @@
   function cp(id,label){
     var o=document.getElementById(id);
     if(!o.value){alert('먼저 변환하기를 누르세요.');return;}
-    o.select(); navigator.clipboard.writeText(o.value);
-    alert(label+'용 텍스트를 복사했습니다!');
+    o.select();
+    cpCopy(o.value,function(){ alert(label+'용 텍스트를 복사했습니다!'); });
   }
 </script>
 

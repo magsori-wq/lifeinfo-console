@@ -97,6 +97,7 @@ h1{font-size:17px;margin:0}
   <div id="vbody"><pre id="vtext"></pre><img id="vimg" style="display:none"></div>
 </div>
 <div class="toast" id="tst">복사됨</div>
+<script src="cp_clip.js"></script>
 <script>
 var API=null, RAW='', RO=false;
 
@@ -202,7 +203,7 @@ async function copyAll(){
     return;
   }
   if (!RAW) { toast('복사할 텍스트가 없습니다'); return; }
-  navigator.clipboard.writeText(RAW).then(function(){toast('✅ 전체 복사됨 — 붙여넣으세요');},
+  cpCopy(RAW,function(){toast('✅ 전체 복사됨 — 붙여넣으세요');},
     function(){toast('🔴 복사 실패');});
 }
 

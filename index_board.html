@@ -64,6 +64,7 @@ code:hover{border-color:#4D9DE0}
 <div class="sig" id="sig"></div>
 <div class="grid" id="out"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
 <div class="toast" id="tst">복사됨</div>
+<script src="cp_clip.js"></script>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
@@ -71,7 +72,7 @@ function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.js
   .catch(function(){return null;});}
 function toast(m){var t=document.getElementById('tst');t.textContent=m;
   t.classList.add('on');setTimeout(function(){t.classList.remove('on');},1500);}
-function copy(el){navigator.clipboard.writeText(el.textContent);toast('복사됨');}
+function copy(el){cpCopy(el.textContent,function(){toast('복사됨');});}
 function cmd(c){return '<code onclick="copy(this)">'+esc(c)+'</code>';}
 function days(d){ if(!d) return null;
   var t=Date.parse(String(d).slice(0,10)); if(isNaN(t)) return null;

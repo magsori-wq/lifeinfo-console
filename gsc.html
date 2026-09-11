@@ -245,6 +245,7 @@
   </p>
 </div><!-- /viewRe -->
 
+<script src="cp_clip.js"></script>
 <script>
   var RESOURCE='https://lifeinfo8975.blogspot.com/';   // GSC URL 접두어 속성
   var PROP_DASH='https://search.google.com/search-console?resource_id='+encodeURIComponent(RESOURCE);
@@ -434,7 +435,7 @@
     var a=e.target.closest('a.gsc'); if(!a)return;
     var lnk=a.closest('tr').querySelector('.url a');
     var u=a.getAttribute('data-copy')||(lnk?lnk.getAttribute('href'):'');
-    if(u){navigator.clipboard.writeText(u).then(function(){toast('URL 복사됨 → GSC 상단 검사창에 붙여넣기(Ctrl+V)+Enter → 실제 URL 테스트 → 색인 생성 요청 → 여기서 완료 체크');},function(){toast('복사 실패 — 아래 주소를 직접 복사하세요');});}
+    if(u){cpCopy(u,function(){toast('URL 복사됨 → GSC 상단 검사창에 붙여넣기(Ctrl+V)+Enter → 실제 URL 테스트 → 색인 생성 요청 → 여기서 완료 체크');},function(){toast('복사 실패 — 아래 주소를 직접 복사하세요');});}
   });
   /* 🔄 재요청 탭도 같은 복사 동작을 붙인다.
      2026-07-29: 처음엔 data-copy 속성만 넣고 이 리스너를 빠뜨려, [GSC 검사]를 눌러도
@@ -444,10 +445,9 @@
     var a=e.target.closest('a.gsc'); if(!a)return;
     var u=a.getAttribute('data-copy')||'';
     if(!u){toast('URL 없음 — reindex.json 을 다시 만들어 주세요');return;}
-    navigator.clipboard.writeText(u).then(function(){
+    cpCopy(u,function(){
       toast('URL 복사됨 → GSC 검사창에 Ctrl+V + Enter → 실제 URL 테스트 → 색인 생성 요청 → 완료 체크');
     },function(){
-      // 클립보드 API 가 막힌 환경(비 HTTPS 등) 폴백 — 선택 가능한 프롬프트로 보여준다
       window.prompt('자동 복사가 막혔습니다. 아래 주소를 직접 복사하세요 (Ctrl+C)', u);
     });
   });
@@ -464,7 +464,7 @@
     var codes=all.filter(function(p){return req[p.code] && !p.logged;}).map(function(p){return p.code;});
     if(!codes.length){toast('새로 누적할 코드가 없습니다 (체크했지만 로그에 없는 글 없음)');return;}
     var s=codes.join(' ');
-    navigator.clipboard.writeText('python studio/gsc_log.py add '+s).then(function(){toast(codes.length+'개 코드 복사됨 → PC 터미널에 붙여넣기 실행 후 deploy');},function(){toast('복사 실패 — 직접 실행: python studio/gsc_log.py add '+s);});
+    cpCopy('python studio/gsc_log.py add '+s,function(){toast(codes.length+'개 코드 복사됨 → PC 터미널에 붙여넣기 실행 후 deploy');},function(){toast('복사 실패 — 직접 실행: python studio/gsc_log.py add '+s);});
   });
   document.getElementById('clr').addEventListener('click',function(){
     if(confirm('이 기기에 저장된 색인요청 체크 기록을 모두 지울까요?')){req={};save();render();}
@@ -528,7 +528,7 @@
     e.preventDefault();
     var p=null; all.forEach(function(x){if(x.code===a.dataset.cp)p=x;});
     if(!p||!p.text)return;
-    navigator.clipboard.writeText(p.text).then(function(){
+    cpCopy(p.text,function(){
       toast(p.code+' 문구 복사됨('+p.tlen+'자) → [편집화면↗] → 글 설정 → 검색 설명 → Ctrl+V → 업데이트');
     },function(){toast('복사 실패 — 문구를 직접 선택해 복사하세요');});
   });
@@ -607,7 +607,7 @@
     var d=reDone(), codes=Object.keys(d);
     if(!codes.length){ toast('체크된 줄이 없습니다'); return; }
     var cmd='python -m studio.reindex done '+codes.join(' ');
-    navigator.clipboard.writeText(cmd).then(function(){
+    cpCopy(cmd,function(){
       toast('복사됨 — 터미널에 붙여넣으세요 ('+codes.length+'편)');
     },function(){ window.prompt('복사해서 터미널에 붙여넣으세요', cmd); });
   });

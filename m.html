@@ -116,6 +116,7 @@ a.plain{color:var(--go);text-decoration:none}
 <div id="bar"></div>
 <div id="toast"></div>
 
+<script src="cp_clip.js"></script>
 <script>
 // 🔴 번호는 여기서 매기지 않는다. approvalcount.bake_json() 이 구운 것을 그대로 쓴다.
 //    화면이 자기 순서로 매기면 도구와 갈린다 — 이 저장소가 결재 건수로 여섯 번 겪은 병.
@@ -124,18 +125,9 @@ var DATA=null;
 function toast(m){var t=document.getElementById('toast');t.textContent=m;t.className='on';
   clearTimeout(window._tt);window._tt=setTimeout(function(){t.className='';},2600);}
 
-// 클립보드 — https 가 아니면 navigator.clipboard 가 없다. 폴백을 둔다.
+// 2026-09-11 - copy is unified via webapp/cp_clip.js cpCopy() (was a local copy of this same logic).
 function copy(txt,msg){
-  function ok(){toast(msg);}
-  if(navigator.clipboard&&window.isSecureContext){
-    navigator.clipboard.writeText(txt).then(ok,fallback);
-  }else{fallback();}
-  function fallback(){
-    var ta=document.createElement('textarea');ta.value=txt;
-    ta.style.position='fixed';ta.style.opacity=0;document.body.appendChild(ta);
-    ta.select();try{document.execCommand('copy');ok();}catch(e){toast('복사 실패 — 길게 눌러 복사해 주세요');}
-    document.body.removeChild(ta);
-  }
+  cpCopy(txt, function(){ toast(msg); }, function(){ toast('복사 실패 — 길게 눌러 복사해 주세요'); });
 }
 
 // 🔴 **번호만 보내면 안 된다** (2026-09-08 사장님 지적)

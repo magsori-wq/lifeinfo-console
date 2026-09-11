@@ -430,6 +430,7 @@
 
   <div class="copied" id="copied">복사됨! Claude에 붙여넣기 하세요</div>
 
+<script src="cp_clip.js"></script>
 <script>
   var nav=document.getElementById('nav');
   var iframes=['ctrl','search','categories','generator','osmu','jisikin','naverstats','dashboard','progress','batch','approval','temp','pendosmu','orders','reports','idxboard','gsc','seo','adsense','incidents','opsguide'];
@@ -548,9 +549,8 @@
        체크가 아니라 '완료 명령 복사' — 정적 페이지는 데이터를 못 고친다. */
     window.mtLotCopy=function(bid,code,el){
       var cmd='python -m studio.batchboard mark --id '+bid+' --code '+code+' --state done --note "완료"';
-      (navigator.clipboard?navigator.clipboard.writeText(cmd):Promise.reject())
-        .then(function(){el.textContent='복사됨 ✓';setTimeout(function(){el.textContent='완료 명령 복사';},1600);})
-        .catch(function(){window.prompt('복사하세요',cmd);});
+      cpCopy(cmd,function(){el.textContent='복사됨 ✓';setTimeout(function(){el.textContent='완료 명령 복사';},1600);},
+        function(){window.prompt('복사하세요',cmd);});
     };
     fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
       .then(function(j){
@@ -606,7 +606,7 @@
     function circ(c){var n=parseInt(c,10);return (n>=0&&n<CIRC.length)?CIRC[n]:c;}
     window.mtCopyDone=function(bid,code,el){
       var cmd='python -m studio.batchboard mark --id '+bid+' --code '+code+' --state done --note "<실측>"';
-      (navigator.clipboard?navigator.clipboard.writeText(cmd):Promise.reject()).then(function(){
+      cpCopy(cmd,function(){
         el.dataset.msg='📋 복사됨 — 터미널에 붙여넣기';
       },function(){ window.prompt('아래를 복사해 터미널에 붙여넣으세요', cmd); });
       var b=el.querySelector('.mtpmsg'); if(b){b.textContent='📋 복사됨 — 터미널에 붙여넣고 새로고침';}
@@ -830,10 +830,10 @@
   }
   function toast(){var c=document.getElementById('copied');c.style.display='block';setTimeout(function(){c.style.display='none';},2200);}
   function showOut(txt){var o=document.getElementById('out');o.style.display='block';o.textContent=txt;}
-  function onlyCopy(kind){var p=buildPrompt(kind);navigator.clipboard.writeText(p).then(toast,function(){});showOut(p);}
+  function onlyCopy(kind){var p=buildPrompt(kind);cpCopy(p,toast);showOut(p);}
   function dispatch(kind){
     var p=buildPrompt(kind);
-    navigator.clipboard.writeText(p).then(function(){toast();},function(){});
+    cpCopy(p,function(){toast();});
     showOut(p);
     window.open('https://claude.ai/new','_blank','noopener');
   }
@@ -841,7 +841,7 @@
   /* ---------- ⚙️ 운영 루틴 (트렌드 갱신 → 배포) ---------- */
   var ROUTINE_CMD='cd /d C:\\lifeinfo && python -m studio.pipeline trends && deploy.bat';
   function copyRoutine(){
-    navigator.clipboard.writeText(ROUTINE_CMD).then(toast,function(){});
+    cpCopy(ROUTINE_CMD,toast);
     showOut('터미널(cmd)에 붙여넣고 Enter:\n\n'+ROUTINE_CMD);
   }
   function dispatchRoutine(){
@@ -849,13 +849,13 @@
       "1) C:\\lifeinfo 에서 `python -m studio.pipeline trends` 실행 → 구글뉴스 트렌드 글감 갱신.\n"+
       "2) webapp/trends.txt 의 fetched_at 이 방금 시각으로 갱신됐고 카테고리별 항목이 수집됐는지 확인해 알려줘.\n"+
       "3) 끝나면 deploy.bat 실행(배포 push)을 안내해줘. push는 내가 직접 한다.";
-    navigator.clipboard.writeText(p).then(toast,function(){});
+    cpCopy(p,toast);
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   /* ---------- 🚀 커밋·배포 (커밋배포.bat) ---------- */
   var DEPLOY_CMD='cd /d C:\\lifeinfo && 커밋배포.bat';
   function copyDeploy(){
-    navigator.clipboard.writeText(DEPLOY_CMD).then(toast,function(){});
+    cpCopy(DEPLOY_CMD,toast);
     showOut('터미널(cmd)에 붙여넣고 Enter:\n\n'+DEPLOY_CMD);
   }
   function dispatchDeploy(){
@@ -863,13 +863,13 @@
       "1) C:\\lifeinfo 소스 변경 전체를 git add -A 후 커밋(메시지=오늘 작업 요약) → origin main 으로 push.\n"+
       "2) 이어서 deploy.bat 으로 콘솔·썸네일·자산을 배포 저장소(C:\\lifeinfo-deploy)에 복사·커밋·push 하도록 안내.\n"+
       "3) 변경 없으면 커밋 생략. push에 로그인이 필요하면 알려줘. (가장 빠른 방법은 커밋배포.bat 더블클릭)";
-    navigator.clipboard.writeText(p).then(toast,function(){});
+    cpCopy(p,toast);
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   /* ---------- 🟢 네이버 발행 (API 종료 → 반자동 + 브라우저 자동화) ---------- */
   var NAVER_DRAFT_CMD='cd /d C:\\lifeinfo && python -m studio.pipeline naver-draft --code <코드> --file osmu/<네이버용_변형본.txt> --open';
   function copyNaverDraft(){
-    navigator.clipboard.writeText(NAVER_DRAFT_CMD).then(toast,function(){});
+    cpCopy(NAVER_DRAFT_CMD,toast);
     showOut('터미널(cmd)에 붙여넣고 <코드>·<파일>만 바꿔 Enter:\n\n'+NAVER_DRAFT_CMD+
       '\n\n예) python -m studio.pipeline naver-draft --code D2-03 --file osmu/네이버용_K패스.txt --open');
   }
@@ -881,13 +881,13 @@
       "3) 게시 전 미리보기를 내게 확인받고, 승인하면 발행.\n"+
       "4) 발행 후 URL을 `python -m studio.pipeline naver-link --code <코드> --url <URL>` 로 기록 안내.\n\n"+
       "원칙: 하루 1~2개·사람 속도(비정상탐지 회피), 외부링크는 글당 1개(맨 아래), 모든 게시는 건별 승인.";
-    navigator.clipboard.writeText(p).then(toast,function(){});
+    cpCopy(p,toast);
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   /* ---------- 📝 발행 (Blogger API 초안 생성 — studio/blogger.py publish-post) ---------- */
   var PUBLISH_CMD='cd /d C:\\lifeinfo && python studio/blogger.py publish-post --code <코드> --file posts/<글_HTML.txt> --dry-run';
   function copyPublish(){
-    navigator.clipboard.writeText(PUBLISH_CMD).then(toast,function(){});
+    cpCopy(PUBLISH_CMD,toast);
     showOut('터미널(cmd)에 붙여넣고 <코드>·<파일>만 바꿔 Enter (먼저 --dry-run으로 확인):\n\n'+PUBLISH_CMD+
       '\n\n· 확인되면 --dry-run 빼고 실행 → 초안 생성\n· 라이브 발행은 끝에 --publish 추가(미지정 시 항상 초안)\n예) python studio/blogger.py publish-post --code A2-07 --file posts/풍수해보험_글_HTML.txt');
   }
@@ -899,7 +899,7 @@
       "4) 생성된 편집/미리보기 URL을 내게 주고, 미리보기 렌더(빈 글 아님) 확인 후 내가 '게시'를 누른다(승인 시 --publish).\n"+
       "5) 이어서 DB 레코드 추가 → validate_db → deploy(6~8단계)로 콘솔·카테고리까지 반영.\n\n"+
       "원칙: 기본 초안 유지(무인 라이브 게시 금지), 외부 행동은 건별 승인.";
-    navigator.clipboard.writeText(p).then(toast,function(){});
+    cpCopy(p,toast);
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   function dispatchComments(){
@@ -910,13 +910,13 @@
       "4) 산출: 댓글별 검증 리포트 + 답변 초안 2종(공손·보완형 / 팩트·간결형, 싸우지 않는 톤, 출처 1개 자연 삽입).\n"+
       "5) 전달: 결과를 magsori@gmail.com Gmail 초안으로 저장(발송 X). 댓글 게시·삭제는 내가 승인한 것만 브라우저로 진행.\n\n"+
       "원칙: 검증 안 된 자동 반박 금지, 정확성 우선(출처 없으면 게시 안 함), 악성·명예훼손성은 반박 대신 삭제/숨김/무대응 제안.";
-    navigator.clipboard.writeText(p).then(toast,function(){});
+    cpCopy(p,toast);
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
   /* ---------- 🔍 색인 (서치콘솔 색인 점검·요청 — Claude+Chrome) ---------- */
   var INDEX_INSPECT_CMD='cd /d C:\\lifeinfo && python studio/searchconsole.py inspect';
   function copyIndexInspect(){
-    navigator.clipboard.writeText(INDEX_INSPECT_CMD).then(toast,function(){});
+    cpCopy(INDEX_INSPECT_CMD,toast);
     showOut('터미널(cmd)에 붙여넣고 Enter (색인상태 조회 → index_status.json):\n\n'+INDEX_INSPECT_CMD+
       '\n\n· 최초 1회: python studio/searchconsole.py auth (브라우저 동의, webmasters.readonly)\n'+
       '· GCP(lifeinfo-adsense)에서 \'Google Search Console API\' 사용설정 필요\n'+
@@ -931,7 +931,7 @@
       "3) 요청한 글은 python studio/gsc_log.py add <코드…> 로 로그 누적 → deploy(색인관리 탭 '📋 기록' 자동 완료).\n"+
       "4) 결과 요약: 색인/전체, 새로 요청한 글, 남은 미요청 글.\n\n"+
       "원칙: 색인 '요청' 자체는 자동화 불가(브라우저 1클릭), 클린 URL로 요청 금지(302로 실패), 하루 10건 한도 준수, 진행 관리는 색인관리(gsc) 탭 기준.";
-    navigator.clipboard.writeText(p).then(toast,function(){});
+    cpCopy(p,toast);
     showOut('이 프롬프트를 Claude Code(데스크톱 앱)에 붙여넣으세요:\n\n'+p);
   }
 
@@ -962,7 +962,7 @@
   function trendJudge(title,url){
     document.getElementById('topic').value=title;      // 판단 통과 시 바로 '작성'으로 이어가기 쉽게
     var p=buildJudgePrompt(title,url);
-    navigator.clipboard.writeText(p).then(toast,function(){});
+    cpCopy(p,toast);
     showOut(p);
     window.open('https://claude.ai/new','_blank','noopener');
   }

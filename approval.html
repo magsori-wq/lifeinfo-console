@@ -197,6 +197,7 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
         2026-09-01 에 실제로 그렇게 화면을 죽였다. 낱말로 쓸 것. -->
 <iframe id="pvb" sandbox="allow-same-origin"></iframe></div></div>
 <div class="copied" id="cp">복사됨</div>
+<script src="cp_clip.js"></script>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
@@ -275,20 +276,19 @@ function txtBtn(label,text,note){
     +esc(label)+' 복사 '+text.length+'자</button>'
     +(note?'<div class="meta">'+esc(note)+'</div>':'');
 }
+// 2026-09-11 - copy is unified via webapp/cp_clip.js cpCopy().
 function cpi(i){
   var x=TXT[i];
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(x).then(toast,function(){fbcp(x);});
-  } else fbcp(x);
+  cpCopy(x, toast);
 }
-function fbcp(x){var a=document.createElement('textarea');a.value=x;a.style.position='fixed';
-  a.style.opacity=0;document.body.appendChild(a);a.select();
-  try{document.execCommand('copy');toast();}catch(e){}document.body.removeChild(a);}
 function toast(){var e=document.querySelector('.copied');if(!e)return;
   e.textContent='복사됨';e.classList.add('on');setTimeout(function(){e.classList.remove('on');},1100);}
-function copy(el){navigator.clipboard.writeText(el.textContent);
-  var c=document.getElementById('cp');c.classList.add('on');
-  setTimeout(function(){c.classList.remove('on');},900);}
+function copy(el){
+  var t=el.textContent, done=function(){
+    var c=document.getElementById('cp'); if(c){c.classList.add('on');
+      setTimeout(function(){c.classList.remove('on');},900);} };
+  cpCopy(t, done);
+}
 // 🔄 재확인 버튼 (2026-08-29 사장님 지시: "조치 밑에 재확인 버튼을 만들고").
 //    URL 이면 새 탭으로 열고, 명령이면 서버(/api/recheck)에 그 항목의 cmd 를
 //    그대로 실행시켜 결과를 카드 아래에 펼친다. 자유 명령을 안 보낸다 —

@@ -101,6 +101,7 @@
   </div>
 </div>
 
+<script src="cp_clip.js"></script>
 <script>
   var kw=document.getElementById('kw'),rel0=document.getElementById('rel0'),num=document.getElementById('num');
   function titleStr(){
@@ -222,9 +223,11 @@
     var o=document.getElementById('out');
     if(!o.value){alert('먼저 생성하기를 누르세요.');return;}
     o.select();
-    navigator.clipboard.writeText(o.value).then(function(){
+    cpCopy(o.value,function(){
       document.getElementById('okmsg').textContent='✓ 복사됨! Blogger HTML 보기에 붙여넣으세요.';
-    },function(){document.execCommand('copy');});
+    },function(){
+      document.getElementById('okmsg').textContent='🔴 복사 실패 — 직접 선택해 Ctrl+C 로 복사하세요.';
+    });
   }
   upT();
 </script>
