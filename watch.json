@@ -6305,7 +6305,7 @@
    "id": "index-request-test-0909",
    "added": "2026-09-08",
    "what": "🔬 색인 요청 검증 — 【사장님 가설】 '새 글을 색인 요청하면 금방 풀린다'. 이것은 이미 크롤된 글 재요청(수율 2%)과 다른 대상이다. 【9/11 재측정으로 목록 갱신 — 10편→9편】 Discovered 상태이면서 아직 요청 안 한 글 전부: B1-09 D1-08 B4-10 G4-06 D3-06 E2-10 C2-11 G2-04 H1-04. (전 목록의 B1-08·C2-09·B2-11·F1-13 은 상태가 바뀌어 빠졌고, C2-11·G2-04·H1-04 가 새로 들어왔다) 【하실 일】 GSC 상단 URL 검사에 9개 URL 을 하나씩 넣고 '색인 생성 요청'. 【그 다음】 알려주시면 gsc_log 에 기록하고 며칠 뒤 이 9편만 재조회 — 같은 상태·같은 날 요청이라 깨끗한 대조가 된다",
-   "due": "2026-09-11",
+   "due": "2026-09-12",
    "cmd": "python -c \"import json,io;idx=json.load(io.open('webapp/index_status.json',encoding='utf-8'));db={p['code']:p for p in json.load(io.open('webapp/lifeinfo_db.txt',encoding='utf-8'))['posts']};g=json.load(io.open('webapp/gsc_requested.json',encoding='utf-8'));req=set(g.get('urls') or []);print([(c,(db.get(c) or {}).get('url')) for c,v in idx['posts'].items() if isinstance(v,dict) and 'Discovered' in (v.get('state') or '') and (db.get(c) or {}).get('url') not in req])\"",
    "owner": "user",
    "state": "todo",
@@ -7811,6 +7811,16 @@
    "cmd": "python -m studio.affiliate solo-add --item <상품명> --url <> --kind <coupang|toss|brandshop|brandtrip> --why-now \"<지금 이슈인 이유>\" --price \"<가격·리뷰 근거>\" && python -m studio.affiliate solo-ask --id <id> && python -m studio.watch --id solo-<id>  # 승인 후: python -m studio.threadsdraft --solo <id>",
    "owner": "claude",
    "kind": "action",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0reject-h1-05",
+   "added": "2026-09-11",
+   "what": "🔴 V0 반려 확인 요청 — H1-05 「타짜는 청불, 인턴·암살자들은 12세 — 2026 추석 극장가 개봉작 총」. 검사자 이부장 · 2026-09-11T14:34. 사유 요약: KOBIS 등재정보(제목·날짜·감독·장르·상영시간·등급) 재정리, 5요소 0/5 — 청불=미성년불가는 등급 정의 되풀이(탈락사유 아님), '개봉예정이라 변동가능'은 면책이지 함정 아님(모든 미개봉작에 해당), 금액 0건(요금·수수료 없음). 통과조건: 2개 이상 실수치 주입 — ①청불 연령경계 함정(만18세미만+고교재학·보호자동반예외없음·12/15세와 대비) ②조조/일반/심야 요금 계산예시(구성별 총액) ③예매취소수수료 시한 ④'누구와 가는가'별 판단형비교(부모+초등생/고등생/성인끼리 각각 3편 중 가능여부). 등급 출처는 재작성시 … 🔴 전문은 `python -m studio.v0check gate --code H1-05` 로 읽으십시오(길어서 여기 안 싣습니다). 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다.",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.v0check gate --code H1-05",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
