@@ -8118,6 +8118,26 @@
    "by": "이부장",
    "done_at": "2026-09-12",
    "result": "185b6d2c · 전5건→후2건, 지목 2건(seodesc0911h104·xlink0911all/crosslinkcheck) 해소 확인. xlink0911all 남은 'batchboard mark --step'(prose 잔류)·pub0911e403 'mark/now' 슬래시는 별개 원인, 미수정"
+  },
+  {
+   "id": "xlink0911all-order-fix-0912",
+   "added": "2026-09-12",
+   "what": "교차링크 재개 전 xlink0911all 지시서(3. 담당, 2/43) 문장 정리 — '막히면 now --step 1 로' 같은 약칭 명령이 batchboard mark 줄에 섞여 ordercheck 🔴(mark 에 --step 없음). 명령은 한 줄에 하나, 약칭 대신 전체 명령으로",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.ordercheck --quiet",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "docflow-0912-0135",
+   "added": "2026-09-12",
+   "what": "루틴4(travel-prep) 09-11 21:20 제안 2건 처리: G3-06(부산록페) pick+verify+source확인 완료 → draft0912g306 지시서 발급(이과장에게 깨움 전송). H1-07(그랜드민트) pick+verify+source확인 완료(NOL·YES24 1차확인, 네이버판매는 미확인이라 지시서에 '쓰지 말 것' 명시) → 지시서는 docs/dispatch_drafts/draft0912h107_order.txt 로 초안만 준비, 아직 batchboard 미등록(한 번에 한 편 원칙). G3-06 완료보고 오면 다음 순번으로 draft0912h107 등록할 것. dupcheck 🟡0.50 둘 다 D1-08(개천절)과 '10월' 토큰 겹침 오탐으로 확인, drop 없음",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.batchboard show; cat docs/dispatch_drafts/draft0912h107_order.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
