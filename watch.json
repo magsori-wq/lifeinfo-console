@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-11",
+ "updated": "2026-09-12",
  "items": [
   {
    "id": "redirect-error",
@@ -8045,6 +8045,26 @@
    "what": "Browser 1 에 Blogger 소개페이지 편집 탭 2개(746021178·746021183)가 남아 있다 — 저장은 17:29 끝났는데 unsaved 표시가 남아 이동 시 Leave site? 가 뜬다. tabs_close 타임아웃(20:1x). 확인창은 없음(스크린샷). 이 탭으로 이동하지 말 것 · 정리 방법 확인",
    "due": "2026-09-12",
    "cmd": "python -c \"print('tabs_context_mcp 로 746021178·746021183 존재 여부 확인')\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "h106-spaf-open-recheck",
+   "added": "2026-09-11",
+   "what": "H1-06 SPAF <새> 예매 오픈 시각(09-11 14:00 주장)을 외부 독립출처로 재확인 못함 — SPAF 공식 티켓페이지 09-05 기준 캐시는 '9월중 2차오픈'만 표기. 라이브 확인 시 실제 오픈 여부·시각 재검증",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.blogger update-post --code H1-06 --check 로 라이브 재확인, 또는 NOL인터파크에서 <새> 검색해 실제 예매 상태 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:4e9ecc45"
+  },
+  {
+   "id": "source-d4-12-0912",
+   "added": "2026-09-12",
+   "what": "D4-12 서류제출·가구원동의 마감 9/16(수)18시 확인됨 — SNU 9개 학과 공지 교차확인, kosaf.go.kr 원문 URL은 미확보",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.dupcheck 'D4-12'",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
