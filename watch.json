@@ -4213,7 +4213,9 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.threadimg",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-11",
+   "result": "threadimg 재실행 위반 0건. 원 지적 6건은 09-11 threadimg-gate-0911 정책변경으로 '게시됨·수정불가·조치대상 아님' 재분류"
   },
   {
    "id": "loopcache-0901",
@@ -6759,8 +6761,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.reports && grep -o \"<div class='ses'>[^<]*\" webapp/reports.html && python -m studio.approvalcount && python -m studio.falsepos && python validate_db.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:06ed2a43"
+   "state": "done",
+   "by": "세션:06ed2a43",
+   "done_at": "2026-09-11",
+   "result": "reports.py·reports.html·approvalcount·falsepos·validate_db 재실행 전부 정상(FAIL 0·오탐 0) — 통일 반영 확인"
   },
   {
    "id": "chrome-infobar-off-0909",

@@ -3536,6 +3536,22 @@
    "target": "chrome-infobar-off-0909",
    "detail": "🔴 실측 결론: Windows 11 Home 에서는 **안 된다**. 2026-09-11 사장님이 관리자 PowerShell 로 레지스트리 등록(값 0 확인) → 크롬 재시작 → chrome://policy 결과 'CommandLineFlagSecurityWarningsEnabled · false · 플랫폼 · 컴퓨터 · 필수 · **오류, 무시됨**'. 정책이 읽히긴 하나 크롬이 적용을 거부한다(Home 은 플랫폼 정책 미인정 — Pro·AD도메인·클라우드관리 중 하나 필요). ⚠️ **다시 시도하지 말 것** — 방법이 틀린 게 아니라 에디션 제약이다. 배너는 그대로 두고 산다. 레지스트리 값 제거는 관리자 권한이 필요해 사장님께 남겼다(Remove-ItemProperty -Path 'HKLM:\\SOFTWARE\\Policies\\Google\\Chrome' -Name CommandLineFlagSecurityWarningsEnabled)",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-11T14:10:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-reports-unify-0909",
+   "detail": "reports.py·reports.html·approvalcount·falsepos·validate_db 재실행 전부 정상(FAIL 0·오탐 0) — 통일 반영 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-11T14:10:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thimg-0831-4",
+   "detail": "threadimg 재실행 위반 0건. 원 지적 6건은 09-11 threadimg-gate-0911 정책변경으로 '게시됨·수정불가·조치대상 아님' 재분류",
+   "via": "cli"
   }
  ]
 }
