@@ -7823,6 +7823,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "publish-title-gate-fp-0911",
+   "added": "2026-09-11",
+   "what": "publish.yml 사전점검 3b 게이트 오탐 — '파일 제목과 요청 제목이 한 단어도 겹치지 않는다'가 보드용 짧은 제목(WANT_TITLE)만 보고, post_title 이 원고 첫 줄과 글자까지 같아도 차단한다. 2026-09-11 15:42 C4-08 run 34571109379 이 이것으로 실패(짧은 제목 'C4-08 냉장고 안전 추석식중독' 붙여쓰기). 수리안: want 토큰에 POST_TITLE 토큰을 합치거나, POST_TITLE 이 declared 와 같으면 통과. 고친 뒤 falsepos 회귀 규칙 1줄 추가",
+   "due": "2026-09-12",
+   "cmd": "grep -n '한 단어도 겹치지' .github/workflows/publish.yml && sed -n '255,275p' .github/workflows/publish.yml",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
