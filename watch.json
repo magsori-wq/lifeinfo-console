@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-11",
+ "updated": "2026-09-12",
  "items": [
   {
    "id": "redirect-error",
@@ -8058,6 +8058,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:4e9ecc45"
+  },
+  {
+   "id": "approve-a1-15-pending-0912",
+   "added": "2026-09-12",
+   "what": "A1-15 사장님 발행 승인 받음(09-12 02:2x 폰 문구) — H1-05 run 진행 중이라 go 보류. B2-14 도 승인됨 → 오늘 3편이 되므로 순서(A1-15 오늘·B2-14 내일 권고) 사장님 답 대기",
+   "due": "2026-09-12",
+   "cmd": "gh run view 34626931158 -R magsori-wq/lifeinfo-source --json status,conclusion",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "approve-b2-14-pending-0912",
+   "added": "2026-09-12",
+   "what": "B2-14 사장님 발행 승인 받음(09-12 02:2x 폰 문구 '승인: B2-14') — H1-05 발행 run 진행 중이라 pubqueue go 보류. 오늘 3편 여부 사장님 답 대기(A1-15 오늘·B2-14 내일 권고)",
+   "due": "2026-09-12",
+   "cmd": "gh run view 34626931158 -R magsori-wq/lifeinfo-source --json status,conclusion",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
