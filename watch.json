@@ -7953,6 +7953,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "tower-inbox-gap-0911",
+   "added": "2026-09-11",
+   "what": "세션이 이부장 앞으로 남긴 요청이 CP에 안 뜬다 — 3.분석이 09-11 11:14 naverlab0909 의 now 에 '🔴🔴이부장께 지시서 작성 요청(교차링크 40편, 사장님 직접 지시)'을 적었는데 관제탑이 7시간 못 봤다. now·approvalcount·loopcheck 어디도 남의 배치 currents 에서 '이부장' 앞 요청을 뽑지 않는다. 수리안: now(또는 loopcheck)에 '📨 이부장 앞 요청' 줄 — currents·items note 에서 이부장/관제탑 호출을 찾아 미처리분을 띄운다(판정은 문자열이 아니라 요청 전용 필드/접두어를 정해 두 곳이 같이 쓰게). 5분 TICK 이 그 줄을 보게 한다",
+   "due": "2026-09-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));[print(k,(v.get('what') or '')[:120]) for k,v in (d.get('currents') or {}).items() if '이부장' in (v.get('what') or '')]\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
