@@ -7466,8 +7466,10 @@
    "cmd": "python -m studio.xlinkcheck",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-11",
+   "result": "2026-09-11 완료 — 라이브 6편(H1-04·E2-15·B2-08·B4-05·C3-04·A6-02) 관련글 링크 정상화. xlinkcheck 로컬 🔴0건 · 라이브 전수 검증 옛링크 0 · 교차링크 블록 6/6 유지"
   },
   {
    "id": "seodesc-h104-0911",
@@ -7538,7 +7540,7 @@
    "state": "done",
    "by": "이부장",
    "done_at": "2026-09-11",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "result": "2026-09-11 완료 — 라이브 6편(H1-04·E2-15·B2-08·B4-05·C3-04·A6-02) 관련글 링크 정상화. xlinkcheck 로컬 🔴0건 · 라이브 전수 검증 옛링크 0 · 교차링크 블록 6/6 유지"
   },
   {
    "id": "v0reject-g3-05",
@@ -7606,8 +7608,10 @@
    "cmd": "크리에이터 어드바이저(네이버 블로그 통계) → 유입분석 → 유입 검색어 → 기간 '오늘'(1일) → 화면 캡처 후 '캡쳐'라고 말씀해주시면 바로 판독합니다.",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "3."
+   "state": "done",
+   "by": "3.",
+   "done_at": "2026-09-11",
+   "result": "더 포괄적인 요청(naver-capture-0911-full)으로 대체"
   },
   {
    "id": "fixlink-tool-0911",
@@ -7617,8 +7621,21 @@
    "cmd": "python studio/blogger.py fixlink --help",
    "owner": "claude",
    "kind": "action",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-11",
+   "result": "2026-09-11 완료 — 라이브 6편(H1-04·E2-15·B2-08·B4-05·C3-04·A6-02) 관련글 링크 정상화. xlinkcheck 로컬 🔴0건 · 라이브 전수 검증 옛링크 0 · 교차링크 블록 6/6 유지"
+  },
+  {
+   "id": "naver-capture-0911-full",
+   "added": "2026-09-11",
+   "what": "🎯 캡처 4장 요청(적극분석용, 우선순위순 — 급하면 ①②만이라도) ①유입검색어: creator-advisor.naver.com → 유입분석 → 유입검색어 분석 → 오늘(1일) → 더보기 끝까지 → 캡처(방송·연예 신규유입 확인용, 현재 09-08 3일지남) ②조회수 순위: 통합데이터 → 조회수 순위 → 글탭 → 캡처(H1-06·A6-02·B3-05 등 최근 발행분 반응 확인, 현재 09-05 6일지남) ③일별 조회수 추이: 통합데이터 → 일별 조회수(최근 15일) → 캡처(현재 09-04까지만 있음) ④애드포스트 수익: adpost.naver.com → 수익현황(최근/이번달누적) → 캡처(제 분석범위에 수익이 처음 포함됩니다 — 도구도 방금 추가했습니다)",
+   "due": "2026-09-11",
+   "cmd": "start https://creator-advisor.naver.com  그리고  start https://adpost.naver.com",
+   "owner": "user",
+   "kind": "action",
    "state": "todo",
-   "by": "이부장"
+   "by": "3."
   }
  ]
 }
