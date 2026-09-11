@@ -3,8 +3,8 @@
   "routinelog": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-09-12 00:11",
-   "last_what": "글감 제안 2건 등록: 추천 D4-12(국가장학금 2학기 서류제출·가구원동의 9/16 마감, A1-09와 구분해 --force로 등록) · 후보 E4-04(명의도용방지서비스 엠세이퍼, 통신분쟁 33%↑ 최근보도 근거",
+   "last_report": "2026-09-11 22:44",
+   "last_what": "야간검증 09-11: 오늘 발행 5편(A3-13·E4-03·C4-08·G3-05·H1-06) 최우선검증 완료, 하드오류 0건. H1-06 예매오픈시각만 외부출처 미확인(watch h106-spaf-open-reche",
    "reads": 1,
    "last_order_at": "2026-09-08 10:27",
    "last_read": "2026-09-08 10:28",
@@ -1060,12 +1060,12 @@
   },
   "pub0911c408": {
    "state": "working",
-   "reads_since_report": 0,
-   "last_report": "2026-09-12 00:58",
-   "last_what": "이미 발행 완료 상태로 확인 — DB url 200 응답, 4채널 setgate 미완 없음. 지시서 갱신 없이 하루 지나 낡은 배치로 판단, 실행 없이 정리",
-   "reads": 2,
+   "reads_since_report": 1,
+   "last_report": "2026-09-11 16:14",
+   "last_what": "검색설명 라이브 반영 완료(98자, curl+scan 재확인). 네이버 원고·제휴링크는 결재함 대기 중(naver-c4-08, afflink-c4-08) — 인스타·쓰레드는 실사진 소스 부족으로 별도 작업 필요",
+   "reads": 1,
    "last_order_at": "2026-09-11 16:18",
-   "last_read": "2026-09-12 00:58",
+   "last_read": "2026-09-11 19:34",
    "owner": "이과장(작업 세션)"
   },
   "draft0911a313": {
@@ -1163,63 +1163,7 @@
    "state": "working",
    "last_report": "2026-09-11 20:35",
    "last_what": "A3-13 죽은 링크 정정 완료 — 279-5.html(404)→27-95-2026.html(200) curl 확인. H1-05·B2-14 발행은 사장님 시점 선택 중, 트리거 대기"
-  },
-  "docflow0912": {
-   "state": "working",
-   "reads_since_report": 0,
-   "last_report": "2026-09-12 00:35",
-   "last_what": "D4-12 지시서 발급·이과장 통지 완료. E4-04 제외 완료. 남은 것 = 이과장 초안 착수(폰팅 확인 필요)"
-  },
-  "draft0912d412": {
-   "reads": 2,
-   "reads_since_report": 0,
-   "last_order_at": "2026-09-12 00:56",
-   "last_read": "2026-09-12 00:56",
-   "owner": "이과장",
-   "state": "working",
-   "last_report": "2026-09-12 00:57",
-   "last_what": "①②③④ 5곳 수정(47·51·79-81·98줄) — 가구원동의만 공식문구('학자금 지원구간 산정 불가'), 서류제출은 '기한까지 완료' 수준, 무효표현 삭제, 서울대 출처 URL 추가. 커밋 6ef153c7, 푸시"
-  },
-  "seodesc0912": {
-   "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-09-12 01:09",
-   "last_read": "2026-09-12 01:09",
-   "owner": "이과장",
-   "state": "working",
-   "last_report": "2026-09-12 01:20",
-   "last_what": "101자 부착, batchexecute 200, 공통문구 5->4"
-  },
-  "draft0912g306": {
-   "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-09-12 01:51",
-   "last_read": "2026-09-12 01:54",
-   "owner": "이과장(작업 세션)",
-   "state": "working",
-   "last_report": "2026-09-12 01:55",
-   "last_what": "오물처리비 표기 단일화(오토·일반 동일, 표 아래 각주로 이동) + 계산예시에서 오물처리비 제외하고 요금만 비교. bodydup🟢0.053. 커밋 4c76f24d"
-  },
-  "draft0912h107": {
-   "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-09-12 02:02",
-   "last_read": "2026-09-12 02:02",
-   "owner": "이과장",
-   "state": "working",
-   "last_report": "2026-09-12 02:03",
-   "last_what": "V0 지적 3건 반영 — ①매진 단정→잔여좌석 예매처별 상이 가능으로 완화 ②'야놀자로 사업이관' 단정 삭제→'구 인터파크 티켓'만 ③매수제한 제목·목차 삭제(출처 없음). bodydup🟢0.056. 커밋 cacc3"
-  },
-  "pub0912h105": {
-   "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-09-12 02:17",
-   "last_read": "2026-09-12 02:18",
-   "owner": "이과장",
-   "state": "working",
-   "last_report": "2026-09-12 02:18",
-   "last_what": "발행 워크플로 트리거함(runId 34626931158) — 완료 대기"
   }
  },
- "updated": "2026-09-12 02:18"
+ "updated": "2026-09-11 22:44"
 }

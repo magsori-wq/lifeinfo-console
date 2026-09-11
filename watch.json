@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-12",
+ "updated": "2026-09-11",
  "items": [
   {
    "id": "redirect-error",
@@ -4083,9 +4083,7 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.seodesc scan --only A2-16 로 재확인 후 편집화면에서 직접 삽입",
    "owner": "claude",
-   "state": "done",
-   "done_at": "2026-09-12",
-   "result": "A2-16 검색설명 부착 완료 — seodesc0912(이과장) · 09-12 seodesc scan 전체 설명있음 260·공통문구 0"
+   "state": "todo"
   },
   {
    "id": "naver-post-a216-0901",
@@ -7493,10 +7491,8 @@
    "cmd": "python -m studio.seodesc scan --only H1-04",
    "owner": "claude",
    "kind": "action",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-09-12",
-   "result": "이미 완료 — seodesc0911h104 done(라이브 meta 101자 일치, curl 확인). 09-12 01:1x seo_desc_status 에서 H1-04 는 shared 목록에 없음"
+   "state": "todo",
+   "by": "이부장"
   },
   {
    "id": "xlink-h104-live-0911",
@@ -8062,116 +8058,6 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:4e9ecc45"
-  },
-  {
-   "id": "source-d4-12-0912",
-   "added": "2026-09-12",
-   "what": "D4-12 서류제출·가구원동의 마감 9/16(수)18시 확인됨 — SNU 9개 학과 공지 교차확인, kosaf.go.kr 원문 URL은 미확보",
-   "due": "2026-09-12",
-   "cmd": "python -m studio.dupcheck 'D4-12'",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
-   "id": "docflow-0912-0030",
-   "added": "2026-09-12",
-   "what": "루틴6 글감 2건 선별 — D4-12 지시서 발급 · E4-04 제외(특별이슈급 아님) · 남은 것: 이과장 초안 착수 확인",
-   "due": "2026-09-13",
-   "cmd": "python -m studio.now",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
-   "id": "ordercheck-stale-0912",
-   "added": "2026-09-12",
-   "what": "ordercheck 결함 2건 — seodesc0911h104(완료 지시서·seodesc scan --code --text 잘못, set 이어야) · xlink0911all(3. 담당·crosslinkcheck 줄에 batchboard 옵션 섞임, 교차링크 재개 전 고칠 것)",
-   "due": "2026-09-12",
-   "cmd": "python -m studio.ordercheck --quiet",
-   "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-09-12",
-   "result": "원인 정정: seodesc0911h104·xlink0911all(crosslinkcheck) 지목은 ordercheck 한 줄 다중명령 오탐이었다 — 185b6d2c 로 해소(5→2건). 남은 2건(pub0911e403·xlink0911all 의 --step)은 지시서 문장에 약칭 명령을 섞은 진짜 문장 결함 — 별도 항목으로 추적"
-  },
-  {
-   "id": "a115-core-claim-source-0912",
-   "added": "2026-09-12",
-   "what": "A1-15 결재함 3번 — 발행 승인 나도 이것 확인 전 진행 금지: '가구원동의 미완료=심사 불가·0원·무효' 주장(원고 47·51·79~81·98줄) 1차 출처 미확보(V0 🟡 지적). source 에이전트 조사 중 → 찾으면 인용 보강, 못 찾으면 이과장에게 문구 완화 지시(81줄 '무효 처리'는 원문 없으면 삭제)",
-   "due": "2026-09-12",
-   "cmd": "grep -n '추가 검증' docs/source_D4-12_국가장학금서류제출마감_20260912.md",
-   "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-09-12",
-   "result": "이과장 6ef153c7 수정 확인 — '심사 자체'·'무효' 0건, 가구원동의에만 공식문구(지원구간 산정 불가) 5곳, 서울대 uid=214 출처 추가, 서류제출은 단정 안 함"
-  },
-  {
-   "id": "ordercheck-oneline-fp-0912",
-   "added": "2026-09-12",
-   "what": "ordercheck 오탐 — 한 줄에 명령 2개를 '→'로 이어 쓰면 뒤 명령 옵션(--code --text)을 앞 명령(seodesc scan)에 붙여 '없는 옵션'으로 잡는다. seodesc0911h104 지목도 이것. ordercheck 가 줄 안의 'python -m' 마다 명령을 끊도록 고치고 falsepos 회귀 규칙 추가. xlink0911all(crosslinkcheck) 지목도 같은 원인인지 확인",
-   "due": "2026-09-12",
-   "cmd": "python -m studio.ordercheck --quiet",
-   "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-09-12",
-   "result": "185b6d2c · 전5건→후2건, 지목 2건(seodesc0911h104·xlink0911all/crosslinkcheck) 해소 확인. xlink0911all 남은 'batchboard mark --step'(prose 잔류)·pub0911e403 'mark/now' 슬래시는 별개 원인, 미수정"
-  },
-  {
-   "id": "xlink0911all-order-fix-0912",
-   "added": "2026-09-12",
-   "what": "교차링크 재개 전 xlink0911all 지시서(3. 담당, 2/43) 문장 정리 — '막히면 now --step 1 로' 같은 약칭 명령이 batchboard mark 줄에 섞여 ordercheck 🔴(mark 에 --step 없음). 명령은 한 줄에 하나, 약칭 대신 전체 명령으로",
-   "due": "2026-09-12",
-   "cmd": "python -m studio.ordercheck --quiet",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
-   "id": "docflow-0912-0135",
-   "added": "2026-09-12",
-   "what": "루틴4(travel-prep) 09-11 21:20 제안 2건 처리: G3-06(부산록페) pick+verify+source확인 완료 → draft0912g306 지시서 발급(이과장에게 깨움 전송). H1-07(그랜드민트) pick+verify+source확인 완료(NOL·YES24 1차확인, 네이버판매는 미확인이라 지시서에 '쓰지 말 것' 명시) → 지시서는 docs/dispatch_drafts/draft0912h107_order.txt 로 초안만 준비, 아직 batchboard 미등록(한 번에 한 편 원칙). G3-06 완료보고 오면 다음 순번으로 draft0912h107 등록할 것. dupcheck 🟡0.50 둘 다 D1-08(개천절)과 '10월' 토큰 겹침 오탐으로 확인, drop 없음",
-   "due": "2026-09-12",
-   "cmd": "python -m studio.batchboard show; cat docs/dispatch_drafts/draft0912h107_order.txt",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
-   "id": "v0reject-g3-06",
-   "added": "2026-09-12",
-   "what": "🔴 V0 반려 확인 요청 — G3-06 「예매처는 YES24뿐입니다 — 부산국제록페스티벌 티켓·라인업·캠핑 총정리」. 검사자 이부장(V0검사관) · 2026-09-12T01:50. 사유 요약: 계산예시(축제기간 오토캠핑 2박 vs 일반캠핑 2박) 내부모순: 표는 '오물처리비 2,000원은 오토캠핑만 해당·주말한정'이라 적어놓고 계산은 일반캠핑 주말에도 +2,000을 더해 20,000+27,000=47,000으로 계산함(자체 규칙대로면 45,000, '20,000원 더 저렴'도 22,000원이어야 함). 1차출처(CAMPING페이지)는 '오물처리비 2,000원 별도'한 줄뿐이고 오토전용·주말전용·1회성 여부는 명시 안 됨 — 세 가지(오토전용/주말전용/1회부과) 전부 미확인 추정. 보강조건: 인근숙소 요금은 넣지 말고(1차 … 🔴 전문은 `python -m studio.v0check gate --code G3-06` 로 읽으십시오(길어서 여기 안 싣습니다). 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다.",
-   "due": "2026-09-12",
-   "cmd": "python -m studio.v0check gate --code G3-06",
-   "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-09-12",
-   "result": "V0 통과로 해소 — 검사자 이부장 · 반려 사유(오물처리비 적용범위 추정·계산 내부모순) 해소 확인(4c76f24d): 오물처리비는 원문대로 '2,000원 별도' 각주 1줄, 계산은 요금만 오토 65,000·일반 45,000·차 20,000 일치. 헤드"
-  },
-  {
-   "id": "h107-fix-before-publish-0912",
-   "added": "2026-09-12",
-   "what": "H1-07 결재함 — 승인 나도 수정 3건 확인 전 발행 금지: ①78줄 '한 곳 매진≠다른 곳 매진' 단정 ②71줄 '야놀자 사업 이관' 단정 ③목차·70줄 '구매 매수 제한'(수치 없음). 이과장 draft0912h107 수정 커밋 확인 후 닫는다",
-   "due": "2026-09-12",
-   "cmd": "grep -n '매진\\|이관\\|매수' 그랜드민트페스티벌예매마감시각.txt",
-   "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-09-12",
-   "result": "이과장 cacc3952 확인 — 매진 단정→'예매처별 잔여석 다를 수 있음' 완화, 야놀자 이관·매수 제한 0건"
-  },
-  {
-   "id": "approve-b2-14-pending-0912",
-   "added": "2026-09-12",
-   "what": "B2-14 사장님 발행 승인 받음(09-12 02:2x 폰 문구 '승인: B2-14') — H1-05 발행 run 34626931158 진행 중이라 pubqueue go(원격 푸시) 보류. run 끝나면 go 도장 → 발행 지시서 → 이과장 깨움",
-   "due": "2026-09-12",
-   "cmd": "gh run view 34626931158 -R magsori-wq/lifeinfo-source --json status,conclusion",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
   }
  ]
 }

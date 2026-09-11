@@ -1,13 +1,13 @@
 {
- "rev": "cacc3952",
+ "rev": "039ed2b1",
  "counts": {
-  "total": 260,
+  "total": 261,
   "osmu_done": 260,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 260,
+  "index_pending": 261,
   "index_requested": 156,
-  "index_todo": 21,
+  "index_todo": 22,
   "index_benign": 83
  },
  "actionable": [
@@ -58,6 +58,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "H1-05",
+   "title": "타짜는 청불, 인턴·암살자들은 12세 — 2026 추석",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -209,22 +226,6 @@
   {
    "code": "C4-08",
    "title": "냉장고에 넣었으니 안전하다? 아닙니다 — 추석 명절음식",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "D1-08",
-   "title": "2026 개천절 대체공휴일 총정리 (10월 3일~5일 ",
    "need": [
     "색인요청"
    ],
