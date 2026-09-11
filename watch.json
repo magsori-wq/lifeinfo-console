@@ -7491,7 +7491,7 @@
    "state": "done",
    "by": "이부장",
    "done_at": "2026-09-11",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "result": "2026-09-11 완료 — 라이브 6편(H1-04·E2-15·B2-08·B4-05·C3-04·A6-02) 관련글 링크 정상화. xlinkcheck 로컬 🔴0건 · 라이브 전수 검증 옛링크 0 · 교차링크 블록 6/6 유지"
   },
   {
    "id": "falsepos-fix-0911",
@@ -7608,6 +7608,17 @@
    "kind": "action",
    "state": "todo",
    "by": "3."
+  },
+  {
+   "id": "fixlink-tool-0911",
+   "added": "2026-09-11",
+   "what": "studio/blogger.py 에 fixlink 서브커맨드 추가 — 라이브 본문의 특정 URL 문자열만 치환(--from/--to 복수 가능, --dry-run 으로 전후 문맥 확인, 0건이면 중단, 실행 patch 는 update-post 와 같은 결재함 승인 게이트(_approval_gate) 재사용). B2-08 2건 dry-run 실측 확인, 0건 abort 확인, validate_db PASS 15/WARN 3/FAIL 0. 실행은 이부장 몫 — 나는 실행하지 않았다.",
+   "due": "2026-09-11",
+   "cmd": "python studio/blogger.py fixlink --help",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
