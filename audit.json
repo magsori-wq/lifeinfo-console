@@ -3680,6 +3680,14 @@
    "target": "approve-a3-13-fixlink",
    "detail": "사장님 승인(폰 결재함 붙여넣기 20:3x) — 이부장 확인: 옛 279-5.html 404 · 새 27-95-2026.html 200(=A3-12 DB url). 이과장이 fixlink 실행",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-12T04:41:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "batchboard-mark-reopen-silent-0912",
+   "detail": "정정 — 도구 결함 아님. mark 는 동결 배치면 '[차단] … 동결된 배치입니다' 를 출력한다(batchboard.py L1767). 관제탑이 출력을 grep 'OK|오류' 로 걸러 경고를 스스로 지웠다. 교훈: 결과 판정용 필터에 차단·거부 문구를 빼지 말 것",
+   "via": "cli"
   }
  ]
 }
