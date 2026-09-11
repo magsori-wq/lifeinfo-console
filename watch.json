@@ -7858,7 +7858,7 @@
    "state": "done",
    "by": "이과장",
    "done_at": "2026-09-11",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "result": "네이버 게시 완료·기록 — https://blog.naver.com/magsori8975/224408430501 (PostView 로 제목·교차링크 확인, naver-link 16:1x). 제휴 링크는 미부착(afflink-c4-08 별건)"
   },
   {
    "id": "docflow-0911-1600",
@@ -7883,12 +7883,44 @@
   {
    "id": "xlink-c408",
    "added": "2026-09-11",
-   "what": "🔗 C4-08 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-08",
+   "what": "🔗 C4-08 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-08",
    "due": "2026-09-11",
    "cmd": "python studio/blogger.py crosslink --code C4-08",
    "owner": "claude",
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-11",
+   "result": "blogspot crosslink 갱신 완료(naver, threads, instagram) — python studio/blogger.py crosslink --code C4-08 실행 확인"
+  },
+  {
+   "id": "routine89-report-verify-0912",
+   "added": "2026-09-11",
+   "what": "9/11 수리 확인 — 루틴 8(07:00)·9(15:00) 가 이슈상품 후보를 issueprod 배치로 실제로 보고하는가. 9/11 첫 실행은 보고함(issueprod)이 없고 now 가 --step 없이 죽는 형태라 보고가 사라졌다 → 배치 생성·두 지침에 --step 1 추가·끝줄 9/I 정정. 내일 07:00 이후 issueprod 의 currents 에 기록이 있으면 통과",
+   "due": "2026-09-12",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print((d.get('currents') or {}).get('issueprod'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-e403",
+   "added": "2026-09-11",
+   "what": "E4-03 네이버 게시 — 제목: 118 신고하면 과태료 3천만원? 스팸문자 신고 방법 4가지 총정리 / 첨부: thumbs_naver/234n_smishing.png(후킹제목 반영판) / 카테고리 선택 후 게시",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.pipeline naver-draft --code E4-03 --file osmu/네이버용_스팸문자118신고.txt --open   (클립보드에 본문이 담기고 글쓰기 창이 열립니다 — 그 자리에서 Ctrl+V → 이미지 첨부 → 게시)",
+   "owner": "user",
    "state": "todo",
-   "by": "naver-link"
+   "by": "이과장"
+  },
+  {
+   "id": "manual-action-transparency-0911",
+   "added": "2026-09-11",
+   "what": "사장님 보고(09-11): GSC 보안및직접조치에 '투명성' 제재·모든 페이지 영향. 이부장이 같은 날 실측 — ①URL속성 직접조치 '감지된 문제 없음' ②도메인속성 직접조치 '감지된 문제 없음' ③도메인속성 보안문제 '감지된 문제 없음' ④GSC 메시지함 15건 전부 색인생성·유효성검사 알림(직접조치 0) ⑤magsori@ Gmail sc-noreply 90일 26통 중 직접조치·투명성 0. → 우리 두 속성에서는 확인 안 됨. 사장님이 보신 화면(다른 계정·다른 속성·다른 서비스)을 캡처로 받아 대조 필요. 참고: 구글 원문상 '투명성'은 Google 뉴스·Discover 정책이며 'Content ineligible for news surfaces may continue to appear elsewhere in Search' — 걸려 있어도 일반 웹검색 색인을 막는 조치가 아니다(support.google.com/news/publisher-center/answer/6204050). 코드·문서는 아직 안 고쳤다(전제 확인 전).",
+   "due": "2026-09-11",
+   "cmd": "브라우저로 열기: https://search.google.com/search-console/manual-actions?resource_id=sc-domain%3Alifeinfo8975.blogspot.com (URL속성은 resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:6cfa517f"
   }
  ]
 }
