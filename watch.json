@@ -4083,7 +4083,9 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.seodesc scan --only A2-16 로 재확인 후 편집화면에서 직접 삽입",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-12",
+   "result": "A2-16 검색설명 부착 완료 — seodesc0912(이과장) · 09-12 seodesc scan 전체 설명있음 260·공통문구 0"
   },
   {
    "id": "naver-post-a216-0901",
@@ -8102,6 +8104,16 @@
    "by": "이부장",
    "done_at": "2026-09-12",
    "result": "이과장 6ef153c7 수정 확인 — '심사 자체'·'무효' 0건, 가구원동의에만 공식문구(지원구간 산정 불가) 5곳, 서울대 uid=214 출처 추가, 서류제출은 단정 안 함"
+  },
+  {
+   "id": "ordercheck-oneline-fp-0912",
+   "added": "2026-09-12",
+   "what": "ordercheck 오탐 — 한 줄에 명령 2개를 '→'로 이어 쓰면 뒤 명령 옵션(--code --text)을 앞 명령(seodesc scan)에 붙여 '없는 옵션'으로 잡는다. seodesc0911h104 지목도 이것. ordercheck 가 줄 안의 'python -m' 마다 명령을 끊도록 고치고 falsepos 회귀 규칙 추가. xlink0911all(crosslinkcheck) 지목도 같은 원인인지 확인",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.ordercheck --quiet",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
