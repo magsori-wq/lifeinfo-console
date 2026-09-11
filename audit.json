@@ -3472,6 +3472,30 @@
    "target": "gemini-billing-prepay",
    "detail": "사장님 결정(2026-09-11): 결제 전환하지 않는다 — 사용하지 않기 때문. 【근거】이부장이 저장소 전수 조사: .py·.yml·.json·.bat·.js 어디에도 Gemini API 호출 코드 0건, studio/.secrets 에 Gemini 키 없음(애드센스·Blogger·GSC 토큰뿐). 이 블로그가 쓰는 API 는 Blogger v3·Search Console·AdSense·네이버 자동완성 넷이고 Gemini 와 무관하다. 구글 메일(2026-08-19)은 계정 단위 안내였다. 미조치 시 AI Studio 사용만 중단되고 발행·색인·OSMU 는 영향 없음. ⚠️ 다시 올리지 말 것",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-11T12:54:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "prod-G2-05-0907",
+   "detail": "이부장이 tosslink 로 직접 처리(2026-09-11) — 사장님 손이 필요 없었다. 기존 링크 https://toss.im/_m/bt5QMWEt 생존 확인 후 affiliate 등록 완료. 접이식 의자 1건만(권고대로 돗자리 제외)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-11T12:54:17",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "afflink-h1-06-naver",
+   "detail": "이부장 확인 — H1-06 네이버는 이미 게시 완료(224408132717). 제휴 링크 대기가 해소됐다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-11T13:05:00",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "A6-04",
+   "detail": "기발행 E1-02(어르신 휴대폰 요금감면·2026-07)와 사실상 같은 글이다. 이과장이 09-11 04:28 에 blocked 로 보고했고 이부장이 E1-02 라이브를 직접 열어 검증했다 — 대상 5종(기초생활 생계·의료/주거·교육/차상위/기초연금/장애인·국가유공자) 전부 동일, 금액 6개(26,000·33,500·11,000·21,500·35%·50%) 전부 동일, 출처도 같은 복지로 WLF00003257. dupcheck 가 '통신'≠'휴대폰' 토큰 불일치로 🟢 신규 오판했다. 출처자료 docs/source_A6-04_통신요금감면_20260911.md 는 남겨 둔다(E1-02 보강 때 재사용)",
+   "via": "cli"
   }
  ]
 }
