@@ -8092,6 +8092,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "guard-checkout-webapp-0912",
+   "added": "2026-09-12",
+   "what": "webapp 폴더 통째 되돌림(git checkout -- webapp/)을 코드로 막을지 사장님 판단 — 09-12 두 차례 CP 원본(배치보드·재확인·DB 확산기록)이 지워졌다. CLAUDE.md·지시서 경고만으로는 부족. 방법: .claude/settings.json 의 permissions.deny 에 'Bash(git checkout -- webapp/*)' 추가(세션이 스스로 못 넣는 설정이라 사장님 손)",
+   "due": "2026-09-12",
+   "cmd": "notepad .claude\\settings.json",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
