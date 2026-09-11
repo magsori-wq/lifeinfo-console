@@ -7858,7 +7858,7 @@
    "state": "done",
    "by": "이과장",
    "done_at": "2026-09-11",
-   "result": "네이버 게시 완료·기록 — https://blog.naver.com/magsori8975/224408430501 (PostView 로 제목·교차링크 확인, naver-link 16:1x). 제휴 링크는 미부착(afflink-c4-08 별건)"
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "docflow-0911-1600",
@@ -7883,24 +7883,12 @@
   {
    "id": "xlink-c408",
    "added": "2026-09-11",
-   "what": "🔗 C4-08 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-08",
+   "what": "🔗 C4-08 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-08",
    "due": "2026-09-11",
    "cmd": "python studio/blogger.py crosslink --code C4-08",
    "owner": "claude",
-   "state": "done",
-   "by": "naver-link",
-   "done_at": "2026-09-11",
-   "result": "blogspot crosslink 갱신 완료(naver, threads, instagram) — python studio/blogger.py crosslink --code C4-08 실행 확인"
-  },
-  {
-   "id": "routine89-report-verify-0912",
-   "added": "2026-09-11",
-   "what": "9/11 수리 확인 — 루틴 8(07:00)·9(15:00) 가 이슈상품 후보를 issueprod 배치로 실제로 보고하는가. 9/11 첫 실행은 보고함(issueprod)이 없고 now 가 --step 없이 죽는 형태라 보고가 사라졌다 → 배치 생성·두 지침에 --step 1 추가·끝줄 9/I 정정. 내일 07:00 이후 issueprod 의 currents 에 기록이 있으면 통과",
-   "due": "2026-09-12",
-   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print((d.get('currents') or {}).get('issueprod'))\"",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
