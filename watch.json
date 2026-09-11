@@ -8116,12 +8116,23 @@
   {
    "id": "xlink-a115",
    "added": "2026-09-12",
-   "what": "🔗 A1-15 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-15",
+   "what": "🔗 A1-15 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-15",
    "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code A1-15",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "naver-a115",
+   "added": "2026-09-12",
+   "what": "A1-15 네이버 게시 — 제목: 국가장학금 가구원동의 안 하면 지원 불가 — 서류제출 마감 (2026) · 카테고리: 정부지원 · 첨부: thumbs_naver/239n_scholarship_doc.png(네이버 전용, 제목 일치) · 태그: #국가장학금 #가구원동의 #국가장학금서류제출 #한국장학재단 #대학생지원금",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.pipeline naver-draft --code A1-15 --file osmu/네이버용_국가장학금서류제출가구원동의마감.txt",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
