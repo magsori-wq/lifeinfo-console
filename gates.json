@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-11 08:13",
+ "updated": "2026-09-11 09:28",
  "ok": false,
  "problems": [
   {
@@ -99,6 +99,16 @@
   {
    "mod": "pushgate",
    "kind": "발행 중 push 금지 — run 이 도는 동안 밀면 그 발행이 실패한다(pre-push 훅)",
+   "what": "True"
+  },
+  {
+   "mod": "xlinkcheck",
+   "kind": "관련글 제목↔URL 정합 — 「함께 보면 좋은 글」이 엉뚱한 글을 가리키면 안 된다",
+   "what": "True"
+  },
+  {
+   "mod": "imghost",
+   "kind": "원고 이미지 호스트 — blogspot/thumbs 는 항상 404. 정답=github.io 콘솔",
    "what": "True"
   }
  ]
