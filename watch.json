@@ -4083,7 +4083,9 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.seodesc scan --only A2-16 로 재확인 후 편집화면에서 직접 삽입",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-12",
+   "result": "A2-16 검색설명 부착 완료 — seodesc0912 3791d13e · 공통문구 0. 02:20 webapp 되돌림으로 다시 열려 재기록"
   },
   {
    "id": "naver-post-a216-0901",
@@ -7491,8 +7493,10 @@
    "cmd": "python -m studio.seodesc scan --only H1-04",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "이미 완료 — seodesc0911h104 done(라이브 meta 101자 일치). 02:20 webapp 되돌림으로 다시 열려 재기록"
   },
   {
    "id": "xlink-h104-live-0911",
@@ -8075,6 +8079,16 @@
    "what": "B2-14 사장님 발행 승인 받음(09-12 02:2x 폰 문구 '승인: B2-14') — H1-05 발행 run 진행 중이라 pubqueue go 보류. 오늘 3편 여부 사장님 답 대기(A1-15 오늘·B2-14 내일 권고)",
    "due": "2026-09-12",
    "cmd": "gh run view 34626931158 -R magsori-wq/lifeinfo-source --json status,conclusion",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink0911all-order-fix-0912",
+   "added": "2026-09-12",
+   "what": "교차링크 재개 전 xlink0911all 지시서(3. 담당) 문장 정리 — '막히면 now --step 1 로' 약칭 명령이 batchboard mark 줄에 섞여 ordercheck 🔴. 명령은 한 줄에 하나",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.ordercheck --quiet",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
