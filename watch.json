@@ -7821,8 +7821,10 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.v0check gate --code H1-05",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-11",
+   "result": "V0 통과로 해소 — 검사자 이부장 · 함정(청불vs12/15세 보호자동반예외, 제29조④⑤ 원문대비·고교재학설은 출처미확인으로 제외)+판단형비교/계산예시(취소수수료 3구간, 공정위 고시2025-14호, 14000원→7000원 손실 계산)로 V0 5요소 "
   },
   {
    "id": "batchboard-now-indexerror-0911",
@@ -7991,6 +7993,17 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.v0check gate --code H1-05",
    "owner": "claude",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "approve-a3-13-fixlink",
+   "added": "2026-09-11",
+   "what": "A3-13 라이브 링크 정정 — 「함께 보면 좋은 글」 관련글 URL이 404(279-5.html, 원본 작성 시점 오타)라 27-95-2026.html(A3-12, 실제 존재·200확인)로 교체. 본문 다른 부분 변경 없음. 【권고】승인 권합니다 — 죽은 링크 방치 위험이 더 큽니다.",
+   "due": "2026-09-11",
+   "cmd": "python studio/blogger.py fixlink --code A3-13 --from 'https://lifeinfo8975.blogspot.com/2026/09/279-5.html' --to 'https://lifeinfo8975.blogspot.com/2026/09/27-95-2026.html'",
+   "owner": "user",
+   "kind": "approve",
    "state": "todo",
    "by": "이과장"
   }
