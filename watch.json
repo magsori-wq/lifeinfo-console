@@ -7547,6 +7547,17 @@
    "by": "이부장",
    "done_at": "2026-09-11",
    "result": "V0 통과로 해소 — 검사자 이부장 · V0 반려 2건 수정 확인(이부장 재검사). ①썸네일 호스트 blogspot(404)→magsori-wq.github.io 정정, 라이브 200 실측 ②마무리 문구를 '불꽃놀이 10/3·10/9·10/17 3일뿐, "
+  },
+  {
+   "id": "imghost-gate-0911",
+   "added": "2026-09-11",
+   "what": "원고 이미지 호스트 게이트 신설(studio/imghost.py) — blogspot.com/thumbs 404·낯선 호스트 차단. pubqueue add·publish-flow 사전차단 + selfcheck 25) 사후감시 + falsepos 회귀규칙 2개 + session_rules GATES 등록. 전수 스캔 281개 파일 0건(H1-06·G3-05 는 이미 고쳐져 있었음, 감지력은 인위 주입으로 확인: pubqueue 거부·pipeline 중단·--force-imghost 우회 모두 실측)",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.imghost",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
