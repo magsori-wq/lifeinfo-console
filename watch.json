@@ -8113,6 +8113,16 @@
    "kind": "action",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "batchboard-mark-reopen-silent-0912",
+   "added": "2026-09-12",
+   "what": "batchboard mark --state todo 가 done 항목을 되돌리지 않고 출력도 없이 끝난다(09-12 pub0912h105 H1-05). 되돌림을 막는 게 의도면 거부 메시지를, 아니면 반영을 — 조용한 무시는 '정정했다'는 거짓 기록을 부른다(7a6d77ef)",
+   "due": "2026-09-13",
+   "cmd": "grep -n 'def cmd_mark\\|state.*done' studio/batchboard.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
