@@ -7891,13 +7891,13 @@
    "by": "naver-link"
   },
   {
-   "id": "naver-title-emdash-0911",
+   "id": "routine89-report-verify-0912",
    "added": "2026-09-11",
-   "what": "네이버 제목의 줄표(—)가 라이브에서 긴 빈칸으로 바뀐다 — 원고에 줄표가 있던 5편 전부(C4-08·G3-05·H1-06·C2-15·F2-17). 우리 도구(naver.build_package naver_title · m.html pt.title)는 줄표를 그대로 넘기고, 하이픈(-)은 C2-15에서 살아 있다. 수리안: 네이버 제목을 만드는 단일 지점에서 ' — ' 를 네이버에서 살아남는 구분자로 바꾸고, naverkw 후킹 판정도 그 구분자를 인정하게. 이미 게시된 4편(G3-05·H1-06·C2-15·F2-17) 제목 수정은 사장님 손 — 급하지 않음",
+   "what": "9/11 수리 확인 — 루틴 8(07:00)·9(15:00) 가 이슈상품 후보를 issueprod 배치로 실제로 보고하는가. 9/11 첫 실행은 보고함(issueprod)이 없고 now 가 --step 없이 죽는 형태라 보고가 사라졌다 → 배치 생성·두 지침에 --step 1 추가·끝줄 9/I 정정. 내일 07:00 이후 issueprod 의 currents 에 기록이 있으면 통과",
    "due": "2026-09-12",
-   "cmd": "grep -rn 'naver_title\\|_title_of' studio/naver.py studio/approvalcount.py studio/osmutext.py | head",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print((d.get('currents') or {}).get('issueprod'))\"",
    "owner": "claude",
-   "state": "todo",
+   "state": "wait",
    "by": "이부장"
   }
  ]
