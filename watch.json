@@ -7883,12 +7883,22 @@
   {
    "id": "xlink-c408",
    "added": "2026-09-11",
-   "what": "🔗 C4-08 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-08",
+   "what": "🔗 C4-08 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-08",
    "due": "2026-09-11",
    "cmd": "python studio/blogger.py crosslink --code C4-08",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "naver-title-emdash-0911",
+   "added": "2026-09-11",
+   "what": "네이버 제목의 줄표(—)가 라이브에서 긴 빈칸으로 바뀐다 — 원고에 줄표가 있던 5편 전부(C4-08·G3-05·H1-06·C2-15·F2-17). 우리 도구(naver.build_package naver_title · m.html pt.title)는 줄표를 그대로 넘기고, 하이픈(-)은 C2-15에서 살아 있다. 수리안: 네이버 제목을 만드는 단일 지점에서 ' — ' 를 네이버에서 살아남는 구분자로 바꾸고, naverkw 후킹 판정도 그 구분자를 인정하게. 이미 게시된 4편(G3-05·H1-06·C2-15·F2-17) 제목 수정은 사장님 손 — 급하지 않음",
+   "due": "2026-09-12",
+   "cmd": "grep -rn 'naver_title\\|_title_of' studio/naver.py studio/approvalcount.py studio/osmutext.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
