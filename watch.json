@@ -7636,6 +7636,15 @@
    "kind": "action",
    "state": "todo",
    "by": "3."
+  },
+  {
+   "id": "blogger-fixlink-sweep-0911",
+   "added": "2026-09-11",
+   "what": "H1-06 검색설명 오탈자 수정 커밋(7b72ecb7)에 studio/blogger.py의 cmd_fixlink(83줄, xlink-live-fix-0911 관련 링크치환 명령)가 이미 스테이징돼 있어 함께 실렸다. 이 코드를 쓰던 세션(이과장 추정)은 git log -- studio/blogger.py 로 확인. working tree는 현재 clean(추가 손실 없음), 다만 커밋 메시지가 이 파일을 설명 못 함.",
+   "cmd": "git show 7b72ecb7 -- studio/blogger.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
