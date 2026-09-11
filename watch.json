@@ -7560,6 +7560,17 @@
    "by": "이부장",
    "done_at": "2026-09-11",
    "result": "완료 — CORRECT_PREFIX(thumbs 전용)를 CONSOLE_PREFIX(콘솔 전체)로 정정해 logo/buttons/videos 오탐 방지까지 반영. 전수 281개 파일 0건(H1-06·G3-05 스캔대상 확인·이미 정상), 감지력·오탐 실측 완료."
+  },
+  {
+   "id": "imghost-gate-0911b",
+   "added": "2026-09-11",
+   "what": "원고 이미지 호스트 게이트 신설(studio/imghost.py) — blogspot.com/thumbs 404 + 콘솔 밖 낯선 호스트 차단(OK판정=콘솔 전체 CONSOLE_PREFIX, thumbs로 좁히지 않음 — logo/buttons/videos 오탐 방지). pubqueue add·publish-flow 사전차단(+--force-imghost) + selfcheck 25) 사후감시 + falsepos 회귀규칙 3개(selfcheck배선·사전게이트배선·OK범위) + session_rules GATES 등록. 전수스캔 281개 파일 0건(target_files에 H1-06·G3-05 포함 확인, 둘 다 이미 정상). 감지력: pubqueue 거부·pipeline 중단(exit 0 — 기존 게이트 전부 동일 패턴, 워크플로 grep '[중단]' 체크로 이미 방어됨)·--force-imghost 우회 모두 실측",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.imghost",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
