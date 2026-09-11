@@ -8092,6 +8092,27 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-h105",
+   "added": "2026-09-12",
+   "what": "🔗 H1-05 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-05",
+   "due": "2026-09-12",
+   "cmd": "python studio/blogger.py crosslink --code H1-05",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "naver-h105",
+   "added": "2026-09-12",
+   "what": "H1-05 네이버 게시 — 제목: 타짜 개봉일, 청불이라 온 가족이 못 봅니다 — 인턴·암살자들 개봉일 총정리 (2026) · 카테고리: 경제·이슈 · 첨부: thumbs_naver/236n_chuseokmovie.png(네이버 전용, 제목 일치) · 태그: #인턴개봉일 #암살자들개봉일 #타짜벨제붑의노래 #추석영화개봉 #2026추석영화",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.pipeline naver-draft --code H1-05 --file osmu/네이버용_추석극장가개봉작.txt",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
