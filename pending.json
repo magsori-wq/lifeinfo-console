@@ -1,9 +1,9 @@
 {
- "rev": "8c841453",
+ "rev": "609e9edd",
  "counts": {
   "total": 262,
-  "osmu_done": 261,
-  "osmu_pending": 1,
+  "osmu_done": 262,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 262,
   "index_requested": 156,
@@ -11,23 +11,6 @@
   "index_benign": 83
  },
  "actionable": [
-  {
-   "code": "A1-15",
-   "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
   {
    "code": "B1-03",
    "title": "위택스 장애 지방세 납부기한 연장 총정리 (7월 7일까",
@@ -76,6 +59,24 @@
     "n": true,
     "t": true,
     "i": false
+   }
+  },
+  {
+   "code": "A1-15",
+   "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
+   "need": [
+    "네이버",
+    "쓰레드",
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": true
    }
   },
   {
