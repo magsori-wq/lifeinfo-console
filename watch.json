@@ -7865,6 +7865,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "falsepos-stale-approval-subitem-0911",
+   "added": "2026-09-11",
+   "what": "falsepos 3) '낡은 승인표시' 규칙 오탐 — pub0911c408 에 이과장이 보조 항목 'C4-08-seodesc' 를 달자, 규칙이 그것을 글 코드로 보고 'go 도장 없음' 🔴 을 냈다(C4-08 본체는 사장님 go 15:38 있음). 수리안: 항목 코드를 _code_in 류로 글 코드(A~H#-##)로 정규화한 뒤 도장을 보거나, 글 코드 형식이 아닌 항목은 건너뛴다. 고친 뒤 회귀 규칙",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.falsepos 2>&1 | grep -A2 '낡은 승인표시'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
