@@ -1,13 +1,13 @@
 {
- "rev": "6e68c491",
+ "rev": "82776e56",
  "counts": {
-  "total": 255,
+  "total": 256,
   "osmu_done": 255,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 255,
+  "index_pending": 256,
   "index_requested": 156,
-  "index_todo": 16,
+  "index_todo": 17,
   "index_benign": 83
  },
  "actionable": [
@@ -58,6 +58,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": false
+   }
+  },
+  {
+   "code": "H1-06",
+   "title": "예매 오픈이 바로 오늘? 이자벨 위페르 주연 〈새〉 S",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -208,22 +225,6 @@
   {
    "code": "D3-06",
    "title": "가정용 소화기 내용연수 확인 방법 총정리 (2026 분",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "E2-10",
-   "title": "카드 포인트 계좌입금 신청 방법 총정리 (여신금융협회·",
    "need": [
     "색인요청"
    ],
