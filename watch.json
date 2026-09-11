@@ -8147,8 +8147,10 @@
    "due": "2026-09-13",
    "cmd": "grep -n 'def cmd_mark' studio/batchboard.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "정정 — 도구 결함 아님. mark 는 동결 배치면 '[차단] … 동결된 배치입니다' 를 출력한다(batchboard.py L1767). 관제탑이 출력을 grep 'OK|오류' 로 걸러 경고를 스스로 지웠다. 교훈: 결과 판정용 필터에 차단·거부 문구를 빼지 말 것"
   },
   {
    "id": "h107-order-guard-after-g306-0912",
@@ -8250,7 +8252,7 @@
   {
    "id": "xlink-h107",
    "added": "2026-09-12",
-   "what": "🔗 H1-07 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-07",
+   "what": "🔗 H1-07 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-07",
    "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code H1-07",
    "owner": "claude",
