@@ -7744,6 +7744,17 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "clipfix-0911",
+   "added": "2026-09-11",
+   "what": "CP 화면 10곳(index·gsc·pending_osmu·dashboard·index_board·jisikin·osmu·m·generator·approval)의 navigator.clipboard.writeText 무음실패를 webapp/cp_clip.js 공용 cpCopy()로 통일. uicheck 26/26·validate_db FAIL0·falsepos 0건(재현으로 감지 확인). 커밋 f3714183",
+   "due": "2026-09-11",
+   "cmd": "python -m studio.uicheck && grep -rn navigator.clipboard.writeText webapp/*.html",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
