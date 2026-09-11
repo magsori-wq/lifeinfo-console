@@ -7842,8 +7842,10 @@
    "cmd": "토스쇼핑에서 '맥스앤맥스 밀폐용기 냉동밥' 또는 '맥스앤맥스 냉동밥 소분 밀폐용기 16종 세트' 검색 → 쉐어링크 발급",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-11",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "naver-c4-08",
@@ -7853,8 +7855,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code C4-08 --file osmu/네이버용_추석명절음식식중독예방.txt",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-11",
+   "result": "네이버 게시 완료·기록 — https://blog.naver.com/magsori8975/224408430501 (PostView 로 제목·교차링크 확인, naver-link 16:1x). 제휴 링크는 미부착(afflink-c4-08 별건)"
   },
   {
    "id": "docflow-0911-1600",
@@ -7875,6 +7879,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-c408",
+   "added": "2026-09-11",
+   "what": "🔗 C4-08 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-08",
+   "due": "2026-09-11",
+   "cmd": "python studio/blogger.py crosslink --code C4-08",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
