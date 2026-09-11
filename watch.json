@@ -8162,6 +8162,16 @@
    "by": "이부장",
    "done_at": "2026-09-12",
    "result": "이과장 cacc3952 확인 — 매진 단정→'예매처별 잔여석 다를 수 있음' 완화, 야놀자 이관·매수 제한 0건"
+  },
+  {
+   "id": "approve-b2-14-pending-0912",
+   "added": "2026-09-12",
+   "what": "B2-14 사장님 발행 승인 받음(09-12 02:2x 폰 문구 '승인: B2-14') — H1-05 발행 run 34626931158 진행 중이라 pubqueue go(원격 푸시) 보류. run 끝나면 go 도장 → 발행 지시서 → 이과장 깨움",
+   "due": "2026-09-12",
+   "cmd": "gh run view 34626931158 -R magsori-wq/lifeinfo-source --json status,conclusion",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
