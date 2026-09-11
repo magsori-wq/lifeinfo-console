@@ -7855,6 +7855,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "docflow-0911-1600",
+   "added": "2026-09-11",
+   "what": "선별 2건(A3-13 출산크레딧·B2-14 SCB신용대출) pick+verify 완료. 지시서 3건(draft0911a313·draft0911b214·fix0911h105) 준비했으나 batchboard order 게이트가 전건 차단 — pub0911c408(C4-08) 라이브 발행됐는데 보드 미완료(검색설명 shared·인스타·쓰레드 대기)로 '보고가 안 된 일' 판정. C4-08 을 doing 으로 실측 마킹했으나(curl 200 확인) done 요건(seodesc)이 안 끝나 게이트 그대로. docflow 는 브라우저 도구가 없어 seodesc·인스타·쓰레드를 직접 못 끝낸다 — 이과장이 pub0911c408 을 마저 끝내야 새 지시서(A3-13·B2-14·H1-05 정정) 등록 가능.",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.batchboard order --id draft0911a313 --file <order.txt>  # pub0911c408 C4-08 done 마킹 뒤 재시도",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
