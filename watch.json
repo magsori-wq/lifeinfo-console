@@ -7597,8 +7597,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code H1-06 --file osmu/네이버용_예매오픈이바로오늘이자벨위페르주연새SPAF20.txt",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-11",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "naver-capture-0911-bcast",
@@ -7721,12 +7723,23 @@
   {
    "id": "xlink-g305",
    "added": "2026-09-11",
-   "what": "🔗 G3-05 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-05",
+   "what": "🔗 G3-05 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-05 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdIYCq5iU5r/",
    "due": "2026-09-11",
    "cmd": "python studio/blogger.py crosslink --code G3-05",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "draft-order-0912",
+   "added": "2026-09-11",
+   "what": "선별됐는데 초안·지시서가 없는 글감 3건 — 내일 아침 이 순서로 지시서를 낼 것(시의성 순)\n  ①C4-08 추석 명절음식 식중독 예방 — 추석 9/24~27, 가장 급함\n  ②H1-05 추석 극장가 개봉작 — 한국영화 6편 9/23 전후 개봉, 예매 앵글만\n  ③A6-04 통신요금 감면 — 상시라 여유 있음\n오늘 안 낸 이유: 이과장이 G3-05 쓰레드+E4-03 초안으로 밀려 있고, 메모리 압박으로 화면이 멈췄던 직후라 대기열을 늘리지 않았다. 오늘 발행 2편(H1-06·G3-05) 완료.",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.gatecheck",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
