@@ -8186,8 +8186,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code H1-05 --file osmu/네이버용_추석극장가개봉작.txt",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-12",
+   "result": "H1-05 네이버 게시 완료 — DB osmu.naver 기록 + 라이브 PostView 실측(logNo=224409272967, 본문 190k+ 바이트). 관제탑 실측으로 닫음 2026-09-12"
   },
   {
    "id": "naver-b214",
@@ -8197,8 +8199,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code B2-14 --file osmu/네이버용_소상공인SCB신용평가은행대출.txt",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-12",
+   "result": "B2-14 네이버 게시 완료 — DB osmu.naver 기록 + 라이브 PostView 실측(logNo=224409285758, 본문 190k+ 바이트). 관제탑 실측으로 닫음 2026-09-12"
   },
   {
    "id": "naver-g306",
@@ -8208,8 +8212,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code G3-06 --file osmu/네이버용_부산국제록페스티벌티켓라인업캠핑.txt",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-12",
+   "result": "G3-06 네이버 게시 완료 — DB osmu.naver 기록 + 라이브 PostView 실측(logNo=224409289673, 본문 190k+ 바이트). 관제탑 실측으로 닫음 2026-09-12"
   },
   {
    "id": "xlink-g306",
@@ -8253,8 +8259,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code H1-07 --file osmu/네이버용_그랜드민트페스티벌예매마감시각.txt",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-12",
+   "result": "H1-07 네이버 게시 완료 — DB osmu.naver 기록 + 라이브 PostView 실측(logNo=224409295715, 본문 190k+ 바이트). 관제탑 실측으로 닫음 2026-09-12"
   },
   {
    "id": "naver-autopost-research-0912",
@@ -8393,8 +8401,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code A1-16 --file osmu/네이버용_희망저축계좌2유형3차모집.txt",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-12",
+   "result": "A1-16 네이버 게시 완료 — DB osmu.naver 기록 + 라이브 PostView 실측(logNo=224409309839, 본문 190k+ 바이트). 관제탑 실측으로 닫음 2026-09-12"
   },
   {
    "id": "reports-no-history-0912",
@@ -8512,6 +8522,16 @@
    "due": "2026-09-15",
    "cmd": "python -m studio.watch --id threads-reply-focus-0912",
    "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "format-standard-0912",
+   "added": "2026-09-12",
+   "what": "📐 글 형식 정형화 1단계 — 실측 끝. 유일한 구멍은 추천 태그 227편이고, 나머지 4요소는 99~100%다. 관제탑 권고는 '지금 소급하지 않는다'(색인 0/251이라 유입 자체가 없어 값어치가 낮고, 227편 빨간불은 지울 수 없는 빨간불이 된다). 사장님이 체감하신 '보기에 적합치 않다'는 이 5요소로 설명되지 않는다 — 어느 글의 무엇이 어색하셨는지 한 가지만 알려주시면 그것부터 잡는다.",
+   "due": "2026-09-13",
+   "cmd": "python -c \"import io;print(io.open(r'C:/lifeinfo/docs/실측_글형식_전수_20260912.md',encoding='utf-8').read()[:2000])\"",
+   "owner": "user",
    "state": "todo",
    "by": "이부장"
   }
