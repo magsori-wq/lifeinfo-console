@@ -8462,8 +8462,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.batchboard mark --id routinelog --code lifeinfo-index-check --state done --note '검증 시험1'; python -m studio.batchboard mark --id routinelog --code lifeinfo-index-check --state done --note '검증 시험2'; python -m studio.reports",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "검증 완료 — 두 축 다 확인(관제탑이 batch.json 직접 실측). ①날짜 슬롯: 루틴7 1차 보고가 레거시 칸 lifeinfo-index-check 에 664자로 잔존, 2차는 -0912 칸에 별도 생성 → 어제 것을 안 덮는다 ②append: daily-email-briefing-0912 note 1301자 안에 5차 보고와 그 뒤 정정이 함께 있다 → 같은 날 2회 mark 해도 앞 내용이 안 덮인다"
   }
  ]
 }
