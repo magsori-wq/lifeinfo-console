@@ -8602,9 +8602,9 @@
   {
    "id": "browser-write-dead-0912",
    "added": "2026-09-12",
-   "what": "🖥️ 브라우저 '쓰기' 가 16시 이후 죽었다 — 포커스 문제가 아니다(3. 의 17:18 관측으로 진단이 바뀌었다). 핵심 관측 둘: ①document.activeElement 가 **제대로 잡혔는데도**(BODY 아님, 해당 contenteditable) 키 입력이 DOM 에 반영 안 됨 — 'test' 직접 타이핑도 무반응 ②B2-14 재시도 중 **tab group 이 스스로 소멸**(No tab group exists). 즉 오늘 오전 진단(포커스가 안 잡힌다)과 **다른 문제**다. 읽기는 된다(G3-06·A1-15 답글 라이브 확인 성공). 실측 경계: 15:50 성공 → 16:21 이후 두 세션·두 채널 전부 실패. ⚠️ 오늘 성공했던 JS focus 처방도 17:15 에는 재현 안 됨 — 처방이 틀린 게 아니라 그 위 계층이 막힌 것으로 보인다(단정 아님). 다음 세션은 이 구분을 먼저 읽을 것: 포커스 처방을 다시 시도해도 소용없다.",
+   "what": "🖥️ 브라우저 쓰기 막힘 — 원인이 셋으로 쪼개졌다(이과장 17:45 실측). ①**좌표 스케일 어긋남**: devicePixelRatio 1.12 로 screenshot 1293px vs innerWidth 1519px — 육안 좌표 클릭이 계속 빗나간다. JS 로 DOM 요소를 찾아 el.click() 하면 편집모달이 정상 오픈된다(dialogCount:1, contentEditable:1). ②**타이핑은 정상**: 429→493자 대조 정확, ASCII·공백·URL 드롭 없음 — 쓰레드 증상과 다르다. ③**저장('완료')만 안 먹는다**: JS 로 완료 버튼을 찾아 클릭해도 새로고침하면 원본 그대로이고 '수정됨' 태그도 없다. 🔴 즉 '브라우저가 죽었다' 가 아니다 — 좌표 계산이 어긋나 클릭이 빗나가는 것이고 남은 벽은 저장 하나다. ⚠️ Blogger 검색설명의 '업데이트 버튼은 ref 가 죽으니 좌표로 누른다' 처방이 여기서는 거꾸로 걸린다(좌표가 어긋나 있다). 다음 세션은 좌표 클릭 대신 JS el.click() 을 먼저 쓸 것. 라이브 무손상 확인됨.",
    "due": "2026-09-13",
-   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print([e['what'][:200] for e in d.get('now_log',[]) if e.get('bid')=='xlink0911all'][-3:])\"",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print([e['what'][:300] for e in d.get('now_log',[]) if e.get('bid')=='insta0912'][-1])\"",
    "owner": "claude",
    "state": "blocked",
    "by": "이부장"
