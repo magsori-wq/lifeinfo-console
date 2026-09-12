@@ -8298,6 +8298,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "a217-code-dup-0912",
+   "added": "2026-09-12",
+   "what": "제안함에 코드 A2-17 이 두 건 — deferred '상생페이백'(09-12) + dropped '온누리상품권'(09-03). DB 에는 A2-17 없음(A2-16 까지)이라 발행 충돌은 아니지만, 09-12 topicprop 덮어쓰기 사고의 방아쇠였다. 상생페이백을 다음 빈 코드(A2-17 유지 대신 신규 배정)로 옮기거나 dropped 건을 보관 이관 — 2026 시행 확인(source-a217-payback-2026) 뒤 함께 정리",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.topicprop list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
