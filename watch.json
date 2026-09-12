@@ -7915,8 +7915,10 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.pipeline naver-draft --code E4-03 --file osmu/네이버용_스팸문자118신고.txt --open   (클립보드에 본문이 담기고 글쓰기 창이 열립니다 — 그 자리에서 Ctrl+V → 이미지 첨부 → 게시)",
    "owner": "user",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-12",
+   "result": "사장님 네이버 게시 완료 12:3x — https://blog.naver.com/magsori8975/224409240771 · DB 기록 완료(naver-link) · 제목 앞글자 누락은 별도 카드(naver-e403-title-typo-0912)"
   },
   {
    "id": "manual-action-transparency-0911",
@@ -7931,8 +7933,8 @@
   {
    "id": "xlink-e403",
    "added": "2026-09-11",
-   "what": "🔗 E4-03 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-03",
-   "due": "2026-09-11",
+   "what": "🔗 E4-03 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-03 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/magsori8975/p/DdI7tbOEQ8V/ / 쓰레드에 네이버 링크 **답글**(본문 수정 불가): https://www.threads.com/@magsori8975/post/DdJKM7mAXbN",
+   "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code E4-03",
    "owner": "claude",
    "state": "done",
@@ -8338,6 +8340,18 @@
    "due": "2026-09-12",
    "cmd": "python -m studio.batchboard order --id xlink0911all",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "3. 복구 완료 보고(12:3x) — 원문 전체 재입력 + 정확한 네이버링크 224397260138 삽입, 라이브 재확인. E2-11 캡션은 정상이라 미조치(관제탑도 로컬 파일 2개 정상 확인)"
+  },
+  {
+   "id": "naver-e403-title-typo-0912",
+   "added": "2026-09-12",
+   "what": "🔤 E4-03 네이버 제목 앞글자 누락 — 라이브 제목이 '18 신고하면 과태료 3천만원?…' 인데 원고는 '118 신고하면…' 입니다(맨 앞 1 빠짐). 118 은 이 글의 핵심 검색어라 그대로 두면 검색 유입이 끊깁니다. 네이버 글 수정에서 제목 맨 앞에 1 만 넣어 주십시오",
+   "due": "2026-09-12",
+   "cmd": "https://blog.naver.com/magsori8975/224409240771",
+   "owner": "user",
    "state": "todo",
    "by": "이부장"
   }
