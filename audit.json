@@ -3768,6 +3768,14 @@
    "target": "threads-reply-newtab-0911",
    "detail": "해소 — 같은 증상(포커스 activeElement=BODY)을 3. 가 09-12 에 재현하고 우회법 확인: 문제 탭을 닫고 tabs_create_mcp 로 새 탭 재생성. 재시도·클릭 방식 변경으로는 안 풀린다",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-12T12:47:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a217-code-dup-0912",
+   "detail": "A2-17→A2-18 재배정 완료(사장님 지시로 즉시 처리). 상생페이백=A2-18(deferred 유지) · 온누리상품권=A2-17(dropped 그대로). topicprop.json 코드 유일성 확인됨(python -m studio.topicprop list). 부수로 A2-18에 남아있던 에너지바우처발 stray drop_why 필드도 제거. ⚠️ 별개 사안(상생페이백 2026 시행 자체 미확인·2025자료 재탕 추정)은 source-a217-payback-2026(기한9/15)이 그대로 추적 — 코드 정리와 무관하게 여전히 미승인 대상",
+   "via": "cli"
   }
  ]
 }

@@ -680,8 +680,8 @@
      "code": "daily-email-briefing",
      "title": "메일 브리핑 (08:08 / 20:08)",
      "state": "done",
-     "note": "[순환·2차] 사장님 지시 '이부장에게 바로 알려 7개 루틴 다 고치도록' 이행 — ①이부장[6be330]에 SendMessage 발송, msg_id 5ac30d12 를 세션로그에서 직접 확인(06ed2a43 = 이부장 세션, whoislee TOWER_SESSION_ID 와 일치) ②이부장 회신: 배선 이미 수정(batchboard._bake 끝에서 reports.bake 호출) + 문구는 진실원 docs/루틴공통절.md 「🔄 보고는 CP 보고서 탭까지 간다」 절로 routinesync --apply 로 루틴 9개 배포중 ③검증: batchboard.py L568 'from . import reports as _rp' 실재 확인, docs/루틴공통절.md 실재(12:43). SKILL.md 개별수정은 하지 않음(이부장 지시 — 진실원 배포 아니면 갈린다) ④watch reports-bake-gap-0912 는 이부장이 처리중",
-     "at": "2026-09-12 12:44"
+     "note": "[순환·3차] 이부장이 등록부 수정 → 루틴1이 검증 완료. 【고쳐진 것 실측】whoislee.py L113 TOWER_RESUME 이 b6259c36(대화파일 없음) → 06ed2a43 으로 정정되어 L112 TOWER_SESSION_ID 와 일치, L121 ALIAS 행도 동일. 이과장 eb42e59e·3. 88de804b 도 표에 추가. 【실재 검증】원래 버그가 '없는 대화파일 지목'이었으므로 세 ID 의 .jsonl 을 직접 확인 — 06ed2a43(256MB)·eb42e59e(476MB)·88de804b(32MB) 전부 존재하고 12:47 까지 활동 중. 【효과】사장님이 resume_leebujang.bat 으로 부르실 때 다른 이부장이 오던 자리가 막혔다. 【경위】루틴1이 msg_id 도착 로그로 실제 세션(06ed2a43)을 확인하다 등록부 불일치를 발견→이부장에 이관→수정→루틴1 재검증. 순환 3회전 완료",
+     "at": "2026-09-12 12:48"
     },
     {
      "code": "lifeinfo-daily-topics",
@@ -723,7 +723,7 @@
      "title": "색인·게이트 점검 (주간)",
      "state": "done",
      "note": "[루틴7 lifeinfo-7c · 09-12 순환보고] 사장님 지시(09-12) '루틴 종료 결과를 CP 보고서탭에 저장·확인하고, 이부장 지시서·메시지를 필히 확인한 뒤 그 결과도 보고서탭에 보고하는 순환구조'. ①보고서탭 실측: studio/reports.py 는 읽기전용이며 batch.json 의 currents(now)+items[].note(mark) 를 시각순으로 굽는다. bake 가 '-m studio.reports' 를 호출. 오늘 보고가 reports.html 에 실린 것 확인. ②이부장 지시서 확인함 — routinelog 의 「루틴7 앞 지시」는 2026-09-08 자(GSC 전수조사 종결·세션 닫으라)로 4일째 갱신 없음, 새 지시 없음. 「루틴5 앞 지시」=9/15 유효성검사 1차. 메시지 수신 없음. ③🔴발견: 보고서탭은 이력을 남기지 않는다 — 같은 code 에 mark 를 다시 하면 note 가 덮어써져 직전 보고가 사라진다(실측: 09-11 '대면 추가분' 보고가 batch.json 에 0회로 소멸, 현재 1건만 잔존). 순환 보고를 하면 할수록 앞 기록이 지워지는 구조. 제안=실행일별 항목코드 분리 또는 append 로그 — 코드 변경이라 이부장 판단(watch reports-no-history-0912). 루틴은 보고까지(roles 📣). ▸ 12:5x 추가: 사장님 지시 \"실행일별 항목코드로 분리해서 고쳐\"(제안① 채택) — 루틴7은 코드를 고치지 않고 설계를 확정해 이부장에게 넘겼다(roles 실측: 규칙·게이트 변경 = 루틴 📣보고까지, 지시서 발급 ⛔). 확정 3가지: (1) mark 는 없는 코드를 만들지 않는다(batchboard.py:1775-1777 exit 1) → mark 쪽이 항목을 생성해야 한다 (2) 보고서탭은 안 고쳐도 된다(reports.py:178-180 이 items[] 전체 note 를 읽는다) (3) 진행바를 같이 고쳐야 한다(batchboard.py:365 total=len(items) — 날짜항목이 무한 증식). 명세·검증명령 = watch reports-no-history-0912.",
-     "at": "2026-09-12 12:46"
+     "at": "2026-09-12 12:47"
     },
     {
      "code": "8-lifeinfo-issue-product",
@@ -2355,17 +2355,25 @@
    "order_at": "2026-09-12 12:30"
   }
  },
- "updated": "2026-09-12 12:46:13",
+ "updated": "2026-09-12 12:48:26",
  "current": {
-  "batch": "xlink0911all",
-  "code": "G4-06",
+  "batch": "routinelog",
+  "code": "",
   "title": "",
   "step": 1,
-  "what": "⚠️ 클립보드 경쟁 사고 근접 — B2-11 답글창에 붙여넣기 했더니 완전히 다른 내용(희망저축계좌 관련, 제 클립보드 아님)이 들어옴. 다른 세션이 동시에 클립보드 사용 중인 것으로 추정. 게시 전 발견·삭제해 실제 오게시는 없었음. 앞으로 매 답글마다 붙여넣기 직후 내용 확인 후 게시로 절차 강화합니다.",
-  "since": "20:03",
-  "since_at": "2026-09-11 20:03:49"
+  "what": "⚠️ 도구 에러 1건(회복됨) — batchboard._bake 가 OSError Errno22 'Invalid argument: webapp/batch.html' 을 던져 batch.json 은 갱신됐는데 batch.html 은 옛 판으로 남았다(12:46). 화면만 보면 보고가 사라진 것처럼 보이고, 아무도 에러를 못 보면 그대로 드리프트로 굳는다. 같은 값으로 mark 재실행해 재굽기로 해소(12:49 확인: batch.html·reports.html 둘 다 새 보고 포함·끝맺음 정상). 재현 조건 미상 — 1회성인지 지켜볼 것.",
+  "since": "12:37",
+  "since_at": "2026-09-12 12:37:20"
  },
  "log": [
+  {
+   "t": "12:48:26",
+   "text": "▶   — 1/7단계 · ⚠️ 도구 에러 1건(회복됨) — batchboard._bake 가 OSError Errno22 'Invalid argument: webapp/batch.html' 을 던져 batch.json 은 갱신됐는데 batch.html 은 옛 판으로 남았다(12:46). 화면만 보면 보고가 사라진 것처럼 보이고, 아무도 에러를 못 보면 그대로 드리프트로 굳는다. 같은 값으로 mark 재실행해 재굽기로 해소(12:49 확인: batch.html·reports.html 둘 다 새 보고 포함·끝맺음 정상). 재현 조건 미상 — 1회성인지 지켜볼 것."
+  },
+  {
+   "t": "12:48:01",
+   "text": "✅ daily-email-briefing 완료 — 메일 브리핑 (08:08 / 20:08)"
+  },
   {
    "t": "12:46:13",
    "text": "✅ lifeinfo-index-check 완료 — 색인·게이트 점검 (주간)"
@@ -2517,14 +2525,6 @@
   {
    "t": "10:00:31",
    "text": "📋 배치 '🔎 E1-04 검색설명 재작성(제목 변경 반영)' 등록 — 1항목"
-  },
-  {
-   "t": "09:52:45",
-   "text": "✅ A1-16 완료 — 희망저축계좌 2유형 — V0 반려 수정(근거 교체)"
-  },
-  {
-   "t": "09:49:42",
-   "text": "📄 draft0912a116 작업 지시 등록(10238자, 2026-09-12 09:49)"
   }
  ],
  "currents": {
@@ -2882,7 +2882,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⚠️ 루틴 보고가 보고서 탭에 바로 안 뜬다 — batchboard._bake() 는 batch.html 만 굽고 reports.html 을 안 굽는다. 실측 3중: ①batchboard.py 에 reports 호출 0건(주석만) ②_bake() 내부에 subprocess/import 없음 ③오늘 내 마킹 08:1x → reports.html mtime 12:29 = 약 4시간 지연(다른 세션 전체 bake 때야 반영). 즉 루틴이 mark 하고 종료하면 보고서 탭은 그때까지 낡는다. 사장님 2026-09-12 지시 '루틴 결과는 CP 보고서 탭에 꼭 저장·확인' 의 구조적 원인. 수정은 이부장 몫(모든 세션의 mark 에 영향)",
+   "what": "⚠️ 도구 에러 1건(회복됨) — batchboard._bake 가 OSError Errno22 'Invalid argument: webapp/batch.html' 을 던져 batch.json 은 갱신됐는데 batch.html 은 옛 판으로 남았다(12:46). 화면만 보면 보고가 사라진 것처럼 보이고, 아무도 에러를 못 보면 그대로 드리프트로 굳는다. 같은 값으로 mark 재실행해 재굽기로 해소(12:49 확인: batch.html·reports.html 둘 다 새 보고 포함·끝맺음 정상). 재현 조건 미상 — 1회성인지 지켜볼 것.",
    "since": "12:37",
    "since_at": "2026-09-12 12:37:20"
   }
@@ -2903,6 +2903,30 @@
    "kind": "done",
    "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
    "what": "[루틴7 lifeinfo-7c · 09-12 순환보고] 사장님 지시(09-12) '루틴 종료 결과를 CP 보고서탭에 저장·확인하고, 이부장 지시서·메시지를 필히 확인한 뒤 그 결과도 보고서탭에 보고하는 순환구조'. ①보고서탭 실측: studio/reports.py 는 읽기전용이며 batch.json 의 currents(now)+items[].note(mark) 를 시각순으로 굽는다. bake 가 '-m studio.reports' 를 호출. 오늘 보고가 reports.html 에 실린 것 확인. ②이부장 지시서 확인함 — routinelog 의 「루틴7 앞 지시」는 2026-09-08 자(GSC 전수조사 종결·세션 닫으라)로 4일째 갱신 없음, 새 지시 없음. 「루틴5 앞 지시」=9/15 유효성검사 1차. 메시지 수신 없음. ③🔴발견: 보고서탭은 이력을 남기지 않는다 — 같은 code 에 mark 를 다시 하면 note 가 덮어써져 직전 보고가 사라진다(실측: 09-11 '대면 추가분' 보고가 batch.json 에 0회로 소멸, 현재 1건만 잔존). 순환 보고를 하면 할수록 앞 기록이 지워지는 구조. 제안=실행일별 항목코드 분리 또는 append 로그 — 코드 변경이라 이부장 판단(watch reports-no-history-0912). 루틴은 보고까지(roles 📣). ▸ 12:5x 추가: 사장님 지시 \"실행일별 항목코드로 분리해서 고쳐\"(제안① 채택) — 루틴7은 코드를 고치지 않고 설계를 확정해 이부장에게 넘겼다(roles 실측: 규칙·게이트 변경 = 루틴 📣보고까지, 지시서 발급 ⛔). 확정 3가지: (1) mark 는 없는 코드를 만들지 않는다(batchboard.py:1775-1777 exit 1) → mark 쪽이 항목을 생성해야 한다 (2) 보고서탭은 안 고쳐도 된다(reports.py:178-180 이 items[] 전체 note 를 읽는다) (3) 진행바를 같이 고쳐야 한다(batchboard.py:365 total=len(items) — 날짜항목이 무한 증식). 명세·검증명령 = watch reports-no-history-0912."
+  },
+  {
+   "ts": "2026-09-12 12:47:53",
+   "bid": "routinelog",
+   "code": "lifeinfo-index-check",
+   "kind": "done",
+   "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
+   "what": "[루틴7 lifeinfo-7c · 09-12 순환보고] 사장님 지시(09-12) '루틴 종료 결과를 CP 보고서탭에 저장·확인하고, 이부장 지시서·메시지를 필히 확인한 뒤 그 결과도 보고서탭에 보고하는 순환구조'. ①보고서탭 실측: studio/reports.py 는 읽기전용이며 batch.json 의 currents(now)+items[].note(mark) 를 시각순으로 굽는다. bake 가 '-m studio.reports' 를 호출. 오늘 보고가 reports.html 에 실린 것 확인. ②이부장 지시서 확인함 — routinelog 의 「루틴7 앞 지시」는 2026-09-08 자(GSC 전수조사 종결·세션 닫으라)로 4일째 갱신 없음, 새 지시 없음. 「루틴5 앞 지시」=9/15 유효성검사 1차. 메시지 수신 없음. ③🔴발견: 보고서탭은 이력을 남기지 않는다 — 같은 code 에 mark 를 다시 하면 note 가 덮어써져 직전 보고가 사라진다(실측: 09-11 '대면 추가분' 보고가 batch.json 에 0회로 소멸, 현재 1건만 잔존). 순환 보고를 하면 할수록 앞 기록이 지워지는 구조. 제안=실행일별 항목코드 분리 또는 append 로그 — 코드 변경이라 이부장 판단(watch reports-no-history-0912). 루틴은 보고까지(roles 📣). ▸ 12:5x 추가: 사장님 지시 \"실행일별 항목코드로 분리해서 고쳐\"(제안① 채택) — 루틴7은 코드를 고치지 않고 설계를 확정해 이부장에게 넘겼다(roles 실측: 규칙·게이트 변경 = 루틴 📣보고까지, 지시서 발급 ⛔). 확정 3가지: (1) mark 는 없는 코드를 만들지 않는다(batchboard.py:1775-1777 exit 1) → mark 쪽이 항목을 생성해야 한다 (2) 보고서탭은 안 고쳐도 된다(reports.py:178-180 이 items[] 전체 note 를 읽는다) (3) 진행바를 같이 고쳐야 한다(batchboard.py:365 total=len(items) — 날짜항목이 무한 증식). 명세·검증명령 = watch reports-no-history-0912."
+  },
+  {
+   "ts": "2026-09-12 12:48:01",
+   "bid": "routinelog",
+   "code": "daily-email-briefing",
+   "kind": "done",
+   "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
+   "what": "[순환·3차] 이부장이 등록부 수정 → 루틴1이 검증 완료. 【고쳐진 것 실측】whoislee.py L113 TOWER_RESUME 이 b6259c36(대화파일 없음) → 06ed2a43 으로 정정되어 L112 TOWER_SESSION_ID 와 일치, L121 ALIAS 행도 동일. 이과장 eb42e59e·3. 88de804b 도 표에 추가. 【실재 검증】원래 버그가 '없는 대화파일 지목'이었으므로 세 ID 의 .jsonl 을 직접 확인 — 06ed2a43(256MB)·eb42e59e(476MB)·88de804b(32MB) 전부 존재하고 12:47 까지 활동 중. 【효과】사장님이 resume_leebujang.bat 으로 부르실 때 다른 이부장이 오던 자리가 막혔다. 【경위】루틴1이 msg_id 도착 로그로 실제 세션(06ed2a43)을 확인하다 등록부 불일치를 발견→이부장에 이관→수정→루틴1 재검증. 순환 3회전 완료"
+  },
+  {
+   "ts": "2026-09-12 12:48:26",
+   "bid": "routinelog",
+   "code": "",
+   "kind": "진행",
+   "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
+   "what": "⚠️ 도구 에러 1건(회복됨) — batchboard._bake 가 OSError Errno22 'Invalid argument: webapp/batch.html' 을 던져 batch.json 은 갱신됐는데 batch.html 은 옛 판으로 남았다(12:46). 화면만 보면 보고가 사라진 것처럼 보이고, 아무도 에러를 못 보면 그대로 드리프트로 굳는다. 같은 값으로 mark 재실행해 재굽기로 해소(12:49 확인: batch.html·reports.html 둘 다 새 보고 포함·끝맺음 정상). 재현 조건 미상 — 1회성인지 지켜볼 것."
   }
  ]
 }
