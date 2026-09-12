@@ -8546,6 +8546,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "postshape-variants-0912",
+   "added": "2026-09-12",
+   "what": "글모양 변종 전수(266편) 실측: 하단블록 20가지(top1 51%)·표wrap=tw 09월 회귀(래퍼없음 33개 재등장, 08월엔 4개뿐)·F1-08 래퍼3중첩+TOC9분할·A2-16 템플릿통째 다름·D2-03 바이라인 없음·09-04+ 39편도 여전히 제각각(하단5·첫화면4·제목18가지). 근거=docs/실측_글모양변종_20260912.md",
+   "due": "2026-09-15",
+   "cmd": "python -c \"import json; d=json.load(open('docs/실측_글모양변종_20260912_raw.json',encoding='utf-8')); print(len(d['per_post_signatures']))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
