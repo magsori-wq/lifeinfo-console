@@ -8566,6 +8566,16 @@
    "owner": "user",
    "state": "blocked",
    "by": "이부장"
+  },
+  {
+   "id": "emphasis-css-source-0912",
+   "added": "2026-09-12",
+   "what": "📢 D안 강조 CSS 의 단일 출처가 없다 — 지금 D안은 반쪽이다. keyline·bigwrap·mark·ladder 가 studio 코드 어디에도 없고(전체 grep 0건) 글마다 손으로 붙는다. 그래서 모양이 글마다 갈린다(실측: 하단블록 20가지·첫화면 7가지). layout.py 에 검사는 넣었지만 붙여 주는 곳이 없어 작성자가 매번 새로 짓는다. 초안 생성 시 style 블록을 한 곳에서 내려 주도록 만들어야 한다.",
+   "due": "2026-09-15",
+   "cmd": "grep -rn 'keyline\\|bigwrap' --include=*.py studio/ | grep -v __pycache__",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
