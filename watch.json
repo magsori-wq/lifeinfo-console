@@ -8278,6 +8278,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "source-a217-payback-2026",
+   "added": "2026-09-12",
+   "what": "A2-17 상생페이백 — 2026년 재시행 여부 정부 1차출처로 미확인. mss.go.kr 목록열람·korea.kr 정책기사 2건·상생페이백.kr 직접확인 다 밟았으나 2026년 공고 없음. mss.go.kr 게시판 검색폼(POST+히든필드, curl로 재현 실패)만 못 밟음. 요일대조(2025-09-15=월 vs 2026-09-15=화)로 topicprop facts가 2025년 자료 재탕임은 확정. 근거=docs/source_A2-17_상생페이백_20260912.md",
+   "due": "2026-09-15",
+   "cmd": "claude-in-chrome으로 mss.go.kr 사업공고(cbIdx=310)·보도자료(cbIdx=86) 게시판 검색창에 '상생페이백' 직접 입력해 2026년 공고 유무 확정, 그 결과로 A2-17 발행 여부 재판단",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "docflow-0912-0915",
+   "added": "2026-09-12",
+   "what": "루틴2 글감 2건 처리: A2-17(상생페이백) 2026년 미확인(2025자료 재탕 확정)으로 defer→09-13 재검토, mss.go.kr 게시판 브라우저 확인 필요(watch source-a217-payback-2026). A1-16(희망저축계좌) 지시서(draft0912a116) 준비완료·모집중단 경고 필수 반영, 등록은 보류(다음 순번, A2-17 이후). 결재함 신규 없음(초안 전 단계)",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.now",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
