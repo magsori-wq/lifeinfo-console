@@ -1,14 +1,15 @@
 {
  "sessions": {
   "routinelog": {
-   "state": "working",
-   "reads_since_report": 0,
-   "last_report": "2026-09-12 15:13",
-   "last_what": "09-12 15시 실행 — 후보: 투데이넛 너트한줌 선물세트 21,700원·리뷰103(토스9위). collect는 오전 8번이 이미 오늘분 실행(589건)이라 재수집 생략. issueprod 배치 now 로 보고",
-   "reads": 10,
+   "state": "waiting",
+   "reads_since_report": 2,
+   "last_report": "2026-09-12 21:19",
+   "last_what": "G4-07(김제지평선축제 10/1~5, dupcheck🔴오탐→force제안) + H1-08(아이치나고야 아시안게임 9/19~10/4 방송연예alt) 제안. 진주유등축제(G3-05)·부산록페스티벌(G3-06)·안동탈춤",
+   "reads": 13,
    "last_order_at": "2026-09-08 10:27",
-   "last_read": "2026-09-12 15:05",
-   "owner": "예약 루틴 7개 (관제탑이 읽고 확인)"
+   "last_read": "2026-09-12 21:20",
+   "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
+   "waiting_since": "2026-09-12 21:20"
   },
   "e210fix": {
    "reads": 1,
@@ -1138,14 +1139,14 @@
    "last_what": "최종회귀 마커QQ77 — fix0911h105"
   },
   "xlink0911all": {
-   "reads": 3,
-   "reads_since_report": 1,
-   "last_order_at": "2026-09-12 17:38",
-   "last_read": "2026-09-12 17:48",
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-09-12 17:52",
+   "last_read": "2026-09-12 17:53",
    "owner": "3.",
    "state": "working",
-   "last_report": "2026-09-12 17:46",
-   "last_what": "⚠️ 브라우저 재선택(사장님 지시로 Browser 1='이부장' 선택, select_browser 성공, tabs_context_mcp 탭그룹 정상 생성 확인) 후 F2-17 시험 — 3회(실제클릭+ctrl+v · "
+   "last_report": "2026-09-12 17:54",
+   "last_what": "⏹ 오늘 종료 지시(17:52) 확인 — 원격 동기 완료(9커밋 push, origin 최신). 오늘 성과: 읽기전용 확인으로 적체 44→36편 확정, 3갈래 원인 분리(좌표 어긋남=뚫림, 저장 안됨, 붙여넣기 안됨"
   },
   "pub0911a313": {
    "state": "working",
@@ -1338,15 +1339,16 @@
    "last_what": "지시서 갱신 전 사장님 직접지시('G3-06 쓰레드 답글 다시 시도해줘')로 이미 재시도 중이었음 — 결과: 성공. JS el.focus()+el.click() 병행 뒤 실제 ctrl+v(새 탭)로 답글 게시됨. 라"
   },
   "insta0912": {
-   "reads": 2,
-   "reads_since_report": 1,
-   "last_order_at": "2026-09-12 17:34",
-   "last_read": "2026-09-12 17:48",
+   "reads": 4,
+   "reads_since_report": 4,
+   "last_order_at": "2026-09-12 17:52",
+   "last_read": "2026-09-12 22:12",
    "owner": "이과장",
-   "state": "working",
+   "state": "waiting",
    "last_report": "2026-09-12 17:45",
-   "last_what": "재시도 결과: 편집모달 진입·타이핑 성공(429→493자, 무손상 대조), 그러나 완료(저장) 버튼이 안 먹힘 — 새로고침 후 라이브는 원본 그대로. 좌표 스케일 문제(devicePixelRatio/화면축소)가 클릭"
+   "last_what": "재시도 결과: 편집모달 진입·타이핑 성공(429→493자, 무손상 대조), 그러나 완료(저장) 버튼이 안 먹힘 — 새로고침 후 라이브는 원본 그대로. 좌표 스케일 문제(devicePixelRatio/화면축소)가 클릭",
+   "waiting_since": "2026-09-12 20:10"
   }
  },
- "updated": "2026-09-12 17:48"
+ "updated": "2026-09-12 22:12"
 }
