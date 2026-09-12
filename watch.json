@@ -8308,6 +8308,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "topicprop-dup-origin-0912",
+   "added": "2026-09-12",
+   "what": "topicprop 에 같은 코드 2건이 **처음에 왜 생겼는지** 미조사 — A2-17(9/3 온누리상품권 dropped + 9/12 상생페이백). cmd_add 는 in-place 덮어쓰기라 그 경로가 아니다. 덮어쓰기 사고 자체는 e43c195a 로 안전해졌지만 생성 경로는 그대로다. 루틴2 제안 경로(topicprop add --code)와 코드 배정 규칙을 살펴볼 것",
+   "due": "2026-09-14",
+   "cmd": "python -c \"import json;t=json.load(open('webapp/topicprop.json',encoding='utf-8'));it=t.get('items',t);from collections import Counter;c=Counter(x['code'] for x in it);print([k for k,v in c.items() if v>1])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
