@@ -7951,8 +7951,10 @@
    "due": "2026-09-12",
    "cmd": "curl -s -A Mozilla/5.0 https://lifeinfo8975.blogspot.com/p/blog-page_17.html | grep -c '40~60대가 제도를 몰라서'",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴7"
+   "state": "done",
+   "by": "루틴7",
+   "done_at": "2026-09-12",
+   "result": "라이브 반영 확인: grep -c '40~60대가 제도를 몰라서' = 1 (blog-page_17.html)"
   },
   {
    "id": "h105-v0-recheck-correction-0911",
@@ -8430,7 +8432,7 @@
   {
    "id": "xlink-a116",
    "added": "2026-09-12",
-   "what": "🔗 A1-16 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-16",
+   "what": "🔗 A1-16 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-16 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdLCufyEbHd/ / 쓰레드에 네이버 링크 **답글**(본문 수정 불가): https://www.threads.com/@magsori8975/post/DdLEbzzgfGd",
    "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code A1-16",
    "owner": "claude",
