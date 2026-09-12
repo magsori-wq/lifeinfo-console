@@ -8260,7 +8260,7 @@
   {
    "id": "xlink-h107",
    "added": "2026-09-12",
-   "what": "🔗 H1-07 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-07",
+   "what": "🔗 H1-07 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-07 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdKJXASk-u5/ / 쓰레드에 네이버 링크 **답글**(본문 수정 불가): https://www.threads.com/@magsori8975/post/DdKJxlBgehF",
    "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code H1-07",
    "owner": "claude",
@@ -8385,9 +8385,9 @@
   {
    "id": "reports-no-history-0912",
    "added": "2026-09-12",
-   "what": "✅✅ now/currents 잔존 갭까지 처리 완료(커밋 b72eb508, 푸시됨). 사장님 지시 '같은 방식으로' → currents[bid] 키구조는 11개 소비자 때문에 안 건드리고, 같은 원리(안 지우고 쌓기)를 now 전용 append 로그(now_log)로 구현. mark(routinelog)는 이미 해결됐으니 중복 안 남김, ns.id 게이팅 없음(now는 전 배치 공통 채널). 내가 겪은 07:14→12:37 issueprod 사고를 샌드박스로 실제 재현해 둘 다 reports.html 잔존 확인. 14일 지나면 now_log_history.json 으로(개수캡 아니라 나이캡 — 되돌린 첫판 실수 재현 안 함). 실측: 운영데이터에 python -m studio.reports 돌려 확인중 1건 불변(더블카운트 없음), readycheck(currents 11소비자 중 하나) 정상. routinelog(mark)·now/currents(now) 둘 다 코드로 해소돼 이 워치는 닫는다.",
+   "what": "✅✅✅ _bake Errno22 근본원인까지 처방 완료(사장님 지시). studio/atomicio.py 신설 — 공유파일 쓰기를 임시파일+os.replace 원자적 교체로 바꿔 트렁케이트 경쟁창 자체를 제거. batchboard.py(DATA·PAGE·ARCHIVE·routinelog_history·now_log_history) + reports.py(OUT·GROUPS_OUT) 총 7곳 적용. 검증: 8스레드x50회=400회 동시쓰기(부분쓰기 0), 진짜 별도 OS 프로세스 24개 병렬(실패 0), 실운영 데이터 복사본 전체배치 42개 재현(실패 0). 커밋 c37e2361(로직)+a7b7e626(신규파일 — git commit -- 경로지정이 add와 별개라는 걸 몰라 첫 커밋에서 빠뜨림, 바로 다음 커밋으로 수정) 둘다 푸시됨. routinelog(항목분리)·now/currents(append로그)·Errno22근본원인(원자적쓰기) 3중 처방 전부 코드로 반영, 실측검증 완료. 이 워치는 완전히 닫는다.",
    "due": "2026-09-12",
-   "cmd": "python -m studio.reports && python -m studio.readycheck | head -5",
+   "cmd": "python -c \"import sys; sys.path.insert(0,'.'); from studio import atomicio; print('atomicio OK:', atomicio.atomic_write)\"",
    "owner": "user",
    "state": "done",
    "by": "세션:b72a7511",
