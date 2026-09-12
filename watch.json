@@ -8354,6 +8354,27 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-a116",
+   "added": "2026-09-12",
+   "what": "A1-16 네이버 게시 — 제목: 희망저축계좌2 신청기간 10월 3차, '중단 예고' 상태입니다 — 확인사항 총정리 (2026) · 카테고리: 정부지원·복지 · 첨부: thumbs_naver/242n_hopesaving.png(네이버 전용, 제목 일치) · 태그: #희망저축계좌 #희망저축계좌2유형 #자산형성지원사업 #차상위계층",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.pipeline naver-draft --code A1-16 --file osmu/네이버용_희망저축계좌2유형3차모집.txt",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "reports-no-history-0912",
+   "added": "2026-09-12",
+   "what": "🔴 보고서탭(reports.html)이 보고 이력을 남기지 않는다 — 이부장 판단 필요. 근거: studio/reports.py collect() 는 batch.json 의 currents(배치당 1건)+items[].note(항목당 1건)만 읽는다. 둘 다 덮어쓰기라 같은 배치·같은 코드로 다시 보고하면 직전 보고가 사라진다. 실측: 루틴7이 09-11 에 올린 '대면 추가분' 보고가 09-11 'about0911 검수' 보고로 덮여 batch.json 에서 0회. 사장님 09-12 지시('루틴 결과를 보고서탭에 저장하고, 지시 수행 결과도 다시 보고하는 순환구조')는 같은 항목에 반복 보고를 전제하므로 이 구조에서는 앞 기록이 계속 지워진다. 제안 두 가지: ①실행일별 항목코드(lifeinfo-index-check-0912) 로 분리 ②batch.json 에 append 전용 보고 로그 추가 후 reports.collect() 가 함께 읽기. 코드 변경이라 루틴은 실행하지 않음(roles: 규칙·게이트 변경 = 이부장).",
+   "due": "2026-09-12",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/batch.json',encoding='utf-8'));print(json.dumps(d,ensure_ascii=False).count('대면 추가분'),'회 — 0 이면 덮어쓰기 확정')\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:6cfa517f"
   }
  ]
 }
