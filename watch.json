@@ -8596,6 +8596,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "browser-write-dead-0912",
+   "added": "2026-09-12",
+   "what": "🖥️ 브라우저 '쓰기' 가 16시 이후 죽었다 — 포커스 문제가 아니다(3. 의 17:18 관측으로 진단이 바뀌었다). 핵심 관측 둘: ①document.activeElement 가 **제대로 잡혔는데도**(BODY 아님, 해당 contenteditable) 키 입력이 DOM 에 반영 안 됨 — 'test' 직접 타이핑도 무반응 ②B2-14 재시도 중 **tab group 이 스스로 소멸**(No tab group exists). 즉 오늘 오전 진단(포커스가 안 잡힌다)과 **다른 문제**다. 읽기는 된다(G3-06·A1-15 답글 라이브 확인 성공). 실측 경계: 15:50 성공 → 16:21 이후 두 세션·두 채널 전부 실패. ⚠️ 오늘 성공했던 JS focus 처방도 17:15 에는 재현 안 됨 — 처방이 틀린 게 아니라 그 위 계층이 막힌 것으로 보인다(단정 아님). 다음 세션은 이 구분을 먼저 읽을 것: 포커스 처방을 다시 시도해도 소용없다.",
+   "due": "2026-09-13",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print([e['what'][:200] for e in d.get('now_log',[]) if e.get('bid')=='xlink0911all'][-3:])\"",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이부장"
   }
  ]
 }
