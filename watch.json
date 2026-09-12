@@ -7981,14 +7981,16 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.pipeline naver-draft --code A3-13 --file osmu/네이버용_국민연금출산크레딧확대신청.txt",
    "owner": "user",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-12",
+   "result": "사장님 네이버 게시 완료 12:5x — https://blog.naver.com/magsori8975/224409256063 · DB 기록(naver-link) · 블로그스팟 교차링크 갱신 · 제목 온전(줄표 뒤 공백만 길다)"
   },
   {
    "id": "xlink-a313",
    "added": "2026-09-11",
-   "what": "🔗 A3-13 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A3-13",
-   "due": "2026-09-11",
+   "what": "🔗 A3-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A3-13 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/magsori8975/p/DdJMVShCcpD/ / 쓰레드에 네이버 링크 **답글**(본문 수정 불가): https://www.threads.com/@magsori8975/post/DdJMuKfgQo0",
+   "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code A3-13",
    "owner": "claude",
    "state": "todo",
@@ -8294,8 +8296,10 @@
    "due": "2026-09-15",
    "cmd": "claude-in-chrome으로 mss.go.kr 사업공고(cbIdx=310)·보도자료(cbIdx=86) 게시판 검색창에 '상생페이백' 직접 입력해 2026년 공고 유무 확정, 그 결과로 A2-17 발행 여부 재판단",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "확정 — mss.go.kr 게시판 직접검색으로 마지막 미확인분까지 닫힘. 사업공고(cbIdx=310) 검색: 전체연도 4건, 전부 2025년(468·470·510·610호), 2026년 0건. 보도자료(cbIdx=86) 검색: 8건, 마지막(2026-01-20)은 2025년 사업 결산보고(4개월간 1조3,060억 지급완료)이지 신규공고 아님. → 2026년 상생페이백 재시행 없음 확정. A2-18(구 A2-17) topicprop drop 처리 완료(--why에 근거 전문 기록)"
   },
   {
    "id": "docflow-0912-0915",
