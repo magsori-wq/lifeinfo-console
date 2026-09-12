@@ -8385,9 +8385,9 @@
   {
    "id": "reports-no-history-0912",
    "added": "2026-09-12",
-   "what": "✅ 이부장 구현 완료(2026-09-12) — 제안①(실행일별 항목코드 분리) 코드화. ⓐmark가 --id routinelog 일 때만 <코드>-MMDD 항목을 자동생성(호출부 SKILL.md 불변) ⓑ_countable_items()로 진행바 집계에서 날짜항목 제외(_bake·show 두 곳 다) ⓒ14일 넘은 날짜항목은 routinelog_history.json 으로 이동(append-only), reports.collect() 가 함께 읽음 ⓓ적용 범위는 routinelog 배치 한정, 다른 배치(발행·OSMU)는 손 안 댐. 샌드박스(임시 batch.json)로 4가지 실측검증: 신규생성/같은날 2회(note 덧붙임,항목1개)/다른날 2회(항목2개·둘다reports.html 잔존)/14일로테이션(history 이동뒤에도 reports.html 잔존)/발행배치 비영향. ⚠️편차: '연속2회 mark' 가 같은 날이면 스펙처럼 항목2개가 아니라 항목1개+note 덧붙임이다 — 루틴1(메일브리핑 08:00·20:00, 하루2회 같은 base코드)이 안 그러면 두번째가 첫번째를 덮기 때문. ⚠️미해결 잔존 갭: now/currents(전 배치 공통, 한 칸)는 이 fix 범위 밖(ⓓ가 routinelog·mark 한정) — 오늘 내가 겪은 07:14→12:37 issueprod 사고는 실은 now 쪽이라 ①로도 못 막는다. 이 갭을 고칠지는 사장님 판단. 다음: ordercheck 결과 확인 후 done.",
+   "what": "✅ 구현·커밋·푸시 완료(4f3f38a0, studio/batchboard.py 만). ordercheck 1124종 대조 0건 불일치 — 7개 SKILL.md 호출형태 불변 확인. ⓐⓑⓒⓓ + 편차보완(하루2회 루틴 note 덧붙임) 전부 샌드박스 5종 검증 통과. ⚠️reports.py 는 못 커밋 — 같은 파일을 다른 이부장 세션이 동시에 '보고↔지시 세트 표시' 기능으로 편집 중이라(사장님 09-12 별도 지시), 그 미완성 작업을 휩쓸지 않으려 놔뒀다. 내 ⓒ몫(routinelog_history.json 읽기)은 그 파일에 이미 반영·검증됐고 그 세션이 자기 몫을 커밋할 때 같이 나갈 것 — 확인: git log 에 studio/reports.py 커밋 새로 잡히면 그 안에 'routinelog_history.json' 문자열이 있는지. ⚠️잔존 갭(사장님 판단 필요): now/currents(모든 배치 공통, 슬롯 1개)는 이 fix 범위 밖(ⓓ가 routinelog·mark 한정) — 오늘 07:14→12:37 issueprod 사고(내가 겪음)는 now 쪽이라 ①로 못 막는다. 고칠지·범위를 넓힐지는 사장님 판단.",
    "due": "2026-09-12",
-   "cmd": "python -c \"import json,io;b=json.load(io.open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];c=[i['code'] for i in b['items']];print(len(c),'항목');print([x for x in c if x[-5:-4]=='-' or '-09' in x][:5] or '날짜항목 없음 = 미구현')\"",
+   "cmd": "git log --oneline -3 -- studio/batchboard.py && python -c \"import json,io;b=json.load(io.open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];c=[i['code'] for i in b['items']];print(len(c),'항목');print([x for x in c if x[-5:-4]=='-'][:5] or '실사용 사례 아직 없음(다음 루틴 실행에서 생김)')\"",
    "owner": "user",
    "state": "todo",
    "by": "세션:b72a7511",
