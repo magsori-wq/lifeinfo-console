@@ -1,9 +1,9 @@
 {
- "rev": "1b6cc1e8",
+ "rev": "f2121c28",
  "counts": {
   "total": 266,
-  "osmu_done": 265,
-  "osmu_pending": 1,
+  "osmu_done": 266,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 266,
   "index_requested": 156,
@@ -11,23 +11,6 @@
   "index_benign": 83
  },
  "actionable": [
-  {
-   "code": "A1-16",
-   "title": "희망저축계좌 2유형 10월 3차, '중단 예고' 상태입",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
   {
    "code": "B1-03",
    "title": "위택스 장애 지방세 납부기한 연장 총정리 (7월 7일까",
@@ -92,6 +75,24 @@
     "g": true,
     "n": false,
     "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A1-16",
+   "title": "희망저축계좌 2유형 10월 3차, '중단 예고' 상태입",
+   "need": [
+    "네이버",
+    "쓰레드",
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": true
    }
   },

@@ -7905,8 +7905,10 @@
    "due": "2026-09-12",
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print((d.get('currents') or {}).get('issueprod'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "확인됨 — 오늘(9/12) 07:13 루틴8이 issueprod currents에 실제 보고(약과 후보). 이부장이 이미 tosslink-yakgwa-0912로 사장님께 쉐어링크 요청까지 에스컬레이션함. 배선 정상 작동 확인"
   },
   {
    "id": "naver-e403",
@@ -8387,6 +8389,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:261f2508"
+  },
+  {
+   "id": "tosslink-yakgwa-0912",
+   "added": "2026-09-12",
+   "what": "🧵 쓰레드 상품글 — 토스 쉐어링크 발급 요청: '꿀이구마 호박 찹쌀 약과 30g × 30개' 4,990원 · 리뷰 7,120 · 평점 4.7 · 토스 인기 3위(2026-09-12 수집·이부장 재확인). 왜 지금 = 추석 9/25 13일 앞, 약과는 대표 명절 간식이고 소용량이라 부담이 적다. 관련 글 H1-04(추석 차례상 비용). 토스앱 쇼핑에서 상품명으로 찾아 쉐어링크를 만들어 이부장에게 주십시오",
+   "due": "2026-09-12",
+   "cmd": "python -m studio.affiliate solo-add --item \"꿀이구마 호박 찹쌀 약과 30g×30개\" --url <받은 쉐어링크> --kind toss --price 4990 --why-now \"추석 9/25 13일 앞 · 토스 인기 3위 · 리뷰 7,120\" --related https://lifeinfo8975.blogspot.com/2026/09/20-2026-vs.html",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
