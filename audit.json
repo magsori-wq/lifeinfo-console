@@ -3752,6 +3752,22 @@
    "target": "routine89-report-verify-0912",
    "detail": "확인됨 — 오늘(9/12) 07:13 루틴8이 issueprod currents에 실제 보고(약과 후보). 이부장이 이미 tosslink-yakgwa-0912로 사장님께 쉐어링크 요청까지 에스컬레이션함. 배선 정상 작동 확인",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-12T12:44:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threads-reply-newtab-0912",
+   "detail": "3. 해결(12:5x) — tabs_create_mcp 로 완전히 새 탭을 열고 기존 문제 탭을 닫으니 정상 작동. B1-09 답글 성공",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-12T12:44:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threads-reply-newtab-0911",
+   "detail": "해소 — 같은 증상(포커스 activeElement=BODY)을 3. 가 09-12 에 재현하고 우회법 확인: 문제 탭을 닫고 tabs_create_mcp 로 새 탭 재생성. 재시도·클릭 방식 변경으로는 안 풀린다",
+   "via": "cli"
   }
  ]
 }
