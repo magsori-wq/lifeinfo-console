@@ -8586,6 +8586,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "order-read-blind-0912",
+   "added": "2026-09-12",
+   "what": "📮 3. 이 지시서를 읽고도 '변동 없음 — 새 지시서 없음' 으로 판정한다. 실측: order_at 16:55 로 갱신(8,767자, v5 내용 확인) · sessionstate.read_info 도 last_read 16:55 · owner 도 '3.' 로 정확. 그런데 3. 은 5분 폴링을 돌며 계속 '변동 없음' 이라 보고한다. 즉 읽기는 하는데 **바뀐 것을 못 알아본다**(show 요약만 보고 order 본문을 안 읽거나, 이전 내용과 비교를 안 하는 것으로 보인다 — 원인 미확인). ⚠️ 덤으로 그 폴링 보고가 사장님 입력창으로 새어 들어갔다(사장님 시간을 뺏는다). 깨우기를 세 번 보냈고 세 번 다 도착은 로그로 확인됐다 — 전달 문제가 아니라 판정 문제다.",
+   "due": "2026-09-13",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));x=d['batches']['xlink0911all'];print(x.get('order_at'), len(str(x.get('order') or '')))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
