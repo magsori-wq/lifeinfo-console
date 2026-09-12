@@ -8330,8 +8330,10 @@
    "due": "2026-09-14",
    "cmd": "python -c \"import json;t=json.load(open('webapp/topicprop.json',encoding='utf-8'));it=t.get('items',t);from collections import Counter;c=Counter(x['code'] for x in it);print([k for k,v in c.items() if v>1])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "근본원인 확인(git 히스토리 추적) — A2-17은 3세대 재사용됐다: ①A6-01→(이부장이 수동 재배정)→A2-17 에너지바우처(dropped 09-03, 커밋 0ffe19bf) ②루틴2가 같은 날(09-03) 온누리상품권을 A2-17로 재제안(cmd_add, 코드5809cfea) → dropped(09-07) ③루틴2/나 가 09-12 상생페이백을 다시 A2-17로 제안. 직접 검증: git show 5a5285b3(내 커밋 직후)에 이미 2건 존재 확인. 핵심 결함 2가지: (a)cmd_add는 published/queued 코드만 검사하고 topicprop.json 내 '과거에 쓰였다가 dropped된 코드'는 검사 안 함 — 코드 재사용 시 충돌 감지 없음 (b)cmd_add의 item dict에 decision/drop_why 키가 없어 dict.update() 시 이전 세대의 무관한 사유 텍스트가 새 세대로 그대로 새어나감(실제로 온누리상품권 항목에 에너지바우처 사유가 섞여 있었음, 오늘 A2-18로 옮기며 제거함). 권고: cmd_add에 '이력상 사용된 모든 코드' 검사 추가 + 코드 재사용 시 decision/drop_why/state_at 초기화. 코드 수정은 하지 않음(요청 범위 밖) — 필요시 별도 지시"
   },
   {
    "id": "v0reject-a1-16",
@@ -8423,7 +8425,7 @@
   {
    "id": "xlink-a116",
    "added": "2026-09-12",
-   "what": "🔗 A1-16 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-16",
+   "what": "🔗 A1-16 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-16",
    "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code A1-16",
    "owner": "claude",
