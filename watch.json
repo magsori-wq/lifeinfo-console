@@ -8500,6 +8500,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "threads-reply-focus-0912",
+   "added": "2026-09-12",
+   "what": "🧵 쓰레드 답글 입력창 포커스 버그 — 오늘 두 세션이 합계 7회 실패(3. 가 A1-15 3회·G3-06 3회, 이과장이 G3-06 4회). 증상: 답글창을 click(ref·좌표) 한 뒤 ctrl+v 해도 무반응, document.activeElement 가 BODY 로 남는다. 새 탭 생성(09-12 오전 처방)도 안 통했고, A1-15 에서 한 번 통한 JS focus+Range 도 G3-06 에서는 안 통했다. 미완: G3-06 쓰레드 답글(네이버 링크). 조사 없이 재시도 금지.",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.watch --id threads-reply-focus-0912",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
