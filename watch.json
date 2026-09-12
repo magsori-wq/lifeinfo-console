@@ -8399,6 +8399,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "threads-reply-newtab-0912",
+   "added": "2026-09-12",
+   "what": "쓰레드 새 탭 답글 실패 재현(B1-09, 3. 보고 12:4x) — click(ref·좌표 둘 다)+ctrl+v 해도 document.activeElement 가 BODY 로 남아 포커스가 안 잡힌다. 09-11 threads-reply-newtab-0911 과 같은 증상 · 이번엔 관측이 구체적(activeElement=BODY). 조사 시 두 기록을 함께 볼 것",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.watch --id threads-reply-newtab-0911",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
