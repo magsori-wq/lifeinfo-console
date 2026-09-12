@@ -8454,6 +8454,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fix-routinelog-verify-0912",
+   "added": "2026-09-12",
+   "what": "routinelog mark 2회 연속 실측(날짜 슬롯이 덮이지 않는지) 미실행 — 09-12 구현 당시 다른 세션이 같은 batch.json 을 쓰고 있어 레이스 회피로 미룸",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.batchboard mark --id routinelog --code lifeinfo-index-check --state done --note '검증 시험1'; python -m studio.batchboard mark --id routinelog --code lifeinfo-index-check --state done --note '검증 시험2'; python -m studio.reports",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
