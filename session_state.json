@@ -1256,22 +1256,24 @@
    "last_what": "①blogger.py crosslink 완료(라이브 URL 갱신 확인 lifeinfo8975.blogspot.com/2026/09/12-2026.html) ②쓰레드 답글 게시 — 새 탭 생성 우회로 첫 시도 실패 후"
   },
   "xlink0912a115": {
-   "reads": 2,
+   "reads": 1,
    "reads_since_report": 0,
-   "last_order_at": "2026-09-12 13:21",
-   "last_read": "2026-09-12 14:17",
-   "owner": "3.",
+   "last_order_at": "2026-09-12 14:26",
+   "last_read": "2026-09-12 14:33",
+   "owner": "이과장",
    "state": "working",
-   "last_report": "2026-09-12 14:19",
-   "last_what": "⚠️ 쓰레드 답글 입력 실패 — 원 탭+새 탭 생성 후에도 클릭해도 document.activeElement가 계속 BODY(포커스 안 됨), 3회 시도 후 중단. threads-reply-newtab-0911 조사"
+   "last_report": "2026-09-12 14:37",
+   "last_what": "인스타 캡션은 이미 네이버링크 포함(3.가 먼저 성공, 라이브 확인 '수정됨'). 쓰레드는 3.이 3회 막혔던 부분 — 이번엔 JS로 focus+Range 설정 후 실제 ctrl+v 로 정상 붙여넣기 성공, 라이브 "
   },
   "about0912": {
    "reads": 1,
-   "reads_since_report": 1,
+   "reads_since_report": 0,
    "last_order_at": "2026-09-12 13:39",
    "last_read": "2026-09-12 13:42",
    "owner": "이과장",
-   "state": "working"
+   "state": "working",
+   "last_report": "2026-09-12 14:33",
+   "last_what": "실측 재확인: 이 세션이 지금 직접 편집·업데이트 실행함(이전 done 기록의 '13:42 이과장이 끝냄'은 착오로 보임 — 내가 확인한 편집 전 라이브는 구 1문단 그대로였음). 업데이트 후 라이브 재조회: gre"
   },
   "xlink0912b214": {
    "reads": 1,
@@ -1324,7 +1326,17 @@
    "state": "working",
    "last_report": "2026-09-12 14:24",
    "last_what": "블로그스팟 crosslink 갱신 · 인스타 캡션에 네이버링크 추가(라이브 재확인 536자, '수정됨' 확인 — 0자 사고 없음, 중간에 오타삽입 발견즉시 Delete로 정정) · 쓰레드 답글로 네이버링크 게시(링크"
+  },
+  "xlink0912g306": {
+   "reads": 1,
+   "reads_since_report": 1,
+   "last_order_at": "2026-09-12 14:37",
+   "last_read": "2026-09-12 14:37",
+   "owner": "이과장",
+   "state": "working",
+   "last_report": "2026-09-12 14:35",
+   "last_what": "⚠️ 쓰레드 답글 입력 실패 — G3-06 도 새 탭 3회 시도 모두 activeElement=BODY(포커스 안 됨). A1-15에 이어 두 번째 재현. 오늘 이 버그가 특정 글이 아니라 전반적으로 발생 중인 것으"
   }
  },
- "updated": "2026-09-12 14:24"
+ "updated": "2026-09-12 14:37"
 }
