@@ -8576,6 +8576,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "insta-card-gate-unverified-0912",
+   "added": "2026-09-12",
+   "what": "📸 인스타 카드 실사진 게이트를 넣었는데 **실동작을 확인하지 못했다** — 지금 '미게시 + 카드 있음' 코드가 0건이라 게이트가 타는 경로를 태울 수 없다(게시된 글은 ⏭️ 로 빠진다). 판정 함수(thumbcheck.judge)가 실제 카드에 False 를 내는 것과 문법·임포트는 확인했으나, show/announce 분기가 실제로 도는 것은 **다음 새 글 OSMU 때 처음** 걸린다. ⚠️ '만들었다 != 물렸다' 가 이 저장소에 5건 있다 — 확인 전까지 완료로 세지 말 것.",
+   "due": "2026-09-15",
+   "cmd": "python -W ignore -m studio.osmu_manifest show --code <다음 새 글 코드>",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
