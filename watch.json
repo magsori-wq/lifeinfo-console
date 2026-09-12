@@ -8308,8 +8308,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "내용 갱신 — 이 지시서 작성 이후 진행됨: A2-17(상생페이백)은 09-13 재검토 대기가 아니라 오늘 mss.go.kr 게시판 직접확인으로 '2026년 재시행 없음' 확정→A2-18로 재배정 후 drop 완료(watch source-a217-payback-2026 완료). A1-16(희망저축계좌)은 지시서 대기 상태가 아니라 오늘 초안→V0재검사→발행까지 완료됨(pub0912a116). 두 건 다 종결, 09-13 재검토 불필요"
   },
   {
    "id": "a217-code-dup-0912",
@@ -8383,12 +8385,13 @@
   {
    "id": "reports-no-history-0912",
    "added": "2026-09-12",
-   "what": "🔴 보고서탭 이력 소실 — 사장님 2026-09-12 지시로 제안①(실행일별 항목코드 분리) 채택. 구현은 이부장 몫(roles: 규칙·게이트 변경 = 루틴 📣). ▣ 실측으로 확정된 것 3가지 ①mark 는 없는 코드를 만들지 않는다(batchboard.py:1775-1777 '[오류] 항목 없음' 후 exit 1) → 루틴이 날짜 붙은 코드로 찍게만 바꾸면 9개 루틴 보고가 전부 실패한다. mark 쪽이 항목을 생성해야 한다. ②보고서탭은 안 고쳐도 된다(reports.py:178-180 collect() 가 items[] 전체의 note 를 읽는다) — 날짜 항목은 자동으로 실린다. reports.py 는 읽기전용 유지할 것. ③진행바는 같이 고쳐야 한다(batchboard.py:365 total=len(items)) — 날짜 항목이 쌓이면 routinelog 가 무한 증식하고 진행률이 뜻을 잃는다(지금 9항목). ▣ 권고 설계 ⓐmark --id routinelog --code <루틴명> 을 <루틴명>-<MMDD>(KST) 로 해석하고 없으면 생성(title=routines.label()) → 7개 SKILL.md 를 하나도 안 고쳐도 된다(호출 형태 그대로). ⓑ날짜 항목은 진행바 집계에서 제외하거나 오늘분만 집계. ⓒ보존: 최근 14일만 batch.json 에 두고 그보다 오래된 것은 webapp/routinelog_history.json 으로 옮긴다(append 전용, reports 가 함께 읽기만). ⓓ적용은 routinelog 배치 한정 — 발행·OSMU 배치는 항목이 곧 할 일이라 날짜 분리하면 안 된다. ▣ 구현 후 검증: 같은 루틴 코드로 연속 2회 mark → 항목 2개·reports.html 에 2건 다 잔존, 그리고 ordercheck 0건.",
+   "what": "✅ 이부장 구현 완료(2026-09-12) — 제안①(실행일별 항목코드 분리) 코드화. ⓐmark가 --id routinelog 일 때만 <코드>-MMDD 항목을 자동생성(호출부 SKILL.md 불변) ⓑ_countable_items()로 진행바 집계에서 날짜항목 제외(_bake·show 두 곳 다) ⓒ14일 넘은 날짜항목은 routinelog_history.json 으로 이동(append-only), reports.collect() 가 함께 읽음 ⓓ적용 범위는 routinelog 배치 한정, 다른 배치(발행·OSMU)는 손 안 댐. 샌드박스(임시 batch.json)로 4가지 실측검증: 신규생성/같은날 2회(note 덧붙임,항목1개)/다른날 2회(항목2개·둘다reports.html 잔존)/14일로테이션(history 이동뒤에도 reports.html 잔존)/발행배치 비영향. ⚠️편차: '연속2회 mark' 가 같은 날이면 스펙처럼 항목2개가 아니라 항목1개+note 덧붙임이다 — 루틴1(메일브리핑 08:00·20:00, 하루2회 같은 base코드)이 안 그러면 두번째가 첫번째를 덮기 때문. ⚠️미해결 잔존 갭: now/currents(전 배치 공통, 한 칸)는 이 fix 범위 밖(ⓓ가 routinelog·mark 한정) — 오늘 내가 겪은 07:14→12:37 issueprod 사고는 실은 now 쪽이라 ①로도 못 막는다. 이 갭을 고칠지는 사장님 판단. 다음: ordercheck 결과 확인 후 done.",
    "due": "2026-09-12",
    "cmd": "python -c \"import json,io;b=json.load(io.open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];c=[i['code'] for i in b['items']];print(len(c),'항목');print([x for x in c if x[-5:-4]=='-' or '-09' in x][:5] or '날짜항목 없음 = 미구현')\"",
-   "owner": "claude",
+   "owner": "user",
    "state": "todo",
-   "by": "루틴7"
+   "by": "세션:b72a7511",
+   "note": 12
   },
   {
    "id": "reports-bake-gap-0912",
