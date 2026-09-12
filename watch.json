@@ -7947,10 +7947,10 @@
   {
    "id": "about-author-bio-0911",
    "added": "2026-09-11",
-   "what": "소개페이지 「운영자 소개」 문안 준비 완료 — 사장님 한 줄만 받으면 끝난다. 실측으로 채운 것: 첫 글 2026-06-14 · 266편(2026-09 기준) · 8개 분야 · 운영자명·이메일. 🔴 비워 둔 것 2개(사장님만 아시는 사실이라 지어내지 않았다): ①왜 이 블로그를 시작했는지 한 줄 ②배경·경력 한 줄(선택, 없으면 그 문단은 뺀다). 받으면 이과장 지시서로 라이브 반영(about0911 과 같은 경로: Blogger 편집화면 → 라이브 재조회로 확인). 문안 = docs/블로그자산/소개_운영자소개_제안_20260912.html",
+   "what": "소개페이지 「운영자 소개」 문안 **확정** — 빈칸 없음, 라이브 반영만 남았다(이과장 몫·루틴은 라이브 본문 ⛔). 사장님 2026-09-12 선택: 시작계기=「40~60대 정보 격차」 · 경력문단=넣지 않고 운영실적으로 대체. 지어낸 문장 없음(계기는 사장님이 고르신 것, 숫자는 실측: 첫 글 2026-06-14 · 266편 · 8개 분야). 반영 = Blogger 편집화면에서 기존 <h2>운영 및 문의</h2>+그 아래 <p>운영자: …</p> 한 문단을 파일 내용으로 통째 교체(위 「함께 보기」·아래 author-method-box 는 건드리지 않는다). 성공 판정은 편집기 값이 아니라 라이브 재조회로만. 문안 = docs/블로그자산/소개_운영자소개_제안_20260912.html",
    "due": "2026-09-12",
-   "cmd": "python -c \"import io;print(io.open(r'docs/블로그자산/소개_운영자소개_제안_20260912.html',encoding='utf-8').read())\"",
-   "owner": "user",
+   "cmd": "curl -s -A Mozilla/5.0 https://lifeinfo8975.blogspot.com/p/blog-page_17.html | grep -c '40~60대가 제도를 몰라서'",
+   "owner": "claude",
    "state": "todo",
    "by": "루틴7"
   },
@@ -8130,7 +8130,7 @@
   {
    "id": "xlink-a115",
    "added": "2026-09-12",
-   "what": "🔗 A1-15 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-15",
+   "what": "🔗 A1-15 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-15 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdKBJfSk8bF/ / 쓰레드에 네이버 링크 **답글**(본문 수정 불가): https://www.threads.com/@magsori8975/post/DdKBwL6gUPr",
    "due": "2026-09-12",
    "cmd": "python studio/blogger.py crosslink --code A1-15",
    "owner": "claude",
@@ -8385,11 +8385,11 @@
   {
    "id": "reports-no-history-0912",
    "added": "2026-09-12",
-   "what": "✅ 구현·커밋·푸시 완료(4f3f38a0, studio/batchboard.py 만). ordercheck 1124종 대조 0건 불일치 — 7개 SKILL.md 호출형태 불변 확인. ⓐⓑⓒⓓ + 편차보완(하루2회 루틴 note 덧붙임) 전부 샌드박스 5종 검증 통과. ⚠️reports.py 는 못 커밋 — 같은 파일을 다른 이부장 세션이 동시에 '보고↔지시 세트 표시' 기능으로 편집 중이라(사장님 09-12 별도 지시), 그 미완성 작업을 휩쓸지 않으려 놔뒀다. 내 ⓒ몫(routinelog_history.json 읽기)은 그 파일에 이미 반영·검증됐고 그 세션이 자기 몫을 커밋할 때 같이 나갈 것 — 확인: git log 에 studio/reports.py 커밋 새로 잡히면 그 안에 'routinelog_history.json' 문자열이 있는지. ⚠️잔존 갭(사장님 판단 필요): now/currents(모든 배치 공통, 슬롯 1개)는 이 fix 범위 밖(ⓓ가 routinelog·mark 한정) — 오늘 07:14→12:37 issueprod 사고(내가 겪음)는 now 쪽이라 ①로 못 막는다. 고칠지·범위를 넓힐지는 사장님 판단.",
+   "what": "✅✅ now/currents 잔존 갭까지 처리 완료(커밋 b72eb508, 푸시됨). 사장님 지시 '같은 방식으로' → currents[bid] 키구조는 11개 소비자 때문에 안 건드리고, 같은 원리(안 지우고 쌓기)를 now 전용 append 로그(now_log)로 구현. mark(routinelog)는 이미 해결됐으니 중복 안 남김, ns.id 게이팅 없음(now는 전 배치 공통 채널). 내가 겪은 07:14→12:37 issueprod 사고를 샌드박스로 실제 재현해 둘 다 reports.html 잔존 확인. 14일 지나면 now_log_history.json 으로(개수캡 아니라 나이캡 — 되돌린 첫판 실수 재현 안 함). 실측: 운영데이터에 python -m studio.reports 돌려 확인중 1건 불변(더블카운트 없음), readycheck(currents 11소비자 중 하나) 정상. routinelog(mark)·now/currents(now) 둘 다 코드로 해소돼 이 워치는 닫는다.",
    "due": "2026-09-12",
-   "cmd": "git log --oneline -3 -- studio/batchboard.py && python -c \"import json,io;b=json.load(io.open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];c=[i['code'] for i in b['items']];print(len(c),'항목');print([x for x in c if x[-5:-4]=='-'][:5] or '실사용 사례 아직 없음(다음 루틴 실행에서 생김)')\"",
+   "cmd": "python -m studio.reports && python -m studio.readycheck | head -5",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "by": "세션:b72a7511",
    "note": 12
   },
