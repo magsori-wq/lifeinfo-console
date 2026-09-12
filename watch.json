@@ -8268,8 +8268,10 @@
    "due": "2026-09-12",
    "cmd": "python -m studio.affiliate solo-add --item \"깊은 육수 3종 선물세트(분말스틱 30포)\" --url <받은 쉐어링크> --kind toss --price 10500 --why-now \"추석 9/25 13일 앞 · 토스 인기 44위 · 리뷰 176\" --related https://lifeinfo8975.blogspot.com/2026/09/20-2026-vs.html",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-12",
+   "result": "보류 — 같은 날 오후 루틴9가 더 강한 후보(약과 4,990원·리뷰 7,120·평점 4.7·토스 인기 3위)를 올렸다. 육수는 리뷰 176으로 전환신뢰가 낮아 이번 회차 대상에서 제외. 시즌이 남아 있으면 재선별 가능"
   },
   {
    "id": "a1-16-3cha-status",
@@ -8375,6 +8377,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:6cfa517f"
+  },
+  {
+   "id": "reports-bake-gap-0912",
+   "added": "2026-09-12",
+   "what": "🔌 루틴 보고→보고서 탭 배선 끊김(이부장 판단 필요). 【실측】batchboard._bake() 는 batch.html 만 굽고 reports.html 은 bake.py L73 에서만 굽는다 → 루틴이 mark 후 종료하면 보고서 탭이 다음 전체 bake 까지 낡는다(오늘 실측 약 4시간). 【사장님 2026-09-12 지시】'루틴실행후 결과는 CP 보고서탭에 꼭 저장·확인, 이부장 지시서 확인 후 진행결과도 보고서탭에 보고하는 순환구조'. 【고칠 곳 2가지, 둘 다 해야 함】①batchboard mark 경로에서 reports 도 굽게 배선(모든 세션 mark 에 영향하므로 이부장 판단) ②루틴 SKILL.md 7개의 [콘솔]★ 절에 '마킹 후 python -m studio.reports 로 굽고 뜬 것을 확인' + '이부장 지시서(batchboard order) 확인' 추가 — 1개만 고치면 드리프트(라벨 42종·pace 상수 전례). 【루틴1이 한 것】이번 회차는 수동으로 순환 완결(굽기·확인·지시서 읽기 완료)",
+   "due": "2026-09-12",
+   "cmd": "grep -n reports studio/batchboard.py; ls -la webapp/reports.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:261f2508"
   }
  ]
 }
