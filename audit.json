@@ -4280,6 +4280,14 @@
    "target": "auto-pick-verify-0914",
    "detail": "첫 실측 성공: 루틴6(23:55, 세션81385b66) E2-16 제안→docflow pick+verify→초안·썸네일·큐(6ba3ac45)→v0 에이전트 🟡PASS(00:32)→결재함 1번 발행승인 카드. 관제탑 개입 0",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-14T01:30:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "phone-inbox-stale-0914",
+   "detail": "라이브 approval_m.json 01:27·E2-16 포함 확인. pushapproval 자동복구 추가 — 임시 갈라짐 재현(ahead1/behind2+staged 잔여)에서 원격 위 재적재·push 성공. 배포클론 stash 1개(파생 5파일) 남김",
+   "via": "cli"
   }
  ]
 }

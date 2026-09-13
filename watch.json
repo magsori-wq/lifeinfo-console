@@ -9266,6 +9266,16 @@
    "by": "이부장",
    "done_at": "2026-09-14",
    "result": "라이브 approval_m.json 01:27·E2-16 포함 확인. pushapproval 자동복구 추가 — 임시 갈라짐 재현(ahead1/behind2+staged 잔여)에서 원격 위 재적재·push 성공. 배포클론 stash 1개(파생 5파일) 남김"
+  },
+  {
+   "id": "phone-draft-view-0914",
+   "added": "2026-09-14",
+   "what": "폰 결재함 ⑦발행승인 카드가 '원고를 보고 승인' 인데 원고 보기가 없다(E2-16 사장님 지적). 미발행 원고는 github.io 에 못 올리므로 비공개 검토 페이지(아티팩트) 링크를 카드에 싣는 배선 필요",
+   "due": "2026-09-14",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/approval_m.json',encoding='utf-8'));print([i.get('review') for i in d['items'] if i['kind'].startswith('⑦')])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
