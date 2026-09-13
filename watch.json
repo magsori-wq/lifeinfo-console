@@ -8680,6 +8680,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "routine-audit-fixes-0913",
+   "added": "2026-09-13",
+   "what": "루틴 점검(docs/루틴점검_20260913_*.md) 결과 고칠 것: ①커밋 태그 자기번호 오기 2회(4→[루틴6] 77984016 · 6→[루틴3] 0efd6ff8) — SKILL.md 머리에 '너는 N번' 명시 + commitguard 가 scheduled-task 폴더명↔태그 대조 ②루틴1 12:50 중복실행(c811519c·d3a8a008 27초 간격) · 루틴2 09-11 15:50 예정외 2차 실행 — 원인 미확정 ③루틴5 09-12 일일 문제기록 미기여 ④6번 SKILL.md 구절차(1~5)와 최신 0-1절 공존 모순 ⑤7·8·9 SKILL.md frontmatter·보고절 두 겹 중복 ⑥루틴종료 후 세션 재사용(7번 ce43703c 6일·6cfa517f 2일) ⑦루틴1 d3a8a008 영어 답변",
+   "due": "2026-09-13",
+   "cmd": "ls docs/루틴점검_20260913_*.md && python tools/routinesync.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
