@@ -9090,6 +9090,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "xlink-g205",
+   "added": "2026-09-13",
+   "what": "🔗 G2-05 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G2-05",
+   "due": "2026-09-13",
+   "cmd": "python studio/blogger.py crosslink --code G2-05",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "thumbnum-dup-check-0913",
+   "added": "2026-09-13",
+   "what": "썸네일 번호 중복 — E4-05(246_disaster_alert)·G4-07(246_gimje_horizon)이 같은 번호 246. validate_db 는 파일명 중복만 보고 번호 중복은 못 잡는다. 네이버 전용 썸네일 찾기는 이름으로 고쳤지만(naver.py) 번호로 무엇을 찾는 다른 자리가 있는지 전수 확인하고, 번호 배정 시(pubqueue add·thumbnail) 중복을 경고하게 한다.",
+   "due": "2026-09-14",
+   "cmd": "python -c \"import json,collections;db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));n=collections.Counter((p.get('thumb') or '').split('_')[0] for p in db['posts'] if p.get('thumb'));print([k for k,v in n.items() if v>1])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
