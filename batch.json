@@ -2708,8 +2708,9 @@
     {
      "code": "E4-05",
      "title": "재난문자 서비스 개선 총정리 — 반복 알림 줄고 행동요령 추가 (2026년 10월)",
-     "state": "todo",
-     "note": "사장님 CP 선별 2026-09-13 12:4x"
+     "state": "done",
+     "note": "초안 재난문자서비스개선_글_HTML.txt(본문 4,704자) · layout.check [] · heading OK · bodydup --live 0.036(299편) · 썸네일 246_disaster_alert(dark+naver) · pubqueue add OK(info). 출처 1차 8건(예규361 DRF·행안부 책자p.248·보도자료·정책브리핑·Apple·삼성). ⚠️일정 불일치(5/15 전국확대 vs 책자 10월 전면시행 예정)→제목 '10월 전면시행 예정'·본문 병기, 10월 세부내역 미확보",
+     "at": "2026-09-13 14:09"
     }
    ],
    "owner": "이과장",
@@ -2759,17 +2760,29 @@
    "order_at": "2026-09-13 14:08"
   }
  },
- "updated": "2026-09-13 14:08:10",
+ "updated": "2026-09-13 14:12:32",
  "current": {
-  "batch": "draft0913g407",
+  "batch": "draft0913e405",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "⚠️ G4-07 썸네일 단계에서 멈춤 — insta/_src 211장 중 김제·벼·들녘·축제 소재 실사진 없음(후보 hometown_field=밀밭 언덕·outdoor_festival=해외 풍등, 둘 다 소재 불일치). 초안(본문 4,930자·layout 경고0·bodydup 🟢0.042)과 출처 docs/source_G4-07 완료. 사진 확보 후 make_photo→pubqueue add 필요",
-  "since": "13:47",
-  "since_at": "2026-09-13 13:47:57"
+  "what": "⚠️ E4-05 push 미완 — 커밋 b53e1b4b(초안·출처·썸네일246·batch·affiliate) 로컬만. 발행 run 34739625444 종료 후 origin 이 1커밋 앞섰는데 그 21개 webapp 파일 중 17개가 작업트리에서 다른 세션 미커밋 수정 중 → rebase/merge 불가. 남의 파일을 되돌리거나 stash 하지 않고 멈춤. 내 커밋 파일과 incoming 겹침 0 — 다음 pull·push 하는 세션이 함께 올리면 된다",
+  "since": "13:48",
+  "since_at": "2026-09-13 13:48:01"
  },
  "log": [
+  {
+   "t": "14:12:32",
+   "text": "▶   — 1/7단계 · ⚠️ E4-05 push 미완 — 커밋 b53e1b4b(초안·출처·썸네일246·batch·affiliate) 로컬만. 발행 run 34739625444 종료 후 origin 이 1커밋 앞섰는데 그 21개 webapp 파일 중 17개가 작업트리에서 다른 세션 미커밋 수정 중 → rebase/merge 불가. 남의 파일을 되돌리거나 stash 하지 않고 멈춤. 내 커밋 파일과 incoming 겹침 0 — 다음 pull·push 하는 세션이 함께 올리면 된다"
+  },
+  {
+   "t": "14:11:09",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — E4-05 커밋 b53e1b4b 로컬 완료, push 는 발행 run 34739625444 진행 중이라 pre-push 가드가 거부 → run 종료 후 push"
+  },
+  {
+   "t": "14:09:08",
+   "text": "✅ E4-05 완료 — 재난문자 서비스 개선 총정리 — 반복 알림 줄고 행동요령 추가"
+  },
   {
    "t": "14:08:10",
    "text": "📄 pub0913h108 작업 지시 등록(7798자, 2026-09-13 14:08)"
@@ -2917,18 +2930,6 @@
   {
    "t": "09:10:35",
    "text": "✅ lifeinfo-daily-topics-0913 완료 — lifeinfo-daily-topics (B)"
-  },
-  {
-   "t": "09:09:01",
-   "text": "✅ lifeinfo-publish-0913 완료 — lifeinfo-publish (C)"
-  },
-  {
-   "t": "08:11:10",
-   "text": "✅ daily-email-briefing-0913 완료 — daily-email-briefing (A)"
-  },
-  {
-   "t": "07:12:58",
-   "text": "✅ 8-lifeinfo-issue-product-0913 완료 — 8-lifeinfo-issue-product (H)"
   }
  ],
  "currents": {
@@ -3376,7 +3377,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⚠️ E4-05 시점 불일치 — 책자 p.248 '10월 전면시행 예정' vs 정책브리핑 2026-05-14 '5/15 전국 확대' + 예규 361호(2026-02-04) 별표2에 157자 문안 이미 수록. 10월 세부 변경내역 공식출처 추가 확인 중 → 못 찾으면 제목·도입부를 '이미 시행 + 10월 전면시행 예정'으로 조정",
+   "what": "⚠️ E4-05 push 미완 — 커밋 b53e1b4b(초안·출처·썸네일246·batch·affiliate) 로컬만. 발행 run 34739625444 종료 후 origin 이 1커밋 앞섰는데 그 21개 webapp 파일 중 17개가 작업트리에서 다른 세션 미커밋 수정 중 → rebase/merge 불가. 남의 파일을 되돌리거나 stash 하지 않고 멈춤. 내 커밋 파일과 incoming 겹침 0 — 다음 pull·push 하는 세션이 함께 올리면 된다",
    "since": "13:48",
    "since_at": "2026-09-13 13:48:01"
   }
@@ -3759,6 +3760,22 @@
    "title": "",
    "owner": "이과장",
    "what": "⚠️ G4-07 썸네일 단계에서 멈춤 — insta/_src 211장 중 김제·벼·들녘·축제 소재 실사진 없음(후보 hometown_field=밀밭 언덕·outdoor_festival=해외 풍등, 둘 다 소재 불일치). 초안(본문 4,930자·layout 경고0·bodydup 🟢0.042)과 출처 docs/source_G4-07 완료. 사진 확보 후 make_photo→pubqueue add 필요"
+  },
+  {
+   "ts": "2026-09-13 14:11:09",
+   "bid": "draft0913e405",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⏸ 대기 — E4-05 커밋 b53e1b4b 로컬 완료, push 는 발행 run 34739625444 진행 중이라 pre-push 가드가 거부 → run 종료 후 push"
+  },
+  {
+   "ts": "2026-09-13 14:12:32",
+   "bid": "draft0913e405",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⚠️ E4-05 push 미완 — 커밋 b53e1b4b(초안·출처·썸네일246·batch·affiliate) 로컬만. 발행 run 34739625444 종료 후 origin 이 1커밋 앞섰는데 그 21개 webapp 파일 중 17개가 작업트리에서 다른 세션 미커밋 수정 중 → rebase/merge 불가. 남의 파일을 되돌리거나 stash 하지 않고 멈춤. 내 커밋 파일과 incoming 겹침 0 — 다음 pull·push 하는 세션이 함께 올리면 된다"
   }
  ]
 }

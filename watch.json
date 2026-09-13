@@ -8740,6 +8740,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "push-e4-05-0913",
+   "added": "2026-09-13",
+   "what": "E4-05 커밋 b53e1b4b(초안·썸네일246·출처) 로컬만 — 원격에 없어 발행 run 이 파일을 못 찾는다. queue.json 은 이미 원격에 있어 CP 에 발행대기로 뜬다. push 전에 ⑦ 트리거 금지",
+   "due": "2026-09-13",
+   "cmd": "cd C:/lifeinfo && git fetch origin && git rev-list --count origin/main..HEAD && git branch -r --contains b53e1b4b",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
