@@ -8650,6 +8650,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "cp-leepane-topicdraft-0913",
+   "added": "2026-09-13",
+   "what": "CP 결재함 「이부장 결재 대기」가 picked·초안없음 글감을 지시서가 이미 나가도 계속 이부장 몫(topic_draft)으로 보여준다 — 실제로는 이과장 대기. approval.html L679 조건에 '담당 이과장 배치에 order 가 있으면 제외(이과장 대기로 표시)' 추가 필요. 같은 날 E4-02 유령: 코드 재배정(B4-11) 뒤 v0check.json 에 E4-02 pass 가 남아 「진행 중 문서」에 ⑥으로 떠 있음",
+   "due": "2026-09-13",
+   "cmd": "grep -n \"t.state==='picked' && t.draft===false\" webapp/approval.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
