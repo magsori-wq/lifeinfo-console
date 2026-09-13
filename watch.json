@@ -9288,10 +9288,31 @@
    "added": "2026-09-14",
    "what": "3번 루틴 발행 트리거 첫 실행(09:00) 검증 — 대상 글이 있었나·조건 판정이 맞았나·gh 권한 거부 없었나·이중발행 없었나. 대상 없으면 '대상 없음' 보고가 정상",
    "due": "2026-09-14",
-   "cmd": "python -m studio.batchboard show --id routinelog | grep lifeinfo-publish; gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 3",
+   "cmd": "python -m studio.batchboard show | grep -A2 lifeinfo-publish; gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 3",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "approve-naver-e216",
+   "added": "2026-09-14",
+   "what": "E2-16 네이버 게시 — 제목 '개인정보 유출되면 무엇이 달라지나', 카테고리=디지털·통신, 첨부=thumbs_naver/249_privacylaw.png",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.pipeline naver-draft --code E2-16 --file osmu/네이버용_개인정보보호법개정9월11일시행.txt",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "osmu-remain-e216",
+   "added": "2026-09-14",
+   "what": "E2-16 쓰레드·인스타(카드+캡션) 미완 — 네이버 원고만 준비완료(결재함 등록)",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.osmu_manifest table --code E2-16",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
