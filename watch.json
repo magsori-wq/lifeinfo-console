@@ -9062,6 +9062,18 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.wake --role 이과장 --batch osmu0913g407",
    "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "관제탑 오류 — osmu0913g407 배치를 만들지 않고 order 를 넣어 등록이 실패했는데 wake 를 돌렸다. 세션 문제가 아니다. wake 에 '지시서 없는 배치면 안 깨운다' 가드 추가."
+  },
+  {
+   "id": "deploy-naver-copy-0914",
+   "added": "2026-09-13",
+   "what": "【권고】내일 네이버 일괄 게시 전에 PC 에서 deploy.bat 1회. 【근거】오늘 결재함 네이버 복사 버튼(원고·제목·이미지)을 고쳤다 — PC localhost 결재함은 바로 되지만 폰(github.io m.html)은 배포해야 반영된다. 네이버 전용 썸네일(243n·244n 등)도 배포돼야 이미지 링크가 열린다. 【위험】안 하면 폰에서 복사 버튼이 빈칸·이미지 링크 404(PC 로 게시하시면 영향 없음).",
+   "due": "2026-09-14",
+   "cmd": "cmd /c C:\\lifeinfo\\deploy.bat <nul",
+   "owner": "user",
    "state": "todo",
    "by": "이부장"
   }
