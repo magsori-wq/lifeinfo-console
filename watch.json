@@ -9152,8 +9152,10 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.v0check list | grep H1-09; python -c \"from studio import sessionstate as s; print(s.read_info('draft0913h109fix'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "22:2x 관제탑 실측 종결: 공식 원문 korea.kr newsId=156769443 확보(59dce453) → 이과장 수정 4회(도메인·개설일·뉴스→정부원문·미확인 모집기간 삭제·동행가게/코그페100 구분·L167 뉴스 유통채널 삭제) → V0 재검사 🟡 PASS(V0검사관) → 최종 grep: 9/4·10/25 0건 · 동행가게 100곳 0건 · 언론보도 유통채널 0건. 사장님께 승인 가능 카톡."
   },
   {
    "id": "h1-09-govsource",
