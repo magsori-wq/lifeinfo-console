@@ -2717,17 +2717,21 @@
    "order_at": "2026-09-13 13:07"
   }
  },
- "updated": "2026-09-13 14:02:12",
+ "updated": "2026-09-13 14:04:37",
  "current": {
-  "batch": "draft0913h108",
+  "batch": "draft0913g407",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "⚠️ 구조: progress.json pipeline 슬롯이 1개라 병행 세션(A5-11)의 --start 가 H1-08 seed 를 덮어씀 → board_seed --step 이 '보드에 없다'로 거부, 3~7단계 미기록. 발행 진행 보드가 병행 작업에서 동작하지 않는다(진단만 — 수정은 넘김)",
-  "since": "13:40",
-  "since_at": "2026-09-13 13:40:30"
+  "what": "⚠️ G4-07 썸네일 단계에서 멈춤 — insta/_src 211장 중 김제·벼·들녘·축제 소재 실사진 없음(후보 hometown_field=밀밭 언덕·outdoor_festival=해외 풍등, 둘 다 소재 불일치). 초안(본문 4,930자·layout 경고0·bodydup 🟢0.042)과 출처 docs/source_G4-07 완료. 사진 확보 후 make_photo→pubqueue add 필요",
+  "since": "13:47",
+  "since_at": "2026-09-13 13:47:57"
  },
  "log": [
+  {
+   "t": "14:04:37",
+   "text": "▶   — 1/7단계 · ⚠️ G4-07 썸네일 단계에서 멈춤 — insta/_src 211장 중 김제·벼·들녘·축제 소재 실사진 없음(후보 hometown_field=밀밭 언덕·outdoor_festival=해외 풍등, 둘 다 소재 불일치). 초안(본문 4,930자·layout 경고0·bodydup 🟢0.042)과 출처 docs/source_G4-07 완료. 사진 확보 후 make_photo→pubqueue add 필요"
+  },
   {
    "t": "14:02:12",
    "text": "▶   — 1/7단계 · ⚠️ 구조: progress.json pipeline 슬롯이 1개라 병행 세션(A5-11)의 --start 가 H1-08 seed 를 덮어씀 → board_seed --step 이 '보드에 없다'로 거부, 3~7단계 미기록. 발행 진행 보드가 병행 작업에서 동작하지 않는다(진단만 — 수정은 넘김)"
@@ -2883,10 +2887,6 @@
   {
    "t": "17:46:35",
    "text": "▶ D2-11  — 2/7단계 · ⚠️ 브라우저 재선택(사장님 지시로 Browser 1='이부장' 선택, select_browser 성공, tabs_context_mcp 탭그룹 정상 생성 확인) 후 F2-17 시험 — 3회(실제클릭+ctrl+v · 재클릭+ctrl+v · 새탭+JS focus+click+Range+ctrl+v) 전부 실패(매번 focused=true, innerText len=1 그대로). 라이브 무손상 확인(새로고침 재확인, '아직 답글이 없습니다' 그대로). 브라우저를 바꿔도 동일 증상 — 특정 브라우저 인스턴스 문제가 아니라 Threads 클립보드 붙여넣기 자체가 지금 막혀 있는 것으로 보임. 대기"
-  },
-  {
-   "t": "17:45:19",
-   "text": "✅ D1-09 완료 — 인스타 캡션에 네이버 링크 — 지금 편집이 되는지 1편 시험"
   }
  ],
  "currents": {
@@ -3325,7 +3325,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[이부장 13:5x] 이과장 창이 12:26 확인에서 멈춰 초안 에이전트가 대행 중 — 이과장은 이 배치를 하지 않는다(중복 방지)",
+   "what": "⚠️ G4-07 썸네일 단계에서 멈춤 — insta/_src 211장 중 김제·벼·들녘·축제 소재 실사진 없음(후보 hometown_field=밀밭 언덕·outdoor_festival=해외 풍등, 둘 다 소재 불일치). 초안(본문 4,930자·layout 경고0·bodydup 🟢0.042)과 출처 docs/source_G4-07 완료. 사진 확보 후 make_photo→pubqueue add 필요",
    "since": "13:47",
    "since_at": "2026-09-13 13:47:57"
   },
@@ -3709,6 +3709,14 @@
    "title": "",
    "owner": "이과장",
    "what": "⚠️ 구조: progress.json pipeline 슬롯이 1개라 병행 세션(A5-11)의 --start 가 H1-08 seed 를 덮어씀 → board_seed --step 이 '보드에 없다'로 거부, 3~7단계 미기록. 발행 진행 보드가 병행 작업에서 동작하지 않는다(진단만 — 수정은 넘김)"
+  },
+  {
+   "ts": "2026-09-13 14:04:37",
+   "bid": "draft0913g407",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⚠️ G4-07 썸네일 단계에서 멈춤 — insta/_src 211장 중 김제·벼·들녘·축제 소재 실사진 없음(후보 hometown_field=밀밭 언덕·outdoor_festival=해외 풍등, 둘 다 소재 불일치). 초안(본문 4,930자·layout 경고0·bodydup 🟢0.042)과 출처 docs/source_G4-07 완료. 사진 확보 후 make_photo→pubqueue add 필요"
   }
  ]
 }

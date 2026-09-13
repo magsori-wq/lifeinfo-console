@@ -8710,6 +8710,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "h108-mbc-label-precision",
+   "added": "2026-09-13",
+   "what": "H1-08: §3 표 '공식 발표' 열에 MBC 행이 iMBC연예 기사(2차보도)인데 SPOTV·네이버 원문과 같은 열에 있어 과다표시. 바이라인도 'MBC 공식 발표 원문'이라 표현 — iMBC연예 기사 인용임을 명확히(열 라벨을 '출처'로 바꾸거나 MBC행에 '언론보도' 명기) 권장. 발행 차단 사유는 아님(V0 PASS 유지).",
+   "due": "2026-09-20",
+   "cmd": "grep -n 'iMBC\\|공식 발표' 아이치나고야아시안게임중계_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
