@@ -8762,6 +8762,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "routine10-registration-failed-0913",
+   "added": "2026-09-13",
+   "what": "10번 관제 루틴을 Desktop scheduled-tasks.json 에 손으로 등록(13:36) → 14:07·14:20 모두 실행 안 됨. 파일 mtime 13:36 그대로·lastRunAt 없음 = Desktop 이 파일을 다시 읽지 않는다(시작 때만 읽는 것으로 추정). 재편집·재시도하지 않는다. 필요하면 Desktop 「루틴」 화면에서 추가해야 한다. 우선순위 낮음 — 선별·초안은 루틴 2·4·6 에 이미 넣었다(오늘 밤 검증)",
+   "due": "2026-09-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;d=json.load(open(r'C:/Users/magso/AppData/Local/Packages/Claude_pzs8sxrjxfjjc/LocalCache/Roaming/Claude/claude-code-sessions/790903da-9352-481f-a77e-969afe83a3db/6480a4f8-3040-4978-b787-1971db4e2fa7/scheduled-tasks.json',encoding='utf-8'));print([t.get('lastRunAt') for t in d['scheduledTasks'] if t['id']=='10-lifeinfo-orchestrator'])\"",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이부장"
   }
  ]
 }

@@ -1027,7 +1027,26 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +((x.act==='watch_done'||x.act==='watch_blocked')&&x.cmd
         ? '<div style="margin-top:6px">'+recheckBtn(x.c,x.cmd)+'</div>' : '')
       +'</div>';}).join('')
-    : '<p class="none">✅ 없음 — 지금 사장님 결재를 기다리는 건이 없습니다.</p>';
+    // 🔴 **비었으면 왜 비었는지 말한다** (2026-09-13 사장님: "왜 결재함에 없냐")
+    //    발행 승인 카드는 초안 → 큐 → V0 통과 뒤에만 생긴다. '0건'만 보이면 멈춘 곳을
+    //    사장님이 물어서 알아내셔야 했다(그날 초안 0건 · 선별 대기 6건이 원인이었다).
+    //    새로 세지 않고 이 화면이 이미 읽은 T(제안)·Q(큐)·v0 로만 판정한다.
+    : (function(){
+        var pub=function(c){return (byc[c]||{}).url;};
+        var wait=T.filter(function(t){return t.state==='proposed';}).length;
+        var draft=T.filter(function(t){return (t.state==='picked'||t.state==='approved')&&t.draft===false&&!pub(t.code)&&!byq[t.code];}).length;
+        var v0w=Q.filter(function(q){return !v0[q.code]&&!pub(q.code);}).length;
+        var gone=Q.filter(function(q){return q.go&&!pub(q.code);}).length;
+        var why=[];
+        if(wait) why.push('② 선별 대기 '+wait+'건');
+        if(draft) why.push('④ 초안 작성 중 '+draft+'건');
+        if(v0w) why.push('⑤ V0 검사 대기 '+v0w+'건');
+        if(gone) why.push('⑦ 승인 끝 · 발행 대기 '+gone+'건');
+        return '<p class="none">✅ 지금 사장님이 결재하실 원고는 없습니다.'
+          +(why.length?'<br><b>비어 있는 이유:</b> '+esc(why.join(' · '))
+                       +' — 앞 단계가 끝나면 여기로 올라옵니다.'
+                      :'<br>진행 중인 원고도 없습니다(제안이 들어오면 선별부터 시작합니다).')+'</p>';
+      })();
   // 🔴 2026-08-31 — 배지가 boss.length(승인완료 ✅ 카드 포함)를 세는 바람에
   //    화면 8건 vs approvalcount 7건 으로 갈렸다. 08-28 사장님 지적
   //    "내 눈에는 4건인데 넌 뭘 보고 5건이라고 하는 거야?" 와 같은 병의 재발이다.
