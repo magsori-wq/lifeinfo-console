@@ -9024,6 +9024,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "xlink-d108",
+   "added": "2026-09-13",
+   "what": "🔗 D1-08 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-08",
+   "due": "2026-09-13",
+   "cmd": "python studio/blogger.py crosslink --code D1-08",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "naverprep-cpcells-0914",
+   "added": "2026-09-13",
+   "what": "결재함(CP) 카드의 복사 버튼이 5편 전부 빈 값이다(approvalcount.parts/_full_text 의 _is_naver_post 판정이 코드id 형태를 못 받아들이는 버그) — 폰·PC 화면 모두 여기서 제목·본문을 복사할 수 없다. 게시 직전 아래 명령으로 직접 적재할 것.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.pipeline naver-draft --code D1-10 --file osmu/네이버용_등초본세대주관계표기개선.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
