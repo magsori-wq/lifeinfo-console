@@ -8956,9 +8956,9 @@
   {
    "id": "sweep-naverattach-0913",
    "added": "2026-09-13",
-   "what": "【권고】G3-05·C4-08 네이버 글에 제휴 상품(각 2개, 09-11 등록)이 아직 본문에 안 붙어 있습니다(navercheck 실측: '등록됐는데 미부착'). 오늘 미언급 전수점검에서 처음 발견. 【근거】python -m studio.navercheck 출력 '🔴 G3-05 · 🔴 C4-08 — 빠진 것: 제휴(등록됐는데 미부착)'. affiliate.json 에 G3-05 links=2, C4-08 links=2 로 이미 등록만 돼 있음. 【위험】네이버는 확장이 막혀 세션이 못 고칩니다 — 사장님이 붙이셔야 합니다. 방치 시 제휴 수익 기회 손실.",
-   "due": "2026-09-13",
-   "cmd": "python -m studio.affiliate block --code G3-05 --channel naver ; python -m studio.affiliate block --code C4-08 --channel naver  # 출력된 블록을 네이버 글 본문에 붙여넣기",
+   "what": "【권고】내일 네이버 일괄 게시 때 함께: 이미 게시된 G3-05(진주남강유등축제)·C4-08(추석 명절음식 보관) 네이버 글 맨 앞에 제휴 문구+링크 붙이기(글 수정→저장, URL 그대로). 【근거】affiliate.check_live 실측 두 글 모두 등록 2개 중 부착 0개(17:1x). 【위험】안 붙이면 발급해 둔 링크 수익 0 · 대가성 문구 없이 붙이면 공정위 위반 소지 — 블록 파일에 문구가 맨 앞으로 들어 있음.",
+   "due": "2026-09-14",
+   "cmd": "osmu/네이버_제휴블록_G3-05.txt · osmu/네이버_제휴블록_C4-08.txt (각 파일의 게시물 URL·붙일 문구 그대로)",
    "owner": "user",
    "state": "todo",
    "by": "이부장"
@@ -8970,8 +8970,60 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.topicprop table ; python -m studio.dupcheck \"국민연금 실버론 노후긴급자금대부\" ; python -m studio.topicprop pick --code A4-06",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "A4-06 topicprop state=picked 확인 · 이과장 초안 지시서 draft0913a406 등록(17:10, 8972자) — docflow 에이전트"
+  },
+  {
+   "id": "xlink-d109",
+   "added": "2026-09-13",
+   "what": "🔗 D1-09 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-09",
+   "due": "2026-09-13",
+   "cmd": "python studio/blogger.py crosslink --code D1-09",
+   "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "naver-link"
+  },
+  {
+   "id": "naverprep-a511-0914",
+   "added": "2026-09-13",
+   "what": "A5-11 네이버 원고에 강제 개행(짧은 산문 줄 3개 연속) — 네이버가 줄바꿈을 그대로 지켜 본문만 좁게 찍힌다(2026-08-18 실제 사고와 동일 증상). 붙여넣기 전에 고칠 것.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.naverwrap osmu/네이버용_두루누리사회보험료지원.txt --write",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "naverprep-h108-0914",
+   "added": "2026-09-13",
+   "what": "H1-08 네이버 전용 썸네일(245n_*.png)이 없어 blogspot용(245_asiangames.png)이 대신 안내됨 — 이미지 문구 '아시안게임 중계 채널·시청 방법'과 네이버 제목 '아시안게임 개회식이 시작이다? 아닙니다…'가 다르다(육안 확인). 독자가 후킹 제목으로 들어와 다른 문구의 이미지를 본다.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.pipeline thumbnail --name 245n_asiangames --cat H --title '<후킹부>' --sub '<나머지>' --force",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "naverprep-e405-0914",
+   "added": "2026-09-13",
+   "what": "E4-05 네이버 원고 3건 — ①강제 개행(짧은 산문 줄 3개 연속, 본문 좁게 찍힘) ②원문 공식 출처 링크 9개 중 8개만 포함 ③전용 썸네일(246n_*.png) 없어 blogspot용(246_disaster_alert.png)이 대신 안내되고 제목 불일치 가능성.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.naverwrap osmu/네이버용_재난문자서비스개선.txt --write",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "naverprep-g407-0914",
+   "added": "2026-09-13",
+   "what": "G4-07 네이버 원고가 아예 없다(osmu/네이버용_김제지평선축제.txt 없음) — 쓰레드·인스타 원고도 없음(3채널 전부 누락, osmu_manifest 확인). 내일 5편 일괄 게시 시 이 편만 붙여넣을 것이 없다. 썸네일(thumbs_naver/246_gimje_horizon.png)은 실사진으로 이미 존재.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.osmu_manifest table --code G4-07",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
