@@ -8676,9 +8676,9 @@
   {
    "id": "auto-pick-verify-0914",
    "added": "2026-09-13",
-   "what": "제안 루틴(2·4·6)이 docflow 로 ② 선별·③ 지시서까지 끝냈는지 첫 실측 — 09-13 21:00 루틴4 · 23:55 루틴6 · 09-14 09:00 루틴2. 미검증 상태(만들었다≠물렸다). readycheck 「② 선별」 ✅ + topicprop picked(state_at 09-13 21시 이후) + batch.json draft0913*/draft0914* 새 지시서가 있어야 통과. 🔴면 루틴 세션 로그에서 Agent(docflow) tool_use 유무부터 본다",
+   "what": "루틴 2·4·6 이 제안 뒤 ②선별→④초안→⑤V0(v0 에이전트)→⑥결재함까지 스스로 가는지 첫 실측. 확인 시각: 21:40(루틴4 21:00 뒤)·00:35(루틴6 23:55 뒤)·09:30(루틴2 09:00 뒤). 2026-09-13 20:1x 메모리 부족으로 예약 확인 작업이 종료돼, 관제탑이 5분 점검 때 직접 돌린다 — 세션이 죽었으면 다음 세션이 아래 명령으로 확인.",
    "due": "2026-09-14",
-   "cmd": "python -m studio.readycheck | grep -E '② 선별|이과장'",
+   "cmd": "python -m studio.topicprop table && python -m studio.pubqueue list && python -m studio.v0check list && python -m studio.approvalcount && git log --since='21:00' --oneline",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"

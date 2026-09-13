@@ -4176,6 +4176,14 @@
    "target": "thread-delete-repost-0913",
    "detail": "사장님 승인 9편 재게시 완료(3. 세션, 17:5x 관제탑 실측): 새 글 전부 200 — G4-06 DdN60EAgWPe·F2-14 DdOCNMmAX2U·H1-02 DdOEicrAZ-B·D1-09 DdOGSMGAW3w·D1-08 DdOHG5OgX4S·C2-11 DdOH1QxgUBk·E1-04 DdOJMxAAUNg·G2-05 DdOKLtTAanQ·G3-04 DdOLIDngYvN · 옛 글 9편 전부 302(보관). F2-14 는 원고·이미지 '발표 전' 오류를 게시 전 정정. 나머지 12편 ⬜ 은 선별표대로 skip.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-13T19:09:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fixreport-daily-commit-0914",
+   "detail": "19:00 무인 생성 확인(docx mtime 19:00·CP 링크). 내용 결함(저녁 수정 누락) 발견 → fixreport.py 보완(판정 낱말·시각 배분·나머지 목록 줄, b672f3e5) 후 09-13 재생성: 표 13:18~17:45 6행 + 그 밖에 30건, 추정 18.2/26.9cm. docs/수정보고서_20260913.docx 커밋(f74b3bff·b672f3e5). 무인 실행은 여전히 커밋 안 함 — 매일 관제탑이 경로 지정 커밋.",
+   "via": "cli"
   }
  ]
 }
