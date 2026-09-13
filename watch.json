@@ -8626,8 +8626,10 @@
    "due": "2026-09-13",
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));print([e['what'][:400] for e in d.get('now_log',[]) if e.get('bid')=='xlink0911all'][-2])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "사장님 승인 9편 재게시 완료(3. 세션, 17:5x 관제탑 실측): 새 글 전부 200 — G4-06 DdN60EAgWPe·F2-14 DdOCNMmAX2U·H1-02 DdOEicrAZ-B·D1-09 DdOGSMGAW3w·D1-08 DdOHG5OgX4S·C2-11 DdOH1QxgUBk·E1-04 DdOJMxAAUNg·G2-05 DdOKLtTAanQ·G3-04 DdOLIDngYvN · 옛 글 9편 전부 302(보관). F2-14 는 원고·이미지 '발표 전' 오류를 게시 전 정정. 나머지 12편 ⬜ 은 선별표대로 skip."
   },
   {
    "id": "a115-kosaf-direct-verify-0912",
@@ -9118,6 +9120,16 @@
    "by": "이부장",
    "done_at": "2026-09-13",
    "result": "번호로 파일을 찾던 유일한 자리(naver.py 네이버 전용 썸네일)를 이름 기준으로 고침(b926eed8, 오늘 5편 실측 전부 제 파일로 연결) · pubqueue add 에 번호 중복 경고 추가(ee4df6ea, 246→E4-05 감지·247→없음 테스트 PASS). 옛 중복 10개는 소급하지 않음(경고만)."
+  },
+  {
+   "id": "xlink-g304",
+   "added": "2026-09-13",
+   "what": "🔗 G3-04 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-04",
+   "due": "2026-09-13",
+   "cmd": "python studio/blogger.py crosslink --code G3-04",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
