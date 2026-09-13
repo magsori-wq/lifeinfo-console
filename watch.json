@@ -8772,8 +8772,10 @@
    "due": "2026-09-14",
    "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;d=json.load(open(r'C:/Users/magso/AppData/Local/Packages/Claude_pzs8sxrjxfjjc/LocalCache/Roaming/Claude/claude-code-sessions/790903da-9352-481f-a77e-969afe83a3db/6480a4f8-3040-4978-b787-1971db4e2fa7/scheduled-tasks.json',encoding='utf-8'));print([t.get('lastRunAt') for t in d['scheduledTasks'] if t['id']=='10-lifeinfo-orchestrator'])\"",
    "owner": "claude",
-   "state": "blocked",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "폐기(14:4x). Desktop 등록 제거 10→9, 지침은 restore/routine10_orchestrator_20260913 보관, routines.py 번호표에서 제거. 수기 등록은 실행 안 됨이 확정(14:07·14:20). 역할은 루틴 2·4·6 제안뒤선별 절 + readycheck 로 이관"
   },
   {
    "id": "fixreport-a4-confirm-0913",
