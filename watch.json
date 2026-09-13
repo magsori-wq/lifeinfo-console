@@ -8680,8 +8680,10 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.v0check list && python -m studio.approvalcount && python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "첫 실측 성공: 루틴6(23:55, 세션81385b66) E2-16 제안→docflow pick+verify→초안·썸네일·큐(6ba3ac45)→v0 에이전트 🟡PASS(00:32)→결재함 1번 발행승인 카드. 관제탑 개입 0"
   },
   {
    "id": "routine-audit-fixes-0913",
@@ -9242,6 +9244,42 @@
    "owner": "claude",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "wakewatch-instant-0914",
+   "added": "2026-09-14",
+   "what": "wakewatch 즉시깨우기(1분·busy여도·역할당1통) 실전 확인 — 다음 실제 지시서(E2-16 승인 뒤 pubqueue go 자동 지시서 등)가 2분 안에 읽히는가",
+   "due": "2026-09-14",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('<새 배치id>'))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "첫 실전 성공: draft0914e216fix 지시 01:43 → wakewatch 01:44 깨움 → 이과장 01:45 읽음(2분). 관제탑 수동 개입 0"
+  },
+  {
+   "id": "phone-inbox-stale-0914",
+   "added": "2026-09-14",
+   "what": "폰 결재함(github.io approval_m.json)이 15:19에 멈춰 E2-16 안 보임. 원인: 00:17 pushapproval 커밋이 클라우드 register push(4f78634)와 갈라져 push 실패 + 이후 pull --rebase 가 staged 잔여로 막힘. 또 새 결재 항목(V0 pass·pubqueue add)은 pushapproval 을 부르지 않음 → 배선 필요",
+   "due": "2026-09-14",
+   "cmd": "curl -s https://magsori-wq.github.io/lifeinfo-console/approval_m.json | grep -c E2-16",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "라이브 approval_m.json 01:27·E2-16 포함 확인. pushapproval 자동복구 추가 — 임시 갈라짐 재현(ahead1/behind2+staged 잔여)에서 원격 위 재적재·push 성공. 배포클론 stash 1개(파생 5파일) 남김"
+  },
+  {
+   "id": "phone-draft-view-0914",
+   "added": "2026-09-14",
+   "what": "폰 결재함 ⑦발행승인 카드가 '원고를 보고 승인' 인데 원고 보기가 없다(E2-16 사장님 지적). 미발행 원고는 github.io 에 못 올리므로 비공개 검토 페이지(아티팩트) 링크를 카드에 싣는 배선 필요",
+   "due": "2026-09-14",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/approval_m.json',encoding='utf-8'));print([i.get('review') for i in d['items'] if i['kind'].startswith('⑦')])\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "bb090a46: reviewpage(build/link/missing)+approvalcount review 필드+m.html 「📄 원고 보기」. 라이브 approval_m.json 에 E2-16 링크·m.html 버튼 확인. now 에 링크 없는 ⑦ 경보"
   }
  ]
 }

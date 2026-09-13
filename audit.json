@@ -4264,6 +4264,70 @@
    "target": "index-drift-merge-0914",
    "detail": "pushgate.index_drift() 추가(a6bc369a). 드리프트 커밋 d30334f6 에서 BLOCK · 정상 HEAD PASS · 실제 git push --dry-run 에서 훅 발동 확인",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-14T00:32:27",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "E2-16",
+   "detail": "🟡 통과 — 실질 V0 는 함정②(72시간이 PIPC 원문에 없음을 확인해 실었음, 판정기준 2026-09-08 E2-15 선례 충족) 하나. 고칠 곳 3: ①비교표 '9/10까지' 열이 출처문서에 없는 추론(수치는 없으나 근거 미확보) ②'100억→10억' 계산은 기업 과징금이라 소비",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T00:34:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "auto-pick-verify-0914",
+   "detail": "첫 실측 성공: 루틴6(23:55, 세션81385b66) E2-16 제안→docflow pick+verify→초안·썸네일·큐(6ba3ac45)→v0 에이전트 🟡PASS(00:32)→결재함 1번 발행승인 카드. 관제탑 개입 0",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T01:30:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "phone-inbox-stale-0914",
+   "detail": "라이브 approval_m.json 01:27·E2-16 포함 확인. pushapproval 자동복구 추가 — 임시 갈라짐 재현(ahead1/behind2+staged 잔여)에서 원격 위 재적재·push 성공. 배포클론 stash 1개(파생 5파일) 남김",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T01:37:06",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "phone-draft-view-0914",
+   "detail": "bb090a46: reviewpage(build/link/missing)+approvalcount review 필드+m.html 「📄 원고 보기」. 라이브 approval_m.json 에 E2-16 링크·m.html 버튼 확인. now 에 링크 없는 ⑦ 경보",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T01:45:58",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "wakewatch-instant-0914",
+   "detail": "첫 실전 성공: draft0914e216fix 지시 01:43 → wakewatch 01:44 깨움 → 이과장 01:45 읽음(2분). 관제탑 수동 개입 0",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T02:06:06",
+   "actor": "V0검사관(재검사)",
+   "action": "v0check.pass",
+   "target": "E2-16",
+   "detail": "보강 재검사 통과 — 반려 3건 실측대조: ①비교표'9/10까지'열 삭제→목록 재구성(추론 제거) ②섹션4 신설로 소비자 얼마인가 응답(법정손해배상300만원이하 vs 일반배상5배이내, 요건·범위·입증부담 3축, law.go.kr MST283839 제39조의2·제39조 원문과 글자단위 일",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T02:06:14",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "E2-16",
+   "detail": "보강 재검사 통과 — 반려 3건 실측대조: ①비교표'9/10까지'열 삭제→목록 재구성(추론 제거) ②섹션4 신설로 소비자 얼마인가 응답(법정손해배상300만원이하 vs 일반배상5배이내, 요건·범위·입증부담 3축, law.go.kr MST283839 제39조의2·제39조 원문과 글자단위 일",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T02:11:44",
+   "actor": "세션(CLI)",
+   "action": "pubqueue.go",
+   "target": "E2-16",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }
