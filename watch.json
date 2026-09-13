@@ -8992,8 +8992,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.naverwrap osmu/네이버용_두루누리사회보험료지원.txt --write",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-09-13",
+   "result": "17:5x 관제탑 실측: naverlayout 🔴0(강제 개행 제거 확인) · 네이버 전용 썸네일 244n_durunuri.png 연결 · 결재함 원고 6,124자"
   },
   {
    "id": "naverprep-h108-0914",
@@ -9002,8 +9004,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.pipeline thumbnail --name 245n_asiangames --cat H --title '<후킹부>' --sub '<나머지>' --force",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-09-13",
+   "result": "17:5x 관제탑 실측: 네이버 전용 썸네일 thumbs_naver/245n_asiangames.png 생성·연결(결재함 이미지 줄 확인) · 원고 4,014자"
   },
   {
    "id": "naverprep-e405-0914",
@@ -9012,8 +9016,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.naverwrap osmu/네이버용_재난문자서비스개선.txt --write",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-09-13",
+   "result": "17:5x 관제탑 실측: naverlayout 🔴0 · 출처 링크 9/9(검사기 &amp; 오탐 수정 b926eed8 후 통과) · 네이버 전용 썸네일 246n_disaster_alert.png 이름으로 연결(G4-07 246 과 안 섞임)"
   },
   {
    "id": "naverprep-g407-0914",
@@ -9104,12 +9110,14 @@
   {
    "id": "thumbnum-dup-check-0913",
    "added": "2026-09-13",
-   "what": "썸네일 번호 중복 — E4-05(246_disaster_alert)·G4-07(246_gimje_horizon)이 같은 번호 246. validate_db 는 파일명 중복만 보고 번호 중복은 못 잡는다. 네이버 전용 썸네일 찾기는 이름으로 고쳤지만(naver.py) 번호로 무엇을 찾는 다른 자리가 있는지 전수 확인하고, 번호 배정 시(pubqueue add·thumbnail) 중복을 경고하게 한다.",
+   "what": "썸네일 번호 중복 전수: DB 11개 번호가 두 글에 쓰임(21·22·70·89·95·100·112·113·114·125 는 옛 글, 246 은 오늘 E4-05·G4-07). 번호로 파일을 찾던 자리는 naver.py 네이버 전용 썸네일 찾기 하나뿐이었고 이름 기준으로 고침(b926eed8). 남은 것: pubqueue add 에서 새 번호가 이미 쓰였으면 ⚠️ 경고(차단 아님 — 옛 중복이 있어서).",
    "due": "2026-09-14",
-   "cmd": "python -c \"import json,collections;db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));n=collections.Counter((p.get('thumb') or '').split('_')[0] for p in db['posts'] if p.get('thumb'));print([k for k,v in n.items() if v>1])\"",
+   "cmd": "python -m studio.pubqueue add --help",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "번호로 파일을 찾던 유일한 자리(naver.py 네이버 전용 썸네일)를 이름 기준으로 고침(b926eed8, 오늘 5편 실측 전부 제 파일로 연결) · pubqueue add 에 번호 중복 경고 추가(ee4df6ea, 246→E4-05 감지·247→없음 테스트 PASS). 옛 중복 10개는 소급하지 않음(경고만)."
   }
  ]
 }
