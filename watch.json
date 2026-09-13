@@ -8700,6 +8700,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "progress-single-slot-0913",
+   "added": "2026-09-13",
+   "what": "board_seed/progress.json 의 pipeline 슬롯이 1개라 초안을 병행하면 나중 --start 가 앞 글 seed 를 덮어쓴다(09-13 H1-08 에이전트 보고: A5-11 --start 가 H1-08 을 덮음). 루틴이 초안을 직접 쓰게 되면 루틴 4·6 이 같은 날 겹칠 수 있다 — 코드별 슬롯으로 바꾸거나 seed 를 발행 직전으로 옮긴다",
+   "due": "2026-09-14",
+   "cmd": "grep -n \"pipeline\" studio/board_seed.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
