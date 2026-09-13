@@ -218,6 +218,19 @@ function card(it){
   d.querySelector('.b-no').onclick=function(){
     copy('반려: '+label(it)+' — ', '📋 복사됨 — 사유를 이어 쓰고 보내세요');
   };
+  // 🔴 2026-09-14 사장님 "원고 보기도 결재함에 올려주면 안 되나?"
+  //    미발행 원고는 공개 사이트에 못 두므로 비공개 검토 페이지로 연다.
+  if(it.review){
+    var rv=document.createElement('div');
+    rv.className='btns'; rv.style.marginTop='8px';
+    rv.innerHTML='<button class="b-copy">📄 원고 보기</button>';
+    rv.querySelector('button').onclick=function(){ window.open(it.review,'_blank'); };
+    d.appendChild(rv);
+  } else if(hard){
+    var nv=document.createElement('div');
+    nv.className='byline'; nv.textContent='📄 원고 링크 준비 중 — 이부장이 올립니다';
+    d.appendChild(nv);
+  }
   return d;
 }
 
