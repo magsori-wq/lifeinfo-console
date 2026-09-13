@@ -8720,6 +8720,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "thumb-g4-07-0913",
+   "added": "2026-09-13",
+   "what": "G4-07 김제지평선축제 썸네일 미생성 — insta/_src 211장에 김제·벼·들녘·축제 소재 실사진 없음. 사진 확보 후 make_photo(G 실사진)→thumbcheck→pubqueue add --lane etc(제목 dupcheck 0.67 오탐은 이부장 판정 · --force 사유 기재). 썸네일 번호 246은 예약 아님 — 만들 때 다음 빈 번호 확인 후 초안 ■썸네일 줄·본문 img src 둘 다 갱신. 사전접수 9/16·개막 10/1 시한",
+   "due": "2026-09-16",
+   "cmd": "python -m studio.thumbcheck",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이부장"
+  },
+  {
+   "id": "daily-fix-report-docx-0913",
+   "added": "2026-09-13",
+   "what": "사장님 지시 13:1x: '매일 뭘 고쳤는지 보고서 워드문서로 만들어 CP에 등록해! 오후 19시30분까지'. 오늘분 19:30 전 CP 등록 + 매일 자동 생성(세션·기억에 의존하지 않는 방식). 생성기·예약·CP 링크를 실제로 한 번 돌려 확인해야 완료",
+   "due": "2026-09-13",
+   "cmd": "ls -l docs/수정보고서_*.docx; grep -n 수정보고서 webapp/*.json | head -3",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
