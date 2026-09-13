@@ -8942,6 +8942,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "kakao-on-loop-stop-0913",
+   "added": "2026-09-13",
+   "what": "사장님 17:1x: '루프가 멈추면 무조건 카톡으로 보고하고, 내가 알수 있도록해!' — 관제탑이 wakewatch Monitor(⚠️ 깨워도 안 읽힘·🔴 깨우기 실패)·loopcheck 🔴·발행 run 실패·결재 대기 발생 이벤트를 받으면 즉시 KakaotalkChat-MemoChat(200자)로 보낸다. 카톡은 파이썬이 못 부르므로 관제탑 세션이 살아 있어야 한다 — 세션이 죽는 경우는 다음 과제.",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.loopcheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "sweep-naverattach-0913",
+   "added": "2026-09-13",
+   "what": "【권고】G3-05·C4-08 네이버 글에 제휴 상품(각 2개, 09-11 등록)이 아직 본문에 안 붙어 있습니다(navercheck 실측: '등록됐는데 미부착'). 오늘 미언급 전수점검에서 처음 발견. 【근거】python -m studio.navercheck 출력 '🔴 G3-05 · 🔴 C4-08 — 빠진 것: 제휴(등록됐는데 미부착)'. affiliate.json 에 G3-05 links=2, C4-08 links=2 로 이미 등록만 돼 있음. 【위험】네이버는 확장이 막혀 세션이 못 고칩니다 — 사장님이 붙이셔야 합니다. 방치 시 제휴 수익 기회 손실.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.affiliate block --code G3-05 --channel naver ; python -m studio.affiliate block --code C4-08 --channel naver  # 출력된 블록을 네이버 글 본문에 붙여넣기",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "sweep-topicpick-0913",
+   "added": "2026-09-13",
+   "what": "topicprop 에 A4-06(국민연금 실버론 노후긴급자금대부 총정리)이 추천함 상태로 대기 중 — 이부장 선별(pick/drop)이 아직 안 됨. 오늘 미언급 전수점검에서 발견(다른 글감 흐름에 가려 안 다뤄짐).",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.topicprop table ; python -m studio.dupcheck \"국민연금 실버론 노후긴급자금대부\" ; python -m studio.topicprop pick --code A4-06",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
