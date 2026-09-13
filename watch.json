@@ -8680,8 +8680,10 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.v0check list && python -m studio.approvalcount && python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "첫 실측 성공: 루틴6(23:55, 세션81385b66) E2-16 제안→docflow pick+verify→초안·썸네일·큐(6ba3ac45)→v0 에이전트 🟡PASS(00:32)→결재함 1번 발행승인 카드. 관제탑 개입 0"
   },
   {
    "id": "routine-audit-fixes-0913",
@@ -9199,6 +9201,69 @@
    "state": "todo",
    "by": "이과장",
    "kind": "action"
+  },
+  {
+   "id": "source-cde-0914",
+   "added": "2026-09-14",
+   "what": "C/D/E 글감 후보 2건 1차출처 확보: ①5등급 조기폐차·DPF지원 2026년 종료(기후에너지환경부 2/9 보도자료 PDF 직접파싱, docs/source_cde1_...) ②개인정보보호법 9/11 시행 과징금10%·유출가능성통지신설(개인정보위 9/10 보도자료, docs/source_cde2_...)",
+   "due": "2026-09-14",
+   "cmd": "cat docs/source_cde1_노후경유차5등급조기폐차종료_20260914.md docs/source_cde2_개인정보보호법개정9월11일시행_20260914.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:81385b66"
+  },
+  {
+   "id": "index-drift-merge-0914",
+   "added": "2026-09-14",
+   "what": "발행마다 posts_index 드리프트 재발(A4-06·H1-09). 원인: 이과장이 발행 런 도는 중 로컬 bake 산출물(272)을 커밋(b7f5bab0·2c9d15d4) → 러너 커밋(273)과 merge 시 로컬본이 이김. 머지 후 posts_index 자동 재생성 배선 필요",
+   "due": "2026-09-14",
+   "cmd": "python validate_db.py | grep posts_index",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "pushgate.index_drift() 추가(a6bc369a). 드리프트 커밋 d30334f6 에서 BLOCK · 정상 HEAD PASS · 실제 git push --dry-run 에서 훅 발동 확인"
+  },
+  {
+   "id": "approve-naver-h109",
+   "added": "2026-09-14",
+   "what": "H1-09 네이버 게시 — 제목 '코리아세일페스타, 이름이 바뀌었습니다', 카테고리=경제·이슈, 첨부=thumbs_naver/248_ksale.png",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.pipeline naver-draft --code H1-09 --file osmu/네이버용_K세일페스타.txt",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "osmu-remain-a406-h109",
+   "added": "2026-09-14",
+   "what": "A4-06·H1-09 쓰레드·인스타(카드+캡션) 미완 — 네이버 원고만 준비완료(결재함 등록). 실사진 카드 제작+게시 필요",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.osmu_manifest table --code A4-06 && python -m studio.osmu_manifest table --code H1-09",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "wakewatch-instant-0914",
+   "added": "2026-09-14",
+   "what": "wakewatch 즉시깨우기(1분·busy여도·역할당1통) 실전 확인 — 다음 실제 지시서(E2-16 승인 뒤 pubqueue go 자동 지시서 등)가 2분 안에 읽히는가",
+   "due": "2026-09-14",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('<새 배치id>'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "phone-inbox-stale-0914",
+   "added": "2026-09-14",
+   "what": "폰 결재함(github.io approval_m.json)이 15:19에 멈춰 E2-16 안 보임. 원인: 00:17 pushapproval 커밋이 클라우드 register push(4f78634)와 갈라져 push 실패 + 이후 pull --rebase 가 staged 잔여로 막힘. 또 새 결재 항목(V0 pass·pubqueue add)은 pushapproval 을 부르지 않음 → 배선 필요",
+   "due": "2026-09-14",
+   "cmd": "curl -s https://magsori-wq.github.io/lifeinfo-console/approval_m.json | grep -c E2-16",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
