@@ -8840,6 +8840,38 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "wake-desktop-tool-0913",
+   "added": "2026-09-13",
+   "what": "wake.py 만듦(35823956·52db1787) · 16:03 LEE 실측 SENT→16:04 읽음 ✅ · 남은 것: batchboard order 의 깨우기 안내를 wake 명령으로 바꾸기 · 3. 실측 1회(16:03 은 입력창에 다른 글이 있어 멈춤)",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.wake --role 3. --batch xlink0911all --dry-run",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "studio/wake.py 실측 2회 성공 — LEE 16:03 전송→16:04 읽음 · 3. 16:09 전송→16:10 읽음(read_info). batchboard order 가 SendMessage 대신 wake 명령을 안내(a097b587). 입력 대기 중 상태 처리(6e095dc7)."
+  },
+  {
+   "id": "approve-naver-a511",
+   "added": "2026-09-13",
+   "what": "A5-11 네이버 게시 준비완료 — 제목: 두루누리 80% 지원이다? 아닙니다(후킹+실검색어 통과). 첨부: thumbs_naver/244n_durunuri.png(신규, 후킹 제목 반영)",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.pipeline naver-draft --code A5-11 --file osmu/네이버용_두루누리사회보험료지원.txt",
+   "owner": "user",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "naver-fix-F2-14-0913",
+   "added": "2026-09-13",
+   "what": "F2-14 네이버 글 정정(제목·문단) — 붙여넣기용 원고 준비됨",
+   "due": "2026-09-13",
+   "cmd": "osmu/네이버용_추석고속도로통행료_정정.txt",
+   "owner": "user",
+   "state": "todo",
+   "by": "3."
   }
  ]
 }
