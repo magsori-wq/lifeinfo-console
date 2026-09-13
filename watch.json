@@ -9252,8 +9252,10 @@
    "due": "2026-09-14",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('<새 배치id>'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "첫 실전 성공: draft0914e216fix 지시 01:43 → wakewatch 01:44 깨움 → 이과장 01:45 읽음(2분). 관제탑 수동 개입 0"
   },
   {
    "id": "phone-inbox-stale-0914",
@@ -9274,8 +9276,10 @@
    "due": "2026-09-14",
    "cmd": "python -c \"import json;d=json.load(open('webapp/approval_m.json',encoding='utf-8'));print([i.get('review') for i in d['items'] if i['kind'].startswith('⑦')])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "bb090a46: reviewpage(build/link/missing)+approvalcount review 필드+m.html 「📄 원고 보기」. 라이브 approval_m.json 에 E2-16 링크·m.html 버튼 확인. now 에 링크 없는 ⑦ 경보"
   }
  ]
 }
