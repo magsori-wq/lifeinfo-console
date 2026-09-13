@@ -8792,12 +8792,12 @@
   {
    "id": "fixreport-daily-commit-0914",
    "added": "2026-09-13",
-   "what": "예약작업 lifeinfo_fixreport(19:00)는 무인이라 커밋하지 않는다 — docs/수정보고서_YYYYMMDD.docx 가 매일 미커밋으로 남는다. 19:00 첫 무인 실행 결과(로그·mtime) 확인 후 경로 지정 커밋, 매일 커밋 주체 정할 것",
+   "what": "19:00 첫 무인 실행 확인(19:05 관제탑 실측): webapp/fixreport/수정보고서_20260913.docx 38,142B mtime 19:00 · docs/ 사본 생성 · CP 보고 탭 링크 표시. 🔴 내용 결함: 커밋 108건 중 표 6행(14:38 이전만) — 오후·저녁 수정(wake·wakewatch·setgate·osmutext·결재함 복사·썸네일 이름찾기·흐름 경보)이 전부 빠짐. 행 선택 로직 보완 필요. docx 무인 커밋은 여전히 안 됨(관제탑이 경로 지정 커밋).",
    "due": "2026-09-14",
-   "cmd": "git status --porcelain -- docs/수정보고서_*.docx && powershell -c \"Get-ScheduledTaskInfo lifeinfo_fixreport | Select LastRunTime,LastTaskResult\"",
+   "cmd": "python -m studio.fixreport --help",
    "owner": "claude",
    "state": "todo",
-   "by": "에이전트"
+   "by": "이부장"
   },
   {
    "id": "osmu-post-browser-0913",
