@@ -4256,6 +4256,30 @@
    "target": "H1-09",
    "detail": "사장님 23:5x 이부장 창 '둘다승인' — 원고 검토 페이지(artifact dfc752e4) 열람 후",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-14T00:25:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "index-drift-merge-0914",
+   "detail": "pushgate.index_drift() 추가(a6bc369a). 드리프트 커밋 d30334f6 에서 BLOCK · 정상 HEAD PASS · 실제 git push --dry-run 에서 훅 발동 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T00:32:27",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "E2-16",
+   "detail": "🟡 통과 — 실질 V0 는 함정②(72시간이 PIPC 원문에 없음을 확인해 실었음, 판정기준 2026-09-08 E2-15 선례 충족) 하나. 고칠 곳 3: ①비교표 '9/10까지' 열이 출처문서에 없는 추론(수치는 없으나 근거 미확보) ②'100억→10억' 계산은 기업 과징금이라 소비",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-14T00:34:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "auto-pick-verify-0914",
+   "detail": "첫 실측 성공: 루틴6(23:55, 세션81385b66) E2-16 제안→docflow pick+verify→초안·썸네일·큐(6ba3ac45)→v0 에이전트 🟡PASS(00:32)→결재함 1번 발행승인 카드. 관제탑 개입 0",
+   "via": "cli"
   }
  ]
 }
