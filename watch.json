@@ -8660,6 +8660,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "topic-pick-gap-tower-down-0913",
+   "added": "2026-09-13",
+   "what": "② 선별 공백: 글감 제안 5건(09-12 21:20~09-13 09:11)이 관제탑 세션이 꺼진 동안 아무도 선별 안 해 사장님이 12:46 직접 선별. 선별이 관제탑 세션 생존에만 달려 있다 — 루틴이 제안 후 docflow 에이전트를 부르거나, readycheck 가 '선별 대기 N건 · 가장 오래된 것 N시간' 을 띄워야 한다",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "auto-pick-verify-0914",
+   "added": "2026-09-13",
+   "what": "제안 루틴(2·4·6)이 docflow 로 ② 선별·③ 지시서까지 끝냈는지 첫 실측 — 09-13 21:00 루틴4 · 23:55 루틴6 · 09-14 09:00 루틴2. 미검증 상태(만들었다≠물렸다). readycheck 「② 선별」 ✅ + topicprop picked(state_at 09-13 21시 이후) + batch.json draft0913*/draft0914* 새 지시서가 있어야 통과. 🔴면 루틴 세션 로그에서 Agent(docflow) tool_use 유무부터 본다",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.readycheck | grep -E '② 선별|이과장'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
