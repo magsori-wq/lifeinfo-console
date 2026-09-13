@@ -8912,6 +8912,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "wakewatch-auto-0913",
+   "added": "2026-09-13",
+   "what": "지시서가 등록 후 15분 넘게 안 읽히면 감시기가 studio.wake 를 스스로 돌린다(사장님께 약속 16:1x '세션 확인에 시간 쓰지 않게'). 세션 확인을 사람·관제탑 손에서 뺀다.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.wakewatch --once --dry-run",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "empty-inbox-alarm-0913",
+   "added": "2026-09-13",
+   "what": "사장님 17:1x: '어제 결재함이 없어 수상하다 했었다. 결국 이렇게 되었지만' — 결재함이 비었는데 발행대기 0·초안 0·선별대기 있음 = 흐름 멈춤 경보를 CP(approval.html 빈 상태·readycheck·now)에 빨간불로 띄운다. 빈 결재함을 '할 일 없음'으로 읽지 않게.",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "overnight-pipeline-0913",
+   "added": "2026-09-13",
+   "what": "사장님 17:1x(외근·새벽 포함): 오늘분·내일분 글감은 루틴 시각대로 들어온다 — 새벽에도 ②선별→④초안→⑤V0→⑥결재함 승인요청까지 가야 한다. 관제탑 할 일: 5분 TICK 마다 pubqueue 새 항목 중 V0 판정 없는 것 → v0 에이전트 → 🟡면 이과장 수정지시 → 결재함 ⑦ 카드 확인. wakewatch 루프로 안 읽힌 지시서 자동 깨움. 네이버 게시는 내일 사장님 일괄.",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.pubqueue list && python -m studio.v0check list | head -5 && python -m studio.approvalcount",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
