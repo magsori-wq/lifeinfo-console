@@ -8820,9 +8820,11 @@
    "due": "2026-09-13",
    "cmd": "승인 = 3번 루틴이 승인 도장 글만 발행(내일 09:00 첫 실행 검증) / 반려 = 지금처럼 세션이 발행",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "사장님 승인(2026-09-14 02:3x, '1번 성인'=승인). 이부장 권고는 반려(깨우기 수정 후 2/2 성공)였으나 사장님 결정으로 3번 루틴이 승인도장·V0·게이트 통과 글만 발행하도록 변경"
   },
   {
    "id": "thread-repost-approve-0913",
@@ -9280,6 +9282,16 @@
    "by": "이부장",
    "done_at": "2026-09-14",
    "result": "bb090a46: reviewpage(build/link/missing)+approvalcount review 필드+m.html 「📄 원고 보기」. 라이브 approval_m.json 에 E2-16 링크·m.html 버튼 확인. now 에 링크 없는 ⑦ 경보"
+  },
+  {
+   "id": "routine3-publish-first-run-0914",
+   "added": "2026-09-14",
+   "what": "3번 루틴 발행 트리거 첫 실행(09:00) 검증 — 대상 글이 있었나·조건 판정이 맞았나·gh 권한 거부 없었나·이중발행 없었나. 대상 없으면 '대상 없음' 보고가 정상",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.batchboard show --id routinelog | grep lifeinfo-publish; gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 3",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
