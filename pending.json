@@ -1,13 +1,13 @@
 {
  "rev": "fa447579",
  "counts": {
-  "total": 272,
+  "total": 273,
   "osmu_done": 266,
-  "osmu_pending": 6,
+  "osmu_pending": 7,
   "indexed": 0,
-  "index_pending": 272,
+  "index_pending": 273,
   "index_requested": 157,
-  "index_todo": 21,
+  "index_todo": 22,
   "index_benign": 94
  },
  "actionable": [
@@ -164,6 +164,23 @@
    }
   },
   {
+   "code": "H1-09",
+   "title": "코리아세일페스타, 이름이 바뀌었습니다 — 2026 K-",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
    "code": "A1-15",
    "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
    "need": [
@@ -214,22 +231,6 @@
   {
    "code": "B2-14",
    "title": "SCB 등급만 좋으면 대출된다? 아닙니다 — 소상공인 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "C2-11",
-   "title": "본인부담상한액 초과금 환급 총정리 (226만명·3조76",
    "need": [
     "색인요청"
    ],
