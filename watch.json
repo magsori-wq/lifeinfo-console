@@ -9146,12 +9146,22 @@
   {
    "id": "h109-source-fix-0913",
    "added": "2026-09-13",
-   "what": "H1-09 K-세일페스타(루틴4 21:33 초안): V0 fail(21:38) — koreasalefesta.kr(접속실패)을 공식 홈페이지로 안내·'1~2주 전 공개'가 원문(10/29 개설예정)과 모순. + 관제탑 추가 판정: 할인율 40%·50%·온누리 10%·숙박쿠폰 7만/3만·모집 9/4~10/25 는 뉴스(이투데이 등)만 근거 — 공식 원문 확인 전엔 못 쓴다(2차출처 대체 금지). source 에이전트가 7/3 경제관계장관회의 공식 보도자료 1회 탐색 중 → 결과대로 이과장 수정 지시(공식 확인분만 남김). ⚠️ V0 반려 보고가 pub0913g407(G4-07 배치) now 로 잘못 들어갔다.",
+   "what": "H1-09 K-세일페스타: 정부 공식 원문 확보(source 에이전트 59dce453 — korea.kr newsId=156769443 · 2026.7.3 경제관계장관회의 「'26년 코리아 그랜드 페스티벌 추진 방향」). 할인율 40/50%·온누리 7→10%·복권 2배·숙박쿠폰 7만/3만·코그페100·동행가게·기간 10/29~11/15 ✅ 공식 확인. 참여기업 모집 9/4~10/25 ❌ 뉴스만 → 삭제 지시. 이과장 수정 지시서 draft0913h109fix 21:46 등록·21:49 읽음(wake UIA). ⏳ 이과장 mark 뒤 이부장이 v0 재검사 → pass 면 결재함.",
    "due": "2026-09-14",
-   "cmd": "cat docs/source_H1-09_정부발표_20260913.md; python -m studio.v0check list | grep H1-09",
+   "cmd": "python -m studio.v0check list | grep H1-09; python -c \"from studio import sessionstate as s; print(s.read_info('draft0913h109fix'))\"",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "h1-09-govsource",
+   "added": "2026-09-13",
+   "what": "H1-09(K-세일페스타) 초안 재작성 — 정부 합동 보도자료(2025년판은 10/28 배포) 나오면 그 원문 수치로 재확인 후 pubqueue 재적재. 초안·출처기록은 docs/source_H1-09_..md·K세일페스타_글_HTML.txt 에 보관됨",
+   "due": "2026-10-26",
+   "cmd": "python -m studio.topicprop stock",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:91b47069"
   }
  ]
 }
