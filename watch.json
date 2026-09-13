@@ -8748,6 +8748,18 @@
    "due": "2026-09-13",
    "cmd": "cd C:/lifeinfo && git fetch origin && git rev-list --count origin/main..HEAD && git branch -r --contains b53e1b4b",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-13",
+   "result": "b53e1b4b origin/main 포함 확인(git branch -r --contains) · ahead=0"
+  },
+  {
+   "id": "naver-post-D1-10",
+   "added": "2026-09-13",
+   "what": "📝 D1-10 네이버 게시 — 등본에 '배우자의 자녀' 찍힌다? 아닙니다 (주민등록등본 세대주와의 관계). 원고는 클립보드에 있고(상세도·제목 점검 통과), 첨부 이미지는 thumbs_naver/243n_resident_relation.png · 카테고리 생활·행정 · 태그 주민등록등본, 세대주와의관계, 등본동거인, 등본세대원, 재혼가정등본. 게시 후 URL만 알려 주시면 이부장이 기록·교차링크·쓰레드/인스타 캡션까지 잇습니다",
+   "due": "2026-09-13",
+   "cmd": "python -m studio.pipeline naver-draft --code D1-10  (클립보드 다시 담기) → 네이버 글쓰기 붙여넣기 → 게시",
+   "owner": "user",
    "state": "todo",
    "by": "이부장"
   }
