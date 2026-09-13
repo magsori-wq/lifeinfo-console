@@ -8676,9 +8676,9 @@
   {
    "id": "auto-pick-verify-0914",
    "added": "2026-09-13",
-   "what": "루틴 2·4·6 이 제안 뒤 ②선별→④초안→⑤V0(v0 에이전트)→⑥결재함까지 스스로 가는지 첫 실측. 확인 시각: 21:40(루틴4 21:00 뒤)·00:35(루틴6 23:55 뒤)·09:30(루틴2 09:00 뒤). 2026-09-13 20:1x 메모리 부족으로 예약 확인 작업이 종료돼, 관제탑이 5분 점검 때 직접 돌린다 — 세션이 죽었으면 다음 세션이 아래 명령으로 확인.",
+   "what": "루틴 2·4·6 자동 흐름 첫 실측. ✅ 루틴4(09-13 21:00): 제안 H1-09·H1-10 → docflow 선별(H1-09 pick·H1-10 drop, 21:1x) → 루틴이 직접 초안·썸네일(248_ksale)·pubqueue 적재(21:33 커밋 6af8d609) 까지 사람·관제탑 없이 돌았다. ⏳ 남은 것: ⑤ V0(루틴이 v0 에이전트 진행중) → ⑥ 결재함 카드 확인 · 루틴6(23:55) · 루틴2(내일 09:00). 출처 주의: 루틴 보고에 2026 수치를 이투데이(뉴스)+koreagrandfestival.kr 로 확정했다고 적힘 — V0 판정 때 2차출처 대체인지 확인.",
    "due": "2026-09-14",
-   "cmd": "python -m studio.topicprop table && python -m studio.pubqueue list && python -m studio.v0check list && python -m studio.approvalcount && git log --since='21:00' --oneline",
+   "cmd": "python -m studio.v0check list && python -m studio.approvalcount && python -m studio.pubqueue list",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
