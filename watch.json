@@ -9797,8 +9797,10 @@
    "cmd": "토스쇼핑에서 '트리고 텀블러' 검색 → id 223001131(핑크) 상품 쉐어링크 발급",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-15",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "insta-caption-naverlink-f421-0914",
@@ -9818,8 +9820,10 @@
    "cmd": "python -m studio.navergate  &&  (원문) 애드센스_정책_원문.md 6)절",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "루틴7"
+   "state": "done",
+   "by": "루틴7",
+   "done_at": "2026-09-15",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "verify0914-e216-fine",
@@ -10002,8 +10006,10 @@
    "cmd": "결재함에서 검토 후 승인할 레버 번호를 알려주세요(예: 1번만 · 1+2번 등)",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "3.(네이버통합분석)"
+   "state": "done",
+   "by": "3.(네이버통합분석)",
+   "done_at": "2026-09-15",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "docflow-0915-0010",
@@ -10022,6 +10028,16 @@
    "due": "2026-09-15",
    "cmd": "사장님: ①adsense-gate-proxy-0914 결정 ②Desktop 에서 새 Code 세션 열고 이름 '4.애드센스' → 이부장이 지시서 발급",
    "owner": "user",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-gate-impl-0916",
+   "added": "2026-09-15",
+   "what": "adsense-gate-proxy-0914 사장님 승인(09-15 00:1x) 이행 — navergate ①색인60·③네이버색인80 을 빼고 '고유성 직접 증거'(V0 실질 포함 비율, 원본가치_판정기준.md)로 교체, ②28일 클릭20 유지. CLAUDE.md 「재신청 게이트」·gsc_monitor TRIGGER·루틴7 SKILL 세 곳 동시 수정. ⚠️ 게이트 교체 ≠ 재검토 누르기",
+   "due": "2026-09-16",
+   "cmd": "python -m studio.navergate",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
