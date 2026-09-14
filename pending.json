@@ -1,9 +1,9 @@
 {
- "rev": "e97b9cfa",
+ "rev": "abd6eed0",
  "counts": {
   "total": 275,
-  "osmu_done": 274,
-  "osmu_pending": 1,
+  "osmu_done": 275,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 275,
   "index_requested": 157,
@@ -11,23 +11,6 @@
   "index_benign": 94
  },
  "actionable": [
-  {
-   "code": "F4-21",
-   "title": "화담숲 단풍 예약, 9월 16일 수요일 오후 1시 열립",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
   {
    "code": "A1-15",
    "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
@@ -223,6 +206,22 @@
   {
    "code": "E4-03",
    "title": "스팸문자 신고하면 진짜 과태료 나올까? 118 신고 방",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "E4-05",
+   "title": "재난문자 서비스 개선 총정리 — 157자 행동요령·중복",
    "need": [
     "색인요청"
    ],
