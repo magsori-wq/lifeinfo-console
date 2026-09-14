@@ -9389,6 +9389,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:d486208d"
+  },
+  {
+   "id": "routine2-topics-misread-0914",
+   "added": "2026-09-14",
+   "what": "루틴2(lifeinfo-daily-topics, d486208d-...jsonl 09:01:46 KST)가 09:01 'topicprop table'(active()로 발행/큐 제외 필터링, 정답 '제안된 글감 없음')을 본 직후 'topicprop list'(cmd_list=items() 그대로, active() 미적용)를 또 돌려 이미 발행완료된 'picked' 항목(라벨 '추천함'='이부장이 선별해 사장님께 추천함·답대기' 인데 '제안됨,미선별'로 오독)을 A3-12·A3-13·A1-14·A1-16·B2-13·B2-14·A6-02·A6-05 8건으로 docflow에 넘김(Agent prompt line 6). docflow가 topicprop table/stock(둘 다 active() 사용)로 재검증해 9건 전부 이미발행/소진임을 발견·정정. table과 list의 모순(0건 vs 다수)을 대조 안 한 것이 오독 원인 — cmd_list가 active() 필터를 안 쓰는 코드 결함이 근본. 신규 rec 0건은 별개 정상동작 — 근로장려금 등 5개 웹서치 후보가 dupcheck 강한중복(1.00)/미확정시행일로 전부 정당 탈락, alt 1건(A6-05)만 제안 후 docflow가 defer(12/13 재등판).",
+   "due": "2026-09-15",
+   "cmd": "grep -n 'def cmd_list' -A6 studio/topicprop.py  # cmd_list가 아직 items()를 그대로 쓰는지(active() 미적용) 확인 — 고쳤으면 이 watch done",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
