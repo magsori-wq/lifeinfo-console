@@ -9421,6 +9421,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "thumbcheck-dark-duotone-0914",
+   "added": "2026-09-14",
+   "what": "실사진 판정 오탐: H1-02 추석 택배 인스타 원래 표지는 어두운 듀오톤 실사진(택배상자, 1.49MB)인데 thumbcheck 고유색 3761 로 기준 4000 미달 → '글자 템플릿'으로 판정해 재게시 목록에 들어갔다(이부장이 올리기 전 확인해 취소). 템플릿 표지는 28~41KB·고유색 1,4xx~2,3xx 였다. 조치 필요: 파일 크기·고유색을 함께 보거나 3,000~4,000 구간은 '확인 필요'로 두기 — 판정 근거(2026-08-23 G카테고리 14편 실측)에 어두운 듀오톤이 없었다",
+   "due": "2026-09-15",
+   "cmd": "python -c \"from studio import thumbcheck as t; print(t.judge(r'insta/H1-02_chuseok_delivery_01_cover.png'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
