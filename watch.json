@@ -9292,8 +9292,10 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.batchboard show | grep -A2 lifeinfo-publish; gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 3",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "첫 실행 09:0x — 3-0 대상 없음(도장+미발행 글 0, E2-16·H1-09 이미 라이브) 판정 정확 · gh 트리거 안 함 · 이중발행 없음. 부수 발견: bosstrack 이 queue.json 의 go 잔존으로 E2-16 을 '미발행' 오보"
   },
   {
    "id": "approve-naver-e216",
