@@ -4816,6 +4816,62 @@
    "target": "seodesc-autoitem-falsepos-0915",
    "detail": "코드 수정 09-15 02:3x: batchboard mark done 거부 직전, 감사가 검색설명을 지목하면 seodesc scan --only <코드> 로 라이브 1편 재측정 후 재감사(py_compile OK). 실동작은 다음 발행 완료 보고에서 확인 → watch seodesc-rescan-verify-0916",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:46:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "factlead-e102-0915",
+   "detail": "공식 확인 ✅ 맞음 — 11,000·33,500원 = KT·SKT 공식 VAT포함가 12,100·36,850원의 VAT 별도 환산(docs/source_factlead2_20260915.md). 수정 불필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:46:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "factlead-a502-e209-0915",
+   "detail": "A5-02 🔴 틀림 → livefix-bundle-0915 ⑥으로 통합 · E2-09 ✅ 맞음(금융위 2025-09-29 보도자료 원문과 일치, 수정 불필요) — docs/source_factlead2_20260915.md",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:46:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "factlead-b301-0915",
+   "detail": "공식 확인 🔴 틀림(현행 시행령 9억 없음) → livefix-bundle-0915 ①로 통합 — docs/source_factlead_20260915.md",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:46:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "factlead-e104-g202-0915",
+   "detail": "E1-04 🟡 비율 일치·금액 판정 불가(수정 안 함) · G2-02 🟡 2호선 환승 누락 → livefix-bundle-0915 ②로 통합 — docs/source_factlead_20260915.md",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:46:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a502-agefix-0915",
+   "detail": "livefix-bundle-0915 ⑥으로 통합(같은 건 카드 중복 방지) — 정정 자체는 그 카드에서 추적",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:46:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "g101-phone-0915",
+   "detail": "livefix-bundle-0915 ③으로 통합 — 정정 자체는 그 카드에서 추적",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:46:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h102-stale-courier-0915",
+   "detail": "livefix-bundle-0915 ④로 통합(마감일은 1차 출처 미확보 → 날짜 없이 택배사 공지 링크로 교체안) · 날짜 재확인은 source-H1-02-couriers-0918",
+   "via": "cli"
   }
  ]
 }
