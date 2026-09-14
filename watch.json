@@ -10098,8 +10098,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code C4-09 --file osmu/네이버용_지역가입자건강보험료11월정산.txt --open 로 클립보드 적재 후 https://blog.naver.com/GoBlogWrite.naver 에서 Ctrl+V → 게시. URL 확보 후 python -m studio.pipeline naver-link --code C4-09 --url <URL>",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-15",
+   "result": "네이버 게시 완료: https://blog.naver.com/magsori8975/224411905647"
   },
   {
    "id": "validation-0915-api-result",
@@ -10177,6 +10179,26 @@
    "what": "사실확인 필요 2건(4.세션 AD-2 표본 대조 부산물 · 🔴근거는 2차 출처 — 공식 확인 전 수정 금지): ①E1-04 갤럭시 S26 구매혜택 — 우리 자체 계산 지급액 250,800/363,000원 vs 경쟁 글(FAQ·sktelecombiz·ktstore) 235,000/337,000원. 삼성 공식 이벤트 약관으로 계산 근거 재확인 ②G2-02 양산선·부산울산 광역철도 — 환승노선(1호선 vs 2호선)·배차간격이 2026-09 최신 보도와 상충. 양산시·부산교통공사 공식 공지로 재확인. 루틴5 야간검증 또는 source 에이전트 대상",
    "due": "2026-09-17",
    "cmd": "python -m studio.batchboard order --id adsense0915",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
+  },
+  {
+   "id": "xlink-c409",
+   "added": "2026-09-15",
+   "what": "🔗 C4-09 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-09",
+   "due": "2026-09-15",
+   "cmd": "python studio/blogger.py crosslink --code C4-09",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "factlead-b301-0915",
+   "added": "2026-09-15",
+   "what": "사실확인 필요(4.세션 AD-2 부산물 · 미확인): B3-01 주택연금 가입조건 글이 가입 주택가격 기준을 '9억'으로 적음 — 대조한 유사 글 3곳은 모두 '12억'. 한국주택금융공사 공식 페이지(hf.go.kr/ko/sub03/sub03_01_01.do) 1회 조회 → HTTP 502 로 확인 못 함(규칙상 재시도·2차출처 대체 안 함). 공식 확인되면 라이브 수정은 이부장·사장님 승인",
+   "due": "2026-09-17",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://www.hf.go.kr/ko/sub03/sub03_01_01.do",
    "owner": "claude",
    "state": "todo",
    "by": "4."
