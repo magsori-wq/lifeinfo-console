@@ -10116,6 +10116,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "scratch-cleanup-policy-0915",
+   "added": "2026-09-15",
+   "what": "09-15 01시경 누군가 루트의 추적 중인 scratch_*.txt 105개를 커밋 없이 작업트리에서 지웠다(validate_db 11) 대량삭제 FAIL → Stop 하네스 차단). 이부장이 그 105개만 경로 지정 복원. 정리가 의도였다면 git rm 경로 지정 커밋으로 정식 삭제하고 .gitignore 에 scratch_* 를 넣는 것이 맞다 — 누가 지웠는지 확인 후 결정.",
+   "due": "2026-09-16",
+   "cmd": "git ls-files 'scratch_*' | wc -l",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
