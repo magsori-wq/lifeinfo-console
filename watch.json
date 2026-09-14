@@ -7953,8 +7953,8 @@
    "owner": "claude",
    "state": "done",
    "by": "루틴7",
-   "done_at": "2026-09-12",
-   "result": "라이브 반영 확인: grep -c '40~60대가 제도를 몰라서' = 1 (blog-page_17.html)"
+   "done_at": "2026-09-14",
+   "result": "09-14 라이브 실측: /p/blog-page_17.html 에 '40~60대가 제도를 몰라서' 1건 확인(운영자 소개 반영됨)"
   },
   {
    "id": "h105-v0-recheck-correction-0911",
@@ -9820,6 +9820,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "루틴7"
+  },
+  {
+   "id": "verify0914-e216-fine",
+   "added": "2026-09-14",
+   "what": "E2-16 라이브 정정 필요 — 징벌적 과징금 10% 적용조건 오도(법 제64조의2②: 3년내 재위반+고의중과실 / 또는 고의중과실+피해1천만명이상 / 또는 시정명령불이행. 단순 반복OR고의중과실 아님). 상세=note 팩트체크 태그 참조",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.note list --tag 팩트체크 --grep E2-16",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:a11b6b2a"
   }
  ]
 }
