@@ -9626,6 +9626,28 @@
    "due": "2026-09-15",
    "cmd": "grep -n 브랜드커넥트 제휴상품_판정기준.md .claude/agents/product.md studio/productprop.py studio/affiliate.py",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "15:1x 이부장 반영 — 제휴상품_판정기준.md 3절·.claude/agents/product.md 채널별 규칙(네이버=브랜드커넥트 우선·토스/쿠팡 허용), affiliate block --channel naver 💡안내(G3-05 실측 표시·쓰레드 미표시), CLAUDE.md 제휴 절"
+  },
+  {
+   "id": "thumb-photo-FGH-0914",
+   "added": "2026-09-14",
+   "what": "사장님 지시(14:5x) '여행,우리동네,연예정보는 썸네일에 실사진을 사용' — 실사진 게이트를 G 에서 F(여행)·방송연예 글까지 확대(thumbnail.make_photo · thumbcheck · pubqueue add 게이트). 시행 2026-09-14, 기존 글 소급 안 함",
+   "due": "2026-09-15",
+   "cmd": "grep -n make_photo studio/thumbnail.py; grep -n thumbcheck studio/pubqueue.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "thumb-code-stamp-0914",
+   "added": "2026-09-14",
+   "what": "사장님 지시(14:5x) '이후 썸네일 발행시 우측하단에 글의 코드을 작게 표시' — thumbnail.make/make_photo 가 우측 하단에 글 코드(예 F2-14)를 작게 찍게. 이후 발행분부터",
+   "due": "2026-09-15",
+   "cmd": "grep -n 'def make' studio/thumbnail.py",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
