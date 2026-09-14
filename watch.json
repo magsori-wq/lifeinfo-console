@@ -10186,7 +10186,7 @@
   {
    "id": "xlink-c409",
    "added": "2026-09-15",
-   "what": "🔗 C4-09 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-09",
+   "what": "🔗 C4-09 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-09",
    "due": "2026-09-15",
    "cmd": "python studio/blogger.py crosslink --code C4-09",
    "owner": "claude",
@@ -10229,6 +10229,16 @@
    "what": "CJ대한통운·롯데글로벌로지스·로젠택배 2026 추석 마감일 1차출처 미확인(사이트가 JS렌더링이라 WebFetch로 목록 못읽음, 브라우저 필요). 한진 원클릭은 공지 존재(No.164)만 확인, 본문 미확보. 상세=docs/source_H1-02_추석택배마감_20260915.md",
    "due": "2026-09-18",
    "cmd": "claude-in-chrome으로 cjlogistics.com/ko/newsroom/notice, lotteglogis.com/mobile/customs/notice/list, hanjinoneclick.co.kr/customer_notice(No.164 바로보기), ilogen.com/m/customer/notice 를 열어 2026년 추석 공지 URL/번호를 확보한 뒤 WebFetch로 상세 재조회",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "seodesc-autoitem-falsepos-0915",
+   "added": "2026-09-15",
+   "what": "발행 배치에 자동으로 붙는 '<코드>-seodesc 라이브에 아직 안 붙었다' 항목이 이미 라이브 반영된 글에도 생긴다 — 09-15 H1-10(scan ok 인데 todo 로 남아 깨우기 반복)·C4-09(02:1x 생성 뒤 이과장이 done). batchboard.py L2079 는 seo_desc_status.json 이 ok 면 건너뛰는데, 생성 시점엔 그 파일이 scan 전 스냅샷이라 못 거른다 — 생성 직전 scan --only 재판정 또는 상태 파일 시각 비교로 고친다",
+   "due": "2026-09-16",
+   "cmd": "grep -n 'state.) == .ok' studio/batchboard.py",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
