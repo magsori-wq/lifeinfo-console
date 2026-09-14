@@ -9911,6 +9911,16 @@
    "kind": "action",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "naverfind-live-verify-0914",
+   "added": "2026-09-14",
+   "what": "naverfind 게이트 실동작 확인 — H1-10 네이버를 사장님이 게시하면 threadsdraft/announce 재실행 시 RSS 자동 감지·기록·커밋되는지, RSS 반영 지연이 몇 분인지 실측(아직 모의 시험만 함)",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.naverfind --gate H1-10",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
