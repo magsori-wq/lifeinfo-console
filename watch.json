@@ -9707,8 +9707,10 @@
    "cmd": "https://mail.google.com/mail/u/0/#inbox/1a09f12031988c8e",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:af441131"
+   "state": "done",
+   "by": "세션:af441131",
+   "done_at": "2026-09-14",
+   "result": "09-14 20:4x 사장님 승인으로 두 티켓에 답장 발송(1차 msg 1a0a01498fcdf052 · 2차 1a0a014a0e4d35da) — 사람 담당자 재검토 요청"
   },
   {
    "id": "v0reject-f4-21",
@@ -9743,6 +9745,16 @@
    "by": "이부장",
    "done_at": "2026-09-14",
    "result": "이과장 수정(0745177b)+에이전트 문장정정(c6c03b14) 후 이부장 V0 재검사 통과"
+  },
+  {
+   "id": "anthropic-support-reply-wait-0914",
+   "added": "2026-09-14",
+   "what": "Anthropic 지원 티켓 재오픈 답장 발송(09-14). 사람 담당자 회신 오면 메일 브리핑이 보고",
+   "due": "2026-09-21",
+   "cmd": "Gmail: from:support@mail.anthropic.com newer_than:7d",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:af441131"
   }
  ]
 }
