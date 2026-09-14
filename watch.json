@@ -9888,7 +9888,7 @@
   {
    "id": "xlink-h110",
    "added": "2026-09-14",
-   "what": "🔗 H1-10 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-10 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdRT2OOifAi/",
+   "what": "🔗 H1-10 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-10",
    "due": "2026-09-14",
    "cmd": "python studio/blogger.py crosslink --code H1-10",
    "owner": "claude",
@@ -9904,8 +9904,10 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.threadsdraft --code H1-10 로 클립보드 적재 후 threads.com/@magsori8975 왼쪽 '새로운 스레드'에서 Ctrl+V → 이미지 첨부 → 게시. URL 확보 후 python -m studio.pipeline threads-link --code H1-10 --url <URL>",
    "owner": "user",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-14",
+   "result": "쓰레드 게시 완료(사장님): https://www.threads.com/@magsori8975/post/DdRYdPvgZqz — DB 기록은 이부장이 이미 완료"
   },
   {
    "id": "insta-caption-f421-naverlink",
