@@ -9543,8 +9543,10 @@
    "due": "2026-09-14",
    "cmd": "python studio/blogger.py crosslink --code A4-06",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-14",
+   "result": "교차링크는 22:17 이미 반영 — 라이브 블로그 다른채널 1·쓰레드ID 1·네이버 1 실측(DB 기록만 발행 러너 rebase 로 빠져 재기록)"
   },
   {
    "id": "xlink-h109",
@@ -9755,6 +9757,28 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:af441131"
+  },
+  {
+   "id": "publish-run-local-record-loss-0914",
+   "added": "2026-09-14",
+   "what": "발행 러너가 도는 사이 다른 세션이 로컬에 쓴 기록(batch.json mark·threads-link DB)이 러너 커밋 뒤 pull --rebase 로 사라진다(09-14 A4-06 실측). 장치 없음 — 러너 시작~종료 동안 webapp 원본 상태파일 쓰기 경고 또는 rebase 뒤 자동 대조 필요",
+   "due": "2026-09-15",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('osmu0914a406'))\" && grep -c DdRNq3RgaMw webapp/lifeinfo_db.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "push-blocked-e663eb76-0914",
+   "added": "2026-09-14",
+   "what": "루틴1 기록 커밋 e663eb76(webapp/watch.json · Anthropic 지원 답장 발송 기록)이 푸시 안 됨. 원격이 앞서 있고 다른 세션 미커밋 webapp/* 파일과 겹쳐 pull·merge 거부. stash 금지라 멈춤 — 미커밋 세션 커밋 후 pull --rebase·push 필요",
+   "due": "2026-09-14",
+   "cmd": "git -C C:/lifeinfo status --porcelain webapp/ && git -C C:/lifeinfo log origin/main..main --oneline",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:af441131",
+   "done_at": "2026-09-14",
+   "result": "22:2x pull --rebase 로 4fbe2814 로 재적용돼 원격 반영 확인(origin/main..HEAD 0) — 관제탑 실측"
   }
  ]
 }
