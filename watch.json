@@ -10073,6 +10073,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "3.(네이버통합분석)"
+  },
+  {
+   "id": "approval-refresh-verify-0915",
+   "added": "2026-09-15",
+   "what": "결재함 자동 갱신 미루기(09-15 커밋) 효과 확인 — 사장님께 '스크롤이 1번으로 튀거나 복사가 풀리는 일이 아직 있나' 한 줄로 여쭙고, 남아 있으면 SSE 신호를 watch.json·batch.json 변경에만 걸도록 approve_server 쪽을 좁힌다",
+   "due": "2026-09-15",
+   "cmd": "grep -n _userBusy webapp/approval.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

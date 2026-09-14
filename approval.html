@@ -482,8 +482,27 @@ async function findServer(){
 //    다시 읽는다. 무장(armed) 중인 버튼이 있으면 화면이 갈아엎여 그 상태가
 //    풀리므로, 그 사이는 건너뛴다(사람이 두 번째 클릭 하려는 순간 안 뺏는다).
 var REFRESHING=false;
+// 🔴 **읽거나 복사하는 동안 화면을 갈아엎지 않는다** (2026-09-15 사장님 지적:
+//    "결재대기 화면이 계속 1번으로 위로 올라와 바껴버리고, 복붙이 안되는 이유가 있어")
+//    결재서버가 webapp/ 의 **아무 파일**이 바뀌어도 신호를 보내는데, 감시 루프가 1분마다
+//    _watch_state.json·loop.json 을 쓰므로 refresh() 가 쉬지 않고 innerHTML 을 통째로
+//    바꿨다 → 드래그 중인 선택이 풀려 복사가 안 되고, 순서가 바뀌면 스크롤이 튀었다.
+//    → 선택 중·입력 중·최근 45초 안에 스크롤·클릭·터치·키 입력이 있었으면 미루고,
+//      손을 뗀 뒤에 한 번만 다시 그린다.
+var _lastTouch = 0, _pendingRefresh = false;
+['scroll','mousedown','touchstart','keydown','copy','selectionchange','wheel'].forEach(function(ev){
+  document.addEventListener(ev, function(){ _lastTouch = Date.now(); }, {passive:true, capture:true});
+});
+function _userBusy(){
+  try{ if(String(window.getSelection() || '').length > 0) return true; }catch(e){}
+  var a = document.activeElement;
+  if(a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) return true;
+  return (Date.now() - _lastTouch) < 45000;
+}
+setInterval(function(){ if(_pendingRefresh && !_userBusy()){ _pendingRefresh=false; refresh(); } }, 5000);
 function refresh(){
   if(document.querySelector('.act[data-armed="1"]')) return;  // 결재 확인 대기 중이면 스킵
+  if(_userBusy()){ _pendingRefresh = true; return; }           // 읽는·복사하는 중이면 미룬다
   REFRESHING=true;
 // 🔴 **데이터부터 받는다 — 서버 탐색을 기다리지 않는다** (2026-09-03).
 //    예전에는 findServer() 체인 **뒤에** Promise.all(데이터) 이 붙어 있었다.
