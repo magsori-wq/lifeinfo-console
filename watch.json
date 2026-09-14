@@ -10130,7 +10130,7 @@
   {
    "id": "scratch-cleanup-policy-0915",
    "added": "2026-09-15",
-   "what": "09-15 01시경 누군가 루트의 추적 중인 scratch_*.txt 105개를 커밋 없이 작업트리에서 지웠다(validate_db 11) 대량삭제 FAIL → Stop 하네스 차단). 이부장이 그 105개만 경로 지정 복원. 정리가 의도였다면 git rm 경로 지정 커밋으로 정식 삭제하고 .gitignore 에 scratch_* 를 넣는 것이 맞다 — 누가 지웠는지 확인 후 결정.",
+   "what": "09-15 01시경 누군가 루트의 추적 중인 scratch_*.txt 105개를 커밋 없이 작업트리에서 지웠다(validate_db 11) 대량삭제 FAIL → Stop 하네스 차단). 이부장이 그 105개만 경로 지정 복원. 정리가 의도였다면 git rm 경로 지정 커밋으로 정식 삭제하고 .gitignore 에 scratch_* 를 넣는 것이 맞다 — 누가 지웠는지 확인 후 결정. 【로그 조사 09-15 02:3x】최근 세션 25개 로그에서 scratch_ 를 지운 명령은 개별 rm 3건(각 1~2개)뿐 — 105개 일괄 삭제 흔적 없음. 같은 시각 추적 안 된 scratch_*.txt 도 함께 사라졌다(와일드카드 정리로 추정). 사람이 탐색기에서 지웠거나 로그 밖 도구. 결론 못 냄 — 방침(git rm + .gitignore scratch_*)은 사장님 결정 사항으로 남긴다.",
    "due": "2026-09-16",
    "cmd": "git ls-files 'scratch_*' | wc -l",
    "owner": "claude",
@@ -10260,6 +10260,26 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "seodesc-rescan-verify-0916",
+   "added": "2026-09-15",
+   "what": "batchboard mark 의 검색설명 재측정(09-15 수정)이 실제로 도는지 — 다음 발행 글 완료 보고 때 <코드>-seodesc 항목이 생기지 않고 done 이 한 번에 들어가는지 확인. 생기면 재측정 경로가 안 탄 것",
+   "due": "2026-09-16",
+   "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches'];print([(k,[i['code'] for i in v['items'] if i['code'].endswith('-seodesc')]) for k,v in b.items() if k.startswith('pub09')])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "factlead-a502-e209-0915",
+   "added": "2026-09-15",
+   "what": "사실확인 필요 2건(4.세션 AD-2 부산물 · 미확인): ①A5-02 노인일자리 글 '사회서비스형 만 65세 이상(일부 60세)' vs 복지부 보도자료 '노인역량활용사업·공동체사업단은 60세 이상' — 2025 사업명 변경으로 세부사업별 기준이 갈렸을 수 있음, 최신 공고문 확인 ②E2-09 추석 스미싱 글 '최근3년 207만여건·공공기관 사칭 53.4%(2025-09-29 정부합동)' vs 확인된 공식 자료 '2022~2024상반기 116만여건·71.0%' — 다른 기간 자료일 수 있음, 2025-09-29 원문 대조 필요",
+   "due": "2026-09-17",
+   "cmd": "python -m studio.batchboard order --id adsense0915",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
   }
  ]
 }

@@ -4808,6 +4808,14 @@
    "target": "fix-e216-fine-approve-0914",
    "detail": "livefix-bundle-0915 로 통합(09-15 사장님 정리 지시) — 정정 자체는 미완, 그 카드에서 추적",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-15T02:30:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "seodesc-autoitem-falsepos-0915",
+   "detail": "코드 수정 09-15 02:3x: batchboard mark done 거부 직전, 감사가 검색설명을 지목하면 seodesc scan --only <코드> 로 라이브 1편 재측정 후 재감사(py_compile OK). 실동작은 다음 발행 완료 보고에서 확인 → watch seodesc-rescan-verify-0916",
+   "via": "cli"
   }
  ]
 }
