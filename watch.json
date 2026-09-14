@@ -9461,6 +9461,38 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "xlink-h108",
+   "added": "2026-09-14",
+   "what": "🔗 H1-08 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-08",
+   "due": "2026-09-14",
+   "cmd": "python studio/blogger.py crosslink --code H1-08",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "wake-fail-instapost0914f214",
+   "added": "2026-09-14",
+   "what": "이과장 가 instapost0914f214 지시서를 읽지 않음(Desktop 입력 2026-09-14 12:40 전송 후 8분) — 그 세션 창을 확인해 주십시오",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.wake --role 이과장 --batch instapost0914f214",
+   "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "오탐(이부장 12:50) — 이과장은 같은 시각 D1-10 인스타 게시 중이었다(12:46 DdQMuCXEY0Y 기록·12:39 osmu0914d110 읽음). F2-14 지시서는 순서상 뒤라 안 읽힌 것이 정상. wakewatch 경보 조건 수정 예정"
+  },
+  {
+   "id": "threads-d110-retry-0914",
+   "added": "2026-09-14",
+   "what": "D1-10 등초본 세대주 관계 표기 쓰레드 재시도 — 3회 실패(붙여넣기 경합 2·작성 모달 닫힘 1). 사장님 네이버 게시가 끝나면 osmu0914d110 항목을 todo 로 풀고 이과장 깨운다",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.osmu_manifest table --code D1-10",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
