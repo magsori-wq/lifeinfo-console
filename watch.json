@@ -9878,8 +9878,10 @@
    "due": "2026-09-15",
    "cmd": "curl -s https://rss.blog.naver.com/magsori8975.xml | grep -c '<item>'",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "구현 — studio/naverfind.py(RSS→PostView 블로그주소 정확일치→naver-link 기록·경로커밋) + threadsdraft·osmu_manifest show/announce·insta_post 게이트 + dispatch 예외 삭제. H1-10 차단 실측·F4-21 감지 모의 성공. 실게시 감지는 naverfind-live-verify-0914"
   },
   {
    "id": "xlink-h110",
