@@ -9455,7 +9455,7 @@
   {
    "id": "xlink-a511",
    "added": "2026-09-14",
-   "what": "🔗 A5-11 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-11",
+   "what": "🔗 A5-11 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-11",
    "due": "2026-09-14",
    "cmd": "python studio/blogger.py crosslink --code A5-11",
    "owner": "claude",
@@ -9503,6 +9503,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "threads-paste-decision-0914",
+   "added": "2026-09-14",
+   "what": "🧵 쓰레드 게시 방식 결정 — 세션 붙여넣기가 D1-10·A5-11 연속 3회씩 실패(작성창에 1자만 남음, 새 탭·브라우저 재시작 무효 = 09-12 부터 미해결). 대기 4편: D1-10 등초본 세대주 관계 표기 · A5-11 두루누리 · H1-08 아시안게임(개회 9/19) · E4-05 재난문자. 【권고】 원고·첨부 이미지는 세션이 준비하고 게시만 사장님이 폰 쓰레드 앱에서(편당 30초) → URL 을 이부장 창에 붙여넣기. 【위험】 계속 세션에 맡기면 편당 3회×실패로 시간만 쓰고 두 링크 유입 동선이 비어 있음",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.threadsdraft --code H1-08",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
