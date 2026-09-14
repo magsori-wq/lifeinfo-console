@@ -10085,6 +10085,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-post-c4-09",
+   "added": "2026-09-15",
+   "what": "C4-09(건강보험료 11월정산) 네이버 게시 — 제목: 지역가입자 건강보험료 11월에 갑자기 오른 이유 — 소득정산제도로 낮추는 법 (2026) / 카테고리: 건강 / 첨부: thumbs_naver/253n_healthins.png / 추천태그: 지역가입자건강보험료, 건강보험료정산, 소득정산제도, 건보료11월, 건강보험료인상",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.pipeline naver-draft --code C4-09 --file osmu/네이버용_지역가입자건강보험료11월정산.txt --open 로 클립보드 적재 후 https://blog.naver.com/GoBlogWrite.naver 에서 Ctrl+V → 게시. URL 확보 후 python -m studio.pipeline naver-link --code C4-09 --url <URL>",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
