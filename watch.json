@@ -9379,6 +9379,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "docflow-0914-0700",
+   "added": "2026-09-14",
+   "what": "루틴2(B)요청 A/B 글감 선별 실행 — 루틴이 준 목록 9건(A3-12·A3-13·A1-14·A1-16·B2-13·B2-14·A6-02·A1-15·A5-10)은 전부 이미 발행완료(topicprop list 의 raw state 를 미선별로 오독). 실제 미결은 A6-05(proposed) 1건뿐, summary·facts 有해 defer 처리(재등판 2026-12-13). gatecheck._g_picked_needs_draft()=[] 로 A/B 픽완료·초안없음 0건 확인 — 이과장 지시서 발주 대상 없음. 재고 0/99 는 여전히 미해소(신규 특별이슈급 제안이 안 들어오는 중)",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.topicprop table && python -m studio.pace",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d486208d"
   }
  ]
 }
