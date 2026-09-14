@@ -9596,6 +9596,26 @@
    "by": "이과장",
    "done_at": "2026-09-14",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "osmuskip-other-counters-0914",
+   "added": "2026-09-14",
+   "what": "사장님 인스타 제외(B1-03·G4-02·E2-07, webapp/osmu_skip.json) 를 CP 미결(approve_server._pending)·now·pending.py 에만 반영했다. osmu.instagram 을 따로 읽는 나머지 도구(myturn·today·insta_post·osmu_manifest·sessionaudit·gatecheck·daylog·wrapup_check·selfcheck 등)가 아직 이 3편을 미게시로 띄우는지 확인하고, 띄우면 studio.osmuskip.skipped() 를 물리게 한다",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.osmuskip && grep -rn \"get(.instagram.)\" studio --include=*.py | grep -v osmuskip",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "wake-fail-fix0914f214",
+   "added": "2026-09-14",
+   "what": "이과장 가 fix0914f214 지시서를 읽지 않음(Desktop 입력 2026-09-14 14:23 전송 후 8분) — 그 세션 창을 확인해 주십시오",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.wake --role 이과장 --batch fix0914f214",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
