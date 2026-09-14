@@ -9783,7 +9783,7 @@
   {
    "id": "xlink-f421",
    "added": "2026-09-14",
-   "what": "🔗 F4-21 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-21 / 인스타 캡션에 네이버 링크 추가(캡션 수정 가능): https://www.instagram.com/p/DdRQXLoifzy/",
+   "what": "🔗 F4-21 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-21",
    "due": "2026-09-14",
    "cmd": "python studio/blogger.py crosslink --code F4-21",
    "owner": "claude",
@@ -9940,6 +9940,16 @@
    "kind": "action",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "wakewatch-boss-turn-falsepos-0914",
+   "added": "2026-09-14",
+   "what": "wakewatch 오경보 — 이과장이 '남은 건 사장님(네이버·쓰레드) · 결재함 등록' 으로 보고하고 대기 중인데 5~6분마다 '멈춤→깨우기 실패→사장님께 창 열어달라' 를 띄움(09-14 23:16·23:17·23:42). 마지막 보고가 사장님 차례(결재함 owner=user 미결)면 깨우지 않게 고칠 것",
+   "due": "2026-09-15",
+   "cmd": "grep -n '마지막 보고' studio/wakewatch*.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
