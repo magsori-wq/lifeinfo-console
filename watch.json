@@ -9545,7 +9545,7 @@
   {
    "id": "xlink-h109",
    "added": "2026-09-14",
-   "what": "🔗 H1-09 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-09",
+   "what": "🔗 H1-09 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-09",
    "due": "2026-09-14",
    "cmd": "python studio/blogger.py crosslink --code H1-09",
    "owner": "claude",
@@ -9618,6 +9618,16 @@
    "by": "이부장",
    "done_at": "2026-09-14",
    "result": "14:37 이부장 — 오탐. 이과장 세션 로그(eb42e59e, 마지막 수정 14:36:45)에 14:36 G4-07 인스타 게시(DdQZaBNkQ1Z)·두 링크 확인·insta-link 기록 중. 브라우저 작업은 지시서 읽기·보고를 남기지 않아 wake 가 '안 읽음' 으로 판정. F2-14 반영은 이 편 뒤 복귀 예정(지시서대로)"
+  },
+  {
+   "id": "naver-affiliate-brandconnect-0914",
+   "added": "2026-09-14",
+   "what": "사장님 지시(14:5x) '가능하면 네이버글에는 제휴링크를 브랜드커넥트의 상품을 링크하였으면해, 다른걸 링크해도 괜찮지만!' — 네이버 채널 제휴 상품 선정 시 브랜드커넥트(brand·brandshop·brandtrip) 우선, 없을 때 토스·쿠팡. 판정기준 문서·productprop/affiliate 안내·product 에이전트 지침에 반영",
+   "due": "2026-09-15",
+   "cmd": "grep -n 브랜드커넥트 제휴상품_판정기준.md .claude/agents/product.md studio/productprop.py studio/affiliate.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
