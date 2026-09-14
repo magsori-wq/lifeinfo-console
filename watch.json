@@ -9880,6 +9880,37 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-h110",
+   "added": "2026-09-14",
+   "what": "🔗 H1-10 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-10",
+   "due": "2026-09-14",
+   "cmd": "python studio/blogger.py crosslink --code H1-10",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "thread-post-h1-10",
+   "added": "2026-09-14",
+   "what": "H1-10(SBS 닥터X) 쓰레드 게시 — 첨부 이미지 insta/thread/thread_H1-10_doctorx.png, 글자수 295자",
+   "due": "2026-09-14",
+   "cmd": "python -m studio.threadsdraft --code H1-10 로 클립보드 적재 후 threads.com/@magsori8975 왼쪽 '새로운 스레드'에서 Ctrl+V → 이미지 첨부 → 게시. URL 확보 후 python -m studio.pipeline threads-link --code H1-10 --url <URL>",
+   "owner": "user",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "insta-caption-f421-naverlink",
+   "added": "2026-09-14",
+   "what": "F4-21 인스타 게시물 캡션에 네이버 링크 추가 — 네이버가 게시 후 붙어서(blog.naver.com/magsori8975/224411768803) 캡션에 '네이버 (게시 후 추가)' 자리표시자로 남아 있음. 2026-09-12 분업 규칙(세션이 열고 사장님이 저장)에 따라 사장님 확인·저장 필요",
+   "due": "2026-09-14",
+   "cmd": "https://www.instagram.com/p/DdRQXLoifzy/ 편집 화면에서 '네이버 (게시 후 추가)' 줄을 'https://blog.naver.com/magsori8975/224411768803' 로 교체 후 완료. 참고 원문: insta/캡션_화담숲단풍예약.txt",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
