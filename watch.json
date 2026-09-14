@@ -9411,6 +9411,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "insta-card-slug-collision-0914",
+   "added": "2026-09-14",
+   "what": "인스타 표지 판정 오탐: A5-09 를 '글자 표지'로 판정해 재게시시켰는데 실제 옛 게시물(Dcrl8ScE8tt)은 실사진 표지였다(사장님 캡처). 원인 = osmu_manifest._find_cards 의 옛 규칙(영문 슬러그 glob) — A5-09 eng=severance 가 8월 B4-05 퇴직금 카드(severance_01_cover.png)를 집었다. 겹치는 슬러그 추가: smishing(E2-09·E4-03). 조치 필요: 영문 슬러그로만 찾은 카드는 '주인 불확실'로 표시하고 실사진 판정·재게시 근거로 쓰지 않는다. A2-16 옛 게시물은 글자 표지 맞음·캡션 '수정됨'에 네이버 링크 들어가 있음(수정이 되는 경우도 있다)",
+   "due": "2026-09-14",
+   "cmd": "python -c \"from studio import osmu_manifest as m; print(m._find_cards('A5-09','severance')[:2])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
