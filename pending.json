@@ -2,8 +2,8 @@
  "rev": "c10243ba",
  "counts": {
   "total": 274,
-  "osmu_done": 273,
-  "osmu_pending": 1,
+  "osmu_done": 274,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 274,
   "index_requested": 157,
@@ -11,24 +11,6 @@
   "index_benign": 94
  },
  "actionable": [
-  {
-   "code": "A4-06",
-   "title": "국민연금 실버론(노후긴급자금대부) 신청 방법·한도·금리",
-   "need": [
-    "인스타",
-    "쓰레드",
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": false,
-    "i": false
-   }
-  },
   {
    "code": "B1-03",
    "title": "위택스 장애 지방세 납부기한 연장 총정리 (7월 7일까",
@@ -66,15 +48,16 @@
    "code": "E2-16",
    "title": "개인정보 유출되면 무엇이 달라지나 — 2026년 9월 ",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
@@ -177,6 +160,23 @@
     "g": true,
     "n": true,
     "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A4-06",
+   "title": "국민연금 실버론(노후긴급자금대부) 신청 방법·한도·금리",
+   "need": [
+    "쓰레드",
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": false,
     "i": true
    }
   },

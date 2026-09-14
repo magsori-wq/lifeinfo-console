@@ -9533,6 +9533,27 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "xlink-h109",
+   "added": "2026-09-14",
+   "what": "🔗 H1-09 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-09",
+   "due": "2026-09-14",
+   "cmd": "python studio/blogger.py crosslink --code H1-09",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "naver-h109-title-0914",
+   "added": "2026-09-14",
+   "what": "🔤 H1-09 K-세일페스타 네이버 제목만 수정(본문 그대로) — 지금 라이브 제목이 블로그스팟과 글자까지 같다(중복문서 신호). 수정안: 「코리아세일페스타, 이름 바뀐 거 아셨나요? — 2026 K-세일페스타 할인 혜택·참여방법·기간 (10/29~11/15)」 제목 점검 통과(실검색어 코리아세일페스타·세일페스타·참여방법). 글: https://blog.naver.com/magsori8975/224411153991",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.navertitlecheck H1-09",
+   "owner": "user",
+   "state": "todo",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
