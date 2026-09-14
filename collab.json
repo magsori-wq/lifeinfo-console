@@ -1,6 +1,6 @@
 {
- "rev": "21f59261",
- "uncommitted": 42,
+ "rev": "7f9fa185",
+ "uncommitted": 55,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
-     "h": "21f59261",
-     "d": "09-14 05:52",
-     "s": "[이과장] instapost0914a509 시험결과 보고 추가"
+     "h": "7f9fa185",
+     "d": "09-14 12:09",
+     "s": "[이부장] CLAUDE.md 처리순서 규칙에 '순서마다 바로 열리는 링크(코드+제목+화면 URL)' 추가 — 사장님: 사용자 입장에서 코드 확인 시간 줄이기"
     },
     {
-     "h": "b493ed75",
-     "d": "09-14 05:51",
-     "s": "[이과장] A5-09 인스타 게시 후 DB·콘솔 반영 (osmu.instagram URL 갱신, bake)"
+     "h": "5e15e3de",
+     "d": "09-14 12:04",
+     "s": "[이부장] CLAUDE.md — 할 일·미결 보고엔 처리 순서·이유·세션 후속까지 (사장님: 순서 없으면 내가 세션에 먼저 지시해 루프가 꼬인다)"
     },
     {
-     "h": "62c4dc22",
-     "d": "09-14 05:51",
-     "s": "[이과장] E2-16 네이버 원고 개행 정리(naverwrap 재실행분)"
+     "h": "1152d11e",
+     "d": "09-14 11:57",
+     "s": "[이부장] Claude Desktop 창 '항상 위' 감시·자동 해제(studio.wintop) — wakewatch 1분 루프가 확인하고 풀며 시각을 webapp/_wintop_log.txt 에 남긴다. 켠 주체 미확정(PowerToys 미설치·wake.py 는 topmost 안 켬)"
     }
    ],
-   "last": "09-14 05:52",
+   "last": "09-14 12:09",
    "state": "active"
   },
   {
@@ -36,9 +36,15 @@
    "role": "네이버·쓰레드 재가공·교차링크·확산 대기열",
    "owns": "naver.py · pipeline.py · 확산_대기열 · osmu/",
    "drives": "OSMU 확산 기능 에이전트 구동",
-   "recent": [],
-   "last": "—",
-   "state": "idle"
+   "recent": [
+    {
+     "h": "5d435ead",
+     "d": "09-14 10:04",
+     "s": "[이부장] loopcheck 오탐 2종 — blocked 결재 카드도 '결재함에 있음'으로 · 네이버 게시 대기(ch.n=False) OSMU 후속은 사장님 손이라 세션 정체로 안 셈 (xlink0911all·draft0913h108/g407/e405)"
+    }
+   ],
+   "last": "09-14 10:04",
+   "state": "active"
   },
   {
    "id": "H",
