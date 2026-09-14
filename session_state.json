@@ -1,14 +1,15 @@
 {
  "sessions": {
   "routinelog": {
-   "state": "working",
-   "reads_since_report": 0,
-   "last_report": "2026-09-14 09:18",
-   "last_what": "A/B 추천1(빈손·근거5건 기록)+후보1(A6-05 실업크레딧, dupcheck🟡 통과) 제안 → docflow 선별 결과 A6-05 defer(하드기한없음, 재등판 2026-12-13). 재고0/99·큐0건 원인",
-   "reads": 21,
+   "state": "waiting",
+   "reads_since_report": 3,
+   "last_report": "2026-09-14 11:40",
+   "last_what": "발행구 09:07 점검 — pubqueue 0건(빈 큐), 오늘 이미 2편 발행됨(E2-16·H1-09, HTTP 200 라이브 확인·pace.py 실측). go도장인데 미발행인 글 없음(3-0 자동발행 대상 없음)",
+   "reads": 25,
    "last_order_at": "2026-09-08 10:27",
-   "last_read": "2026-09-14 09:08",
-   "owner": "예약 루틴 7개 (관제탑이 읽고 확인)"
+   "last_read": "2026-09-14 11:49",
+   "owner": "예약 루틴 7개 (관제탑이 읽고 확인)",
+   "waiting_since": "2026-09-14 11:44"
   },
   "e210fix": {
    "reads": 1,
@@ -1605,5 +1606,5 @@
    "last_what": "⏸ 대기 — B1-08 여전히 막혀 있음. 편집창 캡션(523자) 그대로 열려 있고 라이브 재확인(curl og:description)도 여전히 캡션 0자. 사장님이 결재함 approve-insta-b108-capt"
   }
  },
- "updated": "2026-09-14 09:18"
+ "updated": "2026-09-14 11:49"
 }

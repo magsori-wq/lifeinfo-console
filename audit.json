@@ -4360,6 +4360,14 @@
    "target": "routine3-publish-first-run-0914",
    "detail": "첫 실행 09:0x — 3-0 대상 없음(도장+미발행 글 0, E2-16·H1-09 이미 라이브) 판정 정확 · gh 트리거 안 함 · 이중발행 없음. 부수 발견: bosstrack 이 queue.json 의 go 잔존으로 E2-16 을 '미발행' 오보",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-14T09:24:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine2-topics-misread-0914",
+   "detail": "원인 확인(에이전트 세션로그 대조): topicprop list 가 소진분도 '추천함'으로 표시 → 루틴2 오독. list 에 ✅소진 라벨 추가·실행 확인. 신규 제안 0건은 후보 5개 dupcheck·시행일 미확정으로 정당 탈락(정상)",
+   "via": "cli"
   }
  ]
 }

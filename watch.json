@@ -9397,6 +9397,18 @@
    "due": "2026-09-15",
    "cmd": "grep -n 'def cmd_list' -A6 studio/topicprop.py  # cmd_list가 아직 items()를 그대로 쓰는지(active() 미적용) 확인 — 고쳤으면 이 watch done",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-14",
+   "result": "원인 확인(에이전트 세션로그 대조): topicprop list 가 소진분도 '추천함'으로 표시 → 루틴2 오독. list 에 ✅소진 라벨 추가·실행 확인. 신규 제안 0건은 후보 5개 dupcheck·시행일 미확정으로 정당 탈락(정상)"
+  },
+  {
+   "id": "desktop-topmost-0914",
+   "added": "2026-09-14",
+   "what": "Claude Desktop 창이 '항상 위(topmost=True)' + 1721x1447 로 작업표시줄까지 덮음(사장님 11:5x 지적). 이부장이 SetWindowPos NOTOPMOST 로 해제(11:5x). 원인 미상 — wake.py 는 버튼 Invoke·SetFocus 만 하고 topmost 를 켜지 않는다(코드 확인). 재발하면 직전에 무엇이 돌았는지(wakewatch 깨움 시각·사장님 조작) 대조",
+   "due": "2026-09-15",
+   "cmd": "powershell 로 Claude 창 GetWindowLong(-20) & 0x8 확인",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
