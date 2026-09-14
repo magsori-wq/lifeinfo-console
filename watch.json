@@ -10212,6 +10212,26 @@
    "owner": "user",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "factlead-e102-0915",
+   "added": "2026-09-15",
+   "what": "사실확인 필요(4.세션 AD-2 부산물 · 미확인): E1-02 어르신 휴대폰 요금감면 글 감면액 기초연금 11,000원·생계의료 33,500원 — 대조 에이전트가 읽은 KT 공식 복지할인 페이지는 12,100원·45,100원. 통신사별·부가세 포함 여부 차이일 수 있음. 과기정통부·통신3사 공식으로 재확인 전 수정 금지",
+   "due": "2026-09-17",
+   "cmd": "python -m studio.batchboard order --id adsense0915",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
+  },
+  {
+   "id": "source-H1-02-couriers-0918",
+   "added": "2026-09-15",
+   "what": "CJ대한통운·롯데글로벌로지스·로젠택배 2026 추석 마감일 1차출처 미확인(사이트가 JS렌더링이라 WebFetch로 목록 못읽음, 브라우저 필요). 한진 원클릭은 공지 존재(No.164)만 확인, 본문 미확보. 상세=docs/source_H1-02_추석택배마감_20260915.md",
+   "due": "2026-09-18",
+   "cmd": "claude-in-chrome으로 cjlogistics.com/ko/newsroom/notice, lotteglogis.com/mobile/customs/notice/list, hanjinoneclick.co.kr/customer_notice(No.164 바로보기), ilogen.com/m/customer/notice 를 열어 2026년 추석 공지 URL/번호를 확보한 뒤 WebFetch로 상세 재조회",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
