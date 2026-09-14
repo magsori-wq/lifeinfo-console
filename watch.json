@@ -9779,6 +9779,36 @@
    "by": "세션:af441131",
    "done_at": "2026-09-14",
    "result": "해소 — 다른 세션의 pull --rebase 로 e663eb76 이 4fbe2814 로 재작성돼 원격 반영됨. 뒤이은 5c5db1e6 도 푸시 성공(origin/main..main 0건 확인)"
+  },
+  {
+   "id": "xlink-f421",
+   "added": "2026-09-14",
+   "what": "🔗 F4-21 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-21",
+   "due": "2026-09-14",
+   "cmd": "python studio/blogger.py crosslink --code F4-21",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "afflink-f4-21",
+   "added": "2026-09-14",
+   "what": "【권고】토스쇼핑에서 쉐어링크 발급을 권합니다 — 트리고 보온보냉 텀블러 750ml(핑크/블랙/화이트) 토스 15,900원(리뷰 385건·4.7점, 쿠팡 최저가는 12,900원이나 수수료가 토스의 약 1/4). 화담숲은 경사 산책로+모노레일 대기로 도보 이동이 긴 코스라 개인 텀블러가 현장 매점 없이도 유용하고 방문시기(10월 하순~11월 중순)엔 보온 기능도 실사용됩니다. 조사메모: docs/affiliate_F4-21.md",
+   "cmd": "토스쇼핑에서 '트리고 텀블러' 검색 → id 223001131(핑크) 상품 쉐어링크 발급",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이과장"
+  },
+  {
+   "id": "insta-caption-naverlink-f421-0914",
+   "added": "2026-09-14",
+   "what": "F4-21 인스타(DdRQXLoifzy)가 네이버보다 먼저 게시돼 캡션에 네이버 링크가 없다(블로그스팟만). 사장님 네이버 게시 뒤 캡션에 네이버 링크 줄 추가 — 세션이 편집창 열고 사장님이 「완료」 저장(09-12 분업)",
+   "due": "2026-09-15",
+   "cmd": "curl -s -A Mozilla/5.0 https://www.instagram.com/p/DdRQXLoifzy/ | grep -c naver",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
