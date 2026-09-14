@@ -10186,7 +10186,7 @@
   {
    "id": "xlink-c409",
    "added": "2026-09-15",
-   "what": "🔗 C4-09 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-09",
+   "what": "🔗 C4-09 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C4-09",
    "due": "2026-09-15",
    "cmd": "python studio/blogger.py crosslink --code C4-09",
    "owner": "claude",
@@ -10202,6 +10202,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "4."
+  },
+  {
+   "id": "thread-post-c4-09",
+   "added": "2026-09-15",
+   "what": "C4-09(건강보험료 11월정산) 쓰레드 게시 — 첨부 이미지 insta/thread/thread_C4-09_healthins.png, 글자수 307자",
+   "due": "2026-09-15",
+   "cmd": "python -m studio.threadsdraft --code C4-09 로 클립보드 적재 후 threads.com/@magsori8975 왼쪽 '새로운 스레드'에서 Ctrl+V → 이미지 첨부 → 게시. URL 확보 후 python -m studio.pipeline threads-link --code C4-09 --url <URL>",
+   "owner": "user",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
