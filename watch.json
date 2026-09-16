@@ -10365,6 +10365,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:6610cf11"
+  },
+  {
+   "id": "v0-dup-check-g107-0917",
+   "added": "2026-09-17",
+   "what": "G1-07 을 04:52:05(루틴4 위임 에이전트, PASS)·04:52:45(docflow 위임 v0 에이전트, FAIL) 두 세션이 40초 간격으로 각각 독립 V0검사 — audit.json 에 둘 다 기록됐고 v0check.json(게이트 판정점)은 나중 것(FAIL)이 남아 현재 발행 차단은 정상. 단 조율 없이 같은 코드를 동시에 두 세션이 검사한 것 자체가 구조적 낭비(V0 검사는 1건당 1회여야 함) — 큐 진입 시점에 '검사 예약' 표시가 없어 생긴 문제로 보임.",
+   "due": "2026-09-17",
+   "cmd": "python -m studio.v0check gate --code G1-07",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:6610cf11"
   }
  ]
 }
