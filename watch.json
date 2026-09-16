@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-15",
+ "updated": "2026-09-17",
  "items": [
   {
    "id": "redirect-error",
@@ -10335,6 +10335,16 @@
    "owner": "user",
    "state": "todo",
    "by": "4."
+  },
+  {
+   "id": "feed-drift-f214-0917",
+   "added": "2026-09-17",
+   "what": "피드 드리프트 검사 09-15·09-16 연속 실패 — 원인 F2-14 제목 불일치(라이브=\"2026 추석 고속도로 통행료 9월 24일~27일 무료 확정 · 정체 예상시간·우회도로 총정리\", DB=옛 제목). 라이브 정정 후 DB 미반영. DB 제목을 라이브에 맞추면 해소",
+   "due": "2026-09-17",
+   "cmd": "python tools/feed_drift.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:c66d9240"
   }
  ]
 }
