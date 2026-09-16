@@ -2349,8 +2349,10 @@
    "items": [
     {
      "code": "H1-11",
-     "state": "todo",
-     "title": "H1-11 날아올라라 나비 JTBC 9/19 첫방송 — 초안·썸네일·pubqueue add"
+     "state": "done",
+     "title": "H1-11 날아올라라 나비 JTBC 9/19 첫방송 — 초안·썸네일·pubqueue add",
+     "note": "초안·썸네일·pubqueue 적재 완료(실측: layout✅·bodydup 0.048·dupcheck 신규·pushcheck 동일). 출처=docs/source_H1-11_날아올라라나비_20260917.md(JTBC 공식+언론8곳 교차확인). OTT플랫폼·확정회차수는 미확인이라 본문에서 단정 배제. 썸네일=H1-10과 동일 소스(hopemovie_screen) 실사진(thumbcheck.needs_photo 게이트 걸림 확인 후 반영). 다음: ⑥V0검사(이부장) → ⑦발행승인(사장님)",
+     "at": "2026-09-17 05:37"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -2379,8 +2381,10 @@
    "items": [
     {
      "code": "H1-09-xlink",
-     "state": "todo",
-     "title": "H1-09 코리아세일페스타 — 블로그스팟 교차링크 복구"
+     "state": "done",
+     "title": "H1-09 코리아세일페스타 — 블로그스팟 교차링크 복구",
+     "note": "python studio/blogger.py crosslink --code H1-09 실행, 기존 블록 교체. 라이브 curl 재조회로 3채널(네이버/쓰레드/인스타) 링크 존재 확인 완료: https://lifeinfo8975.blogspot.com/2026/09/2026-k-10291115.html",
+     "at": "2026-09-17 05:38"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -2388,7 +2392,7 @@
    "order_at": "2026-09-17 05:33"
   }
  },
- "updated": "2026-09-17 05:33:37",
+ "updated": "2026-09-17 05:38:07",
  "current": {
   "batch": "adsense0915",
   "code": "",
@@ -2399,6 +2403,14 @@
   "since_at": "2026-09-15 01:31:31"
  },
  "log": [
+  {
+   "t": "05:38:07",
+   "text": "✅ H1-09-xlink 완료 — H1-09 코리아세일페스타 — 블로그스팟 교차링크 복구"
+  },
+  {
+   "t": "05:37:22",
+   "text": "✅ H1-11 완료 — H1-11 날아올라라 나비 JTBC 9/19 첫방송 — 초안·"
+  },
   {
    "t": "05:33:37",
    "text": "📄 xlink0917h109 작업 지시 등록(8987자, 2026-09-17 05:33)"
@@ -2550,14 +2562,6 @@
   {
    "t": "09:14:47",
    "text": "📋 배치 'B4-13 초안 작성 지시' 등록 — 1항목"
-  },
-  {
-   "t": "09:10:30",
-   "text": "✅ lifeinfo-daily-topics-0915 완료 — lifeinfo-daily-topics (B)"
-  },
-  {
-   "t": "09:09:25",
-   "text": "✅ lifeinfo-publish-0915 완료 — lifeinfo-publish (C)"
   }
  ],
  "currents": {
