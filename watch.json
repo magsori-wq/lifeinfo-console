@@ -10594,7 +10594,7 @@
   {
    "id": "xlink-g107",
    "added": "2026-09-17",
-   "what": "🔗 G1-07 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G1-07",
+   "what": "🔗 G1-07 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G1-07",
    "due": "2026-09-17",
    "cmd": "python studio/blogger.py crosslink --code G1-07",
    "owner": "claude",
@@ -10610,6 +10610,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "b504-thread-dup",
+   "added": "2026-09-17",
+   "what": "B5-04 쓰레드 중복 게시 발견 — 첫 게시 시도가 UI상 '게시 중...'에서 멈춘 것처럼 보여 재시도했는데, 실제로는 첫 시도도 성공해 있었다. 2건 모두 라이브(내용 동일): 정본(먼저 게시, 2분전 표시)=https://www.threads.com/@magsori8975/post/DdYFXCHAZwC · 중복(나중, 1분전 표시)=https://www.threads.com/@magsori8975/post/DdYFkQJgbin. 삭제는 사람 손 — 중복 글(DdYFkQJgbin) 삭제 부탁드립니다.",
+   "due": "2026-09-17",
+   "cmd": "threads.com 에서 DdYFkQJgbin 게시물 열어 ... 메뉴 → 삭제",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이과장"
   }
  ]
 }
