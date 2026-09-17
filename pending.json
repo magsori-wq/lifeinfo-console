@@ -1,16 +1,33 @@
 {
  "rev": "59e8269b",
  "counts": {
-  "total": 280,
+  "total": 281,
   "osmu_done": 280,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 280,
+  "index_pending": 281,
   "index_requested": 157,
-  "index_todo": 29,
+  "index_todo": 30,
   "index_benign": 94
  },
  "actionable": [
+  {
+   "code": "B4-13",
+   "title": "조정대상지역 일시적 2주택 처분기한 3년→2년 단축 총",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-15",
    "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
@@ -206,22 +223,6 @@
   {
    "code": "E2-10",
    "title": "카드 포인트 계좌입금 신청 방법 총정리 (여신금융협회·",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "E2-16",
-   "title": "개인정보 유출되면 무엇이 달라지나 — 2026년 9월 ",
    "need": [
     "색인요청"
    ],
