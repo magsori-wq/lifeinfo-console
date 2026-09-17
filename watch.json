@@ -10573,8 +10573,10 @@
    "cmd": "python -m studio.pipeline naver-draft --code G1-07 --file osmu/네이버용_2026부산불꽃축제.txt --open",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-17",
+   "result": "사장님 게시 13:5x https://blog.naver.com/magsori8975/224414854746 · 맨앞 대가성문구·핫팩 카드·블로그스팟 링크 라이브 확인·naver-link 기록"
   },
   {
    "id": "c215-aff-threads-decide-0917",
@@ -10588,6 +10590,16 @@
    "by": "이부장",
    "done_at": "2026-09-17",
    "result": "사장님 승인 13:4x — 쓰레드 생략, 네이버 본문 맨 앞에만 삽입(사장님 손)"
+  },
+  {
+   "id": "xlink-g107",
+   "added": "2026-09-17",
+   "what": "🔗 G1-07 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G1-07",
+   "due": "2026-09-17",
+   "cmd": "python studio/blogger.py crosslink --code G1-07",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
