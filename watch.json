@@ -10532,7 +10532,7 @@
    "state": "done",
    "by": "이과장",
    "done_at": "2026-09-17",
-   "result": "사장님 게시 완료: https://blog.naver.com/magsori8975/224414766294"
+   "result": "네이버 게시 완료 — DB osmu.naver = https://blog.naver.com/magsori8975/224414766294 (4. 확인 09-17, 사장님 지시로 닫음)"
   },
   {
    "id": "taxonomy-gate-at-queue-0918",
@@ -10685,8 +10685,20 @@
    "cmd": "python -m studio.pipeline naver-draft --code B4-13 --file 'osmu/네이버용_조정대상지역일시적2주택처분기한단축.txt'  ← 누르시면 본문이 클립보드에. https://blog.naver.com/GoBlogWrite.naver 에 붙여넣고 제목·썸네일·태그 후 게시",
    "owner": "user",
    "kind": "action",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-17",
+   "result": "사장님 게시 https://blog.naver.com/magsori8975/224415127377 · 본문에 블로그스팟 링크 확인·naver-link 기록"
+  },
+  {
+   "id": "xlink-b413",
+   "added": "2026-09-17",
+   "what": "🔗 B4-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-13",
+   "due": "2026-09-17",
+   "cmd": "python studio/blogger.py crosslink --code B4-13",
+   "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "naver-link"
   }
  ]
 }
