@@ -1,16 +1,33 @@
 {
- "rev": "a1976fcd",
+ "rev": "9efc9740",
  "counts": {
-  "total": 278,
+  "total": 279,
   "osmu_done": 278,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 278,
+  "index_pending": 279,
   "index_requested": 157,
-  "index_todo": 27,
+  "index_todo": 28,
   "index_benign": 94
  },
  "actionable": [
+  {
+   "code": "G1-07",
+   "title": "2026 부산불꽃축제 예매 방법 좌석 가격 총정리",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-15",
    "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
@@ -206,22 +223,6 @@
   {
    "code": "E2-16",
    "title": "개인정보 유출되면 무엇이 달라지나 — 2026년 9월 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "E4-03",
-   "title": "스팸문자 신고하면 진짜 과태료 나올까? 118 신고 방",
    "need": [
     "색인요청"
    ],
