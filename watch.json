@@ -9647,9 +9647,11 @@
    "due": "2026-09-15",
    "cmd": "python -m studio.navertitlecheck H1-09",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-09-18",
+   "result": "사장님 제목 교체 완료 — navertitlecheck H1-09 ✅ 블로그스팟과 다른 제목 확인(04:4x)"
   },
   {
    "id": "xlink-e216",
@@ -10820,8 +10822,22 @@
    "due": "2026-09-18",
    "cmd": "(이미 승인됨 — livefix-bundle-0915 참조)",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "kind": "approve",
+   "by": "이과장",
+   "req_by": "이과장",
+   "done_at": "2026-09-18",
+   "result": "사장님 03:1x livefix-bundle-0915 ① 승인에 근거·이부장 확인(04:4x): 시행령 제28조의9 원문 '12억원' 확인(docs/source_B3-01_주택연금가격_20260918.md). 자격기준 5개소만 9억→12억, 수령액 예시·계산은 손대지 않는다(12억 기준 산출값 미확인)"
+  },
+  {
+   "id": "approve-a5-02",
+   "added": "2026-09-18",
+   "what": "🙋[이부장 확인 대기] 【권고】A5-02 노인일자리 '사회서비스형' 연령정정 2개소 — 근거: 복지부 보도자료(2025-11-27) '노인역량활용사업·공동체사업단은 60세 이상' 원문. 만 65세이상(일부 60세)→만 60세이상. 원본 = livefix-bundle-0915 ⑥(사장님 03:1x 승인, 이부장 확인) — 여기서는 그 승인을 A5-02 코드로 재기록만 한다",
+   "due": "2026-09-18",
+   "cmd": "(이미 승인됨 — livefix-bundle-0915 참조)",
+   "owner": "claude",
+   "kind": "approve",
+   "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
   }
