@@ -10525,6 +10525,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "taxonomy-gate-at-queue-0918",
+   "added": "2026-09-17",
+   "what": "B5-04 가 taxonomy 에 없는 중분류(B5)로 배정돼 발행 사전점검(pipeline 0c-4)에서야 막혔다(09-17 run 35178038660 · 사장님 승인 뒤). A6-02(09-06)에 이어 두 번째. 코드를 정하는 자리(docflow 선별·pubqueue add)에서 taxonomy 를 검사하게 앞당긴다 — pipeline 0c-4 판정 로직 재사용",
+   "due": "2026-09-18",
+   "cmd": "grep -n taxonomy studio/pubqueue.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
