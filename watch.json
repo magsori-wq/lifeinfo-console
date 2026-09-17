@@ -10439,8 +10439,10 @@
    "due": "2026-09-17",
    "cmd": "python -m studio.v0check gate --code G1-07",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-17",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · (a)(b) 반려사유 해소: §3표 채널별 마감일(NOL 11/6 17:00·부산은행모바일 11/1 23:59·부산은행오프라인 11/5) 추가+§5 'NOL 마감' 한정으로 경계일 함정 해소, 'S석만' 무출처강조는"
   },
   {
    "id": "v0-dup-check-g107-0917",
@@ -10505,12 +10507,12 @@
   {
    "id": "redirect-cause-0917",
    "added": "2026-09-17",
-   "what": "[사장님 지시 09-17 → 이부장 배정] 9월 새 글이 첫 크롤에서 '리디렉션 오류'로 분류되는 원인 조사. 근거: GSC 리디렉션 오류 유효성 검사(9/8 시작·9/15 실패) 접수중 68·실패 27 — 실패 27건 전부 2026/09 발행글(B4-10·D1-08·B1-09·F3-08·A6-02·G3-05·D1-09·C2-13·B3-05·F4-20·F2-14·G3-04·A5-10·B4-11·A3-12·G2-05·H1-04·E2-15·C2-15·B2-13·E3-03·F2-17·H1-02·E1-04·C2-14·E2-14·A1-14), 크롤 9/8~9/11, index_status 도 전부 Redirect error, 옛 글 0건. 먼저 볼 것: 색인모니터링.md 2026-08-19 절(8월 글 89% 리디렉션 오류 · '원인인지 경유 상태인지 미확정' · 확인법=URL 검사 '실제 URL 테스트'로 Googlebot 응답이 리디렉션인지 200인지) + indexing-not-a-technical-problem 메모리(재조사 금지 목록). 경위 기록=adsense0915 보드 note",
+   "what": "조사 완료(미확정) — 9월 국한 아님. 08-09월 발행글 100% 리디렉션오류, 07-20~07-30 이후 크롤분은 발행월무관 전부 실패, 6월 성공스냅샷만 유지됨(docs/redirect_cause_20260917.md). 남은 확인=GSC 실시간테스트(사장님 화면)",
    "due": "2026-09-18",
-   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;d=json.load(open('webapp/index_status.json',encoding='utf-8'))['posts'];print(sum(1 for v in d.values() if v.get('state')=='Redirect error'))\"",
-   "owner": "claude",
-   "state": "todo",
-   "by": "4."
+   "cmd": "GSC → URL 검사 → 8월 글 아무거나(예: A2-06) → 실시간 테스트 → 결과(200/리디렉션) 캡처",
+   "owner": "user",
+   "state": "wait",
+   "by": "에이전트"
   }
  ]
 }
