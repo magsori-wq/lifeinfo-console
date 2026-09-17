@@ -10662,6 +10662,29 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "approve-b4-13-naver",
+   "added": "2026-09-17",
+   "what": "🙋[이부장 확인 대기] 【권고】B4-13 네이버 게시 — 제목: 3년 알고 계셨나요? 아닙니다 — 일시적 2주택 처분기한 2년 단축, 조정대상지역 갈아타기 세금 총정리 (2026) · 카테고리: 세금·금융 · 첨부: thumbs_naver/256n_disposaldeadline.png · 태그: 일시적2주택,조정대상지역,양도소득세비과세,종합부동산세,취득세중과 · 확인: 상세도·출처링크(재정경제부·행정안전부·law.go.kr)·제목 실검색어(일시적 2주택·조정대상지역·갈아타기) 전부 통과 → 게시 권고",
+   "due": "2026-09-17",
+   "cmd": "python -m studio.pipeline naver-draft --code B4-13 --file 'osmu/네이버용_조정대상지역일시적2주택처분기한단축.txt'  ← 누르시면 클립보드에 본문이 담깁니다. 네이버 글쓰기(https://blog.naver.com/GoBlogWrite.naver)에 붙여넣고 제목 입력, 위 썸네일 첨부, 카테고리 선택 후 게시",
+   "owner": "claude",
+   "kind": "approve",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
+  },
+  {
+   "id": "naver-post-b4-13",
+   "added": "2026-09-17",
+   "what": "B4-13 네이버 게시(이과장 준비·이부장 확인 17:4x: 상세도·출처·제목 검사 통과, 종부세 기준일 정정 반영 확인) — 제목: 3년 알고 계셨나요? 아닙니다 — 일시적 2주택 처분기한 2년 단축, 조정대상지역 갈아타기 세금 총정리 (2026) · 카테고리: 세금·금융 · 첨부: thumbs_naver/256n_disposaldeadline.png · 태그: 일시적2주택,조정대상지역,양도소득세비과세,종합부동산세,취득세중과 · 제휴 링크 없음",
+   "due": "2026-09-18",
+   "cmd": "python -m studio.pipeline naver-draft --code B4-13 --file 'osmu/네이버용_조정대상지역일시적2주택처분기한단축.txt'  ← 누르시면 본문이 클립보드에. https://blog.naver.com/GoBlogWrite.naver 에 붙여넣고 제목·썸네일·태그 후 게시",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
