@@ -10523,8 +10523,10 @@
    "due": "2026-09-17",
    "cmd": "python -m studio.pipeline naver-draft --code H1-11 --file osmu/네이버용_날아올라라나비첫방송.txt --open",
    "owner": "user",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-17",
+   "result": "사장님 게시 완료: https://blog.naver.com/magsori8975/224414766294"
   },
   {
    "id": "taxonomy-gate-at-queue-0918",
@@ -10535,6 +10537,29 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-h111",
+   "added": "2026-09-17",
+   "what": "🔗 H1-11 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-11",
+   "due": "2026-09-17",
+   "cmd": "python studio/blogger.py crosslink --code H1-11",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "afflink-g1-07",
+   "added": "2026-09-17",
+   "what": "🛒 제휴 링크 발급 요청 — G1-07. 상품: 가쯔 다용도 콤팩트 스툴 접이식 의자, 라이트그레이, XL, 1개 (7,900원 · 리뷰 324 · 평점 4.6). 관련성: 무료 관람 구역(광안리 백사장·언덕)에서 11월 저녁 장시간 서서/앉아 기다려야 하는 독자에게 직접 필요 — 본문 4번 섹션(어르신·유아 동반 . 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-09-17",
+   "cmd": "python -m studio.tosslink link 56403",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-17",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   }
  ]
 }
