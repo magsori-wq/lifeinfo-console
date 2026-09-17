@@ -10725,6 +10725,29 @@
    "by": "이부장",
    "done_at": "2026-09-18",
    "result": "04:0x 이전 재검사 통과(V0검사관) — mois.go.kr 원문 확보(11ff51cf)·원고 4곳 정정(4029ee7f)"
+  },
+  {
+   "id": "approve-e2-17-naver",
+   "added": "2026-09-18",
+   "what": "🙋[이부장 확인 대기] 【권고】E2-17 네이버 게시 — 제목: 새 신분증이 생기는 게 아니다 — 모바일 신분증 민간개방 확대, 10월부터 뭐가 달라지나 (2026) · 카테고리: 디지털 · 첨부: thumbs_naver/259n_mobileid.png · 태그: 모바일신분증,민간개방,모바일운전면허증,모바일주민등록증,디지털신분증 · 확인: 상세도·출처링크(정책브리핑·행안부)·면책고지·제목 실검색어(모바일 신분증·민간개방·10월부터) 전부 통과 → 게시 권고",
+   "due": "2026-09-18",
+   "cmd": "python -m studio.pipeline naver-draft --code E2-17 --file 'osmu/네이버용_모바일신분증민간개방확대.txt'  ← 누르시면 클립보드에 본문이 담깁니다. 네이버 글쓰기(https://blog.naver.com/GoBlogWrite.naver)에 붙여넣고 제목 입력, 위 썸네일 첨부, 카테고리 선택 후 게시",
+   "owner": "claude",
+   "kind": "approve",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
+  },
+  {
+   "id": "naver-post-e2-17",
+   "added": "2026-09-18",
+   "what": "E2-17 네이버 게시(이과장 준비·이부장 확인 02:0x: 상세도·출처·제목 검사 통과, 은행 선정 1차출처 정정 반영·블로그 원고와 정합) — 제목: 새 신분증이 생기는 게 아니다 — 모바일 신분증 민간개방 확대, 10월부터 뭐가 달라지나 (2026) · 카테고리: 디지털 · 첨부: thumbs_naver/259n_mobileid.png · 태그: 모바일신분증,민간개방,모바일운전면허증,모바일주민등록증,디지털신분증 · 제휴 링크 없음",
+   "due": "2026-09-18",
+   "cmd": "python -m studio.pipeline naver-draft --code E2-17 --file 'osmu/네이버용_모바일신분증민간개방확대.txt'  ← 누르시면 본문이 클립보드에. https://blog.naver.com/GoBlogWrite.naver 에 붙여넣고 제목·썸네일·태그 후 게시",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
