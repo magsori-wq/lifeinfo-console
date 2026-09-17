@@ -10748,6 +10748,29 @@
    "cmd": "python -m studio.pipeline naver-draft --code E2-17 --file 'osmu/네이버용_모바일신분증민간개방확대.txt'  ← 누르시면 본문이 클립보드에. https://blog.naver.com/GoBlogWrite.naver 에 붙여넣고 제목·썸네일·태그 후 게시",
    "owner": "user",
    "kind": "action",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-18",
+   "result": "사장님 게시 https://blog.naver.com/magsori8975/224415555184 · 본문 블로그스팟 링크 확인·naver-link 기록"
+  },
+  {
+   "id": "xlink-e217",
+   "added": "2026-09-18",
+   "what": "🔗 E2-17 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E2-17",
+   "due": "2026-09-18",
+   "cmd": "python studio/blogger.py crosslink --code E2-17",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "insta-caption-3-0918",
+   "added": "2026-09-18",
+   "what": "📸 인스타 캡션 3건 — 이과장이 편집창에 입력해 두었습니다. 사장님이 각 게시물에서 「완료」만 눌러 저장해 주십시오(저장은 사람 손이어야 반영됨) ①F4-21 화담숲 https://www.instagram.com/p/DdRQXLoifzy/ (네이버 줄 추가 493→545자) ②H1-10 https://www.instagram.com/p/DdRT2OOifAi/ (535→573자) ③B1-08 자동차세 9월연납 https://www.instagram.com/p/DdPgH2oEx0o/ (빈 캡션 → 525자). 저장 후 이부장이 og:description 으로 확인합니다",
+   "due": "2026-09-18",
+   "cmd": "각 링크 열기 → 게시물 수정 → 캡션 확인 → 완료",
+   "owner": "user",
+   "kind": "action",
    "state": "todo",
    "by": "이부장"
   }
