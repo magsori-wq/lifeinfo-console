@@ -10699,6 +10699,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "b101-annual-discount-fix-0917",
+   "added": "2026-09-17",
+   "what": "B1-01(자동차세 연납할인) 라이브 오류 — 6월 5%->실제 약2.5%, 9월 2.5%->실제 약1.25% (정확히 2배 부풀려짐). 서초구청·carfia.co.kr 등 7개 출처 확인. 승인 후 blogger.py update-post 로 정정 필요",
+   "due": "2026-09-18",
+   "cmd": "python studio/blogger.py update-post --code B1-01 --dry-run",
+   "owner": "user",
+   "state": "todo",
+   "note": 222,
+   "by": "세션:cc647a6d"
   }
  ]
 }
