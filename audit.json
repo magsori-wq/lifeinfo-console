@@ -5624,6 +5624,14 @@
    "target": "approve-a5-02",
    "detail": "사장님 03:1x livefix-bundle-0915 ⑥ 승인 근거·이부장 확인(05:0x): 복지부 원문 '노인역량활용사업·공동체사업단 60세 이상(단서 없음)' 확인(docs/source_A5-02_노인일자리연령_20260918.md). 연령 표기 2개소만 정정, 카테고리명·시간·급여는 손대지 않는다",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-18T05:12:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-openapi-key-0915",
+   "detail": "키 발급됨(Client ID ameYb9f7oC1yN7g029Yg, .secrets 저장) 그러나 네이버가 검색 API 신규 등록을 중단 — 앱 설정 드롭다운에 '검색' 없음·저장 시 '신규로 등록할 수 없는 API' 오류(09-18 사장님 화면 실측). shop.json 호출 401 Scope Status Invalid. 대안=데이터랩(쇼핑인사이트) 추이만 가능. 상품 후보는 토스 인기목록+다나와로 계속",
+   "via": "cli"
   }
  ]
 }
