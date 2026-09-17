@@ -10788,13 +10788,14 @@
   {
    "id": "insta-caption-3-0918",
    "added": "2026-09-18",
-   "what": "📸 인스타 캡션 3건 — 이과장이 편집창에 입력해 두었습니다. 사장님이 각 게시물에서 「완료」만 눌러 저장해 주십시오(저장은 사람 손이어야 반영됨) ①F4-21 화담숲 https://www.instagram.com/p/DdRQXLoifzy/ (네이버 줄 추가 493→545자) ②H1-10 https://www.instagram.com/p/DdRT2OOifAi/ (535→573자) ③B1-08 자동차세 9월연납 https://www.instagram.com/p/DdPgH2oEx0o/ (빈 캡션 → 525자). 저장 후 이부장이 og:description 으로 확인합니다",
+   "what": "🙋[이부장 확인 대기] 📸 인스타 캡션 2건 재입력 완료(이과장이 이번 세션에서 편집창에 다시 입력) — 사장님이 각 게시물에서 「완료」만 눌러 저장해 주십시오 ①H1-10 SBS닥터X https://www.instagram.com/p/DdRT2OOifAi/ (535→573자, 네이버 링크 추가) ②B1-08 자동차세9월연납 https://www.instagram.com/p/DdPgH2oEx0o/ (빈 캡션→523자, 네이버 링크 추가). F4-21은 이전에 이미 완료됨(캡션0918f421). 저장 후 이부장이 og:description으로 확인합니다",
    "due": "2026-09-18",
    "cmd": "각 링크 열기 → 게시물 수정 → 캡션 확인 → 완료",
-   "owner": "user",
+   "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   },
   {
    "id": "solo-yakgwa0918",
@@ -10974,6 +10975,15 @@
    "by": "이부장",
    "req_by": "이과장",
    "kind": "action"
+  },
+  {
+   "id": "livefix-bundle-verify-0918",
+   "added": "2026-09-18",
+   "what": "정정 묶음 7건 라이브 전수 재확인(이부장 07:0x): B3-01·A5-02·A1-04·E2-16·G2-02·G1-01·H1-02 모두 옛 표현 0건. 네이버 4건(E2-16·G2-02·G1-01·H1-02)은 사장님 카드로 대기",
+   "cmd": "for 코드 in B3-01 A5-02 A1-04 E2-16 G2-02 G1-01 H1-02; do : ; done  # 재확인은 각 글 url 을 curl 로 옛 표현 grep",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장"
   }
  ]
 }
