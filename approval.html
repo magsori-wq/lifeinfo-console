@@ -1098,7 +1098,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var actionsDetails = '<details style="margin-top:10px"><summary class="why" style="cursor:pointer">'
     +'☑️ 미결 조치 '+actions.length+'건 펼치기 '
     +'<span style="opacity:.6;font-weight:400">(결재 건수에 안 들어감 — 기한 도래분만'
-    +(actionsFutureN?' · 기한 전 '+actionsFutureN+'건 별도(미결사항 탭)':'')+')</span>'
+    +')</span>'
+    // 🔴 2026-09-18 사장님 지적("왜 CP엔 보이지 않지?") — 그전에는 '기한 전 N건
+    //    별도(미결사항 탭)' 라는 글자만 있어서 **어디를 눌러야 하는지** 가 없었다.
+    //    목록 자체는 미결사항 탭(pending_osmu.html)의 '⏳ 기한 전' 접힘에 이미
+    //    그려지고 있었는데, 거기로 가는 길이 없어 숫자만 보이고 내용은 못 봤다.
+    //    → 누르면 그 탭으로 넘어가는 링크로 바꾼다(부모 프레임의 탭 버튼을 클릭).
+    +(actionsFutureN?'<div style="margin:6px 0 0"><a href="#" style="color:#7fb0e0;'
+      +'font-size:12px;text-decoration:underline" onclick="try{parent.document'
+      +'.querySelector(\'[data-t=pendosmu]\').click();}catch(e){}return false;">'
+      +'⏳ 기한 전 '+actionsFutureN+'건 — 미결사항 탭에서 펼쳐 보기 →</a></div>':'')
     +'</summary>'+actionsBody+'</details>';
   H+=pane('🙋','사장님 결재 대기',bossBadge,bossBody+actionsDetails);
 
