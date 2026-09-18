@@ -10794,9 +10794,11 @@
    "cmd": "위 두 링크 열기 → 게시물 수정 창에서 캡션 확인 → 완료",
    "owner": "user",
    "kind": "action",
-   "state": "wait",
+   "state": "done",
    "by": "이부장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-18",
+   "result": "사장님 09-18 지시 변경 — 저장까지 이과장이 한다(3회 실패 시에만 사장님께). 배치 caption0918h110 으로 이전"
   },
   {
    "id": "solo-yakgwa0918",
@@ -11102,10 +11104,22 @@
    "due": "2026-09-18",
    "cmd": "python -m studio.pipeline naver-draft --code A1-17 --file 'osmu/네이버용_청년내일저축계좌만기지급.txt'  ← 누르시면 본문이 클립보드에. https://blog.naver.com/GoBlogWrite.naver 붙여넣기 → 제목·썸네일·태그 → 게시",
    "owner": "user",
-   "state": "wait",
+   "state": "done",
    "by": "이부장",
    "req_by": "이과장",
-   "kind": "action"
+   "kind": "action",
+   "done_at": "2026-09-18",
+   "result": "사장님 게시 https://blog.naver.com/magsori8975/224415937948 · 본문 블로그스팟 링크·제목 점검 확인·naver-link 기록"
+  },
+  {
+   "id": "xlink-a117",
+   "added": "2026-09-18",
+   "what": "🔗 A1-17 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-17",
+   "due": "2026-09-18",
+   "cmd": "python studio/blogger.py crosslink --code A1-17",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
