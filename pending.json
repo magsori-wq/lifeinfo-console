@@ -1,16 +1,33 @@
 {
- "rev": "86766443",
+ "rev": "e5150f76",
  "counts": {
-  "total": 283,
+  "total": 284,
   "osmu_done": 283,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 283,
+  "index_pending": 284,
   "index_requested": 157,
-  "index_todo": 32,
+  "index_todo": 33,
   "index_benign": 94
  },
  "actionable": [
+  {
+   "code": "A6-05",
+   "title": "실업크레딧 신청 방법 대상 지원율 국민연금 보험료 75",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-15",
    "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
@@ -206,22 +223,6 @@
   {
    "code": "D1-10",
    "title": "주민등록표 등초본 세대주 관계 표기 개선 총정리 (20",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "D3-06",
-   "title": "가정용 소화기 내용연수 확인 방법 총정리 (2026 분",
    "need": [
     "색인요청"
    ],
