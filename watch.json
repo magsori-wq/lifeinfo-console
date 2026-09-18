@@ -11535,6 +11535,15 @@
    "owner": "claude",
    "state": "done",
    "by": "에이전트"
+  },
+  {
+   "id": "c410-link-fix-0919",
+   "added": "2026-09-19",
+   "what": "C4-10 미게시 초안: law.go.kr DRF 개발용 API 주소(OC=test) 3곳을 독자용 https://www.law.go.kr/법령/... 형식으로 교체, 도입부 '공식 발표 기준'→'법령이 정한 구간과 보도된 금액 사례'로 출처 구분. bodydup 0.069 신규 · layout 통과. 커밋 8c4bbeea",
+   "cmd": "grep -c OC=test C:/lifeinfo/추석연휴병원비30퍼센트가산_글_HTML.txt",
+   "owner": "claude",
+   "state": "done",
+   "by": "에이전트"
   }
  ]
 }
