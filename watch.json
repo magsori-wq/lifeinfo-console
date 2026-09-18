@@ -11392,9 +11392,11 @@
    "cmd": "python -m studio.pipeline naver-draft --code B4-14 --file osmu/네이버용_경정청구하는법.txt",
    "owner": "claude",
    "kind": "approve",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-18",
+   "result": "사장님이 직접 게시하심 https://blog.naver.com/magsori8975/224416323567 (18:2x) — 이부장이 naver-link 로 기록. 결재 카드는 종결"
   },
   {
    "id": "xlink-b108",
@@ -11425,6 +11427,16 @@
    "what": "🔗 A6-05 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A6-05",
    "due": "2026-09-18",
    "cmd": "python studio/blogger.py crosslink --code A6-05",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-b414",
+   "added": "2026-09-18",
+   "what": "🔗 B4-14 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-14",
+   "due": "2026-09-18",
+   "cmd": "python studio/blogger.py crosslink --code B4-14",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
