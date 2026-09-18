@@ -11084,6 +11084,16 @@
    "req_by": "이과장",
    "done_at": "2026-09-18",
    "result": "통합: naver-fix-6-0918 카드 + docs/네이버정정_20260918.md 에 추가(이부장 11:0x) — 작업 미완, 그 카드에서 계속"
+  },
+  {
+   "id": "reportlog-stale-0918",
+   "added": "2026-09-18",
+   "what": "batch.json 의 report_log 배열이 09-12 이후 갱신 안 됨(최근 6건 전부 09-12) — 실제 보고는 batches.routinelog.items 에만 쌓이는 중. report_log 가 어딘가에서 참조되는 죽은 경로인지, 아니면 CP 다른 화면이 이걸 읽고 있어서 그 화면만 낡아 보이는지 확인 필요",
+   "due": "2026-09-18",
+   "cmd": "python -c \"import json; d=json.load(open('webapp/batch.json',encoding='utf-8')); print(len(d.get('report_log',[])), d['report_log'][-1] if d.get('report_log') else None)\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:024e6c54"
   }
  ]
 }
