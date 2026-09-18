@@ -11381,6 +11381,18 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "approve-naver-b414",
+   "added": "2026-09-18",
+   "what": "🙋[이부장 확인 대기] B4-14 네이버 게시 요청. 【권고】승인 후 아래 cmd 로 클립보드 적재→붙여넣기·게시 권합니다. 【근거】제목 세금 더 냈는데 그냥 넘어갔다면? 경정청구 방법으로 5년 안에 돌려받으세요 (2026) — naverkw 검증 통과(경정청구·경정청구 방법 실검색어). 출처 3종(국세기본법 제45조의2·제61조, 법률 제21860호) law.go.kr 원문 대조. 함께보면좋은글 2건·태그 7개·면책고지 포함, 파이프테이블 없음. 전용 썸네일 thumbs_naver/262n_correction_claim.png. 【위험】없음 — 신규 게시, 되돌릴 수 있음",
+   "due": "2026-09-18",
+   "cmd": "python -m studio.pipeline naver-draft --code B4-14 --file osmu/네이버용_경정청구하는법.txt",
+   "owner": "claude",
+   "kind": "approve",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
