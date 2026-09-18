@@ -11199,6 +11199,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "adsense-verify-bgroup-0918",
+   "added": "2026-09-18",
+   "what": "[4. 할 일] AD-3 B묶음(A4-02·F3-06·B2-07·A3-02) 보강 효과 검증 — 이부장 판정 '쓸모 있음, 묶음마다 1회'(09-18). 4편 보강이 전부 끝난 뒤 한 번에: 라이브 본문 vs docs/adsense_audit_tier2_20260915.jsonl 지적 대조, 정확성·완결성 🟢🟡🔴 + 근거 한 줄, 가독성은 layout.check 경고·D안 요소 개수만. 결과=adsense0915 보드 + audit 문서. 라이브 수정 금지. 겹치는 A3-02 는 출처 박스 추가 여부도 확인",
+   "due": "2026-09-19",
+   "cmd": "git log --since=2026-09-18 --pretty=%s | grep -E 'A4-02|F3-06|B2-07|A3-02'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
   }
  ]
 }
