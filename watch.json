@@ -11393,6 +11393,27 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "xlink-b108",
+   "added": "2026-09-18",
+   "what": "🔗 B1-08 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B1-08",
+   "due": "2026-09-18",
+   "cmd": "python studio/blogger.py crosslink --code B1-08",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "naver-post-a605",
+   "added": "2026-09-18",
+   "what": "A6-05 「실업크레딧」 네이버 게시(이과장 준비·이부장 확인 18:0x: 상세도·제목 검사 통과, 출처 절 있음 — 앞선 '미달 1건'은 검사기 오탐이었고 수리했습니다) — 제목: 실업급여 받으면 국민연금은 어떻게 되나요? · 첨부: thumbs_naver/261n_unemploy_credit.png · 제휴 링크 없음. 라이브 https://lifeinfo8975.blogspot.com/2026/09/75-2026.html",
+   "due": "2026-09-19",
+   "cmd": "python -m studio.pipeline naver-draft --code A6-05 --file 'osmu/네이버용_실업크레딧.txt'  ← 누르시면 본문이 클립보드에. https://blog.naver.com/GoBlogWrite.naver 붙여넣기 → 제목·썸네일·태그 → 게시",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
