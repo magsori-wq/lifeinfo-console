@@ -11094,6 +11094,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:024e6c54"
+  },
+  {
+   "id": "naver-post-a117",
+   "added": "2026-09-18",
+   "what": "🙋[이부장 확인 대기] A1-17(청년내일저축계좌 만기지급) 네이버 게시 — 제목: 3년 채웠는데 왜 못 받지? 청년내일저축계좌 만기지급 조건 4가지(2026) / 카테고리: 정부지원·복지 / 첨부: thumbs_naver/260n_youth_savings.png / 추천태그: 청년내일저축계좌, 자산형성지원, 만기지급, 근로소득장려금, 정부지원금, 자활사업",
+   "due": "2026-09-18",
+   "cmd": "python -m studio.pipeline naver-draft --code A1-17 --file osmu/네이버용_청년내일저축계좌만기지급.txt --open 로 클립보드 적재 후 https://blog.naver.com/GoBlogWrite.naver 에서 Ctrl+V → 게시. URL 확보 후 python -m studio.pipeline naver-link --code A1-17 --url <URL>",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
