@@ -11414,8 +11414,20 @@
    "cmd": "python -m studio.pipeline naver-draft --code A6-05 --file 'osmu/네이버용_실업크레딧.txt'  ← 누르시면 본문이 클립보드에. https://blog.naver.com/GoBlogWrite.naver 붙여넣기 → 제목·썸네일·태그 → 게시",
    "owner": "user",
    "kind": "action",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-18",
+   "result": "사장님 게시 https://blog.naver.com/magsori8975/224416319240 · 블로그스팟 링크·제목 점검 확인·naver-link 기록"
+  },
+  {
+   "id": "xlink-a605",
+   "added": "2026-09-18",
+   "what": "🔗 A6-05 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A6-05",
+   "due": "2026-09-18",
+   "cmd": "python studio/blogger.py crosslink --code A6-05",
+   "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "naver-link"
   }
  ]
 }
