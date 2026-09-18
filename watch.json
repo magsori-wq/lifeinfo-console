@@ -11486,6 +11486,25 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "e217-mois-oct-banks",
+   "added": "2026-09-18",
+   "what": "E2-17 모바일신분증 10월 3차개방 구체 은행명 미확인 상태 — mois.go.kr 추진경과 페이지(2026-09-18 확인)엔 아직 은행명 없음. 단 dailian·zdnet(2026-05) 등 언론은 신한SOL뱅크·우리WON뱅킹·하나원큐·IBK i-ONE Bank 4개행을 이미 거론(2차출처, 본문엔 안 실음 — SOP상 정당). 10월 되면 mois 공식발표로 재확인 후 본문에 은행명 반영 검토",
+   "due": "2026-10-15",
+   "cmd": "curl -s -A Mozilla/5.0 https://www.mois.go.kr/frt/sub/a06/b04/mobileId/screen.do | grep -o '10月\\|10.월\\|3차 개방' 로 추진경과 갱신 확인, 갱신됐으면 python studio/blogger.py update-post --code E2-17 로 은행명 반영 검토",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:3ad7027a"
+  },
+  {
+   "id": "f422-dog-line-0918",
+   "added": "2026-09-18",
+   "what": "F4-22: 출처없는 '반려견 동반 옵션도 동일 가격' 문구 삭제(63줄). 문단은 '1일권·2일권·3일권 세 종류입니다'로 자연스럽게 정리. bodydup 0.059(신규) · layout ✅ 통과. 커밋 d4a357af. 파일 내 '반려견' 잔존 0건",
+   "cmd": "grep -c 반려견 C:/lifeinfo/자라섬재즈페스티벌_글_HTML.txt",
+   "owner": "claude",
+   "state": "done",
+   "by": "에이전트"
   }
  ]
 }
