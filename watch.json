@@ -11359,28 +11359,6 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
-  },
-  {
-   "id": "stash-cleanup-0919",
-   "added": "2026-09-18",
-   "what": "🧹 git stash 7개 정리 — 08-30~09-03 것까지 쌓여 있다(사장님 09-18 에 최근 2개는 drop 완료). 하나씩 git stash show --stat 으로 비파생 항목만 확인하고, 살릴 것이 있으면 경로 지정 커밋, 없으면 사장님께 한 줄 명령으로 올린다(drop 은 세션이 하지 않는다)",
-   "due": "2026-09-19",
-   "cmd": "git stash list",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
-   "id": "approve-naver-a605",
-   "added": "2026-09-18",
-   "what": "🙋[이부장 확인 대기] A6-05 네이버 게시 요청. 【권고】승인 후 아래 cmd 로 클립보드 적재→붙여넣기·게시 권합니다. 【근거】제목 실업급여 받으면 국민연금 끊긴다? 실업크레딧 신청하면 보험료 75% 대신 내줍니다 (2026) — naverkw 검증 통과(실업급여 실업크레딧·실업크레딧 신청 실검색어). 출처 4종(국민연금법 제19조의2·시행령·고시 제2025-230호·정부24) 원문 대조. 함께보면좋은글 2건·태그 7개·면책고지 포함, 파이프테이블 없음. 전용 썸네일 thumbs_naver/261n_unemploy_credit.png. 【위험】없음 — 신규 게시, 되돌릴 수 있음",
-   "due": "2026-09-18",
-   "cmd": "python -m studio.pipeline naver-draft --code A6-05 --file osmu/네이버용_실업크레딧.txt",
-   "owner": "claude",
-   "kind": "approve",
-   "state": "wait",
-   "by": "이과장",
-   "req_by": "이과장"
   }
  ]
 }
