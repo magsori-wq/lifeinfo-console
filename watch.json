@@ -7369,8 +7369,10 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.watch due",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "09-10 정리 작업 자체는 완료됨(27건 닫음 기록). 남은 10건은 개별 watch id로 계속 추적 중이며 이번 전수재확인(09-20)에서 각각 재검토함."
   },
   {
    "id": "session-group-restore-0910",
@@ -7654,8 +7656,10 @@
    "cmd": "python -m studio.approvalcount",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: 현재 topic_pick 은 사장님(boss) 큐가 아니라 이부장(lee) 큐로만 감(approval.html:733). topic_approve boss.push 는 09-04 커밋(2bd7098d)에서 이미 비활성화됨(if(false&&...)). 09-20 approvalcount 실행시 사장님 결재대기 1건뿐, 글감 중복승인 카드 없음 — 재현 안 됨."
   },
   {
    "id": "afflink-h1-06-naver",
@@ -7899,8 +7903,10 @@
    "due": "2026-09-12",
    "cmd": "python -m studio.batchboard now --batch pub0911c408 --code C4-08 --what 재현시험 ; sed -n '1560,1590p' studio/batchboard.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/batchboard.py:1772 이 _st[min(ns.step,len(_st))-1] 로 클램프됨. 실제로 --step 없이 batchboard now 실행 → IndexError 없이 정상 완료(재현 안 됨)."
   },
   {
    "id": "afflink-c4-08",

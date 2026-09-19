@@ -6552,6 +6552,30 @@
    "target": "index-gap-0910",
    "detail": "09-10 당시 미요청 14편 원인분석 완료(3버킷 분류, 배선결함 2건 문서화). C2-15·F2-17 index_status 누락은 스스로 밝힌 대로 '정상지연'이라 다음 inspect에서 자동해소 — 09-20 python -m studio.pending 재확인시 정상 구조(미요청38/요청함157/양성94)로 순환 중.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:00:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "draft-dispatch-0910",
+   "detail": "09-10 처리분 재확인: G3-05 발행 완료(url 존재), B4-11 발행 완료(E4-02 중복드랍 후 재배정된 코드). A6-04·B5-02 는 DB에 없음(드랍/취소 결정대로). 09-10 판단이 그대로 반영되어 완결.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:00:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "claude-backlog-0910b",
+   "detail": "09-10 정리 작업 자체는 완료됨(27건 닫음 기록). 남은 10건은 개별 watch id로 계속 추적 중이며 이번 전수재확인(09-20)에서 각각 재검토함.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:01:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "approve-card-lingers-0911",
+   "detail": "재확인: 현재 topic_pick 은 사장님(boss) 큐가 아니라 이부장(lee) 큐로만 감(approval.html:733). topic_approve boss.push 는 09-04 커밋(2bd7098d)에서 이미 비활성화됨(if(false&&...)). 09-20 approvalcount 실행시 사장님 결재대기 1건뿐, 글감 중복승인 카드 없음 — 재현 안 됨.",
+   "via": "cli"
   }
  ]
 }
