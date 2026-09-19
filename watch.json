@@ -11730,6 +11730,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "osmu-table-unpublished-0919",
+   "added": "2026-09-19",
+   "what": "osmu_manifest table --code <미발행코드> 가 KeyError 'eng' 로 죽는다(A2-19 발행 전 실측). 미발행 글은 slug/eng 가 없으니 get()으로 받고 '발행 전' 표시",
+   "due": "2026-09-21",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.osmu_manifest table --code A2-19",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
