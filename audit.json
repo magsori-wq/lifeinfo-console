@@ -6864,6 +6864,38 @@
    "target": "h106-spaf-open-recheck",
    "detail": "9일 경과 — 09-11 14:00 예매 오픈 여부를 지금 재확인하는 것은 더 이상 의미 없음(이미 지난 시점). 예매 기간 자체가 지났을 가능성이 높아 시의성 이슈 자체가 소멸.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:32:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threads-reply-focus-0912",
+   "detail": "CLAUDE.md 에 이후 처방이 확정 기록됨: JS el.focus()+el.click()+Range설정 뒤 실제 ctrl+v 로 A1-15·G3-06 2건 성공, '표준으로 올린다' 명시. 3회 실패시 멈추는 안전장치도 유지. 조사 자체는 완결(인스타에는 옮기지 말 것이라는 반증도 함께 기록됨).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:33:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-card-gate-unverified-0912",
+   "detail": "실동작 확인됨: python -m studio.osmu_manifest show --code A6-05(최신 발행분) 실행 → '✅ 인스타 카드 4장 (표지 실사진 고유색 7216)' 로 실제 판정·출력됨. 캡션 네이버링크 게이트(267~305행)도 소스에 정상 존재. 다음 새 글에서 실제로 걸리는 것을 확인 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:33:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "order-read-blind-0912",
+   "detail": "9일 경과, 재발 보고 없음(일일_문제기록.md 에 유사 사례 없음). 이후 wakewatch(09-13 신설)가 지시서 미확인 세션을 주기적으로 강제 재깨움 — 원인 자체(변경 인식 실패)는 미해결이나 완화장치가 가동 중.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:33:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "browser-write-dead-0912",
+   "detail": "CLAUDE.md 1827행 '인스타는 세션이 열고 사장님이 저장한다'(09-12 사장님 지시)로 근본 해결됨 — '저장 안 됨' 문제를 코드로 뚫는 대신 분업으로 우회. 좌표 어긋남 부분은 JS el.click() 처방으로 별도 해결.",
+   "via": "cli"
   }
  ]
 }
