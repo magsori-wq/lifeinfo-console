@@ -3111,7 +3111,9 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.watch | grep -A3 gsc-validation-0829",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-20",
+   "result": "이후 09-15(validation-result-0915, 완료됨)·09-17(validation-fail-0917) 재확인으로 대체 — '유효성 검사는 레버가 아니다' 결론이 3회차까지 반복 확인됨(통과 0). 08-29 최초 트리거 원인은 끝내 미확정이나 결론에 영향 없어 추적 종료."
   },
   {
    "id": "pc-boot-slow-0830",
@@ -3297,8 +3299,10 @@
    "due": "2026-09-08",
    "cmd": "start https://searchadvisor.naver.com  그리고  start https://creator-advisor.naver.com",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-09-20",
+   "result": "위임 완료 확인: 사장님이 09-07 3.세션에 위임, 이후 webapp/naver_analytics_summary.json 이 09-20 06:00 자로 최신 갱신되어 파이프라인 정상 가동 중. 이부장 몫이 아니게 됨."
   },
   {
    "id": "naver-rewrite-5",
@@ -3450,7 +3454,9 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.osmu_manifest table --code D4-11",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/osmu_manifest.py:370-374 주석 확인 — 2026-08-17 재설계로 별도 HTML 분할화면·브라우저 열기가 사용자 명시 거부(\"브라우저 아니라니까!!!\")로 전부 폐기되고, 클릭 가능한 마크다운 링크가 박힌 표(cmd_table) 하나로 확정됨. 즉 분할화면은 '미이행'이 아니라 '폐기 결정'이었다 — CLAUDE.md 서술을 정정할 사안."
   },
   {
    "id": "d211-block-vs-approved-check",
@@ -10557,8 +10563,10 @@
    "due": "2026-09-17",
    "cmd": "python -m studio.v0check gate --code G1-07",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:6610cf11"
+   "state": "done",
+   "by": "세션:6610cf11",
+   "done_at": "2026-09-20",
+   "result": "재확인: v0check.json G1-07 최종 pass. 동시검사 구조적 낭비 지적은 유효하나 게이트 판정(나중 것이 남는다) 자체는 정상 작동해 실해 없었음 — 예약표시 개선은 낮은 우선순위로 기록만 남김."
   },
   {
    "id": "validation-fail-0917",
@@ -10567,8 +10575,10 @@
    "due": "2026-09-17",
    "cmd": "python -m studio.watch --id validation-result-0915",
    "owner": "claude",
-   "state": "todo",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-09-20",
+   "result": "부모 카드 validation-result-0915 이미 done(사장님 승인·완료됨). 09-17 3회차 결론('통과 0·유효성검사 레버아님') 확정. 재시작 버튼 안 누름(사장님 결정 유지)."
   },
   {
    "id": "source-h111-tving-ott",

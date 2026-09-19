@@ -6712,6 +6712,38 @@
    "target": "osmu-order-naver-first",
    "detail": "재확인: studio/naverfind.py 에 gate(code) 함수(174행) 존재 — H1-10 부터(START_CODE=56행) 네이버 게시 전에는 인스타 캡션·쓰레드 원고를 내지 않는 게이트가 실제 구현됨(2026-09-14). CLAUDE.md 에도 동일 내용 반영됨. 09-07 당시 없던 채널간 순서 가드가 이후 만들어짐.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:22:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-validation-0829-5types",
+   "detail": "이후 09-15(validation-result-0915, 완료됨)·09-17(validation-fail-0917) 재확인으로 대체 — '유효성 검사는 레버가 아니다' 결론이 3회차까지 반복 확인됨(통과 0). 08-29 최초 트리거 원인은 끝내 미확정이나 결론에 영향 없어 추적 종료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:22:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "validation-fail-0917",
+   "detail": "부모 카드 validation-result-0915 이미 done(사장님 승인·완료됨). 09-17 3회차 결론('통과 0·유효성검사 레버아님') 확정. 재시작 버튼 안 누름(사장님 결정 유지).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:22:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-dup-check-g107-0917",
+   "detail": "재확인: v0check.json G1-07 최종 pass. 동시검사 구조적 낭비 지적은 유효하나 게이트 판정(나중 것이 남는다) 자체는 정상 작동해 실해 없었음 — 예약표시 개선은 낮은 우선순위로 기록만 남김.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:22:58",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-stats-check",
+   "detail": "위임 완료 확인: 사장님이 09-07 3.세션에 위임, 이후 webapp/naver_analytics_summary.json 이 09-20 06:00 자로 최신 갱신되어 파이프라인 정상 가동 중. 이부장 몫이 아니게 됨.",
+   "via": "cli"
   }
  ]
 }
