@@ -7152,6 +7152,22 @@
    "target": "ad3-effect-check-0918",
    "detail": "재확인: batchboard show → adsense0915 배치 6/6(100%) 완료. AD-3 보강 효과 검증 사이클 완결됨.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:49:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "solo-apple-0919",
+   "detail": "세척사과 후보는 실제로 게시되지 않음(solo 목록에 없음) — 09-19 실제로는 맥세이프 거치대(iphone-magsafe-0919)가 게시됨. 이후 루틴8·9 가 매일 이슈상품 후보를 별도로 수집·보고하는 체제로 이관되어(git log 확인) 이 구체적 제안은 자연 소멸.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:50:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "stash-cleanup-0919",
+   "detail": "7개 전수 review 완료: git stash show --stat/-p 로 각각 확인 — 전부 파생상태 노이즈이거나 이미 다른 경로로 반영된 중복. 살릴 것 0건. 드랍 결정은 stash-review-result-0920 으로 사장님께 넘김(세션이 drop 하지 않음).",
+   "via": "cli"
   }
  ]
 }

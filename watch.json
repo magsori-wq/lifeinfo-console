@@ -11561,8 +11561,10 @@
    "due": "2026-09-19",
    "cmd": "git stash list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "7개 전수 review 완료: git stash show --stat/-p 로 각각 확인 — 전부 파생상태 노이즈이거나 이미 다른 경로로 반영된 중복. 살릴 것 0건. 드랍 결정은 stash-review-result-0920 으로 사장님께 넘김(세션이 drop 하지 않음)."
   },
   {
    "id": "approve-naver-a605",
@@ -11968,6 +11970,17 @@
    "due": "2026-09-25",
    "cmd": "python -m studio.blogger update-post --code A2-15 --check",
    "owner": "user",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "stash-review-result-0920",
+   "added": "2026-09-20",
+   "what": "git stash 7개 전수 검토 완료(이부장) — 전부 살릴 내용 없음(파생 상태파일 노이즈 5개: {0,2,4,5,6} · 이미 다른 경로로 반영돼 중복인 것 2개: {1}=B1-09 쓰레드URL 이미 DB에 있음, {3}=F1-15 임시제휴가 실제 2건 링크로 이미 대체됨). 전부 버려도 안전. 사장님 승인 시 drop 진행.",
+   "due": "2026-09-30",
+   "cmd": "git stash clear   # 7개 전부 폐기(검토 완료·살릴 것 없음 확인됨)",
+   "owner": "user",
+   "kind": "action",
    "state": "todo",
    "by": "이부장"
   }
