@@ -512,7 +512,13 @@ function refresh(){
 //    ⚠️ 서버는 **버튼 활성화**에만 쓰인다(SRV). 데이터와 아무 관계가 없다.
 var DATA = Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
              j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
-             j('watch.json'),j('pending.json'),j('osmu_text.json'),j('rep_groups.json')]);
+             j('watch.json'),j('pending.json'),j('osmu_text.json'),j('rep_groups.json'),
+             // 🔴🔴 **파이썬이 판정한 결과** (2026-09-19 · approvalcount.flow()).
+             //    진행중 문서 단계·「비어 있는 이유」·기한 분류를 **여기서 다시 계산하지 않는다.**
+             //    그전에는 JS 가 같은 조건을 옮겨 적었고(주석이 그렇게 자백했다),
+             //    그 탓에 한 글이 「③지시」와 「④초안 작성 중」으로 **동시에** 보였다.
+             //    ⚠️ flow.json 이 없으면(구버전 bake) 아래 JS 판정으로 되돌아간다.
+             j('flow.json')]);
 
 // 🔴 **화면이 스스로 이상을 알린다** (2026-09-04 사장님: "cp 관리 똑바로 못해!?")
 //    `studio/gatecheck.py` 가 bake 마다 돌아 `gates.json` 을 굽는데
@@ -590,6 +596,8 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
  return DATA.then(function(a){
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
   var W=arr(a[7]), PEND=(a[8]||{}).actionable||[], OT=a[9]||{}, REPG=a[10]||{};
+  // 🔴 파이썬이 구운 판정(approvalcount.flow). 없으면 아래 JS 판정으로 되돌아간다.
+  var FLOW=a[11]||null;
   var byc={}; (DB.posts||[]).forEach(function(p){byc[p.code]=p;});
   // 🔴 2026-09-03 — publish_run(⑧)·반려(rej) 카드가 미리보기를 못 낸 원인.
   //    facts/sum 은 queue.json 행에만 있는데, 그 두 카드는 queue 행을 다시 안 들여다봤다.
@@ -897,6 +905,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //       "진행 중 문서"가 엉뚱한 단계에서 멈춰 보인다(실제로 그랬다).
   var LAB=['①제안','②선별','③지시','④초안','⑤V0','⑥발행승인','⑦발행','⑧OSMU'];
   function stepOf(code){
+    // 🔴 파이썬 판정이 있으면 그것이 진실원이다(2026-09-19). 아래 JS 는 폴백이다.
+    if(FLOW&&FLOW.docs){
+      for(var _i=0;_i<FLOW.docs.length;_i++){
+        if(FLOW.docs[_i].code===code) return FLOW.docs[_i].step;
+      }
+    }
     var t=T.filter(function(x){return x.code===code;})[0];
     var q=Q.filter(function(x){return x.code===code;})[0];
     var v=v0[code], p=byc[code];
@@ -1086,6 +1100,13 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         var v0w=Q.filter(function(q){return !v0[q.code]&&!pub(q.code);}).length;
         var gone=Q.filter(function(q){return q.go&&!pub(q.code);}).length;
         var why=[];
+        // 🔴 FLOW 가 있으면 **파이썬 판정을 그대로 쓴다** — 여기서 다시 세지 않는다.
+        if(FLOW&&FLOW.why){
+          return '<p class="none">✅ 지금 사장님이 결재하실 원고는 없습니다.'
+            +(FLOW.why.length?'<br><b>비어 있는 이유:</b> '+esc(FLOW.why.join(' · '))
+                             +' — 앞 단계가 끝나면 여기로 올라옵니다.'
+                            :'<br>진행 중인 원고도 없습니다(제안이 들어오면 선별부터 시작합니다).')+'</p>';
+        }
         if(wait) why.push('② 선별 대기 '+wait+'건');
         // 🔴🔴 **"작성 중" 과 "지시도 안 나감" 을 가른다** (2026-09-19 사장님 화면 지적)
         //    전에는 선별만 됐으면 무조건 「④ 초안 작성 중」이라 적었다 — **작성 중인지
@@ -1155,13 +1176,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       //    미뤄 둔 것까지 한자리에 있다. 사장님 전용 목록이 따로 있는데 내가 줄곧
       //    다른 탭만 안내했다.
       +'.querySelector(\'[data-t=mytasks]\').click();}catch(e){}return false;">'
-      +'⏳ '+(actionsSoonN?'곧(이틀 안) '+actionsSoonN+'건':'곧 볼 것 없음')
-      +(actionsFutureN-actionsSoonN>0?' · 미뤄 둔 것 '+(actionsFutureN-actionsSoonN)+'건':'')
+      +'⏳ '+((FLOW&&FLOW.soon?FLOW.soon.length:actionsSoonN)
+             ?'곧(이틀 안) '+(FLOW&&FLOW.soon?FLOW.soon.length:actionsSoonN)+'건':'곧 볼 것 없음')
+      +((FLOW?FLOW.later:(actionsFutureN-actionsSoonN))>0
+        ?' · 미뤄 둔 것 '+(FLOW?FLOW.later:(actionsFutureN-actionsSoonN))+'건':'')
       +' — 미뤄 둔 것까지 보기 →</a></div>':'')
     // 🔴 곧 볼 것은 **여기서 바로** 보인다(사장님 2026-09-19 *"보여야 하지 않나?"*).
     //    미뤄 둔 것은 개수만 — 그건 날짜가 되면 위 목록으로 올라온다.
-    +(actionsSoon.length?'<div style="margin:6px 0 0;padding:6px 8px;border-left:2px solid #4a6fa5">'
-      +actionsSoon.sort(function(x,y){return String(x.due).localeCompare(String(y.due));})
+    +((FLOW&&FLOW.soon?FLOW.soon:actionsSoon).length
+      ?'<div style="margin:6px 0 0;padding:6px 8px;border-left:2px solid #4a6fa5">'
+      +(FLOW&&FLOW.soon?FLOW.soon:actionsSoon).sort(function(x,y){return String(x.due).localeCompare(String(y.due));})
         .map(function(a){return '<div style="font-size:12px;opacity:.9;padding:2px 0">'
           +'<b style="color:#9fc4e8">'+esc(a.due)+'</b> '
           +(a.blocked?'🚫 ':'')+esc(String(a.what).slice(0,70))
