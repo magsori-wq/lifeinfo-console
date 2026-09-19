@@ -11694,9 +11694,20 @@
    "cmd": "python -m studio.approvalcount",
    "owner": "user",
    "kind": "approve",
-   "state": "wait",
+   "state": "done",
    "by": "세션:5552cd84",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-19",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "topic-hunt-0919",
+   "added": "2026-09-19",
+   "what": "재고0 글감헌팅: A2-99(에너지바우처 9/30 소멸, rec) 등록완료·검토대기. E1-99(최적요금제고지)는 실제시행일 11/20(법원문확인, 2차출처 10/1 오보 정정)이라 defer→10/15 재상정. 자동차세연납·부가세예정고지·재산세2기분·독감접종·조정대상2주택(B4-13)·추석생계급여(A2-15)·9/28임시공휴일(H1-03 기제외)·국군의날임시공휴일 전부 기발행/기제외 확인. 경기도 산후조리비 9/30종료는 1차출처(gg.go.kr) 미확보로 미등록(2차출처만) — 필요시 source에이전트 재확인",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "done",
+   "by": "docflow(에이전트)"
   }
  ]
 }
