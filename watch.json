@@ -10744,7 +10744,7 @@
    "id": "taxonomy-gate-at-queue-0918",
    "added": "2026-09-17",
    "what": "B5-04 가 taxonomy 에 없는 중분류(B5)로 배정돼 발행 사전점검(pipeline 0c-4)에서야 막혔다(09-17 run 35178038660 · 사장님 승인 뒤). A6-02(09-06)에 이어 두 번째. 코드를 정하는 자리(docflow 선별·pubqueue add)에서 taxonomy 를 검사하게 앞당긴다 — pipeline 0c-4 판정 로직 재사용",
-   "due": "2026-09-18",
+   "due": "2026-09-27",
    "cmd": "grep -n taxonomy studio/pubqueue.py",
    "owner": "claude",
    "state": "todo",
@@ -10872,8 +10872,10 @@
    "due": "2026-09-18",
    "cmd": "python -m studio.approvalcount && python -m studio.now",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: 사장님 일과(18~04외근·05~11:30취침·12시CP) 가 이미 사용자 메모리 boss-daily-schedule.md 로 영구 저장됨(2026-09-17). 야간운영 절차(밤 루틴→이부장 선별·V0→04시전 결재카드)가 정확히 이 계획대로 일상화됨."
   },
   {
    "id": "approve-b4-13-naver",
@@ -11293,8 +11295,10 @@
    "due": "2026-09-18",
    "cmd": "python -c \"import json; d=json.load(open('webapp/batch.json',encoding='utf-8')); print(len(d.get('report_log',[])), d['report_log'][-1] if d.get('report_log') else None)\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:024e6c54"
+   "state": "done",
+   "by": "세션:024e6c54",
+   "done_at": "2026-09-20",
+   "result": "재확인: report_log 는 코드·HTML 어디서도 읽는 곳이 0건(grep 확인) — 완전히 죽은 필드로 확정됨. 실제 보고는 batches.*.items[].note/currents 경로로만 가고 있고 그쪽은 정상 작동(reports.html 이 매번 갱신됨, mtime 09-20 확인). 죽은 필드라 위험 없음 — 방치해도 무방."
   },
   {
    "id": "naver-post-a117",
@@ -11329,8 +11333,10 @@
    "due": "2026-09-18",
    "cmd": "python -m studio.batchboard show | grep caption",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: batchboard show → caption0918f421·caption0918h110·caption0918rest(잔여 7편) 전부 100% 완료. 이과장 단독 캡션 저장 체제(09-18 사장님 지시)가 실제로 완결됨."
   },
   {
    "id": "insta-window-focus-0918",
@@ -11387,8 +11393,10 @@
    "due": "2026-09-19",
    "cmd": "python -m studio.batchboard order --id adsense0915  # 4. 보고 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: batchboard show → adsense0915 배치 6/6(100%) 완료. AD-3 보강 효과 검증 사이클 완결됨."
   },
   {
    "id": "adsense-verify-bgroup-0918",
@@ -11449,8 +11457,10 @@
    "due": "2026-09-19",
    "cmd": "python -m studio.affiliate solo  # 이미 게시된 상품인지 먼저 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "세척사과 후보는 실제로 게시되지 않음(solo 목록에 없음) — 09-19 실제로는 맥세이프 거치대(iphone-magsafe-0919)가 게시됨. 이후 루틴8·9 가 매일 이슈상품 후보를 별도로 수집·보고하는 체제로 이관되어(git log 확인) 이 구체적 제안은 자연 소멸."
   },
   {
    "id": "approve-b2-07",

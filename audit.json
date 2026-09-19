@@ -7112,6 +7112,46 @@
    "target": "seodesc-rescan-verify-0916",
    "detail": "재확인: pub0917~pub0919 발행 배치 10건 전부 -seodesc 별도 항목 0건(수정 이후 09-17부터 전부 깨끗). 09-14·15(수정 직전~직후)만 남아있던 별도항목은 과거분. 재측정 경로가 정상적으로 도는 것 확인됨.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:47:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0917-0930",
+   "detail": "재확인: B5-06 topicprop table 에 없음(드랍 확정). picked-무초안 11건이 실제로는 전부 발행완료였다는 09-17 판단이 이후 낡은 플래그 정리로 이어짐(topicprop-state-drift 계열 지속 해소).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:48:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "night-plan-0917",
+   "detail": "재확인: 사장님 일과(18~04외근·05~11:30취침·12시CP) 가 이미 사용자 메모리 boss-daily-schedule.md 로 영구 저장됨(2026-09-17). 야간운영 절차(밤 루틴→이부장 선별·V0→04시전 결재카드)가 정확히 이 계획대로 일상화됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:48:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "reportlog-stale-0918",
+   "detail": "재확인: report_log 는 코드·HTML 어디서도 읽는 곳이 0건(grep 확인) — 완전히 죽은 필드로 확정됨. 실제 보고는 batches.*.items[].note/currents 경로로만 가고 있고 그쪽은 정상 작동(reports.html 이 매번 갱신됨, mtime 09-20 확인). 죽은 필드라 위험 없음 — 방치해도 무방.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:48:52",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-caption-save-0918",
+   "detail": "재확인: batchboard show → caption0918f421·caption0918h110·caption0918rest(잔여 7편) 전부 100% 완료. 이과장 단독 캡션 저장 체제(09-18 사장님 지시)가 실제로 완결됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:49:06",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ad3-effect-check-0918",
+   "detail": "재확인: batchboard show → adsense0915 배치 6/6(100%) 완료. AD-3 보강 효과 검증 사이클 완결됨.",
+   "via": "cli"
   }
  ]
 }
