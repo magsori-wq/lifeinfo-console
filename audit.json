@@ -6760,6 +6760,30 @@
    "target": "insta-carousel-fail-0901",
    "detail": "F2-14·F1-15 이미 09-07 시점 게시완료 확인됨(URL 확보). 19일 경과, 이후 캐러셀 실패 재현 보고 없음(일일_문제기록.md 에 후속언급 없음) — 재발 관찰 목적은 자연 종료.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:25:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "g3-04-timetable-0911",
+   "detail": "라이브 재확인: G3-04 발행됨(url 존재), 본문이 이미 '상영시간표는 이후 공개되어... (2026-09-17 기준)' 으로 날짜 명시 서술로 수정되어 있음(더 이상 '아직 공개 전' 맨 현재형 아님). 거짓 표현 우려 해소됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:26:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "triage-0906b",
+   "detail": "재확인(docs/미결_실측_20260908.md): G3-03 모순은 해결 확인됨(09-08). A2-15 인용미수정은 라이브 재확인으로 정확히 재현됨('이나, 해당 9월 25일이...' 파편) — 별도 watch a215-quote-fragment-live 로 구체화해 이관, 이 메타 triage 항목은 종결.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:26:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topicprop-state-drift-0906",
+   "detail": "재확인: python -m studio.topicprop table 에 G4-03·F2-14·F1-15·F1-13·G4-04·G2-03·G4-05·F1-14 전부 안 나옴(더 이상 활성 제안으로 안 뜸) — 09-10 is_exhausted() 신설로 발행완료 코드가 걸러짐. 드리프트 해소.",
+   "via": "cli"
   }
  ]
 }

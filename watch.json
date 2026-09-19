@@ -5404,7 +5404,9 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.watch",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-20",
+   "result": "재확인(docs/미결_실측_20260908.md): G3-03 모순은 해결 확인됨(09-08). A2-15 인용미수정은 라이브 재확인으로 정확히 재현됨('이나, 해당 9월 25일이...' 파편) — 별도 watch a215-quote-fragment-live 로 구체화해 이관, 이 메타 triage 항목은 종결."
   },
   {
    "id": "naver-post-f308",
@@ -5433,7 +5435,9 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.topicprop table 및 webapp/topicprop.json 의 published 여부 대조 후 state 갱신 로직 확인",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-20",
+   "result": "재확인: python -m studio.topicprop table 에 G4-03·F2-14·F1-15·F1-13·G4-04·G2-03·G4-05·F1-14 전부 안 나옴(더 이상 활성 제안으로 안 뜸) — 09-10 is_exhausted() 신설로 발행완료 코드가 걸러짐. 드리프트 해소."
   },
   {
    "id": "jagalchi-date-0906",
@@ -5527,7 +5531,7 @@
    "id": "gate-order-a6-0907",
    "added": "2026-09-07",
    "what": "재확인(09-07): validate_db.py는 현재 PASS(대분류 8개 정상)이나, register_post.py 는 여전히 DB write(120행)가 validate 호출(149행)보다 먼저 실행됨 — 구조적 순서 위험 그대로. 코드 재배치(사전 taxonomy 검사) 필요.",
-   "due": "2026-09-12",
+   "due": "2026-10-01",
    "cmd": "python validate_db.py && git log -S '\"code\": \"A6\"' --oneline -- webapp/lifeinfo_db.txt && gh run view 34048472591 -R magsori-wq/lifeinfo-source --log | grep -n 'DB 추가\\|라이브 글 생성\\|validate FAIL'",
    "owner": "claude",
    "state": "todo"
@@ -6196,8 +6200,10 @@
    "due": "2026-09-14",
    "cmd": "cat docs/GSC화면_판독_20260908.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:ce43703c"
+   "state": "done",
+   "by": "세션:ce43703c",
+   "done_at": "2026-09-20",
+   "result": "재확인: docs/색인조사_결론_20260908.md 에 ?m=1 관련 내용 6회 반영되어 영구 참조문서에 포함됨. 관측 자체는 기록완료 상태."
   },
   {
    "id": "gsc-indexed-34-vs-0-0908",
@@ -11862,6 +11868,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:85185a39"
+  },
+  {
+   "id": "a215-quote-fragment-live",
+   "added": "2026-09-20",
+   "what": "A2-15 라이브 본문에 어색한 인용 파편 남아있음 — '이나, 해당 9월 25일이 추석연휴인 관계로 21일에 조기 지급'(문장 앞부분 없이 '이나,' 로 시작). 축자인용 미수정. 라이브 수정 필요(update-post).",
+   "due": "2026-09-25",
+   "cmd": "python -m studio.blogger update-post --code A2-15 --check",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
