@@ -1,19 +1,36 @@
 {
  "rev": "86ae5302",
  "counts": {
-  "total": 288,
+  "total": 289,
   "osmu_done": 285,
-  "osmu_pending": 3,
+  "osmu_pending": 4,
   "indexed": 0,
-  "index_pending": 288,
+  "index_pending": 289,
   "index_requested": 157,
-  "index_todo": 37,
+  "index_todo": 38,
   "index_benign": 94
  },
  "actionable": [
   {
    "code": "C4-10",
    "title": "추석 연휴 병원비 30% 가산, 65세는 왜 2.5배 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "D4-12",
+   "title": "추석 명절 소포 특별소통기간 마지막 접수일 — 늦지 않",
    "need": [
     "OSMU",
     "색인요청"
@@ -209,22 +226,6 @@
   {
    "code": "B4-14",
    "title": "경정청구 하는 법 세금 더 냈다면 5년 안에 돌려받는 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "B5-04",
-   "title": "전세보증금 반환보증 가입 제한 10월 시행, 안심전세 ",
    "need": [
     "색인요청"
    ],
