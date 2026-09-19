@@ -7064,6 +7064,46 @@
    "target": "wakewatch-boss-turn-falsepos-0914",
    "detail": "재확인: studio/wakewatch.py:130-133 에 이미 09-14 자로 수정됨 — 'left 항목이 전부 blocked(사람 차례)면 건너뛴다'. 정확히 요청한 판정 기준(item 상태로만 판정)으로 구현됨.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:44:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "approval-refresh-verify-0915",
+   "detail": "재확인: webapp/approval.html:496-505 _userBusy() 함수 존재 및 SSE 갱신 지연 로직 구현됨. 그 이전(09-06) 원본 불만 사례 이후 09-15 수정, 이후 재발 보고 없음(daily log 검색 — 유일한 관련 언급은 09-06 원본 사고뿐). 사장님께 직접 여쭙지는 못했으나 재발 없음으로 판단.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:44:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h102-courier-plan-0915",
+   "detail": "재확인: docs/source_H1-02_추석택배마감_20260915.md 존재, H1-02 발행완료(url 있음). 계획대로 출처확보→반영 진행됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:44:57",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-H1-02-couriers-0918",
+   "detail": "재확인: H1-02 라이브 본문에 CJ대한통운·한진택배(원클릭)·롯데글로벌로지스 등 택배사별 구체 안내 반영되어 있음. JS렌더링 차단으로 확보 못했던 정확 날짜는 '공식 공지 확인법'으로 안전하게 우회 서술된 것으로 보임 — 발행 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:45:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-h1-02-courier-deadline",
+   "detail": "H1-02 발행완료, 택배사별 안내가 라이브 본문에 반영됨(확인은 source-H1-02-couriers-0918 참고). 동일 소재 후속조사로 대체됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:45:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0915-0022",
+   "detail": "재확인: C4-09 발행완료(url 존재). E4-06 은 topicprop table 에 없음(드랍 결정대로). 09-15 선별 결과 그대로 완결됨.",
+   "via": "cli"
   }
  ]
 }

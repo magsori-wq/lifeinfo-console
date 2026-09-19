@@ -6049,8 +6049,10 @@
    "due": "2026-09-15",
    "cmd": "WebSearch \"CJ대한통운 추석 명절 택배 예약 접수안내 공지사항 2026\" 재시도 + cjlogistics.com/ko/newsroom/notice 목록에서 NR_00001284보다 큰 번호대 확인 + epost.go.kr 공지사항 화면검색",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:eb42e59e"
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-09-20",
+   "result": "H1-02 발행완료, 택배사별 안내가 라이브 본문에 반영됨(확인은 source-H1-02-couriers-0918 참고). 동일 소재 후속조사로 대체됨."
   },
   {
    "id": "order-section-bugs-0907",
@@ -10318,8 +10320,10 @@
    "due": "2026-09-16",
    "cmd": "python -m studio.wake --role 이과장 --batch draft0915c409",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: C4-09 발행완료(url 존재). E4-06 은 topicprop table 에 없음(드랍 결정대로). 09-15 선별 결과 그대로 완결됨."
   },
   {
    "id": "views0915-titles",
@@ -10387,7 +10391,7 @@
    "id": "scratch-cleanup-policy-0915",
    "added": "2026-09-15",
    "what": "09-15 01시경 누군가 루트의 추적 중인 scratch_*.txt 105개를 커밋 없이 작업트리에서 지웠다(validate_db 11) 대량삭제 FAIL → Stop 하네스 차단). 이부장이 그 105개만 경로 지정 복원. 정리가 의도였다면 git rm 경로 지정 커밋으로 정식 삭제하고 .gitignore 에 scratch_* 를 넣는 것이 맞다 — 누가 지웠는지 확인 후 결정. 【로그 조사 09-15 02:3x】최근 세션 25개 로그에서 scratch_ 를 지운 명령은 개별 rm 3건(각 1~2개)뿐 — 105개 일괄 삭제 흔적 없음. 같은 시각 추적 안 된 scratch_*.txt 도 함께 사라졌다(와일드카드 정리로 추정). 사람이 탐색기에서 지웠거나 로그 밖 도구. 결론 못 냄 — 방침(git rm + .gitignore scratch_*)은 사장님 결정 사항으로 남긴다.",
-   "due": "2026-09-16",
+   "due": "2026-09-25",
    "cmd": "git ls-files 'scratch_*' | wc -l",
    "owner": "claude",
    "state": "todo",
@@ -10437,8 +10441,10 @@
    "due": "2026-09-15",
    "cmd": "ls docs/source_H1-02_추석택배마감_20260915.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: docs/source_H1-02_추석택배마감_20260915.md 존재, H1-02 발행완료(url 있음). 계획대로 출처확보→반영 진행됨."
   },
   {
    "id": "factlead-e104-g202-0915",
@@ -10507,8 +10513,10 @@
    "due": "2026-09-18",
    "cmd": "claude-in-chrome으로 cjlogistics.com/ko/newsroom/notice, lotteglogis.com/mobile/customs/notice/list, hanjinoneclick.co.kr/customer_notice(No.164 바로보기), ilogen.com/m/customer/notice 를 열어 2026년 추석 공지 URL/번호를 확보한 뒤 WebFetch로 상세 재조회",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: H1-02 라이브 본문에 CJ대한통운·한진택배(원클릭)·롯데글로벌로지스 등 택배사별 구체 안내 반영되어 있음. JS렌더링 차단으로 확보 못했던 정확 날짜는 '공식 공지 확인법'으로 안전하게 우회 서술된 것으로 보임 — 발행 완료."
   },
   {
    "id": "seodesc-autoitem-falsepos-0915",
@@ -10541,8 +10549,10 @@
    "due": "2026-09-16",
    "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches'];print([(k,[i['code'] for i in v['items'] if i['code'].endswith('-seodesc')]) for k,v in b.items() if k.startswith('pub09')])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: pub0917~pub0919 발행 배치 10건 전부 -seodesc 별도 항목 0건(수정 이후 09-17부터 전부 깨끗). 09-14·15(수정 직전~직후)만 남아있던 별도항목은 과거분. 재측정 경로가 정상적으로 도는 것 확인됨."
   },
   {
    "id": "factlead-a502-e209-0915",
