@@ -6528,6 +6528,30 @@
    "target": "report-gap-0910",
    "detail": "원인규명 문서(docs/보고누락_원인규명_20260910.md) 작성 완료 확인. 이후 09-12 reports-bake-gap-0912 로 보고서탭 배선 수정, 09-13 wakewatch/kakao-on-loop-stop 로 후속 개선 진행됨 — 이 조사 항목 자체는 완결.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:58:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-integrity-0910",
+   "detail": "09-10 시점 CP 정합 스냅샷 검사 완료 기록 — 어긋남 1건(approval_m.json 6건 vs 실시간 7건)은 시점 지연 문제로 이후 자동 반영 배선 정비됨(reports/bake 개선). 시점 스냅샷 검증 자체는 완결.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:58:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "crosslink-audit-0910",
+   "detail": "docs/교차링크_유입손실_20260910.md 작성 완료 확인. 지목된 코드(F2-14·A3-12 포함) 이후 xlink-* watch 로 개별 보완 진행되어 09-20 재확인 시 최근분(H1-09·H1-11 등)은 crosslink 정상 삽입 확인됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:59:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "index-gap-0910",
+   "detail": "09-10 당시 미요청 14편 원인분석 완료(3버킷 분류, 배선결함 2건 문서화). C2-15·F2-17 index_status 누락은 스스로 밝힌 대로 '정상지연'이라 다음 inspect에서 자동해소 — 09-20 python -m studio.pending 재확인시 정상 구조(미요청38/요청함157/양성94)로 순환 중.",
+   "via": "cli"
   }
  ]
 }
