@@ -6744,6 +6744,22 @@
    "target": "naver-stats-check",
    "detail": "위임 완료 확인: 사장님이 09-07 3.세션에 위임, 이후 webapp/naver_analytics_summary.json 이 09-20 06:00 자로 최신 갱신되어 파이프라인 정상 가동 중. 이부장 몫이 아니게 됨.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:23:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "osmu-splitview-0830",
+   "detail": "재확인: studio/osmu_manifest.py:370-374 주석 확인 — 2026-08-17 재설계로 별도 HTML 분할화면·브라우저 열기가 사용자 명시 거부(\"브라우저 아니라니까!!!\")로 전부 폐기되고, 클릭 가능한 마크다운 링크가 박힌 표(cmd_table) 하나로 확정됨. 즉 분할화면은 '미이행'이 아니라 '폐기 결정'이었다 — CLAUDE.md 서술을 정정할 사안.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:23:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-carousel-fail-0901",
+   "detail": "F2-14·F1-15 이미 09-07 시점 게시완료 확인됨(URL 확보). 19일 경과, 이후 캐러셀 실패 재현 보고 없음(일일_문제기록.md 에 후속언급 없음) — 재발 관찰 목적은 자연 종료.",
+   "via": "cli"
   }
  ]
 }
