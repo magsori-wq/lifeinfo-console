@@ -6688,6 +6688,30 @@
    "target": "statusline-worktree-recheck",
    "detail": "재확인: 워크트리 전체(.claude/worktrees/*)에서 settings.json 누락 0건. 표준 런북 정상.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:19:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-controlled-trial",
+   "detail": "09-20 재확인(index_status.json 캐시, 전체 재inspect는 시간budget상 생략): 처방군10·대조군10 전부 여전히 'Crawled - currently not indexed', lastCrawl 이 8월18일 실험시작 이후 갱신된 항목 0건(양쪽 다 동일하게 크롤 자체가 재발생하지 않음). V0 처방이 크롤 재개를 못 만든다는 결론과 일치(indexing-not-a-technical-problem.md 와 부합) — 대조군은 손대지 않았음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:20:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "loopeng-review4w",
+   "detail": "재확인: v0check.json 92건 전부 최종 pass(반려→수정→재검사 사이클을 거친 것 다수 확인). 실제 반려 사례 확인됨 — 예: H1-12(지어낸 수치 삭제), B5-04(함정 유효성 재검증), G3-06(계산 내부모순 해소), C4-09(자기모순 추가 반영) 등. V0 검사관이 실제로 사실오류·지어낸 수치·논리결함을 잡아내고 있음을 확인.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:21:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "osmu-order-naver-first",
+   "detail": "재확인: studio/naverfind.py 에 gate(code) 함수(174행) 존재 — H1-10 부터(START_CODE=56행) 네이버 게시 전에는 인스타 캡션·쓰레드 원고를 내지 않는 게이트가 실제 구현됨(2026-09-14). CLAUDE.md 에도 동일 내용 반영됨. 09-07 당시 없던 채널간 순서 가드가 이후 만들어짐.",
+   "via": "cli"
   }
  ]
 }

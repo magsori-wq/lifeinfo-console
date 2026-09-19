@@ -1867,7 +1867,9 @@
    "due": "2026-09-16",
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-20",
+   "result": "재확인: v0check.json 92건 전부 최종 pass(반려→수정→재검사 사이클을 거친 것 다수 확인). 실제 반려 사례 확인됨 — 예: H1-12(지어낸 수치 삭제), B5-04(함정 유효성 재검증), G3-06(계산 내부모순 해소), C4-09(자기모순 추가 반영) 등. V0 검사관이 실제로 사실오류·지어낸 수치·논리결함을 잡아내고 있음을 확인."
   },
   {
    "id": "naverdup-cleanup",
@@ -2265,7 +2267,9 @@
    "due": "2026-09-12",
    "cmd": "python -m studio.crosslinkcheck",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/naverfind.py 에 gate(code) 함수(174행) 존재 — H1-10 부터(START_CODE=56행) 네이버 게시 전에는 인스타 캡션·쓰레드 원고를 내지 않는 게이트가 실제 구현됨(2026-09-14). CLAUDE.md 에도 동일 내용 반영됨. 09-07 당시 없던 채널간 순서 가드가 이후 만들어짐."
   },
   {
    "id": "mediaart-yangsan-2026",
@@ -2392,7 +2396,7 @@
    "id": "gsc-redirect-recheck-trigger",
    "added": "2026-08-25",
    "what": "GSC 리디렉션 오류 유효성 검사를 '언제 다시 눌러볼 수 있나' 의 판정 조건. 지금 누르면 안 되는 이유는 '금지'가 아니라 '구조적으로 통과 불가'다 — Redirect error 는 최근 크롤된 글에만 붙고(2026-08-25 실측: 최근14일 크롤 23편 중 20편 / 31일+ 전 크롤 120편 중 0편), 검사는 재크롤을 부르므로 재크롤→재발→실패가 반복된다. 실측 통과율 0/17. 🔴 판정 조건: index_status.json 의 Redirect error 건수가 **스스로** 줄어들면(현재 47편 → 20편 이하) 표시 오류가 걷힌 것이므로 그때는 눌러볼 값이 있다. 그 전에는 눌러도 실패만 쌓인다(손해는 없지만 얻는 것도 없다). ⚠️ 이 수치는 우리 조치로 못 바꾼다 — 구글 커뮤니티 공식 답변 'It comes and goes on its own'",
-   "due": "2026-09-16",
+   "due": "2026-10-05",
    "cmd": "python -c \"import json,io,collections;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'))['posts'];print(collections.Counter(v.get('state') for v in d.values()))\"",
    "owner": "claude",
    "state": "wait"
@@ -2976,7 +2980,7 @@
    "id": "crosslink-threads-3-policy",
    "added": "2026-08-28",
    "what": "crosslinkcheck 재실행(09-07) 결과 범위가 3건→43건으로 크게 확대됨(threads·instagram 다수 코드) — 원래 제안(게시완료분 🔴→⚠️ 하향)을 그대로 적용하기엔 재검토 필요. 정식 설계 세션에서 다시 볼 것, 즉흥 코드수정 보류.",
-   "due": "2026-09-10",
+   "due": "2026-09-25",
    "cmd": "python -m studio.crosslinkcheck",
    "owner": "claude",
    "state": "todo"
