@@ -6872,8 +6872,10 @@
    "due": "2026-09-13",
    "cmd": "gh run view 34307942072 -R magsori-wq/lifeinfo-source --log-failed | grep -i 'unrecognized'",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:dac37373"
+   "state": "done",
+   "by": "세션:dac37373",
+   "done_at": "2026-09-20",
+   "result": "H1-04 는 이후 재시도로 정상 발행 완료(DB url 존재). 근본원인은 workflow-quote-title-bug-0909 로 통합 추적(그 항목은 아직 미해결로 남김 — 근본수정 안 됐으나 재발 없음)."
   },
   {
    "id": "a207-support-rate-table-0909",
@@ -6990,8 +6992,10 @@
    "due": "2026-09-17",
    "cmd": "nts.go.kr bbsId=1028 목록을 재확인하거나, claude-in-chrome으로 x.com/ntskorea/status/2095432875885969423 원문을 직접 열어 대조. 또는 국세상담센터 126 전화문의로 '기한 후 환급 서비스' 정식 명칭·시행일 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-20",
+   "result": "E4-02 (국세청 기한후환급 서비스 글감) 는 이후 dupcheck🔴1.00 판정으로 드랍되고 B4-11 로 흡수됨(09-10 draft-dispatch-0910 결정). DB·topicprop 어디에도 E4-02 없음 — 이 소재의 원문 확보 조사는 더 이상 필요 없음."
   },
   {
    "id": "pub0910-v0pending",
@@ -7012,8 +7016,10 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.blogger update-post --code A1-04 --check 후 필요시 상시신청 전환 사실 반영. 1차확인: https://www.news1.kr/realestate/general/6104934 · 원문 molit.go.kr 보도자료 재검색",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:699404bd"
+   "state": "done",
+   "by": "세션:699404bd",
+   "done_at": "2026-09-20",
+   "result": "라이브 재확인: A1-04 본문이 이미 '2022년 한시사업으로 시작했으나 2025년 국정과제 선정으로 계속사업(매년 정기 신청)' 으로 정정되어 있음. '내년 봄까지 대기' 같은 옛 표현은 0건 검출. 상시전환 사실이 정확히 반영됨 — 이미 수정 완료된 상태."
   },
   {
    "id": "c215-fix-before-publish",

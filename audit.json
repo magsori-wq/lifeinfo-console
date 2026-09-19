@@ -6816,6 +6816,22 @@
    "target": "chuseok-topics-0908",
    "detail": "①추석 차례상 비용 전통시장vs대형마트 는 H1-04 로 발행완료(공식 aT 출처 확보됨, osmu/네이버용_추석차례상비용전통시장vs대형마트.txt 존재). ②추석 연휴 은행 문여는곳·ATM수수료 는 DB에서 못 찾음(미제작 또는 다른 제목) — 추석이 9/25로 임박했으나 이 항목은 종결하고 ②는 별도 확인 필요하면 새 글감 제안으로.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:29:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "publish-argparse-fail-0909",
+   "detail": "H1-04 는 이후 재시도로 정상 발행 완료(DB url 존재). 근본원인은 workflow-quote-title-bug-0909 로 통합 추적(그 항목은 아직 미해결로 남김 — 근본수정 안 됐으나 재발 없음).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:29:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-e402-nts0901",
+   "detail": "E4-02 (국세청 기한후환급 서비스 글감) 는 이후 dupcheck🔴1.00 판정으로 드랍되고 B4-11 로 흡수됨(09-10 draft-dispatch-0910 결정). DB·topicprop 어디에도 E4-02 없음 — 이 소재의 원문 확보 조사는 더 이상 필요 없음.",
+   "via": "cli"
   }
  ]
 }
