@@ -7941,8 +7941,10 @@
    "due": "2026-09-12",
    "cmd": "python -m studio.batchboard order --id draft0911a313 --file <order.txt>  # pub0911c408 C4-08 done 마킹 뒤 재시도",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "C4-08 는 이후 발행 완료(DB url 확인), pub0911c408 배치 완결. 09-11 당시 막힘은 해소됨."
   },
   {
    "id": "falsepos-stale-approval-subitem-0911",
@@ -8033,8 +8035,10 @@
    "due": "2026-09-12",
    "cmd": "cat docs/source_H1-05_추석극장가_요금등급_20260911.md | head -60",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "docs/source_H1-05_추석극장가_요금등급_20260911.md 존재 확인. H1-05 DB url 존재(발행완료) — 정정 반영되어 발행됨."
   },
   {
    "id": "tower-inbox-gap-0911",
@@ -8122,8 +8126,10 @@
    "due": "2026-09-12",
    "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 10 --json conclusion,createdAt,databaseId",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:d0519052"
+   "state": "done",
+   "by": "세션:d0519052",
+   "done_at": "2026-09-20",
+   "result": "재확인: gh run list 최근 15건(09-14~09-19) 중 14 success·1 failure(09-17, taxonomy 사유로 별개). title 입력형식 오류로 인한 'unrecognized arguments' 실패 재발 없음. CLAUDE.md 도 이미 title/post_title 구분을 09-06에 명시해 둠."
   },
   {
    "id": "blogger-about-tabs-0911",
@@ -8132,8 +8138,10 @@
    "due": "2026-09-12",
    "cmd": "python -c \"print('tabs_context_mcp 로 746021178·746021183 존재 여부 확인')\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "브라우저 탭(746021178·746021183)은 09-11 세션 종료와 함께 소멸하는 일시적 자원 — 9일 경과, 현재 브라우저 세션과 무관해 더 이상 문제되지 않음. 확인 불가능한 과거 세션 상태이나 시간경과로 자연 해소."
   },
   {
    "id": "h106-spaf-open-recheck",

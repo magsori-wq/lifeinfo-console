@@ -6576,6 +6576,38 @@
    "target": "approve-card-lingers-0911",
    "detail": "재확인: 현재 topic_pick 은 사장님(boss) 큐가 아니라 이부장(lee) 큐로만 감(approval.html:733). topic_approve boss.push 는 09-04 커밋(2bd7098d)에서 이미 비활성화됨(if(false&&...)). 09-20 approvalcount 실행시 사장님 결재대기 1건뿐, 글감 중복승인 카드 없음 — 재현 안 됨.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:02:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "batchboard-now-indexerror-0911",
+   "detail": "재확인: studio/batchboard.py:1772 이 _st[min(ns.step,len(_st))-1] 로 클램프됨. 실제로 --step 없이 batchboard now 실행 → IndexError 없이 정상 완료(재현 안 됨).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:02:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0911-1600",
+   "detail": "C4-08 는 이후 발행 완료(DB url 확인), pub0911c408 배치 완결. 09-11 당시 막힘은 해소됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:02:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h105-v0-recheck-correction-0911",
+   "detail": "docs/source_H1-05_추석극장가_요금등급_20260911.md 존재 확인. H1-05 DB url 존재(발행완료) — 정정 반영되어 발행됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:03:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "preflight-input-repeat-0911",
+   "detail": "재확인: gh run list 최근 15건(09-14~09-19) 중 14 success·1 failure(09-17, taxonomy 사유로 별개). title 입력형식 오류로 인한 'unrecognized arguments' 실패 재발 없음. CLAUDE.md 도 이미 title/post_title 구분을 09-06에 명시해 둠.",
+   "via": "cli"
   }
  ]
 }
