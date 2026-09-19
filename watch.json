@@ -7467,8 +7467,10 @@
    "due": "2026-09-11",
    "cmd": "claude-in-chrome 으로 law.go.kr 국민연금법 부칙(보험료율 경과조치) 직접 열람 → 2033년 13% 조항 존재 확인 → 있으면 본문 표에 2033행 추가 지시, 없으면 현재 서술이 맞으므로 종결",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:4020e16a"
+   "state": "done",
+   "by": "세션:4020e16a",
+   "done_at": "2026-09-20",
+   "result": "law.go.kr DRF API(MST 280269)로 국민연금법 부칙 제4조(2025.4.2 부칙) 직접 확인: 경과조치 2026~2032년까지만 규정(2032=12.5%), 2033년 행 없음 — 2033년부터는 부칙이 아니라 본칙(제88조③④, 이미 13%로 개정)이 적용되는 구조. A3-12 '2033년 이후는 부칙에 규정 없다'는 서술은 정확함. 상세=docs/source_A3-12_국민연금보험료율_2033년_20260920.md. 표 확장은 필수아님(보강 검토사항)."
   },
   {
    "id": "deploy-thumb-231-0911",
@@ -8255,8 +8257,10 @@
    "due": "2026-09-12",
    "cmd": "python -m studio.setgate",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "8일 경과, 현재 python -m studio.setgate 실행 → '4채널 미완 없음' 정상 상태. 당시 코디네이션 이슈(H1-07 파일보호 헤더 등록 거부)는 그 시점 한정 이슈로 해소됨."
   },
   {
    "id": "naver-h105",
@@ -8508,8 +8512,10 @@
    "due": "2026-09-12",
    "cmd": "grep -n reports studio/batchboard.py; ls -la webapp/reports.html",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:261f2508"
+   "state": "done",
+   "by": "세션:261f2508",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/batchboard.py:747-752 에서 _bake() 끝에서 reports.bake() 호출하도록 수정됨(CLAUDE.md '보고는 CP 보고서 탭까지' 절과 일치). mark 후 자동으로 reports.html 도 갱신."
   },
   {
    "id": "tosslink-yakgwa-0912",
@@ -8598,8 +8604,10 @@
    "due": "2026-09-12",
    "cmd": "python -m studio.batchboard order --id xlink0912g306",
    "owner": "claude",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-20",
+   "result": "G3-06 osmu.naver 필드 현재 채워짐(224409289673), crosslinkcheck 전수스캔에서도 G3-06 위반목록에 없음(09-20 재확인) — 답글 재시도 결국 성공한 것으로 판단. 더 넓은 쓰레드 답글 포커스 버그 자체는 threads-reply-focus-0912 로 계속 추적."
   },
   {
    "id": "threads-reply-focus-0912",

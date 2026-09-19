@@ -6608,6 +6608,38 @@
    "target": "preflight-input-repeat-0911",
    "detail": "재확인: gh run list 최근 15건(09-14~09-19) 중 14 success·1 failure(09-17, taxonomy 사유로 별개). title 입력형식 오류로 인한 'unrecognized arguments' 실패 재발 없음. CLAUDE.md 도 이미 title/post_title 구분을 09-06에 명시해 둠.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:05:47",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "blogger-about-tabs-0911",
+   "detail": "브라우저 탭(746021178·746021183)은 09-11 세션 종료와 함께 소멸하는 일시적 자원 — 9일 경과, 현재 브라우저 세션과 무관해 더 이상 문제되지 않음. 확인 불가능한 과거 세션 상태이나 시간경과로 자연 해소.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:06:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "reports-bake-gap-0912",
+   "detail": "재확인: studio/batchboard.py:747-752 에서 _bake() 끝에서 reports.bake() 호출하도록 수정됨(CLAUDE.md '보고는 CP 보고서 탭까지' 절과 일치). mark 후 자동으로 reports.html 도 갱신.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:06:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h107-order-guard-after-g306-0912",
+   "detail": "8일 경과, 현재 python -m studio.setgate 실행 → '4채널 미완 없음' 정상 상태. 당시 코디네이션 이슈(H1-07 파일보호 헤더 등록 거부)는 그 시점 한정 이슈로 해소됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:06:49",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "blocked-g306-thread",
+   "detail": "G3-06 osmu.naver 필드 현재 채워짐(224409289673), crosslinkcheck 전수스캔에서도 G3-06 위반목록에 없음(09-20 재확인) — 답글 재시도 결국 성공한 것으로 판단. 더 넓은 쓰레드 답글 포커스 버그 자체는 threads-reply-focus-0912 로 계속 추적.",
+   "via": "cli"
   }
  ]
 }
