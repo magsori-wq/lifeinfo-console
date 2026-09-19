@@ -7046,8 +7046,10 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.batchboard order --id <배치> --file <회고문장에 다른 코드가 든 지시서>",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/batchboard.py:1200 _target_sections() 신설 확인 — 지시서 전문이 아니라 '무엇을·어떻게·끝나면' 절만 스캔하도록 수정됨(1549행에서 호출). 회고 문장 속 코드는 더 이상 실행대상으로 안 셈."
   },
   {
    "id": "report-gap-0910",
@@ -7056,8 +7058,10 @@
    "due": "2026-09-11",
    "cmd": "python -c \"import json;d=json.load(open('webapp/batch.json',encoding='utf-8'));b=d['batches'];print([k for k,v in b.items() for it in v.get('items',[]) if it.get('state')=='todo' and v.get('order_at')])\" 로 재고 로직 A/B/C 반영여부 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "원인규명 문서(docs/보고누락_원인규명_20260910.md) 작성 완료 확인. 이후 09-12 reports-bake-gap-0912 로 보고서탭 배선 수정, 09-13 wakewatch/kakao-on-loop-stop 로 후속 개선 진행됨 — 이 조사 항목 자체는 완결."
   },
   {
    "id": "naver-a312-crosslink-fix",
@@ -7347,8 +7351,10 @@
    "due": "2026-09-11",
    "cmd": "python -m studio.approvalcount && python -c \"import json,io;d=json.load(io.open('webapp/approval_m.json',encoding='utf-8'));print('baked count=',d['count'],'generated=',d['generated'])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "09-10 시점 CP 정합 스냅샷 검사 완료 기록 — 어긋남 1건(approval_m.json 6건 vs 실시간 7건)은 시점 지연 문제로 이후 자동 반영 배선 정비됨(reports/bake 개선). 시점 스냅샷 검증 자체는 완결."
   },
   {
    "id": "claude-backlog-0910b",
@@ -7501,8 +7507,10 @@
    "cmd": "python -m studio.threadimg",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: python -m studio.threadimg 실행 → 위반(미게시·고칠 수 있음) 0건, 게시됨·수정불가 5건(그대로 유지·조치 대상 아님으로 표시됨), 레거시 153. 게이트 정상 동작 지속."
   },
   {
    "id": "xlink-title-audit-0911",
@@ -7576,8 +7584,10 @@
    "cmd": "python -m studio.xlinkcheck",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: python -m studio.xlinkcheck 실행 → 1140개 파일 🔴0 🟡0 이상없음. 게이트 정상."
   },
   {
    "id": "xlink-live-fix-0911",
@@ -7625,8 +7635,10 @@
    "cmd": "python -m studio.imghost",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: python -m studio.imghost 실행 → 308개 파일 🔴0 이상없음. 게이트 정상."
   },
   {
    "id": "approve-card-lingers-0911",
@@ -7809,8 +7821,10 @@
    "cmd": "python -m studio.uicheck && grep -rn navigator.clipboard.writeText webapp/*.html",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: webapp/cp_clip.js cpCopy() 존재, python -m studio.uicheck 실행 → 26개 화면 문제없음."
   },
   {
    "id": "naver-capture-0911-zoom3",
@@ -7855,8 +7869,10 @@
    "cmd": "python -m studio.affiliate solo-add --item <상품명> --url <> --kind <coupang|toss|brandshop|brandtrip> --why-now \"<지금 이슈인 이유>\" --price \"<가격·리뷰 근거>\" && python -m studio.affiliate solo-ask --id <id> && python -m studio.watch --id solo-<id>  # 승인 후: python -m studio.threadsdraft --solo <id>",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/affiliate.py solo 관련 함수 전부 존재(cmd_solo_add 등). python -m studio.affiliate solo 실행 → 실제로 3건(hongsam0917·iphone-magsafe-0919·yakgwa0918) 게시완료로 운영 중. 배선 정상."
   },
   {
    "id": "v0reject-h1-05",

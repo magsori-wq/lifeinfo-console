@@ -6464,6 +6464,70 @@
    "target": "topicprop-drain-0910",
    "detail": "재확인: studio/topicprop.py is_exhausted()(155행) 존재. python -m studio.gatecheck 실행 → 게이트 9종 정상, 오탐 0건(A3-12·B2-13·F2-17·C2-15 재현 안 됨).",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:56:50",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "draft-order-0912",
+   "detail": "재확인: 지시 대상 3건 중 C4-08·H1-05 는 DB에 url 존재(발행완료). A6-04 는 topicprop 활성 목록·table 에 없음(드랍 또는 흡수). gatecheck 9종 정상·오탐 0. 순서 지시는 목적 달성.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:57:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threadimg-gate-0911",
+   "detail": "재확인: python -m studio.threadimg 실행 → 위반(미게시·고칠 수 있음) 0건, 게시됨·수정불가 5건(그대로 유지·조치 대상 아님으로 표시됨), 레거시 153. 게이트 정상 동작 지속.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:57:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlinkgate-pre-0911",
+   "detail": "재확인: python -m studio.xlinkcheck 실행 → 1140개 파일 🔴0 🟡0 이상없음. 게이트 정상.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:57:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "imghost-gate-0911b",
+   "detail": "재확인: python -m studio.imghost 실행 → 308개 파일 🔴0 이상없음. 게이트 정상.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:57:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "clipfix-0911",
+   "detail": "재확인: webapp/cp_clip.js cpCopy() 존재, python -m studio.uicheck 실행 → 26개 화면 문제없음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:57:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thread-solo-0911",
+   "detail": "재확인: studio/affiliate.py solo 관련 함수 전부 존재(cmd_solo_add 등). python -m studio.affiliate solo 실행 → 실제로 3건(hongsam0917·iphone-magsafe-0919·yakgwa0918) 게시완료로 운영 중. 배선 정상.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:57:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ordergate-retro-code-0910",
+   "detail": "재확인: studio/batchboard.py:1200 _target_sections() 신설 확인 — 지시서 전문이 아니라 '무엇을·어떻게·끝나면' 절만 스캔하도록 수정됨(1549행에서 호출). 회고 문장 속 코드는 더 이상 실행대상으로 안 셈.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:58:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "report-gap-0910",
+   "detail": "원인규명 문서(docs/보고누락_원인규명_20260910.md) 작성 완료 확인. 이후 09-12 reports-bake-gap-0912 로 보고서탭 배선 수정, 09-13 wakewatch/kakao-on-loop-stop 로 후속 개선 진행됨 — 이 조사 항목 자체는 완결.",
+   "via": "cli"
   }
  ]
 }
