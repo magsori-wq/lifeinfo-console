@@ -6648,6 +6648,38 @@
    "target": "nv1-a312-2033rate",
    "detail": "law.go.kr DRF API(MST 280269)로 국민연금법 부칙 제4조(2025.4.2 부칙) 직접 확인: 경과조치 2026~2032년까지만 규정(2032=12.5%), 2033년 행 없음 — 2033년부터는 부칙이 아니라 본칙(제88조③④, 이미 13%로 개정)이 적용되는 구조. A3-12 '2033년 이후는 부칙에 규정 없다'는 서술은 정확함. 상세=docs/source_A3-12_국민연금보험료율_2033년_20260920.md. 표 확장은 필수아님(보강 검토사항).",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:14:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink0911all-order-fix-0912",
+   "detail": "재확인: batch.json xlink0911all 배치 43/43 items done — 완결됨. 당시 지적한 문장정리 이슈는 그 지시서 소진과 함께 더 이상 유효하지 않음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:15:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "reapply-gate-axisB",
+   "detail": "09-20 재확인: navergate 실행 → ①색인0/60 ②클릭0/20 ③네이버43/80 전부 미달, 08-27 이후 변화없음. 중복 추적이던 adsense-reapply-after-0826·이 항목을 닫고 최신 결정(adsense-gate-impl-0916, 게이트 기준 자체를 교체 검토 중)으로 일원화.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:15:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-reapply-after-0826",
+   "detail": "09-20 재확인: navergate 실행 결과 동일(3조건 전부 미달). 최신 게이트 기준 재검토는 adsense-gate-impl-0916(사장님 결재대기)으로 이관, 중복 추적 종료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:15:57",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "blogger-theme-locked",
+   "detail": "09-20 재확인: python studio/adsense.py status → 여전히 NEEDS_ATTENTION/PENDING, 변화 없음. 애드센스 승인 전까지 이 항목은 조건부 대기 상태 유지가 맞으나, 변화가 없어 재확인 자체는 완료로 기록 — 승인 시점에 재오픈.",
+   "via": "cli"
   }
  ]
 }

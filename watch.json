@@ -627,9 +627,11 @@
    "due": "2026-09-14",
    "cmd": "python -m studio.navergate",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "note": 109,
-   "_orig": "재검토 요청 전 게이트(갱신) - 축A(101/101)·축B 조사(B1-format+B2-compare) 전부 완료됨(adsense0812 6/6). B2-compare가 찾은 처방(실전 경험 디테일 주입)은 A2-01·B2-04·C1-02 3편 파일럿 완료(V0 처방 1~3호). ⚠️ 재검토 요청은 아직 누르지 않는다 — 파일럿 효과(색인·체류시간) 관찰 기간 필요 + 8/18까지 요청횟수 소진 상태라 물리적으로도 불가. 다음 판단: 파일럿 몇 편 더 확대할지, 언제 요청 누를지는 사용자 판단"
+   "_orig": "재검토 요청 전 게이트(갱신) - 축A(101/101)·축B 조사(B1-format+B2-compare) 전부 완료됨(adsense0812 6/6). B2-compare가 찾은 처방(실전 경험 디테일 주입)은 A2-01·B2-04·C1-02 3편 파일럿 완료(V0 처방 1~3호). ⚠️ 재검토 요청은 아직 누르지 않는다 — 파일럿 효과(색인·체류시간) 관찰 기간 필요 + 8/18까지 요청횟수 소진 상태라 물리적으로도 불가. 다음 판단: 파일럿 몇 편 더 확대할지, 언제 요청 누를지는 사용자 판단",
+   "done_at": "2026-09-20",
+   "result": "09-20 재확인: navergate 실행 → ①색인0/60 ②클릭0/20 ③네이버43/80 전부 미달, 08-27 이후 변화없음. 중복 추적이던 adsense-reapply-after-0826·이 항목을 닫고 최신 결정(adsense-gate-impl-0916, 게이트 기준 자체를 교체 검토 중)으로 일원화."
   },
   {
    "id": "adsense-axisb-fold-howto",
@@ -1213,7 +1215,7 @@
    "id": "perf-log-review",
    "added": "2026-08-16",
    "what": "perf_report.ps1 재실행(09-07): 사용자 증상 3건(기준 5건 미달) — 계속 수집 중, 분석 보류 유지.",
-   "due": "2026-09-14",
+   "due": "2026-10-01",
    "cmd": "powershell -File C:\\Users\\magso\\tools\\perf_report.ps1   # 증상 5건 미만이면 며칠 더 모을 것",
    "owner": "claude",
    "state": "wait"
@@ -1712,8 +1714,10 @@
    "due": "2026-09-10",
    "cmd": "python -m studio.navergate",
    "owner": "claude",
-   "state": "wait",
-   "flag": "게이트 ①(색인 60편)은 현 구조에서 몇 달짜리다. 8/26 결과가 그 게이트를 고칠지 말지도 함께 답한다"
+   "state": "done",
+   "flag": "게이트 ①(색인 60편)은 현 구조에서 몇 달짜리다. 8/26 결과가 그 게이트를 고칠지 말지도 함께 답한다",
+   "done_at": "2026-09-20",
+   "result": "09-20 재확인: navergate 실행 결과 동일(3조건 전부 미달). 최신 게이트 기준 재검토는 adsense-gate-impl-0916(사장님 결재대기)으로 이관, 중복 추적 종료."
   },
   {
    "id": "gsc-validation-canonical76",
