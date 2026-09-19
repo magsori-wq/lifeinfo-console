@@ -11973,6 +11973,26 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "a215-quote-fragment-live",
+   "added": "2026-09-20",
+   "what": "A2-15 라이브 본문 인용 파편 '이나, 해당 9월 25일이…' — 문장 앞부분 없이 시작. 이과장이 update-post 로 수정(라이브 수정이라 사장님 몫이 아니다)",
+   "due": "2026-09-22",
+   "cmd": "python -m studio.blogger update-post --code A2-15 --check",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine2-paused-0920",
+   "added": "2026-09-20",
+   "what": "루틴 2번(B·lifeinfo-daily-topics, 글감 제안 A·B 카테고리)이 2026-09-11 이후 8일째 실행 0 — 일시중지로 보인다. 이것이 글감 재고가 마르는 근본 원인이다(09-19 재고 0). Desktop 「루틴」 화면에서 2번을 열어 상태 토글이 내려가 있으면 올려 주십시오",
+   "due": "2026-09-20",
+   "cmd": "python -m studio.routines 2",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
