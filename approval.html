@@ -1148,7 +1148,13 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     //    → 누르면 그 탭으로 넘어가는 링크로 바꾼다(부모 프레임의 탭 버튼을 클릭).
     +(actionsFutureN?'<div style="margin:6px 0 0"><a href="#" style="color:#7fb0e0;'
       +'font-size:12px;text-decoration:underline" onclick="try{parent.document'
-      +'.querySelector(\'[data-t=pendosmu]\').click();}catch(e){}return false;">'
+      // 🔴🔴 **「🙋 내가 할 일」 탭으로 보낸다** (2026-09-19 사장님 *"미뤄둔것은 어디에서
+      //    볼수있어? 미결사항탭아냐?"*). 그전에는 「🗂️ 미결사항」으로 보냈는데 거기는
+      //    OSMU 미결·색인이 섞여 있어 **사장님 몫을 찾기 더 어렵다.**
+      //    「내가 할 일」 탭은 watch owner=user 를 기한순으로 **전부** 보여준다 —
+      //    미뤄 둔 것까지 한자리에 있다. 사장님 전용 목록이 따로 있는데 내가 줄곧
+      //    다른 탭만 안내했다.
+      +'.querySelector(\'[data-t=mytasks]\').click();}catch(e){}return false;">'
       +'⏳ '+(actionsSoonN?'곧(이틀 안) '+actionsSoonN+'건':'곧 볼 것 없음')
       +(actionsFutureN-actionsSoonN>0?' · 미뤄 둔 것 '+(actionsFutureN-actionsSoonN)+'건':'')
       +' — 미뤄 둔 것까지 보기 →</a></div>':'')
