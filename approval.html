@@ -681,7 +681,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   // 🔴🔴 **결재함은 kind=approve 만 센다 — 조치는 별도 접힘 구역으로**
   //    (2026-09-10 사장님 지적: "결재함이 지저분해지고 일이 남은 것 같아").
   //    studio/approvalcount.py rows()/action_rows() 와 같은 조건 — 두 곳을 함께 고친다.
-  var boss=[], lee=[], actions=[], actionsFutureN=0;
+  var boss=[], lee=[], actions=[], actionsFutureN=0, actionsSoonN=0;
   T.forEach(function(t){
     // 🔴 **초안 없는 글감은 사장님 결재함에 올리지 않는다** (2026-09-04)
     //    사장님이 두 번 지적하셨다 — 08-31 "승인을 뭘 보고 승인하냐구? 초안도
@@ -730,6 +730,8 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    전에는 글감(③)·발행(⑦) 두 종만 올라오고, 사장님 몫인 색인요청·게시·설정변경은
   //    watch.json 에만 있어서 결재함과 myturn 두 군데를 봐야 했다. 한 군데서 끝내신다.
   var TODAY=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+  // 🔴 '가까운 것' = 오늘부터 이틀 안(2026-09-19). 그 뒤는 미뤄 둔 것이라 따로 센다.
+  var SOON=new Date(Date.now()-new Date().getTimezoneOffset()*6e4+2*864e5).toISOString().slice(0,10);
   W.forEach(function(w){
     if(w.owner!=='user' || w.state==='done') return;
     // 🔴🔴 **승인 요청은 기한과 무관하게 즉시 올린다** (2026-09-07 사장님 지적:
@@ -749,6 +751,13 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         actions.push({id:w.id, what:w.what||w.id, due:w.due||'', blocked:(w.state==='blocked'), by:w.by||''});
       } else {
         actionsFutureN++;               // 기한 전 — 목록은 안 싣는다(펼쳐도 압도됨), 개수만
+        // 🔴🔴 **'가까운 것' 과 '한참 뒤' 를 가른다** (2026-09-19 사장님 지적)
+        //    사장님: *"누가 봐도 10건이 남은거고, 너는 3건 구분해야하지 않나?"*
+        //    전에는 기한 전을 **한 덩어리 10건**으로만 적었다. 그중 내일 것은 3건이고
+        //    나머지는 10월·12월로 미뤄 둔 것인데, 화면만 보면 **10건을 다 하셔야 하는
+        //    것처럼** 보인다. 숫자가 크면 손이 안 간다 — 상시 표시줄에서 기한 전 항목을
+        //    일부러 뺀 것과 같은 이유다(*"다 보여주면 압도돼서 아무것도 안 하게 된다"*).
+        if(String(w.due||'9999')<=SOON) actionsSoonN++;
       }
       return;
     }
@@ -1070,7 +1079,23 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         var gone=Q.filter(function(q){return q.go&&!pub(q.code);}).length;
         var why=[];
         if(wait) why.push('② 선별 대기 '+wait+'건');
-        if(draft) why.push('④ 초안 작성 중 '+draft+'건');
+        // 🔴🔴 **"작성 중" 과 "지시도 안 나감" 을 가른다** (2026-09-19 사장님 화면 지적)
+        //    전에는 선별만 됐으면 무조건 「④ 초안 작성 중」이라 적었다 — **작성 중인지
+        //    아닌지는 보지도 않았다.** 그래서 E1-99 처럼 **이부장이 지시서를 아직 안 낸**
+        //    상태도 "누가 쓰고 있다" 로 보였고, 사장님은 기다리시면 되는 줄 아신다.
+        //    🔴 화면이 실제보다 좋게 말하면 멈춘 자리가 감춰진다. 공을 누가 쥐고 있는지
+        //       분명해야 한다 — 지시서가 없으면 그건 **이부장 차례**다.
+        var _ordered=Object.keys(B.batches||{}).filter(function(id){
+              var b=B.batches[id]; if(!b||!b.order) return false;
+              return (b.items||[]).some(function(i){return i.code&&T.some(function(t){
+                return t.code===i.code&&(t.state==='picked'||t.state==='approved')
+                       &&t.draft===false&&!pub(t.code)&&!byq[t.code];});});})
+            .reduce(function(a,id){(B.batches[id].items||[]).forEach(function(i){
+              if(i.code) a[i.code]=1;});return a;},{});
+        var _dn=T.filter(function(t){return (t.state==='picked'||t.state==='approved')
+              &&t.draft===false&&!pub(t.code)&&!byq[t.code]&&!_ordered[t.code];}).length;
+        if(_dn) why.push('③ 이부장 지시 대기 '+_dn+'건');
+        if(draft-_dn>0) why.push('④ 초안 작성 중 '+(draft-_dn)+'건');
         if(v0w) why.push('⑤ V0 검사 대기 '+v0w+'건');
         if(gone) why.push('⑦ 승인 끝 · 발행 대기 '+gone+'건');
         return '<p class="none">✅ 지금 사장님이 결재하실 원고는 없습니다.'
@@ -1116,7 +1141,9 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     +(actionsFutureN?'<div style="margin:6px 0 0"><a href="#" style="color:#7fb0e0;'
       +'font-size:12px;text-decoration:underline" onclick="try{parent.document'
       +'.querySelector(\'[data-t=pendosmu]\').click();}catch(e){}return false;">'
-      +'⏳ 기한 전 '+actionsFutureN+'건 — 미결사항 탭에서 펼쳐 보기 →</a></div>':'')
+      +'⏳ '+(actionsSoonN?'곧(이틀 안) '+actionsSoonN+'건':'곧 볼 것 없음')
+      +(actionsFutureN-actionsSoonN>0?' · 미뤄 둔 것 '+(actionsFutureN-actionsSoonN)+'건':'')
+      +' — 미결사항 탭에서 펼쳐 보기 →</a></div>':'')
     +'</summary>'+actionsBody+'</details>';
   H+=pane('🙋','사장님 결재 대기',bossBadge,bossBody+actionsDetails);
 
