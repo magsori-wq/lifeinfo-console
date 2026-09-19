@@ -11710,6 +11710,16 @@
    "owner": "claude",
    "state": "done",
    "by": "docflow(에이전트)"
+  },
+  {
+   "id": "e199-gosi-wait-0919",
+   "added": "2026-09-19",
+   "what": "E1-99 최적요금제 고지 — 과기부 고시(고지 대상·주기·방법)가 나왔는지 확인. 나오면 초안 재개(근거는 docs/source_E1-99_최적요금제고지_20260919.md 에 이미 있다). 법 시행일은 2026-10-01 확정",
+   "due": "2026-10-05",
+   "cmd": "python -m studio.dupcheck '최적요금제 고지 의무' && cat docs/source_E1-99_최적요금제고지_20260919.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
