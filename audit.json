@@ -7032,6 +7032,22 @@
    "target": "thumbcheck-dark-duotone-0914",
    "detail": "재현시험: judge('insta/H1-02_chuseok_delivery_01_cover.png') 현재 (True, 25272, '') — 09-14 당시 3761(오탐)에서 25272(정탐)로 바뀜. c309efe0 '이미지 판정 10배' 커밋(속도최적화)으로 colors_of() 샘플링 방식이 달라져 측정치가 크게 상향된 것으로 보임 — 재현 안 됨. 3000~4000 회색지대 구조적 처리는 안 됐으나 이 사례는 해소.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:41:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naverdraft-strip-tags-0914",
+   "detail": "재현시험: naver-draft --code F2-14 실행 결과 '[⚠️ 추천 태그 없음]' 문구가 ■본문 섹션(1~128행) 밖(136행, CUT 마커 뒤)에 정확히 위치함을 확인 — 본문에 안 섞임. 현재 코드는 정상 분리됨(테스트 파일은 정리함).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:42:00",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "affiliate-g305-stool-dead-0914",
+   "detail": "재확인: affiliate.json G3-05 에 이미 09-14 16:03 대체 링크(레인보우 접이식 의자 toss.im/_m/bt5QMWEt) 기록됨('끊긴 스툴 링크 대체' 메모). check_live('G3-05') → True(현재 3/3 정상). 조치 이미 완료됨.",
+   "via": "cli"
   }
  ]
 }

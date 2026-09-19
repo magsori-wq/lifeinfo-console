@@ -9908,8 +9908,10 @@
    "due": "2026-09-15",
    "cmd": "grep -n 추천태그 studio/naver.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재현시험: naver-draft --code F2-14 실행 결과 '[⚠️ 추천 태그 없음]' 문구가 ■본문 섹션(1~128행) 밖(136행, CUT 마커 뒤)에 정확히 위치함을 확인 — 본문에 안 섞임. 현재 코드는 정상 분리됨(테스트 파일은 정리함)."
   },
   {
    "id": "affiliate-g305-stool-dead-0914",
@@ -9918,14 +9920,16 @@
    "due": "2026-09-15",
    "cmd": "curl -sL -o /dev/null -w '%{http_code}' https://toss.im/_m/dPpVRH6h",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: affiliate.json G3-05 에 이미 09-14 16:03 대체 링크(레인보우 접이식 의자 toss.im/_m/bt5QMWEt) 기록됨('끊긴 스툴 링크 대체' 메모). check_live('G3-05') → True(현재 3/3 정상). 조치 이미 완료됨."
   },
   {
    "id": "affiliate-linkrot-monitor-0914",
    "added": "2026-09-14",
    "what": "제휴 링크가 죽어도 알려주는 정기 점검이 없다 — 오늘 사장님이 '제휴링크가 동작되고 있나?' 물으셔서 28개 전수 열어보고서야 G3-05 스툴 404 를 알았다. selfcheck 에 affiliate 링크 생존 검사(토스·쿠팡·커넥트 단축링크 → 최종 200) 추가 검토. 토스 상품 내려감은 단축링크가 200 이 아니라 최종 페이지 404 로 나타난다",
-   "due": "2026-09-16",
+   "due": "2026-09-27",
    "cmd": "grep -n affiliate studio/selfcheck.py",
    "owner": "claude",
    "state": "todo",
@@ -9935,7 +9939,7 @@
    "id": "nofit-review-before-threads-0914",
    "added": "2026-09-14",
    "what": "제휴 '상품 없음(no_fit)' 을 초안 쓴 쪽(이과장·에이전트·루틴)이 혼자 판정하고 아무도 다시 보지 않는다 — 오늘 8편 전부 no_fit, 그중 G4-07(축제)은 같은 유형 G3-05·G2-05 에 접이식 의자를 붙인 선례와 엇갈렸다. 쓰레드는 게시 15분 뒤 수정 불가라 링크를 나중에 못 붙인다. → 쓰레드 게시 준비(threadsdraft) 전에 F·G·D·E 카테고리 no_fit 을 이부장이 선례와 대조하는 단계를 넣는다(threadsdraft 경고 또는 dispatch 절)",
-   "due": "2026-09-15",
+   "due": "2026-09-27",
    "cmd": "python -c \"import json;a=json.load(open('webapp/affiliate.json',encoding='utf-8'))['items'];print([c for c,v in a.items() if v.get('no_fit_at')][-10:])\"",
    "owner": "claude",
    "state": "todo",
