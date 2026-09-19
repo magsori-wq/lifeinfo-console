@@ -9421,8 +9421,10 @@
    "due": "2026-09-14",
    "cmd": "cat docs/source_cde1_노후경유차5등급조기폐차종료_20260914.md docs/source_cde2_개인정보보호법개정9월11일시행_20260914.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:81385b66"
+   "state": "done",
+   "by": "세션:81385b66",
+   "done_at": "2026-09-20",
+   "result": "재확인: docs/source_cde1_노후경유차5등급조기폐차종료_20260914.md·docs/source_cde2_개인정보보호법개정9월11일시행_20260914.md 둘 다 존재 확인. 1차출처 확보 작업 완료."
   },
   {
    "id": "index-drift-merge-0914",
@@ -9607,8 +9609,10 @@
    "due": "2026-09-15",
    "cmd": "python -m studio.topicprop table && python -m studio.pace",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:d486208d"
+   "state": "done",
+   "by": "세션:d486208d",
+   "done_at": "2026-09-20",
+   "result": "09-14 시점 보고: 재고 0/99 였음 — 09-20 재확인시 재고 1/99(A2-19), 순환 정상 지속. A6-05 는 이후 발행완료(url 존재). 이 시점 스냅샷 보고는 완결."
   },
   {
    "id": "routine2-topics-misread-0914",
@@ -9629,14 +9633,16 @@
    "due": "2026-09-15",
    "cmd": "powershell 로 Claude 창 GetWindowLong(-20) & 0x8 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "6일 경과, 재발 보고 없음. 당시 이부장이 SetWindowPos NOTOPMOST 로 즉시 해제했고 wake.py 코드 자체는 topmost 를 켜지 않는 것으로 확인됐음(일회성 현상으로 판단)."
   },
   {
    "id": "insta-card-slug-collision-0914",
    "added": "2026-09-14",
    "what": "인스타 표지 판정 오탐: A5-09 를 '글자 표지'로 판정해 재게시시켰는데 실제 옛 게시물(Dcrl8ScE8tt)은 실사진 표지였다(사장님 캡처). 원인 = osmu_manifest._find_cards 의 옛 규칙(영문 슬러그 glob) — A5-09 eng=severance 가 8월 B4-05 퇴직금 카드(severance_01_cover.png)를 집었다. 겹치는 슬러그 추가: smishing(E2-09·E4-03). 조치 필요: 영문 슬러그로만 찾은 카드는 '주인 불확실'로 표시하고 실사진 판정·재게시 근거로 쓰지 않는다. A2-16 옛 게시물은 글자 표지 맞음·캡션 '수정됨'에 네이버 링크 들어가 있음(수정이 되는 경우도 있다)",
-   "due": "2026-09-14",
+   "due": "2026-09-27",
    "cmd": "python -c \"from studio import osmu_manifest as m; print(m._find_cards('A5-09','severance')[:2])\"",
    "owner": "claude",
    "state": "todo",
@@ -9649,8 +9655,10 @@
    "due": "2026-09-15",
    "cmd": "python -c \"from studio import thumbcheck as t; print(t.judge(r'insta/H1-02_chuseok_delivery_01_cover.png'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재현시험: judge('insta/H1-02_chuseok_delivery_01_cover.png') 현재 (True, 25272, '') — 09-14 당시 3761(오탐)에서 25272(정탐)로 바뀜. c309efe0 '이미지 판정 10배' 커밋(속도최적화)으로 colors_of() 샘플링 방식이 달라져 측정치가 크게 상향된 것으로 보임 — 재현 안 됨. 3000~4000 회색지대 구조적 처리는 안 됐으나 이 사례는 해소."
   },
   {
    "id": "xlink-e211",
@@ -9839,7 +9847,7 @@
    "id": "osmuskip-other-counters-0914",
    "added": "2026-09-14",
    "what": "사장님 인스타 제외(B1-03·G4-02·E2-07, webapp/osmu_skip.json) 를 CP 미결(approve_server._pending)·now·pending.py 에만 반영했다. osmu.instagram 을 따로 읽는 나머지 도구(myturn·today·insta_post·osmu_manifest·sessionaudit·gatecheck·daylog·wrapup_check·selfcheck 등)가 아직 이 3편을 미게시로 띄우는지 확인하고, 띄우면 studio.osmuskip.skipped() 를 물리게 한다",
-   "due": "2026-09-15",
+   "due": "2026-09-27",
    "cmd": "python -m studio.osmuskip && grep -rn \"get(.instagram.)\" studio --include=*.py | grep -v osmuskip",
    "owner": "claude",
    "state": "todo",

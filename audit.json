@@ -6992,6 +6992,46 @@
    "target": "queue-h109-vanished-0913",
    "detail": "재확인: studio/pubqueue.py:104-129 _save() 함수에 이미 09-06(사건보다 앞서) lost-update 방지 장치(디스크 재읽기+구조)가 있음. cmd_remove 는 자동 git commit 은 안 함(다른 모든 state 파일과 동일 관행 — 세션이 커밋). 재발 없음 확인(daily log 검색).",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:39:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0recheck-h1-05-0911",
+   "detail": "재확인: v0check.json H1-05 최종 pass, DB url 존재(발행완료). 09-11 재검사 판정이 그대로 유지되어 발행까지 완결됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:39:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-cde-0914",
+   "detail": "재확인: docs/source_cde1_노후경유차5등급조기폐차종료_20260914.md·docs/source_cde2_개인정보보호법개정9월11일시행_20260914.md 둘 다 존재 확인. 1차출처 확보 작업 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:39:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0914-0700",
+   "detail": "09-14 시점 보고: 재고 0/99 였음 — 09-20 재확인시 재고 1/99(A2-19), 순환 정상 지속. A6-05 는 이후 발행완료(url 존재). 이 시점 스냅샷 보고는 완결.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:39:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "desktop-topmost-0914",
+   "detail": "6일 경과, 재발 보고 없음. 당시 이부장이 SetWindowPos NOTOPMOST 로 즉시 해제했고 wake.py 코드 자체는 topmost 를 켜지 않는 것으로 확인됐음(일회성 현상으로 판단).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:40:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thumbcheck-dark-duotone-0914",
+   "detail": "재현시험: judge('insta/H1-02_chuseok_delivery_01_cover.png') 현재 (True, 25272, '') — 09-14 당시 3761(오탐)에서 25272(정탐)로 바뀜. c309efe0 '이미지 판정 10배' 커밋(속도최적화)으로 colors_of() 샘플링 방식이 달라져 측정치가 크게 상향된 것으로 보임 — 재현 안 됨. 3000~4000 회색지대 구조적 처리는 안 됐으나 이 사례는 해소.",
+   "via": "cli"
   }
  ]
 }
