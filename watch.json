@@ -11657,18 +11657,32 @@
    "due": "2026-09-19",
    "cmd": "이부장 창에 붙여넣기: 재고 3편 채우게 글감 선별하고 초안 지시서 내려",
    "owner": "user",
-   "state": "todo",
-   "by": "세션:3ae6f73d"
+   "state": "done",
+   "by": "세션:3ae6f73d",
+   "done_at": "2026-09-19",
+   "result": "이부장이 받았다 — 재고 0/하한 3 확인. ①경보 배선 수리(need() 호출처 0곳이었다, a3977bd5)+회귀규칙(dfc64fa2) ②글감 선별은 지금 진행: 루틴2 결과 대기 + 3.에 유입검색어 기반 제안 요청 + 이부장 직접 발굴. 루틴4 판단이 정확했고 넘긴 것도 옳다(roles상 지시서는 이부장 몫)"
   },
   {
    "id": "xlink-d412",
    "added": "2026-09-19",
-   "what": "🔗 D4-12 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D4-12",
+   "what": "🔗 D4-12 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D4-12",
    "due": "2026-09-19",
    "cmd": "python studio/blogger.py crosslink --code D4-12",
    "owner": "claude",
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-19",
+   "result": "교차링크 3채널 라이브 확인"
+  },
+  {
+   "id": "a110-childsupport-bridge-0919",
+   "added": "2026-09-19",
+   "what": "A1-10(한부모 아동양육비)에 선지급 소득기준 폐지(10/29) 안내 박스+A1-14 링크 보강, A1-14 관련글에 A1-10 추가 — 신규발행은 A1-14 와 중복(0.67)이라 불가. 라이브 수정이라 승인 필요",
+   "due": "2026-09-19",
+   "cmd": "python -m studio.dupcheck '양육비 선지급 소득기준 폐지 10월 29일'",
+   "owner": "user",
    "state": "todo",
-   "by": "naver-link"
+   "by": "세션:5552cd84"
   }
  ]
 }
