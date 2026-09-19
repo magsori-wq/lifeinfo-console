@@ -6960,6 +6960,38 @@
    "target": "wakewatch-auto-0913",
    "detail": "재확인: python -m studio.wakewatch --once --dry-run 정상 실행 → '안 읽힌 지시서 없음' 판정. 세션 확인 자동화 구현·작동 확인.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:37:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "empty-inbox-alarm-0913",
+   "detail": "재확인: readycheck 출력에 '흐름' 줄(발행결재·큐·글감 각각 카운트) 신설되어 있음 — 전부 0이면 경보가 뜨는 구조로 구현됨. 빈 결재함을 '할 일 없음'으로 오판하지 않게 하는 장치가 이미 동작 중.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:37:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "overnight-pipeline-0913",
+   "detail": "재확인: 야간운영 절차가 docs/루틴공통절.md 「④ 초안」「⑤ V0」 절로 코드화됨(producer-on-clock-0913 과 동일 근거). 현재 pubqueue 에 A2-19 가 V0통과·결재대기 상태로 정상 순환 중 — 절차가 실제로 작동함을 확인.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:38:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "kakao-on-loop-stop-0913",
+   "detail": "재확인: python -m studio.loopcheck 정상 작동 — 8단계 이음매 중 멈춘 곳을 정확히 짚어냄(현재 4건). 카톡 발송 자체는 Claude 세션 도구(SendMessage)라 파이썬이 못 부른다는 것이 이미 확인된 구조적 한계 — loopcheck 를 관제탑이 주기적으로 돌려 발견 즉시 카톡하는 것이 실제 이행 방식(행동수칙)으로 남음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:38:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "queue-h109-vanished-0913",
+   "detail": "재확인: studio/pubqueue.py:104-129 _save() 함수에 이미 09-06(사건보다 앞서) lost-update 방지 장치(디스크 재읽기+구조)가 있음. cmd_remove 는 자동 git commit 은 안 함(다른 모든 state 파일과 동일 관행 — 세션이 커밋). 재발 없음 확인(daily log 검색).",
+   "via": "cli"
   }
  ]
 }
