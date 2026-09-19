@@ -916,7 +916,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
                   defer:(t.state==='deferred'?(t.until||''):''),
                   why:(t.state==='deferred'?(t.decision||t.why||''):'')};});
   Q.forEach(function(q){docs[q.code]={code:q.code,title:q.title};});
-  V.forEach(function(v){if(!docs[v.code])docs[v.code]={code:v.code,title:v.title};});
+  // 🔴🔴 **코드를 재배정한 글은 옛 코드로 남지 않게 한다** (2026-09-19 사장님 발견)
+  //    사장님: *"이건 왜 안되고잇지?"* — E4-02 가 ⑥발행승인 에서 9일째 멈춰 보였다.
+  //    실제로는 **같은 원고가 B4-11 로 이미 발행·4채널 완결**됐다(09-10 재배정).
+  //    V0 기록이 두 코드에 다 남아 있어 화면이 "통과했는데 발행 안 됨" 으로 읽은 것이다.
+  //    CLAUDE.md 가 이미 경고한 자리다 — *"코드를 재배정하면 그 코드로 남은 판정·기록이
+  //    전부 끊긴다."* 그때 V0 는 옮겼는데 **옛 코드 것을 지우지 않았다.**
+  //    🔴 기록을 **지우지 않는다**(why 에 재배정 경위가 들어 있다) — 화면에서만 뺀다.
+  V.forEach(function(v){if(!docs[v.code]&&!v.superseded_by)docs[v.code]={code:v.code,title:v.title};});
+  Object.keys(docs).forEach(function(k){
+    var vv=v0[k]; if(vv&&vv.superseded_by) delete docs[k];});
   var list=Object.keys(docs).map(function(k){return docs[k];})
            .filter(function(d){return !(byc[d.code]&&byc[d.code].url);});
   var bs=Object.keys(B.batches||{}).map(function(id){return {id:id,b:B.batches[id]};})
