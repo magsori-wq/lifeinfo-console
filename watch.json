@@ -11576,6 +11576,26 @@
    "by": "이부장",
    "done_at": "2026-09-19",
    "result": "V0 통과로 해소 — 검사자 이부장 · V0검사관 반려(계산예시 부재) 3건 전부 해소 확인 — 이부장 재검사. ①**계산예시 신설**: 등기 9/22(화)까지·일반 9/19(토)까지 역산표 + 근거. 🔴 **이부장이 요일까지 검산했다** — 9/19 토"
+  },
+  {
+   "id": "xlink-f422",
+   "added": "2026-09-19",
+   "what": "🔗 F4-22 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-22",
+   "due": "2026-09-19",
+   "cmd": "python studio/blogger.py crosslink --code F4-22",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "f422-pet-faq-0919",
+   "added": "2026-09-19",
+   "what": "F4-22 자라섬재즈 FAQ '반려동물 동반 옵션 티켓 별도·가격 동일' 문장이 초안 109~110행에 남음. 이부장이 09-18 d4a357af 로 같은 취지 앞문장(출처없음)을 삭제했으나 FAQ 는 누락. 라이브 본문 잔존 여부 확인 후 정정 필요(라이브 수정은 루틴 금지 → 이과장/이부장)",
+   "due": "2026-09-19",
+   "cmd": "curl -s https://lifeinfo8975.blogspot.com/2026/09/2026-3.html | grep -c 반려동물",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:3ae6f73d"
   }
  ]
 }
