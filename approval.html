@@ -681,7 +681,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   // 🔴🔴 **결재함은 kind=approve 만 센다 — 조치는 별도 접힘 구역으로**
   //    (2026-09-10 사장님 지적: "결재함이 지저분해지고 일이 남은 것 같아").
   //    studio/approvalcount.py rows()/action_rows() 와 같은 조건 — 두 곳을 함께 고친다.
-  var boss=[], lee=[], actions=[], actionsFutureN=0, actionsSoonN=0;
+  var boss=[], lee=[], actions=[], actionsFutureN=0, actionsSoonN=0, actionsSoon=[];
   T.forEach(function(t){
     // 🔴 **초안 없는 글감은 사장님 결재함에 올리지 않는다** (2026-09-04)
     //    사장님이 두 번 지적하셨다 — 08-31 "승인을 뭘 보고 승인하냐구? 초안도
@@ -757,7 +757,15 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         //    나머지는 10월·12월로 미뤄 둔 것인데, 화면만 보면 **10건을 다 하셔야 하는
         //    것처럼** 보인다. 숫자가 크면 손이 안 간다 — 상시 표시줄에서 기한 전 항목을
         //    일부러 뺀 것과 같은 이유다(*"다 보여주면 압도돼서 아무것도 안 하게 된다"*).
-        if(String(w.due||'9999')<=SOON) actionsSoonN++;
+        // 🔴🔴 **곧 볼 것은 여기서 바로 보인다** (2026-09-19 사장님 *"보여야 하지 않나?"*)
+        //    09-18 에 「미결사항 탭에서 펼쳐 보기」 링크를 붙였는데, 사장님은 여전히
+        //    **눌러야** 보셨다. **링크를 눌러야 보이면 안 보이는 것과 같다.**
+        //    10건 전부를 실으면 압도되지만 **이틀 안 것만**이면 서너 건이라 실을 수 있다.
+        if(String(w.due||'9999')<=SOON){
+          actionsSoonN++;
+          actionsSoon.push({id:w.id, what:w.what||w.id, due:w.due||'',
+                            blocked:(w.state==='blocked'), by:w.by||''});
+        }
       }
       return;
     }
@@ -1143,7 +1151,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +'.querySelector(\'[data-t=pendosmu]\').click();}catch(e){}return false;">'
       +'⏳ '+(actionsSoonN?'곧(이틀 안) '+actionsSoonN+'건':'곧 볼 것 없음')
       +(actionsFutureN-actionsSoonN>0?' · 미뤄 둔 것 '+(actionsFutureN-actionsSoonN)+'건':'')
-      +' — 미결사항 탭에서 펼쳐 보기 →</a></div>':'')
+      +' — 미결사항 탭에서 전부 보기 →</a></div>':'')
+    // 🔴 곧 볼 것은 **여기서 바로** 보인다(사장님 2026-09-19 *"보여야 하지 않나?"*).
+    //    미뤄 둔 것은 개수만 — 그건 날짜가 되면 위 목록으로 올라온다.
+    +(actionsSoon.length?'<div style="margin:6px 0 0;padding:6px 8px;border-left:2px solid #4a6fa5">'
+      +actionsSoon.sort(function(x,y){return String(x.due).localeCompare(String(y.due));})
+        .map(function(a){return '<div style="font-size:12px;opacity:.9;padding:2px 0">'
+          +'<b style="color:#9fc4e8">'+esc(a.due)+'</b> '
+          +(a.blocked?'🚫 ':'')+esc(String(a.what).slice(0,70))
+          +(a.by?' <span style="opacity:.6">· '+esc(a.by)+'</span>':'')+'</div>';}).join('')
+      +'</div>':'')
     +'</summary>'+actionsBody+'</details>';
   H+=pane('🙋','사장님 결재 대기',bossBadge,bossBody+actionsDetails);
 
