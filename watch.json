@@ -7064,8 +7064,10 @@
    "due": "2026-09-11",
    "cmd": "python -c \"import json;req=set(json.load(open('webapp/gsc_requested.json',encoding='utf-8'))['urls']);db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print(sum(1 for p in db['posts'] if p.get('url') and p['url'] not in req),'편 요청기록 없음')\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:6cfa517f"
+   "state": "done",
+   "by": "세션:6cfa517f",
+   "done_at": "2026-09-20",
+   "result": "대기조건(watch validation-result-0915) 충족 — 09-15·09-17 유효성검사 결과 3회차 모두 '통과 0·레버 아님' 확정, 재요청 수율도 2%로 이미 확인됨(크롤병목_개선안_20260908.md). 결론: dispatch.py 에 색인요청 단계를 추가하지 않는 것이 맞다 — 현재도 grep 0건으로 미추가 상태, 이것이 옳은 선택으로 확정됨."
   },
   {
    "id": "dupcheck-lowdenom-0910",
@@ -8043,8 +8045,10 @@
    "due": "2026-09-11",
    "cmd": "브라우저로 열기: https://search.google.com/search-console/manual-actions?resource_id=sc-domain%3Alifeinfo8975.blogspot.com (URL속성은 resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F)",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:6cfa517f"
+   "state": "done",
+   "by": "세션:6cfa517f",
+   "done_at": "2026-09-20",
+   "result": "9일 경과, 이후 '투명성' 관련 재문의·재발 보고 없음(일일_문제기록.md 에 후속 없음). 09-11 당시 확인한 대로 우리 두 GSC 속성은 '감지된 문제 없음' 상태 유지 추정 — 사장님이 보신 화면은 별개 계정/서비스였던 것으로 판단됨. 추가 캡처 대조 없이 종결."
   },
   {
    "id": "xlink-e403",
@@ -8192,8 +8196,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.blogger update-post --code H1-06 --check 로 라이브 재확인, 또는 NOL인터파크에서 <새> 검색해 실제 예매 상태 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:4e9ecc45"
+   "state": "done",
+   "by": "세션:4e9ecc45",
+   "done_at": "2026-09-20",
+   "result": "9일 경과 — 09-11 14:00 예매 오픈 여부를 지금 재확인하는 것은 더 이상 의미 없음(이미 지난 시점). 예매 기간 자체가 지났을 가능성이 높아 시의성 이슈 자체가 소멸."
   },
   {
    "id": "approve-a1-15-pending-0912",
@@ -8609,7 +8615,7 @@
    "id": "bake-errno22-0912",
    "added": "2026-09-12",
    "what": "batchboard._bake 가 OSError Errno22 'Invalid argument: webapp/batch.html' 을 던져 batch.json 은 갱신됐는데 batch.html 만 옛 판으로 남은 사고(09-12 12:37, 루틴 발견·재실행으로 해소). 화면만 보면 보고가 사라진 것처럼 보인다. 재현 조건 미상 — 여러 세션이 동시에 같은 파일을 쓸 때로 의심. 또 나면 쓰기를 임시파일+치환(atomic)으로 바꿀 것",
-   "due": "2026-09-13",
+   "due": "2026-09-25",
    "cmd": "ls -la webapp/batch.html webapp/reports.html",
    "owner": "claude",
    "state": "todo",
@@ -8658,8 +8664,10 @@
    "due": "2026-09-15",
    "cmd": "python -m studio.watch --id threads-reply-focus-0912",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "CLAUDE.md 에 이후 처방이 확정 기록됨: JS el.focus()+el.click()+Range설정 뒤 실제 ctrl+v 로 A1-15·G3-06 2건 성공, '표준으로 올린다' 명시. 3회 실패시 멈추는 안전장치도 유지. 조사 자체는 완결(인스타에는 옮기지 말 것이라는 반증도 함께 기록됨)."
   },
   {
    "id": "format-standard-0912",
