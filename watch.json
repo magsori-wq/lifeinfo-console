@@ -11740,6 +11740,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "a219-naver-url-placeholder",
+   "added": "2026-09-19",
+   "what": "A2-19 네이버 원고에 자리표시 URL(blog-post_XX.html)이 있다 — 발행 직후 실제 블로그스팟 URL 로 바꾼 뒤에야 사장님 결재함에 네이버 게시로 올린다. 그대로 붙이면 죽은 링크가 네이버에 나간다",
+   "due": "2026-09-20",
+   "cmd": "grep -c 'blog-post_XX' osmu/네이버용_도시가스없는집에너지바우처.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "feed-drift-title-f306-f214",
+   "added": "2026-09-19",
+   "what": "피드 드리프트 검사 3일 연속 실패(09-17·18·19 schedule) — 라이브 제목과 DB 제목 불일치 2건: F3-06(라이브=9월 국제선·국내선 유류할증료 인상 / DB=8월 14단계) · F2-14(라이브=9월 24~27일 무료 확정 / DB=정체 예상시간 우회도로). 라이브 정정이 DB에 안 따라온 것으로 보임 — DB title 동기 필요",
+   "due": "2026-09-20",
+   "cmd": "gh run view 35407506574 -R magsori-wq/lifeinfo-console --log-failed",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:85185a39"
   }
  ]
 }
