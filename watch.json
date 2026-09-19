@@ -7012,8 +7012,10 @@
    "due": "2026-09-11",
    "cmd": "curl -s -X POST http://127.0.0.1:8011/api/approve -H 'Content-Type: application/json' -d '{\"action\":\"publish_go\",\"code\":\"C2-15\"}' # already:true 이면 정상(회귀 없음)",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/approve_server.py:87 _already_done() 존재, 730행에서 호출됨. approval.html:416 already 토스트 처리 존재. 서버(127.0.0.1:8011) 응답 정상. 코드 유지 확인."
   },
   {
    "id": "gscreq-wiring-0910",
@@ -7389,8 +7391,10 @@
    "cmd": "python -m studio.approvalcount",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/approvalcount.py rows()(46행)·action_rows()(195행) 존재, watch.py _kind_gate(356행) 존재. python -m studio.approvalcount 실행 결과 '미결 조치 N건(결재 건수에 안 들어감)' 접힘구역 정상 출력됨."
   },
   {
    "id": "topicprop-drain-0910",
@@ -7400,8 +7404,10 @@
    "cmd": "python -m studio.gatecheck",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/topicprop.py is_exhausted()(155행) 존재. python -m studio.gatecheck 실행 → 게이트 9종 정상, 오탐 0건(A3-12·B2-13·F2-17·C2-15 재현 안 됨)."
   },
   {
    "id": "naver-b305",
@@ -7790,8 +7796,10 @@
    "cmd": "python -m studio.gatecheck",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: 지시 대상 3건 중 C4-08·H1-05 는 DB에 url 존재(발행완료). A6-04 는 topicprop 활성 목록·table 에 없음(드랍 또는 흡수). gatecheck 9종 정상·오탐 0. 순서 지시는 목적 달성."
   },
   {
    "id": "clipfix-0911",
@@ -9645,8 +9653,10 @@
    "due": "2026-09-14",
    "cmd": "python studio/blogger.py crosslink --code H1-09",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code H1-09 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "naver-h109-title-0914",
@@ -10587,8 +10597,10 @@
    "due": "2026-09-17",
    "cmd": "python studio/blogger.py crosslink --code H1-11",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code H1-11 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "afflink-g1-07",
@@ -10636,8 +10648,10 @@
    "due": "2026-09-17",
    "cmd": "python studio/blogger.py crosslink --code G1-07",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code G1-07 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "xlink-b504",
@@ -10646,8 +10660,10 @@
    "due": "2026-09-17",
    "cmd": "python studio/blogger.py crosslink --code B5-04",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code B5-04 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "b504-thread-dup",
@@ -10733,8 +10749,10 @@
    "due": "2026-09-17",
    "cmd": "python studio/blogger.py crosslink --code B4-13",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code B4-13 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "b101-annual-discount-fix-0917",
@@ -10796,8 +10814,10 @@
    "due": "2026-09-18",
    "cmd": "python studio/blogger.py crosslink --code E2-17",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code E2-17 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "insta-caption-3-0918",
@@ -11137,8 +11157,10 @@
    "due": "2026-09-18",
    "cmd": "python studio/blogger.py crosslink --code A1-17",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code A1-17 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "insta-caption-save-0918",
@@ -11407,8 +11429,10 @@
    "due": "2026-09-18",
    "cmd": "python studio/blogger.py crosslink --code B1-08",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code B1-08 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "naver-post-a605",
@@ -11430,8 +11454,10 @@
    "due": "2026-09-18",
    "cmd": "python studio/blogger.py crosslink --code A6-05",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code A6-05 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "xlink-b414",
@@ -11440,8 +11466,10 @@
    "due": "2026-09-18",
    "cmd": "python studio/blogger.py crosslink --code B4-14",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-20",
+   "result": "python studio/blogger.py crosslink --code B4-14 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료."
   },
   {
    "id": "approve-e1-02",

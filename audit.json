@@ -6352,6 +6352,118 @@
    "target": "E1-99",
    "detail": "지시서 전제 오류(조문 시행일 10/1, 통합본 11/20 오독)로 각도 폐기. 고지 대상·방법이 대통령령·고시 미정이라 독자에게 줄 답이 없다 — 고시 나오면 재제안(watch e199-gosi-wait-0919)",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "seodesc-a6-05",
+   "detail": "python -m studio.seodesc scan --only A6-05 재확인 → seo_desc_status.json posts.A6-05 = {live_len:67, og_len:67, state:ok}. 라이브에 검색설명 존재 확인.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-h109",
+   "detail": "python studio/blogger.py crosslink --code H1-09 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:25",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-h111",
+   "detail": "python studio/blogger.py crosslink --code H1-11 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g107",
+   "detail": "python studio/blogger.py crosslink --code G1-07 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b504",
+   "detail": "python studio/blogger.py crosslink --code B5-04 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b413",
+   "detail": "python studio/blogger.py crosslink --code B4-13 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-e217",
+   "detail": "python studio/blogger.py crosslink --code E2-17 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a117",
+   "detail": "python studio/blogger.py crosslink --code A1-17 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b108",
+   "detail": "python studio/blogger.py crosslink --code B1-08 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a605",
+   "detail": "python studio/blogger.py crosslink --code A6-05 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b414",
+   "detail": "python studio/blogger.py crosslink --code B4-14 --dry-run → '기존 블록: 있음' + 라이브 curl 재확인(naver/threads/instagram 링크 전부 본문에 존재, crosslink블록 마커 1개). 이미 삽입 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:55:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "approve-idempotent-0910",
+   "detail": "재확인: studio/approve_server.py:87 _already_done() 존재, 730행에서 호출됨. approval.html:416 already 토스트 처리 존재. 서버(127.0.0.1:8011) 응답 정상. 코드 유지 확인.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:56:06",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "approval-kind-split-0910",
+   "detail": "재확인: studio/approvalcount.py rows()(46행)·action_rows()(195행) 존재, watch.py _kind_gate(356행) 존재. python -m studio.approvalcount 실행 결과 '미결 조치 N건(결재 건수에 안 들어감)' 접힘구역 정상 출력됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T06:56:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topicprop-drain-0910",
+   "detail": "재확인: studio/topicprop.py is_exhausted()(155행) 존재. python -m studio.gatecheck 실행 → 게이트 9종 정상, 오탐 0건(A3-12·B2-13·F2-17·C2-15 재현 안 됨).",
+   "via": "cli"
   }
  ]
 }
