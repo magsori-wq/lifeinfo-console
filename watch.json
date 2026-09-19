@@ -751,7 +751,9 @@
    "due": "2026-09-14",
    "cmd": "python -c \"import shutil,glob,os; [shutil.copy('C:/lifeinfo/.claude/settings.json', os.path.join(w,'.claude','settings.json')) for w in glob.glob('C:/lifeinfo/.claude/worktrees/*') if os.path.isdir(os.path.join(w,'.claude')) and not os.path.exists(os.path.join(w,'.claude','settings.json'))]; print('복구 완료')\"",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "done_at": "2026-09-20",
+   "result": "재확인: 워크트리 전체(.claude/worktrees/*)에서 settings.json 누락 0건. 표준 런북 정상."
   },
   {
    "id": "d408-c206-followup",
@@ -1325,7 +1327,7 @@
    "id": "travel-halloween-2026",
    "added": "2026-08-17",
    "what": "재시도(09-07): 롯데월드 200·에버랜드 302로 접속은 되나 '할로윈' 텍스트 여전히 미검출(SPA/JS 렌더링, 08-17과 동일 한계) — 공식 발표 시점까지 대기.",
-   "due": "2026-09-14",
+   "due": "2026-09-25",
    "cmd": "python -c \"import urllib.request;print(urllib.request.urlopen('https://adventure.lotteworld.com/kor/event/eventList/list.do',timeout=20).status)\" ; 그리고 everland.com 축제목록 재조회",
    "owner": "claude",
    "state": "todo"
@@ -1554,8 +1556,10 @@
    "due": "2026-09-17",
    "cmd": "python -m studio.searchconsole inspect 후 두 그룹의 lastCrawl 갱신·state 변화 비교 (명단=V0_대조군_명단_2026-08-18.md)",
    "owner": "claude",
-   "state": "wait",
-   "flag": "🔴대조군 10편을 어떤 이유로도 보강하지 말 것 — 손대면 실험이 죽는다"
+   "state": "done",
+   "flag": "🔴대조군 10편을 어떤 이유로도 보강하지 말 것 — 손대면 실험이 죽는다",
+   "done_at": "2026-09-20",
+   "result": "09-20 재확인(index_status.json 캐시, 전체 재inspect는 시간budget상 생략): 처방군10·대조군10 전부 여전히 'Crawled - currently not indexed', lastCrawl 이 8월18일 실험시작 이후 갱신된 항목 0건(양쪽 다 동일하게 크롤 자체가 재발생하지 않음). V0 처방이 크롤 재개를 못 만든다는 결론과 일치(indexing-not-a-technical-problem.md 와 부합) — 대조군은 손대지 않았음."
   },
   {
    "id": "thin-content-merge-hold",
