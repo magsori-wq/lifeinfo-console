@@ -1151,7 +1151,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +'.querySelector(\'[data-t=pendosmu]\').click();}catch(e){}return false;">'
       +'⏳ '+(actionsSoonN?'곧(이틀 안) '+actionsSoonN+'건':'곧 볼 것 없음')
       +(actionsFutureN-actionsSoonN>0?' · 미뤄 둔 것 '+(actionsFutureN-actionsSoonN)+'건':'')
-      +' — 미결사항 탭에서 전부 보기 →</a></div>':'')
+      +' — 미뤄 둔 것까지 보기 →</a></div>':'')
     // 🔴 곧 볼 것은 **여기서 바로** 보인다(사장님 2026-09-19 *"보여야 하지 않나?"*).
     //    미뤄 둔 것은 개수만 — 그건 날짜가 되면 위 목록으로 올라온다.
     +(actionsSoon.length?'<div style="margin:6px 0 0;padding:6px 8px;border-left:2px solid #4a6fa5">'

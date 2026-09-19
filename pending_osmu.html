@@ -406,9 +406,17 @@ function fileChip(path, label, isImg, exists){
           +'</span></div>';}).join('');
       // 🔴 기본 접힘 — "너무 많은 글을 보여주니 다 읽을 수가 없어"(2026-08-27 사장님 지적).
       //    기한 도래분(위 박스)만 펼쳐 보이고, 기한 전은 여기 접어 둔다.
-      futHtml='<details style="background:#0f1626;border:1px solid #223052;'
+      // 🔴🔴 **그런데 이 탭으로 보내는 링크가 「전부 보기」 였다** (2026-09-19 사장님 지적)
+      //    사장님: *"이부장 미결사항탭에서 전부 보기의 말뜻을 모르는거야?"*
+      //    결재함에서 「전부 보기」를 눌러 이 탭에 와도 **여기서 한 번 더 눌러야** 나온다.
+      //    그래서 사장님은 *"미결사항에는 아무것도 없는데"* 라고 하셨다 — 맞는 말이었다.
+      //    **두 번 눌러야 하면 안 보이는 것과 같다.** 보내는 쪽이 「전부 보기」라고 적었으면
+      //    도착한 화면은 전부 보여야 한다 → `open` 으로 연다.
+      //    ⚠️ 08-27 지적("다 읽을 수 없다")은 **결재함 본 화면**을 두고 하신 말이다.
+      //       여기는 일부러 찾아오신 자리라 펼쳐 두는 것이 맞다.
+      futHtml='<details open style="background:#0f1626;border:1px solid #223052;'
         +'border-radius:9px;margin-top:6px"><summary style="cursor:pointer;color:#7fb0e0;'
-        +'font-size:12px;padding:6px 10px">⏳ 기한 전 '+Af.length+'건 — 펼쳐 보기</summary>'
+        +'font-size:12px;padding:6px 10px">⏳ 기한 전 '+Af.length+'건</summary>'
         +'<div style="max-height:220px;overflow-y:auto">'+frows+'</div></details>';
     }
     box.innerHTML='<details open style="background:#1a1206;border:1px solid #4a3a12;'
