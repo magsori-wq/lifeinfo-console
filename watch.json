@@ -9096,8 +9096,10 @@
    "due": "2026-09-13",
    "cmd": "cat docs/네이버_내일게시_점검_20260913.md docs/미언급_점검_20260913.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: docs/네이버_내일게시_점검_20260913.md·docs/미언급_점검_20260913.md 둘 다 존재 — 사장님 09-13 17시 6개 지시사항 이행 기록 완료."
   },
   {
    "id": "wakewatch-auto-0913",
@@ -9106,8 +9108,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.wakewatch --once --dry-run",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: python -m studio.wakewatch --once --dry-run 정상 실행 → '안 읽힌 지시서 없음' 판정. 세션 확인 자동화 구현·작동 확인."
   },
   {
    "id": "empty-inbox-alarm-0913",
@@ -9116,8 +9120,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.readycheck",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: readycheck 출력에 '흐름' 줄(발행결재·큐·글감 각각 카운트) 신설되어 있음 — 전부 0이면 경보가 뜨는 구조로 구현됨. 빈 결재함을 '할 일 없음'으로 오판하지 않게 하는 장치가 이미 동작 중."
   },
   {
    "id": "overnight-pipeline-0913",
