@@ -7048,6 +7048,22 @@
    "target": "affiliate-g305-stool-dead-0914",
    "detail": "재확인: affiliate.json G3-05 에 이미 09-14 16:03 대체 링크(레인보우 접이식 의자 toss.im/_m/bt5QMWEt) 기록됨('끊긴 스툴 링크 대체' 메모). check_live('G3-05') → True(현재 3/3 정상). 조치 이미 완료됨.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:42:52",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-caption-naverlink-f421-0914",
+   "detail": "재확인: curl 로 instagram.com/p/DdRQXLoifzy/ 조회 → 'naver' 3회 검출(09-14 당시 0회에서 변화). 네이버 게시 뒤 캡션에 네이버 링크가 추가됨 — 09-12 분업(세션이 열고 사장님이 완료 저장) 절차대로 완료됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-20T07:43:49",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "wakewatch-boss-turn-falsepos-0914",
+   "detail": "재확인: studio/wakewatch.py:130-133 에 이미 09-14 자로 수정됨 — 'left 항목이 전부 blocked(사람 차례)면 건너뛴다'. 정확히 요청한 판정 기준(item 상태로만 판정)으로 구현됨.",
+   "via": "cli"
   }
  ]
 }

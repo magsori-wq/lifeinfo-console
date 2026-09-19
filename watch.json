@@ -10006,7 +10006,7 @@
    "id": "publish-run-local-record-loss-0914",
    "added": "2026-09-14",
    "what": "발행 러너가 도는 사이 다른 세션이 로컬에 쓴 기록(batch.json mark·threads-link DB)이 러너 커밋 뒤 pull --rebase 로 사라진다(09-14 A4-06 실측). 장치 없음 — 러너 시작~종료 동안 webapp 원본 상태파일 쓰기 경고 또는 rebase 뒤 자동 대조 필요",
-   "due": "2026-09-15",
+   "due": "2026-09-27",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('osmu0914a406'))\" && grep -c DdRNq3RgaMw webapp/lifeinfo_db.txt",
    "owner": "claude",
    "state": "todo",
@@ -10055,8 +10055,10 @@
    "due": "2026-09-15",
    "cmd": "curl -s -A Mozilla/5.0 https://www.instagram.com/p/DdRQXLoifzy/ | grep -c naver",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: curl 로 instagram.com/p/DdRQXLoifzy/ 조회 → 'naver' 3회 검출(09-14 당시 0회에서 변화). 네이버 게시 뒤 캡션에 네이버 링크가 추가됨 — 09-12 분업(세션이 열고 사장님이 완료 저장) 절차대로 완료됨."
   },
   {
    "id": "adsense-gate-proxy-0914",
@@ -10111,7 +10113,7 @@
    "id": "affiliate-before-publish-go-0914",
    "added": "2026-09-14",
    "what": "제휴 결정이 발행 뒤로 밀리는 구조 수리 — F4-21: 21:38 루틴4 커밋에 상품조사(텀블러)와 '붙일 것 없음'이 함께 기록, 22:08 발행지시서는 '없음'으로 읽고 발행·네이버·인스타까지 진행, 22:3x 이과장이 텀블러 발급요청을 결재함에 올려 쓰레드만 막힘. 처방안: ①같은 코드에 no_fit 과 proposal 이 동시에 있으면 affiliate 가 오류로 띄움 ②⑦ 발행승인 카드(approvalcount/reviewpage)에 '제휴 발급 대기' 표시 — 승인 전에 링크 결정",
-   "due": "2026-09-15",
+   "due": "2026-09-25",
    "cmd": "python -m studio.affiliate --code F4-21",
    "owner": "claude",
    "state": "todo",
@@ -10210,8 +10212,10 @@
    "due": "2026-09-15",
    "cmd": "grep -n '마지막 보고' studio/wakewatch*.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: studio/wakewatch.py:130-133 에 이미 09-14 자로 수정됨 — 'left 항목이 전부 blocked(사람 차례)면 건너뛴다'. 정확히 요청한 판정 기준(item 상태로만 판정)으로 구현됨."
   },
   {
    "id": "affiliate-results-loop-0914",
@@ -10337,8 +10341,10 @@
    "due": "2026-09-15",
    "cmd": "grep -n _userBusy webapp/approval.html",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "재확인: webapp/approval.html:496-505 _userBusy() 함수 존재 및 SSE 갱신 지연 로직 구현됨. 그 이전(09-06) 원본 불만 사례 이후 09-15 수정, 이후 재발 보고 없음(daily log 검색 — 유일한 관련 언급은 09-06 원본 사고뿐). 사장님께 직접 여쭙지는 못했으나 재발 없음으로 판단."
   },
   {
    "id": "naver-post-c4-09",
@@ -10992,7 +10998,7 @@
    "id": "affiliate-timing-impl-0918",
    "added": "2026-09-18",
    "what": "제휴 시점 방침 구현(사장님 09-18 승인) — ①⑦ 발행승인 카드에 제휴 조사 결과(발급 필요/없음·상품·링크 유무) 함께 표시(approvalcount rows + approval.html 같은 조건) ②승인 시 링크 발급까지 한 번에(토스는 이부장이 API 로 즉시 발급) ③발행 뒤 늦게 나온 제휴는 이미 게시된 채널에 소급 안 함 — dispatch 지시서 문구에 반영",
-   "due": "2026-09-18",
+   "due": "2026-09-25",
    "cmd": "python -m studio.approvalcount | head -20  # ⑦ 카드에 제휴 줄이 보이는지",
    "owner": "claude",
    "state": "todo",
