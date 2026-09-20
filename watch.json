@@ -12351,6 +12351,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "postsindex-drift-0921",
+   "added": "2026-09-21",
+   "what": "posts_index 드리프트 — 루틴1 보고(09-21 08:17) 받아 이부장이 한 겹 더 팜. 【확인한 것】①지금은 소스·배포본 둘 다 DB 292 = posts_index 292 로 정합(일시적 불일치가 자체 치유된다) ②배선은 있다 — register_post → bake.py → make_index.py ③🔴 **배포 클론 C:\\lifeinfo-deploy 에 core.hooksPath 가 설정돼 있지 않고 .githooks 폴더도 없다** — 즉 pushgate(pre-push 훅)가 배포 push 에서 안 돈다. CLAUDE.md 가 경고하던 '새 클론은 훅이 안 걸린다' 그 자리. 【확인 못 한 것】소스에서 애초에 왜 어긋나는지 — 어긋난 채 커밋되는 경로를 아직 못 찾았다(이과장 'posts_index 재생성' 커밋 15건이 그 증거). 【수리안】⚠️ 배포 클론에 소스 훅을 그대로 걸면 안 된다 — pushgate.index_drift 가 'webapp/posts_index.json' 을 찾는데 배포 클론은 루트에 있어 조용히 통과한다. deploy 경로에서 posts_index 를 **복사 직전에 재생성**하거나 deploysync 에 게이트를 다는 쪽이 맞다. 결재 3건 처리 후 착수.",
+   "due": "2026-09-21",
+   "cmd": "git -C C:/lifeinfo-deploy config core.hooksPath; python -c \"import json,io; d=json.load(io.open('C:/lifeinfo-deploy/lifeinfo_db.txt',encoding='utf-8')); i=json.load(io.open('C:/lifeinfo-deploy/posts_index.json',encoding='utf-8')); print(len(d['posts']), len(i.get('posts') or i))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
