@@ -12227,6 +12227,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "osmu-folder-tidy-0921",
+   "added": "2026-09-21",
+   "what": "osmu/ 정리 — 네이버 원고 290개 중 게시 끝난 것 127·고아 162를 osmu/done/ 으로 옮긴다(삭제 아님). 사장님 지시 '쓰레기를 여기저기 두지 말고 하나만 두고 찾아야지'. 🔴 옮기기 전에 grep -rlF 로 그 이름을 참조하는 코드를 먼저 확인하고, 필요하면 양쪽 스캔으로 고친다(2026-08-19 루트 정리 선례).",
+   "due": "2026-09-21",
+   "cmd": "python -c \"import glob; print(len(glob.glob('osmu/네이버용_*.txt')),'개')\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
