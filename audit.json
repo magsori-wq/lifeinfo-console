@@ -7184,6 +7184,14 @@
    "target": "routine2-paused-0920",
    "detail": "오보였다 — 이부장 오판. git log 실측: [루틴2] 커밋 09-13·09-14·09-17·09-18·오늘 09-20 09:03(빈손 보고). routine_model 은 세션 로그로 마지막 실행을 추정하는데 그 값이 09-11 에 멈춰 있었고, 나는 git 과 대조하지 않고 그대로 사장님께 '8일째 멈춤'으로 보고했다. 사장님 손 필요 없음",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-20T14:37:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "reports-today-key-empty-0920",
+   "detail": "해결 확인(재기록) — 루틴5 커밋 42868067 이 studio/reports.py 2줄 수정(완료 보고의 at 을 정렬키로). 루틴1이 reports.bake() 재실행해 실측: today 10건 표시 · reports.html 에 daily-email-briefing-0920 실림. 고친 것은 루틴5, 확인은 루틴1. ⚠️ 첫 done 기록(커밋 f42fe545)은 이과장 세션의 rebase --abort 에 함께 되돌려져 사라졌다 — 그래서 다시 남긴다.",
+   "via": "cli"
   }
  ]
 }
