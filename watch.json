@@ -11960,8 +11960,10 @@
    "due": "2026-09-20",
    "cmd": "gh run view 35407506574 -R magsori-wq/lifeinfo-console --log-failed",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:85185a39"
+   "state": "done",
+   "by": "세션:85185a39",
+   "done_at": "2026-09-20",
+   "result": "DB 제목을 라이브에 맞췄다(라이브가 사람이 정정한 정본). F3-06='…2026년 9월 국제선·국내선 유류할증료 인상' · F2-14='2026 추석 고속도로 통행료 9월 24일~27일 무료 확정 …'. 라이브 title 직접 조회로 대조. 매니페스트 재생성까지 완료, validate_db PASS 15·FAIL 0"
   },
   {
    "id": "stash-review-result-0920",
@@ -12043,6 +12045,16 @@
    "by": "세션:15e0bc29",
    "done_at": "2026-09-20",
    "result": "오판이었다 — 이부장 세션은 열려 있었다(06ed2a43, 이 세션). 원인은 등록부의 ref 가 09-11 값(6be330)으로 낡아 이름 해석이 안 된 것. 현재 주소로 재등록 완료: 이부장=이부장[2afb01] · 이과장=LEE[5da458]. 앞으로는 whoami 로 재등록된 주소를 쓸 것"
+  },
+  {
+   "id": "xlink-a219",
+   "added": "2026-09-20",
+   "what": "🔗 A2-19 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-19",
+   "due": "2026-09-20",
+   "cmd": "python studio/blogger.py crosslink --code A2-19",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
