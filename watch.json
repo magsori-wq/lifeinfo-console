@@ -12304,6 +12304,18 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "insta-caption-h113-0921",
+   "added": "2026-09-21",
+   "what": "🙋[이부장 확인 대기] H1-13 인스타 캡션 저장(사장님 손 1번) — 게시물 https://www.instagram.com/p/DdhfbN-EyeX/ 는 카드 6장으로 올라갔는데 캡션이 비어 있습니다(자동 입력이 저장에 반영되지 않음). 게시물 ⋯ → 수정 → 캡션칸에 붙여넣기 → 완료. 캡션에는 블로그스팟·네이버 링크가 둘 다 들어 있고 9/23 개봉이라 급합니다. 붙여넣을 문구는 아래 명령을 누르면 복사됩니다",
+   "due": "2026-09-21",
+   "cmd": "powershell -NoProfile -Command \"Get-Content -Raw -Encoding UTF8 'C:\\lifeinfo\\insta\\캡션_이창동가능한사랑개봉.txt' | Set-Clipboard\"",
+   "owner": "claude",
+   "kind": "action",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
