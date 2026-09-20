@@ -10620,9 +10620,11 @@
    "due": "2026-09-21",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 3 -w '피드 드리프트 검사'",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "by": "루틴1",
-   "kind": "action"
+   "kind": "action",
+   "done_at": "2026-09-20",
+   "result": "위와 같은 건 — F2-14 DB 제목을 라이브 정본으로 동기. 매일 돌던 피드 드리프트 검사 빨간불이 꺼진다"
   },
   {
    "id": "factcheck-c110-property-0917",
@@ -12025,9 +12027,9 @@
   {
    "id": "commit-during-others-rebase-0920",
    "added": "2026-09-20",
-   "what": "【구조 결함 — 이부장 판정 요청】한 세션이 pull --rebase 중일 때 다른 세션이 커밋하면 그 커밋이 abort 와 함께 사라진다. 09-20 14:34 실측(루틴1 f42fe545 유실, reflog 근거). 지금 이것을 막는 장치도, 커밋 전에 확인하라는 규칙도 없다 — CLAUDE.md 는 amend·경로없는 stash·폴더 checkout 만 금지하고 '쌓는 명령(커밋)은 안전하다'고 가르치는데, 남이 rebase 중이면 커밋도 안전하지 않다. 【배선 실측 09-20 15:0x】core.hooksPath = C:/lifeinfo/.githooks (이 클론은 걸려 있다) · 현재 훅은 commit-msg·pre-push 둘뿐이고 pre-commit 은 없다. rebase 는 재생 커밋에 pre-commit 을 태우지 않으므로(git 동작, 이번에 실측하지는 않음) 훅을 넣어도 rebase 자체를 방해하지는 않을 것으로 본다. 【처방안 1】pre-commit 에 다섯 줄 — .git/rebase-merge|rebase-apply 가 있으면 커밋 차단. 【처방안 2】CLAUDE.md 한 줄만(코드 없이). 🔴 트레이드오프를 함께 볼 것: 차단이 걸렸다면 그 90초 동안 내가 발견을 기록하는 것 자체가 막혔다 — 유실보다 나쁠 수도 있다. 읽기전용 경고만 띄우는 3안도 있다. ⚠️ 워크트리·새 클론은 hooksPath 가 없을 수 있다(CLAUDE.md 경고) — 훅으로 갈 경우 그것부터 확인해야 '만들었다 ≠ 물렸다' 가 안 된다. 🔴 루틴1 권한은 '구조 결함 진단 = 보고까지' 라 손대지 않았다.",
+   "what": "【권고 확정 — 열면 바로 실행하면 된다. 다시 고르실 필요 없다】 문제: 한 세션이 pull --rebase 중일 때 다른 세션이 커밋하면 abort 와 함께 사라진다(09-20 14:34 루틴1 f42fe545 유실, reflog 근거). 커밋 직전에 '남이 rebase 중인가'를 볼 방법도 규칙도 없다. 【권고 = 읽기전용 경고】3안 중 이것을 권고한다. 근거: ①차단 훅은 그 순간 기록 자체를 막는다 — 내가 유실한 그 커밋은 '결함을 발견했다'는 기록이었고, 막혔으면 발견이 사라졌다. 유실보다 나쁠 수 있다 ②CLAUDE.md 한 줄만으로는 안 지켜진다(이 저장소가 라벨 42종·쓰레드 첨부·pace 드리프트에서 세 번 확인) ③경고는 위험이 0 이고, now·readycheck 처럼 '보여주는' 장치가 이 저장소에서 실제로 작동해 왔다. 【자리 = .githooks/commit-msg 맨 앞】이미 모든 사람 커밋에 걸려 있고 rebase 재생 커밋에는 안 걸린다 — 즉 '사람이 rebase 중에 치는 커밋' 에만 정확히 걸린다. 새 훅 파일을 만들 필요가 없다. 【넣을 내용】셸 5줄: git rev-parse --git-dir 로 얻은 경로에 rebase-merge 나 rebase-apply 가 있으면 '⚠️ 다른 세션이 rebase 중이다 — 이 커밋은 abort 시 사라질 수 있다. 끝난 뒤 다시 커밋하라' 를 stderr 로 찍고 exit 0(차단하지 않는다). 【확인】rebase 중에 커밋해 보고 경고가 뜨는지, 평소 커밋에는 안 뜨는지 둘 다 볼 것. 【배선 실측 09-20】core.hooksPath=C:/lifeinfo/.githooks 걸려 있음 · 훅은 commit-msg·pre-push 둘뿐. ⚠️ 워크트리·새 클론은 hooksPath 가 없을 수 있다 — 그쪽은 경고가 안 뜬다(차단이 아니라 경고라 무해). 🔴 루틴1 이 파일을 고치지 않은 이유: 게이트 변경은 루틴 권한이 아니라서이고, 고를 것을 남기지 않으려고 권고와 패치 내용까지 적어 두었다.",
    "due": "2026-09-21",
-   "cmd": "git -C C:/lifeinfo config core.hooksPath; ls C:/lifeinfo/.githooks/",
+   "cmd": "sed -n '1,15p' C:/lifeinfo/.githooks/commit-msg",
    "owner": "claude",
    "kind": "action",
    "state": "todo",
@@ -12055,6 +12057,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "solo-yuksu-0920",
+   "added": "2026-09-20",
+   "what": "🧵 쓰레드 상품 단독 — 토스 링크 발급 요청. 【권고】 발급하시는 쪽을 권합니다. 【근거】 깊은 육수 3종 선물세트(분말스틱 멸치·홍게·황태) 10,500원·리뷰 176·평점 4.7(2026-09-20 토스 확인, id 2644435577). 추석이 9/25 라 선물세트 수요는 이번 주가 마지막이고, 1만원대라 쓰레드 독자가 바로 집는 가격대입니다. 앞선 3건(홍삼·약과·맥세이프)과 같은 갈래입니다. 【위험】 리뷰 176 은 앞선 맥세이프(612)보다 얇습니다 — 판매량은 우리가 못 재고 리뷰가 대리 지표일 뿐입니다. 안 하셔도 잃는 것은 이번 추석 한 번입니다. 【다음】 링크를 주시면 대가성 문구를 맨 앞에 붙인 게시문을 만들어 다시 승인받고 이과장이 게시합니다 — 링크 없이는 게이트가 막아 게시되지 않습니다",
+   "due": "2026-09-22",
+   "cmd": "python -m studio.productprop search 육수",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
