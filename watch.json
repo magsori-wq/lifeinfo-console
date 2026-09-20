@@ -11991,18 +11991,22 @@
    "due": "2026-09-20",
    "cmd": "python -m studio.routines 2",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "오보였다 — 이부장 오판. git log 실측: [루틴2] 커밋 09-13·09-14·09-17·09-18·오늘 09-20 09:03(빈손 보고). routine_model 은 세션 로그로 마지막 실행을 추정하는데 그 값이 09-11 에 멈춰 있었고, 나는 git 과 대조하지 않고 그대로 사장님께 '8일째 멈춤'으로 보고했다. 사장님 손 필요 없음"
   },
   {
    "id": "reports-today-key-empty-0920",
    "added": "2026-09-20",
-   "what": "CP 보고서 탭에 【완료 보고(mark)】가 당일에는 구조적으로 안 뜬다 — 오늘 09-20 루틴 보고 5건(daily-publish 00:03·issue-product 07:11·email-briefing 08:15·daily-topics 09:03·publish 09:06) 전부 reports.html 에 없음. 【원인 2겹·코드 실측】①studio/reports.py collect() 의 ② 경로(batch.json items[].note)가 정렬키를 빈 문자열로 넣는다 — items 에 at 필드가 있는데도 안 쓴다(L273-283). ②bake() 가 live = [r for r in rs if r[0][:10] == today] 로 오늘을 고르므로(L479) 빈 키는 절대 오늘이 될 수 없다 → 전부 '이전 보고'로 밀리고, reverse 정렬 맨 뒤라 rest[:60] 컷(L491)에도 잘린다. 실측: 빈 키 행 351건 전원 탈락, 오늘로 잡힌 4건은 전부 now_log(진행)뿐. 09-19 이전 것이 보이는 이유는 _rotate_routinelog() 가 history 로 옮기며 ③ 경로(시각 키 있음)로 다시 실리기 때문 = 하루 지나야 보인다. 【처방】collect() ② 에서 key/t 를 str(it.get('at') or '') 로 채우면 두 문제가 같이 풀린다(③ 경로가 이미 같은 방식). 🔴 루틴 권한상 '구조 결함 진단=보고까지' 라 고치지 않고 올린다 — 이부장·사장님 판정 몫.",
+   "what": "【정정 09-20 14:5x】앞 노트의 '로테이션 때문에 하루 지나야 보인다'는 틀렸다 — routinelog_history.json 은 애초에 존재하지 않는다(로테이션이 돈 적 없음). 실제 메커니즘은 더 단순하다: 빈 키는 전부 동률이고 파이썬 정렬은 안정적이라 삽입 순서(오래된 것 먼저)가 유지되고, rest[:60] 이 앞 60개만 취하므로 【최신이 잘린다】. 재현 실측 — 루틴 세션 전체 69건·live 0건·rest 69건 → 표시 60건의 날짜코드 0912~0919, 잘려나간 9건이 0919 일부와 0920 전부. 즉 오늘 것이 안 보이는 이유는 ①빈 키라 live 판정 탈락 ②동률 타이라 맨 뒤로 밀려 60 컷에 잘림, 두 가지가 겹친 것. 처방(collect() ② 에서 key=str(it.get('at') or ''))은 그대로 유효하며 두 문제를 동시에 푼다. 🔴 교훈: 09-19 는 보이고 09-20 은 안 보이는 비대칭을 보고 로테이션을 넘겨짚었다 — 파일 존재 여부 한 줄이면 갈렸다(lastCrawl 사고와 같은 계열).",
    "due": "2026-09-20",
-   "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio import reports;import datetime;by=reports.collect();t=datetime.date.today().isoformat();print('오늘로 잡힌 행:',sum(1 for rs in by.values() for r in rs if r[0][:10]==t),'/ 빈키 행:',sum(1 for rs in by.values() for r in rs if not r[0]))\"",
+   "cmd": "python -c \"import sys,datetime;sys.path.insert(0,'.');from studio import reports;by=reports.collect();t=datetime.date.today().isoformat();rs=[v for k,v in by.items() if '루틴' in k][0];live=[r for r in rs if r[0][:10]==t];print('루틴 live',len(live),'/ 전체',len(rs))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:15e0bc29"
+   "state": "done",
+   "by": "세션:15e0bc29",
+   "done_at": "2026-09-20",
+   "result": "해결 확인 — 루틴5가 09-20 14:31 커밋 42868067 로 studio/reports.py 2줄 수정(완료 보고의 시각을 정렬키로). 내가 방금 reports.bake() 를 다시 돌려 실측: 루틴 세션 '오늘 6건' 으로 뜨고 reports.html 에 0920 코드 6개 전부 실림(daily-email-briefing-0920 08:15 포함). 고친 것은 루틴5, 확인은 루틴1. ⚠️ 정정 커밋 310ae3cc 와 루틴5 커밋 42868067 은 아직 로컬 — A2-19 발행 러너가 원격을 앞서 rebase 불가(작업트리에 다른 세션 미커밋 다수, autostash 금지)."
   }
  ]
 }
