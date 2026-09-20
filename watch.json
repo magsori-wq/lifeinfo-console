@@ -12003,10 +12003,18 @@
    "due": "2026-09-20",
    "cmd": "python -c \"import sys,datetime;sys.path.insert(0,'.');from studio import reports;by=reports.collect();t=datetime.date.today().isoformat();rs=[v for k,v in by.items() if '루틴' in k][0];live=[r for r in rs if r[0][:10]==t];print('루틴 live',len(live),'/ 전체',len(rs))\"",
    "owner": "claude",
-   "state": "done",
-   "by": "세션:15e0bc29",
-   "done_at": "2026-09-20",
-   "result": "해결 확인 — 루틴5가 09-20 14:31 커밋 42868067 로 studio/reports.py 2줄 수정(완료 보고의 시각을 정렬키로). 내가 방금 reports.bake() 를 다시 돌려 실측: 루틴 세션 '오늘 6건' 으로 뜨고 reports.html 에 0920 코드 6개 전부 실림(daily-email-briefing-0920 08:15 포함). 고친 것은 루틴5, 확인은 루틴1. ⚠️ 정정 커밋 310ae3cc 와 루틴5 커밋 42868067 은 아직 로컬 — A2-19 발행 러너가 원격을 앞서 rebase 불가(작업트리에 다른 세션 미커밋 다수, autostash 금지)."
+   "state": "todo",
+   "by": "세션:15e0bc29"
+  },
+  {
+   "id": "rebase-inflight-my-commits-0920",
+   "added": "2026-09-20",
+   "what": "⚠️ 09-20 15시경 C:/lifeinfo 작업트리가 rebase 진행 중(detached HEAD)이다 — 이과장 세션이 main 을 origin/main(59605813 A2-19 발행) 위로 올리는 중이고, 충돌 4건 미해결(approval_m.json·daylog.html·flow.json·naver_analytics_summary.json, 전부 파생). 남은 todo 1건 = 8980c12f [이과장] 파생 파일 갱신 반영. 🔴 그 와중에 루틴1이 커밋 2개를 얹었다(모르고 했다): d51eb74f 보고탭 결함 원인 정정 · f42fe545 보고탭 재bake. 루틴5 커밋 e0974633(reports.py 수정)도 함께 새 베이스 위에 얹혀 있다. 지금은 셋 다 살아 있다(git log 실측). 🔴🔴 위험: 이과장이 'git rebase --abort' 하면 main 이 8980c12f 로 돌아가면서 이 세 커밋이 dangling 이 된다. 그 경우 git reflog 나 'git cherry-pick d51eb74f e0974633 f42fe545' 로 되살릴 것. 루틴1은 더 건드리지 않고 여기서 멈춘다(rebase 는 남의 진행이고 HEAD 를 건드리는 명령은 금지).",
+   "due": "2026-09-20",
+   "cmd": "git -C C:/lifeinfo log --oneline -4 && git -C C:/lifeinfo status -sb | head -2",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:15e0bc29"
   }
  ]
 }
