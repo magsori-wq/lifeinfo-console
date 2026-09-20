@@ -12203,6 +12203,28 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-f218-0921",
+   "added": "2026-09-21",
+   "what": "🙋[이부장 확인 대기] F2-18 네이버 게시(사장님 손) — 제목: 추석 통행료 면제 4일, 귀성·귀경 최악 시간대는? 서울 부산 목포 소요시간 총정리 / 카테고리: 여행 / 첨부 썸네일: C:\\lifeinfo\\thumbs_naver\\268n_tollroad.png / 태그: 추석통행료면제, 추석귀성길, 귀경시간, 고속도로소요시간, 추석연휴교통, 생활정보, 꿀정보, 저장각 / 블로그스팟 발행 완료 https://lifeinfo8975.blogspot.com/2026/09/2026-4.html . 통행료 면제는 9/24 시작이라 9/23 전 게시가 유리. 게시 후 URL 을 알려주시면 인스타·쓰레드로 이어갑니다(네이버 링크 필수)",
+   "due": "2026-09-21",
+   "cmd": "python -m studio.pipeline naver-draft --code F2-18 --file osmu/네이버용_추석통행료면제귀성귀경.txt",
+   "owner": "claude",
+   "kind": "action",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
+  },
+  {
+   "id": "naverdraft-autofind-0921",
+   "added": "2026-09-21",
+   "what": "회귀 감시 — naver-draft 자동탐색이 등록 이름을 덮어쓰던 버그(2026-09-21 수정). '[등록 원고]' 가 뜨고 '등록 이름을 실제 원고로 맞췄다' 가 안 떠야 정상. 뜨면 되살아난 것.",
+   "due": "2026-09-24",
+   "cmd": "python -m studio.pipeline naver-draft --code F2-18 2>&1 | grep -E '등록 원고|자동탐색|등록 이름을'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
