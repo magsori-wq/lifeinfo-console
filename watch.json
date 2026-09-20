@@ -12019,6 +12019,17 @@
    "by": "세션:15e0bc29",
    "done_at": "2026-09-20",
    "result": "【정정·종결 09-20 15:0x · reflog 실측】 ①지금 rebase 는 돌고 있지 않다 — .git/rebase-merge 없음 · 충돌 0 · main...origin/main 동기(ahead/behind 0). 알릴 일 자체가 없다. ②이과장은 잘못한 것이 없다. reflog 순서: 14:34 pull --rebase(start) → 내 커밋 2개 pick → 14:34 루틴1이 【rebase 진행 중에】 f42fe545 를 얹음 → 14:33 rebase(abort) 로 그 커밋 유실 → 14:35 이과장이 merge(ort)로 갈아타 정상 해결 → 14:37~14:39 루틴1 재기록·이부장·이과장 커밋 순조. ③즉 유실의 직접 원인은 【내가 남의 rebase 도중에 커밋한 것】이다. abort 가 그 위에 얹힌 커밋을 데려가는 것은 정상 동작이다. ④그리고 pull --rebase 는 CLAUDE.md 가 권장하는 표준 절차다(금지된 것은 --autostash). 앞 노트가 이것을 '위험한 rebase' 처럼 적은 것은 부정확했다. 🔴 남는 구조 문제 1건은 따로 올린다 — 세션이 커밋 직전에 '지금 남이 rebase 중인가'를 확인할 방법도 규칙도 없다."
+  },
+  {
+   "id": "commit-during-others-rebase-0920",
+   "added": "2026-09-20",
+   "what": "【구조 결함 — 이부장 판정 요청】한 세션이 pull --rebase 중일 때 다른 세션이 커밋하면 그 커밋이 abort 와 함께 사라진다. 09-20 14:34 실측(루틴1 f42fe545 유실, reflog 근거). 지금 이것을 막는 장치도, 커밋 전에 확인하라는 규칙도 없다 — CLAUDE.md 는 amend·경로없는 stash·폴더 checkout 만 금지하고 '쌓는 명령(커밋)은 안전하다'고 가르치는데, 남이 rebase 중이면 커밋도 안전하지 않다. 【배선 실측 09-20 15:0x】core.hooksPath = C:/lifeinfo/.githooks (이 클론은 걸려 있다) · 현재 훅은 commit-msg·pre-push 둘뿐이고 pre-commit 은 없다. rebase 는 재생 커밋에 pre-commit 을 태우지 않으므로(git 동작, 이번에 실측하지는 않음) 훅을 넣어도 rebase 자체를 방해하지는 않을 것으로 본다. 【처방안 1】pre-commit 에 다섯 줄 — .git/rebase-merge|rebase-apply 가 있으면 커밋 차단. 【처방안 2】CLAUDE.md 한 줄만(코드 없이). 🔴 트레이드오프를 함께 볼 것: 차단이 걸렸다면 그 90초 동안 내가 발견을 기록하는 것 자체가 막혔다 — 유실보다 나쁠 수도 있다. 읽기전용 경고만 띄우는 3안도 있다. ⚠️ 워크트리·새 클론은 hooksPath 가 없을 수 있다(CLAUDE.md 경고) — 훅으로 갈 경우 그것부터 확인해야 '만들었다 ≠ 물렸다' 가 안 된다. 🔴 루틴1 권한은 '구조 결함 진단 = 보고까지' 라 손대지 않았다.",
+   "due": "2026-09-21",
+   "cmd": "git -C C:/lifeinfo config core.hooksPath; ls C:/lifeinfo/.githooks/",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:15e0bc29"
   }
  ]
 }
