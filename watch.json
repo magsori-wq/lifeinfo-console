@@ -12038,10 +12038,10 @@
   {
    "id": "tower-session-not-open-0920",
    "added": "2026-09-20",
-   "what": "이부장(관제탑) 세션이 지금 열려 있지 않다 — 루틴1이 사장님 지시로 보고서 확인 알림을 보내려다 확인. 【실측】SendMessage to:'이부장' → 'No agent named 이부장 is reachable'. list_sessions 50건 전수에도 '이부장' 제목 없음 · 등록부 세션ID 06ed2a43-6017-4af8-8bb4-0bf47420d2a2 도 목록에 없음. 목록에 Remote Control 활성인 것은 'LEE'(=이과장, 09-20 14:40 활동)뿐이다. 🔴 후보 세션에 뿌리지 않았다(CLAUDE.md '주소를 모르면 뿌리지 말고 여쭙는다' — 뿌리면 받는 세션마다 '나 아니다'를 판단하느라 토큰을 태운다). 【보고서는 이미 올라가 있다】CP 보고서 탭 reports.html 「루틴1 → 이부장 보고서 · 09-20 15:2x」 · batchboard routinelog/daily-email-briefing-0920 — 이부장이 열리면 그 자리에서 본다. 알림만 못 간 것이고 제출은 끝났다. 【사장님 조치】이부장을 여실 때 resume_leebujang.bat 06ed2a43-6017-4af8-8bb4-0bf47420d2a2 (start_ 는 다른 이부장이 온다). 세션명이 바뀌셨으면 그 이름을 알려주시면 다음부터 그 주소로 보낸다 — 세션 목록은 사장님 화면에만 보인다.",
+   "what": "【정정 09-20 15:5x — 앞 기록이 틀렸다】'이부장 세션이 안 열려 있다'는 루틴1의 오판이었다. 실측: ~/.claude/projects/C--lifeinfo/06ed2a43-6017-4af8-8bb4-0bf47420d2a2.jsonl 이 09-20 15:44 에 수정됨(409MB) — 이부장 세션은 살아서 활동 중이다. 🔴 무엇을 잘못 읽었나: ①SendMessage to:'이부장' 이 'No agent named 이부장 is reachable' 을 냈고 ②list_sessions 50건에 '이부장' 제목이 없었다 → 이 둘을 '세션이 닫혔다'로 단정했다. 실제로는 ①은 【이름이 주소로 안 먹힌다】는 뜻이고 ②는 Desktop 앱이 아는 목록에 안 보인다는 뜻일 뿐이다(표면이 다르면 목록도 다르다). CLAUDE.md 가 이미 경고한 '표기를 뜻으로 옮기지 말 것'·'offline 은 못 받는다가 아니다' 와 같은 계열. 🔴 이 오판으로 사장님께 '이부장을 여십시오(resume_leebujang.bat)' 라고 잘못 안내했다 — 이미 열려 있는 세션을 또 열면 다른 이부장이 온다(09-01 사고). 【남은 진짜 문제】이부장에게 메시지를 보낼 올바른 주소를 모른다. 등록부 webapp/session_names.json 의 이름·ref 가 SendMessage 에 안 통한다. 세션 ID 로 보내지는지는 아직 시도하지 않았다.",
    "due": "2026-09-20",
    "cmd": "resume_leebujang.bat 06ed2a43-6017-4af8-8bb4-0bf47420d2a2",
-   "owner": "user",
+   "owner": "claude",
    "kind": "action",
    "state": "done",
    "by": "세션:15e0bc29",
