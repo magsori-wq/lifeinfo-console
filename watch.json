@@ -12284,6 +12284,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "xlink-h113",
+   "added": "2026-09-21",
+   "what": "🔗 H1-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-13",
+   "due": "2026-09-21",
+   "cmd": "python studio/blogger.py crosslink --code H1-13",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "naver-toss-card-ok-0921",
+   "added": "2026-09-21",
+   "what": "✅ 실측 성공 사례(2026-09-21 F2-18) — 네이버 본문에 토스 쉐어링크를 '상품명 줄 + 빈 줄 + 링크 한 줄 단독'으로 넣었더니 **상품 사진 카드가 정상 표시**됐다(사장님 캡처 확인: '세플로 차량용 핸드폰 거치대, 블랙, 1개 | 토스쇼핑 · 리뷰 515 · 평점 4.4'). 원고에 그대로 넣고 통째로 붙여넣어도 카드가 떴다 — 즉 '링크만 따로 붙여야 한다'는 절차가 항상 필요한 것은 아니다. 🔴 다만 표본 1건이다. 다음 글에서도 되는지 확인한 뒤에 CLAUDE.md 「네이버 제휴 링크는 한 줄씩 단독으로」 절을 갱신할 것.",
+   "due": "2026-09-28",
+   "cmd": "curl -s -A 'Mozilla/5.0' 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224418237487' | grep -c 'toss.im'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
