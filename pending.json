@@ -1,9 +1,9 @@
 {
- "rev": "da6dd267",
+ "rev": "850cd58a",
  "counts": {
   "total": 292,
-  "osmu_done": 290,
-  "osmu_pending": 2,
+  "osmu_done": 291,
+  "osmu_pending": 1,
   "indexed": 0,
   "index_pending": 292,
   "index_requested": 159,
@@ -15,15 +15,16 @@
    "code": "F2-18",
    "title": "2026 추석 고속도로 통행료 4일 면제 — 귀성·귀경",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인대기"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 반영 대기",
+   "osmu": true,
    "idxst": "req",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
