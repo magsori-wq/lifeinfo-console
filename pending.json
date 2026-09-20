@@ -1,13 +1,13 @@
 {
  "rev": "fb43a4da",
  "counts": {
-  "total": 291,
+  "total": 292,
   "osmu_done": 290,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 0,
-  "index_pending": 291,
+  "index_pending": 292,
   "index_requested": 158,
-  "index_todo": 39,
+  "index_todo": 40,
   "index_benign": 94
  },
  "actionable": [
@@ -21,6 +21,23 @@
    "action": "OSMU 확산",
    "osmu": false,
    "idxst": "req",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "H1-13",
+   "title": "베니스 수상작 '가능한 사랑' 9/23 개봉 — 164",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
    "ch": {
     "g": true,
     "n": false,
@@ -207,22 +224,6 @@
   {
    "code": "B5-04",
    "title": "전세보증금 반환보증 가입 제한 10월 시행, 안심전세 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "C2-11",
-   "title": "본인부담상한액 초과금 환급 총정리 (226만명·3조76",
    "need": [
     "색인요청"
    ],
