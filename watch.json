@@ -12104,6 +12104,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "check-routine8-0921",
+   "added": "2026-09-20",
+   "what": "루틴8(07:00)·루틴9(15:00)이 prod0921new 지시서를 읽고 새 상품 후보 1건을 냈는지 체크 — 사장님 지시 2026-09-20 '내일도 체크해'. 재료 셋(시즌·인기순위·3.유입검색어)을 다 썼는지, 빈손이면 찾아본 경로를 적었는지까지 본다",
+   "due": "2026-09-21",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('prod0921new'))\" && python -m studio.productprop",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
