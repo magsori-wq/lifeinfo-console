@@ -12066,8 +12066,20 @@
    "cmd": "python -m studio.productprop search 육수",
    "owner": "user",
    "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-20",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "tower-address-unknown-0920",
+   "added": "2026-09-20",
+   "what": "【확정된 발견】이부장은 살아 있는데(세션로그 09-20 15:44 활동) 루틴1이 가진 어떤 주소로도 SendMessage 가 닿지 않는다. 실측 3회 전부 'No agent named ... is reachable': ①이름 '이부장' ②세션ID '06ed2a43-6017-4af8-8bb4-0bf47420d2a2' ③ref '6be330'. 즉 webapp/session_names.json 등록부에 SendMessage 가 실제로 받는 주소가 없다 — 등록부는 세션ID·ref 를 담는데 SendMessage 는 【표시명(ListAgents 에 뜨는 이름)】을 받는다. 그리고 이 세션에는 ListAgents 도구가 없어 표시명을 볼 수 없다. 🔴 CLAUDE.md 가 '세션 ID 는 안 바뀌니 그것을 열쇠로' 라고 정한 것은 【누구인지 식별】에는 맞지만 【메시지 주소】로는 안 통한다 — 두 용도가 다른데 문서가 구분하지 않는다. 【실무 결론】보고서 제출 자체는 CP(보고탭·배치보드)로 끝났고 이부장이 열면 본다. 못 가는 것은 '확인해 달라'는 알림 한 통뿐이다. 알림이 꼭 필요하면 사장님께 이부장 탭 표시명을 여쭙는 것이 유일한 길이다(세션 목록은 사장님 화면에만 보인다). 🔴 앞서 이것을 '이부장 세션이 닫혔다'로 오판해 사장님께 resume 를 잘못 안내했다 — 정정은 watch tower-session-not-open-0920.",
+   "due": "2026-09-21",
+   "cmd": "python -m studio.whoislee",
+   "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "세션:15e0bc29"
   }
  ]
 }
