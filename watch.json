@@ -11993,6 +11993,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "reports-today-key-empty-0920",
+   "added": "2026-09-20",
+   "what": "CP 보고서 탭에 【완료 보고(mark)】가 당일에는 구조적으로 안 뜬다 — 오늘 09-20 루틴 보고 5건(daily-publish 00:03·issue-product 07:11·email-briefing 08:15·daily-topics 09:03·publish 09:06) 전부 reports.html 에 없음. 【원인 2겹·코드 실측】①studio/reports.py collect() 의 ② 경로(batch.json items[].note)가 정렬키를 빈 문자열로 넣는다 — items 에 at 필드가 있는데도 안 쓴다(L273-283). ②bake() 가 live = [r for r in rs if r[0][:10] == today] 로 오늘을 고르므로(L479) 빈 키는 절대 오늘이 될 수 없다 → 전부 '이전 보고'로 밀리고, reverse 정렬 맨 뒤라 rest[:60] 컷(L491)에도 잘린다. 실측: 빈 키 행 351건 전원 탈락, 오늘로 잡힌 4건은 전부 now_log(진행)뿐. 09-19 이전 것이 보이는 이유는 _rotate_routinelog() 가 history 로 옮기며 ③ 경로(시각 키 있음)로 다시 실리기 때문 = 하루 지나야 보인다. 【처방】collect() ② 에서 key/t 를 str(it.get('at') or '') 로 채우면 두 문제가 같이 풀린다(③ 경로가 이미 같은 방식). 🔴 루틴 권한상 '구조 결함 진단=보고까지' 라 고치지 않고 올린다 — 이부장·사장님 판정 몫.",
+   "due": "2026-09-20",
+   "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio import reports;import datetime;by=reports.collect();t=datetime.date.today().isoformat();print('오늘로 잡힌 행:',sum(1 for rs in by.values() for r in rs if r[0][:10]==t),'/ 빈키 행:',sum(1 for rs in by.values() for r in rs if not r[0]))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:15e0bc29"
   }
  ]
 }
