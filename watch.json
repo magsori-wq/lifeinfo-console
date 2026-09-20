@@ -12341,6 +12341,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "루틴1"
+  },
+  {
+   "id": "feeddrift-verify-0921",
+   "added": "2026-09-21",
+   "what": "피드 드리프트 워크플로가 09-17~19 5회 연속 실패했는데 09-20 발행·제목 동기로 해소됐다(로컬 selfcheck 5) 피드정합 ✅ 제목드리프트 0). 다음 실행(UTC 22:00 예정·실제로는 23:5x 지연)이 **success 로 바뀌는지** 확인할 것. 계속 실패하면 원인이 제목 드리프트가 아니라 다른 것이다 — artifact feed-drift-report 를 열어 사유를 보라.",
+   "due": "2026-09-21",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow '피드 드리프트 검사' --limit 2",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
