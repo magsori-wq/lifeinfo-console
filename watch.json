@@ -12116,6 +12116,27 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "check-routine8-0921",
+   "added": "2026-09-20",
+   "what": "🧪 루틴 게시 시험 — 사장님 1번 선택(2026-09-20). 세 자리를 순서대로 확인한다: ①07:00 루틴8이 prod0921new 지시서를 스스로 읽었나(reads 가 1→2 로 오르면 읽은 것 · 1은 이부장이 만든 값) ②후보 1건을 올렸나(재료 셋: 시즌·오늘 인기순위·3.유입검색어) ③오전에 내가 판정·결재함 → 승인 뒤 15:00 루틴9가 게시했나. 🔴 막히면 우회하지 말 것 — 담당을 바꾸지 말고 무엇이 막혔는지 보고",
+   "due": "2026-09-21",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('prod0921new'))\" && python -m studio.productprop && python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "drift-verify-0921",
+   "added": "2026-09-20",
+   "what": "피드 드리프트 검사(console repo 매일 23:55)가 09-15~09-19 6회 연속 실패했다. 마지막 성공 09-13 23:54. 원인 = F3-06·F2-14 의 DB 제목이 라이브와 달랐던 것(라이브에서 제목을 다듬고 DB 를 안 맞춘 D1-08 과 같은 계열). 09-20 커밋 f262b7fd [이부장] 로 DB 동기 완료, 배포 저장소 origin/main(096c9133) 의 lifeinfo_db.txt 도 두 편 모두 라이브와 글자까지 일치함을 확인했다. 따라서 오늘 밤 23:55 회차는 통과해야 정상이다. 【확인】그 회차가 success 면 이 항목을 닫는다. 또 failure 면 제목 동기는 이미 맞으므로 새 원인이다 — gh run view <id> --log 로 불일치 목록을 직접 읽을 것(요약은 '요약 패널 확인하라' 만 찍혀 원인이 안 보인다). 루틴1 은 메일만 보므로 DB·라이브 수정은 이과장·이부장 몫이다.",
+   "due": "2026-09-21",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow \"피드 드리프트 검사\" --limit 3",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
