@@ -12114,8 +12114,10 @@
    "due": "2026-09-21",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('prod0921new'))\" && python -m studio.productprop && python -m studio.affiliate solo",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-21",
+   "result": "✅ 확인 완료 — 루틴8이 prod0921new 를 스스로 읽었다(reads=1, 07:10 읽고 07:11 보고). 빈칸 placeholder 수정이 효과 있었다. 후보 1건(소갈비살), 재료 ①시즌달력 ②토스인기순위 사용·③kwgap 은 10일 낡아 미사용이라 정직하게 보고."
   },
   {
    "id": "drift-verify-0921",
