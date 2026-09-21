@@ -7648,6 +7648,14 @@
    "target": "cp-iframe-html-audit-0921",
    "detail": "전수 점검·수리 완료. CP iframe 23개 중 doctype 누락 3건 발견: daylog.html(charset 도 없어 탭이 통째로 빈 화면) · reports.html · temp.html. 셋 다 생성기(studio/daylog.py·reports.py·tempboard.py)를 고쳤고 재점검 결과 23개 전부 doctype 보유. 커밋 80207acd·(이번)",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-21T21:22:03",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "H1-14",
+   "detail": "🟡통과: 계산예시(토 23:40-23:05=35분·23:10=30분, 목 20:00→22:00=120-105=약15분, 18:00→21:30=3h30, 9/25 4h10) 전부 근거파일 시각과 일치·판단형표(5상황)·함정6개 성립, 바이라인 이상곤 75편 표준과 동일·본문과 모순없음. ",
+   "via": "cli"
   }
  ]
 }
