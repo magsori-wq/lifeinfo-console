@@ -442,14 +442,15 @@
   {
    "id": "insta-session-howto",
    "added": "2026-08-10",
-   "what": "인스타 발행 세션 여는 법(1편만 원칙): 새 Desktop 대화에서 '배치보드 insta0805 열어서 지금 진행중인 항목(now) 지시대로 인스타 1편만 발행해줘' 라고만 말하면 콘솔의 now 배너·배치 노트를 읽고 그 1편만 진행한다. 5편 동시금지 — pc-freeze-diagnosis 08-10 재발 계기.",
+   "what": "📸 인스타 1편만 진행하는 세션 여는 법 — **꺼내 보는 메모**(하실 일 아님). 🔴 **2026-09-21 정정: 옛 문구가 죽어 있었다.** 오래 적혀 있던 '배치보드 insta0805 열어서…' 는 **그 배치가 batch.json 에서 사라져** 그대로 말씀하시면 세션이 빈손으로 돌아온다. 【지금 쓰는 법】 새 Desktop 대화에서 「python -m studio.osmu_manifest show --code <코드> 로 상태 보고 인스타 1편만 게시해줘」. 코드는 아래 미게시 목록에서 고른다. 【미게시 현황 09-21】 **3편뿐**(B1-03·G4-02·E2-07, 전부 옛 글). 최근 발행분은 이과장이 OSMU 에서 처리하므로 **전용 세션을 열 일이 거의 없어졌다.** 🔴 **5편 동시 금지는 여전히 유효** — 2026-08-10 PC 멈춤(이미지 처리가 겹쳐 렌더러 정지).",
    "due": "2026-12-31",
-   "cmd": "python -m studio.batchboard now",
-   "owner": "user",
+   "cmd": "python -m studio.osmu_manifest show --code B1-03",
+   "owner": "claude",
    "state": "todo",
    "note": 88,
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "verify": "python -c \"import io,json;from studio import config as C;db=json.load(io.open(C.DB_PATH,encoding='utf-8'));print('인스타 미게시', len([p for p in db.get('posts',[]) if p.get('url') and not ((p.get('osmu') or {}).get('instagram'))]), '편')\""
   },
   {
    "id": "a2-14-draft-check",
@@ -1208,7 +1209,7 @@
    "what": "PC 체감 성능(화면 버벅임·브라우저 로딩 지연) — 원인 미규명. 🔴2026-08-16 에 내가 세 가지를 권고했다가 전부 근거 부족으로 철회했다: ①iGPU 드라이버 노후(메모리에 '무혐의·닫힌 경로'라 적혀 있었음) ②NVIDIA 디스플레이 컨테이너(커널 드라이버 nvlddmkm 은 별개로 Running, MX250 에 물린 화면 0대) ③전원계획(콘센트 시 CPU 최대 100%로 이미 안 눌림). 유일하게 안 깨진 후보는 esifsvc(Intel Dynamic Tuning, 현재 Disabled)이나 **아직 측정 안 함**. ⛔재조사 전 필독: memory escalation-trap-pc-issues(앱→성능→GPU→안전부팅 번짐 경로, 07-26 에 이 끝에서 화면 상실) · pc-freeze-diagnosis. ⛔안전모드·bcdedit·드라이버 제거/롤백·GPU 비활성화 절대 금지. 사용자가 먼저 요청할 때만 착수.",
    "due": "2026-12-31",
    "cmd": "먼저 memory escalation-trap-pc-issues 를 읽고, 측정 없이는 권고하지 말 것",
-   "owner": "user",
+   "owner": "claude",
    "state": "blocked",
    "kind": "action",
    "by": "이부장"
@@ -1472,7 +1473,7 @@
    "what": "애드센스 수동 광고 위젯 2개 복구 — 🟢급하지 않다(2026-08-18 오후 화면 실측으로 재판정). ①레이아웃의 '광고' 섹션에는 **가젯 추가 링크가 없다** — '레이아웃>광고>가젯추가' 경로는 이 블로그에 존재하지 않는다. 복구하려면 테마 HTML 로 <b:widget id='AdSense1'> 블록을 되돌려야 하는데, 그건 오전에 'AdSense1 is not valid' 로 저장이 거부됐던 바로 그 작업이라 승인 전엔 또 막힐 공산이 크다. ②그리고 **자동 광고가 켜져 있다**(adsense.py status = 자동광고 True). 자동 광고는 승인 후 구글이 런타임에 광고 자리를 삽입하므로, 소스 HTML 에 ins.adsbygoogle 가 없는 것은 자동광고 사이트에서 정상이다. 내가 이를 '광고 자리 0개=심사 전 복구 필수'로 읽은 것은 과한 해석이었다. → 승인된 뒤에 선택적으로 복구한다.",
    "due": "2026-12-31",
    "cmd": "승인 후: 테마>HTML편집에서 backup/theme_원본_2026-08-14.xml 의 AdSense1·AdSense2 블록을 되돌려 저장",
-   "owner": "user",
+   "owner": "claude",
    "state": "wait",
    "flag": "🔴승인 전에는 시도하지 말 것 — 저장이 거부되고 테마만 위험해진다. 자동광고가 대신 담당한다",
    "kind": "action",
@@ -1852,13 +1853,14 @@
   {
    "id": "loopeng-stopcond",
    "added": "2026-08-19",
-   "what": "루프엔지니어링 보고서 종료조건 — 발행 페이스(횟수 기반)에 조건 기반 지표 추가 여부. 🔴색인 2/196 인 지금 얹으면 발행이 사실상 잠기고 사장님이 올린 상한 5를 되내리는 셈이 된다. 색인이 회복된 뒤에만 재논의",
+   "what": "루프엔지니어링 보고서 종료조건 — 발행 페이스(횟수 기반)에 **조건 기반 지표**를 얹을지. 【지금 하면 안 되는 이유】 색인이 **0/277**(2026-09-20 판독)이다. 어떤 조건을 걸어도 0 은 통과 못 해 그 흐름이 완전히 잠긴다. 그리고 사장님이 2026-09-13 에 '한도 당분간 없다' 고 푸신 것을 되돌리는 셈이 된다. 【언제 다시 보나】 **색인이 0 에서 벗어나면** — 임계값을 지어내지 않는다. 0→1 이라도 무언가 움직인 것이고 그때 이부장이 재서 판단해 올린다. 【사장님이 하실 것】 지금은 없다. ⚠️ 이 항목에 오래 '색인 2/196' 이라 적혀 있었는데 09-21 재측정 결과 **0/277 로 더 나빠졌다**(196편일 때 2편 → 277편에서 0편).",
    "due": "2026-10-20",
    "cmd": "python -m studio.pace",
    "owner": "user",
    "state": "wait",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "verify": "python -c \"import io,json;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'));print('색인', d.get('indexed'), '/', d.get('total'), '· 판독', d.get('checked_at'))\""
   },
   {
    "id": "loopeng-review4w",
@@ -2082,7 +2084,7 @@
    "what": "🙋 Google Trends 조회 — 브라우저가 필요해 Claude 가 못 한다(rate limit 로 막힘). 글감 선정 보조 지표이고 **승인·발행을 막지 않는다**(키워드마스터 광고벽과 같은 처지 — watch kwgate-adwall 참조). 급하지 않다. 필요하실 때 보시고, 특정 키워드가 궁금하면 말씀해 주시면 다른 경로를 찾는다.",
    "due": "2026-10-15",
    "cmd": "start https://trends.google.co.kr/trends/",
-   "owner": "user",
+   "owner": "claude",
    "state": "wait",
    "kind": "action",
    "by": "이부장"
@@ -12599,6 +12601,17 @@
    "what": "색인 요청 무효 결론의 재확인 — 09-21 대조(요청 26편 vs 미요청 21편, 양쪽 크롤 0%)로 '새 글 색인 요청도 레버가 아니다'가 확인됐다. 2주 뒤 index_status 를 다시 떠서 **요청한 26편 중 뒤늦게 크롤된 것이 생겼는지** 확인한다. 생기면 결론을 뒤집어야 한다(지연 효과). 안 생기면 indexing-not-a-technical-problem 메모리에 이 대조를 근거로 추가",
    "due": "2026-10-05",
    "cmd": "python -c \"import io,json;idx=json.load(io.open('webapp/index_status.json',encoding='utf-8'));g=json.load(io.open('webapp/gsc_requested.json',encoding='utf-8'));req=set(g.get('urls') or []);d=[(k,r) for k,r in (idx.get('posts') or {}).items() if str(r.get('state') or '').startswith('Discovered')];print('요청함 크롤', sum(1 for k,r in d if (r.get('url') or '') in req and r.get('lastCrawl')), '/', sum(1 for k,r in d if (r.get('url') or '') in req))\"",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cp-iframe-html-audit-0921",
+   "added": "2026-09-21",
+   "what": "CP 가 iframe 으로 부르는 HTML 23개 중 **생성기가 만드는 것**의 doctype·charset 유무를 전수 점검. 09-21 에 daylog.html 이 doctype·charset 없이 생성돼 「일자별 처리내역」 탭이 통째로 빈 화면이었다(사장님이 탭을 눌러 보여 주시기 전까지 아무도 몰랐다 — 생성기는 에러를 안 냈다). 같은 결함이 progress/batch/reports/timeline 등에 더 있는지 확인",
+   "due": "2026-09-22",
+   "cmd": "for f in webapp/*.html; do head -c 60 $f | grep -qi doctype || echo \"NO-DOCTYPE $f\"; done",
    "owner": "claude",
    "kind": "action",
    "state": "todo",

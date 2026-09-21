@@ -7632,6 +7632,14 @@
    "target": "stash-review-result-0920",
    "detail": "사장님 '버려' 승인(09-21 17:2x) → git stash clear 실행 완료. 실행 전 8개였다(검토한 7개 + 오늘 12:15 autostash 1개). autostash 는 열어 확인: webapp/*.json·html 파생 19개뿐, 원본 상태파일 없음 → 안전. 실행 후 stash 0개 · validate_db FAIL 0 · 작업폴더 무사. 폐기 전 목록은 scratchpad/stash_list_20260921.txt",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-21T17:03:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a219-naver-url-placeholder",
+   "detail": "항목 자체가 틀린 전제였다 — 09-21 실측. 'blog-post_XX.html 자리표시' 라고 적혀 있던 URL 은 https://lifeinfo8975.blogspot.com/2026/06/blog-post_15.html 로, **살아 있는 실제 글**이다(HTTP 200 · 제목 '에너지바우처 신청 자격 금액 사용기간 총정리'). A2-19 가 관련글로 링크한 것이고 자리표시가 아니다. 라이브 네이버(224417764345)에도 정상 링크로 나가 있다. ⚠️ 관제탑이 이 항목을 확인 없이 믿고 로컬 원고 2개의 URL 을 바꿨다가 git checkout 으로 복원했다(라이브 무손상). Blogger 의 자동 슬러그가 blog-post_NN 형태라 자리표시처럼 보인 것이 원인",
+   "via": "cli"
   }
  ]
 }
