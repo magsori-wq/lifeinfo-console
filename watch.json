@@ -6360,9 +6360,11 @@
    "due": "2026-10-01",
    "cmd": "python -c \"import json,io;idx=json.load(io.open('webapp/index_status.json',encoding='utf-8'));db={p['code']:p for p in json.load(io.open('webapp/lifeinfo_db.txt',encoding='utf-8'))['posts']};g=json.load(io.open('webapp/gsc_requested.json',encoding='utf-8'));req=set(g.get('urls') or []);print([(c,(db.get(c) or {}).get('url')) for c,v in idx['posts'].items() if isinstance(v,dict) and 'Discovered' in (v.get('state') or '') and (db.get(c) or {}).get('url') not in req])\"",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "by": "이부장",
-   "kind": "action"
+   "kind": "action",
+   "done_at": "2026-09-21",
+   "result": "검증 완료 — **요청할 필요가 없다**. 2026-09-21 실측: 같은 Discovered 상태 47편에서 요청함 26편 → 크롤 0편(0%) · 미요청 21편 → 크롤 0편(0%). **차이 없음**. 색인도 양쪽 0(전체 0/277). 사장님 가설 '새 글을 색인 요청하면 금방 풀린다'는 지지되지 않는다 — 이미 크롤된 글 재요청(수율 2%)과 다른 대상이라고 구분했으나 새 글도 같았다. 26편이 사실상 실험군이었고 21편이 대조군이었다. ⚠️ 관제탑이 이것을 재지 않고 '값어치 있는 1건'이라 사장님께 권했다(손일 21회를 시킬 뻔함) — measure-yield-before-asking-hands 위반"
   },
   {
    "id": "cause222-dig-0908",
