@@ -12445,8 +12445,10 @@
    "due": "2026-09-23",
    "cmd": "python -m studio.falsepos 2>&1 | grep -c '없는 함수'",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-21",
+   "result": "수리·검증 완료(16ce52db → 후속 커밋). 발견 셋: ①함수가 ROOT/_ROOT 오타로 한 번도 실행된 적 없었다 ②별칭 미추적으로 전건 0 ③섀도잉 오탐 53건. 고친 뒤 감지력 시험 정탐 3/3·오탐 0/3, 본체 검출 0건. 그 과정에서 priority.py 의 sg.unfinished() 가 없는 이름+hasattr 가드로 P2 검사가 한 번도 안 떴던 것을 발견해 incomplete() 로 교정"
   },
   {
    "id": "insta-remake-7-0921",
@@ -12487,6 +12489,28 @@
    "what": "watch 게이트 cmd 우선 판정에 회귀 규칙 추가 — falsepos.RULES 에 넣어 오탐 재발을 감시한다(09-21 수리, CLAUDE.md '오탐 하나 고칠 때마다 회귀 규칙 한 줄')",
    "due": "2026-09-22",
    "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-g408-0921",
+   "added": "2026-09-21",
+   "what": "🙋[이부장 확인 대기] G4-08 부산 북항 상어 — 네이버 게시(원고 준비 완료·전용 썸네일 271n_bukhangshark.png). 게시 후 URL 을 알려 주세요",
+   "due": "2026-09-21",
+   "cmd": "python -m studio.pipeline naver-draft --code G4-08",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
+  },
+  {
+   "id": "insta-live-cover-unmeasurable-0921",
+   "added": "2026-09-21",
+   "what": "🔴 인스타 **라이브** 표지가 실사진인지 og:image 로는 잴 수 없다 — 2026-09-21 실측으로 확정. 인스타가 og 를 8~11KB 로 압축해 실사진도 고유색 2,4xx~2,7xx 가 나온다. 대조: 로컬 표지가 실사진인 F2-14신(11,565)·H1-07(34,089)·B2-14(24,703) 셋 다 og 로는 '글자'로 판정됐다. 따라서 삭제·재게시 대상 선별에 og 를 쓰면 안 된다. ⚠️ 이 방법으로 B1-08·E2-11·F2-14 를 '글자 템플릿'이라 판정했던 것을 철회한다. 남은 경로: 사장님 캡처(A5-09 가 그렇게 뒤집혔다) 또는 원본 해상도 이미지 확보.",
+   "due": "2026-09-22",
+   "cmd": "python -c \"from studio import thumbcheck as T; print(T.judge('<내려받은 og 파일>'))\"",
    "owner": "claude",
    "kind": "action",
    "state": "todo",

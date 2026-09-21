@@ -7552,6 +7552,14 @@
    "target": "deploy-g408-0921",
    "detail": "사장님 재배포 완료(14:2x). 실측: thumbs/271_bukhangshark.png 200 · thumbs/271b_bullshark_ref.jpg 200 · 배포 클론에도 둘 다 존재. deploy.bat *.jpg 추가(a03e325e)가 실제로 작동했다 — 그 수정 전에는 .jpg 가 배포 클론에 아예 복사되지 않았다.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-21T14:39:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ghostattr-alias-0921",
+   "detail": "수리·검증 완료(16ce52db → 후속 커밋). 발견 셋: ①함수가 ROOT/_ROOT 오타로 한 번도 실행된 적 없었다 ②별칭 미추적으로 전건 0 ③섀도잉 오탐 53건. 고친 뒤 감지력 시험 정탐 3/3·오탐 0/3, 본체 검출 0건. 그 과정에서 priority.py 의 sg.unfinished() 가 없는 이름+hasattr 가드로 P2 검사가 한 번도 안 떴던 것을 발견해 incomplete() 로 교정",
+   "via": "cli"
   }
  ]
 }
