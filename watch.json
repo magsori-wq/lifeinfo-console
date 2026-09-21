@@ -12296,12 +12296,14 @@
   {
    "id": "xlink-h113",
    "added": "2026-09-21",
-   "what": "🔗 H1-13 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-13",
+   "what": "🔗 H1-13 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-13",
    "due": "2026-09-21",
    "cmd": "python studio/blogger.py crosslink --code H1-13",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-21",
+   "result": "블로그 교차링크 갱신(네이버·쓰레드·인스타)"
   },
   {
    "id": "naver-toss-card-ok-0921",
@@ -12321,9 +12323,11 @@
    "cmd": "powershell -NoProfile -Command \"Get-Content -Raw -Encoding UTF8 'C:\\lifeinfo\\insta\\캡션_이창동가능한사랑개봉.txt' | Set-Clipboard\"",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
+   "state": "done",
    "by": "이부장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-21",
+   "result": "라이브 og:description 에 캡션 반영 확인(블로그·네이버 링크 포함)"
   },
   {
    "id": "afflink-20260921-1",
@@ -12410,8 +12414,10 @@
    "due": "2026-09-21",
    "cmd": "python studio/blogger.py crosslink --code C2-16",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-21",
+   "result": "DB 실측 — C2-16 4채널(블로그·네이버·인스타·쓰레드) 전부 URL 있음. 교차링크 보완 대상 아님."
   }
  ]
 }
