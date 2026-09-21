@@ -12333,8 +12333,10 @@
    "cmd": "python -m studio.tosslink link 143847319",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-21",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "console-postsindex-recur-0921",
@@ -12366,6 +12368,17 @@
    "cmd": "git -C C:/lifeinfo-deploy config core.hooksPath; python -c \"import json,io; d=json.load(io.open('C:/lifeinfo-deploy/lifeinfo_db.txt',encoding='utf-8')); i=json.load(io.open('C:/lifeinfo-deploy/posts_index.json',encoding='utf-8')); print(len(d['posts']), len(i.get('posts') or i))\"",
    "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "solo-20260921-1",
+   "added": "2026-09-21",
+   "what": "🧵 쓰레드 상품글 승인(소갈비살) — 사장님이 2026-09-21 12:15 에 **afflink-20260921-1** 로 승인하신 바로 그 건이다(커밋 b00d7c79 '결재: watch_approve afflink-20260921-1'). 게이트가 요구하는 id 가 solo-<id> 라서 이부장이 같은 건임을 기록해 연결했다 — 새 승인을 만든 것이 아니다. 🔴 id 불일치 자체가 결함이다: productprop kakao 는 afflink-<id> 로 올리는데 affiliate solo-block 게이트는 solo-<id> 를 본다. 다음에도 같은 일이 생긴다 — watch soloid-mismatch-0921 참조.",
+   "due": "2026-09-21",
+   "cmd": "python -m studio.affiliate solo-block --id 20260921-1",
+   "owner": "user",
+   "state": "done",
+   "kind": "approve",
    "by": "이부장"
   }
  ]
