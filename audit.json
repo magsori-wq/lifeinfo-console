@@ -7640,6 +7640,14 @@
    "target": "a219-naver-url-placeholder",
    "detail": "항목 자체가 틀린 전제였다 — 09-21 실측. 'blog-post_XX.html 자리표시' 라고 적혀 있던 URL 은 https://lifeinfo8975.blogspot.com/2026/06/blog-post_15.html 로, **살아 있는 실제 글**이다(HTTP 200 · 제목 '에너지바우처 신청 자격 금액 사용기간 총정리'). A2-19 가 관련글로 링크한 것이고 자리표시가 아니다. 라이브 네이버(224417764345)에도 정상 링크로 나가 있다. ⚠️ 관제탑이 이 항목을 확인 없이 믿고 로컬 원고 2개의 URL 을 바꿨다가 git checkout 으로 복원했다(라이브 무손상). Blogger 의 자동 슬러그가 blog-post_NN 형태라 자리표시처럼 보인 것이 원인",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-21T17:41:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-iframe-html-audit-0921",
+   "detail": "전수 점검·수리 완료. CP iframe 23개 중 doctype 누락 3건 발견: daylog.html(charset 도 없어 탭이 통째로 빈 화면) · reports.html · temp.html. 셋 다 생성기(studio/daylog.py·reports.py·tempboard.py)를 고쳤고 재점검 결과 23개 전부 doctype 보유. 커밋 80207acd·(이번)",
+   "via": "cli"
   }
  ]
 }

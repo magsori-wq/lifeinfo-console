@@ -38,18 +38,36 @@ h1{font-size:19px;margin:0 0 2px}
 </div>
 <div id="out"></div></div>
 <script>
-var DATA=null, HOURS=3;
+var DATA=null, HOURS=3, PICKED=false;
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function pick(h){
+  var now=new Date(), lim=new Date(now.getTime()-h*3600*1000);
+  return (DATA.items||[]).filter(function(x){
+    return new Date(x.at.replace(/-/g,'/'))>=lim; }).reverse();
+}
 function render(){
   if(!DATA){return;}
-  var now=new Date(), lim=new Date(now.getTime()-HOURS*3600*1000);
-  var rows=(DATA.items||[]).filter(function(x){
-    return new Date(x.at.replace(/-/g,'/'))>=lim; }).reverse();
+  // 🔴 기본 3시간이면 대부분의 시각에 0건이라 탭이 빈 화면처럼 보인다
+  //    (2026-09-21 실측: 3시간 안 6건 vs 하루 안 255건 — 사장님이 "변경 로그가
+  //     비었다"고 하신 자리다). 고른 구간이 비면 **자동으로 넓히고 그 사실을 적는다.**
+  //    ⚠️ 사용자가 버튼을 직접 누른 뒤에는 넓히지 않는다 — 고른 것을 뒤집으면 안 된다.
+  var used=HOURS, rows=pick(HOURS), widened=false;
+  if(!rows.length && !PICKED){
+    var ladder=[12,24,48,24*7];
+    for(var i=0;i<ladder.length;i++){
+      if(ladder[i]<=HOURS){continue;}
+      var r=pick(ladder[i]);
+      if(r.length){rows=r; used=ladder[i]; widened=true; break;}
+    }
+  }
+  var span=(used>=24)?(Math.round(used/24)+'일'):(used+'시간');
   document.getElementById('sub').textContent=
-    '갱신 '+DATA.updated+' · '+rows.length+'건 — 사장님이 자리를 비우신 동안 무엇이 달라졌는지';
+    '갱신 '+DATA.updated+' · 최근 '+span+' '+rows.length+'건'
+    +(widened?' (최근 '+HOURS+'시간은 0건이라 범위를 넓혔습니다)':'')
+    +' — 사장님이 자리를 비우신 동안 무엇이 달라졌는지';
   if(!rows.length){document.getElementById('out').innerHTML=
-    '<p class="none">그 시간에는 아무 일도 없었습니다.</p>';return;}
+    '<p class="none">기록이 아직 없습니다 — python -m studio.timeline --bake</p>';return;}
   var H='', lastD='';
   rows.forEach(function(x){
     var d=x.at.slice(0,10), hm=x.at.slice(11);
@@ -68,7 +86,7 @@ function render(){
 document.querySelectorAll('.bar button').forEach(function(b){
   b.onclick=function(){
     document.querySelectorAll('.bar button').forEach(function(o){o.classList.remove('on');});
-    b.classList.add('on'); HOURS=+b.dataset.h; render();};
+    b.classList.add('on'); HOURS=+b.dataset.h; PICKED=true; render();};
 });
 function load(){
   fetch('timeline.json?t='+Date.now(),{cache:'no-store'})
