@@ -9581,8 +9581,10 @@
    "due": "2026-09-20",
    "cmd": "python studio/blogger.py crosslink --code A5-09",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-21",
+   "result": "DB 실측 — A5-09 4채널(블로그·네이버·인스타·쓰레드) 전부 URL 있음. 교차링크 보완 대상 아님."
   },
   {
    "id": "xlink-a216",
@@ -9591,8 +9593,10 @@
    "due": "2026-09-20",
    "cmd": "python studio/blogger.py crosslink --code A2-16",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-21",
+   "result": "DB 실측 — A2-16 4채널(블로그·네이버·인스타·쓰레드) 전부 URL 있음. 교차링크 보완 대상 아님."
   },
   {
    "id": "approve-insta-b108-caption-0914",
@@ -12057,8 +12061,10 @@
    "due": "2026-09-20",
    "cmd": "python studio/blogger.py crosslink --code A2-19",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-21",
+   "result": "DB 실측 — A2-19 4채널(블로그·네이버·인스타·쓰레드) 전부 URL 있음. 교차링크 보완 대상 아님."
   },
   {
    "id": "tower-address-unknown-0920",
@@ -12129,8 +12135,10 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow \"피드 드리프트 검사\" --limit 3",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-09-21",
+   "result": "해소 확인 — run 35545967418 success(2026-09-20T23:53Z). 6회 연속 실패가 제목 동기로 끝났다."
   },
   {
    "id": "gsc-validation-result-0916",
@@ -12150,8 +12158,10 @@
    "due": "2026-09-21",
    "cmd": "python -m studio.batchboard order --id draft0920f218",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a35019ed"
+   "state": "done",
+   "by": "세션:a35019ed",
+   "done_at": "2026-09-21",
+   "result": "F2-18 발행·네이버·인스타·쓰레드 4채널 완결(09-21). 9/23 전 발행 목표 달성."
   },
   {
    "id": "approve-a5-02-v0",
@@ -12195,8 +12205,10 @@
    "due": "2026-09-21",
    "cmd": "claude-in-chrome으로 cgv.co.kr 또는 lottecinema.co.kr 에서 '가능한 사랑' 직접 검색·예매화면 스크린샷",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-21",
+   "result": "이과장이 claude-in-chrome 으로 CGV 확인 성공(예매율 4.4%·D-3·예매하기 노출). H1-13 발행·4채널 완결로 목적 달성."
   },
   {
    "id": "v0reject-h1-13",
@@ -12290,8 +12302,10 @@
    "due": "2026-09-21",
    "cmd": "python studio/blogger.py crosslink --code F2-18",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-21",
+   "result": "DB 실측 — F2-18 4채널(블로그·네이버·인스타·쓰레드) 전부 URL 있음. 교차링크 보완 대상 아님."
   },
   {
    "id": "xlink-h113",
@@ -12403,9 +12417,11 @@
    "cmd": "python -m studio.pipeline naver-draft --code C2-16 --file osmu/네이버용_코로나19예방접종필수전환.txt",
    "owner": "claude",
    "kind": "action",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-21",
+   "result": "사장님이 13:0x 게시 완료 — https://blog.naver.com/magsori8975/224418590371"
   },
   {
    "id": "xlink-c216",
@@ -12418,6 +12434,16 @@
    "by": "naver-link",
    "done_at": "2026-09-21",
    "result": "DB 실측 — C2-16 4채널(블로그·네이버·인스타·쓰레드) 전부 URL 있음. 교차링크 보완 대상 아님."
+  },
+  {
+   "id": "ghostattr-alias-0921",
+   "added": "2026-09-21",
+   "what": "falsepos._r_ghost_attrs_0921 이 **별칭 import 를 못 따라가 사실상 감지력 0** (2026-09-21 시험: _C.load_db() 를 일부러 넣었는데 0건). ast.Import/ImportFrom 의 asname 으로 별칭→모듈 표를 만들어 owner 를 되돌릴 것. 🔴 고친 뒤 **반드시 일부러 망가뜨려 잡히는지 확인**하고 그 결과를 적을 것 — 안 하면 '작동하는 검사'로 오해된다.",
+   "due": "2026-09-23",
+   "cmd": "python -m studio.falsepos 2>&1 | grep -c '없는 함수'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
