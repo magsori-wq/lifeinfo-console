@@ -12614,8 +12614,10 @@
    "cmd": "for f in webapp/*.html; do head -c 60 $f | grep -qi doctype || echo \"NO-DOCTYPE $f\"; done",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-21",
+   "result": "전수 점검·수리 완료. CP iframe 23개 중 doctype 누락 3건 발견: daylog.html(charset 도 없어 탭이 통째로 빈 화면) · reports.html · temp.html. 셋 다 생성기(studio/daylog.py·reports.py·tempboard.py)를 고쳤고 재점검 결과 23개 전부 doctype 보유. 커밋 80207acd·(이번)"
   }
  ]
 }
