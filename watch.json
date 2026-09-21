@@ -12515,6 +12515,17 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "insta-e211-old-recheck-0921",
+   "added": "2026-09-21",
+   "what": "E2-11 옛 중복글(Dcu4aTMkfnO) 재측정 — 사장님 정리 후에도 og:image 가 남아 있었다(반영 지연 추정). 나머지 4개(A5-09·A2-16·B1-08·F2-14)는 사라짐 확인. 정본 5개는 전부 생존·DB 일치. 잠시 뒤 다시 재고, 계속 남아 있으면 그때 사장님께 화면 확인만 요청한다",
+   "due": "2026-09-21",
+   "cmd": "curl -s -A 'Mozilla/5.0' https://www.instagram.com/p/Dcu4aTMkfnO/ | grep -c og:image",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
