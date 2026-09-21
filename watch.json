@@ -12565,6 +12565,18 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-xlink-g408-0921",
+   "added": "2026-09-21",
+   "what": "🔗 G4-08 네이버 본문에 교차링크 추가 — 4채널이 다 찼습니다(지금 네이버 본문에 쓰레드·인스타 링크 0곳). 【네이버 글】 https://blog.naver.com/magsori8975/224418761366 【넣을 것】 본문 맨 아래 제목 한 줄 + 링크 2개. 🔴 링크는 각각 **한 줄에 단독**으로 붙여넣으셔야 카드가 뜹니다(2026-09-07 실측 — 통째로 붙이면 파란 텍스트만 됩니다). 문구 파일: osmu/_xlink_G4-08.txt",
+   "due": "2026-09-22",
+   "cmd": "notepad C:\\lifeinfo\\osmu\\_xlink_G4-08.txt",
+   "owner": "user",
+   "verify": "curl -s -A 'Mozilla/5.0' 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224418761366' | grep -c threads.com",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
