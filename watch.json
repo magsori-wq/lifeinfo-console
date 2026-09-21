@@ -9571,9 +9571,11 @@
    "due": "2026-09-21",
    "cmd": "인스타 앱에서 해당 게시물 … → 삭제 (새 게시물이 이미 올라간 편만)",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "by": "이부장",
-   "kind": "action"
+   "kind": "action",
+   "done_at": "2026-09-21",
+   "result": "완료 — 옛 중복 인스타 5편 전부 삭제 확인(og:image 0): A5-09 Dcrl8ScE8tt · A2-16 Dcu3Ay0ERPx · B1-08 Dcu3443Ed6F · E2-11 Dcu4aTMkfnO · F2-14 Dcu9X9ckVUW. 정본 5개 전수 생존 확인(DdPc-23EwVg·DdPfR6NE4rn·DdPgH2oEx0o·DdQLHX1Ef6u·DdQScFjEWse) — DB osmu.instagram 과 일치. 사장님이 09-21 15:0x~15:2x 에 직접 정리하셨다"
   },
   {
    "id": "xlink-a509",
@@ -12539,6 +12541,16 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-g408",
+   "added": "2026-09-21",
+   "what": "🔗 G4-08 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-08",
+   "due": "2026-09-21",
+   "cmd": "python studio/blogger.py crosslink --code G4-08",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
