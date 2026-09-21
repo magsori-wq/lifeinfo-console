@@ -7539,9 +7539,11 @@
    "cmd": "explorer /select,C:\\lifeinfo\\lifeinfo-blog.skill",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
+   "state": "done",
    "by": "이부장",
-   "verify": "python studio/selfcheck.py 2>&1 | grep '9) 스킬 동기'"
+   "verify": "python studio/selfcheck.py 2>&1 | grep '9) 스킬 동기'",
+   "done_at": "2026-09-21",
+   "result": "완료·검증 — 사장님이 09-21 15:53 에 lifeinfo-blog.skill(v2) 업로드. 실측: 동기본 26,316b = 원본 26,316b · '한도 당분간 없다' 2곳 반영 · 옛판 '6편째부터 차단' 0곳 · selfcheck 9) 내용일치 예 ✅. ⚠️ 경위: 15:36 에 관제탑이 backup/lifeinfo-blog_20260914.skill 을 안내했는데 이름만 09-14 이고 내용은 09-11 옛판이었다(파일명만 보고 열어보지 않음). 올바른 파일은 루트 lifeinfo-blog.skill"
   },
   {
    "id": "audit-conflict-0911",
