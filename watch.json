@@ -12380,6 +12380,16 @@
    "state": "done",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "soloid-mismatch-0921",
+   "added": "2026-09-21",
+   "what": "승인 id 불일치 수리 — productprop kakao 는 결재함에 'afflink-<id>' 로 올리는데, affiliate solo-block 게이트는 'solo-<id>' 를 찾는다. 2026-09-21 소갈비살에서 실제로 걸렸고 이부장이 손으로 연결했다. 한쪽으로 통일할 것(게이트가 둘 다 인정하게 하거나 kakao 가 solo- 로 올리게).",
+   "due": "2026-09-22",
+   "cmd": "grep -n 'solo-\\|afflink-' studio/affiliate.py studio/productprop.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
