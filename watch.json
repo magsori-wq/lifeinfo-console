@@ -3090,7 +3090,7 @@
    "id": "naver-recheck-20260912",
    "added": "2026-08-29",
    "what": "네이버 수집현황 재확인 — 08-29 보고서의 클릭·색인 편수 추이 재측정. 사장님께 같은 5화면 캡처 요청.",
-   "due": "2026-09-12",
+   "due": "2026-09-23",
    "cmd": "cat docs/네이버_수집현황_보고서_20260829.md",
    "owner": "claude",
    "state": "todo"
@@ -7534,13 +7534,14 @@
   {
    "id": "skill-upload-0911",
    "added": "2026-09-11",
-   "what": "계정 스킬 lifeinfo-blog 재패키지 완료(15,516바이트, 재고상한 99 반영) — Desktop 이 읽는 사본이 8/30 판이라 옛 규칙으로 돈다. 업로드만 하시면 됩니다",
-   "due": "2026-09-20",
-   "cmd": "claude.ai 설정 > 기능(스킬) > lifeinfo-blog 삭제 후 C:\\lifeinfo\\lifeinfo-blog.skill 업로드",
+   "what": "🔴 계정 스킬 업로드 — 올리실 파일은 **C:\\lifeinfo\\lifeinfo-blog.skill** 입니다(최신 · 한도 없음 반영). ⚠️ backup\\lifeinfo-blog_20260914.skill 은 이름만 09-14 이고 내용은 09-11 옛판(상한 5편)입니다 — 09-21 15:36 에 그것이 올라가 Desktop 이 옛 규칙으로 돌고 있습니다. Claude Desktop 설정 > 스킬 > lifeinfo-blog 삭제 후 위 파일로 교체.",
+   "due": "2026-09-21",
+   "cmd": "explorer /select,C:\\lifeinfo\\lifeinfo-blog.skill",
    "owner": "user",
    "kind": "action",
    "state": "todo",
-   "by": "이부장"
+   "by": "이부장",
+   "verify": "python studio/selfcheck.py 2>&1 | grep '9) 스킬 동기'"
   },
   {
    "id": "audit-conflict-0911",
@@ -12503,9 +12504,11 @@
    "due": "2026-09-21",
    "cmd": "python -m studio.pipeline naver-draft --code G4-08",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-21",
+   "result": "완료 — 사장님이 09-21 14:5x 에 게시. https://blog.naver.com/magsori8975/224418761366 · 라이브 실측: 첨부 이미지 2장(대표 썸네일 + 무태상어 참고사진) · 참고사진 캡션에 Wikimedia·CC BY 표기 · 블로그스팟 링크 9곳 · 제목 C안 점검 통과. naver-link 기록 완료"
   },
   {
    "id": "insta-live-cover-unmeasurable-0921",
@@ -12545,12 +12548,23 @@
   {
    "id": "xlink-g408",
    "added": "2026-09-21",
-   "what": "🔗 G4-08 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-08",
+   "what": "🔗 G4-08 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-08",
    "due": "2026-09-21",
    "cmd": "python studio/blogger.py crosslink --code G4-08",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "naver-capture-5screens-0921",
+   "added": "2026-09-21",
+   "what": "📸 네이버 화면 5장 캡처 — 수익·유입 데이터가 11~14일 낡았습니다. 네이버는 Claude 가 못 열어 캡처가 유일한 경로입니다. 【마지막 판독일】 수익 09-10(애드포스트 2,726원) · 유입 검색어 09-10 · 글별 조회 09-07(14일 전) · 일별 방문 09-10 · 방문자 연령 09-04. 【찍을 화면】 ①애드포스트 수입 ②유입분석(검색어) ③글별 조회수 ④일간 현황 ⑤방문자 분석. 【왜 지금】 재고가 0편이라 내일 글감을 골라야 하는데, 무엇이 유입되는지 모르면 고를 수 없습니다. 저장은 평소 폴더(Circle to Act)면 제가 읽습니다.",
+   "due": "2026-09-22",
+   "cmd": "start https://blog.naver.com/magsori8975",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
