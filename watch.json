@@ -12598,9 +12598,9 @@
   {
    "id": "index-request-null-result-0921",
    "added": "2026-09-21",
-   "what": "색인 요청 무효 결론의 재확인 — 09-21 대조(요청 26편 vs 미요청 21편, 양쪽 크롤 0%)로 '새 글 색인 요청도 레버가 아니다'가 확인됐다. 2주 뒤 index_status 를 다시 떠서 **요청한 26편 중 뒤늦게 크롤된 것이 생겼는지** 확인한다. 생기면 결론을 뒤집어야 한다(지연 효과). 안 생기면 indexing-not-a-technical-problem 메모리에 이 대조를 근거로 추가",
+   "what": "🔴 색인 요청 효과 — **2026-09-21 전수 재측정으로 아침 판정을 정정한다**. 【아침 판정(틀림)】 Discovered 47편만 보고 '요청 26편 크롤 0% · 미요청 21편 크롤 0% → 차이 없음'. **표본이 좁았다.** 【전수 실측(277편)】 요청O·크롤O 174 · 요청O·크롤X 32(크롤률 **84.5%**) / 요청X·크롤O 45 · 요청X·크롤X 26(크롤률 **63.4%**). → **요청하면 크롤은 온다**(+21%p). 【그런데 색인은 양쪽 다 0편】 Crawled-not-indexed 125 · Redirect error 94 · Discovered 47 · Unknown 11. 즉 **요청은 크롤까지만 움직이고 색인 판정은 못 바꾼다.** SEO 점검도 같은 말을 한다: '고치기 전 요청은 같은 판정을 반복시킨다'. 【결론】 색인 요청을 더 하는 것은 레버가 아니다 — 크롤은 이미 와 있고(174편) 구글이 읽고 나서 색인을 안 한다. 레버는 콘텐츠다. 【2주 뒤 볼 것】 요청O·크롤O 174편 중 색인이 생겼는지.",
    "due": "2026-10-05",
-   "cmd": "python -c \"import io,json;idx=json.load(io.open('webapp/index_status.json',encoding='utf-8'));g=json.load(io.open('webapp/gsc_requested.json',encoding='utf-8'));req=set(g.get('urls') or []);d=[(k,r) for k,r in (idx.get('posts') or {}).items() if str(r.get('state') or '').startswith('Discovered')];print('요청함 크롤', sum(1 for k,r in d if (r.get('url') or '') in req and r.get('lastCrawl')), '/', sum(1 for k,r in d if (r.get('url') or '') in req))\"",
+   "cmd": "python -c \"import io,json;idx=json.load(io.open('webapp/index_status.json',encoding='utf-8'));g=json.load(io.open('webapp/gsc_requested.json',encoding='utf-8'));req=set(g.get('urls') or []);p=idx.get('posts') or {};import collections;x=collections.Counter(((r.get('url') or '') in req, bool(r.get('lastCrawl'))) for r in p.values());print('색인',idx.get('indexed'),'/',idx.get('total'),'| 요청O크롤O',x[(True,True)],'요청O크롤X',x[(True,False)],'요청X크롤O',x[(False,True)],'요청X크롤X',x[(False,False)])\"",
    "owner": "claude",
    "kind": "action",
    "state": "todo",
