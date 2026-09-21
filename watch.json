@@ -11992,8 +11992,10 @@
    "cmd": "git stash clear   # 7개 전부 폐기(검토 완료·살릴 것 없음 확인됨)",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-21",
+   "result": "사장님 '버려' 승인(09-21 17:2x) → git stash clear 실행 완료. 실행 전 8개였다(검토한 7개 + 오늘 12:15 autostash 1개). autostash 는 열어 확인: webapp/*.json·html 파생 19개뿐, 원본 상태파일 없음 → 안전. 실행 후 stash 0개 · validate_db FAIL 0 · 작업폴더 무사. 폐기 전 목록은 scratchpad/stash_list_20260921.txt"
   },
   {
    "id": "a215-quote-fragment-live",
@@ -12588,6 +12590,17 @@
    "by": "이부장",
    "done_at": "2026-09-21",
    "result": "완료 — 사장님이 09-21 17:0x 에 네이버 본문에 교차링크 삽입. 라이브 실측(PostView 직접 읽음): '다른 채널' 2곳 · threads.com 10곳(Ddih0p_ASxY 9) · instagram.com 16곳(DdihW0RkcnN 9). G4-08 4채널이 서로 링크로 연결 완료"
+  },
+  {
+   "id": "index-request-null-result-0921",
+   "added": "2026-09-21",
+   "what": "색인 요청 무효 결론의 재확인 — 09-21 대조(요청 26편 vs 미요청 21편, 양쪽 크롤 0%)로 '새 글 색인 요청도 레버가 아니다'가 확인됐다. 2주 뒤 index_status 를 다시 떠서 **요청한 26편 중 뒤늦게 크롤된 것이 생겼는지** 확인한다. 생기면 결론을 뒤집어야 한다(지연 효과). 안 생기면 indexing-not-a-technical-problem 메모리에 이 대조를 근거로 추가",
+   "due": "2026-10-05",
+   "cmd": "python -c \"import io,json;idx=json.load(io.open('webapp/index_status.json',encoding='utf-8'));g=json.load(io.open('webapp/gsc_requested.json',encoding='utf-8'));req=set(g.get('urls') or []);d=[(k,r) for k,r in (idx.get('posts') or {}).items() if str(r.get('state') or '').startswith('Discovered')];print('요청함 크롤', sum(1 for k,r in d if (r.get('url') or '') in req and r.get('lastCrawl')), '/', sum(1 for k,r in d if (r.get('url') or '') in req))\"",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
