@@ -12471,10 +12471,21 @@
   {
    "id": "deploy-g408-0921",
    "added": "2026-09-21",
-   "what": "테스트",
+   "what": "🔴 G4-08 — 배포를 한 번만 더 부탁드립니다. 방금 배포로 썸네일(271_bukhangshark.png)은 200 이 됐는데 참고사진 271b_bullshark_ref.jpg 만 404 입니다. 【원인】 deploy.bat 78줄 robocopy 가 *.png 만 받아 .jpg 는 한 번도 배포된 적이 없었습니다. 【조치】 *.jpg 를 추가해 커밋했습니다(a03e325e) — 이제 다시 돌리시면 나갑니다. 【그 뒤】 이과장이 200 두 개를 확인하고 바로 발행합니다.",
    "due": "2026-09-21",
-   "cmd": "echo x",
+   "cmd": "cmd /c C:\\lifeinfo\\deploy.bat",
    "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "falsepos-watchgate-0921",
+   "added": "2026-09-21",
+   "what": "watch 게이트 cmd 우선 판정에 회귀 규칙 추가 — falsepos.RULES 에 넣어 오탐 재발을 감시한다(09-21 수리, CLAUDE.md '오탐 하나 고칠 때마다 회귀 규칙 한 줄')",
+   "due": "2026-09-22",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
    "kind": "action",
    "state": "todo",
    "by": "이부장"
