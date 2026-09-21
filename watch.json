@@ -12524,6 +12524,19 @@
    "cmd": "curl -s -A 'Mozilla/5.0' https://www.instagram.com/p/Dcu4aTMkfnO/ | grep -c og:image",
    "owner": "claude",
    "kind": "action",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-21",
+   "result": "E2-11(Dcu4aTMkfnO) 삭제 확인 — og:image 0. 옛 중복 5개 전부 정리 완료(A5-09 Dcrl8ScE8tt · A2-16 Dcu3Ay0ERPx · B1-08 Dcu3443Ed6F · E2-11 Dcu4aTMkfnO · F2-14 Dcu9X9ckVUW). 정본 5개 전수 생존 확인(DdPc-23EwVg·DdPfR6NE4rn·DdPgH2oEx0o·DdQLHX1Ef6u·DdQScFjEWse) — DB osmu.instagram 과 일치"
+  },
+  {
+   "id": "watchgate-word-vs-cmd-0921",
+   "added": "2026-09-21",
+   "what": "watch 결재함 게이트가 낱말만 보고 오탐 2회(09-21). ①'발행 전 배포 필요' → 라이브 발행 트리거로 판정(cmd 는 deploy.bat) — cmd 우선 판정으로 수리 완료(13035fbc) ②'인스타 옛 게시물 삭제 확인' → 인스타 게시로 판정(cmd 는 curl 조회). 남은 결함: _ACT 가 what 의 낱말→행동 매핑이라 '게시'와 '삭제·확인'을 구분 못 한다. 조치안: cmd 가 조회성(curl·grep·python -c print)이면 실행 요청이 아니므로 통과시킨다. 고친 뒤 반드시 감지력 시험(쓰레드 게시 떠넘기기·발행 트리거 떠넘기기가 여전히 막히는지)",
+   "due": "2026-09-22",
+   "cmd": "python -m studio.watch add --id _t --owner user --kind action --due 2026-09-22 --what '인스타 게시 부탁드립니다' --cmd 'python -m studio.insta_post'",
+   "owner": "claude",
+   "kind": "action",
    "state": "todo",
    "by": "이부장"
   }

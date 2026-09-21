@@ -7560,6 +7560,14 @@
    "target": "ghostattr-alias-0921",
    "detail": "수리·검증 완료(16ce52db → 후속 커밋). 발견 셋: ①함수가 ROOT/_ROOT 오타로 한 번도 실행된 적 없었다 ②별칭 미추적으로 전건 0 ③섀도잉 오탐 53건. 고친 뒤 감지력 시험 정탐 3/3·오탐 0/3, 본체 검출 0건. 그 과정에서 priority.py 의 sg.unfinished() 가 없는 이름+hasattr 가드로 P2 검사가 한 번도 안 떴던 것을 발견해 incomplete() 로 교정",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-21T15:10:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-e211-old-recheck-0921",
+   "detail": "E2-11(Dcu4aTMkfnO) 삭제 확인 — og:image 0. 옛 중복 5개 전부 정리 완료(A5-09 Dcrl8ScE8tt · A2-16 Dcu3Ay0ERPx · B1-08 Dcu3443Ed6F · E2-11 Dcu4aTMkfnO · F2-14 Dcu9X9ckVUW). 정본 5개 전수 생존 확인(DdPc-23EwVg·DdPfR6NE4rn·DdPgH2oEx0o·DdQLHX1Ef6u·DdQScFjEWse) — DB osmu.instagram 과 일치",
+   "via": "cli"
   }
  ]
 }
