@@ -12791,6 +12791,18 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:830847ea"
+  },
+  {
+   "id": "adstxt-verify-0923",
+   "added": "2026-09-23",
+   "what": "ads.txt 「찾을 수 없음」 추적 — 우리 쪽은 막는 요소 없음을 실측했다(일반·Googlebot·Mediapartners-Google UA 전부 200 · text/plain · http→https 301 정상 · 내용 google.com, pub-3606922238918518, DIRECT, f08c47fec0942fa0). 구글 공식(answer/12171244): 자동 크롤·검증에 '수일, 최대 한 달'. 광고게재·수익에 영향 준다는 문장은 문서에 없다(「승인되지 않음」에만 게재불가 명시). ⚠️Last-Modified 가 09-23 06:01 로 찍히나 블로거가 동적 생성이라 실제 생성시각인지 구분 못 함 — 단정하지 말 것. 10/7 까지 '승인됨' 으로 안 바뀌면 그때 재조사",
+   "due": "2026-10-07",
+   "cmd": "curl -s https://lifeinfo8975.blogspot.com/ads.txt",
+   "owner": "claude",
+   "verify": "python studio/adsense.py status",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
