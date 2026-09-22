@@ -12916,9 +12916,31 @@
   {
    "id": "creatoradvisor-catname-0923",
    "added": "2026-09-23",
-   "what": "creatoradvisor bake 가 KeyError: 'catName' 로 죽는다 (studio/creatoradvisor.py:488, latest['items'] 에 catName 키가 없는 행 존재). 로컬·GitHub 러너 둘 다 재현. approve.yml 로그에 '[WARN] -m 실패(rc=1) — 이전 데이터가 그대로 박힐 수 있음' → CP 창작조언 데이터가 낡은 채로 굳는다. it.get('catName') 로 고치면 될 것으로 보이나 판단은 담당 몫.",
+   "what": "🔴실측 확정: creatoradvisor bake 가 KeyError 'catName' 로 죽어(studio/creatoradvisor.py:488) CP 네이버 분석이 10일째 낡았다. 산출 webapp/naver_analytics_summary.json 의 posts.imported_at=2026-09-11 11:28 (파일 mtime 09-21 15:35) vs 원본 naver_analytics.json 최신 회차 imported_at=2026-09-21 16:28. 원인은 그 최신 회차 16행 전부에 catName 키가 없는 것. 로컬·GitHub 러너 둘 다 재현(approve.yml run 35789159915 로그 '[WARN] -m 실패(rc=1) — 이전 데이터가 그대로 박힐 수 있음'). it['catName'] → it.get('catName') 로 보이나 판단은 담당 몫.",
    "due": "2026-09-23",
    "cmd": "python -m studio.creatoradvisor bake",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
+  },
+  {
+   "id": "approve-yml-gitadd-0923",
+   "added": "2026-09-23",
+   "what": "approve.yml 마지막 스텝이 'git add webapp/*.json' 에서 gitignore 된 webapp/tasks.json 에 걸려 exit 1 → bash -e 로 즉사, 커밋·푸시가 안 돈다(run 35789159915, 09-23 06:52 KST). 그 실행의 '[사장님] 외부 결재 — approve C4-11' 커밋이 origin/main 에 없다. ⚠️피해는 없었다 — C4-11 은 06:13 에 이미 발행됐고(3fc2512a) 07:19 에 이부장이 결재함에서 GitHub 경유 링크를 제거했다(c3ed9654). 운영콘솔 경유 결재는 정상(07:14 3건). 워크플로 자체는 아직 트리거 가능하므로 잔여 결함으로 남긴다.",
+   "due": "2026-09-24",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow approve.yml --limit 3",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
+  },
+  {
+   "id": "adsense-getting-ready-0923",
+   "added": "2026-09-23",
+   "what": "애드센스 사이트 상태가 NEEDS_ATTENTION → GETTING_READY 로 바뀌었다(09-23 08:08 루틴1 실측, API 기준). 08-12 4회째 반려 이후 처음 심사 진행 표시. ⚠️CLAUDE.md 09-23 정정대로 API 값과 애드센스 화면은 다를 수 있으므로 단정 말 것 — 사장님 화면 캡처로 대조 필요. 며칠 뒤 상태가 유지되는지 재확인한다.",
+   "due": "2026-09-26",
+   "cmd": "python studio/adsense.py status",
    "owner": "claude",
    "kind": "action",
    "state": "todo",
