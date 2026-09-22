@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-21",
+ "updated": "2026-09-23",
  "items": [
   {
    "id": "redirect-error",
@@ -12627,10 +12627,12 @@
    "cmd": "python -m studio.batchboard order --id fixg408",
    "owner": "user",
    "kind": "approve",
-   "state": "wait",
+   "state": "done",
    "by": "이부장",
    "req_by": "이과장",
-   "verify": "curl -s https://lifeinfo8975.blogspot.com/2026/09/918-921.html | grep -c '사람이 몰리고 있다'"
+   "verify": "curl -s https://lifeinfo8975.blogspot.com/2026/09/918-921.html | grep -c '사람이 몰리고 있다'",
+   "done_at": "2026-09-23",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "reopen-leegwajang-0921",
@@ -12643,6 +12645,17 @@
    "by": "이부장",
    "verify": "python -c \"from studio import sessionstate as s; print(s.read_info('draft0921a315'))\"",
    "kind": "action"
+  },
+  {
+   "id": "afflink-20260923-1",
+   "added": "2026-09-23",
+   "what": "🛒 제휴 링크 발급 요청 — 20260923-1. 상품: 법성포 영광굴비, 20cm 내외, 20마리 (35,000원 · 리뷰 3,467 · 평점 4.3). 관련성: 추석(9/25) D-2, 명절 대표 선물세트인 영광굴비. 리뷰3,467·평점4.3·건당3,500원. 기존 추석 후보(소갈비살·홍삼·떡갈비)와 겹. 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-09-23",
+   "cmd": "python -m studio.tosslink link 627710385",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
