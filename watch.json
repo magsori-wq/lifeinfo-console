@@ -12037,8 +12037,10 @@
    "due": "2026-09-25",
    "cmd": "python -m studio.blogger update-post --code A2-15 --check",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-23",
+   "result": "라이브 직접 확인(이부장 2026-09-23): 해당 문장은 파편이 아니라 완전한 문장이다 — '양육수당은 매달 25일에 지급하는 것이 원칙이나, 해당 9월 25일이 추석연휴인 관계로 21일에 조기 지급'. '이나,' 는 문장 중간의 연결어미였고 그 앞부분이 멀쩡히 있다. 조치 불필요"
   },
   {
    "id": "routine2-paused-0920",
@@ -12230,7 +12232,7 @@
    "id": "fix-a219-summer-card-0920",
    "added": "2026-09-20",
    "what": "A2-19 본문 정정 필요 — 하절기(~9/30)는 요금차감(전기)만 가능·국민행복카드는 동절기 10/1~ 부터, '요금차감 대상 없음'은 전기 누락. 근거는 note 팩트체크 09-20 항목·energyv.or.kr/info/use_info.do. 라이브 수정은 이과장 dry-run·사장님 승인 후",
-   "due": "2026-09-21",
+   "due": "2026-09-24",
    "cmd": "curl -s https://www.energyv.or.kr/info/use_info.do | grep -o '하절기 에너지바우처는[^<]*'",
    "owner": "claude",
    "state": "todo",
