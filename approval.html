@@ -834,14 +834,17 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       })) return;
     var ch=x.ch||{}, needN=(ch.n===false);      // 네이버 미게시 = 사람 손이 필요한 유일한 채널
     var card={act:'osmu',c:x.code,t:x.title,
-      cmd:'python -m studio.osmu_manifest table --code '+x.code+' --open'};
+      // 🔴 2026-09-23 사장님 "뭐가 이래 복잡하게해" — 옛 명령은 **없는 옵션**이었다
+      //    (osmu_manifest table 에 --open 은 없다. 누르면 에러가 난다.)
+      //    사장님께 필요한 것은 붙여넣을 것을 손에 쥐는 명령 하나다.
+      cmd:'python -m studio.pipeline naver-draft --code '+x.code+' --open'};
     var r=rep[x.code];
     // 🔴 문구를 지어내지 않는다 — 이과장이 실제로 쓴 보고를 그대로 싣는다.
     card.full=r ? ('【이과장 보고 '+(r.t||'')+' · '+r.b+'】\n'+r.w) : '';
     if(needN){
-      card.why=r ? ('네이버 게시 대기 — 아래는 이과장이 남긴 실제 진행상황입니다')
-                 : ('네이버 게시 대기 — 네이버는 API·자동화가 막혀 사람이 붙여넣어야 합니다'
-                    +' (나머지 채널은 이과장이 진행). 남은 것: '+((x.need||[]).join(' · ')||'-'));
+      card.why=('위 명령 한 줄이면 ①원고가 클립보드에 담기고 ②네이버 글쓰기 창이 열립니다. '
+               +'붙여넣고 게시한 뒤 URL 만 주시면 나머지는 이과장이 합니다. '
+               +'제목·첨부 썸네일·태그도 그 명령이 함께 찍어 줍니다.');
       boss.push(card);
     }else{
       card.why='OSMU 진행 중 — 이과장 몫입니다. 남은 것: '+((x.need||[]).join(' · ')||'-');
