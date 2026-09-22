@@ -538,8 +538,10 @@
    "due": "2026-09-14",
    "cmd": "브라우저로 https://search.google.com/search-console/index?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&pages=ALL_URLS&hl=ko 열어 '크롤링됨-현재 색인이 생성되지 않음' 건수 확인",
    "owner": "claude",
-   "state": "todo",
-   "note": 99
+   "state": "done",
+   "note": 99,
+   "done_at": "2026-09-23",
+   "result": "09-23 재측정(GSC UI 아님 — 브라우저 도구 없는 세션이라 UI 미열람. 대신 git 커밋된 index_status.json API 스냅샷으로 집계). 크롤링됨-미색인=125건, 09-08(총237)부터 09-23(총279)까지 15일간 정확히 동일한 125개 글코드(추가/제거 0). 비율 125/237(52.7%,09-08)→125/279(44.8%,09-23). indexed는 두 시점 모두 0. ⚠️ 이 숫자는 글 코드 단위이고 GSC UI ALL_URLS 화면(라벨·?m=1 포함 전체URL)과는 모수가 다르다 — UI 값은 못 열어봄, 다음 세션이 브라우저로 대조할 것. 상세=색인모니터링.md 09-23 절"
   },
   {
    "id": "v0inject-pace5",
@@ -5828,12 +5830,12 @@
   {
    "id": "f4-20-vie-source-gaps",
    "added": "2026-09-07",
-   "what": "F4-20 비엔나공항 글감: 오스트리아항공 체크인마감(austrian.com 3곳 WebFetch 403)·보안검색 소요시간/검색대수(공식페이지에 수치없음)·터미널-게이트 Schengen 매핑(공식서술없음) 3건 미확인. docs/source_F4-20_비엔나공항출국_20260907.md 참고",
-   "due": "2026-09-14",
-   "cmd": "브라우저(claude-in-chrome)로 austrian.com/us/en/check-in-deadlines 재시도, 안되면 비엔나공항 콜센터(+43-1-7007-22233) 문의",
+   "what": "F4-20 09-23 재확인(curl, 브라우저 없음): ①체크인마감(50분,카운터332-361)=09-07에 이미 확인된 값, 라이브 글에도 그대로 실려있어 문제없음 ②도착권장시각 안내는 수하물기준(위탁3h/기내만2h)이 맞고 '비행시간길이 기준'이라는 서술은 원문 재대조로 근거를 못 찾음(모순 해소) ③카운터 수치가 두 공식출처에서 다름 — viennaairport.com 항공사목록엔 Terminal3 351-372(스타얼라이언스 그룹 공동), austrian.com 자체 검색툴은 332-361(09-07 브라우저 확인값, 라이브도 이 값 사용) — 어느 쪽도 틀렸다 볼 근거 없이 병기만 함 ④보안검색 소요시간/검색대수는 여전히 미확인, 게다가 조사 URL(viennaairport.com/.../security_check)이 이번엔 302로 사라짐(경로 자체가 바뀜) ⑤터미널-게이트 Schengen 매핑은 여전히 공식서술 없음(원문 재확인해도 동일). docs/source_F4-20_비엔나공항출국_20260907.md '2026-09-23 재확인' 절 참고",
+   "due": "2026-10-07",
+   "cmd": "브라우저(claude-in-chrome)로 austrian.com/us/en/check-in-deadlines 접속 재시도(카운터 332-361 vs 351-372 불일치 해소) + 비엔나공항 콜센터(+43-1-7007-22233) 문의로 보안검색 소요시간/터미널-게이트 매핑 확인",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:eb42e59e"
+   "by": "세션:830847ea"
   },
   {
    "id": "f4-20-v0-selfcheck-concern",
@@ -6117,12 +6119,12 @@
   {
    "id": "factcheck-f4-20-vienna-0907",
    "added": "2026-09-07",
-   "what": "F4-20 비엔나공항 체크인마감(출발50분전)·카운터(332-361)·게이트 솅겐/비솅겐구분(B,C,F=솅겐/D,G=비솅겐) — austrian.com 공식페이지 403차단, viennaairport.com 일반안내는 수하물유무 아닌 비행시간길이 기준이라 직접대조 불가. 다크패턴(E2-14)·양육비(A1-14)는 law.go.kr 원문으로 전부 확인 완료(일치)",
-   "due": "2026-09-14",
-   "cmd": "WebFetch https://www.austrian.com/us/en/check-in-deadlines 재시도(다른 UA/경로) 또는 브라우저(claude-in-chrome)로 직접 열람, viennaairport.com 터미널3 카운터 안내 페이지 확인",
+   "what": "F4-20 09-23 재확인(curl, 브라우저 없음): ①체크인마감(50분,카운터332-361)=09-07에 이미 확인된 값, 라이브 글에도 그대로 실려있어 문제없음 ②도착권장시각 안내는 수하물기준(위탁3h/기내만2h)이 맞고 '비행시간길이 기준'이라는 서술은 원문 재대조로 근거를 못 찾음(모순 해소) ③카운터 수치가 두 공식출처에서 다름 — viennaairport.com 항공사목록엔 Terminal3 351-372(스타얼라이언스 그룹 공동), austrian.com 자체 검색툴은 332-361(09-07 브라우저 확인값, 라이브도 이 값 사용) — 어느 쪽도 틀렸다 볼 근거 없이 병기만 함 ④보안검색 소요시간/검색대수는 여전히 미확인, 게다가 조사 URL(viennaairport.com/.../security_check)이 이번엔 302로 사라짐(경로 자체가 바뀜) ⑤터미널-게이트 Schengen 매핑은 여전히 공식서술 없음(원문 재확인해도 동일). docs/source_F4-20_비엔나공항출국_20260907.md '2026-09-23 재확인' 절 참고",
+   "due": "2026-10-07",
+   "cmd": "브라우저(claude-in-chrome)로 austrian.com/us/en/check-in-deadlines 접속 재시도(카운터 332-361 vs 351-372 불일치 해소) + 비엔나공항 콜센터(+43-1-7007-22233) 문의로 보안검색 소요시간/터미널-게이트 매핑 확인",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:81e84494"
+   "by": "세션:830847ea"
   },
   {
    "id": "order-section-handoff-0907",
@@ -7314,8 +7316,10 @@
    "due": "2026-09-17",
    "cmd": "국민연금공단 콜센터(1355) 문의 또는 minwon.nps.or.kr 반환일시금 모의계산 화면을 claude-in-chrome으로 열어 실제 적용 이자율 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-23",
+   "result": "nps.or.kr 공식페이지(curl 직접확인, HTTP 200) '2026년 3년 만기 정기예금이자율 : 2.2%'. URL: https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0079M0.do (반환일시금 안내 페이지). 국민연금법 시행령 제50조 원문(law.go.kr MST=272577)과 대조: '해당 기간의 3년 만기 정기예금 이자율(매년 1월 1일 현재 은행법상 전국영업 은행 평균)'로 조문·수치 정합 확인. 취득일 2026-09-23."
   },
   {
    "id": "a603-dup-check-0910",
@@ -10011,12 +10015,12 @@
   {
    "id": "source-h1-10-sbs-doctorx-followup",
    "added": "2026-09-14",
-   "what": "SBS 닥터X 하얀 마피아의 시대 편성 — 종료시각·지역민방 포함여부·OTT 동시공개·SBS 자체 '리메이크' 명시문구 4항목 미확인(SBS 공식페이지가 JS SPA라 curl/WebFetch로 본문 0자, 이 세션엔 브라우저 도구 없음)",
-   "due": "2026-09-20",
-   "cmd": "claude-in-chrome 으로 https://programs.sbs.co.kr/drama/doctorx/about/88584 를 직접 열어 렌더된 본문(기획의도 전문·편성 상세)을 읽고, sbs.co.kr/schedule 에서 10/9·10/10 편성표도 확인",
+   "what": "SBS 닥터X 편성 4항목 중 OTT는 09-23 확인됨(Netflix Korea 공식 유튜브 채널 영상설명: '10월 9일, 넷플릭스에서' — docs/source_H1-10 참고). 남은 3항목(종료시각·지역민방 포함여부·SBS 자체 리메이크 명시문구)은 여전히 미확인 — programs.sbs.co.kr 이 순수 SPA 라 curl/WebFetch 로 본문 51자만 옴(og메타 09-14와 동일, 신규정보 없음). highziumstudio 캐스팅발표문 재확인해도 리메이크/원작 언급 0건. sbs.co.kr/schedule 는 10월 초순 이후에나 10/9 주간이 보임",
+   "due": "2026-10-05",
+   "cmd": "브라우저(claude-in-chrome)로 programs.sbs.co.kr/drama/doctorx/about/88584 렌더본문 재확인(종료시각·리메이크문구) + 10월초 이후 sbs.co.kr/schedule 에서 10/9 편성 확인(지역민방 포함여부)",
    "owner": "claude",
    "state": "todo",
-   "by": "이과장"
+   "by": "세션:830847ea"
   },
   {
    "id": "v0reject-h1-10",
@@ -10711,12 +10715,12 @@
   {
    "id": "source-h111-tving-ott",
    "added": "2026-09-17",
-   "what": "H1-11 날아올라라나비 OTT/티빙 동시방영 여부·최종 회차(10부작/11부작) 미확정 — JTBC 도메인은 curl로 200은 받지만 한글이 깨져나와 원문 못 읽음, tving.com은 SPA라 검색결과가 HTML에 없음, 나무위키만 TVING이라 하는데 회차도 다르게 적어 신뢰 안 함",
-   "due": "2026-09-20",
-   "cmd": "claude-in-chrome 으로 https://tv.jtbc.co.kr/plan/pr10011965 와 tving.com 검색창(화면 입력) 직접 확인 — docs/source_H1-11_날아올라라나비_20260917.md 다시시도할 방법 절 참고",
+   "what": "H1-11 OTT/티빙 동시방영은 09-23 확인됨(TVING 자체 페이지 tving.com/contents/P001792035, og:title '날아올라라 나비 1화 | TVING' — 1차 확인, docs/source_H1-11 참고). 남은 것은 최종 회차수(10부작/11부작) 하나뿐 — TVING·JTBC 정적 페이지 둘 다 회차수 없음, WebSearch 는 상충값만 추가(나무위키10부작 vs JTBC관계자10~11부작 vs 이번검색요약16부작=근거없어 미채택). 드라마가 진행 중이라(9/19 첫방) 종영에 가까워지면 언론이 최종 화수를 보도할 가능성 있음",
+   "due": "2026-09-30",
+   "cmd": "브라우저로 tving.com 시리즈 전체보기(에피소드 목록) 확인 또는 종영 임박 시(10월 중하순) 언론보도 재검색",
    "owner": "claude",
    "state": "todo",
-   "by": "이과장"
+   "by": "세션:830847ea"
   },
   {
    "id": "approve-livefix0917g304",
@@ -12804,6 +12808,16 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "v0reject-f4-23",
+   "added": "2026-09-23",
+   "what": "🔴 V0 반려 확인 요청 — F4-23 「2026 전국 단풍 절정 시기 총정리 — 설악산 10/20부터 한라산 1」. 검사자 V0검사관 · 2026-09-23T06:18. 사유 요약: 자기모순: 한라산(11/6)을 도입부·정리박스·마무리 3곳에서 '가장 늦은 절정'이라 단정하나 같은 글의 D-day박스·표 자체가 월출산(11/9,D-47)이 더 늦다는 걸 보여줌(원본지도 육안 재대조로 월출산 11/9 확인). '전국 33개 지점'도 원본지도 실측 35개 지점과 불일치, 보도자료 원문에 33이라는 숫자 자체가 없음. 나머지는 정확함(단풍나무류 12개 지점 날짜·요일·D-day 전수 산수검증 통과, 참나무류 닷새/나흘 계산 정확, 화약산 표기 원본지도로 재확인해 오류 아님, 관련글3건 DB생존 확인, 전사위험 정직  … 🔴 전문은 `python -m studio.v0check gate --code F4-23` 로 읽으십시오(길어서 여기 안 싣습니다). 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다.",
+   "due": "2026-09-23",
+   "cmd": "python -m studio.v0check gate --code F4-23",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴4"
   }
  ]
 }
