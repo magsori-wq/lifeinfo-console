@@ -12635,12 +12635,14 @@
   {
    "id": "reopen-leegwajang-0921",
    "added": "2026-09-21",
-   "what": "x",
+   "what": "이과장(LEE) 세션 다시 열기 — 강제 재부팅으로 창이 닫혀 새 지시서를 못 받고 있음(메시지 전송도 닿지 않음 확인). Desktop 에서 LEE 창을 다시 여시거나 C:\\lifeinfo 에서 아래 명령 한 줄 실행",
    "due": "2026-09-21",
    "cmd": "cd C:\\lifeinfo && claude --resume eb42e59e-ff09-4001-b600-c7f718c0271e",
    "owner": "user",
    "state": "todo",
-   "by": "이부장"
+   "by": "이부장",
+   "verify": "python -c \"from studio import sessionstate as s; print(s.read_info('draft0921a315'))\"",
+   "kind": "action"
   }
  ]
 }
