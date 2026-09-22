@@ -11966,7 +11966,7 @@
    "id": "energyvoucher-gosi-0919",
    "added": "2026-09-19",
    "what": "동절기 에너지바우처 하/동절기 배정 금액(254,500~599,300원)의 고시 원문 미확보 — energyv.or.kr 소스코드(주석처리)로는 확인, motie.go.kr 보도자료·law.go.kr 행정규칙 고시 원문은 미도달(admrul 검색 0건)",
-   "due": "2026-09-22",
+   "due": "2026-10-07",
    "cmd": "curl -s 'https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=admrul&type=XML&query=%EC%97%90%EB%84%88%EC%A7%80%EC%9D%B4%EC%9A%A9%EA%B6%8C' ; motie.go.kr 보도자료 게시판에서 '에너지바우처' 검색",
    "owner": "claude",
    "state": "todo",
@@ -12781,6 +12781,16 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "webuniq-h102-retry",
+   "added": "2026-09-23",
+   "what": "웹고유성 9문장 중 H1-02(코스트코 하루 90만 박스)만 URL인코딩 오타로 재시도 필요 — 정확문구: 하루 90만 박스는 웬만한 중소도시 인구수와 맞먹는 물량입니다",
+   "due": "2026-09-25",
+   "cmd": "구글에서 정확한 따옴표문구로 재검색",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:830847ea"
   }
  ]
 }
