@@ -7800,6 +7800,134 @@
    "target": "G4-09",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a402-gosi-0918",
+   "detail": "라이브 재조회(09-23): 이미 수정판이 게시돼 있음 — '보험료의 55% 이상…지자체 추가 지원에 따라 최대 92%…수급자·차상위계층 실거주 등 요건을 모두 갖춘 경우에는 전부(100%)가 지원되기도 합니다(법 제7조·시행령 제4조의2)' — 09-18 진단의 제안 문구와 사실상 동일하게 이미 반영돼 모순 해소됨",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "blogger-fixlink-sweep-0911",
+   "detail": "커밋 7b72ecb7 확인 — H1-06 검색설명 오탈자 라이브 수정 건이고 cmd_fixlink 코드는 그 작업에 실제로 쓰인 것. working tree clean, 코드 손실 없음. 조치 불필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatecheck-falsepos-2tuple-0908",
+   "detail": "코드 수정 완료(2026-09-23) — _r_boss_gate_alive 를 3곳 모두 4-튜플로 변경. 크래시 재현 시험(del w._boss_gate; falsepos.main([]))에서 더 이상 크래시 안 남 — 정상적으로 🔴1건 리포트하고 종료 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "watchgate-word-vs-cmd-0921",
+   "detail": "코드 수정 완료(2026-09-23) — watch.py _boss_gate 에 _QUERY_CMD 가드 추가(curl·grep·cat 등 조회성 cmd면 _ACT 낱말판정 skip). 4개 시나리오 재시험: ①조회cmd(인스타 삭제확인) 통과 ②쓰레드게시 떠넘기기 여전히 차단 ③발행트리거 떠넘기기 여전히 차단 ④배포(사장님전용) 정상통과 — falsepos 회귀규칙(_r_boss_gate_query_cmd_0923) 추가해 재발 감시",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "falsepos-watchgate-0921",
+   "detail": "회귀규칙 _r_boss_gate_query_cmd_0923 을 falsepos.RULES 에 추가·시험 완료(가드 제거 시뮬레이션에서 🔴 잡히는 것 확인). falsepos 전체 0/0 정상",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "osmu-table-unpublished-0919",
+   "detail": "재현 시험(09-23): H1-14(미발행) 로 osmu_manifest table 실행 → KeyError 없이 '[없음] 슬러그 미등록' 정상 출력. cmd_show·cmd_table 모두 'if not rec' 가드가 이미 있어 크래시 안 남 — 이미 해결됐거나 애초에 이 경로에선 재현 안 됨",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "console-postsindex-recur-0921",
+   "detail": "postsindex-drift-0921 과 동일 근본원인 — register_post.py bake.py 호출 returncode 미확인이 원인. 수정 적용(2026-09-23), 다음 발행 사이클에서 콘솔 정합성 검사 재실패 여부로 검증 필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:54:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "postsindex-drift-0921",
+   "detail": "근본원인 확정(09-23): register_post.py 가 pipeline-manifest·bake.py 호출의 returncode 를 안 봤다 — bake.py(make_index.py 포함) 가 조용히 실패해도 실행이 계속돼 낡은 posts_index.json 이 그대로 배포됨(1편씩 밀리는 패턴과 일치). publish.yml 에도 make_index 재생성 호출 없음(grep 0건) 확인. 수정: register_post.py bake.py 호출에 returncode 체크+경고 추가(발행 자체는 안 막음, 가시화만). validate_db PASS 15/WARN 3/FAIL 0 확인. 🔴 실제 GH Actions 발행 사이클로는 미검증 — 다음 발행에서 재확인 필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "commit-during-others-rebase-0920",
+   "detail": "권고안(읽기전용 경고) 그대로 구현·시험 완료(09-23) — .githooks/commit-msg 맨 앞에 rebase-merge/rebase-apply 디렉토리 존재시 stderr 경고, exit 0(차단안함). 정상커밋·rebase흉내 둘 다 시험해 의도대로 동작 확인(rebase 흉내에서만 경고 출력, 태그검사는 그대로 별개로 작동)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g408",
+   "detail": "blogger.py crosslink --code G4-08 실행 완료·라이브 재조회로 3채널(네이버·쓰레드·인스타) 링크 확인됨",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-boost-yield",
+   "detail": "5주뒤(09-23) 재측정 완료 — 브라우저로 구글 검색 실행, 5개 logNo 중 C1-04(224328295065) 1건만 여전히 색인, 나머지 4건(D2-04·C2-02·B3-02·C4-03) 미색인 — 08-18 기준선(1/5) 대비 변화 0건. 규칙대로 판정: 나머지 34편으로 확대하지 않는다 — 네이버 원고 보강은 구글 색인 레버가 아니라는 결론 확정",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-live-cover-unmeasurable-0921",
+   "detail": "재확인(09-23): DB osmu.instagram 의 5편 URL 전부 여전히 살아있음(HTTP 200·og:image 1) — 09-21 방법론 결론(표지 실사진여부는 og:image 압축 탓에 못 잰다·생존여부만 잴 수 있다) 그대로 유지",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-validation-result-0916",
+   "detail": "CLAUDE.md L762-764(발행 재개 게이트 절)·색인모니터링.md 둘 다 09-08회차(285URL) 결과 반영 완료 — 09-16 도착, 둘다 일부해결안됨(통과0). gsc-redirect-recheck-trigger 조건은 손대지 않음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thimg-b1-09-0907",
+   "detail": "재확인(09-23) 여전히 미첨부 — B1-09 는 selfcheck 11)의 레거시 예외(2026-08-14 시행일 이전 발행, 소급대상 아님) 목록에 이미 포함돼 있음. 추가 조치 불필요, 기록만",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h108-mbc-label-precision",
+   "detail": "원고(로컬 posts/) 재확인 — MBC 행에 이미 'iMBC연예(8/20)' 로 출처를 명시하고 있고 본문 문장도 'MBC 역시…발표했습니다(iMBC연예, 8월 20일)'로 2차보도임을 밝힘. V0 PASS 유지 상태서 열이름 변경은 불필요 — 조치 안 함",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-23T05:55:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "c213-goldenhour-recheck",
+   "detail": "브라우저로 e-gen.or.kr/egen/search_hospital.do 재확인(09-23) — '전체 진료과' 드롭다운은 일반 진료과 분류(내과·외과 등)뿐, 뇌졸중·심근경색 등 질환별 시술가능병원 필터는 이 화면에 없음을 확인. 나머지 3건(119 사전연락 절차 원문·FAST 한국공식출처·야간주말 변동서술)은 이번 회차에서 미시도 — 09-06 진단 그대로 미확인 유지",
+   "via": "cli"
   }
  ]
 }
