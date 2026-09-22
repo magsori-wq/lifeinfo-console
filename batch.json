@@ -1448,11 +1448,11 @@
      "code": "daily-email-briefing-0923",
      "title": "daily-email-briefing (A)",
      "state": "done",
-     "note": "09-23 메일브리핑(09-22 두 회차 기록 없어 2d 창으로 소급 커버) — 애드센스 계정 READY·사이트 NEEDS_ATTENTION(반려 유지, 09-23 status 실측, 신규 통지 0). 조치 필요 0건. 🟡사장님 확인 권장 3건: ①Anthropic 신뢰기기 추가 2통(KST 09-23 05:21, Electron)+Google→Claude 로그인 공유(05:20) = Desktop 재접속 패턴(09-17 선례) ②windsorai 구글 로그인 공유(KST 09-22 01:02) — 처음 보는 서비스 ③Claude 장애 statuspage 5통(KST 09-22 10:29~12:35, Resolved). 해소 확인: 콘솔 정합성 실패(메일 KST 09-21 12:16 d7f818e) → 이후 run 100건 failure 0 · 피드 드리프트 09-22 09:37 KST success(F3-06·F2-14 제목 동기 완료). 기보고: GSC sc-noreply 09-16 유효성검사 2통(09-17·19·20 기보고). 8975 전달분 0건=사각지대. 조회: github 1 · google 3 · sc-noreply 7d 1 · is:important 0 · 전체수신함 2d 19(advisor 조언으로 범위 확대, Anthropic·statuspage는 이 조회에서만 잡혔다). whoami 미등록 — 이 비대화 실행에 ListAgents 도구 없음\n▸ 05:26 정정·보강: ①'제목 동기 완료'는 추론이 아니라 직접 증거였다 — feed_drift.py L114~120 이 DB제목 vs 라이브제목을 비교해 retitled 를 drift 에 합산하므로, 09-22 09:37 KST success = 제목 불일치 0건. watch feed-drift-f214-0917·feed-drift-title-f306-f214 는 근거를 갖고 닫을 수 있다(판단은 이부장 몫). ②routinelog 지시서 전문 확인 = 루틴9 앞 회신(09-18 등록, 5일째 미갱신)으로 루틴1 앞 지시 없음 → 대기가 맞다. ③내 실수 1건: 드리프트 스크립트를 읽으려고 cd 로 lifeinfo-deploy 에 들어가 작업 디렉토리가 바뀌었다(CLAUDE.md 금지 조항). 즉시 복귀했고 그 폴더에서 쓰기·커밋은 하지 않았다. 다음부터 git -C·절대경로로 읽는다\n▸ 05:32 사장님 확인 완료(09-23): windsorai 구글 로그인(09-22 01:02)은 사장님 본인 — GPT 쪽에서 네이버 글 발행 조사용으로 접속하신 것. 보안 이슈 아님, 확인 종결. 남은 확인 1건(Claude 신뢰기기 2통 05:21 Electron)은 Desktop 재접속 패턴으로 무해 추정\n▸ 08:12 메일 2일창+GSC 7일창 조회. 📌애드센스 사이트 NEEDS_ATTENTION→GETTING_READY 전환(API 실측, 화면 대조 필요·watch adsense-getting-ready-0923). 🟡콘솔 정합성검사 09-22 21:16~22:01 UTC 9연속 실패 = posts_index 296 vs DB 295(로그 직접 확인), 22:15 UTC부터 성공. 🟡approve.yml 마지막 스텝이 gitignore된 tasks.json 탓에 exit 1 → 외부결재 커밋 유실(run 35789159915) — 단 C4-11은 39분 전 이미 발행됐고 07:19 이부장이 해당 링크 제거, 운영콘솔 결재는 정상 → 피해 없음·잔여결함. 🔴creatoradvisor bake KeyError catName 로컬 재현(:488) → CP 창작조언 낡은 데이터 고착. GSC는 09-16 기보고뿐. 8975 전달 0건=사각지대.",
+     "note": "09-23 메일브리핑(09-22 두 회차 기록 없어 2d 창으로 소급 커버) — 애드센스 계정 READY·사이트 NEEDS_ATTENTION(반려 유지, 09-23 status 실측, 신규 통지 0). 조치 필요 0건. 🟡사장님 확인 권장 3건: ①Anthropic 신뢰기기 추가 2통(KST 09-23 05:21, Electron)+Google→Claude 로그인 공유(05:20) = Desktop 재접속 패턴(09-17 선례) ②windsorai 구글 로그인 공유(KST 09-22 01:02) — 처음 보는 서비스 ③Claude 장애 statuspage 5통(KST 09-22 10:29~12:35, Resolved). 해소 확인: 콘솔 정합성 실패(메일 KST 09-21 12:16 d7f818e) → 이후 run 100건 failure 0 · 피드 드리프트 09-22 09:37 KST success(F3-06·F2-14 제목 동기 완료). 기보고: GSC sc-noreply 09-16 유효성검사 2통(09-17·19·20 기보고). 8975 전달분 0건=사각지대. 조회: github 1 · google 3 · sc-noreply 7d 1 · is:important 0 · 전체수신함 2d 19(advisor 조언으로 범위 확대, Anthropic·statuspage는 이 조회에서만 잡혔다). whoami 미등록 — 이 비대화 실행에 ListAgents 도구 없음\n▸ 05:26 정정·보강: ①'제목 동기 완료'는 추론이 아니라 직접 증거였다 — feed_drift.py L114~120 이 DB제목 vs 라이브제목을 비교해 retitled 를 drift 에 합산하므로, 09-22 09:37 KST success = 제목 불일치 0건. watch feed-drift-f214-0917·feed-drift-title-f306-f214 는 근거를 갖고 닫을 수 있다(판단은 이부장 몫). ②routinelog 지시서 전문 확인 = 루틴9 앞 회신(09-18 등록, 5일째 미갱신)으로 루틴1 앞 지시 없음 → 대기가 맞다. ③내 실수 1건: 드리프트 스크립트를 읽으려고 cd 로 lifeinfo-deploy 에 들어가 작업 디렉토리가 바뀌었다(CLAUDE.md 금지 조항). 즉시 복귀했고 그 폴더에서 쓰기·커밋은 하지 않았다. 다음부터 git -C·절대경로로 읽는다\n▸ 05:32 사장님 확인 완료(09-23): windsorai 구글 로그인(09-22 01:02)은 사장님 본인 — GPT 쪽에서 네이버 글 발행 조사용으로 접속하신 것. 보안 이슈 아님, 확인 종결. 남은 확인 1건(Claude 신뢰기기 2통 05:21 Electron)은 Desktop 재접속 패턴으로 무해 추정\n▸ 08:12 메일 2일창+GSC 7일창 조회. 📌애드센스 사이트 NEEDS_ATTENTION→GETTING_READY 전환(API 실측, 화면 대조 필요·watch adsense-getting-ready-0923). 🟡콘솔 정합성검사 09-22 21:16~22:01 UTC 9연속 실패 = posts_index 296 vs DB 295(로그 직접 확인), 22:15 UTC부터 성공. 🟡approve.yml 마지막 스텝이 gitignore된 tasks.json 탓에 exit 1 → 외부결재 커밋 유실(run 35789159915) — 단 C4-11은 39분 전 이미 발행됐고 07:19 이부장이 해당 링크 제거, 운영콘솔 결재는 정상 → 피해 없음·잔여결함. 🔴creatoradvisor bake KeyError catName 로컬 재현(:488) → CP 창작조언 낡은 데이터 고착. GSC는 09-16 기보고뿐. 8975 전달 0건=사각지대.\n▸ 08:16 08:20 보강(advisor 지적 반영): ①'보안·결제 이상 없음'을 조회 없이 말했던 것을 메웠다 — is:important 0건 · 전체수신함 after:09/22 10건 전부 광고·기보고(Anthropic 신뢰기기 2통 05:21·statuspage 5통은 05시 회차 기보고, windsorai는 05:32 사장님 본인 확인 종결). 새 보안·결제 건 없음이 근거와 함께 확정. ②creatoradvisor '낡음'을 추측으로 두지 않고 실측했다 — naver_analytics_summary.json posts.imported_at=09-11 11:28(mtime 09-21 15:35) vs 원본 최신 회차 09-21 16:28 → CP 네이버 분석 10일 낡음 확정. 원인=최신 회차 16행 전부 catName 키 없음. watch creatoradvisor-catname-0923 갱신.",
      "auto_daily": true,
      "base_code": "daily-email-briefing",
      "date": "2026-09-23",
-     "at": "2026-09-23 08:12"
+     "at": "2026-09-23 08:16"
     },
     {
      "code": "9-lifeinfo-issue-product-pm-0923",
@@ -1728,17 +1728,25 @@
    "order_at": "2026-09-23 08:14"
   }
  },
- "updated": "2026-09-23 08:14:58",
+ "updated": "2026-09-23 08:17:33",
  "current": {
-  "batch": "topicprop",
+  "batch": "naverdraft0923",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "✅ B4-14 글감 승인됨 — 초안 작성 차례",
-  "since": "17:02",
-  "since_at": "2026-09-18 17:02:24"
+  "what": "✅ F4-23 네이버 원고 완성 — depth 점검 통과(분량·출처링크 충분)·layout 통과. 전용 썸네일 275n_autumnpeak.png 제작. 단, naver-draft CLI 자체는 순서게이트로 거부됨(지금 차례 C4-11) — 원고 파일·osmu_text 등록은 완료(osmutext 로 4369자 확인). G1-08 진행",
+  "since": "08:17",
+  "since_at": "2026-09-23 08:17:33"
  },
  "log": [
+  {
+   "t": "08:17:33",
+   "text": "▶   — 1/7단계 · ✅ F4-23 네이버 원고 완성 — depth 점검 통과(분량·출처링크 충분)·layout 통과. 전용 썸네일 275n_autumnpeak.png 제작. 단, naver-draft CLI 자체는 순서게이트로 거부됨(지금 차례 C4-11) — 원고 파일·osmu_text 등록은 완료(osmutext 로 4369자 확인). G1-08 진행"
+  },
+  {
+   "t": "08:16:38",
+   "text": "✅ daily-email-briefing-0923 완료 — daily-email-briefing (A)"
+  },
   {
    "t": "08:14:58",
    "text": "📄 naverdraft0923 작업 지시 등록(9708자, 2026-09-23 08:14)"
@@ -1890,14 +1898,6 @@
   {
    "t": "06:13:25",
    "text": "📋 배치 '🚀 H1-14 추석 특선영화 발행 (D-2)' 등록 — 1항목"
-  },
-  {
-   "t": "06:10:48",
-   "text": "✅ 20260923-1 완료 — 법성포 영광굴비 3.5만원 — 쓰레드 상품글 게시"
-  },
-  {
-   "t": "06:10:38",
-   "text": "✅ 20260923-2 완료 — 세척사과 꿀사과 3kg 1.29만원 — 쓰레드 상품글 게시"
   }
  ],
  "currents": {
@@ -1954,6 +1954,15 @@
    "what": "📋 복창: A5-03 0단계=구직촉진수당 50→60만 인상 1차출처(work24·고용부) 검증 먼저 · 못 찾으면 금액 계산예시 빼고 보고 · 원고만 준비, 라이브 적용 안 함(승인 필요) · 끝나면 준비물 경로·검증 결과 mark",
    "since": "03:47",
    "since_at": "2026-09-21 03:47:41"
+  },
+  "naverdraft0923": {
+   "batch": "naverdraft0923",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "✅ F4-23 네이버 원고 완성 — depth 점검 통과(분량·출처링크 충분)·layout 통과. 전용 썸네일 275n_autumnpeak.png 제작. 단, naver-draft CLI 자체는 순서게이트로 거부됨(지금 차례 C4-11) — 원고 파일·osmu_text 등록은 완료(osmutext 로 4369자 확인). G1-08 진행",
+   "since": "08:17",
+   "since_at": "2026-09-23 08:17:33"
   }
  },
  "report_log": [
@@ -4814,6 +4823,14 @@
    "title": "",
    "owner": "",
    "what": "🛒 07:13 AM 정규회차 실행 — 확인해보니 오늘 05:18에 이미 같은 AM슬롯(8-lifeinfo-issue-product-0923, 영광굴비)이 완료돼 있고 05:23에 PM슬롯(9-lifeinfo-issue-product-pm-0923, 세척사과)도 이미 완료됨(routinelog·readycheck 확인). collect 재실행=신규0(누적1095, 07:11). 오늘 2슬롯 다 충족돼 3번째 후보는 안 냄(중복 방지)."
+  },
+  {
+   "ts": "2026-09-23 08:17:33",
+   "bid": "naverdraft0923",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "✅ F4-23 네이버 원고 완성 — depth 점검 통과(분량·출처링크 충분)·layout 통과. 전용 썸네일 275n_autumnpeak.png 제작. 단, naver-draft CLI 자체는 순서게이트로 거부됨(지금 차례 C4-11) — 원고 파일·osmu_text 등록은 완료(osmutext 로 4369자 확인). G1-08 진행"
   }
  ]
 }
