@@ -12834,6 +12834,28 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:830847ea"
+  },
+  {
+   "id": "factcheck-false-alarm-0923",
+   "added": "2026-09-23",
+   "what": "야간검증(루틴5) 오탐 1건 원인 확인 — C1-10 재산기준을 5.4억(구 기준)으로 판정했으나 고시 제2024-293호(2025-01-01 시행)는 7억원이다. 다른 글에도 같은 구 기준 대조가 쓰였는지, 루틴5가 어떤 출처를 봤는지 확인할 것",
+   "due": "2026-09-30",
+   "cmd": "python -m studio.watch --id factcheck-c110-property-0917",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-community-0923",
+   "added": "2026-09-23",
+   "what": "애드센스 도움말 커뮤니티에 질문 글 올리기 — 문구 준비 완료(영어본 권장). 파일: docs/애드센스_커뮤니티_질문글_20260923.md. ⚠️이메일·게시자ID(pub-) 는 적지 마십시오(공개 포럼). 질문 셋: ①재크롤마다 색인에서 빠지는 것이 알려진 패턴인가 ②사이트 단위 일괄 판정이 있는가(사흘 만에 120→21) ③색인 상태가 애드센스 심사에 영향을 주는가. 답변 오면 전담자료에 덧붙이고 실측 검증 후 반영",
+   "due": "2026-09-24",
+   "cmd": "https://support.google.com/adsense/community",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
