@@ -12771,11 +12771,11 @@
   {
    "id": "adsense-review-0923",
    "added": "2026-09-23",
-   "what": "애드센스 재검토 요청 — 사장님 지시(2026-09-23 '이제 무조건 한다'). 8/12 4회째 반려 이후 40일간 심사가 안 돌았다. 근거 집계: 8/12 이후 새 글 107편(8월 33·9월 74) 전부 OSMU 3채널 이상 · 라이브 보강 423건. 누르신 뒤 알려 주시면 추적합니다. 결과 통지는 magsori@gmail.com 메일이 API 보다 먼저 옵니다",
-   "due": "2026-09-23",
-   "cmd": "https://www.google.com/adsense/new/u/0/pub-3606922238918518/sites",
-   "owner": "user",
-   "verify": "python studio/adsense.py status",
+   "what": "애드센스 심사 진행 중 추적 — 화면 실측(2026-09-23): 「준비 중 · 광고 게재 가능 여부 검토 중」, 「리뷰가 요청됨」(요청시간 2026-08-12 08:12). API 는 NEEDS_ATTENTION 을 주지만 화면은 심사 중이다. ⚠️Ads.txt 화면표시 「찾을 수 없음」이나 실제는 200·내용정상(재생성 금지). 결과 통지는 magsori@gmail.com 메일이 먼저 온다",
+   "due": "2026-09-30",
+   "cmd": "python studio/adsense.py status",
+   "owner": "claude",
+   "verify": "curl -s -o /dev/null -w '%{http_code}' https://lifeinfo8975.blogspot.com/ads.txt",
    "kind": "action",
    "state": "todo",
    "by": "이부장"
