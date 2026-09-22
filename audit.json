@@ -7928,6 +7928,14 @@
    "target": "c213-goldenhour-recheck",
    "detail": "브라우저로 e-gen.or.kr/egen/search_hospital.do 재확인(09-23) — '전체 진료과' 드롭다운은 일반 진료과 분류(내과·외과 등)뿐, 뇌졸중·심근경색 등 질환별 시술가능병원 필터는 이 화면에 없음을 확인. 나머지 3건(119 사전연락 절차 원문·FAST 한국공식출처·야간주말 변동서술)은 이번 회차에서 미시도 — 09-06 진단 그대로 미확인 유지",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-23T06:00:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a217-energy-voucher-source",
+   "detail": "energyv.or.kr FAQ(mstBoardId=42,boardId=1102 '지원금액은 어떻게 되나요?') 확인 2026-09-23: 동·하절기 통합수급자는 지원금액이 계절로 구분되지 않고 전체 사용기간('26.7.1~'27.5.31) 내 자유사용(=하절기 잔액이 자동으로 동절기까지 이월되는 구조, 별도 '당겨쓰기' 개념 없음). 단 하절기바우처+타 동절기에너지이용권(연탄쿠폰 등) 병행수급자는 사용기간이 '26.7.1~'26.9.30로 별도이며 10월1일 이후 잔액 전부 소멸. URL: https://www.energyv.or.kr/board/boardDetail.do?mstBoardId=42&mstBoardType=02002&boardId=1102 (기존 워치의 mstBoardId=43&boardId=1106 URL은 존재하지 않는 글 — 43은 신청방법 게시판이고 정답은 42=지원기준 게시판에 있었음)",
+   "via": "cli"
   }
  ]
 }
