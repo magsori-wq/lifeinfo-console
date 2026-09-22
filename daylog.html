@@ -20,13 +20,23 @@ th{opacity:.6;font-weight:600;font-size:12px}
 <span class="chip">루틴 —</span>
 </div>
 <table><tr><th>#</th><th>코드</th><th>제목</th><th>네이버</th><th>쓰레드</th><th>인스타</th><th>검색설명</th><th>색인</th></tr>
-<tr><td class='n'>1</td><td>G4-09</td><td>2026 부산돼지국밥대전 국밥주간 총정리 — 시민추천 국밥집 20곳 명단·카카오맵 </td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td>?</td><td><span class="no">?</span></td></tr>
-<tr><td class='n'>2</td><td>G1-08</td><td>2026 광안리 M 드론×레이저쇼 특별공연 관람 가이드 — 3천대 규모·교통통제·가</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td>?</td><td><span class="no">?</span></td></tr>
-<tr><td class='n'>3</td><td>F4-23</td><td>2026 전국 단풍 절정 시기 총정리 — 설악산 10/20부터 월출산 11/9까지 </td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td>?</td><td><span class="no">?</span></td></tr>
+<tr><td class='n'>1</td><td>G4-09</td><td>2026 부산돼지국밥대전 국밥주간 총정리 — 시민추천 국밥집 20곳 명단·카카오맵 </td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="ok">✅</span></td><td><span class="no">?</span></td></tr>
+<tr><td class='n'>2</td><td>G1-08</td><td>2026 광안리 M 드론×레이저쇼 특별공연 관람 가이드 — 3천대 규모·교통통제·가</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="ok">✅</span></td><td><span class="no">?</span></td></tr>
+<tr><td class='n'>3</td><td>F4-23</td><td>2026 전국 단풍 절정 시기 총정리 — 설악산 10/20부터 월출산 11/9까지 </td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="ok">✅</span></td><td><span class="no">?</span></td></tr>
 <tr><td class='n'>4</td><td>H1-14</td><td>TV로 보는 추석 영화 — 왕과 사는 남자 TV 최초 방송 시간과 EBS 명작 4편</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="ok">✅</span></td><td><span class="no">?</span></td></tr>
 <tr><td class='n'>5</td><td>C4-11</td><td>명절증후군 원인·증상·극복법 총정리 — 추석 연휴 뒤 몸이 이상하다면 (2026)</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="ok">✅</span></td><td><span class="no">?</span></td></tr>
 </table>
 <div class="note">📥 큐 적재: C4-11(info) · F4-23(etc) · G1-08(etc) · G4-09(etc)</div>
+<table><tr><th>#</th><th></th><th>항목</th><th>결과(실측 기록)</th></tr>
+<tr><td class="n">CP수리</td><td>✅</td><td style="color:#3ddc97">[관제탑] CP 화면 수리 — doctype 3건·변경로그 빈화면·낡음 오탐 2건</td><td class="note">daylog·reports·temp doctype · 변경로그 기본 3시간→자동확장 · incidents/manifest 낡음 판정 제외</td></tr>
+<tr><td class="n">결재함정리</td><td>✅</td><td style="color:#3ddc97">[관제탑] 결재함 정리 — 사장님 3회 지적(승인 끝난 건·원고 없는 네이버·중복 표시)</td><td class="note">actionable() 물림(만들고 안 쓰던 함수) · _naver_ready() 신설 · 네이버 게시는 미결사항 탭으로 이관 · CLAUDE.md 갱신. 결과 결재 대기 0건</td></tr>
+<tr><td class="n">깃허브제거</td><td>✅</td><td style="color:#3ddc97">[관제탑] 결재함에서 GitHub 경유 승인·발행 링크 제거(사장님 지시)</td><td class="note">extLink → 승인문구 복사 · pubLink → 값 표시만 · github.com 참조 0건 확인</td></tr>
+<tr><td class="n">네이버원고3</td><td>⬜</td><td style="color:#9fb0d0">[관제탑] F4-23·G1-08·G4-09 네이버 원고 준비 지시</td><td class="note">미결사항 화면에 &#x27;자산 미준비&#x27;로 떠 있다. 순서 게이트상 C4-11 게시 뒤</td></tr>
+<tr><td class="n">라이브오류</td><td>✅</td><td style="color:#3ddc97">[관제탑] 라이브 오류 재검증 — 오탐 2 / 진짜 1</td><td class="note">A2-15 파편=오탐 · C1-10=오탐 · A2-19 요금차감 전기누락=진짜(공식 확인 후 정정 완료)</td></tr>
+<tr><td class="n">색인0분석</td><td>✅</td><td style="color:#3ddc97">[관제탑] 색인 0 원인 규명 + 루틴7 전담 전환</td><td class="note">294편 재조회 색인 0 확정 · D1-02 재크롤 다음날 탈락(9a22ddc2→e1921112 직접 대조) · 요청207 중 크롤163·색인0 · 전담자료 인계 · 커뮤니티 질문글 준비</td></tr>
+<tr><td class="n">오보정정</td><td>✅</td><td style="color:#3ddc97">[관제탑] 내가 틀린 보고 3건 정정</td><td class="note">①&#x27;심사 40일 안 돌았다&#x27;→화면은 검토 중 ②&#x27;ads.txt 새로 걸렸다&#x27;→줄곧 그랬음 ③&#x27;C1-10 재산기준 7억 오류&#x27;→고시 원문 7억이 맞음</td></tr>
+<tr><td class="n">인스타삭제</td><td>⬜</td><td style="color:#9fb0d0">[관제탑] 인스타 옛 표지 5개 삭제 대상 확정 — roles 미등록(09-19 이월)</td><td class="note">09-19 보드에서 이월. 삭제 권한이 roles 표에 없어 멈춰 있다</td></tr>
+</table>
 </div>
 <div class="day"><div class="dh">2026-09-22
 <span class="chip">발행 0</span><span class="chip">큐 0</span>
@@ -65,22 +75,6 @@ th{opacity:.6;font-weight:600;font-size:12px}
 <tr><td class='n'>4</td><td>F4-22</td><td>자라섬재즈페스티벌 2026 티켓 가격과 관람 정보 — 3일권 얼마인가</td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="ok">✅</span></td><td><span class="no">Redirect error</span></td></tr>
 </table>
 <div class="note">📥 큐 적재: A2-19(user) · C4-10(info) · D4-12(user)</div>
-<table><tr><th>#</th><th></th><th>항목</th><th>결과(실측 기록)</th></tr>
-<tr><td class="n">A1-10</td><td>🔄</td><td style="color:#e08b1e">[관제탑] A1-10 선지급 안내박스 지시(사장님 승인)</td><td class="note">이과장 진행 중 livefix0919a110</td></tr>
-<tr><td class="n">E1-02정정</td><td>✅</td><td style="color:#3ddc97">[관제탑] E1-02 라이브 정정 3건</td><td class="note">라이브 curl 실측, 감면액 불변</td></tr>
-<tr><td class="n">boss0915</td><td>⬜</td><td style="color:#9fb0d0">[관제탑] boss0915 9건 실측 — 나흘째 갱신 없음</td><td class="note">아직 안 함</td></tr>
-<tr><td class="n">daylog</td><td>✅</td><td style="color:#3ddc97">[관제탑] 일자별 처리내역이 23일 멈춰 있었다 — bake 에 배선</td><td class="note">mtime 1970 되돌려 재생성 검증 · 309c34fa</td></tr>
-<tr><td class="n">today보드</td><td>✅</td><td style="color:#3ddc97">[관제탑] 오늘 보드 미작성 — 사장님 지적으로 만듦</td><td class="note">2026-08-17 지시가 또 깨졌다</td></tr>
-<tr><td class="n">unused</td><td>✅</td><td style="color:#3ddc97">[관제탑] studio/unused.py 신설 — 만들어 놓고 안 쓰는 게이트를 코드가 센다</td><td class="note">첫 실행 5건 적발 · 309c34fa</td></tr>
-<tr><td class="n">글감선별</td><td>✅</td><td style="color:#3ddc97">[관제탑] E1-99 선별·초안 지시 / A2-99 제외(사장님 판단)</td><td class="note">draft0919e199</td></tr>
-<tr><td class="n">미결11건</td><td>✅</td><td style="color:#3ddc97">[관제탑] 사장님 미결 11건 전수 실측 — 1건 닫고 6건 미룸</td><td class="note">eb4a9c8e</td></tr>
-<tr><td class="n">발행4편</td><td>✅</td><td style="color:#3ddc97">[관제탑] 발행 4편 4채널 완결 — F4-22·H1-12·C4-10·D4-12</td><td class="note">네이버 4편 사장님 게시 후 인스타·쓰레드·교차링크 확인</td></tr>
-<tr><td class="n">유령제거</td><td>✅</td><td style="color:#3ddc97">[관제탑] 진행중 문서 유령 E4-02 + loopcheck 유령 검사</td><td class="note">3766be60</td></tr>
-<tr><td class="n">인스타삭제</td><td>⬜</td><td style="color:#9fb0d0">[관제탑] 인스타 옛 표지 5개 삭제 대상 확정 — roles 미등록</td><td class="note">되돌릴 수 없어 사장님 확인 필요</td></tr>
-<tr><td class="n">재고하한</td><td>✅</td><td style="color:#3ddc97">[관제탑] 재고 하한 경보 배선 — need() 호출처 0곳이었다</td><td class="note">a3977bd5 + 회귀규칙 dfc64fa2</td></tr>
-<tr><td class="n">프롬프트</td><td>✅</td><td style="color:#3ddc97">[관제탑] 내가할일 탭 ①③ 프롬프트를 현행 표준으로</td><td class="note">요약본금지·1차출처·V0·막힌 발행경로 제거·교차링크 필수</td></tr>
-<tr><td class="n">화면수리</td><td>✅</td><td style="color:#3ddc97">[관제탑] 결재함 화면 5건 수리</td><td class="note">곧/미뤄둔 분리·바로표시·도착화면 열기·목적지 변경·지시대기 표시</td></tr>
-</table>
 </div>
 <div class="day"><div class="dh">2026-09-18
 <span class="chip">발행 4</span><span class="chip">큐 6</span>
