@@ -13097,6 +13097,16 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:a8677f73"
+  },
+  {
+   "id": "adsense-internal-dup-unmeasured-0924",
+   "added": "2026-09-24",
+   "what": "애드센스 조문 A-3 ④ '사이트 내부 중복·반복 텍스트'를 한 번도 잰 적이 없다. 원문(2026-09-24 취득): 'ensure that the same content is not duplicated in the same page or across multiple pages of your site' / 'try to minimize repeating long segments of text in different pages'. bodydup 은 글 대 글 전체 유사도라 이 축과 다르다. 바이라인·면책·관련글·출처 블록이 300편에 반복된다. 근거=docs/공식문서_애드센스_전수_20260924.md A-3",
+   "due": "2026-09-30",
+   "cmd": "python -c \"import json,collections,re; db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8')); print(len(db['posts']))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }

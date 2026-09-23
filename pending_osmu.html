@@ -111,6 +111,9 @@ async function fallbackPending(){
   // 🤖 에이전트 실행 현황 — studio/agentwatch.py 가 굽는다(없으면 패널이 안 뜬다)
   try{ window.__AGENTS__ = await j('agents.json'); }catch(e){}
   try{ window.__TOPICPROP__ = await j('topicprop.json'); }catch(e){}
+      // 🎨 네이버 서식 미적용 — studio/naverfmt.py 가 **직접 돌릴 때만** 굽는다.
+      //    라이브 299편 curl 이라 bake 에 넣지 않았다 — 화면은 읽기만 한다.
+      try{ window.__NAVERFMT__ = await j('naverfmt.json'); }catch(e){}
   if(!q && !db) return null;
   var posts=(db&&db.posts)||[];
   var published={}; posts.forEach(function(p){ if(p.url) published[p.code]=1; });
@@ -299,6 +302,9 @@ function fileChip(path, label, isImg, exists){
   //    전에는 fallbackPending() 안에서만 실어서, 결재서버가 떠 있으면
   //    「글감 승인완료」 칸이 승인된 글이 있는데도 늘 0건이었다(F1-15).
   try{ window.__TOPICPROP__ = await j('topicprop.json'); }catch(e){}
+      // 🎨 네이버 서식 미적용 — studio/naverfmt.py 가 **직접 돌릴 때만** 굽는다.
+      //    라이브 299편 curl 이라 bake 에 넣지 않았다 — 화면은 읽기만 한다.
+      try{ window.__NAVERFMT__ = await j('naverfmt.json'); }catch(e){}
   // 🔴 **발행 여부는 DB 전체로 판정한다.** 서버 응답의 posts 는 'OSMU 가 남은 글'만
   //    담고 있어서, 그걸로 거르면 이미 발행·확산까지 끝난 글이 전부 「승인완료 대기」로
   //    잡힌다(2026-08-31 실측: 0건이어야 할 자리가 17건으로 터졌다).
@@ -496,6 +502,52 @@ function fileChip(path, label, isImg, exists){
     H+=pane(x[1],x[2]+' 미확산',rows.length+'건',body);
   });
 
+  // 🎨 네이버 서식 미적용 (2026-09-24 사장님 지시 "cp의 기존 네이버 미확산으로 하면 되잖아?")
+  //    🔴 09-23 에 관제탑이 고칠 5편을 **조회수로 임의로 골랐다**. 사장님이 그것을 잡으셨다.
+  //       미확산은 0건이라 이 일이 어느 목록에도 안 잡혔던 것이 원인이다.
+  //    🔴 판정은 studio/naverfmt.py 한 곳에서만 한다 — 화면은 **그리기만** 한다.
+  //       (같은 것을 두 곳에서 세면 반드시 한 곳이 뒤처진다 — pace 상수로 열흘을 겪었다)
+  (function(){
+    var F = window.__NAVERFMT__ || null;
+    if(!F || !F.counts) return;                       // 아직 측정 전이면 패널을 안 띄운다
+    var C=F.counts, off=(F.off||[]), edge=(F.edge||[]), TOP=20;
+    function row(r, dim){
+      var tb = Math.max(0,(r.table||0)-(F.table_skin||12));
+      return '<div class="card l-todo"'+(dim?' style="opacity:.55"':'')+'><div class="hd">'
+        +'<span class="lt lt-todo"></span>'
+        +'<span class="ttl">'+esc(String(r.title||'').slice(0,40))+'</span>'
+        +'<span class="code">'+esc(r.code||'')+'</span>'
+        +'<span class="badge b-todo">주황'+(r.orange||0)+' · 섹션19:'+(r.fs19||0)
+        +' · 본문15:'+(r.fs15||0)+' · 표'+tb+'</span></div>'
+        +'<div class="files">'
+        +(r.url? '<a class="f" href="'+esc(r.url)+'" target="_blank">▸ 네이버 글 열기</a>' : '')
+        +'</div></div>';
+    }
+    var head = '<div style="padding:6px 8px;margin-bottom:8px;background:#111a2c;'
+      +'border:1px solid #223052;border-radius:9px;font-size:12px;line-height:1.7">'
+      +'✅ 적용 <b>'+C.on+'</b> · 🔴 미적용 <b style="color:#ff9b6b">'+C.off+'</b>'
+      +' · 🟡 경계 '+C.edge+' · ⬜ 못읽음 '+C.unread+' (게시 '+C.total+'편)<br>'
+      +'<span style="opacity:.75">판정축 <b>'+esc(F.axis||'')+' &ge; '+(F.threshold||0)+'</b>'
+      +' — 라이브 299편 전수 실측에서 0개(293편)와 17개 이상(6편) 사이가 비어 있다.<br>'
+      +'순서 = '+esc(F.order||'')+' · 기준 시각 '+esc(F.at||'')+'</span></div>';
+    var body = off.length
+      ? off.slice(0,TOP).map(function(r){ return row(r,false); }).join('')
+        + (off.length>TOP ? '<p class="none" style="margin-top:6px">… 그 밖 '
+            +(off.length-TOP)+'편. 위에서부터 하면 됩니다 — 임의로 고르지 않습니다.</p>' : '')
+      : '<p class="none">✅ 서식 미적용 없음.</p>';
+    if(edge.length){
+      body += '<div style="margin-top:10px;font-size:12px;color:#ffd479">'
+        +'🟡 경계 '+edge.length+'건 — 눈으로 확인할 것</div>'
+        + edge.slice(0,6).map(function(r){ return row(r,true); }).join('');
+    }
+    if(C.unread){
+      body += '<p class="none" style="margin-top:8px;color:#ff9b6b">⬜ 못읽음 '+C.unread
+        +'건 — <b>미적용이 아닙니다.</b> 다시 재야 합니다 '
+        +'(python -m studio.naverfmt --scan)</p>';
+    }
+    H+=pane('🎨','네이버 서식 미적용',C.off+'건',head+body);
+  })();
+
   // 🤖 에이전트 실행 현황 (2026-09-01 사장님 "에이전트 실행 상황 어떻게 하면 내가 알 수 있을지")
   //    관제탑이 에이전트를 띄우면 완료 알림은 관제탑에게만 온다 — 사장님은
   //    "맡겼습니다" 라는 말만 듣고 진행을 볼 수 없었다. 여기서 보이게 한다.
@@ -629,6 +681,9 @@ function _repoll(){
       //    실제로 A2-16 이 01:09 에 보류됐는데 01:20 화면에는 "승인됨" 으로 남아 있었고,
       //    관제탑은 "파일은 맞다" 고 우겼다. **사장님이 보시는 화면이 진실이다.**
       try{ window.__TOPICPROP__ = await j('topicprop.json'); }catch(e){}
+      // 🎨 네이버 서식 미적용 — studio/naverfmt.py 가 **직접 돌릴 때만** 굽는다.
+      //    라이브 299편 curl 이라 bake 에 넣지 않았다 — 화면은 읽기만 한다.
+      try{ window.__NAVERFMT__ = await j('naverfmt.json'); }catch(e){}
       try{ var _db2=await j('lifeinfo_db.txt');
            window.__PUBCODES__={};
            ((_db2&&_db2.posts)||[]).forEach(function(p){ window.__PUBCODES__[p.code]=1; });
