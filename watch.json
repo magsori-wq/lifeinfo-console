@@ -13117,8 +13117,10 @@
    "due": "2026-09-30",
    "cmd": "curl -s https://lifeinfo8975.blogspot.com/p/blog-page.html | grep -o '글쓴이[^<]*' | head -3",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-09-24",
+   "result": "실측 완료 — 원인 아님. 우리는 정적 페이지 5개(블로그소개·문의·개인정보처리방침·카테고리·통합검색)가 있고, 라이브 글 바이라인의 '정보 확인 방법·고지' 링크가 실제로 /p/blog-page_17.html 로 연결된다(href 직접 추출) = QRG 'bylines lead to further information' 충족. 그 페이지에 '운영자 소개 이상곤' 절(역할·동기·방법론 5단계·AI 사용 고지)과 이메일 magsori@gmail.com 공개. 반면 dailyujun2025 정적페이지 0개·저자소개 없음, eunzzing 정적페이지 0개·저자소개 없음·자체 개인정보처리방침조차 없이 policies.google.com 으로 보냄 — 둘 다 광고 게재 중. 즉 우리가 두 승인 블로그보다 저자·사이트 정보가 많다. 🟡 곁가지 1건: 블로그소개 편수가 266편으로 낡음(실제 299편). 상세=docs/내부중복_실측_20260924.md ④"
   },
   {
    "id": "adsense-troubleshooter-0924",
@@ -13173,6 +13175,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "approve-yml-gitignore-glob-0924",
+   "added": "2026-09-24",
+   "what": "외부결재(이슈) 워크플로가 커밋 단계에서 죽는다 — .github/workflows/approve.yml:218 'git add webapp/*.json' 의 셸 glob 이 .gitignore 된 webapp/tasks.json·_colorcache.json·_seen_reports.json 을 명시적으로 지목해 git 이 exit 1. 바로 앞 스텝 'python -m studio.bake' 가 tasks.json 을 만들기 때문에 러너에서는 매번 재현된다. 실측: 결재처리 ✓ · 화면갱신 ✓ · 커밋푸시 ✗ · 결과/이슈닫기 스킵 → 이슈 #2 가 열린 채 남음. approve 워크플로는 이력상 1회 실행·1회 실패(성공 사례 없음). 검증된 수정 = glob 대신 디렉터리 지정 'git add webapp/' (git 이 무시파일을 조용히 건너뛴다, dry-run exit 0)",
+   "due": "2026-09-24",
+   "cmd": "git add --dry-run webapp/*.json >/dev/null 2>&1; echo exit=$?  # 1이면 미수정 · git add --dry-run webapp/ 는 exit 0",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
