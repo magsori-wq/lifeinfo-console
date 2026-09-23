@@ -13044,6 +13044,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "tongdosa-mediaart-closeday-0923",
+   "added": "2026-09-23",
+   "what": "2026 통도사 미디어아트 휴무일 — 공식홈 3곳(운영시간안내·이용안내Q&A·공지게시판)에 명시 없음. 기간내 매일 운영으로 보이나 정기휴무 문구 미발견. 근거=docs/source_G2-03_통도사미디어아트_20260923.md",
+   "due": "2026-09-28",
+   "cmd": "curl -s -A 'Mozilla/5.0' 'https://tongdosamediaart.kr/bbs/board.php?bo_table=notice' | grep -i 휴무",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
