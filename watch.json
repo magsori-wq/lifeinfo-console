@@ -12991,6 +12991,30 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "xlink-g409",
+   "added": "2026-09-23",
+   "what": "🔗 G4-09 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-09",
+   "due": "2026-09-23",
+   "cmd": "python studio/blogger.py crosslink --code G4-09",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "approve-photo3-0923",
+   "added": "2026-09-23",
+   "what": "📷 라이브 3편에 본문 사진 1컷씩 추가 승인 — 사장님 지적('드론쇼인데 이미지 아쉽다'·'이것도 이미지 아쉬워'). 실측: G4-09·G1-08·F4-23 세 글 모두 본문 사진 0장입니다(있는 이미지는 전부 관련글 썸네일·로고). 넣을 사진은 이미 보유 중입니다 — G4-09 국밥 한 그릇(gukbap_bowl) · G1-08 야간 드론쇼(droneshow_skyline) · F4-23 단풍 숲(autumn_forest), 셋 다 Pexels 무료 소스입니다. 🔴 각 사진 아래에 '참고 사진입니다 — 이번 <행사> 사진이 아닙니다 · 출처/라이선스' 를 반드시 붙입니다(2026-09-21 사장님 지시). 위치는 도입부 아래 1컷. 본문 글자는 한 자도 안 건드립니다. 【권고】 승인 — 눈으로 보는 글이라 사진 한 컷이 체류시간에 직접 영향을 줍니다 【위험】 낮음. 되돌리기는 update-post 로 가능",
+   "due": "2026-09-23",
+   "cmd": "python -m studio.batchboard order --id photo3",
+   "owner": "user",
+   "verify": "python -c \"import subprocess;print([len(subprocess.run(['curl','-s',u],capture_output=True,text=True).stdout.split('<img')) for u in ['https://lifeinfo8975.blogspot.com/2026/09/2026-20-9281014.html']])\"",
+   "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-23",
+   "result": "사장님 승인 2026-09-23 (채팅 '승인'). photo3 배치로 이과장에게 지시"
   }
  ]
 }
