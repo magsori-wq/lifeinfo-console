@@ -13161,6 +13161,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "출처관 에이전트"
+  },
+  {
+   "id": "adsense-peer-ads-filled-0924",
+   "added": "2026-09-24",
+   "what": "내부중복 실측(docs/내부중복_실측_20260924.md) 결론의 유일한 의존 전제 — 대조 블로그 2곳(dailyujun2025·eunzzing)이 실제로 애드센스 광고를 '채워서' 게재 중인지 브라우저로 재확인. curl 로는 코드(ca-pub·adsbygoogle 31~33개·data-ad-slot 수동단위 2개씩)까지만 확인됐고 filled 여부는 앞선 조사의 브라우저 확인에 의존한다. 우리 사이트도 미승인 상태로 ca-pub·ads.txt 가 있으므로 코드 존재는 승인의 증거가 아니다. 두 블로그가 승인 상태가 아니면 내부중복·저자페이지 두 축의 '원인 아님' 판정이 무너진다.",
+   "due": "2026-09-30",
+   "cmd": "claude-in-chrome 으로 https://eunzzing.blogspot.com/2026/09/childbirth-support-benefits-apply.html 과 https://dailyujun2025.blogspot.com/ 을 열어 광고 iframe 이 실제로 채워지는지(빈 ins 가 아닌지) 육안 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
