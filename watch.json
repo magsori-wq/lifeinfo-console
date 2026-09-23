@@ -13179,9 +13179,19 @@
   {
    "id": "approve-yml-gitignore-glob-0924",
    "added": "2026-09-24",
-   "what": "외부결재(이슈) 워크플로가 커밋 단계에서 죽는다 — .github/workflows/approve.yml:218 'git add webapp/*.json' 의 셸 glob 이 .gitignore 된 webapp/tasks.json·_colorcache.json·_seen_reports.json 을 명시적으로 지목해 git 이 exit 1. 바로 앞 스텝 'python -m studio.bake' 가 tasks.json 을 만들기 때문에 러너에서는 매번 재현된다. 실측: 결재처리 ✓ · 화면갱신 ✓ · 커밋푸시 ✗ · 결과/이슈닫기 스킵 → 이슈 #2 가 열린 채 남음. approve 워크플로는 이력상 1회 실행·1회 실패(성공 사례 없음). 검증된 수정 = glob 대신 디렉터리 지정 'git add webapp/' (git 이 무시파일을 조용히 건너뛴다, dry-run exit 0)",
+   "what": "외부결재(이슈) 워크플로가 커밋 단계에서 죽는다 — .github/workflows/approve.yml:218 'git add webapp/*.json' 의 **셸** glob 이 .gitignore 된 파일을 명시 지목해 git exit 1. 러너 로그에 지목된 것은 webapp/tasks.json 1개(로컬 재현시엔 _colorcache·_seen_reports 포함 3개). 앞 스텝 bake 가 tasks.json 을 쓰므로 러너 재현성 높음(grep 기반 추론, 미측정). 실측: 결재처리 ✓ 화면갱신 ✓ 커밋푸시 ✗ 결과/이슈닫기 스킵 → 이슈 #2 OPEN 잔존. 이력상 1회 실행·1회 실패. ✅수정 = 따옴표로 묶어 git 이 매칭하게 한다: git add -- 'webapp/*.json' (dry-run exit 0 · stderr 없음 · 23건 전부 .json). ⛔'git add webapp/' 는 쓰지 마라 — exit 0 이지만 batch.html·progress.html·reports.html·trends.txt 까지 담겨 커밋 범위가 넓어진다(실측)",
    "due": "2026-09-24",
-   "cmd": "git add --dry-run webapp/*.json >/dev/null 2>&1; echo exit=$?  # 1이면 미수정 · git add --dry-run webapp/ 는 exit 0",
+   "cmd": "cd /c/lifeinfo && git add --dry-run -- 'webapp/*.json' >/tmp/o 2>/tmp/e; echo exit=$?; grep -cv '[.]json' /tmp/o  # exit 0 · json 아닌 것 0 이어야 정상",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴1"
+  },
+  {
+   "id": "toss-specialtime-change-0928",
+   "added": "2026-09-24",
+   "what": "토스쇼핑 쉐어링크 공지(2026-09-23 수신) — 9/28(월)부터 역대급특가 시작이 아침 08:00 → 밤 00:00 로 변경. 10/5 부터 '선착순특가' 신설(상세 추후). 루틴8(07:00)·루틴9(15:00) 상품 후보 수집 시각과 직결된다: 07:00 회차는 특가 개시 7시간 뒤가 되어 한정수량이 이미 소진됐을 수 있다. 루틴 SKILL 의 수집 시각·문구 조정 여부는 이부장 판단",
+   "due": "2026-09-26",
+   "cmd": "python -m studio.productprop collect  # 09-28 이후 07:00 회차에서 특가 잔여수량이 실제로 줄었는지 확인",
    "owner": "claude",
    "state": "todo",
    "by": "루틴1"
