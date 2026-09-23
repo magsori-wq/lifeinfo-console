@@ -13105,8 +13105,10 @@
    "due": "2026-09-30",
    "cmd": "python -c \"import json,collections,re; db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8')); print(len(db['posts']))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-09-24",
+   "result": "실측 완료 — 원인 아님(확신도 높음). 도구 신설 studio/internaldup.py. 우리 반복 글자=본문 중앙 3.1%(raw)~3.7%(norm) · 최대 10.6% · 가장 긴 반복단위 80자 · 꼬리블록 구조는 본문 12.9%(423자) · 완전중복 0쌍(대조군 0/435). 승인·광고게재 블로그 대조: dailyujun2025 중앙 0.0% · eunzzing 중앙 0.6%(꼬리블록 0/40편) → 차이는 실재하나 결정적 반례가 나왔다: eunzzing 은 본문 100% 동일한 글을 두 URL 로 게시(자카드 1.000 · 20편에 2쌍)하고 둘 다 자기-canonical 이며 광고 31슬롯 게재 중. 페이지 전체로 재면 dailyujun 77.8% > 우리 47.7%. 조문 처방(brief summary + link)은 이미 이행 중. 상세=docs/내부중복_실측_20260924.md · 커밋 c45305d5"
   },
   {
    "id": "adsense-author-page-unmeasured-0924",
