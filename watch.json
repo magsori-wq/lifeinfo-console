@@ -13265,6 +13265,17 @@
    "kind": "action",
    "state": "todo",
    "by": "루틴1"
+  },
+  {
+   "id": "gsc-home-static-index-0924",
+   "added": "2026-09-24",
+   "what": "【권고】홈·정적 페이지 5개에 색인 생성을 요청해 주십시오(클릭 몇 번·되돌릴 수 있음). 【근거】색인 요청 누적 210건이 **전부 글**이고 홈·정적은 0건입니다(제가 gsc_requested.json 을 직접 세었습니다). 그리고 그 페이지들이 전부 구글 색인에 없습니다 — 홈 마지막 크롤 2026-07-05 · 통합검색은 'URL is unknown to Google'. 애드센스 심사자가 보는 것은 글이 아니라 **사이트**인데 지금 색인에는 홈도 소개도 개인정보처리방침도 없습니다(페이지는 전부 200 으로 살아 있습니다 — 색인 얘기입니다). 🔴 소거표의 「죽었다」(효과 0 실측)와 이것(「안 해봤다」)은 다릅니다 — 죽은 레버가 아니라 한 번도 안 채운 칸입니다. 【대상 5개 · 전부 200 확인】 ①https://lifeinfo8975.blogspot.com/ ②/p/blog-page.html 블로그소개 ③/p/blog-page_15.html 카테고리 ④/p/blog-page_16.html 통합검색 ⑤/p/blog-page_17.html 운영자소개 — GSC 상단 검사창에 하나씩 넣고 「색인 생성 요청」. 【위험】글 재요청 수율은 2% 였지만 **대상이 달라 기대치를 그대로 옮기면 안 됩니다** — 안 해본 칸을 채우는 것이지 효과를 예측하는 것이 아닙니다. 발견 = 4.세션 · 수치 재확인 = 이부장",
+   "due": "2026-09-24",
+   "cmd": "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
