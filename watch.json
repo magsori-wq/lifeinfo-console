@@ -13271,13 +13271,24 @@
   {
    "id": "gsc-home-static-index-0924",
    "added": "2026-09-24",
-   "what": "【권고】홈·정적 페이지 5개에 색인 생성을 요청해 주십시오(클릭 몇 번·되돌릴 수 있음). 【근거】색인 요청 누적 210건이 **전부 글**이고 홈·정적은 0건입니다(제가 gsc_requested.json 을 직접 세었습니다). 그리고 그 페이지들이 전부 구글 색인에 없습니다 — 홈 마지막 크롤 2026-07-05 · 통합검색은 'URL is unknown to Google'. 애드센스 심사자가 보는 것은 글이 아니라 **사이트**인데 지금 색인에는 홈도 소개도 개인정보처리방침도 없습니다(페이지는 전부 200 으로 살아 있습니다 — 색인 얘기입니다). 🔴 소거표의 「죽었다」(효과 0 실측)와 이것(「안 해봤다」)은 다릅니다 — 죽은 레버가 아니라 한 번도 안 채운 칸입니다. 【대상 5개 · 전부 200 확인】 ①https://lifeinfo8975.blogspot.com/ ②/p/blog-page.html 블로그소개 ③/p/blog-page_15.html 카테고리 ④/p/blog-page_16.html 통합검색 ⑤/p/blog-page_17.html 운영자소개 — GSC 상단 검사창에 하나씩 넣고 「색인 생성 요청」. 【위험】글 재요청 수율은 2% 였지만 **대상이 달라 기대치를 그대로 옮기면 안 됩니다** — 안 해본 칸을 채우는 것이지 효과를 예측하는 것이 아닙니다. 발견 = 4.세션 · 수치 재확인 = 이부장",
+   "what": "홈·정적 페이지 6개 GSC 색인 생성 요청 — 한 번도 안 해본 칸이다. 요청 기록 실측: 누적 210건 전부 글(/2026/MM/*.html), 홈 '/' 와 '/p/…' 는 0건. 6개 전부 라이브 200 이고 GSC 상태는 미색인(09-24 API 재확인): 홈 크롤 07-05 · 소개 07-14 · 개인정보 07-21 · 문의 07-06 · 카테고리 07-14 · 통합검색은 URL is unknown to Google. 심사자가 보는 것은 글이 아니라 사이트인데 지금 색인에 홈도 소개도 없다. [절차] 아래 GSC 개요를 열고 상단 'URL 검사' 칸에 다음 6개를 하나씩 붙여넣고 각각 '색인 생성 요청' → https://lifeinfo8975.blogspot.com/ | https://lifeinfo8975.blogspot.com/p/blog-page_17.html (블로그소개) | https://lifeinfo8975.blogspot.com/p/blog-page.html (개인정보처리방침) | https://lifeinfo8975.blogspot.com/p/blog-page_20.html (문의) | https://lifeinfo8975.blogspot.com/p/blog-page_15.html (카테고리) | https://lifeinfo8975.blogspot.com/p/blog-page_16.html (통합검색). ⚠️ 기대치를 높이지 말 것 — 글 재요청 수율 2% 는 대상이 달라 근거가 안 된다. 안 해본 칸을 채우는 것이다. ⚠️ URL 검사 딥링크는 만들 수 없다(inspect?resource_id=…&id=… 형식은 404 로 실측 확인) — 붙여넣기가 유일한 경로다",
    "due": "2026-09-24",
-   "cmd": "https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F",
+   "cmd": "https://search.google.com/search-console?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&hl=ko",
    "owner": "user",
    "state": "todo",
-   "kind": "approve",
-   "by": "이부장"
+   "kind": "action",
+   "by": "4.세션",
+   "verify": "python -c \"from studio import searchconsole as s;svc=s._svc();[print(svc.urlInspection().index().inspect(body={'inspectionUrl':u,'siteUrl':s.SITE_URL}).execute()['inspectionResult']['indexStatusResult'].get('coverageState'),u) for u in ['https://lifeinfo8975.blogspot.com/','https://lifeinfo8975.blogspot.com/p/blog-page_17.html','https://lifeinfo8975.blogspot.com/p/blog-page.html','https://lifeinfo8975.blogspot.com/p/blog-page_20.html','https://lifeinfo8975.blogspot.com/p/blog-page_15.html','https://lifeinfo8975.blogspot.com/p/blog-page_16.html']]\""
+  },
+  {
+   "id": "d501-taxonomy-block-0924",
+   "added": "2026-09-24",
+   "what": "🔴 D5-01 발행이 11시간째 막혀 있는데 결재함에 안 떠서 아무도 모른다(selfcheck 17) '막힘 미보고'). 사장님 ⑦승인 04:53 완료 · run 3595922266 · 차단 사유=발행 사전점검의 미정의 중분류 D5(taxonomy 의 D 는 D1~D4 뿐, 루틴7이 lifeinfo_db.txt taxonomy 직접 확인). 갈래 둘 — ①taxonomy 에 D5 신설 ②B4(국세)로 재배정(주제상 더 맞음). ⚠️②는 V0·큐·watch·배치보드 기록이 코드로 묶여 있어 끊긴다(E4-02→B4-11 선례). 판단·실행은 이부장 몫 — 루틴7은 공유 상태파일을 고치지 않는다",
+   "due": "2026-09-24",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json,io;d=json.loads(io.open('webapp/lifeinfo_db.txt',encoding='utf-8').read());print([s['code'] for c in d['taxonomy'] if c['code']=='D' for s in c['subs']])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:5d674ecd"
   }
  ]
 }
