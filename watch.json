@@ -13215,6 +13215,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:5d674ecd"
+  },
+  {
+   "id": "idx0zero-pointer-moved-1001",
+   "added": "2026-09-24",
+   "what": "루틴7 드리프트 수리 검증 — 09-24 에 공통절(보고서탭순환)에 박혀 있던 'idx0zero' 4줄을 루틴7 고유 [절차] 0단계로 옮기고 공통절은 진실원과 동일하게 복원했다(routinesync ✅). ⚠️ 옮긴 포인터가 실제로 물렸는지는 아직 모른다 — 루틴7은 목 09:30 실행이라 다음 회차가 10-01 이다. 그때 idx0zero 를 여전히 읽는지 확인한다. 기준값(09-24 09:36 시점) reads=1 · last_read 2026-09-24 09:36. 10-01 회차 뒤 reads 가 2 이상으로 늘면 정상, 그대로면 포인터가 안 먹은 것이므로 [절차] 0단계 위치를 재검토할 것.",
+   "due": "2026-10-01",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('idx0zero'))\"",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
