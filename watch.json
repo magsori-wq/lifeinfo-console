@@ -13195,6 +13195,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "루틴1"
+  },
+  {
+   "id": "taxonomy-d5-01-0924",
+   "added": "2026-09-24",
+   "what": "D5-01(재해손실세액공제) 발행 시도가 사전점검에서 차단됨 — 'D5' 중분류가 taxonomy 에 없음(D 는 D1~D4 뿐). 루틴6 이 글감 배정 때부터 이 코드를 썼고 V0 통과·이부장 승인·사장님 결재까지 전부 이 코드로 통과했지만 실제 발행 게이트(2026-09-07 신설)에서 처음 걸림. 재분류 후보: B4(국세·소득세법 근거) 또는 A4(위기·재난지원). 코드를 바꾸면 queue.json·초안 첫줄 주석·v0check 기록을 함께 옮겨야 한다(CLAUDE.md 09-10 경고).",
+   "due": "2026-09-24",
+   "cmd": "python -m studio.v0check list | grep D5-01  # 재배정 후 gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=<새코드> -f mode=live -f confirm=PUBLISH -f file='재해손실세액공제_글_HTML.txt' -f title='재해손실세액공제 신청방법' -f post_title='재해손실세액공제 신청 방법 대상 자산상실비율 총정리 (2026 거제·통영 수해)'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:fecf531f"
   }
  ]
 }
