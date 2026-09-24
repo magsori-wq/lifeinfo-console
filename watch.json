@@ -13251,6 +13251,18 @@
    "kind": "action",
    "state": "todo",
    "by": "루틴1"
+  },
+  {
+   "id": "gmail-reader-consent-0924",
+   "added": "2026-09-24",
+   "what": "Gmail 리더(studio/gmailread.py) 계정 동의 3회 — 사장님 지시로 제작 완료, 동의만 남았습니다. 각 명령을 실행하면 브라우저가 열립니다. ⚠️ 반드시 안내된 계정을 고르십시오(다른 계정을 고르면 코드가 감지해서 토큰을 저장하지 않습니다). ⚠️ 'Google이 확인하지 않은 앱' 화면이 나오면 [고급] → [계속]으로 진행하십시오 — 우리 앱이 맞습니다. ⚠️ 만약 Gmail API 미사용설정 오류가 나오면 구글이 알려주는 링크로 GCP 에서 켜 주시면 됩니다(그 화면은 사장님만 보십니다).",
+   "due": "2026-09-26",
+   "cmd": "python studio/gmailread.py auth --account magsori   (그리고 m8975, aroma 순서로 3회)",
+   "owner": "user",
+   "verify": "python studio/gmailread.py scan — 3계정 전부 ✅ 이면 성공",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }

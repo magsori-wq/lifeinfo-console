@@ -411,28 +411,18 @@ function fileChip(path, label, isImg, exists){
     }); }catch(e3){}
   }
 
-  // 🔴 경로 복사 — `navigator.clipboard` 직접 호출은 보안 컨텍스트(https·127.0.0.1)가
-  //    아니면 **무음 실패**한다(falsepos 가 approval.html 에서 지적한 것과 같은 자리).
-  //    그래서 textarea+execCommand 폴백을 둔다.
+  // 🔴 **있는 것을 또 만들지 않는다** (2026-09-24 falsepos 지적으로 발견).
+  //    복사 폴백은 이미 `webapp/cp_clip.js` 의 `cpCopy()` 로 통일돼 있었는데
+  //    내가 `fmtCopy`/`fmtCopyFallback` 을 새로 짰다 — 같은 것이 두 곳이 되면
+  //    반드시 한 곳이 뒤처진다(이 저장소가 반복 겪은 병).
+  //    ⚠️ 지금은 서식본을 링크로 직접 여므로 이 경로는 **미러가 없을 때의 폴백**이다.
   function fmtCopy(a){
-    var s = a.getAttribute('data-p') || '';
-    var done = function(){
-      var o=a.textContent; a.textContent='✅ 복사됨 — 브라우저 주소창에 Ctrl+V';
-      setTimeout(function(){ a.textContent=o; }, 2500); };
-    try{
-      if(navigator.clipboard && window.isSecureContext){
-        navigator.clipboard.writeText(s).then(done, function(){ fmtCopyFallback(s,done); });
-      } else { fmtCopyFallback(s, done); }
-    }catch(e){ fmtCopyFallback(s, done); }
+    var s = a.getAttribute('data-p') || '', o = a.textContent;
+    cpCopy(s,
+      function(){ a.textContent='✅ 복사됨 — 브라우저 주소창에 Ctrl+V';
+                  setTimeout(function(){ a.textContent=o; }, 2500); },
+      function(){ a.textContent='⚠️ 복사 실패 — 경로: '+s; });
     return false;
-  }
-  function fmtCopyFallback(s, done){
-    try{
-      var ta=document.createElement('textarea'); ta.value=s;
-      ta.style.position='fixed'; ta.style.left='-9999px';
-      document.body.appendChild(ta); ta.select();
-      document.execCommand('copy'); document.body.removeChild(ta); done();
-    }catch(e){ alert(s); }
   }
 
   function pane(icon,title,n,body){
@@ -581,7 +571,7 @@ function fileChip(path, label, isImg, exists){
     //    그래서 카드마다 ①무엇이 준비됐는지 ②지금 무엇을 하는지를 함께 적는다.
     function row(r, dim){
       var tb = Math.max(0,(r.table||0)-(F.table_skin||12));
-      var ready = !!r.rich;
+      var ready = !!r.rich, mk = !ready && !!r.draft;
       // 🔴 **클릭하면 바로 열려야 한다** (2026-09-24 사장님: *"절차만 있고 수정에 사용할
       //    파일은 탐색기 열어 일일이 내가 찾아서 확인해야해"*).
       //    서식본은 `webapp/rich/<코드>.html` 로 미러돼 있어 **상대 링크로 열린다** —
@@ -595,21 +585,23 @@ function fileChip(path, label, isImg, exists){
                 +esc(r.rich_path||'')+'">① 📋 서식본 경로 복사</a>')
           +'<a class="f" href="'+esc(r.url||'')+'" target="_blank">'
             +'② 네이버 글 열기 → 수정 → 본문 Ctrl+A → Ctrl+V</a>'
-        : '<span class="f miss">⚪ 세션이 서식본을 먼저 만듭니다 '
-            +'(naverrich --code '+esc(r.code||'')+' --dump)</span>'
-          +(r.url? '<a class="f" href="'+esc(r.url)+'" target="_blank">글 보기</a>' : '');
+        : mk
+          ? '<span class="f miss">⚪ 세션이 서식본을 만듭니다 — 순서 기다리시면 🟢 로 올라옵니다</span>'
+            +(r.url? '<a class="f" href="'+esc(r.url)+'" target="_blank">글 보기</a>' : '')
+          : '<span class="f miss">⛔ 네이버 원고 파일이 없습니다 — 처음부터 써야 하는 글입니다</span>'
+            +(r.url? '<a class="f" href="'+esc(r.url)+'" target="_blank">글 보기</a>' : '');
       return '<div class="card l-'+(ready?'ready':'todo')+'"'+(dim?' style="opacity:.55"':'')
         +'><div class="hd">'
         +'<span class="lt lt-'+(ready?'ready':'todo')+'"></span>'
         +'<span class="badge '+(ready?'b-wait':'b-todo')+'">'
-        +(ready?'🟢 지금 하실 수 있습니다':'⚪ 준비 중')+'</span>'
+        +(ready?'🟢 지금 하실 수 있습니다':(mk?'⚪ 세션 준비 대기':'⛔ 원고 없음'))+'</span>'
         +'<span class="ttl">'+esc(String(r.title||'').slice(0,36))+'</span>'
         +'<span class="code">'+esc(r.code||'')+'</span>'
         +'<span class="badge b-todo">주황'+(r.orange||0)+' · 섹션19:'+(r.fs19||0)
         +' · 본문15:'+(r.fs15||0)+' · 표'+tb+'</span></div>'
         +'<div class="files">'+act+'</div></div>';
     }
-    var rdy = F.ready||0;
+    var rdy = F.ready||0, mkb = F.makeable||0, nod = F.nodraft||0;
     var head = '<div style="padding:8px 10px;margin-bottom:8px;background:#111a2c;'
       +'border:1px solid #223052;border-radius:9px;font-size:12px;line-height:1.75">'
       +'<b style="color:#ffb38a">이 목록은 「서식이 옛날 그대로인 네이버 글」입니다.</b>'
@@ -617,16 +609,26 @@ function fileChip(path, label, isImg, exists){
       +'<b>고치는 순서</b> — 카드의 <b>①</b> 을 누르면 서식본이 <b>새 탭에 열립니다</b>'
       +' → 거기서 <b>Ctrl+A → Ctrl+C</b> → <b>②</b> 를 눌러 네이버 글 <b>수정</b>'
       +' → 본문 <b>Ctrl+A → Ctrl+V</b> → 저장. <b>파일을 찾으실 필요 없습니다.</b><br>'
-      +'🔴 <b>지금 하실 수 있는 것 '+rdy+'편</b>(🟢 표시, 맨 위). 나머지는 세션이 준비합니다 —'
-      +' <b>293편을 다 하실 필요 없습니다.</b> 위에서부터 하시면 됩니다.<br>'
+      +'<b>🟢 지금 하실 수 있음 '+rdy+'편</b> &nbsp;·&nbsp; ⚪ 세션이 만들 수 있음 '+mkb+'편'
+      +' &nbsp;·&nbsp; ⛔ 원고가 없어 대상이 아님 '+nod+'편<br>'
+      +'🔴 <b>사장님은 🟢 만 하십니다.</b> ⚪ 는 세션이 서식본을 만들면 🟢 로 올라옵니다 —'
+      +' 기억하실 필요 없습니다(목록이 파일에 남아 세션이 바뀌어도 이어집니다).<br>'
+      +'⛔ '+nod+'편은 네이버 원고 파일이 없어 **처음부터 쓰는 일**입니다. 목록 맨 뒤로 내렸습니다.<br>'
       +'<span style="opacity:.7">✅ 적용 '+C.on+' · 🔴 미적용 '+C.off+' · 🟡 경계 '+C.edge
       +' · ⬜ 못읽음 '+C.unread+' (게시 '+C.total+'편) · 판정축 '+esc(F.axis||'')
       +' &ge; '+(F.threshold||0)+' · 기준 '+esc(F.at||'')+'</span></div>';
-    var body = off.length
-      ? off.slice(0,TOP).map(function(r){ return row(r,false); }).join('')
-        + (off.length>TOP ? '<p class="none" style="margin-top:6px">… 그 밖 '
-            +(off.length-TOP)+'편. 위에서부터 하면 됩니다 — 임의로 고르지 않습니다.</p>' : '')
-      : '<p class="none">✅ 서식 미적용 없음.</p>';
+    // 🔴 **⛔(원고 없음) 은 목록에 그리지 않는다 — 건수만 적는다.**
+    //    163편을 카드로 세우면 영원히 안 줄어드는 빨간불이 되고, 그러면 목록 전체가
+    //    무시된다(이 저장소가 link_rot 오탐 139건에서 배운 것).
+    var act = off.filter(function(r){ return r.rich || r.draft; });
+    var body = act.length
+      ? act.slice(0,TOP).map(function(r){ return row(r,false); }).join('')
+        + (act.length>TOP ? '<p class="none" style="margin-top:6px">… 그 밖 '
+            +(act.length-TOP)+'편(🟢·⚪). 위에서부터 하면 됩니다 — 임의로 고르지 않습니다.</p>' : '')
+      : '<p class="none">✅ 지금 할 수 있는 것이 없습니다.</p>';
+    if(nod) body += '<p class="none" style="margin-top:8px;opacity:.6">'
+      +'⛔ 원고 없는 '+nod+'편은 목록에 세우지 않았습니다 — 처음부터 쓰는 일이라 '
+      +'서식 작업 대상이 아닙니다.</p>';
     if(edge.length){
       body += '<div style="margin-top:10px;font-size:12px;color:#ffd479">'
         +'🟡 경계 '+edge.length+'건 — 눈으로 확인할 것</div>'
