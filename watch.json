@@ -13239,6 +13239,18 @@
    "kind": "action",
    "state": "todo",
    "by": "4."
+  },
+  {
+   "id": "gmail-8975-relay-0924",
+   "added": "2026-09-24",
+   "what": "magsori8975 → magsori 자동 전달 설정(GSC 통지가 8975 로도 옵니다). 실측 2026-09-24: 전달 확인 메일이 aroma8975 것 1건뿐이고 magsori8975 용은 없습니다 — 전달 요청 자체가 없었습니다. 그래서 8975 로 온 GSC 메일을 브리핑이 한 번도 못 봤습니다. ⚠️ 옛 항목 gmail-8975-relay 는 08-12 등록 후 확인 없이 done 처리됐습니다. 절차: magsori8975 Gmail → 설정 → 전달 및 POP/IMAP → 전달 주소 추가 → magsori@gmail.com → magsori 함에 오는 확인 메일 클릭 → 8975 에서 '받은편지함 사본 보관' 선택 후 저장.",
+   "due": "2026-09-26",
+   "cmd": "Gmail(magsori8975) → 설정 → 전달 및 POP/IMAP → 전달 주소 추가 → magsori@gmail.com",
+   "owner": "user",
+   "verify": "to:magsori8975@gmail.com -in:sent newer_than:3d 조회에서 1건 이상이면 전달 작동",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
