@@ -13281,10 +13281,12 @@
    "due": "2026-09-24",
    "cmd": "https://search.google.com/search-console?resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F&hl=ko",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
    "by": "4.세션",
-   "verify": "python -c \"from studio import searchconsole as s;svc=s._svc();[print(svc.urlInspection().index().inspect(body={'inspectionUrl':u,'siteUrl':s.SITE_URL}).execute()['inspectionResult']['indexStatusResult'].get('coverageState'),u) for u in ['https://lifeinfo8975.blogspot.com/','https://lifeinfo8975.blogspot.com/p/blog-page_17.html','https://lifeinfo8975.blogspot.com/p/blog-page.html','https://lifeinfo8975.blogspot.com/p/blog-page_20.html','https://lifeinfo8975.blogspot.com/p/blog-page_15.html','https://lifeinfo8975.blogspot.com/p/blog-page_16.html']]\""
+   "verify": "python -c \"from studio import searchconsole as s;svc=s._svc();[print(svc.urlInspection().index().inspect(body={'inspectionUrl':u,'siteUrl':s.SITE_URL}).execute()['inspectionResult']['indexStatusResult'].get('coverageState'),u) for u in ['https://lifeinfo8975.blogspot.com/','https://lifeinfo8975.blogspot.com/p/blog-page_17.html','https://lifeinfo8975.blogspot.com/p/blog-page.html','https://lifeinfo8975.blogspot.com/p/blog-page_20.html','https://lifeinfo8975.blogspot.com/p/blog-page_15.html','https://lifeinfo8975.blogspot.com/p/blog-page_16.html']]\"",
+   "done_at": "2026-09-25",
+   "result": "사장님 2026-09-25 5개 전부 색인 생성 요청 완료(홈 확인 캡처: 요청됨·마지막크롤 07-06·canonical 자기자신·참조사이트맵 없음). gsc_log 기록. 효과 확인은 1~2주 뒤 inspect 로"
   },
   {
    "id": "d501-taxonomy-block-0924",
@@ -13388,6 +13390,28 @@
    "what": "GSC URL검사에서 홈페이지 '감지된 참조 사이트맵 없음'(09-25 사장님 캡처). 글 사이트맵 242/242 제출은 확인됐지만 정적 페이지용 sitemap-pages.xml 이 GSC에 제출돼 있는지는 안 잰 상태 — 확인 필요",
    "due": "2026-09-25",
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://lifeinfo8975.blogspot.com/sitemap-pages.xml ; python -c \"import studio.searchconsole as s; print(s.__file__)\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:fecf531f",
+   "done_at": "2026-09-25",
+   "result": "실측(API sitemaps.list): sitemap-pages.xml 은 06-28 제출돼 있음(5페이지·오류0). 단 구글 마지막 다운로드 07-02 — 3개월 안 읽음(sitemap.xml 은 09-24 읽음). 홈 '참조 사이트맵 없음'은 블로거 구조상 홈이 어느 사이트맵에도 없어서 = 정상. 재제출은 사장님 판단 대기"
+  },
+  {
+   "id": "gsc-home-static-recheck-1009",
+   "added": "2026-09-25",
+   "what": "09-25 요청한 홈·정적 5개가 재크롤/색인됐는지 확인(요청 전 홈 마지막크롤 07-06)",
+   "due": "2026-10-09",
+   "cmd": "python studio/searchconsole.py inspect",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:fecf531f"
+  },
+  {
+   "id": "sitemap-pages-reread-0928",
+   "added": "2026-09-25",
+   "what": "09-25 사장님이 sitemap-pages.xml 재제출(제출일 9.25 확인). 구글 마지막 다운로드가 07-02 에서 바뀌었는지 확인",
+   "due": "2026-09-28",
+   "cmd": "python -c \"from studio import searchconsole as s; m=s._svc().sitemaps().get(siteUrl=s.SITE_URL,feedpath='https://lifeinfo8975.blogspot.com/sitemap-pages.xml').execute(); print(m.get('lastSubmitted'), m.get('lastDownloaded'))\"",
    "owner": "claude",
    "state": "todo",
    "by": "세션:fecf531f"

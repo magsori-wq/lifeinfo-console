@@ -8336,6 +8336,22 @@
    "target": "blogger-settings-capture-0924",
    "detail": "사장님 캡처로 확인(2026-09-25): 맞춤 로봇 헤더 태그 3종 — 홈페이지=all · 글및페이지=all · 자료실검색=noindex(라벨/아카이브, 정상관행). 맞춤robots.txt 꺼짐. 설정은 원인 아님 확정. 상세=docs/설정대조_승인블로그_20260924.md. 검색환경설정 화면은 미캡처(우선순위 낮음).",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-25T04:05:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-home-static-index-0924",
+   "detail": "사장님 2026-09-25 5개 전부 색인 생성 요청 완료(홈 확인 캡처: 요청됨·마지막크롤 07-06·canonical 자기자신·참조사이트맵 없음). gsc_log 기록. 효과 확인은 1~2주 뒤 inspect 로",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-25T04:06:44",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "sitemap-pages-check-0925",
+   "detail": "실측(API sitemaps.list): sitemap-pages.xml 은 06-28 제출돼 있음(5페이지·오류0). 단 구글 마지막 다운로드 07-02 — 3개월 안 읽음(sitemap.xml 은 09-24 읽음). 홈 '참조 사이트맵 없음'은 블로거 구조상 홈이 어느 사이트맵에도 없어서 = 정상. 재제출은 사장님 판단 대기",
+   "via": "cli"
   }
  ]
 }
