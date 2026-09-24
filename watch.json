@@ -13205,6 +13205,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:fecf531f"
+  },
+  {
+   "id": "byline-source-gap-0924",
+   "added": "2026-09-24",
+   "what": "바이라인은 '본문에 출처 링크를 표기'라 약속하는데 제도 글 일부에 공식 링크 0개(B1-01 자동차세 실측). 우리 263편 중 70편(26.6%)이 공식링크 0 — 대부분 연예·축제라 정상이나 제도 글은 골라내 보강 필요",
+   "due": "2026-09-26",
+   "cmd": "python -c \"import json,re;d=json.loads(open('webapp/lifeinfo_db.txt',encoding='utf-8').read());print(len(d['posts']))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:5d674ecd"
   }
  ]
 }
