@@ -13209,9 +13209,9 @@
   {
    "id": "byline-source-gap-0924",
    "added": "2026-09-24",
-   "what": "바이라인은 '본문에 출처 링크를 표기'라 약속하는데 제도 글 일부에 공식 링크 0개(B1-01 자동차세 실측). 우리 263편 중 70편(26.6%)이 공식링크 0 — 대부분 연예·축제라 정상이나 제도 글은 골라내 보강 필요",
+   "what": "제도글(A~D) 22편에 공식출처 링크가 0개 — 바이라인은 '본문에 확인일과 출처 링크를 표기'라 약속한다. 근로장려금 A1-03·기초연금 A3-01·국민연금 A3-02·건강보험환급 C1-02·국가건강검진 C2-01·노인장기요양 C3-02·자동차세 B1-01 등. 거의 전부 카테고리별 최초 글(-01~-05)이라 🏛️공식확인 박스 표준 도입 이전 글로 보인다",
    "due": "2026-09-26",
-   "cmd": "python -c \"import json,re;d=json.loads(open('webapp/lifeinfo_db.txt',encoding='utf-8').read());print(len(d['posts']))\"",
+   "cmd": "python studio/_nogovlink_check.py",
    "owner": "claude",
    "state": "todo",
    "by": "세션:5d674ecd"
