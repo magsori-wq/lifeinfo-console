@@ -1,16 +1,33 @@
 {
  "rev": "54213e9c",
  "counts": {
-  "total": 299,
+  "total": 300,
   "osmu_done": 299,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 299,
+  "index_pending": 300,
   "index_requested": 159,
-  "index_todo": 30,
+  "index_todo": 31,
   "index_benign": 110
  },
  "actionable": [
+  {
+   "code": "D5-01",
+   "title": "재해손실세액공제 신청 방법 대상 자산상실비율 총정리 (",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-15",
    "title": "신청만으론 안 끝납니다 — 국가장학금 서류제출·가구원동",
@@ -206,22 +223,6 @@
   {
    "code": "C4-09",
    "title": "지역가입자 건강보험료 11월에 오르는 이유, 소득정산제",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "C4-11",
-   "title": "명절증후군 원인·증상·극복법 총정리 — 추석 연휴 뒤 ",
    "need": [
     "색인요청"
    ],
