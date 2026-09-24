@@ -16,8 +16,16 @@ h1{font-size:17px;margin:0}
 .srv.on{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
 .srv.off{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
 /* 4분할 — 본문은 스크롤하지 않고 각 칸만 흐른다 */
-.grid{flex:1;min-height:0;overflow:hidden;display:grid;gap:9px;
-      grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+/* 🔴 칸이 4개를 넘으면 **밀려서 안 보였다** (2026-09-24 사장님 지적).
+   원인: rows 가 `1fr 1fr` 로 2행 고정 + overflow:hidden = 2x2 = **4칸 용량**인데
+   실제로는 5칸(발행대기 1 + 채널 3 + 에이전트 1)이 그려진다. 에이전트 칸은
+   2026-09-01 에 생겼고 그때부터 한 칸이 조용히 사라지고 있었다.
+   🔴 고침은 **행을 자동으로 늘리고 넘치면 스크롤**. 4칸일 때는 전과 똑같이 보인다 —
+      화면 구성을 바꾸는 것이 아니라 밀려 있던 것을 되돌리는 것이다.
+   ⚠️ 새 칸을 grid 에 더하지 마라. 늘릴 것이 있으면 grid **밖 접힘 박스**로 간다
+      (donebox·fmtbox 가 그 자리다). */
+.grid{flex:1;min-height:0;overflow-y:auto;display:grid;gap:9px;
+      grid-template-columns:1fr 1fr;grid-auto-rows:minmax(220px,1fr)}
 .pane{background:#131c31;border:1px solid #223052;border-radius:11px;height:100%;
       display:flex;flex-direction:column;min-height:0;overflow:hidden}
 .ph{display:flex;align-items:center;gap:7px;padding:8px 12px;flex:0 0 auto;
@@ -90,6 +98,7 @@ h1{font-size:17px;margin:0}
 <div class="grid" id="out"><div class="pane"><div class="pb"><p class="none">불러오는 중…</p></div></div></div>
 <details id="donebox" style="flex:0 0 auto;margin-top:8px"><summary style="cursor:pointer;color:#7fb0e0;font-size:13px;padding:6px 10px;background:#111a2c;border:1px solid #223052;border-radius:9px">✅ 확산 완료 <span id="donen">0</span>건 — 펼쳐 보기</summary><div id="donelist" style="max-height:220px;overflow-y:auto;padding:8px 4px"></div></details>
 
+<details id="fmtbox" style="display:none;flex:0 0 auto;margin-top:8px"><summary style="cursor:pointer;color:#ffb38a;font-size:13px;padding:6px 10px;background:#1a1410;border:1px solid #3a2a1e;border-radius:9px">🎨 네이버 서식 미적용 <span id="fmtn">0</span>건 — 펼쳐 보기 <span style="opacity:.6">(판정 = studio/naverfmt.py)</span></summary><div id="fmtbody" style="max-height:300px;overflow-y:auto;padding:8px 4px"></div></details>
 <div id="viewer">
   <div id="vh"><span id="vname"></span>
     <button class="btn" id="cpbtn" onclick="copyAll()">📋 전체 복사</button>
@@ -372,6 +381,36 @@ function fileChip(path, label, isImg, exists){
         +JSON.stringify(f.path).replace(/"/g,'&quot;')+','+(f.img?'true':'false')+')">'
         +(f.img?'🖼 ':'📄 ')+esc(f.label)+'</span>';}).join('');
   }
+  // 🔴🔴 **접은 것이 또 펼쳐지던 버그** (2026-09-24 사장님: *"이건 내가 접어도 자동으로
+  //    또 펼쳐지내!"*). 원인은 `<details open>` 이 **하드코딩**돼 있고 이 화면이
+  //    주기(15초)마다 `box.innerHTML` 을 통째로 교체하는 것이었다 — 사장님이 접으면
+  //    다음 렌더에서 다시 `open` 이 붙는다.
+  //    → 접힘 상태를 **localStorage 에 per-viewer 로 기억**한다(CLAUDE.md 가 접힌 섹션·
+  //      필터 같은 개인 편의에 쓰라고 허용한 범위다. 공유 상태가 아니다).
+  //    ⚠️ 사생활 모드·저장 차단에서 던질 수 있으므로 **전부 try/catch** 로 감싼다.
+  function foldOpen(k, dflt){
+    try{ var v=localStorage.getItem('fold_'+k);
+         return v===null ? !!dflt : v==='1'; }catch(e){ return !!dflt; } }
+  function foldAttr(k, dflt){
+    return (foldOpen(k,dflt)?' open':'')+' data-fold="'+k+'"'; }
+  // 🔴 `toggle` 이벤트는 **버블하지 않는다** → capture 로 document 에 한 번만 건다.
+  //    innerHTML 로 details 가 다시 만들어져도 이 리스너는 살아 있다.
+  if(!window.__FOLDWIRED__){
+    window.__FOLDWIRED__ = 1;
+    document.addEventListener('toggle', function(e){
+      var d=e.target; if(!d || d.tagName!=='DETAILS') return;
+      var k=d.getAttribute('data-fold'); if(!k) return;
+      try{ localStorage.setItem('fold_'+k, d.open?'1':'0'); }catch(e2){}
+    }, true);
+    // 정적 details(확산 완료·서식 미적용)는 재생성되지 않지만 **새로고침에서** 초기화된다.
+    // 기억한 상태를 한 번 복원한다(기본은 접힘).
+    try{ ['donebox','fmtbox'].forEach(function(id){
+      var d=document.getElementById(id); if(!d) return;
+      d.setAttribute('data-fold', id);
+      d.open = foldOpen(id, false);
+    }); }catch(e3){}
+  }
+
   function pane(icon,title,n,body){
     return '<div class="pane"><div class="ph">'+icon+' '+title
       +'<span class="cnt">'+n+'</span></div><div class="pb">'+body+'</div></div>';}
@@ -420,12 +459,12 @@ function fileChip(path, label, isImg, exists){
       //    도착한 화면은 전부 보여야 한다 → `open` 으로 연다.
       //    ⚠️ 08-27 지적("다 읽을 수 없다")은 **결재함 본 화면**을 두고 하신 말이다.
       //       여기는 일부러 찾아오신 자리라 펼쳐 두는 것이 맞다.
-      futHtml='<details open style="background:#0f1626;border:1px solid #223052;'
+      futHtml='<details'+foldAttr('act_fut',true)+' style="background:#0f1626;border:1px solid #223052;'
         +'border-radius:9px;margin-top:6px"><summary style="cursor:pointer;color:#7fb0e0;'
         +'font-size:12px;padding:6px 10px">⏳ 기한 전 '+Af.length+'건</summary>'
         +'<div style="max-height:220px;overflow-y:auto">'+frows+'</div></details>';
     }
-    box.innerHTML='<details open style="background:#1a1206;border:1px solid #4a3a12;'
+    box.innerHTML='<details'+foldAttr('act_boss',true)+' style="background:#1a1206;border:1px solid #4a3a12;'
       +'border-radius:9px"><summary style="cursor:pointer;color:#ffd479;font-size:13px;'
       +'font-weight:700;padding:8px 10px">🙋 사장님 조치 필요 '+A.length+'건'
       +' — 펼침/접기</summary><div style="max-height:260px;overflow-y:auto">'
@@ -545,7 +584,17 @@ function fileChip(path, label, isImg, exists){
         +'건 — <b>미적용이 아닙니다.</b> 다시 재야 합니다 '
         +'(python -m studio.naverfmt --scan)</p>';
     }
-    H+=pane('🎨','네이버 서식 미적용',C.off+'건',head+body);
+    // 🔴🔴 **grid 는 2×2 = 4칸 고정이고 overflow:hidden 이다** (2026-09-24 사장님 지적).
+    //    여기에 pane 을 하나 더 넣었더니 **기존 칸이 화면 밖으로 밀려 안 보였다** —
+    //    사장님: *"네이버 미확산등 기존화면은 어디에 둔건가, 아무생각없이 수정하는게
+    //    능사는 아니지"*. 맞는 지적이다. 새 칸은 grid 에 넣지 않는다.
+    //    → grid **밖의 접힘 박스**(donebox 와 같은 자리)에 채운다. 기존 4칸은 그대로 둔다.
+    var _fb = document.getElementById('fmtbox');
+    if(_fb){
+      var _fn = document.getElementById('fmtn'); if(_fn) _fn.textContent = C.off;
+      var _fbd = document.getElementById('fmtbody'); if(_fbd) _fbd.innerHTML = head+body;
+      _fb.style.display = '';
+    }
   })();
 
   // 🤖 에이전트 실행 현황 (2026-09-01 사장님 "에이전트 실행 상황 어떻게 하면 내가 알 수 있을지")
