@@ -8560,6 +8560,22 @@
    "target": "approve-c214-flufix",
    "detail": "이부장 검토: 2026독감예방접종_글_HTML.txt '2주' 0·옛 10월 19일 0·10월 6일 8·코로나는 '공고 없음'으로만 서술 확인 → 사장님 결재 approve-c214-apply",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-26T01:19:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "watchgate-filename-code-0926",
+   "detail": "watch.py 코드 정규식 앞자리에 _ 제외 추가(파일명 source_C5-02_ 무시, C2-14·A1-07 은 그대로 잡힘 시험) + falsepos._r_watchgate_filename_code_0926 회귀 규칙",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-26T04:24:48",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G1-09",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }
