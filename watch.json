@@ -13486,6 +13486,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:67e438d2"
+  },
+  {
+   "id": "draft0925h116-wake",
+   "added": "2026-09-25",
+   "what": "H1-16(tvN 100일의거짓말) 초안 지시서 draft0925h116 등록됨 — 무인 예약세션 제약으로 SendMessage 로 이과장을 직접 깨우지 못했다(에러: Messaging another session is unavailable in unattended sessions). 이과장의 정기 폴링을 기다리거나, 대면 세션에서 SendMessage/wake로 깨울 것",
+   "due": "2026-09-26",
+   "cmd": "python -m studio.batchboard order --id draft0925h116; python -c \"from studio import sessionstate as s; print(s.read_info('draft0925h116'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴4"
   }
  ]
 }
