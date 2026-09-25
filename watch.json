@@ -13637,8 +13637,10 @@
    "cmd": "python studio/blogger.py update-post --code G1-09 --file docs/_g109_new.html",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-09-26",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "gate-draft-pushed-0926",
@@ -13652,6 +13654,16 @@
    "by": "이부장",
    "done_at": "2026-09-26",
    "result": "studio/pubready.py 신설(승인도장·V0·초안 로컬=origin/main·진행 run 4검사, exit 0 일 때만 트리거) + pubqueue 자동 발행 지시서 머리에 필수 명령으로 배선. 실행 시험: B4-15·H1-16 exit 0 / A6-06 exit 1"
+  },
+  {
+   "id": "xlink-d501",
+   "added": "2026-09-26",
+   "what": "🔗 D5-01 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D5-01",
+   "due": "2026-09-26",
+   "cmd": "python studio/blogger.py crosslink --code D5-01",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
