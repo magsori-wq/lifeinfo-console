@@ -13527,9 +13527,22 @@
    "cmd": "python studio/blogger.py update-post --code A1-07 --file webapp/_a107_new.html --title \"상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2026)\"",
    "owner": "claude",
    "kind": "approve",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-25",
+   "result": "이부장 검토 완료: 미리보기에서 옛 금액 47,560·48,150·66,000·14개 전부 0건, 49,540 10·68,100 6, 지역 8곳이 복지부 원문과 일치, 교차링크·제목 보존. 사장님 결재로 이관(approve-a107-live)"
+  },
+  {
+   "id": "approve-a107-live",
+   "added": "2026-09-25",
+   "what": "A1-07 상병수당 라이브 정정 승인. 【권고】승인하십시오 — 독자가 이 글 금액으로 실제 계산하는 사실오류다. 【근거】라이브 하루 47,560원·하한 48,150·상한 66,000원 vs 복지부 원문(mohw.go.kr, 이부장 직접 대조) 49,540원·68,100원. 시범지역도 옛 14개 구조 → 현행 2·3단계 8곳. 미리보기 webapp/_a107_new.html 에서 옛 금액 0건·교차링크·제목 보존을 이부장이 확인. 【위험】본문 전체 교체 — 되돌리기는 이전 본문 재반영으로만 가능. 검색설명은 반영 후 따로 넣는다",
+   "due": "2026-09-26",
+   "cmd": "python studio/blogger.py update-post --code A1-07 --file webapp/_a107_new.html --title \"상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2026)\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
