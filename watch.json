@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-25",
+ "updated": "2026-09-26",
  "items": [
   {
    "id": "redirect-error",
@@ -13543,6 +13543,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "source-c-influenza-daterange-0926",
+   "added": "2026-09-26",
+   "what": "독감 국가예방접종 보도자료(9.16) 본문 서두는 '9.22 2회접종/9.29 1회접종·임신부'라 하는데, 요약표는 '전원 9.21'로 다르게 읽힘 - 콜센터(1339) 또는 재열람으로 확정 필요",
+   "due": "2026-09-30",
+   "cmd": "python -m studio.pipeline check-source --url https://nip.kdca.go.kr/irhp/remd/goVcntNtfc.do?menuLv=2&menuCd=22 (또는 콜센터 1339 문의 후 docs/source_C_독감국가예방접종_2026하반기_20260926.md 갱신)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴6"
   }
  ]
 }
