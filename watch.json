@@ -13611,6 +13611,19 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "watchgate-filename-code-0926",
+   "added": "2026-09-26",
+   "what": "watch add 결재 게이트가 --what 안의 파일명(source_C5-02_…)에서 글 코드를 뽑아 '초안 없음'으로 거부한 오탐. 코드 추출 시 파일명·경로 안의 토큰은 빼고, falsepos 회귀 규칙 1줄 추가",
+   "due": "2026-09-27",
+   "cmd": "grep -n '초안이 없다' studio/watch.py",
+   "owner": "claude",
+   "kind": "action",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-26",
+   "result": "watch.py 코드 정규식 앞자리에 _ 제외 추가(파일명 source_C5-02_ 무시, C2-14·A1-07 은 그대로 잡힘 시험) + falsepos._r_watchgate_filename_code_0926 회귀 규칙"
   }
  ]
 }
