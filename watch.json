@@ -13573,6 +13573,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "루틴6"
+  },
+  {
+   "id": "taxgate-topicprop-0926",
+   "added": "2026-09-26",
+   "what": "루틴6 이 없는 중분류(C5)로 글감 코드를 냈고 pubqueue add 단계에서야 막혔다(초안까지 쓴 뒤). _taxonomy_gate 를 topicprop add 에도 물려 제안 단계에서 막을 것 — D5-01 도 같은 계열(09-25 발행 실패)",
+   "due": "2026-09-26",
+   "cmd": "grep -n '_taxonomy_gate' studio/topicprop.py",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
