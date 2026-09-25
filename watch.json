@@ -13648,8 +13648,10 @@
    "cmd": "grep -rn 'origin/main' studio/pipeline.py .github/workflows/publish.yml | head",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-26",
+   "result": "studio/pubready.py 신설(승인도장·V0·초안 로컬=origin/main·진행 run 4검사, exit 0 일 때만 트리거) + pubqueue 자동 발행 지시서 머리에 필수 명령으로 배선. 실행 시험: B4-15·H1-16 exit 0 / A6-06 exit 1"
   }
  ]
 }
