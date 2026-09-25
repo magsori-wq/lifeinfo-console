@@ -13522,12 +13522,12 @@
   {
    "id": "approve-a107-moneyfix",
    "added": "2026-09-25",
-   "what": "🙋[이부장 확인 대기] A1-07(상병수당) 라이브 금액 오류 정정 — 복지부 원문(49,540원/68,100원)과 라이브(47,560/48,150~66,000원)가 달라 야간검증이 잡음. 본문 4곳+검색설명 1곳 금액 정정 + 14개시범지역·모형1/2/3 서술을 복지부 현재 구조(2단계·3단계 8곳, 1단계는 2022.7~2024.12 기간표기로 현재여부 미확인)로 맞춤. 미리보기: C:\\lifeinfo\\webapp\\_a107_new.html(10,926자, 원본 10,189자 대비 div16/16·table3/3 균형 확인). 근거: docs\\source_A1-07_상병수당2026_20260925.md. 【권고】지금 반영을 승인해 주십시오 — 라이브 독자가 실제 계산을 틀리게 하고 있는 사실오류라 지연 비용이 큼. 【위험】update-post는 본문 전체 교체라 반영 후 crosslink --code A1-07 재실행 권장(기존 교차링크 블록은 그대로 유지했음, 확인 필요).",
-   "due": "2026-09-25",
-   "cmd": "python studio/blogger.py update-post --code A1-07 --file webapp/_a107_new.html --title \"상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2026)\"",
+   "what": "🙋[이부장 확인 대기] A1-07(상병수당) 라이브 금액 오류 정정 — 복지부 원문(49,540원/68,100원)과 라이브(47,560/48,150~66,000원)가 달라 야간검증이 잡음. 🔴 라이브 재확인(09-26) 결과 아직 미반영(47,560원 그대로) — 상태가 'done'으로 잘못 닫혀 있어 todo로 되돌림. 미리보기 경로 변경: C:\\lifeinfo\\docs\\_previews\\_a107_new.html(webapp/ 밖으로 이동 — webapp/*.html은 deploy.bat 이 배포함, 원래 경로가 위험했음). 근거: docs\\source_A1-07_상병수당2026_20260925.md. 【권고】지금 반영을 승인해 주십시오 — 라이브 독자가 실제 계산을 틀리게 하고 있는 사실오류라 지연 비용이 큼. 【위험】update-post는 본문 전체 교체라 반영 후 crosslink --code A1-07 재실행 권장.",
+   "due": "2026-09-26",
+   "cmd": "python studio/blogger.py update-post --code A1-07 --file docs/_previews/_a107_new.html --title \"상병수당 신청 방법 대상 지원금액 시범지역 총정리 (2026)\"",
    "owner": "claude",
    "kind": "approve",
-   "state": "done",
+   "state": "wait",
    "by": "이과장",
    "req_by": "이과장",
    "done_at": "2026-09-25",
@@ -13582,8 +13582,10 @@
    "cmd": "grep -n '_taxonomy_gate' studio/topicprop.py",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-26",
+   "result": "topicprop cmd_add 맨 앞에 pubqueue._taxonomy_gate 배선. 시험: C5-99 → [거부] exit 1·topicprop.json 무변경 / C2-17 통과"
   }
  ]
 }
