@@ -1623,6 +1623,26 @@
      "base_code": "8-lifeinfo-issue-product",
      "date": "2026-09-25",
      "at": "2026-09-25 07:15"
+    },
+    {
+     "code": "daily-email-briefing-0925",
+     "title": "daily-email-briefing (A)",
+     "state": "done",
+     "note": "09-25 08시 메일브리핑 완료. 📌애드센스 계정 READY·사이트 GETTING_READY·RESULT PENDING(09-23 이후 유지, 기보고 adsense-getting-ready-0923). 🔴신규1건=구글 커뮤니티 다이아몬드 PE 2명이 사장님 질문에 답변(busterjet 04:06 KST·OptimistPrime 05:15 KST) — 요지 검색노출 없으면 애드센스 승인 안 함 / 글자가 달라도 내용이 실질 유사하면 색인 안 함 / 독자층 먼저. AdSense 커뮤니티가 질문을 검색센터로 이관. 둘 다 구글 직원 아닌 자원봉사 전문가이므로 공식 판정 아님 — 해석은 4.와 이부장 몫. watch adsense-pe-replies-0925 에 원문 요지·스레드ID 남김. 🔴콘솔 정합성 검사 RED 지속 — 09-24 하루 GitHub 실패메일 30여통(추정33) 전부 동일 원인이고 기보고 console-red-scratch-leak-0924 와 일치. 오늘 그 watch 의 cmd 로 재확인: 최신 런 36058739297 failure(09-25 06:01 KST) · 라이브 _check_g108.html 200. 실패 스텝 출력 직접 확인 = 깨진 로컬 참조 6건 1항목만 실패, 나머지 10항목 PASS. 루틴1은 배포 클론에 손대지 않음. 🔴발행 워크플로 실패 2건도 있었다(09-24 09:06·14:16 KST, D5-01) — 재시도 성공으로 넘기지 않고 로그 직접 확인: 사유는 taxonomy 미정의 중분류 D5. 06-41Z 세번째 시도 성공했고 지금 DB·라이브 정상, validate_db PASS15 WARN3 FAIL0 으로 사후 확인함. 🟡토스 쉐어링크 특가시각 변경(9/28 00시)은 기보고이나 watch 가 toss-specialprice-time-0923 과 toss-specialtime-change-0928 로 중복 등록돼 있다 — 통합은 이부장 몫, D-1(9/26까지 볼 것). 🟡Claude 신뢰기기 2건·구글 휴면계정 안내·비즈니스프로필 실적(lifeinfo 무관)은 참고. 🟢GSC sc-noreply 7일 0건. 🟢magsori8975 전달분 0건 — 8975 GSC 통지 사각지대 계속(watch gmail-8975-relay-0924). 🟢aroma8975 0건=평소 상태. 🟡gmailread 3계정 동의 전(정상, watch gmail-reader-consent-0924).",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing",
+     "date": "2026-09-25",
+     "at": "2026-09-25 08:17"
+    },
+    {
+     "code": "lifeinfo-publish-0925",
+     "title": "lifeinfo-publish (C)",
+     "state": "done",
+     "note": "09-25 09:00 발행구 점검: 큐 5편(A6-06 V0🔴fail·G1-09/H1-15/A5-12/B4-15 V0미검사) 전부 go도장 없음 → 발행/결재등록 대상 0. setgate 도 D5-01 OSMU미완으로 다음발행 차단 중. gh run 최근(09-24 06:41 success), 진행중run 없음. 3-0 자동발행 조건(go+V0🟢+30분방치) 불충족 → 트리거 없음.",
+     "auto_daily": true,
+     "base_code": "lifeinfo-publish",
+     "date": "2026-09-25",
+     "at": "2026-09-25 09:05"
     }
    ],
    "order": "📮 routinelog — 루틴9 권고 회신 (2026-09-18 16:2x 이부장)\n\n【판정】 (A) 오늘 15:00 회차는 **무소득으로 정리하고 종료**한다. 루틴9 판단이 맞다.\n  근거 ①약과(id 423535267)는 오늘 06:22 이미 게시됐다(solo0918yakgwa) — 같은 상품 재게시는 중복이다\n       ②어제 홍삼(15:52)·오늘 약과(06:22)로 이틀 연속 상품 단독 게시가 나갔다.\n         쓰레드 조회가 100 미만인데 광고성 게시가 몰리면 계정이 광고 계정으로 보인다 — 오늘은 여기서 멈춘다\n       ③중복을 스스로 발견해 게시 전에 보고한 것이 정확했다. 그 판단이 이 회차의 성과다\n\n【(B) 새 후보를 지금 더 찾을 것인가】 찾지 않는다. 대신 **내일 회차 후보를 미리 정해 둔다**:\n  · 세척사과 꿀사과 3kg — 12,900원 · 리뷰 4,782 · 평점 4.3 (토스 id 2226153335, 이부장 16:2x 조회)\n  · 루틴8이 오늘 07:17 에 낸 후보와 같은 물건이다. 추석 D-7 이라 시의성은 내일까지 유효하다\n  · 5kg(18,900원·리뷰 3,903)도 있으나 3kg 쪽이 리뷰가 더 많고 1인가구·성묘 선물 모두에 맞다\n  · 🔴 이부장이 내일 오전에 승인 카드로 올린다(solo-ask). 루틴9는 내일 회차에서 이 후보를 먼저 확인하면 된다\n\n【루틴9에 남기는 기준 한 줄】\n  같은 상품이 이미 게시됐는지 `python -m studio.affiliate solo` 로 먼저 보고 후보를 낸다.\n  그러면 오늘처럼 중복 후보로 한 회차를 쓰지 않는다.",
@@ -2243,7 +2263,7 @@
    "order_at": "2026-09-25 03:23"
   }
  },
- "updated": "2026-09-25 07:15:20",
+ "updated": "2026-09-25 09:05:11",
  "current": {
   "batch": "draftg109",
   "code": "",
@@ -2254,6 +2274,14 @@
   "since_at": "2026-09-25 03:24:19"
  },
  "log": [
+  {
+   "t": "09:05:11",
+   "text": "✅ lifeinfo-publish-0925 완료 — lifeinfo-publish (C)"
+  },
+  {
+   "t": "08:17:35",
+   "text": "✅ daily-email-briefing-0925 완료 — daily-email-briefing (A)"
+  },
   {
    "t": "07:15:20",
    "text": "✅ 8-lifeinfo-issue-product-0925 완료 — 8-lifeinfo-issue-product (H)"
@@ -2405,14 +2433,6 @@
   {
    "t": "16:21:01",
    "text": "✅ G1-08 완료 — 광안리 드론쇼 — 캡션 비어 있음"
-  },
-  {
-   "t": "16:17:02",
-   "text": "✅ F4-23 완료 — 전국 단풍 — 캡션 비어 있음"
-  },
-  {
-   "t": "16:12:58",
-   "text": "✅ H1-14 완료 — 추석 영화 — 캡션 비어 있음"
   }
  ],
  "currents": {
