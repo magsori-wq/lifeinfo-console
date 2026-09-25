@@ -13639,6 +13639,17 @@
    "kind": "approve",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "gate-draft-pushed-0926",
+   "added": "2026-09-26",
+   "what": "G1-09 가 V0 수정 전 원고로 발행됐다 — 수정본이 로컬에만 있고 원격(러너가 읽는 곳)에 없었다. 발행 트리거 전에 '초안 로컬==origin/main' 을 코드로 확인하는 게이트가 필요(dispatch 발행 지시서·pre 스텝 어디에 둘지 확인)",
+   "due": "2026-09-27",
+   "cmd": "grep -rn 'origin/main' studio/pipeline.py .github/workflows/publish.yml | head",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
