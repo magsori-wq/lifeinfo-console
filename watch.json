@@ -13886,6 +13886,17 @@
    "kind": "action",
    "state": "todo",
    "by": "루틴1"
+  },
+  {
+   "id": "naver-post-b416",
+   "added": "2026-09-27",
+   "what": "🙋[이부장 확인 대기] B4-16 네이버 원고 준비 완료 — 종합부동산세 합산배제 부부 공동명의 1주택 특례. 클립보드에 본문 복사됨(naver-draft 재실행 시 또는 이미 복사됨), 네이버 전용 썸네일 첨부 필요.",
+   "due": "2026-09-28",
+   "cmd": "python -m studio.pipeline naver-draft --code B4-16 --file osmu/네이버용_종부세합산배제.txt   (클립보드 재적재 → 네이버 글쓰기 붙여넣기 → 썸네일 thumbs_naver/286n_jointtax.png 첨부 → 게시 → python -m studio.pipeline naver-link --code B4-16 --url <게시URL>)",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
