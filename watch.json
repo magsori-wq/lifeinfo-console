@@ -13355,8 +13355,10 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow '콘솔 정합성 검사' --limit 1 && curl -s -o /dev/null -w '%{http_code}\\n' https://magsori-wq.github.io/lifeinfo-console/_check_g108.html",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:145202de"
+   "state": "done",
+   "by": "세션:145202de",
+   "done_at": "2026-09-26",
+   "result": "✅ 해소 — 근인(studio/pushapproval.py 가 webapp/*.html 를 글롭해 _ 접두 스크래치까지 공개 배포)은 커밋 73f8ce8d(09-26 08:14 이부장)가 ①_ 접두 html 배포 제외 ②배포 저장소의 기존 _*.html 을 git rm 하는 _stale 블록으로 처리했다. 실측: 라이브 _check_g108.html 404(이 항목 등록 시 200이었다) · 배포 저장소 잔존 0건 · 콘솔 검사 success 복귀. 자격증명 노출은 처음부터 없었다(같은 검사의 '자격증명 패턴 없음' 판정)."
   },
   {
    "id": "docflow-0924-2130",
@@ -13476,10 +13478,10 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow='콘솔 정합성 검사' --limit 3 && git -C C:/lifeinfo-deploy ls-files _check_g108.html _a107_mohw.html",
    "owner": "claude",
    "kind": "action",
-   "state": "wait",
+   "state": "done",
    "by": "세션:537bd2b5",
    "done_at": "2026-09-26",
-   "result": "②pushapproval·deploy.bat 에 _*.html 제외 추가 ①이미 올라간 두 파일은 pushapproval 이 다음 결재 배포 때 git rm (대상 목록 실측: _a107_mohw.html·_check_g108.html). 효과 확인은 다음 결재 뒤 콘솔 정합성 검사 success 로"
+   "result": "✅ 기다린 것이 일어났다 — pushapproval 이 다음 실행에서 두 파일을 git rm 했다. 배포 저장소 ls-files '_*.html' 0건 · 라이브 둘 다 404 · 콘솔 검사 09-26 09:48 KST 부터 success(최신 15:13 YELLOW·실패0). 새 조치 없음이라던 판단이 맞았다. 상세 실측 = console-red-verify-0926"
   },
   {
    "id": "docflow-H1-16-0925",
@@ -13771,6 +13773,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "g205-update-program-0926",
+   "added": "2026-09-26",
+   "what": "G2-05(양산삽량문화축전) 라이브 본문 갱신 필요 — 발행 당시(9/7) 확정 못 했던 세부 프로그램·40주년 특별전시 연계를 이번에 확보(busan.com 2026-09-23, ycf.or.kr 공식). 날짜별: 10/2 개막(양산대종 타종·시민취다대 퍼레이드·개막식·축하공연 라포엠·온앤오프·거미·강문경·서주경·최전설) / 10/3 읍면동 씨름대회·풍물공연·토토즐 양산#량 / 10/4 삼장수 기상춤 경연대회. 특별전 '삽량문화축전 40년의 발자취'(양산시립박물관, 10/2~12/20). update-post 로 4. 아직 확정되지 않은 것 섹션을 프로그램 확정본으로 교체할 것.",
+   "due": "2026-09-27",
+   "cmd": "python studio/blogger.py update-post --code G2-05",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴4"
   }
  ]
 }
