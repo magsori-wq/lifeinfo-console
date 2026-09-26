@@ -13899,6 +13899,17 @@
    "req_by": "이과장",
    "done_at": "2026-09-27",
    "result": "이부장 확인: 서식본 본문15px 100·섹션19px 6·주황 75·구분선0·바이라인0·'80~120'·'D-4' 0 — A2-15 형식 일치, CP 서식본 200. 네이버 게시는 미결사항에서 추적"
+  },
+  {
+   "id": "naver-post-b416-v2",
+   "added": "2026-09-27",
+   "what": "🙋[이부장 확인 대기] B4-16 네이버 원고(정정판) 준비 완료 — 등록임대주택 종부세 합산배제(9/30 마감). 이전 naver-post-b416 은 slug 충돌로 잘못된 파일이었음 — 이걸로 대체.",
+   "due": "2026-09-28",
+   "cmd": "python -m studio.pipeline naver-draft --code B4-16   (클립보드 재적재 → 네이버 글쓰기 붙여넣기 → 썸네일 thumbs_naver/286n_rentalhometax.png 첨부 → 게시 → python -m studio.pipeline naver-link --code B4-16 --url <게시URL>)",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
