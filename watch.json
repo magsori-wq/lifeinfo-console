@@ -13846,6 +13846,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "approve-label-i-0927",
+   "added": "2026-09-27",
+   "what": "방송·연예 라벨 이동 — 이미 발행된 10편(H1-05·06·07·08·10·11·12·13·14·15)의 블로그 라벨을 '경제·이슈'→'방송·연예'로. 【권고】승인 — 사장님이 대분류 신설을 정하셨고, 라벨만 바뀌며 본문·URL·코드는 그대로다. 【근거】sync-labels 미리보기(dry-run)에서 정확히 이 10편만 바뀜을 이부장이 확인. 실행 전 전체 라벨이 자동 백업된다. 【위험】낮음 — 라벨만 바꾼다. 되돌리기는 백업으로",
+   "due": "2026-09-27",
+   "cmd": "python studio/blogger.py sync-labels --yes",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
