@@ -13869,7 +13869,7 @@
   {
    "id": "xlink-a221",
    "added": "2026-09-27",
-   "what": "🔗 A2-21 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-21",
+   "what": "🔗 A2-21 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-21",
    "due": "2026-09-27",
    "cmd": "python studio/blogger.py crosslink --code A2-21",
    "owner": "claude",
@@ -13879,7 +13879,7 @@
   {
    "id": "console-check-rich-falsepos-0927",
    "added": "2026-09-27",
-   "what": "콘솔 정합성 검사가 2026-09-26 12:21Z 이후 모든 push에서 RED — 원인은 오탐 1건. console_check.py 정규식 (?:src|href)=[\"']([^\"']+)[\"'] 이 pending_osmu.html:250 의 JS 문자열 연결 rb.href='rich_'+code+'.html' 에서 'rich_' 만 떼어내 파일로 찾는다. 실제 rich_*.html 은 28개 실재(로컬·배포본 모두). 배포는 정상(pages build success) — CI 알림만 죽고 있다. 고칠 파일은 배포저장소 lifeinfo-console 의 tools/console_check.py",
+   "what": "콘솔 정합성 검사가 2026-09-27 05:48 KST(=09-26 20:48:27Z) 첫 실패 이후 모든 push 에서 RED — 직전 20:47:09Z 까지는 성공. 원인은 오탐 1건: console_check.py 정규식 (?:src|href)=[\"']([^\"']+)[\"'] 이 pending_osmu.html:250 의 JS 문자열 연결 rb.href='rich_'+code+'.html' 에서 'rich_' 만 떼어내 파일로 찾는다. rich_*.html 은 28개 실재(로컬·배포본)하고 Pages 배포도 계속 success — CI 알림만 죽는다. 고치는 길은 둘: ①배포저장소 lifeinfo-console 의 tools/console_check.py 정규식 보정(소스에는 그 파일이 없다·배포저장소 직접 push 라 주의) ②pending_osmu.html:250 을 href= 패턴에 안 걸리게 고쳐 정상 배포로 흘려보내기. 관찰: 배포본에 이 줄을 실어나른 커밋은 자동 'approval: 0 items' (694f22fd, 20:48:21Z)로 소스 커밋 8071111e(20:49:48Z)보다 87초 빨랐다.",
    "due": "2026-09-27",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow '콘솔 정합성 검사' --limit 3",
    "owner": "claude",
