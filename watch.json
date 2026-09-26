@@ -12945,12 +12945,12 @@
    "id": "adsense-getting-ready-0923",
    "added": "2026-09-23",
    "what": "📌 애드센스 사이트 상태가 8/12 반려 이후 처음 움직였다 — NEEDS_ATTENTION → GETTING_READY, 전이 시각 2026-09-23 08:05(webapp/adsense_status.json history 마지막 항목, src=None=자동감지). 09-23 06:07 커밋까지는 NEEDS_ATTENTION, 08:13 커밋부터 GETTING_READY 로 git 이력과도 일치한다. 09-26 08:05 재조회도 계정 READY · 사이트 GETTING_READY · RESULT PENDING 으로 유지 중. CLAUDE.md 기준 GETTING_READY=심사 진행 중, NEEDS_ATTENTION=조치 필요(반려)로 뜻이 다르다. ⚠️전이 원인은 확인 못 했다 — 09-23 이 사장님이 재신청 금지를 해제하신 날이지만 검토 요청을 실제로 누르셨는지는 루틴1이 재지 않았다(화면은 사장님만 보신다). 단정하지 말 것. ⚠️API 값과 화면이 어긋난 전례가 있다(09-23: API NEEDS_ATTENTION 인데 화면은 「준비 중·리뷰가 요청됨」) — 상태를 사장님께 말하기 전 화면 확인이 안전하다. 4.(애드센스 전담)가 볼 것.",
-   "due": "2026-09-30",
+   "due": "2026-09-26",
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
    "kind": "action",
-   "state": "wait",
-   "by": "루틴1"
+   "state": "todo",
+   "by": "세션:9da8ed50"
   },
   {
    "id": "xlink-c411",

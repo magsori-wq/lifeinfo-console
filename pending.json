@@ -1,16 +1,33 @@
 {
- "rev": "84180da6",
+ "rev": "c87b5d31",
  "counts": {
-  "total": 302,
+  "total": 303,
   "osmu_done": 300,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 302,
+  "index_pending": 303,
   "index_requested": 159,
-  "index_todo": 33,
+  "index_todo": 34,
   "index_benign": 110
  },
  "actionable": [
+  {
+   "code": "A2-21",
+   "title": "매년 1세씩 자동으로 늘어납니다 — 아동수당 2027년",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "D5-01",
    "title": "재해손실세액공제 신청 방법 대상 자산상실비율 총정리 (",
@@ -210,22 +227,6 @@
   {
    "code": "B5-04",
    "title": "전세보증금 반환보증 가입 제한 10월 시행, 안심전세 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "C2-11",
-   "title": "본인부담상한액 초과금 환급 총정리 (226만명·3조76",
    "need": [
     "색인요청"
    ],
