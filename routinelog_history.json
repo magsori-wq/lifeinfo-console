@@ -1,0 +1,55 @@
+{
+ "items": [
+  {
+   "code": "lifeinfo-daily-topics-0912",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "topicprop.cmd_add 코드재사용 검사 추가(사장님 지시, 커밋 62fb967b) — 격리테스트 3케이스 통과 + validate_db PASS15/WARN3/FAIL0 + falsepos 0/0. A2-17류 3세대 무경고 재사용 사고 재발 차단됨\n▸ 13:26 다른 코드 감사 완료(사장님 지시) — .update(item) 패턴 grep 전수조사: topicprop(이미수정)·pubqueue 둘뿐. pubqueue.cmd_add도 동일 위험 확인해 같은 방식으로 수정(커밋 a9720ffa). v0check는 완전교체 방식이라 해당없음으로 판단\n▸ 13:46 [일일정리] 루틴2 오늘 전체: ①정규 제안(A2-17상생페이백·A1-16희망저축계좌) ②상생페이백=2025년 자료 재탕 확정→drop(mss.go.kr 게시판 직접검색, 사업공고4건·보도자료8건 전부 2025년) ③그 과정서 발견한 topicprop A2-17 코드중복(A6-01→에너지바우처→온누리상품권→상생페이백 3세대 재사용) 근본원인 추적+재배정(A2-18) ④재발방지: topicprop.cmd_add·pubqueue.cmd_add에 코드재사용검사 추가(커밋 62fb967b·a9720ffa, 격리테스트+validate_db+falsepos 전부통과) ⑤productprop·affiliate는 감사 결과 이미 안전(setdefault/완전교체 방식)해 수정 불필요. A1-16은 정상 발행완료. 열린 미결 0건(무관한 a217-energy-voucher-source 1건만 별개 존속)",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-09-12",
+   "at": "2026-09-12 13:46"
+  },
+  {
+   "code": "lifeinfo-index-check-0912",
+   "title": "lifeinfo-index-check (G)",
+   "state": "done",
+   "note": "[루틴7 09-12 2차보고] 이부장 구현 확인 — 커밋 4f3f38a0(실행일별 항목코드 분리)·b72eb508(now/currents 이력). routinelog 11항목·날짜항목 2개 생성 확인. 이 보고 자체가 덮어쓰기 시험이다: 앞선 12:46 순환보고가 살아남으면 고쳐진 것.\n▸ 13:41 [루틴7 09-12 3차] 카톡 보고 발송(오늘 정리 4줄). 이부장 회신 수령·대조 완료 — 지시서 배치 about0912(담당 이과장, 0/1) 존재 확인 · 라이브 반영은 아직(grep 0, 제가 직접 curl 로 확인). 이부장이 낸 숫자(266편·8분야·첫글 2026-06-14)가 제 실측과 일치. 결재함 사장님 대기 1건(naver-autopost-research-0912).",
+   "auto_daily": true,
+   "base_code": "lifeinfo-index-check",
+   "date": "2026-09-12",
+   "at": "2026-09-12 13:41"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-0912",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "09-12 15시 실행 — 후보: 투데이넛 너트한줌 선물세트 21,700원·리뷰103(토스9위). collect는 오전 8번이 이미 오늘분 실행(589건)이라 재수집 생략. issueprod 배치 now 로 보고",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-09-12",
+   "at": "2026-09-12 15:13"
+  },
+  {
+   "code": "lifeinfo-travel-prep-0912",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "G4-07(김제지평선축제 10/1~5, dupcheck🔴오탐→force제안) + H1-08(아이치나고야 아시안게임 9/19~10/4 방송연예alt) 제안. 진주유등축제(G3-05)·부산록페스티벌(G3-06)·안동탈춤(F4-17)·그랜드민트(H1-07)·SPAF(H1-06) 등 최근 picked 13건 전건 DB 발행완료 확인(pubqueue 큐 0건, 백로그 없음). selfcheck는 별도 시간관계상 미실행 — 이부장 확인 요망.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-09-12",
+   "at": "2026-09-12 21:19"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-0912",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "야간검증(3.분): 오늘발행 6편중 재정위험 상위3(A1-16 희망저축계좌·B2-14 SCB대출·A1-15 국가장학금)검증, 공식출처링크 5개 전부200, 오류 미발견. A1-15는 kosaf직접URL 미확보→watch a115-kosaf-direct-verify-0912 등록. crawl_watch 25편 확인(신규 크롤 0). selfcheck 🟡노랑(FAIL 0).\n▸ 22:41 check-only\n▸ 22:41 야간검증(22:30): 오늘발행 6편중 재정위험 상위3(A1-16 희망저축계좌·B2-14 SCB대출·A1-15 국가장학금서류마감) 검증완료, 공식출처링크 5개 전부200(관악구·남양주·금융위2건), 오류 미발견. A1-15는 kosaf직접URL 미확보→watch a115-kosaf-direct-verify-0912 등록(마감9/16 임박, 재확인 권장). crawl_watch 25편 확인, 신규크롤 0. selfcheck 🟡노랑(FAIL0, WARN3 무해가능). 9/15 유효성검사 담당건은 아직 결과 안나와 대기.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-09-12",
+   "at": "2026-09-12 22:41"
+  }
+ ],
+ "updated": "2026-09-27 00:15:04"
+}
