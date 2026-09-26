@@ -238,6 +238,9 @@ async function openFile(path, isImg){
   // 🔴 네이버 원고는 **서식본**으로 붙인다 (2026-09-27 — D5-01·G1-09 가 글자만 들어갔다).
   //    [전체 복사] 는 글자만 복사한다. 서식(15/19px·주황 숫자·표)은 서식본 탭에서
   //    Ctrl+A·Ctrl+C 해야 산다. 그 버튼이 이 화면에 없어서 두 번 연속 글자본이 나갔다.
+  // 🔴 서버 모드에서는 __OSMUTEXT__ 가 안 실려 있었다(폴백에서만 읽었다) — 여기서 한 번 읽는다.
+  //    이것이 없으면 서식본 버튼도, 아래 「완성본 우선」도 서버 모드에서 조용히 꺼진다.
+  if(!window.__OSMUTEXT__){ try{ window.__OSMUTEXT__ = await j('osmu_text.json'); }catch(e){} }
   var rb=document.getElementById('richbtn');
   if(rb){ rb.style.display='none'; rb.removeAttribute('href');
     if(/네이버용_/.test(path)){
