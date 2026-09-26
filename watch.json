@@ -13818,9 +13818,24 @@
    "cmd": "",
    "owner": "claude",
    "kind": "approve",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-27",
+   "result": "이부장 확인: 라이브에 '오늘(9월 26일) 기준 D-4' 실존(curl), 수정 원고는 3곳만 바뀜(git diff 3줄)·남은 '2026년 9월 26일'은 출처 기준일이라 정상 → 사장님 결재 approve-b416-datefix-apply"
+  },
+  {
+   "id": "approve-b416-datefix-apply",
+   "added": "2026-09-27",
+   "what": "B4-16 종부세 합산배제 라이브 날짜 표기 정정. 【권고】승인 — 9/26에 쓴 원고가 9/27에 나가 '오늘(9월 26일) 기준 D-4'가 틀린 말이 됐다(신고 마감 9/30 글이라 독자가 날짜를 셈한다). 【근거】이부장이 라이브에서 문구 확인, 수정본은 그 3곳만 바뀐다(다른 내용·수치 그대로). 【위험】본문 전체 교체 방식 — 되돌리기는 이전 본문 재반영",
+   "due": "2026-09-27",
+   "cmd": "python studio/blogger.py update-post --code B4-16 --file 등록임대주택종부세합산배제_글_HTML.txt",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-27",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   }
  ]
 }
