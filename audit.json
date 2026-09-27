@@ -9024,6 +9024,14 @@
    "target": "gmail-8975-relay-0924",
    "detail": "✅ 2026-09-27 12:47 검증 완료. aroma8975 → magsori8975 로 보낸 메일이 magsori 수신함에 자동 전달돼 들어왔다(To 헤더가 magsori8975 인 채로 INBOX 에 존재 · 보낸이도 aroma8975 원본 유지 = 수동 Fwd 가 아니라 자동 전달의 특징). 앞서 magsori → 8975 테스트가 안 돌아온 것은 보낸사람과 전달대상이 같아 Gmail 이 건너뛴 것으로 보인다(관찰 · 공식 문서로 확인한 것은 아님). ⚠️ 전달은 설정 이후 도착분부터라 8975 에 쌓인 과거 GSC 메일 수십 통은 안 넘어온다 → 그건 watch gmail-reader-consent-0924(gmailread auth) 몫.",
    "via": "cli"
+  },
+  {
+   "at": "2026-09-27T13:09:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gmail-reader-consent-0924",
+   "detail": "✅ 2026-09-27 3계정 전부 인증 완료 — m8975 12:59 · magsori 13:08(메일 1493통) · aroma 13:1x(메일 93통). scan 결과 ✅magsori 26건 · ✅m8975 0건(7일 창) · ✅aroma 0건. 이제 🟡미설정은 없다 — 앞으로 scan 에 🔴죽음이 뜨면 그 계정 토큰이 끊긴 것이다.",
+   "via": "cli"
   }
  ]
 }
