@@ -14066,7 +14066,7 @@
   {
    "id": "xlink-a606",
    "added": "2026-09-27",
-   "what": "🔗 A6-06 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A6-06",
+   "what": "🔗 A6-06 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A6-06",
    "due": "2026-09-27",
    "cmd": "python studio/blogger.py crosslink --code A6-06",
    "owner": "claude",
@@ -14331,7 +14331,7 @@
   {
    "id": "osmu-5-post-watch-0927",
    "added": "2026-09-27",
-   "what": "인스타·쓰레드 게시 5편(A6-06·H1-16·B4-15·A5-12·H1-17) 완료 확인 후 사장님께 보고 — 사장님 지시 '게시 끝나면 알려줘'. Monitor bfgbvwzmg 로 60초 폴링 중(30분 만료·만료되면 다시 건다). 17:15 시점 상태: H1-17 쓰레드만 ✅, 나머지 9칸 미게시. 지시서는 이부장이 16:56~57 에 5건으로 나눠 냈고 이과장이 전부 읽었다(read_info 확인)",
+   "what": "인스타·쓰레드 게시 5편(A6-06·H1-16·B4-15·A5-12·H1-17) 감시 — 완료되면 ①이부장에 보고 ②사장님께 카톡(MemoChat) 둘 다 한다(2026-09-27 사장님 지시 '결과 나오면 이부장에 보고하고 카톡으로 알려달라'). Monitor bfgbvwzmg 60초 폴링(30분 만료 시 재무장). 막힘 신호(⏸·⚠️·3회)도 이벤트로 잡는다 — 침묵을 성공으로 보지 않는다. 17:15 기준 H1-17 쓰레드만 ✅",
    "due": "2026-09-27",
    "cmd": "python -c \"import json,io;db=json.load(io.open(r'C:/lifeinfo/webapp/lifeinfo_db.txt',encoding='utf-8'));p=db['posts'] if isinstance(db,dict) else db;d={x['code']:x for x in p if isinstance(x,dict) and x.get('code')};[print(c,'insta',bool((d.get(c,{}).get('osmu') or {}).get('insta')),'threads',bool((d.get(c,{}).get('osmu') or {}).get('threads'))) for c in ['A6-06','H1-16','B4-15','A5-12','H1-17']]\"",
    "owner": "claude",
@@ -14345,6 +14345,28 @@
    "what": "인스타 옛 표지 5개 삭제 대상 확정 — roles 표에 '게시물 삭제' 권한이 없어 09-19부터 이월(today0923 보드에서 옮김). 삭제는 되돌릴 수 없으니 roles 에 누가 할지 정하고 사장님 확인 뒤",
    "due": "2026-10-04",
    "cmd": "python -m studio.roles 이과장 삭제",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "topic-orv-0927",
+   "added": "2026-09-27",
+   "what": "전지적 독자 시점 글감 = ⏳보류: 극장·넷플릭스(25.12.3)·TV(9/26) 다 지남, 2편 개봉일 공식 발표 시 I2로 재판단",
+   "due": "2026-09-28",
+   "cmd": "type docs\\글감판단_전지적독자시점_20260927.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-27",
+   "result": "판정 ⏳ — 날짜 전부 지남(극장 25-07-23·넷플릭스 25-12-03·MBC 방영). 2편 개봉일 공식 발표 시 I2 로. 재확인 watch topic-orv-sequel"
+  },
+  {
+   "id": "topic-orv-sequel",
+   "added": "2026-09-27",
+   "what": "「전지적 독자 시점」 2편 개봉일 공식 발표됐나 — 발표되면 I2 글감(2편 개봉일 + 1편 넷플릭스 복습 비용 비교). 근거 docs/글감판단_전지적독자시점_20260927.md",
+   "due": "2026-10-27",
+   "cmd": "type docs\\글감판단_전지적독자시점_20260927.md",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
