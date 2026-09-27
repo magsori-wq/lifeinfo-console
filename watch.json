@@ -14064,6 +14064,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "thumb-dupphoto-9-0927",
+   "added": "2026-09-27",
+   "what": "같은 배경사진 쓰는 썸네일 9편 새 사진으로 재생성(H1-16·H1-11·H1-13·H1-12·H1-17·G1-09·F4-22·G1-07·F4-23) → 사장님 네이버 이미지 교체·deploy",
+   "due": "2026-09-27",
+   "cmd": "python -W ignore -c \"from studio.thumbcheck import same_photo;import glob,os;[print(f,same_photo(f,os.path.basename(f))) for f in sorted(glob.glob('thumbs/*.png')) if os.path.basename(f)[:3] in ('284','258','269','264','287','279','263','255','275')]\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
