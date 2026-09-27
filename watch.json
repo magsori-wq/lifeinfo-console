@@ -13984,6 +13984,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "naver-post-a606",
+   "added": "2026-09-27",
+   "what": "🙋[이부장 확인 대기] A6-06 네이버 원고 준비 완료 — 익명 신고 안전한가요? 법엔 없습니다(위기가구 신고 채널 4가지 비교). slug 전용 확인·grep 검증 완료.",
+   "due": "2026-09-28",
+   "cmd": "python -m studio.pipeline naver-draft --code A6-06   (클립보드 재적재 → 네이버 글쓰기 붙여넣기 또는 서식본 webapp/rich_A6-06.html 열어 Ctrl+A/C → 썸네일 thumbs_naver/277_crisisreport.png 첨부 → 게시 → python -m studio.pipeline naver-link --code A6-06 --url <게시URL>)",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
