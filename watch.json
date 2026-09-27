@@ -14046,7 +14046,7 @@
   {
    "id": "xlink-b415",
    "added": "2026-09-27",
-   "what": "🔗 B4-15 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-15",
+   "what": "🔗 B4-15 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-15",
    "due": "2026-09-27",
    "cmd": "python studio/blogger.py crosslink --code B4-15",
    "owner": "claude",
@@ -14338,6 +14338,16 @@
    "kind": "action",
    "state": "todo",
    "by": "4.세션"
+  },
+  {
+   "id": "insta-old-covers-delete",
+   "added": "2026-09-27",
+   "what": "인스타 옛 표지 5개 삭제 대상 확정 — roles 표에 '게시물 삭제' 권한이 없어 09-19부터 이월(today0923 보드에서 옮김). 삭제는 되돌릴 수 없으니 roles 에 누가 할지 정하고 사장님 확인 뒤",
+   "due": "2026-10-04",
+   "cmd": "python -m studio.roles 이과장 삭제",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
