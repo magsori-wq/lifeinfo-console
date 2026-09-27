@@ -1,19 +1,36 @@
 {
  "rev": "d349506d",
  "counts": {
-  "total": 310,
+  "total": 311,
   "osmu_done": 309,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 0,
-  "index_pending": 310,
+  "index_pending": 311,
   "index_requested": 159,
-  "index_todo": 41,
+  "index_todo": 42,
   "index_benign": 110
  },
  "actionable": [
   {
    "code": "B4-17",
    "title": "가상자산 소득세 2027년 1월 시행 확정 — 국회 3",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "G3-07",
+   "title": "2026 경남고성공룡세계엑스포 이용요금 야간개장 총정리",
    "need": [
     "OSMU",
     "색인요청"
@@ -219,23 +236,6 @@
     "g": true,
     "n": true,
     "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "B4-15",
-   "title": "종합소득세 중간예납 11월 30일 — 계산 방법·분납 ",
-   "need": [
-    "쓰레드",
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": false,
     "i": true
    }
   }
