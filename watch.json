@@ -13736,8 +13736,10 @@
    "due": "2026-09-29",
    "cmd": "python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:489fd74d"
+   "state": "done",
+   "by": "세션:489fd74d",
+   "done_at": "2026-09-27",
+   "result": "9/30 신고기한 이전(9/27) 발행 완료, 4채널(블로그·네이버·쓰레드·인스타) 전부 게시 및 상호 크로스링크 완료"
   },
   {
    "id": "v0reject-b4-16",
@@ -13982,14 +13984,14 @@
   {
    "id": "xlink-b416",
    "added": "2026-09-27",
-   "what": "🔗 B4-16 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-16",
+   "what": "🔗 B4-16 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-16",
    "due": "2026-09-27",
    "cmd": "python studio/blogger.py crosslink --code B4-16",
    "owner": "claude",
    "state": "done",
    "by": "naver-link",
    "done_at": "2026-09-27",
-   "result": "블로그스팟 본문에 네이버 크로스링크 삽입 완료, 라이브 재조회로 확인(blog.naver.com/magsori8975/224423743031 노출)"
+   "result": "블로그스팟 크로스링크에 네이버·쓰레드·인스타 3채널 전부 반영, 라이브 재조회로 확인"
   },
   {
    "id": "naver-post-a606",
@@ -14072,8 +14074,10 @@
    "due": "2026-09-27",
    "cmd": "python -W ignore -c \"from studio.thumbcheck import same_photo;import glob,os;[print(f,same_photo(f,os.path.basename(f))) for f in sorted(glob.glob('thumbs/*.png')) if os.path.basename(f)[:3] in ('284','258','269','264','287','279','263','255','275')]\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-27",
+   "result": "9편 30장 재생성·커밋 · same_photo 전수 겹침 0 · 남은 것=사장님 네이버 이미지 교체·deploy"
   }
  ]
 }
