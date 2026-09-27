@@ -14099,6 +14099,16 @@
    "kind": "action",
    "state": "todo",
    "by": "4.세션"
+  },
+  {
+   "id": "redirect-sample-blogpage16-0927",
+   "added": "2026-09-27",
+   "what": "리디렉션 오류 재현 표본: 통합검색 /p/blog-page_16.html 이 색인요청(09-24) 후 unknown→Redirect error(crawl 09-24). 같은 구조의 소개 페이지는 Crawled-not-indexed — 갈리는 지점 미확인(4.세션 09-27 보고, 커밋 6836a6b0). 루틴7·indexlab 리디렉션 111건 조사에 표본으로 넘길 것",
+   "due": "2026-10-01",
+   "cmd": "python -m studio.searchconsole inspect --url https://lifeinfo8975.blogspot.com/p/blog-page_16.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
