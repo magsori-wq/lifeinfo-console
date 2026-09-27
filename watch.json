@@ -14466,6 +14466,16 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "threads-blocked-0928",
+   "added": "2026-09-27",
+   "what": "쓰레드 게시 막힘 — 09-27 이과장(첫 편 뒤 4편)·3.(H1-16, 카드가 계속 재생성·탭 렌더러 붕괴) 모두 실패. 남은 것: 글 4편(H1-16·A5-12·B4-15·A6-06) + 상품 6건 + 오늘 발행분(B4-17·G3-07·H1-18). 내일 사장님이 크롬을 한 번 재시작하신 뒤 1편으로 재시험",
+   "due": "2026-09-28",
+   "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['code'] for p in d['posts'] if (p.get('osmu') or {}).get('naver') and not (p.get('osmu') or {}).get('threads')])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
