@@ -1,13 +1,13 @@
 {
  "rev": "360f0755",
  "counts": {
-  "total": 313,
-  "osmu_done": 310,
-  "osmu_pending": 3,
+  "total": 314,
+  "osmu_done": 309,
+  "osmu_pending": 5,
   "indexed": 0,
-  "index_pending": 313,
+  "index_pending": 314,
   "index_requested": 159,
-  "index_todo": 44,
+  "index_todo": 45,
   "index_benign": 110
  },
  "actionable": [
@@ -15,16 +15,15 @@
    "code": "B4-17",
    "title": "가상자산 소득세 2027년 1월 시행 확정 — 국회 3",
    "need": [
-    "인스타",
-    "쓰레드",
+    "OSMU",
     "색인요청"
    ],
-   "action": "색인 요청",
-   "osmu": true,
+   "action": "OSMU 확산",
+   "osmu": false,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": true,
+    "n": false,
     "t": false,
     "i": false
    }
@@ -32,6 +31,23 @@
   {
    "code": "D3-07",
    "title": "청년특례 전세대출보증, 만 39세로 확대됩니다 — 정확",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "E1-05",
+   "title": "단통법 폐지, 지원금 상한 없어졌다 — 그런데 무조건 ",
    "need": [
     "OSMU",
     "색인요청"
@@ -222,23 +238,6 @@
     "g": true,
     "n": true,
     "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A6-06",
-   "title": "복지사각지대 위기가구, 어떻게 신고하나 — 앱·129·",
-   "need": [
-    "쓰레드",
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": false,
     "i": true
    }
   }
