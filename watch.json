@@ -13896,8 +13896,10 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow '콘솔 정합성 검사' --limit 3",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-09-28",
+   "result": "해소 확인(2026-09-28 08시 브리핑 실측). 배포저장소 수정 efb51362(09-27 22:11 KST, tools/console_check.py — JS 문자열 연결 조각 'rich_'+code 를 파일 참조로 읽던 정규식 오탐 제거·푸시됨) 이후 관측된 run 4회 전부 success: 36354560407(09-28 07:13 KST 기준 ✓, 9s) · 36350138763 · 36350114567 · 36346936519. 마지막 실패는 09-27 18:52 KST(09:52Z). 남은 annotation 2건은 Node20 deprecation·ubuntu-latest 이전 공지로 무해."
   },
   {
    "id": "naver-post-b416",
