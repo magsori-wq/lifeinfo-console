@@ -14088,6 +14088,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "gsc-home-static-recheck-0930",
+   "added": "2026-09-27",
+   "what": "홈·정적 6개 색인요청 결과 재확인 — 09-24 사장님이 요청 완료. 09-27 1차 실측: 5개는 상태·크롤일 그대로(홈 07-05·소개 07-14·개인정보 07-21·문의 07-06·카테고리 07-14) = 재크롤 아직 안 옴. 통합검색만 'URL is unknown'→'Redirect error'·crawl 2026-09-24 로 바뀜 = 크롤은 실제로 왔다. 09-30 에 다시 재서 ①재크롤이 왔는가 ②색인됐는가 를 판정한다. ⚠️ 통합검색 Redirect error 원인은 아직 모른다 — Googlebot 모바일 UA 에 302→?m=1 은 소개 페이지도 동일하고 canonical 도 셋 다 자기 PC주소로 정상이다. 구조가 같은데 판정만 다르다",
+   "due": "2026-09-30",
+   "cmd": "python -c \"from studio import searchconsole as s;svc=s._svc();[print(svc.urlInspection().index().inspect(body={'inspectionUrl':u,'siteUrl':s.SITE_URL}).execute()['inspectionResult']['indexStatusResult'].get('coverageState'),str(svc.urlInspection().index().inspect(body={'inspectionUrl':u,'siteUrl':s.SITE_URL}).execute()['inspectionResult']['indexStatusResult'].get('lastCrawlTime'))[:10],u) for u in ['https://lifeinfo8975.blogspot.com/','https://lifeinfo8975.blogspot.com/p/blog-page_17.html','https://lifeinfo8975.blogspot.com/p/blog-page.html','https://lifeinfo8975.blogspot.com/p/blog-page_20.html','https://lifeinfo8975.blogspot.com/p/blog-page_15.html','https://lifeinfo8975.blogspot.com/p/blog-page_16.html']]\"",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "4.세션"
   }
  ]
 }
