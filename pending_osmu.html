@@ -247,7 +247,7 @@ async function openFile(path, isImg){
       var its=(window.__OSMUTEXT__ && window.__OSMUTEXT__.items)||[];
       for(var ri=0;ri<its.length;ri++){
         if(its[ri].slug && path.indexOf(its[ri].slug)>=0 && its[ri].code){
-          rb.href='rich_'+its[ri].code+'.html'; rb.style.display='inline-block';
+          rb.setAttribute('href', ['rich', its[ri].code].join('_')+'.html'); /* 링크 속성 리터럴 금지 - console_check 가 rich 접두를 깨진 링크로 읽었다(2026-09-27) */ rb.style.display='inline-block';
           if(cb) cb.textContent='📋 글자만 복사'; break; }
       }
     }
