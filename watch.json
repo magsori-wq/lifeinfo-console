@@ -13319,10 +13319,10 @@
    "due": "2026-09-24",
    "cmd": "python -m studio.v0check gate --code A6-06",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "by": "세션:40ebc2b2",
-   "done_at": "2026-09-24",
-   "result": "V0 통과로 해소 — 검사자 V0검사관 · 함정: 제49조=공무원 비밀유지의무일뿐 신고자 법적보호 조항 아님(law.go.kr 원문 대조 확인) — 통념 반박 / 계산예시: 18000÷29000≈62%(신고→실제연계 비율, 끝까지 계산) / 공식출처 링크 4"
+   "done_at": "2026-09-27",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사: 반려3건 정정 확인(커밋03b838d4) ①도입부 3종중2종만동의(채무조정중지자 제외)로 원문(source line51)과 일치, '추가된'->'추가되는'으로 계획단계 표현 정정 ②2절해설 기관을 서민금융진"
   },
   {
    "id": "govlink-31-0924",
@@ -13959,9 +13959,11 @@
    "due": "2026-09-28",
    "cmd": "python -m studio.pipeline naver-draft --code B4-15   (클립보드 재적재 → 네이버 글쓰기 붙여넣기 또는 서식본 webapp/rich_B4-15.html 열어 Ctrl+A/C → 썸네일 thumbs_naver/282_midtax.png 첨부 → 게시 → python -m studio.pipeline naver-link --code B4-15 --url <게시URL>)",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-09-27",
+   "result": "이부장 확인: 원고 중간예납 23·11월 30일·50만·1천만 라이브 기준 유지·오늘/D- 0, 링크 4개 전부 DB 실존(B4-15 본문 URL 정확), 서식본 15px 73·19px 7·주황 42·CP 200, 쓰레드 실사진 통과 → 미결사항 네이버 게시 대기"
   }
  ]
 }
