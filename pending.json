@@ -1,13 +1,13 @@
 {
  "rev": "760ae85a",
  "counts": {
-  "total": 311,
+  "total": 312,
   "osmu_done": 309,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 311,
+  "index_pending": 312,
   "index_requested": 159,
-  "index_todo": 42,
+  "index_todo": 43,
   "index_benign": 110
  },
  "actionable": [
@@ -31,6 +31,23 @@
   {
    "code": "G3-07",
    "title": "2026 경남고성공룡세계엑스포 이용요금 야간개장 총정리",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "H1-18",
+   "title": "채널A 키드냅 게임 10월 6일 화요일 밤 10시 첫방",
    "need": [
     "OSMU",
     "색인요청"
@@ -210,22 +227,6 @@
   {
    "code": "B2-14",
    "title": "SCB 등급만 좋으면 대출된다? 아닙니다 — 소상공인 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "B4-13",
-   "title": "조정대상지역 일시적 2주택 처분기한 3년→2년 단축 총",
    "need": [
     "색인요청"
    ],
