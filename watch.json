@@ -13257,13 +13257,13 @@
   {
    "id": "gmail-8975-relay-0924",
    "added": "2026-09-24",
-   "what": "magsori8975 → magsori 자동 전달 설정(GSC 통지가 8975 로도 옵니다 — 8975 도 GSC 속성 소유자입니다). 실측 2026-09-24·09-27: forwarding-noreply 확인 메일이 aroma8975 것 1건(06-24)뿐이고 magsori8975 용은 없습니다 = 전달 요청 자체가 없었습니다. 공식 문서(support.google.com/mail/answer/10957) 확인한 정확한 문구: ①magsori8975 로 로그인(우측 상단 아바타가 8975 인지 확인) ②설정 → 모든 설정 보기 → 「전달 및 POP/IMAP」 ③「전달 주소 추가」 → magsori@gmail.com ④확인 메일은 magsori 로 옵니다 — 코드가 아니라 【확인 링크 클릭】이고 8975 로 되돌려 보낼 필요 없습니다(06-24 aroma 링크는 이미 사용됨·재사용 불가, 새 링크가 옵니다) ⑤🔴다시 8975 설정으로 돌아가 「받은 메일의 사본을 다음으로 전달:」 라디오 선택 + 「Gmail 사본을 받은편지함에 보관하기」(삭제 금지 — 8975 원본을 남겨야 합니다) ⑥🔴하단 「변경사항 저장」 클릭 ← 이걸 안 누르면 ④까지 해도 전달은 꺼진 상태입니다. ⑦테스트: 아무 계정에서 magsori8975 로 메일 1통 보내 magsori 함에 뜨는지 확인. ⚠️공식 문서는 '컴퓨터에서 Gmail을 엽니다'만 적혀 있습니다 — 모바일 앱 지원 여부는 문서에 없어 PC 웹을 권합니다.",
-   "due": "2026-09-28",
-   "cmd": "Gmail(magsori8975) 웹 → 설정 → 모든 설정 보기 → 전달 및 POP/IMAP → 전달 주소 추가 → magsori@gmail.com",
+   "what": "magsori8975 → magsori 자동 전달 — 【설정은 2026-09-27 12:4x 에 사장님이 끝내셨다】. 화면 실측: 주소 인증 완료(확인 링크 클릭) · 라디오 「수신메일을 magsori@gmail.com 및 Gmail 사본을 받은편지함에 보관하기 에 전달」 선택 · 「변경사항 저장」 클릭. 🔴 남은 것은 '실제로 넘어오는가' 검증 하나다. 저장 직후 조회 결과 to:magsori8975 newer_than:1d = 0건(새 메일이 아직 없어 당연). ⚠️ 전달은 【설정 이후 도착분부터】 적용되고 과거 메일은 안 온다. 검증 방법: 아무 계정에서 magsori8975@gmail.com 으로 테스트 메일 1통 → magsori 함에 뜨는지 확인. 뜨면 이 항목 done, 안 뜨면 8975 설정에서 라디오가 「전달하지 않음」으로 되돌아가 있는지부터 본다.",
+   "due": "2026-09-27",
+   "cmd": "아무 계정에서 magsori8975@gmail.com 으로 테스트 메일 1통 발송",
    "owner": "user",
-   "verify": "브리핑이 확인: from:forwarding-noreply@google.com newer_than:2d (제목 '(Gmail 전달 확인 - magsori8975@gmail.com에서 보낸 메일 수신') · 저장 후 to:magsori8975@gmail.com newer_than:2d 에 테스트 메일",
+   "verify": "브리핑이 확인: to:magsori8975@gmail.com newer_than:2d 에 그 메일이 잡히면 전달 작동",
    "kind": "action",
-   "state": "todo",
+   "state": "wait",
    "by": "루틴1"
   },
   {
