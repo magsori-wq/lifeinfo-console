@@ -77,7 +77,14 @@ def check_html_refs():
         for pat in (r"fetch\(\s*'([^']+)'",
                     r'fetch\(\s*"([^"]+)"',
                     r'(?:src|href)=["\']([^"\']+)["\']'):
-            for m in re.findall(pat, scan):
+            for mo in re.finditer(pat, scan):
+                m = mo.group(1)
+                # 🔴 JS 문자열 연결의 조각은 참조가 아니다 (2026-09-27 오탐 수정).
+                #    `href='rich_'+code+'.html'` 의 'rich_' 를 파일로 읽어 05:48 부터 모든 push 가
+                #    RED 였다. 그 문장을 인용한 보고문(batch.html·reports.html)까지 같은 오탐을 냈다.
+                #    닫는 따옴표 바로 뒤가 '+' 이면 조각이다.
+                if scan[mo.end():mo.end() + 3].lstrip().startswith("+"):
+                    continue
                 if _is_local_ref(m):
                     refs.add(m)
         for r in sorted(refs):
