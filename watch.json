@@ -13271,13 +13271,13 @@
   {
    "id": "gmail-reader-consent-0924",
    "added": "2026-09-24",
-   "what": "Gmail 리더(studio/gmailread.py) 계정 동의 3회 — 사장님 지시로 제작 완료, 동의만 남았습니다. 각 명령을 실행하면 브라우저가 열립니다. ⚠️ 반드시 안내된 계정을 고르십시오(다른 계정을 고르면 코드가 감지해서 토큰을 저장하지 않습니다). ⚠️ 'Google이 확인하지 않은 앱' 화면이 나오면 [고급] → [계속]으로 진행하십시오 — 우리 앱이 맞습니다. ⚠️ 만약 Gmail API 미사용설정 오류가 나오면 구글이 알려주는 링크로 GCP 에서 켜 주시면 됩니다(그 화면은 사장님만 보십니다).",
-   "due": "2026-09-26",
-   "cmd": "python studio/gmailread.py auth --account magsori   (그리고 m8975, aroma 순서로 3회)",
+   "what": "Gmail 리더 3계정 동의 — 🔴핵심인 m8975 는 2026-09-27 12:59 완료했다(토큰 gmail_m8975_token.json · scan --days 60 에서 GSC 메일 17건 실제 조회 확인). 그 과정에서 걸린 벽 = GCP 프로젝트 867567132598(lifeinfo-adsense)에 Gmail API 가 꺼져 있어 403 accessNotConfigured. 사장님이 콘솔에서 「사용」 눌러 해결(이제 사용 설정됨 — 나머지 2계정은 이 벽이 없다). ⚠️ 인증 중 400 Bad Request 가 나오면 옛 탭의 만료된 OAuth URL 이다 — 터미널이 새로 찍은 주소로만 진행할 것(포트·state 가 매번 바뀐다). 남은 2계정은 급하지 않다: magsori 는 커넥터가 이미 붙어 있고, aroma 는 전달로 커버되며 원래 0건이 평소다. 필요해지면 python studio/gmailread.py auth --account magsori / aroma.",
+   "due": "2026-10-04",
+   "cmd": "python studio/gmailread.py scan --days 60",
    "owner": "user",
-   "verify": "python studio/gmailread.py scan — 3계정 전부 ✅ 이면 성공",
+   "verify": "scan 출력에 ✅ m8975 가 뜨고 건수가 나오면 정상",
    "kind": "action",
-   "state": "todo",
+   "state": "wait",
    "by": "루틴1"
   },
   {
