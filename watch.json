@@ -14187,8 +14187,10 @@
    "cmd": "python -m studio.routines 8",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-27",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "adpost-screen-discover-0927",
@@ -14199,6 +14201,16 @@
    "owner": "user",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "readycheck-routine-axis-0927",
+   "added": "2026-09-27",
+   "what": "readycheck '루틴 미실행' 오탐 — routine_model._git_last_run 이 [루틴N] 커밋 제목 하나로만 판정. 09-27 루틴2는 실행·CP보고(routinelog lifeinfo-daily-topics-0927 09:23)·산출물(topicprop B4-17/18 added 09:19) 다 있는데 자기 커밋이 없어 🔴. 판정에 routinelog 보고를 두번째 축으로 더하고 falsepos 회귀 규칙 추가(4.세션 09-27 보고)",
+   "due": "2026-09-28",
+   "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
