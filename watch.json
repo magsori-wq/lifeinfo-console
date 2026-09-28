@@ -14605,6 +14605,26 @@
    "by": "이부장",
    "done_at": "2026-09-28",
    "result": "source.md 에 원문 발행일 필수·월일만이면 연도=발행일·과거 시행이면 ⚠️이미 시행됨 표기 추가 / docflow.md 출처 파일 항목에 원문 발행일 추가 (루틴2 SKILL 은 docflow·source 를 거치므로 따로 안 고침)"
+  },
+  {
+   "id": "xlink-g307",
+   "added": "2026-09-28",
+   "what": "🔗 G3-07 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-07",
+   "due": "2026-09-28",
+   "cmd": "python studio/blogger.py crosslink --code G3-07",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "rich-missing-0928",
+   "added": "2026-09-28",
+   "what": "CP 원고 보기의 「🎨 서식본 열기」가 서식본 파일이 없어도 링크를 걸어 404(H1-18 등 4편, 09-28 사장님 발견). 없으면 버튼을 숨기거나 준비 중으로 표시 + 원고 준비 절차가 서식본을 반드시 만들게",
+   "due": "2026-09-29",
+   "cmd": "ls webapp/rich_*.html | wc -l; grep -n richbtn webapp/pending_osmu.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
