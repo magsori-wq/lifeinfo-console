@@ -14609,12 +14609,14 @@
   {
    "id": "xlink-g307",
    "added": "2026-09-28",
-   "what": "🔗 G3-07 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-07",
+   "what": "🔗 G3-07 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-07",
    "due": "2026-09-28",
    "cmd": "python studio/blogger.py crosslink --code G3-07",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-28",
+   "result": "이미 완료됨 — 인스타 게시 전(단계 ①)에 이미 crosslink 실행·라이브 확인함. insta-link 명령이 뒤늦게 같은 항목을 다시 띄운 것"
   },
   {
    "id": "rich-missing-0928",
@@ -14635,6 +14637,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "naver-post-a407",
+   "added": "2026-09-28",
+   "what": "🙋[이부장 확인 대기] A4-07(전세사기특별법 최소보장제) 네이버 게시 — 제목·본문·서식 준비완료. 첨부 썸네일: thumbs_naver/296n_minguarantee.png",
+   "due": "2026-09-28",
+   "cmd": "python -m studio.pipeline naver-draft --code A4-07 --file osmu/네이버용_전세사기최소보장제.txt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
