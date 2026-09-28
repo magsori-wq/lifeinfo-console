@@ -14560,14 +14560,14 @@
   {
    "id": "xlink-b417",
    "added": "2026-09-28",
-   "what": "🔗 B4-17 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-17",
+   "what": "🔗 B4-17 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-17",
    "due": "2026-09-28",
    "cmd": "python studio/blogger.py crosslink --code B4-17",
    "owner": "claude",
    "state": "done",
    "by": "naver-link",
    "done_at": "2026-09-28",
-   "result": "B4-17 크로스링크 갱신 완료(naver+instagram) — 라이브 확인"
+   "result": "B4-17 크로스링크 갱신 완료(naver+threads+instagram) — 라이브 확인"
   },
   {
    "id": "naver-post-d307",
@@ -14785,6 +14785,16 @@
    "what": "09-24 사장님이 B안(네이버=사례·순서 중심, 블스=표·계산 중심, 다른 구성) 승인했는데 적용 안 됨 — 09-28 이부장 실측 네이버 원고 vs 블스 본문 유사도(bodydup.score) 최근 10편 0.59~0.82, 9/10이 차단선 0.60 초과(E1-05 0.819·A5-12 0.782·A4-07 0.779). 원고 단계 게이트 없음. 조치: naver-draft 에 유사도 경고 + 원고 지침에 B안 구성",
    "due": "2026-09-29",
    "cmd": "python -c \"from studio import bodydup\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "threadsdraft-slug-mismatch-0928",
+   "added": "2026-09-28",
+   "what": "threadsdraft 가 쓰레드 원고 파일을 슬러그로 못 찾음 — 09-28 이과장 보고: G3-07·H1-18·D3-07·E1-05·A4-07 5편 원고 못 찾거나 엉뚱한 글 원고 매칭(G3-07 이 서울세계불꽃축제 원고). 첨부 실사진도 없었음. 조치: 경로를 코드 한 곳에서 판정 + 원고 첫 줄 코드 대조, OSMU 준비 단계에서 쓰레드 원고·사진 생성",
+   "due": "2026-09-29",
+   "cmd": "grep -n 'def ' studio/threadsdraft.py",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
