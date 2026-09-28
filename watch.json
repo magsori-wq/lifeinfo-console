@@ -14413,8 +14413,10 @@
    "due": "2026-09-28",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 3",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-09-28",
+   "result": "완료 확인 — cmd 의 완료조건('올라간 뒤 GitHub console check 가 초록인지 확인') 충족. 수정은 미커밋이 아니라 efb51362(09-27 22:11 KST)로 배포저장소에 커밋·푸시됐고, 이후 관측된 run 4회 전부 success(최근 36354560407 ✓ 9s). 같은 사안 추적 console-check-rich-falsepos-0927 과 함께 종결."
   },
   {
    "id": "topicprop-i-code-format-0927",
@@ -14579,6 +14581,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "docflow-0928-0930",
+   "added": "2026-09-28",
+   "what": "A4-07(전세사기특별법 최소보장제)·B2-16(전세대출DSR) 선별 완료·1차출처 확보(law.go.kr·fsc.go.kr). 남은 것: A4-07 예산279억+신청창구, B2-16 경과규정 세부(만기연장 취급) — source docs 참조해 초안 지시서 작성 필요",
+   "due": "2026-09-29",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:2fa3affa"
   }
  ]
 }
