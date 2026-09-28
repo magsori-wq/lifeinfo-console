@@ -14591,6 +14591,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:2fa3affa"
+  },
+  {
+   "id": "source-pubdate-0928",
+   "added": "2026-09-28",
+   "what": "출처 파일에 '원문 발행일' 필수화 — B2-16 이 1년 전 보도자료를 새 시행으로 읽은 사고(09-28). source 에이전트·루틴2 SKILL·docflow 에 발행일 확인 한 줄",
+   "due": "2026-09-29",
+   "cmd": "grep -n '발행일' .claude/agents/source.md .claude/agents/docflow.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
