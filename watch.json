@@ -14666,12 +14666,14 @@
   {
    "id": "xlink-e105",
    "added": "2026-09-28",
-   "what": "🔗 E1-05 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E1-05",
+   "what": "🔗 E1-05 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E1-05",
    "due": "2026-09-28",
    "cmd": "python studio/blogger.py crosslink --code E1-05",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-28",
+   "result": "E1-05 크로스링크 갱신 완료(naver+instagram) — 라이브 확인"
   },
   {
    "id": "xlink-a407",
@@ -14682,6 +14684,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "claude-limit-reset-1022",
+   "added": "2026-09-28",
+   "what": "Anthropic 메일(09-24 09:25 KST, 미읽음): Claude 한도 리셋 1회가 주어졌다 — 5시간·주간 한도를 한 번 다시 채운다. 사용 기한 10-22 09:00 PT = 10-23 01:00 KST, 1회용이며 안 쓰면 없어진다(구독 취소·다운그레이드 시에도 소멸). 한도가 막힌 날 쓰면 된다. 사용처: 설정 → 사용량.",
+   "due": "2026-10-20",
+   "cmd": "https://claude.ai/settings/usage",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:f82d5f6b"
   }
  ]
 }
