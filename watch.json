@@ -12960,8 +12960,10 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow approve.yml --limit 3",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-09-28",
+   "result": "09-28 이부장 수리 — creatoradvisor it['catName']→it.get (bake 정상 완료) / approve.yml:218 git add -- 'webapp/*.json' (dry-run exit 0)"
   },
   {
    "id": "adsense-getting-ready-0923",
@@ -13221,8 +13223,10 @@
    "due": "2026-09-24",
    "cmd": "cd /c/lifeinfo && git add --dry-run -- 'webapp/*.json' >/tmp/o 2>/tmp/e; echo exit=$?; grep -cv '[.]json' /tmp/o  # exit 0 · json 아닌 것 0 이어야 정상",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-09-28",
+   "result": "09-28 이부장 수리 — creatoradvisor it['catName']→it.get (bake 정상 완료) / approve.yml:218 git add -- 'webapp/*.json' (dry-run exit 0)"
   },
   {
    "id": "toss-specialtime-change-0928",
