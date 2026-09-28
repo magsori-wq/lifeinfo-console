@@ -1,16 +1,33 @@
 {
  "rev": "7458a256",
  "counts": {
-  "total": 314,
+  "total": 315,
   "osmu_done": 310,
-  "osmu_pending": 4,
+  "osmu_pending": 5,
   "indexed": 0,
-  "index_pending": 314,
+  "index_pending": 315,
   "index_requested": 159,
-  "index_todo": 45,
+  "index_todo": 46,
   "index_benign": 110
  },
  "actionable": [
+  {
+   "code": "A4-07",
+   "title": "전세사기특별법 개정, 임차보증금 최소보장제 11월 13",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "B4-17",
    "title": "가상자산 소득세 2027년 1월 시행 확정 — 국회 3",
@@ -223,22 +240,6 @@
     "g": true,
     "n": true,
     "t": false,
-    "i": true
-   }
-  },
-  {
-   "code": "A6-05",
-   "title": "실업크레딧 신청 방법 대상 지원율 국민연금 보험료 75",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
     "i": true
    }
   }
