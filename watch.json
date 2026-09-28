@@ -14821,6 +14821,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "routine7-depth-check-1001",
+   "added": "2026-09-28",
+   "what": "루틴7 심층화 확인 — 09-28 지침 개정(state 전 종류·URL 예시·주간 변화·adsense status·③ 측정일·partial 표시) 후 첫 실행(목) 보고가 실제로 그렇게 나왔는지",
+   "due": "2026-10-01",
+   "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];print([i['note'][:500] for i in b['items'] if i['code'].startswith('lifeinfo-index-check')][-1])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
