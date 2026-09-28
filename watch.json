@@ -14040,12 +14040,14 @@
   {
    "id": "xlink-a512",
    "added": "2026-09-27",
-   "what": "🔗 A5-12 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-12",
-   "due": "2026-09-27",
+   "what": "🔗 A5-12 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-12",
+   "due": "2026-09-28",
    "cmd": "python studio/blogger.py crosslink --code A5-12",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-09-28",
+   "result": "A5-12 크로스링크 갱신 완료(naver+threads+instagram) — 라이브 확인"
   },
   {
    "id": "xlink-b415",
@@ -14725,6 +14727,16 @@
    "by": "세션:f82d5f6b",
    "done_at": "2026-09-28",
    "result": "CLAUDE.md 애드센스 이력 줄에 06-23 반려(aroma8975 수신)·메일상 5회 반영. 근거는 루틴1 전수조사 문서(이부장은 aroma8975 메일 원문 직접 확인 못함)"
+  },
+  {
+   "id": "adsense-pe-deepdive-0928",
+   "added": "2026-09-28",
+   "what": "[사장님 지시 09-28] 구글 커뮤니티 PE 답변(OptimistPrime·busterjet, 09-25) 심층분석 — 주장 4개(①내용이 비슷하면 문장이 달라도 색인 안 함 ②독자층·인기 ③애드센스는 탄탄한 독자층 뒤에 관심 ④가치제안을 정하고 알려라)를 공식 문서·우리 실측·승인 블로그(dailyujun2025·eunzzing) 비교로 판정하고 대처 지도를 만든다. 결과는 새 문서가 아니라 소거표 【2】(후보 A)와 승인사례 정밀조사 모순목록 1번 자리에 붙인다. 해석 확정은 4.(adsense0915)·3.(독자 데이터) 의견을 받아서. 선행 추적 = adsense-pe-replies-0925",
+   "due": "2026-09-29",
+   "cmd": "grep -n 'PE 답변(09-25)' docs/애드센스_소거표_20260924.md docs/애드센스_승인사례_정밀조사_20260924.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:f82d5f6b"
   }
  ]
 }
