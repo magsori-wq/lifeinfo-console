@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-01",
+ "updated": "2026-10-02",
  "items": [
   {
    "id": "redirect-error",
@@ -15289,6 +15289,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "4."
+  },
+  {
+   "id": "needsphoto-scope-1002",
+   "added": "2026-10-02",
+   "what": "thumbcheck.needs_photo() 가 ENTERTAINMENT_KEYWORDS 매칭을 H 카테고리 한정이 아니라 전 카테고리에 적용 — docstring(53줄)·CLAUDE.md 는 'H 코드는 제목 키워드로 판정'이라고 명시하는데 실제 코드는 cat 분기 없이 전부에 걸림. D5-04(코레일 예매, cat D)가 '예매' 낱말로 실사진 강제됐고, 기존 발행글 F2-01(KTX 예매 방법, cat F)도 같은 키워드를 제목에 쓴다 — 재발 범위가 넓다",
+   "due": "2026-10-03",
+   "cmd": "python -c \"from studio.thumbcheck import needs_photo; print(needs_photo('D5-04','코레일 예매'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d7dcc720"
   }
  ]
 }
