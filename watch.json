@@ -15061,6 +15061,16 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "docflow-1001-1330",
+   "added": "2026-10-01",
+   "what": "오늘 글감 2건 처리 완료 — H1-19 drop(2018년 종영드라마 오판, SBS서버 확인), G3-08 pick+보강조사2회+지시서(draft1001g308, 제목·금지어 정정·V0축 한정, ordercheck 17종 통과). 교통/주차/셔틀/코스거리는 watch 3건으로 10/5·10/9 재확인 예정",
+   "due": "2026-10-02",
+   "cmd": "python -m studio.batchboard order --id draft1001g308",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
