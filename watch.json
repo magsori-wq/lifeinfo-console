@@ -15099,6 +15099,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "erase6-reopen-1001",
+   "added": "2026-10-01",
+   "what": "소거표 #6(구글이 네이버=원본·블스=복제본) 기각 근거 붕괴 — 10-01 네이버 9월 글 A1-16·H1-12 구글 색인 진입, 같은 글 블스판은 미색인. 4.세션에 재검토 지시: 두 글 블스판 inspect·canonical·본문 유사도 대조",
+   "due": "2026-10-03",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/navergate.json',encoding='utf-8'));print(d.get('n'),d.get('checked_at'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
