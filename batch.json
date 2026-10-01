@@ -1653,6 +1653,16 @@
      "base_code": "lifeinfo-daily-publish",
      "date": "2026-10-02",
      "at": "2026-10-02 01:13"
+    },
+    {
+     "code": "9-lifeinfo-issue-product-pm-1001c-1002",
+     "title": "9-lifeinfo-issue-product-pm-1001c (I)",
+     "state": "done",
+     "note": "10-02 추가보고 — docs/affiliate_data.json(solo 승인·게시 기록의 실제 원본, webapp/affiliate.json은 비공개 요약본일 뿐)이 10-02 00:53 수정 후 미커밋 상태로 발견됨(작성자 불명 — 세션 여럿이 공유 사용). 사장님 지시로 경로지정 커밋·푸시 완료(5e0a77e6). 단감 20261001-2 posted_at=2026-10-01T15:28:56 포함해 유실 없이 반영됨. 참고: 어제 '승인미게시 6건' 질문에 대해 posted_at 타임스탬프로 재검증 — 20260925-2·20260926-1·20260926-2·20260927-2·20260928-1·20260928-2 6건이 12:24 시점 정확히 미게시였고 13:35~14:21 사이 이과장이 전부 게시 처리함(20260925-1·20260927-1은 9/28 기게시라 제외, 20261001-1은 당일 신규 별건이라 제외).",
+     "auto_daily": true,
+     "base_code": "9-lifeinfo-issue-product-pm-1001c",
+     "date": "2026-10-02",
+     "at": "2026-10-02 06:23"
     }
    ],
    "order": "📮 routinelog — 루틴9 권고 회신 (2026-09-18 16:2x 이부장)\n\n【판정】 (A) 오늘 15:00 회차는 **무소득으로 정리하고 종료**한다. 루틴9 판단이 맞다.\n  근거 ①약과(id 423535267)는 오늘 06:22 이미 게시됐다(solo0918yakgwa) — 같은 상품 재게시는 중복이다\n       ②어제 홍삼(15:52)·오늘 약과(06:22)로 이틀 연속 상품 단독 게시가 나갔다.\n         쓰레드 조회가 100 미만인데 광고성 게시가 몰리면 계정이 광고 계정으로 보인다 — 오늘은 여기서 멈춘다\n       ③중복을 스스로 발견해 게시 전에 보고한 것이 정확했다. 그 판단이 이 회차의 성과다\n\n【(B) 새 후보를 지금 더 찾을 것인가】 찾지 않는다. 대신 **내일 회차 후보를 미리 정해 둔다**:\n  · 세척사과 꿀사과 3kg — 12,900원 · 리뷰 4,782 · 평점 4.3 (토스 id 2226153335, 이부장 16:2x 조회)\n  · 루틴8이 오늘 07:17 에 낸 후보와 같은 물건이다. 추석 D-7 이라 시의성은 내일까지 유효하다\n  · 5kg(18,900원·리뷰 3,903)도 있으나 3kg 쪽이 리뷰가 더 많고 1인가구·성묘 선물 모두에 맞다\n  · 🔴 이부장이 내일 오전에 승인 카드로 올린다(solo-ask). 루틴9는 내일 회차에서 이 후보를 먼저 확인하면 된다\n\n【루틴9에 남기는 기준 한 줄】\n  같은 상품이 이미 게시됐는지 `python -m studio.affiliate solo` 로 먼저 보고 후보를 낸다.\n  그러면 오늘처럼 중복 후보로 한 회차를 쓰지 않는다.",
@@ -3555,7 +3565,9 @@
     {
      "code": "D2-14",
      "title": "2026 전기차 보조금 지역별 잔여대수 확인법 — 서울·부산·대구 비교 (라이브 발행)",
-     "state": "todo"
+     "state": "done",
+     "note": "threads 게시·기록 완료 — https://www.threads.com/@magsori8975/post/Dd93DlRkw2z (naver-link 가 자동 보고)",
+     "at": "2026-10-02 06:21"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -3607,17 +3619,29 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-02 06:15:06",
+ "updated": "2026-10-02 06:23:07",
  "current": {
-  "batch": "pub1001d214",
-  "code": "",
+  "batch": "pub1002h120",
+  "code": "H1-20",
   "title": "",
   "step": 1,
-  "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dd92WCLEzgc/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-  "since": "06:06",
-  "since_at": "2026-10-02 06:06:10"
+  "what": "⚠️ gh workflow run 이 권한 분류기(Production Deploy)에 거부됨 — 게이트(도장·V0·setgate·pubready·원격동기 0) 전부 통과, 결재함 pub-h120-trigger-1002 에 완성 명령으로 올림. 대기",
+  "since": "06:23",
+  "since_at": "2026-10-02 06:23:00"
  },
  "log": [
+  {
+   "t": "06:23:07",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1001c-1002 완료 — 9-lifeinfo-issue-product-pm-1001c "
+  },
+  {
+   "t": "06:23:00",
+   "text": "▶ H1-20  — 1/7단계 · ⚠️ gh workflow run 이 권한 분류기(Production Deploy)에 거부됨 — 게이트(도장·V0·setgate·pubready·원격동기 0) 전부 통과, 결재함 pub-h120-trigger-1002 에 완성 명령으로 올림. 대기"
+  },
+  {
+   "t": "06:21:25",
+   "text": "✅ D2-14 완료 — 2026 전기차 보조금 지역별 잔여대수 확인법 — 서울·부산·"
+  },
   {
    "t": "06:15:06",
    "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/Dd92WCLEzgc/ (naver-link 가 자동 보고) · 남음: 쓰레드"
@@ -3765,18 +3789,6 @@
   {
    "t": "15:39:00",
    "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/Dd8SII_kUlz/ (naver-link 가 자동 보고) · 남음: 쓰레드"
-  },
-  {
-   "t": "15:35:58",
-   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224428330275 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타"
-  },
-  {
-   "t": "15:16:34",
-   "text": "✅ 9-lifeinfo-issue-product-pm-1001b-1001 완료 — 9-lifeinfo-issue-product-pm-1001b "
-  },
-  {
-   "t": "15:08:52",
-   "text": "✅ A3-16 완료 — 2027년 기초연금 개편 초안 작성"
   }
  ],
  "currents": {
@@ -4409,6 +4421,15 @@
    "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dd92WCLEzgc/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "06:06",
    "since_at": "2026-10-02 06:06:10"
+  },
+  "pub1002h120": {
+   "batch": "pub1002h120",
+   "code": "H1-20",
+   "title": "",
+   "step": 1,
+   "what": "⚠️ gh workflow run 이 권한 분류기(Production Deploy)에 거부됨 — 게이트(도장·V0·setgate·pubready·원격동기 0) 전부 통과, 결재함 pub-h120-trigger-1002 에 완성 명령으로 올림. 대기",
+   "since": "06:23",
+   "since_at": "2026-10-02 06:23:00"
   }
  },
  "report_log": [
@@ -4462,22 +4483,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-09-18 06:15:46",
-   "bid": "livefix0918g202",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "⏸ 대기 — 출처 정리·approve-g2-02 등록 완료, 이부장 확인 대기(메시지 발송됨)"
-  },
-  {
-   "ts": "2026-09-18 06:19:30",
-   "bid": "solo0918yakgwa",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "📋 복창: 꿀이구마 호박 찹쌀 약과 쓰레드 상품 단독 게시(사장님 승인 05:36) — solo-block으로 본문 확인 후 threadsdraft로 클립보드 적재, 게시 후 URL 기록"
-  },
   {
    "ts": "2026-09-18 06:23:04",
    "bid": "livefix0918g101",
@@ -7045,6 +7050,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dd92WCLEzgc/ (naver-link 가 자동 보고) · 남음: 쓰레드"
+  },
+  {
+   "ts": "2026-10-02 06:23:00",
+   "bid": "pub1002h120",
+   "code": "H1-20",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⚠️ gh workflow run 이 권한 분류기(Production Deploy)에 거부됨 — 게이트(도장·V0·setgate·pubready·원격동기 0) 전부 통과, 결재함 pub-h120-trigger-1002 에 완성 명령으로 올림. 대기"
   }
  ]
 }
