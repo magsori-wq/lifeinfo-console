@@ -14880,7 +14880,7 @@
    "id": "routine1-report-format-0928",
    "added": "2026-09-28",
    "what": "루틴1 보고 형식 개선 확인 — 사장님 지적(자세하지 않고 핵심 전달 미흡). SKILL [출력]에 결론 한 줄→애드센스→새 중요 메일(원문 인용·뜻·할 일)→점검 기록 맨 아래 순서 고정. 오늘 20:00 회차 보고가 이 순서를 따르는지 확인",
-   "due": "2026-09-28",
+   "due": "2026-10-02",
    "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];print([i['note'][:300] for i in b['items'] if i['code'].startswith('daily-email-briefing-0928')][-1])\"",
    "owner": "claude",
    "state": "todo",
@@ -14981,6 +14981,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "routine2"
+  },
+  {
+   "id": "docflow-1001-1240",
+   "added": "2026-10-01",
+   "what": "G3-08(금정산성축제)·H1-19(여우각시별) 선별+verify 완료(둘다🟡 출처URL없음), source 에이전트 2건 보강 중 — 완료되면 지시서 발급 예정",
+   "due": "2026-10-02",
+   "cmd": "python -m studio.now",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
