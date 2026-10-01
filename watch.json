@@ -15183,6 +15183,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "ksf2026-schedule",
+   "added": "2026-10-01",
+   "what": "코리아세일페스타 2026 공식 일정 미확보 — koreasalefesta.kr 접속불가(인증서 mymedios.co.kr로 불일치) · motir.go.kr(구 산업통상자원부, 현재 산업통상부) 보도자료 게시판 ATCL3f49a5a8c에서 코리아세일페스타/세일페스타/페스타/코세페 4종 검색 전부 2024-11이 최신(2025·2026 게시물 0건). 과거 발표시점이 9월말~10월초였으니 아직 미발표일 가능성 있음(추정)",
+   "due": "2026-10-15",
+   "cmd": "curl -sk 'https://www.motir.go.kr/kor/article/ATCL3f49a5a8c?searchCategory=0&searchKeyword=%EC%BD%94%EB%A6%AC%EC%95%84%EC%84%B8%EC%9D%BC%ED%8E%98%EC%8A%A4%ED%83%80' | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
