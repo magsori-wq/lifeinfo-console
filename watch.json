@@ -15152,12 +15152,24 @@
   {
    "id": "xlink-g308",
    "added": "2026-10-01",
-   "what": "🔗 G3-08 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-08",
+   "what": "🔗 G3-08 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-08",
    "due": "2026-10-01",
    "cmd": "python studio/blogger.py crosslink --code G3-08",
    "owner": "claude",
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-01",
+   "result": "G3-08 3채널 완결: 네이버 224428330275·인스타 Dd8SII_kUlz(200, 캡션 742자 정확·CC BY 출처 포함)·쓰레드 Dd8SaEhATfu(200, og:image 1080x1350) · 블로그 crosslink 라이브 확인"
+  },
+  {
+   "id": "g308-photo-credit-link-1001",
+   "added": "2026-10-01",
+   "what": "G3-08 블로그스팟 본문 사진 출처 줄에 원본 링크 추가(CC BY 2.0) — 'Justin Holzworth, CC BY 2.0, Wikimedia Commons' 뒤에 원본 https://commons.wikimedia.org/wiki/File:Geumjeong_Fortress_(4496948156).jpg. 승인하시면 이과장이 fixlink 로 고침",
+   "due": "2026-10-02",
+   "cmd": "python -m studio.blogger fixlink --code G3-08 --from 'Justin Holzworth, CC BY 2.0, Wikimedia Commons' --to 'Justin Holzworth, CC BY 2.0, <a href=\"https://commons.wikimedia.org/wiki/File:Geumjeong_Fortress_(4496948156).jpg\">Wikimedia Commons 원본</a>'",
+   "owner": "user",
    "state": "todo",
-   "by": "naver-link"
+   "by": "이부장"
   }
  ]
 }
