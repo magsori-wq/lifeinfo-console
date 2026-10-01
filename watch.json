@@ -14893,8 +14893,10 @@
    "due": "2026-10-01",
    "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];print([i['note'][:500] for i in b['items'] if i['code'].startswith('lifeinfo-index-check')][-1])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-01",
+   "result": "10-01 확인 — state 전 종류·lastCrawl 분포·주간 글별 변화·adsense status·③ 재측정(43→48, 35일 만)·partial 표시·A1-11 HTTP500 이월 명시. 개정 지침대로 나왔다(커밋 93906a65)"
   },
   {
    "id": "tower-watch-triage-0928",
