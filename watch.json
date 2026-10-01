@@ -15255,6 +15255,18 @@
    "due": "2026-10-01",
    "cmd": "python -m studio.v0check gate --code H1-20",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-01",
+   "result": "V0 통과로 해소 — 검사자 이부장 · 재검사: 디즈니+ 요금을 공식 페이지(disneyplus.com/ko-kr, 2026-10-01)에서 직접 확인·반영(스탠다드 월9,900·프리미엄 월13,900, 이부장이 같은 페이지 curl로 대조). 판단형 비"
+  },
+  {
+   "id": "ott-july-disney-price-1001",
+   "added": "2026-10-01",
+   "what": "자사 'OTT 요금제 비교 2026'(07-03) 디즈니+ '광고형 8천~1만원대' 가 2026-10-01 공식 페이지(스탠다드 9,900·프리미엄 13,900, 광고형 표기 없음)와 다름 — 라이브 보강 필요 여부 판정",
+   "due": "2026-10-03",
+   "cmd": "curl -s -A Mozilla/5.0 https://www.disneyplus.com/ko-kr | grep -o -E '9,900|13,900'",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
