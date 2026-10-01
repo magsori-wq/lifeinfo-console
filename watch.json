@@ -15107,8 +15107,10 @@
    "due": "2026-10-03",
    "cmd": "python -c \"import json;d=json.load(open('webapp/navergate.json',encoding='utf-8'));print(d.get('n'),d.get('checked_at'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-01",
+   "result": "#6 기각 유지(근거 교체·확신도 중간). 커밋 99147ef4+9ed7446b, docs/재판정_소거표6_20261001_4.md. 직접 증거 없음: gCanonical(125편 전부 자기 자신이나 26스냅샷 2,755레코드에서 gC≠uC 0회=echo 구분불가)·Duplicate 버킷 0/315 둘 다 판별 불가. 기각은 간접 증거: 9월 블스 95편 중 Crawled 0(복제 판정 불가), 시험가능 표본(블스 Crawled-미색인 125)에서 네이버 색인 쌍 44 vs 미색 81 유사도 중앙 0.173 vs 0.199 p=0.865. 폐기: 네이버 7월 동시정지 근거·43쌍 상한 0.211(재현 안 됨 0.049~0.742)"
   },
   {
    "id": "naver-post-a3-16-1001",
