@@ -15003,6 +15003,18 @@
    "due": "2026-10-03",
    "cmd": "grep -n 연도 .claude/skills/*travel-prep*/SKILL.md 2>/dev/null; echo '없으면 SKILL.md 0-1절에 추가'",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-01",
+   "result": "cmd 경로가 틀렸음(실제 SKILL.md는 ~/.claude/scheduled-tasks/lifeinfo-travel-prep/SKILL.md, repo 안이 아님) — 바로잡아 재등록"
+  },
+  {
+   "id": "docflow-routine4-year-check-1001b",
+   "added": "2026-10-01",
+   "what": "루틴4 방송·연예 후보 선별 함정(관제탑 판단 필요) — H1-19 source 에이전트 실증: 날짜만 맞고 연도가 틀린 과거 기사(2018년 종영 '여우각시별')를 '2026-10-01 오늘 첫방'으로 오판해 글감 제안. SBS 서버 직접 확인(programs.sbs.co.kr → '프로그램을 찾을 수 없습니다')으로 드랍함(docs/source_H1-19_여우각시별_20261001.md). 루틴4 SKILL 0-1)절에 '날짜박힌 방송소재는 연도까지 1차출처로 확인' 한 줄 추가 검토 — SKILL.md 직접 수정은 관제탑 권한이라 docflow는 제안만",
+   "due": "2026-10-03",
+   "cmd": "grep -n 연도 \"$HOME/.claude/scheduled-tasks/lifeinfo-travel-prep/SKILL.md\"",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }

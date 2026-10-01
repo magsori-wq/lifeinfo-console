@@ -9776,6 +9776,22 @@
    "target": "docflow-1001-1240",
    "detail": "H1-19 는 1차출처로 사실관계 오류 확인(2018년 종영 드라마, 2026년 방영 아님) → drop. G3-08 은 source 에이전트 결과 대기 중, 끝나면 지시서 발급",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-01T13:05:30",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "afflink-20261001-1",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-01T13:05:52",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-routine4-year-check-1001",
+   "detail": "cmd 경로가 틀렸음(실제 SKILL.md는 ~/.claude/scheduled-tasks/lifeinfo-travel-prep/SKILL.md, repo 안이 아님) — 바로잡아 재등록",
+   "via": "cli"
   }
  ]
 }
