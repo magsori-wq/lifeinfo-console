@@ -201,18 +201,28 @@ async function toPng(blob){
     return await new Promise(function(res){ c.toBlob(res, 'image/png'); });
   } finally { URL.revokeObjectURL(url); }
 }
+// 🔴 경로 하나로 이미지를 바로 복사한다 (2026-10-01 — ③대표 이미지·④본문 사진
+//    카드 버튼이 쓴다). copyAll() 의 이미지 분기도 **이 함수를 부른다** —
+//    같은 일(fetch→PNG 변환→클립보드)을 두 곳에서 하면 한 곳이 뒤처진다.
+async function copyImgPath(path){
+  if(RO || !API){
+    toast('읽기 전용입니다 — 이미지는 본 PC 결재 서버에서만 복사됩니다');
+    return;
+  }
+  try {
+    var r = await fetch(API+'/api/file?path='+encodeURIComponent(path));
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    var b = await toPng(await r.blob());
+    await navigator.clipboard.write([new ClipboardItem({'image/png': b})]);
+    toast('✅ 이미지 복사됨 — 네이버 글쓰기에서 Ctrl+V');
+  } catch(e) {
+    toast('🔴 이미지 복사 실패: ' + (e && e.message ? e.message : e));
+  }
+}
 async function copyAll(){
   var im = document.getElementById('vimg');
   if (im && im.style.display !== 'none' && im.getAttribute('src')) {
-    try {
-      var r = await fetch(im.src);
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      var b = await toPng(await r.blob());
-      await navigator.clipboard.write([new ClipboardItem({'image/png': b})]);
-      toast('✅ 이미지 복사됨 — 네이버 글쓰기에서 Ctrl+V');
-    } catch(e) {
-      toast('🔴 이미지 복사 실패: ' + (e && e.message ? e.message : e));
-    }
+    await copyImgPath(im.dataset.relpath || '');
     return;
   }
   if (!RAW) { toast('복사할 텍스트가 없습니다'); return; }
@@ -233,6 +243,7 @@ async function openFile(path, isImg){
   var cb=document.getElementById('cpbtn');
   if(isImg){ RAW=''; t.style.display='none'; im.style.display='block';
     if(cb) cb.textContent='🖼 이미지 복사';
+    im.dataset.relpath=path;   // copyImgPath 가 이 경로로 다시 받아온다
     im.src=API+'/api/file?path='+encodeURIComponent(path); return; }
   if(cb) cb.textContent='📋 전체 복사';
   // 🔴 네이버 원고는 **서식본**으로 붙인다 (2026-09-27 — D5-01·G1-09 가 글자만 들어갔다).
@@ -403,6 +414,34 @@ function fileChip(path, label, isImg, exists){
         +JSON.stringify(f.path).replace(/"/g,'&quot;')+','+(f.img?'true':'false')+')">'
         +(f.img?'🖼 ':'📄 ')+esc(f.label)+'</span>';}).join('');
   }
+  // 🔴 네이버 카드 전용 ②③④ 버튼 (2026-10-01 사장님 지시 — G3-08 에서
+  //    "출처 줄만 있고 사진이 빠짐"·"어디에 넣는지 몰라 세 번 왕복"했다).
+  //    순서대로 누르면 끝나게: ①제목 복사(.hd 쪽에 이미 있다) → ②서식본 열기
+  //    → ③대표 이미지 복사 → ④본문 사진 복사(여러 장이면 번호를 붙인다).
+  //    데이터는 osmu_text.json 의 channels[].thumb·photos·rich_web
+  //    (`studio/osmutext.py`·`studio/naver.py pick_naver_thumb/body_photos` 가 굽는다 —
+  //    여기서 새로 찾지 않는다. 같은 것을 두 곳에서 찾으면 반드시 갈린다).
+  function naverButtons(code, c2){
+    if(!c2) return '';
+    var out=[];
+    if(c2.rich_web){
+      // 🔴 `href="rich_` 리터럴을 직접 쓰지 않는다 — console_check 가 깨진 링크로
+      //    읽는다(2026-09-27 티켓과 같은 함정). 위 richbtn 과 같은 join 트릭을 쓴다.
+      out.push('<a class="f" href="'+esc(['rich',code].join('_')+'.html')
+        +'" target="_blank">② 🎨 서식본 열기 → Ctrl+A → Ctrl+C</a>');
+    }
+    if(c2.thumb && c2.thumb.exists){
+      out.push('<span class="f img" onclick="event.stopPropagation();copyImgPath('
+        +JSON.stringify(c2.thumb.path).replace(/"/g,'&quot;')+')">③ 🖼 대표 이미지 복사</span>');
+    }
+    var photos=(c2.photos||[]).filter(function(ph){return ph.exists;});
+    photos.forEach(function(ph,i){
+      out.push('<span class="f img" onclick="event.stopPropagation();copyImgPath('
+        +JSON.stringify(ph.path).replace(/"/g,'&quot;')+')">④'
+        +(photos.length>1?('-'+(i+1)):'')+' 🖼 본문 사진 복사</span>');
+    });
+    return out.join('');
+  }
   // 🔴🔴 **접은 것이 또 펼쳐지던 버그** (2026-09-24 사장님: *"이건 내가 접어도 자동으로
   //    또 펼쳐지내!"*). 원인은 `<details open>` 이 **하드코딩**돼 있고 이 화면이
   //    주기(15초)마다 `box.innerHTML` 을 통째로 교체하는 것이었다 — 사장님이 접으면
@@ -551,6 +590,13 @@ function fileChip(path, label, isImg, exists){
       //    이 화면이 사장님이 실제로 보시는 자리인데 ①② 표시가 없었다.
       //    순서는 osmu_text.json 이 정한다 — 두 곳에서 세면 값이 갈린다.
       var first = (_i === 0);
+      // 🔴 osmu_text.json 매칭을 **한 번만** 한다 — 제목(ct)·②③④ 버튼이 둘 다 쓴다
+      //    (2026-10-01). 따로 찾으면 둘이 갈릴 수 있다.
+      var _c2=null;
+      try{ var T=window.__OSMUTEXT__;
+        ((T&&T.items)||[]).forEach(function(t){ if(t.code!==p.code)return;
+          (t.channels||[]).forEach(function(cc){ if(cc.key===key) _c2=cc; }); });
+      }catch(e){}
       return '<div class="card l-'+c.light+'"'+(first?'':' style="opacity:.5"')+'>'
         +'<div class="hd">'
         +'<span class="lt lt-'+c.light+'"></span>'
@@ -561,22 +607,22 @@ function fileChip(path, label, isImg, exists){
         //    실측 E2-14: 카드 "속았다면 신고하세요 — 다크패턴 규제 6대 유형" vs
         //    네이버 원고 "신고해도 소용없다? 아닙니다 — … 최대 1,000만원 과태료".
         //    ch_title 은 osmutext 가 **원고 첫 줄**에서 뽑는다 — 없으면 DB 제목.
-        +(function(){var T=window.__OSMUTEXT__,ct='';
-          try{((T&&T.items)||[]).forEach(function(t){ if(t.code!==p.code)return;
-            (t.channels||[]).forEach(function(c2){ if(c2.key===key&&c2.ch_title) ct=c2.ch_title; });
-          });}catch(e){}
+        +(function(){var ct=(_c2&&_c2.ch_title)||'';
           // 🔴 제목 복사 버튼 — 한 줄·공백 한 칸으로 정리해 복사한다 (2026-09-27).
           //    네이버 제목에 공백이 몰린 채 게시된 것이 네 번이었다(D5-01·G1-09·A2-21·H1-17).
           //    카드 제목은 44자에서 잘려 복사해 쓸 수도 없었다.
+          //    🔢 네이버 카드에서 ①~④ 순서로 누르시면 끝난다(2026-10-01) —
+          //       ①제목 복사(여기) → ②서식본 열기 → ③대표 이미지 복사 → ④본문 사진 복사.
           var full=String(ct||p.title||'').replace(/\s+/g,' ').trim();
           return '<span class="ttl">'+esc(full.slice(0,44))
             +(ct?' <b style="color:#7fc1ff">'+(key==='naver'?'네이버 제목':'채널 제목')+'</b>':'')
             +'</span>'
-            +(key==='naver'?' <button class="btn" data-t="'+esc(full)+'" onclick="event.stopPropagation();cpCopy(this.getAttribute(\'data-t\'),function(){toast(\'✅ 제목 복사됨(한 줄)\');},function(){toast(\'🔴 복사 실패\');})">📋 제목 복사</button>':'');})()
+            +(key==='naver'?' <button class="btn" data-t="'+esc(full)+'" onclick="event.stopPropagation();cpCopy(this.getAttribute(\'data-t\'),function(){toast(\'✅ 제목 복사됨(한 줄)\');},function(){toast(\'🔴 복사 실패\');})">① 📋 제목 복사</button>':'');})()
         +'<span class="code">'+esc(p.code)+'</span>'
         +'<span class="badge '+(c.light==='ready'?'b-wait':'b-todo')+'">'
         +(c.light==='ready'?'🟡 게시만 하면 됨':'🔴 자산 미준비')+'</span></div>'
-        +'<div class="files">'+(c.files&&c.files.length? chips(c.files)
+        +'<div class="files">'+naverButtons(p.code,_c2)
+        +(c.files&&c.files.length? chips(c.files)
           : '<span class="f miss">✕ 매니페스트 미등록 — osmu_manifest set --code '+esc(p.code)+'</span>')
         +'</div></div>';}).join('') : '<p class="none">✅ 전부 확산됨.</p>';
     H+=pane(x[1],x[2]+' 미확산',rows.length+'건',body);

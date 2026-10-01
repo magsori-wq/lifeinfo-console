@@ -15173,6 +15173,16 @@
    "kind": "approve",
    "done_at": "2026-10-01",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "naver-photo-box-cp-1001",
+   "added": "2026-10-01",
+   "what": "네이버 서식본 사진자리 박스(build_rich)·CP 카드 ②③④ 버튼(서식본열기·대표이미지복사·본문사진복사) 신설 — G3-08 은 이미 완결이라 실카드로는 미검증, 다음 네이버 미확산 글에서 실제 노출·클릭 확인 필요",
+   "due": "2026-10-08",
+   "cmd": "python -m studio.osmutext --show 로 photos/thumb/rich_web 필드 확인 후 http://localhost:8000/pending_osmu.html 네이버 패널에서 ②③④ 버튼이 보이는지 육안 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
