@@ -15017,6 +15017,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "g3-08-transport-recheck",
+   "added": "2026-10-01",
+   "what": "G3-08 2026금정산성축제: 교통통제/주차/셔틀/입장료 확인못함(2026-10-01 기준). 경로: geumjeong.go.kr 보도자료 BBS_0000005 1,2,4,6,7,8,9페이지(약100건) 전수열람·gjfac.org 공지사항(midx=347) 1p 5건 열람(날짜·장소만 확인, 운영정보 없음)·busan.go.kr eng/bsevents 2건+yesan 1건(전부 무관/타연도)·visitkorea 접근실패·WebSearch 10여회(전부 TourAPI계열 애그리게이터 재탕, 2차출처뿐)·HWP 첨부 2건(dataSid 982007,982430) SynapViewer 캔버스뷰어라 curl로 텍스트추출 불가(브라우저 확장 미연결). 10/16 임박 전 교통/주차/셔틀 공지가 별도 게시될 가능성 높음",
+   "due": "2026-10-09",
+   "cmd": "curl -s -A 'Mozilla/5.0' 'https://www.geumjeong.go.kr/board/list.geumj?boardId=BBS_0000005&menuCd=DOM_000000124002002000' | grep -oE '[^>]*(교통|주차|셔틀)[^<]*' ; curl -s -A 'Mozilla/5.0' 'https://www.gjfac.org/gjfac/template.php?midx=347&page=1&mode=list'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
