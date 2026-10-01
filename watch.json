@@ -14949,6 +14949,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "루틴5"
+  },
+  {
+   "id": "b217-source-recheck-1001",
+   "added": "2026-10-01",
+   "what": "B2-17(K-민생지킴대출) 1차출처 미확보 — fsc.go.kr/moef.go.kr/kinfa.or.kr WebFetch 전부 막힘(SPA·본문0자·301). claude-in-chrome 연결된 세션에서 화면 검색폼으로 재시도 필요. 날짜전제도 틀렸음(실제 09-01 의결, 09-28 B2-16과 동일유형 날짜오류)",
+   "due": "2026-10-05",
+   "cmd": "python -m studio.topicprop list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "routine2"
+  },
+  {
+   "id": "a316-gukhoe-confirm-check",
+   "added": "2026-10-01",
+   "what": "A3-16 2027 기초연금 개편(정부안) — 국회 심의·확정 여부 재확인. 발행되면 본문 '국무회의 의결(정부안)' 표기를 '국회 확정' 결과로 갱신 필요",
+   "due": "2026-12-15",
+   "cmd": "python -m studio.pending",
+   "owner": "claude",
+   "state": "todo",
+   "by": "routine2"
+  },
+  {
+   "id": "docflow-1001-1225",
+   "added": "2026-10-01",
+   "what": "루틴2 제안 2건 처리: A3-16 pick(1차출처 확보·지시서 a316draft1001 등록, ④초안 대기) · B2-17 drop(1차출처 미확보). 남은 것: 이과장이 초안 쓰면 ⑤V0검사 필요(아직 초안 없음)",
+   "due": "2026-10-02",
+   "cmd": "python -m studio.now",
+   "owner": "claude",
+   "state": "todo",
+   "by": "routine2"
   }
  ]
 }
