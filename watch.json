@@ -14939,8 +14939,10 @@
    "cmd": "python -m studio.tosslink link 2281613317",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-01",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "g1-03-fix-1001",
@@ -14993,6 +14995,16 @@
    "by": "이부장",
    "done_at": "2026-10-01",
    "result": "H1-19 는 1차출처로 사실관계 오류 확인(2018년 종영 드라마, 2026년 방영 아님) → drop. G3-08 은 source 에이전트 결과 대기 중, 끝나면 지시서 발급"
+  },
+  {
+   "id": "docflow-routine4-year-check-1001",
+   "added": "2026-10-01",
+   "what": "루틴4 방송·연예 후보 선별 함정 — 날짜만 맞고 연도가 틀린 과거 기사를 '오늘 첫방'으로 오판할 수 있음(H1-19 실증: 2018년 종영 '여우각시별'을 2026-10-01 첫방으로 제안). 루틴4 SKILL 에 '날짜박힌 방송 소재는 연도까지 1차출처로 확인' 한 줄 추가 검토",
+   "due": "2026-10-03",
+   "cmd": "grep -n 연도 .claude/skills/*travel-prep*/SKILL.md 2>/dev/null; echo '없으면 SKILL.md 0-1절에 추가'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
