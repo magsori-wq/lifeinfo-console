@@ -14916,8 +14916,10 @@
    "cmd": "https://github.com/settings/installations/108936792/permissions/update 열어 요청 권한 확인 후 수락 또는 무시",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:f28fc0c1"
+   "state": "done",
+   "by": "세션:f28fc0c1",
+   "done_at": "2026-10-01",
+   "result": "10-01 사장님 화면 확인 — 요청: 읽기전용 3(Administration·Merge queues·Commit statuses) + Actions read→read&write. 이부장 권고 보류(Actions 쓰기=publish.yml 실행 가능, 발행 경로 밖 트리거 생김·개발자 노트엔 설명 없음). 미수락 시 기존 권한 유지라 손실 없음"
   },
   {
    "id": "holiday1002-check",
@@ -15024,6 +15026,16 @@
    "what": "G3-08 2026금정산성축제: 교통통제/주차/셔틀/입장료 확인못함(2026-10-01 기준). 경로: geumjeong.go.kr 보도자료 BBS_0000005 1,2,4,6,7,8,9페이지(약100건) 전수열람·gjfac.org 공지사항(midx=347) 1p 5건 열람(날짜·장소만 확인, 운영정보 없음)·busan.go.kr eng/bsevents 2건+yesan 1건(전부 무관/타연도)·visitkorea 접근실패·WebSearch 10여회(전부 TourAPI계열 애그리게이터 재탕, 2차출처뿐)·HWP 첨부 2건(dataSid 982007,982430) SynapViewer 캔버스뷰어라 curl로 텍스트추출 불가(브라우저 확장 미연결). 10/16 임박 전 교통/주차/셔틀 공지가 별도 게시될 가능성 높음",
    "due": "2026-10-09",
    "cmd": "curl -s -A 'Mozilla/5.0' 'https://www.geumjeong.go.kr/board/list.geumj?boardId=BBS_0000005&menuCd=DOM_000000124002002000' | grep -oE '[^>]*(교통|주차|셔틀)[^<]*' ; curl -s -A 'Mozilla/5.0' 'https://www.gjfac.org/gjfac/template.php?midx=347&page=1&mode=list'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "g3-08-coursedetail-20261001",
+   "added": "2026-10-01",
+   "what": "G3-08 트레일워크 코스 거리·소요시간·출발시각·집결장소 미확인 — gjfac.org 본문엔 A/B코스 구간(출발지→도착지)만 있고 숫자 없음. 네이버 신청폼(form.naver.com/response/H6JnaO7fnPf)에 있을 수 있으나 WebFetch가 form.naver.com 차단(Claude Code is unable to fetch)",
+   "due": "2026-10-09",
+   "cmd": "claude-in-chrome으로 https://form.naver.com/response/H6JnaO7fnPf 를 직접 열어 확인하거나, 전화 010-2864-2405 / 010-6351-4769 로 문의",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
