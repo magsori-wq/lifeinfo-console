@@ -15019,8 +15019,10 @@
    "due": "2026-10-03",
    "cmd": "grep -n 연도 \"$HOME/.claude/scheduled-tasks/lifeinfo-travel-prep/SKILL.md\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-01",
+   "result": "루틴4 SKILL 0-1 절에 '날짜 소재는 연도까지 1차출처 확인' 추가(백업 restore/lifeinfo-travel-prep_SKILL_20261001_*)"
   },
   {
    "id": "g3-08-transport-recheck",
@@ -15055,14 +15057,16 @@
   {
    "id": "approve-g1-03",
    "added": "2026-10-01",
-   "what": "🙋[이부장 확인 대기] G1-03(부산진구 출산지원) 라이브 사실오류 2건 수정 — ①가족지원과 전화 051-605-4365→4366 (4곳, 근거 busanjin.go.kr 갱신 2026-09-23) ②아동수당 표 '만 8세 미만'→'만 9세 미만' (1곳, 근거 아동수당법 부칙 제21489호 제2조①1호 '2026년: 9세'·복지부 보도자료 2026-04-23). 치환 5건 외 본문 변경 없음(7841자→7841자, dry-run 확인). 【권고】승인 — 독자가 잘못된 번호로 전화하게 되는 오류. 【근거】docs/source_G1-03_G2-01_출산지원_20261001.md · docs/source_A2-21_아동수당확대_20260925.md 【위험】낮음(정확 문자열 치환·원복 가능)",
+   "what": "🙋 G1-03(부산진구 출산지원) 라이브 사실오류 2건 수정 — ①가족지원과 전화 051-605-4365→4366 (4곳, 근거 busanjin.go.kr 갱신 2026-09-23) ②아동수당 표 '만 8세 미만'→'만 9세 미만' (1곳, 근거 아동수당법 부칙 제21489호 제2조①1호 '2026년: 9세'·복지부 보도자료 2026-04-23). 치환 5건 외 본문 변경 없음(7841자→7841자, dry-run 확인). 【권고】승인 — 독자가 잘못된 번호로 전화하게 되는 오류. 【근거】docs/source_G1-03_G2-01_출산지원_20261001.md · docs/source_A2-21_아동수당확대_20260925.md 【위험】낮음(정확 문자열 치환·원복 가능)",
    "due": "2026-10-01",
    "cmd": "",
-   "owner": "claude",
+   "owner": "user",
    "kind": "approve",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-10-01",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "docflow-1001-1330",
@@ -15072,6 +15076,16 @@
    "cmd": "python -m studio.batchboard order --id draft1001g308",
    "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "community-escalation-reply-1004",
+   "added": "2026-10-01",
+   "what": "구글 검색센터 커뮤니티 후속답글(10-01) 답변 확인 — PE·구글 담당자 답이 달렸나, 에스컬레이션 됐나",
+   "due": "2026-10-04",
+   "cmd": "python studio/gmailread.py scan --body --days 4",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
