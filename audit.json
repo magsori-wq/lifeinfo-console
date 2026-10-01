@@ -9728,6 +9728,22 @@
    "target": "approve-yml-gitignore-glob-0924",
    "detail": "09-28 이부장 수리 — creatoradvisor it['catName']→it.get (bake 정상 완료) / approve.yml:218 git add -- 'webapp/*.json' (dry-run exit 0)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-01T12:19:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "holiday1002-check",
+   "detail": "10/2 임시공휴일 미지정·검토 중이라는 공식 입장도 없음(인사혁신처 관계자 직접 인용·korea.kr 제42회 국무회의 원문 전수확인). 실제 논의는 9/28이었고 그마저 불발. 글감 불채택.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-01T12:20:42",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "B2-17",
+   "detail": "1차출처 미확보 — fsc.go.kr/moef.go.kr/kinfa.or.kr 모두 WebFetch 시도(본문 0자·SPA·301리다이렉트), claude-in-chrome 미연결로 화면검색 불가. 2차출처(fnnews·SBS) 대조 결과 'K-민생지킴대출'은 한 기사에서 '가칭'으로 표기, 신청방법·출시일·운영기관 전부 미공개. 게다가 '오늘(10-01) 국무회의 발표' 전제 자체가 틀림 — 실제 의결일은 2026-09-01(한달 전), B2-16과 동일유형 날짜오류. '신청방법 총정리' 글을 쓸 단계가 아님",
+   "via": "cli"
   }
  ]
 }

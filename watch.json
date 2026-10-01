@@ -14169,8 +14169,10 @@
    "cmd": "python -c \"from studio import searchconsole as s;svc=s._svc();[print(svc.urlInspection().index().inspect(body={'inspectionUrl':u,'siteUrl':s.SITE_URL}).execute()['inspectionResult']['indexStatusResult'].get('coverageState'),str(svc.urlInspection().index().inspect(body={'inspectionUrl':u,'siteUrl':s.SITE_URL}).execute()['inspectionResult']['indexStatusResult'].get('lastCrawlTime'))[:10],u) for u in ['https://lifeinfo8975.blogspot.com/','https://lifeinfo8975.blogspot.com/p/blog-page_17.html','https://lifeinfo8975.blogspot.com/p/blog-page.html','https://lifeinfo8975.blogspot.com/p/blog-page_20.html','https://lifeinfo8975.blogspot.com/p/blog-page_15.html','https://lifeinfo8975.blogspot.com/p/blog-page_16.html']]\"",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "4.세션"
+   "state": "done",
+   "by": "4.세션",
+   "done_at": "2026-10-01",
+   "result": "10-01 루틴7 실측(URL Inspection API 6건): 홈 07-05·소개 07-14·개인정보 07-21·문의 07-06·카테고리 07-14 전부 Crawled-not-indexed·크롤일 09-27과 동일=요청(09-24) 7일 뒤에도 재크롤 안 옴 · 통합검색 blog-page_16 Redirect error crawl 09-24 그대로. 색인 0/6. 후속=gsc-home-static-recheck-1009"
   },
   {
    "id": "redirect-sample-blogpage16-0927",
@@ -14926,6 +14928,17 @@
    "by": "루틴6",
    "done_at": "2026-10-01",
    "result": "10/2 임시공휴일 미지정·검토 중이라는 공식 입장도 없음(인사혁신처 관계자 직접 인용·korea.kr 제42회 국무회의 원문 전수확인). 실제 논의는 9/28이었고 그마저 불발. 글감 불채택."
+  },
+  {
+   "id": "afflink-20261001-1",
+   "added": "2026-10-01",
+   "what": "🛒 제휴 링크 발급 요청 — 20261001-1. 상품: 폰박스 무선 핸디 침구 청소기, BS-801, 퍼플, 1개 (19,790원 · 리뷰 1,114 · 평점 4.4). 관련성: 10월 환절기 이불 교체철 — 꺼낸 가을·겨울 침구 진드기·먼지 관리 수요(리뷰 1,114·평점 4.4). 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-10-01",
+   "cmd": "python -m studio.tosslink link 2281613317",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
