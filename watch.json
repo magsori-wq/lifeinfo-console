@@ -15039,6 +15039,28 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "g3-08-hwp-attachments-20261001",
+   "added": "2026-10-01",
+   "what": "G3-08 HWP 첨부 2건(B-1 트레일워크 보도자료 1194KB, B-2 포스터공개 보도자료) 전문 미확인. 다운로드 직링크는 확보했으나 다운로드는 사장님 채팅 승인이 필요해 보류(서브에이전트는 승인 창구 없음). 바로보기(SynapViewer)는 승인 없이 curl로 열어봤지만 JS 캔버스 렌더링이라 텍스트 추출 불가",
+   "due": "2026-10-05",
+   "cmd": "claude-in-chrome 연결된 세션에서 B-1·B-2 게시물 페이지를 열고 바로보기 뷰어를 스크린샷으로 확인(승인 불요). 또는 사장님께 다운로드 승인을 여쭌 뒤 curl -o b1.hwp 'https://www.geumjeong.go.kr/board/download.geumj?boardId=BBS_0000005&menuCd=DOM_000000124002002000&paging=ok&startPage=1&dataSid=982430&command=update&fileSid=352394' 로 받아 첫바이트 판별(PK=hwpx zip, D0CF=HWP5) 후 파싱",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "approve-g1-03",
+   "added": "2026-10-01",
+   "what": "🙋[이부장 확인 대기] G1-03(부산진구 출산지원) 라이브 사실오류 2건 수정 — ①가족지원과 전화 051-605-4365→4366 (4곳, 근거 busanjin.go.kr 갱신 2026-09-23) ②아동수당 표 '만 8세 미만'→'만 9세 미만' (1곳, 근거 아동수당법 부칙 제21489호 제2조①1호 '2026년: 9세'·복지부 보도자료 2026-04-23). 치환 5건 외 본문 변경 없음(7841자→7841자, dry-run 확인). 【권고】승인 — 독자가 잘못된 번호로 전화하게 되는 오류. 【근거】docs/source_G1-03_G2-01_출산지원_20261001.md · docs/source_A2-21_아동수당확대_20260925.md 【위험】낮음(정확 문자열 치환·원복 가능)",
+   "due": "2026-10-01",
+   "cmd": "",
+   "owner": "claude",
+   "kind": "approve",
+   "state": "wait",
+   "by": "이과장",
+   "req_by": "이과장"
   }
  ]
 }
