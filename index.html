@@ -407,27 +407,27 @@
       </div>
     </div>
 
-    <iframe id="f_search" src="search.html"></iframe>
-    <iframe id="f_categories" src="categories.html"></iframe>
-    <iframe id="f_generator" src="generator.html"></iframe>
-    <iframe id="f_osmu" src="osmu.html"></iframe>
-    <iframe id="f_jisikin" src="jisikin.html"></iframe>
-    <iframe id="f_naverstats" src="naverstats.html"></iframe>
-    <iframe id="f_dashboard" src="dashboard.html"></iframe>
-    <iframe id="f_ctrl" src="monitor.html"></iframe>
-    <iframe id="f_progress" src="progress.html"></iframe>
-    <iframe id="f_batch" src="batch.html"></iframe>
-    <iframe id="f_approval" src="approval.html"></iframe>
-    <iframe id="f_temp" src="temp.html"></iframe>
-    <iframe id="f_pendosmu" src="pending_osmu.html"></iframe>
-    <iframe id="f_orders" src="orders.html"></iframe>
-    <iframe id="f_reports" src="reports.html"></iframe>
-    <iframe id="f_incidents" src="incidents.html"></iframe>
-    <iframe id="f_opsguide" src="opsguide.html"></iframe>
-    <iframe id="f_idxboard" src="index_board.html"></iframe>
-    <iframe id="f_gsc" src="gsc.html"></iframe>
-    <iframe id="f_seo" src="seo.html"></iframe>
-    <iframe id="f_adsense" src="adsense.html"></iframe>
+    <iframe id="f_search" data-src="search.html"></iframe>
+    <iframe id="f_categories" data-src="categories.html"></iframe>
+    <iframe id="f_generator" data-src="generator.html"></iframe>
+    <iframe id="f_osmu" data-src="osmu.html"></iframe>
+    <iframe id="f_jisikin" data-src="jisikin.html"></iframe>
+    <iframe id="f_naverstats" data-src="naverstats.html"></iframe>
+    <iframe id="f_dashboard" data-src="dashboard.html"></iframe>
+    <iframe id="f_ctrl" data-src="monitor.html"></iframe>
+    <iframe id="f_progress" data-src="progress.html"></iframe>
+    <iframe id="f_batch" data-src="batch.html"></iframe>
+    <iframe id="f_approval" data-src="approval.html"></iframe>
+    <iframe id="f_temp" data-src="temp.html"></iframe>
+    <iframe id="f_pendosmu" data-src="pending_osmu.html"></iframe>
+    <iframe id="f_orders" data-src="orders.html"></iframe>
+    <iframe id="f_reports" data-src="reports.html"></iframe>
+    <iframe id="f_incidents" data-src="incidents.html"></iframe>
+    <iframe id="f_opsguide" data-src="opsguide.html"></iframe>
+    <iframe id="f_idxboard" data-src="index_board.html"></iframe>
+    <iframe id="f_gsc" data-src="gsc.html"></iframe>
+    <iframe id="f_seo" data-src="seo.html"></iframe>
+    <iframe id="f_adsense" data-src="adsense.html"></iframe>
   </div>
 
   <div class="copied" id="copied">복사됨! Claude에 붙여넣기 하세요</div>
@@ -435,6 +435,8 @@
 <script src="cp_clip.js"></script>
 <script>
   var nav=document.getElementById('nav');
+  /* v2(2026-10-02): batch.json(1.2MB)이 첫 화면에서 2번 내려받아지던 것을 1번으로 — 같은 요청을 공유 */
+  (function(){var of=window.fetch,P=null;window.fetch=function(u){if(typeof u==='string'&&u.indexOf('batch.json')===0){if(!P)P=of.apply(window,arguments);return P.then(function(r){return r.clone();});}return of.apply(window,arguments);};})();
   var iframes=['ctrl','search','categories','generator','osmu','jisikin','naverstats','dashboard','progress','batch','approval','temp','pendosmu','orders','reports','idxboard','gsc','seo','adsense','incidents','opsguide'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
@@ -452,7 +454,7 @@
     var f=document.getElementById('f_'+n); if(!f) return;
     var now=Date.now();
     if(_fload[n] && now-_fload[n] < 60000) return;
-    if(!f.dataset.base) f.dataset.base=String(f.getAttribute('src')||'').split('?')[0];
+    if(!f.dataset.base) f.dataset.base=String(f.getAttribute('src')||f.getAttribute('data-src')||'').split('?')[0];
     if(!f.dataset.base) return;
     f.src=f.dataset.base+'?t='+now;
     _fload[n]=now;

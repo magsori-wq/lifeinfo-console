@@ -15273,7 +15273,7 @@
   {
    "id": "gsc-req-remaining-1002",
    "added": "2026-10-01",
-   "what": "색인 생성 요청 남은 7편(D3-07·E1-05·A4-07·A3-16·G3-08·D2-14·G1-10). 10-01 에 41편, 10-02 오전(KST 06시)에 G3-07·H1-18 2편 성공 후 D3-07 에서 「오류 발생」(테스트 통과 뒤 요청 제출 단계 실패). 🔴 추정(미검증): 일일 한도가 미국 서부 시각 자정(=KST 16:00)에 리셋 — 어제 요청이 KST 14:07~22:50 이라 그 경계를 가로질렀다. 검증 = KST 16:00 이후 D3-07 한 건 시험. 되면 이어서, 같은 오류면 멈추고 보고(연타 금지 — 어제 4·8·10분 쉼은 효과가 일정하지 않았다). 방법=Chrome 확장 새 탭→GSC 검사화면(검색 아이콘은 대화상자 닫은 직후 첫 클릭이 삼켜지니 열렸는지 확인)→URL→「색인 생성 요청」·건마다 확인창 본 뒤 gsc_log add",
+   "what": "🔴 남은 것 D3-07 1편뿐(49/50 요청 완료). D3-07(…/2026/09/39-2026-10.html)은 「오류 발생」이 KST 06:30·16:15·16:45 세 번 났는데 같은 시각 E1-05·A4-07·A3-16·G3-08·D2-14·G1-10 은 모두 「색인 생성 요청됨」 → 한도가 아니라 이 URL 만의 문제로 보임(추정, 원인 미확인). 연타 금지 — 다음에 볼 때 한 번만 시험, 되면 gsc_log add D3-07, 안 되면 닫는다. 방법=Chrome 확장 새 탭→GSC 검사화면(검색 아이콘 첫 클릭이 삼켜지니 열렸는지 확인)→URL→「색인 생성 요청」·확인창 본 뒤 gsc_log add",
    "due": "2026-10-02",
    "cmd": "python -c \"import json,io,sys;sys.path.insert(0,'.');from studio import idxstate as X;L=lambda n:json.load(io.open('webapp/'+n,encoding='utf-8'));db=L('lifeinfo_db.txt');r=L('index_status.json')['posts'];r=r if isinstance(r,dict) else {p['code']:p for p in r};q=set(L('gsc_requested.json')['urls']);t=[p['code'] for p in db['posts'] if isinstance(p,dict) and not X.is_indexed(r.get(p['code'],{}).get('state')) and not X.is_benign(r.get(p['code'],{})) and p.get('url') not in q];print('미요청',len(t),t)\"",
    "owner": "claude",
@@ -15427,6 +15427,16 @@
    "by": "이부장",
    "done_at": "2026-10-02",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aff-gap-plan-1002",
+   "added": "2026-10-02",
+   "what": "네이버 제휴 미부착 6편(F1-08 F2-08 F2-10 F2-11 F4-09 F4-14)·조사 안 된 F·G 56편 정리 방안을 사장님께 보고",
+   "due": "2026-10-02",
+   "cmd": "python -m studio.affgap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
