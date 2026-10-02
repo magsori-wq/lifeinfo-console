@@ -15465,9 +15465,9 @@
   {
    "id": "d504-retrigger-1002",
    "added": "2026-10-02",
-   "what": "D5-04(코레일 예매 2개월 확대) 발행이 7시간째 멈춤 — 막던 원인은 이미 해소됐고 재트리거만 남았다. 【실패 사유 직접 확인】run 36964729768(10-02 13:28:49 KST) 사전점검 '썸네일 파일 없음 → thumbs/302_korailplus.png'. 그 시점 커밋(07ff0322)에 그 파일이 없었다(git cat-file 로 부재 확인) — 러너는 origin/main 을 읽으므로 로컬에만 있으면 없는 것과 같다. 이부장이 13:33:08 f7e44599 로 보완. 【지금 전부 통과】pubready --code D5-04 exit 0(승인도장·V0·초안 원격일치·진행중run 없음) · github.io 썸네일 200 · 큐 1편 대기. 【주의 — 재시도 성공으로 읽지 말 것】8초 뒤 성공한 run 36964739262 는 같은 글이 아니라 B5-05(청년미래적금)다. D5-04 는 라이브 피드·DB 둘 다 없다. 【남은 걸림돌】이과장이 12:55 '발행 트리거 권한 거부'를 배치보드에만 보고하고 결재함 에스컬레이션은 안 했다 — 권한 거부가 지금도 재현되면 사장님 손이 필요하다(CLAUDE.md ⏸ 절). 트리거 명령: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D5-04 -f mode=live -f confirm=PUBLISH -f file='코레일승차권예매2개월확대_글_HTML.txt' -f title='D5-04 코레일 승차권 예매, 10월 1일부터 2개월 전 가능' -f post_title='코레일 승차권 예매, 10월 1일부터 2개월 전 가능 — 달라진 것 총정리'",
+   "what": "D5-04(코레일 예매 2개월 확대) 발행 7시간째 멈춤 — 막던 원인은 해소, 재트리거만 남았다. 【누구 일인가 — 정정】roles 표 확인 결과 '라이브 발행 트리거'는 이과장 ✅ 다. 이과장이 12:55 에 '권한 분류기(Production Deploy) 거부 … 이부장/사장님 실행 대기'로 보고했지만, 루틴1 이 결재함에 올리려 하자 게이트가 '라이브 발행 트리거는 이과장 일'이라며 2회 거부했다(--force 쓰지 않음). 즉 사장님 결재 대기 항목이 아니다. 【실패 사유 직접 확인】run 36964729768(13:28:49) 사전점검 '썸네일 파일 없음 → thumbs/302_korailplus.png'. 그 시점 sha 07ff0322 에 파일 부재를 git cat-file 로 확인 — origin/main 동기화 누락. 이부장 13:33:08 f7e44599 로 보완. ⚠️8초 뒤 성공 run 36964739262 는 다른 글(청년미래적금)이다 — '재시도 성공=조치 불요'로 읽지 말 것. 라이브 피드·DB 둘 다 D5-04 없음. 【지금 전부 통과】pubready exit 0 · github.io 썸네일 200 · 큐 1편. 【조치: 지시서 등록 완료】pub1002d504 를 20:39 에 갱신했다(루틴 지시서 발급권 2026-09-20). 🔴 남은 문제 = 전달. SendMessage → 이과장 이 'No agent named 이과장 is reachable' 로 실패했고 등록부 주소가 09-27 자로 124시간 낡았다(이과장은 오늘 12:54·20:0x 커밋으로 활동 중 = 주소만 낡음). 이부장도 32시간째 조용. ⛔ 비슷한 이름에 뿌리지 않았다(2026-09-09). → 이부장이 깨우거나 이과장이 다음 폴링에서 읽으면 된다. 등록부 갱신도 필요(whoami).",
    "due": "2026-10-02",
-   "cmd": "python -m studio.pubready --code D5-04",
+   "cmd": "python -m studio.pubready --code D5-04 && python -c \"from studio import sessionstate as s; print(s.read_info('pub1002d504'))\"",
    "owner": "claude",
    "kind": "action",
    "state": "todo",
