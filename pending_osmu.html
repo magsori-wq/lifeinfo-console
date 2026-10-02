@@ -425,7 +425,7 @@ function fileChip(path, label, isImg, exists){
     if(!c2) return '';
     var out=[];
     if(c2.rich_web){
-      // 🔴 `href="rich_` 리터럴을 직접 쓰지 않는다 — console_check 가 깨진 링크로
+      // 🔴 서식본 링크 주소를 문자열 그대로 쓰지 않는다 — console_check 가 깨진 링크로
       //    읽는다(2026-09-27 티켓과 같은 함정). 위 richbtn 과 같은 join 트릭을 쓴다.
       out.push('<a class="f" href="'+esc(['rich',code].join('_')+'.html')
         +'" target="_blank">② 🎨 서식본 열기 → Ctrl+A → Ctrl+C</a>');

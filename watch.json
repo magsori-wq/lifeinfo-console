@@ -15376,6 +15376,18 @@
    "cmd": "python -m studio.tosslink link 2578376693",
    "owner": "user",
    "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-02",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "console-check-strip-comments-1002",
+   "added": "2026-10-02",
+   "what": "console_check 가 JS·HTML 주석을 걷어내지 않아 같은 오탐이 4번 재발 — 체커가 주석을 제거하도록 구조적 수정(배포 저장소 tools/console_check.py, deploy.bat 관리 영역이라 방법부터 정할 것)",
+   "due": "2026-10-05",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow=console-check.yml -L 3",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
