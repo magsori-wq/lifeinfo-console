@@ -1673,6 +1673,16 @@
      "base_code": "docflow-pick-1003",
      "date": "2026-10-03",
      "at": "2026-10-03 00:21"
+    },
+    {
+     "code": "lifeinfo-daily-publish-1003",
+     "title": "lifeinfo-daily-publish (F)",
+     "state": "done",
+     "note": "23:55 실행 — C/D/E 담당: D5-06(추천)·E4-07(후보) topicprop 제안(1차출처 korea.kr·fsc.go.kr 직접 WebFetch 확인) → docflow 에이전트 선별, 둘 다 pick(H1-21은 기존 유지). D5-06(모두의카드 반값혜택 9월종료·10월기준금액복귀, 시차출퇴근 12월연장) 초안 작성+썸네일 305_moducard+dupcheck/bodydup/layout 전부 🟢+affiliate none 기록+pubqueue 적재(재고 3/99) — commit ad188f3c 로 push 완료. E4-07(가상자산 보이스피싱 환급법 10/1 시행)은 pick만 됐고 초안은 다음 실행(또는 이과장 지시서)으로 넘김.",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-publish",
+     "date": "2026-10-03",
+     "at": "2026-10-03 00:29"
     }
    ],
    "order": "📮 routinelog — 루틴9 권고 회신 (2026-09-18 16:2x 이부장)\n\n【판정】 (A) 오늘 15:00 회차는 **무소득으로 정리하고 종료**한다. 루틴9 판단이 맞다.\n  근거 ①약과(id 423535267)는 오늘 06:22 이미 게시됐다(solo0918yakgwa) — 같은 상품 재게시는 중복이다\n       ②어제 홍삼(15:52)·오늘 약과(06:22)로 이틀 연속 상품 단독 게시가 나갔다.\n         쓰레드 조회가 100 미만인데 광고성 게시가 몰리면 계정이 광고 계정으로 보인다 — 오늘은 여기서 멈춘다\n       ③중복을 스스로 발견해 게시 전에 보고한 것이 정확했다. 그 판단이 이 회차의 성과다\n\n【(B) 새 후보를 지금 더 찾을 것인가】 찾지 않는다. 대신 **내일 회차 후보를 미리 정해 둔다**:\n  · 세척사과 꿀사과 3kg — 12,900원 · 리뷰 4,782 · 평점 4.3 (토스 id 2226153335, 이부장 16:2x 조회)\n  · 루틴8이 오늘 07:17 에 낸 후보와 같은 물건이다. 추석 D-7 이라 시의성은 내일까지 유효하다\n  · 5kg(18,900원·리뷰 3,903)도 있으나 3kg 쪽이 리뷰가 더 많고 1인가구·성묘 선물 모두에 맞다\n  · 🔴 이부장이 내일 오전에 승인 카드로 올린다(solo-ask). 루틴9는 내일 회차에서 이 후보를 먼저 확인하면 된다\n\n【루틴9에 남기는 기준 한 줄】\n  같은 상품이 이미 게시됐는지 `python -m studio.affiliate solo` 로 먼저 보고 후보를 낸다.\n  그러면 오늘처럼 중복 후보로 한 회차를 쓰지 않는다.",
@@ -3663,7 +3673,7 @@
    "order_at": "2026-10-02 20:39"
   }
  },
- "updated": "2026-10-03 00:21:05",
+ "updated": "2026-10-03 00:29:25",
  "current": {
   "batch": "issueprod",
   "code": "20261002-2",
@@ -3674,6 +3684,10 @@
   "since_at": "2026-10-02 15:16:40"
  },
  "log": [
+  {
+   "t": "00:29:25",
+   "text": "✅ lifeinfo-daily-publish-1003 완료 — lifeinfo-daily-publish (F)"
+  },
   {
    "t": "00:21:05",
    "text": "✅ docflow-pick-1003-1003 완료 — docflow-pick-1003"
@@ -3829,10 +3843,6 @@
   {
    "t": "06:23:07",
    "text": "✅ 9-lifeinfo-issue-product-pm-1001c-1002 완료 — 9-lifeinfo-issue-product-pm-1001c "
-  },
-  {
-   "t": "06:23:00",
-   "text": "▶ H1-20  — 1/7단계 · ⚠️ gh workflow run 이 권한 분류기(Production Deploy)에 거부됨 — 게이트(도장·V0·setgate·pubready·원격동기 0) 전부 통과, 결재함 pub-h120-trigger-1002 에 완성 명령으로 올림. 대기"
   }
  ],
  "currents": {
