@@ -15642,6 +15642,18 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "adsense-reject-reason-1003",
+   "added": "2026-10-03",
+   "what": "🔴 애드센스 반려 통지 도착 (2026-10-03 06:46 KST · adsense-noreply@google.com · 제목 「애드센스를 사용하려면 사이트에서 발견된 문제를 수정해야 합니다.」). 본문 원문: '사이트를 검토한 결과 안타깝게도 지금은 사이트에 광고를 게재하실 수 없습니다. 사이트에 광고를 게재하기 전에 해결해야 할 문제가 있습니다.' 08-12 요청한 심사가 52일 만에 종료·반려됐다(문서 기준 5회째 · 메일 기준 6회째 — 06-23 건이 aroma8975 로 가서 문서 집계에서 빠져 있다). API 도 같은 방향으로 움직였다: adsense.py status 가 GETTING_READY → NEEDS_ATTENTION, ALERT REJECTED. 09-23 에 화면과 API 가 어긋난 전례가 있었지만 이번은 메일 본문이 근거다. 🔴 사유는 메일에 적혀 있지 않다 — 애드센스 → 사이트 → lifeinfo8975.blogspot.com 상세 화면에서만 보인다(화면은 사장님만 보신다). 예전 사유(「가치가 별로 없는 콘텐츠」)가 이번에도 같다고 단정하지 말 것. 재검토 경로는 같은 화면의 '문제를 수정했음을 확인합니다' 체크박스 + 「검토 요청」 버튼이고, 누르는 시점은 사장님 판단이다(2026-09-23 지시로 재신청 금지는 해제됐다 — 세션은 말리지 않는다). 4.(애드센스 전담 adsense0915)가 이어받을 것.",
+   "due": "2026-10-03",
+   "cmd": "python studio/adsense.py status",
+   "owner": "user",
+   "verify": "python studio/adsense.py status",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
