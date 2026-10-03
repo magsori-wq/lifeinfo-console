@@ -15703,6 +15703,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "a5-13-rate-hike-followup",
+   "added": "2026-10-03",
+   "what": "A5-13 고용보험료율 2.0%(실업급여계정) 인상의 ①구체적 시행일(월/일) ②시행령 개정 입법예고 공고번호를 못 찾음. moel.go.kr 보도자료(news_seq=19866, 2026-09-01)는 연도(2027)만 명시, law.go.kr(MST 280527, nw=1 포함)에도 아직 개정본 없음. opinion.lawmaking.go.kr/community.lawmaking.go.kr 검색했지만 무관한 공고 2건만 나옴.",
+   "due": "2026-11-01",
+   "cmd": "python -c \"import urllib.request; print(urllib.request.urlopen('https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=%EA%B3%A0%EC%9A%A9%EB%B3%B4%ED%97%98%20%EB%B0%8F%20%EC%82%B0%EC%97%85%EC%9E%AC%ED%95%B4%EB%B3%B4%EC%83%81%EB%B3%B4%ED%97%98%EC%9D%98%20%EB%B3%B4%ED%97%98%EB%A3%8C%EC%A7%95%EC%88%98%20%EC%8B%9C%ED%96%89%EB%A0%B9&nw=1').read().decode())\" 로 MST가 늘었는지 재확인, moel.go.kr 보도·설명/입법·행정예고 게시판에서 '고용보험' 재검색",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
