@@ -1,9 +1,9 @@
 {
- "rev": "4882d592",
+ "rev": "3feb3ddd",
  "counts": {
   "total": 322,
-  "osmu_done": 321,
-  "osmu_pending": 1,
+  "osmu_done": 322,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 322,
   "index_requested": 208,
@@ -15,15 +15,16 @@
    "code": "D5-04",
    "title": "코레일 승차권 예매, 10월 1일부터 2개월 전 가능 ",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
