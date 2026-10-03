@@ -15896,6 +15896,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fix-cp마이그레이션1단계-1004",
+   "added": "2026-10-03",
+   "what": "CP 마이그레이션 1단계(낡은 로컬로 판정하지 않기) 구현: studio.readycheck 에 공통함수 git_behind()/stale_banner() 신설. studio.now·selfcheck(0번 경고전용)·approvalcount·feedcheck 출력 맨앞에 배너 배선. docs/루틴공통절.md 에 '로컬뒤처짐확인' 절 신설→routinesync.py SECTIONS 등록(신규절 삽입 버그도 고침: _insert_point 를 '첫 ## 제목 바로 앞'으로)→9개 루틴 SKILL.md 전부 --apply 로 반영·동기 확인(✅). deploy.bat:103 tasks_status.py 경로의 탭문자→백슬래시 바이트단위 수리(CRLF 188·lone LF 0·비ASCII 0 유지 확인). 커밋은 안 함 — 관제탑 승인 대기.",
+   "due": "2026-10-04",
+   "cmd": "python -m studio.readycheck --behind && python tools/routinesync.py && python validate_db.py | tail -3",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장"
   }
  ]
 }
