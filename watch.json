@@ -15085,12 +15085,12 @@
   {
    "id": "community-escalation-reply-1004",
    "added": "2026-10-01",
-   "what": "구글 검색센터 커뮤니티 후속답글(10-01) 답변 확인 — PE·구글 담당자 답이 달렸나, 에스컬레이션 됐나",
-   "due": "2026-10-04",
-   "cmd": "python studio/gmailread.py scan --body --days 4",
+   "what": "구글 검색센터 커뮤니티 후속답글(10-01 13:26 KST) 답변 확인 — 10-03 실측: 아직 답 없다. 스레드 support.google.com/webmasters/thread/469783212 를 직접 읽어 전수 확인(답글 3개: busterjet 09-25 04:06 · OptimistPrime 09-25 05:15 · 우리 10-01 13:26). 마지막 메시지가 여전히 470816351(우리 글)이고 새 작성자 없음. 에스컬레이션 응답 없음. ⚠️스레드 메타에 10-03 02:18 갱신 흔적이 있으나 무엇인지 확인 못 했다(새 답글은 아니다).",
+   "due": "2026-10-06",
+   "cmd": "curl -s -A 'Mozilla/5.0' 'https://support.google.com/webmasters/thread/469783212?hl=en' | grep -c 470816351",
    "owner": "claude",
    "state": "wait",
-   "by": "이부장"
+   "by": "루틴1"
   },
   {
    "id": "security-alerts-check-1001",
@@ -15663,7 +15663,7 @@
    "state": "done",
    "by": "루틴1",
    "done_at": "2026-10-03",
-   "result": "사유 확인(사장님 캡처 10-03): 가치가 별로 없는 콘텐츠 1건, Ads.txt 승인됨, 재요청은 10-09부터"
+   "result": "사유 확인 완료 — 이부장이 사장님 캡처 2장(10-03 13:15·13:16)을 직접 열어 화면으로 확인했다. 【목록】승인상태 '주의 필요' · 상태 세부정보 '가치가 별로 없는 콘텐츠' · Ads.txt '승인됨' · 최종 업데이트 2026-10-03 06:46 KST(반려 메일 수신 시각과 일치). 【상세】'광고 게재가 준비되지 않은 사이트' · 사이트 소유권 ✅ · 「정책 위반이 발견되었습니다」 아래 사유 1건 = 가치가 별로 없는 콘텐츠. 08-12 반려와 같은 사유다. 재검토는 2026-10-09부터 가능(화면 문구) — 추적은 watch adsense-rereview-open-1009 로 넘긴다."
   },
   {
    "id": "coursera-payment-fail-1003",
@@ -15768,6 +15768,26 @@
    "what": "🔴 draft1003b306(B3-06) 지시서 정정 완료 — 이전 판의 핵심 V0 근거가 틀렸었다('한도초과 추가공제 200/300만원이 2026년 신규'라 썼으나, source 에이전트가 advisor 3회 검토 끝에 law.go.kr 과거판(MST 279739, 2025-11-11 시행) 직접대조로 '2016년부터 있던 종전규정, 2026년은 조문번호만 분리'로 정정함). 진짜 2026 신규 = '자녀수 카드공제 한도 가산'(제10항, 법률21223호). docs/source_B3-06_연말정산미리보기_20261003.md 최신판·draft1003b306 order 모두 교체완료, ordercheck 통과, batchboard now 로 정정 공지까지 남김. 🔴 커밋 필요: docs/source_B3-06_연말정산미리보기_20261003.md + webapp/batch.json (둘 다 c18e7b16 이후 재수정됨, 경로 지정 커밋할 것 — git add -A 금지)",
    "due": "2026-10-03",
    "cmd": "git status --porcelain docs/source_B3-06_연말정산미리보기_20261003.md webapp/batch.json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "pe-audience-official-1003",
+   "added": "2026-10-03",
+   "what": "🔴 4.(adsense0915) 재검토 필요 — PE 주장 P4·P5(독자·트래픽 문턱)를 '애드센스 공식 문서에 없음'으로 판정했는데(docs/검토_PE답변_20260928_4.md), 10-03 반려 화면이 그것을 명시한다. 화면 원문: '충분한 고유 가치를 제공하고, 웹에서 꾸준히 운영되며, 상업적 광고 파트너십을 지원하는 수준의 사용자 관심을 받고 있음을 보여야 합니다' + 확인사항 3번째 '실제적인 사용자 관심을 유도하고 유지하는지'. 루틴1이 사장님 캡처(10-03 13:16)로 직접 확인. help 문서 3종에 없어도 반려 화면에는 있다 — 'P4=근거 없음' 표기를 그대로 두면 다음 세션이 '틀린 주장'으로 옮겨 적는다.",
+   "due": "2026-10-04",
+   "cmd": "ls -t '/c/ProgramData/Windows Master Store/Circle to Act'/Screenshot_202610031316*.png",
+   "owner": "claude",
+   "state": "todo",
+   "by": "루틴1"
+  },
+  {
+   "id": "cp-screen-fixes-1003",
+   "added": "2026-10-03",
+   "what": "CP 화면 실측 결과 고칠 3건: 미결사항 첫 로딩 6초+(/api/pending 3.4초) · adsense.html 09-01에 멈춤(10-03 반려 미반영) · temp.html 08-28 내용",
+   "due": "2026-10-04",
+   "cmd": "cat docs/CP_화면지도_20261003.md",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
