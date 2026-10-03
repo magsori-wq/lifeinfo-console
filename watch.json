@@ -15907,6 +15907,18 @@
    "cmd": "python -m studio.readycheck --behind && python tools/routinesync.py && python validate_db.py | tail -3",
    "owner": "claude",
    "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-03",
+   "result": "정정 2026-10-03: tools/routinesync.py 는 손대지 않음(스코프 밖) — 대신 이미 ALL 적용인 '보고서탭순환' 절의 한바퀴 절차에 ⓪줄 1줄 추가해 기존(미변경) routinesync.py --apply 로 9개 SKILL.md 전부 배포. now.py 의 git_behind()+stale_banner() 중복호출(1회실행당 fetch 2번) 버그 수정 → readycheck.banner(b)/stale_banner() 로 분리, 1회만 fetch. 타임아웃 10→5초로 단축. deploy.bat:103 탭문자 수리는 그대로 유효."
+  },
+  {
+   "id": "cp-migration-2step-1003b",
+   "added": "2026-10-03",
+   "what": "CP마이그레이션 2단계(분류만, advisor 재검토 반영 최종판): derivedguard.py REGISTRY 에 webapp/ 추적 159개 전부 등급+근거(파일:줄). 최종 집계 = 원본35·A급20·B급21·화면코드29·서식본53·미분류1(keyword_scan.json, 생성 모듈 없음). advisor 지적으로 5건 재분류: reindex.json·osmu_files.json·progress.html→원본(각각 carry-forward 재요청이력/사람이 set한 slug·eng/바깥에 틀 없는 데이터패치 때문에 git서 빼면 복구불가) · agents.json·loop.json→B급(각각 %LOCALAPPDATA%\\Temp\\claude 런타임산출물/~/.claude/projects 로컬세션로그 읽음, 다른 머신 재현 불가). compare_registries() 로 DERIVED(12개)·.gitattributes merge=ours(18개)와 비교: pace.json·loop.json·reindex.json·progress.html 4건 DERIVED에 있는데 이번엔 A급 아님(불일치), A급인데 둘 다 안 실린 파일 10~12건, 그리고 가장 중요한 발견 — 원본인데 merge=ours 가 걸린 파일 5건(_watch_state·osmu_files·progress.html·progress.json·reindex.json) = 다음 충돌 때 한쪽 세션 기록이 조용히 사라질 위험(자동수정 안 함, 이부장 판단 필요). falsepos.py 에 회귀규칙 _r_webapp_derived_unclassified_1003(⚠️) 추가 — 처음엔 파일 끝(3577행)에 놓고 🟡 를 써서 'python -m studio.falsepos' CLI 에서 전혀 안 뜨는 상태였다가(기존 2754행의 중복 if __name__ 가 모듈 로딩을 끊음 + summarize()가 🟡를 안 셈), advisor 지적으로 2746행 부근(그 if __name__ 앞)으로 옮기고 마크를 ⚠️로 바꿔 지금은 'python -m studio.falsepos' 단독 실행에서도 정상 표시·exit 1. git에서 아무것도 안 뺐음. git add 완료, 커밋은 안 함.",
+   "due": "2026-10-04",
+   "cmd": "python -m studio.derivedguard classify && python -m studio.falsepos",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
