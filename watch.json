@@ -16013,6 +16013,16 @@
    "by": "이부장",
    "done_at": "2026-10-04",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "routine3-publish-h123-1004",
+   "added": "2026-10-04",
+   "what": "09:00 루틴3 이 H1-23 발행 트리거했는지 확인 → 라이브 확인 후 이과장 깨우기(pub1003h123), G4-10 은 다음 날",
+   "due": "2026-10-04",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 2",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
