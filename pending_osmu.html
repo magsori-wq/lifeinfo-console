@@ -429,6 +429,12 @@ function fileChip(path, label, isImg, exists){
       //    읽는다(2026-09-27 티켓과 같은 함정). 위 richbtn 과 같은 join 트릭을 쓴다.
       out.push('<a class="f" href="'+esc(['rich',code].join('_')+'.html')
         +'" target="_blank">② 🎨 서식본 열기 → Ctrl+A → Ctrl+C</a>');
+    } else if(c2.rich_fail){
+      // 🔴 2026-10-03 — `osmutext.build()` 가 자동생성을 시도했는데 글자 보존에
+      //    실패한 경우(keep_check). 링크를 안 걸면(위 분기 skip) 404 위험은 없지만,
+      //    "왜 ②버튼이 없지" 를 사람이 또 탐색기로 찾게 둘 수는 없다 — 표시한다.
+      out.push('<span class="f miss" title="서식 변환에서 글자가 달라져 만들지 않았다 — 글자본만 쓴다">'
+        +'② 🎨 서식본 생성 실패(글자본만)</span>');
     }
     if(c2.thumb && c2.thumb.exists){
       out.push('<span class="f img" onclick="event.stopPropagation();copyImgPath('
