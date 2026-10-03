@@ -1,0 +1,74 @@
+{
+ "computed_at": "2026-10-03 21:39:02",
+ "source_head": "12d300cc167b",
+ "ids": [
+  "G3-09",
+  "aside-naver-login-1001"
+ ],
+ "posts": [],
+ "publish": [
+  {
+   "code": "G3-09",
+   "title": "2026 마산가고파국화축제 일정·관람료·교통 총정리 (10/31~11/8 무료입장)",
+   "go": false,
+   "v0": "fail",
+   "files": [
+    {
+     "label": "초안 마산가고파국화축제_글_HTML.txt",
+     "path": "마산가고파국화축제_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/304_masangukhwa.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/304_masangukhwa.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
+ "actions": [
+  {
+   "id": "aside-naver-login-1001",
+   "what": "Aside 브라우저 네이버 로그인 필요 — 열린 「NAVER 로그인」 탭에서 사장님이 직접 로그인(로그인 상태 유지 체크). 그 뒤 이부장이 D2-14 네이버 게시 시험",
+   "due": "2026-10-02",
+   "cmd": "Aside 브라우저의 NAVER 로그인 탭에서 로그인 → 이부장 창에 '로그인했다'",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
+ "actionsFuture": [
+  {
+   "id": "adsense-rereview-open-1009",
+   "what": "애드센스 재검토 요청 가능일 — 화면 문구 '검토 요청 가능 횟수 모두 사용, 2026-10-09부터 다시 요청 가능'(10-03 사장님 캡처). 반려 사유=가치가 별로 없는 콘텐츠(8/12와 동일), Ads.txt 승인됨. 누를지는 사장님 판단",
+   "due": "2026-10-09",
+   "cmd": "python studio/adsense.py status",
+   "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "claude-limit-reset-1022",
+   "what": "Anthropic 메일(09-24 09:25 KST, 미읽음): Claude 한도 리셋 1회가 주어졌다 — 5시간·주간 한도를 한 번 다시 채운다. 사용 기한 10-22 09:00 PT = 10-23 01:00 KST, 1회용이며 안 쓰면 없어진다(구독 취소·다운그레이드 시에도 소멸). 한도가 막힌 날 쓰면 된다. 사용처: 설정 → 사용량.",
+   "due": "2026-10-20",
+   "cmd": "https://claude.ai/settings/usage",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "loopeng-stopcond",
+   "what": "루프엔지니어링 보고서 종료조건 — 발행 페이스(횟수 기반)에 **조건 기반 지표**를 얹을지. 【지금 하면 안 되는 이유】 색인이 **0/277**(2026-09-20 판독)이다. 어떤 조건을 걸어도 0 은 통과 못 해 그 흐름이 완전히 잠긴다. 그리고 사장님이 2026-09-13 에 '한도 당분간 없다' 고 푸신 것을 되돌리는 셈이 된다. 【언제 다시 보나】 **색인이 0 에서 벗어나면** — 임계값을 지어내지 않는다. 0→1 이라도 무언가 움직인 것이고 그때 이부장이 재서 판단해 올린다. 【사장님이 하실 것】 지금은 없다. ⚠️ 이 항목에 오래 '색인 2/196' 이라 적혀 있었는데 09-21 재측정 결과 **0/277 로 더 나빠졌다**(196편일 때 2편 → 277편에서 0편).",
+   "due": "2026-10-20",
+   "cmd": "python -m studio.pace",
+   "state": "wait",
+   "kind": "action"
+  }
+ ]
+}

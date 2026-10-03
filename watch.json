@@ -15957,6 +15957,26 @@
    "by": "이부장",
    "done_at": "2026-10-03",
    "result": "push 1939d206~9a18ca47. 원격 ls-files 14개 0 · Aside로 결재함·미결사항·보고·일자별·index 렌더 확인"
+  },
+  {
+   "id": "cp-stage4-first-runs-1004",
+   "added": "2026-10-03",
+   "what": "CP 4단계 이후 첫 실발행 run·첫 결재(approve) 커밋이 정상인지 확인(14개 git 밖, approve_server 는 재시작 전까지 옛 _SYNC_FILES)",
+   "due": "2026-10-04",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -L 5; git log -3 --format='%h %s' --grep='결재: '",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cpview-stage6-shadow-1003",
+   "added": "2026-10-03",
+   "what": "CP 6단계 1차(그림자 운용) 구현: studio/cpview.py 신설(view_approval/view_pending = approvalcount.rows()/actionable()·approve_server._pending() 조합만, 새 판정 없음) → approve_server.py에 GET /api/view/approval·/api/view/pending 추가(서버가 이미 자동 재시작해 라이브로 확인됨) → bake.py 1.4a에서 cpview.bake()로 webapp/view_approval.json·view_pending.json 굽기(derivedguard A급 등록 + .gitignore 추가) → approval.html·pending_osmu.html에 표시만 추가(화면이 이미 그리는 항목 키 vs view_*.json/서버 ids 대조, 다르면 #cpvDiff/#cpvDiffP 작은 배지, 같으면 무표시) → falsepos에 회귀규칙 1개(view_approval 건수가 approvalcount와 다르면 ⚠️). 검증: py_compile 통과·node --check 통과·node 오프라인 단위시험으로 diff 로직 3케이스(일치/불일치/view없음) 확인·실제 approve_server(8011)가 코드를 자동 재시작해 /api/view/* 가 라이브로 응답(cpview --diff 전부 일치)·Aside로 approval.html(0 boss카드, 배지 없음)·pending_osmu.html(4판, 배지 없음, 서버연결) 확인·validate_db PASS14/FAIL0·falsepos 신규규칙 import경로로 등록확인(⚠️0)·selfcheck 18)화면문법/18b)화면회귀 PASS. 현재 결재0건·미결2건이라 실제 불일치(osmuskip 등)는 아직 관측 못함 — 결재·미결 건수가 늘어난 뒤 배지가 실제로 뜨는지(특히 네이버 제외/osmuskip 글) 재확인 필요. 8개 파일 git add 완료(커밋은 관제탑 몫).",
+   "due": "2026-10-06",
+   "cmd": "python -m studio.cpview --diff && python validate_db.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

@@ -180,6 +180,55 @@ function toast(m){var t=document.getElementById('tst');t.textContent=m;
 function j(f){return fetch(f+'?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
   .catch(function(){return null;});}
 
+// 🧪 CP 마이그레이션 6단계 1차(그림자 운용, 2026-10-03) — docs/CP_마이그레이션_계획_20261003.md.
+//    화면이 **방금 render() 에 쓴** D(서버 /api/pending 또는 fallbackPending())의 항목 키와
+//    파이썬 view_pending()(= studio/cpview.py, approve_server._pending() 조합)의 키를
+//    조용히 대조한다. 같으면 아무것도 안 보인다. 다르면 작은 배지만 띄운다(상세는
+//    console.log) — 렌더·버튼·복사 경로는 한 글자도 안 바꾼다. 불일치가 나와도
+//    **여기서 고치지 않는다** — 계획서가 이미 짚은 자리(폴백의 osmuskip 누락)를
+//    조용히 확인하는 것이 이 단계의 목적이다.
+var _cpvLastDiffAt = 0;
+function paintPendingDiff(D){
+  var now = Date.now();
+  if(now - _cpvLastDiffAt < 15000) return;    // render() 는 5초 간격 — 매번 다시 받지 않는다
+  _cpvLastDiffAt = now;
+  function idsOf(x){
+    var s = [];
+    (x.posts||[]).forEach(function(p){ if(p.code) s.push(String(p.code)); });
+    (x.publish||[]).forEach(function(p){ if(p.code) s.push(String(p.code)); });
+    (x.actions||[]).forEach(function(a2){ if(a2.id) s.push(String(a2.id)); });
+    return s.sort();
+  }
+  var screenIds = idsOf(D);
+  function finish(view){
+    var old = document.getElementById('cpvDiffP'); if(old) old.remove();
+    if(!view || !Array.isArray(view.ids)) return;    // 아직 구워진 적이 없다 — 조용히 넘어간다
+    var vIds = view.ids.map(String).slice().sort();
+    if(vIds.join('\u0001') === screenIds.join('\u0001')) return;   // 일치 — 표시 안 함
+    var onlyScreen = screenIds.filter(function(x){ return vIds.indexOf(x) < 0; });
+    var onlyView = vIds.filter(function(x){ return screenIds.indexOf(x) < 0; });
+    console.log('[cpview] pending 판정 불일치', {onlyScreen:onlyScreen, onlyView:onlyView,
+      computed_at:view.computed_at, source_head:view.source_head, readonly: !!D.readonly});
+    var d = document.createElement('div'); d.id = 'cpvDiffP';
+    d.style.cssText = 'position:fixed;top:40px;right:10px;z-index:99998;background:#3a1d1d;'
+      + 'border:1px solid #7a3030;color:#ff9b9b;font-size:11px;padding:4px 8px;border-radius:8px';
+    d.title = '화면만: ' + (onlyScreen.join(', ')||'-') + ' / view만: ' + (onlyView.join(', ')||'-');
+    d.textContent = '⚠️ 판정 불일치 ' + (onlyScreen.length + onlyView.length) + '건(그림자, console 참고)';
+    document.body.appendChild(d);
+  }
+  (async function(){
+    var view = null;
+    if(!RO && API){
+      try{
+        var r = await fetch(API+'/api/view/pending?t='+Date.now());
+        if(r.ok) view = await r.json();
+      }catch(e){}
+    }
+    if(!view){ try{ view = await j('view_pending.json'); }catch(e){} }
+    finish(view);
+  })();
+}
+
 function closeV(){document.getElementById('viewer').classList.remove('on');}
 
 // 🔴 이미지도 복사되게 한다 (2026-08-23 사장님 신고).
@@ -836,6 +885,7 @@ function fileChip(path, label, isImg, exists){
     + (doneRows.length? '<div class="sub2" style="margin-top:8px">채널별 완료</div>'+dbody : '');
 
   document.getElementById('out').innerHTML=H;
+  paintPendingDiff(D);
   }
 
   render(D);

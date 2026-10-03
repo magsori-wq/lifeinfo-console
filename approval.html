@@ -540,7 +540,11 @@ var DATA = Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v
              //    그전에는 JS 가 같은 조건을 옮겨 적었고(주석이 그렇게 자백했다),
              //    그 탓에 한 글이 「③지시」와 「④초안 작성 중」으로 **동시에** 보였다.
              //    ⚠️ flow.json 이 없으면(구버전 bake) 아래 JS 판정으로 되돌아간다.
-             j('flow.json')]);
+             j('flow.json'),
+             // 🧪 CP 마이그레이션 6단계 1차(그림자 운용, 2026-10-03) — studio/cpview.py 가
+             //    굽는 파이썬 판정. 화면은 아직 이 값으로 그리지 않는다 — 조용히 대조만
+             //    한다(아래 bossBadge 계산 뒤). 없어도(구버전 bake) 조용히 넘어간다.
+             j('view_approval.json')]);
 
 // 🔴 **화면이 스스로 이상을 알린다** (2026-09-04 사장님: "cp 관리 똑바로 못해!?")
 //    `studio/gatecheck.py` 가 bake 마다 돌아 `gates.json` 을 굽는데
@@ -1212,6 +1216,42 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     }).length;
   var bossBadge = bossTodo + '건' + (boss.length>bossTodo
       ? ' <span style="opacity:.55">(+완료 '+(boss.length-bossTodo)+')</span>' : '');
+
+  // 🧪 CP 마이그레이션 6단계 1차(그림자 운용, 2026-10-03) — docs/CP_마이그레이션_계획_20261003.md.
+  //    화면이 **방금 그린** boss 목록(위 bossTodo 와 같은 필터)과 파이썬 view_approval()
+  //    의 ids 를 조용히 대조한다. 같으면 아무것도 안 보인다. 다르면 작은 배지만
+  //    띄운다(상세는 console.log) — 렌더·버튼·결재 경로는 한 글자도 안 바꾼다.
+  //    🔴 새 판정을 짜지 않는다 — studio/cpview.py 가 approvalcount.rows()/actionable()
+  //    을 그대로 조합한다. 불일치가 나와도 **여기서 고치지 않는다**(그게 그림자
+  //    단계의 산출물이다).
+  (function(){
+    var screenIds = boss.filter(function(x){ return !x.done && x.act !== 'publish_run'; })
+      .map(function(x){ return String(x.c||''); }).filter(function(x){ return x; }).sort();
+    function paintDiff(view){
+      var old = document.getElementById('cpvDiff'); if(old) old.remove();
+      if(!view || !Array.isArray(view.ids)) return;     // 아직 구워진 적이 없다 — 조용히 넘어간다
+      var vIds = view.ids.map(String).slice().sort();
+      if(vIds.join('\u0001') === screenIds.join('\u0001')) return;   // 일치 — 표시 안 함
+      var onlyScreen = screenIds.filter(function(x){ return vIds.indexOf(x) < 0; });
+      var onlyView = vIds.filter(function(x){ return screenIds.indexOf(x) < 0; });
+      console.log('[cpview] approval 판정 불일치', {onlyScreen:onlyScreen, onlyView:onlyView,
+        computed_at:view.computed_at, source_head:view.source_head});
+      var d = document.createElement('div'); d.id = 'cpvDiff';
+      d.style.cssText = 'position:fixed;top:40px;right:10px;z-index:99998;background:#3a1d1d;'
+        + 'border:1px solid #7a3030;color:#ff9b9b;font-size:11px;padding:4px 8px;border-radius:8px';
+      d.title = '화면만: ' + (onlyScreen.join(', ')||'-') + ' / view만: ' + (onlyView.join(', ')||'-');
+      d.textContent = '⚠️ 판정 불일치 ' + (onlyScreen.length + onlyView.length) + '건(그림자, console 참고)';
+      document.body.appendChild(d);
+    }
+    var staticView = a[12] || null;
+    if(SRV && API){
+      fetch(API+'/api/view/approval?t='+Date.now()).then(function(r){ return r.ok ? r.json() : null; })
+        .catch(function(){ return null; }).then(function(v){ paintDiff(v || staticView); });
+    } else {
+      paintDiff(staticView);
+    }
+  })();
+
   // ☑️ 미결 조치 — 결재 건수엔 안 들어가지만 지우지 않는다(접힌 구역, 기본 닫힘).
   //    🔴 **새 top-level .pane 을 만들지 않는다** — .grid 는 nth-child(1..4)+.side+.rep
   //    로 칸을 고정 배치하므로(위 CSS), 판을 하나 더 끼우면 뒤 판들의 자리가 전부
