@@ -15276,7 +15276,7 @@
    "id": "gsc-req-remaining-1002",
    "added": "2026-10-01",
    "what": "🔴 남은 것 D3-07 1편뿐(49/50 요청 완료). D3-07(…/2026/09/39-2026-10.html)은 「오류 발생」이 KST 06:30·16:15·16:45 세 번 났는데 같은 시각 E1-05·A4-07·A3-16·G3-08·D2-14·G1-10 은 모두 「색인 생성 요청됨」 → 한도가 아니라 이 URL 만의 문제로 보임(추정, 원인 미확인). 연타 금지 — 다음에 볼 때 한 번만 시험, 되면 gsc_log add D3-07, 안 되면 닫는다. 방법=Chrome 확장 새 탭→GSC 검사화면(검색 아이콘 첫 클릭이 삼켜지니 열렸는지 확인)→URL→「색인 생성 요청」·확인창 본 뒤 gsc_log add",
-   "due": "2026-10-02",
+   "due": "2026-10-04",
    "cmd": "python -c \"import json,io,sys;sys.path.insert(0,'.');from studio import idxstate as X;L=lambda n:json.load(io.open('webapp/'+n,encoding='utf-8'));db=L('lifeinfo_db.txt');r=L('index_status.json')['posts'];r=r if isinstance(r,dict) else {p['code']:p for p in r};q=set(L('gsc_requested.json')['urls']);t=[p['code'] for p in db['posts'] if isinstance(p,dict) and not X.is_indexed(r.get(p['code'],{}).get('state')) and not X.is_benign(r.get(p['code'],{})) and p.get('url') not in q];print('미요청',len(t),t)\"",
    "owner": "claude",
    "state": "todo",
@@ -15685,12 +15685,22 @@
   {
    "id": "xlink-d504",
    "added": "2026-10-03",
-   "what": "🔗 D5-04 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D5-04",
+   "what": "🔗 D5-04 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D5-04",
    "due": "2026-10-03",
    "cmd": "python studio/blogger.py crosslink --code D5-04",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "docflow-1003-1",
+   "added": "2026-10-03",
+   "what": "A5-13·B3-06 선별완료(🟡출처없음) → source 에이전트 2건 백그라운드 조사 중(A5-13 고용보험료율 추진여부/현행1.8%/인상2.0%/시행시점, B3-06 2026연말정산미리보기 개시일 공지여부) → 완료되면 docs/source_*.md 확인 후 dispatch로 이과장 초안 지시서 1편당 1장 등록(발행후속 pub1002d504/d506/h121/e407/h122 뒤 순서로), 공식확인 실패시 drop 후보 보고",
+   "due": "2026-10-04",
+   "cmd": "ls docs/source_A5-13_* docs/source_B3-06_* 2>&1; python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
