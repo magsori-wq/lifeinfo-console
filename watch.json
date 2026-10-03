@@ -15868,12 +15868,14 @@
   {
    "id": "xlink-b306",
    "added": "2026-10-03",
-   "what": "🔗 B3-06 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B3-06",
+   "what": "🔗 B3-06 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B3-06",
    "due": "2026-10-03",
    "cmd": "python studio/blogger.py crosslink --code B3-06",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-03",
+   "result": "교차링크 3채널 라이브 반영 확인"
   },
   {
    "id": "cp-migration-stage1-3-1003",
@@ -15881,6 +15883,16 @@
    "what": "CP 마이그레이션 1~3단계(사장님 승인 10-03): 1 뒤처짐 경고·deploy.bat 탭 수정 / 2 파생 목록 분류 / 3 공통 갱신·낡음 배지(1·2 끝난 뒤). 계획서 docs/CP_마이그레이션_계획_20261003.md",
    "due": "2026-10-04",
    "cmd": "cat docs/CP_마이그레이션_계획_20261003.md | head -40",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cp-migration-2step-1003",
+   "added": "2026-10-03",
+   "what": "CP마이그레이션 2단계(분류만): studio/derivedguard.py 에 webapp/ 추적 159개 전부 등급(원본30·A급25·B급19·화면코드29·서식본53·미분류3) + 근거(파일:줄) 등록. REGISTRY vs 기존 DERIVED(12개)·.gitattributes merge=ours(18개) 비교함수 compare_registries() 추가 — pace.json 이 DERIVED엔 있는데 실측상 B급(라이브 피드 urlopen)으로 드러나 불일치 1건 발견, A급인데 두 목록에 안 실린 파일 11~14건 발견(덮어쓰지 않고 보고만). falsepos.py 에 회귀규칙 _r_webapp_derived_unclassified_1003(🟡) 추가. git에서 아무것도 안 뺐음(.gitignore·git rm 안 함). 부수 발견: falsepos.py 2754행의 중복 if __name__ 블록이 'python -m studio.falsepos' CLI 실행을 조기종료시켜 그 뒤 RULES 20여개(내 새 규칙 포함)가 CLI 에선 안 돈다(2026-09-12 자체 주석이 이미 알던 버그, 안 고침) — 단 selfcheck.py 20)은 import로 summarize()를 직접 불러써서 영향 없음(실제 안전망은 정상).",
+   "due": "2026-10-04",
+   "cmd": "python -m studio.derivedguard classify && python -c \"from studio import falsepos as fp; fp.main([])\"",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
