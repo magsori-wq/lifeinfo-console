@@ -15727,6 +15727,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-cmd-draft-dup-1003",
+   "added": "2026-10-03",
+   "what": "naver.cmd_draft 가 naverrich.build_rich 를 안 쓰고 같은 로직을 복제(사진 박스 add_photo_slots 누락) — 한 곳으로 합칠 것",
+   "due": "2026-10-05",
+   "cmd": "grep -n 'keep_check\\|build_rich\\|add_photo_slots' studio/naver.py studio/naverrich.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
