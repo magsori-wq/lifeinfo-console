@@ -15085,9 +15085,9 @@
   {
    "id": "community-escalation-reply-1004",
    "added": "2026-10-01",
-   "what": "구글 검색센터 커뮤니티 후속답글(10-01) 답변 확인 — PE·구글 담당자 답이 달렸나, 에스컬레이션 됐나",
-   "due": "2026-10-04",
-   "cmd": "python studio/gmailread.py scan --body --days 4",
+   "what": "구글 검색센터 커뮤니티 후속답글(10-01 13:26 KST) 답변 확인 — 10-03 실측: 아직 답 없다. 스레드 support.google.com/webmasters/thread/469783212 를 직접 읽어 메시지를 전수 확인했다(답글 3개: busterjet 09-25 04:06 · OptimistPrime 09-25 05:15 · 우리 10-01 13:26). 마지막 메시지가 여전히 470816351(우리 글)이고 새 작성자 없음. 에스컬레이션 응답도 없다. 10-03 02:18 갱신 흔적은 스레드 메타(조회·캐시)이고 새 답글이 아니다.",
+   "due": "2026-10-06",
+   "cmd": "curl -s -A 'Mozilla/5.0' 'https://support.google.com/webmasters/thread/469783212?hl=en' | grep -c 470816351",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
