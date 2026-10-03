@@ -15660,8 +15660,10 @@
    "owner": "user",
    "verify": "python studio/adsense.py status",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-10-03",
+   "result": "사유 확인(사장님 캡처 10-03): 가치가 별로 없는 콘텐츠 1건, Ads.txt 승인됨, 재요청은 10-09부터"
   },
   {
    "id": "coursera-payment-fail-1003",
@@ -15758,6 +15760,16 @@
    "cmd": "python studio/adsense.py status",
    "owner": "user",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "docflow-1003-2",
+   "added": "2026-10-03",
+   "what": "🔴 draft1003b306(B3-06) 지시서 정정 완료 — 이전 판의 핵심 V0 근거가 틀렸었다('한도초과 추가공제 200/300만원이 2026년 신규'라 썼으나, source 에이전트가 advisor 3회 검토 끝에 law.go.kr 과거판(MST 279739, 2025-11-11 시행) 직접대조로 '2016년부터 있던 종전규정, 2026년은 조문번호만 분리'로 정정함). 진짜 2026 신규 = '자녀수 카드공제 한도 가산'(제10항, 법률21223호). docs/source_B3-06_연말정산미리보기_20261003.md 최신판·draft1003b306 order 모두 교체완료, ordercheck 통과, batchboard now 로 정정 공지까지 남김. 🔴 커밋 필요: docs/source_B3-06_연말정산미리보기_20261003.md + webapp/batch.json (둘 다 c18e7b16 이후 재수정됨, 경로 지정 커밋할 것 — git add -A 금지)",
+   "due": "2026-10-03",
+   "cmd": "git status --porcelain docs/source_B3-06_연말정산미리보기_20261003.md webapp/batch.json",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
