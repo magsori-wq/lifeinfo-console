@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-03",
+ "updated": "2026-10-04",
  "items": [
   {
    "id": "redirect-error",
@@ -15989,6 +15989,17 @@
    "by": "이부장",
    "done_at": "2026-10-03",
    "result": "G4-10·H1-23 pick+verify 완료, source 2건 확보, dispatch 2건(draft1003g410·draft1003h123) 등록, ordercheck 각 0건"
+  },
+  {
+   "id": "daily-publish-0110-msit-원문",
+   "added": "2026-10-04",
+   "what": "최적요금제 고지(E 후보) — 시행일 원문 확인: 기사는 10/1 시행·10월 말 유력으로 엇갈리고 msit 원문 미확보. 원문 확보 시 제안 가능(중복 0.25 신규)",
+   "due": "2026-10-06",
+   "cmd": "python -m studio.watch --id daily-publish-0110-msit-원문",
+   "owner": "claude",
+   "state": "todo",
+   "note": 4,
+   "by": "세션:697c7dc6"
   }
  ]
 }
