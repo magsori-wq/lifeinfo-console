@@ -15945,6 +15945,16 @@
    "kind": "approve",
    "done_at": "2026-10-03",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "fix-cp-stage4-1003",
+   "added": "2026-10-03",
+   "what": "CP 마이그레이션 4단계 적용(사장님 결재 cp-migration-stage4-decide-1004). (A) .gitattributes merge=ours 정리 5건(원본 재분류분 — _watch_state·osmu_files·progress.html·progress.json·reindex.json, 커밋 1669ca6f). (B) A급 파생 14개(approval_m·collab·daylog·flow·gates·idxstate_def·library·naver_analytics_summary·osmu_text·pending·posts_index·rep_groups·reports.html·timeline) .gitignore+git rm --cached, 커밋 3ec34bab(디스크 파일은 그대로 — bake 가 재생성). REGISTRY 상 A급 20개 중 adsense.html·batch.html·covered_topics.json·crawl_watch.json·health.json·temp.html 6개는 bake.py 가 직접 재생성하지 않아 이번엔 빼지 않았다(그대로 추적+merge=ours 유지). 곁들인 보정: pushgate.index_drift 가 posts_index.json 부재를 영구 🟡 대신 ✅ 로 처리(커밋 3ec34bab에 포함) · derivedguard._label_for 로 제거된 A급이 '미분류'로 오판되던 것 수정(같은 커밋) · approve_server._SYNC_FILES 에서 pending.json 제거(커밋 2bc34097 — 안 빼면 매 결재마다 그 이름만 git add 가 조용히 실패했다, 실측 확인). 검증: fresh worktree 로 14개 사전부재→bake 전건 재생성→validate_db 13~14 PASS/0 FAIL·falsepos 0 FAIL·pushgate ✅ 확인, approve.yml:218 글롭·pre-push 훅·rebase 충돌(modify/delete, git rm 으로 해소 확인) 전부 실제로 돌려봄. 미반영: 아직 origin 에 push 안 함(관제탑 승인 대기) · .gitattributes 의 merge=ours 8줄이 이제 추적밖 파일을 가리켜 비활성 상태(해롭지 않음, 정리 안 함) · 다른 6개 live worktree/클론은 pull 시 이 14개가 디스크에서 사라졌다가 bake 전까지 없음(원본 상태 파일 아니므로 안전, 그냥 재굽기 필요).",
+   "due": "2026-10-04",
+   "cmd": "git -C C:/lifeinfo log --oneline -5 && git -C C:/lifeinfo ls-files -- webapp/approval_m.json webapp/collab.json webapp/daylog.html webapp/flow.json webapp/gates.json webapp/idxstate_def.json webapp/library.json webapp/naver_analytics_summary.json webapp/osmu_text.json webapp/pending.json webapp/posts_index.json webapp/rep_groups.json webapp/reports.html webapp/timeline.json | wc -l",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
