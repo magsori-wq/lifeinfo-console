@@ -278,5 +278,12 @@ function render(d){
   w.innerHTML = html;
 }
 </script>
+<script src="cp_live.js"></script>
+<script>
+// CP 마이그레이션 3단계(2026-10-03) — 이 화면은 손으로 쓴 화면이라 bake 생성기가 없다.
+// 데이터 자체(naver_analytics_summary.json 의 baked_at)를 기준 시각으로 쓴다.
+// 사장님이 화면을 보고 옮겨 적는 수동 입력이라 하루 1회면 정상 — 24시간을 임계로 둔다.
+window.CPLive && CPLive.init({ timestamp: { json: 'naver_analytics_summary.json', field: 'baked_at' }, staleHours: 24, poll: { url: 'naver_analytics_summary.json', intervalMs: 300000, tsField: 'baked_at', onData: render } });
+</script>
 </body>
 </html>
