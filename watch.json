@@ -15920,6 +15920,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "cp-migration-stage3-1003",
+   "added": "2026-10-03",
+   "what": "CP 마이그레이션 3단계 — cp_live.js 신설(기준시각 배지+5분 재확인+poll) 및 adsense/daylog/reports/naverstats/batch 5화면 배선. 남은 것: derivedguard.REGISTRY 에 webapp/cp_live.js 분류 미등록(falsepos 경고 — 관제탑이 추가), register_post.py:251-256 가 *.js 를 안 보내 클라우드발행 경로엔 cp_live.js 가 없을 수 있음(deploy.bat:75 는 정상 포함), 5분 재확인(새버전있음 배지)·naverstats poll 콜백은 코드리뷰로만 확인했고 실시간 타이머 발화는 미관찰",
+   "due": "2026-10-04",
+   "cmd": "grep -c cp_live.js webapp/adsense.html webapp/daylog.html webapp/reports.html webapp/naverstats.html webapp/batch.html && python -m studio.falsepos | grep -i cp_live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
