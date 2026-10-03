@@ -3706,8 +3706,8 @@
      "code": "D5-04",
      "title": "코레일 승차권 예매, 10월 1일부터 2개월 전 가능 — 달라진 것 총정리 (라이브 발행)",
      "state": "done",
-     "note": "D5-04 발행후속 ①검색설명 라이브 meta 104자 일치·seodesc 기록(첫 시도는 글자 0자라 미저장 중단, 재시도 성공) ②네이버 원고(제목 32자 「KTX 예매 2개월 전부터 가능 — 10월 1일 달라진 것」)·서식본·전용썸네일 302n(폰 사진, 예매 키워드 실사진 게이트 충족)·클립보드 적재 — 사장님 게시 대기 ③인스타 카드3(korail2_01~03)·쓰레드 사진(thread_D5-04_korail2.png) 제작 · ⚠️ 카드 이름을 korailplus_* 로 만들어 8/4 기존 포스트의 tracked 카드 2장(01_cover·02_dates)을 덮어썼으나 git checkout 으로 복원(status 깨끗), korail2_* 로 재생성 · 커밋 83b54f20 · 다음: 네이버 URL 기록 후 캡션→인스타→쓰레드→crosslink, 이어서 draftb505 본문 보완",
-     "at": "2026-10-03 04:49"
+     "note": "D5-04 OSMU 완결: crosslink→인스타 https://www.instagram.com/p/DeBGlc0kVHw/ (200·캡션 655자 일치·스위치 전부 false)→쓰레드 https://www.threads.com/@magsori8975/post/DeBG9Lxgdox (200·실사진·프로필 1건) 기록 · ⚠️ DB osmu 에서 네이버 URL(224430220947)이 빠져 있어(원격에도 없음 — 이부장 기록분이 동시 쓰기로 유실된 것으로 추정) PostView 로 제목·블로그링크 확인 후 naver-link 로 재기록, crosslink 재실행해 3링크 라이브 확인 · setgate 미완 없음 · 산출물 insta/korail2_01~03·thread_D5-04_korail2.png",
+     "at": "2026-10-03 12:42"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -3835,7 +3835,7 @@
    "order_at": "2026-10-03 12:30"
   }
  },
- "updated": "2026-10-03 12:37:20",
+ "updated": "2026-10-03 12:42:50",
  "current": {
   "batch": "issueprod",
   "code": "20261002-2",
@@ -3846,6 +3846,10 @@
   "since_at": "2026-10-02 15:16:40"
  },
  "log": [
+  {
+   "t": "12:42:50",
+   "text": "✅ D5-04 완료 — 코레일 승차권 예매, 10월 1일부터 2개월 전 가능 — 달라"
+  },
   {
    "t": "12:37:20",
    "text": "📄 pub1003d506 작업 지시 등록(9359자, 2026-10-03 12:37)"
@@ -4001,10 +4005,6 @@
   {
    "t": "04:33:08",
    "text": "📄 draft1002b505 작업 지시 등록(9339자, 2026-10-03 04:33)"
-  },
-  {
-   "t": "00:29:25",
-   "text": "✅ lifeinfo-daily-publish-1003 완료 — lifeinfo-daily-publish (F)"
   }
  ],
  "currents": {
