@@ -10472,6 +10472,14 @@
    "target": "fix-cp마이그레이션1단계-1004",
    "detail": "정정 2026-10-03: tools/routinesync.py 는 손대지 않음(스코프 밖) — 대신 이미 ALL 적용인 '보고서탭순환' 절의 한바퀴 절차에 ⓪줄 1줄 추가해 기존(미변경) routinesync.py --apply 로 9개 SKILL.md 전부 배포. now.py 의 git_behind()+stale_banner() 중복호출(1회실행당 fetch 2번) 버그 수정 → readycheck.banner(b)/stale_banner() 로 분리, 1회만 fetch. 타임아웃 10→5초로 단축. deploy.bat:103 탭문자 수리는 그대로 유효.",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-03T17:43:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-migration-stage1-3-1003",
+   "detail": "1·2·3단계 커밋·푸시(616c0a4e·51d5a5b7·4f82c9d3). 3단계 5화면 배지 Aside 실측 확인",
+   "via": "cli"
   }
  ]
 }
