@@ -15818,6 +15818,16 @@
    "by": "naver-link",
    "done_at": "2026-10-03",
    "result": "교차링크 3채널 라이브 반영 확인"
+  },
+  {
+   "id": "crosslink-unattended-flaky-1003",
+   "added": "2026-10-03",
+   "what": "blogger.py crosslink 무인 감지가 대면 세션(이과장)에서도 첫 실행 때 중단 → 재실행하면 통과(이과장 10-03 보고). 판정이 흔들린다 — 감지 근거를 재서 고칠 것",
+   "due": "2026-10-05",
+   "cmd": "grep -n 'force-unattended\\|unattended' studio/blogger.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
