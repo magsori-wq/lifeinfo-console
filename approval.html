@@ -1520,6 +1520,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var TD=null, _tk=Object.keys(B.batches||{})
       .filter(function(k){return String(k).indexOf('today')===0;}).sort().reverse();
   if(_tk.length) TD={id:_tk[0], b:B.batches[_tk[0]]};
+  // 🔴 2026-10-04 사장님 캡처: 10-04 화면에 09-23 보드(100%)가 「미결사항」으로 떠 있었다.
+  //    가장 최근 today 배치가 **오늘 것이 아니면** 미결사항으로 보이지 않게 한다.
+  var _now=new Date(), _td='today'+('0'+(_now.getMonth()+1)).slice(-2)+('0'+_now.getDate()).slice(-2);
+  if(TD && TD.id!==_td) TD=null;
   var tdBody;
   if(TD && TD.b && (TD.b.items||[]).length){
     var tit=TD.b.items, tdn=tit.filter(function(i){
@@ -1539,7 +1543,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +'<div style="margin-top:9px">'+cmd('python -m studio.batchboard order --id '+TD.id)+'</div>';
     H+=pane('🗒️','미결사항',tdn+'/'+tit.length,tdBody,'side');
   } else {
-    H+=pane('🗒️','미결사항','0건','<p class="none">오늘 배치가 없습니다.</p>','side');
+    H+=pane('🗒️','미결사항','0건','<p class="none">오늘('+_td.slice(5,7)+'-'+_td.slice(7)+') 관제탑 보드가 없습니다.'+(_tk.length?' 최근 보드 = '+esc(_tk[0]):'')+'</p>','side');
   }
 
   // 🔴 **펼쳐 놓으신 것을 다시 접지 않는다** (2026-08-31 실측 사고).

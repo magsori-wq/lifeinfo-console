@@ -7,6 +7,7 @@
 <style>
 *{box-sizing:border-box}
 html,body{height:100%}
+/* 🔴 2026-10-04 사장님 캡처: #out 이 flex 가 아니라 .grid 의 flex:1 이 안 먹어 칸이 25,000px 로 늘어났다 → #out 을 flex 로 */
 body{margin:0;padding:14px;background:#0e1526;color:#e6ecf7;
      font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:14px;line-height:1.6;
      display:flex;flex-direction:column;overflow:hidden}
@@ -69,7 +70,7 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 <p class="sub">담당(세션) 4분할 — 한 화면에 전부, 칸 안에서만 스크롤. 진실원은 <b>batch.json</b> 하나이며
 이 화면은 그것을 그대로 읽습니다. 등록은 <code>python -m studio.batchboard order --id &lt;배치&gt; --file &lt;파일&gt;</code>
 · 워크트리에서 돌 때는 <code>git pull origin main</code> 먼저.</p>
-<div id="out" style="flex:1;min-height:0"><p class="none">불러오는 중…</p></div>
+<div id="out" style="flex:1;min-height:0;display:flex;flex-direction:column"><p class="none">불러오는 중…</p></div>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
