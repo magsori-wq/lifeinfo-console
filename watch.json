@@ -16129,14 +16129,14 @@
    "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
-   "id": "zz-probe2-1004",
+   "id": "gsc-expR-1008",
    "added": "2026-10-04",
-   "what": "결재 푸시 경로 시험(이부장) — 바로 닫힘",
-   "due": "2026-10-04",
-   "cmd": "echo probe",
+   "what": "실험 R(사장님 승인 10-04): G4-06·C2-11·A1-15 색인 생성 요청 각 1회 — 10-04 17:2x 「색인 생성 요청됨」 확인(C2-11 17:22 · A1-15 17:24 · G4-06 17:23, 17:21 첫 클릭은 결과창 미확인이라 확인용 재클릭 1회). 기준선(요청 전, GSC 화면·index_status 10-04): 3편 모두 Redirect error · lastCrawl G4-06 10-01T11:46Z · C2-11 10-01T11:51Z · A1-15 10-01T12:08Z. 10-08 루틴7 inspect 뒤 비교 — 상태가 Crawled/색인됨으로 바뀜 = 저장 판정이 낡았다 · Redirect error 재발 = 크롤 시점엔 지금도 실패. 같은 URL 재제출은 우선순위 불변(구글 안내문). gsc_log 는 3편 모두 10-01 요청분이라 「이미있음」 — gsc_req_dates 는 10-01 그대로",
+   "due": "2026-10-08",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/index_status.json',encoding='utf-8'));print(d.get('checked_at'));[print(c,d['posts'][c].get('state'),d['posts'][c].get('lastCrawl')) for c in ('G4-06','C2-11','A1-15')]\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "wait",
+   "by": "4.AdSense"
   }
  ]
 }
