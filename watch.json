@@ -16029,6 +16029,16 @@
    "by": "이부장",
    "done_at": "2026-10-04",
    "result": "루틴3 10-04 09:00 미실행(기록 0). 사장님 pubgo 로 H1-23·G4-10 발행(run 37178491376·37178589670 success, 라이브 200)"
+  },
+  {
+   "id": "routine3-missed-1004",
+   "added": "2026-10-04",
+   "what": "루틴3(3-Lifeinfo publish) 10-04 09:00 실행 기록 없음 — 원인 규명(Desktop 루틴 상태·실행 이력), 10-05 09:00 실행 여부 확인",
+   "due": "2026-10-05",
+   "cmd": "git log origin/main -3 --format='%h %cd %s' --date=format:'%m-%d %H:%M' --grep='^\\[루틴3\\]'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
