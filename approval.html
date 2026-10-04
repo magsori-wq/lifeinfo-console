@@ -1646,15 +1646,29 @@ var _selfTimer = setInterval(function(){ if(AUTO) checkSelf(); }, 3000);
 //       그대로 동작하므로 아무것도 잃지 않는다.
 (function(){
   if(REMOTE) return;                       // 밖에서는 서버가 없다
-  try{
-    var es = new EventSource(API + '/api/watch-stream');
-    es.addEventListener('changed', function(){
-      // 데이터만 바뀐 경우가 대부분이라 먼저 다시 그리고,
-      // 화면(HTML) 자체가 바뀌었으면 checkSelf 가 리로드한다.
-      try{ refresh(); }catch(e){}
-      checkSelf();
-    });
-    es.onerror = function(){ /* 서버가 꺼지면 폴링만 남는다 — 조용히 둔다 */ };
-  }catch(e){}
+  // 🔴 2026-10-04 사장님 화면 「결재 서버가 꺼져 있다」 — 서버는 살아 있었다(curl 0.004초).
+  //    CP 탭 3개가 각자 이 실시간 연결을 붙잡아 브라우저의 같은 서버 연결 한도(6)가 차서
+  //    새 요청(/api/ping)이 줄을 서 끝내 끊겼다. 탭 2개를 닫자 즉시 「연결됨」(실측).
+  //    → **보이는 탭에서만** 연결을 연다. 숨으면 닫고, 다시 보이면 열고 바로 따라잡는다.
+  var es=null;
+  function openES(){
+    if(es) return;
+    try{
+      es = new EventSource(API + '/api/watch-stream');
+      es.addEventListener('changed', function(){
+        // 데이터만 바뀐 경우가 대부분이라 먼저 다시 그리고,
+        // 화면(HTML) 자체가 바뀌었으면 checkSelf 가 리로드한다.
+        try{ refresh(); }catch(e){}
+        checkSelf();
+      });
+      es.onerror = function(){ /* 서버가 꺼지면 폴링만 남는다 — 조용히 둔다 */ };
+    }catch(e){ es=null; }
+  }
+  function closeES(){ if(es){ try{es.close();}catch(e){} es=null; } }
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden) closeES(); else { openES(); try{ refresh(); }catch(e){} }
+  });
+  window.addEventListener('pagehide', closeES);
+  if(!document.hidden) openES();
 })();
 </script></body></html>

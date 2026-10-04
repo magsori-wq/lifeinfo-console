@@ -15247,8 +15247,10 @@
    "due": "2026-10-02",
    "cmd": "Aside 브라우저의 NAVER 로그인 탭에서 로그인 → 이부장 창에 '로그인했다'",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-04",
+   "result": "사장님 지시로 닫음(2026-10-04) — 네이버 게시는 사장님 직접, Aside 로그인 시험 불필요"
   },
   {
    "id": "v0reject-h1-20",
@@ -15279,8 +15281,10 @@
    "due": "2026-10-04",
    "cmd": "python -c \"import json,io,sys;sys.path.insert(0,'.');from studio import idxstate as X;L=lambda n:json.load(io.open('webapp/'+n,encoding='utf-8'));db=L('lifeinfo_db.txt');r=L('index_status.json')['posts'];r=r if isinstance(r,dict) else {p['code']:p for p in r};q=set(L('gsc_requested.json')['urls']);t=[p['code'] for p in db['posts'] if isinstance(p,dict) and not X.is_indexed(r.get(p['code'],{}).get('state')) and not X.is_benign(r.get(p['code'],{})) and p.get('url') not in q];print('미요청',len(t),t)\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-10-04",
+   "result": "2026-10-04 10:07 D3-07 색인 생성 요청됨(확인창 직접 확인·gsc_log add). 앞선 3회 오류와 달리 이번엔 성공 → 50편 중 50편 요청 완료. 원인은 미확인(일시 오류였을 가능성)"
   },
   {
    "id": "gsc-req-effect-1008",
