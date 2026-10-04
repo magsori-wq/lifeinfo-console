@@ -16214,6 +16214,17 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "push-blocked-uncommitted-1005",
+   "added": "2026-10-05",
+   "what": "미커밋 26개(docs/일일_문제기록.md · osmu/_rich_*.html · docs/source_* · webapp 파생 다수)가 남아 pull --rebase 가 막히고, 로컬이 origin/main 보다 4커밋 낡아 push 가 non-fast-forward 로 거부된다. 루틴1 10-05 08시 브리핑 커밋 6689706c 가 로컬에만 있다. stash·checkout -- 는 금지라 루틴1 이 풀 수 없다 — 그 파일을 만진 세션이 각자 경로 지정 커밋해야 한다. 지금 상태면 모든 세션의 push 가 같이 막힌다.",
+   "due": "2026-10-05",
+   "cmd": "cd C:/lifeinfo && git status --porcelain | grep -v '^??' | wc -l && git log origin/main..main --oneline",
+   "owner": "claude",
+   "state": "blocked",
+   "kind": "action",
+   "by": "루틴1"
   }
  ]
 }
