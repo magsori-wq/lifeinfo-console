@@ -16071,10 +16071,8 @@
    "due": "2026-10-04",
    "cmd": "ls docs/협의_애드센스반려_20261004*",
    "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-04",
-   "result": "협의 문서 docs/협의_애드센스반려_20261004.md · 사장님 결정 4건 결재함"
+   "state": "todo",
+   "by": "이부장"
   },
   {
    "id": "adsense-p1-1004",
@@ -16084,10 +16082,8 @@
    "cmd": "docs/협의_애드센스반려_20261004.md",
    "owner": "user",
    "kind": "approve",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-04",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "state": "todo",
+   "by": "이부장"
   },
   {
    "id": "adsense-expR-1004",
@@ -16097,10 +16093,8 @@
    "cmd": "docs/협의_애드센스반려_20261004.md",
    "owner": "user",
    "kind": "approve",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-04",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "state": "todo",
+   "by": "이부장"
   },
   {
    "id": "adsense-p4-1004",
@@ -16110,10 +16104,8 @@
    "cmd": "docs/협의_애드센스반려_20261004.md",
    "owner": "user",
    "kind": "approve",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-04",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "state": "todo",
+   "by": "이부장"
   },
   {
    "id": "adsense-newblog-1004",
@@ -16136,6 +16128,17 @@
    "cmd": "python -c \"import json;d=json.load(open('webapp/index_status.json',encoding='utf-8'));print(d.get('checked_at'));[print(c,d['posts'][c].get('state'),d['posts'][c].get('lastCrawl')) for c in ('G4-06','C2-11','A1-15')]\"",
    "owner": "claude",
    "state": "wait",
+   "by": "4.AdSense"
+  },
+  {
+   "id": "adsense-contact-paste-1004",
+   "added": "2026-10-04",
+   "what": "애드센스 「문의하기」에 문안 붙여넣기 — ①이 명령으로 문안(한국어+영어)이 복사됩니다 ②https://support.google.com/adsense/gethelp 에서 문의 양식에 붙여넣고, 읽어 보신 뒤 보내 주세요(보내기는 사장님만). 질문은 2개: 반려가 사이트 전체인지 특정 페이지·유형인지(예시 요청) / 무엇을 보완하면 달라지는지. 적은 조치 3줄은 저장소 기록에 있는 것만 썼습니다. 양식 항목·글자 수 제한은 4.가 못 봤습니다(로그인 필요)",
+   "due": "2026-10-05",
+   "cmd": "powershell -NoProfile -Command \"Get-Content -Raw -Encoding UTF8 'C:\\lifeinfo\\docs\\adsense_kb_paste\\문의안_붙여넣기_20261004.txt' | Set-Clipboard\"",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
    "by": "4.AdSense"
   }
  ]
