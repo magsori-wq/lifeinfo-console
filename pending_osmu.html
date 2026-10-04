@@ -373,10 +373,11 @@ function fileChip(path, label, isImg, exists){
   //     같은 병을 두 화면에 뒀다가 한쪽만 고친 것이다.
   //     ⚠️ 세대 표시는 ping.role — 새 서버만 준다. 없는 키로 판정하면 조용히 옛 것이 이긴다.
   var _older=null;
-  for (var port of [8011, 8012, 8013, 8003, 8002, 8001]) {
-    var _u='http://127.0.0.1:'+port;
+  for (var _u of ['http://127.0.0.1:8011','http://localhost:8011','http://127.0.0.1:8012','http://127.0.0.1:8013']) {
     try {
-      var pg=await fetch(_u+'/api/ping?t='+Date.now());
+      // 🔴 2026-10-04: 타임아웃이 없어 127.0.0.1:8011 이 막히면 「결재 서버 확인 중…」에서 영원히 멈췄다.
+      var _ac=new AbortController(), _to=setTimeout(function(){_ac.abort();},1500);
+      var pg=await fetch(_u+'/api/ping?t='+Date.now(),{signal:_ac.signal}); clearTimeout(_to);
       if(!pg.ok) continue;
       var pd=await pg.json();
       if(!(pd&&pd.ok)) continue;
