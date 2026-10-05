@@ -16586,6 +16586,16 @@
    "by": "이부장",
    "done_at": "2026-10-05",
    "result": "확인 불필요로 닫음 — 이부장이 보낸 1번 작업은 클라우드가 아니라 로컬 워크트리(.claude/worktrees/agent-ada225…)에서 돌았다(완료 알림 worktreePath). 크레딧 차감 없음. 크레딧 사용은 사장님이 클라우드 세션을 열어 지시문 붙여넣기만 가능"
+  },
+  {
+   "id": "naverfmt-cloud112-1005",
+   "added": "2026-10-05",
+   "what": "네이버 서식본 112편 클라우드 생성(지시문 docs/클라우드지시_네이버서식본112_20261005.md) — 결과 브랜치 받으면 검사·합치고 naverfmt --rebake → CP 미결사항 「🎨 네이버 서식 미적용」에 🟢 서식본 준비로 뜨는지 Aside 로 확인",
+   "due": "2026-10-06",
+   "cmd": "python -m studio.naverfmt --rebake",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
