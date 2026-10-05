@@ -16229,9 +16229,11 @@
    "due": "2026-10-05",
    "cmd": "cd C:/lifeinfo && git log origin/main..main --oneline | wc -l && git status --porcelain | grep -v '^??' | wc -l && git diff --name-only HEAD...origin/main",
    "owner": "claude",
-   "state": "blocked",
+   "state": "done",
    "kind": "action",
-   "by": "루틴1"
+   "by": "루틴1",
+   "done_at": "2026-10-06",
+   "result": "해소 확인(루틴1 10-06 08:2x 실측) — git fetch origin 성공(FETCH_EXIT=0, 파이프 없이 측정) · ls-remote e95168f8 = 로컬 origin/main e95168f8 일치하여 origin/main 신선함 확인 · git rev-list --left-right --count origin/main...HEAD = 0 0(로컬만 0커밋·원격만 0파일). 10-05 당시 로컬만 8커밋·원격만 9파일이었다. 누가 어떻게 풀었는지는 확인 못 함. 추적중 미커밋은 27개 → 37개로 늘었으나 이는 갈라짐이 아니라 파생·작업 파일이다. ⚠️앞 측정에서 'git fetch | head; echo $?' 로 쟀는데 그 $? 는 head 종료코드라 늘 0이었다 — fetch 성공 근거가 못 된다(측정축 오류, 파이프 없이 재측정해 확정)"
   },
   {
    "id": "approve-p1fix1005e301",
