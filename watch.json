@@ -16259,6 +16259,16 @@
    "kind": "action",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "d1-11-traffic-announce",
+   "added": "2026-10-05",
+   "what": "D1-11 수능(2027학년도,2026-11-19) 교통통제·등교시간조정·항공기통제 2026년 공식발표 아직 안 나옴(2026-10-05 확인). 과거(2025학년도 2025-11-13분) 패턴만 docs/source_D1-11_수능교통통제_20261005.md 에 기록",
+   "due": "2026-10-28",
+   "cmd": "python -c \"import urllib.request; print(urllib.request.urlopen('https://www.moe.go.kr/boardCnts/list.do?boardID=294&m=020402&s=moe').status)\"  # 또는 WebFetch로 moe.go.kr 보도자료 재확인, '안정적 시험 시행 지원대책' 제목 검색",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
