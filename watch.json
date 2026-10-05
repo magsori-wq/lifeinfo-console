@@ -16670,6 +16670,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "ubuntu26-runner-1019",
+   "added": "2026-10-06",
+   "what": "GitHub 러너 ubuntu-latest 가 2026-10-19 부터 Ubuntu 26 으로 이전된다(모든 GH 런 annotation 에 찍히는 공지, 원문 'The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026' · actions/runner-images#14748). 루틴1 이 10-06 브리핑 중 발견 — watch 추적 0건이었다. 【영향 범위 실측 = runs-on 쓰는 8개 전부 ubuntu-latest】.github/workflows 의 approve.yml:55 · blogger-smoke.yml:22 · crawl-watch.yml:38 · go.yml:34,50 · publish.yml:68 · status-watch.yml:30 · us-crawl-check.yml:16. 🔴 publish.yml 이 들어 있다 = 라이브 발행 창구다. 이전 뒤 파이썬 버전·시스템 패키지가 달라져 발행이 멈추면 그날 배출이 막힌다. 【이부장 판단】핀 고정(ubuntu-24.04 로 명시)할지, 그대로 두고 10-19 직후 발행 1건으로 확인할지. 루틴1 은 워크플로를 고치지 않았다(권한 밖). 【참고】10-06 04~05시 KST 의 콘솔검사·pages 실패 2건은 이 이전과 무관한 별건이다(러너 할당 실패, 그 뒤 07:14 success)",
+   "due": "2026-10-06",
+   "cmd": "grep -n runs-on .github/workflows/*.yml",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:6de5a5b5"
   }
  ]
 }
