@@ -10952,6 +10952,14 @@
    "target": "aroma-login-alert-1005",
    "detail": "사장님 확인(10-05 21:35): 20:17 로그인은 사장님 본인(루틴1 재인증 창에서 로그인) — 계정 이상 아님. 이후 400 오류 창은 이부장 시험이 연 것. 재발 방지 = gmailread auth 를 Claude 세션·무인에서 차단(커밋)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-05T21:53:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cloud-credit-check-1005",
+   "detail": "확인 불필요로 닫음 — 이부장이 보낸 1번 작업은 클라우드가 아니라 로컬 워크트리(.claude/worktrees/agent-ada225…)에서 돌았다(완료 알림 worktreePath). 크레딧 차감 없음. 크레딧 사용은 사장님이 클라우드 세션을 열어 지시문 붙여넣기만 가능",
+   "via": "cli"
   }
  ]
 }
