@@ -16257,8 +16257,10 @@
    "owner": "user",
    "verify": "python -m studio.kwgap",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-05",
+   "result": "10-05 캡처 6장 판독 완료(3.) — naver_analytics.json 반영·커밋 982b78d3. 어제 메인 유입 0 · 10월 1~4일 수입 6원 · 15일 조회 일평균 147"
   },
   {
    "id": "d1-11-traffic-announce",
@@ -16468,6 +16470,16 @@
    "what": "🔗 D3-08 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D3-08",
    "due": "2026-10-05",
    "cmd": "python studio/blogger.py crosslink --code D3-08",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-b507",
+   "added": "2026-10-05",
+   "what": "🔗 B5-07 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B5-07",
+   "due": "2026-10-05",
+   "cmd": "python studio/blogger.py crosslink --code B5-07",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
