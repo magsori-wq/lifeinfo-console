@@ -14,6 +14,9 @@
   .brand .dot{color:#06d6a0}
   #roleBadge{margin-left:8px;font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;white-space:nowrap;vertical-align:middle}
   #roleBadge.admin{background:#0c3a2c;color:#06d6a0;border:1px solid #1f6b52}
+  /* 📅 오늘 날짜 · 🔄 데이터 갱신 시각 (2026-10-05 사장님 지시 "CP 상단에 오늘날짜 및 데이터 갱신일자 표기") */
+  #cpDates{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:4px;font-size:11px;font-weight:600;color:#9fb0d0;font-variant-numeric:tabular-nums}
+  #cpDates .stale{color:#ff8a80}
   #roleBadge.ro{background:#26314f;color:#9fb0d0;border:1px solid #3a4a6e}
   nav{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
   nav button{cursor:pointer;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;border-radius:9px;padding:9px 13px;font-size:13px;font-weight:700;font-family:inherit}
@@ -103,7 +106,7 @@
 </head>
 <body>
   <div class="top">
-    <div class="brand">🏛️ CP <span class="dot">·</span> 생활정보 모음<span id="roleBadge" class="ro">👁 읽기 전용</span></div>
+    <div class="brand">🏛️ CP <span class="dot">·</span> 생활정보 모음<span id="roleBadge" class="ro">👁 읽기 전용</span><div id="cpDates"><span id="cpToday">📅 오늘 —</span><span id="cpData">🔄 데이터 갱신 —</span></div></div>
     <nav id="nav">
       <!-- 🔴 2026-08-13 사용자 지시: "메인탭도 연관된작업들은 서브탭으로 들어가 작업할수
            있도록" — 15개가 한 줄에 다 펼쳐져 있어 원하는 걸 찾으려면 계속 훑어야 했다.
@@ -1042,6 +1045,37 @@
       document.getElementById('trendBox').innerHTML='<p class="note">트렌드를 불러올 수 없습니다. PC에서 <b>python -m studio.pipeline trends</b> 실행 후 deploy.bat 하면 채워집니다.</p>';
     });
   }
+
+  // 📅 오늘 날짜 + 🔄 데이터 갱신 시각 (2026-10-05 사장님 지시)
+  //    갱신 시각은 결재함 데이터(approval_m.json generated — approvalcount 가 굽는다)와
+  //    하네스 점검(health.json checked_at). 2시간 넘게 안 바뀌면 빨갛게.
+  (function(){
+    var W='일월화수목금토';
+    function pad(n){return (n<10?'0':'')+n;}
+    function today(){
+      var d=new Date();
+      document.getElementById('cpToday').textContent='📅 오늘 '+d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())
+        +'('+W[d.getDay()]+') '+pad(d.getHours())+':'+pad(d.getMinutes());
+    }
+    function age(s){ var t=new Date(String(s).replace(' ','T')).getTime(); return isNaN(t)?null:(Date.now()-t)/60000; }
+    function fmt(s){ return String(s||'').replace('T',' ').slice(5,16); }
+    function data(){
+      Promise.all([
+        fetch('approval_m.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};}),
+        fetch('health.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).catch(function(){return {};})
+      ]).then(function(v){
+        var a=v[0].generated, h=v[1].checked_at, el=document.getElementById('cpData');
+        var parts=[], stale=false;
+        if(a){ parts.push('결재 데이터 '+fmt(a)); if(age(a)>120) stale=true; }
+        if(h){ parts.push('하네스 점검 '+fmt(h)); }
+        el.textContent='🔄 '+(parts.length?parts.join(' · '):'데이터 갱신 시각을 못 읽음');
+        el.className=stale?'stale':'';
+        if(stale) el.textContent+=' (2시간 넘게 안 바뀜)';
+      });
+    }
+    today(); data();
+    setInterval(today,30000); setInterval(data,60000);
+  })();
 
   // 🔑 역할 배지 (2026-09-01 사장님 지시: "누가 뭘 기록했고 … 관리자 권한도 부여해")
   // 정적 공개본(github.io)에는 studio/approve_server.py 가 없어 fetch 가 실패한다 —
