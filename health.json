@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-10-05T12:43:39",
+ "checked_at": "2026-10-05T14:44:01",
  "light": "yellow",
- "pass": 15,
- "warn": 3,
+ "pass": 14,
+ "warn": 4,
  "fail": 0,
  "checks": [
   {
@@ -51,19 +51,15 @@
   },
   {
    "level": "PASS",
-   "msg": "작업트리 손실 없음: 사라진 추적파일 0개"
-  },
-  {
-   "level": "PASS",
    "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
   },
   {
    "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 204종"
+   "msg": "초안 코드 1:1 통과: 207종"
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 711개 .py"
+   "msg": "소스 구문 통과: 712개 .py"
   },
   {
    "level": "WARN",
@@ -71,11 +67,15 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 97개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png, 139_personal_rehab.png …"
+   "msg": "미사용 썸네일 100개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png, 139_personal_rehab.png …"
   },
   {
    "level": "WARN",
    "msg": "중분류 22/35개가 6~7편 초과 — 분가 검토(규칙 §5): F4 23편, H1 21편, B4 16편, F1 15편, E2 15편, A1 15편, C2 14편, B2 14편, A2 14편, F2 13편, D4 12편, D2 12편, A5 12편, A3 12편, G4 10편, G1 10편, D1 10편, C4 10편, B1 9편, G3 8편, F3 8편, C1 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "추적파일 2개가 작업트리에서 사라짐 — 의도한 삭제면 git rm 로 스테이징할 것"
   }
  ]
 }
