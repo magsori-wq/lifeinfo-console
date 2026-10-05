@@ -16614,8 +16614,22 @@
    "due": "2026-10-07",
    "cmd": "python -m studio.naverfmt",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-06",
+   "result": "사장님 '보내' — 지시서 push·클립보드 적재, 클라우드 세션 붙여넣기 대기"
+  },
+  {
+   "id": "naverfmt-58-cloud-1006",
+   "added": "2026-10-06",
+   "what": "58편 구조 재작업 클라우드 결과 브랜치 검토·병합 후 naverfmt --rebake",
+   "due": "2026-10-06",
+   "cmd": "git fetch && git branch -r --sort=-committerdate | head -5",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-06",
+   "result": "병합·독립대조·CP 재굽기 완료"
   }
  ]
 }
