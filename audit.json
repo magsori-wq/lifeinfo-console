@@ -10944,6 +10944,14 @@
    "target": "claude-claim-credit-1007",
    "detail": "사장님 /claim-credit 실행(10-05 20:55) — 'You've already claimed this offer' = 이미 받음, 추가 조치 없음",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-05T21:35:57",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aroma-login-alert-1005",
+   "detail": "사장님 확인(10-05 21:35): 20:17 로그인은 사장님 본인(루틴1 재인증 창에서 로그인) — 계정 이상 아님. 이후 400 오류 창은 이부장 시험이 연 것. 재발 방지 = gmailread auth 를 Claude 세션·무인에서 차단(커밋)",
+   "via": "cli"
   }
  ]
 }
