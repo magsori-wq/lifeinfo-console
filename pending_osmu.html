@@ -747,6 +747,8 @@ function fileChip(path, label, isImg, exists){
     var rdy = F.ready||0, mkb = F.makeable||0, nod = F.nodraft||0;
     var head = '<div style="padding:8px 10px;margin-bottom:8px;background:#111a2c;'
       +'border:1px solid #223052;border-radius:9px;font-size:12px;line-height:1.75">'
+      +'<a href="#" onclick="try{parent.document.querySelector(\'nav button[data-t=naverfix]\').click()}catch(e){location.href=\'naverfix.html\'};return false\" style="float:right;font-size:15px;font-weight:800;'
+      +'padding:6px 12px;border-radius:8px;background:#1f6feb;color:#fff;text-decoration:none">🎨 「네이버 서식」 탭에서 작업 →</a>'
       +'<b style="color:#ffb38a">이 목록은 「서식이 옛날 그대로인 네이버 글」입니다.</b>'
       +' 09-23 에 손본 6편의 모양(본문 15px·섹션 19px·숫자 강조)으로 맞추는 일입니다.<br>'
       +'<b>고치는 순서</b> — 카드의 <b>①</b> 을 누르면 서식본이 <b>새 탭에 열립니다</b>'

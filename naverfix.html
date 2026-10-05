@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>네이버 서식 바꾸기</title>
+<style>
+/* 🔴 2026-10-06 사장님 지시: "임시탭을 만들어 화면을 크게 보이게 하고 적용한 글에 체크하는 방식으로 하자"
+   체크 = 결재 서버가 그 글만 라이브를 다시 잰다(naverfmt --scan --only). 실제로 서식이 있어야 ✅ 가 된다. */
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#16191d;--sub:#5b6470;--line:#d9dde3;--accent:#0b6bcb;--ok:#1a7f37;--warn:#b54708;--chip:#eef2f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171b;--card:#1d2127;--ink:#eef1f5;--sub:#a3acb8;--line:#333a44;--accent:#5aa8ff;--ok:#4cc26a;--warn:#f0a35a;--chip:#262c34}}
+:root[data-theme="dark"]{--bg:#14171b;--card:#1d2127;--ink:#eef1f5;--sub:#a3acb8;--line:#333a44;--accent:#5aa8ff;--ok:#4cc26a;--warn:#f0a35a;--chip:#262c34}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.55 "Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;padding:20px 16px 60px}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1{font-size:30px;margin:0;text-wrap:balance}
+.howto{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:19px}
+.howto ol{margin:6px 0 0;padding-left:26px}
+.stat{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.stat .ok{color:var(--ok)} .stat .todo{color:var(--accent)}
+.row{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-items:start}
+.row.done{opacity:.6}
+.chk{width:34px;height:34px;margin-top:4px;cursor:pointer;accent-color:var(--ok)}
+.code{font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;margin-right:8px}
+.title{font-size:23px;font-weight:700}
+.btns{grid-column:2;display:flex;flex-wrap:wrap;gap:10px}
+.btns a,.btns button{font:inherit;font-size:19px;padding:10px 16px;border-radius:8px;border:1px solid var(--line);background:var(--chip);color:var(--ink);text-decoration:none;cursor:pointer}
+.btns a:hover,.btns button:hover{border-color:var(--accent)}
+.btns a:focus-visible,.btns button:focus-visible,.chk:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.msg{grid-column:2;font-size:18px;color:var(--sub)}
+.msg.bad{color:var(--warn);font-weight:700} .msg.good{color:var(--ok);font-weight:700}
+.sec{font-size:24px;font-weight:800;margin:10px 0 0}
+.cols{max-width:1600px;margin:16px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.stack{display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 260px);overflow-y:auto;padding-right:4px}
+.col .sec{margin:0;position:sticky;top:0}
+@media (max-width:900px){.cols{grid-template-columns:1fr}.stack{max-height:none}}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:8px;font-size:19px;display:none}
+@media (max-width:600px){body{font-size:18px}.title{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎨 네이버 서식 바꾸기</h1>
+  <div class="howto">한 편씩 이 순서로 하십시오.
+    <ol>
+      <li><b>① 서식본 열기</b> → 열린 탭에서 <b>Ctrl+A → Ctrl+C</b></li>
+      <li><b>② 네이버 수정 화면</b> → 본문 클릭 → <b>Ctrl+A → Ctrl+V</b></li>
+      <li><b>③ 대표 사진 복사</b> → 맨 위 「대표 사진 자리」 박스를 지우고 Ctrl+V · 맨 아래 남은 옛 사진은 지운다</li>
+      <li>네이버에서 <b>저장</b> → 여기서 <b>체크</b>. 라이브를 다시 재서 서식이 확인되면 ✅ 로 바뀝니다.</li>
+    </ol>
+  </div>
+  <div class="stat" id="stat">불러오는 중…</div>
+</div>
+<!-- 🔴 2026-10-06 사장님 "좌우로 적용됨/적용전으로 해줘" — 왼쪽 적용됨 · 오른쪽 적용 전 -->
+<div class="cols">
+  <section class="col"><div class="sec">✅ 적용됨 <span id="nDone"></span></div><div id="done" class="stack"></div></section>
+  <section class="col"><div class="sec">⬜ 적용 전 <span id="nTodo"></span></div><div id="list" class="stack"></div></section>
+</div>
+<div id="toast"></div>
+<script>
+var API = 'http://127.0.0.1:8011', D = null, BUSY = {};
+function toast(t){var e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(e._t);e._t=setTimeout(function(){e.style.display='none';},3500);}
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function editUrl(u){var m=String(u||'').match(/(\d{9,})/);return m?'https://blog.naver.com/PostUpdateForm.naver?blogId=magsori8975&logNo='+m[1]:'';}
+async function toPng(blob){
+  if(blob.type==='image/png') return blob;
+  var url=URL.createObjectURL(blob);
+  try{var img=await new Promise(function(res,rej){var i=new Image();i.onload=function(){res(i);};i.onerror=rej;i.src=url;});
+    var c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext('2d').drawImage(img,0,0);
+    return await new Promise(function(res){c.toBlob(res,'image/png');});}finally{URL.revokeObjectURL(url);}
+}
+async function copyImg(path){
+  try{var r=await fetch(API+'/api/file?path='+encodeURIComponent(path));if(!r.ok)throw new Error('HTTP '+r.status);
+    var b=await toPng(await r.blob());await navigator.clipboard.write([new ClipboardItem({'image/png':b})]);
+    toast('✅ 대표 사진 복사됨 — 네이버 맨 위에서 Ctrl+V');}
+  catch(e){toast('🔴 사진 복사 실패: '+(e&&e.message?e.message:e)+' (결재 서버가 꺼져 있으면 안 됩니다)');}
+}
+function card(r, done){
+  var u=editUrl(r.url), m=BUSY[r.code]||'';
+  var h='<div class="row'+(done?' done':'')+'" id="r_'+r.code+'">';
+  h+='<input type="checkbox" class="chk" id="c_'+r.code+'" aria-label="'+esc(r.code)+' 적용함"'+(done?' checked disabled':'')+' onchange="check(\''+r.code+'\',this)">';
+  h+='<div><span class="code">'+esc(r.code)+'</span><span class="title">'+esc(r.title)+'</span></div>';
+  if(!done){
+    h+='<div class="btns">';
+    if(r.rich_web) h+='<a href="'+esc(r.rich_web)+'" target="_blank" rel="noopener">① 서식본 열기</a>';
+    if(u) h+='<a href="'+esc(u)+'" target="_blank" rel="noopener">② 네이버 수정 화면</a>';
+    if(r.thumb) h+='<button type="button" onclick="copyImg(\''+esc(r.thumb)+'\')">③ 대표 사진 복사</button>';
+    h+='</div>';
+  }
+  if(m) h+='<div class="msg '+(m.k||'')+'">'+esc(m.t)+'</div>';
+  return h+'</div>';
+}
+function render(){
+  var todo=(D.off||[]).filter(function(r){return r.rich && !r.stale;});
+  var done=(D.on||[]);
+  document.getElementById('stat').innerHTML='<span class="todo">남은 글 '+todo.length+'편</span> · <span class="ok">적용 '+done.length+'편</span> · 기준 '+esc(D.at||'');
+  document.getElementById('list').innerHTML=todo.length?todo.map(function(r){return card(r,false);}).join(''):'<div class="howto">지금 바꿀 글이 없습니다.</div>';
+  document.getElementById('done').innerHTML=done.length?done.map(function(r){return card(r,true);}).join(''):'<div class="howto">아직 없습니다.</div>';
+  document.getElementById('nDone').textContent=done.length+'편';
+  document.getElementById('nTodo').textContent=todo.length+'편';
+}
+async function load(){
+  try{var r=await fetch('naverfmt.json?t='+Date.now());D=await r.json();render();}
+  catch(e){document.getElementById('stat').textContent='🔴 목록을 못 읽었습니다: '+e;}
+}
+async function check(code, el){
+  if(!el.checked) return;
+  el.disabled=true; BUSY[code]={t:'⏳ 라이브를 다시 재는 중… (10초 안팎)'};
+  var row=document.getElementById('r_'+code); if(row) row.outerHTML=card((D.off||[]).find(function(x){return x.code===code;})||{code:code},false);
+  try{
+    var r=await fetch(API+'/api/approve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'naverfmt_check',code:code})});
+    var j=await r.json();
+    await load();
+    var on=(D.on||[]).some(function(x){return x.code===code;});
+    BUSY[code]= on ? null : {k:'bad',t:'🔴 라이브에 서식이 아직 안 보입니다 — 네이버에서 「저장」을 눌렀는지 확인하고 다시 체크하십시오'+(j&&j.ok===false&&j.error?' ('+j.error+')':'')};
+    render();
+    toast(on?'✅ '+code+' 적용 확인':'🔴 '+code+' 아직 미적용');
+  }catch(e){
+    BUSY[code]={k:'bad',t:'🔴 결재 서버에 닿지 못했습니다(localhost:8011): '+e};
+    render();
+  }
+}
+load();
+</script>
+</body>
+</html>
