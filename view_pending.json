@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-10-05 20:16:26",
- "source_head": "3160178a884d",
+ "computed_at": "2026-10-05 20:27:29",
+ "source_head": "1261e3a8346e",
  "ids": [
-  "B5-07"
+  "B5-07",
+  "aroma-login-alert-1005"
  ],
  "posts": [
   {
@@ -48,7 +49,7 @@
      "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/p/DeHGUkCCWG9/",
      "files": [
       {
        "label": "인스타 캡션",
@@ -57,13 +58,22 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     }
    }
   }
  ],
  "publish": [],
- "actions": [],
+ "actions": [
+  {
+   "id": "aroma-login-alert-1005",
+   "what": "aroma8975 「Windows에서 새로 로그인함」 보안경고 2통(10-05 20:17 KST · aroma 본인계정 + magsori8975 복구메일 사본) — 본인 로그인이 아니시면 계정 확인이 필요합니다. 【시각 순서 그대로】 20:1x 루틴1 의 gmailread scan 에서 aroma 토큰이 SSL EOF 로 갱신 실패 → 루틴1 이 'gmailread.py auth --account aroma' 를 실행(무인 세션이 창을 여는 명령이라 실행하면 안 되는 것이었다) → 20:17 보안경고 → 재scan 에서 aroma 토큰 ✅ 복구. 이 경고는 루틴1 의 재인증 때문으로 보이나 단정하지 않는다(SSL EOF 가 일시 장애였다면 복구는 재시도 덕일 수도 있어 둘이 갈리지 않는다). OAuth 브라우저 창이 열린 채 남아 있을 수 있으니 보이면 닫아 주십시오",
+   "due": "2026-10-05",
+   "cmd": "https://myaccount.google.com/notifications 에서 10-05 20:17 aroma8975 로그인이 본인 것인지 확인",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "adsense-rereview-open-1009",
