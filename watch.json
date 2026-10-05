@@ -16503,6 +16503,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "console-check-red-dbindex-1005",
+   "added": "2026-10-05",
+   "what": "콘솔 정합성 검사 RED 미해소 — 08:16 브리핑이 '전건 해소'라 했으나 09:06~20:16 KST 6건 재발(최신 런 37301915639 20:16 실패). 사유는 주석 오탐이 아니라 [posts_index 신선도]: 배포본 posts_index 336 vs DB 335. 【실측】로컬은 336/336 일치 · 배포본만 어긋남. 20:16 'approval: 0 items (phone inbox)' 자동 push 가 담은 20개 파일에 posts_index.json 은 있고 lifeinfo_db.txt 는 없다(git log --name-only 확인) → DB 가 바뀔 때마다 이 어긋남이 생기고 자동 push 가 반복될수록 계속 RED. 【가설】approve_server 계열 부분 동기 경로의 파일목록 문제로 보임(단정 아님). 【고침】지금 RED 를 지우는 것은 deploy.bat 1회 전체 동기(사장님 몫) · 구조적 처방(자동 push 목록에 DB 추가 또는 posts_index 제외)은 이부장 판단. 기존 console-check-comment-falsepos-1001 의 A덩어리와 같은 계열이나 그것은 '스스로 해소'로 적혀 있고 오늘은 자동 push 때문에 해소되지 않는다",
+   "due": "2026-10-06",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow '콘솔 정합성 검사' -L 3 && python -c \"import json;a=len(json.load(open('C:/lifeinfo-deploy/lifeinfo_db.txt',encoding='utf-8'))['posts']);b=len(json.load(open('C:/lifeinfo-deploy/posts_index.json',encoding='utf-8'))['posts']);print('배포 DB',a,'index',b)\"",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
