@@ -704,7 +704,9 @@ function fileChip(path, label, isImg, exists){
     //    그래서 카드마다 ①무엇이 준비됐는지 ②지금 무엇을 하는지를 함께 적는다.
     function row(r, dim){
       var tb = Math.max(0,(r.table||0)-(F.table_skin||12));
-      var ready = !!r.rich, mk = !ready && !!r.draft;
+      // 🔴 stale = 원고가 라이브와 다르다 — 서식본으로 덮으면 제휴 링크·사장님 수정이 지워진다(2026-10-05)
+      var stale = !!r.stale;
+      var ready = !!r.rich && !stale, mk = !ready && !stale && !!r.draft;
       // 🔴 **클릭하면 바로 열려야 한다** (2026-09-24 사장님: *"절차만 있고 수정에 사용할
       //    파일은 탐색기 열어 일일이 내가 찾아서 확인해야해"*).
       //    서식본은 `webapp/rich/<코드>.html` 로 미러돼 있어 **상대 링크로 열린다** —
@@ -718,6 +720,14 @@ function fileChip(path, label, isImg, exists){
                 +esc(r.rich_path||'')+'">① 📋 서식본 경로 복사</a>')
           +'<a class="f" href="'+esc(r.url||'')+'" target="_blank">'
             +'② 네이버 글 열기 → 수정 → 본문 Ctrl+A → Ctrl+V</a>'
+          // 🔴 ③ 대표 사진 — 붙여넣으면 기존 대표 사진이 지워진다(2026-10-05 사장님 "썸네일 첨부 잊지 말도록")
+          +(r.thumb
+             ? '<span class="f img" onclick="event.stopPropagation();copyImgPath('
+                 +JSON.stringify(r.thumb).replace(/"/g,'&quot;')+')">③ 🖼 대표 이미지 복사 → 맨 위 「대표 사진 자리」에 Ctrl+V</span>'
+             : '<span class="f miss">③ ⚠️ 대표 이미지 파일 없음 — 사진을 직접 넣으셔야 합니다</span>')
+        : stale
+          ? '<span class="f miss">⚠️ 보류 — 원고가 라이브와 다릅니다(제휴 링크·직접 고치신 내용이 라이브에만 있음). 붙이면 지워져서 원고를 맞춘 뒤 올립니다</span>'
+            +(r.url? '<a class="f" href="'+esc(r.url)+'" target="_blank">글 보기</a>' : '')
         : mk
           ? '<span class="f miss">⚪ 세션이 서식본을 만듭니다 — 순서 기다리시면 🟢 로 올라옵니다</span>'
             +(r.url? '<a class="f" href="'+esc(r.url)+'" target="_blank">글 보기</a>' : '')
@@ -727,7 +737,7 @@ function fileChip(path, label, isImg, exists){
         +'><div class="hd">'
         +'<span class="lt lt-'+(ready?'ready':'todo')+'"></span>'
         +'<span class="badge '+(ready?'b-wait':'b-todo')+'">'
-        +(ready?'🟢 지금 하실 수 있습니다':(mk?'⚪ 세션 준비 대기':'⛔ 원고 없음'))+'</span>'
+        +(ready?'🟢 지금 하실 수 있습니다':(stale?'⚠️ 보류(원고≠라이브)':(mk?'⚪ 세션 준비 대기':'⛔ 원고 없음')))+'</span>'
         +'<span class="ttl">'+esc(String(r.title||'').slice(0,36))+'</span>'
         +'<span class="code">'+esc(r.code||'')+'</span>'
         +'<span class="badge b-todo">주황'+(r.orange||0)+' · 섹션19:'+(r.fs19||0)
@@ -743,6 +753,7 @@ function fileChip(path, label, isImg, exists){
       +' → 거기서 <b>Ctrl+A → Ctrl+C</b> → <b>②</b> 를 눌러 네이버 글 <b>수정</b>'
       +' → 본문 <b>Ctrl+A → Ctrl+V</b> → 저장. <b>파일을 찾으실 필요 없습니다.</b><br>'
       +'<b>🟢 지금 하실 수 있음 '+rdy+'편</b> &nbsp;·&nbsp; ⚪ 세션이 만들 수 있음 '+mkb+'편'
+      +((F.stale||0)?' &nbsp;·&nbsp; ⚠️ 보류(원고≠라이브) '+F.stale+'편':'')
       +' &nbsp;·&nbsp; ⛔ 원고가 없어 대상이 아님 '+nod+'편<br>'
       +'🔴 <b>사장님은 🟢 만 하십니다.</b> ⚪ 는 세션이 서식본을 만들면 🟢 로 올라옵니다 —'
       +' 기억하실 필요 없습니다(목록이 파일에 남아 세션이 바뀌어도 이어집니다).<br>'

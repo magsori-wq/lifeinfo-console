@@ -755,76 +755,6 @@
      "at": "2026-09-12 20:14"
     },
     {
-     "code": "lifeinfo-daily-publish-0921",
-     "title": "lifeinfo-daily-publish (F)",
-     "state": "done",
-     "note": "6번: C2-16 추천 1건 제안(코로나 필수접종 10/12) · 후보 0(찾은 경로 위 topics0920cde 참조) · docflow 선별 요청 · 초안 미작성\n▸ 00:03 6번: C2-16 추천 1건 제안(코로나 필수접종 10/12) · 후보 0(경로 topics0920cde 참조) · docflow 선별 요청 · 초안 미작성\n▸ 00:03 6번: C2-16 추천 1건 제안(코로나 필수접종 10/12) · 후보 0(경로 topics0920cde 참조) · 초안 미작성",
-     "auto_daily": true,
-     "base_code": "lifeinfo-daily-publish",
-     "date": "2026-09-21",
-     "at": "2026-09-21 00:03"
-    },
-    {
-     "code": "8-lifeinfo-issue-product-0921",
-     "title": "8-lifeinfo-issue-product (H)",
-     "state": "done",
-     "note": "09-21 07시 회차: 후보 1건 productprop 등록(20260921-1 소갈비살·추석 D-4) · 게시 안 함(승인 도장 없음)",
-     "auto_daily": true,
-     "base_code": "8-lifeinfo-issue-product",
-     "date": "2026-09-21",
-     "at": "2026-09-21 07:11"
-    },
-    {
-     "code": "daily-email-briefing-0921",
-     "title": "daily-email-briefing (A)",
-     "state": "done",
-     "note": "09-21 오전 메일브리핑 — 애드센스 계정 READY·사이트 NEEDS_ATTENTION(반려 유지, 4회째). 🔴 조치 필요 0건. GitHub 실패 3통 사유를 로그로 직접 확인: ①콘솔 정합성(09-20 05:35 run 35492064662) = posts_index 289 vs DB 290 → 09-17 실패(35176651000)도 277 vs 278 로 동일 사유, 일회성 아니라 발행마다 재발하는 구조(재생성 커밋 15건 이상). 지금은 374edad7 이후 동일 워크플로 6회 연속 success ②피드 드리프트 09-15~09-19 6회 연속 실패 = F3-06·F2-14 제목 불일치, DB 는 f262b7fd 로 동기 완료(현재 DB 제목이 라이브와 일치함 확인). 검증 회차는 오늘 08:55 KST(23:55 UTC) — watch drift-verify-0921 이 이미 들고 있다. GSC 유효성검사 결과(09-16 2통)는 watch gsc-validation-result-0916 에 기보고. 8975 전달분 0건=사각지대. is:important 0건.\n▸ 20:11 09-21 20:10 메일브리핑 — 애드센스 계정 READY·사이트 NEEDS_ATTENTION(adsense.py status 실측·반려 유지). 🔴조치 0건. 오전 이후 신규: ①콘솔 정합성 실패 1통(09-21 12:15 KST, 런 35556933326) — 아티팩트 직접 확인 사유=posts_index 292 vs DB 293 신선도, 오전 보고와 같은 '발행마다 재발' 구조. 이과장 15:36 재생성(abe4c77f) 뒤 동일 워크플로 연속 success(최신 35582361834 18:16 KST) ②피드 드리프트: 09-21 08:53 KST 런 35545967418 success = F3-06·F2-14 6회 연속 실패 해소 확인(watch drift-verify-0921 판정은 이부장 몫, 닫지 않음) ③Google Play 구독 갱신 영수증 1통(100GB, 09-21 18:54) 참고. GSC 7일 신규 0(09-16 2통 기보고=gsc-validation-result-0916). is:important 0건. 8975 전달분 0건=사각지대.",
-     "auto_daily": true,
-     "base_code": "daily-email-briefing",
-     "date": "2026-09-21",
-     "at": "2026-09-21 20:11"
-    },
-    {
-     "code": "lifeinfo-daily-topics-0921",
-     "title": "lifeinfo-daily-topics (B)",
-     "state": "done",
-     "note": "09-21 A·B 빈손 보고: 10월 시행·9월 마감 제도 검색 결과 B4-13·A1-14·B1-08·B1-09·B4-08 등 전부 기발행(dupcheck 🔴 0.71), 공식출처 확인된 신규 이슈 없어 topicprop add 0건. 선별 대기 A·B picked 0건이라 docflow 불필요. 브리핑 파일 저장\n▸ 13:52 09-21 사장님 요청 G4-08 북항 상어 글감 1차 조사: 공식 실시간 채널 없음(해경 보도자료·항만공사 공지 미확인, 기사 인용만). 팩트=9/18 08:57 신고 3~3.5m·15:15 몰이 중단·무태상어 추정(수과원)·9/19~20 재목격(20일 오전까지)·다리 출입통제. 21일 상태 미확인. topicprop G4-08 등록됨, 초안은 사장님 결정 대기\n▸ 13:55 [이부장 검토 09-21] 빈손 판정 **타당**. 근거가 구체적이다(제외 주제를 코드까지 대조: B4-13·A1-14·B1-08·B1-09·B4-08 전부 기발행 dupcheck 🔴 0.71). '검색 요약만으로 수치를 쓰지 않는다'는 규칙을 정확히 지켰고, 미발행 드래프트 5편이 있으니 재추천 안 한다는 재고 인식도 맞다. 🔴 그리고 13:52 G4-08 1차 조사가 값졌다 — '공식 실시간 채널 없음(해경·항만공사 미확인, 기사 인용만)' 을 확인해 준 덕에, 내가 그것을 모르고 쓴 '1차 출처로 확인하라' 지시를 고칠 수 있었다. 조사 결과를 draft0921g408 지시서에 그대로 넣었다.",
-     "auto_daily": true,
-     "base_code": "lifeinfo-daily-topics",
-     "date": "2026-09-21",
-     "at": "2026-09-21 13:55"
-    },
-    {
-     "code": "lifeinfo-publish-0921",
-     "title": "lifeinfo-publish (C)",
-     "state": "done",
-     "note": "루틴3 09-21: pubqueue 0건(재고 0)·도장 대기 0·gh run 진행중 없음·setgate 미완 없음·오늘 발행 2편(pace 해제) → 결재함 올릴 글·발행 트리거 없음, 빈손",
-     "auto_daily": true,
-     "base_code": "lifeinfo-publish",
-     "date": "2026-09-21",
-     "at": "2026-09-21 09:06"
-    },
-    {
-     "code": "9-lifeinfo-issue-product-pm-0921",
-     "title": "9-lifeinfo-issue-product-pm (I)",
-     "state": "done",
-     "note": "후보 1건: 꿀사과 3kg 12,900원 리뷰4782 평점4.3, 추석 D-4. 게시·링크발급 안 함(승인 선행)",
-     "auto_daily": true,
-     "base_code": "9-lifeinfo-issue-product-pm",
-     "date": "2026-09-21",
-     "at": "2026-09-21 15:11"
-    },
-    {
-     "code": "lifeinfo-travel-prep-0921",
-     "title": "lifeinfo-travel-prep (D)",
-     "state": "done",
-     "note": "09-21 21시 루틴4: rec G4-09(부산돼지국밥대전, 국밥주간 9/28 D-7)·alt H1-14(추석 특선영화 편성, 연휴 D-3) 제안→docflow pick 2건·verify 🟡(출처URL 표기). 초안은 H1-14만 작성(하루1편·시급성): 썸네일 272 실사진 6380색·pubqueue add·bodydup 0.039·V0 🟡pass(V0검사관, 발행 전 SBS·tvN·OCN 편성표 1회 확인 권고). G4-09 초안은 미작성 — 6번 루틴이 이어서(20곳 명단 비짓부산 원문 대조 필요). 커밋 44be57c0 푸시. 다음 지시서·재고 0→1 확인 필요: 결재함 H1-14 발행 카드 대기",
-     "auto_daily": true,
-     "base_code": "lifeinfo-travel-prep",
-     "date": "2026-09-21",
-     "at": "2026-09-21 21:23"
-    },
-    {
      "code": "lifeinfo-publish-0923",
      "title": "lifeinfo-publish (C)",
      "state": "done",
@@ -1753,6 +1683,16 @@
      "base_code": "lifeinfo-nightly-verify",
      "date": "2026-10-05",
      "at": "2026-10-05 22:48"
+    },
+    {
+     "code": "lifeinfo-daily-publish-1006",
+     "title": "lifeinfo-daily-publish (F)",
+     "state": "done",
+     "note": "2026-10-06 C·D·E 글감 빈손. 추천·후보 0건 제출(topicprop add 안 함). 사유: ①최적요금제(E) 시행일이 기사마다 달라(10/1·10/3·10월 말) 정책브리핑 원문 1회 시도 실패(삭제 페이지) → 날짜 미확정으로 제안 보류 ②산후조리 지원(C)은 기한 10/1 이 이미 지나 지금 찾을 이유 없음 ③dupcheck: 최적요금제는 D1-08 개천절과 관련주의 0.50만. 큐 0·초안 준비 0. 발행 0.",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-publish",
+     "date": "2026-10-06",
+     "at": "2026-10-06 00:14"
     }
    ],
    "order": "📮 routinelog — 루틴9 권고 회신 (2026-09-18 16:2x 이부장)\n\n【판정】 (A) 오늘 15:00 회차는 **무소득으로 정리하고 종료**한다. 루틴9 판단이 맞다.\n  근거 ①약과(id 423535267)는 오늘 06:22 이미 게시됐다(solo0918yakgwa) — 같은 상품 재게시는 중복이다\n       ②어제 홍삼(15:52)·오늘 약과(06:22)로 이틀 연속 상품 단독 게시가 나갔다.\n         쓰레드 조회가 100 미만인데 광고성 게시가 몰리면 계정이 광고 계정으로 보인다 — 오늘은 여기서 멈춘다\n       ③중복을 스스로 발견해 게시 전에 보고한 것이 정확했다. 그 판단이 이 회차의 성과다\n\n【(B) 새 후보를 지금 더 찾을 것인가】 찾지 않는다. 대신 **내일 회차 후보를 미리 정해 둔다**:\n  · 세척사과 꿀사과 3kg — 12,900원 · 리뷰 4,782 · 평점 4.3 (토스 id 2226153335, 이부장 16:2x 조회)\n  · 루틴8이 오늘 07:17 에 낸 후보와 같은 물건이다. 추석 D-7 이라 시의성은 내일까지 유효하다\n  · 5kg(18,900원·리뷰 3,903)도 있으나 3kg 쪽이 리뷰가 더 많고 1인가구·성묘 선물 모두에 맞다\n  · 🔴 이부장이 내일 오전에 승인 카드로 올린다(solo-ask). 루틴9는 내일 회차에서 이 후보를 먼저 확인하면 된다\n\n【루틴9에 남기는 기준 한 줄】\n  같은 상품이 이미 게시됐는지 `python -m studio.affiliate solo` 로 먼저 보고 후보를 낸다.\n  그러면 오늘처럼 중복 후보로 한 회차를 쓰지 않는다.",
@@ -4481,7 +4421,7 @@
    "order_at": "2026-10-05 17:52"
   }
  },
- "updated": "2026-10-05 23:14:51",
+ "updated": "2026-10-06 00:14:19",
  "current": {
   "batch": "navview0928",
   "code": "",
@@ -4492,6 +4432,10 @@
   "since_at": "2026-09-28 15:38:38"
  },
  "log": [
+  {
+   "t": "00:14:19",
+   "text": "✅ lifeinfo-daily-publish-1006 완료 — lifeinfo-daily-publish (F)"
+  },
   {
    "t": "23:14:51",
    "text": "▶   — 1/7단계 · 🤝 이부장에게 전달: docs/키워드후킹근거_20261005.md 완성·푸시(6bcb30f5). 10-04 유입검색어 21개 중 112편 직결은 4편(H1-05·H1-10·G3-05·E4-03), 이전 캡처(09-04~09-19) 근거 코드 14편 포함. 핵심 한계: 서식본(naverrich keep_check)은 글자 변경 불가라 클라우드는 '본문에 이미 있는 낱말 강조'만 가능 — 본문 0 인 낱말(통행권·신고센터·디지털 도착카드·락페·모집시기·삼량 등)은 클라우드 결과 문서에 코드와 함께 적어 사장님·이과장 결정으로 넘길 것. 클라우드 지시문에 붙일 문장은 문서 §5"
@@ -4647,10 +4591,6 @@
   {
    "t": "17:02:04",
    "text": "✅ D1-11 완료 — 2026 수능 11월 19일 교통통제 — 올해 발표는 아직 전"
-  },
-  {
-   "t": "17:01:53",
-   "text": "📄 osmu1005d308 작업 지시 등록(9267자, 2026-10-05 17:01)"
   }
  ],
  "currents": {
