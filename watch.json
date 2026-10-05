@@ -16315,6 +16315,16 @@
    "by": "이부장",
    "done_at": "2026-10-05",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 2차 재검사: L1 주석·queue.json 제목·L6 img alt 를 (복지부 계획)/예상 으로 헤지 수정 확인 — 본문 L69-71·L122-130 과 모순 없음. heading/dupcheck/bodydup "
+  },
+  {
+   "id": "boss-alert-verify-1005",
+   "added": "2026-10-05",
+   "what": "사장님 몫 새 항목 알림 실동작 확인 — CP 빨간 띠·탭 제목·소리(index.html, 30초) + 이부장 카톡(Monitor 60초, 세션 살아 있을 때만). 다음 새 결재 카드가 생겼을 때 사장님이 실제로 알아채셨는지 확인",
+   "due": "2026-10-06",
+   "cmd": "curl -s http://127.0.0.1:8011/api/view/approval",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

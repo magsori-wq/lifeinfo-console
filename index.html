@@ -17,6 +17,13 @@
   /* 📅 오늘 날짜 · 🔄 데이터 갱신 시각 (2026-10-05 사장님 지시 "CP 상단에 오늘날짜 및 데이터 갱신일자 표기") */
   #cpDates{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:4px;font-size:11px;font-weight:600;color:#9fb0d0;font-variant-numeric:tabular-nums}
   #cpDates .stale{color:#ff8a80}
+  /* 🚨 사장님 몫 새 항목 알림 (2026-10-05 사장님 "조치사항이 발생하면 나에게 알려, 빠른 조치할 수 있도록") */
+  #cpBellBtn{font:inherit;font-size:11px;font-weight:700;padding:1px 8px;border-radius:12px;border:1px solid #3a4a6e;background:#1a2440;color:#9fb0d0;cursor:pointer}
+  #cpBellBtn.on{border-color:#1f6b52;background:#0c3a2c;color:#06d6a0}
+  #cpAlert{margin:6px 0 0;padding:8px 12px;border-radius:10px;background:#3a1418;border:1px solid #b23a48;color:#ffd6da;font-size:13px;font-weight:700;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+  #cpAlert[hidden]{display:none}
+  #cpAlert button{font:inherit;font-size:12px;padding:3px 10px;border-radius:8px;border:0;cursor:pointer;background:#ff5d6c;color:#fff}
+  #cpAlert button.sec{background:transparent;border:1px solid #b23a48;color:#ffd6da}
   #roleBadge.ro{background:#26314f;color:#9fb0d0;border:1px solid #3a4a6e}
   nav{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
   nav button{cursor:pointer;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;border-radius:9px;padding:9px 13px;font-size:13px;font-weight:700;font-family:inherit}
@@ -106,7 +113,7 @@
 </head>
 <body>
   <div class="top">
-    <div class="brand">🏛️ CP <span class="dot">·</span> 생활정보 모음<span id="roleBadge" class="ro">👁 읽기 전용</span><div id="cpDates"><span id="cpToday">📅 오늘 —</span><span id="cpData">🔄 데이터 갱신 —</span></div></div>
+    <div class="brand">🏛️ CP <span class="dot">·</span> 생활정보 모음<span id="roleBadge" class="ro">👁 읽기 전용</span><div id="cpDates"><span id="cpToday">📅 오늘 —</span><span id="cpData">🔄 데이터 갱신 —</span><button id="cpBellBtn" type="button" title="새 결재·조치가 생기면 알림·소리로 알려 드립니다">🔔 알림 켜기</button></div><div id="cpAlert" hidden></div></div>
     <nav id="nav">
       <!-- 🔴 2026-08-13 사용자 지시: "메인탭도 연관된작업들은 서브탭으로 들어가 작업할수
            있도록" — 15개가 한 줄에 다 펼쳐져 있어 원하는 걸 찾으려면 계속 훑어야 했다.
@@ -1075,6 +1082,66 @@
     }
     today(); data();
     setInterval(today,30000); setInterval(data,60000);
+  })();
+
+  // 🚨 사장님 몫 새 항목 알림 (2026-10-05 사장님: "조치사항이 발생하면 이를 나에게 알려, 빠른 조치할 수 있도록")
+  //    판정은 결재 서버의 /api/view/approval(누르실 결재) + /api/view/pending(사장님 조치) — CP 화면과 같은 출처.
+  //    30초마다 확인 → 처음 보는 항목이 생기면 ①빨간 띠 ②탭 제목 ③소리 ④윈도 알림(켜신 경우).
+  //    본 항목은 이 브라우저에 기억(localStorage) — 서버가 꺼져 있으면 아무것도 하지 않는다.
+  (function(){
+    var BASES=['http://127.0.0.1:8011','http://localhost:8011'], KEY='cp_seen_boss_ids', TITLE=document.title;
+    var bell=document.getElementById('cpBellBtn'), box=document.getElementById('cpAlert');
+    function seen(){ try{ return JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){ return null; } }
+    function save(a){ try{ localStorage.setItem(KEY, JSON.stringify(a)); }catch(e){} }
+    function bellOn(){ return ('Notification' in window) && Notification.permission==='granted'; }
+    function paintBell(){ if(bellOn()){ bell.classList.add('on'); bell.textContent='🔔 알림 켜짐'; } }
+    bell.onclick=function(){ if(!('Notification' in window)){ bell.textContent='🔕 이 브라우저는 알림 불가'; return; }
+      Notification.requestPermission().then(paintBell); };
+    paintBell();
+    function beep(){ try{ var c=new (window.AudioContext||window.webkitAudioContext)(), o=c.createOscillator(), g=c.createGain();
+      o.frequency.value=880; g.gain.value=0.08; o.connect(g); g.connect(c.destination); o.start(); setTimeout(function(){o.stop();c.close();},350); }catch(e){} }
+    async function get(path){
+      for(var i=0;i<BASES.length;i++){
+        try{ var ac=new AbortController(), to=setTimeout(function(){ac.abort();},2500);
+          var r=await fetch(BASES[i]+path+'?t='+Date.now(),{cache:'no-store',signal:ac.signal}); clearTimeout(to);
+          if(r.ok) return await r.json(); }catch(e){}
+      }
+      return null;
+    }
+    async function tick(){
+      var ap=await get('/api/view/approval'), pe=await get('/api/view/pending');
+      if(!ap || !pe) return;
+      var items={};
+      (ap.items||[]).forEach(function(x){ items[x.id]={what:x.what||x.id, tab:'approval', tag:'결재'}; });
+      (pe.actions||[]).forEach(function(x){ items[x.id]={what:x.what||x.id, tab:'pendosmu', tag:'조치'}; });
+      var ids=Object.keys(items), old=seen();
+      if(old===null){ save(ids); return; }               // 처음 켰을 땐 지금 있는 것을 기준으로 삼는다
+      var fresh=ids.filter(function(i){ return old.indexOf(i)<0; });
+      save(old.filter(function(i){ return ids.indexOf(i)>=0; }).concat(fresh));
+      var pend=JSON.parse(sessionStorage.getItem('cp_alert_pend')||'[]').filter(function(i){ return items[i]; });
+      fresh.forEach(function(i){ if(pend.indexOf(i)<0) pend.push(i); });
+      sessionStorage.setItem('cp_alert_pend', JSON.stringify(pend));
+      if(fresh.length){
+        beep();
+        if(bellOn()){ try{ var n=new Notification('CP · 사장님 몫 새 항목 '+fresh.length+'건',
+          {body:fresh.map(function(i){ return '['+items[i].tag+'] '+String(items[i].what).replace(/<[^>]+>/g,'').slice(0,60); }).join(' / '), tag:'cp-boss', requireInteraction:true});
+          n.onclick=function(){ window.focus(); goTab(items[fresh[0]].tab); n.close(); }; }catch(e){} }
+      }
+      render(pend, items);
+    }
+    function render(pend, items){
+      if(!pend.length){ box.hidden=true; document.title=TITLE; return; }
+      document.title='🔴('+pend.length+') '+TITLE;
+      box.innerHTML='🚨 새로 생긴 사장님 몫 '+pend.length+'건 — '
+        +pend.map(function(i){ var x=items[i]; return '<button type="button" data-tab="'+x.tab+'">['+x.tag+'] '
+          +String(x.what).replace(/<[^>]+>/g,'').replace(/[<>&]/g,'').slice(0,40)+'</button>'; }).join('')
+        +'<button type="button" class="sec" data-ok="1">확인함</button>';
+      box.hidden=false;
+      box.querySelectorAll('button').forEach(function(b){ b.onclick=function(){
+        if(b.dataset.tab) goTab(b.dataset.tab);
+        if(b.dataset.ok){ sessionStorage.setItem('cp_alert_pend','[]'); render([], items); } }; });
+    }
+    tick(); setInterval(tick, 30000);
   })();
 
   // 🔑 역할 배지 (2026-09-01 사장님 지시: "누가 뭘 기록했고 … 관리자 권한도 부여해")
