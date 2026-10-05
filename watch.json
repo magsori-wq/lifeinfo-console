@@ -16338,6 +16338,16 @@
    "by": "이부장",
    "done_at": "2026-10-05",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "publish-btn-allow-check-1005",
+   "added": "2026-10-05",
+   "what": "발행 버튼 허용 설정이 실제로 들어갔는지 확인 — 14:21 확인 시 settings.local.json 변경 없음(미적용). 들어가면 버튼 구현·CP 실측까지",
+   "due": "2026-10-05",
+   "cmd": "grep -n approve_server C:/lifeinfo/.claude/settings.local.json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
