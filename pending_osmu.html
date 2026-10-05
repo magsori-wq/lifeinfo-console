@@ -673,10 +673,14 @@ function fileChip(path, label, isImg, exists){
           return '<span class="ttl">'+esc(full.slice(0,44))
             +(ct?' <b style="color:#7fc1ff">'+(key==='naver'?'네이버 제목':'채널 제목')+'</b>':'')
             +'</span>'
-            +(key==='naver'?' <button class="btn" data-t="'+esc(full)+'" onclick="event.stopPropagation();cpCopy(this.getAttribute(\'data-t\'),function(){toast(\'✅ 제목 복사됨(한 줄)\');},function(){toast(\'🔴 복사 실패\');})">① 📋 제목 복사</button>':'');})()
+            // 🔴 네이버 제목(ch_title)이 아직 없으면 블로그 제목을 복사하게 두지 않는다 (2026-10-05).
+            //    원고를 쓴 뒤 화면 자료가 굽히기 전이면 블로그 제목이 「게시만 하면 됨」과 함께 떴다(D3-08 실측).
+            +(key==='naver'&&!ct?' <b style="color:#ff8a80">⏳ 네이버 원고 준비 중 — 제목 복사 잠시 막음</b>':'')
+            +(key==='naver'&&ct?' <button class="btn" data-t="'+esc(full)+'" onclick="event.stopPropagation();cpCopy(this.getAttribute(\'data-t\'),function(){toast(\'✅ 제목 복사됨(한 줄)\');},function(){toast(\'🔴 복사 실패\');})">① 📋 제목 복사</button>':'');})()
         +'<span class="code">'+esc(p.code)+'</span>'
-        +'<span class="badge '+(c.light==='ready'?'b-wait':'b-todo')+'">'
-        +(c.light==='ready'?'🟡 게시만 하면 됨':'🔴 자산 미준비')+'</span></div>'
+        +(function(){var _ok=c.light==='ready'&&!(key==='naver'&&!(_c2&&_c2.ch_title));
+          return '<span class="badge '+(_ok?'b-wait':'b-todo')+'">'
+          +(_ok?'🟡 게시만 하면 됨':(c.light==='ready'?'⏳ 원고 준비 중':'🔴 자산 미준비'))+'</span>';})()+'</div>'
         +'<div class="files">'+naverButtons(p.code,_c2)
         +(c.files&&c.files.length? chips(c.files)
           : '<span class="f miss">✕ 매니페스트 미등록 — osmu_manifest set --code '+esc(p.code)+'</span>')
