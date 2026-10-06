@@ -16680,6 +16680,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:6de5a5b5"
+  },
+  {
+   "id": "tax-rev-2027-source-0106",
+   "added": "2026-10-06",
+   "what": "2026 세법개정안(소득세 과표 8,800→9,200만원 등) 1차 보도자료 확보 전까지 B 레인 제안 보류 — 기재부(mofe.go.kr) 보도자료 목록 404, 2차 출처만 확인됨",
+   "due": "2026-10-13",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}\\n' https://mofe.go.kr/nw/nes/nesdtaList.do?menuNo=4010100",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:2a8bceb5"
   }
  ]
 }
