@@ -16705,16 +16705,6 @@
    "by": "이부장",
    "done_at": "2026-10-06",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
-  },
-  {
-   "id": "pubgo-origin-stamp-check-1006",
-   "added": "2026-10-06",
-   "what": "10-06 12:28 D1-12 발행이 러너에서 'V0 검사 안 받음'으로 차단 — V0 도장이 로컬에만 있었다. 고칠 것 ①pubgo 가 트리거 전 origin/main 의 V0·go 도장 둘 다 확인 ②tower_watch BOSS_APPROVAL 이 커밋 제목만 봐서 11:56 publish_go 도장(afflink 커밋에 묶임)을 놓쳤다 → queue.json go 변화 자체를 감시",
-   "due": "2026-10-07",
-   "cmd": "grep -n 'v0check\\|origin' tools/pubgo.py | head; grep -n 'BOSS_APPROVAL' tools/tower_watch.sh",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
   }
  ]
 }
