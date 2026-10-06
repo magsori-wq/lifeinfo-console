@@ -300,7 +300,9 @@ async function openFile(path, isImg){
   //    Ctrl+A·Ctrl+C 해야 산다. 그 버튼이 이 화면에 없어서 두 번 연속 글자본이 나갔다.
   // 🔴 서버 모드에서는 __OSMUTEXT__ 가 안 실려 있었다(폴백에서만 읽었다) — 여기서 한 번 읽는다.
   //    이것이 없으면 서식본 버튼도, 아래 「완성본 우선」도 서버 모드에서 조용히 꺼진다.
-  if(!window.__OSMUTEXT__){ try{ window.__OSMUTEXT__ = await j('osmu_text.json'); }catch(e){} }
+  // 🔴 2026-10-06 — 한 번만 읽으면 화면을 연 뒤 새로 생긴 글(D1-12·H1-25)을 모른다. 그래서 서식본 버튼이
+  //    안 붙고 「전체 복사」(글자만)가 남아 옛 형식으로 올라갈 뻔했다(사장님 "왜 이전형식으로"). 원고를 열 때마다 새로 읽는다.
+  if(/(?:네이버용|쓰레드용|캡션)_/.test(path) || !window.__OSMUTEXT__){ try{ window.__OSMUTEXT__ = await j('osmu_text.json'); }catch(e){} }
   var rb=document.getElementById('richbtn');
   if(rb){ rb.style.display='none'; rb.removeAttribute('href');
     if(/네이버용_/.test(path)){
