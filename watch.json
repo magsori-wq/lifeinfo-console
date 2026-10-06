@@ -16770,8 +16770,10 @@
    "cmd": "python studio/gmailread.py scan --json | python -c \"import sys,json; d=json.load(sys.stdin); print({k:(v.get('count') if isinstance(v,dict) else v) for k,v in d.items()})\"",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-10-06",
+   "result": "원인 오판으로 닫는다. 실제 원인 = GitHub 실패 통지가 휴지통에 있다 — 커넥터 includeTrash:true 로 from:github.com newer_than:2d 조회 시 14스레드 전부 TRASH·UNREAD. 리더(messages().list)·in:inbox 조회 둘 다 휴지통을 제외하므로 안 보였다. 'SENDERS 창으로 설명 불가' 라고 적은 추론이 틀렸다. 대체 항목 = gmailread-trash-blindspot-1006"
   }
  ]
 }
