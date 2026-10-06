@@ -11080,62 +11080,6 @@
    "target": "xlink-h125",
    "detail": "H1-25 블로그스팟 교차링크 라이브 3채널 확인",
    "via": "cli"
-  },
-  {
-   "at": "2026-10-06T19:41:57",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "cloud-naverlive-docs3-1006",
-   "detail": "네이버 라이브 원고 192편 병합(표본 독립대조 0.99)·보류 26(카드)·CP 바로 가능 256편. 문서정리 3건은 아직 결과 없음",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-06T20:33:46",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "gmailread-count-gap-1006",
-   "detail": "원인 오판으로 닫는다. 실제 원인 = GitHub 실패 통지가 휴지통에 있다 — 커넥터 includeTrash:true 로 from:github.com newer_than:2d 조회 시 14스레드 전부 TRASH·UNREAD. 리더(messages().list)·in:inbox 조회 둘 다 휴지통을 제외하므로 안 보였다. 'SENDERS 창으로 설명 불가' 라고 적은 추론이 틀렸다. 대체 항목 = gmailread-trash-blindspot-1006",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-06T21:40:17",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "H1-26",
-   "detail": "예매 오픈(10/6 14:00)이 이미 지났다 — 발행은 빨라야 10/7, 핵심 앵글(오픈 시각·1인 4매) 가치 소멸. 공연(12월) 앵글로 다시 낼 거면 공연 2주 전",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-06T22:11:12",
-   "actor": "V0검사관",
-   "action": "v0check.fail",
-   "target": "G4-11",
-   "detail": "①'가장 많이 겹치는 날=10/10 8개'(정리박스·3장 제목) 오류: 같은 공식 날짜로 10/3(토)은 월간3+록페+나이트마켓+클래식+공연예술마켓+거리예술축제+광안리드론=9개. '한 달 최다' 단정 틀림 -> 10/6 이후 남은 날 중 최다로 한정하거나 10/3 9개 반영. ②4장 인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-06T22:40:24",
-   "actor": "V0검사관",
-   "action": "v0check.pass",
-   "target": "G4-11",
-   "detail": "재검사(diff만): ①남은 날 최다 10/10=8개, 10/3=9개를 전사표로 재계산해 일치·원고 '남은 날'로 한정 ②인용 8건 source 전사 추가, 팝업 id16·21 이미지 직접 열어 문구 일치 ③변경은 해당 6줄뿐",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-06T22:40:42",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-g4-11",
-   "detail": "V0 통과로 해소 — 검사자 V0검사관 · 재검사(diff만): ①남은 날 최다 10/10=8개, 10/3=9개를 전사표로 재계산해 일치·원고 '남은 날'로 한정 ②인용 8건 source 전사 추가, 팝업 id16·21 이미지 직접 열어 문구 일치 ③변경은 ",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-07T02:07:38",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "G4-11",
-   "detail": "",
-   "via": "cli"
   }
  ]
 }
