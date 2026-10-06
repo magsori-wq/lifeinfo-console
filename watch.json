@@ -16751,6 +16751,27 @@
    "by": "이부장",
    "done_at": "2026-10-06",
    "result": "네이버 라이브 원고 192편 병합(표본 독립대조 0.99)·보류 26(카드)·CP 바로 가능 256편. 문서정리 3건은 아직 결과 없음"
+  },
+  {
+   "id": "cloud-docs3-1006",
+   "added": "2026-10-06",
+   "what": "클라우드 문서정리 3건(루트 임시파일·AGENTS.md 차이·CLAUDE.md 중복) 결과 브랜치 검토",
+   "due": "2026-10-07",
+   "cmd": "git fetch && git branch -r --sort=-committerdate | head -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "gmailread-count-gap-1006",
+   "added": "2026-10-06",
+   "what": "Gmail 리더 조회 건수가 같은 날 두 회차 사이에 설명 없이 줄었다 — 08:26 회차 보고 'magsori 20건' vs 20:24 회차 실측 'magsori 9건'(m8975 2·aroma 2 는 동일). SENDERS 창은 발신자별 2~30일 고정이고 두 회차 사이(12시간)에 창을 벗어날 메일은 09-29 08:26~20:24 수신분뿐이라 11건 감소를 설명하지 못한다. 두 회차가 --days 를 달리 줬는지, maxResults=25 상한에 걸렸는지, 아니면 집계 기준이 달랐는지 미확인 — 추측하지 않고 남긴다. ⚠️ 이번 회차는 커넥터 'in:inbox newer_than:1d' 12스레드 전건 대조로 누락 0 을 따로 확인했으므로 메일을 놓친 것은 아니다. 리더 단독으로는 신뢰 구간을 모른다는 뜻",
+   "due": "2026-10-07",
+   "cmd": "python studio/gmailread.py scan --json | python -c \"import sys,json; d=json.load(sys.stdin); print({k:(v.get('count') if isinstance(v,dict) else v) for k,v in d.items()})\"",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }
