@@ -16774,6 +16774,17 @@
    "by": "루틴1",
    "done_at": "2026-10-06",
    "result": "원인 오판으로 닫는다. 실제 원인 = GitHub 실패 통지가 휴지통에 있다 — 커넥터 includeTrash:true 로 from:github.com newer_than:2d 조회 시 14스레드 전부 TRASH·UNREAD. 리더(messages().list)·in:inbox 조회 둘 다 휴지통을 제외하므로 안 보였다. 'SENDERS 창으로 설명 불가' 라고 적은 추론이 틀렸다. 대체 항목 = gmailread-trash-blindspot-1006"
+  },
+  {
+   "id": "gmailread-trash-blindspot-1006",
+   "added": "2026-10-06",
+   "what": "🔴 메일 브리핑 감시 구멍 — GitHub 워크플로/발행 실패 통지가 휴지통에 있어 메일 경로로는 영원히 안 보인다. 실측 2026-10-06 20:3x: 커넥터 includeTrash:true 로 'from:github.com newer_than:2d' = 14스레드, **전부 labelIds=[UNREAD,TRASH]**(10-05 08:01Z ~ 10-06 05:01Z). 그중 1a10f439aa9f4ad4 가 오늘 D1-12 발행 실패 통지(12:30 KST)다. 리더는 messages().list 를 쓰고 그건 기본으로 휴지통 제외 · 커넥터 in:inbox 조회도 제외 → 양쪽 다 못 본다. 08:26 회차는 같은 종류를 2건 보고했으니 그때는 받은편지함에 있었고 그 사이 버려졌다(= 리더 건수 20→9 감소의 설명). ⚠️ UNREAD 인 채 휴지통 = 사람이 읽고 버린 모양이 아니라 Gmail 필터로 추정되지만 **필터 설정은 확인 못 했다 — 추정이다.** 고칠 방향 2가지(이부장 결정): ⓐgmailread SENDERS 조회에 includeSpamTrash=True ⓑ메일에 기대지 말고 gh run list --status failure 를 브리핑 절차에 넣는다 — ⓑ가 메일 설정과 무관해 더 튼튼하다. 이 루틴 [중점 확인 대상] 첫 줄이 'GitHub 워크플로우/Pages 배포 실패' 라서 구조적 누락이다",
+   "due": "2026-10-07",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --status failure --limit 5",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "루틴1"
   }
  ]
 }

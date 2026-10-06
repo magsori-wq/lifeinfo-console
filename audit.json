@@ -11088,6 +11088,22 @@
    "target": "cloud-naverlive-docs3-1006",
    "detail": "네이버 라이브 원고 192편 병합(표본 독립대조 0.99)·보류 26(카드)·CP 바로 가능 256편. 문서정리 3건은 아직 결과 없음",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-06T20:33:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gmailread-count-gap-1006",
+   "detail": "원인 오판으로 닫는다. 실제 원인 = GitHub 실패 통지가 휴지통에 있다 — 커넥터 includeTrash:true 로 from:github.com newer_than:2d 조회 시 14스레드 전부 TRASH·UNREAD. 리더(messages().list)·in:inbox 조회 둘 다 휴지통을 제외하므로 안 보였다. 'SENDERS 창으로 설명 불가' 라고 적은 추론이 틀렸다. 대체 항목 = gmailread-trash-blindspot-1006",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-06T21:40:17",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "H1-26",
+   "detail": "예매 오픈(10/6 14:00)이 이미 지났다 — 발행은 빨라야 10/7, 핵심 앵글(오픈 시각·1인 4매) 가치 소멸. 공연(12월) 앵글로 다시 낼 거면 공연 2주 전",
+   "via": "cli"
   }
  ]
 }
