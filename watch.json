@@ -16819,6 +16819,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "anthropic-report-channel-1008",
+   "added": "2026-10-08",
+   "what": "[이부장 판단 필요] Anthropic Support 회신 도착(KST 10-07 06:23, 담당 Nid) — 사고신고 1·2차 티켓이 하나로 통합되고 Support 쪽은 종료됐다. 원문 인용: 'Since we aren't opening an investigation on our side, there's no need to send the detailed evidence files to Support. Including them in a /bug report or GitHub issue is where they'll be most useful.' 즉 모아 둔 근거 문서 3종(docs/일일_문제기록.md · docs 안의 전과정 기록 · docs/프로세스조직_최종개선_이부장_20260903.md)은 Support 메일이 아니라 Claude Code 안의 /bug 또는 github.com/anthropics/claude-code/issues 로 내야 한다. ⚠️ CLAUDE.md 는 창구를 /feedback(SendFeedback 초안 → 사장님 전송)으로 적어 두었고 Nid 는 /bug·GitHub issues 를 지목한다 — 두 창구가 같은 것인지 다른 것인지 확인한 뒤 CLAUDE.md 를 고칠지 판단할 것. 실제 제출은 사장님만 가능하므로 결정 카드가 필요하면 이부장이 올린다(루틴1 권한 밖). 회신 요지: 로드맵·일정 확약 불가 / 공식문서(code.claude.com/docs) 밖의 우회 설정 없음 / 2차 신고 질문 4~6(빈 결과 사유 구분·세션 간 수치 출처 강제·요약출력이 판단근거가 되는 것 방지)도 같은 답",
+   "due": "2026-10-10",
+   "cmd": "PYTHONIOENCODING=utf-8 grep -n 'SendFeedback' CLAUDE.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:80b1048f"
   }
  ]
 }
