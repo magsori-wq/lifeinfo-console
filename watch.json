@@ -17187,6 +17187,17 @@
    "kind": "action",
    "state": "todo",
    "by": "세션:7a216f31"
+  },
+  {
+   "id": "gmailread-sender-gap-1009",
+   "added": "2026-10-09",
+   "what": "[이부장 판단] gmailread 리더가 발신자 목록 밖 메일을 놓친다 — 10-09 08시 브리핑에서 리더 30건에는 없고 넓은 커넥터 조회(newer_than:1d)에만 나온 메일 5건: noreply-accounts@google.com 'Google 계정 데이터를 Claude에 공유'2통(이번 기기알림 원인 규명의 결정적 근거였다) · CloudPlatform-noreply@google.com [IMPORTANT] Cloud Storage SDK · Microsoft365 구독변경 · 광고4. 리더만 믿으면 '전수'가 아니다. 발신자 목록에 noreply-accounts@google.com·CloudPlatform-noreply@google.com 추가 여부, 또는 브리핑 절차에 넓은 조회를 의무화할지 판단",
+   "due": "2026-10-10",
+   "cmd": "python studio/gmailread.py scan | tail -5 && grep -n 'SENDERS\\|발신자' studio/gmailread.py | head -20",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:7a216f31"
   }
  ]
 }
