@@ -17176,6 +17176,17 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "adsense-reject-hist-1009",
+   "added": "2026-10-09",
+   "what": "[이부장 판단] CLAUDE.md L91 애드센스 반려 이력이 '2026-08-12 반려(4회째)' 에서 멈춰 있고 10-03 반려(10-02 21:46Z adsense-noreply 원문 확인)가 안 들어갔다 — 다음 세션이 그 줄을 읽고 '08-12 이후 계속 심사 중' 으로 오판할 수 있다(그 줄 자신이 '이 자리가 6일간 사실과 반대를 말한 적이 있다' 고 경고하는 자리다). 같은 이유로 watch adsense-review-0923(todo)이 아직 '심사 진행 중' 으로 낡았다 — 10-06 브리핑이 이미 지적했고 미처리. 올린이가 이부장이라 루틴이 닫지 않는다. 회차 표기는 단정 금지: CLAUDE.md 이력 기준 5회째 / 메일상 6회째(06-23 aroma8975 수신분 포함, adsense-reject-count-5-0928 참조)",
+   "due": "2026-10-09",
+   "cmd": "grep -n '4회째' CLAUDE.md && python studio/adsense.py status",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:7a216f31"
   }
  ]
 }

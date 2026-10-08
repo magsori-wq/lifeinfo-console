@@ -1693,6 +1693,26 @@
      "base_code": "lifeinfo-daily-publish",
      "date": "2026-10-09",
      "at": "2026-10-09 00:17"
+    },
+    {
+     "code": "8-lifeinfo-issue-product-1009",
+     "title": "8-lifeinfo-issue-product (H)",
+     "state": "done",
+     "note": "🛒 후보 1건: 기모 보온 니삭스(6종) 7,900원·리뷰993·4.4 — 10월 기온하강기 보온용품, 토스 겨울용품 중 최다리뷰. 결재함 afflink-issue20261009 등록(링크 발급 대기)",
+     "auto_daily": true,
+     "base_code": "8-lifeinfo-issue-product",
+     "date": "2026-10-09",
+     "at": "2026-10-09 07:14"
+    },
+    {
+     "code": "daily-email-briefing-1009-1009",
+     "title": "daily-email-briefing-1009 (A)",
+     "state": "done",
+     "note": "[10-09 08시 메일브리핑] 메일발 사장님 새 할 일 0건 · 이부장 판단 1건(adsense-reject-hist-1009).\n\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (10-09 08:0x adsense.py status 실측)\n · 재검토 요청 가능일 = 오늘 10-09. 추적 항목 adsense-rereview-open-1009 는 done 으로 닫혔다.\n · ⚠️ 그런데 API 상태는 여전히 NEEDS_ATTENTION 이고 GETTING_READY 로 바뀌지 않았다 = 새 심사 사이클이 시작된 신호가 없다. 실제로 누르셨는지는 화면에서만 확인되고 제가 확인할 방법은 없다. 누를 시점은 사장님 판단(09-23 지시).\n · 경로: AdSense → 사이트 → lifeinfo8975.blogspot.com 상세 → 문제를 수정했음을 확인합니다 체크 → 검토 요청\n · 10-03 06:46 KST(=10-02 21:46Z) 반려 통지 = 10-04~10-08 기보고. 60일 조회로 10-02 이후 신규 애드센스 통지 0건 확인.\n\n■ 새 중요 메일 — 2통 (기준선 = 10-08 20:21 브리핑 이후). 조치 불요\n1) 🟡 Anthropic \"Security alert: new trusted device added to your Claude account\" x2 · 10-09 06:12:05·06:12:09 KST · no-reply@mail.anthropic.com\n   본문 표를 직접 읽었다(두 통 완전 동일): Device = \"Electron on Windows · Seongnam-si\" / Location = \"Seongnam-si, Gyeonggi-do, KR\" / IP address = 182.224.194.43 / When = \"Thursday, October 08 2026 at 21:12 UTC\"\n   원문: \"A new trusted device was added to your Claude account. If this was you, no action is needed. If you don't recognize this activity, review your devices and secure your account now.\"\n   뜻: Electron = Claude Desktop. IP 182.224.194.43 과 기기 문자열이 10-06 14:14 알림(10-06 20시 브리핑 기록)과 완전히 같다 = 같은 PC·같은 네트워크.\n   맥락: 같은 시각 재부팅이 있었다 — 커밋 7c91bc06(05:59 재부팅 전 원본 상태파일 보존) → 930e6f3d(06:13 재부팅 후 nProtect 잔여 확인), watch naver-login-aside-1009 \"Aside 네이버 로그인 풀림(재부팅 뒤)\". 재부팅 뒤 Desktop·Aside 재인증으로 기기가 다시 등록된 것으로 보인다. 06:14 사장님 결재 커밋(bac08da2 publish_go G3-10)이 있어 그 시각 사장님이 작업 중이셨다.\n   🔴 제가 확인한 것은 시각·IP·기기문자열이 일치한다는 것까지다. 기기 신원 자체를 확인할 방법은 없다 — 본인 추가가 아니면 claude.ai/settings/account 에서 기기 정리가 필요하다.\n\n■ GitHub 콘솔 정합성 검사 실패 25통 = 기보고 · 🟢 해소 확인\n · 실패 사유를 로그로 직접 읽었다(run 37770017451): \"⛔ [썸네일 누락] DB가 참조하는데 저장소에 없음: 322_busan_grade5_enforcement.png\" · 신호등 RED(통과 10 · 경고 2 · 실패 1). 재시도 성공으로 넘기지 않고 원인을 확인한 것이다.\n · 근본원인 = G1-11 썸네일 미배포. 어제 브리핑이 이미 발견해 추적 중(g111-deploy-thumb-1008 done · g111-thumb-why-missed-1008 todo 오늘 · thumb-deploy-miss-cause-1009 todo 오늘).\n · 실패 구간 29건 = 10-08 06:33~11:26Z(15:33~20:26 KST) · 최신 success 10-08 22:13Z.\n · 라이브 재확인: thumbs/322_busan_grade5_enforcement.png 200 · thumbs/322n_busan_grade5_naver.png 200 (어제 \"네이버용 322n 도 없다\" 던 것까지 해소). 로컬·배포 저장소 둘 다 존재.\n · 남은 ⚠️2건은 고아 썸네일 117개와 index_status total=339 vs DB 342(색인 점검 시점차).\n · lifeinfo-source 저장소 최근 12건 전부 success.\n\n■ 이부장 판단 1건 — watch adsense-reject-hist-1009 등록\n · CLAUDE.md L91 반려 이력이 \"2026-08-12 반려(4회째)\" 에서 멈춰 있고 10-03 반려가 안 들어갔다. 다음 세션이 그 줄을 읽고 \"08-12 이후 계속 심사 중\" 으로 오판할 수 있다(그 줄 자신이 \"이 자리가 6일간 사실과 반대를 말한 적이 있다\" 고 경고하는 자리다).\n · 같은 이유로 watch adsense-review-0923(todo)이 아직 \"심사 진행 중\" 으로 낡았다. 10-06 브리핑이 이미 지적했고 미처리다. 올린이가 이부장이라 루틴이 닫지 않는다.\n · 회차 표기는 단정하지 않는다 — CLAUDE.md 이력 기준 5회째 / 메일상 6회째(06-23 aroma8975 수신분 포함, adsense-reject-count-5-0928 참조).\n\n■ 점검기록: 리더 3계정 전부 ✅(magsori 30 · m8975 0 · aroma 0). 30통 구성 = 지원회신1 + 보안알림2 + GitHub실패25 + 뉴스레터1 + 애드센스1 (전수 대조). m8975 \"0건\" 은 리더가 추적하는 발신자 메일이 없다는 뜻이고 수신함이 빈 것이 아니다 — 10-09 07:31 googlenews 가 8975 로 왔다. 8975 전달은 작동하는 것으로 보인다(추정, 시작일 불명 — to:magsori8975 메일 3통이 magsori 수신함 INBOX 에 있다) → gmail-8975-relay-0924·gmail-reader-consent-0924 해소 가능 여부는 이부장·사장님 판단, 루틴이 닫지 않는다. GSC sc-noreply 9일 조회 0건. aroma 0건 = 평소 상태(60일 1건). 원격 동기 최신.",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing-1009",
+     "date": "2026-10-09",
+     "at": "2026-10-09 08:19"
     }
    ],
    "order": "📮 routinelog — 루틴9 권고 회신 (2026-09-18 16:2x 이부장)\n\n【판정】 (A) 오늘 15:00 회차는 **무소득으로 정리하고 종료**한다. 루틴9 판단이 맞다.\n  근거 ①약과(id 423535267)는 오늘 06:22 이미 게시됐다(solo0918yakgwa) — 같은 상품 재게시는 중복이다\n       ②어제 홍삼(15:52)·오늘 약과(06:22)로 이틀 연속 상품 단독 게시가 나갔다.\n         쓰레드 조회가 100 미만인데 광고성 게시가 몰리면 계정이 광고 계정으로 보인다 — 오늘은 여기서 멈춘다\n       ③중복을 스스로 발견해 게시 전에 보고한 것이 정확했다. 그 판단이 이 회차의 성과다\n\n【(B) 새 후보를 지금 더 찾을 것인가】 찾지 않는다. 대신 **내일 회차 후보를 미리 정해 둔다**:\n  · 세척사과 꿀사과 3kg — 12,900원 · 리뷰 4,782 · 평점 4.3 (토스 id 2226153335, 이부장 16:2x 조회)\n  · 루틴8이 오늘 07:17 에 낸 후보와 같은 물건이다. 추석 D-7 이라 시의성은 내일까지 유효하다\n  · 5kg(18,900원·리뷰 3,903)도 있으나 3kg 쪽이 리뷰가 더 많고 1인가구·성묘 선물 모두에 맞다\n  · 🔴 이부장이 내일 오전에 승인 카드로 올린다(solo-ask). 루틴9는 내일 회차에서 이 후보를 먼저 확인하면 된다\n\n【루틴9에 남기는 기준 한 줄】\n  같은 상품이 이미 게시됐는지 `python -m studio.affiliate solo` 로 먼저 보고 후보를 낸다.\n  그러면 오늘처럼 중복 후보로 한 회차를 쓰지 않는다.",
@@ -4724,17 +4744,29 @@
    "owner": "이과장"
   }
  },
- "updated": "2026-10-09 06:48:07",
+ "updated": "2026-10-09 08:19:09",
  "current": {
-  "batch": "pub1009g310",
-  "code": "",
-  "title": "",
+  "batch": "issueprod",
+  "code": "20261002-2",
+  "title": "제주 하우스감귤",
   "step": 1,
-  "what": "[Aside][blocked] blocked - 네이버 로그인 풀림(글쓰기 주소가 NAVER 로그인 화면으로 이동). 비밀번호 입력·재시도 안 함, 발행 0편. Lee 로그인 후 같은 지시 #8로 재개 가능.",
-  "since": "06:20",
-  "since_at": "2026-10-09 06:20:26"
+  "what": "🛒 후보: 기모 보온 니삭스(6종세트) · 7,900원 · 리뷰993·4.4 · 왜 지금: 10월 기온 하강기 보온용품, 토스 인기 겨울용품 중 최다 리뷰 — 결재함 afflink-issue20261009",
+  "since": "15:16",
+  "since_at": "2026-10-02 15:16:40"
  },
  "log": [
+  {
+   "t": "08:19:09",
+   "text": "✅ daily-email-briefing-1009-1009 완료 — daily-email-briefing-1009 (A)"
+  },
+  {
+   "t": "07:14:49",
+   "text": "✅ 8-lifeinfo-issue-product-1009 완료 — 8-lifeinfo-issue-product (H)"
+  },
+  {
+   "t": "07:13:57",
+   "text": "▶ 20261002-2 제주 하우스감귤 — 1/7단계 · 🛒 후보: 기모 보온 니삭스(6종세트) · 7,900원 · 리뷰993·4.4 · 왜 지금: 10월 기온 하강기 보온용품, 토스 인기 겨울용품 중 최다 리뷰 — 결재함 afflink-issue20261009"
+  },
   {
    "t": "06:48:07",
    "text": "▶   — 1/7단계 · [Aside][blocked] blocked - 네이버 로그인 풀림(글쓰기 주소가 NAVER 로그인 화면으로 이동). 비밀번호 입력·재시도 안 함, 발행 0편. Lee 로그인 후 같은 지시 #8로 재개 가능."
@@ -4882,18 +4914,6 @@
   {
    "t": "16:23:51",
    "text": "📄 aside 작업 지시 등록(1429자, 2026-10-08 16:23)"
-  },
-  {
-   "t": "16:19:51",
-   "text": "✅ G1-11 완료 — 부산 5등급 모의단속"
-  },
-  {
-   "t": "16:18:04",
-   "text": "▶   — 1/7단계 · [Aside][done] 지시 #5 완료. G1-11 네이버 발행 https://blog.naver.com/magsori8975/224435359009 . 16:10 이후 발행, 제목·이미지·카테고리·태그를 실제 글에서 확인. 오늘 Aside 네이버 발행은 A2-24, G1-11 2편으로 한도 도달, 다음 발행은 18:10 이후. · https://blog.naver.com/magsori8975/224435359009"
-  },
-  {
-   "t": "16:15:40",
-   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224435359009 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타"
   }
  ],
  "currents": {
@@ -4920,7 +4940,7 @@
    "code": "20261002-2",
    "title": "제주 하우스감귤",
    "step": 1,
-   "what": "🛒 빈손 — 오늘 이미 승인대기 2건(가습기 10/6·오징어젓갈 10/8, 미게시) 재고 보유 중. 시즌 낱말(전기요·전기장판·온열매트·무릎담요·핫팩·히터·극세사이불·수면양말·김장·수능선물) 전수 탐색 — 토스 인기목록 공백(겨울 난방류는 collect 범위 밖). 추가 수집 시도: collect 294건 신규확보 후 재검색해도 동일 공백.",
+   "what": "🛒 후보: 기모 보온 니삭스(6종세트) · 7,900원 · 리뷰993·4.4 · 왜 지금: 10월 기온 하강기 보온용품, 토스 인기 겨울용품 중 최다 리뷰 — 결재함 afflink-issue20261009",
    "since": "15:16",
    "since_at": "2026-10-02 15:16:40"
   },
@@ -5948,14 +5968,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-09-25 07:12:47",
-   "bid": "issueprod",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "테스트"
-  },
   {
    "ts": "2026-09-25 09:53:26",
    "bid": "v0fix0925g109",
@@ -8355,6 +8367,14 @@
    "title": "",
    "owner": "이과장",
    "what": "[Aside][blocked] blocked - 네이버 로그인 풀림(글쓰기 주소가 NAVER 로그인 화면으로 이동). 비밀번호 입력·재시도 안 함, 발행 0편. Lee 로그인 후 같은 지시 #8로 재개 가능."
+  },
+  {
+   "ts": "2026-10-09 07:13:57",
+   "bid": "issueprod",
+   "code": "20261002-2",
+   "title": "제주 하우스감귤",
+   "owner": "",
+   "what": "🛒 후보: 기모 보온 니삭스(6종세트) · 7,900원 · 리뷰993·4.4 · 왜 지금: 10월 기온 하강기 보온용품, 토스 인기 겨울용품 중 최다 리뷰 — 결재함 afflink-issue20261009"
   }
  ]
 }
