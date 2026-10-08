@@ -16936,8 +16936,10 @@
    "due": "2026-10-09",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('aside'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-08",
+   "result": "지시 #2 13:19 등록 → 13:24 수신·결과 보고(5분 만에 처리, 30분 주기 이내) — 전달 경로 실동작 확인"
   },
   {
    "id": "aside-order2-ack-1008",
@@ -16950,6 +16952,16 @@
    "by": "이부장",
    "done_at": "2026-10-08",
    "result": "13:24:06 수신 보고(order_at 13:19 일치) · 13:24:27 결과(2·1·11·129) — 이부장이 CP 화면에서 같은 값 확인"
+  },
+  {
+   "id": "watch-gate-naver-aside-1008",
+   "added": "2026-10-08",
+   "what": "watch add 게이트가 'naver-aside-<코드>'(네이버 발행 주체 지정 = 사장님 결정, 10-08 규칙) 카드를 '라이브 발행 트리거=이과장 몫'으로 오분류해 거부 — roles 에 '네이버 발행 주체 지정 = 사장님' 행동 추가 + 게이트 예외. 우회(--force) 하지 말고 코드로 고칠 것",
+   "due": "2026-10-09",
+   "cmd": "python -m studio.roles 사장님 네이버",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

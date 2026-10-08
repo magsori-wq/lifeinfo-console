@@ -11184,6 +11184,22 @@
    "target": "A2-24",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-08T13:25:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-order2-ack-1008",
+   "detail": "13:24:06 수신 보고(order_at 13:19 일치) · 13:24:27 결과(2·1·11·129) — 이부장이 CP 화면에서 같은 값 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-08T13:25:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-poll-verify-1008",
+   "detail": "지시 #2 13:19 등록 → 13:24 수신·결과 보고(5분 만에 처리, 30분 주기 이내) — 전달 경로 실동작 확인",
+   "via": "cli"
   }
  ]
 }
