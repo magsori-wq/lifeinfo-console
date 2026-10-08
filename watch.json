@@ -17066,6 +17066,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "g111-deploy-thumb-1008",
+   "added": "2026-10-08",
+   "what": "G1-11 썸네일 322_busan_grade5_enforcement.png 이 배포 저장소에 없어 라이브 404 — 블로그 글 상단 이미지가 지금 깨져 있다(라이브 글이 그 URL 을 참조). 네이버용 322n 도 같이 없다. 원인: G1-11 register 가 '등록→즉시배포' 푸시를 안 했다(deploy 저장소에 G1-11 register 커밋 없음 · A2-24 03:26·A4-08 08:31 은 있다). 효과: 콘솔 정합성 검사 RED 24회(16:14~19:43). deploy.bat 1회면 해소된다.",
+   "due": "2026-10-08",
+   "cmd": "cmd /c C:\\lifeinfo\\deploy.bat",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:6973bee9"
   }
  ]
 }
