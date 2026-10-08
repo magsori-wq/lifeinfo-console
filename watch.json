@@ -17107,8 +17107,10 @@
    "due": "2026-10-09",
    "cmd": "Get-WinEvent -FilterHashtable @{LogName='System';Id=1001}",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-09",
+   "result": "원인 확인: 10-09 02:03 블루스크린 = TKFsAv64.sys(INCA 'nProtect Online Security' 은행 보안 프로그램 드라이버)가 Defender(MsMpEng) 파일검사 중 충돌. WinDbg 덤프 분석 docs/_bsod_20261009.txt. 10-07 건은 덤프 덮어써져 미확인"
   }
  ]
 }
