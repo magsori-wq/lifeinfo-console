@@ -16138,10 +16138,8 @@
    "due": "2026-10-08",
    "cmd": "python -c \"import json;d=json.load(open('webapp/index_status.json',encoding='utf-8'));print(d.get('checked_at'));[print(c,d['posts'][c].get('state'),d['posts'][c].get('lastCrawl')) for c in ('G4-06','C2-11','A1-15')]\"",
    "owner": "claude",
-   "state": "done",
-   "by": "4.AdSense",
-   "done_at": "2026-10-08",
-   "result": "실험 R 결과(10-08 비교): G4-06·C2-11·A1-15 세 편 모두 10-04 요청 4~8분 뒤 재크롤(lastCrawl 10-01 → 10-04T08:28~08:30Z = 17:28~17:30 KST; 요청 17:22~17:24 KST) · 상태는 세 편 모두 Redirect error 재발 · 같은 날 GSC 실제 URL 테스트는 3/3 통과 = 사전 등록한 해석 「크롤 시점엔 지금도 실패(저장 판정이 낡은 것 아님)」에 해당. 한계: n=3 · 원인(왜 테스트와 크롤이 갈리는지)은 못 쟀다. 루틴7 문서 docs/색인요청효과_통제군_20261008.md §5 「실험 R 미실행」은 gsc_req_dates 만 본 판단 — 실제로는 실행됨(gsc_log 가 10-01 요청분을 「이미있음」으로 처리해 날짜가 안 바뀜). 같은 D3-07 도 10-04 10:07 KST 요청 → 01:15Z(10:15 KST) 크롤"
+   "state": "wait",
+   "by": "4.AdSense"
   },
   {
    "id": "adsense-contact-paste-1004",
@@ -16974,6 +16972,38 @@
    "due": "2026-10-08",
    "cmd": "Aside 브라우저 → naver.com 로그인 → 이부장에게 '로그인했어'",
    "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-08",
+   "result": "사장님 로그인 → Aside 14:0x A2-24 네이버 발행 완료(224435205378) 이부장 라이브 확인"
+  },
+  {
+   "id": "xlink-a224",
+   "added": "2026-10-08",
+   "what": "🔗 A2-24 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-24",
+   "due": "2026-10-08",
+   "cmd": "python studio/blogger.py crosslink --code A2-24",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "draft-a408-next-1008",
+   "added": "2026-10-08",
+   "what": "A4-08 가습기살균제 배상 신청(오늘 시행·2027-04-07까지) 초안 지시 — G1-11 이 pubqueue 에 오르면 이과장에 지시. 근거 docs/글감후보_20261008_오후.md 4번(국무조정실 newsId=156784523·healthrelief.or.kr). 금액 산정기준은 시행령 원문 필요",
+   "due": "2026-10-08",
+   "cmd": "python -m studio.pubqueue",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "idx-doc-fix-expR-1008",
+   "added": "2026-10-08",
+   "what": "4. 보고(14:5x): docs/색인요청효과_통제군_20261008.md §5 '실험 R 미실행'은 틀림 — G4-06·C2-11·A1-15 를 10-04 17:22~24 재요청, 4~8분 뒤 재크롤(lastCrawl 10-04T08:28~30Z), 결과 3/3 Redirect error 재발. §2 '이미 크롤된 235편 재크롤 0'은 '232편 0 + 재요청 3편 3/3'. 문서를 실데이터(index_status)로 확인 후 정정·정의표 B 판단",
+   "due": "2026-10-09",
+   "cmd": "git show origin/main:webapp/index_status.json | python -c \"import sys,json;d=json.load(sys.stdin);print({k:d['urls'][k].get('lastCrawl') if isinstance(d.get('urls'),dict) else '' for k in []})\"",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
