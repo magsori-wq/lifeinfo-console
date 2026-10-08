@@ -16819,8 +16819,10 @@
    "cmd": "python -m studio.tosslink link 1240674855",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-08",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "anthropic-report-channel-1008",
@@ -16861,6 +16863,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:8196380a"
+  },
+  {
+   "id": "xlink-g411",
+   "added": "2026-10-08",
+   "what": "🔗 G4-11 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-11",
+   "due": "2026-10-08",
+   "cmd": "python studio/blogger.py crosslink --code G4-11",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
