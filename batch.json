@@ -4601,20 +4601,30 @@
      "at": "2026-10-08 11:31"
     }
    ],
-   "owner": "Aside"
+   "owner": "Aside",
+   "order": "[이부장 → Aside] 시험 지시 #1 (2026-10-08) — CP 지시서 연결 확인\n\n무엇을: http://localhost:8000/batch.json 의 batches.aside.order(이 지시서)를 읽었다는 확인 보고 한 건.\n어떻게: 아무 사이트도 바꾸지 않는다. 읽기만 한다. 스킬 lifeinfo-cp-orders 의 3. 보고 형식 그대로.\n보고 경로: POST http://127.0.0.1:8011/api/report  {\"batch\":\"aside\",\"what\":\"시험 지시 #1 읽음 — <지시서 order_at 값>\",\"state\":\"done\"}\n막히면: state blocked 로 무엇에 막혔는지 보고하고 멈춘다.",
+   "order_at": "2026-10-08 11:39"
   }
  },
- "updated": "2026-10-08 11:36:45",
+ "updated": "2026-10-08 11:40:20",
  "current": {
-  "batch": "draft1006g411",
+  "batch": "aside",
   "code": "",
   "title": "",
-  "step": 5,
-  "what": "G4-11 인스타 게시 실행(스크래치패드 소실로 스크립트를 대화 기록에서 복원 → studio/_aside_tpl/ 로 저장)",
-  "since": "21:46",
-  "since_at": "2026-10-06 21:46:33"
+  "step": 1,
+  "what": "[Aside] 시험 지시 #1 읽음 — 2026-10-08 11:39",
+  "since": "11:31",
+  "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "11:40:20",
+   "text": "▶   — 1/7단계 · [Aside] 시험 지시 #1 읽음 — 2026-10-08 11:39"
+  },
+  {
+   "t": "11:39:51",
+   "text": "📄 aside 작업 지시 등록(362자, 2026-10-08 11:39)"
+  },
   {
    "t": "11:36:45",
    "text": "▶   — 5/7단계 · G4-11 인스타 게시 실행(스크래치패드 소실로 스크립트를 대화 기록에서 복원 → studio/_aside_tpl/ 로 저장)"
@@ -4766,14 +4776,6 @@
   {
    "t": "21:18:00",
    "text": "✅ lifeinfo-travel-prep-1006 완료 — lifeinfo-travel-prep (D)"
-  },
-  {
-   "t": "20:24:16",
-   "text": "✅ daily-email-briefing-1006-20-1006 완료 — daily-email-briefing-1006-20 (A)"
-  },
-  {
-   "t": "16:44:50",
-   "text": "✅ H1-25 완료 — 청불 관람등급 총정리"
   }
  ],
  "currents": {
@@ -5709,7 +5711,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "이부장 10-08 11:3x 판단: ①네이버 독자중심 편집표준 채택=2차 검수(docs/네이버_독자중심편집표준.md · 조정3: 첫 삽입은 서식본 전체붙여넣기 예외·발행 버튼 사장님·대표사진 규칙 유지), dispatch 네이버 절에 참조 추가 ②CP 지시·상태 흐름은 기존 구조(batchboard 지시서·approve_server 결재·DB osmu 증거URL·reports)로 가능. 빈 곳=Aside 보고 창구 → POST http://127.0.0.1:8011/api/report {batch(기존 id),what(≤300자),code?,state?(done|blocked|doing),url?(https)} 개통·시험 통과. Aside 일반 보고는 batch=aside, 글 작업은 그 글의 배치 id 로.",
+   "what": "[Aside] 시험 지시 #1 읽음 — 2026-10-08 11:39",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   }
@@ -7844,6 +7846,14 @@
    "title": "",
    "owner": "이과장",
    "what": "G4-11 인스타 게시 실행(스크래치패드 소실로 스크립트를 대화 기록에서 복원 → studio/_aside_tpl/ 로 저장)"
+  },
+  {
+   "ts": "2026-10-08 11:40:20",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside] 시험 지시 #1 읽음 — 2026-10-08 11:39"
   }
  ]
 }
