@@ -17131,8 +17131,10 @@
    "due": "2026-10-10",
    "cmd": "Get-CimInstance Win32_SystemDriver | ? PathName -match 'TK'; Get-WinEvent -FilterHashtable @{LogName='System';Id=41,1001} -MaxEvents 4",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-09",
+   "result": "06:02 재부팅 후 실측: 충돌 드라이버 계열(TKFsAv·TKFsFt·TKPcFt·TKRgFt) 전부 사라짐. 남은 것 TKFWFV(방화벽 필터, 2021, 실행중)·TKTool(정지)·빈 INCAInternet 폴더 — 충돌 스택에 없던 것. 재부팅 후 비정상종료 0"
   }
  ]
 }
