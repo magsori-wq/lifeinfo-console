@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-08 17:37:08",
- "source_head": "158b9fa1ce3d",
+ "computed_at": "2026-10-08 18:51:57",
+ "source_head": "6d444f8911dc",
  "ids": [
   "A4-08"
  ],
@@ -12,7 +12,7 @@
    "eng": "humidifier_compensation",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224435522601",
      "files": [
       {
        "label": "네이버 원고",
@@ -27,7 +27,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -37,6 +37,12 @@
        "path": "osmu/쓰레드용_가습기살균제배상신청.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_A4-08_humidifier_compensation.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
@@ -49,6 +55,24 @@
        "path": "insta/캡션_가습기살균제배상신청.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "카드1",
+       "path": "insta/humidifier_compensation_01_cover.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드2",
+       "path": "insta/humidifier_compensation_02_days.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드3",
+       "path": "insta/humidifier_compensation_03_consent.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
@@ -59,14 +83,6 @@
  "publish": [],
  "actions": [],
  "actionsFuture": [
-  {
-   "id": "adsense-rereview-open-1009",
-   "what": "애드센스 재검토 요청 가능일 — 화면 문구 '검토 요청 가능 횟수 모두 사용, 2026-10-09부터 다시 요청 가능'(10-03 사장님 캡처). 반려 사유=가치가 별로 없는 콘텐츠(8/12와 동일), Ads.txt 승인됨. 누를지는 사장님 판단",
-   "due": "2026-10-09",
-   "cmd": "python studio/adsense.py status",
-   "state": "wait",
-   "kind": "action"
-  },
   {
    "id": "claude-limit-reset-1022",
    "what": "Anthropic 메일(09-24 09:25 KST, 미읽음): Claude 한도 리셋 1회가 주어졌다 — 5시간·주간 한도를 한 번 다시 채운다. 사용 기한 10-22 09:00 PT = 10-23 01:00 KST, 1회용이며 안 쓰면 없어진다(구독 취소·다운그레이드 시에도 소멸). 한도가 막힌 날 쓰면 된다. 사용처: 설정 → 사용량. 【루틴1 10-05 20:5x 보강】10-03 Claude Code 뉴스레터 원문이 같은 것을 확인해 준다: 'five-hour limits went up 20%, and everyone on Pro, Max, and Team got one full reset. If you haven't used it yet, it's sitting in Settings > Usage until October 22'. ⚠️ 이 항목을 20:4x 에 제가 실수로 덮어써서 소멸시각·구독해지 조항·기한 10-20 을 지웠다가 git(c8be0818^)에서 원문을 꺼내 되돌렸다 — 원 올린이·기한·내용 모두 복원",
