@@ -134,16 +134,24 @@ Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.js
   var ORD={block:0,unread:1,doing:2,done:3};
   function card(r){
     var b=r.b,s=r.s,c=CH[r.st],hist=b.order_hist||[];
-    var hh='';
+    var hh='', all=hist.concat([{at:b.order_at,order:b.order}]), fin=0;
+    // 지시마다 그 구간(이 지시 ~ 다음 지시) 안에 [done]·완료 보고가 있었는지 now_log 로 판정(2026-10-09)
+    var marks=all.map(function(x,i){
+      var from=String(x.at||'').slice(0,16), to=i+1<all.length?String(all[i+1].at||'').slice(0,16):'9999';
+      var hit=(d.now_log||[]).filter(function(L){var ts=String(L.ts||'').slice(0,16);
+        return L.bid===r.id&&ts>=from&&ts<to&&/\[done\]|완료/.test(L.what||'');}).pop();
+      if(hit)fin++; return hit;});
     if(hist.length){
-      hh='<details data-k="h-'+esc(r.id)+'"><summary>🔁 지시 이력 '+(hist.length+1)+'건 (보완 지시 '+hist.length+'회)</summary><ul class="hist">'
-        +hist.map(function(x,i){return '<li class="old"><b>'+(i===0?'처음':'보완 '+i)+'</b>'+esc(x.at)+' — '+esc(whatOf(x.order))+'</li>';}).join('')
-        +'<li><b>지금</b>'+esc(b.order_at||'')+' — '+esc(whatOf(b.order))+'</li></ul></details>';
+      hh='<details data-k="h-'+esc(r.id)+'"><summary>🔁 지시 이력 '+all.length+'건 · 완료 보고 '+fin+'건</summary><ul class="hist">'
+        +all.map(function(x,i){var m=marks[i],last=i===all.length-1;
+          return '<li'+(last?'':' class="old"')+'><b>'+(last?'지금':'#'+(i+1))+'</b>'+esc(x.at)+' — '+esc(whatOf(x.order))
+            +(m?' <span class="c-done">✅ 완료 보고 '+esc(String(m.ts).slice(5,16))+'</span>':' <span class="c-unread">⏳ 완료 보고 없음</span>')+'</li>';}).join('')
+        +'</ul></details>';
     }
     var rn=(RI[r.id]||{}).n||0;
     return '<div class="card'+(r.st==='done'?' fin':'')+'" data-bid="'+esc(r.id)+'"><div class="cardhd">'
       +'<span class="btitle">'+esc(b.title||r.id)+'</span>'
-      +(hist.length?'<span class="reo">🔁 보완 지시 '+hist.length+'회</span>':'')
+      +(hist.length?'<span class="reo">🔁 지시 '+all.length+'건 · 완료 '+fin+'</span>':'')
       +'<span class="chip '+c[0]+'">'+c[1]+'</span></div>'
       +'<div class="row what"><b>무엇을</b>'+esc(whatOf(b.order))+'</div>'
       +'<div class="row"><b>지시</b><span class="age">'+esc(b.order_at||'?')+' · '+ago(b.order_at)+'</span>'
