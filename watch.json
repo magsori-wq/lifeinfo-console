@@ -17135,6 +17135,16 @@
    "by": "이부장",
    "done_at": "2026-10-09",
    "result": "06:02 재부팅 후 실측: 충돌 드라이버 계열(TKFsAv·TKFsFt·TKPcFt·TKRgFt) 전부 사라짐. 남은 것 TKFWFV(방화벽 필터, 2021, 실행중)·TKTool(정지)·빈 INCAInternet 폴더 — 충돌 스택에 없던 것. 재부팅 후 비정상종료 0"
+  },
+  {
+   "id": "pc-bsod-recur-1016",
+   "added": "2026-10-09",
+   "what": "블루스크린 재발 감시(nProtect 제거 후 1주). 재발하면 덤프 분석(WinDbg 설치됨, 관리자 허용 1회)",
+   "due": "2026-10-16",
+   "cmd": "Get-WinEvent -FilterHashtable @{LogName='System';Id=41,1001;StartTime=(Get-Date '2026-10-09 06:03')}",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
