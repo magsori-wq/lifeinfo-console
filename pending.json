@@ -1,9 +1,9 @@
 {
- "rev": "fae294bd",
+ "rev": "7c5bf665",
  "counts": {
   "total": 341,
-  "osmu_done": 340,
-  "osmu_pending": 1,
+  "osmu_done": 341,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 341,
   "index_requested": 160,
@@ -15,15 +15,16 @@
    "code": "G1-11",
    "title": "부산 배출가스 5등급 차량 운행제한 모의단속 10/12",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
