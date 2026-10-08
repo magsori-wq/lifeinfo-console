@@ -6,7 +6,7 @@
 <style>
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;padding:11px 13px;background:#0e1526;color:#e6ecf7;overflow:hidden;
+body{margin:0;padding:11px 13px;background:#0e1526;color:#e6ecf7;overflow-y:auto;
      font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:13.5px;line-height:1.5;
      display:flex;flex-direction:column;gap:8px}
 .hdrow{display:flex;align-items:baseline;gap:12px;flex:0 0 auto}
@@ -24,8 +24,12 @@ h1{font-size:17px;margin:0}
       화면 구성을 바꾸는 것이 아니라 밀려 있던 것을 되돌리는 것이다.
    ⚠️ 새 칸을 grid 에 더하지 마라. 늘릴 것이 있으면 grid **밖 접힘 박스**로 간다
       (donebox·fmtbox 가 그 자리다). */
-.grid{flex:1;min-height:0;overflow-y:auto;display:grid;gap:9px;
-      grid-template-columns:1fr 1fr;grid-auto-rows:minmax(220px,1fr)}
+/* 🔴 2026-10-08 사장님 "인스타·쓰레드 대기화면이 안 보여" — 위 조치 상자가 커지자 grid 가 194px 로
+   눌려 두 번째 줄(쓰레드·인스타)이 아래 상자 밑에 깔렸다. → grid 는 두 줄이 늘 들어가는 높이를 확보하고,
+   넘치면 페이지가 스크롤된다(body overflow-y:auto). 조치 상자(#actbox)는 높이를 묶었다. */
+.grid{flex:1 0 auto;min-height:470px;display:grid;gap:9px;
+      grid-template-columns:1fr 1fr;grid-auto-rows:minmax(230px,1fr)}
+#actbox{max-height:190px;overflow-y:auto}
 .pane{background:#131c31;border:1px solid #223052;border-radius:11px;height:100%;
       display:flex;flex-direction:column;min-height:0;overflow:hidden}
 .ph{display:flex;align-items:center;gap:7px;padding:8px 12px;flex:0 0 auto;

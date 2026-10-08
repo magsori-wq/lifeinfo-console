@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-10-08 12:47:51",
- "source_head": "82222b436f1c",
+ "computed_at": "2026-10-08 14:09:37",
+ "source_head": "0c748776fe12",
  "ids": [
-  "A2-24"
+  "A2-24",
+  "naver-login-aside-1008"
  ],
  "posts": [
   {
@@ -12,7 +13,7 @@
    "eng": "social_security_check",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224435205378",
      "files": [
       {
        "label": "네이버 원고",
@@ -27,7 +28,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -37,6 +38,12 @@
        "path": "osmu/쓰레드용_사회보장급여하반기확인조사.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_A2-24_social_security_check.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
@@ -49,6 +56,24 @@
        "path": "insta/캡션_사회보장급여하반기확인조사.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "카드1",
+       "path": "insta/social_security_check_01_cover.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드2",
+       "path": "insta/social_security_check_02_cut.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드3",
+       "path": "insta/social_security_check_03_appeal.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
@@ -57,7 +82,16 @@
   }
  ],
  "publish": [],
- "actions": [],
+ "actions": [
+  {
+   "id": "naver-login-aside-1008",
+   "what": "Aside 브라우저 네이버 로그인이 풀려 A2-24 네이버 발행(Aside 지시 #3)이 13:52 멈춤 — Aside 에서 네이버 로그인만 해 주시면 이부장이 지시 #3 을 다시 낸다(비밀번호 입력은 사장님만)",
+   "due": "2026-10-08",
+   "cmd": "Aside 브라우저 → naver.com 로그인 → 이부장에게 '로그인했어'",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "adsense-rereview-open-1009",
