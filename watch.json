@@ -16918,6 +16918,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "orders-stale-cleanup-1008",
+   "added": "2026-10-08",
+   "what": "CP 작업지시 '진행 중' 오래된 지시 정리 — 이과장 칸 8건 중 17일 전 멈춘 것(v0inject 막힘 등). 각 항목을 실데이터로 끝났는지 확인 후 끝난 것만 batchboard mark done(근거 note). 판단으로 닫지 말 것",
+   "due": "2026-10-09",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-poll-verify-1008",
+   "added": "2026-10-08",
+   "what": "Aside 사이드패널(atkK7…) 30분 폴링 실동작 확인 — 다음 aside 배치 지시서를 올린 뒤 30분 안에 /api/report 보고가 오는지. 안 오면 폴링이 실제로 없는 것 → 사장님께 보고",
+   "due": "2026-10-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('aside'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
