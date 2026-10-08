@@ -16938,6 +16938,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "aside-order2-ack-1008",
+   "added": "2026-10-08",
+   "what": "Aside 지시 #2(13:2x 등록) 전달 확인 — 30분 안에 '수신 <order_at>' 보고(시각 일치)와 결과 보고가 오는지. 안 오면 폴링 없음 → 사장님께 사이드패널 'CP 지시서 확인' 요청",
+   "due": "2026-10-08",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('aside'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
