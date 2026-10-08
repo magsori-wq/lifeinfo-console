@@ -67,84 +67,85 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 }
 </style></head><body>
 <h1>📄 작업지시</h1>
-<p class="sub">담당(세션) 4분할 — 한 화면에 전부, 칸 안에서만 스크롤. 진실원은 <b>batch.json</b> 하나이며
-이 화면은 그것을 그대로 읽습니다. 등록은 <code>python -m studio.batchboard order --id &lt;배치&gt; --file &lt;파일&gt;</code>
-· 워크트리에서 돌 때는 <code>git pull origin main</code> 먼저.</p>
+<p class="sub">🔴 2026-10-08 재구성(사장님: "어사이드 챗과 협업을 시작하니 작업지시서가 중요 — 내가 잘 알아볼 수 있게").
+카드 = <b>제목 · 상태 · 지시 후 경과 · 무엇을 · 최근 보고</b>. 지시서 전문은 「지시서 전문 보기」를 누르면 열립니다. 끝난 지시는 칸 맨 아래에 접혀 있습니다.</p>
+<div id="sum" class="sumbar"></div>
 <div id="out" style="flex:1;min-height:0;display:flex;flex-direction:column"><p class="none">불러오는 중…</p></div>
+<style>
+.sumbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;flex:0 0 auto}
+.sumbar span{font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;background:#1b2540;border:1px solid #2a3a5e}
+.chip{font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.c-unread{background:#5a3a12;color:#ffcf8a;border:1px solid #b07a2a}
+.c-doing{background:#173352;color:#9fd0ff;border:1px solid #2f6aa3}
+.c-block{background:#4a1820;color:#ffb3bd;border:1px solid #a8394a}
+.c-done{background:#163b2c;color:#8ee5be;border:1px solid #2f8f68}
+.row{font-size:13.5px;margin:3px 0;color:#cfd8e6}
+.row b{color:#8fa0bd;font-weight:700;margin-right:6px}
+.rep{font-size:13px;color:#b8c4d8;background:#0e1526;border:1px solid #223052;border-radius:8px;padding:6px 9px;margin:6px 0 2px}
+.age{font-size:12px;color:#8fa0bd;white-space:nowrap}
+.donebox summary{color:#8fa0bd;font-size:12.5px}
+.col.aside .colhd{border-left:4px solid #4fd1c5}.col.aside .who{color:#7fe3d9}
+.col.routine .colhd{border-left:4px solid #9b8cf5}.col.routine .who{color:#b8a8ff}
+</style>
 <script>
-function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
-  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
-// 🔴 담당 문자열은 자유 텍스트라 종류가 계속 늘어난다("전원(번호별 담당 표기)",
-// "예약 루틴 7개(...)", "(미지정)" 등). 4분할을 지키려면 항상 이 4버킷 중
-// 하나로 정규화해야 한다 — 5번째 칸을 만들지 않는다.
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
 var BUCKETS=[
-  {key:'leegwajang', label:'이과장(작업 세션)', test:function(o){return o.indexOf('이과장')>=0;}},
-  {key:'insta',       label:'인스타 세션',        test:function(o){return o.indexOf('인스타')>=0;}},
-  {key:'gwanjetap',   label:'관제탑(이부장)',      test:function(o){return o.indexOf('관제탑')>=0||o.indexOf('이부장')>=0;}},
-  {key:'boss',         label:'사장님 · 기타',       test:function(){return true;}}  // 나머지 전부(사람 손·전원·예약루틴·미지정)
+  {key:'leegwajang', label:'이과장 (글·OSMU 제작)', test:function(o){return o.indexOf('이과장')>=0;}},
+  {key:'aside',      label:'Aside (브라우저 실행·게시)', test:function(o){return /aside/i.test(o);}},
+  {key:'routine',    label:'3. · 루틴 (분석·제안)', test:function(o){return /^3\.|3\.분석|루틴|routine/i.test(o)||o.indexOf('3.')===0;}},
+  {key:'boss',       label:'사장님 · 이부장 · 기타', test:function(){return true;}}
 ];
-function bucketOf(o){
-  o=o||'';
-  for(var i=0;i<BUCKETS.length;i++){ if(BUCKETS[i].test(o)) return BUCKETS[i]; }
-  return BUCKETS[BUCKETS.length-1];
-}
-function dayOf(s){ // "2026-08-20 17:30" -> "2026-08-20"
-  var m=String(s||'').match(/\d{4}-\d{2}-\d{2}/); return m?m[0]:'(일시 미기록)';
-}
-fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(d){
-  var out=document.getElementById('out');
+function bucketOf(o){o=o||'';for(var i=0;i<BUCKETS.length;i++){if(BUCKETS[i].test(o))return BUCKETS[i];}return BUCKETS[3];}
+function ago(s){var m=String(s||'').match(/(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);if(!m)return '';
+  var t=new Date(+m[1],m[2]-1,+m[3],+m[4],+m[5]),d=(Date.now()-t)/60000;
+  if(d<60)return Math.round(d)+'분 전';if(d<1440)return Math.round(d/60)+'시간 전';return Math.round(d/1440)+'일 전';}
+function whatOf(order){var m=String(order||'').match(/━━━ 무엇을 ━━━\s*\n([^\n]+)/);
+  if(m)return m[1].replace(/^\s*\[[^\]]*\]\s*/,'').trim();
+  var l=String(order||'').split('\n').filter(function(x){return x.trim();});return (l[1]||l[0]||'').trim();}
+Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}),
+             fetch('session_state.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})])
+.then(function(res){
+  var d=res[0], ss=(res[1]&&res[1].sessions)||{}, out=document.getElementById('out');
   if(!d||!d.batches){out.innerHTML='<p class="none">batch.json 을 읽지 못했습니다.</p>';return;}
-  var rows=[];
+  var rows=[], cnt={unread:0,doing:0,block:0,done:0};
   Object.keys(d.batches).forEach(function(id){
-    var b=d.batches[id];
-    if(!b.order) return;                    // 지시서 없는 배치는 이 화면에 안 뜬다
-    var items=b.items||[], done=0;
-    items.forEach(function(it){if(it.state==='done')done++;});
-    rows.push({id:id,b:b,done:done,total:items.length,day:dayOf(b.order_at),
-               owner:b.owner||'담당 미지정'});
+    var b=d.batches[id]; if(!b.order) return;
+    var items=b.items||[], done=0, blocked=false;
+    items.forEach(function(it){if(it.state==='done'||it.state==='skip')done++;if(it.state==='blocked')blocked=true;});
+    var s=ss[id]||{}, finished=items.length&&done===items.length;
+    var readAfter=s.last_read&&(!b.order_at||s.last_read>=b.order_at.slice(0,16));
+    var st=finished?'done':blocked?'block':(readAfter||s.last_report>(b.order_at||''))?'doing':'unread';
+    cnt[st]++;
+    rows.push({id:id,b:b,st:st,s:s,owner:b.owner||'담당 미지정'});
   });
-  var today=new Date();
-  var td=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')
-        +'-'+String(today.getDate()).padStart(2,'0');
-  // 항상 4버킷 전부 만든다 — 데이터가 없어도 빈 칸으로 보여 "칸이 왜 사라졌지"를 없앤다.
-  var byB={}; BUCKETS.forEach(function(bk){byB[bk.key]=[];});
-  rows.forEach(function(r){ byB[bucketOf(r.owner).key].push(r); });
-  Object.keys(byB).forEach(function(k){
-    byB[k].sort(function(x,y){return (y.b.order_at||'').localeCompare(x.b.order_at||'');});
-  });
+  document.getElementById('sum').innerHTML=
+    '<span class="c-unread">⏳ 안 읽음 '+cnt.unread+'</span><span class="c-block">⛔ 막힘 '+cnt.block+'</span>'
+   +'<span class="c-doing">👀 진행 중 '+cnt.doing+'</span><span class="c-done">✅ 끝남 '+cnt.done+'</span>';
+  var byB={};BUCKETS.forEach(function(k){byB[k.key]=[];});
+  rows.forEach(function(r){byB[bucketOf(r.owner).key].push(r);});
+  var CH={unread:['c-unread','⏳ 안 읽음'],doing:['c-doing','👀 진행 중'],block:['c-block','⛔ 막힘'],done:['c-done','✅ 끝남']};
+  var ORD={block:0,unread:1,doing:2,done:3};
+  function card(r){
+    var b=r.b,s=r.s,c=CH[r.st];
+    return '<div class="card'+(r.st==='done'?' stale':'')+'"><div class="cardhd">'
+      +'<span class="btitle">'+esc(b.title||r.id)+'</span><span class="chip '+c[0]+'">'+c[1]+'</span></div>'
+      +'<div class="row"><b>무엇을</b>'+esc(whatOf(b.order))+'</div>'
+      +'<div class="row"><b>지시</b><span class="age">'+esc(b.order_at||'?')+' · '+ago(b.order_at)+'</span>'
+      +(s.last_read?' &nbsp;<b>읽음</b><span class="age">'+ago(s.last_read)+'</span>':'')+'</div>'
+      +(s.last_what?'<div class="rep">📮 최근 보고 ('+ago(s.last_report)+') — '+esc(s.last_what)+'</div>':'<div class="rep">📮 아직 보고 없음</div>')
+      +'<details><summary>지시서 전문 보기 · '+esc(r.id)+'</summary><pre>'+esc(b.order)+'</pre></details></div>';
+  }
   var h='<div class="grid">';
   BUCKETS.forEach(function(bk){
-    var list=byB[bk.key];
-    var td2=0,dd2=0; list.forEach(function(r){td2+=r.total;dd2+=r.done;});
-    var opct=td2?Math.round(100*dd2/td2):0;
-    h+='<div class="col '+bk.key+'"><div class="colhd"><span class="who">'+esc(bk.label)+'</span>'
-      +'<span class="n">'+(list.length?list.length+'건 · '+dd2+'/'+td2+' · '+opct+'%':'')+'</span></div>'
-      +'<div class="colbody">';
-    if(!list.length){
-      h+='<p class="none">지시서 없음</p>';
-    } else {
-      list.forEach(function(r){
-        var b=r.b, pct=r.total?Math.round(r.done*100/r.total):0;
-        var isT=(r.day===td), stale=(!isT && pct===100);
-        h+='<div class="card'+(stale?' stale':'')+'">'
-          +'<div class="cardhd">'
-          +'<span class="btitle">'+esc(b.title||r.id)+'</span>'
-          +'<span class="bid">'+esc(r.id)+'</span>'
-          +'<span class="pct">'+r.done+' / '+r.total+' · '+pct+'%</span></div>'
-          +'<div class="bar"><i class="'+(pct===100?'full':'')+'" style="width:'+pct+'%"></i></div>';
-        if(b.frozen) h+='<div class="frozen">❄️ 동결됨 — '+esc(b.frozen)+'</div>';
-        h+='<details'+(isT?' open':'')+'><summary>'+esc(r.day)+(isT?' · 오늘':'')+' — 작업 지시 ('
-          +esc(b.order_at||'일시 미기록')+' 등록)</summary>'
-          +'<pre>'+esc(b.order)+'</pre></details></div>';
-      });
-    }
+    var list=byB[bk.key].sort(function(x,y){return (ORD[x.st]-ORD[y.st])||(y.b.order_at||'').localeCompare(x.b.order_at||'');});
+    var live=list.filter(function(r){return r.st!=='done';}), fin=list.filter(function(r){return r.st==='done';});
+    h+='<div class="col '+bk.key+'"><div class="colhd"><span class="who">'+esc(bk.label)+'</span><span class="n">진행 '+live.length+' · 끝남 '+fin.length+'</span></div><div class="colbody">';
+    h+= live.length? live.map(card).join('') : '<p class="none">진행 중인 지시 없음</p>';
+    if(fin.length) h+='<details class="donebox"><summary>끝난 지시 '+fin.length+'건</summary>'+fin.slice(0,30).map(card).join('')+'</details>';
     h+='</div></div>';
   });
-  h+='</div>';
-  out.innerHTML=h;
-}).catch(function(e){
-  document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';
-});
+  out.innerHTML=h+'</div>';
+}).catch(function(e){document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';});
 </script>
 <script>
 /* 🔴 화면이 바뀌면 스스로 새로 받는다 (2026-08-31 사장님 명령 "제발좀 실시간 반영좀 하라고!")
