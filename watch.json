@@ -17032,8 +17032,10 @@
    "due": "2026-10-09",
    "cmd": "python -m studio.osmu_manifest show --code A4-08",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-08",
+   "result": "사장님이 10-08 직접 게시 224435522601 · naver-link 기록"
   },
   {
    "id": "cp-library-screen-1009",
@@ -17054,6 +17056,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-a408",
+   "added": "2026-10-08",
+   "what": "🔗 A4-08 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A4-08",
+   "due": "2026-10-08",
+   "cmd": "python studio/blogger.py crosslink --code A4-08",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
