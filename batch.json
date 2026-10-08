@@ -1703,6 +1703,16 @@
      "base_code": "8-lifeinfo-issue-product",
      "date": "2026-10-08",
      "at": "2026-10-08 07:15"
+    },
+    {
+     "code": "daily-email-briefing-1008",
+     "title": "daily-email-briefing (A)",
+     "state": "done",
+     "note": "[10-08 08시 메일브리핑] 메일발 사장님 할 일 0건 · 이부장 판단 1건(anthropic-report-channel-1008).\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION(10-08 08:0x status 실측). 반려 통지 10-02 21:46Z(=KST 10-03 06:46)는 10-04·10-05 브리핑 기보고 · 신규 통지 0. 재검토 요청 가능일 10-09 = D-1(사실만 적는다).\n■ 새 메일 4통(10-06 20시 브리핑 이후):\n ①🟡 Anthropic Support 회신 KST 10-07 06:23 담당 Nid — 사고신고 1·2차 티켓 통합, Support 쪽 종료. 원문 'Since we aren't opening an investigation on our side, there's no need to send the detailed evidence files to Support. Including them in a /bug report or GitHub issue is where they'll be most useful.' 답변 4가지: (1)로드맵·일정 확약 불가, 다만 두 보고 전문이 제품 피드백으로 기록됨(출력잘림·세션주소·빈결과 사유미표기·세션간 미검증수치·요약출력이 판단근거가 되는 것) (2)공식문서 code.claude.com/docs 밖의 지원되는 우회 설정 없음 (3)앞으로 창구 = Claude Code 안 /bug(맥락 자동첨부) 또는 github.com/anthropics/claude-code/issues(중복 신고 확인 가능), 개별 응답품질은 👎 (4)2차 질문 4~6도 설계요청으로 기록, 같은 답. ⚠️ CLAUDE.md 는 창구를 /feedback(SendFeedback 초안→사장님 전송)으로 적어 뒀고 Nid 는 /bug·GitHub issues 를 지목 — 같은 것인지 확인 후 CLAUDE.md 수정 판단 필요(이부장 몫, watch 등록). 제출은 사장님만 가능.\n ②🟢 Google AI Studio KST 10-07 08:07 — '비활성 Gemini API 프로젝트'에 월 지출 상한 자동 적용. 본문 'No action needed unless you want to increase or remove the spend cap.' 🔴 프로젝트명이 메일에 없어 우리 lifeinfo-adsense(Blogger·AdSense API)와 같은 것인지 이 메일로는 알 수 없다 — 다만 오늘 adsense.py status 정상 응답 + 10-07 06:10 상태점검 run success 로 API 호출은 지금 정상이다. 조치 불요.\n ③🟢 google-noreply KST 10-07 05:23 (→magsori8975) 구글 검색 서비스 개인정보 보호 설정 변경 예고. 조치 불요.\n ④🟢 googlenews KST 10-08 07:31 (→magsori8975) 뉴스 브리핑. 조치 불요.\n · Google→Claude 로그인 공유 2통(KST 10-06 13:45·14:14)은 10-06 20시 기보고.\n■ 점검 기록: 리더 3계정 전부 ✅(magsori 8건·m8975 0건·aroma 0건) · 커넥터 교차조회(includeTrash·in:anywhere) 병행. GSC sc-noreply 7일 0건. GitHub 7일 = 10-01 13:1x sudo 코드 3통(만료)뿐, 10-06 03:28Z 발행실패 1건(run 37409147220)은 10-06 20시 기보고·정정(통지는 왔고 휴지통에 있었다) — 지금 조회엔 안 보이나 휴지통이 비워졌는지는 확인 못 함. 실측 대체: gh run list 로 양 저장소 직접 확인 → source 10-06 04:57 이후 전 run success, console 콘솔정합성검사 10-07 22:14 success = 10-05 20시 보고 '콘솔검사 RED' 해소 확인. 8975 = 리더가 직접 읽어 감시 발신자 0건이고, 전달 경로는 살아 있다(toRecipients=8975 메일 2통이 magsori INBOX 에 도착 — 위 ③④). GSC 통지가 전달되는지는 7일 sc-noreply 0건이라 대조 표본이 없어 여전히 미확인 → watch gmail-8975-relay-0924 닫지 말 것. aroma 0건=평소 상태. ⚠️ 10-07 두 회차(08시·20시) 실행 기록이 없어 이번 회차가 10-06 20시 이후를 소급 커버했다. ⚠️ 승인 감시 1247분째 꺼짐(세션훅) — 관제탑 몫이라 루틴1은 보고만 한다.",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing",
+     "date": "2026-10-08",
+     "at": "2026-10-08 08:16"
     }
    ],
    "order": "📮 routinelog — 루틴9 권고 회신 (2026-09-18 16:2x 이부장)\n\n【판정】 (A) 오늘 15:00 회차는 **무소득으로 정리하고 종료**한다. 루틴9 판단이 맞다.\n  근거 ①약과(id 423535267)는 오늘 06:22 이미 게시됐다(solo0918yakgwa) — 같은 상품 재게시는 중복이다\n       ②어제 홍삼(15:52)·오늘 약과(06:22)로 이틀 연속 상품 단독 게시가 나갔다.\n         쓰레드 조회가 100 미만인데 광고성 게시가 몰리면 계정이 광고 계정으로 보인다 — 오늘은 여기서 멈춘다\n       ③중복을 스스로 발견해 게시 전에 보고한 것이 정확했다. 그 판단이 이 회차의 성과다\n\n【(B) 새 후보를 지금 더 찾을 것인가】 찾지 않는다. 대신 **내일 회차 후보를 미리 정해 둔다**:\n  · 세척사과 꿀사과 3kg — 12,900원 · 리뷰 4,782 · 평점 4.3 (토스 id 2226153335, 이부장 16:2x 조회)\n  · 루틴8이 오늘 07:17 에 낸 후보와 같은 물건이다. 추석 D-7 이라 시의성은 내일까지 유효하다\n  · 5kg(18,900원·리뷰 3,903)도 있으나 3kg 쪽이 리뷰가 더 많고 1인가구·성묘 선물 모두에 맞다\n  · 🔴 이부장이 내일 오전에 승인 카드로 올린다(solo-ask). 루틴9는 내일 회차에서 이 후보를 먼저 확인하면 된다\n\n【루틴9에 남기는 기준 한 줄】\n  같은 상품이 이미 게시됐는지 `python -m studio.affiliate solo` 로 먼저 보고 후보를 낸다.\n  그러면 오늘처럼 중복 후보로 한 회차를 쓰지 않는다.",
@@ -4205,7 +4215,10 @@
    "items": [
     {
      "code": "G3-09",
-     "title": "G3-09 발행"
+     "title": "G3-09 발행",
+     "state": "done",
+     "note": "라이브 재확인: https://lifeinfo8975.blogspot.com/2026/10/2026-1031118.html HTTP200 · DB url 존재 — 이미 발행됨. 지시서가 안 닫혀 3일째 대기로 떠 있었음(루틴3 정리)",
+     "at": "2026-10-08 09:05"
     }
    ],
    "owner": "이과장",
@@ -4267,7 +4280,9 @@
     {
      "code": "A1-18",
      "title": "노인일자리 2027년 118만 개 확대(복지부 계획) — 정기모집은 연말 예상, (라이브 발행)",
-     "state": "todo"
+     "state": "done",
+     "note": "라이브 재확인: https://lifeinfo8975.blogspot.com/2026/10/2027-118-2026.html HTTP200 · DB url 존재 — 이미 발행됨(osmuprep1005a118에서 OSMU까지 완료 보고 확인). 지시서 미닫힘(루틴3 정리)",
+     "at": "2026-10-08 09:05"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -4409,7 +4424,9 @@
     {
      "code": "B5-07",
      "title": "HUG 전세보증 제도개편 10월 30일 시행 — 사전한도심사·전액보증 전환 총정 (라이브 발행)",
-     "state": "todo"
+     "state": "done",
+     "note": "라이브 재확인: https://lifeinfo8975.blogspot.com/2026/10/hug-10-30-2026.html HTTP200 · DB url 존재 — 이미 발행됨. 지시서 미닫힘(루틴3 정리)",
+     "at": "2026-10-08 09:05"
     }
    ],
    "owner": "이과장(작업 세션)"
@@ -4521,13 +4538,15 @@
     {
      "code": "G4-11",
      "title": "2026 페스티벌 시월 — 부산 10월 행사 22개 날짜·장소 한눈에 (라이브 발행)",
-     "state": "todo"
+     "state": "done",
+     "note": "라이브 재확인: https://lifeinfo8975.blogspot.com/2026/10/2026-10-22.html HTTP200 · DB url 존재 — 이미 발행됨(이과장 10-08 보고: 검색설명·네이버원고·전용썸네일·인스타카드3장·쓰레드이미지 준비, 네이버게시만 사장님 몫). 지시서 미닫힘(루틴3 정리)",
+     "at": "2026-10-08 09:05"
     }
    ],
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-08 07:15:00",
+ "updated": "2026-10-08 09:05:39",
  "current": {
   "batch": "issueprod",
   "code": "20261002-2",
@@ -4538,6 +4557,26 @@
   "since_at": "2026-10-02 15:16:40"
  },
  "log": [
+  {
+   "t": "09:05:39",
+   "text": "✅ G4-11 완료 — 2026 페스티벌 시월 — 부산 10월 행사 22개 날짜·장소"
+  },
+  {
+   "t": "09:05:38",
+   "text": "✅ B5-07 완료 — HUG 전세보증 제도개편 10월 30일 시행 — 사전한도심사·"
+  },
+  {
+   "t": "09:05:37",
+   "text": "✅ A1-18 완료 — 노인일자리 2027년 118만 개 확대(복지부 계획) — 정기"
+  },
+  {
+   "t": "09:05:36",
+   "text": "✅ G3-09 완료 — G3-09 발행"
+  },
+  {
+   "t": "08:16:00",
+   "text": "✅ daily-email-briefing-1008 완료 — daily-email-briefing (A)"
+  },
   {
    "t": "07:15:00",
    "text": "✅ 8-lifeinfo-issue-product-1008 완료 — 8-lifeinfo-issue-product (H)"
@@ -4677,26 +4716,6 @@
   {
    "t": "09:20:38",
    "text": "✅ lifeinfo-daily-topics-1006 완료 — lifeinfo-daily-topics (B)"
-  },
-  {
-   "t": "09:11:37",
-   "text": "✅ lifeinfo-publish-1006 완료 — lifeinfo-publish (C)"
-  },
-  {
-   "t": "08:25:40",
-   "text": "✅ daily-email-briefing-1006 완료 — daily-email-briefing (A)"
-  },
-  {
-   "t": "07:14:57",
-   "text": "✅ 8-lifeinfo-issue-product-1006 완료 — 8-lifeinfo-issue-product (H)"
-  },
-  {
-   "t": "07:14:53",
-   "text": "▶ 20261002-2 제주 하우스감귤 — 1/7단계 · 🛒 후보: 오퓨리엠 테이블 미스트 USB 미니 가습기 · 5,850원 · 리뷰139 · 평점4.6 · 왜 지금: 10월 중순 난방·건조 시작 시즌(근거 약함 — 시즌 신호만). 쿠션 망토담요는 10/05 제안과 중복이라 제외. 결재함 afflink-20261006-1 등록"
-  },
-  {
-   "t": "04:32:56",
-   "text": "✅ D1-12 완료 — 한글날 연휴 쉬는 곳 총정리"
   }
  ],
  "currents": {
