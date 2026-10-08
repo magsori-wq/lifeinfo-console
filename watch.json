@@ -17123,6 +17123,16 @@
    "by": "이부장",
    "done_at": "2026-10-09",
    "result": "사장님 지시로 제거 실행 05:52 — 제거 목록에서 사라짐·원인 드라이버 TKFsAv64.sys 파일 삭제 확인. TKFsFt64(필터) 수동시작으로 남아 실행 중 → 재부팅 후 내려감 확인 필요"
+  },
+  {
+   "id": "pc-tkfs-after-reboot",
+   "added": "2026-10-09",
+   "what": "재부팅 뒤 확인: ①TK* 드라이버 5개(TKFsFt·TKPcFt·TKRgFt·TKTool 삭제예약됨) 사라졌나 ②TKFWFV64(방화벽 필터, 삭제예약 없음, 부팅로드) 남았나 ③블루스크린 재발 없나. 별건: 09-09·09-21 비정상종료는 덤프 없음=원인 미확인",
+   "due": "2026-10-10",
+   "cmd": "Get-CimInstance Win32_SystemDriver | ? PathName -match 'TK'; Get-WinEvent -FilterHashtable @{LogName='System';Id=41,1001} -MaxEvents 4",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

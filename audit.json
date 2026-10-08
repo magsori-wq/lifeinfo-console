@@ -11304,6 +11304,14 @@
    "target": "pc-bsod-1009",
    "detail": "원인 확인: 10-09 02:03 블루스크린 = TKFsAv64.sys(INCA 'nProtect Online Security' 은행 보안 프로그램 드라이버)가 Defender(MsMpEng) 파일검사 중 충돌. WinDbg 덤프 분석 docs/_bsod_20261009.txt. 10-07 건은 덤프 덮어써져 미확인",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-09T05:53:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pc-nprotect-remove-1009",
+   "detail": "사장님 지시로 제거 실행 05:52 — 제거 목록에서 사라짐·원인 드라이버 TKFsAv64.sys 파일 삭제 확인. TKFsFt64(필터) 수동시작으로 남아 실행 중 → 재부팅 후 내려감 확인 필요",
+   "via": "cli"
   }
  ]
 }
