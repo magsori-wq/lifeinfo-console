@@ -17099,6 +17099,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "pc-bsod-1009",
+   "added": "2026-10-09",
+   "what": "PC 블루스크린 2회: 10-07 11:20 0x50 · 10-09 02:03 0x3B. 원인 모듈 미확인(MEMORY.DMP 4.7GB 있음, kd 없음). 사장님 결정: WinDbg 설치해 덤프 읽기 여부",
+   "due": "2026-10-09",
+   "cmd": "Get-WinEvent -FilterHashtable @{LogName='System';Id=1001}",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
