@@ -17077,6 +17077,16 @@
    "kind": "action",
    "state": "todo",
    "by": "세션:6973bee9"
+  },
+  {
+   "id": "g111-thumb-why-missed-1008",
+   "added": "2026-10-08",
+   "what": "[이부장 판단 필요] G1-11 이 썸네일 라이브 404 상태로 발행·OSMU 3채널까지 나갔고 약 4시간 뒤 이 메일 브리핑이 처음 발견했다 — h120-deploy-pub-1002(10-02, 발행 전에 잡았다)와 같은 패턴인데 이번엔 사전에 못 잡았다. 실측: 발행 워크플로 3회(03:24·06:17·08:28 UTC) 전 스텝 success · 배포 저장소에 A2-24(03:26)·A4-08(08:31) register 커밋은 있는데 G1-11 것이 없다 · 318~321·323 라이브 200, 322·322n 만 없음. 왜 발행 전 점검(또는 register 즉시배포)이 이것을 놓쳤는지 확인 필요.",
+   "due": "2026-10-09",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/322_busan_grade5_enforcement.png ; python tools/console_check.py 2>/dev/null | grep 썸네일",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:6973bee9"
   }
  ]
 }
