@@ -15293,8 +15293,10 @@
    "due": "2026-10-08",
    "cmd": "python -c \"import json,io;L=lambda n:json.load(io.open('webapp/'+n,encoding='utf-8'));print('checked_at',L('index_status.json').get('checked_at'));d=L('gsc_req_dates.json')['dates'];r=L('index_status.json')['posts'];r=r if isinstance(r,dict) else {p['code']:p for p in r};t=[c for c,x in d.items() if x=='2026-10-01'];a=[c for c in t if (r.get(c,{}).get('lastCrawl') or '')[:10]>'2026-10-01'];print('요청 10-01 %d편 중 이후 크롤 %d편'%(len(t),len(a)),a[:10])\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-10-08",
+   "result": "통제군을 둔 측정으로 답했다(10-08 전수 inspect, partial=False). 10-01 시점 한 번도 크롤 안 된 80편을 요청 여부로 가름: 요청 50편 → 없던 lastCrawl 이 생긴 글 49편(98%) · 통제군 34편 → 0편(0%). 기준선 0/41 에서 출발해 T1 40/41. 다만 크롤 온 49편 전부 Redirect error(fetch REDIRECT_ERROR·crawledAs MOBILE)이고 색인은 0. lastCrawl 날짜가 10-01 38편·10-04 2편 = 요청한 당일 크롤이라 '>= 요청일' 과 '> 요청일' 이 40 vs 2 로 갈린다 → 판정은 '없던 lastCrawl 이 생겼나' 로 센다(4. 의 46/49 와 값이 맞는다). 같은 창에서 이미 크롤돼 있던 235편은 재크롤 0편. 상세 docs/색인요청효과_통제군_20261008.md"
   },
   {
    "id": "needsphoto-scope-1002",
