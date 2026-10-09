@@ -11328,6 +11328,14 @@
    "target": "pc-tkfs-after-reboot",
    "detail": "06:02 재부팅 후 실측: 충돌 드라이버 계열(TKFsAv·TKFsFt·TKPcFt·TKRgFt) 전부 사라짐. 남은 것 TKFWFV(방화벽 필터, 2021, 실행중)·TKTool(정지)·빈 INCAInternet 폴더 — 충돌 스택에 없던 것. 재부팅 후 비정상종료 0",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-09T09:31:16",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "A6-07",
+   "detail": "코드 오분류 정정 — A6은 근로권익·체불구제인데 내용은 아동수당·부모급여 자동지급(지원금·수당)이라 A1이 맞다. 되살리기 대상 아님, A1-20으로 재등록한다",
+   "via": "cli"
   }
  ]
 }

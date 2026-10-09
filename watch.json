@@ -17050,11 +17050,11 @@
   {
    "id": "adsense-rereview-submit-1009",
    "added": "2026-10-08",
-   "what": "사장님 지시(10-08 18:39 '내일 에드센스 재검토요청해') — 10-09 오전 이부장이 Aside 로 AdSense → 사이트 → lifeinfo8975.blogspot.com: ①검토 요청 버튼 활성 확인 ②'문제를 수정했음을 확인합니다' 체크 ③검토 요청 클릭 ④결과 화면·상태 확인 → 카톡 보고 + python studio/adsense.py status. 로그인 요구·예상 밖 확인창이면 누르지 말고 멈춰 보고",
+   "what": "사장님 지시(10-08 18:39 '내일 에드센스 재검토요청해') — 10-09 오전 이부장이 Aside 로 AdSense → 사이트 → lifeinfo8975.blogspot.com: ①검토 요청 버튼 활성 확인 ②'문제를 수정했음을 확인합니다' 체크 ③검토 요청 클릭 ④결과 화면·상태 확인 → 카톡 보고 + python studio/adsense.py status. 로그인 요구·예상 밖 확인창이면 누르지 말고 멈춰 보고 · 08:5x 1차 시도(Aside): 로그인 정상, 화면 문구 아직 '10월 9일부터 다시 요청 가능'·검토요청 버튼 없음(아무것도 누르지 않음). 미국 날짜 기준이면 KST 16:00 이후 열림 추정 → 16:30 재시도",
    "due": "2026-10-09",
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
-   "state": "todo",
+   "state": "wait",
    "by": "이부장"
   },
   {
@@ -17198,6 +17198,16 @@
    "kind": "action",
    "state": "todo",
    "by": "세션:7a216f31"
+  },
+  {
+   "id": "docflow-1009-0940",
+   "added": "2026-10-09",
+   "what": "lifeinfo-daily-topics 루틴 제안 2건 이부장 선별(docflow 대행) — A1-20(구 A6-07, 코드정정) pick+verify 완료(🟡KW미측정만, 참고)·B2-18은 기발행 B2-14 중복의심+수치 2차출처뿐이라 defer(2026-10-16 재검토). source에이전트에 B2-18 1차출처 재조사 백그라운드 지시함(watch source-b2-18-saitdol). 발행대기 재고 여전히 0 — A1-20 초안 지시서(③)는 이부장이 별도로 낼 것",
+   "due": "2026-10-16",
+   "cmd": "python -m studio.topicprop table && python -m studio.topicprop stock",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a0dcf752"
   }
  ]
 }
