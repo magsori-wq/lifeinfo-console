@@ -17163,8 +17163,10 @@
    "due": "2026-10-09",
    "cmd": "Aside 브라우저에서 https://nid.naver.com/nidlogin.login 로그인 → 사이드패널에 'CP 지시서 확인'",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-09",
+   "result": "사장님 게시 확인 12:3x 224436150852"
   },
   {
    "id": "afflink-issue20261009",
@@ -17174,8 +17176,10 @@
    "cmd": "python -m studio.tosslink link 9634177",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-09",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "adsense-reject-hist-1009",
@@ -17228,6 +17232,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a0dcf752"
+  },
+  {
+   "id": "xlink-g310",
+   "added": "2026-10-09",
+   "what": "🔗 G3-10 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-10",
+   "due": "2026-10-09",
+   "cmd": "python studio/blogger.py crosslink --code G3-10",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
