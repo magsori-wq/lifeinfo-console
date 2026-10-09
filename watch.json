@@ -17357,6 +17357,16 @@
    "by": "세션:f787bb39",
    "done_at": "2026-10-10",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 3차: 감경비율 방향 수정 확인(1/2=일반, 3/4=생계곤란·경제적사정 — 출처 §3과 일치), div 18/18 정상, 나머지 항목은 2차 검사 유지"
+  },
+  {
+   "id": "rv-test-cleanup-1010",
+   "added": "2026-10-10",
+   "what": "시험용 원고 페이지 rv_D1-13_57865addf0e9e5f1.html(이미 발행된 글) — 다음 bake 때 sync 가 지우고 pushapproval 이 공개 사이트에서도 지우는지 확인",
+   "due": "2026-10-10",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://magsori-wq.github.io/lifeinfo-console/rv_D1-13_57865addf0e9e5f1.html",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
