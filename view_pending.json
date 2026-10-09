@@ -1,13 +1,62 @@
 {
- "computed_at": "2026-10-10 00:55:48",
+ "computed_at": "2026-10-09 16:01:08",
  "source_head": "931c64be1ebb",
  "ids": [
   "B2-18",
   "D1-13",
-  "F4-24",
-  "aside-newchat-1010"
+  "F4-24"
  ],
  "posts": [
+  {
+   "code": "F4-24",
+   "title": "2026 KBO 포스트시즌 와일드카드 결정전 10월 14일 개막 — 4위 1승이면 끝나는 이유, 5위는 왜 2연승이 필요한가",
+   "slug": "KBO와일드카드결정전",
+   "eng": "kbo_wildcard",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_KBO와일드카드결정전.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/327_kbo_wildcard.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_KBO와일드카드결정전.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_KBO와일드카드결정전.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  },
   {
    "code": "B2-18",
    "title": "개인사업자 전용 사잇돌대출 한도 3천만원으로 늘린다 — SCB 성장등급 활용, 10월 출시 목표 총정리 (2026)",
@@ -85,33 +134,6 @@
  ],
  "publish": [
   {
-   "code": "F4-24",
-   "title": "2026 KBO 포스트시즌 와일드카드 결정전 10월 14일 개막 — 4위 1승이면 끝나는 이유, 5위는 왜 2연승이 필요한가",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 KBO와일드카드결정전_글_HTML.txt",
-     "path": "KBO와일드카드결정전_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/327_kbo_wildcard.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/327_kbo_wildcard.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "ready"
-  },
-  {
    "code": "D1-13",
    "title": "2026 주민등록 사실조사 방문조사, 공무원이 안 왔다고 끝난 게 아닙니다 — 거주불명자 자진신고 과태료 감면 (11월 9일까지)",
    "go": false,
@@ -121,25 +143,26 @@
      "label": "초안 주민등록사실조사방문조사_글_HTML.txt",
      "path": "주민등록사실조사방문조사_글_HTML.txt",
      "img": false,
-     "exists": true
+     "exists": false
     },
     {
      "label": "썸네일",
      "path": "thumbs/328_resident_survey_visit.png",
      "img": true,
-     "exists": true
+     "exists": false
     },
     {
      "label": "썸네일(네이버)",
      "path": "thumbs_naver/328_resident_survey_visit.png",
      "img": true,
-     "exists": true
+     "exists": false
     }
    ],
    "light": "todo"
   }
  ],
- "actions": [
+ "actions": [],
+ "actionsFuture": [
   {
    "id": "aside-newchat-1010",
    "what": "Aside 사이드패널 새 채팅 열기(지연 원인 해소). 열면 이부장이 REPL 실행시간 재측정",
@@ -147,9 +170,7 @@
    "cmd": "Aside 사이드패널 → 새 채팅 → 'CP 지시서 확인'",
    "state": "todo",
    "kind": "action"
-  }
- ],
- "actionsFuture": [
+  },
   {
    "id": "claude-limit-reset-1022",
    "what": "Anthropic 메일(09-24 09:25 KST, 미읽음): Claude 한도 리셋 1회가 주어졌다 — 5시간·주간 한도를 한 번 다시 채운다. 사용 기한 10-22 09:00 PT = 10-23 01:00 KST, 1회용이며 안 쓰면 없어진다(구독 취소·다운그레이드 시에도 소멸). 한도가 막힌 날 쓰면 된다. 사용처: 설정 → 사용량. 【루틴1 10-05 20:5x 보강】10-03 Claude Code 뉴스레터 원문이 같은 것을 확인해 준다: 'five-hour limits went up 20%, and everyone on Pro, Max, and Team got one full reset. If you haven't used it yet, it's sitting in Settings > Usage until October 22'. ⚠️ 이 항목을 20:4x 에 제가 실수로 덮어써서 소멸시각·구독해지 조항·기한 10-20 을 지웠다가 git(c8be0818^)에서 원문을 꺼내 되돌렸다 — 원 올린이·기한·내용 모두 복원",
