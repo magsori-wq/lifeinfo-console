@@ -11520,6 +11520,14 @@
    "target": "rv-test-cleanup-1010",
    "detail": "로컬 sync 삭제 확인 · pushapproval 실행 후 공개 사이트 404 확인(04:2x)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-10T06:53:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "tw-stop-signal-1010",
+   "detail": "신호 방식은 효과 없었음(출력이 끊긴 파이프가 아니라 파일) — 루프 49개를 트리째 직접 종료로 해결",
+   "via": "cli"
   }
  ]
 }
