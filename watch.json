@@ -17284,6 +17284,27 @@
    "by": "이부장",
    "done_at": "2026-10-09",
    "result": "원인=Aside 대화 1개 장기 사용(REPL 1회 0.9초→81초). 브라우저 아님(새 연결 0.05초). 지시서 결함 2건(JSON포장·코드형식)은 부차. 처방=새 채팅"
+  },
+  {
+   "id": "aside-newchat-1010",
+   "added": "2026-10-09",
+   "what": "Aside 사이드패널 새 채팅 열기(지연 원인 해소). 열면 이부장이 REPL 실행시간 재측정",
+   "due": "2026-10-10",
+   "cmd": "Aside 사이드패널 → 새 채팅 → 'CP 지시서 확인'",
+   "owner": "user",
+   "state": "todo",
+   "kind": "action",
+   "by": "이부장"
+  },
+  {
+   "id": "b218-naver-resume-1010",
+   "added": "2026-10-09",
+   "what": "B2-18 네이버: Aside 19:46 발행 직전 멈춤(초안 완성·발행 버튼 미클릭·네이버에 글 없음). 새 채팅 연 뒤 '네이버 임시저장 글 확인 후 발행'으로 재개",
+   "due": "2026-10-10",
+   "cmd": "curl -s -A Mozilla/5.0 https://rss.blog.naver.com/magsori8975.xml | grep 사잇돌",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
