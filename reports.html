@@ -234,9 +234,9 @@
 </div>
 <div class='sesblock'>
 <div class='ses 예약 루틴'>예약 루틴<span class='cnt'>오늘 3건 · 전체 193건</span></div>
-<div class='r done today' data-bid='routinelog'><div class='hd'><span class='who w-rt'>예약 루틴</span><span class='t'>2026-10-10 08:14</span><span class='k'>완료</span><span class='c'>daily-email-briefing-1010</span><span class='b'>routinelog</span></div><div class='ord'><span class='ost' data-bid='routinelog'></span> <b>지시</b>🤖 루틴 실행 보고 — 9개 예약 루틴이 끝나면 여기 남긴다 <a href='#' class='xl' onclick="CPX.go('orders','routinelog');return false">📄 지시서 보기 →</a></div><div class='w'>[10-10 08시 메일브리핑] 사장님 새 할 일 0건 · 새 중요 메일 0통 (기준선 = 10-09 20:20 브리핑)
+<div class='r done today' data-bid='routinelog'><div class='hd'><span class='who w-rt'>예약 루틴</span><span class='t'>2026-10-10 08:20</span><span class='k'>완료</span><span class='c'>daily-email-briefing-1010</span><span class='b'>routinelog</span></div><div class='ord'><span class='ost' data-bid='routinelog'></span> <b>지시</b>🤖 루틴 실행 보고 — 9개 예약 루틴이 끝나면 여기 남긴다 <a href='#' class='xl' onclick="CPX.go('orders','routinelog');return false">📄 지시서 보기 →</a></div><div class='w'>[10-10 08시 메일브리핑] 사장님 새 할 일 0건 · 새 중요 메일 0통 (기준선 = 10-09 20:20 브리핑)
 
-■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (10-10 08:0x adsense.py status 실측 ·</div><details class='more'><summary>… 더 보기 (2822자)</summary><div class='w'> 10-09 두 회차와 동일)
+■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (10-10 08:0x adsense.py status 실측 ·</div><details class='more'><summary>… 더 보기 (5488자)</summary><div class='w'> 10-09 두 회차와 동일)
  · 이 값은 10-03 반려 이후 그대로다. git 추적으로 전환 시점을 특정했다: webapp/adsense_status.json 이 10-02 20:29(33b33415) GETTING_READY → 10-03 08:22(da3313f0) NEEDS_ATTENTION. 그 사이에 10-02 21:46Z(=10-03 06:46 KST) 반려 통지가 왔다.
  · 신규 통지 0건 — adsense-noreply 30일 조회를 **휴지통 포함**으로 돌려 확인. 잡힌 것은 1통뿐이고 그 10-02 21:46Z 반려(현재 TRASH·IMPORTANT)로 10-04~10-09 기보고분이다.
    ⚠️ 휴지통 제외로 먼저 돌렸을 때 0건이 나왔다 — 그대로 &quot;30일 0건&quot;이라 쓰면 거짓이 됐다(gmailread-trash-blindspot-1006 그 자리). 휴지통 포함이 기본이다.
@@ -265,7 +265,33 @@
  · aroma8975 0건 = 평소 상태(60일 1건). 🟢 한 줄로만 적는다.
  · GSC 7일 0건. 색인 편수 통지가 없었으므로 'URL 총계' 주의를 붙일 숫자도 없다.
  · 로컬 git = origin 과 같음(readycheck --behind). 하네스는 런처가 돌렸다(health.json).
- · whoami 미등록 — 이 비대화 실행에 ListAgents 도구가 없다(09-23 회차와 동일).</div></details></div>
+ · whoami 미등록 — 이 비대화 실행에 ListAgents 도구가 없다(09-23 회차와 동일).
+▸ 08:20 ▸ 08:2x 정정 4건 — 앞 보고(daily-email-briefing-1010)에 확인 안 한 것을 확인한 것처럼 쓴 문장이 셋 있었다. 결론(사장님 할 일 0건·새 중요 메일 0통·신규 실패 0)은 바뀌지 않는다. 카톡은 다시 보내지 않는다(사장님 행동이 바뀌지 않는다).
+
+🔴 정정① &quot;하네스는 런처가 돌렸다(health.json)&quot; — 안 돌렸다. 추측이었다.
+ · 이 회차는 스케줄러가 띄운 것이라 resume_leebujang.bat 이 돈 적이 없다. mtime 실측: health.json 10-10 06:01 · _selfcheck_last.txt 10-10 02:50 — 둘 다 내 실행(08:0x) 전이다.
+ · 그래서 지금 직접 돌렸다: `python validate_db.py` → **PASS 14 · WARN 4 · FAIL 0 · exit 0**.
+   WARN 4는 상시 항목이다 — 일련번호 결번 55 · 미사용 썸네일 114 · 중분류 6~7편 초과 24/35 · 추적파일 2개 작업트리 소실.
+ · 교훈: 파일이 있다고 이번 회차에 갱신된 게 아니다. **mtime 을 보고 말한다.**
+
+🔴 정정② GitHub &quot;실패가 없어서 메일이 안 온 것과 정합&quot; — 틀렸다. 메일은 왔고 휴지통에 있다.
+ · `from:github.com newer_than:3d` 를 **휴지통 포함**으로 재조회 → **30스레드**. 전부 10-08 notifications@github.com(to:lifeinfo-console@noreply.github.com · cc:ci_activity) 이고 10-08 03:36Z~11:26Z 에 몰려 있다 = 그날 콘솔 정합성 검사 실패분으로 10-09 오전 기보고다.
+ · 앞 보고의 &quot;github 2d 0건&quot; 은 휴지통 제외 조회였다 — 애드센스에서 잡은 그 블라인드스팟을 GitHub 쪽에서 그대로 밟았다(gmailread-trash-blindspot-1006).
+ · ✅ **&quot;신규 실패 0&quot; 자체는 그대로 유효하다** — 메일이 아니라 `gh run list --status failure` 로 마지막 실패를 직접 확인했기 때문이다(console 10-08 11:26Z · source 10-06 03:28Z, 둘 다 기준선 이전).
+ · ⚠️ 부수 관측: GitHub 알림 30통이 전부 UNREAD·TRASH 다 = 필터가 자동으로 휴지통에 보낸다. 그래서 메일만 보는 경로는 GitHub 실패를 영구히 못 본다. `gh` 직접 조회가 유일한 경로다.
+
+🔴 정정③ 8975 — &quot;사각지대 반증&quot; 이 아니다. **이미 처리된 항목이고, 내 조회는 그 항목이 남겨둔 검증을 채운 것이다.**
+ · watch gmail-8975-relay-0924 를 실제로 열어봤다(앞 보고는 열지 않고 올린이를 '이부장' 이라 추측해 틀렸다 — 올린이는 **루틴1**, owner=사용자, state=**done**).
+ · 그 항목 원문: 【설정은 2026-09-27 12:4x 에 사장님이 끝내셨다】 주소 인증 완료 · 「수신메일을 magsori@gmail.com 에 전달」 선택 · 변경사항 저장 클릭. 남은 것은 '실제로 넘어오는가' 검증 하나.
+ · 내 10-10 조회가 그 검증을 채운다 — **설정(09-27 12:4x) 이후 도착분이 실제로 넘어온다**: google-noreply 10-06 20:23Z · googlenews 10-07 22:31Z · googleplaypromo 10-08 02:30Z · googlenews 10-08 22:31Z · googlenews 10-09 22:32Z. 전부 INBOX/TRASH 수신분(SENT 아님).
+ · 건수 정정: **7스레드 8메시지**이고 &quot;자동 발신자 7건&quot; 도 틀렸다 — 그중 aroma8975→8975 1통은 사람이 보낸 것이고, 09-27 04:09·04:10 accounts.google.com 2통은 설정 시각(12:4x)보다 **앞서** 있어 전달로 설명되지 않는다(8975가 aroma 의 복구 이메일이라 사본이 간 건이다 — 경로 미확정).
+ · 🔴 그대로 남는 한계: **그 표본에 GSC·애드센스 통지가 한 건도 없다.** '전달이 작동한다' 와 'GSC 통지도 넘어온다' 는 다른 주장이고 후자는 아직 확인 못 했다.
+ · 🔧 그래서 등록했다 — **watch skill1-8975-relay-stale-1010**(owner=claude·기한 10-11): 루틴1 SKILL.md 가 아직 '전달 설정이 안 돼 있다(09-24 실측)·직접 수신분 0건·사각지대' 로 가르쳐서 매 회차 낡은 서술을 되풀이한다. SKILL.md 는 git 밖 파일이라 이부장이 직접 고쳐야 한다.
+
+🟡 정정④ 커밋 496ce0ad 에 남의 항목이 섞였다 — 경로를 지정해 커밋했는데도 그렇다.
+ · webapp/routinelog_history.json 이 **세션 시작 시 이미 수정돼 있었고**(+162줄) 거기에 09-24·09-25 다른 루틴 기록이 들어 있었다: 루틴2·3·4·5·6·7·8·9 의 0924/0925 항목 14건.
+ · 커밋 메시지는 메일브리핑만 말하는데 내용은 그보다 넓다. **이력은 재작성하지 않는다**(CLAUDE.md) — 여기 적고 넘어간다.
+ · 원인: 이 파일은 bake 가 굽는 파생인데 누적형이라 남이 쓴 줄이 그대로 남는다. 경로 지정만으로는 못 막는 부류다.</div></details></div>
 <div class='r done today' data-bid='routinelog'><div class='hd'><span class='who w-rt'>예약 루틴</span><span class='t'>2026-10-10 07:15</span><span class='k'>완료</span><span class='c'>8-lifeinfo-issue-product-1010</span><span class='b'>routinelog</span></div><div class='ord'><span class='ost' data-bid='routinelog'></span> <b>지시</b>🤖 루틴 실행 보고 — 9개 예약 루틴이 끝나면 여기 남긴다 <a href='#' class='xl' onclick="CPX.go('orders','routinelog');return false">📄 지시서 보기 →</a></div><div class='w'>🛒 후보 1건: 레이데이 비타민C 에너지 앰플(8,450원·리뷰3,974·평점4.6) — 환절기 면역관리 수요. collect(294건 신규수집)→search→pick(issue20261010)→kakao(afflink-issue20261010 결재함 등록)까지 완료. 게시·</div><details class='more'><summary>… 더 보기 (9자)</summary><div class='w'>링크발급은 안 함</div></details></div>
 <div class='r done today' data-bid='routinelog'><div class='hd'><span class='who w-rt'>예약 루틴</span><span class='t'>2026-10-10 01:32</span><span class='k'>완료</span><span class='c'>lifeinfo-daily-publish-1010</span><span class='b'>routinelog</span></div><div class='ord'><span class='ost' data-bid='routinelog'></span> <b>지시</b>🤖 루틴 실행 보고 — 9개 예약 루틴이 끝나면 여기 남긴다 <a href='#' class='xl' onclick="CPX.go('orders','routinelog');return false">📄 지시서 보기 →</a></div><div class='w'>글감 제안 2건(D1-13 rec·C1-15 alt) → docflow 선별(D1-13 pick, C1-15 drop=시의성없음) → D1-13 초안·썸네일(328_resident_survey_visit)·</div><details class='more'><summary>… 더 보기 (168자)</summary><div class='w'>pubqueue 적재 → V0 3차 재검사 끝에 🟢 통과(1차 반려: 과태료 상한값만·경감비율 유보, 2차 반려: 감경비율 방향 반전 — 둘 다 law.go.kr 시행령 별표4 직접확인으로 수정). 발행대기 재고 1/99(D1-13), 결재함에 사장님 발행승인 대기. 커밋 b027ca99 푸시 완료.</div></details></div>
 <details data-k='rest-예약 루틴'><summary>이전 보고 190건 펼치기</summary>
