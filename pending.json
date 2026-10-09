@@ -1,16 +1,33 @@
 {
- "rev": "fe0ea841",
+ "rev": "3e18fb5f",
  "counts": {
-  "total": 343,
+  "total": 344,
   "osmu_done": 343,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 343,
+  "index_pending": 344,
   "index_requested": 160,
-  "index_todo": 24,
+  "index_todo": 25,
   "index_benign": 159
  },
  "actionable": [
+  {
+   "code": "A1-20",
+   "title": "복지급여 신청주의 대폭 개선, 아동수당 자동지급으로 바",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "G3-10",
    "title": "함양산삼축제 2026 일정·프로그램 — 10/7~11,",
@@ -208,22 +225,6 @@
   {
    "code": "D5-04",
    "title": "코레일 승차권 예매, 10월 1일부터 2개월 전 가능 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "D5-06",
-   "title": "모두의카드 반값 혜택 9월 종료, 10월부터 기준금액 ",
    "need": [
     "색인요청"
    ],
