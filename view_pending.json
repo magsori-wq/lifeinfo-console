@@ -1,10 +1,9 @@
 {
- "computed_at": "2026-10-10 01:31:06",
- "source_head": "b027ca99dc94",
+ "computed_at": "2026-10-10 02:41:31",
+ "source_head": "ce0181339bc8",
  "ids": [
   "D1-13",
-  "F4-24",
-  "aside-newchat-1010"
+  "F4-24"
  ],
  "posts": [
   {
@@ -86,7 +85,7 @@
   {
    "code": "D1-13",
    "title": "2026 주민등록 사실조사 방문조사 — 중점조사 대상이면 또 옵니다, 거부 과태료 1차 10만원부터",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -108,19 +107,10 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
- "actions": [
-  {
-   "id": "aside-newchat-1010",
-   "what": "Aside 사이드패널 새 채팅 열기(지연 원인 해소). 열면 이부장이 REPL 실행시간 재측정",
-   "due": "2026-10-10",
-   "cmd": "Aside 사이드패널 → 새 채팅 → 'CP 지시서 확인'",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "actions": [],
  "actionsFuture": [
   {
    "id": "claude-limit-reset-1022",
