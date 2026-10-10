@@ -17710,6 +17710,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "token-leak-trace-1011",
+   "added": "2026-10-10",
+   "what": "커널 출입증 누수 추적 2단계: ①fetch 의 어느 부분(git-remote-https/schannel·Defender)이 새는지 ②fetch 외 배경 ~1/초 출처(statusline 30초·훅) ③지금 돌고 있는 tower_watch 는 옛 코드(60초 fetch) — 재기동 필요",
+   "due": "2026-10-11",
+   "cmd": "powershell -NoProfile -File tools\\tokcheck.ps1 -Fetch 10",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
