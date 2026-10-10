@@ -17880,6 +17880,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "cp-report-500-batchjson-1011",
+   "added": "2026-10-11",
+   "what": "CP 결재서버 /api/report 가 batch.json 교체 때 PermissionError(500) — 10-10 19:04·10-11 04:22 두 번(Aside 시작 보고 유실). 다른 세션·bake 가 같은 순간 batch.json 을 쓰는 경합으로 추정(미확인). atomic replace 재시도(짧은 backoff) 넣을지 판단",
+   "due": "2026-10-11",
+   "cmd": "grep -n 'PermissionError\\|os.replace' studio/batchboard.py studio/approve_server.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-single-chat-1011",
+   "added": "2026-10-11",
+   "what": "사장님 04:31 '하나의 챗으로 고정' — #27 끝나면: 새 전담 채팅 생성(save-sessions on 상태) → 현재 CP 탭(893DD395…)에 activeTabTargetId 묶기 → 옛 전담(lzaEKZgYk3iKPOTW, 23MB) 보관 → 이후 지시는 전부 'aside session resume <전담ID>' 로. 전담 ID 는 docs/Aside_지시서_양식.md 상단에 적고, 20MB 넘으면 교체(재부팅 뒤엔 탭 ID 재바인딩)",
+   "due": "2026-10-11",
+   "cmd": "aside session list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
