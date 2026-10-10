@@ -17547,6 +17547,16 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "push-diverged-1010",
+   "added": "2026-10-10",
+   "what": "로컬 ahead1/behind1 — 내 커밋 75f512cd(A1-21 완료 표기) 미푸시. pull 은 다른 세션 파생파일(agents·health·pace·progress.html/json·reindex) 미커밋 + 미추적 rich_D1-13.html(원격본과 다름) 때문에 막힘. 정리 명령(파생 6개 checkout + rich 옆으로 이동)이 권한에서 거부됨 → 사장님 허락 대기",
+   "due": "2026-10-10",
+   "cmd": "git status -sb | head -1",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이부장"
   }
  ]
 }
