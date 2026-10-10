@@ -17569,9 +17569,11 @@
    "due": "2026-10-10",
    "cmd": "cd /c/lifeinfo && mv webapp/rich_D1-13.html \"$TEMP/rich_D1-13.local.html\" && git checkout -- webapp/agents.json webapp/health.json webapp/pace.json webapp/progress.html webapp/progress.json webapp/reindex.json && git merge --no-edit origin/main && git push",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "세션:544f52c8"
+   "by": "세션:544f52c8",
+   "done_at": "2026-10-10",
+   "result": "15:4x 이부장이 tools/syncorigin.py 신설·실행으로 해소(원본 충돌 2건 watch=로컬·reindex=원격 수동 병합) · 로컬=원격 · pubgo 가 발행마다 자동 호출"
   },
   {
    "id": "afflink-20261010-2",
@@ -17596,6 +17598,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "세션:544f52c8"
+  },
+  {
+   "id": "xlink-d113",
+   "added": "2026-10-10",
+   "what": "🔗 D1-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-13",
+   "due": "2026-10-10",
+   "cmd": "python studio/blogger.py crosslink --code D1-13",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
