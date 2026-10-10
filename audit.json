@@ -11856,6 +11856,14 @@
    "target": "aside-pinned-chat-1010",
    "detail": "04:4x 새 전담 WUPNGW6zm2pP5SPP 생성·CP 탭(893DD395) 바인딩·탭 열기/읽기/닫기 시험 성공 · 옛 전담 lzaEK(23MB) 보관 · 규칙 docs/Aside_지시서_양식.md 맨 위",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-11T05:21:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "token-leak-trace-1011",
+   "detail": "배경 증가 추적(10-11 05:00~05:21): 감시 루프 반복 시점과 무상관(직후 4초창 22%=시간비율 20%) · 루프 본문 12회 실측 0~1.7/회 · curl 8011 ~1.6/회(분당 2회) · git log·date·find·python 무누수. 즉 tower_watch 가 출처가 아니다. 남는 배경 ~0.7~0.9/s 는 세션 밖(Desktop·Aside·OS)으로 보이며, 프로세스 열거 금지라 더 좁히지 않는다. 재부팅 후 10.7시간 34,776개 = 위험선(50만)까지 약 2주. 출근점검 커널메모리 줄(🟡15만)이 감시한다. fetch 내부 원인(①)은 미해결이나 10분 1회로 영향 ~1.4/분.",
+   "via": "cli"
   }
  ]
 }
