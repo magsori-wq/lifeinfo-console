@@ -11688,6 +11688,14 @@
    "target": "b419-trigger-1010",
    "detail": "16:2x pubgo 발행 완료 · 라이브 200·썸네일 200",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-10T17:03:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "kernel-token-pool-1010",
+   "detail": "원인 규명: git fetch 1회당 Toke 7.5~12 누수(3회 재현). 대책·추적은 token-leak-trace-1011",
+   "via": "cli"
   }
  ]
 }
