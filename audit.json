@@ -11664,6 +11664,22 @@
    "target": "solo-20261010-2",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-10T15:57:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "mem-find-orphan-1010",
+   "detail": "사장님 승인 후 이부장이 PID 27352 종료. 핸들 합계 10.8M→158k, paged pool 11.4→8.1GB(회수 진행 중)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T15:57:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "find-root-guard-1010",
+   "detail": "studio/bashguard.py PreToolUse 훅 배선, 실제 Bash 도구로 차단 확인(find / 막힘, -maxdepth·좁은 경로 통과)",
+   "via": "cli"
   }
  ]
 }
