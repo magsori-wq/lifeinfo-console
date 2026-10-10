@@ -17870,6 +17870,16 @@
    "by": "이부장",
    "done_at": "2026-10-11",
    "result": "dupcheck 에 드문 제도명(5자+·기존 2편 이하) 일치 → 🟡 + '같은 제도명 기존글' 별도 표시 추가. F4-25 제목으로 D3-08 이 뜨는 것 확인 · falsepos._r_dupcheck_rare_term_1011 회귀 감시. covered_topics·pubqueue 경고도 같은 모듈을 써서 함께 적용"
+  },
+  {
+   "id": "xlink-d114",
+   "added": "2026-10-11",
+   "what": "🔗 D1-14 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-14",
+   "due": "2026-10-11",
+   "cmd": "python studio/blogger.py crosslink --code D1-14",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
