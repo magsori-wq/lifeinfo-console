@@ -1,10 +1,11 @@
 {
- "computed_at": "2026-10-10 14:30:42",
- "source_head": "04b627564e60",
+ "computed_at": "2026-10-10 15:37:40",
+ "source_head": "a2918e7d36d5",
  "ids": [
   "A1-21",
   "B4-19",
-  "D1-13"
+  "D1-13",
+  "git-sync-boss-1010"
  ],
  "posts": [
   {
@@ -14,7 +15,7 @@
    "eng": "resident_survey_visit",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224437164681",
      "files": [
       {
        "label": "네이버 원고",
@@ -29,7 +30,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -138,7 +139,16 @@
    "light": "ready"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "git-sync-boss-1010",
+   "what": "로컬이 원격보다 1커밋 뒤(ahead4·behind1) — 이부장·이과장 둘 다 정리 명령이 권한에서 거부돼 멈춤. 이것이 풀려야 A1-21 네이버 원고 → B4-19 발행(승인됨)이 진행된다. Run 버튼으로 한 줄 실행",
+   "due": "2026-10-10",
+   "cmd": "cd /c/lifeinfo && mv webapp/rich_D1-13.html \"$TEMP/rich_D1-13.local.html\" && git checkout -- webapp/agents.json webapp/health.json webapp/pace.json webapp/progress.html webapp/progress.json webapp/reindex.json && git merge --no-edit origin/main && git push",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "claude-limit-reset-1022",
