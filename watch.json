@@ -17472,6 +17472,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "imgserver-restart-1010",
+   "added": "2026-10-10",
+   "what": "이과장 인계: 이미지 서버(8971·8972)가 PC 재부팅 후 꺼져 있어 재기동 필요(카드 제작용). 무엇을 띄우는 서버인지 확인 후 재기동",
+   "due": "2026-10-10",
+   "cmd": "curl -s -o /dev/null -w %{http_code} http://127.0.0.1:8971/ ; curl -s -o /dev/null -w %{http_code} http://127.0.0.1:8972/",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
