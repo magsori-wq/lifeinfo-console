@@ -17798,8 +17798,20 @@
    "due": "2026-10-11",
    "cmd": "python studio/blogger.py crosslink --code D1-13 && python studio/blogger.py crosslink --code A1-21 && python studio/blogger.py crosslink --code B4-19",
    "owner": "claude",
+   "state": "done",
+   "by": "세션:3db2caa1",
+   "done_at": "2026-10-10",
+   "result": "23:3x 라이브 확인 — D1-13·A1-21(이과장)·B4-19(이부장 대면 실행) 세 편 모두 '다른 채널에서도 보기' 블록에 네이버·인스타·쓰레드 링크 있음"
+  },
+  {
+   "id": "crosslink-b419-1010",
+   "added": "2026-10-10",
+   "what": "B4-19 교차링크 미삽입 — crosslink 게이트가 무인 실행으로 판정해 중단(대면에서 실행 필요). D1-13·A1-21 은 같은 세션에서 통과했다",
+   "due": "2026-10-11",
+   "cmd": "python studio/blogger.py crosslink --code B4-19",
+   "owner": "claude",
    "state": "todo",
-   "by": "세션:3db2caa1"
+   "by": "이과장"
   }
  ]
 }
