@@ -17559,6 +17559,16 @@
    "owner": "claude",
    "state": "blocked",
    "by": "이부장"
+  },
+  {
+   "id": "d113-naver-aside-1530",
+   "added": "2026-10-10",
+   "what": "D1-13 네이버 Aside 발행 지시(15:30 이후 — F4-24 13:30 + 2시간). 반영: ①Aside 새 naver_flow.js(4호출) 첫 실발행 검증이라 phase4 결과를 따로 보고받는다 ②출처줄은 서식본 ※줄 그대로 — 사진 아래 한 줄 따로 넣으라고 쓰지 말 것(Aside 지적 모순) ③보고 code 는 'D1-13' 형식만(접미사 400) ④새 대화(exec)",
+   "due": "2026-10-10",
+   "cmd": "python -m studio.pace && python -m studio.pipeline naver-draft --code D1-13",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:544f52c8"
   }
  ]
 }
