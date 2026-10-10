@@ -11664,6 +11664,150 @@
    "target": "solo-20261010-2",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-10T15:57:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "mem-find-orphan-1010",
+   "detail": "사장님 승인 후 이부장이 PID 27352 종료. 핸들 합계 10.8M→158k, paged pool 11.4→8.1GB(회수 진행 중)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T15:57:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "find-root-guard-1010",
+   "detail": "studio/bashguard.py PreToolUse 훅 배선, 실제 Bash 도구로 차단 확인(find / 막힘, -maxdepth·좁은 경로 통과)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T16:26:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b419-trigger-1010",
+   "detail": "16:2x pubgo 발행 완료 · 라이브 200·썸네일 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T17:03:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "kernel-token-pool-1010",
+   "detail": "원인 규명: git fetch 1회당 Toke 7.5~12 누수(3회 재현). 대책·추적은 token-leak-trace-1011",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T20:32:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "console-check-red-dbindex-1005",
+   "detail": "이부장 결정(10-10 20:3x): pushapproval 이 posts_index 와 짝인 lifeinfo_db.txt 도 함께 보내게 고침(*.txt 전체 아님·같은 push 라 횟수 불변). 다음 RED 재발 여부로 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T21:40:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "mem-pool-recheck-1010",
+   "detail": "21:40 실측(성능카운터): paged pool 0.6GB(아침 11.4GB) · 커밋 15.9GB(33.4GB) · 가용 4.5GB — 재부팅·find 종료 뒤 정상 범위",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T21:41:00",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "F4-25",
+   "detail": "판단형비교(산림청 단풍절정지도 8개산 vs 산불통제기간 11/1 겹침표, 두 1차출처 독립교차) + 함정(2025년 12일 앞당김 선례·국립공원≠산림청 법적근거 상이)이 실질 성립, 기간·과태료·단풍일 전수 1차출처(.go.kr/law.go.kr) 대조 일치, D-22/45일/116일 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T21:41:22",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "F4-25",
+   "detail": "함정(국립공원≠산림청 기간·봄철 26일 차)+단풍절정 D-day 판단표+과태료 조문표. 11.1~12.15·45일·20만원 이하·제15조제3항·제57조제5항 출처 원문 일치, 단풍일정 기발행글 일치, 기계검사 OK. 경미: 도입부 '같은 시기'(10/20은 기간 전)·'10월10일 현재",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T21:42:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-f4-25-20261010",
+   "detail": "🟡 pass 기록됨(V0검사관) — 판단형비교·함정 실질성립, 수치 전수 1차출처 일치, 경미권고(국립공원 봄철 수치 출처 한정)는 반영해 재커밋(a7743a43). 사장님 결재 대기 전환",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T23:04:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-d113",
+   "detail": "blogger.py crosslink D1-13 실행 → 라이브(캐시버스트) 재조회 블록 1개·네이버/인스타/쓰레드 3링크 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T23:33:44",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-missing-1010",
+   "detail": "23:3x 라이브 확인 — D1-13·A1-21(이과장)·B4-19(이부장 대면 실행) 세 편 모두 '다른 채널에서도 보기' 블록에 네이버·인스타·쓰레드 링크 있음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-11T00:19:02",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "E3-04",
+   "detail": "과기정통부 담당자가 '규제개혁위원회 통과 전이라 확정 아님'이라 직접 밝힘(머니투데이 2026-07-20·21) — 시행이 미확정 상태라 '지금 적용된다'는 특별이슈 앵커가 성립하지 않음. 고시 공포·시행일 확정되면 재제안",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-11T00:35:07",
+   "actor": "V0검사관",
+   "action": "v0check.fail",
+   "target": "D1-14",
+   "detail": "원본가치(통념반박 결격2+부착2=총4년·벌칙표·함정)는 충분하고 조문 대조도 일치하나 수정 3건 필요: (1) '약 250만~300만원' 의 250만이 source 파일에 없음(매일신문 2026-01-08 은 약 300만원만) → 출처 확인되면 매체·날짜 병기, 안 되면 '약 300만원",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-11T00:40:22",
+   "actor": "V0검사관",
+   "action": "v0check.fail",
+   "target": "D1-14",
+   "detail": "1차 반려 3건(설치비 250만~300만→300만 명시·2절 모순문단·D-14 오늘바인딩) 모두 수정 확인됨(diff 대조). 재검사에서 새 문제 발견: (1)[핵심] '2024/2026년 10월25일' 날짜 불확실 — 1차 출처 부칙(법19745호 제1조 '공포 후 1년이 경과한 날부",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-11T00:40:45",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "D1-14",
+   "detail": "재검사 3건 해소: 설치비 약300만원(매일신문 2026-01-08, 원문 source md와 일치·250만 삭제), 사고동반 문장을 DRF MST281875 제82조②3호(사망·사상후미조치=5년)/6호나목(교통사고=2년)에 맞게 정정, D-14·오늘 날짜 고정표현 제거(grep 0).",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-11T00:40:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-d1-14",
+   "detail": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 3건 해소: 설치비 약300만원(매일신문 2026-01-08, 원문 source md와 일치·250만 삭제), 사고동반 문장을 DRF MST281875 제82조②3호(사망·사상후미조치=5년)/6호나목(교통사고",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-11T01:55:53",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "F4-25",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-11T01:56:48",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D1-14",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }
