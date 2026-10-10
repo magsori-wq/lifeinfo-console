@@ -17499,8 +17499,18 @@
    "id": "stock-refill-1010",
    "added": "2026-10-10",
    "what": "재고 2편(하한3) — docflow 에이전트가 오늘 글감 5건 선별·이과장 초안 지시서 발행 중. 결과 확인 후 이과장 깨움",
-   "due": "2026-10-10",
+   "due": "2026-10-11",
    "cmd": "python -m studio.topicprop table && python -m studio.pace",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "docflow-1010-sel",
+   "added": "2026-10-10",
+   "what": "docflow 10-10 선별: 살아있는 제안 0건(요청은 5건이라 했으나 topicprop list 기준 없음). 재고 B4-19·A1-21(2/99). H1-24 보류 재등판 11-05. 선별·지시서 없음",
+   "due": "2026-10-11",
+   "cmd": "python -m studio.topicprop table",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
