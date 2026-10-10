@@ -17480,8 +17480,10 @@
    "due": "2026-10-10",
    "cmd": "curl -s -o /dev/null -w %{http_code} http://127.0.0.1:8971/ ; curl -s -o /dev/null -w %{http_code} http://127.0.0.1:8972/",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-10",
+   "result": "8971(insta/thread)·8972(insta) python http.server 재기동, curl 둘 다 200 확인(13:2x)"
   }
  ]
 }
