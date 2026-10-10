@@ -17494,8 +17494,10 @@
    "due": "2026-10-10",
    "cmd": "python studio/blogger.py crosslink --code F4-24",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-10",
+   "result": "blogger.py crosslink F4-24 실행 → 라이브 재조회로 네이버·쓰레드·인스타 3개 링크 확인(15:5x)"
   },
   {
    "id": "stock-refill-1010",
@@ -17610,6 +17612,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "b419-trigger-1010",
+   "added": "2026-10-10",
+   "what": "B4-19 발행 트리거 대기(사장님 13:56 승인). 지금 막는 것 = setgate: D1-13 인스타 미게시(이과장 캡션 → Aside 게시). 풀리면 pubready → pubgo B4-19",
+   "due": "2026-10-10",
+   "cmd": "python -m studio.setgate && python -m studio.pubready --code B4-19",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:544f52c8"
+  },
+  {
+   "id": "afflink-4-reconcile-1010",
+   "added": "2026-10-10",
+   "what": "승인됐는데 링크 없는 상품 4건(양말 issue20261004·망토담요 20261005-1·니삭스 issue20261009·비타민C 앰플 issue20261010) — 이미 다른 id 로 게시된 것과 대조 후 tosslink link→solo-add→solo-ask",
+   "due": "2026-10-11",
+   "cmd": "python -m studio.stallcheck && python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:544f52c8"
   }
  ]
 }
