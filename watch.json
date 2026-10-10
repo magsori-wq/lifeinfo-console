@@ -17835,6 +17835,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "naverdraft-stale-original-1011",
+   "added": "2026-10-11",
+   "what": "naver-draft 의 원문 찾기가 옛 미발행 초안(가을철산불조심기간2026_글_HTML.txt, 10-05)을 F4-25 원본으로 잡아 '공식링크 3개 중 2개' 오탐 — 실제 발행본(가을철산불조심기간_글_HTML.txt)은 1개·네이버 원고 일치. 옛 초안 정리 또는 원문 찾기를 queue.json draft 우선으로",
+   "due": "2026-10-12",
+   "cmd": "grep -n '_find_original_draft' studio/naver.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
