@@ -17569,6 +17569,17 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:544f52c8"
+  },
+  {
+   "id": "git-sync-boss-1010",
+   "added": "2026-10-10",
+   "what": "로컬이 원격보다 1커밋 뒤(ahead4·behind1) — 이부장·이과장 둘 다 정리 명령이 권한에서 거부돼 멈춤. 이것이 풀려야 A1-21 네이버 원고 → B4-19 발행(승인됨)이 진행된다. Run 버튼으로 한 줄 실행",
+   "due": "2026-10-10",
+   "cmd": "cd /c/lifeinfo && mv webapp/rich_D1-13.html \"$TEMP/rich_D1-13.local.html\" && git checkout -- webapp/agents.json webapp/health.json webapp/pace.json webapp/progress.html webapp/progress.json webapp/reindex.json && git merge --no-edit origin/main && git push",
+   "owner": "user",
+   "state": "todo",
+   "kind": "action",
+   "by": "세션:544f52c8"
   }
  ]
 }
