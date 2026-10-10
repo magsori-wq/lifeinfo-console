@@ -11696,6 +11696,14 @@
    "target": "kernel-token-pool-1010",
    "detail": "원인 규명: git fetch 1회당 Toke 7.5~12 누수(3회 재현). 대책·추적은 token-leak-trace-1011",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-10T20:32:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "console-check-red-dbindex-1005",
+   "detail": "이부장 결정(10-10 20:3x): pushapproval 이 posts_index 와 짝인 lifeinfo_db.txt 도 함께 보내게 고침(*.txt 전체 아님·같은 push 라 횟수 불변). 다음 RED 재발 여부로 확인",
+   "via": "cli"
   }
  ]
 }

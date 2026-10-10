@@ -16522,8 +16522,10 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow 320833743 -L 10 --json conclusion,createdAt && grep -n '\"\\*.html\", \"\\*.json\", \"\\*.js\"' studio/pushapproval.py",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-10-10",
+   "result": "이부장 결정(10-10 20:3x): pushapproval 이 posts_index 와 짝인 lifeinfo_db.txt 도 함께 보내게 고침(*.txt 전체 아님·같은 push 라 횟수 불변). 다음 RED 재발 여부로 확인"
   },
   {
    "id": "aroma-login-alert-1005",
@@ -17761,6 +17763,16 @@
    "cmd": "aside session list",
    "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "console-red-recheck-1012",
+   "added": "2026-10-10",
+   "what": "pushapproval DB 동봉 수정 후 공개 콘솔 정합성 검사 RED(posts_index vs DB) 재발했나",
+   "due": "2026-10-12",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 20 --json conclusion,name,createdAt -q '.[]|select(.conclusion==\"failure\")|.createdAt'",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
