@@ -17732,6 +17732,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:544f52c8"
+  },
+  {
+   "id": "xlink-b419",
+   "added": "2026-10-10",
+   "what": "🔗 B4-19 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-19",
+   "due": "2026-10-10",
+   "cmd": "python studio/blogger.py crosslink --code B4-19",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "reboot-resume-1010",
+   "added": "2026-10-10",
+   "what": "재부팅(18:3x, find 문제) 뒤 재개 순서: ①이부장 resume(544f52c8) → 승인 감시 tower_watch 1개 재무장 ②결재서버 8011·CP 8000 응답 확인(서버 재시작으로 report code 수정 적용) ③이미지 서버 8971·8972(imgserver-restart-1010) ④B4-19 인스타·쓰레드 Aside 게시 지시(원고·카드 3장 준비됨) ⑤A1-21·B4-19 검색설명 주입(이과장 Chrome 탭 hidden 3회로 막힘 — 재부팅 후 재시도 또는 Aside) ⑥루틴4 21:00 글감 → 선별·초안 지시",
+   "due": "2026-10-10",
+   "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:544f52c8"
   }
  ]
 }
