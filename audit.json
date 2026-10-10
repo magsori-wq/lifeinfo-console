@@ -11704,6 +11704,30 @@
    "target": "console-check-red-dbindex-1005",
    "detail": "이부장 결정(10-10 20:3x): pushapproval 이 posts_index 와 짝인 lifeinfo_db.txt 도 함께 보내게 고침(*.txt 전체 아님·같은 push 라 횟수 불변). 다음 RED 재발 여부로 확인",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-10T21:40:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "mem-pool-recheck-1010",
+   "detail": "21:40 실측(성능카운터): paged pool 0.6GB(아침 11.4GB) · 커밋 15.9GB(33.4GB) · 가용 4.5GB — 재부팅·find 종료 뒤 정상 범위",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T21:41:00",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "F4-25",
+   "detail": "판단형비교(산림청 단풍절정지도 8개산 vs 산불통제기간 11/1 겹침표, 두 1차출처 독립교차) + 함정(2025년 12일 앞당김 선례·국립공원≠산림청 법적근거 상이)이 실질 성립, 기간·과태료·단풍일 전수 1차출처(.go.kr/law.go.kr) 대조 일치, D-22/45일/116일 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-10T21:41:22",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "F4-25",
+   "detail": "함정(국립공원≠산림청 기간·봄철 26일 차)+단풍절정 D-day 판단표+과태료 조문표. 11.1~12.15·45일·20만원 이하·제15조제3항·제57조제5항 출처 원문 일치, 단풍일정 기발행글 일치, 기계검사 OK. 경미: 도입부 '같은 시기'(10/20은 기간 전)·'10월10일 현재",
+   "via": "cli"
   }
  ]
 }

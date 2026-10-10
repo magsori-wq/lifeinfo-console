@@ -17680,8 +17680,10 @@
    "due": "2026-10-10",
    "cmd": "powershell -c \"(Get-CimInstance Win32_PerfFormattedData_PerfOS_Memory).PoolPagedBytes/1MB\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-10",
+   "result": "21:40 실측(성능카운터): paged pool 0.6GB(아침 11.4GB) · 커밋 15.9GB(33.4GB) · 가용 4.5GB — 재부팅·find 종료 뒤 정상 범위"
   },
   {
    "id": "bash-timeout-orphans-1010",
