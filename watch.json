@@ -17690,6 +17690,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "kernel-token-pool-1010",
+   "added": "2026-10-10",
+   "what": "커널 토큰(Toke) 2,128MB 잔류 · 16:32 1분 증가 +0.1MB(멈춤). 내일 재측정해 늘면 새 누수, 그대로면 재부팅 때 회수되는 잔여물",
+   "due": "2026-10-11",
+   "cmd": "powershell: NtQuerySystemInformation(22) 태그 Toke 값 재측정 + PoolPagedBytes",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
