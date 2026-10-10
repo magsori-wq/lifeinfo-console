@@ -1,16 +1,33 @@
 {
- "rev": "e89ee3fb",
+ "rev": "e9aa17a7",
  "counts": {
-  "total": 349,
+  "total": 350,
   "osmu_done": 349,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 349,
+  "index_pending": 350,
   "index_requested": 160,
-  "index_todo": 30,
+  "index_todo": 31,
   "index_benign": 159
  },
  "actionable": [
+  {
+   "code": "F4-25",
+   "title": "2026 가을철 산불조심기간 11월 1일부터 — 등산로",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -206,22 +223,6 @@
   {
    "code": "D1-11",
    "title": "2026 수능 11월 19일 교통통제 — 올해 발표는 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "D1-12",
-   "title": "한글날 연휴 10월 9일 금요일 — 관공서·은행·병원·",
    "need": [
     "색인요청"
    ],
