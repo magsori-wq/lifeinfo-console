@@ -17526,6 +17526,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "aside-report-mojibake-1010",
+   "added": "2026-10-10",
+   "what": "Aside /api/report 로 들어온 한글이 batch.json currents 에 깨져 저장됨(pub1010f424 '[Aside][blocked] �ν�Ÿ…' — cp949 로 디코딩된 흔적). tower_watch 알림은 정상 한글. approve_server _report 의 본문 디코딩 확인",
+   "due": "2026-10-11",
+   "cmd": "grep -n '_report' studio/approve_server.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
