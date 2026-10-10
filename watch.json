@@ -17614,8 +17614,10 @@
    "due": "2026-10-10",
    "cmd": "python studio/blogger.py crosslink --code D1-13",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-10",
+   "result": "blogger.py crosslink D1-13 실행 → 라이브(캐시버스트) 재조회 블록 1개·네이버/인스타/쓰레드 3링크 확인"
   },
   {
    "id": "b419-trigger-1010",
@@ -17788,6 +17790,16 @@
    "by": "루틴4",
    "done_at": "2026-10-10",
    "result": "🟡 pass 기록됨(V0검사관) — 판단형비교·함정 실질성립, 수치 전수 1차출처 일치, 경미권고(국립공원 봄철 수치 출처 한정)는 반영해 재커밋(a7743a43). 사장님 결재 대기 전환"
+  },
+  {
+   "id": "xlink-missing-1010",
+   "added": "2026-10-10",
+   "what": "오늘 발행 3편 본문에 교차링크(다른 채널에서도 보기) 누락 — D1-13(2곳)·A1-21(2곳)·B4-19(2곳). 무인 야간루틴은 라이브 본문 수정 금지라 기록만 남김",
+   "due": "2026-10-11",
+   "cmd": "python studio/blogger.py crosslink --code D1-13 && python studio/blogger.py crosslink --code A1-21 && python studio/blogger.py crosslink --code B4-19",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:3db2caa1"
   }
  ]
 }
