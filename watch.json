@@ -17856,6 +17856,18 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "dupcheck-miss-d308-f425-1011",
+   "added": "2026-10-11",
+   "what": "근본원인: dupcheck 가 D3-08 vs F4-25 를 못 잡음(제목 '11/1~12/15·입산통제구역' vs '11월 1일부터·입산통제' 토큰 불일치, V0 실행 시 최고 0.060). 핵심 주제어(산불조심기간·고유 제도명) 일치를 강한중복으로 보는 규칙 + falsepos 회귀 규칙 추가 필요. 루틴4 covered_topics 도 놓침",
+   "due": "2026-10-11",
+   "cmd": "python -m studio.dupcheck '2026 가을철 산불조심기간 11월 1일부터 — 등산로 입산통제, 단풍 보러 갈 때 꼭 확인할 것'",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-11",
+   "result": "dupcheck 에 드문 제도명(5자+·기존 2편 이하) 일치 → 🟡 + '같은 제도명 기존글' 별도 표시 추가. F4-25 제목으로 D3-08 이 뜨는 것 확인 · falsepos._r_dupcheck_rare_term_1011 회귀 감시. covered_topics·pubqueue 경고도 같은 모듈을 써서 함께 적용"
   }
  ]
 }
