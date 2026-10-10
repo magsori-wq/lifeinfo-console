@@ -17608,7 +17608,7 @@
   {
    "id": "xlink-d113",
    "added": "2026-10-10",
-   "what": "🔗 D1-13 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-13",
+   "what": "🔗 D1-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-13",
    "due": "2026-10-10",
    "cmd": "python studio/blogger.py crosslink --code D1-13",
    "owner": "claude",
@@ -17642,10 +17642,8 @@
    "due": "2026-10-10",
    "cmd": "작업 관리자 > 세부 정보 > find.exe (PID 27352) > 작업 끝내기",
    "owner": "user",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-10",
-   "result": "사장님 승인 후 이부장이 PID 27352 종료. 핸들 합계 10.8M→158k, paged pool 11.4→8.1GB(회수 진행 중)"
+   "state": "todo",
+   "by": "이부장"
   },
   {
    "id": "find-root-guard-1010",
@@ -17654,10 +17652,8 @@
    "due": "2026-10-11",
    "cmd": "grep -n 'find /' .claude/settings.json .claude/agents/*.md",
    "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-10",
-   "result": "studio/bashguard.py PreToolUse 훅 배선, 실제 Bash 도구로 차단 확인(find / 막힘, -maxdepth·좁은 경로 통과)"
+   "state": "todo",
+   "by": "이부장"
   },
   {
    "id": "aside-pinned-chat-1010",
@@ -17668,26 +17664,6 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:544f52c8"
-  },
-  {
-   "id": "mem-pool-recheck-1010",
-   "added": "2026-10-10",
-   "what": "find 종료 뒤 paged pool 회수 확인(정상 수백MB~1GB대로 내려와야 함). 안 내려오면 다른 누수 원인",
-   "due": "2026-10-10",
-   "cmd": "powershell -c \"(Get-CimInstance Win32_PerfFormattedData_PerfOS_Memory).PoolPagedBytes/1MB\"",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
-  },
-  {
-   "id": "bash-timeout-orphans-1010",
-   "added": "2026-10-10",
-   "what": "Bash 도구 시간초과·TaskStop 뒤 자식(find·grep)이 고아로 남는 문제 — 10-10 find 17시간·내 grep 1건 재현. 정리 장치(예: routine_reap 에 고아 Git usr/bin 프로세스 규칙) 검토",
-   "due": "2026-10-11",
-   "cmd": "powershell -c \"Get-CimInstance Win32_Process -Filter \\\"ExecutablePath like '%Git%usr%bin%'\\\" | select Name,ProcessId,ParentProcessId\"",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
   }
  ]
 }
