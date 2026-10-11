@@ -18205,8 +18205,10 @@
    "cmd": "python studio/selfcheck.py 2>&1 | grep '20)'",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:8b444db0"
+   "state": "done",
+   "by": "세션:8b444db0",
+   "done_at": "2026-10-12",
+   "result": "이부장 수리 — 원인: _r_progress_ghost_0919 가 4칸 행 대신 문장을 반환(F4-25 회수로 처음 발동). check_rules() 가 문장을 🔴 행으로 감싸게 고침 + 회귀규칙 _r_rule_rows_normalized_1012. F4-25 v0 기록 superseded_by D3-08, 낡은 승인표시 규칙은 skip 항목 제외. selfcheck 20) 정상(🔴0·⚠️1 = 미분류 webapp 파일 3개, 타 세션)"
   }
  ]
 }
