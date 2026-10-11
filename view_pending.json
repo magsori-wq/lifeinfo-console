@@ -1,9 +1,8 @@
 {
- "computed_at": "2026-10-12 03:15:24",
- "source_head": "f86f48a3c079",
+ "computed_at": "2026-10-12 03:38:08",
+ "source_head": "bd40e906e97a",
  "ids": [
-  "C2-18",
-  "d114-date-fix-1011"
+  "C2-18"
  ],
  "posts": [
   {
@@ -37,7 +36,7 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_코로나백신피해보상재심.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "실사진",
@@ -46,7 +45,7 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
      "url": null,
@@ -55,7 +54,7 @@
        "label": "인스타 캡션",
        "path": "insta/캡션_코로나백신피해보상재심.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "카드1",
@@ -76,22 +75,13 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     }
    }
   }
  ],
  "publish": [],
- "actions": [
-  {
-   "id": "d114-date-fix-1011",
-   "what": "D1-14 음주운전 방지장치 '첫 적용' 날짜 오류(10/25→10/24, 경찰청 자료 확인) — 제목·본문·표 수정 승인 필요",
-   "due": "2026-10-12",
-   "cmd": "python studio/blogger.py update-post --code D1-14 --dry-run  # 수정안은 note(팩트체크) 참고, 승인 후 반영",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "actions": [],
  "actionsFuture": [
   {
    "id": "claude-limit-reset-1022",
