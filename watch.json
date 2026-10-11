@@ -18109,6 +18109,27 @@
    "by": "세션:704e79ce",
    "done_at": "2026-10-11",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 통과: 관람료표·다회권·계산예시(40,000/37,000/5,000/27,000vs32,000/38,000vs48,000)·10월 휴관 6화·12·19·26 모두 공식 busanbiennale2026.com "
+  },
+  {
+   "id": "xlink-h127",
+   "added": "2026-10-11",
+   "what": "🔗 H1-27 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-27",
+   "due": "2026-10-11",
+   "cmd": "python studio/blogger.py crosslink --code H1-27",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "d114-date-fix-1011",
+   "added": "2026-10-11",
+   "what": "D1-14 음주운전 방지장치 '첫 적용' 날짜 오류(10/25→10/24, 경찰청 자료 확인) — 제목·본문·표 수정 승인 필요",
+   "due": "2026-10-12",
+   "cmd": "python studio/blogger.py update-post --code D1-14 --dry-run  # 수정안은 note(팩트체크) 참고, 승인 후 반영",
+   "owner": "user",
+   "note": 190,
+   "state": "todo",
+   "by": "세션:c7745583"
   }
  ]
 }
