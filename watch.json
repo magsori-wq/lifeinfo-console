@@ -16259,8 +16259,8 @@
   {
    "id": "naver-capture-refresh",
    "added": "2026-10-05",
-   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **14일째**입니다(마지막 2026-09-21). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
-   "due": "2026-10-05",
+   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **6일째**입니다(마지막 2026-10-05). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
+   "due": "2026-10-11",
    "cmd": "start https://creator-advisor.naver.com/naver_blog/main",
    "owner": "user",
    "verify": "python -m studio.kwgap",
@@ -17942,6 +17942,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-a409",
+   "added": "2026-10-11",
+   "what": "🔗 A4-09 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A4-09",
+   "due": "2026-10-11",
+   "cmd": "python studio/blogger.py crosslink --code A4-09",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
