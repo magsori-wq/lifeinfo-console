@@ -18079,12 +18079,23 @@
   {
    "id": "xlink-g311",
    "added": "2026-10-11",
-   "what": "🔗 G3-11 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-11",
+   "what": "🔗 G3-11 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-11",
    "due": "2026-10-11",
    "cmd": "python studio/blogger.py crosslink --code G3-11",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "publish-double-trigger-1011",
+   "added": "2026-10-11",
+   "what": "발행 워크플로가 같은 글을 60초 내 두 번 트리거 — 2번째 발생. 10-11 A4-09: run 38108325460(success 03:25:22Z)와 38108341143(failure 03:25:39Z) 둘 다 workflow_dispatch·같은 sha c8b64451·같은 code/post_title. 두번째는 첫번째가 origin/main 을 c8b64451->410683ab 로 밀어 '원격 선행' 가드에 걸려 실패. 라이브는 1편만(DB 1건·피드 1건) = 가드가 중복발행을 막았다. 선례 10-02 36964729768->36964739262 8초차. 왜 두 번 트리거되는지 확인 필요(누가 눌렀는지는 로그로 모름 — 둘 다 magsori-wq)",
+   "due": "2026-10-12",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml --limit 50 --json createdAt,databaseId,conclusion",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:fa517682"
   }
  ]
 }
