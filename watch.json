@@ -17954,6 +17954,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "aside-report-onespot-1011",
+   "added": "2026-10-11",
+   "what": "Aside 학습보고서(10-10 14:10) 제안② — Aside 완료보고가 배치(pub1010f424 등)와 aside 배치 이력으로 갈려 있다. 보고 위치를 한 곳으로 정리. 같은 묶음: aside-report-mojibake-1010(한글 깨짐) · 같은 code mark 재기록 시 note 덮어씀(09-12 루틴7 발견)",
+   "due": "2026-10-12",
+   "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches'];print(len(b.get('aside',{}).get('items',[])))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:cf890880"
   }
  ]
 }
