@@ -1,19 +1,36 @@
 {
- "rev": "8de1f73a",
+ "rev": "5eeeeac1",
  "counts": {
-  "total": 361,
+  "total": 362,
   "osmu_done": 358,
-  "osmu_pending": 3,
+  "osmu_pending": 4,
   "indexed": 0,
-  "index_pending": 361,
+  "index_pending": 362,
   "index_requested": 160,
-  "index_todo": 42,
+  "index_todo": 43,
   "index_benign": 159
  },
  "actionable": [
   {
    "code": "A5-14",
    "title": "난임치료휴가 유급 2일에서 4일로 — 11월 27일 시",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "A5-15",
+   "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
    "need": [
     "OSMU",
     "색인요청"
@@ -209,22 +226,6 @@
   {
    "code": "B4-19",
    "title": "근로·자녀장려금 기한후신청 11월 30일까지 — 정기신",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "B5-05",
-   "title": "청년미래적금 2차 가입신청 10/7~16 — 도약계좌 ",
    "need": [
     "색인요청"
    ],
