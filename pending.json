@@ -1,16 +1,33 @@
 {
- "rev": "b9c8cc37",
+ "rev": "7dc75d28",
  "counts": {
-  "total": 359,
+  "total": 360,
   "osmu_done": 358,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 0,
-  "index_pending": 359,
+  "index_pending": 360,
   "index_requested": 160,
-  "index_todo": 40,
+  "index_todo": 41,
   "index_benign": 159
  },
  "actionable": [
+  {
+   "code": "A5-14",
+   "title": "난임치료휴가 유급 2일에서 4일로 — 11월 27일 시",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "G3-14",
    "title": "2026 청송사과축제 11월 4일 개막 — 5일 일정표",
@@ -207,22 +224,6 @@
   {
    "code": "B5-07",
    "title": "HUG 전세보증 제도개편 10월 30일 시행 — 사전한",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "C1-14",
-   "title": "국민건강검진 안 받으면 과태료? 직장가입자는 회사가 최",
    "need": [
     "색인요청"
    ],
