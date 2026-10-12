@@ -1,13 +1,13 @@
 {
- "rev": "9008932a",
+ "rev": "1f9b3191",
  "counts": {
-  "total": 367,
+  "total": 368,
   "osmu_done": 362,
-  "osmu_pending": 5,
+  "osmu_pending": 6,
   "indexed": 0,
-  "index_pending": 367,
+  "index_pending": 368,
   "index_requested": 160,
-  "index_todo": 48,
+  "index_todo": 49,
   "index_benign": 159
  },
  "actionable": [
@@ -83,6 +83,23 @@
   {
    "code": "B4-20",
    "title": "인구감소지역 세컨드홈 양도세·종부세 1주택 특례 — 2",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "D2-17",
+   "title": "운전면허·교통사고 기록 정정·말소 요구 가능 — 12월",
    "need": [
     "OSMU",
     "색인요청"
@@ -213,22 +230,6 @@
   {
    "code": "A5-13",
    "title": "2027년 고용보험료율 2.0% 인상 추진 — 월급 실",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-14",
-   "title": "난임치료휴가 유급 2일에서 4일로 — 11월 27일 시",
    "need": [
     "색인요청"
    ],
