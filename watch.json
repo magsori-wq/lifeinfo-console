@@ -18453,8 +18453,10 @@
    "due": "2026-10-12",
    "cmd": "du -sh ~/.aside/u/0/sessions/*rwEl4obLx1iBY98F",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-12",
+   "result": "새 전담 BAz3rhGekMLsZOdL 생성(18:4x)·제목 「📌 이부장 지시 전담 (CP)」·옛 rwEl4 보관 처리·docs/Aside_지시서_양식.md ID 교체"
   },
   {
    "id": "brandconnect-limit-review-1019",
@@ -18464,6 +18466,16 @@
    "cmd": "python -m studio.affiliate",
    "owner": "user",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "usage-page-attrib-1012",
+   "added": "2026-10-12",
+   "what": "주간 한도 화면(_usage.html·usageweek) 만든 세션 확인 — 커밋 2b212892·be5835b7·ba4ac914 [이부장] 태그가 실제 어느 세션인지(57394e7e 처럼 jsonl 대조). 사장님께 '다른 이부장 창'이라 말한 것 정정 필요 여부",
+   "due": "2026-10-13",
+   "cmd": "git show --stat 2b212892",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
