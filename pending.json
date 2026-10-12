@@ -1,9 +1,9 @@
 {
- "rev": "89ea8e72",
+ "rev": "3b4fba3b",
  "counts": {
   "total": 369,
-  "osmu_done": 367,
-  "osmu_pending": 2,
+  "osmu_done": 368,
+  "osmu_pending": 1,
   "indexed": 0,
   "index_pending": 369,
   "index_requested": 160,
@@ -33,15 +33,16 @@
    "code": "D2-17",
    "title": "운전면허·교통사고 기록 정정·말소 요구 가능 — 12월",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
