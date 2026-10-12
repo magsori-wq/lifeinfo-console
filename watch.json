@@ -18375,12 +18375,33 @@
   {
    "id": "xlink-g315",
    "added": "2026-10-12",
-   "what": "🔗 G3-15 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-15",
+   "what": "🔗 G3-15 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-15",
    "due": "2026-10-12",
    "cmd": "python studio/blogger.py crosslink --code G3-15",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "imgcheck-g315-1012",
+   "added": "2026-10-12",
+   "what": "G3-15 인스타·쓰레드 게시 이미지 대조가 '못 읽음'(로그인 벽 추정) — 잠시 뒤 재확인",
+   "due": "2026-10-12",
+   "cmd": "python -m studio.osmuimgcheck --code G3-15",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "affil-a409-naver-1012",
+   "added": "2026-10-12",
+   "what": "A4-09 네이버 글(동절기 연료비)에 브랜드커넥트 전기요 2종 링크 부착. 제목: 동절기 연료비 · 카테고리 A정부지원 · 첨부 없음(링크 블록만) · 태그 없음. 링크 발급 완료(한일의료기 5%·대성의료기 8%). 네이버 글 수정 → 본문 맨 앞에 문구+링크 → 저장. 글: https://blog.naver.com/magsori8975/224437881718",
+   "due": "2026-10-12",
+   "cmd": "python -m studio.pipeline naver-draft --code A4-09 --file osmu/_affil_A4-09_naver.txt",
+   "owner": "user",
+   "verify": "python -m studio.affiliate check",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
