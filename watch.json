@@ -18501,6 +18501,17 @@
    "by": "이부장",
    "done_at": "2026-10-12",
    "result": "저장소 051ed746(studio/naversolo·data/naver_solo.json, validate 16)·risk hard 보정. 페스타 글감 1차 조사 조건 미충족(난방가전 탭 미도달) — 다음 회차 재조사"
+  },
+  {
+   "id": "routine1-ci-failures-1012",
+   "added": "2026-10-12",
+   "what": "루틴1 메일: 글 발행 워크플로 실패 2건 + 콘솔 정합성 검사 실패 반복 — 사유 확인 필요",
+   "due": "2026-10-13",
+   "cmd": "gh run view 38108341143 -R magsori-wq/lifeinfo-source --log-failed",
+   "owner": "claude",
+   "state": "todo",
+   "kind": "action",
+   "by": "세션:9805bb97"
   }
  ]
 }
