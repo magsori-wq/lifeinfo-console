@@ -18477,6 +18477,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-order-single-writer-1012",
+   "added": "2026-10-12",
+   "what": "aside 지시서 칸에 이부장 외 세션이 씀(ae641c51 Sonnet 세션 [이부장] 태그 #65 중복·루틴8 범위 밖 네이버 작업) — 단독 상품글 게시 전에 aside 지시서 등록을 이부장 세션만 허용하는 게이트 필요(이중 게시 위험)",
+   "due": "2026-10-13",
+   "cmd": "git log --format='%h %s' -20 -- webapp/batch.json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "nvsolo-build-festa-1012",
+   "added": "2026-10-12",
+   "what": "사장님 승인(19:01): ①네이버 단독 상품글 별도 저장소 최소 구성(studio/naversolo.py·data/naver_solo.json) ②페스타 단독 글감 1개(계절&난방가전/라이프위크 리빙) — 두 에이전트 진행 중. 끝나면 결재함 등록·보고",
+   "due": "2026-10-12",
+   "cmd": "python -m studio.naversolo list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
