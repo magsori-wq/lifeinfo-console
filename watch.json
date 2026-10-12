@@ -18330,7 +18330,7 @@
   {
    "id": "xlink-a516",
    "added": "2026-10-12",
-   "what": "🔗 A5-16 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-16",
+   "what": "🔗 A5-16 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-16",
    "due": "2026-10-12",
    "cmd": "python studio/blogger.py crosslink --code A5-16",
    "owner": "claude",
@@ -18346,6 +18346,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "solo-20261012-1",
+   "added": "2026-10-12",
+   "what": "🧵 쓰레드 상품 단독 게시 승인요청 — id=20261012-1\n① 상품: 오퓨리엠 테이블 미스트 USB 미니 가습기 600ml 화이트\n② 왜 지금(이슈 근거): 10월 중순, 아침저녁으로 실내가 건조해지기 시작하는 환절기입니다. 책상 위에 두고 USB로 쓰는 600ml 미니 가습기입니다.\n③ 가격/리뷰 근거: 8,900원 · 리뷰 288 · 평점 4.6(토스쇼핑 기준, 10/12)\n⑤ 게시될 본문 전문 — 확인:\n✱ 이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.\n\n10월 중순, 아침저녁으로 실내가 건조해지기 시작하는 환절기입니다. 책상 위에 두고 USB로 쓰는 600ml 미니 가습기입니다.\n\n▸ 오퓨리엠 테이블 미스트 USB 미니 가습기 600ml 화이트\nhttps://toss.shopping/_m/Fd0RlgPt\n⑥ 조사 근거: ⚠️ 없다 — product 에이전트로 조사해 docs/ 에 내리고 solo-add --source 로 경로를 넣어라\n【권고】게시 승인 【근거】환절기 건조 시작·토스 리뷰 288·평점 4.6·대가성 문구 맨 앞·196자 【위험】관련 블로그 글 없음(가습기살균제 글은 부적절해 연결 안 함)·이미지 카드는 승인 후 이과장 제작",
+   "due": "2026-10-12",
+   "cmd": "python -m studio.threadsdraft --solo 20261012-1",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
