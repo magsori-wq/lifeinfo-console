@@ -4648,13 +4648,9 @@
     }
    ],
    "owner": "Aside",
-   "order": "[이부장 → Aside] 지시 #61 (2026-10-12) — ① B2-19 인스타 → 쓰레드 게시 ② 이어서 D2-17 네이버 발행 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」 + aside-browser-guard 의 naver_flow.js(4호출). 탭 6개 이하로 줄이고 시작. 각 단계 끝나면 연 탭 닫기.\n\n━━━ ① B2-19 「생계비계좌 2027 관리계좌」 인스타 → 쓰레드 ━━━\n① 무엇을: 인스타(카드 3장+캡션) 먼저, 쓰레드(이미지 1장+원고) 그다음 게시하고 두 주소를 보고한다.\n② 어떻게: 인스타 = 갤러리에서 **3장을 순서대로 한 번에 선택**(1장=표지) → 공유 전 미리보기에서 **점 3개** 확인(아니면 공유하지 말고 blocked) · 캡션 파일 그대로 · Threads/Facebook 동시공유 끔. 쓰레드 = 「새로운 스레드」·원고 그대로·이미지 1장. 둘 다 새로고침 후 실제 주소(임시 ID 금지). 게시 버튼을 다시 누르기 전에 프로필에서 이미 올라갔는지 확인.\n③ 사전 점검 완료(pre-cleared, 이부장 15:5x): 블로그스팟·네이버(224439100224) 게시됨 · 캡션·원고 블로그+네이버 링크 · threadsdraft 297/500자·교차링크 ✅ · 표지 실사진(고유색 17047) · 쓰레드 이미지 실사진 · 기존 인스타·쓰레드 게시 없음(DB) · 게시 주인 = Aside\n④ 받을 파일:\n   인스타 1: http://127.0.0.1:8011/api/file?path=insta/livelihood_account_01_cover.png\n   인스타 2: http://127.0.0.1:8011/api/file?path=insta/livelihood_account_02_calc.png\n   인스타 3: http://127.0.0.1:8011/api/file?path=insta/livelihood_account_03_check.png\n   인스타 캡션: http://127.0.0.1:8011/api/file?path=insta/캡션_생계비계좌관리계좌.txt\n   쓰레드 이미지: http://127.0.0.1:8011/api/file?path=insta/thread/thread_B2-19_livelihood_account.png\n   쓰레드 원고: http://127.0.0.1:8011/api/file?path=osmu/쓰레드용_생계비계좌관리계좌.txt\n⑤ 보고: 시작 {\"batch\":\"aside\",\"what\":\"수신 <order_at> — 지시 #61 시작\",\"state\":\"doing\"} / 인스타 끝 {\"batch\":\"aside\",\"code\":\"B2-19\",\"what\":\"인스타 게시 완료 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 주소>\"} / 쓰레드 끝 {\"batch\":\"aside\",\"code\":\"B2-19\",\"what\":\"쓰레드 게시 완료 — 이미지·링크 확인\",\"state\":\"done\",\"url\":\"<쓰레드 주소>\"}\n\n━━━ ② 이어서: D2-17 「운전기록 정정·말소 요구권」 네이버 발행 ━━━\n① 무엇을: 네이버 블로그(magsori8975)에 새 글을 발행하고 글 주소를 보고한다.\n② 어떻게:\n   1. phase1: 서식본 http://localhost:8000/rich_D2-17.html 복사 → https://blog.naver.com/GoBlogWrite.naver (작성 중 글 팝업은 「취소」, 로그인 화면이면 아무것도 입력하지 말고 blocked) → 제목칸 정확히(한 줄): 운전 기록 정정·말소 요구, 12/3부터 가능?\n   2. phase2: ④' 이미지를 대표로. 본문 사진 없음(제도 글) — 사진 자리 박스가 있으면 지우기만.\n   3. phase3: 카테고리 = 「생활정보 모음(LifeInfo)」 · 태그 = #도로교통법 #운전자기록정정 #교통사고기록말소 #12월3일시행 #교통사고처리특례법 #운전면허 · 전체공개\n   4. phase4: 발행 1회 → RSS 실주소 확인(같은 제목이 RSS에 이미 있으면 발행하지 말 것) → 쓴 탭 닫기\n③ 사전 점검 완료: 블로그스팟 발행됨(https://lifeinfo8975.blogspot.com/2026/10/12-3.html, 200) · V0 통과 · naver-draft 점검 통과(서식본 3911자 보존·제목 실검색어·후킹) · 네이버 RSS에 같은 글 없음 · 게시 주인 = Aside\n④' 받을 파일: 대표 = http://127.0.0.1:8011/api/file?path=thumbs_naver/350n_driving_record.png\n⑤ 보고: {\"batch\":\"aside\",\"code\":\"D2-17\",\"what\":\"네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그 확인 · 총 소요 N분\",\"state\":\"done\",\"url\":\"<네이버 주소>\"}\n\n⑥ 막히면: 로그인·보안문자·경고 화면이면 즉시 중단 blocked(재시도 금지). 인스타 3장이 안 들어가거나 네이버 서식이 안 살면 게시하지 말고 blocked. 재시도 2회까지.\n⑦ 하지 말 것: 캡션·원고 글자 수정 · 다른 글 수정/삭제 · 같은 글 두 번 게시 · 다른 글 네이버·인스타.",
-   "order_at": "2026-10-12 15:51",
+   "order": "[이부장 → Aside] 지시 #62 (2026-10-12) — ① A5-16 인스타 → 쓰레드 게시 ② 이어서 G3-15 네이버 발행(본문 사진 직접 삽입) (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」 + aside-browser-guard 의 naver_flow.js(4호출). 탭 6개 이하로 줄이고 시작. 각 단계 끝나면 연 탭 닫기.\n\n━━━ ① A5-16 「4시간 근무 휴게 30분 생략」 인스타 → 쓰레드 ━━━\n① 무엇을: 인스타(카드 3장+캡션) 먼저, 쓰레드(이미지 1장+원고) 그다음 게시하고 두 주소를 보고한다.\n② 어떻게: 인스타 = 갤러리에서 **3장을 순서대로 한 번에 선택**(1장=표지) → 공유 전 미리보기에서 **점 3개** 확인(아니면 공유하지 말고 blocked) · 캡션 파일 그대로 · Threads/Facebook 동시공유 끔. 쓰레드 = 「새로운 스레드」·원고 그대로·이미지 1장. 둘 다 새로고침 후 실제 주소(임시 ID 금지). 게시 버튼을 다시 누르기 전에 프로필에서 이미 올라갔는지 확인.\n③ 사전 점검 완료(pre-cleared, 이부장 16:0x): 블로그스팟·네이버(224439119654) 게시됨 · 캡션·원고 블로그+네이버 링크 · threadsdraft 289/500자·교차링크 ✅ · 표지 실사진(고유색 7432) · 쓰레드 이미지 실사진 · 기존 인스타·쓰레드 게시 없음(DB) · 게시 주인 = Aside\n④ 받을 파일:\n   인스타 1: http://127.0.0.1:8011/api/file?path=insta/break_waiver_01_cover.png\n   인스타 2: http://127.0.0.1:8011/api/file?path=insta/break_waiver_02_pay.png\n   인스타 3: http://127.0.0.1:8011/api/file?path=insta/break_waiver_03_check.png\n   인스타 캡션: http://127.0.0.1:8011/api/file?path=insta/캡션_4시간근무휴게시간생략.txt\n   쓰레드 이미지: http://127.0.0.1:8011/api/file?path=insta/thread/thread_A5-16_break_waiver.png\n   쓰레드 원고: http://127.0.0.1:8011/api/file?path=osmu/쓰레드용_4시간근무휴게시간생략.txt\n⑤ 보고: 시작 {\"batch\":\"aside\",\"what\":\"수신 <order_at> — 지시 #62 시작\",\"state\":\"doing\"} / 인스타 끝 {\"batch\":\"aside\",\"code\":\"A5-16\",\"what\":\"인스타 게시 완료 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 주소>\"} / 쓰레드 끝 {\"batch\":\"aside\",\"code\":\"A5-16\",\"what\":\"쓰레드 게시 완료 — 이미지·링크 확인\",\"state\":\"done\",\"url\":\"<쓰레드 주소>\"}\n\n━━━ ② 이어서: G3-15 「부산수제맥주축제 2026」 네이버 발행 ━━━\n① 무엇을: 네이버 블로그(magsori8975)에 새 글을 발행하고 글 주소를 보고한다.\n② 어떻게:\n   1. phase1: 서식본 http://localhost:8000/rich_G3-15.html 복사 → https://blog.naver.com/GoBlogWrite.naver (작성 중 글 팝업은 「취소」, 로그인 화면이면 아무것도 입력하지 말고 blocked) → 제목칸 정확히(한 줄): 부산수제맥주축제 10/29~31, 몇 잔부터 이득?\n   2. phase2: ④' 대표 이미지를 대표로(맨 위). 🔴 서식본에는 본문 사진 자리 박스가 없다(F4-26 과 같음) — 본문 사진은 직접 넣는다: 「■ 2. 사전예약이면 얼마나 아끼나 — 계산」 소제목 **바로 위** 빈 줄에 ④-2 사진 1장, 사진 바로 아래 한 줄 그대로 입력: 참고 사진입니다. 이번 축제 현장 사진이 아닙니다 — 맥주 시음 잔(Wanderstheworld, Wikimedia Commons, CC BY-SA 4.0)\n   3. phase3: 카테고리 = 「생활정보 모음(LifeInfo)」 · 태그 = #부산수제맥주축제 #서면스콜 #부산10월축제 #부산맥주축제 #부산축제 #우리동네 · 전체공개\n   4. phase4: 발행 1회 → RSS 실주소 확인(같은 제목이 RSS에 이미 있으면 발행하지 말 것) → 쓴 탭 닫기\n③ 사전 점검 완료: 블로그스팟 발행됨(https://lifeinfo8975.blogspot.com/2026/10/2026-102931-2100025000-120.html, 200) · V0 통과 · naver-draft 점검 통과(서식본 3684자 보존·제목 실검색어·후킹) · 네이버 RSS에 같은 글 없음 · 게시 주인 = Aside\n④' 받을 파일: 대표 = http://127.0.0.1:8011/api/file?path=thumbs_naver/351n_busan_craftbeer.png / ④-2 본문 사진 = http://127.0.0.1:8011/api/file?path=thumbs/body_g3-15_beerflight.jpg\n⑤ 보고: {\"batch\":\"aside\",\"code\":\"G3-15\",\"what\":\"네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그 확인 · 총 소요 N분\",\"state\":\"done\",\"url\":\"<네이버 주소>\"}\n\n⑥ 막히면: 로그인·보안문자·경고 화면이면 즉시 중단 blocked(재시도 금지). 인스타 3장이 안 들어가거나 네이버 서식이 안 살면 게시하지 말고 blocked. 재시도 2회까지.\n⑦ 하지 말 것: 캡션·원고 글자 수정 · 다른 글 수정/삭제 · 같은 글 두 번 게시 · 다른 글 네이버·인스타.",
+   "order_at": "2026-10-12 16:07",
    "order_hist": [
-    {
-     "at": "2026-10-11 23:07",
-     "order": "[이부장 → Aside] 지시 #43 (2026-10-11) — H1-27 인스타 → 쓰레드 게시 (📌 전담 채팅) + G3-13 네이버 + 검색설명 2편\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하로 줄이고 시작. 끝나면 연 탭 닫기.\n① 무엇을: H1-27 「나의 유죄인간 첫방송」를 인스타(카드 3장+캡션) 먼저, 쓰레드(이미지 1장+원고) 그다음 게시하고 두 주소를 보고한다.\n② 어떻게: 인스타 = 갤러리에서 **3장을 순서대로 한 번에 선택**(1장=표지) → 공유 전 미리보기에서 **점 3개** 확인(아니면 공유하지 말고 blocked) · 캡션 파일 그대로 · Threads/Facebook 동시공유 끔. 쓰레드 = 「새로운 스레드」·원고 그대로·이미지 1장. 둘 다 새로고침 후 실제 주소(임시 ID 금지). 게시 버튼을 다시 누르기 전에 프로필에서 이미 올라갔는지 확인.\n③ 사전 점검 완료(pre-cleared, 이부장 23:0x): 블로그스팟·네이버(224438363815) 게시됨 · 캡션·원고(354/500자) 둘 다 블로그+네이버 링크 · 표지 실사진(고유색 19016) · 쓰레드 이미지 실사진 · H1-27 인스타·쓰레드 기존 게시 없음(DB) · 파일 6개 200 · 게시 주인 = Aside\n④ 받을 파일:\n   인스타 1: http://127.0.0.1:8011/api/file?path=insta/love_in_disguise_01_cover.png\n   인스타 2: http://127.0.0.1:8011/api/file?path=insta/love_in_disguise_02_compare.png\n   인스타 3: http://127.0.0.1:8011/api/file?path=insta/love_in_disguise_03_tving.png\n   인스타 캡션: http://127.0.0.1:8011/api/file?path=insta/캡션_나의유죄인간첫방송.txt\n   쓰레드 이미지: http://127.0.0.1:8011/api/file?path=insta/thread/thread_H1-27_love_in_disguise.png\n   쓰레드 원고: http://127.0.0.1:8011/api/file?path=osmu/쓰레드용_나의유죄인간첫방송.txt\n⑤ 보고: 시작 {\"batch\":\"aside\",\"what\":\"수신 <order_at> — 지시 #43 시작\",\"state\":\"doing\"} / 인스타 끝 {\"batch\":\"aside\",\"code\":\"H1-27\",\"what\":\"인스타 게시 완료 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 주소>\"} / 쓰레드 끝 {\"batch\":\"aside\",\"code\":\"H1-27\",\"what\":\"쓰레드 게시 완료 — 이미지·링크 확인\",\"state\":\"done\",\"url\":\"<쓰레드 주소>\"}\n⑥ 막히면: 로그인·보안문자·경고 화면이면 즉시 중단 blocked. 3장이 안 들어가면 게시하지 말고 blocked. 재시도 2회까지.\n⑦ 하지 말 것: 캡션·원고 글자 수정 · 다른 글 수정/삭제 · 같은 글 두 번 게시.\n\n━━━ 이어서 ②: G3-13 네이버 발행 (naver_flow.js — 지시 #32 와 같은 절차) ━━━\n   서식본 http://localhost:8000/rich_G3-13.html → 제목(한 줄): 부산비엔날레 입장료 16,000원, 11/1 폐막 D-21\n   대표 = http://127.0.0.1:8011/api/file?path=thumbs_naver/338n_busan_biennale.png\n   본문 사진 = http://127.0.0.1:8011/api/file?path=thumbs/body_g3-13_busanmoca.jpg — 첫 번째 소제목 바로 위, 아래 한 줄(그대로): 부산현대미술관 외관 사진입니다. 2018년 부산비엔날레 당시 촬영된 사진으로, 2026년 현장 모습과는 다를 수 있습니다 (Jiihyun0313, Wikimedia Commons, CC BY-SA 4.0)\n   카테고리 「생활정보 모음(LifeInfo)」 · 태그 #부산비엔날레 #부산현대미술관 #불협하는합창 #부산전시 #가을전시 #부산가볼만한곳 · 전체공개 · 사진 자리 박스는 지우기\n   사전 점검: 블로그스팟 발행됨(https://lifeinfo8975.blogspot.com/2026/10/16000-d-21.html) · V0 🟢(재검사) · 네이버 RSS에 같은 글 없음 · 서식본·이미지 200\n   보고: {\"batch\":\"aside\",\"code\":\"G3-13\",\"what\":\"네이버 Aside 발행 완료 — …\",\"state\":\"done\",\"url\":\"<네이버 주소>\"}\n\n━━━ 이어서 ③: 블로그스팟 검색설명 2편 (지시 #35 와 같은 절차) ━━━\n   H1-27 편집: https://www.blogger.com/blog/post/edit/4026928033017788339/2933884737646226076\n     라이브: https://lifeinfo8975.blogspot.com/2026/10/tvn-10-19-8-50.html\n     문구: tvN 새 월화드라마 「나의 유죄인간」은 10월 19일(월) 저녁 8시 50분 첫 방송됩니다. 본방 시간표와 티빙 시청 시점이 다를 수 있는 이유, 같은 tvN 「100일의 거짓말」과의 편성 차이를 정리했습니다.\n   G3-13 편집: https://www.blogger.com/blog/post/edit/4026928033017788339/1337049910619824667\n     라이브: https://lifeinfo8975.blogspot.com/2026/10/16000-d-21.html\n     문구: 2026 부산비엔날레는 11월 1일 폐막하며 일반 입장료는 16,000원입니다. 성인 2명+청소년 1명 40,000원, 2회권이 5,000원 저렴. 남은 휴관일(10월 12·19·26일)과 무료 전시장까지 정리했습니다.\n   (본문이 보일 때까지 기다림 → Delete 로 비우고 0자 확인 → 실제 키 입력 → find ref 로 업데이트 → 라이브 meta 글자 대조)\n   보고: 편마다 {\"batch\":\"aside\",\"code\":\"<코드>\",\"what\":\"검색설명 반영 — 라이브 meta 일치 확인(N자)\",\"state\":\"done\",\"url\":\"<라이브 주소>\"}"
-    },
     {
      "at": "2026-10-11 23:34",
      "order": "[이부장 → Aside] 지시 #44 (2026-10-11) — G3-13 인스타 → 쓰레드 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하로 줄이고 시작. 끝나면 연 탭 닫기.\n① 무엇을: G3-13 「부산비엔날레」를 인스타(카드 3장+캡션) 먼저, 쓰레드(이미지 1장+원고) 그다음 게시하고 두 주소를 보고한다.\n② 어떻게: 인스타 = 갤러리에서 **3장을 순서대로 한 번에 선택**(1장=표지) → 공유 전 미리보기에서 **점 3개** 확인(아니면 공유하지 말고 blocked) · 캡션 파일 그대로 · Threads/Facebook 동시공유 끔. 쓰레드 = 「새로운 스레드」·원고 그대로·이미지 1장. 둘 다 새로고침 후 실제 주소(임시 ID 금지). 게시 버튼을 다시 누르기 전에 프로필에서 이미 올라갔는지 확인.\n③ 사전 점검 완료(pre-cleared, 이부장 23:3x): 블로그스팟·네이버(224438405686) 게시됨 · 캡션·원고(378/500자) 둘 다 블로그+네이버 링크 · 표지 실사진(고유색 38052) · 쓰레드 이미지 실사진 · G3-13 인스타·쓰레드 기존 게시 없음(DB) · 파일 6개 200 · 게시 주인 = Aside\n④ 받을 파일:\n   인스타 1: http://127.0.0.1:8011/api/file?path=insta/busan_biennale_01_cover.png\n   인스타 2: http://127.0.0.1:8011/api/file?path=insta/busan_biennale_02_calc.png\n   인스타 3: http://127.0.0.1:8011/api/file?path=insta/busan_biennale_03_closed.png\n   인스타 캡션: http://127.0.0.1:8011/api/file?path=insta/캡션_부산비엔날레.txt\n   쓰레드 이미지: http://127.0.0.1:8011/api/file?path=insta/thread/thread_G3-13_busan_biennale.png\n   쓰레드 원고: http://127.0.0.1:8011/api/file?path=osmu/쓰레드용_부산비엔날레.txt\n⑤ 보고: 시작 {\"batch\":\"aside\",\"what\":\"수신 <order_at> — 지시 #44 시작\",\"state\":\"doing\"} / 인스타 끝 {\"batch\":\"aside\",\"code\":\"G3-13\",\"what\":\"인스타 게시 완료 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 주소>\"} / 쓰레드 끝 {\"batch\":\"aside\",\"code\":\"G3-13\",\"what\":\"쓰레드 게시 완료 — 이미지·링크 확인\",\"state\":\"done\",\"url\":\"<쓰레드 주소>\"}\n⑥ 막히면: 로그인·보안문자·경고 화면이면 즉시 중단 blocked. 3장이 안 들어가면 게시하지 말고 blocked. 재시도 2회까지.\n⑦ 하지 말 것: 캡션·원고 글자 수정 · 다른 글 수정/삭제 · 같은 글 두 번 게시 · 네이버 손대기."
@@ -4730,6 +4726,10 @@
     {
      "at": "2026-10-12 15:36",
      "order": "[이부장 → Aside] 지시 #60 (2026-10-12) — ① F4-26 인스타 → 쓰레드 게시 ② 이어서 A5-16 네이버 발행 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」 + aside-browser-guard 의 naver_flow.js(4호출). 탭 6개 이하로 줄이고 시작. 각 단계 끝나면 연 탭 닫기.\n\n━━━ ① F4-26 「농촌투어패스·농촌관광벨트」 인스타 → 쓰레드 ━━━\n① 무엇을: 인스타(카드 3장+캡션) 먼저, 쓰레드(이미지 1장+원고) 그다음 게시하고 두 주소를 보고한다.\n② 어떻게: 인스타 = 갤러리에서 **3장을 순서대로 한 번에 선택**(1장=표지) → 공유 전 미리보기에서 **점 3개** 확인(아니면 공유하지 말고 blocked) · 캡션 파일 그대로 · Threads/Facebook 동시공유 끔. 쓰레드 = 「새로운 스레드」·원고 그대로·이미지 1장. 둘 다 새로고침 후 실제 주소(임시 ID 금지). 게시 버튼을 다시 누르기 전에 프로필에서 이미 올라갔는지 확인.\n③ 사전 점검 완료(pre-cleared, 이부장 15:3x): 블로그스팟·네이버(224439079366) 게시됨 · 캡션·원고 블로그+네이버 링크 · threadsdraft 328/500자·교차링크 ✅ · 표지 실사진(고유색 28851) · 쓰레드 이미지 실사진 · 기존 인스타·쓰레드 게시 없음(DB) · 게시 주인 = Aside\n④ 받을 파일:\n   인스타 1: http://127.0.0.1:8011/api/file?path=insta/rural_tourpass_01_cover.png\n   인스타 2: http://127.0.0.1:8011/api/file?path=insta/rural_tourpass_02_bus.png\n   인스타 3: http://127.0.0.1:8011/api/file?path=insta/rural_tourpass_03_who.png\n   인스타 캡션: http://127.0.0.1:8011/api/file?path=insta/캡션_농촌투어패스농촌관광벨트.txt\n   쓰레드 이미지: http://127.0.0.1:8011/api/file?path=insta/thread/thread_F4-26_rural_tourpass.png\n   쓰레드 원고: http://127.0.0.1:8011/api/file?path=osmu/쓰레드용_농촌투어패스농촌관광벨트.txt\n⑤ 보고: 시작 {\"batch\":\"aside\",\"what\":\"수신 <order_at> — 지시 #60 시작\",\"state\":\"doing\"} / 인스타 끝 {\"batch\":\"aside\",\"code\":\"F4-26\",\"what\":\"인스타 게시 완료 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 주소>\"} / 쓰레드 끝 {\"batch\":\"aside\",\"code\":\"F4-26\",\"what\":\"쓰레드 게시 완료 — 이미지·링크 확인\",\"state\":\"done\",\"url\":\"<쓰레드 주소>\"}\n\n━━━ ② 이어서: A5-16 「4시간 근무 휴게 30분 생략」 네이버 발행 ━━━\n① 무엇을: 네이버 블로그(magsori8975)에 새 글을 발행하고 글 주소를 보고한다.\n② 어떻게:\n   1. phase1: 서식본 http://localhost:8000/rich_A5-16.html 복사 → https://blog.naver.com/GoBlogWrite.naver (작성 중 글 팝업은 「취소」, 로그인 화면이면 아무것도 입력하지 말고 blocked) → 제목칸 정확히(한 줄): 4시간 근무 휴게 30분 생략, 12/10부터 가능?\n   2. phase2: ④' 이미지를 대표로. 본문 사진 없음(제도 글) — 사진 자리 박스가 있으면 지우기만.\n   3. phase3: 카테고리 = 「생활정보 모음(LifeInfo)」 · 태그 = #4시간근무휴게시간 #근로기준법 #휴게시간생략 #알바 #5인미만사업장 #12월10일시행 · 전체공개\n   4. phase4: 발행 1회 → RSS 실주소 확인(같은 제목이 RSS에 이미 있으면 발행하지 말 것) → 쓴 탭 닫기\n③ 사전 점검 완료: 블로그스팟 발행됨(https://lifeinfo8975.blogspot.com/2026/10/4-30-12-10-5.html, 200) · V0 통과 · naver-draft 점검 통과(서식본 4185자 보존·제목 실검색어·후킹) · 네이버 RSS에 같은 글 없음 · 게시 주인 = Aside\n④' 받을 파일: 대표 = http://127.0.0.1:8011/api/file?path=thumbs_naver/349n_break_waiver.png\n⑤ 보고: {\"batch\":\"aside\",\"code\":\"A5-16\",\"what\":\"네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그 확인 · 총 소요 N분\",\"state\":\"done\",\"url\":\"<네이버 주소>\"}\n\n⑥ 막히면: 로그인·보안문자·경고 화면이면 즉시 중단 blocked(재시도 금지). 인스타 3장이 안 들어가거나 네이버 서식이 안 살면 게시하지 말고 blocked. 재시도 2회까지.\n⑦ 하지 말 것: 캡션·원고 글자 수정 · 다른 글 수정/삭제 · 같은 글 두 번 게시 · 다른 글 네이버·인스타."
+    },
+    {
+     "at": "2026-10-12 15:51",
+     "order": "[이부장 → Aside] 지시 #61 (2026-10-12) — ① B2-19 인스타 → 쓰레드 게시 ② 이어서 D2-17 네이버 발행 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」 + aside-browser-guard 의 naver_flow.js(4호출). 탭 6개 이하로 줄이고 시작. 각 단계 끝나면 연 탭 닫기.\n\n━━━ ① B2-19 「생계비계좌 2027 관리계좌」 인스타 → 쓰레드 ━━━\n① 무엇을: 인스타(카드 3장+캡션) 먼저, 쓰레드(이미지 1장+원고) 그다음 게시하고 두 주소를 보고한다.\n② 어떻게: 인스타 = 갤러리에서 **3장을 순서대로 한 번에 선택**(1장=표지) → 공유 전 미리보기에서 **점 3개** 확인(아니면 공유하지 말고 blocked) · 캡션 파일 그대로 · Threads/Facebook 동시공유 끔. 쓰레드 = 「새로운 스레드」·원고 그대로·이미지 1장. 둘 다 새로고침 후 실제 주소(임시 ID 금지). 게시 버튼을 다시 누르기 전에 프로필에서 이미 올라갔는지 확인.\n③ 사전 점검 완료(pre-cleared, 이부장 15:5x): 블로그스팟·네이버(224439100224) 게시됨 · 캡션·원고 블로그+네이버 링크 · threadsdraft 297/500자·교차링크 ✅ · 표지 실사진(고유색 17047) · 쓰레드 이미지 실사진 · 기존 인스타·쓰레드 게시 없음(DB) · 게시 주인 = Aside\n④ 받을 파일:\n   인스타 1: http://127.0.0.1:8011/api/file?path=insta/livelihood_account_01_cover.png\n   인스타 2: http://127.0.0.1:8011/api/file?path=insta/livelihood_account_02_calc.png\n   인스타 3: http://127.0.0.1:8011/api/file?path=insta/livelihood_account_03_check.png\n   인스타 캡션: http://127.0.0.1:8011/api/file?path=insta/캡션_생계비계좌관리계좌.txt\n   쓰레드 이미지: http://127.0.0.1:8011/api/file?path=insta/thread/thread_B2-19_livelihood_account.png\n   쓰레드 원고: http://127.0.0.1:8011/api/file?path=osmu/쓰레드용_생계비계좌관리계좌.txt\n⑤ 보고: 시작 {\"batch\":\"aside\",\"what\":\"수신 <order_at> — 지시 #61 시작\",\"state\":\"doing\"} / 인스타 끝 {\"batch\":\"aside\",\"code\":\"B2-19\",\"what\":\"인스타 게시 완료 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 주소>\"} / 쓰레드 끝 {\"batch\":\"aside\",\"code\":\"B2-19\",\"what\":\"쓰레드 게시 완료 — 이미지·링크 확인\",\"state\":\"done\",\"url\":\"<쓰레드 주소>\"}\n\n━━━ ② 이어서: D2-17 「운전기록 정정·말소 요구권」 네이버 발행 ━━━\n① 무엇을: 네이버 블로그(magsori8975)에 새 글을 발행하고 글 주소를 보고한다.\n② 어떻게:\n   1. phase1: 서식본 http://localhost:8000/rich_D2-17.html 복사 → https://blog.naver.com/GoBlogWrite.naver (작성 중 글 팝업은 「취소」, 로그인 화면이면 아무것도 입력하지 말고 blocked) → 제목칸 정확히(한 줄): 운전 기록 정정·말소 요구, 12/3부터 가능?\n   2. phase2: ④' 이미지를 대표로. 본문 사진 없음(제도 글) — 사진 자리 박스가 있으면 지우기만.\n   3. phase3: 카테고리 = 「생활정보 모음(LifeInfo)」 · 태그 = #도로교통법 #운전자기록정정 #교통사고기록말소 #12월3일시행 #교통사고처리특례법 #운전면허 · 전체공개\n   4. phase4: 발행 1회 → RSS 실주소 확인(같은 제목이 RSS에 이미 있으면 발행하지 말 것) → 쓴 탭 닫기\n③ 사전 점검 완료: 블로그스팟 발행됨(https://lifeinfo8975.blogspot.com/2026/10/12-3.html, 200) · V0 통과 · naver-draft 점검 통과(서식본 3911자 보존·제목 실검색어·후킹) · 네이버 RSS에 같은 글 없음 · 게시 주인 = Aside\n④' 받을 파일: 대표 = http://127.0.0.1:8011/api/file?path=thumbs_naver/350n_driving_record.png\n⑤ 보고: {\"batch\":\"aside\",\"code\":\"D2-17\",\"what\":\"네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그 확인 · 총 소요 N분\",\"state\":\"done\",\"url\":\"<네이버 주소>\"}\n\n⑥ 막히면: 로그인·보안문자·경고 화면이면 즉시 중단 blocked(재시도 금지). 인스타 3장이 안 들어가거나 네이버 서식이 안 살면 게시하지 말고 blocked. 재시도 2회까지.\n⑦ 하지 말 것: 캡션·원고 글자 수정 · 다른 글 수정/삭제 · 같은 글 두 번 게시 · 다른 글 네이버·인스타."
     }
    ]
   },
@@ -5815,17 +5815,29 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-12 16:05:29",
+ "updated": "2026-10-12 16:13:46",
  "current": {
   "batch": "aside",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[Aside][done] [D2-17] 네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그6개·전체공개 확인, 본문 원문대조 일치 · 총 소요 약 2분 · https://blog.naver.com/magsori8975/224439138872",
+  "what": "[Aside][done] [A5-16] 인스타 게시 완료 — 카드 3장(순서 확인)·캡션 672자 원문 일치·Threads/FB 동시공유 끔 · https://www.instagram.com/p/DeYqzVWkcZV/",
   "since": "11:31",
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "16:13:46",
+   "text": "▶   — 1/7단계 · [Aside][done] [A5-16] 인스타 게시 완료 — 카드 3장(순서 확인)·캡션 672자 원문 일치·Threads/FB 동시공유 끔 · https://www.instagram.com/p/DeYqzVWkcZV/"
+  },
+  {
+   "t": "16:10:00",
+   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-12 16:07 — 지시 #62 시작"
+  },
+  {
+   "t": "16:07:43",
+   "text": "📄 aside 작업 지시 등록(2886자, 2026-10-12 16:07)"
+  },
   {
    "t": "16:05:29",
    "text": "▶   — 1/7단계 · [Aside][done] [D2-17] 네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그6개·전체공개 확인, 본문 원문대조 일치 · 총 소요 약 2분 · https://blog.naver.com/magsori8975/224439138872"
@@ -5973,18 +5985,6 @@
   {
    "t": "14:24:48",
    "text": "▶   — 1/7단계 · [Aside][done] [A5-15] 인스타 게시 완료 — 카드 3장(순서 확인)·캡션 706자 원문 일치·Threads/FB 동시공유 끔 · https://www.instagram.com/p/DeYeVhGkRKE/"
-  },
-  {
-   "t": "14:22:59",
-   "text": "✅ G3-15 완료 — 2026 부산수제맥주축제 10/29~31 서면 스콜 — 참가비"
-  },
-  {
-   "t": "14:22:58",
-   "text": "✅ D2-17 완료 — 운전면허·교통사고 기록 정정·말소 요구 가능 — 12월 3일 "
-  },
-  {
-   "t": "14:21:08",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-12 14:18 — 지시 #56 시작"
   }
  ],
  "currents": {
@@ -6911,7 +6911,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][done] [D2-17] 네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그6개·전체공개 확인, 본문 원문대조 일치 · 총 소요 약 2분 · https://blog.naver.com/magsori8975/224439138872",
+   "what": "[Aside][done] [A5-16] 인스타 게시 완료 — 카드 3장(순서 확인)·캡션 672자 원문 일치·Threads/FB 동시공유 끔 · https://www.instagram.com/p/DeYqzVWkcZV/",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -10796,6 +10796,22 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][done] [D2-17] 네이버 Aside 발행 완료 — 제목·대표사진·카테고리·태그6개·전체공개 확인, 본문 원문대조 일치 · 총 소요 약 2분 · https://blog.naver.com/magsori8975/224439138872"
+  },
+  {
+   "ts": "2026-10-12 16:10:00",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-10-12 16:07 — 지시 #62 시작"
+  },
+  {
+   "ts": "2026-10-12 16:13:46",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [A5-16] 인스타 게시 완료 — 카드 3장(순서 확인)·캡션 672자 원문 일치·Threads/FB 동시공유 끔 · https://www.instagram.com/p/DeYqzVWkcZV/"
   }
  ]
 }
