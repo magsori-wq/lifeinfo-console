@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-12 16:51:16",
- "source_head": "f8ad691be19a",
+ "computed_at": "2026-10-12 22:42:20",
+ "source_head": "5f7b7e8d7232",
  "ids": [],
  "posts": [],
  "publish": [],
@@ -11,6 +11,14 @@
    "what": "Desktop 이부장 창 /tower = '사용할 수 없는 명령어'(10-12 11:44 캡처). 모드 엔진 10-11 17:01 정지. Desktop 재시작 뒤 /tower 재입력해 결과 확인",
    "due": "2026-10-13",
    "cmd": "Desktop 재시작 → 이부장 창에 /tower",
+   "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "brandconnect-limit-review-1019",
+   "what": "브랜드커넥트 자동 조회를 글당 2회로 제한해 1주 운영 — 추천 건수·발급·클릭 실적·이상 여부 보고 후 횟수 재결정(사장님 10-12 '추후 다시 확인')",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.affiliate",
    "state": "wait",
    "kind": "action"
   },
