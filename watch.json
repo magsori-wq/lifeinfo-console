@@ -18413,6 +18413,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "brandconnect-agent-1012",
+   "added": "2026-10-12",
+   "what": "사장님 지시(18:26): 네이버 글 브랜드커넥트 상품 조사가 언제부턴가 안 됨(최근 45편 전부 no_fit) — brandconnect 에이전트(haiku·medium, Aside 검색) 제작·dispatch 배선. 새 세션부터 호출 가능 → 다음 네이버 원고에서 실제로 추천이 나오는지 확인",
+   "due": "2026-10-13",
+   "cmd": "python -m studio.agentcheck && python -c \"from studio import affiliate as a; print(a.data().get('items',{}).get('<다음코드>'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
