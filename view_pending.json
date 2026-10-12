@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-12 16:16:53",
- "source_head": "658669a4c14a",
+ "computed_at": "2026-10-12 16:29:54",
+ "source_head": "ba4ac914b0fb",
  "ids": [
   "D2-17",
   "G3-15"
@@ -13,7 +13,7 @@
    "eng": "busan_craftbeer",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224439167653",
      "files": [
       {
        "label": "네이버 원고",
@@ -28,7 +28,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -164,6 +164,14 @@
    "due": "2026-10-13",
    "cmd": "Desktop 재시작 → 이부장 창에 /tower",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "usage-week-mod-verify-1012",
+   "what": "주간 한도 모드(/week) 실제 값 확인 — 이 창에서 /reload-plugins 뒤 한 턴 지나 /week",
+   "due": "2026-10-13",
+   "cmd": "/reload-plugins → /week (또는 python -m studio.usageweek)",
+   "state": "todo",
    "kind": "action"
   },
   {
