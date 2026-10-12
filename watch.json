@@ -18400,9 +18400,11 @@
    "cmd": "powershell -NoProfile -Command \"Get-Content -Raw -Encoding UTF8 C:/lifeinfo/osmu/_affil_A4-09_naver.txt | Set-Clipboard\"",
    "owner": "user",
    "verify": "python -m studio.affiliate check",
-   "state": "todo",
+   "state": "done",
    "by": "이부장",
-   "kind": "action"
+   "kind": "action",
+   "done_at": "2026-10-12",
+   "result": "Aside #65 로 반영(18:40). 라이브 실측: 본문 맨 앞 문구 1회(나머지 1회는 og:description 메타)·링크카드 2개·기존 첫 문단 유지"
   },
   {
    "id": "aside65-a409-verify",
@@ -18440,6 +18442,16 @@
    "what": "루틴8(07:00)·9(15:00)가 새 「🤝 협의」 절대로 issueprod 에 브랜드커넥트 포함 후보·③분류를 올렸는지 확인하고 이부장 결정·사장님 보고",
    "due": "2026-10-13",
    "cmd": "python -m studio.batchboard order --id issueprod",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-chat-rotate-1012",
+   "added": "2026-10-12",
+   "what": "Aside 전담 채팅 rwEl4obLx1iBY98F 폴더 185MB(messages.jsonl 50MB) — 규정 20MB 초과. 지시 #65(A4-09) 끝나면 새 전담 채팅으로 교체: 새 세션 생성→CP 탭 묶기→docs/Aside_지시서_양식.md ID 교체→옛 것 archive",
+   "due": "2026-10-12",
+   "cmd": "du -sh ~/.aside/u/0/sessions/*rwEl4obLx1iBY98F",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
