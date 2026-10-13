@@ -79,12 +79,14 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 .c-doing{background:#173352;color:#9fd0ff;border:1px solid #2f6aa3}
 .c-block{background:#4a1820;color:#ffb3bd;border:1px solid #a8394a}
 .c-done{background:#163b2c;color:#8ee5be;border:1px solid #2f8f68}
+.c-closed{background:#24272e;color:#9aa3b2;border:1px solid #4a505c}
+.card.closed{opacity:.55}
 .row{font-size:13.5px;margin:3px 0;color:#cfd8e6}
 .row b{color:#8fa0bd;font-weight:700;margin-right:6px}
 .rep{font-size:13px;color:#b8c4d8;background:#0e1526;border:1px solid #223052;border-radius:8px;padding:6px 9px;margin:6px 0 2px}
 .age{font-size:12px;color:#8fa0bd;white-space:nowrap}
 .donebox summary{color:#8fa0bd;font-size:12.5px}
-.card.fin .btitle,.card.fin .what{text-decoration:line-through;text-decoration-color:#5fd3a0;text-decoration-thickness:2px;color:#9aa8bf}
+.card.fin .btitle,.card.fin .what,.card.closed .btitle,.card.closed .what{text-decoration:line-through;text-decoration-color:#5fd3a0;text-decoration-thickness:2px;color:#9aa8bf}
 .card.fin{opacity:.8}
 .reo{font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;background:#3a2d5c;color:#d7c8ff;border:1px solid #7b62c9;white-space:nowrap}
 .hist{margin:6px 0 0;padding:0;list-style:none}
@@ -114,24 +116,25 @@ function whatOf(order){var m=String(order||'').match(/━━━ 무엇을 ━━
   var l=String(order||'').split('\n').filter(function(x){return x.trim();});return (l[1]||l[0]||'').trim();}
 Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}),
              fetch('session_state.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
-             fetch('rep_index.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})])
+             fetch('rep_index.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
+             fetch('aside_orders.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})])
 .then(function(res){
-  var d=res[0], ss=(res[1]&&res[1].sessions)||{}, RI=(res[2]&&res[2].bids)||{}, out=document.getElementById('out');
+  var d=res[0], ss=(res[1]&&res[1].sessions)||{}, RI=(res[2]&&res[2].bids)||{}, AO=res[3]||{}, out=document.getElementById('out');
   if(!d||!d.batches){out.innerHTML='<p class="none">batch.json 을 읽지 못했습니다.</p>';return;}
-  var rows=[], cnt={unread:0,doing:0,block:0,done:0};
+  var rows=[], cnt={unread:0,doing:0,block:0,done:0,closed:0};
   Object.keys(d.batches).forEach(function(id){
     var b=d.batches[id]; if(!b.order) return;
-    var s=ss[id]||{}, st=CPX.status(b,s);   // 판정은 cp_xlink.js 한 곳
+    var s=ss[id]||{}, st=CPX.status(b,s,AO);   // 판정은 cp_xlink.js 한 곳
     cnt[st]++;
     rows.push({id:id,b:b,st:st,s:s,owner:b.owner||'담당 미지정'});
   });
   document.getElementById('sum').innerHTML=
     '<span class="c-unread">⏳ 안 읽음 '+cnt.unread+'</span><span class="c-block">⛔ 막힘 '+cnt.block+'</span>'
-   +'<span class="c-doing">👀 진행 중 '+cnt.doing+'</span><span class="c-done">✅ 끝남 '+cnt.done+'</span>';
+   +'<span class="c-doing">👀 진행 중 '+cnt.doing+'</span><span class="c-done">✅ 완료(확인 전) '+cnt.done+'</span><span class="c-closed">🏁 끝남 '+cnt.closed+'</span>';
   var byB={};BUCKETS.forEach(function(k){byB[k.key]=[];});
   rows.forEach(function(r){byB[bucketOf(r.owner).key].push(r);});
   var CH=CPX.CHIP;
-  var ORD={block:0,unread:1,doing:2,done:3};
+  var ORD={block:0,unread:1,doing:2,done:3,closed:4};
   function card(r){
     var b=r.b,s=r.s,c=CH[r.st],hist=b.order_hist||[];
     var hh='', all=hist.concat([{at:b.order_at,order:b.order}]), fin=0;
@@ -149,7 +152,7 @@ Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.js
         +'</ul></details>';
     }
     var rn=(RI[r.id]||{}).n||0;
-    return '<div class="card'+(r.st==='done'?' fin':'')+'" data-bid="'+esc(r.id)+'"><div class="cardhd">'
+    return '<div class="card'+(r.st==='done'?' fin':r.st==='closed'?' fin closed':'')+'" data-bid="'+esc(r.id)+'"><div class="cardhd">'
       +'<span class="btitle">'+esc(b.title||r.id)+'</span>'
       +(hist.length?'<span class="reo">🔁 지시 '+all.length+'건 · 완료 '+fin+'</span>':'')
       +'<span class="chip '+c[0]+'">'+c[1]+'</span></div>'
@@ -163,7 +166,7 @@ Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.js
   var h='<div class="grid">';
   BUCKETS.forEach(function(bk){
     var list=byB[bk.key].sort(function(x,y){return (ORD[x.st]-ORD[y.st])||(y.b.order_at||'').localeCompare(x.b.order_at||'');});
-    var live=list.filter(function(r){return r.st!=='done';}), fin=list.filter(function(r){return r.st==='done';});
+    var live=list.filter(function(r){return r.st!=='done'&&r.st!=='closed';}), fin=list.filter(function(r){return r.st==='done'||r.st==='closed';});
     h+='<div class="col '+bk.key+'"><div class="colhd"><span class="who">'+esc(bk.label)+'</span><span class="n">진행 '+live.length+' · 끝남 '+fin.length+'</span></div><div class="colbody">';
     h+= live.length? live.map(card).join('') : '<p class="none">진행 중인 지시 없음</p>';
     // 🔴 2026-10-08 사장님: "완료되면 지우지 말고 줄을 그어 표시" — 최근 7일 끝난 지시는 펼쳐서 줄 긋고, 그 이전은 접는다.

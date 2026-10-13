@@ -28,17 +28,33 @@
     window.scrollTo(0, s.y || 0);
   }
   // 🔴 지시 상태 판정은 여기 한 곳뿐이다(작업지시·보고 두 화면이 같이 쓴다 — 2026-10-08).
-  function status(b, s) {
-    s = s || {};
-    var items = (b && b.items) || [], done = 0, blocked = false;
+  // 🔴 2026-10-13 사장님 "안읽음·막힘·진행중·완료·끝남을 명확히, 완료는 줄긋기" — 다섯 상태.
+  //    완료(done)  = 받는 쪽이 끝냈다고 보고 · 이부장 확인 전  → 줄긋기
+  //    끝남(closed) = 이부장이 확인까지 마침(confirmed_at ≥ order_at) → 줄긋기 + 흐리게
+  //    막힘 = 항목 blocked 또는 지시 뒤 마지막 보고가 [blocked]·막힘
+  //    Aside(배치 하나에 지시가 번호로 쌓임)는 data/aside_orders.json(webapp 사본)의 그 번호 상태로 판정한다.
+  function status(b, s, ao) {
+    s = s || {}; b = b || {};
+    var oa = String(b.order_at || '').slice(0, 16);
+    var conf = String(b.confirmed_at || '').slice(0, 16);
+    var m = String(b.order || '').match(/지시 #(\d{1,3})/);
+    if (ao && m && /aside/i.test(String(b.owner || '') + String(b.title || ''))) {
+      var o = (ao.orders || {})[m[1]];
+      if (!o) return 'unread';
+      if (o.state === 'done') return o.confirmed_at ? 'closed' : 'done';
+      if (o.state === 'blocked') return 'block';
+      return 'doing';
+    }
+    var items = b.items || [], done = 0, blocked = false;
     items.forEach(function (it) { if (it.state === 'done' || it.state === 'skip') done++; if (it.state === 'blocked') blocked = true; });
-    if (items.length && done === items.length) return 'done';
-    if (blocked) return 'block';
-    var oa = String((b && b.order_at) || '').slice(0, 16);
-    if ((s.last_read && (!oa || s.last_read >= oa)) || (s.last_report && s.last_report > oa)) return 'doing';
+    if (items.length && done === items.length) return (conf && conf >= oa) ? 'closed' : 'done';
+    var lr = String(s.last_report || '').slice(0, 16);
+    if (blocked || (lr && lr >= oa && /\[blocked\]|막힘|⛔/.test(String(s.last_what || '')))) return 'block';
+    if ((s.last_read && (!oa || s.last_read >= oa)) || (lr && lr > oa)) return 'doing';
     return 'unread';
   }
-  var CHIP = { unread: ['c-unread', '⏳ 안 읽음'], doing: ['c-doing', '👀 진행 중'], block: ['c-block', '⛔ 막힘'], done: ['c-done', '✅ 끝남'] };
+  var CHIP = { unread: ['c-unread', '⏳ 안 읽음'], doing: ['c-doing', '👀 진행 중'], block: ['c-block', '⛔ 막힘'],
+               done: ['c-done', '✅ 완료(확인 전)'], closed: ['c-closed', '🏁 끝남'] };
   var CPX = {
     status: status, CHIP: CHIP,
     go: function (tab, bid) {
