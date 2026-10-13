@@ -35,6 +35,7 @@
   //    Aside(배치 하나에 지시가 번호로 쌓임)는 data/aside_orders.json(webapp 사본)의 그 번호 상태로 판정한다.
   function status(b, s, ao) {
     s = s || {}; b = b || {};
+    if (b.frozen) return 'frozen';   // 이부장이 중단·통합한 지시(frozen_note 에 이유) — 열린 일이 아니다(2026-10-13 실측 8건)
     var oa = String(b.order_at || '').slice(0, 16);
     var conf = String(b.confirmed_at || '').slice(0, 16);
     var m = String(b.order || '').match(/지시 #(\d{1,3})/);
@@ -54,7 +55,7 @@
     return 'unread';
   }
   var CHIP = { unread: ['c-unread', '⏳ 안 읽음'], doing: ['c-doing', '👀 진행 중'], block: ['c-block', '⛔ 막힘'],
-               done: ['c-done', '✅ 완료(확인 전)'], closed: ['c-closed', '🏁 끝남'] };
+               done: ['c-done', '✅ 완료(확인 전)'], closed: ['c-closed', '🏁 끝남'], frozen: ['c-closed', '🧊 중단·통합'] };
   var CPX = {
     status: status, CHIP: CHIP,
     go: function (tab, bid) {
