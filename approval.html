@@ -1421,7 +1421,15 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
      +stuck.map(function(x){
         var lab=x.st==='block'?'⛔ 막힘':(x.st==='unread'?'🔴 지시 안 읽음':'⏸ 지시 기다림');
         return '<div style="font-size:12.5px;padding:3px 0;border-top:1px dashed #ddd">'
-          +'<b>'+lab+'</b> · '+esc(x.own||x.id)+' <span style="opacity:.6">('+esc(x.id)+')</span>'
+          +(function(){ var bb=((B.batches)||{})[x.id]||{}, who=String(x.own||'');
+              // 세션 이름을 줄여 쓰면 사장님이 누구인지 못 찾으신다(10-13 「세션1은 어디란 말인가?」)
+              var NM={'3.':'3.네이버 블로그 통합데이터 분석 세션','4.':'4.AdSense 승인 조사 세션','Aside':'Aside 채팅'};
+              who=NM[who]||(/이과장/.test(who)?'이과장(작업 세션)':(who||x.id));
+              var oa=String(bb.order_at||''), hrs=Math.round(_ago(oa)/3600e3);
+              return '<b>'+lab+'</b> · <b>'+esc(who)+'</b><br>'
+                +'<a href="#" class="ordlink" onclick="CPX.go(&#39;orders&#39;,&#39;'+esc(x.id)+'&#39;);return false">📄 '+esc(String(bb.title||x.id).slice(0,48))+' ›</a>'
+                +(oa?' <span style="opacity:.65">· 지시 '+esc(oa.slice(5,16))+(hrs<1e6?' ('+hrs+'시간째)':'')+'</span>':'');
+            })()
           +(x.rep?'<div style="opacity:.8">'+esc((x.repAt||'').slice(11,16))+' '+esc(x.rep.slice(0,90))+'</div>':'')
           +'</div>';}).join('')+'</div>'):'';
   H+=pane('📑','진행 중 문서',list.length+'건',docBody);
