@@ -174,6 +174,11 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
     .plain{white-space:pre-wrap;word-break:break-word;margin:8px 0 0;padding:10px 12px;
       background:#0f1620;border:1px solid #24344a;border-radius:8px;color:#cfe3f5;
       font:13.5px/1.75 -apple-system,"Malgun Gothic",sans-serif}
+.ordrow .c-unread{background:#5a3a12;color:#ffcf8a;border:1px solid #b07a2a}
+.ordrow .c-doing{background:#173352;color:#9fd0ff;border:1px solid #2f6aa3}
+.ordrow .c-block{background:#4a1820;color:#ffb3bd;border:1px solid #a8394a}
+.ordrow .c-done{background:#163b2c;color:#8ee5be;border:1px solid #2f8f68}
+.ordrow .c-closed{background:#24272e;color:#9aa3b2;border:1px solid #4a505c}
 </style></head><body>
 <div class="hdrow"><h1>📋 전자결재</h1>
  <span class="tip">승인 버튼은 <b>두 번</b> 눌러야 실행됩니다 · 명령을 클릭하면 복사</span><label id="autosw" class="on" title="끄면 화면이 저절로 바뀌지 않습니다"><span class="kn"></span><span id="autolab">자동갱신 켜짐</span></label>
@@ -197,6 +202,7 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 <iframe id="pvb" sandbox="allow-same-origin"></iframe></div></div>
 <div class="copied" id="cp">복사됨</div>
 <script src="cp_clip.js"></script>
+<script src="cp_xlink.js?v=20261013b"></script>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
@@ -624,6 +630,27 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       .then(function(){ setTimeout(function(){ location.reload(); }, 5000); }); };
  return DATA.then(function(a){
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
+  // 🔴 2026-10-13 사장님 "전자결재탭이 상호 유기적으로 반영되도록 — 따로 움직여서는 안 된다".
+  //    결재 카드에 이 결재와 같은 글 코드의 **지시서 상태**를 붙이고, 누르면 작업지시 탭의 그 카드로 간다.
+  //    상태 판정은 작업지시·보고 탭과 같은 CPX.status 한 곳(cp_xlink.js).
+  var _SSS=(SSJ&&SSJ.sessions)||{};
+  window.__ordChips=function(x){return ordChips(x);};   // 화면 검증용(결재 0건일 때 함수만 시험)
+  function ordChips(x){
+    if(!window.CPX) return '';
+    var s=String(x.c||'')+' '+String(x.t||'')+' '+String(x.why||'');
+    var codes=(s.match(/[A-I]\d-\d{2}/g)||[]);
+    var m=String(x.c||'').match(/([a-i])(\d)(\d{2})(?:-\w+)?$/i); if(m) codes.push(m[1].toUpperCase()+m[2]+'-'+m[3]);
+    codes=codes.filter(function(c,i){return codes.indexOf(c)===i;});
+    if(!codes.length) return '';
+    var hits=[];
+    Object.keys(B.batches||{}).forEach(function(bid){var bb=B.batches[bid]; if(!bb.order) return;
+      var ic=(bb.items||[]).map(function(i){return String(i.code||'').replace(/-seodesc$/,'');});
+      if(codes.some(function(c){return ic.indexOf(c)>=0;})) hits.push([bid,bb]);});
+    hits.sort(function(p,q){return String(q[1].order_at||'').localeCompare(String(p[1].order_at||''));});
+    return hits.slice(0,2).map(function(h){var st=CPX.status(h[1],_SSS[h[0]]),c=CPX.CHIP[st]||['',''];
+      return '<a href="#" class="ordlink" onclick="CPX.go(\'orders\',\''+esc(h[0])+'\');return false" style="display:inline-block;margin:2px 6px 4px 0;font-size:12px;text-decoration:none">'
+        +'<span class="chip '+c[0]+'" style="padding:1px 8px;border-radius:999px">📋 지시 '+esc(h[0])+' · '+c[1]+'</span></a>';}).join('');
+  }
   var W=arr(a[7]), PEND=(a[8]||{}).actionable||[], OT=a[9]||{}, REPG=a[10]||{};
   // 🔴 파이썬이 구운 판정(approvalcount.flow). 없으면 아래 JS 판정으로 되돌아간다.
   var FLOW=a[11]||null;
@@ -1112,6 +1139,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +(x.by?'<span class="who '+repWc(x.by)+'">올린이 '+esc(x.by)+'</span>':'')
       +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
+      +(function(){var oc=ordChips(x);return oc?'<div class="ordrow">'+oc+'</div>':'';})()
       // 🔴 do·who — BADGE 옆에 사람이 읽는 행동 문장을 덧그린다(2026-09-09).
       +(x.done? '' : (function(){
           var _do=humanDo(x), _who=humanWho(x);
@@ -1323,6 +1351,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +'<span class="who w-lee">'+(x.act==='topic_pick'?'② 선별':x.act==='osmu'?'📣 OSMU':'⑥ V0')+'</span>'
       +'<span class="ttl">'+esc(x.t||'')+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
+      +(function(){var oc=ordChips(x);return oc?'<div class="ordrow">'+oc+'</div>':'';})()
       +(x.why?'<div class="meta">'+esc(String(x.why).slice(0,150))+'</div>':'')
       // 🔴 이과장 보고 전문 — boss 칸에만 있던 것을 여기도 그린다(2026-08-28).
       //    보고가 데이터에 있어도 화면이 안 그리면 없는 것과 같다.
