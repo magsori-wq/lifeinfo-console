@@ -1,16 +1,33 @@
 {
- "rev": "ed08f185",
+ "rev": "6f11d68e",
  "counts": {
-  "total": 370,
+  "total": 371,
   "osmu_done": 370,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 370,
+  "index_pending": 371,
   "index_requested": 160,
-  "index_todo": 51,
+  "index_todo": 52,
   "index_benign": 159
  },
  "actionable": [
+  {
+   "code": "D3-09",
+   "title": "우유팩 분리배출 의무 2027년 1월 1일, 우리 아파",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -206,22 +223,6 @@
   {
    "code": "B2-19",
    "title": "생계비계좌 250만원 넘게 입금돼도 거절 안 된다 — ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "B3-06",
-   "title": "홈택스 연말정산 미리보기 서비스 사용법 — 카드공제 한",
    "need": [
     "색인요청"
    ],
