@@ -98,7 +98,7 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 .col.aside .colhd{border-left:4px solid #4fd1c5}.col.aside .who{color:#7fe3d9}
 .col.routine .colhd{border-left:4px solid #9b8cf5}.col.routine .who{color:#b8a8ff}
 </style>
-<script src="cp_xlink.js"></script>
+<script src="cp_xlink.js?v=20261013b"></script>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
 var BUCKETS=[
@@ -117,9 +117,10 @@ function whatOf(order){var m=String(order||'').match(/━━━ 무엇을 ━━
 Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}),
              fetch('session_state.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
              fetch('rep_index.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
-             fetch('aside_orders.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})])
+             fetch('aside_orders.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}),
+             fetch('watch.json?t='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})])
 .then(function(res){
-  var d=res[0], ss=(res[1]&&res[1].sessions)||{}, RI=(res[2]&&res[2].bids)||{}, AO=res[3]||{}, out=document.getElementById('out');
+  var d=res[0], ss=(res[1]&&res[1].sessions)||{}, RI=(res[2]&&res[2].bids)||{}, AO=res[3]||{}, WI=((res[4]&&res[4].items)||res[4]||[]), out=document.getElementById('out');
   if(!d||!d.batches){out.innerHTML='<p class="none">batch.json 을 읽지 못했습니다.</p>';return;}
   var rows=[], cnt={unread:0,doing:0,block:0,done:0,closed:0};
   Object.keys(d.batches).forEach(function(id){
@@ -152,6 +153,13 @@ Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.js
         +'</ul></details>';
     }
     var rn=(RI[r.id]||{}).n||0;
+    // 🔴 2026-10-13 사장님 "결재함과 연결된 내역·항목도 즉시 반영·표시" — 이 지시의 글 코드가 걸린 결재 항목을 카드에 함께 보인다.
+    var codes=(b.items||[]).map(function(i){return String(i.code||'').replace(/-seodesc$/,'');}).filter(function(c){return /^[A-I]\d-\d{2}$/.test(c);});
+    var apv=(Array.isArray(WI)?WI:[]).filter(function(w){var s=String(w.id||'')+' '+String(w.what||'');
+      return w.kind==='approve'&&codes.some(function(c){return s.indexOf(c)>=0||s.indexOf(c.toLowerCase().replace('-',''))>=0;});}).slice(-4);
+    var ah=apv.map(function(w){var dn=w.state==='done', pre=String(w.what||'').indexOf('🙋[이부장 확인 대기]')===0;
+      var lab=dn?'✅ 승인됨 '+esc(w.done_at||''):(pre?'🔎 이부장 확인 대기':'⏳ 사장님 결재 대기');
+      return '<span class="chip '+(dn?'c-done':(pre?'c-doing':'c-unread'))+'" title="'+esc(w.what||'')+'">🗂 '+esc(w.id)+' · '+lab+'</span>';}).join(' ');
     return '<div class="card'+(r.st==='done'?' fin':r.st==='closed'?' fin closed':'')+'" data-bid="'+esc(r.id)+'"><div class="cardhd">'
       +'<span class="btitle">'+esc(b.title||r.id)+'</span>'
       +(hist.length?'<span class="reo">🔁 지시 '+all.length+'건 · 완료 '+fin+'</span>':'')
@@ -160,6 +168,7 @@ Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.js
       +'<div class="row"><b>지시</b><span class="age">'+esc(b.order_at||'?')+' · '+ago(b.order_at)+'</span>'
       +(s.last_read?' &nbsp;<b>읽음</b><span class="age">'+ago(s.last_read)+'</span>':'')+'</div>'
       +(s.last_what?'<div class="rep">📮 최근 보고 ('+ago(s.last_report)+') — '+esc(s.last_what)+'</div>':'<div class="rep">📮 아직 보고 없음</div>')
+      +(ah?'<div class="row"><b>결재</b>'+ah+'</div>':'')
       +'<div class="row"><a href="#" class="xl" data-go="reports" data-gobid="'+esc(r.id)+'">📮 이 지시의 보고 '+rn+'건 보기 →</a></div>'
       +hh+'<details data-k="o-'+esc(r.id)+'"><summary>지시서 전문 보기 · '+esc(r.id)+'</summary><pre>'+esc(b.order)+'</pre></details></div>';
   }
@@ -203,6 +212,6 @@ Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.js
   setInterval(look, 3000);
 })();
 /* 🔴 2026-10-08 — 데이터가 바뀌면 5초 안에 다시 그린다(스크롤·펼침 보존) */
-window.CPX && CPX.live(['batch.json','session_state.json']);
+window.CPX && CPX.live(['batch.json','session_state.json','watch.json','aside_orders.json']);
 </script>
 </body></html>
