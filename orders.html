@@ -98,7 +98,7 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 .col.aside .colhd{border-left:4px solid #4fd1c5}.col.aside .who{color:#7fe3d9}
 .col.routine .colhd{border-left:4px solid #9b8cf5}.col.routine .who{color:#b8a8ff}
 </style>
-<script src="cp_xlink.js?v=20261013b"></script>
+<script>document.write('<script src="cp_xlink.js?v='+Date.now()+'"><\/script>');</script>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
 var BUCKETS=[
@@ -212,6 +212,6 @@ Promise.all([fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.js
   setInterval(look, 3000);
 })();
 /* 🔴 2026-10-08 — 데이터가 바뀌면 5초 안에 다시 그린다(스크롤·펼침 보존) */
-window.CPX && CPX.live(['batch.json','session_state.json','watch.json','aside_orders.json']);
+window.CPX && CPX.live(['batch.json','session_state.json','watch.json','aside_orders.json','orders.html','cp_xlink.js']);
 </script>
 </body></html>

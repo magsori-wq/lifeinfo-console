@@ -894,8 +894,8 @@
 </details>
 </div>
 </div>
-<script src="cp_xlink.js?v=20261013b"></script>
-<script>window.CPX&&(CPX.restore(),CPX.focus('.r'),CPX.live(['reports.html','batch.json','session_state.json']));</script>
+<script>document.write('<script src="cp_xlink.js?v='+Date.now()+'"><\/script>');</script>
+<script>window.CPX&&(CPX.restore(),CPX.focus('.r'),CPX.live(['reports.html','batch.json','session_state.json','cp_xlink.js']));</script>
 <script>Promise.all([fetch('batch.json?t='+Date.now()).then(r=>r.json()),fetch('session_state.json?t='+Date.now()).then(r=>r.json()).catch(()=>({}))]).then(function(a){
 var B=(a[0]||{}).batches||{},S=(a[1]||{}).sessions||{};
 document.querySelectorAll('.ost').forEach(function(el){var b=B[el.dataset.bid];if(!b)return;var c=CPX.CHIP[CPX.status(b,S[el.dataset.bid])];

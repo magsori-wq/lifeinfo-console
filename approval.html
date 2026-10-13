@@ -202,7 +202,7 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 <iframe id="pvb" sandbox="allow-same-origin"></iframe></div></div>
 <div class="copied" id="cp">복사됨</div>
 <script src="cp_clip.js"></script>
-<script src="cp_xlink.js?v=20261013b"></script>
+<script>document.write('<script src="cp_xlink.js?v='+Date.now()+'"><\/script>');</script>
 <script>
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
   return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
