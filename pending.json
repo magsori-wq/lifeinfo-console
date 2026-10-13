@@ -1,16 +1,33 @@
 {
- "rev": "cc815433",
+ "rev": "ab9ab19c",
  "counts": {
-  "total": 373,
+  "total": 374,
   "osmu_done": 371,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 373,
+  "index_pending": 374,
   "index_requested": 160,
-  "index_todo": 54,
+  "index_todo": 55,
   "index_benign": 159
  },
  "actionable": [
+  {
+   "code": "A1-22",
+   "title": "청년내일저축계좌 중도인출·재가입·미납 — 헷갈리는 6가",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "G3-16",
    "title": "사천 에어쇼 10월 22~25일 사전등록·셔틀·주차 —",
@@ -208,22 +225,6 @@
   {
    "code": "A5-16",
    "title": "4시간 근무 휴게시간 30분 생략 가능 — 12월 10",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "B2-18",
-   "title": "개인사업자 전용 사잇돌대출 한도 3천만원으로 늘린다 —",
    "need": [
     "색인요청"
    ],
