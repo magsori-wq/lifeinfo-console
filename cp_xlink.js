@@ -50,7 +50,7 @@
     items.forEach(function (it) { if (it.state === 'done' || it.state === 'skip' || it.live === 'done') done++; /* live = 실측 자동완료(batchboard._save, 10-13) */ if (it.state === 'blocked') blocked = true; });
     if (items.length && done === items.length) return (conf && conf >= oa) ? 'closed' : 'done';
     var lr = String(s.last_report || '').slice(0, 16);
-    if (blocked || (lr && lr >= oa && /\[blocked\]|막힘|⛔/.test(String(s.last_what || '')))) return 'block';
+    if (blocked || (lr && lr >= oa && /\[blocked\]|^\s*(\[[^\]]+\]\s*)?(⛔|막힘\s*[:—-])/.test(String(s.last_what || '')))) return 'block';
     if ((s.last_read && (!oa || s.last_read >= oa)) || (lr && lr > oa)) return 'doing';
     return 'unread';
   }

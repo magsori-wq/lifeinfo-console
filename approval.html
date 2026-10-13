@@ -1410,10 +1410,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
            var n=i+1, c=(rejd&&n===6)?'no':(n<cur?'done':(n===cur?'now':''));
            return '<span class="st '+c+'">'+l+'</span>';}).join('')+'</div></div>';}).join('')
     : '<p class="none">진행 중 문서가 없습니다.</p>';
-  // 🔴 2026-10-13 사장님 — "막힘으로 세션의 아이들상태를 결재함 미결사항에 즉시 알려줘! 그래야 나도 이부장에게
-  //    지시할 수 있어! 결재함의 3번째 박스 안에!" → 막힘·안 읽음·대기(지시 기다림) 세션을 이 박스 맨 위에.
+  // 🔴 2026-10-13 사장님 — "막힘으로 세션의 아이들상태를 결재함 미결사항에 즉시 알려줘!" → 「위에서 좌측 3번째 미결사항」 박스 맨 위에 막힘·안 읽음·대기 세션.
   //    판정은 SS(CPX.status · session_state) 그대로 — 새로 세지 않는다.
-  var stuck=SS.filter(function(x){ return x.st==='block'||x.st==='unread'||(x.s==='waiting'&&x.st!=='closed'&&x.st!=='frozen'); });
+  var _ago=function(t){ var d=Date.parse(String(t||'').replace(' ','T')); return isNaN(d)?1e12:(Date.now()-d); };
+  // 막힘·안 읽음은 오래될수록 더 띄운다. 「대기」만 최근 48시간 — 한 달 지난 대기 배치까지 띄우면 지울 수 없는 빨간불이 된다
+  var stuck=SS.filter(function(x){ var fresh=_ago(x.repAt||x.last)<48*3600e3;
+      return x.st==='block'||x.st==='unread'||(x.s==='waiting'&&fresh&&x.st!=='closed'&&x.st!=='frozen'); });
   var stuckBody=stuck.length?('<div class="card" style="border-left:4px solid #b91c1c">'
      +'<div class="hd"><span class="ttl">⛔ 막힘·멈춤 세션 '+stuck.length+'</span></div>'
      +stuck.map(function(x){
@@ -1422,7 +1424,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
           +'<b>'+lab+'</b> · '+esc(x.own||x.id)+' <span style="opacity:.6">('+esc(x.id)+')</span>'
           +(x.rep?'<div style="opacity:.8">'+esc((x.repAt||'').slice(11,16))+' '+esc(x.rep.slice(0,90))+'</div>':'')
           +'</div>';}).join('')+'</div>'):'';
-  H+=pane('📑','진행 중 문서',list.length+'건'+(stuck.length?' · ⛔'+stuck.length:''),stuckBody+docBody);
+  H+=pane('📑','진행 중 문서',list.length+'건',docBody);
 
   // ④ 지시서 + 세션 상태 + 보고 — **좌우로 나란히** (2026-08-30 사장님 지시
   //    "지시서세션옆에 보고내용탭을 이동하고 실시간으로 지시서/보고서를 같이 확인")
@@ -1603,9 +1605,9 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     tdBody='<div class="sub2">'+esc(String(TD.b.title||TD.id))+' — '+tpct+'% ('
       +tdn+'/'+tit.length+')</div>'+rows
       +'<div style="margin-top:9px">'+cmd('python -m studio.batchboard order --id '+TD.id)+'</div>';
-    H+=pane('🗒️','미결사항',tdn+'/'+tit.length,tdBody,'side');
+    H+=pane('🗒️','미결사항',tdn+'/'+tit.length+(stuck.length?' · ⛔'+stuck.length:''),stuckBody+tdBody,'side');
   } else {
-    H+=pane('🗒️','미결사항','0건','<p class="none">오늘('+_td.slice(5,7)+'-'+_td.slice(7)+') 관제탑 보드가 없습니다.'+(_tk.length?' 최근 보드 = '+esc(_tk[0]):'')+'</p>','side');
+    H+=pane('🗒️','미결사항',(stuck.length?'⛔'+stuck.length:'0건'),stuckBody+'<p class="none">오늘('+_td.slice(5,7)+'-'+_td.slice(7)+') 관제탑 보드가 없습니다.'+(_tk.length?' 최근 보드 = '+esc(_tk[0]):'')+'</p>','side');
   }
 
   // 🔴 **펼쳐 놓으신 것을 다시 접지 않는다** (2026-08-31 실측 사고).
