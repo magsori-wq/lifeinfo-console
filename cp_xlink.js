@@ -47,7 +47,7 @@
       return 'doing';
     }
     var items = b.items || [], done = 0, blocked = false;
-    items.forEach(function (it) { if (it.state === 'done' || it.state === 'skip') done++; if (it.state === 'blocked') blocked = true; });
+    items.forEach(function (it) { if (it.state === 'done' || it.state === 'skip' || it.live === 'done') done++; /* live = 실측 자동완료(batchboard._save, 10-13) */ if (it.state === 'blocked') blocked = true; });
     if (items.length && done === items.length) return (conf && conf >= oa) ? 'closed' : 'done';
     var lr = String(s.last_report || '').slice(0, 16);
     if (blocked || (lr && lr >= oa && /\[blocked\]|막힘|⛔/.test(String(s.last_what || '')))) return 'block';

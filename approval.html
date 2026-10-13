@@ -1410,7 +1410,19 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
            var n=i+1, c=(rejd&&n===6)?'no':(n<cur?'done':(n===cur?'now':''));
            return '<span class="st '+c+'">'+l+'</span>';}).join('')+'</div></div>';}).join('')
     : '<p class="none">진행 중 문서가 없습니다.</p>';
-  H+=pane('📑','진행 중 문서',list.length+'건',docBody);
+  // 🔴 2026-10-13 사장님 — "막힘으로 세션의 아이들상태를 결재함 미결사항에 즉시 알려줘! 그래야 나도 이부장에게
+  //    지시할 수 있어! 결재함의 3번째 박스 안에!" → 막힘·안 읽음·대기(지시 기다림) 세션을 이 박스 맨 위에.
+  //    판정은 SS(CPX.status · session_state) 그대로 — 새로 세지 않는다.
+  var stuck=SS.filter(function(x){ return x.st==='block'||x.st==='unread'||(x.s==='waiting'&&x.st!=='closed'&&x.st!=='frozen'); });
+  var stuckBody=stuck.length?('<div class="card" style="border-left:4px solid #b91c1c">'
+     +'<div class="hd"><span class="ttl">⛔ 막힘·멈춤 세션 '+stuck.length+'</span></div>'
+     +stuck.map(function(x){
+        var lab=x.st==='block'?'⛔ 막힘':(x.st==='unread'?'🔴 지시 안 읽음':'⏸ 지시 기다림');
+        return '<div style="font-size:12.5px;padding:3px 0;border-top:1px dashed #ddd">'
+          +'<b>'+lab+'</b> · '+esc(x.own||x.id)+' <span style="opacity:.6">('+esc(x.id)+')</span>'
+          +(x.rep?'<div style="opacity:.8">'+esc((x.repAt||'').slice(11,16))+' '+esc(x.rep.slice(0,90))+'</div>':'')
+          +'</div>';}).join('')+'</div>'):'';
+  H+=pane('📑','진행 중 문서',list.length+'건'+(stuck.length?' · ⛔'+stuck.length:''),stuckBody+docBody);
 
   // ④ 지시서 + 세션 상태 + 보고 — **좌우로 나란히** (2026-08-30 사장님 지시
   //    "지시서세션옆에 보고내용탭을 이동하고 실시간으로 지시서/보고서를 같이 확인")
