@@ -18787,6 +18787,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "naver-skeleton-verify-1013",
+   "added": "2026-10-13",
+   "what": "구성 변주 경고가 실제 naver-draft(H1-28 재작성)에서 찍히는지·이과장 새 뼈대가 경고 없이 통과하는지 확인",
+   "due": "2026-10-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"from studio.naverrich import skeleton_check;print(skeleton_check('H1-28'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
