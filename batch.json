@@ -6647,17 +6647,25 @@
    ]
   }
  },
- "updated": "2026-10-13 17:27:24",
+ "updated": "2026-10-13 17:29:39",
  "current": {
-  "batch": "aside",
+  "batch": "pccheck1013",
   "code": "",
-  "title": "",
-  "step": 1,
-  "what": "[Aside][done] #95 H1-28 네이버 새 글 게시 완료 — 카테고리 방송·OTT·영화(13)·표 12개·대표이미지·태그 6개·원문대조 2398자 일치·「10월 30일(금) 밤 9시 50분」·iMBC 링크 4개·블로그스팟 주소 확인. 참고: 대표 이미지 칩 글자가 「경제·이슈」로 보임 · https://blog.naver.com/magsori8975/224440454127",
-  "since": "11:31",
-  "since_at": "2026-10-08 11:31:43"
+  "title": "PC 점검 세션 보고",
+  "step": 7,
+  "what": "[PC점검→이부장] 주간 한도 모드 완성: /week(터미널 모드 세션) · python -m studio.usageweek(어느 창이든) · 그래프 http://localhost:8000/_usage.html(Desktop용, 공개배포 제외). 사장님이 Desktop에서 「주간 한도」라고 하시면 usageweek 출력을 드리면 됨. 한도 %는 모드 도는 터미널 세션이 턴을 마칠 때만 갱신 — 측정 시각 함께 말할 것. 사용법 docs/모드_lifeinfo-tower_사용법.md",
+  "since": "17:29",
+  "since_at": "2026-10-13 17:29:37"
  },
  "log": [
+  {
+   "t": "17:29:39",
+   "text": "▶  PC 점검 세션 보고 — 7/7단계 · [PC점검→이부장] 주간 한도 모드 완성: /week(터미널 모드 세션) · python -m studio.usageweek(어느 창이든) · 그래프 http://localhost:8000/_usage.html(Desktop용, 공개배포 제외). 사장님이 Desktop에서 「주간 한도」라고 하시면 usageweek 출력을 드리면 됨. 한도 %는 모드 도는 터미널 세션이 턴을 마칠 때만 갱신 — 측정 시각 함께 말할 것. 사용법 docs/모드_lifeinfo-tower_사용법.md"
+  },
+  {
+   "t": "17:29:37",
+   "text": "▶  PC 점검 세션 보고 — 7/7단계 · [PC점검→이부장] 메모리 80% 원인 측정 완료(docs/측정_커널메모리_20261013.md): 커널에서 늘어나는 것은 출입증 누수 묶음 약 635MB(Toke 234,644·초당 1.1개)뿐, 비페이징 1.2GB 중 ismc 317MB 고정·EtwB 221MB. 프로그램 몫 최대 = Aside CP 탭 2.0GB·Claude Desktop(19) 1.8GB. 누수 출처 미확정(은행보안 드라이버 의심=추정). 사장님께 CP 탭 재열기 안내함. watch token-leak-trace-1011 참조"
+  },
   {
    "t": "17:27:24",
    "text": "▶   — 1/7단계 · [Aside][done] #95 H1-28 네이버 새 글 게시 완료 — 카테고리 방송·OTT·영화(13)·표 12개·대표이미지·태그 6개·원문대조 2398자 일치·「10월 30일(금) 밤 9시 50분」·iMBC 링크 4개·블로그스팟 주소 확인. 참고: 대표 이미지 칩 글자가 「경제·이슈」로 보임 · https://blog.naver.com/magsori8975/224440454127"
@@ -6809,14 +6817,6 @@
   {
    "t": "16:20:57",
    "text": "▶   — 1/7단계 · [Aside][done] [D3-09] #90 링크 발급 · 상품명·가격 일치 확인(모노플랫 3단 분리수거함 그레이+전용봉투 30매, 할인가 27,900원·수수료 5%·리뷰 14,307) · https://naver.me/GLhZh2JA · https://naver.me/GLhZh2JA"
-  },
-  {
-   "t": "16:18:39",
-   "text": "▶   — 1/7단계 · [Aside][doing] #90 수신 — D3-09 브랜드커넥트 링크 발급 시작"
-  },
-  {
-   "t": "16:18:24",
-   "text": "📄 aside 작업 지시 등록(1136자, 2026-10-13 16:18)"
   }
  ],
  "currents": {
@@ -8169,6 +8169,15 @@
    "what": "3.: cadaily 오늘분 완료 — 판독일 10-13, 제안 2건(근거: 유입검색어+naverkw). 상시 지시라 todo 유지",
    "since": "16:39",
    "since_at": "2026-10-13 16:39:44"
+  },
+  "pccheck1013": {
+   "batch": "pccheck1013",
+   "code": "",
+   "title": "PC 점검 세션 보고",
+   "step": 7,
+   "what": "[PC점검→이부장] 주간 한도 모드 완성: /week(터미널 모드 세션) · python -m studio.usageweek(어느 창이든) · 그래프 http://localhost:8000/_usage.html(Desktop용, 공개배포 제외). 사장님이 Desktop에서 「주간 한도」라고 하시면 usageweek 출력을 드리면 됨. 한도 %는 모드 도는 터미널 세션이 턴을 마칠 때만 갱신 — 측정 시각 함께 말할 것. 사용법 docs/모드_lifeinfo-tower_사용법.md",
+   "since": "17:29",
+   "since_at": "2026-10-13 17:29:37"
   }
  },
  "report_log": [
@@ -12805,6 +12814,22 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][done] #95 H1-28 네이버 새 글 게시 완료 — 카테고리 방송·OTT·영화(13)·표 12개·대표이미지·태그 6개·원문대조 2398자 일치·「10월 30일(금) 밤 9시 50분」·iMBC 링크 4개·블로그스팟 주소 확인. 참고: 대표 이미지 칩 글자가 「경제·이슈」로 보임 · https://blog.naver.com/magsori8975/224440454127"
+  },
+  {
+   "ts": "2026-10-13 17:29:37",
+   "bid": "pccheck1013",
+   "code": "",
+   "title": "PC 점검 세션 보고",
+   "owner": "",
+   "what": "[PC점검→이부장] 메모리 80% 원인 측정 완료(docs/측정_커널메모리_20261013.md): 커널에서 늘어나는 것은 출입증 누수 묶음 약 635MB(Toke 234,644·초당 1.1개)뿐, 비페이징 1.2GB 중 ismc 317MB 고정·EtwB 221MB. 프로그램 몫 최대 = Aside CP 탭 2.0GB·Claude Desktop(19) 1.8GB. 누수 출처 미확정(은행보안 드라이버 의심=추정). 사장님께 CP 탭 재열기 안내함. watch token-leak-trace-1011 참조"
+  },
+  {
+   "ts": "2026-10-13 17:29:39",
+   "bid": "pccheck1013",
+   "code": "",
+   "title": "PC 점검 세션 보고",
+   "owner": "",
+   "what": "[PC점검→이부장] 주간 한도 모드 완성: /week(터미널 모드 세션) · python -m studio.usageweek(어느 창이든) · 그래프 http://localhost:8000/_usage.html(Desktop용, 공개배포 제외). 사장님이 Desktop에서 「주간 한도」라고 하시면 usageweek 출력을 드리면 됨. 한도 %는 모드 도는 터미널 세션이 턴을 마칠 때만 갱신 — 측정 시각 함께 말할 것. 사용법 docs/모드_lifeinfo-tower_사용법.md"
   }
  ]
 }
