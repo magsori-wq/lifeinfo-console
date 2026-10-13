@@ -18686,6 +18686,17 @@
    "state": "todo",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "cp1-archive-verify",
+   "added": "2026-10-13",
+   "what": "CP-1 검증: 다음 Aside 지시서 등록 때 data/order_archive.jsonl 에 21번째 이력이 실제로 쌓이는지(만들었다≠물렸다)",
+   "due": "2026-10-14",
+   "cmd": "python -c \"import io;print(sum(1 for _ in io.open('data/order_archive.jsonl',encoding='utf-8')))\"",
+   "owner": "claude",
+   "state": "todo",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
