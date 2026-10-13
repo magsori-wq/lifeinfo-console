@@ -6700,17 +6700,21 @@
    "confirm_note": "이과장 0cef414f 6장 재생성 확인 보고"
   }
  },
- "updated": "2026-10-13 17:53:05",
+ "updated": "2026-10-13 17:56:36",
  "current": {
   "batch": "pccheck1013",
   "code": "",
   "title": "PC 점검 세션 보고",
   "step": 7,
-  "what": "[PC점검→이부장·제안] 사장님 질문 「작업지시서를 낼 때 작업 후 메모리 영향을 줄이려면」 → dispatch.py·Aside 지시서에 「🧹 작업 후 정리」 절을 조건 없이 싣자: ①내가 openTab 으로 연 탭은 끝나면 closeTab(사장님 탭에 attach 한 것은 닫지 말 것 — 지금은 누가 연 탭인지 기록이 없어 정리 불가: 10-13 Aside 탭 11개 중 구분 불가) ②여는 탭에 표식(예: 지시서 id)을 남겨 끝날 때 그 표식 탭만 닫기 ③Monitor·백그라운드 루프는 끝나면 TaskStop ④PowerShell 반복 호출 금지·한 번에 묶기(10-13 실험 1회당 출입증 2~3개 남는 듯 — 미확정) ⑤git fetch 루프 금지(10-10) ⑥큰 파일 통째 읽기 대신 증분 ⑦루틴·작업 세션은 끝나면 세션 닫기(기존 규칙 재명시). 근거 docs/측정_커널메모리_20261013.md",
+  "what": "[PC점검→이부장·추가] 10-13 실측: Aside REPL 은 자기가 openTab 으로 연 탭만 닫는다. 사장님·Aside 에이전트(exec)가 연 탭은 attach 후 closeTab·window.close·Ctrl+W 전부 안 닫힘(closeTab 은 연결만 놓음). page.close 는 Aside 안내서가 메모리 누수라 금지. CP 탭 reload 도 CDP timeout. → 지시서 규칙: 세션은 반드시 openTab 으로 열고 끝나면 closeTab · exec 지시서에는 「끝나면 연 탭을 닫아라」를 넣는다. 남은 탭은 사장님 손(Ctrl+W)",
   "since": "17:29",
   "since_at": "2026-10-13 17:29:37"
  },
  "log": [
+  {
+   "t": "17:56:36",
+   "text": "▶  PC 점검 세션 보고 — 7/7단계 · [PC점검→이부장·추가] 10-13 실측: Aside REPL 은 자기가 openTab 으로 연 탭만 닫는다. 사장님·Aside 에이전트(exec)가 연 탭은 attach 후 closeTab·window.close·Ctrl+W 전부 안 닫힘(closeTab 은 연결만 놓음). page.close 는 Aside 안내서가 메모리 누수라 금지. CP 탭 reload 도 CDP timeout. → 지시서 규칙: 세션은 반드시 openTab 으로 열고 끝나면 closeTab · exec 지시서에는 「끝나면 연 탭을 닫아라」를 넣는다. 남은 탭은 사장님 손(Ctrl+W)"
+  },
   {
    "t": "17:53:05",
    "text": "▶  PC 점검 세션 보고 — 7/7단계 · [PC점검→이부장·제안] 사장님 질문 「작업지시서를 낼 때 작업 후 메모리 영향을 줄이려면」 → dispatch.py·Aside 지시서에 「🧹 작업 후 정리」 절을 조건 없이 싣자: ①내가 openTab 으로 연 탭은 끝나면 closeTab(사장님 탭에 attach 한 것은 닫지 말 것 — 지금은 누가 연 탭인지 기록이 없어 정리 불가: 10-13 Aside 탭 11개 중 구분 불가) ②여는 탭에 표식(예: 지시서 id)을 남겨 끝날 때 그 표식 탭만 닫기 ③Monitor·백그라운드 루프는 끝나면 TaskStop ④PowerShell 반복 호출 금지·한 번에 묶기(10-13 실험 1회당 출입증 2~3개 남는 듯 — 미확정) ⑤git fetch 루프 금지(10-10) ⑥큰 파일 통째 읽기 대신 증분 ⑦루틴·작업 세션은 끝나면 세션 닫기(기존 규칙 재명시). 근거 docs/측정_커널메모리_20261013.md"
@@ -6866,10 +6870,6 @@
   {
    "t": "16:48:06",
    "text": "▶   — 1/7단계 · [Aside][doing] #91 수신 — D3-09 네이버 게시 시작"
-  },
-  {
-   "t": "16:47:35",
-   "text": "📄 aside 작업 지시 등록(1961자, 2026-10-13 16:47)"
   }
  ],
  "currents": {
@@ -8228,7 +8228,7 @@
    "code": "",
    "title": "PC 점검 세션 보고",
    "step": 7,
-   "what": "[PC점검→이부장·제안] 사장님 질문 「작업지시서를 낼 때 작업 후 메모리 영향을 줄이려면」 → dispatch.py·Aside 지시서에 「🧹 작업 후 정리」 절을 조건 없이 싣자: ①내가 openTab 으로 연 탭은 끝나면 closeTab(사장님 탭에 attach 한 것은 닫지 말 것 — 지금은 누가 연 탭인지 기록이 없어 정리 불가: 10-13 Aside 탭 11개 중 구분 불가) ②여는 탭에 표식(예: 지시서 id)을 남겨 끝날 때 그 표식 탭만 닫기 ③Monitor·백그라운드 루프는 끝나면 TaskStop ④PowerShell 반복 호출 금지·한 번에 묶기(10-13 실험 1회당 출입증 2~3개 남는 듯 — 미확정) ⑤git fetch 루프 금지(10-10) ⑥큰 파일 통째 읽기 대신 증분 ⑦루틴·작업 세션은 끝나면 세션 닫기(기존 규칙 재명시). 근거 docs/측정_커널메모리_20261013.md",
+   "what": "[PC점검→이부장·추가] 10-13 실측: Aside REPL 은 자기가 openTab 으로 연 탭만 닫는다. 사장님·Aside 에이전트(exec)가 연 탭은 attach 후 closeTab·window.close·Ctrl+W 전부 안 닫힘(closeTab 은 연결만 놓음). page.close 는 Aside 안내서가 메모리 누수라 금지. CP 탭 reload 도 CDP timeout. → 지시서 규칙: 세션은 반드시 openTab 으로 열고 끝나면 closeTab · exec 지시서에는 「끝나면 연 탭을 닫아라」를 넣는다. 남은 탭은 사장님 손(Ctrl+W)",
    "since": "17:29",
    "since_at": "2026-10-13 17:29:37"
   }
@@ -12891,6 +12891,14 @@
    "title": "PC 점검 세션 보고",
    "owner": "",
    "what": "[PC점검→이부장·제안] 사장님 질문 「작업지시서를 낼 때 작업 후 메모리 영향을 줄이려면」 → dispatch.py·Aside 지시서에 「🧹 작업 후 정리」 절을 조건 없이 싣자: ①내가 openTab 으로 연 탭은 끝나면 closeTab(사장님 탭에 attach 한 것은 닫지 말 것 — 지금은 누가 연 탭인지 기록이 없어 정리 불가: 10-13 Aside 탭 11개 중 구분 불가) ②여는 탭에 표식(예: 지시서 id)을 남겨 끝날 때 그 표식 탭만 닫기 ③Monitor·백그라운드 루프는 끝나면 TaskStop ④PowerShell 반복 호출 금지·한 번에 묶기(10-13 실험 1회당 출입증 2~3개 남는 듯 — 미확정) ⑤git fetch 루프 금지(10-10) ⑥큰 파일 통째 읽기 대신 증분 ⑦루틴·작업 세션은 끝나면 세션 닫기(기존 규칙 재명시). 근거 docs/측정_커널메모리_20261013.md"
+  },
+  {
+   "ts": "2026-10-13 17:56:36",
+   "bid": "pccheck1013",
+   "code": "",
+   "title": "PC 점검 세션 보고",
+   "owner": "",
+   "what": "[PC점검→이부장·추가] 10-13 실측: Aside REPL 은 자기가 openTab 으로 연 탭만 닫는다. 사장님·Aside 에이전트(exec)가 연 탭은 attach 후 closeTab·window.close·Ctrl+W 전부 안 닫힘(closeTab 은 연결만 놓음). page.close 는 Aside 안내서가 메모리 누수라 금지. CP 탭 reload 도 CDP timeout. → 지시서 규칙: 세션은 반드시 openTab 으로 열고 끝나면 closeTab · exec 지시서에는 「끝나면 연 탭을 닫아라」를 넣는다. 남은 탭은 사장님 손(Ctrl+W)"
   }
  ]
 }
