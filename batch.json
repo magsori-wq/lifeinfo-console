@@ -6837,17 +6837,21 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-15 05:43:54",
+ "updated": "2026-10-15 06:21:11",
  "current": {
-  "batch": "followup",
+  "batch": "pccheck1013",
   "code": "",
-  "title": "",
-  "step": 1,
-  "what": "G3-16 네이버 원고 구성 변주 재작업 완료(뼈대 📌⚠️📌→✅⚠️📌, skeleton_check 통과, 글자 보존 3680자). Aside 지시 초안 갱신: docs/aside_drafts/G3-16_네이버게시.txt",
-  "since": "16:25",
-  "since_at": "2026-10-13 16:25:53"
+  "title": "PC 점검 세션 보고",
+  "step": 7,
+  "what": "[PC점검→이부장] Desktop 사이드바 루틴 칸 사라짐 조사: 앱 10-14 04:52 업데이트(2.37337.1.0). 로컬 app.asar 에 사이드바 섹션 코드(dframe-code-sections) 0건·epitaxyPrefs 4건 = 사이드바는 claude.ai 원격 화면이 그린다 → 로컬 설정 shown:true 를 앱이 되돌리는 이유. 로컬로는 못 고침. fix_routines_sidebar.py 와 싸우게 두지 말 것. 대안=「예약됨」(사장님 9개 보임 확인). 앤트로픽 버그신고 초안(SendFeedback) 만들어 둠 — 전송은 사장님 /feedback",
+  "since": "17:29",
+  "since_at": "2026-10-13 17:29:37"
  },
  "log": [
+  {
+   "t": "06:21:11",
+   "text": "▶  PC 점검 세션 보고 — 7/7단계 · [PC점검→이부장] Desktop 사이드바 루틴 칸 사라짐 조사: 앱 10-14 04:52 업데이트(2.37337.1.0). 로컬 app.asar 에 사이드바 섹션 코드(dframe-code-sections) 0건·epitaxyPrefs 4건 = 사이드바는 claude.ai 원격 화면이 그린다 → 로컬 설정 shown:true 를 앱이 되돌리는 이유. 로컬로는 못 고침. fix_routines_sidebar.py 와 싸우게 두지 말 것. 대안=「예약됨」(사장님 9개 보임 확인). 앤트로픽 버그신고 초안(SendFeedback) 만들어 둠 — 전송은 사장님 /feedback"
+  },
   {
    "t": "05:43:54",
    "text": "✅ daily-email-briefing-1015 완료 — daily-email-briefing (A)"
@@ -7003,10 +7007,6 @@
   {
    "t": "18:46:23",
    "text": "🏷️ draft1013a122 담당=이과장(작업 세션)"
-  },
-  {
-   "t": "18:46:21",
-   "text": "📋 배치 '✍️ A1-22 청년내일저축계좌 헷갈리는 6가지 초안' 등록 — 1항목"
   }
  ],
  "currents": {
@@ -8365,7 +8365,7 @@
    "code": "",
    "title": "PC 점검 세션 보고",
    "step": 7,
-   "what": "[PC점검→이부장·추가] 10-13 실측: Aside REPL 은 자기가 openTab 으로 연 탭만 닫는다. 사장님·Aside 에이전트(exec)가 연 탭은 attach 후 closeTab·window.close·Ctrl+W 전부 안 닫힘(closeTab 은 연결만 놓음). page.close 는 Aside 안내서가 메모리 누수라 금지. CP 탭 reload 도 CDP timeout. → 지시서 규칙: 세션은 반드시 openTab 으로 열고 끝나면 closeTab · exec 지시서에는 「끝나면 연 탭을 닫아라」를 넣는다. 남은 탭은 사장님 손(Ctrl+W)",
+   "what": "[PC점검→이부장] Desktop 사이드바 루틴 칸 사라짐 조사: 앱 10-14 04:52 업데이트(2.37337.1.0). 로컬 app.asar 에 사이드바 섹션 코드(dframe-code-sections) 0건·epitaxyPrefs 4건 = 사이드바는 claude.ai 원격 화면이 그린다 → 로컬 설정 shown:true 를 앱이 되돌리는 이유. 로컬로는 못 고침. fix_routines_sidebar.py 와 싸우게 두지 말 것. 대안=「예약됨」(사장님 9개 보임 확인). 앤트로픽 버그신고 초안(SendFeedback) 만들어 둠 — 전송은 사장님 /feedback",
    "since": "17:29",
    "since_at": "2026-10-13 17:29:37"
   },
@@ -13165,6 +13165,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "G3-16 네이버 원고 구성 변주 재작업 완료(뼈대 📌⚠️📌→✅⚠️📌, skeleton_check 통과, 글자 보존 3680자). Aside 지시 초안 갱신: docs/aside_drafts/G3-16_네이버게시.txt"
+  },
+  {
+   "ts": "2026-10-15 06:21:11",
+   "bid": "pccheck1013",
+   "code": "",
+   "title": "PC 점검 세션 보고",
+   "owner": "",
+   "what": "[PC점검→이부장] Desktop 사이드바 루틴 칸 사라짐 조사: 앱 10-14 04:52 업데이트(2.37337.1.0). 로컬 app.asar 에 사이드바 섹션 코드(dframe-code-sections) 0건·epitaxyPrefs 4건 = 사이드바는 claude.ai 원격 화면이 그린다 → 로컬 설정 shown:true 를 앱이 되돌리는 이유. 로컬로는 못 고침. fix_routines_sidebar.py 와 싸우게 두지 말 것. 대안=「예약됨」(사장님 9개 보임 확인). 앤트로픽 버그신고 초안(SendFeedback) 만들어 둠 — 전송은 사장님 /feedback"
   }
  ]
 }
