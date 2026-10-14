@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-10-14 06:00:29",
- "source_head": "bf126143f46c",
+ "computed_at": "2026-10-15 04:57:10",
+ "source_head": "1c05b74f92b6",
  "ids": [
   "A1-22",
+  "E4-09",
   "G3-16",
   "H1-28"
  ],
@@ -206,7 +207,35 @@
    }
   }
  ],
- "publish": [],
+ "publish": [
+  {
+   "code": "E4-09",
+   "title": "휴대폰 개통 안면인증, 10월에 단계적 시행이 끝날 예정입니다 — 실패해도 개통되는 경우와 대체 인증 정리 (2026)",
+   "go": false,
+   "v0": "pass",
+   "files": [
+    {
+     "label": "초안 휴대폰안면인증_글_HTML.txt",
+     "path": "휴대폰안면인증_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/357_face_verify.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/357_face_verify.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
  "actions": [],
  "actionsFuture": [
   {
@@ -215,6 +244,14 @@
    "due": "2026-10-19",
    "cmd": "python -m studio.affiliate",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "gplay-meta-sub-1020",
+   "what": "Google Play: Instagram(Meta One Essential) 무료체험 10/20 종료 → 자동 유료 ₩19,500/월. 유지할지 취소할지 결정 필요",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.watch",
+   "state": "todo",
    "kind": "action"
   },
   {
