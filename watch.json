@@ -18868,6 +18868,16 @@
    "owner": "user",
    "state": "blocked",
    "by": "이부장"
+  },
+  {
+   "id": "routines-sidebar-hidden-1015",
+   "added": "2026-10-15",
+   "what": "Desktop 사이드 패널 루틴 칸이 사라짐(앱 설정 routines shown=false, 표시 메뉴로 못 켬). 루틴 9개는 정상 — 「예약됨」 화면에서 접근. 앱 업데이트 후 되살아났는지 재확인",
+   "due": "2026-10-17",
+   "cmd": "mcp__ccd_sidebar__list_sections 로 routines.shown 확인",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
