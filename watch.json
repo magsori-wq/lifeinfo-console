@@ -19023,6 +19023,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-tab-leftover-1015",
+   "added": "2026-10-15",
+   "what": "Aside 가 게시 뒤 자기 탭(인스타·쓰레드 프로필·상품)을 안 닫아 다음 지시가 탭 한도에 막힘(10-15 2회). 지시서 양식에 '끝나면 연 탭을 전부 closeTab' 를 끝 단계로 강제 + 보고에 남은 탭 수",
+   "due": "2026-10-16",
+   "cmd": "grep -n 'closeTab\\|탭' docs/Aside_지시서_양식.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
