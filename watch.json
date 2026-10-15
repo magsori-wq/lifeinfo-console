@@ -18909,7 +18909,7 @@
   {
    "id": "xlink-a122",
    "added": "2026-10-15",
-   "what": "🔗 A1-22 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-22",
+   "what": "🔗 A1-22 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-22",
    "due": "2026-10-15",
    "cmd": "python studio/blogger.py crosslink --code A1-22",
    "owner": "claude",
@@ -18919,7 +18919,7 @@
   {
    "id": "xlink-g316",
    "added": "2026-10-15",
-   "what": "🔗 G3-16 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-16",
+   "what": "🔗 G3-16 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-16",
    "due": "2026-10-15",
    "cmd": "python studio/blogger.py crosslink --code G3-16",
    "owner": "claude",
@@ -18929,7 +18929,7 @@
   {
    "id": "xlink-e409",
    "added": "2026-10-15",
-   "what": "🔗 E4-09 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-09",
+   "what": "🔗 E4-09 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-09",
    "due": "2026-10-15",
    "cmd": "python studio/blogger.py crosslink --code E4-09",
    "owner": "claude",
@@ -18978,6 +18978,16 @@
    "what": "모든 루틴 보고의 '사장님 할 일'은 그 보고만 읽고 처리 가능해야 한다(무엇·기한·안하면·방법·바로가기). 루틴1 SKILL 에 반영(10-15) → docs/루틴공통절.md 로 올려 routinesync 로 9개 배포",
    "due": "2026-10-16",
    "cmd": "grep -n '바로 처리할 수 있어야' docs/루틴공통절.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-sourcefail-handoff-1015",
+   "added": "2026-10-15",
+   "what": "루틴이 '공식 출처 확인 실패'로 빈손이면 그 후보를 batchboard now 로 남기고 이부장이 Aside 로 재확인 — docs/루틴공통절.md 에 절 추가 후 routinesync 배포",
+   "due": "2026-10-16",
+   "cmd": "grep -n '출처 확인 실패' docs/루틴공통절.md",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
