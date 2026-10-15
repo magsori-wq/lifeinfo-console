@@ -5057,13 +5057,9 @@
     }
    ],
    "owner": "Aside",
-   "order": "[이부장 → Aside] 지시 #125 (2026-10-15) — 남은 탭 1개 닫기(시험)\n\n① 무엇을: Aside 브라우저에서 주소가 https://example.com/ 인 탭 1개를 닫는다(#124 쓰레드 작업 뒤 남은 탭을 이부장이 example.com 으로 옮겨 둔 것). 다른 탭은 건드리지 않는다.\n② 어떻게: 탭 목록에서 찾아 닫는다. 닫힌 뒤 탭 목록을 다시 읽어 example.com 이 없는지 확인.\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 끝: {\"batch\":\"aside\",\"what\":\"#125 example.com 탭 닫음 — 남은 탭 N개 · 쓴 방법 <한 줄>\",\"state\":\"done\"}\n⑥ 막히면: {\"state\":\"blocked\"} 로 왜 못 닫는지만 보고.",
-   "order_at": "2026-10-15 21:11",
+   "order": "[이부장 → Aside] 지시 #126 (2026-10-15) — 탭 재사용 규칙 시험\n\n① 무엇을: https://www.iana.org/ 를 열어 페이지 제목만 읽는다. 아래 ⑦ 탭 규칙을 그대로 따른다(남은 example.com 탭을 재사용).\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 끝: {\"batch\":\"aside\",\"what\":\"#126 탭 재사용 시험 — 재사용 여부·총 탭 N개\",\"state\":\"done\"}\n⑥ 막히면: {\"state\":\"blocked\"} 로 무엇이 막혔는지만 보고.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다.",
+   "order_at": "2026-10-15 21:32",
    "order_hist": [
-    {
-     "at": "2026-10-15 12:36",
-     "order": "[이부장 → Aside] 지시 #105 (2026-10-15) — G3-16 사천에어쇼 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하. 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드(맨 뒤).\n① 무엇을: G3-16(사천에어쇼) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_02_shuttle.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_03_time.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 셔틀 → 시간표) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%82%AC%EC%B2%9C%EC%97%90%EC%96%B4%EC%87%BC2026.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 692자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): osmu_manifest 인스타·쓰레드 준비 · 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224442423694 게시 확인, naver-link 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 200 · 사진 출처 캡션 표기(미 공군 사진 퍼블릭 도메인 + Pexels 셔틀 사진) · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#105 수신 — G3-16 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-16\",\"what\":\"#105 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경."
-    },
     {
      "at": "2026-10-15 12:38",
      "order": "[이부장 → Aside] 지시 #106 (2026-10-15) — G3-16 사천에어쇼 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하. 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드(맨 뒤).\n① 무엇을: G3-16(사천에어쇼) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_02_shuttle.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_03_time.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 셔틀 → 시간표) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%82%AC%EC%B2%9C%EC%97%90%EC%96%B4%EC%87%BC2026.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 692자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): osmu_manifest 인스타·쓰레드 준비 · 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224442423694 게시 확인, naver-link 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 200 · 사진 출처 캡션 표기(미 공군 사진 퍼블릭 도메인 + Pexels 셔틀 사진) · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#106 수신 — G3-16 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-16\",\"what\":\"#106 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경."
@@ -5139,6 +5135,10 @@
     {
      "at": "2026-10-15 21:06",
      "order": "[이부장 → Aside] 지시 #124 (2026-10-15) — D1-15 수능 준비물 쓰레드 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: D1-15(수능 준비물) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EC%88%98%EB%8A%A5%EC%A4%80%EB%B9%84%EB%AC%BC%EB%B0%98%EC%9E%85%EA%B8%88%EC%A7%80.txt  (⚠️ JSON 포장 풀어서 내용만. 451자·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 3개라 카드가 연달아 뜬다 — 상품 링크 카드도 닫는다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_D1-15_csat_items.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 원고 451/500자 · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(Pexels 무료 사진) · 제휴 링크 1개(브랜드커넥트 모리스 저스트클릭 사인펜, 사장님 15일 21:04 지시) · 대가성 문구 본문 맨 첫 줄 · affiliate check 통과 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#124 수신 — D1-15 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"D1-15\",\"what\":\"#124 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경."
+    },
+    {
+     "at": "2026-10-15 21:11",
+     "order": "[이부장 → Aside] 지시 #125 (2026-10-15) — 남은 탭 1개 닫기(시험)\n\n① 무엇을: Aside 브라우저에서 주소가 https://example.com/ 인 탭 1개를 닫는다(#124 쓰레드 작업 뒤 남은 탭을 이부장이 example.com 으로 옮겨 둔 것). 다른 탭은 건드리지 않는다.\n② 어떻게: 탭 목록에서 찾아 닫는다. 닫힌 뒤 탭 목록을 다시 읽어 example.com 이 없는지 확인.\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 끝: {\"batch\":\"aside\",\"what\":\"#125 example.com 탭 닫음 — 남은 탭 N개 · 쓴 방법 <한 줄>\",\"state\":\"done\"}\n⑥ 막히면: {\"state\":\"blocked\"} 로 왜 못 닫는지만 보고."
     }
    ]
   },
@@ -6976,17 +6976,25 @@
    "order_at": "2026-10-15 21:22"
   }
  },
- "updated": "2026-10-15 21:31:20",
+ "updated": "2026-10-15 21:33:16",
  "current": {
   "batch": "aside",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[Aside][blocked] #125 blocked — example.com 탭 정확히 식별. closeTab 2회, 브라우저 Ctrl+W, window.close까지 시도했으나 모두 실제 목록에 남음(6개). chrome 탭 삭제 API는 안전 정책상 제공되지 않아 다른 탭은 건드리지 않음.",
+  "what": "[Aside][done] #126 탭 재사용 시험 — example.com 작업 흔적 탭 재사용·IANA 제목 Internet Assigned Numbers Authority 확인·총 탭 5개",
   "since": "11:31",
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "21:33:16",
+   "text": "▶   — 1/7단계 · [Aside][done] #126 탭 재사용 시험 — example.com 작업 흔적 탭 재사용·IANA 제목 Internet Assigned Numbers Authority 확인·총 탭 5개"
+  },
+  {
+   "t": "21:32:34",
+   "text": "📄 aside 작업 지시 등록(551자, 2026-10-15 21:32)"
+  },
   {
    "t": "21:31:20",
    "text": "▶   — 1/7단계 · [Aside][blocked] #125 blocked — example.com 탭 정확히 식별. closeTab 2회, 브라우저 Ctrl+W, window.close까지 시도했으나 모두 실제 목록에 남음(6개). chrome 탭 삭제 API는 안전 정책상 제공되지 않아 다른 탭은 건드리지 않음."
@@ -7138,14 +7146,6 @@
   {
    "t": "14:51:21",
    "text": "🏁 Aside #121 이부장 확인"
-  },
-  {
-   "t": "14:50:04",
-   "text": "▶   — 1/7단계 · [Aside][done] #121 시험 탭 열어 둠 — example.com/?foreigntest=1"
-  },
-  {
-   "t": "14:49:39",
-   "text": "📄 aside 작업 지시 등록(401자, 2026-10-15 14:49)"
   }
  ],
  "currents": {
@@ -8072,7 +8072,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][blocked] #125 blocked — example.com 탭 정확히 식별. closeTab 2회, 브라우저 Ctrl+W, window.close까지 시도했으나 모두 실제 목록에 남음(6개). chrome 탭 삭제 API는 안전 정책상 제공되지 않아 다른 탭은 건드리지 않음.",
+   "what": "[Aside][done] #126 탭 재사용 시험 — example.com 작업 흔적 탭 재사용·IANA 제목 Internet Assigned Numbers Authority 확인·총 탭 5개",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -13941,6 +13941,14 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][blocked] #125 blocked — example.com 탭 정확히 식별. closeTab 2회, 브라우저 Ctrl+W, window.close까지 시도했으나 모두 실제 목록에 남음(6개). chrome 탭 삭제 API는 안전 정책상 제공되지 않아 다른 탭은 건드리지 않음."
+  },
+  {
+   "ts": "2026-10-15 21:33:16",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] #126 탭 재사용 시험 — example.com 작업 흔적 탭 재사용·IANA 제목 Internet Assigned Numbers Authority 확인·총 탭 5개"
   }
  ]
 }
