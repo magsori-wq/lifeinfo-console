@@ -1,16 +1,33 @@
 {
- "rev": "0df5102a",
+ "rev": "0440c924",
  "counts": {
-  "total": 377,
+  "total": 378,
   "osmu_done": 377,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 377,
+  "index_pending": 378,
   "index_requested": 160,
-  "index_todo": 58,
+  "index_todo": 59,
   "index_benign": 159
  },
  "actionable": [
+  {
+   "code": "F4-28",
+   "title": "한강페스티벌 가을 2026 10/17~25 — 예약 마",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -206,22 +223,6 @@
   {
    "code": "B2-18",
    "title": "개인사업자 전용 사잇돌대출 한도 3천만원으로 늘린다 —",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "B2-19",
-   "title": "생계비계좌 250만원 넘게 입금돼도 거절 안 된다 — ",
    "need": [
     "색인요청"
    ],
