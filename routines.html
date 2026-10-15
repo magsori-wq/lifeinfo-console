@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🗓 루틴</title>
+<style>
+:root{--bg:#111;--fg:#eee;--dim:#999;--line:#2a2a2a;--on:#3fb950;--off:#777}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,"Malgun Gothic",sans-serif;margin:0;padding:16px}
+h1{font-size:18px;margin:0 0 4px}.gen{color:var(--dim);font-size:12px;margin-bottom:12px}
+.r{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.n{font-weight:700}.on{color:var(--on)}.off{color:var(--off)}.m{color:var(--dim);font-size:13px}
+</style></head><body>
+<h1>🗓 루틴 9개</h1><div class="gen" id="gen">불러오는 중…</div><div id="list"></div>
+<div class="m">켜고 끄기·편집은 Claude Desktop 「예약됨」 · 20초마다 갱신</div>
+<script>
+async function load(){
+  try{
+    const d=await (await fetch('routines.json?t='+Date.now())).json();
+    document.getElementById('gen').textContent='기준 '+d.generated;
+    document.getElementById('list').innerHTML=d.routines.map(r=>
+      '<div class="r"><div class="n"><span class="'+(r.on?'on':'off')+'">'+(r.on?'●':'○')+'</span> '+r.name+'</div>'+
+      '<div class="m">마지막 '+r.last+' · 다음 '+r.next+' · '+r.model+'</div></div>').join('');
+  }catch(e){document.getElementById('gen').textContent='루틴 목록을 못 읽었습니다';}
+}
+load();setInterval(load,20000);
+</script></body></html>
