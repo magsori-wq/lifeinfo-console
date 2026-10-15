@@ -5057,13 +5057,9 @@
     }
    ],
    "owner": "Aside",
-   "order": "[이부장 → Aside] 지시 #126 (2026-10-15) — 탭 재사용 규칙 시험\n\n① 무엇을: https://www.iana.org/ 를 열어 페이지 제목만 읽는다. 아래 ⑦ 탭 규칙을 그대로 따른다(남은 example.com 탭을 재사용).\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 끝: {\"batch\":\"aside\",\"what\":\"#126 탭 재사용 시험 — 재사용 여부·총 탭 N개\",\"state\":\"done\"}\n⑥ 막히면: {\"state\":\"blocked\"} 로 무엇이 막혔는지만 보고.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다.",
-   "order_at": "2026-10-15 21:32",
+   "order": "[이부장 → Aside] 지시 #127 (2026-10-15) — G3-17 자갈치축제 네이버 새 글 게시 (📌 전담 채팅) 🔴 축제 10/18 종료 — 가장 먼저\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기.\n① 무엇을: 네이버 블로그(magsori8975)에 G3-17 새 글 1편 게시.\n   제목(한 줄 그대로): 자갈치축제 시간표 16~18일, 시식회·회 비빔밥은 언제?\n   카테고리: 부산·전국 축제·행사 (칸에서 눈으로 확인 — 다르면 멈추고 blocked)\n   태그: 자갈치축제, 자갈치축제2026, 부산축제, 회비빔밥, 부산10월축제\n② 어떻게:\n   1. 서식본 http://localhost:8000/rich_G3-17.html 을 연다 → Ctrl+A → Ctrl+C (브라우저 경유가 검증된 길 — 클립보드 직접 적재 금지)\n   2. https://blog.naver.com/GoBlogWrite.naver 새 글 → 본문 Ctrl+A → Ctrl+V (전체 교체)\n   3. 본문 첫 줄에 「■ 자갈치축제…」 제목 줄이 있으면 지운다(제목은 제목칸으로만). 이 글은 「⚠️ 먼저 — 불꽃쇼는 15일 한 번뿐입니다」 박스로 시작하고 소제목 순서는 1 목적별 갈 날 → 2 날짜별 시간표 → 3 개막식 불꽃쇼 → 4 확인 못한 것이다 — 정상이다.\n   4. 대표 이미지 1장을 본문 맨 위에: http://127.0.0.1:8011/api/file?path=thumbs_naver/359n_jagalchi_festival.png (1회 실패하면 이미지 없이 진행하지 말고 blocked)\n   5. 제목·카테고리·태그 입력 → 발행 1회 → 라이브 새로고침해 제목·표·카테고리 확인\n   6. 원문 대조: 본문에 「16일(금)」「17일(토)」「18일(일)」 소제목과 블로그 원문 링크 「https://lifeinfo8975.blogspot.com/2026/10/2026-1018.html」 이 보이는지\n③ 사전 점검 완료(pre-cleared, 이과장): 블로그스팟 발행 완료(라이브 200) · 네이버 원고 구성 변주 완료(skeleton_check 통과 — ⚠️✅📌, 목적별 결정표 먼저) · 글자 보존 3564자 · 제목 32자(「자갈치축제」 자동완성 ✅) · 제휴 링크 없음 · 사진은 대표 이미지 1장(자갈치시장 상가 사진 Bernard Gagnon CC0, 글자를 얹음) · 게시 주인 = Aside.\n④ 받을 파일: 위 두 주소(rich_G3-17.html · 359n_jagalchi_festival.png)\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#127 수신 — G3-17 네이버 게시 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-17\",\"what\":\"#127 네이버 새 글 게시 — 카테고리·표·이미지 확인\",\"state\":\"done\",\"url\":\"<네이버 글 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 본문이 깨지거나 서식이 벗겨지면 발행하지 말 것.\n⑦ 하지 말 것: 다른 글 수정 · 임시저장글 삭제 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다.",
+   "order_at": "2026-10-15 21:58",
    "order_hist": [
-    {
-     "at": "2026-10-15 12:38",
-     "order": "[이부장 → Aside] 지시 #106 (2026-10-15) — G3-16 사천에어쇼 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하. 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드(맨 뒤).\n① 무엇을: G3-16(사천에어쇼) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_02_shuttle.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_03_time.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 셔틀 → 시간표) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%82%AC%EC%B2%9C%EC%97%90%EC%96%B4%EC%87%BC2026.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 692자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): osmu_manifest 인스타·쓰레드 준비 · 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224442423694 게시 확인, naver-link 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 200 · 사진 출처 캡션 표기(미 공군 사진 퍼블릭 도메인 + Pexels 셔틀 사진) · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#106 수신 — G3-16 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-16\",\"what\":\"#106 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경."
-    },
     {
      "at": "2026-10-15 12:41",
      "order": "[이부장 → Aside] 지시 #107 (2026-10-15) — G3-16 사천에어쇼 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하. 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드(맨 뒤).\n① 무엇을: G3-16(사천에어쇼) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_02_shuttle.png · http://127.0.0.1:8011/api/file?path=insta/sacheon_airshow_03_time.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 셔틀 → 시간표) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%82%AC%EC%B2%9C%EC%97%90%EC%96%B4%EC%87%BC2026.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 692자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): osmu_manifest 인스타·쓰레드 준비 · 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224442423694 게시 확인, naver-link 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 200 · 사진 출처 캡션 표기(미 공군 사진 퍼블릭 도메인 + Pexels 셔틀 사진) · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#107 수신 — G3-16 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-16\",\"what\":\"#107 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경."
@@ -5139,6 +5135,10 @@
     {
      "at": "2026-10-15 21:11",
      "order": "[이부장 → Aside] 지시 #125 (2026-10-15) — 남은 탭 1개 닫기(시험)\n\n① 무엇을: Aside 브라우저에서 주소가 https://example.com/ 인 탭 1개를 닫는다(#124 쓰레드 작업 뒤 남은 탭을 이부장이 example.com 으로 옮겨 둔 것). 다른 탭은 건드리지 않는다.\n② 어떻게: 탭 목록에서 찾아 닫는다. 닫힌 뒤 탭 목록을 다시 읽어 example.com 이 없는지 확인.\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 끝: {\"batch\":\"aside\",\"what\":\"#125 example.com 탭 닫음 — 남은 탭 N개 · 쓴 방법 <한 줄>\",\"state\":\"done\"}\n⑥ 막히면: {\"state\":\"blocked\"} 로 왜 못 닫는지만 보고."
+    },
+    {
+     "at": "2026-10-15 21:32",
+     "order": "[이부장 → Aside] 지시 #126 (2026-10-15) — 탭 재사용 규칙 시험\n\n① 무엇을: https://www.iana.org/ 를 열어 페이지 제목만 읽는다. 아래 ⑦ 탭 규칙을 그대로 따른다(남은 example.com 탭을 재사용).\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 끝: {\"batch\":\"aside\",\"what\":\"#126 탭 재사용 시험 — 재사용 여부·총 탭 N개\",\"state\":\"done\"}\n⑥ 막히면: {\"state\":\"blocked\"} 로 무엇이 막혔는지만 보고.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다."
     }
    ]
   },
@@ -7000,17 +7000,25 @@
    "order_at": "2026-10-15 21:49"
   }
  },
- "updated": "2026-10-15 21:58:08",
+ "updated": "2026-10-15 21:59:18",
  "current": {
-  "batch": "followup",
+  "batch": "aside",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "Aside 지시 초안 준비: docs/aside_drafts/G3-17_네이버게시.txt , docs/aside_drafts/G3-17_검색설명.txt (G3-17 라이브 200·썸네일/본문사진 200·교차링크 아님(미삽입)·네이버 원고 skeleton 통과 ⚠️✅📌·글자 보존 3564자·359n 썸네일). 🔴 축제 10/18 종료 — 네이버 먼저",
-  "since": "16:25",
-  "since_at": "2026-10-13 16:25:53"
+  "what": "[Aside][doing] #127 수신 — G3-17 네이버 게시 시작",
+  "since": "11:31",
+  "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "21:59:18",
+   "text": "▶   — 1/7단계 · [Aside][doing] #127 수신 — G3-17 네이버 게시 시작"
+  },
+  {
+   "t": "21:58:38",
+   "text": "📄 aside 작업 지시 등록(1927자, 2026-10-15 21:58)"
+  },
   {
    "t": "21:58:08",
    "text": "▶   — 1/7단계 · Aside 지시 초안 준비: docs/aside_drafts/G3-17_네이버게시.txt , docs/aside_drafts/G3-17_검색설명.txt (G3-17 라이브 200·썸네일/본문사진 200·교차링크 아님(미삽입)·네이버 원고 skeleton 통과 ⚠️✅📌·글자 보존 3564자·359n 썸네일). 🔴 축제 10/18 종료 — 네이버 먼저"
@@ -7162,14 +7170,6 @@
   {
    "t": "21:03:10",
    "text": "▶   — 1/7단계 · Aside 지시 초안 준비: docs/aside_drafts/D1-15_인스타게시.txt , docs/aside_drafts/D1-15_쓰레드게시.txt (D1-15 카드 3장·캡션·쓰레드 원고 419→본문파일 기준 확인·실사진, threadimg ✅·manifest 준비). ⚠️ threadsdraft --code D1-15 는 제휴 링크 1건을 클립보드 본문에 합침(파일 원고에는 없음) — Aside 는 파일 원고 그대로 게시(쓰레드에 상품 안 붙임)로 지시서에 명시, 다르게 하려면 알려 주세요"
-  },
-  {
-   "t": "20:21:44",
-   "text": "▶   — 1/7단계 · D1-15 네이버 URL(224442590150, Aside #120 게시 14시대) 이 20:20 에야 DB 기록됨 — naverfind 가 자동 돌지 않아 기록이 몇 시간 밀렸음. 이어서 D1-15 인스타 캡션·카드·쓰레드 원고·실사진 재료 제작 착수"
-  },
-  {
-   "t": "20:21:30",
-   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224442590150 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타"
   }
  ],
  "currents": {
@@ -8096,7 +8096,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][done] #126 탭 재사용 시험 — example.com 작업 흔적 탭 재사용·IANA 제목 Internet Assigned Numbers Authority 확인·총 탭 5개",
+   "what": "[Aside][doing] #127 수신 — G3-17 네이버 게시 시작",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -14014,6 +14014,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "Aside 지시 초안 준비: docs/aside_drafts/G3-17_네이버게시.txt , docs/aside_drafts/G3-17_검색설명.txt (G3-17 라이브 200·썸네일/본문사진 200·교차링크 아님(미삽입)·네이버 원고 skeleton 통과 ⚠️✅📌·글자 보존 3564자·359n 썸네일). 🔴 축제 10/18 종료 — 네이버 먼저"
+  },
+  {
+   "ts": "2026-10-15 21:59:18",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #127 수신 — G3-17 네이버 게시 시작"
   }
  ]
 }
