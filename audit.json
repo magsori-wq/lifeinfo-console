@@ -12752,6 +12752,14 @@
    "target": "aside-tab-leftover-1015",
    "detail": "14:52 tools/aside_tabclean.sh(window.close) 로 Aside 가 연 탭 닫힘 실측 · aside_order.sh 가 지시 전 자동 정리",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-15T15:04:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "towerwatch-orphan-1015",
+   "detail": "15:06 handoff 방식 수정·실측: 새 감시가 옛 루프를 끝내고 락 이관(936→976→1481) 양방향 확인",
+   "via": "cli"
   }
  ]
 }
