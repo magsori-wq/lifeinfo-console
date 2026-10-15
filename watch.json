@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-15",
+ "updated": "2026-10-16",
  "items": [
   {
    "id": "redirect-error",
@@ -19120,6 +19120,16 @@
    "what": "클라우드 크레딧(US$222, 11/5 만료) 배분 계획: ①접속 실측(trig_016uKYjwsqxnSFHZ53pQ8jFg, 23:36) ②토큰 사용 분석(docs/token_usage_analysis_20261015.md) → 클라우드로 옮길 작업 선별·주 1회 잔액 보고",
    "due": "2026-10-16",
    "cmd": "ls docs/cloud_access_test_20261015.md docs/token_usage_analysis_20261015.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cp-full-migration-1016",
+   "added": "2026-10-16",
+   "what": "CP 통째 이전 가능성 실측(사장님 10-16: 불가 단정은 성급). 파일 동기는 실측 완료(로컬↔배포 471 같음·6 다름·7 미배포 / 배포↔github.io 줄바꿈 외 동일). 남은 것: approve_server(8011)·결재 버튼·Aside 연결·로컬 스크립트 기능을 원격에서 하나씩 시험해 되는/안 되는 목록 작성",
+   "due": "2026-10-16",
+   "cmd": "python -c \"print('기능별 원격 시험표: docs/CP원격이전_실측_20261016.md')\"",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
