@@ -19177,38 +19177,6 @@
    "owner": "claude",
    "state": "blocked",
    "by": "이부장"
-  },
-  {
-   "id": "f428-seodesc-after-naver",
-   "added": "2026-10-16",
-   "what": "F4-28 검색설명 Aside 지시(docs/aside_drafts/F4-28_검색설명.txt)는 #134 네이버 게시 done 뒤 등록 — aside 지시서는 한 장이라 지금 올리면 #134 를 덮는다",
-   "due": "2026-10-16",
-   "cmd": "bash tools/aside_order.sh <F4-28_검색설명 수정본> 135 F4-28 기타",
-   "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-16",
-   "result": "#135 등록 03:06"
-  },
-  {
-   "id": "xlink-f428",
-   "added": "2026-10-16",
-   "what": "🔗 F4-28 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-28",
-   "due": "2026-10-16",
-   "cmd": "python studio/blogger.py crosslink --code F4-28",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "aside-order-lost-update-1016",
-   "added": "2026-10-16",
-   "what": "aside 지시서 등록이 [OK] 뒤 사라짐 의심(03:09 #137 등록 OK → Aside 는 #136 03:07 을 계속 읽음). batch.json 동시 쓰기(approve_server /api/report·batchboard now) 덮어쓰기 경합인지 확인",
-   "due": "2026-10-16",
-   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['aside'];print(b['order_at'])\"",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
   }
  ]
 }
