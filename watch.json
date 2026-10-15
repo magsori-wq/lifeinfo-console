@@ -19185,8 +19185,20 @@
    "due": "2026-10-16",
    "cmd": "bash tools/aside_order.sh <F4-28_검색설명 수정본> 135 F4-28 기타",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-16",
+   "result": "#135 등록 03:06"
+  },
+  {
+   "id": "xlink-f428",
+   "added": "2026-10-16",
+   "what": "🔗 F4-28 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-28",
+   "due": "2026-10-16",
+   "cmd": "python studio/blogger.py crosslink --code F4-28",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
