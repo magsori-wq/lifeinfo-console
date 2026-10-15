@@ -19199,6 +19199,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "aside-order-lost-update-1016",
+   "added": "2026-10-16",
+   "what": "aside 지시서 등록이 [OK] 뒤 사라짐 의심(03:09 #137 등록 OK → Aside 는 #136 03:07 을 계속 읽음). batch.json 동시 쓰기(approve_server /api/report·batchboard now) 덮어쓰기 경합인지 확인",
+   "due": "2026-10-16",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['aside'];print(b['order_at'])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
