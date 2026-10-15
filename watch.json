@@ -19155,6 +19155,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "mod-pane-desktop-1016",
+   "added": "2026-10-16",
+   "what": "모드 패널 원인 확정: 모드 코드는 정상(-p 새 세션 01:26 진단 기록됨), 이 Desktop 세션은 12:24 /reload-plugins 때 env 폴더 모드가 빠지고 다시 안 올라옴(진단 파일 0회). 조치: settings env CLAUDE_CODE_PLUGIN_DIR_WATCH=1. 남은 확인: 세션 재시작 뒤 _mod_diag.json 의 surfaces·panes 로 Desktop 이 패널을 놓는지",
+   "due": "2026-10-16",
+   "cmd": "cat webapp/_mod_diag.json",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

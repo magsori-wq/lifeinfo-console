@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>클라우드 크레딧</title>
+<style>
+:root{--bg:#0f1115;--fg:#e8e8e8;--mute:#9aa0a6;--line:#2a2f37;--ok:#3fb950;--warn:#f0883e;--bad:#f85149;}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,"Malgun Gothic",sans-serif;padding:16px}
+h1{font-size:20px;margin:0 0 4px} .mute{color:var(--mute);font-size:13px}
+.big{font-size:34px;font-weight:700;margin:14px 0 2px} .bar{height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:6px 0 14px}
+.bar>i{display:block;height:100%;background:var(--ok)} .warn{color:var(--warn);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px} td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
+</style></head><body>
+<h1>☁️ 클라우드 크레딧 · 사용량</h1>
+<div class="mute" id="upd">불러오는 중…</div>
+<div class="big" id="left">-</div>
+<div class="bar"><i id="fill" style="width:0"></i></div>
+<div id="meta"></div>
+<table><thead><tr><th>시각</th><th>크레딧 남음</th><th>세션</th><th>주간</th><th>Fable</th><th>무엇 뒤에 쟀나</th></tr></thead><tbody id="rows"></tbody></table>
+<p class="mute">값은 claude.ai 사용량 화면을 그대로 읽은 것(1달러 단위 표시). 재는 명령: <code>python -m studio.creditmeter</code></p>
+<script>
+async function load(){
+  try{
+    const d=await (await fetch('credit.json?x='+Date.now())).json(); const r=d.rows||[]; const z=r[r.length-1]; if(!z) return;
+    document.getElementById('upd').textContent='마지막 측정 '+z.at+' · 만료 '+(z.credit_expires||'-');
+    document.getElementById('left').textContent='$'+z.credit_left+' / $'+z.credit_total;
+    document.getElementById('fill').style.width=(100*z.credit_left/z.credit_total)+'%';
+    document.getElementById('meta').innerHTML='현재 세션 '+z.session_pct+'% · 이번 주 '+z.week_pct+'% · Fable '+z.fable_pct+'%'+
+      (z.week_warning?' · <span class="warn">⚠️ 주간 한도 소진 예상 '+z.week_warning+'</span>':'');
+    document.getElementById('rows').innerHTML=r.slice().reverse().map(x=>'<tr><td>'+x.at+'</td><td>$'+x.credit_left+'</td><td>'+x.session_pct+'%</td><td>'+x.week_pct+'%</td><td>'+x.fable_pct+'%</td><td>'+(x.note||'')+'</td></tr>').join('');
+  }catch(e){document.getElementById('upd').textContent='credit.json 을 못 읽었습니다';}
+}
+load(); setInterval(load,20000);
+</script></body></html>
