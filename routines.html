@@ -19,6 +19,7 @@ async function load(){
     document.getElementById('list').innerHTML=d.routines.map(r=>
       '<div class="r"><div class="n"><span class="'+(r.on?'on':'off')+'">'+(r.on?'●':'○')+'</span> '+r.name+'</div>'+
       '<div class="m">마지막 '+r.last+' · 다음 '+r.next+' · '+r.model+'</div>'+
+      ((r.runs||[]).length?'<div class="m">'+(r.runs||[]).slice(0,3).map((x,i)=>'<a href="'+x.link+'">'+(i?'▷ 이전 실행 ':'▶ 최근 실행 세션 열기 ')+x.at+'</a>').join(' · ')+'</div>':'')+
       (r.report?'<div class="rep"><b>'+r.report_day.slice(0,2)+'/'+r.report_day.slice(2)+' 보고</b> '+esc(r.report)+'</div>':'<div class="m">보고 없음</div>')+'</div>').join('');
   }catch(e){document.getElementById('gen').textContent='루틴 목록을 못 읽었습니다';}
 }
