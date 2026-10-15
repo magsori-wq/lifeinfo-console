@@ -1848,11 +1848,11 @@
      "code": "9-lifeinfo-issue-product-pm-1015",
      "title": "9-lifeinfo-issue-product-pm (I)",
      "state": "done",
-     "note": "2026-10-15 15:00 빈손 — 시즌 낱말 재고, 신규 후보 없음",
+     "note": "2026-10-15 15:00 빈손 — 시즌 낱말 재고, 신규 후보 없음\n▸ 15:12 후보 1건(한일의료기 카본 전기요, 27,500원·리뷰86·평점4.7) — 결재함 afflink-20261015-1 등록. 게시·링크발급 없음.\n▸ 15:12 테스트\n▸ 15:13 후보 1건: 한일의료기 국산 카본 전기요 스트라이프 중 · 27,500원 · 리뷰86 · 평점4.7 (시즌: 10월 중순 난방 시작). 결재함 afflink-20261015-1 등록. 게시·링크발급 없음. issueprod 배치는 없어 now 기록 불가(보고는 routinelog 로 함).",
      "auto_daily": true,
      "base_code": "9-lifeinfo-issue-product-pm",
      "date": "2026-10-15",
-     "at": "2026-10-15 04:53"
+     "at": "2026-10-15 15:13"
     },
     {
      "code": "lifeinfo-daily-publish-1015",
@@ -6961,17 +6961,33 @@
    "order_at": "2026-10-15 14:12"
   }
  },
- "updated": "2026-10-15 14:51:21",
+ "updated": "2026-10-15 15:13:27",
  "current": {
-  "batch": "aside",
+  "batch": "issueprod",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[Aside][done] #121 시험 탭 열어 둠 — example.com/?foreigntest=1",
-  "since": "11:31",
-  "since_at": "2026-10-08 11:31:43"
+  "what": "test",
+  "since": "07:15",
+  "since_at": "2026-10-12 07:15:53"
  },
  "log": [
+  {
+   "t": "15:12:58",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1015 완료 — 9-lifeinfo-issue-product-pm (I)"
+  },
+  {
+   "t": "15:12:55",
+   "text": "▶   — 1/7단계 · test"
+  },
+  {
+   "t": "15:12:28",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1015 완료 — 9-lifeinfo-issue-product-pm (I)"
+  },
+  {
+   "t": "15:12:26",
+   "text": "▶   — 1/7단계 · 🛒 후보: 한일의료기 국산 카본 전기요 스트라이프 중 · 27,500원 · 리뷰86 · 평점4.7 · 왜 지금: 10월 중순 난방 시작 시즌(시즌 매일 1건 규칙) — 결재함 afflink-20261015-1 등록 완료, 리뷰가 적어 후순위 근거 명시"
+  },
   {
    "t": "14:51:21",
    "text": "🏁 Aside #121 이부장 확인"
@@ -7115,22 +7131,6 @@
   {
    "t": "13:46:27",
    "text": "🏁 Aside #115 이부장 확인"
-  },
-  {
-   "t": "13:45:56",
-   "text": "▶   — 1/7단계 · [Aside][done] #115 인스타 게시 완료 — 게시 전 H1-28 기존 글 없음 확인·카드 3장(표지→인물→시각 비교, 점 3개)·캡션 691자 원문 일치(블로그·네이버 링크·Shixart1985/Pexels 출처)·실제 URL 새로고침·HTTP 200 확인 · https://www.instagram.com/magsori8975/p/DegIWu3EZsW/"
-  },
-  {
-   "t": "13:43:55",
-   "text": "▶   — 1/7단계 · [Aside][doing] #115 수신 — H1-28 인스타 시작"
-  },
-  {
-   "t": "13:43:19",
-   "text": "📄 aside 작업 지시 등록(1463자, 2026-10-15 13:43)"
-  },
-  {
-   "t": "13:42:44",
-   "text": "▶   — 1/7단계 · Aside 지시 초안 준비: docs/aside_drafts/H1-28_인스타게시.txt , docs/aside_drafts/H1-28_쓰레드게시.txt (카드 3장·쓰레드 실사진 기존 완성, 캡션·쓰레드 원고 신규, threadsdraft 353/500 링크 둘 ✅, threadimg ✅, manifest 준비)"
   }
  ],
  "currents": {
@@ -8390,7 +8390,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🛒 정정: 위 니삭스 후보는 기존 issue20261009(이미 승인·링크 발급 대기)와 중복 — 결재함 afflink-8-issue-20261015 는 취소. 오늘 신규 후보 없음(빈손)",
+   "what": "test",
    "since": "07:15",
    "since_at": "2026-10-12 07:15:53"
   },
@@ -13773,6 +13773,22 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][done] #121 시험 탭 열어 둠 — example.com/?foreigntest=1"
+  },
+  {
+   "ts": "2026-10-15 15:12:26",
+   "bid": "issueprod",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🛒 후보: 한일의료기 국산 카본 전기요 스트라이프 중 · 27,500원 · 리뷰86 · 평점4.7 · 왜 지금: 10월 중순 난방 시작 시즌(시즌 매일 1건 규칙) — 결재함 afflink-20261015-1 등록 완료, 리뷰가 적어 후순위 근거 명시"
+  },
+  {
+   "ts": "2026-10-15 15:12:55",
+   "bid": "issueprod",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "test"
   }
  ]
 }
