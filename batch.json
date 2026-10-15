@@ -4977,13 +4977,9 @@
     }
    ],
    "owner": "Aside",
-   "order": "[이부장 → Aside] 지시 #130 (2026-10-15) — G3-17 자갈치축제 쓰레드 게시 (📌 전담 채팅) 🔴 축제 10/18 종료\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: G3-17(자갈치축제) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EC%9E%90%EA%B0%88%EC%B9%98%EC%B6%95%EC%A0%9C2026.txt  (⚠️ JSON 포장 풀어서 내용만. 377자·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 2개라 카드가 연달아 뜬다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_G3-17_jagalchi_fest.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 원고 377/500자 · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(CC0 Bernard Gagnon) · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#130 수신 — G3-17 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-17\",\"what\":\"#130 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다.",
-   "order_at": "2026-10-15 22:40",
+   "order": "[이부장 → Aside] 지시 #131 (2026-10-16) — F4-28 한강페스티벌 브랜드커넥트 링크 2개 발급 (📌 전담 채팅) 🔴 행사 10/17 시작\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭 7개 넘으면 시작 전에 blocked 보고).\n① 무엇을: 네이버 브랜드커넥트에서 아래 두 상품의 제휴 링크(naver.me)를 발급한다. 게시는 하지 않는다.\n   1. 「경량돗자리 방수돗자리 휴대용 피크닉매트 비치 한강 유럽여행 중형 옐로우」(솜솜라이크 · 할인가 16,900원 · 수수료 5% · 리뷰 9,846)\n   2. 「캠핑 좌식의자 그라운드체어 등받이 접이식 초경량 피크닉 페스티벌 휴대용 1세대」(브리즈피크 · 할인가 21,900원 · 수수료 5% · 리뷰 8,670)\n② 어떻게: brandconnect.naver.com 쇼핑 커넥트 검색 「피크닉 돗자리」·「접이식 캠핑의자」 → 위 상품명·판매처가 정확히 같은 것을 고른다 → 링크 발급 → 발급된 naver.me 주소를 복사. 상품명·판매처가 다르면 발급하지 말고 blocked 로 무엇이 달랐는지 보고.\n③ 사전 점검(이부장): 조사 기록 docs/affiliate_F4-28.md · 대상 채널 = 네이버 원고만(블로그스팟 아님) · 한 글 2개 한도 안.\n④ 받을 파일: 없음\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#131 수신 — F4-28 링크 발급 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"F4-28\",\"what\":\"#131 브랜드커넥트 링크 2개 — 1) <상품명·할인가·수수료> <naver.me 주소> 2) <상품명·할인가·수수료> <naver.me 주소>\",\"state\":\"done\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 로그인 화면이면 멈추고 보고.\n⑦ 하지 말 것: 게시·글 수정 · 다른 상품 발급 · 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다.",
+   "order_at": "2026-10-16 02:34",
    "order_hist": [
-    {
-     "at": "2026-10-15 13:12",
-     "order": "[이부장 → Aside] 지시 #110 (2026-10-15) — G3-16 사천에어쇼 쓰레드 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하. 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: G3-16(사천에어쇼) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EC%82%AC%EC%B2%9C%EC%97%90%EC%96%B4%EC%87%BC2026.txt  (⚠️ JSON 포장 풀어서 내용만. 372자·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 2개라 카드가 연달아 뜬다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_G3-16_sacheon_airshow.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 원고 372/500자 · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(미 공군 사진 퍼블릭 도메인 + Pexels 셔틀 사진) · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#110 수신 — G3-16 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-16\",\"what\":\"#110 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경."
-    },
     {
      "at": "2026-10-15 13:16",
      "order": "[이부장 → Aside] 지시 #111 (2026-10-15) — A1-22 청년내일저축계좌 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하. 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드(맨 뒤).\n① 무엇을: A1-22(청년내일저축계좌) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/savings_qa_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/savings_qa_02_withdraw.png · http://127.0.0.1:8011/api/file?path=insta/savings_qa_03_rejoin.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 중도인출 → 재가입·미납) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%B2%AD%EB%85%84%EB%82%B4%EC%9D%BC%EC%A0%80%EC%B6%95%EA%B3%84%EC%A2%8C%EC%A4%91%EB%8F%84%EC%9D%B8%EC%B6%9C%EC%9E%AC%EA%B0%80%EC%9E%85%EB%AF%B8%EB%82%A9.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 618자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): osmu_manifest 인스타·쓰레드 준비 · 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224442417609 게시 확인, naver-link 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 200 · 사진 출처 캡션 표기(Pexels 무료 사진) · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#111 수신 — A1-22 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"A1-22\",\"what\":\"#111 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경."
@@ -5059,6 +5055,10 @@
     {
      "at": "2026-10-15 22:35",
      "order": "[이부장 → Aside] 지시 #129 (2026-10-15) — G3-17 자갈치축제 인스타 게시 (📌 전담 채팅) 🔴 축제 10/18 종료\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: G3-17(자갈치축제) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/jagalchi_fest_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/jagalchi_fest_02_when.png · http://127.0.0.1:8011/api/file?path=insta/jagalchi_fest_03_stage.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 먹거리 날짜 → 무대·체험) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%9E%90%EA%B0%88%EC%B9%98%EC%B6%95%EC%A0%9C2026.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 796자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): osmu_manifest 인스타·쓰레드 준비 · 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224443051134 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · 사진 출처(자갈치시장 사진 CC0(Bernard Gagnon) + Pexels 무료 사진) 캡션 표기 · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#129 수신 — G3-17 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-17\",\"what\":\"#129 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다."
+    },
+    {
+     "at": "2026-10-15 22:40",
+     "order": "[이부장 → Aside] 지시 #130 (2026-10-15) — G3-17 자갈치축제 쓰레드 게시 (📌 전담 채팅) 🔴 축제 10/18 종료\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: G3-17(자갈치축제) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EC%9E%90%EA%B0%88%EC%B9%98%EC%B6%95%EC%A0%9C2026.txt  (⚠️ JSON 포장 풀어서 내용만. 377자·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 2개라 카드가 연달아 뜬다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_G3-17_jagalchi_fest.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 원고 377/500자 · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(CC0 Bernard Gagnon) · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#130 수신 — G3-17 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-17\",\"what\":\"#130 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다."
     }
    ]
   },
@@ -6949,7 +6949,7 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-16 02:31:13",
+ "updated": "2026-10-16 02:34:20",
  "current": {
   "batch": "draft1016f428",
   "code": "",
@@ -6960,6 +6960,10 @@
   "since_at": "2026-10-16 02:31:13"
  },
  "log": [
+  {
+   "t": "02:34:20",
+   "text": "📄 aside 작업 지시 등록(1285자, 2026-10-16 02:34)"
+  },
   {
    "t": "02:31:13",
    "text": "▶   — 1/7단계 · F4-28 초안·썸네일(360, 실사진 Pexels)·pubqueue 적재 완료(커밋). 게이트 layout ✅·heading ✅·dstyle ✅·bodydup --live 🟢 0.046·dupcheck 🟡(F4-14 겹침 0.50 가을·예약). 1차 출처 서울시 보도자료+공식 예약 페이지 curl 직접 대조(source 파일). 원본가치: 프로그램별 예약 기간 끝/가능/현장무료 판정표·17일 잠원 시간대표·하이서울크루즈 날짜 불일치 병기(보도자료 17~18·24~25 vs 예약페이지 17~25). 제휴: 브랜드커넥트 검색 대기(affiliate none 미기록). ⚠️ 썸네일 사진은 한강 아님(Pexels 강변 자전거길) — 캡션 표기, 한강 사진 필요하면 다운로드 허가 필요. V0·승인 대기. 행사 10/17 시작이라 오늘 안 V0 필요. 다음 F4-27 은 보고 후 시작"
@@ -7115,10 +7119,6 @@
   {
    "t": "22:04:49",
    "text": "▶   — 1/7단계 · [Aside][done] [G3-17] #127 네이버 새 글 게시 완료 — 카테고리 부산·전국 축제·행사·표 7개·대표 이미지·태그 5개·16/17/18일 소제목·블로그 원문 링크·라이브 새로고침·HTTP 200 확인·탭 재사용·총 탭 6개 · https://blog.naver.com/magsori8975/224443051134"
-  },
-  {
-   "t": "21:59:18",
-   "text": "▶   — 1/7단계 · [Aside][doing] #127 수신 — G3-17 네이버 게시 시작"
   }
  ],
  "currents": {
