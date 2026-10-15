@@ -19143,6 +19143,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "asidechain-live-1016",
+   "added": "2026-10-16",
+   "what": "중계 체인 첫 실전 확인: 다음 Aside 지시를 aside_order.sh <파일> <번호> <코드> <naver|insta|threads> 로 등록 → [done] 뒤 aside_orders.json 에 auto_chain_at 이 찍히고 followup 에 [체인] 줄이 생기는지",
+   "due": "2026-10-17",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;d=json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'];print([(k,v.get('code'),v.get('auto_chain_at')) for k,v in d.items() if v.get('kind')])\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
