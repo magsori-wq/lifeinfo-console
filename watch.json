@@ -18959,6 +18959,18 @@
    "by": "이부장",
    "done_at": "2026-10-15",
    "result": "13:07 사장님 재로그인 완료"
+  },
+  {
+   "id": "routine-push-summary-1015",
+   "added": "2026-10-15",
+   "what": "루틴이 끝날 때마다 이부장이 먼저 요약 보고(사장님 '미친짓아냐?' 10-15) — towertick 에 루틴 lastRunAt 변화 감지 → ROUTINE_DONE 알림 배선",
+   "due": "2026-10-16",
+   "cmd": "grep -n ROUTINE_DONE studio/towertick.py",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-15",
+   "result": "13:15 ROUTINE_DONE 배선(towertick·tower_watch) · 모의 변경으로 감지 확인"
   }
  ]
 }
