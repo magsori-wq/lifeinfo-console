@@ -1,36 +1,19 @@
 {
- "rev": "d3f474ba",
+ "rev": "5b5bd447",
  "counts": {
-  "total": 375,
+  "total": 374,
   "osmu_done": 371,
-  "osmu_pending": 4,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 375,
+  "index_pending": 374,
   "index_requested": 160,
-  "index_todo": 56,
+  "index_todo": 55,
   "index_benign": 159
  },
  "actionable": [
   {
    "code": "A1-22",
    "title": "청년내일저축계좌 중도인출·재가입·미납 — 헷갈리는 6가",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "E4-09",
-   "title": "휴대폰 개통 안면인증, 10월에 단계적 시행이 끝날 예",
    "need": [
     "OSMU",
     "색인요청"
@@ -226,6 +209,22 @@
   {
    "code": "A5-15",
    "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A5-16",
+   "title": "4시간 근무 휴게시간 30분 생략 가능 — 12월 10",
    "need": [
     "색인요청"
    ],
