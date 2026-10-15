@@ -19209,6 +19209,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-queue-1016",
+   "added": "2026-10-16",
+   "what": "Aside 다음 순서(한 장씩): ①#138 F4-27 네이버(진행) → ②#132 F4-28 브랜드커넥트 링크 2개 발급 → ③F4-28 쓰레드(상품 블록 반영본·사장님 '상품 넣어' 03:12) + F4-28 네이버 글 링크 추가 → ④F4-27 검색설명 → ⑤F4-27 인스타·쓰레드. F4-27 브랜드커넥트 검색은 탭 문제로 0회 — 다시 돌려야 affiliate 판정",
+   "due": "2026-10-16",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;d=json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'];print({k:d[k].get('state') for k in ('132','138')})\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
