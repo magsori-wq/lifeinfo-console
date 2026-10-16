@@ -19522,6 +19522,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "shape-check-cp5-1016-plan",
+   "added": "2026-10-16",
+   "what": "형식 변형 계획(사장님 질문 17:45 답변): ①검사 확장(최근 게시 10편·제목 틀·첫 화면·소제목 수/순서·표 수·마무리) ②naverwrite 발행 전 게이트(겹치면 정지·이과장 반송) ③원고 단계 구성 선택+근거 한 줄. 오늘 3편 제목이 전부 '주제 2026, 반전' 같은 틀 — 현재 skeleton_check 는 못 잡음",
+   "due": "2026-10-17",
+   "cmd": "python -c \"from studio import naverrich as n; print(n.skeleton_check('G3-19'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-g319",
+   "added": "2026-10-16",
+   "what": "🔗 G3-19 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-19",
+   "due": "2026-10-16",
+   "cmd": "python studio/blogger.py crosslink --code G3-19",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
