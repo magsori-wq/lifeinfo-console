@@ -19542,6 +19542,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "g319-title-edit-1016",
+   "added": "2026-10-16",
+   "what": "G3-19 네이버 제목 수정(→ 「양산 국화축제 5만3천 점 — 입장료는 아직 미정」) — 이과장 naverwrite(G3-18·G4-12)가 Aside 브라우저를 다 쓴 뒤 asidequeue 에 올린다(같은 브라우저 충돌 방지). 지시서 data/aside_g319_title_hold.txt",
+   "due": "2026-10-16",
+   "cmd": "python -m studio.asidequeue add --file data/aside_g319_title_hold.txt --code G3-19 --kind 기타 --prio 1 --src 이부장",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
