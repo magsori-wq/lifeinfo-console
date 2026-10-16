@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-16",
+ "updated": "2026-10-17",
  "items": [
   {
    "id": "redirect-error",
@@ -19593,6 +19593,16 @@
    "cmd": "python -m studio.watch done --id ig-login-check-1016 --result 본인확인",
    "owner": "user",
    "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "stock-zero-1017",
+   "added": "2026-10-17",
+   "what": "재고 0편 — 루틴 2·4·6 10-16 전부 빈손, 3. kw1016 미보고. 오전에 3. 결과·김장 대책(10-25)·기존 인기 글 후속편·부산양산 지역 소재 확대 검토 후 사장님께 방향 여쭙기",
+   "due": "2026-10-17",
+   "cmd": "python -m studio.topicprop table ; python -c \"from studio import sessionstate as s;print(s.read_info('kw1016'))\"",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
