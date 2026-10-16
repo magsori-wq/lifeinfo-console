@@ -15305,8 +15305,10 @@
    "due": "2026-10-03",
    "cmd": "python -c \"from studio.thumbcheck import needs_photo; print(needs_photo('D5-04','코레일 예매'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:d7dcc720"
+   "state": "done",
+   "by": "세션:d7dcc720",
+   "done_at": "2026-10-16",
+   "result": "thumbcheck.needs_photo 키워드 판정을 H 코드 한정으로 수정. D5-04 코레일 예매→None, F2-01→여행(코드), H1-21 드라마→판정. falsepos 회귀규칙 _r_needsphoto_h_only_1016 추가"
   },
   {
    "id": "docflow-1002-0054",
@@ -15497,8 +15499,10 @@
    "cmd": "python -m studio.ordercheck",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-10-16",
+   "result": "원인=followup 지시서 본문(손등록)에 슬래시 나열·접두어 없는 명령이 섞여 ordercheck 가 옵션을 오귀속. 명령마다 python -m studio. 접두어로 재등록(batchboard order --id followup) → ordercheck 0건(263종/16건). 옛 3건(boss0915·govlink0925batch1·draft0925h116)은 이미 보관/동결돼 대상 밖"
   },
   {
    "id": "docflow-1002-2130",

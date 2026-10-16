@@ -13184,6 +13184,22 @@
    "target": "mailbrief-e409-thumb-1015",
    "detail": "thumbs/357_face_verify.png 존재(30,090B) + E4-09 라이브 URL 존재·교차링크 본문 확인",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-16T12:19:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ordercheck-dead-cmds-1002",
+   "detail": "원인=followup 지시서 본문(손등록)에 슬래시 나열·접두어 없는 명령이 섞여 ordercheck 가 옵션을 오귀속. 명령마다 python -m studio. 접두어로 재등록(batchboard order --id followup) → ordercheck 0건(263종/16건). 옛 3건(boss0915·govlink0925batch1·draft0925h116)은 이미 보관/동결돼 대상 밖",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-16T12:19:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "needsphoto-scope-1002",
+   "detail": "thumbcheck.needs_photo 키워드 판정을 H 코드 한정으로 수정. D5-04 코레일 예매→None, F2-01→여행(코드), H1-21 드라마→판정. falsepos 회귀규칙 _r_needsphoto_h_only_1016 추가",
+   "via": "cli"
   }
  ]
 }
