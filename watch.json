@@ -19512,6 +19512,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "shape-check-cp5-1016",
+   "added": "2026-10-16",
+   "what": "사장님 결정 ① 후반 — 형식 변형 검사기 완성(CP-5 shape_check: 새 원고 구조를 최근 네이버 글과 비교해 같은 틀이면 경고)",
+   "due": "2026-10-17",
+   "cmd": "python -m studio.batchboard show 2>&1 | grep -A3 CP-5",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
