@@ -19558,7 +19558,7 @@
   {
    "id": "xlink-g318",
    "added": "2026-10-16",
-   "what": "🔗 G3-18 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-18",
+   "what": "🔗 G3-18 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-18",
    "due": "2026-10-16",
    "cmd": "python studio/blogger.py crosslink --code G3-18",
    "owner": "claude",
@@ -19574,6 +19574,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "chain-insta-count-1016",
+   "added": "2026-10-16",
+   "what": "asidechain 인스타 검사 — 장수를 못 뽑으면(🟡 embed contextJSON) [실패]로 처리해 정상 게시를 실패로 알림(#172). 🟡 는 통과+주의로 바꿀 것",
+   "due": "2026-10-17",
+   "cmd": "grep -n '실패' studio/asidechain.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
