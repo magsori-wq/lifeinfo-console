@@ -5017,13 +5017,9 @@
     }
    ],
    "owner": "Aside",
-   "order": "[이부장 → Aside] 지시 #147 (2026-10-16) — F4-27 서울억새축제 쓰레드 게시 (📌 전담 채팅)\n\n✅ 보류 해제 — 제휴 링크 발급 완료(#146 09:52): 대가성 문구가 본문 맨 첫 줄에 있고 threadsdraft 게이트 통과(494/500자).\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 한도는 아래 ⑦ 을 따른다(7개 넘어도 시작·새 탭은 openTab→closeTab).\n① 무엇을: F4-27(서울억새축제) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EC%84%9C%EC%9A%B8%EC%96%B5%EC%83%88%EC%B6%95%EC%A0%9C2026.txt  (⚠️ JSON 포장 풀어서 내용만. 495자·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 4개라 카드가 연달아 뜬다 — 상품 링크 카드도 모두 닫는다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_F4-27_seoul_eokse.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검(이과장): threadimg ✅ 실사진 · 쓰레드 원고 495/500자 · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(Pexels, 억새 아님) · 제휴 링크 2개(브랜드커넥트 헤드랜턴·트레킹화, 대가성 문구 맨 첫 줄) · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report (서버가 batchboard now 로 aside 배치에 남긴다)\n   - 시작: {\"batch\":\"aside\",\"what\":\"#147 수신 — F4-27 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"F4-27\",\"what\":\"#147 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.",
-   "order_at": "2026-10-16 09:55",
+   "order": "[이부장 → Aside] 지시 #148 (2026-10-16) — 쓰레드 상품 단독 게시 20261016-1(원김치 쪽파김치 2kg) (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 한도는 아래 ⑦ 을 따른다(7개 넘어도 시작·새 탭은 openTab→closeTab).\n① 무엇을: 계정 @magsori8975 쓰레드에 상품 단독 1게시물(실사진 1장). 사장님 승인 09:48(afflink-20261016-1) · 토스 쉐어링크 발급 완료.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_solo_20261016-1_%EC%AA%BD%ED%8C%8C%EA%B9%80%EC%B9%98.txt  (⚠️ JSON 포장 풀어서 내용만. 137자·page.keyboard.insertText)\n      본문 맨 첫 줄이 대가성 문구(✱ 이 포스팅은 토스쇼핑 쉐어링크 활동의 일환으로…)여야 한다.\n   2. 링크 카드가 뜨면 닫는다(URL 1개) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_solo_20261016-1_jjokpa.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)·og:image 가 첨부 사진인지 확인(profile_pic 이면 이미지가 안 붙은 것)\n③ 사전 점검 완료(pre-cleared, 이과장): threadsdraft --solo 20261016-1 통과(글자수 137/500·제휴 표시 ✅·승인 afflink-20261016-1·첨부 이미지 ✅) · 이미지는 토스쇼핑 상품 대표 이미지(og:image)만 사용(사장님 다운로드 허가 09:52 dl-toss-img-20261016-1), 이미지 안에 「상품 이미지: 토스쇼핑 상품 페이지」 출처 표기 · 오늘 게시 수·중복 게시는 이부장 확인(affiliate solo 로 기게시 아님 확인).\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report (서버가 batchboard now 로 aside 배치에 남긴다)\n   - 시작: {\"batch\":\"aside\",\"what\":\"#148 수신 — 쪽파김치 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"what\":\"#148 쓰레드 상품글 게시 — 대가성 문구 첫 줄·실사진·링크 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 상품 중복 게시 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.",
+   "order_at": "2026-10-16 10:00",
    "order_hist": [
-    {
-     "at": "2026-10-15 22:05",
-     "order": "[이부장 → Aside] 지시 #128 (2026-10-15) — G3-17 블로그스팟 글 검색 설명 넣기\n\n① 무엇을: 블로그스팟 글 「자갈치축제 2026 10/18까지 — 개막 불꽃쇼 놓쳤다면 확인할 것」의 검색 설명(meta description)에 아래 문구를 넣고 업데이트한다. 라이브 meta description 이 이 문구와 정확히 같아야 완료다.\n   문구(101자): 부산 자갈치축제 10월 15~18일, 16~18일 날짜별 시간표입니다. 무료 시식회 16일, 장어 이어달리기 17일, 회 비빔밥 18일 11:30이며 불꽃쇼는 15일 개막식뿐입니다.\n② 어떻게:\n   1. 새 탭으로 https://www.blogger.com/blog/post/edit/4026928033017788339/2789655573393655338 를 연다.\n   2. 본문 에디터가 보일 때까지 기다린다(30초 넘게 \"로드 중\" 스피너면 편집 URL 을 새로고침). 본문이 안 보이면 우측 패널을 건드리지 않는다.\n   3. 우측 「검색 설명」을 펼친다 → 입력칸 클릭 → Ctrl+A → Delete 로 비우고 0자인지 확인한다.\n   4. 위 문구를 실제 키 입력으로 넣는다(값만 JS 로 넣으면 저장이 안 된다).\n   5. 「업데이트」 버튼은 ref 로 누른다(좌표는 화면 배율에 따라 어긋난다).\n   6. https://lifeinfo8975.blogspot.com/2026/10/2026-1018.html 를 새로 열어 meta description 이 문구와 같은지 확인한다.\n③ 사전 점검 완료(pre-cleared): 글은 라이브(200)이고 현재 검색 설명은 공통 문구다. 문구는 본문(공식 일정표 기준 16~18일 시각·불꽃쇼 15일뿐)과 일치한다. 🔴 축제가 10/18 종료라 오늘 밤~내일 안에.\n④ 받을 파일: 없음\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작하면 먼저: {\"batch\":\"aside\",\"what\":\"#128 수신 — G3-17 검색설명 시작\",\"state\":\"doing\"}\n   - 끝나면: {\"batch\":\"aside\",\"code\":\"G3-17\",\"what\":\"#128 라이브 meta description 일치 확인 · 문구 101자\",\"state\":\"done\",\"url\":\"https://lifeinfo8975.blogspot.com/2026/10/2026-1018.html\"}\n⑥ 막히면: state \"blocked\" + 무엇에 막혔는지 → 멈춘다(재시도 2회 넘기지 않는다).\n⑦ 하지 말 것: 본문 수정·라벨 변경·다른 글 편집·발행 상태 변경.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다."
-    },
     {
      "at": "2026-10-15 22:35",
      "order": "[이부장 → Aside] 지시 #129 (2026-10-15) — G3-17 자갈치축제 인스타 게시 (📌 전담 채팅) 🔴 축제 10/18 종료\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: G3-17(자갈치축제) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/jagalchi_fest_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/jagalchi_fest_02_when.png · http://127.0.0.1:8011/api/file?path=insta/jagalchi_fest_03_stage.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 먹거리 날짜 → 무대·체험) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%9E%90%EA%B0%88%EC%B9%98%EC%B6%95%EC%A0%9C2026.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 796자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): osmu_manifest 인스타·쓰레드 준비 · 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224443051134 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · 사진 출처(자갈치시장 사진 CC0(Bernard Gagnon) + Pexels 무료 사진) 캡션 표기 · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#129 수신 — G3-17 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"G3-17\",\"what\":\"#129 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가): 새 탭을 열기 전에 listBrowserTabs() 를 보고, 작업 흔적 탭(example.com·instagram·threads·smartstore·brandconnect·편집창 등)이 있으면 attachBrowserTab(targetId) 후 page.goto(목표URL) 로 그 탭을 재사용한다. 그런 탭이 없을 때만 openTab. 끝나면 쓴 탭은 그대로 두되 보고에 '총 탭 N개' 를 적는다."
@@ -5099,6 +5095,10 @@
     {
      "at": "2026-10-16 09:50",
      "order": "[이부장 → Aside] 지시 #146 (2026-10-16) — F4-27 서울억새축제 브랜드커넥트 링크 2개 발급 (📌 전담 채팅) · 사장님 승인 09:47(afflink-f427)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 한도는 아래 ⑦ 을 따른다(7개 넘어도 시작·브랜드커넥트는 openTab 으로 새 탭→끝나면 closeTab).\n① 무엇을: 네이버 브랜드커넥트에서 아래 두 상품의 제휴 링크(naver.me)를 발급한다. 게시는 하지 않는다.\n   1. 「몬스터파워 XHP70 헤드랜턴 해루질 자전거 안전모 c타입 낚시 등산용 충전식 방수」(판매처 대륙의 실수 · 조사 때 할인가 21,000원 · 수수료 8%)\n   2. 「르까프 다이얼 트레킹화 멀티트랙 등산화 경량 트래킹화 워킹화 경등산화」(판매처 슈마레 · 조사 때 할인가 71,100원 · 수수료 5%)\n② 어떻게: brandconnect.naver.com 쇼핑 커넥트 검색 「헤드랜턴」·「트레킹화」 → 상품명·판매처가 정확히 같은 것 → 링크 발급 → naver.me 주소 복사. 다르면 발급하지 말고 blocked 로 무엇이 달랐는지 보고.\n③ 사전 점검(이부장): 조사 기록 docs/affiliate_F4-27.md · 사장님 승인 afflink-f427 · 대상 = F4-27 네이버 글·쓰레드.\n④ 받을 파일: 없음\n⑤ 보고: POST http://127.0.0.1:8011/api/report (서버가 batchboard now 로 aside 배치에 남긴다)\n   - 시작: {\"batch\":\"aside\",\"what\":\"#146 수신 — F4-27 링크 발급 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"F4-27\",\"what\":\"#146 브랜드커넥트 링크 2개 — 1) <상품명·판매처·표시가·수수료> <naver.me 주소> 2) <같은 형식>\",\"state\":\"done\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 로그인 화면이면 멈추고 보고.\n⑦ 하지 말 것: 게시·글 수정 · 다른 상품 발급 · 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다."
+    },
+    {
+     "at": "2026-10-16 09:55",
+     "order": "[이부장 → Aside] 지시 #147 (2026-10-16) — F4-27 서울억새축제 쓰레드 게시 (📌 전담 채팅)\n\n✅ 보류 해제 — 제휴 링크 발급 완료(#146 09:52): 대가성 문구가 본문 맨 첫 줄에 있고 threadsdraft 게이트 통과(494/500자).\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 한도는 아래 ⑦ 을 따른다(7개 넘어도 시작·새 탭은 openTab→closeTab).\n① 무엇을: F4-27(서울억새축제) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EC%84%9C%EC%9A%B8%EC%96%B5%EC%83%88%EC%B6%95%EC%A0%9C2026.txt  (⚠️ JSON 포장 풀어서 내용만. 495자·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 4개라 카드가 연달아 뜬다 — 상품 링크 카드도 모두 닫는다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_F4-27_seoul_eokse.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검(이과장): threadimg ✅ 실사진 · 쓰레드 원고 495/500자 · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(Pexels, 억새 아님) · 제휴 링크 2개(브랜드커넥트 헤드랜턴·트레킹화, 대가성 문구 맨 첫 줄) · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report (서버가 batchboard now 로 aside 배치에 남긴다)\n   - 시작: {\"batch\":\"aside\",\"what\":\"#147 수신 — F4-27 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"F4-27\",\"what\":\"#147 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다."
     }
    ]
   },
@@ -7012,17 +7012,25 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-16 09:59:51",
+ "updated": "2026-10-16 10:01:42",
  "current": {
-  "batch": "followup",
+  "batch": "aside",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[체인] #147 F4-27 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeiTQKpAdUC · ✅ 쓰레드 이미지 ↔ thread_F4-27_seoul_eokse.png  MAD 0.0 · ) — [이과장] 기록: python -m studio.pipeline threads-link --code F4-27 --url https://www.threads.com/@magsori8975/post/DeiTQKpAdUC → 4채널 완결 확인",
-  "since": "16:25",
-  "since_at": "2026-10-13 16:25:53"
+  "what": "[Aside][doing] #148 수신 — 쪽파김치 쓰레드 시작",
+  "since": "11:31",
+  "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "10:01:42",
+   "text": "▶   — 1/7단계 · [Aside][doing] #148 수신 — 쪽파김치 쓰레드 시작"
+  },
+  {
+   "t": "10:00:35",
+   "text": "📄 aside 작업 지시 등록(1797자, 2026-10-16 10:00)"
+  },
   {
    "t": "09:59:51",
    "text": "▶   — 1/7단계 · [체인] #147 F4-27 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeiTQKpAdUC · ✅ 쓰레드 이미지 ↔ thread_F4-27_seoul_eokse.png  MAD 0.0 · ) — [이과장] 기록: python -m studio.pipeline threads-link --code F4-27 --url https://www.threads.com/@magsori8975/post/DeiTQKpAdUC → 4채널 완결 확인"
@@ -7174,14 +7182,6 @@
   {
    "t": "04:31:02",
    "text": "▶   — 1/7단계 · [이부장 → 이과장] F4-28 네이버 상품 추가 #141 막힘(수정기 커서 이동·본문 훼손 위험, 저장 안 함·라이브 무손상). 방식 바꾼다: 상품 블록 반영된 네이버 원고로 서식본(rich_F4-28) 다시 굽고 → Aside 초안 「수정 화면에서 본문 Ctrl+A → 서식본 Ctrl+V 전체 교체 → 대표 이미지·카테고리·태그 확인 → 저장」 으로 다시 써라(새 글 게시와 같은 검증된 길). 초안 경로 보고."
-  },
-  {
-   "t": "04:30:22",
-   "text": "▶   — 1/7단계 · [Aside][blocked] [F4-28] #141 blocked — 네이버 수정기에서 첫 문단 커서가 반복적으로 중간 이동해 기존 본문 훼손 위험. 저장·발행하지 않고 작업 탭 종료, 라이브 HTTP 200 유지. 안전한 삽입 경로 재지시 필요 · 총 탭 8개 · https://blog.naver.com/magsori8975/224443241432"
-  },
-  {
-   "t": "04:23:40",
-   "text": "▶   — 1/7단계 · [Aside][doing] #141 수신 — F4-28 네이버 상품 추가 시작"
   }
  ],
  "currents": {
@@ -8108,7 +8108,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][done] [F4-27] #147 쓰레드 게시 — 실사진·대가성 첫 줄·제휴 링크 2개·블로그·네이버 링크·출처 확인·라이브 HTTP 200·작업 탭 종료·총 탭 6개 · https://www.threads.com/@magsori8975/post/DeiTQKpAdUC",
+   "what": "[Aside][doing] #148 수신 — 쪽파김치 쓰레드 시작",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -14710,6 +14710,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "[체인] #147 F4-27 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeiTQKpAdUC · ✅ 쓰레드 이미지 ↔ thread_F4-27_seoul_eokse.png  MAD 0.0 · ) — [이과장] 기록: python -m studio.pipeline threads-link --code F4-27 --url https://www.threads.com/@magsori8975/post/DeiTQKpAdUC → 4채널 완결 확인"
+  },
+  {
+   "ts": "2026-10-16 10:01:42",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #148 수신 — 쪽파김치 쓰레드 시작"
   }
  ]
 }
