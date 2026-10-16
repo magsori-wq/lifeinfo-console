@@ -19482,6 +19482,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "aside-naver-iframe-1016",
+   "added": "2026-10-16",
+   "what": "Aside 네이버 게시 blocked(#151·#153 '편집기 DOM 미로드') 원인 = 편집기가 iframe(PostWriteForm) 안 — 지시서 양식·스킬에 반영 필요(이부장 실측 15:03). #155 결과로 처방 검증",
+   "due": "2026-10-16",
+   "cmd": "python -c \"import json;o=json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'];print({k:o[k].get('state') for k in ('155','156') if k in o})\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
