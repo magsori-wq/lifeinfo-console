@@ -19502,6 +19502,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-aside-paste-1016",
+   "added": "2026-10-16",
+   "what": "Aside 네이버 본문 넣기 실패 조사 — 오전(#134·#138) 성공, 14:36 이후 #151·#153·#155·#156·#158 Ctrl+V 실패, #161 합성 paste·insertHTML 둘 다 0자. 남은 가설: 편집 영역 실제 클릭(포커스) 없이 키 입력 · 네이버 편집기 변경. 실제 마우스 클릭 후 keyboard.insertText 한 줄 시험부터",
+   "due": "2026-10-17",
+   "cmd": "python -c \"import json;print(json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'].get('161'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
