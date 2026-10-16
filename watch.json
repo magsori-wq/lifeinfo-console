@@ -19312,6 +19312,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "anthropic-mail-relay-1016",
+   "added": "2026-10-16",
+   "what": "Anthropic 수신 메일(Claude Desktop 루틴 사이드바 건 support@anthropic.com 회신) 오면 이부장에게 즉시 보고",
+   "due": "2026-10-16",
+   "cmd": "python studio/gmailread.py scan --body",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:0dca49c7"
   }
  ]
 }
