@@ -19588,13 +19588,13 @@
   {
    "id": "ig-login-check-1016",
    "added": "2026-10-16",
-   "what": "인스타 새 로그인 알림 확인 — isanggon7750 계정, Windows Chrome·부산, 10-14 20:50(PDT). 【권고】본인(Aside·PC 작업)일 가능성이 높으니 확인만 【근거】10-14 저녁 PC 에서 Aside 브라우저로 인스타 작업 중이었다 · 위치 부산 【위험】본인이 아니면 계정 탈취 — 그때는 비밀번호 변경·다른 세션 로그아웃",
+   "what": "Instagram 새 로그인 알림(isanggon7750 · Busan·Windows·Chrome · 10/14 20:50 PDT) 본인 여부 사장님 확인",
    "due": "2026-10-17",
-   "cmd": "python -m studio.watch done --id ig-login-check-1016 --result 본인확인",
+   "cmd": "python studio/gmailread.py scan --body",
    "owner": "user",
-   "kind": "approve",
-   "state": "done",
-   "by": "이부장",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:e630c99b",
    "done_at": "2026-10-17",
    "result": "사장님 승인(05:09) — 본인 로그인 확인"
   },
