@@ -19500,8 +19500,10 @@
    "due": "2026-10-16",
    "cmd": "python -m studio.watch done --id aside-tabs-close-1016 --result 닫음",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-17",
+   "result": "10-17 14:18 Aside 실측 총 탭 6개 — 정리 필요 없음"
   },
   {
    "id": "naver-aside-paste-1016",
@@ -19678,6 +19680,18 @@
    "what": "Aside 지시 채팅을 사이드패널 새 채팅으로 이전(사장님 (나) 결정 14:04) — 사장님이 새 채팅 만들면 ID 교체 후 첫 지시 시험",
    "due": "2026-10-17",
    "cmd": "C:/Users/magso/AppData/Local/Aside/CLI/versions/1.26.916.1741/aside.exe session list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-17",
+   "result": "새 채팅 vPIdf4DvPyS1aSQS 로 교체, 시험 #184 수신·완료 보고 확인"
+  },
+  {
+   "id": "aside-newchat-dup-1017",
+   "added": "2026-10-17",
+   "what": "새 Aside 채팅이 시험 #184 를 받고 시작·완료 보고를 각 2번 올렸다(옛 채팅은 13:38 이후 움직임 없음). 깨우기가 두 번 들어갔는지 확인 — 다음 실지시(게시)에서 중복 실행이 없는지 볼 것",
+   "due": "2026-10-18",
+   "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
