@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-10-17 06:00:44",
- "source_head": "df1073a9a785",
+ "computed_at": "2026-10-17 09:28:27",
+ "source_head": "98232459bb32",
  "ids": [
   "aside-tabs-close-1016",
+  "ig-login-check-1016",
   "routine1-cron-close-1016"
  ],
  "posts": [],
@@ -21,6 +22,14 @@
    "what": "루틴1 창의 Anthropic 메일 크론 5ba62e73 끄기(사장님 결정 '이부장 것만'의 마무리)",
    "due": "2026-10-16",
    "cmd": "루틴1(1-Daily email briefing) 창에 '지워' 입력 또는 창 닫기 【권고】창 닫기(크론은 세션 전용이라 함께 꺼짐) 【근거】루틴1이 타 세션 요청만으로는 삭제 보류 【위험】없음(이부장 13·43분 감시가 계속 돎)",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "ig-login-check-1016",
+   "what": "Instagram 새 로그인 알림(isanggon7750 · Busan·Windows·Chrome · 10/14 20:50 PDT) 본인 여부 사장님 확인",
+   "due": "2026-10-17",
+   "cmd": "python studio/gmailread.py scan --body",
    "state": "todo",
    "kind": "action"
   }
