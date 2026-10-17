@@ -19802,6 +19802,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-naver-login-1018",
+   "added": "2026-10-18",
+   "what": "Aside 네이버 로그인이 하루 만에 또 풀렸습니다(10-17 14시 로그인 → 10-18 05시 로그인 요구 화면). cadaily 10-18분을 못 읽었습니다. 급하지 않습니다 — 기상 후 한 번만 로그인해 주세요. 로그인 창에서 「로그인 상태 유지」를 꼭 체크하면 더 오래 갑니다",
+   "due": "2026-10-18",
+   "cmd": "Aside 앱 → 새 탭 → https://creator-advisor.naver.com → 네이버 로그인(로그인 상태 유지 체크) → 3.에게 '로그인 했다'",
+   "owner": "user",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "aside-naver-login-expiry-1018",
+   "added": "2026-10-18",
+   "what": "Aside 네이버 로그인이 하루 만에 다시 풀림(10-17 13:55 로그인 → 10-18 05:02 /introduction). 원인 후보: '로그인 상태 유지' 미체크·네이버 보안 세션 만료·Aside 쿠키 정리. 사장님 다음 로그인 때 '로그인 상태 유지' 체크 여부 확인, 또 풀리면 원인 조사",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.watch --id aside-naver-login-1018",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
