@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-17 21:11",
+ "generated": "2026-10-17 22:33",
  "routines": [
   {
    "num": 1,
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "10/16 22:32",
-   "next": "10/17 22:30",
+   "last": "10/17 22:33",
+   "next": "10/18 22:30",
    "model": "sonnet-5-5",
    "report_day": "1016",
    "report": "오늘 발행 5편 중 3편 대조: F4-27 공식 공고와 전부 일치, G3-18 기간·장소 일치(시간표 2건 미확인), G4-12 산술 일치(원문 JS셸이라 수치 재대조 못 함). F4-28·G3-19·기존 글 위험순위 검증은 못 함. 오류 발견 0.",
    "runs": [
+    {
+     "at": "10/17 22:33",
+     "link": "claude://claude.ai/epitaxy/local_befccf56-8797-47c9-8c80-15d54628e33e",
+     "archived": false
+    },
     {
      "at": "10/16 22:41",
      "link": "claude://claude.ai/epitaxy/local_44b1cf1f-37f8-4177-bec3-7228f4156960",
@@ -182,11 +187,6 @@
     {
      "at": "10/13 22:45",
      "link": "claude://claude.ai/epitaxy/local_8f5e2ab7-6733-45e2-8dee-86dd2cec6207",
-     "archived": true
-    },
-    {
-     "at": "10/12 22:43",
-     "link": "claude://claude.ai/epitaxy/local_5d13755d-8bdb-4bb6-9630-d16dbf3a0c7a",
      "archived": true
     }
    ]
