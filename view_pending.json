@@ -1,111 +1,17 @@
 {
- "computed_at": "2026-10-17 13:19:08",
- "source_head": "cbe586d978f4",
+ "computed_at": "2026-10-17 14:24:36",
+ "source_head": "a12df98d5a35",
  "ids": [
-  "A2-26",
-  "aside-tabs-close-1016",
-  "ig-login-check-1016",
   "routine1-cron-close-1016"
  ],
- "posts": [
-  {
-   "code": "A2-26",
-   "title": "주거급여 2027 얼마 받나? 서울 1인 월 38만 1천 원까지, 실제 지급액 계산법",
-   "slug": "주거급여2027지급액계산",
-   "eng": "housing_benefit_2027",
-   "ch": {
-    "naver": {
-     "url": "https://blog.naver.com/magsori8975/224444610916",
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_주거급여2027지급액계산.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/366_housing_benefit_2027.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "done"
-    },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_주거급여2027지급액계산.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "실사진",
-       "path": "insta/thread/thread_A2-26_housing_benefit_2027.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "ready"
-    },
-    "instagram": {
-     "url": "https://www.instagram.com/magsori8975/p/DelM_lNEbmQ/",
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_주거급여2027지급액계산.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "카드1",
-       "path": "insta/housing_benefit_2027_01_cover.png",
-       "img": true,
-       "exists": true
-      },
-      {
-       "label": "카드2",
-       "path": "insta/housing_benefit_2027_02_calc.png",
-       "img": true,
-       "exists": true
-      },
-      {
-       "label": "카드3",
-       "path": "insta/housing_benefit_2027_03_apply.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "done"
-    }
-   }
-  }
- ],
+ "posts": [],
  "publish": [],
  "actions": [
-  {
-   "id": "aside-tabs-close-1016",
-   "what": "Aside 브라우저 탭 정리 — 서치콘솔 탭 5개·YouTube·ENA 닫기(Ctrl+W). 【권고】지금 닫기 【근거】네이버 게시 성공 때 탭 8개, 지금 11~12개에서 본문 붙여넣기 연속 실패(#153·#155) — 탭 수가 원인인지 가르는 시험 【위험】없음(조회용 탭)",
-   "due": "2026-10-16",
-   "cmd": "python -m studio.watch done --id aside-tabs-close-1016 --result 닫음",
-   "state": "todo",
-   "kind": "action"
-  },
   {
    "id": "routine1-cron-close-1016",
    "what": "루틴1 창의 Anthropic 메일 크론 5ba62e73 끄기(사장님 결정 '이부장 것만'의 마무리)",
    "due": "2026-10-16",
    "cmd": "루틴1(1-Daily email briefing) 창에 '지워' 입력 또는 창 닫기 【권고】창 닫기(크론은 세션 전용이라 함께 꺼짐) 【근거】루틴1이 타 세션 요청만으로는 삭제 보류 【위험】없음(이부장 13·43분 감시가 계속 돎)",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "ig-login-check-1016",
-   "what": "Instagram 새 로그인 알림(isanggon7750 · Busan·Windows·Chrome · 10/14 20:50 PDT) 본인 여부 사장님 확인",
-   "due": "2026-10-17",
-   "cmd": "python studio/gmailread.py scan --body",
    "state": "todo",
    "kind": "action"
   }
