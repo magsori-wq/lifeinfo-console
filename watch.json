@@ -19635,7 +19635,19 @@
    "due": "2026-10-18",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-17",
+   "result": "aside_order.sh 에 insta 종류일 때 ⑨ 30초 뒤 재확인 규칙 자동 첨부(커밋). 다음 인스타 지시에서 실제로 확인 지시가 안 생기는지 볼 것"
+  },
+  {
+   "id": "insta-recheck-rule-verify-1017",
+   "added": "2026-10-17",
+   "what": "aside_order.sh ⑨(인스타 공유 뒤 30초 재확인) 실동작 확인 — 다음 인스타 지시가 blocked 없이 done+URL 로 끝나고 확인 지시가 안 생겼는지",
+   "due": "2026-10-18",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
