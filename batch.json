@@ -2480,17 +2480,21 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-17 13:17:29",
+ "updated": "2026-10-17 13:23:59",
  "current": {
   "batch": "followup",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[이부장 → 이과장] A2-26 쓰레드 기록 빠짐(DB osmu 에 threads 없음) — #182 게시 확인됨. 기록: python -m studio.pipeline threads-link --code A2-26 --url https://www.threads.com/@magsori8975/post/DelNMq8gZ2s → 끝나면 4채널 완결 보고",
+  "what": "[이부장 → 이과장] A2-26 추가: 본문 교차링크도 빠짐(selfcheck) — threads-link 기록 뒤 python studio/blogger.py crosslink --code A2-26 실행, 라이브 본문에 네이버·쓰레드·인스타 링크 확인 후 보고",
   "since": "16:25",
   "since_at": "2026-10-13 16:25:53"
  },
  "log": [
+  {
+   "t": "13:23:59",
+   "text": "▶   — 1/7단계 · [이부장 → 이과장] A2-26 추가: 본문 교차링크도 빠짐(selfcheck) — threads-link 기록 뒤 python studio/blogger.py crosslink --code A2-26 실행, 라이브 본문에 네이버·쓰레드·인스타 링크 확인 후 보고"
+  },
   {
    "t": "13:17:29",
    "text": "▶   — 1/7단계 · [이부장 → 이과장] A2-26 쓰레드 기록 빠짐(DB osmu 에 threads 없음) — #182 게시 확인됨. 기록: python -m studio.pipeline threads-link --code A2-26 --url https://www.threads.com/@magsori8975/post/DelNMq8gZ2s → 끝나면 4채널 완결 보고"
@@ -2646,10 +2650,6 @@
   {
    "t": "12:49:25",
    "text": "▶   — 1/7단계 · ✅ E4-06 네이버 게시·자동기록 https://blog.naver.com/magsori8975/224444606097 (naverwrite ready→published, 제목 31자·공연·여행·생활꿀팁). 인스타 캡션·쓰레드 원고(381/500자 교차링크 ✅)·카드3·Aside 초안 3건(E4-06_검색설명·인스타게시·쓰레드게시) 완료. A2-26 발행 완료(라이브 200), 다음 A2-26 네이버"
-  },
-  {
-   "t": "12:46:10",
-   "text": "▶   — 1/7단계 · E4-06·A2-26 발행 완료(라이브 200). E4-06 네이버 naverwrite 진행(카테고리 공연·여행·생활꿀팁, 제목 31자)"
   }
  ],
  "currents": {
@@ -2766,7 +2766,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[이부장 → 이과장] A2-26 쓰레드 기록 빠짐(DB osmu 에 threads 없음) — #182 게시 확인됨. 기록: python -m studio.pipeline threads-link --code A2-26 --url https://www.threads.com/@magsori8975/post/DelNMq8gZ2s → 끝나면 4채널 완결 보고",
+   "what": "[이부장 → 이과장] A2-26 추가: 본문 교차링크도 빠짐(selfcheck) — threads-link 기록 뒤 python studio/blogger.py crosslink --code A2-26 실행, 라이브 본문에 네이버·쓰레드·인스타 링크 확인 후 보고",
    "since": "16:25",
    "since_at": "2026-10-13 16:25:53"
   },
@@ -2993,14 +2993,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-03 13:23:23",
-   "bid": "draft1003b306",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "📋 복창: B3-06 연말정산 미리보기 초안(판단형비교+함정)·개통일 단정 금지·2026 신규=자녀수 한도 가산(한도초과 추가공제는 종전규정)·2023 한시 공제율 현행 서술 금지·초안+썸네일+pubqueue·제휴 판정 기록, 끝나면 mark"
-  },
   {
    "ts": "2026-10-03 13:30:11",
    "bid": "pub1003h122",
@@ -10112,6 +10104,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "[이부장 → 이과장] A2-26 쓰레드 기록 빠짐(DB osmu 에 threads 없음) — #182 게시 확인됨. 기록: python -m studio.pipeline threads-link --code A2-26 --url https://www.threads.com/@magsori8975/post/DelNMq8gZ2s → 끝나면 4채널 완결 보고"
+  },
+  {
+   "ts": "2026-10-17 13:23:59",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[이부장 → 이과장] A2-26 추가: 본문 교차링크도 빠짐(selfcheck) — threads-link 기록 뒤 python studio/blogger.py crosslink --code A2-26 실행, 라이브 본문에 네이버·쓰레드·인스타 링크 확인 후 보고"
   }
  ]
 }
