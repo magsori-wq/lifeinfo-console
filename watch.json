@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-17",
+ "updated": "2026-10-18",
  "items": [
   {
    "id": "redirect-error",
@@ -19789,6 +19789,16 @@
    "owner": "user",
    "state": "todo",
    "kind": "approve",
+   "by": "이부장"
+  },
+  {
+   "id": "dupcheck-miss-c114-1018",
+   "added": "2026-10-18",
+   "what": "dupcheck 가 '건강검진 연말 미수검 12월 31일 지나면' 을 🟢신규로 판정 — 실제로는 C1-14(건강검진 과태료·12/31 마감)와 같은 앵글. 키워드 겹침 판정이 동의어(마감↔지나면·미수검↔안 받으면)를 못 잡는다. 회귀 규칙·동의어 보강 검토",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.dupcheck \"건강검진 연말 미수검 12월 31일 지나면\"",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
