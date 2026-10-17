@@ -19728,9 +19728,24 @@
    "due": "2026-10-17",
    "cmd": "python -m studio.watch done --id dl-photo-g320-boss-1017 --result 사장님승인",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-10-17",
+   "result": "사장님 결재함 항목 dl-photo-g320-boss-ok-1017 로 올림(owner=user)"
+  },
+  {
+   "id": "dl-photo-g320-boss-ok-1017",
+   "added": "2026-10-17",
+   "what": "【권고】허가 【근거】G3-20 부산고등어축제(10/30~11/1 송도) 글에 송도 실사진 필요, 로컬에 0장. 위키미디어 Songdo Beach Area and Namhang Bridge in Busan.jpg · CC BY 4.0 · S h y numis(이부장이 API로 라이선스 확인). 영도다리 G3-18 과 같은 방식 【위험】낮음 — 캡션에 작가·라이선스·원본 링크 표기",
+   "due": "2026-10-17",
+   "cmd": "python -m studio.watch done --id dl-photo-g320-boss-1017 --result 사장님승인",
+   "owner": "user",
+   "state": "done",
+   "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-10-17",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   }
  ]
 }
