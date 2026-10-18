@@ -1414,8 +1414,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    판정은 SS(CPX.status · session_state) 그대로 — 새로 세지 않는다.
   var _ago=function(t){ var d=Date.parse(String(t||'').replace(' ','T')); return isNaN(d)?1e12:(Date.now()-d); };
   // 막힘·안 읽음은 오래될수록 더 띄운다. 「대기」만 최근 48시간 — 한 달 지난 대기 배치까지 띄우면 지울 수 없는 빨간불이 된다
+  // 🔴 2026-10-18 사장님 헛경보 지적 — ①예약 루틴은 다음 실행 때 읽는 것이 정상이라 「안 읽음」이 막힘이 아니다
+  //    ②지시 등록 30분 안의 「안 읽음」은 아직 받는 중이다(이과장은 메시지로 받아 먼저 일한다). 둘 다 막힘 칸에서 뺀다.
+  var _oaOf=function(id){ var b=((B.batches)||{})[id]||{}; return _ago(b.order_at); };
   var stuck=SS.filter(function(x){ var fresh=_ago(x.repAt||x.last)<48*3600e3;
-      return x.st==='block'||x.st==='unread'||(x.s==='waiting'&&fresh&&x.st!=='closed'&&x.st!=='frozen'); });
+      var unreadReal = x.st==='unread' && !/루틴/.test(x.own) && _oaOf(x.id)>30*60e3;
+      return x.st==='block'||unreadReal||(x.s==='waiting'&&fresh&&x.st!=='closed'&&x.st!=='frozen'); });
   var stuckBody=stuck.length?('<div class="card" style="border-left:4px solid #b91c1c">'
      +'<div class="hd"><span class="ttl">⛔ 막힘·멈춤 세션 '+stuck.length+'</span></div>'
      +stuck.map(function(x){

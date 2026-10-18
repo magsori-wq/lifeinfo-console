@@ -19991,8 +19991,20 @@
    "due": "2026-10-19",
    "cmd": "python -m studio.cpstate --list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-18",
+   "result": "approval.html 막힘 칸에서 루틴 안읽음·30분 내 안읽음 제외, Aside 로 화면 확인(막힘 칸 사라짐)"
+  },
+  {
+   "id": "explorer-phone-spinner-1018",
+   "added": "2026-10-18",
+   "what": "탐색기 탭 로딩원 무한회전 — 원인 추정: 탐색창 휴대폰(S23 Ultra, CrossDevice) 항목이 10-14 11:02 이후 연결 끊김. 사장님이 '파일 탐색기에 모바일 장치 표시' 끄기로 결정(10-18). 키가 사라지고 3일간 재발 없으면 원인 확정",
+   "due": "2026-10-21",
+   "cmd": "reg query \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\" /s /f CrossDevice",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
   }
  ]
 }
