@@ -1,16 +1,34 @@
 {
- "rev": "9e8d3ef01",
+ "rev": "da2cb06b1",
  "counts": {
-  "total": 386,
-  "osmu_done": 386,
+  "total": 387,
+  "osmu_done": 387,
   "osmu_pending": 0,
   "indexed": 0,
-  "index_pending": 386,
+  "index_pending": 387,
   "index_requested": 160,
-  "index_todo": 64,
+  "index_todo": 65,
   "index_benign": 162
  },
  "actionable": [
+  {
+   "code": "C1-17",
+   "title": "외래진료 300회 본인부담 90% — 해당자는 7,76",
+   "need": [
+    "인스타",
+    "쓰레드",
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -206,22 +224,6 @@
   {
    "code": "A5-15",
    "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-16",
-   "title": "4시간 근무 휴게시간 30분 생략 가능 — 12월 10",
    "need": [
     "색인요청"
    ],
