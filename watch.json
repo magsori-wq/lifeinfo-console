@@ -20271,8 +20271,10 @@
    "due": "2026-10-21",
    "cmd": "powershell -c \"(Get-ItemProperty 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked').PSObject.Properties | ? Name -like '{*' | % Value\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:cf890880"
+   "state": "done",
+   "by": "세션:cf890880",
+   "done_at": "2026-10-19",
+   "result": "효과 없음: 탐색기 재시작 후 처음엔 안 돌다 작업 중 다시 회전(사장님 04:30). 차단 4개 되돌림(남은 값 0 확인)"
   }
  ]
 }
