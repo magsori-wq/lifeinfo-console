@@ -19983,6 +19983,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "cpstate-unread-falsealarm-1018",
+   "added": "2026-10-18",
+   "what": "CP '막힘·멈춤' 헛경보: ①루틴 공통 지시서 갱신 직후 '안 읽음'(루틴은 다음 실행에 읽는 게 정상) ②이과장이 메시지로 받아 이미 발행 끝낸 pub 배치를 '안 읽음'으로 표시. 판정을 '지시서 열람'이 아니라 '결과물/보고 유무'와 루틴 다음 실행 시각 기준으로 보정",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.cpstate --list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
