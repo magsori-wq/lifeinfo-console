@@ -1813,6 +1813,26 @@
      "base_code": "8-lifeinfo-issue-product",
      "date": "2026-10-19",
      "at": "2026-10-19 07:13"
+    },
+    {
+     "code": "daily-email-briefing-1019",
+     "title": "daily-email-briefing (A)",
+     "state": "done",
+     "note": "🔴 사장님 할 일 1건: GitHub 토큰 lifeinfo-console-deploy 10-25 만료(재발급 링크 watch gh-pat-lifeinfo-console-deploy-1025). 애드센스 GETTING_READY(심사 중) · 새 중요 메일 외엔 무해. 점검: magsori 15·m8975 1(Instagram 로그인 알림=기결정)·aroma 0 · GSC 7일 0통 · 이어받은 것=PAT 외 신규 · 새로 본 것=publish 10-18 실패 사유=A1-23 V0 미검사 차단(게이트 정상), console 피드드리프트 10-17 실패=라이브/DB 어긋남(원인 미확인)",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing",
+     "date": "2026-10-19",
+     "at": "2026-10-19 08:08"
+    },
+    {
+     "code": "daily-email-briefing-1019-1019",
+     "title": "daily-email-briefing-1019 (A)",
+     "state": "done",
+     "note": "🔴 사장님 할 일 1건: GitHub 토큰 lifeinfo-console-deploy 10-25 만료(재발급 링크 watch gh-pat-lifeinfo-console-deploy-1025). 애드센스 GETTING_READY(심사 중). 점검: magsori 15·m8975 1(Instagram 로그인 알림=기결정)·aroma 0·GSC 7일 0통. 새로 본 것=publish 10-18 실패 사유=A1-23 V0 미검사 차단(게이트 정상), console 피드드리프트 10-17 실패=라이브/DB 어긋남(원인 미확인)\n▸ 08:09 test\n▸ 08:09 🔴 사장님 할 일 1건: GitHub 토큰 lifeinfo-console-deploy 10-25 만료(watch gh-pat-lifeinfo-console-deploy-1025). 애드센스 GETTING_READY. magsori15·m8975 1·aroma 0·GSC 0통. publish 10-18 실패=A1-23 V0 미검사 차단(정상), console 드리프트 10-17 실패 원인 미확인",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing-1019",
+     "date": "2026-10-19",
+     "at": "2026-10-19 08:09"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -2849,7 +2869,7 @@
    "order_at": "2026-10-19 04:37"
   }
  },
- "updated": "2026-10-19 07:13:56",
+ "updated": "2026-10-19 08:09:10",
  "current": {
   "batch": "followup",
   "code": "",
@@ -2860,6 +2880,14 @@
   "since_at": "2026-10-13 16:25:53"
  },
  "log": [
+  {
+   "t": "08:08:50",
+   "text": "✅ daily-email-briefing-1019-1019 완료 — daily-email-briefing-1019 (A)"
+  },
+  {
+   "t": "08:08:42",
+   "text": "✅ daily-email-briefing-1019 완료 — daily-email-briefing (A)"
+  },
   {
    "t": "07:13:56",
    "text": "✅ 8-lifeinfo-issue-product-1019 완료 — 8-lifeinfo-issue-product (H)"
@@ -3011,14 +3039,6 @@
   {
    "t": "04:56:31",
    "text": "▶   — 1/7단계 · [Aside][done] [B1-10] #214 라이브 meta description 일치 확인 · 문구 127자 · 지시서 인용 제목은 실제 제목('자동차세 체납 번호판 영치 — 내 차 영치 대상 3문항…')과 달라 복붙 오기로 보임, URL·문구는 글 내용과 일치해 진행 · 총 탭 11개 · https://lifeinfo8975.blogspot.com/2026/10/3-12-2026.html"
-  },
-  {
-   "t": "04:55:51",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-19 04:55 — 지시 #214 시작 · B1-10 검색설명"
-  },
-  {
-   "t": "04:55:32",
-   "text": "📄 aside 작업 지시 등록(1988자, 2026-10-19 04:55)"
   }
  ],
  "currents": {
