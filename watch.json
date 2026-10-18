@@ -20135,8 +20135,10 @@
    "due": "2026-10-19",
    "cmd": "ls -la 'D:/~$26년09월매출 - 복사본.xlsx' ; reg query 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Modules\\GlobalSettings\\DetailsContainer'",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:cf890880"
+   "state": "done",
+   "by": "세션:cf890880",
+   "done_at": "2026-10-18",
+   "result": "엑셀 가설 약화: 18:17 캡처에서 엑셀 없는 docs·Circle to 도 회전. 회전 3탭 모두 직전에 파일이 바뀐 폴더(Circle to·원시데이터 18:17, docs 18:09)"
   },
   {
    "id": "stock-discovery-1018b",
@@ -20201,6 +20203,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "explorer-tab-spinner-change-1018",
+   "added": "2026-10-18",
+   "what": "탐색기 탭 회전 3차 가설: 뒤에 깔린 탭의 폴더에 파일이 바뀌면(캡처 저장·엑셀 저장·세션 쓰기) 새로고침 표시가 남아 계속 돈다(Insider 26300). 확인: 도는 탭 클릭 시 즉시 멈추나 · 안 바뀌는 폴더 탭은 안 도나",
+   "due": "2026-10-19",
+   "cmd": "powershell -c \"Get-ChildItem 'C:\\ProgramData\\Windows Master Store\\Circle to Act' | Sort LastWriteTime -Desc | Select -First 1 Name,LastWriteTime\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
   }
  ]
 }
