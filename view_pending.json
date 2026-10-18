@@ -1,41 +1,64 @@
 {
- "computed_at": "2026-10-19 04:24:32",
- "source_head": "8224aff8f05e",
+ "computed_at": "2026-10-18 19:29:22",
+ "source_head": "25f3f093b9e5",
  "ids": [
   "B1-10",
   "C3-09",
-  "G3-22",
-  "gplay-meta-sub-1020"
+  "G3-22"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "C3-09",
    "title": "수능 앞 ADHD 약 대리처방·전달은 불법 — 식약처 10/19~11/18 의료기관 집중점검, 조문상 처벌 구간 (2026)",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 수능ADHD약대리처방집중점검_글_HTML.txt",
-     "path": "수능ADHD약대리처방집중점검_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "수능ADHD약대리처방집중점검",
+   "eng": "adhd_csat",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_수능ADHD약대리처방집중점검.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/375_adhd_csat.png",
+       "img": true,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/375n_adhd_csat.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_수능ADHD약대리처방집중점검.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/375n_adhd_csat.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_수능ADHD약대리처방집중점검.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "ready"
-  },
+   }
+  }
+ ],
+ "publish": [
   {
    "code": "B1-10",
    "title": "자동차세 체납 번호판 영치 — 내 차 영치 대상 3문항, 12월 말까지 야간 단속 강화·독촉 순서·가산세·일시 해제 (2026)",
@@ -91,7 +114,8 @@
    "light": "ready"
   }
  ],
- "actions": [
+ "actions": [],
+ "actionsFuture": [
   {
    "id": "gplay-meta-sub-1020",
    "what": "Google Play: Instagram(Meta One Essential) 무료체험 10/20 종료 → 자동 유료 ₩19,500/월. 유지할지 취소할지 결정 필요",
@@ -99,9 +123,7 @@
    "cmd": "python -m studio.watch",
    "state": "todo",
    "kind": "action"
-  }
- ],
- "actionsFuture": [
+  },
   {
    "id": "claude-limit-reset-1022",
    "what": "Anthropic 메일(09-24 09:25 KST, 미읽음): Claude 한도 리셋 1회가 주어졌다 — 5시간·주간 한도를 한 번 다시 채운다. 사용 기한 10-22 09:00 PT = 10-23 01:00 KST, 1회용이며 안 쓰면 없어진다(구독 취소·다운그레이드 시에도 소멸). 한도가 막힌 날 쓰면 된다. 사용처: 설정 → 사용량. 【루틴1 10-05 20:5x 보강】10-03 Claude Code 뉴스레터 원문이 같은 것을 확인해 준다: 'five-hour limits went up 20%, and everyone on Pro, Max, and Team got one full reset. If you haven't used it yet, it's sitting in Settings > Usage until October 22'. ⚠️ 이 항목을 20:4x 에 제가 실수로 덮어써서 소멸시각·구독해지 조항·기한 10-20 을 지웠다가 git(c8be0818^)에서 원문을 꺼내 되돌렸다 — 원 올린이·기한·내용 모두 복원",
