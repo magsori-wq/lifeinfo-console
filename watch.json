@@ -19819,7 +19819,7 @@
    "state": "done",
    "by": "3.분석",
    "done_at": "2026-10-18",
-   "result": "이부장 11:35 Aside 로 확인: creator-advisor 로그인 상태(magsori8975 대시보드 열림). 유지 여부는 aside-naver-login-expiry-1018 로 내일 재확인"
+   "result": "이부장 11:35 확인 로그인 복구, 3. 가 10-17 일간 읽기 성공"
   },
   {
    "id": "aside-naver-login-expiry-1018",
@@ -19893,6 +19893,16 @@
    "what": "사장님 10-18 11:35 Meta One 구독 해지 결정 — 10/20 전에 해지됐는지 Google Play 결제 확인 메일로 확인(루틴1 메일 브리핑)",
    "due": "2026-10-20",
    "cmd": "메일 브리핑에서 Google Play 'Meta One' 해지/결제 메일 확인",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "remind-meta-cancel-1019-1700",
+   "added": "2026-10-18",
+   "what": "사장님 요청 알림: 10-19 17:00 Meta One 구독 해지 알림(카톡+알람). 세션 크론 6381352d 가 걸려 있음 — 이부장 세션이 재시작되면 크론이 사라지니 그때 다시 건다",
+   "due": "2026-10-19",
+   "cmd": "CronList 로 6381352d 확인",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
