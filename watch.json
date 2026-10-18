@@ -18545,9 +18545,11 @@
    "due": "2026-10-19",
    "cmd": "python -m studio.affiliate",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "by": "이부장",
-   "kind": "approve"
+   "kind": "approve",
+   "done_at": "2026-10-19",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "usage-page-attrib-1012",
@@ -20214,8 +20216,10 @@
    "due": "2026-10-19",
    "cmd": "powershell -c \"Get-ChildItem 'C:\\ProgramData\\Windows Master Store\\Circle to Act' | Sort LastWriteTime -Desc | Select -First 1 Name,LastWriteTime\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:cf890880"
+   "state": "done",
+   "by": "세션:cf890880",
+   "done_at": "2026-10-19",
+   "result": "가설 기각(10-19 사장님: 클릭해도 안 멈춤). 실측: Shell COM 7탭 전부 busy=False·ReadyState=4(로딩 완료) — 폴더 내용 문제 아님, 탭 표시만 멈춤"
   },
   {
    "id": "v0reject-b1-10",
@@ -20249,6 +20253,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:3ce55fad"
+  },
+  {
+   "id": "explorer-spinner-onset-1019",
+   "added": "2026-10-19",
+   "what": "탐색기 탭 회전: 시작일 측정 단계(추측 중단). 후보 날짜 = KB5121794 설치 10-07 · 구글드라이브 마지막 실행 10-06 · 휴대폰 DB 10-14. 사장님께 시작 시기 + 도는 탭 활성화 캡처(주소줄 ↻/×) 요청. 시작일이 KB 와 맞으면 윈도 결함(F5 우회+피드백 허브)",
+   "due": "2026-10-20",
+   "cmd": "powershell -c \"(New-Object -ComObject Shell.Application).Windows() | % { $_.LocationName + ' busy=' + $_.Busy + ' ready=' + $_.ReadyState }\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
   }
  ]
 }
