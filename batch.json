@@ -1823,6 +1823,16 @@
      "base_code": "lifeinfo-daily-topics",
      "date": "2026-10-18",
      "at": "2026-10-18 09:16"
+    },
+    {
+     "code": "9-lifeinfo-issue-product-pm-1018",
+     "title": "9-lifeinfo-issue-product-pm (I)",
+     "state": "done",
+     "note": "[조사장부] 목록 2 · 원문 0 · 후보 3 · 탈락 3 · 검색어 16 (바닥 미달: 토스 collect 294건·search 25낱말만 확인, 다나와·korea.kr 시즌목록·브랜드커넥트는 이번 회차 미조회) 🛒 빈손 — 후보 3건 모두 탈락. · 홍로 세척사과 3kg(11,800원·리뷰5,604) — affiliate solo 에 20260923-2 로 기게시 · 기모 보온 니삭스(7,900원·리뷰993) — naverkw '기모양말' 자동완성 1개뿐, 실검색어 근거 약함 · 체크 똑딱이 담요(14,751원·리뷰175·평점4.6) — naverkw 실검색어 OK 이나 리뷰 175·가격급변 없음, 유입검색어 겹침 없음, 근거 1개(2개 필요). 시즌어(보일러·제습·온수매트·김장·수능·히터·전기장판·핫팩)는 토스 인기목록에 없음. 이어받은 것: 전기요(10-15)·가습기·김치 기게시, 새로 본 것: 위 3건.",
+     "auto_daily": true,
+     "base_code": "9-lifeinfo-issue-product-pm",
+     "date": "2026-10-18",
+     "at": "2026-10-18 15:13"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -2716,7 +2726,7 @@
    ]
   }
  },
- "updated": "2026-10-18 15:09:24",
+ "updated": "2026-10-18 15:13:04",
  "current": {
   "batch": "followup",
   "code": "",
@@ -2727,6 +2737,10 @@
   "since_at": "2026-10-13 16:25:53"
  },
  "log": [
+  {
+   "t": "15:13:04",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1018 완료 — 9-lifeinfo-issue-product-pm (I)"
+  },
   {
    "t": "15:09:24",
    "text": "▶   — 1/7단계 · [체인] #200 C3-08 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeoATNjgfUP · ✅ 쓰레드 이미지 ↔ thread_C3-08_telemed.png  MAD 0.0 · dHas) — [이과장] 기록: python -m studio.pipeline threads-link --code C3-08 --url https://www.threads.com/@magsori8975/post/DeoATNjgfUP → 4채널 완결 확인"
@@ -2882,10 +2896,6 @@
   {
    "t": "14:20:30",
    "text": "▶   — 1/7단계 · F4-29 발행 완료(run 39099978396, https://lifeinfo8975.blogspot.com/2026/10/30-50-kbo-2026.html) — 라이브 확인 후 네이버·인스타·쓰레드 재료 제작 중"
-  },
-  {
-   "t": "14:12:30",
-   "text": "📋 배치 '🚀 G3-21 발행 — 진영단감축제 2026 — 10월 30일 개막, 3일 부스 운영시간 27시간·옛  (사장님 승인 완료)' 등록 — 1항목"
   }
  ],
  "currents": {
