@@ -20003,8 +20003,10 @@
    "due": "2026-10-21",
    "cmd": "reg query \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\" /s /f CrossDevice",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:cf890880"
+   "state": "done",
+   "by": "세션:cf890880",
+   "done_at": "2026-10-18",
+   "result": "가설 기각(10-18 15:0x 사장님 보고: 휴대폰 항목 제거 후에도 탭 회전 지속). 실측: CrossDevice 0개·D/E 정상(D: 0.2초)·디스크/탐색기 오류 이벤트 0"
   },
   {
    "id": "xlink-c117",
@@ -20119,8 +20121,20 @@
    "due": "2026-10-18",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-18",
+   "result": "C3-08 인스타 #199·쓰레드 #200 이 사라지지 않고 차례로 올라감"
+  },
+  {
+   "id": "explorer-tab-spinner-xlsx-1018",
+   "added": "2026-10-18",
+   "what": "탐색기 탭 로딩원 무한회전 2차: 회전 탭(원시데이터·SDHC D:)은 둘 다 엑셀 폴더, D:에 엑셀 잠금파일(~$26년09월매출 - 복사본.xlsx), 미리보기 창 켜짐·엑셀 미리보기 실패. 실험 ①Alt+P 미리보기창 끄기 ②엑셀 전부 닫기 — 어느 단계에서 멈추나로 원인 확정",
+   "due": "2026-10-19",
+   "cmd": "ls -la 'D:/~$26년09월매출 - 복사본.xlsx' ; reg query 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Modules\\GlobalSettings\\DetailsContainer'",
+   "owner": "claude",
    "state": "wait",
-   "by": "이부장"
+   "by": "세션:cf890880"
   }
  ]
 }
