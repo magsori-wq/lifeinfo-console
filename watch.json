@@ -20015,6 +20015,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "kbo-po-ks-ticket-notice",
+   "added": "2026-10-18",
+   "what": "F4-30(PO·KS 예매 NOL 1인 4매) — KBO 공식 PO·KS 예매 오픈 공지가 뜨면 선별·초안 지시(지금은 공지 전이라 보류)",
+   "due": "2026-10-21",
+   "cmd": "curl -s -A Mozilla/5.0 'https://www.koreabaseball.com/MediaNews/Notice/List.aspx' | grep -o '플레이오프[^<]*예매[^<]*' | head",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
