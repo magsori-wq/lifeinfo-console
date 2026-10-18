@@ -20329,6 +20329,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "gh-pat-lifeinfo-console-deploy-1025",
+   "added": "2026-10-19",
+   "what": "GitHub 토큰 lifeinfo-console-deploy 가 2026-10-25 만료(메일 10-18). 만료되면 deploy.bat 의 콘솔 push 가 막힌다. 재발급: https://github.com/settings/personal-access-tokens/17499623/regenerate → 새 토큰을 deploy 저장소 인증에 교체",
+   "due": "2026-10-24",
+   "cmd": "gh auth status; git -C C:/lifeinfo-deploy ls-remote origin HEAD",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:56085659"
   }
  ]
 }
