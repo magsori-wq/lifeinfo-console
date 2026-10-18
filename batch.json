@@ -1982,13 +1982,9 @@
     }
    ],
    "owner": "Aside",
-   "order": "지시 #212 (2026-10-18) — C3-09 수능 ADHD 약 집중점검 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: C3-09(수능 ADHD 약 집중점검) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/adhd_csat_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/adhd_csat_02_table.png · http://127.0.0.1:8011/api/file?path=insta/adhd_csat_03_penalty.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 되는 것·안 되는 것 → 처벌 구간) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%88%98%EB%8A%A5ADHD%EC%95%BD%EB%8C%80%EB%A6%AC%EC%B2%98%EB%B0%A9%EC%A7%91%EC%A4%91%EC%A0%90%EA%B2%80.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다.  869자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224446084369 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · osmuimgcheck 🔴0 · 사진 출처 캡션 표기(Pexels 참고용) · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#212 수신 — C3-09 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"C3-09\",\"what\":\"#212 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.\n⑨ 인스타 공유 뒤 확인(이부장 자동 추가 · 2026-10-17): 공유 뒤 프로필이 네트워크 오류(chrome-error)로 안 열리면 blocked 하지 말고 30초 기다린 뒤 새 탭으로 https://www.instagram.com/magsori8975/ 를 한 번 더 연다. 맨 위 게시물이 이 글 표지인지·같은 카드가 2개인지 보고, 게시물 주소(/p/<id>/)를 읽어 done 으로 보고한다. ⛔ 다시 공유하지 않는다. 두 번째도 안 열리면 그때 blocked.",
-   "order_at": "2026-10-19 04:41",
+   "order": "지시 #213 (2026-10-18) — C3-09 수능 ADHD 약 집중점검 쓰레드 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: C3-09(수능 ADHD 약 집중점검) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EC%88%98%EB%8A%A5ADHD%EC%95%BD%EB%8C%80%EB%A6%AC%EC%B2%98%EB%B0%A9%EC%A7%91%EC%A4%91%EC%A0%90%EA%B2%80.txt  (⚠️ JSON 포장 풀어서 내용만. 365자·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 2개라 카드가 연달아 뜬다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_C3-09_adhd_csat.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 원고 365/500자 · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(Pexels 무료 사진) · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#213 수신 — C3-09 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"C3-09\",\"what\":\"#213 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.",
+   "order_at": "2026-10-19 04:44",
    "order_hist": [
-    {
-     "at": "2026-10-18 13:01",
-     "order": "지시 #192 (2026-10-18) — C1-17 블로그스팟 글 검색 설명 넣기\n\n① 무엇을: 블로그스팟 글 「외래진료 300회 본인부담 90% — 해당자는 7,765명뿐, 12월 24일 CT·MRI 이력확인도 시작 (2027)」의 검색 설명(meta description)에 아래 문구를 넣고 업데이트한다. 라이브 meta description 이 이 문구와 정확히 같아야 완료다.\n   문구(126자): 2027년 1월 1일부터 연 외래진료 300회를 넘으면 301회째부터 본인부담 90%지만, 2025년 해당자는 7,765명(0.016%)입니다. 제외 대상 조문, 계산예시, 12월 24일 CT·MRI 이력 확인을 정리했습니다.\n② 어떻게:\n   1. 새 탭으로 https://www.blogger.com/blog/post/edit/4026928033017788339/3774163443225799949 를 연다.\n   2. 본문 에디터가 보일 때까지 기다린다(30초 넘게 \"로드 중\" 스피너면 편집 URL 을 새로고침). 본문이 안 보이면 우측 패널을 건드리지 않는다.\n   3. 우측 「검색 설명」을 펼친다 → 입력칸 클릭 → Ctrl+A → Delete 로 비우고 0자인지 확인한다.\n   4. 위 문구를 실제 키 입력으로 넣는다(값만 JS 로 넣으면 저장이 안 된다).\n   5. 「업데이트」 버튼은 ref 로 누른다(좌표는 화면 배율에 따라 어긋난다).\n   6. https://lifeinfo8975.blogspot.com/2026/10/300-90-7765-12-24-ctmri-2027.html 를 새로 열어 meta description 이 문구와 같은지 확인한다.\n③ 사전 점검 완료(pre-cleared): 글은 라이브(200)이고 현재 검색 설명은 공통 문구다. 문구는 본문 내용(2027.1.1 300회 초과 90%·7,765명·제외 대상·12/24 CT·MRI)과 일치한다.\n④ 받을 파일: 없음\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작하면 먼저: {\"batch\":\"aside\",\"what\":\"#192 수신 — C1-17 검색설명 시작\",\"state\":\"doing\"}\n   - 끝나면: {\"batch\":\"aside\",\"code\":\"C1-17\",\"what\":\"#192 라이브 meta description 일치 확인 · 문구 126자\",\"state\":\"done\",\"url\":\"https://lifeinfo8975.blogspot.com/2026/10/300-90-7765-12-24-ctmri-2027.html\"}\n⑥ 막히면: state \"blocked\" + 무엇에 막혔는지 → 멈춘다(재시도 2회 넘기지 않는다).\n⑦ 하지 말 것: 본문 수정·라벨 변경·다른 글 편집·발행 상태 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다."
-    },
     {
      "at": "2026-10-18 13:03",
      "order": "지시 #193 (2026-10-18) — C1-17 외래진료 300회 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: C1-17(외래진료 300회) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/outpatient300_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/outpatient300_02_exclude.png · http://127.0.0.1:8011/api/file?path=insta/outpatient300_03_ctmri.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 제외 대상 → 12/24 CT·MRI) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%99%B8%EB%9E%98%EC%A7%84%EB%A3%8C300%ED%9A%8C%EB%B3%B8%EC%9D%B8%EB%B6%80%EB%8B%B490.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다. 약 842자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224445419488 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · osmuimgcheck 🔴0 · 사진 출처 캡션 표기(Pexels 참고용) · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#193 수신 — C1-17 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"C1-17\",\"what\":\"#193 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.\n⑨ 인스타 공유 뒤 확인(이부장 자동 추가 · 2026-10-17): 공유 뒤 프로필이 네트워크 오류(chrome-error)로 안 열리면 blocked 하지 말고 30초 기다린 뒤 새 탭으로 https://www.instagram.com/magsori8975/ 를 한 번 더 연다. 맨 위 게시물이 이 글 표지인지·같은 카드가 2개인지 보고, 게시물 주소(/p/<id>/)를 읽어 done 으로 보고한다. ⛔ 다시 공유하지 않는다. 두 번째도 안 열리면 그때 blocked."
@@ -2064,6 +2060,10 @@
     {
      "at": "2026-10-19 04:40",
      "order": "지시 #211 (2026-10-18) — C3-09 블로그스팟 글 검색 설명 넣기\n\n① 무엇을: 블로그스팟 글 「수능 ADHD 약 집중점검 — 10월 19일부터 부부 중 1명 7천만 원 이하, 청년 전세보증 만 39세·3억 (2026)」의 검색 설명(meta description)에 아래 문구를 넣고 업데이트한다. 라이브 meta description 이 이 문구와 정확히 같아야 완료다.\n   문구(136자): 식약처 수능 대비 ADHD 치료제 의료기관 집중점검(10월 19일~11월 18일): 처방 없는 구매와 가족·지인이 대신 받은 약을 건네받아 복용하는 행위는 마약류관리법 위반입니다. 되는 것·안 되는 것 판별표와 조문상 처벌 구간을 정리했습니다.\n② 어떻게:\n   1. 새 탭으로 https://www.blogger.com/blog/post/edit/4026928033017788339/3030158095849849588 를 연다.\n   2. 본문 에디터가 보일 때까지 기다린다(30초 넘게 \"로드 중\" 스피너면 편집 URL 을 새로고침). 본문이 안 보이면 우측 패널을 건드리지 않는다.\n   3. 우측 「검색 설명」을 펼친다 → 입력칸 클릭 → Ctrl+A → Delete 로 비우고 0자인지 확인한다.\n   4. 위 문구를 실제 키 입력으로 넣는다(값만 JS 로 넣으면 저장이 안 된다).\n   5. 「업데이트」 버튼은 ref 로 누른다(좌표는 화면 배율에 따라 어긋난다).\n   6. https://lifeinfo8975.blogspot.com/2026/10/adhd-10191118-2026.html 를 새로 열어 meta description 이 문구와 같은지 확인한다.\n③ 사전 점검 완료(pre-cleared): 글은 라이브(200)이고 현재 검색 설명은 공통 문구다. 문구는 본문 내용(식약처 10/19~11/18 점검·되는 것/안 되는 것·처벌 구간)과 일치한다.\n④ 받을 파일: 없음\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작하면 먼저: {\"batch\":\"aside\",\"what\":\"#211 수신 — C3-09 검색설명 시작\",\"state\":\"doing\"}\n   - 끝나면: {\"batch\":\"aside\",\"code\":\"C3-09\",\"what\":\"#211 라이브 meta description 일치 확인 · 문구 136자\",\"state\":\"done\",\"url\":\"https://lifeinfo8975.blogspot.com/2026/10/adhd-10191118-2026.html\"}\n⑥ 막히면: state \"blocked\" + 무엇에 막혔는지 → 멈춘다(재시도 2회 넘기지 않는다).\n⑦ 하지 말 것: 본문 수정·라벨 변경·다른 글 편집·발행 상태 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다."
+    },
+    {
+     "at": "2026-10-19 04:41",
+     "order": "지시 #212 (2026-10-18) — C3-09 수능 ADHD 약 집중점검 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: C3-09(수능 ADHD 약 집중점검) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/adhd_csat_01_cover.png · http://127.0.0.1:8011/api/file?path=insta/adhd_csat_02_table.png · http://127.0.0.1:8011/api/file?path=insta/adhd_csat_03_penalty.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 되는 것·안 되는 것 → 처벌 구간) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EC%88%98%EB%8A%A5ADHD%EC%95%BD%EB%8C%80%EB%A6%AC%EC%B2%98%EB%B0%A9%EC%A7%91%EC%A4%91%EC%A0%90%EA%B2%80.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다.  869자. 블로그·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224446084369 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · osmuimgcheck 🔴0 · 사진 출처 캡션 표기(Pexels 참고용) · 제휴 링크 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#212 수신 — C3-09 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"C3-09\",\"what\":\"#212 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.\n⑨ 인스타 공유 뒤 확인(이부장 자동 추가 · 2026-10-17): 공유 뒤 프로필이 네트워크 오류(chrome-error)로 안 열리면 blocked 하지 말고 30초 기다린 뒤 새 탭으로 https://www.instagram.com/magsori8975/ 를 한 번 더 연다. 맨 위 게시물이 이 글 표지인지·같은 카드가 2개인지 보고, 게시물 주소(/p/<id>/)를 읽어 done 으로 보고한다. ⛔ 다시 공유하지 않는다. 두 번째도 안 열리면 그때 blocked."
     }
    ]
   },
@@ -2833,17 +2833,41 @@
    "order_at": "2026-10-19 04:37"
   }
  },
- "updated": "2026-10-19 04:42:16",
+ "updated": "2026-10-19 04:44:15",
  "current": {
   "batch": "aside",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[Aside][doing] 수신 2026-10-19 04:41 — 지시 #212 시작 · C3-09 인스타",
+  "what": "[Aside][doing] 수신 2026-10-19 04:44 — 지시 #213 시작 · C3-09 쓰레드",
   "since": "11:31",
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "04:44:15",
+   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-19 04:44 — 지시 #213 시작 · C3-09 쓰레드"
+  },
+  {
+   "t": "04:44:05",
+   "text": "▶   — 1/7단계 · [체인] #212 C3-09 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DepdgETk2Eo/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ adhd_csat_01_cover.png  MAD 0.0 · dHash / ✅ 인스타 카드 2 ↔ adhd_csat_02_table.png  MAD 0.0 · dHash / ✅ 인스타 카드 3 ↔ adhd_csat_03_penalty.png  MAD 0.1 · dHa) — [이과장] 기록: python -m studio.pipeline insta-link --code C3-09 --url https://www.instagram.com/magsori8975/p/DepdgETk2Eo/ → 4채널 완결 확인"
+  },
+  {
+   "t": "04:44:04",
+   "text": "📄 aside 작업 지시 등록(1933자, 2026-10-19 04:44)"
+  },
+  {
+   "t": "04:44:02",
+   "text": "🏁 Aside #212 이부장 확인"
+  },
+  {
+   "t": "04:43:59",
+   "text": "📄 aside 작업 지시 등록(1933자, 2026-10-19 04:43)"
+  },
+  {
+   "t": "04:43:54",
+   "text": "▶   — 1/7단계 · [Aside][done] [C3-09] #212 인스타 게시 — 카드 3장(표지·되는 것·안 되는 것·처벌 구간)·캡션 876자 원문 일치(블로그·네이버 링크·사진 출처 포함) · 프로필 맨 위 1개만, 게시물 395→396 · 총 탭 11개 · https://www.instagram.com/magsori8975/p/DepdgETk2Eo/"
+  },
   {
    "t": "04:42:16",
    "text": "🏁 Aside #211 이부장 확인"
@@ -2979,30 +3003,6 @@
   {
    "t": "18:16:19",
    "text": "▶   — 1/7단계 · [체인] #210 B2-21 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeoVrq5AfKX · ✅ 쓰레드 이미지 ↔ thread_B2-21_bogeumjari.png  MAD 0.1 · d) — [이과장] 기록: python -m studio.pipeline threads-link --code B2-21 --url https://www.threads.com/@magsori8975/post/DeoVrq5AfKX → 4채널 완결 확인"
-  },
-  {
-   "t": "18:16:14",
-   "text": "🏁 Aside #210 이부장 확인"
-  },
-  {
-   "t": "18:16:05",
-   "text": "▶   — 1/7단계 · [Aside][done] [B2-21] #210 쓰레드 게시 — 이미지 1장 확인·본문 386자 원문 일치·링크카드 2개 삭제·URL 200·중복 없음 · 총 탭 11개 · https://www.threads.com/@magsori8975/post/DeoVrq5AfKX"
-  },
-  {
-   "t": "18:15:29",
-   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DeoVUzzkQHk/ (naver-link 가 자동 보고) · 남음: 쓰레드"
-  },
-  {
-   "t": "18:14:10",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-18 18:13 — 지시 #210 시작 · B2-21 쓰레드"
-  },
-  {
-   "t": "18:13:45",
-   "text": "📄 aside 작업 지시 등록(1939자, 2026-10-18 18:13)"
-  },
-  {
-   "t": "18:13:42",
-   "text": "▶   — 1/7단계 · [체인] #209 B2-21 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DeoVUzzkQHk/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ bogeumjari_01_cover.png  MAD 0.1 · dHas / ✅ 인스타 카드 2 ↔ bogeumjari_02_combo.png  MAD 0.1 · dHas / ✅ 인스타 카드 3 ↔ bogeumjari_03_youth.png  MAD 0.0 · dHas) — [이과장] 기록: python -m studio.pipeline insta-link --code B2-21 --url https://www.instagram.com/magsori8975/p/DeoVUzzkQHk/ → 4채널 완결 확인"
   }
  ],
  "currents": {
@@ -3101,7 +3101,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][doing] 수신 2026-10-19 04:41 — 지시 #212 시작 · C3-09 인스타",
+   "what": "[Aside][doing] 수신 2026-10-19 04:44 — 지시 #213 시작 · C3-09 쓰레드",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -3118,8 +3118,8 @@
    "batch": "followup",
    "code": "",
    "title": "",
-   "step": 10,
-   "what": "C3-09 네이버 224446084369 게시(로그인 후 성공)·OSMU 재료 push — Aside 지시 초안: docs/aside_drafts/C3-09_검색설명.txt · C3-09_인스타게시.txt · C3-09_쓰레드게시.txt (등록 부탁). 이어서 인스타·쓰레드 완결 후 B1-10 → G3-22 발행",
+   "step": 1,
+   "what": "[체인] #212 C3-09 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DepdgETk2Eo/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ adhd_csat_01_cover.png  MAD 0.0 · dHash / ✅ 인스타 카드 2 ↔ adhd_csat_02_table.png  MAD 0.0 · dHash / ✅ 인스타 카드 3 ↔ adhd_csat_03_penalty.png  MAD 0.1 · dHa) — [이과장] 기록: python -m studio.pipeline insta-link --code C3-09 --url https://www.instagram.com/magsori8975/p/DepdgETk2Eo/ → 4채널 완결 확인",
    "since": "16:25",
    "since_at": "2026-10-13 16:25:53"
   },
@@ -11797,6 +11797,30 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][doing] 수신 2026-10-19 04:41 — 지시 #212 시작 · C3-09 인스타"
+  },
+  {
+   "ts": "2026-10-19 04:43:54",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [C3-09] #212 인스타 게시 — 카드 3장(표지·되는 것·안 되는 것·처벌 구간)·캡션 876자 원문 일치(블로그·네이버 링크·사진 출처 포함) · 프로필 맨 위 1개만, 게시물 395→396 · 총 탭 11개 · https://www.instagram.com/magsori8975/p/DepdgETk2Eo/"
+  },
+  {
+   "ts": "2026-10-19 04:44:05",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #212 C3-09 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DepdgETk2Eo/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ adhd_csat_01_cover.png  MAD 0.0 · dHash / ✅ 인스타 카드 2 ↔ adhd_csat_02_table.png  MAD 0.0 · dHash / ✅ 인스타 카드 3 ↔ adhd_csat_03_penalty.png  MAD 0.1 · dHa) — [이과장] 기록: python -m studio.pipeline insta-link --code C3-09 --url https://www.instagram.com/magsori8975/p/DepdgETk2Eo/ → 4채널 완결 확인"
+  },
+  {
+   "ts": "2026-10-19 04:44:15",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-10-19 04:44 — 지시 #213 시작 · C3-09 쓰레드"
   }
  ]
 }
