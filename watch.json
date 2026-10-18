@@ -19800,8 +19800,10 @@
    "due": "2026-10-19",
    "cmd": "python -m studio.dupcheck \"건강검진 연말 미수검 12월 31일 지나면\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-18",
+   "result": "같은 날 두 번째 사례 추가(복지 신청주의 ↔ A1-20 미검출) — dupcheck-fix 로 통합"
   },
   {
    "id": "aside-naver-login-1018",
@@ -19855,6 +19857,16 @@
    "cmd": "curl -s \"https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=아동수당법\" | grep -o '<공포일자>[0-9]*' | sort -u | tail -3",
    "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "dupcheck-synonym-fix-1018",
+   "added": "2026-10-18",
+   "what": "dupcheck 동의어·주제 미검출 2건(10-18): ①'건강검진 연말 미수검 12월 31일 지나면' vs C1-14 ②'복지 신청주의 폐지 직권 지원 시행' vs A1-20 — 둘 다 🟢신규로 잘못 판정. 핵심 제도명 낱말(건강검진·신청주의) 단독 일치에도 경고를 띄우도록 보강 + falsepos 회귀 규칙",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.dupcheck \"복지 신청주의 폐지 직권 지원 시행\"",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
