@@ -13808,6 +13808,22 @@
    "target": "explorer-spinner-gdrive-block-1019",
    "detail": "효과 없음: 탐색기 재시작 후 처음엔 안 돌다 작업 중 다시 회전(사장님 04:30). 차단 4개 되돌림(남은 값 0 확인)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-19T04:33:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "explorer-spinner-filechange-test-1019",
+   "detail": "기각: 04:31:55 생성·04:32:00 삭제에도 탭 안 돎(사장님)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T04:33:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "explorer-spinner-onset-1019",
+   "detail": "시작일 미상(사장님 '잘 모르겠다'). 결론: 탭은 로딩완료(ReadyState=4)인데 표시만 도는 윈도 탐색기 결함 — MS가 22631.2271·23545에서 같은 증상을 고친 전례. 현재 26300.9457에서 재발로 판단. 우회 F5·피드백허브 신고",
+   "via": "cli"
   }
  ]
 }
