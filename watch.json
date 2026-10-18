@@ -20145,8 +20145,10 @@
    "due": "2026-10-18",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-18",
+   "result": "발굴 3에이전트 결과 → B2-21·C3-09·B1-10·G3-22 선별·지시서 4장 등록(15:26). topicprop 동시쓰기로 B2-21·G3-22·F4-31 유실 재발(B2-21·G3-22 재등록, F4-31 제주올레는 미재등록)"
   },
   {
    "id": "xlink-b220",
@@ -20157,6 +20159,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "lee-draft-start-1018b",
+   "added": "2026-10-18",
+   "what": "이과장이 draft1018b221 을 실제로 읽고 초안 시작했나(read_info last_read · 초안 파일 생성)",
+   "due": "2026-10-18",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('draft1018b221'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
