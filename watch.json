@@ -19846,6 +19846,16 @@
    "state": "todo",
    "kind": "action",
    "by": "세션:67aa045b"
+  },
+  {
+   "id": "welfare6-promulgation-1018",
+   "added": "2026-10-18",
+   "what": "복지 신청주의 개선 6법(10-01 국회 의결) 공포일 확인 — 공포되면 시행일(공포 후 3개월) 확정. 그때 A1-20 후속 글 각도(장애인연금→기초연금 간주·직권신청 대상·시행일) 검토. 근거 docs/source_복지신청주의6법_20261018.md",
+   "due": "2026-10-25",
+   "cmd": "curl -s \"https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=아동수당법\" | grep -o '<공포일자>[0-9]*' | sort -u | tail -3",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
