@@ -18953,10 +18953,12 @@
    "due": "2026-10-20",
    "cmd": "gmail: from:googleplay-noreply@google.com newer_than:14d",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
    "note": 1,
-   "by": "세션:05c44ff3"
+   "by": "세션:05c44ff3",
+   "done_at": "2026-10-18",
+   "result": "gplay-meta-sub-1020 과 같은 구독 — 하나로 통합"
   },
   {
    "id": "xlink-a122",
@@ -19414,8 +19416,10 @@
    "due": "2026-10-16",
    "cmd": "루틴1(1-Daily email briefing) 창에 '지워' 입력 또는 창 닫기 【권고】창 닫기(크론은 세션 전용이라 함께 꺼짐) 【근거】루틴1이 타 세션 요청만으로는 삭제 보류 【위험】없음(이부장 13·43분 감시가 계속 돎)",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-18",
+   "result": "불필요해짐 — 루틴1 실행 세션들은 10-17 12:40 사장님 요청으로 보관(종료)됐고 남은 루틴1 세션도 isRunning=false. 세션 전용 크론은 프로세스가 없으면 안 돈다(이부장 확인 10-18 11:35)"
   },
   {
    "id": "topic-refill-1016",
@@ -19812,8 +19816,10 @@
    "due": "2026-10-18",
    "cmd": "Aside 앱 → 새 탭 → https://creator-advisor.naver.com → 네이버 로그인(로그인 상태 유지 체크) → 3.에게 '로그인 했다'",
    "owner": "user",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-10-18",
+   "result": "이부장 11:35 Aside 로 확인: creator-advisor 로그인 상태(magsori8975 대시보드 열림). 유지 여부는 aside-naver-login-expiry-1018 로 내일 재확인"
   },
   {
    "id": "aside-naver-login-expiry-1018",
@@ -19845,9 +19851,11 @@
    "due": "2026-10-25",
    "cmd": "python -m studio.gmailread scan --body",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "세션:67aa045b"
+   "by": "세션:67aa045b",
+   "done_at": "2026-10-18",
+   "result": "사장님 11:31 '무시' 결정 — Cursor 기존 권한 유지, 추가 권한 미승인. 같은 요청 메일은 다시 올리지 않음"
   },
   {
    "id": "welfare6-promulgation-1018",
@@ -19865,6 +19873,16 @@
    "what": "dupcheck 동의어·주제 미검출 2건(10-18): ①'건강검진 연말 미수검 12월 31일 지나면' vs C1-14 ②'복지 신청주의 폐지 직권 지원 시행' vs A1-20 — 둘 다 🟢신규로 잘못 판정. 핵심 제도명 낱말(건강검진·신청주의) 단독 일치에도 경고를 띄우도록 보강 + falsepos 회귀 규칙",
    "due": "2026-10-19",
    "cmd": "python -m studio.dupcheck \"복지 신청주의 폐지 직권 지원 시행\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "brandconnect-1week-report-1019",
+   "added": "2026-10-18",
+   "what": "브랜드커넥트 글당 2회 제한 1주 운영 보고 준비(추천 건수·발급·클릭·이상) → 사장님 결정 항목 brandconnect-limit-review-1019 에 붙인다",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.affiliate",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
