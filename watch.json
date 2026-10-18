@@ -20263,6 +20263,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:cf890880"
+  },
+  {
+   "id": "explorer-spinner-gdrive-block-1019",
+   "added": "2026-10-19",
+   "what": "실험(원인 확정 아님): 10-19 04:2x 구글드라이브 아이콘 부품 4개 HKCU Shell Extensions\\Blocked 차단. 사장님 탐색기 다시 시작 후 탭 회전 재발 여부. 재발하면 되돌리고 윈도 결함(F5 우회+피드백 허브)으로 결론. 되돌리기: 그 키의 4개 값 삭제",
+   "due": "2026-10-21",
+   "cmd": "powershell -c \"(Get-ItemProperty 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked').PSObject.Properties | ? Name -like '{*' | % Value\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
   }
  ]
 }
