@@ -13632,6 +13632,22 @@
    "target": "explorer-phone-spinner-1018",
    "detail": "가설 기각(10-18 15:0x 사장님 보고: 휴대폰 항목 제거 후에도 탭 회전 지속). 실측: CrossDevice 0개·D/E 정상(D: 0.2초)·디스크/탐색기 오류 이벤트 0",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-18T15:07:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "asidequeue-lost-verify-1018",
+   "detail": "C3-08 인스타 #199·쓰레드 #200 이 사라지지 않고 차례로 올라감",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-18T15:07:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "asidequeue-lost-1018",
+   "detail": "원인=cmd_next 낡은 q 덮어쓰기 · f8bc8941c 재로드로 수정·검증",
+   "via": "cli"
   }
  ]
 }
