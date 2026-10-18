@@ -19924,7 +19924,20 @@
    "due": "2026-10-18",
    "cmd": "ls docs/루틴재점검_20261018.md",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-18",
+   "result": "진단 완료 docs/루틴재점검_20261018.md — 모델 하향(1·7·8·9)·발굴 출발점 없음·직전회차 미참조·낡은 문구 4곳. 수리 fixer 진행, 모델은 사장님 결재"
+  },
+  {
+   "id": "routine-model-fix-1018",
+   "added": "2026-10-18",
+   "what": "【권고】루틴 모델 되돌리기 — Desktop 「루틴」→ 루틴 클릭 → ✏️편집 → 지침 입력창 오른쪽 아래 「⌄ 기본값」에서: 루틴1(메일)·루틴7(색인) = Opus, 루틴8·9(이슈상품) = Sonnet → [저장]. 【근거】재점검(docs/루틴재점검_20261018.md): 루틴1 10-12부터 Opus→Haiku·도구호출 33~57→6~18회, 루틴7 Opus→Sonnet 109→18회, 루틴8·9 Haiku 25~76→7~20회 — 조사가 얕아진 시점과 일치 【위험】Opus 는 사용량이 더 든다",
+   "due": "2026-10-18",
+   "cmd": "python -m studio.watch done --id routine-model-fix-1018 --result 사장님변경",
+   "owner": "user",
    "state": "todo",
+   "kind": "approve",
    "by": "이부장"
   }
  ]
