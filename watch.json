@@ -19949,6 +19949,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이과장"
+  },
+  {
+   "id": "fix-routine-guidelines-1018",
+   "added": "2026-10-18",
+   "what": "루틴 지침 수리 반영(발굴 출발점·직전 회차 읽기 공통절 배포, 낡은 문구 4곳, routine_model 접두일치, routinesync lint). 남은 것: 사장님 모델 설정(1·7 Opus, 8·9 Sonnet), 3일 뒤 회차당 도구 호출·재탕 후보 수 확인, readycheck 주석의 issueprod 문구",
+   "due": "2026-10-21",
+   "cmd": "python tools/routinesync.py && python studio/routine_model.py --days 3",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
