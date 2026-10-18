@@ -19938,9 +19938,11 @@
    "due": "2026-10-18",
    "cmd": "python -m studio.watch done --id routine-model-fix-1018 --result 사장님변경",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-10-18",
+   "result": "사장님 12:53 루틴1·8·9 Sonnet 으로 변경(루틴7은 유지). 실제 반영은 다음 실행 기록으로 확인 — watch routine-model-verify-1019"
   },
   {
    "id": "c1-17-notice-detail",
@@ -19968,6 +19970,16 @@
    "what": "루틴 수리(10-18) 효과 판정 — 회차당 도구 호출 수가 회복됐나, 같은 후보 재탕·사장님 결정 알림 재상정이 사라졌나, 글감 제안이 나오나",
    "due": "2026-10-21",
    "cmd": "python studio/routine_model.py --days 3",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-model-verify-1019",
+   "added": "2026-10-18",
+   "what": "루틴1·8·9 모델 변경(10-18 12:53) 반영 확인 — 다음 실행이 sonnet 으로 돌았는지",
+   "due": "2026-10-19",
+   "cmd": "python studio/routine_model.py --days 1",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
