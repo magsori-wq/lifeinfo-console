@@ -1,5 +1,5 @@
 {
- "computed_at": "2026-10-18 06:00:53",
+ "computed_at": "2026-10-18 11:28:11",
  "source_head": "218fa5768b2b",
  "ids": [
   "A1-23",
@@ -11,7 +11,7 @@
   {
    "code": "A1-23",
    "title": "어린이집·유치원 신청 11월 2일 시작 — 10월 28일부터 해둘 3가지 (유보통합포털)",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,7 +33,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -93,6 +93,14 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.pace",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "gmail-cursor-github-perm-1018",
+   "what": "GitHub: Cursor 앱이 권한 업데이트 요청(10/12 두 번) — 수락 또는 무시를 본인이 결정",
+   "due": "2026-10-25",
+   "cmd": "python -m studio.gmailread scan --body",
+   "state": "todo",
    "kind": "action"
   }
  ]
