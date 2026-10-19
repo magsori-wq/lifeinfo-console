@@ -20640,6 +20640,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "cloud-pending-fix-merge-1019",
+   "added": "2026-10-19",
+   "what": "클라우드 claude/pending-fix(미결사항 「불러오는 중」 멈춤) 보고 오면 PC RO·서버모드 둘 다 확인 후 병합",
+   "due": "2026-10-20",
+   "cmd": "git fetch -q origin claude/pending-fix && git log --oneline main..origin/claude/pending-fix",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
