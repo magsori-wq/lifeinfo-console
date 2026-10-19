@@ -8129,8 +8129,10 @@
    "due": "2026-09-12",
    "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json,io;d=json.load(io.open('webapp/batch.json',encoding='utf-8'));[print(k,(v.get('what') or '')[:120]) for k,v in (d.get('currents') or {}).items() if '이부장' in (v.get('what') or '')]\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "naver-a313",
@@ -8742,8 +8744,10 @@
    "due": "2026-09-15",
    "cmd": "python -c \"import json; d=json.load(open('docs/실측_글모양변종_20260912_raw.json',encoding='utf-8')); print(len(d['per_post_signatures']))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "insta-focus-0912",
@@ -8764,8 +8768,10 @@
    "due": "2026-09-15",
    "cmd": "grep -rn 'keyline\\|bigwrap' --include=*.py studio/ | grep -v __pycache__",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "insta-card-gate-unverified-0912",
@@ -10286,8 +10292,10 @@
    "due": "2026-09-21",
    "cmd": "grep -n 'clicks\\|sales\\|실적' studio/affiliate.py 제휴상품_판정기준.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "afflink-f4-21-rerank",
@@ -13092,8 +13100,10 @@
    "due": "2026-09-24",
    "cmd": "python -m studio.find A2-03",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "tongdosa-mediaart-closeday-0923",
@@ -15456,8 +15466,10 @@
    "due": "2026-10-05",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow=console-check.yml -L 3",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "xlink-h120",
@@ -15874,8 +15886,10 @@
    "due": "2026-10-04",
    "cmd": "cat docs/CP_화면지도_20261003.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "afflink-issue20261003",
@@ -16712,8 +16726,10 @@
    "due": "2026-10-06",
    "cmd": "python -m studio.naverfmt --rebake",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "aside-naver-1post-test-1006",
@@ -16879,8 +16895,10 @@
    "due": "2026-10-07",
    "cmd": "git fetch && git branch -r --sort=-committerdate | head -5",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "gmailread-count-gap-1006",
@@ -17048,8 +17066,10 @@
    "due": "2026-10-09",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "aside-poll-verify-1008",
@@ -17166,8 +17186,10 @@
    "due": "2026-10-10",
    "cmd": "python -m studio.library",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "adsense-rereview-submit-1009",
@@ -17213,8 +17235,10 @@
    "due": "2026-10-09",
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/322_busan_grade5_enforcement.png ; python tools/console_check.py 2>/dev/null | grep 썸네일",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:6973bee9"
+   "state": "done",
+   "by": "세션:6973bee9",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "thumb-deploy-miss-cause-1009",
@@ -17223,8 +17247,10 @@
    "due": "2026-10-09",
    "cmd": "git -C C:/lifeinfo-deploy log --format='%ci %s' --grep=G1-11",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "pc-bsod-1009",
@@ -17676,8 +17702,10 @@
    "due": "2026-10-11",
    "cmd": "grep -n '_report' studio/approve_server.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "f424-insta-1card-1010b",
@@ -18130,8 +18158,10 @@
    "due": "2026-10-12",
    "cmd": "grep -c 지식인 webapp/index.html",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:cf890880"
+   "state": "done",
+   "by": "세션:cf890880",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "naver-feed-mate-1011",
@@ -18591,8 +18621,10 @@
    "due": "2026-10-12",
    "cmd": "python -m studio.osmuimgcheck --code G3-15",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "affil-a409-naver-1012",
@@ -18874,9 +18906,11 @@
    "due": "2026-10-13",
    "cmd": "type docs\\진단_CP화면갱신_20261013.md",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "cp1-archive-verify",
@@ -19002,8 +19036,10 @@
    "due": "2026-10-14",
    "cmd": "ls -la webapp/batch.json",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "selfcheck-reds-1013",
@@ -19529,8 +19565,10 @@
    "due": "2026-10-16",
    "cmd": "python studio/selfcheck.py 의 13)·18b)·18f)·10) 🔴 0건 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "anthropic-mail-relay-1016",
@@ -19673,8 +19711,10 @@
    "due": "2026-10-17",
    "cmd": "python -c \"from studio import naverrich as n; print(n.skeleton_check('G3-19'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "skeleton 재정의(섹션 N·표 T·✅⚠️🏛📌) — 구 버전은 서식본에 ■ 가 없어 이모지 4개만 보고 오탐/빈문자열. F4-30 vs F2-20 실발화, D3-09 무경고(naver-draft 출력 실측). 연속 10편 확장·naverwrite 게이트는 미구현"
   },
   {
    "id": "xlink-g319",
