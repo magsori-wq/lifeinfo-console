@@ -20620,6 +20620,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "v0-autopush-verify-1020",
+   "added": "2026-10-19",
+   "what": "다음 V0 pass 때 v0check.json 이 즉시 원격 반영되는지(dba340715) 확인",
+   "due": "2026-10-20",
+   "cmd": "git log origin/main -5 --format=%s | grep 'V0 통과 — 게이트'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
