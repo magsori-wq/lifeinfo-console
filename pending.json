@@ -1,29 +1,30 @@
 {
- "rev": "6ea4af59",
+ "rev": "a7fd51d46",
  "counts": {
   "total": 401,
-  "osmu_done": 400,
-  "osmu_pending": 1,
+  "osmu_done": 401,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 401,
-  "index_requested": 163,
+  "index_requested": 160,
   "index_todo": 79,
-  "index_benign": 159
+  "index_benign": 162
  },
  "actionable": [
   {
    "code": "B2-22",
    "title": "학자금대출 이자면제 지역대학 8구간까지 확대 — 11월",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
