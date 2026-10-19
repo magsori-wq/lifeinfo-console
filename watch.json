@@ -20410,6 +20410,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "gimhae-buncheong-detail-1019",
+   "added": "2026-10-19",
+   "what": "김해분청도자기축제 31회 입장료·주차·셔틀·세부일정표 못 찾음. 시도: festival.buncheong.co.kr 메뉴 6개+공지 34건 목록(10/8 공지는 '세부일정 추후 공지'), 뉴스 3건. 옛 진례 정보가 사이트에 남아있음",
+   "due": "2026-11-04",
+   "cmd": "python -m studio.bodydup --help >NUL & curl -sL http://festival.buncheong.co.kr/00003/00013.web | grep -o 'idx=[0-9]*' | head -3 (새 공지 idx>688 확인, 문의 055-345-6036)",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "peaksoak-cancel-1019",
+   "added": "2026-10-19",
+   "what": "Peak&Soak in 부산 취소규정 모순(상단 무료취소 11/7편=11/1 00시 vs 표 출발5일전0%) 및 회차 잔여석('모집중'+'품절' 동시표기) 미확정. 시도: marinegds 예약페이지 6개 날짜 클릭 읽기, 비짓부산 상세. 문의 051-701-5006",
+   "due": "2026-10-28",
+   "cmd": "Aside 로 https://marinegds.net/package/c9944e4e08a649719f29057606f74cf3 재조회 후 문의 결과 반영",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
