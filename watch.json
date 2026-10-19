@@ -4520,7 +4520,9 @@
    "due": "2026-10-01",
    "cmd": "python -m studio.dupcheck \"태풍 피해 자동차보험 자기차량손해 처리 방법 침수 전손 총정리 (2026 가을 태풍철)\"  # D2-07 과 동일소재인데 🟢로 나옴",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-10-19",
+   "result": "태풍판 제목 최유사 D2-07 겹침 0.57 🟡 (자차보험/침수 동의어+가을 태풍철 가중↓)"
   },
   {
    "id": "insp-collab-0903",
@@ -19861,8 +19863,10 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.dupcheck \"복지 신청주의 폐지 직권 지원 시행\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "신청주의/건강검진 동의어+희귀어 4자 허용, 계절·날짜 가중 0.3. 재현 3건 🟡로 A1-20·C1-14·D2-07 표출, 최근20편 날짜오탐 🔴4/🟡6→🟢, falsepos 규칙 추가"
   },
   {
    "id": "brandconnect-1week-report-1019",

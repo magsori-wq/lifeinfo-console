@@ -14352,6 +14352,22 @@
    "target": "topicprop-race-1018",
    "detail": "topicprop._save: O_EXCL 잠금+재읽기 병합(_merge)+atomicio 교체. 4프로세스x20회 유실 0 (병합 해제 대조군은 유실 발생)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:34:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "dupcheck-synonym-fix-1018",
+   "detail": "신청주의/건강검진 동의어+희귀어 4자 허용, 계절·날짜 가중 0.3. 재현 3건 🟡로 A1-20·C1-14·D2-07 표출, 최근20편 날짜오탐 🔴4/🟡6→🟢, falsepos 규칙 추가",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:34:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "dupcheck-miss-typhoon-flood",
+   "detail": "태풍판 제목 최유사 D2-07 겹침 0.57 🟡 (자차보험/침수 동의어+가을 태풍철 가중↓)",
+   "via": "cli"
   }
  ]
 }
