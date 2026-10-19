@@ -13278,8 +13278,10 @@
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('idx0zero'))\"",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-10-19",
+   "result": "sessionstate.read_info('idx0zero') reads=6 (기준 reads=1 에서 증가, last_read 10-15 09:36) — 포인터 작동 확인 (실측 10-19 밤)"
   },
   {
    "id": "blogger-settings-capture-0924",
