@@ -3011,8 +3011,9 @@
     {
      "code": "F2-19",
      "title": "불법숙박 신고증 확인 11월 12일 시행 — 플랫폼 과태료 500만원",
-     "state": "todo",
-     "note": ""
+     "state": "done",
+     "note": "초안 불법숙박영업신고증확인과태료_글_HTML.txt·복지부 보도자료+법 조문 대조·layout 🔴0·bodydup 신규 0.070·dstyle F·썸네일 381/381n 실사진 확인·pubqueue add·push. 상품조사는 이부장 몫 미실시. 다음 D1-16",
+     "at": "2026-10-19 14:41"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -3089,17 +3090,25 @@
    ]
   }
  },
- "updated": "2026-10-19 14:36:52",
+ "updated": "2026-10-19 14:42:08",
  "current": {
-  "batch": "followup",
+  "batch": "draft1019d116",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[체인] #228 A2-27 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeqXjhWAVCU · ✅ 쓰레드 이미지 ↔ thread_A2-27_sbiz_voucher.png  MAD 0.0 ·) — [이과장] 기록: python -m studio.pipeline threads-link --code A2-27 --url https://www.threads.com/@magsori8975/post/DeqXjhWAVCU → 4채널 완결 확인",
-  "since": "16:25",
-  "since_at": "2026-10-13 16:25:53"
+  "what": "D1-16 초안 착수 — 소스 docs/source_sbk_selfpick_20261019.md 대조 후 작성",
+  "since": "14:42",
+  "since_at": "2026-10-19 14:42:08"
  },
  "log": [
+  {
+   "t": "14:42:08",
+   "text": "▶   — 1/7단계 · D1-16 초안 착수 — 소스 docs/source_sbk_selfpick_20261019.md 대조 후 작성"
+  },
+  {
+   "t": "14:41:59",
+   "text": "✅ F2-19 완료 — 불법숙박 신고증 확인 11월 12일 시행 — 플랫폼 과태료 5"
+  },
   {
    "t": "14:36:52",
    "text": "📄 draft1019b222 작업 지시 등록(11013자, 2026-10-19 14:36)"
@@ -3251,14 +3260,6 @@
   {
    "t": "13:11:04",
    "text": "▶   — 1/7단계 · [체인] #228 A2-27 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeqXjhWAVCU · ✅ 쓰레드 이미지 ↔ thread_A2-27_sbiz_voucher.png  MAD 0.0 ·) — [이과장] 기록: python -m studio.pipeline threads-link --code A2-27 --url https://www.threads.com/@magsori8975/post/DeqXjhWAVCU → 4채널 완결 확인"
-  },
-  {
-   "t": "13:11:02",
-   "text": "🏁 Aside #228 이부장 확인"
-  },
-  {
-   "t": "13:10:56",
-   "text": "▶   — 1/7단계 · [Aside][done] [A2-27] #228 쓰레드 게시 — 이미지 1장 확인·본문 436자 원문 일치·링크카드 2개 삭제·URL 200·중복 없음 · 총 탭 12개 · https://www.threads.com/@magsori8975/post/DeqXjhWAVCU"
   }
  ],
  "currents": {
@@ -3792,6 +3793,15 @@
    "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DeqXPS3EeCy/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "13:02",
    "since_at": "2026-10-19 13:02:43"
+  },
+  "draft1019d116": {
+   "batch": "draft1019d116",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "D1-16 초안 착수 — 소스 docs/source_sbk_selfpick_20261019.md 대조 후 작성",
+   "since": "14:42",
+   "since_at": "2026-10-19 14:42:08"
   }
  },
  "report_log": [
@@ -3845,62 +3855,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-05 13:13:53",
-   "bid": "draft1005c114",
-   "code": "C1-14",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "📋 복창: C1-14 건강검진 12/31 마감 초안(개인 과태료 없음 vs 회사 과태료 반전, 1차출처만) → 썸네일 → pubqueue → V0. 이어서 A1-18·D1-11 순서(한 편씩)"
-  },
-  {
-   "ts": "2026-10-05 13:21:15",
-   "bid": "pub1005g309",
-   "code": "G3-09",
-   "title": "",
-   "owner": "이과장",
-   "what": "📋 복창: G3-09 발행 — 게이트 전부 통과(V0 🟢 13:07·go 승인 13:15·원격 동기 0·pace 0편·setgate 미완 없음). 트리거(gh workflow run)만 확인 중"
-  },
-  {
-   "ts": "2026-10-05 13:21:52",
-   "bid": "pub1005g309",
-   "code": "G3-09",
-   "title": "",
-   "owner": "이과장",
-   "what": "⚠️ 막힘 — 발행 트리거 gh workflow run 이 권한 분류기에 거부됨([Auto-Mode Bypass]). 게이트는 전부 통과(V0 🟢·go 13:13·원격 동기 0·pace 0편·setgate 미완 없음). 우회하지 않음. 결재함 등록도 'roles 상 이과장 일'이라 게이트가 거부(--force 안 씀). ⏸ 대기 — 사장님이 아래 한 줄을 직접 실행하시거나 권한 규칙을 열어 주셔야 함: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=G3-09 -f mode=live -f confirm=PUBLISH -f file=마산가고파국화축제_글_HTML.txt -f title=마산가고파국화축제 -f post_title='2026 마산가고파국화축제 일정·관람료 총정리 (10/31~11/8 무료입장)'"
-  },
-  {
-   "ts": "2026-10-05 13:22:26",
-   "bid": "draft1005a118",
-   "code": "A1-18",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "📋 복창: A1-18 노인일자리 2027 118만개·11~12월 정기모집 준비 초안(제목에 '하반기 추가모집' 금지, 활동비 금액 금지, 1차출처만) → 썸네일 → pubqueue → V0. 이어서 D1-11"
-  },
-  {
-   "ts": "2026-10-05 13:26:50",
-   "bid": "draft1005d111",
-   "code": "D1-11",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "📋 복창: D1-11 수능 교통통제 초안(1차출처만) → 썸네일 → pubqueue → V0 요청. (G3-09 발행 트리거는 권한 거부로 사장님 대기 중)"
-  },
-  {
-   "ts": "2026-10-05 13:55:55",
-   "bid": "v0fix1005a118",
-   "code": "A1-18",
-   "title": "",
-   "owner": "이과장",
-   "what": "✅ 수정 완료·V0 재검사 요청: 제목 L1·큐 제목에 '(복지부 계획)'·'연말 예상' 헤지, 이미지 alt '118만 개 확대 계획 · 11~12월 정기모집 예상'. 본문·표·면책·바이라인 미변경. layout 🔴0. ⏸ 이부장 V0 재검사 대기"
-  },
-  {
-   "ts": "2026-10-05 14:39:31",
-   "bid": "osmuprep1005g309",
-   "code": "G3-09",
-   "title": "",
-   "owner": "이과장",
-   "what": "📋 복창: G3-09 OSMU 재료 사전 준비(네이버 원고·서식본·인스타 카드·쓰레드 이미지·캡션, 게시 안 함). 발행·게시 지시 오면 그것 먼저"
-  },
   {
    "ts": "2026-10-05 14:42:10",
    "bid": "osmuprep1005g309",
@@ -12620,6 +12574,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "[체인] #228 A2-27 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeqXjhWAVCU · ✅ 쓰레드 이미지 ↔ thread_A2-27_sbiz_voucher.png  MAD 0.0 ·) — [이과장] 기록: python -m studio.pipeline threads-link --code A2-27 --url https://www.threads.com/@magsori8975/post/DeqXjhWAVCU → 4채널 완결 확인"
+  },
+  {
+   "ts": "2026-10-19 14:42:08",
+   "bid": "draft1019d116",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "D1-16 초안 착수 — 소스 docs/source_sbk_selfpick_20261019.md 대조 후 작성"
   }
  ]
 }
