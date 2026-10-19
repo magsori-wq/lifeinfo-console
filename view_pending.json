@@ -1,11 +1,10 @@
 {
- "computed_at": "2026-10-19 15:00:36",
- "source_head": "60a95a5e2b06",
+ "computed_at": "2026-10-19 15:08:29",
+ "source_head": "f017819c3744",
  "ids": [
   "B2-22",
   "D1-16",
   "F2-19",
-  "g323-photo-download-1019",
   "gplay-meta-sub-1020"
  ],
  "posts": [
@@ -40,22 +39,46 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_불법숙박영업신고증확인과태료.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_F2-19_lodging_license.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/magsori8975/p/Deqk0-jkVuR/",
      "files": [
       {
        "label": "인스타 캡션",
        "path": "insta/캡션_불법숙박영업신고증확인과태료.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "카드1",
+       "path": "insta/lodging_license_01_cover.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드2",
+       "path": "insta/lodging_license_02_target.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드3",
+       "path": "insta/lodging_license_03_check.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "done"
     }
    }
   }
@@ -117,14 +140,6 @@
   }
  ],
  "actions": [
-  {
-   "id": "g323-photo-download-1019",
-   "what": "G3-23 김해분청 썸네일용 Commons CC0 사진(분청사기 인화박지 모란 국화 무늬 대접, MET) 1장 다운로드 허락 여부",
-   "due": "2026-10-19",
-   "cmd": "python -m studio.batchboard show",
-   "state": "todo",
-   "kind": "action"
-  },
   {
    "id": "gplay-meta-sub-1020",
    "what": "Google Play: Instagram(Meta One Essential) 무료체험 10/20 종료 → 자동 유료 ₩19,500/월. 유지할지 취소할지 결정 필요",
