@@ -6119,16 +6119,6 @@
    "result": "소스 확인 -- touch_read 는 읽기(no --file) 분기에만 있고 --file 등록 분기엔 없음"
   },
   {
-   "id": "factcheck-f4-20-vienna-0907",
-   "added": "2026-09-07",
-   "what": "F4-20 09-23 재확인(curl, 브라우저 없음): ①체크인마감(50분,카운터332-361)=09-07에 이미 확인된 값, 라이브 글에도 그대로 실려있어 문제없음 ②도착권장시각 안내는 수하물기준(위탁3h/기내만2h)이 맞고 '비행시간길이 기준'이라는 서술은 원문 재대조로 근거를 못 찾음(모순 해소) ③카운터 수치가 두 공식출처에서 다름 — viennaairport.com 항공사목록엔 Terminal3 351-372(스타얼라이언스 그룹 공동), austrian.com 자체 검색툴은 332-361(09-07 브라우저 확인값, 라이브도 이 값 사용) — 어느 쪽도 틀렸다 볼 근거 없이 병기만 함 ④보안검색 소요시간/검색대수는 여전히 미확인, 게다가 조사 URL(viennaairport.com/.../security_check)이 이번엔 302로 사라짐(경로 자체가 바뀜) ⑤터미널-게이트 Schengen 매핑은 여전히 공식서술 없음(원문 재확인해도 동일). docs/source_F4-20_비엔나공항출국_20260907.md '2026-09-23 재확인' 절 참고",
-   "due": "2026-10-07",
-   "cmd": "브라우저(claude-in-chrome)로 austrian.com/us/en/check-in-deadlines 접속 재시도(카운터 332-361 vs 351-372 불일치 해소) + 비엔나공항 콜센터(+43-1-7007-22233) 문의로 보안검색 소요시간/터미널-게이트 매핑 확인",
-   "owner": "claude",
-   "state": "todo",
-   "by": "세션:830847ea"
-  },
-  {
    "id": "order-section-handoff-0907",
    "added": "2026-09-07",
    "what": "🔴[루틴7 → 이부장] 지시서 섹션 라벨이 **주 경로에 안 걸렸다.** ①②는 재검증으로 해소 확인(order-section-bugs-0907 닫음). 남은 것 2개: ③batchboard.py:715~719 _handoff() 가 print(order.rstrip()) 로 지시서를 **라벨 없이** 찍는다 — _label_sections 호출부는 1094줄(cmd_order) 하나뿐이다. 🔴그런데 루틴이 지시서를 보는 주 경로가 바로 이 _handoff 다(지시서 자신이 '마킹하면 이 문서가 그 자리에서 따라 나온다. 마킹하고 끝내지 말고 반드시 읽어라' 고 안내한다 — 루틴7도 그 경로로 읽었다). 즉 섹션이 쌓이면 mark 뒤에 남의 지시를 그대로 읽게 되어 원래 위험이 그대로 남는다 ④루틴 SKILL.md 7개 중 batchboard order 언급 1개·--actor 안내 0개 — 루틴이 직접 쳐도 actor 가 없어 중립 표기만 나오고 '네 것이 아니다' 경고를 못 본다. 처방: ③719줄을 _label_sections(order,<수신자>) 로(수신자는 mark --code 값에서 유추 가능 — 루틴명과 같다) ④SKILL 7개 보고 절에 --actor <루틴N> 추가(dispatch.py 는 이미 --actor 를 쓴다). ※루틴은 보고까지가 몫이라 고치지 않았다(roles 📣). 근거=docs/지시서_섹션분리_검증_20260907.md 하단 '재검증'",
@@ -17213,8 +17203,10 @@
    "cmd": "grep -n '4회째' CLAUDE.md && python studio/adsense.py status",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:7a216f31"
+   "state": "done",
+   "by": "세션:7a216f31",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: grep -c 4회째 CLAUDE.md = 0 (낡은 반려 이력 문구가 이미 없음)"
   },
   {
    "id": "gmailread-sender-gap-1009",
@@ -17530,16 +17522,6 @@
    "by": "naver-link",
    "done_at": "2026-10-10",
    "result": "blogger.py crosslink F4-24 실행 → 라이브 재조회로 네이버·쓰레드·인스타 3개 링크 확인(15:5x)"
-  },
-  {
-   "id": "stock-refill-1010",
-   "added": "2026-10-10",
-   "what": "재고 2편(하한3) — docflow 에이전트가 오늘 글감 5건 선별·이과장 초안 지시서 발행 중. 결과 확인 후 이과장 깨움",
-   "due": "2026-10-10",
-   "cmd": "python -m studio.topicprop table && python -m studio.pace",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
   },
   {
    "id": "docflow-1010-sel",
@@ -18834,16 +18816,6 @@
    "by": "이부장"
   },
   {
-   "id": "wake-3-cadaily-1013",
-   "added": "2026-10-13",
-   "what": "3. 세션 cadaily 지시서 깨움(16:37 메시지, 20초 내 미시작) — 읽었는지 확인",
-   "due": "2026-10-13",
-   "cmd": "python -m studio.cpstate --list",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
-  },
-  {
    "id": "naver-skeleton-verify-1013",
    "added": "2026-10-13",
    "what": "구성 변주 경고가 실제 naver-draft(H1-28 재작성)에서 찍히는지·이과장 새 뼈대가 경고 없이 통과하는지 확인",
@@ -19429,16 +19401,6 @@
    "result": "불필요해짐 — 루틴1 실행 세션들은 10-17 12:40 사장님 요청으로 보관(종료)됐고 남은 루틴1 세션도 isRunning=false. 세션 전용 크론은 프로세스가 없으면 안 돈다(이부장 확인 10-18 11:35)"
   },
   {
-   "id": "topic-refill-1016",
-   "added": "2026-10-16",
-   "what": "재고 0 보충 — 에이전트 글감 조사 → 이부장 선별·verify → 이과장 초안 지시서(dispatch)까지",
-   "due": "2026-10-16",
-   "cmd": "python -m studio.topicprop table ; python -m studio.pubqueue list",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
    "id": "kimjang-source-1025",
    "added": "2026-10-16",
    "what": "김장 글감 보류 — 1차 출처(농식품부 김장재료 수급안정대책·KREI 10월 관측) 나오면 제안. 메모 docs/source_김장_보류메모_20261016.md",
@@ -19577,8 +19539,10 @@
    "due": "2026-10-16",
    "cmd": "python studio/blogger.py crosslink --code G3-18",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-g412",
@@ -19587,8 +19551,10 @@
    "due": "2026-10-16",
    "cmd": "python studio/blogger.py crosslink --code G4-12",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "chain-insta-count-1016",
@@ -19630,8 +19596,10 @@
    "due": "2026-10-17",
    "cmd": "python studio/blogger.py crosslink --code E4-06",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-a226",
@@ -19640,8 +19608,10 @@
    "due": "2026-10-17",
    "cmd": "python studio/blogger.py crosslink --code A2-26",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "insta-share-neterr-1017",
@@ -19767,8 +19737,10 @@
    "due": "2026-10-17",
    "cmd": "python studio/blogger.py crosslink --code G3-20",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "instagram-login-check-1017",
@@ -19917,8 +19889,10 @@
    "due": "2026-10-19",
    "cmd": "CronList 로 6381352d 확인",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "10-19 17:07 Meta One Essential 정기결제 취소 완료(Play 구독 목록 '취소됨·10-20 종료' 확인)"
   },
   {
    "id": "xlink-a123",
@@ -19927,8 +19901,10 @@
    "due": "2026-10-18",
    "cmd": "python studio/blogger.py crosslink --code A1-23",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "routine-audit-1018",
@@ -20026,8 +20002,10 @@
    "due": "2026-10-18",
    "cmd": "python studio/blogger.py crosslink --code C1-17",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "kbo-po-ks-ticket-notice",
@@ -20092,8 +20070,10 @@
    "due": "2026-10-18",
    "cmd": "python studio/blogger.py crosslink --code F4-29",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "asidequeue-lost-1018",
@@ -20124,8 +20104,10 @@
    "due": "2026-10-18",
    "cmd": "python studio/blogger.py crosslink --code C3-08",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "asidequeue-lost-verify-1018",
@@ -20170,8 +20152,10 @@
    "due": "2026-10-18",
    "cmd": "python studio/blogger.py crosslink --code B2-20",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "lee-draft-start-1018b",
@@ -20202,8 +20186,10 @@
    "due": "2026-10-18",
    "cmd": "python studio/blogger.py crosslink --code G3-21",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-b221",
@@ -20212,8 +20198,10 @@
    "due": "2026-10-18",
    "cmd": "python studio/blogger.py crosslink --code B2-21",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "explorer-tab-spinner-change-1018",
@@ -20313,8 +20301,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code C3-09",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-b110",
@@ -20323,8 +20313,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code B1-10",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-g322",
@@ -20333,8 +20325,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code G3-22",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "gh-pat-lifeinfo-console-deploy-1025",
@@ -20356,8 +20350,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code A1-24",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-b509",
@@ -20366,8 +20362,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code B5-09",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-a227",
@@ -20376,8 +20374,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code A2-27",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "approval-deploy-flag-1019",
@@ -20472,8 +20472,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code F2-19",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "fix-loopgaps-1019",
@@ -20492,8 +20494,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code D1-16",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "routine9-model-unseen-1019",
@@ -20522,8 +20526,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code B2-22",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "xlink-g323",
@@ -20532,8 +20538,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code G3-23",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "grand-festival-recheck-1022",
@@ -20552,8 +20560,10 @@
    "due": "2026-10-19",
    "cmd": "python studio/blogger.py crosslink --code F2-20",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: 라이브 블로그스팟 본문에 DB osmu 3채널(naver·threads·instagram) URL 이 전부 실재(HTTP 조회 확인), 교차링크 보완 완료"
   },
   {
    "id": "cloud-merge-decision-1019",
@@ -20622,8 +20632,10 @@
    "due": "2026-10-19",
    "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-10-19",
+   "result": "10-19 자동분류: python -m studio.gatesync 출력 「이미 원격과 같다 — 밀어 올릴 것이 없다」"
   },
   {
    "id": "v0-autopush-verify-1020",
