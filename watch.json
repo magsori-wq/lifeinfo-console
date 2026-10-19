@@ -3924,7 +3924,9 @@
    "due": "2026-10-07",
    "cmd": "WebSearch '주프랑스 OR 주독일 OR 주이탈리아 대한민국 대사관 여권 분실 긴급여권 안내' 로 개별 재외공관 공지 재탐색, 또는 passport.go.kr 민원상담(02-3210-0404)에 표준 소요시간 문의",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-10-19",
+   "result": "낡음: F1-15 이미 라이브 발행·인스타 게시(db), 미확보 3건은 글감 준비 단계 항목 (실측 10-19 밤)"
   },
   {
    "id": "fix-f214-source-0901",
@@ -8468,8 +8470,10 @@
    "due": "2026-09-29",
    "cmd": "WebFetch로 hope.welfareinfo.or.kr 공지사항 또는 관악구·남양주 .go.kr 페이지를 9/29~9/30에 재확인 후 3차 실제 진행여부 확정. 열리면 발행, 중단이면 글감 보류/수정",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: A1-16 발행됨, 제목이 '중단 예고 상태' 로 불확실성 반영(lifeinfo_db.txt) (실측 10-19 밤)"
   },
   {
    "id": "source-a217-payback-2026",
@@ -10037,8 +10041,10 @@
    "due": "2026-09-30",
    "cmd": "Gmail: from:support@mail.anthropic.com newer_than:7d",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:af441131"
+   "state": "done",
+   "by": "세션:af441131",
+   "done_at": "2026-10-19",
+   "result": "사람 담당자 회신 도착: Gmail support@mail.anthropic.com 2026-10-06 21:23Z 두 티켓 통합 답변 (실측 10-19 밤)"
   },
   {
    "id": "publish-run-local-record-loss-0914",
@@ -14803,8 +14809,10 @@
    "due": "2026-09-29",
    "cmd": "grep -n 'PE 답변(09-25)' docs/애드센스_소거표_20260924.md docs/애드센스_승인사례_정밀조사_20260924.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:f82d5f6b"
+   "state": "done",
+   "by": "세션:f82d5f6b",
+   "done_at": "2026-10-19",
+   "result": "결과 반영됨: docs/애드센스_소거표_20260924.md:121 【7】, 승인사례_정밀조사:573 (09-28) (실측 10-19 밤)"
   },
   {
    "id": "threads-paste-blocked-0928",
@@ -15041,8 +15049,10 @@
    "due": "2026-10-09",
    "cmd": "claude-in-chrome으로 https://form.naver.com/response/H6JnaO7fnPf 를 직접 열어 확인하거나, 전화 010-2864-2405 / 010-6351-4769 로 문의",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: G3-08 라이브 발행됨, 행사 10/16~18 종료 (실측 10-19 밤)"
   },
   {
    "id": "g3-08-hwp-attachments-20261001",
@@ -15233,8 +15243,10 @@
    "due": "2026-10-02",
    "cmd": "python -m studio.draftfind H1-20",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:8b79df1b"
+   "state": "done",
+   "by": "세션:8b79df1b",
+   "done_at": "2026-10-19",
+   "result": "H1-20 라이브 발행됨(lifeinfo_db.txt posts), draftfind H1-20 ✅ (실측 10-19 밤)"
   },
   {
    "id": "aside-naver-login-1001",
@@ -15532,8 +15544,10 @@
    "due": "2026-10-03",
    "cmd": "python -m studio.v0check ask --code G3-09",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:544203d9"
+   "state": "done",
+   "by": "세션:544203d9",
+   "done_at": "2026-10-19",
+   "result": "v0check G3-09 pass 2026-10-05T13:07 반려 3건 재검사 통과 (실측 10-19 밤)"
   },
   {
    "id": "d3-04-sgi-rate-recheck-1002",
@@ -15622,8 +15636,10 @@
    "due": "2026-10-04",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "H1-21·E4-07 모두 lifeinfo_db.txt 에 발행 레코드 존재 (실측 10-19 밤)"
   },
   {
    "id": "source-암살자들-가격미확보-20261003",
@@ -16513,8 +16529,10 @@
    "due": "2026-10-06",
    "cmd": "C:/Users/magso/AppData/Local/Aside/CLI/current/aside.exe guide",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: Aside 정상 동작 — #150 done 10-16 14:32 확인(data/aside_orders.json) (실측 10-19 밤)"
   },
   {
    "id": "b507-aside-retry-2000",
@@ -17167,8 +17185,10 @@
    "due": "2026-10-16",
    "cmd": "Get-WinEvent -FilterHashtable @{LogName='System';Id=41,1001;StartTime=(Get-Date '2026-10-09 06:03')}",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "Get-WinEvent System Id 41,1001 since 10-09 06:03 → 0건 (실측 10-19 밤)"
   },
   {
    "id": "aside8-g310-naver-0909",
@@ -17810,8 +17830,10 @@
    "due": "2026-10-12",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 20 --json conclusion,name,createdAt -q '.[]|select(.conclusion==\"failure\")|.createdAt'",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "lifeinfo-console 최근 20 run 중 failure 0건, 최신 5건 success (실측 10-19 밤)"
   },
   {
    "id": "v0-f4-25-20261010",
@@ -18588,9 +18610,11 @@
    "due": "2026-10-13",
    "cmd": "gh run view 38108341143 -R magsori-wq/lifeinfo-source --log-failed",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "세션:9805bb97"
+   "by": "세션:9805bb97",
+   "done_at": "2026-10-19",
+   "result": "낡음: run 38108341143 은 10-11 '원격 선행 가드' 일회성 실패(gh log-failed 확인) (실측 10-19 밤)"
   },
   {
    "id": "naver-reorg-effect-1026",
@@ -18825,9 +18849,11 @@
    "due": "2026-10-14",
    "cmd": "python -m studio.threadsdraft --solo 20260927-2",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "affiliate solo: 20260927-2·20260925-2 모두 게시완료 (실측 10-19 밤)"
   },
   {
    "id": "naver-skeleton-verify-1013",
