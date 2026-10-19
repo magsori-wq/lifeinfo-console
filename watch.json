@@ -18128,8 +18128,10 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml --limit 50 --json createdAt,databaseId,conclusion",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:fa517682"
+   "state": "done",
+   "by": "세션:fa517682",
+   "done_at": "2026-10-19",
+   "result": "원인: 트리거 경로는 gh 수동/pubgo 뿐(towertick은 조회만). 10-02(8초)·10-11(17초) 모두 첫 run 이 목록에 뜨기 전 두 번째가 _busy_run 빈 결과로 통과. yml 은 이미 concurrency group lifeinfo-publish(전역·cancel-in-progress false)라 per-code 보다 강해 유지. pubgo.py 에 같은 코드 120초 재트리거 차단(_recent_trigger) 추가, monkeypatch 시험 통과. 직접 gh workflow run 은 여전히 무방비(원격 선행 가드가 최후 방어)"
   },
   {
    "id": "v0reject-g3-13",
@@ -20028,8 +20030,10 @@
    "due": "2026-10-20",
    "cmd": "grep -n 'def _save\\|os.replace\\|lock' studio/topicprop.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "topicprop._save: O_EXCL 잠금+재읽기 병합(_merge)+atomicio 교체. 4프로세스x20회 유실 0 (병합 해제 대조군은 유실 발생)"
   },
   {
    "id": "b2-20-sechik-body",
