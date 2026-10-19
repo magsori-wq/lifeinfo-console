@@ -5551,7 +5551,9 @@
    "due": "2026-10-01",
    "cmd": "python validate_db.py && git log -S '\"code\": \"A6\"' --oneline -- webapp/lifeinfo_db.txt && gh run view 34048472591 -R magsori-wq/lifeinfo-source --log | grep -n 'DB 추가\\|라이브 글 생성\\|validate FAIL'",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "drift-approve-0907",
@@ -6581,8 +6583,10 @@
    "due": "2026-10-05",
    "cmd": "python -c \"from studio import affiliate; import re; print(affiliate.block('E1-04','threads')[0])\" 로 실제 head 문구 확인 후 threadsdraft.py L243 의 검사 문자열을 그와 일치시킬 것",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:eb42e59e"
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "afflink-f4-14",
@@ -9982,8 +9986,10 @@
    "due": "2026-09-27",
    "cmd": "grep -n affiliate studio/selfcheck.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "nofit-review-before-threads-0914",
@@ -15748,8 +15754,10 @@
    "due": "2026-10-03",
    "cmd": "grep -n '_ACT = {' -A 8 studio/watch.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "xlink-d504",
@@ -15897,8 +15905,10 @@
    "due": "2026-10-05",
    "cmd": "grep -n 'force-unattended\\|unattended' studio/blogger.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "xlink-e407",
@@ -16001,8 +16011,10 @@
    "due": "2026-10-04",
    "cmd": "grep -c cp_live.js webapp/adsense.html webapp/daylog.html webapp/reports.html webapp/naverstats.html webapp/batch.html && python -m studio.falsepos | grep -i cp_live",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "cp-migration-stage4-decide-1004",
@@ -16813,8 +16825,10 @@
    "due": "2026-10-07",
    "cmd": "grep -n 'v0check\\|origin' tools/pubgo.py | head; grep -n 'BOSS_APPROVAL' tools/tower_watch.sh",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "xlink-d112",
@@ -17312,8 +17326,10 @@
    "cmd": "python studio/gmailread.py scan | tail -5 && grep -n 'SENDERS\\|발신자' studio/gmailread.py | head -20",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:7a216f31"
+   "state": "done",
+   "by": "세션:7a216f31",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
   {
    "id": "docflow-1009-0940",
