@@ -20648,8 +20648,10 @@
    "due": "2026-10-20",
    "cmd": "git fetch -q origin claude/pending-fix && git log --oneline main..origin/claude/pending-fix",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "PC 확인 후 병합 b5123ced0"
   },
   {
    "id": "f430-naver-affiliate-paste-1019",
@@ -20661,6 +20663,16 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "pending-shadow-mismatch-1020",
+   "added": "2026-10-19",
+   "what": "미결사항 화면 「판정 불일치 3건(그림자)」 배지 — 실제 데이터 불일치인지 확인(pending_osmu.html 217행 진단)",
+   "due": "2026-10-20",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

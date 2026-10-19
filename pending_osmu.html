@@ -90,6 +90,14 @@ h1{font-size:17px;margin:0}
 .toast.on{opacity:1}
 @media(max-width:900px){body{overflow:auto}
   .grid{grid-template-columns:1fr;grid-template-rows:none}.pane{max-height:420px}}
+/* 📱 폰 폭(2026-10-19): 읽기 전용 경로가 멈춰 이 화면이 폰에서 한 번도 그려지지 않아 레이아웃을 못 봤다.
+   제목이 세로로 꺾이고 상단 통계 4칸이 한 줄이라 글자가 세로로 쪼개졌다 → 제목 한 줄·통계 2열. PC(700px 초과)는 그대로. */
+@media(max-width:700px){
+  .hdrow{flex-wrap:wrap;gap:2px 12px}
+  h1{white-space:nowrap}
+  .sig{flex-wrap:wrap}
+  .sg{flex:1 1 calc(50% - 5px);min-width:0}
+}
 </style></head><body>
 <div class="hdrow"><h1>🗂️ 미결사항</h1>
  <span class="tip">파일을 클릭하면 아래에서 열립니다 · 네이버 원고는 <b>🎨 서식본 열기</b>(글자만 복사하면 서식이 빠진다), 다른 원고는 <b>전체 복사</b>, 이미지는 <b>🖼 이미지 복사</b>(네이버에서 Ctrl+V)</span></div>
@@ -367,6 +375,9 @@ function fileChip(path, label, isImg, exists){
 }
 
 (async function(){
+  // 🔴 채널 목록은 맨 앞에서 선언한다(2026-10-19). 읽기 전용(폰·github.io) 분기가 아래에서 render(D0) 를 부르는데
+  //    선언이 그 뒤(render 정의 옆)에 있어 CH 가 undefined → forEach TypeError → 「불러오는 중…」에서 멈췄다.
+  var CH=[['naver','📗','네이버'],['threads','🧵','쓰레드'],['instagram','📸','인스타']];
   // 서버 탐색 — /api/pending 을 응답하는 최신 서버만 채택한다(옛 프로세스 자동 배제)
   // 🔴 8011 이 전자결재 전용 고정 포트다(2026-08-23). 이 화면도 같은 서버를 쓴다.
   //    옛 포트를 앞에 두면 이전 세션이 남긴 낡은 서버에 먼저 붙는다 —
@@ -445,7 +456,6 @@ function fileChip(path, label, isImg, exists){
   //    폴백에서만 읽고 있어서 서버 모드 카드가 **블로그스팟 제목**을 보여줬다 —
   //    B4-16 이 네이버에 원문 제목으로 게시된 원인이다(C안 위반).
   if(!window.__OSMUTEXT__){ try{ window.__OSMUTEXT__ = await j('osmu_text.json'); }catch(e){} }
-  var CH=[['naver','📗','네이버'],['threads','🧵','쓰레드'],['instagram','📸','인스타']];
 
   function render(D){
   var cnt={done:0,ready:0,todo:0};
