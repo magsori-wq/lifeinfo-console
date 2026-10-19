@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-19 20:31:26",
- "source_head": "71e9665a0f64",
+ "computed_at": "2026-10-19 22:44:37",
+ "source_head": "95c3afb1aa58",
  "ids": [],
  "posts": [],
  "publish": [],
@@ -15,35 +15,11 @@
    "kind": "action"
   },
   {
-   "id": "f430-naver-paste-boss-1019",
-   "what": "F4-30 네이버 글 맨 앞에 제휴 문구+핫팩 링크 2개 붙여넣기(30초) — docs/naver_affiliate_F4-30.txt",
-   "due": "2026-10-20",
-   "cmd": "start https://blog.naver.com/magsori8975/224446840831",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
    "id": "loopeng-stopcond",
    "what": "루프엔지니어링 보고서 종료조건 — 발행 페이스(횟수 기반)에 **조건 기반 지표**를 얹을지. 【지금 하면 안 되는 이유】 색인이 **0/277**(2026-09-20 판독)이다. 어떤 조건을 걸어도 0 은 통과 못 해 그 흐름이 완전히 잠긴다. 그리고 사장님이 2026-09-13 에 '한도 당분간 없다' 고 푸신 것을 되돌리는 셈이 된다. 【언제 다시 보나】 **색인이 0 에서 벗어나면** — 임계값을 지어내지 않는다. 0→1 이라도 무언가 움직인 것이고 그때 이부장이 재서 판단해 올린다. 【사장님이 하실 것】 지금은 없다. ⚠️ 이 항목에 오래 '색인 2/196' 이라 적혀 있었는데 09-21 재측정 결과 **0/277 로 더 나빠졌다**(196편일 때 2편 → 277편에서 0편).",
    "due": "2026-10-20",
    "cmd": "python -m studio.pace",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "gh-pat-expiry-1025",
-   "what": "GitHub 토큰 lifeinfo-console-deploy 가 10/25 경 만료(10/18 메일 '7일 뒤'). 만료되면 deploy.bat 콘솔 push 가 실패한다. 갱신: https://github.com/settings/personal-access-tokens/17499623/regenerate → 새 토큰을 deploy 저장소 인증에 교체",
-   "due": "2026-10-24",
-   "cmd": "gh auth status; git -C C:/lifeinfo-deploy ls-remote origin HEAD",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "gh-pat-lifeinfo-console-deploy-1025",
-   "what": "GitHub 토큰 lifeinfo-console-deploy 가 2026-10-25 만료(메일 10-18). 만료되면 deploy.bat 의 콘솔 push 가 막힌다. 재발급: https://github.com/settings/personal-access-tokens/17499623/regenerate → 새 토큰을 deploy 저장소 인증에 교체",
-   "due": "2026-10-24",
-   "cmd": "gh auth status; git -C C:/lifeinfo-deploy ls-remote origin HEAD",
-   "state": "todo",
    "kind": "action"
   }
  ]
