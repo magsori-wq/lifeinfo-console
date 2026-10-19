@@ -20342,8 +20342,10 @@
    "cmd": "gh auth status; git -C C:/lifeinfo-deploy ls-remote origin HEAD",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "세션:56085659"
+   "state": "done",
+   "by": "세션:56085659",
+   "done_at": "2026-10-19",
+   "result": "10-19 21:13 사장님 재발급(만료 2027-01-17)·Actions 시크릿 LIFEINFO_CONSOLE_PAT 갱신 확인(gh secret list) — 다음 라이브 발행 run 의 콘솔 클론 단계로 실동작 확인"
   },
   {
    "id": "xlink-a124",
@@ -20689,6 +20691,16 @@
    "by": "이부장",
    "done_at": "2026-10-19",
    "result": "사장님 지시로 Aside 처리로 전환(20:36)"
+  },
+  {
+   "id": "console-pat-verify-next-run",
+   "added": "2026-10-19",
+   "what": "다음 라이브 발행 run 에서 「콘솔 저장소 클론」 단계 성공 확인(새 PAT 실동작)",
+   "due": "2026-10-21",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 1 --json conclusion",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
