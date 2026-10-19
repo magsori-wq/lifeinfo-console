@@ -1573,8 +1573,10 @@
    "due": "2026-10-01",
    "cmd": "이 항목은 '다시 꺼내지 말 것' 기록이다. 재검토하려면 위 보류 사유 2가지가 해소됐는지부터 확인",
    "owner": "claude",
-   "state": "wait",
-   "flag": "삭제안(A③)은 검토조차 하지 않았다 — 네이버 애드포스트가 유일한 승인 수익채널이라 유입을 끊을 수 없다"
+   "state": "done",
+   "flag": "삭제안(A③)은 검토조차 하지 않았다 — 네이버 애드포스트가 유일한 승인 수익채널이라 유입을 끊을 수 없다",
+   "done_at": "2026-10-19",
+   "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
   {
    "id": "adsense-button-recheck",
@@ -20929,6 +20931,16 @@
    "by": "이부장",
    "done_at": "2026-10-19",
    "result": "시험 항목 — echo cmd 통과 확인"
+  },
+  {
+   "id": "publishyml-env-verify-next-run",
+   "added": "2026-10-19",
+   "what": "publish.yml env 이전(커밋 위) 뒤 첫 라이브 발행 run 이 전 단계 성공하는지 — 실패면 즉시 되돌림 검토",
+   "due": "2026-10-21",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 1 --json conclusion,createdAt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

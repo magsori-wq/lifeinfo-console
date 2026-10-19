@@ -15008,6 +15008,14 @@
    "target": "affiliate-linkrot-monitor-0914",
    "detail": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:15:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "workflow-quote-title-bug-0909",
+   "detail": "publish.yml run 블록의 inputs/steps outputs 직접삽입 전부 env 로 이전(남은 ${{}} 0, secrets 제외). yaml 통과, norm 스텝 bash 추출 시험에서 따옴표/$HOME/백틱/$() 제목 원문 보존·미실행. 미커밋",
+   "via": "cli"
   }
  ]
 }
