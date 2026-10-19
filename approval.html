@@ -682,7 +682,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     var bs=(B.batches)||{}, cur=(B.currents)||{};
     Object.keys(cur).forEach(function(k){
       var c=cur[k]||{}, w=String(c.what||'');
-      var m=w.match(/([A-H]\d-\d{2})/);          // 보고문 안의 글 코드
+      var m=w.match(/([A-I]\d-\d{2})/);          // 보고문 안의 글 코드
       var code=c.code||(m&&m[1]);
       if(code&&w) rep[code]={t:c.since||'',s:'진행중',w:w,b:k};
     });
@@ -861,7 +861,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     // 🔴 코드만 보이면 사장님이 그 내용을 다시 찾아야 한다 (2026-08-27 지시).
     //    what 안에 글 코드(A2-15 같은)가 있으면 **그 글 제목을 카드 제목에 붙인다.**
     //    "제발!!" 이라고 하실 만큼 반복된 지적이다 — 코드는 주소지 내용이 아니다.
-    var _cd=(w.what||'').match(/([A-H]\d-\d{2})/);
+    var _cd=(w.what||'').match(/([A-I]\d-\d{2})/);
     var _ttl='';
     if(_cd){ var _p=(Q.filter(function(y){return y.code===_cd[1];})[0])
                  ||(T.filter(function(y){return y.code===_cd[1];})[0]);
@@ -1132,7 +1132,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   // studio/approvalcount.py 의 _first_clause() 와 같은 규칙(중복이지만 이쪽은
   // 스냅샷이 아니라 이 화면이 이미 들고 있는 x.full 에서 바로 뽑으므로 안전하다).
   function firstClause(t){
-    t=String(t||'').replace(/^[A-H]\d-\d{2}(\([^)]{0,20}\))?\s*/,'');
+    t=String(t||'').replace(/^[A-I]\d-\d{2}(\([^)]{0,20}\))?\s*/,'');
     var delims=[' — ',' (','：',' · ',': ','\n'], cut=t.length;
     delims.forEach(function(d){var i=t.indexOf(d); if(i>0 && i<cut) cut=i;});
     t=t.slice(0,cut).trim();
