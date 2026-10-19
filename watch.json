@@ -20496,6 +20496,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fix-thumb-undeployed-badge-1019",
+   "added": "2026-10-19",
+   "what": "결재함 발행승인/실행 카드에 썸네일 미배포 배지: approvalcount.thumb_undeployed + bake_json 필드 + approval.html(approval_m.json a[14]) + m.html. 시험 통과, 미커밋",
+   "due": "2026-10-20",
+   "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio import approvalcount as a;print(a.thumb_undeployed('B2-22'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
