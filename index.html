@@ -117,6 +117,8 @@
   .acard .blkwhy{margin:6px 0 0;font-size:11px;color:#ffd166;line-height:1.5}
   /* 📱 폰 전용(2026-10-19 사장님 "CP 를 핸드폰으로 최적화"). 이 블록 안에서만 바꾼다 — 데스크톱 렌더는 0 변경.
      상단(제목·날짜·알림·그룹탭·세부탭)이 화면 30% 를 차지하던 것을 줄이고, 탭 줄은 한 줄 가로 스와이프. */
+  /* 📲 홈 화면에 추가 버튼(2026-10-19 사장님 "홈 화면에 추가 버튼 CP 화면에 넣어줘") — 기본은 숨김, 폰 폭에서만 보인다 */
+  #cpInstallBtn{display:none}
   @media(max-width:700px){
     .top{padding:8px 10px;padding-top:max(8px,env(safe-area-inset-top));gap:6px;
       padding-left:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right))}
@@ -137,6 +139,9 @@
     #f_daylog,#f_timeline{height:calc(100vh - 150px)!important;height:calc(100dvh - 150px)!important}
     select,input,textarea{font-size:16px}
     .acard{padding:12px}
+    #cpInstallBtn.on{display:inline-flex;align-items:center;gap:6px;width:max-content;min-height:40px;padding:6px 14px;margin:10px 12px 0;
+      border-radius:10px;border:1px solid #1f6b52;background:#0c3a2c;color:#06d6a0;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+    #cpInstallHelp{margin:8px 12px 0;padding:10px 12px;border-radius:10px;border:1px solid #2a3a5e;background:#16203a;color:#cdd8ee;font-size:12.5px;line-height:1.6}
   }
 </style>
 </head>
@@ -219,6 +224,7 @@
        정상일 때는 아무것도 그리지 않는다 — 늘 떠 있는 배너는 곧 안 보이게 된다. -->
   <div id="crawlAlert"></div>
 
+  <div id="cpInstallBar"><button id="cpInstallBtn" type="button">📲 홈 화면에 추가</button><div id="cpInstallHelp" hidden></div></div>
   <div class="stage">
     <div id="p_mytasks" class="panel show">
       <div class="d-wrap">
@@ -1203,6 +1209,51 @@
     }
     el.className='ro'; el.textContent='👁 읽기 전용';
   })();
+</script>
+<script>
+/* 📲 홈 화면에 추가 — 안드로이드 크롬은 beforeinstallprompt 로 설치창을 직접 띄운다.
+   아이폰·앱 안 브라우저(카톡 등)·조건 미충족은 안내문. 폰 폭에서만 보인다(CSS). */
+(function(){
+  try{
+    var btn=document.getElementById('cpInstallBtn'), help=document.getElementById('cpInstallHelp');
+    if(!btn||!help) return;
+    var ua=navigator.userAgent||'';
+    if((window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true) return;
+    var isIOS=/iPhone|iPad|iPod/.test(ua);
+    var inApp=/KAKAOTALK|NAVER\(inapp|Instagram|FBAN|FBAV|Line\/|; wv\)/i.test(ua);
+    var isAndroid=/Android/i.test(ua);
+    var CHROME='intent://magsori-wq.github.io/lifeinfo-console/index.html#Intent;scheme=https;package=com.android.chrome;end';
+    var deferred=null;
+    function show(){ btn.classList.add('on'); }
+    function fill(){
+      help.textContent='';
+      var p=document.createElement('div'), t;
+      if(inApp&&isAndroid) t='지금은 앱(카톡 등) 안의 간이 브라우저라 홈 화면 추가가 안 됩니다. 아래 버튼으로 크롬을 연 뒤, 크롬에서 「📲 홈 화면에 추가」를 다시 누르세요.';
+      else if(inApp) t='지금은 앱 안의 간이 브라우저입니다. 공유(⋯) 버튼 → 「Safari로 열기」 후 사파리 공유 버튼(□↑) → 「홈 화면에 추가」를 누르세요.';
+      else if(isIOS) t='아이폰은 사파리에서만 됩니다. 아래 공유 버튼(□↑) → 「홈 화면에 추가」를 누르세요. 크롬이면 사파리로 열어 주세요.';
+      else t='크롬 오른쪽 위 ⋮ → 「홈 화면에 추가」 또는 「앱 설치」를 누르세요. 이미 설치했다면 홈 화면의 CP 아이콘으로 여세요. 지우고 다시 추가하면 새 아이콘이 보입니다.';
+      p.textContent=t; help.appendChild(p);
+      if(inApp&&isAndroid){
+        var a=document.createElement('a'); a.href=CHROME; a.id='cpOpenChrome'; a.textContent='🌐 크롬으로 열기';
+        a.style.cssText='display:inline-block;margin-top:8px;padding:10px 16px;border-radius:10px;background:#4d9de0;color:#fff;font-weight:800;text-decoration:none';
+        help.appendChild(a);
+      }
+    }
+    window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferred=e; show(); });
+    window.addEventListener('appinstalled',function(){ deferred=null; btn.classList.remove('on'); help.hidden=true; });
+    if(isIOS||inApp){ show(); fill(); help.hidden=false; }          // 앱 안·아이폰은 처음부터 안내를 펼친다
+    else setTimeout(function(){ if(!deferred) show(); },2500);       // 설치 이벤트가 안 오면 크롬 메뉴 안내로 폴백
+    btn.addEventListener('click',function(){
+      if(deferred){
+        var d=deferred; deferred=null;
+        d.prompt();
+        if(d.userChoice&&d.userChoice.then) d.userChoice.then(function(r){ if(r&&r.outcome==='accepted') btn.classList.remove('on'); });
+        return;
+      }
+      if(help.hidden){ fill(); help.hidden=false; } else help.hidden=true;
+    });
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
