@@ -11,6 +11,8 @@
   .sub{color:#9fb0d0;font-size:12px;margin:4px 0 14px}
   .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
   @media(max-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+  /* 📱 폰 폭(2026-10-19): 표(폭 737px)가 화면 밖으로 밀어내던 것 → 표 안에서만 가로 스크롤, 화면은 안 밀림 */
+  @media(max-width:700px){table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}
   .card{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;padding:12px}
   .card .k{font-size:11px;color:#9fb0d0;font-weight:600}
   .card .v{font-size:23px;font-weight:800;margin-top:2px}

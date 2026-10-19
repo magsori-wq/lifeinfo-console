@@ -66,6 +66,12 @@ body{margin:0;padding:8px 10px;background:#0b1120;color:#e6ecf7;overflow:hidden;
 .none{color:#6b7a96;font-size:12px;padding:6px 0}
 @media(max-height:420px){.tile .big{font-size:21px}.strip{grid-template-columns:repeat(6,1fr)}}
 @media(max-width:1100px){.strip{grid-template-columns:repeat(3,1fr)}.main{grid-template-columns:1fr}}
+/* 📱 폰 폭(2026-10-19): 타일 안 한 줄 글 때문에 1fr 열이 최소폭을 못 줄여 오른쪽이 잘렸다 → 열을 minmax(0,1fr) 로 */
+@media(max-width:700px){
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .main{grid-template-columns:minmax(0,1fr)}
+  .tile{min-width:0}
+}
 </style></head><body>
 <div class="top"><span class="dot"></span><span class="ttl">관제 — 발행 진행</span>
   <span class="clock" id="clk"></span>

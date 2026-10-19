@@ -58,6 +58,16 @@ code:hover{border-color:#4D9DE0}
 .toast.on{opacity:1}
 @media(max-width:900px){body{overflow:auto}
   .grid{grid-template-columns:1fr;grid-template-rows:none}.pane{max-height:420px}}
+/* 📱 폰 폭(2026-10-19): 통계 6칸이 한 줄이라 글자가 세로로 쪼개지고 오른쪽이 잘렸다 → 2열로 접고,
+   패널은 높이를 내용에 맡긴다(approval 와 같은 원인). PC(900px 초과)는 그대로. */
+@media(max-width:700px){
+  .sig{flex-wrap:wrap}
+  .sg{flex:1 1 calc(50% - 5px);min-width:0}
+}
+@media(max-width:900px){
+  .grid{flex:none;overflow:visible}
+  .pane{height:auto;max-height:70vh;max-height:70dvh}
+}
 </style></head><body>
 <div class="hdrow"><h1>🔍 색인 보드</h1>
   <span class="tip">색인 요청일·경과일을 함께 봅니다 · 명령을 클릭하면 복사</span></div>
