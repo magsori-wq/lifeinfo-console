@@ -20370,6 +20370,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "approval-deploy-flag-1019",
+   "added": "2026-10-19",
+   "what": "결재함 발행 카드에 '썸네일 미배포 — deploy.bat 먼저' 표시(① 권고, 승인·배포를 한 번에). approval.html·approvalcount 함께",
+   "due": "2026-10-20",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/<썸네일>.png",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
