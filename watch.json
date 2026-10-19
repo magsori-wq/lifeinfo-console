@@ -20025,7 +20025,7 @@
    "id": "topicprop-race-1018",
    "added": "2026-10-18",
    "what": "topicprop.json 동시 쓰기 유실 — 에이전트 4개가 동시에 topicprop add 하자 B2-20·F4-29 제안이 사라짐(이부장이 재등록). 원자적 쓰기·잠금(sessionstate 처럼) 필요",
-   "due": "2026-10-19",
+   "due": "2026-10-20",
    "cmd": "grep -n 'def _save\\|os.replace\\|lock' studio/topicprop.py",
    "owner": "claude",
    "state": "todo",
