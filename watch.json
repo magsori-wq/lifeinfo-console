@@ -20466,6 +20466,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "fix-loopgaps-1019",
+   "added": "2026-10-19",
+   "what": "정체분석 처방4건 반영: loopcheck(⑦승인후미착수·⑥결재대기)·batchboard order 초안직렬 차단·dispatch 지침·autoflow.auto_confirm+towertick. 시험 monkeypatch 통과. 남은것: 알림/원격푸시 제안(GAP-1,5b)",
+   "due": "2026-10-20",
+   "cmd": "python -m studio.autoflow --auto-confirm --dry && python -m studio.loopcheck | grep -c '승인 후 미착수\\|결재 대기'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
