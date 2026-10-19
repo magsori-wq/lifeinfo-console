@@ -14729,8 +14729,10 @@
    "due": "2026-09-29",
    "cmd": "ls webapp/rich_*.html | wc -l; grep -n richbtn webapp/pending_osmu.html",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영(에이전트): 파일 수정 완료·미커밋. 확인 = git diff 해당 파일"
   },
   {
    "id": "xlink-h118",
@@ -15842,8 +15844,10 @@
    "due": "2026-10-04",
    "cmd": "ls -t '/c/ProgramData/Windows Master Store/Circle to Act'/Screenshot_202610031316*.png",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴1"
+   "state": "done",
+   "by": "루틴1",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영(에이전트): 파일 수정 완료·미커밋. 확인 = git diff 해당 파일"
   },
   {
    "id": "cp-screen-fixes-1003",
@@ -17100,8 +17104,10 @@
    "due": "2026-10-09",
    "cmd": "git show origin/main:webapp/index_status.json | python -c \"import sys,json;d=json.load(sys.stdin);print({k:d['urls'][k].get('lastCrawl') if isinstance(d.get('urls'),dict) else '' for k in []})\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영(에이전트): 파일 수정 완료·미커밋. 확인 = git diff 해당 파일"
   },
   {
    "id": "xlink-g111",
@@ -19136,8 +19142,10 @@
    "due": "2026-10-16",
    "cmd": "grep -n '바로 처리할 수 있어야' docs/루틴공통절.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영(에이전트): 파일 수정 완료·미커밋. 확인 = git diff 해당 파일"
   },
   {
    "id": "routine-sourcefail-handoff-1015",
@@ -20867,8 +20875,10 @@
    "due": "2026-10-19",
    "cmd": "grep -rn '\\[A-H\\]' studio/*.py | wc -l",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "2026-10-19 반영(에이전트): 파일 수정 완료·미커밋. 확인 = git diff 해당 파일"
   },
   {
    "id": "icode-first-publish-verify",
@@ -20887,8 +20897,10 @@
    "due": "2026-10-20",
    "cmd": "echo 사장님 인스타 게시 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "시험 항목 — echo cmd 통과 확인"
   }
  ]
 }
