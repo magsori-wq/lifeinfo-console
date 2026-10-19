@@ -20536,6 +20536,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-f220",
+   "added": "2026-10-19",
+   "what": "🔗 F2-20 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F2-20",
+   "due": "2026-10-19",
+   "cmd": "python studio/blogger.py crosslink --code F2-20",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "cloud-merge-decision-1019",
+   "added": "2026-10-19",
+   "what": "클라우드 브랜치 ccr-478bb848-5x7ulr(CP 저장소) 병합 가/부 — 이부장 권고: 보류, credit 10-19행만 webapp/credit.json 으로 옮김",
+   "due": "2026-10-19",
+   "cmd": "git -C C:/lifeinfo-deploy log --oneline main..origin/ccr-478bb848-5x7ulr",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
