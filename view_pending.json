@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-19 06:01:05",
- "source_head": "6d8f94d3beec",
+ "computed_at": "2026-10-19 09:33:17",
+ "source_head": "807e0aa49e6d",
  "ids": [
   "A1-24",
   "gplay-meta-sub-1020"
@@ -60,6 +60,14 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.pace",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "gh-pat-lifeinfo-console-deploy-1025",
+   "what": "GitHub 토큰 lifeinfo-console-deploy 가 2026-10-25 만료(메일 10-18). 만료되면 deploy.bat 의 콘솔 push 가 막힌다. 재발급: https://github.com/settings/personal-access-tokens/17499623/regenerate → 새 토큰을 deploy 저장소 인증에 교체",
+   "due": "2026-10-24",
+   "cmd": "gh auth status; git -C C:/lifeinfo-deploy ls-remote origin HEAD",
+   "state": "todo",
    "kind": "action"
   }
  ]
