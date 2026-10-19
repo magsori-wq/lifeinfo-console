@@ -20574,6 +20574,16 @@
    "by": "이부장",
    "done_at": "2026-10-19",
    "result": "412px 확인 후 병합 7bdfb7f00"
+  },
+  {
+   "id": "cloud-cp-icon-merge-1019",
+   "added": "2026-10-19",
+   "what": "클라우드 claude/cp-icon 보고 오면 미리보기 PNG 열어 확인 후 병합",
+   "due": "2026-10-20",
+   "cmd": "git fetch -q origin claude/cp-icon && git log --oneline main..origin/claude/cp-icon",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
