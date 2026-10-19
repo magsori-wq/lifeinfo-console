@@ -20689,17 +20689,6 @@
    "by": "이부장",
    "done_at": "2026-10-19",
    "result": "사장님 지시로 Aside 처리로 전환(20:36)"
-  },
-  {
-   "id": "gh-pat-expiry-1025",
-   "added": "2026-10-19",
-   "what": "GitHub 토큰 lifeinfo-console-deploy 가 10/25 경 만료(10/18 메일 '7일 뒤'). 만료되면 deploy.bat 콘솔 push 가 실패한다. 갱신: https://github.com/settings/personal-access-tokens/17499623/regenerate → 새 토큰을 deploy 저장소 인증에 교체",
-   "due": "2026-10-24",
-   "cmd": "gh auth status; git -C C:/lifeinfo-deploy ls-remote origin HEAD",
-   "owner": "user",
-   "kind": "action",
-   "state": "todo",
-   "by": "세션:eddc07a8"
   }
  ]
 }
