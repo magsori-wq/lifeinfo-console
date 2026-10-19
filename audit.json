@@ -14736,6 +14736,102 @@
    "target": "lee-draft-start-1018b",
    "detail": "해결: read_info(draft1018b221) reads=1 last_read 10-18 15:27, last_report 16:54 — 읽고 보고까지 함 (실측 10-19 밤)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:17",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "idx0zero-pointer-moved-1001",
+   "detail": "sessionstate.read_info('idx0zero') reads=6 (기준 reads=1 에서 증가, last_read 10-15 09:36) — 포인터 작동 확인 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:19",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-report-500-batchjson-1011",
+   "detail": "studio/approve_server.py:589-595 에 PermissionError 시 최대 4회 backoff 재시도 구현됨 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine1-report-format-0928",
+   "detail": "webapp/batch.json routinelog daily-email-briefing-1019 note: 결론 한 줄(🔴 사장님 할 일)→애드센스→새 중요 메일→점검 기록 맨 아래 순서 준수 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp3-aside-verify",
+   "detail": "data/aside_orders.json 에 번호별(#80~#249) 기록 + 번호 없는 보고는 batchboard.py:336 이 ⚠️번호없음 부착, reports.html 10-17·10-19 에 실제 표시 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "insta-recheck-rule-verify-1017",
+   "detail": "aside_orders #242·#245 인스타 게시 done(blocked 없음), asidequeue list 비어 있음(#249 done), aside_order.sh 18행 ⑨ 존재 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "usage-page-attrib-1012",
+   "detail": "usagesessions.py 를 Write 한 세션 = cf890880-7d06-4506-b96c-a02a22262143 (tool_use 4건, 10-12 07:48Z). 타워 544f52c8 아님·session_names 미등록. 커밋 2b212892 [이부장] 태그는 그 세션 산출 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:25",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-H1-20-1001",
+   "detail": "docs/source_H1-20_연애박사_20261001.md 존재, H1-20 글 DB 에 발행됨(ENA 연애박사 첫방송 10/5) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "g3-08-transport-recheck",
+   "detail": "낡음: G3-08 금정산성축제 10/16~18 종료(오늘 10-19), 사전 교통·주차 안내 확인 목적 소멸",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "recheck-d308-before-publish",
+   "detail": "낡음: D3-08 이미 DB 에 발행됨(발행 직전 재확인 시점 지남)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1009-0940",
+   "detail": "낡음: A1-20·B2-18 모두 DB 에 발행됨 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1010-sel",
+   "detail": "낡음: 10-10 선별 기록 건, B4-19·A1-21 모두 DB 발행됨, 제안 0건 상태 해소",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T22:01:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "reboot-resume-1010",
+   "detail": "낡음: 10-10 재부팅 후 일회성 재개 절차. 8011 응답(/api/view/approval 200)·B4-19·A1-21 발행+검색설명 있음(seodesc scan 387 ✅) (실측 10-19 밤)",
+   "via": "cli"
   }
  ]
 }

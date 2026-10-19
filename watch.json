@@ -14909,8 +14909,10 @@
    "due": "2026-10-02",
    "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];print([i['note'][:300] for i in b['items'] if i['code'].startswith('daily-email-briefing-0928')][-1])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "webapp/batch.json routinelog daily-email-briefing-1019 note: 결론 한 줄(🔴 사장님 할 일)→애드센스→새 중요 메일→점검 기록 맨 아래 순서 준수 (실측 10-19 밤)"
   },
   {
    "id": "routine7-depth-check-1001",
@@ -15059,8 +15061,10 @@
    "due": "2026-10-09",
    "cmd": "curl -s -A 'Mozilla/5.0' 'https://www.geumjeong.go.kr/board/list.geumj?boardId=BBS_0000005&menuCd=DOM_000000124002002000' | grep -oE '[^>]*(교통|주차|셔틀)[^<]*' ; curl -s -A 'Mozilla/5.0' 'https://www.gjfac.org/gjfac/template.php?midx=347&page=1&mode=list'",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: G3-08 금정산성축제 10/16~18 종료(오늘 10-19), 사전 교통·주차 안내 확인 목적 소멸"
   },
   {
    "id": "g3-08-coursedetail-20261001",
@@ -15259,8 +15263,10 @@
    "due": "2026-10-02",
    "cmd": "cat docs/source_H1-20_연애박사_20261001.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:8b79df1b"
+   "state": "done",
+   "by": "세션:8b79df1b",
+   "done_at": "2026-10-19",
+   "result": "docs/source_H1-20_연애박사_20261001.md 존재, H1-20 글 DB 에 발행됨(ENA 연애박사 첫방송 10/5) (실측 10-19 밤)"
   },
   {
    "id": "docflow-1001-2126",
@@ -16482,8 +16488,10 @@
    "due": "2026-10-12",
    "cmd": "python -m studio.batchboard order --id draft1005d308",
    "owner": "claude",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-10-19",
+   "result": "낡음: D3-08 이미 DB 에 발행됨(발행 직전 재확인 시점 지남)"
   },
   {
    "id": "xlink-c114",
@@ -17296,8 +17304,10 @@
    "due": "2026-10-16",
    "cmd": "python -m studio.topicprop table && python -m studio.topicprop stock",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a0dcf752"
+   "state": "done",
+   "by": "세션:a0dcf752",
+   "done_at": "2026-10-19",
+   "result": "낡음: A1-20·B2-18 모두 DB 에 발행됨 (실측 10-19 밤)"
   },
   {
    "id": "source-b2-18-saitdol",
@@ -17602,8 +17612,10 @@
    "due": "2026-10-11",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: 10-10 선별 기록 건, B4-19·A1-21 모두 DB 발행됨, 제안 0건 상태 해소"
   },
   {
    "id": "f424-insta-thread-1010",
@@ -17850,8 +17862,10 @@
    "due": "2026-10-10",
    "cmd": "python -m studio.readycheck",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:544f52c8"
+   "state": "done",
+   "by": "세션:544f52c8",
+   "done_at": "2026-10-19",
+   "result": "낡음: 10-10 재부팅 후 일회성 재개 절차. 8011 응답(/api/view/approval 200)·B4-19·A1-21 발행+검색설명 있음(seodesc scan 387 ✅) (실측 10-19 밤)"
   },
   {
    "id": "aside-pinned-rebind-1010",
@@ -17992,8 +18006,10 @@
    "due": "2026-10-11",
    "cmd": "grep -n 'PermissionError\\|os.replace' studio/batchboard.py studio/approve_server.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "studio/approve_server.py:589-595 에 PermissionError 시 최대 4회 backoff 재시도 구현됨 (실측 10-19 밤)"
   },
   {
    "id": "aside-single-chat-1011",
@@ -18624,8 +18640,10 @@
    "due": "2026-10-13",
    "cmd": "git show --stat 2b212892",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "usagesessions.py 를 Write 한 세션 = cf890880-7d06-4506-b96c-a02a22262143 (tool_use 4건, 10-12 07:48Z). 타워 544f52c8 아님·session_names 미등록. 커밋 2b212892 [이부장] 태그는 그 세션 산출 (실측 10-19 밤)"
   },
   {
    "id": "aside-order-single-writer-1012",
@@ -18836,9 +18854,11 @@
    "due": "2026-10-14",
    "cmd": "type data\\aside_orders.json",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "data/aside_orders.json 에 번호별(#80~#249) 기록 + 번호 없는 보고는 batchboard.py:336 이 ⚠️번호없음 부착, reports.html 10-17·10-19 에 실제 표시 (실측 10-19 밤)"
   },
   {
    "id": "naverexp-b202",
@@ -19732,8 +19752,10 @@
    "due": "2026-10-18",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "aside_orders #242·#245 인스타 게시 done(blocked 없음), asidequeue list 비어 있음(#249 done), aside_order.sh 18행 ⑨ 존재 (실측 10-19 밤)"
   },
   {
    "id": "cadaily-wake-1017",
