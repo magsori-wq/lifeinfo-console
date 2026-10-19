@@ -1863,6 +1863,16 @@
      "base_code": "9-lifeinfo-issue-product-pm",
      "date": "2026-10-19",
      "at": "2026-10-19 15:14"
+    },
+    {
+     "code": "lifeinfo-travel-prep-1019",
+     "title": "lifeinfo-travel-prep (D)",
+     "state": "done",
+     "note": "[조사장부] 목록 3 · 원문 0 · 후보 0 · 탈락 4 · 검색어 4 (바닥 미달 — 원문은 mcst 페이지 파싱 실패·haeundae.go.kr 메인에 빛축제 2026 공지 없음/검색결과 전부 2차출처). 빈손 — 근거 부족. · 부산불꽃축제: naverkw ✅이나 G1-07 기발행(dupcheck 🟡) 탈락 · 지스타: G3-11 기발행(🔴 0.80) 탈락 · 송도 고등어축제(10/30~11/1): DB에 부산고등어축제 2026 기발행 탈락 · 해운대빛축제 2026(11/29~, naverkw ✅·dupcheck 🟢 신규): 날짜 출처가 블로그뿐 — 해운대구청 1차 공지 확인 전이라 보류, 다음 회차가 haeundae.go.kr/busan.go.kr 행사 목록 재조회. kwgap 후보(송도 고등어회 등)는 위 기발행과 겹침. 오늘 이미 8건 제안·재고 0 상태. 이어받은 것: 직전 회차 후보 재탕 안 함.",
+     "auto_daily": true,
+     "base_code": "lifeinfo-travel-prep",
+     "date": "2026-10-19",
+     "at": "2026-10-19 21:12"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -3323,7 +3333,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-10-19 20:47:53",
+ "updated": "2026-10-19 21:12:59",
  "current": {
   "batch": "followup",
   "code": "",
@@ -3334,6 +3344,10 @@
   "since_at": "2026-10-13 16:25:53"
  },
  "log": [
+  {
+   "t": "21:12:59",
+   "text": "✅ lifeinfo-travel-prep-1019 완료 — lifeinfo-travel-prep (D)"
+  },
   {
    "t": "20:47:53",
    "text": "▶   — 1/7단계 · [이부장 → 이과장] 20:45 [체인] #249 「인스타·쓰레드 원고 → Aside 초안」 줄은 무시. #249 는 F4-30 네이버 제휴 링크 수정이었고 인스타·쓰레드(재게시 DerBoTZgYkT)는 이미 끝남. 할 일 없음."
@@ -3489,10 +3503,6 @@
   {
    "t": "18:47:24",
    "text": "▶   — 1/7단계 · [Aside][done] [F4-30] #245 인스타 게시 — 카드 3장(표지·준PO 규칙·선례 대입)·캡션 947자 원문 일치(블로그·네이버 링크·사진 출처 포함) · 프로필 맨 위 1개만, 게시물 406→407 · 총 탭 14개 · https://www.instagram.com/magsori8975/p/Deq-AkckXdB/"
-  },
-  {
-   "t": "18:47:17",
-   "text": "▶   — 1/7단계 · 👤 사장님 직접 지시: \"F4-30 핫팩 제휴 링크 발급해\" · 대상 F4-30 — 링크 발급은 Aside(브랜드커넥트)만 가능하고 Aside 지시 등록은 이부장 몫 → Aside 지시 초안: docs/aside_drafts/F4-30_제휴링크발급.txt (핫팩 2개, 등록 부탁·다른 지시 안 걸림 확인). 발급 보고가 오면 affiliate add → 쓰레드 원고 반영 → 쓰레드 Aside 등록 요청, 네이버 본문용 문구+링크는 docs/naver_affiliate_F4-30.txt 로 사장님께"
   }
  ],
  "currents": {
