@@ -1666,8 +1666,10 @@
    "due": "2026-09-30",
    "cmd": "python -m studio.searchconsole inspect 후 D1-02·H1-01 의 lastCrawl 이 7/06 에서 움직였는지, verdict 가 PASS 를 유지하는지 확인",
    "owner": "claude",
-   "state": "wait",
-   "flag": "추정이다 — 확정은 ①8/14 수정 ②마지막크롤 7/06 ③같은 처방 받은 B1-01 재크롤 후 실패. 그래도 위험이 실재하므로 보수적으로 간다"
+   "state": "done",
+   "flag": "추정이다 — 확정은 ①8/14 수정 ②마지막크롤 7/06 ③같은 처방 받은 B1-01 재크롤 후 실패. 그래도 위험이 실재하므로 보수적으로 간다",
+   "done_at": "2026-10-19",
+   "result": "낡음: index_status 실측 D1-02 lastCrawl 09-03·H1-01 08-30 로 7/06 에서 움직였고 둘 다 'Crawled - currently not indexed'(NEUTRAL) — 보호 대상 색인 상태 자체가 이미 사라짐 (실측 10-19 밤)"
   },
   {
    "id": "inspect-mobile-url-blindspot",
@@ -12856,8 +12858,10 @@
    "due": "2026-09-25",
    "cmd": "python -m studio.agentcheck 로 정의 확인 후 실제 source 에이전트를 SPA 사이트(sbs.co.kr 등)로 호출해 브라우저 도구 사용 성공 여부 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:830847ea"
+   "state": "done",
+   "by": "세션:830847ea",
+   "done_at": "2026-10-19",
+   "result": "낡음: 10-13 방침으로 브라우저는 Aside 일원화 — .claude/agents/source.md:8 이 claude-in-chrome 대신 Aside 를 지시, CLAUDE.md 「브라우저는 Aside 하나로」 (실측 10-19 밤)"
   },
   {
    "id": "factcheck-false-alarm-0923",
@@ -13546,8 +13550,10 @@
    "due": "2026-09-26",
    "cmd": "python -m studio.draftfind H1-16",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:67e438d2"
+   "state": "done",
+   "by": "세션:67e438d2",
+   "done_at": "2026-10-19",
+   "result": "해결: H1-16 이 lifeinfo_db.txt posts 에 있고 draftfind H1-16 ✅ (실측 10-19 밤)"
   },
   {
    "id": "draft0925h116-wake",
@@ -14876,8 +14882,10 @@
    "due": "2026-09-29",
    "cmd": "grep -n 'def ' studio/threadsdraft.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: _find_draft 가 osmu_files.json 슬러그 우선 — G3-07 경남고성공룡세계엑스포·H1-18 키드냅게임·D3-07 청년특례전세·E1-05 단통법·A4-07 전세사기 5편 모두 올바른 쓰레드용 파일로 매칭됨(함수 직접 호출) (실측 10-19 밤)"
   },
   {
    "id": "adsense-community-followup-0928",
@@ -15001,8 +15009,10 @@
    "due": "2026-10-02",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "routine2"
+   "state": "done",
+   "by": "routine2",
+   "done_at": "2026-10-19",
+   "result": "해결: A3-16 이 DB 에 발행돼 있음(초안 대기 상태 지남), B2-17 drop (실측 10-19 밤)"
   },
   {
    "id": "docflow-1001-1240",
@@ -15093,8 +15103,10 @@
    "due": "2026-10-02",
    "cmd": "python -m studio.batchboard order --id draft1001g308",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: G3-08 이 DB 에 발행돼 있고 지시서 draft1001g308 완료 (실측 10-19 밤)"
   },
   {
    "id": "community-escalation-reply-1004",
@@ -15233,8 +15245,10 @@
    "due": "2026-10-02",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow '콘솔 정합성 검사' -L 30",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:4af53d45"
+   "state": "done",
+   "by": "세션:4af53d45",
+   "done_at": "2026-10-19",
+   "result": "해결: 콘솔 정합성 검사 최근 8회 전부 success (gh run list, 10-19 12:29~12:43Z) (실측 10-19 밤)"
   },
   {
    "id": "source-H1-20-1001",
@@ -16002,8 +16016,10 @@
    "due": "2026-10-04",
    "cmd": "gh run list -R magsori-wq/lifeinfo-source -L 5; git log -3 --format='%h %s' --grep='결재: '",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: publish.yml 최근 run 39231128236 success(10-19 09:34Z), 결재 커밋 9cb61927b·30116f8d5·8eb7a871f 정상 생성 (실측 10-19 밤)"
   },
   {
    "id": "cpview-stage6-shadow-1003",
@@ -16108,8 +16124,10 @@
    "due": "2026-10-04",
    "cmd": "ls docs/협의_애드센스반려_20261004*",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: docs/협의_애드센스반려_20261004.md·_4.md·_루틴7근거.md 3건 존재 (실측 10-19 밤)"
   },
   {
    "id": "adsense-p1-1004",
@@ -16438,8 +16456,10 @@
    "due": "2026-10-06",
    "cmd": "python -m studio.topicprop table && python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: D3-08·B5-07 이 DB 발행 완료 — 재고 0 현안은 stock-zero-1017 에서 추적 (실측 10-19 밤)"
   },
   {
    "id": "xlink-g309",
@@ -18265,8 +18285,10 @@
    "due": "2026-10-13",
    "cmd": "python -m studio.approvalcount",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:40c065cb"
+   "state": "done",
+   "by": "세션:40c065cb",
+   "done_at": "2026-10-19",
+   "result": "해결: C2-18 DB 발행됨, approvalcount 결재 대기 0건 (실측 10-19 밤)"
   },
   {
    "id": "xlink-c218",
@@ -18563,8 +18585,10 @@
    "due": "2026-10-13",
    "cmd": "python -m studio.batchboard order --id issueprod",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: batchboard order --id issueprod → 배치 완료·아카이브됨 (실측 10-19 밤)"
   },
   {
    "id": "aside-chat-rotate-1012",
@@ -18667,8 +18691,10 @@
    "due": "2026-10-16",
    "cmd": "koreabaseball.com/MediaNews/Notice/List.aspx 에서 예매 공지 확인",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: KBO 공식 보도자료 bdSe=12197(10-14)에 준PO 예매 공지 확인(docs/source_KBO포스트시즌_20261018.md), 후속글 F4-29 발행됨 (실측 10-19 밤)"
   },
   {
    "id": "f424-ticket-update-1013",
@@ -19264,8 +19290,10 @@
    "due": "2026-10-17",
    "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;d=json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'];print([(k,v.get('code'),v.get('auto_chain_at')) for k,v in d.items() if v.get('kind')])\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: aside_orders.json 242·243·245·246·248·249 번에 auto_chain_at 찍힘(insta/threads/naver) (실측 10-19 밤)"
   },
   {
    "id": "mod-pane-desktop-1016",
@@ -20238,8 +20266,10 @@
    "due": "2026-10-18",
    "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('draft1018b221'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "해결: read_info(draft1018b221) reads=1 last_read 10-18 15:27, last_report 16:54 — 읽고 보고까지 함 (실측 10-19 밤)"
   },
   {
    "id": "b2-21-bogeumjari-faq",

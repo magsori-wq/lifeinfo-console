@@ -14616,6 +14616,126 @@
    "target": "chain-insta-count-1016",
    "detail": "studio/asidechain.py:100-105 에 soft 「장수 못 뽑음」 통과 처리 반영(2026-10-17 주석) (실측 10-19 밤)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "indexed2-do-not-touch",
+   "detail": "낡음: index_status 실측 D1-02 lastCrawl 09-03·H1-01 08-30 로 7/06 에서 움직였고 둘 다 'Crawled - currently not indexed'(NEUTRAL) — 보호 대상 색인 상태 자체가 이미 사라짐 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-agent-browser-verify-0923",
+   "detail": "낡음: 10-13 방침으로 브라우저는 Aside 일원화 — .claude/agents/source.md:8 이 claude-in-chrome 대신 Aside 를 지시, CLAUDE.md 「브라우저는 Aside 하나로」 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-H1-16-0925",
+   "detail": "해결: H1-16 이 lifeinfo_db.txt posts 에 있고 draftfind H1-16 ✅ (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threadsdraft-slug-mismatch-0928",
+   "detail": "해결: _find_draft 가 osmu_files.json 슬러그 우선 — G3-07 경남고성공룡세계엑스포·H1-18 키드냅게임·D3-07 청년특례전세·E1-05 단통법·A4-07 전세사기 5편 모두 올바른 쓰레드용 파일로 매칭됨(함수 직접 호출) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1001-1225",
+   "detail": "해결: A3-16 이 DB 에 발행돼 있음(초안 대기 상태 지남), B2-17 drop (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1001-1330",
+   "detail": "해결: G3-08 이 DB 에 발행돼 있고 지시서 draft1001g308 완료 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "console-check-comment-falsepos-1001",
+   "detail": "해결: 콘솔 정합성 검사 최근 8회 전부 success (gh run list, 10-19 12:29~12:43Z) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-stage4-first-runs-1004",
+   "detail": "해결: publish.yml 최근 run 39231128236 success(10-19 09:34Z), 결재 커밋 9cb61927b·30116f8d5·8eb7a871f 정상 생성 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-council-1004",
+   "detail": "해결: docs/협의_애드센스반려_20261004.md·_4.md·_루틴7근거.md 3건 존재 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1005-1600",
+   "detail": "낡음: D3-08·B5-07 이 DB 발행 완료 — 재고 0 현안은 stock-zero-1017 에서 추적 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1012-0100",
+   "detail": "해결: C2-18 DB 발행됨, approvalcount 결재 대기 0건 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "issueprod-joint-1013",
+   "detail": "해결: batchboard order --id issueprod → 배치 완료·아카이브됨 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "kbo-postseason-ticket",
+   "detail": "해결: KBO 공식 보도자료 bdSe=12197(10-14)에 준PO 예매 공지 확인(docs/source_KBO포스트시즌_20261018.md), 후속글 F4-29 발행됨 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "asidechain-live-1016",
+   "detail": "해결: aside_orders.json 242·243·245·246·248·249 번에 auto_chain_at 찍힘(insta/threads/naver) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:58:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "lee-draft-start-1018b",
+   "detail": "해결: read_info(draft1018b221) reads=1 last_read 10-18 15:27, last_report 16:54 — 읽고 보고까지 함 (실측 10-19 밤)",
+   "via": "cli"
   }
  ]
 }
