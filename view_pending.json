@@ -1,41 +1,66 @@
 {
- "computed_at": "2026-10-19 14:56:08",
- "source_head": "7dcc447fdd0e",
+ "computed_at": "2026-10-19 15:00:36",
+ "source_head": "60a95a5e2b06",
  "ids": [
   "B2-22",
   "D1-16",
   "F2-19",
+  "g323-photo-download-1019",
   "gplay-meta-sub-1020"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "F2-19",
    "title": "불법숙박 영업신고증 확인 11월 12일 시행 — 숙박 중개 플랫폼 과태료 500만 원, 대상 판정표·예약자 체크리스트",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 불법숙박영업신고증확인과태료_글_HTML.txt",
-     "path": "불법숙박영업신고증확인과태료_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "불법숙박영업신고증확인과태료",
+   "eng": "lodging_license",
+   "ch": {
+    "naver": {
+     "url": "https://blog.naver.com/magsori8975/224446588206",
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_불법숙박영업신고증확인과태료.txt",
+       "img": false,
+       "exists": true
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/381_lodging_license.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "done"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/381_lodging_license.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_불법숙박영업신고증확인과태료.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/381_lodging_license.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_불법숙박영업신고증확인과태료.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "ready"
-  },
+   }
+  }
+ ],
+ "publish": [
   {
    "code": "D1-16",
    "title": "사회복무요원 본인선택 11월 10일 접수 — 재학생·국외연기는 1차(11/10~16), 소집대기는 2차(12/1~7), 선착순 아님",
@@ -92,6 +117,14 @@
   }
  ],
  "actions": [
+  {
+   "id": "g323-photo-download-1019",
+   "what": "G3-23 김해분청 썸네일용 Commons CC0 사진(분청사기 인화박지 모란 국화 무늬 대접, MET) 1장 다운로드 허락 여부",
+   "due": "2026-10-19",
+   "cmd": "python -m studio.batchboard show",
+   "state": "todo",
+   "kind": "action"
+  },
   {
    "id": "gplay-meta-sub-1020",
    "what": "Google Play: Instagram(Meta One Essential) 무료체험 10/20 종료 → 자동 유료 ₩19,500/월. 유지할지 취소할지 결정 필요",
