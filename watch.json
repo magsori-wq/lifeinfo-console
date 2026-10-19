@@ -20751,6 +20751,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "icode-first-publish-verify",
+   "added": "2026-10-19",
+   "what": "첫 I(방송·연예) 코드 글 발행 때 publish.yml·라벨·썸네일 색이 실제로 통과하는지 확인(e03da50e9)",
+   "due": "2026-10-31",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 3 --json displayTitle,conclusion",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
