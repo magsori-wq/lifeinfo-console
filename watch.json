@@ -20701,6 +20701,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "f430-naver-broken-tag-1019",
+   "added": "2026-10-19",
+   "what": "F4-30 네이버 글 끝 태그 #플한국시리즈예매(깨진 태그) — Aside #249 보고. 원고 태그 생성 쪽 원인 확인 후 수정 지시",
+   "due": "2026-10-20",
+   "cmd": "grep -n '플한국시리즈' osmu/네이버용_*플레이오프* 2>/dev/null",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
