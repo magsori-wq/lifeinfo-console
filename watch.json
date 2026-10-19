@@ -20660,9 +20660,11 @@
    "due": "2026-10-20",
    "cmd": "docs/naver_affiliate_F4-30.txt 를 열어 글 주소 https://blog.naver.com/magsori8975/224446840831 수정 → 문구·링크를 한 줄씩 붙여넣고 저장",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "by": "이과장",
-   "req_by": "이과장"
+   "req_by": "이과장",
+   "done_at": "2026-10-19",
+   "result": "이부장 확인: 문구(공정위 표시 맨 앞)·링크 2건 307 정상 — 사장님 붙여넣기 차례"
   },
   {
    "id": "pending-shadow-mismatch-1020",
@@ -20671,6 +20673,16 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.falsepos",
    "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "f430-naver-paste-boss-1019",
+   "added": "2026-10-19",
+   "what": "F4-30 네이버 글 맨 앞에 제휴 문구+핫팩 링크 2개 붙여넣기(30초) — docs/naver_affiliate_F4-30.txt",
+   "due": "2026-10-20",
+   "cmd": "start https://blog.naver.com/magsori8975/224446840831",
+   "owner": "user",
    "state": "todo",
    "by": "이부장"
   }
