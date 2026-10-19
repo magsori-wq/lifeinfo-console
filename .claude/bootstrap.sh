@@ -45,9 +45,17 @@ if [ "$have_cjk" -eq 1 ]; then
   log "Noto CJK: already present"
 else
   log "Noto CJK: installing"
-  if ! { apt-get install -y -qq fonts-noto-cjk >>"$LOG" 2>&1; }; then
-    missing+=("Noto Sans CJK (한글이 □□□ 로 렌더링됨)")
-  fi
+  # 세션 시작 직후엔 다른 dpkg 프로세스가 락을 잡고 있고, 패키지 목록도 비어 있다.
+  # 락을 기다리고(DPkg::Lock::Timeout), update 후 최대 3번 재시도한다.
+  APT="apt-get -o DPkg::Lock::Timeout=180"
+  ok=0
+  for try in 1 2 3; do
+    $APT update -qq >>"$LOG" 2>&1
+    if $APT install -y -qq fonts-noto-cjk >>"$LOG" 2>&1; then ok=1; break; fi
+    log "Noto CJK: attempt $try failed, retrying"
+    sleep 5
+  done
+  [ "$ok" -eq 1 ] || missing+=("Noto Sans CJK (한글이 □□□ 로 렌더링됨)")
 fi
 
 # --- 검증: 실제로 한글이 그려지는지 --------------------------
