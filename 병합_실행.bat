@@ -27,6 +27,10 @@ for %%A in ("%TEMP%\_merge_dirty.txt") do if %%~zA GTR 0 (
   goto :end
 )
 
+echo  RULE: merge only after reporting to Lee Bujang session and getting his order.
+set /p BOSS=Did Lee Bujang order this merge? (y/N): 
+if /i not "%BOSS%"=="y" ( echo Cancelled. Report to Lee Bujang session first. Nothing changed. & goto :end )
+echo.
 echo [1/4] Fetching from GitHub...
 git fetch origin
 if errorlevel 1 ( echo [ERROR] fetch failed. Check the network. & goto :end )

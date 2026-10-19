@@ -14,8 +14,13 @@
 ## 절차
 1. 세션 지정 브랜치(`ccr-…`)에서만 작업한다. 없으면 `origin/main` 에서 만든다.
 2. 커밋 후 `git push -u origin <작업브랜치>` 까지만 한다.
-3. 끝나면 사용자에게 알린다: "PC에서 `git fetch && git merge origin/<브랜치>` 하세요."
-4. 자격증명(`token*.json`, `client_secret*.json`, `.env` 등)은 절대 커밋하지 않는다 (PUBLIC 저장소).
+3. **병합은 항상 이부장 세션에 보고하고 지시를 받은 뒤에만 한다.**
+   push 직후 이부장 세션(`session_01ViMehLaJfRpksUjtMgQLy7`, 이름 "이부장 인계 및 시작")에
+   `send_message` 로 보고한다: 브랜치명 · 커밋 수 · 변경 요지 · `MERGE_NEEDED.md` 갱신 여부.
+   이부장의 병합 지시가 오기 전에는 병합·`병합_실행.bat` 안내를 "실행하라"고 하지 않는다.
+   (이부장 세션이 바뀌면 `session_names.json` 의 role 이부장 중 `superseded` 없는 항목을 확인한다.)
+4. 끝나면 사용자에게 알린다: "PC에서 `git fetch && git merge origin/<브랜치>` 하세요."
+5. 자격증명(`token*.json`, `client_secret*.json`, `.env` 등)은 절대 커밋하지 않는다 (PUBLIC 저장소).
 
 ## 강제 장치
 `.claude/guard_push.sh` (PreToolUse 훅)이 `main`/`master` 대상 push, force push,
