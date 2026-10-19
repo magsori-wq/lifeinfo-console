@@ -14496,6 +14496,126 @@
    "target": "routine1-ci-failures-1012",
    "detail": "낡음: run 38108341143 은 10-11 '원격 선행 가드' 일회성 실패(gh log-failed 확인) (실측 10-19 밤)",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "paste-race-0912",
+   "detail": "낡음: 쓰레드 게시는 Aside 전담 채팅 + asidequeue 한 번에 지시 하나 + insertText(클립보드 미경유)로 전환(CLAUDE.md), xlink0911all 배치 아카이브 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "index-request-null-result-0921",
+   "detail": "10-19 실측: 색인 0/395, 요청O·크롤O 227편 중 색인 0 - 결론(요청은 크롤까지만, 색인 못 바꿈) 확인됨 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "sitemap-pages-reread-0928",
+   "detail": "GSC API 10-19: lastSubmitted 2026-09-24T19:12Z, lastDownloaded 2026-10-18T23:28Z (07-02 에서 갱신됨) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threads-paste-blocked-0928",
+   "detail": "낡음: 09-28 이후 쓰레드 게시 경로가 Aside(insertText)로 교체, solo 20260927-1 게시완료(affiliate solo 10-19) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1001-1845",
+   "detail": "D2-14·G1-10 모두 DB 발행 + osmu naver/instagram/threads 존재(10-19 DB 직접 확인) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine3-missed-1004",
+   "detail": "낡음: [루틴3] 커밋이 10-08·10-10·10-11·10-13 09시에 정상(git log). 10-04 단발 미실행 원인은 지금 재현 불가 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routines-missed-1004",
+   "detail": "낡음: 4번(lifeinfo-travel-prep)이 10-19 21:12 실행(routinedepth 출력) - 정상 가동 중 (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-osmu-pilot-1008",
+   "detail": "낡음: 시범 단계 지남 - Aside 가 인스타·쓰레드 상시 게시(asidequeue #242~248 done, F2-20·F4-30), setgate 깨끗(10-19) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside8-g310-naver-0909",
+   "detail": "G3-10 DB osmu.naver/instagram/threads URL 모두 존재(10-19 DB 직접 확인) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "wake-draft1009",
+   "detail": "A1-20·B2-18 DB 발행 + osmu 3채널 존재, 배치 draft1009a120 아카이브(완료) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "f425-d114-chain-1011",
+   "detail": "낡음: D1-14 DB 발행+OSMU 3채널, 배치 pub1011f425 아카이브, setgate 「4채널 미완 없음」(10-19) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "kbo-followup-topic-1013",
+   "detail": "KBO 후속 글 F4-30(플레이오프·한국시리즈 예매) topicprop 소진 + Aside osmu #244~249 done(10-19) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:44",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-queue-1016",
+   "detail": "낡음: asidequeue 비어 있음(#249 done). #150·152 done, #151·153 은 blocked 였으나 G3-18·G4-12 네이버 URL 이 DB 에 존재(10-19) (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-naver-iframe-1016",
+   "detail": "원인(PostWriteForm 프레임 「작성 중인 글」 팝업)이 docs/Aside_지시서_양식.md:90 에 반영, 이후 #249 F4-30 naver done (실측 10-19 밤)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-19T21:56:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "chain-insta-count-1016",
+   "detail": "studio/asidechain.py:100-105 에 soft 「장수 못 뽑음」 통과 처리 반영(2026-10-17 주석) (실측 10-19 밤)",
+   "via": "cli"
   }
  ]
 }

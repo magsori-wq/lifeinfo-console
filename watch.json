@@ -8638,8 +8638,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.batchboard order --id xlink0911all",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: 쓰레드 게시는 Aside 전담 채팅 + asidequeue 한 번에 지시 하나 + insertText(클립보드 미경유)로 전환(CLAUDE.md), xlink0911all 배치 아카이브 (실측 10-19 밤)"
   },
   {
    "id": "bake-errno22-0912",
@@ -12668,8 +12670,10 @@
    "cmd": "python -c \"import io,json;idx=json.load(io.open('webapp/index_status.json',encoding='utf-8'));g=json.load(io.open('webapp/gsc_requested.json',encoding='utf-8'));req=set(g.get('urls') or []);p=idx.get('posts') or {};import collections;x=collections.Counter(((r.get('url') or '') in req, bool(r.get('lastCrawl'))) for r in p.values());print('색인',idx.get('indexed'),'/',idx.get('total'),'| 요청O크롤O',x[(True,True)],'요청O크롤X',x[(True,False)],'요청X크롤O',x[(False,True)],'요청X크롤X',x[(False,False)])\"",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "10-19 실측: 색인 0/395, 요청O·크롤O 227편 중 색인 0 - 결론(요청은 크롤까지만, 색인 못 바꿈) 확인됨 (실측 10-19 밤)"
   },
   {
    "id": "cp-iframe-html-audit-0921",
@@ -13467,8 +13471,10 @@
    "due": "2026-09-28",
    "cmd": "python -c \"from studio import searchconsole as s; m=s._svc().sitemaps().get(siteUrl=s.SITE_URL,feedpath='https://lifeinfo8975.blogspot.com/sitemap-pages.xml').execute(); print(m.get('lastSubmitted'), m.get('lastDownloaded'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:fecf531f"
+   "state": "done",
+   "by": "세션:fecf531f",
+   "done_at": "2026-10-19",
+   "result": "GSC API 10-19: lastSubmitted 2026-09-24T19:12Z, lastDownloaded 2026-10-18T23:28Z (07-02 에서 갱신됨) (실측 10-19 밤)"
   },
   {
    "id": "adsense-pe-replies-0925",
@@ -14821,8 +14827,10 @@
    "due": "2026-09-29",
    "cmd": "python -m studio.batchboard order --id solo0927",
    "owner": "claude",
-   "state": "blocked",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: 09-28 이후 쓰레드 게시 경로가 Aside(insertText)로 교체, solo 20260927-1 게시완료(affiliate solo 10-19) (실측 10-19 밤)"
   },
   {
    "id": "afflink-20260928-2",
@@ -15213,8 +15221,10 @@
    "due": "2026-10-02",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "D2-14·G1-10 모두 DB 발행 + osmu naver/instagram/threads 존재(10-19 DB 직접 확인) (실측 10-19 밤)"
   },
   {
    "id": "console-check-comment-falsepos-1001",
@@ -16062,8 +16072,10 @@
    "due": "2026-10-05",
    "cmd": "git log origin/main -3 --format='%h %cd %s' --date=format:'%m-%d %H:%M' --grep='^\\[루틴3\\]'",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: [루틴3] 커밋이 10-08·10-10·10-11·10-13 09시에 정상(git log). 10-04 단발 미실행 원인은 지금 재현 불가 (실측 10-19 밤)"
   },
   {
    "id": "xlink-h123",
@@ -16230,8 +16242,10 @@
    "due": "2026-10-05",
    "cmd": "python -m studio.batchboard order --id routinelog",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: 4번(lifeinfo-travel-prep)이 10-19 21:12 실행(routinedepth 출력) - 정상 가동 중 (실측 10-19 밤)"
   },
   {
    "id": "afflink-20261005-1",
@@ -16936,8 +16950,10 @@
    "due": "2026-10-10",
    "cmd": "python -m studio.setgate",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: 시범 단계 지남 - Aside 가 인스타·쓰레드 상시 게시(asidequeue #242~248 done, F2-20·F4-30), setgate 깨끗(10-19) (실측 10-19 밤)"
   },
   {
    "id": "aside-pilot-metrics-1008",
@@ -17197,8 +17213,10 @@
    "due": "2026-10-09",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "G3-10 DB osmu.naver/instagram/threads URL 모두 존재(10-19 DB 직접 확인) (실측 10-19 밤)"
   },
   {
    "id": "naver-login-aside-1009",
@@ -17276,8 +17294,10 @@
    "due": "2026-10-09",
    "cmd": "python -m studio.batchboard order --id draft1009a120",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a0dcf752"
+   "state": "done",
+   "by": "세션:a0dcf752",
+   "done_at": "2026-10-19",
+   "result": "A1-20·B2-18 DB 발행 + osmu 3채널 존재, 배치 draft1009a120 아카이브(완료) (실측 10-19 밤)"
   },
   {
    "id": "xlink-g310",
@@ -17891,8 +17911,10 @@
    "due": "2026-10-11",
    "cmd": "python -m studio.setgate && python -m studio.pubready --code D1-14",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: D1-14 DB 발행+OSMU 3채널, 배치 pub1011f425 아카이브, setgate 「4채널 미완 없음」(10-19) (실측 10-19 밤)"
   },
   {
    "id": "naverdraft-stale-original-1011",
@@ -18633,8 +18655,10 @@
    "due": "2026-10-13",
    "cmd": "python -m studio.dupcheck \"KBO 준플레이오프 일정 예매\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "KBO 후속 글 F4-30(플레이오프·한국시리즈 예매) topicprop 소진 + Aside osmu #244~249 done(10-19) (실측 10-19 밤)"
   },
   {
    "id": "kbo-postseason-ticket",
@@ -19306,8 +19330,10 @@
    "due": "2026-10-16",
    "cmd": "python -c \"import json;o=json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'];print({k:o[k].get('state') for k in ('150','151','152','153') if k in o})\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "낡음: asidequeue 비어 있음(#249 done). #150·152 done, #151·153 은 blocked 였으나 G3-18·G4-12 네이버 URL 이 DB 에 존재(10-19) (실측 10-19 밤)"
   },
   {
    "id": "afflink-f427",
@@ -19503,8 +19529,10 @@
    "due": "2026-10-16",
    "cmd": "python -c \"import json;o=json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'];print({k:o[k].get('state') for k in ('155','156') if k in o})\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "원인(PostWriteForm 프레임 「작성 중인 글」 팝업)이 docs/Aside_지시서_양식.md:90 에 반영, 이후 #249 F4-30 naver done (실측 10-19 밤)"
   },
   {
    "id": "aside-tabs-close-1016",
@@ -19603,8 +19631,10 @@
    "due": "2026-10-17",
    "cmd": "grep -n '실패' studio/asidechain.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-19",
+   "result": "studio/asidechain.py:100-105 에 soft 「장수 못 뽑음」 통과 처리 반영(2026-10-17 주석) (실측 10-19 밤)"
   },
   {
    "id": "ig-login-check-1016",
