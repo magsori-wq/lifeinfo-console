@@ -6765,8 +6765,10 @@
    "due": "2026-10-05",
    "cmd": "grep -n 'inputs\\.' .github/workflows/publish.yml | grep -v GITHUB_OUTPUT",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:eb42e59e"
+   "state": "done",
+   "by": "세션:eb42e59e",
+   "done_at": "2026-10-19",
+   "result": "publish.yml run 블록의 inputs/steps outputs 직접삽입 전부 env 로 이전(남은 ${{}} 0, secrets 제외). yaml 통과, norm 스텝 bash 추출 시험에서 따옴표/$HOME/백틱/$() 제목 원문 보존·미실행. 미커밋"
   },
   {
    "id": "msg-misrouted-0909",
