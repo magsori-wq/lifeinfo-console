@@ -21156,8 +21156,8 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.tosslink link 9634177",
    "owner": "user",
-   "kind": "approve",
-   "state": "cancelled",
+   "kind": "dup_cancelled",
+   "state": "done",
    "by": "이부장",
    "done_at": "2026-10-20",
    "result": "중복 취소(3번째) — 같은 상품 9634177 이 issue20261009 로 10-09 사장님 승인 완료. 루틴9 가 picks requested 를 안 보고 다시 올림 · ⚠️ state=done 이면 solo_approved 가 승인으로 읽어 cancelled 로 정정(10-20 15:2x 이부장)"
@@ -21179,6 +21179,16 @@
    "what": "루틴8·9 상품 후보 중복 — productprop picks 에 같은 item 이 requested 로 있으면 재상신 금지(니삭스 9634177 3회: 10-09·10-15·10-20). 원인: 10-09 승인 뒤 링크 발급 담당이 없었다",
    "due": "2026-10-21",
    "cmd": "grep -n requested studio/productprop.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "watchdone-approve-falsepass-1020",
+   "added": "2026-10-20",
+   "what": "kind=approve 항목을 '중복 취소'로 watch done 하면 solo_approved·blogger._approval_gate 가 승인으로 읽는다(afflink-socks1020 실측, kind 를 dup_cancelled 로 바꿔 막음). watch 에 취소(cancel) 경로 또는 done 시 kind=approve 면 --approved 확인 요구 필요",
+   "due": "2026-10-21",
+   "cmd": "python -c \"from studio import affiliate as a;print(a.solo_approved('socks1020'))\"",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
