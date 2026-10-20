@@ -21220,6 +21220,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "seodesc-draft-postid-1020",
+   "added": "2026-10-20",
+   "what": "검색설명 Aside 초안의 편집 postId 를 손으로 적다 틀림(C3-10 초안에 F2-20 의 3989620232074274611 — Aside 가 제목·URL 대조로 잡아 올바른 글에 적용). 초안 생성 시 seo_desc_status posts.<코드>.postId 에서 자동으로 넣는 도구 필요",
+   "due": "2026-10-21",
+   "cmd": "grep -rn 'post/edit' docs/aside_drafts/*검색설명*.txt | tail -3",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
