@@ -1853,6 +1853,16 @@
      "base_code": "lifeinfo-daily-topics",
      "date": "2026-10-20",
      "at": "2026-10-20 09:18"
+    },
+    {
+     "code": "9-lifeinfo-issue-product-pm-1020",
+     "title": "9-lifeinfo-issue-product-pm (I)",
+     "state": "done",
+     "note": "[조사장부] 목록 2 · 원문 0 · 후보 3 · 탈락 2 · 검색어 6 (토스 인기목록·productprop search 10낱말; 1차 출처 원문은 안 열었음 — 상품 일차자료는 토스 수집 데이터뿐)\n🛒 후보: 기모 보온 니삭스 6종 · 7,900원 · 리뷰993 · 왜 지금: 10월 하순 기온 하락 시즌, naverkw 기모양말·니삭스 실검색어 ✅ (분류 ① 쓰레드 단독, 결재함 afflink-socks1020 등록)\n· 단감(탐나유 3kg 리뷰175) — 탈락: 리뷰 얇음 · 홍로 사과(리뷰5604) — 탈락: 시즌 근거 약함·유입검색어 겹침 0\n이어받은 것: 기게시 양말 없음(affiliate solo) / 전기요·핫팩·내복·김장은 토스 인기목록 없음 또는 기게시",
+     "auto_daily": true,
+     "base_code": "9-lifeinfo-issue-product-pm",
+     "date": "2026-10-20",
+     "at": "2026-10-20 15:12"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -3375,7 +3385,7 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-20 10:09:32",
+ "updated": "2026-10-20 15:12:23",
  "current": {
   "batch": "draft1020g413",
   "code": "",
@@ -3386,6 +3396,10 @@
   "since_at": "2026-10-20 10:07:05"
  },
  "log": [
+  {
+   "t": "15:12:23",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1020 완료 — 9-lifeinfo-issue-product-pm (I)"
+  },
   {
    "t": "10:09:32",
    "text": "▶   — 1/7단계 · ⏸ 대기 — G4-13 초안 완성(layout 🔴0·bodydup 신규 0.057·naverkw 실검색어 확인, 교체 금액·사설 제외 현행 기준은 박스로 뺌). 썸네일(G=실사진 필수)용 수도계량기·동파·수도관 소재 사진이 insta/_src 에 없음(확인: water_stream·water_valley 는 산악 계류라 소재 불일치). 🙋 이부장 요청: Wikimedia Commons CC0/PD 수도계량기(또는 얼어붙은 수도관) 사진 1장 다운로드 승인·취득 부탁 — 파일 다운로드는 사장님 허락 필요. 받으면 썸네일·본문 사진 캡션(자리표시자 __PHOTO_CAPTION__)·pubqueue add 하고 mark. 네이버 로그인 복구 후 C3-10 후속(네이버→인스타→쓰레드)이 먼저"
@@ -3541,10 +3555,6 @@
   {
    "t": "20:46:11",
    "text": "🏁 Aside #249 이부장 확인"
-  },
-  {
-   "t": "20:45:03",
-   "text": "▶   — 1/7단계 · [체인] #249 F4-30 naver 확인 ✅ (naverfind --gate F4-30 → ✅ 통과(범위 밖이거나 이미 기록됨)) — [이과장] 지금 바로 인스타 캡션·카드·쓰레드 원고·실사진 → Aside 초안(인스타·쓰레드)"
   }
  ],
  "currents": {
