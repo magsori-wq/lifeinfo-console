@@ -1,10 +1,9 @@
 {
- "computed_at": "2026-10-20 17:13:43",
- "source_head": "96631e39d952",
+ "computed_at": "2026-10-20 17:26:24",
+ "source_head": "53534c7fd427",
  "ids": [
   "G4-13",
-  "claude-limit-reset-1022",
-  "deploy-g413-diagram-1020"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -42,7 +41,7 @@
       },
       {
        "label": "실사진",
-       "path": "insta/thread/thread_G4-13_water_meter.png",
+       "path": "insta/thread/thread_G4-13_water_meter_freeze.png",
        "img": true,
        "exists": true
       }
@@ -50,16 +49,34 @@
      "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/magsori8975/p/DetZbX3EUoZ/",
      "files": [
       {
        "label": "인스타 캡션",
        "path": "insta/캡션_수도계량기동파교체비부산양산.txt",
        "img": false,
        "exists": true
+      },
+      {
+       "label": "카드1",
+       "path": "insta/water_meter_freeze_01.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드2",
+       "path": "insta/water_meter_freeze_02.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드3",
+       "path": "insta/water_meter_freeze_03.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     }
    }
   }
@@ -71,14 +88,6 @@
    "what": "Anthropic 메일(09-24 09:25 KST, 미읽음): Claude 한도 리셋 1회가 주어졌다 — 5시간·주간 한도를 한 번 다시 채운다. 사용 기한 10-22 09:00 PT = 10-23 01:00 KST, 1회용이며 안 쓰면 없어진다(구독 취소·다운그레이드 시에도 소멸). 한도가 막힌 날 쓰면 된다. 사용처: 설정 → 사용량. 【루틴1 10-05 20:5x 보강】10-03 Claude Code 뉴스레터 원문이 같은 것을 확인해 준다: 'five-hour limits went up 20%, and everyone on Pro, Max, and Team got one full reset. If you haven't used it yet, it's sitting in Settings > Usage until October 22'. ⚠️ 이 항목을 20:4x 에 제가 실수로 덮어써서 소멸시각·구독해지 조항·기한 10-20 을 지웠다가 git(c8be0818^)에서 원문을 꺼내 되돌렸다 — 원 올린이·기한·내용 모두 복원",
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-g413-diagram-1020",
-   "what": "deploy.bat 실행 — G4-13 도식 썸네일(388, 같은 파일명으로 교체)이 github.io 에 올라가야 블로그 대표이미지가 가스계량기 사진에서 바뀐다. 【권고】지금 【근거】approve-g4-13 승인 17:10 【위험】없음",
-   "due": "2026-10-20",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
