@@ -1,41 +1,63 @@
 {
- "computed_at": "2026-10-20 09:14:31",
- "source_head": "e514ba8ec658",
+ "computed_at": "2026-10-20 16:02:40",
+ "source_head": "c2f50c04c43b",
  "ids": [
   "C3-10",
-  "claude-limit-reset-1022",
-  "loopeng-stopcond"
+  "claude-limit-reset-1022"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "C3-10",
    "title": "어르신 낙상 치료비 무료? 신청은 내년, 대상은 따로",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 어르신낙상치매보험무료지원_글_HTML.txt",
-     "path": "어르신낙상치매보험무료지원_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "어르신낙상치매보험무료지원",
+   "eng": "senior_fall",
+   "ch": {
+    "naver": {
+     "url": "https://blog.naver.com/magsori8975/224447850438",
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_어르신낙상치매보험무료지원.txt",
+       "img": false,
+       "exists": true
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/387_senior_fall.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "done"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/387_senior_fall.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_어르신낙상치매보험무료지원.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/387_senior_fall.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_어르신낙상치매보험무료지원.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "ready"
+   }
   }
  ],
+ "publish": [],
  "actions": [
   {
    "id": "claude-limit-reset-1022",
@@ -43,14 +65,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "loopeng-stopcond",
-   "what": "루프엔지니어링 보고서 종료조건 — 발행 페이스(횟수 기반)에 **조건 기반 지표**를 얹을지. 【지금 하면 안 되는 이유】 색인이 **0/277**(2026-09-20 판독)이다. 어떤 조건을 걸어도 0 은 통과 못 해 그 흐름이 완전히 잠긴다. 그리고 사장님이 2026-09-13 에 '한도 당분간 없다' 고 푸신 것을 되돌리는 셈이 된다. 【언제 다시 보나】 **색인이 0 에서 벗어나면** — 임계값을 지어내지 않는다. 0→1 이라도 무언가 움직인 것이고 그때 이부장이 재서 판단해 올린다. 【사장님이 하실 것】 지금은 없다. ⚠️ 이 항목에 오래 '색인 2/196' 이라 적혀 있었는데 09-21 재측정 결과 **0/277 로 더 나빠졌다**(196편일 때 2편 → 277편에서 0편).",
-   "due": "2026-10-20",
-   "cmd": "python -m studio.pace",
-   "state": "wait",
    "kind": "action"
   }
  ],
