@@ -21287,6 +21287,16 @@
    "by": "이부장",
    "done_at": "2026-10-20",
    "result": "사장님 17:14 deploy.bat 실행 완료(406개 200)"
+  },
+  {
+   "id": "naverwrite-affcard-1020",
+   "added": "2026-10-20",
+   "what": "네이버 게시(naverwrite)가 제휴 naver.me 링크를 글자 링크로만 넣어 사장님이 두 번(C3-10 16:25·G4-13 18:06) Aside 에 카드 변경을 직접 시키셨다. naverwrite 단계에서 링크를 한 줄 단독 붙여넣기로 카드화하도록 고쳐야 함(CLAUDE.md 「제휴 링크는 한 줄씩 단독으로」)",
+   "due": "2026-10-21",
+   "cmd": "grep -n 'naver.me\\|oglink' studio/naverwrite.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
