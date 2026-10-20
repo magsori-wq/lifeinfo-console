@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20 08:08",
+ "generated": "2026-10-20 09:02",
  "routines": [
   {
    "num": 1,
@@ -45,7 +45,7 @@
    "id": "lifeinfo-daily-topics",
    "on": true,
    "last": "10/19 09:13",
-   "next": "10/20 09:00",
+   "next": "10/21 09:00",
    "model": "sonnet-5-5",
    "report_day": "1019",
    "report": "[조사장부] 목록 5 · 원문 1(+source 에이전트가 3사 고객센터 직접 열람) · 후보 1 · 탈락 4 · 검색어 6. 추천 B5-09 선불충전금 환급(금융위 10-15 원문, naverkw 환불 3종 나옴), docflow pick+verify 🟡(겹침 A2-01 '찾기' 낱말뿐). 탈락: 청년미래적금=A1-05·B5-05 기발행 / 복지위기가구=복지부 본문 첨부라 미열람 / 상생소비복권=A1-24 큐 / 가계대출동향=행동요구 없음. 막힘: 복지부·금융위 상세 일부 메뉴만 잡혀 원문 열람 1건뿐, 국세청 목록 파싱 실패. 미확인: 카카오페이 환급 메뉴명·네이버 인출 한도·토스 앱 경로. 이어받은 것: 직전 note 기준 재탕 후보 없음",
@@ -82,12 +82,17 @@
    "name": "3-Lifeinfo publish",
    "id": "lifeinfo-publish",
    "on": true,
-   "last": "10/19 09:01",
-   "next": "10/20 09:00",
+   "last": "10/20 09:01",
+   "next": "10/21 09:00",
    "model": "sonnet-5-5",
    "report_day": "1019",
    "report": "루틴3 09시: A1-24 상생소비복권 — V0 🟢(10-19 05:24)·큐 적재·결재 대기 1건(go 도장 없음) → 발행 안 함(도장 없는 글 금지). 오늘 이미 3편 발행·setgate 4채널 미완 없음·진행 run 없음. 이어받은 것: 결재함 기존 등록 재사용(중복 상신 안 함). 새로 본 것: 없음",
    "runs": [
+    {
+     "at": "10/20 09:01",
+     "link": "claude://claude.ai/epitaxy/local_a6fdde4d-8ea4-402d-9aac-f3c9b764cb81",
+     "archived": false
+    },
     {
      "at": "10/19 09:04",
      "link": "claude://claude.ai/epitaxy/local_0dd5d188-a627-487a-a13c-2de41c252db3",
@@ -106,11 +111,6 @@
     {
      "at": "10/16 09:04",
      "link": "claude://claude.ai/epitaxy/local_3628fe15-0138-4ebb-8ea1-1a01b1686a34",
-     "archived": true
-    },
-    {
-     "at": "10/15 09:04",
-     "link": "claude://claude.ai/epitaxy/local_48cd6e2a-3261-4da2-8e2c-9e03d5cd675d",
      "archived": true
     }
    ]
