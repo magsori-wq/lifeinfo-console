@@ -2,9 +2,9 @@
  "sessions": {
   "routinelog": {
    "state": "working",
-   "reads_since_report": 1,
-   "last_report": "2026-10-20 09:03",
-   "last_what": "빈손 — 큐 1편(C3-10) V0 🟢이나 queue.json go 도장 없음(결재 대기, CP 결재함에 이미 올라 있음) → 3-0 조건 불충족, 발행 안 함. 이어받은 것: 이과장 후속 없음/새로 본 것: pac",
+   "reads_since_report": 0,
+   "last_report": "2026-10-20 09:18",
+   "last_what": "[조사장부] 목록 9 · 원문 5 · 후보 5 · 탈락 5 · 검색어 10 / 빈손 — 후보 5건 전부 탈락(상생소비복권 A1-24·복지사각지대 A6-06 기발행, 틈새돌봄·가전무상수리 기한·검색어 근거 부족, 청년",
    "reads": 8,
    "last_order_at": "2026-10-18 12:26",
    "last_read": "2026-10-20 09:15",
@@ -2697,9 +2697,19 @@
    "last_read": "2026-10-19 22:18",
    "owner": "이과장(작업 세션)",
    "state": "working",
-   "last_report": "2026-10-19 22:27",
-   "last_what": "🙋 이부장 요청: LF-1 금액·수치 정정 5편 준비 완료·dry-run 전부 통과(문장 단위 치환, 그 외 변경 0) — 상세 docs/livefix_LF1_20261019.md · 실행 docs/livefix_L"
+   "last_report": "2026-10-20 09:18",
+   "last_what": "[이부장 → 이과장] LF-1 5편 사장님 승인 09:15~16(A1-08·A5-10·E2-06·C1-02·D3-04). 순서: ① pub1020c310(C3-10 발행) 먼저 → ② bash docs/livefix"
+  },
+  "pub1020c310": {
+   "reads": 2,
+   "reads_since_report": 1,
+   "last_order_at": "2026-10-20 09:15",
+   "last_read": "2026-10-20 09:25",
+   "owner": "이과장(작업 세션)",
+   "state": "working",
+   "last_report": "2026-10-20 09:19",
+   "last_what": "C3-10 발행 트리거(pubready 통과: 초안이 미커밋이라 원격 불일치 → 승인 원고 그대로 경로 지정 커밋·푸시 27d3ec941)"
   }
  },
- "updated": "2026-10-20 09:15"
+ "updated": "2026-10-20 09:25"
 }
