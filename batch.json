@@ -1893,6 +1893,16 @@
      "base_code": "lifeinfo-travel-prep-1020",
      "date": "2026-10-20",
      "at": "2026-10-20 21:15"
+    },
+    {
+     "code": "lifeinfo-nightly-verify-1020-1020",
+     "title": "lifeinfo-nightly-verify-1020 (E)",
+     "state": "done",
+     "note": "야간검증 10-20: 오늘 발행 2편(G4-13·C3-10)+기존 3편(B1-10·D1-16·C3-09) DRF·정책브리핑 원문 대조 오류 0·라이브 수정 0·경미 2건 note 기록. 미검증 잔여 B5-09·G3-21. crawl_watch 20/25 신규크롤 0. 애드센스 NEEDS_ATTENTION(PENDING)",
+     "auto_daily": true,
+     "base_code": "lifeinfo-nightly-verify-1020",
+     "date": "2026-10-20",
+     "at": "2026-10-20 22:47"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -3447,7 +3457,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-10-20 21:15:29",
+ "updated": "2026-10-20 22:47:34",
  "current": {
   "batch": "aside",
   "code": "",
@@ -3458,6 +3468,10 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "22:47:34",
+   "text": "✅ lifeinfo-nightly-verify-1020-1020 완료 — lifeinfo-nightly-verify-1020 (E)"
+  },
   {
    "t": "21:15:29",
    "text": "✅ lifeinfo-travel-prep-1020-1020 완료 — lifeinfo-travel-prep-1020 (D)"
@@ -3613,10 +3627,6 @@
   {
    "t": "16:54:56",
    "text": "▶   — 2/7단계 · G4-13 사진 정정 준비 완료(승인 approve-g4-13 대기): ① 도식 썸네일(사진 없음) thumbs/388·388n + thumbs_naver 갱신·커밋 — 라이브 반영은 deploy.bat 뒤(블로그 이미지 URL 동일) ② 라이브 캡션 정정 docs/livefix_G4-13_20261020.sh (dry-run 1건 치환·그 외 변경 없음, 승인 뒤 bash 로 실행) ③ 초안 로컬 캡션도 갱신 ④ 인스타 카드 3장·쓰레드 이미지 도식판 제작했으나 threadimg 실사진 게이트 🔴(고유색 1471<4000) — 게시는 보류, 게이트 예외 여부는 이부장 판단 ⑤ 네이버 글 대표이미지·캡션 정정은 사장님 손(388n 도식판 파일 준비됨, 본문의 사진 출처 줄도 삭제 필요) ⑥ 검색설명 진행"
-  },
-  {
-   "t": "16:53:45",
-   "text": "▶   — 1/7단계 · [이부장 → 이과장] 사진 오류 확인(이부장 직접 열람: 가스계량기 맞음). ① 인스타·쓰레드 보류 ② 도식 썸네일(사진 없음) 388 블로그용·388n 네이버용·인스타 카드·쓰레드 이미지 미리 제작 — 라이브 반영은 사장님 결재 approve-g4-13 뒤 ③ 검색설명은 계속 진행"
   }
  ],
  "currents": {
