@@ -1865,10 +1865,12 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.pace",
    "owner": "user",
-   "state": "wait",
+   "state": "done",
    "kind": "action",
    "by": "이부장",
-   "verify": "python -c \"import io,json;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'));print('색인', d.get('indexed'), '/', d.get('total'), '· 판독', d.get('checked_at'))\""
+   "verify": "python -c \"import io,json;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'));print('색인', d.get('indexed'), '/', d.get('total'), '· 판독', d.get('checked_at'))\"",
+   "done_at": "2026-10-20",
+   "result": "사장님 10-20 09:48 결정: 감시로 넘기고 루프엔지니어링 종결. 후속 = index-nonzero-recheck(이부장)"
   },
   {
    "id": "loopeng-review4w",
