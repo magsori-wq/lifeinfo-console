@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>택시비즈</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--fg:#1c2330;--mut:#6b7686;--line:#e2e6ec;--pri:#1d6fe0;--bad:#d64545;--ok:#198754}
+@media (prefers-color-scheme:dark){:root{--bg:#10141b;--card:#181e28;--fg:#e8ecf2;--mut:#93a0b3;--line:#2a3340;--pri:#5aa2ff;--bad:#ff7b7b;--ok:#4cc38a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Noto Sans KR",sans-serif}
+header{display:flex;gap:8px;align-items:center;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0}
+header h1{font-size:18px;margin:0;flex:1}
+main{max-width:860px;margin:0 auto;padding:16px}
+nav{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px}
+nav button{white-space:nowrap}
+button,input,select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}
+button{cursor:pointer}
+button.on,button.pri{background:var(--pri);color:#fff;border-color:var(--pri)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi small{color:var(--mut);display:block}.kpi b{font-size:20px}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;align-items:end}
+label{display:grid;gap:2px;font-size:12px;color:var(--mut)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:6px 4px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+.tbl{overflow-x:auto}
+.neg{color:var(--bad)}.pos{color:var(--ok)}
+#login{max-width:320px;margin:20vh auto;display:grid;gap:10px;padding:16px}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div id="login" class="card hide">
+  <h1>택시비즈</h1>
+  <input id="pw" type="password" placeholder="비밀번호" autocomplete="current-password">
+  <button class="pri" id="loginBtn">로그인</button>
+  <div id="loginErr" class="neg"></div>
+</div>
+
+<div id="app" class="hide">
+<header>
+  <h1>택시비즈</h1>
+  <input id="month" type="month" aria-label="월 선택">
+</header>
+<main>
+  <nav id="tabs"></nav>
+  <section id="view"></section>
+</main>
+</div>
+
+<script>
+const won = (n) => (n < 0 ? '-' : '') + Math.abs(Math.round(n || 0)).toLocaleString('ko-KR');
+const today = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); };
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+async function api(path, opt = {}) {
+  const r = await fetch('/api/' + path, { headers: { 'Content-Type': 'application/json' }, ...opt });
+  if (r.status === 401 && path !== 'login') { showLogin(); throw new Error('login'); }
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || '오류');
+  return j;
+}
+
+// 탭 정의: 입력 폼 필드와 표 열
+const TABS = {
+  summary: { label: '요약' },
+  sales: { label: '영업', fields: [
+    ['date', '날짜', 'date'], ['shift', '주/야', ['주', '야']], ['calls', '콜건수', 'number'],
+    ['trips', '영업건수', 'number'], ['cash', '현금', 'number'], ['card', '카드', 'number'], ['other', '기타', 'number']] },
+  expenses: { label: '지출', fields: [
+    ['date', '날짜', 'date'], ['category', '분류', ['가스충전', '사납금', '정비', '세차', '보험', '식비', '담배', '기타']],
+    ['amount', '금액', 'number'], ['memo', '메모', 'text'], ['personal', '개인지출', 'check']] },
+  charges: { label: '충전', fields: [
+    ['date', '날짜', 'date'], ['unitPrice', '단가', 'number'], ['liters', '충전량(L)', 'number'], ['amount', '결제금액', 'number']] },
+  deposits: { label: '통장', fields: [
+    ['date', '날짜', 'date'], ['kind', '구분', ['카드입금', '현금입금', '동백전', '기타']], ['amount', '금액', 'number'], ['memo', '메모', 'text']] },
+  settings: { label: '설정' },
+};
+let tab = 'summary';
+
+function showLogin() { $('#app').classList.add('hide'); $('#login').classList.remove('hide'); }
+function showApp() {
+  $('#login').classList.add('hide'); $('#app').classList.remove('hide');
+  $('#tabs').innerHTML = Object.entries(TABS).map(([k, t]) => `<button data-t="${k}" class="${k === tab ? 'on' : ''}">${t.label}</button>`).join('');
+  render();
+}
+
+$('#loginBtn').onclick = async () => {
+  try { await api('login', { method: 'POST', body: JSON.stringify({ password: $('#pw').value }) }); showApp(); }
+  catch (e) { $('#loginErr').textContent = e.message; }
+};
+$('#pw').onkeydown = (e) => { if (e.key === 'Enter') $('#loginBtn').click(); };
+$('#tabs').onclick = (e) => { const t = e.target.dataset.t; if (t) { tab = t; showApp(); } };
+$('#month').onchange = render;
+$('#month').value = today().slice(0, 7);
+
+async function render() {
+  const month = $('#month').value;
+  const v = $('#view');
+  try {
+    if (tab === 'summary') return v.innerHTML = renderSummary(await api('summary?month=' + month));
+    if (tab === 'settings') return renderSettings(v);
+    await renderList(v, tab, month);
+  } catch (e) { if (e.message !== 'login') v.innerHTML = `<div class="card neg">${esc(e.message)}</div>`; }
+}
+
+function renderSummary(s) {
+  const kpi = (l, n, cls = '') => `<div class="card kpi"><small>${l}</small><b class="${cls}">${won(n)}</b></div>`;
+  const cats = Object.entries(s.byCategory).sort((a, b) => b[1] - a[1])
+    .map(([k, n]) => `<tr><td>${esc(k)}</td><td>${won(n)}</td></tr>`).join('') || '<tr><td colspan=2>지출 없음</td></tr>';
+  return `<div class="grid">
+    ${kpi('총매출', s.revenue)}${kpi('사업 지출', s.businessTotal)}${kpi('카드수수료(추정)', s.cardFee)}
+    ${kpi('순이익', s.profit, s.profit < 0 ? 'neg' : 'pos')}${kpi('개인지출(제외)', s.personal)}${kpi('가용잔액', s.available, s.available < 0 ? 'neg' : 'pos')}
+  </div>
+  <div class="card"><div class="grid">
+    <div class="kpi"><small>영업일수</small><b>${s.workedDays}일</b></div>
+    <div class="kpi"><small>콜/영업건수</small><b>${s.calls} / ${s.trips}</b></div>
+    <div class="kpi"><small>현금 · 카드 · 기타</small><b>${won(s.cash)} · ${won(s.card)} · ${won(s.other)}</b></div>
+    <div class="kpi"><small>가스 충전</small><b>${won(s.gasCharged)} (${s.gasLiters}L)</b></div>
+    <div class="kpi"><small>월말 전망 (생활비 ${won(s.settings.livingCost)} 차감)</small><b class="${(s.projection || 0) < 0 ? 'neg' : 'pos'}">${s.projection == null ? '-' : won(s.projection)}</b></div>
+  </div></div>
+  <div class="card tbl"><b>지출 분류별</b><table>${cats}</table></div>`;
+}
+
+async function renderList(v, name, month) {
+  const t = TABS[name];
+  const rows = await api(`${name}?month=${month}`);
+  const inputs = t.fields.map(([k, l, type]) => {
+    if (Array.isArray(type)) return `<label>${l}<select name="${k}">${type.map((o) => `<option>${o}</option>`).join('')}</select></label>`;
+    if (type === 'check') return `<label>${l}<input name="${k}" type="checkbox" style="width:20px;height:20px"></label>`;
+    const val = type === 'date' ? ` value="${today()}"` : '';
+    return `<label>${l}<input name="${k}" type="${type}"${val} ${type === 'number' ? 'inputmode="numeric" value="0"' : ''}></label>`;
+  }).join('');
+  const head = t.fields.map(([, l]) => `<th>${l}</th>`).join('') + '<th></th>';
+  const body = rows.map((r) => '<tr>' + t.fields.map(([k, , type]) =>
+    `<td>${type === 'number' ? won(r[k]) : type === 'check' ? (r[k] ? '●' : '') : esc(r[k])}</td>`).join('') +
+    `<td><button data-del="${r.id}" aria-label="삭제">✕</button></td></tr>`).join('');
+  v.innerHTML = `<form class="card" id="f">${inputs}<button class="pri">추가</button></form>
+    <div class="card tbl"><table><tr>${head}</tr>${body || `<tr><td colspan="${t.fields.length + 1}">내역 없음</td></tr>`}</table></div>`;
+  $('#f').onsubmit = async (e) => {
+    e.preventDefault();
+    const body = {};
+    for (const [k, , type] of t.fields) { const el = e.target.elements[k]; body[k] = type === 'check' ? el.checked : el.value; }
+    try { await api(name, { method: 'POST', body: JSON.stringify(body) }); render(); } catch (err) { alert(err.message); }
+  };
+  v.onclick = async (e) => {
+    const id = e.target.dataset.del;
+    if (id && confirm('삭제할까요?')) { await api(`${name}/${id}`, { method: 'DELETE' }); render(); }
+  };
+}
+
+async function renderSettings(v) {
+  const s = await api('settings');
+  const f = [['livingCost', '생활비 기준(월)'], ['monthlyFee', '사납금(월)'], ['workDays', '월 근무일'], ['cardFeeRate', '카드수수료율 (0.01=1%)']];
+  v.innerHTML = `<form class="card" id="sf">${f.map(([k, l]) => `<label>${l}<input name="${k}" type="number" step="any" value="${s[k]}"></label>`).join('')}
+    <button class="pri">저장</button></form>
+    <div class="card"><a href="/api/export" download="taxibiz-backup.json">전체 데이터 백업(JSON) 받기</a></div>`;
+  $('#sf').onsubmit = async (e) => {
+    e.preventDefault();
+    const b = {}; f.forEach(([k]) => b[k] = e.target.elements[k].value);
+    await api('settings', { method: 'PUT', body: JSON.stringify(b) }); alert('저장했습니다.');
+  };
+}
+
+api('settings').then(showApp).catch(() => showLogin());
+</script>
+</body>
+</html>
