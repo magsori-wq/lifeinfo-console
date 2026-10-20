@@ -21024,8 +21024,10 @@
    "cmd": "",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-20",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "approve-c1-02",
@@ -21035,8 +21037,10 @@
    "cmd": "",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-20",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "approve-d3-04",
@@ -21046,8 +21050,10 @@
    "cmd": "",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-20",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "docflow-1020-c310",
@@ -21058,6 +21064,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:b1500c2b"
+  },
+  {
+   "id": "c310-pub-wake-1020",
+   "added": "2026-10-20",
+   "what": "C3-10 발행 지시서(pub1020c310) 이과장 수신 확인 — 09:16 깨움 미확인",
+   "due": "2026-10-20",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('pub1020c310'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
