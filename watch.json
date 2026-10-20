@@ -21118,6 +21118,16 @@
    "by": "이부장",
    "done_at": "2026-10-20",
    "result": "docs/MCP_연동_매핑_20261020.md 작성(71줄, 8단계+막힌 문 11). 이부장이 전문 열람 확인. 확인 못 함 4건 명시"
+  },
+  {
+   "id": "index-nonzero-recheck",
+   "added": "2026-10-20",
+   "what": "색인이 0 에서 벗어나면(10-19 0/395) 이부장이 재서 발행 페이스 조건기반 지표 필요 여부를 결재함에 【권고】【근거】【위험】으로 올린다 — 루프엔지니어링 종료조건 승계",
+   "due": "2026-11-03",
+   "cmd": "python -c \"import io,json;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'));print('색인',d.get('indexed'),'/',d.get('total'),d.get('checked_at'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
