@@ -21342,6 +21342,16 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "asidechain-blocked-as-done-1021",
+   "added": "2026-10-21",
+   "what": "asidechain 이 blocked 보고(#262)를 naver 확인 ✅ 로 체인 처리하고 인스타·쓰레드 지시를 냈다(정정 건에 신규 OSMU 지시). blocked 는 체인 금지 · 정정(livefix) 건은 OSMU 체인 제외 필요",
+   "due": "2026-10-21",
+   "cmd": "grep -n 'blocked' studio/asidechain.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
