@@ -137,6 +137,26 @@ async function api(req, res, url) {
     return send(res, 200, { ...DEFAULT_SETTINGS, ...db.settings });
   }
   if (name === 'export') return send(res, 200, db);
+  if (name === 'import' && req.method === 'POST') {
+    // 엑셀 가져오기: 같은 내용의 행은 건너뛰어 재실행해도 중복되지 않는다.
+    const col = id;
+    if (!COLLECTIONS[col]) return send(res, 404, { error: 'not found' });
+    const { rows } = await readBody(req);
+    if (!Array.isArray(rows) || rows.length > 5000) return send(res, 400, { error: 'rows는 5000건 이하 배열' });
+    const key = (r) => COLLECTIONS[col].map((f) => r[f]).join('\u0001');
+    const seen = new Set(db[col].map(key));
+    let added = 0, duplicate = 0, invalid = 0;
+    for (const raw of rows) {
+      let row;
+      try { row = clean(col, raw); } catch { invalid++; continue; }
+      if (seen.has(key(row))) { duplicate++; continue; }
+      seen.add(key(row));
+      db[col].push({ id: crypto.randomUUID(), ...row });
+      added++;
+    }
+    if (added) save();
+    return send(res, 200, { added, duplicate, invalid });
+  }
   if (!COLLECTIONS[name]) return send(res, 404, { error: 'not found' });
 
   if (req.method === 'GET') {

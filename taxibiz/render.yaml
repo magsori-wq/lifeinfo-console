@@ -1,0 +1,17 @@
+# Render 배포: 대시보드에서 Blueprint로 이 저장소를 연결 (영구 디스크는 유료 플랜 필요)
+services:
+  - type: web
+    name: taxibiz
+    runtime: docker
+    rootDir: taxibiz
+    plan: starter
+    healthCheckPath: /healthz
+    envVars:
+      - key: TAXIBIZ_PASSWORD
+        sync: false
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: taxibiz-data
+      mountPath: /data
+      sizeGB: 1

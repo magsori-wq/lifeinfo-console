@@ -77,6 +77,7 @@ const TABS = {
     ['date', '날짜', 'date'], ['unitPrice', '단가', 'number'], ['liters', '충전량(L)', 'number'], ['amount', '결제금액', 'number']] },
   deposits: { label: '통장', fields: [
     ['date', '날짜', 'date'], ['kind', '구분', ['카드입금', '현금입금', '동백전', '기타']], ['amount', '금액', 'number'], ['memo', '메모', 'text']] },
+  import: { label: '엑셀 가져오기' },
   settings: { label: '설정' },
 };
 let tab = 'summary';
@@ -103,6 +104,7 @@ async function render() {
   try {
     if (tab === 'summary') return v.innerHTML = renderSummary(await api('summary?month=' + month));
     if (tab === 'settings') return renderSettings(v);
+    if (tab === 'import') return renderImport(v);
     await renderList(v, tab, month);
   } catch (e) { if (e.message !== 'login') v.innerHTML = `<div class="card neg">${esc(e.message)}</div>`; }
 }
@@ -150,6 +152,90 @@ async function renderList(v, name, month) {
     const id = e.target.dataset.del;
     if (id && confirm('삭제할까요?')) { await api(`${name}/${id}`, { method: 'DELETE' }); render(); }
   };
+}
+
+
+// ---- 엑셀 가져오기: 브라우저에서 파싱(SheetJS) → 열 매핑 → 서버로 일괄 전송 ----
+const GUESS = { // 머리글에 이 낱말이 들어 있으면 해당 필드로 자동 추정
+  date: ['날짜', '일자', '일시'], shift: ['주야', '주/야'], calls: ['콜건수', '콜영업수', '콜'], trips: ['영업건수', '건수'],
+  cash: ['현금'], card: ['카드'], other: ['기타', '앱', '택시비'], category: ['분류', '항목', '구분', '적요'],
+  amount: ['금액', '결제금액', '지출', '입금'], memo: ['메모', '비고', '내용'], unitPrice: ['단가'], liters: ['충전량', '수량', '리터'], kind: ['구분', '종류'],
+};
+function normDate(v, year) {
+  if (v instanceof Date && !isNaN(v)) { const d = new Date(v.getTime() - v.getTimezoneOffset() * 6e4); return d.toISOString().slice(0, 10); }
+  const t = String(v == null ? '' : v).trim();
+  let m = /^(\d{4})[-./\s]+(\d{1,2})[-./\s]+(\d{1,2})/.exec(t);
+  if (m) return `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
+  m = /^(\d{1,2})\s*[./월-]\s*(\d{1,2})/.exec(t);
+  return m ? `${year}-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}` : '';
+}
+const toNum = (v) => Number(String(v == null ? '' : v).replace(/[,원\s]/g, '')) || 0;
+
+function renderImport(v) {
+  v.innerHTML = `<div class="card"><label>엑셀 파일(.xlsx)<input type="file" id="xf" accept=".xlsx,.xls"></label>
+    <p style="color:var(--mut);margin:8px 0 0">파일은 브라우저에서만 읽고, 선택한 열의 값만 서버로 보냅니다. 같은 내용 행은 건너뜁니다.</p></div>
+    <div id="imp"></div>`;
+  $('#xf').onchange = async (e) => {
+    const f = e.target.files[0]; if (!f) return;
+    if (!window.XLSX) await new Promise((ok, no) => { const s = document.createElement('script'); s.src = '/xlsx.full.min.js'; s.onload = ok; s.onerror = () => no(new Error('엑셀 라이브러리를 불러오지 못했습니다.')); document.head.append(s); }).catch((er) => alert(er.message));
+    if (!window.XLSX) return;
+    const wb = XLSX.read(await f.arrayBuffer(), { cellDates: true });
+    importUI(wb);
+  };
+}
+
+function importUI(wb) {
+  const targets = ['sales', 'expenses', 'charges', 'deposits'];
+  $('#imp').innerHTML = `<form class="card" id="cfg">
+    <label>시트<select name="sheet">${wb.SheetNames.map((n) => `<option>${esc(n)}</option>`).join('')}</select></label>
+    <label>가져올 곳<select name="target">${targets.map((t) => `<option value="${t}">${TABS[t].label}</option>`).join('')}</select></label>
+    <label>머리글 행 번호<input name="hrow" type="number" min="1" value="1"></label>
+    <label>연도(월/일만 있을 때)<input name="year" type="number" value="${$('#month').value.slice(0, 4)}"></label>
+  </form><div id="map"></div>`;
+  const cfg = $('#cfg');
+  const redraw = () => {
+    const ws = wb.Sheets[cfg.elements.sheet.value];
+    const all = XLSX.utils.sheet_to_json(ws, { header: 1, raw: true, defval: '' });
+    const h = Math.max(0, Number(cfg.elements.hrow.value) - 1);
+    const heads = (all[h] || []).map((x) => String(x).trim());
+    const fields = TABS[cfg.elements.target.value].fields;
+    const opt = (sel) => '<option value="">(사용 안 함)</option>' + heads.map((x, i) => x ? `<option value="${i}"${i === sel ? ' selected' : ''}>${esc(x)}</option>` : '').join('');
+    $('#map').innerHTML = `<form class="card" id="mf">${fields.map(([k, l]) => {
+      const g = GUESS[k] || []; let sel = heads.findIndex((x) => g.some((w) => x.includes(w)));
+      return `<label>${l}<select name="${k}">${opt(sel)}</select></label>`; }).join('')}</form>
+      <div class="card tbl" id="pv"></div><button class="pri" id="go">가져오기</button>`;
+    const build = () => {
+      const fm = $('#mf'); const year = cfg.elements.year.value;
+      return all.slice(h + 1).map((r) => {
+        const o = {};
+        for (const [k, , type] of fields) {
+          const i = fm.elements[k].value; const raw = i === '' ? '' : r[Number(i)];
+          o[k] = type === 'date' ? normDate(raw, year) : type === 'number' ? toNum(raw) : type === 'check' ? /^(1|y|true|o|●|개인)/i.test(String(raw)) : String(raw == null ? '' : raw).trim();
+        }
+        return o;
+      }).filter((o) => o.date);
+    };
+    const preview = () => {
+      const rows = build();
+      $('#pv').innerHTML = `<b>유효한 행 ${rows.length}건</b> (앞 5건 미리보기)<table><tr>${fields.map(([, l]) => `<th>${l}</th>`).join('')}</tr>` +
+        rows.slice(0, 5).map((o) => '<tr>' + fields.map(([k]) => `<td>${esc(o[k])}</td>`).join('') + '</tr>').join('') + '</table>';
+      return rows;
+    };
+    $('#mf').onchange = preview; preview();
+    $('#go').onclick = async () => {
+      const rows = build(); if (!rows.length) return alert('날짜가 인식된 행이 없습니다. 열 매핑을 확인하세요.');
+      if (!confirm(`${rows.length}건을 가져옵니다.`)) return;
+      const t = cfg.elements.target.value; let tot = { added: 0, duplicate: 0, invalid: 0 };
+      try {
+        for (let i = 0; i < rows.length; i += 2000) {
+          const r = await api('import/' + t, { method: 'POST', body: JSON.stringify({ rows: rows.slice(i, i + 2000) }) });
+          for (const k in tot) tot[k] += r[k];
+        }
+        alert(`추가 ${tot.added}건, 중복 건너뜀 ${tot.duplicate}건, 오류 ${tot.invalid}건`);
+      } catch (er) { alert(er.message); }
+    };
+  };
+  cfg.onchange = redraw; redraw();
 }
 
 async function renderSettings(v) {

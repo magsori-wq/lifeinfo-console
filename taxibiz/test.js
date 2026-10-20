@@ -38,6 +38,15 @@ const { server } = require('./server');
   assert.strictEqual((await (await A('/api/sales?month=2026-10')).json()).length, 1);
   assert.strictEqual((await call('/../server.js')).status, 404, '경로 탈출 차단');
 
+  const imp = { rows: [
+    { date: '2026-09-01', category: '정비', amount: 30000 },
+    { date: '2026-09-01', category: '정비', amount: 30000 },
+    { date: 'x', amount: 1 }] };
+  const r1 = await (await A('/api/import/expenses', 'POST', imp)).json();
+  assert.deepStrictEqual(r1, { added: 1, duplicate: 1, invalid: 1 });
+  const r2 = await (await A('/api/import/expenses', 'POST', imp)).json();
+  assert.deepStrictEqual(r2, { added: 0, duplicate: 2, invalid: 1 }, '재실행해도 중복 없음');
+
   console.log('모든 테스트 통과');
   server.close();
 })().catch((e) => { console.error(e); process.exit(1); });
