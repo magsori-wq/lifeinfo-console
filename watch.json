@@ -21450,6 +21450,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "f116-v0-push-1021",
+   "added": "2026-10-21",
+   "what": "F1-16 V0 도장 원격 미반영 — syncorigin 이 4.의 미커밋 소거표에서 멈춤. 4.에게 커밋 요청(12:08). 승인 뒤 발행 전에 원격 v0check.json 에 F1-16 pass 있는지 확인(없으면 F4-30 처럼 run 실패)",
+   "due": "2026-10-21",
+   "cmd": "git fetch -q && git show origin/main:webapp/v0check.json | grep -c F1-16",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
