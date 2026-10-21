@@ -21474,6 +21474,26 @@
    "owner": "user",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "cp1013-cp5-cp6-1021",
+   "added": "2026-10-21",
+   "what": "cp1013 남은 CP-5(shape_check 미구현)·CP-6(naver 가드 확인) — 이과장 지시서로 넘길지 판단",
+   "due": "2026-10-22",
+   "cmd": "python -m studio.batchboard order --id cp1013",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "tower-stale-sweep-1021",
+   "added": "2026-10-21",
+   "what": "관제탑 상시 점검: loopcheck 2시간 이상 정체를 towertick 이 TOWER_STALE 신호로 올리게(10-21 6건 5~6일 방치 재발 방지)",
+   "due": "2026-10-22",
+   "cmd": "grep -n loopcheck studio/towertick.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
