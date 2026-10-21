@@ -755,16 +755,6 @@
      "at": "2026-09-12 20:14"
     },
     {
-     "code": "lifeinfo-daily-publish-1007",
-     "title": "lifeinfo-daily-publish (F)",
-     "state": "done",
-     "note": "2026-10-07 C/D/E 점검: 제안 0건(빈손). 통신 최적요금 고지(10월 시행 보도) 검토 → 고시는 아직 행정예고(정부 초안) 단계라 시행일 미확정, 제안 보류. watch telecom-minimum-fee-gosi-0107 로 고시 확정 재확인. 큐 재고 1/99.\n▸ 00:13 2026-10-07 C/D/E 점검: 제안 0건(빈손). 통신 최적요금 고지(10월 시행 보도) 검토 → 고시는 행정예고(정부 초안) 단계라 시행일 미확정, 제안 보류. watch telecom-minimum-fee-gosi-0107 로 고시 확정 재확인. 발행대기 재고 1/99.",
-     "auto_daily": true,
-     "base_code": "lifeinfo-daily-publish",
-     "date": "2026-10-07",
-     "at": "2026-10-07 00:13"
-    },
-    {
      "code": "8-lifeinfo-issue-product-1008",
      "title": "8-lifeinfo-issue-product (H)",
      "state": "done",
@@ -1903,6 +1893,16 @@
      "base_code": "lifeinfo-nightly-verify-1021",
      "date": "2026-10-21",
      "at": "2026-10-21 22:39"
+    },
+    {
+     "code": "lifeinfo-daily-publish-1022-1022",
+     "title": "lifeinfo-daily-publish-1022 (F)",
+     "state": "done",
+     "note": "[조사장부] 목록 3 · 원문 2 · 후보 2 · 탈락 5 · 검색어 4 (바닥 미달: 원문 5·후보 3 — korea.kr 당일 목록이 대부분 비생활 소재, 올해 한파쉼터 대책 아직 미발표라 1차 출처 없음) · 이어받은 것: G1-12 큐 적재중(재고1) / 새로 본 것 · 5G 지하철 와이파이(과기부 10-21 hwpx 원문: 인천1·2호선 시범, 신청·금액 없음 → 탈락) · 들기름 회수(식약처 10-21 hwpx 원문: 구리 방앗간 1.4L, 소비기한 2027.4.5 단건 → 탈락) · 수능준비물=D1-15 강한중복 · 사회복무요원=D1-16 중복 · 수능 수험표 할인=민간 프로모션이라 공식출처 없음 · 한파쉼터=2026-27 대책 미발표(WebSearch 결과 전부 직전 겨울) → 11-15 대책기간 전후 재확인 · 빈손: 제안 0, 초안 0 (picked 대기 없음)",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-publish-1022",
+     "date": "2026-10-22",
+     "at": "2026-10-22 00:11"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -3693,7 +3693,7 @@
    "order_at": "2026-10-21 22:54"
   }
  },
- "updated": "2026-10-21 23:03:54",
+ "updated": "2026-10-22 00:11:48",
  "current": {
   "batch": "draftg112",
   "code": "G1-12",
@@ -3704,6 +3704,10 @@
   "since_at": "2026-10-21 23:03:11"
  },
  "log": [
+  {
+   "t": "00:11:48",
+   "text": "✅ lifeinfo-daily-publish-1022-1022 완료 — lifeinfo-daily-publish-1022 (F)"
+  },
   {
    "t": "23:03:41",
    "text": "✅ G1-12 완료 — 부산 지하철 65세 무료, 복지교통카드 신청 준비물"
@@ -3859,10 +3863,6 @@
   {
    "t": "14:58:59",
    "text": "▶   — 4/7단계 · ✅ 기술원인 시험 판정(docs/기술원인_판별시험_20261021.md §5): 6/6 실시간 테스트 성공·호스트 robots/DNS 0%·서버 8/2 25% 한 점. 🔴 새 사실(API 직접 확인): 홈이 10-21 14:12 새로 크롤됐는데 결과 REDIRECT_ERROR(22분 뒤 실시간 테스트는 성공) → 09-17 「과거 판정 잔존」 가설 기각, 크롤 경로 실패가 현재 진행형. 눈에 보이는 기술 장애(서버·robots·DNS·렌더)는 없음. 8/2 서버 오류→크롤 예산 하향: 일회성이고 붕괴(07-13~15)·Redirect 경계(07-20~30)보다 뒤라 약함(공식: 5xx 는 한도를 낮추나 안정되면 오름). 경쟁 승인 블로그도 홈 302→?m=1 동일. 증명 못 하는 것: 기술 원인 부재·품질 판정"
-  },
-  {
-   "t": "14:57:06",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-21 14:56 — 지시 #278 시작 · 보강 P0 색인 요청 3건"
   }
  ],
  "currents": {
