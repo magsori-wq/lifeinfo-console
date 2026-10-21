@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-21",
+ "updated": "2026-10-22",
  "items": [
   {
    "id": "redirect-error",
@@ -21877,6 +21877,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "toke-leak-retrace-1022",
+   "added": "2026-10-22",
+   "what": "커널 출입증 누수 재추적(toke-trend-1018 의 '15만 넘으면 재추적' 조건 충족): 10-22 04:01 Toke 277,673개(576MB)·실메모리 98%·커밋 31.4/39.8GB, 부팅 10-14 11:01 후 8일. 10-18 146,948 → 하루 약 3.6만 증가. 재부팅 후 1·6·24시간 Toke 를 재서 증가 속도를 보고, 하루 1만 넘으면 원인(git fetch 루프·curl 8011 폴링 등) 재추적",
+   "due": "2026-10-23",
+   "cmd": "powershell -NoProfile -File C:\\lifeinfo\\tools\\tokcheck.ps1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
   }
  ]
 }
