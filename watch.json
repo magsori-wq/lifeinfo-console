@@ -21440,6 +21440,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "gatesync-push-fail-10211206",
+   "added": "2026-10-21",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): syncorigin 원본 충돌(exit 3) — 사람이 봐야 함: e the remote changes,\nhint: use 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n",
+   "due": "2026-10-21",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
