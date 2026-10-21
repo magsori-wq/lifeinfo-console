@@ -21400,6 +21400,16 @@
    "by": "이부장",
    "done_at": "2026-10-21",
    "result": "towertick WAKE_SESSION 추가(3. cadaily 12시 이후 미보고 시) — 4. 는 adsense1021 지시서로 운영. 실발화는 내일 12시 확인"
+  },
+  {
+   "id": "wake-session-verify-1022",
+   "added": "2026-10-21",
+   "what": "towertick WAKE_SESSION(3. cadaily 미보고 깨움) 실제 발화 확인 — 10-22 12시 이후 cadaily 보고 없으면 알림이 와야 함",
+   "due": "2026-10-22",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('cadaily'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
