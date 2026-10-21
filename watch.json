@@ -21596,6 +21596,16 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "boost-p0-recrawl-1024",
+   "added": "2026-10-21",
+   "what": "보강 실험 1단계 판정: F2-01(처치)·F1-03·F4-01(대조) 13:26 색인 요청 → 72시간 안 재크롤 여부. 처치 재크롤 0 이면 확대 중단 보고",
+   "due": "2026-10-24",
+   "cmd": "python -m studio.boostexp report",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
