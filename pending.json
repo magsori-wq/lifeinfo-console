@@ -2,8 +2,8 @@
  "rev": "20555bf0b",
  "counts": {
   "total": 408,
-  "osmu_done": 407,
-  "osmu_pending": 1,
+  "osmu_done": 408,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 408,
   "index_requested": 160,
@@ -15,15 +15,16 @@
    "code": "F1-16",
    "title": "베트남 입국신고 PAI 온라인 사전 작성, 어느 공항부",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
