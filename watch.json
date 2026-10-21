@@ -21857,6 +21857,16 @@
    "by": "이부장",
    "done_at": "2026-10-21",
    "result": "⑩ 되돌림(원인 오판) — 확인 불필요"
+  },
+  {
+   "id": "drift-fail-1021",
+   "added": "2026-10-21",
+   "what": "콘솔 피드 드리프트 검사 10-19~21 3일 연속 실패 — '라이브와 DB 가 어긋났다' exit1. 어긋난 항목 요약패널 확인 필요",
+   "due": "2026-10-21",
+   "cmd": "gh run view 39521057756 -R magsori-wq/lifeinfo-console --log",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:4ffb0a54"
   }
  ]
 }
