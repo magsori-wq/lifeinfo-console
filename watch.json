@@ -21979,6 +21979,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:cf890880"
+  },
+  {
+   "id": "asidechain-correction-misfire-1022",
+   "added": "2026-10-22",
+   "what": "asidechain: 기존 글 네이버 '정정' done 에도 「인스타·쓰레드 초안」 체인 줄을 낸다(F1-16 #280·B1-07 #285·G4-06 #286 3회). OSMU 이미 게시된 코드면 체인 생략하도록 수정",
+   "due": "2026-10-23",
+   "cmd": "grep -n 'naverfind --gate' studio/asidechain.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
