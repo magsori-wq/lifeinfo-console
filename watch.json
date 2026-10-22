@@ -21953,13 +21953,15 @@
    "due": "2026-10-22",
    "cmd": "Aside 브라우저에서 nid.naver.com 로그인('로그인 상태 유지' 체크)",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-22",
+   "result": "11:06 사장님 로그인 완료"
   },
   {
    "id": "requeue-naver-fix-1022",
    "added": "2026-10-22",
-   "what": "네이버 로그인 후 G4-05(docs/aside_drafts/G4-05_네이버정정.txt)·B1-07(B1-07_네이버정정.txt) asidequeue 재등록",
+   "what": "네이버 로그인 후 G4-05(docs/aside_drafts/G4-05_네이버정정.txt)·B1-07(B1-07_네이버정정.txt)·G4-06(G4-06_네이버정정.txt) asidequeue 재등록",
    "due": "2026-10-22",
    "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/G4-05_네이버정정.txt --code G4-05 --kind naver --prio 1",
    "owner": "claude",
