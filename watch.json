@@ -22132,6 +22132,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-blocked-same-kind-hold",
+   "added": "2026-10-22",
+   "what": "Aside 가지 빈틈 2: blocked(로그인 등) 뒤 같은 종류(naver) 다음 항목을 올리지 말고 보류 — approve_server.py:619 → asidequeue next 가 무조건 올린다(#282 뒤 연쇄 막힘 위험)",
+   "due": "2026-10-22",
+   "cmd": "sed -n 615,627p studio/approve_server.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
