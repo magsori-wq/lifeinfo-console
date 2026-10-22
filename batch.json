@@ -1983,6 +1983,16 @@
      "base_code": "lifeinfo-travel-prep",
      "date": "2026-10-22",
      "at": "2026-10-22 21:15"
+    },
+    {
+     "code": "lifeinfo-nightly-verify-1022",
+     "title": "lifeinfo-nightly-verify (E)",
+     "state": "done",
+     "note": "10-22 야간검증: 오늘 발행 3편 중 G1-13 동백패스는 부산시 공식 페이지 원문(월4.5만 초과·최대4.5만·다음달15일경·만19세·2000번 제외·2인이상 제외·업데이트 2026-03-26)과 일치, 오류 0. G3-24 빛축제·G1-12 지하철65세는 공식 URL 추측 조회가 실패(오류페이지)해 이번 회차 미확인 — 수치 대체 없이 미결, 다음 회차 이월. 라이브 수정 0. 이어받은 것: 재고0 글감정지 / 새로 본 것: 결재 D2-02 대기 1건",
+     "auto_daily": true,
+     "base_code": "lifeinfo-nightly-verify",
+     "date": "2026-10-22",
+     "at": "2026-10-22 22:41"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -4052,7 +4062,7 @@
    "order_at": "2026-10-22 18:41"
   }
  },
- "updated": "2026-10-22 21:49:23",
+ "updated": "2026-10-22 22:41:21",
  "current": {
   "batch": "aside",
   "code": "",
@@ -4063,6 +4073,10 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "22:41:21",
+   "text": "✅ lifeinfo-nightly-verify-1022 완료 — lifeinfo-nightly-verify (E)"
+  },
   {
    "t": "21:49:23",
    "text": "▶   — 1/7단계 · [Aside][done] [index] #311 색인 요청 재시도 1/1건: 4 G1-13 요청됨(등록 안 됨·발견됨-현재 색인 안 됨·크롤링 없음, 직전엔 「알려지지 않은 URL」) · 색인 요청 목록 전부 완료(오늘 2~14번 포함) · 총 탭 10개"
@@ -4218,10 +4232,6 @@
   {
    "t": "15:56:20",
    "text": "▶   — 1/7단계 · [Aside][done] #306 G1-13 인스타 게시 — 카드 3장(표지→가상 사례→놓치기 쉬운 함정 순서·점 3개 확인)·캡션 854자 원문 일치(블로그·네이버 링크·Pexels 출처 포함) 공유 후 프로필 새로고침 맨 위 확인(게시물 413→414) · 총 탭 7개 · https://www.instagram.com/magsori8975/p/DeyY2fHEauz/"
-  },
-  {
-   "t": "15:54:03",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-22 15:52 — 지시 #306 시작 · G1-13 인스타"
   }
  ],
  "currents": {
