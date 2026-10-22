@@ -4071,17 +4071,21 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-23 04:21:20",
+ "updated": "2026-10-23 04:22:31",
  "current": {
   "batch": "pub1023g114",
   "code": "",
   "title": "",
   "step": 7,
-  "what": "✅ G1-15 발행 완료 run 39837738539(publish job 성공, 라이브 https://lifeinfo8975.blogspot.com/2026/10/2-580.html 200·og·가상 사례 5·면책·바이라인 확인) — run 전체 상태는 GitHub 표시상 in_progress 로 남아 있어 pubgo 래퍼가 대기 중(백그라운드). 다음: 그 run 이 닫히면 D1-17 pubgo → 4채널 후속은 G1-14→G1-15→D1-17 순",
+  "what": "⏸ 대기 04:23 — D1-17 pubgo 가 「발행 run 39837738539 이 이미 돌고 있다」로 중단(pubgo 자체 가드). 그 run 은 publish job 성공·라이브 G1-15 200 인데 GitHub 상태가 12분째 in_progress(표시 지연, gh run cancel 도 이미 완료라 답함). 가드 우회(--force류)는 안 함. 🙋 이부장 요청: 이 run 이 닫히거나 pubgo 가드가 풀리는 방법 결정(예: 가드 코드 점검·run 상태 갱신) — 풀리면 즉시 D1-17 pubgo. 그동안 G1-14·G1-15 네이버 원고 등 4채널 후속 준비를 진행",
   "since": "04:21",
   "since_at": "2026-10-23 04:21:20"
  },
  "log": [
+  {
+   "t": "04:22:31",
+   "text": "▶   — 7/7단계 · ⏸ 대기 04:23 — D1-17 pubgo 가 「발행 run 39837738539 이 이미 돌고 있다」로 중단(pubgo 자체 가드). 그 run 은 publish job 성공·라이브 G1-15 200 인데 GitHub 상태가 12분째 in_progress(표시 지연, gh run cancel 도 이미 완료라 답함). 가드 우회(--force류)는 안 함. 🙋 이부장 요청: 이 run 이 닫히거나 pubgo 가드가 풀리는 방법 결정(예: 가드 코드 점검·run 상태 갱신) — 풀리면 즉시 D1-17 pubgo. 그동안 G1-14·G1-15 네이버 원고 등 4채널 후속 준비를 진행"
+  },
   {
    "t": "04:21:20",
    "text": "▶   — 7/7단계 · ✅ G1-15 발행 완료 run 39837738539(publish job 성공, 라이브 https://lifeinfo8975.blogspot.com/2026/10/2-580.html 200·og·가상 사례 5·면책·바이라인 확인) — run 전체 상태는 GitHub 표시상 in_progress 로 남아 있어 pubgo 래퍼가 대기 중(백그라운드). 다음: 그 run 이 닫히면 D1-17 pubgo → 4채널 후속은 G1-14→G1-15→D1-17 순"
@@ -4237,10 +4241,6 @@
   {
    "t": "21:15:05",
    "text": "✅ lifeinfo-travel-prep-1022 완료 — lifeinfo-travel-prep (D)"
-  },
-  {
-   "t": "20:10:17",
-   "text": "✅ daily-email-briefing-1022 완료 — daily-email-briefing (A)"
   }
  ],
  "currents": {
@@ -5149,7 +5149,7 @@
    "code": "",
    "title": "",
    "step": 7,
-   "what": "✅ G1-15 발행 완료 run 39837738539(publish job 성공, 라이브 https://lifeinfo8975.blogspot.com/2026/10/2-580.html 200·og·가상 사례 5·면책·바이라인 확인) — run 전체 상태는 GitHub 표시상 in_progress 로 남아 있어 pubgo 래퍼가 대기 중(백그라운드). 다음: 그 run 이 닫히면 D1-17 pubgo → 4채널 후속은 G1-14→G1-15→D1-17 순",
+   "what": "⏸ 대기 04:23 — D1-17 pubgo 가 「발행 run 39837738539 이 이미 돌고 있다」로 중단(pubgo 자체 가드). 그 run 은 publish job 성공·라이브 G1-15 200 인데 GitHub 상태가 12분째 in_progress(표시 지연, gh run cancel 도 이미 완료라 답함). 가드 우회(--force류)는 안 함. 🙋 이부장 요청: 이 run 이 닫히거나 pubgo 가드가 풀리는 방법 결정(예: 가드 코드 점검·run 상태 갱신) — 풀리면 즉시 D1-17 pubgo. 그동안 G1-14·G1-15 네이버 원고 등 4채널 후속 준비를 진행",
    "since": "04:21",
    "since_at": "2026-10-23 04:21:20"
   }
@@ -16764,6 +16764,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "✅ G1-15 발행 완료 run 39837738539(publish job 성공, 라이브 https://lifeinfo8975.blogspot.com/2026/10/2-580.html 200·og·가상 사례 5·면책·바이라인 확인) — run 전체 상태는 GitHub 표시상 in_progress 로 남아 있어 pubgo 래퍼가 대기 중(백그라운드). 다음: 그 run 이 닫히면 D1-17 pubgo → 4채널 후속은 G1-14→G1-15→D1-17 순"
+  },
+  {
+   "ts": "2026-10-23 04:22:31",
+   "bid": "pub1023g114",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⏸ 대기 04:23 — D1-17 pubgo 가 「발행 run 39837738539 이 이미 돌고 있다」로 중단(pubgo 자체 가드). 그 run 은 publish job 성공·라이브 G1-15 200 인데 GitHub 상태가 12분째 in_progress(표시 지연, gh run cancel 도 이미 완료라 답함). 가드 우회(--force류)는 안 함. 🙋 이부장 요청: 이 run 이 닫히거나 pubgo 가드가 풀리는 방법 결정(예: 가드 코드 점검·run 상태 갱신) — 풀리면 즉시 D1-17 pubgo. 그동안 G1-14·G1-15 네이버 원고 등 4채널 후속 준비를 진행"
   }
  ]
 }
