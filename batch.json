@@ -755,86 +755,6 @@
      "at": "2026-09-12 20:14"
     },
     {
-     "code": "8-lifeinfo-issue-product-1008",
-     "title": "8-lifeinfo-issue-product (H)",
-     "state": "done",
-     "note": "오징어 젓갈 1kg(리뷰5295·평점4.5·10,900원) 결재함 afflink-20261008-1 등록 완료",
-     "auto_daily": true,
-     "base_code": "8-lifeinfo-issue-product",
-     "date": "2026-10-08",
-     "at": "2026-10-08 07:15"
-    },
-    {
-     "code": "daily-email-briefing-1008",
-     "title": "daily-email-briefing (A)",
-     "state": "done",
-     "note": "[10-08 08시 메일브리핑] 메일발 사장님 할 일 0건 · 이부장 판단 1건(anthropic-report-channel-1008).\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION(10-08 08:0x status 실측). 반려 통지 10-02 21:46Z(=KST 10-03 06:46)는 10-04·10-05 브리핑 기보고 · 신규 통지 0. 재검토 요청 가능일 10-09 = D-1(사실만 적는다).\n■ 새 메일 4통(10-06 20시 브리핑 이후):\n ①🟡 Anthropic Support 회신 KST 10-07 06:23 담당 Nid — 사고신고 1·2차 티켓 통합, Support 쪽 종료. 원문 'Since we aren't opening an investigation on our side, there's no need to send the detailed evidence files to Support. Including them in a /bug report or GitHub issue is where they'll be most useful.' 답변 4가지: (1)로드맵·일정 확약 불가, 다만 두 보고 전문이 제품 피드백으로 기록됨(출력잘림·세션주소·빈결과 사유미표기·세션간 미검증수치·요약출력이 판단근거가 되는 것) (2)공식문서 code.claude.com/docs 밖의 지원되는 우회 설정 없음 (3)앞으로 창구 = Claude Code 안 /bug(맥락 자동첨부) 또는 github.com/anthropics/claude-code/issues(중복 신고 확인 가능), 개별 응답품질은 👎 (4)2차 질문 4~6도 설계요청으로 기록, 같은 답. ⚠️ CLAUDE.md 는 창구를 /feedback(SendFeedback 초안→사장님 전송)으로 적어 뒀고 Nid 는 /bug·GitHub issues 를 지목 — 같은 것인지 확인 후 CLAUDE.md 수정 판단 필요(이부장 몫, watch 등록). 제출은 사장님만 가능.\n ②🟢 Google AI Studio KST 10-07 08:07 — '비활성 Gemini API 프로젝트'에 월 지출 상한 자동 적용. 본문 'No action needed unless you want to increase or remove the spend cap.' 🔴 프로젝트명이 메일에 없어 우리 lifeinfo-adsense(Blogger·AdSense API)와 같은 것인지 이 메일로는 알 수 없다 — 다만 오늘 adsense.py status 정상 응답 + 10-07 06:10 상태점검 run success 로 API 호출은 지금 정상이다. 조치 불요.\n ③🟢 google-noreply KST 10-07 05:23 (→magsori8975) 구글 검색 서비스 개인정보 보호 설정 변경 예고. 조치 불요.\n ④🟢 googlenews KST 10-08 07:31 (→magsori8975) 뉴스 브리핑. 조치 불요.\n · Google→Claude 로그인 공유 2통(KST 10-06 13:45·14:14)은 10-06 20시 기보고.\n■ 점검 기록: 리더 3계정 전부 ✅(magsori 8건·m8975 0건·aroma 0건) · 커넥터 교차조회(includeTrash·in:anywhere) 병행. GSC sc-noreply 7일 0건. GitHub 7일 = 10-01 13:1x sudo 코드 3통(만료)뿐, 10-06 03:28Z 발행실패 1건(run 37409147220)은 10-06 20시 기보고·정정(통지는 왔고 휴지통에 있었다) — 지금 조회엔 안 보이나 휴지통이 비워졌는지는 확인 못 함. 실측 대체: gh run list 로 양 저장소 직접 확인 → source 10-06 04:57 이후 전 run success, console 콘솔정합성검사 10-07 22:14 success = 10-05 20시 보고 '콘솔검사 RED' 해소 확인. 8975 = 리더가 직접 읽어 감시 발신자 0건이고, 전달 경로는 살아 있다(toRecipients=8975 메일 2통이 magsori INBOX 에 도착 — 위 ③④). GSC 통지가 전달되는지는 7일 sc-noreply 0건이라 대조 표본이 없어 여전히 미확인 → watch gmail-8975-relay-0924 닫지 말 것. aroma 0건=평소 상태. ⚠️ 10-07 두 회차(08시·20시) 실행 기록이 없어 이번 회차가 10-06 20시 이후를 소급 커버했다. ⚠️ 승인 감시 1247분째 꺼짐(세션훅) — 관제탑 몫이라 루틴1은 보고만 한다.\n▸ 20:21 20:08 메일 브리핑 — 🔴사장님 1건: deploy.bat(G1-11 썸네일 322 라이브 404·글 상단 이미지 깨짐, watch g111-deploy-thumb-1008). 애드센스=반려(API NEEDS_ATTENTION·10-02 메일·10-03 화면 일치), 재검토 요청은 10-09 예정(adsense-rereview-submit-1009). 새 메일 29건=GitHub 콘솔검사 실패 25(원인 2갈래: 썸네일누락 24건 16:14~19:43 + posts_index 신선도 1건 16:14 발행시차 자연해소) + 기보고 4(Anthropic Nid 회신=anthropic-report-channel-1008 · 애드센스 10-02 반려=adsense-council-1004 · GCP 결제 7,334원 10-01 · Claude 뉴스레터). 점검: 리더 3계정 전부 ✅(magsori 29·m8975 0·aroma 0) · 썸네일 318~321·323 라이브 200, 322 만 404 · 콘솔검사 ⚠️2건(index_status 339vs342·고아썸네일 117)은 실패 아님",
-     "auto_daily": true,
-     "base_code": "daily-email-briefing",
-     "date": "2026-10-08",
-     "at": "2026-10-08 20:21"
-    },
-    {
-     "code": "lifeinfo-publish-1008",
-     "title": "lifeinfo-publish (C)",
-     "state": "done",
-     "note": "09:00 발행구 실행 — 발행대기 재고 0편(큐 비어 있음), 신규 발행 대상 없음. 대신 3일째 막혀 있던 발행 지시서 4건(pub1005g309·a118·b507·pub1007g411 = G3-09·A1-18·B5-07·G4-11)이 실은 전부 라이브 발행 완료 상태(HTTP200·DB url 확인)인데 지시서만 안 닫혀 orderwatch 에 계속 떴음을 발견 — 전부 batchboard mark done 처리 + queue.json 잔여 1건(G4-11) pubqueue remove 로 정리. 커밋 a8969edb 푸시 완료. 남은 주차 지시서(draft0926c502·c217·thread0927h116·draft0928b216)는 초안/쓰레드 문제라 발행구 소관 아님 — 이부장 판단 필요.",
-     "auto_daily": true,
-     "base_code": "lifeinfo-publish",
-     "date": "2026-10-08",
-     "at": "2026-10-08 09:09"
-    },
-    {
-     "code": "lifeinfo-daily-topics-1008",
-     "title": "lifeinfo-daily-topics (B)",
-     "state": "done",
-     "note": "A/B 글감 제안 1건(추천) 등록·선별완료: A2-24 2026하반기 사회보장급여 정기확인조사(10/1~12/31, 기초연금·생계급여 등 13개사업 재검증) — dupcheck 0.00 · docflow가 pick+V0사전보강(mohw.go.kr 원본URL·13개사업목록·69종정보 확보, docs/source_A2-24_..._20261008.md) · verify 🟡(KW미측정, 비차단). 후보(alt)는 B 세금금융 레인에서 6개 주제 탐색했으나(근로장려금 기한후신청·부가세 예정신고·예금자보호·실업급여 반복수급 감액 등) 전부 기발행 중복 또는 시행일 미확정이라 빈손(억지로 안 채움). 4번 루틴(여행맛거리) 영역 아님. 2번 루틴은 초안 작성 없음 — 6번이 이어서 쓸 것.",
-     "auto_daily": true,
-     "base_code": "lifeinfo-daily-topics",
-     "date": "2026-10-08",
-     "at": "2026-10-08 09:33"
-    },
-    {
-     "code": "lifeinfo-index-check-1008",
-     "title": "lifeinfo-index-check (G)",
-     "state": "done",
-     "note": "주간 색인 실측 10-08(목) — inspect 339편 전수 완주(checked_at 2026-10-08·partial=False·오류0·미조회0). ①색인 0/339 ②28일클릭 0(노출 2·최근7일 0) ③네이버 구글색인 48→49 재측정(+A2-16, 9월 발행 글의 네이버판 세 편째 진입 — 소거표#6 재검토 재료, 이부장 판단: watch erase6-naver-sept-1008). state: Redirect error 159(10-01 110) · Crawled-미색인 125 · Discovered 44 · unknown 11. 이월 315편 중 이미 크롤된 235편은 7일간 재크롤 0편, 늘어난 Redirect error 49편은 전부 10-01~04 요청분. 🔴핵심: 기준선이 결과보다 앞선 첫 비교 — 10-01~04 요청 50편 중 49편(98%) 크롤, 발행나이 맞춘 미요청 신규 11편은 0/11, 7~9월 구요청 34편도 0/34. 즉 '최근 요청'은 크롤을 부르지만 '요청 일반'이 부르는 것은 아니다. 그런데 크롤 온 49편 전부 Redirect error·색인 0 → 막힌 곳은 전달이 아니라 판정이다. 수율 문구 확정(협의문서 §3-B 숙제): A 첫크롤도달 98%(시기별로 다름·7월 0/34) / B 재크롤 2%(08-18 기록값·모집단 미확인) / C 색인전환 0%. 결론 '요청을 레버로 반복하지 않는다'는 유지, 이유만 바뀜. 실험R 미실행 확인(10-04 추가요청은 D3-07 1편뿐). 라이브 302(?m=1) 측정했으나 시점 불일치로 판별 못 함(대조 글은 7월 크롤) — 리디렉션 추적은 지시서 ⛔ 라 멈춤. adsense status GETTING_READY(10-01)→NEEDS_ATTENTION(10-08)·PENDING, 화면은 못 봄(사장님 몫), 재검토 10-09부터이고 누르라/말라 권하지 않음. 하네스 validate_db PASS14·WARN4·FAIL0 / selfcheck 돌림(🔴 10)재확인131건·14)정체34·17)루프멈춤5·18b/d/f — 전부 내 담당 밖이라 이부장 몫). 커밋 a32aebd6 + 정정 41c7c123(어드바이저 지적으로 '미요청 통제군' 라벨·§4-1 추론 정정). 상세 docs/색인요청효과_통제군_20261008.md + 전담자료 【추가 10-08】. ⚠️ whoami 주소 등록 거부됨 — 이 예약 세션에 ListAgents 도구가 없어 표시명을 얻을 수 없다(--name 필수). 세션ID 8196380a-f5e5-43d8-8dab-21a937076d5f. ⛔ 다음 세션 주의: 비교군B 11편(A5-13 B3-06 B5-05 D5-04 D5-06 E4-07 G4-10 H1-20 H1-21 H1-22 H1-23)에 색인 요청하면 비교가 사라진다 — CP 미결에 '색인 요청' 할 일로 올라 있다(watch idx-control-group-protect-1008)",
-     "auto_daily": true,
-     "base_code": "lifeinfo-index-check",
-     "date": "2026-10-08",
-     "at": "2026-10-08 10:33"
-    },
-    {
-     "code": "9-lifeinfo-issue-product-pm-1008",
-     "title": "9-lifeinfo-issue-product-pm (I)",
-     "state": "done",
-     "note": "15시 회차 빈손 — 오늘 승인대기 2건(가습기10/6·오징어젓갈10/8) 이미 재고, 겨울 난방 시즌낱말 10종 탐색해도 토스풀 공백",
-     "auto_daily": true,
-     "base_code": "9-lifeinfo-issue-product-pm",
-     "date": "2026-10-08",
-     "at": "2026-10-08 15:15"
-    },
-    {
-     "code": "lifeinfo-travel-prep-1008",
-     "title": "lifeinfo-travel-prep (D)",
-     "state": "done",
-     "note": "21:12 실행 — G3-10 함양산삼축제(10/7~11, 경남) 제안·선별·초안·썸네일(324_hamyangsansam.png 실사진)·pubqueue 적재 완료. 산삼/산양삼 구별 함정+경남 축제 동선비교 V0 요소. dupcheck 오탐(G3-09와 숫자겹침) 확인 후 --force, bodydup 0.107로 신규 확인. affiliate none 기록. 방송연예 후보는 전부 기발행/날짜미정으로 빈손(보고서에 사유). V0검사는 에이전트(V0검사관)에 위임, 결과 대기 중. 커밋 47d22b34 푸시 완료.\n▸ 21:46 21:44 V0 통과 — G3-10 함양산삼축제 V0검사관 🟢 pass(함정+판단형비교 성립, 경남축제 날짜 라이브 대조 확인, dupcheck 오탐 재검증, 썸네일 실사진 고유색 13730 확인). 결재함에 '원고를 보고 승인' 카드 자동 등록됨(approvalcount 확인) — 발행 승인은 사장님 몫. 루틴4 작업 완료.",
-     "auto_daily": true,
-     "base_code": "lifeinfo-travel-prep",
-     "date": "2026-10-08",
-     "at": "2026-10-08 21:46"
-    },
-    {
-     "code": "lifeinfo-nightly-verify-1008",
-     "title": "lifeinfo-nightly-verify (E)",
-     "state": "done",
-     "note": "10/8 야간검증: 오늘 발행 3편(A4-08·G1-11·A2-24) 핵심 법령조문 law.go.kr DRF 교차검증 — 전부 원문 일치, 사실오류 없음. selfcheck 🔴7건 발견(G1-11 교차링크 누락이 금일 발행분 — crosslink 필요 / idx0zero 12h 정체 / solo0927 막힘 미보고 / 화면회귀 3건 등). 카톡 보고 발송완료.\n▸ 22:48 10/8 야간검증: 오늘 발행 3편(A4-08·G1-11·A2-24) law.go.kr DRF 교차검증 완료, 사실오류 없음. selfcheck 7건 중 G1-11 교차링크 누락이 금일건.",
-     "auto_daily": true,
-     "base_code": "lifeinfo-nightly-verify",
-     "date": "2026-10-08",
-     "at": "2026-10-08 22:48"
-    },
-    {
      "code": "lifeinfo-daily-publish-1009",
      "title": "lifeinfo-daily-publish (F)",
      "state": "done",
@@ -1993,6 +1913,16 @@
      "base_code": "lifeinfo-nightly-verify",
      "date": "2026-10-22",
      "at": "2026-10-22 22:41"
+    },
+    {
+     "code": "lifeinfo-daily-publish-1023",
+     "title": "lifeinfo-daily-publish (F)",
+     "state": "done",
+     "note": "[조사장부] 목록 4 · 원문 1 · 후보 1 · 탈락 1 · 검색어 6 (바닥 미달: 원문·후보, 보도자료 본문이 hwpx/pdf 첨부뿐·기관 공지 미조회). 이어받은 것: 3. 제안 G1-14·G1-15(타 레인). 새로 본 것: 행안부 2026.10.22 지방세 환급금 민간 앱 연계 12월 개통(정책브리핑 newsId=148974106). · D1-17 위택스 환급금 추천 제안(naverkw 위택스 환급금 ✅, dupcheck 🟡0.50 겹침 낱말 '번에'뿐) · 탈락: 비만치료 자가주사제 — 원문 미개봉(첨부), naverkw 없음. docflow 선별 진행 중(상태 '추천함'), 초안·썸네일·큐는 이번 회차 안 함(picked 없음).",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-publish",
+     "date": "2026-10-23",
+     "at": "2026-10-23 00:13"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -4091,17 +4021,25 @@
    "owner": "이과장(작업 세션)"
   }
  },
- "updated": "2026-10-23 00:11:31",
+ "updated": "2026-10-23 00:13:09",
  "current": {
-  "batch": "aside",
+  "batch": "draftg114",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[Aside][done] [index] #311 색인 요청 재시도 1/1건: 4 G1-13 요청됨(등록 안 됨·발견됨-현재 색인 안 됨·크롤링 없음, 직전엔 「알려지지 않은 URL」) · 색인 요청 목록 전부 완료(오늘 2~14번 포함) · 총 탭 10개",
-  "since": "11:31",
-  "since_at": "2026-10-08 11:31:43"
+  "what": "G1-14 초안 시작 — 지시서 확인·부산시 공식 출처 확인부터",
+  "since": "00:11",
+  "since_at": "2026-10-23 00:11:56"
  },
  "log": [
+  {
+   "t": "00:13:09",
+   "text": "✅ lifeinfo-daily-publish-1023 완료 — lifeinfo-daily-publish (F)"
+  },
+  {
+   "t": "00:11:56",
+   "text": "▶   — 1/7단계 · G1-14 초안 시작 — 지시서 확인·부산시 공식 출처 확인부터"
+  },
   {
    "t": "00:11:31",
    "text": "🏷️ draftg115 담당=이과장(작업 세션)"
@@ -4253,14 +4191,6 @@
   {
    "t": "17:15:22",
    "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-22 17:14 — 지시 #307 시작 · G1-13 쓰레드"
-  },
-  {
-   "t": "17:14:58",
-   "text": "📄 aside 작업 지시 등록(1942자, 2026-10-22 17:14)"
-  },
-  {
-   "t": "17:14:47",
-   "text": "▶   — 7/7단계 · ✅ G1-13 쓰레드 Aside 등록 17:15: asidequeue 1022171440539_G1-13_threads (threadsdraft 게이트 재실행 통과: 333/500자·블로그+네이버 ✅·제휴 없음 기록 확인). 다음: Aside done 보고 오면 threads-link·crosslink 3채널 재실행→mark"
   }
  ],
  "currents": {
@@ -5136,6 +5066,15 @@
    "what": "⏸ 대기 — D2-02 개선 패치 dry-run 통과(7256→9914자, 제목 교체). 결재함 approve-d202-1022 승인 대기. ⚠️ 발견: 이전 판 사실 오류가 지시서의 표 충돌 1건이 아니라 4건(갱신기간 2026-01-01 시행 개정·적성검사 대상·3만 원 과태료 범위·미갱신 1년 후 취소 규정 부재) — 도로교통법 제87·93·160조·시행령 별표 DRF 직접 확인. 못 얻은 것: 수수료·신체검사비·온라인 이용시간(박스 명시). 승인되면 --apply → 라이브 재확인 → 네이버(224321522050) 정정 초안 Aside 대기열",
    "since": "18:46",
    "since_at": "2026-10-22 18:46:19"
+  },
+  "draftg114": {
+   "batch": "draftg114",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "G1-14 초안 시작 — 지시서 확인·부산시 공식 출처 확인부터",
+   "since": "00:11",
+   "since_at": "2026-10-23 00:11:56"
   }
  },
  "report_log": [
@@ -16668,6 +16607,14 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][done] [index] #311 색인 요청 재시도 1/1건: 4 G1-13 요청됨(등록 안 됨·발견됨-현재 색인 안 됨·크롤링 없음, 직전엔 「알려지지 않은 URL」) · 색인 요청 목록 전부 완료(오늘 2~14번 포함) · 총 탭 10개"
+  },
+  {
+   "ts": "2026-10-23 00:11:56",
+   "bid": "draftg114",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "G1-14 초안 시작 — 지시서 확인·부산시 공식 출처 확인부터"
   }
  ]
 }
