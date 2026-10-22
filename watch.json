@@ -22001,6 +22001,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "shrink-1post-test-1024",
+   "added": "2026-10-22",
+   "what": "보이는 글 줄이기 1편 시험(초안 되돌림+맞춤 리디렉션 301) 결과 확인·사장님 즉시 보고",
+   "due": "2026-10-24",
+   "cmd": "curl -s -o /dev/null -w '%{http_code} %{redirect_url}' <시험 글 주소>",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
