@@ -1,14 +1,11 @@
 {
- "computed_at": "2026-10-23 04:42:18",
- "source_head": "5ee17e5b710f",
+ "computed_at": "2026-10-23 04:45:30",
+ "source_head": "c099b860178d",
  "ids": [
   "D1-17",
   "G1-14",
   "G1-15",
-  "claude-limit-reset-1022",
-  "deploy-thumb-394",
-  "deploy-thumb-395",
-  "deploy-thumb-396"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -74,7 +71,7 @@
        "label": "네이버 원고",
        "path": "osmu/네이버용_부산청년근속지원.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "첨부 이미지",
@@ -83,7 +80,7 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "threads": {
      "url": null,
@@ -194,30 +191,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-394",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(394_busan_postpartum.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-395",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(395_busan_youth_work.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-396",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(396_wetax_refund_app.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
