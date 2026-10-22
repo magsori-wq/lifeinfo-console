@@ -22080,6 +22080,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "aside-stall-alert-1022",
+   "added": "2026-10-22",
+   "what": "Aside 지시가 시작 보고도 없이 멈추면(asidequeue '보고 없이 멈춤') towertick 이 ASIDE_STALL 알림을 내도록 — 10-22 #293 G1-12 쓰레드가 36분 멈춘 걸 사장님이 먼저 발견",
+   "due": "2026-10-23",
+   "cmd": "grep -n '보고 없이 멈춤' studio/asidequeue.py studio/towertick.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
