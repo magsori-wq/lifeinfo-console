@@ -1,9 +1,10 @@
 {
- "computed_at": "2026-10-23 00:17:28",
- "source_head": "4232cd888d21",
+ "computed_at": "2026-10-23 00:20:59",
+ "source_head": "84d9e186602f",
  "ids": [
   "G1-14",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-394"
  ],
  "posts": [],
  "publish": [
@@ -11,7 +12,7 @@
    "code": "G1-14",
    "title": "부산형 산후조리경비 최대 100만원, 신청은 1년·사용은 6개월",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 부산형산후조리경비_글_HTML.txt",
@@ -42,6 +43,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-394",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(394_busan_postpartum.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-23",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],
