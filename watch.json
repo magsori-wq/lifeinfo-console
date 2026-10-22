@@ -21969,6 +21969,16 @@
    "by": "이부장",
    "done_at": "2026-10-22",
    "result": "11:06 3건 재등록(G4-05·B1-07·G4-06)"
+  },
+  {
+   "id": "explorer-stale-after-reboot-1022",
+   "added": "2026-10-22",
+   "what": "탐색기 폴더 갱신 멈춤(docs 탭이 10-19 14:28 목록에서 정지, 실제 최신 10-22 11:03) — 재부팅 뒤 같은 증상 재발하는지 확인",
+   "due": "2026-10-23",
+   "cmd": "powershell -NoProfile -File C:/lifeinfo/tools/tokcheck.ps1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
   }
  ]
 }
