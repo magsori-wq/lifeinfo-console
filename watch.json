@@ -22363,6 +22363,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:d5269c25"
+  },
+  {
+   "id": "nightly-verify-src-url-1023",
+   "added": "2026-10-22",
+   "what": "루틴5 야간검증이 공식 URL 을 추측해 실패(G3-24·G1-12 미확인) — SKILL.md 에 「초안의 출처 박스 href 를 그대로 연다」 한 줄 추가 + 10-23 회차에 두 편 재확인",
+   "due": "2026-10-23",
+   "cmd": "grep -n 출처 ~/.claude/scheduled-tasks/lifeinfo-nightly-verify/SKILL.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
