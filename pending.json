@@ -1,16 +1,33 @@
 {
- "rev": "ff93a2437",
+ "rev": "2daa08ea4",
  "counts": {
-  "total": 408,
+  "total": 409,
   "osmu_done": 408,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 408,
-  "index_requested": 160,
-  "index_todo": 86,
-  "index_benign": 162
+  "index_pending": 409,
+  "index_requested": 159,
+  "index_todo": 81,
+  "index_benign": 169
  },
  "actionable": [
+  {
+   "code": "G1-12",
+   "title": "부산 지하철 65세 무료, 복지교통카드 신청 준비물",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -158,22 +175,6 @@
   {
    "code": "A2-27",
    "title": "소상공인 경영안정 바우처 25만원 — 연매출 1억 40",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A2-28",
-   "title": "부산 소상공인 에너지바우처 11/6 마감, 전국 25만",
    "need": [
     "색인요청"
    ],
