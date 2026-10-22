@@ -22208,6 +22208,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:cf890880"
+  },
+  {
+   "id": "aside-resume-race-1022",
+   "added": "2026-10-22",
+   "what": "Aside 가 앞 지시 done 직후 깨움(resume)을 받으면 시작하지 않는다 — #293·#302 두 번(보고 없이 멈춤, 채팅 idle). 원인: done 보고 직후 채팅이 아직 running→idle 전환 중에 resume. aside_order.sh 에서 idle 확인 후 resume·실패 시 재시도",
+   "due": "2026-10-23",
+   "cmd": "grep -n 'session resume\\|session queue' tools/aside_order.sh",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
