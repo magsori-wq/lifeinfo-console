@@ -175,7 +175,7 @@ const _mq=new URLSearchParams(location.search).get("motion");if(_mq==="1")MOTION
 const REDUCE=!MOTION_ON;
 document.documentElement.classList.toggle("reduce",REDUCE);document.documentElement.classList.toggle("osreduce",OSREDUCE);
 let S=null,loadedAt=Date.now(),curLayout="",selTerm=null,dots={},lastAlert=null,fetchOk=true;
-/* 외부 링크 href — 콘솔 정합성 검사가 href="${…}" 를 로컬 파일로 오탐(10-22 40회 실패)해 따옴표를 함수가 붙인다 */
+/* 외부 링크 href — 콘솔 정합성 검사가 따옴표 속 템플릿 링크를 로컬 파일로 오탐(10-22 40회 실패)해 따옴표를 함수가 붙인다 */
 function hq(u){return '"'+esc(u)+'"'}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function fmtMin(m){if(m==null)return "";return m>=60?Math.floor(m/60)+"시간 "+m%60+"분":m+"분"}
