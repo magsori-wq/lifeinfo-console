@@ -1,0 +1,57 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>엔진 설계도 흐름도</title><style>body{margin:0;padding:14px;font-family:system-ui,sans-serif;background:#fff;color:#111}section{overflow-x:auto;border:1px solid #ddd;border-radius:8px;padding:10px;margin:0 0 14px}</style></head><body><h1 style="font-size:1.2rem">엔진 설계도 흐름도 <small style="color:#777">docs/엔진설계도.md 에서 자동 생성</small></h1><p><a href="engine.html">← 상황판</a></p><section><pre class="mermaid">flowchart TB
+  B([사장님]) -->|결재·직접 지시| CP[(CP 운영콘솔<br/>결재함·미결·보고서·지시서·Aside 대기열)]
+  CP -->|결재 대기·재알림·카톡| B
+  CP -->|신호: 결재·🙋/⏸/👤·Aside done/blocked/멈춤·발행 완료| T{{towertick 감시}}
+  T -->|깨움| L[이부장<br/>판단·지시·검증·보고]
+  L -->|지시서 batchboard order| CP
+  L -->|채팅 보고·카톡| B
+  L -.->|엔진 변경·큰 결정 검증| AD[어드바이저 · 페이블]
+  CP -->|지시서| G[이과장<br/>원고·초안·발행 pubgo·기록]
+  CP -->|지시서| S3[3.세션<br/>유입 분석·글감]
+  CP -->|지시서| S4[4.세션<br/>애드센스 프로젝트]
+  CP -->|대기열| AS[Aside<br/>외부 게시·화면 읽기·색인 요청]
+  G -->|보고·🙋/⏸ · Aside 초안 직접 등록| CP
+  S3 -->|글감 제안·보고| CP
+  S4 -->|조사 문서·보고| CP
+  AS -->|done/blocked 보고| CP
+  R[루틴 1~9] -->|정기 보고| CP
+  L -->|결정 기록| E[[엔진 설계도<br/>docs/엔진설계도.md]]
+  E -->|규칙·흐름| L
+</pre></section><section><pre class="mermaid">flowchart TD
+  A[이과장 초안 → 발행대기 큐] --> B{towertick: 초안 감지}
+  B -->|DRAFT_READY| C[이부장: V0 검사 에이전트]
+  C --> D{V0 통과?}
+  D -->|NO| C2[이과장 수정 지시] --> C
+  D -->|YES| E{썸네일 github.io 200?}
+  E -->|NO| E2[DEPLOY_NEEDED → 결재함에 배포 요청 자동]:::fix
+  E -->|YES| F[결재함 발행 카드]
+  E2 --> F
+  F --> G{사장님 결재?}
+  G -->|대기| G1{30분 지남?}:::fix
+  G1 -->|NO| G
+  G1 -->|YES| G2{사장님 깨어 계신 시간? 12~18시}
+  G2 -->|YES| G3[BOSS_REMIND 카톡 재알림 + 결재함 맨 위]:::fix --> G
+  G2 -->|NO 외근·취침| G4[다음 접속 시각 12시·18시 전에 묶음 알림 예약 · 그동안 다음 글 준비는 계속]:::fix --> G
+  G -->|YES = 4채널 게시 지시| H[이과장 깨움 leewake + 이부장 지시서]
+  H --> I{썸네일 200?}
+  I -->|NO| I2[⏸ 대기 보고]:::was --> W1{towertick: 🙋/⏸ 감지}
+  W1 -->|ASIDE_ALERT| X[이부장 판단·조치]
+  I -->|YES| J[publish.yml 발행]
+  J --> K{라이브 200·대표이미지?}
+  K -->|NO| X
+  K -->|YES| L[이과장: 검색설명·네이버·인스타·쓰레드 초안]
+  L --> M{asidequeue 게이트: postId·중복 게시·중복 지시}
+  M -->|거부| L
+  M -->|통과| N[대기열 → towertick 1~3분마다 Aside 에 올림]:::fix
+  N --> O{Aside 보고?}
+  O -->|보고 없이 멈춤| P[ASIDE_STALL → 이부장 재등록]:::was
+  P --> N
+  O -->|blocked 로그인 등| X
+  O -->|done| Q[체인 확인 → 다음 채널]
+  Q --> R{4채널 완결?}
+  R -->|NO| L
+  R -->|YES| S[POST_COMPLETE → 이부장 완료보고·카톡]
+  S --> T[색인 요청 → 할당량 초과면 2시간 뒤 재시도]
+  classDef was stroke:#b42318,stroke-width:3px
+  classDef fix stroke:#1f7a4a,stroke-width:3px
+</pre></section><script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:true,securityLevel:"loose"});</script></body></html>

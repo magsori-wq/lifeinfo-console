@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>엔진 상황실</title>
+<style>
+/* 엔진 상황실 V2 — 글감 선정 → 처리 중 → 다음 대기 → 발행 개시 → 완료 알림. engine_state.json(studio/enginestate.py) 20초마다. 외부 라이브러리 없음 */
+:root{--bg:#f4f7fa;--panel:#fff;--panel2:#f0f4f8;--line:#d5dee7;--fg:#15222e;--muted:#5d7080;--ok:#12a45e;--am:#d98300;--rd:#d93636;--bl:#1f78c8;--idle:#9aa9b6;--flash:#fff2c2;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#070b10;--panel:#0e1620;--panel2:#121d29;--line:#1f3040;--fg:#d8e6f0;--muted:#7f95a6;--ok:#2fe08a;--am:#ffb02e;--rd:#ff4d4d;--bl:#4db3ff;--idle:#4a5b69;--flash:#4a3d12;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:14px;line-height:1.45;overflow-x:hidden}
+.wrap{max-width:1360px;margin:0 auto;padding:12px max(12px,env(safe-area-inset-right,0px)) 32px max(12px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:10px}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+h1{font-size:1.2rem;margin:0}
+h1 .led{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--ok);margin-right:8px;box-shadow:0 0 8px var(--ok);animation:blink 2s ease-in-out infinite}
+.meta{color:var(--muted);font-size:.78rem;overflow-wrap:anywhere}
+.clock{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--bl);font-weight:700}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.bar a,.bar button{font:inherit;color:var(--bl);background:transparent;border:1px solid var(--line);border-radius:4px;padding:4px 10px;cursor:pointer;text-decoration:none}
+.bar a:hover,.bar button:hover{border-color:var(--bl)}
+#flowfr{display:none;width:100%;height:70vh;border:1px solid var(--line);border-radius:6px;background:#fff}
+.cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:stretch}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;min-width:0;display:flex;flex-direction:column;gap:8px;position:relative}
+.col:not(:last-child)::after{content:"▶";position:absolute;right:-13px;top:22px;font-size:11px;color:var(--idle);z-index:2}
+.col h2{margin:0;font-size:1.05rem;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.col h2 .n{margin-left:auto;font-size:1.3rem;font-weight:800;font-variant-numeric:tabular-nums}
+.who{font-size:.95rem;font-weight:800;color:var(--bl);border-bottom:2px solid var(--line);padding-bottom:6px;overflow-wrap:anywhere}
+.cards{display:flex;flex-direction:column;gap:6px;min-height:60px}
+.card{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:6px;padding:6px 8px;min-width:0}
+.card .c{font-weight:800;font-size:.8rem}
+.card .t{font-size:.82rem;overflow-wrap:anywhere}
+.card .m{font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.card.amber{border-left-color:var(--am)}.card.amber .m{color:var(--am);font-weight:700}
+.card.red{border-left-color:var(--rd);animation:blink .9s steps(2) infinite}.card.red .m{color:var(--rd);font-weight:700}
+.card.pulse{animation:pulse 1.6s ease-in-out infinite}
+.card.slide{animation:slide .8s ease-out}
+.card.gone{border-left-color:var(--idle);opacity:.7}
+.tag{display:inline-block;font-size:.68rem;font-weight:800;border-radius:3px;padding:0 5px;margin-right:4px;color:#fff;background:var(--idle)}
+.tag.선별{background:var(--ok)}.tag.버림{background:var(--idle)}.tag.제안{background:var(--bl)}
+.empty{color:var(--muted);font-size:.8rem;padding:6px 2px}
+.prog{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:5px}
+.prog i{display:block;height:7px;border-radius:3px;background:var(--line);overflow:hidden;position:relative}
+.prog i.on::after{content:"";position:absolute;inset:0;background:var(--ok);transform-origin:left;animation:fill 1s ease-out}
+.prog i.next::after{content:"";position:absolute;inset:0;background:var(--am);animation:blink 1.2s ease-in-out infinite}
+.pl{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;font-size:.62rem;color:var(--muted);text-align:center}
+.kpi-main{background:var(--panel2);border:1px solid var(--line);border-radius:8px;text-align:center;padding:10px 6px}
+.kpi-main .big{font-size:3rem;font-weight:900;line-height:1;color:var(--ok);font-variant-numeric:tabular-nums}
+.kpi-main .lb{font-size:.82rem;color:var(--muted)}
+.kpi-main.spark{animation:spark 1.4s ease-out 3}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.kg>div{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:6px 8px;min-width:0}
+.kg .v{font-size:1.4rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2}
+.kg .l{font-size:.7rem;color:var(--muted)}
+.kg .ok .v{color:var(--ok)}.kg .am .v{color:var(--am)}.kg .rd .v{color:var(--rd);animation:blink 1s steps(2) infinite}
+.chip{display:inline-block;border-radius:3px;padding:0 5px;margin:0 2px 2px 0;font-size:.68rem;font-weight:700;color:#fff}
+.p0,.p1{background:var(--rd)}.p2{background:var(--am)}.p3{background:#8a99a6}
+details.strip{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+details.strip summary{cursor:pointer;font-weight:700;overflow-wrap:anywhere}
+details.strip ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+details.strip li{font-size:.82rem;overflow-wrap:anywhere;border-left:4px solid var(--idle);padding:2px 8px;background:var(--panel2);border-radius:3px}
+details.strip li.c0,details.strip li.c1{border-left-color:var(--rd)}details.strip li.c2{border-left-color:var(--am)}
+details.strip h3{margin:10px 0 2px;font-size:.78rem;color:var(--muted)}
+@keyframes blink{50%{opacity:.35}}
+@keyframes pulse{50%{box-shadow:0 0 0 3px color-mix(in srgb,var(--bl) 40%,transparent);border-left-color:var(--bl)}}
+@keyframes slide{from{transform:translateX(-60px);opacity:0;background:var(--flash)}to{transform:none;opacity:1}}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes spark{0%{box-shadow:0 0 0 0 var(--ok);background:var(--flash)}100%{box-shadow:0 0 0 14px transparent}}
+@media (max-width:1000px){.cols{grid-template-columns:minmax(0,1fr)}.col:not(:last-child)::after{content:"▼";right:auto;left:50%;top:auto;bottom:-14px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="led"></span>엔진 상황실</h1>
+    <span class="meta" id="at">불러오는 중…</span>
+    <span class="meta">20초마다 갱신 · 왼쪽 → 오른쪽(폰은 위 → 아래)</span>
+    <span class="clock" id="clock"></span>
+  </header>
+
+  <div class="bar">
+    <b>🗺 신호체계 흐름도</b>
+    <a href="engine_flow.html" target="_blank" rel="noopener">새 탭으로 열기</a>
+    <button id="tg" type="button">아래에 펼치기</button>
+  </div>
+  <iframe id="flowfr" title="흐름도"></iframe>
+
+  <div class="cols" id="cols"></div>
+
+  <details class="strip" id="strip"><summary id="ssum">사건·유닛</summary><div id="sbody"></div></details>
+</div>
+<script>
+const DEMO=new URLSearchParams(location.search).get("demo");let demoStep=0;
+let S=null,loadedAt=Date.now(),prevCol={},prevDone=null,firstLoad=true;
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function fmtMin(m){if(m==null)return "";return m>=60?Math.floor(m/60)+"시간 "+m%60+"분":m+"분"}
+
+/* 카드 하나 */
+function card(col,it,o){
+  o=o||{};const lvl=it.lvl||"ok";let cls="card "+(lvl==="ok"?"":lvl)+(o.pulse?" pulse":"");
+  if(!firstLoad&&prevCol[it.code]!==undefined&&prevCol[it.code]!==col)cls+=" slide";
+  else if(!firstLoad&&prevCol[it.code]===undefined)cls+=" slide";
+  const live=it.min!=null?`<span class="m" data-min="${it.min}">경과 ${fmtMin(it.min)}</span>`:"";
+  return `<div class="${cls}" data-code="${esc(it.code)}"><span class="c">${esc(it.code)}</span> <span class="t">${esc(it.title||"")}</span><div>${live}${o.extra||""}</div>${o.prog||""}</div>`}
+function prog(ch,next){
+  const L=[["블로그","blog"],["네이버","naver"],["인스타","insta"],["쓰레드","threads"]];let firstOff=true;
+  const bars=L.map(([n,k])=>{if(ch[k])return '<i class="on"></i>';if(firstOff){firstOff=false;return '<i class="next"></i>'}return "<i></i>"}).join("");
+  return `<div class="prog">${bars}</div><div class="pl">${L.map(l=>`<span>${l[0]}</span>`).join("")}</div>`}
+
+function render(s){
+  S=s;loadedAt=Date.now();const nd=s.nodes||{};const k=s.kpi||{};
+  document.getElementById("at").textContent="기준 "+s.at;
+  const cur={};const list=(c,a)=>{a.forEach(x=>cur[x.code]=c)};
+  const topics=(s.topics||[]);
+  const p2=(nd.draft||[]).concat(nd.v0||[]);
+  const p3=(nd.boss||[]).concat(nd.deploy||[]);
+  const p4=(nd.publish||[]).concat(nd.osmu||[]);
+  list(1,topics.filter(t=>t.state==="제안"));list(2,p2);list(3,p3);list(4,p4);list(5,nd.done||[]);
+  const colHtml=(n,title,who,count,body)=>`<section class="col"><h2>${n} ${title}<span class="n">${count}</span></h2><div class="who">${who}</div><div class="cards">${body||'<div class="empty">비어 있음</div>'}</div></section>`;
+  const c1=topics.map(t=>`<div class="card ${t.state==="버림"?"gone":""}"><span class="tag ${t.state}">${t.state}</span><span class="c">${esc(t.code||"")}</span> <span class="t">${esc(t.title)}</span><div class="m">${esc(t.src||"")} · ${esc(t.at.slice(5))}</div></div>`).join("");
+  const c2=p2.map(it=>card(2,it,{pulse:true,extra:`<span class="tag" style="background:var(--bl)">${(nd.v0||[]).includes(it)?"초안·V0":"초안"}</span>`})).join("");
+  const c3=p3.map(it=>card(3,it,{extra:`<span class="tag" style="background:var(--am)">${(nd.deploy||[]).includes(it)?"배포 대기":"결재 대기"}</span>`})).join("");
+  const c4=p4.map(it=>it.ch?card(4,it,{extra:`<span class="m">${esc((it.left||[]).join("·"))} 남음</span>`,prog:prog(it.ch)}):card(4,it,{extra:'<span class="tag" style="background:var(--bl)">발행 중</span>'})).join("");
+  const sel=topics.filter(t=>t.state!=="버림").length;
+  const doneN=k.done_today||0;
+  const sp=prevDone!==null&&doneN>prevDone;prevDone=doneN;
+  const tw=s.tower||{},as=s.aside||{};const inc=s.incidents||[];
+  const cnt=k.incidents_by_code||{};
+  const chips=[0,1,2,3].filter(p=>cnt[p]).map(p=>`<span class="chip p${p}">코드${p}·${cnt[p]}</span>`).join("")||"없음";
+  const tcls=tw.age_min==null||tw.age_min>=15?"rd":tw.age_min<5?"ok":"am";
+  const acls=as.lvl==="red"?"rd":as.lvl==="amber"?"am":"ok";
+  const kb=k.boss_wait||0;
+  const c5=`<div class="kpi-main ${sp?"spark":""}"><div class="big" id="bigdone">${doneN}</div><div class="lb">오늘 4채널 완결 편수</div></div>
+   <div class="kg">
+    <div class="ok"><div class="v">${k.published_today||0}</div><div class="l">오늘 발행 편수</div></div>
+    <div class="${kb?"am":"ok"}"><div class="v">${kb}</div><div class="l">결재 대기</div></div>
+    <div class="${inc.length?(cnt[0]||cnt[1]?"rd":"am"):"ok"}"><div class="v">${inc.length}</div><div class="l">열린 사건<br>${chips}</div></div>
+    <div class="${tcls}"><div class="v">${tw.age_min==null?"?":(tw.age_min<5?"생존":tw.age_min+"분")}</div><div class="l">감시 장치</div></div>
+    <div class="${acls}" style="grid-column:1/-1"><div class="v">${as.busy?"일하는 중":(String(as.state).includes("멈춤")?"멈춤":"대기")}</div><div class="l">Aside · ${esc(as.state)} · 큐 ${as.queue||0}</div></div>
+   </div>${(k.done_codes||[]).length?`<div class="meta">완결: ${k.done_codes.map(esc).join(" · ")}</div>`:""}`;
+  document.getElementById("cols").innerHTML=
+    colHtml("①","글감 선정","3.세션·루틴 제안 → 이부장 선별",sel+"/"+topics.length,c1)+
+    colHtml("②","처리 중","이과장(초안·썸네일) → V0 검사",p2.length,c2)+
+    colHtml("③","다음 대기·준비","사장님 결재 · 썸네일 배포",p3.length,c3)+
+    colHtml("④","발행 개시","publish.yml 발행 → Aside(네이버·인스타·쓰레드)",p4.length,c4)+
+    `<section class="col"><h2>⑤ 완료 알림</h2><div class="who">KPI · 오늘 현황</div>${c5}</section>`;
+  prevCol=cur;
+  renderStrip(s);firstLoad=false;tickMin();
+}
+function renderStrip(s){
+  const inc=s.incidents||[],un=s.units||[];const keep=document.getElementById("strip").open;
+  document.getElementById("ssum").textContent=`🚨 열린 사건 ${inc.length}건 · 유닛 ${un.length}개 (펼치기)`;
+  document.getElementById("sbody").innerHTML=
+   `<h3>사건</h3><ul>${inc.length?inc.map(i=>`<li class="c${i.p}"><b>코드${i.p}</b> ${esc(i.what)}${i.min!=null?" · "+fmtMin(i.min):""}</li>`).join(""):"<li>✅ 열린 사건 없음</li>"}</ul>`+
+   `<h3>유닛</h3><ul>${un.map(u=>`<li class="${u.lvl==="red"?"c1":u.lvl==="amber"?"c2":""}"><b>${esc(u.who)}</b> ${esc(u.state)}${u.jobs!=null?" · 지시 "+u.jobs+"건":""}${u.last_min!=null?" · 마지막 소식 "+fmtMin(u.last_min)+" 전":""}</li>`).join("")}</ul>`+
+   `<h3>최근 변경 로그</h3><ul>${(s.log||[]).slice(0,6).map(l=>`<li>${esc(l.at)} · 사건 ${l.n}건</li>`).join("")||"<li>기록 없음</li>"}</ul>`;
+  document.getElementById("strip").open=keep;
+}
+function tickMin(){const dm=(Date.now()-loadedAt)/60000|0;document.querySelectorAll("[data-min]").forEach(e=>{const m=+e.dataset.min+dm;e.textContent="경과 "+fmtMin(m);
+  const c=e.closest(".card");if(c&&c.dataset.manual!=="1"){}})}
+
+/* ---------- ?demo=on 순환 · ?demo=0~5 고정 : 가상 글 X1-01 이 단을 건너간다 ---------- */
+function demo(s){
+  const c=JSON.parse(JSON.stringify(s));c.nodes=c.nodes||{};
+  const st=/^[0-5]$/.test(DEMO)?+DEMO:demoStep%6;const T=" [시험]";
+  c.topics=c.topics||[];c.kpi=c.kpi||{};
+  ["v0","boss","publish","osmu"].forEach(k=>c.nodes[k]=(c.nodes[k]||[]).filter(x=>!String(x.title||"").includes(T)));
+  if(st===1)c.topics.unshift({code:"X1-01",title:"가상 글감"+T,src:"3.세션",state:"제안",at:c.at});
+  if(st>=2){c.topics.unshift({code:"X1-01",title:"가상 글감"+T,src:"3.세션",state:"선별",at:c.at})}
+  if(st===2)c.nodes.v0=[{code:"X1-01",title:"초안·V0 검사 중"+T,min:4,lvl:"ok"}];
+  if(st===3)c.nodes.boss=[{code:"X1-01",title:"결재 대기"+T,min:35,lvl:"amber"}];
+  if(st===4){c.nodes.osmu=[{code:"X1-01",title:"발행됨 · 4채널 진행"+T,left:["인스타","쓰레드"],lvl:"amber",ch:{blog:true,naver:true,insta:false,threads:false}}]}
+  if(st===5){c.nodes.done=[{code:"X1-01",title:"4채널 완결"+T,left:[],lvl:"ok",ch:{blog:true,naver:true,insta:true,threads:true}}].concat(c.nodes.done||[]);
+    c.kpi.done_today=(c.kpi.done_today||0)+1;c.kpi.published_today=(c.kpi.published_today||0)+1}
+  c.at=s.at+" · 🧪 시험 "+st+"/5 — "+["평상시","① 글감 제안","② 처리 중","③ 결재 대기 35분","④ 발행 → 4채널 진행","⑤ 완결 알림"][st];
+  demoStep++;return c}
+async function load(){
+  try{const r=await fetch("engine_state.json?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);const s=await r.json();render(DEMO?demo(s):s)}
+  catch(e){document.getElementById("at").textContent="상태 파일을 못 읽음("+e.message+") — 로컬 CP(localhost:8000)에서 열거나 배포 후 확인"}
+}
+document.getElementById("tg").onclick=()=>{const f=document.getElementById("flowfr");const on=f.style.display!=="block";if(on&&!f.src)f.src="engine_flow.html";f.style.display=on?"block":"none";document.getElementById("tg").textContent=on?"접기":"아래에 펼치기"};
+function tick(){const d=new Date(),p=n=>String(n).padStart(2,"0");document.getElementById("clock").textContent=p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds());tickMin()}
+tick();setInterval(tick,1000);load();setInterval(load,DEMO?4000:20000);
+</script>
+</body>
+</html>
