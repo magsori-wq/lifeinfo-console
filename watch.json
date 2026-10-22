@@ -22051,8 +22051,10 @@
    "due": "2026-10-25",
    "cmd": "powershell -NoProfile -File C:/lifeinfo/tools/explorer_stale_log.ps1 -Show",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:cf890880"
+   "state": "done",
+   "by": "세션:cf890880",
+   "done_at": "2026-10-22",
+   "result": "원인 확정(10-22 13:23 시험): 탐색기는 덧붙여 쓴 파일의 날짜를 갱신하지 않고, 새 파일은 정렬 위치가 아니라 목록 끝에 붙인다(docs 탭 745개 중 744번째). 끊김이 아니라 탐색기 동작. 기록기 예약작업 제거"
   },
   {
    "id": "afflink-g1-12-g3-24",
