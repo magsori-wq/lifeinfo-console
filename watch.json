@@ -22529,6 +22529,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "console-check-engine-html-1023",
+   "added": "2026-10-23",
+   "what": "GitHub 콘솔 정합성 검사가 10-22 13:50~15:13(PDT) 40회 연속 실패 — tools/console_check.py [HTML 참조]가 engine.html 의 JS 템플릿 ${esc(x.url)} 를 깨진 로컬 링크로 오탐(나머지 10항목 통과). 메일 폭주 원인",
+   "due": "2026-10-23",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 3 --workflow 콘솔\\ 정합성\\ 검사",
+   "owner": "claude",
+   "kind": "action",
+   "state": "todo",
+   "by": "세션:57062fdf"
   }
  ]
 }

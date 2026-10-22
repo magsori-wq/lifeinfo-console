@@ -1,17 +1,22 @@
 {
- "generated": "2026-10-23 07:10",
+ "generated": "2026-10-23 08:05",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "10/22 20:04",
-   "next": "10/23 08:00",
+   "last": "10/23 08:05",
+   "next": "10/23 20:00",
    "model": "sonnet-5-5",
    "report_day": "1022",
    "report": "🌙10-22 08:08 메일브리핑 — 사장님 할 일 없음. 애드센스 사이트 NEEDS_ATTENTION(10-20 반려메일 기보고, 신규 변화 없음). 새 중요: 10-21 Anthropic Fin 답변(AdSense 전용 지침 없음·프롬프트 일반론), 10-21 AdSense 커뮤니티 질문 게시 알림(답변 아직 없음), GCP 약관 개정 공지(10-12 시행, 조치 불요). GH: publish 10-20 00:19 실패는 2분 뒤 재실행 성공, 이후 6건 성공 / console 피드드리프트 검사 10-19·20 실패(기보고, 최근 console 런 성공). 8975 전달 1건(뉴스 브리핑)·aroma 0건(평소). 이어받음: 인스타 로그인 알림은 10-14분 재상신 안 함. 리더 3계정 ✅\n▸ 20:10 20:08 메일브리핑: 애드센스 계정 READY·사이트 NEEDS_ATTENTION(반려 유지, 10-20 메일). 구글 커뮤니티 다이아몬드PE 붉은여우 답변 10-21 22:59 '작은 AI로 하는 사람들 승인 잘 안됩니다' 수준의 짧은 답(구체 지적 없음). 사장님 할 일 없음. 🔴 GitHub lifeinfo-console 콘솔 정합성 검사 10-22 약 25회 실패: 원인 engine.html의 ${esc(x.url)} 깨진 참조 판정(watch console-check-engine-html-1022, 이부장 확인). 8975 1건(개인정보 통지, 무해), aroma 0건. 이어받은 것: 인스타 로그인 알림 재상신 안 함\n▸ 20:10 정정(앞 보고의 PE 인용 오기): 구글 커뮤니티 다이아몬드PE 붉은여우 답변 10-21 22:59 원문 'ai로 하는 사람들 승인 잘 안됩니다.' (구체 지적 없음, 우리 10-20 질문 스레드 473869774). 애드센스 READY/사이트 NEEDS_ATTENTION. 사장님 할 일 없음. 🔴 GitHub lifeinfo-console 콘솔 정합성 검사 10-22 약 25회 실패, 원인 engine.html ${esc(x.url)} 깨진참조 판정 (watch console-check-engine-html-1022).",
    "runs": [
+    {
+     "at": "10/23 08:05",
+     "link": "claude://claude.ai/epitaxy/local_4fb71f77-d307-4e9e-8d38-95a1e3a391f2",
+     "archived": false
+    },
     {
      "at": "10/22 20:11",
      "link": "claude://claude.ai/epitaxy/local_b1fccf4d-3b9f-4657-a682-901cf29e8e66",
@@ -30,11 +35,6 @@
     {
      "at": "10/21 08:09",
      "link": "claude://claude.ai/epitaxy/local_a3221b94-37ad-4a4a-873a-b40f0d4054ae",
-     "archived": true
-    },
-    {
-     "at": "10/20 20:12",
-     "link": "claude://claude.ai/epitaxy/local_a79b3d77-b661-4b8a-9e7f-53b8c465c843",
      "archived": true
     }
    ]
@@ -275,11 +275,11 @@
    "last": "10/23 07:09",
    "next": "10/24 07:00",
    "model": "sonnet-5-5",
-   "report_day": "1022",
-   "report": "[조사장부] 목록 2 · 원문 0 · 후보 0 · 탈락 4 · 검색어 6 (상품 루틴: 원문=토스 카드값만, 1차 출처 미개봉 — 바닥 미달 명시)\n🛒 빈손 — collect 296건(신규 40) 후 search 약 30낱말. 탈락: 가습기·전기요·니삭스·사골·쪽파김치 = 이미 solo 게시 · 귤/하우스감귤 = 10-02 게시와 동종 · 사과 = 09-23 세척사과 게시 · 고구마(해남 꿀고구마 베니하루카 3kg 7,900원 리뷰3,323 평점4.0 / 파머스넷 밤고구마 5kg 7,620원 리뷰1,061 평점4.2) = 군고구마철+자동완성(군고구마·꿀고구마 확인) 1근거뿐, 유입검색어 겹침 0(naver_analytics 0건)·시즌 1차 출처 미확인으로 근거 2/3 미달, 평점 4.0~4.2 낮음. 전기장판·온수매트·보일러·제습·김장·롱패딩은 토스 인기목록에 없음(다나와는 product 에이전트 몫). 이어받은 것: 최근 solo 목록. 새로 본 것: 고구마가 미게시 시즌 후보 — 다음 회차에 kamis 시세·유입검색어 확보 시 재검토",
+   "report_day": "1023",
+   "report": "🛒 빈손 — [조사장부] 목록 3 · 원문 0 · 후보 0 · 탈락 5 · 검색어 3 | 목록=productprop collect(토스 297건)·affiliate solo·kwgap(글감후보 0). 이어받은 것: 직전 회차 전부 빈손(김장·난방·가습기 기게시/근거 약). 새로 본 것: 핫팩(리뷰38)·담요(222)·온열안대(1600, 시즌 근거 없음)·보온 니삭스(993, 기게시 socks1020)·가습기(기게시) — 전부 탈락(시즌 급등/지금 이유 화면 숫자로 안 잡힘 또는 기게시). 원문0=상품소개 근거로 열 1차 출처 없음(다나와·브랜드커넥트 미조사, 토스 도구 출력만). naverkw 핫팩·전기요·가습기 ✅ 실검색어 확인. 바닥 미충족: 원문·후보.",
    "runs": [
     {
-     "at": "10/23 07:09",
+     "at": "10/23 07:12",
      "link": "claude://claude.ai/epitaxy/local_ed64d174-0238-4bdd-8f58-f725f72b52c1",
      "archived": false
     },
