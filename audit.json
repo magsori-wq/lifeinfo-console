@@ -15728,6 +15728,22 @@
    "target": "afflink-g1-12-g3-24",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-10-22T13:25:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "explorer-stale-log-1022",
+   "detail": "원인 확정(10-22 13:23 시험): 탐색기는 덧붙여 쓴 파일의 날짜를 갱신하지 않고, 새 파일은 정렬 위치가 아니라 목록 끝에 붙인다(docs 탭 745개 중 744번째). 끊김이 아니라 탐색기 동작. 기록기 예약작업 제거",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-22T13:25:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "explorer-stale-after-reboot-1022",
+   "detail": "재부팅 무관으로 판명 — 탐색기 동작(덧붙여 쓰기 날짜 미갱신·새 파일 끝에 추가)으로 확정",
+   "via": "cli"
   }
  ]
 }
