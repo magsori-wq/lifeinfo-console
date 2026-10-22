@@ -22198,6 +22198,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "explorer-spinner-after-reboot-1022",
+   "added": "2026-10-22",
+   "what": "재부팅 후 탐색기 탭 원(스피너)·메모리 재측정 — 새 탭(C:\\Windows\\Web)에서도 돌면 시험판 결함 확정→피드백허브 문안",
+   "due": "2026-10-23",
+   "cmd": "powershell -NoProfile -File tools/tokcheck.ps1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
   }
  ]
 }
