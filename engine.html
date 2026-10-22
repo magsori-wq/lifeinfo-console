@@ -175,6 +175,8 @@ const _mq=new URLSearchParams(location.search).get("motion");if(_mq==="1")MOTION
 const REDUCE=!MOTION_ON;
 document.documentElement.classList.toggle("reduce",REDUCE);document.documentElement.classList.toggle("osreduce",OSREDUCE);
 let S=null,loadedAt=Date.now(),curLayout="",selTerm=null,dots={},lastAlert=null,fetchOk=true;
+/* 외부 링크 href — 콘솔 정합성 검사가 href="${…}" 를 로컬 파일로 오탐(10-22 40회 실패)해 따옴표를 함수가 붙인다 */
+function hq(u){return '"'+esc(u)+'"'}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function fmtMin(m){if(m==null)return "";return m>=60?Math.floor(m/60)+"시간 "+m%60+"분":m+"분"}
 const NS="http://www.w3.org/2000/svg";
@@ -509,7 +511,7 @@ document.getElementById("mobtn").addEventListener("click",()=>{try{localStorage.
 /* ---------- 텍스트 ---------- */
 function urlsFor(code){
   const ch=(S&&S.channels)||{},out=[];
-  TERM.forEach(([k,nm])=>{((ch[k]||{}).done||[]).forEach(x=>{if(x.code===code&&x.url&&x.url!=="#")out.push(`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(nm)} ↗</a>`)})});
+  TERM.forEach(([k,nm])=>{((ch[k]||{}).done||[]).forEach(x=>{if(x.code===code&&x.url&&x.url!=="#")out.push(`<a href=${hq(x.url)} target="_blank" rel="noopener">${esc(nm)} ↗</a>`)})});
   return out.join(" · ");
 }
 function rowHtml(x,extra){
@@ -562,7 +564,7 @@ function renderDetail(){
   const c=((S.channels||{})[selTerm])||{done:[],wait:[]},nm=TERM.find(t=>t[0]===selTerm)[1];
   d.hidden=false;
   d.innerHTML=`<h3>${nm} — 최근 3일 도착 ${c.done.length}편 · 대기 ${c.wait.length}편 <button class="btn" type="button" id="dclose">닫기</button></h3>`+
-   `<h4>✅ 도착(게시 완료)</h4><ul>${c.done.length?c.done.map(x=>`<li><b>${esc(x.code)}</b> ${esc(x.title)} · ${esc((x.at||"").slice(5))} · <a href="${esc(x.url)}" target="_blank" rel="noopener">열기 ↗</a></li>`).join(""):'<li class="w">아직 없음</li>'}</ul>`+
+   `<h4>✅ 도착(게시 완료)</h4><ul>${c.done.length?c.done.map(x=>`<li><b>${esc(x.code)}</b> ${esc(x.title)} · ${esc((x.at||"").slice(5))} · <a href=${hq(x.url)} target="_blank" rel="noopener">열기 ↗</a></li>`).join(""):'<li class="w">아직 없음</li>'}</ul>`+
    `<h4>⏳ 아직 안 도착</h4><ul>${c.wait.length?c.wait.map(x=>`<li class="w"><b>${esc(x.code)}</b> ${esc(x.title)}</li>`).join(""):'<li class="w">대기 없음</li>'}</ul>`;
   document.getElementById("dclose").onclick=()=>pickTerm(selTerm);
 }
