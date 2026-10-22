@@ -22451,6 +22451,16 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "naver-draft-path-stale-2nd-d202",
+   "added": "2026-10-23",
+   "what": "재발(2회째: C4-01·D2-02) — 이과장 개정 네이버 원고를 slug 와 다른 파일명(osmu/네이버용_운전면허갱신.txt)에 써서 naverrich 기본 경로(네이버용_driverlicense.txt)가 옛 원고로 서식본을 만듦 → Aside #312 blocked. 고칠 것: 개정 원고는 osmu_manifest.naver_draft_path(code) 에 덮어쓰게 improve 스크립트·지시서 수정, 또는 naverrich 가 같은 코드의 더 새 네이버용 파일을 감지해 거부",
+   "due": "2026-10-23",
+   "cmd": "python -c \"from studio import osmu_manifest as m;print(m.naver_draft_path('D2-02'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
