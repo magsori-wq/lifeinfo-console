@@ -22393,8 +22393,10 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.batchboard order --id draftg115 --file <dispatch 재생성>",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-23",
+   "result": "00:17 draftg115 지시서 등록·깨움"
   },
   {
    "id": "draftd117-order-after-115",
@@ -22405,6 +22407,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-394",
+   "added": "2026-10-23",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(394_busan_postpartum.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-23",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
