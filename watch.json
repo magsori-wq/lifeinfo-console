@@ -22188,6 +22188,16 @@
    "by": "이부장",
    "done_at": "2026-10-22",
    "result": "15:30 사장님 deploy.bat"
+  },
+  {
+   "id": "naver-draft-path-stale-c401",
+   "added": "2026-10-22",
+   "what": "naver_draft_path('C4-01') 가 옛 원고(네이버용_implant65.txt 10-06)를 고른다 — 개정 원고(네이버용_임플란트건강보험.txt)가 있는데. 기존 글 개선(24편) 내내 같은 일이 난다: 최신 수정본 우선으로 판정 수정",
+   "due": "2026-10-23",
+   "cmd": "python -c \"from studio import osmu_manifest as o;print(o.naver_draft_path('C4-01'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
