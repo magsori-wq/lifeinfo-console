@@ -22353,6 +22353,16 @@
    "state": "todo",
    "by": "이부장",
    "req_by": "이과장"
+  },
+  {
+   "id": "console-check-engine-html-1022",
+   "added": "2026-10-22",
+   "what": "lifeinfo-console 콘솔 정합성 검사 10-22 반복 실패(약 25회): console_check.py [HTML 참조] engine.html -> ${esc(x.url)} 를 깨진 로컬 참조로 판정(JS 템플릿 리터럴 오탐 또는 engine.html 결함). 다른 항목은 통과",
+   "due": "2026-10-22",
+   "cmd": "gh run view 39766305941 -R magsori-wq/lifeinfo-console --log-failed | grep HTML",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d5269c25"
   }
  ]
 }
