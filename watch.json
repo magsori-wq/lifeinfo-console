@@ -22066,6 +22066,16 @@
    "by": "이부장",
    "done_at": "2026-10-22",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "afflink-g112-g324-next",
+   "added": "2026-10-22",
+   "what": "링크 3개 발급 done 받으면 그 턴에: affiliate add ×3 → G1-12 네이버 사후 삽입 Aside 지시(F1-16 #280 양식) · G3-24 는 네이버 원고에 처음부터 포함(이과장 naver-draft)",
+   "due": "2026-10-22",
+   "cmd": "python -m studio.affiliate block --code G1-12 --channel naver",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
