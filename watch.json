@@ -22039,7 +22039,30 @@
    "due": "2026-10-22",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-22",
+   "result": "12:26 사장님 deploy.bat · thumbs/392 200 확인(이부장 curl)"
+  },
+  {
+   "id": "explorer-stale-log-1022",
+   "added": "2026-10-22",
+   "what": "탐색기 갱신 끊김 기록기(예약작업 explorer_stale_log 15분) — stale_count>0 줄이 생기면 그 시각을 git reflog·docs 파일 쓰기·Toke 와 대조해 원인 확정",
+   "due": "2026-10-25",
+   "cmd": "powershell -NoProfile -File C:/lifeinfo/tools/explorer_stale_log.ps1 -Show",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:cf890880"
+  },
+  {
+   "id": "afflink-g1-12-g3-24",
+   "added": "2026-10-22",
+   "what": "네이버 제휴 링크 발급(Aside) — G1-12 부산 지하철 65세: ①교통카드 지갑(자스나로 2.98만·수수료8%·리뷰2,704) ②어르신 워킹화(워킹마스터 10.9만·18%·리뷰2,590) / G3-24 해운대 빛축제: ③손난로 핫팩 20개(1.57만·5%·리뷰1,885). 【권고】승인 — 글 독자가 다음에 살 것(분실 시 잔액 환불 불가→카드 보관 / 외출·걷기 증가 / 겨울밤 해변). 【근거】brandconnect 에이전트 화면값 10-21·22 · docs/affiliate_G1-12.md·affiliate_G3-24.md 【위험】효능·호환성은 판매자 주장이라 단정 문구 금지 · 네이버 글에만(블로그스팟 아님)",
+   "due": "2026-10-22",
+   "cmd": "docs/affiliate_G1-12.md · docs/affiliate_G3-24.md",
+   "owner": "user",
    "state": "todo",
+   "kind": "approve",
    "by": "이부장"
   }
  ]
