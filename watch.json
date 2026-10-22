@@ -21945,6 +21945,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-naver-login-1022",
+   "added": "2026-10-22",
+   "what": "Aside 브라우저 네이버 로그인(풀림) — G4-05·B1-07 네이버 글 오류 정정이 로그인 화면에서 막힘. 로그인하시면 이부장이 바로 두 건 재개",
+   "due": "2026-10-22",
+   "cmd": "Aside 브라우저에서 nid.naver.com 로그인('로그인 상태 유지' 체크)",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "requeue-naver-fix-1022",
+   "added": "2026-10-22",
+   "what": "네이버 로그인 후 G4-05(docs/aside_drafts/G4-05_네이버정정.txt)·B1-07(B1-07_네이버정정.txt) asidequeue 재등록",
+   "due": "2026-10-22",
+   "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/G4-05_네이버정정.txt --code G4-05 --kind naver --prio 1",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이부장"
   }
  ]
 }
