@@ -22206,8 +22206,10 @@
    "due": "2026-10-23",
    "cmd": "powershell -NoProfile -File tools/tokcheck.ps1",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:cf890880"
+   "state": "done",
+   "by": "세션:cf890880",
+   "done_at": "2026-10-22",
+   "result": "재부팅(17:59) 후 메모리 정상(Toke 5,410·커밋 15.1/39.8GB)인데 18:24:17 docs·insta 탭 원 재발 — 감지기·사장님 캡처 일치. 메모리 원인 배제"
   },
   {
    "id": "aside-resume-race-1022",
@@ -22304,6 +22306,16 @@
    "cmd": "Gmail: from:support.google.com 473869774",
    "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "topic1022b-pickup",
+   "added": "2026-10-22",
+   "what": "3. 이 topic1022b(글감 2~3건) 지시서를 읽었나 — 18:3x 깨움 메시지 미전달(20초 무응답)",
+   "due": "2026-10-22",
+   "cmd": "python -m studio.cpstate --list",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
