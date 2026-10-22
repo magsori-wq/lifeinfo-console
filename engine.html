@@ -579,7 +579,7 @@ function renderStrip(s){
   document.getElementById("ssum").textContent=`🚨 열린 사건 ${inc.length}건 · 유닛 ${un.length}개 (펼치기)`;
   document.getElementById("sbody").innerHTML=
    `<h3>사건</h3><ul>${inc.length?inc.map(i=>`<li class="c${i.p}"><b>코드${i.p}</b> ${esc(i.what)}${i.min!=null?" · "+fmtMin(i.min):""}</li>`).join(""):"<li>✅ 열린 사건 없음</li>"}</ul>`+
-   `<h3>유닛</h3><ul>${un.map(u=>`<li class="${u.lvl==="red"?"c1":u.lvl==="amber"?"c2":""}"><b>${esc(u.who)}</b> ${esc(u.state)}${u.jobs!=null?" · 지시 "+u.jobs+"건":""}${u.last_min!=null?" · 마지막 소식 "+fmtMin(u.last_min)+" 전":""}</li>`).join("")}</ul>`+
+   `<h3>유닛</h3><ul>${un.map(u=>`<li class="${u.lvl==="red"?"c1":u.lvl==="amber"?"c2":""}"><b>${esc(u.who)}</b> ${esc(u.state)}${u.jobs!=null?" · 지시 "+u.jobs+"건":""}${u.last_min!=null?" · 마지막 소식 "+fmtMin(u.last_min)+" 전":""}${u.cur?"<br><span class=\"meta\">지금: "+esc(u.cur)+"</span>":""}</li>`).join("")}</ul>`+
    `<h3>최근 변경 로그</h3><ul>${(s.log||[]).slice(0,6).map(l=>`<li>${esc(l.at)} · 사건 ${l.n}건</li>`).join("")||"<li>기록 없음</li>"}</ul>`;
   document.getElementById("strip").open=keep;
 }
