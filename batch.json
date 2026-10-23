@@ -1953,6 +1953,26 @@
      "base_code": "lifeinfo-publish",
      "date": "2026-10-23",
      "at": "2026-10-23 09:03"
+    },
+    {
+     "code": "lifeinfo-daily-topics-1023",
+     "title": "lifeinfo-daily-topics (B)",
+     "state": "done",
+     "note": "[조사장부] 목록 5 · 원문 5 · 후보 3 · 탈락 2 · 검색어 12\n· 불법사금융예방대출 — kinfa.or.kr 공지 seq=33654·smallLivingLoan.do · 일반12.5/배려9.9/재대출4.5·최대100만원·구상품 추가대출 2026말 한시 · 채택(B2-23 rec, dupcheck 🟢0.33)\n· 통합돌봄 — mohw.go.kr/menu.es?mid=a60200000000·korea.kr 148961536 · 신청창구 읍면동/건보지사·사전조사 5일 · 보류(3/27 시행 후 7개월, 마감·개정 없음 → 지금 찾을 이유 약함)\n· 체당금 한도 — moel/korea.kr 검색 · 2026 상향 확정 고시 못 찾음 · 탈락(수치 미사용)\n이어받은 것: 직전 note 없음(제안함 비었음). 새로 본 것: 제안 B2-23 등록, 선별은 docflow 에이전트 진행. 목록: korea.kr 정책뉴스·보도자료 p1/p2, 복지부 보도자료, 국세청 공지. 저장 오전브리핑_2026-10-23.md",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-topics",
+     "date": "2026-10-23",
+     "at": "2026-10-23 09:18"
+    },
+    {
+     "code": "lifeinfo-daily-topics-1023-1023",
+     "title": "lifeinfo-daily-topics-1023 (B)",
+     "state": "done",
+     "note": "[조사장부] 목록 5 · 원문 5 · 후보 3 · 탈락 2 · 검색어 12 | 불법사금융예방대출 kinfa 공지 seq=33654·smallLivingLoan.do 일반12.5/배려9.9/재대출4.5·구상품 추가대출 2026말 한시 채택(B2-23 rec) · 통합돌봄 mohw 이용안내 보류(시행 7개월, 마감 없음) · 체당금 상향 확정 못 찾음 탈락 | 선별은 docflow 진행",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-topics-1023",
+     "date": "2026-10-23",
+     "at": "2026-10-23 09:19"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -4129,7 +4149,7 @@
    "confirmed_at": "2026-10-23 04:53:31"
   }
  },
- "updated": "2026-10-23 09:03:46",
+ "updated": "2026-10-23 09:19:13",
  "current": {
   "batch": "pub1023g114",
   "code": "",
@@ -4140,6 +4160,14 @@
   "since_at": "2026-10-23 04:21:20"
  },
  "log": [
+  {
+   "t": "09:19:13",
+   "text": "✅ lifeinfo-daily-topics-1023-1023 완료 — lifeinfo-daily-topics-1023 (B)"
+  },
+  {
+   "t": "09:18:59",
+   "text": "✅ lifeinfo-daily-topics-1023 완료 — lifeinfo-daily-topics (B)"
+  },
   {
    "t": "09:03:46",
    "text": "✅ lifeinfo-publish-1023 완료 — lifeinfo-publish (C)"
@@ -4291,14 +4319,6 @@
   {
    "t": "04:58:42",
    "text": "▶   — 1/7단계 · [Aside][done] [index] #323 색인 요청 재시도 1/4건: 1 G1-14 요청됨(등록 안 됨·발견됨-색인 안 됨·크롤링 없음) · 2 G1-15에서 할당량 초과 04:58(같은 상태) → 남은 G1-15·D1-17·D2-02 · 총 탭 11개"
-  },
-  {
-   "t": "04:57:04",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-23 04:56 — 지시 #323 시작 · 색인 요청 재시도(G1-14부터 4건)"
-  },
-  {
-   "t": "04:56:42",
-   "text": "📄 aside 작업 지시 등록(1678자, 2026-10-23 04:56)"
   }
  ],
  "currents": {
