@@ -341,6 +341,7 @@ function alerts(s,g){
   g.osmu.forEach(x=>{if(x.lvl==="amber")add("am",`4채널 미완(어제 이전 발행) ${x.code}`,null,"hub",x.code)});
   const as=s.aside||{};if(as.lvl==="red")add("rd","Aside 멈춤 — "+(as.state||""),null,"hub");
   const tw=s.tower||{};if(tw.lvl==="red")add("rd","감시 장치(towertick) 멈춤 — 신호가 안 들어온다",tw.age_min,"top");
+  const fu=s.fuel||{};if(fu.lvl&&fu.lvl!=="ok")add(fu.lvl==="red"?"rd":"am",`⛽ 연료 ${fu.stock===0?"없음":"부족"} — 발행대기 재고 ${fu.stock}편(하한 ${fu.min})·제안 대기 ${fu.proposed}건: 글감·초안이 들어와야 엔진이 돈다`,null,"topic");
   (s.units||[]).forEach(u=>{if(u.lvl==="red"&&u.who!=="Aside"&&!/이부장/.test(u.who))add("rd",`${u.who} ${u.state}`,u.last_min,"top")});
   return A;
 }
@@ -364,7 +365,11 @@ function render(s){
   const info={topic:g.topic,proc:g.proc,boss:g.boss,pub:g.pub},lim=s.limit||{};
   MAIN.forEach(([k])=>{const n=document.getElementById("nd-"+k),a=info[k],m=maxMin(a);
     n.setAttribute("class","nd"+(a.length?" live":"")+(nlv[k]?" "+nlv[k]:""));
-    document.getElementById("t2-"+k).textContent=a.length?(a.length+"건"+(m!=null?" · 최장 "+fmtMin(m):"")):"비어 있음";
+    let t2=a.length?(a.length+"건"+(m!=null?" · 최장 "+fmtMin(m):"")):"비어 있음";
+    /* ⛽ 연료 계기(사장님 10-23 「발행 끝나면 연료 끊겨 엔진이 서는 것 아니냐」) — ① 글감 마디에 재고/하한 */
+    if(k==="topic"&&s.fuel&&s.fuel.min!=null){t2="⛽ 재고 "+s.fuel.stock+"/"+s.fuel.min+(s.fuel.stock===0?" 연료 없음":"")+" · "+t2;
+      if(s.fuel.lvl!=="ok")n.setAttribute("class",n.getAttribute("class")+" "+(s.fuel.lvl==="red"?"rd":"am"))}
+    document.getElementById("t2-"+k).textContent=t2;
     const L=lim[LIMK[k]],lv=nlv[k]||(a.length?"ok":"idle");
     setGauge(k,a.length,a.length/CAP,lv,L&&m!=null?m/L[1]:null,L?L[0]/L[1]:null)});
   const tf=todayFlow(s),todayArr={};(s.today_events||[]).forEach(e=>{if(G.nodes[e.stage]&&G.nodes[e.stage].term)todayArr[e.stage]=(todayArr[e.stage]||0)+1});

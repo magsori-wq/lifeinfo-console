@@ -22631,6 +22631,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "auto-refuel-signal",
+   "added": "2026-10-23",
+   "what": "연료 자동 보급 신호 — 재고<하한이고 열린 글감 지시서(topic*)가 없으면 towertick 이 3.·루틴에 글감 지시서를 자동 발급(사장님 10-23 「연료 끊겨 엔진이 서는」). 엔진설계도 결정 기록→흐름도→코드→enginemap 순서, 어드바이저 전·페이블 후",
+   "due": "2026-10-23",
+   "cmd": "python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
