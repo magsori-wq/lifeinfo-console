@@ -22832,12 +22832,13 @@
   {
    "id": "fuel-drafts-seq-1023",
    "added": "2026-10-23",
-   "what": "급유 글감 초안 순서: G3-25(진행) → C1-18 건강보험료 추징 3년 → E4-10 AI 가짜 의사 광고 — 한 장씩 게이트라 앞 초안 큐 적재되면 다음 지시서(dispatch) · 유류할증료는 Aside 공식 확인 뒤",
+   "what": "급유 초안 순서: C1-18(진행) → F3-09 유류할증료(기한 10/31, 앞당김) → E4-10. 앞 초안 큐 적재되면 다음 지시서(dispatch)",
    "due": "2026-10-23",
-   "cmd": "python -m studio.batchboard order --id draftg325",
+   "cmd": "python -m studio.pace",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "wait",
+   "by": "이부장",
+   "note": 1023
   },
   {
    "id": "bc-g325-aside-cdp",
