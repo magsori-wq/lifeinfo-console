@@ -1,67 +1,14 @@
 {
- "computed_at": "2026-10-23 07:45:16",
+ "computed_at": "2026-10-23 16:44:24",
  "source_head": "06c5e6bbaaa2",
  "ids": [
   "C1-18",
   "E4-10",
   "F3-09",
   "G3-25",
-  "claude-limit-reset-1022",
-  "deploy-thumb-400",
-  "deploy-thumb-401",
-  "deploy-thumb-402"
+  "claude-limit-reset-1022"
  ],
  "posts": [
-  {
-   "code": "E4-10",
-   "title": "AI 의사 광고 11월 27일부터 — 식품 징역 5년·화장품·의약품 1년, 가짜 전문가 광고 가려내는 법 (2026)",
-   "slug": "AI가짜전문가광고금지",
-   "eng": "ai_fake_expert_ad",
-   "ch": {
-    "naver": {
-     "url": null,
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_AI가짜전문가광고금지.txt",
-       "img": false,
-       "exists": false
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/402_ai_fake_expert_ad.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "todo"
-    },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_AI가짜전문가광고금지.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    },
-    "instagram": {
-     "url": null,
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_AI가짜전문가광고금지.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    }
-   }
-  },
   {
    "code": "F3-09",
    "title": "11월 유류할증료 인상 — 10월 31일 안에 발권하면 얼마 아끼나 (아시아나 공식 기준, 2026)",
@@ -169,7 +116,7 @@
    "eng": "gamcheon_alley_festival",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224451432194",
      "files": [
       {
        "label": "네이버 원고",
@@ -184,7 +131,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -213,7 +160,35 @@
    }
   }
  ],
- "publish": [],
+ "publish": [
+  {
+   "code": "E4-10",
+   "title": "AI 의사 광고 11월 27일부터 — 식품 징역 5년·화장품·의약품 1년, 가짜 전문가 광고 가려내는 법 (2026)",
+   "go": true,
+   "v0": "pass",
+   "files": [
+    {
+     "label": "초안 AI가짜전문가광고금지_글_HTML.txt",
+     "path": "AI가짜전문가광고금지_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/402_ai_fake_expert_ad.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/402_ai_fake_expert_ad.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "ready"
+  }
+ ],
  "actions": [
   {
    "id": "claude-limit-reset-1022",
@@ -221,30 +196,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-400",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(400_health_insurance_statute.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-401",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(401_fuel_surcharge_nov.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-402",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(402_ai_fake_expert_ad.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],

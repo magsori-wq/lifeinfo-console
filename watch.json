@@ -22860,8 +22860,10 @@
    "due": "2026-10-23",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-23",
+   "result": "deploy.bat 16:1x 완료, 썸네일 github.io 200(사장님 붙여넣은 출력 416개 200)"
   },
   {
    "id": "deploy-thumb-401",
@@ -22870,8 +22872,10 @@
    "due": "2026-10-23",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-23",
+   "result": "deploy.bat 16:1x 완료, 썸네일 github.io 200(사장님 붙여넣은 출력 416개 200)"
   },
   {
    "id": "deploy-thumb-402",
@@ -22880,8 +22884,10 @@
    "due": "2026-10-23",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-23",
+   "result": "deploy.bat 16:1x 완료, 썸네일 github.io 200(사장님 붙여넣은 출력 416개 200)"
   },
   {
    "id": "gatesync-push-fail-10231623",
@@ -22913,6 +22919,39 @@
    "state": "todo",
    "note": 1023,
    "by": "이부장"
+  },
+  {
+   "id": "approve-community-reply2-1023",
+   "added": "2026-10-23",
+   "what": "애드센스 커뮤니티 두 번째 답글 게시 승인 — 붉은여우 10-23 09:17 댓글(상세 사유 미안내·SC와 애드센스 별개)에 감사·수용·조치 계획 4문단. 원문 docs/aside_drafts/adsense_커뮤니티답글2_게시.txt 【권고】 게시(질문 추가 없이 마무리) 【근거】 사장님 16:39 「반드시 보내야」·알림 메일은 발신 전용이라 답글이 유일 창구 【위험】 공개 게시·수정 어려움",
+   "due": "2026-10-23",
+   "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/adsense_커뮤니티답글2_게시.txt --code adsense --kind 기타 --prio 2",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "note": 1023,
+   "by": "이부장"
+  },
+  {
+   "id": "community-reply2-post-1023",
+   "added": "2026-10-23",
+   "what": "승인되면 발행 3편 끝난 뒤(사장님 '끝난후') Aside 대기열에 커뮤니티 두 번째 답글 등록 → done 보고 확인",
+   "due": "2026-10-23",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1023,
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-g325",
+   "added": "2026-10-23",
+   "what": "🔗 G3-25 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-25",
+   "due": "2026-10-23",
+   "cmd": "python studio/blogger.py crosslink --code G3-25",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
