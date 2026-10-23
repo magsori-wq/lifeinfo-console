@@ -4312,17 +4312,21 @@
    "order_at": "2026-10-23 12:44"
   }
  },
- "updated": "2026-10-23 12:50:45",
+ "updated": "2026-10-23 12:52:50",
  "current": {
-  "batch": "aside",
-  "code": "",
+  "batch": "followup",
+  "code": "F1-16",
   "title": "",
   "step": 1,
-  "what": "[Aside][doing] 수신 2026-10-23 12:50 — 지시 #342 시작 · F1-17 쓰레드",
-  "since": "11:31",
-  "since_at": "2026-10-08 11:31:43"
+  "what": "✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조",
+  "since": "17:44",
+  "since_at": "2026-10-21 17:44:50"
  },
  "log": [
+  {
+   "t": "12:52:50",
+   "text": "▶ F1-16  — 1/7단계 · ✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조"
+  },
   {
    "t": "12:50:45",
    "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-23 12:50 — 지시 #342 시작 · F1-17 쓰레드"
@@ -4478,10 +4482,6 @@
   {
    "t": "12:03:31",
    "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-23 12:02 — 지시 #337 시작 · D2-01 네이버 글 정정(서식본 개정판 확인 후)"
-  },
-  {
-   "t": "12:02:53",
-   "text": "📄 aside 작업 지시 등록(2554자, 2026-10-23 12:02)"
   }
  ],
  "currents": {
@@ -4598,7 +4598,7 @@
    "code": "F1-16",
    "title": "",
    "step": 1,
-   "what": "[체인] #341 F1-17 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/De0oS_VEalz/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ china_arrival_card_01.png  MAD 0.1 · dH / ✅ 인스타 카드 2 ↔ china_arrival_card_02.png  MAD 0.1 · dH / ✅ 인스타 카드 3 ↔ china_arrival_card_03.png  MAD 0.1 · dH) — [이과장] 기록: python -m studio.pipeline insta-link --code F1-17 --url https://www.instagram.com/magsori8975/p/De0oS_VEalz/ → 4채널 완결 확인",
+   "what": "✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조",
    "since": "17:44",
    "since_at": "2026-10-21 17:44:50"
   },
@@ -17982,6 +17982,14 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][doing] 수신 2026-10-23 12:50 — 지시 #342 시작 · F1-17 쓰레드"
+  },
+  {
+   "ts": "2026-10-23 12:52:50",
+   "bid": "followup",
+   "code": "F1-16",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조"
   }
  ]
 }
