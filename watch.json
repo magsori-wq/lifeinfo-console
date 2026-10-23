@@ -23021,6 +23021,17 @@
    "state": "todo",
    "note": 1023,
    "by": "이부장"
+  },
+  {
+   "id": "gsc-log-auto-from-aside-1023",
+   "added": "2026-10-23",
+   "what": "Aside [index] done 보고가 gsc_log 기록으로 이어지지 않는다(10-23 오늘 요청 6건이 저녁까지 미기록 → 이부장 수동 add). asidechain 이 index done 을 받으면 gsc_log add 를 부르도록(설계도 먼저)",
+   "due": "2026-10-24",
+   "cmd": "grep -n index studio/asidechain.py",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1023,
+   "by": "이부장"
   }
  ]
 }
