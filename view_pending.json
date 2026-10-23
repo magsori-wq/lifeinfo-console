@@ -1,10 +1,11 @@
 {
- "computed_at": "2026-10-23 15:03:08",
- "source_head": "dac9dfbe9450",
+ "computed_at": "2026-10-23 15:06:17",
+ "source_head": "54470f82c831",
  "ids": [
   "C1-18",
   "G3-25",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-400"
  ],
  "posts": [],
  "publish": [
@@ -39,7 +40,7 @@
    "code": "C1-18",
    "title": "건강보험료 추징 기간 3년 신설 — 11월 27일부터, 허위 직장가입자 가산금 40% (2026)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 건강보험료추징3년_글_HTML.txt",
@@ -70,6 +71,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-400",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(400_health_insurance_statute.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-23",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],
