@@ -2,126 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-02T05:03:13",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-b108-0901",
-   "detail": "게시 완료 — DB osmu.naver 에 URL 기록됨",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T05:03:14",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-b212-0831",
-   "detail": "게시 완료 — DB osmu.naver 에 URL 기록됨(B2-12)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T05:19:01",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "sec-passkey-0901",
-   "detail": "정상 확인 — 전부 사장님 기기. 성남시는 이 PC 공인 IP(182.224.194.43 · LG POWERCOMM · Seongnam-si)와 일치하는 것을 실측 확인. 기기 흐름도 PC→휴대폰 브라우저→1분 뒤 앱→4분 뒤 지문 설정으로 사람의 자연스러운 순서. 사장님이 device-activity 에서 전 직장(양산시) 기기는 로그아웃 처리하심",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T05:20:46",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "gsc-boost-approve-0831",
-   "detail": "gsc-boost-go-0902 로 통합 — 방향/착수를 두 장으로 나눠 물어 사장님 시간을 뺏었다. 진단 내용은 그 카드와 docs/GSC_색인미생성_사유분석_20260829.md 에 그대로 있다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T05:20:47",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "gsc-boost-approve-0901",
-   "detail": "gsc-boost-go-0902 로 통합(같은 건)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T05:24:06",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "incident-0831-report",
-   "detail": "운영콘솔 전자결재함에서 완료 처리",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T05:33:53",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "gsc-boost-go-0902",
-   "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T06:22:06",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "session-swap-0902",
-   "detail": "boost0902 6/6 완료로 교체 적기 도달 — sessionsize 가 '🔁 지금이 교체 적기(잡고 있는 일 없음)' 로 자동 전환됨(310MB). 사장님께 안내함",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T12:38:05",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "topicprop-approve-20260902",
-   "detail": "③글감승인 카드(B1-09)가 결재함에 이미 있어 중복 — 화면이 같은 것을 두 번 묻고 있었다. topicprop._to_approval 이 이제 중복 등록을 하지 않는다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T12:38:36",
-   "actor": "사장님",
-   "action": "topicprop.approve",
-   "target": "B1-09",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T12:41:55",
-   "actor": "세션(CLI)",
-   "action": "topicprop.approve",
-   "target": "B1-09",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T13:41:21",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-b1-09",
-   "detail": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 통과. 반려 4건 전부 해소 + 가점 1건, 부작용 없음(law.go.kr DRF API 원문 + 산수 독립 재계산으로 전건 확인). [해소1] 함정②에 지방세기본법 제55조④ '납세고지서별·세목별 45만원 ",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T13:42:16",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "pub-b109-approve",
-   "detail": "중복 — ⑦발행승인이 큐에서 자동으로 뜨고 있었다. 관제탑이 확인 없이 또 올렸다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T14:10:31",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "B1-09",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-03T04:12:23",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "pub-b109-blocked",
-   "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-03T09:10:03",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15879,126 @@
    "action": "watch.done",
    "target": "approve-community-reply2-1023",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T16:57:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "community-reply2-post-1023",
+   "detail": "승인 확인 → Aside 대기열 등록(16:58)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T17:49:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-contact-mail-1023",
+   "detail": "#363 17:48: B 의견 보내기 접수(591자, 회신 없는 양식) · D SEO Office Hours 접수(279자, 공개 영상 가능) · A 문의하기=이메일·채팅 없음(커뮤니티만) · C 색인 신고=자유입력 없는 영문 분류양식이라 미제출",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T20:51:58",
+   "actor": "v0",
+   "action": "v0check.fail",
+   "target": "E4-11",
+   "detail": "본문 법조문(제23조의2~5·제26조④·제28조②5~8·부칙 시행일)은 DRF MST286987 원문과 전부 일치, 가상사례 표시·확인못한것 박스 OK. 단 제목 '과태료 500만원'·'징역 1년'이 상한(500만원 이하·1년 이하)을 확정형으로 오도 → 제목(DB·큐·초안 첫줄·pos",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T20:52:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-e4-11",
+   "detail": "이부장 확인 20:53: 제목 '이하' 누락 1건 — 이과장 수정 지시, 재검사 후 결재 상신",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T20:58:53",
+   "actor": "v0",
+   "action": "v0check.pass",
+   "target": "F2-21",
+   "detail": "함정(12/3=제도 시작 아닌 제47조의9 시행, 52곳은 전국숫자)+판단형 비교(부울경 9곳 판정표, 울산·창원 등 없음)+가상 사례 표시 계산+미확인 박스. 명단 9곳은 Aside 원문 52곳과 일치, 업체명·일률 할인율 없음, 대통령령 요건 단정 안 함, 정책뉴스 7/29·열람일 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T21:41:36",
+   "actor": "이부장",
+   "action": "v0check.pass",
+   "target": "E4-11",
+   "detail": "2차(제목 diff만): 제목·큐·초안 첫 줄 모두 '과태료 500만원 이하·징역 1년 이하'로 수정 확인(21:4x), 썸네일 부제도 '500만원 이하'. 본문 조문은 1차에서 DRF MST286987 원문 일치 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T21:42:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-e4-11",
+   "detail": "V0 통과로 해소 — 검사자 이부장 · 2차(제목 diff만): 제목·큐·초안 첫 줄 모두 '과태료 500만원 이하·징역 1년 이하'로 수정 확인(21:4x), 썸네일 부제도 '500만원 이하'. 본문 조문은 1차에서 DRF MST286987 원문 일치 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T00:22:07",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "D5-07",
+   "detail": "🟡 통과: 판정표(해도되나)·조문vs법원 괴리표·오프/온라인 법정형 비교·배상명령 3갈래(약식·주소 필요)·14세 미만 탈락사유 성립, 가상 피해액 22,600원 직접계산(가상 표시), 조문 숫자는 법제처 직접조회 노트와 일치, 정책브리핑 단독근거(두 사건·3000만원·약식)는 kore",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T00:23:03",
+   "actor": "v0",
+   "action": "v0check.pass",
+   "target": "D5-07",
+   "detail": "제목 벌금 200만원=정책브리핑 K-공감(2026.10.23) 직접 열람 확인(강서구·인천 두 사건 모두 200만원, 본문에 법정형 상한 500만/3천만과 구분 명시). 판단형 판정표(6행위)·조문vs법원 괴리표·3갈래 배상 판정표·14세미만 함정, 피해액 22,600원 가상예시 표시,",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T02:28:47",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "E4-11",
+   "detail": "사장님 02:28 폰 결재함 복사 문구 「승인: E4-11」 채팅 붙여넣기",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T02:30:26",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "F2-21",
+   "detail": "사장님 02:30 폰 결재함 복사 문구 「승인: F2-21」 채팅 붙여넣기",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T02:31:49",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D5-07",
+   "detail": "사장님 02:31 폰 결재함 복사 문구 「승인: D5-07」 채팅 붙여넣기",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T02:41:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-403",
+   "detail": "02:2x 이부장이 deploy.bat 실행(사장님 02:24 「이부장이 실행」), github.io 200 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T02:41:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-404",
+   "detail": "02:2x 이부장이 deploy.bat 실행(사장님 02:24 「이부장이 실행」), github.io 200 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T02:41:17",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-405",
+   "detail": "02:2x 이부장이 deploy.bat 실행(사장님 02:24 「이부장이 실행」), github.io 200 확인",
    "via": "cli"
   }
  ]
