@@ -1,13 +1,11 @@
 {
- "computed_at": "2026-10-24 02:57:03",
- "source_head": "dfacd55d8b68",
+ "computed_at": "2026-10-24 05:26:04",
+ "source_head": "522dcf19c408",
  "ids": [
   "D5-07",
   "E4-11",
   "F2-21",
-  "claude-limit-reset-1022",
-  "community-reply3-boss-retry-1024",
-  "naver-relogin-aside-1024"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -73,7 +71,7 @@
        "label": "네이버 원고",
        "path": "osmu/네이버용_디지털관광주민증발급.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "첨부 이미지",
@@ -82,7 +80,7 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "threads": {
      "url": null,
@@ -117,7 +115,7 @@
    "eng": "realestate_fake_listing",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224451906727",
      "files": [
       {
        "label": "네이버 원고",
@@ -132,7 +130,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -169,22 +167,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "community-reply3-boss-retry-1024",
-   "what": "커뮤니티 추가 답글 2회 거부(#359 정책위반·#362 무표시) — 연속 게시 스팸 필터 추정. 몇 시간 뒤 사장님이 직접 1회 게시(원문 docs/aside_drafts/adsense_커뮤니티답글2_게시.txt 「답글 시작~끝」)",
-   "due": "2026-10-24",
-   "cmd": "https://support.google.com/adsense/thread/473869774",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "naver-relogin-aside-1024",
-   "what": "Aside 브라우저 네이버 로그인 만료 — E4-11 네이버 게시(#376) 멈춤. 사장님이 PC 의 Aside 브라우저에서 네이버(magsori8975) 다시 로그인하시면 이부장이 같은 지시를 다시 넣는다. 그때까지 E4-11·F2-21·D5-07 네이버·인스타·쓰레드 대기",
-   "due": "2026-10-24",
-   "cmd": "Aside 브라우저 → https://nid.naver.com/nidlogin.login 로그인 → 이 창에 '네이버 로그인함'",
-   "state": "todo",
    "kind": "action"
   }
  ],
