@@ -390,13 +390,15 @@ function render(s){
     "hub>naver":need.naver,"hub>insta":need.insta,"hub>threads":need.threads};
   const want={};let tot=0;
   G.edges.forEach(e=>{const key=e[0]+">"+e[1],id=e[0]+"-"+e[1],p=document.getElementById("ed-"+id),f=tf[key]||0,b=traf[key]||0;let st="";
-    if(b||f)st=(b&&nlv[e[0]]==="rd")?"rd":((b&&nlv[e[0]]==="am")?"am":"flow");
+    /* 사장님 10-23 「지도에는 연료 공급되고 있는데!」 — 오늘 지나간 흐름(f)은 기록일 뿐 지금 움직임이 아니다.
+       관이 「흐름」으로 빛나고 입자가 도는 것은 지금 그 구간에 일감(b)이 있을 때만. f 는 「오늘 N」 글자로만 남긴다. */
+    if(b)st=(nlv[e[0]]==="rd")?"rd":((nlv[e[0]]==="am")?"am":"flow");
     if(!st&&e[0]==="hub"&&nlv.hub==="rd")st="rd";
     if(e[0]==="hub"&&nlv.hub==="rd"&&(b||f))st="rd";
     p.setAttribute("class","ed"+(st?" "+st:""));document.getElementById("pc-"+id).setAttribute("class","pc"+(st?" "+st:""));
     const fl=document.getElementById("fl-"+id);if(fl)fl.textContent=f?"오늘 "+f:"";
-    let n=(f+b)?Math.min(7,1+f*2+b):0;if(st==="rd")n=Math.max(n,3);
-    want[key]={n,lv:st==="rd"?"rd":st==="am"?"am":"",dur:Math.max(1.6,5.5-.6*(f+b))};tot+=n});
+    let n=b?Math.min(7,1+b*2):0;if(st==="rd")n=Math.max(n,3);
+    want[key]={n,lv:st==="rd"?"rd":st==="am"?"am":"",dur:Math.max(1.6,5.5-.6*b)};tot+=n});
   const cap=G.vert?40:64;if(tot>cap)for(const k in want)if(want[k].n)want[k].n=Math.max(1,Math.floor(want[k].n*cap/tot));
   setParticles(want);
   const cnt={};const slot=k=>{cnt[k]=(cnt[k]||0);return cnt[k]++};
