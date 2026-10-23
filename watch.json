@@ -22766,6 +22766,16 @@
    "state": "wait",
    "by": "이과장",
    "req_by": "이과장"
+  },
+  {
+   "id": "g201-buchik-recheck",
+   "added": "2026-10-23",
+   "what": "G2-01 개선안 재상정 확인 — 아동수당 연령은 부칙 제2조 연도별 특례(2026 9세…2030 13세) 반영됐나, 그 뒤 approve-g201-1023 사장님께 상정",
+   "due": "2026-10-23",
+   "cmd": "grep -c '부칙' docs/improve_G2-01_20261023.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
