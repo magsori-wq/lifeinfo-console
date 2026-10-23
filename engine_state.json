@@ -1,5 +1,5 @@
 {
- "at": "2026-10-24 05:35:42",
+ "at": "2026-10-24 05:37:20",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,17 +11,16 @@
     "code": "D5-07",
     "title": "무인점포 절도범 CCTV 사진 붙이면 벌금 200만 원",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "last_at": "",
+    "last_at": "2026-10-24",
     "lvl": "amber"
    },
    {
@@ -244,10 +243,10 @@
  },
  "boss_extra": [],
  "aside": {
-  "state": "#383 doing (1분 전 소식)",
-  "queue": 2,
-  "busy": true,
-  "lvl": "ok"
+  "state": "#383 done",
+  "queue": 4,
+  "busy": false,
+  "lvl": "amber"
  },
  "tower": {
   "age_min": 0,
@@ -392,7 +391,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 9,
-   "last_min": 2,
+   "last_min": 4,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -408,9 +407,9 @@
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
-   "jobs": 2,
-   "lvl": "ok",
+   "state": "대기",
+   "jobs": 4,
+   "lvl": "amber",
    "role": "허브·4종착 배송"
   },
   {
@@ -441,7 +440,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 9,
-   "last_min": 2,
+   "last_min": 4,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok"
   },
@@ -449,7 +448,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 1115,
+   "last_min": 1117,
    "cur": "📊 크리에이터 어드바이저 유입·관심사 매일 갱신 (3. 상시)",
    "lvl": "ok"
   },
@@ -463,9 +462,9 @@
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
-   "jobs": 2,
-   "lvl": "ok"
+   "state": "대기",
+   "jobs": 4,
+   "lvl": "amber"
   },
   {
    "who": "이부장(감시)",
@@ -606,6 +605,12 @@
   "naver": {
    "done": [
     {
+     "code": "D5-07",
+     "title": "무인점포 절도범 CCTV 사진 붙이면 벌금 200만 원",
+     "url": "https://blog.naver.com/magsori8975/224451910027",
+     "at": "2026-10-24"
+    },
+    {
      "code": "E4-11",
      "title": "부동산 허위매물 처벌 12월 17일부터 — 광고는 과태",
      "url": "https://blog.naver.com/magsori8975/224451906727",
@@ -702,12 +707,7 @@
      "at": "2026-10-21"
     }
    ],
-   "wait": [
-    {
-     "code": "D5-07",
-     "title": "무인점포 절도범 CCTV 사진 붙이면 벌금 200만 원"
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -961,6 +961,12 @@
    "code": "F2-21",
    "stage": "naver",
    "at": "2026-10-24 05:31:52",
+   "src": "now_log 게시 URL"
+  },
+  {
+   "code": "D5-07",
+   "stage": "naver",
+   "at": "2026-10-24 05:36:56",
    "src": "now_log 게시 URL"
   }
  ],
