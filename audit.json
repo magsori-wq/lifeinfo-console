@@ -2,6 +2,30 @@
  "version": 1,
  "items": [
   {
+   "at": "2026-09-02T05:03:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-b108-go-0901",
+   "detail": "완료 — 사장님이 12:17 콘솔에서 ⑦ 도장, B1-08 12:44 발행(라이브 확인)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T05:03:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-b108-trigger-0901",
+   "detail": "불필요해짐 — 이과장이 gh workflow 로 정상 발행함(수동 트리거 안 씀)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-02T05:03:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-go-5-0901",
+   "detail": "완료 — 5편(A2-16·B1-08·E2-11·F2-14·F1-15) 전부 발행·4채널 완결. setgate 미완 0",
+   "via": "cli"
+  },
+  {
    "at": "2026-09-02T05:03:13",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15975,30 +15999,6 @@
    "action": "pubqueue.go",
    "target": "E4-10",
    "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-23T16:27:58",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-400",
-   "detail": "deploy.bat 16:1x 완료, 썸네일 github.io 200(사장님 붙여넣은 출력 416개 200)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-23T16:27:59",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-401",
-   "detail": "deploy.bat 16:1x 완료, 썸네일 github.io 200(사장님 붙여넣은 출력 416개 200)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-23T16:28:00",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-402",
-   "detail": "deploy.bat 16:1x 완료, 썸네일 github.io 200(사장님 붙여넣은 출력 416개 200)",
    "via": "cli"
   }
  ]
