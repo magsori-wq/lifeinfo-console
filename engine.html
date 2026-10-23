@@ -30,6 +30,7 @@ h1{font-size:1.1rem;margin:0;display:flex;align-items:center;gap:6px}
 .btn:hover{border-color:var(--bl)}
 #alarm{display:none;border-radius:6px;padding:6px 10px;font-weight:800;font-size:.88rem;overflow-wrap:anywhere;cursor:pointer}
 .lane{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:6px 0}.lane .lh{font-size:.78rem;font-weight:800;color:var(--muted);align-self:center;min-width:100%}.lane .cp{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-left:4px solid var(--idle);border-radius:6px;padding:4px 7px;background:var(--panel2);font-size:.76rem;line-height:1.35}.lane .cp b{display:block;font-size:.8rem}.lane .cp .nt{color:var(--muted);overflow-wrap:anywhere}.lane .cp.ok{border-left-color:var(--ok)}.lane .cp.am{border-left-color:var(--am)}.lane .cp.rd{border-left-color:var(--rd)}.lane .cp.idle{opacity:.7}.lane .unr{color:var(--am);font-weight:800}
+.drv text{font-size:10.5px;fill:var(--muted);font-weight:700}.drv.on text{fill:var(--bl);animation:drvp 1.6s ease-in-out infinite}@keyframes drvp{0%,100%{opacity:1}50%{opacity:.35}}.lane .cp.feed{border-left-color:var(--bl);background:linear-gradient(90deg,var(--panel2) 0%,rgba(77,179,255,.18) 50%,var(--panel2) 100%);background-size:200% 100%;animation:feedflow 1.4s linear infinite}@keyframes feedflow{0%{background-position:100% 0}100%{background-position:-100% 0}}.lane .fd{display:block;color:var(--bl);font-weight:800}#nd-topic.fueling .bx{stroke:var(--bl);stroke-width:3;animation:fuelg 1.2s ease-in-out infinite}@keyframes fuelg{0%,100%{stroke-opacity:1}50%{stroke-opacity:.3}}html.reduce .drv.on text,html.reduce .lane .cp.feed,html.reduce #nd-topic.fueling .bx{animation:none}
 #alarm.rd{display:block;background:var(--rd);color:#fff;animation:alarm 1s steps(2) infinite}
 #alarm.am{display:block;background:var(--am);color:#1a1200}
 #alarm small{font-weight:400;opacity:.9}
@@ -251,7 +252,15 @@ function build(vert){
   hg.addEventListener("click",()=>focusStep("hub"));hg.addEventListener("keydown",ev=>{if(ev.key==="Enter"){ev.preventDefault();focusStep("hub")}});
   el("text",G.vert?{x:G.hub.x+22,y:G.hub.y+4,"text-anchor":"start",id:"hubt",style:"font-size:11px;fill:var(--muted)"}:{x:G.hub.x,y:G.hub.y-22,"text-anchor":"middle",id:"hubt",style:"font-size:11px;fill:var(--muted)"},svg);
   el("g",{id:"ripl"},svg);el("g",{id:"dots"},svg);el("g",{id:"rdots"},svg);
+  /* 🚗 운전자 배지 — 어느 마디에 누가 손을 대는지(사장님 10-23 「운전자가 어느 프로세스 과정에 개입하고」) */
+  const db=el("g",{id:"drvBadges"},svg);
+  Object.entries(DRV_AT).forEach(([k,lab])=>{const n=k==="hub"?{cx:G.hub.x,cy:G.hub.y,w:32,h:32}:G.nodes[k];if(!n)return;
+    const x=G.vert?n.cx+n.w/2-8:n.cx,y=G.vert?n.cy-n.h/2+13:n.cy+n.h/2+15,a=G.vert?"end":"middle";
+    const g=el("g",{class:"drv",id:"drv-"+k},db);const t=el("text",{x,y:k==="hub"&&!G.vert?n.cy+34:(k==="hub"?n.cy+30:y),"text-anchor":k==="hub"&&G.vert?"middle":a},g);t.textContent="🚗 "+lab.map(d=>d[1]).join(" · ")});
 }
+/* 마디 → 운전자(누가 그 과정에 개입하나). 운전자 이름은 engine_state.drivers 의 who 와 같다 */
+const DRV_AT={topic:[["이부장(감시)","이부장 선별"]],proc:[["이과장","이과장 초안"],["이부장(감시)","이부장 V0"]],
+  boss:[["사장님","사장님 결재"]],pub:[["이과장","이과장 발행"]],hub:[["Aside","Aside 배송"]]};
 function cellPos(n,i){
   const x0=n.dx!=null?n.dx:n.cx-n.w/2+8,cols=Math.max(1,Math.floor((n.cx+n.w/2-x0-4)/G.cell));const col=i%cols,row=Math.floor(i/cols);
   if(row>=n.rows)return null;
@@ -422,10 +431,20 @@ function render(s){
    note 는 기록 원문 그대로 앞부분만(상태로 바꿔 쓰지 않는다). */
 function renderLanes(s){
   const fu=s.fuel||{},sup=s.suppliers||[],drv=s.drivers||[];
+  /* ⛽ 공급 애니메이션 — 최근 90분 안에 글감을 실제로 낸 공급자만 흐른다(지나간 기록은 정지). */
+  const nowM=(()=>{const m=String(s.at||"").match(/(\d\d):(\d\d)/);return m?(+m[1])*60+(+m[2]):null})();
+  const ago=x=>{const m=String(x.at||"").match(/(\d\d):(\d\d)/);return (m&&nowM!=null)?nowM-((+m[1])*60+(+m[2])):null};
+  sup.forEach(x=>{const a=ago(x);x.feeding=x.kind!=="상품"&&(x.today||0)>0&&a!=null&&a>=0&&a<=90});
+  const anyFeed=sup.some(x=>x.feeding);
+  const tn=document.getElementById("nd-topic");if(tn)tn.classList.toggle("fueling",anyFeed);
+  /* 🚗 운전자 배지 — 그 마디 담당이 지금 움직이면 맥박 */
+  const act=w=>{const u=drv.find(d=>d.who===w);return u&&/현장|출동/.test(u.state||"")};
+  Object.entries(DRV_AT).forEach(([k,lab])=>{const g=document.getElementById("drv-"+k);if(!g)return;
+    g.setAttribute("class","drv"+(lab.some(d=>act(d[0]))?" on":""))});
   const lv=x=>x.lvl==="red"?"rd":x.lvl==="amber"?"am":x.lvl==="idle"?"idle":"ok";
   document.getElementById("supLane").innerHTML=
     `<div class="lh">🛢 연료 공급자 → ① 글감 ${fu.min!=null?`(⛽ 재고 ${fu.stock}/${fu.min}${fu.stock===0?" · 연료 없음":""})`:""}</div>`+
-    sup.map(x=>`<div class="cp ${lv(x)}" title="${esc(x.note||"")}"><b>${x.kind==="상품"?"🛒":"🛢"} ${esc(x.who)}</b>`+
+    sup.map(x=>`<div class="cp ${lv(x)}${x.feeding?" feed":""}" title="${esc(x.note||"")}"><b>${x.kind==="상품"?"🛒":"🛢"} ${esc(x.who)}</b>`+(x.feeding?`<span class="fd">⛽ ① 글감으로 공급 중 →</span>`:"")+
       (x.ran?`${esc(x.at||"")}`+(x.kind==="상품"?"":` · 오늘 글감 ${x.today||0}건`):"오늘 아직 기록 없음")+
       (x.order?` · 지시서 ${esc(x.order.id)} ${x.order.read?"읽음":"<span class='unr'>안 읽힘</span>"}`:"")+
       (x.note?`<div class="nt">${esc(x.note)}</div>`:"")+`</div>`).join("");
