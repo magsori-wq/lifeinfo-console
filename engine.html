@@ -426,7 +426,7 @@ function renderLanes(s){
   document.getElementById("supLane").innerHTML=
     `<div class="lh">🛢 연료 공급자 → ① 글감 ${fu.min!=null?`(⛽ 재고 ${fu.stock}/${fu.min}${fu.stock===0?" · 연료 없음":""})`:""}</div>`+
     sup.map(x=>`<div class="cp ${lv(x)}" title="${esc(x.note||"")}"><b>${x.kind==="상품"?"🛒":"🛢"} ${esc(x.who)}</b>`+
-      (x.ran?`${esc(x.at||"")}`+(x.kind==="상품"?"":` · 오늘 글감 ${x.today||0}건`):"오늘 아직 기록 없음")+
+      (x.ran?`${esc(x.at||"")} · 오늘 ${x.kind==="상품"?"상품":"글감"} ${x.today||0}건`:"오늘 아직 기록 없음")+
       (x.order?` · 지시서 ${esc(x.order.id)} ${x.order.read?"읽음":"<span class='unr'>안 읽힘</span>"}`:"")+
       (x.note?`<div class="nt">${esc(x.note)}</div>`:"")+`</div>`).join("");
   document.getElementById("drvLane").innerHTML=
