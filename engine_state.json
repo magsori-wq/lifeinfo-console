@@ -1,5 +1,5 @@
 {
- "at": "2026-10-23 22:44:31",
+ "at": "2026-10-24 00:16:10",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -7,14 +7,14 @@
    {
     "code": "E4-11",
     "title": "부동산 허위매물 처벌 12월 17일부터 — 광고는 과태",
-    "min": 62,
+    "min": 154,
     "lvl": "amber"
    },
    {
     "code": "F2-21",
     "title": "디지털관광주민증 12월 3일 법제화 — 부산·경남 9곳",
-    "min": 105,
-    "lvl": "amber"
+    "min": 197,
+    "lvl": "red"
    }
   ],
   "deploy": [],
@@ -58,19 +58,6 @@
      "threads": true
     },
     "last_at": "2026-10-23",
-    "lvl": "ok"
-   },
-   {
-    "code": "C3-10",
-    "title": "어르신 낙상 치료비 무료? 신청은 내년, 대상은 따로",
-    "left": [],
-    "ch": {
-     "blog": true,
-     "naver": true,
-     "insta": true,
-     "threads": true
-    },
-    "last_at": "2026-10-20",
     "lvl": "ok"
    },
    {
@@ -215,19 +202,6 @@
     },
     "last_at": "2026-10-23",
     "lvl": "ok"
-   },
-   {
-    "code": "G4-13",
-    "title": "수도계량기 동파 교체비, 부산은 「징수 안 할 수 있다",
-    "left": [],
-    "ch": {
-     "blog": true,
-     "naver": true,
-     "insta": true,
-     "threads": true
-    },
-    "last_at": "2026-10-20",
-    "lvl": "ok"
    }
   ]
  },
@@ -241,6 +215,11 @@
    "kind": "☑️조치",
    "id": "deploy-thumb-404",
    "what": "deploy.bat 실행 — 발행 대기 글 썸네일(404_digital_"
+  },
+  {
+   "kind": "☑️조치",
+   "id": "community-reply3-boss-retry-1024",
+   "what": "커뮤니티 추가 답글 2회 거부(#359 정책위반·#362 무표시) — 연"
   }
  ],
  "aside": {
@@ -288,12 +267,12 @@
   {
    "p": 1,
    "what": "사장님 결재 대기 F2-21 디지털관광주민증 12월 3일 법제화 — 부산·경남 9곳",
-   "min": 105
+   "min": 197
   },
   {
    "p": 1,
    "what": "사장님 결재 대기 E4-11 부동산 허위매물 처벌 12월 17일부터 — 광고는 과태",
-   "min": 62
+   "min": 154
   },
   {
    "p": 2,
@@ -309,6 +288,11 @@
    "p": 3,
    "what": "사장님 ☑️조치 deploy.bat 실행 — 발행 대기 글 썸네일(404_digital_",
    "min": null
+  },
+  {
+   "p": 3,
+   "what": "사장님 ☑️조치 커뮤니티 추가 답글 2회 거부(#359 정책위반·#362 무표시) — 연",
+   "min": null
   }
  ],
  "fuel": {
@@ -319,133 +303,77 @@
  },
  "edits": [
   {
-   "code": "D2-02",
-   "title": "D2-02 색인이력 정밀 개선 2/10",
-   "stage": "done",
-   "batch": "idxfix02",
-   "packer": ""
-  },
-  {
-   "code": "D2-03",
-   "title": "D2-03 색인이력 정밀 개선 3/10",
-   "stage": "done",
-   "batch": "idxfix03",
-   "packer": ""
-  },
-  {
-   "code": "D2-01",
-   "title": "D2-01 색인이력 정밀 개선 4/10",
-   "stage": "done",
-   "batch": "idxfix04",
-   "packer": ""
-  },
-  {
-   "code": "C1-10",
-   "title": "C1-10 색인이력 정밀 개선 5/10",
-   "stage": "done",
-   "batch": "idxfix05",
-   "packer": ""
-  },
-  {
    "code": "G2-01",
    "title": "G2-01 색인이력 정밀 개선 6/10",
    "stage": "draft",
    "batch": "idxfix06",
    "packer": "이과장"
-  },
-  {
-   "code": "A2-04",
-   "title": "A2-04 색인이력 정밀 개선 7/10",
-   "stage": "done",
-   "batch": "idxfix07",
-   "packer": ""
-  },
-  {
-   "code": "A3-03",
-   "title": "A3-03 색인이력 정밀 개선 8/10",
-   "stage": "done",
-   "batch": "idxfix08",
-   "packer": ""
-  },
-  {
-   "code": "C4-05",
-   "title": "C4-05 색인이력 정밀 개선 9/10",
-   "stage": "done",
-   "batch": "idxfix09",
-   "packer": ""
-  },
-  {
-   "code": "C3-02",
-   "title": "C3-02 색인이력 정밀 개선 10/10",
-   "stage": "done",
-   "batch": "idxfix10",
-   "packer": ""
   }
  ],
  "suppliers": [
   {
    "who": "3.세션",
    "kind": "글감",
-   "ran": true,
+   "ran": false,
    "at": "10:59",
    "note": "3.: topic1023 접수 — 오늘(10-23) 3.의 rec·alt 한도는 00:07 에 G1-14·G1-15 로 소진(",
-   "today": 3,
+   "today": 0,
    "order": null,
    "lvl": "ok"
   },
   {
    "who": "이부장 급유(에이전트)",
    "kind": "글감",
-   "ran": true,
-   "at": "16:56",
-   "note": "G3-25 · C1-18 · E4-10 · F3-09 · E4-11 · F2-21",
-   "today": 6,
-   "lvl": "ok"
+   "ran": false,
+   "at": "",
+   "note": "",
+   "today": 0,
+   "lvl": "idle"
   },
   {
    "who": "루틴2 글감(정보)",
    "kind": "글감",
-   "ran": true,
-   "at": "09:19",
-   "note": "[조사장부] 목록 5 · 원문 5 · 후보 3 · 탈락 2 · 검색어 12 | 불법사금융예방대출 kinfa 공지 seq=336",
-   "today": 1,
-   "lvl": "ok"
+   "ran": false,
+   "at": "",
+   "note": "",
+   "today": 0,
+   "lvl": "idle"
   },
   {
    "who": "루틴4 글감(여행·행사)",
    "kind": "글감",
-   "ran": true,
-   "at": "21:14",
-   "note": "[조사장부] 목록 3 · 원문 1 · 후보 6 · 탈락 6 · 검색어 5 (바닥 미달: 원문 — busan.go.kr 메인 E",
+   "ran": false,
+   "at": "",
+   "note": "",
    "today": 0,
-   "lvl": "ok"
+   "lvl": "idle"
   },
   {
    "who": "루틴6 글감·발행보조",
    "kind": "글감",
-   "ran": true,
-   "at": "00:14",
-   "note": "[조사장부] 목록 4 · 원문 1 · 후보 1 · 탈락 1 · 검색어 6 (바닥 미달: 원문·후보, 보도자료 본문이 hwpx/",
-   "today": 1,
-   "lvl": "ok"
+   "ran": false,
+   "at": "",
+   "note": "",
+   "today": 0,
+   "lvl": "idle"
   },
   {
    "who": "루틴8 상품(아침)",
    "kind": "상품",
-   "ran": true,
-   "at": "07:12",
-   "note": "🛒 빈손 — [조사장부] 목록 3 · 원문 0 · 후보 0 · 탈락 5 · 검색어 3 | 목록=productprop colle",
+   "ran": false,
+   "at": "",
+   "note": "",
    "today": 0,
-   "lvl": "ok"
+   "lvl": "idle"
   },
   {
    "who": "루틴9 상품(오후)",
    "kind": "상품",
-   "ran": true,
-   "at": "15:14",
-   "note": "[조사장부] 목록 3 · 원문 0 · 후보 0 · 탈락 3 · 검색어 6 (미달: 원문 — 상품 단독 1차출처 없음, 다나와 ",
+   "ran": false,
+   "at": "",
+   "note": "",
    "today": 0,
-   "lvl": "ok"
+   "lvl": "idle"
   }
  ],
  "drivers": [
@@ -453,7 +381,7 @@
    "who": "이과장",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 6,
-   "last_min": 223,
+   "last_min": 315,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -484,29 +412,13 @@
  "producers": [
   {
    "who": "이과장",
-   "made": "새 글 초안·발행 11편 · 개선 반영 8편",
-   "codes": [
-    "B2-23",
-    "C1-18",
-    "D1-17",
-    "E4-10",
-    "E4-11",
-    "F1-17",
-    "F2-21",
-    "F3-09",
-    "G1-14",
-    "G1-15"
-   ]
+   "made": "새 글 초안·발행 0편 · 개선 반영 0편",
+   "codes": []
   },
   {
    "who": "에이전트",
-   "made": "개선안 4편 · 급유 조사 6건",
-   "codes": [
-    "A2-04",
-    "A3-03",
-    "C4-05",
-    "C3-02"
-   ]
+   "made": "개선안 0편 · 급유 조사 0건",
+   "codes": []
   }
  ],
  "units": [
@@ -514,7 +426,7 @@
    "who": "이과장",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 6,
-   "last_min": 223,
+   "last_min": 315,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok"
   },
@@ -522,7 +434,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 704,
+   "last_min": 796,
    "cur": "📊 크리에이터 어드바이저 유입·관심사 매일 갱신 (3. 상시)",
    "lvl": "ok"
   },
@@ -546,106 +458,18 @@
    "lvl": "ok"
   }
  ],
- "topics": [
-  {
-   "code": "F2-21",
-   "title": "디지털관광주민증 발급 방법 — 12월 3일 법제화, 52개 지역 할인 쓰",
-   "src": "이부장-급유",
-   "state": "선별",
-   "at": "2026-10-23T16:56"
-  },
-  {
-   "code": "E4-11",
-   "title": "부동산 직거래 허위매물 12월 17일부터 처벌 — 올린 사람 확인·필수정",
-   "src": "이부장-급유",
-   "state": "선별",
-   "at": "2026-10-23T16:55"
-  },
-  {
-   "code": "F3-09",
-   "title": "11월 유류할증료 인상 — 10월 31일 안에 발권하면 얼마 아끼나 (아",
-   "src": "이부장-급유",
-   "state": "소진",
-   "at": "2026-10-23T14:58"
-  },
-  {
-   "code": "E4-10",
-   "title": "AI 가짜 의사 광고 11월 27일부터 징역 5년 — 진짜 가려내는 법",
-   "src": "이부장-급유",
-   "state": "소진",
-   "at": "2026-10-23T14:40"
-  },
-  {
-   "code": "C1-18",
-   "title": "건강보험료 추징 기간 3년 신설 — 11월 27일부터, 허위 직장가입자 ",
-   "src": "이부장-급유",
-   "state": "소진",
-   "at": "2026-10-23T14:39"
-  },
-  {
-   "code": "G3-25",
-   "title": "감천문화마을 골목축제 2026 10/31~11/1 — 마을버스·주차·QR",
-   "src": "이부장-급유",
-   "state": "소진",
-   "at": "2026-10-23T14:33"
-  },
-  {
-   "code": "F1-17",
-   "title": "중국 입국신고서 온라인 작성, 미리 안 해도 되나",
-   "src": "3.",
-   "state": "소진",
-   "at": "2026-10-23T11:48"
-  },
-  {
-   "code": "B2-23",
-   "title": "불법사금융예방대출 100만원 — 금리 12.5%, 추가대출은 연말까지",
-   "src": "lifeinfo-daily-topics",
-   "state": "소진",
-   "at": "2026-10-23T09:20"
-  },
-  {
-   "code": "D1-17",
-   "title": "위택스 환급금 조회, 12월부터 카카오 앱에서 한 번에 — 지금은 이렇게",
-   "src": "lifeinfo-daily-publish",
-   "state": "소진",
-   "at": "2026-10-23T00:13"
-  },
-  {
-   "code": "G1-14",
-   "title": "부산형 산후조리경비 최대 100만원, 신청은 1년·사용은 6개월",
-   "src": "3.",
-   "state": "소진",
-   "at": "2026-10-23T00:09"
-  },
-  {
-   "code": "G1-15",
-   "title": "부산 청년 취업, 중소기업 2년 근무하면 최대 580만원",
-   "src": "3.",
-   "state": "소진",
-   "at": "2026-10-23T00:09"
-  }
- ],
+ "topics": [],
  "kpi": {
-  "today": "2026-10-23",
-  "done_today": 9,
-  "done_codes": [
-   "B2-23",
-   "C1-18",
-   "D1-17",
-   "E4-10",
-   "F1-17",
-   "F3-09",
-   "G1-14",
-   "G1-15",
-   "G3-25"
-  ],
-  "published_today": 9,
-  "boss_wait": 4,
+  "today": "2026-10-24",
+  "done_today": 0,
+  "done_codes": [],
+  "published_today": 0,
+  "boss_wait": 5,
   "incidents_by_code": {
    "0": 0,
    "1": 2,
    "2": 1,
-   "3": 2
+   "3": 3
   }
  },
  "channels": {
@@ -680,18 +504,6 @@
      "title": "베트남 입국신고 PAI 온라인 사전 작성, 어느 공항부",
      "url": "https://lifeinfo8975.blogspot.com/2026/10/pai.html",
      "at": "2026-10-21"
-    },
-    {
-     "code": "C3-10",
-     "title": "어르신 낙상 치료비 무료? 신청은 내년, 대상은 따로",
-     "url": "https://lifeinfo8975.blogspot.com/2026/10/blog-post.html",
-     "at": "2026-10-20"
-    },
-    {
-     "code": "G4-13",
-     "title": "수도계량기 동파 교체비, 부산은 「징수 안 할 수 있다",
-     "url": "https://lifeinfo8975.blogspot.com/2026/10/blog-post_20.html",
-     "at": "2026-10-20"
     },
     {
      "code": "B2-23",
@@ -835,18 +647,6 @@
      "title": "베트남 입국신고 PAI 온라인 사전 작성, 어느 공항부",
      "url": "https://blog.naver.com/magsori8975/224448839491",
      "at": "2026-10-21"
-    },
-    {
-     "code": "C3-10",
-     "title": "어르신 낙상 치료비 무료? 신청은 내년, 대상은 따로",
-     "url": "https://blog.naver.com/magsori8975/224447850438",
-     "at": "2026-10-20"
-    },
-    {
-     "code": "G4-13",
-     "title": "수도계량기 동파 교체비, 부산은 「징수 안 할 수 있다",
-     "url": "https://blog.naver.com/magsori8975/224447905588",
-     "at": "2026-10-20"
     }
    ],
    "wait": []
@@ -936,18 +736,6 @@
      "title": "베트남 입국신고 PAI 온라인 사전 작성, 어느 공항부",
      "url": "https://www.instagram.com/magsori8975/p/Devd6UfEcvg/",
      "at": "2026-10-21"
-    },
-    {
-     "code": "C3-10",
-     "title": "어르신 낙상 치료비 무료? 신청은 내년, 대상은 따로",
-     "url": "https://www.instagram.com/magsori8975/p/DetQ7qXETDT/",
-     "at": "2026-10-20"
-    },
-    {
-     "code": "G4-13",
-     "title": "수도계량기 동파 교체비, 부산은 「징수 안 할 수 있다",
-     "url": "https://www.instagram.com/magsori8975/p/DetZbX3EUoZ/",
-     "at": "2026-10-20"
     }
    ],
    "wait": []
@@ -1037,410 +825,18 @@
      "title": "베트남 입국신고 PAI 온라인 사전 작성, 어느 공항부",
      "url": "https://www.threads.com/@magsori8975/post/DeveTo_AVtC",
      "at": "2026-10-21"
-    },
-    {
-     "code": "C3-10",
-     "title": "어르신 낙상 치료비 무료? 신청은 내년, 대상은 따로",
-     "url": "https://www.threads.com/@magsori8975/post/DetRfb9Ab3t",
-     "at": "2026-10-20"
-    },
-    {
-     "code": "G4-13",
-     "title": "수도계량기 동파 교체비, 부산은 「징수 안 할 수 있다",
-     "url": "https://www.threads.com/@magsori8975/post/DetZwf1AX-n",
-     "at": "2026-10-20"
     }
    ],
    "wait": []
   }
  },
- "today_events": [
-  {
-   "code": "G1-14",
-   "stage": "topic",
-   "at": "2026-10-23 00:08:14",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "G1-15",
-   "stage": "topic",
-   "at": "2026-10-23 00:08:40",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "G1-14",
-   "stage": "proc",
-   "at": "2026-10-23 00:09:27",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "G1-15",
-   "stage": "proc",
-   "at": "2026-10-23 00:09:56",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "D1-17",
-   "stage": "topic",
-   "at": "2026-10-23 00:11:02",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "D1-17",
-   "stage": "proc",
-   "at": "2026-10-23 00:13:43",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "G1-14",
-   "stage": "boss",
-   "at": "2026-10-23 00:18:41",
-   "src": "V0 통과"
-  },
-  {
-   "code": "G1-15",
-   "stage": "boss",
-   "at": "2026-10-23 00:25:14",
-   "src": "V0 통과"
-  },
-  {
-   "code": "D1-17",
-   "stage": "boss",
-   "at": "2026-10-23 00:33:04",
-   "src": "V0 통과"
-  },
-  {
-   "code": "G1-15",
-   "stage": "blog",
-   "at": "2026-10-23 04:21:20",
-   "src": "now_log 발행 완료"
-  },
-  {
-   "code": "D1-17",
-   "stage": "blog",
-   "at": "2026-10-23 04:28:00",
-   "src": "now_log 발행 완료"
-  },
-  {
-   "code": "G1-14",
-   "stage": "naver",
-   "at": "2026-10-23 04:34:29",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G1-14",
-   "stage": "insta",
-   "at": "2026-10-23 04:40:51",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G1-14",
-   "stage": "threads",
-   "at": "2026-10-23 04:46:19",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G1-15",
-   "stage": "naver",
-   "at": "2026-10-23 04:55:18",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "D1-17",
-   "stage": "naver",
-   "at": "2026-10-23 05:47:23",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G1-15",
-   "stage": "insta",
-   "at": "2026-10-23 05:50:52",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G1-15",
-   "stage": "threads",
-   "at": "2026-10-23 05:53:47",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "D1-17",
-   "stage": "insta",
-   "at": "2026-10-23 05:57:36",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "D1-17",
-   "stage": "threads",
-   "at": "2026-10-23 06:00:10",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "B2-23",
-   "stage": "topic",
-   "at": "2026-10-23 09:18:26",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "B2-23",
-   "stage": "proc",
-   "at": "2026-10-23 09:20:01",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "B2-23",
-   "stage": "boss",
-   "at": "2026-10-23 09:31:45",
-   "src": "V0 통과"
-  },
-  {
-   "code": "B2-23",
-   "stage": "blog",
-   "at": "2026-10-23 10:11:04",
-   "src": "now_log 발행 완료"
-  },
-  {
-   "code": "B2-23",
-   "stage": "naver",
-   "at": "2026-10-23 10:14:57",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "B2-23",
-   "stage": "insta",
-   "at": "2026-10-23 10:19:14",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "B2-23",
-   "stage": "threads",
-   "at": "2026-10-23 10:21:33",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "F1-17",
-   "stage": "topic",
-   "at": "2026-10-23 11:46:50",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "F1-17",
-   "stage": "proc",
-   "at": "2026-10-23 11:48:07",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "F1-17",
-   "stage": "boss",
-   "at": "2026-10-23 12:06:09",
-   "src": "V0 통과"
-  },
-  {
-   "code": "F1-17",
-   "stage": "naver",
-   "at": "2026-10-23 12:42:21",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "F1-17",
-   "stage": "insta",
-   "at": "2026-10-23 12:49:59",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "F1-17",
-   "stage": "threads",
-   "at": "2026-10-23 12:53:51",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G3-25",
-   "stage": "topic",
-   "at": "2026-10-23 14:33:02",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "G3-25",
-   "stage": "proc",
-   "at": "2026-10-23 14:33:45",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "C1-18",
-   "stage": "topic",
-   "at": "2026-10-23 14:37:46",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "E4-10",
-   "stage": "topic",
-   "at": "2026-10-23 14:38:44",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "C1-18",
-   "stage": "proc",
-   "at": "2026-10-23 14:39:52",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "E4-10",
-   "stage": "proc",
-   "at": "2026-10-23 14:40:50",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "G3-25",
-   "stage": "boss",
-   "at": "2026-10-23 14:50:32",
-   "src": "V0 통과"
-  },
-  {
-   "code": "F3-09",
-   "stage": "topic",
-   "at": "2026-10-23 14:58:16",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "F3-09",
-   "stage": "proc",
-   "at": "2026-10-23 14:58:34",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "C1-18",
-   "stage": "boss",
-   "at": "2026-10-23 15:05:36",
-   "src": "V0 통과"
-  },
-  {
-   "code": "F3-09",
-   "stage": "boss",
-   "at": "2026-10-23 15:15:20",
-   "src": "V0 통과"
-  },
-  {
-   "code": "E4-10",
-   "stage": "boss",
-   "at": "2026-10-23 15:25:29",
-   "src": "V0 통과"
-  },
-  {
-   "code": "G3-25",
-   "stage": "blog",
-   "at": "2026-10-23 16:26:14",
-   "src": "now_log 발행 완료"
-  },
-  {
-   "code": "G3-25",
-   "stage": "naver",
-   "at": "2026-10-23 16:43:33",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "E4-11",
-   "stage": "topic",
-   "at": "2026-10-23 16:55:22",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "E4-11",
-   "stage": "proc",
-   "at": "2026-10-23 16:55:57",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "F2-21",
-   "stage": "topic",
-   "at": "2026-10-23 16:56:16",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "F2-21",
-   "stage": "proc",
-   "at": "2026-10-23 16:56:44",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "C1-18",
-   "stage": "naver",
-   "at": "2026-10-23 17:06:17",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "F3-09",
-   "stage": "naver",
-   "at": "2026-10-23 17:10:23",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "E4-10",
-   "stage": "naver",
-   "at": "2026-10-23 17:18:27",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G3-25",
-   "stage": "insta",
-   "at": "2026-10-23 17:22:56",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "G3-25",
-   "stage": "threads",
-   "at": "2026-10-23 17:52:10",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "F3-09",
-   "stage": "insta",
-   "at": "2026-10-23 18:23:11",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "F3-09",
-   "stage": "threads",
-   "at": "2026-10-23 18:29:23",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "E4-10",
-   "stage": "insta",
-   "at": "2026-10-23 18:40:15",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "E4-10",
-   "stage": "threads",
-   "at": "2026-10-23 18:50:13",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "C1-18",
-   "stage": "insta",
-   "at": "2026-10-23 18:55:11",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "C1-18",
-   "stage": "threads",
-   "at": "2026-10-23 19:01:20",
-   "src": "now_log 게시 URL"
-  },
-  {
-   "code": "F2-21",
-   "stage": "boss",
-   "at": "2026-10-23 20:58:53",
-   "src": "V0 통과"
-  },
-  {
-   "code": "E4-11",
-   "stage": "boss",
-   "at": "2026-10-23 21:41:36",
-   "src": "V0 통과"
-  }
- ],
+ "today_events": [],
  "log": [
+  {
+   "at": "2026-10-24 00:00:10",
+   "sig": "[\"사장님 결재 대기 F2-21 디지털관광주민증 12월 3일 법제화 — 부산·경남 9곳\", \"사장님 결재 대기 E4-11 부동산 허위매물 처벌 12월 17일부터 — 광고는 과태\", \"⛽ 연료 부족 — 발행대기 재고 2편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\", \"사장님 ☑️조치 deploy.bat 실행 — 발행 대기 글 썸네일(403_realesta\", \"사장님 ☑️조치 deploy.bat 실행 — 발행 대기 글 썸네일(404_digital_\", \"사장님 ☑️조치 커뮤니티 추가 답글 2회 거부(#359 정책위반·#362 무표시) — 연\"]",
+   "n": 6
+  },
   {
    "at": "2026-10-23 22:11:49",
    "sig": "[\"사장님 결재 대기 F2-21 디지털관광주민증 12월 3일 법제화 — 부산·경남 9곳\", \"사장님 결재 대기 E4-11 부동산 허위매물 처벌 12월 17일부터 — 광고는 과태\", \"⛽ 연료 부족 — 발행대기 재고 2편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\", \"사장님 ☑️조치 deploy.bat 실행 — 발행 대기 글 썸네일(403_realesta\", \"사장님 ☑️조치 deploy.bat 실행 — 발행 대기 글 썸네일(404_digital_\"]",
@@ -1510,11 +906,6 @@
    "at": "2026-10-23 20:49:11",
    "sig": "[\"V0 지연 E4-11 부동산 허위매물 처벌 12월 17일부터 — 광고는 과태\", \"⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 1건: 글감 선별·초안이 들어와야 엔진이 돈다\", \"사장님 ☑️조치 deploy.bat 실행 — 발행 대기 글 썸네일(403_realesta\"]",
    "n": 3
-  },
-  {
-   "at": "2026-10-23 20:47:28",
-   "sig": "[\"V0 지연 E4-11 부동산 허위매물 처벌 12월 17일부터 — 광고는 과태\", \"⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 1건: 글감 선별·초안이 들어와야 엔진이 돈다\"]",
-   "n": 2
   }
  ]
 }
