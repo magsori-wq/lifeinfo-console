@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-01T12:08:30",
-   "actor": "세션(CLI)",
-   "action": "pubqueue.ungo",
-   "target": "Z9-99",
-   "detail": "",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-01T12:08:36",
    "actor": "세션(CLI)",
    "action": "pubqueue.go",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "approve-d201-1023",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T12:00:53",
+   "actor": "v0",
+   "action": "v0check.fail",
+   "target": "F1-17",
+   "detail": "계산·비교·함정·가상표시·AI제외 항목은 충분하나 '한국 무비자 2026-12-31 입국분까지'(첫화면 요약·사례표·함정·마무리 4곳, 단정)가 docs/source_F1-17 전사에 없음(11-06 공지 미수록, 11-13 Q&A 2번 답변 공란). 넣으면 통과: 11-06 공지 해당",
    "via": "cli"
   }
  ]
