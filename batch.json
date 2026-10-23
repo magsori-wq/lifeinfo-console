@@ -2095,13 +2095,9 @@
     }
    ],
    "owner": "Aside",
-   "order": "지시 #385 (2026-10-23) — E4-11 부동산 허위매물 처벌 쓰레드 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: E4-11(부동산 허위매물 처벌) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EB%B6%80%EB%8F%99%EC%82%B0%ED%97%88%EC%9C%84%EB%A7%A4%EB%AC%BC%EC%B2%98%EB%B2%8C.txt  (⚠️ JSON 포장 풀어서 내용만. 글자수 확인·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 2개(블로그·네이버)라 카드가 연달아 뜬다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_E4-11_realestate_fake_listing.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 본문 파일 = osmu/쓰레드용_부동산허위매물처벌.txt · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(무료 사진) · 제휴 링크 없음(대가성 문구 불필요), 글자수 335/500· 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#385 수신 — E4-11 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"E4-11\",\"what\":\"#385 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.",
-   "order_at": "2026-10-24 05:41",
+   "order": "지시 #386 (2026-10-23) — F2-21 디지털관광주민증 법제화 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: F2-21(디지털관광주민증 법제화) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/digital_tourist_pass_01.png · http://127.0.0.1:8011/api/file?path=insta/digital_tourist_pass_02.png · http://127.0.0.1:8011/api/file?path=insta/digital_tourist_pass_03.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 부산·경남 9곳 → 혜택은 가맹점마다) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EB%94%94%EC%A7%80%ED%84%B8%EA%B4%80%EA%B4%91%EC%A3%BC%EB%AF%BC%EC%A6%9D%EB%B0%9C%EA%B8%89.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다.  캡션 글자수 확인. 블로그(2026/10/12-3-9-2026.html)·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224451908502 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · osmuimgcheck 🔴0 · 사진 출처 캡션 표기(무료 라이선스 스마트폰 앱 일반 사진, 참고용(디지털관광주민증 화면 아님)) · 제휴 링크는 아직 미발급이라 캡션에 상품 링크·대가성 문구 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#386 수신 — F2-21 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"F2-21\",\"what\":\"#386 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.\n⑨ 인스타 공유 뒤 확인(이부장 자동 추가 · 2026-10-17): 공유 뒤 프로필이 네트워크 오류(chrome-error)로 안 열리면 blocked 하지 말고 30초 기다린 뒤 새 탭으로 https://www.instagram.com/magsori8975/ 를 한 번 더 연다. 맨 위 게시물이 이 글 표지인지·같은 카드가 2개인지 보고, 게시물 주소(/p/<id>/)를 읽어 done 으로 보고한다. ⛔ 다시 공유하지 않는다. 두 번째도 안 열리면 그때 blocked.",
+   "order_at": "2026-10-24 05:48",
    "order_hist": [
-    {
-     "at": "2026-10-23 17:52",
-     "order": "지시 #365 (2026-10-23) — F3-09 11월 유류할증료 발권 시점 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: F3-09(11월 유류할증료 발권 시점) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/fuel_surcharge_nov_01.png · http://127.0.0.1:8011/api/file?path=insta/fuel_surcharge_nov_02.png · http://127.0.0.1:8011/api/file?path=insta/fuel_surcharge_nov_03.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 구간별 차액(편도) → 가상 사례) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_11%EC%9B%94%EC%9C%A0%EB%A5%98%ED%95%A0%EC%A6%9D%EB%A3%8C%EB%B0%9C%EA%B6%8C%EC%8B%9C%EC%A0%90.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다.  캡션 글자수 확인. 블로그(2026/10/11-10-31-2026.html)·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224451462822 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · osmuimgcheck 🔴0 · 사진 출처 캡션 표기(무료 라이선스 외국 지폐 일반 사진, 참고용(항공권과 직접 관련 없음)) · 제휴 링크는 아직 미발급이라 캡션에 상품 링크·대가성 문구 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#365 수신 — F3-09 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"F3-09\",\"what\":\"#365 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.\n⑨ 인스타 공유 뒤 확인(이부장 자동 추가 · 2026-10-17): 공유 뒤 프로필이 네트워크 오류(chrome-error)로 안 열리면 blocked 하지 말고 30초 기다린 뒤 새 탭으로 https://www.instagram.com/magsori8975/ 를 한 번 더 연다. 맨 위 게시물이 이 글 표지인지·같은 카드가 2개인지 보고, 게시물 주소(/p/<id>/)를 읽어 done 으로 보고한다. ⛔ 다시 공유하지 않는다. 두 번째도 안 열리면 그때 blocked."
-    },
     {
      "at": "2026-10-23 18:15",
      "order": "지시 #366 (2026-10-23) — F3-09 11월 유류할증료 발권 시점 쓰레드 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: F3-09(11월 유류할증료 발권 시점) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_11%EC%9B%94%EC%9C%A0%EB%A5%98%ED%95%A0%EC%A6%9D%EB%A3%8C%EB%B0%9C%EA%B6%8C%EC%8B%9C%EC%A0%90.txt  (⚠️ JSON 포장 풀어서 내용만. 글자수 확인·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 2개(블로그·네이버)라 카드가 연달아 뜬다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_F3-09_fuel_surcharge_nov.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 본문 파일 = osmu/쓰레드용_11월유류할증료발권시점.txt · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(무료 지폐 사진) · 제휴 링크 없음(대가성 문구 불필요), 글자수 362/500· 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#366 수신 — F3-09 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"F3-09\",\"what\":\"#366 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다."
@@ -2177,6 +2173,10 @@
     {
      "at": "2026-10-24 05:37",
      "order": "지시 #384 (2026-10-23) — E4-11 부동산 허위매물 처벌 인스타 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 네이버(게시 완료) 다음 인스타, 그 다음 쓰레드.\n① 무엇을: E4-11(부동산 허위매물 처벌) 인스타 1게시물(카드 3장 캐러셀). 계정 @magsori8975.\n② 어떻게:\n   1. 카드 3장을 순서대로: http://127.0.0.1:8011/api/file?path=insta/realestate_fake_listing_01.png · http://127.0.0.1:8011/api/file?path=insta/realestate_fake_listing_02.png · http://127.0.0.1:8011/api/file?path=insta/realestate_fake_listing_03.png\n   2. 새 게시물 → 갤러리에서 3장을 순서대로 한 번에 선택 → 공유 전 미리보기 점 3개(장 수)와 순서(표지 → 시행일이 둘이에요 → 가상 사례 판정) 확인(아니면 공유하지 말고 blocked)\n   3. 캡션 = http://127.0.0.1:8011/api/file?path=insta/%EC%BA%A1%EC%85%98_%EB%B6%80%EB%8F%99%EC%82%B0%ED%97%88%EC%9C%84%EB%A7%A4%EB%AC%BC%EC%B2%98%EB%B2%8C.txt  (⚠️ /api/file 텍스트는 JSON 포장이다 — 내용만 꺼내 넣는다.  캡션 글자수 확인. 블로그(2026/10/12-17-500-1-2026.html)·네이버 링크와 사진 출처 줄이 모두 들어갔는지 확인)\n   4. 공유 → 게시물 URL 확인(새로고침 뒤 읽기 — 임시 ID 금지)\n③ 사전 점검 완료(pre-cleared, 이과장): 캡션에 블로그+네이버 링크 둘 다 ✅(네이버 224451906727 게시 확인, DB 기록됨) · 인스타 표지 실사진 · 카드 3장 파일 · osmuimgcheck 🔴0 · 사진 출처 캡션 표기(무료 라이선스 열쇠·주거 내부 일반 사진, 참고용(특정 매물과 무관)) · 제휴 링크는 아직 미발급이라 캡션에 상품 링크·대가성 문구 없음 · 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소들\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#384 수신 — E4-11 인스타 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"E4-11\",\"what\":\"#384 인스타 게시 — 카드 3장·캡션 확인\",\"state\":\"done\",\"url\":\"<인스타 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지. 장 수·이미지·캡션이 맞지 않으면 공유하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다.\n⑨ 인스타 공유 뒤 확인(이부장 자동 추가 · 2026-10-17): 공유 뒤 프로필이 네트워크 오류(chrome-error)로 안 열리면 blocked 하지 말고 30초 기다린 뒤 새 탭으로 https://www.instagram.com/magsori8975/ 를 한 번 더 연다. 맨 위 게시물이 이 글 표지인지·같은 카드가 2개인지 보고, 게시물 주소(/p/<id>/)를 읽어 done 으로 보고한다. ⛔ 다시 공유하지 않는다. 두 번째도 안 열리면 그때 blocked."
+    },
+    {
+     "at": "2026-10-24 05:41",
+     "order": "지시 #385 (2026-10-23) — E4-11 부동산 허위매물 처벌 쓰레드 게시 (📌 전담 채팅)\n\n⓪ 먼저: 스킬 lifeinfo-cp-orders 「4. 작업 속도 규칙」. 탭 6개 이하(전체 탭이 7개를 넘으면 시작 전에 blocked 로 보고). 끝나면 연 탭 닫기. 순서 = 인스타 끝난 뒤 쓰레드(맨 뒤).\n① 무엇을: E4-11(부동산 허위매물 처벌) 쓰레드 1게시물(실사진 1장). 계정 @magsori8975.\n② 어떻게:\n   1. 「새로운 스레드」 → 본문 = http://127.0.0.1:8011/api/file?path=osmu/%EC%93%B0%EB%A0%88%EB%93%9C%EC%9A%A9_%EB%B6%80%EB%8F%99%EC%82%B0%ED%97%88%EC%9C%84%EB%A7%A4%EB%AC%BC%EC%B2%98%EB%B2%8C.txt  (⚠️ JSON 포장 풀어서 내용만. 글자수 확인·page.keyboard.insertText)\n   2. 링크 카드가 뜨면 전부 닫는다(URL 2개(블로그·네이버)라 카드가 연달아 뜬다) → 이미지 http://127.0.0.1:8011/api/file?path=insta/thread/thread_E4-11_realestate_fake_listing.png 를 paste 이벤트 방식으로 첨부(검증된 방법) → 미리보기에 사진이 보이는지 확인 → 게시\n   3. 새로고침 뒤 글 URL 확인(임시 ID 금지, curl 200)\n③ 사전 점검 완료(pre-cleared, 이과장): threadimg ✅ 실사진 · 쓰레드 본문 파일 = osmu/쓰레드용_부동산허위매물처벌.txt · 블로그+네이버 링크 둘 다 ✅ · 사진 출처 줄 포함(무료 사진) · 제휴 링크 없음(대가성 문구 불필요), 글자수 335/500· 게시 주인 = Aside.\n④ 받을 파일: 위 http://127.0.0.1:8011/api/file?path= 주소 둘\n⑤ 보고: POST http://127.0.0.1:8011/api/report\n   - 시작: {\"batch\":\"aside\",\"what\":\"#385 수신 — E4-11 쓰레드 시작\",\"state\":\"doing\"}\n   - 끝: {\"batch\":\"aside\",\"code\":\"E4-11\",\"what\":\"#385 쓰레드 게시 — 이미지 확인\",\"state\":\"done\",\"url\":\"<쓰레드 URL>\"}\n⑥ 막히면: blocked + 무엇에 막혔는지. 재시도 2회까지(3회 넘기지 않는다). 이미지가 안 붙으면 게시하지 말 것.\n⑦ 하지 말 것: 이미 게시된 다른 글 수정·삭제 · 같은 글 중복 게시 · 지시에 없는 설정 변경.\n(보고는 POST http://127.0.0.1:8011/api/report — 서버가 batchboard now 로 aside 배치에 남긴다)⑦ 탭 규칙(이부장 자동 추가 · 이 줄이 ⓪ 의 탭 한도보다 우선한다): 🔴 전체 탭이 7개를 넘어도 blocked 하지 말고 시작한다(남은 탭은 사장님 탭이라 닫을 수 없다 — 2026-10-16 #131·#133·#136 세 번 막힘). 작업에 쓸 탭은 openTab 으로 새로 열고, 끝나면 그 탭을 closeTab 으로 닫는다(REPL 이 연 탭은 닫힌다 — #134 실측). 기존 사용자 탭은 attach·이동·닫기 하지 않는다. 보고에 '총 탭 N개' 를 적는다.\n⑧ 보고 규칙(이부장 자동 추가 · 2026-10-16 사장님 \"모든 지시에 실행 후 항상 보고하도록 지시서에 꼭 담아서\"): 🔴 이 지시는 끝나든 막히든 **반드시 마지막에 보고하고 끝낸다** — POST http://127.0.0.1:8011/api/report 로 state=done(무엇을 했고 라이브 확인 결과·URL) 또는 state=blocked(어디서 왜 멈췄고 무엇을 시도했나). 시작할 때 state=doing 한 번. 보고 없이 대화를 끝내지 마라(#151 무보고로 대기열이 섰다). 이부장의 steer·추가 메시지를 받아도 같다."
     }
    ]
   },
@@ -4542,17 +4542,29 @@
    "order_at": "2026-10-24 02:33"
   }
  },
- "updated": "2026-10-24 05:43:49",
+ "updated": "2026-10-24 05:48:20",
  "current": {
-  "batch": "pub1024e411",
-  "code": "",
+  "batch": "followup",
+  "code": "F1-16",
   "title": "",
   "step": 1,
-  "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/De2cCkWE5Ry/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-  "since": "02:29",
-  "since_at": "2026-10-24 02:29:23"
+  "what": "[체인] #385 E4-11 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De2c0rnkzCv · ✅ 쓰레드 이미지 ↔ thread_E4-11_realestate_fake_listing.png) — [이과장] 기록: python -m studio.pipeline threads-link --code E4-11 --url https://www.threads.com/@magsori8975/post/De2c0rnkzCv → 4채널 완결 확인",
+  "since": "17:44",
+  "since_at": "2026-10-21 17:44:50"
  },
  "log": [
+  {
+   "t": "05:48:20",
+   "text": "▶ F1-16  — 1/7단계 · [체인] #385 E4-11 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De2c0rnkzCv · ✅ 쓰레드 이미지 ↔ thread_E4-11_realestate_fake_listing.png) — [이과장] 기록: python -m studio.pipeline threads-link --code E4-11 --url https://www.threads.com/@magsori8975/post/De2c0rnkzCv → 4채널 완결 확인"
+  },
+  {
+   "t": "05:48:16",
+   "text": "📄 aside 작업 지시 등록(2500자, 2026-10-24 05:48)"
+  },
+  {
+   "t": "05:48:05",
+   "text": "▶   — 1/7단계 · [Aside][done] #385 E4-11 쓰레드 게시 05:47: 본문 339자 파일과 일치(블로그·네이버 224451906727 링크·무료 사진 출처)·링크 카드 2개 닫음·실사진 1장 첨부(미리보기 확인) 후 게시 1회. 새 탭에서 프로필 맨 위 실 ID De2c0rnkzCv 확인(접속 200, 사진 1장, 중복 없음) · 총 탭 12개 · https://www.threads.com/@magsori8975/post/De2c0rnkzCv"
+  },
   {
    "t": "05:43:49",
    "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/De2cCkWE5Ry/ (naver-link 가 자동 보고) · 남음: 쓰레드"
@@ -4700,18 +4712,6 @@
   {
    "t": "02:52:01",
    "text": "📄 aside 작업 지시 등록(1952자, 2026-10-24 02:52)"
-  },
-  {
-   "t": "02:51:20",
-   "text": "▶   — 3/7단계 · F2-21 발행 ✓(run 39997020417, 라이브 200·썸네일 404 확인) · D5-07 발행 ✓(run 39997657833, 라이브 200) · 검색설명 Aside 초안 2건 준비(docs/aside_drafts/F2-21_검색설명.txt·D5-07_검색설명.txt) — 🙋 이부장: 등록 요청. 네이버 원고는 E4-11 게시 기록 뒤 순서(naver-draft 게이트)에 맞춰 이어서 준비"
-  },
-  {
-   "t": "02:49:33",
-   "text": "▶   — 2/7단계 · D5-07 발행 ✓ 라이브 200·썸네일 확인 · 후속(검색설명·네이버·인스타·쓰레드)은 승인 순서대로(E4-11→F2-21→D5-07)"
-  },
-  {
-   "t": "02:49:30",
-   "text": "▶   — 2/7단계 · F2-21 발행 ✓ 라이브 200·썸네일 확인 · 후속(검색설명·네이버·인스타·쓰레드)은 승인 순서대로(E4-11→F2-21→D5-07)"
   }
  ],
  "currents": {
@@ -4810,7 +4810,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][doing] 수신 2026-10-24 05:4x — 지시 #385 시작 · E4-11 쓰레드",
+   "what": "[Aside][done] #385 E4-11 쓰레드 게시 05:47: 본문 339자 파일과 일치(블로그·네이버 224451906727 링크·무료 사진 출처)·링크 카드 2개 닫음·실사진 1장 첨부(미리보기 확인) 후 게시 1회. 새 탭에서 프로필 맨 위 실 ID De2c0rnkzCv 확인(접속 200, 사진 1장, 중복 없음) · 총 탭 12개 · https://www.threads.com/@magsori8975/post/De2c0rnkzCv",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -4828,7 +4828,7 @@
    "code": "F1-16",
    "title": "",
    "step": 1,
-   "what": "[체인] #384 E4-11 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/De2cCkWE5Ry/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ realestate_fake_listing_01.png  MAD 0.0 / ✅ 인스타 카드 2 ↔ realestate_fake_listing_02.png  MAD 0.1 / ✅ 인스타 카드 3 ↔ realestate_fake_listing_03.png  MAD 0.0) — [이과장] 기록: python -m studio.pipeline insta-link --code E4-11 --url https://www.instagram.com/magsori8975/p/De2cCkWE5Ry/ → 4채널 완결 확인",
+   "what": "[체인] #385 E4-11 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De2c0rnkzCv · ✅ 쓰레드 이미지 ↔ thread_E4-11_realestate_fake_listing.png) — [이과장] 기록: python -m studio.pipeline threads-link --code E4-11 --url https://www.threads.com/@magsori8975/post/De2c0rnkzCv → 4채널 완결 확인",
    "since": "17:44",
    "since_at": "2026-10-21 17:44:50"
   },
@@ -19434,6 +19434,22 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/De2cCkWE5Ry/ (naver-link 가 자동 보고) · 남음: 쓰레드"
+  },
+  {
+   "ts": "2026-10-24 05:48:05",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] #385 E4-11 쓰레드 게시 05:47: 본문 339자 파일과 일치(블로그·네이버 224451906727 링크·무료 사진 출처)·링크 카드 2개 닫음·실사진 1장 첨부(미리보기 확인) 후 게시 1회. 새 탭에서 프로필 맨 위 실 ID De2c0rnkzCv 확인(접속 200, 사진 1장, 중복 없음) · 총 탭 12개 · https://www.threads.com/@magsori8975/post/De2c0rnkzCv"
+  },
+  {
+   "ts": "2026-10-24 05:48:20",
+   "bid": "followup",
+   "code": "F1-16",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #385 E4-11 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De2c0rnkzCv · ✅ 쓰레드 이미지 ↔ thread_E4-11_realestate_fake_listing.png) — [이과장] 기록: python -m studio.pipeline threads-link --code E4-11 --url https://www.threads.com/@magsori8975/post/De2c0rnkzCv → 4채널 완결 확인"
   }
  ]
 }
