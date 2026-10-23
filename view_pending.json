@@ -1,13 +1,13 @@
 {
- "computed_at": "2026-10-24 06:19:11",
- "source_head": "29f35e09c708",
+ "computed_at": "2026-10-24 06:25:10",
+ "source_head": "59930ed56274",
  "ids": [
   "D5-07",
   "E4-12",
   "F2-21",
-  "G3-26",
   "claude-limit-reset-1022",
-  "deploy-thumb-406"
+  "deploy-thumb-406",
+  "deploy-thumb-407"
  ],
  "posts": [
   {
@@ -161,37 +161,10 @@
  ],
  "publish": [
   {
-   "code": "G3-26",
-   "title": "부산 웰니스 여행 금정산 트레킹+온천 1만 원 — 10월 30일 신청 마감 (2026)",
-   "go": false,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 부산웰니스여행금정산_글_HTML.txt",
-     "path": "부산웰니스여행금정산_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/406_busan_wellness_geumjeong.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/406_busan_wellness_geumjeong.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "todo"
-  },
-  {
    "code": "E4-12",
    "title": "가입제한서비스 11월 20일부터 신규 계약에 기본 가입 — 거부·해지 방법과 확인 못 한 점 (2026)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 가입제한서비스기본가입_글_HTML.txt",
@@ -227,6 +200,14 @@
   {
    "id": "deploy-thumb-406",
    "what": "deploy.bat 실행 — 발행 대기 글 썸네일(406_busan_wellness_geumjeong.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-407",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(407_subscription_restriction.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
    "due": "2026-10-24",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
