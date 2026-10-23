@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-02T05:20:46",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "gsc-boost-approve-0831",
-   "detail": "gsc-boost-go-0902 로 통합 — 방향/착수를 두 장으로 나눠 물어 사장님 시간을 뺏었다. 진단 내용은 그 카드와 docs/GSC_색인미생성_사유분석_20260829.md 에 그대로 있다",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-02T05:20:47",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "v0check.fail",
    "target": "E4-11",
    "detail": "본문 법조문(제23조의2~5·제26조④·제28조②5~8·부칙 시행일)은 DRF MST286987 원문과 전부 일치, 가상사례 표시·확인못한것 박스 OK. 단 제목 '과태료 500만원'·'징역 1년'이 상한(500만원 이하·1년 이하)을 확정형으로 오도 → 제목(DB·큐·초안 첫줄·pos",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T20:52:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-e4-11",
+   "detail": "이부장 확인 20:53: 제목 '이하' 누락 1건 — 이과장 수정 지시, 재검사 후 결재 상신",
    "via": "cli"
   }
  ]
