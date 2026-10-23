@@ -275,7 +275,7 @@ function build(vert){
   const pl=el("g",{id:"pipes"},svg);
   G.edges.forEach(e=>{const id=e[0]+"-"+e[1],cr=e[3]?" cr":"";el("path",{d:e[2],class:"pc"+cr,id:"pc-"+id},pl);const c=el("path",{d:e[2],class:"ed"+cr,id:"ed-"+id},pl);
     PT[e[0]+">"+e[1]]=sample(c,48);
-    if(e[0]!=="hub"&&!e[3]){const m=PT[e[0]+">"+e[1]][24];const t=el("text",{class:"fl",id:"fl-"+id,x:G.vert?m[0]+10:m[0],y:G.vert?m[1]+3:m[1]-11,"text-anchor":G.vert?"start":"middle"},pl);t.textContent=""}});
+    if(e[0]!=="hub"&&!e[3]){const m=PT[e[0]+">"+e[1]][G.vert&&e[0]==="pub"?(e[1]==="blog"?4:9):24];   /* 폰: 발행 아래 글자는 캐리어 선로 위 틈에 */const t=el("text",{class:"fl",id:"fl-"+id,x:G.vert?m[0]+10:m[0],y:G.vert?m[1]+3:m[1]-11,"text-anchor":G.vert?"start":"middle"},pl);t.textContent=""}});
   el("g",{id:"parts",filter:"url(#glw)"},svg);
   const gl=el("g",{id:"gauges"},svg);Object.values(G.nodes).forEach(n=>gauge(n,n.k,gl,n.go));
   const hg=el("g",{class:"hub",id:"hub",tabindex:"0",role:"button","aria-label":"Aside 허브 상세"},svg);el("circle",{cx:G.hub.x,cy:G.hub.y,r:16},hg);const ht=el("text",{x:G.hub.x,y:G.hub.y+3},hg);ht.textContent="Aside";
@@ -376,7 +376,7 @@ function renderCarrier(s,slot){
     else{cnt[k]++;p=crPos(n,slot("c"+k));if(!p)over[k]++}
     if(p)setDot("e|"+e.code,"🧳"+e.code,p.x,p.y,"pu",nodeCenter("eq"),()=>focusEdit(e.code))});
   prevEd=cur;
-  const t2={eq:"대기 "+cnt.eq+"편",ed:"작성 "+cnt.ed+"편",ea:"정정 "+cnt.ea+" · 오늘 끝남 "+done};
+  const t2={eq:"대기 "+cnt.eq+"편",ed:"작성 "+cnt.ed+"편",ea:G.vert?"정정 "+cnt.ea+" · ✅"+done:"정정 "+cnt.ea+" · 오늘 끝남 "+done};
   CRN.forEach(([k])=>{const nd=document.getElementById("nd-"+k);if(!nd)return;nd.setAttribute("class","nd cr"+(cnt[k]?" live":""));
     document.getElementById("t2-"+k).textContent=t2[k]+(over[k]?" (+"+over[k]+")":"");
     setGauge(k,cnt[k],cnt[k]/CAP,cnt[k]?"pu":"idle",null,null)});
