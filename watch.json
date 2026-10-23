@@ -22882,6 +22882,16 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "gatesync-push-fail-10231623",
+   "added": "2026-10-23",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): push 재시도도 실패(syncorigin exit 0): ====================================================\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'\n",
+   "due": "2026-10-23",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
