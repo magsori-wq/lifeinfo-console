@@ -22611,6 +22611,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "topic1023-pickup",
+   "added": "2026-10-23",
+   "what": "3. 이 topic1023(글감 2~3건, 15시) 지시서를 읽었나 — 10:55 깨움 20초 무응답(재시작 직후)",
+   "due": "2026-10-23",
+   "cmd": "python -m studio.cpstate --list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "livefix-lf234-after-1024",
+   "added": "2026-10-23",
+   "what": "livefix1019 LF-2~4(낡은 날짜 4편·출처박스 7편·교차링크 32편) — 10/24 13:26 보강실험 재크롤 판정·62편 목록 확정 뒤 대상 재선별(62편과 겹치는 글 제외) → 결재함 approve 상정",
+   "due": "2026-10-24",
+   "cmd": "python -m studio.batchboard order --id livefix1019",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
