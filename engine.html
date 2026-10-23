@@ -452,11 +452,11 @@ function renderLanes(s){
       (x.note?`<div class="nt">${esc(x.note)}</div>`:"")+`</div>`).join("");
   /* ✏ 글 수정 흐름 — 보라색 별도 선로(사장님 10-23 「글수정에 관련한 지도 흐름에도 다른색으로」). 새 글 흐름과 섞지 않는다.
      화살표는 다음 칸에 지금 글이 있을 때만 흐른다(지나간 완료는 정지). */
-  const ED=[["draft","✍ 개선안 작성","이과장"],["boss","🖊 결재","사장님"],["naver","🔁 블로그 반영·네이버 정정","이과장·Aside"],["sns","📱 인스타·쓰레드 정정","Aside(결재 후)"],["done","✅ 오늘 끝남",""]];
+  const ED=[["queue","🧳 트렁크(대기)","계획된 대상"],["draft","✍ 개선안 작성","이과장"],["boss","🖊 결재","사장님"],["naver","🔁 블로그 반영·네이버 정정","이과장·Aside"],["sns","📱 인스타·쓰레드 정정","Aside(결재 후)"],["done","✅ 오늘 끝남",""]];
   const eds=s.edits||[];
-  document.getElementById("editLane").innerHTML=`<div class="lh">✏ 글 수정 흐름(라이브 글 정정·개선) — 진행 ${eds.filter(e=>e.stage!=="done").length}편 · 오늘 끝남 ${eds.filter(e=>e.stage==="done").length}편</div><div class="erow">`+
+  document.getElementById("editLane").innerHTML=`<div class="lh">✏ 글 수정 흐름(라이브 글 정정·개선) — 대상 ${eds.length}편 = 대기 ${eds.filter(e=>e.stage==="queue").length} · 진행 ${eds.filter(e=>e.stage!=="done"&&e.stage!=="queue").length} · 오늘 끝남 ${eds.filter(e=>e.stage==="done").length}</div><div class="erow">`+
     ED.map(([k,nm,who],i)=>{const a=eds.filter(e=>e.stage===k);
-      return (i?`<div class="ear${a.length&&k!=="done"?" on":""}" aria-hidden="true"></div>`:"")+
+      return (i?`<div class="ear${a.length&&k!=="done"&&k!=="queue"?" on":""}" aria-hidden="true"></div>`:"")+
         `<div class="est${a.length?" has":""}${k==="done"?" dn":""}"><b>${nm}</b>${who?`<small>${esc(who)}</small>`:""}<div class="ec">${a.map(e=>`<span>${esc(e.code)}</span>`).join("")||"—"}</div></div>`}).join("")+`</div>`;
   document.getElementById("drvLane").innerHTML=
     `<div class="lh">🚗 운전자 — 마디를 움직이는 쪽</div>`+
