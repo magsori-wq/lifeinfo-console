@@ -22860,8 +22860,10 @@
    "due": "2026-10-23",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-23",
+   "result": "deploy.bat 16:1x 완료, 썸네일 github.io 200(사장님 붙여넣은 출력 416개 200)"
   },
   {
    "id": "deploy-thumb-401",
@@ -22902,6 +22904,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "pubqueue-autoorder-race-1023",
+   "added": "2026-10-23",
+   "what": "동시 승인 3건(16:22 C1-18·F3-09·E4-10) 중 E4-10 발행 지시서 자동 발급 누락 — pubqueue._auto_order 가 공용 tmp(_autoorder_*.json/txt)·batch.json 을 동시에 써서 경쟁 의심. 원인 실측 후 코드별 tmp 이름·잠금으로 수정(설계도 먼저)",
+   "due": "2026-10-24",
+   "cmd": "grep -n _autoorder studio/pubqueue.py",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1023,
+   "by": "이부장"
   }
  ]
 }
