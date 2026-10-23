@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-01T12:08:05",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "audit-test-0901",
-   "detail": "시험",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-01T12:08:15",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15983,6 +15975,30 @@
    "action": "watch.done",
    "target": "v0reject-b2-23",
    "detail": "이부장 재계산으로 V0 반려 사유가 검사 에이전트 계산 착오로 확인 — v0check pass(이부장) 재기록, 초안 수정 불필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T10:01:32",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "B2-23",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T10:01:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "console-check-pass-after-deploy",
+   "detail": "10:00 deploy 후 콘솔 정합성 검사 2회 연속 success(39881466143·39881502166)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T10:01:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-397",
+   "detail": "10:00 deploy.bat · github.io thumbs/397 200 이부장 실측",
    "via": "cli"
   }
  ]

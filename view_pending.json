@@ -1,17 +1,16 @@
 {
- "computed_at": "2026-10-23 10:00:00",
+ "computed_at": "2026-10-23 10:01:57",
  "source_head": "dcba14043dc2",
  "ids": [
   "B2-23",
-  "claude-limit-reset-1022",
-  "deploy-thumb-397"
+  "claude-limit-reset-1022"
  ],
  "posts": [],
  "publish": [
   {
    "code": "B2-23",
    "title": "불법사금융예방대출 금리 12.5%로 바뀌었다, 옛 대출 추가대출은 올해까지",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,7 +32,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -43,14 +42,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-397",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(397_unlawful_loan_prevent.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
