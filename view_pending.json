@@ -1,17 +1,113 @@
 {
- "computed_at": "2026-10-24 02:37:35",
- "source_head": "427eb43840ed",
+ "computed_at": "2026-10-23 17:48:30",
+ "source_head": "33fb30aa9c86",
  "ids": [
   "D5-07",
   "E4-11",
   "F2-21",
-  "claude-limit-reset-1022",
-  "community-reply3-boss-retry-1024",
-  "deploy-thumb-403",
-  "deploy-thumb-404",
-  "deploy-thumb-405"
+  "claude-limit-reset-1022"
  ],
  "posts": [
+  {
+   "code": "D5-07",
+   "title": "무인점포 절도범 CCTV 사진 붙이면 벌금 200만 원? 점주 대응 순서 (2026)",
+   "slug": "무인점포절도대응",
+   "eng": "unmanned_store_theft",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_무인점포절도대응.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/405_unmanned_store_theft.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_무인점포절도대응.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_무인점포절도대응.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  },
+  {
+   "code": "F2-21",
+   "title": "디지털관광주민증 12월 3일 법제화 — 부산·경남 9곳 어디서 쓰나 (2026)",
+   "slug": "디지털관광주민증발급",
+   "eng": "digital_tourist_pass",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_디지털관광주민증발급.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/404_digital_tourist_pass.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_디지털관광주민증발급.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_디지털관광주민증발급.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  },
   {
    "code": "E4-11",
    "title": "부동산 허위매물 처벌 12월 17일부터 — 광고는 과태료 500만원 이하, 허위정보 유포는 징역 1년 이하 (2026)",
@@ -63,62 +159,7 @@
    }
   }
  ],
- "publish": [
-  {
-   "code": "F2-21",
-   "title": "디지털관광주민증 12월 3일 법제화 — 부산·경남 9곳 어디서 쓰나 (2026)",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 디지털관광주민증발급_글_HTML.txt",
-     "path": "디지털관광주민증발급_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/404_digital_tourist_pass.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/404_digital_tourist_pass.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "ready"
-  },
-  {
-   "code": "D5-07",
-   "title": "무인점포 절도범 CCTV 사진 붙이면 벌금 200만 원? 점주 대응 순서 (2026)",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 무인점포절도대응_글_HTML.txt",
-     "path": "무인점포절도대응_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/405_unmanned_store_theft.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/405_unmanned_store_theft.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "ready"
-  }
- ],
+ "publish": [],
  "actions": [
   {
    "id": "claude-limit-reset-1022",
@@ -126,38 +167,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-403",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(403_realestate_fake_listing.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-404",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(404_digital_tourist_pass.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-23",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "community-reply3-boss-retry-1024",
-   "what": "커뮤니티 추가 답글 2회 거부(#359 정책위반·#362 무표시) — 연속 게시 스팸 필터 추정. 몇 시간 뒤 사장님이 직접 1회 게시(원문 docs/aside_drafts/adsense_커뮤니티답글2_게시.txt 「답글 시작~끝」)",
-   "due": "2026-10-24",
-   "cmd": "https://support.google.com/adsense/thread/473869774",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-405",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(405_unmanned_store_theft.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
