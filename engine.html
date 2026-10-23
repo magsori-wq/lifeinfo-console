@@ -29,6 +29,7 @@ h1{font-size:1.1rem;margin:0;display:flex;align-items:center;gap:6px}
 .btn{font:inherit;font-size:.82rem;color:var(--bl);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:3px 9px;cursor:pointer;text-decoration:none;white-space:nowrap}
 .btn:hover{border-color:var(--bl)}
 #alarm{display:none;border-radius:6px;padding:6px 10px;font-weight:800;font-size:.88rem;overflow-wrap:anywhere;cursor:pointer}
+.lane{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:6px 0}.lane .lh{font-size:.78rem;font-weight:800;color:var(--muted);align-self:center;min-width:100%}.lane .cp{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-left:4px solid var(--idle);border-radius:6px;padding:4px 7px;background:var(--panel2);font-size:.76rem;line-height:1.35}.lane .cp b{display:block;font-size:.8rem}.lane .cp .nt{color:var(--muted);overflow-wrap:anywhere}.lane .cp.ok{border-left-color:var(--ok)}.lane .cp.am{border-left-color:var(--am)}.lane .cp.rd{border-left-color:var(--rd)}.lane .cp.idle{opacity:.7}.lane .unr{color:var(--am);font-weight:800}
 #alarm.rd{display:block;background:var(--rd);color:#fff;animation:alarm 1s steps(2) infinite}
 #alarm.am{display:block;background:var(--am);color:#1a1200}
 #alarm small{font-weight:400;opacity:.9}
@@ -150,7 +151,9 @@ html.reduce *{animation:none!important;transition:none!important}
   <div class="main">
     <section class="panel" id="gpanel">
       <h2>🗺 지도 <small>마디·점·종착지를 누르면 오른쪽(폰은 아래) 목록의 그 자리로 이동합니다</small></h2>
+      <div class="lane" id="supLane" aria-label="연료 공급자"></div>
       <svg id="map" role="img" aria-label="글이 출발에서 종착지 4곳으로 가는 흐름 지도"></svg>
+      <div class="lane" id="drvLane" aria-label="운전자"></div>
       <div class="rp"><button class="btn" id="rpbtn" type="button">▶ 오늘 하루 재생 (20초)</button><div class="rpbar" id="rpbar" aria-hidden="true"><div class="rpfill" id="rpfill"></div></div><span class="rpt" id="rpt">--:--</span><span class="mo" id="mo"><span id="motx"></span> <button class="btn" id="mobtn" type="button"></button></span></div>
       <div class="lg">● 관 속 입자 = 오늘 그 구간을 지난 글(+지금 서 있는 글) — 많을수록 촘촘·빠름 · 빨간 맥박 = 멈춘 구간(입자 정지) · 링 = 서 있는 글 수(3건이면 가득·병목) · 바늘 = 가장 오래 선 시간(눈금 끝 = 위험 임계, 주황 띠 = 경고) · 종착지 물결 = 새 도착</div>
       <div class="rpnote" id="rpnote"></div>
@@ -409,10 +412,28 @@ function render(s){
     else{const q=edgePt(src,k,.55),off=slot("e"+k)*6;setDot(id,x.code,q.x-4,q.y-4+off,x.lvl==="amber"?"am":"",nodeCenter(src))}})});
   TERM.forEach(([k])=>{const n=G.nodes[k];((ch[k]||{}).done||[]).forEach(x=>{if(inTransit.has(x.code))return;const p=cellPos(n,slot(k));if(p)setDot("d|"+x.code+"|"+k,x.code,p.x,p.y,"dn",null)})});
   sweepDots();
+  renderLanes(s);
   renderReplayBar(s);setLive();
   renderText(s,g);renderDetail();renderStrip(s);tickMin();
 }
 
+/* ---------- 🛢 연료 공급자 · 🚗 운전자 (사장님 10-23 「연료공급자와 운전자를 분리하고 엔진흐름지도에 보여야」) ----------
+   공급자 = ① 글감에 연료를 대는 쪽(루틴8·9 는 상품 공급 — 연료 숫자에 안 섞는다). 운전자 = 마디를 실제로 움직이는 쪽.
+   note 는 기록 원문 그대로 앞부분만(상태로 바꿔 쓰지 않는다). */
+function renderLanes(s){
+  const fu=s.fuel||{},sup=s.suppliers||[],drv=s.drivers||[];
+  const lv=x=>x.lvl==="red"?"rd":x.lvl==="amber"?"am":x.lvl==="idle"?"idle":"ok";
+  document.getElementById("supLane").innerHTML=
+    `<div class="lh">🛢 연료 공급자 → ① 글감 ${fu.min!=null?`(⛽ 재고 ${fu.stock}/${fu.min}${fu.stock===0?" · 연료 없음":""})`:""}</div>`+
+    sup.map(x=>`<div class="cp ${lv(x)}" title="${esc(x.note||"")}"><b>${x.kind==="상품"?"🛒":"🛢"} ${esc(x.who)}</b>`+
+      (x.ran?`${esc(x.at||"")} · 오늘 ${x.kind==="상품"?"상품":"글감"} ${x.today||0}건`:"오늘 아직 기록 없음")+
+      (x.order?` · 지시서 ${esc(x.order.id)} ${x.order.read?"읽음":"<span class='unr'>안 읽힘</span>"}`:"")+
+      (x.note?`<div class="nt">${esc(x.note)}</div>`:"")+`</div>`).join("");
+  document.getElementById("drvLane").innerHTML=
+    `<div class="lh">🚗 운전자 — 마디를 움직이는 쪽</div>`+
+    drv.map(u=>`<div class="cp ${u.lvl==="red"?"rd":u.lvl==="amber"?"am":"ok"}"><b>${esc(u.who.replace("(감시)",""))} · ${esc(u.role||"")}</b>${esc(u.state||"")}`+
+      (u.last_min!=null?` · 소식 ${fmtMin(u.last_min)} 전`:"")+(u.cur?`<div class="nt">지금: ${esc(u.cur)}</div>`:"")+`</div>`).join("");
+}
 /* ---------- 살아 있음(레이더) — 감시 장치·상태 파일 신선도와 연동 ---------- */
 function stAge(s){const d=new Date(String(s&&s.at||"").slice(0,19).replace(" ","T"));return isNaN(d)?1e9:(Date.now()-d.getTime())/1000}
 function setLive(){
