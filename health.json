@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-10-23T09:59:40",
+ "checked_at": "2026-10-23T01:06:13",
  "light": "yellow",
- "pass": 16,
- "warn": 3,
+ "pass": 14,
+ "warn": 4,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 414편"
+   "msg": "count 일치: 415편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 414/414"
+   "msg": "thumb 1:1 정합 통과: 415/415"
   },
   {
    "level": "PASS",
@@ -31,15 +31,11 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 414개 코드 모두 DB.osmu 일치"
+   "msg": "매니페스트 신선도 통과: 415편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 414편 DB와 일치"
-  },
-  {
-   "level": "PASS",
-   "msg": "posts_index 신선도 통과: 414편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 415편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -47,7 +43,7 @@
   },
   {
    "level": "PASS",
-   "msg": "원본가치 게이트 통과: 266편(신규 글, 148편은 기존 글로 예외)"
+   "msg": "원본가치 게이트 통과: 267편(신규 글, 148편은 기존 글로 예외)"
   },
   {
    "level": "PASS",
@@ -55,11 +51,7 @@
   },
   {
    "level": "PASS",
-   "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
-  },
-  {
-   "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 288종"
+   "msg": "초안 코드 1:1 통과: 287종"
   },
   {
    "level": "PASS",
@@ -67,7 +59,7 @@
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 844개 .py"
+   "msg": "소스 구문 통과: 839개 .py"
   },
   {
    "level": "WARN",
@@ -75,11 +67,15 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 184개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
+   "msg": "미사용 썸네일 182개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
   },
   {
    "level": "WARN",
-   "msg": "중분류 25/35개가 6~7편 초과 — 분가 검토(규칙 §5): F4 29편, H1 24편, G3 24편, A1 21편, B2 19편, A2 19편, B4 18편, D1 17편, F1 16편, G1 15편, F2 15편, E2 15편, D2 15편, C2 15편, A5 15편, G4 13편, D4 12편, A3 12편, C1 11편, C4 10편, B1 10편, D3 9편, A4 9편, F3 8편, C3 8편"
+   "msg": "중분류 25/35개가 6~7편 초과 — 분가 검토(규칙 §5): F4 29편, H1 24편, G3 24편, A1 21편, B2 20편, A2 19편, B4 18편, D1 17편, F1 16편, G1 15편, F2 15편, E2 15편, D2 15편, C2 15편, A5 15편, G4 13편, D4 12편, A3 12편, C1 11편, C4 10편, B1 10편, D3 9편, A4 9편, F3 8편, C3 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "채널정합 검사 건너뜀(Unterminated string starting at: line 16909 column 12 (char )"
   }
  ]
 }
