@@ -31,7 +31,7 @@ h1{font-size:1.1rem;margin:0;display:flex;align-items:center;gap:6px}
 #alarm{display:none;border-radius:6px;padding:6px 10px;font-weight:800;font-size:.88rem;overflow-wrap:anywhere;cursor:pointer}
 .lane{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:6px 0}.lane .lh{font-size:.78rem;font-weight:800;color:var(--muted);align-self:center;min-width:100%}.lane .cp{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-left:4px solid var(--idle);border-radius:6px;padding:4px 7px;background:var(--panel2);font-size:.76rem;line-height:1.35}.lane .cp b{display:block;font-size:.8rem}.lane .cp .nt{color:var(--muted);overflow-wrap:anywhere}.lane .cp.ok{border-left-color:var(--ok)}.lane .cp.am{border-left-color:var(--am)}.lane .cp.rd{border-left-color:var(--rd)}.lane .cp.idle{opacity:.7}.lane .unr{color:var(--am);font-weight:800}
 .drv text{font-size:10.5px;fill:var(--muted);font-weight:700}.drv.on text{fill:var(--bl);animation:drvp 1.6s ease-in-out infinite}@keyframes drvp{0%,100%{opacity:1}50%{opacity:.35}}.lane .cp.feed{border-left-color:var(--bl);background:linear-gradient(90deg,var(--panel2) 0%,rgba(77,179,255,.18) 50%,var(--panel2) 100%);background-size:200% 100%;animation:feedflow 1.4s linear infinite}@keyframes feedflow{0%{background-position:100% 0}100%{background-position:-100% 0}}.lane .fd{display:block;color:var(--bl);font-weight:800}#nd-topic.fueling .bx{stroke:var(--bl);stroke-width:3;animation:fuelg 1.2s ease-in-out infinite}@keyframes fuelg{0%,100%{stroke-opacity:1}50%{stroke-opacity:.3}}html.reduce .drv.on text,html.reduce .lane .cp.feed,html.reduce #nd-topic.fueling .bx{animation:none}
-.eflow{margin:8px 0;--pu:#a46bff}.eflow .lh{font-size:.78rem;font-weight:800;color:var(--pu);margin-bottom:4px}.eflow .erow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;overflow-x:auto}.eflow .est{flex:1 1 0;min-width:0;overflow-wrap:anywhere;border:1px solid var(--line);border-top:3px solid var(--idle);border-radius:6px;padding:4px 6px;background:var(--panel2);font-size:.72rem;line-height:1.3}.eflow .est b{display:block;font-size:.74rem}.eflow .est small{color:var(--muted)}.eflow .est.has{border-top-color:var(--pu);box-shadow:0 0 0 1px var(--pu) inset}.eflow .est.dn.has{border-top-color:var(--ok);box-shadow:none}.eflow .ec span{display:inline-block;margin:2px 3px 0 0;padding:0 4px;border-radius:4px;background:var(--pu);color:#fff;font-weight:700;font-size:.7rem}.eflow .est.dn .ec span{background:var(--ok)}.eflow .ear{flex:0 0 18px;align-self:center;height:4px;margin:0 2px;background:var(--line);border-radius:2px;position:relative;overflow:hidden}.eflow .ear.on{background:linear-gradient(90deg,transparent 0,var(--pu) 40%,transparent 80%);background-size:200% 100%;animation:eflow 1s linear infinite}@keyframes eflow{0%{background-position:100% 0}100%{background-position:-100% 0}}html.reduce .eflow .ear.on{animation:none;background:var(--pu)}@media (max-width:560px){.eflow .est{font-size:.62rem;padding:3px 3px}.eflow .est b{font-size:.64rem}.eflow .ear{flex-basis:8px;margin:0 1px}.eflow .ec span{font-size:.6rem;padding:0 2px}}
+.eflow{margin:8px 0;--pu:#a46bff}.eflow .lh{font-size:.78rem;font-weight:800;color:var(--pu);margin-bottom:4px}.eflow .erow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;overflow-x:auto}.eflow .est{flex:1 1 0;min-width:0;overflow-wrap:anywhere;border:1px solid var(--line);border-top:3px solid var(--idle);border-radius:6px;padding:4px 6px;background:var(--panel2);font-size:.72rem;line-height:1.3}.eflow .est b{display:block;font-size:.74rem}.eflow .est small{color:var(--muted)}.eflow .est.has{border-top-color:var(--pu);box-shadow:0 0 0 1px var(--pu) inset}.eflow .est.dn.has{border-top-color:var(--ok);box-shadow:none}.eflow .ec span{display:inline-block;will-change:transform;margin:2px 3px 0 0;padding:0 4px;border-radius:4px;background:var(--pu);color:#fff;font-weight:700;font-size:.7rem}.eflow .est.dn .ec span{background:var(--ok)}.eflow .ear{flex:0 0 18px;align-self:center;height:4px;margin:0 2px;background:var(--line);border-radius:2px;position:relative;overflow:hidden}.eflow .ear.on{background:linear-gradient(90deg,transparent 0,var(--pu) 40%,transparent 80%);background-size:200% 100%;animation:eflow 1s linear infinite}@keyframes eflow{0%{background-position:100% 0}100%{background-position:-100% 0}}html.reduce .eflow .ear.on{animation:none;background:var(--pu)}@media (max-width:560px){.eflow .est{font-size:.62rem;padding:3px 3px}.eflow .est b{font-size:.64rem}.eflow .ear{flex-basis:8px;margin:0 1px}.eflow .ec span{font-size:.6rem;padding:0 2px}}
 #alarm.rd{display:block;background:var(--rd);color:#fff;animation:alarm 1s steps(2) infinite}
 #alarm.am{display:block;background:var(--am);color:#1a1200}
 #alarm small{font-weight:400;opacity:.9}
@@ -431,6 +431,18 @@ function render(s){
 /* ---------- 🛢 연료 공급자 · 🚗 운전자 (사장님 10-23 「연료공급자와 운전자를 분리하고 엔진흐름지도에 보여야」) ----------
    공급자 = ① 글감에 연료를 대는 쪽(루틴8·9 는 상품 공급 — 연료 숫자에 안 섞는다). 운전자 = 마디를 실제로 움직이는 쪽.
    note 는 기록 원문 그대로 앞부분만(상태로 바꿔 쓰지 않는다). */
+/* 🧳 수정 캐리어 전달 — 사장님 10-23 「수정 캐리어를 트렁크에 넣었으면 캐리어 전달이 되는 과정 애니메이션」.
+   직전 화면과 단계가 달라진 캐리어만, 옛 칸 자리에서 새 칸 자리로 날아간다(FLIP). 처음 그릴 땐 트렁크에서 제자리로 실려 나간다. */
+let CR_POS=null;
+function carrierMove(eds){
+  const L=document.getElementById("editLane").getBoundingClientRect();const rel=r=>({left:r.left-L.left,top:r.top-L.top});const now={};document.querySelectorAll("#editLane .cr").forEach(el=>{now[el.dataset.c]={el,r:rel(el.getBoundingClientRect())}});
+  const first=CR_POS===null,trunk=document.querySelector("#editLane .est");const tr=trunk?rel(trunk.getBoundingClientRect()):null;
+  if(!REDUCE)Object.entries(now).forEach(([c,o])=>{const prev=first?(tr?{left:tr.left+8,top:tr.top+20}:null):(CR_POS[c]||null);
+    if(!prev)return;const dx=prev.left-o.r.left,dy=prev.top-o.r.top;if(Math.abs(dx)+Math.abs(dy)<4)return;
+    o.el.animate([{transform:`translate(${dx}px,${dy}px) scale(1.25)`,opacity:.6,boxShadow:"0 0 10px #a46bff"},{transform:"translate(0,0) scale(1)",opacity:1,boxShadow:"0 0 0 transparent"}],
+      {duration:first?900:1400,easing:"cubic-bezier(.3,.7,.2,1)",delay:first?120*Object.keys(now).indexOf(c):0})});
+  CR_POS={};Object.entries(now).forEach(([c,o])=>{CR_POS[c]={left:o.r.left,top:o.r.top}});
+}
 function renderLanes(s){
   const fu=s.fuel||{},sup=s.suppliers||[],drv=s.drivers||[];
   /* ⛽ 공급 애니메이션 — 최근 90분 안에 글감을 실제로 낸 공급자만 흐른다(지나간 기록은 정지). */
@@ -454,10 +466,11 @@ function renderLanes(s){
      화살표는 다음 칸에 지금 글이 있을 때만 흐른다(지나간 완료는 정지). */
   const ED=[["queue","🧳 트렁크(대기)","계획된 대상"],["draft","✍ 개선안 작성","이과장"],["boss","🖊 결재","사장님"],["naver","🔁 블로그 반영·네이버 정정","이과장·Aside"],["sns","📱 인스타·쓰레드 정정","Aside(결재 후)"],["done","✅ 오늘 끝남",""]];
   const eds=s.edits||[];
-  document.getElementById("editLane").innerHTML=`<div class="lh">✏ 글 수정 흐름(라이브 글 정정·개선) — 대상 ${eds.length}편 = 대기 ${eds.filter(e=>e.stage==="queue").length} · 진행 ${eds.filter(e=>e.stage!=="done"&&e.stage!=="queue").length} · 오늘 끝남 ${eds.filter(e=>e.stage==="done").length}</div><div class="erow">`+
+  document.getElementById("editLane").innerHTML=`<div class="lh">🧳 수정 캐리어 흐름(라이브 글 정정·개선) — 대상 ${eds.length}편 = 대기 ${eds.filter(e=>e.stage==="queue").length} · 진행 ${eds.filter(e=>e.stage!=="done"&&e.stage!=="queue").length} · 오늘 끝남 ${eds.filter(e=>e.stage==="done").length}</div><div class="erow">`+
     ED.map(([k,nm,who],i)=>{const a=eds.filter(e=>e.stage===k);
       return (i?`<div class="ear${a.length&&k!=="done"&&k!=="queue"?" on":""}" aria-hidden="true"></div>`:"")+
-        `<div class="est${a.length?" has":""}${k==="done"?" dn":""}"><b>${nm}</b>${who?`<small>${esc(who)}</small>`:""}<div class="ec">${a.map(e=>`<span>${esc(e.code)}</span>`).join("")||"—"}</div></div>`}).join("")+`</div>`;
+        `<div class="est${a.length?" has":""}${k==="done"?" dn":""}"><b>${nm}</b>${who?`<small>${esc(who)}</small>`:""}<div class="ec">${a.map(e=>`<span class="cr" data-c="${esc(e.code)}">🧳${esc(e.code)}</span>`).join("")||"—"}</div></div>`}).join("")+`</div>`;
+  carrierMove(eds);
   document.getElementById("drvLane").innerHTML=
     `<div class="lh">🚗 운전자 — 마디를 움직이는 쪽</div>`+
     drv.map(u=>`<div class="cp ${u.lvl==="red"?"rd":u.lvl==="amber"?"am":"ok"}"><b>${esc(u.who.replace("(감시)",""))} · ${esc(u.role||"")}</b>${esc(u.state||"")}`+
