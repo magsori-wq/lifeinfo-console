@@ -4288,7 +4288,8 @@
      "code": "F1-17",
      "title": "F1-17 발행·4채널",
      "state": "todo",
-     "note": ""
+     "note": "",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -4296,17 +4297,21 @@
    "order_at": "2026-10-23 12:16"
   }
  },
- "updated": "2026-10-23 12:16:46",
+ "updated": "2026-10-23 12:25:55",
  "current": {
-  "batch": "draftf117",
+  "batch": "pub1023f117",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "⏸ 대기 — F1-17 승인·V0·pubready 통과했으나 썸네일 398 이 github.io 404(deploy 전). 발행하면 og:image 비어 보류. deploy.bat 후 python tools/pubgo.py F1-17",
-  "since": "12:06",
-  "since_at": "2026-10-23 12:06:19"
+  "step": 8,
+  "what": "✅ F1-17 라이브 발행 확인(https://lifeinfo8975.blogspot.com/2026/10/2026_01469727507.html) — run 39894595051 성공(pubgo 가 '실패'로 오보). 이제 검색설명·네이버 원고·인스타·쓰레드",
+  "since": "12:25",
+  "since_at": "2026-10-23 12:25:55"
  },
  "log": [
+  {
+   "t": "12:25:55",
+   "text": "▶   — 8/7단계 · ✅ F1-17 라이브 발행 확인(https://lifeinfo8975.blogspot.com/2026/10/2026_01469727507.html) — run 39894595051 성공(pubgo 가 '실패'로 오보). 이제 검색설명·네이버 원고·인스타·쓰레드"
+  },
   {
    "t": "12:16:46",
    "text": "📄 pub1023f117 작업 지시 등록(11115자, 2026-10-23 12:16)"
@@ -4462,10 +4467,6 @@
   {
    "t": "11:14:14",
    "text": "✅ D2-03 완료 — D2-03 색인이력 정밀 개선 3/10"
-  },
-  {
-   "t": "11:01:52",
-   "text": "▶   — 4/7단계 · 🔄 D2-03 개선 스크립트 dry-run 통과·결재 항목 approve-d203-1023 등록(이부장 확인 대기). 승인 뒤 --apply"
   }
  ],
  "currents": {
@@ -5440,6 +5441,15 @@
    "what": "⏸ 대기 — F1-17 승인·V0·pubready 통과했으나 썸네일 398 이 github.io 404(deploy 전). 발행하면 og:image 비어 보류. deploy.bat 후 python tools/pubgo.py F1-17",
    "since": "12:06",
    "since_at": "2026-10-23 12:06:19"
+  },
+  "pub1023f117": {
+   "batch": "pub1023f117",
+   "code": "",
+   "title": "",
+   "step": 8,
+   "what": "✅ F1-17 라이브 발행 확인(https://lifeinfo8975.blogspot.com/2026/10/2026_01469727507.html) — run 39894595051 성공(pubgo 가 '실패'로 오보). 이제 검색설명·네이버 원고·인스타·쓰레드",
+   "since": "12:25",
+   "since_at": "2026-10-23 12:25:55"
   }
  },
  "report_log": [
@@ -17796,6 +17806,14 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "⏸ 대기 — F1-17 승인·V0·pubready 통과했으나 썸네일 398 이 github.io 404(deploy 전). 발행하면 og:image 비어 보류. deploy.bat 후 python tools/pubgo.py F1-17"
+  },
+  {
+   "ts": "2026-10-23 12:25:55",
+   "bid": "pub1023f117",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ F1-17 라이브 발행 확인(https://lifeinfo8975.blogspot.com/2026/10/2026_01469727507.html) — run 39894595051 성공(pubgo 가 '실패'로 오보). 이제 검색설명·네이버 원고·인스타·쓰레드"
   }
  ]
 }
