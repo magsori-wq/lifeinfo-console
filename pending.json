@@ -1,19 +1,36 @@
 {
- "rev": "06c5e6bba",
+ "rev": "084a202aa",
  "counts": {
-  "total": 419,
+  "total": 420,
   "osmu_done": 417,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 419,
+  "index_pending": 420,
   "index_requested": 159,
-  "index_todo": 91,
+  "index_todo": 92,
   "index_benign": 169
  },
  "actionable": [
   {
    "code": "C1-18",
    "title": "건강보험료 추징 기간 3년 신설 — 11월 27일부터,",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "E4-10",
+   "title": "AI 의사 광고 11월 27일부터 — 식품 징역 5년·",
    "need": [
     "OSMU",
     "색인요청"
@@ -210,22 +227,6 @@
   {
    "code": "A2-27",
    "title": "소상공인 경영안정 바우처 25만원 — 연매출 1억 40",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A4-08",
-   "title": "가습기살균제 피해 배상 신청 10월 8일 시작 — 20",
    "need": [
     "색인요청"
    ],
