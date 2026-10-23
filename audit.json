@@ -2,22 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-02T05:01:30",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "threads-500-decision",
-   "detail": "운영콘솔 전자결재함에서 완료 처리",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-02T05:01:54",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "topicprop-approve-20260831",
-   "detail": "운영콘솔 전자결재함에서 완료 처리",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-02T05:02:04",
    "actor": "사장님",
    "action": "watch.done",
@@ -15999,6 +15983,22 @@
    "action": "v0check.pass",
    "target": "E4-10",
    "detail": "판단형 비교(식품5년/화장품·약사법1년 3법 대조)+함정(약사법 11/12 vs 광고금지 11/27 부칙단서)+가상사례 5건 표시+체크리스트. DRF 원문 대조: 식품 8조①11호·27조2호·30조, 화장품 13조①4호·37조, 약사법 68조⑦·95조①10호·97조·부칙 단서 모두 일치",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T15:26:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fuel-drafts-seq-1023",
+   "detail": "G3-25·C1-18·F3-09·E4-10 4편 V0 통과·결재함 등록(15:25), 재고 4/3",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-23T16:12:28",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G3-25",
+   "detail": "",
    "via": "cli"
   }
  ]
