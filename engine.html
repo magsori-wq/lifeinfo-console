@@ -31,6 +31,7 @@ h1{font-size:1.1rem;margin:0;display:flex;align-items:center;gap:6px}
 #alarm{display:none;border-radius:6px;padding:6px 10px;font-weight:800;font-size:.88rem;overflow-wrap:anywhere;cursor:pointer}
 .lane{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:6px 0}.lane .lh{font-size:.78rem;font-weight:800;color:var(--muted);align-self:center;min-width:100%}.lane .cp{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-left:4px solid var(--idle);border-radius:6px;padding:4px 7px;background:var(--panel2);font-size:.76rem;line-height:1.35}.lane .cp b{display:block;font-size:.8rem}.lane .cp .nt{color:var(--muted);overflow-wrap:anywhere}.lane .cp.ok{border-left-color:var(--ok)}.lane .cp.am{border-left-color:var(--am)}.lane .cp.rd{border-left-color:var(--rd)}.lane .cp.idle{opacity:.7}.lane .unr{color:var(--am);font-weight:800}
 .drv text{font-size:10.5px;fill:var(--muted);font-weight:700}.drv.on text{fill:var(--bl);animation:drvp 1.6s ease-in-out infinite}@keyframes drvp{0%,100%{opacity:1}50%{opacity:.35}}.lane .cp.feed{border-left-color:var(--bl);background:linear-gradient(90deg,var(--panel2) 0%,rgba(77,179,255,.18) 50%,var(--panel2) 100%);background-size:200% 100%;animation:feedflow 1.4s linear infinite}@keyframes feedflow{0%{background-position:100% 0}100%{background-position:-100% 0}}.lane .fd{display:block;color:var(--bl);font-weight:800}#nd-topic.fueling .bx{stroke:var(--bl);stroke-width:3;animation:fuelg 1.2s ease-in-out infinite}@keyframes fuelg{0%,100%{stroke-opacity:1}50%{stroke-opacity:.3}}html.reduce .drv.on text,html.reduce .lane .cp.feed,html.reduce #nd-topic.fueling .bx{animation:none}
+.eflow{margin:8px 0;--pu:#a46bff}.eflow .lh{font-size:.78rem;font-weight:800;color:var(--pu);margin-bottom:4px}.eflow .erow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;overflow-x:auto}.eflow .est{flex:1 1 0;min-width:72px;border:1px solid var(--line);border-top:3px solid var(--idle);border-radius:6px;padding:4px 6px;background:var(--panel2);font-size:.72rem;line-height:1.3}.eflow .est b{display:block;font-size:.74rem}.eflow .est small{color:var(--muted)}.eflow .est.has{border-top-color:var(--pu);box-shadow:0 0 0 1px var(--pu) inset}.eflow .est.dn.has{border-top-color:var(--ok);box-shadow:none}.eflow .ec span{display:inline-block;margin:2px 3px 0 0;padding:0 4px;border-radius:4px;background:var(--pu);color:#fff;font-weight:700;font-size:.7rem}.eflow .est.dn .ec span{background:var(--ok)}.eflow .ear{flex:0 0 18px;align-self:center;height:4px;margin:0 2px;background:var(--line);border-radius:2px;position:relative;overflow:hidden}.eflow .ear.on{background:linear-gradient(90deg,transparent 0,var(--pu) 40%,transparent 80%);background-size:200% 100%;animation:eflow 1s linear infinite}@keyframes eflow{0%{background-position:100% 0}100%{background-position:-100% 0}}html.reduce .eflow .ear.on{animation:none;background:var(--pu)}
 #alarm.rd{display:block;background:var(--rd);color:#fff;animation:alarm 1s steps(2) infinite}
 #alarm.am{display:block;background:var(--am);color:#1a1200}
 #alarm small{font-weight:400;opacity:.9}
@@ -154,6 +155,7 @@ html.reduce *{animation:none!important;transition:none!important}
       <h2>🗺 지도 <small>마디·점·종착지를 누르면 오른쪽(폰은 아래) 목록의 그 자리로 이동합니다</small></h2>
       <div class="lane" id="supLane" aria-label="연료 공급자"></div>
       <svg id="map" role="img" aria-label="글이 출발에서 종착지 4곳으로 가는 흐름 지도"></svg>
+      <div class="eflow" id="editLane" aria-label="글 수정 흐름"></div>
       <div class="lane" id="drvLane" aria-label="운전자"></div>
       <div class="rp"><button class="btn" id="rpbtn" type="button">▶ 오늘 하루 재생 (20초)</button><div class="rpbar" id="rpbar" aria-hidden="true"><div class="rpfill" id="rpfill"></div></div><span class="rpt" id="rpt">--:--</span><span class="mo" id="mo"><span id="motx"></span> <button class="btn" id="mobtn" type="button"></button></span></div>
       <div class="lg">● 관 속 입자 = 오늘 그 구간을 지난 글(+지금 서 있는 글) — 많을수록 촘촘·빠름 · 빨간 맥박 = 멈춘 구간(입자 정지) · 링 = 서 있는 글 수(3건이면 가득·병목) · 바늘 = 가장 오래 선 시간(눈금 끝 = 위험 임계, 주황 띠 = 경고) · 종착지 물결 = 새 도착</div>
@@ -448,6 +450,14 @@ function renderLanes(s){
       (x.ran?`${esc(x.at||"")}`+(x.kind==="상품"?"":` · 오늘 글감 ${x.today||0}건`):"오늘 아직 기록 없음")+
       (x.order?` · 지시서 ${esc(x.order.id)} ${x.order.read?"읽음":"<span class='unr'>안 읽힘</span>"}`:"")+
       (x.note?`<div class="nt">${esc(x.note)}</div>`:"")+`</div>`).join("");
+  /* ✏ 글 수정 흐름 — 보라색 별도 선로(사장님 10-23 「글수정에 관련한 지도 흐름에도 다른색으로」). 새 글 흐름과 섞지 않는다.
+     화살표는 다음 칸에 지금 글이 있을 때만 흐른다(지나간 완료는 정지). */
+  const ED=[["draft","✍ 개선안 작성","이과장"],["boss","🖊 결재","사장님"],["naver","🔁 블로그 반영·네이버 정정","이과장·Aside"],["sns","📱 인스타·쓰레드 정정","Aside(결재 후)"],["done","✅ 오늘 끝남",""]];
+  const eds=s.edits||[];
+  document.getElementById("editLane").innerHTML=`<div class="lh">✏ 글 수정 흐름(라이브 글 정정·개선) — 오늘 ${eds.length}편</div><div class="erow">`+
+    ED.map(([k,nm,who],i)=>{const a=eds.filter(e=>e.stage===k);
+      return (i?`<div class="ear${a.length&&k!=="done"?" on":""}" aria-hidden="true"></div>`:"")+
+        `<div class="est${a.length?" has":""}${k==="done"?" dn":""}"><b>${nm}</b>${who?`<small>${esc(who)}</small>`:""}<div class="ec">${a.map(e=>`<span>${esc(e.code)}</span>`).join("")||"—"}</div></div>`}).join("")+`</div>`;
   document.getElementById("drvLane").innerHTML=
     `<div class="lh">🚗 운전자 — 마디를 움직이는 쪽</div>`+
     drv.map(u=>`<div class="cp ${u.lvl==="red"?"rd":u.lvl==="amber"?"am":"ok"}"><b>${esc(u.who.replace("(감시)",""))} · ${esc(u.role||"")}</b>${esc(u.state||"")}`+
