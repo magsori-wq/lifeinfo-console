@@ -22993,7 +22993,7 @@
   {
    "id": "xlink-e410",
    "added": "2026-10-23",
-   "what": "🔗 E4-10 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-10",
+   "what": "🔗 E4-10 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-10",
    "due": "2026-10-23",
    "cmd": "python studio/blogger.py crosslink --code E4-10",
    "owner": "claude",
@@ -23028,6 +23028,17 @@
    "what": "Aside [index] done 보고가 gsc_log 기록으로 이어지지 않는다(10-23 오늘 요청 6건이 저녁까지 미기록 → 이부장 수동 add). asidechain 이 index done 을 받으면 gsc_log add 를 부르도록(설계도 먼저)",
    "due": "2026-10-24",
    "cmd": "grep -n index studio/asidechain.py",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1023,
+   "by": "이부장"
+  },
+  {
+   "id": "asidechain-threads-miss-e410-1023",
+   "added": "2026-10-23",
+   "what": "#368 E4-10 쓰레드 done(18:50, URL De1RP5AAbpR 200)에 asidechain [체인] 확인·threads-link 기록이 안 붙었다(G3-25·F3-09·C1-18 은 붙음) — 이부장이 19:4x 수동 기록. 보고문 형식(브라우저 멈춤 문구) 때문인지 asidechain 파싱 원인 조사",
+   "due": "2026-10-24",
+   "cmd": "grep -n threads studio/asidechain.py | head",
    "owner": "claude",
    "state": "todo",
    "note": 1023,
