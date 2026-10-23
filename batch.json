@@ -4312,17 +4312,29 @@
    "order_at": "2026-10-23 12:44"
   }
  },
- "updated": "2026-10-23 12:52:50",
+ "updated": "2026-10-23 12:54:22",
  "current": {
   "batch": "followup",
   "code": "F1-16",
   "title": "",
   "step": 1,
-  "what": "✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조",
+  "what": "[체인] #342 F1-17 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De0oxKGgXyP · ✅ 쓰레드 이미지 ↔ thread_F1-17_china_arrival_card.png  MAD) — [이과장] 기록: python -m studio.pipeline threads-link --code F1-17 --url https://www.threads.com/@magsori8975/post/De0oxKGgXyP → 4채널 완결 확인",
   "since": "17:44",
   "since_at": "2026-10-21 17:44:50"
  },
  "log": [
+  {
+   "t": "12:54:22",
+   "text": "▶ F1-16  — 1/7단계 · [체인] #342 F1-17 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De0oxKGgXyP · ✅ 쓰레드 이미지 ↔ thread_F1-17_china_arrival_card.png  MAD) — [이과장] 기록: python -m studio.pipeline threads-link --code F1-17 --url https://www.threads.com/@magsori8975/post/De0oxKGgXyP → 4채널 완결 확인"
+  },
+  {
+   "t": "12:54:15",
+   "text": "🏁 Aside #342 이부장 확인"
+  },
+  {
+   "t": "12:53:51",
+   "text": "▶   — 1/7단계 · [Aside][done] #342 F1-17 쓰레드 게시 — 이미지 확인: 본문 410자 파일과 일치(맨 앞 광고 문구·블로그·네이버·상품 2건·Pexels 출처)·링크 카드 닫음·실사진 1장 첨부(미리보기 확인) 후 게시·새로고침 뒤 프로필 맨 위 확인(실 ID De0oxKGgXyP, 접속 200, 사진 1장) · 총 탭 12개 · https://www.threads.com/@magsori8975/post/De0oxKGgXyP"
+  },
   {
    "t": "12:52:50",
    "text": "▶ F1-16  — 1/7단계 · ✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조"
@@ -4470,18 +4482,6 @@
   {
    "t": "12:08:59",
    "text": "🏁 Aside #337 이부장 확인"
-  },
-  {
-   "t": "12:08:41",
-   "text": "▶   — 1/7단계 · [Aside][done] #337 D2-01 네이버 글 본문 정정 저장 12:07: 개정 서식본(본문 3651자 원문 일치) 교체 · 라이브에 「제160조」「122,500」「확인하지 못한 것」「가상 사례」 있음 · 「과태료와 범칙금 중 선택」은 「이전 글은 …」 설명 문장 안에만 1곳 · 표·대표이미지 유지 · 카테고리 「달라지는 제도·지원금」·제목 불변·태그 원래 2개 유지(자동 4개 제거) · 총 탭 12개 · https://blog.naver.com/magsori8975/224330453806"
-  },
-  {
-   "t": "12:06:19",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: F1-17 V0 반려(12-31 근거 전사 누락) 수정 완료 — docs/source_F1-17 에 주한 중국대사관 11-06 공지 원문 전사 수록, 본문 4곳의 '입국 기준 12-31' 단정 삭제·'공지는 12-31까지 연장, 입국일 기준 여부는 명시 없음'으로 정정(F1-09 해석은 해석으로 표기)·확인못함 박스 추가. 재검사 요청: python -m studio.v0check gate --code F1-17"
-  },
-  {
-   "t": "12:03:31",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-10-23 12:02 — 지시 #337 시작 · D2-01 네이버 글 정정(서식본 개정판 확인 후)"
   }
  ],
  "currents": {
@@ -4580,7 +4580,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][doing] 수신 2026-10-23 12:50 — 지시 #342 시작 · F1-17 쓰레드",
+   "what": "[Aside][done] #342 F1-17 쓰레드 게시 — 이미지 확인: 본문 410자 파일과 일치(맨 앞 광고 문구·블로그·네이버·상품 2건·Pexels 출처)·링크 카드 닫음·실사진 1장 첨부(미리보기 확인) 후 게시·새로고침 뒤 프로필 맨 위 확인(실 ID De0oxKGgXyP, 접속 200, 사진 1장) · 총 탭 12개 · https://www.threads.com/@magsori8975/post/De0oxKGgXyP",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -4598,7 +4598,7 @@
    "code": "F1-16",
    "title": "",
    "step": 1,
-   "what": "✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조",
+   "what": "[체인] #342 F1-17 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De0oxKGgXyP · ✅ 쓰레드 이미지 ↔ thread_F1-17_china_arrival_card.png  MAD) — [이과장] 기록: python -m studio.pipeline threads-link --code F1-17 --url https://www.threads.com/@magsori8975/post/De0oxKGgXyP → 4채널 완결 확인",
    "since": "17:44",
    "since_at": "2026-10-21 17:44:50"
   },
@@ -5527,14 +5527,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-09 12:53:19",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-10-09 12:48 - 지시 #10 시작 (G3-10 인스타 먼저, 쓰레드 다음)"
-  },
   {
    "ts": "2026-10-09 12:57:25",
    "bid": "pub1009b218",
@@ -17990,6 +17982,22 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "✅ 이부장 지적(Aside 초안 복사 오기) 조치: ①F1-17·B2-23 인스타 초안의 카드 제목 순서가 D1-17 값(체납이 있으면)이었음 → 생성기 값으로 정정(B2-23 도 같은 오류였음) ②D1-17·G1-15 검색설명 보고 줄 '105자' → 실제 119·122자 정정 ③studio/aside_draftcheck.py 신설 — 이후 지시서 등록 전 python -m studio.aside_draftcheck --code <코드> 로 글별 값(카드 제목·글자수·postId)을 원본 파일과 대조"
+  },
+  {
+   "ts": "2026-10-23 12:53:51",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] #342 F1-17 쓰레드 게시 — 이미지 확인: 본문 410자 파일과 일치(맨 앞 광고 문구·블로그·네이버·상품 2건·Pexels 출처)·링크 카드 닫음·실사진 1장 첨부(미리보기 확인) 후 게시·새로고침 뒤 프로필 맨 위 확인(실 ID De0oxKGgXyP, 접속 200, 사진 1장) · 총 탭 12개 · https://www.threads.com/@magsori8975/post/De0oxKGgXyP"
+  },
+  {
+   "ts": "2026-10-23 12:54:22",
+   "bid": "followup",
+   "code": "F1-16",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #342 F1-17 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/De0oxKGgXyP · ✅ 쓰레드 이미지 ↔ thread_F1-17_china_arrival_card.png  MAD) — [이과장] 기록: python -m studio.pipeline threads-link --code F1-17 --url https://www.threads.com/@magsori8975/post/De0oxKGgXyP → 4채널 완결 확인"
   }
  ]
 }
