@@ -1,11 +1,12 @@
 {
- "computed_at": "2026-10-24 06:05:55",
- "source_head": "7a7e3c363bcb",
+ "computed_at": "2026-10-24 06:13:38",
+ "source_head": "29f35e09c708",
  "ids": [
   "D5-07",
   "F2-21",
   "G3-26",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-406"
  ],
  "posts": [
   {
@@ -39,10 +40,16 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_무인점포절도대응.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_D5-07_unmanned_store_theft.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
      "url": null,
@@ -51,10 +58,28 @@
        "label": "인스타 캡션",
        "path": "insta/캡션_무인점포절도대응.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "카드1",
+       "path": "insta/unmanned_store_theft_01.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드2",
+       "path": "insta/unmanned_store_theft_02.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드3",
+       "path": "insta/unmanned_store_theft_03.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     }
    }
   },
@@ -138,7 +163,7 @@
    "code": "G3-26",
    "title": "부산 웰니스 여행 금정산 트레킹+온천 1만 원 — 10월 30일 신청 마감 (2026)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 부산웰니스여행금정산_글_HTML.txt",
@@ -169,6 +194,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-406",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(406_busan_wellness_geumjeong.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],
