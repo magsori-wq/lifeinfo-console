@@ -23178,6 +23178,17 @@
    "state": "wait",
    "note": 1024,
    "by": "이부장"
+  },
+  {
+   "id": "asidequeue-stall-while-busy-1024",
+   "added": "2026-10-24",
+   "what": "asidequeue 가 Aside 가 앞 지시(#386 인스타 30분)를 하는 중에 다음 지시(#387·#388)를 올리고 '9000000000분째 소식 없음'으로 멈춤 처리 → 지시 유실·순서 꼬임(쓰레드가 인스타보다 먼저). 원인: 수신 시각 없는 지시의 경과 분 계산·busy 판정. 설계도(P 마디 ASIDE_STALL) 먼저 고치고 코드",
+   "due": "2026-10-24",
+   "cmd": "grep -n 9000000000 -n studio/asidequeue.py studio/towertick.py",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1024,
+   "by": "이부장"
   }
  ]
 }
