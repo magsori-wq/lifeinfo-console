@@ -2,22 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T04:42:04",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "thread-post-a216-0901",
-   "detail": "실측 확인 — DB osmu 에 3채널(네이버·쓰레드·인스타)이 전부 있다. 게시가 끝난 뒤 미결만 남아 있었다.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-06T04:42:04",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "thread-post-b108-0901",
-   "detail": "실측 확인 — DB osmu 에 3채널(네이버·쓰레드·인스타)이 전부 있다. 게시가 끝난 뒤 미결만 남아 있었다.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T04:42:05",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15983,22 @@
    "action": "watch.done",
    "target": "livelink-fix-b422-d310-1024",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-25T05:39:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "explorer-spinner-watch-1022b",
+   "detail": "원인 확정: ExplorerTabUtility(서드파티 탭 프로그램). 10-24 사장님 종료 후 10시간+ 원 0건(10-25 05:38 캡처). 윈도 결함 아님·피드백허브 제출 불필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-25T05:40:00",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "explorer-spinner-winbug-next-build",
+   "detail": "윈도 결함 결론 철회 — 원인은 ExplorerTabUtility(10-25 확정). 다음 빌드 확인 불필요",
    "via": "cli"
   }
  ]
