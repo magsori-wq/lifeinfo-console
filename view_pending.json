@@ -1,21 +1,18 @@
 {
- "computed_at": "2026-10-24 12:24:03",
- "source_head": "7d9dd116e82c",
+ "computed_at": "2026-10-24 12:27:17",
+ "source_head": "6fecaf009127",
  "ids": [
   "D3-10",
   "E4-12",
   "G3-26",
-  "claude-limit-reset-1022",
-  "deploy-thumb-406",
-  "deploy-thumb-407",
-  "deploy-thumb-408"
+  "claude-limit-reset-1022"
  ],
  "posts": [],
  "publish": [
   {
    "code": "E4-12",
    "title": "가입제한서비스 11월 20일부터 신규 계약에 기본 가입 — 거부·해지 방법과 확인 못 한 점 (2026)",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -37,12 +34,12 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "G3-26",
    "title": "부산 웰니스 여행 1만 원 — 금정산·온천·사찰 3코스, 10월 30일 신청 마감 (2026)",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -64,12 +61,12 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "D3-10",
    "title": "위반건축물 양성화 12월 17일 시행 — 주거용만, 이행강제금 5회분 과태료 (2026)",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -91,7 +88,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -101,30 +98,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-406",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(406_busan_wellness_geumjeong.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-407",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(407_subscription_restriction.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-408",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(408_illegal_building_amnesty.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],

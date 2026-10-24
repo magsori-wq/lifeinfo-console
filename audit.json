@@ -2,30 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-03T17:16:09",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "publish-go-d1-08",
-   "detail": "중복 등록이라 철회 — 큐에 이미 ⑦발행승인 카드가 있다(gatecheck 지적). 승인은 그 카드에서 하시면 된다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-03T17:17:11",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "D1-08",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-03T17:29:52",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "gate-test-dup2",
-   "detail": "게이트 시험용 — 삭제",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-04T15:10:23",
    "actor": "사장님",
    "action": "watch.done",
@@ -15999,6 +15975,30 @@
    "action": "watch.done",
    "target": "deploy-thumb-408",
    "detail": "사장님 12:25 deploy.bat 실행, github.io 200 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T12:26:02",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "E4-12",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T12:26:19",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G3-26",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T12:26:42",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D3-10",
+   "detail": "",
    "via": "cli"
   }
  ]
