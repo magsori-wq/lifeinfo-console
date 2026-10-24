@@ -1933,6 +1933,16 @@
      "base_code": "daily-email-briefing",
      "date": "2026-10-24",
      "at": "2026-10-24 08:09"
+    },
+    {
+     "code": "lifeinfo-publish-1024",
+     "title": "lifeinfo-publish (C)",
+     "state": "done",
+     "note": "빈손 — 큐 2편(E4-12·G3-26) V0 🟢이나 go 도장 없음 → 발행 안 함(3-0 대상 0). 두 건은 이미 결재함 대기 2건으로 올라 있어 중복 등록 안 함. 오늘 발행 3편(pace 한도 없음)·setgate 4채널 미완 없음·로컬=origin 동기. 이어받은 것: 결재함 대기 / 새로 본 것: 없음",
+     "auto_daily": true,
+     "base_code": "lifeinfo-publish",
+     "date": "2026-10-24",
+     "at": "2026-10-24 09:04"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -4619,7 +4629,7 @@
    "order_at": "2026-10-24 07:43"
   }
  },
- "updated": "2026-10-24 08:09:22",
+ "updated": "2026-10-24 09:04:01",
  "current": {
   "batch": "draftd310",
   "code": "",
@@ -4630,6 +4640,10 @@
   "since_at": "2026-10-24 07:43:22"
  },
  "log": [
+  {
+   "t": "09:04:01",
+   "text": "✅ lifeinfo-publish-1024 완료 — lifeinfo-publish (C)"
+  },
   {
    "t": "08:09:22",
    "text": "✅ daily-email-briefing-1024 완료 — daily-email-briefing (A)"
@@ -4785,10 +4799,6 @@
   {
    "t": "06:28:33",
    "text": "✅ G3-26 완료 — 부산 웰니스 여행 금정산 트레킹+온천 1만 원 — 10/30 "
-  },
-  {
-   "t": "06:27:48",
-   "text": "▶   — 1/7단계 · [이부장 → 이과장] E4-12 결재 전 보강(근거 docs/source_E4-12_시행령별표_20261024.md): ① 의무 사업자 = 시행령 제37조의9·별표 3의5 3호 「이동통신사업자」(시내·인터넷전화는 1·2호만) — 판정표에 반영 ② 알뜰폰 포함 여부는 원문에 없음 → 「공식 확인 전」 유지 ③ 가입제한서비스 제도 자체는 2018-12-11 법 개정부터 있었다 — 11/20부터 바뀌는 것은 '신규 계약 시 기본 가입'(제32조의6③④)이라는 점을 도입부·표에 분명히(신설 서비스로 읽히면 안 됨) ④ 제공 방법은 과기정통부 고시 위임(제7항) — 고시 미확인 명시. 고치면 batchboard now 로 보고 → 이부장 V0 재검사(diff)."
   }
  ],
  "currents": {
