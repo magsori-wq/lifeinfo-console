@@ -20511,10 +20511,8 @@
    "due": "2026-11-02",
    "cmd": "powershell -c \"$c=Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion'; $c.CurrentBuild+'.'+$c.UBR\"",
    "owner": "claude",
-   "state": "done",
-   "by": "lifeinfo-ee",
-   "done_at": "2026-10-25",
-   "result": "윈도 결함 결론 철회 — 원인은 ExplorerTabUtility(10-25 확정). 다음 빌드 확인 불필요"
+   "state": "wait",
+   "by": "lifeinfo-ee"
   },
   {
    "id": "xlink-c309",
@@ -22299,10 +22297,8 @@
    "due": "2026-10-22",
    "cmd": "cat C:/Users/magso/AppData/Local/Temp/claude/C--lifeinfo/cf890880-7d06-4506-b96c-a02a22262143/scratchpad/spinwatch.log",
    "owner": "claude",
-   "state": "done",
-   "by": "lifeinfo-ee",
-   "done_at": "2026-10-25",
-   "result": "원인 확정: ExplorerTabUtility(서드파티 탭 프로그램). 10-24 사장님 종료 후 10시간+ 원 0건(10-25 05:38 캡처). 윈도 결함 아님·피드백허브 제출 불필요"
+   "state": "wait",
+   "by": "lifeinfo-ee"
   },
   {
    "id": "community-reply-followup-1023",
@@ -23555,11 +23551,9 @@
    "due": "2026-10-25",
    "cmd": "Aside 브라우저에서 nid.naver.com 로그인(사장님 손 — 자격증명은 세션이 넣지 않는다). 끝나면 이부장이 G3-28·B4-22 네이버 게시와 D4-14 커넥트 재조사를 다시 올림",
    "owner": "user",
-   "state": "done",
+   "state": "todo",
    "kind": "action",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "05:45 사장님 재로그인 완료(채팅 보고)"
+   "by": "이부장"
   },
   {
    "id": "deploy-thumb-417",
@@ -23610,29 +23604,6 @@
    "by": "이부장",
    "done_at": "2026-10-25",
    "result": "정정 확인 후 V0 pass(01:4x)"
-  },
-  {
-   "id": "aside-newchat-1025",
-   "added": "2026-10-25",
-   "what": "Aside 전담 채팅 교체(결재 aside-speed-plan-1024 ④) — 새 채팅은 Aside 앱에서만 만들 수 있음(CLI 에 생성 명령 없음, 10-17 교체도 사이드패널에서)",
-   "due": "2026-10-25",
-   "cmd": "Aside 브라우저 CP 탭 오른쪽 Ask Aside 에서 「새 채팅」을 열고 「이부장 전담 2」라고 한 줄 입력 → 이부장이 session list 로 ID 를 찾아 옛 채팅 정지·코드 전환·B4-23 검색설명으로 시험",
-   "owner": "user",
-   "state": "done",
-   "kind": "action",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "05:50 사장님 생성(fZcN6UTcB4PoZVYk 「이부장 전담2」) · 옛 채팅 정지 · 코드 4곳+CLAUDE.md 전환(옛 ID 0건) · CP 탭 연결 · #432 B4-23 검색설명 시험 중"
-  },
-  {
-   "id": "aside-newchat-smoke-1025",
-   "added": "2026-10-25",
-   "what": "새 Aside 채팅 시험 #432(B4-23 검색설명) 결과 확인 — 통과면 G3-28·B4-22 네이버·B4-23~24 후속 재등록, 실패면 원인 좁히기",
-   "due": "2026-10-25",
-   "cmd": "python -m studio.asidequeue list",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
   }
  ]
 }
