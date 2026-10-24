@@ -23468,6 +23468,16 @@
    "state": "todo",
    "by": "이부장",
    "kind": "approve"
+  },
+  {
+   "id": "g116-dec-schedule-1024",
+   "added": "2026-10-24",
+   "what": "G1-16 광안리 드론쇼 12월 회차 주제 공지 확인(11월만 확보) — fuel_round6 의 「11/7부터·16회」는 틀림, source_G1-16 문서가 진실원",
+   "due": "2026-11-20",
+   "cmd": "curl -s https://gwangallimdrone.co.kr/notice | grep -o '12월[^<]*' | head",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
