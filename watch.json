@@ -23213,6 +23213,17 @@
    "by": "세션:cdbf5597",
    "done_at": "2026-10-24",
    "result": "이부장 08:41 실측: lifeinfo-console 콘솔 정합성 검사 최신 run(10-23 23:11Z·23:09Z) success — 10-22 실패는 engine.html 오탐, 이미 해소"
+  },
+  {
+   "id": "leegwajang-stops-after-ack-1024",
+   "added": "2026-10-24",
+   "what": "이과장이 지시서를 읽고 「착수(지시서 읽는 중)」 보고 직후 턴을 끝내고 멈추는 패턴 2회(10-23 19:10 E4-11 1.5h · 10-24 07:44 D3-10 2h) — 이부장 재깨움으로만 풀림. 원인(턴 끝 조건·leewake 재깨움 부재) 조사, 착수 보고 뒤 N분 무보고면 towertick 이 깨우는 신호 검토(설계도 먼저)",
+   "due": "2026-10-24",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('draftd310'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1024,
+   "by": "이부장"
   }
  ]
 }
