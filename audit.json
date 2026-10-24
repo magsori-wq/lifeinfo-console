@@ -2,22 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T11:46:00",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "d1-08-title-drift-0904",
-   "detail": "해소 확인(2026-09-06 실측). DB 제목이 라이브와 일치 — 커밋 69a226b(09-06 04:18) 로 정정, 배포 ca74635(04:27). 피드 드리프트 검사 09-05T23:35Z 런 success 로 end-to-end 확인. 로컬 재현: feed_drift.py 234편=234편 rc=0",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-06T11:46:09",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "drift-fail-0906",
-   "detail": "중복 등록분 — 같은 건이 이미 5회 보고돼 있었다(title-stale-0903·d1-08-title-drift-0904·drift-fail-0905·drift-cause-deploy-0906·deploy-drift-fix-0906). 내가 실패 런 날짜만 보고 검사기를 안 돌린 채 새로 등록했다. 실제로는 등록 시점(08:08)에 이미 04:18 커밋으로 해소돼 있었다",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T11:46:14",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15983,22 @@
    "action": "v0check.pass",
    "target": "D2-19",
    "detail": "DRF eflaw MST 279785(efYd 20261112) 대조 — 법률 제21123호·제58조의10~12·부칙 제2·3조(6개월 유예, 시행일 기산)·과태료 제94조③④·제92조 일치 · 대상 범위 법 문언 그대로·의무 주체 정확 · V0 4항목 · 권고(유효기간 2030-12-",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-25T06:57:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-419",
+   "detail": "06:5x deploy.bat 이부장 실행(419·420 묶음) · github.io 200 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-25T06:57:43",
+   "actor": "v0에이전트",
+   "action": "v0check.pass",
+   "target": "A2-29",
+   "detail": "부산시 보도자료 1755237 첨부 hwpx 직접 대조 — 신청 9/28~12/6·대상(연매출 10억 이하·캐시백 가맹점)·산식(10~11월 결제액×3×0.15%)·비례조정·12월 지급 일치 · 12/6 은 참고표 값임을 본문에 명시 · 계산 135,000원 재계산 일치 · V0 4항목",
    "via": "cli"
   }
  ]
