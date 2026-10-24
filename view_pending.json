@@ -1,12 +1,13 @@
 {
- "computed_at": "2026-10-24 15:55:58",
+ "computed_at": "2026-10-24 15:58:29",
  "source_head": "7070df4c6436",
  "ids": [
+  "B4-22",
   "D1-18",
   "D3-10",
   "G3-28",
-  "aside-browser-restart-1024",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-413"
  ],
  "posts": [
   {
@@ -184,7 +185,35 @@
    }
   }
  ],
- "publish": [],
+ "publish": [
+  {
+   "code": "B4-22",
+   "title": "월세 세액공제 연말정산 — 총급여 5,500만 원 이하 17%, 1천만 원 한도 (2026)",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 월세세액공제_글_HTML.txt",
+     "path": "월세세액공제_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/413_monthly_rent_tax_credit.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/413_monthly_rent_tax_credit.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
  "actions": [
   {
    "id": "claude-limit-reset-1022",
@@ -195,10 +224,10 @@
    "kind": "action"
   },
   {
-   "id": "aside-browser-restart-1024",
-   "what": "Aside 앱 다시 시작 — PC CPU 91%(Aside 27개 프로세스·메모리 3.2GB·탭 12개)로 브라우저 응답 끊김 반복. 닫았다 열면 탭이 정리되고 이부장이 남은 대기열을 이어서 돌립니다",
+   "id": "deploy-thumb-413",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(413_monthly_rent_tax_credit.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
    "due": "2026-10-24",
-   "cmd": "작업표시줄 Aside 아이콘 우클릭 → 창 닫기 → 다시 실행 → 이 창에 'Aside 재시작함'",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
