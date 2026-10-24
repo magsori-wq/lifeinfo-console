@@ -1,16 +1,33 @@
 {
  "rev": "24b677fde",
  "counts": {
-  "total": 428,
+  "total": 429,
   "osmu_done": 428,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 428,
-  "index_requested": 172,
-  "index_todo": 87,
+  "index_pending": 429,
+  "index_requested": 159,
+  "index_todo": 101,
   "index_benign": 169
  },
  "actionable": [
+  {
+   "code": "D1-18",
+   "title": "수능 이의신청 11월 19~23일·성적 12월 11일 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "D3-10",
    "title": "위반건축물 양성화 12월 17일 시행 — 주거용만, 이",
@@ -208,22 +225,6 @@
   {
    "code": "A4-09",
    "title": "긴급복지 동절기 연료비 월 15만원 — 에너지바우처와 ",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-13",
-   "title": "2027년 고용보험료율 2.0% 인상 추진 — 월급 실",
    "need": [
     "색인요청"
    ],
