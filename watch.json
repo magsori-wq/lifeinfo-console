@@ -23308,6 +23308,17 @@
    "state": "todo",
    "note": 1024,
    "by": "이부장"
+  },
+  {
+   "id": "e412-insta-retry-1024",
+   "added": "2026-10-24",
+   "what": "E4-12 인스타 2회 실패(#400·#403 — 인스타 탭 열기 timeout, 같은 시간 G3-26 인스타는 13:31 성공). 30분 뒤 인스타→쓰레드 순으로 재등록, 또 실패하면 Aside 브라우저 재시작(사장님) 검토",
+   "due": "2026-10-24",
+   "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/E4-12_인스타게시.txt --code E4-12 --kind insta --prio 1",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1024,
+   "by": "이부장"
   }
  ]
 }
