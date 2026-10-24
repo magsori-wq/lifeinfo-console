@@ -5467,7 +5467,7 @@
    "cmd": "visitbusan.net/schedule/list.do?...year=2026&month=10 재확인 + 브라우저로 instagram.com/busan.jagalchi 최근게시물 확인 + 부산 중구청(jung.busan.kr) 공지 확인",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:830847ea"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "naver-post-a602",
@@ -5657,7 +5657,7 @@
    "cmd": "claude-in-chrome으로 mois.go.kr 보도자료 검색창에 '미환급' 직접 입력해 재검색 + 서울시/관악구 담당부서(02-2133-4336 도시철도과, 02-879-6877 관악구 교통행정과) 전화확인으로 1600cc면제 현재 유효여부 확정",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-23",
    "result": "law.go.kr DRF(ordin, MST=2098693) '서울특별시 도시철도공채 조례' 제3조① 4호(개정 2026.1.1, curl 직접확인) 원문: '비사업용 승용자동차 중 소형(배기량 1,000cc 이상 1,600cc 미만인 것) 자동차의 신규 및 이전등록을 신청하는 경우에는 2028년 12월 31일까지 그 매입의무를 면제한다.' → 서울 1600cc미만(정확히는 1,000~1,599cc) 차량 도시철도공채(=지역개발채권 성격) 매입면제는 2026-09-23 현재도 유효하며 2028-12-31까지 명시적 시한이 있음. ⚠️정확한 범위는 '1600cc 이하'가 아니라 '1,000cc 이상 1,600cc 미만'(1000cc 미만 경차는 이 조항 대상 아님, 별도 규정 가능성). 취득일 2026-09-23."
   },
@@ -5704,7 +5704,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-07",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
@@ -5716,7 +5716,7 @@
    "cmd": "python -m studio.v0check gate --code D1-09",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-07",
    "result": "정정 완료·재검사 통과(2026-09-07 15:3x). 이과장이 시행령 제47조 → 시행규칙 제17조④ 로 3곳+메타+큐메모 정정(law.go.kr DRF 원문 재확인). V0검사관 2차 diff 검사에서 원문 대조로 통과 — 제17조④ '전자문서 교부는 무료, 무인민원발급기는 그 수수료의 2분의 1' 확인, 교체 URL HTTP 200, 금액·표·바이라인 훼손 없음."
   },
@@ -5789,7 +5789,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code E2-14 --file osmu/네이버용_다크패턴규제신고방법.txt 로 클립보드 적재 후 → 네이버 글쓰기 창(https://blog.naver.com/GoBlogWrite.naver)에서 제목+Ctrl+V로 본문 붙여넣기 → thumbs_naver/216n_darkpattern.png 첨부 → 게시 → URL을 python -m studio.pipeline naver-link --code E2-14 --url <URL> 로 기록",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-07",
    "result": "사장님이 직접 게시 완료 · https://blog.naver.com/magsori8975/224403880339"
   },
@@ -5813,7 +5813,7 @@
    "cmd": "python -m studio.pushgate --simulate 1",
    "owner": "claude",
    "state": "done",
-   "by": "세션:2b21a954",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-10",
    "result": "pushgate.py 전문 확인(push 호출 없음) + simulate 1 로 정상 차단 재현"
   },
@@ -5825,7 +5825,7 @@
    "cmd": "https://nid.naver.com/user2/help/myInfo",
    "owner": "user",
    "state": "done",
-   "by": "세션:2b21a954",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-07",
    "result": "사장님 확인 완료(2026-09-07) — 본인 계정이 맞다. 메일 확인만 하셨고 별도 인증 버튼은 없었다(통지 메일이라 정상). 본인 조작이므로 비밀번호 변경·기기 로그아웃 불필요. 조치 없음으로 종결"
   },
@@ -5849,7 +5849,7 @@
    "cmd": "브라우저(claude-in-chrome)로 austrian.com/us/en/check-in-deadlines 접속 재시도(카운터 332-361 vs 351-372 불일치 해소) + 비엔나공항 콜센터(+43-1-7007-22233) 문의로 보안검색 소요시간/터미널-게이트 매핑 확인",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:830847ea"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "f4-20-v0-selfcheck-concern",
@@ -5859,7 +5859,7 @@
    "cmd": "python -m studio.v0check gate --code F4-20 로 현재 상태 재확인 후, 필요하면 python -m studio.v0check pass --code F4-20 --by 이부장 --why '<재검토 근거>' 로 독립 재검사",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-07",
    "result": "이부장 처리 완료 — ①독립 V0 재검사 수행(작성자와 무관한 세션에서 원고·출처를 처음부터 대조, PASS) ②근본원인 수정: pubqueue add 의 --by 가 비면 세션 신원으로 자동 기록하도록 배선(_actor). 끊어서 검증함 — 작성자가 자기 글을 검사하면 실제로 '[거부] 작성자(이과장)가 자기 글을 검사할 수 없다' 로 막힌다 ③F4-20 큐에 작성자 소급 기록(세션:eb42e59e). 이과장의 자진 신고가 옳았다"
   },
@@ -5871,7 +5871,7 @@
    "cmd": "ls docs/리다이렉트_분석_20260903.md docs/CP_색인화면_점검_20260903.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "산출물 문서 2개(리다이렉트_분석, CP_색인화면_점검) 존재 확인"
   },
@@ -5895,7 +5895,7 @@
    "cmd": "python -m studio.searchconsole inspect && python -c \"import json;d=json.load(open('webapp/index_status.json',encoding='utf-8'));print('indexed',d['indexed'],'/',d['total'])\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "측정 불가로 종결. 【관측하려던 것】재크롤이 오면 색인에서 탈락하는 패턴(9/7 표본 n=2: H1-01 08-30 재크롤 직후 탈락 · D1-02 09-03 재크롤 직후 탈락). 이부장 지시 = 09-10 inspect 완주 후 표본이 3건 이상 되면 보고, 그전엔 단정 금지. 【결과】**표본을 늘릴 수 없다.** 오늘 inspect 완주 결과 색인 0/248 로 **탈락할 색인이 남아 있지 않다.** 재크롤이 와도 빠질 것이 없으므로 이 패턴은 더 이상 관측 대상이 아니다. 【남기는 것】n=2 관측 자체는 docs/색인절벽_20260713.md 에 기록돼 있다. 만약 앞으로 색인이 다시 생기면(1편이라도) 그때 이 관측을 재개할 것 — 그 시점에 새 watch 를 걸면 된다. 단정하지 않는다: 표본 2건으로는 인과를 말할 수 없고, 지금은 재볼 방법도 없다."
   },
@@ -5907,7 +5907,7 @@
    "cmd": "python -m studio.affiliate show --code F4-20",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "사장님 링크 발급 완료(2026-09-07 23:5x) — https://link.coupang.com/a/gQ5HPLbK32 루미볼트 멀티어댑터 PD45W 4구. affiliate add 등록 · 네이버 카드 반영 확인(라이브 실측) · 쓰레드 재게시 준비 완료"
   },
@@ -5919,7 +5919,7 @@
    "cmd": "python -m studio.osmu_manifest table --code F4-20 로 진행 확인",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-07",
    "result": "쓰레드·인스타 게시 완료, crosslink 반영. 네이버는 결재함(naver-post-f420-ready) 등록해 사장님 대기"
   },
@@ -5931,7 +5931,7 @@
    "cmd": "cat docs/CP_색인화면_점검_20260903.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-07",
    "result": "이부장 판단 완료 — ①C+E 채택하되 순서를 뒤집었다(E→C). BENIGN 정의가 gsc.html·index.html 두 곳에 각자 박혀 있고 화면 3곳은 개념 자체를 모른다 — C 를 먼저 하면 세 번째 정의가 생긴다(pace 상수·라벨 42종과 같은 병). fixer 에 지시서 발급 완료 ②gsc-boost-plan-0901 은 이미 done 이다(루틴7 정보 낡음). 진짜 문제는 '계획은 09-01 에 섰는데 실행 지시가 6일째 안 난 것' — 내 몫이었다. 상위 3편(B1-01·B2-04·A5-01, 새 수치 불필요)을 결재함 idx-boost-3-0907 로 올렸다 ③recrawl-drops-index-0907 감시 지속(n=2, 09-14 재확인). ※루틴7 커밋 태그 오류(2ff418a8 을 [이부장]으로)는 이력 재작성 없이 이 기록으로 남긴다"
   },
@@ -5981,7 +5981,7 @@
    "cmd": "python -m studio.falsepos --quiet && python -c \"import json,io;d=json.load(io.open('webapp/pending.json',encoding='utf-8'));print(d['counts']['index_todo'], d['counts'].get('index_benign'))\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-10",
    "result": "idxstate.py 존재, pending.py 배선 확인, index_benign 필드 작동(index_todo=12·index_benign=83)"
   },
@@ -5993,7 +5993,7 @@
    "cmd": "python -m studio.setgate && python -m studio.batchboard order --id idxboost0907",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-07",
    "result": "루틴7 지적이 옳았다 — 다만 원인은 setgate 가 아니라 내 지시서 문장이었다. ①setgate 는 pipeline.py:401 = 신규 발행 경로에만 걸린다. 색인보강은 blogger.py update-post 라 애초에 안 탄다 ②setgate 가 '네이버 원고 없음' 이라 한 것도 사실과 달랐다 — 원고는 osmu/네이버용_비엔나공항출국소요시간.txt 로 있었고, osmu_manifest 에 F4-20 슬러그가 등록 안 돼 못 찾은 것이다(등록 후 '4채널 미완 없음'). ③지시서 idxboost0907 을 갱신해 선행조건을 해제했다 — 지금 착수 가능. ④인스타도 22:02 게시 완료(Dc_KzSRiU1Q 200 확인). 네이버 게시만 사장님 손에 남았다"
   },
@@ -6005,7 +6005,7 @@
    "cmd": "for u in 2026/06/blog-post_982.html 2026/06/isa-2026.html 2026/06/blog-post.html; do curl -s -A 'Mozilla/5.0' https://lifeinfo8975.blogspot.com/$u | grep -c '계산예시'; done",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "batchboard show -- idxboost0907 동결 상태, order 텍스트에 착수금지 조치 그대로 반영됨"
   },
@@ -6017,7 +6017,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code F4-20 --file osmu/네이버용_비엔나공항출국소요시간.txt 로 클립보드 적재 후 → 네이버 글쓰기 창(https://blog.naver.com/GoBlogWrite.naver)에서 제목+Ctrl+V로 본문 붙여넣기 → thumbs_naver/218n_vienna.png 첨부 → 게시 → URL을 python -m studio.pipeline naver-link --code F4-20 --url <URL> 로 기록",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-07",
    "result": "사장님 게시 완료(2026-09-07 23:1x) — https://blog.naver.com/magsori8975/224404172501 (190KB 실측). naver-link 기록·crosslink 갱신 완료, 4채널 미완 없음"
   },
@@ -6041,7 +6041,7 @@
    "cmd": "cat docs/색인보강_재고재측정_20260907.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "같은 배치 order 텍스트에 재측정 결과 반영, 산출물 문서 존재 확인"
   },
@@ -6053,7 +6053,7 @@
    "cmd": "python -m studio.affiliate show --code F4-20 로 발급 여부 확인 후, 발급됐으면 python -m studio.affiliate add --code F4-20 --kind coupang --url <링크> --what \"에가든 본보야지 패스포트 RFID 차단\" --why \"체크인·솅겐 출입국심사에서 여권·탑승권을 반복 확인하는 상황과 직결\" --price \"42,500원·다나와 2026-09-07(리뷰999+·4.87점)\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "확인 시도 — 아래 참조"
   },
@@ -6065,7 +6065,7 @@
    "cmd": "git log -20 --format=%h -- webapp/batch.json | tac | while read c; do git show $c:webapp/batch.json | python -c \"import json,re,sys;d=json.load(sys.stdin);r=d['batches']['routinelog'];o=str(r.get('order') or '');m=re.search(r'routinelog — (\\S+) 앞',o);print(r.get('order_at'),'→',m.group(1) if m else '공통')\"; done | uniq",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-07",
    "result": "고쳤다 — 네 진단이 정확했고 그 사고는 내가 만들었다(21:53 루틴7 지시를 22:24 루틴4 회신으로 덮음). 제안 3개 중 ②(한 문서 안 수신자별 섹션)를 택했다 — ①은 SKILL 7개를 고쳐야 하고 UI 편집 시 통째 덮어쓰기 위험이 있다. 구현: batchboard._merge_order() 가 dispatch 첫 줄 '<수신자> 앞 지시서' 를 마커로 같은 수신자 섹션만 교체하고 나머지는 보존한다. 수신자당 한 섹션만 남긴다(첫 구현이 3섹션을 만들어 그 자리에서 보강). 현재 routinelog = 루틴4·루틴7 2섹션 정상. 🔴 루틴은 지시서를 읽을 때 첫 줄 수신자를 확인할 것 — 네 이름이 아닌 섹션의 실행 지시를 자기 것으로 읽지 말 것"
   },
@@ -6077,7 +6077,7 @@
    "cmd": "WebSearch \"CJ대한통운 추석 명절 택배 예약 접수안내 공지사항 2026\" 재시도 + cjlogistics.com/ko/newsroom/notice 목록에서 NR_00001284보다 큰 번호대 확인 + epost.go.kr 공지사항 화면검색",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-20",
    "result": "H1-02 발행완료, 택배사별 안내가 라이브 본문에 반영됨(확인은 source-H1-02-couriers-0918 참고). 동일 소재 후속조사로 대체됨."
   },
@@ -6089,7 +6089,7 @@
    "cmd": "cat docs/지시서_섹션분리_검증_20260907.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-07",
    "result": "이부장 수정 9726f55f 재검증 완료 — ①중복호출 해소(호출부 1곳, 4회 누적에도 섹션 3개 중복 없음) ②읽기필터 해소(_label_sections 신설·cmd_order 배선·CLI --actor, 실제 실행으로 '네 것이 아니다' 경고 확인). 두 결함 다 실측으로 닫는다. 단 새 구멍 2개는 order-section-handoff-0907 로 분리해 올렸다"
   },
@@ -6101,7 +6101,7 @@
    "cmd": "python -m studio.v0check gate --code H1-02",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "V0 통과로 해소 — 검사자 이부장 · 재검사 통과 — 1차 반려 사유(함정① 역대 추석 비교표가 2024/2025 뒤바뀜)가 정정됐다. 라이브 초안 실측: '2024년 9/15~18(추석 9/17 화) · 2025년 10/4~7(추석 10/6 월) · "
   },
@@ -6138,7 +6138,7 @@
    "cmd": "grep -n '_label_sections' studio/batchboard.py; sed -n '715,719p' studio/batchboard.py",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-08",
    "result": "4차 재검증 완료(이부장 b3870b5a) — ③④ 둘 다 해소. _handoff 가 mark --code 로 수신자를 찾는다(routines.find). 실측 4경우 전부 의도대로: 루틴7 code→✅/⚠️ 정상 · 루틴3 code→중립(섹션에 루틴3 없음, 올바른 폴백) · code 없음→중립 · 모르는 code→중립. 실제 지시서(01:00)에서도 ✅/⚠️ 확인. SKILL 7개는 손대지 않았다"
   },
@@ -6162,7 +6162,7 @@
    "cmd": "python -c \"import json,sys;sys.stdout.reconfigure(encoding='utf-8');from studio.batchboard import _label_sections,_actor_of,_ORDER_SEP as S;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['routinelog'];print('owner',repr(b.get('owner')));print('섹션',[_actor_of(x) for x in b['order'].split(S.strip(chr(10))) if x.strip()])\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-07",
    "result": "3차 재검증 완료 — 이부장이 처방①(폴백) 채택. _label_sections 안에서 me 가 섹션 수신자 집합에 없으면 None 으로 떨어뜨려 중립 표기. 실측 3경우 전부 정상: ①routinelog 주경로=중립 ▸(틀린 경고 사라짐) ②--actor 루틴7=✅/⚠️ 정상 ③owner=이과장 배치 주경로=✅/⚠️ 정상. 자기 지시에 '실행하지 마라' 가 붙던 회귀 해소 확인. 남은 것은 order-section-handoff-0907 의 ④(SKILL --actor 안내)와 처방②(code→루틴N 매핑) — 둘 다 틀린 경고가 아니라 미완이므로 급하지 않다"
   },
@@ -6186,7 +6186,7 @@
    "cmd": "콜센터 1600-3190 통화 후 통화일자·응답 내용을 docs/source_A2-17_에너지바우처_20260908.md 에 추가, 또는 https://www.energyv.or.kr/board/boardDetail.do?mstBoardId=43&mstBoardType=02002&boardId=1106 를 브라우저로 열어 '하절기 당겨쓰기' FAQ 본문 확인",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-23",
    "result": "energyv.or.kr FAQ(mstBoardId=42,boardId=1102 '지원금액은 어떻게 되나요?') 확인 2026-09-23: 동·하절기 통합수급자는 지원금액이 계절로 구분되지 않고 전체 사용기간('26.7.1~'27.5.31) 내 자유사용(=하절기 잔액이 자동으로 동절기까지 이월되는 구조, 별도 '당겨쓰기' 개념 없음). 단 하절기바우처+타 동절기에너지이용권(연탄쿠폰 등) 병행수급자는 사용기간이 '26.7.1~'26.9.30로 별도이며 10월1일 이후 잔액 전부 소멸. URL: https://www.energyv.or.kr/board/boardDetail.do?mstBoardId=42&mstBoardType=02002&boardId=1102 (기존 워치의 mstBoardId=43&boardId=1106 URL은 존재하지 않는 글 — 43은 신청방법 게시판이고 정답은 42=지원기준 게시판에 있었음)"
   },
@@ -6198,7 +6198,7 @@
    "cmd": "python -m studio.v0check gate --code H1-02",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-10",
    "result": "v0check gate --code H1-02 실행 -- [통과] 검사자 이부장 2026-09-08T00:42"
   },
@@ -6210,7 +6210,7 @@
    "cmd": "python -c \"from studio import routines as R;print(R.find('lifeinfo-index-check'))\"; grep -n 'def _handoff\\|_handoff(d' studio/batchboard.py; sed -n '722p' studio/batchboard.py",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-08",
    "result": "이부장이 요청대로 반영·검증 완료(b3870b5a). _handoff 시그니처에 code 추가·호출부에서 ns.code 전달·routines.find 로 루틴N 유추·실패 시 owner 폴백. 실측 4경우 정상. SKILL 무수정으로 해결됨"
   },
@@ -6222,7 +6222,7 @@
    "cmd": "cat docs/GSC화면_판독_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-20",
    "result": "재확인: docs/색인조사_결론_20260908.md 에 ?m=1 관련 내용 6회 반영되어 영구 참조문서에 포함됨. 관측 자체는 기록완료 상태."
   },
@@ -6234,7 +6234,7 @@
    "cmd": "cat docs/GSC정밀검증_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "짝항목 gsc34-is-july-snapshot 결론(0이 사실) 코드로 재검증, 채택"
   },
@@ -6247,7 +6247,7 @@
    "owner": "claude",
    "kind": "approve",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-10",
    "result": "수정커밋 2c85e658 확인 + pace.check() 재현 실행, NameError 없음"
   },
@@ -6260,7 +6260,7 @@
    "owner": "claude",
    "kind": "approve",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-23",
    "result": "코드 수정 완료(2026-09-23) — _r_boss_gate_alive 를 3곳 모두 4-튜플로 변경. 크래시 재현 시험(del w._boss_gate; falsepos.main([]))에서 더 이상 크래시 안 남 — 정상적으로 🔴1건 리포트하고 종료 확인"
   },
@@ -6272,7 +6272,7 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 10 --json conclusion,createdAt",
    "owner": "claude",
    "state": "done",
-   "by": "세션:709e7dae",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-17",
    "result": "실측 09-17: gh run list -w publish.yml -L5 — 최근 5건 전부 conclusion=success(09-13~14). 라이브 영향 없음, 본인 보고대로 해소"
   },
@@ -6284,7 +6284,7 @@
    "cmd": "cat docs/GSC정밀검증_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "핵심주장(urlInspection API vs 배치리포트) 소스라인 searchconsole.py:172 대조로 확인"
   },
@@ -6296,7 +6296,7 @@
    "cmd": "cat docs/크롤병목_개선안_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-20",
    "result": "재확인: docs/크롤병목_개선안_20260908.md 작성 완료, 실행제안(발행 1편/일)은 CLAUDE.md 발행 SOP 에 이미 반영됨('기본 페이스는 하루 1~2편'). 사장님 09-13 지시로 페이스 상한 자체는 이후 해제(pace.DAILY_HARD=9999)됐으나 그건 별개의 09-13 사장님 판단."
   },
@@ -6308,7 +6308,7 @@
    "cmd": "sed -n '/해석 함정/,/판정 기준은/p' docs/GSC정밀검증_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-20",
    "result": "재확인: 색인모니터링.md(루트)에 '해석 함정' 절 반영 확인됨 — 다음 세션이 참고할 수 있게 영구 문서화 완료."
   },
@@ -6320,7 +6320,7 @@
    "cmd": "python -m studio.searchconsole inspect && cat docs/유효성검사_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-17",
    "result": "실측 09-17: validation-fail-0917(사장님 제공 09-17 결과 통지)로 승계됨 — 이 항목은 종결"
   },
@@ -6332,7 +6332,7 @@
    "cmd": "python -m studio.searchconsole inspect; python -c \"import json;b=json.load(open('docs/유효성검사_기준선_20260908.json',encoding='utf-8'));d=json.load(open('webapp/index_status.json',encoding='utf-8'));from collections import Counter;print('기준선',b['state_분포']);print('현재  ',dict(Counter(v.get('state') for v in d['posts'].values())))\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-17",
    "result": "실측 09-17: validation-fail-0917(사장님 제공 09-17 결과 통지, 리디렉션+크롤됨미색인 결과 도착)로 승계됨 — 이 항목은 종결"
   },
@@ -6344,7 +6344,7 @@
    "cmd": "python -m studio.watch --id validation-result-0915; ls docs/유효성검사_기준선_20260908.json",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-08",
    "result": "담당 지정 완료 — 이중으로 건다. ①1차 = 루틴5(야간검증, 매일 22:30). 9/15 는 화요일이라 루틴5 만 확실히 돈다. selfcheck 10) 재확인대기가 watch due 를 띄우므로 그 자리에서 받는다 ②2차 = 루틴7(09-17 목). 1차가 놓치면 이틀 뒤 받는다 ③관제탑은 살아 있으면 그전에 본다(세션훅이 매번 띄운다). ⚠️ 결과가 9/12~9/25 예상이므로 9/15 에 아직 안 나왔을 수 있다 — 그때는 판정하지 말고 watch snooze --due 로 미룰 것. 억지로 결론 내지 마라"
   },
@@ -6356,7 +6356,7 @@
    "cmd": "ls docs/source_SEO기본가이드_20260908.md && cat docs/URL_영문화_판정_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-08",
    "result": "원문 대조 완료 — docs/SEO가이드_대조보고_20260908.md. 【확증3】①URL 영문화 무용: 원문 「무시해야 할 사항 > 도메인/URL 경로의 키워드」 = '순위 측면에서 도메인 이름(또는 URL 경로)의 키워드만으로는 탐색경로에 나타나는 것 외에는 거의 영향을 미치지 않습니다' → 우리 데이터(색인32편 의미없는URL 94% > 전체 87%)와 일치 ②?m=1 크롤낭비: 원문 「중복 콘텐츠 축소」 = '검색엔진이 중요하지 않은 URL에 크롤링 리소스를 낭비할 수 있습니다' → 우리 302 40% 실측과 정확히 같다 ③?m=1 벌점 아님: '여러 URL로 액세스할 수 있어도 괜찮습니다. 걱정하지 마세요. 비효율적이지만 직접 조치가 부과되지는 않습니다' + '직접 표준화하지 않으면 Google이 자동으로 표준화합니다'(우리 canonical 이미 정상 0/237). 【새로 알게 된 것2 — 헛수고였을 수 있음】·본문 길이 보강 = '콘텐츠 길이 자체는 순위 결정과 관련 없습니다' ·바이라인146편(E-E-A-T) = 'E-E-A-T를 순위 지정 요인이라고 생각함 → 아니요. 그렇지 않습니다.' 🔴단 애드센스 심사·독자신뢰는 별개이므로 단정 금지. 【홍보】'효과적으로 홍보하면 검색엔진이 내 콘텐츠를 더 빠르게 발견할 수 있습니다' = 발견을 빠르게 한다고 명시된 유일한 항목 → OSMU 방향 맞음. 단 '과도하게 하면 오히려 해를 끼칠 수 있습니다' 경고 붙음 — 양 늘리기로 읽지 말 것. 【이미 준수】사이트맵242/242·alt4/4·내부2~7·외부3~6·제목42자·광고없음. 🔴🔴가장 중요: **가이드 대부분을 이미 지키는데도 색인 0 이다 — '안 지켜서 안 되는 것'이 아니다.** 【여전히 미해결】크롤됨-미색인 222편 — 이 가이드에도 답이 없다(가이드는 '이렇게 하면 잘 된다'를 말하지 '왜 색인이 안 되는가'를 말하지 않는다). ⚠️원문 일부 미확보(검색작동방식 전문·Essentials 권장목록·스팸정책 카테고리명·canonical 권장방법) — source 파일에 '❌ 원문 미확보' 표시, 2차출처로 안 채움. 재확보는 claude-in-chrome 으로 가능(미시도)"
   },
@@ -6368,7 +6368,7 @@
    "cmd": "오늘 발행 원하시면: cd C:/lifeinfo && python -c \"import json; d=json.load(open('webapp/pace_day.json',encoding='utf-8')); d['days']['2026-09-08']=2; json.dump(d, open('webapp/pace_day.json','w',encoding='utf-8'), ensure_ascii=False, indent=1)\" 로 오늘 상한을 2로 올린 뒤 재발행 지시. 내일로 미루려면 별도 조치 불필요(자동으로 내일 발행됨)",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "해소됨 — 사장님이 2026-09-08 오전에 오늘 상한을 푸셨고('오늘 상한 — 푸시겠습니까? ok') pace_day.json 의 09-08 항목을 제거했다. G2-05 는 그 뒤 정상 발행됐다(DB url 확인). 이과장이 막힘을 정확히 보고한 것이 옳았다"
   },
@@ -6393,7 +6393,7 @@
    "cmd": "ls docs/미색인222_원인분석_20260908.md docs/OSMU_색인상관_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-08",
    "result": "222편 심층조사 완료 — 【결론】콘텐츠 6축 어디에도 색인을 가르는 신호가 없다. A(한때색인31편) vs B(한번도없음94편): 본문글자수 중앙값 2425 vs 2417.5 · h2/표/이미지/링크 동일 · 템플릿대비 고유텍스트 93% vs 93% · 발행→첫크롤 19.9일 vs 16.9일 — 전부 차이 없음. 🔴**유사도 가설 기각**: 125편 전수 7,750쌍 최고 유사도 **0.18**(bodydup 차단선 0.60의 1/3도 안 됨) → 우리 글은 서로 충분히 다르다. 【더 큰 발견 — 프레임이 틀렸다】GSC 상태는 품질 분류가 아니라 **진행 단계**다: 발행→발견됨(9월71%)→Redirect(8월87%)→크롤됨-미색인(6월100%). 222편은 '나쁜 글' 이 아니라 '크롤이 끝까지 간 글' 이고 9월 글도 시간이 지나면 저기로 간다. 7월 색인 32편도 오늘 100% 전멸(OSMU 97% 완료였는데도). → 글 단위 차이가 아니라 **사이트 전체에 걸린 무언가**. 【OSMU 가설】검증 불가 — 239/244(98%)에 이미 걸려 대조군이 없다. 앞으로 이런 가설은 의도적 대조군이 필요. 【🔴남은 마지막 축】bodydup 은 **우리끼리만** 잰다. **웹 전체에서 고유한가는 안 쟀다** — 애드센스 반려 사유가 'enough unique content' 이므로 이쪽이 마지막으로 남은 축이다(V0 게이트가 막으려던 그것). 【모르는 것】왜 7월 중순이었나(시점은 발행 폭주와 겹치나 인과 증거 없음) · 「크롤됨-미색인」 공식 원인(구글이 문서에 안 적음). 산출물=docs/222편_정체_20260908.md · docs/미색인222_원인분석_20260908.md · docs/OSMU_saegin_sanggwan_20260908.md"
   },
@@ -6405,7 +6405,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code H1-02 --file osmu/네이버용_추석택배마감일.txt",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "사장님이 폰 결재함(원고 시트)에서 복사해 게시 완료 — https://blog.naver.com/magsori8975/224404958250 · 제목 게이트 통과(블로그스팟과 다름) · 교차링크 갱신 완료"
   },
@@ -6417,7 +6417,7 @@
    "cmd": "ls docs/V0_보유율_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-08",
    "result": "최종보고 완료 — docs/최종보고_색인조사_20260908.md. 🔴핵심: V0 를 40%(6월)→56%(7월)→96%(8·9월)로 올렸는데 색인은 0. V0 40% 시기 글은 색인됐었고 96%로 올린 뒤 글은 하나도 색인 안 됨 → **V0 와 색인 사이에 양의 상관이 보이지 않는다**(단 8·9월은 크롤 단계가 덜 진행돼 9월 71%가 발견됨-미크롤이므로 'V0가 해롭다'로 읽으면 안 됨). V0 전수: 0개 90편(36.9%)·1개 62·2개 56·3개이상 36 / 계산예시28.3% 판단형비교17.6% 탈락거절27.5% 함정43.9%. 콘텐츠 6축 전부 차이없음·유사도 최고0.18·고유텍스트93%·웹 따옴표검색 0건(베낀글 아님). 상태라벨=진행단계. 크롤 1970회중 302가 40%. 배제 9개(서버·사이트맵·robots·페이지결함·URL·길이·EEAT·재요청·유효성검사). 남은 사실=7월 중순 이후 크롤을 다 거친 뒤 예외없이 색인 제외, 사이트 전체에 걸린 무언가. 모르는 것 4개 명시(왜 7월인가/공식원인/정보 고유성/31vs94 V0차이는 목록 소실로 측정불가). 처방: 지금까지 쓴 노력 대부분(본문보강·길이·바이라인·URL·재요청)이 숫자로는 효과 미확인 — 모르는 채로 더 쓰는 것보다 원인을 좁히는 데 시간을 쓰는 것이 낫다"
   },
@@ -6429,7 +6429,7 @@
    "cmd": "docs/웹고유성_실측_20260908.md 의 표 9개 문장을 WebSearch로 큰따옴표 검색 후 결과 채우기",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-23",
    "result": "09-23 실측 완료 — Google 브라우저 검색(따옴표 정확인용구)으로 9문장 중 8문장 재확인(1문장은 URL인코딩 오타로 재시도 필요): A1-02·B1-01·C1-02·F2-10·E2-08·B3-04·D1-09·G2-05 전부 정확일치 검색결과 0건('검색결과가 없습니다') — 웹 전체에 동일 문구 없음 확인. 단 사실 자체(자동차세율표·1500만원 연금한도 등)는 다른 글에도 있음 — 우리 글은 표현이 고유하다는 뜻이지 그 사실이 우리만 아는 것이라는 뜻은 아님(당연한 구분). H1-02 재시도 필요(다음 세션)"
   },
@@ -6441,7 +6441,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code G2-05 --file osmu/네이버용_양산삽량문화축전.txt",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "사장님이 게시 완료 — https://blog.naver.com/magsori8975/224405094980 · 제목 게이트 통과 · 교차링크·관련글·제휴 전부 반영됨. ⚠️ 다만 제휴 링크가 카드로 안 뜨고 파란 텍스트 — 원고에 상품명+링크를 붙여 넣어둔 내 잘못(네이버는 URL 단독일 때만 카드를 만든다). 사장님이 링크만 다시 붙이시는 중"
   },
@@ -6453,7 +6453,7 @@
    "cmd": "위 URL 을 열어 제목만 새것으로 바꾸고 저장. 확인: python -m studio.navertitlecheck",
    "owner": "user",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "5편으로 다시 올림(navertitle-top5-0908) — F1-13·B2-02 도 조회가 있는데 빠져 있었다"
   },
@@ -6465,7 +6465,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code E2-15 --file osmu/네이버용_클로드사용량한도.txt",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "사장님 게시 완료 — https://blog.naver.com/magsori8975/224405100656 · 제목 게이트 통과 · 제휴는 붙일 것 없음(정상)"
   },
@@ -6477,7 +6477,7 @@
    "cmd": "python -m studio.navertitlecheck --views",
    "owner": "user",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "사장님이 5편 제목 교체 완료(navertitlecheck --views 실측: 대상 10편 중 같은 제목 0편). 네이버 전용 썸네일 5장도 새 제목으로 교체 완료 — F1-13·G2-03 은 실사진(고유색 10,024·35,380)"
   },
@@ -6489,7 +6489,7 @@
    "cmd": "캡처 후: python -m studio.naverlab",
    "owner": "user",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-09",
    "result": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다"
   },
@@ -6501,7 +6501,7 @@
    "cmd": "python -m studio.batchboard order --id draft0908e104 --file docs/orders/draft0908e104.txt",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "E2-15 4채널 완료(13:29 인스타 게시)로 게이트가 풀려 지시서 등록 완료. 우회하지 않고 기다린 것이 맞았다"
   },
@@ -6513,7 +6513,7 @@
    "cmd": "python -m studio.naverkw \"추석 차례상 비용\" \"추석 연휴 은행\" 로 검색어 재확인 후, aT 발표 여부를 source 에이전트로 확인",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-20",
    "result": "①추석 차례상 비용 전통시장vs대형마트 는 H1-04 로 발행완료(공식 aT 출처 확보됨, osmu/네이버용_추석차례상비용전통시장vs대형마트.txt 존재). ②추석 연휴 은행 문여는곳·ATM수수료 는 DB에서 못 찾음(미제작 또는 다른 제목) — 추석이 9/25로 임박했으나 이 항목은 종결하고 ②는 별도 확인 필요하면 새 글감 제안으로."
   },
@@ -6539,7 +6539,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "사장님이 네이버 글에 반영 완료 — 라이브 실측: 대가성 문구가 본문 첫 줄(다음 줄이 '올해 추석은 9월 25일…' 본문 시작) · 토스 링크 카드 정상 표시(홍삼 이미지+상품명). 공정위 예규 '게시물 첫 부분' 충족"
   },
@@ -6551,7 +6551,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code E1-04 --file osmu/네이버용_갤럭시S26구매혜택.txt",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "사장님 게시 완료 — https://blog.naver.com/magsori8975/224405106101 · 제목 게이트 통과 · 제휴 링크(충전기) 포함"
   },
@@ -6563,7 +6563,7 @@
    "cmd": "토스쇼핑에서 '비하겐 ZETTA GaN PD PPS 35W' 검색해 쉐어링크 발급(1순위) 또는 쿠팡파트너스에서 '팬택 30W C타입 충전기' 검색해 링크 발급(2순위)",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-08",
    "result": "사장님 폰 승인(새 형식 '승인: afflink-e1-04 …') → 이부장이 발급: https://toss.im/_m/vW63DCHj (302 확인) · affiliate 등록 완료. 1순위 비하겐 ZETTA 채택"
   },
@@ -6588,7 +6588,7 @@
    "cmd": "python -c \"from studio import affiliate; import re; print(affiliate.block('E1-04','threads')[0])\" 로 실제 head 문구 확인 후 threadsdraft.py L243 의 검사 문자열을 그와 일치시킬 것",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-10-19",
    "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
@@ -6625,7 +6625,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "사장님 승인 → 이부장 발급 완료: https://toss.im/_m/55rbLkCj (302 확인) · 필립스 DLP7721C 74Wh 26,900원 · affiliate 등록 완료"
   },
@@ -6638,7 +6638,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "사장님 승인 → 이부장 발급 완료: https://toss.im/_m/98PMXX4g (302 확인) · 로에드 손저울 7,870원·리뷰299 · affiliate 등록. 2순위 캐리어는 권고대로 보류(토스·다나와 25% 가격차 미해소)"
   },
@@ -6651,7 +6651,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-08",
    "result": "사장님이 그대로 쓰라고 승인 — affiliate 등록 완료. 승인 전 발급은 내 지침이 쿠팡만 예로 들어 생긴 것이고, tosslink best(조회)/link(발급) 를 나눠 명시해 고쳤다"
   },
@@ -6664,7 +6664,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:88de804b",
+   "by": "3.네이버 블로그 통합데이터 분석",
    "done_at": "2026-09-09",
    "result": "이미 반영됨 — 라이브 실측: '추석 전에 받는다? 생계급여 추석전 지급일과 기초연금 조기지급 총정리 (2026)'. 사장님이 2026-09-08 오후 제목 5편 교체 때 처리하셨다(navertitle-top5-0908). 3.분석 요청은 그 전에 올라온 것이라 낡았다. 유입 1위 검색어 '생계급여 추석전 지급' 이 지금 제목에도 그대로 들어 있어 추가 변경 불필요"
   },
@@ -6677,7 +6677,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:88de804b",
+   "by": "3.네이버 블로그 통합데이터 분석",
    "done_at": "2026-09-09",
    "result": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다"
   },
@@ -6689,7 +6689,7 @@
    "cmd": "python -m studio.pubqueue list",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43"
+   "by": "이부장"
   },
   {
    "id": "naver-post-c214-ready",
@@ -6699,7 +6699,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code C2-14 --file osmu/네이버용_대상자시작일.txt",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-09",
    "result": "이미 완료 — 사장님이 2026-09-09 새벽에 게시하셨다: https://blog.naver.com/magsori8975/224405492563 · navercheck 온전 1/1(원문·관련글·교차링크·태그) · 교차링크 갱신까지 끝났다"
   },
@@ -6711,7 +6711,7 @@
    "cmd": "grep -c '정정 (2026-09-09)' docs/222편_정체_20260908.md docs/종합판단_색인_20260908.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "grep -c 정정배너 7개 문서 전부 확인(2개는 실제 파일명 재탐색 후 확인)"
   },
@@ -6723,7 +6723,7 @@
    "cmd": "python -m studio.searchconsole inspect",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "9/10 루틴7 정기실행 확인 완료. 【inspect 완주】total 237→248(+11편 발행) · **색인 0→0 변화 없음** · 크롤됨미색인 125→124(-1) · 발견됨미크롤 43→34(-9) · **Redirect error 62→83(+21)** · 미발견 7→7. 【판정】유효성 검사 효과 = **0**. 색인은 그대로 0 이고, 상태 이동은 9/8 에 정리한 '진행 단계' 모델대로다(발견됨→Redirect→크롤됨미색인). 신규 11편이 들어오며 발견됨에서 21편이 Redirect 로 넘어갔을 뿐 색인으로 간 것은 없다. 【메일 통지 2건(9/6 도착) 판독】①서버오류(5xx) = 해결됨·1개 페이지 수정 확인 → 🔴그건 원래 0건이던 항목이다 ②크롤링됨-미색인 = **일부 해결되지 않음**·접수중215·실패7 → 본체는 그대로. 즉 **통과한 것은 고칠 게 없던 항목 하나뿐이다.** 【미확인 2가지】①사장님 캡처의 속성이 (도메인 속성)이라 내가 보던 URL 접두어 속성과 데이터가 다를 수 있다 ②내 9/8 기록(접수중222·실패0)과 캡처(접수중215·실패7)의 숫자가 달라 서로 다른 회차로 보이나 단정 못 함. 【부수 확인】inspect 출력에 '⚠️ clean URL 기준 · ?m=1 미포함' 경고가 붙었다 — 9/9 정정 요청분이 코드에 반영됐다."
   },
@@ -6735,7 +6735,7 @@
    "cmd": "python -c \"import subprocess;print(subprocess.run(['git','log','-p','-1','057d1394','--','.githooks/pre-push'],cwd='C:/lifeinfo',capture_output=True,text=True,encoding='utf-8').stdout[:3000])\" 로 원래 의도(러너 실행중 차단) 재확인 후, pushgate.py 를 훅 전용/동기화 도우미 전용으로 분리하거나 .githooks/pre-push 에서 직접 호출하지 않도록 정리",
    "owner": "claude",
    "state": "done",
-   "by": "세션:4fd86d64",
+   "by": "루틴3 · lifeinfo-publish (C)",
    "done_at": "2026-09-10",
    "result": "수정커밋 0062ec1d 확인, 현재 파일은 복원본(push 재귀 없음) 확인"
   },
@@ -6747,7 +6747,7 @@
    "cmd": "start https://creator-advisor.naver.com",
    "owner": "user",
    "state": "done",
-   "by": "세션:88de804b",
+   "by": "3.네이버 블로그 통합데이터 분석",
    "done_at": "2026-09-09",
    "result": "사장님이 2장 캡처 완료(09-09 13:48·13:50) — 유입검색어(09-08 기준)·조회수 순위(09-05 기준). 3.가 판독 중(kwcap0909)"
   },
@@ -6758,7 +6758,7 @@
    "cmd": "python -m studio.naverlab && python -m studio.topicprop table",
    "owner": "claude",
    "state": "done",
-   "by": "세션:88de804b",
+   "by": "3.네이버 블로그 통합데이터 분석",
    "done_at": "2026-09-09",
    "result": "정정: watch(owner=claude)는 CP 어느 화면에도 안 뜬다는 걸 확인(approval.html·pending_osmu.html 둘 다 owner=user만 필터). batchboard naverlab0909(담당=3.)로 옮김 — reports.html에서 실제로 보임(3. 6건)"
   },
@@ -6770,7 +6770,7 @@
    "cmd": "grep -n 'inputs\\.' .github/workflows/publish.yml | grep -v GITHUB_OUTPUT",
    "owner": "claude",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-10-19",
    "result": "publish.yml run 블록의 inputs/steps outputs 직접삽입 전부 env 로 이전(남은 ${{}} 0, secrets 제외). yaml 통과, norm 스텝 bash 추출 시험에서 따옴표/$HOME/백틱/$() 제목 원문 보존·미실행. 미커밋"
   },
@@ -6782,7 +6782,7 @@
    "cmd": "python -m studio.batchboard order --id routinelog --actor 루틴7",
    "owner": "claude",
    "state": "done",
-   "by": "세션:ce43703c",
+   "by": "7-Lifeinfo index check",
    "done_at": "2026-09-10",
    "result": "whoami 실행 -- 3. 주소가 오늘(09-10 05:00) cbd80b 로 최신 자기등록됨, 구조적 해결책 가동 확인"
   },
@@ -6807,7 +6807,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code H1-04 --file osmu/네이버용_차례상비용전통시장vs대형마트.txt",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-09",
    "result": "사장님 게시 완료 — https://blog.naver.com/magsori8975/224406257888"
   },
@@ -6819,7 +6819,7 @@
    "cmd": "python -m studio.approvalcount && python -c \"from studio import approvalcount as a; import json,io; d=json.load(io.open(a.bake_json()[0],encoding='utf-8')); print([set(['do','who','sub','waited'])<=set(it) for it in d['items']])\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-10",
    "result": "실측 확인(2026-09-10 이부장 판정): do/who/sub/waited 필드 정상"
   },
@@ -6831,7 +6831,7 @@
    "cmd": "python -m studio.approvalcount && python -m studio.falsepos && python validate_db.py",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-10",
    "result": "실측 확인(2026-09-10 이부장 판정): reports.py 세션별 그룹 정상"
   },
@@ -6843,7 +6843,7 @@
    "cmd": "python -m studio.reports && grep -o \"<div class='ses'>[^<]*\" webapp/reports.html && python -m studio.approvalcount && python -m studio.falsepos && python validate_db.py",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-11",
    "result": "reports.py·reports.html·approvalcount·falsepos·validate_db 재실행 전부 정상(FAIL 0·오탐 0) — 통일 반영 확인"
   },
@@ -6868,7 +6868,7 @@
    "cmd": "python -c \"from studio import approvalcount as a; a.bake_json()\" && python -m studio.approvalcount",
    "owner": "claude",
    "state": "done",
-   "by": "세션:06ed2a43",
+   "by": "이부장",
    "done_at": "2026-09-10",
    "result": "실측 확인(2026-09-10 이부장 판정): approvalcount 정상 출력 확인"
   },
@@ -6892,7 +6892,7 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 100 --json name,conclusion,createdAt --jq '[.[]|select(.name|test(\"드리프트\"))][0]'",
    "owner": "claude",
    "state": "done",
-   "by": "세션:dac37373",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-11",
    "result": "DB 제목을 라이브 정정본에 맞추고 배포본까지 반영 → 피드 드리프트 검사 수동 실행 결과 success(run 34541297666). 직전 09-09 회차는 failure 였다"
   },
@@ -6904,7 +6904,7 @@
    "cmd": "gh run view 34307942072 -R magsori-wq/lifeinfo-source --log-failed | grep -i 'unrecognized'",
    "owner": "claude",
    "state": "done",
-   "by": "세션:dac37373",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-20",
    "result": "H1-04 는 이후 재시도로 정상 발행 완료(DB url 존재). 근본원인은 workflow-quote-title-bug-0909 로 통합 추적(그 항목은 아직 미해결로 남김 — 근본수정 안 됐으나 재발 없음)."
   },
@@ -6916,7 +6916,7 @@
    "cmd": "curl -A 'Mozilla/5.0' https://www.idolbom.go.kr/front/board/notice/14381 로 첨부 다운로드 링크 재확인 후 표 전수대조, 또는 1577-2514/idolbom.go.kr 이용요금표 페이지 직접 열람",
    "owner": "claude",
    "state": "done",
-   "by": "세션:975cec35",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-10",
    "result": "idolbom.go.kr 공지14381 첨부PDF 직접다운로드·8칸 전부대조 완료 — 오류 0건(가나다라형 취학전85/60/30/15% 취학후80/50/25/10% 전부 정확 일치)"
   },
@@ -6952,7 +6952,7 @@
    "cmd": "python -m studio.pipeline naver-draft --code A3-12",
    "owner": "user",
    "state": "done",
-   "by": "세션:eb42e59e",
+   "by": "이과장",
    "done_at": "2026-09-10",
    "result": "게시 완료 확인(이부장 실측 2026-09-10): osmu.naver = https://blog.naver.com/magsori8975/224407078247 · DB 기록됨. 사장님이 이미 게시하셨는데 결재함에 남아 있었다"
   },
@@ -7036,7 +7036,7 @@
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
    "state": "done",
-   "by": "세션:3e34ca81",
+   "by": "루틴3 · lifeinfo-publish (C)",
    "done_at": "2026-09-10",
    "result": "실측 확인(2026-09-10 이부장 판정): C2-15·B4-11·F2-17 전부 V0 pass"
   },
@@ -7048,7 +7048,7 @@
    "cmd": "python -m studio.blogger update-post --code A1-04 --check 후 필요시 상시신청 전환 사실 반영. 1차확인: https://www.news1.kr/realestate/general/6104934 · 원문 molit.go.kr 보도자료 재검색",
    "owner": "claude",
    "state": "done",
-   "by": "세션:699404bd",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-09-20",
    "result": "라이브 재확인: A1-04 본문이 이미 '2022년 한시사업으로 시작했으나 2025년 국정과제 선정으로 계속사업(매년 정기 신청)' 으로 정정되어 있음. '내년 봄까지 대기' 같은 옛 표현은 0건 검출. 상시전환 사실이 정확히 반영됨 — 이미 수정 완료된 상태."
   },
@@ -7096,7 +7096,7 @@
    "cmd": "python -c \"import json;req=set(json.load(open('webapp/gsc_requested.json',encoding='utf-8'))['urls']);db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print(sum(1 for p in db['posts'] if p.get('url') and p['url'] not in req),'편 요청기록 없음')\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:6cfa517f",
+   "by": "루틴7 · lifeinfo-index-check (G)",
    "done_at": "2026-09-20",
    "result": "대기조건(watch validation-result-0915) 충족 — 09-15·09-17 유효성검사 결과 3회차 모두 '통과 0·레버 아님' 확정, 재요청 수율도 2%로 이미 확인됨(크롤병목_개선안_20260908.md). 결론: dispatch.py 에 색인요청 단계를 추가하지 않는 것이 맞다 — 현재도 grep 0건으로 미추가 상태, 이것이 옳은 선택으로 확정됨."
   },
@@ -7543,7 +7543,7 @@
    "cmd": "claude-in-chrome 으로 law.go.kr 국민연금법 부칙(보험료율 경과조치) 직접 열람 → 2033년 13% 조항 존재 확인 → 있으면 본문 표에 2033행 추가 지시, 없으면 현재 서술이 맞으므로 종결",
    "owner": "claude",
    "state": "done",
-   "by": "세션:4020e16a",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-20",
    "result": "law.go.kr DRF API(MST 280269)로 국민연금법 부칙 제4조(2025.4.2 부칙) 직접 확인: 경과조치 2026~2032년까지만 규정(2032=12.5%), 2033년 행 없음 — 2033년부터는 부칙이 아니라 본칙(제88조③④, 이미 13%로 개정)이 적용되는 구조. A3-12 '2033년 이후는 부칙에 규정 없다'는 서술은 정확함. 상세=docs/source_A3-12_국민연금보험료율_2033년_20260920.md. 표 확장은 필수아님(보강 검토사항)."
   },
@@ -8084,7 +8084,7 @@
    "cmd": "브라우저로 열기: https://search.google.com/search-console/manual-actions?resource_id=sc-domain%3Alifeinfo8975.blogspot.com (URL속성은 resource_id=https%3A%2F%2Flifeinfo8975.blogspot.com%2F)",
    "owner": "claude",
    "state": "done",
-   "by": "세션:6cfa517f",
+   "by": "루틴7 · lifeinfo-index-check (G)",
    "done_at": "2026-09-20",
    "result": "9일 경과, 이후 '투명성' 관련 재문의·재발 보고 없음(일일_문제기록.md 에 후속 없음). 09-11 당시 확인한 대로 우리 두 GSC 속성은 '감지된 문제 없음' 상태 유지 추정 — 사장님이 보신 화면은 별개 계정/서비스였던 것으로 판단됨. 추가 캡처 대조 없이 종결."
   },
@@ -8215,7 +8215,7 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 10 --json conclusion,createdAt,databaseId",
    "owner": "claude",
    "state": "done",
-   "by": "세션:d0519052",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-20",
    "result": "재확인: gh run list 최근 15건(09-14~09-19) 중 14 success·1 failure(09-17, taxonomy 사유로 별개). title 입력형식 오류로 인한 'unrecognized arguments' 실패 재발 없음. CLAUDE.md 도 이미 title/post_title 구분을 09-06에 명시해 둠."
   },
@@ -8239,7 +8239,7 @@
    "cmd": "python -m studio.blogger update-post --code H1-06 --check 로 라이브 재확인, 또는 NOL인터파크에서 <새> 검색해 실제 예매 상태 확인",
    "owner": "claude",
    "state": "done",
-   "by": "세션:4e9ecc45",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-20",
    "result": "9일 경과 — 09-11 14:00 예매 오픈 여부를 지금 재확인하는 것은 더 이상 의미 없음(이미 지난 시점). 예매 기간 자체가 지났을 가능성이 높아 시의성 이슈 자체가 소멸."
   },
@@ -8594,7 +8594,7 @@
    "cmd": "python -c \"import sys; sys.path.insert(0,'.'); from studio import atomicio; print('atomicio OK:', atomicio.atomic_write)\"",
    "owner": "user",
    "state": "done",
-   "by": "세션:b72a7511",
+   "by": "루틴8 · 8-lifeinfo-issue-product (H)",
    "note": 12
   },
   {
@@ -8605,7 +8605,7 @@
    "cmd": "grep -n reports studio/batchboard.py; ls -la webapp/reports.html",
    "owner": "claude",
    "state": "done",
-   "by": "세션:261f2508",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-20",
    "result": "재확인: studio/batchboard.py:747-752 에서 _bake() 끝에서 reports.bake() 호출하도록 수정됨(CLAUDE.md '보고는 CP 보고서 탭까지' 절과 일치). mark 후 자동으로 reports.html 도 갱신."
   },
@@ -8843,7 +8843,7 @@
    "cmd": "python -c \"import webbrowser; webbrowser.open('https://www.kosaf.go.kr')\" 후 공지사항에서 '2학기 2차 서류제출' 검색",
    "owner": "claude",
    "state": "done",
-   "by": "세션:9b9fcae7",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-13",
    "result": "일치 · kosaf.go.kr seqNo=21169,21185 원문 확인, 마감 9월16일(수)18시 정확"
   },
@@ -9406,7 +9406,7 @@
    "cmd": "python -m studio.v0check gate --code H1-09",
    "owner": "claude",
    "state": "done",
-   "by": "세션:91b47069",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-13",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 🟡 통과(수정 요망 2건). 1차 반려 2건 해소 확인 — koreasalefesta.kr→koreagrandfestival.kr 전건 교체(L142·149·154·167·171·172), '순차 오픈/1~2주 전'"
   },
@@ -9430,7 +9430,7 @@
    "cmd": "python -m studio.topicprop stock",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:91b47069"
+   "by": "루틴4 · lifeinfo-travel-prep (D)"
   },
   {
    "id": "blocked-xlink0911all",
@@ -9477,7 +9477,7 @@
    "cmd": "cat docs/source_cde1_노후경유차5등급조기폐차종료_20260914.md docs/source_cde2_개인정보보호법개정9월11일시행_20260914.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:81385b66",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-09-20",
    "result": "재확인: docs/source_cde1_노후경유차5등급조기폐차종료_20260914.md·docs/source_cde2_개인정보보호법개정9월11일시행_20260914.md 둘 다 존재 확인. 1차출처 확보 작업 완료."
   },
@@ -9672,7 +9672,7 @@
    "cmd": "python -m studio.topicprop table && python -m studio.pace",
    "owner": "claude",
    "state": "done",
-   "by": "세션:d486208d",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-09-20",
    "result": "09-14 시점 보고: 재고 0/99 였음 — 09-20 재확인시 재고 1/99(A2-19), 순환 정상 지속. A6-05 는 이후 발행완료(url 존재). 이 시점 스냅샷 보고는 완결."
   },
@@ -10022,7 +10022,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:af441131",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-14",
    "result": "09-14 20:4x 사장님 승인으로 두 티켓에 답장 발송(1차 msg 1a0a01498fcdf052 · 2차 1a0a014a0e4d35da) — 사람 담당자 재검토 요청"
   },
@@ -10046,7 +10046,7 @@
    "cmd": "브라우저(claude-in-chrome)로 programs.sbs.co.kr/drama/doctorx/about/88584 렌더본문 재확인(종료시각·리메이크문구) + 10월초 이후 sbs.co.kr/schedule 에서 10/9 편성 확인(지역민방 포함여부)",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:830847ea"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "v0reject-h1-10",
@@ -10068,7 +10068,7 @@
    "cmd": "Gmail: from:support@mail.anthropic.com newer_than:7d",
    "owner": "claude",
    "state": "done",
-   "by": "세션:af441131",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "사람 담당자 회신 도착: Gmail support@mail.anthropic.com 2026-10-06 21:23Z 두 티켓 통합 답변 (실측 10-19 밤)"
   },
@@ -10090,7 +10090,7 @@
    "cmd": "git -C C:/lifeinfo status --porcelain webapp/ && git -C C:/lifeinfo log origin/main..main --oneline",
    "owner": "claude",
    "state": "done",
-   "by": "세션:af441131",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-14",
    "result": "해소 — 다른 세션의 pull --rebase 로 e663eb76 이 4fbe2814 로 재작성돼 원격 반영됨. 뒤이은 5c5db1e6 도 푸시 성공(origin/main..main 0건 확인)"
   },
@@ -10151,7 +10151,7 @@
    "cmd": "python -m studio.note list --tag 팩트체크 --grep E2-16",
    "owner": "user",
    "state": "done",
-   "by": "세션:a11b6b2a",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-15",
    "result": "livefix-bundle-0915 로 통합(09-15 사장님 정리 지시) — 정정 자체는 미완, 그 카드에서 추적"
   },
@@ -10357,7 +10357,7 @@
    "cmd": "python -m studio.now",
    "owner": "claude",
    "state": "done",
-   "by": "세션:b4084016",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-09-15",
    "result": "C4-09 초안·썸네일·큐·V0🟢pass→결재함1번 완료. E4-06 source확보 후 이과장 재지시(draft0915c409, C4-09 중복 방지 포함)"
   },
@@ -10706,7 +10706,7 @@
    "cmd": "python -m studio.note list | grep C1-10",
    "owner": "claude",
    "state": "done",
-   "by": "세션:23898e73",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-23",
    "result": "🔴 항목 자체가 틀렸다 — 라이브의 '7억원 이하' 가 맞다. 이부장이 보건복지부 고시 원문 PDF(고시 제2024-293호, 2025-01-01 시행, mohw.go.kr boardDownload list_no=1484171)를 직접 받아 추출: 별표3의2·별표4 공통으로 '재산세 과세표준액의 합이 7억원 이하일 것'. 09-17 야간검증이 5.4억(구 기준)으로 잘못 판정했고 관제탑이 그것을 검증 없이 사장님께 '라이브 오류' 로 보고했다. 라이브 수정 불필요"
   },
@@ -10730,7 +10730,7 @@
    "cmd": "python -m studio.v0check gate --code G1-07",
    "owner": "claude",
    "state": "done",
-   "by": "세션:6610cf11",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-09-20",
    "result": "재확인: v0check.json G1-07 최종 pass. 동시검사 구조적 낭비 지적은 유효하나 게이트 판정(나중 것이 남는다) 자체는 정상 작동해 실해 없었음 — 예약표시 개선은 낮은 우선순위로 기록만 남김."
   },
@@ -10754,7 +10754,7 @@
    "cmd": "브라우저로 tving.com 시리즈 전체보기(에피소드 목록) 확인 또는 종영 임박 시(10월 중하순) 언론보도 재검색",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:830847ea"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "approve-livefix0917g304",
@@ -10776,7 +10776,7 @@
    "cmd": "python -m studio.now",
    "owner": "claude",
    "state": "done",
-   "by": "세션:75763bf8",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-09-20",
    "result": "재확인: B5-06 topicprop table 에 없음(드랍 확정). picked-무초안 11건이 실제로는 전부 발행완료였다는 09-17 판단이 이후 낡은 플래그 정리로 이어짐(topicprop-state-drift 계열 지속 해소)."
   },
@@ -11374,7 +11374,7 @@
    "cmd": "python -c \"import json; d=json.load(open('webapp/batch.json',encoding='utf-8')); print(len(d.get('report_log',[])), d['report_log'][-1] if d.get('report_log') else None)\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:024e6c54",
+   "by": "루틴3 · lifeinfo-publish (C)",
    "done_at": "2026-09-20",
    "result": "재확인: report_log 는 코드·HTML 어디서도 읽는 곳이 0건(grep 확인) — 완전히 죽은 필드로 확정됨. 실제 보고는 batches.*.items[].note/currents 경로로만 가고 있고 그쪽은 정상 작동(reports.html 이 매번 갱신됨, mtime 09-20 확인). 죽은 필드라 위험 없음 — 방치해도 무방."
   },
@@ -11751,7 +11751,7 @@
    "cmd": "python -m studio.v0check gate --code F4-22",
    "owner": "claude",
    "state": "done",
-   "by": "세션:3ae6f73d",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-18",
    "result": "V0 통과로 해소 — 검사자 이부장 · V0검사관 22:03 pass 를 이부장이 재검토. 검사관이 '출처기록 누락이지만 비핵심(비금전결정)' 으로 넘긴 '반려견 동반 옵션도 동일 가격' 을 **금액 주장으로 보아 삭제**했다(d4a357af, 63줄) "
   },
@@ -11763,7 +11763,7 @@
    "cmd": "python -m studio.v0check gate --code H1-12",
    "owner": "claude",
    "state": "done",
-   "by": "세션:3ae6f73d",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-18",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 3절 warn박스 예매수수료 지어낸 수치(1000~2000원·자정마감)를 출처없는 구체수치 없이 일반안내로 교체 확인. 계산예시(환불표 SR154000원 기준 날짜별 실금액)·비교(SR-시야제한 차액55000원·36"
   },
@@ -11787,7 +11787,7 @@
    "cmd": "curl -s -A Mozilla/5.0 https://www.mois.go.kr/frt/sub/a06/b04/mobileId/screen.do | grep -o '10月\\|10.월\\|3차 개방' 로 추진경과 갱신 확인, 갱신됐으면 python studio/blogger.py update-post --code E2-17 로 은행명 반영 검토",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:3ad7027a"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "f422-dog-line-0918",
@@ -11806,7 +11806,7 @@
    "cmd": "python -m studio.v0check gate --code C4-10",
    "owner": "claude",
    "state": "done",
-   "by": "세션:b63fa29b",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-09-19",
    "result": "V0 통과로 해소 — 검사자 이부장 · 3차 재검토(출처 5건 + 날짜 서술). 추석 연휴 날짜를 **법령 원문으로 확정**했다 — 관공서의 공휴일에 관한 규정(시행 2026-05-01, law.go.kr DRF 취득 09-19) 제2조제9호 '추석 전날"
   },
@@ -11887,7 +11887,7 @@
    "cmd": "curl -s https://lifeinfo8975.blogspot.com/2026/09/2026-3.html | grep -c 반려동물",
    "owner": "claude",
    "state": "done",
-   "by": "세션:3ae6f73d",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-19",
    "result": "위 decide 건과 통합 — FAQ 유지로 종결, 라이브 무변경"
   },
@@ -11899,7 +11899,7 @@
    "cmd": "curl -s https://lifeinfo8975.blogspot.com/2026/09/2026-3.html | grep -c 반려동물",
    "owner": "claude",
    "state": "done",
-   "by": "세션:3ae6f73d",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-19",
    "result": "사장님 결정(09-19): 권고대로 FAQ 반려동물 문구 유지. 라이브 수정 없음. 근거=YES24 직접조회, 출처파일 보완(a6ba6e13)"
   },
@@ -11924,7 +11924,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:a9599168",
+   "by": "루틴8 · 8-lifeinfo-issue-product (H)",
    "done_at": "2026-09-19",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
@@ -11948,7 +11948,7 @@
    "cmd": "이부장 창에 붙여넣기: 재고 3편 채우게 글감 선별하고 초안 지시서 내려",
    "owner": "user",
    "state": "done",
-   "by": "세션:3ae6f73d",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-19",
    "result": "이부장이 받았다 — 재고 0/하한 3 확인. ①경보 배선 수리(need() 호출처 0곳이었다, a3977bd5)+회귀규칙(dfc64fa2) ②글감 선별은 지금 진행: 루틴2 결과 대기 + 3.에 유입검색어 기반 제안 요청 + 이부장 직접 발굴. 루틴4 판단이 정확했고 넘긴 것도 옳다(roles상 지시서는 이부장 몫)"
   },
@@ -11972,7 +11972,7 @@
    "cmd": "python -m studio.dupcheck '양육비 선지급 소득기준 폐지 10월 29일'",
    "owner": "user",
    "state": "done",
-   "by": "세션:5552cd84",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-09-19",
    "result": "사장님 승인 → 지시서 childsupport0919 로 이과장 배정"
   },
@@ -11985,7 +11985,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:5552cd84",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "req_by": "이과장",
    "done_at": "2026-09-19",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
@@ -12051,7 +12051,7 @@
    "cmd": "gh run view 35407506574 -R magsori-wq/lifeinfo-console --log-failed",
    "owner": "claude",
    "state": "done",
-   "by": "세션:85185a39",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-20",
    "result": "DB 제목을 라이브에 맞췄다(라이브가 사람이 정정한 정본). F3-06='…2026년 9월 국제선·국내선 유류할증료 인상' · F2-14='2026 추석 고속도로 통행료 9월 24일~27일 무료 확정 …'. 라이브 title 직접 조회로 대조. 매니페스트 재생성까지 완료, validate_db PASS 15·FAIL 0"
   },
@@ -12100,7 +12100,7 @@
    "cmd": "python -c \"import sys,datetime;sys.path.insert(0,'.');from studio import reports;by=reports.collect();t=datetime.date.today().isoformat();rs=[v for k,v in by.items() if '루틴' in k][0];live=[r for r in rs if r[0][:10]==t];print('루틴 live',len(live),'/ 전체',len(rs))\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:15e0bc29",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-20",
    "result": "해결 확인(재기록) — 루틴5 커밋 42868067 이 studio/reports.py 2줄 수정(완료 보고의 at 을 정렬키로). 루틴1이 reports.bake() 재실행해 실측: today 10건 표시 · reports.html 에 daily-email-briefing-0920 실림. 고친 것은 루틴5, 확인은 루틴1. ⚠️ 첫 done 기록(커밋 f42fe545)은 이과장 세션의 rebase --abort 에 함께 되돌려져 사라졌다 — 그래서 다시 남긴다."
   },
@@ -12112,7 +12112,7 @@
    "cmd": "git -C C:/lifeinfo log --oneline -4 && git -C C:/lifeinfo status -sb | head -2",
    "owner": "claude",
    "state": "done",
-   "by": "세션:15e0bc29",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-20",
    "result": "【정정·종결 09-20 15:0x · reflog 실측】 ①지금 rebase 는 돌고 있지 않다 — .git/rebase-merge 없음 · 충돌 0 · main...origin/main 동기(ahead/behind 0). 알릴 일 자체가 없다. ②이과장은 잘못한 것이 없다. reflog 순서: 14:34 pull --rebase(start) → 내 커밋 2개 pick → 14:34 루틴1이 【rebase 진행 중에】 f42fe545 를 얹음 → 14:33 rebase(abort) 로 그 커밋 유실 → 14:35 이과장이 merge(ort)로 갈아타 정상 해결 → 14:37~14:39 루틴1 재기록·이부장·이과장 커밋 순조. ③즉 유실의 직접 원인은 【내가 남의 rebase 도중에 커밋한 것】이다. abort 가 그 위에 얹힌 커밋을 데려가는 것은 정상 동작이다. ④그리고 pull --rebase 는 CLAUDE.md 가 권장하는 표준 절차다(금지된 것은 --autostash). 앞 노트가 이것을 '위험한 rebase' 처럼 적은 것은 부정확했다. 🔴 남는 구조 문제 1건은 따로 올린다 — 세션이 커밋 직전에 '지금 남이 rebase 중인가'를 확인할 방법도 규칙도 없다."
   },
@@ -12125,7 +12125,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:15e0bc29",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-23",
    "result": "권고안(읽기전용 경고) 그대로 구현·시험 완료(09-23) — .githooks/commit-msg 맨 앞에 rebase-merge/rebase-apply 디렉토리 존재시 stderr 경고, exit 0(차단안함). 정상커밋·rebase흉내 둘 다 시험해 의도대로 동작 확인(rebase 흉내에서만 경고 출력, 태그검사는 그대로 별개로 작동)"
   },
@@ -12138,7 +12138,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:15e0bc29",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-20",
    "result": "오판이었다 — 이부장 세션은 열려 있었다(06ed2a43, 이 세션). 원인은 등록부의 ref 가 09-11 값(6be330)으로 낡아 이름 해석이 안 된 것. 현재 주소로 재등록 완료: 이부장=이부장[2afb01] · 이과장=LEE[5da458]. 앞으로는 whoami 로 재등록된 주소를 쓸 것"
   },
@@ -12162,7 +12162,7 @@
    "cmd": "python -m studio.whoislee",
    "owner": "claude",
    "state": "done",
-   "by": "세션:15e0bc29",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-28",
    "result": "09-28 이부장 정리 — 에이전트 실측 판정(끝남/폐기) 근거: docs/watch_triage_tower_20260928.md"
   },
@@ -12251,7 +12251,7 @@
    "cmd": "python -m studio.batchboard order --id draft0920f218",
    "owner": "claude",
    "state": "done",
-   "by": "세션:a35019ed",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-21",
    "result": "F2-18 발행·네이버·인스타·쓰레드 4채널 완결(09-21). 9/23 전 발행 목표 달성."
   },
@@ -12276,7 +12276,7 @@
    "cmd": "curl -s https://www.energyv.or.kr/info/use_info.do | grep -o '하절기 에너지바우처는[^<]*'",
    "owner": "claude",
    "state": "done",
-   "by": "세션:67c9a68b",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-28",
    "result": "09-28 이부장 정리 — 에이전트 실측 판정(끝남/폐기) 근거: docs/watch_triage_tower_20260928.md"
   },
@@ -12778,7 +12778,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:830847ea",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-23",
    "result": "코드 회귀시험용 — 삭제"
   },
@@ -12791,7 +12791,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:830847ea",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-23",
    "result": "코드 회귀시험용 — 삭제"
   },
@@ -12827,7 +12827,7 @@
    "cmd": "docs/c213_1차출처_심뇌혈관골든타임_20260906.md 참고 후 소방청(119)·질병관리청 공식 자료 재탐색",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:830847ea"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "adsense-review-0923",
@@ -12849,7 +12849,7 @@
    "cmd": "구글에서 정확한 따옴표문구로 재검색",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:830847ea"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "adstxt-verify-0923",
@@ -12883,7 +12883,7 @@
    "cmd": "python -m studio.agentcheck 로 정의 확인 후 실제 source 에이전트를 SPA 사이트(sbs.co.kr 등)로 호출해 브라우저 도구 사용 성공 여부 확인",
    "owner": "claude",
    "state": "done",
-   "by": "세션:830847ea",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-10-19",
    "result": "낡음: 10-13 방침으로 브라우저는 Aside 일원화 — .claude/agents/source.md:8 이 claude-in-chrome 대신 Aside 를 지시, CLAUDE.md 「브라우저는 Aside 하나로」 (실측 10-19 밤)"
   },
@@ -13004,7 +13004,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:9da8ed50",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-03",
    "result": "결과 나왔다 — 반려 (루틴1 10-03 08시). 이 항목이 추적하던 GETTING_READY 전이의 결말이다: 메일 도착(10-03 06:46 KST adsense-noreply@google.com) + API 가 GETTING_READY → NEEDS_ATTENTION 으로 되돌아갔다(ALERT REJECTED). 이 항목이 '단정하지 말 것'이라 적어 둔 대로 API 값만으로 판단하지 않았고, 메일 본문('지금은 사이트에 광고를 게재하실 수 없습니다')을 근거로 확정했다. 이 항목이 적어 둔 '결과 통지는 magsori@gmail.com 메일이 먼저 온다'도 그대로 맞았다. 사유 확인은 화면뿐이라 watch adsense-reject-reason-1003 으로 넘겼다."
   },
@@ -13152,7 +13152,7 @@
    "cmd": "python -m studio.v0check gate --code D5-01",
    "owner": "claude",
    "state": "done",
-   "by": "세션:40ebc2b2",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-09-24",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사: (a)섹션5 L103 '신고기한까지 1개월이 안 남았다면…1개월로 연장'이 docs/source_D5-01…md §4 원문(1개월 미만이면 1개월로 연장, MST 288917)과 정확히 일치하도록 정정됨 ("
   },
@@ -13164,7 +13164,7 @@
    "cmd": "Desktop '루틴' 또는 세션 목록에서 '4.AdSense 승인 조사' 세션을 여신다",
    "owner": "user",
    "state": "done",
-   "by": "세션:a8677f73",
+   "by": "루틴7 · lifeinfo-index-check (G)",
    "done_at": "2026-09-24",
    "result": "해결됨 — 4.세션이 오늘 활발히 일했다(실측): nvdup0924 H1~H5 완료 · diff0924 X1~X3 완료 · 설정대조 완료 · 결재카드 2건 등록 · 커밋 b28b8bb8·26c01fd5·85c8efae. 사장님이 세션을 여실 필요 없다"
   },
@@ -13282,7 +13282,7 @@
    "cmd": "python -m studio.v0check list | grep D5-01  # 재배정 후 gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=<새코드> -f mode=live -f confirm=PUBLISH -f file='재해손실세액공제_글_HTML.txt' -f title='재해손실세액공제 신청방법' -f post_title='재해손실세액공제 신청 방법 대상 자산상실비율 총정리 (2026 거제·통영 수해)'",
    "owner": "claude",
    "state": "done",
-   "by": "세션:fecf531f",
+   "by": "루틴3 · lifeinfo-publish (C)",
    "done_at": "2026-09-24",
    "result": "코드 재배정 대신 D5(재해·비상지원) 중분류를 taxonomy 에 신설 — 커밋 977e894e. validate_db PASS 15/WARN3/FAIL0 확인. 재배정(queue·초안·v0check 이동)보다 위험 적음. pub0924d501 이과장 앞 now 로 재시도 안내 완료"
   },
@@ -13294,7 +13294,7 @@
    "cmd": "python studio/_nogovlink_check.py",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:5d674ecd"
+   "by": "루틴7 · lifeinfo-index-check (G)"
   },
   {
    "id": "idx0zero-pointer-moved-1001",
@@ -13372,7 +13372,7 @@
    "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json,io;d=json.loads(io.open('webapp/lifeinfo_db.txt',encoding='utf-8').read());print([s['code'] for c in d['taxonomy'] if c['code']=='D' for s in c['subs']])\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:5d674ecd",
+   "by": "루틴7 · lifeinfo-index-check (G)",
    "done_at": "2026-09-28",
    "result": "09-28 이부장 정리 — 에이전트 실측 판정(끝남/폐기) 근거: docs/watch_triage_tower_20260928.md"
   },
@@ -13384,7 +13384,7 @@
    "cmd": "curl -s -A 'Mozilla/5.0' 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224394116930' | grep -o '조기지급 발표[^<]*' | head -2",
    "owner": "claude",
    "state": "done",
-   "by": "세션:5d674ecd",
+   "by": "루틴7 · lifeinfo-index-check (G)",
    "done_at": "2026-09-28",
    "result": "09-28 이부장 정리 — 에이전트 실측 판정(끝남/폐기) 근거: docs/watch_triage_tower_20260928.md"
   },
@@ -13396,7 +13396,7 @@
    "cmd": "python -m studio.v0check gate --code A6-06",
    "owner": "claude",
    "state": "done",
-   "by": "세션:40ebc2b2",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-09-27",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사: 반려3건 정정 확인(커밋03b838d4) ①도입부 3종중2종만동의(채무조정중지자 제외)로 원문(source line51)과 일치, '추가된'->'추가되는'으로 계획단계 표현 정정 ②2절해설 기관을 서민금융진"
   },
@@ -13421,7 +13421,7 @@
    "cmd": "복지사각지대신고하는법_글_HTML.txt 3곳 수정 후 python -m studio.v0check ask --code A6-06 로 재검사 받기(작성자 아닌 세션이 판정)",
    "owner": "claude",
    "state": "done",
-   "by": "세션:40ebc2b2",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-09-27",
    "result": "라이브 A6-06 확인(09-27) — 3건 전부 발행 전에 이미 정정돼 있었다: ①도입부 '3종을 새로 연계할 계획'(연내계획으로 정확 서술, 반영완료로 안 씀) ②2절 채무조정중지자=신용회복위원회/취약채무자=서민금융진흥원/불법사금융피해자=금융감독원 정확 귀속 ③마무리 '법적으로 신원을 보호하는 별도 조항은 찾지 못했습니다'(찾지못함=검색실패로 정확 서술, 없다고 단정 안 함). git log 03b838d4(V0 반려 3곳 정정)가 011dfc5c(라이브 발행) 이전 커밋 — 발행 전 정정 확인됨."
   },
@@ -13434,7 +13434,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:145202de",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-26",
    "result": "✅ 해소 — 근인(studio/pushapproval.py 가 webapp/*.html 를 글롭해 _ 접두 스크래치까지 공개 배포)은 커밋 73f8ce8d(09-26 08:14 이부장)가 ①_ 접두 html 배포 제외 ②배포 저장소의 기존 _*.html 을 git rm 하는 _stale 블록으로 처리했다. 실측: 라이브 _check_g108.html 404(이 항목 등록 시 200이었다) · 배포 저장소 잔존 0건 · 콘솔 검사 success 복귀. 자격증명 노출은 처음부터 없었다(같은 검사의 '자격증명 패턴 없음' 판정)."
   },
@@ -13482,7 +13482,7 @@
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://lifeinfo8975.blogspot.com/sitemap-pages.xml ; python -c \"import studio.searchconsole as s; print(s.__file__)\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:fecf531f",
+   "by": "루틴3 · lifeinfo-publish (C)",
    "done_at": "2026-09-25",
    "result": "실측(API sitemaps.list): sitemap-pages.xml 은 06-28 제출돼 있음(5페이지·오류0). 단 구글 마지막 다운로드 07-02 — 3개월 안 읽음(sitemap.xml 은 09-24 읽음). 홈 '참조 사이트맵 없음'은 블로거 구조상 홈이 어느 사이트맵에도 없어서 = 정상. 재제출은 사장님 판단 대기"
   },
@@ -13494,7 +13494,7 @@
    "cmd": "python studio/searchconsole.py inspect",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:fecf531f"
+   "by": "루틴3 · lifeinfo-publish (C)"
   },
   {
    "id": "sitemap-pages-reread-0928",
@@ -13504,7 +13504,7 @@
    "cmd": "python -c \"from studio import searchconsole as s; m=s._svc().sitemaps().get(siteUrl=s.SITE_URL,feedpath='https://lifeinfo8975.blogspot.com/sitemap-pages.xml').execute(); print(m.get('lastSubmitted'), m.get('lastDownloaded'))\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:fecf531f",
+   "by": "루틴3 · lifeinfo-publish (C)",
    "done_at": "2026-10-19",
    "result": "GSC API 10-19: lastSubmitted 2026-09-24T19:12Z, lastDownloaded 2026-10-18T23:28Z (07-02 에서 갱신됨) (실측 10-19 밤)"
   },
@@ -13517,7 +13517,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:0635a582",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-28",
    "result": "09-28 이부장 정리 — 에이전트 실측 판정(끝남/폐기) 근거: docs/watch_triage_tower_20260928.md"
   },
@@ -13567,7 +13567,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:537bd2b5",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-26",
    "result": "✅ 기다린 것이 일어났다 — pushapproval 이 다음 실행에서 두 파일을 git rm 했다. 배포 저장소 ls-files '_*.html' 0건 · 라이브 둘 다 404 · 콘솔 검사 09-26 09:48 KST 부터 success(최신 15:13 YELLOW·실패0). 새 조치 없음이라던 판단이 맞았다. 상세 실측 = console-red-verify-0926"
   },
@@ -13579,7 +13579,7 @@
    "cmd": "python -m studio.draftfind H1-16",
    "owner": "claude",
    "state": "done",
-   "by": "세션:67e438d2",
+   "by": "lifeinfo-travel-prep",
    "done_at": "2026-10-19",
    "result": "해결: H1-16 이 lifeinfo_db.txt posts 에 있고 draftfind H1-16 ✅ (실측 10-19 밤)"
   },
@@ -13615,7 +13615,7 @@
    "cmd": "python -m studio.note list | grep A1-07",
    "owner": "claude",
    "state": "done",
-   "by": "세션:31121bc4",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-09-28",
    "result": "09-28 이부장 정리 — 에이전트 실측 판정(끝남/폐기) 근거: docs/watch_triage_tower_20260928.md"
   },
@@ -13829,7 +13829,7 @@
    "cmd": "python -m studio.pubqueue list",
    "owner": "claude",
    "state": "done",
-   "by": "세션:489fd74d",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-09-27",
    "result": "9/30 신고기한 이전(9/27) 발행 완료, 4채널(블로그·네이버·쓰레드·인스타) 전부 게시 및 상호 크로스링크 완료"
   },
@@ -14077,7 +14077,7 @@
    "cmd": "python -m studio.topicprop table 로 B4-18 확인 후 source 에이전트로 기재부/국세청 원문 확보",
    "owner": "claude",
    "state": "done",
-   "by": "세션:701a95e0",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-09-28",
    "result": "09-28 이부장 정리 — 에이전트 실측 판정(끝남/폐기) 근거: docs/watch_triage_tower_20260928.md"
   },
@@ -14536,7 +14536,7 @@
    "cmd": "grep -rn 'A-H' studio/*.py  # 17개 파일 중 코드 형식 검증하는 곳(topicprop.py·pubqueue.py·draftfind.py 등)을 [A-I]로 확장할지 결정",
    "owner": "claude",
    "state": "done",
-   "by": "세션:2c3f3320",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-10-19",
    "result": "icode-support-0927 와 동일 수정으로 해결(I 코드 topicprop add 임시경로 시험 통과)"
   },
@@ -14560,7 +14560,7 @@
    "cmd": "python -m studio.v0check gate --code G3-07",
    "owner": "claude",
    "state": "done",
-   "by": "세션:2c3f3320",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-09-27",
    "result": "V0 통과로 해소 — 검사자 이부장 · 재검사(5b335ff4): ①통용권 80,000÷19,000≈4.2 → '5회 이상 이득·4회까지는 현장권이 쌈' 정정 ②불꽃쇼 3곳→1곳, 출처=뉴스와이어(주최측 보도자료 배포)·공식 홈페이지 미기재 명시+방문 전"
   },
@@ -14635,7 +14635,7 @@
    "cmd": "python -m studio.v0check gate --code D3-07",
    "owner": "claude",
    "state": "done",
-   "by": "세션:d38bd9f5",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-09-28",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 3차검사: 2차 반려 지적 3곳(line52·105·115, 발표주체 금융위원회·국토교통부/HF와 주택도시기금 혼동) 전부 수정 확인, 문서 전체 재통독으로 다른 문장과 새 모순 없음(HUG/HF 구분·계산예시·마무"
   },
@@ -14722,7 +14722,7 @@
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:2fa3affa"
+   "by": "루틴2 · lifeinfo-daily-topics (B)"
   },
   {
    "id": "source-pubdate-0928",
@@ -14830,7 +14830,7 @@
    "owner": "user",
    "kind": "action",
    "state": "wait",
-   "by": "세션:f82d5f6b"
+   "by": "루틴1 · daily-email-briefing (A)"
   },
   {
    "id": "adsense-reject-count-5-0928",
@@ -14840,7 +14840,7 @@
    "cmd": "cat docs/중요메일_전수조사_20260928.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:f82d5f6b",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-09-28",
    "result": "CLAUDE.md 애드센스 이력 줄에 06-23 반려(aroma8975 수신)·메일상 5회 반영. 근거는 루틴1 전수조사 문서(이부장은 aroma8975 메일 원문 직접 확인 못함)"
   },
@@ -14852,7 +14852,7 @@
    "cmd": "grep -n 'PE 답변(09-25)' docs/애드센스_소거표_20260924.md docs/애드센스_승인사례_정밀조사_20260924.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:f82d5f6b",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "결과 반영됨: docs/애드센스_소거표_20260924.md:121 【7】, 승인사례_정밀조사:573 (09-28) (실측 10-19 밤)"
   },
@@ -14973,7 +14973,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:f28fc0c1",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-01",
    "result": "10-01 사장님 화면 확인 — 요청: 읽기전용 3(Administration·Merge queues·Commit statuses) + Actions read→read&write. 이부장 권고 보류(Actions 쓰기=publish.yml 실행 가능, 발행 경로 밖 트리거 생김·개발자 노트엔 설명 없음). 미수락 시 기존 권한 유지라 손실 없음"
   },
@@ -15280,7 +15280,7 @@
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow '콘솔 정합성 검사' -L 30",
    "owner": "claude",
    "state": "done",
-   "by": "세션:4af53d45",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "해결: 콘솔 정합성 검사 최근 8회 전부 success (gh run list, 10-19 12:29~12:43Z) (실측 10-19 밤)"
   },
@@ -15292,7 +15292,7 @@
    "cmd": "cat docs/source_H1-20_연애박사_20261001.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:8b79df1b",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-10-19",
    "result": "docs/source_H1-20_연애박사_20261001.md 존재, H1-20 글 DB 에 발행됨(ENA 연애박사 첫방송 10/5) (실측 10-19 밤)"
   },
@@ -15304,7 +15304,7 @@
    "cmd": "python -m studio.draftfind H1-20",
    "owner": "claude",
    "state": "done",
-   "by": "세션:8b79df1b",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-10-19",
    "result": "H1-20 라이브 발행됨(lifeinfo_db.txt posts), draftfind H1-20 ✅ (실측 10-19 밤)"
   },
@@ -15374,7 +15374,7 @@
    "cmd": "python -c \"from studio.thumbcheck import needs_photo; print(needs_photo('D5-04','코레일 예매'))\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:d7dcc720",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-16",
    "result": "thumbcheck.needs_photo 키워드 판정을 H 코드 한정으로 수정. D5-04 코레일 예매→None, F2-01→여행(코드), H1-21 드라마→판정. falsepos 회귀규칙 _r_needsphoto_h_only_1016 추가"
   },
@@ -15386,7 +15386,7 @@
    "cmd": "python -m studio.v0check; python -m studio.topicprop table",
    "owner": "claude",
    "state": "done",
-   "by": "세션:d7dcc720",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-02",
    "result": "D5-04 ②③⑤ 완료 — 결재함 2번으로 확인됨. V0 1차fail→수정→2차pass(webapp/v0check.json). 후속: needsphoto-scope-1002, f201-outdated-1month-1002"
   },
@@ -15398,7 +15398,7 @@
    "cmd": "python -m studio.v0check gate --code D5-04",
    "owner": "claude",
    "state": "done",
-   "by": "세션:d7dcc720",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-02",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 2차재검사(반려사유3건만 대조): ①정리박스72행·sec1 86행·마무리139행 모두 '제외 문구 없음+명절 특별수송은 별도 확인 필요'로 완화됨, 5·6번 섹션과 일치, grep '원문 확인'/'전체에 적용' 0건"
   },
@@ -15410,7 +15410,7 @@
    "cmd": "python studio/blogger.py update-post --code F2-01",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:d7dcc720"
+   "by": "루틴6 · lifeinfo-daily-publish (F)"
   },
   {
    "id": "h120-deploy-pub-1002",
@@ -15582,7 +15582,7 @@
    "cmd": "python -m studio.v0check list ; python -m studio.pubqueue list",
    "owner": "claude",
    "state": "done",
-   "by": "세션:544203d9",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-10-02",
    "result": "V0 FAIL(🔴) — G3-09 반려. 고칠 3건: ①제목 '교통' 삭제(+pubqueue 큐제목도 함께) ②sec1 표 L93 자기모순 정정(9/2~10/30=설명없음, 메인은 10/31부터) ③L100 역사문단 2차출처(ktriptips) 복제 삭제/1차확인. 부가: G3-07·G3-08 소스 인용 추가. 재검사는 diff만 볼 것(날짜·장소 등 1차검사 재확인 불필요). 다음 세션이 수정 후 v0check ask --code G3-09 로 재요청."
   },
@@ -15607,7 +15607,7 @@
    "cmd": "python -m studio.v0check ask --code G3-09",
    "owner": "claude",
    "state": "done",
-   "by": "세션:544203d9",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-10-19",
    "result": "v0check G3-09 pass 2026-10-05T13:07 반려 3건 재검사 통과 (실측 10-19 밤)"
   },
@@ -15619,7 +15619,7 @@
    "cmd": "WebFetch https://www.sgic.co.kr 또는 claude-in-chrome 으로 전세금보장신용보험 보증료율표 직접 확인 후 D3-04 라이브와 대조",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:c9e6ec3c"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "lee-session-down-1003",
@@ -16106,7 +16106,7 @@
    "owner": "claude",
    "state": "done",
    "note": 4,
-   "by": "세션:697c7dc6",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-19",
    "result": "시행일 원문 확인됨: 전기통신사업법 제32조의21 시행 2026-11-20 (law.go.kr 대조, webapp/topicprop.json:2605) (실측 10-19 밤)"
   },
@@ -16283,7 +16283,7 @@
    "cmd": "python -c \"print('예스24·NOL·The Musical 공지에서 선예매 10/7 14:00 확인 후 watch done')\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:7d2d7852",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-10-05",
    "result": "공식 사이트 phantomoftheopera.co.kr/Tickets/Seoul 원문 '선예매 10/7(수) 오후 2시~10/8(목) 오전 9시' 확인(10-05, docs/source_H1-23_선예매공식_20261005.md) — 라이브 헤드라인 정확"
   },
@@ -16295,7 +16295,7 @@
    "cmd": "python -c \"print('보건복지부 의료급여 본인부담 기준 원문에서 요양병원 상한 확인 후 watch done')\"",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:7d2d7852"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "hi-c1-02-10-08",
@@ -16305,7 +16305,7 @@
    "cmd": "python -m studio.dupcheck \"건강보험 환급금 체납 보험료 공제 10월 8일 개정\"",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:a05312c6"
+   "by": "루틴6 · lifeinfo-daily-publish (F)"
   },
   {
    "id": "routines-missed-1004",
@@ -16815,7 +16815,7 @@
    "cmd": "grep -n runs-on .github/workflows/*.yml",
    "owner": "claude",
    "state": "done",
-   "by": "세션:6de5a5b5",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "workflows 8줄 ubuntu-latest→ubuntu-24.04, YAML 7파일 파싱 ok"
   },
@@ -16827,7 +16827,7 @@
    "cmd": "curl -s -o /dev/null -w '%{http_code}\\n' https://mofe.go.kr/nw/nes/nesdtaList.do?menuNo=4010100",
    "owner": "claude",
    "state": "wait",
-   "by": "세션:2a8bceb5"
+   "by": "루틴2 · lifeinfo-daily-topics (B)"
   },
   {
    "id": "solo-20261006-1",
@@ -16947,7 +16947,7 @@
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
    "state": "wait",
-   "by": "세션:6b94c564"
+   "by": "루틴6 · lifeinfo-daily-publish (F)"
   },
   {
    "id": "afflink-20261008-1",
@@ -16970,7 +16970,7 @@
    "cmd": "PYTHONIOENCODING=utf-8 grep -n 'SendFeedback' CLAUDE.md",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:80b1048f"
+   "by": "루틴1 · daily-email-briefing (A)"
   },
   {
    "id": "idx-control-group-protect-1008",
@@ -16980,7 +16980,7 @@
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'))['posts'];g=json.load(io.open('webapp/gsc_req_dates.json',encoding='utf-8'))['dates'];B='A5-13 B3-06 B5-05 D5-04 D5-06 E4-07 G4-10 H1-20 H1-21 H1-22 H1-23'.split();A='A1-10 A2-07 A2-11 A3-07 A3-08 A4-05 B1-05 B2-08 B2-09 B3-04 B4-06 C1-12 C1-13 C2-07 C3-04 D1-04 D2-10 D4-04 D4-05 D4-07 E1-02 E2-08 F1-07 F1-08 F2-09 F2-10 F2-11 F2-18 F3-07 F4-06 F4-07 F4-08 F4-09 H1-13'.split();f=lambda L:(sum(1 for c in L if (d.get(c,{}).get('lastCrawl') or '')), [c for c in L if (g.get(c) or '')>='2026-10-05']);print('B 크롤',f(B)[0],'/11 · 그사이 요청된 글',f(B)[1]);print('A 크롤',f(A)[0],'/34 · 그사이 요청된 글',f(A)[1])\"",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:8196380a"
+   "by": "루틴7 · lifeinfo-index-check (G)"
   },
   {
    "id": "yield-wording-fix-1008",
@@ -16990,7 +16990,7 @@
    "cmd": "grep -rn '수율 2%\\|재요청 수율' CLAUDE.md webapp/*.html docs/애드센스_소거표_20260924.md | head -20 && grep -n '41건 요청' 애드센스_반려원인_전수조사_2026-08-18.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:8196380a",
+   "by": "루틴7 · lifeinfo-index-check (G)",
    "done_at": "2026-10-19",
    "result": "CLAUDE.md 문구 정정(10-19 밤 이부장)"
   },
@@ -17002,7 +17002,7 @@
    "cmd": "python -m studio.navergate && grep -n '네이버도 7월에 같이 멈췄다\\|#6' docs/애드센스_소거표_20260924.md docs/재판정_소거표6_20261001_4.md | head",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:8196380a"
+   "by": "루틴7 · lifeinfo-index-check (G)"
   },
   {
    "id": "xlink-g411",
@@ -17226,7 +17226,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:6973bee9",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-08",
    "result": "이부장 단건 배포(register 경로와 동일 — 그 썸네일 1장만) 908df00f · 라이브 200 확인"
   },
@@ -17238,7 +17238,7 @@
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/322_busan_grade5_enforcement.png ; python tools/console_check.py 2>/dev/null | grep 썸네일",
    "owner": "claude",
    "state": "done",
-   "by": "세션:6973bee9",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
@@ -17348,7 +17348,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:7a216f31",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "10-19 자동분류: grep -c 4회째 CLAUDE.md = 0 (낡은 반려 이력 문구가 이미 없음)"
   },
@@ -17361,7 +17361,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:7a216f31",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "2026-10-19 반영·시험 완료(미커밋, 관제탑 커밋 대기)"
   },
@@ -17373,7 +17373,7 @@
    "cmd": "python -m studio.topicprop table && python -m studio.topicprop stock",
    "owner": "claude",
    "state": "done",
-   "by": "세션:a0dcf752",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-10-19",
    "result": "낡음: A1-20·B2-18 모두 DB 에 발행됨 (실측 10-19 밤)"
   },
@@ -17385,7 +17385,7 @@
    "cmd": "cat docs/source_B2-18_사잇돌대출SCB확대_20261009.md",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:a0dcf752"
+   "by": "루틴2 · lifeinfo-daily-topics (B)"
   },
   {
    "id": "wake-draft1009",
@@ -17395,7 +17395,7 @@
    "cmd": "python -m studio.batchboard order --id draft1009a120",
    "owner": "claude",
    "state": "done",
-   "by": "세션:a0dcf752",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
    "done_at": "2026-10-19",
    "result": "A1-20·B2-18 DB 발행 + osmu 3채널 존재, 배치 draft1009a120 아카이브(완료) (실측 10-19 밤)"
   },
@@ -17528,7 +17528,7 @@
    "owner": "user",
    "state": "done",
    "kind": "approve",
-   "by": "세션:f787bb39",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-10",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 3차: 감경비율 방향 수정 확인(1/2=일반, 3/4=생계곤란·경제적사정 — 출처 §3과 일치), div 18/18 정상, 나머지 항목은 2차 검사 유지"
   },
@@ -17579,7 +17579,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:c060b141",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-18",
    "result": "루틴1 SKILL 8975 문구 정정(10-18 루틴 수리)"
   },
@@ -17730,7 +17730,7 @@
    "cmd": "python -m studio.pace && python -m studio.pipeline naver-draft --code D1-13",
    "owner": "claude",
    "state": "done",
-   "by": "세션:544f52c8",
+   "by": "이부장 인계 및 시작",
    "done_at": "2026-10-10",
    "result": "15:34 Aside 지시 #19 실행(naver_flow.js 첫 실발행·출처줄 중복 문구 제거·phase 별 소요 보고 요청)"
   },
@@ -17743,7 +17743,7 @@
    "owner": "user",
    "state": "done",
    "kind": "action",
-   "by": "세션:544f52c8",
+   "by": "이부장 인계 및 시작",
    "done_at": "2026-10-10",
    "result": "15:4x 이부장이 tools/syncorigin.py 신설·실행으로 해소(원본 충돌 2건 watch=로컬·reindex=원격 수동 병합) · 로컬=원격 · pubgo 가 발행마다 자동 호출"
   },
@@ -17769,7 +17769,7 @@
    "owner": "user",
    "kind": "approve",
    "state": "done",
-   "by": "세션:544f52c8",
+   "by": "이부장 인계 및 시작",
    "done_at": "2026-10-10",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
@@ -17793,7 +17793,7 @@
    "cmd": "python -m studio.setgate && python -m studio.pubready --code B4-19",
    "owner": "claude",
    "state": "done",
-   "by": "세션:544f52c8",
+   "by": "이부장 인계 및 시작",
    "done_at": "2026-10-10",
    "result": "16:2x pubgo 발행 완료 · 라이브 200·썸네일 200"
   },
@@ -17805,7 +17805,7 @@
    "cmd": "python -m studio.stallcheck && python -m studio.affiliate solo",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:544f52c8"
+   "by": "이부장 인계 및 시작"
   },
   {
    "id": "mem-find-orphan-1010",
@@ -17839,7 +17839,7 @@
    "cmd": "du -sh ~/.aside/u/0/sessions/*lzaEKZgYk3iKPOTW",
    "owner": "claude",
    "state": "done",
-   "by": "세션:544f52c8",
+   "by": "이부장 인계 및 시작",
    "done_at": "2026-10-11",
    "result": "04:4x 새 전담 WUPNGW6zm2pP5SPP 생성·CP 탭(893DD395) 바인딩·탭 열기/읽기/닫기 시험 성공 · 옛 전담 lzaEK(23MB) 보관 · 규칙 docs/Aside_지시서_양식.md 맨 위"
   },
@@ -17909,7 +17909,7 @@
    "cmd": "grep -n 'toss' studio/affiliate.py | head",
    "owner": "claude",
    "state": "done",
-   "by": "세션:544f52c8",
+   "by": "이부장 인계 및 시작",
    "done_at": "2026-10-19",
    "result": "LINK_PAT 에 toss.shopping 추가(전 False→후 True)+falsepos 회귀규칙"
   },
@@ -17933,7 +17933,7 @@
    "cmd": "python -m studio.readycheck",
    "owner": "claude",
    "state": "done",
-   "by": "세션:544f52c8",
+   "by": "이부장 인계 및 시작",
    "done_at": "2026-10-19",
    "result": "낡음: 10-10 재부팅 후 일회성 재개 절차. 8011 응답(/api/view/approval 200)·B4-19·A1-21 발행+검색설명 있음(seodesc scan 387 ✅) (실측 10-19 밤)"
   },
@@ -17981,7 +17981,7 @@
    "cmd": "python studio/blogger.py crosslink --code D1-13 && python studio/blogger.py crosslink --code A1-21 && python studio/blogger.py crosslink --code B4-19",
    "owner": "claude",
    "state": "done",
-   "by": "세션:3db2caa1",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-10-10",
    "result": "23:3x 라이브 확인 — D1-13·A1-21(이과장)·B4-19(이부장 대면 실행) 세 편 모두 '다른 채널에서도 보기' 블록에 네이버·인스타·쓰레드 링크 있음"
   },
@@ -18006,7 +18006,7 @@
    "owner": "user",
    "state": "done",
    "kind": "approve",
-   "by": "세션:72d82abd",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-11",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 3건 해소: 설치비 약300만원(매일신문 2026-01-08, 원문 source md와 일치·250만 삭제), 사고동반 문장을 DRF MST281875 제82조②3호(사망·사상후미조치=5년)/6호나목(교통사고"
   },
@@ -18151,7 +18151,7 @@
    "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches'];print(len(b.get('aside',{}).get('items',[])))\"",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:cf890880"
+   "by": "lifeinfo-ee"
   },
   {
    "id": "navigator-loop-stale-1011",
@@ -18161,7 +18161,7 @@
    "cmd": "grep -c 지식인 webapp/index.html",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-19",
    "result": "사장님 승인(10-19 22:16) 저가치·재현불가 닫기 — 근거 docs/미조치_L_우선순위_20261019.md ④"
   },
@@ -18173,7 +18173,7 @@
    "cmd": "ls docs/source_네이버_피드메이커_메이트_20261011.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-11",
    "result": "조사 완료(docs/source_네이버_피드메이커_메이트_20261011.md). 지금 신청 가능한 것 없음(메이트=선정형, 신청 양식 미확인 · 피드메이커 공식 공고 없음). 실전편 셀프체크 5항목 문구 라이브 확인"
   },
@@ -18185,7 +18185,7 @@
    "cmd": "grep -n 셀프체크 studio/naver.py docs/source_네이버_피드메이커_메이트_20261011.md",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-19",
    "result": "반영: studio/naver.py·osmu_manifest.py·insta_post.py 수정, G3-10/A1-20 시험(keep_check 통과·글자 보존), validate_db FAIL 0. 미커밋"
   },
@@ -18197,7 +18197,7 @@
    "cmd": "aside 로 https://creator-advisor.naver.com/naver_blog/main 열어 제목·본문 첫 줄 확인",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:cf890880"
+   "by": "lifeinfo-ee"
   },
   {
    "id": "ca-tab-design-1011",
@@ -18295,7 +18295,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:fa517682",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "원인: 트리거 경로는 gh 수동/pubgo 뿐(towertick은 조회만). 10-02(8초)·10-11(17초) 모두 첫 run 이 목록에 뜨기 전 두 번째가 _busy_run 빈 결과로 통과. yml 은 이미 concurrency group lifeinfo-publish(전역·cancel-in-progress false)라 per-code 보다 강해 유지. pubgo.py 에 같은 코드 120초 재트리거 차단(_recent_trigger) 추가, monkeypatch 시험 통과. 직접 gh workflow run 은 여전히 무방비(원격 선행 가드가 최후 방어)"
   },
@@ -18308,7 +18308,7 @@
    "owner": "user",
    "state": "done",
    "kind": "approve",
-   "by": "세션:704e79ce",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-10-11",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 통과: 관람료표·다회권·계산예시(40,000/37,000/5,000/27,000vs32,000/38,000vs48,000)·10월 휴관 6화·12·19·26 모두 공식 busanbiennale2026.com "
   },
@@ -18333,7 +18333,7 @@
    "owner": "user",
    "note": 190,
    "state": "done",
-   "by": "세션:c7745583",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
    "done_at": "2026-10-12",
    "result": "사장님 승인(채팅 03:31 '날짜수정해줘') — 이부장 권고(반려)와 달리 수정 결정. 표기는 '경찰청 안내자료 기준 최초 적용일 2026-10-24'로 출처 귀속, 법 시행일 2024-10-25 는 유지"
   },
@@ -18368,7 +18368,7 @@
    "owner": "user",
    "state": "done",
    "kind": "approve",
-   "by": "세션:40c065cb",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-12",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 2차 반려 2건 해소 확인: ①바이라인이 '지급기준표 밖의 세부 고시 금액 등'으로 범위를 좁혀 3장 계산예시(지급기준표 안 공식 적용)와 더는 모순 없음(장애등급 세부고시만 미확보로 7장과 일치) ②tip박스를 확"
   },
@@ -18380,7 +18380,7 @@
    "cmd": "python -m studio.approvalcount",
    "owner": "claude",
    "state": "done",
-   "by": "세션:40c065cb",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
    "done_at": "2026-10-19",
    "result": "해결: C2-18 DB 발행됨, approvalcount 결재 대기 0건 (실측 10-19 밤)"
   },
@@ -18418,7 +18418,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "done",
-   "by": "세션:8b444db0",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-12",
    "result": "이부장 수리 — 원인: _r_progress_ghost_0919 가 4칸 행 대신 문장을 반환(F4-25 회수로 처음 발동). check_rules() 가 문장을 🔴 행으로 감싸게 고침 + 회귀규칙 _r_rule_rows_normalized_1012. F4-25 v0 기록 superseded_by D3-08, 낡은 승인표시 규칙은 skip 항목 제외. selfcheck 20) 정상(🔴0·⚠️1 = 미분류 webapp 파일 3개, 타 세션)"
   },
@@ -18442,7 +18442,7 @@
    "cmd": "Desktop 재시작 → 이부장 창에 /tower",
    "owner": "user",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-13",
    "result": "결론: Desktop 창에서 /tower 는 '사용할 수 없는 명령어'(10-12 11:44·12:01 두 차례 실측) — 모드는 터미널로 연 세션에서만 돈다. Desktop 승인 감시는 bash tower_watch Monitor 로 운영(메모리 tower-mod-desktop-unsupported)"
   },
@@ -18600,7 +18600,7 @@
    "cmd": "/reload-plugins → /week (또는 python -m studio.usageweek)",
    "owner": "user",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-12",
    "result": "10-12 16:38 실측 기록 확인: 주간 76% · 초기화 10-15 01:00 · 평균속도 예측 114%"
   },
@@ -18756,7 +18756,7 @@
    "owner": "claude",
    "state": "done",
    "kind": "action",
-   "by": "세션:9805bb97",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "낡음: run 38108341143 은 10-11 '원격 선행 가드' 일회성 실패(gh log-failed 확인) (실측 10-19 밤)"
   },
@@ -19061,7 +19061,7 @@
    "cmd": "Aside로 motir.go.kr 보도자료 게시판에서 '도시가스' 최신 확인 + 가스산업과 044-203-5236",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:db3f65f7"
+   "by": "루틴6 · lifeinfo-daily-publish (F)"
   },
   {
    "id": "gplay-meta-sub-1020",
@@ -19072,7 +19072,7 @@
    "owner": "user",
    "state": "done",
    "kind": "action",
-   "by": "세션:78261b14",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "해지 완료(10-19 17:07)"
   },
@@ -19131,7 +19131,7 @@
    "state": "done",
    "kind": "action",
    "note": 1,
-   "by": "세션:05c44ff3",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-18",
    "result": "gplay-meta-sub-1020 과 같은 구독 — 하나로 통합"
   },
@@ -19308,7 +19308,7 @@
    "cmd": "ls /c/lifeinfo/thumbs/357_face_verify.png",
    "owner": "claude",
    "state": "done",
-   "by": "세션:e13f80c1",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-16",
    "result": "thumbs/357_face_verify.png 존재(30,090B) + E4-09 라이브 URL 존재·교차링크 본문 확인"
   },
@@ -19333,7 +19333,7 @@
    "owner": "user",
    "state": "done",
    "kind": "approve",
-   "by": "세션:b5bc2f0c",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
    "done_at": "2026-10-15",
    "result": "V0 통과로 해소 — 검사자 V0검사관 · 반려4건 해소: 단정 삭제(일정표상 16일 이후 편성 없음+변동가능), 출연진 2차표기 3곳, 공식 ejagalchi 일정표 확보해 일자별 시간표·시식 16일/이어달리기 17일/회비빔밥 18일 11:30 반영(sou"
   },
@@ -19580,7 +19580,7 @@
    "cmd": "python studio/gmailread.py scan --body",
    "owner": "claude",
    "state": "wait",
-   "by": "세션:0dca49c7"
+   "by": "루틴1 · daily-email-briefing (A)"
   },
   {
    "id": "anthropic-watch-dup-1016",
@@ -19787,7 +19787,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:e630c99b",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-17",
    "result": "사장님 14:02 확인: 인스타 새 로그인은 본인(사장님)이 한 것"
   },
@@ -19965,7 +19965,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:44d09997",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-17",
    "result": "중복 — ig-login-check-1016 과 같은 알림(10-14 20:50 Windows·Chrome), 사장님 10-17 14:02 '내가 했음' 확인 완료"
   },
@@ -20035,7 +20035,7 @@
    "owner": "user",
    "state": "done",
    "kind": "action",
-   "by": "세션:67aa045b",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-18",
    "result": "중복 3회째 — 같은 10/14 20:50 알림, 사장님 10-17 14:02 '내가 했음' 확인(ig-login-check-1016)"
   },
@@ -20048,7 +20048,7 @@
    "owner": "user",
    "state": "done",
    "kind": "action",
-   "by": "세션:67aa045b",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-18",
    "result": "사장님 11:31 '무시' 결정 — Cursor 기존 권한 유지, 추가 권한 미승인. 같은 요청 메일은 다시 올리지 않음"
   },
@@ -20207,7 +20207,7 @@
    "cmd": "reg query \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\" /s /f CrossDevice",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-18",
    "result": "가설 기각(10-18 15:0x 사장님 보고: 휴대폰 항목 제거 후에도 탭 회전 지속). 실측: CrossDevice 0개·D/E 정상(D: 0.2초)·디스크/탐색기 오류 이벤트 0"
   },
@@ -20347,7 +20347,7 @@
    "cmd": "ls -la 'D:/~$26년09월매출 - 복사본.xlsx' ; reg query 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Modules\\GlobalSettings\\DetailsContainer'",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-18",
    "result": "엑셀 가설 약화: 18:17 캡처에서 엑셀 없는 docs·Circle to 도 회전. 회전 3탭 모두 직전에 파일이 바뀐 폴더(Circle to·원시데이터 18:17, docs 18:09)"
   },
@@ -20431,7 +20431,7 @@
    "cmd": "powershell -c \"Get-ChildItem 'C:\\ProgramData\\Windows Master Store\\Circle to Act' | Sort LastWriteTime -Desc | Select -First 1 Name,LastWriteTime\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-19",
    "result": "가설 기각(10-19 사장님: 클릭해도 안 멈춤). 실측: Shell COM 7탭 전부 busy=False·ReadyState=4(로딩 완료) — 폴더 내용 문제 아님, 탭 표시만 멈춤"
   },
@@ -20456,7 +20456,7 @@
    "cmd": "koreabaseball.com MediaNews Notice 포스트시즌 우천 시행 세칙 열어 30분·50분 문구 확인",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:3ce55fad"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "nv1018-c308-unverified",
@@ -20466,7 +20466,7 @@
    "cmd": "정책브리핑 보건복지부 비대면진료 입법예고 보도자료·국민참여입법센터 확인",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:3ce55fad"
+   "by": "루틴5 · lifeinfo-nightly-verify (E)"
   },
   {
    "id": "explorer-spinner-onset-1019",
@@ -20476,7 +20476,7 @@
    "cmd": "powershell -c \"(New-Object -ComObject Shell.Application).Windows() | % { $_.LocationName + ' busy=' + $_.Busy + ' ready=' + $_.ReadyState }\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-19",
    "result": "시작일 미상(사장님 '잘 모르겠다'). 결론: 탭은 로딩완료(ReadyState=4)인데 표시만 도는 윈도 탐색기 결함 — MS가 22631.2271·23545에서 같은 증상을 고친 전례. 현재 26300.9457에서 재발로 판단. 우회 F5·피드백허브 신고"
   },
@@ -20488,7 +20488,7 @@
    "cmd": "powershell -c \"(Get-ItemProperty 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Blocked').PSObject.Properties | ? Name -like '{*' | % Value\"",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-19",
    "result": "효과 없음: 탐색기 재시작 후 처음엔 안 돌다 작업 중 다시 회전(사장님 04:30). 차단 4개 되돌림(남은 값 0 확인)"
   },
@@ -20500,7 +20500,7 @@
    "cmd": "cat C:/Users/magso/AppData/Local/Temp/claude/C--lifeinfo/cf890880-7d06-4506-b96c-a02a22262143/tasks/b8mbi8wmq.output",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-19",
    "result": "기각: 04:31:55 생성·04:32:00 삭제에도 탭 안 돎(사장님)"
   },
@@ -20512,7 +20512,7 @@
    "cmd": "powershell -c \"$c=Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion'; $c.CurrentBuild+'.'+$c.UBR\"",
    "owner": "claude",
    "state": "wait",
-   "by": "세션:cf890880"
+   "by": "lifeinfo-ee"
   },
   {
    "id": "xlink-c309",
@@ -20559,7 +20559,7 @@
    "owner": "user",
    "kind": "action",
    "state": "done",
-   "by": "세션:56085659",
+   "by": "루틴1 · daily-email-briefing (A)",
    "done_at": "2026-10-19",
    "result": "10-19 21:13 사장님 재발급(만료 2027-01-17)·Actions 시크릿 LIFEINFO_CONSOLE_PAT 갱신 확인(gh secret list) — 다음 라이브 발행 run 의 콘솔 클론 단계로 실동작 확인"
   },
@@ -21065,7 +21065,7 @@
    "cmd": "python -m studio.now",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:b1500c2b"
+   "by": "루틴6 · lifeinfo-daily-publish (F)"
   },
   {
    "id": "c310-pub-wake-1020",
@@ -21085,7 +21085,7 @@
    "cmd": "python -m studio.seodesc scan --only B5-05",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:1f067ffd"
+   "by": "루틴2 · lifeinfo-daily-topics (B)"
   },
   {
    "id": "pubgo-thumb-tracked-1020",
@@ -21105,7 +21105,7 @@
    "cmd": "grep seven_day .usage/log.jsonl | tail -20",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:cf890880"
+   "by": "lifeinfo-ee"
   },
   {
    "id": "loopeng-mcp-map-redo-1020",
@@ -21307,7 +21307,7 @@
    "owner": "claude",
    "kind": "action",
    "state": "todo",
-   "by": "세션:b47e2855"
+   "by": "루틴1 · daily-email-briefing (A)"
   },
   {
    "id": "adsense-reapply-1027",
@@ -21866,7 +21866,7 @@
    "cmd": "gh run view 39521057756 -R magsori-wq/lifeinfo-console --log",
    "owner": "claude",
    "state": "todo",
-   "by": "세션:4ffb0a54"
+   "by": "루틴1 · daily-email-briefing (A)"
   },
   {
    "id": "topic1022-next",
@@ -21888,7 +21888,7 @@
    "cmd": "powershell -NoProfile -File C:\\lifeinfo\\tools\\tokcheck.ps1",
    "owner": "claude",
    "state": "wait",
-   "by": "세션:cf890880"
+   "by": "lifeinfo-ee"
   },
   {
    "id": "approve-livefix-3err-1022",
@@ -21980,7 +21980,7 @@
    "cmd": "powershell -NoProfile -File C:/lifeinfo/tools/tokcheck.ps1",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-22",
    "result": "재부팅 무관으로 판명 — 탐색기 동작(덧붙여 쓰기 날짜 미갱신·새 파일 끝에 추가)으로 확정"
   },
@@ -22054,7 +22054,7 @@
    "cmd": "powershell -NoProfile -File C:/lifeinfo/tools/explorer_stale_log.ps1 -Show",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-22",
    "result": "원인 확정(10-22 13:23 시험): 탐색기는 덧붙여 쓴 파일의 날짜를 갱신하지 않고, 새 파일은 정렬 위치가 아니라 목록 끝에 붙인다(docs 탭 745개 중 744번째). 끊김이 아니라 탐색기 동작. 기록기 예약작업 제거"
   },
@@ -22209,7 +22209,7 @@
    "cmd": "powershell -NoProfile -File tools/tokcheck.ps1",
    "owner": "claude",
    "state": "done",
-   "by": "세션:cf890880",
+   "by": "lifeinfo-ee",
    "done_at": "2026-10-22",
    "result": "재부팅(17:59) 후 메모리 정상(Toke 5,410·커밋 15.1/39.8GB)인데 18:24:17 docs·insta 탭 원 재발 — 감지기·사장님 캡처 일치. 메모리 원인 배제"
   },
@@ -22298,7 +22298,7 @@
    "cmd": "cat C:/Users/magso/AppData/Local/Temp/claude/C--lifeinfo/cf890880-7d06-4506-b96c-a02a22262143/scratchpad/spinwatch.log",
    "owner": "claude",
    "state": "wait",
-   "by": "세션:cf890880"
+   "by": "lifeinfo-ee"
   },
   {
    "id": "community-reply-followup-1023",
@@ -22635,12 +22635,13 @@
   {
    "id": "auto-refuel-signal",
    "added": "2026-10-23",
-   "what": "연료 자동 보급 신호 — 재고<하한이고 열린 글감 지시서(topic*)가 없으면 towertick 이 3.·루틴에 글감 지시서를 자동 발급(사장님 10-23 「연료 끊겨 엔진이 서는」). 엔진설계도 결정 기록→흐름도→코드→enginemap 순서, 어드바이저 전·페이블 후",
-   "due": "2026-10-23",
+   "what": "사장님 10-24 12:30 「글 발행대기에 들어오면 연료공급을 하고 생산을 하지 않나?」 — 지금은 재고가 하한(3) 밑이어도 이부장이 손으로 급유 조사를 띄운다. 재고<하한이면 towertick 이 자동으로 ① 급유 조사 지시 ② 선별된 글감이 있으면 초안 지시서까지 내는 신호(REFUEL_NEEDED) — 설계도 FUEL 마디부터 고치고 코드(advisor 검토)",
+   "due": "2026-10-24",
    "cmd": "python -m studio.enginemap",
    "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "이부장",
+   "note": 1024
   },
   {
    "id": "approve-d203-1023",
