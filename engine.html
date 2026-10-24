@@ -29,7 +29,7 @@ h1{font-size:1.1rem;margin:0;display:flex;align-items:center;gap:6px}
 .btn{font:inherit;font-size:.82rem;color:var(--bl);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:3px 9px;cursor:pointer;text-decoration:none;white-space:nowrap}
 .btn:hover{border-color:var(--bl)}
 #alarm{display:none;border-radius:6px;padding:6px 10px;font-weight:800;font-size:.88rem;overflow-wrap:anywhere;cursor:pointer}
-.lane{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:6px 0}.lane .lh{font-size:.78rem;font-weight:800;color:var(--muted);align-self:center;min-width:100%}.lane .cp{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-left:4px solid var(--idle);border-radius:6px;padding:4px 7px;background:var(--panel2);font-size:.76rem;line-height:1.35}.lane .cp b{display:block;font-size:.8rem}.lane .cp .nt{color:var(--muted);overflow-wrap:anywhere}.lane .cp.ok{border-left-color:var(--ok)}.lane .cp.am{border-left-color:var(--am)}.lane .cp.rd{border-left-color:var(--rd)}.lane .cp.idle{opacity:.7}.lane .unr{color:var(--am);font-weight:800}
+.lane{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;margin:6px 0}.lane .lh{font-size:.78rem;font-weight:800;color:var(--muted);align-self:center;min-width:100%}.lane .cp{flex:1 1 150px;min-width:0;border:1px solid var(--line);border-left:4px solid var(--idle);border-radius:6px;padding:4px 7px;background:var(--panel2);font-size:.76rem;line-height:1.35}.lane .cp b{display:block;font-size:.8rem}.lane .cp .nt{color:var(--muted);overflow-wrap:anywhere}.lane .cp.ok{border-left-color:var(--ok)}.lane .cp.am{border-left-color:var(--am)}.lane .cp.rd{border-left-color:var(--rd)}.lane .cp.idle{opacity:.7}.lane .unr{color:var(--am);font-weight:800}.lane a.cp{text-decoration:none;color:inherit;display:block}.lane a.cp:hover{box-shadow:0 0 0 1px var(--am) inset}.apo{color:var(--bl);font-weight:700;text-decoration:none;white-space:nowrap}.lane .lh .apo{margin-left:6px}
 .drv text{font-size:10.5px;fill:var(--muted);font-weight:700}.drv.on text{fill:var(--bl);animation:drvp 1.6s ease-in-out infinite}@keyframes drvp{0%,100%{opacity:1}50%{opacity:.35}}.lane .cp.feed{border-left-color:var(--bl);background:linear-gradient(90deg,var(--panel2) 0%,rgba(77,179,255,.18) 50%,var(--panel2) 100%);background-size:200% 100%;animation:feedflow 1.4s linear infinite}@keyframes feedflow{0%{background-position:100% 0}100%{background-position:-100% 0}}.lane .fd{display:block;color:var(--bl);font-weight:800}#nd-topic.fueling .bx{stroke:var(--bl);stroke-width:3;animation:fuelg 1.2s ease-in-out infinite}@keyframes fuelg{0%,100%{stroke-opacity:1}50%{stroke-opacity:.3}}html.reduce .drv.on text,html.reduce .lane .cp.feed,html.reduce #nd-topic.fueling .bx{animation:none}
 .eflow{margin:8px 0;--pu:#a46bff}.eflow .lh{font-size:.78rem;font-weight:800;color:var(--pu);margin-bottom:4px}.eflow .erow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;overflow-x:auto}.eflow .est{flex:1 1 0;min-width:0;overflow-wrap:anywhere;border:1px solid var(--line);border-top:3px solid var(--idle);border-radius:6px;padding:4px 6px;background:var(--panel2);font-size:.72rem;line-height:1.3}.eflow .est b{display:block;font-size:.74rem}.eflow .est small{color:var(--muted)}.eflow .est.has{border-top-color:var(--pu);box-shadow:0 0 0 1px var(--pu) inset}.eflow .est.dn.has{border-top-color:var(--ok);box-shadow:none}.eflow .ec span{display:inline-block;will-change:transform;margin:2px 3px 0 0;padding:0 4px;border-radius:4px;background:var(--pu);color:#fff;font-weight:700;font-size:.7rem}.eflow .est.dn .ec span{background:var(--ok)}.eflow .cr i{display:block;font-style:normal;font-weight:600;font-size:.62rem;opacity:.9}.eflow .ear{flex:0 0 18px;align-self:center;height:4px;margin:0 2px;background:var(--line);border-radius:2px;position:relative;overflow:hidden}.eflow .ear.on{background:linear-gradient(90deg,transparent 0,var(--pu) 40%,transparent 80%);background-size:200% 100%;animation:eflow 1s linear infinite}@keyframes eflow{0%{background-position:100% 0}100%{background-position:-100% 0}}html.reduce .eflow .ear.on{animation:none;background:var(--pu)}@media (max-width:560px){.eflow .est{font-size:.62rem;padding:3px 3px}.eflow .est b{font-size:.64rem}.eflow .ear{flex-basis:8px;margin:0 1px}.eflow .ec span{font-size:.6rem;padding:0 2px}}
 /* 📱 갤럭시 S23 울트라(QHD+ 1440×3088, CSS 412×882 @3.5x) 최적화 — 사장님 10-23. 지도를 한두 화면 안에, 글자는 실제 9px 밑으로 안 내려가게 */@media (max-width:560px){.lane{gap:4px;margin:4px 0}.lane .cp{flex:1 1 31%;padding:3px 5px;font-size:.68rem;line-height:1.3}.lane .cp b{font-size:.72rem}.lane .cp .nt{display:none}.lane .cp.feed .fd{font-size:.66rem}.lane .lh{font-size:.72rem}#map .fl{font-size:12px}#map .drv text{font-size:12px}#map .dot text{font-size:12px}#map .hub text{font-size:11px}#map .t2{font-size:13px}#map .t2.sm{font-size:12px}}
@@ -163,6 +163,7 @@ html.reduce *{animation:none!important;transition:none!important}
       <div class="lane" id="supLane" aria-label="연료 공급자"></div>
       <svg id="map" role="img" aria-label="글이 출발에서 종착지 4곳으로 가는 흐름 지도"></svg>
       <div class="lane" id="drvLane" aria-label="운전자"></div>
+      <div class="lane aplane" id="apLane" aria-label="결재함 축소판"></div>
       <div class="rp"><button class="btn" id="rpbtn" type="button">▶ 오늘 하루 재생 (20초)</button><div class="rpbar" id="rpbar" aria-hidden="true"><div class="rpfill" id="rpfill"></div></div><span class="rpt" id="rpt">--:--</span><span class="mo" id="mo"><span id="motx"></span> <button class="btn" id="mobtn" type="button"></button></span></div>
       <div class="lg">● 관 속 입자 = 오늘 그 구간을 지난 글(+지금 서 있는 글) — 많을수록 촘촘·빠름 · 빨간 맥박 = 멈춘 구간(입자 정지) · 링 = 서 있는 글 수(3건이면 가득·병목) · 바늘 = 가장 오래 선 시간(눈금 끝 = 위험 임계, 주황 띠 = 경고) · 종착지 물결 = 새 도착 · <b style="color:var(--pu)">보라 관·🧳 = 수정 캐리어 선로</b>(아래 줄: 트렁크→작성→③결재→반영, 결재·Aside·종착지는 새 글과 함께 씀 · 상세는 맨 아래)</div>
       <div class="rpnote" id="rpnote"></div>
@@ -540,6 +541,13 @@ function renderLanes(s){
       return (i?`<div class="ear${a.length&&k!=="done"&&k!=="queue"?" on":""}" aria-hidden="true"></div>`:"")+
         `<div class="est${a.length?" has":""}${k==="done"?" dn":""}"><b>${nm}</b>${who?`<small>${esc(who)}</small>`:""}<div class="ec">${a.map(e=>`<span class="cr" data-c="${esc(e.code)}" title="${esc(e.title||"")}">🧳${esc(e.code)}${e.packer?`<i>📦${esc(e.packer)}</i>`:""}</span>`).join("")||"—"}</div></div>`}).join("")+`</div>`;
   carrierMove(eds);
+  /* 🖊 결재함 축소판 — 사장님 10-24 「CP에 상황실이 있는건 CP의 전자결재와 유기적 상호 작용해야」.
+     판정은 approvalcount.rows() 한 곳(enginestate 가 approvals 로 싣는다) · 누르면 결재함 그 카드로. */
+  const ap=s.approvals||[];
+  const apl=document.getElementById("apLane");
+  if(apl)apl.innerHTML=`<div class="lh">🖊 전자결재 — 사장님 차례 ${ap.length}건 <a class="apo" href=${hq("approval.html")}>결재함 열기 ↗</a></div>`+
+    (ap.length?ap.map(x=>`<a class="cp am apr" href=${hq("approval.html#c-"+x.id)}><b>${esc(x.kind)} ${esc(x.id)}</b>${esc(x.what||"")}<div class="nt">${x.by?"올린이 "+esc(x.by):""}${x.waited?" · "+esc(x.waited):""} · 결재함에서 열기 →</div></a>`).join("")
+      :`<div class="cp ok">결재할 것 없음 — 결재함이 비어 있습니다</div>`);
   document.getElementById("drvLane").innerHTML=
     `<div class="lh">🏭 생산자 — 오늘 누가 무엇을 만들었나</div>`+(s.producers||[]).map(p=>`<div class="cp ok"><b>🏭 ${esc(p.who)}</b>${esc(p.made||"")}${(p.codes||[]).length?`<div class="nt">${(p.codes||[]).map(esc).join(" · ")}</div>`:""}</div>`).join("")+
     `<div class="lh">🚗 운전자 — 마디를 움직이는 쪽</div>`+
@@ -657,7 +665,7 @@ function urlsFor(code){
 function rowHtml(x,extra){
   const u=urlsFor(x.code);
   return `<li class="${x.lvl==="red"?"rd":x.lvl==="amber"?"am":""}" data-code="${esc(x.code)}"><span class="c">${esc(x.code)}</span> ${esc(x.title||"")}<div class="w">${esc(x.who||"")}${extra||""}${x.min!=null?` · <span class="m" data-min="${x.min}">경과 ${fmtMin(x.min)}</span>`:""}</div>`+
-   `<div class="dtl"><b>${esc(x.code)}</b> · ${esc(x.title||"")}<br>누가: ${esc(x.who||"-")}<br>상태: ${x.lvl==="red"?"🚨 멈춤":x.lvl==="amber"?"⚠ 지연":"정상 진행"}${x.min!=null?" · 서 있은 지 "+fmtMin(x.min):""}${u?"<br>게시된 곳: "+u:"<br>게시된 곳: 아직 없음"}</div></li>`}
+   `<div class="dtl"><b>${esc(x.code)}</b> · ${esc(x.title||"")} <a class="apo" href=${hq("approval.html#c-"+x.code)}>🖊 결재함에서 보기</a><br>누가: ${esc(x.who||"-")}<br>상태: ${x.lvl==="red"?"🚨 멈춤":x.lvl==="amber"?"⚠ 지연":"정상 진행"}${x.min!=null?" · 서 있은 지 "+fmtMin(x.min):""}${u?"<br>게시된 곳: "+u:"<br>게시된 곳: 아직 없음"}</div></li>`}
 function renderText(s,g){
   const k=s.kpi||{},tw=s.tower||{},as=s.aside||{},cnt=k.incidents_by_code||{},inc=(s.incidents||[]).length;
   document.getElementById("kp").innerHTML=
@@ -761,6 +769,12 @@ document.getElementById("alarm").addEventListener("keydown",ev=>{if(ev.key==="En
 document.getElementById("tg").onclick=()=>{const f=document.getElementById("flowfr");const on=f.style.display!=="block";if(on&&!f.src)f.src="engine_flow.html";f.style.display=on?"block":"none";document.getElementById("tg").textContent=on?"접기":"아래에 펼치기"};
 function tick(){const d=new Date(),p=n=>String(n).padStart(2,"0");document.getElementById("clock").textContent=p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds());tickMin();setLive()}
 let rz=0;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{if(S&&!RP){const v=document.getElementById("gpanel").clientWidth<620;if(curLayout!==(v?"v":"h"))render(S)}},200)});
+/* 🔗 결재함 → 상황실(engine.html#코드) — 그 글 줄을 펼치고 수정 캐리어면 그 가방도 깜빡 */
+let hashDone="";
+function goHashEng(){const c=decodeURIComponent((location.hash||"").slice(1));if(!c||c===hashDone||!S)return;hashDone=c;
+  const inRows=[...document.querySelectorAll('#steps li[data-code]')].some(e=>e.dataset.code===c);
+  if(inRows)focusRow(c);else if((S.edits||[]).some(e=>e.code===c))focusEdit(c);else showCode(c);}
+addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashEng,1000);
 tick();setInterval(tick,1000);load();setInterval(load,DEMO&&!/^[0-7]$/.test(DEMO)?4500:20000);
 </script>
 </body>
