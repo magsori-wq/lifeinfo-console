@@ -1,17 +1,22 @@
 {
- "generated": "2026-10-24 15:55",
+ "generated": "2026-10-24 20:10",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "10/24 08:04",
-   "next": "10/24 20:00",
+   "last": "10/24 20:05",
+   "next": "10/25 08:00",
    "model": "sonnet-5-5",
    "report_day": "1024",
-   "report": "08:08 브리핑 — 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(10-20 5회차 반려 기보고). 새 중요: 커뮤니티 질문(10-20 게시)에 PE 붉은여우 답변 2건(10-22 '상세 사유 안내 안 함, 도움말 보고 스스로 수정, 서치콘솔과 별개' / 10-21 'AI로 하는 사람들 승인 잘 안 됨') + 우리 후속 댓글 3건 게시(10-22·23). GitHub 콘솔 정합성 검사 ~20회 실패(10-22), 드리프트 검사 10-23 실패 → watch console-integrity-ci-fail-1024 등록. 점검: magsori 37건·m8975 1건(구글 개인정보 이용내역 통지, 무해)·aroma 0건 평소. 이어받은 것: adsense-rejected-1020, drift-fail-1021",
+   "report": "08:08 브리핑 — 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(10-20 5회차 반려 기보고). 새 중요: 커뮤니티 질문(10-20 게시)에 PE 붉은여우 답변 2건(10-22 '상세 사유 안내 안 함, 도움말 보고 스스로 수정, 서치콘솔과 별개' / 10-21 'AI로 하는 사람들 승인 잘 안 됨') + 우리 후속 댓글 3건 게시(10-22·23). GitHub 콘솔 정합성 검사 ~20회 실패(10-22), 드리프트 검사 10-23 실패 → watch console-integrity-ci-fail-1024 등록. 점검: magsori 37건·m8975 1건(구글 개인정보 이용내역 통지, 무해)·aroma 0건 평소. 이어받은 것: adsense-rejected-1020, drift-fail-1021\n▸ 20:10 2026-10-24 20:08 메일브리핑: 🟢사장님 할 일 없음 · 애드센스 API NEEDS_ATTENTION(화면 심사중, watch adsense-review-0923) · 이어받은 것: 10-20 반려통지·커뮤니티 PE 답변 2건(10-21 22:59PDT '모든 AI로 하는 사람들 승인 잘 안됩니다', 10-22 17:17PDT '상세 사유 비공개, 도움말로 스스로 수정') 신규 아님 확인불가→재보고 · 새로 본 것: 콘솔 정합성/드리프트 CI 10-22~24 반복 실패 메일이나 gh run 최신(10-24 10:43Z) 성공 → watch console-check-engine-html-1022 로 추적중 · 점검: magsori 36 m8975 0 aroma 0, 전달분(8975) 2스레드(Aside 뉴스레터·구글뉴스), GSC 신규 없음",
    "runs": [
+    {
+     "at": "10/24 20:10",
+     "link": "claude://claude.ai/epitaxy/local_5b625d6e-9225-4c1c-9e82-127decef490a",
+     "archived": false
+    },
     {
      "at": "10/24 08:10",
      "link": "claude://claude.ai/epitaxy/local_6090b4fb-5626-40b8-94b2-ebb8fdc8f74a",
@@ -30,11 +35,6 @@
     {
      "at": "10/22 20:11",
      "link": "claude://claude.ai/epitaxy/local_b1fccf4d-3b9f-4657-a682-901cf29e8e66",
-     "archived": true
-    },
-    {
-     "at": "10/22 08:10",
-     "link": "claude://claude.ai/epitaxy/local_265d6d1a-5a1b-4959-9ffe-7dcff134fe29",
      "archived": true
     }
    ]
