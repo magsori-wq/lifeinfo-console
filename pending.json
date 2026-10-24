@@ -1,16 +1,33 @@
 {
- "rev": "955639dcf",
+ "rev": "ddbc062b5",
  "counts": {
-  "total": 425,
+  "total": 426,
   "osmu_done": 423,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 425,
+  "index_pending": 426,
   "index_requested": 171,
-  "index_todo": 85,
+  "index_todo": 86,
   "index_benign": 169
  },
  "actionable": [
+  {
+   "code": "D3-10",
+   "title": "위반건축물 양성화 12월 17일 시행 — 주거용만, 이",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "E4-12",
    "title": "가입제한서비스 11월 20일부터 신규 계약에 기본 가입",
@@ -208,22 +225,6 @@
   {
    "code": "A4-08",
    "title": "가습기살균제 피해 배상 신청 10월 8일 시작 — 20",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A4-09",
-   "title": "긴급복지 동절기 연료비 월 15만원 — 에너지바우처와 ",
    "need": [
     "색인요청"
    ],
