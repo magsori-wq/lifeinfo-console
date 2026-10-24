@@ -1,5 +1,5 @@
 {
- "computed_at": "2026-10-25 08:46:55",
+ "computed_at": "2026-10-25 08:47:58",
  "source_head": "f6c43885197a",
  "ids": [
   "A2-29",
@@ -10,7 +10,8 @@
   "D4-14",
   "G1-16",
   "aside-app-restart-1025",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-421"
  ],
  "posts": [
   {
@@ -311,6 +312,14 @@
    "what": "Aside 앱 재시작 필요 — 브라우저가 새 탭을 못 엶(06:23 이부장 실측: about:blank 도 Page.enable 30초 타임아웃, 새 채팅으로도 2건 연속 실패) · 06:32 멈춘 블로거 편집 탭 1개 남음(앱 재시작으로 함께 정리)",
    "due": "2026-10-25",
    "cmd": "Aside 앱 완전 종료 후 다시 열기(앱 재시작은 사람 손 — 세션은 프로세스를 끄지 않는다) → 이부장이 탭 열기 시험 후 남은 후속 재등록",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-421",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(421_civil_servant_fertility_leave.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-25",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
