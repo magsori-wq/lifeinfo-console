@@ -549,6 +549,16 @@ function refresh(){
 //    없어 타임아웃까지 화면이 **완전히 비었다.** 결재함을 밖에서 보시라고
 //    만들어 놓고 정작 밖에서 안 보였던 것이다.
 //    ⚠️ 서버는 **버튼 활성화**에만 쓰인다(SRV). 데이터와 아무 관계가 없다.
+// 🔴 2026-10-24 사장님 「결재함에 올린이 세션ID로 하지말고 세션명으로 표시」 — 「세션:c36eea8e」 를
+//    등록부 session_names.json(열쇠 = 세션 ID)의 이름으로 바꿔 보인다(studio/approvalcount.py _name_by 와 같은 규칙).
+var SNAMES = {};
+j('session_names.json').then(function(d){ SNAMES = (d && d.sessions) || {}; });
+function nmBy(s){
+  s = String(s||''); if (s.indexOf('세션:') !== 0) return s;
+  var p = s.slice(3).trim();
+  for (var k in SNAMES) { if (k.indexOf(p) === 0 && SNAMES[k]) return SNAMES[k].name || SNAMES[k].role || s; }
+  return s;
+}
 var DATA = Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
              j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
              j('watch.json'),j('pending.json'),j('osmu_text.json'),j('rep_groups.json'),
@@ -1162,7 +1172,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       // 🔴 **누가 올렸는지** (2026-09-09 사장님 지시 "결재올릴때 누가 결재올렸는지
       //    알아야 하는게 기본이잖아?"). repWc() 와 같은 색 규칙 — 보고 패널·결재함이
       //    같은 색으로 읽힌다. 없으면(옛 항목·자동집계) 뱃지를 안 그린다.
-      +(x.by?'<span class="who '+repWc(x.by)+'">올린이 '+esc(x.by)+'</span>':'')
+      +(x.by?'<span class="who '+repWc(nmBy(x.by))+'">올린이 '+esc(nmBy(x.by))+'</span>':'')
       +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
       +(function(){var oc=ordChips(x);return oc?'<div class="ordrow">'+oc+'</div>':'';})()
@@ -1323,7 +1333,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var actionsBody = actions.length ? actions.map(function(x){
     return '<div class="card wait"><div class="hd">'
       +'<span class="who '+(x.blocked?'w-boss':'w-lee')+'">'+(x.blocked?'🚫 막힘':'☑ 조치')+'</span>'
-      +(x.by?'<span class="who '+repWc(x.by)+'">올린이 '+esc(x.by)+'</span>':'')
+      +(x.by?'<span class="who '+repWc(nmBy(x.by))+'">올린이 '+esc(nmBy(x.by))+'</span>':'')
       +'<span class="code">'+esc(x.id)+'</span></div>'
       +'<div class="meta">'+esc(String(x.what||'').slice(0,180))
       +(x.due?' · 기한 '+esc(x.due):'')+'</div></div>';
