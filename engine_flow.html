@@ -18,9 +18,6 @@
   L -->|결정 기록| E[[엔진 설계도<br/>docs/엔진설계도.md]]
   E -->|규칙·흐름| L
 </pre></section><section><pre class="mermaid">flowchart TD
-  SUP[[연료 공급자: 3.세션·루틴2·4·6·docflow → 글감 제안]]:::fix --> FUEL{⛽ 재고 ≥ 하한?}:::fix
-  FUEL -->|NO| SUP
-  FUEL -->|YES| A
   A[이과장 초안 → 발행대기 큐] --> B{towertick: 초안 감지}
   B -->|DRAFT_READY| C[이부장: V0 검사 에이전트]
   C --> D{V0 통과?}

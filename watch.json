@@ -22913,12 +22913,12 @@
   {
    "id": "pubqueue-autoorder-race-1023",
    "added": "2026-10-23",
-   "what": "발행 지시서 자동 발급 누락 반복 — 10-23 16:22 1/3 · 10-24 12:26 2/3 · 13:41 2/2 모두 누락(결재함 승인 서버 경유). 이부장 CLI go 로는 정상 발급 → 서버 경유 경로(approve_server→pubqueue go)의 환경(세션ID·cwd·gatesync push 실패 뒤 예외) 의심. 서버 로그에서 _auto_order 출력 확인, 고친 뒤 재현 시험. 설계도 먼저",
+   "what": "동시 승인 3건(16:22 C1-18·F3-09·E4-10) 중 E4-10 발행 지시서 자동 발급 누락 — pubqueue._auto_order 가 공용 tmp(_autoorder_*.json/txt)·batch.json 을 동시에 써서 경쟁 의심. 원인 실측 후 코드별 tmp 이름·잠금으로 수정(설계도 먼저)",
    "due": "2026-10-24",
-   "cmd": "grep -n _auto_order studio/pubqueue.py",
+   "cmd": "grep -n _autoorder studio/pubqueue.py",
    "owner": "claude",
    "state": "todo",
-   "note": 1024,
+   "note": 1023,
    "by": "이부장"
   },
   {
@@ -23241,84 +23241,6 @@
    "by": "미상",
    "done_at": "2026-10-24",
    "result": "사장님 12:25 deploy.bat 실행, github.io 200 확인"
-  },
-  {
-   "id": "approve-engine-rebuild-untested-1024",
-   "added": "2026-10-24",
-   "what": "결재함 승인 직후 상황실 재생성(approve_server) — 실제 승인 버튼으로 미시험. 다음 사장님 승인 때 engine_state.json at 이 승인 시각 직후로 바뀌는지 확인",
-   "due": "2026-10-24",
-   "cmd": "python -c \"import json;print(json.load(open('webapp/engine_state.json',encoding='utf-8')).get('at'))\"",
-   "owner": "claude",
-   "state": "wait",
-   "note": 1024,
-   "by": "이부장"
-  },
-  {
-   "id": "xlink-e412",
-   "added": "2026-10-24",
-   "what": "🔗 E4-12 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-12",
-   "due": "2026-10-24",
-   "cmd": "python studio/blogger.py crosslink --code E4-12",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "v0reject-g3-27",
-   "added": "2026-10-24",
-   "what": "🔴 V0 반려 확인 요청 — G3-27 「복천박물관 특별전 11월 22일까지 — 무료·휴관일·가는 법 (2026)」. 검사자 v0 · 2026-10-24T13:01. 반려 사유(전문): 계산예시(개관일 26일)·함정·확인못한것박스는 통과. 그러나 공식 월간행사 페이지 특별전 안내에 '관람 09:00~18:00 (원활한 전시 관람을 위하여 17:00까지 입장 부탁드립니다)'가 있는데 글은 누락하고 표에서 11/22 '18시까지'·18시 이후 관람시간 밖으로만 적어 17:30 도착 독자를 오도. 넣으면 통과: 도입·정리·sec1 표·마무리에 '17:00까지 입장 요청(월간행사 표기)' 반영, 확인못한것 박스·출처 파일에도 추가. 11/22 행도 '17시까지 입장 권장, 18시 종료'로 수정. (같은 내용: `python -m studio.v0check gate --code G3-27`) 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다. 【권고】고쳐서 재검사 — 승인하시면 관제탑이 수정 지시서를 냅니다. 【근거】반려 사유 위. 【위험】접으면 그 글 재고가 빠진다.",
-   "due": "2026-10-24",
-   "cmd": "python -m studio.v0check gate --code G3-27",
-   "owner": "user",
-   "state": "done",
-   "kind": "approve",
-   "by": "이부장",
-   "done_at": "2026-10-24",
-   "result": "V0 통과로 해소 — 검사자 이부장 · 2차(diff): 17시 입장 권장(공식 월간행사 문구) 도입·정리·표·마무리 반영·출처 파일 추가 확인 · 썸네일 복천동 고분군 실사진(참고 사진·CC BY-SA 캡션)으로 교체 확인 · heading OK. 1차"
-  },
-  {
-   "id": "deploy-thumb-409",
-   "added": "2026-10-24",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(409_bokcheon_horse_exhibit.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "owner": "user",
-   "state": "done",
-   "by": "미상",
-   "done_at": "2026-10-24",
-   "result": "G3-27 썸네일 교체 예정(V0 반려: 소재 불일치) — 교체 후 다시 배포 요청이 자동으로 올라온다"
-  },
-  {
-   "id": "xlink-g326",
-   "added": "2026-10-24",
-   "what": "🔗 G3-26 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-26",
-   "due": "2026-10-24",
-   "cmd": "python studio/blogger.py crosslink --code G3-26",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "git-toke-leak-sources-1024",
-   "added": "2026-10-24",
-   "what": "PC 점검 세션 실측(10-24 13:18): git 실행 분당 ~135회·1회당 Toke ~1.36개 누수. 출처 ① 세션 bash→python git log --since=1 day ago(loopcheck — 실행당 1회로 고침 13:2x) ② pythonw 3중 체인 101/3분(towertick 계열 추정 — 미확인) ③ 사장님 더블클릭 .bat → git show <sha>:webapp/queue.json 이력 순회 99 ④ Claude Desktop 앱 134. ②③ 출처 코드 찾아 주기·캐시로 줄이기, 고친 뒤 PC 점검 세션에 재측정 요청",
-   "due": "2026-10-25",
-   "cmd": "python -m studio.loopcheck",
-   "owner": "claude",
-   "state": "todo",
-   "note": 1024,
-   "by": "이부장"
-  },
-  {
-   "id": "e412-insta-retry-1024",
-   "added": "2026-10-24",
-   "what": "E4-12 인스타 2회 실패(#400·#403 — 인스타 탭 열기 timeout, 같은 시간 G3-26 인스타는 13:31 성공). 30분 뒤 인스타→쓰레드 순으로 재등록, 또 실패하면 Aside 브라우저 재시작(사장님) 검토",
-   "due": "2026-10-24",
-   "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/E4-12_인스타게시.txt --code E4-12 --kind insta --prio 1",
-   "owner": "claude",
-   "state": "wait",
-   "note": 1024,
-   "by": "이부장"
   }
  ]
 }
