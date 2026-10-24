@@ -23708,6 +23708,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "aside-dup-receipt-449-1025",
+   "added": "2026-10-25",
+   "what": "중복 수신 재발: #449 가 #448(B4-23 색인) 과 같은 본문으로 다시 배달 — 대기열 파일은 1개(08:29)뿐 → 배달 경로(aside_order 45초 재알림 또는 towertick INDEX_REQUEST_TODO) 중복. Aside 가 스스로 건너뜀. 개선안 ① busy()·등록당 메시지 1통 수정의 근거",
+   "due": "2026-10-25",
+   "cmd": "grep -n '45' tools/aside_order.sh; grep -n INDEX_REQUEST_TODO studio/towertick.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
