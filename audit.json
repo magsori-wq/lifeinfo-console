@@ -2,110 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-04T15:10:23",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "pc-boot-slow-0830",
-   "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T15:14:40",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "B4-10",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T15:53:44",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "B4-11",
-   "detail": "국회 통과 전이라 '확정'이 아니다 — 2026-09-01 국무회의는 정부안 의결이고 종부세 공제 1.2억→1.4억도 국회 심의에서 바뀔 수 있다. 확정 후(11~12월 국회 통과) 다시 제안할 것. 지금 쓰면 '확정'이라는 제목 자체가 틀린 사실이 된다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T15:53:44",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "C2-12",
-   "detail": "접종 시작이 9/21 로 2주 남았다. 추석(9/25)·본인부담상한액 환급이 지금 진행 중이라 우선순위가 밀린다. 9/15경 재제안 — 그때가 '지금 찾을 이유'가 생기는 시점",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T15:53:44",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "B4-12",
-   "detail": "제도 자체는 상시라 '지금' 이유가 약하다. '추석 앞두고 송금 실수'는 억지 연결이고, 예금보험공사 제도는 연중 신청 가능하다. 시즌 없이도 검색 수요가 있는 주제이니 재고에 여유 생기면 일반 정보성으로",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T16:38:47",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "pub-trigger-b4-10",
-   "detail": "1번 ⑧발행실행 카드와 중복 — 내가 올린 것이 큐 카드와 겹쳤다. 큐 카드에서 누르시면 된다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T16:38:47",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-b1-09-0903b",
-   "detail": "완료 — 사장님이 게시하셨고 URL(blog.naver.com/magsori8975/224400940778) 기록·crosslink 확인. 라이브에 네이버·쓰레드·인스타 3링크 다 있다. B1-09 4채널 완결",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T17:08:52",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-e2-10",
-   "detail": "반려 확인 — 이과장이 e210fix 지시서로 정정 중(1차출처 2021-01-05 표기 정정·롯데 3분류 교정·V0 축 재설정). 정정 끝나면 재검사 후 발행 승인으로 올라간다. 사장님 조치 불필요",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T17:08:52",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-d3-06",
-   "detail": "반려 확인 — 이과장이 d306fix 지시서로 정정 중. 3행 판정표(단독/연립·다세대/아파트등) 이미 초안에 반영된 것 확인. 정정 끝나면 재검사 후 발행 승인으로 올라간다. 사장님 조치 불필요",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T17:32:07",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "perm-gh-main-repo",
-   "detail": "사장님이 본체 .claude/settings.local.json 에 gh 4줄 추가·저장하셨다(2026-09-04 17:31). JSON 구문 검사 통과 — allow 70줄, gh workflow run/run list/run watch/run view. 앞으로 어느 워크트리에서 세션이 새로 떠도 같은 벽에 안 막힌다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T17:37:24",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "sec-passkey-mfa-0901",
-   "detail": "운영콘솔 전자결재함에서 완료 처리",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T20:16:33",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-e2-10",
-   "detail": "V0 통과로 해소 — 검사자 V0검사관(2차) · 반려 6건 전부 해소 확인(본문 5 + 발행경로 1). [본문·PDF 원문 대조] 별첨3 Q7 5분류가 원문과 일치 — 00:30~23:30 비씨/신한/우리/KB국민/NH농협(주말·공휴일 포함) · 08:00~22:",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T20:25:38",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-d3-06",
-   "detail": "V0 통과로 해소 — 검사자 V0검사관(2차) · 반려 4건 전부 해소·1차출처 재대조 완료(law.go.kr DRF, OC=test). ①3행 판정표 신설 — 단독주택(별표2 해당없음·제17조 밖·제10조①1호 대상)/연립·다세대(별표2 1호 나·다목·제17조 적",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-04T21:24:45",
    "actor": "세션(CLI)",
    "action": "topicprop.drop",
@@ -15998,6 +15894,110 @@
    "actor": "사장님",
    "action": "pubqueue.go",
    "target": "D3-10",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:01:17",
+   "actor": "v0",
+   "action": "v0check.fail",
+   "target": "G3-27",
+   "detail": "계산예시(개관일 26일)·함정·확인못한것박스는 통과. 그러나 공식 월간행사 페이지 특별전 안내에 '관람 09:00~18:00 (원활한 전시 관람을 위하여 17:00까지 입장 부탁드립니다)'가 있는데 글은 누락하고 표에서 11/22 '18시까지'·18시 이후 관람시간 밖으로만 적어 17:",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:01:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-g3-27",
+   "detail": "이부장 확인 13:02: 17시 입장 마감 누락·썸네일 소재 불일치 — 이과장 수정 지시, 재검사 후 결재",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:03:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-409",
+   "detail": "G3-27 썸네일 교체 예정(V0 반려: 소재 불일치) — 교체 후 다시 배포 요청이 자동으로 올라온다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:11:20",
+   "actor": "이부장",
+   "action": "v0check.pass",
+   "target": "G3-27",
+   "detail": "2차(diff): 17시 입장 권장(공식 월간행사 문구) 도입·정리·표·마무리 반영·출처 파일 추가 확인 · 썸네일 복천동 고분군 실사진(참고 사진·CC BY-SA 캡션)으로 교체 확인 · heading OK. 1차의 일정·무료·휴관·교통 대조는 유지",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:11:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-g3-27",
+   "detail": "V0 통과로 해소 — 검사자 이부장 · 2차(diff): 17시 입장 권장(공식 월간행사 문구) 도입·정리·표·마무리 반영·출처 파일 추가 확인 · 썸네일 복천동 고분군 실사진(참고 사진·CC BY-SA 캡션)으로 교체 확인 · heading OK. 1차",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:21:20",
+   "actor": "v0-agent",
+   "action": "v0check.pass",
+   "target": "B1-11",
+   "detail": "계산예시 2종(가상 표시·산수 360/600만 검산)+한도 4구간 판단표+자녀등 요건 3가지+2025사용분 미적용 함정, DRF 원문 ⑩⑪ 금액 일치, 확인못한것 박스·YMYL·바이라인 정상, dupcheck 0.053. 참고: 시행일 뒤 MST 미확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:41:21",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G3-27",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:41:39",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "B1-11",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T14:01:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-browser-restart-1024",
+   "detail": "Aside 가 스스로 회복 — 13:59 E4-12 쓰레드 게시 성공. 재시작 불필요(또 멈추면 다시 올린다)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T14:01:17",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "e412-insta-retry-1024",
+   "detail": "14:01 재등록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T14:16:28",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "B4-21",
+   "detail": "D1-17 「위택스 환급금 조회, 12월부터 카카오 등 앱에서 가능」(10-23 발행)과 같은 주제(행안부 10-22 지방세 환급금 민간앱 보도) — dupcheck 가 낱말 차이(위택스/지방세)로 못 잡음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T14:50:24",
+   "actor": "v0",
+   "action": "v0check.pass",
+   "target": "D1-18",
+   "detail": "계산(이의신청 5일 중 평일 3일·심사 8일·확정후 10일·42,000x60%=25,200)+판단형 비교(통지표 vs 증명서·재학생/졸업생/현장)+탈락사유(백지제출 환불불가)+함정6; PDF 직접 대조(날짜·시각·60%·42,000 일치); 가상사례 표시; 미확인 수치 단정 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T14:52:53",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D1-18",
    "detail": "",
    "via": "cli"
   }
