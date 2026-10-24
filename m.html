@@ -177,6 +177,8 @@ function card(it){
     //    줄 자체를 안 그린다 — 빈 라벨은 소음이다.
     +(it.by?'<div class="byline">올린이 <span class="bytag '+byWc(it.by)+'">'
            +esc(it.by)+'</span></div>':'')
+    // 🔴 2026-10-24 「올린이가 나야?」 — 승인자는 올린이가 아니라 따로 승인 칩으로
+    +(it.approved?'<div class="byline">✅ '+esc(it.approved)+'</div>':'')
     +(it.thumb_undeployed?'<div class="hardtag">🔴 썸네일 미배포 — deploy.bat 먼저</div>':'')
     +(it.who?'<div class="wholine">'+esc(it.who)+'</div>':'')
     +'<div class="cidline">'+esc(it.id||'')+'</div>'

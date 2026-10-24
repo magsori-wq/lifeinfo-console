@@ -187,6 +187,8 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 .ordrow .c-block{background:#4a1820;color:#ffb3bd;border:1px solid #a8394a}
 .ordrow .c-done{background:#163b2c;color:#8ee5be;border:1px solid #2f8f68}
 .ordrow .c-closed{background:#24272e;color:#9aa3b2;border:1px solid #4a505c}
+.engchip{display:inline-block;margin-left:6px;padding:0 6px;border-radius:9px;border:1px solid #4db3ff;color:#4db3ff;font-size:.72rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.card.hashflash{outline:3px solid #ffb02e;outline-offset:2px}
 </style></head><body>
 <div class="hdrow"><h1>📋 전자결재</h1>
  <span class="tip">승인 버튼은 <b>두 번</b> 눌러야 실행됩니다 · 명령을 클릭하면 복사</span><label id="autosw" class="on" title="끄면 화면이 저절로 바뀌지 않습니다"><span class="kn"></span><span id="autolab">자동갱신 켜짐</span></label>
@@ -551,6 +553,25 @@ function refresh(){
 //    ⚠️ 서버는 **버튼 활성화**에만 쓰인다(SRV). 데이터와 아무 관계가 없다.
 // 🔴 2026-10-24 사장님 「결재함에 올린이 세션ID로 하지말고 세션명으로 표시」 — 「세션:c36eea8e」 를
 //    등록부 session_names.json(열쇠 = 세션 ID)의 이름으로 바꿔 보인다(studio/approvalcount.py _name_by 와 같은 규칙).
+// 🗺 상황실 연동 — 사장님 10-24 「CP에 상황실이 있는건 CP의 전자결재와 유기적 상호 작용해야」
+//    카드마다 「지금 엔진 어디」 칩(engine_state.json stage_of) + 상황실에서 보기(engine.html#코드).
+//    상황실에서 approval.html#c-<코드|id> 로 들어오면 그 카드로 스크롤·깜빡임.
+var ENGST = {};
+j('engine_state.json').then(function(d){ ENGST = (d && d.stage_of) || {}; });
+function engChip(code){
+  if(!code) return '';
+  var st = ENGST[code];
+  return '<a class="engchip" href="engine.html#'+encodeURIComponent(code)+'" title="상황실에서 이 글 보기">🗺 '+(st?esc('엔진: '+st):'상황실')+'</a>';
+}
+function goHash(){
+  var h = decodeURIComponent((location.hash||'').slice(1)); if(h.indexOf('c-')!==0) return;
+  var n = 0, t = setInterval(function(){
+    var e = document.getElementById(h); n++;
+    if(e){ clearInterval(t); e.scrollIntoView({block:'center'}); e.classList.add('hashflash'); setTimeout(function(){e.classList.remove('hashflash');}, 2600); }
+    else if(n > 40) clearInterval(t);
+  }, 250);
+}
+addEventListener('hashchange', goHash); setTimeout(goHash, 300);
 var SNAMES = {};
 j('session_names.json').then(function(d){ SNAMES = (d && d.sessions) || {}; });
 function nmBy(s){
@@ -1015,9 +1036,10 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       why:'⑧ 발행 대기 — 승인 완료('+String((q.go&&q.go.at)||'').slice(0,16).replace('T',' ')
           +') · 실행만 남았다',
       waited:_waited, thumbU:!!TUND[q.code],
-      // 🔴 승인해서 지금 이 상태가 된 사람(2026-09-09) — 대부분 '사장님'이다.
-      //    studio/approvalcount.py _by_for() 의 발행실행 규칙과 같다.
-      by:(q.go&&q.go.by)||'',
+      // 🔴 2026-10-24 사장님 「올린이가 나야?」 — 올린이 = 원고를 큐에 올린 사람(q.by).
+      //    승인자는 따로 승인 칩(apr). studio/approvalcount.py _by_raw()·_approved_for() 와 같다.
+      by:q.by||'',
+      apr:(q.go&&q.go.by)?('승인 '+q.go.by+' '+String(q.go.at||'').slice(11,16)):'',
       // 🔴 2026-09-03 — 이 카드는 facts 를 안 실어 「📄 본문 미리보기」가 통째로 안 떴고,
       //    아래 LABEL 게이트 때문에 「📄 원고 미리보기」 버튼도 안 떴다(둘 다 렌더 자체가
       //    없었다 — 클릭이 실패한 게 아니라 있어야 할 것이 없었다). facts 를 실어 전자를 고친다.
@@ -1165,7 +1187,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    관제탑은 채팅에서 "1번"이라 부르는데 화면에는 번호가 없어 사장님이 매번 대조하셔야 했다.
   //    번호는 이 목록의 순서다 — 항목이 처리되면 뒤 번호가 당겨진다. 그래서 관제탑은
   //    보고할 때 **번호와 함께 코드·제목을 반드시 같이** 적는다(번호만 쓰면 어긋난다).
-  var bossBody = boss.length? boss.map(function(x,_i){return '<div class="card boss'+(x.done?' fin':'')+'"><div class="hd">'
+  var bossBody = boss.length? boss.map(function(x,_i){return '<div class="card boss'+(x.done?' fin':'')+'" id="c-'+esc(x.c)+'"><div class="hd">'
       +(x.done?'<span class="num" style="background:#2f8f68">✓</span>'
               :'<span class="num">'+(_i+1)+'</span>')
       +'<span class="who '+(x.done?'w-fin':'w-boss')+'">'+(x.done?'✅ 승인완료':(BADGE[x.act]||'결재'))+'</span>'
@@ -1173,8 +1195,9 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       //    알아야 하는게 기본이잖아?"). repWc() 와 같은 색 규칙 — 보고 패널·결재함이
       //    같은 색으로 읽힌다. 없으면(옛 항목·자동집계) 뱃지를 안 그린다.
       +(x.by?'<span class="who '+repWc(nmBy(x.by))+'">올린이 '+esc(nmBy(x.by))+'</span>':'')
+      +(x.apr?'<span class="who w-fin">✅ '+esc(x.apr)+'</span>':'')
       +'<span class="ttl">'+esc(String(x.t||'').split(' — ')[0].slice(0,70))+'</span>'
-      +'<span class="code">'+esc(x.c)+'</span></div>'
+      +'<span class="code">'+esc(x.c)+'</span>'+engChip(x.c)+'</div>'
       +(function(){var oc=ordChips(x);return oc?'<div class="ordrow">'+oc+'</div>':'';})()
       // 🔴 do·who — BADGE 옆에 사람이 읽는 행동 문장을 덧그린다(2026-09-09).
       +(x.done? '' : (function(){
@@ -1331,7 +1354,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     return String(x.due||'9999').localeCompare(String(y.due||'9999'));
   });
   var actionsBody = actions.length ? actions.map(function(x){
-    return '<div class="card wait"><div class="hd">'
+    return '<div class="card wait" id="c-'+esc(x.id)+'"><div class="hd">'
       +'<span class="who '+(x.blocked?'w-boss':'w-lee')+'">'+(x.blocked?'🚫 막힘':'☑ 조치')+'</span>'
       +(x.by?'<span class="who '+repWc(nmBy(x.by))+'">올린이 '+esc(nmBy(x.by))+'</span>':'')
       +'<span class="code">'+esc(x.id)+'</span></div>'
