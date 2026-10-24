@@ -1,14 +1,13 @@
 {
- "computed_at": "2026-10-24 18:59:01",
- "source_head": "b5f4cbc355d8",
+ "computed_at": "2026-10-24 22:44:01",
+ "source_head": "3776dcf8f8dc",
  "ids": [
   "B4-22",
   "B4-23",
   "B4-24",
   "G1-16",
   "G3-28",
-  "claude-limit-reset-1022",
-  "deploy-thumb-415"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -168,7 +167,7 @@
    "code": "B4-24",
    "title": "연말정산 부양가족 공제 — 부모님 소득 100만 원 넘으면 탈락, 60세는 1966년생까지 (2026 귀속)",
    "go": false,
-   "v0": "fail",
+   "v0": "pass",
    "files": [
     {
      "label": "초안 부양가족공제_글_HTML.txt",
@@ -195,7 +194,7 @@
    "code": "G1-16",
    "title": "광안리 드론쇼 11월 14·21·28일, 동절기(10월~2월) 19시·21시 — 11/21은 레이저쇼 24분 (2026)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 광안리드론쇼11월_글_HTML.txt",
@@ -226,14 +225,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-415",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(415_dependent_deduction.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
