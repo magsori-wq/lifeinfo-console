@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "items": [
   {
    "id": "redirect-error",
@@ -23539,6 +23539,27 @@
    "by": "미상",
    "done_at": "2026-10-24",
    "result": "18:58 배포분에 포함 · github.io 200 재확인(19:02) — 감시가 배포 직전 404를 잡은 것"
+  },
+  {
+   "id": "aside-naver-login-1025",
+   "added": "2026-10-25",
+   "what": "Aside 브라우저 네이버 로그인 풀림(01:03 확인 — 브랜드커넥트 열면 nid 로그인 화면) — 네이버 게시·커넥트 조회 전 재로그인 필요",
+   "due": "2026-10-25",
+   "cmd": "Aside 브라우저에서 nid.naver.com 로그인(사장님 손 — 자격증명은 세션이 넣지 않는다). 끝나면 이부장이 G3-28·B4-22 네이버 게시와 D4-14 커넥트 재조사를 다시 올림",
+   "owner": "user",
+   "state": "todo",
+   "kind": "action",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-417",
+   "added": "2026-10-25",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(417_overseas_kids_product_safety.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-25",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
