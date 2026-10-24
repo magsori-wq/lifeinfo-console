@@ -1,12 +1,13 @@
 {
- "computed_at": "2026-10-24 18:47:45",
- "source_head": "cf5587016d8c",
+ "computed_at": "2026-10-24 18:54:09",
+ "source_head": "748b19157692",
  "ids": [
   "B4-22",
   "B4-23",
   "B4-24",
   "G3-28",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-415"
  ],
  "posts": [
   {
@@ -166,7 +167,7 @@
    "code": "B4-24",
    "title": "연말정산 부양가족 공제 — 부모님 소득 100만 원 넘으면 탈락, 60세는 1966년생까지 (2026 귀속)",
    "go": false,
-   "v0": null,
+   "v0": "fail",
    "files": [
     {
      "label": "초안 부양가족공제_글_HTML.txt",
@@ -197,6 +198,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-415",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(415_dependent_deduction.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],
