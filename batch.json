@@ -4735,17 +4735,21 @@
    "order_at": "2026-10-24 13:18"
   }
  },
- "updated": "2026-10-24 13:20:03",
+ "updated": "2026-10-24 13:23:30",
  "current": {
-  "batch": "pccheck",
+  "batch": "draftb421",
   "code": "",
-  "title": "PC 점검 세션",
-  "step": 3,
-  "what": "🙋 이부장 요청: 커널 출입증(Toke) 누수 = git 프로세스 실행 1회당 약 1.36개(10-24 13:00 3분 575회→+783 · 13:07 8분 1,081회→+1,471, 두 표본 비율 일치). git 실행 분당 ~135회. 출처(trace2 ancestry): 세션 bash→python 132/3분(log --since=1 day ago 반복) · pythonw 3중 체인 101 · 탐색기→cmd→python(사장님 더블클릭 .bat) 99(git show <sha>:webapp/queue.json 이력 순회) · Claude Desktop 앱 자체 134. 탐색기가 git 부른 건 0. 처방은 루프 주기·캐시(PC 세션은 남의 코드 안 고침)",
-  "since": "13:18",
-  "since_at": "2026-10-24 13:18:24"
+  "title": "",
+  "step": 1,
+  "what": "B4-21 착수(13:24): 지시서 확인 — G3-26 인스타·쓰레드 먼저 확인 중",
+  "since": "13:23",
+  "since_at": "2026-10-24 13:23:30"
  },
  "log": [
+  {
+   "t": "13:23:30",
+   "text": "▶   — 1/7단계 · B4-21 착수(13:24): 지시서 확인 — G3-26 인스타·쓰레드 먼저 확인 중"
+  },
   {
    "t": "13:20:03",
    "text": "✅ B1-11 완료 — 신용카드 소득공제 한도, 자녀 있으면 400만원"
@@ -4901,10 +4905,6 @@
   {
    "t": "12:45:08",
    "text": "▶   — 1/7단계 · [Aside][done] [E4-12] #394 라이브 meta description 일치 확인(새 탭·meta와 og 모두) · 문구 102자 · 검색설명 비운 뒤 키 입력→업데이트 · 본문/라벨 미수정 · 총 탭 12개 · https://lifeinfo8975.blogspot.com/2026/10/11-20-2026.html"
-  },
-  {
-   "t": "12:42:31",
-   "text": "▶   — 7/7단계 · D3-10 발행 트리거(pubready·승인 12:26·썸네일 408 해시 일치)"
   }
  ],
  "currents": {
@@ -6095,6 +6095,15 @@
    "what": "🙋 이부장 요청: 커널 출입증(Toke) 누수 = git 프로세스 실행 1회당 약 1.36개(10-24 13:00 3분 575회→+783 · 13:07 8분 1,081회→+1,471, 두 표본 비율 일치). git 실행 분당 ~135회. 출처(trace2 ancestry): 세션 bash→python 132/3분(log --since=1 day ago 반복) · pythonw 3중 체인 101 · 탐색기→cmd→python(사장님 더블클릭 .bat) 99(git show <sha>:webapp/queue.json 이력 순회) · Claude Desktop 앱 자체 134. 탐색기가 git 부른 건 0. 처방은 루프 주기·캐시(PC 세션은 남의 코드 안 고침)",
    "since": "13:18",
    "since_at": "2026-10-24 13:18:24"
+  },
+  "draftb421": {
+   "batch": "draftb421",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "B4-21 착수(13:24): 지시서 확인 — G3-26 인스타·쓰레드 먼저 확인 중",
+   "since": "13:23",
+   "since_at": "2026-10-24 13:23:30"
   }
  },
  "report_log": [
@@ -20115,6 +20124,14 @@
    "title": "PC 점검 세션",
    "owner": "",
    "what": "🙋 이부장 요청: 커널 출입증(Toke) 누수 = git 프로세스 실행 1회당 약 1.36개(10-24 13:00 3분 575회→+783 · 13:07 8분 1,081회→+1,471, 두 표본 비율 일치). git 실행 분당 ~135회. 출처(trace2 ancestry): 세션 bash→python 132/3분(log --since=1 day ago 반복) · pythonw 3중 체인 101 · 탐색기→cmd→python(사장님 더블클릭 .bat) 99(git show <sha>:webapp/queue.json 이력 순회) · Claude Desktop 앱 자체 134. 탐색기가 git 부른 건 0. 처방은 루프 주기·캐시(PC 세션은 남의 코드 안 고침)"
+  },
+  {
+   "ts": "2026-10-24 13:23:30",
+   "bid": "draftb421",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "B4-21 착수(13:24): 지시서 확인 — G3-26 인스타·쓰레드 먼저 확인 중"
   }
  ]
 }
