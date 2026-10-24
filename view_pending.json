@@ -1,12 +1,11 @@
 {
- "computed_at": "2026-10-24 17:31:09",
- "source_head": "bdbeae6668d8",
+ "computed_at": "2026-10-24 18:45:45",
+ "source_head": "cf5587016d8c",
  "ids": [
   "B4-22",
   "B4-23",
   "G3-28",
-  "claude-limit-reset-1022",
-  "deploy-thumb-414"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -139,7 +138,7 @@
    "code": "B4-23",
    "title": "의료비 세액공제 연말정산 — 총급여 3% 넘는 금액만 15%, 본인·65세 이상은 한도 없음 (2026 귀속)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 의료비세액공제_글_HTML.txt",
@@ -170,14 +169,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-414",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(414_medical_expense_tax_credit.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
