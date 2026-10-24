@@ -1,66 +1,15 @@
 {
- "computed_at": "2026-10-24 15:33:20",
- "source_head": "114e80410b50",
+ "computed_at": "2026-10-25 00:29:34",
+ "source_head": "3776dcf8f8dc",
  "ids": [
   "B4-22",
   "B4-23",
   "B4-24",
   "G1-16",
   "G3-28",
-  "claude-limit-reset-1022",
-  "deploy-thumb-413"
+  "claude-limit-reset-1022"
  ],
  "posts": [
-  {
-   "code": "B4-23",
-   "title": "의료비 세액공제 연말정산 — 총급여 3% 넘는 금액만 15%, 본인·65세 이상은 한도 없음 (2026 귀속)",
-   "slug": "의료비세액공제",
-   "eng": "medical_expense_tax_credit",
-   "ch": {
-    "naver": {
-     "url": null,
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_의료비세액공제.txt",
-       "img": false,
-       "exists": false
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/414_medical_expense_tax_credit.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "todo"
-    },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_의료비세액공제.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    },
-    "instagram": {
-     "url": null,
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_의료비세액공제.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    }
-   }
-  },
   {
    "code": "B4-22",
    "title": "월세 세액공제 연말정산 — 총급여 5,500만 원 이하 17%, 1천만 원 한도 (2026)",
@@ -188,6 +137,33 @@
  ],
  "publish": [
   {
+   "code": "B4-23",
+   "title": "의료비 세액공제 연말정산 — 총급여 3% 넘는 금액만 15%, 본인·65세 이상은 한도 없음 (2026 귀속)",
+   "go": true,
+   "v0": "pass",
+   "files": [
+    {
+     "label": "초안 의료비세액공제_글_HTML.txt",
+     "path": "의료비세액공제_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/414_medical_expense_tax_credit.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/414_medical_expense_tax_credit.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "ready"
+  },
+  {
    "code": "B4-24",
    "title": "연말정산 부양가족 공제 — 부모님 소득 100만 원 넘으면 탈락, 60세는 1966년생까지 (2026 귀속)",
    "go": false,
@@ -249,14 +225,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-413",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(413_monthly_rent_tax_credit.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-24",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],

@@ -1,36 +1,19 @@
 {
- "rev": "114e80410",
+ "rev": "3776dcf8f",
  "counts": {
-  "total": 432,
+  "total": 431,
   "osmu_done": 429,
-  "osmu_pending": 3,
+  "osmu_pending": 2,
   "indexed": 0,
-  "index_pending": 432,
-  "index_requested": 159,
-  "index_todo": 104,
+  "index_pending": 431,
+  "index_requested": 177,
+  "index_todo": 85,
   "index_benign": 169
  },
  "actionable": [
   {
    "code": "B4-22",
    "title": "월세 세액공제 연말정산 — 총급여 5,500만 원 이하",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "B4-23",
-   "title": "의료비 세액공제 연말정산 — 총급여 3% 넘는 금액만 ",
    "need": [
     "OSMU",
     "색인요청"
@@ -225,6 +208,22 @@
   {
    "code": "A4-08",
    "title": "가습기살균제 피해 배상 신청 10월 8일 시작 — 20",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A4-09",
+   "title": "긴급복지 동절기 연료비 월 15만원 — 에너지바우처와 ",
    "need": [
     "색인요청"
    ],

@@ -23432,8 +23432,10 @@
    "due": "2026-10-24",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-24",
+   "result": "사장님 16:2x deploy.bat, github.io 200 확인"
   },
   {
    "id": "aside-tab-guard-1024",
@@ -23445,6 +23447,98 @@
    "state": "todo",
    "note": 1024,
    "by": "이부장"
+  },
+  {
+   "id": "xlink-d118",
+   "added": "2026-10-24",
+   "what": "🔗 D1-18 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-18",
+   "due": "2026-10-24",
+   "cmd": "python studio/blogger.py crosslink --code D1-18",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "aside-speed-plan-1024",
+   "added": "2026-10-24",
+   "what": "Aside 속도 개선안 결재 — 실행 1건 2~5분은 정상, 손실은 중복수신·탭포화·채팅 무게",
+   "due": "2026-10-24",
+   "cmd": "【권고】①중복수신 차단(asidequeue.busy 수정: 수신 전 9e9→재깨움, 인스타·쓰레드 진행 중엔 다음 안 올림, 등록당 메시지 1통) ②탭 수 서버 감시(10개 넘으면 알림) ③라이브 확인을 Aside에서 빼 asidechain이 curl·seodesc scan으로 ④전담 채팅 교체(로그 87MB·호출 중앙 8.3초, 새 채팅 땐 0.1초 — 페이블 측정, 이부장 미확인) ⑤색인 회차 묶음·인스타+쓰레드 묶음은 뒤로. 【근거】docs/실측_Aside속도_20261024.md(이부장 실측) · docs/검토_Aside속도_페이블_20261024.md(페이블) · 어드바이저 1순위=중복수신. asidequeue.py BUSY_MIN=25·last_at 없음 9e9 이부장 확인. 【위험】①은 쓰레드 이중게시(되돌릴 수 없음)를 막는 쪽이라 위험 낮음 · ④는 Aside 전담 채팅 주소가 바뀌어 지시 경로(aside_order·towertick) 함께 고쳐야 함 · 모든 신호 변경은 엔진설계도 먼저→어드바이저·페이블 검토→enginemap",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장",
+   "kind": "approve"
+  },
+  {
+   "id": "g116-dec-schedule-1024",
+   "added": "2026-10-24",
+   "what": "G1-16 광안리 드론쇼 12월 회차 주제 공지 확인(11월만 확보) — fuel_round6 의 「11/7부터·16회」는 틀림, source_G1-16 문서가 진실원",
+   "due": "2026-11-20",
+   "cmd": "curl -s https://gwangallimdrone.co.kr/notice | grep -o '12월[^<]*' | head",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "livelink-fix-b422-d310-1024",
+   "added": "2026-10-24",
+   "what": "B4-22 월세 세액공제 라이브 「주택법」 링크가 건축법을 가리킴 — 권고: 링크 1줄 정정(001823→001809) 승인",
+   "due": "2026-10-24",
+   "cmd": "【권고】B4-22 라이브 본문 링크 한 줄만 정정(lsId=001823→001809), 이과장 blogger.py update-post dry-run→미리보기 확인 후 실행 · D3-10 특조법 링크(015150)는 정상 — 시행 전(2026-12-17) 신규 제정법이라 DRF 기본 조회가 비었던 것(이부장 MST 286993 직접 확인), 수정 불필요. 【근거】law.go.kr DRF 직접 조회(이부장 17:2x): 001823=건축법·001809=주택법·015150=응답 없음 · 이과장 17:21 보고 · 네이버 원고·서식본은 이미 001809(확인). 【위험】링크 1개만 바꿔 내용 변화 없음 · 그대로 두면 독자가 엉뚱한 법령으로 간다",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-414",
+   "added": "2026-10-24",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(414_medical_expense_tax_credit.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-24",
+   "result": "17:31 deploy.bat 이부장 실행 · 414_medical_expense_tax_credit.png github.io 200 확인(17:34)"
+  },
+  {
+   "id": "deploy-thumb-415",
+   "added": "2026-10-24",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(415_dependent_deduction.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-24",
+   "result": "18:58 deploy.bat 이부장 실행(415·416 묶음) · github.io 200 확인(19:01)"
+  },
+  {
+   "id": "v0reject-b4-24",
+   "added": "2026-10-24",
+   "what": "🔴 V0 반려 확인 요청 — B4-24 「연말정산 부양가족 공제 — 부모님 소득 100만 원 넘으면 탈락, 60세」. 검사자 v0에이전트 · 2026-10-24T18:52. 반려 사유(전문): 2절 나이 예시 오류: 2005-12-31생은 만 나이로 2026년 거의 내내 20세(제53조⑤ 하루라도 해당) — 「하루도 20세 이하인 날 없음」「만/연 나이 결과 같음」 삭제 필요 · 「1966년생까지」는 조문 직접계산이 아니라 국세청 통상 해석(귀속연도−출생연도)으로 표기 · 행정기본법 제7조의2 미확인 인용 금지 · 그 외 조문·계산 일치 — docs/v0_B4-24_20261024.md (같은 내용: `python -m studio.v0check gate --code B4-24`) 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다. 【권고】고쳐서 재검사 — 승인하시면 관제탑이 수정 지시서를 냅니다. 【근거】반려 사유 위. 【위험】접으면 그 글 재고가 빠진다.",
+   "due": "2026-10-24",
+   "cmd": "python -m studio.v0check gate --code B4-24",
+   "owner": "claude",
+   "state": "done",
+   "kind": "approve",
+   "by": "이부장",
+   "note": " · 18:54 이부장: 정정은 draftb424 지시서로 이과장에게 넘김(사장님 결정 사항 아님 → claude 추적으로)",
+   "done_at": "2026-10-24",
+   "result": "18:55 이과장 정정·19:4x 이부장 확인 후 V0 pass"
+  },
+  {
+   "id": "deploy-thumb-416",
+   "added": "2026-10-24",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(416_gwangalli_drone_nov.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-24",
+   "result": "18:58 배포분에 포함 · github.io 200 재확인(19:02) — 감시가 배포 직전 404를 잡은 것"
   }
  ]
 }
