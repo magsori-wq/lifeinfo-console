@@ -1,13 +1,13 @@
 {
- "rev": "e89ff427c",
+ "rev": "af7307968",
  "counts": {
-  "total": 435,
+  "total": 432,
   "osmu_done": 429,
-  "osmu_pending": 6,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 435,
-  "index_requested": 159,
-  "index_todo": 107,
+  "index_pending": 432,
+  "index_requested": 177,
+  "index_todo": 86,
   "index_benign": 169
  },
  "actionable": [
@@ -31,57 +31,6 @@
   {
    "code": "B4-23",
    "title": "의료비 세액공제 연말정산 — 총급여 3% 넘는 금액만 ",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "B4-24",
-   "title": "연말정산 부양가족 공제 — 부모님 소득 100만 원 넘",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "D4-14",
-   "title": "해외직구 어린이제품 12월 3일부터 안전성조사 — 반송",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "G1-16",
-   "title": "광안리 드론쇼 11월 14·21·28일, 동절기(10월",
    "need": [
     "OSMU",
     "색인요청"
@@ -228,6 +177,54 @@
   {
    "code": "A2-25",
    "title": "2027 아이맞이지원금 — 첫째 1,000만원·둘째 1",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A2-26",
+   "title": "주거급여 2027 얼마 받나? 서울 1인 월 38만 1",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A2-27",
+   "title": "소상공인 경영안정 바우처 25만원 — 연매출 1억 40",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A4-08",
+   "title": "가습기살균제 피해 배상 신청 10월 8일 시작 — 20",
    "need": [
     "색인요청"
    ],
