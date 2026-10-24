@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T11:46:14",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "title-stale-0903",
-   "detail": "진단이 틀렸음을 실측으로 확인 → 정정본 pubtitle-source-0906 으로 이관. -f title 은 무시된 것이 아니라 원래 '발행보드용 짧은 제목' 입력이다(publish.yml L23 description). 라이브 제목 입력칸은 post_title(L36)이고 이건 설계대로 동작했다. 실제 결함은 따로 있다 — post_title 을 비우면 queue.json 저장 제목이 그대로 라이브로 나간다",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T11:50:20",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "v0check.pass",
    "target": "A2-29",
    "detail": "부산시 보도자료 1755237 첨부 hwpx 직접 대조 — 신청 9/28~12/6·대상(연매출 10억 이하·캐시백 가맹점)·산식(10~11월 결제액×3×0.15%)·비례조정·12월 지급 일치 · 12/6 은 참고표 값임을 본문에 명시 · 계산 135,000원 재계산 일치 · V0 4항목",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-25T07:00:11",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-420",
+   "detail": "06:5x 배포(419·420 묶음)에 포함 · 200 재확인",
    "via": "cli"
   }
  ]
