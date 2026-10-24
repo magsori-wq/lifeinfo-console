@@ -23457,6 +23457,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "aside-speed-plan-1024",
+   "added": "2026-10-24",
+   "what": "Aside 속도 개선안 결재 — 실행 1건 2~5분은 정상, 손실은 중복수신·탭포화·채팅 무게",
+   "due": "2026-10-24",
+   "cmd": "【권고】①중복수신 차단(asidequeue.busy 수정: 수신 전 9e9→재깨움, 인스타·쓰레드 진행 중엔 다음 안 올림, 등록당 메시지 1통) ②탭 수 서버 감시(10개 넘으면 알림) ③라이브 확인을 Aside에서 빼 asidechain이 curl·seodesc scan으로 ④전담 채팅 교체(로그 87MB·호출 중앙 8.3초, 새 채팅 땐 0.1초 — 페이블 측정, 이부장 미확인) ⑤색인 회차 묶음·인스타+쓰레드 묶음은 뒤로. 【근거】docs/실측_Aside속도_20261024.md(이부장 실측) · docs/검토_Aside속도_페이블_20261024.md(페이블) · 어드바이저 1순위=중복수신. asidequeue.py BUSY_MIN=25·last_at 없음 9e9 이부장 확인. 【위험】①은 쓰레드 이중게시(되돌릴 수 없음)를 막는 쪽이라 위험 낮음 · ④는 Aside 전담 채팅 주소가 바뀌어 지시 경로(aside_order·towertick) 함께 고쳐야 함 · 모든 신호 변경은 엔진설계도 먼저→어드바이저·페이블 검토→enginemap",
+   "owner": "user",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
