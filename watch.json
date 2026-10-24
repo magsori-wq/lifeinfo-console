@@ -23297,6 +23297,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "git-toke-leak-sources-1024",
+   "added": "2026-10-24",
+   "what": "PC 점검 세션 실측(10-24 13:18): git 실행 분당 ~135회·1회당 Toke ~1.36개 누수. 출처 ① 세션 bash→python git log --since=1 day ago(loopcheck — 실행당 1회로 고침 13:2x) ② pythonw 3중 체인 101/3분(towertick 계열 추정 — 미확인) ③ 사장님 더블클릭 .bat → git show <sha>:webapp/queue.json 이력 순회 99 ④ Claude Desktop 앱 134. ②③ 출처 코드 찾아 주기·캐시로 줄이기, 고친 뒤 PC 점검 세션에 재측정 요청",
+   "due": "2026-10-25",
+   "cmd": "python -m studio.loopcheck",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1024,
+   "by": "이부장"
   }
  ]
 }
