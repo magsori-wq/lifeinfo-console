@@ -23241,6 +23241,17 @@
    "by": "미상",
    "done_at": "2026-10-24",
    "result": "사장님 12:25 deploy.bat 실행, github.io 200 확인"
+  },
+  {
+   "id": "approve-engine-rebuild-untested-1024",
+   "added": "2026-10-24",
+   "what": "결재함 승인 직후 상황실 재생성(approve_server) — 실제 승인 버튼으로 미시험. 다음 사장님 승인 때 engine_state.json at 이 승인 시각 직후로 바뀌는지 확인",
+   "due": "2026-10-24",
+   "cmd": "python -c \"import json;print(json.load(open('webapp/engine_state.json',encoding='utf-8')).get('at'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1024,
+   "by": "이부장"
   }
  ]
 }
