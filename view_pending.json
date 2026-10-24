@@ -1,12 +1,13 @@
 {
- "computed_at": "2026-10-24 13:00:28",
+ "computed_at": "2026-10-24 13:02:04",
  "source_head": "301556d2313d",
  "ids": [
   "D3-10",
   "E4-12",
   "G3-26",
   "G3-27",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-409"
  ],
  "posts": [
   {
@@ -116,7 +117,7 @@
    "eng": "busan_wellness_geumjeong",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224452162552",
      "files": [
       {
        "label": "네이버 원고",
@@ -131,7 +132,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -165,7 +166,7 @@
    "code": "G3-27",
    "title": "복천박물관 특별전 11월 22일까지 — 무료·휴관일·가는 법 (2026)",
    "go": false,
-   "v0": null,
+   "v0": "fail",
    "files": [
     {
      "label": "초안 복천박물관특별전_글_HTML.txt",
@@ -196,6 +197,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-409",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(409_bokcheon_horse_exhibit.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],

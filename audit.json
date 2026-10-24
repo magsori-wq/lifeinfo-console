@@ -2,22 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-04T15:10:23",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "pc-boot-slow-0830",
-   "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-04T15:14:40",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "B4-10",
-   "detail": "",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-04T15:53:44",
    "actor": "세션(CLI)",
    "action": "topicprop.drop",
@@ -15999,6 +15983,22 @@
    "action": "pubqueue.go",
    "target": "D3-10",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:01:17",
+   "actor": "v0",
+   "action": "v0check.fail",
+   "target": "G3-27",
+   "detail": "계산예시(개관일 26일)·함정·확인못한것박스는 통과. 그러나 공식 월간행사 페이지 특별전 안내에 '관람 09:00~18:00 (원활한 전시 관람을 위하여 17:00까지 입장 부탁드립니다)'가 있는데 글은 누락하고 표에서 11/22 '18시까지'·18시 이후 관람시간 밖으로만 적어 17:",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-24T13:01:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-g3-27",
+   "detail": "이부장 확인 13:02: 17시 입장 마감 누락·썸네일 소재 불일치 — 이과장 수정 지시, 재검사 후 결재",
    "via": "cli"
   }
  ]
