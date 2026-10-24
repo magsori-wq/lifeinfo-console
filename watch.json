@@ -23434,6 +23434,17 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "aside-tab-guard-1024",
+   "added": "2026-10-24",
+   "what": "Aside 탭 12개 누적 → CPU 포화·CDP 타임아웃(10-24 오후 막힘 4건). 지시서 양식 「연 탭 닫기」 확인 강화 + 보고의 「총 탭 N개」가 8 넘으면 상황실·towertick 경고(설계도 먼저)",
+   "due": "2026-10-25",
+   "cmd": "grep -n '총 탭' studio/asidechain.py studio/towertick.py",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1024,
+   "by": "이부장"
   }
  ]
 }
