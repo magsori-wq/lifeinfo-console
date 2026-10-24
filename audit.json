@@ -2,6 +2,94 @@
  "version": 1,
  "items": [
   {
+   "at": "2026-09-05T14:48:42",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "D2-12",
+   "detail": "지금 찾을 이유(기한·개정·시즌·금액변경) 없음 — 2023년 개정은 2년 지난 구정보, 소멸시효 5/10년은 상시 리스크라 특별이슈급 아님. 상시 정보성 소재는 재고 여유 있을 때 재검토",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T14:52:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-c2-11",
+   "detail": "V0 통과로 해소 — 검사자 V0검사관(3차) · 붙임1·붙임4 원문 축자대조: (a)sec3표 '사전급여 적용금액 제외'(사람 아닌 금액)로 정정 + A씨 중복수급 계산예시(780+1020=1800, 89+1800=1889) 원문일치 (b)소득분위별 상한액표 7행",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T14:52:50",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "C2-11",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T15:51:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-blocked-0905",
+   "detail": "실측 확인(git fetch+origin main DB 대조): D3-06 라이브 발행+4채널 완결됨(https://lifeinfo8975.blogspot.com/2026/09/2026-10.html)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T15:51:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-stalled-0905",
+   "detail": "실측 확인: D3-06·G4-06·E2-10 전부 라이브 발행+4채널 완결(osmu에 naver/threads/instagram 전부 기록됨), C2-11도 발행됨(OSMU 진행중)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T16:25:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-g2-04",
+   "detail": "V0 통과로 해소 — 검사자 이부장(3차 확인) · 2차 반려 2건 전부 해소 확인. ①미취업자: 검색설명·리드·정리박스 세 문장을 직접 열어 확인(개수 아님) — 본문 기준 7회. ②신규성: L5 '2026년 신규 사업'→'2026년 사업'. 역방향 단정('기존 사",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T16:26:00",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G2-04",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T19:52:07",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "A5-10",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T19:52:50",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G2-04",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T20:16:41",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "D2-12",
+   "detail": "이미 발행된 B2-03(자동차 채권 미환급금 조회 환급 신청 방법 총정리 — 지역개발채권·도시철도채권 숨은 돈, 2026-06 발행·3채널 OSMU 완료)과 중복. 목차 6개 중 4개 겹침. dupcheck 가 괄호 안 핵심어를 못 봐 🟢로 통과시켰고(오늘 수정), 조사 에이전트가 본문을 읽고 잡았다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-05T21:15:25",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threads-a510-badurl-0905",
+   "detail": "오판이었다 — 302 는 임시 ID 가 아니라 **게시 직후 전파 지연**이었다. 같은 URL(Dc56ArbgVA)이 몇 분 뒤 200 이 됐다. 🔴 교훈: 게시 직후 302 를 '죽은 URL' 로 단정하지 말 것. 임시 ID 판정은 **몇 분 뒤 재확인**으로 한다(2026-08-31 사고는 진짜 임시 ID 였고 재확인해도 302 였다)",
+   "via": "cli"
+  },
+  {
    "at": "2026-09-06T00:17:23",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15911,94 +15999,6 @@
    "action": "pubqueue.go",
    "target": "B4-22",
    "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T16:28:32",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-413",
-   "detail": "사장님 16:2x deploy.bat, github.io 200 확인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T17:33:01",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-414",
-   "detail": "17:31 deploy.bat 이부장 실행 · 414_medical_expense_tax_credit.png github.io 200 확인(17:34)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T17:39:09",
-   "actor": "v0에이전트",
-   "action": "v0check.pass",
-   "target": "B4-23",
-   "detail": "조문 대조(소득세법 제59조의4·시행령 제118조의5 DRF 원문) 수치 일치 · 가상 계산 5개 재계산 일치 · 계산예시·판단형 비교·탈락 사유·함정 4항목 · bodydup 0.110 · 지적 문장(지급자/대상자) 17:33 정정 확인 — docs/v0_B4-23_20261024.m",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T18:52:37",
-   "actor": "v0에이전트",
-   "action": "v0check.fail",
-   "target": "B4-24",
-   "detail": "2절 나이 예시 오류: 2005-12-31생은 만 나이로 2026년 거의 내내 20세(제53조⑤ 하루라도 해당) — 「하루도 20세 이하인 날 없음」「만/연 나이 결과 같음」 삭제 필요 · 「1966년생까지」는 조문 직접계산이 아니라 국세청 통상 해석(귀속연도−출생연도)으로 표기 · 행",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T19:00:26",
-   "actor": "v0에이전트",
-   "action": "v0check.pass",
-   "target": "G1-16",
-   "detail": "공식 사이트 원문 대조 날짜·시각·분·주제·교통·문의처 일치 · 11/21=셋째 토요일 레이저 24분 일치(이부장 달력 확인) · 11/7 사유 단정 없음 · 실사진 썸네일 judge 20249 · CC0 사진 캡션 · V0 4항목 — docs/v0_G1-16_20261024.md",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T19:00:45",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-415",
-   "detail": "18:58 deploy.bat 이부장 실행(415·416 묶음) · github.io 200 확인(19:01)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T19:02:19",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-416",
-   "detail": "18:58 배포분에 포함 · github.io 200 재확인(19:02) — 감시가 배포 직전 404를 잡은 것",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T19:41:27",
-   "actor": "v0에이전트",
-   "action": "v0check.pass",
-   "target": "B4-24",
-   "detail": "v0 에이전트 18:52 판정 「2절 1군데만 고치면 통과」 — 18:55 정정을 이부장이 직접 확인: 2005-12-31 예시·「결과 같음」·「조문 직접 계산」·행정기본법 인용 0건, 「국세청 통상 해석(귀속연도−출생연도, 연 나이 기준)」·홈택스/126 확인 문구 있음 · 그 외 조",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T19:41:37",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-b4-24",
-   "detail": "V0 통과로 해소 — 검사자 v0에이전트 · v0 에이전트 18:52 판정 「2절 1군데만 고치면 통과」 — 18:55 정정을 이부장이 직접 확인: 2005-12-31 예시·「결과 같음」·「조문 직접 계산」·행정기본법 인용 0건, 「국세청 통상 해석(귀속연도−",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-24T19:41:49",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-b4-24",
-   "detail": "18:55 이과장 정정·19:4x 이부장 확인 후 V0 pass",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-25T00:28:58",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "B4-23",
-   "detail": "채팅 승인 10-25 00:28 「승인: B4-23」",
    "via": "cli"
   }
  ]
