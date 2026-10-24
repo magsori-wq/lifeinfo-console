@@ -23618,8 +23618,20 @@
    "due": "2026-10-25",
    "cmd": "Aside 브라우저 CP 탭 오른쪽 Ask Aside 에서 「새 채팅」을 열고 「이부장 전담 2」라고 한 줄 입력 → 이부장이 session list 로 ID 를 찾아 옛 채팅 정지·코드 전환·B4-23 검색설명으로 시험",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
+   "by": "이부장",
+   "done_at": "2026-10-25",
+   "result": "05:50 사장님 생성(fZcN6UTcB4PoZVYk 「이부장 전담2」) · 옛 채팅 정지 · 코드 4곳+CLAUDE.md 전환(옛 ID 0건) · CP 탭 연결 · #432 B4-23 검색설명 시험 중"
+  },
+  {
+   "id": "aside-newchat-smoke-1025",
+   "added": "2026-10-25",
+   "what": "새 Aside 채팅 시험 #432(B4-23 검색설명) 결과 확인 — 통과면 G3-28·B4-22 네이버·B4-23~24 후속 재등록, 실패면 원인 좁히기",
+   "due": "2026-10-25",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
