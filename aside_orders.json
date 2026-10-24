@@ -3936,9 +3936,9 @@
    "kind": "기타",
    "received_at": "2026-10-25 00:38:23",
    "state": "blocked",
-   "last_at": "2026-10-25 00:44:35",
-   "last_what": "[Aside][blocked] #431 B4-23 검색설명 중단(미변경): 블로그 편집 탭 열기에서 CDP 타임아웃(Page.addScriptToEvaluateOnNewDocument·open timeout) 2회 연속 실패 — 브라우저 응답 불가. 입력·업데이트 한 번도 안 누름(글 변경 없음). Aside 브라우저 재시작 후 재지시 필요 · 현재 탭 6",
-   "blocked_at": "2026-10-25 00:44:35"
+   "last_at": "2026-10-25 06:12:54",
+   "last_what": "[Aside][blocked] [G1-16] #435 블로그스팟 검색설명 중단(미변경): 편집 URL 탭을 열었으나 CDP 타임아웃(openTab 120초·attach Page.enable 2회·openTab DOM.enable) — 에디터 탭 응답 불가(#431 B4-23과 같은 증상). 입력·업데이트 한 번도 안 누름, 라이브 meta 는 기존 그대로.",
+   "blocked_at": "2026-10-25 06:12:54"
   },
   "432": {
    "first_at": "2026-10-25 05:51:12",
@@ -3975,9 +3975,10 @@
    "code": "G1-16",
    "kind": "기타",
    "received_at": "2026-10-25 06:06:07",
-   "state": "doing",
-   "last_at": "2026-10-25 06:06:07",
-   "last_what": "[Aside][doing] #435 수신 — G1-16 검색설명 시작"
+   "state": "blocked",
+   "last_at": "2026-10-25 06:14:18",
+   "last_what": "[Aside][blocked] [G1-16] #435 검색설명 중단(미변경): 블로거 편집 URL 탭 열기/연결 CDP 타임아웃 3회(openTab 120초·attach Page.enable·openTab DOM.enable). 입력·업데이트 안 누름, 글 변경 없음. 응답 없던 편집 탭은 지금 목록에서 사라짐. 재지시하면 새 탭으로 1회 더 시도 가능 ·",
+   "blocked_at": "2026-10-25 06:14:18"
   }
  },
  "untagged": [
