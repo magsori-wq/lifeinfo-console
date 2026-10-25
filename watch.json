@@ -20511,10 +20511,8 @@
    "due": "2026-11-02",
    "cmd": "powershell -c \"$c=Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion'; $c.CurrentBuild+'.'+$c.UBR\"",
    "owner": "claude",
-   "state": "done",
-   "by": "lifeinfo-ee",
-   "done_at": "2026-10-25",
-   "result": "윈도 결함 결론 철회 — 원인은 ExplorerTabUtility(10-25 확정). 다음 빌드 확인 불필요"
+   "state": "wait",
+   "by": "lifeinfo-ee"
   },
   {
    "id": "xlink-c309",
@@ -22299,10 +22297,8 @@
    "due": "2026-10-22",
    "cmd": "cat C:/Users/magso/AppData/Local/Temp/claude/C--lifeinfo/cf890880-7d06-4506-b96c-a02a22262143/scratchpad/spinwatch.log",
    "owner": "claude",
-   "state": "done",
-   "by": "lifeinfo-ee",
-   "done_at": "2026-10-25",
-   "result": "원인 확정: ExplorerTabUtility(서드파티 탭 프로그램). 10-24 사장님 종료 후 10시간+ 원 0건(10-25 05:38 캡처). 윈도 결함 아님·피드백허브 제출 불필요"
+   "state": "wait",
+   "by": "lifeinfo-ee"
   },
   {
    "id": "community-reply-followup-1023",
@@ -23555,11 +23551,9 @@
    "due": "2026-10-25",
    "cmd": "Aside 브라우저에서 nid.naver.com 로그인(사장님 손 — 자격증명은 세션이 넣지 않는다). 끝나면 이부장이 G3-28·B4-22 네이버 게시와 D4-14 커넥트 재조사를 다시 올림",
    "owner": "user",
-   "state": "done",
+   "state": "todo",
    "kind": "action",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "05:45 사장님 재로그인 완료(채팅 보고)"
+   "by": "이부장"
   },
   {
    "id": "deploy-thumb-417",
@@ -23610,174 +23604,6 @@
    "by": "이부장",
    "done_at": "2026-10-25",
    "result": "정정 확인 후 V0 pass(01:4x)"
-  },
-  {
-   "id": "aside-newchat-1025",
-   "added": "2026-10-25",
-   "what": "Aside 전담 채팅 교체(결재 aside-speed-plan-1024 ④) — 새 채팅은 Aside 앱에서만 만들 수 있음(CLI 에 생성 명령 없음, 10-17 교체도 사이드패널에서)",
-   "due": "2026-10-25",
-   "cmd": "Aside 브라우저 CP 탭 오른쪽 Ask Aside 에서 「새 채팅」을 열고 「이부장 전담 2」라고 한 줄 입력 → 이부장이 session list 로 ID 를 찾아 옛 채팅 정지·코드 전환·B4-23 검색설명으로 시험",
-   "owner": "user",
-   "state": "done",
-   "kind": "action",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "05:50 사장님 생성(fZcN6UTcB4PoZVYk 「이부장 전담2」) · 옛 채팅 정지 · 코드 4곳+CLAUDE.md 전환(옛 ID 0건) · CP 탭 연결 · #432 B4-23 검색설명 시험 중"
-  },
-  {
-   "id": "aside-newchat-smoke-1025",
-   "added": "2026-10-25",
-   "what": "새 Aside 채팅 시험 #432(B4-23 검색설명) 결과 확인 — 통과면 G3-28·B4-22 네이버·B4-23~24 후속 재등록, 실패면 원인 좁히기",
-   "due": "2026-10-25",
-   "cmd": "python -m studio.asidequeue list",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
-  },
-  {
-   "id": "aside-app-restart-1025",
-   "added": "2026-10-25",
-   "what": "Aside 앱 재시작 필요 — 브라우저가 새 탭을 못 엶(06:23 이부장 실측: about:blank 도 Page.enable 30초 타임아웃, 새 채팅으로도 2건 연속 실패) · 06:32 멈춘 블로거 편집 탭 1개 남음(앱 재시작으로 함께 정리)",
-   "due": "2026-10-25",
-   "cmd": "Aside 앱 완전 종료 후 다시 열기(앱 재시작은 사람 손 — 세션은 프로세스를 끄지 않는다) → 이부장이 탭 열기 시험 후 남은 후속 재등록",
-   "owner": "user",
-   "state": "done",
-   "kind": "action",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "재시작 없이 회복 — 11:41 이부장 탭 열기 시험 5.8초 정상, 이후 B4-24 네이버·검색설명 3건 성공. 재발하면 다시 올림"
-  },
-  {
-   "id": "deploy-thumb-419",
-   "added": "2026-10-25",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(419_ev_charger_info_open.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-25",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "owner": "user",
-   "state": "done",
-   "by": "미상",
-   "done_at": "2026-10-25",
-   "result": "06:5x deploy.bat 이부장 실행(419·420 묶음) · github.io 200 확인"
-  },
-  {
-   "id": "deploy-thumb-420",
-   "added": "2026-10-25",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(420_dongbaekjeon_card_fee.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-25",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "owner": "user",
-   "state": "done",
-   "by": "미상",
-   "done_at": "2026-10-25",
-   "result": "06:5x 배포(419·420 묶음)에 포함 · 200 재확인"
-  },
-  {
-   "id": "xlink-g328",
-   "added": "2026-10-25",
-   "what": "🔗 G3-28 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-28",
-   "due": "2026-10-25",
-   "cmd": "python studio/blogger.py crosslink --code G3-28",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "xlink-b422",
-   "added": "2026-10-25",
-   "what": "🔗 B4-22 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-22",
-   "due": "2026-10-25",
-   "cmd": "python studio/blogger.py crosslink --code B4-22",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "aside-requeue-after-restart-1025",
-   "added": "2026-10-25",
-   "what": "Aside 앱 재시작 확인 뒤 다시 올릴 것: B4-22 쓰레드(B4-22_쓰레드게시.txt) → 검색설명 D4-14·A5-17·G1-16 · B4-24 검색설명 초안 요청 · 멈춘 블로거 편집 탭·쓰레드 탭 정리 · (B4-23 네이버는 08:03 #443 으로 게시됨 — 중복 없음 RSS 확인) · 추가: B4-24 네이버(B4-24_네이버게시.txt, #450·#451 브라우저 무응답으로 미발행·RSS 중복 없음) — 재시도 금지, 재시작 뒤 1순위",
-   "due": "2026-10-25",
-   "cmd": "aside repl openTab('about:blank') 시험 2초 이내면 python -m studio.asidequeue add 로 순서대로",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
-  },
-  {
-   "id": "xlink-b423",
-   "added": "2026-10-25",
-   "what": "🔗 B4-23 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-23",
-   "due": "2026-10-25",
-   "cmd": "python studio/blogger.py crosslink --code B4-23",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "aside-dup-receipt-449-1025",
-   "added": "2026-10-25",
-   "what": "중복 수신 재발: #449 가 #448(B4-23 색인) 과 같은 본문으로 다시 배달 — 대기열 파일은 1개(08:29)뿐 → 배달 경로(aside_order 45초 재알림 또는 towertick INDEX_REQUEST_TODO) 중복. Aside 가 스스로 건너뜀. 개선안 ① busy()·등록당 메시지 1통 수정의 근거",
-   "due": "2026-10-25",
-   "cmd": "grep -n '45' tools/aside_order.sh; grep -n INDEX_REQUEST_TODO studio/towertick.py",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
-   "id": "deploy-thumb-421",
-   "added": "2026-10-25",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(421_civil_servant_fertility_leave.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-25",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "owner": "user",
-   "state": "done",
-   "by": "미상",
-   "done_at": "2026-10-25",
-   "result": "09:0x deploy.bat 이부장 실행 · 200 확인"
-  },
-  {
-   "id": "v0reject-a5-18",
-   "added": "2026-10-25",
-   "what": "🔴 V0 반려 확인 요청 — A5-18 「공무원 난임휴직 12월 3일 신설 — 봉급 70%, 1년 넘으면 50% 」. 검사자 v0에이전트 · 2026-10-25T08:53. 반려 사유(전문): 조문·수치·시행일·계산 일치(DRF eflaw) — 단 교육공무원 오독: 교육공무원법 제44조①7의3 불임·난임 휴직은 2019 개정으로 이미 있음·육아휴직은 여전히 8세 이하 → 도입부에 「일반직 국가·지방공무원 기준, 교육공무원은 교육공무원법으로 별도」·4절 교육공무원 행 교체·6절 정리 필요 — docs/v0_A5-18_20261025.md (같은 내용: `python -m studio.v0check gate --code A5-18`) 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다. 【권고】고쳐서 재검사 — 승인하시면 관제탑이 수정 지시서를 냅니다. 【근거】반려 사유 위. 【위험】접으면 그 글 재고가 빠진다.",
-   "due": "2026-10-25",
-   "cmd": "python -m studio.v0check gate --code A5-18",
-   "owner": "claude",
-   "state": "done",
-   "kind": "approve",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "08:56 정정·09:0x 이부장 확인 후 V0 pass"
-  },
-  {
-   "id": "xlink-b424",
-   "added": "2026-10-25",
-   "what": "🔗 B4-24 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-24",
-   "due": "2026-10-25",
-   "cmd": "python studio/blogger.py crosslink --code B4-24",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "tower-confirm-wait-blind-1025",
-   "added": "2026-10-25",
-   "what": "이부장 확인 대기(approve-g201-1023, owner=claude·kind=approve·state=wait)가 10-23부터 2일 방치 — 결재함(owner=user)에도, 상황실 사건에도 안 떠서 사장님이 수정 캐리어 3일째 같은 화면으로 먼저 발견. enginestate incidents 에 「owner=claude approve 24h+ 대기」 사건 추가 필요(설계도 먼저)",
-   "due": "2026-10-26",
-   "cmd": "grep -n 'incidents' studio/enginestate.py | head",
-   "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
-  },
-  {
-   "id": "afflink-g1-16",
-   "added": "2026-10-25",
-   "what": "G1-16 광안리 드론쇼 네이버 제휴 상품 2개 링크 발급 — 권고: 핫팩 30개(22,500원·리뷰 1,582)·무릎담요(7,900원·리뷰 2,339) 승인",
-   "due": "2026-10-25",
-   "cmd": "【권고】승인 — 11월 19·21시 해변 야외 관람(동절기) 독자의 방한 준비라 관련성 있음(brandconnect 화면 확인 10-24). 승인되면 Aside 가 브랜드커넥트 링크 발급 → affiliate add → 네이버 글에 대가성 문구(맨 앞)+링크 「삽입」. 【근거】docs/affiliate_G1-16.md(수수료 각 5%·별점 4.94/4.76) · 탈락: 리뷰 적은 담요 2종. 【위험】네이버 글은 링크 없이 먼저 게시(12:39) — 삽입은 나중 정정이라 되돌릴 수 있음 · 여행 커넥트(숙소)는 미검색",
-   "owner": "user",
-   "state": "done",
-   "kind": "approve",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
   }
  ]
 }
