@@ -1,10 +1,11 @@
 {
- "computed_at": "2026-10-25 17:38:52",
- "source_head": "60ad34aa94fe",
+ "computed_at": "2026-10-25 17:57:16",
+ "source_head": "0361d2d15775",
  "ids": [
   "D2-20",
   "H1-29",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-423"
  ],
  "posts": [
   {
@@ -50,7 +51,7 @@
      "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/magsori8975/p/De6U0gCEfjn/",
      "files": [
       {
        "label": "인스타 캡션",
@@ -77,7 +78,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     }
    }
   }
@@ -87,7 +88,7 @@
    "code": "D2-20",
    "title": "페달 오조작 방지장치 12월 17일부터 안전성 확인 장치는 튜닝 승인·검사 면제 — 비용 지원은 「할 수 있다」 (2026)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 페달오조작방지장치_글_HTML.txt",
@@ -118,6 +119,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-423",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(423_pedal_misoperation_device.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-25",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],
