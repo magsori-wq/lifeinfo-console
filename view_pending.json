@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-25 13:22:35",
- "source_head": "69cabfeedadd",
+ "computed_at": "2026-10-25 13:28:32",
+ "source_head": "09c25c298222",
  "ids": [
   "A2-29",
   "A2-30",
@@ -11,7 +11,8 @@
   "D4-14",
   "G1-16",
   "aside-tabs-cpu-1025",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-422"
  ],
  "posts": [
   {
@@ -227,7 +228,7 @@
        "label": "네이버 원고",
        "path": "osmu/네이버용_해외직구어린이제품.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "첨부 이미지",
@@ -236,7 +237,7 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "threads": {
      "url": null,
@@ -394,7 +395,7 @@
    "code": "A2-30",
    "title": "경남 소상공인 고용·산재보험료 지원 12월 31일까지 — 고용 20%, 산재 최대 50%, 예산 소진 시 조기 마감 (2026)",
    "go": false,
-   "v0": null,
+   "v0": "fail",
    "files": [
     {
      "label": "초안 경남소상공인보험료지원_글_HTML.txt",
@@ -432,6 +433,14 @@
    "what": "Aside 탭 정리 — CPU 100%(PC 점검 13:02 실측, Aside 가 1위 부하) · 멈춘 네이버 글쓰기 탭(G1-16, 올라가지 않음)을 포함해 안 쓰는 탭을 닫아 6개 이하로",
    "due": "2026-10-25",
    "cmd": "Aside 브라우저에서 멈춘 네이버 글쓰기 탭 닫기(임시저장 글은 지우지 않음) · CP·엔진 탭 1개씩만 남기기 → 이부장이 G1-16 네이버 재등록",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-422",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(422_gyeongnam_insurance_support.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-25",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
