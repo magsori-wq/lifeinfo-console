@@ -23893,18 +23893,6 @@
    "by": "이부장",
    "done_at": "2026-10-25",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
-  },
-  {
-   "id": "kwhook-3-wake-1025",
-   "added": "2026-10-25",
-   "what": "3.세션 kwhook1025(사장님 직접 지시 — 검색어·후킹 조사) 깨움이 20초 안에 시작 신호 없음(14:12) — 30분 뒤 read_info 로 읽었는지 확인, 안 읽었으면 에이전트로 대신",
-   "due": "2026-10-25",
-   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('kwhook1025'))\"",
-   "owner": "claude",
-   "state": "done",
-   "by": "이부장",
-   "done_at": "2026-10-25",
-   "result": "14:15 3. 접수 확인(kwhook1025 시작)"
   }
  ]
 }
