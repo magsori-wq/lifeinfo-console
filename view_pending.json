@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-25 15:01:40",
- "source_head": "8711e3150507",
+ "computed_at": "2026-10-25 15:29:38",
+ "source_head": "b62fd9e6e1ac",
  "ids": [
   "A2-29",
   "A2-30",
@@ -9,8 +9,8 @@
   "D2-19",
   "D4-14",
   "G1-16",
-  "H1-29",
   "claude-limit-reset-1022",
+  "deploy-thumb-424",
   "g201-apply-permission-1025"
  ],
  "posts": [
@@ -389,35 +389,7 @@
    }
   }
  ],
- "publish": [
-  {
-   "code": "H1-29",
-   "title": "재혼황후 디즈니+ 11월 4일 공개 — 월 9,900원부터, 연간은 11개월 넘게 볼 때 이득 (2026)",
-   "go": false,
-   "v0": null,
-   "files": [
-    {
-     "label": "초안 재혼황후디즈니플러스_글_HTML.txt",
-     "path": "재혼황후디즈니플러스_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/424_remarriage_empress_disney.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/424_remarriage_empress_disney.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "todo"
-  }
- ],
+ "publish": [],
  "actions": [
   {
    "id": "claude-limit-reset-1022",
@@ -425,6 +397,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-424",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(424_remarriage_empress_disney.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-25",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   },
   {
