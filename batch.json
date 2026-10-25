@@ -1973,6 +1973,16 @@
      "base_code": "9-lifeinfo-issue-product-pm-1025",
      "date": "2026-10-25",
      "at": "2026-10-25 15:14"
+    },
+    {
+     "code": "lifeinfo-travel-prep-1025-1025",
+     "title": "lifeinfo-travel-prep-1025 (D)",
+     "state": "done",
+     "note": "[조사장부] 목록 2 · 원문 0 · 후보 4 · 탈락 4 · 검색어 6 (바닥 미달: 목록·원문 — kwgap·topicprop 만 열람, 공식 원문 미개봉, 웹검색 요약뿐). 빈손 — 이어받음: 재고 2(하한 3)이나 제안함에 B2-24·H1-31~33(3.·이부장 제출분) 선별 대기 4건이 이미 있어 추가 안 함. 새로 본 것: 진영단감축제=G3-21 기발행(dupcheck 🔴) 탈락 / 명상페스타=kwgap 신호 있으나 자동완성 없음·2026 정보 검색에 없음 탈락 / 경주 APEC 메모리얼 페스타 10/30~31=검색요약만(공식 원문 미확인)·자동완성 없음 탈락 / 부산크리스마스트리축제=자동완성 O이나 2026 일정 공지 전(2차 기사 연도 불명) 탈락. 다음 회차: busan 중구청 공지·gyeongju.go.kr 직접 조회",
+     "auto_daily": true,
+     "base_code": "lifeinfo-travel-prep-1025",
+     "date": "2026-10-25",
+     "at": "2026-10-25 21:15"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -5461,7 +5471,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-10-25 20:11:14",
+ "updated": "2026-10-25 21:15:48",
  "current": {
   "batch": "aside",
   "code": "",
@@ -5472,6 +5482,10 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "21:15:48",
+   "text": "✅ lifeinfo-travel-prep-1025-1025 완료 — lifeinfo-travel-prep-1025 (D)"
+  },
   {
    "t": "20:11:14",
    "text": "✅ daily-email-briefing-1025 완료 — daily-email-briefing (A)"
@@ -5627,10 +5641,6 @@
   {
    "t": "17:42:00",
    "text": "✅ D2-20 완료 — 페달 오조작 방지장치 12월 17일 시행"
-  },
-  {
-   "t": "17:41:53",
-   "text": "📄 aside 작업 지시 등록(1982자, 2026-10-25 17:41)"
   }
  ],
  "currents": {
