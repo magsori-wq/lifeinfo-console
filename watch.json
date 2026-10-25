@@ -23854,6 +23854,16 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "naverdraft-affil-placeholder-1025",
+   "added": "2026-10-25",
+   "what": "naver-draft 가 제휴 링크 기록 뒤 G1-16 원고에 대가성 문구+「[여기에 제휴 링크를 단독으로 붙여넣으세요]」 안내문 7줄을 넣어 서식본(rich)까지 오염 — 13:34 Aside 게시 직전 정지(미발행). 원고는 7e6553526 판으로 복원. 안내문이 붙여넣기 본문에 들어가지 않게 고칠 것(안내는 CP 카드로 — 10-19 「사진 자리」 박스와 같은 원칙)",
+   "due": "2026-10-26",
+   "cmd": "grep -n '여기에 제휴 링크' studio/*.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
