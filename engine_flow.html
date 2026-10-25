@@ -18,6 +18,9 @@
   L -->|결정 기록| E[[엔진 설계도<br/>docs/엔진설계도.md]]
   E -->|규칙·흐름| L
 </pre></section><section><pre class="mermaid">flowchart TD
+  SUP[[연료 공급자: 3.세션·루틴2·4·6·docflow → 글감 제안]]:::fix --> FUEL{⛽ 재고 ≥ 하한?}:::fix
+  FUEL -->|NO| SUP
+  FUEL -->|YES| A
   A[이과장 초안 → 발행대기 큐] --> B{towertick: 초안 감지}
   B -->|DRAFT_READY| C[이부장: V0 검사 에이전트]
   C --> D{V0 통과?}
@@ -53,5 +56,18 @@
   R -->|YES| S[POST_COMPLETE → 이부장 완료보고·카톡]
   S --> T[색인 요청 → 할당량 초과면 2시간 뒤 재시도]
   classDef was stroke:#b42318,stroke-width:3px
+  classDef fix stroke:#1f7a4a,stroke-width:3px
+</pre></section><section><pre class="mermaid">flowchart TD
+  TR[🧳 트렁크: 정정 대상 글] --> WR[✍ 이과장 개선안 dry-run]
+  WR --> Y0[watch approve-&lt;코드> owner=claude · 이부장 확인 대기]
+  Y0 --> Y1{이부장 확인 12시간 넘음?}:::fix
+  Y1 -->|YES| Y2[상황실 사건 「이부장 확인 지연」 p1 → 상황실 점검이 그 자리에서 V0 에이전트·결재 올림]:::fix
+  Y1 -->|NO| Y3[이부장 V0 검사]
+  Y2 --> Y3
+  Y3 -->|고칠 점| WR
+  Y3 -->|통과| Y4[owner=user 결재함 「라이브 수정 승인」]
+  Y4 --> Y5[🔁 이과장 --apply · 네이버 정정]
+  WR --> Y6{캐리어 배치 24시간 무소식?}:::fix
+  Y6 -->|YES| Y7[상황실 사건 「수정 캐리어 정체」 p2]:::fix
   classDef fix stroke:#1f7a4a,stroke-width:3px
 </pre></section><script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:true,securityLevel:"loose"});</script></body></html>
