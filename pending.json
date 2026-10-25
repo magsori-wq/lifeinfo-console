@@ -1,19 +1,36 @@
 {
- "rev": "26df8623a",
+ "rev": "8711e3150",
  "counts": {
-  "total": 439,
+  "total": 440,
   "osmu_done": 434,
-  "osmu_pending": 5,
+  "osmu_pending": 6,
   "indexed": 0,
-  "index_pending": 439,
+  "index_pending": 440,
   "index_requested": 160,
-  "index_todo": 77,
+  "index_todo": 78,
   "index_benign": 202
  },
  "actionable": [
   {
    "code": "A2-29",
    "title": "동백전 카드수수료 지원 12월 6일 마감 — 10~11",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "A2-30",
+   "title": "경남 소상공인 고용·산재보험료 지원 12월 31일까지 ",
    "need": [
     "OSMU",
     "색인요청"
@@ -213,22 +230,6 @@
   {
    "code": "A2-25",
    "title": "2027 아이맞이지원금 — 첫째 1,000만원·둘째 1",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A2-26",
-   "title": "주거급여 2027 얼마 받나? 서울 1인 월 38만 1",
    "need": [
     "색인요청"
    ],
