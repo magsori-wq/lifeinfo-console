@@ -23778,6 +23778,16 @@
    "by": "이부장",
    "done_at": "2026-10-25",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aside-plan-impl-1025",
+   "added": "2026-10-25",
+   "what": "Aside 속도 개선안(10-25 05:36 사장님 승인) 구현 추적 — ④ 채팅 교체 완료(05:50) · 남은 ① busy() 중복 수신 차단(#449 재발 근거) ② 탭 수 서버 감시 ③ 라이브 확인을 asidechain 으로 · 각각 설계도 먼저→어드바이저→코드→페이블→enginemap",
+   "due": "2026-10-26",
+   "cmd": "grep -n 'def busy' -A30 studio/asidequeue.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
