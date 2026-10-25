@@ -67,6 +67,8 @@
   Y3 -->|고칠 점| WR
   Y3 -->|통과| Y4[owner=user 결재함 「라이브 수정 승인」]
   Y4 --> Y5[🔁 이과장 --apply · 네이버 정정]
+  WR --> Y8{담당 보고가 마지막 지시 뒤 · 열린 결재 없음?}:::fix
+  Y8 -->|YES| Y9[CARRIER_READY 깨움 → 이부장 그 턴에 V0 확인·owner=user 결재]:::fix
   WR --> Y6{캐리어 배치 24시간 무소식?}:::fix
   Y6 -->|YES| Y7[상황실 사건 「수정 캐리어 정체」 p2]:::fix
   classDef fix stroke:#1f7a4a,stroke-width:3px
