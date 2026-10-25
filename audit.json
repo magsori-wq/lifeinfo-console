@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T12:06:22",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "pubtitle-source-0906",
-   "detail": "조치 완료(커밋 838a9c0, 사장님 지시). ①publish.yml pre 3b) 신설 — 라이브로 나갈 제목이 초안 첫 줄과 다르면 출처 이름을 대고 경고(차단 안 함). declared 의 '-->' 제거도 함께. ②CLAUDE.md 트리거 예시에 -f post_title 추가 + title(보드용)/post_title(라이브용) 구분 명시. 검증: 워크플로 코드를 추출해 격리 트리에서 D1-08 사고 재현→경고 출력, 제목 일치→침묵, 주석없음→침묵. YAML 파싱·임베드 파이썬 compile PASS. 다음 발행 런 로그에서 3b) 가 실제로 도는지 확인할 것",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T12:07:00",
    "actor": "사장님",
    "action": "pubqueue.go",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aside-app-restart-1025",
    "detail": "재시작 없이 회복 — 11:41 이부장 탭 열기 시험 5.8초 정상, 이후 B4-24 네이버·검색설명 3건 성공. 재발하면 다시 올림",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-25T12:22:46",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D2-19",
+   "detail": "",
    "via": "cli"
   }
  ]
