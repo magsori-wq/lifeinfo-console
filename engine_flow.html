@@ -43,6 +43,8 @@
   J --> K{라이브 200·대표이미지?}
   K -->|NO| X
   K -->|YES| L[이과장: 검색설명·네이버·인스타·쓰레드 초안]
+  L --> L1{초안 파일 10분 넘게 대기열·진행 중·게시 어디에도 없음?}:::fix
+  L1 -->|YES| L2[ASIDE_DRAFT_UNQUEUED 깨움 → 이부장 그 턴에 asidequeue add]:::fix
   L --> M{asidequeue 게이트: postId·중복 게시·중복 지시}
   M -->|거부| L
   M -->|통과| N[대기열 → towertick 1~3분마다 Aside 에 올림]:::fix
