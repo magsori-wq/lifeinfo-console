@@ -1,5 +1,5 @@
 {
- "at": "2026-10-25 18:19:28",
+ "at": "2026-10-25 18:21:04",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -7,7 +7,7 @@
    {
     "code": "D2-20",
     "title": "페달 오조작 방지장치 12월 17일부터 안전성 확인 장",
-    "min": 23,
+    "min": 25,
     "lvl": "ok"
    }
   ],
@@ -448,10 +448,10 @@
  },
  "boss_extra": [],
  "aside": {
-  "state": "#504 doing (3분 전 소식)",
+  "state": "#504 blocked",
   "queue": 5,
-  "busy": true,
-  "lvl": "ok"
+  "busy": false,
+  "lvl": "amber"
  },
  "tower": {
   "age_min": 0,
@@ -581,7 +581,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 13,
-   "last_min": 1,
+   "last_min": 3,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -597,9 +597,9 @@
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
+   "state": "대기",
    "jobs": 5,
-   "lvl": "ok",
+   "lvl": "amber",
    "role": "허브·4종착 배송"
   },
   {
@@ -637,7 +637,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 13,
-   "last_min": 1,
+   "last_min": 3,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok"
   },
@@ -645,7 +645,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 365,
+   "last_min": 367,
    "cur": "📊 크리에이터 어드바이저 유입·관심사 매일 갱신 (3. 상시)",
    "lvl": "ok"
   },
@@ -659,9 +659,9 @@
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
+   "state": "대기",
    "jobs": 5,
-   "lvl": "ok"
+   "lvl": "amber"
   },
   {
    "who": "이부장(감시)",
