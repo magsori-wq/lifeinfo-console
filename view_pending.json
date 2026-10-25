@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-10-25 13:43:24",
- "source_head": "dedb5c30f58c",
+ "computed_at": "2026-10-25 13:49:20",
+ "source_head": "abff6a80ecd3",
  "ids": [
   "A2-29",
   "A2-30",
@@ -10,8 +10,7 @@
   "D4-14",
   "G1-16",
   "aside-tabs-cpu-1025",
-  "claude-limit-reset-1022",
-  "deploy-thumb-422"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -245,10 +244,16 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_해외직구어린이제품.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_D4-14_overseas_kids_product_safety.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
      "url": null,
@@ -257,10 +262,28 @@
        "label": "인스타 캡션",
        "path": "insta/캡션_해외직구어린이제품.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "카드1",
+       "path": "insta/overseas_kids_product_safety_01.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드2",
+       "path": "insta/overseas_kids_product_safety_02.png",
+       "img": true,
+       "exists": true
+      },
+      {
+       "label": "카드3",
+       "path": "insta/overseas_kids_product_safety_03.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     }
    }
   },
@@ -319,7 +342,7 @@
   {
    "code": "A2-30",
    "title": "경남 소상공인 고용·산재보험료 지원 12월 31일까지 — 고용 20%, 산재 최대 50%, 예산 소진 시 조기 마감 (2026)",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -341,7 +364,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -358,14 +381,6 @@
    "what": "Aside 탭 정리 — CPU 100%(PC 점검 13:02 실측, Aside 가 1위 부하) · 멈춘 네이버 글쓰기 탭(G1-16, 올라가지 않음)을 포함해 안 쓰는 탭을 닫아 6개 이하로",
    "due": "2026-10-25",
    "cmd": "Aside 브라우저에서 멈춘 네이버 글쓰기 탭 닫기(임시저장 글은 지우지 않음) · CP·엔진 탭 1개씩만 남기기 → 이부장이 G1-16 네이버 재등록",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-422",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(422_gyeongnam_insurance_support.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-25",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
