@@ -52,7 +52,7 @@
   O -->|보고 없이 멈춤| P[ASIDE_STALL → 이부장 재등록]:::was
   P --> N
   O -->|blocked 로그인 등| X
-  O -->|done| Q[체인 확인 → 다음 채널]
+  O -->|done| Q[체인 확인 → 인스타·쓰레드는 확인 ✅ 면 체인이 *-link 자동 기록(10-25) → 다음 채널]
   Q --> R{4채널 완결?}
   R -->|NO| L
   R -->|YES| S[POST_COMPLETE → 이부장 완료보고·카톡]
