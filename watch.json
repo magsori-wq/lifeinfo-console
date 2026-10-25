@@ -24147,6 +24147,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "aside-cdp-lag-1026",
+   "added": "2026-10-26",
+   "what": "Aside 브라우저 CDP 지연(Page.enable 타임아웃)으로 막힘 10-25~26 3회(#499 H1-29 인스타·#500 쓰레드·#508 D2-20 검색설명) — 재지시로 넘어가지만 원인 미확인. aside-plan-impl-1025 ②탭 가드와 같이 원인(탭 수·CPU) 실측 (권고: 탭 가드 구현 때 함께)",
+   "due": "2026-10-27",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
