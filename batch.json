@@ -5440,17 +5440,21 @@
    "order_at": "2026-10-26 00:13"
   }
  },
- "updated": "2026-10-26 00:16:20",
+ "updated": "2026-10-26 00:17:08",
  "current": {
-  "batch": "pub1026d220",
+  "batch": "pub1026h130",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "D2-20 발행 착수 — 도장 00:05:34(queue.json)·썸네일 423 sha1 일치·pubready ✅",
-  "since": "00:08",
-  "since_at": "2026-10-26 00:08:13"
+  "what": "H1-30 발행 착수 — 도장 00:11:30(원격 queue.json 포함)·썸네일 425 sha1 일치·pubready ✅ · D2-20 run success 후",
+  "since": "00:17",
+  "since_at": "2026-10-26 00:17:08"
  },
  "log": [
+  {
+   "t": "00:17:08",
+   "text": "▶   — 1/7단계 · H1-30 발행 착수 — 도장 00:11:30(원격 queue.json 포함)·썸네일 425 sha1 일치·pubready ✅ · D2-20 run success 후"
+  },
   {
    "t": "00:16:20",
    "text": "✅ lifeinfo-daily-publish-1026 완료 — lifeinfo-daily-publish (F)"
@@ -5606,10 +5610,6 @@
   {
    "t": "17:56:52",
    "text": "▶   — 1/7단계 · [Aside][doing] #502 수신 — G2-01 네이버 글 정정 시작(서식본 점검 완료: 첫 줄 정정 안내·「■」 줄/안내 박스/제휴 문구 없음)"
-  },
-  {
-   "t": "17:56:13",
-   "text": "📄 aside 작업 지시 등록(2673자, 2026-10-25 17:56)"
   }
  ],
  "currents": {
@@ -7142,6 +7142,15 @@
    "what": "D2-20 발행 착수 — 도장 00:05:34(queue.json)·썸네일 423 sha1 일치·pubready ✅",
    "since": "00:08",
    "since_at": "2026-10-26 00:08:13"
+  },
+  "pub1026h130": {
+   "batch": "pub1026h130",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "H1-30 발행 착수 — 도장 00:11:30(원격 queue.json 포함)·썸네일 425 sha1 일치·pubready ✅ · D2-20 run success 후",
+   "since": "00:17",
+   "since_at": "2026-10-26 00:17:08"
   }
  },
  "report_log": [
@@ -23154,6 +23163,14 @@
    "title": "",
    "owner": "",
    "what": "D2-20 발행 착수 — 도장 00:05:34(queue.json)·썸네일 423 sha1 일치·pubready ✅"
+  },
+  {
+   "ts": "2026-10-26 00:17:08",
+   "bid": "pub1026h130",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "H1-30 발행 착수 — 도장 00:11:30(원격 queue.json 포함)·썸네일 425 sha1 일치·pubready ✅ · D2-20 run success 후"
   }
  ]
 }
