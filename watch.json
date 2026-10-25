@@ -23755,6 +23755,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "tower-confirm-wait-blind-1025",
+   "added": "2026-10-25",
+   "what": "이부장 확인 대기(approve-g201-1023, owner=claude·kind=approve·state=wait)가 10-23부터 2일 방치 — 결재함(owner=user)에도, 상황실 사건에도 안 떠서 사장님이 수정 캐리어 3일째 같은 화면으로 먼저 발견. enginestate incidents 에 「owner=claude approve 24h+ 대기」 사건 추가 필요(설계도 먼저)",
+   "due": "2026-10-26",
+   "cmd": "grep -n 'incidents' studio/enginestate.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
