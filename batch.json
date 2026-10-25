@@ -1943,6 +1943,16 @@
      "base_code": "lifeinfo-publish",
      "date": "2026-10-25",
      "at": "2026-10-25 09:07"
+    },
+    {
+     "code": "lifeinfo-daily-topics-1025",
+     "title": "lifeinfo-daily-topics (B)",
+     "state": "done",
+     "note": "[조사장부] 목록 7 · 원문 3 · 후보 3 · 탈락 3 · 검색어 5 | 빈손 — 청년미래적금 계좌개설(B5-05 기존재)·낙상 치료비(C3-10 기존재)·창업지원 연장(방안 단계) 탈락. 원문 바닥 5 미달: A·B 레인 후보가 3건뿐이라 억지로 안 채움. 참고: 사전심사 10.30~11.2·이의신청 11.2~5(잠정)는 B5-05에 없음 → 네이버 쪽 반영만 이부장 판단",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-topics",
+     "date": "2026-10-25",
+     "at": "2026-10-25 09:21"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -5157,7 +5167,7 @@
    ]
   }
  },
- "updated": "2026-10-25 09:07:40",
+ "updated": "2026-10-25 09:21:42",
  "current": {
   "batch": "aside",
   "code": "",
@@ -5168,6 +5178,10 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "09:21:42",
+   "text": "✅ lifeinfo-daily-topics-1025 완료 — lifeinfo-daily-topics (B)"
+  },
   {
    "t": "09:07:40",
    "text": "✅ lifeinfo-publish-1025 완료 — lifeinfo-publish (C)"
@@ -5323,10 +5337,6 @@
   {
    "t": "08:16:52",
    "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/De5SPhQkzE4/ (naver-link 가 자동 보고) · 남음: 쓰레드"
-  },
-  {
-   "t": "08:15:50",
-   "text": "▶   — 1/7단계 · [Aside][doing] #445 수신 — B4-22 쓰레드 시작"
   }
  ],
  "currents": {
