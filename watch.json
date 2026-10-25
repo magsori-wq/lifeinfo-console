@@ -24157,6 +24157,27 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-restart-0026",
+   "added": "2026-10-26",
+   "what": "Aside 앱 재시작 요청 — 00:26부터 브라우저 전체 응답 없음",
+   "due": "2026-10-26",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "user",
+   "state": "todo",
+   "kind": "action",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-requeue-after-restart-1026",
+   "added": "2026-10-26",
+   "what": "Aside 재시작 뒤 다시 넣을 4건: D2-20 검색설명·H1-30 검색설명·D2-20 네이버게시·H1-30 네이버게시 (docs/aside_drafts/<코드>_검색설명.txt·_네이버게시.txt)",
+   "due": "2026-10-26",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
