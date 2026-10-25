@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T13:10:06",
-   "actor": "이부장",
-   "action": "pubqueue.ungo",
-   "target": "A6-02",
-   "detail": "V0 반려로 승인 전제가 사라졌다 — 사장님 도장(12:07)은 12:02 에 찍힌 잘못된 pass(by 이부장V0검사관2차, 관제탑이 찍지 않은 것) 위에서 찍히셨다. 그 뒤 검사관이 law.go.kr 원문으로 법령 오류 5건을 확인해 반려했다(계산표 과대·재직 중 수령 시 퇴직자 대지급금 차단 미고지 등). V0 게이트가 발행을 막고 있어 사고는 없으나, 화면에 '승인 완료'로 남으면 누군가 발행을 시도한다. 재작업(fix0906a602) 후 다시 올린다.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T13:11:49",
    "actor": "세션(CLI)",
    "action": "topicprop.drop",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aside-requeue-after-restart-1026",
    "detail": "04:20 4건 재등록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T04:37:47",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-naver-login-1026",
+   "detail": "04:37 사장님 로그인 — 네이버 2편 재등록",
    "via": "cli"
   }
  ]
