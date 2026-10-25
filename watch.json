@@ -23989,7 +23989,7 @@
   {
    "id": "xlink-a230",
    "added": "2026-10-25",
-   "what": "🔗 A2-30 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-30",
+   "what": "🔗 A2-30 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-30",
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code A2-30",
    "owner": "claude",
@@ -24047,6 +24047,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "naver-predraft-pilot-1027",
+   "added": "2026-10-25",
+   "what": "👤 사장님 승인(10-25 17:30 「좋아」) 개선안 ① 네이버 원고를 V0 통과 뒤·결재 전에 미리 작성 — 다음 주 초 1편 시험. 조건 3: ① 순서 게이트를 「원고 작성 열고 게시만 순서」로 ② 발행 직후 서식본 재생성으로 블로그 원문 주소 채움(자동) ③ V0 통과 뒤에만 작성. 엔진 설계도 먼저 → 어드바이저 → 코드 → 페이블 → enginemap",
+   "due": "2026-10-27",
+   "cmd": "grep -n 'def order_check' studio/osmutext.py",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
