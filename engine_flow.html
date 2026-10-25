@@ -60,7 +60,7 @@
 </pre></section><section><pre class="mermaid">flowchart TD
   TR[🧳 트렁크: 정정 대상 글] --> WR[✍ 이과장 개선안 dry-run]
   WR --> Y0[watch approve-&lt;코드> owner=claude · 이부장 확인 대기]
-  Y0 --> Y1{이부장 확인 12시간 넘음?}:::fix
+  Y0 --> Y1{이부장 확인이 오늘 이전부터? (watch added 는 날짜만)}:::fix
   Y1 -->|YES| Y2[상황실 사건 「이부장 확인 지연」 p1 → 상황실 점검이 그 자리에서 V0 에이전트·결재 올림]:::fix
   Y1 -->|NO| Y3[이부장 V0 검사]
   Y2 --> Y3
