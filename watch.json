@@ -23800,6 +23800,16 @@
    "by": "이부장",
    "done_at": "2026-10-25",
    "result": "발행 run 끝난 뒤 커밋 fc6186aaf"
+  },
+  {
+   "id": "explorer-spinner-cpu-1025",
+   "added": "2026-10-25",
+   "what": "ETU 확정 철회: ETU 꺼진 상태에서 10-25 13:01 Circle to Act 탭 원 재발. 같은 시각 CPU 100%·대기열 평균 80(어제 19). 가설=CPU 포화 때 탐색기 표시 갱신 지연. 판정: 원 뜰 때마다 CPU 대기열 기록, CPU 한가할 때 원 0건이면 확정",
+   "due": "2026-10-27",
+   "cmd": "powershell -NoProfile -Command \"Get-Counter '\\Processor(_Total)\\% Processor Time','\\System\\Processor Queue Length' -SampleInterval 2 -MaxSamples 5\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "lifeinfo-ee"
   }
  ]
 }
