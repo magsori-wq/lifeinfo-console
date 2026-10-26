@@ -1,7 +1,8 @@
 {
- "computed_at": "2026-10-26 06:02:05",
- "source_head": "c73c0f6d7454",
+ "computed_at": "2026-10-26 12:13:33",
+ "source_head": "fad55e7393c2",
  "ids": [
+  "ca-login-1026",
   "claude-limit-reset-1022"
  ],
  "posts": [],
@@ -13,6 +14,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "ca-login-1026",
+   "what": "크리에이터 어드바이저 Aside 로그인 풀림 — 10/25 이후 일간 판독 대기",
+   "due": "2026-10-26",
+   "cmd": "python tools/ca_daily.py 25",
+   "state": "blocked",
    "kind": "action"
   }
  ],
