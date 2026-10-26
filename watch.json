@@ -24348,6 +24348,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-logout-rootcause-1026",
+   "added": "2026-10-26",
+   "what": "네이버 로그인 반복 풀림 원인 — ① data/login_log.jsonl 시간별 장부로 풀리는 시각 특정 ② Aside 완전 종료 시 Network/Cookies 의 NID_AUT 생성·만료·영구 여부(로그인 상태 유지 체크 여부) 확인 ③ Preferences sync.cookies=true(Aside 계정 쿠키 동기화) 영향 · 증거: 04:16 Aside 업데이트(153→154), 비번 profile 143·account 0(아이디 자동입력 안 뜨는 이유)",
+   "due": "2026-10-27",
+   "cmd": "tail -30 data/login_log.jsonl",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
