@@ -2,22 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T13:16:36",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "setgate-hand-stale",
-   "detail": "실측 확인 — 오늘 setgate.HAND 를 ('naver',) 로 고쳤다(인스타는 이과장 몫이라 게시 URL 을 요구한다). gatecheck 도 같이 맞췄고 회귀 규칙 _r_gatecheck_matches_setgate_0906 을 넣었다.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-06T13:16:37",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "setgate-stage-blind",
-   "detail": "고쳤다 — batchboard set 의 중복 판정이 코드만 보던 것을 배치 id 접두어(draft/pub/osmu/boost/fix)로 단계를 읽어 같은 단계일 때만 막게 했다. 오늘 이것 때문에 두 번 막혀 --force 로 우회했었다(게이트를 깨는 습관이 거기서 생긴다). 접두어를 못 읽으면 예전대로 막는다(안전한 쪽).",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T13:16:37",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15983,22 @@
    "action": "watch.done",
    "target": "g201-sns-fix-1026",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T12:21:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-426",
+   "detail": "12:2x 이부장 deploy.bat — 426 github.io 200 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T12:23:02",
+   "actor": "v0-agent",
+   "action": "v0check.pass",
+   "target": "B2-24",
+   "detail": "공고 제2026-1891호·FAQ 원문 대조 일치(금리·지원율·상한·대상·제외·연장·마감) · 산수 360/720만 정정 · 중도상환 미확인 명시 · 전입 1개월 함정 추가(docs/v0_B2-24_20261026.md)",
    "via": "cli"
   }
  ]
