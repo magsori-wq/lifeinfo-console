@@ -1,17 +1,22 @@
 {
- "generated": "2026-10-26 17:36",
+ "generated": "2026-10-27 00:09",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "10/26 08:05",
-   "next": "10/26 20:00",
+   "last": "10/26 20:05",
+   "next": "10/27 08:00",
    "model": "sonnet-5-5",
    "report_day": "1026",
    "report": "🟢 사장님 할 일 없음 · 📌애드센스 계정 READY·사이트 NEEDS_ATTENTION(API, 10-20 반려 메일 이후 변화 없음) · 새 중요 메일: 10-22 구글 커뮤니티 PE 붉은여우 답변 2건(\"상세 사유는 안내하지 않습니다, 도움말 링크로 스스로 판단\" / 10-21 \"ai로 하는 사람들 승인 잘 안됩니다\") — 기보고분 · 10-20 애드센스 3차 반려 메일(기보고) · GitHub: source 발행 run 10-24 20:38 실패=원격 불일치 가드(PC 커밋 직후 동기 지연, 이후 재시도), console 정합성/드리프트 실패 10-23~25 5건 → 최신 2건(10-25 22:15 push·23:09 schedule) 성공으로 해소 · 점검기록: 리더 magsori16·m8975 0·aroma 0, 커넥터 m8975 전달 3스레드(구글뉴스·Aside 뉴스레터), aroma 0건(평소), GSC 7일 0건, 이어받음=직전 PE 답변 기보고",
    "runs": [
+    {
+     "at": "10/26 20:08",
+     "link": "claude://claude.ai/epitaxy/local_8bd269da-5e67-4227-9af9-691537bf01e6",
+     "archived": false
+    },
     {
      "at": "10/26 08:12",
      "link": "claude://claude.ai/epitaxy/local_9ecc5cd2-bd7c-41a4-9b09-9b55f1e0e7c6",
@@ -30,11 +35,6 @@
     {
      "at": "10/24 20:12",
      "link": "claude://claude.ai/epitaxy/local_5b625d6e-9225-4c1c-9e82-127decef490a",
-     "archived": true
-    },
-    {
-     "at": "10/24 08:10",
-     "link": "claude://claude.ai/epitaxy/local_6090b4fb-5626-40b8-94b2-ebb8fdc8f74a",
      "archived": true
     }
    ]
@@ -120,12 +120,17 @@
    "name": "4-Lifeinfo travel prep",
    "id": "lifeinfo-travel-prep",
    "on": true,
-   "last": "10/25 21:10",
-   "next": "10/26 21:00",
+   "last": "10/26 21:10",
+   "next": "10/27 21:00",
    "model": "sonnet-5-5",
    "report_day": "1024",
    "report": "[조사장부] 목록 5 · 원문 0 · 후보 3 · 탈락 3 · 검색어 2 (바닥 미달: 원문 — haeundae·visitbusan·korea.kr 정책/보도 목록은 200이나 JS 렌더라 제목 미추출, gimhae.go.kr 302, 검색엔 2026 공식 원문 없음). 빈손 — 이어받음: 해운대빛축제 2026 점등일 공식 미확인(2차 블로그의 11/29는 작년 일정). 새로 본 것: 진영도자기축제 — kwgap 유입 신호(naverkw 자동완성 O)이나 2026 일정 공식 원문 미확보·dupcheck F4-03 🟡라 탈락 / MBC 금요드라마 11월 편성 미발표(검색 근거 없음) 탈락. 재고 3편(하한 3). 다음 회차: gimhae.go.kr 축제 공지 직접 조회(리다이렉트 따라가기)·haeundae 공지 게시판 URL 지정 조회",
    "runs": [
+    {
+     "at": "10/26 21:14",
+     "link": "claude://claude.ai/epitaxy/local_00df282c-6cae-4c42-bfcb-c568eab101d9",
+     "archived": false
+    },
     {
      "at": "10/25 21:17",
      "link": "claude://claude.ai/epitaxy/local_70c32b66-a0d8-4f59-8b57-6e67413db615",
@@ -145,11 +150,6 @@
      "at": "10/22 21:16",
      "link": "claude://claude.ai/epitaxy/local_c82e877b-cb4c-410c-abee-9149c916335b",
      "archived": true
-    },
-    {
-     "at": "10/21 21:13",
-     "link": "claude://claude.ai/epitaxy/local_d0c67aec-6846-4cee-9ab4-7b887ba488b0",
-     "archived": true
     }
    ]
   },
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "10/25 22:33",
-   "next": "10/26 22:30",
+   "last": "10/26 22:33",
+   "next": "10/27 22:30",
    "model": "sonnet-5-5",
    "report_day": "1025",
    "report": "[루틴5 10-25] 오늘 발행 10편 중 3편(B4-24·A5-18·B4-23) DRF 원문 대조 오류 0, 라이브 수정 0. 잔여 7편 다음 회차. 이어받은 것: 10-21 이후 note 없음 → 오늘 발행분 우선. 새로 본 것: 법령 3편 일치",
    "runs": [
+    {
+     "at": "10/26 22:36",
+     "link": "claude://claude.ai/epitaxy/local_329cf86e-5ae2-47df-ad76-c98e3c5f5424",
+     "archived": false
+    },
     {
      "at": "10/25 22:49",
      "link": "claude://claude.ai/epitaxy/local_ae8b53c2-ea7c-4a31-a459-237efae150ec",
@@ -183,11 +188,6 @@
      "at": "10/22 22:42",
      "link": "claude://claude.ai/epitaxy/local_8cbe4afb-fdd7-45d3-9b46-c134fcc2efb9",
      "archived": true
-    },
-    {
-     "at": "10/21 22:39",
-     "link": "claude://claude.ai/epitaxy/local_f4edc7ca-51b8-4fc2-b1b9-e4de4f63ca1e",
-     "archived": true
     }
    ]
   },
@@ -196,12 +196,17 @@
    "name": "6-Lifeinfo daily publish",
    "id": "lifeinfo-daily-publish",
    "on": true,
-   "last": "10/26 00:07",
-   "next": "10/26 23:55",
+   "last": "10/27 00:06",
+   "next": "10/27 23:55",
    "model": "sonnet-5-5",
    "report_day": "1026",
    "report": "[조사장부] 목록 5 · 원문 2 · 후보 5 · 탈락 5 · 검색어 6 (원문 바닥5 미달: 목록에서 C·D·E 레인 후보가 원문 단계까지 안 올라옴, 시간 한계) · 빈손 — 제안 0·초안 0. 이어받음: 선별 대기 4건(B2-24·H1-31~33)은 타 레인. 탈락: 발달장애인 돌봄 국가책임제(복지부 보도 list_no=1492312 = 부모단체 간담회 개요, 신청 기한·금액 없음) · 연말정산 13월의월급(dupcheck B3-06 0.50·A/B 레인) · 독감예방접종(C2-06 겹침 1.00 🔴) · 건강검진 연말(C1-14 겹침) · 정보보호 공시 확대(상장사 대상·독자 행동 없음, msit 2027 확대). naverkw: 연말정산·13월의월급·연말정산 미리보기·발달장애인돌봄 ✅. 재고 2편(하한 3) 바닥 — 이부장 글감 선별(H1-31~33 pick) 필요",
    "runs": [
+    {
+     "at": "10/27 00:09",
+     "link": "claude://claude.ai/epitaxy/local_69e1f860-b4b5-430e-b51f-0d1566ed609a",
+     "archived": false
+    },
     {
      "at": "10/26 00:17",
      "link": "claude://claude.ai/epitaxy/local_870acd27-99f3-4391-a0d6-ac89c27bb914",
@@ -220,11 +225,6 @@
     {
      "at": "10/23 00:15",
      "link": "claude://claude.ai/epitaxy/local_d7d1dcff-ca32-42e4-89cf-9105d4489e20",
-     "archived": true
-    },
-    {
-     "at": "10/22 00:12",
-     "link": "claude://claude.ai/epitaxy/local_e905f3df-5720-4504-a7fa-18553260dab7",
      "archived": true
     }
    ]
