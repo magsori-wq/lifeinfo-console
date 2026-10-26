@@ -24534,6 +24534,16 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "h1-template-variation",
+   "added": "2026-10-26",
+   "what": "방송·연예(H1) 초안이 같은 틀(며칠 계산·헷갈리기 쉬운 것·확인하지 못한 것) 반복 — V0 가 H1-30·31·32·33 연속 지적. 코드로: 초안 h2 를 최근 같은 대분류 3편과 대조해 2개 이상 같으면 pubqueue add 경고(layout.check)",
+   "due": "2026-10-27",
+   "cmd": "grep -n 'def check' studio/layout.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
