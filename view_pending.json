@@ -1,9 +1,11 @@
 {
- "computed_at": "2026-10-26 17:37:42",
+ "computed_at": "2026-10-26 17:39:37",
  "source_head": "bbd1ab1b3fea",
  "ids": [
   "H1-32",
-  "claude-limit-reset-1022"
+  "H1-33",
+  "claude-limit-reset-1022",
+  "deploy-thumb-428"
  ],
  "posts": [
   {
@@ -57,7 +59,35 @@
    }
   }
  ],
- "publish": [],
+ "publish": [
+  {
+   "code": "H1-33",
+   "title": "2026 SBS 가요대전 라인업 12월 24·25일 킨텍스 — 1차 22팀, 방청·티켓은 아직 공지 없음 (2026)",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 SBS가요대전2026_글_HTML.txt",
+     "path": "SBS가요대전2026_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/428_sbs_gayo_daejeon_2026.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/428_sbs_gayo_daejeon_2026.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
  "actions": [
   {
    "id": "claude-limit-reset-1022",
@@ -65,6 +95,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-428",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(428_sbs_gayo_daejeon_2026.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-26",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],
