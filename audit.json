@@ -2,22 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T13:28:02",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "insp-pub-0903",
-   "detail": "🔴3건 전부 해결됨을 실측 확인. ①큐 작성자 필드 — pubqueue add --by 배선됨. 오늘 G3-04·A6-02·F3-08 전부 by=이과장 기록. V0 자기검사 가드가 실제로 발동해 A6-02 반려 도장을 거부했다(fail-closed 첫 작동). 추가로 v0check 에 audit.record 를 넣어 누가 찍었는지 남게 했다. ②pushcheck — pipeline.py L355 에서 실제 호출(publish + file + 러너 아닐 때). ③approve.yml — 존재하고 issues 트리거 배선됨. ⚠️ insp-mine-0903 과 같은 건이라 그쪽도 함께 닫는다.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-06T13:28:03",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "insp-mine-0903",
-   "detail": "insp-pub-0903 과 동일 건(같은 문서·같은 cmd). 그쪽에 실측 근거를 적었다.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T13:28:03",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15983,22 @@
    "action": "pubqueue.go",
    "target": "H1-32",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T16:46:27",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "dl-toss-img-hotpack1026",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T16:46:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "t5-autoorder-realcheck",
+   "detail": "16:46 H1-32 CP 결재 → pub1026h132 지시서가 같은 분(16:46)에 자동 생성 — 이부장 손 발급 없음. 379f975 실발화 ✅",
    "via": "cli"
   }
  ]
