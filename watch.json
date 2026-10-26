@@ -24338,6 +24338,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "db-title-stale-1026",
+   "added": "2026-10-26",
+   "what": "DB posts[].title 이 idxfix01~05·B4-22 에서 라이브 새 제목이 아니라 옛 제목(측정 대조 10-26 부수 관찰) — 이과장 정정 기록 경로가 DB 제목을 안 고친다. 원인 코드 특정·수정·검증",
+   "due": "2026-10-26",
+   "cmd": "grep -n title studio/blogger.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
