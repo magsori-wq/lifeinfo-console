@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T13:19:47",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "waiting-vs-blocked-semantics",
-   "detail": "이부장 판정 — 규칙을 확정한다. ⏸대기(waiting)=지시서를 읽고 다음 지시를 기다리는 상태 · 🚫막힘(blocked)=권한·게이트·외부장애로 지금 아무것도 못 하는 상태. 판정 기준은 '내가 지금 할 수 있는 일이 있는가' 하나다. 있으면 대기가 아니라 미실행이고, 없으면 막힘이다. loopcheck 는 이미 이 기준으로 ④(막힘 미보고)와 세션대기를 나눠 본다.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T13:23:25",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "pubqueue.go",
    "target": "B2-24",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T16:12:16",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "afflink-hotpack1026",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
   }
  ]
