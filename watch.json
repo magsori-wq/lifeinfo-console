@@ -24379,6 +24379,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fable-1025-followups",
+   "added": "2026-10-26",
+   "what": "페이블 1025잔여 남은 🟡: ① Y8 CARRIER_READY 가 batchboard now(이부장 자신 기록)에도 울릴 수 있음·id 에 보고시각이라 dedupe 무력 ② L1 done 틈 기준 first_at→done_at ③ G2-01 osmu_at.instagram 08-21→10-26 덮어씀 되돌릴지 ④ CARRIER/TOWER_CONFIRM_STALL 실발화 0건 — docs/검증_페이블_1025잔여_20261026.md",
+   "due": "2026-10-27",
+   "cmd": "sed -n '/권고/,$p' docs/검증_페이블_1025잔여_20261026.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
