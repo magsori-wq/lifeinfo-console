@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T13:23:41",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0check-approval-wiring-0904",
-   "detail": "실측 확인 — 배선이 작동한다. webapp/watch.json 에 v0reject-* 항목이 17건 쌓여 있고, 오늘만 3건(g3-04·f3-08·a6-02)이 반려 도장과 함께 자동 등록됐다. '거짓 성공' 증상은 재현되지 않는다. ※오늘 v0check 에 audit.record 도 추가해 누가 찍었는지 감사 로그에 남는다.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T13:26:00",
    "actor": "V0검사관",
    "action": "v0check.pass",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "solo-hotpack1026",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T16:37:48",
+   "actor": "v0-agent",
+   "action": "v0check.pass",
+   "target": "H1-32",
+   "detail": "SBS 공식 11/25 수 21시·극본·연출 확인, 몇부작·원작 단정 없음, 가십 없음 · 실질 항목은 함정·확인상태 비교, 날짜 중심 얇은 글 위험(H1-30 동일) · 기준일 고정·근거 없는 구절 삭제 반영(docs/v0_H1-32_20261026.md)",
    "via": "cli"
   }
  ]
