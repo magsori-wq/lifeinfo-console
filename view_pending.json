@@ -1,19 +1,17 @@
 {
- "computed_at": "2026-10-26 12:20:09",
- "source_head": "b1fca5141797",
+ "computed_at": "2026-10-26 14:05:16",
+ "source_head": "24f813b6cdb2",
  "ids": [
   "B2-24",
-  "ca-login-1026",
-  "claude-limit-reset-1022",
-  "deploy-thumb-426"
+  "claude-limit-reset-1022"
  ],
  "posts": [],
  "publish": [
   {
    "code": "B2-24",
    "title": "부산 신혼부부 전세대출 이자지원 11월 30일 마감 — 소득 1억 이하 2.0%p, 초과 1.8%p (2026)",
-   "go": false,
-   "v0": null,
+   "go": true,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 부산신혼부부전세대출이자지원_글_HTML.txt",
@@ -34,7 +32,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -44,22 +42,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "ca-login-1026",
-   "what": "크리에이터 어드바이저 Aside 로그인 풀림 — 10/25 이후 일간 판독 대기",
-   "due": "2026-10-26",
-   "cmd": "python tools/ca_daily.py 25",
-   "state": "blocked",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-426",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(426_busan_newlywed_loan.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-26",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
