@@ -1693,6 +1693,22 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var _sy = (window.pageYOffset || document.documentElement.scrollTop || 0);
   _out.innerHTML=H;
   _out.dataset.sig = H.length + ':' + H.slice(0,120);
+  // 🔴 10-26 사장님 「CP 기록된 데이터를 읽을 수 없는가? 기록과 답변이 다르다」 — 이 화면이 **보여 준 그대로**
+  //    칸 제목·건수·카드(제목·코드·보류)를 서버에 남긴다(webapp/cp_view.json). 이부장은 매 입력 이것을 받는다.
+  //    화면 계산(진행 중 문서 등)이 JS 에만 있어 이부장 쪽 도구와 숫자가 갈렸다 — 같은 화면을 읽게 한다.
+  try{
+    if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
+      var _pv=[].map.call(document.querySelectorAll('#out .pane'),function(pn){
+        var ph=pn.querySelector('.ph'), cn=pn.querySelector('.cnt');
+        var ttl=ph?ph.textContent.replace(cn?cn.textContent:'','').trim():'';
+        var cards=[].slice.call(pn.querySelectorAll('.card')).slice(0,12).map(function(c){
+          var a=c.querySelector('.ttl'), b=c.querySelector('.code'), s=c.querySelector('.st.now');
+          return [(a?a.textContent:'').trim().slice(0,40),(b?b.textContent:'').trim(),(s?s.textContent:'').trim().slice(0,30)];});
+        return {t:ttl,n:cn?cn.textContent.trim():'',c:cards};});
+      fetch('http://127.0.0.1:8011/api/cpview',{method:'POST',headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({page:'approval',panes:_pv})}).catch(function(){});
+    }
+  }catch(e){}
   if(_sy > 0){ try{ window.scrollTo(0, _sy); }catch(e){} }
   try{
     document.querySelectorAll('#out details').forEach(function(d,i){
