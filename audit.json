@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-06T13:19:46",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "loopcache-0901",
-   "detail": "실측 확인 — selfcheck 17) 이 loop.json 캐시를 읽지 않고 loopcheck.py 를 직접 import 해서 돌린다(L870-874, '판정은 loopcheck 하나만 쓴다 — 로직 복제 금지'). 오탐 원인이 제거됐다.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-06T13:19:47",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "ca-login-1026",
    "detail": "10-26 12:25 로그인 복구 확인(inflow-analysis 정상) — 10/25 일간 판독 완료. 앞으로 풀림 감지는 tools/ca_login_check.py",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-26T12:31:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ca-login-1026",
+   "detail": "12:31 이부장 Aside 로 CA 열어 로그인 화면 없이 열림 확인 — 3.에 재개 지시",
    "via": "cli"
   }
  ]
