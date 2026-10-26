@@ -538,7 +538,9 @@ function _userBusy(){
   try{ if(String(window.getSelection() || '').length > 0) return true; }catch(e){}
   var a = document.activeElement;
   if(a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) return true;
-  return (Date.now() - _lastTouch) < 45000;
+  // 2026-10-26 사장님 「CP 갱신이 1분 이상 늦다 — 직접 새로고침했다」: 45초는 보는 내내 미뤄져 새 결재가
+  //   1분 넘게 안 떴다. 스크롤 위치는 다시 그린 뒤 되돌리므로(_sy) 8초면 충분하다. 선택·입력 중은 위에서 그대로 막는다.
+  return (Date.now() - _lastTouch) < 8000;
 }
 setInterval(function(){ if(_pendingRefresh && !_userBusy()){ _pendingRefresh=false; refresh(); } }, 5000);
 function refresh(){
