@@ -24556,6 +24556,28 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "thumb1026-check",
+   "added": "2026-10-26",
+   "what": "방송·연예 썸네일 재제작(H1-30·H1-32·H1-31) 이과장 후보 보고 → 다운로드 결재함 → 생성 → deploy(425·427·428·429 묶음) → 라이브 200 확인",
+   "due": "2026-10-26",
+   "cmd": "python -c \" from studio import sessionstate as s",
+   "state": "done",
+   "owner": "claude",
+   "by": "이부장",
+   "done_at": "2026-10-26",
+   "result": "확인 명령이 셸 따옴표로 깨져 thumb1026-chk 로 다시 등록"
+  },
+  {
+   "id": "thumb1026-chk",
+   "added": "2026-10-26",
+   "what": "방송·연예 썸네일 재제작(H1-30·H1-32·H1-31) 이과장 후보 보고 → 다운로드 결재함 → 생성 → deploy(425·427·428·429 묶음) → 라이브 200 확인",
+   "due": "2026-10-26",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
