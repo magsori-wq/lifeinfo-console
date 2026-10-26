@@ -1363,7 +1363,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +'<div class="meta">'+esc(String(x.what||'').slice(0,180))
       +(x.due?' · 기한 '+esc(x.due):'')+'</div></div>';
   }).join('') : '<p class="none">✅ 없음</p>';
-  var actionsDetails = '<details style="margin-top:10px"><summary class="why" style="cursor:pointer">'
+  var actionsDetails = '<details data-k="actions" style="margin-top:10px"><summary class="why" style="cursor:pointer">'
     +'☑️ 미결 조치 '+actions.length+'건 펼치기 '
     +'<span style="opacity:.6;font-weight:400">(결재 건수에 안 들어감 — 기한 도래분만'
     +')</span>'
@@ -1508,7 +1508,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   var ssRest= SS.filter(function(x){return !(x.r.k==='un'||x.s==='waiting');});
   var ssRow = (ssHot.length? ssHot.map(ssLine).join('')
                : '<p class="none">안 읽음·대기 없음 — 전부 진행 중입니다.</p>')
-    + (ssRest.length? '<details style="margin-top:5px"><summary class="why" style="cursor:pointer">'
+    + (ssRest.length? '<details data-k="ssrest" style="margin-top:5px"><summary class="why" style="cursor:pointer">'
         +'읽은 세션 '+ssRest.length+'건 펼치기</summary>'+ssRest.map(ssLine).join('')+'</details>' : '');
 
   // 왼쪽 = 지시서
@@ -1600,7 +1600,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    세션 상태는 보조라 지시서 칸 아래에 접어 둔다 — 읽음 여부는 카드마다 배지로 붙는다.
   H+=pane('📄','지시서',bs.length+'건'+(unread?' · 🔴'+unread:''),
       colOrd
-      + '<details style="margin-top:9px"'+(unread?' open':'')+'>'
+      + '<details data-k="unread" style="margin-top:9px"'+(unread?' open':'')+'>'
       + '<summary class="sub2" style="cursor:pointer">🤖 세션·루틴 상태'
       + (unread? ' <span style="color:#ff6b6b">· 안 읽음 '+unread+'</span>' : '')
       + '</summary>' + ssRow + '</details>');
@@ -1711,11 +1711,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
             body:JSON.stringify({page:'approval',panes:_pv})}).catch(function(){});
     }
   }catch(e){}
-  if(_sy > 0){ try{ window.scrollTo(0, _sy); }catch(e){} }
+  // 펴 둔 칸을 먼저 되살리고 스크롤을 되돌린다(순서가 반대면 위쪽이 펴지며 보던 자리가 밀린다 — 페이블 10-26)
   try{
     document.querySelectorAll('#out details').forEach(function(d,i){
       var k=(d.getAttribute('data-k')||('i'+i)); if(_open[k]) d.open=true; });
   }catch(e){}
+  if(_sy > 0){ try{ window.scrollTo(0, _sy); }catch(e){} }
   REFRESHING=false;
 }).catch(function(e){
   document.getElementById('out').innerHTML='<p class="none">오류: '+esc(e.message)+'</p>';
