@@ -1,5 +1,5 @@
 {
- "at": "2026-10-29 05:49:02",
+ "at": "2026-10-29 05:49:23",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -15,7 +15,7 @@
    {
     "code": "H1-31",
     "title": "크래시2 첫방송 11월 16일 월 밤 10시 ENA —",
-    "min": 20,
+    "min": 21,
     "lvl": "amber"
    }
   ],
@@ -24,16 +24,15 @@
     "code": "H1-32",
     "title": "나인 투 식스 첫방송 11월 25일 수요일 밤 9시 S",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
-    "last_at": "2026-10-26",
+    "last_at": "2026-10-29",
     "lvl": "amber"
    }
   ],
@@ -87,10 +86,10 @@
   }
  ],
  "aside": {
-  "state": "#534 done",
-  "queue": 1,
-  "busy": false,
-  "lvl": "amber"
+  "state": "#535 등록 0분 — 수신 대기",
+  "queue": 0,
+  "busy": true,
+  "lvl": "ok"
  },
  "tower": {
   "age_min": 0,
@@ -136,7 +135,7 @@
   {
    "p": 1,
    "what": "결재 뒤 미발행 H1-31 크래시2 첫방송 11월 16일 월 밤 10시 ENA —",
-   "min": 20
+   "min": 21
   },
   {
    "p": 1,
@@ -255,9 +254,9 @@
   },
   {
    "who": "Aside",
-   "state": "대기",
-   "jobs": 1,
-   "lvl": "amber",
+   "state": "출동(일하는 중)",
+   "jobs": 0,
+   "lvl": "ok",
    "role": "허브·4종착 배송"
   },
   {
@@ -270,8 +269,10 @@
  "producers": [
   {
    "who": "이과장",
-   "made": "새 글 초안·발행 0편 · 개선 반영 0편",
-   "codes": []
+   "made": "새 글 초안·발행 1편 · 개선 반영 0편",
+   "codes": [
+    "H1-32"
+   ]
   },
   {
    "who": "에이전트",
@@ -306,9 +307,9 @@
   },
   {
    "who": "Aside",
-   "state": "대기",
-   "jobs": 1,
-   "lvl": "amber"
+   "state": "출동(일하는 중)",
+   "jobs": 0,
+   "lvl": "ok"
   },
   {
    "who": "이부장(감시)",
@@ -321,7 +322,7 @@
   "today": "2026-10-29",
   "done_today": 0,
   "done_codes": [],
-  "published_today": 0,
+  "published_today": 1,
   "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
@@ -401,6 +402,12 @@
   "insta": {
    "done": [
     {
+     "code": "H1-32",
+     "title": "나인 투 식스 첫방송 11월 25일 수요일 밤 9시 S",
+     "url": "https://www.instagram.com/p/DfDU1U9kwGK/",
+     "at": "2026-10-29"
+    },
+    {
      "code": "B2-24",
      "title": "부산 신혼부부 전세대출 이자지원 11월 30일 마감 —",
      "url": "https://www.instagram.com/p/De8nvlHEbdj/",
@@ -419,12 +426,7 @@
      "at": "2026-10-26"
     }
    ],
-   "wait": [
-    {
-     "code": "H1-32",
-     "title": "나인 투 식스 첫방송 11월 25일 수요일 밤 9시 S"
-    }
-   ]
+   "wait": []
   },
   "threads": {
    "done": [
@@ -479,6 +481,12 @@
    "stage": "pub",
    "at": "2026-10-29 05:28:23",
    "src": "결재 도장"
+  },
+  {
+   "code": "H1-32",
+   "stage": "insta",
+   "at": "2026-10-29 05:48:55",
+   "src": "now_log 게시 URL"
   }
  ],
  "approvals": [
