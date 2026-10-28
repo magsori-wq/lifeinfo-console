@@ -24536,8 +24536,10 @@
    "due": "2026-10-26",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-29",
+   "result": "10-29 05:13 이부장 deploy.bat — 425·427·428·429 github.io 반영(로컬과 md5 일치 확인), 전 글 썸네일 445개 200"
   },
   {
    "id": "h1-template-variation",
@@ -24556,8 +24558,10 @@
    "due": "2026-10-27",
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-29",
+   "result": "10-26 19시~10-29 05시 이부장 세션 정지(주간 한도)로 10-27 준비 못 함 → adsense-rereq-1029 로 결재함에 올림"
   },
   {
    "id": "thumb1026-check",
@@ -24604,6 +24608,19 @@
    "kind": "action",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "adsense-rereq-1029",
+   "added": "2026-10-29",
+   "what": "애드센스 재검토 요청 - 10-27부터 가능했는데 아직 안 눌렸습니다(오늘 API 조회 NEEDS_ATTENTION 그대로). 경로: AdSense > 사이트 > lifeinfo8975.blogspot.com > 문제를 수정했음을 확인합니다 체크 > 검토 요청. [권고] 오늘 누르기 - 4.세션 판단 문서(docs/애드센스_재신청판단_20261026.md)도 누르는 쪽, 보류해서 얻는 것 없음, 결과는 약 10일 뒤(11/8 전후) [근거] 정밀 개선 10/10 끝, 지난 3회 모두 요청 후 9~11일에 회신 [위험] 같은 사유(가치 없는 콘텐츠) 반려 반복 가능성 높음 · 보이는 글 62편 줄이기는 아직 안 했음(1편 시험 판정 전) · 심사 중 블로그스팟 기존 글 수정은 꼭 필요한 정정만",
+   "due": "2026-10-29",
+   "cmd": "AdSense 사이트 화면에서 검토 요청 누르기",
+   "owner": "user",
+   "state": "done",
+   "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-10-29",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   }
  ]
 }
