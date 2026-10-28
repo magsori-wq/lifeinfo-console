@@ -67,3 +67,45 @@
 19) 창차단출력: 🪟 창차단 — 정상 (창 없음: hwnd=7541932 vis=0 · 출력 살아 있음)
 <unknown>:133: SyntaxWarning: "\l" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\l"? A raw string is also an option.
 <unknown>:133: SyntaxWarning: "\l" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\l"? A raw string is also an option.
+20) 오탐 감시 : ⚠️ 의심 🔴1건 · ⚠️2건
+      ⚠️ loopcheck 정체 — 27건 — 표가 너무 길다. 진짜가 묻힌다
+      🟡 보고↔지시 — reports.html 에 지시 페어링 줄(.op)이 안 보인다 — 다시 구워라
+      ⚠️ 파생 목록 분류 — webapp/ 추적 파일 13개가 미분류다(derivedguard.REGISTRY 에 등급 없음): webapp/cp_xlink.js, webapp/credit.html, weba
+      🔴 창 뜨는 PowerShell — 숨김 옵션 없이 powershell/clip 을 띄우는 곳: naverwrite.py
+21) 루틴 동기 : ✅ 공통 절 전부 진실원과 같다
+22) 수치 근거 : ✅ 최근 커밋에 근거 없는 수치 없음
+23) 초안 중복 : ✅ 같은 코드가 두 파일에 있는 경우 없음
+24) 관련글 정합 : 🔴 불일치/죽은링크 31건 · 🟡 자기참조 0건
+      osmu\네이버용_yangsanbirth.txt: DB에 없는 URL(오타·permalink 변경 가능) — 제목 "네이버 블로그 — 「양산시 출산 지원금 첫만남이용권 부모급여 출산장려금 총정리」:" · http
+      osmu\네이버용_yangsanbirth.txt: DB에 없는 URL(오타·permalink 변경 가능) — 제목 "쓰레드 — 핵심만 짧게 보기:" · https://www.threads.com/@magsori8
+      osmu\네이버용_yangsanbirth.txt: DB에 없는 URL(오타·permalink 변경 가능) — 제목 "인스타그램 — 카드로 한눈에 보기:" · https://www.instagram.com/p/Dc
+      osmu\네이버용_운전기록정정말소.txt: 제목↔URL 불일치(유사도 0.31) — 적힌 제목 "자동차 과태료 범칙금 조회 납부 방법 차이점 총정리:" / 실제 글(D2-01) "과태료 범칙금 차이 — 신
+25) 이미지 호스트 : ✅ 이상 없음
+26) 인스타 캡션: 정상 15 · 빔(조치필요) 0 · 빔(시행전·참고) 0 · 건너뜀 0 ✅
+27) 제휴 링크 생존: 총 57 · 죽음 0 · 건너뜀(차단/지연) 7 ✅
+--------------------------------------------------------
+🔴 조치 필요 10건:
+   - 썸네일 2개 github.io 200 아님 → og:image 크롤 공백! deploy.bat 재실행: 386_kbo_po_ticket.png, 80_busanart.png
+   - OSMU 원고 2개가 DB에 없는 원본 URL을 가리킨다(재발행으로 permalink가 바뀐 것) → 원고를 현행 URL로 고치고, **이미 게시된 네이버·쓰레드 글 본문도 사람이 고쳐야 한다**: 네이버용_가을철산불조심기간.txt, 네이버용_현대차보스턴다이내믹스지분.txt
+   - 교차링크가 본문에 없다 H1-32(1개) — 확산 고리가 끊겼다(독자가 다른 채널로 못 간다). python studio/blogger.py crosslink --code <코드>
+   - 검색설명 낡음 7편(제목이 바뀐 뒤 설명 그대로) → 재작성 후 편집화면에서 교체: C1-10, C4-01, D1-14, D2-01, D2-02, D2-03
+   - 기록 1건이 밀렸다 — 사장님이 '하고 있는지 알 수가 없다'고 하신 자리다: 발행 전과정
+   - 세션 보고와 실제가 어긋남 5건 — `python -m studio.sessionaudit` 로 상세
+   - 보고하고 멈춰 있는 세션 19곳(cp1013, livefix1019, pub1024e412, pub1024b422) — 관제탑이 안 읽어서 서 있다. 읽고 다음 지시를 줘라
+   - 막혔다고 적었는데 결재함에 없는 세션 1곳(cadaily) — 아무도 모른다. watch add --owner user 로 올려라
+   - 화면 회귀 3건 — python -m studio.uicheck
+   - 관련글 링크 31건이 DB에 없거나 제목과 다른 글을 가리킨다 — `python -m studio.xlinkcheck`
+🟡 참고 12건:
+   - DB WARN 3건 (무해 정보성일 가능성 — validate_db.py 확인)
+   - 색인 안 된 글 72편 — ⛔ **재요청하지 말 것**(효과 0 실측: 41편 요청→재크롤 1편). 대부분 '구글이 알고도 미색인' 이거나 최근 발행이라 시간 문제다. 상세 = python -m studio.pending
+   - 라벨 비표준 6편(카테고리 내비 분열) → python studio/blogger.py sync-labels 로 통일: H1-28(['경제·이슈']→['방송·연예']), H1-27(['경제·이슈']→['방송·연예']), H1-25(['경제·이슈']→['방송·연예']), H1-23(['경제·이슈']→['방송·연예']), H1-22(['경제·이슈']→['방송·연예']), H1-21(['경제·이슈']→['방송·연예'])
+   - 검색설명 문구는 준비됐는데 아직 안 붙인 글 1편 → 콘솔 색인관리 [📝 검색설명] 탭: H1-32
+   - 검색설명 라이브 문구가 기록과 다름 13편(누가 손으로 고쳤을 수 있음): A5-11, A6-06, B1-11, B2-23, B4-16, D1-11
+   - 세션·루틴 4곳이 대기 중 — 새 지시가 없어 같은 지시서만 다시 읽고 있다. 지시서를 주거나 다른 배치로 돌릴 것: factaudit0812, adskb1004, draft1013g316, draft1020g413 (python -m studio.sessionstate)
+   - 재확인 대기 291건이 오늘 도래 — `python -m studio.watch due` 로 항목·확인명령 확인
+   - cp949 가드 없는 CLI 17개 — stdout 을 UTF-8 로 잠글 것(`sys.stdout.reconfigure(encoding='utf-8', errors='replace')`): _insta_a123_photo.py, _insta_a226_photo.py, _insta_c117_photo.py, _insta_e406_photo.py, _insta_f427_photo.py
+   - 4채널 미완 1편(H1-32) — 확산이 남았다(발행은 됐다)
+   - 코드 신호 12개가 엔진 설계도에 없음(BOSS_ALARM_RANG, CLOSE_ROUTINE_SESSIONS, FILES_RETURNED…) — docs/엔진설계도.md 에 마디 추가
+   - 지시서 1건 — python -m studio.orderwatch
+   - 판정기 오탐 의심 🔴1건 · ⚠️2건 — `python -m studio.falsepos` 로 상세. 고치면 그 파일 RULES 에 회귀 규칙을 한 줄 추가할 것
+========================================================
