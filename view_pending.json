@@ -1,63 +1,14 @@
 {
- "computed_at": "2026-10-28 21:06:21",
+ "computed_at": "2026-10-29 06:00:44",
  "source_head": "1a3289c8f2e8",
  "ids": [
   "H1-31",
   "H1-32",
   "H1-33",
+  "aside-login-ca-1029",
   "claude-limit-reset-1022"
  ],
  "posts": [
-  {
-   "code": "H1-33",
-   "title": "2026 SBS 가요대전 라인업 12월 24·25일 킨텍스 — 1차 22팀, 방청·티켓은 아직 공지 없음 (2026)",
-   "slug": "SBS가요대전2026",
-   "eng": "sbs_gayo_daejeon_2026",
-   "ch": {
-    "naver": {
-     "url": null,
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_SBS가요대전2026.txt",
-       "img": false,
-       "exists": false
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/428_sbs_gayo_daejeon_2026.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "todo"
-    },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_SBS가요대전2026.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    },
-    "instagram": {
-     "url": null,
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_SBS가요대전2026.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    }
-   }
-  },
   {
    "code": "H1-32",
    "title": "나인 투 식스 첫방송 11월 25일 수요일 밤 9시 SBS — 수목 드라마, 확인된 것과 못 한 것 (2026)",
@@ -101,7 +52,7 @@
      "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/p/DfDU1U9kwGK/",
      "files": [
       {
        "label": "인스타 캡션",
@@ -128,12 +79,39 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     }
    }
   }
  ],
  "publish": [
+  {
+   "code": "H1-33",
+   "title": "2026 SBS 가요대전 라인업 12월 24·25일 킨텍스 — 1차 22팀, 방청·티켓은 아직 공지 없음 (2026)",
+   "go": true,
+   "v0": "pass",
+   "files": [
+    {
+     "label": "초안 SBS가요대전2026_글_HTML.txt",
+     "path": "SBS가요대전2026_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/428_sbs_gayo_daejeon_2026.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/428_sbs_gayo_daejeon_2026.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "ready"
+  },
   {
    "code": "H1-31",
    "title": "크래시2 첫방송 11월 16일 월 밤 10시 ENA — 어디서 보나 GENIE TV·디즈니+, 확인된 것과 못 한 것 (2026)",
@@ -170,9 +148,7 @@
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
    "kind": "action"
-  }
- ],
- "actionsFuture": [
+  },
   {
    "id": "aside-login-ca-1029",
    "what": "Aside ca 로그인 필요 — 자동 확인(05:09): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
@@ -181,5 +157,6 @@
    "state": "todo",
    "kind": "action"
   }
- ]
+ ],
+ "actionsFuture": []
 }

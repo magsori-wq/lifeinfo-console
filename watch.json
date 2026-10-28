@@ -24510,8 +24510,8 @@
   {
    "id": "xlink-h132",
    "added": "2026-10-26",
-   "what": "🔗 H1-32 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-32",
-   "due": "2026-10-26",
+   "what": "🔗 H1-32 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-32",
+   "due": "2026-10-29",
    "cmd": "python studio/blogger.py crosslink --code H1-32",
    "owner": "claude",
    "state": "todo",
@@ -24647,6 +24647,16 @@
    "by": "이부장",
    "done_at": "2026-10-29",
    "result": "V0 통과로 해소 — 검사자 v0-에이전트 · 3차: 59일 제거·방청/티켓 10/29 재확인 기준일 명시·#가요대전티켓 삭제·bodydup 0.075. 22팀표·함정·가상달력계산 유지"
+  },
+  {
+   "id": "publish-checkout-slow-1029",
+   "added": "2026-10-29",
+   "what": "publish.yml checkout(fetch-depth: 0, 저장소 3.4GB)이 10-26 75초 → 10-29 12분(1차는 20분 멈춤 cancel). H1-31 run 끝난 뒤 얕은 checkout + rebase 전 필요한 만큼만 deepen 으로 고치고 페이블 검증 — 발행 run 진행 중엔 워크플로 수정 금지",
+   "due": "2026-10-29",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 5",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
