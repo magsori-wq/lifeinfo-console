@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-26",
+ "updated": "2026-10-29",
  "items": [
   {
    "id": "redirect-error",
@@ -24591,6 +24591,17 @@
    "by": "이부장",
    "done_at": "2026-10-26",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aside-login-ca-1029",
+   "added": "2026-10-29",
+   "what": "Aside ca 로그인 필요 — 자동 확인(05:09): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "due": "2026-10-29",
+   "cmd": "python -m studio.asideprobe login --batch aside --what ca",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
