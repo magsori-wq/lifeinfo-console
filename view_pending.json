@@ -1,14 +1,12 @@
 {
- "computed_at": "2026-10-29 05:11:59",
- "source_head": "ed0b8dc1163e",
+ "computed_at": "2026-10-29 05:28:56",
+ "source_head": "459481a917f7",
  "ids": [
   "H1-31",
   "H1-32",
   "H1-33",
   "aside-login-ca-1029",
-  "claude-limit-reset-1022",
-  "deploy-thumb-428",
-  "deploy-thumb-429"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -66,8 +64,8 @@
   {
    "code": "H1-33",
    "title": "2026 SBS 가요대전 라인업 12월 24·25일 킨텍스 — 1차 22팀, 방청·티켓은 아직 공지 없음 (2026)",
-   "go": false,
-   "v0": null,
+   "go": true,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 SBS가요대전2026_글_HTML.txt",
@@ -88,13 +86,13 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "H1-31",
    "title": "크래시2 첫방송 11월 16일 월 밤 10시 ENA — 어디서 보나 GENIE TV·디즈니+, 확인된 것과 못 한 것 (2026)",
-   "go": false,
-   "v0": null,
+   "go": true,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 크래시2첫방송_글_HTML.txt",
@@ -115,7 +113,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -125,22 +123,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-428",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(428_sbs_gayo_daejeon_2026.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-26",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-429",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(429_crash2_first_broadcast.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-26",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   },
   {
