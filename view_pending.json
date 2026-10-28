@@ -1,10 +1,11 @@
 {
- "computed_at": "2026-10-29 05:09:30",
- "source_head": "68891a861a2a",
+ "computed_at": "2026-10-29 05:11:59",
+ "source_head": "ed0b8dc1163e",
  "ids": [
   "H1-31",
   "H1-32",
   "H1-33",
+  "aside-login-ca-1029",
   "claude-limit-reset-1022",
   "deploy-thumb-428",
   "deploy-thumb-429"
@@ -139,6 +140,14 @@
    "what": "deploy.bat 실행 — 발행 대기 글 썸네일(429_crash2_first_broadcast.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
    "due": "2026-10-26",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "aside-login-ca-1029",
+   "what": "Aside ca 로그인 필요 — 자동 확인(05:09): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "due": "2026-10-29",
+   "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "state": "todo",
    "kind": "action"
   }
