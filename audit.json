@@ -5,14 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "insp-topic-0903",
-   "detail": "해소 확인(09-07): topicprop.py cmd_pick(441행)·cmd_approve(598행) 모두 draftfind 게이트 배선 확인(2026-09-03 정밀검사 주석과 일치) — 🔴 2건 모두 코드에 반영됨. 🟡 4건(dupcheck 상호검사·화면판정기준·pubqueue fail-open·계절어오탐)은 낮은 우선순위로 재확인 안 함.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "preview-api-0903",
    "detail": "해소 확인(09-07): curl draft API 200 정상, falsepos --quiet 실행 결과 _r_preview_affordance_alive 회귀규칙 통과(무관한 별건 1개만 검출: pub0907a602 승인표시 — 별도 확인함, A6-02 이미 발행완료로 정상).",
    "via": "cli"
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aside-credits-1029",
    "detail": "사장님 10-29 11:24 결정: 충전 대신 11-01 리미트 해제 때 재연결, 그동안 이과장 aside repl 직접 게시(설계도 D1 직접 게시 모드, data/aside_mode.json)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T11:30:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-login-ca-1029",
+   "detail": "사장님 10-29 11:28 로그인 — asideprobe 로 creator-advisor stat/today 열림(로그인 화면 아님) 확인",
    "via": "cli"
   }
  ]
