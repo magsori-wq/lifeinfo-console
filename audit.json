@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-07T17:29:06",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "pace-5today-0907",
-   "detail": "승인 반영 완료(2026-09-07 17:2x) — 말이 아니라 코드로 걸었다. studio/pace.py 에 **날짜별 상한**을 넣고 webapp/pace_day.json 에 {2026-09-08: 1} 등록. 검증: 09-08 에 0편이면 통과·1편이면 차단 · 09-09 는 상한 없음(저절로 풀림). 상시 상한(UNLIMITED)은 건드리지 않았다 — 그날 하루만이다.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-07T17:30:35",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aroma-claudemd-profile-1030",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T03:39:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "f118-publish-check-1030",
+   "detail": "03:3x 이부장 실측: run 40931235387 success · 라이브 제목 일치 https://lifeinfo8975.blogspot.com/2026/10/1000-2025.html",
    "via": "cli"
   }
  ]
