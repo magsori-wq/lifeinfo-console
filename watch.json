@@ -25143,6 +25143,16 @@
    "by": "이부장",
    "done_at": "2026-10-29",
    "result": "18:19 첫 실행 완료 — 4개 카테고리 빈손(공식 확인 실패), Aside 읽기 경로 지침 추가"
+  },
+  {
+   "id": "feed-drift-recheck-1030",
+   "added": "2026-10-29",
+   "what": "피드 드리프트 검사 성공 확인(DB 제목 6건 정정 뒤·deploy 후)",
+   "due": "2026-10-30",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow 피드 드리프트 검사 --limit 1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
