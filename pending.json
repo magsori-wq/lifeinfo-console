@@ -1,33 +1,16 @@
 {
- "rev": "0a7bd6520",
+ "rev": "1a3ba0ac4",
  "counts": {
-  "total": 451,
+  "total": 450,
   "osmu_done": 450,
-  "osmu_pending": 1,
+  "osmu_pending": 0,
   "indexed": 0,
-  "index_pending": 451,
+  "index_pending": 450,
   "index_requested": 163,
-  "index_todo": 74,
+  "index_todo": 73,
   "index_benign": 214
  },
  "actionable": [
-  {
-   "code": "F1-18",
-   "title": "출국납부금 환급 1,000원, 2025년 전 발권·이후",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -223,6 +206,22 @@
   {
    "code": "A5-15",
    "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A5-16",
+   "title": "4시간 근무 휴게시간 30분 생략 가능 — 12월 10",
    "need": [
     "색인요청"
    ],

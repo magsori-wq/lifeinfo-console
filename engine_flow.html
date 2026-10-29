@@ -18,6 +18,11 @@
   L -->|결정 기록| E[[엔진 설계도<br/>docs/엔진설계도.md]]
   E -->|규칙·흐름| L
 </pre></section><section><pre class="mermaid">flowchart TD
+  SUP[[연료 공급자: 3.세션·루틴2·4·6·docflow → 글감 제안]]:::fix --> FUEL{⛽ 재고 ≥ 하한?}:::fix
+  FUEL -->|NO| SUP
+  FUEL -->|YES| A0{선별 글감에 초안·지시서가 있나?}:::fix
+  A0 -->|NO| A1[topicprop pick 이 그 자리에서 초안 지시서 자동 발급 · 남으면 GATE_PROBLEM 깨움]:::fix --> A
+  A0 -->|YES| A
   A[이과장 초안 → 발행대기 큐] --> B{towertick: 초안 감지}
   B -->|DRAFT_READY| C[이부장: V0 검사 에이전트]
   C --> D{V0 통과?}
@@ -40,6 +45,8 @@
   J --> K{라이브 200·대표이미지?}
   K -->|NO| X
   K -->|YES| L[이과장: 검색설명·네이버·인스타·쓰레드 초안]
+  L --> L1{초안 파일 10분 넘게 대기열·진행 중·게시 어디에도 없음?}:::fix
+  L1 -->|YES| L2[ASIDE_DRAFT_UNQUEUED 깨움 → 이부장 그 턴에 asidequeue add]:::fix
   L --> M{asidequeue 게이트: postId·중복 게시·중복 지시}
   M -->|거부| L
   M -->|통과| N[대기열 → towertick 1~3분마다 Aside 에 올림]:::fix
@@ -47,11 +54,26 @@
   O -->|보고 없이 멈춤| P[ASIDE_STALL → 이부장 재등록]:::was
   P --> N
   O -->|blocked 로그인 등| X
-  O -->|done| Q[체인 확인 → 다음 채널]
+  O -->|done| Q[체인 확인 → 인스타·쓰레드는 확인 ✅ 면 체인이 *-link 자동 기록(10-25) → 다음 채널]
   Q --> R{4채널 완결?}
   R -->|NO| L
   R -->|YES| S[POST_COMPLETE → 이부장 완료보고·카톡]
   S --> T[색인 요청 → 할당량 초과면 2시간 뒤 재시도]
   classDef was stroke:#b42318,stroke-width:3px
+  classDef fix stroke:#1f7a4a,stroke-width:3px
+</pre></section><section><pre class="mermaid">flowchart TD
+  TR[🧳 트렁크: 정정 대상 글] --> WR[✍ 이과장 개선안 dry-run]
+  WR --> Y0[watch approve-&lt;코드> owner=claude · 이부장 확인 대기]
+  Y0 --> Y1{이부장 확인이 오늘 이전부터? (watch added 는 날짜만)}:::fix
+  Y1 -->|YES| Y2[상황실 사건 「이부장 확인 지연」 p1 → 상황실 점검이 그 자리에서 V0 에이전트·결재 올림]:::fix
+  Y1 -->|NO| Y3[이부장 V0 검사]
+  Y2 --> Y3
+  Y3 -->|고칠 점| WR
+  Y3 -->|통과| Y4[owner=user 결재함 「라이브 수정 승인」]
+  Y4 --> Y5[🔁 이과장 --apply · 네이버 정정]
+  WR --> Y8{담당 보고가 마지막 지시 뒤 · 열린 결재 없음?}:::fix
+  Y8 -->|YES| Y9[CARRIER_READY 깨움 → 이부장 그 턴에 V0 확인·owner=user 결재]:::fix
+  WR --> Y6{캐리어 배치 24시간 무소식?}:::fix
+  Y6 -->|YES| Y7[상황실 사건 「수정 캐리어 정체」 p2]:::fix
   classDef fix stroke:#1f7a4a,stroke-width:3px
 </pre></section><script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:true,securityLevel:"loose"});</script></body></html>

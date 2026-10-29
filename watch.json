@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "items": [
   {
    "id": "redirect-error",
@@ -25119,6 +25119,128 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "f310-naver-cards-1029",
+   "added": "2026-10-29",
+   "what": "F3-10 네이버 제휴 카드 2개 확인",
+   "due": "2026-10-29",
+   "cmd": "curl -s -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224457980264' | grep -c se-module-oglink",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-29",
+   "result": "18:10 이부장 실측: se-module-oglink 2개(에가든 트래블러 월렛·각인 여권케이스)"
+  },
+  {
+   "id": "aroma-routine10-firstrun-1029",
+   "added": "2026-10-29",
+   "what": "루틴10 첫 실행(18:14 사장님 Run now) 결과 확인 — 결재함 aroma-*-approve 등록·batchboard aroma 보고",
+   "due": "2026-10-29",
+   "cmd": "python -m studio.approvalcount",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-29",
+   "result": "18:19 첫 실행 완료 — 4개 카테고리 빈손(공식 확인 실패), Aside 읽기 경로 지침 추가"
+  },
+  {
+   "id": "feed-drift-recheck-1030",
+   "added": "2026-10-29",
+   "what": "피드 드리프트 검사 성공 확인(DB 제목 6건 정정 뒤·deploy 후)",
+   "due": "2026-10-30",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow 피드 드리프트 검사 --limit 1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-routine10-rerun-1030",
+   "added": "2026-10-30",
+   "what": "【권고】루틴10(이대리 야간 글감) 다시 실행 — 사이드바 Scheduled → 10-aroma → Run now 【근거】10-29 23:15 회차가 시작 직후 Claude 프로세스 비정상 종료(code 3221226505)로 실패, 보고·결재 0건. 이부장의 재실행은 안전장치가 막음 【위험】그대로면 오늘 aroma 글감 없음",
+   "due": "2026-10-30",
+   "cmd": "사이드바 Scheduled → 10-aroma 이대리 야간 글감 → Run now",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "03:2x 사장님 Run now — run local_5146eca0 진행 중(03:21 시작)"
+  },
+  {
+   "id": "lee-wake-d508-1030",
+   "added": "2026-10-30",
+   "what": "이과장 세션(local_d978f7db) 00:14 메시지 미수신 — D5-08 초안 지시서 draft1030d508 안읽음. 사장님 출근(12시) 전 다시 깨우기",
+   "due": "2026-10-30",
+   "cmd": "python -m studio.cpstate --list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "f1-18-refund-site-recheck",
+   "added": "2026-10-30",
+   "what": "F1-18 mofa.tour-refund.kr 신청절차·기한·왕복처리 미확보. curl 403, Aside 로도 '접근이 제한되었습니다'(10-30 00:20, 개시 09:00 전). mofa.go.kr 보도자료 검색만 시도",
+   "due": "2026-10-30",
+   "cmd": "Aside repl 로 https://mofa.tour-refund.kr/ 재조회 후 docs/source_F1-18_출국납부금환급_20261030.md 갱신",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-433",
+   "added": "2026-10-30",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(433_departure_fee_refund.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-30",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-30",
+   "result": "00:35 이부장: 00:31 deploy push 후 github.io 썸네일 433 200 확인"
+  },
+  {
+   "id": "f118-thumb-pages-1030",
+   "added": "2026-10-30",
+   "what": "F1-18 썸네일 433 github.io 200 확인(00:31 push 뒤 Pages 반영)",
+   "due": "2026-10-30",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://magsori-wq.github.io/lifeinfo-console/thumbs/433_departure_fee_refund.png",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "00:35 200"
+  },
+  {
+   "id": "f118-publish-check-1030",
+   "added": "2026-10-30",
+   "what": "F1-18 발행 run 성공·라이브 제목 확인(03:22 결재 → 이과장 pub1030f118)",
+   "due": "2026-10-30",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --limit 2",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "idaeri-stall-detect-1030",
+   "added": "2026-10-30",
+   "what": "이대리 멈춤 감지 공백: towertick 에 이대리/aroma 신호 0건 — 이대리에게 보낸 요청(10-29 16:45·19:1x·19:4x CLAUDE.md 프로필 줄)이 3번 미이행인데 경보 없음. 설계도에 이대리 유닛 멈춤 신호(요청 후 N분 aroma 보고 없음) 추가 → towertick·enginestate. 어드바이저 전·페이블 후",
+   "due": "2026-10-30",
+   "cmd": "grep -c 이대리 studio/towertick.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-claudemd-profile-1030",
+   "added": "2026-10-30",
+   "what": "【권고】이대리 지침(C:\\naver-blog\\CLAUDE.md) Aside 절 고치기 승인 — 「프로필 하나·번갈아 로그인」 줄 삭제, aroma 프로필 39c7ac1a=aroma-mag 전용·직장 Profile 0=magsori8975 전용 명시 【근거】이대리는 CLAUDE.md 수정에 사장님 직접 승인을 요구(이부장 요청 3회는 승인으로 안 침) · 프로필 분리는 10-29 16:45 이부장 실측 완료 【위험】안 고치면 야간 루틴 10이 낡은 문구를 읽음(게시 자체는 MyBlog 확인으로 안전)",
+   "due": "2026-10-30",
+   "cmd": "승인하시면 이부장이 「사장님 CP 결재 aroma-claudemd-profile-1030」으로 이대리에 전달",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
