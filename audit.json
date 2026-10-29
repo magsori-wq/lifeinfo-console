@@ -5,14 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "insp-osmu-0903",
-   "detail": "해소 확인(09-07): blogger.py CH_NAMES에 instagram 추가 확정(838d11b), selfcheck 6c도 09-03 시행일 방식(_IG_SINCE)으로 인스타 포함 정합 완료 — 정책충돌 해소. 미게시 3편은 위 insp-cp-0903 검증과 동일 건으로 해결 확인. PLAN 미포함 116편은 표시필터일 뿐 판정에 영향 없음(경미).",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "insp-topic-0903",
    "detail": "해소 확인(09-07): topicprop.py cmd_pick(441행)·cmd_approve(598행) 모두 draftfind 게이트 배선 확인(2026-09-03 정밀검사 주석과 일치) — 🔴 2건 모두 코드에 반영됨. 🟡 4건(dupcheck 상호검사·화면판정기준·pubqueue fail-open·계절어오탐)은 낮은 우선순위로 재확인 안 함.",
    "via": "cli"
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "approve-h1-32",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T11:26:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-credits-1029",
+   "detail": "사장님 10-29 11:24 결정: 충전 대신 11-01 리미트 해제 때 재연결, 그동안 이과장 aside repl 직접 게시(설계도 D1 직접 게시 모드, data/aside_mode.json)",
    "via": "cli"
   }
  ]
