@@ -5,14 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "preview-api-0903",
-   "detail": "해소 확인(09-07): curl draft API 200 정상, falsepos --quiet 실행 결과 _r_preview_affordance_alive 회귀규칙 통과(무관한 별건 1개만 검출: pub0907a602 승인표시 — 별도 확인함, A6-02 이미 발행완료로 정상).",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "sessionload-0903",
    "detail": "종결: 09-02 실측 결론(세션 jsonl 크기는 부하 원인 아님 — 훅 5s 이내, 디스크 여유 충분, WER 이벤트 무관) 그대로 확정, 추가 조치 불필요.",
    "via": "cli"
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aside-login-ca-1029",
    "detail": "사장님 10-29 11:28 로그인 — asideprobe 로 creator-advisor stat/today 열림(로그인 화면 아님) 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T11:54:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-h133",
+   "detail": "교차링크 삽입·라이브 4링크 확인(네이버 224457608997·쓰레드 DfD-auogerg·인스타 DfD9pWik2Am), osmuimgcheck 🔴0",
    "via": "cli"
   }
  ]
