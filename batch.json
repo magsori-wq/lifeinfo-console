@@ -1813,6 +1813,16 @@
      "base_code": "lifeinfo-daily-publish",
      "date": "2026-10-30",
      "at": "2026-10-30 00:13"
+    },
+    {
+     "code": "8-lifeinfo-issue-product-1030",
+     "title": "8-lifeinfo-issue-product (H)",
+     "state": "done",
+     "note": "🛒 빈손 — 신규 후보 없음. [조사장부] 목록 2 · 원문 0 · 후보 3 · 탈락 3 · 검색어 5 (바닥 미달: 상품 루틴이라 1차 출처 원문 없음, 토스 collect 294건·search 약 16낱말만, korea.kr·kwgap 미훑음)\n· 핫팩/가습기 — productprop search 상위가 이미 게시(hotpack1026·20261012-1): 탈락(기게시)\n· 감귤 서귀포 12brix 5kg 13,900 리뷰2,857 — naverkw ✅ 실검색어, 단 20261002-2 감귤 5kg 이미 쓰레드 게시(한 달 내 동종 재탕), 노지 출하 시즌 1차 확인 못 함: 탈락(보류, 11월 중순 재검토)\n· 김장매트·전기장판·온수매트·롱패딩·수험생 — 토스 인기목록에 없음(naverkw 김장/전기장판/수능선물 실검색어는 ✅): 탈락(상품 부재, 다나와 product 에이전트 조사 필요)\n이어받은 것: 어제 15:00 회차 빈손 / 새로 본 것: 감귤 노지 시즌 대기",
+     "auto_daily": true,
+     "base_code": "8-lifeinfo-issue-product",
+     "date": "2026-10-30",
+     "at": "2026-10-30 07:14"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -6012,7 +6022,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-10-30 04:13:44",
+ "updated": "2026-10-30 07:14:41",
  "current": {
   "batch": "followup",
   "code": "",
@@ -6023,6 +6033,10 @@
   "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "07:14:41",
+   "text": "✅ 8-lifeinfo-issue-product-1030 완료 — 8-lifeinfo-issue-product (H)"
+  },
   {
    "t": "04:13:44",
    "text": "▶   — 7/7단계 · ✅ F1-18 GSC 색인 생성 요청 완료 — 「색인 생성 요청됨·우선순위 크롤링 대기열에 추가」(2026-10-30 04:1x, 직장 프로필 aside repl, 할당량 초과 없음), gsc_log.py add 기록. 기대치 낮게(색인 0% 실측 이력)"
@@ -6178,10 +6192,6 @@
   {
    "t": "22:39:35",
    "text": "✅ lifeinfo-nightly-verify-1029-1029 완료 — lifeinfo-nightly-verify-1029 (E)"
-  },
-  {
-   "t": "21:15:00",
-   "text": "✅ lifeinfo-travel-prep-1029 완료 — lifeinfo-travel-prep (D)"
   }
  ],
  "currents": {
