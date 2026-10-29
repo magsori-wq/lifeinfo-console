@@ -5,22 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "routine-triage-0906",
-   "detail": "흡수: 언급된 재확인 대상(gsc-crawled-not-indexed·session-falsereport-measure-0830·topicprop-fact-quality)은 09-07 이 세션에서 각각 개별 재확인·처리 완료.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "title-kw-audit-0906",
-   "detail": "종결: 분석 결과가 이미 구체 조치(naver-title-fix-0906, 4편 제목교체)로 이어져 사장님 결재함 진행 중(D-1) — 원 분석 자체는 재실행 도구 없이 1회성으로 완료된 것으로 확정, 후속은 naver-title-fix 로 추적.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "topicprop-fact-quality",
    "detail": "개선 확인(09-07): routine-triage-0906 재확인 결과 08-30 대비 오류율 75%→0%(0/4, C2-13·A6-02 원문검증 통과)로 개선 — V0/source 검증 프로세스가 효과 있음. 계속 관찰은 정상 발행 프로세스에 내재.",
    "via": "cli"
@@ -15999,6 +15983,22 @@
    "action": "v0check.fail",
    "target": "F3-10",
    "detail": "3절 영수증 문단 모순(C 소지 시 전체가 -서술어 누락·미소지와 같은 결과로 읽힘). '소지하면 91,000엔 전체 정상 확인 대상, C 미소지면 A·B 78,000엔 포함 91,000엔 전체 환급 불가'로 고치면 통과. 나머지(출처 일치·날짜계산·가상표시·비교표·기계검사·썸네일) 이",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T13:37:15",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "afflink-f3-10",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T13:37:50",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "v0reject-f3-10",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
   }
  ]
