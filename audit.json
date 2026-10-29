@@ -2,38 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "tokenstat-0906",
-   "detail": "재확인(09-07): 관제탑 턴당 평균 509,537 vs 에이전트 건당 평균 174,230 — 방향 재확인(에이전트 위임이 단위당 적음), 09-06 가설과 같은 패턴 유지.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:49:50",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-auth-0907",
-   "detail": "정상 — 사장님 본인 계정·본인 번호 확인(2026-09-07 사장님 답변). lees**** 는 사장님이 따로 갖고 계신 네이버 계정이고 010-3***-8*** 도 사장님 번호다. 명의도용 아님. 어제 22:29 본인이 하신 인증.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T14:05:38",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-c213-ready",
-   "detail": "네이버 게시 확인 — https://blog.naver.com/magsori8975/224403586832 (og:title 대조 일치), crosslink 반영 완료",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T14:07:04",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-c213-ready",
-   "detail": "게시 완료 — https://blog.naver.com/magsori8975/224403586832 (사장님 게시, 2026-09-07). naver-link 기록·crosslink 삽입·라이브 실측 확인까지 완료.",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-07T14:19:07",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15967,38 @@
    "action": "v0check.fail",
    "target": "G1-17",
    "detail": "2절 노선표 432·124·1421 경유지 오탈자 「울리」→원문 「율리」 3곳 수정하면 통과. 그 외 보도자료 대조·썸네일·기계검사 통과",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T14:47:11",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "F3-10",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T14:47:17",
+   "actor": "v0-에이전트",
+   "action": "v0check.pass",
+   "target": "G1-17",
+   "detail": "3차(오탈자) 재검사: 울리 0곳, 432·124·1421번 경유지 율리 정정 확인, diff 는 3줄 치환만(다른 변경 없음), heading OK",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T14:47:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-g1-17",
+   "detail": "V0 통과로 해소 — 검사자 v0-에이전트 · 3차(오탈자) 재검사: 울리 0곳, 432·124·1421번 경유지 율리 정정 확인, diff 는 3줄 치환만(다른 변경 없음), heading OK",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T14:48:04",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "G1-17",
+   "detail": "",
    "via": "cli"
   }
  ]
