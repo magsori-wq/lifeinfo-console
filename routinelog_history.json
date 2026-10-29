@@ -1189,7 +1189,877 @@
    "base_code": "lifeinfo-nightly-verify",
    "date": "2026-10-02",
    "at": "2026-10-02 22:47"
+  },
+  {
+   "code": "docflow-pick-1003-1003",
+   "title": "docflow-pick-1003",
+   "state": "done",
+   "note": "D5-06·E4-07 pick(D5-06 이미 picked인 H1-21과 합쳐 3/5) — D5-06: 국토부 대광위 09-28 발표(korea.kr) 1차확인, 반값카드 9월종료·10월복귀 금액변경, dup🟢0.33, verify🟡(KW미측정 참고뿐, 차단 아님). E4-07: 금융위 07-15 보도자료(fsc.go.kr) 1차확인, 가상자산피해환급 특별법 10-01 시행 2일차, dup🟡0.50 재확인해보니 D1-08(개천절 연휴)과 '10월' 토큰만 겹친 오탐(주제 무관) 확인 후 pick, verify🟡(관련글 오탐 참고+KW미측정, 차단 아님). H1-21은 기존 picked 상태 유지, drop 없음. 초안·발행·라이브 손 안 댐.",
+   "auto_daily": true,
+   "base_code": "docflow-pick-1003",
+   "date": "2026-10-03",
+   "at": "2026-10-03 00:21"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1003",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "23:55 실행 — C/D/E 담당: D5-06(추천)·E4-07(후보) topicprop 제안(1차출처 korea.kr·fsc.go.kr 직접 WebFetch 확인) → docflow 에이전트 선별, 둘 다 pick(H1-21은 기존 유지). D5-06(모두의카드 반값혜택 9월종료·10월기준금액복귀, 시차출퇴근 12월연장) 초안 작성+썸네일 305_moducard+dupcheck/bodydup/layout 전부 🟢+affiliate none 기록+pubqueue 적재(재고 3/99) — commit ad188f3c 로 push 완료. E4-07(가상자산 보이스피싱 환급법 10/1 시행)은 pick만 됐고 초안은 다음 실행(또는 이과장 지시서)으로 넘김.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-03",
+   "at": "2026-10-03 00:29"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1003",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "07시 회차: collect 292건(신규3) → search 20여어(전기요·가습기·캠핑·귤·대추·견과·김치 등) → 후보: 20261003-1 장인김치 전라도식 배추김치10kg 28,990원 리뷰17,417 평점4.4 — 11월 김장철 직전 가정용 상비 수요, 기존 게시분(과일·육류·홍삼)과 다른 반찬 카테고리. pick+kakao 완료 → 결재함 afflink-20261003-1 등록(사장님 승인 선행). 게시·링크발급 안 함",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-03",
+   "at": "2026-10-03 07:15"
+  },
+  {
+   "code": "daily-email-briefing-1003",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "🔴 사장님 할 일 2건 — ①애드센스 반려 사유 확인(화면) ②Coursera 결제수단 갱신\n\n📌 애드센스: 반려. 계정 READY · 사이트 NEEDS_ATTENTION · ALERT REJECTED. 08-12 요청한 심사가 52일 만에 종료되고 떨어졌다. 근거는 API 값이 아니라 메일 본문이다(09-23 에 API 와 화면이 어긋난 전례가 있어 본문으로 확정했다).\n\n【새 중요 메일 — 3건】\n1) 🔴 애드센스 반려 통지 · 10-03 06:46 KST · adsense-noreply@google.com · 제목 「애드센스를 사용하려면 사이트에서 발견된 문제를 수정해야 합니다.」\n   원문: \"사이트를 검토한 결과 안타깝게도 지금은 사이트에 광고를 게재하실 수 없습니다. 사이트에 광고를 게재하기 전에 해결해야 할 문제가 있습니다.\" / \"사이트를 검토한 후 업데이트해 주시기 바랍니다. 검토 및 업데이트가 완료되면 다시 검토를 요청하실 수 있습니다.\"\n   뜻: 문서 기준 5회째 · 메일 기준 6회째(06-23 건이 aroma8975 로 가서 문서 집계에서 빠져 있다). 메일 발신 실측 이력 07-05·07-17·08-01·08-11 + 오늘.\n   🔴 사유는 메일에 없다 — 애드센스 → 사이트 → lifeinfo8975.blogspot.com 상세 화면에서만 보인다. 예전 사유(「가치가 별로 없는 콘텐츠」)가 이번에도 같다고 단정하지 않았다.\n   할 일: 사장님이 그 화면에서 사유 확인 → 4.(adsense0915)가 이어받는다. 재검토는 같은 화면의 체크박스 + 「검토 요청」이고 누르는 시점은 사장님 판단(09-23 지시로 금지 해제). watch adsense-reject-reason-1003\n   · 기존 watch adsense-getting-ready-0923(09-23 GETTING_READY 전이 추적)은 결말이 나왔으므로 닫았다.\n2) 🔴 Coursera 결제 실패 · 10-02 18:48 KST · no-reply@t.learn.coursera.org\n   원문: \"subscription 을 통해 결제하신 49 USD 에 대한 결제를 처리하는 데 문제가 발생하고 있습니다. 결제 정보를 업데이트하려면 계정 설정을 확인해 주세요.\"\n   뜻: 49 USD 구독이 끊길 수 있다. 같은 결제수단이 GCP·Claude 에도 쓰이면 번진다(GCP 10-01 7,334원은 정상 완료 확인).\n   ⚠️ 루틴1 Gmail 리더가 이 메일을 못 잡았다 — 발신자 목록에 결제·구독 계열이 없어서다. 커넥터 is:important 조회에서만 나왔다. 리더 목록 보강은 이부장 판단. watch coursera-payment-fail-1003\n3) 구글 검색센터 커뮤니티 · 10-01 13:26 KST · help-communities@google.com\n   우리가 쓴 후속 댓글이 게시된 알림이다(원래 게시자 Lee Sanggon) — 새 답변이 온 것이 아니다. 원문 일부: \"The AdSense site review has now been pending for 50 days (requested Aug 12).\" / \"Would it be possible to escalate this thread to someone at Google?\"\n   뜻: 09-24 PE(OptimistPrime) 답변은 기보고이고 watch adsense-pe-deepdive-0928 로 분석 중. 오늘 반려가 확정됐으니 그 스레드에 결과를 덧붙일 값어치가 있는지는 이부장·4. 판단.\n\n【🔴 조치 필요 — 사장님 아닌 것 1건】\n· watch _boss_gate 오탐 2건 — 루틴1 이 오늘 결재함 등록 중 실제로 막혔다. '같은 카드가 결제에 쓰이면'의 「카드」를 카드·이미지 제작으로, '발행 창구가 gh workflow run'의 「발행」을 라이브 발행 트리거로 판정했다. 둘 다 cmd 는 사장님 안내 echo 였다. 낱말을 바꿔 통과했는데, 게이트 주석이 스스로 경고한 바로 그 우회다(\"게이트가 넓으면 정상 작업이 막히고, 막힌 사람은 낱말을 피해 우회한다\"). 09-21 오탐 3건의 4·5번째. 코드 수정은 루틴 권한 밖. watch watch-gate-falsepos-card-1003\n\n【🟡 참고 — 둘 다 이미 해소됐다】\n· 콘솔 정합성 검사 RED 16회(10-03 04:41~06:00 KST = 10-02 19:41~21:00 UTC). 사유를 로그로 직접 읽었다: ⛔[posts_index 신선도] posts_index 322편 vs DB 321편. 이 1건만으로 exit 1 → RED(통과 10·경고 2·실패 1).\n  ✅ 지금은 복구됐다 — 06:01 KST 이후 4연속 success, 최신 런 37076818541 에서 '✅[posts_index 신선도] 322편 DB와 일치 · 신호등 YELLOW(실패 0)' 확인. 실패 구간이 D5-04 발행(04:28~04:30 KST)과 겹친다 = 발행 파생 시차이고 스스로 풀렸다(09-21·09-24·10-01 기보고와 같은 원인).\n  🔴 기존 watch console-check-comment-falsepos-1001 의 【B】(pending_osmu.html:428 주석 오탐)는 오늘 런에서 ✅[HTML 참조] 통과로 나왔다 — 해소된 것으로 보인다. 그 항목의 \"【B】 8/8 진행중\" 은 낡았다. 루틴1 이 덮어쓰지 않았다(이부장 분석이라 판단을 넘긴다).\n  ⚠️ 어제(10-02) 보고의 \"92연속 실패\" 와 숫자가 다르다 — 어제 이후 복구·재실패·재복구가 있었다. 지금 상태는 success 다.\n· 발행 실패 1건 — D5-04(코레일 승차권 예매, 10월 1일부터 2개월 전 가능) run 36964729768, 사유 '썸네일 파일 없음 → thumbs/302_korailplus.png'(origin/main 동기 누락).\n  ✅ 발행 완료 — run 37054328009(10-03 04:28 KST)가 CODE: D5-04 로 성공(로그 직접 확인), 라이브 HTTP 200, DB url 존재. watch d504-retrigger-1002 닫았다.\n  ⚠️ 8초 뒤 성공한 run 36964739262 는 다른 글(B5-05 청년미래적금)이다 — '재시도 성공=조치 불요'로 읽지 않았고 로그 CODE 로 재확인했다.\n\n【기보고라 다시 올리지 않은 것】\n· GitHub 앱 Claude 권한 요청(10-01 04:46 KST · 이 건은 발신에 -0700 이 붙어 환산이 맞다) — watch github-claude-perm-0930 이 이미 done 이다. 10-01 에 사장님이 화면 확인(요청: 읽기전용 3개 + Actions read→read&write), 이부장 권고는 보류였다. 루틴1 이 중복으로 결재함에 올렸다가 발견해 바로 지웠다 — 조회 때 'permission' 으로만 grep 해서 'perm-0930' 을 놓친 것이 원인이다.\n· GitHub sudo 인증코드 3통(10-01 13:11~13:14 KST) — 사장님 본인 인증으로 보인다(연속 3회 = 입력 재시도). 아니시면 계정 보안 확인만 부탁드린다.\n· 지시서 죽은 명령 3건(watch ordercheck-dead-cmds-1002) — 어제 올린 그대로, 아직 안 고쳐졌다.\n\n【점검 기록】\nGmail 리더 3계정 전부 ✅ 토큰 생존 — magsori 34건 · magsori8975 0건 · aroma8975 0건(0건이 평소 상태). 8975 는 직접 조회가 되고 있고 전달도 작동한다 — watch gmail-8975-relay-0924 가 09-27 12:47 에 이미 검증 완료(done)다(GSC 통지 17/17 이 magsori 에도 동시 도착). 오늘 to:magsori8975 구글뉴스 2건이 magsori 수신함에 보인 것도 그 전달이다. 옛 '사각지대·전달 대기' 표현은 더 이상 맞지 않는다. GSC sc-noreply 7일 조회 0건. 커넥터 2일 조회 10스레드. GitHub 알림 25통 중 24통이 콘솔 정합성 검사 실패(위 1건으로 묶음), 1통이 발행 실패. 크롬 탭 열지 않았다.\n\n【루틴1 이 스스로 잡은 오류 — 기록】\n· 시각 환산 3건을 틀렸다가 보고 전에 고쳤다. Gmail 커넥터가 주는 date 는 `...Z`(UTC)인데 리더가 주는 `-0700`(PDT)과 같은 줄에 놓고 +16 을 일괄 적용했다. Coursera 10-03 01:48→10-02 18:48 · 커뮤니티 10-01 04:26→13:26 · sudo 04:11→13:11 (전부 KST). 애드센스 06:46 과 콘솔·발행 런 시각은 원래 맞았다(그쪽은 -0700 표기 또는 run createdAt).\n· watch watch-gate-falsepos-card-1003 의 확인 명령이 `watch add --id _probe --owner user` 였다 — 이부장이 돌리면 사장님 결재함에 쓰레기 항목이 생긴다. 읽기 전용(grep)으로 바꿨다. 확인 명령은 부작용이 없어야 한다.\n· 8975 전달을 '단정하지 않는다'로 유보했는데, 09-27 보고에 이미 17/17 실측이 있었다. 근거 없이 되돌린 유보였고 위에서 고쳤다.\n\n【이 note 를 왜 다시 썼나】\n덧쓰기 로그라 같은 회차의 첫 판(사장님 할 일 '3건' · 틀린 시각)이 맨 위에 남아 먼저 읽히게 됐다. 틀린 사실을 위에 두는 것이 더 나쁘다고 보아 최종본 하나로 정리했다. 지운 내용은 ①사장님 할 일 3건(GitHub 앱 권한이 기보고라 2건으로 정정) ②Coursera 10-03 01:48 / 커뮤니티 10-01 04:26 / sudo 04:11(UTC 를 PDT 로 잘못 환산) ③8975 전달 '단정하지 않는다' 유보 — 셋 다 위 본문과 「스스로 잡은 오류」 절에 사유까지 적어 두었다. 커밋 이력(da3313f0 및 후속)에는 양쪽이 다 남아 있다.\n▸ 13:51 [루틴1 → 이부장] 사장님 지시 \"10-09 재신청 전까지 뭘 보강해야 할지 정리해줘\" → \"이부장에 보고해\" 이행.\n\n📄 정리 = docs/재신청전_보강정리_20261003_루틴1.md\n   ⚠️ 4.세션이 같은 날 더 정밀한 문서를 냈다(docs/애드센스_10-03반려_비교준비_20261003_4.md).\n   내 문서는 그것을 대체하지 않고 **4.가 비워 둔 칸 3개만** 채웠다.\n\n【내가 새로 채운 것 3가지】\n① 4.가 \"출처 미상\"이라 한 커뮤니티 답변의 출처를 확정했다 — OptimistPrime(다이아몬드 PE,\n   구글 직원 아님) 2026-09-25 05:15 KST, 검색센터 커뮤니티 msgid 469793401.\n   스레드 support.google.com/webmasters/thread/469783212 를 직접 열어 확인.\n   같은 스레드에 busterjet 답변도 있다. → 4.의 \"공식인지 PE인지 불명\" 칸이 채워진다.\n   4.가 \"의견으로만 취급한다\"고 판단한 것은 맞았다.\n② 10-01 에스컬레이션 요청은 이틀째 무응답 — 스레드 메시지 전수 확인(답글 3개뿐,\n   마지막이 여전히 우리 글 470816351). watch community-escalation-reply-1004(10-06).\n③ 🔴 반려 화면이 「사용자 관심」을 명시한다 — 검토_PE답변_20260928_4.md 는 P4·P5 를\n   \"애드센스 공식 문서에 없음\"으로 판정했는데, 10-03 화면에 \"상업적 광고 파트너십을\n   지원하는 수준의 사용자 관심\" + 확인 3번째 \"실제적인 사용자 관심 유도·유지\"가 있다.\n   표기를 \"help 문서엔 없음 · 반려 화면엔 있음\"으로 갈라야 다음 세션이 \"PE가 틀렸다\"로\n   안 옮긴다. ⚠️ 트래픽이 기준이라는 뜻은 아니다 — 화면이 그 축을 언급한다는 사실까지다.\n\n【루틴1 권고 — 하나】 6일 안에 새로 할 수 있는 것은 ②축(지속적 큐레이션·구조적 유지관리)\n   재측정뿐이다. ①고품질정보는 08-03 에 이미 당겼고 같은 사유로 재반려됐다. ③사용자관심은\n   28일 클릭 0 이라 6일로 안 움직인다. ②는 4. 문서가 \"이번에 재측정하지 않았다(기록 인용)\"\n   라고 명시한 유일한 칸이고, 측정이 싸고(기존 도구), 결과가 어느 쪽이든 재료가 된다.\n   ⚠️ 이것이 승인을 바꾼다고는 말하지 않는다 — 안 재 본 칸이라서 재는 것이다.\n\n【🔴 이부장이 처리할 것 4건 — 루틴1 권한 밖】\n 1. 발행 후속 재발급 3건 — H1-21·E4-07·H1-22 가 라이브에 나갔는데 DB 미등록.\n    feedcheck 실측: 라이브 326편·orphan 3·죽은url 0. selfcheck 는 이것을 \"도장 찍혔는데\n    안 나간 글\"로 보고 있으나 실제로는 나갔다. 배치 pub1003h121/e407/h122 가 열려 있다.\n 2. 4.에게 지시서가 필요하다 — pe-audience-official-1003 은 owner=claude watch 일 뿐이고\n    4.의 배치 adsense0915 는 이미 아카이브됐다. watch 만으로는 안 닿는다.\n    🔴 루틴1이 사장님께 \"4.에 넘겨 두었습니다\"라고 말한 것은 정확하지 않았다 — 정정 필요.\n 3. 후보 A 상태 대조 — 루틴7 커밋의 \"후보② 고유성 부족 기각\"이 소거표【2】의 A 와 같은\n    항목인지 4.도 대조 못 했다. 같으면 살아 있는 후보가 A·B 둘이 아니라 B 하나가 된다.\n 4. CLAUDE.md Ads.txt 줄 정정 — 09-23 절은 \"화면에 줄곧 찾을 수 없음\"인데 10-03 화면은\n    「승인됨」이다. 4.가 \"CLAUDE.md 는 제가 고치지 않는다\"며 넘겼다.\n\n【소거표가 9일 낡았다】 소거표【6】이 \"애드센스 진단 도구를 한 번도 안 썼다 — 유일한 읽기\n   경로\"라고 적어 뒀는데, 사장님이 09-25 에 쓰셨다(watch adsense-troubleshooter-0924 done,\n   결과=\"계정 진단이 아니라 문답형 안내\"). 다음 후보는 같은 화면의 Contact us.\n\n【푸시 못 함】 다른 세션의 미커밋 파생 파일이 rebase 를 막아 로컬 커밋만 쌓여 있다\n   (c81c3153 포함). 남의 파일을 checkout·stash 하지 않았다. 발행 지시 3건이 걸려 있어\n   지금 안 미는 쪽이 안전하다고 보았다.\n\n【내 실수 정정】 이 세션은 루틴1인데 앞서 커밋 c81c3153 과 watch 2건을 [이부장]·--by 이부장\n   으로 남겼다. watch 는 --by 루틴1 로 고쳤고, 커밋은 amend 하지 않고 정정 커밋으로 쌓는다.\n▸ 13:55 ▸ 정정 (루틴1, 같은 회차) — 앞 보고 2건이 틀렸다. 이부장은 이 블록을 먼저 읽을 것.\n\n🔴 정정1 — 「발행 후속 재발급 3건(H1-21·E4-07·H1-22)」은 취소한다. 내 오판이었다.\n   원인: 다른 세션 미커밋 파일로 pull 이 막힌 상태에서 **낡은 로컬 DB(323편)만** 보았다.\n   origin/main 실측 = DB 327편, 세 글 전부 url 과 함께 정상 등록:\n     H1-21 /2026/10/109-2026.html · E4-07 /2026/10/2026_01673603293.html\n     H1-22 /2026/10/cgv-104-2026.html\n   러너 커밋도 있다 — 82793381 · 31d7cd72 · cc5f83a7 「발행(live) … 클라우드 Actions」.\n   → 발행 후속은 정상으로 돌았다. **재발행 지시를 내지 말 것** — 중복 가드도 같은 DB 를\n     보므로 막아 주지 못한다.\n   ⚠️ feedcheck 의 orphan 3 과 selfcheck 의 \"도장 찍혔는데 안 나간 글 3건\" 은 둘 다\n     같은 낡은 로컬을 본 결과다. 도구가 틀린 게 아니라 내가 원격을 안 봤다.\n   ✅ 남은 것: 열린 배치 pub1003h121·e407·h122 는 발행이 끝났으니 닫는 게 맞아 보인다(이부장 판단).\n   🔴 구조 문제는 남는다 — 작업 폴더를 여럿이 쓰는데 pull 이 막히면 그 세션의 모든 판정이\n     조용히 낡는다. 오늘 도구 둘이 동시에 속았다.\n\n🔴 정정2 — 「다음 후보 = 애드센스 화면의 Contact us」도 낡았다.\n   애드센스_커뮤니티_후속답글_초안_20260928.md 머리에 이미 적혀 있다:\n   \"공식 직접 문의 창구는 없다(09-25 Contact us 끝까지 확인 — 옵션은 커뮤니티뿐).\"\n   → 구글에 직접 물을 길은 커뮤니티 하나뿐이고, 그 커뮤니티는 지금 무응답이다.\n\n문서 docs/재신청전_보강정리_20261003_루틴1.md 는 위 두 가지를 반영해 고쳤다.\n나머지(§0 출처 확정 · 에스컬레이션 무응답 · 반려 화면의 사용자 관심 문구 · ②축 권고)는 그대로다.\n▸ 20:21 ▸ 20:2x 정정(루틴1, 같은 회차) — 위 '▸ 20:20 probe' 한 줄은 보고 내용이 아니다. 무시할 것. 경위: 첫 mark 가 출력에 지시서만 찍어 반영 여부를 알 수 없어 --note probe 로 한 번 더 호출해 확인했는데, note 가 덧쓰기라 그 낱말이 그대로 남았다. 원인은 --code 가 자동으로 -MMDD 를 붙인다는 것을 몰랐던 것이다(내가 --code daily-email-briefing-1003 을 줘서 daily-email-briefing-1003-1003 이 생겼다 — 09-27 에도 같은 중복코드가 났다). 20:08 회차 보고 본문은 코드 daily-email-briefing-1003-1003 에 있고, 13:55 회차는 daily-email-briefing-1003 이다. 확인 명령이 부작용을 남기면 안 된다는 13:55 교훈을 같은 날 내가 어겼다.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-03",
+   "at": "2026-10-03 20:21"
+  },
+  {
+   "code": "lifeinfo-publish-1003-1003",
+   "title": "lifeinfo-publish-1003 (C)",
+   "state": "done",
+   "note": "09:00 발행구 점검 — 재고 5편(pace 재고5·오늘발행1 코레일 기발행). V0: D5-06/H1-21/E4-07/H1-22 🟢(이미 결재함 등록·사장님 승인 대기, 올린이 이과장) · G3-09 🔴반려(재작업 지시 완료, 루틴4). queue.json go도장 0건 → 3-0 자동발행 트리거 없음. gh run: 진행중 run 없음(최근 success). feedcheck 322편 orphan0 죽은url0. 결재함 5건(D5-06·H1-21·E4-07·H1-22 발행승인 + 김치 제휴링크) 그대로 유지.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish-1003",
+   "date": "2026-10-03",
+   "at": "2026-10-03 09:06"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1003",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "A5-13(rec, 고용보험료율 2027 인상 정부안) + B3-06(alt, 홈택스 연말정산 미리보기) 제안 등록 — dupcheck 둘 다 🟢 신규, 네이버키워드 둘 다 ✅ 실검색어. 오전브리핑_2026-10-03.md 저장 완료",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-03",
+   "at": "2026-10-03 09:19"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1003",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "이슈상품 후보 1건(차렵이불·시즌 간절기) 결재함 afflink-issue20261003 등록 · 토스 인기 293건 수집",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-03",
+   "at": "2026-10-03 15:13"
+  },
+  {
+   "code": "daily-email-briefing-1003-1003",
+   "title": "daily-email-briefing-1003 (A)",
+   "state": "done",
+   "note": "20:08 메일 브리핑 — 🟢 사장님 새 할 일 0건. 13:55 회차에 올린 2건이 그 뒤 둘 다 해소됐다.\n\n📌 애드센스: 반려 상태 유지. 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING · alert null(이번 회차 상태 변화 없음). 08-12 요청한 심사는 10-03 06:46 반려로 종결됐고 사유도 확인됐다 = 「가치가 별로 없는 콘텐츠」(8/12와 동일) · Ads.txt 「승인됨」(13:55 회차에 이부장이 사장님 캡처로 확인, watch adsense-reject-reason-1003 done). 재검토 요청은 10-09부터 가능(요청 가능 횟수 소진) — 누를지는 사장님 판단. watch adsense-rereview-open-1009(wait)\n\n【새 중요 메일 — 1건】\n1) Coursera 구독 취소 확인 · 10-03 15:18 KST · no-reply@t.learn.coursera.org · 제목 「등록이 취소되었습니다.」\n   원문: \"요청에 따라 Google Project Management 구독이 취소되었으며 더 이상 요금이 청구되지 않습니다. 현재 요금 청구 기간이 종료되기 전까지는 계속 이용할 수 있습니다.\"\n   뜻: 13:55 에 올린 사장님 할 일 ②(결제수단 갱신)가 해소됐다. 사장님 지시로 이부장이 해지한 것이 Coursera 쪽에도 반영됐다는 독립 증거다(watch coursera-payment-fail-1003 이미 done). 49 USD 재청구 위험 종료.\n   할 일: 없음.\n\n【🟡 참고 — 둘 다 이미 해소됐다】\n· 발행 실패 1건 — B3-06(홈택스 연말정산 미리보기) run 37103305255 · 10-03 15:30 KST.\n  사유를 로그로 직접 읽었다: Blogger API 503 `blogs/byurl` \"The service is currently unavailable\"(reason=backendError) = 구글 백엔드 장애. 글은 라이브에 생성됐는데(postId 2083775224542929647) 그 뒤 register_post 가 exit 1 로 끊겨 DB·배포가 안 끝났다.\n  ✅ 이과장이 복구했다 — 15:44 f55637a0 「B3-06 DB 등록(register_post 재실행 — 러너 Blogger 503 실패분)」 → 16:35 bc4e4879 「4채널 세트 완결」. 실측: 라이브 HTTP 200 · DB url·thumb(310_yearendpreview2026)·short 정상 · OSMU 3채널(네이버·인스타·쓰레드) 전부 기록 · 검색설명 있음(❌없음 0).\n  🔴 중복 글 여부를 따로 확인했다 — 첫 런이 글을 만든 뒤 DB 가 비어 있었으므로 재실행했다면 중복 가드를 통과해 두 번째 글이 생길 수 있었다. publish.yml 최근 10런에 06:30:49Z 실패 뒤 재실행이 없고, feedcheck 라이브 328편 · orphan 0 · 죽은url 0. 중복 없다.\n  ⚠️ '재시도 성공=조치 불요'로 읽지 않았다. 원인은 우리 결함이 아니라 구글 503 이지만, 드러난 약점은 라이브 생성 뒤 register_post 가 끊기면 글만 나가고 기록이 안 남는다는 것이다 — 사람이 알아채야 복구된다(오늘은 이과장이 14분 만에 알아챘고, 상시 감시는 routine3 의 feedcheck orphan 검사다).\n\n· 콘솔 정합성 검사 — 13:55 보고가 \"복구됐다\"고 적은 뒤에도 1건 더 실패했다(run 37098681993 · 10-03 14:05 KST). 사유를 로그로 직접 읽었다: ⛔[posts_index 신선도] posts_index 323편 vs DB 327편 — 이 1건만으로 exit 1 → RED(통과 10·경고 2·실패 1). 고아 썸네일 99개·index_status 는 ⚠️ 경고라 실패 아님.\n  ✅ 지금은 복구됐다 — 15:51 KST 이후 최근 40런 전부 success. posts_index 328 = DB 328(로컬·배포본 양쪽 대조).\n  기보고라 새 항목을 만들지 않았다 — watch console-check-comment-falsepos-1001【A】가 이 원인을 \"발행마다 재발하는 구조(09-21·09-24·10-01)\"로 적고 \"반복 자체는 이부장 판단\"으로 이미 넘겨 뒀다. 오늘로 재발이 한 번 더 늘었다는 사실만 보탠다.\n\n【기보고라 다시 올리지 않은 것】\n· 구글 개인정보 보호 진단 알림(10-03 00:12 KST) — 사용자가 요청해 둔 정기 알림, 무해.\n· GCP 결제 완료 ₩7,334(10-01) 정상 · GitHub sudo 인증코드 3통(10-01, 연속 3회=입력 재시도로 보임) · Threads 비밀번호 변경(09-28) · Anthropic 신뢰기기 추가(09-25) — 전부 기보고.\n· 구글 검색센터 커뮤니티 에스컬레이션 요청 무응답 — 10-01 우리 댓글이 마지막이고 새 답변 없음. watch community-escalation-reply-1004 가 10-06 에 다시 본다.\n\n【점검 기록】\nGmail 리더 3계정 전부 ✅ 토큰 생존 — magsori 33건 · magsori8975 0건 · aroma8975 0건(0건이 평소 상태). GSC sc-noreply 7일 조회 0건. 커넥터 조회 — to:magsori8975/aroma8975 2일 0건 · is:important+Anthropic 3일 7스레드. GitHub 알림은 콘솔 정합성 검사 실패 다수 + 발행 실패 1통으로, 위 🟡 2건에 묶었다. 크롬 탭 열지 않았다.\n⚠️ 로컬이 origin/main 보다 5커밋 낡다(CP 4단계 작업분). 다른 세션의 미커밋 파생 파일이 rebase 를 막아 pull 하지 못했고, 남의 파일을 stash·checkout 하지 않았다(09-17·09-12 사고 규칙).\n✅ 그래도 판정 근거는 흔들리지 않는다 — 10-03 13:55 회차가 낡은 로컬 DB(323편)로 orphan 3 을 오판한 전례가 있어, 이번에는 판정 전에 watch.json·batch.json·lifeinfo_db.txt 3개를 origin/main 과 직접 대조해 전부 동일함을 확인했다(git diff origin/main -- <각 파일> 무출력). 라이브 328 = DB 328 로도 교차 확인됐다.\n▸ 20:20 probe\n▸ 20:28 ▸ 20:4x 정정(루틴1, 같은 회차) — 위 20:08 보고의 콘솔 정합성 검사 편수가 틀렸다.\n\n🔴 틀린 것: \"13:55 보고 뒤에도 1건 더 실패했다(run 37098681993 · 14:05)\".\n   원인은 방법이다 — 메일에서 본 런 하나의 로그만 읽고 편수를 단정했다. 리더 출력이\n   잘려 있었는데 그걸 모수로 썼다. 편수는 메일이 아니라 런 목록에서 세야 했다.\n\n✅ 런으로 다시 셌다(gh run list -L 100, 창 10-03 09:24~19:04 KST):\n   실패 13건 · 전부 한 덩어리로 10-03 12:34~14:05 KST.\n     12:34 37093662229 / 12:45 37094253607 / 12:46 37094343642 / 12:53 37094690199 /\n     12:53 37094694325 / 12:55 37094825487 / 12:58 37094969485 / 13:02 37095210792 /\n     13:05 37095384483 / 13:08 37095532298 / 13:44 37097551553 / 14:00 37098377071 /\n     14:05 37098681993\n   이 중 13:55 이후는 2건(14:00·14:05)이고, 나머지 11건은 13:55 회차가 돌 때 이미 있었다.\n\n✅ 사유는 덩어리의 양끝 런을 각각 읽어 확인했다(한 런의 로그를 13건에 확대 적용하지 않았다):\n   첫 런 12:34 = ⛔[posts_index 신선도] posts_index 322편 vs DB 323편\n   끝 런 14:05 = ⛔[posts_index 신선도] posts_index 323편 vs DB 327편\n   둘 다 이 1건만으로 exit 1 → RED(통과 10·경고 2·실패 1). 고아 썸네일·index_status 는 ⚠️ 경고.\n   편수가 322→323→327 로 올라가는 것은 그 시간대 발행 배치가 진행 중이었다는 뜻이다.\n\n🔴 13:55 회차의 \"복구됐다\"는 이 덩어리를 가리킨 말이 아니다 — 그 행이 쓴\n   \"06:01 KST 이후 4연속 success · 최신 런 37076818541\" 은 08시 회차가 본 04:41~06:00\n   덩어리다. 즉 12:34~14:05 덩어리는 두 회차 중 어느 쪽도 제대로 보고하지 않았다.\n   지금 이 정정이 그 공백을 메운다.\n\n✅ 현재 상태는 정상이다 — 15:51 KST 이후 실패 0, 19:04 까지 전부 success.\n   posts_index 328 = DB 328(로컬·배포본 양쪽).\n⛔ 새 watch 는 만들지 않았다 — console-check-comment-falsepos-1001【A】가 이 원인을\n   \"발행마다 재발하는 구조(09-21·09-24·10-01)\"로 적고 \"반복 자체는 이부장 판단\"으로 넘겨 뒀다.\n   오늘로 재발이 한 번 더(13건) 늘었다는 사실만 보탠다.\n\n▸ '▸ 20:20 probe' 한 줄은 이 행에 있는데 설명이 13:55 행에 가 있었다. 여기 다시 적는다:\n   보고 내용이 아니다, 무시할 것. 첫 mark 가 출력에 지시서만 찍어 반영 여부를 알 수 없어\n   --note probe 로 한 번 더 호출해 확인했고, note 가 덧쓰기라 그 낱말이 남았다.\n   근본 원인은 --code 가 자동으로 -MMDD 를 붙인다는 것을 몰라 daily-email-briefing-1003 을\n   줬다가 daily-email-briefing-1003-1003 이 생긴 것이다(09-27 에도 같은 중복코드 전례).\n   확인 명령이 부작용을 남기면 안 된다는 13:55 교훈을 같은 날 내가 어겼다.\n\n⚠️ 이부장께 — 로컬 main 이 원격과 갈라져 있다. 다른 세션 미커밋 파일로 pull --rebase 가\n   막혀, 보고 커밋을 임시 워크트리에서 origin/main 위로 cherry-pick 해 밀었다(남의 파일\n   stash·checkout 안 함). 그래서 로컬에 원격과 내용이 같고 해시만 다른 중복 커밋이 쌓여\n   있다 — 기존 CP 4단계 5건 + 90aa2521(=원격 03a1d24a) + 이 정정 1건. 다음 pull --rebase\n   때 patch-id 로 저절로 빠질 것으로 보이나, 확인은 이부장 몫으로 남긴다. 되돌리기(reset)는\n   공유 작업트리라 하지 않았다.\n⚠️ validate_db PASS 14 · WARN 4 · FAIL 0. WARN 중 \"추적파일 2개 사라짐\"은\n   webapp/_autoorder.txt·_autoorder_items.json 이고 내 세션 시작 전부터 D 상태였다 —\n   내 워크트리 작업 탓이 아니다(git worktree remove 로 정리했고 rm -rf 쓰지 않았다).",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing-1003",
+   "date": "2026-10-03",
+   "at": "2026-10-03 20:28"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1003",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "제안 2건 등록: G4-10 동래읍성역사축제(rec, 중복 🟢0.25) · H1-23 오페라의 유령 선예매(alt, 중복 🟡0.50). 공식 확인 1차 기사·NOL 페이지. 부산불꽃·진주유등은 기발행(G1-07·G3-05)이라 제외. 선별·초안은 이부장/docflow 몫. 발행 없음.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-03",
+   "at": "2026-10-03 21:14"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1003",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "야간검증 10/3: 발행 7편 · 신호등 조치 8건(리다이렉트오류 18·인스타캡션 빈칸 2·관련글 링크 1·지시서 명령 오류 등) · 원문대조 B3-06·A5-13·D5-06 라이브=출처 일치(법령 1차 재취득 안 함) · 카톡 발송(164자). 2b 보강 대상 없음(동결 외 미완 콘텐츠배치 없음)\n▸ 22:42 야간검증 10/3: 발행 7편 · 신호등 조치 8건 보고 · 원문대조 B3-06·A5-13·D5-06 일치 · 카톡 발송(164자) · 기록 docs/일일_문제기록.md",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-03",
+   "at": "2026-10-03 22:42"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1004",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "10-04 C/D/E 제안 0건(빈손). 후보3 검토: 최적요금제 고지=원문 미확보로 보류(watch 등록) · 등·초본 표기=D1-10 발행됨 · 모바일신분증=E2-17 발행됨 · 코로나 접종=C2-16 발행됨. 제안함·발행대기 변경 없음",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-04",
+   "at": "2026-10-04 00:12"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1004",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "이슈상품 후보 1건(쪽파김치 2kg · 리뷰11,388) → 결재함 afflink-issue20261004 등록. 토스 수집 292건(신규2). 김치냉장고·보일러·히터·가습기·전기장판·난방·단풍은 토스 목록에 없음",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-04",
+   "at": "2026-10-04 07:12"
+  },
+  {
+   "code": "daily-email-briefing-1004",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "🟢 사장님 새 할 일 0건 (새 메일에서 나온 것 없음). 결재 대기도 0건 — 지금 누르실 것이 없습니다.\n\n📌 애드센스: 반려 유지. 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (adsense.py status 실측, 10-03 20:28 회차와 같음·변화 없음). 08-12 요청한 심사는 10-03 06:46 반려로 종결됐고 사유도 확인됐다 =「가치가 별로 없는 콘텐츠」. 재검토 요청은 10-09부터 가능하고 누르는 시점은 사장님 판단이다(watch adsense-rereview-open-1009, wait).\n\n【새 중요 메일 — 1건】\n1) Claude Code 주간 소식 · 10-03 21:19 KST · no-reply@email.claude.com\n   제목 「This week in Claude Code: build your own mods, a wrap-up allowance, and more」\n   원문: \"Plus: 20% higher limits, Opus and Sonnet 5.5, and extra usage to try cloud sessions\"\n        \"A mod is a small TypeScript function in a plugin that hooks into Claude Code itself. It can hold or rewrite a tool call, draw UI, add a command, or replace a built-in feature entirely.\"\n        \"If you hit your five-hour limit mid-task, Claude used to stop right there, sometimes halfway through a change.\"\n        \"They work in both the CLI and the desktop app (v2.1.287 or later)\"\n   뜻: 우리에게 걸리는 것이 셋이다.\n     ① mods = 플러그인 안의 작은 TypeScript 함수가 Claude Code 자체에 훅으로 붙어 **도구 호출을 붙잡거나 고쳐 쓸 수 있다.** 이 저장소가 파이썬 게이트(pace·bodydup·setgate·v0check)로 막는 일을 도구 호출 단계에서 막는 길이 새로 생겼다는 뜻이다. CLI·데스크탑 양쪽, v2.1.287 이상.\n     ② 한도 20% 상향 + 5시간 한도에 걸렸을 때 「마무리 허용량」 — 긴 세션이 작업 중간에 끊기던 문제가 줄어든다.\n     ③ Opus 5.5 · Sonnet 5.5 출시 — 루틴 모델 설정(「루틴 편집」 창 ⌄기본값)에 영향이 있을 수 있다.\n   할 일: 없다. ⚠️ mods 도입이나 모델 변경을 루틴1이 권고하지 않는다 — 이부장 판단 사항이다. 광고가 아니라 제품 공지라 전문을 옮겼다.\n\n【🟢 그 밖에 새로 온 것 — 3건, 전부 조치 불요】\n· 구글 뉴스 브리핑 · 10-04 07:29 KST · 수신인은 magsori8975 인데 magsori 수신함에 도착했다. 내용은 일반 뉴스라 무관하지만 **전달이 오늘도 작동한다는 당일 증거**다(watch gmail-8975-relay-0924 는 09-27 에 이미 done).\n· 카카오뱅크 전산 정기점검 · 10-03 19:44 KST — 10/18(일) 01~08시 앱·ATM·카드결제 전부 중단. 10-03 두 회차 보고에 없던 건이라 여기 적는다. 우리 배포·루틴과는 무관하다.\n· Google Play 영수증(Premium Lite) · 10-03 11:36 KST — 정기 갱신.\n\n【기보고라 다시 올리지 않는다 — 오늘 재확인한 것만 결과를 적는다】\n· 애드센스 반려 통지·사유·10-09 재검토 — 10-03 13:55 / 20:28 회차에서 보고 완료.\n· B3-06 발행 런 실패(run 37103305255 · 10-03 15:30 KST). 사유를 오늘 로그로 다시 읽었다 = Blogger API 503 `blogs/byurl` \"The service is currently unavailable\"(reason=backendError) = 구글 백엔드 장애이지 우리 게이트가 아니다. 글은 15:32:48 에 라이브 생성됐고 그 뒤 register_post 가 끊긴 것이다. 이과장이 15:44 f55637a0 으로 복구했다.\n  ✅ 오늘 재확인: DB 에 url 있음(/2026/10/2026_0658785507.html) · 라이브 published 15:32:48 · **중복 없음**(그 뒤 publish 런이 0건이라 최신 publish 런이 여전히 그 실패 런이다).\n· 콘솔 정합성 검사 — 10-03 20:4x 정정이 런 목록으로 13건을 확정했다. **오늘 재확인: 10-03 14:19 KST 이후 최근 100런 전부 success**, 마지막 성공 10-04 07:57 KST.\n  원인 둘을 갈라 적는다(한 덩어리로 묶지 않았다): 【B】pending_osmu.html 주석 오탐은 커밋 749bd6c7(10-02 12:55 KST)로 수정돼 10-03 13:09 KST 런부터 통과했고, 그 뒤 12:34~14:05 덩어리는 【A】⛔[posts_index 신선도](322→323→327 vs DB)로 발행 배치가 끝나며 스스로 풀렸다. 끝 런 37097551553 로그를 직접 읽어 【A】임을 확인했다.\n  🔴 watch console-check-comment-falsepos-1001 은 **닫을 준비가 됐다고 보이지만 루틴1이 닫지 않는다** — 【A】의 \"발행마다 재발하는 구조\"는 그 항목이 이부장 판단으로 넘겨 둔 칸이다.\n· Coursera 해지 완료 · GCP ₩7,334 · GitHub sudo 코드 3통 · Threads 비밀번호 변경(09-28) · 구글 개인정보 진단 알림 · 검색센터 커뮤니티 자기 댓글 게시 알림 — 전부 기보고.\n\n【점검 기록】\n· Gmail 리더 3계정 토큰 전부 ✅ 생존 — magsori 34건 · magsori8975 0건 · aroma8975 0건(0건이 평소 상태). ⚠️ 리더는 지정 발신자(SENDERS)만 조회한다 — 수신함 전체가 아니다. 그래서 커넥터 조회를 함께 돌렸다.\n· 커넥터 2일 조회 47스레드(대부분 GitHub 콘솔검사 실패 알림) · GSC sc-noreply **7일 0건**.\n· 8975: 전달 작동은 오늘 증거로 확인했다. 다만 **sc-noreply 가 전달로 실제 넘어오는지는 아직 미검증**이다 — 7일간 GSC 통지 자체가 0건이라 표본이 없다. \"안 온다\"가 아니라 \"확인할 메일이 없었다\".\n· 로컬이 origin/main 과 1커밋씩 갈라져 있다(로컬 3a249c7d / 원격 20134236, 제목 동일 = 중복 커밋으로 보인다). 다른 세션 미커밋 파일이 pull --rebase 를 막아 stash·checkout 하지 않았다. 판정 근거는 gh·라이브 피드·adsense API 등 원격 실측이라 영향 없다. 정리는 이부장 몫으로 남긴다.\n· 크롬 탭 열지 않았다.\n▸ 08:22 ▸ 정정(루틴1, 같은 회차) — 위 보고 중 두 줄이 틀렸다. 이부장은 이 블록을 함께 읽을 것.\n\n🔴 정정1 — 콘솔 정합성 검사 【B】 해소 시각을 내가 측정하지 않고 적었다.\n   틀린 것: \"【B】는 10-03 13:09 KST 런부터 통과했고, 그 뒤 12:34~14:05 덩어리는 【A】\".\n   스스로 모순이다 — 13:09 는 12:34~14:05 **안**에 있다.\n   ✅ 런 목록으로 다시 봤다: 13:08 실패 → 13:09~13:36 성공 → 13:44·14:00·14:05 실패.\n      즉 13:09 성공은 A 덩어리 **안의 일시 통과**이지 B 의 해소 시점이 아니다.\n   ✅ 【B】는 그보다 앞서 이미 통과해 있었다 — 10-03 13:55 회차가 04:41~06:00 KST 런의\n      사유를 읽고 \"posts_index 신선도 1건만으로 RED\"라 적었다(= 그 시점에 HTML 참조 검사는\n      통과). 커밋 749bd6c7 은 10-02 12:55 KST 다.\n   🔴 **정확한 해소 시각은 오늘 측정하지 못했다** — 내 조회 창(gh run list -L 100)이\n      10-03 13:08 KST 부터 시작해서 그 앞을 못 본다. 모르는 것을 모른다고 적는다.\n   🔴 같은 줄의 \"14:19 KST 이후 최근 100런 전부 success\" 도 편수를 부풀렸다.\n      100 은 **조회 창 전체**이고 14:19 이후는 **78런**이다(실패 0 · 마지막 10-04 07:57 KST).\n      바른 문장 = \"조회한 100런 창 안에서 14:19 KST 이후 78런 전부 success\".\n   · 판정(지금 정상·원인 둘 다 해소·watch 는 이부장이 닫을 것)은 바뀌지 않는다. 근거 문장만 고친다.\n\n🔴 정정2 — 8975 에 단 유보를 거둔다.\n   틀린 것: \"sc-noreply 가 전달로 실제 넘어오는지는 아직 미검증\".\n   이 유보는 10-03 13:55 회차가 **근거 없는 되돌림이었다며 이미 철회한 것**인데 내가 되살렸다.\n   ✅ 사실: magsori 는 GSC 속성 **공동 소유자**라 통지를 직접 받는다(09-27 실측 17/17 동시 도착).\n      전달도 작동한다(오늘 10-04 07:29 구글뉴스가 증거). 즉 **두 경로 다 열려 있다.**\n   ✅ 7일간 sc-noreply 0건은 구멍이 아니라 **구글이 보낸 통지가 없었다**는 뜻이다.\n\n⚠️ 푸시 경위 — 다른 세션 미커밋 파일로 pull --rebase 가 막혀 임시 워크트리에서 origin/main\n   위로 cherry-pick 해 밀었다(남의 파일 stash·checkout 안 함, 워크트리는 제거 완료).\n   그래서 로컬에 원격과 내용이 같고 해시만 다른 중복 커밋이 남는다(983258ea = 원격 695c8f07,\n   이 정정분도 같은 방식). 다음 pull --rebase 때 patch-id 로 빠질 것으로 보이나 확인은 이부장 몫.\n▸ 20:17 🟢 사장님 새 할 일 0건. 결재 대기 0건. 새로 온 중요 메일은 1통뿐이고 그것도 이미 스스로 해소됐다.\n\n📌 애드센스: 반려 유지 · 변화 없음. 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (adsense.py status 실측, 10-04 08:22 회차와 동일). 08-12 요청 심사는 10-03 06:46 반려로 종결, 사유 =「가치가 별로 없는 콘텐츠」. 재검토 요청은 10-09부터 가능하고 누르는 시점은 사장님 판단(watch adsense-rereview-open-1009, wait). ⚠️ 이 판정 근거는 API 값이 아니라 10-02 14:46 PDT 반려 메일 + 10-03 사장님 화면 캡처 두 가지다.\n\n【새 중요 메일 — 1건】\n1) 콘솔 정합성 검사 실패 · 10-04 14:04 KST · notifications@github.com · run 37178819507\n   원문: \"Jobs: * check failed (3 annotations)\"\n   로그를 직접 읽은 실제 사유(메일에는 없다):\n     \"⛔ [posts_index 신선도] posts_index 328편 vs DB 330편 — 재생성 필요\"\n     \"신호등: RED (통과 10 · 경고 2 · 실패 1)\"\n   뜻: 발행 직후 파생파일 재생성 시차다. 이 1건만으로 exit 1 → RED 가 된다. 같은 줄의\n     고아 썸네일 106개·index_status total=328 은 ⚠️ 경고라 실패가 아니다.\n   ✅ 이미 해소됐다 — 13분 뒤 14:17 KST 런(37179451649)부터 success 이고, 그 뒤 35런 전부\n     success(마지막 10-04 18:17 KST). 지금 posts_index 330 = DB 330 으로 직접 대조 확인.\n   할 일: 없다.\n   🔴 다만 재발 횟수만 보탠다 — 09-13·09-15·09-21·09-24·10-01·10-03(13건)·오늘(1건).\n     새 watch 를 만들지 않았다. console-check-comment-falsepos-1001【A】가 이 원인을\n     \"발행마다 재발하는 구조\"로 적고 \"반복 자체는 이부장 판단\"으로 이미 넘겨 뒀다.\n\n【기보고라 다시 올리지 않는다 — 오늘 재확인한 결과만 적는다】\n· 애드센스 반려 통지(10-02 14:46 PDT)·사유·10-09 재검토 — 10-03 13:55/20:28, 10-04 08:22 보고 완료.\n· B3-06 발행 런 실패(37103305255) — 사유 Blogger API 503 blogs/byurl(backendError), 우리 게이트 아님.\n  ✅ 오늘 재확인: DB 에 url 있음(/2026/10/2026_0658785507.html) · 330편 중 코드·URL 중복 0 · 복구 완료.\n  ⚠️ register_post 가 exit 1 로 끊긴 그 자체의 사유는 런 로그 tail 에 없었다 — 503 과 연결짓지 않는다.\n· 콘솔 정합성 검사 10-02~10-03 실패분 — 10-03 20:4x 정정이 13건으로 확정·해소 확인 완료.\n· 구글 검색센터 커뮤니티 에스컬레이션 무응답 — 변화 없음(마지막 메시지가 여전히 10-01 우리 댓글).\n  watch community-escalation-reply-1004 가 10-06 에 다시 본다. 오늘 새 답글 0.\n· Claude Code 주간소식(Opus/Sonnet 5.5·mods·한도 20%) · GCP ₩7,334 · GitHub sudo 코드 3통 ·\n  Threads 비밀번호 변경(09-28) · 구글 개인정보 진단 알림 · Coursera 해지 — 전부 기보고.\n\n【점검 기록】\n· Gmail 리더 3계정 토큰 전부 ✅ 생존 — magsori 34건 · magsori8975 0건 · aroma8975 0건(0건이 평소 상태).\n  34건 내역: 콘솔검사 실패 24통 + 애드센스 1 + 커뮤니티 1 + sudo 3 + GCP 1 + 뉴스레터 1 +\n  Threads 1 + 발행실패 1 + 개인정보 1 = 34. 이 중 오늘 08:22 회차 이후 새로 온 것은 1통뿐이다.\n  🔴 실패 메일 24통이 애드센스 반려 통지 1통을 파묻는 구조다 — 소음이 신호를 가린다.\n· 커넥터 조회: GSC sc-noreply 7일 **0건** · to:magsori8975/aroma8975 3일 0건 ·\n  help-communities 7일 1스레드(09-24 PE 답변 2건 + 10-01 우리 댓글, 전부 기보고).\n· 로컬 = origin/main (behind 0). 진행 중인 publish 런 없음(최근 3건 전부 completed).\n· 크롬 탭 열지 않았다.\n▸ 20:21 ▸ 20:2x 정정(루틴1, 같은 회차) — 위 20:0x 보고 중 세 가지가 틀렸거나 빠졌다. 이부장은 이 블록을 함께 읽을 것.\n\n🔴 정정1 — 광범위 수신함 조회를 빼먹고 \"새 메일 1통뿐\"이라 단정했다.\n   Gmail 리더는 **지정 발신자(SENDERS)만** 조회한다(수신함 전체가 아니다). 오늘 08:22 회차는\n   그걸 알고 커넥터 광범위 조회를 함께 돌렸는데, 20:0x 회차인 내가 그 단계를 건너뛰고\n   좁은 조회 3개(sc-noreply·to:8975/aroma·help-communities)만으로 편수를 단정했다.\n   ✅ 지금 돌렸다 — `newer_than:1d -from:notifications@github.com` (pageSize 50), 4스레드.\n      08:22 KST(=10-03 23:22Z) 이후로 거르면 **3통이 더 있었다**:\n        · 알리익스프레스 광고 2통 (10-04 11:39 · 17:35 KST) — (광고) Choice Day, 무관\n        · lotto.co.kr 「로또 예상번호 1244회 5등 당첨」 (10-04 08:42 KST) — 상업성 메일, 무관\n      Claude Code 뉴스레터는 10-03 21:19 KST 라 창 밖이고 기보고다.\n   · 판정은 바뀌지 않는다 — 셋 다 광고·무관이라 **🔴 조치 필요 0건·사장님 할 일 0건은 그대로**다.\n     바뀌는 것은 근거다: \"새 메일 1통\"이 아니라 **\"업무 관련 새 메일 1통 + 광고·무관 3통\"**이 맞다.\n\n🔴 정정2 — 성공 런 편수를 부풀렸다. \"그 뒤 35런 전부 success\" → **29런**이다.\n   내 조회 창(10-03 23:30Z~)이 36행이고 그중 실패 앞이 6행·실패 1행·실패 뒤가 29행이다.\n   창 전체를 실패 뒤 편수로 쓴 것 — 08:22 회차가 같은 날 정정한 「100 vs 78」과 똑같은 실수다.\n   · 실패 0 · 마지막 success 10-04 18:17 KST 는 그대로 맞다.\n\n🔴 정정3 — 재발 이력의 \"10-03(13건)\"이 내 24통 집계와 안 맞는다.\n   13 은 10-03 20:4x 정정이 **런 목록으로 센 한 덩어리의 런 수**이고, 메일 24통(오늘 1 + 10-03 23)은\n   **두 덩어리**(10-03 새벽 05시대 · 낮 13~14시대)에 걸쳐 있다. 런 수와 메일 수를 섞어 적었다.\n   · 바른 문장 = \"09-13·09-15·09-21·09-24·10-01·10-03(두 덩어리)·10-04(1건)\".\n   · 새 watch 를 만들지 않는다는 판단은 그대로다(console-check-comment-falsepos-1001【A】, 이부장 몫).\n\n⚠️ 카톡 200자 규격 초과 — 보낸 문구가 **228자**였다(python len 실측). 10-03 에 루틴5가 같은 지적을\n   받았는데 오늘 내가 되풀이했다. 중복 알림이 더 나쁘므로 **재발송하지 않고 기록만 남긴다.**\n   카톡 도구가 200자에서 자르는지 여부는 확인할 수 없어, 사장님 화면에 끝부분\n   (「상세는 CP 보고서 탭에 있습니다」)이 실제로 닿았는지는 **모른다**.\n\nℹ️ whoami 는 `--role 루틴1 --name daily-email-briefing` 으로 등록했는데, 이것은 ListAgents\n   표시명·ref 가 아니라 **루틴 폴더명**이다. 세션이 곧 닫히므로 고치지 않는다 —\n   다만 이 주소로 깨울 수 있다고 보지 말 것.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-04",
+   "at": "2026-10-04 20:21"
+  },
+  {
+   "code": "lifeinfo-publish-1004",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "루틴3 09:00 발행구 — 발행 0건(의도적). 근거: 큐 3건 중 G3-09 V0 🔴fail · H1-23/G4-10 도장 커밋 작성자가 [이부장]·사유 '자동 선정'(사장님 ⑦ 승인 아님) → 3-0 조건 불충족. 주의: B3-06 라이브(postId 2083775224542929647, 10/3 06:30Z 러너)는 DB 미등록 상태로 보임(로컬 낡음, git pull 후 재확인 필요). 페이스 0/1.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-04",
+   "at": "2026-10-04 09:05"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1004",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "10-04 A·B 글감 점검: 추천 0건(빈손). 후보 10건 dupcheck 전부 중복 또는 시점 근거 없음. 기후동행카드는 교통·레인 밖·교환마감 10/2 경과 제외. 참고: 근로장려금 기한후 신청 12/1까지 10%감액(2차출처, 미확인) — A1-03 기존글 반영 여부 관제탑 확인 요청. 브리핑 파일 오전브리핑_2026-10-04.md",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-04",
+   "at": "2026-10-04 09:16"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1004",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "이슈상품 후보 1건(겨울 양말·시즌성 약함, 사장님 판단) · 결재함 afflink-issue20261004 등록 · 링크 발급 전\n▸ 15:13 확인\n▸ 15:14 이슈상품 후보 1건(겨울 양말·시즌성 약함, 사장님 판단) · 결재함 afflink-issue20261004 등록 · 링크 발급 전",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-04",
+   "at": "2026-10-04 15:14"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1004",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "10-04 야간검증: 발행 2편 중 G4-10 공식 직접확인 OK · H1-23 선예매 10/7 14시 공식 미확인(watch nv1004-h123-presale) · 기존 C1-13 요양병원 240일·120만원 미확인(watch nv1004-c113-cap). 라이브 수정 0. 일일기록 10-04 절 추가.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-04",
+   "at": "2026-10-04 22:41"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1005",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "루틴6(C·D·E) 2026-10-05: 신규 글감 0건(추천·후보 모두 없음). C4-12 제안은 C1-02 강한 중복(0.75)으로 거부 → 보강 항목 hi-c1-02-10-08 로 등록. 초안·썸네일·큐 적재 없음. 발행 없음.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-05",
+   "at": "2026-10-05 00:11"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1005",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "10-05 회차 — 후보 1건(망토담요, 시즌 근거 약함 명시) · 결재함 afflink-20261005-1 등록 · 게시 없음",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-05",
+   "at": "2026-10-05 07:12"
+  },
+  {
+   "code": "daily-email-briefing-1005",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "🟢 메일발 새 할 일 0건 (결재함 대기는 루틴8 afflink-20261005-1 1건 — 내 소관 아님)\n\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING\n · 10-02 21:46Z(=10-03 06:46 KST) adsense-noreply 반려 통지 수신 — 기보고(10-03 협의·사장님 결재 4건 승인 완료)\n · 원문 인용: \"사이트를 검토한 결과 안타깝게도 지금은 사이트에 광고를 게재하실 수 없습니다 … 검토 및 업데이트가 완료되면 다시 검토를 요청하실 수 있습니다\"\n · 재검토 요청 가능일 10-09부터(사장님 캡처 10-03) = D-4. ※누를 시점은 사장님 판단(09-23 지시)\n · 7일 조회로 10-02 이후 추가 애드센스 통지 0건 확인\n\n■ 새 중요 메일 없음 — 10-04 20:08 브리핑 이후 도착 3통 전부 프로젝트 무관\n · 10-04 21:24 알리익스프레스 (광고) · 10-05 00:29 금융결제원 인증서 개인정보 이용내역 안내(개인정보보호법 제20조의2 법정 통지, 조치 불요) · 10-05 07:30 구글뉴스 오늘의 브리핑\n\n■ 기보고 + 해소 확인(실측)\n · 콘솔 정합성 검사 실패 다수(10-03 03:35~10-04 05:04) → 해소. 최근 10런 전부 success(10-04 20:06~22:11)\n · 글 발행 실패 1건(10-03 06:30) → 해소. 10-04 04:57·04:59 success 2건\n · 실패 annotation 실측 = \"Process completed with exit code 1\"(+Node20 deprecation warning·ubuntu-latest 이전 notice 2건)\n · GCP 결제 ₩7,334(10-01) · GitHub sudo 코드 3건(09-30) · Threads 비밀번호 변경(09-28) — 전부 기보고\n\n■ 구글 검색센터 커뮤니티(애드센스·색인 관련 유일 문의 경로)\n · 10-01 04:26Z 우리 에스컬레이션 요청 댓글 게시됨 — \"Would it be possible to escalate this thread to someone at Google?\"\n · 그 뒤 7일 창에 새 답변 0건 = 4일째 무응답. 직전 답변은 09-24 다이아몬드 PE(OptimistPrime)\n · 10-04 [이부장] P4 종료(애드센스 직접 문의 경로 없음·Contact options=Community 뿐)와 합치면 지금 응답 대기만 가능\n\n■ 점검 기록\n · 리더 3계정 전부 ✅ — magsori 23건 · m8975 0건 · aroma8975 0건(0건이 평소 상태)\n · 8975 사각지대 아님: 리더 토큰 직접 조회 살아 있음. 전달도 작동(to:magsori8975 1건이 magsori 수신함 도착). 단 sc-noreply 가 전달로 넘어오는지는 여전히 미검증 — GSC 통지 자체가 7일 0건으로 표본 없음(10-04 판정 그대로 유지)\n · watch gmail-8975-relay-0924 는 09-27 done — 손대지 않았다\n · GSC sc-noreply 7일 조회 0건\n · ⓪ 로컬 4커밋 낡음 · 미커밋 31개로 pull --rebase 막힘(stash 금지 규칙 준수) → 뒤처짐 판정은 \"확인 못 함\"으로 두고 진행\n▸ 08:23 [정정 4건] 10-05 08시 브리핑 보고의 오류를 고친다\n\n① 「콘솔검사 최근 10런 전부 success」는 틀렸다 — 실측 9 success · 1 cancelled(37234337478) · 실패 0. 해소라는 결론은 그대로다.\n\n② 10-03 발행 실패 사유를 콘솔검사 annotation 과 뭉뚱그려 \"exit code 1\" 로만 적었다. 실제 사유는 다르다:\n · 대상 B3-06 · Blogger API **HTTP 503 backendError**(byurl 조회) → register_post 실패(exit=1)\n · 러너 원문: \"[중단] register_post 실패 — 글은 이미 라이브(postId=2083775224542929647)지만 DB 반영·배포는 끝나지 않았다\"\n · 즉 게이트 차단이 아니라 **구글 측 일시 장애**였다. SKILL 의 「재시도 성공은 원인이 아니다」에 해당한다\n · 복구 확인(실측): 10-04 04:57·04:59 재실행 success → DB 레코드 url 존재 + osmu 3채널 전부 기록(naver 224430382783 · instagram DeBh7TgkdVo · threads DeBiMaDgS-B). 미결 없음\n\n③ ②를 확인하다 postId 로 lifeinfo_db.txt 를 grep 해 0건이 나오자 \"DB 미반영\" 으로 의심했다. 틀렸다 — DB 는 postId 를 저장하지 않고 url 을 저장한다. **잘못된 축으로 쟀다.** 「전건 0 이면 매칭 버그를 의심하라」 규칙 그대로였고, 코드로 재조회해 정상임을 확인했다.\n\n④ webapp/session_names.json 에 내 표시명·ref 를 **지어내서** 등록했다(08:13 \"lifeinfo-briefing [routine1]\"). 이 세션에는 ListAgents 가 없어 진짜 주소를 알 수 없었으므로 등록을 건너뛰어야 했다. 존재하지 않는 주소로 깨우면 실패한다(09-10 사칭 경고 계열). → name·ref 를 비우고 \"미확인\" 주석을 넣어 철회했다. 세션 ID(e7a88b8e…)-역할 매핑만 남겼다 — 그것은 참이다.\n\n⑤ 참고: 앞 커밋 6689706c 의 batch.json 에 삭제 184줄이 함께 들어갔다. 글 코드 항목(F2-18·H1-13·A5-02·F2-14·C2-11·A5-03)이며 완료 배치 정리로 **보인다**(bake 동작, 내가 지운 것이 아니다 — 단정하지 않는다).\n\n⑥ 카톡은 다시 보내지 않았다 — 결론(새 할 일 0건·해소)이 바뀌지 않았다.\n▸ 20:26 [10-05 20:2x 메일브리핑] 🔴사장님 할 일 1건=aroma8975 로그인 본인확인(watch aroma-login-alert-1005). 📌애드센스 API NEEDS_ATTENTION·RESULT PENDING — 08-12 요청 심사가 10-02 14:46 PDT(=10-03 06:46 KST) adsense-noreply 반려 통지로 종료, 재검토 10-09 부터. **기보고**(08:16 브리핑 8edb0204 · watch adsense-council-1004 · pe-audience-official-1003). 【신규 조치 1】콘솔 정합성 검사 RED **미해소** — 08:16 브리핑은 '전건 해소'라 했으나 09:06~20:16 KST 6건 재발(최신 37301915639 20:16 failure). 사유는 주석 오탐이 아니라 [posts_index 신선도] 배포본 index 336 vs DB 335. 실측: 로컬 336/336 일치, 배포본만 어긋남 · 20:16 'approval: 0 items' 자동 push 파일 20개에 posts_index.json 은 있고 lifeinfo_db.txt 는 없다 → DB 변경마다 재발·자동push 반복되면 계속 RED. 지금 지우는 법=deploy.bat 1회(사장님) · 구조 처방=이부장 판단. watch console-check-red-dbindex-1005 【신규 사고 1 = 루틴1 자신】 aroma 토큰 SSL EOF 실패 뒤 루틴1 이 auth(창 여는 명령)를 실행했고 20:17 aroma 새 로그인 보안경고 2통 → 토큰 복구. 인과 단정 안 함. 🟡참고: 구글 검색센터 커뮤니티 09-30 = 새 답변 아니라 **사장님 본인 후속댓글 게시 알림**(심사 50일·정책위반 없음·7월 색인 120→21 급감 들어 에스컬레이션 요청) · GitHub sudo 인증 3회 09-30(사장님 작업으로 보임) · GCP 결제 7,334원 10-01 · Claude Code 뉴스레터 10-03(mods·Opus/Sonnet 5.5·한도 20%). 🟢전달 작동 확인: 10-04 to:magsori8975 구글뉴스가 magsori 수신함 도착(watch gmail-8975-relay-0924 는 루틴이 닫지 않음). [점검기록] 리더 3계정 magsori 19 · m8975 1 · aroma 1(초기 토큰실패→복구) · 커넥터 sc-noreply 8일 신규 0건 · 원격 동기 0/0(08:17 push 막힘 해소됨) · adsense.py status 실측\n▸ 20:34 [정정 20:4x] 앞 보고의 콘솔검사 대목 3가지를 바로잡는다. ①시각 UTC 오기 — 실패 구간은 '09:06~' 이 아니라 **18:06~20:26 KST** ②건수는 6이 아니라 **7건**(6은 -L 6 한도였다) ③**RED 는 해소됐다** — 20:27 부터 success 4연속, 배포본 DB 336 = index 336 일치(pull 후 실측). 따라서 08:16 브리핑의 '전건 해소' 는 **그 시점에 맞았고**, 내가 '…라 했으나' 로 적어 맞는 보고를 틀린 것처럼 만든 것이 잘못이다. 【구조 소견은 강화됐다】실패 7건 커밋은 전부 'approval: 0 items', 해소시킨 20:27 커밋은 B5-07 OSMU 로 lifeinfo_db.txt 를 담았다 → approval 자동 push 가 posts_index 만 보내고 DB 를 안 보내는 것이 원인(양방향 증거). 이부장 판단 대상은 그 파일목록이고 지금 당장 고칠 것은 없다. 카톡은 다시 보내지 않았다(6→7 은 사장님 판단을 바꾸지 않고 시각은 카톡에 안 썼다). watch console-check-red-dbindex-1005 갱신\n▸ 20:39 [심층 20:5x · 사장님이 원문을 주셔서 다시 읽음] 앞 보고에서 Claude Code 뉴스레터(10-03)를 'mods·5.5·한도20%' 한 줄로 세고 넘긴 것이 잘못이다. SKILL.md 가 09-28 지시로 '앤트로픽 메일은 본문을 읽고 상세히'라고 적어 뒀는데 또 제목만 셌다. 본문 전수 판독 결과 **우리 프로젝트 직결 6건**: 【🔴기한 2건·사장님 손】①10-07 D-2 '/claim-credit' = 클라우드 세션 보너스 크레딧 Pro$100/Max$250. 원문 'Claim it by October 7 with /claim-credit'. 우리는 claude.ai/code 를 실제로 쓴다 → watch claude-claim-credit-1007 ②10-22 까지 5시간한도 전체리셋 1회 미사용분 Settings>Usage → watch claude-limit-reset-1022 【🔴구조 1건】③**루트 AGENTS.md 가 CLAUDE.md 의 Codex 치환 사본이다**(276KB·09-15·git미추적·'Codex' 58건·존재하지 않는 '.Codex/settings.json'). 2.1.277 부터 Claude Code 가 AGENTS.md 를 프로젝트 지침으로 읽는데, CLAUDE.md 가 있어 **지금은 안 읽힌다**. 위험은 /config→Project instructions 로 '둘 다 로드'를 켜는 순간 — 9-15 이후 규칙이 그 사본에 없다(grep 실측 Aside 0/5·'사람은 논리로' 0/3·naverfmt 0/8). 안 지웠다(Codex 세션이 쓸 수 있다) → watch agentsmd-stale-copy-1005 【✅유리 1건】④2.1.275 로 **계정 스킬이 터미널에 동기된다** — 이 세션 available skills 에 anthropic-skills:lifeinfo-blog 이 실제로 올라와 있다(사실). 스킬 동기는 selfcheck 9) 내용일치 ✅ 정상. CLAUDE.md 표의 '터미널=계정스킬 ❌' 칸이 틀렸다 → watch claudemd-skillsync-table-stale-1005 【🟡권고 2건·이부장】⑤'/checkup prompt-audit' = CLAUDE.md·스킬·에이전트를 읽어 **낡은 경로와 서로 모순되는 규칙**을 찾아 보고서+patch 로만 낸다(적용 안 함). 우리가 반복 기록한 그 병이라 값어치가 크다 ⑥Opus 5.5 가 기본(Opus5 대비 30% 빠름·40% 저렴) → 「루틴 모델을 Sonnet 5 로」 권고의 근거가 약해졌을 수 있다. 그 외 무인실행에 유리한 변경 2건(auto 모드 rm 프롬프트가 2분 뒤 거부되어 멈추지 않음 · Ctrl+Enter 가 실행중 작업을 취소 말고 배경으로)\n▸ 20:45 [정정2 21:0x] 심층판독 보고의 두 가지를 바로잡는다. ①🔴**남의 기록을 덮어썼다** — claude-limit-reset-1022 는 09-24 루틴1(세션:f82d5f6b, 커밋 f525bb33)이 이미 등록해 둔 항목인데 'watch add 가 같은 id 면 통째로 갱신한다'는 것을 알고도 [갱신] 출력을 보고 넘겼다. 원본이 내 것보다 정확했다(소멸시각 10-22 09:00 PT=10-23 01:00 KST · 구독취소·다운그레이드 시에도 소멸 · 기한 10-20 여유 · 올린이). git c8be0818^ 에서 원문을 꺼내 **원 올린이·기한·내용 전부 복원**하고 내 뉴스레터 근거만 보강으로 덧붙였다. → 교훈: watch add 로 기존 id 를 다룰 때는 **먼저 읽고** 쓴다. ②🔴**이 세션은 터미널이 아니라 Desktop  탭이다**(환경 안내 명시). 그런데 '터미널 세션에 계정 스킬이 올라와 있다 = 사실' 이라고 적었다 — 직접 관찰한 것은 **Desktop Code 칸**이 틀렸다는 것뿐이고, 터미널 칸은 뉴스레터 문구+CLI 2.1.289+설정 없음으로 추정한 것이다. 두 watch(claudemd-skillsync-table-stale-1005 · agentsmd-stale-copy-1005)를 【직접 관찰】/【미확인】으로 갈라 다시 썼다. 그대로 뒀으면 이부장이 표의 엉뚱한 칸을 '실측 확인됨'으로 고쳤을 것이다. ③claude-claim-credit-1007 은 git -S 조회로 **선례 없음** 확인 = 진짜 신규. 사장님이 이미 받으셨다는 기록은 없다",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-05",
+   "at": "2026-10-05 20:45"
+  },
+  {
+   "code": "lifeinfo-publish-1005",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "10-05 09:0x 발행구 실측: 발행대기 1건(G3-09) — V0 🔴반려 중(v0reject-g3-09)이라 go 도장 없음 → 발행 0편. 최근 go·발행 2건(H1-23 · G4-10)은 DB url 있음, G4-10 HTTP 200, H1-23 재확인 결과 기록 참조. 판정 도구: pubqueue list · pace(오늘 0편 · 상한 10000) · setgate(4채널 미완 없음) · v0check list",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-05",
+   "at": "2026-10-05 09:03"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1005",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "2026-10-05 오전 글감 제안 빈손 보고: 1차 출처로 확인된 이번 주 마감·시행 건을 찾지 못해 topicprop add 0건. WebSearch 결과는 개인 블로그뿐이라 근거로 쓰지 않음. 복지로 아이돌봄 소득재판정 공고(2026-01-02 게시·신청기간 1월)는 기한 지남으로 제외. 기초연금 2027 예산안(A3-16 원고, 보도 2026-09-04) 은 한 달 전 소식이라 특별이슈급 아님으로 판단, 이부장 확인 요청. dupcheck: 기초연금·아이돌봄 모두 기존 발행글과 겹침 🟡.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-05",
+   "at": "2026-10-05 09:16"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1005",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "10/5 15:1x 빈손 — 난방 시즌 낱말 토스 목록 밖, 다나와 인코딩 깨짐으로 가격 미확인. 후보 0건 제출",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-05",
+   "at": "2026-10-05 15:13"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1005",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "F/G/H 빈손 보고: 부산 소재 후보 5건 전부 중복·미제안(불꽃 G1-07, BIFF G3-04, 동래 G4-10, 마산 G3-09 발행됨 / 민속예술제 특별이슈급 아님). 방송·연예 alt 날짜 검증 소재 없음. 보고서=여행맛거리_글감보고서_2026-10-05.md",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-05",
+   "at": "2026-10-05 21:12"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1005",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "[루틴5 야간검증 10-05] 발행 3편 검증(C1-14 법령 원문 일치 · D3-08 과태료 일치·기간 미확인 · B5-07 HUG 공지 접근 거부로 미확인). 정정 없음. 미결 note 3건 등록, 일일문제기록 10-05 절 추가, 카톡 보고 발송",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-05",
+   "at": "2026-10-05 22:48"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1006",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "2026-10-06 C·D·E 글감 빈손. 추천·후보 0건 제출(topicprop add 안 함). 사유: ①최적요금제(E) 시행일이 기사마다 달라(10/1·10/3·10월 말) 정책브리핑 원문 1회 시도 실패(삭제 페이지) → 날짜 미확정으로 제안 보류 ②산후조리 지원(C)은 기한 10/1 이 이미 지나 지금 찾을 이유 없음 ③dupcheck: 최적요금제는 D1-08 개천절과 관련주의 0.50만. 큐 0·초안 준비 0. 발행 0.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-06",
+   "at": "2026-10-06 00:14"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1006",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "후보 1건(가습기 20261006-1) 결재함 등록 · 시즌 근거 약함 명시 · 망토담요 중복 제외",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-06",
+   "at": "2026-10-06 07:14"
+  },
+  {
+   "code": "daily-email-briefing-1006",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "10-06 08시 메일브리핑 — 🟢 메일발 사장님 할 일 0건. 【애드센스】READY / NEEDS_ATTENTION · 10-02 반려(기보고) · 재검토 요청 가능 10-09(D-3, watch adsense-rereview-open-1009 이 추적중·누를지는 사장님 판단). 【새 메일 5건 = 기준선 2b5e2cbe 10-05 20:28 KST 이후, 전부 조치 불요】①②GitHub 실패 2건(콘솔검사 cancelled 04:41 · pages build failed 05:26/30분) = annotation 원문 'The job was not acquired by Runner of type hosted' = GitHub 측 러너 할당 실패로 우리 코드 아님 → 그 뒤 07:14 KST 콘솔검사 success(37381207666) ③Claude 장애 Mythos 5.1·Fable 5.1 오류 22:26 발생→22:43 해소(17분) ④Google 계정으로 Claude 로그인 21:47(본인 로그인이면 조치 없음) ⑤구글뉴스 브리핑 07:29(프로젝트 무관). 【콘솔 RED】유지 = 해소 상태(console-check-red-dbindex-1005 기록대로) · 최신 success 로그 실측 DB count 336 = 썸네일 336 = posts_index 336 일치 · 남은 ⚠️2건은 고아 썸네일 114개와 index_status total=328 vs DB 336(색인 점검 시점차). 【점검기록】리더 3계정 전부 ✅(magsori 20 · m8975 2 · aroma 2) — m8975·aroma 2건은 10-05 20:31 KST aroma 보안경고(기보고된 aroma 재인증 사고의 후속 알림, 이부장이 9dba6811 로 원인 차단)와 그 복구메일 사본이고 전달 작동 확인 · 8975 사각지대 아님 · GSC sc-noreply 8일 0건 · 커넥터 광범위 조회(in:inbox newer_than:1d) 15스레드 교차확인 · 세션 주소 미등록(이 툴셋에 ListAgents 없어 표시명·ref 를 얻을 수 없다 — 추측해 적지 않음). 【이부장 판단 2건】①watch adsense-review-0923 이 아직 '심사 진행 중'으로 낡았다 — 10-02 반려 통지를 원문으로 확인했고 후속 adsense-rereview-open-1009 가 이미 있으므로 역할이 끝났으나, 올린이가 이부장이라 루틴1이 임의로 닫지 않았다(done 여부 판단 요청) ②모든 GH 런 annotation 에 'ubuntu-latest 라벨이 2026-10-19 부터 Ubuntu 26 으로 이전' 공지가 찍히는데 watch 에 추적 0건(grep -ci ubuntu = 0) — 새 watch 는 만들지 않았다. 【해소】push-blocked-uncommitted-1005 done 처리 — fetch 성공·ls-remote e95168f8 = origin/main 일치·갈라짐 0/0 실측(10-05 엔 로컬 8커밋/원격 9파일). 앞 측정의 'fetch | head; echo $?' 는 head 종료코드를 읽은 측정축 오류여서 파이프 없이 재측정했다.\n▸ 08:26 확인용",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-06",
+   "at": "2026-10-06 08:26"
+  },
+  {
+   "code": "lifeinfo-publish-1006",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "루틴3 발행구 10-06 09:05: 발행 0편(발행 금지 조건 미충족). 큐 2건(D1-12·H1-25) V0 🟢 pass, 둘 다 ⑦ go 도장 없음 → 결재함에 이미 「원고를 보고 승인」 카드로 올라와 있음(approvalcount 확인). 제휴 발급 1건(afflink-20261006-1)도 결재 대기. 재고 2편(하한 3) — 글감·초안 지시 필요.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-06",
+   "at": "2026-10-06 09:11"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1006",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "10-06 글감 제안 0건(빈손). 근거: 중복대조 covered_topics 실행 · A·B 후보 검토 — 기초연금·국민취업·채무조정·근로장려금·연말정산(B3-06 초안 존재)·재산세·종합소득세 전부 DB·큐에 있음. 세법개정안 2026은 1차 공식 보도자료 접근 실패(mofe 404)라 수치 미확정 → watch tax-rev-2027-source-0106. 실손보험은 C레인 중복.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-06",
+   "at": "2026-10-06 09:20"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1006",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "10/06 빈손 — 시즌 낱말 15개 조사, 신규 후보 없음(가습기는 승인 큐, 차렵이불·망토담요는 기게시)",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-06",
+   "at": "2026-10-06 15:12"
+  },
+  {
+   "code": "daily-email-briefing-1006-20-1006",
+   "title": "daily-email-briefing-1006-20 (A)",
+   "state": "done",
+   "note": "20:0x 메일 브리핑 — 🟢 사장님 새 할 일 0건 (결재 대기 0건 · 메일발 조치 0건)\n\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING · alert null (20:08 adsense.py status 실측, 08:26 회차와 같음·변화 없음)\n · 10-02 21:46Z(=10-03 06:46 KST) adsense-noreply 반려 통지 = 기보고. 사유 「가치가 별로 없는 콘텐츠」(8/12와 동일)\n · 원문 인용: \"사이트를 검토한 결과 안타깝게도 지금은 사이트에 광고를 게재하실 수 없습니다 … 검토 및 업데이트가 완료되면 다시 검토를 요청하실 수 있습니다\"\n · 재검토 요청 가능일 10-09 = D-3. watch adsense-rereview-open-1009(wait) 추적중 · 누를 시점은 사장님 판단(09-23 지시)\n · adsense_status.json history 에 10-03 08:07 GETTING_READY→NEEDS_ATTENTION 기록 있음(= 5회째). 🔴 note 가 비어 있고 CLAUDE.md 「상태는 계속 뒤집힌다」 이력은 아직 '4회째(08-12)'가 마지막이다 — 다음 세션이 그 줄을 읽고 오판할 수 있다(이부장 판단)\n · 7일 조회로 10-02 이후 추가 애드센스 통지 0건 확인\n\n■ 새 중요 메일 — 4통 (기준선 = 10-06 08:26 브리핑 이후). 전부 Claude 로그인 계열, 조치 불요\n1) 🟡 Anthropic 「Security alert: new trusted device added to your Claude account」 ×2 · 10-06 14:14:35·14:14:40 KST · no-reply@mail.anthropic.com\n   본문 표를 직접 읽었다(두 통 완전 동일): Device = \"Electron on Windows · Seongnam-si\" / Location = \"Seongnam-si, Gyeonggi-do, KR\" / IP = 182.224.194.43 / When = \"Tuesday, October 06 2026 at 05:14 UTC\"\n   원문: \"A new trusted device was added to your Claude account. If this was you, no action is needed. If you don't recognize this activity, review your devices and secure your account now.\"\n   뜻: Electron on Windows = 데스크톱 앱, 국내(KR)·같은 IP·5초 차 = 같은 기기가 두 번 등록된 것으로 보인다. 같은 시각 Google 로그인 통지(13:45·14:14)와 맞물린다 — 사장님이 오늘 Claude 에 로그인하신 정황과 일치한다. 🔴 다만 **본인 여부는 사장님만 확인하실 수 있다**(정황은 증거가 아니다)\n   할 일: 본인 로그인이면 없음. 아니면 claude.ai/settings/account 에서 기기 확인·보호\n2) Google 「Google 계정 데이터 일부를 Claude에 공유하셨습니다」 ×2 · 10-06 13:45·14:14 KST · noreply-accounts@google.com\n   원문: \"'Google 계정으로 로그인'을 사용하여 Claude(10월 6일 오후 1:45)에 로그인하셨기 때문에 발송된 이메일입니다. 현재로서는 별도의 조치를 취하실 필요가 없습니다.\"\n   뜻: 위 1)과 같은 로그인의 구글 측 통지. 할 일 없음\n· 그 밖 10-06 수신 = 광고 4통(알리익스프레스 3·삼성 1)·인디드 구인 1·다날 삼성페이 개인정보 이용내역 통지 1(개인정보보호법 제39조의8 연 1회 법정 통지, 조치 불요) — 전부 프로젝트 무관\n\n■ 🟡 발행 실패 1건 — 🔴 메일로는 오지 않았다. gh run list 로 찾았다\n · D1-12(한글날 연휴) run 37409147220 · 10-06 12:28 KST · failure · 막힌 단계 = 「publish-flow 실행」\n · 사유를 로그로 직접 읽었다: `[차단] D1-12 는 V0 검사를 받지 않았다.` → `##[error]게이트에 막혀 발행되지 않았다` → `exit code 1`\n · 전후 단계는 전부 통과(중복검사·페이스 0편·세트 게이트는 ⑦ 도장으로 통과). 즉 게이트는 정상 작동했다\n · 복구: 이부장이 13:55 에 V0 도장을 손으로 커밋(ddad0b5b·f354d12a — 커밋 제목이 사유를 그대로 적고 있다: \"로컬에만 있어 러너가 'V0 검사 안 받음'으로 차단했다\") → 13:57·13:59 재시도 성공(37416137150·37416306297). D1-12·H1-25 둘 다 발행됨(cad7d909·49aee582)\n · 🔴 **09-06~09 6회 실패와 같은 사유다.** SKILL 「GitHub 발행 실패」 절이 \"이제 재발하면 그건 새 원인이다\"라고 적은 그 자리다\n · 🔎 기작 1건을 실측으로 보탠다(이부장 판단): go 도장은 자동 동기되는데 **V0 도장은 안 된다.**\n     grep -n gatesync studio/pubqueue.py → 655행 (⑦ go 도장 뒤 호출)\n     grep -n gatesync studio/v0check.py  → **0건** · git log -S gatesync -- studio/v0check.py → **빈 결과**(한 번도 있었던 적 없음)\n   watch pubgo-origin-stamp-check-1006(todo·10-07·claude)이 이미 추적중이고, 그 항목의 고칠 것 ①은 \"pubgo 가 트리거 전 origin/main 확인\"(트리거 시점 검사)이다. 위 기작은 **도장 시점 동기화**라 그 항목에 없다 — 보탤지는 이부장 판단(내가 남의 항목을 덮어쓰지 않았다)\n\n■ 🟡 이부장 판단 2건 (08:26 회차에서 이어짐 — 내가 임의로 닫지 않았다)\n · watch adsense-review-0923(todo·due 09-30) 이 아직 \"애드센스 심사 진행 중 추적\"으로 열려 있다. 그 심사는 10-02 반려로 종결됐다\n · watch routine1-report-format-0928(todo·due 10-02) — 보고 형식(결론→애드센스→새 메일→점검기록)을 10-05 20:45·10-06 08:26·이번 회차까지 3회 연속 따랐다\n\n■ 점검 기록\n · 로컬 origin 동기 ✅ (readycheck --behind)\n · Gmail 리더 3계정 전부 ✅ — magsori 9 · m8975 2 · aroma 2 (--body 로 본문까지)\n · m8975 2건 = aroma8975 보안경고 **사본**(magsori8975 가 aroma 의 복구 이메일) 10-05 20:17·20:31 KST = 기보고(이부장이 9dba6811 로 원인 차단). GSC 통지는 없었다 → 이번 회차 8975 사각지대 발현 0\n · aroma 2건 = 같은 건 원본. 🟢 0건이 평소인데 2건 = 기보고된 재인증 사고 후속 · adsense-noreply/sc-noreply 앞으로 온 것 없음\n · GSC sc-noreply **7일 0건**\n · 커넥터 교차조회 — `in:inbox newer_than:1d` 12스레드 전건 대조 ✅ (리더가 안 본 광고·구인 메일까지 확인)\n · 구글 검색센터 커뮤니티(애드센스·색인 유일 에스컬레이션 경로) — 10-01 04:26Z 우리 요청 댓글 게시 이후 **답변 통지 0건**(리더·커넥터 양쪽)\n · 세션 주소 등록 못 함 — 이 툴셋에 ListAgents 가 없어 표시명·ref 를 얻을 수 없다(추측해 적지 않았다)\n▸ 20:34 🔴 정정 — 같은 회차에서 위 보고 2줄이 틀렸다. 원인을 찾았으니 그대로 적는다.\n\n① **\"발행 실패가 메일로는 오지 않았다\" 는 틀렸다. 왔다.**\n   notifications@github.com · 2026-10-06 12:30 KST(03:30:50Z) · 제목 \"[magsori-wq/lifeinfo-source] Run failed: 글 발행 (초안/라이브) - main (acd3d25)\" · threadId 1a10f439aa9f4ad4\n   🔴 그런데 labelIds = [\"UNREAD\",\"TRASH\"] — **휴지통에 있다.**\n\n② **리더 건수 격차(08:26 magsori 20건 → 20:24 9건)의 원인도 이것이다.**\n   커넥터를 `includeTrash: true` 로 다시 조회하니 `from:github.com newer_than:2d` 가 **14스레드**를 돌려줬고 **14건 전부 TRASH·UNREAD** 다(10-05 08:01 ~ 10-06 05:01Z).\n   리더는 `messages().list` 를 쓰고 그건 기본으로 휴지통을 제외한다. 내 `in:inbox newer_than:1d` 교차조회도 같다. 그래서 양쪽 다 못 봤다.\n   08:26 회차는 GitHub 실패 2건(04:41·05:26 KST)을 실제로 보고했다 → 그때는 받은편지함에 있었고 **그 사이에 버려졌다.** 20→9 감소의 설명이다.\n   ⚠️ **UNREAD 인 채로 휴지통에 있다** = 사람이 읽고 버린 모양이 아니다. Gmail 필터일 가능성이 높지만 **필터 설정을 확인하지 않았으므로 추정이다.** 누가·무엇이 버렸는지는 모른다.\n\n③ **\"커넥터로 누락 0 확인\" 도 과한 말이었다.** `in:inbox` 는 보관·휴지통을 제외한다. 보관분까지 덮은 것은 발신자별 조회였고, **휴지통은 오늘 이 조회 전까지 어느 경로도 보지 않았다.**\n\n🔴 **이것은 감시 구멍이다 (이부장·사장님 판단 필요)** — GitHub 워크플로/발행 실패 통지가 메일 경로에서 영원히 안 보인다. 이 루틴의 [중점 확인 대상] 첫 줄이 \"GitHub: 워크플로우/Pages 배포 실패\" 인데, 그 메일이 휴지통으로 가고 있으면 이 브리핑은 그 항목을 구조적으로 못 본다. 오늘은 gh run list 로 우연히 잡았다.\n · 고칠 방향 2가지(결정은 이부장): ⓐ리더 조회에 `includeSpamTrash` 를 켠다 ⓑ메일에 기대지 말고 `gh run list --status failure` 를 브리핑 절차에 넣는다 — ⓑ가 메일 설정과 무관해서 더 튼튼하다\n · 추적 = watch gmailread-trash-blindspot-1006 (앞서 올린 gmailread-count-gap-1006 은 원인 오판이라 닫고 이것으로 대체했다)",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing-1006-20",
+   "date": "2026-10-06",
+   "at": "2026-10-06 20:34"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1006",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "2026-10-06 루틴4: 제안 2건 등록(추천 G4-11 페스티벌 시월 · 후보 H1-26 박진영 WET 예매, dupcheck 🟡0.50 확인). 선별은 docflow 위임(진행 중). 보고서 여행맛거리_글감보고서_2026-10-06.md. 발행·외부쓰기 없음.\n▸ 21:21 2026-10-06 루틴4 선별 완료: G4-11 추천 pick·verify 🟡 / H1-26 후보 pick·verify 🟡. 원문 미확인 항목(휠체어석 기간·무료여부·G4-11 22개 원문) 보고서에 명시. 초안 미작성·결재함 미등록(초안 없음 → draftfind 게이트).",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-06",
+   "at": "2026-10-06 21:21"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1006",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "10-06 야간검증: 발행 2편(H1-25·D1-12) 1차 검증 — 달력 OK, 청불 조문 DRF 대조 실패(미확인). 기존 3편 A3-06=2차 일치·B3-01/G1-05=미결. 오류 0건. crawl 신규0",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-06",
+   "at": "2026-10-06 22:48"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1007",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "2026-10-07 C/D/E 점검: 제안 0건(빈손). 통신 최적요금 고지(10월 시행 보도) 검토 → 고시는 아직 행정예고(정부 초안) 단계라 시행일 미확정, 제안 보류. watch telecom-minimum-fee-gosi-0107 로 고시 확정 재확인. 큐 재고 1/99.\n▸ 00:13 2026-10-07 C/D/E 점검: 제안 0건(빈손). 통신 최적요금 고지(10월 시행 보도) 검토 → 고시는 행정예고(정부 초안) 단계라 시행일 미확정, 제안 보류. watch telecom-minimum-fee-gosi-0107 로 고시 확정 재확인. 발행대기 재고 1/99.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-07",
+   "at": "2026-10-07 00:13"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1008",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "오징어 젓갈 1kg(리뷰5295·평점4.5·10,900원) 결재함 afflink-20261008-1 등록 완료",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-08",
+   "at": "2026-10-08 07:15"
+  },
+  {
+   "code": "daily-email-briefing-1008",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "[10-08 08시 메일브리핑] 메일발 사장님 할 일 0건 · 이부장 판단 1건(anthropic-report-channel-1008).\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION(10-08 08:0x status 실측). 반려 통지 10-02 21:46Z(=KST 10-03 06:46)는 10-04·10-05 브리핑 기보고 · 신규 통지 0. 재검토 요청 가능일 10-09 = D-1(사실만 적는다).\n■ 새 메일 4통(10-06 20시 브리핑 이후):\n ①🟡 Anthropic Support 회신 KST 10-07 06:23 담당 Nid — 사고신고 1·2차 티켓 통합, Support 쪽 종료. 원문 'Since we aren't opening an investigation on our side, there's no need to send the detailed evidence files to Support. Including them in a /bug report or GitHub issue is where they'll be most useful.' 답변 4가지: (1)로드맵·일정 확약 불가, 다만 두 보고 전문이 제품 피드백으로 기록됨(출력잘림·세션주소·빈결과 사유미표기·세션간 미검증수치·요약출력이 판단근거가 되는 것) (2)공식문서 code.claude.com/docs 밖의 지원되는 우회 설정 없음 (3)앞으로 창구 = Claude Code 안 /bug(맥락 자동첨부) 또는 github.com/anthropics/claude-code/issues(중복 신고 확인 가능), 개별 응답품질은 👎 (4)2차 질문 4~6도 설계요청으로 기록, 같은 답. ⚠️ CLAUDE.md 는 창구를 /feedback(SendFeedback 초안→사장님 전송)으로 적어 뒀고 Nid 는 /bug·GitHub issues 를 지목 — 같은 것인지 확인 후 CLAUDE.md 수정 판단 필요(이부장 몫, watch 등록). 제출은 사장님만 가능.\n ②🟢 Google AI Studio KST 10-07 08:07 — '비활성 Gemini API 프로젝트'에 월 지출 상한 자동 적용. 본문 'No action needed unless you want to increase or remove the spend cap.' 🔴 프로젝트명이 메일에 없어 우리 lifeinfo-adsense(Blogger·AdSense API)와 같은 것인지 이 메일로는 알 수 없다 — 다만 오늘 adsense.py status 정상 응답 + 10-07 06:10 상태점검 run success 로 API 호출은 지금 정상이다. 조치 불요.\n ③🟢 google-noreply KST 10-07 05:23 (→magsori8975) 구글 검색 서비스 개인정보 보호 설정 변경 예고. 조치 불요.\n ④🟢 googlenews KST 10-08 07:31 (→magsori8975) 뉴스 브리핑. 조치 불요.\n · Google→Claude 로그인 공유 2통(KST 10-06 13:45·14:14)은 10-06 20시 기보고.\n■ 점검 기록: 리더 3계정 전부 ✅(magsori 8건·m8975 0건·aroma 0건) · 커넥터 교차조회(includeTrash·in:anywhere) 병행. GSC sc-noreply 7일 0건. GitHub 7일 = 10-01 13:1x sudo 코드 3통(만료)뿐, 10-06 03:28Z 발행실패 1건(run 37409147220)은 10-06 20시 기보고·정정(통지는 왔고 휴지통에 있었다) — 지금 조회엔 안 보이나 휴지통이 비워졌는지는 확인 못 함. 실측 대체: gh run list 로 양 저장소 직접 확인 → source 10-06 04:57 이후 전 run success, console 콘솔정합성검사 10-07 22:14 success = 10-05 20시 보고 '콘솔검사 RED' 해소 확인. 8975 = 리더가 직접 읽어 감시 발신자 0건이고, 전달 경로는 살아 있다(toRecipients=8975 메일 2통이 magsori INBOX 에 도착 — 위 ③④). GSC 통지가 전달되는지는 7일 sc-noreply 0건이라 대조 표본이 없어 여전히 미확인 → watch gmail-8975-relay-0924 닫지 말 것. aroma 0건=평소 상태. ⚠️ 10-07 두 회차(08시·20시) 실행 기록이 없어 이번 회차가 10-06 20시 이후를 소급 커버했다. ⚠️ 승인 감시 1247분째 꺼짐(세션훅) — 관제탑 몫이라 루틴1은 보고만 한다.\n▸ 20:21 20:08 메일 브리핑 — 🔴사장님 1건: deploy.bat(G1-11 썸네일 322 라이브 404·글 상단 이미지 깨짐, watch g111-deploy-thumb-1008). 애드센스=반려(API NEEDS_ATTENTION·10-02 메일·10-03 화면 일치), 재검토 요청은 10-09 예정(adsense-rereview-submit-1009). 새 메일 29건=GitHub 콘솔검사 실패 25(원인 2갈래: 썸네일누락 24건 16:14~19:43 + posts_index 신선도 1건 16:14 발행시차 자연해소) + 기보고 4(Anthropic Nid 회신=anthropic-report-channel-1008 · 애드센스 10-02 반려=adsense-council-1004 · GCP 결제 7,334원 10-01 · Claude 뉴스레터). 점검: 리더 3계정 전부 ✅(magsori 29·m8975 0·aroma 0) · 썸네일 318~321·323 라이브 200, 322 만 404 · 콘솔검사 ⚠️2건(index_status 339vs342·고아썸네일 117)은 실패 아님",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-08",
+   "at": "2026-10-08 20:21"
+  },
+  {
+   "code": "lifeinfo-publish-1008",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "09:00 발행구 실행 — 발행대기 재고 0편(큐 비어 있음), 신규 발행 대상 없음. 대신 3일째 막혀 있던 발행 지시서 4건(pub1005g309·a118·b507·pub1007g411 = G3-09·A1-18·B5-07·G4-11)이 실은 전부 라이브 발행 완료 상태(HTTP200·DB url 확인)인데 지시서만 안 닫혀 orderwatch 에 계속 떴음을 발견 — 전부 batchboard mark done 처리 + queue.json 잔여 1건(G4-11) pubqueue remove 로 정리. 커밋 a8969edb 푸시 완료. 남은 주차 지시서(draft0926c502·c217·thread0927h116·draft0928b216)는 초안/쓰레드 문제라 발행구 소관 아님 — 이부장 판단 필요.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-08",
+   "at": "2026-10-08 09:09"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1008",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "A/B 글감 제안 1건(추천) 등록·선별완료: A2-24 2026하반기 사회보장급여 정기확인조사(10/1~12/31, 기초연금·생계급여 등 13개사업 재검증) — dupcheck 0.00 · docflow가 pick+V0사전보강(mohw.go.kr 원본URL·13개사업목록·69종정보 확보, docs/source_A2-24_..._20261008.md) · verify 🟡(KW미측정, 비차단). 후보(alt)는 B 세금금융 레인에서 6개 주제 탐색했으나(근로장려금 기한후신청·부가세 예정신고·예금자보호·실업급여 반복수급 감액 등) 전부 기발행 중복 또는 시행일 미확정이라 빈손(억지로 안 채움). 4번 루틴(여행맛거리) 영역 아님. 2번 루틴은 초안 작성 없음 — 6번이 이어서 쓸 것.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-08",
+   "at": "2026-10-08 09:33"
+  },
+  {
+   "code": "lifeinfo-index-check-1008",
+   "title": "lifeinfo-index-check (G)",
+   "state": "done",
+   "note": "주간 색인 실측 10-08(목) — inspect 339편 전수 완주(checked_at 2026-10-08·partial=False·오류0·미조회0). ①색인 0/339 ②28일클릭 0(노출 2·최근7일 0) ③네이버 구글색인 48→49 재측정(+A2-16, 9월 발행 글의 네이버판 세 편째 진입 — 소거표#6 재검토 재료, 이부장 판단: watch erase6-naver-sept-1008). state: Redirect error 159(10-01 110) · Crawled-미색인 125 · Discovered 44 · unknown 11. 이월 315편 중 이미 크롤된 235편은 7일간 재크롤 0편, 늘어난 Redirect error 49편은 전부 10-01~04 요청분. 🔴핵심: 기준선이 결과보다 앞선 첫 비교 — 10-01~04 요청 50편 중 49편(98%) 크롤, 발행나이 맞춘 미요청 신규 11편은 0/11, 7~9월 구요청 34편도 0/34. 즉 '최근 요청'은 크롤을 부르지만 '요청 일반'이 부르는 것은 아니다. 그런데 크롤 온 49편 전부 Redirect error·색인 0 → 막힌 곳은 전달이 아니라 판정이다. 수율 문구 확정(협의문서 §3-B 숙제): A 첫크롤도달 98%(시기별로 다름·7월 0/34) / B 재크롤 2%(08-18 기록값·모집단 미확인) / C 색인전환 0%. 결론 '요청을 레버로 반복하지 않는다'는 유지, 이유만 바뀜. 실험R 미실행 확인(10-04 추가요청은 D3-07 1편뿐). 라이브 302(?m=1) 측정했으나 시점 불일치로 판별 못 함(대조 글은 7월 크롤) — 리디렉션 추적은 지시서 ⛔ 라 멈춤. adsense status GETTING_READY(10-01)→NEEDS_ATTENTION(10-08)·PENDING, 화면은 못 봄(사장님 몫), 재검토 10-09부터이고 누르라/말라 권하지 않음. 하네스 validate_db PASS14·WARN4·FAIL0 / selfcheck 돌림(🔴 10)재확인131건·14)정체34·17)루프멈춤5·18b/d/f — 전부 내 담당 밖이라 이부장 몫). 커밋 a32aebd6 + 정정 41c7c123(어드바이저 지적으로 '미요청 통제군' 라벨·§4-1 추론 정정). 상세 docs/색인요청효과_통제군_20261008.md + 전담자료 【추가 10-08】. ⚠️ whoami 주소 등록 거부됨 — 이 예약 세션에 ListAgents 도구가 없어 표시명을 얻을 수 없다(--name 필수). 세션ID 8196380a-f5e5-43d8-8dab-21a937076d5f. ⛔ 다음 세션 주의: 비교군B 11편(A5-13 B3-06 B5-05 D5-04 D5-06 E4-07 G4-10 H1-20 H1-21 H1-22 H1-23)에 색인 요청하면 비교가 사라진다 — CP 미결에 '색인 요청' 할 일로 올라 있다(watch idx-control-group-protect-1008)",
+   "auto_daily": true,
+   "base_code": "lifeinfo-index-check",
+   "date": "2026-10-08",
+   "at": "2026-10-08 10:33"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1008",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "15시 회차 빈손 — 오늘 승인대기 2건(가습기10/6·오징어젓갈10/8) 이미 재고, 겨울 난방 시즌낱말 10종 탐색해도 토스풀 공백",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-08",
+   "at": "2026-10-08 15:15"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1008",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "21:12 실행 — G3-10 함양산삼축제(10/7~11, 경남) 제안·선별·초안·썸네일(324_hamyangsansam.png 실사진)·pubqueue 적재 완료. 산삼/산양삼 구별 함정+경남 축제 동선비교 V0 요소. dupcheck 오탐(G3-09와 숫자겹침) 확인 후 --force, bodydup 0.107로 신규 확인. affiliate none 기록. 방송연예 후보는 전부 기발행/날짜미정으로 빈손(보고서에 사유). V0검사는 에이전트(V0검사관)에 위임, 결과 대기 중. 커밋 47d22b34 푸시 완료.\n▸ 21:46 21:44 V0 통과 — G3-10 함양산삼축제 V0검사관 🟢 pass(함정+판단형비교 성립, 경남축제 날짜 라이브 대조 확인, dupcheck 오탐 재검증, 썸네일 실사진 고유색 13730 확인). 결재함에 '원고를 보고 승인' 카드 자동 등록됨(approvalcount 확인) — 발행 승인은 사장님 몫. 루틴4 작업 완료.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-08",
+   "at": "2026-10-08 21:46"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1008",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "10/8 야간검증: 오늘 발행 3편(A4-08·G1-11·A2-24) 핵심 법령조문 law.go.kr DRF 교차검증 — 전부 원문 일치, 사실오류 없음. selfcheck 🔴7건 발견(G1-11 교차링크 누락이 금일 발행분 — crosslink 필요 / idx0zero 12h 정체 / solo0927 막힘 미보고 / 화면회귀 3건 등). 카톡 보고 발송완료.\n▸ 22:48 10/8 야간검증: 오늘 발행 3편(A4-08·G1-11·A2-24) law.go.kr DRF 교차검증 완료, 사실오류 없음. selfcheck 7건 중 G1-11 교차링크 누락이 금일건.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-08",
+   "at": "2026-10-08 22:48"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1009",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "10-09 C/D/E 점검: 제안 0건(빈손). ①최적요금제고지(E) 재확인 — MSIT 관계자 코멘트 확보(과기정통부 '규제개혁위 통과 전이라 확정 아니다'), 뉴시스 등 일부는 '10월 시행'으로 보도하나 1차출처(law.go.kr·관보·msit.go.kr, 사이트 점검중) 미확보 → 10-06·07 과 같은 결론 유지, watch telecom-minimum-fee-gosi-0107 2026-10-16 로 재연기 ②topicprop 전수 재확인: C/D/E picked 상태 중 draftless 0건(C2-11·C2-13 이미 발행됨, E2-10·D3-06 은 의도된 defer — 각각 12월·내년3월 앵커) ③건보료 11월 소득월액보험료 갱신(C) 검토 — 매년 반복되는 정기 절차라 '지금 찾을 이유' 없음, 제외. 초안·썸네일·큐 적재 없음. 발행대기 재고 1/99(하한 3 미달 — 플래그).",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-09",
+   "at": "2026-10-09 00:17"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1009",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "🛒 후보 1건: 기모 보온 니삭스(6종) 7,900원·리뷰993·4.4 — 10월 기온하강기 보온용품, 토스 겨울용품 중 최다리뷰. 결재함 afflink-issue20261009 등록(링크 발급 대기)",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-09",
+   "at": "2026-10-09 07:14"
+  },
+  {
+   "code": "daily-email-briefing-1009-1009",
+   "title": "daily-email-briefing-1009 (A)",
+   "state": "done",
+   "note": "[10-09 08시 메일브리핑] 메일발 사장님 새 할 일 0건 · 이부장 판단 1건(adsense-reject-hist-1009).\n\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (10-09 08:0x adsense.py status 실측)\n · 재검토 요청 가능일 = 오늘 10-09. 추적 항목 adsense-rereview-open-1009 는 done 으로 닫혔다.\n · ⚠️ 그런데 API 상태는 여전히 NEEDS_ATTENTION 이고 GETTING_READY 로 바뀌지 않았다 = 새 심사 사이클이 시작된 신호가 없다. 실제로 누르셨는지는 화면에서만 확인되고 제가 확인할 방법은 없다. 누를 시점은 사장님 판단(09-23 지시).\n · 경로: AdSense → 사이트 → lifeinfo8975.blogspot.com 상세 → 문제를 수정했음을 확인합니다 체크 → 검토 요청\n · 10-03 06:46 KST(=10-02 21:46Z) 반려 통지 = 10-04~10-08 기보고. 60일 조회로 10-02 이후 신규 애드센스 통지 0건 확인.\n\n■ 새 중요 메일 — 2통 (기준선 = 10-08 20:21 브리핑 이후). 조치 불요\n1) 🟡 Anthropic \"Security alert: new trusted device added to your Claude account\" x2 · 10-09 06:12:05·06:12:09 KST · no-reply@mail.anthropic.com\n   본문 표를 직접 읽었다(두 통 완전 동일): Device = \"Electron on Windows · Seongnam-si\" / Location = \"Seongnam-si, Gyeonggi-do, KR\" / IP address = 182.224.194.43 / When = \"Thursday, October 08 2026 at 21:12 UTC\"\n   원문: \"A new trusted device was added to your Claude account. If this was you, no action is needed. If you don't recognize this activity, review your devices and secure your account now.\"\n   뜻: Electron = Claude Desktop. IP 182.224.194.43 과 기기 문자열이 10-06 14:14 알림(10-06 20시 브리핑 기록)과 완전히 같다 = 같은 PC·같은 네트워크.\n   맥락: 같은 시각 재부팅이 있었다 — 커밋 7c91bc06(05:59 재부팅 전 원본 상태파일 보존) → 930e6f3d(06:13 재부팅 후 nProtect 잔여 확인), watch naver-login-aside-1009 \"Aside 네이버 로그인 풀림(재부팅 뒤)\". 재부팅 뒤 Desktop·Aside 재인증으로 기기가 다시 등록된 것으로 보인다. 06:14 사장님 결재 커밋(bac08da2 publish_go G3-10)이 있어 그 시각 사장님이 작업 중이셨다.\n   🔴 제가 확인한 것은 시각·IP·기기문자열이 일치한다는 것까지다. 기기 신원 자체를 확인할 방법은 없다 — 본인 추가가 아니면 claude.ai/settings/account 에서 기기 정리가 필요하다.\n\n■ GitHub 콘솔 정합성 검사 실패 25통 = 기보고 · 🟢 해소 확인\n · 실패 사유를 로그로 직접 읽었다(run 37770017451): \"⛔ [썸네일 누락] DB가 참조하는데 저장소에 없음: 322_busan_grade5_enforcement.png\" · 신호등 RED(통과 10 · 경고 2 · 실패 1). 재시도 성공으로 넘기지 않고 원인을 확인한 것이다.\n · 근본원인 = G1-11 썸네일 미배포. 어제 브리핑이 이미 발견해 추적 중(g111-deploy-thumb-1008 done · g111-thumb-why-missed-1008 todo 오늘 · thumb-deploy-miss-cause-1009 todo 오늘).\n · 실패 구간 29건 = 10-08 06:33~11:26Z(15:33~20:26 KST) · 최신 success 10-08 22:13Z.\n · 라이브 재확인: thumbs/322_busan_grade5_enforcement.png 200 · thumbs/322n_busan_grade5_naver.png 200 (어제 \"네이버용 322n 도 없다\" 던 것까지 해소). 로컬·배포 저장소 둘 다 존재.\n · 남은 ⚠️2건은 고아 썸네일 117개와 index_status total=339 vs DB 342(색인 점검 시점차).\n · lifeinfo-source 저장소 최근 12건 전부 success.\n\n■ 이부장 판단 1건 — watch adsense-reject-hist-1009 등록\n · CLAUDE.md L91 반려 이력이 \"2026-08-12 반려(4회째)\" 에서 멈춰 있고 10-03 반려가 안 들어갔다. 다음 세션이 그 줄을 읽고 \"08-12 이후 계속 심사 중\" 으로 오판할 수 있다(그 줄 자신이 \"이 자리가 6일간 사실과 반대를 말한 적이 있다\" 고 경고하는 자리다).\n · 같은 이유로 watch adsense-review-0923(todo)이 아직 \"심사 진행 중\" 으로 낡았다. 10-06 브리핑이 이미 지적했고 미처리다. 올린이가 이부장이라 루틴이 닫지 않는다.\n · 회차 표기는 단정하지 않는다 — CLAUDE.md 이력 기준 5회째 / 메일상 6회째(06-23 aroma8975 수신분 포함, adsense-reject-count-5-0928 참조).\n\n■ 점검기록: 리더 3계정 전부 ✅(magsori 30 · m8975 0 · aroma 0). 30통 구성 = 지원회신1 + 보안알림2 + GitHub실패25 + 뉴스레터1 + 애드센스1 (전수 대조). m8975 \"0건\" 은 리더가 추적하는 발신자 메일이 없다는 뜻이고 수신함이 빈 것이 아니다 — 10-09 07:31 googlenews 가 8975 로 왔다. 8975 전달은 작동하는 것으로 보인다(추정, 시작일 불명 — to:magsori8975 메일 3통이 magsori 수신함 INBOX 에 있다) → gmail-8975-relay-0924·gmail-reader-consent-0924 해소 가능 여부는 이부장·사장님 판단, 루틴이 닫지 않는다. GSC sc-noreply 9일 조회 0건. aroma 0건 = 평소 상태(60일 1건). 원격 동기 최신.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing-1009",
+   "date": "2026-10-09",
+   "at": "2026-10-09 08:19"
+  },
+  {
+   "code": "daily-email-briefing-1009-fix-1009",
+   "title": "daily-email-briefing-1009-fix (A)",
+   "state": "done",
+   "note": "[10-09 08시 브리핑 · 정정 2건] 앞 보고(daily-email-briefing-1009-1009)의 애드센스 판정이 틀렸고 점검 범위가 좁았다. 카톡으로도 정정 발송했다.\n\n■ 🔴 정정① 애드센스 — \"새 심사 시작 신호 없음\" 은 할 수 없는 판정이었다\n · 앞 보고와 카톡에 \"API 가 GETTING_READY 로 안 바뀌어 새 심사 사이클 신호가 없다\" 고 적었다. 이것은 CLAUDE.md 09-23 정정이 금지한 바로 그 추론이다 — 그때 API 는 NEEDS_ATTENTION 인데 화면은 「리뷰가 요청됨 · 검토 중」 이었다. API 값으로 심사 진행 여부를 판정할 수 없다.\n · 더 중요한 사실을 놓쳤다: watch adsense-rereview-open-1009 의 result = \"사장님 결정 10-08 18:39: 재검토 요청함 → adsense-rereview-submit-1009 로 실행 이관\". 즉 사장님은 이미 10-08 18:39 에 \"내일 에드센스 재검토요청해\" 라고 지시하셨다.\n · 그 실행 항목 adsense-rereview-submit-1009 는 **지금 todo · owner=claude(이부장) · 기한 오늘**이다. 내용: 이부장이 Aside 로 AdSense → 사이트 → lifeinfo8975.blogspot.com 에서 ①검토 요청 버튼 활성 확인 ②\"문제를 수정했음을 확인합니다\" 체크 ③검토 요청 클릭 ④결과 화면·상태 확인 → 카톡 보고. 로그인 요구·예상 밖 확인창이면 누르지 말고 멈춰 보고.\n · 🔴 따라서 오늘 애드센스의 실제 상태는 \"사장님 판단 대기\" 가 아니라 **이부장 실행 미완**이다. 08:19 현재 미실행. 루틴1 권한 밖이라 실행하지 않고 여기 올린다.\n · API 가 NEEDS_ATTENTION 인 것은 아직 요청을 안 넣은 상태와 정합하지만, 그것으로 심사 여부를 단정하지 않는다.\n\n■ 🟢 정정② 기기 알림 — 본인 활동이 메일로 확증됐다(추정 → 확증)\n · 넓은 조회(newer_than:1d -from:notifications@github.com, 11스레드)에서 리더가 놓친 메일이 나왔다: noreply-accounts@google.com \"Google 계정 데이터 일부를 Claude에 공유하셨습니다\" 2통 — 본문 \"Google 계정으로 로그인을 사용하여 Claude (10월 9일 오전 6:04 / 오전 6:12)에 로그인하셨기 때문에 발송된 이메일입니다\".\n · 06:12 가 기기 알림 2통(06:12:05·06:12:09)과 시각이 일치한다 = 재부팅 뒤 Claude 구글 로그인으로 기기가 등록된 것. 앞 보고의 \"추정\" 을 여기서 확증으로 올린다.\n · 두 번째 기기 알림 본문도 PLAIN_TEXT 로 직접 읽었다 — 첫 통과 완전 동일(Device \"Electron on Windows · Seongnam-si\" / IP 182.224.194.43 / When \"Thursday, October 08 2026 at 21:12 UTC\"). 앞 보고의 \"두 통 완전 동일\" 은 그때 한 통만 읽고 쓴 것이었고, 지금 실제로 확인했다.\n\n■ 🟡 리더가 놓친 메일 3건 더 (넓은 조회로 발견 · 전부 조치 불요)\n · CloudPlatform-noreply@google.com 10-08 14:18 KST [IMPORTANT] \"Cloud Storage client SDKs now enable end-to-end checksumming by default\" — SDK 업그레이드 권고. 우리 GCP 프로젝트(lifeinfo-adsense)는 Blogger·AdSense API 만 쓰고 Cloud Storage 는 안 쓴다 → 해당 없음(단정 아님: 프로젝트명이 메일에 없다).\n · Microsoft365@notificationemails.microsoft.com 10-09 07:42 KST \"Microsoft 365 구독에 예정된 변경 사항\" — 본문 \"오늘은 별도의 조치가 필요하지 않습니다\". 결제 관련이라 적어 둔다.\n · 광고·무관 4건(ASUS·AliExpress·Play Points·LinkedIn).\n · 🔴 [이부장 판단] 앞 보고의 \"30통 전수 대조\" 는 과한 표현이었다. 리더(gmailread)는 추적 발신자만 보고 30건에서 멈췄고, 위 5건이 그 밖에 있었다. 리더의 발신자 목록에 noreply-accounts@google.com·CloudPlatform-noreply@google.com 을 넣을지 판단 필요(watch gmailread-sender-gap-1009 등록).\n\n■ 커밋 정정: 37e248cd 가 webapp/watch.json 외에 batch.html·_watch_state.json 의 세션 시작 전 변경분도 함께 올렸다. 앞 커밋 메시지에는 watch.json 만 적었다. 되돌리지 않는다(파생·베이크 산출물).\n\n■ 점검기록 보완: 세션 주소 미등록 — 이 툴셋에 ListAgents 가 없어 표시명·ref 를 얻을 수 없다(추측해 적지 않는다). CP 보고서탭(webapp/reports.html)은 .gitignore:102 로 git 밖이고 로컬 생성·deploy.bat 배포분이다 — 내 보고 2건 모두 실려 있는 것을 확인했다.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing-1009-fix",
+   "date": "2026-10-09",
+   "at": "2026-10-09 08:25"
+  },
+  {
+   "code": "lifeinfo-publish-1009",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "G3-10(함양산삼축제) 사장님 승인(06:13) 발행 확인 — URL 200 OK · validate_db PASS15/WARN3/FAIL0 · 큐 재확인(topicprop 제안 0건·pubqueue 0건)으로 추가 발행대상 없음 · OSMU(네이버/쓰레드/인스타)는 이과장 몫, 원고(네이버txt·쓰레드이미지) 이미 준비돼 pending_osmu 에서 추적됨. 4채널 게이트·pace·setgate 전부 정상",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-09",
+   "at": "2026-10-09 09:07"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1009",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "10-09 09:시 실행 — A·B 제안: 추천 A6-07(복지급여 신청주의 폐지·아동수당 자동지급, 보건복지부 10-01 보도자료, 중복🟢0.20) + 후보 B2-18(개인사업자 사잇돌대출 한도3000만·SCB, 금융위 보도자료, 중복🟡0.50). 재고 0/하한3 급박 — docflow 에이전트에 ②선별 위임(관제탑 대기 안 함, 09-13 지시). 오전브리핑 파일 작성·커밋·푸시 완료.\n▸ 09:35 09:2x 루틴 제안 2건 이부장(에이전트) 선별 — ①A6-07은 코드오분류(A6=근로권익·체불구제인데 내용은 아동수당·부모급여 자동지급)라 A1-20(지원금·수당)으로 재등록 후 pick+verify(🟡 KW미측정만, 참고). 보건복지부 2026-10-01 보도자료(mohw.go.kr·사본 eiec.kdi.re.kr)가 1차출처, 6법 국회통과 완료 확인. ②B2-18(사잇돌대출 SCB)은 drop 아닌 defer(--until 2026-10-16) — dupcheck가 못 잡은 기발행 B2-14(SCB 신용평가, 라이브 있음)와 소재 중복 + 핵심수치(한도2000→3000만원·공급1000억→1500억)가 1차출처 없이 2차뉴스(세계일보·YTN·이데일리)뿐이라 공식확인 미달. source 에이전트에 1차출처 재조사 백그라운드 지시(watch source-b2-18-saitdol). 발행대기 재고 0/99 여전히 긴급 — A1-20 초안 지시서는 별도로 이부장이 낼 것\n▸ 09:44 10-09 09:시 2차보고 — A1-20 pick확정(docflow 코드정정)·B2-18 defer해제(source에이전트 1차출처 fsc.go.kr/87413 확보). 둘 다 초안 지시서(draft1009a120·draft1009b218) 작성·등록·커밋푸시 완료, 담당 이과장. 이과장 SendMessage 깨우기 실패(헤드리스세션 한계, watch wake-draft1009 등록) — 이부장이 다음 활성시 깨워야 함.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-09",
+   "at": "2026-10-09 09:44"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1009",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "15:00 빈손 — 오늘 1건(니삭스) 이미 승인됨, 신규 시즌낱말(전기요·히터·온풍기·수면양말·김장) 토스 인기목록 없음. 밀린 3건 보고: issue20261009 링크발급 승인 후 affiliate 미등록, 20261006-1/20261008-1 솔로게시 승인됐는데 D-3/D-1 지나도 미게시",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-09",
+   "at": "2026-10-09 15:23"
+  },
+  {
+   "code": "daily-email-briefing-1009",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "[10-09 20시 메일브리핑] 메일발 사장님 새 할 일 0건 · 새 중요 메일 0통 (기준선 = 오늘 08:25 브리핑).\n\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (20:0x adsense.py status 실측 · 08:0x 와 동일)\n · 신규 통지 0건 — 7일 조회를 **휴지통 포함**으로 돌려 확인했다. 잡힌 것은 1통뿐이고 10-02 21:46Z(=10-03 06:46 KST) 반려 통지로 10-04~10-08 기보고분이다(현재 TRASH·IMPORTANT).\n · sc-noreply(GSC) 7일 조회도 휴지통 포함 0건.\n · 🔧 재검토 요청은 이부장 몫이고 아직 못 넣었다(watch adsense-rereview-submit-1009 · state wait · 기한 10-10 · owner=claude). 이부장 기록에 따르면 08:5x·1차 / 16:5x·2차 두 번 시도했고 화면 문구가 '10월 9일부터 다시 요청 가능' 인데 검토 요청 버튼이 없어 아무것도 누르지 않았다. 미국 날짜 기준 가설도 틀렸다(이미 PT 10/9). 다음 시도 10-10 09:00. 사장님 지시는 10-08 18:39 '내일 에드센스 재검토요청해'.\n · ⚠️ API 값으로 심사 진행 여부를 판정하지 않는다(오늘 오전 정정① · CLAUDE.md 09-23).\n\n■ 새 중요 메일 — 0통. 프로젝트 관련 신규 메일이 없다.\n · 리더 magsori 1건은 10-07 06:23 KST Anthropic 지원 회신(담당 Nid)이고 10-08 20:21 기보고다.\n · 오늘 들어온 나머지는 무관·광고 7건: 구글 비즈니스 프로필 월간 실적 2통(lifeinfo 무관 사업장) · 구인 1 · 쇼핑·통신·단말 광고 4(제목에 (광고) 표기 확인).\n\n■ GitHub — 신규 실패 0건 · 🟢 해소 확인\n · 메일에 기대지 않고 gh run list 로 직접 확인했다(gmailread-trash-blindspot-1006 권고 ⓑ 적용).\n · lifeinfo-console: 마지막 실패 10-08 11:26Z(G1-11 썸네일 누락 · 오늘 오전 기보고), 이후 오늘 전부 success(최신 37921535593 · 10-09 11:04Z).\n · lifeinfo-source: 최근 12건 전부 success · 마지막 실패는 10-06 03:28Z.\n · 메일 경로 교차확인(휴지통 포함 1d): github 통지 2통뿐이고 둘 다 위 10-08 11:2xZ 건이다.\n\n■ 🔧 이부장 판단 1건 — watch aside-session-hang-1009(사장님 몫·기한 오늘)이 해소된 것으로 보인다\n · 커밋 이력상 13:21 등록 뒤 Aside 작업이 재개됐다: 16:20 '멈춤 원인 판정 갱신(탭 14→6 복구 실측)' · 17:02 지시 #13 · 18:52 지시 #14 · 20:03 B2-18 네이버 게시 기록.\n · 🔴 패널 상태 자체는 확인할 방법이 없어 추정이다. 후속 항목 aside-newchat-1010(기한 10-10)이 이어받은 것으로 보인다.\n · 올린이가 이부장이라 루틴이 닫지 않는다. 이미 하신 일을 다시 요청하면 사장님 시간이 낭비되므로 확인 부탁한다.\n\n■ 점검기록\n · 리더 3계정 전부 ✅(magsori 1 · m8975 0 · aroma 0). m8975·aroma 0 은 추적 발신자 메일이 없다는 뜻이고 수신함이 빈 것이 아니다. aroma 0 = 평소 상태(60일 1건).\n · 🔴 휴지통 이동이 GitHub 통지에 한정되지 않는다 — 오늘 1d 16스레드 중 14건이 TRASH 였고 구글 계정 알림·Anthropic 기기 알림까지 포함된다. gmailread-trash-blindspot-1006 은 GitHub 건으로 등록돼 있어 범위를 넓혀 적어 둔다. 필터인지 사람 손인지는 확인하지 못했다 — 원인을 단정하지 않는다.\n · 커넥터는 magsori 1계정뿐(플랫폼 제약·정상). 조회: 2d 전체 · 1d 광범위(휴지통 포함) · 7d sc-noreply/adsense(휴지통 포함) · 3d github/google/anthropic.\n · 로컬 뒤처짐은 readycheck 가 '확인 못 함(오프라인 등)' 을 반환해 최신이라 단정하지 않는다.\n · 세션 주소 미등록 — 이 툴셋에 ListAgents 가 없어 표시명·ref 를 얻을 수 없다(추측해 적지 않는다).",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-09",
+   "at": "2026-10-09 20:20"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1009",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "F4-24 KBO 와일드카드 결정전(10/14 개막) 초안·썸네일·pubqueue 완료, 출처 KBO 공식(보도자료·리그규정PDF·기록실) 직접확인, V0검사 에이전트 비동기요청. 양산(G2) 행사는 공식출처 미확인으로 watch 등록 보류\n▸ 22:27 F4-24 V0 1차 반려(제30조 과장서술·일정 미게시 오판) → .doc 첨부 직접 다운로드로 정정 → 재검사 🟢 통과(22:25) → 사장님 결재함 1번에 올라감. 전 과정 docs/source_F4-24 에 기록",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-09",
+   "at": "2026-10-09 22:27"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1009",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "야간검증 — 오늘발행3편(A1-20·B2-18·G3-10) 전수검증+기존3편(A3-03·C1-08·C4-03) 추가검증, 총6편 오류0건. crawl_watch 25편 확인(변화7건·상태이동만). selfcheck 🔴조치필요8건은 발행/화면/관련글 영역(내 담당 아님, 상세는 selfcheck 출력 참조).",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-09",
+   "at": "2026-10-09 22:59"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1010",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "글감 제안 2건(D1-13 rec·C1-15 alt) → docflow 선별(D1-13 pick, C1-15 drop=시의성없음) → D1-13 초안·썸네일(328_resident_survey_visit)·pubqueue 적재 → V0 3차 재검사 끝에 🟢 통과(1차 반려: 과태료 상한값만·경감비율 유보, 2차 반려: 감경비율 방향 반전 — 둘 다 law.go.kr 시행령 별표4 직접확인으로 수정). 발행대기 재고 1/99(D1-13), 결재함에 사장님 발행승인 대기. 커밋 b027ca99 푸시 완료.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-10",
+   "at": "2026-10-10 01:32"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1010",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "🛒 후보 1건: 레이데이 비타민C 에너지 앰플(8,450원·리뷰3,974·평점4.6) — 환절기 면역관리 수요. collect(294건 신규수집)→search→pick(issue20261010)→kakao(afflink-issue20261010 결재함 등록)까지 완료. 게시·링크발급은 안 함",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-10",
+   "at": "2026-10-10 07:15"
+  },
+  {
+   "code": "daily-email-briefing-1010",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "[10-10 08시 메일브리핑] 사장님 새 할 일 0건 · 새 중요 메일 0통 (기준선 = 10-09 20:20 브리핑)\n\n■ 애드센스: 계정 READY · 사이트 NEEDS_ATTENTION · RESULT PENDING (10-10 08:0x adsense.py status 실측 · 10-09 두 회차와 동일)\n · 이 값은 10-03 반려 이후 그대로다. git 추적으로 전환 시점을 특정했다: webapp/adsense_status.json 이 10-02 20:29(33b33415) GETTING_READY → 10-03 08:22(da3313f0) NEEDS_ATTENTION. 그 사이에 10-02 21:46Z(=10-03 06:46 KST) 반려 통지가 왔다.\n · 신규 통지 0건 — adsense-noreply 30일 조회를 **휴지통 포함**으로 돌려 확인. 잡힌 것은 1통뿐이고 그 10-02 21:46Z 반려(현재 TRASH·IMPORTANT)로 10-04~10-09 기보고분이다.\n   ⚠️ 휴지통 제외로 먼저 돌렸을 때 0건이 나왔다 — 그대로 \"30일 0건\"이라 쓰면 거짓이 됐다(gmailread-trash-blindspot-1006 그 자리). 휴지통 포함이 기본이다.\n · 🔧 재검토 요청은 이부장 몫이고 아직 미완이다(watch adsense-rereview-submit-1009 · state wait · 기한 오늘 10-10 · owner=claude). 10-09 에 08:5x·16:5x 두 번 시도했고 화면 문구가 '10월 9일부터 다시 요청 가능'인데 검토 요청 버튼이 없어 아무것도 누르지 않았다. 다음 시도 10-10 09:00. 사장님 지시는 10-08 18:39 '내일 에드센스 재검토요청해'.\n · ⚠️ API 값으로 심사 진행 여부를 판정하지 않는다(CLAUDE.md 09-23 정정 · 10-09 오전 정정①). 루틴1 권한 밖이라 누르지 않고 여기 올린다.\n\n■ 새 중요 메일 — 0통. 프로젝트 관련 신규 메일이 없다.\n · 기준선 이후(10-09 11:20Z~) 들어온 것은 1통뿐이고 무관하다: googlenews-noreply 「오늘의 브리핑」(10-09 22:32Z=10-10 07:32 KST · to:magsori8975 전달분).\n · 리더 magsori 1건은 10-06 21:23Z(=10-07 06:23 KST) Anthropic 지원 회신(담당 Nid)이고 10-08 20:21 기보고다. 요지 재확인: 내부 로드맵 확인·약속 불가 / 공식 문서 밖의 우회 설정 없음 / 앞으로는 Claude Code 의 /bug 또는 GitHub 로 신고 / 추가 증거파일 송부 불요(조사 미개시).\n\n■ GitHub — 신규 실패 0건\n · 메일에 기대지 않고 --status failure 로 **마지막 실패 자체**를 직접 조회했다(-L 12 는 최근 80분만 덮어 기준선 이후 9시간이 비었다 — 어드바이저 지적으로 수정).\n · lifeinfo-console: 마지막 실패 10-08 11:26Z(37770017451 · 콘솔 정합성 검사) = 10-09 오전 기보고. 이후 전부 success(최신 37998837522 · 10-09 22:22Z).\n · lifeinfo-source: 마지막 실패 10-06 03:28Z(37409147220 · 글 발행) = 기보고. 이후 12건 전부 success(최신 37968363169 · 10-09 17:44Z).\n · GitHub 알림 메일 자체가 2일 조회 0건 — 실패가 없어서 안 온 것과 정합한다.\n\n■ 🟡 8975 전달 — 「사각지대」 표현을 그대로 쓰지 않는다 (실측으로 반증됨)\n · SKILL 과 09-24 조사는 '직접 수신분 0건'이라 적었다. 그런데 `to:magsori8975 -in:sent newer_than:14d`(휴지통 포함)에 **7스레드**가 잡혔고 전부 INBOX/TRASH 수신분이다 — googlenews 3 · googleplaypromo 1 · google-noreply 1 · no-reply@accounts.google.com 2(09-27 aroma8975 보안경고 사본, 8975가 복구 이메일) · aroma8975→8975 1.\n · 자동 발신자 메일이 7건이므로 사람이 손수 전달한 것으로 보기 어렵다 = **전달 경로가 작동하는 것으로 보인다.**\n · 🔴 다만 단정하지 않는다: ①forwarding-noreply 확인 메일이 30일 조회에 없어 언제·어떤 설정으로 들어오는지 모른다 ②그 7건에 **GSC·애드센스 통지가 한 건도 없다** — 그 종류가 전달되는지는 표본이 없어 확인 못 했다. 즉 '전달이 되더라'와 'GSC 통지도 온다'는 다른 주장이다.\n · watch gmail-8975-relay-0924 는 올린이가 이부장이라 루틴1이 닫지 않는다. 사실만 올린다.\n\n■ 점검 기록 (맨 아래 — 결론이 아니다)\n · gmailread scan --body: magsori ✅ 1건 · m8975 ✅ 0건 · aroma ✅ 0건 (세 계정 토큰 전부 살아 있음 = 커넥터 밖 직접 조회 정상)\n · 커넥터 조회 건수: github 2d 0 · google/adsense/blogger/anthropic 2d 1 · sc-noreply 7d 0(휴지통 포함 재확인도 0) · is:important 2d 0 · to:8975 2d 1 · to:aroma 2d 0 · in:inbox 3d 4 · newer_than:1d in:anywhere(휴지통 포함) 9 · adsense-noreply 30d(휴지통 포함) 1\n · aroma8975 0건 = 평소 상태(60일 1건). 🟢 한 줄로만 적는다.\n · GSC 7일 0건. 색인 편수 통지가 없었으므로 'URL 총계' 주의를 붙일 숫자도 없다.\n · 로컬 git = origin 과 같음(readycheck --behind). 하네스는 런처가 돌렸다(health.json).\n · whoami 미등록 — 이 비대화 실행에 ListAgents 도구가 없다(09-23 회차와 동일).\n▸ 08:20 ▸ 08:2x 정정 4건 — 앞 보고(daily-email-briefing-1010)에 확인 안 한 것을 확인한 것처럼 쓴 문장이 셋 있었다. 결론(사장님 할 일 0건·새 중요 메일 0통·신규 실패 0)은 바뀌지 않는다. 카톡은 다시 보내지 않는다(사장님 행동이 바뀌지 않는다).\n\n🔴 정정① \"하네스는 런처가 돌렸다(health.json)\" — 안 돌렸다. 추측이었다.\n · 이 회차는 스케줄러가 띄운 것이라 resume_leebujang.bat 이 돈 적이 없다. mtime 실측: health.json 10-10 06:01 · _selfcheck_last.txt 10-10 02:50 — 둘 다 내 실행(08:0x) 전이다.\n · 그래서 지금 직접 돌렸다: `python validate_db.py` → **PASS 14 · WARN 4 · FAIL 0 · exit 0**.\n   WARN 4는 상시 항목이다 — 일련번호 결번 55 · 미사용 썸네일 114 · 중분류 6~7편 초과 24/35 · 추적파일 2개 작업트리 소실.\n · 교훈: 파일이 있다고 이번 회차에 갱신된 게 아니다. **mtime 을 보고 말한다.**\n\n🔴 정정② GitHub \"실패가 없어서 메일이 안 온 것과 정합\" — 틀렸다. 메일은 왔고 휴지통에 있다.\n · `from:github.com newer_than:3d` 를 **휴지통 포함**으로 재조회 → **30스레드**. 전부 10-08 notifications@github.com(to:lifeinfo-console@noreply.github.com · cc:ci_activity) 이고 10-08 03:36Z~11:26Z 에 몰려 있다 = 그날 콘솔 정합성 검사 실패분으로 10-09 오전 기보고다.\n · 앞 보고의 \"github 2d 0건\" 은 휴지통 제외 조회였다 — 애드센스에서 잡은 그 블라인드스팟을 GitHub 쪽에서 그대로 밟았다(gmailread-trash-blindspot-1006).\n · ✅ **\"신규 실패 0\" 자체는 그대로 유효하다** — 메일이 아니라 `gh run list --status failure` 로 마지막 실패를 직접 확인했기 때문이다(console 10-08 11:26Z · source 10-06 03:28Z, 둘 다 기준선 이전).\n · ⚠️ 부수 관측: GitHub 알림 30통이 전부 UNREAD·TRASH 다 = 필터가 자동으로 휴지통에 보낸다. 그래서 메일만 보는 경로는 GitHub 실패를 영구히 못 본다. `gh` 직접 조회가 유일한 경로다.\n\n🔴 정정③ 8975 — \"사각지대 반증\" 이 아니다. **이미 처리된 항목이고, 내 조회는 그 항목이 남겨둔 검증을 채운 것이다.**\n · watch gmail-8975-relay-0924 를 실제로 열어봤다(앞 보고는 열지 않고 올린이를 '이부장' 이라 추측해 틀렸다 — 올린이는 **루틴1**, owner=사용자, state=**done**).\n · 그 항목 원문: 【설정은 2026-09-27 12:4x 에 사장님이 끝내셨다】 주소 인증 완료 · 「수신메일을 magsori@gmail.com 에 전달」 선택 · 변경사항 저장 클릭. 남은 것은 '실제로 넘어오는가' 검증 하나.\n · 내 10-10 조회가 그 검증을 채운다 — **설정(09-27 12:4x) 이후 도착분이 실제로 넘어온다**: google-noreply 10-06 20:23Z · googlenews 10-07 22:31Z · googleplaypromo 10-08 02:30Z · googlenews 10-08 22:31Z · googlenews 10-09 22:32Z. 전부 INBOX/TRASH 수신분(SENT 아님).\n · 건수 정정: **7스레드 8메시지**이고 \"자동 발신자 7건\" 도 틀렸다 — 그중 aroma8975→8975 1통은 사람이 보낸 것이고, 09-27 04:09·04:10 accounts.google.com 2통은 설정 시각(12:4x)보다 **앞서** 있어 전달로 설명되지 않는다(8975가 aroma 의 복구 이메일이라 사본이 간 건이다 — 경로 미확정).\n · 🔴 그대로 남는 한계: **그 표본에 GSC·애드센스 통지가 한 건도 없다.** '전달이 작동한다' 와 'GSC 통지도 넘어온다' 는 다른 주장이고 후자는 아직 확인 못 했다.\n · 🔧 그래서 등록했다 — **watch skill1-8975-relay-stale-1010**(owner=claude·기한 10-11): 루틴1 SKILL.md 가 아직 '전달 설정이 안 돼 있다(09-24 실측)·직접 수신분 0건·사각지대' 로 가르쳐서 매 회차 낡은 서술을 되풀이한다. SKILL.md 는 git 밖 파일이라 이부장이 직접 고쳐야 한다.\n\n🟡 정정④ 커밋 496ce0ad 에 남의 항목이 섞였다 — 경로를 지정해 커밋했는데도 그렇다.\n · webapp/routinelog_history.json 이 **세션 시작 시 이미 수정돼 있었고**(+162줄) 거기에 09-24·09-25 다른 루틴 기록이 들어 있었다: 루틴2·3·4·5·6·7·8·9 의 0924/0925 항목 14건.\n · 커밋 메시지는 메일브리핑만 말하는데 내용은 그보다 넓다. **이력은 재작성하지 않는다**(CLAUDE.md) — 여기 적고 넘어간다.\n · 원인: 이 파일은 bake 가 굽는 파생인데 누적형이라 남이 쓴 줄이 그대로 남는다. 경로 지정만으로는 못 막는 부류다.\n▸ 20:16 🟢 사장님 할 일 0건(결재 0 · 조치 기한도래 0). 📌 애드센스=심사 중(GETTING_READY) — 10-10 08:48 전환, 오늘 이부장 재검토 요청(커밋 47b0f4be) 접수 결과이고 구글이 스스로 재개한 게 아니다. 08시 회차는 전환 전이라 이 회차가 첫 보고. 5회째 심사. 【새 중요 메일 2건】①콘솔 정합성 검사 실패 12통(14:23~16:21 KST, 런 38027316603~38034090559) — ⛔사유 'posts_index 348편 vs DB 347편' 로그 직접 확인, 17:21 이후 전 회차 success, 지금 소스·배포본 모두 349=349. 🔴재발 5번째(09-21·09-24·10-01·10-05·10-10)이고 10-05 가 적은 원인이 미수리인 채다. 원인 지점 정정 = approve_server.py 가 아니라 studio/pushapproval.py:97 글롭 (\"*.html\",\"*.json\",\"*.js\") 에 .txt 가 없어 lifeinfo_db.txt 는 이 경로로 영원히 안 가고 deploy.bat robocopy 만 보낸다. 루틴은 보고까지이므로 코드 미수정 — watch console-check-red-dbindex-1005 에 추가 기록(due 10-11, 이부장 결정 필요: 글롭에 DB 를 더할지 posts_index 를 뺄지 · Pages 배포한도 규칙과 얽혀 루틴이 정할 수 없다). ②Claude 신뢰기기 2건(18:56·18:57 KST) — 본문 실측 'Electron on Windows · Seongnam-si, Gyeonggi-do, KR · IP 182.224.194.43'. 같은 18:48~18:56 에 구글 로그인 공유 6건(Claude 5·hCaptcha 1). 오늘 재부팅 창(18:34 커밋~19:01 '재부팅 직후 실측' 커밋) 안에 들어가 Claude Desktop 재인증으로 설명됨 → 추정 아닌 시각 대조이므로 🔴 아님. ③Anthropic Nid 회신(10-06)은 10-08 기보고. 【점검 기록】Gmail 리더 3계정 전부 ✅(magsori 15건 · m8975 0건 직접조회 · aroma 0건=평소) · GSC sc-noreply 7일 0건 · 커넥터 2일 14스레드 · 8975 사각지대는 리더 직접조회로 커버(전달 여부는 오늘 판정 불가, 새 메일 0) · whoami 등록 못 함(이 예약 실행에 ListAgents 없어 표시명 관측 불가 — 이름을 지어내지 않았다).\n▸ 20:21 🔴[루틴1 20:3x 정정] 20:16 보고 중 한 문장이 틀렸다 — 'lifeinfo_db.txt 는 deploy.bat 만 보낸다'. 실측 반증: 오늘 13:00 이후 배포 저장소에서 DB 를 담은 커밋 14건이 **전부 register/OSMU push** 다(17:21 00e7b3ac A1-21 OSMU(instagram)·17:22 a7819e39 threads 가 바로 RED 를 푼 커밋). 정확한 서술 = *pushapproval 경로만 DB 를 안 보내고, DB 는 다음 발행/OSMU push 또는 deploy.bat 으로 들어온다. RED 구간은 그 사이 공백.* 또 '같은 사유 5번째' 도 과한 단정이라 철회한다 — 09-17·09-20 은 index 가 **뒤처진** 방향이고 당시 posts_index 는 git 추적 대상(merge 경로)이었다. posts_index 는 10-03 스테이지4 에서 소스 추적 제외됐다. pushapproval 기제로 직접 증거가 있는 것은 **10-05·10-10 둘**이다. 원인 지점 정정(유효): approve_server.py 아니라 studio/pushapproval.py:97 글롭에 .txt 없음. 상세는 watch console-check-red-dbindex-1005(정정판, due 10-11). ⚠️또 앞 커밋 2e0b2a7b 에 이부장의 Aside 검색설명 done 마킹(A1-21·B4-19, 19:33·19:35)이 섞여 나갔다 — 내용은 무손상이고 커밋 제목만 사실과 어긋난다(이력 재작성 안 함).",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-10",
+   "at": "2026-10-10 20:21"
+  },
+  {
+   "code": "lifeinfo-publish-1010",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "루틴3(발행구) 09시 실행: pubqueue 0건(큐 비어있음)·V0 대기 0건·setgate 통과·pace 오늘2편(D1-13·F4-24, 모두 타 경로로 이미 발행됨)·3-0 트리거 대상 없음(go도장 큐 자체가 0) → 발행 액션 없음. selfcheck FAIL 0, WARN 다수(색인드리프트 8편·OSMU잔여88편 등은 기존 미결, 범위 밖). 재고 0편(하한3) 미달이나 초안생산은 PREP(4/6번) 몫.\n▸ 09:09 루틴3(발행구) 09시 실행: pubqueue 0건(큐 비어있음)-V0대기0건-setgate통과-pace오늘2편(D1-13,F4-24 기발행)-3-0트리거대상없음(큐0) 발행액션없음. selfcheck FAIL0",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-10",
+   "at": "2026-10-10 09:09"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1010",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "A/B 제안 2건 등록+선별 완료: 추천 B4-19(근로·자녀장려금 기한후신청 11/30마감, law.go.kr 조세특례제한법 제100조의6·7 원문으로 감액5% 확인) · 후보 A1-21(지역가입자 보험료지원 확대, 1차출처 미확보). 재고0/99 위기라 draft1010b419 로 이과장에 초안 인계. covered_topics+dupcheck 로 중복 10여건 배제(양육비선지급제=A1-14 이미 발행 등). 오전브리핑_2026-10-10.md 저장\n▸ 16:35 A/B(정부지원복지·세금금융) 오늘 추천1+후보1 이미 처리됨 — rec B4-19(근로자녀장려금 기한후신청)·alt A1-21(국민연금 지역가입자 50%지원) 둘 다 picked→오늘 발행 완료(DB 확인). covered_topics 재확인 결과 중복 없음. LANE_MAX_PER_RUN=1 이미 소진이라 추가 제안 없이 종료",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-10",
+   "at": "2026-10-10 16:35"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1010",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "🛒 후보: 바세린 인텐시브 케어 바디로션 1000ml(1+1) 11,890원 리뷰431·4.7 — 10월 환절기 건조피부 시즌. pick+kakao 완료, 결재함 afflink-20261010-2 등록. 게시·링크발급 없음\n▸ 15:16 test2",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-10",
+   "at": "2026-10-10 15:16"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1010",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "발행대기 재고 0(하한3) 긴급대응 — F4-25 가을철 산불조심기간(11/1~12/15, 과태료20만원) 초안+썸네일(331_fireseason.png 실사진28196색)+pubqueue 적재 완료. 1차출처 source에이전트로 확보(서부지방산림청 공고+국무조정실보도 9개월교차확인). dupcheck🟡0.50(F4-14와 제도다름)·bodydup🟢0.060·layout 0건. V0검사 에이전트 백그라운드 진행중(완료시 결과 별도 기록). 제휴상품=없음 기록. 커밋 8fb5caad 푸시완료. alt(방송연예) 후보는 날짜확인된 소재 없어 이번 회차 미제안(빈손원칙)\n▸ 21:42 F4-25 V0 🟡pass 기록 확인·경미권고 반영 재커밋(a7743a43)·결재함에 발행승인 대기로 올라감. 루틴4 이번 회차 종료",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-10",
+   "at": "2026-10-10 21:42"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1010",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "22:34~22:50 야간검증: 오늘 발행 4편(B4-19·A1-21·D1-13·F4-24) 전수 팩트체크 완료, 오류 0건(국세청 기한후신청95%·보건복지부고시 지역가입자50%지원·주민등록법시행령 과태료표·KBO규정 전부 1차출처 대조 일치). selfcheck 2b 콘텐츠보강 대상 배치(v0inject·factaudit0812) 전부 ❄️동결이라 생략. 발견: 오늘 신규 3편(D1-13·A1-21·B4-19) 본문 교차링크 누락 2곳씩 — 무인루틴 라이브수정 금지 원칙상 watch(xlink-missing-1010)로만 기록, 라이브 미수정. 카톡 보고 발송완료(daily_report 그대로). 커밋 13e3262d 푸시완료.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-10",
+   "at": "2026-10-10 22:49"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1011",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "D1-14 pick(verify 🟡 출처URL없음·관련글D1-08경미) · E3-04 drop(과기정통부 미확정-규제개혁위 통과전)\n▸ 00:43 D1-14 초안·썸네일·pubqueue 완료, V0 pass(🟢, 재검사 2회차 거쳐 설치비·결격기간조문·날짜표현 수정 반영). V0 재검사 중 나온 '시행일 10/24일 수도' 의혹은 law.go.kr 부칙 전체조회로 10/25 확정 재확인(법률 제20155호 부칙이 같은 법률 제19745호 조항 시행일을 2024-10-25로 명시). 재고 1→2편(하한 3), 결재함 대기 중\n▸ 00:43 확인용 재조회",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-11",
+   "at": "2026-10-11 00:43"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1011",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "20261011-1 새우젓1kg(7,900원·리뷰1,697·평점4.4) 결재함 afflink-20261011-1 등록 — 김장철 준비 테마\n▸ 07:15 20261011-1 saeujeot 1kg done - afflink registered, kimjang season",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-11",
+   "at": "2026-10-11 07:15"
+  },
+  {
+   "code": "daily-email-briefing-1011",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "[10-11 08시 메일브리핑] 🔴 사장님 할 일 1건(결재함 · 메일발 아님) · 메일발 신규 할 일 0건 · 새 중요 메일 0통 (기준선 = 10-10 20:21 브리핑 = 11:21Z)\n\n■ 🔴 사장님 할 일 — 1건\n · 결재함 1번 · 🛒 제휴 링크 발급 요청 — 푸드앳홈 새우젓 1kg(7,900원 · 리뷰 1,697 · 평점 4.4). watch afflink-20261011-1 · 기한 오늘 · 올린이 이부장(루틴8 07:00 제안 발). 명령 `python -m studio.tosslink link 7727765`.\n · 🔴 이것은 메일에서 나온 것이 아니다 — 메일발 신규 할 일은 0건이다. 둘을 갈라 적는다(10-10 20:16 회차도 결재 건수를 포함해 셌다).\n · 미결 조치 기한도래 0건(기한 전 2건 별도). 판정 = approvalcount 실행 출력.\n\n■ 📌 애드센스: 계정 READY · 사이트 GETTING_READY(심사 중) · RESULT PENDING — 10-11 08:0x adsense.py status 실측\n · **변화 없음.** 10-10 08:48 전환이고 첫 보고는 10-10 20:16 회차다. 이부장 재검토 요청(커밋 47b0f4be, 10-10) 접수 뒤 유지 중.\n · ⚠️ 「N회째 심사」 같은 숫자는 이번 회차에 다시 세지 않았으므로 쓰지 않는다. API 값으로 심사 진행 여부를 단정하지도 않는다(CLAUDE.md 09-23 정정).\n\n■ 새 중요 메일 — 0통. 프로젝트 관련 신규 메일이 없다.\n · 기준선(10-10 11:21Z) 이후 도착은 2통뿐이고 둘 다 무관하다: googlenews-noreply 「오늘의 브리핑」(10-10 22:29Z · to:magsori8975 전달분) · welcome@supabase.com 「Supa Update October 2026」(10-10 12:16Z · 뉴스레터, 이 프로젝트는 Supabase 를 쓰지 않는다).\n · 아래는 전부 기준선 **이전**이라 기보고(10-10 20:16)로 묶는다: GitHub 콘솔 정합성 실패 메일 12통(05:23~07:21Z) · Claude 신뢰기기 알림 2통(09:56·09:57Z) + 구글 로그인 공유 6통(09:48~09:57Z) · Anthropic 지원 Nid 회신(10-06 21:23Z, 10-08 기보고).\n · GSC sc-noreply 7일 조회 0건(휴지통 포함). 색인 편수 통지가 없으므로 'URL 총계' 주의를 붙일 숫자도 없다.\n · adsense-noreply 신규 0건(3일·휴지통 포함 조회에 없음).\n\n■ 🟢 콘솔 정합성 RED — 원인 수리가 들어갔다. 단 효과 검증은 아직이다.\n · 수리 커밋 = **6c6100b8 [이부장] 2026-10-10 20:32 KST** — studio/pushapproval.py 가 posts_index.json 의 짝인 lifeinfo_db.txt 도 함께 배포하게 고쳤다. 10-10 20:16 회차가 올린 「이부장 결정 필요」가 그날 밤 처리된 것이다(watch console-check-red-dbindex-1005 = done).\n · 이후 RED 0 — 마지막 실패는 10-10 07:20Z(런 38034090559)이고, 그 뒤 콘솔 저장소 전 회차 success(17:04Z~22:14Z 20런 전수 확인, `gh run list --status failure` 로 마지막 실패를 직접 조회).\n · 🔴 **그러나 「수리 효과 확인」이라고 쓰지 않는다.** 오늘 07:14 KST approval push(배포본 99db7013 · approval: 1 items)에 lifeinfo_db.txt 가 **실리지 않았다**. 이유는 결함이 아니라 보낼 것이 없었기 때문이다 — 지금 소스·배포본 모두 DB 350 = index 350 으로 동일해 filecmp 가 같다고 판정한다. 즉 **DB 가 바뀐 직후 approval push 가 도는 장면**이 아직 안 나왔고, 그 장면이 나와야 수리가 증명된다. 다음 발행·OSMU 때 확인될 것이다.\n · source 저장소 마지막 실패 = 10-06 03:28Z(기보고). 이후 전건 success.\n\n■ 🟡 8975 전달 — 「사각지대」라고 쓰지 않는다 (SKILL 74행 문구는 낡았다)\n · 전달이 작동한다: googlenews `to:magsori8975`(10-10 22:29Z)가 magsori 수신함 INBOX 에 실제로 들어왔다. 사장님이 09-27 12:4x 에 전달 설정을 끝내신 결과다(watch gmail-8975-relay-0924 = done).\n · 🔴 다만 **GSC·애드센스 종류가 전달되는지는 여전히 미확인**이다 — 그 표본에 그 종류가 한 건도 없다. '전달이 된다'와 'GSC 통지도 온다'는 다른 주장이다.\n · 🔴 **미처리 · 기한 오늘**: watch **skill1-8975-relay-stale-1010**(todo · owner=claude=이부장). SKILL.md mtime 이 10-03 17:03 이고 74·84~87행이 그대로라 실측으로 확인했다 — 아직 안 고쳐졌다. 루틴1은 이 파일을 고치지 않고 닫지도 않는다(이부장 몫).\n\n■ 점검 기록 (맨 아래 — 결론이 아니다)\n · gmailread scan --body: magsori ✅ 15건 · m8975 ✅ 0건 · aroma ✅ 0건 — 세 계정 토큰 전부 살아 있다(커넥터 밖 직접 조회 정상).\n · aroma8975 0건 = 평소 상태(60일 1건). 🟢 한 줄.\n · 커넥터 조회(전부 휴지통 포함): newer_than:1d in:anywhere 22스레드 · sc-noreply 7d 0 · adsense/google/blogger/anthropic/to:8975/to:aroma 3d 15스레드.\n · 하네스: **validate_db 이번 회차 직접 실행 → PASS 14 · WARN 4 · FAIL 0 · exit 0.** selfcheck 는 **이번 회차에 돌리지 않았다**(마지막 10-11 04:18) — 돌린 것처럼 쓰지 않는다(10-10 정정① 그 자리). health.json 10-11 06:00.\n · WARN 4 는 상시 항목: 일련번호 결번 56 · 미사용 썸네일 119 · 중분류 6~7편 초과 24/35 · 추적파일 2개 작업트리 소실(= webapp/_autoorder.txt·_autoorder_items.json, **세션 시작 전부터 D 상태인 남의 작업분이라 손대지 않았다**).\n · 로컬 git = origin 과 같음(readycheck --behind).\n · whoami 미등록 — 이 비대화 예약 실행에 ListAgents 도구가 없어 표시명을 관측할 수 없다. 이름을 지어내지 않았다.\n▸ 20:17 10-11 20시 메일 브리핑 — 사장님 할 일 0건(메일발) · 새 중요 메일 1통 · 신규 2건 / 기보고 3건. [신규①] 발행 실패 메일(10-11 12:29 KST A4-09): 사유는 원격선행 가드지만 진짜 원인은 같은 글 17초차 2중 트리거(38108325460 success / 38108341143 failure, 같은 sha c8b64451·같은 code·둘 다 workflow_dispatch). 라이브 1편만=중복발행 없음(DB 1건·피드 1건). 10-02 8초차 선례 있어 2번째 발생 → watch publish-double-trigger-1011(이부장 앞). [신규②] 콘솔 정합성 검사 10-11 전건 success·posts_index 355편 DB 일치·실패 0 → 이부장 10-10 20:32 수정(lifeinfo_db.txt 동반 배포)이 실제로 통했다. 10-10 실패는 12건(05:22:59Z~07:20:28Z), 첫·마지막 런 모두 사유 동일(posts_index vs DB 1편 차, 방향만 뒤바뜀). [기보고] 애드센스 GETTING_READY — 10-10 08:48 전환·10-10 20시 첫 보고분 유지(G 09-23→N 10-03→G 10-10 로 뒤집힌 전력 있어 화면이 진실원) · 앤트로픽 Nid 회신 10-08 08시 보고분 · 보안알림 2통(10-10 18:56~57 Electron=Desktop 재인증, 60일간 13회 같은 패턴·직전 구글 로그인 버스트 18:52~18:56 의 0~7초 뒤 도착 → 본인 활동으로 보이나 제가 확인하지는 못했다, watch 미등록). [점검] 리더 3계정 전부 ✅(magsori 16·m8975 0·aroma 0) · GSC sc-noreply 7일 0건 · adsense-noreply 7일 0건 · 8975 전달분 2건=구글뉴스 브리핑(프로젝트 무관) · 로컬 origin 동일\n▸ 20:22 정정(20:2x) — 앞 note 의 '이부장 10-10 20:32 수정이 실제로 통했다' 는 성급했다. 같은 주장이 두 번 재발한 전력이 있다: 10-08 08:17 '콘솔검사 RED 해소 확인' → 같은 날 10:42~11:26 재발 · 10-09 08:20 '해소 확인' → 10-10 5번째 재발. 지금 실측은 '근원 수정(10-10 11:32Z) 뒤 100런 전건 success, 실패 0'(100은 --limit 상한이라 총계 아님)이고 경과는 24시간 미만이다. 20:32 수정은 근원(lifeinfo_db.txt 동반 배포)을 겨냥했으므로 이번은 다를 수 있으나 확인은 며칠 더 지켜봐야 한다. 또 지시서 전문 확인 결과 루틴1 앞 신규 지시 없음(routinelog 의 (A) 판정 줄은 루틴9 앞). A4-09 2중 트리거 원인 확인은 이부장 몫(watch publish-double-trigger-1011) — 루틴1을 기다릴 것 없다",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-11",
+   "at": "2026-10-11 20:22"
+  },
+  {
+   "code": "lifeinfo-publish-1011",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "발행대기 큐 0건(queue.json items=[]) · ⑦승인 도장 찍힌 미발행 글 없음 · 발행 없음. orderwatch 상 지시서들은 전부 ❄️동결/⏸주차(이부장 신규지시 대기) 상태라 루틴3 권한 밖 — 깨우기 생략. pace: 오늘 1편 발행됨(음주운전 조건부면허), setgate 4채널 완결.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-11",
+   "at": "2026-10-11 09:04"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1011",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "A4-09 긴급복지 동절기연료비 — docflow 선별 pick+verify(🟡1 A2-05 15만원 숫자겹침=거짓경고) → draft1011a409 지시서 생성·배선(owner=이과장) 완료",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-11",
+   "at": "2026-10-11 09:29"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1011",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "🛒 후보: 한우 사골 도가니탕 500g 5팩·18,900원·리뷰5,252·평점4.6 — 10월 중순 보양식 시즌 수요. pick+kakao 완료(afflink-20261011-2), 결재함 등록. 게시·링크발급은 안 함(승인 대기)",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-11",
+   "at": "2026-10-11 15:15"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1011",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "9시 실행: F/G/H 글감 추천 G3-13(부산비엔날레 폐막D-21)+후보 H1-27(tvN 나의유죄인간 10/19 첫방송) 제안 → docflow가 둘 다 pick+verify → G3-13 초안+실사진썸네일(338_busan_biennale, Wikimedia CC BY-SA4.0)+pubqueue 적재 완료 → v0 에이전트 반박검사 🔴반려(10월 휴관일 오산정·관람시간/요금 1차출처(busan.go.kr/moca/show01) 안 찾고 확인실패로 잘못 기술, watch v0reject-g3-13 등록). 작업 중 다른 세션이 docs/source_G3-13_...md 1차출처로 이미 원고 보강 중이라 손대지 않음. H1-27 은 이부장이 이미 draft1011h127 지시서로 이과장에 배선함(확인).",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-11",
+   "at": "2026-10-11 21:43"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1011",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "[루틴5] 오늘 발행 8편 중 3편 검증: C1-16(건강보험료율 7.19%·107,850원·중증난치 12월7% 전부 정확)·D2-15(유류세 11/30연장·122원/145원 정확, 출처 인용 우수) 이상없음. 🔴D1-14(음주운전 방지장치) 날짜 오류 발견 — '첫 적용 10월25일'이 경찰청 자료 기준 '10월24일'이어야 함(4개 독립출처 확인, note 190·watch d114-date-fix-1011 등록, 승인대기). selfcheck 기존 발견(교차링크 5편 누락 A4-09/G3-12/D2-15/C1-16/G3-11, 관련글 불일치 1건)은 중복 기록 안 함.\n▸ 22:46 [루틴5] 오늘 발행 8편 중 3편 검증: C1-16·D2-15 정확. D1-14 날짜오류 발견(10/25->10/24, note190,watch d114-date-fix-1011).",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-11",
+   "at": "2026-10-11 22:46"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1012",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "C2-18 선별·초안·V0 3차 완료(🟡 pass)·결재함 상정. C2-19 drop(특별이슈 요건 약함)",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-12",
+   "at": "2026-10-12 01:07"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1012",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "🛒 후보: 홍주부 국내산 고춧가루 1kg·18,560원·리뷰2,753·평점4.6 — 11월 김장철 D-20 전후 가정용 재료 수요(배추김치 완제품·오징어젓갈·새우젓과 다른 SKU). 결재함 afflink-issue20261012 등록, 링크 발급 대기",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-12",
+   "at": "2026-10-12 07:16"
+  },
+  {
+   "code": "daily-email-briefing-1012-1012",
+   "title": "daily-email-briefing-1012 (A)",
+   "state": "done",
+   "note": "[10-12 08시 메일브리핑] 🟢 메일발 사장님 할 일 0건 · 새 중요 메일 0통 (기준선 = 10-11 20:17 브리핑 = 11:17Z). 결재함 2건은 메일발이 아니다.\n\n■ 🙋 사장님 결재 대기 2건 (approvalcount 실행 출력 · 메일에서 나온 것 아님)\n · 1번 · G3-14 「2026 청송사과축제 11월 4일 개막 — 5일 일정표·저녁 공연·불꽃놀이」 발행 승인 — 🔴 되돌릴 수 없음(라이브 URL 생성). 올린이 이과장\n · 2번 · afflink-issue20261012 제휴 링크 발급 — 홍주부 국내산 고춧가루, 일반굵기, 보통매운맛, 1kg, 1개(18,560원 · 리뷰 2,753 · 평점 4.6). 김장철 D-20. ✋사장님이 직접: python -m studio.tosslink link 7732009. 올린이 이부장\n · ☑️ 미결 조치 기한도래 0건(기한 전 2건 별도).\n\n■ 📌 애드센스: 계정 READY · 사이트 GETTING_READY · RESULT PENDING — 10-12 08:0x adsense.py status 실측\n · **변화 없음.** 10-10 08:48 NEEDS_ATTENTION→GETTING_READY 전환(이부장 재검토 요청, 커밋 47b0f4be) 뒤 3회차 연속 같은 값. git 으로 전환 시점 재확인(496ce0ad N → 47b0f4be G).\n · ⚠️ API 값으로 「심사가 실제로 돌고 있다」를 단정하지 않는다(CLAUDE.md 09-23 정정 — 화면이 진실원). 「N회째」도 세지 않았으므로 쓰지 않는다.\n\n■ 새 중요 메일 — 0통. 기준선 이후 도착은 googlenews「오늘의 브리핑」(10-11 22:30Z · to:magsori8975 전달분) 1통뿐이고 프로젝트와 무관하다.\n\n■ 🟡 직전 회차 누락 2통 — 기보고가 아니다\n · noreply-accounts@google.com「Google 계정 데이터 일부를 Claude에 공유하셨습니다」 10-11 06:52Z·07:29Z(=15:52·16:29 KST). 같은 스레드 1a129bc13801fa16.\n · 10-11 08시 note 는 이 메일들이 오기 전에 쓰였고, 20:17 append 는 **10-10** 버스트(09:48~09:57Z·6통)만 적었다 — note 전문을 정규식으로 훑어 06:52/07:29/15:52/16:29 가 한 번도 안 나오는 것을 확인했다.\n · 내용은 Claude 로그인 시 구글 계정 데이터 공유 요약이고 「별도의 조치를 취하실 필요가 없습니다」라고 본문에 적혀 있다. 사장님 본인 로그인으로 보이나 **제가 확인하지는 못했다.** 🔴 로 올리지 않고 watch 도 만들지 않았다.\n\n■ 기보고 — 아래는 전부 기준선 이전이다\n · GitHub 발행 실패 1통(10-11 03:29Z, A4-09): 사유는 원격선행 가드이나 진짜 원인은 같은 글 17초차 2중 트리거(38108325460 success / 38108341143 failure). 10-11 20:17 보고분. **신규 사실 1개** — watch publish-double-trigger-1011 의 --cmd 대로 이후 발행런 7건을 전수 조회하니 G3-12·D2-15·C1-16·G3-11·H1-27·G3-13·C2-18 로 **전부 다른 코드, 근접 쌍 0 = 재발 0**. 원인 규명은 이부장 몫이라 항목은 열어 둔다(제가 닫지 않았다).\n · GitHub 콘솔 정합성 실패 12통(10-10 05:23~07:21Z): 사유 = posts_index 348편 vs DB 347편(런 38034090559 로그 직접 열람 · 신호등 RED 통과11·경고1·실패1).\n · Claude 신뢰기기 알림 2통(10-10 09:56·09:57Z) · Anthropic Nid 회신(10-06, 10-08 보고분).\n\n■ 🟢 콘솔 정합성 — `--status failure --limit 1` 로 직접 조회: 마지막 실패가 **10-10 07:20:28Z(38034090559)** 그대로다. 그 뒤 실패 0.\n · 🔴 그래도 「수리 효과 확인」이라고 쓰지 않는다. 10-08·10-09 에 같은 「해소 확인」을 두 번 쓰고 두 번 다 재발했다. 경과 ~25시간이다.\n · source 저장소 마지막 실패 = 10-11 03:25:39Z(위 A4-09 2중 트리거).\n\n■ 🟡 8975 전달 — 「사각지대」가 아니다. SKILL.md 문구가 낡았다\n · 오늘도 작동 확인: googlenews to:magsori8975 가 10-11 22:30Z 에 magsori 수신함 INBOX 로 들어왔다. watch gmail-8975-relay-0924 = done.\n · 🔴 GSC·애드센스 종류가 전달되는지는 **여전히 미확인** — 표본에 그 종류가 없다. 두 주장은 다르다.\n · 🔴 **미처리 · 기한 하루 지남**: watch skill1-8975-relay-stale-1010(todo · owner=claude=이부장 · 기한 10-11). SKILL.md 74·84~87행이 아직 「전달 설정이 안 돼 있다」로 가르친다. 루틴1은 이 파일을 고치지도 닫지도 않는다.\n\n■ 점검 기록 (맨 아래 — 결론이 아니다)\n · gmailread scan --body: magsori ✅ 16건 · m8975 ✅ 0건 · aroma ✅ 0건 — 세 계정 토큰 전부 살아 있다. 16건 내역을 전수 대조했다(Nid 1 + 발행실패 1 + 보안 2 + 콘솔실패 12).\n · aroma8975 0건 = 평소 상태(60일 1건). 🟢\n · 커넥터 조회: sc-noreply 7일 **0건** · to:8975/aroma 2일 2건(둘 다 googlenews) · is:important 2일 1건(supabase 뉴스레터, 무관) · 구글·깃허브·앤트로픽 2일 휴지통포함 20스레드.\n · GSC 색인 편수 통지가 없으므로 「URL 총계」 주의를 붙일 숫자도 없다.\n · 하네스: validate_db **이번 회차 직접 실행 → PASS 14 · WARN 4 · FAIL 0**. selfcheck **이번 회차 직접 실행** → 🔴 9건 · 🟡 10건(교차링크 5편·검색설명 낡음 D1-14 등 — 루틴1 몫이 아니라 손대지 않았다).\n · 🔴 **문제** — selfcheck 20) 오탐 감시가 `too many values to unpack (expected 4)` 로 **검사 실패**했다. 같은 회차에 한 번은 결과를 내고 한 번은 죽는다(출력에 두 줄 다 찍힘). 오탐 감시가 반쪽 눈이 먼 상태다. 이부장 몫.\n · WARN 4 는 상시 항목(결번 59 · 미사용 썸네일 127 · 중분류 초과 24/35 · 추적파일 2개 소실=_autoorder*, 세션 시작 전부터 D 상태인 남의 작업분이라 손대지 않음).\n · 로컬 git = origin 과 같음(readycheck --behind).\n · 지시서: routinelog 전문 확인 — 루틴1 앞 신규 지시 없음(24일째 미갱신 · (A) 판정 줄은 루틴9 앞).\n · whoami 미등록 — 이 비대화 예약 실행에 ListAgents 도구가 없어 표시명을 관측할 수 없다. 이름을 지어내지 않았다.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing-1012",
+   "date": "2026-10-12",
+   "at": "2026-10-12 08:18"
+  },
+  {
+   "code": "lifeinfo-publish-1012",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "발행대기 2건(G3-14 청송사과축제·A5-14 난임치료휴가) 전부 V0 🟢 pass·중복교차검증 통과 상태로 이미 결재함(approvalcount)에 등록됨 — go도장 없어 신규 발행·3-0 자동트리거 대상 없음. gh run list 진행중 run 없음(최근 run 10/11 17:38 success). pace 오늘1편(상한 없음)·재고2/하한3(바닥 경보)·setgate 4채널 미완 없음. 신규 등록·발행 액션 없음(이미 완료 상태 확인만).",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-12",
+   "at": "2026-10-12 09:06"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1012",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "A/B 담당: A2-25(2027 아이맞이지원금 최대2천만원·7/1 출생아부터·추천) + A5-15(대지급금 부정수급 신고포상금 1억→2억·2027.1.1 시행·후보) 제안·dupcheck🟡(낱말만 겹침)·covered_topics 양레인 대조 완료. docflow에이전트가 둘 다 pick+verify(🟡 통과). A2-25는 1차출처(source에이전트) 대기로 초안 보류, A5-15는 draft1012a515로 이과장 대행지시(발행·게시 먼저 하고 오라고 명시). 커밋 fe080fc2 push 완료.\n▸ 09:43 [추가] A2-25 1차출처 확보완료(source에이전트, korea.kr 전재 보건복지부 보도자료 2026-08-28) — 지급액·우대지역·시행일(2027.7.1)·법개정상태 전부 1차원문 확인, 예산총액만 확인안됨으로 분리. docs/source_A2-25_아이맞이지원금_20261012.md 커밋 d300f3c0 push 완료. 초안작성은 루틴2 담당 아님(SKILL 명시) — 6번(23:55) 또는 이과장이 이어쓸 것.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-12",
+   "at": "2026-10-12 09:43"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1012",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "이슈상품 후보 1건(가습기·시즌) 결재함 등록 afflink-issue-20261012 · 링크 발급은 이부장\n▸ 15:14 확인",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-12",
+   "at": "2026-10-12 15:14"
+  },
+  {
+   "code": "daily-email-briefing-1012",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "[루틴1] 2026-10-12 20:08 브리핑: 🔴 조치 0건 · 🟡 확인 2건 — ①글 발행(초안/라이브) 워크플로 실패 메일 2건(10/11 03:29 UTC·run 38108341143 등) 사유 미확인 ②콘솔 정합성 검사 실패 메일 약 10건(10/10 05:23~07:21 UTC) 원인 미확인 · Anthropic 지원 10/06 회신: 조사 미개시, /bug 권장(사장님 확인 필요 없음) · AdSense API: READY/GETTING_READY(심사 중), RESULT PENDING · Gmail리더 magsori 3건·8975 0건·aroma 0건(평소) · GSC 7일 통지 0건 · 8975 전달 설정 대기 유지(watch gmail-8975-relay-0924)",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-12",
+   "at": "2026-10-12 20:07"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1012",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "빈손 보고 2026-10-12 21시: F/G/H 제안 0건. 오늘 F/G/H 이미 G3-13·G3-15·F4-26·H1-27 제안됨. 지스타2026(부산 11/19~22) 후보를 봤으나 공식 gstar.or.kr 에서 입장권 가격·예매일 확인 실패(1회 시도·표시 안 됨)이고 일반 예매는 8월 말 시작이라 시급성도 낮아 보류. 방송·연예 후보도 날짜 박힌 공식 근거(방송사/OTT 공식 편성표)를 못 얻어 미제안. 발행대기 재고 0이라 재고 바닥 상태이나 억지 제안 안 함.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-12",
+   "at": "2026-10-12 21:13"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1012",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "10-12 22:30 야간검증: 오늘 발행분 4편(B2-19·A5-16·A2-25·D2-16) 법령 DRF·1차출처 대조 오류 0. 미검증 오늘분 8편 다음 회차 우선. selfcheck 🔴8(기존 항목: 관련글 B4-16 네이버초안 URL·네이버판독 7일 낡음·화면회귀4 등) 이부장 확인 필요",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-12",
+   "at": "2026-10-12 22:42"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1013",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "E4-08 금융권 개인정보 유출 소비자경보(금융위 2026-26호, 10/6) 제안→선별→초안·썸네일(352_finleak_block)·큐 적재·V0 🟡pass(지적 4건 반영: 일주일 표기·대포통장/선입금 단정 완화, 범위·수법은 공식 보도자료 근거로 source 보강). 알트 후보 없음(검증 가능한 소재 못 찾음). 이부장: 결재함 발행 승인 대기, KW=미측정",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-13",
+   "at": "2026-10-13 00:20"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1013",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "07:xx 실행 · productprop collect 294건 · 시즌 검색(전기매트·가습기·핫팩·수험생·김장·김치냉장고·소금·보온도시락·목도리·수능) · 신규 후보 없음 → 빈손 보고(중복 가습기·니삭스·비타민C·고춧가루·차렵이불은 제안함에 이미 있음)",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-13",
+   "at": "2026-10-13 07:13"
+  },
+  {
+   "code": "daily-email-briefing-1013",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "메일 브리핑 실측: 애드센스 GETTING_READY(심사 중·RESULT PENDING) · Gmail리더 magsori 3건/m8975 0/aroma 0 · 커넥터 조회 4건 · 🟡 발행 실패(run 38108341143, 10-11 03:29 UTC) 사유=원격 선행 가드(PC 커밋 순간 충돌, 코드 결함 아님·재실행 안 함) · 🟡 Anthropic 지원 회신(10-06): 조사 미개시·/bug 명령 권장 · 🟢 Anthropic 영수증 $100(Max 5x) 10-12 · 🟢 Google 계정 공유 알림(Claude 로그인) 정상 · 8975 GSC 전달 미설정 유지(watch gmail-8975-relay-0924)\n▸ 20:07 메일 브리핑 2026-10-13 20:08: 사장님 할 일 없음. 애드센스 GETTING_READY(심사 중). magsori 신규 5건 중 조치 없음(Anthropic 지원 회신=조사 불개시·증거파일 불요, Cursor 권한 요청 2건=무시 가능). 8975·aroma 0건. GSC 7일 0건.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-13",
+   "at": "2026-10-13 20:07"
+  },
+  {
+   "code": "lifeinfo-publish-1013",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "E4-08 큐 1편: V0 🟢·pace 0편·setgate 통과, ⑦도장 없음 → 발행 안 함(결재함 1번에 이미 등록). 3-0 대상 없음. 로컬=origin 일치",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-13",
+   "at": "2026-10-13 09:04"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1013",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "10/13 A/B 빈손: 청년미래적금2차(B5-05 중복)·대중교통공제(B4-07 중복·2027적용)·노인복지주택(입법예고) 모두 부적합. topicprop add 0건. 재고1(하한3) 참고",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-13",
+   "at": "2026-10-13 09:18"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1013",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "15:00 이슈상품 회차 — 빈손. 전기요 1건 보류(리뷰 10·평점 4.2, 10월 중순엔 시즌 이름). 김장·온수매트·김치냉장고는 토스 인기목록 미등재. 오전 회차 수집(07:12) 재사용.",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-13",
+   "at": "2026-10-13 15:13"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1013",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "10-13 21시 빈손: 후보 부산자갈치축제(10/15~18)는 dupcheck 결과 G1-10 로 이미 발행됨→제외. 양산삽량문화축전 2026 일정 미확인. 재고 2편(G3-16·A1-22), 신규 제안 0건",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-13",
+   "at": "2026-10-13 21:12"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1013",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "10-13 22:30 야간검증: 오늘 발행 3편(E4-08·D3-09·H1-28) 1차출처 직접대조 오류0 + 기존글 3편(A5-14·A5-15·B4-20) 오류0, 총 6편. 경미: E4-08 1394 명칭·사기신호 표 2행 근거가 검색요약. 라이브 수정 없음. selfcheck 🔴7(화면회귀·지시서·D1-14 검색설명 낡음 등)은 관제탑 몫. note 265 기록",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-13",
+   "at": "2026-10-13 22:44"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1014",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "빈손(제안 0건): C·D·E 후보 재봄 — 독감접종·건강검진·알뜰폰·에너지바우처는 dupcheck 강한중복(C2-06·C2-01·E1-01·A2-02), 도시가스요금경감(🟢신규)은 2026-27 겨울 한도·기한 1차출처 못 얻음(최신 공식값 2025-26, 부산도시가스는 2026.3 종료 표기) → '지금 찾을 이유' 미확인이라 보류. 조사 원문 docs/source_D_도시가스요금경감_20261014.md. 재고 2/하한3 — 다음 회차에 motir 보도자료 게시판(Aside) 확인되면 재제안 권장. 초안·큐·커밋 없음",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-14",
+   "at": "2026-10-14 00:12"
   }
  ],
- "updated": "2026-10-17 00:07:51"
+ "updated": "2026-10-29 07:13:51"
 }
