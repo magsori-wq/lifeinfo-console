@@ -24889,6 +24889,26 @@
    "by": "이부장",
    "done_at": "2026-10-29",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "naver-analytics-stale-1029",
+   "added": "2026-10-29",
+   "what": "naver_analytics.json 낡음: 일별 views 구조화는 10-04·10-12 까지, 수익 일별은 10-05 까지(10-11~25 합 1,884원은 docs/측정_방송연예성적_20261026.md 산문에만), summary daily=10-12 1일·posts=10-05 1일. 10-20·21 검색유입률 동일 73.08% 의심.",
+   "due": "2026-10-31",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/naver_analytics.json',encoding='utf-8'));print([e['period'] for e in d['daily']][-2:],[e['period'] for e in d['revenue']][-2:])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-account-guard-1029",
+   "added": "2026-10-29",
+   "what": "Aside 브라우저 한 프로필에 네이버 두 계정(magsori8975·aroma-mag)이 번갈아 로그인 — 10-29 14:06 aroma-mag 로그인 상태였다. magsori8975 게시 직전 MyBlog.naver 리다이렉트로 계정 확인하는 코드 게이트, 또는 두 번째 Aside 프로필 분리",
+   "due": "2026-10-30",
+   "cmd": "python -m studio.asideprobe health",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
