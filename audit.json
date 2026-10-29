@@ -5,14 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "docflow-blocked-0905",
-   "detail": "무효: pub0905d306(D3-06)·pub0905e210(E2-10) 둘 다 이후 실제 발행 완료(DB url 확인, batchboard에서도 해당 배치 사라짐) — 막힘 해소됨.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "concurrent-commit-guard",
    "detail": "해소: commitguard 훅(.githooks/commit-msg)+whodid 도구(2026-08-28)가 근본원인(주체 추적 불가)을 해결 — whodid 최근7일 정상 작동 확인, 재발 사례 없음.",
    "via": "cli"
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "xlink-h131",
    "detail": "교차링크 삽입·라이브 4링크 확인(네이버 224457667436·쓰레드 DfEC2kTga6z·인스타 DfECnbgkdHm), osmuimgcheck 🔴0",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T13:10:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b307",
+   "detail": "교차링크 삽입·라이브 4링크 확인(네이버 224457709307·쓰레드 DfEHWjyAUZ1·인스타 DfEHLHnkVC2)",
    "via": "cli"
   }
  ]
