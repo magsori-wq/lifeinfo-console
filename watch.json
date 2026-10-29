@@ -22010,7 +22010,7 @@
    "id": "shrink-1post-test-1024",
    "added": "2026-10-22",
    "what": "보이는 글 줄이기 1편 시험(초안 되돌림+맞춤 리디렉션 301) 결과 확인·사장님 즉시 보고",
-   "due": "2026-10-24",
+   "due": "2026-11-09",
    "cmd": "curl -s -o /dev/null -w '%{http_code} %{redirect_url}' <시험 글 주소>",
    "owner": "claude",
    "state": "wait",
@@ -22508,7 +22508,7 @@
    "id": "shrink62-excl-3-1024",
    "added": "2026-10-23",
    "what": "62편 줄이기(shrink1024) 목록에서 B2-20·B2-21·B5-09 제외 — 제목 날짜가 마감일이 아니라 시행일(4. Blogger 대조 10-23 발견) · 판정 규칙 시행일/마감일 구분 수정 · 10/24 목록 확정 전 확인",
-   "due": "2026-10-24",
+   "due": "2026-11-09",
    "cmd": "grep -n 'B2-20\\|B2-21\\|B5-09' docs/*shrink* docs/*62*",
    "owner": "claude",
    "state": "todo",
@@ -24787,9 +24787,11 @@
    "due": "2026-10-29",
    "cmd": "허락: 62편 줄이기는 심사 결과 뒤로",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-10-29",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "xlink-h131",
