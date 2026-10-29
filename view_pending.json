@@ -1,11 +1,10 @@
 {
- "computed_at": "2026-10-29 11:20:29",
- "source_head": "59c1b47b68a3",
+ "computed_at": "2026-10-29 11:36:09",
+ "source_head": "ce17fe845ec9",
  "ids": [
   "B3-07",
   "H1-31",
   "H1-33",
-  "aside-login-ca-1029",
   "claude-limit-reset-1022"
  ],
  "posts": [
@@ -66,7 +65,7 @@
    "eng": "sbs_gayo_daejeon_2026",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224457608997",
      "files": [
       {
        "label": "네이버 원고",
@@ -81,7 +80,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -146,14 +145,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "aside-login-ca-1029",
-   "what": "Aside ca 로그인 필요 — 자동 확인(05:09): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
-   "due": "2026-10-29",
-   "cmd": "python -m studio.asideprobe login --batch aside --what ca",
-   "state": "todo",
    "kind": "action"
   }
  ],
