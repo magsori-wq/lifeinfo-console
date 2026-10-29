@@ -24995,6 +24995,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "db-stale-write-guard-1029",
+   "added": "2026-10-29",
+   "what": "장부 G1-17 유실 재발방지: pipeline.py:51·naver.py:44 _save_db 에 읽은 뒤 변경 감지(mtime/해시)·레코드 수 감소 거부 — 설계도 먼저, 페이블 검증. 근거 docs/조사_장부G1-17유실_20261029.md",
+   "due": "2026-10-30",
+   "cmd": "grep -n 'def _save_db' studio/pipeline.py studio/naver.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
