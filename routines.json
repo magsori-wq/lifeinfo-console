@@ -1,17 +1,22 @@
 {
- "generated": "2026-10-30 07:14",
+ "generated": "2026-10-30 08:10",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "10/29 20:05",
-   "next": "10/30 08:00",
+   "last": "10/30 08:04",
+   "next": "10/30 20:00",
    "model": "sonnet-5-5",
-   "report_day": "1029",
-   "report": "08:08 메일브리핑 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중, 직전 NEEDS_ATTENTION에서 전이 감지). 새 중요메일: Google Cloud 약관(10-12 시행, 에이전트AI 조항·우리 영향 낮음, 조치 없음). GitHub 피드드리프트 검사 실패 10-27·28 연속(기추적 watch drift-fail-1021). OpenAI 새 로그인 알림 1건(참고). GSC 7일 0건. 점검기록: 리더 magsori 3·m8975 0·aroma 0, 커넥터 m8975 전달분=구글뉴스 2건만.\n▸ 20:09 20:08 메일브리핑 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중). 새 메일: GitHub publish run 40809431080 B3-07 사전점검 실패(본문 thumbs 참조 없음) → 4분 뒤 재발행 success, 이후 10-29 run 3건 success(무해·해소). 피드 드리프트 검사(console) 10-27~29 매일 실패=기존 watch drift-fail-1021 계속. Google Cloud 약관(10-12 적용) 기보고·무관. 쿠팡 파트너스 수신동의 안내(조치 없음). GSC 7일 0건·m8975 0·aroma 0(평소). 이어받은것 watch done 재상신 없음.",
+   "report_day": "1030",
+   "report": "08:08 메일브리핑 10-30 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중·PENDING). 새 중요메일 없음: 이어받은 것=Google Cloud 약관(10-12 시행·기보고), OpenAI Codex 새 로그인 10-28 15:01 KST 성남(본인 추정·조치불요), 쿠팡파트너스 수신동의 안내(10-29 정보성). 🟡 GitHub 피드 드리프트 검사(lifeinfo-console) 10-27·28·29 연속 실패 — 사유 로그 미확인, 반복이라 이부장 확인 요망 / 발행 run 40809431080(10-29 02:58) 실패 후 재시도 3회 성공(사전점검 단계 로그에서 원인 미특정). GSC 7일 0건. 점검: magsori 5·m8975 0·aroma 0(직접), 커넥터 전달분 8975 구글뉴스 2건·aroma 0 정상",
    "runs": [
+    {
+     "at": "10/30 08:10",
+     "link": "claude://claude.ai/epitaxy/local_b022737d-5d49-420f-ac65-5e169d3232e2",
+     "archived": false
+    },
     {
      "at": "10/29 20:11",
      "link": "claude://claude.ai/epitaxy/local_7313f38c-cde6-4918-94b8-6be0ac898017",
@@ -30,11 +35,6 @@
     {
      "at": "10/28 08:09",
      "link": "claude://claude.ai/epitaxy/local_d0623fc9-7d75-4d5d-8c2b-e5d9b79bf80a",
-     "archived": true
-    },
-    {
-     "at": "10/27 20:08",
-     "link": "claude://claude.ai/epitaxy/local_c3afacf9-facc-4846-9aa6-6ebeec2fd4d8",
      "archived": true
     }
    ]
@@ -279,7 +279,7 @@
    "report": "🛒 빈손 — 신규 후보 없음. [조사장부] 목록 2 · 원문 0 · 후보 3 · 탈락 3 · 검색어 5 (바닥 미달: 상품 루틴이라 1차 출처 원문 없음, 토스 collect 294건·search 약 16낱말만, korea.kr·kwgap 미훑음)\n· 핫팩/가습기 — productprop search 상위가 이미 게시(hotpack1026·20261012-1): 탈락(기게시)\n· 감귤 서귀포 12brix 5kg 13,900 리뷰2,857 — naverkw ✅ 실검색어, 단 20261002-2 감귤 5kg 이미 쓰레드 게시(한 달 내 동종 재탕), 노지 출하 시즌 1차 확인 못 함: 탈락(보류, 11월 중순 재검토)\n· 김장매트·전기장판·온수매트·롱패딩·수험생 — 토스 인기목록에 없음(naverkw 김장/전기장판/수능선물 실검색어는 ✅): 탈락(상품 부재, 다나와 product 에이전트 조사 필요)\n이어받은 것: 어제 15:00 회차 빈손 / 새로 본 것: 감귤 노지 시즌 대기",
    "runs": [
     {
-     "at": "10/30 07:14",
+     "at": "10/30 07:16",
      "link": "claude://claude.ai/epitaxy/local_9a6159b7-b803-407f-8578-864bb1e194cf",
      "archived": false
     },
