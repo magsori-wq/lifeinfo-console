@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "items": [
   {
    "id": "redirect-error",
@@ -25150,6 +25150,27 @@
    "what": "피드 드리프트 검사 성공 확인(DB 제목 6건 정정 뒤·deploy 후)",
    "due": "2026-10-30",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow 피드 드리프트 검사 --limit 1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-routine10-rerun-1030",
+   "added": "2026-10-30",
+   "what": "【권고】루틴10(이대리 야간 글감) 다시 실행 — 사이드바 Scheduled → 10-aroma → Run now 【근거】10-29 23:15 회차가 시작 직후 Claude 프로세스 비정상 종료(code 3221226505)로 실패, 보고·결재 0건. 이부장의 재실행은 안전장치가 막음 【위험】그대로면 오늘 aroma 글감 없음",
+   "due": "2026-10-30",
+   "cmd": "사이드바 Scheduled → 10-aroma 이대리 야간 글감 → Run now",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "lee-wake-d508-1030",
+   "added": "2026-10-30",
+   "what": "이과장 세션(local_d978f7db) 00:14 메시지 미수신 — D5-08 초안 지시서 draft1030d508 안읽음. 사장님 출근(12시) 전 다시 깨우기",
+   "due": "2026-10-30",
+   "cmd": "python -m studio.cpstate --list",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
