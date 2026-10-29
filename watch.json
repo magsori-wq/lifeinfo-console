@@ -24974,6 +24974,27 @@
    "by": "이대리",
    "done_at": "2026-10-29",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "ledger-g117-restore-1029",
+   "added": "2026-10-29",
+   "what": "【권고】로컬 장부(webapp/lifeinfo_db.txt)에서 G1-17(울산 현금 없는 시내버스) 레코드가 15:00:17 에 빠졌다 — 커밋본(HEAD)으로 되돌리기 허락 【근거】diff = count 450→449 + G1-17 블록 삭제뿐, 원격·HEAD 에는 있음 【위험】그대로 두면 다음 syncorigin·pubgo 가 손실을 커밋한다. 이부장 복원 2회는 안전장치가 막았다",
+   "due": "2026-10-29",
+   "cmd": "git -C C:/lifeinfo checkout -- webapp/lifeinfo_db.txt",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am009-posted-1029",
+   "added": "2026-10-29",
+   "what": "AM-009 18:30 전 게시 확인(이대리 보고에 공개 URL)",
+   "due": "2026-10-29",
+   "cmd": "python -m studio.batchboard show --id aroma",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
