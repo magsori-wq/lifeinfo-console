@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="60">
+<title>주간 한도</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f97316'/%3E%3Cpath d='M32 14a18 18 0 1 0 18 18H32z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#16181d;--sub:#636a75;--line:#e3e6ea;--track:#eceff3;
+--use:#2563eb;--time:#9aa3af;--warn:#d97706;--bad:#dc2626;--ok:#16a34a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--card:#171a20;--ink:#e8eaee;
+--sub:#9aa1ad;--line:#262a33;--track:#232831;--use:#60a5fa;--time:#6b7280;--warn:#f59e0b;--bad:#f87171;--ok:#4ade80}}
+:root[data-theme="dark"]{--bg:#0f1115;--card:#171a20;--ink:#e8eaee;--sub:#9aa1ad;--line:#262a33;--track:#232831;
+--use:#60a5fa;--time:#6b7280;--warn:#f59e0b;--bad:#f87171;--ok:#4ade80}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.5 "Pretendard","Malgun Gothic",system-ui,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 2px}.meta{color:var(--sub);font-size:13px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.card h2{font-size:15px;margin:0 0 10px}
+.row{display:grid;grid-template-columns:92px 1fr 64px;gap:10px;align-items:center;margin:7px 0}
+.lab{color:var(--sub);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.val{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.track{position:relative;height:14px;background:var(--track);border-radius:7px;overflow:hidden}
+.fill{position:absolute;left:0;top:0;bottom:0;border-radius:7px}
+.big .track{height:22px;border-radius:11px}.big .fill{border-radius:11px}
+.tick{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);opacity:.55}
+.note{color:var(--sub);font-size:12.5px;margin-top:8px}
+.kv{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;margin-top:6px}.kv b{font-variant-numeric:tabular-nums}
+.sess .row{grid-template-columns:210px 1fr 56px}
+.days{display:flex;align-items:flex-end;gap:8px;height:130px;padding-top:6px}
+.day{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.col{width:100%;max-width:46px;background:var(--use);border-radius:6px 6px 0 0;min-height:2px}
+.dl{font-size:12px;color:var(--sub);margin-top:4px}.dv{font-size:11.5px;color:var(--sub)}
+.empty{color:var(--sub)}
+@media (max-width:480px){.row{grid-template-columns:70px 1fr 54px}.sess .row{grid-template-columns:132px 1fr 50px}}
+</style></head><body><div class="wrap">
+<h1>주간 한도 사용량</h1>
+<div class="meta" id="meta"></div>
+<div class="card big"><h2>이번 주</h2><div id="week"></div><div class="kv" id="kv"></div>
+<div class="note">세로선 = 지금까지 흐른 시간. 파란 막대가 이 선보다 앞서 있으면 평균보다 빨리 쓰고 있는 것입니다.</div></div>
+<div class="card"><h2>하루별 사용 (요금 환산 · 이번 주)</h2><div class="days" id="days"></div></div>
+<div class="card sess"><h2>세션별 비중 (이번 주 · 추정)</h2><div id="sess"></div>
+<div class="note">세션 기록의 실제 토큰을 API 요금 비율(입력 1 · 캐시쓰기 1.25 · 캐시읽기 0.1 · 출력 5)로 단 비중입니다. 주간 한도 %와의 공식 환산 비율은 공개돼 있지 않아 추정입니다.</div></div>
+<div class="note">1분마다 새로 고칩니다. 한도 %는 모드가 도는 세션이 한 턴을 마칠 때 갱신됩니다(Desktop 전용 세션만 켜져 있으면 멈출 수 있습니다).</div>
+</div>
+<script>
+const D = {"generated": "10-29 11:35", "week": {"empty": false, "pct": 12.0, "stale": false, "elapsed": 6.3, "reset_txt": "11-05(목) 01:00", "left_txt": "6일 13시간", "measured_ago": "0시간 5분", "avg_proj": 192.2, "per_day_budget": 13.4, "recent_rate_h": 1.867, "recent_eta_txt": "10-31(토) 10:36"}, "five": {"empty": false, "pct": 14.0}, "daily": [["10-29", 36712515]], "total_w": 36712515, "sessions": [{"name": "이부장", "share": 63.7, "n": 1}, {"name": "이과장", "share": 28.4, "n": 1}, {"name": "lifeinfo-daily-topics (B)", "share": 3.9, "n": 1}, {"name": "lifeinfo-index-check (G)", "share": 1.5, "n": 1}, {"name": "daily-email-briefing (A)", "share": 0.9, "n": 1}, {"name": "8-lifeinfo-issue-product (H)", "share": 0.9, "n": 1}, {"name": "lifeinfo-publish (C)", "share": 0.7, "n": 1}]};
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function row(lab, pct, color, tick, shown) {
+  const w = Math.max(0, Math.min(100, pct));
+  return '<div class="row"><div class="lab" title="' + esc(lab) + '">' + esc(lab) + '</div><div class="track">' +
+    '<div class="fill" style="width:' + w + '%;background:' + color + '"></div>' +
+    (tick != null ? '<div class="tick" style="left:calc(' + Math.min(100, tick) + '% - 1px)"></div>' : '') +
+    '</div><div class="val">' + esc(shown != null ? shown : pct.toFixed(1) + '%') + '</div></div>';
+}
+const W = D.week, F = D.five;
+$('meta').textContent = '갱신 ' + D.generated + (W && W.measured_ago ? ' · 한도 측정 ' + W.measured_ago + ' 전' + (W.stale ? ' (낡음)' : '') : '');
+if (!W || W.empty) {
+  $('week').innerHTML = '<div class="empty">아직 측정값이 없습니다.</div>';
+} else {
+  const col = W.pct >= 90 ? 'var(--bad)' : W.pct >= 80 ? 'var(--warn)' : 'var(--use)';
+  let h = row('사용', W.pct, col, W.elapsed);
+  if (W.avg_proj != null) {
+    const pc = W.avg_proj >= 100 ? 'var(--bad)' : W.avg_proj >= 85 ? 'var(--warn)' : 'var(--ok)';
+    h += row('예측(평균)', W.avg_proj, pc, null, Math.round(W.avg_proj) + '%');
+  }
+  h += row('시간 경과', W.elapsed, 'var(--time)');
+  if (F && !F.empty) h += row('5시간 한도', F.pct, 'var(--use)');
+  $('week').innerHTML = h;
+  const kv = [['초기화', W.reset_txt + ' (' + W.left_txt + ' 남음)']];
+  if (W.per_day_budget != null) kv.push(['하루 권장', W.per_day_budget + '%p 이하']);
+  if (W.recent_rate_h != null) kv.push(['최근 속도', '시간당 ' + W.recent_rate_h.toFixed(2) + '%p' + (W.recent_eta_txt ? ' · 100% ' + W.recent_eta_txt : '')]);
+  $('kv').innerHTML = kv.map(([k, v]) => '<span>' + esc(k) + ' <b>' + esc(v) + '</b></span>').join('');
+}
+const days = D.daily || [];
+const dmax = Math.max(1, ...days.map(d => d[1]));
+$('days').innerHTML = days.length ? days.map(d =>
+  '<div class="day"><div class="dv">' + Math.round(100 * d[1] / D.total_w) + '%</div><div class="col" style="height:' +
+  (100 * d[1] / dmax).toFixed(1) + '%"></div><div class="dl">' + esc(d[0]) + '</div></div>').join('')
+  : '<div class="empty">기록 없음</div>';
+const rows = D.sessions || [];
+const smax = Math.max(1, ...rows.map(r => r.share));
+$('sess').innerHTML = rows.length ? rows.map(r => {
+  const nm = r.name + (r.n > 1 ? ' ×' + r.n : '');
+  const shown = r.share.toFixed(1) + '%';
+  return row(nm, 100 * r.share / smax, 'var(--use)', null, shown);
+}).join('') : '<div class="empty">기록 없음</div>';
+</script></body></html>
