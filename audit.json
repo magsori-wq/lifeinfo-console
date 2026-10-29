@@ -2,6 +2,70 @@
  "version": 1,
  "items": [
   {
+   "at": "2026-09-07T16:24:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-d109-ready",
+   "detail": "네이버 게시 확인 — https://blog.naver.com/magsori8975/224403768745 (og:title 대조 일치), crosslink 반영 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:37:42",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "E2-14",
+   "detail": "계산예시(1차200+2차400+3차1000=누적1600만원)·판단형체크리스트(6유형×실제화면)·탈락사유(공정거래법 비적용 원문인용+1372안내)·함정(계도기간 유보표기+신고=제재이지 보상아님) 4요소 전부 실질. 법조문 law.go.kr DRF 원문대조: 전자상거래법§21의2·§13⑥(",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:37:57",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "A1-14",
+   "detail": "계산예시(자녀1명 30만→20만 상한/15만→15만/자녀2명→40만)·탈락사유(자료제출거부·채무자20만원이상이행시중지·부정수급시반환+처벌)·판단형비교(10/29전후 신청, 결정일기준 vs 신청일기준)·함정(지급기간 만19세/만18세 불일치 원문그대로 병기+옛정보 함정) 4요소 전부 실질",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:40:55",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "A1-14",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:41:18",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "E2-14",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T16:47:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "toss-catalog-check-0907",
+   "detail": "해결됨 — 2026-09-07 토스 Open API 연동 후 실제 카탈로그를 조회해 3개 상품을 등록했다(3단 자동우산 9,900원 리뷰281 · 무선 손난로 10,790원 리뷰56 ×2). 즉 '카탈로그에 있는지' 는 확인됐다. 남은 것은 그 링크를 원고에 붙이는 것이고 그건 aff-block-paste-0907 이 추적한다.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T17:26:00",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-a114-ready",
+   "detail": "게시 완료 — https://blog.naver.com/magsori8975/224403843821 (사장님 게시, 2026-09-07). 제목으로 A1-14 확정(양육비·선지급·소득기준 확인). naver-link·crosslink·라이브 실측 완료.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T17:27:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-a114-ready",
+   "detail": "사장님이 직접 게시 완료 · https://blog.naver.com/magsori8975/224403843821",
+   "via": "cli"
+  },
+  {
    "at": "2026-09-07T17:27:29",
    "actor": "사장님",
    "action": "watch.done",
@@ -15935,70 +15999,6 @@
    "action": "watch.done",
    "target": "aroma-thumbs-1029",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T18:11:33",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "f310-naver-cards-1029",
-   "detail": "18:10 이부장 실측: se-module-oglink 2개(에가든 트래블러 월렛·각인 여권케이스)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T18:41:50",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "aroma-routine10-firstrun-1029",
-   "detail": "18:19 첫 실행 완료 — 4개 카테고리 빈손(공식 확인 실패), Aside 읽기 경로 지침 추가",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-30T00:19:42",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "D5-08",
-   "detail": "코드 재배정 → F1-18(여권·서류·보험이 주제에 맞음, D5=재해·비상지원)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-30T00:30:40",
-   "actor": "v0검사관",
-   "action": "v0check.pass",
-   "target": "F1-18",
-   "detail": "수치·조건 원문(26-865) 전부 일치, 미확인(기한·서류·왕복·1.1당일) 박스 처리, 별개제도(3,000/10,000원) 혼입 없음. 발권일x출국일 판별표(가상 표시)+탈락행+오해5개로 대상판별 충족. 단 제목이 '이후 출국' 조건 누락, 신청방법 미확인인데 '신청 방법' 표기, ",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-30T00:33:45",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-433",
-   "detail": "00:35 이부장: 00:31 deploy push 후 github.io 썸네일 433 200 확인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-30T00:33:46",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "f118-thumb-pages-1030",
-   "detail": "00:35 200",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-30T03:19:38",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "F1-18",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-30T03:27:58",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "aroma-routine10-rerun-1030",
-   "detail": "03:2x 사장님 Run now — run local_5146eca0 진행 중(03:21 시작)",
    "via": "cli"
   }
  ]
