@@ -24606,10 +24606,8 @@
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "owner": "user",
    "kind": "action",
-   "state": "done",
-   "by": "미상",
-   "done_at": "2026-10-29",
-   "result": "사장님 10-29 11:28 로그인 — asideprobe 로 creator-advisor stat/today 열림(로그인 화면 아님) 확인"
+   "state": "todo",
+   "by": "미상"
   },
   {
    "id": "adsense-rereq-1029",
@@ -24667,11 +24665,9 @@
    "due": "2026-10-29",
    "cmd": "Aside 앱에서 크레딧 충전 후 「충전했어」",
    "owner": "user",
-   "state": "done",
+   "state": "todo",
    "kind": "approve",
-   "by": "이부장",
-   "done_at": "2026-10-29",
-   "result": "사장님 10-29 11:24 결정: 충전 대신 11-01 리미트 해제 때 재연결, 그동안 이과장 aside repl 직접 게시(설계도 D1 직접 게시 모드, data/aside_mode.json)"
+   "by": "이부장"
   },
   {
    "id": "aside-resume-537-1029",
@@ -24742,38 +24738,6 @@
    "id": "aside-chat-reconnect-1101",
    "added": "2026-10-29",
    "what": "Aside 채팅 크레딧 리미트 11-01 풀림(사장님 10-29) — 풀리면 Aside 채팅 대기열 재개(#538 H1-31 검색설명·#539 H1-32 색인요청 등 멈춘 것 재등록), 그때까지 게시는 이과장 aside repl 직접",
-   "due": "2026-11-01",
-   "cmd": "python -m studio.asidequeue list",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
-  },
-  {
-   "id": "adsense-result-1108",
-   "added": "2026-10-29",
-   "what": "애드센스 재검토 요청 10-29 11:2x(사장님) — API GETTING_READY 전이 확인. 지난 3회 9~11일 뒤 회신 → 11/7~11/9 결과(magsori@ 메일 먼저). 심사 중 블로그스팟 기존 글 수정은 꼭 필요한 정정만·시각 기록",
-   "due": "2026-11-08",
-   "cmd": "python studio/adsense.py status",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
-  },
-  {
-   "id": "xlink-h133",
-   "added": "2026-10-29",
-   "what": "🔗 H1-33 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-33",
-   "due": "2026-10-29",
-   "cmd": "python studio/blogger.py crosslink --code H1-33",
-   "owner": "claude",
-   "state": "done",
-   "by": "naver-link",
-   "done_at": "2026-10-29",
-   "result": "교차링크 삽입·라이브 4링크 확인(네이버 224457608997·쓰레드 DfD-auogerg·인스타 DfD9pWik2Am), osmuimgcheck 🔴0"
-  },
-  {
-   "id": "aside-539-cleanup-1101",
-   "added": "2026-10-29",
-   "what": "11-01 직접 게시 모드 끝나면 #539(10-29 07:01 등록·402 로 미수신, kind 깨짐)가 「등록 뒤 수신 없음 — 멈춤」으로 ASIDE_STALL 1회 울린다(페이블 ce17fe8) — 그때 #539 정리하고 남은 색인요청은 새로 넣기",
    "due": "2026-11-01",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
