@@ -1,9 +1,11 @@
 {
- "computed_at": "2026-10-29 13:33:44",
+ "computed_at": "2026-10-29 13:34:55",
  "source_head": "e2cc94a7f745",
  "ids": [
+  "F3-10",
   "G1-17",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-432"
  ],
  "posts": [],
  "publish": [
@@ -33,6 +35,33 @@
     }
    ],
    "light": "todo"
+  },
+  {
+   "code": "F3-10",
+   "title": "일본 면세 11월 1일부터 달라집니다 — 소비세 포함해 사고 출국 때 세관 확인 뒤 돌려받습니다 (2026)",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 일본면세리펀드방식_글_HTML.txt",
+     "path": "일본면세리펀드방식_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/432_japan_tax_free_refund.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/432_japan_tax_free_refund.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
   }
  ],
  "actions": [
@@ -42,6 +71,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-432",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(432_japan_tax_free_refund.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-29",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],

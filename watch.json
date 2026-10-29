@@ -24839,6 +24839,26 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "deploy-untracked-thumb-1029",
+   "added": "2026-10-29",
+   "what": "deploy.bat 1회차(13:26)가 「전 글 썸네일 200」이라 했지만 미발행 글 썸네일 431 은 배포 저장소에 untracked 로 남아 404 — 2회차에 커밋됨. 원인(4단계 git add 범위·0d 동기 순서) 확인, 크롤체크는 발행 글만 봐서 못 잡음 → 큐 글 썸네일도 검사에 넣을지",
+   "due": "2026-10-30",
+   "cmd": "git -C C:/lifeinfo-deploy status --porcelain thumbs/",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-432",
+   "added": "2026-10-29",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(432_japan_tax_free_refund.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-29",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
