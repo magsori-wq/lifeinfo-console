@@ -1,19 +1,36 @@
 {
- "rev": "e467edc88",
+ "rev": "9e252ce64",
  "counts": {
-  "total": 449,
+  "total": 450,
   "osmu_done": 448,
-  "osmu_pending": 1,
+  "osmu_pending": 2,
   "indexed": 0,
-  "index_pending": 449,
+  "index_pending": 450,
   "index_requested": 163,
-  "index_todo": 72,
+  "index_todo": 73,
   "index_benign": 214
  },
  "actionable": [
   {
    "code": "F3-10",
    "title": "일본 면세 11월 1일부터 달라집니다 — 소비세 포함해",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "G1-17",
+   "title": "울산 현금 없는 시내버스 10월 31일 시작 — 12개",
    "need": [
     "OSMU",
     "색인요청"
@@ -207,22 +224,6 @@
   {
    "code": "A5-14",
    "title": "난임치료휴가 유급 2일에서 4일로 — 11월 27일 시",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-15",
-   "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
    "need": [
     "색인요청"
    ],
