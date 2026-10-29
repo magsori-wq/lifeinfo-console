@@ -2,6 +2,78 @@
  "version": 1,
  "items": [
   {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topicprop-fact-quality",
+   "detail": "개선 확인(09-07): routine-triage-0906 재확인 결과 08-30 대비 오류율 75%→0%(0/4, C2-13·A6-02 원문검증 통과)로 개선 — V0/source 검증 프로세스가 효과 있음. 계속 관찰은 정상 발행 프로세스에 내재.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-0907-1230",
+   "detail": "무효: sessionstate·whodid 재확인 결과 이과장 최근 활동 09-07 13:04(세션상태 동기화)·12:58(C2-13 OSMU 완료) — 이미 응답 중, 추가로 깨울 필요 없음. 남은 지시서(boost0906b203 등)는 순차 진행 대기 중.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "drift-approve-0907",
+   "detail": "종결: 3개 조사(①09-06 DB수정으로 해소 확인 ②라이브 실발화는 별도 watch pubtitle-gate-live-0908에서 추적 ③사람 손(사장님 GSC 콘솔) 결론)까지 마쳐 이 항목에서 추가로 할 조사 없음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-who-validated-0907",
+   "detail": "종결: 추가 증거 없음 — 사장님 확인('안 눌렀다')과 공식문서(자동시작 메커니즘 없음) 대조까지 마쳤으나 정확한 클릭 주체는 확정 불가. 재조사할 새 근거 없어 종결.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "orderwatch-unattended-limit-0906",
+   "detail": "확정: 무인루틴은 SendMessage 구조적으로 불가함을 확인 — 대응방식(관제탑이 직접 깨움)은 이미 docflow-0907-1230 사례로 운영 확인됨.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:19:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "tokenstat-0906",
+   "detail": "재확인(09-07): 관제탑 턴당 평균 509,537 vs 에이전트 건당 평균 174,230 — 방향 재확인(에이전트 위임이 단위당 적음), 09-06 가설과 같은 패턴 유지.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T13:49:50",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-auth-0907",
+   "detail": "정상 — 사장님 본인 계정·본인 번호 확인(2026-09-07 사장님 답변). lees**** 는 사장님이 따로 갖고 계신 네이버 계정이고 010-3***-8*** 도 사장님 번호다. 명의도용 아님. 어제 22:29 본인이 하신 인증.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:05:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-c213-ready",
+   "detail": "네이버 게시 확인 — https://blog.naver.com/magsori8975/224403586832 (og:title 대조 일치), crosslink 반영 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-09-07T14:07:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-post-c213-ready",
+   "detail": "게시 완료 — https://blog.naver.com/magsori8975/224403586832 (사장님 게시, 2026-09-07). naver-link 기록·crosslink 삽입·라이브 실측 확인까지 완료.",
+   "via": "cli"
+  },
+  {
    "at": "2026-09-07T14:19:07",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15927,78 +15999,6 @@
    "action": "watch.done",
    "target": "v0reject-f3-10",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T13:44:04",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "deploy-thumb-432",
-   "detail": "10-29 13:4x 이부장 deploy.bat — 432 github.io 200",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:25:11",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "aroma-plan-1029",
-   "detail": "사장님 14:2x 채팅 답: 방송·연예 세부 나눔(magsori8975 정보형 / aroma-mag 관심·이슈 전파형) · 구조 = C:\\naver-blog 기존 폴더 · 이대리 PM·이부장 어드바이저 · 카테고리 6 별 템플릿 · 애드포스트 미디어 이미 등록 · Aside 프로필 분리·템플릿 시안·자동 게시 위험 검토 진행",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:43:38",
-   "actor": "v0-에이전트",
-   "action": "v0check.pass",
-   "target": "F3-10",
-   "detail": "재검사: 3절 영수증 해설 f52c2f52d 로 정정, 표와 모순 없음, 기계검사 통과",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:43:48",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-f3-10",
-   "detail": "V0 통과로 해소 — 검사자 v0-에이전트 · 재검사: 3절 영수증 해설 f52c2f52d 로 정정, 표와 모순 없음, 기계검사 통과",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:43:57",
-   "actor": "v0-에이전트",
-   "action": "v0check.fail",
-   "target": "G1-17",
-   "detail": "2절 노선표 432·124·1421 경유지 오탈자 「울리」→원문 「율리」 3곳 수정하면 통과. 그 외 보도자료 대조·썸네일·기계검사 통과",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:47:11",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "F3-10",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:47:17",
-   "actor": "v0-에이전트",
-   "action": "v0check.pass",
-   "target": "G1-17",
-   "detail": "3차(오탈자) 재검사: 울리 0곳, 432·124·1421번 경유지 율리 정정 확인, diff 는 3줄 치환만(다른 변경 없음), heading OK",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:47:18",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-g1-17",
-   "detail": "V0 통과로 해소 — 검사자 v0-에이전트 · 3차(오탈자) 재검사: 울리 0곳, 432·124·1421번 경유지 율리 정정 확인, diff 는 3줄 치환만(다른 변경 없음), heading OK",
-   "via": "cli"
-  },
-  {
-   "at": "2026-10-29T14:48:04",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "G1-17",
-   "detail": "",
    "via": "cli"
   }
  ]
