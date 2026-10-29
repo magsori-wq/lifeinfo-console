@@ -5,14 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "insp-cp-0903",
-   "detail": "해소 확인(09-07): ①B1-09 재발행카드 문제 — queue.json에 B1-09 없음, approval.html에 코드 반영된 주석 확인(수정됨) ②approvalcount가 '화면과 같은 기준'으로 단일화(6건 일치 확인) ③pending.py 09-03 수정으로 B1-03·G4-02·E2-07 3편 모두 pending.json actionable에 정상 노출 확인(need=[인스타,색인대기]).",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "insp-osmu-0903",
    "detail": "해소 확인(09-07): blogger.py CH_NAMES에 instagram 추가 확정(838d11b), selfcheck 6c도 09-03 시행일 방식(_IG_SINCE)으로 인스타 포함 정합 완료 — 정책충돌 해소. 미게시 3편은 위 insp-cp-0903 검증과 동일 건으로 해결 확인. PLAN 미포함 116편은 표시필터일 뿐 판정에 영향 없음(경미).",
    "via": "cli"
@@ -15999,6 +15991,14 @@
    "action": "pubqueue.go",
    "target": "B3-07",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T11:20:50",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "approve-h1-32",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
   }
  ]
