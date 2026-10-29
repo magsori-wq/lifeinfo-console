@@ -1,17 +1,16 @@
 {
- "computed_at": "2026-10-30 00:33:12",
- "source_head": "a66e0754b5b7",
+ "computed_at": "2026-10-30 03:21:44",
+ "source_head": "1a3ba0ac4cda",
  "ids": [
   "F1-18",
-  "claude-limit-reset-1022",
-  "deploy-thumb-433"
+  "claude-limit-reset-1022"
  ],
  "posts": [],
  "publish": [
   {
    "code": "F1-18",
    "title": "출국납부금 환급 1,000원, 2025년 전 발권·이후 출국이면 대상",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,7 +32,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -43,14 +42,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-433",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(433_departure_fee_refund.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-30",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
