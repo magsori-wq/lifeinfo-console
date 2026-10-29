@@ -5,22 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "gsc-who-validated-0907",
-   "detail": "종결: 추가 증거 없음 — 사장님 확인('안 눌렀다')과 공식문서(자동시작 메커니즘 없음) 대조까지 마쳤으나 정확한 클릭 주체는 확정 불가. 재조사할 새 근거 없어 종결.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "orderwatch-unattended-limit-0906",
-   "detail": "확정: 무인루틴은 SendMessage 구조적으로 불가함을 확인 — 대응방식(관제탑이 직접 깨움)은 이미 docflow-0907-1230 사례로 운영 확인됨.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "tokenstat-0906",
    "detail": "재확인(09-07): 관제탑 턴당 평균 509,537 vs 에이전트 건당 평균 174,230 — 방향 재확인(에이전트 위임이 단위당 적음), 09-06 가설과 같은 패턴 유지.",
    "via": "cli"
@@ -15999,6 +15983,22 @@
    "action": "v0check.pass",
    "target": "F3-10",
    "detail": "재검사: 3절 영수증 해설 f52c2f52d 로 정정, 표와 모순 없음, 기계검사 통과",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T14:43:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-f3-10",
+   "detail": "V0 통과로 해소 — 검사자 v0-에이전트 · 재검사: 3절 영수증 해설 f52c2f52d 로 정정, 표와 모순 없음, 기계검사 통과",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T14:43:57",
+   "actor": "v0-에이전트",
+   "action": "v0check.fail",
+   "target": "G1-17",
+   "detail": "2절 노선표 432·124·1421 경유지 오탈자 「울리」→원문 「율리」 3곳 수정하면 통과. 그 외 보도자료 대조·썸네일·기계검사 통과",
    "via": "cli"
   }
  ]
