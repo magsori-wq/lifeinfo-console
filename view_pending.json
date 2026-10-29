@@ -1,13 +1,12 @@
 {
- "computed_at": "2026-10-29 09:38:57",
- "source_head": "9643fb13a7d2",
+ "computed_at": "2026-10-29 11:20:29",
+ "source_head": "59c1b47b68a3",
  "ids": [
   "B3-07",
   "H1-31",
   "H1-33",
   "aside-login-ca-1029",
-  "claude-limit-reset-1022",
-  "deploy-thumb-430"
+  "claude-limit-reset-1022"
  ],
  "posts": [
   {
@@ -115,7 +114,7 @@
   {
    "code": "B3-07",
    "title": "퇴직연금 의무화 2028년부터? 연내 법 통과가 조건 — 규모별 28·29·30년 일정 (2026)",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -137,7 +136,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -154,14 +153,6 @@
    "what": "Aside ca 로그인 필요 — 자동 확인(05:09): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-10-29",
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-430",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(430_retirement_pension_mandate.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-29",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
