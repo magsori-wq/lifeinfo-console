@@ -24767,6 +24767,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "aside-539-cleanup-1101",
+   "added": "2026-10-29",
+   "what": "11-01 직접 게시 모드 끝나면 #539(10-29 07:01 등록·402 로 미수신, kind 깨짐)가 「등록 뒤 수신 없음 — 멈춤」으로 ASIDE_STALL 1회 울린다(페이블 ce17fe8) — 그때 #539 정리하고 남은 색인요청은 새로 넣기",
+   "due": "2026-11-01",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
