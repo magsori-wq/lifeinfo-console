@@ -5,14 +5,6 @@
    "at": "2026-09-07T13:19:51",
    "actor": "세션(CLI)",
    "action": "watch.done",
-   "target": "concurrent-commit-guard",
-   "detail": "해소: commitguard 훅(.githooks/commit-msg)+whodid 도구(2026-08-28)가 근본원인(주체 추적 불가)을 해결 — whodid 최근7일 정상 작동 확인, 재발 사례 없음.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T13:19:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
    "target": "cp-data-audit-0906",
    "detail": "부분해소 확인(09-07): ①batch.json.currents 고아 0건(해소) ④watch.json stale 5건 전부 이미 state=done 확인(해소) ⑤audit.json Z9-98/99 테스트로그는 append-only 감사로그 특성상 유지 결정(판단 완료). ③queue.json 신규 재발 1건(C2-13, 이미 발행됐는데 go도장 남음) 발견·제거 완료. ②topicprop.json 36개 stale state는 화면엔 안 뜨는 저위험 데이터오염으로 남음(별도 코드수정 필요, 낮은 우선순위 — 새로 추적하지 않음).",
    "via": "cli"
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "xlink-b307",
    "detail": "교차링크 삽입·라이브 4링크 확인(네이버 224457709307·쓰레드 DfEHWjyAUZ1·인스타 DfEHLHnkVC2)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-29T13:22:22",
+   "actor": "v0-에이전트",
+   "action": "v0check.pass",
+   "target": "G1-17",
+   "detail": "12개 노선 표 원문(조합 공지 포스터) 일치·미확인(계좌이체 절차·기간·금액) 명시, 가상사례 표시한 노선 판정표(판단형 비교)+오해 5항(함정), 기계검사 통과, 썸네일 실사진",
    "via": "cli"
   }
  ]

@@ -1,9 +1,10 @@
 {
- "computed_at": "2026-10-29 13:20:00",
- "source_head": "3dadec136f3a",
+ "computed_at": "2026-10-29 13:23:48",
+ "source_head": "625028ccebfe",
  "ids": [
   "G1-17",
-  "claude-limit-reset-1022"
+  "claude-limit-reset-1022",
+  "deploy-thumb-431"
  ],
  "posts": [],
  "publish": [
@@ -11,7 +12,7 @@
    "code": "G1-17",
    "title": "울산 현금 없는 시내버스 10월 31일 시작 — 12개 노선 표, 교통카드 없으면 계좌이체 (2026)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 울산현금없는버스_글_HTML.txt",
@@ -42,6 +43,14 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-431",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(431_ulsan_cashless_bus.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-29",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
    "kind": "action"
   }
  ],
