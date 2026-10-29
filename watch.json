@@ -25192,8 +25192,10 @@
    "due": "2026-10-30",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-30",
+   "result": "00:35 이부장: 00:31 deploy push 후 github.io 썸네일 433 200 확인"
   },
   {
    "id": "f118-thumb-pages-1030",
@@ -25202,8 +25204,10 @@
    "due": "2026-10-30",
    "cmd": "curl -s -o /dev/null -w %{http_code} https://magsori-wq.github.io/lifeinfo-console/thumbs/433_departure_fee_refund.png",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "00:35 200"
   }
  ]
 }
