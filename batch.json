@@ -1883,6 +1883,16 @@
      "base_code": "lifeinfo-travel-prep",
      "date": "2026-10-29",
      "at": "2026-10-29 21:15"
+    },
+    {
+     "code": "lifeinfo-nightly-verify-1029-1029",
+     "title": "lifeinfo-nightly-verify-1029 (E)",
+     "state": "done",
+     "note": "야간검증 10-29: 오늘 발행 5편 중 3편(G1-17·F3-10·B3-07) 대조 오류 0·라이브수정 0. B3-07 정책브리핑·G1-17 울산 원문 직접 대조 못 함(미확인), H1-31·H1-33 미검증→다음 회차. 🙋사장님 할 일 없음",
+     "auto_daily": true,
+     "base_code": "lifeinfo-nightly-verify-1029",
+     "date": "2026-10-29",
+     "at": "2026-10-29 22:39"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -6030,7 +6040,7 @@
    "confirm_note": "이부장 확인 20:26: DB 6건 = 라이브 개선본·450편·deploy 썸네일 450 200 · 드리프트 run 은 watch feed-drift-recheck-1030"
   }
  },
- "updated": "2026-10-29 21:15:00",
+ "updated": "2026-10-29 22:39:35",
  "current": {
   "batch": "dbtitle1029",
   "code": "",
@@ -6041,6 +6051,10 @@
   "since_at": "2026-10-29 20:19:15"
  },
  "log": [
+  {
+   "t": "22:39:35",
+   "text": "✅ lifeinfo-nightly-verify-1029-1029 완료 — lifeinfo-nightly-verify-1029 (E)"
+  },
   {
    "t": "21:15:00",
    "text": "✅ lifeinfo-travel-prep-1029 완료 — lifeinfo-travel-prep (D)"
@@ -6196,10 +6210,6 @@
   {
    "t": "15:47:48",
    "text": "▶   — 4/7단계 · 경량화 1단계 반영: MEMORY.md 37,237B→23,639B(25KB 상한 아래, 원본 _MEMORY_full_20261029.md.bak) · SessionStart 출력 전체 약 20.7K→14.1K자, 주입은 9,500자 상한(전체 data/session_rules_full.txt) · 커밋 7568c4c27 · 페이블 사후검증 중"
-  },
-  {
-   "t": "15:42:09",
-   "text": "▶   — 3/7단계 · 업데이트 박스+UPDATE 배지 4종 시안 완료 → 결재함 aroma-update-box-1029. AM-009 경기후본 적용은 결과 반영·새 V0·승인 뒤"
   }
  ],
  "currents": {
