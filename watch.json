@@ -25281,6 +25281,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "idaeri-stall-detect-fail-1030",
+   "added": "2026-10-30",
+   "what": "Z4 보강: idaerireq.stale except:continue / enginestate except:pass 를 stall_detect_fail 사건으로 대칭(감지기 자체 오류도 알림) — 설계도 먼저·페이블 검증",
+   "due": "2026-10-31",
+   "cmd": "grep -n 'idaeri' studio/enginestate.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
