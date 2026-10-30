@@ -1,16 +1,17 @@
 {
- "computed_at": "2026-10-30 16:05:51",
- "source_head": "698b04541e00",
+ "computed_at": "2026-10-30 16:11:26",
+ "source_head": "2f3243b9a1f0",
  "ids": [
-  "H1-35"
+  "H1-35",
+  "deploy-thumb-438"
  ],
  "posts": [],
  "publish": [
   {
    "code": "H1-35",
    "title": "2026 MAMA 오사카 티켓, 1차 선예매는 10월 18일 마감 — 11월 20·21일 지금 할 수 있는 것",
-   "go": false,
-   "v0": null,
+   "go": true,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 MAMA오사카티켓_글_HTML.txt",
@@ -31,9 +32,18 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-438",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(438_mama_osaka.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-30",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
