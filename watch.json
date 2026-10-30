@@ -9431,8 +9431,10 @@
    "due": "2026-10-26",
    "cmd": "python -m studio.topicprop stock",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴4 · lifeinfo-travel-prep (D)"
+   "state": "done",
+   "by": "루틴4 · lifeinfo-travel-prep (D)",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: DB H1-09 발행(네이버·인스타·쓰레드 URL 기록) — 재작성·적재 완료"
   },
   {
    "id": "blocked-xlink0911all",
@@ -13889,8 +13891,10 @@
    "due": "2026-09-27",
    "cmd": "python studio/blogger.py update-post --code G2-05",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴4"
+   "state": "done",
+   "by": "루틴4",
+   "done_at": "2026-10-30",
+   "result": "폐기(drop) 4.재판정 10-30: 축제 10/2~10/4 종료, 라이브 G2-05 에 라포엠·40년의 발자취·씨름 0건(직접 curl) — 갱신 실익 없음"
   },
   {
    "id": "v0reject-h1-17",
@@ -15023,8 +15027,10 @@
    "due": "2026-10-05",
    "cmd": "python -m studio.topicprop list",
    "owner": "claude",
-   "state": "todo",
-   "by": "routine2"
+   "state": "done",
+   "by": "routine2",
+   "done_at": "2026-10-30",
+   "result": "폐기(drop) 4.재판정 10-30: topicprop list 에서 B2-17 상태 「제외」(직접 확인) — 출처 재시도 불필요"
   },
   {
    "id": "a316-gukhoe-confirm-check",
@@ -15341,8 +15347,10 @@
    "due": "2026-10-03",
    "cmd": "curl -s -A Mozilla/5.0 https://www.disneyplus.com/ko-kr | grep -o -E '9,900|13,900'",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: 라이브 E2-06 에 디즈니+ 9,900·13,900(10-19 공식 페이지 기준) 반영됨"
   },
   {
    "id": "gsc-req-remaining-1002",
@@ -16383,8 +16391,10 @@
    "due": "2026-10-28",
    "cmd": "python -c \"import urllib.request; print(urllib.request.urlopen('https://www.moe.go.kr/boardCnts/list.do?boardID=294&m=020402&s=moe').status)\"  # 또는 WebFetch로 moe.go.kr 보도자료 재확인, '안정적 시험 시행 지원대책' 제목 검색",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: DB D1-11 발행·제목 「10/20 발표」, docs/source_D1-11_수능교통통제_20261021.md 존재 — 공식발표 확보·반영"
   },
   {
    "id": "a1-18-amounts-unconfirmed",
@@ -18200,8 +18210,10 @@
    "due": "2026-10-12",
    "cmd": "aside 로 https://creator-advisor.naver.com/naver_blog/main 열어 제목·본문 첫 줄 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "lifeinfo-ee"
+   "state": "done",
+   "by": "lifeinfo-ee",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: data/login_log.jsonl 에 creator-advisor 점검 ok 73건(10-26~10-30 13:02) — 일시 장애, 접속 정상"
   },
   {
    "id": "ca-tab-design-1011",
@@ -18665,8 +18677,10 @@
    "due": "2026-10-13",
    "cmd": "python -m studio.agentcheck && python -c \"from studio import affiliate as a; print(a.data().get('items',{}).get('<다음코드>'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: brandconnect 에이전트 등록 + affiliate.data() 에 10-22~10-29 brandshop/brand 링크 실제 발급 확인(G1-12·G1-14·F1-17·G1-16·B2-24·H1-33·F3-10)"
   },
   {
    "id": "brandconnect-festa-backfill-1012",
@@ -20463,8 +20477,10 @@
    "due": "2026-10-20",
    "cmd": "koreabaseball.com MediaNews Notice 포스트시즌 우천 시행 세칙 열어 30분·50분 문구 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: docs/source_KBO포스트시즌_20261018.md 에 KBO 원문 인용(최소 30분 대기 후 결정) 직접 확인"
   },
   {
    "id": "nv1018-c308-unverified",
@@ -20616,8 +20632,10 @@
    "due": "2026-10-20",
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/<썸네일>.png",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: approval.html 「썸네일 미배포」 표시 + approvalcount.thumb_undeployed 존재"
   },
   {
    "id": "discover-agents-1019pm",
@@ -20746,8 +20764,10 @@
    "due": "2026-10-20",
    "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio import approvalcount as a;print(a.thumb_undeployed('B2-22'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: approvalcount.thumb_undeployed + approval.html·m.html 참조 존재, 커밋 6ea4af59a"
   },
   {
    "id": "xlink-b222",
@@ -21673,8 +21693,10 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.boostexp report",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: docs/애드센스_프로젝트.md 일일 기록에 10-22~10-29 18시 줄 매일 존재"
   },
   {
    "id": "approve-adsense-feedback-1021",
@@ -22029,8 +22051,10 @@
    "due": "2026-10-23",
    "cmd": "grep -n 'naverfind --gate' studio/asidechain.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: asidechain.py 에 DB osmu 있으면 「이미 게시됨 — 할 일 없음」 분기 존재 — 코드 확인"
   },
   {
    "id": "adsense-proj-daily-report",
@@ -22039,8 +22063,10 @@
    "due": "2026-10-22",
    "cmd": "18시 INDEX_DAILY_REPORT 수신 여부",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: 같은 일일 기록 10-22 18시부터 매일 기록 — INDEX_DAILY_REPORT 실제 울림 확인"
   },
   {
    "id": "shrink-1post-test-1024",
@@ -23723,8 +23749,10 @@
    "due": "2026-10-25",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: aside_orders #432 done(B4-23 meta 일치) 후 #433~469 후속 done, 현재 대기열 비어 있음(asidequeue list)"
   },
   {
    "id": "aside-app-restart-1025",
@@ -23863,8 +23891,10 @@
    "due": "2026-10-26",
    "cmd": "grep -n 'incidents' studio/enginestate.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: enginestate.py tower_confirm 사건 + towertick TOWER_CONFIRM_STALL 배선 존재 — 코드 존재 확인"
   },
   {
    "id": "afflink-g1-16",
@@ -24370,8 +24400,10 @@
    "due": "2026-10-27",
    "cmd": "grep -n '정정' studio/asidechain.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: asidechain.py 정정·답글이면 이미지 대조·link 기록 건너뜀 코드 존재"
   },
   {
    "id": "xlink-g201",
@@ -24416,8 +24448,10 @@
    "due": "2026-10-27",
    "cmd": "cd /c/lifeinfo && grep -c -E '359|719' 부산신혼부부전세대출이자지원_글_HTML.txt",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: 부산신혼부부전세대출이자지원_글_HTML.txt 의 359·719 = 0건(직접 grep) · 커밋 0580528ff"
   },
   {
    "id": "t-gate-test",
@@ -24710,8 +24744,10 @@
    "due": "2026-10-26",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: thumbs 425·427·428·429 로컬 파일 존재, github.io 200·sha1 일치(에이전트 측정) · thumb1026 배치 100%"
   },
   {
    "id": "dl-photo-1026",

@@ -2,158 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-10T05:18:07",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "pub-a312-run-0910",
-   "detail": "무효 — 이 항목을 올린 04:40 시점에 A3-12 는 이미 발행 중이었고 04:41 에 완료됐다(라이브 200). 관제탑이 SendMessage 실패를 '실행자 없음'으로 오판해 사장님께 없는 일을 시킬 뻔했다. 누르셨으면 중복 발행 시도가 됐다.",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T05:27:26",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "B2-13",
-   "detail": "🔴 09-10 04:33 반려를 05:3x 에 철회한다 — 원고 주장이 맞았다. 새마을금고 대위변제 한도 1억원·2025-09-01 시행은 사실이며 근거는 대통령령 제35687호(2025.7.29 공포, MST=272995) 제3조가 새마을금고법 시행령 제46조④의 '5천만원'을 '1억",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T05:27:26",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-b2-13",
-   "detail": "V0 통과로 해소 — 검사자 이부장 · 🔴 09-10 04:33 반려를 05:3x 에 철회한다 — 원고 주장이 맞았다. 새마을금고 대위변제 한도 1억원·2025-09-01 시행은 사실이며 근거는 대통령령 제35687호(2025.7.29 공포, MST=27",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T05:27:58",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "B2-13",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:12:49",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "F2-17",
-   "detail": "판단형비교(§5 상황별 예매전략)+함정3건(§6, 10%상시vs30~50%한정·이음정기권아님·역귀성열차미확정)로 5요소 중 2개 충족. 수치(54,400/99,000/49,000/3~7만원)전부 docs/source_F2-17_...md 1차출처(korea.kr newsId=156776",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:13:21",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "E4-02",
-   "detail": "판단형비교(직접0원 vs 대행10~30%, 국세청 2024·2025 보도자료 시점차 명시)+탈락사유5종(제척기간경과·이미신고·타소득·사망자·말소자)+함정3개(5년/7년 혼동 자체·미신고시불가·과다환급가산세) 실질 포함. 전 수치 1차출처(국세청 보도자료 2건 PDF원문+국세기본법 DRF",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:14:29",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "C2-15",
-   "detail": "함정 4개(지혈대 미언급=KDCA 원문 검색 NOT FOUND로 확인·기관별 최다월 상이·압박대 자가판단 금지·경증도 병원행) + 국소/전신 판단표(119 기준) + 구체동작(신용카드로 옆으로 긁기·15~20분 냉찜질·심장보다 낮게) 실질 포함. 처치·금지항목 전건을 KDCA 원문(cn",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:22:41",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "E4-02",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:23:27",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "C2-15",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:26:08",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "F2-17",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:37:53",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "test-idem-check-0910",
-   "detail": "1cha",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:41:23",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "idem-live-test-0910",
-   "detail": "1st",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:10",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "flu-2627-not-published",
-   "detail": "KDCA 페이지 2026-2027절기로 갱신 확인 + C2-14 이미 제안·picked 상태로 진행 중",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:11",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "art-uiwhan-conflict-0906",
-   "detail": "라이브 G3-03 재조회 -- 표·본문 모두 이우환공간 3,000원으로 일치, 무료 모순 문구 없음",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:11",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "pubtitle-gate-live-0908",
-   "detail": "최신 run 34401358348 로그에서 3b 게이트 실행+사전점검 통과 확인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:11",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "aff-f107-rate-0907",
-   "detail": "docs/affiliate_F1-07.md 확인 -- 전략이 쿠팡 어댑터 링크로 전환, 원 대상 소멸",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:12",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "publish-race-0907",
-   "detail": "pushgate.py 전문 확인(push 호출 없음) + simulate 1 로 정상 차단 재현",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:12",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "redirect-analysis-0903",
-   "detail": "산출물 문서 2개(리다이렉트_분석, CP_색인화면_점검) 존재 확인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:12",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "topicprop-select-0907",
-   "detail": "G2-05, H1-02 둘 다 DB에 라이브 URL 있음(이미 발행 완료)",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-10T12:54:22",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15847,158 @@
    "action": "watch.done",
    "target": "g201-buchik-recheck",
    "detail": "4.재판정 10-30: docs/improve_G2-01_20261023.py 에 부칙 제2조 연도별 특례(2026 9세…2030 13세) 반영 직접 확인 · approve-g201-1023 [done]",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:58:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-draft-unqueued-signal-1025",
+   "detail": "4.재판정 10-30: enginestate.py draft_unqueued 사건 + towertick ASIDE_DRAFT_UNQUEUED 배선 존재(TestUnqueuedDrafts 통과) — 코드 존재 확인, 실사건 발생 시 효과는 별건",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:58:50",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "tower-confirm-wait-blind-1025",
+   "detail": "4.재판정 10-30: enginestate.py tower_confirm 사건 + towertick TOWER_CONFIRM_STALL 배선 존재 — 코드 존재 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:58:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ott-july-disney-price-1001",
+   "detail": "4.재판정 10-30: 라이브 E2-06 에 디즈니+ 9,900·13,900(10-19 공식 페이지 기준) 반영됨",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:58:53",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ca-aside-access-1011",
+   "detail": "4.재판정 10-30: data/login_log.jsonl 에 creator-advisor 점검 ok 73건(10-26~10-30 13:02) — 일시 장애, 접속 정상",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:58:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "brandconnect-agent-1012",
+   "detail": "4.재판정 10-30: brandconnect 에이전트 등록 + affiliate.data() 에 10-22~10-29 brandshop/brand 링크 실제 발급 확인(G1-12·G1-14·F1-17·G1-16·B2-24·H1-33·F3-10)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:58:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "nv1018-f429-50min",
+   "detail": "4.재판정 10-30: docs/source_KBO포스트시즌_20261018.md 에 KBO 원문 인용(최소 30분 대기 후 결정) 직접 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:58:58",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-thumb-undeployed-badge-1019",
+   "detail": "4.재판정 10-30: approvalcount.thumb_undeployed + approval.html·m.html 참조 존재, 커밋 6ea4af59a",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:00",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "index-daily-report-1022",
+   "detail": "4.재판정 10-30: docs/애드센스_프로젝트.md 일일 기록에 10-22~10-29 18시 줄 매일 존재",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-proj-daily-report",
+   "detail": "4.재판정 10-30: 같은 일일 기록 10-22 18시부터 매일 기록 — INDEX_DAILY_REPORT 실제 울림 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h1-09-govsource",
+   "detail": "4.재판정 10-30: DB H1-09 발행(네이버·인스타·쓰레드 URL 기록) — 재작성·적재 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "approval-deploy-flag-1019",
+   "detail": "4.재판정 10-30: approval.html 「썸네일 미배포」 표시 + approvalcount.thumb_undeployed 존재",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "asidechain-correction-misfire-1022",
+   "detail": "4.재판정 10-30: asidechain.py 에 DB osmu 있으면 「이미 게시됨 — 할 일 없음」 분기 존재 — 코드 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-newchat-smoke-1025",
+   "detail": "4.재판정 10-30: aside_orders #432 done(B4-23 meta 일치) 후 #433~469 후속 done, 현재 대기열 비어 있음(asidequeue list)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "asidechain-reply-falsepos-1026",
+   "detail": "4.재판정 10-30: asidechain.py 정정·답글이면 이미지 대조·link 기록 건너뜀 코드 존재",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "thumb1026-chk",
+   "detail": "4.재판정 10-30: thumbs 425·427·428·429 로컬 파일 존재, github.io 200·sha1 일치(에이전트 측정) · thumb1026 배치 100%",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-B2-24-v0-1026",
+   "detail": "4.재판정 10-30: 부산신혼부부전세대출이자지원_글_HTML.txt 의 359·719 = 0건(직접 grep) · 커밋 0580528ff",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "d1-11-traffic-announce",
+   "detail": "4.재판정 10-30: DB D1-11 발행·제목 「10/20 발표」, docs/source_D1-11_수능교통통제_20261021.md 존재 — 공식발표 확보·반영",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "g205-update-program-0926",
+   "detail": "폐기(drop) 4.재판정 10-30: 축제 10/2~10/4 종료, 라이브 G2-05 에 라포엠·40년의 발자취·씨름 0건(직접 curl) — 갱신 실익 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:59:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b217-source-recheck-1001",
+   "detail": "폐기(drop) 4.재판정 10-30: topicprop list 에서 B2-17 상태 「제외」(직접 확인) — 출처 재시도 불필요",
    "via": "cli"
   }
  ]
