@@ -10,19 +10,19 @@ html,body{height:100%}
 /* 🔴 2026-10-04 사장님 캡처: #out 이 flex 가 아니라 .grid 의 flex:1 이 안 먹어 칸이 25,000px 로 늘어났다 → #out 을 flex 로 */
 body{margin:0;padding:14px;background:#0e1526;color:#e6ecf7;
      font-family:"Malgun Gothic",-apple-system,sans-serif;font-size:14px;line-height:1.6;
-     display:flex;flex-direction:column;overflow:hidden}
+     display:flex;flex-direction:column;overflow-y:auto}
 h1{font-size:18px;margin:0 0 2px;flex:0 0 auto}
-.sub{color:#8fa0bd;font-size:12px;margin:0 0 10px;flex:0 0 auto}
+.sub{color:#8fa0bd;font-size:13px;margin:0 0 10px;flex:0 0 auto}
 .sub b{color:#cfd8e6}
 .sub code{background:#1b2540;border:1px solid #2a3a5e;border-radius:5px;padding:1px 6px;
-     font-family:Consolas,monospace;font-size:11.5px;color:#9fc9ee}
+     font-family:Consolas,monospace;font-size:13px;color:#9fc9ee}
 .card{background:#16203a;border:1px solid #2a3a5e;border-radius:12px;
       padding:13px 15px;margin:0 0 11px}
 .card.stale{opacity:.55}
 .cardhd{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 7px}
-.bid{font-family:Consolas,monospace;font-size:12px;color:#7d8ca8}
+.bid{font-family:Consolas,monospace;font-size:13px;color:#7d8ca8}
 .btitle{font-weight:700;flex:1;min-width:160px}
-.pct{font-size:12px;color:#8fa0bd;white-space:nowrap}
+.pct{font-size:13px;color:#8fa0bd;white-space:nowrap}
 .bar{height:5px;background:#232c44;border-radius:6px;overflow:hidden;margin:0 0 9px}
 .bar>i{display:block;height:100%;background:linear-gradient(90deg,#3b6ea5,#4D9DE0)}
 .bar>i.full{background:linear-gradient(90deg,#2f8f68,#5fd3a0)}
@@ -32,24 +32,24 @@ details summary::-webkit-details-marker{display:none}
 details summary::before{content:"▸ ";color:#7d8ca8}
 details[open] summary::before{content:"▾ "}
 pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
-    font-size:12.5px;line-height:1.62;color:#cfd8e6;margin:8px 0 0;
+    font-size:13px;line-height:1.62;color:#cfd8e6;margin:8px 0 0;
     background:#0e1526;border:1px solid #223052;border-radius:8px;padding:11px 13px;
     max-height:420px;overflow:auto}
 .none{color:#7d8ca8;font-size:13px;padding:10px 0}
-.frozen{font-size:12px;color:#8fa0bd;background:#4d5a7022;border:1px solid #4d5a7055;
+.frozen{font-size:13px;color:#8fa0bd;background:#4d5a7022;border:1px solid #4d5a7055;
         border-radius:8px;padding:6px 9px;margin:0 0 8px}
 /* 🔴 27인치 모니터 4분할(2026-08-24 사장님 지시 "4분할등을 하여 보여줘 —
    그안에 스크롤하면 한화면에 바로 확인할수 있도록해"). 담당 4종을 항상
    고정된 2x2 칸에 앉히고(데이터가 몇 건이든 칸 수는 안 변한다), 페이지
    자체는 스크롤되지 않으며(overflow:hidden) 칸 안에서만 스크롤한다. */
-.grid{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;
-      grid-template-rows:1fr 1fr;gap:12px}
+.grid{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:start;
+      grid-auto-rows:auto;gap:12px}
 .col{background:#131c31;border:1px solid #223052;border-radius:12px;
-     display:flex;flex-direction:column;min-height:0;overflow:hidden}
+     display:flex;flex-direction:column;min-height:0;height:auto;overflow:hidden}
 .colhd{padding:10px 14px;border-bottom:1px solid #223052;background:#16203a;
        border-radius:12px 12px 0 0;display:flex;align-items:center;gap:8px;flex:0 0 auto}
 .colhd .who{font-size:13px;font-weight:700;white-space:nowrap}
-.colhd .n{margin-left:auto;color:#7d8ca8;font-size:12px;white-space:nowrap}
+.colhd .n{margin-left:auto;color:#7d8ca8;font-size:13px;white-space:nowrap}
 .col.leegwajang .colhd{border-left:4px solid #e08b1e}
 .col.insta .colhd{border-left:4px solid #c25696}
 .col.gwanjetap .colhd{border-left:4px solid #9b8cf5}
@@ -58,7 +58,7 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 .col.insta .who{color:#e59ac0}
 .col.gwanjetap .who{color:#b8a8ff}
 .col.boss .who{color:#8ee5be}
-.colbody{padding:12px 14px;overflow-y:auto;flex:1;min-height:0}
+.colbody{padding:12px 14px;overflow-y:auto;flex:0 1 auto;min-height:0;max-height:min(46vh,440px)}
 .colbody .card:last-child{margin-bottom:0}
 @media(max-width:1100px){
   body{overflow:auto;height:auto}
@@ -70,11 +70,11 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 <p class="sub">🔴 2026-10-08 재구성(사장님: "어사이드 챗과 협업을 시작하니 작업지시서가 중요 — 내가 잘 알아볼 수 있게").
 카드 = <b>제목 · 상태 · 지시 후 경과 · 무엇을 · 최근 보고</b>. 지시서 전문은 「지시서 전문 보기」를 누르면 열립니다. 끝난 지시는 칸 맨 아래에 접혀 있습니다.</p>
 <div id="sum" class="sumbar"></div>
-<div id="out" style="flex:1;min-height:0;display:flex;flex-direction:column"><p class="none">불러오는 중…</p></div>
+<div id="out" style="flex:0 0 auto;display:flex;flex-direction:column"><p class="none">불러오는 중…</p></div>
 <style>
 .sumbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px;flex:0 0 auto}
 .sumbar span{font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;background:#1b2540;border:1px solid #2a3a5e}
-.chip{font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.chip{font-size:13px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
 .c-unread{background:#5a3a12;color:#ffcf8a;border:1px solid #b07a2a}
 .c-doing{background:#173352;color:#9fd0ff;border:1px solid #2f6aa3}
 .c-block{background:#4a1820;color:#ffb3bd;border:1px solid #a8394a}
@@ -84,17 +84,17 @@ pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
 .row{font-size:13.5px;margin:3px 0;color:#cfd8e6}
 .row b{color:#8fa0bd;font-weight:700;margin-right:6px}
 .rep{font-size:13px;color:#b8c4d8;background:#0e1526;border:1px solid #223052;border-radius:8px;padding:6px 9px;margin:6px 0 2px}
-.age{font-size:12px;color:#8fa0bd;white-space:nowrap}
-.donebox summary{color:#8fa0bd;font-size:12.5px}
+.age{font-size:13px;color:#8fa0bd;white-space:nowrap}
+.donebox summary{color:#8fa0bd;font-size:13px}
 .card.fin .btitle,.card.fin .what,.card.closed .btitle,.card.closed .what{text-decoration:line-through;text-decoration-color:#5fd3a0;text-decoration-thickness:2px;color:#9aa8bf}
 .card.fin{opacity:.8}
-.reo{font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;background:#3a2d5c;color:#d7c8ff;border:1px solid #7b62c9;white-space:nowrap}
+.reo{font-size:13px;font-weight:700;padding:2px 9px;border-radius:999px;background:#3a2d5c;color:#d7c8ff;border:1px solid #7b62c9;white-space:nowrap}
 .hist{margin:6px 0 0;padding:0;list-style:none}
-.hist li{font-size:12.5px;color:#b8c4d8;padding:3px 0;border-top:1px dashed #2a3a5e}
+.hist li{font-size:13px;color:#b8c4d8;padding:3px 0;border-top:1px dashed #2a3a5e}
 .hist li.old{text-decoration:line-through;color:#7d8ca8}
 .hist li b{color:#d7c8ff;margin-right:6px}
-.xl{color:#8ec2ff;font-size:12.5px;font-weight:700;text-decoration:none}.xl:hover{text-decoration:underline}
-.sect{font-size:12.5px;font-weight:700;color:#8ee5be;margin:10px 0 6px}
+.xl{color:#8ec2ff;font-size:13px;font-weight:700;text-decoration:none}.xl:hover{text-decoration:underline}
+.sect{font-size:13px;font-weight:700;color:#8ee5be;margin:10px 0 6px}
 .col.aside .colhd{border-left:4px solid #4fd1c5}.col.aside .who{color:#7fe3d9}
 .col.routine .colhd{border-left:4px solid #9b8cf5}.col.routine .who{color:#b8a8ff}
 </style>
