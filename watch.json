@@ -25393,6 +25393,16 @@
    "by": "이부장",
    "done_at": "2026-10-30",
    "result": "11:50 3건 등록(A6-08·B5-10·H1-34) → 선별·초안 지시서 3장 발급, 이과장 B5-10 착수"
+  },
+  {
+   "id": "drafts-1030-noon-report",
+   "added": "2026-10-30",
+   "what": "B5-10·A6-08·H1-34 초안 큐 적재마다 즉시 사장님 보고 → V0 → 결재함",
+   "due": "2026-10-30",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
