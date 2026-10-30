@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30 23:28",
+ "generated": "2026-10-31 00:11",
  "routines": [
   {
    "num": 1,
@@ -196,12 +196,17 @@
    "name": "6-Lifeinfo daily publish",
    "id": "lifeinfo-daily-publish",
    "on": true,
-   "last": "10/30 00:06",
-   "next": "10/30 23:55",
+   "last": "10/31 00:06",
+   "next": "10/31 23:55",
    "model": "sonnet-5-5",
-   "report_day": "1030",
-   "report": "[조사장부] 목록 2 · 원문 1 · 후보 2 · 탈락 1 · 검색어 4 (바닥 미달: 목록 2<3·원문 1<5·후보 2<3 — korea.kr 정책뉴스·보도자료만 훑음, 기관 공지·kwgap 미실시, 시간 한계). · 주민등록 등·초본 계부·계모→세대원 — korea.kr 148974451 · 10/29 시행 · 탈락: 기발행 D1-10(DB 제목 grep; dupcheck 는 🟢로 놓침) · 출국납부금 환급 — 외교부 26-865 hwpx 직접 대조 · 환급 1,000원·2025-01-01 전 발권 후 출국자·10/30 09시 개시 · 채택(추천 D5-08, 단 소액이라 V0 위험, 신청기한·왕복 처리는 원문에 없어 본문 제외). topicprop 등록, docflow 에게 선별 위임(결과 미수신). 초안·V0 는 선별 뒤 다음 회차.\n▸ 00:13 후속: docflow 가 D5-08 pick(verify 통과1) → 초안 지시서 draft1030d508 자동 발급. 이부장 확인: ① D5(재해·비상지원) 코드가 환급 글과 맞는지(D1 등 재배정 여부) ② docs/source_D5-08_* 없음 — 원문 요지는 루틴 scratchpad src_refund.txt(외교부 26-865 hwpx 대조), source 에이전트로 정식 확보 필요. 제가 직접 재확인한 것은 hwpx 본문뿐, pick 결과는 에이전트 보고.",
+   "report_day": "1031",
+   "report": "빈손 — [조사장부] 목록 3 · 원문 0 · 후보 0 · 탈락 3 · 검색어 3 (바닥 미달: 원문·후보 — korea.kr 목록 2종은 파싱 성공했으나 C·D·E 레인에 맞는 신규 항목이 없어 원문 미개봉, 검색 1회 시도). 이어받은 것=D1-19 추천함 상태(다른 루틴 제안)·A3-17 기초연금·B3-07 퇴직급여 기발행/등록 완료·직전 회차 빈손 / 새로 본 것=없음. · CT·MRI 검사비·진찰료(kwgap 유입) — 탈락: 기발행 C1-04(dupcheck 🟡0.57), naverkw 3낱말 자동완성 ❌, 수가 개편 보도는 6월 건정심 건(2차 출처 간 진찰료 5%/6% 불일치, 공식 원문 미확인)이라 새 사실 없음 · 새만금·신규택지·경유수출 — 탈락: 독자 행동요구 없음/레인 밖 · 재고 0/하한 3이나 근거 2개 못 갖춰 억지 제안 안 함. 초안·V0 대상 picked 코드 없음(C·D·E).",
    "runs": [
+    {
+     "at": "10/31 00:11",
+     "link": "claude://claude.ai/epitaxy/local_7d8a5757-e60e-4b3b-8e33-d44f424b51af",
+     "archived": false
+    },
     {
      "at": "10/30 00:15",
      "link": "claude://claude.ai/epitaxy/local_71fbad1b-e828-4e49-8f84-145af662d746",
@@ -220,11 +225,6 @@
     {
      "at": "10/27 00:09",
      "link": "claude://claude.ai/epitaxy/local_69e1f860-b4b5-430e-b51f-0d1566ed609a",
-     "archived": true
-    },
-    {
-     "at": "10/26 00:17",
-     "link": "claude://claude.ai/epitaxy/local_870acd27-99f3-4391-a0d6-ac89c27bb914",
      "archived": true
     }
    ]
@@ -355,7 +355,7 @@
    "report": "",
    "runs": [
     {
-     "at": "10/30 23:28",
+     "at": "10/30 23:30",
      "link": "claude://claude.ai/epitaxy/local_f5f48043-1a7b-4607-b9ec-767a3210d284",
      "archived": false
     },
