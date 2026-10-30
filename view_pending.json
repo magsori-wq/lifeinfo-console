@@ -1,17 +1,16 @@
 {
- "computed_at": "2026-10-30 09:40:02",
+ "computed_at": "2026-10-30 10:38:37",
  "source_head": "313865d15e84",
  "ids": [
   "A3-17",
-  "claude-limit-reset-1022",
-  "deploy-thumb-434"
+  "claude-limit-reset-1022"
  ],
  "posts": [],
  "publish": [
   {
    "code": "A3-17",
    "title": "기초연금 온라인 신청, 배우자 동의는 문자로 서류는 나중에 (10월 30일부터)",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,7 +32,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -43,14 +42,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-434",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(434_basicpension_online.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-30",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
