@@ -19,7 +19,7 @@
   E -->|규칙·흐름| L
 </pre></section><section><pre class="mermaid">flowchart TD
   SUP[[연료 공급자: 3.세션·루틴2·4·6·docflow → 글감 제안]]:::fix --> FUEL{⛽ 재고 ≥ 하한?}:::fix
-  FUEL -->|NO| FW[FUEL_LOW — 하한 미만 전이 1회·0 지속이면 간격 두고 재알림·글감 루틴 임박이면 생략 → 이부장 깨움, 보강 조사는 이부장 판단]:::fix --> SUP
+  FUEL -->|NO| FW[FUEL_LOW — 하한 미만 전이 1회·0 지속이면 간격 두고 재알림·글감 루틴 임박이면 생략 → 이부장 깨움 + 연료 담당 3.(fuel1030) 깨움, 보강 조사는 이부장 판단]:::fix --> SUP
   FUEL -->|YES| A0{선별 글감에 초안·지시서가 있나?}:::fix
   A0 -->|NO| A1[topicprop pick 이 그 자리에서 초안 지시서 자동 발급 · 남으면 GATE_PROBLEM 깨움]:::fix --> A
   A0 -->|YES| A
