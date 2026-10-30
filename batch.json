@@ -1843,6 +1843,16 @@
      "base_code": "8-lifeinfo-issue-product",
      "date": "2026-10-31",
      "at": "2026-10-31 07:15"
+    },
+    {
+     "code": "daily-email-briefing-1031",
+     "title": "daily-email-briefing (A)",
+     "state": "done",
+     "note": "08:08 메일브리핑 10-31 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중·PENDING). 새 중요메일 없음: 이어받은 것=Google Cloud 약관(10-12 시행)·GitHub 발행실패 2건(10-29·30, 게이트 차단 뒤 2분 내 재시도 성공)·피드드리프트 1건(console 이후 정상)·쿠팡파트너스 수신동의 안내(정보성). 8975=Google 뉴스 브리핑 2건(무해)·aroma 0건(평소). GSC 신규 0(7일). 리더 magsori5·m8975 0·aroma 0 모두 ✅",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing",
+     "date": "2026-10-31",
+     "at": "2026-10-31 08:10"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -6369,7 +6379,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-10-31 07:22:36",
+ "updated": "2026-10-31 08:10:17",
  "current": {
   "batch": "fuel1030",
   "code": "",
@@ -6380,6 +6390,10 @@
   "since_at": "2026-10-30 13:35:23"
  },
  "log": [
+  {
+   "t": "08:10:17",
+   "text": "✅ daily-email-briefing-1031 완료 — daily-email-briefing (A)"
+  },
   {
    "t": "07:22:36",
    "text": "▶   — 1/7단계 · 07:25 변동 없음 — kwgap 입력 10-30 유입(23건) 04:25와 같음, 제안함 D1-19 1건 그대로, 새 제안 0"
@@ -6535,10 +6549,6 @@
   {
    "t": "16:35:00",
    "text": "▶   — 1/7단계 · ✅ H1-34 네이버 링크 카드 정정 완료(사장님 16:17 지적): PostView 실측 se-module-oglink 2개(절임배추·김장매트, 이미지 썸네일+상품명 카드)·대가성 문구 2회·블로그 원문 링크 유지·카테고리 공연·여행·생활꿀팁 유지·저장 2회(1건씩). 방법: 줄 내용 JS 선택→Delete→OS 클립보드(Set-Clipboard)+실제 Control+V 키 입력(합성 ClipboardEvent·insertText 는 카드 안 생김, 시험으로 확인). 🙋 이부장 요청: naverwrite/naver-draft 흐름의 제휴 링크 삽입을 이 방식(실클립보드 URL 한 줄씩)으로 코드화 — 지금은 insertText 라 카드가 안 뜸(게시 때마다 재발)"
-  },
-  {
-   "t": "16:33:58",
-   "text": "⬜ FUEL-3 대기 — 글감 연료 공급 상시 — 재고 하한 미만 시 근거 2개 갖춘 "
   }
  ],
  "currents": {
