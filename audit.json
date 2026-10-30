@@ -2,38 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-10T12:54:22",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "idxstate-benign-0907",
-   "detail": "idxstate.py 존재, pending.py 배선 확인, index_benign 필드 작동(index_todo=12·index_benign=83)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:22",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "idxboost-done-already-0907",
-   "detail": "batchboard show -- idxboost0907 동결 상태, order 텍스트에 착수금지 조치 그대로 반영됨",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:23",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "boost-recount-0907",
-   "detail": "같은 배치 order 텍스트에 재측정 결과 반영, 산출물 문서 존재 확인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T12:54:23",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "reads-counts-writes-0907",
-   "detail": "소스 확인 -- touch_read 는 읽기(no --file) 분기에만 있고 --file 등록 분기엔 없음",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-10T12:54:24",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15967,38 @@
    "action": "watch.done",
    "target": "b217-source-recheck-1001",
    "detail": "폐기(drop) 4.재판정 10-30: topicprop list 에서 B2-17 상태 「제외」(직접 확인) — 출처 재시도 불필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T14:06:20",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "pub-x1",
+   "detail": "t",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T14:06:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pub-x1",
+   "detail": "t",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T14:06:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-a1-01",
+   "detail": "t",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T14:06:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "plain-1",
+   "detail": "t",
    "via": "cli"
   }
  ]
