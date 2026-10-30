@@ -914,6 +914,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       //    "카드에 누가 올렸는지 알아야 하는게 기본이잖아?" — 읽으려면 .meta 를
       //    끝까지 읽어야 하는 것과, 카드 머리에서 색으로 바로 보이는 것은 다르다.
       by:w.by||'',
+      pv:w.preview||'',   // 📄 원고 미리보기 주소(watch preview --id --url) — 10-30 사장님 「결재함에서 볼 수 있도록 해」
       why:(_isAp?'승인 대기 · 기한 ':'조치 대기 · 기한 ')+(w.due||'')
           +(w.state==='blocked'?' · 🚫막힘':''),
       cmd:w.cmd||('python -m studio.watch done --id '+w.id)});
@@ -1240,6 +1241,8 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         ?'<div style="margin-top:8px"><button class="act pv-btn" data-c="'+x.c+'" '
          +'onclick="preview(this.dataset.c)">📄 '
          +(x.act==='topic_approve'?'초안 원고 보기':'원고 미리보기')+'</button></div>':'')
+      +(x.pv?'<div style="margin-top:8px"><a class="act pv-btn" style="display:inline-block;text-decoration:none" target="_blank" href="'
+         +esc(x.pv)+'">📄 원고 미리보기</a></div>':'')
       // 📱 외부 결재 — 밖에서도 누르실 수 있게(2026-09-03 사장님 지시)
       +(x.act==='publish_run'
         ? '<div style="margin-top:8px">'+pubLink(x.c, x.draft, x.t)+'</div>'
