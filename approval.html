@@ -435,6 +435,7 @@ async function approve(el){
       el.textContent=el.dataset.old; el.style.background=''; } }, 6000);
     return;
   }
+  if(a==='watch_hold'){ send('watch_done',c,'사장님 보류·거절 — 결재함에서 닫음(승인 아님)',el); return; }
   send(a,c,null,el);
 }
 // 🔴 실패했으면 버튼을 **처음 상태로** 되돌린다 (2026-08-23 사장님 지적).
@@ -1225,6 +1226,9 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +(LABEL[x.act]?'<div style="margin-top:8px">'
         +btn(x.act,x.c,LABEL[x.act],BTN_CLS[x.act]||'ok')
         +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
+        // ⏸ 승인 카드에 「보류·거절」 — 10-30 사장님 「결재함에 보류된 제휴링크 그대로 있네·어디 있는데?」
+        //    승인 버튼뿐이라 보류한 건을 닫을 길이 없었다. watch_done 에 사유를 실어 닫는다(사장님 env).
+        +(x.act==='watch_approve'?btn('watch_hold',x.c,'⏸ 보류·거절(닫기)','no'):'')
         +'</div>':'')
       // 🔴 2026-09-03 — pv-btn 을 LABEL 게이트 **밖으로** 뺀다. `LABEL` 에는
       //    publish_go·topic_approve·watch_approve·watch_done 4개만 있어서, 그 안에
