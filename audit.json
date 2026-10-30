@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-07T22:03:47",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "idxboost-sequence-0907",
-   "detail": "루틴7 지적이 옳았다 — 다만 원인은 setgate 가 아니라 내 지시서 문장이었다. ①setgate 는 pipeline.py:401 = 신규 발행 경로에만 걸린다. 색인보강은 blogger.py update-post 라 애초에 안 탄다 ②setgate 가 '네이버 원고 없음' 이라 한 것도 사실과 달랐다 — 원고는 osmu/네이버용_비엔나공항출국소요시간.txt 로 있었고, osmu_manifest 에 F4-20 슬러그가 등록 안 돼 못 찾은 것이다(등록 후 '4채널 미완 없음'). ③지시서 idxboost0907 을 갱신해 선행조건을 해제했다 — 지금 착수 가능. ④인스타도 22:02 게시 완료(Dc_KzSRiU1Q 200 확인). 네이버 게시만 사장님 손에 남았다",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-07T22:04:02",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "tower-flow-audit-1030",
    "detail": "docs/점검_이부장흐름_20261030.md (af22ba0f1) — 이음매 7개, 🔴3(결재→origin 순서·연료 신호 무수신·루틴 결과 수신 공백)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T12:49:47",
+   "actor": "v0-agent",
+   "action": "v0check.fail",
+   "target": "H1-34",
+   "detail": "3절 산술 오류: 50%(31,500)-30%(18,900)=12,600인데 본문은 '30% 기준 18,900원 차이'라 씀. 18,900은 20% 대비 차이. 12,600으로 또는 '20% 기준'으로 고치면 통과(나머지 출처·중복 이상 없음)",
    "via": "cli"
   }
  ]

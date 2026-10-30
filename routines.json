@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30 11:33",
+ "generated": "2026-10-30 12:46",
  "routines": [
   {
    "num": 1,
@@ -10,7 +10,7 @@
    "next": "10/30 20:00",
    "model": "sonnet-5-5",
    "report_day": "1030",
-   "report": "08:08 메일브리핑 10-30 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중·PENDING). 새 중요메일 없음: 이어받은 것=Google Cloud 약관(10-12 시행·기보고), OpenAI Codex 새 로그인 10-28 15:01 KST 성남(본인 추정·조치불요), 쿠팡파트너스 수신동의 안내(10-29 정보성). 🟡 GitHub 피드 드리프트 검사(lifeinfo-console) 10-27·28·29 연속 실패 — 사유 로그 미확인, 반복이라 이부장 확인 요망 / 발행 run 40809431080(10-29 02:58) 실패 후 재시도 3회 성공(사전점검 단계 로그에서 원인 미특정). GSC 7일 0건. 점검: magsori 5·m8975 0·aroma 0(직접), 커넥터 전달분 8975 구글뉴스 2건·aroma 0 정상",
+   "report": "08:08 메일브리핑 10-30 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중). 새 중요메일 없음(Google Cloud 약관 기보고·OpenAI Codex 로그인 10-28 성남·쿠팡파트너스 수신동의 안내). 🟡 console 피드 드리프트 검사 10-27~29 연속 실패(사유 미확인, 이부장 확인 요망)·발행 run 40809431080 실패 후 재시도 성공(원인 미특정). GSC 7일 0건. magsori5·m8975 0·aroma 0",
    "runs": [
     {
      "at": "10/30 08:12",
@@ -161,8 +161,8 @@
    "last": "10/29 22:33",
    "next": "10/30 22:30",
    "model": "sonnet-5-5",
-   "report_day": "1025",
-   "report": "[루틴5 10-25] 오늘 발행 10편 중 3편(B4-24·A5-18·B4-23) DRF 원문 대조 오류 0, 라이브 수정 0. 잔여 7편 다음 회차. 이어받은 것: 10-21 이후 note 없음 → 오늘 발행분 우선. 새로 본 것: 법령 3편 일치",
+   "report_day": "1029",
+   "report": "야간검증 10-29: 오늘 발행 5편 중 3편(G1-17·F3-10·B3-07) 대조 오류 0·라이브수정 0. B3-07 정책브리핑·G1-17 울산 원문 직접 대조 못 함(미확인), H1-31·H1-33 미검증→다음 회차. 🙋사장님 할 일 없음",
    "runs": [
     {
      "at": "10/29 22:41",
@@ -237,8 +237,8 @@
    "last": "10/29 09:35",
    "next": "11/05 09:30",
    "model": "opus-5-5",
-   "report_day": "1022",
-   "report": "10-22 inspect 완주 409편·오류0: 색인 0/409 · 28일클릭 0(노출1) · ③네이버 49(10-08 측정, 낡음) · RedirectErr169/Crawled124/Discovered83/unknown33 · 재크롤 3편(B2-04·G3-09·D1-12, 10-21) 전부 RedirectErr · 10-21 요청 기록 gsc_req_dates 에 없음(이부장 확인) · adsense NEEDS_ATTENTION(10-15 GETTING_READY) · idx0zero 지시서 28일 무갱신 — 이번 회차 미착수(주간 실측만)",
+   "report_day": "1029",
+   "report": "10-29 inspect 완주 447편(partial=False·HTTP500 오류 2편 F4-06·A1-11 은 직전값 유지) · ①색인 0/447 · ②28일클릭 0 · ③네이버구글색인 49(10-08 측정, 21일 낡음·미재측정) · state RedirectErr214/Crawled124/Discovered68/unknown41 (전주 169/124/83/33) · 신규 38편(Redirect35) · 재크롤 13편(10-22) 전부 RedirectErr·MOBILE·gCanonical 없음 — 그중 11편 gsc_req_dates 요청기록 없음 · Discovered↔unknown 50편 왕복(API 표기 흔들림으로 보임, 크롤 변화 아님) · Crawled124편 lastCrawl 전부 30일↑ · adsense GETTING_READY(전주 NEEDS_ATTENTION, 화면 미확인) · 이어받은 것: idx0zero 지시서 35일 무갱신, 이번 회차도 주간실측만 · 재검토 시점은 사장님",
    "runs": [
     {
      "at": "10/29 10:38",
