@@ -26222,7 +26222,8 @@
    "owner": "user",
    "kind": "approve",
    "state": "todo",
-   "by": "이대리"
+   "by": "이대리",
+   "preview": "aromapv_DG-001.html"
   },
   {
    "id": "aroma-dg002-enrich-1030",
@@ -26234,6 +26235,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이대리"
+  },
+  {
+   "id": "aromapv-deploy-batch-1030",
+   "added": "2026-10-30",
+   "what": "aroma 보강 결재 미리보기 배포 묶음 — DG-001 은 PC 에서 열림(배포 대기), 남은 SP-003·BO-001·DG-002 결재가 오면 한 번에 deploy(연속 push 방지) 후 github.io 200 확인",
+   "due": "2026-10-30",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://magsori-wq.github.io/lifeinfo-console/aromapv_DG-001.html",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
