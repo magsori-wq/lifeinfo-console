@@ -1,11 +1,10 @@
 {
- "computed_at": "2026-10-30 12:55:35",
- "source_head": "f1bd59d34f20",
+ "computed_at": "2026-10-30 13:20:14",
+ "source_head": "877b0a5c401f",
  "ids": [
   "A6-08",
   "H1-34",
-  "claude-limit-reset-1022",
-  "deploy-thumb-437"
+  "claude-limit-reset-1022"
  ],
  "posts": [],
  "publish": [
@@ -40,7 +39,7 @@
    "code": "H1-34",
    "title": "수산대전 코리아수산페스타 11월 29일까지, 김장재료 최대 50% 할인",
    "go": false,
-   "v0": "fail",
+   "v0": "pass",
    "files": [
     {
      "label": "초안 수산대전김장재료_글_HTML.txt",
@@ -71,14 +70,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-437",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(437_suhyup_festa.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-30",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
