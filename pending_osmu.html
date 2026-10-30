@@ -11,8 +11,8 @@ body{margin:0;padding:11px 13px;background:#0e1526;color:#e6ecf7;overflow-y:auto
      display:flex;flex-direction:column;gap:8px}
 .hdrow{display:flex;align-items:baseline;gap:12px;flex:0 0 auto}
 h1{font-size:17px;margin:0}
-.tip{color:#7d8ca8;font-size:11.5px}
-.srv{font-size:12px;padding:5px 11px;border-radius:8px;flex:0 0 auto}
+.tip{color:#7d8ca8;font-size:13px}
+.srv{font-size:13px;padding:5px 11px;border-radius:8px;flex:0 0 auto}
 .srv.on{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
 .srv.off{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
 /* 4분할 — 본문은 스크롤하지 않고 각 칸만 흐른다 */
@@ -27,30 +27,30 @@ h1{font-size:17px;margin:0}
 /* 🔴 2026-10-08 사장님 "인스타·쓰레드 대기화면이 안 보여" — 위 조치 상자가 커지자 grid 가 194px 로
    눌려 두 번째 줄(쓰레드·인스타)이 아래 상자 밑에 깔렸다. → grid 는 두 줄이 늘 들어가는 높이를 확보하고,
    넘치면 페이지가 스크롤된다(body overflow-y:auto). 조치 상자(#actbox)는 높이를 묶었다. */
-.grid{flex:1 0 auto;min-height:470px;display:grid;gap:9px;
-      grid-template-columns:1fr 1fr;grid-auto-rows:minmax(230px,1fr)}
+.grid{flex:0 0 auto;display:grid;gap:9px;align-items:start;
+      grid-template-columns:1fr 1fr;grid-auto-rows:auto}
 #actbox{max-height:190px;overflow-y:auto}
-.pane{background:#131c31;border:1px solid #223052;border-radius:11px;height:100%;
+.pane{background:#131c31;border:1px solid #223052;border-radius:11px;height:auto;
       display:flex;flex-direction:column;min-height:0;overflow:hidden}
 .ph{display:flex;align-items:center;gap:7px;padding:8px 12px;flex:0 0 auto;
     border-bottom:1px solid #223052;background:#16203a;font-weight:700;font-size:13.5px}
-.ph .cnt{margin-left:auto;font-size:11.5px;font-weight:400;color:#8fa0bd;
+.ph .cnt{margin-left:auto;font-size:13px;font-weight:400;color:#8fa0bd;
          background:#0e1526;border:1px solid #2a3a5e;border-radius:20px;padding:1px 9px}
-.pb{flex:1;min-height:0;overflow-y:auto;padding:9px 11px}
+.pb{flex:0 1 auto;min-height:0;max-height:min(46vh,440px);overflow-y:auto;padding:9px 11px}
 .pb::-webkit-scrollbar{width:9px}
 .pb::-webkit-scrollbar-thumb{background:#2a3a5e;border-radius:6px}
 .card{background:#16203a;border:1px solid #2a3a5e;border-radius:10px;padding:9px 11px;margin:0 0 8px}
 .hd{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:5px}
-.code{font-family:Consolas,monospace;font-size:11.5px;color:#7d8ca8}
+.code{font-family:Consolas,monospace;font-size:13px;color:#7d8ca8}
 .ttl{font-weight:700;flex:1;min-width:150px;font-size:13px}
 .files{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
 .f{background:#1b2540;border:1px solid #2a3a5e;border-radius:7px;padding:3px 9px;
-   font-size:11.5px;color:#9fc9ee;cursor:pointer;font-family:Consolas,monospace;
+   font-size:13px;color:#9fc9ee;cursor:pointer;font-family:Consolas,monospace;
    max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .f:hover{border-color:#4D9DE0;color:#cfe6fa;background:#22304f}
 .f.img{color:#e59ac0;border-color:#c2569655}
 .f.miss{color:#f0928a;border-color:#c0392b55;cursor:not-allowed;opacity:.6}
-.none{color:#7d8ca8;font-size:12.5px;padding:6px 0}
+.none{color:#7d8ca8;font-size:13px;padding:6px 0}
 .lt{display:inline-block;width:9px;height:9px;border-radius:50%;flex:0 0 auto}
 .lt-done{background:#2f8f68;box-shadow:0 0 6px #2f8f6899}
 .lt-ready{background:#e0a01e;box-shadow:0 0 6px #e0a01e99}
@@ -62,9 +62,9 @@ h1{font-size:17px;margin:0}
 .sg{flex:1;background:#141d33;border:1px solid #22304f;border-radius:10px;padding:6px 11px;
     display:flex;align-items:center;gap:8px}
 .sg .n{font-size:21px;font-weight:800;font-variant-numeric:tabular-nums}
-.sg .l{font-size:11.5px;color:#8fa0bd;line-height:1.25}
+.sg .l{font-size:13px;color:#8fa0bd;line-height:1.25}
 .sg.g .n{color:#5fd3a0} .sg.y .n{color:#f0b26b} .sg.r .n{color:#f0928a}
-.badge{font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;white-space:nowrap}
+.badge{font-size:13px;font-weight:700;padding:1px 8px;border-radius:20px;white-space:nowrap}
 .b-wait{background:#e08b1e22;border:1px solid #e08b1e66;color:#f0b26b}
 .b-ok{background:#2f8f6822;border:1px solid #2f8f6866;color:#8ee5be}
 .b-todo{background:#c0392b22;border:1px solid #c0392b66;color:#f0928a}
@@ -74,13 +74,13 @@ h1{font-size:17px;margin:0}
 #viewer.on{display:flex}
 #vh{display:flex;align-items:center;gap:9px;padding:7px 12px;border-bottom:1px solid #223052;
     background:#16203a;flex:0 0 auto}
-#vname{font-family:Consolas,monospace;font-size:12px;color:#9fc9ee;flex:1;
+#vname{font-family:Consolas,monospace;font-size:13px;color:#9fc9ee;flex:1;
        overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #vbody{flex:1;min-height:0;overflow:auto;padding:10px 13px}
 #vtext{white-space:pre-wrap;word-break:break-word;font-family:Consolas,monospace;
-       font-size:12.5px;line-height:1.65;color:#cfd8e6;margin:0}
+       font-size:13px;line-height:1.65;color:#cfd8e6;margin:0}
 #vimg{max-width:100%;border-radius:8px;display:block;margin:0 auto}
-.btn{border:0;border-radius:7px;padding:5px 13px;font-size:12.5px;font-weight:700;
+.btn{border:0;border-radius:7px;padding:5px 13px;font-size:13px;font-weight:700;
      cursor:pointer;font-family:inherit;background:#2f8f68;color:#fff}
 .btn:hover{background:#37a87b}
 .btn.g{background:#4d5a70;color:#dbe3ef}
@@ -223,7 +223,7 @@ function paintPendingDiff(D){
       computed_at:view.computed_at, source_head:view.source_head, readonly: !!D.readonly});
     var d = document.createElement('div'); d.id = 'cpvDiffP';
     d.style.cssText = 'position:fixed;top:40px;right:10px;z-index:99998;background:#3a1d1d;'
-      + 'border:1px solid #7a3030;color:#ff9b9b;font-size:11px;padding:4px 8px;border-radius:8px';
+      + 'border:1px solid #7a3030;color:#ff9b9b;font-size:13px;padding:4px 8px;border-radius:8px';
     d.title = '화면만: ' + (onlyScreen.join(', ')||'-') + ' / view만: ' + (onlyView.join(', ')||'-');
     d.textContent = '⚠️ 판정 불일치 ' + (onlyScreen.length + onlyView.length) + '건(그림자, console 참고)';
     document.body.appendChild(d);
@@ -579,13 +579,13 @@ function fileChip(path, label, isImg, exists){
       var tag=over?'기한 지남':(now?'오늘':(a.due||'기한 없음'));
       return '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;'
         +'border-top:1px solid #1b2740">'
-        +'<span style="flex:0 0 auto;color:'+col+';font-size:11px;font-weight:700;'
+        +'<span style="flex:0 0 auto;color:'+col+';font-size:13px;font-weight:700;'
         +'min-width:64px">'+esc(tag)+'</span>'
-        +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:11px;min-width:150px">'
+        +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:13px;min-width:150px">'
         +esc(a.id)+'</span>'
-        +'<span style="flex:1 1 auto;color:#cfe0f2;font-size:12px;line-height:1.45">'
+        +'<span style="flex:1 1 auto;color:#cfe0f2;font-size:13px;line-height:1.45">'
         +esc(String(a.what||'').slice(0,300))
-        +(a.cmd?'<br><code style="color:#8fd6a0;font-size:11px">'+esc(a.cmd)+'</code>':'')
+        +(a.cmd?'<br><code style="color:#8fd6a0;font-size:13px">'+esc(a.cmd)+'</code>':'')
         +'</span></div>';}).join('');
     var futHtml='';
     var Af=(D.actionsFuture||[]);
@@ -593,13 +593,13 @@ function fileChip(path, label, isImg, exists){
       var frows=Af.map(function(a){
         return '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;'
           +'border-top:1px solid #1b2740">'
-          +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:11px;font-weight:700;'
+          +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:13px;font-weight:700;'
           +'min-width:64px">'+esc(a.due||'기한 없음')+'</span>'
-          +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:11px;min-width:150px">'
+          +'<span style="flex:0 0 auto;color:#7fb0e0;font-size:13px;min-width:150px">'
           +esc(a.id)+'</span>'
-          +'<span style="flex:1 1 auto;color:#cfe0f2;font-size:12px;line-height:1.45">'
+          +'<span style="flex:1 1 auto;color:#cfe0f2;font-size:13px;line-height:1.45">'
           +esc(String(a.what||'').slice(0,300))
-          +(a.cmd?'<br><code style="color:#8fd6a0;font-size:11px">'+esc(a.cmd)+'</code>':'')
+          +(a.cmd?'<br><code style="color:#8fd6a0;font-size:13px">'+esc(a.cmd)+'</code>':'')
           +'</span></div>';}).join('');
       // 🔴 기본 접힘 — "너무 많은 글을 보여주니 다 읽을 수가 없어"(2026-08-27 사장님 지적).
       //    기한 도래분(위 박스)만 펼쳐 보이고, 기한 전은 여기 접어 둔다.
@@ -613,7 +613,7 @@ function fileChip(path, label, isImg, exists){
       //       여기는 일부러 찾아오신 자리라 펼쳐 두는 것이 맞다.
       futHtml='<details'+foldAttr('act_fut',true)+' style="background:#0f1626;border:1px solid #223052;'
         +'border-radius:9px;margin-top:6px"><summary style="cursor:pointer;color:#7fb0e0;'
-        +'font-size:12px;padding:6px 10px">⏳ 기한 전 '+Af.length+'건</summary>'
+        +'font-size:13px;padding:6px 10px">⏳ 기한 전 '+Af.length+'건</summary>'
         +'<div style="max-height:220px;overflow-y:auto">'+frows+'</div></details>';
     }
     box.innerHTML='<details'+foldAttr('act_boss',true)+' style="background:#1a1206;border:1px solid #4a3a12;'
@@ -767,7 +767,7 @@ function fileChip(path, label, isImg, exists){
     }
     var rdy = F.ready||0, mkb = F.makeable||0, nod = F.nodraft||0;
     var head = '<div style="padding:8px 10px;margin-bottom:8px;background:#111a2c;'
-      +'border:1px solid #223052;border-radius:9px;font-size:12px;line-height:1.75">'
+      +'border:1px solid #223052;border-radius:9px;font-size:13px;line-height:1.75">'
       +'<a href="#" onclick="try{parent.document.querySelector(\'nav button[data-t=naverfix]\').click()}catch(e){location.href=\'naverfix.html\'};return false\" style="float:right;font-size:15px;font-weight:800;'
       +'padding:6px 12px;border-radius:8px;background:#1f6feb;color:#fff;text-decoration:none">🎨 「네이버 서식」 탭에서 작업 →</a>'
       +'<b style="color:#ffb38a">이 목록은 「서식이 옛날 그대로인 네이버 글」입니다.</b>'
@@ -797,7 +797,7 @@ function fileChip(path, label, isImg, exists){
       +'⛔ 원고 없는 '+nod+'편은 목록에 세우지 않았습니다 — 처음부터 쓰는 일이라 '
       +'서식 작업 대상이 아닙니다.</p>';
     if(edge.length){
-      body += '<div style="margin-top:10px;font-size:12px;color:#ffd479">'
+      body += '<div style="margin-top:10px;font-size:13px;color:#ffd479">'
         +'🟡 경계 '+edge.length+'건 — 눈으로 확인할 것</div>'
         + edge.slice(0,6).map(function(r){ return row(r,true); }).join('');
     }
