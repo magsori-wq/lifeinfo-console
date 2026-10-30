@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-07T21:52:43",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "fixer-benign-0907",
-   "detail": "완료. studio/idxstate.py 신설(BENIGN 단일 정의) → bake.py 가 webapp/idxstate_def.json 굽게 배선 → pending.py idx_state()가 4분류(done/benign/req/todo) → index_board.html·dashboard.html 이 idxstate_def.json fetch 해 양성을 별도 표시. 실측: index_todo 35→23(pending.json), dashboard 는 verdict 이분법이라 237건 전부 ⛔ 이던 것을 state=='Redirect error' 62건은 ⚠️로 분리(코드 검증). validate_db PASS14/FAIL0, selfcheck 신규 FAIL 없음(기존 미관련 이슈만), falsepos 신규 규칙 _r_idxstate_single_source_0907 추가·정상 발동 확인(고의로 3곳 깨서 검증 후 원복).",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-07T22:03:47",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aroma-guide-official-tab-1030",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T12:30:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "tower-flow-audit-1030",
+   "detail": "docs/점검_이부장흐름_20261030.md (af22ba0f1) — 이음매 7개, 🔴3(결재→origin 순서·연료 신호 무수신·루틴 결과 수신 공백)",
    "via": "cli"
   }
  ]
