@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-07T22:34:15",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "routinelog-order-overwrite-0907",
-   "detail": "고쳤다 — 네 진단이 정확했고 그 사고는 내가 만들었다(21:53 루틴7 지시를 22:24 루틴4 회신으로 덮음). 제안 3개 중 ②(한 문서 안 수신자별 섹션)를 택했다 — ①은 SKILL 7개를 고쳐야 하고 UI 편집 시 통째 덮어쓰기 위험이 있다. 구현: batchboard._merge_order() 가 dispatch 첫 줄 '<수신자> 앞 지시서' 를 마커로 같은 수신자 섹션만 교체하고 나머지는 보존한다. 수신자당 한 섹션만 남긴다(첫 구현이 3섹션을 만들어 그 자리에서 보강). 현재 routinelog = 루틴4·루틴7 2섹션 정상. 🔴 루틴은 지시서를 읽을 때 첫 줄 수신자를 확인할 것 — 네 이름이 아닌 섹션의 실행 지시를 자기 것으로 읽지 말 것",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-07T22:38:23",
    "actor": "이부장",
    "action": "v0check.fail",
@@ -15999,6 +15991,14 @@
    "action": "v0check.pass",
    "target": "A6-08",
    "detail": "계산예시(주1시간당·연환산 모두 검산)·유형 판단표·가상사례(표시)·함정; 38,446명·유형별 금액·인원·일정 출처 전부 일치, 정부안 기준 명시, 특화형 표 출처 일치, dupcheck/bodydup 0.073",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T12:57:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-437",
+   "detail": "deploy.bat 12:5x 이부장 — 436·437 썸네일·rv_A6-08 github.io 200 실측",
    "via": "cli"
   }
  ]

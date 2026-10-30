@@ -25469,8 +25469,10 @@
    "due": "2026-10-30",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-30",
+   "result": "deploy.bat 12:5x 이부장 — 436·437 썸네일·rv_A6-08 github.io 200 실측"
   },
   {
    "id": "fix-gostamp-push-first-1030",
@@ -25541,6 +25543,16 @@
    "owner": "user",
    "state": "todo",
    "kind": "approve",
+   "by": "이부장"
+  },
+  {
+   "id": "fix-fuel-rd-1030",
+   "added": "2026-10-30",
+   "what": "FW fuel_low 사건+towertick FUEL_LOW(전이1회·0지속3h·루틴2/4/6 60분내 생략)·RD split_code_tail 반복꼬리·falsepos 규칙·루틴10 SKILL 🙋 이대리 한 줄. unittest 120 OK, enginemap FUEL_LOW 🔴 없음",
+   "due": "2026-10-31",
+   "cmd": "python -m unittest tests.test_studio_pure && python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
