@@ -26007,6 +26007,16 @@
    "by": "미상",
    "done_at": "2026-10-30",
    "result": "deploy.bat 16:12 이부장 — 438_mama_osaka.png github.io 200 실측 16:14"
+  },
+  {
+   "id": "naver-afflink-card-gate-1030",
+   "added": "2026-10-30",
+   "what": "네이버 제휴 링크가 카드(이미지)가 아니라 텍스트로 게시됨(H1-34, 사장님 16:17 지적) — naver-link 기록 직후 PostView 에서 affiliate 링크 수 ≤ se-module-oglink 수 검사하는 게이트(설계도 먼저)·이과장 aside repl 절차에 paste 이벤트 명시",
+   "due": "2026-10-31",
+   "cmd": "curl -s -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224459090908' | grep -c se-module-oglink",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
