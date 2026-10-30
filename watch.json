@@ -25887,6 +25887,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "gate-pick-race-1030",
+   "added": "2026-10-30",
+   "what": "GATE_PROBLEM 「선별됐는데 지시서 없음」 오경보 2회(D1-19 14:0x·H1-35 14:3x) — topicprop pick 이 state=picked 를 먼저 저장하고 SC 계산(~45s 네트워크) 뒤 지시서를 만들어 그 사이 towertick 이 울림. 처방: pick 순서를 지시서 먼저→SC 나중, 또는 gatecheck 가 picked 후 5분 유예(설계도 A0 먼저)",
+   "due": "2026-10-31",
+   "cmd": "grep -n 'def cmd_pick' -A40 studio/topicprop.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
