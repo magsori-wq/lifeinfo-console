@@ -410,6 +410,8 @@ function fileChip(path, label, isImg, exists){
   //    전에는 fallbackPending() 안에서만 실어서, 결재서버가 떠 있으면
   //    「글감 승인완료」 칸이 승인된 글이 있는데도 늘 0건이었다(F1-15).
   try{ window.__TOPICPROP__ = await j('topicprop.json'); }catch(e){}
+  // 🤖 에이전트 실행 현황도 서버 경로에서 읽는다(10-30: 폴백에서만 실어 결재서버가 떠 있으면 패널이 늘 안 떴다)
+  try{ window.__AGENTS__ = await j('agents.json'); }catch(e){}
       // 🎨 네이버 서식 미적용 — studio/naverfmt.py 가 **직접 돌릴 때만** 굽는다.
       //    라이브 299편 curl 이라 bake 에 넣지 않았다 — 화면은 읽기만 한다.
       try{ window.__NAVERFMT__ = await j('naverfmt.json'); }catch(e){}
