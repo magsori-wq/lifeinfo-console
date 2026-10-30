@@ -829,12 +829,14 @@ function fileChip(path, label, isImg, exists){
       +'<div style="margin-bottom:8px;font-weight:700">'
       +(run.length? '🟢 지금 '+run.length+'개가 돌고 있습니다' : '✅ 지금 도는 에이전트 없음')
       +' <span style="opacity:.6;font-weight:400">· '+esc(AG.updated||'')+' 기준</span></div>'
-      + it.slice(0,8).map(function(x){
+      + it.slice(0,12).map(function(x){
           var on=String(x.state||'').indexOf('도는')>=0;
           return '<div class="card l-'+(on?'ready':'done')+'"><div class="hd">'
             +'<span class="badge '+(on?'b-wait':'b-todo')+'">'+esc(x.state)+'</span>'
-            +'<span class="ttl">'+esc(x.id)+'</span>'
-            +'<span class="code">'+esc(x.at)+'</span>'
+            +'<span class="ttl">'+esc(x.purpose||x.id)+'</span>'
+            +'<span class="code">'+esc(x.started||x.at)+'</span>'
+            +(x.by? '<span class="badge b-todo">'+esc(x.by)+'</span>':'')
+            +(x.type? '<span class="badge b-todo">'+esc(x.type)+(x.model? ' · '+esc(x.model):'')+'</span>':'')
             +(x.doing? '<span class="badge b-todo">'+esc(x.doing)+'</span>':'')
             +'</div></div>';}).join('')
       +'</div>';
