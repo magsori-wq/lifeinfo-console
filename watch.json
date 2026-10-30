@@ -329,8 +329,10 @@
    "what": "[승인 시점 참고 · 할 일 아님] A1-12(근로장려금 반기신청)의 dupcheck 🔴강한중복(vs A1-03)은 2026-08-08 실측 오탐이다 — 발행 가능. ①겹침 1.00 은 공유 키워드가 '근로장려금' 하나뿐이라 나온 min측 비율 artifact ②bodydup --live 0.048(비교 192편) ③A1-03 라이브 본문의 '반기' 3회는 전부 FAQ 한 문단이고 상반기·하반기·정산·9월1 은 0회 ④A1-12 도입부가 'A1-03 을 먼저 보라'고 내부링크로 명시 = 저자가 관계를 이미 정리했다. 같은 이유로 F4-14 의 🟡(vs F4-09)도 오탐 — F4-09 본문이 '탐방로는 대피소와 별도 예약'이라며 넘긴 짝 글이다. 관련 = watch dupcheck-green-miss(그쪽은 🟢 오탐, 이쪽은 🔴 오탐 = 같은 토큰화 약점의 양면).",
    "cmd": "python -m studio.bodydup --file 근로장려금반기신청_글_HTML.txt --code A1-12 --live",
    "owner": "claude",
-   "state": "wait",
-   "flag": "dupcheck 🔴 를 근거로 A1-12 를 되돌리지 말 것 — 실측으로 오탐 확인됨"
+   "state": "done",
+   "flag": "dupcheck 🔴 를 근거로 A1-12 를 되돌리지 말 것 — 실측으로 오탐 확인됨",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): drop — 전제 사라짐"
   },
   {
    "id": "seodesc-queue5",
@@ -17590,8 +17592,10 @@
    "due": "2026-10-17",
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): 결과 도착: 10-20 반려(adsense-rejected-1020 기록) → 확인 대상 사건 종결"
   },
   {
    "id": "naver-login-aside-1010",
@@ -19659,8 +19663,10 @@
    "due": "2026-10-16",
    "cmd": "python -c \"import json;print(json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'].get('150'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): G3-18 DB osmu 에 naver URL 기록됨 + 3채널 완료"
   },
   {
    "id": "aside-naver-iframe-1016",
@@ -19856,8 +19862,10 @@
    "due": "2026-10-17",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('cadaily'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): read_info(cadaily): last_report 2026-10-30 12:22 — 3. 보고 재개됨"
   },
   {
    "id": "aside-naver-login-1017",
@@ -20937,8 +20945,10 @@
    "due": "2026-10-21",
    "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 1 --json conclusion",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): 이후 publish.yml 라이브 run 40931235387·40987508119·40995533557 모두 success = 콘솔 저장소 클론 단계 통과"
   },
   {
    "id": "f430-naver-broken-tag-1019",
@@ -20991,8 +21001,10 @@
    "due": "2026-10-21",
    "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 1 --json conclusion,createdAt",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): 10-21 이후 publish.yml 라이브 run 다수 success(gh run list) — 되돌림 불요"
   },
   {
    "id": "approve-a1-08",
@@ -21066,8 +21078,10 @@
    "due": "2026-10-21",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴6 · lifeinfo-daily-publish (F)"
+   "state": "done",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): C3-10 DB 등록·osmu 3채널 완료·라이브 200"
   },
   {
    "id": "c310-pub-wake-1020",
@@ -21076,8 +21090,10 @@
    "due": "2026-10-20",
    "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('pub1020c310'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): read_info(pub1020c310): reads 2·last_read 10-20 09:25·last_report 10-20 17:31 / C3-10 발행 완료"
   },
   {
    "id": "b505-boost-1020",
@@ -21220,8 +21236,10 @@
    "due": "2026-10-20",
    "cmd": "python studio/blogger.py crosslink --code C3-10",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 C3-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "seodesc-draft-postid-1020",
@@ -21262,8 +21280,10 @@
    "due": "2026-10-20",
    "cmd": "python studio/blogger.py crosslink --code G4-13",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G4-13 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "approve-g4-13",
@@ -21308,8 +21328,10 @@
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "루틴1 · daily-email-briefing (A)"
+   "state": "done",
+   "by": "루틴1 · daily-email-briefing (A)",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): 반려 기록 완료(NEEDS_ATTENTION) → 현재 재요청 GETTING_READY(adsense.py status). 후속은 adsense-result-1108 이 추적"
   },
   {
    "id": "adsense-reapply-1027",
@@ -21318,8 +21340,10 @@
    "due": "2026-10-26",
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): 재신청 판단 시점 경과: 사장님이 10-29 재검토 요청(adsense-result-1108 기록) · adsense.py status GETTING_READY"
   },
   {
    "id": "approve-d1-11",
@@ -21378,8 +21402,10 @@
    "due": "2026-10-22",
    "cmd": "grep -n make_index tools/syncorigin.py tools/pubgo.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): tools/syncorigin.py:225 가 studio/make_index.py 를 실행(grep) — 제안한 자동 재생성이 들어가 있음"
   },
   {
    "id": "xlink-a228",
@@ -21388,8 +21414,10 @@
    "due": "2026-10-21",
    "cmd": "python studio/blogger.py crosslink --code A2-28",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 A2-28 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "wake-3-4-daily-1021",
@@ -21452,8 +21480,10 @@
    "due": "2026-10-21",
    "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유"
   },
   {
    "id": "f116-v0-push-1021",
@@ -21557,8 +21587,10 @@
    "due": "2026-10-21",
    "cmd": "python studio/blogger.py crosslink --code F1-16",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 F1-16 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "approve-boost-phase0-1021",
@@ -21706,8 +21738,10 @@
    "due": "2026-10-22",
    "cmd": "ls docs/사이트단위검토_20261021.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): docs/사이트단위검토_20261021.md 존재(ls)"
   },
   {
    "id": "idxdraft-daily-1022",
@@ -21796,8 +21830,10 @@
    "due": "2026-10-22",
    "cmd": "ls docs/가지치기_검토_20261022.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): docs/가지치기_검토_20261022.md 존재(ls)"
   },
   {
    "id": "approve-f116-usim-1021",
@@ -22033,8 +22069,10 @@
    "due": "2026-10-22",
    "cmd": "python studio/blogger.py crosslink --code G1-12",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G1-12 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "deploy-g324-thumb-1022",
@@ -22152,8 +22190,10 @@
    "due": "2026-10-22",
    "cmd": "python studio/blogger.py crosslink --code G3-24",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G3-24 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "approve-c401-1022",
@@ -22234,8 +22274,10 @@
    "due": "2026-10-22",
    "cmd": "python studio/blogger.py crosslink --code G1-13",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G1-13 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "engine-v2-gaps",
@@ -22321,8 +22363,10 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.cpstate --list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): cpstate --list 열린 지시서(진행 6·완료확인전 2)에 topic1022b 없음 = 종결"
   },
   {
    "id": "topic-ready-1023",
@@ -22369,8 +22413,10 @@
    "due": "2026-10-22",
    "cmd": "gh run view 39766305941 -R magsori-wq/lifeinfo-console --log-failed | grep HTML",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:d5269c25"
+   "state": "done",
+   "by": "세션:d5269c25",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): lifeinfo-console 「콘솔 정합성 검사」 최근 run 41001244986·41000973692 success(gh run list)"
   },
   {
    "id": "nightly-verify-src-url-1023",
@@ -22389,8 +22435,10 @@
    "due": "2026-10-24",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:d4374b39"
+   "state": "done",
+   "by": "세션:d4374b39",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): D1-17 DB 등록·라이브·osmu 3채널(naver/ig/threads) 모두 있음 = 선별→발행 완료"
   },
   {
    "id": "draftg115-order-after-114",
@@ -22491,8 +22539,10 @@
    "due": "2026-10-23",
    "cmd": "python studio/blogger.py crosslink --code G1-14",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G1-14 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "bpolicy1023-pickup",
@@ -22501,8 +22551,10 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.cpstate --list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): cpstate --list 열린 지시서에 bpolicy1023 없음 = 종결"
   },
   {
    "id": "shrink62-excl-3-1024",
@@ -22566,8 +22618,10 @@
    "due": "2026-10-24",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:e545d759"
+   "state": "done",
+   "by": "세션:e545d759",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): B2-23 DB 등록·osmu 3채널 완료(xlink 조회 시 라이브 확인)"
   },
   {
    "id": "deploy-thumb-397",
@@ -22623,8 +22677,10 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.cpstate --list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): cpstate --list 열린 지시서에 topic1023 없음 = 종결"
   },
   {
    "id": "livefix-lf234-after-1024",
@@ -22903,8 +22959,10 @@
    "due": "2026-10-23",
    "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유"
   },
   {
    "id": "gatesync-push-fail-10231624",
@@ -22913,8 +22971,10 @@
    "due": "2026-10-23",
    "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유"
   },
   {
    "id": "pubqueue-autoorder-race-1023",
@@ -22961,8 +23021,10 @@
    "due": "2026-10-23",
    "cmd": "python studio/blogger.py crosslink --code G3-25",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G3-25 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-c118",
@@ -22971,8 +23033,10 @@
    "due": "2026-10-23",
    "cmd": "python studio/blogger.py crosslink --code C1-18",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 C1-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-f309",
@@ -22981,8 +23045,10 @@
    "due": "2026-10-23",
    "cmd": "python studio/blogger.py crosslink --code F3-09",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 F3-09 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "adsense-contact-mail-1023",
@@ -23004,8 +23070,10 @@
    "due": "2026-10-23",
    "cmd": "python studio/blogger.py crosslink --code E4-10",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 E4-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "community-reply3-boss-retry-1024",
@@ -23111,8 +23179,10 @@
    "due": "2026-10-24",
    "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유"
   },
   {
    "id": "gatesync-push-fail-10240232",
@@ -23121,8 +23191,10 @@
    "due": "2026-10-24",
    "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유"
   },
   {
    "id": "naver-relogin-aside-1024",
@@ -23144,8 +23216,10 @@
    "due": "2026-10-24",
    "cmd": "python studio/blogger.py crosslink --code E4-11",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 E4-11 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-f221",
@@ -23154,8 +23228,10 @@
    "due": "2026-10-24",
    "cmd": "python studio/blogger.py crosslink --code F2-21",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 F2-21 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "deploy-thumb-406",
@@ -23212,8 +23288,10 @@
    "due": "2026-10-24",
    "cmd": "python studio/blogger.py crosslink --code D5-07",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 D5-07 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "console-integrity-ci-fail-1024",
@@ -23303,8 +23381,10 @@
    "due": "2026-10-24",
    "cmd": "python studio/blogger.py crosslink --code G3-26",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G3-26 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "git-toke-leak-sources-1024",
@@ -23362,8 +23442,10 @@
    "due": "2026-10-24",
    "cmd": "python studio/blogger.py crosslink --code G3-27",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G3-27 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-b111",
@@ -23430,8 +23512,10 @@
    "due": "2026-10-24",
    "cmd": "python studio/blogger.py crosslink --code D3-10",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 D3-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "deploy-thumb-413",
@@ -23463,8 +23547,10 @@
    "due": "2026-10-24",
    "cmd": "python studio/blogger.py crosslink --code D1-18",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 D1-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "aside-speed-plan-1024",
@@ -23682,8 +23768,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code G3-28",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G3-28 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-b422",
@@ -23692,8 +23780,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code B4-22",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 B4-22 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "aside-requeue-after-restart-1025",
@@ -23712,8 +23802,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code B4-23",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 B4-23 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "aside-dup-receipt-449-1025",
@@ -23757,8 +23849,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code B4-24",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 B4-24 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "tower-confirm-wait-blind-1025",
@@ -23882,8 +23976,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code D4-14",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 D4-14 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "approve-g201-live-1025",
@@ -23965,8 +24061,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code A5-17",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 A5-17 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "asidequeue-dup-doing-gap-1025",
@@ -23985,8 +24083,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code D2-19",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 D2-19 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-a230",
@@ -23995,8 +24095,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code A2-30",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 A2-30 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-g116",
@@ -24005,8 +24107,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code G1-16",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G1-16 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-h129",
@@ -24015,8 +24119,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code H1-29",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 H1-29 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "asidechain-autolink-verify-1025",
@@ -24037,8 +24143,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code A2-29",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 A2-29 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-a518",
@@ -24047,8 +24155,10 @@
    "due": "2026-10-25",
    "cmd": "python studio/blogger.py crosslink --code A5-18",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 A5-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "naver-predraft-pilot-1027",
@@ -24101,8 +24211,10 @@
    "due": "2026-10-26",
    "cmd": "grep -c '다른 조문 일부는 공포일 시행' 페달오조작방지장치_글_HTML.txt",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): 초안 grep -c 「다른 조문 일부는 공포일 시행」=3(지시한 3곳과 일치)·D2-20 발행 완료"
   },
   {
    "id": "h130-v0-approve-1025",
@@ -24135,8 +24247,10 @@
    "due": "2026-10-26",
    "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유"
   },
   {
    "id": "ent-expand-judge-1109",
@@ -24203,8 +24317,10 @@
    "due": "2026-10-26",
    "cmd": "python studio/blogger.py crosslink --code H1-30",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 H1-30 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "xlink-d220",
@@ -24213,8 +24329,10 @@
    "due": "2026-10-26",
    "cmd": "python studio/blogger.py crosslink --code D2-20",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 D2-20 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "g201-sns-fix-1026",
@@ -24258,8 +24376,10 @@
    "due": "2026-10-26",
    "cmd": "python studio/blogger.py crosslink --code G2-01",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G2-01 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "b224-v0-approve-1026",
@@ -24366,8 +24486,10 @@
    "due": "2026-10-26",
    "cmd": "python studio/blogger.py crosslink --code B2-24",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 B2-24 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "afflink-hotpack1026",
@@ -24514,8 +24636,10 @@
    "due": "2026-10-29",
    "cmd": "python studio/blogger.py crosslink --code H1-32",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 H1-32 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "deploy-thumb-428",
@@ -24723,8 +24847,10 @@
    "due": "2026-10-30",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:1854a165"
+   "state": "done",
+   "by": "세션:1854a165",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): B3-07 DB 등록(2028-282930-2026.html)·osmu 3채널 완료"
   },
   {
    "id": "deploy-thumb-430",
@@ -25084,8 +25210,10 @@
    "due": "2026-10-29",
    "cmd": "python studio/blogger.py crosslink --code F3-10",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 F3-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "aroma-thumbs-1029",
@@ -25117,8 +25245,10 @@
    "due": "2026-10-29",
    "cmd": "python studio/blogger.py crosslink --code G1-17",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 G1-17 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "f310-naver-cards-1029",
@@ -25279,8 +25409,10 @@
    "due": "2026-10-30",
    "cmd": "python studio/blogger.py crosslink --code F1-18",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 F1-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "idaeri-stall-detect-fail-1030",
@@ -25299,8 +25431,10 @@
    "due": "2026-10-31",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:e966ea15"
+   "state": "done",
+   "by": "세션:e966ea15",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): A3-17 DB 등록(10-30.html)·osmu 3채널 완료·pace 오늘 발행 3편에 포함"
   },
   {
    "id": "deploy-thumb-434",
@@ -25331,8 +25465,10 @@
    "due": "2026-10-31",
    "cmd": "grep -n 'queue' studio/pushcheck.py studio/pubgo.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): A3-17 첫 run 40987028055 실패 뒤 재run 40987508119 success, A3-17 라이브·osmu 완료 (재발방지는 fix-gostamp-push-first-1030 별건)"
   },
   {
    "id": "naver-profile-login-swap-1030",
@@ -25354,8 +25490,10 @@
    "due": "2026-10-30",
    "cmd": "python studio/blogger.py crosslink --code A3-17",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 A3-17 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "aroma-tempdraft-a317-del-1030",
@@ -25459,8 +25597,10 @@
    "due": "2026-10-30",
    "cmd": "python studio/blogger.py crosslink --code B5-10",
    "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
+   "state": "done",
+   "by": "naver-link",
+   "done_at": "2026-10-30",
+   "result": "10-30 장부 판정(measure): blogger 라이브 B5-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)"
   },
   {
    "id": "deploy-thumb-437",

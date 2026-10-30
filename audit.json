@@ -2,566 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-07T22:59:54",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-auth-0906",
-   "detail": "사장님 확인 완료(2026-09-07) — 본인 계정이 맞다. 메일 확인만 하셨고 별도 인증 버튼은 없었다(통지 메일이라 정상). 본인 조작이므로 비밀번호 변경·기기 로그아웃 불필요. 조치 없음으로 종결",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T23:21:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-f420-ready",
-   "detail": "사장님 게시 완료(2026-09-07 23:1x) — https://blog.naver.com/magsori8975/224404172501 (190KB 실측). naver-link 기록·crosslink 갱신 완료, 4채널 미완 없음",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T23:23:27",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-title-fix-0906",
-   "detail": "사장님 완료(2026-09-07 23:1x) — 4편 전부 라이브 실측 확인: 롯데월드/동백전/ESTA/부산미술관 모두 새 제목으로 반영됨(curl og:title 대조). 2주 뒤 유입 변화를 재서 효과 판정",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T23:46:59",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "order-section-bugs-0907",
-   "detail": "이부장 수정 9726f55f 재검증 완료 — ①중복호출 해소(호출부 1곳, 4회 누적에도 섹션 3개 중복 없음) ②읽기필터 해소(_label_sections 신설·cmd_order 배선·CLI --actor, 실제 실행으로 '네 것이 아니다' 경고 확인). 두 결함 다 실측으로 닫는다. 단 새 구멍 2개는 order-section-handoff-0907 로 분리해 올렸다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-07T23:55:55",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "label-owner-mismatch-0907",
-   "detail": "3차 재검증 완료 — 이부장이 처방①(폴백) 채택. _label_sections 안에서 me 가 섹션 수신자 집합에 없으면 None 으로 떨어뜨려 중립 표기. 실측 3경우 전부 정상: ①routinelog 주경로=중립 ▸(틀린 경고 사라짐) ②--actor 루틴7=✅/⚠️ 정상 ③owner=이과장 배치 주경로=✅/⚠️ 정상. 자기 지시에 '실행하지 마라' 가 붙던 회귀 해소 확인. 남은 것은 order-section-handoff-0907 의 ④(SKILL --actor 안내)와 처방②(code→루틴N 매핑) — 둘 다 틀린 경고가 아니라 미완이므로 급하지 않다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:06:36",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-thumb-swap-0908",
-   "detail": "사장님 완료(2026-09-08 00:0x) — 네이버 글 5편 대표 이미지를 실사진 썸네일로 교체하심(비엔나공항·롯데월드·동백전·미국ESTA·부산미술관)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:07:03",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "affiliate-f4-20-0907",
-   "detail": "사장님 링크 발급 완료(2026-09-07 23:5x) — https://link.coupang.com/a/gQ5HPLbK32 루미볼트 멀티어댑터 PD45W 4구. affiliate add 등록 · 네이버 카드 반영 확인(라이브 실측) · 쓰레드 재게시 준비 완료",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:24:27",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "shopconnect-fee-unknown",
-   "detail": "사장님 화면 실측으로 확인(2026-09-08) — 쇼핑 커넥트 수수료는 **상품마다 다르고** 카드에 '수수료 N%' 로 표시된다. 실측: ASUS 키보드 10% · 마우스 14%. 쿠팡(~3%)의 3~4배다. 판매자 설정이고 매월 1일 바뀌므로 원고에 요율을 적지 않는다. product 에이전트 지침 반영",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:42:51",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "H1-02",
-   "detail": "재검사 통과 — 1차 반려 사유(함정① 역대 추석 비교표가 2024/2025 뒤바뀜)가 정정됐다. 라이브 초안 실측: '2024년 9/15~18(추석 9/17 화) · 2025년 10/4~7(추석 10/6 월) · 2026년 9/24~26(추석 9/25 금)' — docs/F2-14_1",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:42:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "v0reject-h1-02",
-   "detail": "V0 통과로 해소 — 검사자 이부장 · 재검사 통과 — 1차 반려 사유(함정① 역대 추석 비교표가 2024/2025 뒤바뀜)가 정정됐다. 라이브 초안 실측: '2024년 9/15~18(추석 9/17 화) · 2025년 10/4~7(추석 10/6 월) · ",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:49:52",
-   "actor": "관제탑",
-   "action": "v0check.pass",
-   "target": "ZZ-TEST",
-   "detail": "테스트",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:56:18",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "E2-15",
-   "detail": "계산예시(Pro/Max5x/Max20x 단위당 가격 20/20/10달러)+판단형비교(Free/Pro/Max 선택기준)+함정3종(72시간설·Opus배수·자동전환 오해 모두 공식미확인 명시) 3개 항목 충족. 전 수치 support.claude.com/anthropic.com/pricing",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T00:57:52",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "G2-05",
-   "detail": "함정 실질주입: 검색상위 '9/26~28' 기사가 2025년(작년) 보도임을 게재일자로 직접 확인·명시(경남일보 2025-09-15자), 2024~2026 3개년 날짜표+판단포인트로 매년 재확인 유도. 미확정 2건(세부프로그램 시간표·주차)은 지어내지 않고 명시적 보류. G 실사진(고유",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T01:03:42",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "inspect-mobile-url-blindspot",
-   "detail": "코드 반영 완료(2026-09-08) — searchconsole.py inspect 출력에 '⚠️ clean URL 기준이다 — Blogger 의 ?m=1 변형은 포함하지 않았다 / GSC 화면의 URL 단위 숫자는 이보다 크다' 두 줄 추가. 루틴7이 같은 날 그 차이를 실측했다(우리 125 글단위 vs GSC 222 URL단위 = 차이 97). ⚠️ ?m=1 을 조회 대상에 넣지는 않았다 — canonical 정상(0/237)이고 Blogger 전역 동작이라 끄면 모바일 경험이 바뀐다. 숫자의 범위를 밝히는 것까지만 한다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T01:03:43",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "order-section-handoff-0907",
-   "detail": "4차 재검증 완료(이부장 b3870b5a) — ③④ 둘 다 해소. _handoff 가 mark --code 로 수신자를 찾는다(routines.find). 실측 4경우 전부 의도대로: 루틴7 code→✅/⚠️ 정상 · 루틴3 code→중립(섹션에 루틴3 없음, 올바른 폴백) · code 없음→중립 · 모르는 code→중립. 실제 지시서(01:00)에서도 ✅/⚠️ 확인. SKILL 7개는 손대지 않았다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T01:03:43",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "mark-actor-from-code-0908",
-   "detail": "이부장이 요청대로 반영·검증 완료(b3870b5a). _handoff 시그니처에 code 추가·호출부에서 ns.code 전달·routines.find 로 루틴N 유추·실패 시 owner 폴백. 실측 4경우 정상. SKILL 무수정으로 해결됨",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T09:12:31",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "A6-03",
-   "detail": "제외 사유는 주제 값어치가 아니라 시점과 재고다. ①왜 지금이 약하다 — 2026-07-01 시행분이라 2개월이 지났고 기한·개정·시즌 어느 것도 지금이 아니다(CLAUDE.md 선별 기준: 특별이슈급인가) ②2026-09-08 새벽 루틴7 GSC 전수조사로 크롤 병목이 구글 공식 문서로 확인됐다 — 'Google wanted to crawl but this was expected to overload the site; therefore rescheduled the crawl'. 302 가 크롤 예산 40%를 먹고 신규 크롤이 하루 3편이다. **발행 속도를 낮추는 것이 지금 유일하게 근거 있는 조치**다 ③재고 3편(H1-02·G2-05·E2-15)이 이미 있고 오늘 상한은 사장님 승인으로 1편이다. ⚠️ 주제 자체는 우리 DNA(몰라서 못 받는 제도)에 맞다 — 대상 확대를 모르는 사람이 실제로 있다. 시점이 맞을 때(예산 소진 임박·연말 신청 마감 등 '지금' 이 생길 때) 다시 올릴 것",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T09:56:31",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "connect-terms-0907",
-   "detail": "이미 해결돼 있었다 — 여행 커넥트가 작동 중이다. 실측(2026-09-08): affiliate.json 에 naver.me 링크 4건 등록(IMZvxkcW·5Negdlax·xVRUltQX·5Z13OHLK)이고 09-07 에 그 링크들로 라이브 카드까지 붙었다(F1-07 미동부캐나다·F1-13 영국일주·F2-10 울릉도·F4-04 제주). 즉 약관 동의도 링크 발급도 이미 끝난 상태였고, 내가 결재함에 '시작 여부 확인' 으로 올린 것이 낡은 정보였다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T09:56:31",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-a602-ready",
-   "detail": "이미 게시됨 — DB osmu.naver 에 https://blog.naver.com/magsori8975/224403146688 존재(2026-09-08 실측). 결재함에 '게시 준비 완료' 로 남아 있었으나 사장님이 이미 게시하셨다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T10:27:10",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "validation-owner-0915",
-   "detail": "담당 지정 완료 — 이중으로 건다. ①1차 = 루틴5(야간검증, 매일 22:30). 9/15 는 화요일이라 루틴5 만 확실히 돈다. selfcheck 10) 재확인대기가 watch due 를 띄우므로 그 자리에서 받는다 ②2차 = 루틴7(09-17 목). 1차가 놓치면 이틀 뒤 받는다 ③관제탑은 살아 있으면 그전에 본다(세션훅이 매번 띄운다). ⚠️ 결과가 9/12~9/25 예상이므로 9/15 에 아직 안 나왔을 수 있다 — 그때는 판정하지 말고 watch snooze --due 로 미룰 것. 억지로 결론 내지 마라",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T10:42:35",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "H1-02",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T10:42:58",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "G2-05",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T10:43:25",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "E2-15",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T10:50:33",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "seo-guide-compare-0908",
-   "detail": "원문 대조 완료 — docs/SEO가이드_대조보고_20260908.md. 【확증3】①URL 영문화 무용: 원문 「무시해야 할 사항 > 도메인/URL 경로의 키워드」 = '순위 측면에서 도메인 이름(또는 URL 경로)의 키워드만으로는 탐색경로에 나타나는 것 외에는 거의 영향을 미치지 않습니다' → 우리 데이터(색인32편 의미없는URL 94% > 전체 87%)와 일치 ②?m=1 크롤낭비: 원문 「중복 콘텐츠 축소」 = '검색엔진이 중요하지 않은 URL에 크롤링 리소스를 낭비할 수 있습니다' → 우리 302 40% 실측과 정확히 같다 ③?m=1 벌점 아님: '여러 URL로 액세스할 수 있어도 괜찮습니다. 걱정하지 마세요. 비효율적이지만 직접 조치가 부과되지는 않습니다' + '직접 표준화하지 않으면 Google이 자동으로 표준화합니다'(우리 canonical 이미 정상 0/237). 【새로 알게 된 것2 — 헛수고였을 수 있음】·본문 길이 보강 = '콘텐츠 길이 자체는 순위 결정과 관련 없습니다' ·바이라인146편(E-E-A-T) = 'E-E-A-T를 순위 지정 요인이라고 생각함 → 아니요. 그렇지 않습니다.' 🔴단 애드센스 심사·독자신뢰는 별개이므로 단정 금지. 【홍보】'효과적으로 홍보하면 검색엔진이 내 콘텐츠를 더 빠르게 발견할 수 있습니다' = 발견을 빠르게 한다고 명시된 유일한 항목 → OSMU 방향 맞음. 단 '과도하게 하면 오히려 해를 끼칠 수 있습니다' 경고 붙음 — 양 늘리기로 읽지 말 것. 【이미 준수】사이트맵242/242·alt4/4·내부2~7·외부3~6·제목42자·광고없음. 🔴🔴가장 중요: **가이드 대부분을 이미 지키는데도 색인 0 이다 — '안 지켜서 안 되는 것'이 아니다.** 【여전히 미해결】크롤됨-미색인 222편 — 이 가이드에도 답이 없다(가이드는 '이렇게 하면 잘 된다'를 말하지 '왜 색인이 안 되는가'를 말하지 않는다). ⚠️원문 일부 미확보(검색작동방식 전문·Essentials 권장목록·스팸정책 카테고리명·canonical 권장방법) — source 파일에 '❌ 원문 미확보' 표시, 2차출처로 안 채움. 재확보는 claude-in-chrome 으로 가능(미시도)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T11:19:36",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "cause222-dig-0908",
-   "detail": "222편 심층조사 완료 — 【결론】콘텐츠 6축 어디에도 색인을 가르는 신호가 없다. A(한때색인31편) vs B(한번도없음94편): 본문글자수 중앙값 2425 vs 2417.5 · h2/표/이미지/링크 동일 · 템플릿대비 고유텍스트 93% vs 93% · 발행→첫크롤 19.9일 vs 16.9일 — 전부 차이 없음. 🔴**유사도 가설 기각**: 125편 전수 7,750쌍 최고 유사도 **0.18**(bodydup 차단선 0.60의 1/3도 안 됨) → 우리 글은 서로 충분히 다르다. 【더 큰 발견 — 프레임이 틀렸다】GSC 상태는 품질 분류가 아니라 **진행 단계**다: 발행→발견됨(9월71%)→Redirect(8월87%)→크롤됨-미색인(6월100%). 222편은 '나쁜 글' 이 아니라 '크롤이 끝까지 간 글' 이고 9월 글도 시간이 지나면 저기로 간다. 7월 색인 32편도 오늘 100% 전멸(OSMU 97% 완료였는데도). → 글 단위 차이가 아니라 **사이트 전체에 걸린 무언가**. 【OSMU 가설】검증 불가 — 239/244(98%)에 이미 걸려 대조군이 없다. 앞으로 이런 가설은 의도적 대조군이 필요. 【🔴남은 마지막 축】bodydup 은 **우리끼리만** 잰다. **웹 전체에서 고유한가는 안 쟀다** — 애드센스 반려 사유가 'enough unique content' 이므로 이쪽이 마지막으로 남은 축이다(V0 게이트가 막으려던 그것). 【모르는 것】왜 7월 중순이었나(시점은 발행 폭주와 겹치나 인과 증거 없음) · 「크롤됨-미색인」 공식 원인(구글이 문서에 안 적음). 산출물=docs/222편_정체_20260908.md · docs/미색인222_원인분석_20260908.md · docs/OSMU_saegin_sanggwan_20260908.md",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T11:25:38",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "slug-autoreg-0907",
-   "detail": "부분 해결(2026-09-08) — 근본(자동 등록)은 아직이지만 **증상을 정확히 말하게** 고쳤다. setgate 가 '원고 없음' 과 '슬러그 미등록 — osmu_manifest set' 을 구분한다(_slug_ok 신설). 이틀 연속 같은 자리에서 헤맸다: F4-20(09-07)·H1-02(09-08) 둘 다 원고는 있었고 슬러그만 없었는데 화면이 '원고 없음' 이라 해서 '원고를 만들어야 하나' 로 읽혔다. 이제 무엇을 해야 하는지 문구가 그대로 알려준다. ⚠️ 자동 등록은 여전히 안 된다 — 원고 생성 지점(naver.cmd_draft 등)에서 슬러그를 알 방법이 없기 때문이다(한글 slug·영문 eng 를 사람이 정한다). 다음에 이 자리를 또 만나면 그때 자동화를 설계할 것",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T11:38:48",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "final-report-0908",
-   "detail": "최종보고 완료 — docs/최종보고_색인조사_20260908.md. 🔴핵심: V0 를 40%(6월)→56%(7월)→96%(8·9월)로 올렸는데 색인은 0. V0 40% 시기 글은 색인됐었고 96%로 올린 뒤 글은 하나도 색인 안 됨 → **V0 와 색인 사이에 양의 상관이 보이지 않는다**(단 8·9월은 크롤 단계가 덜 진행돼 9월 71%가 발견됨-미크롤이므로 'V0가 해롭다'로 읽으면 안 됨). V0 전수: 0개 90편(36.9%)·1개 62·2개 56·3개이상 36 / 계산예시28.3% 판단형비교17.6% 탈락거절27.5% 함정43.9%. 콘텐츠 6축 전부 차이없음·유사도 최고0.18·고유텍스트93%·웹 따옴표검색 0건(베낀글 아님). 상태라벨=진행단계. 크롤 1970회중 302가 40%. 배제 9개(서버·사이트맵·robots·페이지결함·URL·길이·EEAT·재요청·유효성검사). 남은 사실=7월 중순 이후 크롤을 다 거친 뒤 예외없이 색인 제외, 사이트 전체에 걸린 무언가. 모르는 것 4개 명시(왜 7월인가/공식원인/정보 고유성/31vs94 V0차이는 목록 소실로 측정불가). 처방: 지금까지 쓴 노력 대부분(본문보강·길이·바이라인·URL·재요청)이 숫자로는 효과 미확인 — 모르는 채로 더 쓰는 것보다 원인을 좁히는 데 시간을 쓰는 것이 낫다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T11:43:49",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "blocked-g205-pace-0908",
-   "detail": "해소됨 — 사장님이 2026-09-08 오전에 오늘 상한을 푸셨고('오늘 상한 — 푸시겠습니까? ok') pace_day.json 의 09-08 항목을 제거했다. G2-05 는 그 뒤 정상 발행됐다(DB url 확인). 이과장이 막힘을 정확히 보고한 것이 옳았다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T13:09:09",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "navertitle-top3-0908",
-   "detail": "5편으로 다시 올림(navertitle-top5-0908) — F1-13·B2-02 도 조회가 있는데 빠져 있었다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T13:22:23",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "blocked-f420-affiliate-link",
-   "detail": "확인 시도 — 아래 참조",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T13:32:16",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "order-e104-pending-0908",
-   "detail": "E2-15 4채널 완료(13:29 인스타 게시)로 게이트가 풀려 지시서 등록 완료. 우회하지 않고 기다린 것이 맞았다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T13:56:16",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "E1-04",
-   "detail": "계산예시(자급제 S26 1,254,000원×20%=250,800원·S26+ 1,452,000원×25%=363,000원, 삼성닷컴 제품가+이벤트페이지 원문과 대조해 검증됨) + 탈락/함정 4종(해외직구·중고 제외, 취소시 회수, 명의불일치 반려, 통화일 3일룰)이 실질 포함. 네이버플러스",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T13:57:36",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "navertitle-top5-0908",
-   "detail": "사장님이 5편 제목 교체 완료(navertitlecheck --views 실측: 대상 10편 중 같은 제목 0편). 네이버 전용 썸네일 5장도 새 제목으로 교체 완료 — F1-13·G2-03 은 실사진(고유색 10,024·35,380)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T15:04:53",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "afflink-d4-07",
-   "detail": "사장님 승인(폰 ①번 방식 첫 테스트) → 이부장이 tosslink 로 발급 완료: https://toss.im/_m/PcNGFnvt (302 확인) · affiliate 등록 완료",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T15:16:07",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "E1-04",
-   "detail": "폰 결재함에서 승인(①번 방식 첫 hard 승인) → 이부장이 게이트 재측정 후 제목·내용 제시 → 사장님 '진행해'",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T15:41:14",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "afflink-e1-04",
-   "detail": "사장님 폰 승인(새 형식 '승인: afflink-e1-04 …') → 이부장이 발급: https://toss.im/_m/vW63DCHj (302 확인) · affiliate 등록 완료. 1순위 비하겐 ZETTA 채택",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T15:41:32",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "approve-e1-04",
-   "detail": "중복 요청이라 종결 — 사장님이 이미 15:31경 승인하셨다(이부장이 제목 불일치를 보고하자 '폰에서 할수있어! 승인'). 정정 지시서 fixtitle-e104 준비돼 있고 pub0908e104 완료보고 게이트만 풀리면 올라간다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T16:14:11",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-aff-d407",
-   "detail": "사장님이 네이버 글에 반영 완료 — 라이브 실측: 대가성 문구가 본문 첫 줄(다음 줄이 '올해 추석은 9월 25일…' 본문 시작) · 토스 링크 카드 정상 표시(홍삼 이미지+상품명). 공정위 예규 '게시물 첫 부분' 충족",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T16:41:56",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-h102-ready",
-   "detail": "사장님이 폰 결재함(원고 시트)에서 복사해 게시 완료 — https://blog.naver.com/magsori8975/224404958250 · 제목 게이트 통과(블로그스팟과 다름) · 교차링크 갱신 완료",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T18:38:49",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-g205-ready",
-   "detail": "사장님이 게시 완료 — https://blog.naver.com/magsori8975/224405094980 · 제목 게이트 통과 · 교차링크·관련글·제휴 전부 반영됨. ⚠️ 다만 제휴 링크가 카드로 안 뜨고 파란 텍스트 — 원고에 상품명+링크를 붙여 넣어둔 내 잘못(네이버는 URL 단독일 때만 카드를 만든다). 사장님이 링크만 다시 붙이시는 중",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T18:43:51",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-e215-ready",
-   "detail": "사장님 게시 완료 — https://blog.naver.com/magsori8975/224405100656 · 제목 게이트 통과 · 제휴는 붙일 것 없음(정상)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T18:50:53",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-e104-ready",
-   "detail": "사장님 게시 완료 — https://blog.naver.com/magsori8975/224405106101 · 제목 게이트 통과 · 제휴 링크(충전기) 포함",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T23:49:14",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "afflink-f1-08",
-   "detail": "사장님 승인 → 이부장 발급 완료: https://toss.im/_m/55rbLkCj (302 확인) · 필립스 DLP7721C 74Wh 26,900원 · affiliate 등록 완료",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T23:52:04",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "afflink-f2-11",
-   "detail": "사장님 승인 → 이부장 발급 완료: https://toss.im/_m/98PMXX4g (302 확인) · 로에드 손저울 7,870원·리뷰299 · affiliate 등록. 2순위 캐리어는 권고대로 보류(토스·다나와 25% 가격차 미해소)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T23:56:19",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "afflink-f4-14-issued",
-   "detail": "사장님이 그대로 쓰라고 승인 — affiliate 등록 완료. 승인 전 발급은 내 지침이 쿠팡만 예로 들어 생긴 것이고, tosslink best(조회)/link(발급) 를 나눠 명시해 고쳤다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-08T23:56:19",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "afflink-f4-14",
-   "detail": "같은 건 — afflink-f4-14-issued 로 처리됨(https://toss.im/_m/RoKkVfji)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T00:00:54",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-title-fix-a2-15-0908",
-   "detail": "이미 반영됨 — 라이브 실측: '추석 전에 받는다? 생계급여 추석전 지급일과 기초연금 조기지급 총정리 (2026)'. 사장님이 2026-09-08 오후 제목 5편 교체 때 처리하셨다(navertitle-top5-0908). 3.분석 요청은 그 전에 올라온 것이라 낡았다. 유입 1위 검색어 '생계급여 추석전 지급' 이 지금 제목에도 그대로 들어 있어 추가 변경 불필요",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T00:23:28",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "H1-03",
-   "detail": "미확정 사안이라 지금은 쓰지 않는다. 9/28 임시공휴일은 언론 관측 단계이고 정부 발표가 없다 — 메모리 [[fact-not-speculation]] '미확정 추론(전망·예정 기사)은 글에 싣지 않는다'. ⚠️ 다만 H1-02(택배 마감일 미발표)처럼 '아직 발표 안 됐다, 여기서 확인하라' 구조면 쓸 수 있다. 발표가 나거나 그 구조로 다시 제안되면 재검토",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T00:27:50",
-   "actor": "이부장(V0검사)",
-   "action": "v0check.pass",
-   "target": "C2-14",
-   "detail": "force 계산예시(3세대 가족 4명 접종일 산출)+판단형비교(국가지원 vs 자비접종 4행)+탈락사유(무료 안 되는 5가지)+함정(65세=10/12 헛걸음 경고) 4요소 모두 실질 포함. C2-06과 dupcheck 재측정 0.33(🟢, 관제탑 제보 0.50과 불일치·현재값 확정)·bodydup ",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T00:27:59",
-   "actor": "V0검사관",
-   "action": "v0check.pass",
-   "target": "C2-14",
-   "detail": "force 재기록(이름표준화): 계산예시+판단형비교+탈락사유+함정 4요소 실질포함. dupcheck 0.33·bodydup --live 0.055(278편)로 C2-06 비중복 확인. 시작일 5종·14세확대를 nip.kdca.go.kr 실측 대조 전부 일치. 공식링크 4개 200. 바이라인·YMY",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T03:31:08",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "C2-14",
-   "detail": "폰 결재함 승인 → 이부장 게이트 재측정(오늘 0편·4채널 완결·V0 통과·본문중복 0.054) → 사장님 '진행해'",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T04:07:35",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "afflink-f4-09",
-   "detail": "사장님 승인 → 이부장 발급: https://toss.im/_m/3YBg3no2 (302) · 고감도센서 헤드랜턴 9,800원·리뷰147. 🔴 처음에 '토스에 없다'고 보고했던 것은 내가 '손전등/랜턴' 카테고리만 봐서다 — 실제로는 '캠핑' 카테고리에 있었다. 카테고리 하나만 보고 없다고 단정하지 말 것",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T08:33:02",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "H1-04",
-   "detail": "판단형비교(전통시장vs대형마트, 이동/시간/편의 표+추천유형) + 계산예시(397,700-302,500=95,200원, 절감률23.9%) + 함정3종(작년299,000원은 5년중 유일한 예외라는 검색함정·품목가격 미공개·기관별 수치차이) 실질 포함. kpi.or.kr 도메인·수치(302",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T11:36:42",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-c214-ready",
-   "detail": "이미 완료 — 사장님이 2026-09-09 새벽에 게시하셨다: https://blog.naver.com/magsori8975/224405492563 · navercheck 온전 1/1(원문·관련글·교차링크·태그) · 교차링크 갱신까지 끝났다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T11:36:43",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naverlab-capture-0908",
-   "detail": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T11:36:43",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naverstats-visitor-recheck-0905",
-   "detail": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T11:36:44",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "adpost-capture-0908",
-   "detail": "네이버 캡처 4건이 사실상 같은 화면이라 naverlab-weekly 하나로 합쳤다(2026-09-09). 사장님이 네 번 하실 일이 아니다 — 지울 수 없는 빨간불은 무시되는 빨간불이 된다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T11:36:59",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naverlab-weekly",
-   "detail": "아래 통합본으로 대체(naver-capture-0909)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T11:37:40",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "H1-04",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T12:41:23",
-   "actor": "세션(CLI)",
-   "action": "pubqueue.ungo",
-   "target": "H1-04",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T12:45:54",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "H1-04",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T13:05:52",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naverlab-report-0909",
-   "detail": "정정: watch(owner=claude)는 CP 어느 화면에도 안 뜬다는 걸 확인(approval.html·pending_osmu.html 둘 다 owner=user만 필터). batchboard naverlab0909(담당=3.)로 옮김 — reports.html에서 실제로 보임(3. 6건)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T13:57:56",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-capture-0909",
-   "detail": "사장님이 2장 캡처 완료(09-09 13:48·13:50) — 유입검색어(09-08 기준)·조회수 순위(09-05 기준). 3.가 판독 중(kwcap0909)",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T15:26:37",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "navertitle-fix-0909",
-   "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T17:04:55",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-h104-ready",
-   "detail": "🔴 잘못된 안내였다 — naver-draft 실측 결과 '본문 미입력(스켈레톤)'. 원고가 없어 붙여넣으면 빈 글이 나간다. 사장님 몫이 아니라 이과장의 원고 제작이 먼저다(osmu0909h104 로 이관).",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-09T18:31:36",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-h104-ready",
-   "detail": "사장님 게시 완료 — https://blog.naver.com/magsori8975/224406257888",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T04:27:42",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "A3-12",
-   "detail": "계산예시: 300/400/500만원 구간별 종전(4.5%)→2026(4.75%) 월 부담액을 원 단위로 끝까지 계산(+7,500/+10,000/+12,500원, 연 환산까지) — '계산기로 확인'이 아닌 실제 숫자로 완결. 함정 3종 실질 포함: ①이미 시행중인데 예정으로 오해 ②13%",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T04:31:30",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "E3-03",
-   "detail": "판단형비교(sec5 통신사vs알뜰폰 4행+추천), 함정체크리스트(sec6 3항목: 위약금계산기 불신·번호이동3개월재이동제한KTOA공식출처 명시·결합할인별도), 경험적절차팁(sec1 신청가능시간·sec4 번호이동먼저신청) 3요소 실질충족. 핵심반전(제목 절반만 맞습니다)도 해지금=잔여할부",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T04:33:30",
-   "actor": "이부장",
-   "action": "v0check.fail",
-   "target": "B2-13",
-   "detail": "핵심 반전 주장(새마을금고 준비금 한도도 2025-09-01 1억원으로 함께 상향, 시행령 제46조④ 근거)이 원문과 반대다. law.go.kr DRF API로 새마을금고법 시행령(MST=272589, 조문시행일자 20250708, 현행) 제46조(준비금의 운용) 전문을 직접 대조: ④",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T04:38:16",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "A3-12",
-   "detail": "",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-10T04:38:55",
    "actor": "사장님",
    "action": "pubqueue.go",
@@ -15999,6 +15439,566 @@
    "action": "watch.done",
    "target": "v0reject-h1-34",
    "detail": "13:16 이부장 재검사 — 114행 12,600원 수정 확인, v0check pass",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-g318-naver-1016",
+   "detail": "10-30 장부 판정(measure): G3-18 DB osmu 에 naver URL 기록됨 + 3채널 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-review-result-1017",
+   "detail": "10-30 장부 판정(measure): 결과 도착: 10-20 반려(adsense-rejected-1020 기록) → 확인 대상 사건 종결",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cadaily-wake-1017",
+   "detail": "10-30 장부 판정(measure): read_info(cadaily): last_report 2026-10-30 12:22 — 3. 보고 재개됨",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "c310-pub-wake-1020",
+   "detail": "10-30 장부 판정(measure): read_info(pub1020c310): reads 2·last_read 10-20 09:25·last_report 10-20 17:31 / C3-10 발행 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-c310",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 C3-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g413",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G4-13 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "console-pat-verify-next-run",
+   "detail": "10-30 장부 판정(measure): 이후 publish.yml 라이브 run 40931235387·40987508119·40995533557 모두 success = 콘솔 저장소 클론 단계 통과",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "publishyml-env-verify-next-run",
+   "detail": "10-30 장부 판정(measure): 10-21 이후 publish.yml 라이브 run 다수 success(gh run list) — 되돌림 불요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1020-c310",
+   "detail": "10-30 장부 판정(measure): C3-10 DB 등록·osmu 3채널 완료·라이브 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-rejected-1020",
+   "detail": "10-30 장부 판정(measure): 반려 기록 완료(NEEDS_ATTENTION) → 현재 재요청 GETTING_READY(adsense.py status). 후속은 adsense-result-1108 이 추적",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a228",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 A2-28 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatesync-push-fail-10211206",
+   "detail": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-f116",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 F1-16 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "postsindex-drift-after-publish-1021",
+   "detail": "10-30 장부 판정(measure): tools/syncorigin.py:225 가 studio/make_index.py 를 실행(grep) — 제안한 자동 재생성이 들어가 있음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "sitereview-1022",
+   "detail": "10-30 장부 판정(measure): docs/사이트단위검토_20261021.md 존재(ls)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "prune-review-1022",
+   "detail": "10-30 장부 판정(measure): docs/가지치기_검토_20261022.md 존재(ls)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g112",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G1-12 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g324",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G3-24 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g113",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G1-13 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topic1022b-pickup",
+   "detail": "10-30 장부 판정(measure): cpstate --list 열린 지시서(진행 6·완료확인전 2)에 topic1022b 없음 = 종결",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "console-check-engine-html-1022",
+   "detail": "10-30 장부 판정(measure): lifeinfo-console 「콘솔 정합성 검사」 최근 run 41001244986·41000973692 success(gh run list)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g114",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G1-14 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "bpolicy1023-pickup",
+   "detail": "10-30 장부 판정(measure): cpstate --list 열린 지시서에 bpolicy1023 없음 = 종결",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topic1023-pickup",
+   "detail": "10-30 장부 판정(measure): cpstate --list 열린 지시서에 topic1023 없음 = 종결",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatesync-push-fail-10231623",
+   "detail": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatesync-push-fail-10231624",
+   "detail": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g325",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G3-25 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:44",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-c118",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 C1-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-f309",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 F3-09 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-e410",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 E4-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1023-d117",
+   "detail": "10-30 장부 판정(measure): D1-17 DB 등록·라이브·osmu 3채널(naver/ig/threads) 모두 있음 = 선별→발행 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:47",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1023-sel",
+   "detail": "10-30 장부 판정(measure): B2-23 DB 등록·osmu 3채널 완료(xlink 조회 시 라이브 확인)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatesync-push-fail-10240231",
+   "detail": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatesync-push-fail-10240232",
+   "detail": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:49",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-e411",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 E4-11 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:50",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-f221",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 F2-21 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-d507",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 D5-07 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:52",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g326",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G3-26 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:53",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g327",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G3-27 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:53",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-d310",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 D3-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-d118",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 D1-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g328",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G3-28 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b422",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 B4-22 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b423",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 B4-23 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b424",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 B4-24 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:57",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-d414",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 D4-14 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:58",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a517",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 A5-17 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-d219",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 D2-19 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:26:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a230",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 A2-30 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:00",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g116",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G1-16 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:01",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-h129",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 H1-29 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a229",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 A2-29 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a518",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 A5-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-reapply-1027",
+   "detail": "10-30 장부 판정(measure): 재신청 판단 시점 경과: 사장님이 10-29 재검토 요청(adsense-result-1108 기록) · adsense.py status GETTING_READY",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-D2-20-buchik-1025",
+   "detail": "10-30 장부 판정(measure): 초안 grep -c 「다른 조문 일부는 공포일 시행」=3(지시한 3곳과 일치)·D2-20 발행 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:06",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gatesync-push-fail-10260013",
+   "detail": "10-30 장부 판정(measure): python -m studio.gatesync → 「이미 원격과 같다 — 밀어 올릴 것 없음」(2026-10-30 실행). 7건 동일 사유",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-h130",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 H1-30 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-d220",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 D2-20 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g201",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G2-01 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b224",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 B2-24 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:09",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-h132",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 H1-32 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:10",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-f310",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 F3-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:11",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-g117",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 G1-17 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1029-0925",
+   "detail": "10-30 장부 판정(measure): B3-07 DB 등록(2028-282930-2026.html)·osmu 3채널 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-f118",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 F1-18 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-a317",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 A3-17 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "xlink-b510",
+   "detail": "10-30 장부 판정(measure): blogger 라이브 B5-10 본문에 naver·instagram·threads URL 3개 모두 존재(urllib 200 직접 조회)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "docflow-1030-0925",
+   "detail": "10-30 장부 판정(measure): A3-17 DB 등록(10-30.html)·osmu 3채널 완료·pace 오늘 발행 3편에 포함",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "pubgo-unpushed-go-1030",
+   "detail": "10-30 장부 판정(measure): A3-17 첫 run 40987028055 실패 뒤 재run 40987508119 success, A3-17 라이브·osmu 완료 (재발방지는 fix-gostamp-push-first-1030 별건)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T13:27:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a1-12-dupcheck-red",
+   "detail": "10-30 장부 판정(measure): drop — 전제 사라짐",
    "via": "cli"
   }
  ]

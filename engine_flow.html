@@ -26,7 +26,8 @@
   A[이과장 초안 → 발행대기 큐] --> B{towertick: 초안 감지}
   B -->|DRAFT_READY| C[이부장: V0 검사 에이전트]
   C --> D{V0 통과?}
-  D -->|NO| C2[이과장 수정 지시] --> C
+  D -->|NO| C2[이과장 수정 지시] --> C3{초안이 반려 뒤 고쳐졌나?}:::fix
+  C3 -->|YES V0_REFIX| C
   D -->|YES| E{썸네일 github.io 200?}
   E -->|NO| E2[DEPLOY_NEEDED → 결재함에 배포 요청 자동]:::fix
   E -->|YES| F[결재함 발행 카드]
