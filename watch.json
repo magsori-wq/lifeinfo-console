@@ -25756,6 +25756,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "fix-fable-verify-1030",
+   "added": "2026-10-30",
+   "what": "페이블 검증 10항목+_autoorder 코드별 반영 · unittest 125 OK · enginemap 🔴0 · validate PASS · 미커밋",
+   "due": "2026-10-31",
+   "cmd": "python -m unittest tests.test_studio_pure 2>&1 | tail -2",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
