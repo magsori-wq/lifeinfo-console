@@ -25826,6 +25826,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "fix-sc-score-1030",
+   "added": "2026-10-30",
+   "what": "SC 글감 점수 — 「바로」 판정이 후함(N월 시즌어로 날짜 든 제목 대부분 named). 발행 7일 뒤 유입 일치와 대조해 기준 조정·블로그탭 파서가 상위 글 시각만 읽는지 확인",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "push-ledger-doc-1030",
+   "added": "2026-10-30",
+   "what": "4.세션 커밋 0ad123b30(장부 재판정 문서) 원격 push — 발행 run 때문에 pre-push 가 막음",
+   "due": "2026-10-30",
+   "cmd": "python tools/syncorigin.py",
+   "owner": "claude",
+   "state": "wait",
+   "by": "4."
   }
  ]
 }
