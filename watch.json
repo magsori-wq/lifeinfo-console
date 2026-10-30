@@ -22823,8 +22823,10 @@
    "due": "2026-10-23",
    "cmd": "grep -c '부칙' docs/improve_G2-01_20261023.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "4.재판정 10-30: docs/improve_G2-01_20261023.py 에 부칙 제2조 연도별 특례(2026 9세…2030 13세) 반영 직접 확인 · approve-g201-1023 [done]"
   },
   {
    "id": "approve-g201-1023",
@@ -25776,6 +25778,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "kw-suneung-discount-1110",
+   "added": "2026-10-30",
+   "what": "D1-19 수능 수험표 할인 - 올해(2026.11.19) 업체 할인 공지 나왔는지 확인(에버랜드·롯데월드·CGV 등 공식 페이지)",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.naverkw 수능 수험표 할인 2026",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
