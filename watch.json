@@ -25961,6 +25961,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "chat-approve-path-1030",
+   "added": "2026-10-30",
+   "what": "kind=approve 를 사장님 채팅 승인으로 이부장이 닫는 공식 경로 없음(--force-boss I-KNOW 뿐) — 설계도 마디 먼저(채팅 원문 인용·시각 기록 조건)",
+   "due": "2026-11-02",
+   "cmd": "grep -n 'force-boss' studio/watch.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-autoorder-public-1030",
+   "added": "2026-10-30",
+   "what": "C:/lifeinfo-deploy 에 옛 _autoorder.txt·_autoorder_items.json·_autodraft_items.json 3개가 git 추적·github.io 공개 — 다음 deploy.bat 때 git -C C:/lifeinfo-deploy rm 후 함께 반영(이부장 deploy 판단)",
+   "due": "2026-10-31",
+   "cmd": "git -C C:/lifeinfo-deploy ls-files | grep _auto",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
