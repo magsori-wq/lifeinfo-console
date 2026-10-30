@@ -1,17 +1,16 @@
 {
- "computed_at": "2026-10-30 12:01:16",
- "source_head": "80e5434972a9",
+ "computed_at": "2026-10-30 12:07:03",
+ "source_head": "75a386875cb8",
  "ids": [
   "B5-10",
-  "claude-limit-reset-1022",
-  "deploy-thumb-435"
+  "claude-limit-reset-1022"
  ],
  "posts": [],
  "publish": [
   {
    "code": "B5-10",
    "title": "불법사금융 피해 긴급의뢰 10월 30일 시작, 복지지원 7일 이내 연결",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,7 +32,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -43,14 +42,6 @@
    "due": "2026-10-20",
    "cmd": "Claude Code Settings > Usage 에서 리셋 1회 남았는지 확인",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-435",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(435_illegal_loan_referral.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-10-30",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
