@@ -26154,6 +26154,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fix-ou-nc-pr-1030",
+   "added": "2026-10-30",
+   "what": "OU(ORDER_UNREAD·TOWER_BOARD_MISSING, cpstate.status 재사용)·NC(NAVER_CARD)·PR 순서·CLOSE_ROUTINE 하루1회·m.html 보류 버튼·Z4 stall_detect_fail·selfcheck 28) rulemap 구현. 테스트 139 OK",
+   "due": "2026-10-31",
+   "cmd": "python -m unittest tests.test_studio_pure && python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

@@ -160,6 +160,7 @@ function card(it){
   var hard = it.risk==='hard';
   var act  = it.act !== false;          // 🔴 이미 승인돼 진행 중이면 누를 것이 없다
   var hand = it.hand === true;          // 🔴 사장님이 **직접** 하실 일 — 승인이 아니다
+  var hold = !hand && /^(🙋승인|🚫막힘)/.test(String(it.kind||''));   // watch_approve 카드
   var d=document.createElement('div');
   d.className='card'+(hard&&act?' hard':'')+(act?'':' wait');
   // 🔴 do·who·waited — approvalcount.humanize() 가 정한 문장 그대로 그린다
@@ -187,6 +188,8 @@ function card(it){
     +(hand?'<button class="b-copy">📋 할 일 복사</button>'
           :'<button class="b-sel">'+(hard?'✅ 승인 요청':'✅ 승인')+'</button>')
     +'<button class="b-no">'+(hand?'끝냄':'반려')+'</button>'
+    // ⏸ watch 승인 카드(🙋승인·🚫막힘)에 「보류·거절」 — approval.html 4a7aa42b0 와 짝. 서버가 없으니 문구 복사 방식.
+    +(hold?'<button class="b-no b-hold">⏸ 보류·거절</button>':'')
     +'</div>'):'');
   if(!act) return d;                    // 버튼이 없으니 여기서 끝
   if(hand){
@@ -212,6 +215,10 @@ function card(it){
     };
     return d;
   }
+  var hb=d.querySelector('.b-hold');
+  if(hb) hb.onclick=function(){
+    copy((it.id||('#'+it.no))+' 보류', '📋 복사됨 — 이부장 창에 붙여넣으면 이 건을 닫습니다(승인 아님)');
+  };
   var sel=d.querySelector('.b-sel');
   sel.onclick=function(){
     if(PICK[it.no]){ delete PICK[it.no]; sel.className='b-sel'; d.classList.remove('sel'); }
