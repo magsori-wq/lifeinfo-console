@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-07T21:09:22",
-   "actor": "V0검사관(재검증)",
-   "action": "v0check.pass",
-   "target": "F4-20",
-   "detail": "force 계산예시(18시 출발 가정: 도착권장15:00·체크인마감17:10→실제여유2h10m, 기내수하물만이면 1h10m — 두 공식출처(3h/2h도착권장+50분마감)를 조합한 파생수치, 공식문서엔 없는 통찰) + 함정3종(2시간=최소기준이지 여유아님·터미널착각·보안검색시간 미공개) + 판단형비",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-07T21:09:29",
    "actor": "V0검사관",
    "action": "v0check.pass",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aroma-tempdraft-a317-del-1030",
    "detail": "사장님 승인 — 11:19 이부장 창 채팅 「임시저장 지워」",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T11:29:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aroma-profile-login-1030",
+   "detail": "11:30 이부장 실측: aroma 프로필 탭 MyBlog → /aroma-mag (fetch 는 쿠키 미적용으로 로그인화면이 나와 탭으로 재확인)",
    "via": "cli"
   }
  ]
