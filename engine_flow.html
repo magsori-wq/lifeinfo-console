@@ -38,7 +38,7 @@
   G2 -->|YES| G3[BOSS_REMIND 카톡 재알림 + 결재함 맨 위]:::fix --> G
   G2 -->|NO 외근·취침| G4[다음 접속 시각 12시·18시 전에 묶음 알림 예약 · 그동안 다음 글 준비는 계속]:::fix --> G
   G -->|YES| G5{go 도장이 origin 에 있나? queue.json 만 먼저 커밋·푸시}:::fix
-  G5 -->|NO 푸시 실패| G6[경보·exit≠0 — 지시서·깨움 보류]:::fix
+  G5 -->|NO 푸시 실패| G6[🔴 배너·watch gostamp-push-fail · 지시서는 ⚠️ 머리글로 발급 — 실행 전 pubready/pubgo 원격 판정이 fail-closed 로 막는다]:::fix
   G5 -->|YES = 4채널 게시 지시| H[이과장 깨움 leewake + 이부장 지시서]
   H --> I{썸네일 200?}
   I -->|NO| I2[⏸ 대기 보고]:::was --> W1{towertick: 🙋/⏸ 감지}
