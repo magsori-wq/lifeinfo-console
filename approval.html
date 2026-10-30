@@ -214,8 +214,8 @@ code:hover{border-color:#4D9DE0;color:#cfe6fa}
 <script src="cp_clip.js"></script>
 <script>document.write('<scr'+'ipt src="cp_xlink.js?v='+Date.now()+'"></scr'+'ipt>');</script>
 <script>
-function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(m){
-  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];});}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(m){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
 // 🔴 **URL 은 클릭해서 열리게 한다** (2026-09-04 사장님: "링크 걸어줘")
 //    `cmd` 는 원래 '클릭하면 복사되는 명령'이라 전부 <code> 로 감쌌는데,
 //    사람이 **열어야 하는 주소**(보안 확인 페이지 등)까지 복사만 되고 있었다.
@@ -1241,7 +1241,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         ?'<div style="margin-top:8px"><button class="act pv-btn" data-c="'+x.c+'" '
          +'onclick="preview(this.dataset.c)">📄 '
          +(x.act==='topic_approve'?'초안 원고 보기':'원고 미리보기')+'</button></div>':'')
-      +(x.pv?'<div style="margin-top:8px"><a class="act pv-btn" style="display:inline-block;text-decoration:none" target="_blank" href="'
+      +(x.pv&&!/^\s*javascript:/i.test(x.pv)?'<div style="margin-top:8px"><a class="act pv-btn" style="display:inline-block;text-decoration:none" target="_blank" href="'
          +esc(x.pv)+'">📄 원고 미리보기</a></div>':'')
       // 📱 외부 결재 — 밖에서도 누르실 수 있게(2026-09-03 사장님 지시)
       +(x.act==='publish_run'
