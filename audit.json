@@ -2,126 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-10T14:13:58",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "B4-11",
-   "detail": "코드 재배정(E4-02→B4-11, 2026-09-10) — **같은 원고**이고 V0 판정은 12:13 에 이부장이 이미 통과시켰다(taxonomy 에 E4 중분류가 없어 발행 사전점검이 막혔고, 주제가 국세청 세금환급이라 B4 로 옮겼다). 원 근거 그대로: 판단형비교(직접 0원 v",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T14:41:43",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-a312-ready",
-   "detail": "게시 완료 확인(이부장 실측 2026-09-10): osmu.naver = https://blog.naver.com/magsori8975/224407078247 · DB 기록됨. 사장님이 이미 게시하셨는데 결재함에 남아 있었다",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T14:48:11",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-xlink-format-0910",
-   "detail": "형식통일 5편 완료·커밋됨(동시작업 경합으로 [이부장] 8f81bb64에 편입, 내용은 검증완료). H1-04도 블로그원문 URL이 본문끝 안내줄+교차링크블록에 중복 존재=기존 표준패턴 확인, 5편도 동일구조라 손대지 않음",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T15:01:36",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "A6-03",
-   "detail": "「나라배움카드」 제도 자체가 공식 출처에 없음(2026-09-10 확인). 채우면 A1-06 과 실질 중복",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T15:17:02",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-e303-ready",
-   "detail": "게시 완료(2026-09-10 15:0x) — osmu.naver = https://blog.naver.com/magsori8975/224407193119 DB 기록됨",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T15:17:03",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "naver-post-b213-ready",
-   "detail": "게시 완료(2026-09-10 15:1x) — osmu.naver = https://blog.naver.com/magsori8975/224407202758 DB 기록됨",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:38:12",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "E4-02",
-   "detail": "dupcheck 🔴 강한중복(겹침1.00) — 이미 발행된 B4-11 국세청 원클릭 환급서비스와 사실상 동일 주제",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:38:22",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "B5-02",
-   "detail": "발행대기 큐의 B3-05(국민연금 반환일시금 세금, V0검사대기)와 주제 동일 — dupcheck는 미발행 큐를 못 봐서 🟢로 나왔으나 사람이 대조해 중복 확인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:39:50",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "B3-05",
-   "detail": "sec6(판단형비교: 60세임박/해외이주확정/재취업후반납 3가지 상황별 추천행동)과 sec7(함정: 소멸시효10년vs5년 혼동·사망시 비과세인데 세금걱정 등 2건 실질)로 V0 최소기준 충족(2/4). 핵심주장(퇴직소득세·사망비과세·2002.1.1이후납입분과세)은 1차출처(docs/so",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:43:31",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "B5-02",
-   "detail": "사장님 topic_pick 승인(2026-09-10, 커밋 dbf91021) 후 이부장이 중복 발견해 취소 — 발행대기 B3-05(국민연금 반환일시금 세금, V0검사대기)와 주제 동일. 승인 시점엔 B3-05가 큐에 있는 게 표에 안 보였음. 🔴사장님 승인분 취소 — 보고 필요",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:48:53",
-   "actor": "사장님",
-   "action": "watch.done",
-   "target": "tripconnect-links-0907",
-   "detail": "운영콘솔 전자결재함에서 사장님 승인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:48:54",
-   "actor": "사장님",
-   "action": "pubqueue.go",
-   "target": "B3-05",
-   "detail": "",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:49:08",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "a603-dup-check-0910",
-   "detail": "실측 확인(2026-09-10 이부장 판정): 나라배움카드 판정 완료 · topicprop drop 됨",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:49:09",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "b213-fact-0910",
-   "detail": "실측 확인(2026-09-10 이부장 판정): V0 반려 철회에 반영 · B2-13 발행 완료",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:49:10",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "b213-naver-ready-0910",
-   "detail": "실측 확인(2026-09-10 이부장 판정): B2-13 네이버 게시 완료",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-10T17:49:11",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15879,126 @@
    "action": "watch.done",
    "target": "aroma-sp002-enrich-1030",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:44",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-gostamp-push-first-1030",
+   "detail": "10-30 확인: c77b20bb1·206eed2a1 반영·13:36 A6-08·H1-34 실측 정상",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-fuel-low-wake-1030",
+   "detail": "10-30 확인: 5b340a52d·206eed2a1·f689d1990 — 14:1x·16:2x 실발화",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-routine-done-receiver-1030",
+   "detail": "10-30 확인: 5b340a52d — 루틴5·7 ROUTINE_DONE 실발화 12:4x",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:47",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-deploy-push-flood-1030",
+   "detail": "10-30 확인: 5b340a52d 내용해시(효과 작음, 실효 측정은 fix-pushdigest-1030 로)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-fuel-rd-1030",
+   "detail": "10-30 확인: 5b340a52d·f689d1990 페이블 🟢/🟡 반영",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:49",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-v0refix-pt-1030",
+   "detail": "10-30 확인: d9a1d7bfd·f689d1990·344eb2343 페이블 반영3 🟢",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:50",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "role-realign-1030",
+   "detail": "10-30 확인: d9a1d7bfd·f689d1990 · fuel1030/ledger1030 지시서 재발급 13:56",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "full-process-verify-1030",
+   "detail": "10-30 확인: docs/검증_페이블_전체프로세스·반영2~5 — 🔴 모두 해소",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "topic-yield-verify-1030",
+   "detail": "10-30 확인: docs/실측_글감선정_유입효과_20261030.md → SC 반영",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:52",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-fable-verify-1030",
+   "detail": "10-30 확인: f689d1990 · 반영2 검증",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:53",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "collab-topic-score-1030",
+   "detail": "10-30 확인: 5b614b18c·344eb2343·55ea1b1c0·cea941774 — 기준선 docs/측정_글감선정_전후, 후 측정은 fix-sc-score-1030(11-06)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fix-fable2-1030",
+   "detail": "10-30 확인: 344eb2343 · 반영3 🟢",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "chat-approve-path-1030",
+   "detail": "10-30 확인: bc5527b6e --boss-chat(보류·거절)·4a7aa42b0 결재함 보류 버튼",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "idaeri-stall-detect-1030",
+   "detail": "10-30 확인: Z4 idaerireq·IDAERI_STALL 0e43cc890·30a50eea8·927d05f77",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-30T18:24:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "tower-miss-proof-1030",
+   "detail": "10-30 확인: 에이전트 가시성 e08ba7b37·장부 판정 69+20건 닫음·FW/RD/C3 신호 — 남은 것: CP 미결 미열람 신호(tower-cp-pending-signal-1030)",
    "via": "cli"
   }
  ]
