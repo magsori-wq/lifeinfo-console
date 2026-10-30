@@ -1241,7 +1241,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
         ?'<div style="margin-top:8px"><button class="act pv-btn" data-c="'+x.c+'" '
          +'onclick="preview(this.dataset.c)">📄 '
          +(x.act==='topic_approve'?'초안 원고 보기':'원고 미리보기')+'</button></div>':'')
-      +(x.pv&&!/^\s*javascript:/i.test(x.pv)?'<div style="margin-top:8px"><a class="act pv-btn" style="display:inline-block;text-decoration:none" target="_blank" href="'
+      +(x.pv&&/^(https?:\/\/|[\w.-]+\.html$)/.test(x.pv)?'<div style="margin-top:8px"><a class="act pv-btn" style="display:inline-block;text-decoration:none" target="_blank" href="'
          +esc(x.pv)+'">📄 원고 미리보기</a></div>':'')
       // 📱 외부 결재 — 밖에서도 누르실 수 있게(2026-09-03 사장님 지시)
       +(x.act==='publish_run'

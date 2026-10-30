@@ -230,7 +230,7 @@ function card(it){
   };
   // 🔴 2026-09-14 사장님 "원고 보기도 결재함에 올려주면 안 되나?"
   //    미발행 원고는 공개 사이트에 못 두므로 비공개 검토 페이지로 연다.
-  if(it.review){
+  if(it.review && /^(https?:\/\/|[\w.-]+\.html$)/.test(it.review)){
     var rv=document.createElement('div');
     rv.className='btns'; rv.style.marginTop='8px';
     rv.innerHTML='<button class="b-copy">📄 원고 보기</button>';
