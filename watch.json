@@ -26017,6 +26017,59 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "osmu-h135-report",
+   "added": "2026-10-30",
+   "what": "H1-35 4채널 완결 + H1-34 네이버 링크 카드 정정 확인 즉시 사장님 보고(사장님 16:25)",
+   "due": "2026-10-30",
+   "cmd": "python -m studio.osmu_manifest table --code H1-35",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "kw-nanim-support-1115",
+   "added": "2026-10-30",
+   "what": "난임 시술비 지원 2027 변경 여부 — 보건복지부 1차 출처(보도자료·모자보건사업 안내)가 확인되면 글감 후보(실검색어 난임 시술비 지원 신청 ✅, DB 미수록)",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.naverkw 난임 시술비 지원 2027",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "mhtml-hold-btn-1030",
+   "added": "2026-10-30",
+   "what": "폰 결재함 m.html 에도 「⏸ 보류·거절」 버튼(폰에서는 문구 복사 방식) — 페이블 반영4 🟡",
+   "due": "2026-11-02",
+   "cmd": "grep -c watch_hold webapp/m.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "naver-profile-login-swap-1030b",
+   "added": "2026-10-30",
+   "what": "【권고】Aside 직장 탭(NAVER-magsori) 네이버 로그인을 magsori8975 로 다시 바로잡기 【근거】16:44 이부장 실측: 직장 프로필 MyBlog=/aroma-mag(오늘 두 번째) — 이과장 H1-35 네이버 게시 중지시킴, 잘못 올라간 글 없음(RSS 확인) 【위험】원인 미확정 — 이대리 aroma 작업 중 로그인이 직장 프로필로 번지는 것으로 의심, 바로잡은 뒤 이대리는 네이버 로그인 동작 중지",
+   "due": "2026-10-30",
+   "cmd": "직장 탭 magsori8975 로그인 후 「네이버 로그인 바꿨어」",
+   "owner": "user",
+   "state": "done",
+   "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-10-30",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aside-profile-cookie-mix-1030",
+   "added": "2026-10-30",
+   "what": "Aside 직장 프로필 네이버 로그인이 aroma-mag 로 뒤바뀜 2회(오전·16:44) — 두 번 모두 이대리 로그인 동작 없음, 16:3x Aside 연결 끊김(CDP timeout) 직후. 가설: Aside 브라우저 재연결·재시작 때 프로필 쿠키가 섞인다 → 재현 확인·게시 전 MyBlog 게이트를 코드(naverwrite·asideprobe 계정 판정)로",
+   "due": "2026-10-31",
+   "cmd": "grep -n 'MyBlog' studio/*.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
