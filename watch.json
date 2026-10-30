@@ -25438,6 +25438,17 @@
    "by": "이부장",
    "done_at": "2026-10-30",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "kw-gayo-notice-1030",
+   "added": "2026-10-30",
+   "what": "SBS 가요대전 12월 회차 방청·티켓 공지 나왔나 — 나오면 H1-33 보강 근거(유입 23%)",
+   "due": "2026-11-02",
+   "cmd": "python tools/aside_read.py https://ent.sbs.co.kr/news/article.do?article_id=E10010323756 --max 3000",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "3.분석"
   }
  ]
 }
