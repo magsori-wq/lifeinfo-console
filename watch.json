@@ -25554,6 +25554,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fix-pushdigest-1030",
+   "added": "2026-10-30",
+   "what": "pushapproval 내용해시 디바운스 추가(시각 휘발키 제외 해시 동일 시 건너뜀). 실측: 최근 3쌍 0건 건너뜀 - 실내용(watch/queue/session_state)이 매번 변해 감소 거의 없을 전망",
+   "due": "2026-10-31",
+   "cmd": "git -C C:/lifeinfo-deploy log --since=midnight --oneline | wc -l",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
