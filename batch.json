@@ -1873,6 +1873,26 @@
      "base_code": "lifeinfo-daily-topics",
      "date": "2026-10-31",
      "at": "2026-10-31 09:08"
+    },
+    {
+     "code": "9-lifeinfo-issue-product-pm-1031",
+     "title": "9-lifeinfo-issue-product-pm (I)",
+     "state": "done",
+     "note": "[조사장부] 목록 3 · 원문 0 · 후보 4 · 탈락 4 · 검색어 5 (바닥 미달: 원문·목록 — 상품 루틴이라 1차 출처 본문 없음, korea.kr 목록은 이번 회차 미개방) | 🛒 빈손 — 토스 인기 296건 수집(신규 17·누적 2718), 시즌 낱말 약 25개 search. · 전기요(한일 중, 20261015-1)·가습기(오퓨리엠, 20261012-1)·니삭스(socks1020)·차렵이불(issue20261003)·핫팩(hotpack1026) 전부 기게시 → 탈락 · 온수매트·절임배추·히터·김장매트·빼빼로·수능선물 낱말 naverkw 실검색어는 확인됐으나 토스 인기목록에 상품 없음(product 에이전트 조사 대상, 이번 회차 미의뢰) · 마운틴앤필드 다크초콜릿(리뷰 2106·4.8)은 시즌 근거 약해 탈락. 이어받은 것=기게시 목록 대조 / 새로 본 것=신규 17건 중 시즌 해당 없음. 다음 회차 제안: 온수매트·절임배추를 product 에이전트로 다나와 조사",
+     "auto_daily": true,
+     "base_code": "9-lifeinfo-issue-product-pm",
+     "date": "2026-10-31",
+     "at": "2026-10-31 15:15"
+    },
+    {
+     "code": "9-lifeinfo-issue-product-pm-1031-1031",
+     "title": "9-lifeinfo-issue-product-pm-1031 (I)",
+     "state": "done",
+     "note": "[조사장부] 목록 3 · 원문 0 · 후보 4 · 탈락 4 · 검색어 5 (바닥 미달: 원문·목록 — 상품 루틴, korea.kr 미개방) | 🛒 빈손 — 토스 인기 296건 수집(신규17), 시즌 낱말 ~25개 search. 전기요·가습기·니삭스·차렵이불·핫팩 기게시 → 탈락. 온수매트·절임배추·히터·빼빼로·수능선물은 실검색어 확인되나 토스 목록에 상품 없음(product 에이전트 몫). 다크초콜릿(리뷰2106) 시즌 근거 약해 탈락. 이어받은 것=기게시 대조 / 새로 본 것=신규17건 시즌 해당 없음",
+     "auto_daily": true,
+     "base_code": "9-lifeinfo-issue-product-pm-1031",
+     "date": "2026-10-31",
+     "at": "2026-10-31 15:15"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -6473,7 +6493,7 @@
    "confirm_note": "근거: run 41165213056 success · 라이브 https://lifeinfo8975.blogspot.com/2026/10/2027-1-289-3.html 200 · og:image 블로거 프록시 있음 · DB 등록 — 이부장 확인. 4채널 후속은 followup"
   }
  },
- "updated": "2026-10-31 13:47:32",
+ "updated": "2026-10-31 15:15:16",
  "current": {
   "batch": "pccheck",
   "code": "",
@@ -6484,6 +6504,14 @@
   "since_at": "2026-10-24 13:18:24"
  },
  "log": [
+  {
+   "t": "15:15:16",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1031-1031 완료 — 9-lifeinfo-issue-product-pm-1031 ("
+  },
+  {
+   "t": "15:15:06",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1031 완료 — 9-lifeinfo-issue-product-pm (I)"
+  },
   {
    "t": "13:47:32",
    "text": "▶  PC 점검 세션 — 6/7단계 · 🙋 이부장 요청(긴급): 10-31 13:46 실측 — 커밋 47.8/51.3GB(93%, 한도 임박), paged pool 9.0GB(10-24 1.05GB), Toke 272,966(10-24 81,747), 실행 중 프로세스 644(10-24 396)·종료됐는데 안 치워진 것 약 1,130, 페이징 2,700/s. CPU 54%·대기열 0(지금은 CPU 정상). 부팅 10-22 이후 9일. 커밋 한도 넘으면 앱이 죽는다 — 재부팅 시점 판단과 git 반복 호출·늘어난 상주 프로그램 원인 정리 필요"
@@ -6635,14 +6663,6 @@
   {
    "t": "22:27:09",
    "text": "▶   — 1/7단계 · 22:25 재측정 — 새 제안 0: kwgap 입력(10-29 유입 22건)이 16:20 회차와 같아 새 후보 없음, 제안함은 D1-19 1건 그대로. 억지 채움 안 함. 다음: 10-30 유입이 끝나는 자정 뒤 cadaily 갱신(ca_daily 30)→kwgap 재판독해 새 후보 찾기, watch kw-nanim-support-1115"
-  },
-  {
-   "t": "21:16:05",
-   "text": "✅ lifeinfo-travel-prep-1030 완료 — lifeinfo-travel-prep (D)"
-  },
-  {
-   "t": "20:11:53",
-   "text": "✅ daily-email-briefing-1030-1030 완료 — daily-email-briefing-1030 (A)"
   }
  ],
  "currents": {
