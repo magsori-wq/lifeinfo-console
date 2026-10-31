@@ -26486,8 +26486,10 @@
    "cmd": "brandconnect 상품 찾기: '한우선물세트'→화려한우 투뿔 숙성한우 새우살… / '김장재료'→더 테이블 해남 절임배추 10kg 링크 발급",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-01",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "aroma-am-dg-003-approve-1031",
@@ -26497,8 +26499,10 @@
    "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-DG-003_지스타입장권.html\"",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "세션:39f1716c"
+   "state": "done",
+   "by": "세션:39f1716c",
+   "done_at": "2026-11-01",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "deploy-thumb-442",
@@ -26520,6 +26524,17 @@
    "cmd": "grep -n _usage deploy.bat studio/*.py",
    "owner": "claude",
    "state": "todo",
+   "kind": "action",
+   "by": "이부장"
+  },
+  {
+   "id": "pub-D3-11-start",
+   "added": "2026-11-01",
+   "what": "D3-11 결재 06:43 → 이과장 발행 착수 확인(깨움 queued)",
+   "due": "2026-11-01",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 3",
+   "owner": "claude",
+   "state": "wait",
    "kind": "action",
    "by": "이부장"
   }
