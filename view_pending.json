@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-10-31 09:21:23",
- "source_head": "c0cd704cc12e",
+ "computed_at": "2026-10-31 09:24:14",
+ "source_head": "bab2024f6316",
  "ids": [
-  "A6-09"
+  "A6-09",
+  "deploy-thumb-439"
  ],
  "posts": [],
  "publish": [
@@ -10,7 +11,7 @@
    "code": "A6-09",
    "title": "장기요양 재가급여 한도액 2027 — 1등급 월 289만원, 3시간 방문요양 몇 회 쓰나",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 장기요양한도액2027_글_HTML.txt",
@@ -34,6 +35,15 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-439",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(439_ltc2027.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-31",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }

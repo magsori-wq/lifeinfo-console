@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-10T17:49:26",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "ordercmd-fix-0910",
-   "detail": "실측 확인(2026-09-10 이부장 판정): ordercheck 재실행 정상 0건",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-10T17:49:28",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aroma-pe002-approve-1031",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-31T09:22:59",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "A6-09",
+   "detail": "계산예시(180분 수가÷한도 → 1등급48회·2등급45회 검산, 3~인지지원 횟수 불변 함정)+가상사례(표시, 40회+목욕4회 본인부담 +14,104원)+보험료 13.90% 환산; 한도·수가·보험료율 보도자료 원문 대조 일치",
    "via": "cli"
   }
  ]
