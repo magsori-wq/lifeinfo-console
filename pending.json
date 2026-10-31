@@ -1,16 +1,33 @@
 {
  "rev": "a68f9caed",
  "counts": {
-  "total": 456,
+  "total": 457,
   "osmu_done": 456,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 456,
-  "index_requested": 159,
-  "index_todo": 73,
-  "index_benign": 224
+  "index_pending": 457,
+  "index_requested": 169,
+  "index_todo": 74,
+  "index_benign": 214
  },
  "actionable": [
+  {
+   "code": "A6-09",
+   "title": "장기요양 재가급여 한도액 2027 — 1등급 월 289",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -206,22 +223,6 @@
   {
    "code": "A5-15",
    "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-16",
-   "title": "4시간 근무 휴게시간 30분 생략 가능 — 12월 10",
    "need": [
     "색인요청"
    ],
