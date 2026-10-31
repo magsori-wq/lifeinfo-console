@@ -26302,6 +26302,28 @@
    "by": "세션:9ad1c949",
    "done_at": "2026-10-31",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "docflow-1031-a609",
+   "added": "2026-10-31",
+   "what": "A6-09 선별 pick+verify 진행",
+   "due": "2026-11-01",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a3c49b50"
+  },
+  {
+   "id": "deploy-thumb-439",
+   "added": "2026-10-31",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(439_ltc2027.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-31",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-10-31",
+   "result": "09:3x 이부장 deploy.bat 실행 — thumbs/439_ltc2027.png github.io 200 확인"
   }
  ]
 }
