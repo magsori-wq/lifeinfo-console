@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-10-31 16:07:41",
- "source_head": "32a9a731ad99",
+ "computed_at": "2026-10-31 16:09:58",
+ "source_head": "b2233d822841",
  "ids": [
   "H1-36",
+  "deploy-thumb-440",
   "pc-reboot-1031b"
  ],
  "posts": [],
@@ -11,7 +12,7 @@
    "code": "H1-36",
    "title": "코리아 그랜드 페스티벌 11월 15일까지, 한우·상품권 겹치면 얼마",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 코리아그랜드페스티벌_글_HTML.txt",
@@ -36,6 +37,14 @@
   }
  ],
  "actions": [
+  {
+   "id": "deploy-thumb-440",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(440_korea_grand_festa.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-10-31",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  },
   {
    "id": "pc-reboot-1031b",
    "what": "【권고】PC 재부팅(가능하면 오늘 15시 전) 【근거】13:46 PC점검 실측 커밋 47.8/51.3GB(93%)·paged pool 9.0GB(10-24 1.05GB)·커널 출입증 27만(10-24 8만)·부팅 9일 — 한도 넘으면 앱·세션이 죽는다 【위험】지금 진행 중인 GitHub 작업 없음·A6-09 4채널 끝·이대리 링크 수정만 끝나면 손실 없음. 재부팅 뒤 이부장이 세션을 다시 연다",
