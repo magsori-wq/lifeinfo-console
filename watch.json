@@ -26324,6 +26324,26 @@
    "by": "미상",
    "done_at": "2026-10-31",
    "result": "09:3x 이부장 deploy.bat 실행 — thumbs/439_ltc2027.png github.io 200 확인"
+  },
+  {
+   "id": "fix-loopcheck-seodesc-1031",
+   "added": "2026-10-31",
+   "what": "loopcheck ⑦ 가 'A2-29-seodesc' 같은 검색설명 항목을 발행 미착수로 오탐(144일·reads=0, 이미 발행된 글) + routine_model 이 루틴 2·8·9 실행을 '기록 없음'으로 못 봄 — 두 판정 원인 찾아 고치기",
+   "due": "2026-11-01",
+   "cmd": "python -m studio.loopcheck; python studio/routine_model.py --days 1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine1-model-opus-1031",
+   "added": "2026-10-31",
+   "what": "루틴1 메일브리핑 모델이 sonnet-5-5 로 돈다(정책 1·7번=opus 유지). 루틴 편집 창 ⌄기본값→Opus 저장 필요 여부 판단",
+   "due": "2026-11-01",
+   "cmd": "python studio/routine_model.py --days 2",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
