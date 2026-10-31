@@ -2,8 +2,8 @@
  "rev": "bd102dfae",
  "counts": {
   "total": 457,
-  "osmu_done": 456,
-  "osmu_pending": 1,
+  "osmu_done": 457,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 457,
   "index_requested": 159,
@@ -15,15 +15,16 @@
    "code": "A6-09",
    "title": "장기요양 재가급여 한도액 2027 — 1등급 월 289",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
