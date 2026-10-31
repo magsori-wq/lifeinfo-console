@@ -1,9 +1,20 @@
 {
- "computed_at": "2026-10-31 13:00:02",
- "source_head": "bd102dfae383",
- "ids": [],
+ "computed_at": "2026-10-31 15:57:27",
+ "source_head": "32a9a731ad99",
+ "ids": [
+  "pc-reboot-1031b"
+ ],
  "posts": [],
  "publish": [],
- "actions": [],
+ "actions": [
+  {
+   "id": "pc-reboot-1031b",
+   "what": "【권고】PC 재부팅(가능하면 오늘 15시 전) 【근거】13:46 PC점검 실측 커밋 47.8/51.3GB(93%)·paged pool 9.0GB(10-24 1.05GB)·커널 출입증 27만(10-24 8만)·부팅 9일 — 한도 넘으면 앱·세션이 죽는다 【위험】지금 진행 중인 GitHub 작업 없음·A6-09 4채널 끝·이대리 링크 수정만 끝나면 손실 없음. 재부팅 뒤 이부장이 세션을 다시 연다",
+   "due": "2026-10-31",
+   "cmd": "python tools/startup.py",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
