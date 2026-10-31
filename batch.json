@@ -6377,9 +6377,46 @@
    "order_at": "2026-10-30 16:09",
    "confirmed_at": "2026-10-30 17:42:08",
    "confirm_note": "자동 확인: DB 4채널 실측"
+  },
+  "tower1031": {
+   "title": "🎛 이부장 10-31 관제 장부 — 사장님이 CP 에서 확인",
+   "note": "",
+   "items": [
+    {
+     "code": "TW1031-1",
+     "title": "재고 0→3 채우기 — 09:00 루틴2 결과 선별, 빈손이면 에이전트 글감 조사 2~3건(근거 2개 이상)",
+     "state": "doing",
+     "note": "밤새 루틴4·6·8·3.(4회) 빈손"
+    },
+    {
+     "code": "TW1031-2",
+     "title": "aroma 승인 9건 게시 확인",
+     "state": "done",
+     "note": "05:19 이대리 보고·새 글 2건 이부장 curl 200·og:image 확인, 장부 5건 닫음"
+    },
+    {
+     "code": "TW1031-3",
+     "title": "Aside 두 계정 로그인 유지 확인(aside-profile-recheck-1031·cookie-mix)",
+     "state": "todo",
+     "note": ""
+    },
+    {
+     "code": "TW1031-4",
+     "title": "배포 저장소 옛 _autoorder* 공개 파일 정리(deploy-autoorder-public-1030)",
+     "state": "todo",
+     "note": ""
+    },
+    {
+     "code": "TW1031-5",
+     "title": "야간검증 미검증분 H1-34·H1-35·B2-23·H1-31·H1-33 추적 + 발행 편수 6/7 차이 대조",
+     "state": "todo",
+     "note": "루틴5 10-30 보고"
+    }
+   ],
+   "owner": "이부장(관제탑)"
   }
  },
- "updated": "2026-10-31 08:10:17",
+ "updated": "2026-10-31 09:00:57",
  "current": {
   "batch": "fuel1030",
   "code": "",
@@ -6390,6 +6427,14 @@
   "since_at": "2026-10-30 13:35:23"
  },
  "log": [
+  {
+   "t": "09:00:57",
+   "text": "🏷️ tower1031 담당=이부장(관제탑)"
+  },
+  {
+   "t": "09:00:53",
+   "text": "📋 배치 '🎛 이부장 10-31 관제 장부 — 사장님이 CP 에서 확인' 등록 — 5항목"
+  },
   {
    "t": "08:10:17",
    "text": "✅ daily-email-briefing-1031 완료 — daily-email-briefing (A)"
@@ -6541,14 +6586,6 @@
   {
    "t": "16:44:07",
    "text": "▶   — 1/7단계 · ⏸ 대기(이부장 긴급 16:44) — H1-35 네이버·인스타·쓰레드·색인 및 모든 네이버 수정 중지: 직장 프로필 MyBlog 가 aroma-mag 로 바뀜. 이과장 확인: 열린 Aside 편집 탭 없음(마지막 H1-34 링크 카드 저장 2회는 16:2x~16:33 완료·각 실행 전 magsori8975 확인, 2번째 실행은 별도 MyBlog 확인 없이 PostUpdateForm blogId=magsori8975 로 진행 — 결과는 PostView 로 magsori8975 글에 카드 2개 반영 확인). 재개 신호(이부장 MyBlog 재확인) 대기. 블로그스팟 쪽(검색설명·색인 요청)은 네이버와 무관하나 Aside 사용이라 같이 보류"
-  },
-  {
-   "t": "16:42:51",
-   "text": "▶   — 1/7단계 · ⏸ 막힘 — 링크·공식 임베드 수정: 방식 검증 끝(편집기에서 출처 링크 se-link 유지, YouTube URL→se-oembed 변환 확인). 그러나 16:30경부터 Aside 브라우저 연결이 끊김(repl: fetch failed / CDP Page.enable timeout, 2회 재시도 실패). 게시 0건, 글 변경 없음. Aside 재시작되면 SP-003 부터 이어서 진행"
-  },
-  {
-   "t": "16:35:00",
-   "text": "▶   — 1/7단계 · ✅ H1-34 네이버 링크 카드 정정 완료(사장님 16:17 지적): PostView 실측 se-module-oglink 2개(절임배추·김장매트, 이미지 썸네일+상품명 카드)·대가성 문구 2회·블로그 원문 링크 유지·카테고리 공연·여행·생활꿀팁 유지·저장 2회(1건씩). 방법: 줄 내용 JS 선택→Delete→OS 클립보드(Set-Clipboard)+실제 Control+V 키 입력(합성 ClipboardEvent·insertText 는 카드 안 생김, 시험으로 확인). 🙋 이부장 요청: naverwrite/naver-draft 흐름의 제휴 링크 삽입을 이 방식(실클립보드 URL 한 줄씩)으로 코드화 — 지금은 insertText 라 카드가 안 뜸(게시 때마다 재발)"
   }
  ],
  "currents": {
