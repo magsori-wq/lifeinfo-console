@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-31",
+ "updated": "2026-11-01",
  "items": [
   {
    "id": "redirect-error",
@@ -26499,6 +26499,27 @@
    "kind": "approve",
    "state": "todo",
    "by": "세션:39f1716c"
+  },
+  {
+   "id": "deploy-thumb-442",
+   "added": "2026-11-01",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(442_apt_sedae_inspection.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-01",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-deploy-usage-1101",
+   "added": "2026-11-01",
+   "what": "deploy.bat 3단계가 gitignore 된 webapp/_usage.html 을 MISSING 으로 잡아 BLOCKED — 검사에서 제외",
+   "due": "2026-11-01",
+   "cmd": "grep -n _usage deploy.bat studio/*.py",
+   "owner": "claude",
+   "state": "todo",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
