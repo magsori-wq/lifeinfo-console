@@ -1,49 +1,62 @@
 {
- "computed_at": "2026-10-31 17:07:16",
+ "computed_at": "2026-10-31 08:10:33",
  "source_head": "facd2ffee3f4",
  "ids": [
-  "H1-36",
-  "pc-reboot-1031b"
+  "H1-36"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "H1-36",
    "title": "코리아 그랜드 페스티벌 11월 15일까지, 한우·상품권 겹치면 얼마",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 코리아그랜드페스티벌_글_HTML.txt",
-     "path": "코리아그랜드페스티벌_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "코리아그랜드페스티벌",
+   "eng": "korea_grand_festa",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_코리아그랜드페스티벌.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/440_korea_grand_festa.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/440_korea_grand_festa.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_코리아그랜드페스티벌.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/440_korea_grand_festa.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_코리아그랜드페스티벌.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "ready"
+   }
   }
  ],
- "actions": [
-  {
-   "id": "pc-reboot-1031b",
-   "what": "【권고】PC 재부팅(가능하면 오늘 15시 전) 【근거】13:46 PC점검 실측 커밋 47.8/51.3GB(93%)·paged pool 9.0GB(10-24 1.05GB)·커널 출입증 27만(10-24 8만)·부팅 9일 — 한도 넘으면 앱·세션이 죽는다 【위험】지금 진행 중인 GitHub 작업 없음·A6-09 4채널 끝·이대리 링크 수정만 끝나면 손실 없음. 재부팅 뒤 이부장이 세션을 다시 연다",
-   "due": "2026-10-31",
-   "cmd": "python tools/startup.py",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "publish": [],
+ "actions": [],
  "actionsFuture": []
 }
