@@ -2,22 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-10T17:49:36",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "xlink-c215",
-   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-10T17:49:37",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "xlink-e303",
-   "detail": "실측 확인(2026-09-10 이부장 판정): 라이브 curl — 교차링크 블록 확인",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-10T17:49:38",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15983,22 @@
    "action": "pubqueue.go",
    "target": "H1-36",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-31T17:34:28",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h136-4ch-report-1031",
+   "detail": "17:33 4채널 완결(네이버·인스타·쓰레드 200, 블로그 200)·색인 요청 — 사장님 보고",
+   "via": "cli"
+  },
+  {
+   "at": "2026-10-31T17:34:29",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "reboot-ready-signal-1031",
+   "detail": "17:33 조건 충족(H1-36 끝·run 없음·세션 대기) — 카톡으로 재부팅 가능 알림",
    "via": "cli"
   }
  ]
