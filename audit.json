@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-11T09:09:44",
-   "actor": "세션(CLI)",
-   "action": "topicprop.drop",
-   "target": "B5-03",
-   "detail": "이미 발행됨 B4-08(2026-08월)이 완전히 같은 주제(종부세 합산배제·부부 공동명의 1주택 특례, 신고기간 9/16~30)를 이미 다룸 — dupcheck 0.50이 실제보다 낮게 나온 오탐, 라이브 대조로 확인",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-11T09:18:38",
    "actor": "V0검사관",
    "action": "v0check.fail",
@@ -15999,6 +15991,14 @@
    "action": "pubqueue.go",
    "target": "B5-11",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-01T12:45:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "kw-susandaejeon-1105",
+   "detail": "정정: 수산대전은 H1-34(수산대전 코리아수산페스타 11월 29일까지)로 기발행. 검색을 '수산물대전'으로 해서 놓침 — 후보 DB 검색은 '수산'·'수산대전' 둘 다",
    "via": "cli"
   }
  ]
