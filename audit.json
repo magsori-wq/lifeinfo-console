@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-11T08:15:48",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "e104-db-title-drift-0909",
-   "detail": "DB 제목을 라이브 정정본에 맞추고 배포본까지 반영 → 피드 드리프트 검사 수동 실행 결과 success(run 34541297666). 직전 09-09 회차는 failure 였다",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-11T09:09:44",
    "actor": "세션(CLI)",
    "action": "topicprop.drop",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "deploy-thumb-443",
    "detail": "deploy.bat 09:25 · github.io thumbs/443 200 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-01T12:27:39",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "B5-11",
+   "detail": "",
    "via": "cli"
   }
  ]
