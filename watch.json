@@ -26818,6 +26818,17 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "dupcheck-miss-c216-1101",
+   "added": "2026-11-01",
+   "what": "dupcheck 오탐: '75세 코로나 예방접종' 🟢신규 판정 — 기존 C2-16(코로나19 예방접종 필수 전환·70세 이상) 못 잡음(낱말 '코로나19' vs '코로나'). 동의어 정규화 검토",
+   "due": "2026-11-03",
+   "cmd": "python -m studio.dupcheck \"75세 코로나 예방접종\"",
+   "owner": "claude",
+   "state": "todo",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
