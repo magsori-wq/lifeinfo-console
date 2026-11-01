@@ -6666,17 +6666,21 @@
    "confirm_note": "run 41269721150 success · 라이브 https://lifeinfo8975.blogspot.com/2026/11/11-30-20.html 200 · 제목 일치(이부장 curl)"
   }
  },
- "updated": "2026-11-01 14:56:08",
+ "updated": "2026-11-01 15:10:58",
  "current": {
-  "batch": "aroma",
+  "batch": "followup",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "이부장 조언 반영: Aside_챗_지시서.md 예방 규칙 추가(읽기 전용·전후 비교·버튼 목록·주입 방어·도메인 허용·동시사용 CP 줄·402 신호·재부팅). 권한 모드·잔액은 사장님 UI 확인 카드 aroma-chat-settings-1101",
-  "since": "14:53",
-  "since_at": "2026-10-29 14:53:41"
+  "what": "👤 사장님 직접 지시(11-01 15:10): 「어사이드 크레딧 충전 되었으니 이과장도 이전처럼 어사이드챗을 통해 발행 및 게시하도록해」 → [이부장 → 이과장] 네이버·인스타·쓰레드 게시·검색설명·색인요청은 전부 Aside 채팅 경로(docs/aside_drafts 초안 → asidequeue add). naverwrite --publish·aside repl 직접 게시 금지(B5-11 이중게시 위험 사례). data/aside_mode.json = aside",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "15:10:58",
+   "text": "▶   — 1/7단계 · 👤 사장님 직접 지시(11-01 15:10): 「어사이드 크레딧 충전 되었으니 이과장도 이전처럼 어사이드챗을 통해 발행 및 게시하도록해」 → [이부장 → 이과장] 네이버·인스타·쓰레드 게시·검색설명·색인요청은 전부 Aside 채팅 경로(docs/aside_drafts 초안 → asidequeue add). naverwrite --publish·aside repl 직접 게시 금지(B5-11 이중게시 위험 사례). data/aside_mode.json = aside"
+  },
   {
    "t": "14:56:08",
    "text": "▶   — 1/7단계 · 이부장 조언 반영: Aside_챗_지시서.md 예방 규칙 추가(읽기 전용·전후 비교·버튼 목록·주입 방어·도메인 허용·동시사용 CP 줄·402 신호·재부팅). 권한 모드·잔액은 사장님 UI 확인 카드 aroma-chat-settings-1101"
@@ -6832,10 +6836,6 @@
   {
    "t": "12:49:46",
    "text": "▶   — 1/7단계 · [이부장 → 이과장] B5-11 검색설명 #542 라이브 확인 끝(seodesc scan 이상 0·list ok). 12:46 막힘 답: 직접 게시 모드 OFF(direct_mode False) — aside exec 쓰지 말고 네이버·인스타·쓰레드 게시는 지시 초안을 docs/aside_drafts 에 써서 asidequeue add 로 넣는다(네이버는 naverrich --dump 글자 보존 ✅ 먼저)."
-  },
-  {
-   "t": "12:47:58",
-   "text": "▶   — 1/7단계 · [Aside][done] [B5-11] #542 라이브 meta description 일치 확인 · 문구 91자 — 0자로 비운 뒤 키 입력, 업데이트 1회 → 캐시 무시 라이브 meta·og:description 모두 일치. 본문·라벨·발행 상태 안 건드림 · 총 탭 6개 · https://lifeinfo8975.blogspot.com/2026/11/11-30-20.html"
   }
  ],
  "currents": {
@@ -8086,7 +8086,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[체인] #545 B5-11 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfL09gIAf2T · ✅ 쓰레드 이미지 ↔ thread_B5-11_tax_audit_exclusion.png  MA) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
+   "what": "👤 사장님 직접 지시(11-01 15:10): 「어사이드 크레딧 충전 되었으니 이과장도 이전처럼 어사이드챗을 통해 발행 및 게시하도록해」 → [이부장 → 이과장] 네이버·인스타·쓰레드 게시·검색설명·색인요청은 전부 Aside 채팅 경로(docs/aside_drafts 초안 → asidequeue add). naverwrite --publish·aside repl 직접 게시 금지(B5-11 이중게시 위험 사례). data/aside_mode.json = aside",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -8862,94 +8862,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-18 14:57:47",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "C3-08 발행 완료(라이브 200·og:title 일치)·네이버 게시 224445506075 후 OSMU 재료 push 8514466b6 — Aside 지시 초안 준비: docs/aside_drafts/C3-08_검색설명.txt · C3-08_인스타게시.txt · C3-08_쓰레드게시.txt (등록 부탁). 이번 턴 실수: git pull --rebase --autostash 를 잘못 실행해 rebase 중간 상태가 됐으나 abort→syncorigin→수동 merge 로 복구(07ab2ed7d), 손실 없음. B2-20 발행은 setgate(C3-08 인스타 완결) 대기"
-  },
-  {
-   "ts": "2026-10-18 14:59:10",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-10-18 14:58 — 지시 #198 시작 · C3-08 검색설명"
-  },
-  {
-   "ts": "2026-10-18 15:00:14",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [C3-08] #198 라이브 meta description 일치 확인 · 문구 118자 · 총 탭 11개(작업 탭 2개 닫음, 남은 탭은 사장님 탭) · https://lifeinfo8975.blogspot.com/2026/10/7-119.html"
-  },
-  {
-   "ts": "2026-10-18 15:00:34",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-10-18 15:00 — 지시 #199 시작 · C3-08 인스타"
-  },
-  {
-   "ts": "2026-10-18 15:04:45",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [C3-08] #199 인스타 게시 — 카드 3장(표지·초진 예외·처방)·캡션 814자 원문 일치(블로그·네이버 링크·사진 출처 포함) · 프로필 맨 위 1개만, 게시물 391→392 · 총 탭 11개 · https://www.instagram.com/magsori8975/p/Den_tjJkX93/"
-  },
-  {
-   "ts": "2026-10-18 15:05:00",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #199 C3-08 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/Den_tjJkX93/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ telemed_01_cover.png  MAD 0.1 · dHash 0 / ✅ 인스타 카드 2 ↔ telemed_02_exception.png  MAD 0.1 · dHa / ✅ 인스타 카드 3 ↔ telemed_03_drug.png  MAD 0.0 · dHash 0) — [이과장] 기록: python -m studio.pipeline insta-link --code C3-08 --url https://www.instagram.com/magsori8975/p/Den_tjJkX93/ → 4채널 완결 확인"
-  },
-  {
-   "ts": "2026-10-18 15:05:28",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-10-18 15:05 — 지시 #200 시작 · C3-08 쓰레드"
-  },
-  {
-   "ts": "2026-10-18 15:07:01",
-   "bid": "pub1018c308",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/Den_tjJkX93/ (naver-link 가 자동 보고) · 남음: 쓰레드"
-  },
-  {
-   "ts": "2026-10-18 15:07:16",
-   "bid": "pub1018c308",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/Den_tjJkX93/ (naver-link 가 자동 보고) · 남음: 쓰레드"
-  },
-  {
-   "ts": "2026-10-18 15:09:15",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [C3-08] #200 쓰레드 게시 — 이미지 1장 확인·본문 367자 원문 일치·링크카드 2개 삭제·URL 200·중복 없음 · 총 탭 11개 · https://www.threads.com/@magsori8975/post/DeoATNjgfUP"
-  },
-  {
-   "ts": "2026-10-18 15:09:24",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #200 C3-08 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeoATNjgfUP · ✅ 쓰레드 이미지 ↔ thread_C3-08_telemed.png  MAD 0.0 · dHas) — [이과장] 기록: python -m studio.pipeline threads-link --code C3-08 --url https://www.threads.com/@magsori8975/post/DeoATNjgfUP → 4채널 완결 확인"
-  },
   {
    "ts": "2026-10-18 15:16:05",
    "bid": "followup",
@@ -22741,6 +22653,14 @@
    "title": "",
    "owner": "",
    "what": "이부장 조언 반영: Aside_챗_지시서.md 예방 규칙 추가(읽기 전용·전후 비교·버튼 목록·주입 방어·도메인 허용·동시사용 CP 줄·402 신호·재부팅). 권한 모드·잔액은 사장님 UI 확인 카드 aroma-chat-settings-1101"
+  },
+  {
+   "ts": "2026-11-01 15:10:58",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "👤 사장님 직접 지시(11-01 15:10): 「어사이드 크레딧 충전 되었으니 이과장도 이전처럼 어사이드챗을 통해 발행 및 게시하도록해」 → [이부장 → 이과장] 네이버·인스타·쓰레드 게시·검색설명·색인요청은 전부 Aside 채팅 경로(docs/aside_drafts 초안 → asidequeue add). naverwrite --publish·aside repl 직접 게시 금지(B5-11 이중게시 위험 사례). data/aside_mode.json = aside"
   }
  ]
 }
