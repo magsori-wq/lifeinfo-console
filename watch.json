@@ -26650,6 +26650,27 @@
    "state": "wait",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-b511",
+   "added": "2026-11-01",
+   "what": "🔗 B5-11 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B5-11",
+   "due": "2026-11-01",
+   "cmd": "python studio/blogger.py crosslink --code B5-11",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "aside543-cancel-1101",
+   "added": "2026-11-01",
+   "what": "B5-11 네이버 중복게시 방지 — Aside #543 취소 steer 결과 확인(새 네이버 글이 생겼으면 사장님께 삭제 요청)",
+   "due": "2026-11-01",
+   "cmd": "curl -s 'https://rss.blog.naver.com/magsori8975.xml' | grep -c 정기세무조사",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
