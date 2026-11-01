@@ -26818,8 +26818,10 @@
    "due": "2026-11-05",
    "cmd": "curl.exe -s -m 30 -A Mozilla/5.0 https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=종합부동산세법",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-01",
+   "result": "정정·재등록: 15:55 기재 'DRF 응답 없음(HTTP 000)'은 내 파싱 오류. 17:40 재측정=HTTP 200이나 '사용자 정보 검증 실패(OC=test, 서버 IP 등록 필요)'. 즉 DRF 는 응답했고 인증에서 막힘"
   },
   {
    "id": "dupcheck-miss-c216-1101",
