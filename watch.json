@@ -26647,9 +26647,11 @@
    "due": "2026-11-01",
    "cmd": "python -m studio.osmu_manifest table --code B5-11",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-01",
+   "result": "13:03 4채널 라이브 200(이부장 curl) · 카톡 보고. 쓰레드 threads-link 기록 남음"
   },
   {
    "id": "xlink-b511",
@@ -26684,6 +26686,17 @@
    "kind": "approve",
    "state": "todo",
    "by": "이대리"
+  },
+  {
+   "id": "b511-threads-link-1101",
+   "added": "2026-11-01",
+   "what": "B5-11 쓰레드 URL 기록(threads-link) 확인",
+   "due": "2026-11-01",
+   "cmd": "python -m studio.osmu_manifest table --code B5-11",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
