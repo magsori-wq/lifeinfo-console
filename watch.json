@@ -26734,6 +26734,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "cp-null-guard-check-1101",
+   "added": "2026-11-01",
+   "what": "approval.html null 가드 뒤 cp_view 에 252류 튐이 다시 나오나 확인(남은 수정안: _save_db 원자쓰기·cpview 급변거부)",
+   "due": "2026-11-02",
+   "cmd": "python -c \"import json;print(json.load(open('webapp/cp_view.json',encoding='utf-8')))\"",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }

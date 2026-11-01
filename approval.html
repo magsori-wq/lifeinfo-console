@@ -674,6 +674,14 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       .catch(function(){ toast('🔁 재시작 신호를 보냈습니다 — 5초 뒤 새로고침합니다'); })
       .then(function(){ setTimeout(function(){ location.reload(); }, 5000); }); };
  return DATA.then(function(a){
+  // 🔴 11-01 「진행 중 문서 252건·이부장 13건」 튐 — 큰 json(lifeinfo_db·v0check·topicprop)을 읽다 null 이 되면
+  //    빈 폴백으로 그려 이미 발행된 글이 되살아났다(docs/조사_CP숫자튐_20261101.md). 핵심 입력이 하나라도 null 이면
+  //    이전 화면을 그대로 두고(cp_view 도 안 보낸다) 다음 재조회를 기다린다. 첫 화면이면 1.5초 뒤 다시 읽는다.
+  if(a[0]==null||a[1]==null||a[2]==null||a[3]==null||a[4]==null){
+    REFRESHING=false;
+    if(!document.getElementById('out').dataset.sig) setTimeout(refresh,1500);
+    return;
+  }
   var B=a[0]||{},Q=arr(a[1]),T=arr(a[2]),V=arr(a[3]),DB=a[4]||{posts:[]},P=a[5]||{},SSJ=a[6]||{};
   // 🔴 2026-10-13 사장님 "전자결재탭이 상호 유기적으로 반영되도록 — 따로 움직여서는 안 된다".
   //    결재 카드에 이 결재와 같은 글 코드의 **지시서 상태**를 붙이고, 누르면 작업지시 탭의 그 카드로 간다.
