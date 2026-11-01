@@ -26808,6 +26808,16 @@
    "state": "wait",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "kw-jongbuse-deferral-1105",
+   "added": "2026-11-01",
+   "what": "종부세 납부유예 글감 — naverkw ✅(종부세 납부유예·납부유예 방법), B4-06 에 납부유예 없음(납부기간·분납만), 12/1~15 납부 전 시즌. 11-01 law.go.kr DRF curl 응답 없음(HTTP 000)이라 종합부동산세법 납부유예 요건 1차 원문 못 얻음",
+   "due": "2026-11-05",
+   "cmd": "curl.exe -s -m 30 -A Mozilla/5.0 https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=종합부동산세법",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
