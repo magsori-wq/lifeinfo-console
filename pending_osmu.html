@@ -955,6 +955,8 @@ function _repoll(){
       //    실제로 A2-16 이 01:09 에 보류됐는데 01:20 화면에는 "승인됨" 으로 남아 있었고,
       //    관제탑은 "파일은 맞다" 고 우겼다. **사장님이 보시는 화면이 진실이다.**
       try{ window.__TOPICPROP__ = await j('topicprop.json'); }catch(e){}
+      // 🤖 에이전트 실행 현황도 매번 다시 읽는다(11-01 사장님 「에이전트실행 자동업데이트 되고있나?」 — 첫 로드 때만 읽어 열어 둔 화면은 옛 목록이었다)
+      try{ window.__AGENTS__ = await j('agents.json'); }catch(e){}
       // 🎨 네이버 서식 미적용 — studio/naverfmt.py 가 **직접 돌릴 때만** 굽는다.
       //    라이브 299편 curl 이라 bake 에 넣지 않았다 — 화면은 읽기만 한다.
       try{ window.__NAVERFMT__ = await j('naverfmt.json'); }catch(e){}
