@@ -26724,6 +26724,16 @@
    "by": "이부장",
    "done_at": "2026-11-01",
    "result": "사장님 13:23 로그인 완료 — 이대리에게 게시 재개 전달"
+  },
+  {
+   "id": "cp-view-null-fallback",
+   "added": "2026-11-01",
+   "what": "approval.html j() null 삼킴 → DB/topicprop 로드 실패 시 진행중 문서 252/261로 튐(13:23~13:27). 조사 docs/조사_CP숫자튐_20261101.md",
+   "due": "2026-11-03",
+   "cmd": "python -m studio.approvalcount; type webapp\\cp_view.json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
