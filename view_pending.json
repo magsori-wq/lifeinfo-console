@@ -1,9 +1,49 @@
 {
- "computed_at": "2026-11-01 16:53:55",
+ "computed_at": "2026-11-01 16:58:25",
  "source_head": "a12810fd23e0",
- "ids": [],
+ "ids": [
+  "G1-18",
+  "deploy-thumb-444"
+ ],
  "posts": [],
- "publish": [],
- "actions": [],
+ "publish": [
+  {
+   "code": "G1-18",
+   "title": "김해사랑상품권 11월 2일 11시 판매 — 10% 할인, 30만원 사면 3만원·코그페 캐시백 겹치면",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 김해사랑상품권11월_글_HTML.txt",
+     "path": "김해사랑상품권11월_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/444_gimhae_love_voucher.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/444_gimhae_love_voucher.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
+ "actions": [
+  {
+   "id": "deploy-thumb-444",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(444_gimhae_love_voucher.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-01",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
