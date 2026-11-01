@@ -26771,6 +26771,17 @@
    "by": "이부장",
    "done_at": "2026-11-01",
    "result": "중복 — 이대리가 올린 aroma-repl-login-1101 한 건으로 통합"
+  },
+  {
+   "id": "aroma-chat-settings-1101",
+   "added": "2026-11-01",
+   "what": "【권고】Aside 설정에서 aroma 챗의 권한 모드가 「Guard」(ask)인지, 크레딧 잔액이 충분한지 확인 — full-access 이면 Guard 로 바꿈 【근거】이대리는 CLI 로 권한 모드·잔액을 볼 수 없음(이부장도 모름). 챗은 읽기 전용 지시만 쓰는 조건으로 11-01 승인 【위험】full-access 면 프롬프트 주입 시 피해 범위가 커짐, 크레딧 소진 시 챗 지시 불가(게시는 repl 이라 영향 없음)",
+   "due": "2026-11-02",
+   "cmd": "echo Aside 설정 확인 후 결과를 이대리에게",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
