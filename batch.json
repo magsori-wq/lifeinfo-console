@@ -6666,17 +6666,21 @@
    "confirm_note": "run 41269721150 success · 라이브 https://lifeinfo8975.blogspot.com/2026/11/11-30-20.html 200 · 제목 일치(이부장 curl)"
   }
  },
- "updated": "2026-11-01 14:20:57",
+ "updated": "2026-11-01 14:24:06",
  "current": {
   "batch": "aroma",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "⏸ 막힘 지속 — 14:20 결재 aroma-repl-login-1101 완료 뒤에도 repl(39c7ac1a) MyBlog.naver 가 로그인 폼으로 감(로그아웃). 사장님 로그인이 repl 이 붙는 프로필 쿠키에 반영 안 됨. SP-004 미게시(글 무변경, 5차전 진행 중). 이부장: 사장님이 로그인한 창의 정체 확인 필요",
+  "what": "repl(39c7ac1a) 쿠키 이름 점검(값 미조회): document.cookie 에 NID_AUT·NID_SES 없음(HttpOnly 라 원래 안 보일 수 있어 단독 근거 아님). 실제 증거는 naver.com·MyBlog 모두 로그아웃 화면(14:22). 세션 쿠키만 있고 repl 컨텍스트에 안 보이는 가설과 일치 → 「로그인 상태 유지」 체크 재로그인 요청 권고",
   "since": "14:53",
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "14:24:06",
+   "text": "▶   — 1/7단계 · repl(39c7ac1a) 쿠키 이름 점검(값 미조회): document.cookie 에 NID_AUT·NID_SES 없음(HttpOnly 라 원래 안 보일 수 있어 단독 근거 아님). 실제 증거는 naver.com·MyBlog 모두 로그아웃 화면(14:22). 세션 쿠키만 있고 repl 컨텍스트에 안 보이는 가설과 일치 → 「로그인 상태 유지」 체크 재로그인 요청 권고"
+  },
   {
    "t": "14:20:57",
    "text": "▶   — 1/7단계 · ⏸ 막힘 지속 — 14:20 결재 aroma-repl-login-1101 완료 뒤에도 repl(39c7ac1a) MyBlog.naver 가 로그인 폼으로 감(로그아웃). 사장님 로그인이 repl 이 붙는 프로필 쿠키에 반영 안 됨. SP-004 미게시(글 무변경, 5차전 진행 중). 이부장: 사장님이 로그인한 창의 정체 확인 필요"
@@ -6832,10 +6836,6 @@
   {
    "t": "12:45:39",
    "text": "▶   — 1/7단계 · [Aside][doing] #542 수신 — B5-11 검색설명 시작"
-  },
-  {
-   "t": "12:44:34",
-   "text": "📄 aside 작업 지시 등록(1939자, 2026-11-01 12:44)"
   }
  ],
  "currents": {
@@ -8545,7 +8545,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⏸ 막힘 지속 — 14:20 결재 aroma-repl-login-1101 완료 뒤에도 repl(39c7ac1a) MyBlog.naver 가 로그인 폼으로 감(로그아웃). 사장님 로그인이 repl 이 붙는 프로필 쿠키에 반영 안 됨. SP-004 미게시(글 무변경, 5차전 진행 중). 이부장: 사장님이 로그인한 창의 정체 확인 필요",
+   "what": "repl(39c7ac1a) 쿠키 이름 점검(값 미조회): document.cookie 에 NID_AUT·NID_SES 없음(HttpOnly 라 원래 안 보일 수 있어 단독 근거 아님). 실제 증거는 naver.com·MyBlog 모두 로그아웃 화면(14:22). 세션 쿠키만 있고 repl 컨텍스트에 안 보이는 가설과 일치 → 「로그인 상태 유지」 체크 재로그인 요청 권고",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -22821,6 +22821,14 @@
    "title": "",
    "owner": "",
    "what": "⏸ 막힘 지속 — 14:20 결재 aroma-repl-login-1101 완료 뒤에도 repl(39c7ac1a) MyBlog.naver 가 로그인 폼으로 감(로그아웃). 사장님 로그인이 repl 이 붙는 프로필 쿠키에 반영 안 됨. SP-004 미게시(글 무변경, 5차전 진행 중). 이부장: 사장님이 로그인한 창의 정체 확인 필요"
+  },
+  {
+   "ts": "2026-11-01 14:24:06",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "repl(39c7ac1a) 쿠키 이름 점검(값 미조회): document.cookie 에 NID_AUT·NID_SES 없음(HttpOnly 라 원래 안 보일 수 있어 단독 근거 아님). 실제 증거는 naver.com·MyBlog 모두 로그아웃 화면(14:22). 세션 쿠키만 있고 repl 컨텍스트에 안 보이는 가설과 일치 → 「로그인 상태 유지」 체크 재로그인 요청 권고"
   }
  ]
 }
