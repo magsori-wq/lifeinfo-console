@@ -26975,6 +26975,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "gimhae-cashback-verify-1102",
+   "added": "2026-11-01",
+   "what": "야간검증 미대조: 김해사랑상품권 글 코그페 캐시백 5%·1억600만원 — gimhae.go.kr 1차 출처 대조(못 찾으면 해당 문구 정정 검토)",
+   "due": "2026-11-02",
+   "cmd": "grep -n '1억600만\\|5%' posts/*김해* *김해*_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
