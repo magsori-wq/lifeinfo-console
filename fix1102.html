@@ -10,8 +10,8 @@ ul{list-style:none;padding:0}li{padding:7px 0;border-bottom:1px solid var(--bar)
 .n{font-size:12.5px;color:var(--mut);margin:3px 0 0 26px;word-break:break-all}a{color:var(--fill)}
 </style></head><body>
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:22%"></i></div>
-<div class="m"><b>22%</b> · 끝 8 / 전체 37 · 갱신 2026-11-02 20:55</div>
+<div class="bar"><i style="width:21%"></i></div>
+<div class="m"><b>21%</b> · 끝 8 / 전체 38 · 갱신 2026-11-02 21:09</div>
 <p class="m">보고서: <a href="audit_1102.html">audit_1102.html</a> · ✅ 항목 아래 줄 = 반영 근거(커밋·실측)</p>
 <ul><li class="ok"><span class="b">✅</span> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기<div class="n">633d5ee6b 사본 110스레드 덮어쓰기 유실 0 · 2026-11-02 20:47</div></li>
 <li class="ok"><span class="b">✅</span> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로<div class="n">633d5ee6b today.py board_lock+atomicio · 2026-11-02 20:47</div></li>
@@ -49,4 +49,5 @@ ul{list-style:none;padding:0}li{padding:7px 0;border-bottom:1px solid var(--bar)
 <li class="todo"><span class="b">⬜</span> <b>F33</b> [설정] 발행 트리거 상시 허용·금지규칙 deny 없음 — 사장님 몫</li>
 <li class="todo"><span class="b">⬜</span> <b>F34</b> [결정] ⏸ 지시 기다림을 막힘 상자에 — 사장님 결정</li>
 <li class="todo"><span class="b">⬜</span> <b>F36</b> [1단계 위험] 화면이 기록 파일을 쉼 없이 읽으면 새 코드의 쓰기가 거부될 수 있음(사본 30회 중 28~30 실패) — 실가동 확인<div class="n">실가동 18:31~20:37 쓰기 8줄 정상·거부 흔적 0(G_반영점검) — 사본 극한 조건에서만 재현, 감시 계속 · 2026-11-02 20:51</div></li>
-<li class="todo"><span class="b">⬜</span> <b>F37</b> [Aside] 대기열에 넣어도 Aside 가 쉬면 안 넘어감 — next 잠금(aside_next.lock 240초)에 걸려 수 분 정체(오늘 12:29·20:49 두 번)</li></ul></body></html>
+<li class="todo"><span class="b">⬜</span> <b>F37</b> [Aside] 대기열에 넣어도 Aside 가 쉬면 안 넘어감 — next 잠금(aside_next.lock 240초)에 걸려 수 분 정체(오늘 12:29·20:49 두 번)</li>
+<li class="todo"><span class="b">⬜</span> <b>F38</b> [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄이 없어 Aside 가 멈춤(오늘 #555) — 이부장이 매번 손으로 넣는 중 → asidequeue add 때 이부장 대조 단계를 코드로</li></ul></body></html>
