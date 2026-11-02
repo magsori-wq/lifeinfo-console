@@ -27286,10 +27286,10 @@
    "added": "2026-11-02",
    "what": "CP1단계 보완: naver._report_batch rc3 거짓[OK] 제거(stderr 명령+False) · 도장 실패 시 batch.json 결재커밋 제외+watch stamp-fail-<배치>(cmd=approve_server restamp) · _report timeout 500. 사본테스트 17/17, validate·enginemap·pure139 OK. 남음: 커밋(관제탑)·asidechain/asideprobe/topicprop/aside_confirm.sh rc무시 🟡 · _already_done 자동재도장 없음. 보고 docs/audit1102/F_1단계_보완.md",
    "due": "2026-11-03",
-   "cmd": "PYTHONIOENCODING=utf-8 python C:/Users/magso/AppData/Local/Temp/claude/C--lifeinfo/544f52c8-7afe-4f73-972e-06dc0bb4ccb8/scratchpad/cp1b/test_cp1b.py",
+   "cmd": "python -c \"from studio import approve_server as a, naver as n; import inspect; assert 'exclude' in inspect.signature(a._sync_push).parameters and callable(a.restamp) and callable(n._board_refused); print('OK')\"",
    "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "에이전트"
   }
  ]
 }
