@@ -27185,6 +27185,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "tplfix-b425-read-1102",
+   "added": "2026-11-02",
+   "what": "B4-25 템플릿 재구성 지시서(tplfix1102b425) 이과장 수신·수정본 보고 확인 → V0 재검사·결재함",
+   "due": "2026-11-02",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('tplfix1102b425'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
