@@ -27120,6 +27120,16 @@
    "by": "이부장",
    "done_at": "2026-11-02",
    "result": "V0 통과로 해소 — 검사자 v0 재검사 · 재검사(반려 줄만): 5절 146-147행 총액동일 일반화 정정 확인 — 대상 자녀 1명뿐이라 같았다·여럿이면 나누면 감액·3명 2+1=55+25=80만 계산 표시·참고박스에 자체계산 명시. 75행 개정이유 인용 정"
+  },
+  {
+   "id": "b425-pub-start-1102",
+   "added": "2026-11-02",
+   "what": "B4-25 발행 지시서(pub1102b425) 이과장 수신·gh run 시작 확인",
+   "due": "2026-11-02",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('pub1102b425'))\" && gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
