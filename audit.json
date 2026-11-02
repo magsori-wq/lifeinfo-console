@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-11T14:30:59",
-   "actor": "이부장",
-   "action": "v0check.pass",
-   "target": "C4-08",
-   "detail": "함정 3건(가을선선/차량방치/냉장고=안전)+두 공식문서 간 74℃ vs 75℃ 수치충돌 명시 — 전부 mfds·foodsafetykorea 1차출처 URL·기준일 포함, 미확인 품목별 보관일수는 정직히 제외",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-11T14:33:52",
    "actor": "V0검사관(이부장)",
    "action": "v0check.pass",
@@ -15999,6 +15991,14 @@
    "action": "pubqueue.go",
    "target": "B4-25",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-02T11:57:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "b425-pub-start-1102",
+   "detail": "11:55 run 41380278205 checkout 단계에서 취소(계정 magsori-wq) → 11:57 run 41380431219 재실행 진행중",
    "via": "cli"
   }
  ]
