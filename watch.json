@@ -27195,6 +27195,19 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "b425-tplfix-approve-1102",
+   "added": "2026-11-02",
+   "what": "B4-25 연말정산 자녀세액공제 — B 템플릿 수정본으로 라이브 본문 교체 승인(사장님 13:35 지정). 【권고】승인 — 수치·출처 변화 없이 2018년생 함정 절이 3절로 앞당겨져 독자가 먼저 본다 · 도입에 「확인 못 한 것」 한 줄 · 절번호·목차 정합 【근거】V0 재검사 pass(13:41, 원본 diff 수치·출처·조문 추가 0) · layout ✅ · heading ✅ · bodydup 0.024 · 원고 webapp/rvfix_B4-25.html 【위험】애드센스 심사 중 라이브 수정 1회(내용 동일·구조만). 네이버·인스타·쓰레드는 그대로",
+   "due": "2026-11-02",
+   "cmd": "승인 시 이과장: python studio/blogger.py update-post --code B4-25 (dry-run→실행→getByPath 재확인) · 원고 docs/revise/B4-25_템플릿수정본.html",
+   "owner": "user",
+   "state": "todo",
+   "verify": "python -m studio.seodesc scan --only B4-25",
+   "kind": "approve",
+   "by": "이부장",
+   "preview": "https://magsori-wq.github.io/lifeinfo-console/rvfix_B4-25.html"
   }
  ]
 }
