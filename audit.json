@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-11T14:33:52",
-   "actor": "V0검사관(이부장)",
-   "action": "v0check.pass",
-   "target": "E4-03",
-   "detail": "판단형비교(과태료 제76조1항7~9호 vs 형사처벌 제74조1항4호를 제50조1~6항 세부위반과 정확매칭, law.go.kr MST283843 조문시행일 2026-09-11 원문대조 검증완료)+함정2건(#8+수신번호 전달법=공식미확인 명시반박, KISA/방송미디어통신위 역할분리는 제65",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-11T14:34:00",
    "actor": "이부장",
    "action": "v0check.fail",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "b425-pub-start-1102",
    "detail": "11:55 run 41380278205 checkout 단계에서 취소(계정 magsori-wq) → 11:57 run 41380431219 재실행 진행중",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-02T12:13:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aroma-routine10-fix-1102",
+   "detail": "12:16 이부장 답 전달(SendMessage 이대리-aroma): Q1 허용·한계 4 / Q2 이대리 Aside 확인 방식 / Q3 불허 / 3·4 반영. 이행 추적=idaerireq",
    "via": "cli"
   }
  ]
