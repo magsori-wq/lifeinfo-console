@@ -27169,12 +27169,22 @@
   {
    "id": "xlink-b425",
    "added": "2026-11-02",
-   "what": "🔗 B4-25 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-25",
+   "what": "🔗 B4-25 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-25",
    "due": "2026-11-02",
    "cmd": "python studio/blogger.py crosslink --code B4-25",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "wd-wake-skip-check-1103",
+   "added": "2026-11-02",
+   "what": "WD: 11-03 12시 이후 ledger1030 WAKE_SESSION 이 안 뜨는지(cadaily 는 뜸)",
+   "due": "2026-11-03",
+   "cmd": "python -c \"from studio.towertick import standing_settled as f;print(f('ledger1030'),f('cadaily'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
