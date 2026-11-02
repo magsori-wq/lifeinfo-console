@@ -6813,17 +6813,29 @@
    "order_at": "2026-11-02 11:50"
   }
  },
- "updated": "2026-11-02 12:36:18",
+ "updated": "2026-11-02 12:38:17",
  "current": {
-  "batch": "ledger1030",
+  "batch": "followup",
   "code": "",
   "title": "",
-  "step": 7,
-  "what": "🙋 이부장 요청: 【문제】studio/towertick.py:790-804(n%9==4 규칙)가 상시 배치 cadaily·ledger1030 을 'last_report 가 오늘 날짜로 시작하지 않음' 하나만 보고 매일 12시 이후 WAKE_SESSION 을 낸다. 지시서가 갱신되지 않고(ledger1030 은 10-30 13:57 그대로·3일째) 항목이 전부 done+confirmed_at 인데도 매일 깨워서 '없음' 보고만 반복(10-31·11-01·11-02 실측 3회) = 토큰 낭비. 같은 파일 278행은 '상시' 제목을 정체 판정에서 빼는데 790행은 상시만 잡아 서로 엇갈린다. 【수정 요청】①설계도(docs/엔진설계도.md)에 이 깨움 마디를 먼저 적고 ②790행 규칙에 조건 추가: 배치 items 가 전부 done 이고 confirmed_at 이 있고 order_at 이후 새 지시가 없으면 WAKE_SESSION 을 내지 않는다(새 지시서 발급=order_at 변경 시 자동 재개) ③cadaily 도 같은 조건(단 cadaily 는 매일 데이터 갱신 일감이라 items 가 done 으로 닫히는지 먼저 확인) ④고친 뒤 enginemap 대조·테스트. 【제 쪽 한계】towertick 은 이부장 관할이라 4. 가 직접 수정하지 않음. 【대안】수정이 어렵다면 이부장이 상시 지시서를 매일 재발급(수작업 증가)",
-  "since": "13:35",
-  "since_at": "2026-10-30 13:35:11"
+  "step": 1,
+  "what": "[체인] #557 B4-25 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ child_tax_credit_01.png  MAD 0.0 · dHas / ✅ 인스타 카드 2 ↔ child_tax_credit_02.png  MAD 0.1 · dHas / ✅ 인스타 카드 3 ↔ child_tax_credit_03.png  MAD 0.1 · dHas) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "12:38:17",
+   "text": "▶   — 1/7단계 · [체인] #557 B4-25 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ child_tax_credit_01.png  MAD 0.0 · dHas / ✅ 인스타 카드 2 ↔ child_tax_credit_02.png  MAD 0.1 · dHas / ✅ 인스타 카드 3 ↔ child_tax_credit_03.png  MAD 0.1 · dHas) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인"
+  },
+  {
+   "t": "12:38:10",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ (naver-link 가 자동 보고) · 남음: 쓰레드"
+  },
+  {
+   "t": "12:36:44",
+   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-11-02 12:36 — 지시 #558 B4-25 쓰레드 시작"
+  },
   {
    "t": "12:36:18",
    "text": "▶   — 7/7단계 · 🙋 이부장 요청: 【문제】studio/towertick.py:790-804(n%9==4 규칙)가 상시 배치 cadaily·ledger1030 을 'last_report 가 오늘 날짜로 시작하지 않음' 하나만 보고 매일 12시 이후 WAKE_SESSION 을 낸다. 지시서가 갱신되지 않고(ledger1030 은 10-30 13:57 그대로·3일째) 항목이 전부 done+confirmed_at 인데도 매일 깨워서 '없음' 보고만 반복(10-31·11-01·11-02 실측 3회) = 토큰 낭비. 같은 파일 278행은 '상시' 제목을 정체 판정에서 빼는데 790행은 상시만 잡아 서로 엇갈린다. 【수정 요청】①설계도(docs/엔진설계도.md)에 이 깨움 마디를 먼저 적고 ②790행 규칙에 조건 추가: 배치 items 가 전부 done 이고 confirmed_at 이 있고 order_at 이후 새 지시가 없으면 WAKE_SESSION 을 내지 않는다(새 지시서 발급=order_at 변경 시 자동 재개) ③cadaily 도 같은 조건(단 cadaily 는 매일 데이터 갱신 일감이라 items 가 done 으로 닫히는지 먼저 확인) ④고친 뒤 enginemap 대조·테스트. 【제 쪽 한계】towertick 은 이부장 관할이라 4. 가 직접 수정하지 않음. 【대안】수정이 어렵다면 이부장이 상시 지시서를 매일 재발급(수작업 증가)"
@@ -6971,18 +6983,6 @@
   {
    "t": "09:45:10",
    "text": "✅ B4-25 완료 — 연말정산 자녀세액공제, 8세 미만은 0원 — 2018년생까지 "
-  },
-  {
-   "t": "09:42:52",
-   "text": "🔸 TW1102-1 진행중 — [관제탑] 재고 0편 → D1-19·F1-18 초안 진행 확인"
-  },
-  {
-   "t": "09:38:09",
-   "text": "▶   — 3/7단계 · ⚠️ 글감 전제 정정: 소득세법 59조의2 '8세 이상'→법률 제21548호(2026-04-21 시행)로 13세 이상, 부칙으로 2026귀속 '9세 이상'(2017.12.31 이전 출생). 지시서 제목의 '8세 미만 0원·2018년생까지 25만 원'은 틀림(2018년생은 해당 없음). 3명이상 추가분도 30만 아닌 40만. 제목을 '9세 이상·2018년생 0원' 기준으로 바꿔 초안 진행 — 근거 docs/source_B4-25_자녀세액공제_20261102.md"
-  },
-  {
-   "t": "09:29:59",
-   "text": "▶   — 2/7단계 · source 에이전트에 소득세법 59조의2 원문 확보 위임(DRF 사용자검증 실패 확인) · 그동안 naverkw·서식 확인"
   }
  ],
  "currents": {
@@ -7081,7 +7081,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][done] [B4-25] #557 인스타 게시 완료. 카드 3장 순서(표지→대상판정→출산입양)·원본비율·3/3 라이브 확인. 캡션 원문 일치(830문자, UI 837자), 블로그·네이버 링크·사진출처 확인. 게시물 464→465, 중복 없음. 작업 탭 닫음, 총 탭 3개. · https://www.instagram.com/magsori8975/p/DfOWerdCSx3/",
+   "what": "[Aside][doing] 수신 2026-11-02 12:36 — 지시 #558 B4-25 쓰레드 시작",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -8233,7 +8233,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[체인] #556 B4-25 naver 확인 ✅ (naverfind --gate B4-25 → ✅ 통과(범위 밖이거나 이미 기록됨)) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
+   "what": "[체인] #557 B4-25 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ child_tax_credit_01.png  MAD 0.0 · dHas / ✅ 인스타 카드 2 ↔ child_tax_credit_02.png  MAD 0.1 · dHas / ✅ 인스타 카드 3 ↔ child_tax_credit_03.png  MAD 0.1 · dHas) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -8998,7 +8998,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224462102767 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "11:55",
    "since_at": "2026-11-02 11:55:28"
   }
@@ -22549,6 +22549,30 @@
    "title": "",
    "owner": "4.",
    "what": "🙋 이부장 요청: 【문제】studio/towertick.py:790-804(n%9==4 규칙)가 상시 배치 cadaily·ledger1030 을 'last_report 가 오늘 날짜로 시작하지 않음' 하나만 보고 매일 12시 이후 WAKE_SESSION 을 낸다. 지시서가 갱신되지 않고(ledger1030 은 10-30 13:57 그대로·3일째) 항목이 전부 done+confirmed_at 인데도 매일 깨워서 '없음' 보고만 반복(10-31·11-01·11-02 실측 3회) = 토큰 낭비. 같은 파일 278행은 '상시' 제목을 정체 판정에서 빼는데 790행은 상시만 잡아 서로 엇갈린다. 【수정 요청】①설계도(docs/엔진설계도.md)에 이 깨움 마디를 먼저 적고 ②790행 규칙에 조건 추가: 배치 items 가 전부 done 이고 confirmed_at 이 있고 order_at 이후 새 지시가 없으면 WAKE_SESSION 을 내지 않는다(새 지시서 발급=order_at 변경 시 자동 재개) ③cadaily 도 같은 조건(단 cadaily 는 매일 데이터 갱신 일감이라 items 가 done 으로 닫히는지 먼저 확인) ④고친 뒤 enginemap 대조·테스트. 【제 쪽 한계】towertick 은 이부장 관할이라 4. 가 직접 수정하지 않음. 【대안】수정이 어렵다면 이부장이 상시 지시서를 매일 재발급(수작업 증가)"
+  },
+  {
+   "ts": "2026-11-02 12:36:44",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-02 12:36 — 지시 #558 B4-25 쓰레드 시작"
+  },
+  {
+   "ts": "2026-11-02 12:38:10",
+   "bid": "pub1102b425",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ (naver-link 가 자동 보고) · 남음: 쓰레드"
+  },
+  {
+   "ts": "2026-11-02 12:38:17",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #557 B4-25 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ child_tax_credit_01.png  MAD 0.0 · dHas / ✅ 인스타 카드 2 ↔ child_tax_credit_02.png  MAD 0.1 · dHas / ✅ 인스타 카드 3 ↔ child_tax_credit_03.png  MAD 0.1 · dHas) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인"
   }
  ]
 }
