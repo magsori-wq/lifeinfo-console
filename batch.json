@@ -1883,6 +1883,16 @@
      "base_code": "daily-email-briefing",
      "date": "2026-11-02",
      "at": "2026-11-02 08:12"
+    },
+    {
+     "code": "lifeinfo-publish-1102",
+     "title": "lifeinfo-publish (C)",
+     "state": "done",
+     "note": "빈손 — 큐 0건·go 도장 0건·재고 0(하한 3)·오늘 발행 0·pace 여유. 발행 트리거 대상 없음. 이어받은 것=없음/새로 본 것=재고 바닥(글감·초안은 이부장 몫)",
+     "auto_daily": true,
+     "base_code": "lifeinfo-publish",
+     "date": "2026-11-02",
+     "at": "2026-11-02 09:06"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -6743,7 +6753,7 @@
    "owner": "이부장"
   }
  },
- "updated": "2026-11-02 09:01:45",
+ "updated": "2026-11-02 09:06:45",
  "current": {
   "batch": "aroma",
   "code": "",
@@ -6754,6 +6764,10 @@
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "09:06:45",
+   "text": "✅ lifeinfo-publish-1102 완료 — lifeinfo-publish (C)"
+  },
   {
    "t": "09:01:45",
    "text": "🔸 TW1102-1 진행중 — [관제탑] 재고 0편 → D1-19·F1-18 초안 진행 확인"
@@ -6909,10 +6923,6 @@
   {
    "t": "17:58:06",
    "text": "▶   — 1/7단계 · aroma 챗 사용 끝 — 읽기 확인 3건 완료: MyBlog→/aroma-mag, 공개 SP-004(제목·UPDATE·이미지1·임베드1·링크카드1 이대리 사전 확인과 일치), KS1 게임센터 선발 미표시(라인업 발표 전). 게시·수정 없음"
-  },
-  {
-   "t": "17:56:40",
-   "text": "▶   — 1/7단계 · aroma 챗 사용중 — 39bTBdCsKnJXeQCw 에 읽기 확인 지시(사장님 지시). 끝날 때까지 repl 미사용"
   }
  ],
  "currents": {
