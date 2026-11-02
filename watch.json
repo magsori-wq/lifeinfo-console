@@ -27310,6 +27310,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "insta-caption-empty12-1103",
+   "added": "2026-11-02",
+   "what": "selfcheck 26: 인스타 캡션 라이브 빔 12편(B3-07·F3-10·G1-17·F1-18·A3-17·B5-10·A6-08·H1-34·H1-35·A6-09·H1-36·D3-11) — 라이브 재확인 → 진짜면 정정 지시(Aside)",
+   "due": "2026-11-03",
+   "cmd": "python studio/selfcheck.py | grep -A14 '26)'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-missing6-1103",
+   "added": "2026-11-02",
+   "what": "교차링크 블록 없는 라이브 6편(B1-11·B2-23·D1-17·E4-12·F1-17·G1-15, D 갈래 curl) — 재확인 → 이과장 crosslink 지시",
+   "due": "2026-11-03",
+   "cmd": "for u in B1-11 B2-23 D1-17 E4-12 F1-17 G1-15; do python -m studio.osmu_manifest table --code $u | head -3; done",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
