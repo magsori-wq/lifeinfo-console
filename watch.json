@@ -27224,6 +27224,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "suneung-product-hold-1112",
+   "added": "2026-11-02",
+   "what": "루틴9 수능 찹쌀떡(suneung1102, 토스 리뷰2,200) — 이부장 보류: 일반 찹쌀떡(수능 전용 아님)·D-17 이름. 11-12 D1-19 재확인 때 함께 판단(D1-19 네이버 글 붙이기 ② 또는 쓰레드 단독 ①, 수능 전용 상품 재검색 product 에이전트)",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.productprop table | grep -A2 suneung",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
