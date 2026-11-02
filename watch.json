@@ -27093,6 +27093,16 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "deploy-b425-after-queue-1102",
+   "added": "2026-11-02",
+   "what": "B4-25 썸네일(445_child_tax_credit.png) github.io 404 — 이과장 초안·네이버 썸네일(445n) 나오면 deploy.bat 1회로 묶어 실행·200 확인·카톡",
+   "due": "2026-11-02",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/445_child_tax_credit.png",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

@@ -1,9 +1,49 @@
 {
- "computed_at": "2026-11-02 09:39:58",
+ "computed_at": "2026-11-02 09:42:55",
  "source_head": "c9cfb66383ae",
- "ids": [],
+ "ids": [
+  "B4-25",
+  "deploy-thumb-445"
+ ],
  "posts": [],
- "publish": [],
- "actions": [],
+ "publish": [
+  {
+   "code": "B4-25",
+   "title": "연말정산 자녀세액공제 2026 — 9세 이상으로 올랐다, 2018년생은 0원",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 자녀세액공제2026_글_HTML.txt",
+     "path": "자녀세액공제2026_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/445_child_tax_credit.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/445_child_tax_credit.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
+ "actions": [
+  {
+   "id": "deploy-thumb-445",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(445_child_tax_credit.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-02",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
