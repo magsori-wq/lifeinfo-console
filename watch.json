@@ -27290,6 +27290,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "cp-rc-ignore-callers-1103",
+   "added": "2026-11-02",
+   "what": "CP 1단계 남은 🟡: batchboard 거부(rc 3) 무시 호출부 — asidechain.py:116·178, asideprobe.py:94, topicprop.py:923, pubqueue.py:846, topicprop.py:743, tools/aside_confirm.sh(pipefail) · 결재 재클릭 시 도장 없으면 자동 재도장 분기",
+   "due": "2026-11-04",
+   "cmd": "grep -n '_board\\|batchboard' studio/asidechain.py studio/asideprobe.py | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
