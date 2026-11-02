@@ -27258,6 +27258,16 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "fix-cp-stage1-lossguard-1102",
+   "added": "2026-11-02",
+   "what": "CP 1단계(유실 막기) 코드 반영(에이전트, 미커밋·git add 만): _stamp_order→batchboard.board_lock+_save(백그라운드 스레드)·_sync_push 경로 지정(도장은 같은 커밋)·today.py 잠금+atomicio·batchboard 잠금 실패 시 쓰기 exit 3·approval_m/flow atomicio. 사본 테스트 110스레드 유실 0(기준선 도장 49·today 10 유실). 남은 것: 이부장 검토·커밋, 8011 재시작 뒤 실제 결재 1회 git show --stat 확인. 보고 docs/audit1102/E_1단계_구현.md",
+   "due": "2026-11-03",
+   "cmd": "python -c \"from studio import batchboard as b, approve_server as s; import inspect; assert hasattr(b,'board_lock') and 'board_lock' in inspect.getsource(s._stamp_order) and '\\\"--\\\", *have' in inspect.getsource(s._sync_push_locked); print('OK 1단계 유지')\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
