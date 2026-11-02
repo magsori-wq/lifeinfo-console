@@ -6886,17 +6886,25 @@
    "order_at": "2026-11-02 20:33"
   }
  },
- "updated": "2026-11-02 20:33:23",
+ "updated": "2026-11-02 20:37:35",
  "current": {
-  "batch": "tower1102",
+  "batch": "pub1102d119",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "✅ 19:0x CP 1단계 완료 — 633d5ee6b(잠금·원자쓰기·경로커밋)+보완 커밋(페이블 🔴2 반영, 사본 17/17). 남은 🟡 = watch cp-rc-ignore-callers-1103 · 실결재 확인 = watch cp-s1-real-approval-check-1102 · 다음 2단계",
-  "since": "16:01",
-  "since_at": "2026-11-02 16:01:42"
+  "what": "D1-19 발행 착수 — 게이트 재측정(pace·setgate·pubready·원격 동기)",
+  "since": "20:37",
+  "since_at": "2026-11-02 20:37:35"
  },
  "log": [
+  {
+   "t": "20:37:35",
+   "text": "▶   — 1/7단계 · D1-19 발행 착수 — 게이트 재측정(pace·setgate·pubready·원격 동기)"
+  },
+  {
+   "t": "20:37:18",
+   "text": "▶   — 1/7단계 · 🔄 20:37 사장님 지시 「전체보고서+어드바이저 조언 반영해 다시 작성·검증·반영 문제 없는지 확인」 — 이부장 통합본 v2 작성 · 에이전트: 운영 반영 점검(1단계 코드 실가동) · 작성 뒤 어드바이저 → 사실 대조 에이전트"
+  },
   {
    "t": "20:33:23",
    "text": "📄 pub1102d119 작업 지시 등록(11425자, 2026-11-02 20:33)"
@@ -7048,14 +7056,6 @@
   {
    "t": "13:17:32",
    "text": "▶   — 1/7단계 · aroma 챗 사용중 — aroma2 에 카테고리별 분류 읽기 지시(repl 사용 중지)"
-  },
-  {
-   "t": "12:44:30",
-   "text": "🏁 Aside #559 이부장 확인"
-  },
-  {
-   "t": "12:43:44",
-   "text": "▶   — 1/7단계 · [Aside][done] #559 색인 요청 1건 — B4-25 요청 전: URL이 Google에 등록되어 있지 않음(발견됨-현재 색인 생성 안 됨)·최근 크롤링 해당사항 없음 → 색인 생성 요청됨(12:43:42). 할당량 초과 없음·유효성 검사 안 누름 · 총 탭 3개"
   }
  ],
  "currents": {
@@ -9089,9 +9089,18 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "✅ 19:0x CP 1단계 완료 — 633d5ee6b(잠금·원자쓰기·경로커밋)+보완 커밋(페이블 🔴2 반영, 사본 17/17). 남은 🟡 = watch cp-rc-ignore-callers-1103 · 실결재 확인 = watch cp-s1-real-approval-check-1102 · 다음 2단계",
+   "what": "🔄 20:37 사장님 지시 「전체보고서+어드바이저 조언 반영해 다시 작성·검증·반영 문제 없는지 확인」 — 이부장 통합본 v2 작성 · 에이전트: 운영 반영 점검(1단계 코드 실가동) · 작성 뒤 어드바이저 → 사실 대조 에이전트",
    "since": "16:01",
    "since_at": "2026-11-02 16:01:42"
+  },
+  "pub1102d119": {
+   "batch": "pub1102d119",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "D1-19 발행 착수 — 게이트 재측정(pace·setgate·pubready·원격 동기)",
+   "since": "20:37",
+   "since_at": "2026-11-02 20:37:35"
   }
  },
  "report_log": [
@@ -9145,86 +9154,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-19 19:09:24",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "📋 이과장 작업 보고 10-19 → docs/이과장_보고_20261019.md : 7편(A2-27·F2-19·D1-16·B2-22·G3-23·F2-20·F4-30) 4채널 완결+B5-09 후속 닫음 · 사고 9건(동기 충돌 3·run 실패 2·썸네일 404 보류 2·setgate 불일치 1·사진 교체 5·제휴 링크 미반영 1 등) · 남은 일: F4-30 핫팩 링크 발급 Aside 등록(이부장)·네이버 본문 문구(사장님)·새 초안 지시(재고 0)"
-  },
-  {
-   "ts": "2026-10-19 19:13:10",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "F4-30 핫팩 링크 #247(naver.me/5kPG38Uj·GHLFMdIe, Aside 보고 원문 확인) affiliate add 2건 기록 완료. ① 쓰레드: 이미 게시된 글(Deq-XInARxw)은 15분 지나 수정 불가·답글은 공정위 부적절 → 삭제 후 재게시만 가능. 제휴판 원고 osmu/쓰레드용_플레이오프한국시리즈예매.txt 492자 게이트 ✅, Aside 초안 docs/aside_drafts/F4-30_쓰레드재게시.txt — ⚠️ 삭제 포함이라 사장님 승인 뒤 이부장 등록 필요(재게시 시 좋아요·조회 0·URL 변경, 끝난 뒤 threads-link·crosslink 는 내가). ② 네이버: docs/naver_affiliate_F4-30.txt 사장님 붙여넣기용 완성"
-  },
-  {
-   "ts": "2026-10-19 19:14:03",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "🙋 이부장 요청: F4-30 쓰레드 삭제·재게시(docs/aside_drafts/F4-30_쓰레드재게시.txt) — 삭제 포함이라 사장님 승인 필요, 결재함에 watch f430-threads-repost-1019 로 올림. 승인 도장 뒤 Aside 등록 부탁. 네이버 문구는 watch f430-naver-affiliate-paste-1019(사장님 30초)"
-  },
-  {
-   "ts": "2026-10-19 19:14:39",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "🙋 이부장 요청(정정): F4-30 쓰레드 삭제·재게시는 결재함 항목이 아니다(roles: 쓰레드 게시=이과장·이부장 몫, watch 가 거부) — 앞선 「결재함에 올림」 문구는 취소(항목 drop). 삭제 포함이라 이부장이 판단해 docs/aside_drafts/F4-30_쓰레드재게시.txt 를 Aside 에 등록해 주세요(재게시 시 좋아요·조회 0·URL 변경, 끝난 뒤 threads-link·crosslink 는 내가). 사장님 몫은 네이버 붙여넣기 1건(watch f430-naver-affiliate-paste-1019)뿐"
-  },
-  {
-   "ts": "2026-10-19 19:14:45",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "👤 사장님 결정(19:15 채팅 선택): F4-30 쓰레드 삭제 후 제휴 문구 포함본 재게시 — Aside 등록"
-  },
-  {
-   "ts": "2026-10-19 19:15:10",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-10-19 19:14 — 지시 #248 시작 · F4-30 쓰레드 삭제·재게시"
-  },
-  {
-   "ts": "2026-10-19 19:16:54",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] [F4-30] #248 기존 쓰레드 삭제 확인 — Deq-XInARxw 삭제 후 주소 접근 시 프로필로 이동, 프로필 맨 위에서 사라짐. 이제 재게시 진행"
-  },
-  {
-   "ts": "2026-10-19 19:18:42",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [F4-30] #248 쓰레드 재게시 — 기존 Deq-XInARxw 삭제 확인 후 새 글 게시 · 첫 줄 대가성 문구 확인 · 본문 497자(JS 기준) 원문 일치 · 링크카드 4개 삭제 · 링크 4개(naver.me 2·블로그·네이버) 정상 · 이미지 1장 확인 · URL 200 · 프로필 맨 위 1개만 · 총 탭 14개 · https://www.threads.com/@magsori8975/post/DerBoTZgYkT"
-  },
-  {
-   "ts": "2026-10-19 19:18:48",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #248 F4-30 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DerBoTZgYkT · ✅ 쓰레드 이미지 ↔ thread_F4-30_kbo_po_ticket.png  MAD 0.0 ) — [이과장] 기록: python -m studio.pipeline threads-link --code F4-30 --url https://www.threads.com/@magsori8975/post/DerBoTZgYkT → 4채널 완결 확인"
-  },
-  {
-   "ts": "2026-10-19 19:19:59",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "F4-30 쓰레드 제휴판 재게시 확인(#248, 새 DerBoTZgYkT 200·첫 줄 대가성 문구)·threads-link 기록·교차링크 신주소로 교체(라이브 본문에 구 Deq-XInARxw 없음). 남은 것: 네이버 본문 제휴 문구 붙여넣기(watch f430-naver-affiliate-paste-1019)"
-  },
   {
    "ts": "2026-10-19 20:38:08",
    "bid": "aside",
@@ -22088,6 +22017,22 @@
    "title": "",
    "owner": "이부장",
    "what": "✅ 19:0x CP 1단계 완료 — 633d5ee6b(잠금·원자쓰기·경로커밋)+보완 커밋(페이블 🔴2 반영, 사본 17/17). 남은 🟡 = watch cp-rc-ignore-callers-1103 · 실결재 확인 = watch cp-s1-real-approval-check-1102 · 다음 2단계"
+  },
+  {
+   "ts": "2026-11-02 20:37:18",
+   "bid": "tower1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "🔄 20:37 사장님 지시 「전체보고서+어드바이저 조언 반영해 다시 작성·검증·반영 문제 없는지 확인」 — 이부장 통합본 v2 작성 · 에이전트: 운영 반영 점검(1단계 코드 실가동) · 작성 뒤 어드바이저 → 사실 대조 에이전트"
+  },
+  {
+   "ts": "2026-11-02 20:37:35",
+   "bid": "pub1102d119",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "D1-19 발행 착수 — 게이트 재측정(pace·setgate·pubready·원격 동기)"
   }
  ]
 }
