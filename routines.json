@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-04 07:10",
+ "generated": "2026-11-04 08:10",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/03 20:04",
-   "next": "11/04 08:00",
+   "last": "11/04 08:04",
+   "next": "11/04 20:00",
    "model": "sonnet-5-5",
-   "report_day": "1103",
-   "report": "11-03 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중·PENDING). 리더 magsori 28건·m8975 0·aroma 0(평소). 새 중요메일 없음; 이어받은것=GCP약관(10-12 시행·조치없음)·GCP 결제 ₩7,336(11-01)·쿠팡파트너스 수신동의 안내. 콘솔 Pages 배포실패 15+건은 11-01 01:33~01:59 연속push 취소(무해, gh 최신 run 전부 success). 발행 실패 최근=10-30(이후 없음). GSC 7일 0건.",
+   "report_day": "1104",
+   "report": "11-04 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사중·PENDING). 새 메일: ①Google Developers 11-03 11:06 'inactive OAuth clients … deleted in 30 days' — 대상 프로젝트 tongdo-erp(통도 ERP, lifeinfo-adsense 아님)·조치 안 하면 약 12-03 자동삭제·복구 30일 가능 ②GitHub lifeinfo-console pages build deploy 실패 11-03 15:28Z(0183c59) — 이후 22:15Z 런 success 로 복구, 무해(연속push·재배포) ③Google Play 11-03 YouTube Premium Lite ₩8,500/월 갱신(NAVER Pay) 정기결제 영수증 ④GCP 결제 11-01 ₩7,336 완료. 기보고/참고: GCP 서비스약관 AI 가이드라인 10-27, 쿠팡파트너스 수신동의 안내 10-29. 점검: 리더 magsori 4·m8975 0·aroma 0(평소), 커넥터 m8975 전달 googlenews 2, GSC 7일 0건, source publish.yml 실패 10-30 이후 신규 없음. 이어받은 것=11-03 20:08 회차 무사항 / 새로 본 것=위 ①~④",
    "runs": [
+    {
+     "at": "11/04 08:10",
+     "link": "claude://claude.ai/epitaxy/local_08318c75-6995-4221-8a50-2c25ec5f9e9c",
+     "archived": false
+    },
     {
      "at": "11/03 20:11",
      "link": "claude://claude.ai/epitaxy/local_30fab194-ad0f-491a-849f-ddc865c6b49c",
@@ -31,11 +36,6 @@
      "at": "11/02 08:14",
      "link": "claude://claude.ai/epitaxy/local_3828069b-85c1-4ca6-a170-cabd73d711af",
      "archived": false
-    },
-    {
-     "at": "11/01 20:14",
-     "link": "claude://claude.ai/epitaxy/local_7d04b4fe-1d24-4898-b898-4fd87dfbf26b",
-     "archived": true
     }
    ]
   },
@@ -275,11 +275,11 @@
    "last": "11/04 07:09",
    "next": "11/05 07:00",
    "model": "sonnet-5-5",
-   "report_day": "1103",
-   "report": "[조사장부] 목록 2 · 원문 0 · 후보 4 · 탈락 3 · 검색어 4 (바닥 미달: 상품 루틴이라 1차 출처 본문 없음·korea.kr 미조회) 🛒 후보: 곰도리 온열안대 오리지널 케어 플러스 40매 · 6,300원 · 리뷰1,952 평점4.7 · 왜 지금: 초겨울 눈피로·수험생 시즌, 실검색어 확인 — 결재함 afflink-eyewarm1103 등록(링크 발급은 이부장). 탈락: 핫팩(hotpack1026 기게시)·가습기(10-06/10-12 기게시)·김치(10-03/10-16 기게시)·김장·전기장판·히터는 토스 인기순위에 없음. 이어받은것=핫팩 기게시. 수능 날짜 미확인",
+   "report_day": "1104",
+   "report": "[조사장부] 목록 4 · 원문 0 · 후보 3 · 탈락 3 · 검색어 2 (바닥 미달: 원문 0/5 상품 루틴이라 1차 출처 본문 없음 · 검색어 2/3 naverkw 보온병·곶감 · korea.kr 정책뉴스·보도자료 2종 curl 200 열었으나 상품 시즌 근거 항목 못 얻음)\n🛒 빈손 — 토스 296건 수집(신규33)·search 20여 낱말(난방·전기장판·히터·패딩·제습·방한·내복·보온병=토스 인기에 없음). 이어받은 것: 직전 회차 전부 빈손·핫팩/가습기/전기요/니삭스 기게시(affiliate solo 게시완료). 새로 본 것:\n· 반건시 곶감 500g 2봉 16,530원 리뷰209 평점4.3(id=203459929) — 탈락: naverkw ✅이나 리뷰 209로 약하고 지금 찾을 이유 1차 미확인, DB/affiliate 기게시 0\n· 탐나유 햇 조생 단감 3kg 9,990원 리뷰175 — 탈락: 리뷰 175 약함\n· 핫앤핫 핫팩 10입 3팩 리뷰844 — 탈락: hotpack1026 기게시",
    "runs": [
     {
-     "at": "11/04 07:09",
+     "at": "11/04 07:16",
      "link": "claude://claude.ai/epitaxy/local_43da057e-8edc-443d-aaa6-3540307c5c4c",
      "archived": false
     },
