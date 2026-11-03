@@ -27288,8 +27288,10 @@
    "due": "2026-11-03",
    "cmd": "python -c \"from studio import approve_server as a, naver as n; import inspect; assert 'exclude' in inspect.signature(a._sync_push).parameters and callable(a.restamp) and callable(n._board_refused); print('OK')\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
+   "state": "done",
+   "by": "에이전트",
+   "done_at": "2026-11-03",
+   "result": "커밋 1b5200826 반영·검증 cmd OK"
   },
   {
    "id": "cp-rc-ignore-callers-1103",
