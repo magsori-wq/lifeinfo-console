@@ -27491,6 +27491,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "fix-preclear-gate-1103",
+   "added": "2026-11-03",
+   "what": "F38·F44 asidequeue add 사전 점검 게이트 구현(①path 존재·소유 ②naver keep_check·숫자 ③교차링크·숫자 ④같은 일 대기·오늘 done ⑤pre-cleared 줄 자동). e2e #569·#570·#565 거부·#555 자동 삽입 재현, unittest 153 OK·validate FAIL 0·enginemap 🔴0. 남은 것: 실제 다음 등록에서 Aside 가 줄을 받아 진행하는지 · 페이블 사후 검증 · 커밋은 이부장",
+   "due": "2026-11-04",
+   "cmd": "python -m unittest tests.test_studio_pure.TestPreclear && python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
