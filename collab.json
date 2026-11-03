@@ -1,6 +1,6 @@
 {
- "rev": "7755fc1fa",
- "uncommitted": 779,
+ "rev": "6ceda2d99",
+ "uncommitted": 788,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
+     "h": "6ceda2d99",
+     "d": "11-03 16:46",
+     "s": "[이부장] F37 대기열 잠금 원자화·죽은 잠금 즉시 해제 · F42 asidechain 읽기 실패 시 쓰기 중단(장부 유실 방지) · F39 는 2119c45a7 게이트로 해소 확인"
+    },
+    {
+     "h": "b7323967d",
+     "d": "11-03 14:03",
+     "s": "[이과장] 검색설명 기록 정정 — D1-19·D3-12·B4-26 을 실제 입력 문구로(seodesc set, 라이브 meta 일치 mismatch 해소) Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+    },
+    {
      "h": "7755fc1fa",
      "d": "11-03 13:51",
      "s": "[이부장] pre-cleared 옛 안내 정정 — 이과장이 asidequeue add 로 직접 등록(게이트 자동 대조·삽입)"
-    },
-    {
-     "h": "b0a99f85f",
-     "d": "11-03 13:49",
-     "s": "[이과장] B4-26 색인요청 Aside 지시 초안 Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
-    },
-    {
-     "h": "bd7707cec",
-     "d": "11-03 13:48",
-     "s": "[이과장] B4-26 인스타 카드·캡션·쓰레드 원고·실사진·Aside 지시 초안 Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
     }
    ],
-   "last": "11-03 13:51",
+   "last": "11-03 16:46",
    "state": "active"
   },
   {
@@ -36,9 +36,15 @@
    "role": "네이버·쓰레드 재가공·교차링크·확산 대기열",
    "owns": "naver.py · pipeline.py · 확산_대기열 · osmu/",
    "drives": "OSMU 확산 기능 에이전트 구동",
-   "recent": [],
-   "last": "—",
-   "state": "idle"
+   "recent": [
+    {
+     "h": "4f5773c39",
+     "d": "11-03 14:05",
+     "s": "[이과장] B4-26 OSMU 3채널 URL 기록 (교차링크 라이브 삽입 완료) Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+    }
+   ],
+   "last": "11-03 14:05",
+   "state": "active"
   },
   {
    "id": "H",
