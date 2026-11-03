@@ -10,7 +10,7 @@ body{background:var(--bg);color:var(--fg);font-family:-apple-system,"Malgun Goth
 .right{overflow-y:auto;padding:14px 16px 30px;height:100vh}
 h1{font-size:17px;margin:0 0 6px}h2{font-size:15px;margin:4px 0 10px}.m{color:var(--mut);font-size:12.5px}
 .bar{height:12px;background:var(--bar);border-radius:6px;overflow:hidden;margin:8px 0 4px}.bar i{display:block;height:100%;background:var(--fill)}
-.ck{display:block;padding:6px 0;border-bottom:1px solid var(--bar);font-size:13.5px}.ck.done,.ck.skip{color:var(--mut)}.ck.done b{color:var(--ok)}
+.ck{display:block;padding:6px 0;border-bottom:1px solid var(--bar);font-size:13.5px}.ck.done,.ck.skip{color:var(--mut);text-decoration:line-through;text-decoration-thickness:1.5px;opacity:.75}.ck.done b{color:var(--ok)}
 .ck.doing{background:rgba(37,99,235,.08)}.ck.blocked{background:rgba(220,38,38,.10)}.tag{font-size:12px}
 .card{background:var(--card);border:1px solid var(--bar);border-radius:10px;padding:10px 12px;margin:0 0 12px}
 .ch{font-weight:700;margin-bottom:6px}.now{font-size:13px;margin:3px 0}.st{margin:6px 0 0 18px;padding:0;font-size:12.5px}.st li{margin:2px 0}
@@ -19,8 +19,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:26%"></i></div>
-<div class="m"><b>26%</b> · 끝 10 / 전체 39 · 🔄 5 · ⛔ 0 · 갱신 2026-11-03 10:40 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:28%"></i></div>
+<div class="m"><b>28%</b> · 끝 11 / 전체 40 · 🔄 5 · ⛔ 0 · 갱신 2026-11-03 10:46 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크</p>
 <label class="ck done"><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -61,6 +61,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck todo"><input type="checkbox" disabled> <b>F37</b> [Aside] 대기열에 넣어도 Aside 가 쉬면 안 넘어감 — next 잠금(aside_next.lock 240초)에 걸려 수 분 정체(오늘 12:29·20:49 두 번)</label>
 <label class="ck todo"><input type="checkbox" disabled> <b>F38</b> [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄이 없어 Aside 가 멈춤(오늘 #555) — 이부장이 매번 손으로 넣는 중 → asidequeue add 때 이부장 대조 단계를 코드로</label>
 <label class="ck todo"><input type="checkbox" disabled> <b>F39</b> [Aside] 같은 일을 이부장·이과장이 둘 다 대기열에 넣음(D1-19 색인요청 #564·#565) — asidequeue add 에 같은 코드·종류 중복 거부</label>
+<label class="ck done"><input type="checkbox" disabled checked> <b>F40</b> [감시] docs/aside_drafts 400개 돌파로 옛 초안 ASIDE_DRAFT 무한 반복 알림 → drafts 본 목록 상한 분리</label>
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
@@ -84,6 +85,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li>
 <li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li>
 <li><span class="m">11-03 10:22</span> F09 단계 1/4: batchboard rc 무시 호출부 확인 시작</li>
+<li><span class="m">10:46:11</span> ✅ F40 완료 — [감시] docs/aside_drafts 400개 돌파로 옛 </li>
 <li><span class="m">10:40:27</span> 🔸 F25 진행중 — [감시] 재고 0 때 빈손인 3. 반복 깨움</li>
 <li><span class="m">10:40:03</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
 <li><span class="m">10:39:00</span> ✅ F27 완료 — [하네스] loopcheck 오탐·도구끼리 숫자 다름</li>
@@ -105,6 +107,5 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">10:32:58</span> 🔸 F09 진행중 — [1단계 마무리] 기록 거부를 무시하는 호출부 6곳</li>
 <li><span class="m">10:31:36</span> 🔸 F27 진행중 — [하네스] loopcheck 오탐·도구끼리 숫자 다름</li>
 <li><span class="m">10:31:22</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
-<li><span class="m">10:29:50</span> ▶   — 1/7단계 · F27 단계 2/4: 수정 — dupcheck._joins(인접 낱말 2~3개 합성) 상대 base 와 정확일치만 교집합에 추가 + SYNONYM 코로나/코로나19, falsepos 규칙 _r_dupcheck_spacing_compound_1103</li>
-<li><span class="m">10:29:26</span> ▶   — 1/7단계 · F24/F25 단계 3/5: 설계도 반영 끝(마디 AP 신설·FW 행 3. 깨움 생략·사건 대입 1줄) — towertick 순수함수 구현 중</li></ul>
+<li><span class="m">10:29:50</span> ▶   — 1/7단계 · F27 단계 2/4: 수정 — dupcheck._joins(인접 낱말 2~3개 합성) 상대 base 와 정확일치만 교집합에 추가 + SYNONYM 코로나/코로나19, falsepos 규칙 _r_dupcheck_spacing_compound_1103</li></ul>
 </section></div></body></html>
