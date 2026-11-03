@@ -7093,9 +7093,9 @@
     {
      "code": "F38",
      "title": "[Aside] 이과장 초안에 「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄이 없어 Aside 가 멈춤(오늘 #555) — 이부장이 매번 손으로 넣는 중 → asidequeue add 때 이부장 대조 단계를 코드로",
-     "state": "doing",
-     "note": "에이전트 E · 5/5 끝 · 이부장 검토 대기 · asidequeue add 사전 점검 게이트(①path 소유 ②naver 보존·숫자 ③교차링크·숫자 ④중복 ⑤pre-cleared 자동) · #569/#570/#565 거부·#555 자동삽입 재현 · tests 153 OK · docs/audit1102/M_F38_F44.md",
-     "at": "2026-11-03 11:51"
+     "state": "done",
+     "note": "게이트 커밋 2119c45a7 · TestPreclear 9 OK·enginemap 0 이부장 확인 · 실등록 확인 watch fix-preclear-gate-1103 · 페이블 11-05",
+     "at": "2026-11-03 11:57"
     },
     {
      "code": "F39",
@@ -7127,9 +7127,9 @@
     {
      "code": "F44",
      "title": "[OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것으로 남음(#569 Aside 차단) — asidequeue add 때 지시서 안 파일 경로가 그 코드 것인지 검사",
-     "state": "doing",
-     "note": "에이전트 E · 5/5 끝 · 이부장 검토 대기 · asidequeue add 사전 점검 게이트(①path 소유 ②naver 보존·숫자 ③교차링크·숫자 ④중복 ⑤pre-cleared 자동) · #569/#570/#565 거부·#555 자동삽입 재현 · tests 153 OK · docs/audit1102/M_F38_F44.md",
-     "at": "2026-11-03 11:52"
+     "state": "done",
+     "note": "게이트 커밋 2119c45a7 · TestPreclear 9 OK·enginemap 0 이부장 확인 · 실등록 확인 watch fix-preclear-gate-1103 · 페이블 11-05",
+     "at": "2026-11-03 11:57"
     }
    ],
    "owner": "이부장"
@@ -7257,7 +7257,7 @@
    ]
   }
  },
- "updated": "2026-11-03 11:52:20",
+ "updated": "2026-11-03 11:57:33",
  "current": {
   "batch": "fix1102",
   "code": "",
@@ -7268,6 +7268,14 @@
   "since_at": "2026-11-03 10:22:18"
  },
  "log": [
+  {
+   "t": "11:57:33",
+   "text": "✅ F44 완료 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것"
+  },
+  {
+   "t": "11:57:26",
+   "text": "✅ F38 완료 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 "
+  },
   {
    "t": "11:52:20",
    "text": "▶   — 1/7단계 · F38/F44 단계 5/5 끝: 보고서 docs/audit1102/M_F38_F44.md · git add 4파일(커밋 안 함) · watch fix-preclear-gate-1103 · 이부장 검토 대기"
@@ -7419,14 +7427,6 @@
   {
    "t": "11:16:31",
    "text": "🏁 Aside #572 이부장 확인"
-  },
-  {
-   "t": "11:16:26",
-   "text": "▶   — 1/7단계 · [Aside][done] [D3-12] #572 확인: 링크 2개(블로그 16-7·네이버 224463237038) 앵커 대상 정확·Pexels 출처 줄 있음·제휴 문구 없음(지시대로) · 총 탭 7개 · https://www.threads.com/@magsori8975/post/DfQyQNsgXKo"
-  },
-  {
-   "t": "11:15:48",
-   "text": "▶   — 1/7단계 · [Aside][done] #572 쓰레드 게시 — 이미지 확인: 사진 1장 붙음·링크 카드 없음(2개 모두 닫음)·본문 339자 원문 일치(D3-12 내용 확인). 게시 1회, 새 프로필 탭에서 실제 주소 읽음·curl 200 · https://www.threads.com/@magsori8975/post/DfQyQNsgXKo"
   }
  ],
  "currents": {
