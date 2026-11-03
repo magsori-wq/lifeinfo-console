@@ -7017,15 +7017,15 @@
      "code": "F24",
      "title": "[감시] 결재서버 8011 꺼져도 알림 없음",
      "state": "doing",
-     "note": "에이전트 B · 5/5 끝 · 이부장 검토 대기 · towertick APPROVE_SERVER_DOWN/UP(8011 연속2회·3h)·FUEL_LOW 재알림 때 3. 빈손이면 깨움 생략 · 설계도 AP/FW · unittest 144 OK·validate FAIL0·enginemap 🔴0 · docs/audit1102/J_F24_F25.md · git add 까지",
-     "at": "2026-11-03 10:37"
+     "note": "dd5a71ddb 커밋 · 이부장 검토 OK(tests 144·enginemap) · 페이블 사후 검증 중 → 끝나면 ✅",
+     "at": "2026-11-03 10:40"
     },
     {
      "code": "F25",
      "title": "[감시] 재고 0 때 빈손인 3. 반복 깨움",
      "state": "doing",
-     "note": "에이전트 B · 5/5 끝 · 이부장 검토 대기 · towertick APPROVE_SERVER_DOWN/UP(8011 연속2회·3h)·FUEL_LOW 재알림 때 3. 빈손이면 깨움 생략 · 설계도 AP/FW · unittest 144 OK·validate FAIL0·enginemap 🔴0 · docs/audit1102/J_F24_F25.md · git add 까지",
-     "at": "2026-11-03 10:37"
+     "note": "dd5a71ddb 커밋 · 이부장 검토 OK(tests 144·enginemap) · 페이블 사후 검증 중 → 끝나면 ✅",
+     "at": "2026-11-03 10:40"
     },
     {
      "code": "F26",
@@ -7035,9 +7035,9 @@
     {
      "code": "F27",
      "title": "[하네스] loopcheck 오탐·도구끼리 숫자 다름",
-     "state": "doing",
-     "note": "에이전트 D · 4/4 끝 · 이부장 검토 대기 · 경영안정바우처→A2-27 🔴, 코로나→C2-16 🔴, 463편 판정분포 불변",
-     "at": "2026-11-03 10:36"
+     "state": "done",
+     "note": "806c57d8e dupcheck 합성어·코로나19 동의어 — 경영안정바우처→A2-27 🔴1.00·75세 코로나→C2-16 🔴0.67(이부장 재실행)·463편 분포 불변 · 남음: 어순 바뀐 합성어",
+     "at": "2026-11-03 10:39"
     },
     {
      "code": "F28",
@@ -7189,17 +7189,41 @@
    "order_at": "2026-11-03 10:28"
   }
  },
- "updated": "2026-11-03 10:37:16",
+ "updated": "2026-11-03 10:40:27",
  "current": {
-  "batch": "fix1102",
+  "batch": "pub1103d312",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "F27 단계 4/4: 보고서 docs/audit1102/L_F27.md · git add 완료(커밋 안 함)",
-  "since": "10:22",
-  "since_at": "2026-11-03 10:22:18"
+  "step": 12,
+  "what": "Aside 지시 초안 준비: docs/aside_drafts/D3-12_네이버게시.txt · 네이버 원고(제목 29자 통과)·서식본(4767자 보존)·447n 썸네일 푸시 완료. 🙋 이부장 요청: naverrich 대조·pre-cleared 줄 넣어 등록(제휴는 기록 없음 — afflink-eyewarm1103 별건). 검색설명은 Aside 대기열에 등록됨(10:36)",
+  "since": "10:31",
+  "since_at": "2026-11-03 10:31:28"
  },
  "log": [
+  {
+   "t": "10:40:27",
+   "text": "🔸 F25 진행중 — [감시] 재고 0 때 빈손인 3. 반복 깨움"
+  },
+  {
+   "t": "10:40:03",
+   "text": "🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음"
+  },
+  {
+   "t": "10:39:05",
+   "text": "▶   — 12/7단계 · Aside 지시 초안 준비: docs/aside_drafts/D3-12_네이버게시.txt · 네이버 원고(제목 29자 통과)·서식본(4767자 보존)·447n 썸네일 푸시 완료. 🙋 이부장 요청: naverrich 대조·pre-cleared 줄 넣어 등록(제휴는 기록 없음 — afflink-eyewarm1103 별건). 검색설명은 Aside 대기열에 등록됨(10:36)"
+  },
+  {
+   "t": "10:39:00",
+   "text": "✅ F27 완료 — [하네스] loopcheck 오탐·도구끼리 숫자 다름"
+  },
+  {
+   "t": "10:38:21",
+   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-11-03 10:35 — 지시 #566 D3-12 검색설명 시작. 최초 브라우저 Page.enable timeout 발생, 연결 점검 중"
+  },
+  {
+   "t": "10:37:24",
+   "text": "▶   — 1/7단계 · F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기"
+  },
   {
    "t": "10:37:16",
    "text": "🔸 F25 진행중 — [감시] 재고 0 때 빈손인 3. 반복 깨움"
@@ -7335,30 +7359,6 @@
   {
    "t": "10:26:51",
    "text": "🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음"
-  },
-  {
-   "t": "10:25:30",
-   "text": "▶   — 1/7단계 · F09 단계 1/4 끝: rc 무시 6곳 재현 확인(실행 위치 2곳은 stdout/stderr DEVNULL → 기록 남기기 필요) · 단계 2/4 수정 시작"
-  },
-  {
-   "t": "10:25:24",
-   "text": "🔸 F31 진행중 — [라이브] 교차링크 없는 6편"
-  },
-  {
-   "t": "10:25:19",
-   "text": "🔸 F09 진행중 — [1단계 마무리] 기록 거부를 무시하는 호출부 6곳"
-  },
-  {
-   "t": "10:25:13",
-   "text": "🔸 F30 진행중 — [라이브] 인스타 캡션 빔 12편 재확인·정정"
-  },
-  {
-   "t": "10:24:29",
-   "text": "▶   — 1/7단계 · F24/F25 단계 1/5: 코드·재료 확인 — towertick FUEL_LOW 줄 680·fuel_decide, 3. 재료=webapp/naver_analytics.json(kwgap 읽는 원본), 마지막 보고=sessionstate fuel1030"
-  },
-  {
-   "t": "10:24:07",
-   "text": "▶   — 1/7단계 · F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md"
   }
  ],
  "currents": {
@@ -7457,7 +7457,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][done] #565 신규 요청 0/1·기요청 1/1로 건너뜀. CP now_log의 #564 done(21:20:55)에 D1-19 「색인 생성 요청됨 21:20:53」 확인. 당시 상태 발견됨-현재 색인 미생성·최근 크롤링 없음. 오늘 기요청 제외 지시에 따라 재요청·유효성검사 없음. 작업 탭 닫음, 총 탭 8개. · https://lifeinfo8975.blogspot.com/2026/11/2026-cgv-2-7000.html",
+   "what": "[Aside][doing] 수신 2026-11-03 10:35 — 지시 #566 D3-12 검색설명 시작. 최초 브라우저 Page.enable timeout 발생, 연결 점검 중",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -9428,7 +9428,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "F27 단계 4/4: 보고서 docs/audit1102/L_F27.md · git add 완료(커밋 안 함)",
+   "what": "F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기",
    "since": "10:22",
    "since_at": "2026-11-03 10:22:18"
   },
@@ -9437,7 +9437,7 @@
    "code": "",
    "title": "",
    "step": 12,
-   "what": "D3-12 라이브 발행 완료(run 41560132424 ✓·URL 200·썸네일 200·og:title 일치) · 검색설명 Aside 대기열 등록. 다음: 네이버 원고(제휴 afflink-eyewarm1103 결재 별건)",
+   "what": "Aside 지시 초안 준비: docs/aside_drafts/D3-12_네이버게시.txt · 네이버 원고(제목 29자 통과)·서식본(4767자 보존)·447n 썸네일 푸시 완료. 🙋 이부장 요청: naverrich 대조·pre-cleared 줄 넣어 등록(제휴는 기록 없음 — afflink-eyewarm1103 별건). 검색설명은 Aside 대기열에 등록됨(10:36)",
    "since": "10:31",
    "since_at": "2026-11-03 10:31:28"
   }
@@ -22572,6 +22572,30 @@
    "title": "",
    "owner": "이부장",
    "what": "F27 단계 4/4: 보고서 docs/audit1102/L_F27.md · git add 완료(커밋 안 함)"
+  },
+  {
+   "ts": "2026-11-03 10:37:24",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기"
+  },
+  {
+   "ts": "2026-11-03 10:38:21",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-03 10:35 — 지시 #566 D3-12 검색설명 시작. 최초 브라우저 Page.enable timeout 발생, 연결 점검 중"
+  },
+  {
+   "ts": "2026-11-03 10:39:05",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "Aside 지시 초안 준비: docs/aside_drafts/D3-12_네이버게시.txt · 네이버 원고(제목 29자 통과)·서식본(4767자 보존)·447n 썸네일 푸시 완료. 🙋 이부장 요청: naverrich 대조·pre-cleared 줄 넣어 등록(제휴는 기록 없음 — afflink-eyewarm1103 별건). 검색설명은 Aside 대기열에 등록됨(10:36)"
   }
  ]
 }
