@@ -1913,6 +1913,16 @@
      "base_code": "daily-email-briefing-1103pm",
      "date": "2026-11-03",
      "at": "2026-11-03 20:09"
+    },
+    {
+     "code": "lifeinfo-travel-prep-1103",
+     "title": "lifeinfo-travel-prep (D)",
+     "state": "done",
+     "note": "[조사장부] 목록 3 · 원문 0 · 후보 4 · 탈락 4 · 검색어 6 (바닥 미달: 원문 0/5 — 후보가 전부 기발행이라 원문까지 가기 전에 탈락, 부산불꽃축제 11/7 공식 페이지 미개봉) 빈손 — 목록: korea.kr 정책뉴스·보도자료 2종(F/G/H 소재 없음)·kwgap(유입검색어 27건). 후보: 김해 제로페이·사랑상품권(기발행 11-02 글, dupcheck 신규였으나 DB grep 으로 확인) · 부산불꽃축제 11/7(G1-07 기발행) · 마산가고파국화축제(G3-09 🔴 1.00) · 해운대빛축제(G3-24 기발행). 방송·연예 날짜 소재: 공식 페이지 확인 못 해 내지 않음(검색결과가 예매대행사·블로그뿐). 이어받은 것: 직전 note 미조회. 내일 볼 것: 부울경 11월 하순~12월 행사, 연말 공연 예매 오픈일을 주최측 공식 페이지에서",
+     "auto_daily": true,
+     "base_code": "lifeinfo-travel-prep",
+     "date": "2026-11-03",
+     "at": "2026-11-03 21:06"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -7348,7 +7358,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-11-03 20:09:36",
+ "updated": "2026-11-03 21:06:35",
  "current": {
   "batch": "aroma",
   "code": "",
@@ -7359,6 +7369,11 @@
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "21:06:35",
+   "text": "✅ lifeinfo-travel-prep-1103 완료 — lifeinfo-travel-prep (D)",
+   "actor": "미상:db30f1dc"
+  },
   {
    "t": "20:09:36",
    "text": "✅ daily-email-briefing-1103pm-1103 완료 — daily-email-briefing-1103pm (A)",
@@ -7552,11 +7567,6 @@
   {
    "t": "13:47:05",
    "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224463427250 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-   "actor": "Aside"
-  },
-  {
-   "t": "13:45:50",
-   "text": "▶   — 1/7단계 · [Aside][done] [B4-26] #575 네이버 새 글 게시 완료. 라이브 제목·카테고리(달라지는 제도·지원금)·대표사진 첫블록1장·태그5·표14 확인. 제공 서식본과 본문 일치, 공식출처4·블로그원문·관련글2 링크 보존. 발행1회·중복 없음. 작업탭2개 닫음, 총 탭8개. · https://blog.naver.com/magsori8975/224463427250",
    "actor": "Aside"
   }
  ],
