@@ -1,16 +1,17 @@
 {
- "computed_at": "2026-11-03 13:16:29",
- "source_head": "fc536a97a307",
+ "computed_at": "2026-11-03 13:21:50",
+ "source_head": "5a3acea67ddc",
  "ids": [
-  "B4-26"
+  "B4-26",
+  "deploy-thumb-448"
  ],
  "posts": [],
  "publish": [
   {
    "code": "B4-26",
    "title": "종부세 납부유예 신청 12월 12일까지 — 60세 이상·5년 보유, 담보 필수",
-   "go": false,
-   "v0": null,
+   "go": true,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 종부세납부유예신청_글_HTML.txt",
@@ -31,9 +32,18 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-448",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(448_jongbuse_deferral.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-03",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
