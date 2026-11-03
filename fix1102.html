@@ -24,8 +24,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:54%"></i></div>
-<div class="m"><b>54%</b> · 끝 27 / 전체 50 · 🔄 5 · ⛔ 0 · 갱신 2026-11-04 05:30 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:56%"></i></div>
+<div class="m"><b>56%</b> · 끝 28 / 전체 50 · 🔄 4 · ⛔ 0 · 갱신 2026-11-04 08:22 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -58,7 +58,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F28</b> [정리] 끝난 옛 발행 지시서 6건 닫기</label>
 <label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F29</b> [정리] 기한 지난 내 몫 252건(끝난 26건부터) <span class="tag">🔄</span></label>
 <label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F30</b> [라이브] 인스타 캡션 빔 12편 재확인·정정 <span class="tag">🔄</span></label>
-<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F31</b> [라이브] 교차링크 없는 6편 <span class="tag">🔄</span></label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F31</b> [라이브] 교차링크 없는 6편</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F32</b> [루틴] 지침 28~54KB 비대·옛 절차 공존</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F33</b> [설정] 발행 트리거 상시 허용·금지규칙 deny 없음 — 사장님 몫</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F34</b> [결정] ⏸ 지시 기다림을 막힘 상자에 — 사장님 결정</label>
@@ -80,7 +80,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
-<div class="card"><div class="ch"><i class="lamp done"></i>🤖 에이전트 C <span class="m">· F30 · F31 · 작업 끝 · 이부장 검토 대기</span></div><div class="now">🔄 <b>F30</b> 에이전트 C 끝 · 이부장 검토: 진짜 빔 14편(12+H1-31·H1-33, 10-29~10-31 게시분) 오탐 0 → 다음: 캡션 정정(인스타는 사장님 「완료」 필요 — 결재함 준비)<span class="m"> · 2026-11-03 10:25</span></div><div class="now">🔄 <b>F31</b> 에이전트 C 끝 · 이부장 검토: 6편 진짜 블록 없음(DB 에 URL 3개씩 있음) → 다음: 이과장 crosslink 지시<span class="m"> · 2026-11-03 10:25</span></div><ol class="st"><li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li><li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li><li><span class="m">05:18:44</span> 📋 배치 &#x27;교차링크 6편 보강(F31)&#x27; 등록 — 1항목</li></ol></div>
+<div class="card"><div class="ch"><i class="lamp done"></i>🤖 에이전트 C <span class="m">· F30 · 작업 끝 · 이부장 검토 대기</span></div><div class="now">🔄 <b>F30</b> 에이전트 C 끝 · 이부장 검토: 진짜 빔 14편(12+H1-31·H1-33, 10-29~10-31 게시분) 오탐 0 → 다음: 캡션 정정(인스타는 사장님 「완료」 필요 — 결재함 준비)<span class="m"> · 2026-11-03 10:25</span></div><ol class="st"><li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li><li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li></ol></div>
 <div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 미배정 <span class="m">· F12 · F29 · F48 · 작업 중</span></div><div class="now">🔄 <b>F12</b> 실결재 11-03 10:28~10:30 watch_approve 3건·publish_go 1건 — 결재서버 커밋 4건 모두 _SYNC_FILES 안 경로 지정(879fa6f50·ac137d7eb·f21a8d0a9·c8e3aee0f)·stamp-fail 0 ✅ · 남은 것: 지시서 도장 스레드(approve-&lt;배치&gt;) 경로는 아직 미발생<span class="m"> · 2026-11-03 10:35</span></div><div class="now">🔄 <b>F29</b> Haiku 분류: 기한지남 279건 중 오래된 80건만 — A 이미 끝남 2 · B 필요 13 · C 못 잼 65. 나머지 199 미분류. Haiku 로는 수율 낮음(근거 재기 어려움) → 사장님 결재 받을 일 아님, 일괄 재분류 방식 재검토<span class="m"> · 2026-11-04 05:30</span></div><div class="now">🔄 <b>F48</b> 11-04 03:0x 임시조치 커밋 9968f862f(sparse+filter+timeout40) 푸시 완료 · 실발행 시험은 이과장 D5-10 · 근본(insta 3.2GB 분리·batch.json 재기록 176커밋)은 11-05 이후<span class="m"> · 2026-11-04 02:55</span></div><ol class="st"><li><span class="m">05:30:46</span> 🔸 F29 진행중 — [정리] 기한 지난 내 몫 252건(끝난 26건부터)</li></ol></div>
 <h2 style="margin-top:18px">🕘 전체 작업 기록</h2>
 <ul class="h"><li><span class="m">11-03 13:09</span> 에이전트 F47 · 중복 알림 억제·묶기 구현 끝(미커밋) · 이부장 검토 대기</li>
@@ -106,6 +106,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li>
 <li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li>
 <li><span class="m">11-03 10:22</span> F09 단계 1/4: batchboard rc 무시 호출부 확인 시작</li>
+<li><span class="m">08:22:45</span> ✅ F31 완료 — [라이브] 교차링크 없는 6편</li>
 <li><span class="m">05:30:46</span> 🔸 F29 진행중 — [정리] 기한 지난 내 몫 252건(끝난 26건부터)</li>
 <li><span class="m">05:30:39</span> ✅ F28 완료 — [정리] 끝난 옛 발행 지시서 6건 닫기</li>
 <li><span class="m">05:18:44</span> 📋 배치 &#x27;교차링크 6편 보강(F31)&#x27; 등록 — 1항목</li>
