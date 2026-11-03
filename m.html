@@ -255,9 +255,7 @@ function bar(){
     +'<button class="b-no" id="clr" style="flex:0 0 88px">해제</button>';
   document.getElementById('clr').onclick=function(){PICK={};render();};
   document.getElementById('send').onclick=function(){
-    // 2026-11-03 F21 - 폰 문구에 탭 시각을 넣는다(이부장이 목록이 바뀐 뒤 붙여넣어도 언제 누른 결정인지 안다)
-    var d0=new Date(), hh=('0'+d0.getHours()).slice(-2)+':'+('0'+d0.getMinutes()).slice(-2);
-    var txt='승인: '+ns.map(function(n){return PICK[n].label;}).join(' / ')+' (폰 탭 '+hh+')';
+    var txt='승인: '+ns.map(function(n){return PICK[n].label;}).join(' / ');
     copy(txt, '📋 복사됨 — 이부장 창에 붙여넣으세요'
       +(hard.length?' (되돌릴 수 없는 건은 이부장이 다시 여쭙습니다)':''));
   };

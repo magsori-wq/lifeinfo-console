@@ -1,42 +1,63 @@
 {
- "computed_at": "2026-11-04 01:54:33",
+ "computed_at": "2026-11-03 17:06:33",
  "source_head": "e735e63d25c8",
  "ids": [
   "D5-09",
-  "D5-10",
-  "aroma-phone-approval-gate-1104",
-  "deploy-thumb-449",
-  "deploy-thumb-450"
+  "D5-10"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "D5-09",
    "title": "장애인 주차표지 발급 대상 확대 — 위탁부모·주야간보호센터 차량 추가",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 장애인주차표지발급대상확대_글_HTML.txt",
-     "path": "장애인주차표지발급대상확대_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "장애인주차표지발급대상확대",
+   "eng": "disabled_parking_badge",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_장애인주차표지발급대상확대.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/449_disabled_parking_badge.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/449_disabled_parking_badge.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_장애인주차표지발급대상확대.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/449_disabled_parking_badge.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_장애인주차표지발급대상확대.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "ready"
-  },
+   }
+  }
+ ],
+ "publish": [
   {
    "code": "D5-10",
    "title": "육아기 근로시간 단축, 허용해도 14일 안에 통지해야 — 11월 27일 시행 예정",
@@ -65,15 +86,8 @@
    "light": "todo"
   }
  ],
- "actions": [
-  {
-   "id": "aroma-phone-approval-gate-1104",
-   "what": "【권고】이대리 지침의 승인 확인 기준에 「폰·채팅 승인은 이부장이 사장님 원문을 인용해 남긴 [이부장] 결재 회수 커밋도 인정」을 추가할까요? 【근거】지금은 PC 결재함 버튼이 만드는 [사장님] 결재 커밋만 인정해서, 폰으로 승인하시면 이대리가 멈춥니다(SP-008 11-04 00:50·00:55 실측, 마감 18:30). 【위험】이부장 말만으로 승인이 되는 길이 열리므로 원문 인용·시각을 커밋에 필수로 둡니다. 승인하지 않으면 지금처럼 PC 버튼(또는 이대리 창에 직접 승인)이 필요합니다",
-   "due": "2026-11-04",
-   "cmd": "python -m studio.watch --id aroma-am-sp-008-approve-1103",
-   "state": "todo",
-   "kind": "action"
-  },
+ "actions": [],
+ "actionsFuture": [
   {
    "id": "deploy-thumb-449",
    "what": "deploy.bat 실행 — 발행 대기 글 썸네일(449_disabled_parking_badge.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
@@ -90,6 +104,5 @@
    "state": "todo",
    "kind": "action"
   }
- ],
- "actionsFuture": []
+ ]
 }
