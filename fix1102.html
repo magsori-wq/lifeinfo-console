@@ -24,8 +24,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:36%"></i></div>
-<div class="m"><b>36%</b> · 끝 16 / 전체 45 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 12:52 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:35%"></i></div>
+<div class="m"><b>35%</b> · 끝 16 / 전체 46 · 🔄 4 · ⛔ 0 · 갱신 2026-11-03 12:55 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -72,11 +72,12 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F43</b> [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 시작」을 누를 수 있었음 → 발행·4채널 끝난 코드는 버튼 숨김·서버 거부</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F44</b> [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것으로 남음(#569 Aside 차단) — asidequeue add 때 지시서 안 파일 경로가 그 코드 것인지 검사</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F45</b> [aroma] 이대리가 이부장 손을 기다리며 멈춤 - webapp 쓰기 불가(미리보기 복사 요청)·본문 변경 뒤 재승인 카드가 늦게 올라옴</label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F46</b> [원천] 보고 주체(actor) 자동 기록 + 🙋·⏸ 요청 단위 ack 종결 — TOWER_OWED 문구 추정 제거 <span class="tag">🔄</span></label>
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
 <div class="card"><div class="ch"><i class="lamp done"></i>🤖 에이전트 C <span class="m">· F30 · F31 · 작업 끝 · 이부장 검토 대기</span></div><div class="now">🔄 <b>F30</b> 에이전트 C 끝 · 이부장 검토: 진짜 빔 14편(12+H1-31·H1-33, 10-29~10-31 게시분) 오탐 0 → 다음: 캡션 정정(인스타는 사장님 「완료」 필요 — 결재함 준비)<span class="m"> · 2026-11-03 10:25</span></div><div class="now">🔄 <b>F31</b> 에이전트 C 끝 · 이부장 검토: 6편 진짜 블록 없음(DB 에 URL 3개씩 있음) → 다음: 이과장 crosslink 지시<span class="m"> · 2026-11-03 10:25</span></div><ol class="st"><li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li><li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li></ol></div>
-<div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 미배정 <span class="m">· F12 · 작업 중</span></div><div class="now">🔄 <b>F12</b> 실결재 11-03 10:28~10:30 watch_approve 3건·publish_go 1건 — 결재서버 커밋 4건 모두 _SYNC_FILES 안 경로 지정(879fa6f50·ac137d7eb·f21a8d0a9·c8e3aee0f)·stamp-fail 0 ✅ · 남은 것: 지시서 도장 스레드(approve-&lt;배치&gt;) 경로는 아직 미발생<span class="m"> · 2026-11-03 10:35</span></div><ol class="st"><li class="m">아직 단계 기록 없음</li></ol></div>
+<div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 미배정 <span class="m">· F12 · F46 · 작업 중</span></div><div class="now">🔄 <b>F12</b> 실결재 11-03 10:28~10:30 watch_approve 3건·publish_go 1건 — 결재서버 커밋 4건 모두 _SYNC_FILES 안 경로 지정(879fa6f50·ac137d7eb·f21a8d0a9·c8e3aee0f)·stamp-fail 0 ✅ · 남은 것: 지시서 도장 스레드(approve-&lt;배치&gt;) 경로는 아직 미발생<span class="m"> · 2026-11-03 10:35</span></div><div class="now">🔄 <b>F46</b> 11-03 12:54 사장님 「약점 보완을 넘어 원천 해결」 · 에이전트(Sonnet)<span class="m"> · </span></div><ol class="st"><li class="m">아직 단계 기록 없음</li></ol></div>
 <h2 style="margin-top:18px">🕘 전체 작업 기록</h2>
 <ul class="h"><li><span class="m">11-03 11:52</span> F38/F44 단계 5/5 끝: 보고서 docs/audit1102/M_F38_F44.md · git add 4파일(커밋 안 함) · watch fix-preclear-gate-1103 · 이부장 검토 대기</li>
 <li><span class="m">11-03 11:50</span> F38/F44 단계 3/5 끝: asidequeue.preclear 구현(①파일·소유 ②naver keep_check·숫자 ③교차링크·숫자 ④중복 ⑤pre-cleared 자동 삽입) — 단계 4/5 테스트</li>
