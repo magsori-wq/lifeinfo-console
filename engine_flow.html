@@ -51,9 +51,9 @@
   K -->|YES| L[이과장: 검색설명·네이버·인스타·쓰레드 초안]
   L --> L1{초안 파일 10분 넘게 대기열·진행 중·게시 어디에도 없음?}:::fix
   L1 -->|YES| L2[ASIDE_DRAFT_UNQUEUED 깨움 → 이부장 그 턴에 asidequeue add]:::fix
-  L --> M{asidequeue 게이트: postId·중복 게시·중복 지시}
-  M -->|거부| L
-  M -->|통과| N[대기열 → towertick 1~3분마다 Aside 에 올림]:::fix
+  L --> M{asidequeue 게이트: postId·중복 게시·중복 지시 + 사전 점검(F38·F44): ① path= 파일 존재·이 글의 파일 ② 네이버 글자 보존·숫자 ③ 인스타·쓰레드 교차링크·숫자 ④ 같은 일 대기·오늘 done}:::fix
+  M -->|거부: 이유·고칠 파일 출력| L
+  M -->|통과: 🟢 pre-cleared 줄 자동 삽입(게이트 시각·사장님 ⑥ 결재 시각·통과 항목) — 이부장 손 없음| N[대기열 → towertick 1~3분마다 Aside 에 올림]:::fix
   N --> O{Aside 보고?}
   O -->|보고 없이 멈춤| P[ASIDE_STALL → 이부장 재등록]:::was
   P --> N
