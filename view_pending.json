@@ -1,49 +1,62 @@
 {
- "computed_at": "2026-11-03 13:22:10",
- "source_head": "5a3acea67ddc",
+ "computed_at": "2026-11-03 13:32:03",
+ "source_head": "722f522c717f",
  "ids": [
-  "B4-26",
-  "deploy-thumb-448"
+  "B4-26"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "B4-26",
    "title": "종부세 납부유예 신청 12월 12일까지 — 60세 이상·5년 보유, 담보 필수",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 종부세납부유예신청_글_HTML.txt",
-     "path": "종부세납부유예신청_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "종부세납부유예신청",
+   "eng": "jongbuse_deferral",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_종부세납부유예신청.txt",
+       "img": false,
+       "exists": true
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/448_jongbuse_deferral.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "ready"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/448_jongbuse_deferral.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_종부세납부유예신청.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/448_jongbuse_deferral.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_종부세납부유예신청.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "ready"
+   }
   }
  ],
- "actions": [
-  {
-   "id": "deploy-thumb-448",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(448_jongbuse_deferral.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-03",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "publish": [],
+ "actions": [],
  "actionsFuture": []
 }
