@@ -2,6 +2,7 @@
   B([사장님]) -->|결재·직접 지시| CP[(CP 운영콘솔<br/>결재함·미결·보고서·지시서·Aside 대기열)]
   CP -->|결재 대기·재알림·카톡| B
   CP -->|신호: 결재·🙋/⏸/👤·Aside done/blocked/멈춤·발행 완료| T{{towertick 감시}}
+  T -->|매 tick 결재서버 8011 ping · 2회 연속 실패 또는 낡은 코드| AP[APPROVE_SERVER_DOWN → 이부장 깨움 · 3시간 간격 재알림 · 되살아나면 APPROVE_SERVER_UP 1회]
   T -->|깨움| L[이부장<br/>판단·지시·검증·보고]
   L -->|지시서 batchboard order| CP
   L -->|채팅 보고·카톡| B
@@ -19,7 +20,7 @@
   E -->|규칙·흐름| L
 </pre></section><section><pre class="mermaid">flowchart TD
   SUP[[연료 공급자: 3.세션·루틴2·4·6·docflow → 글감 제안]]:::fix --> FUEL{⛽ 재고 ≥ 하한?}:::fix
-  FUEL -->|NO| FW[FUEL_LOW — 하한 미만 전이 1회·0 지속이면 간격 두고 재알림·글감 루틴 임박이면 생략 → 이부장 깨움 + 연료 담당 3.(fuel1030) 깨움, 보강 조사는 이부장 판단]:::fix --> SUP
+  FUEL -->|NO| FW[FUEL_LOW — 하한 미만 전이 1회·0 지속이면 간격 두고 재알림·글감 루틴 임박이면 생략 → 이부장 깨움 + 연료 담당 3.(fuel1030) 깨움 — 단 재알림 때 3. 마지막 보고가 빈손이고 그 뒤 새 재료·도래 watch 가 없으면 3. 깨움만 생략, 보강 조사는 이부장 판단]:::fix --> SUP
   FUEL -->|YES| A0{선별 글감에 초안·지시서가 있나?}:::fix
   A0 -->|NO| A1[topicprop pick 이 그 자리에서 초안 지시서 자동 발급 · 남으면 GATE_PROBLEM 깨움]:::fix --> A
   A0 -->|YES| A
