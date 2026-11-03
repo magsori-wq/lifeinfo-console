@@ -27429,6 +27429,16 @@
    "by": "이부장",
    "done_at": "2026-11-03",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "fix-boardrc-1103",
+   "added": "2026-11-03",
+   "what": "F09 batchboard 거부(rc3)·timeout 무시 6곳 수정(asidechain·asideprobe·topicprop·pubqueue·aside_confirm.sh) · 사본 40/40+sh 4/4 PASS · validate FAIL0 · pure 139 OK · git add 까지(커밋은 이부장) · 남은 것: asidechain board_refused 를 띄우는 화면 없음",
+   "due": "2026-11-04",
+   "cmd": "python C:/Users/magso/AppData/Local/Temp/claude/C--lifeinfo/544f52c8-7afe-4f73-972e-06dc0bb4ccb8/scratchpad/f09/test_f09.py && grep -c 'LOCK_WAIT + 60' studio/asidechain.py studio/asideprobe.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
