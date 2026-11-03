@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-12T13:02:20",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "topicprop-dup-origin-0912",
-   "detail": "근본원인 확인(git 히스토리 추적) — A2-17은 3세대 재사용됐다: ①A6-01→(이부장이 수동 재배정)→A2-17 에너지바우처(dropped 09-03, 커밋 0ffe19bf) ②루틴2가 같은 날(09-03) 온누리상품권을 A2-17로 재제안(cmd_add, 코드5809cfea) → dropped(09-07) ③루틴2/나 가 09-12 상생페이백을 다시 A2-17로 제안. 직접 검증: git show 5a5285b3(내 커밋 직후)에 이미 2건 존재 확인. 핵심 결함 2가지: (a)cmd_add는 published/queued 코드만 검사하고 topicprop.json 내 '과거에 쓰였다가 dropped된 코드'는 검사 안 함 — 코드 재사용 시 충돌 감지 없음 (b)cmd_add의 item dict에 decision/drop_why 키가 없어 dict.update() 시 이전 세대의 무관한 사유 텍스트가 새 세대로 그대로 새어나감(실제로 온누리상품권 항목에 에너지바우처 사유가 섞여 있었음, 오늘 A2-18로 옮기며 제거함). 권고: cmd_add에 '이력상 사용된 모든 코드' 검사 추가 + 코드 재사용 시 decision/drop_why/state_at 초기화. 코드 수정은 하지 않음(요청 범위 밖) — 필요시 별도 지시",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-12T13:02:28",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "confirm-backlog-standing-1103",
    "detail": "취소 — 오판: aside 는 confirm --id aside --num <번호> 로 번호별 끝남 가능(2026-10-13 설계). #574~578 처리",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-04T00:51:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aroma-am-sp-008-approve-1103",
+   "detail": "사장님 채팅 「승인: aroma-am-sp-008-approve-1103 (폰 탭 00:50)」 00:50 — 이부장 회수 · 사장님 00:50 폰 탭 승인",
    "via": "cli"
   }
  ]
