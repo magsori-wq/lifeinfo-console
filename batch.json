@@ -7328,8 +7328,9 @@
     {
      "code": "D5-09",
      "title": "장애인 주차표지 발급 대상 확대 — 위탁부모·주야간보호센터 차량 추가 (라이브 발행)",
-     "state": "todo",
-     "live": "done"
+     "state": "done",
+     "note": "threads 게시·기록 완료 — https://www.threads.com/@magsori8975/post/DfScr1cgb_- (naver-link 가 자동 보고)",
+     "at": "2026-11-04 02:47"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -7353,17 +7354,27 @@
    "order_at": "2026-11-04 02:07"
   }
  },
- "updated": "2026-11-04 02:47:45",
+ "updated": "2026-11-04 02:48:02",
  "current": {
-  "batch": "pub1104d510",
+  "batch": "followup",
   "code": "",
   "title": "",
-  "step": 8,
-  "what": "⛔ D5-10 발행 run 41684311910 이 20분 타임아웃으로 cancelled(17:46:57Z). 원인 실측: publish.yml timeout-minutes: 20 + actions/checkout fetch-depth: 0 이 3.5GB 저장소를 받는데 17:26:54→17:46:55 (20분 넘게) 걸림 — 사람이 취소한 게 아님. 이전 성공 run(D5-09)은 checkout 8분. 미발행 확인(라이브 최신글=D5-09). 같은 방식으로 재트리거하면 또 실패할 가능성이 큼. 🙋 이부장 판단 요청: ① 임시로 timeout-minutes 를 40~60 으로 ② checkout fetch-depth 를 줄이는 워크플로 수정(rebase 용 히스토리 필요 확인) ③ 저장소 비대화 근본 해결 ④ 대체 경로(브라우저 직접 게시)로 D5-10 먼저. 수정은 이과장 권한 밖이라 멈추고 대기",
-  "since": "02:13",
-  "since_at": "2026-11-04 02:13:47"
+  "step": 1,
+  "what": "[체인] #582 D5-09 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfScr1cgb_- · ✅ 쓰레드 이미지 ↔ thread_D5-09_disabled_parking_badge.png ) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "02:48:02",
+   "text": "▶   — 1/7단계 · [체인] #582 D5-09 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfScr1cgb_- · ✅ 쓰레드 이미지 ↔ thread_D5-09_disabled_parking_badge.png ) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
+   "actor": "Aside"
+  },
+  {
+   "t": "02:47:58",
+   "text": "✅ D5-09 완료 — 장애인 주차표지 발급 대상 확대 — 위탁부모·주야간보호센터 차",
+   "actor": "Aside"
+  },
   {
    "t": "02:47:45",
    "text": "▶   — 8/7단계 · ⛔ D5-10 발행 run 41684311910 이 20분 타임아웃으로 cancelled(17:46:57Z). 원인 실측: publish.yml timeout-minutes: 20 + actions/checkout fetch-depth: 0 이 3.5GB 저장소를 받는데 17:26:54→17:46:55 (20분 넘게) 걸림 — 사람이 취소한 게 아님. 이전 성공 run(D5-09)은 checkout 8분. 미발행 확인(라이브 최신글=D5-09). 같은 방식으로 재트리거하면 또 실패할 가능성이 큼. 🙋 이부장 판단 요청: ① 임시로 timeout-minutes 를 40~60 으로 ② checkout fetch-depth 를 줄이는 워크플로 수정(rebase 용 히스토리 필요 확인) ③ 저장소 비대화 근본 해결 ④ 대체 경로(브라우저 직접 게시)로 D5-10 먼저. 수정은 이과장 권한 밖이라 멈추고 대기",
@@ -7552,16 +7563,6 @@
   {
    "t": "02:07:31",
    "text": "📋 배치 '🚀 D5-10 발행 — 육아기 근로시간 단축, 허용해도 14일 안에 통지해야 — 11월 27일 시행 예 (사장님 승인 완료)' 등록 — 1항목",
-   "actor": "이부장"
-  },
-  {
-   "t": "01:54:52",
-   "text": "▶   — 8/7단계 · D5-09 발행 run 41678953115 트리거(01:54) — 썸네일 449 200·pubready 통과",
-   "actor": "이과장"
-  },
-  {
-   "t": "01:53:44",
-   "text": "📄 pub1104d509 작업 지시 등록(11493자, 2026-11-04 01:53)",
    "actor": "이부장"
   }
  ],
@@ -8813,7 +8814,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[체인] #581 D5-09 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfScECHk4rr/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ disabled_parking_badge_01.png  MAD 0.0  / ✅ 인스타 카드 2 ↔ disabled_parking_badge_02.png  MAD 0.1  / ✅ 인스타 카드 3 ↔ disabled_parking_badge_03.png  MAD 0.1 ) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인",
+   "what": "[체인] #582 D5-09 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfScr1cgb_- · ✅ 쓰레드 이미지 ↔ thread_D5-09_disabled_parking_badge.png ) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -23333,6 +23334,16 @@
    "what": "⛔ D5-10 발행 run 41684311910 이 20분 타임아웃으로 cancelled(17:46:57Z). 원인 실측: publish.yml timeout-minutes: 20 + actions/checkout fetch-depth: 0 이 3.5GB 저장소를 받는데 17:26:54→17:46:55 (20분 넘게) 걸림 — 사람이 취소한 게 아님. 이전 성공 run(D5-09)은 checkout 8분. 미발행 확인(라이브 최신글=D5-09). 같은 방식으로 재트리거하면 또 실패할 가능성이 큼. 🙋 이부장 판단 요청: ① 임시로 timeout-minutes 를 40~60 으로 ② checkout fetch-depth 를 줄이는 워크플로 수정(rebase 용 히스토리 필요 확인) ③ 저장소 비대화 근본 해결 ④ 대체 경로(브라우저 직접 게시)로 D5-10 먼저. 수정은 이과장 권한 밖이라 멈추고 대기",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 02:48:02",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #582 D5-09 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfScr1cgb_- · ✅ 쓰레드 이미지 ↔ thread_D5-09_disabled_parking_badge.png ) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
+   "actor": "Aside",
+   "sid": "544f52c8"
   }
  ]
 }
