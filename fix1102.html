@@ -24,8 +24,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:33%"></i></div>
-<div class="m"><b>33%</b> · 끝 15 / 전체 45 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 12:42 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:36%"></i></div>
+<div class="m"><b>36%</b> · 끝 16 / 전체 45 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 12:52 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -71,7 +71,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F42</b> [Aside] asidechain._load() 읽기 실패 시 빈 orders 로 저장 → aside_orders.json 전체 유실 위험(batchboard 처럼 재시도·fail-closed)</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F43</b> [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 시작」을 누를 수 있었음 → 발행·4채널 끝난 코드는 버튼 숨김·서버 거부</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F44</b> [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것으로 남음(#569 Aside 차단) — asidequeue add 때 지시서 안 파일 경로가 그 코드 것인지 검사</label>
-<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F45</b> [aroma] 이대리가 이부장 손을 기다리며 멈춤 - webapp 쓰기 불가(미리보기 복사 요청)·본문 변경 뒤 재승인 카드가 늦게 올라옴</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F45</b> [aroma] 이대리가 이부장 손을 기다리며 멈춤 - webapp 쓰기 불가(미리보기 복사 요청)·본문 변경 뒤 재승인 카드가 늦게 올라옴</label>
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
@@ -100,6 +100,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li>
 <li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li>
 <li><span class="m">11-03 10:22</span> F09 단계 1/4: batchboard rc 무시 호출부 확인 시작</li>
+<li><span class="m">12:52:50</span> ✅ F45 완료 — [aroma] 이대리가 이부장 손을 기다리며 멈춤 - weba</li>
+<li><span class="m">12:51:40</span> 🔸 F45 진행중 — [aroma] 이대리가 이부장 손을 기다리며 멈춤 - weba</li>
 <li><span class="m">11:57:33</span> ✅ F44 완료 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li>
 <li><span class="m">11:57:26</span> ✅ F38 완료 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 </li>
 <li><span class="m">11:52:20</span> ▶   — 1/7단계 · F38/F44 단계 5/5 끝: 보고서 docs/audit1102/M_F38_F44.md · git add 4파일(커밋 안 함) · watch fix-preclear-gate-1103 · 이부장 검토 대기</li>
@@ -115,7 +117,5 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">11:33:57</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li>
 <li><span class="m">11:33:51</span> 🔸 F38 진행중 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 </li>
 <li><span class="m">11:27:05</span> ▶   — 1/7단계 · F38/F44 단계 1/5: 현행 asidequeue.cmd_add 읽기·사고 재현 시작</li>
-<li><span class="m">11:26:58</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li>
-<li><span class="m">11:26:52</span> 🔸 F38 진행중 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 </li>
-<li><span class="m">11:26:39</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li></ul>
+<li><span class="m">11:26:58</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li></ul>
 </section></div></body></html>
