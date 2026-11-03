@@ -7130,6 +7130,12 @@
      "state": "done",
      "note": "게이트 커밋 2119c45a7 · TestPreclear 9 OK·enginemap 0 이부장 확인 · 실등록 확인 watch fix-preclear-gate-1103 · 페이블 11-05",
      "at": "2026-11-03 11:57"
+    },
+    {
+     "code": "F45",
+     "title": "[aroma] 이대리가 이부장 손을 기다리며 멈춤 - webapp 쓰기 불가(미리보기 복사 요청)·본문 변경 뒤 재승인 카드가 늦게 올라옴",
+     "state": "todo",
+     "note": "11-03 12:33~12:41 실측. 고칠 것: _mkpreview 출력을 lifeinfo webapp 으로 직접 + 결재 뒤 본문 변경이면 같은 턴에 재승인 카드(이대리 규칙)"
     }
    ],
    "owner": "이부장"
@@ -7257,17 +7263,25 @@
    ]
   }
  },
- "updated": "2026-11-03 12:33:06",
+ "updated": "2026-11-03 12:42:25",
  "current": {
   "batch": "aroma",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🙋 이부장: ①벡스코 사진 다운로드·삽입 완료(승인 741c6101b 확인, 2.6MB, 캡션 고정+원본·CC링크, 커밋 포함). 본문 변경은 사진 자리→사진 1건뿐이라 V0 87 본문과 동일 구조. ②_mkpreview.py 에 img 상대경로 base64 인라인 추가→ aroma-mag/previews/aromapv_DG-004.html 재생성(3.7MB, ../img 0건). lifeinfo 쪽은 읽기 전용이라 이부장이 C:\\lifeinfo\\webapp\\aromapv_DG-004.html 로 복사해 주세요. DG-004 게시 승인 카드는 아직 todo",
+  "what": "⏸ 대기 — DG-004 게시: 10:30 결재(aroma-am-dg-004-approve-1102)는 b8295fc 본문 기준이고 최종본은 팩트5줄·이미지카드2·벡스코사진이 추가돼 본문이 다름. 승인된 그 버전만 게시 규칙상 최종본 결재 카드 aroma-am-dg-004-final-1103 신설(이부장: 미리보기 attach·사장님 결재 부탁). 승인 즉시 게시",
   "since": "14:53",
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "12:42:25",
+   "text": "📋 배치 '🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)' 등록 — 45항목"
+  },
+  {
+   "t": "12:41:07",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — DG-004 게시: 10:30 결재(aroma-am-dg-004-approve-1102)는 b8295fc 본문 기준이고 최종본은 팩트5줄·이미지카드2·벡스코사진이 추가돼 본문이 다름. 승인된 그 버전만 게시 규칙상 최종본 결재 카드 aroma-am-dg-004-final-1103 신설(이부장: 미리보기 attach·사장님 결재 부탁). 승인 즉시 게시"
+  },
   {
    "t": "12:33:06",
    "text": "▶   — 1/7단계 · 🙋 이부장: ①벡스코 사진 다운로드·삽입 완료(승인 741c6101b 확인, 2.6MB, 캡션 고정+원본·CC링크, 커밋 포함). 본문 변경은 사진 자리→사진 1건뿐이라 V0 87 본문과 동일 구조. ②_mkpreview.py 에 img 상대경로 base64 인라인 추가→ aroma-mag/previews/aromapv_DG-004.html 재생성(3.7MB, ../img 0건). lifeinfo 쪽은 읽기 전용이라 이부장이 C:\\lifeinfo\\webapp\\aromapv_DG-004.html 로 복사해 주세요. DG-004 게시 승인 카드는 아직 todo"
@@ -7419,14 +7433,6 @@
   {
    "t": "11:18:43",
    "text": "📄 aside 작업 지시 등록(1518자, 2026-11-03 11:18)"
-  },
-  {
-   "t": "11:18:16",
-   "text": "✅ D3-12 완료 — 탄소중립포인트 16종으로 늘었다 — 무탄소 택시·택배상자 추가"
-  },
-  {
-   "t": "11:17:59",
-   "text": "▶   — 1/7단계 · [체인] #572 D3-12 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfQyQNsgXKo · ✅ 쓰레드 이미지 ↔ thread_D3-12_carbon_point_16.png  MAD 0.) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인"
   }
  ],
  "currents": {
@@ -9136,7 +9142,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장: ①벡스코 사진 다운로드·삽입 완료(승인 741c6101b 확인, 2.6MB, 캡션 고정+원본·CC링크, 커밋 포함). 본문 변경은 사진 자리→사진 1건뿐이라 V0 87 본문과 동일 구조. ②_mkpreview.py 에 img 상대경로 base64 인라인 추가→ aroma-mag/previews/aromapv_DG-004.html 재생성(3.7MB, ../img 0건). lifeinfo 쪽은 읽기 전용이라 이부장이 C:\\lifeinfo\\webapp\\aromapv_DG-004.html 로 복사해 주세요. DG-004 게시 승인 카드는 아직 todo",
+   "what": "⏸ 대기 — DG-004 게시: 10:30 결재(aroma-am-dg-004-approve-1102)는 b8295fc 본문 기준이고 최종본은 팩트5줄·이미지카드2·벡스코사진이 추가돼 본문이 다름. 승인된 그 버전만 게시 규칙상 최종본 결재 카드 aroma-am-dg-004-final-1103 신설(이부장: 미리보기 attach·사장님 결재 부탁). 승인 즉시 게시",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -22993,6 +22999,14 @@
    "title": "",
    "owner": "",
    "what": "🙋 이부장: ①벡스코 사진 다운로드·삽입 완료(승인 741c6101b 확인, 2.6MB, 캡션 고정+원본·CC링크, 커밋 포함). 본문 변경은 사진 자리→사진 1건뿐이라 V0 87 본문과 동일 구조. ②_mkpreview.py 에 img 상대경로 base64 인라인 추가→ aroma-mag/previews/aromapv_DG-004.html 재생성(3.7MB, ../img 0건). lifeinfo 쪽은 읽기 전용이라 이부장이 C:\\lifeinfo\\webapp\\aromapv_DG-004.html 로 복사해 주세요. DG-004 게시 승인 카드는 아직 todo"
+  },
+  {
+   "ts": "2026-11-03 12:41:07",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "⏸ 대기 — DG-004 게시: 10:30 결재(aroma-am-dg-004-approve-1102)는 b8295fc 본문 기준이고 최종본은 팩트5줄·이미지카드2·벡스코사진이 추가돼 본문이 다름. 승인된 그 버전만 게시 규칙상 최종본 결재 카드 aroma-am-dg-004-final-1103 신설(이부장: 미리보기 attach·사장님 결재 부탁). 승인 즉시 게시"
   }
  ]
 }

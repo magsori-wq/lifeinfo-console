@@ -24,8 +24,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:34%"></i></div>
-<div class="m"><b>34%</b> · 끝 15 / 전체 44 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 11:57 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:33%"></i></div>
+<div class="m"><b>33%</b> · 끝 15 / 전체 45 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 12:42 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -71,6 +71,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F42</b> [Aside] asidechain._load() 읽기 실패 시 빈 orders 로 저장 → aside_orders.json 전체 유실 위험(batchboard 처럼 재시도·fail-closed)</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F43</b> [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 시작」을 누를 수 있었음 → 발행·4채널 끝난 코드는 버튼 숨김·서버 거부</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F44</b> [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것으로 남음(#569 Aside 차단) — asidequeue add 때 지시서 안 파일 경로가 그 코드 것인지 검사</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F45</b> [aroma] 이대리가 이부장 손을 기다리며 멈춤 - webapp 쓰기 불가(미리보기 복사 요청)·본문 변경 뒤 재승인 카드가 늦게 올라옴</label>
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
