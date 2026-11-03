@@ -27788,6 +27788,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "publish-checkout-slow-1104",
+   "added": "2026-11-04",
+   "what": "발행 run 의 actions/checkout 이 8분(D5-09 16:54~17:02Z)·12분+(D5-10 두 번) — 저장소 크기·fetch-depth 확인해 단축(발행 지연 원인)",
+   "due": "2026-11-05",
+   "cmd": "gh run view 41678953115 -R magsori-wq/lifeinfo-source --json jobs -q '.jobs[].steps[3]'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

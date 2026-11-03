@@ -7345,17 +7345,22 @@
    "order_at": "2026-11-04 02:07"
   }
  },
- "updated": "2026-11-04 02:36:32",
+ "updated": "2026-11-04 02:39:24",
  "current": {
-  "batch": "aside",
+  "batch": "pub1104d510",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "[Aside][doing] 수신 2026-11-04 02:35 — 지시 #581 D5-09 인스타 시작",
-  "since": "11:31",
-  "since_at": "2026-10-08 11:31:43"
+  "step": 8,
+  "what": "⚠️ 발행 run 지연 원인 실측: actions/checkout 단계가 D5-09 run 에서 8분 10초(16:54:42→17:02:52, 이전 D5-xx run 은 전체 4분)·현재 D5-10 재트리거 run 은 12분째 checkout 중. lifeinfo-source 저장소 크기 3.5GB(gh api size=3552760KB). 첫 D5-10 run 을 12분에 취소한 건 성급했음(미발행 확인 후라 중복은 없음). 🙋 이부장: 저장소 비대화(썸네일·insta·osmu 바이너리) → checkout 시간 구조 문제, 판단 요청. 지금은 run 완료 대기",
+  "since": "02:13",
+  "since_at": "2026-11-04 02:13:47"
  },
  "log": [
+  {
+   "t": "02:39:24",
+   "text": "▶   — 8/7단계 · ⚠️ 발행 run 지연 원인 실측: actions/checkout 단계가 D5-09 run 에서 8분 10초(16:54:42→17:02:52, 이전 D5-xx run 은 전체 4분)·현재 D5-10 재트리거 run 은 12분째 checkout 중. lifeinfo-source 저장소 크기 3.5GB(gh api size=3552760KB). 첫 D5-10 run 을 12분에 취소한 건 성급했음(미발행 확인 후라 중복은 없음). 🙋 이부장: 저장소 비대화(썸네일·insta·osmu 바이너리) → checkout 시간 구조 문제, 판단 요청. 지금은 run 완료 대기",
+   "actor": "이과장"
+  },
   {
    "t": "02:36:32",
    "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-11-04 02:35 — 지시 #581 D5-09 인스타 시작",
@@ -7550,11 +7555,6 @@
    "t": "00:18:56",
    "text": "✅ lifeinfo-daily-publish-1104-1104 완료 — lifeinfo-daily-publish-1104 (F)",
    "actor": "미상:e2aceffd"
-  },
-  {
-   "t": "00:17:12",
-   "text": "▶   — 2/7단계 · D5-09 착수 — 미발행·source_D5-09_20261104.md 있음, 원문 확인 후 본문",
-   "actor": "이과장"
   }
  ],
  "currents": {
@@ -9696,7 +9696,7 @@
    "code": "",
    "title": "",
    "step": 8,
-   "what": "D5-10 첫 run 41682138394 는 checkout 단계에서 12분 넘게 멈춰(미발행 확인: 라이브 최신글=D5-09) 취소(cancelled) → 재트리거(02:28). GitHub 상태는 정상 표기",
+   "what": "⚠️ 발행 run 지연 원인 실측: actions/checkout 단계가 D5-09 run 에서 8분 10초(16:54:42→17:02:52, 이전 D5-xx run 은 전체 4분)·현재 D5-10 재트리거 run 은 12분째 checkout 중. lifeinfo-source 저장소 크기 3.5GB(gh api size=3552760KB). 첫 D5-10 run 을 12분에 취소한 건 성급했음(미발행 확인 후라 중복은 없음). 🙋 이부장: 저장소 비대화(썸네일·insta·osmu 바이너리) → checkout 시간 구조 문제, 판단 요청. 지금은 run 완료 대기",
    "since": "02:13",
    "since_at": "2026-11-04 02:13:47"
   }
@@ -23255,6 +23255,16 @@
    "what": "[Aside][doing] 수신 2026-11-04 02:35 — 지시 #581 D5-09 인스타 시작",
    "actor": "Aside",
    "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 02:39:24",
+   "bid": "pub1104d510",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⚠️ 발행 run 지연 원인 실측: actions/checkout 단계가 D5-09 run 에서 8분 10초(16:54:42→17:02:52, 이전 D5-xx run 은 전체 4분)·현재 D5-10 재트리거 run 은 12분째 checkout 중. lifeinfo-source 저장소 크기 3.5GB(gh api size=3552760KB). 첫 D5-10 run 을 12분에 취소한 건 성급했음(미발행 확인 후라 중복은 없음). 🙋 이부장: 저장소 비대화(썸네일·insta·osmu 바이너리) → checkout 시간 구조 문제, 판단 요청. 지금은 run 완료 대기",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
