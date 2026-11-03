@@ -24,8 +24,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:28%"></i></div>
-<div class="m"><b>28%</b> · 끝 11 / 전체 40 · 🔄 5 · ⛔ 0 · 갱신 2026-11-03 10:48 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:31%"></i></div>
+<div class="m"><b>31%</b> · 끝 13 / 전체 42 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 10:56 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -51,8 +51,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F21</b> [4단계] 결재 닫힘 5갈래 → 한 함수</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F22</b> [세션] 깨움 안내에 세션 ID(표시명 불발)</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F23</b> [지침] CLAUDE.md 낡은 문구(세션ID·직접게시 11-01·게시주체 3겹)</label>
-<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F24</b> [감시] 결재서버 8011 꺼져도 알림 없음 <span class="tag">🔄</span></label>
-<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F25</b> [감시] 재고 0 때 빈손인 3. 반복 깨움 <span class="tag">🔄</span></label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F24</b> [감시] 결재서버 8011 꺼져도 알림 없음</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F25</b> [감시] 재고 0 때 빈손인 3. 반복 깨움</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F26</b> [훅] 세션 시작 훅 2분·출력 잘림</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F27</b> [하네스] loopcheck 오탐·도구끼리 숫자 다름</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F28</b> [정리] 끝난 옛 발행 지시서 6건 닫기</label>
@@ -67,11 +67,13 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F38</b> [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄이 없어 Aside 가 멈춤(오늘 #555) — 이부장이 매번 손으로 넣는 중 → asidequeue add 때 이부장 대조 단계를 코드로</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F39</b> [Aside] 같은 일을 이부장·이과장이 둘 다 대기열에 넣음(D1-19 색인요청 #564·#565) — asidequeue add 에 같은 코드·종류 중복 거부</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F40</b> [감시] docs/aside_drafts 400개 돌파로 옛 초안 ASIDE_DRAFT 무한 반복 알림 → drafts 본 목록 상한 분리</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F41</b> [감시] F25 후속 — 3. 깨움 생략 판정이 fuel1030 마지막 보고를 작성자 구분 없이 읽음(by=3. 필터)</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F42</b> [Aside] asidechain._load() 읽기 실패 시 빈 orders 로 저장 → aside_orders.json 전체 유실 위험(batchboard 처럼 재시도·fail-closed)</label>
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
 <div class="card"><div class="ch"><i class="lamp done"></i>🤖 에이전트 C <span class="m">· F30 · F31 · 작업 끝 · 이부장 검토 대기</span></div><div class="now">🔄 <b>F30</b> 에이전트 C 끝 · 이부장 검토: 진짜 빔 14편(12+H1-31·H1-33, 10-29~10-31 게시분) 오탐 0 → 다음: 캡션 정정(인스타는 사장님 「완료」 필요 — 결재함 준비)<span class="m"> · 2026-11-03 10:25</span></div><div class="now">🔄 <b>F31</b> 에이전트 C 끝 · 이부장 검토: 6편 진짜 블록 없음(DB 에 URL 3개씩 있음) → 다음: 이과장 crosslink 지시<span class="m"> · 2026-11-03 10:25</span></div><ol class="st"><li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li><li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li></ol></div>
-<div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 미배정 <span class="m">· F12 · F24 · F25 · 작업 중</span></div><div class="now">🔄 <b>F12</b> 실결재 11-03 10:28~10:30 watch_approve 3건·publish_go 1건 — 결재서버 커밋 4건 모두 _SYNC_FILES 안 경로 지정(879fa6f50·ac137d7eb·f21a8d0a9·c8e3aee0f)·stamp-fail 0 ✅ · 남은 것: 지시서 도장 스레드(approve-&lt;배치&gt;) 경로는 아직 미발생<span class="m"> · 2026-11-03 10:35</span></div><div class="now">🔄 <b>F24</b> dd5a71ddb 커밋 · 이부장 검토 OK(tests 144·enginemap) · 페이블 사후 검증 중 → 끝나면 ✅<span class="m"> · 2026-11-03 10:40</span></div><div class="now">🔄 <b>F25</b> dd5a71ddb 커밋 · 이부장 검토 OK(tests 144·enginemap) · 페이블 사후 검증 중 → 끝나면 ✅<span class="m"> · 2026-11-03 10:40</span></div><ol class="st"><li><span class="m">11-03 10:37</span> F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기</li><li><span class="m">11-03 10:36</span> F24/F25 단계 4/5: 테스트 — tests/test_studio_pure 144 OK(TestServerDecide·TestFuelWake3 신설) · validate_db FAIL 0 · enginemap 🔴0</li><li><span class="m">11-03 10:33</span> F24/F25 단계 4/5: 구현 끝(server_ping·server_decide·fuel_is_remind·fuel_wake3) · enginemap 🔴0 · 실데이터 fuel_wake3=생략(11-02 12:12 빈손·재료 03:08) — 테스트 중</li><li><span class="m">11-03 10:29</span> F24/F25 단계 3/5: 설계도 반영 끝(마디 AP 신설·FW 행 3. 깨움 생략·사건 대입 1줄) — towertick 순수함수 구현 중</li><li><span class="m">11-03 10:27</span> F24/F25 단계 2/5: 설계도 — F24 새 마디 AP(APPROVE_SERVER_DOWN), F25 FW 행에 3. 깨움 생략 조건 추가</li><li><span class="m">11-03 10:24</span> F24/F25 단계 1/5: 코드·재료 확인 — towertick FUEL_LOW 줄 680·fuel_decide, 3. 재료=webapp/naver_analytics.json(kwgap 읽는 원본), 마지막 보고=sessionstate fuel1030</li><li><span class="m">10:40:27</span> 🔸 F25 진행중 — [감시] 재고 0 때 빈손인 3. 반복 깨움</li><li><span class="m">10:40:03</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li></ol></div>
+<div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 미배정 <span class="m">· F12 · 작업 중</span></div><div class="now">🔄 <b>F12</b> 실결재 11-03 10:28~10:30 watch_approve 3건·publish_go 1건 — 결재서버 커밋 4건 모두 _SYNC_FILES 안 경로 지정(879fa6f50·ac137d7eb·f21a8d0a9·c8e3aee0f)·stamp-fail 0 ✅ · 남은 것: 지시서 도장 스레드(approve-&lt;배치&gt;) 경로는 아직 미발생<span class="m"> · 2026-11-03 10:35</span></div><ol class="st"><li><span class="m">10:35:11</span> 🔸 F12 진행중 — [1단계 마무리] 실결재 1회 확인(PC 버튼)</li></ol></div>
 <h2 style="margin-top:18px">🕘 전체 작업 기록</h2>
 <ul class="h"><li><span class="m">11-03 10:37</span> F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기</li>
 <li><span class="m">11-03 10:36</span> F27 단계 4/4: 보고서 docs/audit1102/L_F27.md · git add 완료(커밋 안 함)</li>
@@ -90,6 +92,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li>
 <li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li>
 <li><span class="m">11-03 10:22</span> F09 단계 1/4: batchboard rc 무시 호출부 확인 시작</li>
+<li><span class="m">10:55:54</span> ✅ F25 완료 — [감시] 재고 0 때 빈손인 3. 반복 깨움</li>
+<li><span class="m">10:55:46</span> ✅ F24 완료 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
 <li><span class="m">10:46:11</span> ✅ F40 완료 — [감시] docs/aside_drafts 400개 돌파로 옛 </li>
 <li><span class="m">10:40:27</span> 🔸 F25 진행중 — [감시] 재고 0 때 빈손인 3. 반복 깨움</li>
 <li><span class="m">10:40:03</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
@@ -110,7 +114,5 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">10:34:44</span> 🔸 F09 진행중 — [1단계 마무리] 기록 거부를 무시하는 호출부 6곳</li>
 <li><span class="m">10:33:23</span> ▶   — 1/7단계 · F24/F25 단계 4/5: 구현 끝(server_ping·server_decide·fuel_is_remind·fuel_wake3) · enginemap 🔴0 · 실데이터 fuel_wake3=생략(11-02 12:12 빈손·재료 03:08) — 테스트 중</li>
 <li><span class="m">10:32:58</span> 🔸 F09 진행중 — [1단계 마무리] 기록 거부를 무시하는 호출부 6곳</li>
-<li><span class="m">10:31:36</span> 🔸 F27 진행중 — [하네스] loopcheck 오탐·도구끼리 숫자 다름</li>
-<li><span class="m">10:31:22</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
-<li><span class="m">10:29:50</span> ▶   — 1/7단계 · F27 단계 2/4: 수정 — dupcheck._joins(인접 낱말 2~3개 합성) 상대 base 와 정확일치만 교집합에 추가 + SYNONYM 코로나/코로나19, falsepos 규칙 _r_dupcheck_spacing_compound_1103</li></ul>
+<li><span class="m">10:31:36</span> 🔸 F27 진행중 — [하네스] loopcheck 오탐·도구끼리 숫자 다름</li></ul>
 </section></div></body></html>
