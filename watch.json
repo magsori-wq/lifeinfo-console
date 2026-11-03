@@ -27653,6 +27653,16 @@
    "owner": "claude",
    "state": "blocked",
    "by": "이부장"
+  },
+  {
+   "id": "confirm-backlog-standing-1103",
+   "added": "2026-11-03",
+   "what": "CONFIRM_BACKLOG 가 상시 배치 aside(완료 항목 없음, confirm 불가)를 알림 — 상시 배치는 제외(standing_settled 재사용) · F47 후속 Sonnet",
+   "due": "2026-11-04",
+   "cmd": "python -m studio.batchboard confirm --id aside --note x",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
