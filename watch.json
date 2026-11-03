@@ -27716,6 +27716,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "이과장"
+  },
+  {
+   "id": "deploy-thumb-450",
+   "added": "2026-11-04",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(450_childcare_shortened_hours.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-04",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "d5-10-promulgation-recheck",
+   "added": "2026-11-04",
+   "what": "D5-10 남녀고평법 시행령 개정(허용 통지 14일) 공포·조문 번호·부칙 확인 — 공포되면 글에 조문·시행일 반영 보강",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard now --batch followup --what 'D5-10 공포 확인: 국가법령정보센터 남녀고용평등과 일가정 양립 지원에 관한 법률 시행령 제15조 허용 통지 조문·시행일'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
   }
  ]
 }
