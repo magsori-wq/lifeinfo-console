@@ -7345,7 +7345,7 @@
    "order_at": "2026-11-04 02:07"
   }
  },
- "updated": "2026-11-04 02:21:22",
+ "updated": "2026-11-04 02:25:44",
  "current": {
   "batch": "pub1104d510",
   "code": "",
@@ -7356,6 +7356,11 @@
   "since_at": "2026-11-04 02:13:47"
  },
  "log": [
+  {
+   "t": "02:25:44",
+   "text": "✔ 이부장 ack r740fe9",
+   "actor": "이부장"
+  },
   {
    "t": "02:21:22",
    "text": "🏁 draft1104d510 이부장 확인 — 끝남",
@@ -7550,11 +7555,6 @@
    "t": "21:06:35",
    "text": "✅ lifeinfo-travel-prep-1103 완료 — lifeinfo-travel-prep (D)",
    "actor": "미상:db30f1dc"
-  },
-  {
-   "t": "20:09:36",
-   "text": "✅ daily-email-briefing-1103pm-1103 완료 — daily-email-briefing-1103pm (A)",
-   "actor": "미상:99ffe063"
   }
  ],
  "currents": {
@@ -23184,6 +23184,17 @@
    "what": "D5-10 발행 트리거(02:13) — pace·pubready·썸네일 450 200 통과. D5-09 DB 반영은 syncorigin 성공으로 해소",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 02:25:44",
+   "bid": "pub1104d509",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r740fe9 — 02:2x 이부장 처리: 막던 9파일 ec9706e81 커밋(02:1x)·이과장에 syncorigin 재시도·네이버 asidequeue add 직접 등록 지시",
+   "actor": "이부장",
+   "sid": "544f52c8",
+   "ack": "r740fe9"
   }
  ]
 }
