@@ -2,30 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-11T20:34:27",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "approve-a3-13-fixlink",
-   "detail": "사장님 승인(폰 결재함 붙여넣기 20:3x) — 이부장 확인: 옛 279-5.html 404 · 새 27-95-2026.html 200(=A3-12 DB url). 이과장이 fixlink 실행",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-12T04:41:28",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "batchboard-mark-reopen-silent-0912",
-   "detail": "정정 — 도구 결함 아님. mark 는 동결 배치면 '[차단] … 동결된 배치입니다' 를 출력한다(batchboard.py L1767). 관제탑이 출력을 grep 'OK|오류' 로 걸러 경고를 스스로 지웠다. 교훈: 결과 판정용 필터에 차단·거부 문구를 빼지 말 것",
-   "via": "cli"
-  },
-  {
-   "at": "2026-09-12T09:48:05",
-   "actor": "V0검사관",
-   "action": "v0check.fail",
-   "target": "A1-16",
-   "detail": "1차출처 미근거 핵심주장 2건: ①48·111줄 'Ⅰ유형 9월 3차 실제 중단' 단정의 근거가 뉴스(2차, vegannews)뿐인데 125줄 출처박스는 같은 사실을 '정황 참고로만 인용'이라 적어 본문-출처박스가 모순 — 이 문장이 제목·함정①의 후킹 근거다. 해결: 남양주시청 원문(1",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-12T09:55:14",
    "actor": "V0검사관",
    "action": "v0check.pass",
@@ -15999,6 +15975,30 @@
    "action": "pubqueue.go",
    "target": "D3-12",
    "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-03T10:28:40",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "aroma-am-sp-007-approve-1102",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-03T10:29:18",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "aroma-am-pe-004-approve-1102",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-03T10:29:59",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "aroma-am-dg-004-approve-1102",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
   }
  ]
