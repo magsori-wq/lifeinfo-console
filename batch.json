@@ -7345,17 +7345,32 @@
    "order_at": "2026-11-04 02:07"
   }
  },
- "updated": "2026-11-04 02:29:42",
+ "updated": "2026-11-04 02:30:53",
  "current": {
-  "batch": "aside",
+  "batch": "followup",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[Aside][done] [D5-09] #580 네이버 새 글 게시 완료. 라이브 제목·카테고리(달라지는 제도·지원금)·대표사진 첫블록1장·태그5·표12 확인. 제공 서식본과 본문 sameText 일치, 공식출처2·블로그원문·관련글2 링크 보존. 발행1회·중복 없음. 작업탭2개 닫음, 총 탭12개. · https://blog.naver.com/magsori8975/224464165346",
-  "since": "11:31",
-  "since_at": "2026-10-08 11:31:43"
+  "what": "[체인] #580 D5-09 naver 확인 ✅ (naverfind --gate D5-09 → ✅ 네이버 게시 감지·기록: https://blog.naver.com/magsori8975/224464165346) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "02:30:53",
+   "text": "▶   — 1/7단계 · [체인] #580 D5-09 naver 확인 ✅ (naverfind --gate D5-09 → ✅ 네이버 게시 감지·기록: https://blog.naver.com/magsori8975/224464165346) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
+   "actor": "Aside"
+  },
+  {
+   "t": "02:30:47",
+   "text": "🏁 Aside #580 이부장 확인",
+   "actor": "Aside"
+  },
+  {
+   "t": "02:30:42",
+   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224464165346 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "Aside"
+  },
   {
    "t": "02:29:42",
    "text": "▶   — 1/7단계 · [Aside][done] [D5-09] #580 네이버 새 글 게시 완료. 라이브 제목·카테고리(달라지는 제도·지원금)·대표사진 첫블록1장·태그5·표12 확인. 제공 서식본과 본문 sameText 일치, 공식출처2·블로그원문·관련글2 링크 보존. 발행1회·중복 없음. 작업탭2개 닫음, 총 탭12개. · https://blog.naver.com/magsori8975/224464165346",
@@ -7539,21 +7554,6 @@
   {
    "t": "00:16:39",
    "text": "📄 draft1104d510 작업 지시 등록(11440자, 2026-11-04 00:16)",
-   "actor": "미상:e2aceffd"
-  },
-  {
-   "t": "00:16:34",
-   "text": "📋 배치 '✍️ D5-10 초안 — 육아기 근로시간 단축 허용도 14일 안에 통지 — 11월 27일 달라지는 신청  (선별 자동 지시)' 등록 — 1항목",
-   "actor": "미상:e2aceffd"
-  },
-  {
-   "t": "00:15:40",
-   "text": "🏷️ draft1104d509 담당=이과장",
-   "actor": "미상:e2aceffd"
-  },
-  {
-   "t": "00:15:36",
-   "text": "📄 draft1104d509 작업 지시 등록(11432자, 2026-11-04 00:15)",
    "actor": "미상:e2aceffd"
   }
  ],
@@ -8805,7 +8805,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[체인] #577 B4-26 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfRFTRgAcLT · ✅ 쓰레드 이미지 ↔ thread_B4-26_jongbuse_deferral.png  MAD ) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
+   "what": "[체인] #580 D5-09 naver 확인 ✅ (naverfind --gate D5-09 → ✅ 네이버 게시 감지·기록: https://blog.naver.com/magsori8975/224464165346) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -9686,8 +9686,8 @@
    "batch": "pub1104d509",
    "code": "",
    "title": "",
-   "step": 8,
-   "what": "⏸ 대기 — D5-09 발행 ✅(블로그 .../2026/11/blog-post.html). 검색설명은 대기열 등록(01:58). 네이버 원고 osmu/네이버용_장애인주차표지발급대상확대.txt 작성 완료·로컬 커밋. 막힌 것: 원격 러너 커밋(DB 반영)을 받는 병합이 남의 미커밋·스테이지 변경 9파일에 막혀 로컬 lifeinfo_db 에 D5-09 없음 → naver-draft·서식본·osmu 표 불가. 🙋 이부장: 그 파일 소유 세션이 경로 지정 커밋(또는 이부장 판단)하면 알려 주세요, 즉시 python tools/syncorigin.py 후 이어감",
+   "step": 1,
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224464165346 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
    "since": "01:54",
    "since_at": "2026-11-04 01:54:52"
   },
@@ -23223,6 +23223,26 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][done] [D5-09] #580 네이버 새 글 게시 완료. 라이브 제목·카테고리(달라지는 제도·지원금)·대표사진 첫블록1장·태그5·표12 확인. 제공 서식본과 본문 sameText 일치, 공식출처2·블로그원문·관련글2 링크 보존. 발행1회·중복 없음. 작업탭2개 닫음, 총 탭12개. · https://blog.naver.com/magsori8975/224464165346",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 02:30:42",
+   "bid": "pub1104d509",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224464165346 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 02:30:53",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #580 D5-09 naver 확인 ✅ (naverfind --gate D5-09 → ✅ 네이버 게시 감지·기록: https://blog.naver.com/magsori8975/224464165346) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
    "actor": "Aside",
    "sid": "544f52c8"
   }
