@@ -7098,9 +7098,9 @@
     {
      "code": "F37",
      "title": "[Aside] 대기열에 넣어도 Aside 가 쉬면 안 넘어감 — next 잠금(aside_next.lock 240초)에 걸려 수 분 정체(오늘 12:29·20:49 두 번)",
-     "state": "doing",
-     "note": "에이전트B · 구현 끝(미커밋) · 이부장 검토 대기 · next 잠금 pid 생존+330초",
-     "at": "2026-11-03 16:45"
+     "state": "done",
+     "note": "커밋 6ceda2d99 · TestF37F42 OK 이부장 표본 · 실Aside 미시험(다음 대기열에서 관찰)",
+     "at": "2026-11-03 16:46"
     },
     {
      "code": "F38",
@@ -7112,9 +7112,9 @@
     {
      "code": "F39",
      "title": "[Aside] 같은 일을 이부장·이과장이 둘 다 대기열에 넣음(D1-19 색인요청 #564·#565) — asidequeue add 에 같은 코드·종류 중복 거부",
-     "state": "doing",
-     "note": "에이전트B · 구현 끝(미커밋) · 이부장 검토 대기 · 이미 해결(2119c45a7 dup_reason) · 코드 수정 없음",
-     "at": "2026-11-03 16:45"
+     "state": "done",
+     "note": "2119c45a7 게이트 ④ dup_reason·test_564_565_dup 로 해소(에이전트B 확인)",
+     "at": "2026-11-03 16:46"
     },
     {
      "code": "F40",
@@ -7131,9 +7131,9 @@
     {
      "code": "F42",
      "title": "[Aside] asidechain._load() 읽기 실패 시 빈 orders 로 저장 → aside_orders.json 전체 유실 위험(batchboard 처럼 재시도·fail-closed)",
-     "state": "doing",
-     "note": "에이전트B · 구현 끝(미커밋) · 이부장 검토 대기 · asidechain 읽기 실패면 쓰기 차단",
-     "at": "2026-11-03 16:45"
+     "state": "done",
+     "note": "커밋 6ceda2d99 · test_chain_unreadable_no_write · 호출부 False 반환 미처리(경고 print) 남음",
+     "at": "2026-11-03 16:46"
     },
     {
      "code": "F43",
@@ -7330,7 +7330,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-11-03 16:45:33",
+ "updated": "2026-11-03 16:46:24",
  "current": {
   "batch": "aroma",
   "code": "",
@@ -7341,6 +7341,21 @@
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "16:46:24",
+   "text": "✅ F39 완료 — [Aside] 같은 일을 이부장·이과장이 둘 다 대기열에 넣음",
+   "actor": "이부장"
+  },
+  {
+   "t": "16:46:20",
+   "text": "✅ F42 완료 — [Aside] asidechain._load() 읽기 실패 시",
+   "actor": "이부장"
+  },
+  {
+   "t": "16:46:14",
+   "text": "✅ F37 완료 — [Aside] 대기열에 넣어도 Aside 가 쉬면 안 넘어감 ",
+   "actor": "이부장"
+  },
   {
    "t": "16:45:33",
    "text": "🔸 F42 진행중 — [Aside] asidechain._load() 읽기 실패 시",
@@ -7525,21 +7540,6 @@
    "t": "13:36:19",
    "text": "📄 aside 작업 지시 등록(2045자, 2026-11-03 13:36)",
    "actor": "사람"
-  },
-  {
-   "t": "13:35:31",
-   "text": "▶   — 12/7단계 · 이부장 → 이과장: 13:33 🙋(naverrich 대조·pre-cleared) 처리 — asidequeue add 게이트가 자동 대조·삽입(2119c45a7), 이과장이 직접 등록하라고 전달",
-   "actor": "이부장"
-  },
-  {
-   "t": "13:33:49",
-   "text": "▶   — 12/7단계 · Aside 지시 초안 준비: docs/aside_drafts/B4-26_네이버게시.txt · 네이버 원고(제목 33자 통과)·서식본(3984자 보존)·448n 썸네일 푸시 완료. 🙋 이부장 요청: naverrich 대조·pre-cleared 줄 넣은 뒤 등록(제휴 기록 없음). 검색설명은 Aside 대기열 등록됨(13:30)",
-   "actor": "이과장"
-  },
-  {
-   "t": "13:32:56",
-   "text": "⬜ FUEL-3 대기 — 글감 연료 공급 상시 — 재고 하한 미만 시 근거 2개 갖춘 ",
-   "actor": "3."
   }
  ],
  "currents": {
