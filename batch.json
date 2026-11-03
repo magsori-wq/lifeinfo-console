@@ -1873,6 +1873,16 @@
      "base_code": "daily-email-briefing",
      "date": "2026-11-03",
      "at": "2026-11-03 08:10"
+    },
+    {
+     "code": "lifeinfo-publish-1103",
+     "title": "lifeinfo-publish (C)",
+     "state": "done",
+     "note": "11-03 09:xx 루틴3 — 도장(go) 찍힌 미발행 글 0편(발행 트리거 없음). 큐 1건 D3-12 V0 🟢 통과·도장 없음 → 이미 CP 결재함 대기 중이라 중복 등록 안 함. pace 0편/무제한·진행 중 run 없음·setgate 미완 없음. 이어받은것=없음/새로 본것=D3-12 사장님 ⑥ 승인 대기",
+     "auto_daily": true,
+     "base_code": "lifeinfo-publish",
+     "date": "2026-11-03",
+     "at": "2026-11-03 09:05"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -7142,7 +7152,7 @@
    "owner": "이부장"
   }
  },
- "updated": "2026-11-03 09:00:42",
+ "updated": "2026-11-03 09:05:32",
  "current": {
   "batch": "draft1103d312",
   "code": "",
@@ -7153,6 +7163,10 @@
   "since_at": "2026-11-03 00:24:25"
  },
  "log": [
+  {
+   "t": "09:05:32",
+   "text": "✅ lifeinfo-publish-1103 완료 — lifeinfo-publish (C)"
+  },
   {
    "t": "09:00:42",
    "text": "🏷️ tower1103 담당=이부장"
@@ -7308,10 +7322,6 @@
   {
    "t": "21:15:28",
    "text": "🏁 Aside #562 이부장 확인"
-  },
-  {
-   "t": "21:14:31",
-   "text": "▶   — 1/7단계 · [체인] #562 D1-19 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfPRvbtE0cP/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ suneung_ticket_discount_01.png  MAD 0.1 / ✅ 인스타 카드 2 ↔ suneung_ticket_discount_02.png  MAD 0.0 / ✅ 인스타 카드 3 ↔ suneung_ticket_discount_03.png  MAD 0.0) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인"
   }
  ],
  "currents": {
