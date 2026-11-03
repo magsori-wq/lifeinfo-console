@@ -27439,6 +27439,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fix-dupcheck-spacing-1103",
+   "added": "2026-11-03",
+   "what": "F27 dupcheck 붙여쓰기/띄어쓰기 합성어(_joins)+코로나19 동의어 수정 · 463편 자기대조 판정분포 불변 · falsepos/unittest/validate 통과 · 남은 것: 이부장 검토·커밋, watch dupcheck-miss-c216-1101 닫기",
+   "due": "2026-11-04",
+   "cmd": "python -m studio.dupcheck \"소상공인 경영안정바우처\" \"75세 코로나 예방접종\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "fix-f24f25-1103",
+   "added": "2026-11-03",
+   "what": "F24 결재서버 8011 감시(APPROVE_SERVER_DOWN/UP, 연속2회·3h 재알림) + F25 FUEL_LOW 재알림 때 3. 빈손·새 재료 없으면 WAKE_SESSION 3. 생략 — towertick·설계도 AP/FW·테스트 144 OK. 남은 것: 라이브 신호 확인·이부장 검토·커밋",
+   "due": "2026-11-04",
+   "cmd": "python -m unittest tests.test_studio_pure.TestServerDecide tests.test_studio_pure.TestFuelWake3 && python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
