@@ -27696,6 +27696,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:e2aceffd"
+  },
+  {
+   "id": "deploy-thumb-449",
+   "added": "2026-11-04",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(449_disabled_parking_badge.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-04",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "d5-09-promulgation-recheck",
+   "added": "2026-11-04",
+   "what": "D5-09 장애인 편의증진법 시행령 개정 공포일·신청 창구 확인(관보·law.go.kr) — 공포되면 글에 시행일 반영 보강",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.batchboard now --batch followup --what 'D5-09 공포일 확인: 관보 또는 국가법령정보센터 장애인노인임산부등편의증진보장에관한법률시행령 공포일'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
   }
  ]
 }
