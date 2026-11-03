@@ -27521,6 +27521,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "preclear-template-text-1103",
+   "added": "2026-11-03",
+   "what": "이과장 초안 머리말 「pre-cleared 줄은 이부장이」·docs/Aside_지시서_양식.md 를 새 게이트(asidequeue add 가 자동 삽입)에 맞게 고치기 — Sonnet 에이전트",
+   "due": "2026-11-03",
+   "cmd": "grep -rn 'pre-cleared' docs/Aside_지시서_양식.md studio/dispatch.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
