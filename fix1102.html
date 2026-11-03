@@ -25,7 +25,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
 <div class="bar"><i style="width:30%"></i></div>
-<div class="m"><b>30%</b> · 끝 13 / 전체 44 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 11:07 (30초마다 새로고침)</div>
+<div class="m"><b>30%</b> · 끝 13 / 전체 44 · 🔄 5 · ⛔ 0 · 갱신 2026-11-03 11:27 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -64,20 +64,22 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F34</b> [결정] ⏸ 지시 기다림을 막힘 상자에 — 사장님 결정</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F36</b> [1단계 위험] 화면이 기록 파일을 쉼 없이 읽으면 새 코드의 쓰기가 거부될 수 있음(사본 30회 중 28~30 실패) — 실가동 확인</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F37</b> [Aside] 대기열에 넣어도 Aside 가 쉬면 안 넘어감 — next 잠금(aside_next.lock 240초)에 걸려 수 분 정체(오늘 12:29·20:49 두 번)</label>
-<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F38</b> [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄이 없어 Aside 가 멈춤(오늘 #555) — 이부장이 매번 손으로 넣는 중 → asidequeue add 때 이부장 대조 단계를 코드로</label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F38</b> [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄이 없어 Aside 가 멈춤(오늘 #555) — 이부장이 매번 손으로 넣는 중 → asidequeue add 때 이부장 대조 단계를 코드로 <span class="tag">🔄</span></label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F39</b> [Aside] 같은 일을 이부장·이과장이 둘 다 대기열에 넣음(D1-19 색인요청 #564·#565) — asidequeue add 에 같은 코드·종류 중복 거부</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F40</b> [감시] docs/aside_drafts 400개 돌파로 옛 초안 ASIDE_DRAFT 무한 반복 알림 → drafts 본 목록 상한 분리</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F41</b> [감시] F25 후속 — 3. 깨움 생략 판정이 fuel1030 마지막 보고를 작성자 구분 없이 읽음(by=3. 필터)</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F42</b> [Aside] asidechain._load() 읽기 실패 시 빈 orders 로 저장 → aside_orders.json 전체 유실 위험(batchboard 처럼 재시도·fail-closed)</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F43</b> [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 시작」을 누를 수 있었음 → 발행·4채널 끝난 코드는 버튼 숨김·서버 거부</label>
-<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F44</b> [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것으로 남음(#569 Aside 차단) — asidequeue add 때 지시서 안 파일 경로가 그 코드 것인지 검사</label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F44</b> [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것으로 남음(#569 Aside 차단) — asidequeue add 때 지시서 안 파일 경로가 그 코드 것인지 검사 <span class="tag">🔄</span></label>
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
 <div class="card"><div class="ch"><i class="lamp done"></i>🤖 에이전트 C <span class="m">· F30 · F31 · 작업 끝 · 이부장 검토 대기</span></div><div class="now">🔄 <b>F30</b> 에이전트 C 끝 · 이부장 검토: 진짜 빔 14편(12+H1-31·H1-33, 10-29~10-31 게시분) 오탐 0 → 다음: 캡션 정정(인스타는 사장님 「완료」 필요 — 결재함 준비)<span class="m"> · 2026-11-03 10:25</span></div><div class="now">🔄 <b>F31</b> 에이전트 C 끝 · 이부장 검토: 6편 진짜 블록 없음(DB 에 URL 3개씩 있음) → 다음: 이과장 crosslink 지시<span class="m"> · 2026-11-03 10:25</span></div><ol class="st"><li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li><li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li></ol></div>
+<div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 E <span class="m">· F38 · F44 · 작업 중</span></div><div class="now">🔄 <b>F38</b> 에이전트 E · 단계 1/5 · 현행 코드·사고 재현<span class="m"> · 2026-11-03 11:26</span></div><div class="now">🔄 <b>F44</b> 에이전트 E · 단계 1/5 · 현행 코드·사고 재현<span class="m"> · 2026-11-03 11:26</span></div><ol class="st"><li><span class="m">11-03 11:27</span> F38/F44 단계 1/5: 현행 asidequeue.cmd_add 읽기·사고 재현 시작</li><li><span class="m">11:27:05</span> ▶   — 1/7단계 · F38/F44 단계 1/5: 현행 asidequeue.cmd_add 읽기·사고 재현 시작</li><li><span class="m">11:26:58</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li><li><span class="m">11:26:52</span> 🔸 F38 진행중 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 </li><li><span class="m">11:26:39</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li><li><span class="m">11:26:35</span> 🔸 F38 진행중 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 </li><li><span class="m">11:25:29</span> ▶   — 1/7단계 · 👤 사장님 11:25: 「이부장은 규칙을 정하는 관리자 — 오케스트레이터로 조율해야 막힘이 없고 빨라진다」 → 손일(지시서 손편집·재등록) 중지. 반복 손일은 게이트로: F38(pre-cleared 대조)·F44(지시서 경로 코드 일치) 를 asidequeue add 게이트로 — 에이전트 착수</li></ol></div>
 <div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 미배정 <span class="m">· F12 · 작업 중</span></div><div class="now">🔄 <b>F12</b> 실결재 11-03 10:28~10:30 watch_approve 3건·publish_go 1건 — 결재서버 커밋 4건 모두 _SYNC_FILES 안 경로 지정(879fa6f50·ac137d7eb·f21a8d0a9·c8e3aee0f)·stamp-fail 0 ✅ · 남은 것: 지시서 도장 스레드(approve-&lt;배치&gt;) 경로는 아직 미발생<span class="m"> · 2026-11-03 10:35</span></div><ol class="st"><li class="m">아직 단계 기록 없음</li></ol></div>
 <h2 style="margin-top:18px">🕘 전체 작업 기록</h2>
-<ul class="h"><li><span class="m">11-03 10:37</span> F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기</li>
+<ul class="h"><li><span class="m">11-03 11:27</span> F38/F44 단계 1/5: 현행 asidequeue.cmd_add 읽기·사고 재현 시작</li>
+<li><span class="m">11-03 10:37</span> F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기</li>
 <li><span class="m">11-03 10:36</span> F27 단계 4/4: 보고서 docs/audit1102/L_F27.md · git add 완료(커밋 안 함)</li>
 <li><span class="m">11-03 10:36</span> F27 단계 3/4: 회귀 — 463편 자기대조 판정분포 전후 동일(new277·related139·strong47), 점수변화 1편(G3-11 🟢유지). 경영안정바우처→A2-27 🔴1.00, 75세 코로나→C2-16 🔴0.67. falsepos 🔴0, unittest 144 OK, validate FAIL 0</li>
 <li><span class="m">11-03 10:36</span> F24/F25 단계 4/5: 테스트 — tests/test_studio_pure 144 OK(TestServerDecide·TestFuelWake3 신설) · validate_db FAIL 0 · enginemap 🔴0</li>
@@ -94,14 +96,10 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li>
 <li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li>
 <li><span class="m">11-03 10:22</span> F09 단계 1/4: batchboard rc 무시 호출부 확인 시작</li>
-<li><span class="m">10:55:54</span> ✅ F25 완료 — [감시] 재고 0 때 빈손인 3. 반복 깨움</li>
-<li><span class="m">10:55:46</span> ✅ F24 완료 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
-<li><span class="m">10:46:11</span> ✅ F40 완료 — [감시] docs/aside_drafts 400개 돌파로 옛 </li>
-<li><span class="m">10:40:27</span> 🔸 F25 진행중 — [감시] 재고 0 때 빈손인 3. 반복 깨움</li>
-<li><span class="m">10:40:03</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
-<li><span class="m">10:39:00</span> ✅ F27 완료 — [하네스] loopcheck 오탐·도구끼리 숫자 다름</li>
-<li><span class="m">10:37:24</span> ▶   — 1/7단계 · F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기</li>
-<li><span class="m">10:37:16</span> 🔸 F25 진행중 — [감시] 재고 0 때 빈손인 3. 반복 깨움</li>
-<li><span class="m">10:37:11</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
-<li><span class="m">10:37:04</span> ✅ F09 완료 — [1단계 마무리] 기록 거부를 무시하는 호출부 6곳</li></ul>
+<li><span class="m">11:27:05</span> ▶   — 1/7단계 · F38/F44 단계 1/5: 현행 asidequeue.cmd_add 읽기·사고 재현 시작</li>
+<li><span class="m">11:26:58</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li>
+<li><span class="m">11:26:52</span> 🔸 F38 진행중 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 </li>
+<li><span class="m">11:26:39</span> 🔸 F44 진행중 — [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것</li>
+<li><span class="m">11:26:35</span> 🔸 F38 진행중 — [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 </li>
+<li><span class="m">11:25:29</span> ▶   — 1/7단계 · 👤 사장님 11:25: 「이부장은 규칙을 정하는 관리자 — 오케스트레이터로 조율해야 막힘이 없고 빨라진다」 → 손일(지시서 손편집·재등록) 중지. 반복 손일은 게이트로: F38(pre-cleared 대조)·F44(지시서 경로 코드 일치) 를 asidequeue add 게이트로 — 에이전트 착수</li></ul>
 </section></div></body></html>
