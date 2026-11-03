@@ -24,8 +24,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:31%"></i></div>
-<div class="m"><b>31%</b> · 끝 13 / 전체 42 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 10:56 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:30%"></i></div>
+<div class="m"><b>30%</b> · 끝 13 / 전체 43 · 🔄 3 · ⛔ 0 · 갱신 2026-11-03 11:01 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -69,6 +69,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F40</b> [감시] docs/aside_drafts 400개 돌파로 옛 초안 ASIDE_DRAFT 무한 반복 알림 → drafts 본 목록 상한 분리</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F41</b> [감시] F25 후속 — 3. 깨움 생략 판정이 fuel1030 마지막 보고를 작성자 구분 없이 읽음(by=3. 필터)</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F42</b> [Aside] asidechain._load() 읽기 실패 시 빈 orders 로 저장 → aside_orders.json 전체 유실 위험(batchboard 처럼 재시도·fail-closed)</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F43</b> [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 시작」을 누를 수 있었음 → 발행·4채널 끝난 코드는 버튼 숨김·서버 거부</label>
 </section>
 <section class="right">
 <h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
@@ -110,9 +111,5 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">10:35:24</span> 🔸 F24 진행중 — [감시] 결재서버 8011 꺼져도 알림 없음</li>
 <li><span class="m">10:35:17</span> ▶   — 1/7단계 · F09 단계 4/4 끝: 보고서 docs/audit1102/I_F09.md · 5파일+보고서 git add · watch fix-boardrc-1103 · 이부장 검토 대기</li>
 <li><span class="m">10:35:11</span> 🔸 F12 진행중 — [1단계 마무리] 실결재 1회 확인(PC 버튼)</li>
-<li><span class="m">10:35:05</span> ▶   — 1/7단계 · F09 단계 3/4 끝: 사본 테스트 py 40/40·sh 4경우 PASS, validate FAIL 0, test_studio_pure 139 OK · 단계 4/4 보고서</li>
-<li><span class="m">10:34:44</span> 🔸 F09 진행중 — [1단계 마무리] 기록 거부를 무시하는 호출부 6곳</li>
-<li><span class="m">10:33:23</span> ▶   — 1/7단계 · F24/F25 단계 4/5: 구현 끝(server_ping·server_decide·fuel_is_remind·fuel_wake3) · enginemap 🔴0 · 실데이터 fuel_wake3=생략(11-02 12:12 빈손·재료 03:08) — 테스트 중</li>
-<li><span class="m">10:32:58</span> 🔸 F09 진행중 — [1단계 마무리] 기록 거부를 무시하는 호출부 6곳</li>
-<li><span class="m">10:31:36</span> 🔸 F27 진행중 — [하네스] loopcheck 오탐·도구끼리 숫자 다름</li></ul>
+<li><span class="m">10:35:05</span> ▶   — 1/7단계 · F09 단계 3/4 끝: 사본 테스트 py 40/40·sh 4경우 PASS, validate FAIL 0, test_studio_pure 139 OK · 단계 4/4 보고서</li></ul>
 </section></div></body></html>
