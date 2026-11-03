@@ -1893,6 +1893,16 @@
      "base_code": "lifeinfo-daily-topics",
      "date": "2026-11-03",
      "at": "2026-11-03 09:18"
+    },
+    {
+     "code": "9-lifeinfo-issue-product-pm-1103",
+     "title": "9-lifeinfo-issue-product-pm (I)",
+     "state": "done",
+     "note": "[조사장부] 목록 3 · 원문 0 · 후보 3 · 탈락 3 · 검색어 3 (바닥 미달: 원문 0/5 — 상품 루틴이라 1차 출처 본문 없음, 토스 296건 수집·search 16낱말) 🛒 빈손 — 이어받은 것: 곰도리 온열안대(리뷰1,953)는 루틴8이 오늘 afflink-eyewarm1103 으로 이미 결재함 등록. 새로 본 것·탈락: ① 쟈니베어 군인핫팩 특대(15,980·리뷰494) — hotpack1026 핫팩 기게시, 같은 갈래 반복 ② 올인원 쿠션 망토담요(8,450·리뷰511) — 20261027-2 담요망토 기게시 ③ 기모 보온 니삭스(리뷰993) — socks1020 기게시. 전기장판·김장·수능·연말·방한·내복·수면양말·제습 은 토스 인기목록에 없음(다나와·쿠팡 미조사). 새 근거 없어 결재함 등록 안 함.",
+     "auto_daily": true,
+     "base_code": "9-lifeinfo-issue-product-pm",
+     "date": "2026-11-03",
+     "at": "2026-11-03 15:14"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -7314,7 +7324,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-11-03 14:09:59",
+ "updated": "2026-11-03 15:14:33",
  "current": {
   "batch": "aside",
   "code": "",
@@ -7325,6 +7335,11 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "15:14:33",
+   "text": "✅ 9-lifeinfo-issue-product-pm-1103 완료 — 9-lifeinfo-issue-product-pm (I)",
+   "actor": "미상:31dac1e3"
+  },
   {
    "t": "14:09:59",
    "text": "▶   — 1/7단계 · [Aside][done] [B4-26] #578 색인 요청1/1 완료 — 요청 전 발견됨-현재 색인 미생성·최근 크롤링 해당사항 없음. 「색인 생성 요청됨/우선순위 크롤링 대기열 추가」 화면 확인·증빙 저장. 할당량 초과 없음. 유효성검사/사이트맵 미조작. 작업탭 닫음, 총 탭8개. 보고 2026-11-03 14:09:58 · https://lifeinfo8975.blogspot.com/2026/11/12-12-60-5.html",
@@ -7518,11 +7533,6 @@
   {
    "t": "13:24:42",
    "text": "▶   — 8/7단계 · 썸네일 448 github.io 200 확인(브라우저·curl) → B4-26 발행 run 41577941836 트리거(13:24)",
-   "actor": "이과장"
-  },
-  {
-   "t": "13:20:52",
-   "text": "▶   — 1/7단계 · ⏸ 대기 — 발행 트리거 직전 게이트는 전부 ✅(pace·setgate·pubready·원격동기)지만 썸네일 github.io/thumbs/448_jongbuse_deferral.png 가 404(deploy 전). 이미지 깨진 채 나가지 않게 deploy 완료(이부장 deploy.bat)를 기다림. 🙋 이부장: deploy 후 알려 주시면 즉시 gh workflow run",
    "actor": "이과장"
   }
  ],
