@@ -36,8 +36,10 @@
   function status(b, s, ao) {
     s = s || {}; b = b || {};
     if (b.frozen) return 'frozen';   // 이부장이 중단·통합한 지시(frozen_note 에 이유) — 열린 일이 아니다(2026-10-13 실측 8건)
-    var oa = String(b.order_at || '').slice(0, 16);
-    var conf = String(b.confirmed_at || '').slice(0, 16);
+    // F13(11-04) - 시각은 초 단위로 비교한다(옛 분 단위 16자는 :00 을 붙인다 - studio/cpstate.py 와 같은 식)
+    var t19 = function (x) { x = String(x || '').trim(); return x.length === 16 ? x + ':00' : x.slice(0, 19); };
+    var oa = t19(b.order_at);
+    var conf = t19(b.confirmed_at);
     var m = String(b.order || '').match(/지시 #(\d{1,3})/);
     if (ao && m && /aside/i.test(String(b.owner || '') + String(b.title || ''))) {
       var o = (ao.orders || {})[m[1]];
@@ -48,10 +50,15 @@
     }
     var items = b.items || [], done = 0, blocked = false;
     items.forEach(function (it) { if (it.state === 'done' || it.state === 'skip' || it.live === 'done') done++; /* live = 실측 자동완료(batchboard._save, 10-13) */ if (it.state === 'blocked') blocked = true; });
-    if (items.length && done === items.length) return (conf && conf >= oa) ? 'closed' : 'done';
-    var lr = String(s.last_report || '').slice(0, 16);
+    var lr = t19(s.last_report), rd = t19(s.last_read);
+    if (items.length && done === items.length) {
+      if (conf && conf >= oa) return 'closed';
+      // F13 - 끝남(확인된) 배치에 새 지시가 얹혔고 그 뒤 읽음·보고가 없으면 「완료(확인 전)」이 아니라 안 읽음
+      if (conf && oa && rd < oa && lr < oa) return 'unread';
+      return 'done';
+    }
     if (blocked || (lr && lr >= oa && /\[blocked\]|^\s*(\[[^\]]+\]\s*)?(⛔|막힘\s*[:—-])/.test(String(s.last_what || '')))) return 'block';
-    if ((s.last_read && (!oa || s.last_read >= oa)) || (lr && lr > oa)) return 'doing';
+    if ((rd && (!oa || rd >= oa)) || (lr && lr > oa)) return 'doing';
     return 'unread';
   }
   var CHIP = { unread: ['c-unread', '⏳ 안 읽음'], doing: ['c-doing', '👀 진행 중'], block: ['c-block', '⛔ 막힘'],

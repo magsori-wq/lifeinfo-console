@@ -748,7 +748,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    (draft0830a/b/c·pub0830d)가 통째로 빠졌다 — 가장 중요한 '안 읽음'이 안 보였다.
   // 🔴 `last_order_at` 에 "일시 기록 안 됨" 같은 **문자열**이 들어 있다(실측 2건).
   //    날짜로 비교하면 한글이 숫자보다 커서 늘 '안 읽음'으로 오판한다. 형식을 먼저 본다.
-  function _dt(s){ s=String(s||''); return /^\d{4}-\d{2}-\d{2}/.test(s)? s : ''; }
+  function _dt(s){ s=String(s||''); if(!/^\d{4}-\d{2}-\d{2}/.test(s)) return ''; return s.length===16 ? s+':00' : s.slice(0,19); }  /* F13: 초 단위 19자(옛 16자는 :00) */
   function rst(id){
     var v=((SSJ.sessions)||{})[id]||{}, b=((B.batches)||{})[id]||{};
     var oa=_dt(b.order_at)||_dt(v.last_order_at), lr=_dt(v.last_read);
@@ -853,7 +853,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       boss.push({act:'', c:t.code, t:t.title, done:true,
         sum:t.summary||'', facts:t.facts||'', by:t.src||'',
         why:'✅ 글감 승인완료 — 초안 작업 대기', cmd:''});
-    if(t.state==='proposed') lee.push({act:'topic_pick',c:t.code,t:t.title,
+    if(t.state==='proposed' && !(byc[t.code]||{}).url && !byq[t.code]) lee.push({act:'topic_pick',c:t.code,t:t.title,
       why:'이부장 선별 대기(②) — 특별이슈급인가로 판단',
       cmd:'python -m studio.topicprop pick --code '+t.code});
   });
