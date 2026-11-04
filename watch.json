@@ -28220,6 +28220,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "insta-caption-blind-window-1105",
+   "added": "2026-11-05",
+   "what": "인스타 캡션 빔 12편 중 selfcheck 26 최근 15편 창 밖 8편(B3-07·F3-10·G1-17·F1-18·A3-17·B5-10·A6-08·H1-34·H1-35 중 9편)이 selfcheck 에 안 잡힘 — 라이브 og:description 실측 12편 모두 캡션 0(11-05 실측). selfcheck 26 은 최근 15편만 본다",
+   "due": "2026-11-06",
+   "cmd": "for c in B3-07 F3-10 G1-17 F1-18 A3-17 B5-10 A6-08 H1-34 H1-35 A6-09 H1-36 D3-11; do u=$(python -c \"import json;db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['osmu']['instagram'] for p in db['posts'] if p['code']=='$c'][0])\"); echo \"$c $(curl -sL -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' \"$u\" | grep -o 'og:description\\\" content=\\\"[^\\\"]*' | cut -c1-120)\"; done",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
