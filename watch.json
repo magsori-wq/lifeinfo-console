@@ -28210,6 +28210,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "aside-lee-lane-retest-1105",
+   "added": "2026-11-05",
+   "what": "스킬 15행 수정 뒤 이과장이 올린 Aside 지시가 「실행자 아님」 없이 통과하는지 확인",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.asidequeue list  # 이과장(by lee) 항목이 blocked 아닌 done 인지",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
