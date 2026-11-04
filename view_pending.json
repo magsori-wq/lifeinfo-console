@@ -1,11 +1,10 @@
 {
- "computed_at": "2026-11-04 13:39:41",
- "source_head": "28e0c76691a3",
+ "computed_at": "2026-11-04 13:51:49",
+ "source_head": "decc5d8d6621",
  "ids": [
   "B4-28",
   "C1-19",
-  "G4-14",
-  "deploy-thumb-454"
+  "G4-14"
  ],
  "posts": [
   {
@@ -15,7 +14,7 @@
    "eng": "stock_deduction_refund",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224464646337",
      "files": [
       {
        "label": "네이버 원고",
@@ -30,7 +29,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -63,7 +62,7 @@
   {
    "code": "G4-14",
    "title": "김장재료 수급안정대책 2026 — 농할상품권 20% 선할인, 구매 한도는 1인 10만 원",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -85,12 +84,12 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "C1-19",
    "title": "희귀·중증난치질환 본인부담 10%→7% — 12월 1일 진료분부터(예정), 내 의료비는 얼마나 줄나",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -112,18 +111,9 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
- "actions": [
-  {
-   "id": "deploy-thumb-454",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(454_rare_disease_copay_7.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-04",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "actions": [],
  "actionsFuture": []
 }
