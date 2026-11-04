@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-11-04 13:13:51",
- "source_head": "4800ba94f11c",
+ "computed_at": "2026-11-04 13:17:59",
+ "source_head": "33ddbc18930b",
  "ids": [
-  "B4-28"
+  "B4-28",
+  "deploy-thumb-452"
  ],
  "posts": [],
  "publish": [
@@ -10,7 +11,7 @@
    "code": "B4-28",
    "title": "주식 양도소득세 기본공제 250만 원 빠뜨렸다면 — 국세청이 4,687명에게 먼저 돌려줬다",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 주식양도세기본공제환급_글_HTML.txt",
@@ -34,6 +35,15 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-452",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(452_stock_deduction_refund.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-04",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
