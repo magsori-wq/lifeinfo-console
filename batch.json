@@ -1849,6 +1849,28 @@
      "date": "2026-11-05",
      "at": "2026-11-05 07:15",
      "actor": "미상:a68ac512"
+    },
+    {
+     "code": "daily-email-briefing-1105",
+     "title": "daily-email-briefing (A)",
+     "state": "done",
+     "note": "11-05 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사중). 새 중요 메일 없음(이어받은 것: Google Developers OAuth 미사용 클라이언트 11-03·Play 영수증·GCP 결제 ₩7,336·쿠팡 수신동의 모두 기보고). 새로 본 것: GitHub Pages deploy 실패 11-04 20:18Z(콘솔 저장소) — gh run view 로 원인 'Timeout reached, aborting' (GitHub측 10분 타임아웃), 이후 23:04Z 포함 최근 run 6건 전부 success → 무해 일시장애. 점검: magsori 4건·m8975 0·aroma 0(평소)·커넥터 8975 전달 1건(Google 뉴스 다이제스트). GSC·애드센스 메일 없음.",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing",
+     "date": "2026-11-05",
+     "at": "2026-11-05 08:09",
+     "actor": "미상:927c073d"
+    },
+    {
+     "code": "daily-email-briefing-1105-1105",
+     "title": "daily-email-briefing-1105 (A)",
+     "state": "done",
+     "note": "11-05 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사중). 새 중요 메일 없음(Google Developers OAuth·Play 영수증·GCP ₩7,336·쿠팡 수신동의 모두 기보고). 새로 본 것: Pages deploy 실패 11-04 20:18Z = 'Timeout reached'(GitHub측), 이후 run 6건 success → 무해. magsori 4·m8975 0·aroma 0(평소)·GSC/애드센스 메일 없음.",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing-1105",
+     "date": "2026-11-05",
+     "at": "2026-11-05 08:10",
+     "actor": "미상:927c073d"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -7754,7 +7776,7 @@
    "order_at": "2026-11-05 05:07:10"
   }
  },
- "updated": "2026-11-05 08:04:22",
+ "updated": "2026-11-05 08:10:09",
  "current": {
   "batch": "cadaily",
   "code": "",
@@ -7765,6 +7787,16 @@
   "since_at": "2026-10-13 16:39:44"
  },
  "log": [
+  {
+   "t": "08:10:09",
+   "text": "✅ daily-email-briefing-1105-1105 완료 — daily-email-briefing-1105 (A)",
+   "actor": "미상:927c073d"
+  },
+  {
+   "t": "08:09:54",
+   "text": "✅ daily-email-briefing-1105 완료 — daily-email-briefing (A)",
+   "actor": "미상:927c073d"
+  },
   {
    "t": "08:04:22",
    "text": "⬜ FUEL-3 대기 — 글감 연료 공급 상시 — 재고 하한 미만 시 근거 2개 갖춘 ",
@@ -7954,16 +7986,6 @@
    "t": "03:33:17",
    "text": "▶   — 1/7단계 · [Aside][blocked] [B5-12] 수신 2026-11-05 03:30:52 — #614 blocked, 실행자 아님. 전체267배치 확인, 관련 기존 보고 없음. 스킬 허용 실행자fZcN6UTcB4PoZVYk와 현재3piqDmwWDz7VLUkM 불일치가 여전함. Search Console 미조작·색인 요청0건, 상태/마지막 크롤링 미확인. 지정 실행자 채팅으로 전달 필요. · https://lifeinfo8975.blogspot.com/2026/11/11-4-435-hug.html",
    "actor": "Aside"
-  },
-  {
-   "t": "03:30:52",
-   "text": "📄 aside 작업 지시 등록(1449자, 2026-11-05 03:30:52)",
-   "actor": "사람"
-  },
-  {
-   "t": "03:29:52",
-   "text": "✅ B5-12 완료 — 전월세 안심신탁 임대인 모집 11월 4일 시작 — 연 4.35",
-   "actor": "이과장"
   }
  ],
  "currents": {
