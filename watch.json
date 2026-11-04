@@ -27948,6 +27948,16 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "c119-v0-deploy-after-run-1104",
+   "added": "2026-11-04",
+   "what": "B4-28 발행 run 이 끝나면: C1-19 V0 검사(v0 에이전트) → 썸네일 454 deploy.bat → 결재함. 발행 중 webapp 커밋·deploy 금지라 대기",
+   "due": "2026-11-04",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
