@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-13T14:13:29",
-   "actor": "V0검사관",
-   "action": "v0check.pass",
-   "target": "E4-05",
-   "detail": "판단형비교(위급/긴급/안전안내 3종 수신거부·알림소리)+함정(안전안내 끄면 대피권고·해제 놓침)+실물대조(90자↔157자 예규별표2 표준문안) 3요소 충족; S1(10월예정)·S3(5/15전국) 시점불일치는 뭉개지 않고 날짜병기(원문 line44 지침 준수); facts-본문 정합 확인",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-13T14:16:03",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "aside-skill-lee-chat-0105",
    "detail": "사장님이 SKILL.md 15행 수정(11-05 04:2x) — 이부장 grep 으로 두 채팅 허용 확인. 이과장 지시 실제 통과는 다음 이과장 등록 건으로 재시험(watch aside-lee-lane-retest-1105)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-05T04:49:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "s8011-down-alert-1103",
+   "detail": "이미 반영됨(83d604421·64b3bf0ac): towertick server_decide APPROVE_SERVER_DOWN(2회 연속·180분 재알림)/UP · 시험 205 통과 — 실제 8011 껐다 켜기 시험은 안 함(순수함수까지)",
    "via": "cli"
   }
  ]
