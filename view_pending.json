@@ -1,17 +1,19 @@
 {
- "computed_at": "2026-11-04 13:26:33",
- "source_head": "16ad9866769a",
+ "computed_at": "2026-11-04 13:30:38",
+ "source_head": "8cf9fde292cd",
  "ids": [
   "B4-28",
+  "C1-19",
   "G4-14",
-  "deploy-thumb-453"
+  "deploy-thumb-453",
+  "deploy-thumb-454"
  ],
  "posts": [],
  "publish": [
   {
    "code": "B4-28",
    "title": "주식 양도소득세 기본공제 250만 원 빠뜨렸다면 — 국세청이 4,687명에게 먼저 돌려줬다",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,13 +35,13 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "G4-14",
    "title": "김장재료 수급안정대책 2026 — 농할상품권 20% 선할인, 구매 한도는 1인 10만 원",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 김장재료수급안정대책_글_HTML.txt",
@@ -61,12 +63,47 @@
     }
    ],
    "light": "todo"
+  },
+  {
+   "code": "C1-19",
+   "title": "희귀·중증난치질환 본인부담 10%→7% — 12월 1일 진료분부터(예정), 내 의료비는 얼마나 줄나",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 희귀난치본인부담7퍼센트_글_HTML.txt",
+     "path": "희귀난치본인부담7퍼센트_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/454_rare_disease_copay_7.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/454_rare_disease_copay_7.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
   }
  ],
  "actions": [
   {
    "id": "deploy-thumb-453",
    "what": "deploy.bat 실행 — 발행 대기 글 썸네일(453_kimjang_supply_plan.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-04",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-454",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(454_rare_disease_copay_7.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
    "due": "2026-11-04",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
