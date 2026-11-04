@@ -28063,6 +28063,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "crawl-urlform-test-1107",
+   "added": "2026-11-04",
+   "what": "색인 요청 URL 형식 비교 시험 — 지금 Aside 는 클린 URL 로 요청(G4-14 지시서), 07-01 수칙은 ?m=1 이었다. 11-04 요청분(클린 D5-09·D5-10·G4-14·B4-28) vs C1-19 를 ?m=1 로 요청해 11-07 GSC 마지막 크롤일을 비교(표본 작아 참고용). 4.(adsense4_1104 AD4-2·3) 가 해석",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.searchconsole inspect",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "ad4-1-baseline-1106",
+   "added": "2026-11-04",
+   "what": "AD4-1 기준선 확정(심사 결과 통지 전) — searchconsole inspect·신규 글 마지막 크롤일 vs 발행일·리디렉션 오류·발견됨 미생성 건수",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.batchboard order --id adsense4_1104",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
   }
  ]
 }
