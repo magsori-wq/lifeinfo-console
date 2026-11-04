@@ -24,8 +24,8 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 </style></head><body><div class="wrap">
 <section class="left">
 <h1>🧰 전체 점검 11-02 — 문제·개선 체크리스트(보고서 audit_1102.html)</h1>
-<div class="bar"><i style="width:56%"></i></div>
-<div class="m"><b>56%</b> · 끝 28 / 전체 50 · 🔄 4 · ⛔ 0 · 갱신 2026-11-04 08:22 (30초마다 새로고침)</div>
+<div class="bar"><i style="width:62%"></i></div>
+<div class="m"><b>62%</b> · 끝 31 / 전체 50 · 🔄 4 · ⛔ 0 · 갱신 2026-11-04 11:08 (30초마다 새로고침)</div>
 <p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F01</b> [1단계] 결재 도장이 기록 파일을 잠금 없이 덮어씀 → 잠금+원자쓰기</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F02</b> [1단계] today.py 무잠금 쓰기 → 같은 잠금 경로</label>
@@ -39,7 +39,7 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F10</b> [1단계 마무리] 결재 1회=커밋 2개 → 1개(이중 카운트)</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F11</b> [1단계 마무리] 결재 재클릭 때 도장 없으면 자동 재도장</label>
 <label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>F12</b> [1단계 마무리] 실결재 1회 확인(PC 버튼) <span class="tag">🔄</span></label>
-<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F13</b> [2단계] 시각 초 단위·새 지시는 안읽음 우선(끝남 되돌림)</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F13</b> [2단계] 시각 초 단위·새 지시는 안읽음 우선(끝남 되돌림)</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F14</b> [2단계] 결재 파일 한 번에 굽기(거짓 「불일치」 배지)</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F15</b> [2단계] 상시 배치 판정 함수 하나로</label>
 <label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F16</b> [2단계] 기록 읽기 실패를 「모름」으로</label>
@@ -67,9 +67,9 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F38</b> [Aside] 이과장 초안에 「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄이 없어 Aside 가 멈춤(오늘 #555) — 이부장이 매번 손으로 넣는 중 → asidequeue add 때 이부장 대조 단계를 코드로</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F39</b> [Aside] 같은 일을 이부장·이과장이 둘 다 대기열에 넣음(D1-19 색인요청 #564·#565) — asidequeue add 에 같은 코드·종류 중복 거부</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F40</b> [감시] docs/aside_drafts 400개 돌파로 옛 초안 ASIDE_DRAFT 무한 반복 알림 → drafts 본 목록 상한 분리</label>
-<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F41</b> [감시] F25 후속 — 3. 깨움 생략 판정이 fuel1030 마지막 보고를 작성자 구분 없이 읽음(by=3. 필터)</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F41</b> [감시] F25 후속 — 3. 깨움 생략 판정이 fuel1030 마지막 보고를 작성자 구분 없이 읽음(by=3. 필터)</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F42</b> [Aside] asidechain._load() 읽기 실패 시 빈 orders 로 저장 → aside_orders.json 전체 유실 위험(batchboard 처럼 재시도·fail-closed)</label>
-<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>F43</b> [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 시작」을 누를 수 있었음 → 발행·4채널 끝난 코드는 버튼 숨김·서버 거부</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F43</b> [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 시작」을 누를 수 있었음 → 발행·4채널 끝난 코드는 버튼 숨김·서버 거부</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F44</b> [OSMU] 인스타 지시서 캡션 경로가 앞 글(D1-19) 것으로 남음(#569 Aside 차단) — asidequeue add 때 지시서 안 파일 경로가 그 코드 것인지 검사</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F45</b> [aroma] 이대리가 이부장 손을 기다리며 멈춤 - webapp 쓰기 불가(미리보기 복사 요청)·본문 변경 뒤 재승인 카드가 늦게 올라옴</label>
 <label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>F46</b> [원천] 보고 주체(actor) 자동 기록 + 🙋·⏸ 요청 단위 ack 종결 — TOWER_OWED 문구 추정 제거</label>
@@ -106,6 +106,12 @@ ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var
 <li><span class="m">11-03 10:24</span> F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md</li>
 <li><span class="m">11-03 10:23</span> F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔</li>
 <li><span class="m">11-03 10:22</span> F09 단계 1/4: batchboard rc 무시 호출부 확인 시작</li>
+<li><span class="m">11:07:59</span> ✅ F43 완료 — [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 </li>
+<li><span class="m">11:07:55</span> ✅ F41 완료 — [감시] F25 후속 — 3. 깨움 생략 판정이 fuel103</li>
+<li><span class="m">11:07:51</span> ✅ F13 완료 — [2단계] 시각 초 단위·새 지시는 안읽음 우선(끝남 되돌림)</li>
+<li><span class="m">11:06:17</span> 🔸 F43 진행중 — [CP] 이미 발행된 글(F1-18)의 초안 지시서에 「초안 </li>
+<li><span class="m">11:06:13</span> 🔸 F41 진행중 — [감시] F25 후속 — 3. 깨움 생략 판정이 fuel103</li>
+<li><span class="m">11:05:49</span> 🔸 F13 진행중 — [2단계] 시각 초 단위·새 지시는 안읽음 우선(끝남 되돌림)</li>
 <li><span class="m">08:22:45</span> ✅ F31 완료 — [라이브] 교차링크 없는 6편</li>
 <li><span class="m">05:30:46</span> 🔸 F29 진행중 — [정리] 기한 지난 내 몫 252건(끝난 26건부터)</li>
 <li><span class="m">05:30:39</span> ✅ F28 완료 — [정리] 끝난 옛 발행 지시서 6건 닫기</li>
