@@ -1,8 +1,10 @@
 {
- "computed_at": "2026-11-04 13:25:26",
- "source_head": "33ddbc18930b",
+ "computed_at": "2026-11-04 13:26:33",
+ "source_head": "16ad9866769a",
  "ids": [
-  "B4-28"
+  "B4-28",
+  "G4-14",
+  "deploy-thumb-453"
  ],
  "posts": [],
  "publish": [
@@ -32,8 +34,44 @@
     }
    ],
    "light": "todo"
+  },
+  {
+   "code": "G4-14",
+   "title": "김장재료 수급안정대책 2026 — 농할상품권 20% 선할인, 구매 한도는 1인 10만 원",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 김장재료수급안정대책_글_HTML.txt",
+     "path": "김장재료수급안정대책_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/453_kimjang_supply_plan.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/453_kimjang_supply_plan.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-453",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(453_kimjang_supply_plan.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-04",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
