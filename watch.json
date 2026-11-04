@@ -27304,8 +27304,10 @@
    "due": "2026-11-04",
    "cmd": "grep -n '_board\\|batchboard' studio/asidechain.py studio/asideprobe.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-05",
+   "result": "호출부 6곳 5037ca084(11-03)로 이미 수정 확인 · 회귀 시험 TestBoardRefusedNoOk 5건 추가 210 통과. 남은 것: 결재 재클릭 시 자동 재도장(1-c) → watch cp-restamp-1105"
   },
   {
    "id": "s8011-down-alert-1103",
@@ -28229,6 +28231,16 @@
    "what": "인스타 캡션 빔 12편 중 selfcheck 26 최근 15편 창 밖 8편(B3-07·F3-10·G1-17·F1-18·A3-17·B5-10·A6-08·H1-34·H1-35 중 9편)이 selfcheck 에 안 잡힘 — 라이브 og:description 실측 12편 모두 캡션 0(11-05 실측). selfcheck 26 은 최근 15편만 본다",
    "due": "2026-11-06",
    "cmd": "for c in B3-07 F3-10 G1-17 F1-18 A3-17 B5-10 A6-08 H1-34 H1-35 A6-09 H1-36 D3-11; do u=$(python -c \"import json;db=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['osmu']['instagram'] for p in db['posts'] if p['code']=='$c'][0])\"); echo \"$c $(curl -sL -A 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' \"$u\" | grep -o 'og:description\\\" content=\\\"[^\\\"]*' | cut -c1-120)\"; done",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "cp-restamp-1105",
+   "added": "2026-11-05",
+   "what": "CP 1단계 마무리 1-c: 결재 재클릭 때 도장이 없으면 자동 재도장 + 1-b 결재 1회=커밋 2개 합치기(결재 감시 이중 카운트)",
+   "due": "2026-11-07",
+   "cmd": "python -m unittest tests.test_approve_close  # 재클릭·도장 없음 시나리오 시험 추가 여부",
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"

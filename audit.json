@@ -2,14 +2,6 @@
  "version": 1,
  "items": [
   {
-   "at": "2026-09-13T14:16:03",
-   "actor": "세션(CLI)",
-   "action": "watch.done",
-   "target": "push-e4-05-0913",
-   "detail": "b53e1b4b origin/main 포함 확인(git branch -r --contains) · ahead=0",
-   "via": "cli"
-  },
-  {
    "at": "2026-09-13T14:30:07",
    "actor": "세션(CLI)",
    "action": "watch.done",
@@ -15999,6 +15991,14 @@
    "action": "watch.done",
    "target": "s8011-down-alert-1103",
    "detail": "이미 반영됨(83d604421·64b3bf0ac): towertick server_decide APPROVE_SERVER_DOWN(2회 연속·180분 재알림)/UP · 시험 205 통과 — 실제 8011 껐다 켜기 시험은 안 함(순수함수까지)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-05T04:50:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp-rc-ignore-callers-1103",
+   "detail": "호출부 6곳 5037ca084(11-03)로 이미 수정 확인 · 회귀 시험 TestBoardRefusedNoOk 5건 추가 210 통과. 남은 것: 결재 재클릭 시 자동 재도장(1-c) → watch cp-restamp-1105",
    "via": "cli"
   }
  ]
