@@ -28043,6 +28043,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "ad4-baseline-0606",
+   "added": "2026-11-04",
+   "what": "4. 기준선 확정(11-06 아침, 심사 결과 통지 전) — adsense4_1104 AD4-1 · 4. 를 깨워 지시서 읽고 실행 보고",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.batchboard order --id adsense4_1104",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "ad4-weekly-1109",
+   "added": "2026-11-04",
+   "what": "4. 주 2회(월·목 아침) GSC 스냅샷 — 다음: 11-09(월). 4. 를 깨워 adsense4_1104 AD4-3 보고 확인",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.batchboard order --id adsense4_1104",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
