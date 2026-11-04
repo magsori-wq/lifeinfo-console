@@ -7752,17 +7752,22 @@
    "order_at": "2026-11-05 01:52:22"
   }
  },
- "updated": "2026-11-05 01:52:22",
+ "updated": "2026-11-05 01:53:39",
  "current": {
-  "batch": "aroma",
+  "batch": "pub1105b512",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "야간 글감 1/4(11-04): 스포츠 AM-SP-009 한국시리즈 2차전 삼성 3-2 KT 12회·이틀 연속 불펜 투구수 — V0 PASS 91, 결재 aroma-am-sp-009-approve-1104 등록. 방송·OTT 빈칸(넷플릭스 Tudum 영문 메인만 열림, 11월 공개작 기사 본문 못 읽음 — 다음: Tudum 11월 기사·티빙·쿠팡플레이 Aside, 방송·OTT 빈칸 누적 1회 이상) / 공연·연예 빈칸(MAMA 11/20-21 오사카 교세라돔 CJ ENM 공식 확인, 예매 일정은 공식서 못 얻음·정보형이라 magsori 몫 우려 — 다음: Mnet Plus·NOL 티켓) / 디지털 빈칸(지스타 2건 기게시, 11월 신작은 Steam·Nintendo 미시도 — 다음: Steam·PlayStation Blog). 🙋 이대리: 방송·OTT·공연·디지털 대체 출처 다음 회차 시도; 내 Aside 탭 1개 오류로 남았을 수 있음(tudum, click 미정의)",
-  "since": "14:53",
-  "since_at": "2026-10-29 14:53:41"
+  "step": 8,
+  "what": "B5-12 발행 트리거(01:53) — pace·pubready 통과·썸네일 456 200",
+  "since": "01:53",
+  "since_at": "2026-11-05 01:53:39"
  },
  "log": [
+  {
+   "t": "01:53:39",
+   "text": "▶   — 8/7단계 · B5-12 발행 트리거(01:53) — pace·pubready 통과·썸네일 456 200",
+   "actor": "이과장"
+  },
   {
    "t": "01:52:22",
    "text": "📄 pub1105b512 작업 지시 등록(11499자, 2026-11-05 01:52:22)",
@@ -7956,11 +7961,6 @@
   {
    "t": "15:36:54",
    "text": "✅ C1-19 완료 — 희귀·중증난치질환 본인부담 10%→7% — 12월 1일 진료분",
-   "actor": "Aside"
-  },
-  {
-   "t": "15:36:00",
-   "text": "🏁 Aside #603 이부장 확인",
    "actor": "Aside"
   }
  ],
@@ -10178,6 +10178,15 @@
    "what": "⏸ 대기 — A4-07 보강본(docs/A4-07_보강본_20261104.html, 5~7절 추가·시행령 정정·기존 구조 유지, dry-run 통과)과 수정 전 라이브 스냅샷(docs/A4-07_라이브스냅샷_20261104.html)은 준비·커밋 완료. 라이브 patch(blogger.py update-post --code A4-07)는 Claude Code 권한 분류기가 거부(External System Writes). CLAUDE.md 「update-post/crosslink 권한 allow 는 사장님이 넣는다」 — 우회 안 함. 🙋 이부장: 사장님이 update-post 허용 규칙을 넣으시면 알려 주세요, 즉시 patch→getByPath 재확인→crosslink 재삽입",
    "since": "17:16",
    "since_at": "2026-11-04 17:16:45"
+  },
+  "pub1105b512": {
+   "batch": "pub1105b512",
+   "code": "",
+   "title": "",
+   "step": 8,
+   "what": "B5-12 발행 트리거(01:53) — pace·pubready 통과·썸네일 456 200",
+   "since": "01:53",
+   "since_at": "2026-11-05 01:53:39"
   }
  },
  "report_log": [
@@ -23590,6 +23599,16 @@
    "what": "야간 글감 1/4(11-04): 스포츠 AM-SP-009 한국시리즈 2차전 삼성 3-2 KT 12회·이틀 연속 불펜 투구수 — V0 PASS 91, 결재 aroma-am-sp-009-approve-1104 등록. 방송·OTT 빈칸(넷플릭스 Tudum 영문 메인만 열림, 11월 공개작 기사 본문 못 읽음 — 다음: Tudum 11월 기사·티빙·쿠팡플레이 Aside, 방송·OTT 빈칸 누적 1회 이상) / 공연·연예 빈칸(MAMA 11/20-21 오사카 교세라돔 CJ ENM 공식 확인, 예매 일정은 공식서 못 얻음·정보형이라 magsori 몫 우려 — 다음: Mnet Plus·NOL 티켓) / 디지털 빈칸(지스타 2건 기게시, 11월 신작은 Steam·Nintendo 미시도 — 다음: Steam·PlayStation Blog). 🙋 이대리: 방송·OTT·공연·디지털 대체 출처 다음 회차 시도; 내 Aside 탭 1개 오류로 남았을 수 있음(tudum, click 미정의)",
    "actor": "미상:ae24d2bd",
    "sid": "ae24d2bd"
+  },
+  {
+   "ts": "2026-11-05 01:53:39",
+   "bid": "pub1105b512",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "B5-12 발행 트리거(01:53) — pace·pubready 통과·썸네일 456 200",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
