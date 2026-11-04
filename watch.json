@@ -27980,6 +27980,16 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "naver-aroma-exposure-recheck-1118",
+   "added": "2026-11-04",
+   "what": "aroma-mag 글이 네이버 블로그 탭에서 6쿼리 모두 미노출(11-04 실측, 신규 계정 지연 vs 계정 간 중복 판정 구분 불가) — 같은 쿼리로 재측정(docs/네이버_두계정_중복판정_확인_20261104.md 관찰 표 쿼리)",
+   "due": "2026-11-18",
+   "cmd": "python -m studio.crossdup --pairs 5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
