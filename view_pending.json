@@ -1,62 +1,58 @@
 {
- "computed_at": "2026-11-04 14:58:47",
- "source_head": "bcc588e1e8ee",
+ "computed_at": "2026-11-04 21:22:22",
+ "source_head": "25f6d4a6e8b5",
  "ids": [
-  "C1-19"
+  "B5-12",
+  "allow-update-post-a407-1104",
+  "deploy-thumb-456"
  ],
- "posts": [
+ "posts": [],
+ "publish": [
   {
-   "code": "C1-19",
-   "title": "희귀·중증난치질환 본인부담 10%→7% — 12월 1일 진료분부터(예정), 내 의료비는 얼마나 줄나",
-   "slug": "희귀난치본인부담7퍼센트",
-   "eng": "rare_disease_copay_7",
-   "ch": {
-    "naver": {
-     "url": "https://blog.naver.com/magsori8975/224464732289",
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_희귀난치본인부담7퍼센트.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/454_rare_disease_copay_7.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "done"
+   "code": "B5-12",
+   "title": "전월세 안심신탁 임대인 모집 11월 4일 시작 — 연 4.35% 세전 수익, 보증금은 HUG가 보관",
+   "go": false,
+   "v0": "pass",
+   "files": [
+    {
+     "label": "초안 전월세안심신탁_글_HTML.txt",
+     "path": "전월세안심신탁_글_HTML.txt",
+     "img": false,
+     "exists": true
     },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_희귀난치본인부담7퍼센트.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
+    {
+     "label": "썸네일",
+     "path": "thumbs/456_safe_trust_lease.png",
+     "img": true,
+     "exists": true
     },
-    "instagram": {
-     "url": null,
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_희귀난치본인부담7퍼센트.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/456_safe_trust_lease.png",
+     "img": true,
+     "exists": true
     }
-   }
+   ],
+   "light": "todo"
   }
  ],
- "publish": [],
- "actions": [],
+ "actions": [
+  {
+   "id": "allow-update-post-a407-1104",
+   "what": "A4-07 보강(사장님 17:11 승인)의 마지막 걸림 — 이과장이 라이브 수정 명령을 실행하려 하면 Claude Code 권한 분류기가 거부합니다(권한 허용은 사장님만 넣을 수 있음). 【하실 일】C:\\lifeinfo\\.claude\\settings.local.json 의 \"allow\" 목록에 아래 한 줄을 추가하고 저장: \"Bash(python studio/blogger.py update-post --code A4-07 --file docs/A4-07_보강본_20261104.html:*)\" — 이 글 1건에만 해당하는 좁은 규칙입니다. 【근거】보강본(5~7절 추가·시행령 정정)과 수정 전 스냅샷은 이과장이 준비·커밋 완료, dry-run 통과. 시행 11/13 전 반영 필요. 【위험】범위가 이 명령 한 줄뿐이라 낮음. 끝나면 이 줄을 지우셔도 됩니다",
+   "due": "2026-11-04",
+   "cmd": "python studio/blogger.py update-post --code A4-07 --file docs/A4-07_보강본_20261104.html --dry-run",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-456",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(456_safe_trust_lease.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-04",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
