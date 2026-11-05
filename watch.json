@@ -20415,12 +20415,44 @@
   {
    "id": "xlink-d121",
    "added": "2026-11-06",
-   "what": "🔗 D1-21 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-21",
+   "what": "🔗 D1-21 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-21",
    "due": "2026-11-06",
    "cmd": "python studio/blogger.py crosslink --code D1-21",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "dwm-leak-1106",
+   "added": "2026-11-06",
+   "what": "dwm.exe(화면합성) 커밋 누수 추적 — 재부팅 뒤 이벤트 2004(가상메모리 부족)에 dwm 이 다시 나타나는지·증가 속도 (11-06 03:44 Claude Desktop 강제종료 원인)",
+   "due": "2026-11-08",
+   "cmd": "powershell -NoProfile -Command \"Get-WinEvent -FilterHashtable @{LogName='System';Id=2004;StartTime=(Get-Date).AddDays(-2)} -EA 0 | Format-List TimeCreated,Message\"",
+   "owner": "claude",
+   "state": "wait",
+   "note": 7,
+   "by": "lifeinfo-ee"
+  },
+  {
+   "id": "pc-reboot-after-publish-1106",
+   "added": "2026-11-06",
+   "what": "PC 메모리 94% 재부팅 권고(pccheck) — D1-21 인스타·쓰레드 Aside + 이대리 PE-006 게시가 끝난 뒤 사장님 재부팅, 재부팅 후 심장박동·세션 복구 확인",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aroma-pe006-dup-private-1106",
+   "added": "2026-11-06",
+   "what": "【권고】AM-PE-006 박스오피스 중복 게시 정리 — 태그 없는 224466702515 를 비공개 전환(되돌릴 수 있음), 정본 224466703720 유지",
+   "due": "2026-11-06",
+   "cmd": "【권고】승인 — 224466702515 비공개 전환 (삭제는 안 함) 【근거】같은 제목·본문 2개가 공개(05:02·05:08), 05:02 쪽은 태그 없음, 네이버 중복문서 위험 【위험】비공개는 언제든 되돌릴 수 있음. 승인하면 이대리가 실행하고 URL 보고",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "세션:a7dca46f"
   }
  ]
 }
