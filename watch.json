@@ -20260,6 +20260,27 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aroma-dg005-done-report-1105",
+   "added": "2026-11-05",
+   "what": "이대리 AM-DG-005 게시 완료 보고(공개 확인·태그·장부) 도착 확인 → 사장님께 알림 · idaerireq 2건 done 처리",
+   "due": "2026-11-05",
+   "cmd": "python -m studio.idaerireq list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "insta-caption-fix2-1105",
+   "added": "2026-11-05",
+   "what": "【권고】승인 — 인스타 2편(F3-10 일본 면세 리펀드·G1-17 울산 현금 없는 버스) 캡션 정정을 Aside 로 한 건씩 실행(사장님이 11-05 18:4x 이과장 창에서 「F3-10, G1-17 캡션도 채워줘」 직접 지시). 【근거】Aside 읽기 #616·#617·#619(로그인 상태): 두 편 모두 캡션 공란·링크 0 — 「블로그+네이버 링크 둘 다」 규칙 위반, 정정본(F3-10 1016자·G1-17 800자)은 두 링크 포함을 이부장이 파일로 확인. 앞 10편은 같은 방식으로 완료·확인됨. 【위험】게시된 글 편집이라 되돌릴 수 없음 — 한 건씩 실행·글자수 대조 후 저장, 이상하면 중단",
+   "due": "2026-11-05",
+   "cmd": "승인 후 이부장이 asidequeue 로 2건을 한 건씩 등록·확인(지시서 docs/aside_drafts/F3-10_·G1-17_인스타캡션저장포함.txt 에 「사장님 결재 insta-caption-fix2-1105」 인용)",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "세션:a7dca46f"
   }
  ]
 }
