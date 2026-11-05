@@ -28368,6 +28368,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-archivedeps-1105",
+   "added": "2026-11-05",
+   "what": "F17 아카이브 숨은 의존 풀기: archivable(확인된 것만·상시 보호)·load_batch/all_batches 추가, 호출부 pubqueue·reports·timeline·daylog·fixlist_page 이전, 테스트 10건 통과(202/202), 실제 아카이브 미실행. 남은 것: approvalcount↔approval.html 쌍·화면 JS 렌더 확인(이부장 Aside), 3단계 실행 때 정리 전후 칸 수·결재 건수 동일 확인. 상세 docs/audit1102/P_F17.md",
+   "due": "2026-11-06",
+   "cmd": "python -m unittest tests.test_studio_pure.TestArchiveDeps",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
