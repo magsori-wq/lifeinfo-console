@@ -3338,17 +3338,17 @@
     {
      "code": "F20",
      "title": "[3단계] github.io push 묶기(오늘 96회)",
-     "state": "doing",
-     "note": "13:30 착수 — 원인 실증: 결재 0건인데 2~5분마다 'approval: 0 items' push 96회 · Sonnet 원인규명→수정",
-     "at": "2026-11-05 13:26",
+     "state": "done",
+     "note": "커밋 697bffd9e · test 225 OK·enginemap 이상 없음·compile OK 이부장 재실행 · 결재 변화 즉시/그 외 30분 창 묶음/무변화 skip(에이전트 설명, 코드 decide() 존재 확인) · 🔴 실제 push 감소 미측정(내일 git -C deploy log 로 97회와 비교, watch fix-pushapproval-coalesce-1105) · 비결재 화면은 최대 30분 늦음",
+     "at": "2026-11-05 13:32",
      "actor": "이부장"
     },
     {
      "code": "F35",
      "title": "[3단계] 폰 결재함 자동 갱신 push 과다 — 오늘 125회 중 120회가 approval(phone inbox)",
-     "state": "doing",
-     "note": "13:30 착수 — 원인 실증: 결재 0건인데 2~5분마다 'approval: 0 items' push 96회 · Sonnet 원인규명→수정",
-     "at": "2026-11-05 13:26",
+     "state": "done",
+     "note": "커밋 697bffd9e · test 225 OK·enginemap 이상 없음·compile OK 이부장 재실행 · 결재 변화 즉시/그 외 30분 창 묶음/무변화 skip(에이전트 설명, 코드 decide() 존재 확인) · 🔴 실제 push 감소 미측정(내일 git -C deploy log 로 97회와 비교, watch fix-pushapproval-coalesce-1105) · 비결재 화면은 최대 30분 늦음",
+     "at": "2026-11-05 13:33",
      "actor": "이부장"
     },
     {
@@ -3369,7 +3369,10 @@
     {
      "code": "F23",
      "title": "[지침] CLAUDE.md 낡은 문구(세션ID·직접게시 11-01·게시주체 3겹)",
-     "state": "todo"
+     "state": "done",
+     "note": "커밋 이부장 직접 · 지시 행동절 78개 유지·제목 인식 확인(session_rules --directives)·validate FAIL 0 · 삭제: 이과장 ID 직기재(등록부와 달랐음)·모드 「11-01 까지」(실측 꺼짐) · 추가: 결정표 · 미해결: 네이버 쓰기 주체 어긋남 watch · selfcheck 9) 동기 확인 진행 중",
+     "at": "2026-11-05 13:36",
+     "actor": "이부장"
     },
     {
      "code": "F24",
@@ -3432,7 +3435,10 @@
     {
      "code": "F32",
      "title": "[루틴] 지침 28~54KB 비대·옛 절차 공존",
-     "state": "todo"
+     "state": "doing",
+     "note": "13:40 착수 — Sonnet 분석·초안만(원본 SKILL.md 미수정), 적용은 이부장 검토 뒤 routinesync",
+     "at": "2026-11-05 13:36",
+     "actor": "이부장"
     },
     {
      "code": "F33",
@@ -3840,7 +3846,7 @@
    "owner": "이과장"
   }
  },
- "updated": "2026-11-05 13:26:23",
+ "updated": "2026-11-05 13:36:58",
  "current": {
   "batch": "tower1105",
   "code": "",
@@ -3851,6 +3857,26 @@
   "since_at": "2026-11-05 09:29:40"
  },
  "log": [
+  {
+   "t": "13:36:58",
+   "text": "🔸 F32 진행중 — [루틴] 지침 28~54KB 비대·옛 절차 공존",
+   "actor": "이부장"
+  },
+  {
+   "t": "13:36:23",
+   "text": "✅ F23 완료 — [지침] CLAUDE.md 낡은 문구(세션ID·직접게시 11-",
+   "actor": "이부장"
+  },
+  {
+   "t": "13:33:01",
+   "text": "✅ F35 완료 — [3단계] 폰 결재함 자동 갱신 push 과다 — 오늘 125",
+   "actor": "이부장"
+  },
+  {
+   "t": "13:32:56",
+   "text": "✅ F20 완료 — [3단계] github.io push 묶기(오늘 96회)",
+   "actor": "이부장"
+  },
   {
    "t": "13:26:23",
    "text": "🔸 F35 진행중 — [3단계] 폰 결재함 자동 갱신 push 과다 — 오늘 125",
@@ -4030,26 +4056,6 @@
    "t": "09:22:06",
    "text": "🏷️ draft1105h124 담당=이과장",
    "actor": "이부장"
-  },
-  {
-   "t": "09:22:02",
-   "text": "📄 draft1105h124 작업 지시 등록(11287자, 2026-11-05 09:22:02)",
-   "actor": "이부장"
-  },
-  {
-   "t": "09:21:23",
-   "text": "📋 배치 '✍️ H1-24 초안 — 2026 수능 수험생 할인 혜택 — 수험표로 받는 카페·영화관·교통 할인 (선별 자동 지시)' 등록 — 1항목",
-   "actor": "이부장"
-  },
-  {
-   "t": "09:20:16",
-   "text": "✅ lifeinfo-daily-topics-1105-1105 완료 — lifeinfo-daily-topics-1105 (B)",
-   "actor": "미상:30a78a0a"
-  },
-  {
-   "t": "09:20:05",
-   "text": "✅ lifeinfo-daily-topics-1105 완료 — lifeinfo-daily-topics (B)",
-   "actor": "미상:30a78a0a"
   }
  ],
  "currents": {

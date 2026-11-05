@@ -19819,6 +19819,36 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-pushapproval-coalesce-1105",
+   "added": "2026-11-05",
+   "what": "F20+F35 pushapproval 수정(결재 변화 즉시·다른 파일 30분 창 묶음·schedule 앞당김). 테스트 7건+전체 225 OK. 실제 감소는 미측정(push 금지) — 내일 배포 저장소 오늘 커밋 수 확인, 97건 대비",
+   "due": "2026-11-06",
+   "cmd": "git -C C:/lifeinfo-deploy log --since=midnight --format=%s | wc -l",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "naver-write-owner-1105",
+   "added": "2026-11-05",
+   "what": "CLAUDE.md 네이버 쓰기 주체 어긋남(09-28 사장님 손 vs 10-22 결재 지시·이과장/Aside) — 최근 실제 네이버 게시 운영 근거(osmu 기록·asidequeue 이력)로 어느 쪽이 현행인지 확인해 표 갱신",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.osmu_manifest table --code H1-31",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-routine-skill-audit-1105",
+   "added": "2026-11-05",
+   "what": "F32 루틴 SKILL 비대·모순 점검: 라이브 SKILL 미수정. 초안 4개(4·2·6번 SKILL + 공통절 진실원 압축본)와 W_F32.md 작성. 초안은 routinesync check rc0·lint0 확인. 이부장 검토 후 공통절 apply → 고유부 반영 필요. 동작변경 5건·모순 목록은 W_F32.md",
+   "due": "2026-11-06",
+   "cmd": "python tools/routinesync.py && ls docs/audit1102/routine_skill_drafts/ && sed -n 1,20p docs/audit1102/W_F32.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
