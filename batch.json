@@ -1854,12 +1854,12 @@
      "code": "daily-email-briefing-1105",
      "title": "daily-email-briefing (A)",
      "state": "done",
-     "note": "11-05 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사중). 새 중요 메일 없음(이어받은 것: Google Developers OAuth 미사용 클라이언트 11-03·Play 영수증·GCP 결제 ₩7,336·쿠팡 수신동의 모두 기보고). 새로 본 것: GitHub Pages deploy 실패 11-04 20:18Z(콘솔 저장소) — gh run view 로 원인 'Timeout reached, aborting' (GitHub측 10분 타임아웃), 이후 23:04Z 포함 최근 run 6건 전부 success → 무해 일시장애. 점검: magsori 4건·m8975 0·aroma 0(평소)·커넥터 8975 전달 1건(Google 뉴스 다이제스트). GSC·애드센스 메일 없음.",
+     "note": "11-05 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사중). 새 중요 메일 없음(이어받은 것: Google Developers OAuth 미사용 클라이언트 11-03·Play 영수증·GCP 결제 ₩7,336·쿠팡 수신동의 모두 기보고). 새로 본 것: GitHub Pages deploy 실패 11-04 20:18Z(콘솔 저장소) — gh run view 로 원인 'Timeout reached, aborting' (GitHub측 10분 타임아웃), 이후 23:04Z 포함 최근 run 6건 전부 success → 무해 일시장애. 점검: magsori 4건·m8975 0·aroma 0(평소)·커넥터 8975 전달 1건(Google 뉴스 다이제스트). GSC·애드센스 메일 없음.\n▸ 20:07 11-05 20:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사 중). 새 중요 메일 없음: GitHub Pages deploy 실패 3건(11-03·11-04×2)은 연속push 취소가 아니라 'Timeout reached'(10분)였으나 11-05 이후 Pages 실행 전부 success·발행(publish.yml) 실패는 10-30 이후 0 → 현재 정상, 반복 시 조치. GCP 결제 ₩7,336(11-01) 정상 결제. 네이버페이 약관 개정(12-14 적용) 참고. 8975 전달 1건(Google 뉴스 구독)·aroma 0건·GSC 7일 0건. 이어받은 것: 인스타 로그인 등 결정된 알림 재상신 안 함",
      "auto_daily": true,
      "base_code": "daily-email-briefing",
      "date": "2026-11-05",
-     "at": "2026-11-05 08:09",
-     "actor": "미상:927c073d"
+     "at": "2026-11-05 20:07",
+     "actor": "미상:21352cf2"
     },
     {
      "code": "daily-email-briefing-1105-1105",
@@ -4138,7 +4138,7 @@
    ]
   }
  },
- "updated": "2026-11-05 19:01:33",
+ "updated": "2026-11-05 20:07:44",
  "current": {
   "batch": "chkmon",
   "code": "",
@@ -4149,6 +4149,11 @@
   "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "20:07:44",
+   "text": "✅ daily-email-briefing-1105 완료 — daily-email-briefing (A)",
+   "actor": "미상:21352cf2"
+  },
   {
    "t": "19:01:33",
    "text": "✔ 이부장 ack r513405",
@@ -4343,11 +4348,6 @@
    "t": "18:12:59",
    "text": "✔ 이부장 ack r51d579",
    "actor": "이부장"
-  },
-  {
-   "t": "18:12:35",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡1 — 즉시: [시험] 막힘 항목 · 묶음: 사건×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
   }
  ],
  "currents": {
