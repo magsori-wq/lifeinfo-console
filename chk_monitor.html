@@ -38,6 +38,18 @@ body.l1 .slot:nth-child(n+2){display:none}
   body.l2 .slot:nth-child(n+3){display:none}
   body.l1 .slot:nth-child(n+2){display:none}
 }
+.sig .lamp,.sig .chip{cursor:pointer}
+.dp{flex:0 0 auto;border-bottom:2px solid var(--acc);background:var(--card);padding:8px 12px;max-height:46vh;overflow:auto}
+.dp[hidden]{display:none}
+.dph{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+.dph button{border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:6px;padding:3px 10px;cursor:pointer;font-size:12.5px}
+.dph #dpClose{background:var(--bg);color:var(--fg);border-color:var(--bar)}
+.dpm{font-size:12.5px;margin:2px 0 6px;padding:3px 8px;border-radius:6px;background:var(--bg);border:1px solid var(--bar)}
+.dpm.ok{border-color:#16a34a;color:#16a34a}.dpm.bad{border-color:#dc2626;color:#dc2626}.dpm.w{border-color:#d97706;color:#d97706}
+.dg{font-weight:700;margin:8px 0 3px}
+.it{display:flex;gap:8px;align-items:baseline;padding:3px 0;border-top:1px dashed var(--bar)}
+.it .t{flex:1;min-width:0}.it .s{color:var(--mut);font-size:11.5px;white-space:nowrap}
+.it a{color:var(--acc);white-space:nowrap;font-size:12.5px}
 </style></head><body class="l4">
 <div class="top">
   <b>🖥️ 점검 모니터</b>
@@ -48,6 +60,7 @@ body.l1 .slot:nth-child(n+2){display:none}
   <span class="m">각 칸은 스스로 30초마다 새로 고침 · 칸 위 목록에서 다른 화면으로 바꿀 수 있음 · <span id="clock">—</span></span>
 </div>
 <div class="sig" id="sig"><span class="lamp">신호 확인 중…</span></div>
+<div class="dp" id="dp" hidden></div>
 <div class="grid" id="grid"></div>
 <script>
 var SRC=[
@@ -122,8 +135,9 @@ function paint(it){
   var box=document.getElementById("sig");box.innerHTML="";
   var l=document.createElement("span");l.className="lamp "+(r.length?"r":(y.length?"y":(b.length?"b":"")));
   l.textContent=r.length?("🔴 막힘·실패 "+r.length+"건"):(y.length?("🟡 주의 "+y.length+"건"):(b.length?"🔵 사장님 몫 있음":"🟢 정상"));
+  l.onclick=function(){openDetail(true);};l.title="눌러서 상세 내역 보기·이부장에게 보고";
   box.appendChild(l);
-  it.sort(function(a,c){return "ryb".indexOf(a.lv)-"ryb".indexOf(c.lv);}).slice(0,14).forEach(function(i){var c=document.createElement("span");c.className="chip "+i.lv;c.textContent=(i.lv==="r"?"🔴 ":i.lv==="y"?"🟡 ":"🔵 ")+i.t;c.title=i.t;box.appendChild(c);});
+  it.sort(function(a,c){return "ryb".indexOf(a.lv)-"ryb".indexOf(c.lv);}).slice(0,14).forEach(function(i){var c=document.createElement("span");c.className="chip "+i.lv;c.textContent=(i.lv==="r"?"🔴 ":i.lv==="y"?"🟡 ":"🔵 ")+i.t;c.title=i.t;c.onclick=function(){openDetail(true);};box.appendChild(c);});
   if(it.length>14){var m=document.createElement("span");m.className="chip";m.textContent="외 "+(it.length-14)+"건";box.appendChild(m);}
   var u=document.createElement("span");u.className="upd";u.textContent="신호 갱신 "+new Date().toTimeString().slice(0,8);box.appendChild(u);
   document.title=(r.length?"🔴"+r.length+" ":"")+"점검 모니터";
@@ -137,9 +151,50 @@ function alarmCheck(urgent){
   var redNow=urgent.some(function(i){return i.lv==="r";});
   var again=redNow&&(Date.now()-lastBeep>600000);   /* 🔴 가 이어지면 10분마다 다시 */
   if(alarmOn&&(fresh.length||again)){beep();
-    try{if(window.Notification&&Notification.permission==="granted"&&(fresh.length)){var f=urgent.filter(function(i){return fresh.indexOf(i.k)>=0;})[0];new Notification("점검 모니터 — "+(f.lv==="r"?"막힘·실패":"사장님 몫"),{body:f.t});}}catch(e){}}
+    try{if(window.Notification&&Notification.permission==="granted"&&(fresh.length)){var f=urgent.filter(function(i){return fresh.indexOf(i.k)>=0;})[0];var nt=new Notification("점검 모니터 — "+(f.lv==="r"?"막힘·실패":"사장님 몫"),{body:f.t+" (눌러서 상세 보기)"});nt.onclick=function(){try{window.focus();}catch(e){}try{parent.postMessage({chkmon:"open"},"*");}catch(e){}openDetail(true);nt.close();};}}catch(e){}}
 }
-function refreshSig(){Promise.all(["engine_state.json","reflect.json","aside_orders.json","approval_m.json","batch_view.json","agents.json"].map(jget)).then(function(x){var urgent=paint(collect(x));alarmCheck(urgent);}).catch(function(){});}
+function refreshSig(){Promise.all(["engine_state.json","reflect.json","aside_orders.json","approval_m.json","batch_view.json","agents.json"].map(jget)).then(function(x){CUR=stamp(collect(x));var urgent=paint(CUR);alarmCheck(urgent);if(!dp.hidden)renderDetail();}).catch(function(){});}
+/* ── 상세 내역 + 이부장 보고 (설계도 TO3, 2026-11-05 사장님 「알람 → 그 탭을 클릭하면 상세내역 → 이부장에게 알려 즉시·묶음 처리」) ──
+   알림·신호등을 누르면 상세 패널이 열리고, 🔴·🔵 가 있으면 새 항목 묶음일 때 한 번 자동으로 이부장에게 보고한다(결재 서버 localhost:8011 /api/chkmon).
+   🟡 만 있으면 자동 보고하지 않는다 — 「이부장에게 보고」 버튼으로 묶음 보고. github.io·서버 꺼짐이면 요지를 클립보드에 복사(폰 결재함과 같은 패턴). */
+var REP_KEY="chkmon_rep_v1",FS_KEY="chkmon_first_v1",CUR=[],dp=document.getElementById("dp");
+function p2(n){return ("0"+n).slice(-2);}
+function lt(d){d=d||new Date();return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate())+" "+p2(d.getHours())+":"+p2(d.getMinutes())+":"+p2(d.getSeconds());}
+function hm(t){var d=new Date(t);return p2(d.getHours())+":"+p2(d.getMinutes());}
+function hrefOf(k){var p=String(k).split(":"),h=p[0];if(h==="rf")return "reflect.html";if(h==="blk")return {fix1102:"fix1102.html",recheck1105:"recheck1105.html",reflect1105:"reflect1105.html"}[p[1]]||"batch.html";if(h==="ag")return "fix1102.html";if(h==="appr")return "approval.html";return "engine.html";}
+function stamp(it){var fs={};try{fs=JSON.parse(get(FS_KEY)||"{}");}catch(e){}var nf={},n=lt();it.forEach(function(i){i.since=fs[i.k]||n;nf[i.k]=i.since;i.href=hrefOf(i.k);});set(FS_KEY,JSON.stringify(nf));return it;}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function msg(m,c){var e=document.getElementById("dpMsg");if(e){e.textContent=m;e.className="dpm "+(c||"");}}
+function renderDetail(){
+  var cm=document.getElementById("dpMsg"),keepMsg=cm?cm.textContent:"",keepCls=cm?cm.className:"dpm";
+  var G=[["r","🔴 막힘·실패 — 즉시 처리"],["b","🔵 사장님 몫 — 즉시 처리"],["y","🟡 주의 — 묶음 처리"]];
+  var h='<div class="dph"><b>📋 상세 내역</b><span style="color:var(--mut)">'+CUR.length+'건 · 항목을 누르면 칸 1에 그 화면이 열립니다</span><button id="dpRep">📨 이부장에게 보고</button><button id="dpClose">닫기 ✕</button></div><div id="dpMsg" class="'+esc(keepCls)+'">'+esc(keepMsg)+'</div>';
+  G.forEach(function(g){var L=CUR.filter(function(i){return i.lv===g[0];});if(!L.length)return;h+='<div class="dg">'+g[1]+' ('+L.length+')</div>';L.forEach(function(i){h+='<div class="it"><span class="t">'+esc(i.t)+'</span><span class="s">처음 '+esc(String(i.since).slice(5,16))+'</span><a href="#" data-h="'+esc(i.href)+'">화면 보기</a></div>';});});
+  if(!CUR.length)h+='<div class="dg">🟢 지금 막힘·주의 항목이 없습니다</div>';
+  dp.innerHTML=h;
+  document.getElementById("dpClose").onclick=function(){dp.hidden=true;};
+  document.getElementById("dpRep").onclick=function(){reportNow(false);};
+  dp.querySelectorAll("a[data-h]").forEach(function(a){a.onclick=function(e){e.preventDefault();var f=a.dataset.h,ix=-1;SRC.forEach(function(s,j){if(s[0]===f)ix=j;});if(ix>=0){slots[0]=ix;set(KEY,JSON.stringify(slots));build();}else{window.open(f,"_blank");}};});
+}
+function openDetail(auto){dp.hidden=false;renderDetail();if(auto)reportNow(true);}
+function copyText(t){try{if(navigator.clipboard)navigator.clipboard.writeText(t);}catch(e){}}
+function plainReport(items){var n=function(l){return items.filter(function(i){return i.lv===l;}).length;};return "🙋 이부장 요청: [점검모니터] 🔴"+n("r")+" 🔵"+n("b")+" 🟡"+n("y")+" — "+items.map(function(i){return (i.lv==="r"?"🔴":i.lv==="b"?"🔵":"🟡")+i.t;}).join("; ").slice(0,600);}
+function reportNow(auto){
+  var items=CUR.slice();
+  if(!items.length){msg("보고할 항목이 없습니다 🟢");return;}
+  var ids=items.map(function(i){return i.k;}).sort().join("|"),last=null;try{last=JSON.parse(get(REP_KEY)||"null");}catch(e){}
+  if(auto){
+    if(!items.some(function(i){return i.lv!=="y";})){msg("🟡 주의뿐이라 자동 보고는 하지 않았습니다 — 묶음으로 보내려면 「이부장에게 보고」를 누르세요","w");return;}
+    if(last&&last.ids===ids&&Date.now()-last.t<600000){msg("✅ 이미 보고됨 "+hm(last.t)+" — 같은 항목이라 다시 보내지 않았습니다","ok");return;}
+  }
+  if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){copyText(plainReport(items));msg("이 주소(github.io)에서는 서버로 보낼 수 없어 요지를 복사했습니다 — 이부장 창에 붙여넣으세요","w");return;}
+  msg("보고 중…");
+  fetch("http://localhost:8011/api/chkmon",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:items.map(function(i){return {lv:i.lv,k:i.k,t:i.t,since:i.since};})})})
+   .then(function(r){return r.json();}).then(function(j){
+     if(j&&j.ok){set(REP_KEY,JSON.stringify({ids:ids,t:Date.now()}));msg(j.dup?"✅ 같은 보고가 방금 이미 접수돼 있습니다":"✅ 이부장에게 보고했습니다 ("+hm(Date.now())+") — 🔴·🔵 즉시 · 🟡 묶음으로 처리됩니다","ok");}
+     else{copyText(plainReport(items));msg("❌ 보고 실패("+((j&&j.error)||"")+") — 요지를 복사했습니다. 이부장 창에 붙여넣으세요","bad");}
+   }).catch(function(){copyText(plainReport(items));msg("❌ 결재 서버(8011)에 닿지 않아 요지를 복사했습니다 — 이부장 창에 붙여넣으세요","bad");});
+}
 var ab=document.getElementById("alarmBtn");
 function paintBtn(){ab.textContent=alarmOn?"🔔 알람 켜짐 (끄려면 누르기)":"🔕 알람 꺼짐 — 눌러서 켜기";ab.classList.toggle("on",alarmOn);}
 ab.onclick=function(){alarmOn=!alarmOn;set(ALARM_KEY,alarmOn?"1":"0");paintBtn();if(alarmOn){beep();try{if(window.Notification&&Notification.permission==="default")Notification.requestPermission();}catch(e){}}};

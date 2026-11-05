@@ -545,6 +545,12 @@
     selectGroup(TAB_GROUP[b.dataset.t]);
     selectTab(b);
   });
+  // 점검 모니터 알림을 누르면 그 탭으로 이동한다(2026-11-05 설계도 TO3 — chk_monitor.html 이 postMessage 로 요청, 같은 출처만).
+  window.addEventListener('message',function(e){
+    if(e.origin!==location.origin||!e.data||e.data.chkmon!=='open')return;
+    var b=document.querySelector('.leafrow button[data-t="chkmon"]');
+    if(b){ selectGroup(TAB_GROUP.chkmon); selectTab(b); }
+  });
   // 새로고침해도 마지막으로 보던 그룹·탭을 기억한다(2026-08-13, 스크롤/탐색 반복 줄이기).
   (function(){
     var savedTab=localStorage.getItem('console.tab');

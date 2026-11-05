@@ -4122,19 +4122,51 @@
      "note": "로컬 반영 후 푸시 창(최대 30분) — 라이브 화면으로 확인"
     }
    ]
+  },
+  "chkmon": {
+   "title": "점검 모니터 보고함 (이부장 즉시·묶음 처리)",
+   "note": "점검 모니터 화면이 올린 🙋 이부장 요청이 모이는 곳 — 설계도 TO3",
+   "items": [
+    {
+     "code": "CHKMON",
+     "title": "점검 모니터 → 이부장 보고 처리 (즉시·묶음)",
+     "state": "doing",
+     "note": "화면 알림 클릭 → /api/chkmon → CHKMON_REPORT. 처리 뒤 python -m studio.chkmon done --note"
+    }
+   ]
   }
  },
- "updated": "2026-11-05 17:47:23",
+ "updated": "2026-11-05 18:13:46",
  "current": {
-  "batch": "tower1105",
+  "batch": "chkmon",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "FUEL_LOW 재알림 16:58 — 새 재료 확인: kwgap 글감 후보 23건(11-05 판독) → 3.(fuel1030)에게 local_ ID 로 깨움(근거 2개 갖춘 것만 topicprop add, 빈손 허용). 결과 오면 pick·verify",
-  "since": "09:29",
-  "since_at": "2026-11-05 09:29:40"
+  "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡4 — 즉시: 반영 어긋남 · 로컬↔github.io · 묶음: 막힌 보드 항목×3 사건×1 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "18:13:46",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡4 — 즉시: 반영 어긋남 · 로컬↔github.io · 묶음: 막힌 보드 항목×3 사건×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "18:12:59",
+   "text": "✔ 이부장 ack r51d579",
+   "actor": "이부장"
+  },
+  {
+   "t": "18:12:35",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡1 — 즉시: [시험] 막힘 항목 · 묶음: 사건×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "18:10:06",
+   "text": "📋 배치 '점검 모니터 보고함 (이부장 즉시·묶음 처리)' 등록 — 1항목",
+   "actor": "이부장"
+  },
   {
    "t": "17:47:23",
    "text": "🔸 R6 진행중 — F32 동작 변경 5건·초안 적용·aroma 경로 깨짐(이대리",
@@ -4314,26 +4346,6 @@
    "t": "16:21:24",
    "text": "▶   — 1/5단계 · 🙋 해소(16:21 이부장): A6-09 큐 거부 = _insta_cards_ok 가 이미 인스타 게시된 글의 정정까지 카드 파일명으로 막던 게이트 결함 — 게시된 글은 카드 점검 면제로 보정·커밋, A6-09 저장 지시 대기열 등록 완료",
    "actor": "이부장"
-  },
-  {
-   "t": "16:20:38",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-11-05 16:19:24 — #629 H1-36 인스타 캡션 입력·저장 시작. 최신 지시의 10편 한정 Aside 저장 승인 적용.",
-   "actor": "Aside"
-  },
-  {
-   "t": "16:19:24",
-   "text": "📄 aside 작업 지시 등록(2911자, 2026-11-05 16:19:24)",
-   "actor": "사람"
-  },
-  {
-   "t": "16:19:03",
-   "text": "▶   — 1/5단계 · ⚠️ A6-09 큐 등록 거부 — 매니페스트 eng=ltc2027 인데 인스타 카드 파일은 ltc_limit2027_0N.png 라 asidequeue 카드 점검(_insta_cards_ok)이 막음(B2-22와 같은 유형). eng 를 고치면 naver 썸네일 439_ltc2027.png 조회가 깨질 수 있어 건드리지 않음. 풀리는 조건: 이부장이 osmu_files.json A6-09 eng 정정 또는 점검 예외 판단. 그동안 H1-36→D3-11 먼저 진행",
-   "actor": "이과장"
-  },
-  {
-   "t": "16:17:32",
-   "text": "✅ H1-35 완료 — 인스타 빈 캡션 정정(캡션 입력까지·저장은 사장님)",
-   "actor": "이과장"
   }
  ],
  "currents": {
@@ -4795,6 +4807,15 @@
    "what": "사장님 지시: R2·R4 끝나면 재점검 이어서(남은: R18 루틴 지침 5건·R5 watch·R8 F12/F36 제안·R16 상황실·R14 네이버 쓰기 주체·R6) — 그동안 이부장은 R18 검토",
    "since": "16:34",
    "since_at": "2026-11-05 16:34:27"
+  },
+  "chkmon": {
+   "batch": "chkmon",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡4 — 즉시: 반영 어긋남 · 로컬↔github.io · 묶음: 막힌 보드 항목×3 사건×1 (상세 python -m studio.chkmon show)",
+   "since": "18:12",
+   "since_at": "2026-11-05 18:12:35"
   }
  },
  "report_log": [
@@ -4848,70 +4869,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-22 17:13:39",
-   "bid": "pubg113",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "⏸ 대기 17:15 — G1-13 쓰레드: 원고·실사진 준비 완료(osmu/쓰레드용_부산동백패스환급.txt·insta/thread/thread_G1-13_dongbaek_pass.png) 그러나 threadsdraft 게이트가 「제휴 링크 발급 대기 — 게시하지 마라」로 막음(affiliate show: 상품 찾음·링크 미발급, 15:18부터). 쓰레드는 수정 불가라 게이트를 우회해 올리지 않음(--force류 금지). 풀리는 조건 둘 중 하나: ① 링크 발급 → affiliate add 되면 제휴 합본으로 즉시 쓰레드 Aside 등록 ② 이부장이 python -m studio.affiliate none --code G1-13 --why '<근거>' 로 「없음」 기록 → 즉시 등록. 🙋 이부장 요청: 둘 중 하나 실행(제휴 조사·기록은 이부장 몫)"
-  },
-  {
-   "ts": "2026-10-22 17:14:47",
-   "bid": "pubg113",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "✅ G1-13 쓰레드 Aside 등록 17:15: asidequeue 1022171440539_G1-13_threads (threadsdraft 게이트 재실행 통과: 333/500자·블로그+네이버 ✅·제휴 없음 기록 확인). 다음: Aside done 보고 오면 threads-link·crosslink 3채널 재실행→mark"
-  },
-  {
-   "ts": "2026-10-22 17:15:22",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-10-22 17:14 — 지시 #307 시작 · G1-13 쓰레드"
-  },
-  {
-   "ts": "2026-10-22 17:16:58",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] #307 G1-13 쓰레드 게시 — 이미지 확인: 본문 338자 파일과 일치·링크 카드 닫음·실사진 1장 첨부(미리보기 확인) 후 게시·새로고침 뒤 프로필 맨 위 글 확인(실 ID DeyiHF0AcBo, 접속 200, 사진 1장) · 총 탭 11개 · https://www.threads.com/@magsori8975/post/DeyiHF0AcBo"
-  },
-  {
-   "ts": "2026-10-22 17:17:08",
-   "bid": "followup",
-   "code": "F1-16",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #307 G1-13 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DeyiHF0AcBo · ✅ 쓰레드 이미지 ↔ thread_G1-13_dongbaek_pass.png  MAD 0.0 ) — [이과장] 기록: python -m studio.pipeline threads-link --code G1-13 --url https://www.threads.com/@magsori8975/post/DeyiHF0AcBo → 4채널 완결 확인"
-  },
-  {
-   "ts": "2026-10-22 17:36:13",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] ⚠️번호없음 [사장님 직접 요청 보고] AdSense 커뮤니티 질문(thread 473869774)에 댓글 1건(붉은여우, Product Expert·Google 직원 아님): 「ai로 하는 사람들 승인 잘 안됩니다」 한 줄, 우리 질문 3개엔 답 없음. Google 공식은 AI 사용 자체가 아닌 사람 검수·노력 기준. 댓글·해결 버튼 미조작. 이부장 지시 대기 · 총 탭 15개"
-  },
-  {
-   "ts": "2026-10-22 17:51:59",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-10-22 17:51 — 지시 #308 시작 · 색인 요청 재시도(B1-07부터)"
-  },
-  {
-   "ts": "2026-10-22 17:53:52",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [index] #308 색인 요청 재시도 1/3건: 13 B1-07 요청됨(등록 안 됨·리디렉션 오류·마지막 크롤링 8/10) · 14 G4-06에서 할당량 초과 17:53(등록 안 됨·리디렉션 오류·크롤링 10/4) → 남은 G4-06·G1-13 · 총 탭 15개"
-  },
   {
    "ts": "2026-10-22 18:22:57",
    "bid": "aside",
@@ -18397,6 +18354,39 @@
    "what": "FUEL_LOW 재알림 16:58 — 새 재료 확인: kwgap 글감 후보 23건(11-05 판독) → 3.(fuel1030)에게 local_ ID 로 깨움(근거 2개 갖춘 것만 topicprop add, 빈손 허용). 결과 오면 pick·verify",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-05 18:12:35",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡1 — 즉시: [시험] 막힘 항목 · 묶음: 사건×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "a7dca46f",
+   "req": "r51d579"
+  },
+  {
+   "ts": "2026-11-05 18:12:59",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r51d579 — 시험 보고 — 종단 시험 완료(화면→서버→보드→CHKMON_REPORT)",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r51d579"
+  },
+  {
+   "ts": "2026-11-05 18:13:46",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡4 — 즉시: 반영 어긋남 · 로컬↔github.io · 묶음: 막힌 보드 항목×3 사건×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "a7dca46f",
+   "req": "r4403e1"
   }
  ]
 }
