@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "items": [
   {
    "id": "intro-numbers",
@@ -20341,6 +20341,28 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aroma-dg006-pe005-publish-check-0106",
+   "added": "2026-11-06",
+   "what": "이대리 헤드리스 깨움(00:15) 뒤 AM-DG-006·AM-PE-005 게시 확인 — RSS 로 2편 게시·CP 보고 도착 확인 후 idaerireq 3건 done·사장님께 알림",
+   "due": "2026-11-06",
+   "cmd": "curl -s -A Mozilla/5.0 https://rss.blog.naver.com/aroma-mag.xml | head -c 1500",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-06",
+   "result": "RSS 로 2편 게시 확인·이대리 CP 보고 도착"
+  },
+  {
+   "id": "deploy-thumb-457",
+   "added": "2026-11-06",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(457_floor_noise_standard.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-06",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
