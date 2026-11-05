@@ -1892,6 +1892,28 @@
      "date": "2026-11-06",
      "at": "2026-11-06 07:12",
      "actor": "미상:b5f770ba"
+    },
+    {
+     "code": "daily-email-briefing-1106",
+     "title": "daily-email-briefing (A)",
+     "state": "done",
+     "note": "11-06 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사 중, 반려 아님). 새 중요 메일 없음: GitHub Pages deploy 실패 2건(11-04 12:19·15:21 lifeinfo-console)은 이후 11-05 22:53·23:04 실행 success로 복구(무해·연속push). GCP 결제 ₩7,336(11-01) 정상. 점검: 리더 magsori 3·m8975 0·aroma 0, 커넥터 전달분은 Google뉴스 2건뿐, GSC·애드센스 통지 0. 이어받은 것: 결정된 알림 재상신 없음",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing",
+     "date": "2026-11-06",
+     "at": "2026-11-06 08:07",
+     "actor": "미상:0f34e98f"
+    },
+    {
+     "code": "daily-email-briefing-1106-1106",
+     "title": "daily-email-briefing-1106 (A)",
+     "state": "done",
+     "note": "11-06 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사 중). 새 중요 메일 없음: Pages deploy 실패 2건(11-04)은 11-05 23:04 success로 복구(무해). GCP 결제 ₩7,336(11-01) 정상. 리더 magsori 3·m8975 0·aroma 0, GSC·애드센스 통지 0.",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing-1106",
+     "date": "2026-11-06",
+     "at": "2026-11-06 08:07",
+     "actor": "미상:0f34e98f"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -4120,17 +4142,42 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-11-06 08:04:31",
+ "updated": "2026-11-06 08:07:22",
  "current": {
-  "batch": "aside",
+  "batch": "chkmon",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "[자동확인 08:03] ca 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-ca-1106)",
-  "since": "11:31",
-  "since_at": "2026-10-08 11:31:43"
+  "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵4 🟡6 — 즉시: 사장님 🙋승인 🛒 제휴 링크 발급 요청 — eomuk1106. 상품: 참도깨비 어묵장인; 사장님 ☑️조치 Aside ca 로그인 필요 — 자동 확인(08:03): https://; 사장님 ☑️조치 Aside naver 로그인 필요 — 자동 확인(08:04): https; 사장님 ☑️조치 카카오 알림 앱 등록(약 10분, 14단계 안내서 docs/카카오_알림_ · 묶음: 막힌 보드 항목×3 사건×3 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "08:07:22",
+   "text": "✅ daily-email-briefing-1106-1106 완료 — daily-email-briefing-1106 (A)",
+   "actor": "미상:0f34e98f"
+  },
+  {
+   "t": "08:07:10",
+   "text": "✅ daily-email-briefing-1106 완료 — daily-email-briefing (A)",
+   "actor": "미상:0f34e98f"
+  },
+  {
+   "t": "08:05:48",
+   "text": "✔ 이부장 ack raa8183",
+   "actor": "이부장"
+  },
+  {
+   "t": "08:04:53",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵4 🟡6 — 즉시: 사장님 🙋승인 🛒 제휴 링크 발급 요청 — eomuk1106. 상품: 참도깨비 어묵장인; 사장님 ☑️조치 Aside ca 로그인 필요 — 자동 확인(08:03): https://; 사장님 ☑️조치 Aside naver 로그인 필요 — 자동 확인(08:04): https; 사장님 ☑️조치 카카오 알림 앱 등록(약 10분, 14단계 안내서 docs/카카오_알림_ · 묶음: 막힌 보드 항목×3 사건×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "08:04:41",
+   "text": "▶   — 1/7단계 · [자동확인 08:04] naver 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-naver-1106)",
+   "actor": "사람"
+  },
   {
    "t": "08:04:31",
    "text": "✔ 이부장 ack r498005",
@@ -4305,31 +4352,6 @@
    "t": "05:10:56",
    "text": "🏁 Aside #637 이부장 확인",
    "actor": "이부장"
-  },
-  {
-   "t": "05:10:28",
-   "text": "▶  PC 점검 세션 — 7/7단계 · dwm 정밀점검(확인만·조치 없음): ①Intel UHD 드라이버 2021-02-05(27.20.100.9268) 5년 묵음 ②데스크톱 2개 활성 — 주 2560x1440 + DISPLAY2 1920x515(왼쪽 -1920,917) 비정상 해상도, 모니터 기록 3개(내장 CMN·BOE DP·HSN HDMI) ③Intel+MX250 하이브리드 ④부팅 뒤 절전·화면꺼짐 0회 ⑤Desktop Preview 캡처는 급증 시간대(23~02시 0회)와 불일치 → 기각 ⑥GPU crash는 결과 ⑦DCOM 10005 91건=GamingServices 꺼짐(무관). 조치는 사장님 승인 대기",
-   "actor": "미상:cf890880"
-  },
-  {
-   "t": "05:10:03",
-   "text": "▶   — 1/7단계 · [체인] #637 D1-21 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfX2k0gko1a · ✅ 쓰레드 이미지 ↔ thread_D1-21_floor_noise_49db.png  MAD 0) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
-   "actor": "Aside"
-  },
-  {
-   "t": "05:09:58",
-   "text": "✅ D1-21 완료 — 층간소음 기준 49dB로 강화 — 오피스텔·다세대, 의견은 1",
-   "actor": "Aside"
-  },
-  {
-   "t": "05:09:36",
-   "text": "🏁 pub1106d121 이부장 확인 — 끝남",
-   "actor": "사람"
-  },
-  {
-   "t": "05:08:53",
-   "text": "🏁 Aside #637 이부장 확인",
-   "actor": "Aside"
   }
  ],
  "currents": {
@@ -4428,7 +4450,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[자동확인 08:03] ca 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-ca-1106)",
+   "what": "[자동확인 08:04] naver 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-naver-1106)",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -4797,7 +4819,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵4 🟡6 — 즉시: 사장님 🙋승인 🛒 제휴 링크 발급 요청 — eomuk1106. 상품: 참도깨비 어묵장인; 사장님 ☑️조치 Aside ca 로그인 필요 — 자동 확인(08:03): https://; 사장님 ☑️조치 Aside naver 로그인 필요 — 자동 확인(07:03): https; 사장님 ☑️조치 카카오 알림 앱 등록(약 10분, 14단계 안내서 docs/카카오_알림_ · 묶음: 막힌 보드 항목×3 사건×3 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵4 🟡6 — 즉시: 사장님 🙋승인 🛒 제휴 링크 발급 요청 — eomuk1106. 상품: 참도깨비 어묵장인; 사장님 ☑️조치 Aside ca 로그인 필요 — 자동 확인(08:03): https://; 사장님 ☑️조치 Aside naver 로그인 필요 — 자동 확인(08:04): https; 사장님 ☑️조치 카카오 알림 앱 등록(약 10분, 14단계 안내서 docs/카카오_알림_ · 묶음: 막힌 보드 항목×3 사건×3 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -19052,6 +19074,38 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "r498005"
+  },
+  {
+   "ts": "2026-11-06 08:04:41",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[자동확인 08:04] naver 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-naver-1106)",
+   "actor": "사람",
+   "sid": ""
+  },
+  {
+   "ts": "2026-11-06 08:04:53",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵4 🟡6 — 즉시: 사장님 🙋승인 🛒 제휴 링크 발급 요청 — eomuk1106. 상품: 참도깨비 어묵장인; 사장님 ☑️조치 Aside ca 로그인 필요 — 자동 확인(08:03): https://; 사장님 ☑️조치 Aside naver 로그인 필요 — 자동 확인(08:04): https; 사장님 ☑️조치 카카오 알림 앱 등록(약 10분, 14단계 안내서 docs/카카오_알림_ · 묶음: 막힌 보드 항목×3 사건×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "raa8183"
+  },
+  {
+   "ts": "2026-11-06 08:05:48",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack raa8183 — c3bede2a: 08:03 보고와 같은 항목 재전송(🔴0) — 새 조치 없음",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "raa8183"
   }
  ]
 }
