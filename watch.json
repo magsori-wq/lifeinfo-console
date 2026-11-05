@@ -20283,6 +20283,16 @@
    "state": "todo",
    "kind": "approve",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fable-verify-d2d31ae-1106",
+   "added": "2026-11-05",
+   "what": "코드 d2d31ae(Fable 2차 검증 수리: 반영 감사 Last-Modified 가림 방지·푸시 백스톱·act 복수 매칭) 독립 검증 — 11-06 다른 커밋과 한 묶음으로 fable 1회(수리의 수리를 매번 검증하면 끝이 없어 묶음)",
+   "due": "2026-11-06",
+   "cmd": "git log --since='2026-11-05 19:44' --format=%h -- studio webapp tests | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
