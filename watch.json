@@ -20109,6 +20109,46 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "routine-skill-applied-check-1106",
+   "added": "2026-11-05",
+   "what": "11-05 루틴 지침 3개(4·2·6번) 정리본 적용 후 첫 실행(11-06 오전) 보고가 정상인지 — routinelog 보고 형식·발행/글감 동작·실패 없음. 문제면 restore/scheduled-tasks_20261105/<루틴>/SKILL.md 로 복구",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.routines 2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-screens-batchview-1105",
+   "added": "2026-11-05",
+   "what": "R2: approval·reports·index 가 batch_view.json 을 받게 전환(받은 JSON 5.40→3.61MB·2.22→0.43MB·3.85→2.07MB, 카드·건수·오류 전후 동일). 남은 것: batch_view.json 미추적(deploy 전 add 판단)·index today 구역 렌더 미확인",
+   "due": "2026-11-06",
+   "cmd": "python -W ignore -m unittest tests.test_batch_view && python -m studio.batchview --stat && grep -c batch_view webapp/approval.html webapp/index.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-sessionhook-speed-1105",
+   "added": "2026-11-05",
+   "what": "R4 F26 제안 4·6·8: 훅 collect(fetch=False)+falsepos/tokcheck 병렬+절 요약판(fit_sections)·중간잘림 표기. 훅 40s/20s→9s/8s, 출력 9358자 잘림0, 테스트 26개·validate FAIL0·pure 253·enginemap 0. 남은 것: 마진 얇음(142자)·pace 줄 식 그대로 출력·falsepos 중간 진입점 미확인",
+   "due": "2026-11-06",
+   "cmd": "python -m unittest tests.test_session_rules_speed && python studio/session_rules.py | grep -c '✂️'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "screens-weight-next-1105",
+   "added": "2026-11-05",
+   "what": "R2 후속: approval.html 이 아직 3.6MB — watch.json(1.46MB)·topicprop(0.63MB)를 화면용 요약으로(U_F19 §5), 1MB 목표",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.batchview --stat",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }

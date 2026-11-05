@@ -583,7 +583,7 @@ function nmBy(s){
   for (var k in SNAMES) { if (k.indexOf(p) === 0 && SNAMES[k]) return SNAMES[k].name || SNAMES[k].role || s; }
   return s;
 }
-var DATA = Promise.all([j('batch.json'),j('queue.json'),j('topicprop.json'),j('v0check.json'),
+var DATA = Promise.all([j('batch_view.json').then(function(v){return v||j('batch.json');}),j('queue.json'),j('topicprop.json'),j('v0check.json'),
              j('lifeinfo_db.txt'),j('pace.json'),j('session_state.json'),
              j('watch.json'),j('pending.json'),j('osmu_text.json'),j('rep_groups.json'),
              // 🔴🔴 **파이썬이 판정한 결과** (2026-09-19 · approvalcount.flow()).

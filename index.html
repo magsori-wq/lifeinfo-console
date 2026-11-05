@@ -486,7 +486,7 @@
 <script>
   var nav=document.getElementById('nav');
   /* v2(2026-10-02): batch.json(1.2MB)이 첫 화면에서 2번 내려받아지던 것을 1번으로 — 같은 요청을 공유 */
-  (function(){var of=window.fetch,P=null;window.fetch=function(u){if(typeof u==='string'&&u.indexOf('batch.json')===0){if(!P)P=of.apply(window,arguments);return P.then(function(r){return r.clone();});}return of.apply(window,arguments);};})();
+  (function(){var of=window.fetch,P=null;window.fetch=function(u){if(typeof u==='string'&&u.indexOf('batch_view.json')===0){if(!P)P=of.apply(window,arguments);return P.then(function(r){return r.clone();});}return of.apply(window,arguments);};})();
   var iframes=['ctrl','search','categories','generator','osmu','jisikin','naverstats','dashboard','progress','batch','approval','temp','pendosmu','naverfix','orders','reports','idxboard','gsc','seo','adsense','incidents','opsguide'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
@@ -606,7 +606,7 @@
       cpCopy(cmd,function(){el.textContent='복사됨 ✓';setTimeout(function(){el.textContent='완료 명령 복사';},1600);},
         function(){window.prompt('복사하세요',cmd);});
     };
-    fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
+    fetch('batch_view.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;})
       .then(function(j){
         var B=(j&&j.batches)||{}, lots=[];
         Object.keys(B).forEach(function(bid){
@@ -666,7 +666,7 @@
       var b=el.querySelector('.mtpmsg'); if(b){b.textContent='📋 복사됨 — 터미널에 붙여넣고 새로고침';}
     };
     var td=new Date(), bid='today'+String(td.getMonth()+1).padStart(2,'0')+String(td.getDate()).padStart(2,'0');
-    fetch('batch.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){
+    fetch('batch_view.json?t='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(j){
       var b=j&&j.batches&&j.batches[bid]; if(!b||!b.items||!b.items.length) return;
       var its=b.items, done=its.filter(function(x){return x.state==='done'||x.state==='skip';}).length;
       var pct=Math.round(100*done/its.length);
