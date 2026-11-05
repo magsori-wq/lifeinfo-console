@@ -50,6 +50,7 @@ body.l1 .slot:nth-child(n+2){display:none}
 .it{display:flex;gap:8px;align-items:baseline;padding:3px 0;border-top:1px dashed var(--bar)}
 .it .t{flex:1;min-width:0}.it .s{color:var(--mut);font-size:11.5px;white-space:nowrap}
 .it a{color:var(--acc);white-space:nowrap;font-size:12.5px}
+.ac{font-size:12.5px;padding:0 0 3px;color:var(--mut)}.ac.none{color:#d97706}.ac.done b{color:#16a34a}.ac.doing b{color:#2563eb}.ac.reorder b{color:#9333ea}.ac.open b{color:#d97706}.ac .in{color:var(--fg)}
 </style></head><body class="l4">
 <div class="top">
   <b>🖥️ 점검 모니터</b>
@@ -153,23 +154,25 @@ function alarmCheck(urgent){
   if(alarmOn&&(fresh.length||again)){beep();
     try{if(window.Notification&&Notification.permission==="granted"&&(fresh.length)){var f=urgent.filter(function(i){return fresh.indexOf(i.k)>=0;})[0];var nt=new Notification("점검 모니터 — "+(f.lv==="r"?"막힘·실패":"사장님 몫"),{body:f.t+" (눌러서 상세 보기)"});nt.onclick=function(){try{window.focus();}catch(e){}try{parent.postMessage({chkmon:"open"},"*");}catch(e){}openDetail(true);nt.close();};}}catch(e){}}
 }
-function refreshSig(){Promise.all(["engine_state.json","reflect.json","aside_orders.json","approval_m.json","batch_view.json","agents.json"].map(jget)).then(function(x){CUR=stamp(collect(x));var urgent=paint(CUR);alarmCheck(urgent);if(urgent.length)reportNow(true);if(!dp.hidden)renderDetail();}).catch(function(){});}
+function refreshSig(){Promise.all(["engine_state.json","reflect.json","aside_orders.json","approval_m.json","batch_view.json","agents.json","chkmon_actions.json"].map(jget)).then(function(x){ACT=(x[6]&&x[6].items)||{};CUR=stamp(collect(x));var urgent=paint(CUR);alarmCheck(urgent);if(urgent.length)reportNow(true);if(!dp.hidden)renderDetail();}).catch(function(){});}
 /* ── 상세 내역 + 이부장 보고 (설계도 TO3, 2026-11-05 사장님 「알람 → 그 탭을 클릭하면 상세내역 → 이부장에게 알려 즉시·묶음 처리」) ──
    알림·신호등을 누르면 상세 패널이 열리고, 🔴·🔵 가 있으면 새 항목 묶음일 때 한 번 자동으로 이부장에게 보고한다(결재 서버 localhost:8011 /api/chkmon).
    🟡 만 있으면 자동 보고하지 않는다 — 「이부장에게 보고」 버튼으로 묶음 보고. github.io·서버 꺼짐이면 요지를 클립보드에 복사(폰 결재함과 같은 패턴). */
+var ACT={},ST={done:"✅ 완료",doing:"🔄 진행중",reorder:"📮 재지시",open:"⏳ 미결"};
 var REP_KEY="chkmon_rep_v1",FS_KEY="chkmon_first_v1",CUR=[],dp=document.getElementById("dp");
 function p2(n){return ("0"+n).slice(-2);}
 function lt(d){d=d||new Date();return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate())+" "+p2(d.getHours())+":"+p2(d.getMinutes())+":"+p2(d.getSeconds());}
 function hm(t){var d=new Date(t);return p2(d.getHours())+":"+p2(d.getMinutes());}
 function hrefOf(k){var p=String(k).split(":"),h=p[0];if(h==="rf")return "reflect.html";if(h==="blk")return {fix1102:"fix1102.html",recheck1105:"recheck1105.html",reflect1105:"reflect1105.html"}[p[1]]||"batch.html";if(h==="ag")return "fix1102.html";if(h==="appr")return "approval.html";return "engine.html";}
 function stamp(it){var fs={};try{fs=JSON.parse(get(FS_KEY)||"{}");}catch(e){}var nf={},n=lt();it.forEach(function(i){i.since=fs[i.k]||n;nf[i.k]=i.since;i.href=hrefOf(i.k);});set(FS_KEY,JSON.stringify(nf));return it;}
+function actHtml(i){var a=ACT[i.k];if(!a||!ST[a.state])return '<div class="ac none">　⏳ 조치 기록 없음 — 이부장 접수 전</div>';return '<div class="ac '+esc(a.state)+'">　<b>'+ST[a.state]+'</b> '+esc(a.note||"")+(a.insight?' <span class="in">💡 '+esc(a.insight)+'</span>':"")+' <span class="s">'+esc(String(a.at||"").slice(5,16))+'</span></div>';}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function msg(m,c){var e=document.getElementById("dpMsg");if(e){e.textContent=m;e.className="dpm "+(c||"");}}
 function renderDetail(){
   var cm=document.getElementById("dpMsg"),keepMsg=cm?cm.textContent:"",keepCls=cm?cm.className:"dpm";
   var G=[["r","🔴 막힘·실패 — 즉시 처리"],["b","🔵 사장님 몫 — 즉시 처리"],["y","🟡 주의 — 묶음 처리"]];
   var h='<div class="dph"><b>📋 상세 내역</b><span style="color:var(--mut)">'+CUR.length+'건 · 항목을 누르면 칸 1에 그 화면이 열립니다</span><button id="dpRep">📨 이부장에게 보고</button><button id="dpClose">닫기 ✕</button></div><div id="dpMsg" class="'+esc(keepCls)+'">'+esc(keepMsg)+'</div>';
-  G.forEach(function(g){var L=CUR.filter(function(i){return i.lv===g[0];});if(!L.length)return;h+='<div class="dg">'+g[1]+' ('+L.length+')</div>';L.forEach(function(i){h+='<div class="it"><span class="t">'+esc(i.t)+'</span><span class="s">처음 '+esc(String(i.since).slice(5,16))+'</span><a href="#" data-h="'+esc(i.href)+'">화면 보기</a></div>';});});
+  G.forEach(function(g){var L=CUR.filter(function(i){return i.lv===g[0];});if(!L.length)return;h+='<div class="dg">'+g[1]+' ('+L.length+')</div>';L.forEach(function(i){h+='<div class="it"><span class="t">'+esc(i.t)+'</span><span class="s">처음 '+esc(String(i.since).slice(5,16))+'</span><a href="#" data-h="'+esc(i.href)+'">화면 보기</a></div>'+actHtml(i);});});
   if(!CUR.length)h+='<div class="dg">🟢 지금 막힘·주의 항목이 없습니다</div>';
   dp.innerHTML=h;
   document.getElementById("dpClose").onclick=function(){dp.hidden=true;};
