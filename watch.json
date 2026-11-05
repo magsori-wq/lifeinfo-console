@@ -28378,6 +28378,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "f22-localid-send-check",
+   "added": "2026-11-05",
+   "what": "F22 local_ ID 로 SendMessage 가 실제로 닿는지 — 다음 WAKE_SESSION 때 안내된 ID 로 보내 확인",
+   "due": "2026-11-08",
+   "cmd": "python -c \"from studio import towertick as t; print(t.session_addr('3.'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
