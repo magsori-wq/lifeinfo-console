@@ -1,0 +1,45 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><script>setTimeout(function(){location.replace(location.pathname+"?t="+Date.now());},30000);</script><title>점검 체크리스트</title>
+<style>
+:root{--bg:#fff;--fg:#222;--mut:#666;--ok:#1a7f37;--bar:#e5e7eb;--fill:#2563eb;--card:#f8fafc}
+@media (prefers-color-scheme: dark){:root{--bg:#111;--fg:#eee;--mut:#aaa;--ok:#4ade80;--bar:#333;--fill:#60a5fa;--card:#1b1f27}}
+*{box-sizing:border-box}html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:-apple-system,"Malgun Gothic",sans-serif;margin:0;line-height:1.5;font-size:14.5px}
+.wrap{display:grid;grid-template-columns:minmax(300px,42%) 1fr;height:100vh}
+.left{overflow-y:auto;padding:14px 14px 30px;border-right:1px solid var(--bar);position:sticky;top:0;height:100vh}
+.right{overflow-y:auto;padding:14px 16px 30px;height:100vh}
+h1{font-size:17px;margin:0 0 6px}h2{font-size:15px;margin:4px 0 10px}.m{color:var(--mut);font-size:12.5px}
+.bar{height:12px;background:var(--bar);border-radius:6px;overflow:hidden;margin:8px 0 4px}.bar i{display:block;height:100%;background:var(--fill)}
+.ck{display:block;padding:6px 0;border-bottom:1px solid var(--bar);font-size:13.5px}.ck.done,.ck.skip{color:var(--mut);text-decoration:line-through;text-decoration-thickness:1.5px;opacity:.75}.ck.done b{color:var(--ok)}
+.ck.doing{background:rgba(37,99,235,.08)}.ck.blocked{background:rgba(220,38,38,.10)}.tag{font-size:12px}
+.lamp{display:inline-block;width:11px;height:11px;border-radius:50%;margin:0 6px 0 2px;vertical-align:-1px;background:#9ca3af;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.lamp.doing{background:#22c55e;box-shadow:0 0 6px 2px rgba(34,197,94,.75);animation:blink 1s ease-in-out infinite}
+.lamp.done,.lamp.skip{background:#2563eb;box-shadow:0 0 4px 1px rgba(37,99,235,.6)}
+.lamp.blocked{background:#dc2626;box-shadow:0 0 6px 2px rgba(220,38,38,.6)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.card{background:var(--card);border:1px solid var(--bar);border-radius:10px;padding:10px 12px;margin:0 0 12px}
+.ch{font-weight:700;margin-bottom:6px}.now{font-size:13px;margin:3px 0}.st{margin:6px 0 0 18px;padding:0;font-size:12.5px}.st li{margin:2px 0}
+ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var(--bar);font-size:12.5px}a{color:var(--fill)}
+@media (max-width:760px){.wrap{grid-template-columns:1fr;grid-template-rows:48vh 52vh}.left,.right{height:auto;position:static;border-right:0}.left{border-bottom:3px solid var(--fill)}}
+</style></head><body><div class="wrap">
+<section class="left">
+<h1>🔁 반영 감사 — 체크리스트·작업 진행 과정 (R19)</h1>
+<div class="bar"><i style="width:78%"></i></div>
+<div class="m"><b>78%</b> · 끝 7 / 전체 9 · 🔄 0 · ⛔ 0 · 갱신 2026-11-05 16:28 (30초마다 새로고침)</div>
+<p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>RA-1</b> 반영 감사 모듈·화면: 반영 쌍 7개 실측 신호등(reflect.html)</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>RA-2</b> 어긋남 수리 ① 루틴7 지침의 낡은 「하루 1~2편 기본」 문구</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>RA-3</b> 어긋남 수리 ② 메모리 색인 누락 1건</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>RA-4</b> 어긋남 수리 ③ 흐름도 그림 Syntax error 2개(괄호 라벨 5줄)</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>RA-5</b> 설계도 먼저: REFLECT_DRIFT 마디·사건 대입 기록 추가</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>RA-6</b> 자동 갱신: bake·관제탑 주기에 reflectcheck 연결(사람이 안 돌려도 갱신)</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>RA-7</b> 알림: 🔴 30분 지속 시 이부장에게 REFLECT_DRIFT 이벤트(🟡 정상 지연은 무알림)</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>RA-8</b> 엔진 상황실(engine.html)이 설계도 신호 48개 중 0개를 보이는 격차 정리</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>RA-9</b> 라이브(github.io) 반영 확인: reflect.html·reflect1105.html 신선도</label>
+</section>
+<section class="right">
+<h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
+<div class="card"><div class="ch"><i class="lamp doing"></i>🤖 실제 에이전트 현황 <span class="m">· 돌고 있음 2건 · agentwatch 갱신 2026-11-05 16:07</span></div><div class="now">🔄 <b>fixer</b> R19 반영 감사 모듈·화면 구현<span class="m"> · sonnet · 🟢 도는 중 · 시작 11-05 16:03</span></div><div class="now">🔄 <b>fixer</b> R15·R16 엔진 설계도 신호 7개 반영·흐름도·상황실 정합<span class="m"> · sonnet · 🟢 도는 중 · 시작 11-05 15:57</span></div><div class="now">✅ <b>fixer</b> R17 점검 보고서·인계 문서 갱신<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 15:41</span></div><div class="now">✅ <b>fixer</b> asidequeue 정정 지시 ⑤ 게이트 보정(사장님 채팅 허용)<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 15:40</span></div><div class="now">✅ <b>fixer</b> 카카오 REST 나에게 보내기 알림 모듈 준비<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 15:34</span></div><div class="now">✅ <b>measure</b> 재점검 측정 R8·R9·R11<span class="m"> · haiku · ✅ 끝남 · 시작 11-05 15:05</span></div><div class="now">✅ <b>measure</b> 재점검 측정 R2·R3·R4·R5<span class="m"> · haiku · ✅ 끝남 · 시작 11-05 15:05</span></div><div class="now">✅ <b>measure</b> F36 쓰기 거부 위험 재확인<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 14:32</span></div><div class="now">✅ <b>fixer</b> F50 aroma 승인→게시 정체 신호<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 14:23</span></div><div class="now">✅ <b>fixer</b> F49 관제탑 멈춤 시 사장님 알림 경로<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 14:13</span></div><div class="now">✅ <b>fixer</b> F29 기한 지난 내 몫 watch 정리<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 14:04</span></div><div class="now">✅ <b>fixer</b> F32 루틴 지침 비대 분석안<span class="m"> · sonnet · ✅ 끝남 · 시작 11-05 13:36</span></div></div>
+<h2 style="margin-top:18px">🕘 전체 작업 기록</h2>
+<ul class="h"><li class="m">아직 없음</li></ul>
+</section></div></body></html>

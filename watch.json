@@ -20089,6 +20089,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-reflectcheck-1105",
+   "added": "2026-11-05",
+   "what": "R19 반영 감사: studio/reflectcheck.py+tests+reflect.html 신규, derivedguard 등록. 현재 🟢4🟡2🔴1(🔴=lifeinfo-index-check SKILL.md:64 「하루 1~2편」 모순, 🟡=github.io 지연·메모리 색인 1개 누락). 테스트 25개 OK. 남은 것: 굽기·알림 연결은 설계도 먼저(docs/audit1102/GG_R19.md)",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.reflectcheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-reflectdrift-1105",
+   "added": "2026-11-05",
+   "what": "반영 감사 자동화(설계도 RF): towertick 5분마다 reflect 굽기(n%15==10, 16:26:05 실제 tick 이 굽는 것 확인)·3분마다 REFLECT_DRIFT 판정(🔴 30분 지속·60분 재알림·취침 보류·해소 1회·⚪ 상태 유지·낡은 데이터 가상 쌍) + bake.py 연결. 테스트 8개+278개 통과·enginemap 0. 남은 것: 실제 알림 줄은 🔴 쌍이 생겨야 나옴(현재 🔴 0) — 쌍5(배포 지연) 30분 넘으면 울릴 수 있음",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.enginemap && python -m unittest tests.test_studio_pure.TestReflectDrift tests.test_reflectcheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }

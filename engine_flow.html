@@ -4,7 +4,7 @@
   CP -->|신호: 결재·🙋/⏸/👤·Aside done/blocked/멈춤·발행 완료| T{{towertick 감시}}
   T -->|매 tick 결재서버 8011 ping · 2회 연속 실패 또는 낡은 코드| AP[APPROVE_SERVER_DOWN → 이부장 깨움 · 3시간 간격 재알림 · 되살아나면 APPROVE_SERVER_UP 1회]
   T -->|깨움| L[이부장<br/>판단·지시·검증·보고]
-  T -->|"보조 감시(루틴·파일·색인)"| TS["보조 감시 신호 — towertick 이 이부장을 깨움<br/>ROUTINE_REPORT — 루틴이 첫 보고 뒤 덧붙인 보고<br/>CLOSE_ROUTINE_SESSIONS — 루틴 패널 「닫기」 요청<br/>FILES_VANISHED · FILES_RETURNED — 추적파일 20개 이상 사라짐·복구<br/>INDEX_DAILY_REPORT — 18시 이후 하루 1번 색인 일일 보고 지시"]:::fix
+  T -->|"보조 감시(루틴·파일·색인)"| TS["보조 감시 신호 — towertick 이 이부장을 깨움<br/>ROUTINE_REPORT — 루틴이 첫 보고 뒤 덧붙인 보고<br/>CLOSE_ROUTINE_SESSIONS — 루틴 패널 「닫기」 요청<br/>FILES_VANISHED · FILES_RETURNED — 추적파일 20개 이상 사라짐·복구<br/>INDEX_DAILY_REPORT — 18시 이후 하루 1번 색인 일일 보고 지시<br/>REFLECT_DRIFT · REFLECT_RESOLVED — 반영 쌍이 🔴 로 30분 넘게 지속·해소"]:::fix
   TS -->|이부장 그 턴에 처리| L
   L -->|지시서 batchboard order| CP
   L -->|채팅 보고·카톡| B
