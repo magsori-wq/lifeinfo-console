@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05 16:56:01",
+ "at": "2026-11-05 17:03:21",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -325,9 +325,9 @@
  "drivers": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 18,
-   "last_min": 27,
+   "last_min": 34,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -336,7 +336,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 433,
+   "last_min": 440,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -372,17 +372,17 @@
  "units": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 18,
-   "last_min": 27,
+   "last_min": 34,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
-   "state": "대기(상시 업무만)",
+   "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 531,
+   "last_min": 1,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -390,7 +390,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 433,
+   "last_min": 440,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok"
   },
@@ -398,7 +398,7 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 137,
+   "last_min": 144,
    "cur": "✅ AM-SP-009 게시 완료(이부장 요청 idaeri-11",
    "lvl": "ok"
   },
@@ -751,6 +751,187 @@
   "D5-10": "완결",
   "G4-14": "완결"
  },
+ "reflect": {
+  "state": "bad",
+  "ok": 5,
+  "stale": 1,
+  "bad": 1,
+  "na": 0,
+  "at": "2026-11-05 17:01:05",
+  "age_min": 2
+ },
+ "design_signals": [
+  "APPROVE_SERVER_DOWN",
+  "APPROVE_SERVER_UP",
+  "AROMA_PUBLISH_RESOLVED",
+  "AROMA_PUBLISH_STALL",
+  "ASIDE_ALERT",
+  "ASIDE_CHAT",
+  "ASIDE_DRAFT",
+  "ASIDE_DRAFT_UNQUEUED",
+  "ASIDE_QUEUE",
+  "ASIDE_STALL",
+  "AUTO_CONFIRM",
+  "BOSS_ALARM_RANG",
+  "BOSS_APPROVAL",
+  "BOSS_REMIND",
+  "CARRIER_READY",
+  "CARRIER_STALL",
+  "CLOSE_ROUTINE_SESSIONS",
+  "CODE_UNVERIFIED",
+  "CONFIRM_BACKLOG",
+  "DEPLOY_NEEDED",
+  "DRAFT_READY",
+  "FILES_RETURNED",
+  "FILES_VANISHED",
+  "FUEL_LOW",
+  "GATE_PROBLEM",
+  "IDAERI_STALL",
+  "INDEX_DAILY_REPORT",
+  "INDEX_REQUEST_TODO",
+  "KEEP_DRAFTS",
+  "NAVER_CARD",
+  "NEW_BOSS_ITEM",
+  "ORDER_UNREAD",
+  "POST_COMPLETE",
+  "PRODUCT_TODO",
+  "PUBDATES_STALE",
+  "PUBLISH_RUN_DONE",
+  "PUBLISH_STALL",
+  "REFLECT_DRIFT",
+  "REFLECT_DRIFT_MIN",
+  "REFLECT_RESOLVED",
+  "REFLECT_STALE_MIN",
+  "REVIEW_MISSING",
+  "ROUTINE_DONE",
+  "ROUTINE_REPORT",
+  "STALL_DETECT_FAIL",
+  "TOWER_BOARD_MISSING",
+  "TOWER_CONFIRM_STALL",
+  "TOWER_OWED",
+  "TOWER_RECOVERED",
+  "TOWER_REVIEW",
+  "TOWER_SLEEP",
+  "TOWER_STALL",
+  "WAKE_SESSION"
+ ],
+ "fired": [
+  {
+   "day": "2026-11-05",
+   "total": 140,
+   "kinds": [
+    [
+     "ASIDE_ALERT",
+     43
+    ],
+    [
+     "ASIDE_DRAFT",
+     31
+    ],
+    [
+     "ASIDE_QUEUE",
+     13
+    ],
+    [
+     "BOSS_APPROVAL",
+     10
+    ],
+    [
+     "NEW_BOSS_ITEM",
+     9
+    ],
+    [
+     "FUEL_LOW",
+     6
+    ],
+    [
+     "ROUTINE_DONE",
+     6
+    ],
+    [
+     "BOSS_REMIND",
+     3
+    ]
+   ]
+  },
+  {
+   "day": "2026-11-04",
+   "total": 262,
+   "kinds": [
+    [
+     "BOSS_APPROVAL",
+     56
+    ],
+    [
+     "ASIDE_ALERT",
+     41
+    ],
+    [
+     "ASIDE_DRAFT",
+     26
+    ],
+    [
+     "ASIDE_QUEUE",
+     23
+    ],
+    [
+     "NEW_BOSS_ITEM",
+     19
+    ],
+    [
+     "FUEL_LOW",
+     9
+    ],
+    [
+     "ROUTINE_DONE",
+     8
+    ],
+    [
+     "AUTO_CONFIRM",
+     7
+    ]
+   ]
+  },
+  {
+   "day": "2026-11-03",
+   "total": 62,
+   "kinds": [
+    [
+     "ASIDE_ALERT",
+     13
+    ],
+    [
+     "TOWER_OWED",
+     6
+    ],
+    [
+     "ASIDE_DRAFT",
+     5
+    ],
+    [
+     "CODE_UNVERIFIED",
+     5
+    ],
+    [
+     "NEW_BOSS_ITEM",
+     5
+    ],
+    [
+     "FUEL_LOW",
+     4
+    ],
+    [
+     "BOSS_APPROVAL",
+     3
+    ],
+    [
+     "ROUTINE_DONE",
+     3
+    ]
+   ]
+  }
+ ],
+ "fired_note": "건별 발화 이력은 저장되지 않음 — 일일 종류별 횟수(towertick counts)만 있음",
  "log": [
   {
    "at": "2026-11-05 16:55:01",

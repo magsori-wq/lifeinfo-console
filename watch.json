@@ -19913,8 +19913,10 @@
    "due": "2026-11-07",
    "cmd": "python -m studio.osmu_manifest table --code H1-31",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-05",
+   "result": "R14 실측(KK_R14.md): 현행 Aside 주류+이과장 naverwrite 혼재·사장님 손 근거 0 — CLAUDE.md 결정표 반영(429행 옛 문구는 분류기 거부로 미수정, 표가 우선)"
   },
   {
    "id": "fix-routine-skill-audit-1105",
@@ -20148,6 +20150,26 @@
    "cmd": "python -m studio.batchview --stat",
    "owner": "claude",
    "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aside-executor-mismatch-1105",
+   "added": "2026-11-05",
+   "what": "Aside 실행자 지정 불일치(R14 중 발견): lifeinfo-cp-orders 스킬은 실행자 fZcN6UTcB4PoZVYk만 허용하나 실제 게시 전담 채팅은 3piqDmwWDz7VLUkM(이과장 전담). 11-05 B5-12 지시 #606·#607·#610·#611·#614 가 「실행자 아님」 blocked. 같은 날 #608·#609·#612·#613·#615 는 done 으로 진행 — 혼재.",
+   "due": "2026-11-06",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;A=json.load(open('webapp/aside_orders.json',encoding='utf-8'))['orders'];print('실행자 아님 건수',sum(1 for v in A.values() if '실행자 아님' in (v.get('last_what') or '')))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-engineroom-reflect-1105",
+   "added": "2026-11-05",
+   "what": "R16 상황실(engine.html) 맨 위 반영 감사 신호등+링크3+설계도 신호 접힘+일일 발화 횟수 추가·Aside 실측 일치. 남은 것: 건별 발화 이력 저장 없음(towertick 수정 별도), tests.test_reflectcheck Bake 1건 실패(HEAD부터, reflectcheck 담당)",
+   "due": "2026-11-06",
+   "cmd": "python -m unittest tests.test_engine_room_reflect && python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
    "by": "세션:a7dca46f"
   }
  ]

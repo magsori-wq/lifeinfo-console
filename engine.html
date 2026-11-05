@@ -132,6 +132,8 @@ details.strip ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-dire
 details.strip li{font-size:.82rem;overflow-wrap:anywhere;border-left:4px solid var(--idle);padding:2px 8px;background:var(--panel2);border-radius:3px}
 details.strip li.c0,details.strip li.c1{border-left-color:var(--rd)}details.strip li.c2{border-left-color:var(--am)}
 details.strip h3{margin:10px 0 2px;font-size:.78rem;color:var(--muted)}
+#rflt{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}#rflt .rfl{font-weight:800;font-size:.86rem}#rflt .rfl.ok{color:var(--ok)}#rflt .rfl.stale{color:var(--am)}#rflt .rfl.bad{color:var(--rd)}#rflt .rfl.na{color:var(--idle)}#rflt a{color:var(--bl);font-weight:700;text-decoration:none;white-space:nowrap}
+#dbody .sg{display:flex;flex-wrap:wrap;gap:4px 6px;margin:6px 0}#dbody code{font-size:.74rem;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:0 5px;overflow-wrap:anywhere}#dbody .fd2{font-size:.8rem;margin:2px 0;overflow-wrap:anywhere}
 @keyframes blink{50%{opacity:.35}}
 @keyframes alarm{50%{background:#8f1d1d}}
 @keyframes nodered{50%{stroke:transparent}}
@@ -153,6 +155,7 @@ html.reduce *{animation:none!important;transition:none!important}
       <span class="clock" id="clock"></span>
     </div>
     <div class="meta" id="at">불러오는 중…</div>
+    <div class="meta" id="rflt" aria-label="반영 감사 신호등"><span class="rfl na" id="rfls">⚪ 반영 감사 — 불러오는 중…</span> <a href="reflect.html" target="_blank" rel="noopener">반영 감사 ↗</a> <a href="reflect1105.html" target="_blank" rel="noopener">체크리스트·작업 진행 ↗</a> <a href="engine_flow.html" target="_blank" rel="noopener">흐름도 ↗</a></div>
     <div id="alarm" role="alert" tabindex="0"></div>
   </div>
   <iframe id="flowfr" title="흐름도"></iframe>
@@ -178,6 +181,7 @@ html.reduce *{animation:none!important;transition:none!important}
   </div>
 
   <details class="strip" id="strip"><summary id="ssum">사건·유닛</summary><div id="sbody"></div></details>
+  <details class="strip" id="dsig"><summary id="dsum">📘 설계도 신호 (불러오는 중…)</summary><div id="dbody"></div></details>
 </div>
 <script>
 const DEMO=new URLSearchParams(location.search).get("demo");let demoStep=0;
@@ -415,12 +419,27 @@ function alerts(s,g){
 const STAGE_EDGE={proc:["topic>proc"],boss:["proc>boss"],pub:["boss>pub"],blog:["pub>blog"],naver:["pub>hub","hub>naver"],insta:["pub>hub","hub>insta"],threads:["pub>hub","hub>threads"]};
 function todayFlow(s){const f={};(s.today_events||[]).forEach(e=>(STAGE_EDGE[e.stage]||[]).forEach(k=>f[k]=(f[k]||0)+1));return f}
 
+/* 11-05 R16 — 반영 감사 신호등 + 설계도 신호 접힘 + 발화 횟수. 값은 engine_state.json(studio/enginestate.py)의 reflect·design_signals·fired */
+function renderReflect(s){
+  const r=s&&s.reflect,e=document.getElementById("rfls");
+  if(!r||r.state==="na"||r.state==null){e.className="rfl na";e.textContent="⚪ 반영 감사 — 못 잼 (reflect.json 을 읽지 못함)"}
+  else{e.className="rfl "+r.state;
+    const old=(r.age_min!=null&&r.age_min>30)?" · ⚠ "+r.age_min+"분 묵음":"";
+    e.textContent="🟢 "+r.ok+" · 🟡 "+r.stale+" · 🔴 "+r.bad+" 반영 감사 ("+(r.at||"시각 없음")+" 갱신)"+old}
+  const sig=s&&s.design_signals||[],fd=s&&s.fired||[];
+  document.getElementById("dsum").textContent="📘 설계도 신호 "+sig.length+"개 (펼치기)";
+  document.getElementById("dbody").innerHTML=
+    '<div class="fd2">이름만 나열 — 전체 설명은 위 「흐름도」 링크 (docs/엔진설계도.md)</div><div class="sg" id="sglist">'+sig.map(n=>"<code>"+esc(n)+"</code>").join("")+"</div>"+
+    '<h3>최근 발화 횟수 (감시 일일 집계)</h3><div class="fd2">'+esc(s&&s.fired_note||"")+"</div>"+
+    (fd.length?fd.map(d=>'<div class="fd2"><b>'+esc(d.day)+"</b> 합계 "+esc(d.total)+" — "+d.kinds.map(k=>esc(k[0])+" "+esc(k[1])).join(" · ")+"</div>").join(""):'<div class="fd2">집계 없음</div>')
+}
 function render(s){
   if(RP){pendingS=s;return}                       /* 재생 중엔 지도를 덮지 않는다 — 끝나면 최신으로 */
   S=s;loadedAt=Date.now();
   const vert=document.getElementById("gpanel").clientWidth<620;
   if(curLayout!==(vert?"v":"h"))build(vert);
   document.getElementById("at").textContent="기준 "+s.at+" · 20초마다 갱신";
+  try{renderReflect(s)}catch(e){console.warn("renderReflect",e)}
   const g=groups(s),A=alerts(s,g),ch=s.channels||{};lastAlert=null;
   const al=document.getElementById("alarm"),reds=A.filter(a=>a.lv==="rd"),ams=A.filter(a=>a.lv==="am");
   const pk=reds[0]||ams[0];

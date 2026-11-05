@@ -182,6 +182,8 @@
         <!-- 🗒️ 임시탭: 2026-10-03 사장님 승인으로 메뉴에서 뺐다(08-28 내용에 한 달 멈춤). 진행은 결재함·미결사항에서 본다. -->
         <button data-t="orders">📄 작업지시</button>
         <button data-t="reports">📢 보고</button>
+        <!-- 🖥️ 2026-11-05 사장님 「한 화면으로 구성하여 화면 분할하여 CP 전자결재 하위탭에 만들어 모니터링」 — 점검 체크리스트·재점검·반영 감사·신호등 4분할 -->
+        <button data-t="chkmon">🖥️ 점검 모니터</button>
       </div>
       <div class="leafrow hide" data-group="manage">
         <button data-t="idxboard">🔍 색인 보드</button>
@@ -471,6 +473,7 @@
     <iframe id="f_pendosmu" data-src="pending_osmu.html"></iframe>
     <iframe id="f_naverfix" data-src="naverfix.html"></iframe>
     <iframe id="f_orders" data-src="orders.html"></iframe>
+    <iframe id="f_chkmon" data-src="chk_monitor.html"></iframe>
     <iframe id="f_reports" data-src="reports.html"></iframe>
     <iframe id="f_incidents" data-src="incidents.html"></iframe>
     <iframe id="f_opsguide" data-src="opsguide.html"></iframe>
@@ -487,7 +490,7 @@
   var nav=document.getElementById('nav');
   /* v2(2026-10-02): batch.json(1.2MB)이 첫 화면에서 2번 내려받아지던 것을 1번으로 — 같은 요청을 공유 */
   (function(){var of=window.fetch,P=null;window.fetch=function(u){if(typeof u==='string'&&u.indexOf('batch_view.json')===0){if(!P)P=of.apply(window,arguments);return P.then(function(r){return r.clone();});}return of.apply(window,arguments);};})();
-  var iframes=['ctrl','search','categories','generator','osmu','jisikin','naverstats','dashboard','progress','batch','approval','temp','pendosmu','naverfix','orders','reports','idxboard','gsc','seo','adsense','incidents','opsguide'];
+  var iframes=['ctrl','search','categories','generator','osmu','jisikin','naverstats','dashboard','progress','batch','approval','temp','pendosmu','naverfix','orders','reports','chkmon','idxboard','gsc','seo','adsense','incidents','opsguide'];
   // data-t → 그 탭이 속한 그룹(data-g). leafrow 의 data-group 과 맞춰 스스로 유도한다.
   var TAB_GROUP={};
   document.querySelectorAll('.leafrow').forEach(function(row){

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>점검 모니터</title>
+<style>
+:root{--bg:#fff;--fg:#222;--mut:#666;--bar:#e5e7eb;--card:#f8fafc;--acc:#2563eb}
+@media (prefers-color-scheme: dark){:root{--bg:#111;--fg:#eee;--mut:#aaa;--bar:#333;--card:#1b1f27;--acc:#60a5fa}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:-apple-system,"Malgun Gothic",sans-serif;font-size:13.5px;display:flex;flex-direction:column}
+.top{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 10px;border-bottom:1px solid var(--bar);background:var(--card)}
+.top b{font-size:14px;margin-right:6px}
+.top button{border:1px solid var(--bar);background:var(--bg);color:var(--fg);border-radius:6px;padding:3px 9px;cursor:pointer;font-size:12.5px}
+.top button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.top .m{color:var(--mut);font-size:12px;margin-left:auto}
+.grid{flex:1;min-height:0;display:grid;gap:6px;padding:6px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+body.l2 .grid{grid-template-rows:1fr}
+body.l2 .slot:nth-child(n+3){display:none}
+body.l1 .grid{grid-template-columns:1fr;grid-template-rows:1fr}
+body.l1 .slot:nth-child(n+2){display:none}
+.slot{display:flex;flex-direction:column;min-width:0;min-height:0;border:1px solid var(--bar);border-radius:8px;overflow:hidden;background:var(--bg)}
+.sh{display:flex;gap:6px;align-items:center;padding:4px 8px;background:var(--card);border-bottom:1px solid var(--bar);font-size:12.5px}
+.sh select{flex:1;min-width:0;background:var(--bg);color:var(--fg);border:1px solid var(--bar);border-radius:5px;padding:2px 4px;font-size:12.5px}
+.sh a{color:var(--acc);text-decoration:none;white-space:nowrap}
+.slot iframe{flex:1;min-height:0;width:100%;border:0;background:var(--bg)}
+@media (max-width:760px){
+  body{height:auto;display:block}
+  .grid{display:block}
+  .slot{height:78vh;margin-bottom:8px}
+  body.l2 .slot:nth-child(n+3),body.l1 .slot:nth-child(n+2){display:flex}
+  body.l2 .slot:nth-child(n+3){display:none}
+  body.l1 .slot:nth-child(n+2){display:none}
+}
+</style></head><body class="l4">
+<div class="top">
+  <b>🖥️ 점검 모니터</b>
+  <button data-l="l4" class="on">4분할</button>
+  <button data-l="l2">2분할</button>
+  <button data-l="l1">1칸</button>
+  <span class="m">각 칸은 스스로 30초마다 새로 고침 · 칸 위 목록에서 다른 화면으로 바꿀 수 있음 · <span id="clock">—</span></span>
+</div>
+<div class="grid" id="grid"></div>
+<script>
+var SRC=[
+ ["fix1102.html","✅ 전체 점검 체크리스트 (fix1102)"],
+ ["recheck1105.html","🔁 재점검 체크리스트 (recheck1105)"],
+ ["reflect1105.html","🧭 반영 감사 체크리스트·작업 진행"],
+ ["reflect.html","🚦 반영 신호등"],
+ ["engine.html","🛰️ 엔진 상황실"],
+ ["engine_flow.html","🗺️ 엔진 설계도 흐름도"],
+ ["approval.html","📋 전자결재함"],
+ ["reports.html","📢 보고"]
+];
+var DEFAULT=[0,1,2,3];
+var KEY="chkmon_slots_v1", LKEY="chkmon_layout_v1";
+function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function set(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+var saved=null;try{saved=JSON.parse(get(KEY)||"null");}catch(e){}
+var slots=(saved&&saved.length===4)?saved:DEFAULT.slice();
+var grid=document.getElementById("grid");
+function url(i){return SRC[i][0]+"?t="+Date.now();}
+function build(){
+  grid.innerHTML="";
+  slots.forEach(function(si,n){
+    var d=document.createElement("div");d.className="slot";
+    var h='<div class="sh"><select data-n="'+n+'">';
+    SRC.forEach(function(s,i){h+='<option value="'+i+'"'+(i===si?' selected':'')+'>'+s[1]+'</option>';});
+    h+='</select><a target="_blank" rel="noopener" href="'+SRC[si][0]+'">새 탭 ↗</a></div><iframe></iframe>';
+    d.innerHTML=h;
+    d.querySelector("iframe").src=url(si);
+    d.querySelector("select").onchange=function(e){slots[n]=+e.target.value;set(KEY,JSON.stringify(slots));build();};
+    grid.appendChild(d);
+  });
+}
+build();
+document.querySelectorAll(".top button").forEach(function(b){
+  b.onclick=function(){
+    document.body.className=b.dataset.l;
+    document.querySelectorAll(".top button").forEach(function(x){x.classList.toggle("on",x===b);});
+    set(LKEY,b.dataset.l);
+  };
+});
+var sl=get(LKEY);if(sl&&/^l[124]$/.test(sl)){var btn=document.querySelector('.top button[data-l="'+sl+'"]');if(btn)btn.click();}
+function tick(){var d=new Date();document.getElementById("clock").textContent=("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2)+":"+("0"+d.getSeconds()).slice(-2);}
+tick();setInterval(tick,1000);
+/* 엔진 상황실·흐름도·결재함·보고는 자체 갱신이 없거나 달라서 5분마다 칸을 새로 받는다(체크리스트 화면은 자체 30초 갱신) */
+setInterval(function(){document.querySelectorAll(".slot").forEach(function(s){var sel=s.querySelector("select");var f=s.querySelector("iframe");var i=+sel.value;if(/^(engine|engine_flow|approval|reports)\.html$/.test(SRC[i][0]))f.src=url(i);});},300000);
+</script>
+</body></html>
