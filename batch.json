@@ -1915,6 +1915,17 @@
      "date": "2026-11-05",
      "at": "2026-11-05 09:20",
      "actor": "미상:30a78a0a"
+    },
+    {
+     "code": "lifeinfo-index-check-1105-1105",
+     "title": "lifeinfo-index-check-1105 (G)",
+     "state": "done",
+     "note": "11-05 inspect 완주 471편(partial=False·오류0) · ①색인 0/471 · ②28일클릭 0(노출1) · ③네이버구글색인 61(오늘 Aside 재측정, 10-08 49 대비 +12·빠짐0 · 10월 글 5편 포함 · 측정환경 차이 가능성 있음) · state RedirectErr240/Crawled124/Discovered77/unknown30(전주 214/124/68/41) · 신규24편 Redirect23 · 이월 재크롤 3편(H1-31~33, 10-29 요청) 전부 RedirectErr(전주 13편) · Discovered↔unknown 51편 왕복 · adsense GETTING_READY(화면 미확인) · 이어받은 것: idx0zero 42일 무갱신, 이번도 주간실측만 · 이부장 확인: watch erase6-naver-oct-1105 · 재검토 시점은 사장님 · 상세 전담자료 11-05절",
+     "auto_daily": true,
+     "base_code": "lifeinfo-index-check-1105",
+     "date": "2026-11-05",
+     "at": "2026-11-05 10:40",
+     "actor": "미상:1979b735"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -7870,7 +7881,7 @@
    "owner": "이과장"
   }
  },
- "updated": "2026-11-05 09:29:40",
+ "updated": "2026-11-05 10:40:39",
  "current": {
   "batch": "tower1105",
   "code": "",
@@ -7881,6 +7892,11 @@
   "since_at": "2026-11-05 09:29:40"
  },
  "log": [
+  {
+   "t": "10:40:39",
+   "text": "✅ lifeinfo-index-check-1105-1105 완료 — lifeinfo-index-check-1105 (G)",
+   "actor": "미상:1979b735"
+  },
   {
    "t": "09:29:40",
    "text": "▶   — 1/7단계 · H1-24 보류(수능 할인 공식 공지 없음) · watch h124-recheck-1112 · 이과장 초안 중단, 재고 0은 3. fuel1030 제안 대기",
@@ -8074,11 +8090,6 @@
   {
    "t": "04:56:33",
    "text": "▶   — 1/7단계 · [Aside][done] #617 B5-12: 캡션 있음 · 링크 2개 있음 · 첫 20자「전월세 안심신탁 임대인 모집 11/4」 · 펼침 단추 없음(이미 전문 표시). B5-11: 캡션 있음 · 링크 2개 있음 · 첫 20자「정기 세무조사 제외 계획서는 11월 」 · 펼침 단추 없음(이미 전문 표시).",
-   "actor": "Aside"
-  },
-  {
-   "t": "04:53:32",
-   "text": "▶   — 1/7단계 · [Aside][doing] #617 수신 2026-11-05 04:52:55 — 캡션 대조군 3개 읽기 전용 확인 시작",
    "actor": "Aside"
   }
  ],
