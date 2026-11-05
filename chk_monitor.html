@@ -153,7 +153,7 @@ function alarmCheck(urgent){
   if(alarmOn&&(fresh.length||again)){beep();
     try{if(window.Notification&&Notification.permission==="granted"&&(fresh.length)){var f=urgent.filter(function(i){return fresh.indexOf(i.k)>=0;})[0];var nt=new Notification("점검 모니터 — "+(f.lv==="r"?"막힘·실패":"사장님 몫"),{body:f.t+" (눌러서 상세 보기)"});nt.onclick=function(){try{window.focus();}catch(e){}try{parent.postMessage({chkmon:"open"},"*");}catch(e){}openDetail(true);nt.close();};}}catch(e){}}
 }
-function refreshSig(){Promise.all(["engine_state.json","reflect.json","aside_orders.json","approval_m.json","batch_view.json","agents.json"].map(jget)).then(function(x){CUR=stamp(collect(x));var urgent=paint(CUR);alarmCheck(urgent);if(!dp.hidden)renderDetail();}).catch(function(){});}
+function refreshSig(){Promise.all(["engine_state.json","reflect.json","aside_orders.json","approval_m.json","batch_view.json","agents.json"].map(jget)).then(function(x){CUR=stamp(collect(x));var urgent=paint(CUR);alarmCheck(urgent);if(urgent.length)reportNow(true);if(!dp.hidden)renderDetail();}).catch(function(){});}
 /* ── 상세 내역 + 이부장 보고 (설계도 TO3, 2026-11-05 사장님 「알람 → 그 탭을 클릭하면 상세내역 → 이부장에게 알려 즉시·묶음 처리」) ──
    알림·신호등을 누르면 상세 패널이 열리고, 🔴·🔵 가 있으면 새 항목 묶음일 때 한 번 자동으로 이부장에게 보고한다(결재 서버 localhost:8011 /api/chkmon).
    🟡 만 있으면 자동 보고하지 않는다 — 「이부장에게 보고」 버튼으로 묶음 보고. github.io·서버 꺼짐이면 요지를 클립보드에 복사(폰 결재함과 같은 패턴). */
@@ -182,16 +182,16 @@ function plainReport(items){var n=function(l){return items.filter(function(i){re
 function reportNow(auto){
   var items=CUR.slice();
   if(!items.length){msg("보고할 항목이 없습니다 🟢");return;}
-  var ids=items.map(function(i){return i.k;}).sort().join("|"),last=null;try{last=JSON.parse(get(REP_KEY)||"null");}catch(e){}
+  var ids=items.map(function(i){return i.k;}).sort().join("|"),uids=items.filter(function(i){return i.lv!=="y";}).map(function(i){return i.k;}).sort().join("|"),last=null;try{last=JSON.parse(get(REP_KEY)||"null");}catch(e){}
   if(auto){
     if(!items.some(function(i){return i.lv!=="y";})){msg("🟡 주의뿐이라 자동 보고는 하지 않았습니다 — 묶음으로 보내려면 「이부장에게 보고」를 누르세요","w");return;}
-    if(last&&last.ids===ids&&Date.now()-last.t<600000){msg("✅ 이미 보고됨 "+hm(last.t)+" — 같은 항목이라 다시 보내지 않았습니다","ok");return;}
+    if(last&&last.uids===uids){msg("✅ 이미 보고됨 "+hm(last.t)+" — 같은 항목이라 다시 보내지 않았습니다","ok");return;}
   }
   if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){copyText(plainReport(items));msg("이 주소(github.io)에서는 서버로 보낼 수 없어 요지를 복사했습니다 — 이부장 창에 붙여넣으세요","w");return;}
   msg("보고 중…");
   fetch("http://localhost:8011/api/chkmon",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:items.map(function(i){return {lv:i.lv,k:i.k,t:i.t,since:i.since};})})})
    .then(function(r){return r.json();}).then(function(j){
-     if(j&&j.ok){set(REP_KEY,JSON.stringify({ids:ids,t:Date.now()}));msg(j.dup?"✅ 같은 보고가 방금 이미 접수돼 있습니다":"✅ 이부장에게 보고했습니다 ("+hm(Date.now())+") — 🔴·🔵 즉시 · 🟡 묶음으로 처리됩니다","ok");}
+     if(j&&j.ok){set(REP_KEY,JSON.stringify({ids:ids,uids:uids,t:Date.now()}));msg(j.dup?"✅ 같은 보고가 방금 이미 접수돼 있습니다":"✅ 이부장에게 보고했습니다 ("+hm(Date.now())+") — 🔴·🔵 즉시 · 🟡 묶음으로 처리됩니다","ok");}
      else{copyText(plainReport(items));msg("❌ 보고 실패("+((j&&j.error)||"")+") — 요지를 복사했습니다. 이부장 창에 붙여넣으세요","bad");}
    }).catch(function(){copyText(plainReport(items));msg("❌ 결재 서버(8011)에 닿지 않아 요지를 복사했습니다 — 이부장 창에 붙여넣으세요","bad");});
 }
