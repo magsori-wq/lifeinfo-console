@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05 09:02",
+ "generated": "2026-11-05 09:20",
  "routines": [
   {
    "num": 1,
@@ -44,12 +44,17 @@
    "name": "2-Lifeinfo daily topics",
    "id": "lifeinfo-daily-topics",
    "on": true,
-   "last": "11/04 09:13",
+   "last": "11/05 09:13",
    "next": "11/06 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1104",
-   "report": "[조사장부] 목록 3 · 원문 2 · 후보 5 · 탈락 5 · 검색어 7 (바닥 미달: 원문 2/5 — 정책뉴스 11-02·11-03 2건만 본문 개봉, 국세청·금융위는 상시 안내 페이지라 뉴스 없음) 빈손 — 후보 전부 기발행(B4-19·A5-14·D5-10) 또는 시기상조(재취업지원서비스 시행 2027-07). 성희롱 과태료는 D 레인이라 루틴6 몫. 이어받은 것=재고0·직전 빈손 / 새로 본 것=재취업지원서비스·성희롱 과태료. 파일 오전브리핑_2026-11-04.md",
+   "report_day": "1105",
+   "report": "[조사장부] 목록 4 · 원문 5 · 후보 6 · 탈락 6 · 검색어 10 — 빈손: 자립펀드(시행 내년 하반기·예산안 미확정)·연말정산·노인일자리·두루누리 기발행, 지분적립형 고양창릉은 D레인(루틴6 후보로 근거 보존 newsId=148975005). 이어받은 것 11-04 빈손·재고 0 / 새로 본 것 6건 탈락. 생리대·김장 원문은 본문 얇음. 파일 오전브리핑_2026-11-05.md",
    "runs": [
+    {
+     "at": "11/05 09:13",
+     "link": "claude://claude.ai/epitaxy/local_6b1f7624-480a-49d3-9aaf-923c5b7aa113",
+     "archived": false
+    },
     {
      "at": "11/04 09:19",
      "link": "claude://claude.ai/epitaxy/local_2e4387e5-776b-4de2-a710-cb865f4e0dcd",
@@ -69,11 +74,6 @@
      "at": "11/01 09:16",
      "link": "claude://claude.ai/epitaxy/local_3b46a5cc-4cd6-45c2-a011-c869ca10650f",
      "archived": true
-    },
-    {
-     "at": "10/31 09:13",
-     "link": "claude://claude.ai/epitaxy/local_3e09a7b4-866f-49c9-ab12-2d41fdeb5516",
-     "archived": true
     }
    ]
   },
@@ -85,11 +85,11 @@
    "last": "11/05 09:01",
    "next": "11/06 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1104",
-   "report": "빈손 — 큐 0건·승인도장 대기 글 없음(queue.json go 0)·오늘 이미 2편 발행. 이어받은 것=재고0, 새로 본 것=없음. 3-0 대상 없음\n▸ 09:05 정정·확정: 빈손. queue.json go 도장 2건(D5-09·D5-10)은 DB에 라이브 URL 있음=기발행(오늘 2편). 미발행 도장 0·큐 0. 3-0 대상 없음, 발행 트리거 안 함",
+   "report_day": "1105",
+   "report": "빈손 — 발행대기 큐 0건(pubqueue list)·승인 도장 대상 없음. 오늘 발행 1편(B5-12) pace 정상, 진행 중 run 없음. 이어받은 것: 재고 0/하한 3 → 글감 선별·초안 지시는 이부장 몫(tower1104 T1104-1)",
    "runs": [
     {
-     "at": "11/05 09:01",
+     "at": "11/05 09:07",
      "link": "claude://claude.ai/epitaxy/local_9d29817c-2b58-4d26-a2f8-52028fe17d8d",
      "archived": false
     },
