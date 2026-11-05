@@ -20027,6 +20027,28 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-05",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "fix-kakaonotify-1105",
+   "added": "2026-11-05",
+   "what": "studio/kakaonotify.py(카카오 나에게 보내기, 스텁 시험만·실API 0회)+tests/test_kakaonotify.py 20개 OK+docs/카카오_알림_설정안내.md+docs/audit1102/EE_kakaonotify.md 작성. 사장님 앱등록·동의(안내서 1~14) 뒤 setup→첫 send 로 ❓항목 확인, 그 뒤 towertick 연결(EE 4절)은 설계도 먼저 별도 지시서",
+   "due": "2026-11-06",
+   "cmd": "python -m unittest tests.test_kakaonotify && python -m studio.kakaonotify status",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "kakao-app-setup-1105",
+   "added": "2026-11-05",
+   "what": "카카오 알림 앱 등록(약 10분, 14단계 안내서 docs/카카오_알림_설정안내.md): 카카오 디벨로퍼스에서 앱 만들기→REST API 키·클라이언트 시크릿→카카오 로그인·리다이렉트→동의항목(카카오톡 메시지 전송)→동의 뒤 code 를 이부장에게 전달. 끝나면 이부장이 토큰 교환과 감시 연결(TOWER_STALL·AROMA_PUBLISH_STALL)을 합니다",
+   "due": "2026-11-06",
+   "cmd": "start \"\" \"C:\\lifeinfo\\docs\\카카오_알림_설정안내.md\"",
+   "owner": "user",
+   "state": "todo",
+   "verify": "python -m studio.kakaonotify status",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
