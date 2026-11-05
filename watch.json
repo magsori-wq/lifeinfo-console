@@ -20049,6 +20049,16 @@
    "verify": "python -m studio.kakaonotify status",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "fix-asidequeue-fixorder-1105",
+   "added": "2026-11-05",
+   "what": "asidequeue ⑤ 정정 지시 통과(발행글+인용 사장님 결재 watch approve·user·done) 반영 · 테스트 242 OK · B3-07 재현 통과 · 설계도 갱신. 남은 것: 이부장이 B3-07 등을 실제 asidequeue add",
+   "due": "2026-11-06",
+   "cmd": "python -m unittest tests.test_studio_pure.TestPreclear",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }

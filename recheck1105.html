@@ -1,0 +1,54 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="30"><title>점검 체크리스트</title>
+<style>
+:root{--bg:#fff;--fg:#222;--mut:#666;--ok:#1a7f37;--bar:#e5e7eb;--fill:#2563eb;--card:#f8fafc}
+@media (prefers-color-scheme: dark){:root{--bg:#111;--fg:#eee;--mut:#aaa;--ok:#4ade80;--bar:#333;--fill:#60a5fa;--card:#1b1f27}}
+*{box-sizing:border-box}html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:-apple-system,"Malgun Gothic",sans-serif;margin:0;line-height:1.5;font-size:14.5px}
+.wrap{display:grid;grid-template-columns:minmax(300px,42%) 1fr;height:100vh}
+.left{overflow-y:auto;padding:14px 14px 30px;border-right:1px solid var(--bar);position:sticky;top:0;height:100vh}
+.right{overflow-y:auto;padding:14px 16px 30px;height:100vh}
+h1{font-size:17px;margin:0 0 6px}h2{font-size:15px;margin:4px 0 10px}.m{color:var(--mut);font-size:12.5px}
+.bar{height:12px;background:var(--bar);border-radius:6px;overflow:hidden;margin:8px 0 4px}.bar i{display:block;height:100%;background:var(--fill)}
+.ck{display:block;padding:6px 0;border-bottom:1px solid var(--bar);font-size:13.5px}.ck.done,.ck.skip{color:var(--mut);text-decoration:line-through;text-decoration-thickness:1.5px;opacity:.75}.ck.done b{color:var(--ok)}
+.ck.doing{background:rgba(37,99,235,.08)}.ck.blocked{background:rgba(220,38,38,.10)}.tag{font-size:12px}
+.lamp{display:inline-block;width:11px;height:11px;border-radius:50%;margin:0 6px 0 2px;vertical-align:-1px;background:#9ca3af;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.lamp.doing{background:#22c55e;box-shadow:0 0 6px 2px rgba(34,197,94,.75);animation:blink 1s ease-in-out infinite}
+.lamp.done,.lamp.skip{background:#2563eb;box-shadow:0 0 4px 1px rgba(37,99,235,.6)}
+.lamp.blocked{background:#dc2626;box-shadow:0 0 6px 2px rgba(220,38,38,.6)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.card{background:var(--card);border:1px solid var(--bar);border-radius:10px;padding:10px 12px;margin:0 0 12px}
+.ch{font-weight:700;margin-bottom:6px}.now{font-size:13px;margin:3px 0}.st{margin:6px 0 0 18px;padding:0;font-size:12.5px}.st li{margin:2px 0}
+ul.h{list-style:none;padding:0}ul.h li{padding:4px 0;border-bottom:1px solid var(--bar);font-size:12.5px}a{color:var(--fill)}
+@media (max-width:760px){.wrap{grid-template-columns:1fr;grid-template-rows:48vh 52vh}.left,.right{height:auto;position:static;border-right:0}.left{border-bottom:3px solid var(--fill)}}
+</style></head><body><div class="wrap">
+<section class="left">
+<h1>🔁 전체점검 재점검 — 미해결 18건(점검 끝난 뒤 작성자 아닌 세션이 근거로 확인)</h1>
+<div class="bar"><i style="width:33%"></i></div>
+<div class="m"><b>33%</b> · 끝 6 / 전체 18 · 🔄 6 · ⛔ 0 · 갱신 2026-11-05 15:50 (30초마다 새로고침)</div>
+<p class="m"><a href="audit_1102.html">보고서</a> · ☑ = 이부장이 근거 확인 뒤 체크 · 램프: <i class="lamp doing"></i>작업 중(깜빡임) <i class="lamp done"></i>완료 <i class="lamp"></i>대기 <i class="lamp blocked"></i>막힘</p>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>R1</b> F49 외근 중 폰 알림 길(카톡 파이썬 경로 0) — 대안 비교→결재함 🔴 <span class="tag">🔄</span></label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>R2</b> F19 화면 JS 전환·1MB 목표 미달 <span class="tag">🔄</span></label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>R3</b> F20·F35 push 감소 측정(97회 대비)</label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>R4</b> F26 남은 4·6·8 + 세션시작 전체 재측정 <span class="tag">🔄</span></label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>R5</b> F29 기한 지난 287건·drop 9·fable-verify 통합 <span class="tag">🔄</span></label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>R6</b> F32 동작 변경 5건·초안 적용·aroma 경로 깨짐(이대리)</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>R7</b> F18 화면 스크린샷·콘솔·towertick 사본</label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>R8</b> F12·F36·F48 미발생 경로·감시·저장소 근본 <span class="tag">🔄</span></label>
+<label class="ck doing"><i class="lamp doing"></i><input type="checkbox" disabled> <b>R9</b> F30 인스타 캡션 10편 정정 진행 <span class="tag">🔄</span></label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>R10</b> F33 발행 트리거 상시 허용 — 사장님 설정</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>R11</b> F50 aroma 정체 신호 결과 검증</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>R12</b> 배포 deploy.bat 1회 + 카톡 보고</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>R13</b> 출처 미상 「양방향 겹침 검사 도구」 확인</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>R14</b> CLAUDE.md 네이버 쓰기 주체 어긋남</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>R15</b> 엔진 설계도 정합: 코드가 내는데 설계도에 없는 신호 7개(CLOSE_ROUTINE_SESSIONS·FILES_RETURNED·FILES_VANISHED·INDEX_DAILY_REPORT·REVIEW_MISSING·ROUTINE_REPORT·TOWER_REVIEW) 설계도에 반영</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>R16</b> 흐름도(engine_flow.html) 재생성 + 엔진 상황실 화면 확인(Aside) — 설계도·코드·상황실이 같은 신호를 보이는가</label>
+<label class="ck done"><i class="lamp done"></i><input type="checkbox" disabled checked> <b>R17</b> 문서 일괄 갱신: 점검 보고서(점검_전체문제_20261102.md) 진행 결과·메모리 색인·인계 문서 — 로컬호스트에 먼저 반영, 이부장 판단으로 커밋 → 클라우드(github.io) 반영</label>
+<label class="ck todo"><i class="lamp todo"></i><input type="checkbox" disabled> <b>R18</b> 루틴 지침 적용 결정: F32 동작 바뀌는 5건·초안 3개(routine_skill_drafts) 검토 후 routinesync 로 적용, aroma 경로 깨짐 1건은 이대리 전달</label>
+</section>
+<section class="right">
+<h2>🤖 에이전트 작업 과정 (백그라운드)</h2>
+<div class="card"><div class="ch"><i class="lamp doing"></i>🤖 에이전트 미배정 <span class="m">· R1 · R2 · R4 · R5 · R8 · R9 · 작업 중</span></div><div class="now">🔄 <b>R1</b> 모듈 kakaonotify 준비 완료(커밋 58c359c48·test 20 OK·비밀폴더 gitignore 확인 이부장) — 사장님 앱 등록 14단계(watch kakao-app-setup-1105) 후 토큰·감시 연결<span class="m"> · 2026-11-05 15:43</span></div><div class="now">🔄 <b>R2</b> 미개선 확인: approval.html 은 batch.json(2.0MB) 그대로 받음·JSON 18개 합계 5.35MB(batch_view 168KB 는 미사용) — F19b 화면 전환 필요(watch f19b-screen-switch)<span class="m"> · 2026-11-05 15:10</span></div><div class="now">🔄 <b>R4</b> 개선 확인: session_rules 110.5→37초(1회 측정)·loopcheck 1초 · 남음: 출력 16.6K자 중 9.5K 잘림·readycheck 26초 rc=1(설계된 종료)·제안 4·6·8 미구현<span class="m"> · 2026-11-05 15:10</span></div><div class="now">🔄 <b>R5</b> 기한 지난 claude 미완 261건(가족 상위: aside 20·naver 18·fix 14·source 7·routine 6) — 근거 못 잰 항목 정리 계속<span class="m"> · 2026-11-05 15:11</span></div><div class="now">🔄 <b>R8</b> F48 checkout 12~16s ✅ · F12 수정(11-04) 이후 approve-배치 실결재 아직 없음 · F36 제안 4건 미구현<span class="m"> · 2026-11-05 15:09</span></div><div class="now">🔄 <b>R9</b> 게이트 보정 d037c4c20(test 242 OK·enginemap 🔴0·B3-07 판정 통과 이부장 재실행) 후 B3-07 저장 지시 #621 Aside 등록(15:44) — 완료 보고 확인 뒤 다음 편(F1-18…) 한 편씩<span class="m"> · 2026-11-05 15:44</span></div><ol class="st"><li class="m">아직 단계 기록 없음</li></ol></div>
+<h2 style="margin-top:18px">🕘 전체 작업 기록</h2>
+<ul class="h"><li class="m">아직 없음</li></ul>
+</section></div></body></html>
