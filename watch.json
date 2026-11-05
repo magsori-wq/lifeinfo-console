@@ -20468,6 +20468,27 @@
    "state": "wait",
    "note": 7,
    "by": "lifeinfo-ee"
+  },
+  {
+   "id": "term-overlap-1106",
+   "added": "2026-11-06",
+   "what": "PC점검 창 화면 겹침 — 재부팅·2.1.318 뒤 05:54 캡처: 지난 입력줄 반복은 사라짐, 잔여 = 한글 사이 낱글자 끼어듦(4·h·울)·지난 출력 조각 1줄·입력칸 > 2개. 지속되면 사장님 승인 받아 렌더러 전환 검토",
+   "due": "2026-11-07",
+   "cmd": "캡처 폴더 최신 파일 Read 로 겹침 여부 확인",
+   "owner": "claude",
+   "state": "wait",
+   "note": 7,
+   "by": "lifeinfo-ee"
+  },
+  {
+   "id": "kakao-app-setup-1106-1130",
+   "added": "2026-11-06",
+   "what": "카카오 알림 앱 등록 — 사장님 11:30 기상 후 PC에서 처리, 끝났다 하시면 kakaonotify status·테스트 발송",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.kakaonotify status",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
