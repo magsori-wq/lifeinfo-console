@@ -28358,6 +28358,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-readinfo-unknown-1105",
+   "added": "2026-11-05",
+   "what": "F16 read_info 읽기실패=unknown, 호출부 9곳 모름이면 경보 생략. 테스트 4+192 OK. 호출부 실패주입·CP화면 확인 미함",
+   "due": "2026-11-06",
+   "cmd": "python -m unittest tests.test_f16_unknown",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
