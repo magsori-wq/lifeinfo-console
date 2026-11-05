@@ -20079,6 +20079,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-enginemap-mermaid-1105",
+   "added": "2026-11-05",
+   "what": "엔진 설계도 mermaid 괄호 라벨 5줄 따옴표 처리(engine_flow 블록2·3 Syntax error 해소)·신호 7개 RV/RN/FV/ID 마디+그림 반영(enginemap 🟡 0)·mermaid_lint(enginemap·selfcheck 17c·시험 3건) 신설. 남은 것: 상황실(engine.html)은 사건 kind 만 표시 — 신규 7신호 미표시(판단 이부장), 화면 확인은 engine_flow 만",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
