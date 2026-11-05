@@ -1,50 +1,64 @@
 {
- "computed_at": "2026-11-06 00:28:46",
- "source_head": "1e372bba3dbb",
+ "computed_at": "2026-11-05 18:08:32",
+ "source_head": "131f5279c279",
  "ids": [
-  "D1-21",
-  "deploy-thumb-457",
-  "kakao-app-setup-1105"
+  "D1-21"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "D1-21",
    "title": "층간소음 기준 49dB로 강화 — 오피스텔·다세대, 의견은 11월 26일까지",
-   "go": false,
-   "v0": null,
-   "files": [
-    {
-     "label": "초안 층간소음바닥충격음기준_글_HTML.txt",
-     "path": "층간소음바닥충격음기준_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "층간소음바닥충격음기준",
+   "eng": "floor_noise_standard",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_층간소음바닥충격음기준.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/457_floor_noise_standard.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/457_floor_noise_standard.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_층간소음바닥충격음기준.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/457_floor_noise_standard.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_층간소음바닥충격음기준.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "todo"
+   }
   }
  ],
- "actions": [
-  {
-   "id": "deploy-thumb-457",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(457_floor_noise_standard.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-06",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
+ "publish": [],
+ "actions": [],
+ "actionsFuture": [
   {
    "id": "kakao-app-setup-1105",
    "what": "카카오 알림 앱 등록(약 10분, 14단계 안내서 docs/카카오_알림_설정안내.md): 카카오 디벨로퍼스에서 앱 만들기→REST API 키·클라이언트 시크릿→카카오 로그인·리다이렉트→동의항목(카카오톡 메시지 전송)→동의 뒤 code 를 이부장에게 전달. 끝나면 이부장이 토큰 교환과 감시 연결(TOWER_STALL·AROMA_PUBLISH_STALL)을 합니다",
@@ -53,6 +67,5 @@
    "state": "todo",
    "kind": "action"
   }
- ],
- "actionsFuture": []
+ ]
 }
