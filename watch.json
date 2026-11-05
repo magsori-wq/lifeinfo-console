@@ -20440,8 +20440,10 @@
    "due": "2026-11-06",
    "cmd": "python -m studio.readycheck",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-06",
+   "result": "사장님 재부팅 완료·05:50 심장박동 15초 전·메모리 커밋 37%·결재서버 응답 확인"
   },
   {
    "id": "aroma-pe006-dup-private-1106",
@@ -20455,6 +20457,17 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-06",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "intel-driver-reconsider-1106",
+   "added": "2026-11-06",
+   "what": "인텔 그래픽 드라이버 업데이트 재검토 — 재부팅 뒤 dwm 재측정(dwm-leak-1106) 결과를 보고 사장님과 결정. 후보 31.0.101.2145(인텔 7~10세대 레거시, 현재 27.20.100.9268·2021-02-05). ASUS 보조화면(ScreenPad Plus) 영향 미확인",
+   "due": "2026-11-08",
+   "cmd": "powershell -NoProfile -Command \"Get-CimInstance Win32_VideoController | Format-List Name,DriverVersion,DriverDate\"",
+   "owner": "claude",
+   "state": "wait",
+   "note": 7,
+   "by": "lifeinfo-ee"
   }
  ]
 }
