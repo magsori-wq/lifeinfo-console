@@ -19799,6 +19799,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "fix-batchview-1105",
+   "added": "2026-11-05",
+   "what": "F19 batch_view.json 생성기(studio/batchview.py)+_save/bake 훅+derivedguard 등록+tests/test_batch_view.py 13건 통과. 화면 JS 전환은 안 함(이부장 Aside 렌더 확인 후 U_F19.md §4 적용). approval.html 5.34MB->batch_view 적용 시 3.52MB, 1MB는 watch 등 7개 요약 필요",
+   "due": "2026-11-06",
+   "cmd": "python -W ignore -m unittest tests.test_batch_view && python -m studio.batchview --stat",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
