@@ -28338,6 +28338,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "루틴7"
+  },
+  {
+   "id": "fix1102-stall-check",
+   "added": "2026-11-05",
+   "what": "전체점검 fix1102 진척 확인 — 매일 done 수 증가 없으면 사장님께 먼저 보고(11-05 사장님 질책)",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.batchboard show | grep fix1102",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
