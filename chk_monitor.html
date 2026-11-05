@@ -116,18 +116,18 @@ function ageMin(s){var t=Date.parse(String(s||"").replace(" ","T"));return isNaN
 var RED_KIND=/stall|fail|problem|block|drift|detect/;
 var KIND_LABEL={unverified_code:"코드 검증 안 됨",fuel_low:"연료 부족(재고 0)",pubdates_stale:"발행일 낡음",idaeri_stall:"이대리 요청 정체",stall_detect_fail:"정체 감지 실패",gate_problem:"게이트 문제",carrier_stall:"전달 정체",tower_confirm:"관제탑 확인 대기",confirm_backlog:"확인 적체",draft_unqueued:"초안 큐 미적재"};
 function collect(x){
-  var it=[],es=x[0],rf=x[1],ao=x[2],am=x[3],bv=x[4],ag=x[5];
+  var it=[],es=x[0],rf=x[1],ao=x[2],am=x[3],bv=x[4],ag=x[5],nokind=0;   /* kind 없는 사건 = 사장님 결재 대기(상황실 p=1) — 🔵 로 제목째 보인다 */
   if(es){
-    (es.incidents||[]).forEach(function(i){var red=RED_KIND.test(i.kind||"");it.push({lv:red?"r":"y",k:"inc:"+i.kind+":"+(i.id||""),t:(KIND_LABEL[i.kind]||i.kind)+" "+String(i.id||"").slice(0,12)});});
+    (es.incidents||[]).forEach(function(i){if(!i.kind){nokind++;it.push({lv:"b",k:"appr:"+String(i.what||"").slice(0,40),t:String(i.what||"사장님 결재 대기").slice(0,80)});return;}var red=RED_KIND.test(i.kind||"");it.push({lv:red?"r":"y",k:"inc:"+i.kind+":"+(i.id||""),t:(KIND_LABEL[i.kind]||i.kind)+" "+String(i.id||"").slice(0,12)});});
     if(es.aside&&es.aside.lvl&&es.aside.lvl!=="ok")it.push({lv:es.aside.lvl==="red"?"r":"y",k:"aside:"+es.aside.lvl,t:"Aside "+(es.aside.state||"")});
     if(es.tower&&es.tower.lvl&&es.tower.lvl!=="ok")it.push({lv:es.tower.lvl==="red"?"r":"y",k:"tower:"+es.tower.lvl,t:"관제탑 감시 "+es.tower.lvl+" ("+es.tower.age_min+"분)"});
   }
   if(rf&&rf.pairs)rf.pairs.forEach(function(p){if(p.status==="bad")it.push({lv:"r",k:"rf:"+p.name,t:"반영 어긋남 · "+p.name});else if(p.status==="stale")it.push({lv:"y",k:"rf:"+p.name,t:"반영 낡음 · "+p.name});});
   if(ao&&ao.orders)Object.keys(ao.orders).forEach(function(n){var o=ao.orders[n];if(o.state==="blocked"){var a=ageMin(o.last_at);if(a!==null&&a<=180)it.push({lv:"r",k:"aso:"+n,t:"Aside 막힘 #"+n+" "+(o.code||"")});}});
   /* 보드의 막힌 항목: 동결·끝난 보드는 뺀다. 점검 보드(fix·recheck·reflect·instacap)와 CP 가 「막힘」으로 판정한 지시서는 🔴, 그 밖(이부장 일일 보드 등)의 막힌 항목은 🟡 */
-  if(bv&&bv.batches){var stm=bv.st||{},CHK=["fix1102","recheck1105","reflect1105","instacap1105"];Object.keys(bv.batches).forEach(function(b){var s=stm[b];if(s==="frozen"||s==="closed")return;((bv.batches[b]||{}).items||[]).forEach(function(i){if(i.state==="blocked")it.push({lv:(s==="block"||CHK.indexOf(b)>=0)?"r":"y",k:"blk:"+b+":"+i.code,t:"막힌 항목 "+b+"/"+i.code});});});}
+  if(bv&&bv.batches){var stm=bv.st||{},CHK=["fix1102","recheck1105","reflect1105","instacap1105"];Object.keys(bv.batches).forEach(function(b){var s=stm[b];if(s==="frozen"||s==="closed")return;((bv.batches[b]||{}).items||[]).forEach(function(i){if(i.state==="blocked")it.push({lv:(s==="block"||CHK.indexOf(b)>=0)?"r":"y",k:"blk:"+b+":"+i.code,t:"막힌 항목 "+b+"/"+i.code+(i.title?" · "+String(i.title).slice(0,40):"")+(i.note?" — 사유: "+String(i.note).replace(/\s+/g," ").slice(-70):"")});});});}
   if(ag&&ag.items){var y=new Date().getFullYear();ag.items.forEach(function(a){if(a.run!=="done"){var m=/^(\d\d)-(\d\d) (\d\d):(\d\d)$/.exec(a.started||"");if(m){var s=new Date(y,+m[1]-1,+m[2],+m[3],+m[4]);if((Date.now()-s)/60000>120)it.push({lv:"y",k:"ag:"+a.id,t:(a.run==="stale"?"에이전트 알림 없음 3시간+ (끝났는지 모름) · ":"에이전트 2시간 넘게 도는 중 · ")+String(a.purpose||"").slice(0,24)});}}});}
-  if(am&&+am.waiting_count>0)it.push({lv:"b",k:"appr:"+am.waiting_count,t:"사장님 결재 대기 "+am.waiting_count+"건"});
+  if(am&&+am.waiting_count>0&&!nokind)it.push({lv:"b",k:"appr:"+am.waiting_count,t:"사장님 결재 대기 "+am.waiting_count+"건"});
   return it;
 }
 function paint(it){
