@@ -20059,6 +20059,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fixpage-live-sync-1105",
+   "added": "2026-11-05",
+   "what": "체크리스트 화면(fix1102·recheck1105.html) 자동 갱신·github.io 반영 확인 — 보드 변경 뒤 30분 안에 라이브 갱신 시각이 바뀌는가",
+   "due": "2026-11-06",
+   "cmd": "curl -s https://magsori-wq.github.io/lifeinfo-console/fix1102.html | grep -o '갱신 [0-9-]* [0-9:]*'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "reflect-audit-r19-1105",
+   "added": "2026-11-05",
+   "what": "R19 반영 감사 — R15·R16(설계도·흐름도) 끝나면 시작: 반영 쌍 7개(코드↔설계도·설계도↔흐름도 렌더·화면 생성물 신선도·CLAUDE.md↔루틴지침·로컬↔github.io·메모리 색인·점검보고서↔보드)를 한 화면에 신호등으로",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.enginemap",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
