@@ -3330,20 +3330,26 @@
     {
      "code": "F19",
      "title": "[3단계] 화면용 요약 파일(결재함 10MB→1MB)",
-     "state": "doing",
-     "note": "13:20 사장님 지시로 착수 — Sonnet: 생성기+파생파일 등록+테스트까지(화면 JS 전환은 이부장 Aside 확인 뒤)",
-     "at": "2026-11-05 13:15",
+     "state": "done",
+     "note": "【부분 완료】생성기 studio/batchview.py+파생등록 커밋 c900b477f·batch_view 165KB(원본 8.3%)·test 13 OK·enginemap/validate 이상 없음 이부장 재실행 · 🔴 목표 1MB 미달: approval.html fetch 합 5.34→3.52MB(batch_view 적용 시) · 화면 JS 전환 미실시(U_F19.md §4) · 배포 반영 미확인",
+     "at": "2026-11-05 13:25",
      "actor": "이부장"
     },
     {
      "code": "F20",
      "title": "[3단계] github.io push 묶기(오늘 96회)",
-     "state": "todo"
+     "state": "doing",
+     "note": "13:30 착수 — 원인 실증: 결재 0건인데 2~5분마다 'approval: 0 items' push 96회 · Sonnet 원인규명→수정",
+     "at": "2026-11-05 13:26",
+     "actor": "이부장"
     },
     {
      "code": "F35",
      "title": "[3단계] 폰 결재함 자동 갱신 push 과다 — 오늘 125회 중 120회가 approval(phone inbox)",
-     "state": "todo"
+     "state": "doing",
+     "note": "13:30 착수 — 원인 실증: 결재 0건인데 2~5분마다 'approval: 0 items' push 96회 · Sonnet 원인규명→수정",
+     "at": "2026-11-05 13:26",
+     "actor": "이부장"
     },
     {
      "code": "F21",
@@ -3834,7 +3840,7 @@
    "owner": "이과장"
   }
  },
- "updated": "2026-11-05 13:18:48",
+ "updated": "2026-11-05 13:26:23",
  "current": {
   "batch": "tower1105",
   "code": "",
@@ -3845,6 +3851,21 @@
   "since_at": "2026-11-05 09:29:40"
  },
  "log": [
+  {
+   "t": "13:26:23",
+   "text": "🔸 F35 진행중 — [3단계] 폰 결재함 자동 갱신 push 과다 — 오늘 125",
+   "actor": "이부장"
+  },
+  {
+   "t": "13:26:17",
+   "text": "🔸 F20 진행중 — [3단계] github.io push 묶기(오늘 96회)",
+   "actor": "이부장"
+  },
+  {
+   "t": "13:25:47",
+   "text": "✅ F19 완료 — [3단계] 화면용 요약 파일(결재함 10MB→1MB)",
+   "actor": "이부장"
+  },
   {
    "t": "13:18:48",
    "text": "✅ F18 완료 — [3단계] 끝난 배치·watch done 정리(파일 6.7MB",
@@ -4029,21 +4050,6 @@
    "t": "09:20:05",
    "text": "✅ lifeinfo-daily-topics-1105 완료 — lifeinfo-daily-topics (B)",
    "actor": "미상:30a78a0a"
-  },
-  {
-   "t": "09:06:11",
-   "text": "✅ lifeinfo-publish-1105-1105 완료 — lifeinfo-publish-1105 (C)",
-   "actor": "미상:49df2e14"
-  },
-  {
-   "t": "09:05:56",
-   "text": "✅ lifeinfo-publish-1105 완료 — lifeinfo-publish (C)",
-   "actor": "미상:49df2e14"
-  },
-  {
-   "t": "09:00:37",
-   "text": "📋 배치 '관제탑 11-05' 등록 — 5항목",
-   "actor": "이부장"
   }
  ],
  "currents": {
