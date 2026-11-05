@@ -19965,6 +19965,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-aroma-publish-stall-1105",
+   "added": "2026-11-05",
+   "what": "F50 aroma 승인 뒤 미게시 감지(설계도 AR): AROMA_PUBLISH_STALL/RESOLVED 신설(towertick.py aroma_stall_*, n%9==2), 재생 SP-007 첫 알림 11-03 14:28·PE-004 14:29(승인+240분), 단위테스트 236 OK·enginemap 🔴0·validate rc0. 남은 것: 지금 AM-SP-009 가 실제 미게시(12.5h)로 첫 tick 에 걸림 — 이대리 확인 요청(idaerireq 먼저). 의뢰문 05:13 은 db 에 없음(05:30/05:40). 보고서 docs/audit1102/Z_F50.md",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.towertick --aroma-replay && python -m unittest tests.test_studio_pure.TestAromaPublishStall",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
