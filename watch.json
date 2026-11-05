@@ -20181,6 +20181,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-r20-agentwatch-asidequeue-1105",
+   "added": "2026-11-05",
+   "what": "R20 독립검증 Y4(정정 아님 우회·_insta_cards_ok 흡수)·Y5(stale·인용 오판·agentmon)·Y6(시험 고정)·빈 시험 수리. 시험 304 OK, validate FAIL 0, enginemap 0. 남은것: stopped 뒤 재개 미탐",
+   "due": "2026-11-06",
+   "cmd": "python -m unittest tests.test_batch_view tests.test_studio_pure && python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-routine-skill-drafts2-1105",
+   "added": "2026-11-05",
+   "what": "R18b 루틴 지침 모순 수리 초안 6개(8·9·5·3·7·1번, docs/audit1102/routine_skill_drafts/*_SKILL.draft2.md) 작성 — routinesync check rc0·lint0·9b/9d 재현 통과, 라이브 SKILL 미수정. 이부장이 편집기로 반영 결정 대기(3번 대면게이트·pubready 추가·navergate 출력 문구는 안 고침). 보고 docs/audit1102/MM_R18b.md",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.watch list --id fix-routine-skill-drafts2-1105",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
