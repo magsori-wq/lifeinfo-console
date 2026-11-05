@@ -19789,6 +19789,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-batch-watch-archive-1105",
+   "added": "2026-11-05",
+   "what": "F18 끝난 배치 212건(batch.json 7.35MB→1.99MB)·watch done 732건(2.21MB→1.46MB) 아카이브 실행. 결재 0건·보고서 4649행 전후 동일, cpstate 끝남 217→16(의도). batch.json·batch_archive.json·watch.json·data/watch_archive.json 은 타 세션 변경이 섞여 미커밋 - 이부장이 한 번에 경로 지정 커밋 필요. 화면(orders/approval/reports) 렌더 미확인. 보고서 docs/audit1102/Q_F18.md",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.batchboard archive && python -m studio.watch archive && python -m studio.cpstate --list && python -m studio.approvalcount",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
