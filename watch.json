@@ -20375,6 +20375,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "d121-publish-start-0106",
+   "added": "2026-11-06",
+   "what": "D1-21 발행 run 착수 확인(승인 03:01·이과장 깨움 03:05) + 이대리 깨움 도착 확인(idaeri-1106-030541)",
+   "due": "2026-11-06",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 3; python -m studio.idaerireq list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
