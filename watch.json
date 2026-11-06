@@ -21257,8 +21257,10 @@
    "due": "2026-11-07",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-07",
+   "result": "이부장이 05:12 deploy.bat 실행 · 05:15 thumbs/460_advance_directive.png github.io 200 확인(실행 전 404)"
   },
   {
    "id": "v0-c311-1107",
@@ -21287,7 +21289,49 @@
    "due": "2026-11-07",
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/460_advance_directive.png",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "460 썸네일 200 확인 완료"
+  },
+  {
+   "id": "deepread-meat-1107",
+   "added": "2026-11-07",
+   "what": "유럽 육류 반입 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_유럽육류반입_20261107.md",
+   "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-suneung-pen-1107",
+   "added": "2026-11-07",
+   "what": "수능 여분 필기구 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_수능여분필기구_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-gayo-1107",
+   "added": "2026-11-07",
+   "what": "가요대전 방청 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_가요대전방청_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "h124-dup-d119-1107",
+   "added": "2026-11-07",
+   "what": "H1-24 수능 할인 주제 중복: D1-19 본문 「CGV 2년 연속 7,000원」 2025분 1차 미확인(11-05 파일 기준)",
+   "due": "2026-11-09",
+   "cmd": "head -20 docs/source_H1-24_20261107.md",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
