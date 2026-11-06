@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-06 09:37:57",
- "source_head": "1ccf0a9abb74",
+ "computed_at": "2026-11-06 10:07:22",
+ "source_head": "a36f7d2c586d",
  "ids": [
   "B4-29",
   "aside-login-ca-1106",
@@ -14,7 +14,7 @@
    "code": "B4-29",
    "title": "가상자산 과세 유예 추진, 확정은 아님 — 현행 22%·250만원",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 가상자산과세유예추진_글_HTML.txt",
@@ -41,7 +41,7 @@
  "actions": [
   {
    "id": "aside-login-ca-1106",
-   "what": "Aside ca 로그인 필요 — 자동 확인(09:01): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside ca 로그인 필요 — 자동 확인(10:03): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-06",
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "state": "todo",
@@ -49,7 +49,7 @@
   },
   {
    "id": "aside-login-naver-1106",
-   "what": "Aside naver 로그인 필요 — 자동 확인(09:02): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside naver 로그인 필요 — 자동 확인(10:03): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-06",
    "cmd": "python -m studio.asideprobe login --batch aside --what naver",
    "state": "todo",
