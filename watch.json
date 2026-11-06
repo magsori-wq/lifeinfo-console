@@ -20860,8 +20860,10 @@
    "cmd": "승인: aroma-am-bo-005-approve-1106",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이대리"
+   "state": "done",
+   "by": "이대리",
+   "done_at": "2026-11-06",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "disney-price-stale-1110",
@@ -20871,6 +20873,36 @@
    "cmd": "curl -s -L -A Mozilla/5.0 https://www.disneyplus.com/ko-kr | grep -o '11월 10일[^<]\\{0,60\\}'",
    "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fable-verify-356a12a-1107",
+   "added": "2026-11-06",
+   "what": "코드 356a12ad0(조사 게이트 3차 반영: routinedepth.parse 덮어쓰기 버그·attempted 경계) 페이블 4차 검증 — 오늘 밤 21:12 루틴4·내일 00:13·09:17 실제 장부 note 를 gate 에 넣어 오판 확인, 결과는 docs/검증_페이블_20261106b.md 에 4차 절로",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.routinedepth --days 2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel-deepread-1106",
+   "added": "2026-11-06",
+   "what": "FUEL_LOW 보강 조사 결과 확인 — 하이쿠 심층독해 2건(가지급금 인정이자율·동해선 환승) 결과 파일을 직접 열어 읽고 채택 가능이면 topicprop add→pick→지시서, 아니면 탈락 사유 기록",
+   "due": "2026-11-06",
+   "cmd": "ls docs/source_가지급금인정이자율_20261106.md docs/source_동해선환승요금_20261106.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "donghae-transfer-2026",
+   "added": "2026-11-06",
+   "what": "동해선 환승 2026 변경: 양산시·코레일 광역환승할인 협약 체결(9월 예정) 미확인, 할인액·개통일 원문 없음. G1-04 가 동해선 환승을 무료처럼 서술(공사 원문은 김해·양산 제외·기본운임 차액)",
+   "due": "2026-11-20",
+   "cmd": "grep -n 확인 못 함 C:/lifeinfo/docs/source_동해선환승요금_20261106.md",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
