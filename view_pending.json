@@ -1,9 +1,49 @@
 {
- "computed_at": "2026-11-07 00:18:29",
- "source_head": "b137616910fc",
- "ids": [],
+ "computed_at": "2026-11-07 00:23:53",
+ "source_head": "d18d53c7ad17",
+ "ids": [
+  "D3-14",
+  "deploy-thumb-459"
+ ],
  "posts": [],
- "publish": [],
- "actions": [],
+ "publish": [
+  {
+   "code": "D3-14",
+   "title": "간편확인서비스 11월 29일부터 — 다자녀·장애인 할인 QR로 확인",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 간편확인서비스_글_HTML.txt",
+     "path": "간편확인서비스_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/459_simple_check.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/459_simple_check.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
+ "actions": [
+  {
+   "id": "deploy-thumb-459",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(459_simple_check.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-07",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
