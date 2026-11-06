@@ -20699,6 +20699,28 @@
    "due": "2026-11-06",
    "cmd": "python -m studio.osmu_manifest table --code B4-29; python -m studio.asidequeue list",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "13:23 네이버 게시 감지·기록, 13:25 이부장 확인"
+  },
+  {
+   "id": "xlink-b429",
+   "added": "2026-11-06",
+   "what": "🔗 B4-29 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-29",
+   "due": "2026-11-06",
+   "cmd": "python studio/blogger.py crosslink --code B4-29",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "b429-threads-index-after-insta-1106",
+   "added": "2026-11-06",
+   "what": "B4-29 Aside #645(인스타) done 후 → 쓰레드 초안(docs/aside_drafts/B4-29_쓰레드게시.txt, 이미지 insta/thread/thread_B4-29_*.png 판정 ✅) #646 등록 → 색인요청(B4-29_색인요청.txt) 등록. 번호·초안 표시 정리·「Aside 발행 · 사전 점검 완료(pre-cleared)」 줄 필수",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.asidestate; python -m studio.osmu_manifest table --code B4-29",
+   "owner": "claude",
    "state": "wait",
    "by": "이부장"
   }
