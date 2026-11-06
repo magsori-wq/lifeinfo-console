@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-07 00:16",
+ "generated": "2026-11-07 04:35",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/06 20:05",
+   "last": "11/07 04:33",
    "next": "11/07 08:00",
    "model": "sonnet-5-5",
    "report_day": "1106",
    "report": "11-06 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(심사 중). 새 중요 메일 없음: Pages deploy 실패 2건(11-04)은 11-05 23:04 success로 복구(무해). GCP 결제 ₩7,336(11-01) 정상. 리더 magsori 3·m8975 0·aroma 0, GSC·애드센스 통지 0.",
    "runs": [
+    {
+     "at": "11/07 04:33",
+     "link": "claude://claude.ai/epitaxy/local_13755639-eea1-45b7-96ef-0ef9e0012816",
+     "archived": false
+    },
     {
      "at": "11/06 20:09",
      "link": "claude://claude.ai/epitaxy/local_7c57a8fa-68d1-431d-bdea-ae749dd22a4d",
@@ -31,11 +36,6 @@
      "at": "11/05 08:12",
      "link": "claude://claude.ai/epitaxy/local_2c19515c-40a9-4743-8225-c8058c72632b",
      "archived": true
-    },
-    {
-     "at": "11/04 20:12",
-     "link": "claude://claude.ai/epitaxy/local_5a49c916-f359-42fb-a39d-458d930de610",
-     "archived": true
     }
    ]
   },
@@ -44,12 +44,17 @@
    "name": "2-Lifeinfo daily topics",
    "id": "lifeinfo-daily-topics",
    "on": true,
-   "last": "11/06 09:13",
+   "last": "11/07 04:33",
    "next": "11/07 09:00",
    "model": "sonnet-5-5",
    "report_day": "1106",
    "report": "[조사장부] 목록 4 · 원문 2 · 후보 4 · 탈락 3 · 검색어 4 | 추천 B4-29 가상자산 과세 유예 추진(11-05 재경부 발표 newsId=148975124, 미확정 명시·naverkw ✅·dupcheck 🟢0.27) 제안 등록, 후보 0. 탈락: 고시이자율(근거 없음)·사업소득자 대지급(A6-02 중복). 🙋 이부장: 기발행 B4-17(시행 확정 전제)이 낡을 수 있어 라이브 정정 판단 필요. docflow 선별 대행 발사(결과 미수신 — topicprop table 로 확인). 브리핑 오전브리핑_2026-11-06.md",
    "runs": [
+    {
+     "at": "11/07 04:33",
+     "link": "claude://claude.ai/epitaxy/local_5c1f092d-3f85-40c4-9b37-ae4cb35216a5",
+     "archived": false
+    },
     {
      "at": "11/06 09:20",
      "link": "claude://claude.ai/epitaxy/local_3c333e7d-1ee3-40d5-b936-3643fe03a588",
@@ -69,11 +74,6 @@
      "at": "11/03 09:20",
      "link": "claude://claude.ai/epitaxy/local_8fdd79d9-8546-4be8-8b51-b0241c742961",
      "archived": true
-    },
-    {
-     "at": "11/02 09:28",
-     "link": "claude://claude.ai/epitaxy/local_9f0f7d54-4700-4739-8a73-e6b049304b58",
-     "archived": true
     }
    ]
   },
@@ -82,12 +82,17 @@
    "name": "3-Lifeinfo publish",
    "id": "lifeinfo-publish",
    "on": true,
-   "last": "11/06 09:01",
+   "last": "11/07 04:33",
    "next": "11/07 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1106",
-   "report": "빈손 — 발행대기 큐 0건(pubqueue list)·도장 글 없음, 오늘 발행 1편(pace). 재고 0/하한3 → 글감·초안 지시는 tower1101 몫. 발행·결재 등록 없음",
+   "report_day": "1107",
+   "report": "빈손 — pubqueue 0건(큐 비었음)·도장 대상 없음. 오늘 발행 1편(pace OK), 최근 run 3건 success. 재고 0/하한3이라 글감·초안 확보가 필요(이부장 tower1101 소관). 이어받은 것: 없음 / 새로 본 것: 큐 0",
    "runs": [
+    {
+     "at": "11/07 04:35",
+     "link": "claude://claude.ai/epitaxy/local_92ce139f-b2ea-4724-96a5-182b776b67ec",
+     "archived": false
+    },
     {
      "at": "11/06 09:03",
      "link": "claude://claude.ai/epitaxy/local_5343d708-663f-4e80-a3f3-db9a33b79f28",
@@ -107,11 +112,6 @@
      "at": "11/03 09:06",
      "link": "claude://claude.ai/epitaxy/local_0e09aaff-00e8-4389-8cab-47d304cb6ce9",
      "archived": true
-    },
-    {
-     "at": "11/02 09:08",
-     "link": "claude://claude.ai/epitaxy/local_544fda48-14e6-4d69-8570-aa932b1bd89c",
-     "archived": true
     }
    ]
   },
@@ -120,12 +120,17 @@
    "name": "4-Lifeinfo travel prep",
    "id": "lifeinfo-travel-prep",
    "on": true,
-   "last": "11/06 21:09",
+   "last": "11/07 04:33",
    "next": "11/07 21:00",
    "model": "sonnet-5-5",
    "report_day": "1106",
    "report": "[조사장부] 목록 3 · 원문 0 · 후보 4 · 탈락 4 · 검색어 9 · 유입 1\n이어받은 것: 직전 회차 yangsan-event-recheck-1009(양산 행사 공식 미확인) 미재시도 — 시즌 지남. 새로 본 것: 아래 4건 전부 '왜 지금' 없음 → 빈손.\n· 울산 고래축제 2026 — WebSearch 요약(문체부 festivalView pSeq=12646 링크) · 10/15~18 종료 · 탈락: 이미 끝남(기한 지난 날짜). 원문 직접 열기: aside_read 가 festivalList 로 리다이렉트돼 본문 못 얻음(HTTP 200, 목록 화면)\n· 일본 출국세 3,000엔 — 검색 요약 · 2026-07-01 시행 완료 · 탈락: 시행 4개월 지남, 새 시점 없음(일본 국세청 원문은 미시도 아님: 검색만, 1차 미열람)\n· 유럽 ETIAS — 검색 요약 · 2026 Q4 목표이나 2027 연기설, 시행일 미확정 · 탈락: 날짜 미확정 + dupcheck 🟡 F1-11(EES)\n· 부산 광복로 크리스마스트리 축제 — 검색 요약 · 2026 점등 일정 미공지(전 시즌 12/5~2/22) · 탈락: 올해 날짜 공식 미확인, 중구청 공지 대기 → 다음 회차 재시도 대상\nkwgap 19건(동백패스 G1-13 🔴중복·동해남부선 G1-04 🟡·부산시청전시 G3-03 🟡 등) 전부 기발행 또는 부산/세금 레인.\n대체경로 시도: Aside(aside_read) korea.kr 정책뉴스 목록 11-06 상단 읽음(F·G·H 해당 0: 동티모르 사증면제 외교·증시·일자리), mcst 고래축제 원문 시도→리다이렉트, WebSearch 4건. korea.kr 보도자료·deepread·source 미시도 — 시간 한계, 다음 회차에 광복로 트리 중구청 공지와 겨울 시즌(연말 행사) 원문 우선. 제안·초안·큐 0건, 발행 안 함.",
    "runs": [
+    {
+     "at": "11/07 04:33",
+     "link": "claude://claude.ai/epitaxy/local_a8e02541-ea53-4a71-954e-a1d5612468c0",
+     "archived": false
+    },
     {
      "at": "11/06 21:14",
      "link": "claude://claude.ai/epitaxy/local_92479a2b-55fa-49b5-a902-43c026b29ffc",
@@ -145,11 +150,6 @@
      "at": "11/03 21:08",
      "link": "claude://claude.ai/epitaxy/local_d7d1dc1e-848e-4729-b46c-23dbf213f4b7",
      "archived": true
-    },
-    {
-     "at": "11/02 21:19",
-     "link": "claude://claude.ai/epitaxy/local_06484bde-2d93-4416-8c6e-c3bf306cfda6",
-     "archived": true
     }
    ]
   },
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/06 22:33",
+   "last": "11/07 04:33",
    "next": "11/07 22:30",
    "model": "sonnet-5-5",
    "report_day": "1106",
    "report": "[루틴5 11-06] 오늘 발행 2편(D1-21·B4-29) 출처 대조 오류 0 + 기존 A5-04·B4-06 대조. 라이브 수정 0. 경미 1건: A5-04 '7월 15일 의결' vs 위원회 표기 7/14(미확정, 이과장 확인). 이어받은 것: 11-05 B5-12 검증. 새로 본 것: minimumwage.go.kr·law.go.kr 시행령 제2조의4 직접 열람. 미결: B4-06 세율·분납 원문 미열람. 🙋 사장님 할 일 없음.",
    "runs": [
+    {
+     "at": "11/07 04:33",
+     "link": "claude://claude.ai/epitaxy/local_39630941-0bfe-4f39-93aa-265fbebd8662",
+     "archived": false
+    },
     {
      "at": "11/06 22:46",
      "link": "claude://claude.ai/epitaxy/local_8b10288d-05e1-436a-b821-7eeea26c9994",
@@ -183,11 +188,6 @@
      "at": "11/03 22:49",
      "link": "claude://claude.ai/epitaxy/local_7dd21125-1b7a-4d1a-974d-744b24e28867",
      "archived": true
-    },
-    {
-     "at": "11/02 22:45",
-     "link": "claude://claude.ai/epitaxy/local_83005927-1473-4115-b7cf-e009a5df32e1",
-     "archived": true
     }
    ]
   },
@@ -196,12 +196,17 @@
    "name": "6-Lifeinfo daily publish",
    "id": "lifeinfo-daily-publish",
    "on": true,
-   "last": "11/07 00:06",
+   "last": "11/07 04:33",
    "next": "11/07 23:55",
    "model": "sonnet-5-5",
    "report_day": "1107",
    "report": "[조사장부] 목록 6 · 원문 5 · 후보 6 · 탈락 5 · 검색어 20 · 유입 1\n이어받은 것: 11-06 층간소음(D1-21 발행됨)·안심신탁(B5-12). 새로 본 것: 11-07 korea.kr 정책뉴스·보도자료·복지부·과기부·소방청 목록+kwgap.\n✅ 제안·선별: D3-14 간편확인서비스 11-29 시작(행안부 2026-10-28 정책브리핑 newsId=148974449 본문 직접 읽음, 23종·QR·앱불필요·이용처 마이데이터 가입, naverkw 간편확인서비스/다자녀 증명서 ✅, DB 0편, dupcheck 🟡 A2-14 다른주제) → docflow pick+verify 통과, 이과장용 초안 지시서 draft1107d314 자동 발급(초안은 중복 방지로 이과장 몫, 이 루틴은 안 씀). 원문 정리 docs/source_D3-14_20261107.md. 이부장: 이과장 깨우기 필요.\n· 안심신탁 — newsId=148974991 · 4.35%·20억·80% — 탈락: B5-12 기발행(dupcheck 1.00)\n· 만성질환 통합관리센터 — newsId=148975202 · 2027-07 신규·2028 전환 — 탈락: 독자 행동 없음, naverkw 없음\n· 건강생활실천지원금 — newsId=148956494 · 게시 2025-12-14 구발표 — 탈락: 지금 이유 없음\n· 희귀중증난치 7% — 탈락: C1-19 기발행 · 소방 세대점검 — 탈락: D3-11 기발행(kwgap 유입 불일치 참고) · 동백패스 — G1-13 기발행\n· 코로나 소아 접종 11-11(newsId=148975113, 면역저하·시설입소 한정) — 탈락: 대상 좁음, naverkw 소아 접종 자동완성 없음, C2-16 인접\n막힘: nts 목록 파싱 0건(미사용)",
    "runs": [
+    {
+     "at": "11/07 04:33",
+     "link": "claude://claude.ai/epitaxy/local_3535500d-e053-4b98-931b-7aa7951c1d26",
+     "archived": false
+    },
     {
      "at": "11/07 00:16",
      "link": "claude://claude.ai/epitaxy/local_e797f819-813b-479f-96e1-9bec9cebe2b6",
@@ -221,11 +226,6 @@
      "at": "11/04 00:21",
      "link": "claude://claude.ai/epitaxy/local_67308648-6fa9-4541-a618-e485d3f4c335",
      "archived": true
-    },
-    {
-     "at": "11/03 00:15",
-     "link": "claude://claude.ai/epitaxy/local_0b92a527-b70d-4691-95bf-4da62d3201eb",
-     "archived": true
     }
    ]
   },
@@ -234,12 +234,17 @@
    "name": "7-Lifeinfo index check",
    "id": "lifeinfo-index-check",
    "on": true,
-   "last": "11/05 09:35",
+   "last": "11/07 04:33",
    "next": "11/12 09:30",
    "model": "opus-5-5",
    "report_day": "1105",
    "report": "11-05 inspect 완주 471편(partial=False·오류0) · ①색인 0/471 · ②28일클릭 0(노출1) · ③네이버구글색인 61(오늘 Aside 재측정, 10-08 49 대비 +12·빠짐0 · 10월 글 5편 포함 · 측정환경 차이 가능성 있음) · state RedirectErr240/Crawled124/Discovered77/unknown30(전주 214/124/68/41) · 신규24편 Redirect23 · 이월 재크롤 3편(H1-31~33, 10-29 요청) 전부 RedirectErr(전주 13편) · Discovered↔unknown 51편 왕복 · adsense GETTING_READY(화면 미확인) · 이어받은 것: idx0zero 42일 무갱신, 이번도 주간실측만 · 이부장 확인: watch erase6-naver-oct-1105 · 재검토 시점은 사장님 · 상세 전담자료 11-05절",
    "runs": [
+    {
+     "at": "11/07 04:35",
+     "link": "claude://claude.ai/epitaxy/local_f7d590aa-f7ce-4a28-a110-5a474c68930e",
+     "archived": false
+    },
     {
      "at": "11/05 10:44",
      "link": "claude://claude.ai/epitaxy/local_b7f2b16f-b59b-4a60-8c6b-a6ab2fbf808d",
@@ -259,11 +264,6 @@
      "at": "10/15 10:23",
      "link": "claude://claude.ai/epitaxy/local_369472e9-4812-4ce9-b7b0-70bb3df60ec0",
      "archived": true
-    },
-    {
-     "at": "10/08 10:35",
-     "link": "claude://claude.ai/epitaxy/local_292a1cac-ebdc-4f24-9d33-ce1804f5d645",
-     "archived": true
     }
    ]
   },
@@ -272,12 +272,17 @@
    "name": "8-Lifeinfo issue product",
    "id": "8-lifeinfo-issue-product",
    "on": true,
-   "last": "11/06 07:09",
+   "last": "11/07 04:33",
    "next": "11/07 07:00",
    "model": "sonnet-5-5",
    "report_day": "1106",
    "report": "[조사장부] 목록 4 · 원문 0 · 후보 4 · 탈락 3 · 검색어 3 (상품 루틴: 1차 원문 없음, 근거=토스 카드값·naverkw)\n🛒 후보: 참도깨비 한끼어묵탕 220g 5봉(id418996905) · 9,240원 · 리뷰4,190 · 평점4.7 · 왜 지금: 입동 11/7 직후 겨울 어묵탕 수요, naverkw 어묵탕/어묵탕 밀키트 ✓. 분류=① 쓰레드 단독. pick+kakao 완료 → 결재함 afflink-eomuk1106(링크 발급은 이부장). 약점: 판매량 아닌 리뷰 지표, 부산 연고는 상품 근거 아님.\n탈락: 생굴 1kg(리뷰1199·DB 굴 글 0이나 신선식품 유통기한 리스크로 보류) · 겨울 중목양말(리뷰385·socks1020 기게시 유사) · 감귤·빼빼로·핫팩·가습기·담요=기게시/기처리. 김장·수능·전기장판·히터·손난로·독감·목도리·내복=토스 0건.\n이어받은 것: 11-05 감귤·빼빼로 / 새로 본 것: 어묵 계열 미게시. 수집 신규30(누적3005).",
    "runs": [
+    {
+     "at": "11/07 04:33",
+     "link": "claude://claude.ai/epitaxy/local_05717163-df25-4815-a281-612bd3707c6d",
+     "archived": false
+    },
     {
      "at": "11/06 07:12",
      "link": "claude://claude.ai/epitaxy/local_0c769469-9d95-4885-af38-63c9b153d92a",
@@ -297,11 +302,6 @@
      "at": "11/03 07:15",
      "link": "claude://claude.ai/epitaxy/local_ddf54e4c-872e-4410-ad5a-1b7bca7289bc",
      "archived": true
-    },
-    {
-     "at": "11/02 07:16",
-     "link": "claude://claude.ai/epitaxy/local_afb5b897-8f2c-4be7-96ea-156448d5f4b4",
-     "archived": true
     }
    ]
   },
@@ -310,12 +310,17 @@
    "name": "9-Lifeinfo issue product PM",
    "id": "9-lifeinfo-issue-product-pm",
    "on": true,
-   "last": "11/06 15:10",
+   "last": "11/07 04:33",
    "next": "11/07 15:00",
    "model": "sonnet-5-5",
    "report_day": "1106",
    "report": "[조사장부] 목록 3 · 원문 0 · 후보 3 · 탈락 2 · 검색어 2 (상품 루틴: 원문 바닥 0) / 🛒 후보: 올인원 쿠션 망토담요 130x80 · 8,450원 · 리뷰535(4.4) · 왜 지금: 입동 직전 겨울 시즌+naverkw 망토담요 실검색어. ⚠️ 실수: 확인 전 pick+kakao 로 afflink-mantle1106 을 결재함에 올렸는데 9/27 유사품(똑딱이 담요 망토 블루 130x80)이 기게시라 중복 — 🙋 이부장: afflink-mantle1106 반려·철회 요망(루틴은 결재 대행·drop 명령 없음). 탈락: 배추김치10kg(20261003-1 기게시)·핫팩(hotpack1026 기게시)·김장/전기장판/히터/롱패딩 토스 인기목록 없음. 전체 기게시 목록 대조는 pick 전에 했어야 함",
    "runs": [
+    {
+     "at": "11/07 04:33",
+     "link": "claude://claude.ai/epitaxy/local_20abb5fa-0d4d-4043-8e7c-455a96df0c30",
+     "archived": false
+    },
     {
      "at": "11/06 15:12",
      "link": "claude://claude.ai/epitaxy/local_0bd585d3-fbfb-4b8d-9bf6-02640ba9a399",
@@ -334,11 +339,6 @@
     {
      "at": "11/03 15:16",
      "link": "claude://claude.ai/epitaxy/local_484340b3-cbed-4ea6-a7b1-8f5417af979f",
-     "archived": true
-    },
-    {
-     "at": "11/02 15:18",
-     "link": "claude://claude.ai/epitaxy/local_bfd62612-4a21-4a78-a7e9-e8da26c87b65",
      "archived": true
     }
    ]
