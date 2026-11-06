@@ -20785,6 +20785,50 @@
    "by": "이부장",
    "done_at": "2026-11-06",
    "result": "라이브 200·og:image·대가성 첫 줄 확인, solo-posted 기록, deploy 완료"
+  },
+  {
+   "id": "g113-index-req-1106",
+   "added": "2026-11-06",
+   "what": "G1-13 색인 생성 요청 기록 확인 — 이과장이 pub1022g113 지시서대로 Aside 로 요청·gsc_log 기록했는지, 끝나면 지시서 confirm",
+   "due": "2026-11-07",
+   "cmd": "grep -c 45-45 _gsc_requested.txt; python -c \"from studio import sessionstate as s; print(s.read_info('pub1022g113'))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "Aside #649 색인 요청 수락·gsc_log 기록"
+  },
+  {
+   "id": "topic-dup-gate-1107",
+   "added": "2026-11-06",
+   "what": "글감 선별 시 주제 중복 대조 추가 — 같은 법·같은 훅·같은 기관 발표인지 라이브 글과 대조(최근 7일 중복 4건이 선별 뒤에 걸림: D1-20·B4-27·D3-13·H1-24). 설계도 먼저→enginemap→코드, 사장님 결정 필요 없음(이부장 판단)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-research-collab-1106",
+   "added": "2026-11-06",
+   "what": "루틴 조사 부실(원문 바닥 5 상습 미달·대체경로 미시도·기발행 후보 반복)+3. 협업 — 이부장 권고안(①원문 미달 시 대체경로 의무화 ②3.가 막힌 소재 원문 읽기 대행 ③aroma 빈칸 누적 집계) 사장님 진행 답 받으면 지시서화",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.watch",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "사장님 16:07 「진행」 — 권고안 ①~④ 실행(게이트·deepread·fuel1030·범위), 확인은 routine-research-verify-1107"
+  },
+  {
+   "id": "routine-research-verify-1107",
+   "added": "2026-11-06",
+   "what": "11-07 확인: 루틴 2·4·6 새 장부에 deepread 파일(docs/source_*)·유입 N 이 있는지, 거절(⛔ 조사 깊이)이 났을 때 재보고했는지, 3. 가 fuel1030 갱신을 읽고 ca_daily 관심 상위 10개를 보고했는지, 이대리 회신",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.routinedepth --days 2; python -c \"from studio import sessionstate as s; print(s.read_info('fuel1030'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
