@@ -20665,8 +20665,10 @@
    "due": "2026-11-06",
    "cmd": "python -m studio.osmu_manifest table --code B4-29; python -c \"from studio import sessionstate as s;print(s.read_info('pub1106b429'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "B4-29 후속 4채널+검색설명+색인 모두 완료(13:50)"
   },
   {
    "id": "b429-naver-register-1106",
@@ -20721,7 +20723,30 @@
    "due": "2026-11-06",
    "cmd": "python -m studio.asidestate; python -m studio.osmu_manifest table --code B4-29",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "쓰레드 #646·색인요청 #647 모두 완료·확인"
+  },
+  {
+   "id": "claude-app-actions-audit-1106",
+   "added": "2026-11-06",
+   "what": "Claude GitHub 앱이 11-06 14:2x 권한 상향 수락됨(Actions·workflows·repo creation 쓰기, 전 저장소). 발행·워크플로 실행자가 사장님(magsori-wq)·schedule 이 아닌 claude 앱 계정이면 즉시 보고",
+   "due": "2026-11-13",
+   "cmd": "gh api \"repos/magsori-wq/lifeinfo-source/actions/runs?per_page=10\" --jq '.workflow_runs[]|[.created_at[5:16],.actor.login,.event,(.name|.[0:14])]|@tsv'; gh repo list magsori-wq --limit 20 --json name,createdAt --jq '.[]|[.name,.createdAt[0:10]]|@tsv'",
+   "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "afflink-mantle1106",
+   "added": "2026-11-06",
+   "what": "🛒 제휴 링크 발급 요청 — mantle1106. 상품: 올인원 쿠션 망토담요, 블루, 130x80cm, 1개 (8,450원 · 리뷰 535 · 평점 4.4). 관련성: 겨울 시즌 입동(11/7) 직전·망토담요 실검색어(naverkw 확인)·리뷰535 평점4.4·8,450원·기게시 아님. 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.tosslink link 190728237",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
    "by": "이부장"
   }
  ]
