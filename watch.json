@@ -20520,8 +20520,10 @@
    "cmd": "python -m studio.tosslink link 418996905",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "b429-order-after-source-1106",
@@ -20576,6 +20578,16 @@
    "by": "이부장",
    "done_at": "2026-11-06",
    "result": "V0 통과·도장·deploy·결재 올림 완료(10:1x)"
+  },
+  {
+   "id": "b429-publish-start-1106",
+   "added": "2026-11-06",
+   "what": "B4-29 사장님 승인 10:58 → 이과장 발행 run 착수·완료 확인(깨움은 이과장이 다른 작업 뒤에 처리하도록 대기열)",
+   "due": "2026-11-06",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 2; python -c \"from studio import sessionstate as s;print(s.read_info('pub1106b429'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
