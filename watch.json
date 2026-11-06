@@ -20609,6 +20609,26 @@
    "by": "이부장",
    "done_at": "2026-11-06",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aside-639-requeue-1106",
+   "added": "2026-11-06",
+   "what": "어묵탕 쓰레드 Aside #639 blocked(재부팅 뒤 탭 소멸) → 채팅 CP 탭 재결합(11:27) 후 이과장이 재등록·게시 확인",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.asidequeue list; python -m studio.affiliate solo --pending",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "solo-eomuk-post-1106",
+   "added": "2026-11-06",
+   "what": "어묵탕 쓰레드(eomuk1106) 게시 — Aside 이과장 전담 채팅 창 소멸로 #639·#640 blocked. 사장님 허용 시 이부장 채팅 경로 또는 사장님 직접 게시",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.affiliate solo --pending; python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
