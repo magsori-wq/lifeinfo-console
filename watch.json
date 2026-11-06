@@ -20498,8 +20498,10 @@
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-06",
+   "result": "11:19 asideprobe 직접 확인: ca ok(creator-advisor stat/today 로그인 상태)"
   },
   {
    "id": "aside-login-naver-1106",
@@ -20564,8 +20566,10 @@
    "due": "2026-11-06",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-06",
+   "result": "10:1x deploy.bat 실행 완료 — 썸네일 458_crypto_tax_deferral.png 200·결재용 rv 페이지 200 직접 확인(자동 등록 카드가 안 닫혀 남아 있었음)"
   },
   {
    "id": "b429-v0-wait-1106",
@@ -20586,8 +20590,10 @@
    "due": "2026-11-06",
    "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 2; python -c \"from studio import sessionstate as s;print(s.read_info('pub1106b429'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "11:10 발행 run 42148599180 성공·라이브 200·og:title 일치(직접 확인). 후속(검색설명·4채널)은 이과장"
   },
   {
    "id": "solo-eomuk1106",
