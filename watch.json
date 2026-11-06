@@ -20047,10 +20047,12 @@
    "due": "2026-11-06",
    "cmd": "start \"\" \"C:\\lifeinfo\\docs\\카카오_알림_설정안내.md\"",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "verify": "python -m studio.kakaonotify status",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "11-06 12:48 사장님 폰 도착 확인: 카카오 나와의 채팅에 알림 시험 수신. talk_message 동의함·토큰 저장(리프레시 2027-01-05)"
   },
   {
    "id": "fix-asidequeue-fixorder-1105",
@@ -20626,6 +20628,16 @@
    "what": "어묵탕 쓰레드(eomuk1106) 게시 — Aside 이과장 전담 채팅 창 소멸로 #639·#640 blocked. 사장님 허용 시 이부장 채팅 경로 또는 사장님 직접 게시",
    "due": "2026-11-06",
    "cmd": "python -m studio.affiliate solo --pending; python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "kakao-wire-towertick-1106",
+   "added": "2026-11-06",
+   "what": "카카오 알림 길 개통 확인 후(사장님 폰 도착 확인) — 설계도 먼저: kakaonotify 를 towertick 의 정체·결재 알림에 연결(엔진 설계도 변경→enginemap)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.kakaonotify status; python -m studio.enginemap",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
