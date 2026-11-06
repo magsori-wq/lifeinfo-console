@@ -20489,8 +20489,10 @@
    "due": "2026-11-06",
    "cmd": "python -m studio.kakaonotify status",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-06",
+   "result": "위 항목과 동일 건 — 완료"
   },
   {
    "id": "aside-login-ca-1106",
@@ -20629,8 +20631,10 @@
    "due": "2026-11-06",
    "cmd": "python -m studio.affiliate solo --pending; python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "Aside #641 로 이부장 채팅 경로 등록·깨움(12:50), aside-641-eomuk-1106 으로 이어서 추적"
   },
   {
    "id": "kakao-wire-towertick-1106",
@@ -20638,6 +20642,62 @@
    "what": "카카오 알림 길 개통 확인 후(사장님 폰 도착 확인) — 설계도 먼저: kakaonotify 를 towertick 의 정체·결재 알림에 연결(엔진 설계도 변경→enginemap)",
    "due": "2026-11-07",
    "cmd": "python -m studio.kakaonotify status; python -m studio.enginemap",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-641-eomuk-1106",
+   "added": "2026-11-06",
+   "what": "Aside #641 어묵탕 쓰레드 단독 게시(이부장 채팅 경로) done 확인 → URL 200·og:image·대가성 문구 첫 줄 확인 → affiliate solo-posted",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.asidequeue list; python -m studio.affiliate solo --pending",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "12:52 게시·12:55 이부장 확인 완료"
+  },
+  {
+   "id": "b429-followup-1106",
+   "added": "2026-11-06",
+   "what": "B4-29 후속(검색설명→네이버→인스타→쓰레드→색인) 이과장 재개 확인 — 13:02 지시(마지막 보고 11:14 이후 멈춤)",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.osmu_manifest table --code B4-29; python -c \"from studio import sessionstate as s;print(s.read_info('pub1106b429'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "b429-naver-register-1106",
+   "added": "2026-11-06",
+   "what": "B4-29 네이버 Aside 초안(docs/aside_drafts/B4-29_네이버게시.txt) — Aside #642(검색설명) done 직후 #643 로 등록(aside_order.sh, #<번호>·초안 표시 정리). 이부장 대조 완료: 수치 네이버=블로그 일치",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.asidequeue list; python -m studio.asidestate",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "13:10 Aside #643 로 등록·깨움"
+  },
+  {
+   "id": "aside-643-b429-naver-1106",
+   "added": "2026-11-06",
+   "what": "Aside #643 B4-29 네이버 게시 done → 네이버 URL·제목·카테고리 확인(naver-link 자동 기록) → 이과장 인스타·쓰레드",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.osmu_manifest table --code B4-29; python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "#643 blocked → #644 로 재등록(13:12)"
+  },
+  {
+   "id": "aside-644-b429-naver-1106",
+   "added": "2026-11-06",
+   "what": "Aside #644 B4-29 네이버 게시 done 확인 → 네이버 URL·제목·카테고리·이미지 확인",
+   "due": "2026-11-06",
+   "cmd": "python -m studio.osmu_manifest table --code B4-29; python -m studio.asidequeue list",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
