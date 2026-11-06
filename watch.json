@@ -20829,6 +20829,37 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "fable-verify-ce5e5ac-1106",
+   "added": "2026-11-06",
+   "what": "코드 ce5e5ac22·e20ac31a4·b8895b9d8·d442ba88b·a570b4469(엔진 설계도 화면 카드·도형 정렬·점검기 원본 동봉) + 18193283b(조사 깊이 게이트 routinedepth.gate·batchboard mark 거절·설계도 사건 대입)·1dabe2b5d(deepread 에이전트·공통절) 독립 검증(페이블) — 결과는 docs/verify_fable_1106b.md, 🔴 나오면 수정·재검증",
+   "due": "2026-11-07",
+   "cmd": "cat docs/verify_fable_1106b.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "kw-nts-interest-rate-1107",
+   "added": "2026-11-06",
+   "what": "가지급금 인정이자율(국세청장 고시이자율) 2026 고시 상반기 1~21호 확인 - 실검색어 OK, DB 0편, 1차 출처(고시 수치·시행일) 미확인이라 보류",
+   "due": "2026-11-07",
+   "cmd": "python tools/aside_read.py https://www.nts.go.kr/nts/na/ntt/selectNttList.do?mi=2205&bbsId=1120 --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "aroma-am-bo-005-approve-1106",
+   "added": "2026-11-06",
+   "what": "【권고】AM-BO-005 디즈니+ 11월 10일 구독료 인상 — 신규 스탠다드 월 11,500원, 취소 없이 쓰는 기존 구독자는 당분간 9,900원, 광고형 월 7,000원(방송·OTT) 게시 승인. 방송·OTT 칸의 공식 원문 기반 첫 글감. 신규 인상 시한 11/10 전에 게시 필요. 【근거】디즈니+ 공식 공지(disney.co.kr, 10/30)·공식 요금 도움말·현행 요금·번들 화면을 이대리가 직접 읽고(Haiku 조사 결과는 재확인) V0 직접 대조 PASS 87, 계산 8개 모두 정확. 정정 반영(제목·썸네일에 「당분간」「취소 없이」 한정어, 광고 행, 출처 표기, 캡션 링크, 따옴표 인용) 후 재검증 없음. crossdup 최고 0.33 🟢. 본문 사진=퍼블릭 도메인(캡션·원본 링크)·사진 기반 썸네일. 임베드 없음 — 디즈니+ 코리아 공식 채널의 이번 개편 설명 영상 확인 못 함(프로모션 광고 영상은 가격 오해 우려로 제외). 【위험】magsori8975 요금 비교(E2-06)와 주제 겹침 가능(각도는 조건표·인상폭·계산, 요금표 나열 아님). 「당분간」 기간·번들 가격 변경은 공지에 없어 글에 미확인으로 명시. 11/10 이후 실제 화면 가격은 미확인. 게시 직전 공지 재대조 예정. 초안 aroma-mag/drafts/AM-BO-005_디즈니플러스요금.html, V0 _v0_AM-BO-005_1106.md",
+   "due": "2026-11-06",
+   "cmd": "승인: aroma-am-bo-005-approve-1106",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
