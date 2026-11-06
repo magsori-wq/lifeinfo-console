@@ -20522,6 +20522,38 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "b429-order-after-source-1106",
+   "added": "2026-11-06",
+   "what": "B4-29 가상자산 과세 유예 — source 에이전트 검증 결과(docs/source_B4-29_가상자산유예_20261106.md) 확인 후 이과장 초안 지시서(dispatch→batchboard order) + 기발행 B4-17 낡음 판단",
+   "due": "2026-11-06",
+   "cmd": "ls docs/source_B4-29_가상자산유예_20261106.md; python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "source 검증 완료(추진·확정 아님 확인)·이과장 지시서 draft1106b429 등록 09:3x"
+  },
+  {
+   "id": "b429-crypto-defer-bill-1106",
+   "added": "2026-11-06",
+   "what": "B4-29 가상자산 2년 유예 입법 경로 미확인: 정부제출 의안/11-05 이후 소득세법 개정안/유예 날짜(2029.1.1) 원문 없음. 시도: moef 보도자료 hwpx 뷰어 전문·korea.kr·law.go.kr 소득세법 현행·likms 2220515 단건 및 '소득세법 일부개정법률안' 키워드(최신 10-28까지, 11-05 이후 0건). 미시도: 정부제출 의안 검색·2222157 등 9건 본문의 가상자산 포함 여부",
+   "due": "2026-11-13",
+   "cmd": "Aside로 likms 기본검색 폼에 '소득세법 일부개정법률안' 재검색, 2220515 상정/처리 상태 확인, 정부제출 의안 탭 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "b429-draft-read-1106",
+   "added": "2026-11-06",
+   "what": "이과장이 draft1106b429 지시서를 읽고 착수했는지(깨움 전송 09:35 '20초 내 미시작' 응답)",
+   "due": "2026-11-06",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('draft1106b429'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
