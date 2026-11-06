@@ -21071,12 +21071,34 @@
   {
    "id": "xlink-d314",
    "added": "2026-11-07",
-   "what": "🔗 D3-14 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D3-14",
+   "what": "🔗 D3-14 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D3-14",
    "due": "2026-11-07",
    "cmd": "python studio/blogger.py crosslink --code D3-14",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "d314-index-request-0107",
+   "added": "2026-11-07",
+   "what": "D3-14 4채널 완결(02:31) — GSC 색인 생성 요청을 이과장이 asidequeue 에 등록했는지 확인(docs/aside_drafts/D3-14_색인요청.txt)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.asidequeue list; ls docs/aside_drafts | grep D3-14",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "이과장이 02:32 색인요청 #654 Aside 등록(D3-14_색인요청.txt), 대기열 확인(이부장 직접)"
+  },
+  {
+   "id": "d314-index-retry-0107",
+   "added": "2026-11-07",
+   "what": "D3-14 GSC 색인요청 #654 접수 0/1(02:36 「제출 중 문제 발생, 나중에」) — 2시간 뒤(04:40 이후) 같은 초안 D3-14_색인요청.txt 를 대기열에 다시 올려 재시도(내일로 미루지 않음, 사장님 10-22). 사장님은 05시 이후 취침이라 04시대 안에",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.asidequeue list; python -m studio.gsc_log sync",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
