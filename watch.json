@@ -20892,8 +20892,10 @@
    "due": "2026-11-06",
    "cmd": "ls docs/source_가지급금인정이자율_20261106.md docs/source_동해선환승요금_20261106.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "심층독해 2건 결과 파일 확인(직접 열어 원문 발췌 대조): 동해선=보류(협약 체결·할인액·시행일 미확인, watch donghae-transfer-2026 11-20), 가지급금 인정이자율=보류(원칙은 가중평균차입이자율·4.6% 는 당좌대출 예외, 2026.1.2 개정으로 요율이 바뀌었는지 미확인, 근거 3중 2 미달: naverkw ✅·유입 0·개정 이유 미확인). 재고 0 유지, 억지 선별 안 함"
   },
   {
    "id": "donghae-transfer-2026",
@@ -20901,6 +20903,16 @@
    "what": "동해선 환승 2026 변경: 양산시·코레일 광역환승할인 협약 체결(9월 예정) 미확인, 할인액·개통일 원문 없음. G1-04 가 동해선 환승을 무료처럼 서술(공사 원문은 김해·양산 제외·기본운임 차액)",
    "due": "2026-11-20",
    "cmd": "grep -n 확인 못 함 C:/lifeinfo/docs/source_동해선환승요금_20261106.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "gajigeum-injung-prev-value",
+   "added": "2026-11-06",
+   "what": "가지급금 인정이자 deepread: 시행규칙 제43조② 당좌대출이자율 1,000분의 46 (개정 2026.1.2 표기) 이전 값 미확인, 법인세법 제60조 신고기한 미확인",
+   "due": "2026-11-07",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.naverkw 가지급금 ; grep -n 가지급 C:/lifeinfo/docs/source_가지급금인정이자율_20261106.md",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
