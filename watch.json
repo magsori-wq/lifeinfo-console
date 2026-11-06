@@ -20292,7 +20292,7 @@
    "id": "fable-verify-d2d31ae-1106",
    "added": "2026-11-05",
    "what": "코드 d2d31ae(Fable 2차 검증 수리: 반영 감사 Last-Modified 가림 방지·푸시 백스톱·act 복수 매칭) 독립 검증 — 11-06 다른 커밋과 한 묶음으로 fable 1회(수리의 수리를 매번 검증하면 끝이 없어 묶음)",
-   "due": "2026-11-06",
+   "due": "2026-11-07",
    "cmd": "git log --since='2026-11-05 19:44' --format=%h -- studio webapp tests | head",
    "owner": "claude",
    "state": "todo",
@@ -20302,7 +20302,7 @@
    "id": "fable-verify-7eb67ca-1106",
    "added": "2026-11-05",
    "what": "코드 7eb67ca(상황실 Y1·Y6 감지 실패 메시지에 예외 종류 추가 — 1줄 진단 개선) 독립 검증 — d2d31ae 와 같은 11-06 fable 묶음에 포함",
-   "due": "2026-11-06",
+   "due": "2026-11-07",
    "cmd": "git log --since='2026-11-05 19:44' --format=%h -- studio webapp tests | head",
    "owner": "claude",
    "state": "todo",
@@ -20957,6 +20957,26 @@
    "cmd": "python -m studio.routinedepth --days 2",
    "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fable-verify-note-1107",
+   "added": "2026-11-06",
+   "what": "페이블 4차 검증 묶음에 d2d31ae·7eb67ca 추가(356a12ad0·a7d84a3d4·a7280f77e 와 함께, 새 장부 기준)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.chkmon show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "a504-minwage-date-1107",
+   "added": "2026-11-06",
+   "what": "A5-04(2027 최저임금 10,700원) 본문 '2026년 7월 15일 의결' vs 위원회 표기 7/14 — 루틴5 11-06 경미 지적. 위원회 공식 보도(minimumwage.go.kr)로 의결 일시 확인 후 맞으면 근거 기록, 틀리면 정정안을 결재함에(블로그스팟 수정은 동결 중이라 사장님 판단)",
+   "due": "2026-11-07",
+   "cmd": "grep -o '7월 1[45]일' posts/2027년최저임금_글_HTML.txt | sort | uniq -c",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
