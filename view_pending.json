@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-06 11:00:10",
- "source_head": "c85cc73cf177",
+ "computed_at": "2026-11-06 02:13:52",
+ "source_head": "5a007a5130ef",
  "ids": [
   "B4-29",
   "aside-login-ca-1106",
@@ -8,40 +8,63 @@
   "deploy-thumb-458",
   "kakao-app-setup-1105"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "B4-29",
    "title": "가상자산 과세 유예 추진, 확정은 아님 — 현행 22%·250만원",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 가상자산과세유예추진_글_HTML.txt",
-     "path": "가상자산과세유예추진_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "가상자산과세유예추진",
+   "eng": "crypto_tax_deferral",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_가상자산과세유예추진.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/458_crypto_tax_deferral.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/458_crypto_tax_deferral.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_가상자산과세유예추진.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/458_crypto_tax_deferral.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_가상자산과세유예추진.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "ready"
+   }
   }
  ],
+ "publish": [],
  "actions": [
   {
    "id": "aside-login-ca-1106",
-   "what": "Aside ca 로그인 필요 — 자동 확인(10:03): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside ca 로그인 필요 — 자동 확인(11:02): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-06",
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "state": "todo",
@@ -49,7 +72,7 @@
   },
   {
    "id": "aside-login-naver-1106",
-   "what": "Aside naver 로그인 필요 — 자동 확인(10:03): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside naver 로그인 필요 — 자동 확인(11:02): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-06",
    "cmd": "python -m studio.asideprobe login --batch aside --what naver",
    "state": "todo",
