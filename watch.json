@@ -20916,6 +20916,38 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fable-verify-a7d84a3d4-1107",
+   "added": "2026-11-06",
+   "what": "코드 a7d84a3d4(루틴 지침 점검 반영: routinedepth FALLBACK_RE 에서 DRF·WebFetch 제거·parse 태그 뒤 줄바꿈) 페이블 검증 — 11-07 새 장부(21:12 루틴4·00:13 루틴6·09:17 루틴2)로 gate 오판 확인, 356a12ad0 와 함께 4차 검증",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.routinedepth --days 2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-adpost-recheck-1126",
+   "added": "2026-11-06",
+   "what": "aroma-mag 애드포스트 미디어 등록 보류(사유 운영기간 30일 미만, 11-06 통보) — 첫 글 10-27 00:22(RSS 확인) 기준 11/26 이후 재검수 요청 가능. 개설일(첫 글 이전일 수 있음)은 화면에서 못 얻음 — 사장님이 아시면 재신청 시점 앞당김. 이대리 몫(재신청)·이부장은 알림·조언",
+   "due": "2026-11-26",
+   "cmd": "curl -s -A Mozilla/5.0 https://rss.blog.naver.com/aroma-mag.xml | grep -o '<pubDate>[^<]*</pubDate>' | tail -1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "idaeri-3coop-result-1107",
+   "added": "2026-11-06",
+   "what": "이대리↔3. 협력 결과 확인 — 3.가 docs/협력_3분석_이대리_20261106.md 를 만들었는지(표본 N편·③ 데이터 없음 명시), 이부장이 이대리에게 전달",
+   "due": "2026-11-07",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('fuel1030'))\"; ls docs/협력_3분석_이대리_20261106.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-06",
+   "result": "3. 결과 18:31 도착(docs/협력_3분석_이대리_20261106.md, 이부장이 직접 읽고 한계 준수 확인: magsori8975 표본·③ 데이터 없음·확인 못 함 명시) — 이대리에게 18:38 요약 전달, 회신 대기"
   }
  ]
 }
