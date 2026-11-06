@@ -21259,6 +21259,36 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "v0-c311-1107",
+   "added": "2026-11-07",
+   "what": "C3-11 V0 검사 결과",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.v0check list | tail -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "gajigeum-2026-01-02-prior",
+   "added": "2026-11-07",
+   "what": "가지급금 당좌대출이자율 2026.1.2 개정 전 값 미확인(시행규칙 제43조② 1,000분의 46)",
+   "due": "2026-11-14",
+   "cmd": "grep -n '이전 값\\|전 값' docs/source_가지급금인정이자율_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-460-check",
+   "added": "2026-11-07",
+   "what": "deploy.bat 05:12 실행 — 460 썸네일(github.io) 200 확인 후 카톡 한 줄",
+   "due": "2026-11-07",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/460_advance_directive.png",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
