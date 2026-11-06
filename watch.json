@@ -20493,7 +20493,7 @@
   {
    "id": "aside-login-ca-1106",
    "added": "2026-11-06",
-   "what": "Aside ca 로그인 필요 — 자동 확인(09:01): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside ca 로그인 필요 — 자동 확인(10:03): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-06",
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "owner": "user",
@@ -20564,6 +20564,16 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "b429-v0-wait-1106",
+   "added": "2026-11-06",
+   "what": "B4-29 V0 에이전트 결과(docs/v0_B4-29_20261106.md) 확인 → v0check pass|fail → brandconnect/제휴 판단(affiliate none) → reviewpage sync → deploy.bat(썸네일 404 해소 포함) → 결재함",
+   "due": "2026-11-06",
+   "cmd": "ls docs/v0_B4-29_20261106.md; python -m studio.v0check gate --code B4-29",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

@@ -1,13 +1,43 @@
 {
- "computed_at": "2026-11-06 09:36:08",
+ "computed_at": "2026-11-06 09:37:57",
  "source_head": "1ccf0a9abb74",
  "ids": [
+  "B4-29",
   "aside-login-ca-1106",
   "aside-login-naver-1106",
+  "deploy-thumb-458",
   "kakao-app-setup-1105"
  ],
  "posts": [],
- "publish": [],
+ "publish": [
+  {
+   "code": "B4-29",
+   "title": "가상자산 과세 유예 추진, 확정은 아님 — 현행 22%·250만원",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 가상자산과세유예추진_글_HTML.txt",
+     "path": "가상자산과세유예추진_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/458_crypto_tax_deferral.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/458_crypto_tax_deferral.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
  "actions": [
   {
    "id": "aside-login-ca-1106",
@@ -22,6 +52,14 @@
    "what": "Aside naver 로그인 필요 — 자동 확인(09:02): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-06",
    "cmd": "python -m studio.asideprobe login --batch aside --what naver",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-458",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(458_crypto_tax_deferral.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-06",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   },
