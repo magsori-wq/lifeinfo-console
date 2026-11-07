@@ -21467,6 +21467,16 @@
    "by": "이부장",
    "done_at": "2026-11-07",
    "result": "검증(단위테스트 37 OK·enginemap 🔴0) 후 경로지정 커밋"
+  },
+  {
+   "id": "catrend1107-report-to-boss",
+   "added": "2026-11-07",
+   "what": "3. catrend1107 결과 나오면 사장님께 보고(사장님 12:3x 지시) — 읽은 주제 수·못 읽은 주제·서치어드바이저 성공 여부·kwgap 후보 수",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.batchboard order --id catrend1107; python -m studio.cpstate --list | grep catrend",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
