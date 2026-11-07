@@ -21860,8 +21860,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "v0 에이전트 🟡 통과권고→수정 3건 반영 확인→v0check pass 도장(22:4x)"
   },
   {
    "id": "deepread-sokcho-yangmiri-1107",
@@ -21891,6 +21893,16 @@
    "what": "속초 도루묵·양미리 축제 2026 개장시간·가격·주차·문의처 원문 미공개(보도자료 본문 없음)",
    "due": "2026-11-10",
    "cmd": "ls docs/source_속초양미리축제_20261107.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "codecheck-1108-70473e87f",
+   "added": "2026-11-07",
+   "what": "커밋 70473e87f(derivedguard)·82735cf51(루틴공통절) 별도 검증 미실시 — measure 에이전트/Fable 로 검증 후 chkmon 닫기",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.chkmon show",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
