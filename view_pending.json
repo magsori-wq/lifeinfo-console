@@ -1,63 +1,12 @@
 {
- "computed_at": "2026-11-08 02:24:04",
- "source_head": "86d75a3a978e",
+ "computed_at": "2026-11-08 02:50:32",
+ "source_head": "591f1c3c7aaf",
  "ids": [
-  "E3-05",
   "H1-37",
-  "aroma-dup-sp013-0108"
+  "aroma-dup-sp013-0108",
+  "deploy-thumb-465"
  ],
- "posts": [
-  {
-   "code": "E3-05",
-   "title": "소방안전관리자 시험 접수 11월 19일, 몇 급부터 되나",
-   "slug": "소방안전관리자시험접수",
-   "eng": "fire_safety_manager",
-   "ch": {
-    "naver": {
-     "url": "https://blog.naver.com/magsori8975/224468763338",
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_소방안전관리자시험접수.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/464_fire_safety_manager.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "done"
-    },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_소방안전관리자시험접수.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    },
-    "instagram": {
-     "url": null,
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_소방안전관리자시험접수.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    }
-   }
-  }
- ],
+ "posts": [],
  "publish": [
   {
    "code": "H1-37",
@@ -93,6 +42,14 @@
    "what": "【권고】aroma 네이버 중복글 224468762772(01:57, SP-013 본문 2회 삽입) 비공개 전환 또는 삭제 — 정상글은 224468762003. 【근거】이대리 Aside 보고: fetch failed 재시도 중 앞 시도가 늦게 게시. 두 URL 모두 200 응답 확인(내용 대조는 안 함) 【위험】중복문서 노출(검색 품질), 삭제는 되돌릴 수 없음 → 권고는 비공개 전환 먼저",
    "due": "2026-11-08",
    "cmd": "start \"\" \"https://blog.naver.com/aroma-mag/224468762772\"",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-465",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(465_samsung_dividend.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
