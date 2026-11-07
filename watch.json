@@ -21497,8 +21497,10 @@
    "due": "2026-11-08",
    "cmd": "ls docs/검증_fable_b02db9f_20261107.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "페이블 검증 완료(docs/검증_fable_b02db9f_20261107.md): 코드 통과·설계도 사실오류 2건 정정 반영·gate 구멍 수정"
   },
   {
    "id": "fable-fix-1107",
@@ -21506,6 +21508,18 @@
    "what": "페이블 검증 지적 반영(설계도 사실정정·공통절 셈법통일·routinedepth gate 구멍)",
    "due": "2026-11-08",
    "cmd": "python -m unittest tests.test_routinedepth tests.test_dupcheck_joins",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "fixer 반영·이부장 테스트 41 OK·enginemap 🔴0·커밋"
+  },
+  {
+   "id": "docflow-2cand-1107",
+   "added": "2026-11-07",
+   "what": "보류 후보 2건 선별→지시서→초안 진행",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.topicprop table",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
