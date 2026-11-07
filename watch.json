@@ -20849,8 +20849,10 @@
    "due": "2026-11-07",
    "cmd": "python tools/aside_read.py https://www.nts.go.kr/nts/na/ntt/selectNttList.do?mi=2205&bbsId=1120 --max 6000",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-07",
+   "result": "11-07 Aside 로 국세청 고시 게시판 읽음: 이자율 검색 47건 중 최신=2012-08-01 폐지 고시(제2012-32호), 2026 상반기 이자율 고시 없음. 조문(시행규칙) 미확인 — docs/source_nts_이자율고시_20261107.md"
   },
   {
    "id": "aroma-am-bo-005-approve-1106",
@@ -21474,6 +21476,16 @@
    "what": "3. catrend1107 결과 나오면 사장님께 보고(사장님 12:3x 지시) — 읽은 주제 수·못 읽은 주제·서치어드바이저 성공 여부·kwgap 후보 수",
    "due": "2026-11-07",
    "cmd": "python -m studio.batchboard order --id catrend1107; python -m studio.cpstate --list | grep catrend",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-next-report-1107",
+   "added": "2026-11-07",
+   "what": "다음 글감 루틴(2·4·6·9) 결과 나오면 사장님께 보고 — 새 지침 효과(연 기관에 시·도 포함·원문=인용 파일 수·kwgap --trend/--sa 인용·후보 수)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.routinedepth --days 1",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
