@@ -22119,6 +22119,56 @@
    "by": "이부장",
    "done_at": "2026-11-08",
    "result": "run 20:09Z success, 라이브 200·제목·og:image 직접 확인"
+  },
+  {
+   "id": "h137-naver-wait-1108",
+   "added": "2026-11-08",
+   "what": "H1-37 네이버 게시 [체인] 확인 후 인스타·쓰레드·교차링크·색인요청",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.naverfind --gate H1-37",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "xlink-h137",
+   "added": "2026-11-08",
+   "what": "🔗 H1-37 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-37",
+   "due": "2026-11-08",
+   "cmd": "python studio/blogger.py crosslink --code H1-37",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "serkit-krx-attach-1108",
+   "added": "2026-11-08",
+   "what": "서킷브레이커 H1-38: KRX 보도자료 2026-11-06 유가·코스닥 매도사이드카 발동 본문(첨부) 미열람 · 업무규정 조문 미확보(law.krx.co.kr 타임아웃 HTTP 000)",
+   "due": "2026-11-10",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}\\n' --max-time 20 https://law.krx.co.kr/",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "h138-draft-after-h137-1108",
+   "added": "2026-11-08",
+   "what": "H1-37 4채널 완결 뒤 H1-38 초안 착수(draft1108h138)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "deploy-thumb-466",
+   "added": "2026-11-08",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(466_circuit_breaker.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
