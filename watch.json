@@ -21674,6 +21674,40 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "publish-g415-a125-1107",
+   "added": "2026-11-07",
+   "what": "G4-15·A1-25 승인(17:53) 발행 진행 확인 — g415 먼저(11/12 마감), 이어 a125. 30분 안에 run 없으면 재깨움",
+   "due": "2026-11-07",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 3",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "G4-15·A1-25·B4-30 3편 발행(run 42357790070·42358025606·42358269612) 라이브 200·og:title 확인"
+  },
+  {
+   "id": "followup-3posts-1107",
+   "added": "2026-11-07",
+   "what": "G4-15·A1-25·B4-30 4채널·검색설명·색인 후속 진행 확인(우리술 11/12 이전 4채널 우선)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.autoflow",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "derivedguard-autopages-1107",
+   "added": "2026-11-07",
+   "what": "자동 재생성 CP 화면 5개를 derivedguard 파생(A급)으로 분류 — syncorigin 반복 멈춤 해소",
+   "due": "2026-11-08",
+   "cmd": "python -m unittest tests.test_derivedguard",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "derivedguard B급 분류·단위테스트 29 OK·커밋 70473e87f"
   }
  ]
 }
