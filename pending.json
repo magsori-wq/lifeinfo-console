@@ -1,9 +1,9 @@
 {
- "rev": "0479827c3",
+ "rev": "f08f445ff",
  "counts": {
   "total": 481,
-  "osmu_done": 480,
-  "osmu_pending": 1,
+  "osmu_done": 481,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 481,
   "index_requested": 163,
@@ -15,15 +15,16 @@
    "code": "H1-38",
    "title": "서킷브레이커 발동 조건과 사이드카 차이 — 8·15·2",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }

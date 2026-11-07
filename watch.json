@@ -22227,6 +22227,58 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "h138-naver-requeue-0108",
+   "added": "2026-11-08",
+   "what": "H1-38 네이버: Aside #689 blocked(제목·이미지 문구 충돌) → 이과장이 06:41 제목·466n·지시서 수정 완료(미커밋). 재등록·게시 확인(07:00까지 대기열 비면 이과장에게 짚기)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "이과장이 고친 지시서로 #690 재등록 확인(06:43)"
+  },
+  {
+   "id": "xlink-h138",
+   "added": "2026-11-08",
+   "what": "🔗 H1-38 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-38",
+   "due": "2026-11-08",
+   "cmd": "python studio/blogger.py crosslink --code H1-38",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "report-h138-insta-threads-0108",
+   "added": "2026-11-08",
+   "what": "👤 사장님 지시 06:54 「H1-38 인스타 쓰레드 끝나면 보고해」 — 인스타(#691 진행)·쓰레드 게시 기록 직접 확인 후 보고(색인요청 접수까지 함께). 완료 보고에 Aside 3.7GB 정리 시점 안내 포함",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.osmu_manifest table --code H1-38",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-467",
+   "added": "2026-11-08",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(467_starbucks_frequency.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "report-d415-v0-0108",
+   "added": "2026-11-08",
+   "what": "👤 사장님 지시 06:59 「D4-15 V0 결과 나오면 보고해」 — v0 에이전트 결과(docs/v0_D4-15_20261108.md) 읽고 직접 확인 후 보고. 통과 시 수정 반영→도장→rv sync→deploy(썸네일 467)→결재함",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.v0check gate --code D4-15",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
