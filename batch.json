@@ -4992,17 +4992,22 @@
    "order_at": "2026-11-08 07:06:13"
   }
  },
- "updated": "2026-11-08 07:14:19",
+ "updated": "2026-11-08 07:14:46",
  "current": {
-  "batch": "pccheck",
+  "batch": "chkmon",
   "code": "",
-  "title": "PC 점검 세션",
-  "step": 9,
-  "what": "👤 사장님 07:04 「화면 해결해! 캡쳐」 — 원인: PC점검 창이 옛 콘솔(파란 PowerShell 창)로 열림 → 이모지·한글 폭 어긋나 줄 겹침. resume_pccheck.bat 를 Windows Terminal(wt.exe)로 여는 방식으로 변경(옛 방식 PCCHECK_CLASSIC=1 예비) · wt 실행 시험 통과 · 관리자 실행·겹침 해소는 창 재시작 후 캡처로 확인 예정",
-  "since": "13:18",
-  "since_at": "2026-10-24 13:18:24"
+  "title": "",
+  "step": 1,
+  "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "07:14:46",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
   {
    "t": "07:14:19",
    "text": "▶  PC 점검 세션 — 9/7단계 · 👤 사장님 07:04 「화면 해결해! 캡쳐」 — 원인: PC점검 창이 옛 콘솔(파란 PowerShell 창)로 열림 → 이모지·한글 폭 어긋나 줄 겹침. resume_pccheck.bat 를 Windows Terminal(wt.exe)로 여는 방식으로 변경(옛 방식 PCCHECK_CLASSIC=1 예비) · wt 실행 시험 통과 · 관리자 실행·겹침 해소는 창 재시작 후 캡처로 확인 예정",
@@ -5196,11 +5201,6 @@
   {
    "t": "06:40:52",
    "text": "📄 draft1108d415 작업 지시 등록(11446자, 2026-11-08 06:40:52)",
-   "actor": "이부장"
-  },
-  {
-   "t": "06:40:49",
-   "text": "📋 배치 '✍️ D4-15 초안 — 스타벅스 프리퀀시 2026 겨울 17잔 12월 31일까지 — 예약·소멸 주의점 (선별 자동 지시)' 등록 — 1항목",
    "actor": "이부장"
   }
  ],
@@ -5669,7 +5669,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴3 🔵3 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; V0 지연 D4-15 스타벅스 프리퀀시 2026 겨울 17잔 12월 31일까 외 2 · 묶음: Aside 상태×1 막힌 보드 항목×3 사건×3 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -21765,6 +21765,17 @@
    "what": "👤 사장님 07:04 「화면 해결해! 캡쳐」 — 원인: PC점검 창이 옛 콘솔(파란 PowerShell 창)로 열림 → 이모지·한글 폭 어긋나 줄 겹침. resume_pccheck.bat 를 Windows Terminal(wt.exe)로 여는 방식으로 변경(옛 방식 PCCHECK_CLASSIC=1 예비) · wt 실행 시험 통과 · 관리자 실행·겹침 해소는 창 재시작 후 캡처로 확인 예정",
    "actor": "미상:cf890880",
    "sid": "cf890880"
+  },
+  {
+   "ts": "2026-11-08 07:14:46",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r25cd93"
   }
  ]
 }
