@@ -21804,12 +21804,62 @@
   {
    "id": "xlink-a125",
    "added": "2026-11-07",
-   "what": "🔗 A1-25 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-25",
+   "what": "🔗 A1-25 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-25",
    "due": "2026-11-07",
    "cmd": "python studio/blogger.py crosslink --code A1-25",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "a125-insta-card-fix-1107",
+   "added": "2026-11-07",
+   "what": "A1-25 인스타 카드 − 기호 깨짐(#668 blocked) 수정·재게시 확인 — 이과장이 3장 모두 점검·재생성 후 인스타 재큐, 안 되면 재깨움",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.osmu_manifest table --code A1-25",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a125-insta-retry-2050",
+   "added": "2026-11-07",
+   "what": "A1-25 인스타 #670 공유 실패 — 20:50 이후 1회 재시도 확인(중복 먼저 확인), 또 실패하면 멈추고 11-08 사장님 복귀 보고에 포함",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.osmu_manifest table --code A1-25",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a125-insta-retry-1107",
+   "added": "2026-11-07",
+   "what": "A1-25 인스타 재시도 1회(20:50 이후) — 전 프로필 중복 읽기전용 확인 후 asidequeue add(insta). 실패하면 더 시도하지 말고 batchboard 로 사유 남기고 멈춤(내일 아침 이부장)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/A1-25_인스타게시.txt --code A1-25 --kind insta --prio 0",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "deploy-thumb-464",
+   "added": "2026-11-07",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(464_fire_safety_manager.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-07",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "v0-e305-1107",
+   "added": "2026-11-07",
+   "what": "E3-05 V0 반박 검사",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
