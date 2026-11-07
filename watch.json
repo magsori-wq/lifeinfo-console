@@ -22053,8 +22053,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.v0check gate --code H1-37",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "수정 4건 diff 확인→v0 pass→rv sync→deploy→결재함 1번 등록"
   },
   {
    "id": "e305-threads-0108",
@@ -22095,8 +22097,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.seodesc scan --only E3-05 && python -m studio.seodesc set --code E3-05 --text \"$(cat C:/Users/magso/AppData/Local/Temp/e305_seo.txt)\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-11-08",
+   "result": "라이브 meta description 이 102자 문구와 일치(curl 직접 확인), seodesc set 기록"
   }
  ]
 }
