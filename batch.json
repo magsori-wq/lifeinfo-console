@@ -1997,6 +1997,17 @@
      "date": "2026-11-08",
      "at": "2026-11-08 00:12",
      "actor": "미상:6fb6781c"
+    },
+    {
+     "code": "8-lifeinfo-issue-product-1108",
+     "title": "8-lifeinfo-issue-product (H)",
+     "state": "done",
+     "note": "[조사장부] 목록 3 · 원문 0 · 후보 3 · 탈락 2 · 검색어 3 · 유입 0 | 🛒 후보(① 쓰레드 단독): 직접푸드 횟감용 생굴 1kg(토스 id147975877) · 11,180원 · 리뷰1,199 · 평점4.6 · 왜 지금: 11월 굴 제철, naverkw 실검색어(생굴 제철·생굴 1kg·10월 생굴) · 결재함 afflink-oyster1108 등록(링크 발급은 이부장). 이어받은 것: 기게시(핫팩·니삭스·망토담요·전기요·가습기·감귤·어묵·굴비) 제외. 새로 본 것: 토스 수집 297건(신규27)·시즌 낱말 ~30개 검색. · 목록=productprop collect·search(시즌낱말)·affiliate solo · 탈락: 스카이케어 가습기(기게시 오퓨리엠과 동종·리뷰300 열세) · 손난로 보조배터리(리뷰85 근거 약함) · 유입 근거는 kwgap 에 굴 없음(근거 ①③ 2개 충족). 상품 루틴이라 원문 바닥 0. 게시 안 함(승인 도장 없음).\n▸ 07:17 [조사장부] 목록 3 · 원문 0 · 후보 3 · 탈락 2 · 검색어 3 · 유입 0 | 🛒 후보(쓰레드 단독): 직접푸드 횟감용 생굴 1kg · 11,180원 · 리뷰1,199 · 왜 지금: 11월 굴 제철+naverkw 실검색어(생굴 제철·생굴 1kg). 결재함 afflink-oyster1108 등록. 탈락: 스카이케어 가습기(기게시 동종·리뷰열세)·손난로배터리(리뷰85). 게시 안 함(승인 도장 없음).",
+     "auto_daily": true,
+     "base_code": "8-lifeinfo-issue-product",
+     "date": "2026-11-08",
+     "at": "2026-11-08 07:17",
+     "actor": "미상:7829f22a"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -4992,17 +5003,57 @@
    "order_at": "2026-11-08 07:06:13"
   }
  },
- "updated": "2026-11-08 07:15:10",
+ "updated": "2026-11-08 07:18:16",
  "current": {
   "batch": "chkmon",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+  "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵5 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 5 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
   "since": "18:12",
   "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "07:18:16",
+   "text": "✔ 이부장 ack r39eee6",
+   "actor": "이부장"
+  },
+  {
+   "t": "07:17:22",
+   "text": "✔ 이부장 ack r89289d",
+   "actor": "이부장"
+  },
+  {
+   "t": "07:17:13",
+   "text": "✅ 8-lifeinfo-issue-product-1108 완료 — 8-lifeinfo-issue-product (H)",
+   "actor": "미상:7829f22a"
+  },
+  {
+   "t": "07:17:04",
+   "text": "✔ 이부장 ack r3e0a59",
+   "actor": "이부장"
+  },
+  {
+   "t": "07:16:51",
+   "text": "✔ 이부장 ack rd7b889",
+   "actor": "이부장"
+  },
+  {
+   "t": "07:16:43",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴4 🔵5 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 5 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "07:16:35",
+   "text": "✔ 이부장 ack r25cd93",
+   "actor": "이부장"
+  },
+  {
+   "t": "07:16:23",
+   "text": "✅ 8-lifeinfo-issue-product-1108 완료 — 8-lifeinfo-issue-product (H)",
+   "actor": "미상:7829f22a"
+  },
   {
    "t": "07:14:46",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
@@ -5162,46 +5213,6 @@
    "t": "06:50:29",
    "text": "▶  PC 점검 세션 — 9/7단계 · 06:50 Aside 실측: 열린 탭 5개뿐(CP·엔진상황실·NAVER·택시비즈 localhost:5100·law.krx) · 3.7GB 는 탭이 아니라 브라우저 본체(11-06 05:40부터 49시간 무재시작) · 나머지 렌더러 20여개=탭·사이드패널·확장 · 종료·정리 안 함",
    "actor": "미상:cf890880"
-  },
-  {
-   "t": "06:50:18",
-   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224468850388 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-   "actor": "Aside"
-  },
-  {
-   "t": "06:48:46",
-   "text": "▶   — 1/7단계 · [Aside][done] [H1-38] 수신 2026-11-08 06:43:25 — #690 네이버1회 발행. #689 제목·대표이미지 오류 수정본 확인. 새로고침 후 수정 제목·카테고리·대표사진1장·표15개·태그6개·원문링크·깨짐없음 확인. 서식본/라이브 공백제외5734자 정확히 일치(지시서5607자와 차이), 제공본문 변경없음. 작업탭 정리, 총 탭5개. · https://blog.naver.com/magsori8975/224468850388",
-   "actor": "Aside"
-  },
-  {
-   "t": "06:46:05",
-   "text": "▶  PC 점검 세션 — 9/7단계 · 👤 사장님 직접 지시 06:44 「허용!」 — 프로그램별 메모리 1회 읽기(종료 없음). 06:45 실측: Aside 37개 8.0GB(한 개 3.7GB) · Claude Desktop 12개 2.7GB · Claude Code(Desktop 내장) 4개 2.6GB · 터미널 Claude 0.7GB · ChatGPT 13개 1.6GB · 전체 개인메모리 22.2GB / 커밋 31.8GB · 이부장 협의 자료",
-   "actor": "미상:cf890880"
-  },
-  {
-   "t": "06:44:14",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-11-08 06:43:25 — 지시 #690 H1-38 네이버 게시 시작. #689 차단 사유였던 제목·이미지 수정본 대조",
-   "actor": "Aside"
-  },
-  {
-   "t": "06:43:25",
-   "text": "📄 aside 작업 지시 등록(2175자, 2026-11-08 06:43:25)",
-   "actor": "사람"
-  },
-  {
-   "t": "06:41:30",
-   "text": "▶   — 1/7단계 · ✅ 중복글 224468762772 비공개 전환 완료(사장님 폰 승인 aroma-dup-sp013-0108). 확인: 외부 m.blog 접근 시 본문 0, 정상글 224468762003 은 본문 10블록으로 공개 유지. 재발 방지: aside 'fetch failed' 뒤에는 RSS/공개 페이지 5분 이상 확인 후에만 재시도",
-   "actor": "이대리"
-  },
-  {
-   "t": "06:40:56",
-   "text": "🏷️ draft1108d415 담당=이과장",
-   "actor": "이부장"
-  },
-  {
-   "t": "06:40:52",
-   "text": "📄 draft1108d415 작업 지시 등록(11446자, 2026-11-08 06:40:52)",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -5669,7 +5680,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵5 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 5 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -21787,6 +21798,94 @@
    "actor": "사람",
    "sid": "",
    "req": "rd7b889"
+  },
+  {
+   "ts": "2026-11-08 07:15:57",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r3e0a59"
+  },
+  {
+   "ts": "2026-11-08 07:16:12",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵4 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 4 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r89289d"
+  },
+  {
+   "ts": "2026-11-08 07:16:35",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r25cd93 — 즉시8: Aside 응답 불능→재시작 결재(aside-hung)+카톡, #689 해소, #687·#692 복구 후 재시도, 반영 어긋남=churn",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r25cd93"
+  },
+  {
+   "ts": "2026-11-08 07:16:43",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵5 🟡7 — 즉시: 반영 어긋남 · 로컬↔github.io; Aside 막힘 #687 H1-37; Aside 막힘 #689 H1-38; Aside 막힘 #692 H1-38 외 5 · 묶음: 막힌 보드 항목×3 사건×4 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r39eee6"
+  },
+  {
+   "ts": "2026-11-08 07:16:51",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack rd7b889 — 즉시8: Aside 응답 불능→재시작 결재(aside-hung)+카톡, #689 해소, #687·#692 복구 후 재시도, 반영 어긋남=churn",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "rd7b889"
+  },
+  {
+   "ts": "2026-11-08 07:17:04",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r3e0a59 — 즉시8: Aside 응답 불능→재시작 결재(aside-hung)+카톡, #689 해소, #687·#692 복구 후 재시도, 반영 어긋남=churn",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r3e0a59"
+  },
+  {
+   "ts": "2026-11-08 07:17:22",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r89289d — 즉시8: Aside 응답 불능→재시작 결재(aside-hung)+카톡, #689 해소, #687·#692 복구 후 재시도, 반영 어긋남=churn",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r89289d"
+  },
+  {
+   "ts": "2026-11-08 07:18:16",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r39eee6 — 즉시9 확인: afflink-oyster1108 은 루틴8(이슈상품) 후보(쓰레드 단독)가 올린 사장님 링크 발급 요청 — 결재함 대기, Aside 재시작 결재 aside-hung 대기, #687·#692 복구 후, 반영 어긋남=churn",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r39eee6"
   }
  ]
 }
