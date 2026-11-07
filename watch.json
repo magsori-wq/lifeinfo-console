@@ -21499,6 +21499,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "fable-fix-1107",
+   "added": "2026-11-07",
+   "what": "페이블 검증 지적 반영(설계도 사실정정·공통절 셈법통일·routinedepth gate 구멍)",
+   "due": "2026-11-08",
+   "cmd": "python -m unittest tests.test_routinedepth tests.test_dupcheck_joins",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
