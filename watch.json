@@ -22025,8 +22025,10 @@
    "due": "2026-11-08",
    "cmd": "start \"\" \"https://blog.naver.com/aroma-mag/224468762772\"",
    "owner": "user",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "사장님 폰 「승인: aroma-dup-sp013-0108 (폰 탭)」 — 폰 승인 회수(이부장 CLI)"
   },
   {
    "id": "gwanghwamun-bread-fest-1108",
@@ -22215,6 +22217,16 @@
    "by": "이부장",
    "done_at": "2026-11-08",
    "result": "run 42415805290 success, 라이브 200·제목·og:image·면책 직접 확인"
+  },
+  {
+   "id": "starbucks-freq-d4-15-check",
+   "added": "2026-11-08",
+   "what": "스타벅스 e-프리퀀시 2026 WINTER: 공식 10-22 공지(newsView seq=6584)는 읽음. 미확인=미션음료 목록·공개시점, 10-15 발표, 11-06 급등 원인, 2페이지 이후 추가 공지",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.naverkw 스타벅스 프리퀀시",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
