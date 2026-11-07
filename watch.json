@@ -21985,8 +21985,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "#678 색인요청 접수 확인(Aside 02:06), gsc_log 기록"
   },
   {
    "id": "pub-e305-0108",
@@ -22007,8 +22009,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "3.세션 후보 H1-37 도착(02:07), 이부장 선별→draft1108h137"
   },
   {
    "id": "aroma-dup-sp013-0108",
@@ -22029,6 +22033,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "deploy-thumb-465",
+   "added": "2026-11-08",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(465_samsung_dividend.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }

@@ -1,8 +1,10 @@
 {
- "computed_at": "2026-11-08 01:49:49",
- "source_head": "d706ad4eef06",
+ "computed_at": "2026-11-08 02:24:04",
+ "source_head": "86d75a3a978e",
  "ids": [
-  "E3-05"
+  "E3-05",
+  "H1-37",
+  "aroma-dup-sp013-0108"
  ],
  "posts": [
   {
@@ -12,7 +14,7 @@
    "eng": "fire_safety_manager",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224468763338",
      "files": [
       {
        "label": "네이버 원고",
@@ -27,7 +29,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -56,7 +58,44 @@
    }
   }
  ],
- "publish": [],
- "actions": [],
+ "publish": [
+  {
+   "code": "H1-37",
+   "title": "삼성전자 배당금 지급일 11월 27일, 주당 4,601원 — 100주면 얼마",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 삼성전자배당금지급일_글_HTML.txt",
+     "path": "삼성전자배당금지급일_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/465_samsung_dividend.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/465_samsung_dividend.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
+ "actions": [
+  {
+   "id": "aroma-dup-sp013-0108",
+   "what": "【권고】aroma 네이버 중복글 224468762772(01:57, SP-013 본문 2회 삽입) 비공개 전환 또는 삭제 — 정상글은 224468762003. 【근거】이대리 Aside 보고: fetch failed 재시도 중 앞 시도가 늦게 게시. 두 URL 모두 200 응답 확인(내용 대조는 안 함) 【위험】중복문서 노출(검색 품질), 삭제는 되돌릴 수 없음 → 권고는 비공개 전환 먼저",
+   "due": "2026-11-08",
+   "cmd": "start \"\" \"https://blog.naver.com/aroma-mag/224468762772\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
