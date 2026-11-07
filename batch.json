@@ -2005,12 +2005,12 @@
      "code": "lifeinfo-nightly-verify-1107",
      "title": "lifeinfo-nightly-verify (E)",
      "state": "done",
-     "note": "[루틴5 11-07] 오늘 발행 1편(D3-14) 원문 대조 일치·오류 0. selfcheck 🔴10(인스타 캡션 빔 5·검색설명 낡음 13 등 기존 건, 신규 아님). 기존글 검증은 재고0·위험순위 미착수 없어 오늘 발행분만.",
+     "note": "[루틴5 11-07] 오늘 발행 1편(D3-14) 원문 대조 일치·오류 0. selfcheck 🔴10(인스타 캡션 빔 5·검색설명 낡음 13 등 기존 건, 신규 아님). 기존글 검증은 재고0·위험순위 미착수 없어 오늘 발행분만.\n▸ 22:43 11-07 야간검증: 오늘 발행 5편 중 A1-25·B4-30 source 대조 오류0·라이브수정0. G4-15·C3-11·D3-14 미검증(다음 회차). law.go.kr DRF 인증 실패(못 얻음). crawl_watch 25편 완주 색인 변화 0. 🙋사장님 할 일: deploy.bat(thumb 464) 기존 건 1건",
      "auto_daily": true,
      "base_code": "lifeinfo-nightly-verify",
      "date": "2026-11-07",
-     "at": "2026-11-07 04:41",
-     "actor": "미상:9f927fc3"
+     "at": "2026-11-07 22:43",
+     "actor": "미상:52b03770"
     },
     {
      "code": "lifeinfo-travel-prep-1107",
@@ -4838,7 +4838,7 @@
    "order_at": "2026-11-07 20:27:51"
   }
  },
- "updated": "2026-11-07 22:22:59",
+ "updated": "2026-11-07 22:43:22",
  "current": {
   "batch": "pccheck",
   "code": "",
@@ -4849,6 +4849,11 @@
   "since_at": "2026-10-24 13:18:24"
  },
  "log": [
+  {
+   "t": "22:43:22",
+   "text": "✅ lifeinfo-nightly-verify-1107 완료 — lifeinfo-nightly-verify (E)",
+   "actor": "미상:52b03770"
+  },
   {
    "t": "22:22:59",
    "text": "▶  PC 점검 세션 — 8/7단계 · 🔴 22:22 위험: 가용 340MB · 커밋 33.8/39.8GB(85%) · pages/s 16,986 · 디스크큐 2.88 · CPU 65% · Desktop memory pressure critical(22:20) → 예약 루틴 발송 보류(Deferring dispatch) · 2004 아직 0 · 11-06 강제종료 직전 패턴 · 조치 없음(승인 대기)",
@@ -5042,11 +5047,6 @@
   {
    "t": "19:53:58",
    "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224468515389 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-   "actor": "Aside"
-  },
-  {
-   "t": "19:53:11",
-   "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-11-07 19:52:25 — 지시 #667 A1-25 검색설명 시작",
    "actor": "Aside"
   }
  ],

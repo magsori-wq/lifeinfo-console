@@ -1,10 +1,11 @@
 {
- "computed_at": "2026-11-07 20:23:51",
- "source_head": "7d24bcc0185a",
+ "computed_at": "2026-11-07 22:47:47",
+ "source_head": "a3baec4ca17b",
  "ids": [
   "A1-25",
   "B4-30",
-  "E3-05"
+  "E3-05",
+  "deploy-thumb-464"
  ],
  "posts": [
   {
@@ -161,7 +162,7 @@
    "code": "E3-05",
    "title": "소방안전관리자 시험 접수 11월 19일, 몇 급부터 되나",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 소방안전관리자시험접수_글_HTML.txt",
@@ -185,6 +186,15 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-464",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(464_fire_safety_manager.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-07",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }

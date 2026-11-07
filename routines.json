@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-07 21:16",
+ "generated": "2026-11-07 22:45",
  "routines": [
   {
    "num": 1,
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/07 04:33",
-   "next": "11/07 22:30",
+   "last": "11/07 22:33",
+   "next": "11/08 22:30",
    "model": "sonnet-5-5",
    "report_day": "1107",
-   "report": "[루틴5 11-07] 오늘 발행 1편(D3-14) 원문 대조 일치·오류 0. selfcheck 🔴10(인스타 캡션 빔 5·검색설명 낡음 13 등 기존 건, 신규 아님). 기존글 검증은 재고0·위험순위 미착수 없어 오늘 발행분만.",
+   "report": "[루틴5 11-07] 오늘 발행 1편(D3-14) 원문 대조 일치·오류 0. selfcheck 🔴10(인스타 캡션 빔 5·검색설명 낡음 13 등 기존 건, 신규 아님). 기존글 검증은 재고0·위험순위 미착수 없어 오늘 발행분만.\n▸ 22:43 11-07 야간검증: 오늘 발행 5편 중 A1-25·B4-30 source 대조 오류0·라이브수정0. G4-15·C3-11·D3-14 미검증(다음 회차). law.go.kr DRF 인증 실패(못 얻음). crawl_watch 25편 완주 색인 변화 0. 🙋사장님 할 일: deploy.bat(thumb 464) 기존 건 1건",
    "runs": [
+    {
+     "at": "11/07 22:44",
+     "link": "claude://claude.ai/epitaxy/local_ecfa80a2-a86a-4cb5-b9b8-adc448bb7da5",
+     "archived": false
+    },
     {
      "at": "11/07 04:42",
      "link": "claude://claude.ai/epitaxy/local_39630941-0bfe-4f39-93aa-265fbebd8662",
@@ -182,11 +187,6 @@
     {
      "at": "11/04 22:48",
      "link": "claude://claude.ai/epitaxy/local_73f07da8-3d3e-414b-8afa-f83b58f1da03",
-     "archived": true
-    },
-    {
-     "at": "11/03 22:49",
-     "link": "claude://claude.ai/epitaxy/local_7dd21125-1b7a-4d1a-974d-744b24e28867",
      "archived": true
     }
    ]
