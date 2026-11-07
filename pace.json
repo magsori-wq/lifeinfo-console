@@ -14,15 +14,16 @@
  "soft": 1,
  "hard": 9999,
  "state": "warn",
- "backlog": 2,
+ "backlog": 3,
  "backlog_codes": [
   "G4-15",
-  "A1-25"
+  "A1-25",
+  "B4-30"
  ],
  "backlog_max": 99,
  "backlog_over": false,
  "backlog_min": 3,
- "backlog_under": true,
+ "backlog_under": false,
  "lanes": {
   "info": {
    "label": "일일·정보성",
@@ -40,10 +41,12 @@
   },
   "user": {
    "label": "사용자 추천",
-   "n": 0,
-   "codes": []
+   "n": 1,
+   "codes": [
+    "B4-30"
+   ]
   }
  },
  "error": "",
- "checked_at": "2026-11-07T14:39:48"
+ "checked_at": "2026-11-07T14:46:28"
 }
