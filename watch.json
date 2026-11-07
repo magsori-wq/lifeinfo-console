@@ -21055,6 +21055,418 @@
    "by": "이부장",
    "done_at": "2026-11-07",
    "result": "V0 통과로 해소 — 검사자 v0 에이전트(acebabb) · 재검사 통과: 시행일 10월 29일로 전면 정정(11월29일·22일·일요일 0건, 이부장이 grep 직접 확인), 원문 대조 일치, 원문에 없는 사실 없음, 판단형 비교·함정·가상사례 표시 유지, bodydup 🟢 "
+  },
+  {
+   "id": "d314-publish-trigger-0107",
+   "added": "2026-11-07",
+   "what": "D3-14 승인(01:34) 완료, 이과장 gh workflow run 이 자동 분류기 거부됨 — 사장님 「D3-14 발행 실행 허용」 한 줄을 받으면 이부장이 트리거. 09:03 루틴3 폴백도 있음(30분 넘게 미착수 시)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.pubready --code D3-14",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "D3-14 발행 완료 run 42254815788 success, 라이브 200·og:title·날짜 확인(이부장 직접)"
+  },
+  {
+   "id": "xlink-d314",
+   "added": "2026-11-07",
+   "what": "🔗 D3-14 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D3-14",
+   "due": "2026-11-07",
+   "cmd": "python studio/blogger.py crosslink --code D3-14",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "d314-index-request-0107",
+   "added": "2026-11-07",
+   "what": "D3-14 4채널 완결(02:31) — GSC 색인 생성 요청을 이과장이 asidequeue 에 등록했는지 확인(docs/aside_drafts/D3-14_색인요청.txt)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.asidequeue list; ls docs/aside_drafts | grep D3-14",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "이과장이 02:32 색인요청 #654 Aside 등록(D3-14_색인요청.txt), 대기열 확인(이부장 직접)"
+  },
+  {
+   "id": "d314-index-retry-0107",
+   "added": "2026-11-07",
+   "what": "D3-14 GSC 색인요청 #654 접수 0/1(02:36 「제출 중 문제 발생, 나중에」) — 2시간 뒤(04:40 이후) 같은 초안 D3-14_색인요청.txt 를 대기열에 다시 올려 재시도(내일로 미루지 않음, 사장님 10-22). 사장님은 05시 이후 취침이라 04시대 안에",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.asidequeue list; python -m studio.gsc_log sync",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "3차 재시도 #656 07:39 접수 1/1 확인(Aside done: 색인 생성 요청됨·우선순위 크롤링 대기열 추가) — #654·#655 오류는 일시 장애로 해소. 실제 색인 반영은 별개(효과 낮음 실측 유의)"
+  },
+  {
+   "id": "rerun-routines-1107",
+   "added": "2026-11-07",
+   "what": "사장님 11-07 04:32 지시로 루틴 1~9 수동 재실행(10 aroma 제외) — 보고 도착·글감함·조사장부 확인",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.topicprop list | tail -15",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "pages-deploy-timeout-1107",
+   "added": "2026-11-07",
+   "what": "lifeinfo-console Pages deploy 'Deployment failed, try again later' 6~11분 후 실패가 11-04 2건·11-06 5건 반복(연속push 취소 아님, 배포 타임아웃형). github.io 뒤처짐과 연관 의심",
+   "due": "2026-11-07",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --limit 8",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d2376cf7"
+  },
+  {
+   "id": "dupcheck-spacing-g329-1107",
+   "added": "2026-11-07",
+   "what": "dupcheck 가 띄어쓰기 차이(빛축제/빛 축제)로 G3-24 를 못 잡고 G3-29 를 🟢 0.15 로 판정 — 루틴4 가 pick·verify 🟢 까지 가서 이과장이 잡음. 토큰 정규화(공백 제거) + 같은 구청 페이지·기간 겹침 검사. 기존 topic-dup-gate-1107 에 합쳐 처리",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.dupcheck '해운대 빛축제 점등식 날짜'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-uri-sul-1107",
+   "added": "2026-11-07",
+   "what": "우리술 대축제 원문 심층 읽기 결과 docs/source_우리술대축제_20261107.md",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_우리술대축제_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "rerun-nationwide-1107",
+   "added": "2026-11-07",
+   "what": "방침 정정(전국 확산) 반영 뒤 글감 루틴 2·4·6 재실행 — 2번·6번 현재 재실행분 종료 확인 후 실행(동시 중복 실행 방지)",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.topicprop list | tail -5",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "rerun2-after-run-ends-1107",
+   "added": "2026-11-07",
+   "what": "사장님 11-07 04:56 「다시해」 — 4번은 새 지침(전국 확산)으로 재실행 중(local_24f9cc5e). 2번은 직전 재실행 세션(local_fc9bd678)이 아직 running 이라 접수 거절 — 끝나면 2번(와 6번 종료 확인 후 6번)도 새 지침으로 재실행",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.routines 2",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "uri-sul-routine-miss-1107",
+   "added": "2026-11-07",
+   "what": "우리술 대축제: 루틴4 04:50 탈락 근거(입장료·사전등록 공식 없음)는 불완전 — thesool 공지(2026-10-27)에 입장료 15,000원·관람시간·현장등록 있음. 시음가격·교통·주차는 원문 없음",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_우리술대축제_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "c3-06-fee-check",
+   "added": "2026-11-07",
+   "what": "C3-06 원문 미확인: 사전연명의료의향서 등록비용(lst.go.kr 7쪽 비용 키워드 0) · 호스피스 본인부담 5%는 2021·2022 기준 페이지 · 대상질환 불일치(붙임3 만성폐쇄성 포함 / Q&A 제외). 파일 docs/source_C3-06_20261107.md",
+   "due": "2026-11-08",
+   "cmd": "curl -sL -A Mozilla/5.0 https://www.lst.go.kr/comm/faq.do | grep -c 비용",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:0c84fbec"
+  },
+  {
+   "id": "e304-kca-date",
+   "added": "2026-11-07",
+   "what": "E3-04 KCA 웹툰·웹소설 실태조사: 지시 게시일 2026-10-21 과 원문 발간일 2026-06-01(상세 페이지)·2026.5(PDF) 불일치, 10-21 미확인. 콘텐츠이용자보호지침 원문 law.go.kr 미확보(한글주소명 오류)",
+   "due": "2026-11-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import sys;print(open(r'C:/lifeinfo/docs/source_E3-04_20261107.md',encoding='utf-8').read()[:300])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:0c84fbec"
+  },
+  {
+   "id": "uri-sul-decide-1109",
+   "added": "2026-11-07",
+   "what": "우리술 대축제(11/13~15 양재 aT) 글감 — 원문 확보(docs/source_우리술대축제_20261107.md: 현장 15,000원·마감 19시/마지막날 18시·사전예매 11/6 종료) 하지만 관심근거 1/3(naverkw ❌·유입 0). 4번 새 지침 재실행 결과 보고 후에도 재고 0이면 11-09 까지 이부장 pick 여부 결정(행사 전 발행 필요)",
+   "due": "2026-11-09",
+   "cmd": "head -60 docs/source_우리술대축제_20261107.md ; python -m studio.topicprop list | tail -4",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "c311-draft-chain-1107",
+   "added": "2026-11-07",
+   "what": "C3-11 초안 지시서 draft1107c311 이과장 깨움(05:03) — 초안·썸네일·pubqueue 적재 후 V0(v0 에이전트)→결재 올리기",
+   "due": "2026-11-07",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('draft1107c311'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-h124-1107",
+   "added": "2026-11-07",
+   "what": "수능 할인 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_H1-24_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-gajigeum-1107",
+   "added": "2026-11-07",
+   "what": "가지급금 인정이자율 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_가지급금인정이자율_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-donghae-1107",
+   "added": "2026-11-07",
+   "what": "동해선 환승 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_동해선환승_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "demand-scan-1107",
+   "added": "2026-11-07",
+   "what": "수요 기반 글감 발굴 결과 docs/글감후보_수요발굴_20261107.md",
+   "due": "2026-11-07",
+   "cmd": "head -60 docs/글감후보_수요발굴_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-460",
+   "added": "2026-11-07",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(460_advance_directive.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-07",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-07",
+   "result": "이부장이 05:12 deploy.bat 실행 · 05:15 thumbs/460_advance_directive.png github.io 200 확인(실행 전 404)"
+  },
+  {
+   "id": "v0-c311-1107",
+   "added": "2026-11-07",
+   "what": "C3-11 V0 검사 결과",
+   "due": "2026-11-07",
+   "cmd": "python -m studio.v0check list | tail -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "gajigeum-2026-01-02-prior",
+   "added": "2026-11-07",
+   "what": "가지급금 당좌대출이자율 2026.1.2 개정 전 값 미확인(시행규칙 제43조② 1,000분의 46)",
+   "due": "2026-11-14",
+   "cmd": "grep -n '이전 값\\|전 값' docs/source_가지급금인정이자율_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-460-check",
+   "added": "2026-11-07",
+   "what": "deploy.bat 05:12 실행 — 460 썸네일(github.io) 200 확인 후 카톡 한 줄",
+   "due": "2026-11-07",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/460_advance_directive.png",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "460 썸네일 200 확인 완료"
+  },
+  {
+   "id": "deepread-meat-1107",
+   "added": "2026-11-07",
+   "what": "유럽 육류 반입 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_유럽육류반입_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-suneung-pen-1107",
+   "added": "2026-11-07",
+   "what": "수능 여분 필기구 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_수능여분필기구_20261107.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "원문 읽기 완료 — docs/source_수능여분필기구_20261107.md · 수량 규정 원문 없음 · D1-15 주제 중복 탈락 판정"
+  },
+  {
+   "id": "deepread-gayo-1107",
+   "added": "2026-11-07",
+   "what": "가요대전 방청 원문 읽기 결과",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_가요대전방청_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "h124-dup-d119-1107",
+   "added": "2026-11-07",
+   "what": "H1-24 수능 할인 주제 중복: D1-19 본문 「CGV 2년 연속 7,000원」 2025분 1차 미확인(11-05 파일 기준)",
+   "due": "2026-11-09",
+   "cmd": "head -20 docs/source_H1-24_20261107.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "donghae-g104-mismatch-1107",
+   "added": "2026-11-07",
+   "what": "G1-04 동해선 서술(같은 구간 무료 환승·김해양산 미언급)이 공사 원문(김해·양산 환승 미적용·기본운임 차액+10km 추가운임)과 어긋남 — 수정 안 함, 이부장 판단",
+   "due": "2026-11-14",
+   "cmd": "head -c 3000 docs/source_동해선환승_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "donghae-2026-change-recheck",
+   "added": "2026-11-07",
+   "what": "동해선 환승 2026 변경: 양산시·코레일 협약 체결 원문 미확인(제목 검색 0건)",
+   "due": "2026-12-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import urllib.parse;print(urllib.parse.quote('동해선'))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "cmd 교체: 양산시 보도자료 제목검색(GET list.do searchTxt=동해선) 0건 기준 — 새 id donghae-2026-change-recheck-2 로 등록"
+  },
+  {
+   "id": "donghae-2026-change-recheck-2",
+   "added": "2026-11-07",
+   "what": "동해선 환승 2026 변경: 양산시·코레일 협약 체결 보도 제목 검색 재확인(현재 0건)",
+   "due": "2026-12-15",
+   "cmd": "curl -sL -A \"Mozilla/5.0\" \"https://www.yangsan.go.kr/portal/saeol/news/list.do?mid=0105010000&searchType=type0&searchTxt=%EB%8F%99%ED%95%B4%EC%84%A0&page=1\" | grep -c newsEpctNo",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "gayo-bangcheong-notice-1114",
+   "added": "2026-11-07",
+   "what": "2026 SBS 가요대전 NOTICE 방청·응모 공지 재확인 (11-07 기준 0건)",
+   "due": "2026-11-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py https://programs.sbs.co.kr/enter/2026sbsgayo/boards/90852 --wait 8 --max 3000",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "suneung-pen-dup-d115-1107",
+   "added": "2026-11-07",
+   "what": "수능 여분 필기구 후보 D1-15 주제 중복 — 원문에 수량 규정 없음, 제목 「몇 개까지」 답 불가",
+   "due": "2026-11-07",
+   "cmd": "head -40 docs/source_수능여분필기구_20261107.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "owner 오기 — claude 로 재등록"
+  },
+  {
+   "id": "asf-list-and-law-2027-1107",
+   "added": "2026-11-07",
+   "what": "F1-14 원문 취득본(8/30) 대비 변동: ASF 목록 2026.8.3 → 2026.9.21(74개국, 남수단 추가), 가축전염병예방법 현행 시행 2026.10.1, 제60조 2027.4.1 블록 본문 미확인",
+   "due": "2026-11-14",
+   "cmd": "head -40 docs/source_유럽육류반입_20261107.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "c311-publish-1107",
+   "added": "2026-11-07",
+   "what": "C3-11 발행 run 시작·완료 확인 (승인 11:30, 이과장 깨움 11:3x)",
+   "due": "2026-11-07",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 3; python -m studio.pubready --code C3-11",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a114-gosi-1107",
+   "added": "2026-11-07",
+   "what": "A1-14 양육비 선지급 고시번호 공식확인",
+   "due": "2026-11-08",
+   "cmd": "ls docs/source_A1-14_고시_20261107.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "공식 확인(law.go.kr 화면·원문 파일 직접 열람): A1-14 고시 제2025-1호·월20만원·소득기준 삭제 현행과 일치, 제2025-9호는 고용평등 위탁기관 지정 고시(무관). 본문이 시행 전 미래형(10/29 시행 완료)이라 현재형 정정은 동결 해제 뒤 제안"
+  },
+  {
+   "id": "c311-nostart-1205",
+   "added": "2026-11-07",
+   "what": "C3-11 12:05 까지 publish run 없으면 이과장 재깨움",
+   "due": "2026-11-07",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a114-tense-fix-proposal",
+   "added": "2026-11-07",
+   "what": "A1-14 본문 미래형(10/29 시행 완료) → 현재형 정정 제안 — 블로그스팟 수정 동결 중이라 사장님 정정 제안(TW1107-6 묶음)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.watch --id a114-tense-fix-proposal",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "struct-fix-codes-1107",
+   "added": "2026-11-07",
+   "what": "구조개선 코드2건(dupcheck 한글자합성어·routinedepth 원문=실존파일수)",
+   "due": "2026-11-08",
+   "cmd": "python -m unittest tests.test_routinedepth -v",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "fixer 완료·이부장 테스트 재실행 OK"
+  },
+  {
+   "id": "struct-fix-commit-1107",
+   "added": "2026-11-07",
+   "what": "구조개선 fixer 결과 오면 검증 후 경로지정 커밋(사장님 12:2x 지시): docs/루틴공통절.md docs/엔진설계도.md studio/dupcheck.py studio/routinedepth.py tests/",
+   "due": "2026-11-07",
+   "cmd": "git status --porcelain docs/루틴공통절.md docs/엔진설계도.md studio/dupcheck.py studio/routinedepth.py tests/",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "검증(단위테스트 37 OK·enginemap 🔴0) 후 경로지정 커밋"
   }
  ]
 }
