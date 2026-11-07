@@ -22311,6 +22311,17 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "aside-hung-0108-0713",
+   "added": "2026-11-08",
+   "what": "【권고】Aside 브라우저 재시작 — 07:13 asideprobe health 실패(CDP Page.enable 시간 초과), H1-38 쓰레드 #692 blocked(게시 0회·중복 없음). 00:26~04:20 에도 같은 증상 전례. 【근거】PC 점검 실측 Aside 37개 8.0GB(본체 3.7GB) 【위험】재시작하면 Aside 탭·로그인이 잠시 끊긴다(프로필 유지). 지금 진행 중 Aside 작업 없음. 이부장은 프로세스 조작 금지라 못 한다",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asideprobe health",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
