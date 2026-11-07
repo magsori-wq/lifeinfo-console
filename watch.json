@@ -21401,6 +21401,48 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "c311-publish-1107",
+   "added": "2026-11-07",
+   "what": "C3-11 발행 run 시작·완료 확인 (승인 11:30, 이과장 깨움 11:3x)",
+   "due": "2026-11-07",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 3; python -m studio.pubready --code C3-11",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a114-gosi-1107",
+   "added": "2026-11-07",
+   "what": "A1-14 양육비 선지급 고시번호 공식확인",
+   "due": "2026-11-08",
+   "cmd": "ls docs/source_A1-14_고시_20261107.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "공식 확인(law.go.kr 화면·원문 파일 직접 열람): A1-14 고시 제2025-1호·월20만원·소득기준 삭제 현행과 일치, 제2025-9호는 고용평등 위탁기관 지정 고시(무관). 본문이 시행 전 미래형(10/29 시행 완료)이라 현재형 정정은 동결 해제 뒤 제안"
+  },
+  {
+   "id": "c311-nostart-1205",
+   "added": "2026-11-07",
+   "what": "C3-11 12:05 까지 publish run 없으면 이과장 재깨움",
+   "due": "2026-11-07",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml -L 2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a114-tense-fix-proposal",
+   "added": "2026-11-07",
+   "what": "A1-14 본문 미래형(10/29 시행 완료) → 현재형 정정 제안 — 블로그스팟 수정 동결 중이라 사장님 정정 제안(TW1107-6 묶음)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.watch --id a114-tense-fix-proposal",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
