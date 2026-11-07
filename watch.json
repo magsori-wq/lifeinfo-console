@@ -21915,8 +21915,10 @@
    "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-SP-013_KS5차전_선발.html\"",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "세션:8dfb375f"
+   "state": "done",
+   "by": "세션:8dfb375f",
+   "done_at": "2026-11-08",
+   "result": "사장님 채팅 「승인: aroma-am-sp-013-approve-1107 (권고】AM-SP-013 한국시리즈 4차전 삼성 ) (폰 탭 01:43)」 01:45 — 이부장 회수 · 폰 승인 회수(이부장 CLI)"
   },
   {
    "id": "aroma-am-pe-008-approve-1107",
@@ -21976,6 +21978,16 @@
    "what": "B4-30 GSC 색인요청: 이과장 초안(docs/aside_drafts/B4-30_색인요청.txt) 있으나 00:07 Aside 대기열 비어 있음 — 등록·접수 확인 후 gsc_log add B4-30",
    "due": "2026-11-08",
    "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "pub-e305-0108",
+   "added": "2026-11-08",
+   "what": "E3-05 발행 확인: 01:39 승인 도장 후 이과장 gh publish 실행 여부(30분 안에) — 안 잡으면 재확인",
+   "due": "2026-11-08",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml --limit 2",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
