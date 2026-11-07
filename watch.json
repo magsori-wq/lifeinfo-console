@@ -21712,7 +21712,7 @@
   {
    "id": "xlink-g415",
    "added": "2026-11-07",
-   "what": "🔗 G4-15 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-15",
+   "what": "🔗 G4-15 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-15",
    "due": "2026-11-07",
    "cmd": "python studio/blogger.py crosslink --code G4-15",
    "owner": "claude",
@@ -21790,6 +21790,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "gsc-g415-record-1107",
+   "added": "2026-11-07",
+   "what": "G4-15 색인 요청 #665 접수(19:45) — gsc_log add G4-15 기록 확인(_gsc_requested.txt 에 URL 있어야), 없으면 이과장 기록 지시",
+   "due": "2026-11-08",
+   "cmd": "grep -c 2026-15000-11-1315-at _gsc_requested.txt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-a125",
+   "added": "2026-11-07",
+   "what": "🔗 A1-25 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-25",
+   "due": "2026-11-07",
+   "cmd": "python studio/blogger.py crosslink --code A1-25",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
