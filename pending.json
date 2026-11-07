@@ -1,19 +1,36 @@
 {
- "rev": "cb62a881",
+ "rev": "283add9e",
  "counts": {
-  "total": 477,
+  "total": 478,
   "osmu_done": 475,
-  "osmu_pending": 2,
+  "osmu_pending": 3,
   "indexed": 0,
-  "index_pending": 477,
+  "index_pending": 478,
   "index_requested": 159,
-  "index_todo": 76,
+  "index_todo": 77,
   "index_benign": 242
  },
  "actionable": [
   {
    "code": "A1-25",
    "title": "첫만남이용권 사용기간 — 2024년 11·12월생은 사",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "B4-30",
+   "title": "가지급금 인정이자율 4.6%는 예외입니다 — 원칙은 가",
    "need": [
     "OSMU",
     "색인요청"
@@ -208,22 +225,6 @@
   {
    "code": "A5-13",
    "title": "2027년 고용보험료율 2.0% 인상 추진 — 월급 실",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-14",
-   "title": "난임치료휴가 유급 2일에서 4일로 — 11월 27일 시",
    "need": [
     "색인요청"
    ],
