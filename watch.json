@@ -21611,7 +21611,7 @@
   {
    "id": "xlink-c311",
    "added": "2026-11-07",
-   "what": "🔗 C3-11 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C3-11",
+   "what": "🔗 C3-11 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C3-11",
    "due": "2026-11-07",
    "cmd": "python studio/blogger.py crosslink --code C3-11",
    "owner": "claude",
@@ -21639,6 +21639,18 @@
    "by": "미상",
    "done_at": "2026-11-07",
    "result": "14:50 deploy.bat 후 463 썸네일 확인(이부장)"
+  },
+  {
+   "id": "seodesc-c311-verify-1107",
+   "added": "2026-11-07",
+   "what": "C3-11 검색설명 #660 완료 후 라이브 meta 확인(seodesc scan --only C3-11) — mismatch 없어야",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.seodesc scan --only C3-11",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "라이브 meta description 직접 조회 = 지정 115자 문구 일치, seodesc list C3-11 ok(115자)"
   }
  ]
 }
