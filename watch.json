@@ -22189,7 +22189,19 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.v0check gate --code H1-38",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "수정 diff 확인→v0 pass→rv sync→deploy→결재함 등록"
+  },
+  {
+   "id": "idxretry-h137-0108",
+   "added": "2026-11-08",
+   "what": "H1-37 색인요청 #687 Google '제출 중 문제 발생' (05:56) → 약 2시간 뒤(08:00 이후) 같은 초안 docs/aside_drafts/H1-37_색인요청.txt 로 asidequeue add 재시도 1회. 접수되면 gsc_log add H1-37. 연속 실패 시 '내일'로 미루지 말고 2시간 간격(CLAUDE.md 색인 요청 절)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
