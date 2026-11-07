@@ -1,93 +1,55 @@
 {
- "computed_at": "2026-11-08 05:40:15",
- "source_head": "278f7c18aaeb",
+ "computed_at": "2026-11-08 05:57:02",
+ "source_head": "4a25f533fa9e",
  "ids": [
-  "H1-37",
-  "aroma-dup-sp013-0108"
+  "H1-38",
+  "aroma-dup-sp013-0108",
+  "deploy-thumb-466"
  ],
- "posts": [
+ "posts": [],
+ "publish": [
   {
-   "code": "H1-37",
-   "title": "삼성전자 배당금 지급일 11월 27일, 주당 4,601원 — 100주면 얼마",
-   "slug": "삼성전자배당금지급일",
-   "eng": "samsung_dividend",
-   "ch": {
-    "naver": {
-     "url": "https://blog.naver.com/magsori8975/224468825424",
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_삼성전자배당금지급일.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/465_samsung_dividend.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "done"
+   "code": "H1-38",
+   "title": "서킷브레이커 발동 조건과 사이드카 차이 — 8·15·20% 하락하면 몇 분 멈추나",
+   "go": false,
+   "v0": "pass",
+   "files": [
+    {
+     "label": "초안 서킷브레이커사이드카_글_HTML.txt",
+     "path": "서킷브레이커사이드카_글_HTML.txt",
+     "img": false,
+     "exists": true
     },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_삼성전자배당금지급일.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "실사진",
-       "path": "insta/thread/thread_H1-37_samsung_dividend.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "ready"
+    {
+     "label": "썸네일",
+     "path": "thumbs/466_circuit_breaker.png",
+     "img": true,
+     "exists": true
     },
-    "instagram": {
-     "url": null,
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_삼성전자배당금지급일.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "카드1",
-       "path": "insta/samsung_dividend_01.png",
-       "img": true,
-       "exists": true
-      },
-      {
-       "label": "카드2",
-       "path": "insta/samsung_dividend_02.png",
-       "img": true,
-       "exists": true
-      },
-      {
-       "label": "카드3",
-       "path": "insta/samsung_dividend_03.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "ready"
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/466_circuit_breaker.png",
+     "img": true,
+     "exists": true
     }
-   }
+   ],
+   "light": "todo"
   }
  ],
- "publish": [],
  "actions": [
   {
    "id": "aroma-dup-sp013-0108",
    "what": "【권고】aroma 네이버 중복글 224468762772(01:57, SP-013 본문 2회 삽입) 비공개 전환 또는 삭제 — 정상글은 224468762003. 【근거】이대리 Aside 보고: fetch failed 재시도 중 앞 시도가 늦게 게시. 두 URL 모두 200 응답 확인(내용 대조는 안 함) 【위험】중복문서 노출(검색 품질), 삭제는 되돌릴 수 없음 → 권고는 비공개 전환 먼저",
    "due": "2026-11-08",
    "cmd": "start \"\" \"https://blog.naver.com/aroma-mag/224468762772\"",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-466",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(466_circuit_breaker.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }

@@ -22133,7 +22133,7 @@
   {
    "id": "xlink-h137",
    "added": "2026-11-08",
-   "what": "🔗 H1-37 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-37",
+   "what": "🔗 H1-37 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-37",
    "due": "2026-11-08",
    "cmd": "python studio/blogger.py crosslink --code H1-37",
    "owner": "claude",
@@ -22169,6 +22169,26 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "h137-threads-h138-v0-0108",
+   "added": "2026-11-08",
+   "what": "①H1-37 쓰레드 Aside 등록 확인(인스타 05:43 완료 후 이과장 차례, 06:00까지 비면 짚기) ②H1-38 초안 완성 보고 오면 v0 에이전트 투입→수정→도장→rv sync→deploy(썸네일 466)→결재함",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-h138-fix-0108",
+   "added": "2026-11-08",
+   "what": "H1-38 V0 수정 반영 확인(v0fix1108h138) → diff 확인 → v0check pass → reviewpage sync → deploy.bat(썸네일 466+rv) → 결재함·카톡. deploy-thumb-466 항목도 닫기",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.v0check gate --code H1-38",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
