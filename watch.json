@@ -20478,9 +20478,11 @@
    "due": "2026-11-08",
    "cmd": "캡처 폴더 최신 파일 Read 로 겹침 여부 확인",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "note": 7,
-   "by": "lifeinfo-ee"
+   "by": "lifeinfo-ee",
+   "done_at": "2026-11-08",
+   "result": "07:23 캡처 확인: resume_pccheck.bat 를 Windows Terminal(wt.exe) 실행으로 바꾼 뒤 겹침 0 · 입력칸 1개 · 이모지 정상 · 관리자 방패 표시 · 2.1.319 적용"
   },
   {
    "id": "kakao-app-setup-1106-1130",
@@ -22243,7 +22245,7 @@
   {
    "id": "xlink-h138",
    "added": "2026-11-08",
-   "what": "🔗 H1-38 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-38",
+   "what": "🔗 H1-38 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-38",
    "due": "2026-11-08",
    "cmd": "python studio/blogger.py crosslink --code H1-38",
    "owner": "claude",
@@ -22289,8 +22291,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.autoflow",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "4채널 완결 보고 07:32, 색인 접수는 report-h138-idx-0108 로 이어서"
   },
   {
    "id": "donki-coupon-f311-amount",
@@ -22309,21 +22313,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.asideprobe health",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
-  },
-  {
-   "id": "aside-hung-0108-0713",
-   "added": "2026-11-08",
-   "what": "【권고】Aside 브라우저 재시작 — 07:13 asideprobe health 실패(CDP Page.enable 시간 초과), H1-38 쓰레드 #692 blocked(게시 0회·중복 없음). 00:26~04:20 에도 같은 증상 전례. 【근거】PC 점검 실측 Aside 37개 8.0GB(본체 3.7GB) 【위험】재시작하면 Aside 탭·로그인이 잠시 끊긴다(프로필 유지). 지금 진행 중 Aside 작업 없음. 이부장은 프로세스 조작 금지라 못 한다",
-   "due": "2026-11-08",
-   "cmd": "python -m studio.asideprobe health",
-   "owner": "user",
    "state": "done",
-   "kind": "approve",
    "by": "이부장",
    "done_at": "2026-11-08",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "result": "Aside health ok 07:24, 이과장에게 #692 재등록·색인 재시도 지시"
   },
   {
    "id": "afflink-oyster1108",
@@ -22357,6 +22350,18 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "report-h138-idx-0108",
+   "added": "2026-11-08",
+   "what": "👤 사장님 지시 07:34 「H1-38 색인요청 접수되면 보고해」 — Aside #694 접수 보고 확인→gsc_log add H1-38→보고(H1-37 재시도도 함께)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "#694 접수(Aside 07:36), gsc_log 기록·보고"
   }
  ]
 }
