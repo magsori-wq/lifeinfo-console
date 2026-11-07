@@ -20475,7 +20475,7 @@
    "id": "term-overlap-1106",
    "added": "2026-11-06",
    "what": "PC점검 창 화면 겹침 — 재부팅·2.1.318 뒤 05:54 캡처: 지난 입력줄 반복은 사라짐, 잔여 = 한글 사이 낱글자 끼어듦(4·h·울)·지난 출력 조각 1줄·입력칸 > 2개. 지속되면 사장님 승인 받아 렌더러 전환 검토",
-   "due": "2026-11-07",
+   "due": "2026-11-08",
    "cmd": "캡처 폴더 최신 파일 Read 로 겹침 여부 확인",
    "owner": "claude",
    "state": "wait",
@@ -22243,22 +22243,12 @@
   {
    "id": "xlink-h138",
    "added": "2026-11-08",
-   "what": "🔗 H1-38 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-38",
+   "what": "🔗 H1-38 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-38",
    "due": "2026-11-08",
    "cmd": "python studio/blogger.py crosslink --code H1-38",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
-  },
-  {
-   "id": "report-h138-insta-threads-0108",
-   "added": "2026-11-08",
-   "what": "👤 사장님 지시 06:54 「H1-38 인스타 쓰레드 끝나면 보고해」 — 인스타(#691 진행)·쓰레드 게시 기록 직접 확인 후 보고(색인요청 접수까지 함께). 완료 보고에 Aside 3.7GB 정리 시점 안내 포함",
-   "due": "2026-11-08",
-   "cmd": "python -m studio.osmu_manifest table --code H1-38",
-   "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
   },
   {
    "id": "deploy-thumb-467",
@@ -22277,7 +22267,59 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.v0check gate --code D4-15",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "V0 결과 보고(사장님 지시 06:59): v0 🟡 조건부, 필수 4건 수정 지시서 v0fix1108d415"
+  },
+  {
+   "id": "v0-d415-fix-0108",
+   "added": "2026-11-08",
+   "what": "D4-15 V0 수정 반영 확인(v0fix1108d415) → diff 확인 → v0check pass → reviewpage sync → deploy.bat(썸네일 467+rv) → 결재함·카톡. deploy-thumb-467 닫기",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.v0check gate --code D4-15",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "report-h138-done-0108",
+   "added": "2026-11-08",
+   "what": "👤 사장님 지시 07:12 「H1-38 완료되면 보고해」 — 쓰레드(#692)·색인요청 접수·gsc_log 기록까지 직접 확인 후 보고(Aside 3.7GB 정리 시점 안내 포함)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.autoflow",
+   "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "donki-coupon-f311-amount",
+   "added": "2026-11-08",
+   "what": "돈키호테 쿠폰 원문 불일치: 배너 「세금 포함 11,000엔 이상 5%」 vs 대상 블록 「세금 불포함 10,000엔 이상」(cp001_ko.html), 쿠폰 받는 법·기간 원문 없음. 판정 조건부 — docs/source_돈키호테쿠폰_20261108.md",
+   "due": "2026-11-12",
+   "cmd": "curl -s -A 'Mozilla/5.0' https://japanportal.donki-global.com/coupon/cp001_ko.html | grep -o '세금 불포함 10,000엔 이상\\|세금 포함 11,000엔 이상' | sort | uniq -c",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "h138-threads-retry-0108",
+   "added": "2026-11-08",
+   "what": "H1-38 쓰레드·색인: Aside 응답 복구 확인(asideprobe health ok) 뒤 이과장이 #692 재등록 → 접수 기록. 복구 전엔 재등록 금지(대기열을 손으로 빼고 넣은 전례)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asideprobe health",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-hung-0108-0713",
+   "added": "2026-11-08",
+   "what": "x",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asideprobe health",
+   "owner": "user",
+   "state": "todo",
    "by": "이부장"
   }
  ]

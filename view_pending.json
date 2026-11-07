@@ -1,9 +1,10 @@
 {
- "computed_at": "2026-11-08 06:57:30",
- "source_head": "f08f445ff642",
+ "computed_at": "2026-11-08 07:02:59",
+ "source_head": "2a6fbae52b4b",
  "ids": [
   "D4-15",
-  "H1-38"
+  "H1-38",
+  "deploy-thumb-467"
  ],
  "posts": [
   {
@@ -49,7 +50,7 @@
      "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/magsori8975/p/DfdNDhRE61Z/",
      "files": [
       {
        "label": "인스타 캡션",
@@ -76,7 +77,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     }
    }
   }
@@ -110,6 +111,15 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-467",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(467_starbucks_frequency.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
