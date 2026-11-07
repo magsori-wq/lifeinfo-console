@@ -21708,6 +21708,78 @@
    "by": "이부장",
    "done_at": "2026-11-07",
    "result": "derivedguard B급 분류·단위테스트 29 OK·커밋 70473e87f"
+  },
+  {
+   "id": "xlink-g415",
+   "added": "2026-11-07",
+   "what": "🔗 G4-15 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G4-15",
+   "due": "2026-11-07",
+   "cmd": "python studio/blogger.py crosslink --code G4-15",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "source-fire-annex6-confirm-1107",
+   "added": "2026-11-07",
+   "what": "소방안전관리자 시험 응시자격·접수일 공식 확정(E3-05)",
+   "due": "2026-11-08",
+   "cmd": "ls docs/source_E3-05_소방안전관리자_확정_20261107.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "별표6 원문·접수 11.19·수수료 확정, 환불은 hwp 재확인 못함(미다운로드)"
+  },
+  {
+   "id": "fire-exam-refund-hwp-recheck-1118",
+   "added": "2026-11-07",
+   "what": "소방안전관리자 시험 환불 규정·소방청 고시(소방안전관리학과·관련 교과목) 미확정(E3-05). 웹화면(ExamApplyList·examInfo·kfsi-grid-common.js)엔 환불 문구 0건, 안내서 downloadDoc/31~34.hwp|pdf에만 있음. pdf 글자 깨짐, hwp 재다운로드는 허락 없어 못 함. 기존 source 파일 §4 값(1·2·3급 전일까지 전액/특급 5일전까지)은 이어받기만 함",
+   "due": "2026-11-18",
+   "cmd": "사장님 허락 후 32~34.hwp 환불 절 재독 또는 접수문의 1899-4819 확인; 고시는 소방청 고시 소방안전관리학과·관련 교과목 검색",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "ig-g415-cover-check-1107",
+   "added": "2026-11-07",
+   "what": "G4-15 인스타 표지 체인 실패(MAD 33) — 이과장 Aside 육안 확인 보고 받기, 표지가 틀렸으면 이부장 판단(수정 불가→삭제·재게시는 사장님)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.osmuimgcheck --code G4-15",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "pccheck-report-1108",
+   "added": "2026-11-07",
+   "what": "PC 점검 세션 11-08 04:30 보고(메모리·CPU·네트워크 분석, data/pccheck_1107.csv 5분 표본) — 도착하면 사장님께 전달",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.batchboard order --id pccheck",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "boss-away-1107-handling",
+   "added": "2026-11-07",
+   "what": "사장님 외근(18:48~): 루틴 4번 21:00·5번 22:30·6번 23:55 보고·요청 처리, 우리술 인스타 표지 확인, 이과장 후속(A1-25·B4-30·E3-05), 3. fuel1030, PC점검 04:30 보고 — 11-08 12:00 사장님 복귀 때 한 장 요약 보고",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.now",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "pccheck-claude-effect-1108",
+   "added": "2026-11-07",
+   "what": "PC 점검 세션: 클로드 움직임↔PC 부하 상관분석(data/pccheck_claude_effect.py, 11-08 04:28 실행 예약) 결과를 11-08 사장님 복귀 시 요약 전달 — 18:24~18:37 Desktop memory pressure(warning) 8회 실측이 이미 있음",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.batchboard order --id pccheck",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07 18:24:51",
+ "at": "2026-11-07 18:55:28",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -193,9 +193,9 @@
  },
  "boss_extra": [],
  "aside": {
-  "state": "#662 등록 0분 — 수신 대기",
+  "state": "#664 done",
   "queue": 0,
-  "busy": true,
+  "busy": false,
   "lvl": "ok"
  },
  "tower": {
@@ -420,9 +420,9 @@
   {
    "who": "이과장",
    "state": "현장(진행)",
-   "jobs": 19,
-   "last_min": 7,
-   "cur": "🚀 G4-15 발행 — 우리술 대축제 2026 — 현장 입장료",
+   "jobs": 20,
+   "last_min": 15,
+   "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
   },
@@ -430,14 +430,14 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 3402,
+   "last_min": 3432,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok",
    "role": "애드센스 정비"
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
+   "state": "대기",
    "jobs": 0,
    "lvl": "ok",
    "role": "허브·4종착 배송"
@@ -471,16 +471,16 @@
   {
    "who": "이과장",
    "state": "현장(진행)",
-   "jobs": 19,
-   "last_min": 7,
-   "cur": "🚀 G4-15 발행 — 우리술 대축제 2026 — 현장 입장료",
+   "jobs": 20,
+   "last_min": 15,
+   "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
-   "state": "현장(진행)",
+   "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 1,
+   "last_min": 31,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -488,7 +488,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 3402,
+   "last_min": 3432,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok"
   },
@@ -496,13 +496,13 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 394,
+   "last_min": 425,
    "cur": "✅ 승인 4건 게시 완료·공개확인·태그: SP-012 2244",
    "lvl": "ok"
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
+   "state": "대기",
    "jobs": 0,
    "lvl": "ok"
   },
@@ -517,8 +517,8 @@
    "code": "E3-05",
    "title": "소방안전관리자 시험 접수 11월 19일 — 12월 시험 급수별 응시자격·",
    "src": "3.",
-   "state": "제안",
-   "at": "2026-11-07T18:22"
+   "state": "선별",
+   "at": "2026-11-07T18:27"
   },
   {
    "code": "A1-25",
@@ -1102,6 +1102,12 @@
    "src": "now_log 게시 URL"
   },
   {
+   "code": "E3-05",
+   "stage": "proc",
+   "at": "2026-11-07 18:27:14",
+   "src": "topicprop 선별"
+  },
+  {
    "code": "D3-14",
    "stage": "blog",
    "at": "",
@@ -1126,12 +1132,12 @@
  },
  "reflect": {
   "state": "bad",
-  "ok": 5,
+  "ok": 6,
   "stale": 0,
-  "bad": 2,
+  "bad": 1,
   "na": 0,
-  "at": "2026-11-07 18:24:47",
-  "age_min": 0
+  "at": "2026-11-07 18:52:52",
+  "age_min": 2
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1192,7 +1198,7 @@
  "fired": [
   {
    "day": "2026-11-07",
-   "total": 201,
+   "total": 211,
    "kinds": [
     [
      "CHKMON_REPORT",
@@ -1200,19 +1206,19 @@
     ],
     [
      "ASIDE_ALERT",
-     24
+     31
     ],
     [
      "ROUTINE_REPORT",
      14
     ],
     [
-     "NEW_BOSS_ITEM",
-     12
+     "ASIDE_DRAFT",
+     13
     ],
     [
-     "ASIDE_DRAFT",
-     11
+     "NEW_BOSS_ITEM",
+     12
     ],
     [
      "BOSS_APPROVAL",
