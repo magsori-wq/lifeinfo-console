@@ -21523,6 +21523,46 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "draft-2cand-report-1107",
+   "added": "2026-11-07",
+   "what": "우리술·가지급금 초안이 나오면 사장님께 보고(13:57 지시) — 초안 파일·V0 상태·결재함 등록 여부",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.pubqueue list; python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "first-meeting-voucher-scope-1107",
+   "added": "2026-11-07",
+   "what": "첫만남이용권 사용처: 2026 사업안내(PDF 111쪽) 읽음. 복지로·정부24 상세 미확보, 2026 보도자료 미확인, 현대카드 26.7.1 예정 시행여부 미확인",
+   "due": "2026-11-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"첫만남이용권 사용처\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "source-fire-exam-annex6-1107",
+   "added": "2026-11-07",
+   "what": "소방안전관리자 시행령 별표 6(응시자격) 본문 미취득·2027 일정 미공고 — 취득 전에는 글감 제안 보류(「나는 되나」 근거 없음)",
+   "due": "2026-11-12",
+   "cmd": "python tools/aside_read.py https://www.law.go.kr/법령/화재의예방및안전관리에관한법률시행령 --frames --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "draft-3cand-report-1107",
+   "added": "2026-11-07",
+   "what": "초안 3건(G4-15 우리술·B4-30 가지급금·A1-25 첫만남이용권) 나오면 사장님께 보고(14:24 지시) — 초안 경로·V0 상태·결재함 등록, 우리술은 11/12 게시 마감",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.pubqueue list; python -m studio.cpstate --list | grep draft1107",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

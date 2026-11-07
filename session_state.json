@@ -1357,11 +1357,11 @@
   "aside": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-07 07:39:34",
-   "last_what": "[Aside][done] [D3-14] #656 색인 요청 1/1건 접수 확인. 요청 전: 미등록(발견됨-현재 색인 안 됨)·최근 크롤링 해당사항 없음. 요청 1회 후「색인 생성 요청됨·우선순위 크롤링 대기열 추가」",
-   "reads": 2,
-   "last_order_at": "2026-11-07 02:33:04",
-   "last_read": "2026-11-07 02:36:20",
+   "last_report": "2026-11-07 14:19:15",
+   "last_what": "[Aside][doing] 수신 2026-11-07 14:18:08 — 지시 #657 C3-11 네이버 게시 시작",
+   "reads": 1,
+   "last_order_at": "2026-11-07 14:18:08",
+   "last_read": "2026-11-07 14:19:08",
    "owner": "Aside"
   },
   "draft1008a224": {
@@ -2086,12 +2086,12 @@
   },
   "cadaily": {
    "state": "waiting",
-   "reads_since_report": 2,
+   "reads_since_report": 3,
    "last_report": "2026-11-07 05:19:03",
    "last_what": "11-07 05:18 ca_daily 6 실행(첫 시도 Aside CDP timeout, 2회차 성공) — 11-06 일간 유입검색어 72줄·조회 89·검색유입률 96.34% 임포트, 키워드 원문 최다 교사 난임휴직",
-   "reads": 2,
+   "reads": 3,
    "last_order_at": "2026-11-07 12:52:22",
-   "last_read": "2026-11-07 13:41:56",
+   "last_read": "2026-11-07 14:17:40",
    "owner": "3.",
    "waiting_since": "2026-11-07 13:41"
   },
@@ -3963,14 +3963,14 @@
    "owner": "이과장"
   },
   "fuel1030": {
-   "reads": 6,
+   "reads": 7,
    "reads_since_report": 0,
    "last_order_at": "2026-11-06 18:26:09",
-   "last_read": "2026-11-07 13:52:58",
+   "last_read": "2026-11-07 14:17:39",
    "owner": "3.",
    "state": "working",
-   "last_report": "2026-11-07 13:54:59",
-   "last_what": "13:58 재고 0 지시(이부장 메시지)로 fuel1030 실행 — 새 통계(kwgap --trend 육아·교육·건강·자동차·경제·사회 전수 + --sa)에서 정보성 후보 2개 선별: ①첫만남이용권 사용처(CA 육아"
+   "last_report": "2026-11-07 14:21:56",
+   "last_what": "📋 코드 오배정 인정: A6-10 은 중분류 근로권익·체불구제(A6)라 첫만남이용권(A1 지원금·수당)에 맞지 않았다 — 최대 번호만 보고 붙였고 topicprop table·중분류 대조를 안 했다. 이부장이 dro"
   },
   "ledger1030": {
    "reads": 4,
@@ -4558,8 +4558,8 @@
    "last_read": "2026-11-07 11:32:38",
    "owner": "이과장(작업 세션)",
    "state": "working",
-   "last_report": "2026-11-07 12:10:32",
-   "last_what": "C3-11 발행 완료 확인(run 42332435793 success, 03:09Z 러너 커밋 cfc45de5f, 라이브 URL blog-post_07, 사장님 채팅 허용으로 이부장이 gh 실행) — 후속: sync"
+   "last_report": "2026-11-07 14:18:05",
+   "last_what": "C3-11 네이버 원고·서식본·460n 썸네일 완료, Aside 대기열 1107141747167_C3-11_naver 등록. 쓰레드·인스타는 네이버 게시 뒤. 검색설명은 postId 가 status 에 없어 sync"
   },
   "tower1107": {
    "state": "working",
@@ -4568,15 +4568,32 @@
    "last_what": "A1-14 고시번호 점검 결과: 본문 정확(제2025-1호), 미래형 문구만 낡음 — docs/source_A1-14_고시_20261107.md"
   },
   "catrend1107": {
-   "reads": 2,
-   "reads_since_report": 1,
+   "reads": 3,
+   "reads_since_report": 2,
    "last_order_at": "2026-11-07 12:29:07",
-   "last_read": "2026-11-07 13:41:56",
+   "last_read": "2026-11-07 14:17:40",
    "owner": "3.",
-   "state": "working",
+   "state": "waiting",
    "last_report": "2026-11-07 12:43:46",
-   "last_what": "11-07 13:3x ①CA 트렌드 주제 32/32·성별연령 22/22 읽음(기준 11-06·1080줄·실패 0; 화면은 관심주제 3개만 로딩 — 같은 GET API 를 전체 주제로 직접 호출) ②서치어드바이저 사이"
+   "last_what": "11-07 13:3x ①CA 트렌드 주제 32/32·성별연령 22/22 읽음(기준 11-06·1080줄·실패 0; 화면은 관심주제 3개만 로딩 — 같은 GET API 를 전체 주제로 직접 호출) ②서치어드바이저 사이",
+   "waiting_since": "2026-11-07 14:17"
+  },
+  "draft1107g415": {
+   "reads": 1,
+   "reads_since_report": 1,
+   "last_order_at": "2026-11-07 14:10:35",
+   "last_read": "2026-11-07 14:11:35",
+   "owner": "이과장",
+   "state": "working"
+  },
+  "draft1107a610": {
+   "reads": 1,
+   "reads_since_report": 1,
+   "last_order_at": "2026-11-07 14:14:09",
+   "last_read": "2026-11-07 14:18:49",
+   "owner": "이과장",
+   "state": "working"
   }
  },
- "updated": "2026-11-07 13:54"
+ "updated": "2026-11-07 14:21"
 }
