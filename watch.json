@@ -21860,6 +21860,38 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "deepread-sokcho-yangmiri-1107",
+   "added": "2026-11-07",
+   "what": "속초 양미리축제 2026 공식 원문 읽기(일정·장소·입장·주차·프로그램)",
+   "due": "2026-11-08",
+   "cmd": "ls docs/source_속초양미리축제_20261107.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-07",
+   "result": "속초시청 보도자료(2026-11-04 등록) 원문 읽음: 11/6~15 속초항 이마트 앞 주차장 일원, 주최 속초시수산업협동조합. 입장·가격·주차·시간·문의처 원문 없음 → docs/source_속초양미리축제_20261107.md"
+  },
+  {
+   "id": "routine-newrule-effect-1108",
+   "added": "2026-11-07",
+   "what": "새 지침 효과 판정(11-08): 2번 09:00·4번 21:00·6번 23:55 장부에서 ① 연 기관 이름에 시·도 ② 원문=인용 source 파일 수(11-08부터 적용) ③ deepread 위임 ④ kwgap --trend/--sa 인용. 11-07 21:13 4번은 trend 3건 사용·원문 0·deepread 위임 안 함(🟡)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.routinedepth --days 1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "sokcho-yangmiri-price-time-1107",
+   "added": "2026-11-07",
+   "what": "속초 도루묵·양미리 축제 2026 개장시간·가격·주차·문의처 원문 미공개(보도자료 본문 없음)",
+   "due": "2026-11-10",
+   "cmd": "ls docs/source_속초양미리축제_20261107.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
