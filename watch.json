@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "items": [
   {
    "id": "intro-numbers",
@@ -21939,6 +21939,46 @@
    "kind": "approve",
    "state": "todo",
    "by": "세션:8dfb375f"
+  },
+  {
+   "id": "confirm-a125-1108",
+   "added": "2026-11-07",
+   "what": "A1-25 완료 확인(batchboard confirm pub1107a125): 색인요청 #672 결과·gsc_log 기록·제휴검토 결론 확인 후 닫기. B4-30 도 네이버→인스타→쓰레드 순서 게시 후 같은 방식",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.autoflow",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-b430",
+   "added": "2026-11-07",
+   "what": "🔗 B4-30 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-30",
+   "due": "2026-11-08",
+   "cmd": "python studio/blogger.py crosslink --code B4-30",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "b430-seodesc-set-1108",
+   "added": "2026-11-07",
+   "what": "B4-30 검색설명 라이브 확인 뒤 기록",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.seodesc scan --only B4-30 && python -m studio.seodesc set --code B4-30 --text \"가지급금 인정이자율 4.6%는 예외이고 원칙은 회사의 가중평균차입이자율입니다. 4.6%를 쓰는 3가지 경우와 1억 원 계산 예시, 선택 시 3개 사업연도 적용까지 정리했습니다.\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "idxreq-b430-0108",
+   "added": "2026-11-08",
+   "what": "B4-30 GSC 색인요청: 이과장 초안(docs/aside_drafts/B4-30_색인요청.txt) 있으나 00:07 Aside 대기열 비어 있음 — 등록·접수 확인 후 gsc_log add B4-30",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
