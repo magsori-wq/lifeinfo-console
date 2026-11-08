@@ -23212,7 +23212,7 @@
   {
    "id": "xlink-a519",
    "added": "2026-11-08",
-   "what": "🔗 A5-19 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-19",
+   "what": "🔗 A5-19 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-19",
    "due": "2026-11-08",
    "cmd": "python studio/blogger.py crosslink --code A5-19",
    "owner": "claude",
@@ -23240,6 +23240,16 @@
    "owner": "user",
    "state": "todo",
    "kind": "approve",
+   "by": "이부장"
+  },
+  {
+   "id": "a519-crosslink-index-1108",
+   "added": "2026-11-08",
+   "what": "A5-19 라이브 교차링크 삽입(블로그스팟 본문에 네이버·인스타·쓰레드 URL)과 GSC 색인요청 Aside 등록 확인",
+   "due": "2026-11-08",
+   "cmd": "curl -s -A Mozilla/5.0 https://lifeinfo8975.blogspot.com/2026/11/250-20-102-5.html | grep -c 224469563380; python -m studio.asidequeue list; ls docs/aside_drafts | grep A5-19_색인",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
