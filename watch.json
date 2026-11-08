@@ -23560,8 +23560,10 @@
    "due": "2026-11-20",
    "cmd": "업무편람 pdf 에서 '분할' 검색(다운로드 허락 후) 또는 1350/관할 고용센터 통화(일시·담당 기록). 근거 docs/source_육아기단축분할확정_20261109.md 4절",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-09",
+   "result": "편람 열람 성공(2차 시도) — 분할 구간 재제출·기산 문구는 편람에도 없음. 재등록"
   },
   {
    "id": "v0re-d315-1109",
@@ -23572,6 +23574,36 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "v0-g207-1109",
+   "added": "2026-11-09",
+   "what": "G2-07 양산도시철도 운임 V0 검사 진행(검사관)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.v0check ask --code G2-07",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "ui-split-leave-docs-1109b",
+   "added": "2026-11-09",
+   "what": "육아기단축분할: 분할 구간마다 급여 확인서 재제출·12개월 기산(구간 종료일 vs 전체 종료일) 공식문구 없음. 시도=시행규칙116·118조, 고용24, MOEL 빠른상담5건, FAQ pdf 42쪽, 생활법령2건, 업무편람2025 단축장(PDF273~309쪽). 편람에 없음 확인",
+   "due": "2026-11-20",
+   "cmd": "1350 또는 관할 고용센터 모성보호급여 담당 통화(일시·담당 기록) 후 docs/source_육아기단축분할확정_20261109.md 4절 갱신",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deploy-thumb-473",
+   "added": "2026-11-09",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(473_yangsan_fare.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-09",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
