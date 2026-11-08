@@ -22285,8 +22285,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.v0check gate --code D4-15",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "수정 원고 직접 확인→v0 pass→rv sync→deploy→결재함 등록"
   },
   {
    "id": "report-h138-done-0108",
@@ -22377,6 +22379,36 @@
    "state": "todo",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "youth-firstjob-budget-1108",
+   "added": "2026-11-08",
+   "what": "청년 첫 취업지원제도 3,793억(16만 명)은 2027 예산안 편성 단계 — 국회 심의 뒤 신청 기한·대상 공고 여부 미확인. 중복: A1-06 내일배움카드 주제 겹침, 첨부 pdf 8쪽 미판독",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.watch show youth-firstjob-budget-1108 ; 고용노동부 보도자료 enewsList.do 에서 청년 첫 취업지원 공고 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:88b7f3b1"
+  },
+  {
+   "id": "credit-margin-exempt-end-1108",
+   "added": "2026-11-08",
+   "what": "신용융자 담보비율 140% 3개월 면제 — 종료일·증권사 적용범위 원문 미확인(source_신용융자담보비율_20261108.md)",
+   "due": "2026-11-09",
+   "cmd": "curl -sL -A Mozilla/5.0 https://www.fsc.go.kr/no010101/88100 | grep -c 3개월간",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:88b7f3b1"
+  },
+  {
+   "id": "docflow-1108-b225",
+   "added": "2026-11-08",
+   "what": "B2-25 선별(pick) 후 verify; 종료일·증권사 적용범위 source 확정 필요",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:88b7f3b1"
   }
  ]
 }
