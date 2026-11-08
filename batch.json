@@ -2028,6 +2028,28 @@
      "date": "2026-11-09",
      "at": "2026-11-09 07:12",
      "actor": "미상:e67ad099"
+    },
+    {
+     "code": "daily-email-briefing-1109",
+     "title": "daily-email-briefing (A)",
+     "state": "done",
+     "note": "11-09 08:08 메일 브리핑 — 🟢 사장님 할 일 없음. 애드센스 사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정, 11-08 결정). 새 중요 메일: 구글 커뮤니티 답변 2건 본문 확인(Blogger 골드PE Abel D.: 애드센스 자격은 Blogger와 별개, 반복 'Low value content' 반려이니 전반 품질 개선 후 재요청 권고 — 구체 지적 페이지 없음 / 애드센스 다이아PE 붉은여우: '이 곳은 고객센터가 아님' 안내뿐, 구체 지적 없음) = 이미 11-08 보고분, 신규 없음. GitHub: lifeinfo-console pages 배포실패 11-06~07 6건·정합성검사 실패 1건(11-07) → 최신 11-08 21:37~22:41 run 전부 success 복구 확인. 신규 메일은 Google 뉴스 브리핑(8975 전달)·광고뿐. 점검: magsori 14건·m8975 0·aroma 0(평소 상태), 8975 전달 작동(Google뉴스 1건 확인). GSC 종류 전달 미확인(🔴 아님).",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing",
+     "date": "2026-11-09",
+     "at": "2026-11-09 08:07",
+     "actor": "미상:0d334e9c"
+    },
+    {
+     "code": "daily-email-briefing-1109-1109",
+     "title": "daily-email-briefing-1109 (A)",
+     "state": "done",
+     "note": "11-09 08:08 메일 브리핑 — 🟢 사장님 할 일 없음. 애드센스 사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 구글 커뮤니티 답변 2건 본문 확인(기보고): Blogger 골드PE Abel D.=애드센스 자격은 Blogger와 별개, 반복 Low value content 반려이니 품질 개선 후 재요청 권고, 구체 지적 페이지 없음 / 애드센스 다이아PE 붉은여우=고객센터 아님 안내뿐. GitHub lifeinfo-console 배포실패 11-06~07 6건·정합성검사 1건 → 11-08 21:37~22:41 run 전부 success 복구. 신규는 Google뉴스(8975 전달)·광고뿐. 점검: magsori 14·m8975 0·aroma 0, 8975 전달 작동.",
+     "auto_daily": true,
+     "base_code": "daily-email-briefing-1109",
+     "date": "2026-11-09",
+     "at": "2026-11-09 08:07",
+     "actor": "미상:0d334e9c"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -5602,7 +5624,7 @@
    "order_at": "2026-11-09 06:37:25"
   }
  },
- "updated": "2026-11-09 07:28:30",
+ "updated": "2026-11-09 08:07:15",
  "current": {
   "batch": "aside",
   "code": "",
@@ -5613,6 +5635,16 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "08:07:15",
+   "text": "✅ daily-email-briefing-1109-1109 완료 — daily-email-briefing-1109 (A)",
+   "actor": "미상:0d334e9c"
+  },
+  {
+   "t": "08:07:04",
+   "text": "✅ daily-email-briefing-1109 완료 — daily-email-briefing (A)",
+   "actor": "미상:0d334e9c"
+  },
   {
    "t": "07:28:30",
    "text": "✔ 이부장 ack r0e793a",
@@ -5801,16 +5833,6 @@
   {
    "t": "04:30:35",
    "text": "▶   — 1/7단계 · AM-PE-009 V0 2차 REVISE 84(필수: 핵심박스 중복=내 치환 실수) 수정 완료(박스 복원·비교표 「티켓오픈 공연 기간(11/11 판매분)」 행 추가). 3차 확인 진행 중, PASS 시 재결재 상정",
-   "actor": "이대리"
-  },
-  {
-   "t": "04:27:57",
-   "text": "▶   — 1/7단계 · AM-PE-009 2차 개정(서울 11/11 오픈=1/21~1/24 VIP 6회뿐 반영, 제목 47자, 썸네일 재제작) 완료 → 재V0 진행 중. 통과 시 재결재 상정(오픈 11/11 14시 전)",
-   "actor": "이대리"
-  },
-  {
-   "t": "04:27:14",
-   "text": "▶   — 1/7단계 · AM-PE-009 개정본 V0 REVISE 82: 필수 ①서울 11/11 오픈은 NOL 「티켓오픈 공연기간 1/21~1/24」 6회(VIP 한정)뿐인데 글이 서울 68회 전체 오픈처럼 읽힘 ②소제목 날짜 통일. 수정 중 → 재V0 → 재결재 상정",
    "actor": "이대리"
   }
  ],
