@@ -1,14 +1,64 @@
 {
- "computed_at": "2026-11-08 12:49:19",
- "source_head": "3b46f049a3f3",
+ "computed_at": "2026-11-08 04:04:10",
+ "source_head": "db7603c6c224",
  "ids": [
   "B2-25",
   "D4-15",
   "D5-11",
-  "boss-sec-notices-0108",
-  "deploy-thumb-469"
+  "boss-sec-notices-0108"
  ],
- "posts": [],
+ "posts": [
+  {
+   "code": "B2-25",
+   "title": "신용융자 담보비율 140% 면제 11월 9일 시행 — 반대매매를 막아주나, 내 증권사 확인법",
+   "slug": "신용융자담보비율면제",
+   "eng": "credit_margin",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_신용융자담보비율면제.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/468_credit_margin.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_신용융자담보비율면제.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_신용융자담보비율면제.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  }
+ ],
  "publish": [
   {
    "code": "D4-15",
@@ -38,35 +88,8 @@
    "light": "ready"
   },
   {
-   "code": "B2-25",
-   "title": "신용융자 담보비율 140% 면제 11월 9일 시행 — 반대매매를 막아주나, 내 증권사 확인법",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 신용융자담보비율면제_글_HTML.txt",
-     "path": "신용융자담보비율면제_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/468_credit_margin.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/468_credit_margin.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "ready"
-  },
-  {
    "code": "D5-11",
-   "title": "산에서 불 피우면 과태료 300만원 — 11월 13일부터 달라지는 산불 과태료 (불 피움·담배)",
+   "title": "산에서 불 피우면 과태료 최대 300만원 — 11월 13일부터 달라지는 산불 과태료 (불 피움·담배)",
    "go": false,
    "v0": null,
    "files": [
@@ -98,14 +121,6 @@
    "what": "1번 루틴 브리핑(08:08) 🟡 두 건 — ① GitHub 'Claude' 앱 권한 갱신 요청 11-06부터 미처리(수락/무시, github.com/settings/installations/108936792/permissions/update) ② 카카오 비밀번호 변경 알림 11-06 12:28 Windows/Chrome 카카오인증서 — 본인 작업이 아니면 재설정. 둘 다 사장님 계정 일이라 세션이 못 한다",
    "due": "2026-11-08",
    "cmd": "start \"\" \"https://github.com/settings/installations/108936792/permissions/update\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-469",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(469_wildfire_fine.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-08",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
