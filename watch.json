@@ -22879,8 +22879,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "#720 접수 1/1 (18:38)"
   },
   {
    "id": "adsense-rejreview-1108",
@@ -23104,6 +23106,16 @@
    "added": "2026-11-08",
    "what": "이과장 v0fix1108a519 보고→이부장이 5곳 반영 grep 확인→v0 재검사 또는 직접 확인→v0check pass→deploy→결재",
    "due": "2026-11-08",
+   "cmd": "python -m studio.batchboard order --id v0fix1108a519",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "order-register-verify-1108",
+   "added": "2026-11-08",
+   "what": "지시서 등록은 출력 끝줄이 아니라 [OK] 줄·order 재조회로 확인(11-08 v0fix1108a519·adsense4_1108 가 17:53~18:35 미등록이었음 — 새 배치는 batchboard set 먼저)",
+   "due": "2026-11-09",
    "cmd": "python -m studio.batchboard order --id v0fix1108a519",
    "owner": "claude",
    "state": "wait",
