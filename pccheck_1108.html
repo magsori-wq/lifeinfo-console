@@ -40,7 +40,7 @@ li{margin:3px 0}
 <body>
 <main>
 <h1>PC 점검 보고서</h1>
-<div class="meta">측정 11-07 18:45 ~ 11-08 07:50 · 작성 PC 점검 세션 · 원자료 data/pccheck_1107.csv · data/pccheck_claude_effect_1107.md · data/pccheck_aside_1108.txt</div>
+<div class="meta">측정 11-07 18:45 ~ 11-08 07:50 · 개선효과 13:04 · 작성 PC 점검 세션 · 원자료 data/pccheck_1107.csv · data/pccheck_claude_effect_1107.md · data/pccheck_aside_1108.txt</div>
 
 <section class="card lead">
 <h2>결론</h2>
@@ -129,6 +129,22 @@ li{margin:3px 0}
 <li>원인: PC 점검 창을 여는 resume_pccheck.bat 이 옛 콘솔(파란 PowerShell 창)을 띄웠습니다.</li>
 <li>조치: Windows Terminal 로 열도록 변경(옛 방식은 예비로 남김) · 커밋 f07ee85ac.</li>
 <li>확인: 07:23 캡처에서 겹침 0 · 입력칸 1개 · 이모지 정상 · 관리자 권한 표시.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>8. 처리 후 개선효과 (11-08 13:04 측정)</h2>
+<div class="stats">
+<div class="stat"><b>67%</b><span>메모리 사용 28.6GB / 한도 42.7GB (최고 92%)</span></div>
+<div class="stat"><b>5.8GB</b><span>남은 실제 메모리 (최저 35MB · 04:23 1.1GB)</span></div>
+<div class="stat"><b>40%</b><span>CPU · 처리 대기 0.3개 (최고 100% · 31개)</span></div>
+</div>
+<ul>
+<li>제가 한 처리: 화면 겹침 수정(효과 확인) · 엔진 상황실 탭 닫기(Aside 메모리에는 효과 없음 — 21분 +214MB 계속 증가).</li>
+<li>메모리 권고 1~4(Aside 껐다 켜기 등)는 승인 대기라 실행하지 않았습니다.</li>
+<li>그런데도 메모리가 크게 좋아졌습니다. 무엇이 메모리를 돌려줬는지(Aside 재시작·창 닫기 등)는 확인 못 했습니다 — 프로그램별 재조회는 사장님 허용이 다시 필요합니다.</li>
+<li>한도가 39.8→42.7GB 로 늘었습니다(Windows 가 가상 메모리 파일을 자동으로 키운 것으로 보이나 확인 못 함).</li>
+<li>디스크로 넘기기는 아직 초당 약 1,500회 — 0 은 아닙니다.</li>
 </ul>
 </section>
 
