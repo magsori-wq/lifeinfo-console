@@ -23702,6 +23702,68 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "fuel1030-deep3-0909",
+   "added": "2026-11-09",
+   "what": "FUEL-3 deepread 3건(소상공인15만원·채널A토일드라마·제주자전거수첩) 회수 → 1편 제안",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_소상공인15만원_20261109.md docs/source_채널A토일드라마_20261109.md docs/source_제주자전거수첩_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-09",
+   "result": "에이전트 3건 회수·커밋 bfffdce0e — 제안 0편(모두 중복·근거 미확보)"
+  },
+  {
+   "id": "jeju-bicycle-booklet-1109",
+   "added": "2026-11-09",
+   "what": "제주 자전거 수첩: 원문상 같은 국토종주 수첩(F4-15 주제 중복). 제주 판매처 saleYN=Y 는 제주공항 1곳. 제주공항 전화 1577-4359 vs 010-7235-9832 불일치, 제주공항 도장 완주 인정 여부 원문 불일치(S1 목록 없음 / S9 인증 O)",
+   "due": "2026-11-16",
+   "cmd": "curl -s -H 'Referer: https://www.riverguide.go.kr/kor/cycleIntroduceCertificationCenter.do?menuIdx=254' 'https://www.riverguide.go.kr/kor/ajaxGetCertCenterListWithCourse.do?courseID=66' | python -c \"import json,sys;[print(r['centerName'],r['saleYN'],r['tel']) for r in json.load(sys.stdin)]\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "sojanggong15-src-1109",
+   "added": "2026-11-09",
+   "what": "소상공인 15만원 심층독해: 공식 제도 미특정. 후보 A 고유가 피해지원금 15만원은 기발행 A1-02 와 주제 중복·신청 7/3·사용 8/31 종료. 후보 B 네이버 예약루키 15만원(12/7까지)은 민간이며 네이버 공식 공지 미확인. 파일 docs/source_소상공인15만원_20261109.md",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck 소상공인 15만원",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "chA-weekend-drama-check-1115",
+   "added": "2026-11-09",
+   "what": "채널A 토일드라마 신작 첫방 미확인 · 편성표 11.14까지 토일 드라마 0 · 너에게 다이브 종영 공지 미확인(방영목록과 엇갈림)",
+   "due": "2026-11-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://www.ichannela.com/com/cmm/schedule.do?selectedDate=20261115\" --wait 7 --max 7000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "a520-draft-read-1109",
+   "added": "2026-11-09",
+   "what": "A5-20 초안 지시서(draft1109a520) 이과장이 읽었는가 — 06:30 깨움, 3시간 미독",
+   "due": "2026-11-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('draft1109a520'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-474",
+   "added": "2026-11-09",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(474_childcare_split.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-09",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
