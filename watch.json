@@ -23380,8 +23380,10 @@
    "due": "2026-11-10",
    "cmd": "ls docs/source_양산선운임개통_20261109.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "출처관"
+   "state": "done",
+   "by": "출처관",
+   "done_at": "2026-11-09",
+   "result": "docs/source_양산선운임개통_20261109.md 작성: 양산시 09-17 최종운임 확정·경남도 07-20 원문 확보, 개통일 12월 30일은 공식 미확인"
   },
   {
    "id": "keyword-first-flow-1109",
@@ -23422,6 +23424,57 @@
    "owner": "user",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "d4-04-rain-refund-src-1109",
+   "added": "2026-11-09",
+   "what": "D4-04 원고의 우천취소 환불 문구(전액 자동환불·카드 3~5일·직접취소 10%) 1차 미확인 — docs/source_우천교환권_20261109.md 6절",
+   "due": "2026-11-15",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://www.koreabaseball.com/Main/PopRainCancel.aspx",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "wucheon-exchange-primary-1109",
+   "added": "2026-11-09",
+   "what": "우천교환권 — 우리말샘 정의만 1차. 구단·NOL 우천 교환·환불 공지 본문 미확보(docs/source_우천교환권_20261109.md 9절)",
+   "due": "2026-11-15",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://opendict.korean.go.kr/search/searchResult?query=우천+교환권",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "cgv-741-src-1109",
+   "added": "2026-11-09",
+   "what": "CGV 스피드쿠폰 공식 상세 미확인(홈·이벤트 본문에 이름 없음) · 울산 741 명시 공지 없음(10-01~10-20 공지 미확인)",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py https://www.cgv.co.kr/cgvnotice/ --wait 6 --max 4000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "kw-geon-3yr-yuye-1109",
+   "added": "2026-11-09",
+   "what": "독자검색어 「건강보험3년유예」(11-07 1건): 임의계속가입(법 제110조, 1차 확인)과 기발행 C1-11 주제중복. 「최대 36개월」 시행령 기간·복지부령 1년 기준 미확인",
+   "due": "2026-11-16",
+   "cmd": "grep -n 36 C:/lifeinfo/docs/source_건강보험3년유예_20261109.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "aroma-am-sp-011-rev-1109",
+   "added": "2026-11-09",
+   "what": "【권고】AM-SP-011 한국시리즈 허브(라이브 224469585985)에 우승 뒷이야기(MVP 구자욱·최형우 7번째 반지·강민호·박진만)·기록(정규 2위 첫 우승, KT 90승 1위 패배, 5차전 매진)·KT 패인 3개 섹션 추가, 제목 「2026 한국시리즈 총정리 — 삼성 우승(4승 1패), MVP 구자욱·KT 패인」. 기사 4건 대조, V0 REVISE 84 필수수정 2건 반영. 기존 사진 2·영상 1 유지 【근거】사장님 11-09 지적 「누가 이글을 읽겠냐, 뻔한 글 아닌가」 【위험】수정 전 라이브 본문 백업 후 교체, 빠지는 블록 있으면 중단·보고. 상금·세리머니는 미확인으로 명시",
+   "due": "2026-11-09",
+   "cmd": "승인 시 이대리가 제목·본문 교체 후 라이브 확인",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
