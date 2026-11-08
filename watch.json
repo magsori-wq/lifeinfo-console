@@ -23048,8 +23048,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.autoflow 2>&1 | grep F4-31",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "19:20 deploy.bat 로 묶음 배포(F4-31·A5-19)"
   },
   {
    "id": "f431-crosslink-index-1108",
@@ -23110,8 +23112,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.batchboard order --id v0fix1108a519",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "재검사 🟢 도장 19:19"
   },
   {
    "id": "order-register-verify-1108",
@@ -23131,6 +23135,17 @@
    "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('v0fix1108a519'),s.read_info('adsense4_1108'))\"",
    "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-edit-batch1-1108",
+   "added": "2026-11-08",
+   "what": "🙋 애드센스 7차 반려 반영 1차 — 기존 글 5편 보강 승인 (4.세션 재검토 §4, 근거 docs/애드센스_반려재검토_20261108.md). 대상: D1-01 정부24 등본·E2-01 유튜브 프리미엄 해지·A4-04 긴급복지지원(수치 의존 낮음, 경로 비교·함정·탈락사유 보강) + H1-18 키드냅 게임(시한 지남)·G4-02 7월 제철(시즌 지남) 갱신 또는 정리 판단. 수치가 들어가는 4편(A1-05·B3-03·D2-05·B4-01)은 source 확인 뒤 2차. 【권고】1차 5편만 승인(되돌림=수정 전 스냅샷, dry-run→미리보기→이부장 확인 뒤 라이브). 【근거】7차까지 사유가 같고 편수·신규 발행은 효과가 없었다(재검토 §3) — 확인사항 ①고품질 정보 쪽은 본문 V0 요소 0개인 52편 중 낮은 쪽부터 고치는 것이 유일하게 안 해 본 처방이다. 【위험】기존 글 라이브 수정(되돌릴 수 없는 일은 아니나 심사 중 변수 추가), 승인 확률은 오르지 않을 수 있음(11-08 16:20 「애드센스 전용 추가 투자 없다」 방침과 16:26 「수정사항 반영」 지시의 절충안 — 5편 이내). 승인하시면 이과장 지시서로 내립니다.",
+   "due": "2026-11-12",
+   "cmd": "승인: adsense-edit-batch1-1108",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
    "by": "이부장"
   }
  ]
