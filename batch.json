@@ -2019,6 +2019,17 @@
      "date": "2026-11-08",
      "at": "2026-11-08 08:08",
      "actor": "미상:e5e9f68f"
+    },
+    {
+     "code": "lifeinfo-publish-1108",
+     "title": "lifeinfo-publish (C)",
+     "state": "done",
+     "note": "11-08 루틴3 — 발행 트리거 없음: 큐 1건(D4-15) ⑦ 승인 도장 없음(CP 결재 대기 중, 중복 등록 안 함)·V0 🟡조건부(필수 4건 보강 대기). 오늘 3편 발행 완료·run 진행 없음. 이어받은 것: 결재함 D4-15 기등록 / 새로 본 것: 도장 없음",
+     "auto_daily": true,
+     "base_code": "lifeinfo-publish",
+     "date": "2026-11-08",
+     "at": "2026-11-08 09:03",
+     "actor": "미상:59aabfc4"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -5020,7 +5031,7 @@
    "order_at": "2026-11-08 07:06:13"
   }
  },
- "updated": "2026-11-08 08:58:29",
+ "updated": "2026-11-08 09:03:36",
  "current": {
   "batch": "aside",
   "code": "",
@@ -5031,6 +5042,11 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "09:03:36",
+   "text": "✅ lifeinfo-publish-1108 완료 — lifeinfo-publish (C)",
+   "actor": "미상:59aabfc4"
+  },
   {
    "t": "08:58:29",
    "text": "🏁 draft1108d415 이부장 확인 — 끝남",
@@ -5225,11 +5241,6 @@
    "t": "07:08:07",
    "text": "✔ 이부장 ack r3fbf70",
    "actor": "이부장"
-  },
-  {
-   "t": "07:06:47",
-   "text": "▶  PC 점검 세션 — 9/7단계 · 07:06 Aside 확인: 본체 3,773MB(06:45)→3,856MB(07:06) 21분 +83MB · 프로세스 = 본체2·탭화면 15·확장 8·GPU 1·기타 6 · 탭 5개 vs 탭화면 15개(10개 미확인) · CP탭 30·60초 갱신, 엔진상황실 1초 tick·20초 load(코드 확인) · 우리 코드에 누수 경고 방식 0건",
-   "actor": "미상:cf890880"
   }
  ],
  "currents": {
