@@ -22803,8 +22803,10 @@
    "due": "2026-11-15",
    "cmd": "python -m studio.adsense status",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "사장님 16:19 지시로 11-15 재요청 계획 확정(adsense-rerun-1115 로 교체)"
   },
   {
    "id": "v0-f431-fix-0108",
@@ -22842,6 +22844,66 @@
    "what": "블로그스팟 제휴(신규 글부터) 도구 구현 진행(fixer 에이전트): affiliate blogspot 채널·HTML 블록·테스트 → 이부장이 diff·테스트 직접 확인 후 경로 지정 커밋 → 페이블 독립 검증 → 이과장 지시서에 '신규 블로그스팟 글 제휴 블록 부착' 규칙 반영(초안 단계, 관련성 있는 글만·2개·문구 맨 앞). 11-15 재요청과 충돌 시 그날 재판단",
    "due": "2026-11-09",
    "cmd": "python -m studio.affiliate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fix-affiliate-blogspot-1108",
+   "added": "2026-11-08",
+   "what": "affiliate.py 블로그스팟 채널 추가(CHANNELS·CHANNEL_NAME·blogspot_html HTML 블록, 문구 맨 앞·rel·이스케이프·2개 상한) + 단위테스트 9개. unittest 264 OK · validate_db FAIL 0. 남은 것: studio/layout.py:159 SHOP_PAT 게이트가 블로그스팟 초안의 제휴 링크를 아직 막음(임무 밖이라 미수정) · 커밋은 이부장",
+   "due": "2026-11-09",
+   "cmd": "python -m unittest tests.test_studio_pure.TestAffiliateBlogspot && python -m studio.affiliate block --code F1-15 --channel blogspot | head -8",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-rerun-1115",
+   "added": "2026-11-08",
+   "what": "👤 사장님 11-08 16:19 「15일 재요청해!」·16:20 「에드센스 승인에 집착하지 말자」 — 11-15 에 이부장 지시서로 Aside 가 애드센스 사이트 화면의 검토 요청 버튼을 1회 누른다(사장님 계정, 먼저 읽기로 버튼 활성·안내문 확인 → 문제 해결 확인 체크 → 검토 요청). 지시서 초안 docs/aside_drafts/ADSENSE_재요청_1115.txt 를 11-14 에 준비(제출 후 스크린샷·상태 보고 포함). 추가 투자(기존 글 대규모 보강·사이트 재검토) 금지, 제휴·신규 발행은 미루지 않음. 판정은 ~11-25(추정)",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.adsense status",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "idxretry-d511-0108",
+   "added": "2026-11-08",
+   "what": "D5-11 색인요청 #711 Google 일시 오류('제출 중 문제 발생', 할당량 문구 아님, 16:19) → 약 2시간 뒤 18:20 이후 같은 초안 docs/aside_drafts/D5-11_색인요청.txt 로 재등록 1회(이과장), 접수되면 gsc_log add D5-11. 내일로 미루지 않고 2시간 간격",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-rejreview-1108",
+   "added": "2026-11-08",
+   "what": "4.세션 애드센스 7차 반려 재검토 보고(docs/애드센스_반려재검토_20261108.md) 읽고 승인 범위 지시 — 사장님 11-08 16:26",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.batchboard order --id adsense4_1108",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-fullreview-ifreject",
+   "added": "2026-11-08",
+   "what": "또 반려되면 애드센스 승인검토 전면 재검토 착수 — 사장님 11-08 16:26 (설계안=4.세션 재검토 문서 ⑤)",
+   "due": "2026-11-26",
+   "cmd": "python studio/adsense.py status",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-feedback-req-1108",
+   "added": "2026-11-08",
+   "what": "Aside #712 애드센스 7차 반려 피드백 요청 결과(경로·접수 여부) 확인 — 사장님 16:27",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
