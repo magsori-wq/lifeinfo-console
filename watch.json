@@ -22571,8 +22571,21 @@
    "cmd": "python -m studio.threadsdraft --solo 20261108-oyster",
    "owner": "user",
    "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "사장님 채팅 「생굴 승인, 이부장 고정 권고대로 해줘」 13:20 — 이부장 회수 · 채팅 승인 회수(이부장 CLI)"
+  },
+  {
+   "id": "everland-qpass-official-1108",
+   "added": "2026-11-08",
+   "what": "에버랜드 공식 큐패스 가격·구매 경로 미확인(메뉴 클릭 실패) · 종일권 인상 2026-10-06 날짜 공식 원문에서 못 찾음 · 인사이트 기사 날짜 2023.03.27(브리프 2026-10-22 와 다름)",
+   "due": "2026-11-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py https://www.everland.com/everland/promotion/usage-fee --wait 8 --max 6000",
+   "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "note": 0,
+   "by": "3.분석"
   }
  ]
 }
