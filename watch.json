@@ -22445,6 +22445,56 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "sanbul-ipsan-1108",
+   "added": "2026-11-08",
+   "what": "산불조심기간 입산통제·차량진입·과태료 원문 심층독해(11-08) 진행 — 원문 확인 전",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_산불조심기간입산통제_20261108.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "dup-a5-17-jobad-1108",
+   "added": "2026-11-08",
+   "what": "허위구인광고 직업안정법 심층독해(11-08): 기발행 A5-17(블로그 10-12, 네이버·인스타·쓰레드 10-25)과 같은 법·같은 시행일 주제 중복, dupcheck 미탐. 벌금 5천만은 A5-17 네이버초안에도 있음. 신규 글 아님. 근거 docs/source_허위구인광고직업안정법_20261108.md",
+   "due": "2026-11-09",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"허위 구인광고 벌금 직업안정법 개정\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석"
+  },
+  {
+   "id": "jobad-enforce-decree-1108",
+   "added": "2026-11-08",
+   "what": "직업안정법 시행령·시행규칙 개정안(입법예고 9/22~11/2) 공포 여부와 거짓 구인광고 범위·신고 창구 원문 미확인. 시행일 2026-12-10 전 확인 필요",
+   "due": "2026-11-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"print('moel 보도자료 검색 직업안정법 시행령 공포 여부를 Aside로 확인')\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "sanbul-src-mismatch-1108",
+   "added": "2026-11-08",
+   "what": "사장님 지정 ②(newsId=148955123)는 2025.11.24 기사(2025 기간 10.20~12.15). 2026 대책은 ①(148974453, 10.28). 2026 입산통제 공고 첨부 hwpx(153101 byte) 미개봉",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_산불조심기간입산통제_20261108.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "sanbul-dup-D3-08-1108",
+   "added": "2026-11-08",
+   "what": "산불 과태료 11/13 인상 — D3-08 주제 중복. 보강 vs 각도 분리 글 중 이부장 판정 필요 (근거: docs/source_산불조심기간입산통제_20261108.md 7·8절)",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.dupcheck \"산불조심기간 과태료 300만원\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
