@@ -23535,9 +23535,11 @@
    "due": "2026-11-09",
    "cmd": "python -m studio.v0check gate --code D3-15",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검 🟢: R1 아파트등 한정+빌라·단독 확인못함 명시, R2 과태료 부과대상 미확인 3곳 명시, R3 6절 개정본 문장 완화·종전 칸수 확인못함, 가상사례 3유형 21칸 파생·가상 표시, bodydup 0.060,"
   },
   {
    "id": "v0fix-d315-read-1109",
@@ -23547,6 +23549,26 @@
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('v0fix1109d315'))\"",
    "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "ui-split-leave-docs-1109",
+   "added": "2026-11-09",
+   "what": "육아기단축분할: 분할 구간별 급여 서류 재제출·12개월 기산 공식문구 미확보. 시도=시행규칙116·118조, 고용24 제도안내, MOEL 빠른상담5건, FAQ pdf42쪽, 생활법령2건. 미열람=업무편람2025 pdf(bbs_seq=20250401168, 뷰어 안열림, 다운로드는 허락 필요)",
+   "due": "2026-11-20",
+   "cmd": "업무편람 pdf 에서 '분할' 검색(다운로드 허락 후) 또는 1350/관할 고용센터 통화(일시·담당 기록). 근거 docs/source_육아기단축분할확정_20261109.md 4절",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "v0re-d315-1109",
+   "added": "2026-11-09",
+   "what": "D3-15 V0 재검사(R1~R3)",
+   "due": "2026-11-09",
+   "cmd": "cat docs/v0_D3-15_재검사_20261109.md",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
