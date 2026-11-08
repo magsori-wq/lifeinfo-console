@@ -23661,6 +23661,47 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "chain-between-posts-1109",
+   "added": "2026-11-09",
+   "what": "글 사이 이음새 — D3-15 완결(03:42) 뒤 G2-07 후속이 04:20까지 시작 안 됨(이과장은 [체인] 알림이 올 때만 움직임). 앞 글 4채널 완결 신호(POST_COMPLETE)에서 다음 글 후속 지시를 이과장에게 자동 전달하는 마디가 있는지 설계도 대조(enginemap)·leewake 확인",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.enginemap; python -m studio.loopcheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-pe-009-rev-1109",
+   "added": "2026-11-09",
+   "what": "【권고】AM-PE-009 해밀턴 내한 예매 글 가격 반영 개정본 게시. 제목 「해밀턴 내한 11/11 예매 — 부산 7만~22만원, 서울은 첫 주 VIP 22만원뿐」. 이전 승인본(aroma-am-pe-009-approve-1108)의 「가격 공개 전」은 NOL 재확인에서 틀린 것으로 밝혀져 폐기. 개정: 좌석 VIP22만·R18·S14·A10·B7만, 11/11 서울 오픈은 NOL 티켓오픈 공연기간 1/21~1/24 첫 주 6회(1층 VIP 한정)뿐, 부산 12/17~1/16 전 회차. V0 3차 93점(필수 1건=빈 표 껍데기 삭제 후 반영) 【근거】NOL 서울·부산 상품페이지 직접 대조 3회, 11/11 부산 14시·서울 15시 오픈 【위험】오픈 전 게시 필요(늦어도 11/11 13시). 게시 직전 NOL 재확인, 날짜 문구(D-2·확인일) 갱신",
+   "due": "2026-11-10",
+   "cmd": "승인 시 이대리가 게시 직전 NOL 재확인 후 즉시 게시",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
+  },
+  {
+   "id": "xlink-g207",
+   "added": "2026-11-09",
+   "what": "🔗 G2-07 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G2-07",
+   "due": "2026-11-09",
+   "cmd": "python studio/blogger.py crosslink --code G2-07",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "g207-crosslink-index-1109",
+   "added": "2026-11-09",
+   "what": "G2-07 라이브 교차링크 삽입(네이버·인스타·쓰레드 URL)과 GSC 색인요청 Aside 등록 확인",
+   "due": "2026-11-09",
+   "cmd": "curl -s -A Mozilla/5.0 https://lifeinfo8975.blogspot.com/2026/11/16001800.html | grep -c 224469762178; python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
