@@ -22409,6 +22409,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:88b7f3b1"
+  },
+  {
+   "id": "v0-b225-fix-0108",
+   "added": "2026-11-08",
+   "what": "B2-25 V0 수정 반영 확인(v0fix1108b225, 전화번호는 hwpx 직접 확인 여부 점검) → diff 확인 → v0check pass → reviewpage sync → deploy.bat(썸네일 468+rv) → 결재함·카톡(시행 11/9라 오늘 승인 필요)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.v0check gate --code B2-25",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
