@@ -1,17 +1,19 @@
 {
- "computed_at": "2026-11-08 12:42:18",
- "source_head": "276a8b722c6d",
+ "computed_at": "2026-11-08 12:47:48",
+ "source_head": "3b46f049a3f3",
  "ids": [
   "B2-25",
   "D4-15",
-  "boss-sec-notices-0108"
+  "D5-11",
+  "boss-sec-notices-0108",
+  "deploy-thumb-469"
  ],
  "posts": [],
  "publish": [
   {
    "code": "D4-15",
    "title": "스타벅스 프리퀀시 2026 겨울 17잔 12월 31일까지 — 예약·소멸 주의점",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,12 +35,12 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "B2-25",
    "title": "신용융자 담보비율 140% 면제 11월 9일 시행 — 반대매매를 막아주나, 내 증권사 확인법",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -60,6 +62,33 @@
      "exists": true
     }
    ],
+   "light": "ready"
+  },
+  {
+   "code": "D5-11",
+   "title": "산에서 불 피우면 과태료 300만원 — 11월 13일부터 달라지는 산불 과태료 (불 피움·담배)",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 산불과태료11월13일개정_글_HTML.txt",
+     "path": "산불과태료11월13일개정_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/469_wildfire_fine.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/469_wildfire_fine.png",
+     "img": true,
+     "exists": true
+    }
+   ],
    "light": "todo"
   }
  ],
@@ -69,6 +98,14 @@
    "what": "1번 루틴 브리핑(08:08) 🟡 두 건 — ① GitHub 'Claude' 앱 권한 갱신 요청 11-06부터 미처리(수락/무시, github.com/settings/installations/108936792/permissions/update) ② 카카오 비밀번호 변경 알림 11-06 12:28 Windows/Chrome 카카오인증서 — 본인 작업이 아니면 재설정. 둘 다 사장님 계정 일이라 세션이 못 한다",
    "due": "2026-11-08",
    "cmd": "start \"\" \"https://github.com/settings/installations/108936792/permissions/update\"",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "deploy-thumb-469",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(469_wildfire_fine.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
    "kind": "action"
   }
