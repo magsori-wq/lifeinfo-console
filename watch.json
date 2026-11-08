@@ -22741,8 +22741,10 @@
    "due": "2026-11-15",
    "cmd": "python -m studio.chkmon show",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "Fable ✅"
   },
   {
    "id": "deploy-thumb-470",
@@ -22977,7 +22979,7 @@
   {
    "id": "xlink-f431",
    "added": "2026-11-08",
-   "what": "🔗 F4-31 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-31",
+   "what": "🔗 F4-31 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-31",
    "due": "2026-11-08",
    "cmd": "python studio/blogger.py crosslink --code F4-31",
    "owner": "claude",
@@ -23014,6 +23016,88 @@
    "state": "todo",
    "note": 1,
    "by": "3.분석"
+  },
+  {
+   "id": "fuel-parental-split-1108",
+   "added": "2026-11-08",
+   "what": "육아기 단축 분할·급여 source 결과(docs/source_육아기단축급여_20261108.md) 읽고 D5-10 과 독자 질문이 다르면 topicprop 제안→선별, 겹치면 탈락 — 재고 0 연료",
+   "due": "2026-11-08",
+   "cmd": "ls docs/source_육아기단축급여_20261108.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "codecheck-1108-2036f3f06",
+   "added": "2026-11-08",
+   "what": "Fable 검증 결과(docs/검증_fable_layout게이트_20261108.md) 읽고 🔴 있으면 고침, 검증 기록 — 2036f3f06·729387fcc",
+   "due": "2026-11-08",
+   "cmd": "ls docs/검증_fable_layout게이트_20261108.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "Fable 검증 반영 커밋"
+  },
+  {
+   "id": "deploy-after-f431-1108",
+   "added": "2026-11-08",
+   "what": "F4-31 4채널(쓰레드·검색설명·색인) 끝난 뒤 deploy.bat 1회로 github.io 동기(batch·approval_m·fix1102 어긋남 해소) — 연속 push 회피",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.autoflow 2>&1 | grep F4-31",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "f431-crosslink-index-1108",
+   "added": "2026-11-08",
+   "what": "F4-31 교차링크 라이브 삽입(네이버 224469282102·쓰레드 DfeVzJmgab8) 확인 → 색인요청 Aside 큐(이과장 asidequeue). 17:50 에도 미삽입이면 이과장 지시서 갱신",
+   "due": "2026-11-08",
+   "cmd": "curl -s -A Mozilla/5.0 https://lifeinfo8975.blogspot.com/2026/11/11-6500012-55000-71000.html | grep -c 224469282102",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "ui-leave-benefit-unfound-20261108",
+   "added": "2026-11-08",
+   "what": "육아기단축급여 출처 미확보: 2025.12.23 시행령 부칙(경과조치)·분할 구간별 확인서 재제출·12개월 기산점·10h미만 둘째항. 시도: law.go.kr 시행령/시행규칙/법 본문·제개정이유, 고용24, 생활법령, moel 빠른상담, korea.kr 정책뉴스 (docs/source_육아기단축급여_20261108.md 8절)",
+   "due": "2026-11-20",
+   "cmd": "1350 문의(날짜·부서 기록) 또는 law.go.kr 고용보험법시행령 연혁 2025-12-23 개정본 부칙 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "a519-draft-0108",
+   "added": "2026-11-08",
+   "what": "A5-19 육아기 단축 급여 초안(이과장 draft1108a519) → v0 → 결재함 흐름 확인(재고 0 연료)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.batchboard order --id draft1108a519",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a519-v0-1108",
+   "added": "2026-11-08",
+   "what": "A5-19 V0 결과(docs/v0_A5-19_20261108.md) 읽고 pass→reviewpage sync→deploy.bat→결재함·카톡 / fail→이과장 수정 지시",
+   "due": "2026-11-08",
+   "cmd": "ls docs/v0_A5-19_20261108.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-471",
+   "added": "2026-11-08",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(471_childcare_hours.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-08",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
