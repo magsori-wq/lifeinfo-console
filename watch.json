@@ -23475,6 +23475,56 @@
    "kind": "approve",
    "state": "todo",
    "by": "이대리"
+  },
+  {
+   "id": "yangsan-opening-date-recheck",
+   "added": "2026-11-09",
+   "what": "양산선 개통 일자(12월 30일 여부)와 국토부 철도안전관리체계 승인 공식 미확인. 시도: 양산시 보도자료 제목·부서 검색(대중교통과 최신 10-26), 양산시 고시공고 제목검색, 경남도 보도자료 제목·본문, 부산교통공사 보도자료 1~5쪽, korea.kr 검색, 양산시 인터넷시정뉴스·양산시정 소식 1쪽. 근거 docs/source_양산선운임개통_20261109.md",
+   "due": "2026-11-20",
+   "cmd": "양산시 보도자료 POST 재검색: searchType=type1 searchTxt=대중교통과 (https://www.yangsan.go.kr/portal/saeol/news/list.do?mid=0105010000, 세션 GET 후 POST) 에서 10-26 이후 신규 항목 확인, 경남도 board BBS_0000060 keyword=양산도시철도",
+   "owner": "claude",
+   "state": "todo",
+   "by": "출처관"
+  },
+  {
+   "id": "g202-fare-correction-check-1109",
+   "added": "2026-11-09",
+   "what": "기발행 G2-02(양산선 도시철도 개통 노선 총정리, 2026-06) 본문이 운임 확정(9/17)·개통 시점 서술과 어긋나는지 확인 — 어긋나면 정정 여부 판단(블로그스팟 기존 글 수정은 사장님 결정). 근거 docs/source_양산선운임개통_20261109.md",
+   "due": "2026-11-12",
+   "cmd": "grep -n '개통\\|12월' posts/G2-02_글_HTML.txt | head",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "draft-d315-g207-read-1109",
+   "added": "2026-11-09",
+   "what": "이과장이 D3-15·G2-07 초안 지시서를 읽고 순서대로 초안·pubqueue add 까지 진행하는가(재고 0편 연료)",
+   "due": "2026-11-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('draft1109d315'), s.read_info('draft1109g207'))\"; python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-d315-1109",
+   "added": "2026-11-09",
+   "what": "D3-15 V0 반박 검사(소방시설 외관점검표)",
+   "due": "2026-11-09",
+   "cmd": "docs/v0_D3-15_20261109.md 확인",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-472",
+   "added": "2026-11-09",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(472_fire_checklist.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-09",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
