@@ -22761,6 +22761,88 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.adsense status",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "Aside #706 사유 원문 확보(가치가 별로 없는 콘텐츠 1건, 이전과 동일, 재요청 11-15부터) → 분석 문서 작성·보고"
+  },
+  {
+   "id": "publish-exec-trial-1108-log",
+   "added": "2026-11-08",
+   "what": "발행 실행 이부장 고정 시험 기록: D5-11(15:42 승인) run 42455956720 — 이부장 gh 실행 시 분류기 추가 질문 없음(13:00 허용 1회 이후). 누적 허용 질문 1회/3편(B2-25·D4-15·D5-11)",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.pace",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "mochi-post-order-0109",
+   "added": "2026-11-08",
+   "what": "찹쌀떡 쓰레드 단독(20261108-mochi) 링크 발급 완료(사장님 CP 결재 15:43 후 이부장 실행). 게시 순서: 하루 1건 — 생굴(승인됨·이미지 미제작)이 먼저. 승인 카드(solo-ask)는 생굴 게시 뒤 또는 사장님이 순서를 정하면 등록. 수능일은 공식(KICE) 미확인이라 본문에 날짜 단정 금지",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "f431-brandconnect-0108",
+   "added": "2026-11-08",
+   "what": "F4-31 네이버 브랜드커넥트(여행 커넥트) 상품 조사: brandconnect 에이전트는 Aside 를 쓰므로 Aside #706(애드센스 사유 읽기)·D5-11 4채널 후속 뒤 대기열이 빌 때 실행. 에버랜드 입장권·큐패스가 커넥트에 있고 글 독자가 다음에 살 것이면 추천, 없으면 'no_fit' 기록(억지로 붙이지 않음)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-rerequest-1115",
+   "added": "2026-11-08",
+   "what": "애드센스 재요청 가능일 11-15: 그 전까지 기존 글 원본가치 보강 계획(4.세션 사이트 단위 검토 이어서) 사장님 결정 확인, 11-15 에 재요청 여부는 사장님 판단(세션은 말리지도 누르지도 않음). 재요청→반려 10일 주기 → 판정 11-25 전후(추정)",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.adsense status",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-f431-fix-0108",
+   "added": "2026-11-08",
+   "what": "F4-31 V0 수정 반영 확인(v0fix1108f431) → 원고 직접 확인 → v0check pass → reviewpage sync → deploy.bat(썸네일 470+본문사진 body_F4-31_01.jpg 둘 다 200 확인+rv) → 결재함. 브랜드커넥트(f431-brandconnect-0108)·12월 1일 갱신 확인 watch 도 검토",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.v0check gate --code F4-31",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-d511",
+   "added": "2026-11-08",
+   "what": "🔗 D5-11 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D5-11",
+   "due": "2026-11-08",
+   "cmd": "python studio/blogger.py crosslink --code D5-11",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "oyster-post-0109-note",
+   "added": "2026-11-08",
+   "what": "사장님 16:11 「생굴은 내일 8번 루틴」 확정: 11-09 07:00 루틴8 이 올리는지 08:00 확인(oyster-post-0109 와 같은 건). 안 올렸으면 이부장이 이과장 Aside 대기열로. 찹쌀떡은 생굴 다음",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "blogspot-affiliate-0108",
+   "added": "2026-11-08",
+   "what": "블로그스팟 제휴(신규 글부터) 도구 구현 진행(fixer 에이전트): affiliate blogspot 채널·HTML 블록·테스트 → 이부장이 diff·테스트 직접 확인 후 경로 지정 커밋 → 페이블 독립 검증 → 이과장 지시서에 '신규 블로그스팟 글 제휴 블록 부착' 규칙 반영(초안 단계, 관련성 있는 글만·2개·문구 맨 앞). 11-15 재요청과 충돌 시 그날 재판단",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.affiliate",
+   "owner": "claude",
    "state": "wait",
    "by": "이부장"
   }
