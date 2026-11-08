@@ -22588,6 +22588,56 @@
    "state": "todo",
    "note": 0,
    "by": "3.분석"
+  },
+  {
+   "id": "xlink-b225",
+   "added": "2026-11-08",
+   "what": "🔗 B2-25 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B2-25",
+   "due": "2026-11-08",
+   "cmd": "python studio/blogger.py crosslink --code B2-25",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "publish-exec-trial-1108",
+   "added": "2026-11-08",
+   "what": "발행 실행 이부장 고정 시험(사장님 11-08 13:24 승인): 3~5편 동안 분류기 「허용」 질문 횟수를 센다 — 11-08 현재 1회(B2-25·D4-15 한 번에 허용). 매 발행 뒤 이 항목에 횟수 기록, 반복 막히면 권한 모드 변경(C)을 사장님께 올림",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.pace",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-restart-slot-0108",
+   "added": "2026-11-08",
+   "what": "Aside 재시작 슬롯 확인: B2-25·D4-15 4채널 후속이 끝나 대기열이 비면 asideprobe health ok 확인 후 사장님/PC 점검 세션에 재시작 가능 알림(이부장은 프로세스 조작 금지). 저녁 피크(20:00) 전. 결정은 사장님",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "oyster-threads-post-0108",
+   "added": "2026-11-08",
+   "what": "생굴 쓰레드 단독 게시(사장님 승인 13:20 완료) 확인: 루틴9 15:00 이 올렸는지 affiliate solo 상태·게시 URL·og:image 직접 확인. 안 올렸으면 18:00 이부장 보고 후 이과장 Aside 대기열",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "advisorlog-record-0108",
+   "added": "2026-11-08",
+   "what": "오늘 12:57·13:28 어드바이저 호출 2건 advisorlog add 기록(미기록 목록에 시각이 뜨면): 요지 = 진단 문서 작성 지침(분류기·Aside 재시작 슬롯·알림 소음은 설계도 먼저)",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.advisorlog",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
