@@ -22503,8 +22503,20 @@
    "due": "2026-11-08",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "owner": "user",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-08",
+   "result": "D5-11 은 V0 통과 뒤 deploy 로 묶음(썸네일 469 포함) — 사장님 몫 아님"
+  },
+  {
+   "id": "pub-b225-d415-0108",
+   "added": "2026-11-08",
+   "what": "B2-25(먼저)·D4-15 발행 확인: 12:47 승인 도장 후 이과장 gh publish(15분 안에, B2-25 먼저) — 발행되면 라이브 200·og:image 직접 확인 후 4채널 후속 추적, 완결 카톡",
+   "due": "2026-11-08",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --workflow publish.yml --limit 3",
+   "owner": "claude",
    "state": "todo",
-   "by": "미상"
+   "by": "이부장"
   }
  ]
 }
