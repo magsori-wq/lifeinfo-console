@@ -23350,6 +23350,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "aside-standing-confirm-1109",
+   "added": "2026-11-09",
+   "what": "CONFIRM_BACKLOG 가 상시 보고함 배치 aside(ASIDE-1008 doing)에도 울린다 — confirm 은 「아직 완료 안 된 항목」으로 거부돼 닫을 수 없음. cpstate.STANDING_IDS 에 aside 를 넣을지 설계도 대조(enginemap)·Fable 검증 후 결정",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.cpstate --list | grep aside; python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
