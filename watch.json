@@ -22915,6 +22915,28 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "#713 등록 16:35(전 채널 후속)"
+  },
+  {
+   "id": "adsense-feedback-713",
+   "added": "2026-11-08",
+   "what": "Aside #713 애드센스 피드백 전 채널 결과(의견 보내기·커뮤니티·도움말 문서) 확인·4.세션 재검토 문서에 반영",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-thread-476921963",
+   "added": "2026-11-08",
+   "what": "애드센스 커뮤니티 질문 https://support.google.com/adsense/thread/476921963 (게시자명 Lee Sanggon 자동표시) 답변 확인 — 답변 오면 4.세션 재검토 문서에 반영",
+   "due": "2026-11-10",
+   "cmd": "curl -s -A Mozilla/5.0 https://support.google.com/adsense/thread/476921963?hl=ko | head -c 300",
+   "owner": "claude",
    "state": "wait",
    "by": "이부장"
   }
