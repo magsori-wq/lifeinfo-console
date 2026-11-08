@@ -22628,8 +22628,10 @@
    "due": "2026-11-08",
    "cmd": "python -m studio.affiliate solo",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "루틴9 15:00 은 재탕 안 함·이미지 카드 미제작 확인 — oyster-post-0109 로 이관(루틴8 11-09 07:00)"
   },
   {
    "id": "advisorlog-record-0108",
@@ -22716,6 +22718,16 @@
    "owner": "user",
    "kind": "approve",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "oyster-post-0109",
+   "added": "2026-11-08",
+   "what": "생굴 쓰레드 단독 게시(승인 완료 11-08 13:20, 미게시): 실사진 카드 insta/thread/thread_solo_20261108-oyster_*.png 가 아직 없다 — 루틴8(11-09 07:00)이 만들어 올리는지 08:00 확인. 안 올렸으면 이부장이 이과장 Aside 대기열로. 사장님이 오늘 올리라 하시면 이과장에게 이미지 제작+Aside 지시",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
