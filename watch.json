@@ -23360,6 +23360,68 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "munrae-source-1109",
+   "added": "2026-11-09",
+   "what": "문래 청년주택 2026-11 입주자 모집 공고 원문 심층 읽기 — 진행 중(실측 전)",
+   "due": "2026-11-10",
+   "cmd": "ls docs/source_문래청년주택_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "원문 확보: elyes 재임대 공고(공공 공고 아님·민간) 본문 이미지2+소득PDF 판독 → docs/source_문래청년주택_20261109.md. 조건부 채택(접수 11-09 09~12시 당일 마감·공고일 표기 충돌 11-06/11-09)"
+  },
+  {
+   "id": "yangsan-source-1109",
+   "added": "2026-11-09",
+   "what": "양산선 운임·개통일·경로우대 1차 출처 확보 중(경남도 07-20 보도자료·korea.kr·양산시·부산교통공사). 결과 파일 docs/source_양산선운임개통_20261109.md",
+   "due": "2026-11-10",
+   "cmd": "ls docs/source_양산선운임개통_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "출처관"
+  },
+  {
+   "id": "keyword-first-flow-1109",
+   "added": "2026-11-09",
+   "what": "조사 순서 정정(사장님 11-09 01:29) — 독자 검색어 출발·끝까지 조사. fuel1030 지시서 갱신·3.세션 깨움, 에이전트 2건(양산선 source·문래 청년주택 deepread) 결과 확인 후 글감 제안(topicprop add) 여부 판단. 루틴 2·4·6·8·9 SKILL 의 후보 선정 순서도 같은 방향으로 맞출지 사장님 확인 후 결정",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.watch --id yangsan-source-1109; python -m studio.watch --id munrae-source-1109; python -c \"from studio import sessionstate as s; print(s.read_info('fuel1030'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel1030-agents-1109",
+   "added": "2026-11-09",
+   "what": "FUEL-3 상위 말 5건 에이전트 결과 회수·topicprop 판단",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_소방외관점검표항목_20261109.md docs/source_육아기단축분할확정_20261109.md docs/source_건강보험3년유예_20261109.md docs/source_우천교환권_20261109.md docs/source_CGV스피드쿠폰_741번_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "munrae-deadline-check-1109",
+   "added": "2026-11-09",
+   "what": "문래 롯데캐슬 재임대(엘리스) 접수 11-09 09~12시 — 발행 판단 전 마감·공고일(11-06 vs 11-09) 재확인",
+   "due": "2026-11-09",
+   "cmd": "curl -sL -o /dev/null -w %{http_code} https://www.elyes.co.kr/post/recruit/detail?i_sNtCode=BHCT&nt_idx=Fr9WNE%2BFKsjn3mK6Xdoyqw%3D%3D",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "sobang-form36-d311-boan-1109",
+   "added": "2026-11-09",
+   "what": "소방 외관점검표 별지36 원문 확보(docs/source_소방시설외관점검표항목_20261109.md) — 기발행 D3-11 과 주제 중복, 신규 글 탈락·D3-11 보강 여부 결정 필요",
+   "due": "2026-11-12",
+   "cmd": "ls -la docs/source_소방시설외관점검표항목_20261109.md",
+   "owner": "user",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
