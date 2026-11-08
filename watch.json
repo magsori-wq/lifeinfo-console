@@ -23752,8 +23752,10 @@
    "due": "2026-11-09",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('draft1109a520'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "이과장 06:25 시작 확인(초안 06:28 보고)"
   },
   {
    "id": "deploy-thumb-474",
@@ -23787,8 +23789,10 @@
    "due": "2026-11-09",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('v0fix1109a520'))\"; python -m studio.v0check gate --code A5-20",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "V0 재검 92/100 통과·v0check pass·결재함 A5-20 등록(approvalcount 확인)"
   }
  ]
 }
