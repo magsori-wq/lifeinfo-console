@@ -22495,7 +22495,7 @@
    "state": "done",
    "by": "미상",
    "done_at": "2026-11-08",
-   "result": "D5-11 은 V0 통과 뒤 deploy 로 묶음(썸네일 469 포함) — 사장님 몫 아님"
+   "result": "deploy.bat 실행, 썸네일 469·rv_D5-11 200 직접 확인"
   },
   {
    "id": "pub-b225-d415-0108",
@@ -22719,8 +22719,10 @@
    "cmd": "python -m studio.tosslink link 140273703",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-08",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "oyster-post-0109",
@@ -22728,6 +22730,16 @@
    "what": "생굴 쓰레드 단독 게시(승인 완료 11-08 13:20, 미게시): 실사진 카드 insta/thread/thread_solo_20261108-oyster_*.png 가 아직 없다 — 루틴8(11-09 07:00)이 만들어 올리는지 08:00 확인. 안 올렸으면 이부장이 이과장 Aside 대기열로. 사장님이 오늘 올리라 하시면 이과장에게 이미지 제작+Aside 지시",
    "due": "2026-11-09",
    "cmd": "python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "codecheck-1108-729387fcc",
+   "added": "2026-11-08",
+   "what": "커밋 729387fcc(엔진설계도 사건 대입 기록·loopcheck ⑧ 처방 문구 정정)는 문구·문서 변경이라 단위시험 255 OK·enginemap 대조만 했고 독립 검증은 옛 문구 일괄 정리(oldtext-cleanup-1108, 11-15)와 함께 한 번에 맡긴다",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.chkmon show",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
