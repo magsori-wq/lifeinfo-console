@@ -23265,6 +23265,27 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "routine1-3h-first-run-1109",
+   "added": "2026-11-08",
+   "what": "루틴1 3시간 간격 첫 회차(11-09 08시 전 23:00·이후) 정상 실행과 help-communities 본문 열람 규칙 적용 확인",
+   "due": "2026-11-09",
+   "cmd": "mcp list_task_runs daily-email-briefing + python -m studio.batchboard order --id routinelog",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-pe-009-approve-1108",
+   "added": "2026-11-08",
+   "what": "【권고】AM-PE-009 해밀턴 내한 11/11 예매 — 부산 36회·서울 68회, 서울 첫 주 6회는 1층 VIP석부터(공연·연예) 게시 승인. 【근거】관심: NOL 오픈예정 목록 11.11 프리미어 2건·다수 기사(자동완성 미확인). 공식: NOL 부산/서울 상품 페이지(11/8 밤 Aside 확인)·엑스포츠뉴스 10-27 보도. V0 89/100 PASS(지적 4건 반영). 겹침: crossdup 🟢 lifeinfo 0.25·aroma 0.22. 사진: 에센 극장 객석(Tuxyso, CC BY-SA 4.0) — AM-PE-007 사용 사진 재사용, 해밀턴 무관(새 사진 다운로드 불가). 임베드 없음 — 공식 채널 영상 URL 미확인. 【위험】가격표가 NOL 에 아직 없어 가격은 못 다룸(글이 한계를 밝힘). 오픈 11/11 14:00 전 게시 필요.",
+   "due": "2026-11-09",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-PE-009_해밀턴내한예매.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:af96348f"
   }
  ]
 }
