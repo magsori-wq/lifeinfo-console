@@ -1,17 +1,16 @@
 {
- "computed_at": "2026-11-09 02:11:47",
- "source_head": "4e8be0a91757",
+ "computed_at": "2026-11-09 02:57:36",
+ "source_head": "2c74af6338ab",
  "ids": [
   "D3-15",
-  "G2-07",
-  "deploy-thumb-473"
+  "G2-07"
  ],
  "posts": [],
  "publish": [
   {
    "code": "D3-15",
    "title": "소방시설 외관점검표 세대점검용, 21칸 √ 이렇게 합니다",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,13 +32,13 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "G2-07",
    "title": "양산 경전철 요금 확정 1,600원·1,800원, 경로자는?",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 양산도시철도운임확정_글_HTML.txt",
@@ -63,16 +62,7 @@
    "light": "todo"
   }
  ],
- "actions": [
-  {
-   "id": "deploy-thumb-473",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(473_yangsan_fare.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-09",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "actions": [],
  "actionsFuture": [
   {
    "id": "sobang-form36-d311-boan-1109",
