@@ -22769,9 +22769,9 @@
   {
    "id": "publish-exec-trial-1108-log",
    "added": "2026-11-08",
-   "what": "발행 실행 이부장 고정 시험 기록: D5-11(15:42 승인) run 42455956720 — 이부장 gh 실행 시 분류기 추가 질문 없음(13:00 허용 1회 이후). 누적 허용 질문 1회/3편(B2-25·D4-15·D5-11)",
+   "what": "시험 운영 허용 질문 횟수 기록 — F4-31 이부장 직접 발행: 허용 질문 0회·분류기 막힘 없음(16:46)",
    "due": "2026-11-15",
-   "cmd": "python -m studio.pace",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source --limit 3",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
@@ -22951,6 +22951,67 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "fuel-recheck-1108-1800",
+   "added": "2026-11-08",
+   "what": "재고 0 — 3.세션 fuel1108 제안(topicprop) 도착 여부 확인 후 선별·초안 지시",
+   "due": "2026-11-08",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-thread-blogger-476922584",
+   "added": "2026-11-08",
+   "what": "Blogger 커뮤니티 질문 https://support.google.com/blogger/thread/476922584 답변 확인(+애드센스 thread 476921963)",
+   "due": "2026-11-10",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://support.google.com/blogger/thread/476922584",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-f431",
+   "added": "2026-11-08",
+   "what": "🔗 F4-31 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-31",
+   "due": "2026-11-08",
+   "cmd": "python studio/blogger.py crosslink --code F4-31",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "split-leave-decree-20261108",
+   "added": "2026-11-08",
+   "what": "육아기단축분할: 시행령 104조의2 계산식·단축 신청기한 조문·14일 통지 공포본 미확보",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py https://www.law.go.kr/법령/고용보험법시행령/제104조의2 --frames --wait 8 --max 9000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "yangsan-metro-official-date-1108",
+   "added": "2026-11-08",
+   "what": "양산선 개통일 공식 문구 미확인: 부산일보(11-04) 12월 방침 vs 아시아투데이(11-08) 12월 30일 목표, 최종 운임(양산시 물가대책위) 미공고, 경로우대 원문 없음",
+   "due": "2026-11-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py https://www.humetro.busan.kr/homepage/default/board/list.do?menu_no=10010401 --wait 8 --max 8000  (그리고 양산시 보도자료 검색)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "split-leave-pay-deadline-1108",
+   "added": "2026-11-08",
+   "what": "육아기 근로시간 단축 급여·신청기한 원문 확보(고용보험법 시행령 104조의2 계산식·단축 신청 기한)",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.watch --id split-leave-decree-20261108",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1,
+   "by": "3.분석"
   }
  ]
 }
