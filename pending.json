@@ -1,16 +1,33 @@
 {
- "rev": "183a876c1",
+ "rev": "6e439c04",
  "counts": {
-  "total": 484,
+  "total": 485,
   "osmu_done": 484,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 484,
+  "index_pending": 485,
   "index_requested": 167,
-  "index_todo": 75,
+  "index_todo": 76,
   "index_benign": 242
  },
  "actionable": [
+  {
+   "code": "F4-31",
+   "title": "에버랜드 큐패스 가격 — 종일권 11월 65,000원·",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -206,22 +223,6 @@
   {
    "code": "A5-15",
    "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-16",
-   "title": "4시간 근무 휴게시간 30분 생략 가능 — 12월 10",
    "need": [
     "색인요청"
    ],
