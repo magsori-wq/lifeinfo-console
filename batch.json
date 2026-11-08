@@ -5522,17 +5522,22 @@
    "order_at": "2026-11-09 02:58:50"
   }
  },
- "updated": "2026-11-09 02:58:50",
+ "updated": "2026-11-09 02:59:16",
  "current": {
   "batch": "followup",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "⏸ 대기 — D3-15 발행 트리거: pubready ✅(도장 원격·V0·초안 일치·run 없음·pace 0편). 11-08 규칙(발행 트리거 이부장 고정)에 따라 이부장 실행 부탁: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D3-15 -f mode=live -f confirm=PUBLISH -f file='소방시설외관점검표세대점검용_글_HTML.txt' -f title='소방시설 외관점검표 세대점검용' -f post_title='소방시설 외관점검표 세대점검용, 21칸 √ 이렇게 합니다' · run 끝나면 이과장이 4채널 후속 시작",
+  "what": "⏸ 대기 — G2-07 발행 승인(02:58) 도착, D3-15 먼저(한 번에 한 편·트리거는 이부장 실행). D3-15 run 끝나면 G2-07 트리거도 이부장 부탁: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=G2-07 -f mode=live -f confirm=PUBLISH -f file='양산도시철도운임확정_글_HTML.txt' -f title='양산도시철도 운임 확정' -f post_title='양산 경전철 요금 확정 1,600원·1,800원, 경로자는?' · 직전에 pubready·setgate 재확인",
   "since": "16:10",
   "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "02:59:16",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — G2-07 발행 승인(02:58) 도착, D3-15 먼저(한 번에 한 편·트리거는 이부장 실행). D3-15 run 끝나면 G2-07 트리거도 이부장 부탁: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=G2-07 -f mode=live -f confirm=PUBLISH -f file='양산도시철도운임확정_글_HTML.txt' -f title='양산도시철도 운임 확정' -f post_title='양산 경전철 요금 확정 1,600원·1,800원, 경로자는?' · 직전에 pubready·setgate 재확인",
+   "actor": "이과장"
+  },
   {
    "t": "02:58:50",
    "text": "📄 pub1109g207 작업 지시 등록(11488자, 2026-11-09 02:58:50)",
@@ -5727,11 +5732,6 @@
    "t": "23:20:42",
    "text": "▶   — 1/7단계 · 야간 글감 1/4: 올림 AM-PE-009 해밀턴 내한 예매(V0 89 PASS). 방송·OTT 빈칸 — 시도: Netflix Tudum 11월 목록(렌더가 11/3까지만 읽힘)·웹검색 / 못 얻음: 11/9~10 공개작 공식 일정 / 다음: Tudum 스크롤 렌더·티빙·웨이브 공식. 스포츠 보류 — KBL 삼성 10승2패 기록 확보(drafts/_research_1108_SP.md), 본문 사진 확보 실패(Commons 접근 미승인). 디지털 빈칸 — 시도: 지스타 공식(코레일 패키지 공지에 가격 없음)·Steam 홈 / 못 얻음: 가격 있는 공식 수치 / 다음: PlayStation Blog·지스타 패스 안내 1186. 🙋 이대리: 다음 회차 스포츠 KBL 글 작성, 사진(농구 CC0/PD) 확보 방안 필요",
    "actor": "미상:af96348f"
-  },
-  {
-   "t": "22:51:44",
-   "text": "▶   — 1/7단계 · [Aside][done] [A5-19] 수신 2026-11-08 22:49:16 — #726 색인 요청 1/1건 접수됨(우선순위 크롤링 대기열 추가 안내 확인). 요청 전=발견됨-현재 색인이 생성되지 않음, 최근 크롤링=해당사항 없음. 실제 색인 완료는 미확인. 재요청·유효성 검사·사이트맵 변경 없음. 작업탭 정리, 총 탭7개(#715 서식본 rich_F4-31.html 1개 잔존, 수동 닫기 필요), 사용자 탭 미접촉. · https://lifeinfo8975.blogspot.com/2026/11/250-20-102-5.html",
-   "actor": "Aside"
   }
  ],
  "currents": {
@@ -5929,7 +5929,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⏸ 대기 — D3-15 발행 트리거: pubready ✅(도장 원격·V0·초안 일치·run 없음·pace 0편). 11-08 규칙(발행 트리거 이부장 고정)에 따라 이부장 실행 부탁: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=D3-15 -f mode=live -f confirm=PUBLISH -f file='소방시설외관점검표세대점검용_글_HTML.txt' -f title='소방시설 외관점검표 세대점검용' -f post_title='소방시설 외관점검표 세대점검용, 21칸 √ 이렇게 합니다' · run 끝나면 이과장이 4채널 후속 시작",
+   "what": "⏸ 대기 — G2-07 발행 승인(02:58) 도착, D3-15 먼저(한 번에 한 편·트리거는 이부장 실행). D3-15 run 끝나면 G2-07 트리거도 이부장 부탁: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=G2-07 -f mode=live -f confirm=PUBLISH -f file='양산도시철도운임확정_글_HTML.txt' -f title='양산도시철도 운임 확정' -f post_title='양산 경전철 요금 확정 1,600원·1,800원, 경로자는?' · 직전에 pubready·setgate 재확인",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -23193,6 +23193,17 @@
    "actor": "이과장",
    "sid": "c36eea8e",
    "req": "r978a55"
+  },
+  {
+   "ts": "2026-11-09 02:59:16",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⏸ 대기 — G2-07 발행 승인(02:58) 도착, D3-15 먼저(한 번에 한 편·트리거는 이부장 실행). D3-15 run 끝나면 G2-07 트리거도 이부장 부탁: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=G2-07 -f mode=live -f confirm=PUBLISH -f file='양산도시철도운임확정_글_HTML.txt' -f title='양산도시철도 운임 확정' -f post_title='양산 경전철 요금 확정 1,600원·1,800원, 경로자는?' · 직전에 pubready·setgate 재확인",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "r7efae3"
   }
  ]
 }
