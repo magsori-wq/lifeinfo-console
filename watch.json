@@ -24043,6 +24043,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "console-check-aromapv-1109",
+   "added": "2026-11-09",
+   "what": "콘솔 정합성 검사 6회 연속 실패(11-09 13:25~13:57 KST) — webapp/aromapv_PE-009.html 이 file:///C:/naver-blog/... 로컬 이미지 2건을 참조(깨진 로컬 참조). 신호등 RED, 이대리 PE-009 미리보기 작업 중 발생",
+   "due": "2026-11-09",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console -L 3",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:59b51f3f"
   }
  ]
 }
