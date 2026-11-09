@@ -23687,7 +23687,8 @@
    "owner": "user",
    "kind": "approve",
    "state": "todo",
-   "by": "이대리"
+   "by": "이대리",
+   "preview": "https://magsori-wq.github.io/lifeinfo-console/aromapv_PE-009.html"
   },
   {
    "id": "xlink-g207",
@@ -23984,6 +23985,26 @@
    "by": "이부장",
    "done_at": "2026-11-09",
    "result": "A5-20 run 42560639166 success 13:16·라이브 200·og 확인·syncorigin 완료. A5-21 run 42561227417 success·라이브 200·og 확인. 4채널 후속 이과장 지시(pub1109a520→a521)"
+  },
+  {
+   "id": "aromapv-pe009-1109",
+   "added": "2026-11-09",
+   "what": "해밀턴 개정본 결재 카드 미리보기 — 이대리가 previews/aromapv_PE-009.html 만들면 watch preview 로 aroma-am-pe-009-rev-1109 에 연결(idaeri-1109-132150, 30분 내 done 없으면 STALL)",
+   "due": "2026-11-09",
+   "cmd": "ls webapp/aromapv_PE-009.html; python -m studio.idaerireq list | head -3",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a520-a521-followup-1109",
+   "added": "2026-11-09",
+   "what": "A5-20→A5-21 4채널 후속(이과장 pub1109a520·a521) 진행·완결 확인 — 완결 시 카톡 1통",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.osmu_manifest table --code A5-20; python -m studio.osmu_manifest table --code A5-21",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
