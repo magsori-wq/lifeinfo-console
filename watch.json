@@ -25333,6 +25333,30 @@
    "due": "2026-11-13",
    "cmd": "ls docs/source_한파쉼터_20261110.md",
    "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-10",
+   "result": "올해 대책기간 원문 없음 — 보류, 재판정 hanpa-period-recheck-1113b"
+  },
+  {
+   "id": "hanpa-period-recheck-1113",
+   "added": "2026-11-10",
+   "what": "2026~2027 겨울철 대설·한파 대책기간 시작·종료일 원문 미확인(행안부 보도자료 목록 11-09까지 없음·korea.kr 대책기간 검색 미발견)",
+   "due": "2026-11-13",
+   "cmd": "PYTHONIOENCODING=utf-8 python -X utf8 -c \"import urllib.request,re;t=urllib.request.urlopen(urllib.request.Request('https://www.korea.kr/briefing/pressReleaseList.do?srchWord=%EB%8C%80%EC%B1%85%EA%B8%B0%EA%B0%84',headers={'User-Agent':'Mozilla/5.0'})).read().decode('utf-8','replace');print(len(re.findall('대책',t)))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-10",
+   "result": "cmd 오류(11-2026 오타·대책 낱말 과다매칭) — 아래 새 항목으로 대체"
+  },
+  {
+   "id": "hanpa-period-recheck-1113b",
+   "added": "2026-11-10",
+   "what": "2026~2027 겨울철 대설·한파 대책기간 원문 미확인 — 2025~26 은 11-13 「대책기간 돌입」(156730626) 발표 · 2026~27 대책 보도자료 아직 없음(11-09 까지)",
+   "due": "2026-11-13",
+   "cmd": "PYTHONIOENCODING=utf-8 python -X utf8 -c \"import urllib.request,re;u='https://www.korea.kr/briefing/pressReleaseList.do?srchWord=%EA%B2%A8%EC%9A%B8%EC%B2%A0%20%EC%9E%90%EC%97%B0%EC%9E%AC%EB%82%9C&startDate=2026-11-10&endDate=2026-12-31';t=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0)'})).read().decode('utf-8','replace');s=[re.sub(r'<[^>]+>','',x) for x in re.findall(r'<strong>(.*?)</strong>',t,flags=re.S)];print([x for x in s if re.search('대책',x) and re.search('대설|한파|겨울철',x)])\"",
+   "owner": "claude",
    "state": "wait",
    "by": "3.분석"
   }
