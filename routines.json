@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09 23:55",
+ "generated": "2026-11-10 00:25",
  "routines": [
   {
    "num": 1,
@@ -196,12 +196,17 @@
    "name": "6-Lifeinfo daily publish",
    "id": "lifeinfo-daily-publish",
    "on": true,
-   "last": "11/09 00:07",
+   "last": "11/10 00:10",
    "next": "11/10 23:55",
    "model": "sonnet-5-5",
-   "report_day": "1109",
-   "report": "[조사장부] 목록 6 · 원문 3 · 후보 3 · 탈락 3 · 검색어 7 · 유입 2\n빈손 — 제안 0건. 새로 본 것: korea.kr 보도자료 p1·p2·정책뉴스·kwgap(+trend+sa).\n· 소방시설 외관점검표 — docs/source_소방시설외관점검표_20261109.md · 탈락: 기발행 D3-11 주제 중복. 별표3·시행령 별표는 aside --frames·--click·curl·WebFetch 시도했으나 못 얻음\n· 요양2등급 일수 — docs/source_요양2등급일수_20261109.md · 탈락: A6-09 중복(dupcheck 0.67)\n· 만성질환 통합관리센터 — docs/source_만성질환통합관리센터_20261109.md · 보류: 일정 예정(2027.7), 신청방법·본인부담 원문 없음, 「약 2배」 불일치, 자동완성·유입 0 → 근거 ③ 하나뿐. watch chronic-mgmt-source-attrib-1109\n· 버린 것: 전월세 안심신탁(B5-12) · 건강보험 3년 유예(C4-01) · 단축근무 분할(A5-19) · 고용보험 부정수급(A 레인)\n막힘: longtermcare.or.kr 404 · law DRF 검증 실패 · nfa.go.kr 404",
+   "report_day": "1110",
+   "report": "[조사장부] 목록 6 · 원문 1 · 후보 1 · 탈락 1 · 검색어 5 · 유입 1\n빈손 — 원문 파일 docs/source_수능전자기기_20261110.md (deepread: 정책뉴스·교육부 hwpx·평가원 PDF 2건 pypdfium2 쪽 렌더 판독). 열람 목록: korea.kr 정책뉴스·보도자료, 복지부·질병청(JS 빈 페이지)·건보공단 공지, kwgap. 이어받은 것: 수능 D1-15 기발행. 새로 본 것: 평가원 3호/9호 제재표.\n· 수능 스마트안경 제재 — 원문 suneung.re.kr boardSeq 5096829/5096841·korea.kr 148975290 · 3호 착용=당해무효+1년정지 / 9호=당해무효 · 탈락: D1-15 본문이 같은 제재 갈림길 이미 포함(rich_D1-15.html 확인), 신규는 내신 4건뿐\n· 전세사기 최소보장제 — 탈락: A4-07 발행됨(dupcheck 🟡, 제목 동일 제도)\n· 고용보험 부정수급 자진신고 — 탈락: A5-21 발행됨(🔴0.80)\n· 전월세 안심신탁 — 탈락: B5-12 발행됨(1.00)\n· 소방안전관리자·다자녀 간편확인 — 탈락: E3-05·D3-14 발행됨\n시도: 복지부·질병청 목록은 JS/빈 응답이라 보도자료 못 읽음. 주의: docflow 가 D1-22 를 pick 해 지시서 draft1110d122 가 자동 발급됐으나 내가 중복 확인 후 drop·지시서 철회 mark. 초안·큐 적재 없음. 재고 0(하한 3) — 내일 낼 글 부족, 이부장 발굴 필요.",
    "runs": [
+    {
+     "at": "11/10 00:25",
+     "link": "claude://claude.ai/epitaxy/local_dffd0d54-f399-48ec-915e-d0814ae1f5c5",
+     "archived": false
+    },
     {
      "at": "11/09 00:16",
      "link": "claude://claude.ai/epitaxy/local_68716cd4-39e8-4a01-8934-3d1877d5cea3",
@@ -220,11 +225,6 @@
     {
      "at": "11/07 04:40",
      "link": "claude://claude.ai/epitaxy/local_3535500d-e053-4b98-931b-7aa7951c1d26",
-     "archived": true
-    },
-    {
-     "at": "11/07 00:16",
-     "link": "claude://claude.ai/epitaxy/local_e797f819-813b-479f-96e1-9bec9cebe2b6",
      "archived": true
     }
    ]

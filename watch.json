@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "items": [
   {
    "id": "intro-numbers",
@@ -25276,6 +25276,27 @@
    "by": "세션:a2a91851",
    "done_at": "2026-11-09",
    "result": "이부장 조치 23:1x — 원인 fixpv_D2-05.html 의 tel: 링크(체커 오탐)를 글자로 바꿔 deploy. 콘솔 정합성 검사 14:10(UTC) completed success 확인, 직전 13:59 failure"
+  },
+  {
+   "id": "suneung-electronics-dup-1110",
+   "added": "2026-11-10",
+   "what": "2027 수능 전자기기 부정행위 후보 = D1-15 주제중복(같은 원문·같은 훅). 독립글(제재 차이 각도) vs D1-15 보강 판정 필요. 시험 2026-11-19",
+   "due": "2026-11-11",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"수능 스마트안경 부정행위\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:59f1cb12"
+  },
+  {
+   "id": "aroma-sp014-photo-1110",
+   "added": "2026-11-10",
+   "what": "aroma(이대리) AM-SP-014 K리그 우승 확정 글에 쓸 축구 사진 다운로드 허락 — Wikimedia Commons CC0 사진 2개(합 약 6.3MB)를 aroma-mag 프로젝트 폴더에만 받는다. ① Pohang fans in away end at Ulsan World Cup stadium.jpg(CC0, 3,834KB, 2024 울산 경기장 응원) ② Pohang Ultras enter Gwangju stadium.jpg(CC0, 2,479KB). 【권고】승인 — 이 글은 서울 우승 확정이라는 시의성이 있고 사진 없이는 보류 상태다 【근거】후보 목록 aroma-mag/analysis/photo_candidates_SP014_1109.md(이대리가 Commons API 메타만 읽음, 다운로드 안 함). 서울·울산 경기 사진은 CC0/PD 로 못 찾아 포항 팬 사진이 가장 가까움 【위험】우승팀 사진이 아니라 K리그 응원 장면이라 캡션에 「참고 사진입니다. 이번 우승 장면이 아닙니다」+출처·CC0 를 반드시 쓴다 · 다운로드 직전 파일 페이지 라이선스 재확인 · 거절하시면 사진 없이 글만 두거나 다른 소재로",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.watch preview --id aroma-sp014-photo-1110 --url aroma_photo_sp014.html",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
