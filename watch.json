@@ -24393,8 +24393,10 @@
    "due": "2026-11-10",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('fix1109d405')); print(s.read_info('fix1109facts'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "D4-05·D4-04·C1-11 정정 3건 사장님 승인→라이브 반영→이부장 직접 확인 완료"
   },
   {
    "id": "leewake-owner-check-1109",
@@ -24415,8 +24417,10 @@
    "due": "2026-11-09",
    "cmd": "curl -s -A Mozilla/5.0 $(python -c \"import re;t=open('webapp/lifeinfo_db.txt',encoding='utf-8').read();i=t.find('\\\"code\\\": \\\"D4-04\\\"');print(re.search(r'\\\"url\\\": \\\"([^\\\"]+)',t[i:i+900]).group(1))\") | grep -c 'LG 트윈스 티켓 안내'",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "D4-04 라이브 반영 확인(정정 문구 있음·옛 단정 0)"
   },
   {
    "id": "approve-d4-04",
@@ -24461,6 +24465,40 @@
    "preview": "fixpv_C1-11.html",
    "done_at": "2026-11-09",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "c111-live-1109",
+   "added": "2026-11-09",
+   "what": "C1-11 라이브 정정 반영 확인(승인 18:23): 옛 단정 「어떤 사유로도」 0·「제110조」 있음 curl 확인 → factaudit0812/D4-05·C1-11 보드 항목 이부장 닫기",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.batchboard show | grep fix1109",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "C1-11 라이브 반영 확인"
+  },
+  {
+   "id": "approve-e2-01",
+   "added": "2026-11-09",
+   "what": "E2-01 유튜브 프리미엄 해지 글 보강(adsedit1108 1차 2편째, 11-08 승인 adsense-edit-batch1-1108의 편별 반영) — 기존 문장 보존·새 섹션 2개 추가(5절 해지·라이트 전환·일시중지 선택 비교표+가상 계산 14,900−8,500=6,400원·12개월 76,800원, 6절 함정 4가지)·FAQ 7절·마무리 8절로 이동·목차 갱신·새 수치 없음(본문 3절 요금 그대로, 7월 기준 기존 문구). 스냅샷 data/snapshots/E2-01/body_before_20261109.html·안 body_after_draft_20261109.html. 이부장 검토(18:30): 기존 문장 삭제 0·새 문장 29개의 사실은 전부 기존 본문에 근거(요금·오프라인 저장·결제 기간 유지·결합·여러 계정 확인)·새 숫자는 계산값 6,400·76,800뿐(가상 표시). 【권고】승인 【근거】D1-01 과 같은 방식(11-09 16:19 이부장 go·라이브 반영 완료) 【위험】본문 요금(14,900/8,500)은 7월 기준이라 현재 요금과 다를 수 있음 — 안내 문구로 한정·되돌림은 스냅샷 복원",
+   "due": "2026-11-09",
+   "cmd": "승인 시 이과장이 update-post 로 라이브 반영 후 getByPath 재확인",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장",
+   "req_by": "이과장"
+  },
+  {
+   "id": "fix-boards-close-1109",
+   "added": "2026-11-09",
+   "what": "이과장이 fix1109d405(D4-05 항목)·fix1109facts(D4-04 항목)를 mark done 하면 이부장이 batchboard confirm 으로 닫는다 — 라이브는 이미 이부장 curl 로 확인(D4-04·D4-05·C1-11 모두 정정 반영)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.batchboard show | grep fix1109",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
