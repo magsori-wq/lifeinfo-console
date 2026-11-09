@@ -24249,6 +24249,90 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "deepread-alipay-1109",
+   "added": "2026-11-09",
+   "what": "알리페이 카드등록 원문 읽기",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_알리페이카드등록_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-09",
+   "result": "원문 0건 — 제안 보류, 재시도 경로는 deepread-alipay-unread-1109"
+  },
+  {
+   "id": "deepread-tpms-1109",
+   "added": "2026-11-09",
+   "what": "타이어 공기압 경고등 원문 읽기",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_타이어공기압경고등_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-09",
+   "result": "조문+제조사 점검법만 확보, 핵심 점멸·리셋 공식 0 — 제안 보류"
+  },
+  {
+   "id": "ca-0909-label-fix",
+   "added": "2026-11-09",
+   "what": "ca_daily 일자 인자가 아직 안 나온 날도 전날 데이터를 해당 일자로 저장함 — 11-10 에 day 9 가 11-08 과 달라지는지 확인(같으면 [9일] 라벨 신뢰 금지)",
+   "due": "2026-11-10",
+   "cmd": "python tools/ca_daily.py 9 --month 11",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "fable-verify-idaeriwake-1109",
+   "added": "2026-11-09",
+   "what": "이대리 자동 깨우기(c96f10c64) 페이블 독립 검증 결과 docs/검증_fable_이대리깨우기_20261109.md 확인 → 🔴 있으면 수정, 🟡 은 기록. 17:30 에이전트(fable) 기동",
+   "due": "2026-11-09",
+   "cmd": "ls docs/검증_fable_이대리깨우기_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-alipay-unread-1109",
+   "added": "2026-11-09",
+   "what": "알리페이 소비자 카드등록 1차 원문 미확보(curl·Aside 시도, 본문 0)",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_알리페이카드등록_20261109.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-tpms-gosi-1112",
+   "added": "2026-11-09",
+   "what": "타이어공기압경고등: 제88조의3 세부기준 고시(점멸·경고표시)·현대/기아 사용설명서(점등·리셋)·공단 무상점검 미확보 — law.go.kr 검색 셸·현대/기아 FAQ 셸·kotsa 본문 미렌더",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_타이어공기압경고등_20261109.md && grep -c 시도했는데 docs/source_타이어공기압경고등_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "monitor-actions-1109",
+   "added": "2026-11-09",
+   "what": "점검 모니터 미결 조치 추적: ① 이과장 fix1109d405 읽음(자동 깨움 시험)·D4-05 dry-run 보고 → 이부장 go ② 3. 보류 2건 결과 ③ fable 158c545ab 검증 결과. 사장님 17:42 「조치가 안되니 올스톱이야?」",
+   "due": "2026-11-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('fix1109d405'))\"; python -m studio.topicprop table | head -4; ls docs/검증_fable_158c545ab_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-geon36-1109",
+   "added": "2026-11-09",
+   "what": "건보 임의계속 36개월 시행령 근거",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_건보임의계속36개월_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
