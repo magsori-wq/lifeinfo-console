@@ -23898,8 +23898,10 @@
    "due": "2026-11-09",
    "cmd": "ls docs/source_김해지역사랑카드_20261109.md docs/source_모두의카드11월플러스_20261109.md docs/source_부산청년근속지원금_20261109.md docs/source_일요일등본발급_20261109.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-09",
+   "result": "4건 회수·커밋 — 제안 0편(전부 중복)"
   },
   {
    "id": "d1-01-kiosk-fee-conflict",
@@ -23907,6 +23909,66 @@
    "what": "D1-01 본문 무인발급기 「2024.5.30부터 주요 8종 무료」가 시행규칙 제17조④(시행 2026.10.29, Aside 실측) 「무인민원발급기 … 그 수수료의 2분의 1」과 상충 — 근거 문장 원문 없음 · D1-09 1350.moel.go.kr 표기(원문엔 110) 정정 후보 · docs/source_일요일등본발급_20261109.md",
    "due": "2026-11-10",
    "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show d1-01-kiosk-fee-conflict && sed -n '1,5p' docs/source_일요일등본발급_20261109.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "kpass-d2-03-rate-verify-1109",
+   "added": "2026-11-09",
+   "what": "D2-03 한시인상 표(4~9월 일반 30%·청년 45% 등) 공식 원문 미확인 · D5-06 2027예산 표현 정정 검토 (docs/source_모두의카드11월플러스_20261109.md 8절)",
+   "due": "2026-11-16",
+   "cmd": "PYTHONIOENCODING=utf-8 python -X utf8 tools/aside_read.py https://korea-pass.kr/info/intro.do --wait 8 --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "kpass-moducard-1231-end-watch",
+   "added": "2026-11-09",
+   "what": "모두의카드 시차 출퇴근 추가환급 2026-12-31 종료 전후 공지 여부 (원문: 공지 2026.10.01 · 보도자료 2026.09.28)",
+   "due": "2026-12-20",
+   "cmd": "PYTHONIOENCODING=utf-8 python -X utf8 tools/aside_read.py https://korea-pass.kr/notice/noticeList.do --wait 8 --max 3000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "gimhae-cashback-recheck-1116",
+   "added": "2026-11-09",
+   "what": "김해 코리아그랜드페스티벌 5% 캐시백(결제 10/29~11/15) 종료 뒤 예산 소진·조기마감 공지 여부 확인, G1-18 정정 필요 여부 판정",
+   "due": "2026-11-16",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck 김해사랑상품권",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "gimhae-g118-correction",
+   "added": "2026-11-09",
+   "what": "G1-18 본문 정정 후보: 주유소 사용처 예시 원문 있음(미확인 문구 정정), 11/2 판매 지남, 지역사랑카드 김해 0건 — 이부장 판단(주제 중복)",
+   "due": "2026-11-10",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck 김해사랑상품권 11월 2일 11시 판매",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "busan-youth-retention-dup-1109",
+   "added": "2026-11-09",
+   "what": "부산 청년 근속지원(풀패키지+도약 2026 지침) 원문 조사 완료 — 주제 중복: 기발행 G1-15(2026/10/2-580.html). 신규 글 탈락. G1-15 본문과 2026-10 지침 개정(지급방법)·도약 지역표(기장군 열 미확정) 대조 필요. 풀패키지 2026 모집기간 미확인(bsef 인증서 오류)",
+   "due": "2026-11-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck 부산 청년 근속지원금",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "busan-youth-580-conflict-1109",
+   "added": "2026-11-09",
+   "what": "G1-15(2026/10/2-580.html, 발행됨)의 580만원 합산 — 풀패키지 제외대상 「중앙부처 또는 지방정부 지원사업 … 참여중」 조항과 충돌 가능, 부산시 보도·G1-15는 중복 가능이라 씀. 운영기관(부산경영자총협회·부산경제진흥원) 확인 전까지 합산 확정 금지. 원문: docs/source_부산청년근속지원_20261109.md 2절 의문점 1",
+   "due": "2026-11-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck 부산 청년 근속지원금",
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
