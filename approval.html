@@ -1657,12 +1657,12 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    2026-08-28 실측: today0828 은 목록만 있고 order 가 없어 빠졌고,
   //    그 바람에 08-18 배치가 떴다. 원본 B.batches 에서 직접 고른다.
   var TD=null, _tk=Object.keys(B.batches||{})
-      .filter(function(k){return String(k).indexOf('today')===0;}).sort().reverse();
+      .filter(function(k){return /^(today|tower)\d{4}$/.test(String(k));}).sort(function(x,y){return String(x).slice(-4)<String(y).slice(-4)?1:String(x).slice(-4)>String(y).slice(-4)?-1:0;});  /* 11-09 사장님 캡처: 오늘 보드 이름이 tower<MMDD> 인데 today 만 찾아 「보드가 없습니다」가 떴다 */
   if(_tk.length) TD={id:_tk[0], b:B.batches[_tk[0]]};
   // 🔴 2026-10-04 사장님 캡처: 10-04 화면에 09-23 보드(100%)가 「미결사항」으로 떠 있었다.
   //    가장 최근 today 배치가 **오늘 것이 아니면** 미결사항으로 보이지 않게 한다.
-  var _now=new Date(), _td='today'+('0'+(_now.getMonth()+1)).slice(-2)+('0'+_now.getDate()).slice(-2);
-  if(TD && TD.id!==_td) TD=null;
+  var _now=new Date(), _md=('0'+(_now.getMonth()+1)).slice(-2)+('0'+_now.getDate()).slice(-2), _td='today'+_md;
+  if(TD && String(TD.id).slice(-4)!==_md) TD=null;
   var tdBody;
   if(TD && TD.b && (TD.b.items||[]).length){
     var tit=TD.b.items, tdn=tit.filter(function(i){
