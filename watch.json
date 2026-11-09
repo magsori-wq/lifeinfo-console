@@ -24041,8 +24041,10 @@
    "due": "2026-11-09",
    "cmd": "python -m studio.osmu_manifest table --code A5-21; python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "A5-21 4채널+교차링크+색인요청(#747 15:24) 완결·gsc_log 기록"
   },
   {
    "id": "console-check-aromapv-1109",
@@ -24053,6 +24055,40 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:59b51f3f"
+  },
+  {
+   "id": "a521-wake-1503",
+   "added": "2026-11-09",
+   "what": "A5-21 후속 정체(13:54 검색설명 후 멈춤) — 15:05 이과장 깨움. 읽음·네이버 지시서 대기열 등록 확인. 안 움직이면 재깨움(15:35)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.asidequeue list; python -c \"from studio import sessionstate as s; print(s.read_info('pub1109a521'))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "이과장 15:05 깨움 → 15:06 seodesc 기록·네이버 Aside #744 등록(대기열 직접 확인)"
+  },
+  {
+   "id": "xlink-a521",
+   "added": "2026-11-09",
+   "what": "🔗 A5-21 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-21",
+   "due": "2026-11-09",
+   "cmd": "python studio/blogger.py crosslink --code A5-21",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "aroma2-report-relay-1109",
+   "added": "2026-11-09",
+   "what": "aroma2 챗 보고→이대리 전달 경로 — 이대리가 지시 템플릿에 보고 규칙 반영·시험 보고(idaeri-1109-151310). 보고가 보드에 뜨면 이부장이 같은 턴에 이대리에게 SendMessage. 자동 깨우기 코드는 없음 — 필요하면 towertick 이벤트(설계도 먼저)로 제안",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.idaerireq list | head -3",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "aroma 배치 등록·aroma2 보고 경로 정상(15:14·15:15 시험 보고 수신). 이후 aroma2 실보고는 이부장이 이대리에게 SendMessage 전달"
   }
  ]
 }
