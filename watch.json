@@ -23811,6 +23811,46 @@
    "by": "이부장",
    "done_at": "2026-11-09",
    "result": "Aside #737 done 07:18 · 쓰레드 Dffz2logcwo curl 200·og:image 게시 사진(post jpg, profile_pic 아님)"
+  },
+  {
+   "id": "gosi-buja-current-law62-20261109",
+   "added": "2026-11-09",
+   "what": "고용보험법 제62조 Aside 표시 판 시행일 2028.1.1(현행 판 미확인) — 추가징수 2배/5배 배율 현행 확인 필요",
+   "due": "2026-11-12",
+   "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/고용보험법/제62조\" --frames --wait 8 --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:c8c7c110"
+  },
+  {
+   "id": "sanjae-daeri-rule-1209",
+   "added": "2026-11-09",
+   "what": "산재보상 대리인 제도(법 제126조의2, 시행 2027-03-30) — 시행규칙(고용노동부령)에 대리 조문·소득기준 300만·보수 70만 확인 필요. 현재 시행규칙 2026.2.2판엔 없음",
+   "due": "2026-12-09",
+   "cmd": "python -X utf8 tools/aside_read.py \"https://www.law.go.kr/법령/산업재해보상보험법시행규칙\" --frames --wait 8 --max 400000 | grep -n 대리",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:c8c7c110"
+  },
+  {
+   "id": "a521-draft-read-1109",
+   "added": "2026-11-09",
+   "what": "A5-21 초안 지시서(draft1109a521) 이과장이 읽었는가 — 09:25 깨움. 안 읽히면 다시 깨우기(재고 1편)",
+   "due": "2026-11-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('draft1109a521'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-475",
+   "added": "2026-11-09",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(475_employment_selfreport.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-09",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
