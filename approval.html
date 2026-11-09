@@ -1657,7 +1657,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    2026-08-28 실측: today0828 은 목록만 있고 order 가 없어 빠졌고,
   //    그 바람에 08-18 배치가 떴다. 원본 B.batches 에서 직접 고른다.
   var TD=null, _tk=Object.keys(B.batches||{})
-      .filter(function(k){return /^(today|tower)\d{4}$/.test(String(k));}).sort(function(x,y){return String(x).slice(-4)<String(y).slice(-4)?1:String(x).slice(-4)>String(y).slice(-4)?-1:0;});  /* 11-09 사장님 캡처: 오늘 보드 이름이 tower<MMDD> 인데 today 만 찾아 「보드가 없습니다」가 떴다 */
+      .filter(function(k){return /^(today|tower)\d{4}$/.test(String(k)) && String(k).slice(-4)===(('0'+(new Date().getMonth()+1)).slice(-2)+('0'+new Date().getDate()).slice(-2));}).sort(function(x,y){return String(x).indexOf('tower')===0?-1:String(y).indexOf('tower')===0?1:0;});  /* 11-09 사장님 캡처: 오늘 보드 이름이 tower<MMDD> 인데 today 만 찾아 「보드가 없습니다」가 떴다 · 페이블: 먼저 오늘 날짜(MMDD)로 거른다(12월→1월 경계 오작동 방지)·같은 날 tower 우선 */
   if(_tk.length) TD={id:_tk[0], b:B.batches[_tk[0]]};
   // 🔴 2026-10-04 사장님 캡처: 10-04 화면에 09-23 보드(100%)가 「미결사항」으로 떠 있었다.
   //    가장 최근 today 배치가 **오늘 것이 아니면** 미결사항으로 보이지 않게 한다.
