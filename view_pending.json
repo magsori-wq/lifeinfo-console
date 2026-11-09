@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-11-09 16:37:32",
- "source_head": "5a8095156639",
+ "computed_at": "2026-11-09 16:39:01",
+ "source_head": "26f8680cdf45",
  "ids": [
   "H1-39",
+  "deploy-thumb-476",
   "idaeri-autowake-restart-1109"
  ],
  "posts": [],
@@ -36,6 +37,14 @@
   }
  ],
  "actions": [
+  {
+   "id": "deploy-thumb-476",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(476_samsung_electro_dividend.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-09",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  },
   {
    "id": "idaeri-autowake-restart-1109",
    "what": "【권고】Claude Desktop 을 한 번 완전히 종료했다가 다시 실행(세션은 이어짐) — 이대리·이과장 자동 깨우기 모드(lifeinfo-tower 0.1.1) 적용 【근거】플러그인은 이미 0.1.1 로 갱신됐고 적용은 재시작이 필요(claude plugin update 안내). 테스트 15개·검증 통과, 이대리 장부·시험 보고로 켜졌는지 이부장이 확인 【위험】Desktop 재시작 중 약 1분 세션 화면이 멈춤. 이부장·이과장·이대리 세션은 이어지지만 작업 중이던 Aside 지시는 끝난 뒤에 하시는 것이 안전",
