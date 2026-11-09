@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-11-09 16:50:44",
- "source_head": "3a0749e37ec6",
+ "computed_at": "2026-11-09 17:07:57",
+ "source_head": "a4e8bea105c0",
  "ids": [
   "H1-39",
+  "aside-login-ca-1109",
   "idaeri-autowake-restart-1109"
  ],
  "posts": [],
@@ -10,8 +11,8 @@
   {
    "code": "H1-39",
    "title": "삼성전기 배당금 지급일 2026 — 이미 끝났고, 100주면 세전 235,000원",
-   "go": false,
-   "v0": "fail",
+   "go": true,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 삼성전기배당금지급일_글_HTML.txt",
@@ -32,10 +33,18 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
+  {
+   "id": "aside-login-ca-1109",
+   "what": "Aside ca 로그인 필요 — 자동 확인(17:03): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.asideprobe login --batch aside --what ca",
+   "state": "todo",
+   "kind": "action"
+  },
   {
    "id": "idaeri-autowake-restart-1109",
    "what": "【권고】Claude Desktop 을 한 번 완전히 종료했다가 다시 실행(세션은 이어짐) — 이대리·이과장 자동 깨우기 모드(lifeinfo-tower 0.1.1) 적용 【근거】플러그인은 이미 0.1.1 로 갱신됐고 적용은 재시작이 필요(claude plugin update 안내). 테스트 15개·검증 통과, 이대리 장부·시험 보고로 켜졌는지 이부장이 확인 【위험】Desktop 재시작 중 약 1분 세션 화면이 멈춤. 이부장·이과장·이대리 세션은 이어지지만 작업 중이던 Aside 지시는 끝난 뒤에 하시는 것이 안전",
