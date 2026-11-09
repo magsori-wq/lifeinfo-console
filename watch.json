@@ -24499,7 +24499,21 @@
    "cmd": "python -m studio.batchboard show | grep fix1109",
    "owner": "claude",
    "state": "wait",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "(보류) 이과장 mark 대기 — 별도 확인"
+  },
+  {
+   "id": "fable-verify-fixes-1109",
+   "added": "2026-11-09",
+   "what": "수정 커밋 4건(34cb60274·3d1f6c4ec·2b43cffb6·3c2fee432) 페이블 독립 검증 — docs/검증_fable_수정4커밋_20261109.md 에 해시가 적혀야 CODE_UNVERIFIED 가 닫힌다(enginestate Z2 판정=검증 문서 안의 해시 문자열). 18:45 에이전트 기동",
+   "due": "2026-11-09",
+   "cmd": "ls docs/검증_fable_수정4커밋_20261109.md; grep -c 34cb60274 docs/검증_fable_수정4커밋_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "Fable 검증 문서 docs/검증_fable_수정4커밋_20261109.md — ②③ ✅·①④ 🟡. ①(제외어)·③(문구)·주석은 bf2eef010 로 수정+테스트. ④ 루틴1 회차 복제 표시는 한계로 남김(회차별 누락은 못 봄)"
   }
  ]
 }
