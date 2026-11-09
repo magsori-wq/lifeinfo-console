@@ -5951,17 +5951,22 @@
    "confirm_note": "시험 배치 — 이부장 확인·종결"
   }
  },
- "updated": "2026-11-09 18:14:04",
+ "updated": "2026-11-09 18:15:40",
  "current": {
-  "batch": "fix1109facts",
+  "batch": "chkmon",
   "code": "",
   "title": "",
-  "step": 4,
-  "what": "🙋 이부장 요청: D4-04 라이브 반영은 update-post 게이트가 사장님 결재를 요구해 막힘(이부장 go 는 결재가 아님) — 결재함 approve-d4-04 를 올렸습니다(--by 이과장, 이부장 확인 대기). 확인·사장님 전달 부탁. 결재 후 즉시 반영·재확인. 그동안 C1-11 dry-run 진행",
-  "since": "18:07",
-  "since_at": "2026-11-09 18:07:24"
+  "step": 1,
+  "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡5 — 즉시: Aside 막힘 #748 H1-39; 막힌 항목 routinelog/8-lifeinfo-issue-product-1109 · 8-lifeinfo-issue-product (H) — 사유: 지시(watch oyster-; 사장님 🙋승인 D4-04 프로야구 예매 글 사실 정정(라이브 본문 5문장 교체·낮춤, · 묶음: 막힌 보드 항목×3 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "18:15:36",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡5 — 즉시: Aside 막힘 #748 H1-39; 막힌 항목 routinelog/8-lifeinfo-issue-product-1109 · 8-lifeinfo-issue-product (H) — 사유: 지시(watch oyster-; 사장님 🙋승인 D4-04 프로야구 예매 글 사실 정정(라이브 본문 5문장 교체·낮춤, · 묶음: 막힌 보드 항목×3 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
   {
    "t": "18:14:04",
    "text": "▶   — 4/7단계 · 🙋 이부장 요청: D4-04 라이브 반영은 update-post 게이트가 사장님 결재를 요구해 막힘(이부장 go 는 결재가 아님) — 결재함 approve-d4-04 를 올렸습니다(--by 이과장, 이부장 확인 대기). 확인·사장님 전달 부탁. 결재 후 즉시 반영·재확인. 그동안 C1-11 dry-run 진행",
@@ -6156,11 +6161,6 @@
    "t": "17:45:57",
    "text": "▶   — 1/7단계 · [Aside][doing] 수신 2026-11-09 17:44:53 — 지시 #751 H1-39 인스타 시작",
    "actor": "Aside"
-  },
-  {
-   "t": "17:44:53",
-   "text": "📄 aside 작업 지시 등록(2701자, 2026-11-09 17:44:53)",
-   "actor": "사람"
   }
  ],
  "currents": {
@@ -6628,7 +6628,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵1 🟡6 — 즉시: 반영 어긋남 · 화면 생성물 신선도; 반영 어긋남 · 로컬↔github.io; Aside 막힘 #748 H1-39; 막힌 항목 routinelog/8-lifeinfo-issue-product-1109 · 8-lifeinfo-issue-product (H) — 사유: 지시(watch oyster- 외 1 · 묶음: Aside 상태×1 막힌 보드 항목×3 사건×2 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡5 — 즉시: Aside 막힘 #748 H1-39; 막힌 항목 routinelog/8-lifeinfo-issue-product-1109 · 8-lifeinfo-issue-product (H) — 사유: 지시(watch oyster-; 사장님 🙋승인 D4-04 프로야구 예매 글 사실 정정(라이브 본문 5문장 교체·낮춤, · 묶음: 막힌 보드 항목×3 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -24955,6 +24955,17 @@
    "actor": "이과장",
    "sid": "c36eea8e",
    "req": "r2b7f34"
+  },
+  {
+   "ts": "2026-11-09 18:15:36",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡5 — 즉시: Aside 막힘 #748 H1-39; 막힌 항목 routinelog/8-lifeinfo-issue-product-1109 · 8-lifeinfo-issue-product (H) — 사유: 지시(watch oyster-; 사장님 🙋승인 D4-04 프로야구 예매 글 사실 정정(라이브 본문 5문장 교체·낮춤, · 묶음: 막힌 보드 항목×3 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r26398d"
   }
  ]
 }
