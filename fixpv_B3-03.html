@@ -1,0 +1,114 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>B3-03 정정·보강 미리보기</title></head><body style="max-width:760px;margin:0 auto;padding:12px"><div style="background:#fff3cd;border:2px solid #d97706;padding:12px 16px;margin:0 0 16px;font:15px/1.6 'Malgun Gothic',sans-serif;color:#222">
+<b>정정·보강 미리보기 — B3-03 노란우산공제 글 (아직 라이브에 반영되지 않음)</b><br>
+틀린 사실 정정: ① 월 납입 한도 「5만~100만 원」→ 공식 2026-07-01부터 월 5만~150만 원·연 1,800만 원(글 3절의 연 1,800만과 앞뒤가 어긋나 있었음) ② 법인대표 요건 「총급여 약 6,625만」→ 총급여 8천만 원 이하(근로소득금액 기준 6,625만) ③ 공식 페이지에서 못 찾은 「추가납입 50개월 제한 폐지」 삭제 ④ 「무료 상해보험」→ 공식에 있는 소상공인보험(상해·PL·손해공제) 안내로 교체.<br>
+보강: 공식 지급예시표(월 50만 원 1년·10년)·소득 구간별 절세효과(396,000~990,000원)·판단·함정 5가지. 새 숫자는 전부 노란우산·조특법 공식 값이고 근거는 docs/source_B303_20261109.md. 9,900,000−2,099,789=7,800,211 은 공식 표 값과 일치. 공식 표에서 오기로 의심되는 칸(월 5만 원 탭 1년 원금)은 인용하지 않았습니다.</div>
+<div style="text-align:center;margin:0 0 18px"><img src="https://magsori-wq.github.io/lifeinfo-console/thumbs/78_noranumbrella.png" alt="노란우산공제 가입 방법 소득공제 한도 폐업 공제금" style="max-width:100%;height:auto;border-radius:12px" /></div>
+<style>
+.lsg{max-width:720px;margin:0 auto;font-size:17px;line-height:1.85;color:#222;word-break:keep-all}
+.lsg .cat{display:inline-block;background:#4D9DE0;color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.lsg h2{font-size:23px;margin:34px 0 14px;padding-left:12px;border-left:5px solid #4D9DE0;line-height:1.35}
+.lsg p{margin:0 0 14px}
+.lsg ul,.lsg ol{margin:0 0 16px;padding-left:22px}
+.lsg li{margin:6px 0}
+.lsg .toc{background:#f4f7fc;border:1px solid #e0e8f4;border-radius:12px;padding:16px 20px;margin:18px 0 26px}
+.lsg .toc b{display:block;font-size:14px;color:#1b6fc2;margin-bottom:8px}
+.lsg .toc a{display:block;color:#2a4a73;text-decoration:none;padding:4px 0;font-size:15px}
+.lsg .cta{display:block;text-align:center;background:linear-gradient(90deg,#4D9DE0,#3b7fd0);color:#fff !important;font-weight:800;font-size:17px;padding:15px 18px;border-radius:12px;text-decoration:none;margin:22px 0}
+.lsg table{border-collapse:collapse;width:100%;margin:8px 0 16px;font-size:15px}
+.lsg th,.lsg td{border:1px solid #e2e8f2;padding:10px 12px;text-align:center}
+.lsg th{background:#eef3fb}
+.lsg .tip{background:#eef4fc;border:1px solid #c8ddf3;border-radius:12px;padding:14px 20px;margin:16px 0}
+.lsg .tip b{color:#1b6fc2}
+.lsg .end{background:#fff8e6;border:1px solid #ffe2a8;border-radius:12px;padding:16px 20px;margin-top:24px}
+.lsg .gov{background:#eef4fc;border:1px solid #c8ddf3;border-radius:12px;padding:14px 20px;margin-top:22px}
+.lsg .gov b{display:block;font-size:14px;color:#1b6fc2;margin-bottom:8px}
+.lsg .gov a{display:block;color:#1b4f86;text-decoration:none;padding:6px 0;font-size:15px;font-weight:700}
+.lsg .rel{background:#f4f7fc;border:1px solid #e0e8f4;border-radius:12px;padding:14px 20px;margin-top:22px}
+.lsg .rel b{display:block;font-size:14px;color:#4D9DE0;margin-bottom:8px}
+.lsg .rel a{display:block;color:#2a4a73;text-decoration:none;padding:5px 0;font-size:15px;font-weight:600}
+.lsg .src{background:#eef6ef;border:1px solid #cfe6d2;border-radius:12px;padding:14px 18px;margin-top:22px;font-size:14px;line-height:1.7;color:#33503a}
+.lsg .src b{display:block;font-size:14px;color:#2e7d4f;margin-bottom:6px}
+.lsg .src a{color:#1b6fc2;text-decoration:none;font-weight:600}
+.lsg .top{display:inline-block;font-size:13px;color:#8a97ab;text-decoration:none;margin:2px 0 6px}
+</style>
+<div class="lsg" id="top">
+<span class="cat">세금·금융</span>
+<p>사업하는 분이라면 <b>세금은 줄이고 노후 목돈은 챙기는</b> 제도를 놓치면 아깝습니다. 바로 중소기업중앙회의 <b>노란우산공제</b>입니다. 내는 돈이 <b>연 최대 600만 원까지 소득공제</b>되고, 폐업·은퇴 때는 이자까지 붙은 목돈을 <b>압류 걱정 없이</b> 받습니다. 2026년 기준 소득공제 한도표, 새로 바뀐 납입 한도, 공제금 받는 조건까지 정리했습니다.</p>
+<div class="toc"><b>📑 목차</b><a href="#sec1">1. 노란우산공제란 (누가 가입하나)</a><a href="#sec2">2. 소득공제 한도 (연 최대 600만 원)</a><a href="#sec3">3. 2026년 바뀐 점 (납입 한도 확대)</a><a href="#sec4">4. 공제금·압류방지 혜택</a><a href="#sec5">5. 가입 방법</a><a href="#sec55">계산 예시 — 월 50만 원이면 얼마 돌아오나</a><a href="#sec56">판단·함정 — 월 150만 원이 더 유리할까</a><a href="#sec6">공식 확인 페이지</a></div>
+<a class="cta" href="#sec2">👉 내 소득이면 얼마 공제되는지 보기</a>
+<h2 id="sec1">1. 노란우산공제란 (누가 가입하나)</h2>
+<p>노란우산공제는 <b>중소기업중앙회가 운영</b>하고 국가가 뒷받침하는 <b>소상공인·자영업자용 공제(퇴직금) 제도</b>입니다. 매달 일정액을 넣으면 소득공제 혜택을 받고, 폐업·노령·사망 등의 사유가 생기면 낸 돈에 <b>복리 이자</b>를 더해 돌려받습니다.</p>
+<ul>
+<li><b>가입 대상</b>: 개인사업자, 소기업·소상공인 대표(법인 포함). 업종별 매출 기준을 충족해야 합니다.</li>
+<li><b>월 납입</b>: <b>5만 원~150만 원</b>을 1만 원 단위로 본인이 정합니다(2026년 7월 1일부터 월 100만 원에서 150만 원으로 확대, 정기 월부금과 추가납입을 합쳐 연 1,800만 원 한도).</li>
+</ul>
+<h2 id="sec2">2. 소득공제 한도 (연 최대 600만 원)</h2>
+<p>가장 큰 매력은 소득공제입니다. <b>사업소득 규모에 따라 연 200만~600만 원</b>을 소득에서 빼줘, 종합소득세를 줄여줍니다.</p>
+<table>
+<tr><th>사업(근로)소득 금액</th><th>연간 소득공제 한도</th></tr>
+<tr><td>4,000만 원 이하</td><td><b>600만 원</b></td></tr>
+<tr><td>4,000만 ~ 6,000만 원</td><td>500만 원</td></tr>
+<tr><td>6,000만 ~ 1억 원</td><td>400만 원</td></tr>
+<tr><td>1억 원 초과</td><td>200만 원</td></tr>
+</table>
+<div class="tip"><b>💡 절세 효과 예시</b><p style="margin:8px 0 0">사업소득 4,000만 원 이하인 분이 <b>연 600만 원</b>을 납입하면, 본인 세율(약 6.6~16.5%)에 따라 <b>대략 40만~99만 원</b>의 세금을 돌려받을 수 있습니다. 법인 대표는 총급여 8천만 원(근로소득금액 6,625만 원) 이하일 때 소득공제를 받을 수 있고, 이를 넘으면 받을 수 없습니다.</p></div>
+<a class="top" href="#top">▲ 맨 위로</a>
+<h2 id="sec3">3. 2026년 바뀐 점 (납입 한도 확대)</h2>
+<p>2026년에 납입과 관련한 규정이 유리하게 바뀌었습니다. <b>소득공제 한도(연 600만 원)와 납입 한도는 별개</b>라는 점을 기억하세요.</p>
+<ul>
+<li><b>납입 한도 확대</b>: 2026년 7월 1일부터 납입 한도가 <b>분기 300만 원 → 연 1,800만 원</b> 체계로 늘었습니다. 여윳돈이 있을 때 더 넣어 복리로 굴릴 수 있습니다.</li>
+<li><b>추가납입</b>: 올해 월부금액을 모두 납부한 뒤 추가로 낼 수 있고, 월납과 추가납입을 합쳐 연 1,800만 원 한도입니다. 12월에 가입해도 소득공제 최대 한도(600만 원)를 채울 수 있게 됐다고 노란우산이 안내합니다(개정 전에는 일시 최대 300만 원).</li>
+</ul>
+<a class="top" href="#top">▲ 맨 위로</a>
+<h2 id="sec4">4. 공제금·압류방지 혜택</h2>
+<ul>
+<li><b>공제금 지급 사유</b>: 폐업, 사망, <b>노령(만 60세·10년 이상 납입)</b>, 질병·부상으로 인한 퇴임 등.</li>
+<li><b>복리 이자</b>: 낸 돈에 공시 이율의 복리 이자가 붙어 목돈이 됩니다.</li>
+<li><b>압류·양도·담보 금지</b>: 법으로 보호돼 <b>사업이 어려워져도 공제금은 지킬 수 있습니다.</b></li>
+<li><b>소상공인보험</b>: 노란우산 복지혜택 안내에 상해보험·PL보험·손해공제가 있습니다. 「가입 후 일정 기간 무료」라는 안내는 공식 페이지에서 확인하지 못했습니다.</li>
+</ul>
+<h2 id="sec5">5. 가입 방법</h2>
+<ol>
+<li><b>온라인</b>: 노란우산 공식 홈페이지(중소기업중앙회)에서 사업자 정보로 가입.</li>
+<li><b>은행·창구</b>: 제휴 은행 영업점, 중소기업중앙회 지역본부.</li>
+<li><b>상담</b>: 노란우산 콜센터 <b>1666-9988</b>.</li>
+</ol>
+<h2 id="sec55">계산 예시 — 월 50만 원이면 얼마 돌아오나</h2>
+<p>노란우산 공식 지급예시표(2026년 11월 9일 열람)의 월 50만 원(연 600만 원) 납입 기준 예시입니다. 지급이율을 매년 3.7%(기준이율 3.4% + 가산 0.3%)로 일정하다고 가정했고, 소득공제 절세액은 소득공제 원금에 평균 세율 16.5%를 곱한 값입니다. 2016년 1월 1일 이후 가입자 기준입니다. 실제 금액은 납입 현황·이율·세율에 따라 달라집니다.</p>
+<table>
+<tr><th>납입 기간</th><th>납입 원금</th><th>이자</th><th>원리금</th><th>퇴직소득세</th><th>실지급액</th><th>소득공제 절세액(누적)</th></tr>
+<tr><td>1년</td><td>6,000,000원</td><td>106,718원</td><td>6,106,718원</td><td>177,543원</td><td>5,929,175원</td><td>990,000원</td></tr>
+<tr><td>10년</td><td>60,000,000원</td><td>10,981,645원</td><td>70,981,645원</td><td>2,099,789원</td><td>68,881,856원</td><td>9,900,000원</td></tr>
+</table>
+<p>10년 기준 절세액 9,900,000원(= 소득공제 원금 6,000만 원 × 16.5%)에서 퇴직소득세 2,099,789원을 빼면 공식 표의 「절세효과」 7,800,211원이 됩니다(9,900,000 − 2,099,789). 노란우산 공식 안내는 소득 구간별 연간 절세 효과도 이렇게 제시합니다(2026년 종합소득세율, 지방소득세 포함, 노란우산 소득공제만 받은 경우).</p>
+<table>
+<tr><th>사업소득금액</th><th>연간 소득공제 한도</th><th>예상 세율</th><th>연간 절세효과</th></tr>
+<tr><td>4,000만 원 이하</td><td>600만 원</td><td>6.6% ~ 16.5%</td><td>396,000원 ~ 990,000원</td></tr>
+<tr><td>4,000만 원 초과 ~ 6,000만 원 이하</td><td>500만 원</td><td>16.5% ~ 26.4%</td><td>825,000원 ~ 1,320,000원</td></tr>
+<tr><td>6,000만 원 초과 ~ 1억 원 이하(법인대표는 6,625만 원 이하)</td><td>400만 원</td><td>26.4% ~ 38.5%</td><td>1,056,000원 ~ 1,540,000원</td></tr>
+<tr><td>1억 원 초과(개인)</td><td>200만 원</td><td>38.5% ~ 49.5%</td><td>770,000원 ~ 990,000원</td></tr>
+</table>
+<p>위 절세효과는 노란우산이 제시한 예상값이고 세법 제·개정에 따라 변경될 수 있습니다.</p>
+<a class="top" href="#top">▲ 맨 위로</a>
+
+<h2 id="sec56">판단·함정 — 월 150만 원이 더 유리할까</h2>
+<ul>
+<li><b>소득공제만 보면 월 50만 원이면 충분합니다</b>: 사업소득 4,000만 원 이하 구간은 연 600만 원이 공제 최대 한도라 월 50만 원(연 600만 원)을 넣으면 한도를 채웁니다(다른 구간은 한도가 500·400·200만 원으로 더 낮습니다). 공식 지급예시표에서 월 150만 원(연 1,800만 원)을 10년 넣어도 소득공제 원금은 6,000만 원(연 600만 원 × 10년)이고 절세액은 9,900,000원으로 월 50만 원과 같습니다. 대신 원금이 1억 8,000만 원, 원리금이 218,086,397원으로 커집니다. 공식 지급예시표도 월 100만 원·150만 원 탭은 연 600만 원만 소득공제를 받는 가정이라, 한도를 넘는 납입분은 소득공제 대상이 아닙니다.</li>
+<li><b>부동산임대업 소득이 섞이면 공제가 줄어듭니다</b>: 노란우산 공식 예시는 연 600만 원을 낸 사업자의 사업소득금액이 1,000만 원이고 그중 임대소득이 20%면 소득공제금액이 600만 원 − (600만 원 × 20%) = 480만 원이라고 안내합니다(2019년 1월 1일 이후 가입자 기준). 임대업 소득만 있다면 소득공제를 받을 수 없습니다.</li>
+<li><b>중도 해약하면 세금이 붙을 수 있습니다</b>: 폐업 등 사유 없이 계약을 해지하면 해약환급금을 기타소득으로 보아, 해약환급금에서 「납부액 중 소득공제를 받지 못한 금액」을 뺀 기타소득금액에 소득세 15%와 지방소득세 1.5%를 원천징수합니다. 기타소득이 300만 원을 넘으면 종합소득에 합산합니다. 해약환급금 금액표는 이 글에서 열어 보지 못해 환급액은 적지 않았습니다.</li>
+<li><b>공제금 청구가 늦어져도 이자는 이어집니다</b>: 2026년 7월 1일 공제금 지급신청 건부터는 폐업일부터 청구일까지 이전 부금에 대해 기준이율 100% 이자가 보장된다고 안내합니다(전에는 1년 이내 50%, 1년 이후 25%).</li>
+<li><b>연체는 길어지면 계약이 끝납니다</b>: 부금을 24개월 이상 연체하면 계약이 강제종료될 수 있습니다.</li>
+</ul>
+<p>이 글에서 확인하지 못한 것: 「추가납입 50개월 한도 폐지」(공식 페이지에서 해당 문구를 찾지 못해 삭제했습니다), 가입 후 일정 기간 무료 상해보험, 해약환급금 금액표, 소득공제 근거 조문(조세특례제한법 제86조의3)의 현행 시행일 라벨.</p>
+<a class="top" href="#top">▲ 맨 위로</a>
+
+<h2 id="sec6">공식 확인 페이지</h2>
+<div class="gov"><b>🏛️ 공식 안내 바로가기</b><a href="https://www.8899.or.kr" target="_blank" rel="nofollow">▸ 노란우산 — 가입·소득공제·공제금 안내</a><a href="https://www.hometax.go.kr" target="_blank" rel="nofollow">▸ 홈택스 — 종합소득세 소득공제 확인 (로그인 후 이용)</a></div>
+<div class="end"><b>✅ 마무리</b><p style="margin:8px 0 0">노란우산공제는 <b>연 최대 600만 원 소득공제 + 폐업 때 지키는 목돈</b>을 동시에 주는 자영업자 필수 절세 상품입니다. 2026년 7월부터 납입 한도가 연 1,800만 원으로 늘어 활용 폭이 커졌습니다. 소득 구간별 공제 한도와 최신 조건은 <b>노란우산 공식 홈페이지·콜센터(1666-9988)</b>에서 확인하고 가입하세요.</p></div>
+<div class="src"><b>📌 정보 기준 · 출처</b>이 글은 <b style="display:inline;color:#33503a;margin:0">2026년 7월</b> 기준으로 쓴 뒤 납입 한도·법인대표 요건·추가납입·보험 항목을 2026년 11월 9일 기준 노란우산 공식 안내로 정정했습니다. 한도·조건은 변동될 수 있습니다. 가입 전 공식 사이트에서 확인하세요.<br>출처: <a href="https://www.8899.or.kr" target="_blank" rel="nofollow">노란우산(중소기업중앙회)</a> · 조세특례제한법 제86조의3·시행령 제80조의3(국가법령정보센터) · <a href="https://www.hometax.go.kr" target="_blank" rel="nofollow">국세청 홈택스</a></div>
+<div class="rel"><b>🔗 함께 보면 좋은 글</b><a href="https://lifeinfo8975.blogspot.com/2026/06/irp-900-2026.html">▸ 연금저축 IRP 세액공제 한도 900만원 연말정산 환급 총정리</a><a href="https://lifeinfo8975.blogspot.com/2026/06/2026_01019442348.html">▸ 종합소득세 환급금 조회 방법 지급일 기한후신고 총정리</a></div>
+
+<div class="rel"><b>🔗 다른 채널에서도 보기</b><a href="https://blog.naver.com/magsori8975/224335493457" target="_blank" rel="noopener">▸ 네이버 블로그</a><a href="https://www.threads.com/@magsori8975/post/DaUpc67ARfl" target="_blank" rel="noopener">▸ 쓰레드</a></div>
+
+<div id="post-byline" style="border-top:1px solid #e5e7eb;margin-top:28px;padding-top:12px;font-size:13px;color:#666;line-height:1.6;">글쓴이 <b>이상곤</b> · 이 글의 수치·자격·기한은 <b>공식 자료를 직접 확인</b>해 정리했으며, 본문에 출처와 기준일을 표기했습니다. 제도는 바뀔 수 있으니 신청 전 공식 페이지를 확인하세요. <a href="/p/blog-page_17.html">정보 확인 방법·고지</a></div>
+</div></body></html>
