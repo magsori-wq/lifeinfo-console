@@ -24538,7 +24538,122 @@
    "due": "2026-11-09",
    "cmd": "curl -s -A Mozilla/5.0 https://lifeinfo8975.blogspot.com/2026/07/2026_02136467891.html | grep -c 5,983,800",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "이부장 curl 직접 확인 — 5,983,800 포함·기존 문장 30개 누락 0·「1회 최대」 제거(범위 내 3곳)·div 균형 0"
+  },
+  {
+   "id": "chkmon-done-needs-signal-clear-1109",
+   "added": "2026-11-09",
+   "what": "점검 모니터 done 이 원천 신호를 닫았는지 대조 — 8-lifeinfo-issue-product-1109 는 07:19 해소됐는데 보드 항목이 blocked 로 12시간 남았고 모니터도 done 만 기록(16:51) → ⛔1 이 계속 떠 있었다. chkmon act --state done 은 원천 신호가 🔴 면 거부(설계도 먼저). 사장님 11-09 「이부장이 왜 감지를 못하는가」",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.chkmon show",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "구현 — chkmon act done 가드(원천 blk 항목 blocked 면 거부)·towertick RB 재알림·설계도 RB 행·테스트 3건(21 OK). 커밋 후 독립 검증 대기"
+  },
+  {
+   "id": "structure-remodel-vs-rebuild-1109",
+   "added": "2026-11-09",
+   "what": "구조 진단(닫힘=선언 → 검사로) 리모델링 vs 재건축 판정 — measure 에이전트 측정(docs/측정_폐쇄검증가능성_20261109.md) 후 이부장 판단·어드바이저 검증 → 결재함 【권고】【근거】【위험】",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "src-b303-1109",
+   "added": "2026-11-09",
+   "what": "B3-03 노란우산공제 공식 수치 수집",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_B303_20261109.md",
+   "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "src-b401-1109",
+   "added": "2026-11-09",
+   "what": "B4-01 상속·증여세 공식 수치 수집",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_B401_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "src-a105-1109",
+   "added": "2026-11-09",
+   "what": "A1-05 청년미래적금 공식 수치 수집",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_A105_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fable-verify-4commits-1109b",
+   "added": "2026-11-09",
+   "what": "페이블 독립 검증 4커밋(bf2eef0·fcf2b4f·dbbfb04·436d937) — docs/검증_fable_막힘잔존_모달_20261109.md 에 4해시 포함되면 CODE_UNVERIFIED 해소. 🔴 있으면 수정",
+   "due": "2026-11-09",
+   "cmd": "grep -c bf2eef0 docs/검증_fable_막힘잔존_모달_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "reconcile-step1-1109",
+   "added": "2026-11-09",
+   "what": "정합 패스 1단계(보고 전용) 구현",
+   "due": "2026-11-09",
+   "cmd": "python -m unittest tests.test_reconcile",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "reconcile-step2-autoclose-1110",
+   "added": "2026-11-09",
+   "what": "정합 패스 2단계 — 1단계 보고(LEDGER_DRIFT) 거짓 양성 하루 관찰 후 자동 폐쇄 켤지 판단(측정 doc 근거: 기계 판정 가능 batch 50%·watch 28%). 어드바이저 검증 뒤 결재함 카드",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.reconcile",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "chkmon-code-key-1109",
+   "added": "2026-11-09",
+   "what": "점검 모니터(chkmon) 항목에 글 코드 키를 붙인다 — 같은 글(C3-11 등)이 appr: 접두 문장 키로 done·open·doing 에 갈린다. 정합 패스가 코드로 보드·osmu_manifest 와 대조해 닫을 수 있게(리모델링 ②)",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.chkmon show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "crosslink-tool-gap-1109",
+   "added": "2026-11-09",
+   "what": "교차링크 열린 59건에 닫힘 판정 도구가 없다(crosslinkcheck 는 쓰레드·인스타 캡션만, 네이버 본문은 curl 로만) — 네이버 본문 교차링크 판정 도구 필요 여부 판단(리모델링 ③)",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.xlinkcheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "approve-structure-remodel-1109",
+   "added": "2026-11-09",
+   "what": "구조개선 방향 — 전체 재건축이 아니라 부분 리모델링 3가지(정합 패스·점검모니터 글코드 키·도구 없는 영역 보강). 【권고】승인 — 발행 8단계·게이트는 그대로 두고 닫힘 방식만 고친다 【근거】열린 항목 중 담당 도구 한 번으로 닫힘이 정해지는 것 보드 23%·watch 26%뿐(실행 표본 8건 중 3건), 점검모니터 키에 글 코드가 없어 같은 글이 완료·열림·진행으로 갈림(C3-11 4키). 전부 자동폐쇄도, 전체 재건축도 근거 없음 — 근거 docs/측정_폐쇄검증가능성_20261109.md·docs/엔진설계도.md 구조 진단 【위험】정합 패스 자동 폐쇄는 오탐 시 열린 일을 닫는다 → 1단계는 보고 전용(하루 관찰)·자동 폐쇄는 2단계에서 별도 확인. 장부 통합(재건축)은 키 붙이기가 실패할 때만",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.reconcile",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
    "by": "이부장"
   }
  ]

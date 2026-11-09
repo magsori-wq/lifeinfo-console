@@ -2344,6 +2344,22 @@
    "target": "adsedit-schedule-1109",
    "detail": "일정 당김 — E2-01·G4-02·H1-18 반영 완료(11-09), A4-04 go 19:3x(반영 대기)",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-09T19:37:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a4-04-live-verify-1109",
+   "detail": "이부장 curl 직접 확인 — 5,983,800 포함·기존 문장 30개 누락 0·「1회 최대」 제거(범위 내 3곳)·div 균형 0",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-09T19:43:37",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "chkmon-done-needs-signal-clear-1109",
+   "detail": "구현 — chkmon act done 가드(원천 blk 항목 blocked 면 거부)·towertick RB 재알림·설계도 RB 행·테스트 3건(21 OK). 커밋 후 독립 검증 대기",
+   "via": "cli"
   }
  ]
 }
