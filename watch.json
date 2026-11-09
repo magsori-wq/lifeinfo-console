@@ -24129,8 +24129,10 @@
    "due": "2026-11-09",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('draft1109h139')); print(s.read_info('adsedit1108'))\"; python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "16:3x 이과장 초안 시작·16:4x 큐 적재·V0 🟡 88 → v0fix1109h139 지시"
   },
   {
    "id": "deepread-mama-1109",
@@ -24185,8 +24187,20 @@
    "due": "2026-11-09",
    "cmd": "python -m studio.v0check gate --code H1-39",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "h139-v0recheck-1109",
+   "added": "2026-11-09",
+   "what": "H1-39 V0 수정(v0fix1109h139) 반영 보고(mark) 뒤 V0 재검 → v0check pass → 결재함. 이과장 mark 알림이 오면 즉시 재검(지난번처럼 50분 놓치지 말 것)",
+   "due": "2026-11-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('v0fix1109h139'))\"; python -m studio.v0check gate --code H1-39",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
