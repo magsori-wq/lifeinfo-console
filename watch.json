@@ -24227,6 +24227,16 @@
    "kind": "action",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "h139-followup-1109",
+   "added": "2026-11-09",
+   "what": "H1-39 4채널 후속(이과장 pub1109h139) 진행·완결 확인 — 완결 시 카톡 1통·색인요청 gsc_log add H1-39. 이과장은 모드 자동 깨움(leewake)으로 지시서 갱신을 스스로 받음",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.osmu_manifest table --code H1-39; python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
