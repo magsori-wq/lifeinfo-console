@@ -23346,8 +23346,10 @@
    "due": "2026-11-09",
    "cmd": "python -m studio.topicprop table; python -m studio.pace",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "11-09 연료: A5-20·A5-21 선별→발행 완료(승인 13:12). 재고 0·제안 0. 3. 12시 회차 deepread 4건(일요일등본·모두의카드·김해지역사랑카드·부산청년근속) 전부 기발행 중복 탈락(D1-09·D5-06·G1-18·G1-15). 3. 삼성전기 배당금(DART) 조사 중"
   },
   {
    "id": "fable-verify-158c545ab-1109",
@@ -23995,8 +23997,10 @@
    "due": "2026-11-09",
    "cmd": "ls webapp/aromapv_PE-009.html; python -m studio.idaerireq list | head -3",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "미리보기 연결·배포·200 확인"
   },
   {
    "id": "a520-a521-followup-1109",
@@ -24004,6 +24008,38 @@
    "what": "A5-20→A5-21 4채널 후속(이과장 pub1109a520·a521) 진행·완결 확인 — 완결 시 카톡 1통",
    "due": "2026-11-09",
    "cmd": "python -m studio.osmu_manifest table --code A5-20; python -m studio.osmu_manifest table --code A5-21",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "A5-20 4채널+교차링크+색인요청(#742 13:51) 완결·gsc_log 기록. A5-21 후속은 이과장 대기열(검색설명 초안 13:50)"
+  },
+  {
+   "id": "fuel-recheck-1109-1700",
+   "added": "2026-11-09",
+   "what": "글감 연료 — 재고 0·제안 0. 3. 삼성전기 배당금(DART) 결과·보류 4건(건보 36개월·우천 구단공지 Aside 읽기) 재시도·루틴4(여행)·루틴6 결과 확인. G1-15·G1-18 정정 필요 여부(기존 글 수정은 사장님 판단)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.topicprop table; python -c \"from studio import sessionstate as s; print(s.read_info('fuel1030')); print(s.read_info('cadaily'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-a520",
+   "added": "2026-11-09",
+   "what": "🔗 A5-20 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-20",
+   "due": "2026-11-09",
+   "cmd": "python studio/blogger.py crosslink --code A5-20",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "a521-followup-1109",
+   "added": "2026-11-09",
+   "what": "A5-21 4채널 후속(이과장 pub1109a521) 진행·완결 확인 — 완결 시 카톡 1통·색인요청 gsc_log add A5-21",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.osmu_manifest table --code A5-21; python -m studio.asidequeue list",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
