@@ -23880,6 +23880,36 @@
    "by": "이부장",
    "done_at": "2026-11-09",
    "result": "V0 재검 96/100 통과·v0check pass·결재함 A5-21 등록(approvalcount 2번)"
+  },
+  {
+   "id": "cadaily-1109-read",
+   "added": "2026-11-09",
+   "what": "3.세션 cadaily 오늘 회차 읽음·보고 확인 — 12:05 깨움(마지막 보고 11-08 12:20). 새 재료로 fuel1030 후보도",
+   "due": "2026-11-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('cadaily')); print(s.read_info('fuel1030'))\"; python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel1030-deep4-1109b",
+   "added": "2026-11-09",
+   "what": "FUEL-3/CA-DAILY 11-09 12시 deepread 4건(김해지역사랑카드·모두의카드11월플러스·부산청년근속·일요일등본) 회수 → 1편 제안",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_김해지역사랑카드_20261109.md docs/source_모두의카드11월플러스_20261109.md docs/source_부산청년근속지원금_20261109.md docs/source_일요일등본발급_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "d1-01-kiosk-fee-conflict",
+   "added": "2026-11-09",
+   "what": "D1-01 본문 무인발급기 「2024.5.30부터 주요 8종 무료」가 시행규칙 제17조④(시행 2026.10.29, Aside 실측) 「무인민원발급기 … 그 수수료의 2분의 1」과 상충 — 근거 문장 원문 없음 · D1-09 1350.moel.go.kr 표기(원문엔 110) 정정 후보 · docs/source_일요일등본발급_20261109.md",
+   "due": "2026-11-10",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show d1-01-kiosk-fee-conflict && sed -n '1,5p' docs/source_일요일등본발급_20261109.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
