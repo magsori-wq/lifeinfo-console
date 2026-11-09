@@ -24202,6 +24202,27 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "chkmon-modal-deploy-1109",
+   "added": "2026-11-09",
+   "what": "점검 모니터 팝업 모달 개선(chk_monitor.html) github.io 반영 — 다음 deploy.bat 묶음에 포함. localhost 는 즉시 적용",
+   "due": "2026-11-10",
+   "cmd": "curl -s https://magsori-wq.github.io/lifeinfo-console/chk_monitor.html | grep -c 'abw'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-login-ca-1109",
+   "added": "2026-11-09",
+   "what": "Aside ca 로그인 필요 — 자동 확인(17:03): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.asideprobe login --batch aside --what ca",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }

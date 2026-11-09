@@ -41,6 +41,20 @@ body.l1 .slot:nth-child(n+2){display:none}
 .sig .lamp,.sig .chip{cursor:pointer}
 .dp{flex:0 0 auto;border-bottom:2px solid var(--acc);background:var(--card);padding:8px 12px;max-height:46vh;overflow:auto}
 .dp[hidden]{display:none}
+.ab{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:12px;overflow:auto}
+.abw{background:var(--bg);color:var(--fg);border-radius:12px;max-width:780px;width:100%;max-height:88vh;overflow-y:auto;overflow-x:hidden;padding:14px 16px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.abh{font-size:17px;font-weight:800;margin:0 0 10px}
+.ab[hidden]{display:none}
+.abi{border-left:6px solid #dc2626;background:var(--bg);border-radius:6px;padding:8px 12px;margin-bottom:8px;font-size:15px;line-height:1.55}
+.abi.b{border-left-color:#2563eb}.abi.y{border-left-color:#d97706}
+.abt{font-weight:800;font-size:16px;margin-bottom:4px}.abi.r .abt{color:#dc2626}.abi.b .abt{color:#2563eb}.abi.y .abt{color:#d97706}
+.abr{display:flex;gap:8px}
+.abr b{flex:0 0 5.4em;color:var(--mut);font-weight:700}
+.abr span{flex:1 1 auto;min-width:0;word-break:keep-all;overflow-wrap:anywhere}
+.abm{color:var(--mut);margin:0 0 8px 4px}
+.abb button{border:1px solid var(--bar);background:var(--bg);color:var(--fg);border-radius:6px;padding:5px 12px;margin-right:6px;cursor:pointer;font-size:13.5px}
+.pd{margin:2px 0 6px 18px;padding:5px 10px;border-left:3px solid var(--bar);font-size:13px;line-height:1.5}
+.pd b{display:inline-block;min-width:5.6em;color:var(--mut)}
 .dph{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
 .dph button{border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:6px;padding:3px 10px;cursor:pointer;font-size:12.5px}
 .dph #dpClose{background:var(--bg);color:var(--fg);border-color:var(--bar)}
@@ -61,6 +75,7 @@ body.l1 .slot:nth-child(n+2){display:none}
   <span class="m">각 칸은 스스로 30초마다 새로 고침 · 칸 위 목록에서 다른 화면으로 바꿀 수 있음 · <span id="clock">—</span></span>
 </div>
 <div class="sig" id="sig"><span class="lamp">신호 확인 중…</span></div>
+<div class="ab" id="ab" hidden></div>
 <div class="dp" id="dp" hidden></div>
 <div class="grid" id="grid"></div>
 <script>
@@ -119,14 +134,14 @@ var KIND_LABEL={unverified_code:"코드 검증 안 됨",fuel_low:"연료 부족(
 function collect(x){
   var it=[],es=x[0],rf=x[1],ao=x[2],am=x[3],bv=x[4],ag=x[5],nokind=0;   /* kind 없는 사건 = 사장님 결재 대기(상황실 p=1) — 🔵 로 제목째 보인다 */
   if(es){
-    (es.incidents||[]).forEach(function(i){if(!i.kind){nokind++;it.push({lv:"b",k:"appr:"+String(i.what||"").slice(0,40),t:String(i.what||"사장님 결재 대기").slice(0,80)});return;}var red=RED_KIND.test(i.kind||"");it.push({lv:red?"r":"y",k:"inc:"+i.kind+":"+(i.id||""),t:(KIND_LABEL[i.kind]||i.kind)+" "+String(i.id||"").slice(0,12)});});
+    (es.incidents||[]).forEach(function(i){if(!i.kind){nokind++;it.push({lv:"b",k:"appr:"+String(i.what||"").slice(0,40),t:String(i.what||"사장님 결재 대기").slice(0,80),d:{what:String(i.what||"사장님 결재 대기").slice(0,160),why:"사장님 승인·결정이 있어야 다음 단계로 갑니다",who:"사장님",next:"CP 결재함(전자결재)에서 승인 또는 보류"}});return;}var red=RED_KIND.test(i.kind||"");it.push({lv:red?"r":"y",k:"inc:"+i.kind+":"+(i.id||""),t:(KIND_LABEL[i.kind]||i.kind)+" "+String(i.id||"").slice(0,12),d:{what:(KIND_LABEL[i.kind]||i.kind)+" "+String(i.id||""),why:String(i.what||i.detail||i.note||i.text||"").replace(/\s+/g," ").slice(0,220)||"사건 상세 기록 없음 — 상황실에서 근거를 보세요",who:String(i.owner||"이부장"),next:"이부장이 확인·지시합니다 — 상황실(엔진)에서 근거를 볼 수 있습니다"}});});
     if(es.aside&&es.aside.lvl&&es.aside.lvl!=="ok")it.push({lv:es.aside.lvl==="red"?"r":"y",k:"aside:"+es.aside.lvl,t:"Aside "+(es.aside.state||"")});
     if(es.tower&&es.tower.lvl&&es.tower.lvl!=="ok")it.push({lv:es.tower.lvl==="red"?"r":"y",k:"tower:"+es.tower.lvl,t:"관제탑 감시 "+es.tower.lvl+" ("+es.tower.age_min+"분)"});
   }
   if(rf&&rf.pairs)rf.pairs.forEach(function(p){if(p.status==="bad")it.push({lv:"r",k:"rf:"+p.name,t:"반영 어긋남 · "+p.name});else if(p.status==="stale")it.push({lv:"y",k:"rf:"+p.name,t:"반영 낡음 · "+p.name});});
-  if(ao&&ao.orders)Object.keys(ao.orders).forEach(function(n){var o=ao.orders[n];if(o.state==="blocked"){var a=ageMin(o.last_at);if(a!==null&&a<=180)it.push({lv:"r",k:"aso:"+n,t:"Aside 막힘 #"+n+" "+(o.code||"")});}});
+  if(ao&&ao.orders)Object.keys(ao.orders).forEach(function(n){var o=ao.orders[n];if(o.state==="blocked"){var a=ageMin(o.last_at);if(a!==null&&a<=180)it.push({lv:"r",k:"aso:"+n,t:"Aside 막힘 #"+n+" "+(o.code||""),d:{what:"Aside 작업 #"+n+" "+(o.code||"")+" 이(가) 막혔습니다",why:String(o.note||o.what||o.reason||"Aside 가 blocked 로 보고했습니다 — 사유는 보고 원문 참고").replace(/\s+/g," ").slice(0,220),who:"이부장(Aside 지시 담당)",next:"막힌 사유를 풀어 다시 지시하거나 같은 종류 다음 지시를 보류"}});}});
   /* 보드의 막힌 항목: 동결·끝난 보드는 뺀다. 점검 보드(fix·recheck·reflect·instacap)와 CP 가 「막힘」으로 판정한 지시서는 🔴, 그 밖(이부장 일일 보드 등)의 막힌 항목은 🟡 */
-  if(bv&&bv.batches){var stm=bv.st||{},CHK=["fix1102","recheck1105","reflect1105","instacap1105"];Object.keys(bv.batches).forEach(function(b){var s=stm[b];if(s==="frozen"||s==="closed")return;((bv.batches[b]||{}).items||[]).forEach(function(i){if(i.state==="blocked")it.push({lv:(s==="block"||CHK.indexOf(b)>=0)?"r":"y",k:"blk:"+b+":"+i.code,t:"막힌 항목 "+b+"/"+i.code+(i.title?" · "+String(i.title).slice(0,40):"")+(i.note?" — 사유: "+String(i.note).replace(/\s+/g," ").slice(-70):"")});});});}
+  if(bv&&bv.batches){var stm=bv.st||{},CHK=["fix1102","recheck1105","reflect1105","instacap1105"];Object.keys(bv.batches).forEach(function(b){var s=stm[b];if(s==="frozen"||s==="closed")return;((bv.batches[b]||{}).items||[]).forEach(function(i){if(i.state==="blocked")it.push({lv:(s==="block"||CHK.indexOf(b)>=0)?"r":"y",k:"blk:"+b+":"+i.code,t:"막힌 항목 "+b+"/"+i.code+(i.title?" · "+String(i.title).slice(0,40):"")+(i.note?" — 사유: "+String(i.note).replace(/\s+/g," ").slice(-70):""),d:{what:(i.title||i.code)+"  ("+b+" / "+i.code+")",why:String(i.note||"").replace(/\s+/g," ").trim()||"사유 기록 없음 — 지시서를 열어 확인하세요",who:String((bv.batches[b]||{}).owner||"담당 미지정"),next:"담당이 풀리는 조건을 확인해 지시서에 답하거나, 막혔는데 안 풀리면 이부장에게 보고"}});});});}
   if(ag&&ag.items){var y=new Date().getFullYear();ag.items.forEach(function(a){if(a.run!=="done"){var m=/^(\d\d)-(\d\d) (\d\d):(\d\d)$/.exec(a.started||"");if(m){var s=new Date(y,+m[1]-1,+m[2],+m[3],+m[4]);if((Date.now()-s)/60000>120)it.push({lv:"y",k:"ag:"+a.id,t:(a.run==="stale"?"에이전트 알림 없음 3시간+ (끝났는지 모름) · ":"에이전트 2시간 넘게 도는 중 · ")+String(a.purpose||"").slice(0,24)});}}});}
   if(am&&+am.waiting_count>0&&!nokind)it.push({lv:"b",k:"appr:"+am.waiting_count,t:"사장님 결재 대기 "+am.waiting_count+"건"});
   return it;
@@ -151,6 +166,7 @@ function alarmCheck(urgent){
   try{sessionStorage.setItem(SEEN_KEY,JSON.stringify(cur));}catch(e){}
   var redNow=urgent.some(function(i){return i.lv==="r";});
   var again=redNow&&(Date.now()-lastBeep>600000);   /* 🔴 가 이어지면 10분마다 다시 */
+  if(fresh.length){try{showBanner(urgent.filter(function(i){return fresh.indexOf(i.k)>=0;}));}catch(e){}}
   if(alarmOn&&(fresh.length||again)){beep();
     try{if(window.Notification&&Notification.permission==="granted"&&(fresh.length)){var f=urgent.filter(function(i){return fresh.indexOf(i.k)>=0;})[0];var nt=new Notification("점검 모니터 — "+(f.lv==="r"?"막힘·실패":"사장님 몫"),{body:f.t+" (눌러서 상세 보기)"});nt.onclick=function(){try{window.focus();}catch(e){}try{parent.postMessage({chkmon:"open"},"*");}catch(e){}openDetail(true);nt.close();};}}catch(e){}}
 }
@@ -165,6 +181,9 @@ function lt(d){d=d||new Date();return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"
 function hm(t){var d=new Date(t);return p2(d.getHours())+":"+p2(d.getMinutes());}
 function hrefOf(k){var p=String(k).split(":"),h=p[0];if(h==="rf")return "reflect.html";if(h==="blk")return {fix1102:"fix1102.html",recheck1105:"recheck1105.html",reflect1105:"reflect1105.html"}[p[1]]||"batch.html";if(h==="ag")return "fix1102.html";if(h==="appr")return "approval.html";return "engine.html";}
 function stamp(it){var fs={};try{fs=JSON.parse(get(FS_KEY)||"{}");}catch(e){}var nf={},n=lt();it.forEach(function(i){i.since=fs[i.k]||n;nf[i.k]=i.since;i.href=hrefOf(i.k);});set(FS_KEY,JSON.stringify(nf));return it;}
+function dHtml(i){var d=i.d;if(!d)return "";return '<div class="pd"><div><b>무엇이</b> '+esc(d.what)+'</div><div><b>왜</b> '+esc(d.why)+'</div><div><b>누가 풀어야</b> '+esc(d.who)+'</div><div><b>다음 행동</b> '+esc(d.next)+'</div></div>';}
+function showBanner(L){var ab=document.getElementById("ab");if(!ab||!L.length)return;var h="";L.slice(0,8).forEach(function(i,n){var d=i.d||{what:i.t,why:"",who:"",next:"상세 보기에서 확인"};h+='<div class="abi '+i.lv+'"><div class="abt">'+(n+1)+'. '+(i.lv==="r"?"🔴 새 문제 — 막힘·실패":i.lv==="b"?"🔵 새 안건 — 사장님 몫":"🟡 새 주의")+'</div><div class="abr"><b>무엇이</b><span>'+esc(d.what)+'</span></div>'+(d.why?'<div class="abr"><b>왜</b><span>'+esc(d.why)+'</span></div>':"")+(d.who?'<div class="abr"><b>누가 풀어야</b><span>'+esc(d.who)+'</span></div>':"")+'<div class="abr"><b>다음 행동</b><span>'+esc(d.next||"")+'</span></div></div>';});if(L.length>8)h+='<div class="abm">외 '+(L.length-8)+'건 — 상세 보기에서 모두 확인</div>';h+='<div class="abb"><button id="abOpen">상세 보기·이부장에게 보고</button><button id="abClose">닫기 ✕</button></div>';ab.innerHTML='<div class="abw"><div class="abh">🚨 점검 모니터 — 새로 생긴 문제 '+L.length+'건</div>'+h+'</div>';ab.hidden=false;ab.onclick=function(e){if(e.target===ab)ab.hidden=true;};document.getElementById("abOpen").onclick=function(){ab.hidden=true;openDetail(true);};document.getElementById("abClose").onclick=function(){ab.hidden=true;};}
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){var a=document.getElementById("ab");if(a)a.hidden=true;}});
 function actHtml(i){var a=ACT[i.k];if(!a||!ST[a.state])return '<div class="ac none">　⏳ 조치 기록 없음 — 이부장 접수 전</div>';return '<div class="ac '+esc(a.state)+'">　<b>'+ST[a.state]+'</b> '+esc(a.note||"")+(a.insight?' <span class="in">💡 '+esc(a.insight)+'</span>':"")+' <span class="s">'+esc(String(a.at||"").slice(5,16))+'</span></div>';}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function msg(m,c){var e=document.getElementById("dpMsg");if(e){e.textContent=m;e.className="dpm "+(c||"");}}
@@ -172,7 +191,7 @@ function renderDetail(){
   var cm=document.getElementById("dpMsg"),keepMsg=cm?cm.textContent:"",keepCls=cm?cm.className:"dpm";
   var G=[["r","🔴 막힘·실패 — 즉시 처리"],["b","🔵 사장님 몫 — 즉시 처리"],["y","🟡 주의 — 묶음 처리"]];
   var h='<div class="dph"><b>📋 상세 내역</b><span style="color:var(--mut)">'+CUR.length+'건 · 항목을 누르면 칸 1에 그 화면이 열립니다</span><button id="dpRep">📨 이부장에게 보고</button><button id="dpClose">닫기 ✕</button></div><div id="dpMsg" class="'+esc(keepCls)+'">'+esc(keepMsg)+'</div>';
-  G.forEach(function(g){var L=CUR.filter(function(i){return i.lv===g[0];});if(!L.length)return;h+='<div class="dg">'+g[1]+' ('+L.length+')</div>';L.forEach(function(i){h+='<div class="it"><span class="t">'+esc(i.t)+'</span><span class="s">처음 '+esc(String(i.since).slice(5,16))+'</span><a href="#" data-h="'+esc(i.href)+'">화면 보기</a></div>'+actHtml(i);});});
+  G.forEach(function(g){var L=CUR.filter(function(i){return i.lv===g[0];});if(!L.length)return;h+='<div class="dg">'+g[1]+' ('+L.length+')</div>';L.forEach(function(i){h+='<div class="it"><span class="t">'+esc(i.t)+'</span><span class="s">처음 '+esc(String(i.since).slice(5,16))+'</span><a href="#" data-h="'+esc(i.href)+'">화면 보기</a></div>'+dHtml(i)+actHtml(i);});});
   if(!CUR.length)h+='<div class="dg">🟢 지금 막힘·주의 항목이 없습니다</div>';
   dp.innerHTML=h;
   document.getElementById("dpClose").onclick=function(){dp.hidden=true;};
