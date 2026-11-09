@@ -25264,6 +25264,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "console-check-fixpv-tel-1109",
+   "added": "2026-11-09",
+   "what": "콘솔 정합성 검사 RED 지속(11-09 22:59 KST 최신 실패) — 원인이 aromapv 가 아니라 fixpv_D2-05.html 의 tel:1577-0990 '깨진 로컬 참조' 1건(체커 오탐 가능: tel: 링크). 기존 console-check-aromapv-1109 와 별개 원인",
+   "due": "2026-11-10",
+   "cmd": "gh run view 42630267214 -R magsori-wq/lifeinfo-console --log-failed | grep -m3 '깨진 로컬'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a2a91851"
   }
  ]
 }
