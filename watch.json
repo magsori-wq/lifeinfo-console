@@ -25313,6 +25313,18 @@
    "by": "이대리",
    "done_at": "2026-11-10",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "fable-verify-reconcile-archive-1110",
+   "added": "2026-11-10",
+   "what": "페이블 독립 검증(79fefd9·e43ea1a·2a6c482·4ada6b8·894da6a) — docs/검증_fable_정합패스_보관_20261110.md 에 5해시가 들어가면 CODE_UNVERIFIED 해소, 🔴 있으면 수정",
+   "due": "2026-11-10",
+   "cmd": "grep -c 79fefd9 docs/검증_fable_정합패스_보관_20261110.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-10",
+   "result": "페이블 검증 완료 docs/검증_fable_정합패스_보관_20261110.md — 🟢4·🟡 구조 위험(confirmable 이 실측 완료 미반영) 수정 커밋, LD 행에 seodesc 단서 추가. 보관 147건 전수 대조 일치"
   }
  ]
 }
