@@ -24239,6 +24239,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "h139-seodesc-requeue-1109",
+   "added": "2026-11-09",
+   "what": "H1-39 검색설명 재등록 확인 — #748 blocked(창 문제)·이과장 17:18 재등록 지시. 라이브 meta 확인(seodesc scan --only H1-39)",
+   "due": "2026-11-09",
+   "cmd": "python -m studio.asidequeue list; python -m studio.seodesc scan --only H1-39",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
