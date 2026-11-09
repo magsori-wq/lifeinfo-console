@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09 21:17",
+ "generated": "2026-11-09 22:42",
  "routines": [
   {
    "num": 1,
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/08 22:33",
-   "next": "11/09 22:30",
+   "last": "11/09 22:33",
+   "next": "11/10 22:30",
    "model": "sonnet-5-5",
-   "report_day": "1108",
-   "report": "11-08 야간검증 — 오늘 발행 9편 중 A5-19·D5-11·B2-25 열람, 내부 계산 오류 0. 시행령 제104조의2 상한 원문 대조는 law.go.kr DRF IP 미등록으로 못 얻음(watch nightly-a519-formula-1108). 기존 글 검증 0편. 카톡 보고 완료",
+   "report_day": "1109",
+   "report": "11-09 야간검증: 오늘 발행 5편 중 H1-39 OpenDART 대조 일치(오류0). A5-20/A5-21 조문 직접대조는 law.go.kr API 검증실패로 미결, G2-07 9/17 최종확정 보도자료 못 찾음(상한값은 2차보도 확인), D3-15 미검증. 라이브 수정 없음. 이어받은 것: 10-20 이후 공백, 새로 본 것: 위 5편. 카톡 발송 완료",
    "runs": [
+    {
+     "at": "11/09 22:42",
+     "link": "claude://claude.ai/epitaxy/local_acce1fbb-6735-4b9f-bcd6-f32cc1a85baf",
+     "archived": false
+    },
     {
      "at": "11/08 22:38",
      "link": "claude://claude.ai/epitaxy/local_8e664e49-8bad-4fad-b721-e16432812349",
@@ -183,11 +188,6 @@
      "at": "11/06 22:46",
      "link": "claude://claude.ai/epitaxy/local_8b10288d-05e1-436a-b821-7eeea26c9994",
      "archived": false
-    },
-    {
-     "at": "11/05 22:39",
-     "link": "claude://claude.ai/epitaxy/local_8a185bb6-69a6-4752-90bc-5c7e42a2f8c2",
-     "archived": true
     }
    ]
   },
