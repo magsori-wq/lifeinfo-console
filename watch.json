@@ -23358,8 +23358,10 @@
    "due": "2026-11-09",
    "cmd": "git show 158c545ab; python -m studio.routines 1",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "페이블 검증 완료(docs/검증_fable_158c545ab_20261109.md): 문구는 실제 cron 과 일치·되돌림 위험 없음, 주석·SCHEDULE·오푸스 예외 3곳 정정 커밋"
   },
   {
    "id": "aside-standing-confirm-1109",
@@ -24204,8 +24206,10 @@
    "due": "2026-11-09",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('v0fix1109h139'))\"; python -m studio.v0check gate --code H1-39",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "V0 재검 94 통과 후 발행·완결"
   },
   {
    "id": "chkmon-modal-deploy-1109",
@@ -24237,8 +24241,10 @@
    "due": "2026-11-09",
    "cmd": "python -m studio.osmu_manifest table --code H1-39; python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "H1-39 4채널+검색설명+교차링크+색인요청(#753 18:01) 완결·gsc_log 기록"
   },
   {
    "id": "h139-seodesc-requeue-1109",
@@ -24247,8 +24253,10 @@
    "due": "2026-11-09",
    "cmd": "python -m studio.asidequeue list; python -m studio.seodesc scan --only H1-39",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "검색설명 #750 17:26 라이브 103자 일치 확인"
   },
   {
    "id": "deepread-alipay-1109",
@@ -24291,8 +24299,10 @@
    "due": "2026-11-09",
    "cmd": "ls docs/검증_fable_이대리깨우기_20261109.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "페이블 검증 완료 — 🔴2(보류 오탐·지시 스푸핑) 수정 커밋, 🟡(deploy.bat 점파일 공개·감시 사각 등)은 별도 처리"
   },
   {
    "id": "deepread-alipay-unread-1109",
@@ -24331,8 +24341,10 @@
    "due": "2026-11-12",
    "cmd": "ls docs/source_건보임의계속36개월_20261109.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-09",
+   "result": "시행령 제77조① 36개월 확인·C1-11 중복 탈락"
   },
   {
    "id": "c1-11-geon-yeonjang-check",
@@ -24343,6 +24355,80 @@
    "owner": "user",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "adsedit-schedule-1109",
+   "added": "2026-11-09",
+   "what": "애드센스 보강 일정(11-15 전 4편): E2-01 11-10 오전까지·A4-04 11-11·H1-18/G4-02 11-12~13 — 이과장 dry-run 보고마다 이부장 go. 이과장이 보드 지시([이부장 → 이과장])를 자동 깨움으로 받는지(17:55 등록) 읽음 확인",
+   "due": "2026-11-10",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('adsedit1108'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-h139",
+   "added": "2026-11-09",
+   "what": "🔗 H1-39 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-39",
+   "due": "2026-11-09",
+   "cmd": "python studio/blogger.py crosslink --code H1-39",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "d404-refund-wording-review-1109",
+   "added": "2026-11-09",
+   "what": "D4-04 우천 환불 문구 과장 의심(전액 자동환불·익일 10%·당일 무료) — 원문: SSG 현금·교환권 매표소 방문, LG 현금 매표소 환불, 10% 는 일반취소 조항. 정정 여부 이부장 판단",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_우천교환권구단공지_20261109.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "facts-fix-1109",
+   "added": "2026-11-09",
+   "what": "라이브 기존 글 사실 정정 추적: fix1109d405(D4-05)·fix1109facts(D4-04·C1-11) — 이과장 dry-run 보고마다 이부장 검토·go(기존 문장 보존·새 숫자 없음). 읽음은 자동 깨움으로 받는지 확인",
+   "due": "2026-11-10",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('fix1109d405')); print(s.read_info('fix1109facts'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "leewake-owner-check-1109",
+   "added": "2026-11-09",
+   "what": "이과장 자동 깨움이 fix1109d405·fix1109facts·adsedit1108 지시서를 읽게 됐는지 확인(담당 이과장 지정 18:05 — 담당 미지정이면 leewake 가 지시서 갱신을 못 본다). 18:10 까지 읽음 0 이면 SendMessage",
+   "due": "2026-11-09",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('fix1109d405')); print(s.read_info('fix1109facts'))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "담당 이과장 지정·자동 지정 코드 뒤 이과장이 시험 배치 owntest1109 까지 읽고 무시 보고(18:13) — 지시서 갱신 자동 깨움 정상. fix1109facts 읽음 확인"
+  },
+  {
+   "id": "d404-live-1109",
+   "added": "2026-11-09",
+   "what": "D4-04 정정 라이브 반영 확인(이과장 mark 후): 라이브 본문에서 근거 없는 3문장이 사라지고 LG 인용이 들어갔는지 curl 로 직접 확인",
+   "due": "2026-11-09",
+   "cmd": "curl -s -A Mozilla/5.0 $(python -c \"import re;t=open('webapp/lifeinfo_db.txt',encoding='utf-8').read();i=t.find('\\\"code\\\": \\\"D4-04\\\"');print(re.search(r'\\\"url\\\": \\\"([^\\\"]+)',t[i:i+900]).group(1))\") | grep -c 'LG 트윈스 티켓 안내'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "approve-d4-04",
+   "added": "2026-11-09",
+   "what": "D4-04 프로야구 예매 글 사실 정정(라이브 본문 5문장 교체·낮춤, 새 숫자 없음) — ① 「경기 취소 시 수수료 없이 전액 자동 환불」→ LG 안내(인터넷·현장 카드결제 자동 결제 취소, 현금은 매표소 환불)로 교체 ② 「예매 당일 무료·익일부터 약 10%」→ LG 기준 결제금액 10%(당일 취소분 제외)로 한정·타 구단 확인 못 함 ③ 팁의 「어차피 전액 자동 환불」→「구단·예매처마다 다르니」 ④ 노게임 「전액·대부분 자동」→「환불 대상·카드 자동/현금 매표소」 ⑤ 「강우 콜드게임 환불 안 됨」→「확인하지 못했다」. 근거: LG 트윈스 /ticket/general 직접 확인(11-09)·docs/source_우천교환권구단공지_20261109.md. 수정 전 스냅샷 data/snapshots/D4-04/body_before_20261109.html·안 body_after_draft_20261109.html. 이부장 검토 go(18:13) 완료. 【권고】승인 — 틀린 환불 단정을 바로잡는 정정이라 독자 오해(현금 구매자가 자동 환불을 기다림)를 줄임 【근거】LG 공식 안내 원문 직접 대조 【위험】되돌림은 스냅샷 복원으로 가능·라이브 반영 뒤 crosslink 재삽입 필요",
+   "due": "2026-11-09",
+   "cmd": "승인 시 이과장이 update-post 로 라이브 반영 후 getByPath 재확인",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장",
+   "req_by": "이과장"
   }
  ]
 }
