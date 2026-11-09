@@ -7,11 +7,14 @@
    "added": "2026-08-03",
    "what": "도입부 수치 남은 53편(3편은 08-10 반영완료) — 본문 수치도 빈약해 공식 조사가 선행돼야 함. 새 수치를 만들지 않는다. 공식 확인이 된 글만 앞으로 올린다. 남은 분량은 편당 리서치라 스케일이 커 배치보드 작업지시서 전환 검토 필요",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "flag": "새 수치를 만들지 않는다. 공식 확인이 된 글만 앞으로 올린다",
    "note": 89,
    "due": "2026-09-13",
-   "cmd": "python -m studio.note list"
+   "cmd": "python -m studio.note list",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "osmu-f4-10",
@@ -674,7 +677,10 @@
    "due": "2026-10-01",
    "cmd": "powershell -File C:\\Users\\magso\\tools\\perf_report.ps1   # 증상 5건 미만이면 며칠 더 모을 것",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "skill-upload-0817",
@@ -739,7 +745,10 @@
    "due": "2026-09-25",
    "cmd": "python -c \"import urllib.request;print(urllib.request.urlopen('https://adventure.lotteworld.com/kor/event/eventList/list.do',timeout=20).status)\" ; 그리고 everland.com 축제목록 재조회",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "insta-website-link",
@@ -1035,9 +1044,12 @@
    "due": "2026-10-15",
    "cmd": "start https://trends.google.co.kr/trends/",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "crosslink-legacy-70",
@@ -1046,7 +1058,10 @@
    "due": "2026-09-30",
    "cmd": "python -m studio.crosslinkcheck",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "github-app-claude-perms",
@@ -1100,7 +1115,10 @@
    "due": "2026-10-05",
    "cmd": "python -c \"import json,io,collections;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'))['posts'];print(collections.Counter(v.get('state') for v in d.values()))\"",
    "owner": "claude",
-   "state": "wait"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "g2-03-hold-until-sept",
@@ -1375,7 +1393,10 @@
    "due": "2026-09-25",
    "cmd": "python -m studio.crosslinkcheck",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "deploy-stray-tmpdump-0828",
@@ -1417,7 +1438,10 @@
    "due": "2026-09-23",
    "cmd": "cat docs/네이버_수집현황_보고서_20260829.md",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "gsc-reason-report-20260829",
@@ -2262,7 +2286,10 @@
    "due": "2026-10-07",
    "cmd": "docs/source_regionbond_20260905.md 6절 참고 — 각 시도 고시공고 게시판 직접검색, 경기도 지역개발기금 설치 조례 시행규칙 law.go.kr ordin 검색",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "v0reject-g3-04",
@@ -2304,7 +2331,10 @@
    "due": "2026-09-13",
    "cmd": "python -m studio.naverstat",
    "owner": "claude",
-   "state": "todo"
+   "state": "done",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "aff-issue-0906",
@@ -2413,8 +2443,11 @@
    "due": "2026-10-01",
    "cmd": "visitbusan.net/schedule/list.do?...year=2026&month=10 재확인 + 브라우저로 instagram.com/busan.jagalchi 최근게시물 확인 + 부산 중구청(jung.busan.kr) 공지 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "naver-post-a602",
@@ -2659,8 +2692,11 @@
    "due": "2026-10-07",
    "cmd": "브라우저(claude-in-chrome)로 austrian.com/us/en/check-in-deadlines 접속 재시도(카운터 332-361 vs 351-372 불일치 해소) + 비엔나공항 콜센터(+43-1-7007-22233) 문의로 보안검색 소요시간/터미널-게이트 매핑 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "wake-lee-go-0907",
@@ -3562,8 +3598,11 @@
    "due": "2026-09-12",
    "cmd": "grep -n -A8 '인스타 캡션 편집 시 교차링크' docs/일일_문제기록.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-a1-15-pending-0912",
@@ -3806,8 +3845,11 @@
    "due": "2026-09-20",
    "cmd": "python -c \"import json;d=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print(len(d['posts']))\" # 진행분은 adsense0915 보드 note 대조",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "postshape-variants-0912",
@@ -3876,8 +3918,11 @@
    "due": "2026-09-27",
    "cmd": "ls docs/루틴점검_20260913_*.md && python tools/routinesync.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "progress-single-slot-0913",
@@ -3886,8 +3931,11 @@
    "due": "2026-09-27",
    "cmd": "grep -n \"pipeline\" studio/board_seed.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "naver-post-D1-10",
@@ -4266,8 +4314,11 @@
    "due": "2026-09-27",
    "cmd": "python -c \"import json;a=json.load(open('webapp/affiliate.json',encoding='utf-8'))['items'];print([c for c,v in a.items() if v.get('no_fit_at')][-10:])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "anthropic-support-closed-0914",
@@ -4301,8 +4352,11 @@
    "due": "2026-10-05",
    "cmd": "브라우저(claude-in-chrome)로 programs.sbs.co.kr/drama/doctorx/about/88584 렌더본문 재확인(종료시각·리메이크문구) + 10월초 이후 sbs.co.kr/schedule 에서 10/9 편성 확인(지역민방 포함여부)",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "v0reject-h1-10",
@@ -4335,8 +4389,11 @@
    "due": "2026-09-27",
    "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('osmu0914a406'))\" && grep -c DdRNq3RgaMw webapp/lifeinfo_db.txt",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "afflink-f4-21",
@@ -4672,8 +4729,11 @@
    "due": "2026-09-30",
    "cmd": "브라우저로 tving.com 시리즈 전체보기(에피소드 목록) 확인 또는 종영 임박 시(10월 중하순) 언론보도 재검색",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-livefix0917g304",
@@ -4902,8 +4962,11 @@
    "due": "2026-09-25",
    "cmd": "python -m studio.approvalcount | head -20  # ⑦ 카드에 제휴 줄이 보이는지",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-b3-01",
@@ -5501,8 +5564,11 @@
    "due": "2026-10-05",
    "cmd": "python -m studio.dupcheck '최적요금제 고지 의무' && cat docs/source_E1-99_최적요금제고지_20260919.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "energyvoucher-gosi-0919",
@@ -5707,8 +5773,11 @@
    "due": "2026-09-23",
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/lifeinfo_db.txt',encoding='utf-8'));m={p['code']:(p.get('osmu') or {}).get('instagram','') for p in d['posts']};print({c:m.get(c) for c in ['F1-15','H1-02','H1-05','A1-15','B2-14','H1-07','A1-16']})\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "deploy-g408-0921",
@@ -5875,8 +5944,11 @@
    "due": "2026-10-07",
    "cmd": "docs/c213_1차출처_심뇌혈관골든타임_20260906.md 참고 후 소방청(119)·질병관리청 공식 자료 재탐색",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "adsense-review-0923",
@@ -5887,8 +5959,11 @@
    "owner": "claude",
    "verify": "curl -s -o /dev/null -w '%{http_code}' https://lifeinfo8975.blogspot.com/ads.txt",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "webuniq-h102-retry",
@@ -5897,8 +5972,11 @@
    "due": "2026-09-25",
    "cmd": "구글에서 정확한 따옴표문구로 재검색",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "adstxt-verify-0923",
@@ -6125,8 +6203,11 @@
    "due": "2026-10-01",
    "cmd": "cat docs/두채널동시정지_20260924.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "출처관 에이전트"
+   "state": "done",
+   "by": "출처관 에이전트",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "adsense-peer-ads-filled-0924",
@@ -6135,8 +6216,11 @@
    "due": "2026-09-30",
    "cmd": "claude-in-chrome 으로 https://eunzzing.blogspot.com/2026/09/childbirth-support-benefits-apply.html 과 https://dailyujun2025.blogspot.com/ 을 열어 광고 iframe 이 실제로 채워지는지(빈 ins 가 아닌지) 육안 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-yml-gitignore-glob-0924",
@@ -6157,8 +6241,11 @@
    "due": "2026-09-26",
    "cmd": "python studio/_nogovlink_check.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴7 · lifeinfo-index-check (G)"
+   "state": "done",
+   "by": "루틴7 · lifeinfo-index-check (G)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "idx0zero-pointer-moved-1001",
@@ -6260,8 +6347,11 @@
    "due": "2026-10-09",
    "cmd": "python studio/searchconsole.py inspect",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴3 · lifeinfo-publish (C)"
+   "state": "done",
+   "by": "루틴3 · lifeinfo-publish (C)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "sitemap-pages-reread-0928",
@@ -6344,8 +6434,11 @@
    "due": "2026-09-30",
    "cmd": "python -m studio.pipeline check-source --url https://nip.kdca.go.kr/irhp/remd/goVcntNtfc.do?menuLv=2&menuCd=22 (또는 콜센터 1339 문의 후 docs/source_C_독감국가예방접종_2026하반기_20260926.md 갱신)",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴6"
+   "state": "done",
+   "by": "루틴6",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "source-d-wetax-official-guide-0926",
@@ -6354,8 +6447,11 @@
    "due": "2026-10-05",
    "cmd": "claude-in-chrome 으로 로그인 후 wetax.go.kr 신청>연세액납부>자동차세 화면 재확인, 또는 위택스 고객센터(110) 문의",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴6"
+   "state": "done",
+   "by": "루틴6",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-c214-flufix",
@@ -6455,8 +6551,11 @@
    "due": "2026-09-30",
    "cmd": "국세상담센터 126 ARS 2-1(종합부동산세 상담) 문의",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "afflink-20260926-2",
@@ -6542,8 +6641,11 @@
    "due": "2026-09-27",
    "cmd": "python -m studio.productprop",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "redirect-sample-blogpage16-0927",
@@ -6552,8 +6654,11 @@
    "due": "2026-10-01",
    "cmd": "python -m studio.searchconsole inspect --url https://lifeinfo8975.blogspot.com/p/blog-page_16.html",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "decide-adpost-analysis-0927",
@@ -6700,8 +6805,11 @@
    "due": "2026-10-04",
    "cmd": "python -m studio.roles 이과장 삭제",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "topic-orv-sequel",
@@ -6830,8 +6938,11 @@
    "due": "2026-09-29",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴2 · lifeinfo-daily-topics (B)"
+   "state": "done",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "rich-missing-0928",
@@ -6939,8 +7050,11 @@
    "due": "2026-09-29",
    "cmd": "python -m studio.watch due",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "github-claude-perm-0930",
@@ -7259,8 +7373,11 @@
    "due": "2026-10-05",
    "cmd": "python studio/blogger.py update-post --code F2-01",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴6 · lifeinfo-daily-publish (F)"
+   "state": "done",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "h120-deploy-pub-1002",
@@ -7383,8 +7500,11 @@
    "due": "2026-10-05",
    "cmd": "WebFetch https://www.sgic.co.kr 또는 claude-in-chrome 으로 전세금보장신용보험 보증료율표 직접 확인 후 D3-04 라이브와 대조",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "lee-session-down-1003",
@@ -7405,8 +7525,11 @@
    "due": "2026-10-05",
    "cmd": "claude-in-chrome 으로 https://www.netflix.com/title/82016402 직접 열어 회차수·공개방식 확인, 또는 10/9 공개 후 재확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-b5-05",
@@ -7463,8 +7586,11 @@
    "due": "2026-10-10",
    "cmd": "python -m studio.watch done --id source-암살자들-메가박스가격-20261003 --result \"<URL과 수치>\". 재시도: claude-in-chrome으로 megabox.co.kr 예매 플로우를 좌석선택 단계까지 진행해 결제화면의 가격을 직접 읽을 것(CGV booking flow가 막혔던 것과 달리 메가박스는 극장페이지 탭 자체에 가격 메뉴가 없어 예매플로우 끝까지 가야 할 가능성)",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "afflink-20261003-1",
@@ -7679,8 +7805,11 @@
    "due": "2026-10-06",
    "cmd": "python -m studio.cpview --diff && python validate_db.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "daily-publish-0110-msit-원문",
@@ -7831,8 +7960,11 @@
    "due": "2026-10-11",
    "cmd": "python -c \"print('보건복지부 의료급여 본인부담 기준 원문에서 요양병원 상한 확인 후 watch done')\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "hi-c1-02-10-08",
@@ -7841,8 +7973,11 @@
    "due": "2026-10-08",
    "cmd": "python -m studio.dupcheck \"건강보험 환급금 체납 보험료 공제 10월 8일 개정\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴6 · lifeinfo-daily-publish (F)"
+   "state": "done",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "routines-missed-1004",
@@ -7917,8 +8052,11 @@
    "due": "2026-10-07",
    "cmd": "python studio/adsense.py status 대신 - mohw.go.kr 보도자료 검색을 브라우저로 직접 열어 2025.11.28자 2026년 노인일자리 모집 공고 원문에서 활동비 확인, 또는 1544-3388 전화문의",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "cp-publish-button-1005",
@@ -7986,8 +8124,11 @@
    "due": "2026-10-05",
    "cmd": "grep -n approve_server C:/lifeinfo/.claude/settings.local.json",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "suneung-discount-2026",
@@ -8006,8 +8147,11 @@
    "due": "2026-10-16",
    "cmd": "브라우저로 https://hiking.kworks.co.kr 재방문(가을철 갱신 확인) + forest.go.kr 알림 게시판 리스트를 직접 눈으로 훑기(사이트 검색창 작동 안 함)",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "kimjang-daeChaek-recheck-1005",
@@ -8016,8 +8160,11 @@
    "due": "2026-10-23",
    "cmd": "claude-in-chrome 으로 https://www.mafra.go.kr/home/5109/subview.do 열고 화면 검색폼에 '김장' 입력후 검색 — 2026년 항목 떴는지 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "hug-jeonse-system-change-1005",
@@ -8351,8 +8498,11 @@
    "due": "2026-10-16",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "wait",
-   "by": "루틴6 · lifeinfo-daily-publish (F)"
+   "state": "done",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "afflink-20261008-1",
@@ -8374,8 +8524,11 @@
    "due": "2026-10-10",
    "cmd": "PYTHONIOENCODING=utf-8 grep -n 'SendFeedback' CLAUDE.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴1 · daily-email-briefing (A)"
+   "state": "done",
+   "by": "루틴1 · daily-email-briefing (A)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "idx-control-group-protect-1008",
@@ -8384,8 +8537,11 @@
    "due": "2026-10-15",
    "cmd": "python -c \"import json,io;d=json.load(io.open('webapp/index_status.json',encoding='utf-8'))['posts'];g=json.load(io.open('webapp/gsc_req_dates.json',encoding='utf-8'))['dates'];B='A5-13 B3-06 B5-05 D5-04 D5-06 E4-07 G4-10 H1-20 H1-21 H1-22 H1-23'.split();A='A1-10 A2-07 A2-11 A3-07 A3-08 A4-05 B1-05 B2-08 B2-09 B3-04 B4-06 C1-12 C1-13 C2-07 C3-04 D1-04 D2-10 D4-04 D4-05 D4-07 E1-02 E2-08 F1-07 F1-08 F2-09 F2-10 F2-11 F2-18 F3-07 F4-06 F4-07 F4-08 F4-09 H1-13'.split();f=lambda L:(sum(1 for c in L if (d.get(c,{}).get('lastCrawl') or '')), [c for c in L if (g.get(c) or '')>='2026-10-05']);print('B 크롤',f(B)[0],'/11 · 그사이 요청된 글',f(B)[1]);print('A 크롤',f(A)[0],'/34 · 그사이 요청된 글',f(A)[1])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴7 · lifeinfo-index-check (G)"
+   "state": "done",
+   "by": "루틴7 · lifeinfo-index-check (G)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "yield-wording-fix-1008",
@@ -8406,8 +8562,11 @@
    "due": "2026-10-09",
    "cmd": "python -m studio.navergate && grep -n '네이버도 7월에 같이 멈췄다\\|#6' docs/애드센스_소거표_20260924.md docs/재판정_소거표6_20261001_4.md | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴7 · lifeinfo-index-check (G)"
+   "state": "done",
+   "by": "루틴7 · lifeinfo-index-check (G)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-g411",
@@ -8463,8 +8622,11 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.naverfmt",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "orders-stale-cleanup-1008",
@@ -8789,8 +8951,11 @@
    "due": "2026-10-16",
    "cmd": "cat docs/source_B2-18_사잇돌대출SCB확대_20261009.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴2 · lifeinfo-daily-topics (B)"
+   "state": "done",
+   "by": "루틴2 · lifeinfo-daily-topics (B)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "wake-draft1009",
@@ -8908,8 +9073,11 @@
    "due": "2026-10-16",
    "cmd": "yangsan.go.kr 또는 양산문화관광 공식 사이트에서 10~11월 행사 캘린더 재확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴4"
+   "state": "done",
+   "by": "루틴4",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "v0reject-f4-24",
@@ -9020,8 +9188,11 @@
    "due": "2026-10-11",
    "cmd": "Aside 쿠키/세션 상태 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "leegwajang-session-gone-1010",
@@ -9043,8 +9214,11 @@
    "due": "2026-10-13",
    "cmd": "claude-in-chrome 으로 nps.or.kr 검색폼에 '저소득 지역가입자 보험료 지원' 입력 / mohw.go.kr 보도자료 검색",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "eitc-deadline-conflict-1010",
@@ -9053,8 +9227,11 @@
    "due": "2026-10-11",
    "cmd": "source 에이전트: 조세특례제한법 제100조의7 기한후신청 기간 원문 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "imgserver-restart-1010",
@@ -9269,8 +9446,11 @@
    "due": "2026-10-11",
    "cmd": "powershell -c \"Get-CimInstance Win32_Process -Filter \\\"ExecutablePath like '%Git%usr%bin%'\\\" | select Name,ProcessId,ParentProcessId\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "kernel-token-pool-1010",
@@ -9509,8 +9689,11 @@
    "due": "2026-10-12",
    "cmd": "powershell -NoProfile -File tools\\tokcheck.ps1",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "afflink-20261011-1",
@@ -9557,8 +9740,11 @@
    "due": "2026-10-12",
    "cmd": "python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches'];print(len(b.get('aside',{}).get('items',[])))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "lifeinfo-ee"
+   "state": "done",
+   "by": "lifeinfo-ee",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "navigator-loop-stale-1011",
@@ -10178,8 +10364,11 @@
    "due": "2026-10-26",
    "cmd": "Aside 지시: 네이버 통계 주간 지표 읽기",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "kbo-followup-topic-1013",
@@ -10250,8 +10439,11 @@
    "due": "2026-10-16",
    "cmd": "Aside 로 searchadvisor.naver.com 공지 열람 또는 사장님 캡처",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "aside-audit-1013",
@@ -10261,8 +10453,11 @@
    "cmd": "type docs\\검증_Aside보고탭_20261013.md",
    "owner": "claude",
    "kind": "action",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "seodesc6-1013",
@@ -10284,9 +10479,12 @@
    "due": "2026-10-15",
    "cmd": "type docs\\source_네이버통계_Aside_20261013.md",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "naver-headrank-weekly",
@@ -10461,8 +10659,11 @@
    "due": "2026-10-14",
    "cmd": "PYTHONIOENCODING=utf-8 python studio/selfcheck.py | grep 🔴",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "src-gas-2627-1014",
@@ -10471,8 +10672,11 @@
    "due": "2026-10-21",
    "cmd": "Aside로 motir.go.kr 보도자료 게시판에서 '도시가스' 최신 확인 + 가스산업과 044-203-5236",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴6 · lifeinfo-daily-publish (F)"
+   "state": "done",
+   "by": "루틴6 · lifeinfo-daily-publish (F)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "gplay-meta-sub-1020",
@@ -10516,8 +10720,11 @@
    "due": "2026-10-17",
    "cmd": "mcp__ccd_sidebar__list_sections 로 routines.shown 확인",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "afflink-8-issue-20261015",
@@ -10637,8 +10844,11 @@
    "due": "2026-10-16",
    "cmd": "grep -n '출처 확인 실패' docs/루틴공통절.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-h128",
@@ -10708,8 +10918,11 @@
    "due": "2026-10-17",
    "cmd": "Gmail search: from:support@mail.anthropic.com Routines newer_than:3d",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "mailbrief-e409-thumb-1015",
@@ -10755,8 +10968,11 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.now",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-g317",
@@ -10777,8 +10993,11 @@
    "due": "2026-10-16",
    "cmd": "ls docs/cloud_access_test_20261015.md docs/token_usage_analysis_20261015.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "cp-full-migration-1016",
@@ -10869,8 +11088,11 @@
    "due": "2026-10-16",
    "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;b=json.load(open('webapp/batch.json',encoding='utf-8'))['batches']['aside'];print(b['order_at'])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "aside-queue-1016",
@@ -10990,8 +11212,11 @@
    "due": "2026-10-16",
    "cmd": "python studio/gmailread.py scan --body",
    "owner": "claude",
-   "state": "wait",
-   "by": "루틴1 · daily-email-briefing (A)"
+   "state": "done",
+   "by": "루틴1 · daily-email-briefing (A)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "anthropic-watch-dup-1016",
@@ -11034,8 +11259,11 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.dupcheck '연애박사 재방송 편성표 OTT 공개시간'",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "dl-photo-g318-1016",
@@ -11106,8 +11334,11 @@
    "due": "2026-10-17",
    "cmd": "python -c \"import json;print(json.load(open('data/aside_orders.json',encoding='utf-8'))['orders'].get('161'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "shape-check-cp5-1016",
@@ -11116,8 +11347,11 @@
    "due": "2026-10-17",
    "cmd": "python -m studio.batchboard show 2>&1 | grep -A3 CP-5",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "shape-check-cp5-1016-plan",
@@ -11211,8 +11445,11 @@
    "due": "2026-10-17",
    "cmd": "python -m studio.topicprop table ; python -c \"from studio import sessionstate as s;print(s.read_info('kw1016'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-e406",
@@ -11305,8 +11542,11 @@
    "due": "2026-10-18",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "topic-agent-1017",
@@ -11391,8 +11631,11 @@
    "due": "2026-10-18",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "g311-date-fix-1017",
@@ -11438,8 +11681,11 @@
    "due": "2026-10-19",
    "cmd": "python -m studio.watch --id aside-naver-login-1018",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "gmail-instagram-login-1018",
@@ -11579,8 +11825,11 @@
    "due": "2026-10-21",
    "cmd": "python tools/routinesync.py && python studio/routine_model.py --days 3",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "routine-fix-effect-1021",
@@ -11589,8 +11838,11 @@
    "due": "2026-10-21",
    "cmd": "python studio/routine_model.py --days 3",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "routine-model-verify-1019",
@@ -11599,8 +11851,11 @@
    "due": "2026-10-19",
    "cmd": "python studio/routine_model.py --days 1",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "cpstate-unread-falsealarm-1018",
@@ -11667,8 +11922,11 @@
    "due": "2026-10-20",
    "cmd": "Aside로 law.go.kr admRulSeq=2200000082233 및 fss.or.kr 규정조회 열기",
    "owner": "claude",
-   "state": "todo",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "pubgo-blocked-1018",
@@ -11727,8 +11985,11 @@
    "due": "2026-10-19",
    "cmd": "python -m studio.routinedepth --days 1",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-c308",
@@ -11882,8 +12143,11 @@
    "due": "2026-10-21",
    "cmd": "정책브리핑 보건복지부 비대면진료 입법예고 보도자료·국민참여입법센터 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "루틴5 · lifeinfo-nightly-verify (E)"
+   "state": "done",
+   "by": "루틴5 · lifeinfo-nightly-verify (E)",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "explorer-spinner-onset-1019",
@@ -12059,8 +12323,11 @@
    "due": "2026-10-26",
    "cmd": "python -m studio.pubqueue 전 korea.kr 검색: 숙박세일 페스타·디지털온누리 할인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "gimhae-buncheong-detail-1019",
@@ -12147,8 +12414,11 @@
    "due": "2026-10-20",
    "cmd": "python studio/routine_model.py --days 2",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "fix-thumb-undeployed-badge-1019",
@@ -12336,8 +12606,11 @@
    "due": "2026-10-20",
    "cmd": "python -m studio.falsepos",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "f430-naver-paste-boss-1019",
@@ -12370,8 +12643,11 @@
    "due": "2026-10-20",
    "cmd": "grep -n '플한국시리즈' osmu/네이버용_*플레이오프* 2>/dev/null",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "icode-fix-after-3-1019",
@@ -12525,8 +12801,11 @@
    "due": "2026-10-21",
    "cmd": "grep -n 'thumbs' tools/pubgo.py studio/pubready.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "usage-week-outlier-1020",
@@ -12535,8 +12814,11 @@
    "due": "2026-10-22",
    "cmd": "grep seven_day .usage/log.jsonl | tail -20",
    "owner": "claude",
-   "state": "todo",
-   "by": "lifeinfo-ee"
+   "state": "done",
+   "by": "lifeinfo-ee",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "loopeng-mcp-map-redo-1020",
@@ -12617,8 +12899,11 @@
    "due": "2026-10-21",
    "cmd": "grep -n requested studio/productprop.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "watchdone-approve-falsepass-1020",
@@ -12627,8 +12912,11 @@
    "due": "2026-10-21",
    "cmd": "python -c \"from studio import affiliate as a;print(a.solo_approved('socks1020'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "dl-toss-img-socks1020",
@@ -12661,8 +12949,11 @@
    "due": "2026-10-21",
    "cmd": "grep -rn 'post/edit' docs/aside_drafts/*검색설명*.txt | tail -3",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "asidechain-solo-imgpath-1020",
@@ -12671,8 +12962,11 @@
    "due": "2026-10-21",
    "cmd": "grep -n 'thread_' studio/asidechain.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "deploy-g413-thumb-1020",
@@ -12730,8 +13024,11 @@
    "due": "2026-10-21",
    "cmd": "grep -n 'naver.me\\|oglink' studio/naverwrite.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "adsense-rejected-1020",
@@ -12851,8 +13148,11 @@
    "due": "2026-10-22",
    "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('cadaily'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "adsense-0622-check-1022",
@@ -12883,8 +13183,11 @@
    "due": "2026-10-24",
    "cmd": "Aside로 https://vn.mofa.go.kr/vn-ko/brd/m_27022/view.do?seq=1339312 미리보기 이미지 4건 육안 확인(다운로드는 사장님 허락)",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "gatesync-push-fail-10211206",
@@ -12929,8 +13232,11 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.batchboard order --id cp1013",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "tower-stale-sweep-1021",
@@ -12939,8 +13245,11 @@
    "due": "2026-10-22",
    "cmd": "grep -n loopcheck studio/towertick.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-f2-01",
@@ -12976,8 +13285,11 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.boostexp snap && python -m studio.boostexp report",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-f116",
@@ -13039,8 +13351,11 @@
    "due": "2026-10-24",
    "cmd": "python -m studio.boostexp report",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "adsenseplan-hub-snap",
@@ -13049,8 +13364,11 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.boostexp report",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-adsense-3decisions-1021",
@@ -13109,8 +13427,11 @@
    "due": "2026-10-21",
    "cmd": "echo scratchpad peer_items_redo.json 재측정",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "index-req-track-1021",
@@ -13119,8 +13440,11 @@
    "due": "2026-10-24",
    "cmd": "python -m studio.boostexp qtrack --day 2026-10-21",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "adsenseplan-appendix-1023",
@@ -13129,8 +13453,11 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.batchboard order --id adsenseplan1021",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "sitereview-1022",
@@ -13151,8 +13478,11 @@
    "due": "2026-10-22",
    "cmd": "ls docs/aside_drafts | grep 색인요청_1022",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "index-req-1022-queue",
@@ -13161,8 +13491,11 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/색인요청_20261022.txt --code index --kind 기타 --prio 2",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "boost-b204-b205-req-1022",
@@ -13171,8 +13504,11 @@
    "due": "2026-10-22",
    "cmd": "python -m studio.boostexp report",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-fable-review-1021",
@@ -13326,8 +13662,11 @@
    "due": "2026-10-23",
    "cmd": "powershell -NoProfile -File C:\\lifeinfo\\tools\\tokcheck.ps1",
    "owner": "claude",
-   "state": "wait",
-   "by": "lifeinfo-ee"
+   "state": "done",
+   "by": "lifeinfo-ee",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-livefix-3err-1022",
@@ -13374,8 +13713,11 @@
    "due": "2026-10-22",
    "cmd": "Aside: Blogger 통계 > 참조 URL(naver) 7일",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "idx-req-corrected-1023",
@@ -13384,8 +13726,11 @@
    "due": "2026-10-23",
    "cmd": "docs/aside_drafts/색인요청_20261023.txt 에 3편 포함 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "aside-naver-login-1022",
@@ -13464,8 +13809,11 @@
    "due": "2026-10-24",
    "cmd": "docs/색인이력24_개선안_20261023.md 부록",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-g112",
@@ -13545,8 +13893,11 @@
    "due": "2026-10-23",
    "cmd": "이 세션 알림에 ASIDE_ALERT(🙋/⏸)·ASIDE_STALL 수신 여부",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "orch-improve-measure",
@@ -13555,8 +13906,11 @@
    "due": "2026-10-23",
    "cmd": "batch.json now_log 결재·4채널 완결 시각",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "flow-gap-h-node",
@@ -13565,8 +13919,11 @@
    "due": "2026-10-22",
    "cmd": "python -c \"import studio.sessionstate as s;print(s.read_info('pubg324'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "enginemap-fill-13",
@@ -13575,8 +13932,11 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.enginemap",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "aside-blocked-same-kind-hold",
@@ -13585,8 +13945,11 @@
    "due": "2026-10-22",
    "cmd": "sed -n 615,627p studio/approve_server.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-g324",
@@ -13645,8 +14008,11 @@
    "due": "2026-10-23",
    "cmd": "python -c \"from studio import osmu_manifest as o;print(o.naver_draft_path('C4-01'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "explorer-spinner-after-reboot-1022",
@@ -13691,8 +14057,11 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.enginestate",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "engine-upgrade-backlog",
@@ -13701,8 +14070,11 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.enginestate",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-community-reply-1022",
@@ -13736,8 +14108,11 @@
    "due": "2026-10-22",
    "cmd": "python tools/startup.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "explorer-spinner-watch-1022b",
@@ -13758,8 +14133,11 @@
    "due": "2026-10-23",
    "cmd": "Gmail: from:support.google.com 473869774",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "topic1022b-pickup",
@@ -13830,8 +14208,11 @@
    "due": "2026-10-23",
    "cmd": "grep -n 출처 ~/.claude/scheduled-tasks/lifeinfo-nightly-verify/SKILL.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "docflow-1023-d117",
@@ -13924,8 +14305,11 @@
    "due": "2026-10-23",
    "cmd": "python -c \"from studio import osmu_manifest as m;print(m.naver_draft_path('D2-02'))\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "blogger-policy-1216",
@@ -14100,8 +14484,11 @@
    "due": "2026-10-24",
    "cmd": "python -m studio.batchboard order --id livefix1019",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "auto-refuel-signal",
@@ -14110,9 +14497,12 @@
    "due": "2026-10-24",
    "cmd": "python -m studio.enginemap",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "by": "이부장",
-   "note": 1024
+   "note": 1024,
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-d203-1023",
@@ -14187,8 +14577,11 @@
    "due": "2026-10-24",
    "cmd": "grep -c '12월 31일' 중국입국신고서온라인_글_HTML.txt",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-f117",
@@ -14398,9 +14791,12 @@
    "due": "2026-10-24",
    "cmd": "grep -n _auto_order studio/pubqueue.py",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 1024,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "approve-community-reply2-1023",
@@ -14510,9 +14906,12 @@
    "due": "2026-10-23",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 1023,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "gsc-log-auto-from-aside-1023",
@@ -14521,9 +14920,12 @@
    "due": "2026-10-24",
    "cmd": "grep -n index studio/asidechain.py",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 1023,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "asidechain-threads-miss-e410-1023",
@@ -14692,9 +15094,12 @@
    "due": "2026-10-24",
    "cmd": "grep -n 9000000000 -n studio/asidequeue.py studio/towertick.py",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 1024,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-d507",
@@ -14727,9 +15132,12 @@
    "due": "2026-10-24",
    "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('draftd310'))\"",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 1024,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "deploy-thumb-408",
@@ -14750,9 +15158,12 @@
    "due": "2026-10-24",
    "cmd": "python -c \"import json;print(json.load(open('webapp/engine_state.json',encoding='utf-8')).get('at'))\"",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "note": 1024,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-e412",
@@ -14848,9 +15259,12 @@
    "due": "2026-10-25",
    "cmd": "python -m studio.dupcheck \"지방세 환급금 조회 12월 앱 개통 예정\"",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 1024,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-g327",
@@ -14920,9 +15334,12 @@
    "due": "2026-10-24",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "note": 1024,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-d310",
@@ -14955,9 +15372,12 @@
    "due": "2026-10-25",
    "cmd": "grep -n '총 탭' studio/asidechain.py studio/towertick.py",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 1024,
-   "by": "이부장"
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-d118",
@@ -15213,8 +15633,11 @@
    "due": "2026-10-25",
    "cmd": "aside repl openTab('about:blank') 시험 2초 이내면 python -m studio.asidequeue add 로 순서대로",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-b423",
@@ -15235,8 +15658,11 @@
    "due": "2026-10-25",
    "cmd": "grep -n '45' tools/aside_order.sh; grep -n INDEX_REQUEST_TODO studio/towertick.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "deploy-thumb-421",
@@ -15307,8 +15733,11 @@
    "due": "2026-10-26",
    "cmd": "grep -n 'def busy' -A30 studio/asidequeue.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "engine-html-commit-1025",
@@ -15498,8 +15927,11 @@
    "due": "2026-10-26",
    "cmd": "grep -n '같은 지시가 이미' studio/asidequeue.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "xlink-d219",
@@ -15865,8 +16297,11 @@
    "due": "2026-10-26",
    "cmd": "ls docs/검증_페이블_게이트_20261026.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "code-not-conditions-1026",
@@ -15885,8 +16320,11 @@
    "due": "2026-10-26",
    "cmd": "ls docs/검증_페이블_자동화_20261026.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "db-title-stale-1026",
@@ -15895,8 +16333,11 @@
    "due": "2026-10-26",
    "cmd": "grep -n title studio/blogger.py | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "archived_1109": true,
+   "done_at": "2026-11-09",
+   "result": "보관(11-09 사장님 승인·구조 단순화 0단계) — 기한 2주 넘게 지났고 기계 검사 없음. 재개: data/watch_archive_20261109.json 의 원본으로 watch add"
   },
   {
    "id": "naver-logout-rootcause-1026",
@@ -24765,6 +25206,64 @@
    "preview": "archpv_1109.html",
    "done_at": "2026-11-09",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "deep-yangsan-1109",
+   "added": "2026-11-09",
+   "what": "2027 양산 출산혜택 원문 심층 읽기",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_양산출산혜택_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "이부장 확인 — 양산 출산혜택: 신규 글 탈락(G2-01 과 같은 조례·같은 2027 금액 훅). G2-01 라이브에 2027·100/200/300만 포함 확인"
+  },
+  {
+   "id": "deep-gimhae-1109",
+   "added": "2026-11-09",
+   "what": "김해 지역사랑카드 제로페이 페이백 원문 심층 읽기",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_김해페이백_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "이부장 확인 — 김해 페이백: 신규 글 탈락(G1-18 과 같은 발표·같은 훅, dupcheck 🔴0.62). 지역사랑카드는 해당 제도 원문 0건. 캐시백 코그페 5%·1인 최대 3만원·결제 11/15까지는 G1-18 에 이미 있는지 확인 후 필요 시 정정으로 흡수"
+  },
+  {
+   "id": "deep-nanim-1109",
+   "added": "2026-11-09",
+   "what": "난임휴직 보수규정 원문 심층 읽기",
+   "due": "2026-11-09",
+   "cmd": "ls docs/source_난임휴직보수_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "docs/source_난임휴직보수_20261109.md 작성 — 판정 탈락(A5-18 주제 중복). 보강 후보: 교사 난임휴직 현행 시행·수당 감액"
+  },
+  {
+   "id": "fuel-deepread-pick-1109",
+   "added": "2026-11-09",
+   "what": "연료 0 대응 — deepread 3건(난임휴직·김해 페이백·양산 출산혜택) 결과를 읽고 채택 가능한 것만 topicprop add·pick → 초안 지시서(관심근거 2개 이상일 때만)",
+   "due": "2026-11-10",
+   "cmd": "ls docs/source_난임휴직보수_20261109.md docs/source_김해페이백_20261109.md docs/source_양산출산혜택_20261109.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-09",
+   "result": "이부장 판단 21:1x — 3건 모두 탈락(난임휴직=A5-18 중복 0.77·김해 페이백=G1-18 중복 0.62·양산 출산혜택=G2-01 중복), 오늘 새 글감 채택 0건(빈손). 기발행 글 라이브에서 해당 내용 포함 확인. 내일 유입 판독 갱신·루틴 제안 대기"
+  },
+  {
+   "id": "yangsan-birth-dup-1109",
+   "added": "2026-11-09",
+   "what": "2027 양산 출산 원문 읽기 — 기발행 G2-01 주제 중복(같은 조례 2174077·같은 2027 금액 훅). 갭은 양산시청 출산장려금 페이지(mid=0101020200)가 옛 대상문구(자녀와 보호자가 함께)·50/100/200 을 싣는 점",
+   "due": "2026-11-16",
+   "cmd": "curl -s -A \"Mozilla/5.0\" -L https://www.yangsan.go.kr/welfare/contents.do?mid=0101020200 | grep -c \"보호자 중 1명\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
