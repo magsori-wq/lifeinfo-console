@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09 08:09",
+ "generated": "2026-11-09 09:04",
  "routines": [
   {
    "num": 1,
@@ -45,7 +45,7 @@
    "id": "lifeinfo-daily-topics",
    "on": true,
    "last": "11/08 09:14",
-   "next": "11/09 09:00",
+   "next": "11/10 09:00",
    "model": "sonnet-5-5",
    "report_day": "1108",
    "report": "[조사장부] 목록 4 · 원문 2 · 후보 3 · 탈락 2 · 검색어 5 · 유입 1 | 열은 목록: korea.kr 정책뉴스·보도자료, 국세청·금융위·복지부 메인(메뉴만 나와 소득 없음), kwgap. 원문: docs/source_신용융자담보비율_20261108.md, docs/source_일자리예산_청년첫취업_20261108.md. 이어받은 것: 직전 note 없음 / 새로 본 것: 신용융자 140% 면제 11-09 시행. · 신용융자 담보비율 면제 — fsc.go.kr/no010101/88100 · 140%·3개월·11.9시행 · 채택(B2-25 rec, 종료일·증권사 적용범위 미확정, 초안서 source 확정) · 청년 첫 취업지원제 — korea.kr 148975204·고용부 hwpx · 3,793억·16만명 2027 예산안(국회 심의 전), 신청기한·대상 원문 없음 · 탈락(확정 아님; watch youth-firstjob-budget-1108 11-13) · 종합소득세 중간예납 — dupcheck 🔴 B4-15 기발행 · 탈락. 후보 alt 없음. 선별은 docflow 에이전트 진행 중.",
@@ -82,12 +82,17 @@
    "name": "3-Lifeinfo publish",
    "id": "lifeinfo-publish",
    "on": true,
-   "last": "11/08 09:02",
-   "next": "11/09 09:00",
+   "last": "11/09 09:01",
+   "next": "11/10 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1108",
-   "report": "11-08 루틴3 — 발행 트리거 없음: 큐 1건(D4-15) ⑦ 승인 도장 없음(CP 결재 대기 중, 중복 등록 안 함)·V0 🟡조건부(필수 4건 보강 대기). 오늘 3편 발행 완료·run 진행 없음. 이어받은 것: 결재함 D4-15 기등록 / 새로 본 것: 도장 없음",
+   "report_day": "1109",
+   "report": "빈손 — 큐 1건(A5-20) V0 🟢·초안 원격 일치·run 없음이나 ⑦ 승인 도장 없음(결재 대기 중) → 발행 안 함. 이어받은 것: 결재함 A5-20 대기 / 새로 본 것: 오늘 발행 2편(양산 경전철·소방점검표), 재고 1편(하한 3 미달)",
    "runs": [
+    {
+     "at": "11/09 09:03",
+     "link": "claude://claude.ai/epitaxy/local_4a8e87a9-7dea-460d-8e12-77d810b11bc0",
+     "archived": false
+    },
     {
      "at": "11/08 09:04",
      "link": "claude://claude.ai/epitaxy/local_df8385e1-4c14-4c40-b3a0-a2280079b024",
@@ -107,11 +112,6 @@
      "at": "11/06 09:03",
      "link": "claude://claude.ai/epitaxy/local_5343d708-663f-4e80-a3f3-db9a33b79f28",
      "archived": false
-    },
-    {
-     "at": "11/05 09:07",
-     "link": "claude://claude.ai/epitaxy/local_9d29817c-2b58-4d26-a2f8-52028fe17d8d",
-     "archived": true
     }
    ]
   },

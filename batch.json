@@ -2050,6 +2050,17 @@
      "date": "2026-11-09",
      "at": "2026-11-09 08:07",
      "actor": "미상:0d334e9c"
+    },
+    {
+     "code": "lifeinfo-publish-1109",
+     "title": "lifeinfo-publish (C)",
+     "state": "done",
+     "note": "빈손 — 큐 1건(A5-20) V0 🟢·초안 원격 일치·run 없음이나 ⑦ 승인 도장 없음(결재 대기 중) → 발행 안 함. 이어받은 것: 결재함 A5-20 대기 / 새로 본 것: 오늘 발행 2편(양산 경전철·소방점검표), 재고 1편(하한 3 미달)",
+     "auto_daily": true,
+     "base_code": "lifeinfo-publish",
+     "date": "2026-11-09",
+     "at": "2026-11-09 09:02",
+     "actor": "미상:186f8ffc"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -5626,9 +5637,58 @@
    "order_at": "2026-11-09 06:37:25",
    "confirmed_at": "2026-11-09 08:40:33",
    "confirm_note": "이부장 확인: 이과장 R1·R2 반영 06:40 보고 → V0 재검 92/100 통과(docs/v0_A5-20_재검사_20261109.md)·v0check pass 06:41·결재함 A5-20 등록"
+  },
+  "tower1109": {
+   "title": "관제탑 11-09",
+   "note": "",
+   "items": [
+    {
+     "code": "TW1109-1",
+     "title": "[관제탑] 11-09 발행·후속 — A5-19·D3-15·G2-07 사장님 승인→발행, 4채널·교차링크·색인 접수(G2-07 #736 포함)",
+     "state": "done",
+     "note": "D3-15·G2-07 02:56 승인→발행. G2-07 쓰레드 DffiB6fAYu7 확인, 색인요청 #736 04:47 접수(직접 확인)"
+    },
+    {
+     "code": "TW1109-2",
+     "title": "[관제탑] 폰 승인 회수 누락 수정 — studio/phoneapprove.py 훅(수동 명령 모드)·루틴1 3시간 간격(첫 회차 08:04 성공)",
+     "state": "done",
+     "note": "자동 실행은 크로스세션 위조 배제 전까지 OFF(data/phoneapprove_verified.txt 필요). 루틴1 08:04 회차 직접 확인"
+    },
+    {
+     "code": "TW1109-3",
+     "title": "[관제탑] 키워드 먼저·끝까지 조사 흐름 정정(사장님 01:29) — fuel1030 갱신, 양산선·문래·단축분할 source 확정, A5-20 초안",
+     "state": "done",
+     "note": "3.세션 빈 말 3건 조사 제안 0(06:23 보고) · 이과장 A5-20 초안→V0 🟡86→R1·R2 수정→재검 🟢92→결재함"
+    },
+    {
+     "code": "TW1109-4",
+     "title": "[관제탑] A5-20 결재 대기 — 승인 도장 찍히면 pubready 확인 후 발행 트리거, 이과장 4채널",
+     "state": "doing",
+     "note": "V0 통과·썸네일 200(deploy.bat 이부장 실행·카톡 보고)·초안 원격 일치. 사장님 ⑥ 승인 대기"
+    },
+    {
+     "code": "TW1109-5",
+     "title": "[관제탑] 재고 0 대응 — CA 11-08 데이터 대기, 보류 4건(건보 36개월·우천 구단공지) Aside 읽기 재시도 판단",
+     "state": "doing",
+     "note": "watch fuel-recheck-1109-0900 · 3.는 새 재료 소진(CA 11-07 기준 그대로)"
+    },
+    {
+     "code": "TW1109-6",
+     "title": "[관제탑] 생굴 쓰레드 단독 — 루틴8 요청→Aside #737 게시(07:18)·affiliate 기록, 찹쌀떡은 내일 이후",
+     "state": "done",
+     "note": "Dffz2logcwo curl 200·og:image 확인"
+    },
+    {
+     "code": "TW1109-7",
+     "title": "[관제탑] 사장님 몫 — aroma-am-pe-009-rev-1109 승인 대기(이대리 개정본 V0 93)",
+     "state": "todo",
+     "note": "승인 시 approve_server close watch_approve + idaerireq add 뒤 이대리 전달"
+    }
+   ],
+   "owner": "관제탑"
   }
  },
- "updated": "2026-11-09 08:40:33",
+ "updated": "2026-11-09 09:02:41",
  "current": {
   "batch": "aside",
   "code": "",
@@ -5639,6 +5699,21 @@
   "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "09:02:41",
+   "text": "✅ lifeinfo-publish-1109 완료 — lifeinfo-publish (C)",
+   "actor": "미상:186f8ffc"
+  },
+  {
+   "t": "09:01:09",
+   "text": "🏷️ tower1109 담당=관제탑",
+   "actor": "이부장"
+  },
+  {
+   "t": "09:00:58",
+   "text": "📋 배치 '관제탑 11-09' 등록 — 7항목",
+   "actor": "이부장"
+  },
   {
    "t": "08:40:33",
    "text": "🏁 v0fix1109a520 이부장 확인 — 끝남",
@@ -5822,21 +5897,6 @@
   {
    "t": "04:32:54",
    "text": "▶   — 1/7단계 · [체인] #733 G2-07 naver 확인 ✅ (naverfind --gate G2-07 → ✅ 네이버 게시 감지·기록: https://blog.naver.com/magsori8975/224469762178) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
-   "actor": "Aside"
-  },
-  {
-   "t": "04:32:50",
-   "text": "🏁 Aside #733 이부장 확인",
-   "actor": "Aside"
-  },
-  {
-   "t": "04:32:45",
-   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224469762178 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-   "actor": "Aside"
-  },
-  {
-   "t": "04:31:38",
-   "text": "▶   — 1/7단계 · [Aside][done] [G2-07] 수신 2026-11-09 04:25:36 — #733 네이버1회 게시(04:3x). 제목 33자 지시서와 동일. 새로고침 후 제목·카테고리(생활정보모음LifeInfo; 우리동네·지역 칸이 목록에 없어 가장 가까운 생활정보 칸 선택)·본문 맨 위 대표이미지1장+바로 아래 출처 줄·태그6개 지시 순서 일치·블로그 원문 링크 확인. 서식본=편집창 공백제외 4054자 일치(지시 3925자와 129자 차이 보고). 이미지 첫 삽입이 문단 중간에 들어가 즉시 되돌리고 맨 앞에 다시 삽입(최종 본문 이상 없음). 제휴·광고 문구 없음. 작업탭  · https://blog.naver.com/magsori8975/224469762178",
    "actor": "Aside"
   }
  ],
