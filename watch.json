@@ -25517,7 +25517,29 @@
    "cmd": "python -m studio.watch --id aroma-searchadvisor-terms-1110",
    "owner": "user",
    "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-10",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aroma-idle-check-1110",
+   "added": "2026-11-10",
+   "what": "이대리 활동 공백 점검(사장님 11-10 15:10 질책) — 자동 감시(IDAERI_STALL 확장)가 들어가기 전까지 내가 18시·22시에 직접 본다: 마지막 이대리 활동이 3시간 넘으면 [이부장 → 이대리] 깨움 + 오늘 aroma 게시 수 확인(오늘 1편: SP-014 01:02). 오늘 23:00 루틴10 회차 결과도 다음 아침 확인",
+   "due": "2026-11-10",
+   "cmd": "git -C /c/naver-blog log -1 --format=%ad --date=format:%m-%d_%H:%M",
+   "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "fix-idaeri-idle-1110",
+   "added": "2026-11-10",
+   "what": "이대리 활동 공백 3시간 감시(IDAERI_STALL 확장)",
+   "due": "2026-11-10",
+   "cmd": "python -X utf8 -m unittest tests.test_chkmon",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
