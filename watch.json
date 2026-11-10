@@ -25826,6 +25826,16 @@
    "kind": "action",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "aside-reopen-window-1111",
+   "added": "2026-11-11",
+   "what": "Aside 작업 브라우저 창 소실(openTab 3회 실패, 11시간 유휴 뒤 첫 지시) — #761 E3-07 검색설명·aroma AM-DG-010 둘 다 막힘. 4번째 반복(#748·#754·#755·#761). 아침에 Aside 창 상태 확인·재연결 후 대기열 재개",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list; python -m studio.asidestate",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이부장"
   }
  ]
 }
