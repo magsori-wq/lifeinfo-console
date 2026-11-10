@@ -25559,6 +25559,76 @@
    "preview": "aromapv_BO-007.html",
    "done_at": "2026-11-10",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "stock-zero-1110",
+   "added": "2026-11-10",
+   "what": "발행 재고 0·글감 제안 하루 2건(11-10) — 사장님 18:00 「심각, 계속 이렇게 해도 되는지」 질문을 이부장에게 전달함. 이부장 답(글감 발굴 방침) 확인",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.pubqueue list; python -m studio.pace",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "fuel-recheck-1111",
+   "added": "2026-11-10",
+   "what": "글감 연료 재측정: 11-11 오전 제안 건수·재고, 3.(fuel1030) 후보 3건 이상 올렸는지",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.topicprop table; python -m studio.pace",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "idaeri-b-template-card-1110",
+   "added": "2026-11-10",
+   "what": "이대리 B 사전승인 템플릿 명세 도착 시 결재 카드로 올린다(미리보기 포함)",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel-deadline-1110-2300",
+   "added": "2026-11-10",
+   "what": "연료 긴급: 3.(fuel1030)가 23시까지 글감 3건 이상 topicprop add 했는가 + 이부장 deepread 2건(소방안전원·인정이자) 결과",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.topicprop table; ls docs/source_소방안전원시험접수_20261110.md docs/source_인정이자가중평균_20261110.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-jangae-1110",
+   "added": "2026-11-10",
+   "what": "장애인일자리 2027 면접 일정 원문 읽기",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_장애인일자리2027면접_20261110.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-gaji-1110",
+   "added": "2026-11-10",
+   "what": "가지급금 인정이자 일수계산 원문 읽기",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_가지급금인정이자일수계산_20261110.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-gimhae-1110",
+   "added": "2026-11-10",
+   "what": "김해사랑상품권 12월·비플페이 원문 읽기",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_김해사랑상품권12월비플_20261110.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
