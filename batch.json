@@ -6262,17 +6262,22 @@
    ]
   }
  },
- "updated": "2026-11-11 02:22:41",
+ "updated": "2026-11-11 03:02:44",
  "current": {
-  "batch": "chkmon",
+  "batch": "aside",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🙋 이부장 요청: [점검모니터] 🔴3 🔵4 🟡3 — 즉시: Aside 막힘 #761 E3-07; Aside 막힘 #762 E3-07; Aside 막힘 #763 E3-07; V0 지연 A2-31 에너지바우처 등유·LPG 14만 7000원 추가, 12 외 3 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
-  "since": "18:12",
-  "since_at": "2026-11-05 18:12:35"
+  "what": "[자동확인 03:02] ca 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-ca-1111)",
+  "since": "11:31",
+  "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "03:02:44",
+   "text": "▶   — 1/7단계 · [자동확인 03:02] ca 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-ca-1111)",
+   "actor": "사람"
+  },
   {
    "t": "02:22:41",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴3 🔵4 🟡3 — 즉시: Aside 막힘 #761 E3-07; Aside 막힘 #762 E3-07; Aside 막힘 #763 E3-07; V0 지연 A2-31 에너지바우처 등유·LPG 14만 7000원 추가, 12 외 3 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
@@ -6467,11 +6472,6 @@
    "t": "00:01:41",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵5 🟡3 — 즉시: V0 지연 A2-31 에너지바우처 등유·LPG 14만 7000원 추가, 12; 사장님 결재 대기 E3-07 2027 공직적격성평가 PSAT 원서접수 1월 18일; 사장님 🙋승인 【권고】AM-DG-010 「지스타 입장권 2026, 현장 판매 없음 —; 사장님 ☑️조치 Aside ca 로그인 필요 — 자동 확인(00:00): https:// 외 1 · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
    "actor": "사람"
-  },
-  {
-   "t": "00:01:35",
-   "text": "▶   — 1/7단계 · [자동확인 00:01] naver 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-naver-1111)",
-   "actor": "사람"
   }
  ],
  "currents": {
@@ -6570,7 +6570,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][blocked] [E3-07] 수신 2026-11-11 02:17:54 — #763 blocked: 작업 탭을 열 수 없음(#761 재등록 건도 동일). openTab 이 \"The task browser window is no longer available in its original browser mode. Reopen the task in the intended window.\" 오류로 연속 실패(02:18 확인 + 50초 후 + 60초 후, 총 3회). 탭 목록 조회는 되지만(탭 7개) 새 탭 생성만 막힘. 02:08 이후 약 10분간 761·762·763  · https://lifeinfo8975.blogspot.com/2026/11/2027-psat-1-18-0.html",
+   "what": "[자동확인 03:02] ca 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-ca-1111)",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -28286,6 +28286,16 @@
    "actor": "사람",
    "sid": "",
    "req": "r200e06"
+  },
+  {
+   "ts": "2026-11-11 03:02:44",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[자동확인 03:02] ca 로그인 화면 확인 — 사장님 결재함에 올림(aside-login-ca-1111)",
+   "actor": "사람",
+   "sid": ""
   }
  ]
 }
