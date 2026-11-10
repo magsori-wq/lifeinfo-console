@@ -2656,6 +2656,14 @@
    "target": "fix-idaeri-idle-1110",
    "detail": "이부장 확인 15:1x — 3bc75264b: 시험 31 OK·enginemap 🔴0, 어제 상황(01:20~15:00) 재현 시 True, 지금 값 False. 운영 중 첫 알림이 와야 실작동 확인(aroma-idle-check-1110 이 그때까지 임시 보조)",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-10T17:34:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "ca-0909-label-fix",
+   "detail": "11-10 03시 day 9 가 실데이터(233/100)로 달라짐 확인 + ca_daily 중복 가드 추가(17:40, 11-10 자리 저장 안 함 검증)",
+   "via": "cli"
   }
  ]
 }
