@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-10 11:00",
+ "generated": "2026-11-10 11:05",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/10 09:30",
+   "last": "11/10 11:05",
    "next": "11/10 14:00",
    "model": "sonnet-5-5",
    "report_day": "1110",
    "report": "11-10 08:08 메일 브리핑 — 🟢 사장님 할 일 없음. 애드센스: adsense.py status·gmailread 실행 불가(PC python 에 googleapiclient 미설치 → 상태 확인 실패, 커넥터 메일상 마지막 통지 11-08 7차 반려 NEEDS_ATTENTION 유지). 🟡 새 메일: GSC 11-09 08:41 '적절한 표준 태그가 포함된 대체 페이지' 유효성 검사 통과 — 원문 '76개의 페이지가 수정된 것으로 확인'(URL 총계, 글 단위 아님) → 색인 영향은 inspect 로 재측정 필요. 구글 커뮤니티 답변(11-08 Blogger PE 'AdSense 승인요건은 Blogger와 별개'·AdSense PE '고객센터 아님') 기보고. GitHub 콘솔 정합성 검사 실패 20여건(11-09 11:25~18:30Z)=watch console-check-aromapv-1109 기등록·최신 run 성공으로 복구, Pages 배포 실패=pages-deploy-timeout-1107 기등록. aroma8975 0건. 8975 전달 1건(MS Rewards 광고)·Google뉴스 다이제스트에 앤트로픽 클로드 개인정보 유출 신고(국내기업 계정 100여 개) 뉴스 — 직접 통지 아님. 이어받은 것: 11-09 회차 / 새로 본 것: GSC 76페이지 해결",
    "runs": [
+    {
+     "at": "11/10 11:05",
+     "link": "claude://claude.ai/epitaxy/local_cef6a627-ece9-433e-b23e-6e078a3f6b1f",
+     "archived": false
+    },
     {
      "at": "11/10 09:34",
      "link": "claude://claude.ai/epitaxy/local_d353f7ac-5441-419d-9a73-56679ed64dce",
@@ -30,11 +35,6 @@
     {
      "at": "11/09 17:09",
      "link": "claude://claude.ai/epitaxy/local_96a9c686-ee46-40cd-aba2-179527327347",
-     "archived": true
-    },
-    {
-     "at": "11/09 14:07",
-     "link": "claude://claude.ai/epitaxy/local_6d271fec-d574-4a94-a64d-021828989672",
      "archived": true
     }
    ]
