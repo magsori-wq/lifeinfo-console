@@ -2672,6 +2672,22 @@
    "target": "aroma-am-bo-007-approve-1110",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-10T18:12:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "idaeri-b-template-card-1110",
+   "detail": "철회: aroma 는 별도 프로젝트 — 이부장이 카드를 올리지 않는다(사장님 11-10 18:12 지적)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-10T18:14:49",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine-beat-gap-1110",
+   "detail": "오경보로 닫음. routinebeat 의 빈손 기록 규칙은 커밋 772ccaca7(2026-11-10 10:01, 빈손보고 폐지)에서 생김. 루틴2(09:42 전)·루틴6(11-10 00:24)·루틴8(07:12) 등 그 이전 회차에 beat 가 없는 것은 정상. 11-10 15:12 루틴9 beat 는 기록돼 있음. 11-09 루틴6 '직전 note 조회 불가'는 beat 문제가 아니라 routinelog 이어읽기 누락 — 이 건은 측정 보고서 4절 2번에 남김.",
+   "via": "cli"
   }
  ]
 }

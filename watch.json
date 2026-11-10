@@ -25587,8 +25587,10 @@
    "due": "2026-11-11",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-10",
+   "result": "철회: aroma 는 별도 프로젝트 — 이부장이 카드를 올리지 않는다(사장님 11-10 18:12 지적)"
   },
   {
    "id": "fuel-deadline-1110-2300",
@@ -25629,6 +25631,79 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "indeep-injung-20261110",
+   "added": "2026-11-10",
+   "what": "인정이자 가중평균 심층독해: 시행령89조·시행규칙43조 Aside 실측, 별지19호서식 미확인, 기발행 B4-30 주제중복 → 탈락 판정",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.dupcheck \"인정이자 가중평균차입이자율\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-beat-gap-1110",
+   "added": "2026-11-10",
+   "what": "routinebeat 키가 9번·A만 있음(루틴2·4·6·8 beat 없음) → 루틴6 11-09「직전 note 조회 불가(report_log 비어 있음)」·루틴2 11-09「직전 note 미열람」으로 이어받기 실패. report_log 는 6행 있음(2026-09-12). 실측 2026-11-10.",
+   "due": "2026-11-11",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"from studio import routinebeat as b; print(sorted(b.load()))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-10",
+   "result": "오경보로 닫음. routinebeat 의 빈손 기록 규칙은 커밋 772ccaca7(2026-11-10 10:01, 빈손보고 폐지)에서 생김. 루틴2(09:42 전)·루틴6(11-10 00:24)·루틴8(07:12) 등 그 이전 회차에 beat 가 없는 것은 정상. 11-10 15:12 루틴9 beat 는 기록돼 있음. 11-09 루틴6 '직전 note 조회 불가'는 beat 문제가 아니라 routinelog 이어읽기 누락 — 이 건은 측정 보고서 4절 2번에 남김."
+  },
+  {
+   "id": "dupcheck-shortword-miss-1110",
+   "added": "2026-11-10",
+   "what": "dupcheck 질의 문구에 따라 판정이 뒤집힌다. 저장 제목 질의: 요양(A6-09) 1.00·인정이자(B4-30) 0.75·일본 면세(F3-10) 0.81 전부 🔴. 짧은 낱말 질의: 「인정이자 가중평균」「요양2등급 일수」 🟢 신규 → 루틴이 짧은 낱말로 기발행을 놓칠 위험. 실측 2026-11-10.",
+   "due": "2026-11-11",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"인정이자 가중평균\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "sfi-exam-1025-schedule-pdf",
+   "added": "2026-11-10",
+   "what": "소방안전원 특급25회 일정 공고 PDF(공지 1024636 첨부) 못 읽음 — 첨부 다운로드가 로그인 리다이렉트(fileDownload.do HTTP 200 → login.do), 시험안내 hwp 31~34 는 파싱함",
+   "due": "2026-11-15",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://safe.kfsi.or.kr/board/fileDownload.do?bbsSn=10038&pstSn=1024636&fileSn=1",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이부장"
+  },
+  {
+   "id": "gaji-ilsu-formula-1110",
+   "added": "2026-11-10",
+   "what": "가지급금 인정이자 일수식: 별지19호(갑) 작성방법·국세청 집행기준 원문 미확보(시도 실패) — B4-30 보강 전 필요",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_가지급금인정이자일수계산_20261110.md",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "3.분석"
+  },
+  {
+   "id": "gimhae-g118-fix-1110",
+   "added": "2026-11-10",
+   "what": "G1-18 정정: 판매시각 지남 표기·착한가격업소 2천만원 한도 원문 확인(idx=2596282)·발행방식 검토 중(설문 idx=2595087)",
+   "due": "2026-11-15",
+   "cmd": "ls docs/source_김해사랑상품권12월비플_20261110.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "aroma-template-calc-1110",
+   "added": "2026-11-10",
+   "what": "【권고】aroma-mag 「요금·일정 계산 글」 틀에 한해 사전승인(개별 결재 없이 게시) 승인 — 하루 1편 상한, V0 85점↑·필수 0건·공식 수치 게시 직전 재확인 필수. 【근거】사장님 11-10 질책(속도·노출). 노출 0·조회 1~2/일, 이슈 직후 반나절 내 못 올리는 병목 중 하나가 승인 대기와 챗 게시 시간. 첫 적용 틀은 이미 승인·게시된 AM-BO-007(재혼황후 디즈니+ 가입 시점별 결제 계산) 구성. 틀·적용 조건·갱신 주기·금지는 aroma-mag/templates/사전승인_계산글_틀_명세_20261110.md (미리보기 previews/aromapv_TEMPLATE-CALC.html). 【위험】공식 수치 오류·루머·사진 권리 위험은 틀 안에서도 V0·공식 재확인·금지 목록으로 막음; 승인 범위를 넘는 글(정보형 일정 안내·루머·권유 표현·신규 사진)은 개별 결재; 거절하시면 지금처럼 글마다 결재",
+   "due": "2026-11-12",
+   "cmd": "승인 시 이 틀 범위의 글은 V0 통과 후 CP 사후 보고(URL·V0·재확인 시각)로 게시",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
