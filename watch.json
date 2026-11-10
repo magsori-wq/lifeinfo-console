@@ -25502,12 +25502,23 @@
   {
    "id": "xlink-e306",
    "added": "2026-11-10",
-   "what": "🔗 E3-06 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E3-06",
+   "what": "🔗 E3-06 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E3-06",
    "due": "2026-11-10",
    "cmd": "python studio/blogger.py crosslink --code E3-06",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "aroma-searchadvisor-terms-1110",
+   "added": "2026-11-10",
+   "what": "aroma(이대리) 네이버 서치어드바이저 이용약관 동의 허락 — aroma-mag 블로그를 서치어드바이저에 연결하려면 로그인 후 이용약관 동의 화면에서 동의가 필요하다(이대리가 임의로 동의하지 않고 멈춤). 【권고】승인 — 서치어드바이저는 네이버 공식 웹마스터 도구이고, 연결하면 aroma 의 검색 유입 키워드와 색인 상태를 직접 볼 수 있어 조회 2/일인 지금 원인 파악에 필요하다 【근거】이대리 11-10 CA 보고(검색 유입 0·최근 글이 검색에 안 걸림), 11-06 점검(유입이 이슈 직후 3~4편에 편중). 동의는 사장님 계정(aro 님 로그인 상태)으로 표준 약관에 한 번 클릭 【위험】약관 내용은 제가 읽지 못했다 — 이대리가 동의 화면 문구를 그대로 가져와 결재 전에 한 번 보여 주는 것이 안전하다. 거절하셔도 aroma 운영에 당장 지장은 없다",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.watch --id aroma-searchadvisor-terms-1110",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
