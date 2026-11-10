@@ -25460,8 +25460,10 @@
    "due": "2026-11-13",
    "cmd": "ls docs/source_주택관리사시험_20261110.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-10",
+   "result": "원문 파일 작성: docs/source_주택관리사시험_20261110.md (공고 hwpx 18,284자·시행령 74·75조). 2027 공고 미확인"
   },
   {
    "id": "deepread-xmas-1110",
@@ -25469,6 +25471,16 @@
    "what": "잠실 롯데 크리스마스마켓 원문 읽기",
    "due": "2026-11-13",
    "cmd": "ls docs/source_롯데크리스마스마켓_20261110.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "lotteworldmall-xmas-recheck-1113",
+   "added": "2026-11-10",
+   "what": "롯데월드몰 공식(lotteworldmall.com) 크리스마스 마켓 원문 미확보 — curl 000·Aside ERR_CONNECTION_TIMED_OUT",
+   "due": "2026-11-13",
+   "cmd": "python tools/aside_read.py https://www.lotteworldmall.com/ --wait 15 --max 3000",
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
