@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-10 23:00",
+ "generated": "2026-11-10 23:09",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/10 20:04",
+   "last": "11/10 23:04",
    "next": "11/11 08:00",
    "model": "sonnet-5-5",
    "report_day": "1110",
    "report": "11-10 14시 메일 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려 11-08, 11-15 재요청 예정). 새 중요 메일: ①Anthropic 11-10 09:54 API 크레딧 $100 추가(Max 플랜 혜택, 조치 없음) ②GSC 11-09 17:41 페이지 색인 생성 문제 해결됨(유효성 검사 결과 통지) ③구글 커뮤니티 답(11-08)은 기보고 — 구체 지적 페이지 없음. GitHub: lifeinfo-console 정합성검사 11-09 실패 다수→현재 success, pages 실패는 연속push 취소(무해). source 발행 실패 1건(11-09 17:08 KST) 사유=원격 선행(재시도 성공). 8975 1건(광고)·aroma 0건.",
    "runs": [
+    {
+     "at": "11/10 23:06",
+     "link": "claude://claude.ai/epitaxy/local_75a89a3e-3510-4fba-a96d-4d8e14e3324f",
+     "archived": false
+    },
     {
      "at": "11/10 20:05",
      "link": "claude://claude.ai/epitaxy/local_c4103044-b1bf-44d1-86bd-317b3e6dfab8",
@@ -31,11 +36,6 @@
      "at": "11/10 11:08",
      "link": "claude://claude.ai/epitaxy/local_cef6a627-ece9-433e-b23e-6e078a3f6b1f",
      "archived": false
-    },
-    {
-     "at": "11/10 09:34",
-     "link": "claude://claude.ai/epitaxy/local_d353f7ac-5441-419d-9a73-56679ed64dce",
-     "archived": true
     }
    ]
   },
@@ -348,12 +348,17 @@
    "name": "10-aroma 이대리 야간 글감(카테고리별 1편)",
    "id": "aroma-nightly-topics",
    "on": true,
-   "last": "11/09 23:08",
+   "last": "11/10 23:08",
    "next": "11/11 23:00",
    "model": "sonnet-5-5",
    "report_day": "",
    "report": "",
    "runs": [
+    {
+     "at": "11/10 23:08",
+     "link": "claude://claude.ai/epitaxy/local_2491f296-bad8-42c6-8351-4c1fd79c075c",
+     "archived": false
+    },
     {
      "at": "11/09 23:22",
      "link": "claude://claude.ai/epitaxy/local_6f0f90b5-bfac-455e-8a8b-19a9b037bd34",
@@ -372,11 +377,6 @@
     {
      "at": "11/06 23:34",
      "link": "claude://claude.ai/epitaxy/local_01a80619-a842-4610-9c76-beaef898c98b",
-     "archived": true
-    },
-    {
-     "at": "11/05 23:20",
-     "link": "claude://claude.ai/epitaxy/local_698f17fc-8b93-44d6-a3a0-a34d5cd9ac8a",
      "archived": true
     }
    ]
