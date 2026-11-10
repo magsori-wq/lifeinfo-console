@@ -25401,6 +25401,27 @@
    "kind": "action",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "fix-no-empty-report-1110",
+   "added": "2026-11-10",
+   "what": "루틴 빈손보고 폐지·조용한 실행 기록(routinebeat)",
+   "due": "2026-11-10",
+   "cmd": "python -X utf8 -m unittest tests.test_routinebeat",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aside-login-naver-1110",
+   "added": "2026-11-10",
+   "what": "Aside naver 로그인 필요 — 자동 확인(09:52): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.asideprobe login --batch aside --what naver",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
