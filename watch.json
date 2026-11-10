@@ -25394,7 +25394,7 @@
   {
    "id": "aside-login-ca-1110",
    "added": "2026-11-10",
-   "what": "Aside ca 로그인 필요 — 자동 확인(09:52): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside ca 로그인 필요 — 자동 확인(10:01): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-10",
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "owner": "user",
@@ -25409,8 +25409,10 @@
    "due": "2026-11-10",
    "cmd": "python -X utf8 -m unittest tests.test_routinebeat",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-10",
+   "result": "routinebeat.py 신설·readycheck 세 번째 축·루틴공통절/CLAUDE.md/설계도/경위 반영·routinesync --apply 9개 배포·tests.test_routinebeat 10건 OK. 남은 것: .gitignore에 routine_beat.json(.lock) 추가 권고, 루틴 8·9·2·4·6 SKILL.md 개별 문구(빈손 보고) 충돌 5곳, 커밋은 관제탑"
   },
   {
    "id": "aside-login-naver-1110",
