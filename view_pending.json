@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-11 00:27:40",
- "source_head": "57fe14d8d5d8",
+ "computed_at": "2026-11-11 02:03:19",
+ "source_head": "414a49b5490f",
  "ids": [
   "A2-31",
   "E3-07",
@@ -12,7 +12,7 @@
   {
    "code": "E3-07",
    "title": "2027 공직적격성평가 PSAT 원서접수 1월 18일 — 응시료 0원, 공채 원서는 따로 냅니다",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -34,7 +34,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "A2-31",
@@ -67,7 +67,7 @@
  "actions": [
   {
    "id": "aside-login-ca-1111",
-   "what": "Aside ca 로그인 필요 — 자동 확인(00:00): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside ca 로그인 필요 — 자동 확인(02:00): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-11",
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "state": "todo",
@@ -75,7 +75,7 @@
   },
   {
    "id": "aside-login-naver-1111",
-   "what": "Aside naver 로그인 필요 — 자동 확인(00:01): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside naver 로그인 필요 — 자동 확인(02:01): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-11",
    "cmd": "python -m studio.asideprobe login --batch aside --what naver",
    "state": "todo",
