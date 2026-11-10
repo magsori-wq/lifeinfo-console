@@ -25399,8 +25399,10 @@
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-10",
+   "result": "사장님 10:05 로그인 완료 말씀 → 이부장 Aside 읽기 전용 확인: CA 통계 페이지에 블로그 메뉴(Life_Info/생활정보·통합 데이터·유입분석) 표시, 네이버ID 프로필 페이지 표시"
   },
   {
    "id": "fix-no-empty-report-1110",
@@ -25424,6 +25426,16 @@
    "kind": "action",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "fix-no-empty-report-verify-1110",
+   "added": "2026-11-10",
+   "what": "루틴 빈손보고 폐지 후 첫 회차 확인 — 빈손 회차에 routinelog 보고가 안 올라오고 data/routine_beat.json 에 기록되는지, 출근점검이 미실행 거짓 🔴을 안 내는지(루틴 2·3·4·8 오늘 이후 회차)",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
