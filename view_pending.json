@@ -1,64 +1,10 @@
 {
- "computed_at": "2026-11-11 02:12:30",
- "source_head": "edbc02283dbd",
+ "computed_at": "2026-11-11 05:23:51",
+ "source_head": "39af7e7fdf77",
  "ids": [
-  "A2-31",
-  "E3-07",
-  "aside-login-ca-1111",
-  "aside-login-naver-1111"
+  "A2-31"
  ],
- "posts": [
-  {
-   "code": "E3-07",
-   "title": "2027 공직적격성평가 PSAT 원서접수 1월 18일 — 응시료 0원, 공채 원서는 따로 냅니다",
-   "slug": "공직적격성평가PSAT원서접수",
-   "eng": "psat_2027",
-   "ch": {
-    "naver": {
-     "url": null,
-     "files": [
-      {
-       "label": "네이버 원고",
-       "path": "osmu/네이버용_공직적격성평가PSAT원서접수.txt",
-       "img": false,
-       "exists": true
-      },
-      {
-       "label": "첨부 이미지",
-       "path": "thumbs_naver/478_psat_2027.png",
-       "img": true,
-       "exists": true
-      }
-     ],
-     "light": "ready"
-    },
-    "threads": {
-     "url": null,
-     "files": [
-      {
-       "label": "쓰레드 캡션",
-       "path": "osmu/쓰레드용_공직적격성평가PSAT원서접수.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    },
-    "instagram": {
-     "url": null,
-     "files": [
-      {
-       "label": "인스타 캡션",
-       "path": "insta/캡션_공직적격성평가PSAT원서접수.txt",
-       "img": false,
-       "exists": false
-      }
-     ],
-     "light": "todo"
-    }
-   }
-  }
- ],
+ "posts": [],
  "publish": [
   {
    "code": "A2-31",
@@ -88,24 +34,7 @@
    "light": "todo"
   }
  ],
- "actions": [
-  {
-   "id": "aside-login-ca-1111",
-   "what": "Aside ca 로그인 필요 — 자동 확인(02:00): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
-   "due": "2026-11-11",
-   "cmd": "python -m studio.asideprobe login --batch aside --what ca",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "aside-login-naver-1111",
-   "what": "Aside naver 로그인 필요 — 자동 확인(02:01): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
-   "due": "2026-11-11",
-   "cmd": "python -m studio.asideprobe login --batch aside --what naver",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "actions": [],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
