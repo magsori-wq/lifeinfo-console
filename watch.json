@@ -25705,6 +25705,66 @@
    "state": "todo",
    "by": "이대리",
    "preview": "aromapv_TEMPLATE-CALC.html"
+  },
+  {
+   "id": "deepread-dec-scan-1110",
+   "added": "2026-11-10",
+   "what": "12월 시행 제도 후보 발굴",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_12월시행제도후보_20261110.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-search-anomaly-1110",
+   "added": "2026-11-10",
+   "what": "korea.kr totalSearch.do 검색어 5종이 바이트 동일(32,532B) — 검색 미작동 의심, 정책뉴스 목록 스캔으로 대체",
+   "due": "2026-11-13",
+   "cmd": "curl -s -A \"Mozilla/5.0\" -o /dev/null -w \"%{size_download}\" \"https://www.korea.kr/totalSearch.do?topSearchKeyword=PSAT&dateRange=all\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "msit-list-recheck-1110",
+   "added": "2026-11-10",
+   "what": "과기정통부 보도자료 목록(msit.go.kr list.do?sCode=user&mPid=112&mId=113) 2026-11-10 18:30 두 차례 확인 모두 「시스템 점검 안내」 1.6KB 응답 — 출입처 실측에서 읽힘 판정 보류. 정상 복구 시 목록 본문 5KB 이상 + 날짜 행이 보여야 함",
+   "due": "2026-11-11",
+   "cmd": "curl -sL -A \"Mozilla/5.0\" -o /dev/null -w \"%{http_code} %{size_download}B\\n\" \"https://www.msit.go.kr/bbs/list.do?sCode=user&mPid=112&mId=113\"  (200 이고 크기 5000B 이상이면 복구 — 그 뒤 docs/출입처_경제디지털_20261110.md 과기정통부 행 갱신)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-branch-review-daily",
+   "added": "2026-11-10",
+   "what": "지사(이대리) 일일 관리: 보드 3회 보고(10·18·22시) 수신·6하원칙·재발방지 형식 확인, 노출·조회 수치 추세, 템플릿 카드 결과",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.batchboard show; git -C /c/naver-blog log -3 --format='%ad %s' --date=format:%m-%d_%H:%M",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "goyang-changneung-s2bl-recheck",
+   "added": "2026-11-10",
+   "what": "고양창릉 S-2BL 지분적립형 284세대 — 12월 분양 공고(접수일) 나오면 제안 재판정(국토부 hwpx '금년 12월 분양 시작'만, 접수일 원문 없음)",
+   "due": "2026-12-03",
+   "cmd": "grep -n 고양창릉 docs/source_12월시행제도후보_20261110.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "a2-31-source-confirm-1112",
+   "added": "2026-11-10",
+   "what": "A2-31 에너지바우처 추가분 — 부처 보도자료 원문(복지부·기후에너지환경부)으로 대상 가구 수(22만 vs 21만)·신청 필요 여부·찾아드림 신청 방법 확정 필요(source 에이전트)",
+   "due": "2026-11-12",
+   "cmd": "grep -n '22만' docs/source_에너지바우처겨울대책_20261110.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
