@@ -25359,6 +25359,48 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "nts-onbid-auction-src-1110",
+   "added": "2026-11-10",
+   "what": "국세청 온라인 경매(명품·미술품) 공고·참가조건 미확보 — korea.kr 기사(2026-11-10) 설명문뿐, 보도자료 URL 미확인. 온비드 공고문 보증금 금액 1건도 미개봉",
+   "due": "2026-11-17",
+   "cmd": "python -m studio.watch show nts-onbid-auction-src-1110",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:94e7e138"
+  },
+  {
+   "id": "yukahyuga-upmu-gosi-1110",
+   "added": "2026-11-10",
+   "what": "육아휴직 동료 업무분담지원금: 고용노동부 고시 금액(월) 미확인·카드뉴스 2.3배 불일치(업무분담 2.56배·대체인력 2.29배)",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://www.moel.go.kr/v2024/search.do?query=%EB%8F%99%EB%A3%8C%20%EC%97%85%EB%AC%B4%EB%B6%84%EB%8B%B4%EC%A7%80%EC%9B%90%EA%B8%88\" --wait 8 --max 30000",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1110,
+   "by": "세션:94e7e138"
+  },
+  {
+   "id": "mxbundamjigeum-gosi-1110",
+   "added": "2026-11-10",
+   "what": "육아휴직 동료 업무분담지원금 고시 월 금액(2026.9.18 시행 기준) 확인 — 확인되면 A5 제안 재상정",
+   "due": "2026-11-17",
+   "cmd": "python -m studio.watch show mxbundamjigeum-gosi-1110",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:94e7e138"
+  },
+  {
+   "id": "aside-login-ca-1110",
+   "added": "2026-11-10",
+   "what": "Aside ca 로그인 필요 — 자동 확인(09:52): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "due": "2026-11-10",
+   "cmd": "python -m studio.asideprobe login --batch aside --what ca",
+   "owner": "user",
+   "kind": "action",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }

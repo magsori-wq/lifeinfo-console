@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-10 00:25",
+ "generated": "2026-11-10 09:49",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/09 23:04",
-   "next": "11/10 08:00",
+   "last": "11/10 09:30",
+   "next": "11/10 11:00",
    "model": "sonnet-5-5",
-   "report_day": "1109",
-   "report": "11-09 08:08 메일 브리핑 — 🟢 사장님 할 일 없음. 애드센스 사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 구글 커뮤니티 답변 2건 본문 확인(기보고): Blogger 골드PE Abel D.=애드센스 자격은 Blogger와 별개, 반복 Low value content 반려이니 품질 개선 후 재요청 권고, 구체 지적 페이지 없음 / 애드센스 다이아PE 붉은여우=고객센터 아님 안내뿐. GitHub lifeinfo-console 배포실패 11-06~07 6건·정합성검사 1건 → 11-08 21:37~22:41 run 전부 success 복구. 신규는 Google뉴스(8975 전달)·광고뿐. 점검: magsori 14·m8975 0·aroma 0, 8975 전달 작동.",
+   "report_day": "1110",
+   "report": "11-10 08:08 메일 브리핑 — 🟢 사장님 할 일 없음. 애드센스: adsense.py status·gmailread 실행 불가(PC python 에 googleapiclient 미설치 → 상태 확인 실패, 커넥터 메일상 마지막 통지 11-08 7차 반려 NEEDS_ATTENTION 유지). 🟡 새 메일: GSC 11-09 08:41 '적절한 표준 태그가 포함된 대체 페이지' 유효성 검사 통과 — 원문 '76개의 페이지가 수정된 것으로 확인'(URL 총계, 글 단위 아님) → 색인 영향은 inspect 로 재측정 필요. 구글 커뮤니티 답변(11-08 Blogger PE 'AdSense 승인요건은 Blogger와 별개'·AdSense PE '고객센터 아님') 기보고. GitHub 콘솔 정합성 검사 실패 20여건(11-09 11:25~18:30Z)=watch console-check-aromapv-1109 기등록·최신 run 성공으로 복구, Pages 배포 실패=pages-deploy-timeout-1107 기등록. aroma8975 0건. 8975 전달 1건(MS Rewards 광고)·Google뉴스 다이제스트에 앤트로픽 클로드 개인정보 유출 신고(국내기업 계정 100여 개) 뉴스 — 직접 통지 아님. 이어받은 것: 11-09 회차 / 새로 본 것: GSC 76페이지 해결",
    "runs": [
+    {
+     "at": "11/10 09:34",
+     "link": "claude://claude.ai/epitaxy/local_d353f7ac-5441-419d-9a73-56679ed64dce",
+     "archived": false
+    },
     {
      "at": "11/09 23:08",
      "link": "claude://claude.ai/epitaxy/local_61c26754-28e1-40d8-aecc-912354b2f574",
@@ -31,11 +36,6 @@
      "at": "11/09 14:07",
      "link": "claude://claude.ai/epitaxy/local_6d271fec-d574-4a94-a64d-021828989672",
      "archived": true
-    },
-    {
-     "at": "11/09 11:07",
-     "link": "claude://claude.ai/epitaxy/local_8d86f565-cd87-45a0-b2fe-1ba95eb23471",
-     "archived": true
     }
    ]
   },
@@ -44,12 +44,17 @@
    "name": "2-Lifeinfo daily topics",
    "id": "lifeinfo-daily-topics",
    "on": true,
-   "last": "11/09 09:13",
-   "next": "11/10 09:00",
+   "last": "11/10 09:30",
+   "next": "11/11 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1109",
-   "report": "[조사장부] 목록 3 · 원문 2 · 후보 2 · 탈락 1 · 검색어 6 · 유입 0\n· 고용보험 부정수급 집중신고 — korea.kr newsId=156788331 · 11.9~12.31 추가징수 면제 · 채택 A5-21 (docs/source_고용보험부정수급집중신고_20261109.md)\n· 산재보상 대리인 — newsId=156788368 · 시행 2027-03-30 소득기준 시행규칙 미정 · 탈락: 지금 행동요구 없음 (docs/source_산재보상대리인_20261109.md)\n사전탈락(dupcheck): 안심신탁 B5-12, 신용융자 B2-25, 건보3년유예 C4-01. 시도 경로: hwpx zip·Aside 법령 읽기·deepread 2건. 바닥 미달 사유=A·B 신규 기한형 소재 2건뿐. 제안 A5-21 rec 등록, 브리핑 오전브리핑_2026-11-09.md",
+   "report_day": "1110",
+   "report": "빈손 [조사장부] 목록 2 · 원문 2 · 후보 2 · 탈락 4 · 검색어 3 · 유입 1 / 이어받은 것: 11-09 A5-21 제안·B4-30 / 원문 docs/source_육아휴직업무분담지원금_20261110.md docs/source_국세청온라인경매_20261110.md (deepread Haiku·Aside 읽기 시도). 후보1 육아휴직 업무분담: 월 금액이 고시 위임인데 고시 미확인(law.go.kr 행정규칙 0건·work24 JS) → 보류, watch 11-17. 후보2 국세청 경매: 기사에 조건·기한 없음, 지금 찾을 이유 미확인 → 보류. 탈락: 인정이자(B4-30 dupcheck 0.67)·전세사기최소보장(초안 보유)·자진신고(A5-21)·비만(C 레인). 브리핑 오전브리핑_2026-11-10.md",
    "runs": [
+    {
+     "at": "11/10 09:42",
+     "link": "claude://claude.ai/epitaxy/local_d1dfeb53-4204-4be1-8be0-8ebf27feaff6",
+     "archived": false
+    },
     {
      "at": "11/09 09:20",
      "link": "claude://claude.ai/epitaxy/local_69f196f2-a736-4e91-9800-b7bde2a8e413",
@@ -69,11 +74,6 @@
      "at": "11/07 05:08",
      "link": "claude://claude.ai/epitaxy/local_97a82b78-618a-4705-995e-bba06da98b07",
      "archived": true
-    },
-    {
-     "at": "11/07 04:56",
-     "link": "claude://claude.ai/epitaxy/local_fc9bd678-4ceb-41ac-9a8e-d6aa0542cb1e",
-     "archived": true
     }
    ]
   },
@@ -82,12 +82,17 @@
    "name": "3-Lifeinfo publish",
    "id": "lifeinfo-publish",
    "on": true,
-   "last": "11/09 09:01",
-   "next": "11/10 09:00",
+   "last": "11/10 09:30",
+   "next": "11/11 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1109",
-   "report": "빈손 — 큐 1건(A5-20) V0 🟢·초안 원격 일치·run 없음이나 ⑦ 승인 도장 없음(결재 대기 중) → 발행 안 함. 이어받은 것: 결재함 A5-20 대기 / 새로 본 것: 오늘 발행 2편(양산 경전철·소방점검표), 재고 1편(하한 3 미달)",
+   "report_day": "1110",
+   "report": "빈손 — 큐 0건·승인 도장 글 없음(pubqueue list 0, pace 오늘 0편). 이어받음: 11-09 H1-39·A5-20·A5-21 발행 완료. 새로 본 것: 진행 중 publish run 없음, 발행 트리거 대상 없음. 정체 지시서는 주차(⏸)만",
    "runs": [
+    {
+     "at": "11/10 09:34",
+     "link": "claude://claude.ai/epitaxy/local_f0a8fce3-5db2-458a-9049-792d731b8ed8",
+     "archived": false
+    },
     {
      "at": "11/09 09:03",
      "link": "claude://claude.ai/epitaxy/local_4a8e87a9-7dea-460d-8e12-77d810b11bc0",
@@ -106,11 +111,6 @@
     {
      "at": "11/07 04:36",
      "link": "claude://claude.ai/epitaxy/local_92ce139f-b2ea-4724-96a5-182b776b67ec",
-     "archived": true
-    },
-    {
-     "at": "11/06 09:03",
-     "link": "claude://claude.ai/epitaxy/local_5343d708-663f-4e80-a3f3-db9a33b79f28",
      "archived": true
     }
    ]
@@ -272,12 +272,17 @@
    "name": "8-Lifeinfo issue product",
    "id": "8-lifeinfo-issue-product",
    "on": true,
-   "last": "11/09 07:09",
-   "next": "11/10 07:00",
+   "last": "11/10 07:09",
+   "next": "11/11 07:00",
    "model": "sonnet-5-5",
-   "report_day": "1109",
-   "report": "이부장 확인 11-09 19:25: 생굴(20261108-oyster) affiliate solo 게시완료 — 07:12 막힘(Aside 탭 초과)은 해소됨. 찹쌀떡(20261108-mochi)은 승인됨·미게시, 이미지 미제작 → 루틴8·9 다음 회차 몫\n▸ 19:20 이부장 확인 11-09 19:25: 생굴 affiliate solo 게시완료·07:12 막힘 해소. 찹쌀떡은 승인됨·미게시(이미지 미제작) → 루틴8·9 다음 회차 몫",
+   "report_day": "1110",
+   "report": "🛒 빈손(신규 후보 없음) — [조사장부] 목록 2 · 원문 0 · 후보 1 · 탈락 0 · 검색어 3 · 유입 1 · 이어받은 것: 20261108-mochi(농가살리기 딸기색 찹쌀떡 11,210원·리뷰2,200·평점4.6, 수능 시즌, 찹쌀떡 실검색어 확인)는 afflink 결재 완료·미게시 상태이고 생굴 Aside #737 done(#753) 뒤 대기열이 비었는데 mochi 게시 지시는 아직 안 들어갔다 → 이부장 확인 요청. 새로 본 것: 김장·내복·결로·장갑·전기히터·겨울이불을 productprop search 로 재니 토스 인기목록에 없거나(고무장갑만 있음) 기게시(핫팩·니삭스·망토담요·전기요)와 겹쳐 신규 후보 없음. naverkw: 김장매트·기모내복 실검색어는 있으나 토스 인기상품 근거 없어 보류. 게시 0건(5조건 중 승인 도장 없는 신규).\n▸ 07:11 재확인용\n▸ 07:12 [조사장부] 목록 2 · 원문 0 · 후보 1 · 탈락 0 · 검색어 3 · 유입 1 | 🛒 빈손(신규 후보 없음) · 이어받은 것: 20261108-mochi(농가살리기 딸기색 찹쌀떡 11,210원·리뷰2,200·평점4.6, 수능 시즌)는 afflink 결재 완료·미게시, 생굴 Aside #753 done 뒤 대기열이 비었는데 mochi 게시 지시 아직 없음 → 이부장 확인 요청 · 새로 본 것: 김장·내복·결로·장갑·전기히터·겨울이불은 토스 인기목록에 없거나 기게시와 겹침, 김장매트·기모내복은 실검색어는 있으나 상품 근거 없어 보류 · 게시 0건",
    "runs": [
+    {
+     "at": "11/10 07:12",
+     "link": "claude://claude.ai/epitaxy/local_a7a133c5-6afc-4161-8994-23fb69de4ab0",
+     "archived": false
+    },
     {
      "at": "11/09 07:13",
      "link": "claude://claude.ai/epitaxy/local_940dafd9-afe6-4941-be4e-5fbbcea5410e",
@@ -296,11 +301,6 @@
     {
      "at": "11/07 04:39",
      "link": "claude://claude.ai/epitaxy/local_05717163-df25-4815-a281-612bd3707c6d",
-     "archived": true
-    },
-    {
-     "at": "11/06 07:12",
-     "link": "claude://claude.ai/epitaxy/local_0c769469-9d95-4885-af38-63c9b153d92a",
      "archived": true
     }
    ]
