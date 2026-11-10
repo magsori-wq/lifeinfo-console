@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-11-10 12:51:36",
- "source_head": "7878ae0478c3",
+ "computed_at": "2026-11-10 12:53:54",
+ "source_head": "53d2289f79eb",
  "ids": [
-  "E3-06"
+  "E3-06",
+  "deploy-thumb-477"
  ],
  "posts": [],
  "publish": [
@@ -10,7 +11,7 @@
    "code": "E3-06",
    "title": "주택관리사 합격자 발표 12월 2일 — 평균 높아도 한 과목 40점 미만이면 탈락",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 주택관리사합격자발표_글_HTML.txt",
@@ -34,7 +35,16 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-477",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(477_housing_manager_exam.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-10",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
