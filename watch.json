@@ -27205,8 +27205,10 @@
    "due": "2026-11-13",
    "cmd": "ls docs/source_deep_C_lungfunc_20261112.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "docs/source_deep_C_lungfunc_20261112.md 작성 (18,640바이트, 실측 ls 확인). 판정 조건부 · 못 얻음 5항목 명시"
   },
   {
    "id": "aroma-am-sp-015-approve-1112",
@@ -27260,8 +27262,10 @@
    "due": "2026-11-13",
    "cmd": "ls docs/source_C_흉부엑스선_20261112.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "docs/source_C_흉부엑스선_20261112.md 작성 — 결정 확정(2025.12 위원회)·시행 2027년부터(월일 없음)·고시 미발견"
   },
   {
    "id": "aroma-profile-open-1112",
@@ -27270,9 +27274,41 @@
    "due": "2026-11-12",
    "cmd": "Aside 브라우저에서 aroma 프로필 창 열기",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-12",
+   "result": "이부장 실측 03:14: aroma 프로필은 f8de2d92(connected, aroma-mag 로그인 확인) — 39c7ac1a 는 옛 ID. 창 열기 불필요, 이대리에게 프로필 ID 전달"
+  },
+  {
+   "id": "deepread-c-lung-1112-gap",
+   "added": "2026-11-12",
+   "what": "C2-01 폐기능 누락 + 폐기능 연령 기준(만?) 미확정 + 2025-12-18 보도자료 원문 미확인",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_deep_C_lungfunc_20261112.md && grep -c 폐기능 docs/source_deep_C_lungfunc_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-c-lung-c201-polyp",
+   "added": "2026-11-12",
+   "what": "C2-01 라이브 본문에 폐기능 누락 여부 (2026-11-12 기준 0건) · 고시 제8조 표 골밀도 54·60·66 vs C2-01 54·66",
+   "due": "2026-11-13",
+   "cmd": "curl -s -L -A \"Mozilla/5.0\" https://lifeinfo8975.blogspot.com/2026/06/2026.html | grep -c 폐기능",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "source-g-pohang-1112",
+   "added": "2026-11-12",
+   "what": "포항불빛축제 미확인4건 source 진행",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_G_포항불빛축제_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
