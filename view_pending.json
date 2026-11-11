@@ -1,11 +1,12 @@
 {
- "computed_at": "2026-11-11 13:59:33",
- "source_head": "37115afc206a",
+ "computed_at": "2026-11-11 14:01:57",
+ "source_head": "5bfb75eac062",
  "ids": [
   "C2-21",
   "E2-18",
   "F1-19",
-  "F3-11"
+  "F3-11",
+  "deploy-thumb-484"
  ],
  "posts": [
   {
@@ -40,6 +41,12 @@
        "path": "osmu/쓰레드용_여권묶음우편배송.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_F1-19_passport_bundle.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
@@ -142,7 +149,16 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-484",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(484_sapporo_snow_2027.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
