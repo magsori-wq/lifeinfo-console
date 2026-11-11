@@ -143,7 +143,8 @@ function collect(x){
   /* 보드의 막힌 항목: 동결·끝난 보드는 뺀다. 점검 보드(fix·recheck·reflect·instacap)와 CP 가 「막힘」으로 판정한 지시서는 🔴, 그 밖(이부장 일일 보드 등)의 막힌 항목은 🟡 */
   if(bv&&bv.batches){var stm=bv.st||{},CHK=["fix1102","recheck1105","reflect1105","instacap1105"];Object.keys(bv.batches).forEach(function(b){var s=stm[b];if(s==="frozen"||s==="closed")return;((bv.batches[b]||{}).items||[]).forEach(function(i){if(i.state==="blocked")it.push({lv:(s==="block"||CHK.indexOf(b)>=0)?"r":"y",k:"blk:"+b+":"+i.code,t:"막힌 항목 "+b+"/"+i.code+(i.title?" · "+String(i.title).slice(0,40):"")+(i.note?" — 사유: "+String(i.note).replace(/\s+/g," ").slice(-70):""),d:{what:(i.title||i.code)+"  ("+b+" / "+i.code+")",why:String(i.note||"").replace(/\s+/g," ").trim()||"사유 기록 없음 — 지시서를 열어 확인하세요",who:String((bv.batches[b]||{}).owner||"담당 미지정"),next:"담당이 풀리는 조건을 확인해 지시서에 답하거나, 막혔는데 안 풀리면 이부장에게 보고"}});});});}
   if(ag&&ag.items){var y=new Date().getFullYear();ag.items.forEach(function(a){if(a.run!=="done"){var m=/^(\d\d)-(\d\d) (\d\d):(\d\d)$/.exec(a.started||"");if(m){var s=new Date(y,+m[1]-1,+m[2],+m[3],+m[4]);if((Date.now()-s)/60000>120)it.push({lv:"y",k:"ag:"+a.id,t:(a.run==="stale"?"에이전트 알림 없음 3시간+ (끝났는지 모름) · ":"에이전트 2시간 넘게 도는 중 · ")+String(a.purpose||"").slice(0,24)});}}});}
-  if(am&&+am.waiting_count>0&&!nokind)it.push({lv:"b",k:"appr:"+am.waiting_count,t:"사장님 결재 대기 "+am.waiting_count+"건"});
+  /* 11-11: waiting_count 는 「승인 끝·발행 진행 중」(사장님이 누르실 것 없음 — approvalcount.actionable False)이다. 사장님 몫은 count 만 */
+  if(am&&+am.count>0&&!nokind)it.push({lv:"b",k:"appr:"+am.count,t:"사장님 결재 대기 "+am.count+"건"});
   return it;
 }
 function paint(it){
@@ -159,13 +160,16 @@ function paint(it){
   document.title=(r.length?"🔴"+r.length+" ":"")+"점검 모니터";
   return r.concat(b);
 }
-function alarmCheck(urgent){
+function alarmCheck(all){
+  /* 11-11 사장님 「같은 알림이 소음 수준 — 땜방 말고 뿌리를」: 이 화면은 사장님 브라우저에서 돈다. 그런데 이부장·이과장이 풀
+     작업 쪽 🔴(Aside 막힘·V0 지연·반영 어긋남…)까지 모달·삐 소리·알림창으로 사장님께 띄우고, 🔴 가 이어지면 10분마다 다시 울렸다.
+     작업 쪽 사건은 reportNow 가 이부장에게 자동 보고한다(그 경로는 그대로) — 사장님 화면이 울리는 것은 사장님이 결정할 🔵 뿐. */
+  var urgent=(all||[]).filter(function(i){return i.lv==="b";});
   var cur=urgent.map(function(i){return i.k;}),seen=null;
   try{seen=JSON.parse(sessionStorage.getItem(SEEN_KEY)||"null");}catch(e){}
   var fresh=seen===null?cur:cur.filter(function(k){return seen.indexOf(k)<0;});
   try{sessionStorage.setItem(SEEN_KEY,JSON.stringify(cur));}catch(e){}
-  var redNow=urgent.some(function(i){return i.lv==="r";});
-  var again=redNow&&(Date.now()-lastBeep>600000);   /* 🔴 가 이어지면 10분마다 다시 */
+  var again=false;   /* 11-11: 같은 건 10분마다 다시 울리던 것 제거 — 새 🔵 가 생길 때만 한 번 */
   /* 🔴 11-09 19:13 사장님 「알림이 울렸는데 모달이 안떠네」: 탭은 셸의 iframe 이라 다른 탭을 보고 계시면 모달이 숨은 iframe 안에만 떴다.
      → ① 새 항목이 생기면 셸에 이 탭을 열라고 요청 ② 닫기 전까지(탭 리로드해도) 모달을 유지(pend 를 sessionStorage 에 둔다) */
   var pend=[];try{pend=JSON.parse(sessionStorage.getItem("chkmon_pend_v1")||"[]");}catch(e){}

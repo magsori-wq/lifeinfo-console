@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-11 07:49:07",
- "source_head": "703fcd16e585",
+ "computed_at": "2026-11-11 16:53:38",
+ "source_head": "1b25f763ab16",
  "ids": [
   "C2-20",
   "C2-21",
@@ -9,10 +9,7 @@
   "E4-14",
   "F1-20",
   "F3-11",
-  "G3-30",
-  "aside-naver-login-1111-1609",
-  "deploy-thumb-487",
-  "deploy-thumb-488"
+  "G3-30"
  ],
  "posts": [
   {
@@ -172,7 +169,7 @@
    "eng": "ulsan_bird_bus",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224473155467",
      "files": [
       {
        "label": "네이버 원고",
@@ -187,7 +184,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -297,6 +294,12 @@
        "path": "osmu/쓰레드용_구글휴면계정.txt",
        "img": false,
        "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_E2-18_google_dormant.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "ready"
@@ -308,7 +311,7 @@
        "label": "인스타 캡션",
        "path": "insta/캡션_구글휴면계정.txt",
        "img": false,
-       "exists": false
+       "exists": true
       }
      ],
      "light": "done"
@@ -347,6 +350,12 @@
        "path": "osmu/쓰레드용_정부24잠복결핵검진확인서.txt",
        "img": false,
        "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_C2-21_gov24_ltbi.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "ready"
@@ -358,7 +367,7 @@
        "label": "인스타 캡션",
        "path": "insta/캡션_정부24잠복결핵검진확인서.txt",
        "img": false,
-       "exists": false
+       "exists": true
       }
      ],
      "light": "done"
@@ -395,32 +404,7 @@
    "light": "todo"
   }
  ],
- "actions": [
-  {
-   "id": "aside-naver-login-1111-1609",
-   "what": "Aside 새 작업 창에 네이버 로그인 없음 — #803(C2-20 네이버) 글쓰기가 nid.naver.com 로그인 화면으로 이동해 멈춤. Aside 창에서 네이버(magsori8975) 로그인 부탁. 하시면 네이버 게시 대기분(C2-20·F3-11·G3-30)이 이어집니다",
-   "due": "2026-11-11",
-   "cmd": "python -m studio.asidequeue list",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-487",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(487_direct_buy_focus.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-11",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-488",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(488_secondhand_ks.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-11",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "actions": [],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
