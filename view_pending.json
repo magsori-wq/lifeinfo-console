@@ -1,15 +1,64 @@
 {
- "computed_at": "2026-11-11 15:17:07",
- "source_head": "cbb3750392e7",
+ "computed_at": "2026-11-11 15:29:49",
+ "source_head": "e23b490dfd2f",
  "ids": [
   "C2-20",
   "C2-21",
   "E2-18",
   "F3-11",
-  "G3-30",
-  "deploy-thumb-486"
+  "G3-30"
  ],
  "posts": [
+  {
+   "code": "C2-20",
+   "title": "생굴 노로바이러스 검사 11월 9일~2월 26일 720건 — 식약처가 어떤 수산물을 검사하나",
+   "slug": "생굴노로바이러스검사",
+   "eng": "oyster_norovirus",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_생굴노로바이러스검사.txt",
+       "img": false,
+       "exists": true
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/486_oyster_norovirus.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "ready"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_생굴노로바이러스검사.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_생굴노로바이러스검사.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  },
   {
    "code": "G3-30",
    "title": "울산 철새여행버스 무료 — 신청 전에 알아 둘 조건 7가지, 회당 12명 선착순",
@@ -23,7 +72,7 @@
        "label": "네이버 원고",
        "path": "osmu/네이버용_울산철새여행버스.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "첨부 이미지",
@@ -32,7 +81,7 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "threads": {
      "url": null,
@@ -73,7 +122,7 @@
        "label": "네이버 원고",
        "path": "osmu/네이버용_삿포로눈축제2027.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "첨부 이미지",
@@ -82,7 +131,7 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "threads": {
      "url": null,
@@ -217,45 +266,8 @@
    }
   }
  ],
- "publish": [
-  {
-   "code": "C2-20",
-   "title": "생굴 노로바이러스 검사 11월 9일~2월 26일 720건 — 식약처가 어떤 수산물을 검사하나",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 생굴노로바이러스검사_글_HTML.txt",
-     "path": "생굴노로바이러스검사_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/486_oyster_norovirus.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/486_oyster_norovirus.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "ready"
-  }
- ],
- "actions": [
-  {
-   "id": "deploy-thumb-486",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(486_oyster_norovirus.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-11",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "publish": [],
+ "actions": [],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
