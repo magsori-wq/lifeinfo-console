@@ -7116,17 +7116,27 @@
    "order_at": "2026-11-12 03:36:51"
   }
  },
- "updated": "2026-11-12 05:47:58",
+ "updated": "2026-11-12 06:00:39",
  "current": {
-  "batch": "followup",
+  "batch": "chkmon",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "✅ 04:09 지시 3단계 정리 — ①네이버 사진 고지 6편 완료 ②인스타·쓰레드 8편 완료(C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12·C2-25), F3-13만 분류기 거부로 대기(결재함 f313-insta-classifier-1112) ③초안 G3-32·G3-33·G3-35 큐 적재 완료(V0 대기, G3-35는 나이트워크 접수 11/17 마감). 확인: python -m studio.pubqueue list · python -m studio.setgate",
-  "since": "16:10",
-  "since_at": "2026-10-24 16:10:44"
+  "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵3 🟡4 — 즉시: 사장님 결재 대기 G3-32 쿤스트하우스 취리히 전시 11월 27일 개막 — 성인; 사장님 🙋승인 【권고】직접 게시 자물쇠·이부장 사칭 방지 훅이 PowerShell 도구; 사장님 🙋승인 【권고】F3-13 해외여행 약 반입 인스타 게시 허용 — 이과장 게시 명 · 묶음: 사건×2 반영 감사×1 기타×1 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "06:00:39",
+   "text": "✔ 이부장 ack r3c13da",
+   "actor": "이부장"
+  },
+  {
+   "t": "05:59:42",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵3 🟡4 — 즉시: 사장님 결재 대기 G3-32 쿤스트하우스 취리히 전시 11월 27일 개막 — 성인; 사장님 🙋승인 【권고】직접 게시 자물쇠·이부장 사칭 방지 훅이 PowerShell 도구; 사장님 🙋승인 【권고】F3-13 해외여행 약 반입 인스타 게시 허용 — 이과장 게시 명 · 묶음: 사건×2 반영 감사×1 기타×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
   {
    "t": "05:47:58",
    "text": "✔ 이부장 ack r649973",
@@ -7315,16 +7325,6 @@
   {
    "t": "04:53:24",
    "text": "✅ G3-31 완료 — 부산국제아동도서전 12월 3일~6일 — '무료입장'은 조건부,",
-   "actor": "이과장"
-  },
-  {
-   "t": "04:51:36",
-   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/DfnRJUAk4Cm/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-   "actor": "이과장"
-  },
-  {
-   "t": "04:45:36",
-   "text": "▶   — 1/7단계 · ✅ F1-20 인스타(DfnQTvUk9eo)·쓰레드(DfnQX_dgQea) 게시·기록·교차링크. osmuimgcheck 🔴0건 확인. 다음 G3-31",
    "actor": "이과장"
   }
  ],
@@ -7793,7 +7793,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵2 🟡4 — 즉시: V0 지연 G3-35 포항 불빛축제 2026 — 11월 19~21일, 나이트; 사장님 🙋승인 【권고】직접 게시 자물쇠·이부장 사칭 방지 훅이 PowerShell 도구; 사장님 🙋승인 【권고】F3-13 해외여행 약 반입 인스타 게시 허용 — 이과장 게시 명 · 묶음: 사건×2 반영 감사×1 기타×1 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵3 🟡4 — 즉시: 사장님 결재 대기 G3-32 쿤스트하우스 취리히 전시 11월 27일 개막 — 성인; 사장님 🙋승인 【권고】직접 게시 자물쇠·이부장 사칭 방지 훅이 PowerShell 도구; 사장님 🙋승인 【권고】F3-13 해외여행 약 반입 인스타 게시 허용 — 이과장 게시 명 · 묶음: 사건×2 반영 감사×1 기타×1 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -8677,70 +8677,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-29 05:48:55",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [H1-32] #534 인스타 게시 — 카드 3장(표지→확인된 것→헷갈리기 쉬운 것)·캡션 822자 일치. 공유 1회, 새 프로필 탭에서 게시물 447→448·맨 위 게시물 https://www.instagram.com/p/DfDU1U9kwGK/ · https://www.instagram.com/p/DfDU1U9kwGK/"
-  },
-  {
-   "ts": "2026-10-29 05:49:00",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [H1-32] #534 확인: 점 3개, 블로그(11-25-9-sbs-2026)·네이버(224454362342) 링크·Wikimedia Commons(Unsplash 원본, CC0) 출처 줄·#저장각 라이브에 있음, Threads·Facebook 동시공유 꺼짐, 제휴 문구 없음(지시대로) · 총 탭 8개 · https://www.instagram.com/p/DfDU1U9kwGK/"
-  },
-  {
-   "ts": "2026-10-29 05:49:56",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] #535 수신 — H1-32 쓰레드 시작"
-  },
-  {
-   "ts": "2026-10-29 05:50:32",
-   "bid": "pub1026h132",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfDU1U9kwGK/ (naver-link 가 자동 보고) · 남음: 쓰레드"
-  },
-  {
-   "ts": "2026-10-29 05:50:36",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #534 H1-32 insta 확인 ✅ (https://www.instagram.com/p/DfDU1U9kwGK/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ nine_to_six_first_broadcast_01.png  MAD / ✅ 인스타 카드 2 ↔ nine_to_six_first_broadcast_02.png  MAD / ✅ 인스타 카드 3 ↔ nine_to_six_first_broadcast_03.png  MAD) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인"
-  },
-  {
-   "ts": "2026-10-29 05:52:22",
-   "bid": "pub1029h133",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "H1-33 첫 run 40763857498 은 checkout 에서 멈춰 cancelled(발행 단계 도달 전 — 라이브 피드로 미발행 확인) → 원격 동기(앞 2→0)·pubready ✅ 후 재트리거 run 40767063474"
-  },
-  {
-   "ts": "2026-10-29 05:54:23",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [H1-32] #535 쓰레드 게시 — 이미지 확인: 사진 1장 붙음·링크 카드 없음(2개 모두 닫음)·본문 326자 원문 일치. 게시 1회, 새 프로필 탭에서 실제 주소 읽음·curl 200 · https://www.threads.com/@magsori8975/post/DfDVdjqk0My"
-  },
-  {
-   "ts": "2026-10-29 05:54:32",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [H1-32] #535 확인: 링크 2개(블로그 11-25-9-sbs-2026·네이버 224454362342) 앵커 대상 정확·사진 출처 줄(Wikimedia Commons CC0) 있음·제휴 문구 없음(지시대로) · 총 탭 8개 · https://www.threads.com/@magsori8975/post/DfDVdjqk0My"
-  },
   {
    "ts": "2026-10-29 06:09:03",
    "bid": "pub1029h131",
@@ -35148,6 +35084,28 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "r649973"
+  },
+  {
+   "ts": "2026-11-12 05:59:42",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵3 🟡4 — 즉시: 사장님 결재 대기 G3-32 쿤스트하우스 취리히 전시 11월 27일 개막 — 성인; 사장님 🙋승인 【권고】직접 게시 자물쇠·이부장 사칭 방지 훅이 PowerShell 도구; 사장님 🙋승인 【권고】F3-13 해외여행 약 반입 인스타 게시 허용 — 이과장 게시 명 · 묶음: 사건×2 반영 감사×1 기타×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r3c13da"
+  },
+  {
+   "ts": "2026-11-12 06:00:39",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r3c13da — 결재 5건 사장님 아침 결정·GitHub 장애 복구 대기",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r3c13da"
   }
  ]
 }
