@@ -25821,7 +25821,7 @@
   {
    "id": "aside-login-naver-1111",
    "added": "2026-11-11",
-   "what": "Aside naver 로그인 필요 — 자동 확인(04:02): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside naver 로그인 필요 — 자동 확인(16:09): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-11",
    "cmd": "python -m studio.asideprobe login --batch aside --what naver",
    "owner": "user",
@@ -26304,6 +26304,26 @@
    "owner": "user",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "aside-bindcp-fix-1111",
+   "added": "2026-11-11",
+   "what": "tools/aside_bindcp.sh 가 옛 채팅 ID(vPIdf4DvPyS1aSQS)를 묶는다 — 현행 전담 3piqDmwWDz7VLUkM(이과장)·fZcN6UTcB4PoZVYk(이부장)으로 고쳐 CP 탭이 바뀌면 자동 재연결(11-11 15:39~16:05 창 끊김 재발 방지)",
+   "due": "2026-11-11",
+   "cmd": "grep -n CHAT tools/aside_bindcp.sh",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aside-naver-login-1111-1609",
+   "added": "2026-11-11",
+   "what": "Aside 새 작업 창에 네이버 로그인 없음 — #803(C2-20 네이버) 글쓰기가 nid.naver.com 로그인 화면으로 이동해 멈춤. Aside 창에서 네이버(magsori8975) 로그인 부탁. 하시면 네이버 게시 대기분(C2-20·F3-11·G3-30)이 이어집니다",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
