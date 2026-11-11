@@ -25852,6 +25852,46 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "deepread-a4-debt-20261111",
+   "added": "2026-11-11",
+   "what": "A4 자살예방-채무상담 연계 원문 심층독해 착수(korea.kr newsId=148975374) — 원문 파일 docs/source_A4-채무상담연계_20261111.md 작성 예정",
+   "due": "2026-11-12",
+   "cmd": "ls -la C:/lifeinfo/docs/source_A4-채무상담연계_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:4e42a711"
+  },
+  {
+   "id": "a4-debt-counsel-20261111",
+   "added": "2026-11-11",
+   "what": "A4 자살예방-채무상담 연계(1375) 원문 심층독해 완료 — docs/source_A4-채무상담연계_20261111.md · 주의: 044-202-3898 은 복지부 문의번호(상담 창구 아님)",
+   "due": "2026-11-15",
+   "cmd": "ls -la C:/lifeinfo/docs/source_A4-채무상담연계_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:4e42a711"
+  },
+  {
+   "id": "a4-debt-109-hours-1111",
+   "added": "2026-11-11",
+   "what": "A4 채무연계 — 109 자살예방상담전화 운영시간 원문·공식 출처 미확인(보도자료·신복위 페이지에 없음). 포스터(1375 안내) 기준일도 미확인",
+   "due": "2026-11-13",
+   "cmd": "grep -n 109 C:/lifeinfo/docs/source_A4-채무상담연계_20261111.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:4e42a711"
+  },
+  {
+   "id": "dividend-sep-gosi-1111",
+   "added": "2026-11-11",
+   "what": "고배당 분리과세: 조특법 시행령 고배당 조문 미확인·2026 개정안(27.1.1 지급분) 국회 통과 미확인 — 실측: likms 404, 시행령 104조의27~31 고배당 아님",
+   "due": "2026-11-25",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:4e42a711"
   }
  ]
 }
