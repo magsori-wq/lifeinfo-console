@@ -27381,8 +27381,10 @@
    "due": "2026-11-13",
    "cmd": "cat docs/검증_직접게시10편_20261112.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-12",
+   "result": "이과장 04:19 정정 6편 → verify 04:21 실측 합격: 6편 모두 참고 사진 고지 문장 있음·숫자 토큰 0 누락·블로그 URL 있음"
   },
   {
    "id": "verify-MT33-1112",
@@ -27405,6 +27407,16 @@
    "by": "세션:330b96b0",
    "done_at": "2026-11-12",
    "result": "이부장 실측: 04:09:18 보드 줄만(SendMessage 없음) → 04:10:44 이과장 「04:10 줄 수신」 보고 — 자동 깨움 86초 만에 동작"
+  },
+  {
+   "id": "verify-postlock-1112",
+   "added": "2026-11-12",
+   "what": "직접 게시 자물쇠: python -m studio.naverwrite --publish 는 훅(postlock)을 통과해 도장 없이 실행됨(모듈 호출 형태는 스크립트 경로가 없어 검사 대상 아님) — naverwrite 내부 direct_gate 만 막음",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.postlock --help; python -c \"import sys;sys.path.insert(0,'C:/lifeinfo');from studio import postlock as p;import datetime as d;print(p.units('python -m studio.naverwrite --code B2-22 --publish',lambda x:None))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
