@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-11 22:39",
+ "generated": "2026-11-11 23:12",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/11 20:04",
-   "next": "11/11 23:00",
+   "last": "11/11 23:04",
+   "next": "11/12 08:00",
    "model": "sonnet-5-5",
    "report_day": "1111",
    "report": "11-11 08:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 새 중요메일 없음(구글 커뮤니티 답은 11-08 기보고 2건뿐, 새 답 0). 참고: Anthropic API 크레딧 $100 추가(11-10 00:54 UTC)·Claude Code 뉴스레터. GitHub 발행 실패 1건=E3-07 이중 트리거(17:03 성공 뒤 17:07 재트리거를 사전점검이 정상 차단, 무해)·pages deploy 실패 반복=무해(연속push). 점검: 리더 magsori 37·m8975 1·aroma 0(평소)·전부 ✅\n▸ 11:07 11-11 11시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정·추가투자 없음). 새 중요메일 없음(구글 커뮤니티 답 2건은 11-08 기보고, 11-08 이후 새 답 0). 새 GitHub 실패 1건=10:51 KST publish 이중 트리거(01:51:09 성공 직후 01:51:24 재트리거, 사전점검 「origin/main 이 앞섬」으로 정상 차단·무해). pages deploy 실패 반복=무해(연속push). 점검: 리더 magsori 37·m8975 1(뉴스레터)·aroma 0(평소)·전부 ✅, 커넥터 8975 전달 3스레드(GSC 11-09 색인문제 해결 통지 포함 → GSC 종류 전달 확인)\n▸ 17:09 11-11 17:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 NEEDS_ATTENTION(11-08 7차 반려·11-15 재요청 예정, status 파일의 GETTING_READY는 낡은 값이라 이번에 갱신). 새 중요 메일 없음: help-communities 새 답 0건(11-08 기보고 2건 — 골드PE 'AdSense 별도 기준, 품질 개선 후 재요청'·다이아PE '고객센터 아님'), GSC 11-09 색인문제 해결 통지 기보고. GitHub: 11-11 07:25 console 정합성검사 RED(posts_index 501 vs DB 502 파생 재생성 필요·무해), 발행 run 05:44 1건 실패는 동시 dispatch 중복(직후 성공 run 있음), pages deploy 실패 반복=연속push 무해. 점검: magsori 37·m8975 1·aroma 0건.\n▸ 20:07 11-11 20:05 브리핑 — 🟢 사장님 할 일 없음. 애드센스 NEEDS_ATTENTION(7차 반려 11-08, 11-15 재요청 예정). 새 구글/Anthropic 메일 없음(help-communities 답 2건은 11-08 기보고분: Blogger PE=개선 후 재신청 권고·AdSense PE=지원팀 안내뿐, 구체 지적 페이지 없음). GitHub: 콘솔 정합성 검사 11-11 09:11~10:53Z 10건 실패=posts_index 506 vs DB 503(기지 패턴), 11:00Z 이후 success 로 해소. 발행 run 1건 실패(08:34Z)=원격 선행 확인 가드(동기 지연), 4분 뒤 재시도 success. 8975 전달 뉴스/리워즈 광고뿐, aroma 0건.",
    "runs": [
+    {
+     "at": "11/11 23:07",
+     "link": "claude://claude.ai/epitaxy/local_28b4c96f-366f-4c81-accb-693214c7dc1f",
+     "archived": false
+    },
     {
      "at": "11/11 20:08",
      "link": "claude://claude.ai/epitaxy/local_b8472968-ff4f-448d-85ab-77c117cae7c2",
@@ -30,11 +35,6 @@
     {
      "at": "11/11 11:08",
      "link": "claude://claude.ai/epitaxy/local_9a110ac7-6e6b-4544-b5c4-f4797501d6c3",
-     "archived": false
-    },
-    {
-     "at": "11/11 08:08",
-     "link": "claude://claude.ai/epitaxy/local_a175b1e5-bc37-457c-a686-dffb912f5a15",
      "archived": false
     }
    ]
@@ -348,12 +348,17 @@
    "name": "10-aroma 이대리 야간 글감(카테고리별 1편)",
    "id": "aroma-nightly-topics",
    "on": true,
-   "last": "11/10 23:08",
-   "next": "11/11 23:00",
+   "last": "11/11 23:08",
+   "next": "11/12 23:00",
    "model": "sonnet-5-5",
    "report_day": "",
    "report": "",
    "runs": [
+    {
+     "at": "11/11 23:11",
+     "link": "claude://claude.ai/epitaxy/local_dc3ea396-cee0-48c6-86ce-62c3c2d147a7",
+     "archived": false
+    },
     {
      "at": "11/10 23:18",
      "link": "claude://claude.ai/epitaxy/local_2491f296-bad8-42c6-8351-4c1fd79c075c",
@@ -372,11 +377,6 @@
     {
      "at": "11/07 23:34",
      "link": "claude://claude.ai/epitaxy/local_558509be-7fc7-47ae-b2f8-deb9dfff22cb",
-     "archived": true
-    },
-    {
-     "at": "11/06 23:34",
-     "link": "claude://claude.ai/epitaxy/local_01a80619-a842-4610-9c76-beaef898c98b",
      "archived": true
     }
    ]
