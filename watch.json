@@ -26232,6 +26232,76 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deepread-c3-gap-1111",
+   "added": "2026-11-11",
+   "what": "건강3차 미확보: 관세청 감기약 마약류 보도(customs curl 212B·Aside 시스템안내), 복지부 11-10 취약계층 보호대책 첨부 hwpx 링크 미탐지(한랭 수칙 미확인), 질병청·심평원·NHIS 목록 전수 미확인",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_건강후보3_20261111.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "aside-requeue-after-fix-1111",
+   "added": "2026-11-11",
+   "what": "Aside 작업 창 복구 뒤 재등록할 것: F3-11 네이버(#801)·E2-18 인스타(#799)·E2-18 쓰레드(#800)·대기열 남은 G3-30·C2-20 네이버·C2-21 쓰레드(재시도). 복구 전 재등록은 같은 오류로 소모만 된다",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "telco-notice-gap-1111",
+   "added": "2026-11-11",
+   "what": "통신 3사 요금·위약금 공시 원문 미확보 (KT curl 403 · Aside Access Denied) — 디지털(E) 3차 발굴 시드 미충족",
+   "due": "2026-11-13",
+   "cmd": "python tools/aside_read.py \"https://www.kt.com/news/noticeList.do\" --wait 6 --max 3000",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "e3-review-tail-1111",
+   "added": "2026-11-11",
+   "what": "디지털 3차 미확인: 관세청 해외직구 단속(11-02 목록 제목만) · 방통위 자체 목록 · 과기정통부 12월 시행 공지 0건 재확인",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_디지털후보3_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-fg3-gaps-1111",
+   "added": "2026-11-11",
+   "what": "여행·우리동네 3차: 못 얻은 원문(kto·법무부·공항·코레일/SR·부산교통공사·울산시 목록·부산시 2쪽 이후) · 중동 안전공지 발행 직전 0404 재확인 · 창원 국민신문고 11-19 신청요건 미확인",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_여행우리동네후보3_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-fg3-recheck-1111",
+   "added": "2026-11-11",
+   "what": "여행·우리동네 3차 발행 전 재확인: 중동·사우디·독일(11-20 시위) 여행경보 단계 · 알바니아 PDF 대조 · 창원 국민신문고 11-19 신청 방법",
+   "due": "2026-11-13",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://www.0404.go.kr/\" --wait 6 --max 3000",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deploy-thumb-487",
+   "added": "2026-11-11",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(487_direct_buy_focus.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
