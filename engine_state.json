@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11 11:34:44",
+ "at": "2026-11-11 11:36:01",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -7,7 +7,7 @@
    {
     "code": "E4-13",
     "title": "아이폰 업데이트 27.2.1 — 보안 수정 9건, iP",
-    "min": 1,
+    "min": 2,
     "lvl": "ok"
    }
   ],
@@ -18,14 +18,13 @@
     "code": "A2-31",
     "title": "에너지바우처 등유·LPG 14만 7000원 추가, 12",
     "left": [
-     "인스타",
-     "쓰레드"
+     "인스타"
     ],
     "ch": {
      "blog": true,
      "naver": true,
      "insta": false,
-     "threads": false
+     "threads": true
     },
     "last_at": "2026-11-11",
     "lvl": "amber"
@@ -250,9 +249,9 @@
   }
  ],
  "aside": {
-  "state": "#774 doing (6분 전 소식)",
+  "state": "#774 done",
   "queue": 0,
-  "busy": true,
+  "busy": false,
   "lvl": "ok"
  },
  "tower": {
@@ -445,7 +444,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 7,
-   "last_min": 5,
+   "last_min": 7,
    "cur": "🚀 A2-31 발행 — 에너지바우처 등유·LPG 14만 700",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -454,14 +453,14 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 8751,
+   "last_min": 8753,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok",
    "role": "애드센스 정비"
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
+   "state": "대기",
    "jobs": 0,
    "lvl": "ok",
    "role": "허브·4종착 배송"
@@ -494,7 +493,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 7,
-   "last_min": 5,
+   "last_min": 7,
    "cur": "🚀 A2-31 발행 — 에너지바우처 등유·LPG 14만 700",
    "lvl": "ok"
   },
@@ -502,7 +501,7 @@
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 6,
+   "last_min": 8,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -510,7 +509,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 8751,
+   "last_min": 8753,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok"
   },
@@ -518,13 +517,13 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 10,
+   "last_min": 11,
    "cur": "자체 점검 11:24: ①새 승인·이부장 요청 없음 ②재혼황후",
    "lvl": "ok"
   },
   {
    "who": "Aside",
-   "state": "출동(일하는 중)",
+   "state": "대기",
    "jobs": 0,
    "lvl": "ok"
   },
@@ -896,6 +895,12 @@
   "threads": {
    "done": [
     {
+     "code": "A2-31",
+     "title": "에너지바우처 등유·LPG 14만 7000원 추가, 12",
+     "url": "https://www.threads.com/@magsori8975/post/DflazM3AWHI",
+     "at": "2026-11-11"
+    },
+    {
      "code": "E3-07",
      "title": "2027 공직적격성평가 PSAT 원서접수 1월 18일 ",
      "url": "https://www.threads.com/@magsori8975/post/DfkwRBHknTM",
@@ -992,12 +997,7 @@
      "at": "2026-11-08"
     }
    ],
-   "wait": [
-    {
-     "code": "A2-31",
-     "title": "에너지바우처 등유·LPG 14만 7000원 추가, 12"
-    }
-   ]
+   "wait": []
   }
  },
  "today_events": [
@@ -1066,6 +1066,12 @@
    "stage": "boss",
    "at": "2026-11-11 11:33:04",
    "src": "V0 통과"
+  },
+  {
+   "code": "A2-31",
+   "stage": "threads",
+   "at": "2026-11-11 11:35:31",
+   "src": "now_log 게시 URL"
   }
  ],
  "approvals": [
@@ -1105,7 +1111,7 @@
   "bad": 1,
   "na": 0,
   "at": "2026-11-11 11:34:39",
-  "age_min": 0
+  "age_min": 1
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1170,11 +1176,11 @@
  "fired": [
   {
    "day": "2026-11-11",
-   "total": 480,
+   "total": 483,
    "kinds": [
     [
      "TOWER_OWED",
-     389
+     392
     ],
     [
      "ASIDE_ALERT",
