@@ -25808,24 +25808,90 @@
   {
    "id": "aside-login-ca-1111",
    "added": "2026-11-11",
-   "what": "Aside ca 로그인 필요 — 자동 확인(02:00): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside ca 로그인 필요 — 자동 확인(04:02): https://creator-advisor.naver.com/naver_blog/magsori8975/stat/today 가 로그인 화면(https://creator-advisor.naver.com/introduction)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-11",
    "cmd": "python -m studio.asideprobe login --batch aside --what ca",
    "owner": "user",
    "kind": "action",
-   "state": "todo",
-   "by": "미상"
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-11",
+   "result": "사장님 채팅 04:43 「어사이드 로그인했어」 — 이후 Aside #765 검색설명 성공(05:00)·#766 네이버 진행으로 확인"
   },
   {
    "id": "aside-login-naver-1111",
    "added": "2026-11-11",
-   "what": "Aside naver 로그인 필요 — 자동 확인(02:01): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
+   "what": "Aside naver 로그인 필요 — 자동 확인(04:02): https://nid.naver.com/user2/help/myInfoV2 가 로그인 화면(https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fnid.naver.com%2Fuser2%2Fhelp%2FmyInfoV2)으로 넘어감. 권고: Aside 브라우저에서 로그인",
    "due": "2026-11-11",
    "cmd": "python -m studio.asideprobe login --batch aside --what naver",
    "owner": "user",
    "kind": "action",
+   "state": "done",
+   "by": "미상",
+   "done_at": "2026-11-11",
+   "result": "사장님 채팅 04:43 「어사이드 로그인했어」 — 이후 Aside #765 검색설명 성공(05:00)·#766 네이버 진행으로 확인"
+  },
+  {
+   "id": "aside-reopen-window-1111",
+   "added": "2026-11-11",
+   "what": "Aside 작업 브라우저 창 소실(openTab 3회 실패, 11시간 유휴 뒤 첫 지시) — #761 E3-07 검색설명·aroma AM-DG-010 둘 다 막힘. 4번째 반복(#748·#754·#755·#761). 아침에 Aside 창 상태 확인·재연결 후 대기열 재개",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list; python -m studio.asidestate",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-11",
+   "result": "사장님 04:43 Aside 로그인 후 #765 검색설명 성공(05:00), 네이버 #766 진행 중. 이과장 전담 챗은 재등록으로 풀림"
+  },
+  {
+   "id": "xlink-e307",
+   "added": "2026-11-11",
+   "what": "🔗 E3-07 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E3-07",
+   "due": "2026-11-11",
+   "cmd": "python studio/blogger.py crosslink --code E3-07",
+   "owner": "claude",
    "state": "todo",
-   "by": "미상"
+   "by": "naver-link"
+  },
+  {
+   "id": "deepread-a4-debt-20261111",
+   "added": "2026-11-11",
+   "what": "A4 자살예방-채무상담 연계 원문 심층독해 착수(korea.kr newsId=148975374) — 원문 파일 docs/source_A4-채무상담연계_20261111.md 작성 예정",
+   "due": "2026-11-12",
+   "cmd": "ls -la C:/lifeinfo/docs/source_A4-채무상담연계_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:4e42a711"
+  },
+  {
+   "id": "a4-debt-counsel-20261111",
+   "added": "2026-11-11",
+   "what": "A4 자살예방-채무상담 연계(1375) 원문 심층독해 완료 — docs/source_A4-채무상담연계_20261111.md · 주의: 044-202-3898 은 복지부 문의번호(상담 창구 아님)",
+   "due": "2026-11-15",
+   "cmd": "ls -la C:/lifeinfo/docs/source_A4-채무상담연계_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:4e42a711"
+  },
+  {
+   "id": "a4-debt-109-hours-1111",
+   "added": "2026-11-11",
+   "what": "A4 채무연계 — 109 자살예방상담전화 운영시간 원문·공식 출처 미확인(보도자료·신복위 페이지에 없음). 포스터(1375 안내) 기준일도 미확인",
+   "due": "2026-11-13",
+   "cmd": "grep -n 109 C:/lifeinfo/docs/source_A4-채무상담연계_20261111.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:4e42a711"
+  },
+  {
+   "id": "dividend-sep-gosi-1111",
+   "added": "2026-11-11",
+   "what": "고배당 분리과세: 조특법 시행령 고배당 조문 미확인·2026 개정안(27.1.1 지급분) 국회 통과 미확인 — 실측: likms 404, 시행령 104조의27~31 고배당 아님",
+   "due": "2026-11-25",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:4e42a711"
   }
  ]
 }
