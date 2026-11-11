@@ -1,29 +1,30 @@
 {
- "rev": "ad0a5bcd",
+ "rev": "149e33749",
  "counts": {
   "total": 500,
-  "osmu_done": 496,
-  "osmu_pending": 4,
+  "osmu_done": 497,
+  "osmu_pending": 3,
   "indexed": 0,
   "index_pending": 500,
-  "index_requested": 179,
-  "index_todo": 79,
-  "index_benign": 242
+  "index_requested": 167,
+  "index_todo": 77,
+  "index_benign": 256
  },
  "actionable": [
   {
    "code": "C2-21",
    "title": "정부24 잠복결핵 검진 확인서 11월 12일부터 — 보",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
