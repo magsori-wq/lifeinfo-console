@@ -1,13 +1,14 @@
 {
- "computed_at": "2026-11-11 18:47:25",
- "source_head": "a65b434f73c9",
+ "computed_at": "2026-11-11 19:07:41",
+ "source_head": "b0e5a6633108",
  "ids": [
   "C2-20",
   "C2-22",
   "C2-23",
   "E4-14",
   "F1-20",
-  "G3-31"
+  "G3-31",
+  "aside-credit-t2568"
  ],
  "posts": [
   {
@@ -141,10 +142,16 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_해외직구집중력키성장식품.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_C2-22_direct_buy_focus.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
      "url": null,
@@ -153,10 +160,10 @@
        "label": "인스타 캡션",
        "path": "insta/캡션_해외직구집중력키성장식품.txt",
        "img": false,
-       "exists": false
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     }
    }
   },
@@ -271,7 +278,7 @@
   {
    "code": "C2-23",
    "title": "김장매트·김치통도 올해 처음 검사합니다 — 식약처 김장철 검사 11월 9~20일, 원산지는 1588-8112",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -293,10 +300,19 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "aside-credit-t2568",
+   "what": "Aside 크레딧 소진(402 Insufficient credits) — Aside 설정 화면에서 크레딧 충전 후 이 항목을 완료로 눌러 주십시오. 완료하면 멈춘 Aside 대기열이 저절로 다시 흐릅니다(그동안 Aside 지시는 대기열에서 기다림)",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
