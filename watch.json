@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "items": [
   {
    "id": "intro-numbers",
@@ -27043,6 +27043,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "lane-idle-check-1112",
+   "added": "2026-11-12",
+   "what": "글감 루틴 레인 정체 — 루틴2(daily-topics) 11-09 이후·루틴4(travel-prep) 11-07 이후 제안 0건. 11-12 낮 루틴 실행 결과(routinebeat·routinelog)로 출입처·발굴 출발점 점검 여부 판단",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard order --id routinelog | tail -20",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
