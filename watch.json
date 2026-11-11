@@ -26644,6 +26644,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "g331-thumb-c223-push-1111",
+   "added": "2026-11-11",
+   "what": "G3-31 발행 run 42997059197 끝나면: syncorigin(C2-23 V0·수정 886c0197b push) · 썸네일 490/491 github.io 200 확인(아니면 deploy 재실행) · 일일 문제기록에 18:44 cd 이탈 1줄",
+   "due": "2026-11-11",
+   "cmd": "gh run view 42997059197 -R magsori-wq/lifeinfo-source --json status; curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/490_busan_kids_bookfair.png",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
