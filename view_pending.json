@@ -1,12 +1,61 @@
 {
- "computed_at": "2026-11-11 11:36:12",
- "source_head": "85747f7de221",
+ "computed_at": "2026-11-11 02:52:07",
+ "source_head": "2cc2378edf40",
  "ids": [
   "A2-31",
-  "E4-13",
-  "deploy-thumb-480"
+  "E4-13"
  ],
  "posts": [
+  {
+   "code": "E4-13",
+   "title": "아이폰 업데이트 27.2.1 — 보안 수정 9건, iPhone 11 이상이면 대상입니다",
+   "slug": "아이폰업데이트27.2.1",
+   "eng": "ios_27_2_1",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_아이폰업데이트27.2.1.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/480_ios_27_2_1.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_아이폰업데이트27.2.1.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_아이폰업데이트27.2.1.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  },
   {
    "code": "A2-31",
    "title": "에너지바우처 등유·LPG 14만 7000원 추가, 12월 9일 지급 예정 — 이번 겨울 달라진 것",
@@ -32,22 +81,16 @@
      "light": "done"
     },
     "threads": {
-     "url": "https://www.threads.com/@magsori8975/post/DflazM3AWHI",
+     "url": null,
      "files": [
       {
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_에너지바우처겨울추가지원.txt",
        "img": false,
        "exists": true
-      },
-      {
-       "label": "실사진",
-       "path": "insta/thread/thread_A2-31_energy_voucher_winter.png",
-       "img": true,
-       "exists": true
       }
      ],
-     "light": "done"
+     "light": "ready"
     },
     "instagram": {
      "url": null,
@@ -56,53 +99,16 @@
        "label": "인스타 캡션",
        "path": "insta/캡션_에너지바우처겨울추가지원.txt",
        "img": false,
-       "exists": true
+       "exists": false
       }
      ],
-     "light": "ready"
+     "light": "todo"
     }
    }
   }
  ],
- "publish": [
-  {
-   "code": "E4-13",
-   "title": "아이폰 업데이트 27.2.1 — 보안 수정 9건, iPhone 11 이상이면 대상입니다",
-   "go": false,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 아이폰업데이트27.2.1_글_HTML.txt",
-     "path": "아이폰업데이트27.2.1_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/480_ios_27_2_1.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/480_ios_27_2_1.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "todo"
-  }
- ],
- "actions": [
-  {
-   "id": "deploy-thumb-480",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(480_ios_27_2_1.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-11",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  }
- ],
+ "publish": [],
+ "actions": [],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",

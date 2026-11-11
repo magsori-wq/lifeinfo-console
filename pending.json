@@ -1,14 +1,14 @@
 {
- "rev": "2cc2378ed",
+ "rev": "2cc2378e",
  "counts": {
-  "total": 494,
+  "total": 495,
   "osmu_done": 494,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 494,
-  "index_requested": 163,
-  "index_todo": 75,
-  "index_benign": 256
+  "index_pending": 495,
+  "index_requested": 174,
+  "index_todo": 79,
+  "index_benign": 242
  },
  "actionable": [
   {
@@ -16,6 +16,7 @@
    "title": "에너지바우처 등유·LPG 14만 7000원 추가, 12",
    "need": [
     "인스타",
+    "쓰레드",
     "색인요청"
    ],
    "action": "색인 요청",
@@ -24,7 +25,24 @@
    "ch": {
     "g": true,
     "n": true,
-    "t": true,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "E4-13",
+   "title": "아이폰 업데이트 27.2.1 — 보안 수정 9건, iP",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
     "i": false
    }
   },
@@ -207,22 +225,6 @@
   {
    "code": "A5-14",
    "title": "난임치료휴가 유급 2일에서 4일로 — 11월 27일 시",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-15",
-   "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
    "need": [
     "색인요청"
    ],
