@@ -26843,6 +26843,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "mt10-firstfire-1112",
+   "added": "2026-11-11",
+   "what": "분배안 MT-10 첫 실발화 확인 — 11-12 18시 이후 [자동 → 4.] 색인 일일 줄이 adsense4_1104 에 남았나(오늘은 index_daily 이미 소진이라 안 울림·페이블 3차)",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard order --id adsense4_1104 | grep -E '자동 → 4|INDEX_DAILY'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
