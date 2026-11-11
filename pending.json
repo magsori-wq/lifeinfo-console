@@ -1,13 +1,13 @@
 {
- "rev": "676036185",
+ "rev": "33eb235d8",
  "counts": {
-  "total": 503,
+  "total": 504,
   "osmu_done": 500,
-  "osmu_pending": 3,
+  "osmu_pending": 4,
   "indexed": 0,
-  "index_pending": 503,
+  "index_pending": 504,
   "index_requested": 179,
-  "index_todo": 82,
+  "index_todo": 83,
   "index_benign": 242
  },
  "actionable": [
@@ -63,19 +63,18 @@
    }
   },
   {
-   "code": "G3-30",
-   "title": "울산 철새여행버스 무료 — 신청 전에 알아 둘 조건 7",
+   "code": "F1-20",
+   "title": "중동 여행경보 3단계·4단계 — UAE·카타르 환승 예",
    "need": [
-    "인스타",
-    "쓰레드",
+    "OSMU",
     "색인요청"
    ],
-   "action": "색인 요청",
-   "osmu": true,
+   "action": "OSMU 확산",
+   "osmu": false,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": true,
+    "n": false,
     "t": false,
     "i": false
    }

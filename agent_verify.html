@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>분배안 검증 결과</title>
+<style>
+:root{--bg:#ffffff;--fg:#1d2433;--sub:#5b6474;--line:#dde2ea;--head:#f2f5f9;--ok:#2f8f5b;--bad:#c0392b;--warn:#b54708}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151c;--fg:#e6e9ef;--sub:#9aa3b2;--line:#2a3140;--head:#1a202b;--ok:#5fc48c;--bad:#ff6b5e;--warn:#f0a35c}}
+:root[data-theme="dark"]{--bg:#11151c;--fg:#e6e9ef;--sub:#9aa3b2;--line:#2a3140;--head:#1a202b;--ok:#5fc48c;--bad:#ff6b5e;--warn:#f0a35c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+main{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 2px}
+h2{font-size:16px;margin:22px 0 8px}
+.meta{color:var(--sub);font-size:13px;margin-bottom:12px}
+.bar{height:10px;background:var(--head);border-radius:6px;overflow:hidden;margin:6px 0 2px}
+.bar i{display:block;height:100%;background:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{background:var(--head);font-size:13px;color:var(--sub)}
+.ok{color:var(--ok);font-weight:700;white-space:nowrap}
+.bad{color:var(--bad);font-weight:700;white-space:nowrap}
+.warn{color:var(--warn);font-weight:700;white-space:nowrap}
+.note{background:var(--head);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:10px}
+code{font-size:12px}
+</style>
+</head>
+<body>
+<main>
+<h1>분배안 검증 결과 — 1회차</h1>
+<div class="meta">2026-11-11 17:46 · 이부장이 코드·커밋·보드 기록을 직접 확인 · 다음 회차 17:50, 이후 30분마다(정상 확인 시 종료)</div>
+
+<div class="note"><b>한 줄 결론</b>: 🔄 진행 중 — 정비 과제 16건 중 4건 완료(직접 확인), 3.·4. 세션은 새 역할을 접수했고 3.은 첫 일(상품 조사 3건)을 끝냄. 구멍 4건(MT-8~11)은 아직.</div>
+<div class="bar"><i style="width:25%"></i></div><div class="meta">정비 4/16 완료</div>
+
+<h2>1. 정비 담당 — 완료분은 코드로 확인</h2>
+<table>
+<tr><th>과제</th><th>확인한 근거</th><th>판정</th></tr>
+<tr><td>MT-1 Aside 채팅 크기 경보(20MB)</td><td><code>towertick.py:340·355</code> ASIDE_CHAT_BIG 있음 · 커밋 328195fae</td><td class="ok">✅</td></tr>
+<tr><td>MT-2 사장님 알림 소음원</td><td><code>approvalcount.boss_rows()</code> 사장님 몫 한 함수로 · 커밋 6af48c485</td><td class="ok">✅</td></tr>
+<tr><td>MT-12 「Aside 멈춤」·「감시 장치 멈춤」이 사장님 화면을 울림(페이블 결함)</td><td><code>enginestate.py:805·807</code> owner=이부장 · 커밋 09a146809</td><td class="ok">✅</td></tr>
+<tr><td>MT-13 Aside 스킬에 옛 채팅 ID(페이블 결함)</td><td>스킬 파일에 새 ID 있음·옛 ID 0건 · 커밋 07cf928d5</td><td class="ok">✅</td></tr>
+<tr><td>MT-14 점검모니터 🟡→🔴 악화 삼킴 · MT-15 문서 불일치</td><td>대기</td><td class="warn">🔄</td></tr>
+<tr><td>MT-16 자동 발행(사장님 17:41 결정)</td><td>지시 접수 17:43 · 대기</td><td class="warn">🔄</td></tr>
+<tr><td>MT-3~5 지시서 오염·결재 기록 유실·흔들리는 시험</td><td>대기</td><td class="warn">🔄</td></tr>
+<tr><td>MT-6 「정정」 낱말 오인 · MT-7 역할표 반영</td><td>대기</td><td class="warn">🔄</td></tr>
+<tr><td>MT-8~11 분배안 구멍 4건</td><td>대기(상품 알림 담당·정비 커밋 검증·색인 알림 4. 연결·출처 첨부 경고)</td><td class="bad">⛔ 아직</td></tr>
+</table>
+
+<h2>2. 세션별 새 역할 동작</h2>
+<table>
+<tr><th>세션</th><th>확인한 근거</th><th>판정</th></tr>
+<tr><td>3.세션 — 출처·상품 후보 담당</td><td>17:28 역할 접수 · 17:36 밀린 상품 조사 3건 결과 보고(커밋 8bfcbf44b: F1-19 붙일 것 없음 등)</td><td class="ok">✅ 동작</td></tr>
+<tr><td>3.세션 — 새 글감에 출처 파일 첨부</td><td>새 제안이 아직 없음(21:00 마감 3차 연료)</td><td class="warn">미확인</td></tr>
+<tr><td>4.세션 — indexlab 담당</td><td>17:30 접수 보고 · 실제 실행은 아직</td><td class="warn">접수만</td></tr>
+<tr><td>이부장 — V0 뒤 손수정 금지</td><td>17:00 이후 이부장 커밋은 결재 기록 2건뿐, 원고 수정 0건(F1-20 수정은 이과장)</td><td class="ok">✅</td></tr>
+<tr><td>정비 담당 — 코드 수정 전담</td><td>17:23~17:44 커밋 4건 모두 정비([에이전트]), 이부장 코드 커밋 0건</td><td class="ok">✅</td></tr>
+</table>
+
+<h2>3. 새로 발견한 위험</h2>
+<div class="note">정비 담당은 별도 작업 폴더(워크트리)에서 일한다. 정비가 「지시서 읽음·보고 기록」이 본체가 아니라 그 폴더 쪽 파일에 쓰인다고 보고했다(17:28) — CP 화면에 정비 진행이 덜 보일 수 있다. 정비 과제로 함께 처리하게 한다.</div>
+</main>
+</body>
+</html>

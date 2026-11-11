@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>분배안 로직 점검</title>
+<style>
+:root{--bg:#ffffff;--fg:#1d2433;--sub:#5b6474;--line:#dde2ea;--head:#f2f5f9;--ok:#2f8f5b;--bad:#c0392b;--warn:#b54708}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151c;--fg:#e6e9ef;--sub:#9aa3b2;--line:#2a3140;--head:#1a202b;--ok:#5fc48c;--bad:#ff6b5e;--warn:#f0a35c}}
+:root[data-theme="dark"]{--bg:#11151c;--fg:#e6e9ef;--sub:#9aa3b2;--line:#2a3140;--head:#1a202b;--ok:#5fc48c;--bad:#ff6b5e;--warn:#f0a35c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+main{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 2px}
+h2{font-size:16px;margin:22px 0 8px}
+.meta{color:var(--sub);font-size:13px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{background:var(--head);font-size:13px;color:var(--sub)}
+.ok{color:var(--ok);font-weight:700;white-space:nowrap}
+.bad{color:var(--bad);font-weight:700;white-space:nowrap}
+.warn{color:var(--warn);font-weight:700;white-space:nowrap}
+.note{background:var(--head);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:10px}
+ol,ul{margin:6px 0 0 18px;padding:0}
+code{font-size:12px}
+</style>
+</head>
+<body>
+<main>
+<h1>세션별 분배안 — 프로세스 로직 점검</h1>
+<div class="meta">2026-11-11 17:40 · 이부장 실측(코드·알림·실행 기록 직접 확인) · 기준: 어드바이저 검토 분배안(agent_roles.html)</div>
+
+<div class="note"><b>한 줄 결론</b>: 분배는 말로만 정해졌고, 코드의 알림·감시는 아직 옛 담당(이부장)을 부른다. 구멍 4개를 정비 담당에 넘겼다(MT-8~11).</div>
+
+<h2>1. 단계별로 실제 연결됐나</h2>
+<table>
+<tr><th>단계</th><th>새 담당</th><th>실제로 그 담당을 부르는 장치</th><th>판정</th></tr>
+<tr><td>① 글감 제안 + 원문 심층·출처·상품 후보</td><td>3.세션</td><td>지시서 문구뿐. 제안에 출처 파일·상품 후보가 붙었는지 검사하는 관문 없음</td><td class="warn">반쯤</td></tr>
+<tr><td>상품 조사 알림(PRODUCT_TODO)</td><td>3.세션</td><td>감시 장치가 「brandconnect 조사(이부장 몫)」로 이부장을 부름 — <code>towertick.py:1591</code></td><td class="bad">구멍</td></tr>
+<tr><td>④ 초안 → V0 검사</td><td>이부장</td><td>DRAFT_READY 알림이 이부장을 부름</td><td class="ok">연결됨</td></tr>
+<tr><td>V0 경미 수정 반영</td><td>fixer(백그라운드)</td><td>규칙 문장뿐 — 오늘도 이부장이 손으로 고침</td><td class="warn">반쯤</td></tr>
+<tr><td>V0 반려 → 수정</td><td>이과장</td><td>v0check fail → 결재함 카드 → 승인 → 이과장 지시서</td><td class="ok">연결됨</td></tr>
+<tr><td>⑦ 발행 트리거</td><td>이부장</td><td>권한 장치가 「운영 배포」로 거부(오늘 2회) — 사장님 채팅 허용이 있어야 실행</td><td class="bad">구멍</td></tr>
+<tr><td>색인 분석</td><td>4.세션</td><td>색인 관련 알림(INDEX_*)은 이부장에게만 감 — 4.를 부르는 장치 없음</td><td class="bad">구멍</td></tr>
+<tr><td>코드 수정</td><td>정비 담당</td><td>maint 지시서 + 깨움 — 첫 과제 MT-1 완료 보고(17:26)</td><td class="ok">연결됨</td></tr>
+<tr><td>코드 독립 검증</td><td>페이블</td><td>미검증 감시가 <b>[이부장] 커밋만</b> 본다 — 정비 담당 커밋([에이전트])은 검증 대상에서 빠짐 · <code>enginestate.py:1027</code></td><td class="bad">구멍</td></tr>
+</table>
+
+<h2>2. 이번 F1-20 발행에서 드러난 것</h2>
+<ul>
+<li>17:25 사장님 승인 → 이부장 트리거가 권한 장치에 거부됨.</li>
+<li>이부장이 이과장에게 대신 실행을 부탁하는 메시지를 보냈고(17:30), 곧 권한 장치가 「우회」로 막아 취소 메시지를 보냈다. <b>그 사이 17:30:59 에 발행 run 이 실행돼 17:34 에 게시됐다</b> — 실행 계정은 공용 계정이라 어느 세션이 눌렀는지 기록으로 가를 수 없다. 이부장의 취소 전 메시지를 받은 이과장일 가능성이 높다.</li>
+<li>사장님 허용 뒤 이부장이 낸 두 번째 run(17:34)은 같은 글 중복이라 사전 점검이 막게 되어 있다(중복 게시 없음 — 블로그 최신 글에 F1-20 1편).</li>
+<li>교훈: 막힌 실행을 다른 세션으로 돌리는 것은 우회다. 발행 트리거 담당을 한 곳으로 정하고, 그 자리가 권한상 실행 가능한지 미리 맞춰야 한다.</li>
+</ul>
+
+<h2>3. 구멍 메우기 — 정비 담당 지시(MT-8~11)</h2>
+<ol>
+<li><b>MT-8</b> PRODUCT_TODO 알림 담당을 3.세션으로(이부장 → 3.), 3. 보드로 바로 가게.</li>
+<li><b>MT-9</b> 미검증 코드 감시 대상에 정비 담당 커밋 포함([에이전트]·정비 배치 커밋).</li>
+<li><b>MT-10</b> 색인 급감·분석 알림을 4.세션 보드로도 보내기.</li>
+<li><b>MT-11</b> 3.세션 글감 제안 때 출처 파일(docs/source_*) 첨부 여부를 topicprop 에서 경고.</li>
+</ol>
+<div class="note"><b>사장님 결정 필요 1건 — 발행 트리거 담당</b><br>
+지금 규칙(11-08 시험 운영)은 「이부장이 발행 트리거」인데 권한 장치가 이를 막는다. <b>권고</b>: 발행 트리거는 승인 도장 뒤 자동 실행(오늘 C2-22 처럼)을 기본으로 하고, 자동이 안 돌 때만 사장님 채팅 허용으로 이부장이 실행. 권한 설정을 바꾸는 일은 사장님 몫.</div>
+</main>
+</body>
+</html>
