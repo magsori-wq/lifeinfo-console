@@ -26196,7 +26196,7 @@
   {
    "id": "xlink-e218",
    "added": "2026-11-11",
-   "what": "🔗 E2-18 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E2-18",
+   "what": "🔗 E2-18 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E2-18",
    "due": "2026-11-11",
    "cmd": "python studio/blogger.py crosslink --code E2-18",
    "owner": "claude",
@@ -26403,8 +26403,10 @@
    "due": "2026-11-11",
    "cmd": "C:/Users/magso/AppData/Local/Aside/CLI/versions/win-x64/1.26.1023.1115/aside.exe session list",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-11",
+   "result": "새 채팅 d96YcU 가 #810 실행 중(16:56~), 옛 fZcN·3piq 보관(archive ok). 시간 초과 감소는 오늘 저녁 지시들로 계속 확인"
   },
   {
    "id": "v0reject-f1-20",
@@ -26418,6 +26420,16 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-11",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aside-chat-size-guard-1111",
+   "added": "2026-11-11",
+   "what": "재발방지: Aside 전담 채팅 기록 크기 감시가 없어 1.1GB 까지 방치(규칙 20MB 초과 시 교체) — 정비 담당 과제로 towertick/asidestate 에 크기 경보(20MB 초과 시 이부장 알림) 추가",
+   "due": "2026-11-12",
+   "cmd": "du -sh ~/.aside/u/0/sessions/*NNAdK7Ad01wfHqMk* ~/.aside/u/0/sessions/*d96YcUgCUkyDa4vb*",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }

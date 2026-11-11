@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>에이전트 역할표</title>
+<style>
+:root{--bg:#ffffff;--fg:#1d2433;--sub:#5b6474;--line:#dde2ea;--head:#f2f5f9;--hk:#e8f3ec;--sn:#eaf0fb;--acc:#2f6fd6;--warn:#b54708}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151c;--fg:#e6e9ef;--sub:#9aa3b2;--line:#2a3140;--head:#1a202b;--hk:#16271d;--sn:#172036;--acc:#7aa7f5;--warn:#f0a35c}}
+:root[data-theme="dark"]{--bg:#11151c;--fg:#e6e9ef;--sub:#9aa3b2;--line:#2a3140;--head:#1a202b;--hk:#16271d;--sn:#172036;--acc:#7aa7f5;--warn:#f0a35c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+main{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 2px}
+h2{font-size:16px;margin:22px 0 8px}
+.meta{color:var(--sub);font-size:13px;margin-bottom:12px}
+.sum{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.pill{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{background:var(--head);font-size:13px;color:var(--sub)}
+tr.hk td:first-child{border-left:4px solid #3aa76d}
+tr.sn td:first-child{border-left:4px solid var(--acc)}
+.name{font-weight:700;white-space:nowrap}
+.m{font-size:12px;color:var(--sub)}
+.note{background:var(--head);border-radius:10px;padding:10px 12px;font-size:14px;margin-top:10px}
+.warn{color:var(--warn);font-weight:700}
+@media (max-width:520px){th:nth-child(4),td:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<main>
+<h1>에이전트 역할표</h1>
+<div class="meta">2026-11-11 17:10 기준 · 출처 <code>.claude/agents/</code> 등록 9종 · 이부장 작성</div>
+<div class="sum"><span class="pill">에이전트 9종</span><span class="pill">조사(Haiku) 5</span><span class="pill">확정·실행(Sonnet) 4</span><span class="pill">지금 실행 중 0</span></div>
+
+<h2>1. 지금 있는 에이전트 (일회용 — 부를 때만 돈다)</h2>
+<table>
+<tr><th>이름</th><th>하는 일</th><th>모델</th><th>오늘 사용</th></tr>
+<tr class="hk"><td class="name">measure</td><td>색인·발행·미결 등 현재 상태를 담당 도구로 실측</td><td class="m">Haiku</td><td>0</td></tr>
+<tr class="hk"><td class="name">indexlab</td><td>구글 색인·서치콘솔 원인 분석</td><td class="m">Haiku</td><td>0</td></tr>
+<tr class="hk"><td class="name">deepread</td><td>글감 단계에서 공식 원문을 끝까지 읽고 근거 파일로</td><td class="m">Haiku</td><td>0</td></tr>
+<tr class="hk"><td class="name">product</td><td>글에 붙일 제휴 상품 가격·사양 조사</td><td class="m">Haiku</td><td>0</td></tr>
+<tr class="hk"><td class="name">brandconnect</td><td>네이버 브랜드커넥트 상품 추천</td><td class="m">Haiku</td><td>0</td></tr>
+<tr class="sn"><td class="name">source</td><td>글에 실릴 공식 수치를 1차 출처로 확정</td><td class="m">Sonnet</td><td>1</td></tr>
+<tr class="sn"><td class="name">v0</td><td>발행 전 원고를 제3자 시각으로 반박 검사(작성자 검사 금지)</td><td class="m">Sonnet</td><td>12</td></tr>
+<tr class="sn"><td class="name">fixer</td><td>지시받은 결함을 코드·원고 파일에 반영</td><td class="m">Sonnet</td><td>0</td></tr>
+<tr class="sn"><td class="name">docflow</td><td>글감 선별→지시서→V0→결재함까지 밀기</td><td class="m">Sonnet</td><td>0</td></tr>
+</table>
+<div class="note">그 밖에 이름 없는 범용 에이전트 1회(코드 리뷰, Sonnet). <span class="warn">오늘 코드 수정 7건을 fixer 대신 이부장이 직접 했다 — 알림 대응이 늦어진 원인.</span> → 정비 담당 세션 신설(17:07 시작).</div>
+
+<h2>2. 세션별 분배안 (사장님 제안 · 이부장 의견)</h2>
+<table>
+<tr><th>세션</th><th>맡길 에이전트</th><th>이유</th><th>비고</th></tr>
+<tr><td class="name">이과장<br><span class="m">작업 부서장</span></td><td>source · product · brandconnect</td><td>자기 초안의 수치 확정·제휴 상품은 쓰는 사람이 바로 쓴다</td><td class="m">v0 는 맡기지 않는다(자기 글 검사 금지)</td></tr>
+<tr><td class="name">3.세션<br><span class="m">네이버 분석·글감</span></td><td>deepread · measure</td><td>글감 발굴 때 원문 깊게 읽기·유입 실측이 본업과 같다</td><td class="m">연료(글감) 품질↑</td></tr>
+<tr><td class="name">4.세션<br><span class="m">애드센스</span></td><td>v0 · indexlab</td><td>반려 사유가 「가치 없는 콘텐츠」 — 원본가치 검사·색인 분석이 애드센스 일과 같다. 작성자가 아니라 독립 검사 가능</td><td class="m">이부장은 판정 기록만</td></tr>
+<tr><td class="name">정비 담당<br><span class="m">11-11 신설</span></td><td>fixer(역할 흡수)</td><td>코드 수정·시험·설계도 대조 전담</td><td class="m">발행·배포·게시 금지</td></tr>
+<tr><td class="name">이부장</td><td>docflow</td><td>지시·판정·사장님 보고에 집중</td><td class="m">코드 직접 수정 금지(11-11)</td></tr>
+<tr><td class="name">이대리<br><span class="m">지사장</span></td><td>배정 없음</td><td>별도 회사(aroma-mag) — 본사 에이전트 일을 맡기지 않는다</td><td class="m">관리·의견만</td></tr>
+</table>
+<div class="note"><b>권고</b>: 위 분배로 가되, 에이전트 자체는 그대로 두고 「누가 부르는지(담당)」만 정한다. <b>위험</b>: 세션마다 에이전트를 부르면 토큰 사용이 늘어난다(이번 주 83%, 오늘 00:59 초기화) — 시작은 초기화 뒤. <b>결정</b>: 사장님.</div>
+</main>
+</body>
+</html>

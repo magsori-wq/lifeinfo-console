@@ -1,14 +1,21 @@
 {
- "checked_at": "2026-11-07 04:38",
+ "checked_at": "2026-11-11 17:06",
  "sites": [
   {
    "domain": "lifeinfo8975.blogspot.com",
-   "state": "GETTING_READY"
+   "state": "NEEDS_ATTENTION"
   }
  ],
  "result": "PENDING",
- "changes": [],
- "alert": null,
+ "changes": [
+  {
+   "domain": "lifeinfo8975.blogspot.com",
+   "from": "GETTING_READY",
+   "to": "NEEDS_ATTENTION",
+   "at": "2026-11-11 17:06"
+  }
+ ],
+ "alert": "REJECTED",
  "history": [
   {
    "domain": "lifeinfo8975.blogspot.com",
@@ -79,6 +86,12 @@
    "from": "NEEDS_ATTENTION",
    "to": "GETTING_READY",
    "at": "2026-10-29 08:08"
+  },
+  {
+   "domain": "lifeinfo8975.blogspot.com",
+   "from": "GETTING_READY",
+   "to": "NEEDS_ATTENTION",
+   "at": "2026-11-11 17:06"
   }
  ]
 }
