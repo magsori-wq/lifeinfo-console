@@ -1,13 +1,13 @@
 {
- "rev": "c308c3b5",
+ "rev": "7c75f8aa",
  "counts": {
-  "total": 508,
+  "total": 509,
   "osmu_done": 502,
-  "osmu_pending": 6,
+  "osmu_pending": 7,
   "indexed": 0,
-  "index_pending": 508,
+  "index_pending": 509,
   "index_requested": 179,
-  "index_todo": 87,
+  "index_todo": 88,
   "index_benign": 242
  },
  "actionable": [
@@ -101,6 +101,23 @@
   {
    "code": "F1-21",
    "title": "독일 11월 20일 2차 시위 34개 도시, 알바니아 ",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "F3-12",
+   "title": "돈키호테 쿠폰 사용법 — 면세 구매 때만 1회, 5%·",
    "need": [
     "OSMU",
     "색인요청"
@@ -216,22 +233,6 @@
   {
    "code": "A1-23",
    "title": "어린이집·유치원 신청 11월 2일 시작 — 10월 28",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A2-24",
-   "title": "2026 하반기 사회보장급여 정기 확인조사 — 대상·소",
    "need": [
     "색인요청"
    ],
