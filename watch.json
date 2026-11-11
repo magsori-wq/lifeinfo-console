@@ -26196,7 +26196,7 @@
   {
    "id": "xlink-e218",
    "added": "2026-11-11",
-   "what": "🔗 E2-18 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E2-18",
+   "what": "🔗 E2-18 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E2-18",
    "due": "2026-11-11",
    "cmd": "python studio/blogger.py crosslink --code E2-18",
    "owner": "claude",
@@ -26389,7 +26389,7 @@
   {
    "id": "xlink-g330",
    "added": "2026-11-11",
-   "what": "🔗 G3-30 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-30",
+   "what": "🔗 G3-30 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-30",
    "due": "2026-11-11",
    "cmd": "python studio/blogger.py crosslink --code G3-30",
    "owner": "claude",
@@ -26403,10 +26403,8 @@
    "due": "2026-11-11",
    "cmd": "C:/Users/magso/AppData/Local/Aside/CLI/versions/win-x64/1.26.1023.1115/aside.exe session list",
    "owner": "claude",
-   "state": "done",
-   "by": "세션:a7dca46f",
-   "done_at": "2026-11-11",
-   "result": "새 채팅 d96YcU 가 #810 실행 중(16:56~), 옛 fZcN·3piq 보관(archive ok). 시간 초과 감소는 오늘 저녁 지시들로 계속 확인"
+   "state": "todo",
+   "by": "세션:a7dca46f"
   },
   {
    "id": "v0reject-f1-20",
@@ -26419,266 +26417,7 @@
    "kind": "approve",
    "by": "세션:a7dca46f",
    "done_at": "2026-11-11",
-   "result": "V0 통과로 해소 — 검사자 v0 에이전트(af80c8e8·a561578f 재검사)·이부장 · 판단형 비교(3·4단계 표·가상사례3)+탈락(환불·환승 미확인 명시)+함정(자제vs금지·기준일), 0404 원문 3건 대조 일치, 반려 4건 반영(UAE·카타르 3·4단계 거명 문장·행동요령상 금지·비상시 연락처 표"
-  },
-  {
-   "id": "aside-chat-size-guard-1111",
-   "added": "2026-11-11",
-   "what": "재발방지: Aside 전담 채팅 기록 크기 감시가 없어 1.1GB 까지 방치(규칙 20MB 초과 시 교체) — 정비 담당 과제로 towertick/asidestate 에 크기 경보(20MB 초과 시 이부장 알림) 추가",
-   "due": "2026-11-12",
-   "cmd": "du -sh ~/.aside/u/0/sessions/*NNAdK7Ad01wfHqMk* ~/.aside/u/0/sessions/*d96YcUgCUkyDa4vb*",
-   "owner": "claude",
-   "state": "done",
-   "by": "세션:a7dca46f",
-   "done_at": "2026-11-11",
-   "result": "ASIDE_CHAT_BIG 신설(커밋 328195fae, 설계도 N2, TestChatBigDecide) — towertick 이 20MB 초과 시 이부장 알림"
-  },
-  {
-   "id": "xlink-c221",
-   "added": "2026-11-11",
-   "what": "🔗 C2-21 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-21",
-   "due": "2026-11-11",
-   "cmd": "python studio/blogger.py crosslink --code C2-21",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "xlink-f311",
-   "added": "2026-11-11",
-   "what": "🔗 F3-11 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F3-11",
-   "due": "2026-11-11",
-   "cmd": "python studio/blogger.py crosslink --code F3-11",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "product-f119-1111",
-   "added": "2026-11-11",
-   "what": "F1-19 제휴 상품 후보 조사",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_product_F1-19_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "product-f311-1111",
-   "added": "2026-11-11",
-   "what": "F3-11 제휴 상품 후보 조사",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_product_F3-11_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "brandconnect-f119-f311-1111",
-   "added": "2026-11-11",
-   "what": "brandconnect 에이전트로 F1-19·F3-11 네이버 브랜드커넥트 후보 조사 — Aside 대기열이 idle 일 때(충돌 방지)",
-   "due": "2026-11-12",
-   "cmd": "python -m studio.asidequeue list",
-   "owner": "claude",
-   "state": "done",
-   "by": "3.분석",
-   "done_at": "2026-11-11",
-   "result": "brandconnect 조사 완료 — 결과 docs/source_brandconnect_20261111.md"
-  },
-  {
-   "id": "source-confirm-a231-e414-1111",
-   "added": "2026-11-11",
-   "what": "A2-31(추가 대상 가구 수 22만 vs 21만)·E4-14(KS 의무/자율) 숫자 source 에이전트로 최종 확정",
-   "due": "2026-11-12",
-   "cmd": "ls docs/source_에너지바우처겨울대책_20261110.md",
-   "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
-  },
-  {
-   "id": "agent-distribution-verify-1111",
-   "added": "2026-11-11",
-   "what": "분배안 정상동작 검증(사장님 17:40) — 30분마다 회차 검증(세션 크론 :17·:47), 정상 확인 시 종료·최종 보고. 대상: 정비 MT-1~15, 3. 출처·상품 첨부, 4. indexlab, 이부장 손수정 0, 구멍 MT-8~11",
-   "due": "2026-11-12",
-   "cmd": "python -m studio.batchboard show",
-   "owner": "claude",
-   "state": "todo",
-   "by": "세션:a7dca46f"
-  },
-  {
-   "id": "source-c223-1111",
-   "added": "2026-11-11",
-   "what": "C2-23 김장철 수입식품 검사 공식 수치 확정",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_C2-23_김장철수입식품검사_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "source-c224-1111",
-   "added": "2026-11-11",
-   "what": "C2-24 해외직구 의료기기 공식 수치 확정",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_C2-24_해외직구의료기기허가확인_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "product-c224-1111",
-   "added": "2026-11-11",
-   "what": "C2-24 제휴 상품 판정",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_product_C2-24_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "product-c223-1111",
-   "added": "2026-11-11",
-   "what": "C2-23 제휴 상품 판정",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_product_C2-23_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "product-g331-1111",
-   "added": "2026-11-11",
-   "what": "G3-31 제휴 상품 판정",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_product_G3-31_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "xlink-e414",
-   "added": "2026-11-11",
-   "what": "🔗 E4-14 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-14",
-   "due": "2026-11-11",
-   "cmd": "python studio/blogger.py crosslink --code E4-14",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "product-f121-1111",
-   "added": "2026-11-11",
-   "what": "F1-21 제휴 상품 판정",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_product_F1-21_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "source-f121-1111",
-   "added": "2026-11-11",
-   "what": "F1-21 해외 안전공지 3건 공식 수치 확정",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_F1-21_해외안전공지3건_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "xlink-c222",
-   "added": "2026-11-11",
-   "what": "🔗 C2-22 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-22",
-   "due": "2026-11-11",
-   "cmd": "python studio/blogger.py crosslink --code C2-22",
-   "owner": "claude",
-   "state": "todo",
-   "by": "naver-link"
-  },
-  {
-   "id": "source-c223-sikbyeol-1111",
-   "added": "2026-11-11",
-   "what": "C2-23 농관원 원산지 식별정보(배추·고춧가루·마늘·생강 국산/외국산 구별) 미확정 + 식약처 2025 김장철 보도 건수 미확보. 시도: curl MN20363 200, Aside 열기 OK·채소류/배추 클릭 무반응, 식약처 2025 보도는 WebSearch 위치탐색만(게시판 검색 폼 미시도)",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_C2-23_김장철수입식품검사_20261111.md (Aside 로 naqs MN20363 채소류 탭 직접 클릭 재시도)",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "deploy-thumb-490",
-   "added": "2026-11-11",
-   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(490_busan_kids_bookfair.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
-   "due": "2026-11-11",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "owner": "claude",
-   "state": "todo",
-   "by": "미상"
-  },
-  {
-   "id": "brandconnect-g331-1111",
-   "added": "2026-11-11",
-   "what": "G3-31·F3-11·F1-19 브랜드커넥트 조사",
-   "due": "2026-11-13",
-   "cmd": "ls docs/source_brandconnect_20261111.md",
-   "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
-  },
-  {
-   "id": "deploy-thumb-491",
-   "added": "2026-11-11",
-   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(491_kimjang_gear_check.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
-   "due": "2026-11-11",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "owner": "claude",
-   "state": "todo",
-   "by": "미상"
-  },
-  {
-   "id": "gatesync-push-fail-11111840",
-   "added": "2026-11-11",
-   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): push 재시도도 실패(syncorigin exit 0): ====================================================\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'\n",
-   "due": "2026-11-11",
-   "cmd": "git status -sb && python -m studio.gatesync",
-   "owner": "claude",
-   "state": "todo",
-   "by": "에이전트"
-  },
-  {
-   "id": "g331-thumb-c223-push-1111",
-   "added": "2026-11-11",
-   "what": "G3-31 발행 run 42997059197 끝나면: syncorigin(C2-23 V0·수정 886c0197b push) · 썸네일 490/491 github.io 200 확인(아니면 deploy 재실행) · 일일 문제기록에 18:44 cd 이탈 1줄",
-   "due": "2026-11-11",
-   "cmd": "gh run view 42997059197 -R magsori-wq/lifeinfo-source --json status; curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/490_busan_kids_bookfair.png",
-   "owner": "claude",
-   "state": "done",
-   "by": "세션:a7dca46f",
-   "done_at": "2026-11-11",
-   "result": "18:44 syncorigin 앞0 · 18:47 deploy 95462fa03 · 490/491 github.io 200(18:50)"
-  },
-  {
-   "id": "aside-credit-1111",
-   "added": "2026-11-11",
-   "what": "Aside 크레딧 소진(402 Insufficient credits) — 이부장·이과장 채팅 둘 다 멈춤",
-   "due": "2026-11-11",
-   "cmd": "【권고】Aside 설정 화면에서 크레딧 충전 【근거】aside sessions get → Error 402(18:49) 【위험】충전 전까지 4채널 게시·검색설명·색인 정지",
-   "owner": "user",
-   "state": "done",
-   "by": "세션:a7dca46f",
-   "done_at": "2026-11-11",
-   "result": "중복 — 정비 MT-21 자동 항목 aside-credit-t2568 로 통합(18:59)"
-  },
-  {
-   "id": "aside-credit-t2568",
-   "added": "2026-11-11",
-   "what": "Aside 크레딧 소진(402 Insufficient credits) — Aside 설정 화면에서 크레딧 충전 후 이 항목을 완료로 눌러 주십시오. 완료하면 멈춘 Aside 대기열이 저절로 다시 흐릅니다(그동안 Aside 지시는 대기열에서 기다림)",
-   "due": "2026-11-11",
-   "cmd": "python -m studio.asidequeue list",
-   "owner": "user",
-   "state": "todo",
-   "kind": "action",
-   "by": "미상"
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   }
  ]
 }
