@@ -1,9 +1,10 @@
 {
- "computed_at": "2026-11-11 13:45:45",
- "source_head": "f06c6f1ec07d",
+ "computed_at": "2026-11-11 13:49:00",
+ "source_head": "dd5db2b48445",
  "ids": [
   "C2-21",
-  "F1-19"
+  "F1-19",
+  "deploy-thumb-482"
  ],
  "posts": [
   {
@@ -62,7 +63,7 @@
    "code": "C2-21",
    "title": "정부24 잠복결핵 검진 확인서 11월 12일부터 — 보건소 안 가고 발급받는 법",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 정부24잠복결핵검진확인서_글_HTML.txt",
@@ -86,7 +87,16 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-482",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(482_gov24_ltbi.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
