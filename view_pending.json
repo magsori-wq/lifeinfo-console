@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-11 16:20:57",
- "source_head": "1712ba288023",
+ "computed_at": "2026-11-11 16:27:15",
+ "source_head": "4e05c3ff5fb8",
  "ids": [
   "C2-20",
   "C2-21",
@@ -9,11 +9,59 @@
   "E4-14",
   "F3-11",
   "G3-30",
-  "aside-naver-login-1111-1609",
-  "deploy-thumb-487",
-  "deploy-thumb-488"
+  "deploy-thumb-487"
  ],
  "posts": [
+  {
+   "code": "E4-14",
+   "title": "중고거래 플랫폼 국가표준(KS) 제정 — 판매자 유형·환불 절차, 거래 전에 확인할 것",
+   "slug": "중고거래국가표준KS",
+   "eng": "secondhand_ks",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_중고거래국가표준KS.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/488_secondhand_ks.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_중고거래국가표준KS.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_중고거래국가표준KS.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  },
   {
    "code": "C2-20",
    "title": "생굴 노로바이러스 검사 11월 9일~2월 26일 720건 — 식약처가 어떤 수산물을 검사하나",
@@ -207,7 +255,7 @@
      "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/p/Dfl795iEeqt/",
      "files": [
       {
        "label": "인스타 캡션",
@@ -216,7 +264,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     }
    }
   },
@@ -304,55 +352,12 @@
     }
    ],
    "light": "todo"
-  },
-  {
-   "code": "E4-14",
-   "title": "중고거래 플랫폼 국가표준(KS) 제정 — 판매자 유형·환불 절차, 거래 전에 확인할 것",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 중고거래국가표준KS_글_HTML.txt",
-     "path": "중고거래국가표준KS_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/488_secondhand_ks.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/488_secondhand_ks.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "ready"
   }
  ],
  "actions": [
   {
-   "id": "aside-naver-login-1111-1609",
-   "what": "Aside 새 작업 창에 네이버 로그인 없음 — #803(C2-20 네이버) 글쓰기가 nid.naver.com 로그인 화면으로 이동해 멈춤. Aside 창에서 네이버(magsori8975) 로그인 부탁. 하시면 네이버 게시 대기분(C2-20·F3-11·G3-30)이 이어집니다",
-   "due": "2026-11-11",
-   "cmd": "python -m studio.asidequeue list",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
    "id": "deploy-thumb-487",
    "what": "deploy.bat 실행 — 발행 대기 글 썸네일(487_direct_buy_focus.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
-   "due": "2026-11-11",
-   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
-   "state": "todo",
-   "kind": "action"
-  },
-  {
-   "id": "deploy-thumb-488",
-   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(488_secondhand_ks.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
    "due": "2026-11-11",
    "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
    "state": "todo",
