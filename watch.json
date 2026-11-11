@@ -25946,7 +25946,7 @@
   {
    "id": "xlink-a231",
    "added": "2026-11-11",
-   "what": "🔗 A2-31 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-31",
+   "what": "🔗 A2-31 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-31",
    "due": "2026-11-11",
    "cmd": "python studio/blogger.py crosslink --code A2-31",
    "owner": "claude",
@@ -26004,6 +26004,66 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "chkmon-supersede-verify-1111",
+   "added": "2026-11-11",
+   "what": "점검모니터 대체·중복차단 개선(11-11 12:2x) 효과 확인 — 열린 chkmon 요청이 1건 이하이고 재알림에 여러 나이가 안 붙는가",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard ack --list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-e413",
+   "added": "2026-11-11",
+   "what": "🔗 E4-13 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-13",
+   "due": "2026-11-11",
+   "cmd": "python studio/blogger.py crosslink --code E4-13",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "fable-verify-threadimg-1111",
+   "added": "2026-11-11",
+   "what": "11-11 커밋 aea6878e4·(표지후보확장)·towertick/chkmon 대체 커밋 페이블 독립 검증 — 주간 사용량 83% 라 보류, 11-12 00:59 초기화 뒤. Sonnet 리뷰는 docs/검증_리뷰_20261111_threadimg_pick.md(페이블 아님)",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.enginestate 2>&1 | grep -i unverified",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deepread-g2-1111",
+   "added": "2026-11-11",
+   "what": "우리동네(G) 후보 발굴 2차",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_우리동네후보2_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-trip2-1111",
+   "added": "2026-11-11",
+   "what": "여행(F) 후보 발굴 2차",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_여행후보2_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-cd2-1111",
+   "added": "2026-11-11",
+   "what": "건강·디지털 후보 발굴 2차",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_건강디지털후보2_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
