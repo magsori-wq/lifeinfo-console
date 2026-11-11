@@ -26652,8 +26652,10 @@
    "due": "2026-11-11",
    "cmd": "gh run view 42997059197 -R magsori-wq/lifeinfo-source --json status; curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/490_busan_kids_bookfair.png",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-11",
+   "result": "18:44 syncorigin 앞0 · 18:47 deploy 95462fa03 · 490/491 github.io 200(18:50)"
   },
   {
    "id": "aside-credit-1111",
@@ -26664,6 +26666,17 @@
    "owner": "user",
    "state": "blocked",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aside-credit-t2568",
+   "added": "2026-11-11",
+   "what": "Aside 크레딧 소진(402 Insufficient credits) — Aside 설정 화면에서 크레딧 충전 후 이 항목을 완료로 눌러 주십시오. 완료하면 멈춘 Aside 대기열이 저절로 다시 흐릅니다(그동안 Aside 지시는 대기열에서 기다림)",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "user",
+   "state": "todo",
+   "kind": "action",
+   "by": "미상"
   }
  ]
 }
