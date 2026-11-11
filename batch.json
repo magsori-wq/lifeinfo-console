@@ -6673,17 +6673,22 @@
    "order_at": "2026-11-11 16:44:58"
   }
  },
- "updated": "2026-11-11 16:45:28",
+ "updated": "2026-11-11 16:45:38",
  "current": {
-  "batch": "chkmon",
+  "batch": "aside",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🙋 이부장 요청: [점검모니터] 🔴6 🔵8 🟡12 — 즉시: Aside 막힘 #793 C2-21; Aside 막힘 #798 C2-21; Aside 막힘 #800 E2-18; Aside 막힘 #802 G3-30 외 10 · 묶음: 사건×11 반영 감사×1 (상세 python -m studio.chkmon show)",
-  "since": "18:12",
-  "since_at": "2026-11-05 18:12:35"
+  "what": "[Aside][blocked] [E2-18] #807 blocked·미게시: 쓰레드 프로필 중복 확인을 못 해서 게시하지 않음. 쓰레드 탭 열기(openTab)는 됐으나 Runtime·DOM 명령이 연속 시간 초과(CDP command timeout), 탭 닫기도 확장 응답 없음(extension request timeout: Aside.controlTab). 본문(230자 비공백, 원문 확인)·사진(구글 휴면계정 주제 일치)·두 링크(HTTP 200) 확인 완료. 지시서 ③ 사전점검 문구에 에너지바우처 파일명이 섞인 복사 오류 있음(본문 파일은 구글 휴면계정으로 맞음). 쓰 · https://www.threads.com/@magsori8975",
+  "since": "11:31",
+  "since_at": "2026-10-08 11:31:43"
  },
  "log": [
+  {
+   "t": "16:45:38",
+   "text": "▶   — 1/7단계 · [Aside][blocked] [E2-18] #807 blocked·미게시: 쓰레드 프로필 중복 확인을 못 해서 게시하지 않음. 쓰레드 탭 열기(openTab)는 됐으나 Runtime·DOM 명령이 연속 시간 초과(CDP command timeout), 탭 닫기도 확장 응답 없음(extension request timeout: Aside.controlTab). 본문(230자 비공백, 원문 확인)·사진(구글 휴면계정 주제 일치)·두 링크(HTTP 200) 확인 완료. 지시서 ③ 사전점검 문구에 에너지바우처 파일명이 섞인 복사 오류 있음(본문 파일은 구글 휴면계정으로 맞음). 쓰 · https://www.threads.com/@magsori8975",
+   "actor": "Aside"
+  },
   {
    "t": "16:45:28",
    "text": "✅ F1-20 완료 — 중동 여행경보 3단계·4단계 — 두바이 환승 예정이라면 외교부",
@@ -6878,11 +6883,6 @@
    "t": "16:09:46",
    "text": "▶   — 3/7단계 · 🙋 이부장 요청: Aside #803(C2-20 네이버) blocked(로그인) — 원문: 탭 생성은 복구됐으나 네이버 글쓰기를 열자 nid.naver.com 로그인 화면으로 이동, 새 브라우저 창에 네이버(magsori8975) 로그인 세션 없음, 아무것도 입력·발행하지 않음. 필요한 것: Aside 창에서 네이버 로그인(사장님 계정 인증 — 제가 대신 못 함·안 함). 영향: 대기열에 같은 네이버 게시 2건(F3-11 약 6분 뒤·G3-30 약 13분 뒤)이 같은 이유로 막힐 가능성, C2-20 네이버 미게시라 인스타·쓰레드도 못 나감(네이버 먼저 규칙). 인스타·쓰레드·검색설명류(로그인 불필요 확인 못 함)는 계속. 저는 재등록하지 않고 로그인 해소 확인 후 C2-20 네이버를 재등록하겠습니다. 이전 결재 항목 aside-login-naver-1111 와 같은 원인인지는 확인 못 함",
    "actor": "이과장"
-  },
-  {
-   "t": "16:09:39",
-   "text": "📄 aside 작업 지시 등록(2502자, 2026-11-11 16:09:39)",
-   "actor": "Aside"
   }
  ],
  "currents": {
@@ -6981,7 +6981,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "[Aside][doing] #807 수신 2026-11-11 16:38:22 — E2-18 쓰레드 시작 (먼저 프로필 중복 확인, 본문·사진 주제 대조)",
+   "what": "[Aside][blocked] [E2-18] #807 blocked·미게시: 쓰레드 프로필 중복 확인을 못 해서 게시하지 않음. 쓰레드 탭 열기(openTab)는 됐으나 Runtime·DOM 명령이 연속 시간 초과(CDP command timeout), 탭 닫기도 확장 응답 없음(extension request timeout: Aside.controlTab). 본문(230자 비공백, 원문 확인)·사진(구글 휴면계정 주제 일치)·두 링크(HTTP 200) 확인 완료. 지시서 ③ 사전점검 문구에 에너지바우처 파일명이 섞인 복사 오류 있음(본문 파일은 구글 휴면계정으로 맞음). 쓰 · https://www.threads.com/@magsori8975",
    "since": "11:31",
    "since_at": "2026-10-08 11:31:43"
   },
@@ -31503,6 +31503,16 @@
    "actor": "사람",
    "sid": "",
    "req": "r92041d"
+  },
+  {
+   "ts": "2026-11-11 16:45:38",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][blocked] [E2-18] #807 blocked·미게시: 쓰레드 프로필 중복 확인을 못 해서 게시하지 않음. 쓰레드 탭 열기(openTab)는 됐으나 Runtime·DOM 명령이 연속 시간 초과(CDP command timeout), 탭 닫기도 확장 응답 없음(extension request timeout: Aside.controlTab). 본문(230자 비공백, 원문 확인)·사진(구글 휴면계정 주제 일치)·두 링크(HTTP 200) 확인 완료. 지시서 ③ 사전점검 문구에 에너지바우처 파일명이 섞인 복사 오류 있음(본문 파일은 구글 휴면계정으로 맞음). 쓰 · https://www.threads.com/@magsori8975",
+   "actor": "Aside",
+   "sid": ""
   }
  ]
 }
