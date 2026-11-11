@@ -7051,17 +7051,47 @@
    "order_at": "2026-11-12 00:21:01"
   }
  },
- "updated": "2026-11-12 01:56:53",
+ "updated": "2026-11-12 02:29:47",
  "current": {
-  "batch": "pub1111e414",
+  "batch": "maint",
   "code": "",
-  "title": "",
+  "title": "정비 담당 세션(11-11 신설)",
   "step": 1,
-  "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dfm9XBhk7wo/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-  "since": "01:56",
-  "since_at": "2026-11-12 01:56:53"
+  "what": "✅ ① engine_flow.html 끝 95253f5cc — 화면은 정상이었다(검사기 오탐) · 어디 tools/check_webapp_js.py · 무엇: a570b4469 가 설계도 원본을 <script type=text/x-mermaid-src> 로 동봉했는데 검사기가 type 무관하게 node --check → 'flowchart TB' 를 JS 로 읽어 SyntaxError · 어떻게: type 이 JS 가 아닌 블록은 건너뜀(is_js_script) · 실측: 실제 JS 블록 node --check rc0, 브라우저 카드 69·도형 svg 렌더·콘솔 오류 0, 깨진 JS 는 여전히 잡힘, 본체 check_webapp_js ✅ · 재발방지: falsepos 규칙 _r_webapp_js_skips_data_scripts_1112 + TestWebappJsCheck · ② MT-31 은 00:3x 1dc8e8efe 로 끝(앞 보고) · ③ xlinkcheck 착수",
+  "since": "17:07",
+  "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "02:29:47",
+   "text": "▶   — 44/7단계 · [자동 → 3.] PRODUCT_TODO F3-13 — brandconnect 에이전트로 네이버 커넥트 상품 조사 → 맞으면 python -m studio.affiliate propose, 안 맞으면 python -m studio.affiliate none --code <코드> --why \"<한 줄>\" (3. 상시 역할, 11-11 재배정)",
+   "actor": "사람"
+  },
+  {
+   "t": "02:27:58",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ ① engine_flow.html 끝 95253f5cc — 화면은 정상이었다(검사기 오탐) · 어디 tools/check_webapp_js.py · 무엇: a570b4469 가 설계도 원본을 <script type=text/x-mermaid-src> 로 동봉했는데 검사기가 type 무관하게 node --check → 'flowchart TB' 를 JS 로 읽어 SyntaxError · 어떻게: type 이 JS 가 아닌 블록은 건너뜀(is_js_script) · 실측: 실제 JS 블록 node --check rc0, 브라우저 카드 69·도형 svg 렌더·콘솔 오류 0, 깨진 JS 는 여전히 잡힘, 본체 check_webapp_js ✅ · 재발방지: falsepos 규칙 _r_webapp_js_skips_data_scripts_1112 + TestWebappJsCheck · ② MT-31 은 00:3x 1dc8e8efe 로 끝(앞 보고) · ③ xlinkcheck 착수",
+   "actor": "미상:330b96b0"
+  },
+  {
+   "t": "02:22:07",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] selfcheck 02:16: ①webapp/engine_flow.html script#1 SyntaxError 'TB' — CP 화면 안 열림(우선) ②MT-31 시험 격리 ③관련글 링크 32건 불일치(xlinkcheck) 원인 점검.",
+   "actor": "이부장"
+  },
+  {
+   "t": "02:21:59",
+   "text": "▶   — 1/7단계 · [관제탑 → 이과장] 02:16 현황 기준 순서: ①F3-13 초안(오늘 시행·재고 0) ②블로그 교차링크 5편(C2-23·F4-32·F1-21·F3-12·C2-25 — selfcheck 「교차링크가 본문에 없다」, blogger.py crosslink) ③인스타 남은 글 → 쓰레드(맨 뒤) ④G3-32·G3-33 초안 ⑤인스타 캡션 라이브 빈칸 9건(selfcheck). 단계마다 batchboard now.",
+   "actor": "이부장"
+  },
+  {
+   "t": "02:00:46",
+   "text": "▶   — 1/7단계 · ✅ 인스타 직접 게시·기록: E4-14 Dfm9XBhk7wo · C2-22 Dfm9w3Jk4Rf (카드 3장·캡션 블로그+네이버 링크 확인, osmuimgcheck 일치). 방법=aside repl fetch→DataTransfer 업로드·dialog ref 로 공유(data/_ig_post.py). 다음: 쓰레드(E4-14·C2-22) → 인스타 카드 제작(C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12·C2-25)",
+   "actor": "이과장"
+  },
+  {
+   "t": "02:00:30",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/Dfm9w3Jk4Rf/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장"
+  },
   {
    "t": "01:56:53",
    "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/Dfm9XBhk7wo/ (naver-link 가 자동 보고) · 남음: 쓰레드",
@@ -7230,36 +7260,6 @@
   {
    "t": "22:22:09",
    "text": "✔ 이부장 ack rfa7bab",
-   "actor": "이부장"
-  },
-  {
-   "t": "21:26:43",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴3 🔵1 🟡17 — 즉시: 이대리 요청 정체 idle; 게이트 문제 초안 게이트|🟡 F3; 반영 어긋남 · 화면 생성물 신선도; 사장님 ☑️조치 Aside 크레딧 소진(402 Insufficient credits) — · 묶음: 사건×6 반영 감사×1 기타×10 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
-  },
-  {
-   "t": "21:26:35",
-   "text": "🏷️ draft1111f313 담당=이과장",
-   "actor": "이부장"
-  },
-  {
-   "t": "21:26:27",
-   "text": "📄 draft1111f313 작업 지시 등록(11801자, 2026-11-11 21:26:27)",
-   "actor": "이부장"
-  },
-  {
-   "t": "21:26:19",
-   "text": "📋 배치 '✍️ F3-13 초안 — 해외여행 약 반입 11월 12일부터 허용 — 6병, 넘으면 3개월 복용량까지 (선별 자동 지시)' 등록 — 1항목",
-   "actor": "이부장"
-  },
-  {
-   "t": "21:22:01",
-   "text": "▶   — 42/7단계 · 6차 1편 제안 완료: F3-13 해외여행 약 반입 11월 12일부터 허용(source·deepread·상품판정 '붙일 것 없음' 첨부, 커밋 576eb9455). 🔴 6병·3개월은 신설 아님(별표11 기존) — 글에 '신설' 금지. 후보 부족: C(독립 동일건)·E(0건)·몽골(출처 충돌 보류 watch 11-20). G 에이전트 결과 대기",
-   "actor": "3."
-  },
-  {
-   "t": "21:18:24",
-   "text": "▶   — 1/7단계 · [관제탑 → 이과장] 👤 사장님 21:19 결정: Aside 직접 게시 모드 켬(data/aside_mode.json lee_direct ~11-18). Aside 채팅은 크레딧 402 로 휴면 — 게시는 이과장이 aside repl 로 직접(CLAUDE.md 「쓰레드 게시는 Aside 브라우저로」 절: insertText·사진 ClipboardEvent paste·게시 뒤 curl 200·og:image·closeTab, aside exec 금지). 순서: 네이버 C2-20→F1-20→G3-31→C2-23→F4-32→F1-21→F3-12→C2-25(발행순) → 각 글 인스타→쓰레드(네이버 뒤) · 검색설명 5건(F4-32·F1-21·F3-12·C2-25·G3-31·C2-23). 대기열의 해당 항목은 하나씩 직접 처리 후 asidequeue drop·*-link 기록. 막히면 batchboard now.",
    "actor": "이부장"
   }
  ],
@@ -7458,7 +7458,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "✅ 네이버 직접 게시 완료·기록: F4-32 224473676303 · F1-21 224473677039 · F3-12 224473677724 · C2-25 224473678467 (라이브 제목·블로그 링크 실측, naver-link 기록). 앞서 C2-20 224473573151·F1-20 224473633046·G3-31 224473637088·C2-23 224473638332. 남음: 교차링크·인스타·쓰레드(인스타 진입 선택자 재탐색)·F3-13 초안. 🙋 F1-21 라이브 제목 정정은 분류기 허용 대기",
+   "what": "✅ 인스타 직접 게시·기록: E4-14 Dfm9XBhk7wo · C2-22 Dfm9w3Jk4Rf (카드 3장·캡션 블로그+네이버 링크 확인, osmuimgcheck 일치). 방법=aside repl fetch→DataTransfer 업로드·dialog ref 로 공유(data/_ig_post.py). 다음: 쓰레드(E4-14·C2-22) → 인스타 카드 제작(C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12·C2-25)",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -8367,7 +8367,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ MT-31 끝 1dc8e8efe(main·본체 반영 확인) — 누가 정비 · 어디 tests/test_studio_pure.py TestCreditFold · 무엇: busy() 가 맨 먼저 ROOT/data/aside_browser.lock(5분)을 봐서 이과장 직접 게시 중엔 「브라우저 사용 중」이 나와 시험 실패→Stop 하네스 막힘 · 어떻게: 시험에서 ROOT 를 빈 임시폴더로 패치 · 실측: 락 생성 상태에서 옛 방식 busy()=(True,브라우저 사용 중) 재현, 새 시험 OK, 전체 330 OK, enginemap 🔴0 · 재발방지: busy() 를 부르는 시험은 이것 하나뿐(grep 확인)",
+   "what": "✅ ① engine_flow.html 끝 95253f5cc — 화면은 정상이었다(검사기 오탐) · 어디 tools/check_webapp_js.py · 무엇: a570b4469 가 설계도 원본을 <script type=text/x-mermaid-src> 로 동봉했는데 검사기가 type 무관하게 node --check → 'flowchart TB' 를 JS 로 읽어 SyntaxError · 어떻게: type 이 JS 가 아닌 블록은 건너뜀(is_js_script) · 실측: 실제 JS 블록 node --check rc0, 브라우저 카드 69·도형 svg 렌더·콘솔 오류 0, 깨진 JS 는 여전히 잡힘, 본체 check_webapp_js ✅ · 재발방지: falsepos 규칙 _r_webapp_js_skips_data_scripts_1112 + TestWebappJsCheck · ② MT-31 은 00:3x 1dc8e8efe 로 끝(앞 보고) · ③ xlinkcheck 착수",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -8532,6 +8532,15 @@
    "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dfm9XBhk7wo/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "01:56",
    "since_at": "2026-11-12 01:56:53"
+  },
+  "pub1111c222": {
+   "batch": "pub1111c222",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dfm9w3Jk4Rf/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "since": "02:00",
+   "since_at": "2026-11-12 02:00:30"
   }
  },
  "report_log": [
@@ -34096,6 +34105,66 @@
    "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dfm9XBhk7wo/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 02:00:30",
+   "bid": "pub1111c222",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dfm9w3Jk4Rf/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 02:00:46",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ 인스타 직접 게시·기록: E4-14 Dfm9XBhk7wo · C2-22 Dfm9w3Jk4Rf (카드 3장·캡션 블로그+네이버 링크 확인, osmuimgcheck 일치). 방법=aside repl fetch→DataTransfer 업로드·dialog ref 로 공유(data/_ig_post.py). 다음: 쓰레드(E4-14·C2-22) → 인스타 카드 제작(C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12·C2-25)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 02:21:59",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] 02:16 현황 기준 순서: ①F3-13 초안(오늘 시행·재고 0) ②블로그 교차링크 5편(C2-23·F4-32·F1-21·F3-12·C2-25 — selfcheck 「교차링크가 본문에 없다」, blogger.py crosslink) ③인스타 남은 글 → 쓰레드(맨 뒤) ④G3-32·G3-33 초안 ⑤인스타 캡션 라이브 빈칸 9건(selfcheck). 단계마다 batchboard now.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 02:22:07",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] selfcheck 02:16: ①webapp/engine_flow.html script#1 SyntaxError 'TB' — CP 화면 안 열림(우선) ②MT-31 시험 격리 ③관련글 링크 32건 불일치(xlinkcheck) 원인 점검.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 02:27:58",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ ① engine_flow.html 끝 95253f5cc — 화면은 정상이었다(검사기 오탐) · 어디 tools/check_webapp_js.py · 무엇: a570b4469 가 설계도 원본을 <script type=text/x-mermaid-src> 로 동봉했는데 검사기가 type 무관하게 node --check → 'flowchart TB' 를 JS 로 읽어 SyntaxError · 어떻게: type 이 JS 가 아닌 블록은 건너뜀(is_js_script) · 실측: 실제 JS 블록 node --check rc0, 브라우저 카드 69·도형 svg 렌더·콘솔 오류 0, 깨진 JS 는 여전히 잡힘, 본체 check_webapp_js ✅ · 재발방지: falsepos 규칙 _r_webapp_js_skips_data_scripts_1112 + TestWebappJsCheck · ② MT-31 은 00:3x 1dc8e8efe 로 끝(앞 보고) · ③ xlinkcheck 착수",
+   "actor": "미상:330b96b0",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 02:29:47",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "[자동 → 3.] PRODUCT_TODO F3-13 — brandconnect 에이전트로 네이버 커넥트 상품 조사 → 맞으면 python -m studio.affiliate propose, 안 맞으면 python -m studio.affiliate none --code <코드> --why \"<한 줄>\" (3. 상시 역할, 11-11 재배정)",
+   "actor": "사람",
+   "sid": ""
   }
  ]
 }
