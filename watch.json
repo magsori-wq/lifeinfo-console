@@ -26957,6 +26957,82 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "deepread-c-hira234-att-1111",
+   "added": "2026-11-11",
+   "what": "심평원 고시 2026-234(요양급여 적용기준, 시행 11.12)·2026-233(ICG 선별급여, 시행 11.12) 첨부 hwp/pdf 미확보 — 본문에 환자 본인부담 문장 없음",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "cmd 무효(watch show 는 재확인이 아님) — deepread-c-hira234-att-1111b 로 대체 등록"
+  },
+  {
+   "id": "deepread-c-hira234-att-1111b",
+   "added": "2026-11-11",
+   "what": "심평원 고시 2026-234·2026-233 첨부 hwp/pdf 미확보 재등록(앞 건 cmd 무효) — 본문에 환자 본인부담 문장 없음",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "f3-13-medicine-carry-details",
+   "added": "2026-11-11",
+   "what": "F3-13 의약품 휴대반입: 증빙서류·세관신고절차·마약류 제외여부·직구적용·병 단위 정의 원문 못 얻음. 시도: korea.kr hwpx/pdf, mfds m_99 seq=50487, customs 전재·여행자휴대품(829)·마약성분(7640), 인천본부세관 5480, mfds m_74, law.go.kr 고시 별표11(Aside). 시행 11/12 이후 관세청·식약처 FAQ/개정고시 재확인",
+   "due": "2026-11-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show; docs/source_F3-13_의약품휴대반입_20261111.md 4절 재조사(customs 보도자료/FAQ, mfds 의약품 휴대반입 Q&A)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "g-pohang-lightfest-verify-1111",
+   "added": "2026-11-11",
+   "what": "포항국제불빛축제 2026 1차 미확인 4건: 19일 불꽃공연 유무(1차 11.21만 불꽃쇼 명기 vs 2차 19일 점등·불꽃) · 불꽃쇼 20시(2차만) · 좌석티켓 가격 · 나이트워크 신청 마감. 타임테이블·좌석 탭 이미지",
+   "due": "2026-11-13",
+   "cmd": "python tools/aside_read.py \"https://www.phcf.or.kr/phcf/festival_detail/view.do?festivalId=FST_LIGHT_2026_001&tab=program\" --wait 10 --max 9000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "g-gukbo-touring-fee-1111",
+   "added": "2026-11-11",
+   "what": "국보순회전(고창 11.22 · 청도 11.22 · 성주 11.29 종료) 관람료·휴관·운영시간 미확인 — 지역 박물관 공식 페이지 미시도. 기간 짧아 11-13 안 판정",
+   "due": "2026-11-13",
+   "cmd": "python tools/aside_read.py \"https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?schM=view&menuId=current&exhiSpThemId=3549792&listType=gallery\" --wait 8 --max 16000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "g-gwangbok-tree-2026-1111",
+   "added": "2026-11-11",
+   "what": "광복로 겨울빛 트리축제 2026 편 — 2025 편(12/5~2/22)만 확인. 부산 중구청 도메인 NXDOMAIN, busan.go.kr 보도자료 목록에 없음. 출력 없음=미공지",
+   "due": "2026-11-13",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://search.naver.com/search.naver?where=news&query=%EA%B4%91%EB%B3%B5%EB%A1%9C+%ED%8A%B8%EB%A6%AC%EC%B6%95%EC%A0%9C+2026\" | grep -v \"var \" | grep -o \"광복로[^<]\\{0,20\\}2026[^<]\\{0,20\\}\" | head -3; echo \"(출력 없음=아직 미공지)\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "cmd 교체 — 검색 페이지 JS 의 질의 에코에 걸림(오탐). var 행 제외로 교체"
+  },
+  {
+   "id": "g-seoullight-2026-1111",
+   "added": "2026-11-11",
+   "what": "서울라이트 광화문 2026 편 — 개최 공지 미확인(검색은 2025 편·2026.6 업체 수주 기사뿐). 2025 날짜 금지. 출력 없음=미공지",
+   "due": "2026-11-13",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://search.naver.com/search.naver?where=news&query=%EC%84%9C%EC%9A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8+2026\" | grep -v \"var \" | grep -o \"2026 서울라이트[^<]\\{0,30\\}\" | head -3; echo \"(출력 없음=아직 미공지)\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "cmd 교체 — 동일하게 var 행 제외"
   }
  ]
 }
