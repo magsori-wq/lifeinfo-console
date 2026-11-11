@@ -26504,8 +26504,10 @@
    "due": "2026-11-12",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-12",
+   "result": "사장님 11-12 03:27 「검증 회차는 중요하지는 않아」 — 반복 검증 중단(cron 3042395d 삭제). 남은 확인 MT-10(11-12 18시)·MT-32 자동 깨움은 각 watch 로"
   },
   {
    "id": "source-c223-1111",
@@ -27307,7 +27309,49 @@
    "due": "2026-11-13",
    "cmd": "ls docs/source_G_포항불빛축제_20261112.md",
    "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "④⑤ 확보(나이트워크 폼·시 관광포털 이용료 무료) / ①②③ 이미지 전용(타임테이블 fileSeq=30707084 · 좌석 30706773) — 파일 docs/source_G_포항불빛축제_20261112.md"
+  },
+  {
+   "id": "aside-mode-decision-1117",
+   "added": "2026-11-12",
+   "what": "Aside 직접 게시 모드 종료(11-18) 전 결정 — 충전해 Aside 채팅 복귀 vs 직접 게시 연장. 결재함에 【권고】로 올릴 것",
+   "due": "2026-11-17",
+   "cmd": "python -c \"from studio.asidequeue import direct_mode;print(direct_mode())\"",
+   "owner": "claude",
    "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "product-g-pohang-1112",
+   "added": "2026-11-12",
+   "what": "포항불빛축제 상품판정 진행",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_product_G포항불빛축제_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "dist-affiliate-ledger-1112",
+   "added": "2026-11-12",
+   "what": "분배안 정상동작 — 3.세션 상품 판정 6편(C2-23·F4-32·F1-21·F3-12·C2-25·F3-13) affiliate 장부 기록 여부 + 이후 PRODUCT_TODO 가 파일+장부로 끝나는지",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.affiliate show | grep -A1 -E '^  (C2-23|F4-32|F1-21|F3-12|C2-25|F3-13) '",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "g335-pohang-timetable-1112",
+   "added": "2026-11-12",
+   "what": "G3-35 포항 불빛축제 초안 전: 타임테이블 이미지(phcf.or.kr downloadImage fileSeq=30707084)·좌석티켓 탭 이미지 2장(fileSeq=30706773 ORDER 0·1)을 화면으로 읽어 19일 공연·불꽃쇼 시각·좌석티켓 가격 확인 — 못 읽으면 쓰지 않음. 나이트워크 마감 11-17(폼 하단은 11-18 01시)",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
    "by": "3.분석"
   }
  ]
