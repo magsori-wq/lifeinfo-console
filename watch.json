@@ -26863,6 +26863,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "gatesync-push-fail-11112019",
+   "added": "2026-11-11",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): push 재시도도 실패(syncorigin exit 0): ====================================================\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'\n",
+   "due": "2026-11-11",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gostamp-push-fail-f3-12-11112019",
+   "added": "2026-11-11",
+   "what": "F3-12 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): ============\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'",
+   "due": "2026-11-11",
+   "cmd": "git push origin main && python -m studio.pubready --code F3-12",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
