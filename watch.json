@@ -27353,6 +27353,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "xlink-f313",
+   "added": "2026-11-12",
+   "what": "🔗 F3-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F3-13",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code F3-13",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "mt10-11-live-check-1112",
+   "added": "2026-11-12",
+   "what": "분배안 정상동작 — MT-10(색인 일일 점검 → 4.보드 [자동 → 4.] 줄)·MT-11(출처 파일 없는 제안 경고) 실발화 확인. 통과하면 조용히 닫고 실패만 보고",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard order --id adsense4_1104 | grep -E '자동 → 4|INDEX_DAILY'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
