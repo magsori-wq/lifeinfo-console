@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "items": [
   {
    "id": "intro-numbers",
@@ -26480,8 +26480,10 @@
    "due": "2026-11-12",
    "cmd": "python -m studio.asidequeue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "brandconnect 조사 완료 — 결과 docs/source_brandconnect_20261111.md"
   },
   {
    "id": "source-confirm-a231-e414-1111",
@@ -26556,8 +26558,8 @@
   {
    "id": "xlink-e414",
    "added": "2026-11-11",
-   "what": "🔗 E4-14 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-14",
-   "due": "2026-11-11",
+   "what": "🔗 E4-14 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E4-14",
+   "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code E4-14",
    "owner": "claude",
    "state": "todo",
@@ -26586,8 +26588,8 @@
   {
    "id": "xlink-c222",
    "added": "2026-11-11",
-   "what": "🔗 C2-22 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-22",
-   "due": "2026-11-11",
+   "what": "🔗 C2-22 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-22",
+   "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code C2-22",
    "owner": "claude",
    "state": "todo",
@@ -26622,6 +26624,567 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "deploy-thumb-491",
+   "added": "2026-11-11",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(491_kimjang_gear_check.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "gatesync-push-fail-11111840",
+   "added": "2026-11-11",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): push 재시도도 실패(syncorigin exit 0): ====================================================\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'\n",
+   "due": "2026-11-11",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "g331-thumb-c223-push-1111",
+   "added": "2026-11-11",
+   "what": "G3-31 발행 run 42997059197 끝나면: syncorigin(C2-23 V0·수정 886c0197b push) · 썸네일 490/491 github.io 200 확인(아니면 deploy 재실행) · 일일 문제기록에 18:44 cd 이탈 1줄",
+   "due": "2026-11-11",
+   "cmd": "gh run view 42997059197 -R magsori-wq/lifeinfo-source --json status; curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/490_busan_kids_bookfair.png",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-11",
+   "result": "18:44 syncorigin 앞0 · 18:47 deploy 95462fa03 · 490/491 github.io 200(18:50)"
+  },
+  {
+   "id": "aside-credit-1111",
+   "added": "2026-11-11",
+   "what": "Aside 크레딧 소진(402 Insufficient credits) — 이부장·이과장 채팅 둘 다 멈춤",
+   "due": "2026-11-11",
+   "cmd": "【권고】Aside 설정 화면에서 크레딧 충전 【근거】aside sessions get → Error 402(18:49) 【위험】충전 전까지 4채널 게시·검색설명·색인 정지",
+   "owner": "user",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-11",
+   "result": "중복 — 정비 MT-21 자동 항목 aside-credit-t2568 로 통합(18:59)"
+  },
+  {
+   "id": "aside-credit-t2568",
+   "added": "2026-11-11",
+   "what": "Aside 크레딧 소진(402 Insufficient credits) — Aside 설정 화면에서 크레딧 충전 후 이 항목을 완료로 눌러 주십시오. 완료하면 멈춘 Aside 대기열이 저절로 다시 흐릅니다(그동안 Aside 지시는 대기열에서 기다림)",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "user",
+   "state": "done",
+   "kind": "action",
+   "by": "미상",
+   "done_at": "2026-11-12",
+   "result": "충전 대신 직접 게시 모드(lee_direct ~11-18) — 네이버 8·인스타 2·검색설명 6 직접 게시 실측"
+  },
+  {
+   "id": "gostamp-push-fail-c2-23-11111908",
+   "added": "2026-11-11",
+   "what": "C2-23 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): ============\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'",
+   "due": "2026-11-11",
+   "cmd": "git push origin main && python -m studio.pubready --code C2-23",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gatesync-push-fail-11111910",
+   "added": "2026-11-11",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): push 재시도도 실패(syncorigin exit 0): ====================================================\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'\n",
+   "due": "2026-11-11",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gostamp-push-fail-c2-23-11111911",
+   "added": "2026-11-11",
+   "what": "C2-23 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): l' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.",
+   "due": "2026-11-11",
+   "cmd": "git push origin main && python -m studio.pubready --code C2-23",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "source-f312-1111",
+   "added": "2026-11-11",
+   "what": "F3-12 돈키호테 쿠폰 공식 내용 확정",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_F3-12_돈키호테쿠폰_20261111.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "파일 작성 완료: 배너 5%/7% 확정, 유효기간·병용·발급문구 미확정, SNS/JNTO 못 얻음"
+  },
+  {
+   "id": "source-c225-1111",
+   "added": "2026-11-11",
+   "what": "C2-25 한랭질환 예방수칙 공식 내용 확정",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_C2-25_한랭질환예방수칙_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "product-f432-1111",
+   "added": "2026-11-11",
+   "what": "F4-32 제휴 상품 판정",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_product_F4-32_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "product-c225-1111",
+   "added": "2026-11-11",
+   "what": "C2-25 제휴 상품 판정",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_product_C2-25_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "product-f312-1111",
+   "added": "2026-11-11",
+   "what": "F3-12 제휴 상품 판정",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_product_F3-12_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "aside-requeue-after-credit-1111",
+   "added": "2026-11-11",
+   "what": "Aside 충전 뒤 402 로 빠진 지시 #822 C2-20 네이버·#823/#824 F1-20·#825 G3-30 색인 재등록 확인(정비 MT-22 전이면 이과장이 asidequeue add 로 재등록)",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "source-f432-gaps-1111",
+   "added": "2026-11-11",
+   "what": "F4-32 광화문 빵축제 미확정 3건: 교통통제·주차(⑤) / 우천·혼잡 운영변경(⑥) / 패스트패스 현재 오픈여부. 시도: abcd /festival 전문, 네이버예약 1768557 임베디드JSON, mss 보도자료 4페이지, korea.kr, news.seoul 검색, WebSearch 3회 → 공식 안내 없음. Aside 읽기 2회 시간초과",
+   "due": "2026-11-16",
+   "cmd": "Aside idle 일 때 python tools/aside_read.py https://booking.naver.com/booking/12/bizes/1768557 --wait 10 (패스트패스 오픈 확인); 서울경찰청·TOPIS 광화문 11/18~20 통제 공지, 대한제과협회 공식 인스타 열람",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "kdca-2627-cold-notice-1202",
+   "added": "2026-11-11",
+   "what": "질병청 2026-2027절기 한랭질환 응급실감시체계 운영 개시 공지/보도 확인(C2-25 ①). 11-11 시도: korea.kr 통합검색 12+질의 · 신고현황 게시판(kdca/4926) 최상단=2025-26 최종 · 개요(kdca/3382) 연도표기 없음 · Aside 2회 실패 → 못 찾음",
+   "due": "2026-12-02",
+   "cmd": "curl -s -A Mozilla/5.0 https://www.kdca.go.kr/kdca/4926/subview.do | grep -c 2026-2027절기",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deploy-thumb-492",
+   "added": "2026-11-11",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(492_gwanghwamun_bread.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "mt10-11-live-check-1111",
+   "added": "2026-11-11",
+   "what": "분배안 MT-10(색인 일일 점검→4.보드 adsense4_1104 자동 줄)·MT-11(출처 파일 없는 제안 경고) 실제 발화 확인 + 8011 결재서버 재시작 대안(정비 답 없으면 사장님 결재함 【권고】【근거】【위험】)",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.batchboard order --id adsense4_1104 | grep INDEX_DAILY",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-11",
+   "result": "8011 재시작 불필요 — 정비 2ba5ef1f0 모듈 자동 재적재(ping 확인). MT-10·11 실발화는 페이블 3차 검증·다음 회차에서"
+  },
+  {
+   "id": "fix-f121v0-1111",
+   "added": "2026-11-11",
+   "what": "F1-21 V0 경미 수정 5건 반영(제목 최근·날짜·문장), heading OK·validate 0",
+   "due": "2026-11-12",
+   "cmd": "grep -c '이번 달' 해외안전공지3건_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-thumb-494",
+   "added": "2026-11-11",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(494_donki_coupon.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-donki-v0-1111",
+   "added": "2026-11-11",
+   "what": "F3-12 V0 경미 수정: 확인방식 표현 4곳 정정, 관련글 비지트재팬웹으로 교체(200). heading/xlinkcheck 통과. 커밋 b478c3c2e",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.xlinkcheck --file 돈키호테쿠폰_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "mt10-firstfire-1112",
+   "added": "2026-11-11",
+   "what": "분배안 MT-10 첫 실발화 확인 — 11-12 18시 이후 [자동 → 4.] 색인 일일 줄이 adsense4_1104 에 남았나(오늘은 index_daily 이미 소진이라 안 울림·페이블 3차)",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard order --id adsense4_1104 | grep -E '자동 → 4|INDEX_DAILY'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "gostamp-push-fail-f1-21-11112017",
+   "added": "2026-11-11",
+   "what": "F1-21 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): ============\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'",
+   "due": "2026-11-11",
+   "cmd": "git push origin main && python -m studio.pubready --code F1-21",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gatesync-push-fail-11112019",
+   "added": "2026-11-11",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): push 재시도도 실패(syncorigin exit 0): ====================================================\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'\n",
+   "due": "2026-11-11",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gostamp-push-fail-f3-12-11112019",
+   "added": "2026-11-11",
+   "what": "F3-12 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): ============\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'",
+   "due": "2026-11-11",
+   "cmd": "git push origin main && python -m studio.pubready --code F3-12",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gatesync-push-fail-11112021",
+   "added": "2026-11-11",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): push 재시도도 실패(syncorigin exit 2): e the remote changes,\nhint: use 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n",
+   "due": "2026-11-11",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "f121-title-fix-1111",
+   "added": "2026-11-11",
+   "what": "【권고】F1-21 라이브 제목 정정 허용(이번 달→최근) 【근거】20:35 라이브 title 실측 '외교부 이번 달 해외 안전공지'·사우디 3단계는 10-11 발령이라 사실 오류·이과장 정정은 분류기 거부(20:41) 【위험】제목 1줄 patch, 본문 13681자 불변",
+   "due": "2026-11-11",
+   "cmd": "python studio/blogger.py update-post --code F1-21 --file 해외안전공지3건_글_HTML.txt --title \"독일 11월 20일 2차 시위 34개 도시, 알바니아 2단계·사우디 3단계 — 외교부 최근 해외 안전공지 3건\"",
+   "owner": "user",
+   "state": "done",
+   "verify": "curl -s https://lifeinfo8975.blogspot.com/2026/11/11-20-2-34-2-3-3.html | grep -o '<title>[^<]*'",
+   "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-11",
+   "result": "사장님 채팅 「정정허용」 21:13 — 이부장 회수 · 사장님 21:11 이부장 창 「정정허용」 — F1-21 라이브 제목 이번 달→최근 정정 승인"
+  },
+  {
+   "id": "deploy-thumb-495",
+   "added": "2026-11-11",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(495_coldillness_prevention.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-c225-v0-1111",
+   "added": "2026-11-11",
+   "what": "C2-25 V0 보완: 119 전 조치 2줄(소책자 3-3 문구)·사례① 복지부 안부확인/도움요청 표현 한정. 링크 2개 200, heading OK. 커밋 7d8e691c0 push 안 함",
+   "due": "2026-11-12",
+   "cmd": "grep -c '심폐소생술을 시행합니다' 한랭질환예방수칙_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deep-f-mongolia-visa-1111",
+   "added": "2026-11-11",
+   "what": "몽골 무비자 기한 충돌 — 외교부 사증면제 표(2026.9월 기준) 일반여권 일방 90일 2026.12.31까지 vs 몽골 이민청 2026 목록 30일 34개국(대한민국 없음). 보류, 글 금지",
+   "due": "2026-11-20",
+   "cmd": "curl -sL -A Mozilla/5.0 https://www.immigration.gov.mn/en/articles/537/ | grep -ci korea",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "mongolia-visa-conflict-1111",
+   "added": "2026-11-11",
+   "what": "몽골 무비자 90일 2026.12.31 종료설 — 외교부 표(~2026.12.31) vs 몽골 이민청 목록(한국 없음) 충돌, 해소 전 글감 보류(docs/source_deep_F_mongolia_20261111.md)",
+   "due": "2026-11-20",
+   "cmd": "curl 외교부 사증면제 표 tr 파싱 재확인 + 주한 몽골대사관 공지 재시도",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepE-sources-1111",
+   "added": "2026-11-11",
+   "what": "분야E 심층독해 1111: 방통위 보도자료 목록(kcc.go.kr 302→kmcc.go.kr, 목록 JS 로드라 Aside 로도 본문 미표시) · KISA 공지 HTTP 500 · 개인정보위 pipc.go.kr 404 — 공식 목록 경로 미확보, 11-12~12-20 E 후보 탐색 공백",
+   "due": "2026-11-15",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' -A 'Mozilla/5.0' https://www.kisa.or.kr/401",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-c-hira234-att-1111",
+   "added": "2026-11-11",
+   "what": "심평원 고시 2026-234(요양급여 적용기준, 시행 11.12)·2026-233(ICG 선별급여, 시행 11.12) 첨부 hwp/pdf 미확보 — 본문에 환자 본인부담 문장 없음",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "cmd 무효(watch show 는 재확인이 아님) — deepread-c-hira234-att-1111b 로 대체 등록"
+  },
+  {
+   "id": "deepread-c-hira234-att-1111b",
+   "added": "2026-11-11",
+   "what": "심평원 고시 2026-234·2026-233 첨부 hwp/pdf 미확보 재등록(앞 건 cmd 무효) — 본문에 환자 본인부담 문장 없음",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "f3-13-medicine-carry-details",
+   "added": "2026-11-11",
+   "what": "F3-13 의약품 휴대반입: 증빙서류·세관신고절차·마약류 제외여부·직구적용·병 단위 정의 원문 못 얻음. 시도: korea.kr hwpx/pdf, mfds m_99 seq=50487, customs 전재·여행자휴대품(829)·마약성분(7640), 인천본부세관 5480, mfds m_74, law.go.kr 고시 별표11(Aside). 시행 11/12 이후 관세청·식약처 FAQ/개정고시 재확인",
+   "due": "2026-11-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show; docs/source_F3-13_의약품휴대반입_20261111.md 4절 재조사(customs 보도자료/FAQ, mfds 의약품 휴대반입 Q&A)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "g-pohang-lightfest-verify-1111",
+   "added": "2026-11-11",
+   "what": "포항국제불빛축제 2026 1차 미확인 4건: 19일 불꽃공연 유무(1차 11.21만 불꽃쇼 명기 vs 2차 19일 점등·불꽃) · 불꽃쇼 20시(2차만) · 좌석티켓 가격 · 나이트워크 신청 마감. 타임테이블·좌석 탭 이미지",
+   "due": "2026-11-13",
+   "cmd": "python tools/aside_read.py \"https://www.phcf.or.kr/phcf/festival_detail/view.do?festivalId=FST_LIGHT_2026_001&tab=program\" --wait 10 --max 9000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "g-gukbo-touring-fee-1111",
+   "added": "2026-11-11",
+   "what": "국보순회전(고창 11.22 · 청도 11.22 · 성주 11.29 종료) 관람료·휴관·운영시간 미확인 — 지역 박물관 공식 페이지 미시도. 기간 짧아 11-13 안 판정",
+   "due": "2026-11-13",
+   "cmd": "python tools/aside_read.py \"https://www.museum.go.kr/MUSEUM/contents/M0202010000.do?schM=view&menuId=current&exhiSpThemId=3549792&listType=gallery\" --wait 8 --max 16000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "g-gwangbok-tree-2026-1111",
+   "added": "2026-11-11",
+   "what": "광복로 겨울빛 트리축제 2026 편 — 2025 편(12/5~2/22)만 확인. 부산 중구청 도메인 NXDOMAIN, busan.go.kr 보도자료 목록에 없음. 출력 없음=미공지",
+   "due": "2026-11-13",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://search.naver.com/search.naver?where=news&query=%EA%B4%91%EB%B3%B5%EB%A1%9C+%ED%8A%B8%EB%A6%AC%EC%B6%95%EC%A0%9C+2026\" | grep -v \"var \" | grep -o \"광복로[^<]\\{0,20\\}2026[^<]\\{0,20\\}\" | head -3; echo \"(출력 없음=아직 미공지)\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "cmd 교체 — 검색 페이지 JS 의 질의 에코에 걸림(오탐). var 행 제외로 교체"
+  },
+  {
+   "id": "g-seoullight-2026-1111",
+   "added": "2026-11-11",
+   "what": "서울라이트 광화문 2026 편 — 개최 공지 미확인(검색은 2025 편·2026.6 업체 수주 기사뿐). 2025 날짜 금지. 출력 없음=미공지",
+   "due": "2026-11-13",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://search.naver.com/search.naver?where=news&query=%EC%84%9C%EC%9A%B8%EB%9D%BC%EC%9D%B4%ED%8A%B8+2026\" | grep -v \"var \" | grep -o \"2026 서울라이트[^<]\\{0,30\\}\" | head -3; echo \"(출력 없음=아직 미공지)\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-11",
+   "result": "cmd 교체 — 동일하게 var 행 제외"
+  },
+  {
+   "id": "xlink-c220",
+   "added": "2026-11-11",
+   "what": "🔗 C2-20 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-20",
+   "due": "2026-11-11",
+   "cmd": "python studio/blogger.py crosslink --code C2-20",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "lane-idle-check-1112",
+   "added": "2026-11-12",
+   "what": "글감 루틴 레인 정체 — 루틴2(daily-topics) 11-09 이후·루틴4(travel-prep) 11-07 이후 제안 0건. 11-12 낮 루틴 실행 결과(routinebeat·routinelog)로 출입처·발굴 출발점 점검 여부 판단",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard order --id routinelog | tail -20",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "d5-12-source-gaps-1112",
+   "added": "2026-11-12",
+   "what": "D5-12 원문: 행안부 보도자료 hwpx/pdf 미확보, 227곳 명단·한파쉼터 위치·기상청 한파 기준 못 찾음(시도: curl·WebFetch·Aside)",
+   "due": "2026-11-13",
+   "cmd": "grep -c 못 찾음 /c/lifeinfo/docs/source_D5-12_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d3f42422"
+  },
+  {
+   "id": "g334-gukbo-fee",
+   "added": "2026-11-12",
+   "what": "G3-34 국보순회전 별도 요금 유무 미확인(3곳). 시도: 고창·청도·성주 관람안내 페이지, 전시목록·상세 게시물, 성주 새소식 2건(본문 비어 있음 — DOM 이미지·첨부 0), 고창 포스터 이미지(다운로드 허락 전이라 판독 안 함). 기본 요금·시간·휴관은 확정(docs/source_G3-34_국보순회전_20261112.md)",
+   "due": "2026-11-14",
+   "cmd": "전화 확인(통화일·부서 기록): 고창 세계유산과 063-560-8672 · 청도 문화예술체육과 역사문화시설팀 054-370-2283 · 성주 성산동 고분군 전시관 054-930-8384 — 질문: 국보순회전 관람에 상설 관람료 외 별도 요금이 있나요? 또는 고창 포스터 이미지 판독(다운로드 허락 필요)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "docflow-1112-d513",
+   "added": "2026-11-12",
+   "what": "D5-13 한파쉼터 drop(증거 사유). 재제안 조건: 행안부 보도자료 원문+쉼터 위치조회 경로 확보",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d3f42422"
+  },
+  {
+   "id": "xlink-f120",
+   "added": "2026-11-12",
+   "what": "🔗 F1-20 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F1-20",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code F1-20",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-g331",
+   "added": "2026-11-12",
+   "what": "🔗 G3-31 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-31",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code G3-31",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-c223",
+   "added": "2026-11-12",
+   "what": "🔗 C2-23 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-23",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code C2-23",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-f432",
+   "added": "2026-11-12",
+   "what": "🔗 F4-32 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-32",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code F4-32",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-f121",
+   "added": "2026-11-12",
+   "what": "🔗 F1-21 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F1-21",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code F1-21",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-f312",
+   "added": "2026-11-12",
+   "what": "🔗 F3-12 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F3-12",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code F3-12",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-c225",
+   "added": "2026-11-12",
+   "what": "🔗 C2-25 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-25",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code C2-25",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "fix-f313-v0minor-1112",
+   "added": "2026-11-12",
+   "what": "F3-13 V0 경미 수정 2건 반영(바이라인 사례 가상 문구·5절 세관 안내 출처 표기), heading OK, 커밋 61588b069, push 안 함",
+   "due": "2026-11-13",
+   "cmd": "grep -c '인천본부세관 안내, 기준일 표기 없음' 해외여행약반입_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-thumb-496",
+   "added": "2026-11-12",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(496_overseas_medicine_carry.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-12",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "gostamp-push-fail-f3-13-11120239",
+   "added": "2026-11-12",
+   "what": "F3-13 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): l' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.",
+   "due": "2026-11-12",
+   "cmd": "git push origin main && python -m studio.pubready --code F3-13",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
