@@ -26592,7 +26592,7 @@
   {
    "id": "xlink-c222",
    "added": "2026-11-11",
-   "what": "🔗 C2-22 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-22",
+   "what": "🔗 C2-22 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-22",
    "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code C2-22",
    "owner": "claude",
@@ -27383,6 +27383,28 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-MT33-1112",
+   "added": "2026-11-12",
+   "what": "정비 MT-33 검수 ❌: xlinkcheck 🔴 0건(기대 재현 3쌍 🔴 — B1-01 등 🟡 stale_title), enginemap 🔴 1 (STALE_SIM 설계도만 있고 코드 신호 없음)",
+   "due": "2026-11-12",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.xlinkcheck | tail -1; PYTHONIOENCODING=utf-8 python -m studio.enginemap | grep 🔴",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "mt32-leewake-verify-1112",
+   "added": "2026-11-12",
+   "what": "MT-32 확인: 다음 「관제탑 → 이과장」 보드 줄 뒤 30초 안에 이과장 대화에 「이과장 깨우기 · lifeinfo-tower」 프롬프트가 들어갔는가(이부장 SendMessage 없이)",
+   "due": "2026-11-12",
+   "cmd": "grep -a '이과장 깨우기 · lifeinfo-tower' ~/.claude/projects/C--lifeinfo/c36eea8e*.jsonl | grep -a -o '\"timestamp\":\"[^\"]*\"' | tail -3",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:330b96b0",
+   "done_at": "2026-11-12",
+   "result": "이부장 실측: 04:09:18 보드 줄만(SendMessage 없음) → 04:10:44 이과장 「04:10 줄 수신」 보고 — 자동 깨움 86초 만에 동작"
   }
  ]
 }

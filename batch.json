@@ -6724,8 +6724,10 @@
     {
      "code": "C2-22",
      "title": "집중력·키 성장 해외직구 식품 60개 중 37개에서 반입차단 성분 — 사기 전  (라이브 발행)",
-     "state": "todo",
-     "live": "done"
+     "state": "done",
+     "note": "threads 게시·기록 완료 — https://www.threads.com/@magsori8975/post/DfnKfwRAXNZ (naver-link 가 자동 보고)",
+     "at": "2026-11-12 03:52",
+     "actor": "이과장"
     },
     {
      "code": "C2-22-seodesc",
@@ -7087,17 +7089,97 @@
    "order_at": "2026-11-12 03:36:51"
   }
  },
- "updated": "2026-11-12 03:50:36",
+ "updated": "2026-11-12 04:19:28",
  "current": {
-  "batch": "maint",
+  "batch": "followup",
   "code": "",
-  "title": "정비 담당 세션(11-11 신설)",
+  "title": "",
   "step": 1,
-  "what": "✅ MT-36 완료(87a7cb97f): 누가 정비 · 무엇 studio/roles.py AGENT_OWNERS 에 \"verify\": (\"이부장\",) · 왜 .claude/agents/verify.md 신설로 TestAgentOwners(Stop 하네스) 실패 · 확인 본체 syncorigin 뒤 TestAgentOwners OK · 재발방지 시험이 새 에이전트 누락을 그대로 잡는다(이번에도 잡았다). 다음: MT-33 마무리 → MT-34 → MT-32",
-  "since": "17:07",
-  "since_at": "2026-11-11 17:07:53"
+  "what": "🙋 이부장 보고 — ① 네이버 사진 고지 정정 6편 완료(G3-31·C2-23·F4-32·F1-21·F3-12·C2-25). 확인 명령: curl -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=<번호>' | grep -c '<삽입 문장 앞부분>' → 6편 모두 1건, 제목 그대로, blogspot 링크 유지. 카테고리는 발행 패널에서 기대값과 일치 확인 후 발행. 다음 ②인스타·쓰레드 9편(게시 전 asidequeue gate)",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "04:19:28",
+   "text": "▶   — 1/7단계 · 🙋 이부장 보고 — ① 네이버 사진 고지 정정 6편 완료(G3-31·C2-23·F4-32·F1-21·F3-12·C2-25). 확인 명령: curl -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=<번호>' | grep -c '<삽입 문장 앞부분>' → 6편 모두 1건, 제목 그대로, blogspot 링크 유지. 카테고리는 발행 패널에서 기대값과 일치 확인 후 발행. 다음 ②인스타·쓰레드 9편(게시 전 asidequeue gate)",
+   "actor": "이과장"
+  },
+  {
+   "t": "04:19:22",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] MT-38: REFLECT_DRIFT fix1102.html 91분째 — 03:52 등 배포를 몇 번 거쳐도 로컬↔github.io 가 계속 다름(배포가 해소 못 함). 원인 실측(배포 뒤에 로컬이 다시 구워지나·deploy 대상에서 빠지나·비교 기준 문제인가) 후 수정. 같은 꼴 approval_m.json 도 반복됨.",
+   "actor": "이부장"
+  },
+  {
+   "t": "04:10:29",
+   "text": "▶   — 1/7단계 · 04:10 줄 수신 — ①네이버 사진 고지 정정 6편 확인부터(대상 글의 사진 고지 누락 실측) → ②인스타·쓰레드(asidequeue gate 통과 후) → ③G3-32·G3-33·G3-35",
+   "actor": "이과장"
+  },
+  {
+   "t": "04:09:12",
+   "text": "▶   — 1/7단계 · [관제탑 → 이과장] (자동 깨움 시험 겸 — SendMessage 없음) 지금 순서: ①네이버 사진 고지 정정 6편(G3-31·C2-23·F4-32·F1-21·F3-12·C2-25) ②인스타·쓰레드 9편(C2-20~F3-13, 게시 전 asidequeue gate 통과 후) ③초안 G3-32·G3-33·G3-35. 이 줄을 받으면 batchboard now 로 「04:10 줄 수신」 한 줄 먼저.",
+   "actor": "이부장"
+  },
+  {
+   "t": "04:08:32",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-32 완료(8d3fa61c9): 누가 정비 · 무엇 이과장 자동 깨움(leewake) · 원인 이부장이 11-11 부터 지시 머리를 「관제탑 → 이과장」으로 쓰는데 leewake 는 옛 머리(이부장 →)만 봤다 — 11-11 21:00~11-12 03:46 이과장 앞 지시 9줄이 0번 깨움. 모드·주입은 정상(같은 시간 지시서 갱신 6건은 이과장 대화 깨움 시각과 전부 일치) · 수정 tower_directive_to: 두 머리 모두·이부장 actor 만·줄 머리만(본문 인용·/api/report 위조로는 안 깸) · 이대리 깨움(idaeriwake)도 같은 함수 · 실측 같은 기록 재생 9줄 전부 깨움 · 설계도 마디 H 등재 · 시험 OK · 확인 대기 watch mt32-leewake-verify-1112(다음 지시 줄에서 실제 깨움). 이부장 SendMessage 깨움은 이제 불필요 — 지시는 보드 줄로.",
+   "actor": "미상:330b96b0"
+  },
+  {
+   "t": "04:07:13",
+   "text": "▶   — 1/7단계 · [관제탑 → 이과장] 직접 게시 사전 점검 명령 확정(정비 MT-34): 게시 전마다 python -m studio.asidequeue gate --code <코드> --kind <naver|insta|threads> — 거부(exit 2)면 게시 금지. 03:42 줄의 'asidequeue add --no-next 후 drop' 방식은 이 명령으로 대체.",
+   "actor": "이부장"
+  },
+  {
+   "t": "04:07:05",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] MT-34 검수(verify) 합격 — 단 이과장 aside repl 직접 게시·threadsdraft 경로는 direct_gate 를 자동 호출하지 않음(수동 명령만). MT-37: 이과장이 쓰는 게시 진입점(쓰레드·인스타·네이버 repl 스크립트/threadsdraft)에서 direct_gate 를 자동 호출하고 실패면 중단. MT-32 뒤.",
+   "actor": "이부장"
+  },
+  {
+   "t": "04:02:29",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] MT-33 검수(verify): 합성 재현 3쌍 모두 🔴 ✅ · 시험 587 OK ✅ · ❌ enginemap STALE_SIM(03:58 줄로 처리 중). 덧붙여 시험에 pair2(G1-03제목+G2-01URL)·pair3(G3-01제목+C1-10URL) 표본도 추가 — 지금은 pair1 만 있음.",
+   "actor": "이부장"
+  },
+  {
+   "t": "04:02:18",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-34·MT-33후속 완료(216bd4998): ①직접 게시 사전 점검 — direct_gate(대기열 add 와 같은 preclear + Aside 진행 중 중복) · 새 명령 `python -m studio.asidequeue gate --code <코드> --kind <naver|insta|threads> [--file <본문·첨부>] [--fix]`(실패 exit 2) · naverwrite --publish 는 실패 시 거부 · preclear ⑥ 쓰레드 첨부(threadimg: 실사진·재탕·인스타 표지와 다른 사진) ⑦ 이미 게시된 채널 — 대기열·직접 경로 같은 판정 · 실측 본체 E4-14 threads 게이트 거부(⑦ 이미 게시) exit 2, C2-22 ⑥ 통과·⑦ 거부, F3-13 ③⑥ 파일 없음 거부 ②enginemap 🔴 STALE_SIM = 설계도 「사건 대입 기록」 절의 상수를 신호로 센 것 → 기록 절 제외(재발방지 시험) · 그 결과 드러난 진짜 신호 ASIDE_DRAFT 를 마디 L1 에 등재 · 본체 enginemap 🔴0🟡0 · 시험 OK. 🙋 이부장 요청: 이과장 정확도 지시 ①의 「add --no-next 뒤 drop」을 `asidequeue gate` 로 바꿔 주십시오. ⚠️ 남은 구멍: 이과장이 aside repl 을 맨손으로 돌리면 코드가 못 막는다(막으려면 PreToolUse 훅 = 사장님 권한 파일). 다음 MT-32",
+   "actor": "미상:330b96b0"
+  },
+  {
+   "t": "03:58:26",
+   "text": "✔ 이부장 ack r5706e0",
+   "actor": "이부장"
+  },
+  {
+   "t": "03:58:10",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] MT-33 후속(즉시): enginemap 🔴 '설계도에 있는데 코드에 없음: STALE_SIM' — MT-33 설계도 문구의 대문자 낱말이 신호로 오인(MT-4 MERGE_HEAD 와 같은 꼴). 문구를 고치거나 enginemap 신호 추출에서 상수명 제외. 같은 꼴 재발 방지 규칙까지.",
+   "actor": "이부장"
+  },
+  {
+   "t": "03:56:45",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴2 🔵0 🟡12 — 즉시: 반영 어긋남 · 코드↔설계도; 반영 어긋남 · 로컬↔github.io · 묶음: 사건×3 기타×9 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "03:55:17",
+   "text": "▶   — 1/7단계 · ✅ F1-21 DB 제목 정정(「이번 달」→「최근」): 라이브 <title>(최근)을 먼저 확인한 뒤 pipeline._save_db 로 맞춤. 비교: python - <<E import json;d=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['title'] for p in d['posts'] if p['code']=='F1-21']) E → 라이브 curl <title> 와 문자열 일치 확인함(11-12 03:50)",
+   "actor": "이과장"
+  },
+  {
+   "t": "03:54:05",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-33 완료(6ababa970): 누가 정비 · 무엇 xlinkcheck 페이블 5차 ❌X1 · 원인 STALE_SIM 0.48·다른 글 비교 없음 → 닮은 틀 제목 뒤바뀜 25쌍이 🟡 로 발행 게이트 통과 · 수정 🟡 = 옛 제목 ≥0.85 AND 다른 모든 글(현재·옛 제목)보다 더 맞을 때 · 실측 실DB 25쌍 전부 🔴 복귀·본체 전수 🔴0/🟡28 유지 · X3 러너 blob:none 지연 fetch 실측(40커밋 77회 78초) → DB blob 일괄 받기 실측 전체 10초 · X2·X4·J1~J3 같이 · 재발방지 시험 5건+falsepos 규칙 · 시험 339 OK·enginemap 🔴0. 다음 MT-34 → MT-32",
+   "actor": "미상:330b96b0"
+  },
+  {
+   "t": "03:53:58",
+   "text": "▶   — 1/7단계 · ✅ E4-14·C2-22 4채널 완결: 쓰레드 DfnJ_-SgRpX(E4-14)·DfnKfwRAXNZ(C2-22)(threadimg ✅·threadsdraft 점검 후 직접 게시, threads-link 기록, osmuimgcheck 쓰레드 이미지 MAD 0.0 일치) · 교차링크 갱신 완료(E4-14·C2-22). 비교 명령: python -m studio.osmuimgcheck --code E4-14 / C2-22 · python -m studio.osmu_manifest table --code E4-14 / C2-22. 다음: 인스타 카드 제작(C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12·C2-25·F3-13)",
+   "actor": "이과장"
+  },
+  {
+   "t": "03:52:46",
+   "text": "✅ C2-22 완료 — 집중력·키 성장 해외직구 식품 60개 중 37개에서 반입차단 ",
+   "actor": "이과장"
+  },
   {
    "t": "03:50:36",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-36 완료(87a7cb97f): 누가 정비 · 무엇 studio/roles.py AGENT_OWNERS 에 \"verify\": (\"이부장\",) · 왜 .claude/agents/verify.md 신설로 TestAgentOwners(Stop 하네스) 실패 · 확인 본체 syncorigin 뒤 TestAgentOwners OK · 재발방지 시험이 새 에이전트 누락을 그대로 잡는다(이번에도 잡았다). 다음: MT-33 마무리 → MT-34 → MT-32",
@@ -7217,86 +7299,6 @@
    "t": "03:06:05",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡14 — 즉시: 반영 어긋남 · 로컬↔github.io; 사장님 ☑️조치 【권고】PC 에서 aroma 용 Aside 브라우저 프로필(Profile · 묶음: 사건×3 기타×11 (상세 python -m studio.chkmon show)",
    "actor": "사람"
-  },
-  {
-   "t": "03:05:26",
-   "text": "▶   — 1/7단계 · ⏸ 03:3x 이부장 참고 확인: aside host profiles 실측 — aroma 프로필 39c7ac1a(Profile 1) = disconnected, 연결된 건 d529353a(Profile 0, magsori8975 전용)와 f8de2d92(Profile 1, 용도 미확인). repl 직접 발행도 aroma 프로필이 꺼져 있어 불가. 다른 프로필로는 게시하지 않음(계정 충돌 규칙). 사장님이 39c7ac1a 창을 켜 주시면 AM-SP-015 즉시 게시. (참고: aside profile list 실행이 새 세션을 만들고 402 — 한도 소진 재확인)",
-   "actor": "미상:de614107"
-  },
-  {
-   "t": "03:04:17",
-   "text": "▶   — 1/7단계 · [Aside][blocked] [aroma발행][blocked] AM-SP-015 1단계 중단: 브라우저 연결 끊김(Chrome extension not connected, 기존 탭 없음). 게시·탭 조작 없음, 재시도 안 함",
-   "actor": "Aside"
-  },
-  {
-   "t": "03:04:02",
-   "text": "▶   — 1/7단계 · ⏸ 대기 — AM-SP-015 승인됐으나 미게시(RSS 0건, 03:2x 확인): 발행 챗 1단계 조립이 'Chrome extension not connected for the requested browser profile'·탭 소실로 실패. aside repl 도 aroma 프로필(Profile 1) 미연결. 원인=Aside 브라우저의 aroma 프로필 창이 꺼져 있음(크레딧 402 아님). 사장님이 Aside 앱에서 aroma 프로필 창을 켜 주시면 즉시 재개(승인·초안·이미지 준비 완료, 게시 직전 순위 재확인은 03:0x 완료). 재시도·중복 없음",
-   "actor": "미상:de614107"
-  },
-  {
-   "t": "03:03:18",
-   "text": "▶   — 1/7단계 · AM-SP-015 사장님 03:00 폰 승인 확인(회수 e9dd1fa24). 게시 직전 teamRank 재조회: 32R 이후 변동 없음. 발행 챗 kqY90tgs7Dc1k0jm 응답 확인(402 아님) → 1단계 조립 지시 03:1x. RSS 미게시 0건",
-   "actor": "미상:de614107"
-  },
-  {
-   "t": "02:56:38",
-   "text": "✔ 이부장 ack r2aa884",
-   "actor": "이부장"
-  },
-  {
-   "t": "02:54:30",
-   "text": "▶   — 45/7단계 · 연료 8차 시작: F3-13 발행됨·재고 0 → 후보 2편 조사 중. 탈락(기발행): 마일리지통합 F3-08·외래300회 C1-17·일본면세 F3-10·수능할인 D1-19·불꽃/드론쇼 G1. 겨울축제(서울빛초롱·광화문마켓·스케이트장)는 올해 일정 공식 미발표라 보류. 후보 = C 폐기능검사(source·deepread·product 진행)·F 태국 무비자(한국인 90일 여부, source·deepread·product 진행)",
-   "actor": "3."
-  },
-  {
-   "t": "02:53:41",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴2 🔵2 🟡14 — 즉시: 반영 어긋남 · 화면 생성물 신선도; 반영 어긋남 · 로컬↔github.io; 사장님 🙋승인 【권고】AM-SP-015 「K리그2 승격 경우의 수 — 수원FC 64점이; 사장님 ☑️조치 소방 외관점검표 별지36 원문 확보(docs/source_소방시설외관점검 · 묶음: 사건×3 기타×11 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
-  },
-  {
-   "t": "02:50:45",
-   "text": "▶   — 1/7단계 · 사장님 11-12 지시 반영: Aside 크레딧 한도(402)면 이대리가 aside repl 로 직접 발행(CLAUDE.md 발행 경로 줄에 예외 추가). 승인·백업·MyBlog 확인 규칙 유지",
-   "actor": "미상:de614107"
-  },
-  {
-   "t": "02:50:09",
-   "text": "▶   — 1/7단계 · [관제탑 → 이과장] 대기열 정리(02:50): 이미 직접 게시된 E4-14·C2-22 인스타, F1-20·C2-20 네이버 4건을 뺐다(11-18 모드 종료 후 중복 게시 방지). 남은 대기열 = F1-20 검색설명·G3-30 색인 요청 — 직접 게시 모드라 Aside 채팅은 안 돈다 → 이과장이 직접 처리 후 drop. 앞으로 직접 게시한 항목은 그 자리에서 asidequeue drop.",
-   "actor": "이부장"
-  },
-  {
-   "t": "02:48:34",
-   "text": "▶   — 1/7단계 · 🌙 사장님 지시(「지금해」)로 02:5x 야간 글감 착수: 스포츠 AM-SP-015 「K리그2 승격 경우의 수」 초안 완료(kleague.com 공식 순위·일정 JSON 직접 계산, 화제=2위 3파전·김천 12위 불가 교차확인). 지금 V0(별도 에이전트) 진행 중 → 통과 시 결재 상정. 별건: aside CLI 402 Insufficient credits 재현(02:4x) — aroma 발행 챗도 영향 가능, 발행 단계에서 막히면 보고",
-   "actor": "미상:de614107"
-  },
-  {
-   "t": "02:48:12",
-   "text": "✔ 이부장 ack rb82862",
-   "actor": "이부장"
-  },
-  {
-   "t": "02:46:51",
-   "text": "🏁 draft1111f313 이부장 확인 — 끝남",
-   "actor": "이부장"
-  },
-  {
-   "t": "02:46:42",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵2 🟡16 — 즉시: 반영 어긋남 · 로컬↔github.io; 사장님 ☑️조치 Aside 크레딧 소진(402 Insufficient credits) —; 사장님 ☑️조치 소방 외관점검표 별지36 원문 확보(docs/source_소방시설외관점검 · 묶음: 사건×4 반영 감사×1 기타×11 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
-  },
-  {
-   "t": "02:46:35",
-   "text": "🏁 pub1112f313 이부장 확인 — 끝남",
-   "actor": "이부장"
-  },
-  {
-   "t": "02:41:29",
-   "text": "▶   — 1/7단계 · [관제탑 → 이과장] 👤 사장님 폰 승인 F3-13(02:38, 도장 원격) — 최우선 발행(오늘 시행). post_title = queue.json 현재 제목 「해외여행 약 반입 11월 12일부터 허용 — 6병, 넘으면 3개월 복용량까지」 그대로. 발행 뒤 라이브 <title>·og:image 실측 후 mark, 이어 교차링크·인스타·쓰레드.",
-   "actor": "이부장"
-  },
-  {
-   "t": "02:39:52",
-   "text": "📄 pub1112f313 작업 지시 등록(12035자, 2026-11-12 02:39:52)",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -7494,7 +7496,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "✅ 교차링크(blogger.py crosslink, naver 포함) 9편 완료: C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12·C2-25·F3-13 · F3-13 발행·검색설명·네이버(224473713192) 완료. 다음: 쓰레드(E4-14·C2-22) → 인스타 카드(8편) → G3-32·G3-33·G3-35 초안",
+   "what": "🙋 이부장 보고 — ① 네이버 사진 고지 정정 6편 완료(G3-31·C2-23·F4-32·F1-21·F3-12·C2-25). 확인 명령: curl -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=<번호>' | grep -c '<삽입 문장 앞부분>' → 6편 모두 1건, 제목 그대로, blogspot 링크 유지. 카테고리는 발행 패널에서 기대값과 일치 확인 후 발행. 다음 ②인스타·쓰레드 9편(게시 전 asidequeue gate)",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -7764,7 +7766,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡14 — 즉시: 반영 어긋남 · 로컬↔github.io; 사장님 ☑️조치 【권고】PC 에서 aroma 용 Aside 브라우저 프로필(Profile · 묶음: 사건×3 기타×11 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵0 🟡12 — 즉시: 반영 어긋남 · 코드↔설계도; 반영 어긋남 · 로컬↔github.io · 묶음: 사건×3 기타×9 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -8403,7 +8405,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ MT-36 완료(87a7cb97f): 누가 정비 · 무엇 studio/roles.py AGENT_OWNERS 에 \"verify\": (\"이부장\",) · 왜 .claude/agents/verify.md 신설로 TestAgentOwners(Stop 하네스) 실패 · 확인 본체 syncorigin 뒤 TestAgentOwners OK · 재발방지 시험이 새 에이전트 누락을 그대로 잡는다(이번에도 잡았다). 다음: MT-33 마무리 → MT-34 → MT-32",
+   "what": "✅ MT-32 완료(8d3fa61c9): 누가 정비 · 무엇 이과장 자동 깨움(leewake) · 원인 이부장이 11-11 부터 지시 머리를 「관제탑 → 이과장」으로 쓰는데 leewake 는 옛 머리(이부장 →)만 봤다 — 11-11 21:00~11-12 03:46 이과장 앞 지시 9줄이 0번 깨움. 모드·주입은 정상(같은 시간 지시서 갱신 6건은 이과장 대화 깨움 시각과 전부 일치) · 수정 tower_directive_to: 두 머리 모두·이부장 actor 만·줄 머리만(본문 인용·/api/report 위조로는 안 깸) · 이대리 깨움(idaeriwake)도 같은 함수 · 실측 같은 기록 재생 9줄 전부 깨움 · 설계도 마디 H 등재 · 시험 OK · 확인 대기 watch mt32-leewake-verify-1112(다음 지시 줄에서 실제 깨움). 이부장 SendMessage 깨움은 이제 불필요 — 지시는 보드 줄로.",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -34613,6 +34615,159 @@
    "what": "✅ MT-36 완료(87a7cb97f): 누가 정비 · 무엇 studio/roles.py AGENT_OWNERS 에 \"verify\": (\"이부장\",) · 왜 .claude/agents/verify.md 신설로 TestAgentOwners(Stop 하네스) 실패 · 확인 본체 syncorigin 뒤 TestAgentOwners OK · 재발방지 시험이 새 에이전트 누락을 그대로 잡는다(이번에도 잡았다). 다음: MT-33 마무리 → MT-34 → MT-32",
    "actor": "미상:330b96b0",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 03:53:58",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ E4-14·C2-22 4채널 완결: 쓰레드 DfnJ_-SgRpX(E4-14)·DfnKfwRAXNZ(C2-22)(threadimg ✅·threadsdraft 점검 후 직접 게시, threads-link 기록, osmuimgcheck 쓰레드 이미지 MAD 0.0 일치) · 교차링크 갱신 완료(E4-14·C2-22). 비교 명령: python -m studio.osmuimgcheck --code E4-14 / C2-22 · python -m studio.osmu_manifest table --code E4-14 / C2-22. 다음: 인스타 카드 제작(C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12·C2-25·F3-13)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 03:54:05",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-33 완료(6ababa970): 누가 정비 · 무엇 xlinkcheck 페이블 5차 ❌X1 · 원인 STALE_SIM 0.48·다른 글 비교 없음 → 닮은 틀 제목 뒤바뀜 25쌍이 🟡 로 발행 게이트 통과 · 수정 🟡 = 옛 제목 ≥0.85 AND 다른 모든 글(현재·옛 제목)보다 더 맞을 때 · 실측 실DB 25쌍 전부 🔴 복귀·본체 전수 🔴0/🟡28 유지 · X3 러너 blob:none 지연 fetch 실측(40커밋 77회 78초) → DB blob 일괄 받기 실측 전체 10초 · X2·X4·J1~J3 같이 · 재발방지 시험 5건+falsepos 규칙 · 시험 339 OK·enginemap 🔴0. 다음 MT-34 → MT-32",
+   "actor": "미상:330b96b0",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 03:55:17",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ F1-21 DB 제목 정정(「이번 달」→「최근」): 라이브 <title>(최근)을 먼저 확인한 뒤 pipeline._save_db 로 맞춤. 비교: python - <<E import json;d=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['title'] for p in d['posts'] if p['code']=='F1-21']) E → 라이브 curl <title> 와 문자열 일치 확인함(11-12 03:50)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 03:56:45",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵0 🟡12 — 즉시: 반영 어긋남 · 코드↔설계도; 반영 어긋남 · 로컬↔github.io · 묶음: 사건×3 기타×9 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r5706e0"
+  },
+  {
+   "ts": "2026-11-12 03:58:10",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] MT-33 후속(즉시): enginemap 🔴 '설계도에 있는데 코드에 없음: STALE_SIM' — MT-33 설계도 문구의 대문자 낱말이 신호로 오인(MT-4 MERGE_HEAD 와 같은 꼴). 문구를 고치거나 enginemap 신호 추출에서 상수명 제외. 같은 꼴 재발 방지 규칙까지.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 03:58:26",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r5706e0 — 설계도 오인 정비 지시·반영 다음 배포",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r5706e0"
+  },
+  {
+   "ts": "2026-11-12 04:02:18",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-34·MT-33후속 완료(216bd4998): ①직접 게시 사전 점검 — direct_gate(대기열 add 와 같은 preclear + Aside 진행 중 중복) · 새 명령 `python -m studio.asidequeue gate --code <코드> --kind <naver|insta|threads> [--file <본문·첨부>] [--fix]`(실패 exit 2) · naverwrite --publish 는 실패 시 거부 · preclear ⑥ 쓰레드 첨부(threadimg: 실사진·재탕·인스타 표지와 다른 사진) ⑦ 이미 게시된 채널 — 대기열·직접 경로 같은 판정 · 실측 본체 E4-14 threads 게이트 거부(⑦ 이미 게시) exit 2, C2-22 ⑥ 통과·⑦ 거부, F3-13 ③⑥ 파일 없음 거부 ②enginemap 🔴 STALE_SIM = 설계도 「사건 대입 기록」 절의 상수를 신호로 센 것 → 기록 절 제외(재발방지 시험) · 그 결과 드러난 진짜 신호 ASIDE_DRAFT 를 마디 L1 에 등재 · 본체 enginemap 🔴0🟡0 · 시험 OK. 🙋 이부장 요청: 이과장 정확도 지시 ①의 「add --no-next 뒤 drop」을 `asidequeue gate` 로 바꿔 주십시오. ⚠️ 남은 구멍: 이과장이 aside repl 을 맨손으로 돌리면 코드가 못 막는다(막으려면 PreToolUse 훅 = 사장님 권한 파일). 다음 MT-32",
+   "actor": "미상:330b96b0",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 04:02:29",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] MT-33 검수(verify): 합성 재현 3쌍 모두 🔴 ✅ · 시험 587 OK ✅ · ❌ enginemap STALE_SIM(03:58 줄로 처리 중). 덧붙여 시험에 pair2(G1-03제목+G2-01URL)·pair3(G3-01제목+C1-10URL) 표본도 추가 — 지금은 pair1 만 있음.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 04:07:05",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] MT-34 검수(verify) 합격 — 단 이과장 aside repl 직접 게시·threadsdraft 경로는 direct_gate 를 자동 호출하지 않음(수동 명령만). MT-37: 이과장이 쓰는 게시 진입점(쓰레드·인스타·네이버 repl 스크립트/threadsdraft)에서 direct_gate 를 자동 호출하고 실패면 중단. MT-32 뒤.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 04:07:13",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] 직접 게시 사전 점검 명령 확정(정비 MT-34): 게시 전마다 python -m studio.asidequeue gate --code <코드> --kind <naver|insta|threads> — 거부(exit 2)면 게시 금지. 03:42 줄의 'asidequeue add --no-next 후 drop' 방식은 이 명령으로 대체.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 04:08:32",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-32 완료(8d3fa61c9): 누가 정비 · 무엇 이과장 자동 깨움(leewake) · 원인 이부장이 11-11 부터 지시 머리를 「관제탑 → 이과장」으로 쓰는데 leewake 는 옛 머리(이부장 →)만 봤다 — 11-11 21:00~11-12 03:46 이과장 앞 지시 9줄이 0번 깨움. 모드·주입은 정상(같은 시간 지시서 갱신 6건은 이과장 대화 깨움 시각과 전부 일치) · 수정 tower_directive_to: 두 머리 모두·이부장 actor 만·줄 머리만(본문 인용·/api/report 위조로는 안 깸) · 이대리 깨움(idaeriwake)도 같은 함수 · 실측 같은 기록 재생 9줄 전부 깨움 · 설계도 마디 H 등재 · 시험 OK · 확인 대기 watch mt32-leewake-verify-1112(다음 지시 줄에서 실제 깨움). 이부장 SendMessage 깨움은 이제 불필요 — 지시는 보드 줄로.",
+   "actor": "미상:330b96b0",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 04:09:12",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] (자동 깨움 시험 겸 — SendMessage 없음) 지금 순서: ①네이버 사진 고지 정정 6편(G3-31·C2-23·F4-32·F1-21·F3-12·C2-25) ②인스타·쓰레드 9편(C2-20~F3-13, 게시 전 asidequeue gate 통과 후) ③초안 G3-32·G3-33·G3-35. 이 줄을 받으면 batchboard now 로 「04:10 줄 수신」 한 줄 먼저.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 04:10:29",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "04:10 줄 수신 — ①네이버 사진 고지 정정 6편 확인부터(대상 글의 사진 고지 누락 실측) → ②인스타·쓰레드(asidequeue gate 통과 후) → ③G3-32·G3-33·G3-35",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 04:19:22",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] MT-38: REFLECT_DRIFT fix1102.html 91분째 — 03:52 등 배포를 몇 번 거쳐도 로컬↔github.io 가 계속 다름(배포가 해소 못 함). 원인 실측(배포 뒤에 로컬이 다시 구워지나·deploy 대상에서 빠지나·비교 기준 문제인가) 후 수정. 같은 꼴 approval_m.json 도 반복됨.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 04:19:28",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "🙋 이부장 보고 — ① 네이버 사진 고지 정정 6편 완료(G3-31·C2-23·F4-32·F1-21·F3-12·C2-25). 확인 명령: curl -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=<번호>' | grep -c '<삽입 문장 앞부분>' → 6편 모두 1건, 제목 그대로, blogspot 링크 유지. 카테고리는 발행 패널에서 기대값과 일치 확인 후 발행. 다음 ②인스타·쓰레드 9편(게시 전 asidequeue gate)",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "rd08556"
   }
  ]
 }
