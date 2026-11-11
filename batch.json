@@ -7071,17 +7071,37 @@
    "confirm_note": "이부장 실측: F3-13 라이브 200 https://lifeinfo8975.blogspot.com/2026/11/11-12-6-3.html · 제목=승인 제목 일치 · image_src 496 · 보완 문장 라이브 확인(02:46)"
   }
  },
- "updated": "2026-11-12 02:56:38",
+ "updated": "2026-11-12 03:05:26",
  "current": {
-  "batch": "fuel1030",
+  "batch": "aroma",
   "code": "",
   "title": "",
-  "step": 45,
-  "what": "연료 8차 시작: F3-13 발행됨·재고 0 → 후보 2편 조사 중. 탈락(기발행): 마일리지통합 F3-08·외래300회 C1-17·일본면세 F3-10·수능할인 D1-19·불꽃/드론쇼 G1. 겨울축제(서울빛초롱·광화문마켓·스케이트장)는 올해 일정 공식 미발표라 보류. 후보 = C 폐기능검사(source·deepread·product 진행)·F 태국 무비자(한국인 90일 여부, source·deepread·product 진행)",
-  "since": "13:35",
-  "since_at": "2026-10-30 13:35:23"
+  "step": 1,
+  "what": "⏸ 03:3x 이부장 참고 확인: aside host profiles 실측 — aroma 프로필 39c7ac1a(Profile 1) = disconnected, 연결된 건 d529353a(Profile 0, magsori8975 전용)와 f8de2d92(Profile 1, 용도 미확인). repl 직접 발행도 aroma 프로필이 꺼져 있어 불가. 다른 프로필로는 게시하지 않음(계정 충돌 규칙). 사장님이 39c7ac1a 창을 켜 주시면 AM-SP-015 즉시 게시. (참고: aside profile list 실행이 새 세션을 만들고 402 — 한도 소진 재확인)",
+  "since": "14:53",
+  "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "03:05:26",
+   "text": "▶   — 1/7단계 · ⏸ 03:3x 이부장 참고 확인: aside host profiles 실측 — aroma 프로필 39c7ac1a(Profile 1) = disconnected, 연결된 건 d529353a(Profile 0, magsori8975 전용)와 f8de2d92(Profile 1, 용도 미확인). repl 직접 발행도 aroma 프로필이 꺼져 있어 불가. 다른 프로필로는 게시하지 않음(계정 충돌 규칙). 사장님이 39c7ac1a 창을 켜 주시면 AM-SP-015 즉시 게시. (참고: aside profile list 실행이 새 세션을 만들고 402 — 한도 소진 재확인)",
+   "actor": "미상:de614107"
+  },
+  {
+   "t": "03:04:17",
+   "text": "▶   — 1/7단계 · [Aside][blocked] [aroma발행][blocked] AM-SP-015 1단계 중단: 브라우저 연결 끊김(Chrome extension not connected, 기존 탭 없음). 게시·탭 조작 없음, 재시도 안 함",
+   "actor": "Aside"
+  },
+  {
+   "t": "03:04:02",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — AM-SP-015 승인됐으나 미게시(RSS 0건, 03:2x 확인): 발행 챗 1단계 조립이 'Chrome extension not connected for the requested browser profile'·탭 소실로 실패. aside repl 도 aroma 프로필(Profile 1) 미연결. 원인=Aside 브라우저의 aroma 프로필 창이 꺼져 있음(크레딧 402 아님). 사장님이 Aside 앱에서 aroma 프로필 창을 켜 주시면 즉시 재개(승인·초안·이미지 준비 완료, 게시 직전 순위 재확인은 03:0x 완료). 재시도·중복 없음",
+   "actor": "미상:de614107"
+  },
+  {
+   "t": "03:03:18",
+   "text": "▶   — 1/7단계 · AM-SP-015 사장님 03:00 폰 승인 확인(회수 e9dd1fa24). 게시 직전 teamRank 재조회: 32R 이후 변동 없음. 발행 챗 kqY90tgs7Dc1k0jm 응답 확인(402 아님) → 1단계 조립 지시 03:1x. RSS 미게시 0건",
+   "actor": "미상:de614107"
+  },
   {
    "t": "02:56:38",
    "text": "✔ 이부장 ack r2aa884",
@@ -7260,26 +7280,6 @@
   {
    "t": "00:23:12",
    "text": "✔ 이부장 ack r60972b",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:23:02",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] MT-31(우선·Stop 하네스 막힘): tests/test_studio_pure.py::TestCreditFold::test_busy_says_hold_not_stall(2243행)이 실제 data/aside_browser.lock 존재(이과장 naverwrite 직접 게시 중)에 따라 실패 — 시험이 실환경 파일을 읽음. 잠금 파일 경로를 임시 폴더로 주입하거나 busy() 에 경로 인자를 줘 격리. 이과장 직접 게시가 도는 동안 매 턴 막히므로 지금.",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:21:32",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청(정비): tests/test_studio_pure.py::TestCreditFold::test_busy_says_hold_not_stall(2243행)이 data/aside_browser.lock 이 존재하는 동안(naverwrite 실행 중) 실패 → Stop 하네스가 매번 막음. 직접 게시 모드로 naverwrite 를 계속 돌리면 반복. 테스트가 실제 락 파일을 읽지 않게(격리) 정비 필요. 락이 풀린 뒤 단독 실행은 OK(11-11 23:19 실측)",
-   "actor": "이과장"
-  },
-  {
-   "t": "00:21:10",
-   "text": "🏷️ draft1112g333 담당=이과장",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:21:01",
-   "text": "📄 draft1112g333 작업 지시 등록(11302자, 2026-11-12 00:21:01)",
    "actor": "이부장"
   }
  ],
@@ -7577,7 +7577,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "사장님 11-12 지시 반영: Aside 크레딧 한도(402)면 이대리가 aside repl 로 직접 발행(CLAUDE.md 발행 경로 줄에 예외 추가). 승인·백업·MyBlog 확인 규칙 유지",
+   "what": "⏸ 03:3x 이부장 참고 확인: aside host profiles 실측 — aroma 프로필 39c7ac1a(Profile 1) = disconnected, 연결된 건 d529353a(Profile 0, magsori8975 전용)와 f8de2d92(Profile 1, 용도 미확인). repl 직접 발행도 aroma 프로필이 꺼져 있어 불가. 다른 프로필로는 게시하지 않음(계정 충돌 규칙). 사장님이 39c7ac1a 창을 켜 주시면 AM-SP-015 즉시 게시. (참고: aside profile list 실행이 새 세션을 만들고 402 — 한도 소진 재확인)",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -34342,6 +34342,48 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "r2aa884"
+  },
+  {
+   "ts": "2026-11-12 03:03:18",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "AM-SP-015 사장님 03:00 폰 승인 확인(회수 e9dd1fa24). 게시 직전 teamRank 재조회: 32R 이후 변동 없음. 발행 챗 kqY90tgs7Dc1k0jm 응답 확인(402 아님) → 1단계 조립 지시 03:1x. RSS 미게시 0건",
+   "actor": "미상:de614107",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 03:04:02",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "⏸ 대기 — AM-SP-015 승인됐으나 미게시(RSS 0건, 03:2x 확인): 발행 챗 1단계 조립이 'Chrome extension not connected for the requested browser profile'·탭 소실로 실패. aside repl 도 aroma 프로필(Profile 1) 미연결. 원인=Aside 브라우저의 aroma 프로필 창이 꺼져 있음(크레딧 402 아님). 사장님이 Aside 앱에서 aroma 프로필 창을 켜 주시면 즉시 재개(승인·초안·이미지 준비 완료, 게시 직전 순위 재확인은 03:0x 완료). 재시도·중복 없음",
+   "actor": "미상:de614107",
+   "sid": "de614107",
+   "req": "r35c192"
+  },
+  {
+   "ts": "2026-11-12 03:04:17",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "[Aside][blocked] [aroma발행][blocked] AM-SP-015 1단계 중단: 브라우저 연결 끊김(Chrome extension not connected, 기존 탭 없음). 게시·탭 조작 없음, 재시도 안 함",
+   "actor": "Aside",
+   "sid": ""
+  },
+  {
+   "ts": "2026-11-12 03:05:26",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "⏸ 03:3x 이부장 참고 확인: aside host profiles 실측 — aroma 프로필 39c7ac1a(Profile 1) = disconnected, 연결된 건 d529353a(Profile 0, magsori8975 전용)와 f8de2d92(Profile 1, 용도 미확인). repl 직접 발행도 aroma 프로필이 꺼져 있어 불가. 다른 프로필로는 게시하지 않음(계정 충돌 규칙). 사장님이 39c7ac1a 창을 켜 주시면 AM-SP-015 즉시 게시. (참고: aside profile list 실행이 새 세션을 만들고 402 — 한도 소진 재확인)",
+   "actor": "미상:de614107",
+   "sid": "de614107",
+   "req": "rf474d0"
   }
  ]
 }
