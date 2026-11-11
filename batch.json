@@ -6683,7 +6683,8 @@
      "code": "E4-14-seodesc",
      "title": "E4-14 검색설명 — 라이브에 아직 안 붙었다",
      "state": "todo",
-     "note": "자동 생성(2026-08-23 배선). 검색설명 는 Blogger API 로 못 쓴다 — 브라우저 편집화면에서 직접 입력하고, 성공 판정은 라이브 meta 재조회로만 한다. 확인: python -m studio.seodesc scan --only E4-14"
+     "note": "자동 생성(2026-08-23 배선). 검색설명 는 Blogger API 로 못 쓴다 — 브라우저 편집화면에서 직접 입력하고, 성공 판정은 라이브 meta 재조회로만 한다. 확인: python -m studio.seodesc scan --only E4-14",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -6704,7 +6705,8 @@
      "code": "C2-22-seodesc",
      "title": "C2-22 검색설명 — 라이브에 아직 안 붙었다",
      "state": "todo",
-     "note": "자동 생성(2026-08-23 배선). 검색설명 는 Blogger API 로 못 쓴다 — 브라우저 편집화면에서 직접 입력하고, 성공 판정은 라이브 meta 재조회로만 한다. 확인: python -m studio.seodesc scan --only C2-22"
+     "note": "자동 생성(2026-08-23 배선). 검색설명 는 Blogger API 로 못 쓴다 — 브라우저 편집화면에서 직접 입력하고, 성공 판정은 라이브 meta 재조회로만 한다. 확인: python -m studio.seodesc scan --only C2-22",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -6766,7 +6768,8 @@
     {
      "code": "F1-20",
      "title": "중동 여행경보 3단계·4단계 — UAE·카타르 환승 예정이라면 외교부가 권고하는 (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -6780,7 +6783,8 @@
     {
      "code": "G3-31",
      "title": "부산국제아동도서전 12월 3일~6일 — '무료입장'은 조건부, 만 14세 미만  초안 [담당:이과장]",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장",
@@ -6794,7 +6798,8 @@
     {
      "code": "C2-23",
      "title": "김장매트·김치통도 올해 처음 검사합니다 — 식약처 김장철 검사 11월 9~20일 초안 [담당:이과장]",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장",
@@ -6822,7 +6827,8 @@
     {
      "code": "G3-31",
      "title": "부산국제아동도서전 12월 3일~6일 — '무료입장'은 조건부, 만 14세 미만  (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -6838,7 +6844,8 @@
     {
      "code": "C2-23",
      "title": "김장매트·김치통도 올해 처음 검사합니다 — 식약처 김장철 검사 11월 9~20일 (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -6890,7 +6897,7 @@
    "order_at": "2026-11-11 19:40:39"
   }
  },
- "updated": "2026-11-11 19:52:47",
+ "updated": "2026-11-11 19:56:18",
  "current": {
   "batch": "maint",
   "code": "",
@@ -6901,6 +6908,11 @@
   "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "19:56:18",
+   "text": "✔ 이부장 ack rb1b2b7",
+   "actor": "이부장"
+  },
   {
    "t": "19:52:47",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 관제탑 19:39 3건 처리 — ①#822 재등록 거부 원인 = doing_dup 이 credit_dead 를 진행 중으로 셈 → asidequeue.doing_dup·enginestate 미등록초안 판정에서 credit_dead 제외(커밋 19013c9ae, 본체 실측 doing_dup(C2-20,naver)=None → 이제 asidequeue add 재등록 가능) · ③8011 재시작 대안: 결재서버 자동 재적재(같은 PID os.execv — 프로세스 종료 아님)가 approve_server.py 만 감시하던 것을 불러온 studio.* 모듈 전체로 넓힘(갈아타기 전 문법 확인도 전부) · 이 커밋(2ba5ef1f0)이 approve_server.py 를 바꿔 동기 즉시 옛 서버가 스스로 갈아탐 — 8011 ping·approval view 200 정상(갈아탄 시각은 서버 콘솔에만 찍혀 확인 못 함). 수동이 필요하면 POST http://127.0.0.1:8011/api/reload(같은 PID). ⏸ ②MT-26 대기 — Aside CLI 에 새 채팅 만들기 명령이 없다(session: list·resume·stop·steer·queue·archive·delete 뿐 — 실행해 확인), 새 채팅은 첫 턴(모델 호출)으로만 생기는데 지금 402 라 못 만든다. 풀리는 조건: 사장님 충전 후 사이드패널에서 새 채팅 1개 생성(또는 충전 뒤 정비가 aside 첫 턴으로 생성) → ID 받으면 asidequeue LEE_CHAT·asidestate KNOWN·aside_order.sh·aside_bindcp.sh·양식·스킬 일괄 교체. 참고: 18:48 누군가 「aside sessions get …」 을 잘못 쳐 새 채팅 2개(URRk8EIv1CZureEE·vN2yvCNfsT8yBq7B)가 생겼다 — CLI 생성이라 사이드패널 고정이 아님(10-17 교체 기록상 패널 생성을 써 왔다). 추가 확인(advisor): MT-24 가 이과장·이대리 자동 깨움을 끊지 않음(leewake·idaeriwake 는 now_log 를 읽음) · MT-8 실발화 「[자동 → 3.] PRODUCT_TODO F4-32」 19:38 확인 · 본체 tests 578 OK·validate FAIL 0·selfcheck 🔴 는 기존 건(스킬 패키지·장부 정체) · 점검모니터 실측: skey 동작·키에 「N분」 0·콘솔 오류 0(blocked #793~807 은 180분 창 밖이라 원래 규칙으로 안 보임) · 전체 ordercheck 결과: 지적 1건(옛 지시서 v0fix1107g415 의 pubready --code 누락 — MT-7 무관)",
@@ -7094,11 +7106,6 @@
   {
    "t": "19:06:07",
    "text": "✔ 이부장 ack rbc3e9c",
-   "actor": "이부장"
-  },
-  {
-   "t": "19:05:57",
-   "text": "✔ 이부장 ack r979108",
    "actor": "이부장"
   }
  ],
@@ -33311,6 +33318,17 @@
    "what": "✅ 관제탑 19:39 3건 처리 — ①#822 재등록 거부 원인 = doing_dup 이 credit_dead 를 진행 중으로 셈 → asidequeue.doing_dup·enginestate 미등록초안 판정에서 credit_dead 제외(커밋 19013c9ae, 본체 실측 doing_dup(C2-20,naver)=None → 이제 asidequeue add 재등록 가능) · ③8011 재시작 대안: 결재서버 자동 재적재(같은 PID os.execv — 프로세스 종료 아님)가 approve_server.py 만 감시하던 것을 불러온 studio.* 모듈 전체로 넓힘(갈아타기 전 문법 확인도 전부) · 이 커밋(2ba5ef1f0)이 approve_server.py 를 바꿔 동기 즉시 옛 서버가 스스로 갈아탐 — 8011 ping·approval view 200 정상(갈아탄 시각은 서버 콘솔에만 찍혀 확인 못 함). 수동이 필요하면 POST http://127.0.0.1:8011/api/reload(같은 PID). ⏸ ②MT-26 대기 — Aside CLI 에 새 채팅 만들기 명령이 없다(session: list·resume·stop·steer·queue·archive·delete 뿐 — 실행해 확인), 새 채팅은 첫 턴(모델 호출)으로만 생기는데 지금 402 라 못 만든다. 풀리는 조건: 사장님 충전 후 사이드패널에서 새 채팅 1개 생성(또는 충전 뒤 정비가 aside 첫 턴으로 생성) → ID 받으면 asidequeue LEE_CHAT·asidestate KNOWN·aside_order.sh·aside_bindcp.sh·양식·스킬 일괄 교체. 참고: 18:48 누군가 「aside sessions get …」 을 잘못 쳐 새 채팅 2개(URRk8EIv1CZureEE·vN2yvCNfsT8yBq7B)가 생겼다 — CLI 생성이라 사이드패널 고정이 아님(10-17 교체 기록상 패널 생성을 써 왔다). 추가 확인(advisor): MT-24 가 이과장·이대리 자동 깨움을 끊지 않음(leewake·idaeriwake 는 now_log 를 읽음) · MT-8 실발화 「[자동 → 3.] PRODUCT_TODO F4-32」 19:38 확인 · 본체 tests 578 OK·validate FAIL 0·selfcheck 🔴 는 기존 건(스킬 패키지·장부 정체) · 점검모니터 실측: skey 동작·키에 「N분」 0·콘솔 오류 0(blocked #793~807 은 180분 창 밖이라 원래 규칙으로 안 보임) · 전체 ordercheck 결과: 지적 1건(옛 지시서 v0fix1107g415 의 pubready --code 누락 — MT-7 무관)",
    "actor": "미상:330b96b0",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-11 19:56:18",
+   "bid": "draft1111f432",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack rb1b2b7 — V0 통과(19:44)·경미 보충 f2ed2e4bd·썸네일 492 배포 200(19:46)·결재함 등록 — 사장님 승인 대기",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "rb1b2b7"
   }
  ]
 }
