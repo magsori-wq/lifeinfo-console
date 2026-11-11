@@ -27153,7 +27153,7 @@
   {
    "id": "xlink-c225",
    "added": "2026-11-12",
-   "what": "🔗 C2-25 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-25",
+   "what": "🔗 C2-25 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-25",
    "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code C2-25",
    "owner": "claude",
@@ -27424,6 +27424,17 @@
    "what": "【권고】직접 게시 자물쇠·이부장 사칭 방지 훅이 PowerShell 도구에도 걸리게 .claude/settings.json PreToolUse matcher 에 PowerShell 추가(설정 파일은 사장님 몫) 【근거】페이블 6차(docs/검증_페이블_20261112_maint_commits6.md) 실측: Bash 에서 막힌 같은 게시 문자열이 PowerShell 도구로는 그대로 실행됨·towerguard 도 같은 구멍 【위험】PowerShell 쪽 명령도 같은 오탐 범위에 들어감(정비가 오탐 축소 중)",
    "due": "2026-11-12",
    "cmd": "정비가 수정안(설정 diff) 준비 → 사장님 승인 후 반영",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
+  },
+  {
+   "id": "f313-insta-classifier-1112",
+   "added": "2026-11-12",
+   "what": "【권고】F3-13 해외여행 약 반입 인스타 게시 허용 — 이과장 게시 명령이 자동 분류기에 거부(사유 없음, 05:17). 게시 전 검사 통과·카드·캡션 준비 끝 【근거】이과장 05:17 보고·asidequeue gate F3-13 insta 통과 【위험】허용 전까지 F3-13 인스타만 대기(다른 글 게시는 계속)",
+   "due": "2026-11-12",
+   "cmd": "사장님이 이 창에 「F3-13 인스타 허용」 → 이부장이 이과장에게 전달",
    "owner": "user",
    "state": "todo",
    "kind": "approve",
