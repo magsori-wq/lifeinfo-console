@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-11 21:12",
+ "generated": "2026-11-11 22:39",
  "routines": [
   {
    "num": 1,
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/10 22:32",
-   "next": "11/11 22:30",
+   "last": "11/11 22:33",
+   "next": "11/12 22:30",
    "model": "sonnet-5-5",
-   "report_day": "1109",
-   "report": "11-09 야간검증: 오늘 발행 5편 중 H1-39 OpenDART 대조 일치(오류0). A5-20/A5-21 조문 직접대조는 law.go.kr API 검증실패로 미결, G2-07 9/17 최종확정 보도자료 못 찾음(상한값은 2차보도 확인), D3-15 미검증. 라이브 수정 없음. 이어받은 것: 10-20 이후 공백, 새로 본 것: 위 5편. 카톡 발송 완료",
+   "report_day": "1111",
+   "report": "11-11 야간검증: 오늘 발행 18편 중 3편 공식원문 대조 — F1-19(passport.go.kr 26-786)·E4-13(Apple 149715 CVE 9건) 일치, C2-21(korea.kr 보도자료)은 본문이 hwpx/pdf 첨부라 수치 대조 미완(다운로드 승인 필요·미실시). 오류 0건. 미검증 6편: E3-07,E2-18,F3-11,G3-30,E4-14,C2-22. 이어받은것: 직전회차 10-20 이후 21일 공백. 카톡 발송 완료",
    "runs": [
+    {
+     "at": "11/11 22:39",
+     "link": "claude://claude.ai/epitaxy/local_55506205-e8ef-4933-ba8a-3a518dbd4926",
+     "archived": false
+    },
     {
      "at": "11/10 22:33",
      "link": "claude://claude.ai/epitaxy/local_16ca62a6-52ca-40b9-b188-52ce6fc9657e",
@@ -182,11 +187,6 @@
     {
      "at": "11/07 22:44",
      "link": "claude://claude.ai/epitaxy/local_ecfa80a2-a86a-4cb5-b9b8-adc448bb7da5",
-     "archived": true
-    },
-    {
-     "at": "11/07 04:42",
-     "link": "claude://claude.ai/epitaxy/local_39630941-0bfe-4f39-93aa-265fbebd8662",
      "archived": true
     }
    ]

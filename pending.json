@@ -1,13 +1,13 @@
 {
- "rev": "fbd429ef8",
+ "rev": "d71cf5c4a",
  "counts": {
-  "total": 509,
+  "total": 510,
   "osmu_done": 502,
-  "osmu_pending": 7,
+  "osmu_pending": 8,
   "indexed": 0,
-  "index_pending": 509,
+  "index_pending": 510,
   "index_requested": 179,
-  "index_todo": 88,
+  "index_todo": 89,
   "index_benign": 242
  },
  "actionable": [
@@ -49,6 +49,23 @@
   {
    "code": "C2-23",
    "title": "김장매트·김치통도 올해 처음 검사합니다 — 식약처 김장",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "C2-25",
+   "title": "한랭질환 예방수칙 — 저체온증·동상 고위험군은 누구, ",
    "need": [
     "OSMU",
     "색인요청"
@@ -217,22 +234,6 @@
   {
    "code": "A1-22",
    "title": "청년내일저축계좌 중도인출·재가입·미납 — 헷갈리는 6가",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A1-23",
-   "title": "어린이집·유치원 신청 11월 2일 시작 — 10월 28",
    "need": [
     "색인요청"
    ],
