@@ -7103,17 +7103,22 @@
    "order_at": "2026-11-12 03:36:51"
   }
  },
- "updated": "2026-11-12 05:12:10",
+ "updated": "2026-11-12 05:13:49",
  "current": {
-  "batch": "followup",
+  "batch": "pub1111f312",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🔒 05:03 안전 지시 수신 — 앞으로 게시마다 직전에 gate 새로 통과, 같은 글·채널 재실행 금지. 실측 공개: F1-21 쓰레드는 1차 --post 후 프로필(2회 조회)에 안 보여 재실행 1회 했고 그 뒤 프로필에 F1-21 글 1건(DfnTWzekhaU). 이중 게시 여부 확인 명령: python data/_th_url.py (프로필 상위 글 목록)",
-  "since": "16:10",
-  "since_at": "2026-10-24 16:10:44"
+  "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfnTpjbkwMN/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+  "since": "01:34",
+  "since_at": "2026-11-12 01:34:43"
  },
  "log": [
+  {
+   "t": "05:13:49",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/DfnTpjbkwMN/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장"
+  },
   {
    "t": "05:12:10",
    "text": "▶   — 1/7단계 · 🔒 05:03 안전 지시 수신 — 앞으로 게시마다 직전에 gate 새로 통과, 같은 글·채널 재실행 금지. 실측 공개: F1-21 쓰레드는 1차 --post 후 프로필(2회 조회)에 안 보여 재실행 1회 했고 그 뒤 프로필에 F1-21 글 1건(DfnTWzekhaU). 이중 게시 여부 확인 명령: python data/_th_url.py (프로필 상위 글 목록)",
@@ -7308,11 +7313,6 @@
    "t": "03:55:17",
    "text": "▶   — 1/7단계 · ✅ F1-21 DB 제목 정정(「이번 달」→「최근」): 라이브 <title>(최근)을 먼저 확인한 뒤 pipeline._save_db 로 맞춤. 비교: python - <<E import json;d=json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'));print([p['title'] for p in d['posts'] if p['code']=='F1-21']) E → 라이브 curl <title> 와 문자열 일치 확인함(11-12 03:50)",
    "actor": "이과장"
-  },
-  {
-   "t": "03:54:05",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-33 완료(6ababa970): 누가 정비 · 무엇 xlinkcheck 페이블 5차 ❌X1 · 원인 STALE_SIM 0.48·다른 글 비교 없음 → 닮은 틀 제목 뒤바뀜 25쌍이 🟡 로 발행 게이트 통과 · 수정 🟡 = 옛 제목 ≥0.85 AND 다른 모든 글(현재·옛 제목)보다 더 맞을 때 · 실측 실DB 25쌍 전부 🔴 복귀·본체 전수 🔴0/🟡28 유지 · X3 러너 blob:none 지연 fetch 실측(40커밋 77회 78초) → DB blob 일괄 받기 실측 전체 10초 · X2·X4·J1~J3 같이 · 재발방지 시험 5건+falsepos 규칙 · 시험 339 OK·enginemap 🔴0. 다음 MT-34 → MT-32",
-   "actor": "미상:330b96b0"
   }
  ],
  "currents": {
@@ -8572,7 +8572,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224473677724 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfnTpjbkwMN/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "01:34",
    "since_at": "2026-11-12 01:34:43"
   },
@@ -34993,6 +34993,16 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "🔒 05:03 안전 지시 수신 — 앞으로 게시마다 직전에 gate 새로 통과, 같은 글·채널 재실행 금지. 실측 공개: F1-21 쓰레드는 1차 --post 후 프로필(2회 조회)에 안 보여 재실행 1회 했고 그 뒤 프로필에 F1-21 글 1건(DfnTWzekhaU). 이중 게시 여부 확인 명령: python data/_th_url.py (프로필 상위 글 목록)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 05:13:49",
+   "bid": "pub1111f312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfnTpjbkwMN/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "actor": "이과장",
    "sid": "c36eea8e"
   }
