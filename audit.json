@@ -2816,6 +2816,22 @@
    "target": "F1-19",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-11T13:42:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-limit-retry-1111",
+   "detail": "정정: lifeinfo Aside 는 13:39 #784 완료(라이브 meta 실측 확인) — 한도 소진은 aroma 전용 챗 사정으로 보임(확인 못 함). 재시도 대기 불필요",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-11T13:43:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aside-down-1111-1332",
+   "detail": "13:39 #784 정상 완료로 회복(원인은 간헐 CDP 시간 초과로 추정)",
+   "via": "cli"
   }
  ]
 }
