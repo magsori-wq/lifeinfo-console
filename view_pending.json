@@ -1,9 +1,10 @@
 {
- "computed_at": "2026-11-11 11:30:44",
- "source_head": "b5ae6efdc6a1",
+ "computed_at": "2026-11-11 11:34:35",
+ "source_head": "85747f7de221",
  "ids": [
   "A2-31",
-  "E4-13"
+  "E4-13",
+  "deploy-thumb-480"
  ],
  "posts": [
   {
@@ -68,7 +69,7 @@
    "code": "E4-13",
    "title": "아이폰 업데이트 27.2.1 — 보안 수정 9건, iPhone 11 이상이면 대상입니다",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 아이폰업데이트27.2.1_글_HTML.txt",
@@ -92,7 +93,16 @@
    "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "deploy-thumb-480",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(480_ios_27_2_1.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "state": "todo",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": [
   {
    "id": "c1-11-geon-yeonjang-check",
