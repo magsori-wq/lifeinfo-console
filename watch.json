@@ -26901,10 +26901,12 @@
    "due": "2026-11-11",
    "cmd": "python studio/blogger.py update-post --code F1-21 --file 해외안전공지3건_글_HTML.txt --title \"독일 11월 20일 2차 시위 34개 도시, 알바니아 2단계·사우디 3단계 — 외교부 최근 해외 안전공지 3건\"",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "verify": "curl -s https://lifeinfo8975.blogspot.com/2026/11/11-20-2-34-2-3-3.html | grep -o '<title>[^<]*'",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-11",
+   "result": "사장님 채팅 「정정허용」 21:13 — 이부장 회수 · 사장님 21:11 이부장 창 「정정허용」 — F1-21 라이브 제목 이번 달→최근 정정 승인"
   },
   {
    "id": "deploy-thumb-495",
@@ -26932,6 +26934,26 @@
    "what": "몽골 무비자 기한 충돌 — 외교부 사증면제 표(2026.9월 기준) 일반여권 일방 90일 2026.12.31까지 vs 몽골 이민청 2026 목록 30일 34개국(대한민국 없음). 보류, 글 금지",
    "due": "2026-11-20",
    "cmd": "curl -sL -A Mozilla/5.0 https://www.immigration.gov.mn/en/articles/537/ | grep -ci korea",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "mongolia-visa-conflict-1111",
+   "added": "2026-11-11",
+   "what": "몽골 무비자 90일 2026.12.31 종료설 — 외교부 표(~2026.12.31) vs 몽골 이민청 목록(한국 없음) 충돌, 해소 전 글감 보류(docs/source_deep_F_mongolia_20261111.md)",
+   "due": "2026-11-20",
+   "cmd": "curl 외교부 사증면제 표 tr 파싱 재확인 + 주한 몽골대사관 공지 재시도",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepE-sources-1111",
+   "added": "2026-11-11",
+   "what": "분야E 심층독해 1111: 방통위 보도자료 목록(kcc.go.kr 302→kmcc.go.kr, 목록 JS 로드라 Aside 로도 본문 미표시) · KISA 공지 HTTP 500 · 개인정보위 pipc.go.kr 404 — 공식 목록 경로 미확보, 11-12~12-20 E 후보 탐색 공백",
+   "due": "2026-11-15",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' -A 'Mozilla/5.0' https://www.kisa.or.kr/401",
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
