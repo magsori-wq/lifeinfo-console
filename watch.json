@@ -27185,6 +27185,37 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "source-c-lung-1112",
+   "added": "2026-11-12",
+   "what": "폐기능검사 source 확정 진행",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_C_폐기능검사_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-c-lung-1112",
+   "added": "2026-11-12",
+   "what": "폐기능검사 deepread 진행",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_deep_C_lungfunc_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "aroma-am-sp-015-approve-1112",
+   "added": "2026-11-12",
+   "what": "【권고】AM-SP-015 「K리그2 승격 경우의 수 — 수원FC 64점이면 2위 확정, 김천은 12위 불가」(스포츠) 게시 승인. 미리보기 aroma-mag/previews/aromapv_SP-015.html 【근거】kleague.com 공식 순위·일정 JSON(32R)으로 직접 계산 — 수원FC 64점 확정선·서울E/대구 추월 조건·PO 5·6위 3팀·김천 승점상 12위 불가(뉴스핌은 방식이 김천 순위에 달렸다고만 보도). 뉴스에 없는 것: 확정선 표·팀별 조건·김천 12위 불가 계산. 제목 후보 ①이것 ②「K리그2 승격 경우의 수 — 서울E·대구 전승해도 63점·62점」 ③「K리그2 플레이오프 5·6위 3팀 — 김천은 12위 불가」, 자동완성 실측 11/12 「k리그2 승격」「k리그2 승격 플레이오프」「k리그2 플레이오프 일정」 → ①채택(44자). V0 92점 PASS(1차 88 REVISE 후 계산 오류 정정, 필수 0건). 겹침 crossdup aroma AM-SP-007 🟢0.33(K리그1 승점계산, 다른 리그·다른 계산)·lifeinfo 🟢. 사진: SP-014 결재 CC0 2장 재사용(신규 다운로드 없음, 경기사진 아님 캡션). 임베드 없음 — 공식 영상 URL 미확인(YouTube 쿼터 소진). 【위험】계산은 공식 선언 아님·동률 규정 미확인(본문 명시), 12월 PO 일정은 뉴스핌 의존 → 게시 직전 teamRank 재조회·공식 공지 재확인. 발행 경로: Aside 크레딧(402)·aroma 프로필 미연결 상태라 사장님 승인 후에도 Aside aroma 프로필이 켜져야 게시 가능.",
+   "due": "2026-11-12",
+   "cmd": "승인: aroma-am-sp-015-approve-1112",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:de614107"
   }
  ]
 }
