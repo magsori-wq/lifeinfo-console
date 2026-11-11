@@ -27406,7 +27406,7 @@
    "state": "done",
    "by": "세션:330b96b0",
    "done_at": "2026-11-12",
-   "result": "이부장 실측: 04:09:18 보드 줄만(SendMessage 없음) → 04:10:44 이과장 「04:10 줄 수신」 보고 — 자동 깨움 86초 만에 동작"
+   "result": "실측 11-12: 「관제탑 → 이과장」 줄 04:09·04:30·05:03·05:19 → 이과장 세션(c36eea8e) 기록에 「이과장 깨우기 · lifeinfo-tower 모드」 프롬프트 04:09·04:30·05:11·05:19(KST) — 깨움 정상(05:03 줄은 이과장 작업 중이라 05:11 다음 회차에 들어감)"
   },
   {
    "id": "verify-postlock-1112",
@@ -27501,6 +27501,56 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-12",
    "result": "06:08 복구·06:09 배포·06:10 6개 URL 200"
+  },
+  {
+   "id": "fuel9-scan-1112",
+   "added": "2026-11-12",
+   "what": "연료 9차 후보 스캔(deepread C·F/E 2개) 결과 파일 도착 확인 → 채택분 source·product 진행",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_deep_scan_*_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep-scan-fe-1112",
+   "added": "2026-11-12",
+   "what": "deepread F·E 스캔 결과 파일 확인",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_deep_scan_FE_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep-scan-fe-dup-1112",
+   "added": "2026-11-12",
+   "what": "F·E 스캔 중복: 공정위 전자상거래 소비자보호 지침 개정안(행정예고 11-26 마감)이 기발행 E2-14(다크패턴)와 같은 주제 — E2-14 갱신 후보 판단 필요, 창 내 KISA·관광공사·출입국·항공·여권 미조회",
+   "due": "2026-11-19",
+   "cmd": "ls docs/source_deep_scan_FE_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep-scan-c-nhis-1112",
+   "added": "2026-11-12",
+   "what": "건보공단 보도자료 목록 미확인(deepread C 스캔 11-12 — 루트 curl 껍데기·Aside 메뉴 텍스트만)",
+   "due": "2026-11-16",
+   "cmd": "python tools/aside_read.py https://www.nhis.or.kr/ --wait 8 --max 8000",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep-scan-c-ncc-1112",
+   "added": "2026-11-12",
+   "what": "국립암센터 보도 목록 미확인(deepread C 스캔 11-12 — curl 껍데기·Aside 루트 제목만)",
+   "due": "2026-11-16",
+   "cmd": "python tools/aside_read.py https://www.ncc.re.kr/ --wait 8 --max 8000",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
