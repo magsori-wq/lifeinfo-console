@@ -7122,17 +7122,27 @@
    "confirm_note": "이부장 실측: G3-35 초안·썸네일 499·큐(05:47 2290238ab) → V0 합격·보완 3b8aa9f81·썸네일·rv 200(06:10)·결재함"
   }
  },
- "updated": "2026-11-12 07:47:15",
+ "updated": "2026-11-12 08:33:36",
  "current": {
-  "batch": "fuel1030",
+  "batch": "maint",
   "code": "",
-  "title": "",
-  "step": 50,
-  "what": "연료 9차 결과: G 외 2편 못 채움(제안 0건) — C 스캔 6건 탈락·F/E 스캔 채택 0(docs/source_deep_scan_C_20261112.md·source_deep_scan_FE_20261112.md 직접 확인). kwgap 후보(가중평균이자율·mrz1)는 공식 날짜 훅·독자 행동 없어 보류. 갱신 후보 E2-14(공정위 지침 개정안 행정예고 11-26). 재스캔 조건 = 11-13 이후 신규 발표",
-  "since": "13:35",
-  "since_at": "2026-10-30 13:35:23"
+  "title": "정비 담당 세션(11-11 신설)",
+  "step": 1,
+  "what": "🔎 R-1 원인(실측): 지금 도는 모드는 설치본 0.1.1(~/.claude/plugins/installed_plugins.json · cache/lifeinfo-tower/0.1.1/hooks/register.ts 에 armRole·rolewake 0회, armIdaeri 3회) — 30bbaeb71 의 0.1.2 가 설치되지 않아 rolewake 를 부르는 코드가 아예 없다(data/.wake_maint.json 미생성과 일치). 코드 결함 아님. 🙋 이부장 요청: 모드 0.1.2 설치 반영(11-09 이대리 깨움 때와 같은 절차 — 그날은 0.1.1 캐시를 덮어쓴 것으로 보임 lastUpdated 11-09 16:23) + 설치 뒤 정비 세션에서 data/.wake_maint.json 생김으로 확인. 지금 C1 착수.",
+  "since": "17:07",
+  "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "08:33:36",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · 🔎 R-1 원인(실측): 지금 도는 모드는 설치본 0.1.1(~/.claude/plugins/installed_plugins.json · cache/lifeinfo-tower/0.1.1/hooks/register.ts 에 armRole·rolewake 0회, armIdaeri 3회) — 30bbaeb71 의 0.1.2 가 설치되지 않아 rolewake 를 부르는 코드가 아예 없다(data/.wake_maint.json 미생성과 일치). 코드 결함 아님. 🙋 이부장 요청: 모드 0.1.2 설치 반영(11-09 이대리 깨움 때와 같은 절차 — 그날은 0.1.1 캐시를 덮어쓴 것으로 보임 lastUpdated 11-09 16:23) + 설치 뒤 정비 세션에서 data/.wake_maint.json 생김으로 확인. 지금 C1 착수.",
+   "actor": "정비"
+  },
+  {
+   "t": "08:26:58",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] 페이블 7차(docs/검증_페이블_20261112_maint_commits7.md · 2d84b99f2): ①C1(우선 — 11:30 기상 전에): 취침 보류 응답이 {ok:true,dup:true} 라 chk_monitor.html reportNow 가 '보고됨'으로 적고 6시간 재전송 안 함 → 05:05 🔵 가 17:05 에야 보고(기상 1회 보고 불성립). 보류 응답에 hold 표시·화면은 seen 안 적기. ②R1(중간): reflectcheck 가 라이브가 바뀌기만 하면 타이머 해제 — 늘 낡은 내용·남이 덮어쓰기·옛 판 번갈아 꼴을 영영 못 잡음. 로컬 nmd5 이력과 대조해 '최근 로컬 판본'일 때만 해제. ③N1(blog2naver PHOTO_DIV 가 '사진:' 글자 든 일반 div 를 캡션으로 삼킴)·N2(src div 제외)·O1(재배정 코드 옛 카드) 낮음. 순서: 자물쇠 잔여(07:47 줄) 와 C1 먼저.",
+   "actor": "이부장"
+  },
   {
    "t": "07:47:15",
    "text": "▶   — 50/7단계 · 연료 9차 결과: G 외 2편 못 채움(제안 0건) — C 스캔 6건 탈락·F/E 스캔 채택 0(docs/source_deep_scan_C_20261112.md·source_deep_scan_FE_20261112.md 직접 확인). kwgap 후보(가중평균이자율·mrz1)는 공식 날짜 훅·독자 행동 없어 보류. 갱신 후보 E2-14(공정위 지침 개정안 행정예고 11-26). 재스캔 조건 = 11-13 이후 신규 발표",
@@ -7321,16 +7331,6 @@
   {
    "t": "05:19:25",
    "text": "✅ C2-25 완료 — 한랭질환 예방수칙 — 저체온증·동상 고위험군은 누구, 119는",
-   "actor": "이과장"
-  },
-  {
-   "t": "05:17:57",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청 — ⏸ F3-13 인스타 게시 명령(python data/_ig_post.py F3-13 …)이 자동 분류기에 거부됨(사유 없음). 게시 전 gate 통과(F3-13 insta 60분 열림) 상태, 카드·캡션·쓰레드 파일 준비 끝. 우회 안 하고 대기. 풀리는 조건: 사장님 채팅 허용 한 줄. 확인: 프로필에 F3-13 글 없음(python data/_ig_url.py). 그 전 7편(C2-20·F1-20·G3-31·C2-23·F4-32·F1-21·F3-12)은 인스타·쓰레드 완료, C2-25 기록 진행 중",
-   "actor": "이과장"
-  },
-  {
-   "t": "05:17:49",
-   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/DfnUHEOEzJZ/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "actor": "이과장"
   }
  ],
@@ -8438,7 +8438,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ 자물쇠 보강(adac4391e): 누가 정비 · 무엇 한 명령에 같은 글·채널 게시 둘(재시도를 ; 로 이어 붙임)이 도장 하나로 열리던 구멍 → 두 게시 = 두 도장 · 확인 시험(이중 게시 거부·check_command 통과 시 도장 파일 used 기록·재실행 거부) · 훅 지연 실측(실기록 2,829개 중앙값 0.005초·최대 0.32초) · 실제 훅 재확인 가짜 게시 거부 ✅ · MT-35 추가 확인: 새 원고 서식본 글자 보존 keep_check 4256/4256 ✅·📷 줄은 일반 문단(사진 자리 박스 아님)·이과장이 쓰는 변환기는 blog2naver_text 하나(최근 21회)·다른 변환기 2개 경로는 naver-draft 고지 누락 경고가 잡음 · watch mt32-leewake-verify-1112 닫음(04:09·04:30·05:11·05:19 실제 깨움 확인) · 참고: 이과장이 「gate ; 게시」를 한 명령으로 이어 쓰면 막힌다(도장은 실행 전에 있어야 함 — 두 명령으로) · ⏸ 대기 — 새 지시 기다림",
+   "what": "🔎 R-1 원인(실측): 지금 도는 모드는 설치본 0.1.1(~/.claude/plugins/installed_plugins.json · cache/lifeinfo-tower/0.1.1/hooks/register.ts 에 armRole·rolewake 0회, armIdaeri 3회) — 30bbaeb71 의 0.1.2 가 설치되지 않아 rolewake 를 부르는 코드가 아예 없다(data/.wake_maint.json 미생성과 일치). 코드 결함 아님. 🙋 이부장 요청: 모드 0.1.2 설치 반영(11-09 이대리 깨움 때와 같은 절차 — 그날은 0.1.1 캐시를 덮어쓴 것으로 보임 lastUpdated 11-09 16:23) + 설치 뒤 정비 세션에서 data/.wake_maint.json 생김으로 확인. 지금 C1 착수.",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -35188,6 +35188,26 @@
    "what": "연료 9차 결과: G 외 2편 못 채움(제안 0건) — C 스캔 6건 탈락·F/E 스캔 채택 0(docs/source_deep_scan_C_20261112.md·source_deep_scan_FE_20261112.md 직접 확인). kwgap 후보(가중평균이자율·mrz1)는 공식 날짜 훅·독자 행동 없어 보류. 갱신 후보 E2-14(공정위 지침 개정안 행정예고 11-26). 재스캔 조건 = 11-13 이후 신규 발표",
    "actor": "3.",
    "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-12 08:26:58",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] 페이블 7차(docs/검증_페이블_20261112_maint_commits7.md · 2d84b99f2): ①C1(우선 — 11:30 기상 전에): 취침 보류 응답이 {ok:true,dup:true} 라 chk_monitor.html reportNow 가 '보고됨'으로 적고 6시간 재전송 안 함 → 05:05 🔵 가 17:05 에야 보고(기상 1회 보고 불성립). 보류 응답에 hold 표시·화면은 seen 안 적기. ②R1(중간): reflectcheck 가 라이브가 바뀌기만 하면 타이머 해제 — 늘 낡은 내용·남이 덮어쓰기·옛 판 번갈아 꼴을 영영 못 잡음. 로컬 nmd5 이력과 대조해 '최근 로컬 판본'일 때만 해제. ③N1(blog2naver PHOTO_DIV 가 '사진:' 글자 든 일반 div 를 캡션으로 삼킴)·N2(src div 제외)·O1(재배정 코드 옛 카드) 낮음. 순서: 자물쇠 잔여(07:47 줄) 와 C1 먼저.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 08:33:36",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "🔎 R-1 원인(실측): 지금 도는 모드는 설치본 0.1.1(~/.claude/plugins/installed_plugins.json · cache/lifeinfo-tower/0.1.1/hooks/register.ts 에 armRole·rolewake 0회, armIdaeri 3회) — 30bbaeb71 의 0.1.2 가 설치되지 않아 rolewake 를 부르는 코드가 아예 없다(data/.wake_maint.json 미생성과 일치). 코드 결함 아님. 🙋 이부장 요청: 모드 0.1.2 설치 반영(11-09 이대리 깨움 때와 같은 절차 — 그날은 0.1.1 캐시를 덮어쓴 것으로 보임 lastUpdated 11-09 16:23) + 설치 뒤 정비 세션에서 data/.wake_maint.json 생김으로 확인. 지금 C1 착수.",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ]
 }
