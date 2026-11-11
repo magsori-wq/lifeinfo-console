@@ -26335,6 +26335,26 @@
    "state": "todo",
    "kind": "approve",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "c221-threads-hold-1111",
+   "added": "2026-11-11",
+   "what": "C2-21 쓰레드 2회 연속 '게시 무반응'(#798 15:39·#804 16:13, 프로필에 글 없음) — 재시도 중단. 원고(osmu/쓰레드용_정부24잠복결핵검진확인서.txt) 링크 카드 2개·문구가 쓰레드에 걸리는지 확인 후 재게시 판단. 같은 날 A2-31·E4-13·F1-19 쓰레드는 정상",
+   "due": "2026-11-11",
+   "cmd": "python -m studio.osmu_manifest table --code C2-21",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-thumb-488",
+   "added": "2026-11-11",
+   "what": "deploy.bat 실행 — 발행 대기 글 썸네일(488_secondhand_ks.png)이 github.io 404. 결재와 같은 자리에서 실행하시면 승인 즉시 발행",
+   "due": "2026-11-11",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
