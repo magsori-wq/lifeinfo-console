@@ -26196,7 +26196,7 @@
   {
    "id": "xlink-e218",
    "added": "2026-11-11",
-   "what": "🔗 E2-18 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E2-18",
+   "what": "🔗 E2-18 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code E2-18",
    "due": "2026-11-11",
    "cmd": "python studio/blogger.py crosslink --code E2-18",
    "owner": "claude",
@@ -26403,8 +26403,10 @@
    "due": "2026-11-11",
    "cmd": "C:/Users/magso/AppData/Local/Aside/CLI/versions/win-x64/1.26.1023.1115/aside.exe session list",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-11",
+   "result": "새 채팅 d96YcU 가 #810 실행 중(16:56~), 옛 fZcN·3piq 보관(archive ok). 시간 초과 감소는 오늘 저녁 지시들로 계속 확인"
   },
   {
    "id": "v0reject-f1-20",
@@ -26417,7 +26419,79 @@
    "kind": "approve",
    "by": "세션:a7dca46f",
    "done_at": "2026-11-11",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "result": "V0 통과로 해소 — 검사자 v0 에이전트(af80c8e8·a561578f 재검사)·이부장 · 판단형 비교(3·4단계 표·가상사례3)+탈락(환불·환승 미확인 명시)+함정(자제vs금지·기준일), 0404 원문 3건 대조 일치, 반려 4건 반영(UAE·카타르 3·4단계 거명 문장·행동요령상 금지·비상시 연락처 표"
+  },
+  {
+   "id": "aside-chat-size-guard-1111",
+   "added": "2026-11-11",
+   "what": "재발방지: Aside 전담 채팅 기록 크기 감시가 없어 1.1GB 까지 방치(규칙 20MB 초과 시 교체) — 정비 담당 과제로 towertick/asidestate 에 크기 경보(20MB 초과 시 이부장 알림) 추가",
+   "due": "2026-11-12",
+   "cmd": "du -sh ~/.aside/u/0/sessions/*NNAdK7Ad01wfHqMk* ~/.aside/u/0/sessions/*d96YcUgCUkyDa4vb*",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-11",
+   "result": "ASIDE_CHAT_BIG 신설(커밋 328195fae, 설계도 N2, TestChatBigDecide) — towertick 이 20MB 초과 시 이부장 알림"
+  },
+  {
+   "id": "xlink-c221",
+   "added": "2026-11-11",
+   "what": "🔗 C2-21 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-21",
+   "due": "2026-11-11",
+   "cmd": "python studio/blogger.py crosslink --code C2-21",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-f311",
+   "added": "2026-11-11",
+   "what": "🔗 F3-11 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F3-11",
+   "due": "2026-11-11",
+   "cmd": "python studio/blogger.py crosslink --code F3-11",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "product-f119-1111",
+   "added": "2026-11-11",
+   "what": "F1-19 제휴 상품 후보 조사",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_product_F1-19_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "product-f311-1111",
+   "added": "2026-11-11",
+   "what": "F3-11 제휴 상품 후보 조사",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_product_F3-11_20261111.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "brandconnect-f119-f311-1111",
+   "added": "2026-11-11",
+   "what": "brandconnect 에이전트로 F1-19·F3-11 네이버 브랜드커넥트 후보 조사 — Aside 대기열이 idle 일 때(충돌 방지)",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "source-confirm-a231-e414-1111",
+   "added": "2026-11-11",
+   "what": "A2-31(추가 대상 가구 수 22만 vs 21만)·E4-14(KS 의무/자율) 숫자 source 에이전트로 최종 확정",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_에너지바우처겨울대책_20261110.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
