@@ -1,9 +1,9 @@
 {
- "rev": "d71cf5c4a",
+ "rev": "6affb81cd",
  "counts": {
   "total": 510,
-  "osmu_done": 503,
-  "osmu_pending": 7,
+  "osmu_done": 504,
+  "osmu_pending": 6,
   "indexed": 0,
   "index_pending": 510,
   "index_requested": 179,
@@ -103,15 +103,16 @@
    "code": "F1-20",
    "title": "중동 여행경보 3단계·4단계 — UAE·카타르 환승 예",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
