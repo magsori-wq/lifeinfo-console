@@ -27216,6 +27216,36 @@
    "kind": "approve",
    "state": "todo",
    "by": "세션:de614107"
+  },
+  {
+   "id": "deepread-f-thai-1112",
+   "added": "2026-11-12",
+   "what": "태국 무비자 deepread 진행",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_deep_F_thaivisa_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "product-c-f-1112",
+   "added": "2026-11-12",
+   "what": "폐기능검사·태국무비자 상품판정 진행",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_product_C폐기능검사_F태국무비자_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "f3-08-stale-ftc-1112",
+   "added": "2026-11-12",
+   "what": "F3-08(라이브) 본문에 '공정위 최종 승인 여부·일자 미확인'이라 적혀 있으나 공정위 승인 9-14·발표 9-15(검색 결과 기준, 제가 원문 미확인) — 이부장 판단 보강 후보(라이브라 3.은 안 고침). 확인: 공정위 보도자료 원문",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.dupcheck 아시아나 마일리지 공정위 승인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
