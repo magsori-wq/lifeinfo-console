@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13 00:02:15",
+ "at": "2026-11-13 00:03:08",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -677,7 +677,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 19,
-   "last_min": 2,
+   "last_min": 3,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -686,7 +686,7 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 12,
+   "last_min": 13,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -722,7 +722,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 19,
-   "last_min": 2,
+   "last_min": 3,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok"
   },
@@ -730,7 +730,7 @@
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 8,
+   "last_min": 9,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -738,7 +738,7 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 12,
+   "last_min": 13,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok"
   },
@@ -747,7 +747,7 @@
    "state": "현장(진행)",
    "jobs": 0,
    "last_min": 0,
-   "cur": "00:0x SP-016 KBL 삼성-정관장 V0 94 PASS",
+   "cur": "00:1x 4칸 결재 4건 모두 상정 — PE-012(88)·",
    "lvl": "ok"
   },
   {
@@ -1639,7 +1639,7 @@
   "bad": 0,
   "na": 0,
   "at": "2026-11-12 23:55:28",
-  "age_min": 6
+  "age_min": 7
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1711,15 +1711,19 @@
  "fired": [
   {
    "day": "2026-11-13",
-   "total": 8,
+   "total": 10,
    "kinds": [
+    [
+     "ASIDE_ALERT",
+     2
+    ],
     [
      "CONFIRM_BACKLOG",
      2
     ],
     [
-     "ASIDE_ALERT",
-     1
+     "NEW_BOSS_ITEM",
+     2
     ],
     [
      "FUEL_LOW",
@@ -1731,10 +1735,6 @@
     ],
     [
      "LANE_IDLE",
-     1
-    ],
-    [
-     "NEW_BOSS_ITEM",
      1
     ],
     [
