@@ -28807,12 +28807,42 @@
   {
    "id": "xlink-f433",
    "added": "2026-11-12",
-   "what": "🔗 F4-33 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-33",
+   "what": "🔗 F4-33 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F4-33",
    "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code F4-33",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "gsc-retry-1112-e415f433",
+   "added": "2026-11-12",
+   "what": "E4-15·F4-33 GSC 색인 생성 요청 — 11-12 23시 시도 E4-15 「제출 중 문제 발생, 나중에」 · F4-33 combobox 못 찾음. 2시간 뒤 재시도(data/_gsc_req.py <URL> --request) 후 gsc_log add",
+   "due": "2026-11-13",
+   "cmd": "python data/_gsc_req.py https://lifeinfo8975.blogspot.com/2026/11/12-1-1-11.html --request",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "c227-naver-tags-1112",
+   "added": "2026-11-12",
+   "what": "C2-27 네이버 게시 막힘 — naverwrite 가 tags 단계에서 4회 연속 실패(catPick=BUTTON, tagsSeen 1~3). 카테고리 「달라지는 제도·지원금」 지정, 태그·재시도 무효. 정비가 category 선택(BUTTON 대신 LI) 확인 필요. 발행 안 됨(ok:false)",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이과장"
+  },
+  {
+   "id": "gsc-hint-advisor-1113",
+   "added": "2026-11-12",
+   "what": "4. GSC 힌트↔우리 주소 대조표(docs/대조_GSC힌트_우리주소_20261113.md) 나오면 → 이부장 어드바이저 검토 → 조언과 함께 사장님 보고(사장님 23:32 지시)",
+   "due": "2026-11-13",
+   "cmd": "ls docs/대조_GSC힌트_우리주소_20261113.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
