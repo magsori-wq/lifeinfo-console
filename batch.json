@@ -7605,17 +7605,22 @@
    "order_at": "2026-11-12 17:44:06"
   }
  },
- "updated": "2026-11-12 20:25:13",
+ "updated": "2026-11-12 21:47:26",
  "current": {
-  "batch": "maint",
+  "batch": "aroma",
   "code": "",
-  "title": "정비 담당 세션(11-11 신설)",
+  "title": "",
   "step": 1,
-  "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
-  "since": "17:07",
-  "since_at": "2026-11-11 17:07:53"
+  "what": "21:47 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS; 루틴10 23:08 결과 대기). 23:47 루틴10 결과 확인 예약 추가. CA 조회 미조회",
+  "since": "14:53",
+  "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "21:47:26",
+   "text": "▶   — 1/7단계 · 21:47 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS; 루틴10 23:08 결과 대기). 23:47 루틴10 결과 확인 예약 추가. CA 조회 미조회",
+   "actor": "이대리"
+  },
   {
    "t": "20:25:13",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
@@ -7809,11 +7814,6 @@
   {
    "t": "17:22:40",
    "text": "✅ E4-15 완료 — 유플러스 청소년 할인 12월 1일 종료 — 월 1만원, 신규 ",
-   "actor": "이과장"
-  },
-  {
-   "t": "17:17:27",
-   "text": "▶   — 1/7단계 · E4-15 초안 착수 — 지시서·출처 읽는 중",
    "actor": "이과장"
   }
  ],
@@ -8111,7 +8111,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "19:24 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS, 루틴10 23:08 후보기록 대기). CA 조회 미조회(repl 미사용). 다음 점검 21:4x",
+   "what": "21:47 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS; 루틴10 23:08 결과 대기). 23:47 루틴10 결과 확인 예약 추가. CA 조회 미조회",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -37551,6 +37551,16 @@
    "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 21:47:26",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "21:47 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS; 루틴10 23:08 결과 대기). 23:47 루틴10 결과 확인 예약 추가. CA 조회 미조회",
+   "actor": "이대리",
+   "sid": "de614107"
   }
  ]
 }
