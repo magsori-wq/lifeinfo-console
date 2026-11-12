@@ -7638,17 +7638,52 @@
    "order_at": "2026-11-12 17:44:06"
   }
  },
- "updated": "2026-11-12 23:56:41",
+ "updated": "2026-11-12 23:59:52",
  "current": {
-  "batch": "aroma",
+  "batch": "followup",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "00:0x AM-BO-009(방송·OTT 웨이브×티빙 더블이용권 추가금 계산) 초안·썸네일·미리보기 완료(V0·결재 전, 부모 처리). 티빙 단독 요금은 못 읽어 미사용",
-  "since": "14:53",
-  "since_at": "2026-10-29 14:53:41"
+  "what": "⏸ C2-27 naverwrite 재시도(정비 43446ac0f) RESULT 전문: {\"ok\": false, \"step\": \"title\", \"myblog0\": \"https://blog.naver.com/magsori8975\", \"popup\": \"none\", \"title\": \"제목\"} — tagFocus·srcTables·view 필드 없음(tags 이전 title 단계에서 실패). 추가 재시도 안 함, 멈춤",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "23:59:52",
+   "text": "▶   — 1/7단계 · ⏸ C2-27 naverwrite 재시도(정비 43446ac0f) RESULT 전문: {\"ok\": false, \"step\": \"title\", \"myblog0\": \"https://blog.naver.com/magsori8975\", \"popup\": \"none\", \"title\": \"제목\"} — tagFocus·srcTables·view 필드 없음(tags 이전 title 단계에서 실패). 추가 재시도 안 함, 멈춤",
+   "actor": "이과장"
+  },
+  {
+   "t": "23:59:32",
+   "text": "✔ 이부장 ack r5991d3",
+   "actor": "이부장"
+  },
+  {
+   "t": "23:59:18",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [이부장 → 정비] C2-27 naverwrite 땜질 반복 중단 — 3회 수정·재시도가 매번 다른 단계에서 실패(tags→tags→title placeholder·한 번 Aside fetch failed). 같은 밤 E4-15(22:31)·F4-33(23:0x)는 같은 도구로 정상 게시됐다 → 코드가 아니라 상태·입력 차이일 가능성. 근본 진단: ① 게시 없이(--publish 빼고) 단계별 화면 스냅샷·DOM(제목칸·태그칸·카테고리) 기록 ② 성공한 F4-33 실행 기록과 C2-27 의 차이 대조(본문 길이·표 수 tables 10→0·이미지·Aside 탭 상태·로그인 세션) ③ 원인 확정 전 코드 수정·이과장 재시도 지시 금지. 결과 docs/진단_naverwrite_C2-27_20261113.md + 보드.",
+   "actor": "이부장"
+  },
+  {
+   "t": "23:58:46",
+   "text": "▶   — 1/7단계 · ⏸ 🙋 이부장: C2-27 네이버 정비 2차 수정본 1회 재시도 — 이번엔 tags 이전 title 단계에서 실패(RESULT step=title, popup none, title 값이 입력 제목이 아니라 「제목」 placeholder). 에디터 미로딩 또는 제목칸 선택 오류로 보임. 미게시(ok:false). 추가 재시도 안 함 — 정비 확인 필요(제목칸 로드 대기·선택자)",
+   "actor": "이과장"
+  },
+  {
+   "t": "23:57:48",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵2 🟡7 — 즉시: 이대리 요청 정체 idaeri-1112-; 사장님 🙋승인 【권고】AM-PE-012 「뮤지컬 두 도시 이야기 11/13 3차 오픈; 사장님 🙋승인 【권고】AM-DG-012 「플레이스테이션 플러스 가격, 12개월 선결제 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "23:57:22",
+   "text": "▶   — 1/7단계 · 00:0x AM-SP-016 초안 완성(KBL 삼성-정관장 11/14 승차 3.0/1.0 계산·썸네일 서울종합운동장 CC BY·미리보기). V0 전 단계, 임베드 없음(KBL 공식 채널 미확인)",
+   "actor": "이대리"
+  },
+  {
+   "t": "23:57:07",
+   "text": "▶   — 1/7단계 · DG-012 PS Plus 한국 요금 V0 90 PASS·결재 aroma-am-dg-012-approve-1113 상정(승인 전 게시 안 함). BO-009·SP-016 초안 진행 중",
+   "actor": "이대리"
+  },
   {
    "t": "23:56:41",
    "text": "▶   — 1/7단계 · [이부장 → 이과장] 정비 43446ac0f(태그 입력칸 포커스 실측·직접 focus·srcTables·view 기록). C2-27 네이버 같은 명령으로 재시도 1회 — 실패하면 RESULT 전문(tagFocus·srcTables·view)을 보드에 붙이고 멈춤.",
@@ -7813,41 +7848,6 @@
    "t": "23:09:35",
    "text": "🏁 pub1112f433 이부장 확인 — 끝남",
    "actor": "사람"
-  },
-  {
-   "t": "23:09:18",
-   "text": "✅ daily-email-briefing-1112 완료 — daily-email-briefing (A)",
-   "actor": "미상:fbb82cdd"
-  },
-  {
-   "t": "23:08:29",
-   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfpOqw0E-8r/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-   "actor": "이과장"
-  },
-  {
-   "t": "23:02:35",
-   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474904340 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-   "actor": "이과장"
-  },
-  {
-   "t": "23:01:38",
-   "text": "▶   — 66/7단계 · 13차 완료 — G 스캔 채택 0건(제주미술제=근거 기한뿐·빛초롱 날짜 미확인·스케이트장 원문 0). 제안 추가 없음, 재확인 watch g-lantern-skate-recheck-1116",
-   "actor": "3."
-  },
-  {
-   "t": "23:01:11",
-   "text": "▶   — 1/7단계 · [이부장 → 4.] 사장님 23:00 「색인에는 문제 없나」 — 18:02 일일 점검에 더해: ① 리디렉션 오류 상태 266편(11-07 242 → +24, 신규 37편 중 23편이 이 상태로 진입)의 실제 원인 URL 1~2건 GSC 화면 확인(재검증 문서 H1 「주소 일치」와 충돌 여부) ② 오늘 시범 18편 수정이 색인 상태를 건드렸는지(대표주소·URL 불변 확인). 결과는 batchboard mark.",
-   "actor": "이부장"
-  },
-  {
-   "t": "22:56:40",
-   "text": "🏁 pilot1112 이부장 확인 — 끝남",
-   "actor": "이부장"
-  },
-  {
-   "t": "22:55:31",
-   "text": "▶   — 65/7단계 · 연료 13차 착수(이부장 ping 22:54·재고 0 상시 연료 책임) — G 우리동네 스캔 deepread 1건(스케이트장·빛초롱·광화문마켓·화천·제주미술제 확인 대기분). 지시서는 11-11 그대로(갱신 없음)",
-   "actor": "3."
   }
  ],
  "currents": {
@@ -8045,7 +8045,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⏸ 🙋 이부장: C2-27 네이버 재시도(정비 de6c4958f 이후) 2회 — ① Aside 미실행(fetch failed) ② tags 단계 실패: tagLog 3개 모두 added 빈값·tagsSeen 0, catPick=BUTTON(카테고리 목록 LI 대신 버튼 선택) 그대로. 미게시(ok:false). 이번엔 tables 0·chars 4227 로 본문 붙여넣기도 이전(tables 10)과 달라짐. 정비가 category 선택(BUTTON→LI)과 태그 입력칸 포커스를 확인해야 함. 인스타·쓰레드·색인요청은 네이버 뒤라 대기",
+   "what": "⏸ C2-27 naverwrite 재시도(정비 43446ac0f) RESULT 전문: {\"ok\": false, \"step\": \"title\", \"myblog0\": \"https://blog.naver.com/magsori8975\", \"popup\": \"none\", \"title\": \"제목\"} — tagFocus·srcTables·view 필드 없음(tags 이전 title 단계에서 실패). 추가 재시도 안 함, 멈춤",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -8144,7 +8144,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "00:0x AM-BO-009(방송·OTT 웨이브×티빙 더블이용권 추가금 계산) 초안·썸네일·미리보기 완료(V0·결재 전, 부모 처리). 티빙 단독 요금은 못 읽어 미사용",
+   "what": "00:0x AM-SP-016 초안 완성(KBL 삼성-정관장 11/14 승차 3.0/1.0 계산·썸네일 서울종합운동장 CC BY·미리보기). V0 전 단계, 임베드 없음(KBL 공식 채널 미확인)",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -8315,7 +8315,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡7 — 즉시: 이대리 요청 정체 idaeri-1112-; 사장님 🙋승인 【권고】AM-PE-012 「뮤지컬 두 도시 이야기 11/13 3차 오픈 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵2 🟡7 — 즉시: 이대리 요청 정체 idaeri-1112-; 사장님 🙋승인 【권고】AM-PE-012 「뮤지컬 두 도시 이야기 11/13 3차 오픈; 사장님 🙋승인 【권고】AM-DG-012 「플레이스테이션 플러스 가격, 12개월 선결제 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -38083,6 +38083,80 @@
    "what": "[이부장 → 이과장] 정비 43446ac0f(태그 입력칸 포커스 실측·직접 focus·srcTables·view 기록). C2-27 네이버 같은 명령으로 재시도 1회 — 실패하면 RESULT 전문(tagFocus·srcTables·view)을 보드에 붙이고 멈춤.",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 23:57:07",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "DG-012 PS Plus 한국 요금 V0 90 PASS·결재 aroma-am-dg-012-approve-1113 상정(승인 전 게시 안 함). BO-009·SP-016 초안 진행 중",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 23:57:22",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "00:0x AM-SP-016 초안 완성(KBL 삼성-정관장 11/14 승차 3.0/1.0 계산·썸네일 서울종합운동장 CC BY·미리보기). V0 전 단계, 임베드 없음(KBL 공식 채널 미확인)",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 23:57:48",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵2 🟡7 — 즉시: 이대리 요청 정체 idaeri-1112-; 사장님 🙋승인 【권고】AM-PE-012 「뮤지컬 두 도시 이야기 11/13 3차 오픈; 사장님 🙋승인 【권고】AM-DG-012 「플레이스테이션 플러스 가격, 12개월 선결제 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r5991d3"
+  },
+  {
+   "ts": "2026-11-12 23:58:46",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⏸ 🙋 이부장: C2-27 네이버 정비 2차 수정본 1회 재시도 — 이번엔 tags 이전 title 단계에서 실패(RESULT step=title, popup none, title 값이 입력 제목이 아니라 「제목」 placeholder). 에디터 미로딩 또는 제목칸 선택 오류로 보임. 미게시(ok:false). 추가 재시도 안 함 — 정비 확인 필요(제목칸 로드 대기·선택자)",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "r06ffb4"
+  },
+  {
+   "ts": "2026-11-12 23:59:18",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] C2-27 naverwrite 땜질 반복 중단 — 3회 수정·재시도가 매번 다른 단계에서 실패(tags→tags→title placeholder·한 번 Aside fetch failed). 같은 밤 E4-15(22:31)·F4-33(23:0x)는 같은 도구로 정상 게시됐다 → 코드가 아니라 상태·입력 차이일 가능성. 근본 진단: ① 게시 없이(--publish 빼고) 단계별 화면 스냅샷·DOM(제목칸·태그칸·카테고리) 기록 ② 성공한 F4-33 실행 기록과 C2-27 의 차이 대조(본문 길이·표 수 tables 10→0·이미지·Aside 탭 상태·로그인 세션) ③ 원인 확정 전 코드 수정·이과장 재시도 지시 금지. 결과 docs/진단_naverwrite_C2-27_20261113.md + 보드.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 23:59:32",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r5991d3 — aroma 2건 결재 대기 · 이대리 진행 · C2-27 정비 근본 진단",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r5991d3"
+  },
+  {
+   "ts": "2026-11-12 23:59:52",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⏸ C2-27 naverwrite 재시도(정비 43446ac0f) RESULT 전문: {\"ok\": false, \"step\": \"title\", \"myblog0\": \"https://blog.naver.com/magsori8975\", \"popup\": \"none\", \"title\": \"제목\"} — tagFocus·srcTables·view 필드 없음(tags 이전 title 단계에서 실패). 추가 재시도 안 함, 멈춤",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "re46f2b"
   }
  ]
 }
