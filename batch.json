@@ -7605,17 +7605,22 @@
    "order_at": "2026-11-12 17:44:06"
   }
  },
- "updated": "2026-11-12 20:18:07",
+ "updated": "2026-11-12 20:25:13",
  "current": {
   "batch": "maint",
   "code": "",
   "title": "정비 담당 세션(11-11 신설)",
   "step": 1,
-  "what": "✅ MT-46 근본 수정 푸시 889ff07af(20:31 정비): data/_reflect_live_log.jsonl 를 git 추적에서 빼고 .gitignore(로컬 전용) + engine_log.jsonl·_advisor_calls_cache.json 미리 제외 · 시험 659 OK · enginemap 🔴0. 확인: 방금 syncorigin 에서 이 로그는 더 이상 멈춤 사유가 아님. ⛔ 그런데 동기는 다른 이유로 또 멈춤 — webapp/seo_desc.json 원본 충돌(merge 취소·뒤4 앞4, 로컬 보존 커밋은 됨). 🙋 이부장 요청: seo_desc.json 충돌 정리(다른 세션 원본이라 정비가 안 건드림). 정리 전에 reflect 로그가 다시 수정돼 syncorigin 이 그 파일로 멈추면 git checkout -- data/_reflect_live_log.jsonl 해도 됨(로컬 53줄 백업 보관, 동기 끝나면 정비가 되살림). 재발방지: 런타임 로그 3종 ignore 로 러너 git add -A 에 다시 안 실림",
+  "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
   "since": "17:07",
   "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "20:25:13",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
+   "actor": "정비"
+  },
   {
    "t": "20:18:07",
    "text": "✔ 이부장 ack r608e7e",
@@ -7810,11 +7815,6 @@
    "t": "17:17:27",
    "text": "▶   — 1/7단계 · E4-15 초안 착수 — 지시서·출처 읽는 중",
    "actor": "이과장"
-  },
-  {
-   "t": "17:17:09",
-   "text": "✔ 이부장 ack r4f9db0",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -8921,7 +8921,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ MT-46 근본 수정 푸시 889ff07af(20:31 정비): data/_reflect_live_log.jsonl 를 git 추적에서 빼고 .gitignore(로컬 전용) + engine_log.jsonl·_advisor_calls_cache.json 미리 제외 · 시험 659 OK · enginemap 🔴0. 확인: 방금 syncorigin 에서 이 로그는 더 이상 멈춤 사유가 아님. ⛔ 그런데 동기는 다른 이유로 또 멈춤 — webapp/seo_desc.json 원본 충돌(merge 취소·뒤4 앞4, 로컬 보존 커밋은 됨). 🙋 이부장 요청: seo_desc.json 충돌 정리(다른 세션 원본이라 정비가 안 건드림). 정리 전에 reflect 로그가 다시 수정돼 syncorigin 이 그 파일로 멈추면 git checkout -- data/_reflect_live_log.jsonl 해도 됨(로컬 53줄 백업 보관, 동기 끝나면 정비가 되살림). 재발방지: 런타임 로그 3종 ignore 로 러너 git add -A 에 다시 안 실림",
+   "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -9364,22 +9364,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-29 20:19:15",
-   "bid": "dbtitle1029",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "지시서 확인 — 조사 문서 라이브 제목 재확인부터"
-  },
-  {
-   "ts": "2026-10-29 20:20:48",
-   "bid": "dbtitle1029",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "✅ DB title 6건 라이브 og:title로 정정 완료 — 레코드 450 유지·title 외 불변·validate FAIL 0(WARN 매니페스트 신선도 6건 별건, 이번 title 변경과 겹침 가능) · 커밋 5129ba4a2 · 다음: 이부장 deploy.bat 묶음 실행, 내일 01Z 피드 드리프트 run 확인"
-  },
   {
    "ts": "2026-10-30 00:17:51",
    "bid": "draft1030d508",
@@ -37557,6 +37541,16 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "r608e7e"
+  },
+  {
+   "ts": "2026-11-12 20:25:13",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ]
 }

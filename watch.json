@@ -28705,6 +28705,16 @@
    "by": "정비",
    "done_at": "2026-11-12",
    "result": "20:33 동기 완료(eccd8b105 포함) 뒤 로그 합쳐 되살림 — 미추적·ignore 확인"
+  },
+  {
+   "id": "mt46-publish-nostall-check",
+   "added": "2026-11-12",
+   "what": "MT-46 완료 조건: 다음 실제 발행 1회 뒤 syncorigin 이 멈춤 없이 맞춤 끝(reflect 로그 ignore·seo_desc 글 단위 병합)",
+   "due": "2026-11-13",
+   "cmd": "python C:/lifeinfo/tools/syncorigin.py --dry",
+   "owner": "claude",
+   "state": "wait",
+   "by": "정비"
   }
  ]
 }
