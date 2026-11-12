@@ -28354,6 +28354,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "fix-c226-mid1age-1112",
+   "added": "2026-11-12",
+   "what": "C2-26 표 칸 '중1(만 13세)'->'중1' 정정, 커밋 17a154205. 발행 run 진행 중이라 syncorigin push 보류 - run 끝나면 syncorigin 필요",
+   "due": "2026-11-13",
+   "cmd": "grep -c '만 13세' 편의점상비약판매제한_글_HTML.txt; git status -sb | head -1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "gatesync-push-fail-11121521",
+   "added": "2026-11-12",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): syncorigin 원본 충돌(exit 3) — 사람이 봐야 함: ====================================================\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'\n",
+   "due": "2026-11-12",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
