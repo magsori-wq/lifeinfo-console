@@ -7566,7 +7566,8 @@
     {
      "code": "F4-33",
      "title": "노고단 탐방 예약제 2027년 1월부터 주말·공휴일만 — 정원 1,870명, 예 (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -7580,7 +7581,8 @@
     {
      "code": "E4-15",
      "title": "유플러스 청소년 할인 12월 1일 종료 — 월 1만원, 신규 신청은 11월까지 (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -7594,7 +7596,8 @@
     {
      "code": "C2-27",
      "title": "GLP-1 계열 비만·당뇨약 시신경(NAION) 안전성 서한 — 식약처가 확정한 (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -7602,7 +7605,7 @@
    "order_at": "2026-11-12 17:44:06"
   }
  },
- "updated": "2026-11-12 20:16:54",
+ "updated": "2026-11-12 20:18:07",
  "current": {
   "batch": "maint",
   "code": "",
@@ -7613,6 +7616,16 @@
   "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "20:18:07",
+   "text": "✔ 이부장 ack r608e7e",
+   "actor": "이부장"
+  },
+  {
+   "t": "20:17:53",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [이부장 → 정비] MT-46 반쪽: 20:20 syncorigin 재시험 → reflect 로그는 풀렸으나 webapp/seo_desc.json 원본 충돌로 또 멈춤(뒤4·앞4). seo_desc.json 은 PC(seodesc set)와 러너가 둘 다 쓴다 — 단일 작성자 또는 키 단위 merge driver 로 근본 수정 + 회귀시험 + 실제 발행 1회 무정지 확인까지가 MT-46 완료. 이부장은 손으로 합치지 않는다.",
+   "actor": "이부장"
+  },
   {
    "t": "20:16:54",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-46 근본 수정 푸시 889ff07af(20:31 정비): data/_reflect_live_log.jsonl 를 git 추적에서 빼고 .gitignore(로컬 전용) + engine_log.jsonl·_advisor_calls_cache.json 미리 제외 · 시험 659 OK · enginemap 🔴0. 확인: 방금 syncorigin 에서 이 로그는 더 이상 멈춤 사유가 아님. ⛔ 그런데 동기는 다른 이유로 또 멈춤 — webapp/seo_desc.json 원본 충돌(merge 취소·뒤4 앞4, 로컬 보존 커밋은 됨). 🙋 이부장 요청: seo_desc.json 충돌 정리(다른 세션 원본이라 정비가 안 건드림). 정리 전에 reflect 로그가 다시 수정돼 syncorigin 이 그 파일로 멈추면 git checkout -- data/_reflect_live_log.jsonl 해도 됨(로컬 53줄 백업 보관, 동기 끝나면 정비가 되살림). 재발방지: 런타임 로그 3종 ignore 로 러너 git add -A 에 다시 안 실림",
@@ -7802,16 +7815,6 @@
    "t": "17:17:09",
    "text": "✔ 이부장 ack r4f9db0",
    "actor": "이부장"
-  },
-  {
-   "t": "17:16:20",
-   "text": "✅ F4-33 완료 — 노고단 탐방 예약제 2027년 1월부터 주말·공휴일만 — 정원",
-   "actor": "이과장"
-  },
-  {
-   "t": "17:15:42",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡3 — 즉시: V0 지연 F4-33 노고단 탐방 예약제 2027년 1월부터 주말·공휴일만; 사장님 🚫막힘 시범 10쌍 라이브 수정(도너 18편 관련글 링크 추가·B2-14 404 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
   }
  ],
  "currents": {
@@ -37533,6 +37536,27 @@
    "what": "✅ MT-46 근본 수정 푸시 889ff07af(20:31 정비): data/_reflect_live_log.jsonl 를 git 추적에서 빼고 .gitignore(로컬 전용) + engine_log.jsonl·_advisor_calls_cache.json 미리 제외 · 시험 659 OK · enginemap 🔴0. 확인: 방금 syncorigin 에서 이 로그는 더 이상 멈춤 사유가 아님. ⛔ 그런데 동기는 다른 이유로 또 멈춤 — webapp/seo_desc.json 원본 충돌(merge 취소·뒤4 앞4, 로컬 보존 커밋은 됨). 🙋 이부장 요청: seo_desc.json 충돌 정리(다른 세션 원본이라 정비가 안 건드림). 정리 전에 reflect 로그가 다시 수정돼 syncorigin 이 그 파일로 멈추면 git checkout -- data/_reflect_live_log.jsonl 해도 됨(로컬 53줄 백업 보관, 동기 끝나면 정비가 되살림). 재발방지: 런타임 로그 3종 ignore 로 러너 git add -A 에 다시 안 실림",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 20:17:53",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] MT-46 반쪽: 20:20 syncorigin 재시험 → reflect 로그는 풀렸으나 webapp/seo_desc.json 원본 충돌로 또 멈춤(뒤4·앞4). seo_desc.json 은 PC(seodesc set)와 러너가 둘 다 쓴다 — 단일 작성자 또는 키 단위 merge driver 로 근본 수정 + 회귀시험 + 실제 발행 1회 무정지 확인까지가 MT-46 완료. 이부장은 손으로 합치지 않는다.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 20:18:07",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r608e7e — 미발행 3건 오탐 · MT-46 seo_desc 충돌 잔존 정비 재지시",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r608e7e"
   }
  ]
 }
