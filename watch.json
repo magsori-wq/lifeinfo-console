@@ -29059,6 +29059,86 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-13",
    "result": "사장님 이과장 창 허용 → 04:1x~ 저장 진행, 10편 published(_tagfix_*_b.log), 남은 6편 재시작 뒤 이어감"
+  },
+  {
+   "id": "verify-split-1113",
+   "added": "2026-11-13",
+   "what": "세션분배 검수: 이과장 source 1건(09:21 KST) 위반, 4. batch.json 직접 접근 14회",
+   "due": "2026-11-13",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show verify-split-1113",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deep14-b-1113",
+   "added": "2026-11-13",
+   "what": "14차 B 제도·지역 스캔 산출 확인",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_deep_scan14_B_20261113.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep14-a-1113",
+   "added": "2026-11-13",
+   "what": "14차 A 시험·자격 스캔 산출 확인",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_deep_scan14_A_20261113.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep14-c-1113",
+   "added": "2026-11-13",
+   "what": "14차 C 금융·디지털 스캔 산출 확인",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_deep_scan14_C_20261113.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep14-a-dup-1113",
+   "added": "2026-11-13",
+   "what": "14차 A 후보 3건(소방·주택관리사 2차·PSAT) 전부 기발행 주제 중복 — E3-05·E3-06·E3-07",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.dupcheck \"소방안전관리자 시험 접수 2026 하반기\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "yangsan-rail-date-official",
+   "added": "2026-11-13",
+   "what": "양산선(양산밸리라인) 공식 개통 날짜 미공표 — 부산교통공사 2026-11-11 보도자료는 「12월」뿐",
+   "due": "2026-11-20",
+   "cmd": "curl -s -A Mozilla/5.0 https://www.humetro.busan.kr/homepage/default/board/list.do?menu_no=10010401\\&conf_no=108 | grep -o 양산선[^<]*",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "teacher-nanim-bonsu-check",
+   "added": "2026-11-13",
+   "what": "교사 난임휴직 70/50 봉급이 현행인지 12-03 개정 적용인지 상충 — 보수규정 제28조 현행판 신구대비 확인 필요",
+   "due": "2026-11-16",
+   "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/공무원보수규정/제28조\" --frames --wait 8 --max 3000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep14-k-1113",
+   "added": "2026-11-13",
+   "what": "14차 K 신규 보도자료 발굴 산출 확인",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_deep_scan14_K_20261113.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
