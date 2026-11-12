@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-12 15:02:03",
- "source_head": "497ea1991d9c",
+ "computed_at": "2026-11-12 15:06:13",
+ "source_head": "b83ce10ba0e7",
  "ids": [
   "C1-20",
   "G3-37",
@@ -11,7 +11,7 @@
   {
    "code": "C1-20",
    "title": "건강보험 자동이체 365일 11월 14일부터, 지사 점심시간 휴무는 16일",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -33,13 +33,13 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   },
   {
    "code": "G3-37",
    "title": "모슬포 방어축제 2026 가격·시간 — 입장 무료, 체험은 2만원 (11월 19~22일)",
    "go": false,
-   "v0": null,
+   "v0": "pass",
    "files": [
     {
      "label": "초안 모슬포방어축제2026_글_HTML.txt",
@@ -74,14 +74,6 @@
   }
  ],
  "actionsFuture": [
-  {
-   "id": "ps-hook-boss-edit-1112",
-   "what": "PowerShell 자물쇠 적용 — 사장님 직접 수정 4줄(verify ✅ 3a6c87d56·시험 657 OK·변경 전 문자열 현재 파일과 일치). settings.json 48·57행 + towerguard.py 31·53행. 【권고】적용 【근거】PowerShell 도구로 게시하면 자물쇠·사칭방지 둘 다 우회됨(페이블 P1) 【위험】Desktop 재시작 필요",
-   "due": "2026-11-13",
-   "cmd": "notepad C:\\lifeinfo\\docs\\설정변경_PowerShell훅_20261112.md",
-   "state": "todo",
-   "kind": "action"
-  },
   {
    "id": "aroma-bo-structure-review-1112",
    "what": "aroma 방송·OTT 카테고리 구조 재검토(이대리 상정) — ①유지·후보 방식 변경 ②다른 카테고리와 합침 ③현행 유지. 【권고】이번 주 안 결정, 루틴10 강화 재실행 결과 먼저 보고 판단 가능 【근거】11/02 이후 BO-004~007 4편 모두 같은 틀(표·공개달력·요금), 11/11·11/12 새 후보 0(넷플릭스 Top10=BO-004 틀, 공식 공개일정 화면 없음, YouTube 쿼터 소진) 【위험】합치면 템플릿·메뉴 변경(10-29 결정 번복), 유지하면 빈칸 지속",
