@@ -27601,8 +27601,10 @@
    "due": "2026-11-12",
    "cmd": "ls docs/source_B4-32_기부금_20261112.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "docs/source_B4-32_기부금_20261112.md 작성 — ①②④⑥ 원문확정, ③ 특례 100% 근로자 직접조문 못 얻음, ⑤ NTS 2025귀속 표기"
   },
   {
    "id": "deep-b432-1112",
@@ -27611,8 +27613,10 @@
    "due": "2026-11-12",
    "cmd": "ls docs/source_deep_B4-32_기부금_20261112.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "원문 10건 읽음 → docs/source_deep_B4-32_기부금_20261112.md (판정 조건부, 이월·종교단체 확정은 source 몫)"
   },
   {
    "id": "fix-b431-v0-1112",
@@ -27623,6 +27627,37 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fable-batch-maint-1112b",
+   "added": "2026-11-12",
+   "what": "페이블 독립 검증 묶음 — 00d1d692d·ce48ada75(verify 동작 합격) + 다음 정비 커밋(자물쇠 실수 꼴·MT-40 keyline·MT-37) 한 번에",
+   "due": "2026-11-12",
+   "cmd": "git log --since=08:40 --format='%h %s' | grep 정비",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "b432-carryover-check",
+   "added": "2026-11-12",
+   "what": "B4-32 미확정: 제61조②단서 이월이 한도초과분에도 붙는지·종교단체 정의·시행령 2026.10.1 판본 적용 여부 (source 확인 필요)",
+   "due": "2026-11-14",
+   "cmd": "grep -n 미확정 docs/source_deep_B4-32_기부금_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "naver-keyline-fix7-1112",
+   "added": "2026-11-12",
+   "what": "【권고】네이버 게시 7편 「핵심 한 줄」 정정 허용 — 이 창에 「keyline 정정 허용」 한 줄이면 이과장이 저장(G3-31·F3-13 은 검사 통과, 나머지 5편은 정비 게이트 보완 후) 【근거】MT-40 검수(09:56): E4-08·A3-17·G1-18·D5-07·B5-10·G3-31·F3-13 네이버 본문에 블로그 원문 keyline 문장 없음 · 이과장 G3-31 저장 명령이 자동 분류기에 거부(10:04, 우회 안 함) 【위험】라이브 네이버 글 수정 — 문장 1줄 추가뿐, 기존 문장 불변",
+   "due": "2026-11-12",
+   "cmd": "사장님 「keyline 정정 허용」 → 이부장이 이과장에게 전달",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
