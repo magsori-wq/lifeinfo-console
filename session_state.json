@@ -2062,8 +2062,8 @@
    "last_read": "2026-11-12 23:27:03",
    "owner": "이과장(작업 세션)",
    "state": "working",
-   "last_report": "2026-11-13 00:00:04",
-   "last_what": "⏸ C2-27 naverwrite 재시도(정비 43446ac0f) RESULT 전문: {\"ok\": false, \"step\": \"title\", \"myblog0\": \"https://blog.naver.com/magsor"
+   "last_report": "2026-11-13 00:19:55",
+   "last_what": "⏸ C2-27 naverwrite 측정(게시 없음) 5회 시도 — 기록 data/_nvm_c227_1~4.log. ① 태그 비만약부작용: step=body, popup cancelled, 본문 chars 347·ta"
   },
   "draft1013h128": {
    "reads": 1,
@@ -2088,11 +2088,11 @@
   "cadaily": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-12 12:05:46",
-   "last_what": "✅ CA-DAILY 11-12 회차 완료: ca_daily 11일(조회 235·검색유입률 95.48%·키워드 100 저장)·ca_trend 273블록(실패 없음)·sa_expose 기준 20261111(30일 클릭 ",
-   "reads": 12,
+   "last_report": "2026-11-13 00:30:28",
+   "last_what": "⏸ 대기 — 이부장 지시: Aside repl 00:40 까지 중지(이대리 게시 동시 repl 시간초과). 00:41 이후 ca_daily 12 → ca_trend → sa_expose → kwgap 재개",
+   "reads": 14,
    "last_order_at": "2026-11-07 12:52:22",
-   "last_read": "2026-11-12 12:02:23",
+   "last_read": "2026-11-13 00:28:11",
    "owner": "3."
   },
   "pub1013h128": {
@@ -3844,8 +3844,8 @@
   "aroma": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-13 00:04:48",
-   "last_what": "00:05 PE-012 승인 확인(watch done+회수 75ddd1da9) — 게시 착수: aside repl 사용 시작(NOL 재확인→MyBlog 확인→게시). 다른 세션 repl 금지 부탁",
+   "last_report": "2026-11-13 00:40:57",
+   "last_what": "00:5x BO-009 게시 착수(승인 f46cff1d2 확인, 웨이브 가격 재확인 변동 없음) — aside repl 사용 시작, 다른 세션 repl 정지 유지 부탁",
    "reads": 1,
    "last_order_at": "2026-10-29 14:36",
    "last_read": "2026-10-29 14:36",
@@ -3967,15 +3967,14 @@
    "owner": "이과장"
   },
   "fuel1030": {
-   "reads": 23,
-   "reads_since_report": 2,
+   "reads": 24,
+   "reads_since_report": 1,
    "last_order_at": "2026-11-11 17:56:48",
-   "last_read": "2026-11-12 23:53:43",
+   "last_read": "2026-11-13 00:28:13",
    "owner": "3.",
-   "state": "waiting",
-   "last_report": "2026-11-12 23:01:53",
-   "last_what": "13차 완료 — G 스캔 채택 0건(제주미술제=근거 기한뿐·빛초롱 날짜 미확인·스케이트장 원문 0). 제안 추가 없음, 재확인 watch g-lantern-skate-recheck-1116",
-   "waiting_since": "2026-11-12 23:53"
+   "state": "working",
+   "last_report": "2026-11-13 00:25:00",
+   "last_what": "⏸ 대기 — 13차까지 완료·보고(23:05). 새 공식 공지 대기: 11-16 빛초롱·스케이트장·화천·몽골, 11-16~17 12월 국제선 유류할증료. 지시서 갱신 없음(11-11 그대로)"
   },
   "ledger1030": {
    "reads": 4,
@@ -4355,8 +4354,8 @@
    "last_read": "2026-11-12 22:55:57",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-12 23:49:54",
-   "last_what": "📋 복창(11-13 00:0x): 판별 3건 — ①inspect 전체 run 완료 후 state×에이전트×크롤일 교차표 ②E3-06 실제 테스트 '테스트된 페이지 보기' 추가정보 옮김 ③구글 색인 생성됨 19 URL"
+   "last_report": "2026-11-13 00:29:35",
+   "last_what": "[이부장] ⏸ Aside repl 10분 중지(00:30~00:40) — 이대리 aroma 승인 4건 게시가 동시 repl 로 4회 시간초과. 00:40 이후 재개. 진행 중인 repl 은 마무리만."
   },
   "draft1104d313": {
    "reads": 1,
@@ -5384,8 +5383,8 @@
   "maint": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-13 00:02:48",
-   "last_what": "📋 C2-27 naverwrite 근본 진단(00:2x 정비) — docs/진단_naverwrite_C2-27_20261113.md · 코드 수정 없음. 사실(이과장 기록 RESULT 9건): ① 카테고리 원인 아님",
+   "last_report": "2026-11-13 00:30:45",
+   "last_what": "✅ naverwrite 근본 수정(00:4x 정비) 70ab0490a — 측정(data/_nvm_c227_1~4.log) 근거 H1: ① 탭 열기 전 Aside 연결 확인(꺼져 있으면 step=aside-down 으",
    "reads": 6,
    "last_order_at": "2026-11-11 17:09:25",
    "last_read": "2026-11-12 20:10:52"
@@ -5754,5 +5753,5 @@
    "waiting_since": "2026-11-13 00:08"
   }
  },
- "updated": "2026-11-13 00:08"
+ "updated": "2026-11-13 00:40"
 }
