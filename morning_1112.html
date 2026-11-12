@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>아침 보고 11-12</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--ok:#0a7d32;--bad:#c62828;--warn:#b26a00;--card:#f5f6f8}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#eee;--mut:#aaa;--card:#1e1e1e;--ok:#5bd37f;--bad:#ff6b6b;--warn:#ffb74d}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Malgun Gothic",sans-serif;margin:0;padding:16px;max-width:640px}
+h1{font-size:20px;margin:0 0 4px}h2{font-size:17px;margin:20px 0 8px}
+.sub{color:var(--mut);font-size:13px}.card{background:var(--card);border-radius:10px;padding:12px 14px;margin:8px 0}
+ul{padding-left:20px;margin:4px 0}li{margin:4px 0}.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+.top{border-left:4px solid var(--bad);padding-left:10px;font-weight:600}
+</style></head><body>
+<h1>아침 보고 · 11-12</h1>
+<div class="sub">사장님 취침 04:29 ~ 기상 11:03 · 작성 11:46 이부장</div>
+
+<div class="card top">발행 5편 모두 라이브 · 검수 전부 합격 · 사장님 결재 대기 0건 · 남은 문제는 정비 🔴 2건(수정 중)</div>
+
+<h2>✅ 밤사이·오전에 끝낸 일</h2>
+<ul>
+<li>발행 5편: G3-32 쿤스트하우스 취리히전 · G3-33 마리 앙투아네트 스타일전 · G3-35 포항 불빛축제 · B4-31 연말정산 교육비 세액공제 · B4-32 기부금 세액공제 한도 — <span class="ok">verify 5/5 합격</span>(라이브 200·승인 제목·썸네일·DB 일치)</li>
+<li>인스타·쓰레드 8편 완결 + F3-13 해외여행 약 반입 4채널 완결 — <span class="ok">verify 합격</span>(사진 중복 0·이중 게시 0)</li>
+<li>본문 사진 고지 누락 6편 정정 — <span class="ok">합격</span></li>
+<li>네이버 keyline 누락 정정 — 사장님 허용 뒤 3편 저장(G3-31·F3-13·E4-08), 나머지 진행 중</li>
+<li>GitHub 장애(05:17~06:08) — 복구 뒤 배포 1회, 썸네일·폰 원고 전부 200</li>
+<li>aroma: AM-SP-015 게시 · AM-DG-006 수정 게시 · DG-011·PE-010 사장님 승인(11:42) 이대리에 전달</li>
+</ul>
+
+<h2>🔍 검수 결과 (정비 코드 수정)</h2>
+<ul>
+<li class="ok">합격: MT-32 이과장 자동 깨움 · MT-35 사진 고지 · MT-38 화면 판정 · MT-40 keyline · C1/R1 기상 보고 경로 · 낮음 3건</li>
+<li class="bad">🔴 페이블 8차: MT-41(옛 글 정정 점검) — 새 글의 재게시·답글도 결재 없이 통과. verify 는 합격이었으나 페이블이 재현으로 잡음</li>
+<li class="bad">🔴 페이블 8차: PowerShell 자물쇠 — 흔한 PowerShell 꼴 7가지로 게시 명령이 통과</li>
+<li>→ 정비에 수정 지시(11:43). 고친 뒤 페이블 재검증. <b>PowerShell 설정 수정(사장님 몫)은 그때까지 보류</b></li>
+</ul>
+
+<h2>⚠️ 남은 문제</h2>
+<ul>
+<li>발행 재고 0편 — 3. 이 글감 조사 착수(11:44, C·E·F·G 4갈래). 제안 오면 이부장 선별 → 초안 지시</li>
+<li>오늘 발행 5편 4채널 후속 — 이과장 검색설명부터 진행 중</li>
+<li>정비 자동 깨움 안 됨 — 모드 0.1.2 설치 필요(승인됨, 이부장 설치 예정). 그동안 수동 깨움</li>
+<li>이부장 실수: 이대리 11:18 질문 3개에 26분 늦게 답함 · G3-33 첫 run 은 다른 세션 push 와 겹쳐 실패(재실행으로 해결)</li>
+</ul>
+
+<h2>🙋 사장님 결정하실 것</h2>
+<ul>
+<li>aroma 방송·OTT 카테고리 구조 재검토(이대리 상정) — 결재함 · 기한 11/16 · 루틴10 강화 결과 보고 판단 가능</li>
+<li>PowerShell 자물쇠 설정 수정 — <b>지금은 하지 마십시오</b>(정비 수정·재검증 뒤 다시 요청)</li>
+</ul>
+<div class="sub">근거: docs/야간지휘_20261112.md · docs/검증_페이블_20261112_maint_commits8.md · approvalcount · batchboard</div>
+</body></html>

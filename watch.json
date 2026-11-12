@@ -27734,6 +27734,56 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fable8-maint-fix-1112",
+   "added": "2026-11-12",
+   "what": "페이블 8차 🔴2(MT-41 결재 우회·PowerShell 자물쇠 fail-open) 정비 수정 대기 → 수정 커밋 뒤 페이블 재검증, 통과하면 ps-hook-boss-edit-1112 사장님 수정 재개",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard order --id maint",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fuel10-scan-1112",
+   "added": "2026-11-12",
+   "what": "연료 10차 4갈래 스캔 결과 확인",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_deep_scan10_*",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep10-ef-1112",
+   "added": "2026-11-12",
+   "what": "10차 E·F 스캔",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_deep_scan10_EF_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep10-c-1112",
+   "added": "2026-11-12",
+   "what": "10차 C 스캔",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_deep_scan10_C_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep10-g-1112",
+   "added": "2026-11-12",
+   "what": "10차 G 스캔",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_deep_scan10_G_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
