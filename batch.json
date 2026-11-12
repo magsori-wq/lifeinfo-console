@@ -7704,17 +7704,42 @@
    "order_at": "2026-11-13 05:55:47"
   }
  },
- "updated": "2026-11-13 06:53:38",
+ "updated": "2026-11-13 07:37:26",
  "current": {
-  "batch": "followup",
+  "batch": "aroma",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "✅ 태그 정정 마무리 확인(06:5x 재확인): ① 라이브 재판독 27편 완료(05:3x) — 정정 대상 16편 남은 뒤섞임 0 · 비대상 11편 변경 0 · C2-21 은 개별 재판독으로 처음과 같음 ② docs/점검_네이버태그_전수_20261113.md 42행 「정정 결과」 열 추가·커밋 fc07fda45 ③ 막힌 것 없음 — 06:23 이부장 메시지에는 대화로만 답하고 보드 줄을 안 남겨 보고가 없어 보인 것(제 누락, 이후 보드에도 남김) ④ 같은 시간대 B4-33·A5-22 초안 2건 큐 적재 완료(각 draft1113b433·draft1113a522 mark done)",
-  "since": "16:10",
-  "since_at": "2026-10-24 16:10:44"
+  "what": "07:4x 아침 점검: idaerireq 신규 0·aroma 신규 승인 0·알림 0. 후보=사우디전 결과 글(경기 11/13 23:30 뒤 KFA 확인, crossdup 🟢0.15)·PE-012 오픈 14:00 후 반응 글·한로로 PE-010 18:00 후속(자동완성 '한로로 콘서트 티켓팅' 확인). DG-011 코레일 재고는 11/14 오전 재확인 예정. 후보기록_20261113 은 루틴10 23:08 회차 뒤 검증. 다음 점검 09:24.",
+  "since": "14:53",
+  "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "07:37:26",
+   "text": "▶   — 1/7단계 · 07:4x 아침 점검: idaerireq 신규 0·aroma 신규 승인 0·알림 0. 후보=사우디전 결과 글(경기 11/13 23:30 뒤 KFA 확인, crossdup 🟢0.15)·PE-012 오픈 14:00 후 반응 글·한로로 PE-010 18:00 후속(자동완성 '한로로 콘서트 티켓팅' 확인). DG-011 코레일 재고는 11/14 오전 재확인 예정. 후보기록_20261113 은 루틴10 23:08 회차 뒤 검증. 다음 점검 09:24.",
+   "actor": "미상:de614107"
+  },
+  {
+   "t": "07:31:01",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ ASIDE_CHAT_BIG 반복 경보 소음 처리(정비, 11-13, 521af1287 push·syncorigin 맞춤) — studio/towertick.py chat_big_remind_min: 직접 게시 모드(data/aside_mode.json lee_direct ~11-18) 동안 같은 채팅 재알림 6시간→24시간, 모드 끝나면 6시간 복귀, 넘은 첫 알림은 그대로. 왜: 안 쓰는 이과장 전담 d96Y 41MB 경보가 몇 시간마다 반복. 확인: 시험 TestChatBigDirectModeQuiet(7h 조용·24h 1회·모드 끝 6h) · 463/713 OK · enginemap 🔴 없음 · 설계도 N2 갱신. 실제 tick 에 반영됐는지는 확인 못 함(towertick 이 오래 사는 프로세스면 다시 읽을 때부터). 재발방지: 간격 규칙을 순수함수·시험으로 고정 · 남은 구멍: 채팅 교체 자체는 watch aside-leechat-rotate-1118(기한 11-17, Aside 에서 새 전담 생성 필요 — 정비는 ID 교체 코드만). ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비"
+  },
+  {
+   "t": "07:27:44",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 페이블 6차 🔴 처리(정비, 11-13 07:27, 5e539a2f1 push·syncorigin 맞춤) — studio/splitguard.py: 역슬래시 경로(Get-Content webapp\\batch.json·type·python -c open(r'..\\batch.json')) 다시 차단 · git show/cat-file·grep --include= 도 읽기 · 오탐 제거(따옴표 안 ; · 환경변수 앞머리 · ls/stat/echo · cat/tee heredoc 글 · python tools/x.py) · Glob pattern 키 · 시험이 라이브 로그에 쓰던 것 → SPLITGUARD_UNREG_LOG 임시경로. 확인: 차단 9·통과 10 사례 함수 실측, 시험 462/712 OK, enginemap 🔴 없음, 설계도 기록 1줄. 재발방지: 역슬래시 사례를 시험에 고정(TestFable6SplitguardBackslash) · 남은 구멍: bat*.json·*.json 넓은 와일드카드·변수 조립(알려진 한계) · 쉼표 든 문장 줄 추천태그(합성만, 실물 0) · 현행 관제탑 ID a7dca46f 미등록(matcher 변경 뒤 경고 1회 — whoami 등록은 이부장 몫) · 라이브 splitguard_unregistered.log 의 시험 흔적 1줄(nobody-registered)은 손대지 않음. 다음: ASIDE_CHAT_BIG 반복 경보 착수",
+   "actor": "정비"
+  },
+  {
+   "t": "07:26:59",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [이부장 → 정비] (낮은 우선) ASIDE_CHAT_BIG 이 몇 시간마다 반복 울림 — 이과장 전담 Aside 채팅 d96YcUgCUkyDa4vb 41MB(한도 20MB). 직접 게시 모드(~11-18)라 지금은 안 쓰는 채팅. watch aside-leechat-rotate-1118(기한 11-17)에 새 전담 생성·asidequeue CHAT/LEE_CHAT·asidestate KNOWN ID 교체를 묶고, 그 전까지 이 경보가 직접 게시 모드 중엔 하루 1회만 울리게(소음 줄이기). splitguard 🔴 다음 순서.",
+   "actor": "이부장"
+  },
+  {
+   "t": "07:21:16",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [이부장 → 정비] 🔴 페이블 6차(docs/검증_페이블_20261113_naverwrite_6.md): splitguard 퇴행 — 역슬래시 경로 통과(Get-Content webapp\\batch.json · python -c open(r'webapp\\batch.json') · type webapp\\batch.json · cat .\\batch.json) + git show/cat-file HEAD:webapp/batch.json 통과. _BATCH 정규식에 \\ 포함·명령 전체 \\→/ 정규화·git show/cat-file 은 읽기로 판정. 시험에 역슬래시·PowerShell 사례 추가. 🟡: 남은 glob 우회·ls/stat/echo/heredoc 오탐·Glob pattern 실제 키·테스트가 라이브 data/splitguard_unregistered.log 에 쓰는 것. 지금 실제로 걸린 집행의 구멍이라 우선.",
+   "actor": "이부장"
+  },
   {
    "t": "06:53:38",
    "text": "✅ FOLLOWUP 완료 — 상시 — Aside 게시 완료 뒤 확인·기록, Aside 지시",
@@ -7888,31 +7913,6 @@
   {
    "t": "04:58:22",
    "text": "▶   — 1/7단계 · 04:58:22 통신 시험(사장님 04:57 스톱 지시): 이대리 진행 중 작업 없음(정지 상태, 새 작업 시작 안 함·예약 점검 05:07/07:37 은 읽기 점검뿐이라 유지). PING 5곳 보냄완료·실패 0. 수신 기록은 C:\\lifeinfo 쓰기 금지 지침(CLAUDE.md)상 lifeinfo 파일 대신 C:\\naver-blog\\docs\\commtest_1113.txt 에 기록 — 이부장이 필요하면 복사",
-   "actor": "이대리"
-  },
-  {
-   "t": "04:56:14",
-   "text": "▶   — 4/7단계 · 👤 사장님 04:47·04:50 세션 n:n 인사·화이팅 시험 — 이부장 수신: 인사 5/5(4.·정비·3.·이대리·이과장)·화이팅 5/5(정비·이과장·3.·이대리·4.). 이대리 보고: 인사·화이팅 5곳 발송 실패 0. 세션 간 메시지 경로 전부 살아 있음(재시작 뒤 04:48~04:56).",
-   "actor": "이부장"
-  },
-  {
-   "t": "04:53:03",
-   "text": "▶   — 1/7단계 · 04:5x 참고: 4.AdSense 세션 메모(「이대리-aroma 인사 아직 못 받음」)는 전달 지연으로 보임 — 이대리는 인사·화이팅을 5곳 모두 보냈고(전달 큐 수락, message_id 기록) 4.도 이대리 인사에 [4.] 안녕하세요·화이팅으로 응답함. 재전송은 요청 시에만",
-   "actor": "이대리"
-  },
-  {
-   "t": "04:52:47",
-   "text": "▶   — 4/7단계 · [4.·11-13 04:5x] 화이팅 보냄 5곳(이부장 인계 및 시작·이과장 세션 인계·3.네이버 블로그 통합데이터 분석·정비 담당 세션 시작·이대리-aroma) · 실패 없음(5곳 success) / 받은 화이팅 보낸이: 정비·이과장·3.·이대리(4곳, 이부장 것은 지시 메시지 본문). 앞서 받은 인사 보낸이: 정비·3.·이과장·이대리(이부장 인사는 미수신). 답장 안 함(핑퐁 금지).",
-   "actor": "4."
-  },
-  {
-   "t": "04:52:35",
-   "text": "▶   — 1/7단계 · 04:5x 화이팅 수신 완료 5/5(이부장·정비·이과장·3.·4.), 인사 수신 4/5(이부장 인사만 대기 — 이부장은 화이팅으로 갈음). 전달 이상 없음, 이후 답장 안 함",
-   "actor": "이대리"
-  },
-  {
-   "t": "04:52:16",
-   "text": "▶   — 1/7단계 · 04:5x 화이팅 수신 갱신: 이부장 · 정비 · 이과장 3곳 「화이팅!」 수신(3.·4.는 대기). 인사 수신 4/5(이부장 대기)·화이팅 수신 3/5. 답장 안 함",
    "actor": "이대리"
   }
  ],
@@ -8210,7 +8210,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "05:1x 재개 수신(사장님 05:11 「재개」, 이부장 중계) — 작업 재개. 다음: 07:37 점검 → 11/13 14:00 PE-012 오픈 후 반응 글 후보·한로로 18:00 오픈 후속(PE-010) 준비, 11/14 새벽 대표팀 사우디전 결과 글(KFA 공식 확인 후), DG-011 코레일 재고 11/15 전 재확인, 루틴10 23:08 후보기록 검증",
+   "what": "07:4x 아침 점검: idaerireq 신규 0·aroma 신규 승인 0·알림 0. 후보=사우디전 결과 글(경기 11/13 23:30 뒤 KFA 확인, crossdup 🟢0.15)·PE-012 오픈 14:00 후 반응 글·한로로 PE-010 18:00 후속(자동완성 '한로로 콘서트 티켓팅' 확인). DG-011 코레일 재고는 11/14 오전 재확인 예정. 후보기록_20261113 은 루틴10 23:08 회차 뒤 검증. 다음 점검 09:24.",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -9020,7 +9020,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
+   "what": "✅ ASIDE_CHAT_BIG 반복 경보 소음 처리(정비, 11-13, 521af1287 push·syncorigin 맞춤) — studio/towertick.py chat_big_remind_min: 직접 게시 모드(data/aside_mode.json lee_direct ~11-18) 동안 같은 채팅 재알림 6시간→24시간, 모드 끝나면 6시간 복귀, 넘은 첫 알림은 그대로. 왜: 안 쓰는 이과장 전담 d96Y 41MB 경보가 몇 시간마다 반복. 확인: 시험 TestChatBigDirectModeQuiet(7h 조용·24h 1회·모드 끝 6h) · 463/713 OK · enginemap 🔴 없음 · 설계도 N2 갱신. 실제 tick 에 반영됐는지는 확인 못 함(towertick 이 오래 사는 프로세스면 다시 읽을 때부터). 재발방지: 간격 규칙을 순수함수·시험으로 고정 · 남은 구멍: 채팅 교체 자체는 watch aside-leechat-rotate-1118(기한 11-17, Aside 에서 새 전담 생성 필요 — 정비는 ID 교체 코드만). ⏸ 대기 — 다음 maint 지시",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -39556,6 +39556,56 @@
    "what": "✅ 태그 정정 마무리 확인(06:5x 재확인): ① 라이브 재판독 27편 완료(05:3x) — 정정 대상 16편 남은 뒤섞임 0 · 비대상 11편 변경 0 · C2-21 은 개별 재판독으로 처음과 같음 ② docs/점검_네이버태그_전수_20261113.md 42행 「정정 결과」 열 추가·커밋 fc07fda45 ③ 막힌 것 없음 — 06:23 이부장 메시지에는 대화로만 답하고 보드 줄을 안 남겨 보고가 없어 보인 것(제 누락, 이후 보드에도 남김) ④ 같은 시간대 B4-33·A5-22 초안 2건 큐 적재 완료(각 draft1113b433·draft1113a522 mark done)",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-13 07:21:16",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] 🔴 페이블 6차(docs/검증_페이블_20261113_naverwrite_6.md): splitguard 퇴행 — 역슬래시 경로 통과(Get-Content webapp\\batch.json · python -c open(r'webapp\\batch.json') · type webapp\\batch.json · cat .\\batch.json) + git show/cat-file HEAD:webapp/batch.json 통과. _BATCH 정규식에 \\ 포함·명령 전체 \\→/ 정규화·git show/cat-file 은 읽기로 판정. 시험에 역슬래시·PowerShell 사례 추가. 🟡: 남은 glob 우회·ls/stat/echo/heredoc 오탐·Glob pattern 실제 키·테스트가 라이브 data/splitguard_unregistered.log 에 쓰는 것. 지금 실제로 걸린 집행의 구멍이라 우선.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-13 07:26:59",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] (낮은 우선) ASIDE_CHAT_BIG 이 몇 시간마다 반복 울림 — 이과장 전담 Aside 채팅 d96YcUgCUkyDa4vb 41MB(한도 20MB). 직접 게시 모드(~11-18)라 지금은 안 쓰는 채팅. watch aside-leechat-rotate-1118(기한 11-17)에 새 전담 생성·asidequeue CHAT/LEE_CHAT·asidestate KNOWN ID 교체를 묶고, 그 전까지 이 경보가 직접 게시 모드 중엔 하루 1회만 울리게(소음 줄이기). splitguard 🔴 다음 순서.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-13 07:27:44",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ 페이블 6차 🔴 처리(정비, 11-13 07:27, 5e539a2f1 push·syncorigin 맞춤) — studio/splitguard.py: 역슬래시 경로(Get-Content webapp\\batch.json·type·python -c open(r'..\\batch.json')) 다시 차단 · git show/cat-file·grep --include= 도 읽기 · 오탐 제거(따옴표 안 ; · 환경변수 앞머리 · ls/stat/echo · cat/tee heredoc 글 · python tools/x.py) · Glob pattern 키 · 시험이 라이브 로그에 쓰던 것 → SPLITGUARD_UNREG_LOG 임시경로. 확인: 차단 9·통과 10 사례 함수 실측, 시험 462/712 OK, enginemap 🔴 없음, 설계도 기록 1줄. 재발방지: 역슬래시 사례를 시험에 고정(TestFable6SplitguardBackslash) · 남은 구멍: bat*.json·*.json 넓은 와일드카드·변수 조립(알려진 한계) · 쉼표 든 문장 줄 추천태그(합성만, 실물 0) · 현행 관제탑 ID a7dca46f 미등록(matcher 변경 뒤 경고 1회 — whoami 등록은 이부장 몫) · 라이브 splitguard_unregistered.log 의 시험 흔적 1줄(nobody-registered)은 손대지 않음. 다음: ASIDE_CHAT_BIG 반복 경보 착수",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 07:31:01",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ ASIDE_CHAT_BIG 반복 경보 소음 처리(정비, 11-13, 521af1287 push·syncorigin 맞춤) — studio/towertick.py chat_big_remind_min: 직접 게시 모드(data/aside_mode.json lee_direct ~11-18) 동안 같은 채팅 재알림 6시간→24시간, 모드 끝나면 6시간 복귀, 넘은 첫 알림은 그대로. 왜: 안 쓰는 이과장 전담 d96Y 41MB 경보가 몇 시간마다 반복. 확인: 시험 TestChatBigDirectModeQuiet(7h 조용·24h 1회·모드 끝 6h) · 463/713 OK · enginemap 🔴 없음 · 설계도 N2 갱신. 실제 tick 에 반영됐는지는 확인 못 함(towertick 이 오래 사는 프로세스면 다시 읽을 때부터). 재발방지: 간격 규칙을 순수함수·시험으로 고정 · 남은 구멍: 채팅 교체 자체는 watch aside-leechat-rotate-1118(기한 11-17, Aside 에서 새 전담 생성 필요 — 정비는 ID 교체 코드만). ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 07:37:26",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "07:4x 아침 점검: idaerireq 신규 0·aroma 신규 승인 0·알림 0. 후보=사우디전 결과 글(경기 11/13 23:30 뒤 KFA 확인, crossdup 🟢0.15)·PE-012 오픈 14:00 후 반응 글·한로로 PE-010 18:00 후속(자동완성 '한로로 콘서트 티켓팅' 확인). DG-011 코레일 재고는 11/14 오전 재확인 예정. 후보기록_20261113 은 루틴10 23:08 회차 뒤 검증. 다음 점검 09:24.",
+   "actor": "미상:de614107",
+   "sid": "de614107"
   }
  ]
 }
