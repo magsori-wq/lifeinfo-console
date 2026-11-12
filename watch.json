@@ -28138,8 +28138,10 @@
    "due": "2026-11-12",
    "cmd": "type docs/source_C-안전상비_20261112.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "docs/source_C-안전상비_20261112.md 작성 — 판정: 살릴 수 있음(조건부, 현행 판단표 각도 전환). 입법예고 단독은 약함"
   },
   {
    "id": "deep11-e-telecom-notice-gap",
@@ -28158,8 +28160,10 @@
    "due": "2026-11-13",
    "cmd": "python -m studio.dupcheck \"12월 국내선 유류할증료\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "국내선 12월 6사 공식 확인(대한항공·아시아나·티웨이·에어부산 24,200 / 진에어·제주항공 25,300 동결, 게시 11-05~11-09, 시행 12-01 발권). 국내선은 국제선과 별개로 먼저 나옴. 판정 약함. docs/source_F-국내선유류할증료12월_20261112.md"
   },
   {
    "id": "deep11-hwacheon-1112",
@@ -28231,6 +28235,46 @@
    "what": "최남단방어축제 미확보: 주차·셔틀·교통통제·우천 공지, 2만원 단위(1인/1회), 방어회 판매가, 초대가수, 사전신청. 시도: 공식 누리집 전 페이지·공지 15건, visitjeju 상세, jeju.go.kr 쿼리검색(적용 미확인), seogwipo 메인, visitkorea 검색(0건). 미시도: 서귀포시·대정읍 게시판 검색, jeju.go.kr 폼 검색",
    "due": "2026-11-17",
    "cmd": "curl -s http://www.bangeofestival.com/skyboard/notice | grep -c 제26회 ; 157보다 큰 번호 공지 확인 ; 전화 064-794-8032(최남단방어축제위원회 사무국)에 20,000원 단위·주차·셔틀·우천 문의 후 날짜 기록 ; 글 초안은 docs/source_G-최남단방어축제_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "e-pause-fee-source-1112",
+   "added": "2026-11-12",
+   "what": "E 일시정지 요금(KT 12-07) 출처관 조사 시작 - KT bno=13389 재확인, SKT/LGU+ 정지요금 확인 중. 결과 docs/source_E-일시정지요금_20261112.md",
+   "due": "2026-11-13",
+   "cmd": "cat docs/source_E-일시정지요금_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "reverify-1600-1112",
+   "added": "2026-11-12",
+   "what": "사장님 14:30 「오늘 16시까지」 — 4. 진단+시범10편안 15:45 → 이부장 검토 → 16:00 결재함(미리보기·【권고】【근거】【위험】)",
+   "due": "2026-11-12",
+   "cmd": "ls docs/재검증_주소_내부길_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "adsense4-addr-1112-deadline",
+   "added": "2026-11-12",
+   "what": "4. 주소·내부 길 재검증 — 15:00 중간 진척 한 줄(batchboard now --batch adsense4_1104) · 15:45 docs/재검증_주소_내부길_20261112.md 완료(시범 10편 수정안 포함) · 사장님 14:30 「오늘 16시까지」",
+   "due": "2026-11-12",
+   "cmd": "ls docs/재검증_주소_내부길_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "4."
+  },
+  {
+   "id": "c-anjeon-recheck-1201",
+   "added": "2026-11-12",
+   "what": "안전상비 후속 확인 3건 — 못 얻은 것: ①국민참여입법센터 약사법 시행령안(11-12) 공고 등재·공고번호(ogLmPp 법령제명 약사법·기간 11-01~12-31 검색 시 시행규칙 재입법예고 1건만 나옴, 행정예고 admpp 는 쿼리 파라미터 무반영) ②고시 별표 13개 vs 복지부 보도참고자료 11개 불일치 이유(1차 없음, 뉴스만 단종 설명) ③하반기 품목 확대 1차 자료(복지부 보도자료 내용검색 2쪽까지 없음)",
+   "due": "2026-12-01",
+   "cmd": "python tools/aside_read.py \"https://opinion.lawmaking.go.kr/gcom/ogLmPp?lsNm=%EC%95%BD%EC%82%AC%EB%B2%95&stYd=20261101&edYd=20261231&finishIncludeYn=N&isOgYn=Y&opYn=Y\" --wait 10 --max 8000  (결과 줄에서 약사법 시행령 확인; 13/11 은 복지부 약무정책과 044-202-2491 문의)",
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
