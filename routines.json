@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-12 15:25",
+ "generated": "2026-11-12 17:06",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/12 14:05",
-   "next": "11/12 17:00",
+   "last": "11/12 17:05",
+   "next": "11/12 20:00",
    "model": "sonnet-5-5",
    "report_day": "1112",
    "report": "11-12 11:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 새 구글 피드백 답 없음(11-08 PE 2건 기보고). 🟡 새 사실: console Pages 'Run failed at startup' 11건(11-12 05:26~05:55 KST, GitHub 쪽 일시 · 02:07Z 이후 run 전부 success로 회복) · 콘솔 정합성 검사 11-11 실패 6건은 이후 성공 · 발행 워크플로 11-11 실패 2건 사유=원격 선행 확인(PC 커밋과 충돌 방지 게이트, 재시도 성공). GSC 색인 문제 해결 통지 11-09(기보고). m8975 전달 3건(뉴스·MS 고지)·aroma 0건.\n▸ 14:07 11-12 14:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 신규: GSC 11-12 04:16 「페이지 색인 생성 문제 해결됨」 32페이지 유효성 통과(URL 총계·글 단위 아님; 기보고 8월 검사 종료 통보 계열). help-communities 신규 0. GitHub: 발행 실패 1건(02:18 UTC, 원격≠체크아웃 동기 지연 → 재실행 4회 모두 success), pages build 실패·콘솔 정합성 검사 실패 반복(기보고 무해/연속push 계열). 8975 전달 2건·aroma 0건",
    "runs": [
+    {
+     "at": "11/12 17:05",
+     "link": "claude://claude.ai/epitaxy/local_273326c6-a36a-431a-9489-692575a82f01",
+     "archived": false
+    },
     {
      "at": "11/12 14:08",
      "link": "claude://claude.ai/epitaxy/local_460929c5-d622-44c7-ab6e-42b9f187a97d",
@@ -30,11 +35,6 @@
     {
      "at": "11/11 23:07",
      "link": "claude://claude.ai/epitaxy/local_28b4c96f-366f-4c81-accb-693214c7dc1f",
-     "archived": true
-    },
-    {
-     "at": "11/11 20:08",
-     "link": "claude://claude.ai/epitaxy/local_b8472968-ff4f-448d-85ab-77c117cae7c2",
      "archived": true
     }
    ]

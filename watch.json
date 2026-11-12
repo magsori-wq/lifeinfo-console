@@ -28594,8 +28594,10 @@
    "due": "2026-11-12",
    "cmd": "ls docs/source_C-GLP1안전조치_20261112.md docs/source_deep_scan12_F2_20261112.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "GLP-1 원문·F 국내 스캔·노고단 보강 모두 수령, 제안 3건 등록(E4-15·C2-27·F4-33)"
   },
   {
    "id": "pilot1112-allow",
@@ -28606,6 +28608,36 @@
    "owner": "user",
    "state": "blocked",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deep12-f2-camp-table-1112",
+   "added": "2026-11-12",
+   "what": "국립공원 야영장 2026 동절기 미운영 표(seq 29193 본문 PNG) 미확인 — Read 거부",
+   "due": "2026-11-13",
+   "cmd": "curl -s -m 40 -X POST --data seq=29193 https://reservation.knps.or.kr/community/board/notice/boardDetail.do -o C:/Users/magso/AppData/Local/Temp/claude/d127bbacf628e9d6/88de804b-9d08-456c-b6e8-73eaeb521ac4/scratchpad/f2/d29193.html",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "src12-nogodan-1112",
+   "added": "2026-11-12",
+   "what": "노고단 2027 탐방예약 판정 파일 확인",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_F-노고단탐방예약_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "nogodan-open-fee-1112",
+   "added": "2026-11-12",
+   "what": "노고단 2027 탐방예약: 못 얻은 것 = 인당 요금·평일 취급·2027년 1월분 예약 오픈일·현장접수 존속·최초 공고 유무. 시도: knps 공원별알림 공고 본문+공고문 이미지(Aside 화면 판독), 공원별알림 1~5쪽 훑기(150건), 예약시스템 탐방로 이용안내·예약환불정책 표, 예약시스템 공지 curl POST(all/sj/cn)·FAQ 조회(0건)",
+   "due": "2026-11-16",
+   "cmd": "지리산국립공원전남사무소 061-783-1507 통화(요금·평일·오픈일 확인, 날짜·담당 기록) 또는 예약시스템 공지 12월 첫 평일 이후 재조회: docs/source_F-노고단탐방예약_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
