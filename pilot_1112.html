@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>주소 재검증 시범안</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--card:#f5f6f8;--ok:#0a7d32;--bad:#c62828;--warn:#b26a00}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#eee;--mut:#aaa;--card:#1e1e1e;--ok:#5bd37f;--bad:#ff6b6b;--warn:#ffb74d}}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Malgun Gothic",sans-serif;margin:0;padding:16px;max-width:640px}
+h1{font-size:20px;margin:0 0 4px}h2{font-size:17px;margin:20px 0 8px}.sub{color:var(--mut);font-size:13px}
+.card{background:var(--card);border-radius:10px;padding:12px 14px;margin:8px 0}ul{padding-left:20px;margin:4px 0}li{margin:4px 0}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+</style></head><body>
+<h1>주소 재검증 결과 · 시범 10쌍 안</h1>
+<div class="sub">11-12 사장님 지시(14:08) · 4. 세션 진단 15:33 · 이부장 검토 15:40</div>
+
+<div class="card"><b>한 줄:</b> 주소는 멀쩡하다. 글 사이 길(링크)은 얇다. 길이 색인을 막는지는 아직 모른다 → 짝 대조 시범으로 확인.</div>
+
+<h2>진단 결과</h2>
+<ul>
+<li class="ok"><b>주소 어긋남 — 반박:</b> 라이브 517편 전부 주소·리디렉션·대표주소(canonical)·사이트맵이 같다. 색인됐던 글과 안 된 글의 차이가 없다.</li>
+<li class="bad"><b>글 사이 길이 얇음 — 지지:</b> 다른 글에서 들어오는 링크가 0인 글 157편(30%). 새 글은 옛 글을 가리키지만, 옛 글은 새 글을 가리키지 않는다(10월 65편·11월 38편).</li>
+<li class="warn"><b>길이 얇아서 색인이 안 된다 — 아직 증거 없음:</b> 8~9월 글은 링크 수와 상관없이 같은 상태. 10월 글만 약한 차이.</li>
+<li>카테고리 페이지로는 모든 글이 2번 클릭 안에 닿는다.</li>
+<li>끊어진 링크 1건: B2-14 관련글 → 404 페이지.</li>
+</ul>
+
+<h2>시범안 (결재 요청)</h2>
+<ul>
+<li><b>방법:</b> 같은 달·같은 상태의 글을 2편씩 10쌍. 한 편(처치)은 관련 주제의 옛 글 2편 「함께 보면 좋은 글」에 링크 1줄씩 추가, 다른 한 편(대조)은 그대로.</li>
+<li><b>고치는 범위:</b> 옛 글 18편에 링크 20줄 추가. 처치·대조 글 20편 본문은 손대지 않는다.</li>
+<li><b>판정:</b> 14일·28일 뒤 구글이 처치 글을 다시 크롤했는지·상태가 바뀌었는지, 대조 글과 비교(루틴7 주간 측정에 얹음).</li>
+<li><b>함께:</b> B2-14 끊어진 링크 1건 교체.</li>
+</ul>
+
+<h2>위험</h2>
+<ul>
+<li>옛 글 18편은 대부분 7월 이후 구글이 다시 읽지 않았다. 다시 읽지 않으면 그 쌍은 아무것도 시험하지 못한다(효과 없음으로 세지 않음).</li>
+<li>10쌍이라 확정이 아니라 방향 확인이다.</li>
+<li>11-15 애드센스 재요청 3일 전에 옛 글이 바뀐다. 링크 추가는 정책 위반 요소가 없고, 애드센스 근거가 아니라 색인 실험으로 한다.</li>
+</ul>
+
+<h2>10쌍 (처치 ↔ 대조)</h2>
+<ul>
+<li>A4-08 가습기살균제 배상 ↔ A1-22 청년내일저축계좌</li>
+<li>C1-14 건강검진 과태료 ↔ C1-16 건보료율 동결</li>
+<li>D2-16 하이브리드 개소세 감면 ↔ B2-22 학자금 이자면제</li>
+<li>B4-19 장려금 기한후신청 ↔ D5-06 모두의카드</li>
+<li>D1-17 위택스 환급금 ↔ G3-22 절로 페스타</li>
+<li>F1-17 중국 입국신고서 ↔ A1-24 상생소비복권</li>
+<li>E2-10 카드 포인트 계좌입금 ↔ C2-15 벌쏘임 응급처치</li>
+<li>G2-04 양산 신중년고용지원금 ↔ F4-22 자라섬재즈</li>
+<li>C4-05 백내장 수술 비용 ↔ A1-07 상병수당</li>
+<li>C4-06 틀니 건강보험 ↔ D1-03 학교폭력 신고</li>
+</ul>
+<div class="sub">근거: docs/재검증_주소_내부길_20261112.md (4. 세션, 원자료 _work 3개)</div>
+</body></html>
