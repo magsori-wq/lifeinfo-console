@@ -28715,6 +28715,27 @@
    "owner": "claude",
    "state": "wait",
    "by": "정비"
+  },
+  {
+   "id": "pilot1112-complete",
+   "added": "2026-11-12",
+   "what": "시범 10쌍 도너 18편+B2-14 전부 반영·verify 대조 완료(16시 기한 지남)",
+   "due": "2026-11-12",
+   "cmd": "ls data/_pilot/*.new.html | wc -l",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "pilot1112-donors9-approve",
+   "added": "2026-11-12",
+   "what": "시범 10쌍 남은 옛 글 9편 「함께 보면 좋은 글」 링크 1줄 추가 승인 — B4-03·C2-01·C3-01·C3-03·C4-03·D2-04·D2-06·E2-05·F1-05. 【권고】승인 【근거】16:00 시범안 승인·17:46 허용, 앞 10건은 반영 완료 — 이 9편은 승인 기록에 코드가 없어 코드 게이트가 막음 【위험】옛 글에 링크 1줄씩만 추가(본문 변경 없음, 줄 단위 diff 확인)",
+   "due": "2026-11-12",
+   "cmd": "python -m studio.batchboard order --id pilot1112",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "세션:a7dca46f"
   }
  ]
 }
