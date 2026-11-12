@@ -2202,6 +2202,17 @@
      "date": "2026-11-12",
      "at": "2026-11-12 20:09",
      "actor": "미상:153b2f11"
+    },
+    {
+     "code": "lifeinfo-nightly-verify-1112",
+     "title": "lifeinfo-nightly-verify (E)",
+     "state": "done",
+     "note": "11-12 야간검증: 오늘 발행 13편 중 B4-31·B4-32 본문 정독(내부 계산 정합 OK), 공식 대조는 law.go.kr DRF API 검증실패로 미결(대체 안 함). 오류 발견 0. 나머지 11편·위험순위 기존 글 미검증. 애드센스 NEEDS_ATTENTION(PENDING)",
+     "auto_daily": true,
+     "base_code": "lifeinfo-nightly-verify",
+     "date": "2026-11-12",
+     "at": "2026-11-12 22:37",
+     "actor": "미상:e254a3e6"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -7487,9 +7498,11 @@
     {
      "code": "PILOT10",
      "title": "블로그스팟 시범 10쌍 — 도너 18편 관련글 링크 20줄 + B2-14 404 교체",
-     "state": "todo",
-     "note": "사장님 15:50 결재",
-     "owner": "이과장"
+     "state": "done",
+     "note": "도너 9편(B4-03·C2-01·C3-01·C3-03·C4-03·D2-04·D2-06·E2-05·F1-05) 11-12 22:35~22:40 반영 — getByPath 박스 안 변경만·제목 불변 9/9(C4-03 끝 개행 1자 차이뿐), 시각 §5-3-a 기록. 전체 18편+B2-14 반영 완료",
+     "owner": "이과장",
+     "at": "2026-11-12 22:41",
+     "actor": "이과장"
     }
    ],
    "steps": [
@@ -7605,17 +7618,37 @@
    "order_at": "2026-11-12 17:44:06"
   }
  },
- "updated": "2026-11-12 22:31:50",
+ "updated": "2026-11-12 22:41:05",
  "current": {
-  "batch": "pub1112e415",
+  "batch": "maint",
   "code": "",
-  "title": "",
+  "title": "정비 담당 세션(11-11 신설)",
   "step": 1,
-  "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474864838 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-  "since": "17:57",
-  "since_at": "2026-11-12 17:57:05"
+  "what": "✅ MT-50(22:58 정비) beb7eb06a: 세션 정체 감지 — studio/sessionstall.stalled 한 곳(읽은 뒤 보고 없음 또는 진행 중 + 30분 + 그 세션 마지막 턴 끝 30분 이상 · 상시·동결·24h 초과 제외 · 일하는 중이면 안 냄) → towertick SESSION_STALL 이부장 깨움(건당 1회) + data/.session_stall.json → leewake(이과장)·rolewake(정비) 자동 깨움 1회. 확인: 오늘 실데이터 재생 19:20 부터 pub1112f433 판정·상시 followup 제외 · 시험 6건+전체 OK · enginemap 🔴0 · 메인 동기 무정지(MT-46 효과도 확인) · 지금 판정 「정체 없음」(이과장 작동 중). 남은 것: 실제 정체 1회 때 경보·깨움 실측(watch mt50-session-stall-live). 재발방지: 새 정체 꼴은 sessionstall.stalled 한 곳에 조건 추가",
+  "since": "17:07",
+  "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "22:41:05",
+   "text": "✅ PILOT10 완료 — 블로그스팟 시범 10쌍 — 도너 18편 관련글 링크 20줄 +",
+   "actor": "이과장"
+  },
+  {
+   "t": "22:37:30",
+   "text": "✅ lifeinfo-nightly-verify-1112 완료 — lifeinfo-nightly-verify (E)",
+   "actor": "미상:e254a3e6"
+  },
+  {
+   "t": "22:33:01",
+   "text": "▶   — 1/4단계 · [이부장 → 이과장] 사장님 22:25 폰 결재 pilot1112-donors9-approve 승인(watch done) — 남은 9편 update-post 진행 가능. 한 편씩 dry-run→실행→getByPath→반영시각 기록, 끝나면 mark.",
+   "actor": "이부장"
+  },
+  {
+   "t": "22:32:29",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-50(22:58 정비) beb7eb06a: 세션 정체 감지 — studio/sessionstall.stalled 한 곳(읽은 뒤 보고 없음 또는 진행 중 + 30분 + 그 세션 마지막 턴 끝 30분 이상 · 상시·동결·24h 초과 제외 · 일하는 중이면 안 냄) → towertick SESSION_STALL 이부장 깨움(건당 1회) + data/.session_stall.json → leewake(이과장)·rolewake(정비) 자동 깨움 1회. 확인: 오늘 실데이터 재생 19:20 부터 pub1112f433 판정·상시 followup 제외 · 시험 6건+전체 OK · enginemap 🔴0 · 메인 동기 무정지(MT-46 효과도 확인) · 지금 판정 「정체 없음」(이과장 작동 중). 남은 것: 실제 정체 1회 때 경보·깨움 실측(watch mt50-session-stall-live). 재발방지: 새 정체 꼴은 sessionstall.stalled 한 곳에 조건 추가",
+   "actor": "정비"
+  },
   {
    "t": "22:31:50",
    "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474864838 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
@@ -7795,26 +7828,6 @@
    "t": "17:42:47",
    "text": "📋 배치 '🚀 E4-15 발행 — 유플러스 청소년 할인 12월 1일 종료 — 월 1만원, 신규 신청은 11월까지 (사장님 승인 완료)' 등록 — 1항목",
    "actor": "사람"
-  },
-  {
-   "t": "17:42:35",
-   "text": "📄 pub1112f433 작업 지시 등록(11320자, 2026-11-12 17:42:35)",
-   "actor": "사람"
-  },
-  {
-   "t": "17:42:25",
-   "text": "🏷️ pub1112f433 담당=이과장(작업 세션)",
-   "actor": "사람"
-  },
-  {
-   "t": "17:42:20",
-   "text": "📋 배치 '🚀 F4-33 발행 — 노고단 탐방 예약제 2027년 1월부터 주말·공휴일만 — 정원 1,870명, 예 (사장님 승인 완료)' 등록 — 1항목",
-   "actor": "사람"
-  },
-  {
-   "t": "17:30:57",
-   "text": "✔ 이부장 ack r27fbf1",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -8921,7 +8934,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
+   "what": "✅ MT-50(22:58 정비) beb7eb06a: 세션 정체 감지 — studio/sessionstall.stalled 한 곳(읽은 뒤 보고 없음 또는 진행 중 + 30분 + 그 세션 마지막 턴 끝 30분 이상 · 상시·동결·24h 초과 제외 · 일하는 중이면 안 냄) → towertick SESSION_STALL 이부장 깨움(건당 1회) + data/.session_stall.json → leewake(이과장)·rolewake(정비) 자동 깨움 1회. 확인: 오늘 실데이터 재생 19:20 부터 pub1112f433 판정·상시 followup 제외 · 시험 6건+전체 OK · enginemap 🔴0 · 메인 동기 무정지(MT-46 효과도 확인) · 지금 판정 「정체 없음」(이과장 작동 중). 남은 것: 실제 정체 1회 때 경보·깨움 실측(watch mt50-session-stall-live). 재발방지: 새 정체 꼴은 sessionstall.stalled 한 곳에 조건 추가",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -37655,6 +37668,26 @@
    "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474864838 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 22:32:29",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-50(22:58 정비) beb7eb06a: 세션 정체 감지 — studio/sessionstall.stalled 한 곳(읽은 뒤 보고 없음 또는 진행 중 + 30분 + 그 세션 마지막 턴 끝 30분 이상 · 상시·동결·24h 초과 제외 · 일하는 중이면 안 냄) → towertick SESSION_STALL 이부장 깨움(건당 1회) + data/.session_stall.json → leewake(이과장)·rolewake(정비) 자동 깨움 1회. 확인: 오늘 실데이터 재생 19:20 부터 pub1112f433 판정·상시 followup 제외 · 시험 6건+전체 OK · enginemap 🔴0 · 메인 동기 무정지(MT-46 효과도 확인) · 지금 판정 「정체 없음」(이과장 작동 중). 남은 것: 실제 정체 1회 때 경보·깨움 실측(watch mt50-session-stall-live). 재발방지: 새 정체 꼴은 sessionstall.stalled 한 곳에 조건 추가",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 22:33:01",
+   "bid": "pilot1112",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "[이부장 → 이과장] 사장님 22:25 폰 결재 pilot1112-donors9-approve 승인(watch done) — 남은 9편 update-post 진행 가능. 한 편씩 dry-run→실행→getByPath→반영시각 기록, 끝나면 mark.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12 21:28",
+ "generated": "2026-11-12 22:39",
  "routines": [
   {
    "num": 1,
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/11 22:33",
-   "next": "11/12 22:30",
+   "last": "11/12 22:33",
+   "next": "11/13 22:30",
    "model": "sonnet-5-5",
-   "report_day": "1111",
-   "report": "11-11 야간검증: 오늘 발행 18편 중 3편 공식원문 대조 — F1-19(passport.go.kr 26-786)·E4-13(Apple 149715 CVE 9건) 일치, C2-21(korea.kr 보도자료)은 본문이 hwpx/pdf 첨부라 수치 대조 미완(다운로드 승인 필요·미실시). 오류 0건. 미검증 6편: E3-07,E2-18,F3-11,G3-30,E4-14,C2-22. 이어받은것: 직전회차 10-20 이후 21일 공백. 카톡 발송 완료",
+   "report_day": "1112",
+   "report": "11-12 야간검증: 오늘 발행 13편 중 B4-31·B4-32 본문 정독(내부 계산 정합 OK), 공식 대조는 law.go.kr DRF API 검증실패로 미결(대체 안 함). 오류 발견 0. 나머지 11편·위험순위 기존 글 미검증. 애드센스 NEEDS_ATTENTION(PENDING)",
    "runs": [
+    {
+     "at": "11/12 22:38",
+     "link": "claude://claude.ai/epitaxy/local_088ca724-e6fe-48c6-a196-2de3eaf0bf99",
+     "archived": false
+    },
     {
      "at": "11/11 22:39",
      "link": "claude://claude.ai/epitaxy/local_55506205-e8ef-4933-ba8a-3a518dbd4926",
@@ -182,11 +187,6 @@
     {
      "at": "11/08 22:38",
      "link": "claude://claude.ai/epitaxy/local_8e664e49-8bad-4fad-b721-e16432812349",
-     "archived": true
-    },
-    {
-     "at": "11/07 22:44",
-     "link": "claude://claude.ai/epitaxy/local_ecfa80a2-a86a-4cb5-b9b8-adc448bb7da5",
      "archived": true
     }
    ]

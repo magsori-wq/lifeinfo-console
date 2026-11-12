@@ -28759,6 +28759,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "정비"
+  },
+  {
+   "id": "mt50-live-tick-1113",
+   "added": "2026-11-12",
+   "what": "MT-50 실제 동작 확인 — towertick 실제 tick 에서 SESSION_STALL 이 울리는지(세션 정체 30분 이상 사례 1건 관측) · 확인되면 이부장 30분 크론(a560f1c2) 해제 검토",
+   "due": "2026-11-14",
+   "cmd": "grep -c SESSION_STALL webapp/_watch_state.json",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
