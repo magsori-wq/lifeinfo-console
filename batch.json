@@ -7631,17 +7631,27 @@
    "confirm_note": "초안 큐 적재·V0 통과·결재함 상정·폰 미리보기 200 확인"
   }
  },
- "updated": "2026-11-13 08:07:55",
+ "updated": "2026-11-13 08:34:15",
  "current": {
-  "batch": "aroma",
+  "batch": "maint",
   "code": "",
-  "title": "",
+  "title": "정비 담당 세션(11-11 신설)",
   "step": 1,
-  "what": "07:4x 아침 점검: idaerireq 신규 0·aroma 신규 승인 0·알림 0. 후보=사우디전 결과 글(경기 11/13 23:30 뒤 KFA 확인, crossdup 🟢0.15)·PE-012 오픈 14:00 후 반응 글·한로로 PE-010 18:00 후속(자동완성 '한로로 콘서트 티켓팅' 확인). DG-011 코레일 재고는 11/14 오전 재확인 예정. 후보기록_20261113 은 루틴10 23:08 회차 뒤 검증. 다음 점검 09:24.",
-  "since": "14:53",
-  "since_at": "2026-10-29 14:53:41"
+  "what": "✅ 페이블 7차 🟡 처리(정비, 11-13, 95e843247 push·syncorigin 맞춤) — studio/splitguard.py: 6차가 새로 연 우회 닫음(echo (Get-Content …) · Get-ChildItem|Get-Content · dir|%{Get-Content} · ls|xargs cat · echo ok < batch.json · cat <<E | python · python tools/x.py webapp/batch.json) · 오탐: git 하위 명령 자리만 봄(git commit -m \"…show…\" -- webapp/batch.json 통과, stash show·-C·-c 옵션 뒤 show/cat-file 차단). 확인: 차단 12·통과 10 사례 실측, 시험 TestFable7SplitguardScope 2건 · 465/715 OK · enginemap 🔴 없음. 설계도에 판단 한 줄: splitguard 는 실수 방지용 — glob·변수 조립 우회는 더 쫓지 않음. 재발방지: 새 우회 사례를 시험에 고정 · 남은 구멍: glob·변수 조립(의도적으로 둠) · sls -Path 앞자리(6차부터 같음) · Agent·Read·Grep 집행은 settings matcher 결재 대기. ⏸ 대기 — 다음 maint 지시",
+  "since": "17:07",
+  "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "08:34:15",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 페이블 7차 🟡 처리(정비, 11-13, 95e843247 push·syncorigin 맞춤) — studio/splitguard.py: 6차가 새로 연 우회 닫음(echo (Get-Content …) · Get-ChildItem|Get-Content · dir|%{Get-Content} · ls|xargs cat · echo ok < batch.json · cat <<E | python · python tools/x.py webapp/batch.json) · 오탐: git 하위 명령 자리만 봄(git commit -m \"…show…\" -- webapp/batch.json 통과, stash show·-C·-c 옵션 뒤 show/cat-file 차단). 확인: 차단 12·통과 10 사례 실측, 시험 TestFable7SplitguardScope 2건 · 465/715 OK · enginemap 🔴 없음. 설계도에 판단 한 줄: splitguard 는 실수 방지용 — glob·변수 조립 우회는 더 쫓지 않음. 재발방지: 새 우회 사례를 시험에 고정 · 남은 구멍: glob·변수 조립(의도적으로 둠) · sls -Path 앞자리(6차부터 같음) · Agent·Read·Grep 집행은 settings matcher 결재 대기. ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비"
+  },
+  {
+   "t": "08:29:41",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [이부장 → 정비] 페이블 7차(docs/검증_페이블_20261113_naverwrite_7.md) 🔴0. 🟡 처리 범위를 정한다: ① 이번 수정이 새로 연 것(echo (Get-Content …)·Get-ChildItem|Get-Content·xargs cat·< 리다이렉트·heredoc 속 open·python tools/x.py webapp/batch.json)과 ② 새 오탐(git commit -m 메시지 속 show/cat-file 낱말 — 하위 명령 자리만 보게)만 고친다. ③ glob·변수 조립 우회는 더 쫓지 않는다 — splitguard 는 실수 방지용이지 보안 장치가 아니다(완전 차단은 문자열 검사로 불가). 이 판단을 설계도에 한 줄 남길 것.",
+   "actor": "이부장"
+  },
   {
    "t": "08:07:55",
    "text": "✅ daily-email-briefing-1113 완료 — daily-email-briefing (A)",
@@ -7831,16 +7841,6 @@
    "t": "05:03:20",
    "text": "✔ 이부장 ack rb0ae07",
    "actor": "이부장"
-  },
-  {
-   "t": "05:03:13",
-   "text": "✔ 이부장 ack rf3bf5a",
-   "actor": "이부장"
-  },
-  {
-   "t": "04:59:45",
-   "text": "▶   — 1/7단계 · 04:59:45 통신 시험 완료 — PING 수신 5/5(4.AdSense·이부장·3.통합데이터·이과장·정비), 송신 5/5 실패 0. 기록 docs/commtest_1113.txt. 이대리 정지 상태 유지(새 작업 없음)",
-   "actor": "이대리"
   }
  ],
  "currents": {
@@ -8947,7 +8947,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ ASIDE_CHAT_BIG 반복 경보 소음 처리(정비, 11-13, 521af1287 push·syncorigin 맞춤) — studio/towertick.py chat_big_remind_min: 직접 게시 모드(data/aside_mode.json lee_direct ~11-18) 동안 같은 채팅 재알림 6시간→24시간, 모드 끝나면 6시간 복귀, 넘은 첫 알림은 그대로. 왜: 안 쓰는 이과장 전담 d96Y 41MB 경보가 몇 시간마다 반복. 확인: 시험 TestChatBigDirectModeQuiet(7h 조용·24h 1회·모드 끝 6h) · 463/713 OK · enginemap 🔴 없음 · 설계도 N2 갱신. 실제 tick 에 반영됐는지는 확인 못 함(towertick 이 오래 사는 프로세스면 다시 읽을 때부터). 재발방지: 간격 규칙을 순수함수·시험으로 고정 · 남은 구멍: 채팅 교체 자체는 watch aside-leechat-rotate-1118(기한 11-17, Aside 에서 새 전담 생성 필요 — 정비는 ID 교체 코드만). ⏸ 대기 — 다음 maint 지시",
+   "what": "✅ 페이블 7차 🟡 처리(정비, 11-13, 95e843247 push·syncorigin 맞춤) — studio/splitguard.py: 6차가 새로 연 우회 닫음(echo (Get-Content …) · Get-ChildItem|Get-Content · dir|%{Get-Content} · ls|xargs cat · echo ok < batch.json · cat <<E | python · python tools/x.py webapp/batch.json) · 오탐: git 하위 명령 자리만 봄(git commit -m \"…show…\" -- webapp/batch.json 통과, stash show·-C·-c 옵션 뒤 show/cat-file 차단). 확인: 차단 12·통과 10 사례 실측, 시험 TestFable7SplitguardScope 2건 · 465/715 OK · enginemap 🔴 없음. 설계도에 판단 한 줄: splitguard 는 실수 방지용 — glob·변수 조립 우회는 더 쫓지 않음. 재발방지: 새 우회 사례를 시험에 고정 · 남은 구멍: glob·변수 조립(의도적으로 둠) · sls -Path 앞자리(6차부터 같음) · Agent·Read·Grep 집행은 settings matcher 결재 대기. ⏸ 대기 — 다음 maint 지시",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -39533,6 +39533,26 @@
    "what": "07:4x 아침 점검: idaerireq 신규 0·aroma 신규 승인 0·알림 0. 후보=사우디전 결과 글(경기 11/13 23:30 뒤 KFA 확인, crossdup 🟢0.15)·PE-012 오픈 14:00 후 반응 글·한로로 PE-010 18:00 후속(자동완성 '한로로 콘서트 티켓팅' 확인). DG-011 코레일 재고는 11/14 오전 재확인 예정. 후보기록_20261113 은 루틴10 23:08 회차 뒤 검증. 다음 점검 09:24.",
    "actor": "미상:de614107",
    "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-13 08:29:41",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] 페이블 7차(docs/검증_페이블_20261113_naverwrite_7.md) 🔴0. 🟡 처리 범위를 정한다: ① 이번 수정이 새로 연 것(echo (Get-Content …)·Get-ChildItem|Get-Content·xargs cat·< 리다이렉트·heredoc 속 open·python tools/x.py webapp/batch.json)과 ② 새 오탐(git commit -m 메시지 속 show/cat-file 낱말 — 하위 명령 자리만 보게)만 고친다. ③ glob·변수 조립 우회는 더 쫓지 않는다 — splitguard 는 실수 방지용이지 보안 장치가 아니다(완전 차단은 문자열 검사로 불가). 이 판단을 설계도에 한 줄 남길 것.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-13 08:34:15",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ 페이블 7차 🟡 처리(정비, 11-13, 95e843247 push·syncorigin 맞춤) — studio/splitguard.py: 6차가 새로 연 우회 닫음(echo (Get-Content …) · Get-ChildItem|Get-Content · dir|%{Get-Content} · ls|xargs cat · echo ok < batch.json · cat <<E | python · python tools/x.py webapp/batch.json) · 오탐: git 하위 명령 자리만 봄(git commit -m \"…show…\" -- webapp/batch.json 통과, stash show·-C·-c 옵션 뒤 show/cat-file 차단). 확인: 차단 12·통과 10 사례 실측, 시험 TestFable7SplitguardScope 2건 · 465/715 OK · enginemap 🔴 없음. 설계도에 판단 한 줄: splitguard 는 실수 방지용 — glob·변수 조립 우회는 더 쫓지 않음. 재발방지: 새 우회 사례를 시험에 고정 · 남은 구멍: glob·변수 조립(의도적으로 둠) · sls -Path 앞자리(6차부터 같음) · Agent·Read·Grep 집행은 settings matcher 결재 대기. ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ]
 }
