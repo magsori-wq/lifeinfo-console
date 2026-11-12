@@ -28484,7 +28484,7 @@
   {
    "id": "xlink-c226",
    "added": "2026-11-12",
-   "what": "🔗 C2-26 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-26",
+   "what": "🔗 C2-26 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-26",
    "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code C2-26",
    "owner": "claude",
@@ -28504,9 +28504,9 @@
   {
    "id": "deep12-e-msit-list-1112",
    "added": "2026-11-12",
-   "what": "12차 E 스캔: 과기정통부·방미통위 보도자료 목록 미취득(msit 시스템 점검·kmcc 리다이렉트 빈 목록)",
+   "what": "12차 E 스캔: 과기정통부 목록 재시도 1,581바이트 점검셸(korea.kr 15쪽 대체), KT inside 목록 JS 렌더 미취득",
    "due": "2026-11-16",
-   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py https://www.msit.go.kr/bbs/list.do?sCode=user\\&mId=113\\&mPid=238 --wait 7 --max 3000",
+   "cmd": "curl -s -A \"Mozilla/5.0\" -o /dev/null -w \"%{http_code} %{size_download}\\n\" https://www.msit.go.kr/bbs/list.do?sCode=user&mId=113&mPid=238",
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"

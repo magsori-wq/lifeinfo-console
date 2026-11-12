@@ -7493,17 +7493,22 @@
    "order_at": "2026-11-12 15:52:29"
   }
  },
- "updated": "2026-11-12 16:22:40",
+ "updated": "2026-11-12 16:24:29",
  "current": {
   "batch": "pub1112c226",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474467241 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+  "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfogditEdjm/ (naver-link 가 자동 보고) · 남음: 쓰레드",
   "since": "16:03",
   "since_at": "2026-11-12 16:03:54"
  },
  "log": [
+  {
+   "t": "16:24:29",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/DfogditEdjm/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장"
+  },
   {
    "t": "16:22:40",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] 👤 사장님 16:22 「진행」 — MT-49 알림 턴 줄이기(주간 한도 25%/15h, 오늘 09~16시 알림 89턴=5분마다, 턴당 이부장 대화 65만 토큰): ① 급하지 않은 알림(BOSS_APPROVAL·ASIDE_DRAFT·DRAFT_READY·CHKMON_REPORT·CONFIRM_BACKLOG·AUTO_CONFIRM·POST_COMPLETE·INDEX_REQUEST_TODO·DEPLOY_NEEDED·ROUTINE_REPORT)은 15분 묶음 1턴으로 ② 즉시 유지: NEW_BOSS_ITEM·사장님 결재요청·⛔막힘/사고(ASIDE_ALERT 중 ⛔·⚠️)·PUBLISH_RUN_DONE failure·TOWER_OWED ③ 중복 제거: 같은 chkmon 항목 재보고 금지(내용 바뀔 때만)·PUBLISH_STALL 은 로컬이 origin 보다 뒤처졌으면 origin 기준으로 판정(오늘 6건 전부 오탐) ④ 시험 + 하루 실측(알림 턴 수 전후 비교). 우선순위 = MT-46(동기 근본) 다음.",
@@ -7698,11 +7703,6 @@
    "t": "15:24:01",
    "text": "▶   — 1/7단계 · [관제탑 → 이과장] 원격 동기가 이과장 stage 로 또 멈춤: data/_naver_502_lite.jpg · insta/_src/pedernal_crop_left/low/right.jpg — 지금 경로 지정 커밋([이과장]) 후 syncorigin. 앞으로 git add 한 파일은 같은 명령에서 바로 경로 커밋(stage 남기지 말 것). C2-26 발행이 이 동기를 기다림.",
    "actor": "이부장"
-  },
-  {
-   "t": "15:23:29",
-   "text": "▶   — 1/7단계 · ⚠️ C1-20 run 43166785240·G3-37 run 43167271806 둘 다 success(라이브 C1-20 https://lifeinfo8975.blogspot.com/2026/11/365-11-14-16.html 200·og:image 503 확인). 두 run 종료 후 syncorigin 실행했으나 다시 「겹치는 로컬 변경이 원본 상태파일이 아님: data/_reflect_live_log.jsonl(다른 세션 미커밋)」으로 멈춤(뒤 2·앞 5). 내 파일 아님·되돌리지 않음. 막힌 것: ①로컬 DB 에 C1-20·G3-37 레코드 없음 → 검색설명 postId·naver-link·교차링크 진행 불가 ②C2-26 승인 도장·초안이 원격에 없음 → pubready ⛔(push 먼저). 🙋 이부장: 13:54 때처럼 그 파일을 보존한 뒤 syncorigin 으로 맞춰 주세요. 맞춰지면 C1-20→G3-37 후속 4채널 즉시 시작, C2-26 은 pubready 통과 뒤 이부장 발행. ⏸ 대기",
-   "actor": "이과장"
   }
  ],
  "currents": {
@@ -9142,7 +9142,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474467241 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfogditEdjm/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "16:03",
    "since_at": "2026-11-12 16:03:54"
   }
@@ -9198,22 +9198,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-29 16:23:00",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "코드안: AM-<BO방송OTT|PE공연연예|SP스포츠|DG디지털여가>-<카테고리별 발행순3자리>. db.json 9편 부여 완료(AM-SP-003=AM-009 게시본 224457942199, 공개 본문 확인 OK). ⚠️ 네이버 카테고리 불일치: 'KIA PO2 관전' 글이 방송·OTT(스포츠가 맞음). 목동 글은 RSS상 공연·연예로 정상(방송·OTT 아님). 다음: 공식 이미지 이용조건 조사→문서"
-  },
-  {
-   "ts": "2026-10-29 16:23:37",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "👤 사장님 직접 지시(채팅 16:3x): AM-SP-003 발행 확인 요청+앞으로 이대리가 발행·게시. 공개 URL 224457942199 본문·카테고리(스포츠) 확인 OK. CLAUDE.md 게시 줄 갱신(커밋). 승인된 버전만·MyBlog 확인 유지"
-  },
   {
    "ts": "2026-10-29 16:27:16",
    "bid": "tower1029",
@@ -37175,6 +37159,16 @@
    "what": "[관제탑 → 정비] 👤 사장님 16:22 「진행」 — MT-49 알림 턴 줄이기(주간 한도 25%/15h, 오늘 09~16시 알림 89턴=5분마다, 턴당 이부장 대화 65만 토큰): ① 급하지 않은 알림(BOSS_APPROVAL·ASIDE_DRAFT·DRAFT_READY·CHKMON_REPORT·CONFIRM_BACKLOG·AUTO_CONFIRM·POST_COMPLETE·INDEX_REQUEST_TODO·DEPLOY_NEEDED·ROUTINE_REPORT)은 15분 묶음 1턴으로 ② 즉시 유지: NEW_BOSS_ITEM·사장님 결재요청·⛔막힘/사고(ASIDE_ALERT 중 ⛔·⚠️)·PUBLISH_RUN_DONE failure·TOWER_OWED ③ 중복 제거: 같은 chkmon 항목 재보고 금지(내용 바뀔 때만)·PUBLISH_STALL 은 로컬이 origin 보다 뒤처졌으면 origin 기준으로 판정(오늘 6건 전부 오탐) ④ 시험 + 하루 실측(알림 턴 수 전후 비교). 우선순위 = MT-46(동기 근본) 다음.",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 16:24:29",
+   "bid": "pub1112c226",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfogditEdjm/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
