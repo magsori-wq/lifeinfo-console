@@ -28863,7 +28863,7 @@
   {
    "id": "gsc-mobile-redirect-checks-1113",
    "added": "2026-11-12",
-   "what": "GSC 리디렉션 오류 — 사실: 07-30 무렵부터 구글 첫 크롤 275/275 실패·재크롤 대부분 성공. 4. (a) 첫 크롤 성공 마지막 날 (b) 수정 vs 재크롤 결과 → 원인 확정 뒤에만 수정안 결재(【위험】11-15·시범 18편 수정 영향)",
+   "what": "GSC 리디렉션 오류 — 타임라인: 6월 실패 → 07-06~07-20 거의 성공 → 07-20 이후 첫 크롤 275/275·재크롤 대부분 실패. 원인 미상(07-21 이전 작업기록 없음). 다음: docs/redirect_cause_20260917.md·색인조사_결론 대조 → 후보별 2~3편 1일 실험 카드(사장님 결재)",
    "due": "2026-11-13",
    "cmd": "grep -c '## 7' docs/대조_GSC힌트_우리주소_20261113.md",
    "owner": "claude",
@@ -28965,12 +28965,22 @@
   {
    "id": "xlink-c227",
    "added": "2026-11-13",
-   "what": "🔗 C2-27 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-27",
+   "what": "🔗 C2-27 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-27",
    "due": "2026-11-13",
    "cmd": "python studio/blogger.py crosslink --code C2-27",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "naver-tags-live-fix-1113",
+   "added": "2026-11-13",
+   "what": "네이버 라이브 글 태그 정정 — naverwrite 로 게시된 글 전수 실제 태그 판독(이과장 읽기 전용) → 뒤섞인·남는 태그 목록 → 정정 결재 카드(【권고】【근거】【위험】 + 원고 해시태그 줄을 태그로 쓸지 정책 확인: osmu/CLAUDE.md·naver-draft 규격)",
+   "due": "2026-11-13",
+   "cmd": "ls data/_nv_tags_read*.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
