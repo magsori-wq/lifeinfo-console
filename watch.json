@@ -27613,6 +27613,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "fix-b431-v0-1112",
+   "added": "2026-11-12",
+   "what": "B4-31 V0 정정(제목 9세 미만·초2 이하, 귀속 제거, 초3 표현 3곳, 대출 원리금 문구, 태권도장 구절). heading OK·validate FAIL 0. 사례④ 태권도장 문장 없어 ③에만 삽입",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.heading --file 연말정산교육비세액공제_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
