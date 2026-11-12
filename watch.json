@@ -28324,6 +28324,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-thumb-505",
+   "added": "2026-11-12",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(505_convenience_medicine.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-12",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "gatesync-push-fail-11121518",
+   "added": "2026-11-12",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): syncorigin 원본 충돌(exit 3) — 사람이 봐야 함: e the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n",
+   "due": "2026-11-12",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
