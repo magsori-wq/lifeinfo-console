@@ -1,19 +1,36 @@
 {
- "rev": "7fbb90d5",
+ "rev": "ef72b1d1",
  "counts": {
-  "total": 515,
+  "total": 516,
   "osmu_done": 511,
-  "osmu_pending": 4,
+  "osmu_pending": 5,
   "indexed": 0,
-  "index_pending": 515,
+  "index_pending": 516,
   "index_requested": 160,
-  "index_todo": 89,
+  "index_todo": 90,
   "index_benign": 266
  },
  "actionable": [
   {
    "code": "B4-31",
    "title": "연말정산 교육비 세액공제 — 학원비는 취학 전·9세 미",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
+  {
+   "code": "B4-32",
+   "title": "기부금 세액공제 한도 — 1천만 원 넘는 부분만 30%",
    "need": [
     "OSMU",
     "색인요청"
@@ -210,22 +227,6 @@
   {
    "code": "A4-08",
    "title": "가습기살균제 피해 배상 신청 10월 8일 시작 — 20",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A4-09",
-   "title": "긴급복지 동절기 연료비 월 15만원 — 에너지바우처와 ",
    "need": [
     "색인요청"
    ],
