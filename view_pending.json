@@ -1,9 +1,8 @@
 {
- "computed_at": "2026-11-12 14:33:52",
- "source_head": "f6b01f3a9d39",
+ "computed_at": "2026-11-12 14:41:29",
+ "source_head": "700cb7703b2a",
  "ids": [
   "G3-36",
-  "anthropic-api-key-1112",
   "c1-11-geon-yeonjang-check"
  ],
  "posts": [
@@ -38,36 +37,34 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_오키프전관람료과천.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_G3-36_okeeffe_gwacheon.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/p/DfoUpVdEU92/",
      "files": [
       {
        "label": "인스타 캡션",
        "path": "insta/캡션_오키프전관람료과천.txt",
        "img": false,
-       "exists": false
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "done"
     }
    }
   }
  ],
  "publish": [],
  "actions": [
-  {
-   "id": "anthropic-api-key-1112",
-   "what": "API 크레딧 100달러(11/15 09:00 만료) 쓰려면 API 키 1개 필요 — console.anthropic.com → API Keys → Create Key(이름 lifeinfo-topicbatch) → 키를 메모장에 붙여 C:\\lifeinfo\\studio\\.secrets\\anthropic_api_key.txt 로 저장(커밋 안 되는 폴더). 키 값은 채팅에 붙이지 마십시오. 저장하시면 정비가 글감 대량 선별 도구를 돌립니다.",
-   "due": "2026-11-12",
-   "cmd": "notepad C:\\lifeinfo\\studio\\.secrets\\anthropic_api_key.txt",
-   "state": "todo",
-   "kind": "action"
-  },
   {
    "id": "c1-11-geon-yeonjang-check",
    "what": "C1-11 「이 기한은 어떤 사유로도 연장되지 않습니다」 1차 원문 미확인 · 「통산 1년(365일)」 원문은 「1년 이상」",
