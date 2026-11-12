@@ -7493,17 +7493,27 @@
    "order_at": "2026-11-12 15:52:29"
   }
  },
- "updated": "2026-11-12 16:15:57",
+ "updated": "2026-11-12 16:22:40",
  "current": {
-  "batch": "fuel1030",
+  "batch": "pub1112c226",
   "code": "",
   "title": "",
-  "step": 61,
-  "what": "연료 12차 에이전트 4개 병렬 투입 — F·E·C 신규 스캔(deepread) + 11차 약함 구제 판정(source). 결과 오면 source·상품 판정 붙여 topicprop add",
-  "since": "13:35",
-  "since_at": "2026-10-30 13:35:23"
+  "step": 1,
+  "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474467241 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+  "since": "16:03",
+  "since_at": "2026-11-12 16:03:54"
  },
  "log": [
+  {
+   "t": "16:22:40",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] 👤 사장님 16:22 「진행」 — MT-49 알림 턴 줄이기(주간 한도 25%/15h, 오늘 09~16시 알림 89턴=5분마다, 턴당 이부장 대화 65만 토큰): ① 급하지 않은 알림(BOSS_APPROVAL·ASIDE_DRAFT·DRAFT_READY·CHKMON_REPORT·CONFIRM_BACKLOG·AUTO_CONFIRM·POST_COMPLETE·INDEX_REQUEST_TODO·DEPLOY_NEEDED·ROUTINE_REPORT)은 15분 묶음 1턴으로 ② 즉시 유지: NEW_BOSS_ITEM·사장님 결재요청·⛔막힘/사고(ASIDE_ALERT 중 ⛔·⚠️)·PUBLISH_RUN_DONE failure·TOWER_OWED ③ 중복 제거: 같은 chkmon 항목 재보고 금지(내용 바뀔 때만)·PUBLISH_STALL 은 로컬이 origin 보다 뒤처졌으면 origin 기준으로 판정(오늘 6건 전부 오탐) ④ 시험 + 하루 실측(알림 턴 수 전후 비교). 우선순위 = MT-46(동기 근본) 다음.",
+   "actor": "이부장"
+  },
+  {
+   "t": "16:18:25",
+   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474467241 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장"
+  },
   {
    "t": "16:15:57",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [관제탑 → 정비] 👤 사장님 16:15 원문: 「땜질조치는 용서 못해! 근본을 찾아 원천적으로 불가역적으로 조치하고 검증하길!」 → MT-46 을 「근본 원인 제거」로 재정의(최우선). 땜질(이부장이 7번 손으로 합침) 금지. ① 근본 원인 실측: data/_reflect_live_log.jsonl(쓰는 곳 studio/reflectcheck.py)·webapp/seo_desc.json(쓰는 곳 seodesc·pipeline·reindex 등)을 **PC 와 러너(publish.yml) 둘 다 쓰는지** 커밋 이력으로 확정 — 두 작성자가 같은 파일을 쓰는 구조 자체가 원인. ② 원천 조치(택1 이상, 이유와 함께): (a) 파일마다 작성자 하나로 — 러너가 쓸 필요 없는 PC 전용 로그는 git 밖(.gitignore·derivedguard 등록)으로, 러너 전용은 PC 가 안 씀 (b) 둘 다 써야 하면 .gitattributes merge 드라이버(jsonl=union, seo_desc=posts 키 단위 3방향 합침 스크립트)로 git 자체가 충돌을 안 내게 — 러너 체크아웃에도 적용 (c) syncorigin 이 이 두 파일에서 멈추지 않게. ③ 불가역 = 다시 같은 충돌이 생기면 코드가 막거나(검사) 자동 해소 — 회귀 시험(오늘 충돌 2종 재현: PC 쪽 C1-20 seo 기록 + 러너 쪽 C2-26 발행) + falsepos/validate 규칙 1줄 + 설계도 마디 기록. ④ 검증 = 시험 통과 후 실제 발행 1회에서 syncorigin 무중단 실측. 끝나면 페이블 검증에 넘김.",
@@ -7693,16 +7703,6 @@
    "t": "15:23:29",
    "text": "▶   — 1/7단계 · ⚠️ C1-20 run 43166785240·G3-37 run 43167271806 둘 다 success(라이브 C1-20 https://lifeinfo8975.blogspot.com/2026/11/365-11-14-16.html 200·og:image 503 확인). 두 run 종료 후 syncorigin 실행했으나 다시 「겹치는 로컬 변경이 원본 상태파일이 아님: data/_reflect_live_log.jsonl(다른 세션 미커밋)」으로 멈춤(뒤 2·앞 5). 내 파일 아님·되돌리지 않음. 막힌 것: ①로컬 DB 에 C1-20·G3-37 레코드 없음 → 검색설명 postId·naver-link·교차링크 진행 불가 ②C2-26 승인 도장·초안이 원격에 없음 → pubready ⛔(push 먼저). 🙋 이부장: 13:54 때처럼 그 파일을 보존한 뒤 syncorigin 으로 맞춰 주세요. 맞춰지면 C1-20→G3-37 후속 4채널 즉시 시작, C2-26 은 pubready 통과 뒤 이부장 발행. ⏸ 대기",
    "actor": "이과장"
-  },
-  {
-   "t": "15:22:34",
-   "text": "✔ 이부장 ack r2a2d29",
-   "actor": "이부장"
-  },
-  {
-   "t": "15:21:29",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴2 🔵0 🟡2 — 즉시: 결재 뒤 미발행 C1-20 건강보험 자동이체 365일 11월 14일부터, 지사 점; 결재 뒤 미발행 G3-37 모슬포 방어축제 2026 가격·시간 — 입장 무료, 체 · 묶음: 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
   }
  ],
  "currents": {
@@ -9142,7 +9142,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "✅ C1-20·G3-37 4채널 후속 완료(각 mark 보고: 네이버 224474411521/224474434294 · 인스타 DfobzSCEWdW/DfodjaqEY6q · 쓰레드 Dfob7llgVts/DfodtL2gbYs · 검색설명 라이브 일치 · 교차링크 · osmuimgcheck 🔴0 · GSC 색인 생성 요청됨). C2-26: 발행 run 43168763258 success(라이브 https://lifeinfo8975.blogspot.com/2026/11/1-112.html, 원격 DB 에서 확인). ⛔ C2-26 후속 시작 전 막힘: syncorigin 이 다시 「겹치는 로컬 변경이 원본 상태파일이 아님: data/_reflect_live_log.jsonl(다른 세션 미커밋)」으로 멈춤(뒤 1·앞 11) → 로컬 DB 에 C2-26 레코드 없음 → 검색설명 postId·naver-link·교차링크 불가. stage 는 0(남긴 것 없음). 🙋 이부장: reflect 로그 보존 뒤 syncorigin 으로 맞춰 주세요(주인 세션이 자주 건드려 반복됨 — 주인 세션이 커밋하도록 정리 검토). 맞춰지면 C2-26 4채널 즉시 시작. ⏸ 대기",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474467241 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
    "since": "16:03",
    "since_at": "2026-11-12 16:03:54"
   }
@@ -9198,14 +9198,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-29 16:22:28",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "👤 사장님 직접 지시 16:21: 썸네일 추가·썸네일 폴더 분리 저장·db 코드 정규화·썸네일에 작은 코드·공식 블로그 이미지 사용 → 이부장이 이대리에 전달(공식 이미지는 이용조건 확인 뒤·다운로드는 결재 뒤)"
-  },
   {
    "ts": "2026-10-29 16:23:00",
    "bid": "aroma",
@@ -37161,6 +37153,26 @@
    "title": "정비 담당 세션(11-11 신설)",
    "owner": "",
    "what": "[관제탑 → 정비] 👤 사장님 16:15 원문: 「땜질조치는 용서 못해! 근본을 찾아 원천적으로 불가역적으로 조치하고 검증하길!」 → MT-46 을 「근본 원인 제거」로 재정의(최우선). 땜질(이부장이 7번 손으로 합침) 금지. ① 근본 원인 실측: data/_reflect_live_log.jsonl(쓰는 곳 studio/reflectcheck.py)·webapp/seo_desc.json(쓰는 곳 seodesc·pipeline·reindex 등)을 **PC 와 러너(publish.yml) 둘 다 쓰는지** 커밋 이력으로 확정 — 두 작성자가 같은 파일을 쓰는 구조 자체가 원인. ② 원천 조치(택1 이상, 이유와 함께): (a) 파일마다 작성자 하나로 — 러너가 쓸 필요 없는 PC 전용 로그는 git 밖(.gitignore·derivedguard 등록)으로, 러너 전용은 PC 가 안 씀 (b) 둘 다 써야 하면 .gitattributes merge 드라이버(jsonl=union, seo_desc=posts 키 단위 3방향 합침 스크립트)로 git 자체가 충돌을 안 내게 — 러너 체크아웃에도 적용 (c) syncorigin 이 이 두 파일에서 멈추지 않게. ③ 불가역 = 다시 같은 충돌이 생기면 코드가 막거나(검사) 자동 해소 — 회귀 시험(오늘 충돌 2종 재현: PC 쪽 C1-20 seo 기록 + 러너 쪽 C2-26 발행) + falsepos/validate 규칙 1줄 + 설계도 마디 기록. ④ 검증 = 시험 통과 후 실제 발행 1회에서 syncorigin 무중단 실측. 끝나면 페이블 검증에 넘김.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 16:18:25",
+   "bid": "pub1112c226",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474467241 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 16:22:40",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] 👤 사장님 16:22 「진행」 — MT-49 알림 턴 줄이기(주간 한도 25%/15h, 오늘 09~16시 알림 89턴=5분마다, 턴당 이부장 대화 65만 토큰): ① 급하지 않은 알림(BOSS_APPROVAL·ASIDE_DRAFT·DRAFT_READY·CHKMON_REPORT·CONFIRM_BACKLOG·AUTO_CONFIRM·POST_COMPLETE·INDEX_REQUEST_TODO·DEPLOY_NEEDED·ROUTINE_REPORT)은 15분 묶음 1턴으로 ② 즉시 유지: NEW_BOSS_ITEM·사장님 결재요청·⛔막힘/사고(ASIDE_ALERT 중 ⛔·⚠️)·PUBLISH_RUN_DONE failure·TOWER_OWED ③ 중복 제거: 같은 chkmon 항목 재보고 금지(내용 바뀔 때만)·PUBLISH_STALL 은 로컬이 origin 보다 뒤처졌으면 origin 기준으로 판정(오늘 6건 전부 오탐) ④ 시험 + 하루 실측(알림 턴 수 전후 비교). 우선순위 = MT-46(동기 근본) 다음.",
    "actor": "이부장",
    "sid": "a7dca46f"
   }
