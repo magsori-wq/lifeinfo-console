@@ -28693,6 +28693,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "mt46-restore-reflect-log",
+   "added": "2026-11-12",
+   "what": "MT-46 후속: syncorigin 이 889ff07af 까지 받으면(로컬 data/_reflect_live_log.jsonl 삭제됨) 백업 scratchpad/reflect_log_local.bak 와 합쳐 되살리기(이제 미추적·ignore)",
+   "due": "2026-11-13",
+   "cmd": "git -C C:/lifeinfo merge-base --is-ancestor 889ff07af HEAD && echo MERGED",
+   "owner": "claude",
+   "state": "wait",
+   "by": "정비"
   }
  ]
 }
