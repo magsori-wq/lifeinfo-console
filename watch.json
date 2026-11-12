@@ -27762,8 +27762,10 @@
    "due": "2026-11-12",
    "cmd": "ls docs/source_deep_scan10_EF_20261112.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "채택 0건 · 조건부 2건(관광진흥법 시행일·통신3사 약관 시행일 미확인) · 파일 docs/source_deep_scan10_EF_20261112.md"
   },
   {
    "id": "deep10-c-1112",
@@ -27772,14 +27774,66 @@
    "due": "2026-11-12",
    "cmd": "ls docs/source_deep_scan10_C_20261112.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "10차 C 스캔 완료 — docs/source_deep_scan10_C_20261112.md · 채택 0 · 조건부 1(E1)"
   },
   {
    "id": "deep10-g-1112",
    "added": "2026-11-12",
    "what": "10차 G 스캔",
    "due": "2026-11-12",
+   "cmd": "ls docs/source_deep_scan10_G_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "otc-ipgo-1112",
+   "added": "2026-11-12",
+   "what": "안전상비의약품 군부대·공항·도서 입법예고(조건부 E1) — 의견기한 12-02 전 원문 재확인",
+   "due": "2026-12-02",
+   "cmd": "curl -s -A \"Mozilla/5.0\" -o /dev/null -w \"%{http_code}\" \"https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=1492521\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "ef10-lawdate-tourism-1112",
+   "added": "2026-11-12",
+   "what": "관광진흥법 제12조의3 신설(단체관광 구매강요 금지·수수료) 시행일 미확인 · 법령 조문 번호 불일치(보도자료 제3항 신설 ↔ 현행 제3항=지정취소)",
+   "due": "2026-11-20",
+   "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/관광진흥법/제12조의3\" --frames --wait 8 --max 2500",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "ef10-telco-contract-1112",
+   "added": "2026-11-12",
+   "what": "방미통위 통신분쟁 간담회(11-05) 통신3사 장기 미사용 회선 이용정지·해지 약관 개정 시행일 미확인",
+   "due": "2026-11-20",
+   "cmd": "ls docs/source_deep_scan10_EF_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep10-jeju-art-1112",
+   "added": "2026-11-12",
+   "what": "제30회 제주미술제(11-14~26) 상세 요금·장소 미확인",
+   "due": "2026-11-13",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py https://www.visitjeju.net/kr --wait 8 --max 9000",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep10-hwacheon-domain-1112",
+   "added": "2026-11-12",
+   "what": "화천 산천어 공식 도메인 미확인(icetrout·hwacheon.go.kr NXDOMAIN)",
+   "due": "2026-11-13",
    "cmd": "ls docs/source_deep_scan10_G_20261112.md",
    "owner": "claude",
    "state": "wait",
