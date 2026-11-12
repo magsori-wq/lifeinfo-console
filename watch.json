@@ -29029,10 +29029,24 @@
    "due": "2026-11-13",
    "cmd": "cat docs/점검_네이버태그_전수_20261113.md",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
    "by": "세션:a7dca46f",
-   "preview": "https://magsori-wq.github.io/lifeinfo-console/tagfix_1113.html"
+   "preview": "https://magsori-wq.github.io/lifeinfo-console/tagfix_1113.html",
+   "done_at": "2026-11-13",
+   "result": "사장님 채팅 「승인: naver-tags-fix-15-approve (네이버 글 15편 뒤섞인 태그 1~2개씩 삭제 ) (폰 탭 03:15)」 03:15 — 이부장 회수 · 폰 승인 회수(이부장 CLI)"
+  },
+  {
+   "id": "verify-naverwrite-d31ed15e5-1113",
+   "added": "2026-11-13",
+   "what": "naverwrite d31ed15e5 검수: 원고 태그 변형 표기(■ 태그·🏷️ 추천 태그, 대괄호 없음) 47편이 [] 로 읽혀 --tags 지정 시 원고 태그가 빠짐(fail-closed 아님)",
+   "due": "2026-11-13",
+   "cmd": "PYTHONIOENCODING=utf-8 python -I <검수 스크립트> (parse_draft_tags 가 표시 없음 139 중 해시태그 블록+태그/추천 낱말 47편)",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-13",
+   "result": "16편 안전·수치 일치 ✅ / 47편 다른 표기 누락 ❌ → 정비 재지시(정정 16편은 무관)"
   }
  ]
 }
