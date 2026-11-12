@@ -234,6 +234,7 @@ function reportNow(auto){
   if(!auto)msg("보고 중…");
   fetch("http://localhost:8011/api/chkmon",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({force:!auto,items:items.map(function(i){return {lv:i.lv,k:i.k,t:i.t,since:i.since};})})})
    .then(function(r){return r.json();}).then(function(j){
+     if(j&&j.ok&&j.held){msg("🌙 사장님 취침 시간 — 새 🔵 는 기상(11:30) 뒤 한 번에 보고합니다","w");return;}  /* 11-12 C1: 보류는 「보고됨」이 아니다 — seen 을 적지 않는다 */
      if(j&&j.ok){urg.forEach(function(i){seen[i.k]=now;});set(REP_KEY,JSON.stringify(seen));msg(j.dup?"✅ 같은 보고가 이미 접수돼 있습니다":"✅ 이부장에게 보고했습니다 ("+hm(now)+") — 🔴·🔵 즉시 · 🟡 묶음으로 처리됩니다","ok");}
      else{fail((j&&j.error)||"서버 거부");}
    }).catch(function(){fail("결재 서버(8011)에 닿지 않음");});
