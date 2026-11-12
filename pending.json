@@ -1,29 +1,30 @@
 {
- "rev": "dfdef077b",
+ "rev": "87466100e",
  "counts": {
   "total": 523,
-  "osmu_done": 522,
-  "osmu_pending": 1,
+  "osmu_done": 523,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 523,
-  "index_requested": 170,
+  "index_requested": 160,
   "index_todo": 87,
-  "index_benign": 266
+  "index_benign": 276
  },
  "actionable": [
   {
    "code": "C2-27",
    "title": "GLP-1 계열 비만·당뇨약 시신경(NAION) 안전성",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13 01:11:55",
+ "at": "2026-11-13 01:26:15",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,17 +11,16 @@
     "code": "C2-27",
     "title": "GLP-1 계열 비만·당뇨약 시신경(NAION) 안전성",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "last_at": "",
+    "last_at": "2026-11-13",
     "lvl": "amber"
    }
   ],
@@ -444,7 +443,7 @@
   "lvl": "ok"
  },
  "index": {
-  "requested": 170,
+  "requested": 160,
   "todo": 87,
   "indexed": 0
  },
@@ -632,7 +631,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 19,
-   "last_min": 9,
+   "last_min": 3,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -641,7 +640,7 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 1,
+   "last_min": 7,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -663,8 +662,10 @@
  "producers": [
   {
    "who": "이과장",
-   "made": "새 글 초안·발행 0편 · 개선 반영 0편",
-   "codes": []
+   "made": "새 글 초안·발행 1편 · 개선 반영 0편",
+   "codes": [
+    "C2-27"
+   ]
   },
   {
    "who": "에이전트",
@@ -677,15 +678,15 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 19,
-   "last_min": 9,
+   "last_min": 3,
    "cur": "🔗 상시: 게시 후 확인·기록·Aside 지시 초안 (이과장,",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
-   "state": "현장(진행)",
+   "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 21,
+   "last_min": 35,
    "cur": "📊 크리에이터 어드바이저 유입·관심사 매일 갱신 (3. 상시)",
    "lvl": "ok"
   },
@@ -693,7 +694,7 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 1,
+   "last_min": 7,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok"
   },
@@ -701,7 +702,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 12,
+   "last_min": 26,
    "cur": "01:4x DG-012·SP-016·BO-009 승인 깨우기 ",
    "lvl": "ok"
   },
@@ -722,7 +723,7 @@
   "today": "2026-11-13",
   "done_today": 0,
   "done_codes": [],
-  "published_today": 0,
+  "published_today": 1,
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
@@ -932,6 +933,12 @@
   "naver": {
    "done": [
     {
+     "code": "C2-27",
+     "title": "GLP-1 계열 비만·당뇨약 시신경(NAION) 안전성",
+     "url": "https://blog.naver.com/magsori8975/224475041230",
+     "at": "2026-11-13"
+    },
+    {
      "code": "B4-31",
      "title": "연말정산 교육비 세액공제 — 학원비는 취학 전·9세 미",
      "url": "https://blog.naver.com/magsori8975/224474172526",
@@ -1118,12 +1125,7 @@
      "at": "2026-11-10"
     }
    ],
-   "wait": [
-    {
-     "code": "C2-27",
-     "title": "GLP-1 계열 비만·당뇨약 시신경(NAION) 안전성"
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -1518,7 +1520,14 @@
    ]
   }
  },
- "today_events": [],
+ "today_events": [
+  {
+   "code": "C2-27",
+   "stage": "naver",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)"
+  }
+ ],
  "approvals": [],
  "stage_of": {
   "C2-27": "4채널",
@@ -1555,13 +1564,13 @@
   "G3-37": "완결"
  },
  "reflect": {
-  "state": "stale",
+  "state": "bad",
   "ok": 5,
-  "stale": 2,
-  "bad": 0,
+  "stale": 1,
+  "bad": 1,
   "na": 0,
-  "at": "2026-11-13 01:08:40",
-  "age_min": 3
+  "at": "2026-11-13 01:26:05",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1633,15 +1642,19 @@
  "fired": [
   {
    "day": "2026-11-13",
-   "total": 30,
+   "total": 33,
    "kinds": [
     [
      "ASIDE_ALERT",
-     13
+     15
     ],
     [
      "BOSS_APPROVAL",
      4
+    ],
+    [
+     "TOWER_OWED",
+     3
     ],
     [
      "CONFIRM_BACKLOG",
@@ -1649,10 +1662,6 @@
     ],
     [
      "NEW_BOSS_ITEM",
-     2
-    ],
-    [
-     "TOWER_OWED",
      2
     ],
     [
