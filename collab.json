@@ -1,6 +1,6 @@
 {
- "rev": "5bae0e464",
- "uncommitted": 746,
+ "rev": "2873dce45",
+ "uncommitted": 767,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
-     "h": "5bae0e464",
-     "d": "11-13 03:01",
-     "s": "[에이전트] 정비: 네이버 태그 정책 — 최종 태그 = 원고 [추천태그] ∪ --tags(a7fa9832f 가 추천태그를 버리던 것) · 칸이 같으면 그대로·다르면 비우고 차례로·끝 목록 정확히 일치(빠짐·남음·중복 멈춤)·원고 못 읽으면 거부 · 정정용 --fix-tags --logno(게시 글 태그 칸만, 본문 불변 확인 뒤 저장) · 태그 JS 한 조각 공용 · 시험 · 설계도 기록"
+     "h": "2873dce45",
+     "d": "11-13 04:15",
+     "s": "[이부장] 페이블 검증 naverwrite 4차"
     },
     {
-     "h": "9f38bd27a",
-     "d": "11-13 02:31",
-     "s": "Merge remote-tracking branch 'origin/main'"
+     "h": "da0a1bab0",
+     "d": "11-13 03:23",
+     "s": "[에이전트] 정비: TestPostLock 시험이 라이브 Aside 잠금에 기대 Stop 하네스가 흔들리던 것 — 훅 진입 시험에서 asidelock.state 를 「잠금 없음」으로 고정 · 설계도 기록(정비 푸시 순서 실수 포함)"
     },
     {
-     "h": "f40aa2dee",
-     "d": "11-13 02:31",
-     "s": "[에이전트] 정비: 페이블 naverwrite 2차 🔴1 — Aside 공용 잠금 studio/asidelock(O_EXCL 잡기·실행 중 30초 갱신·2분 끊기면 죽은 잠금·토큰 해제·채팅 지시 진행 중 대기) · naverwrite·tools/aside_read·ca_*·sa_expose 가 잠금을 잡고 repl · 잠금 모르는 손 도우미·직접 aside repl 은 postlock 훅이 잠금 살아 있으면 차단 · publish_unknown=bool(publish) · 시험 TestAsideLockShared · 설계도 기록"
+     "h": "e6b211b55",
+     "d": "11-13 03:18",
+     "s": "[에이전트] 정비: verify ❌ 반영 — 추천태그 표기 「■ 태그」·「🏷️ 태그」·「🏷️ 추천 태그」도 읽기(47편 조용한 누락) · 표시 없는 「#가 #나」 줄만 있으면 None(사람 확인) · 원고 672편 재확인 읽음 564·사람 확인 84·태그 줄 없음 24·이전 533편 변화 0 · 시험 · 설계도 기록"
     }
    ],
-   "last": "11-13 03:01",
+   "last": "11-13 04:15",
    "state": "active"
   },
   {
