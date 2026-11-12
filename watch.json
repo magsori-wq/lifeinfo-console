@@ -27357,7 +27357,7 @@
   {
    "id": "xlink-f313",
    "added": "2026-11-12",
-   "what": "🔗 F3-13 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F3-13",
+   "what": "🔗 F3-13 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code F3-13",
    "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code F3-13",
    "owner": "claude",
@@ -27688,6 +27688,27 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "ps-hook-boss-edit-1112",
+   "added": "2026-11-12",
+   "what": "PowerShell 자물쇠 적용 — 사장님 직접 수정 4줄(verify ✅ 3a6c87d56·시험 657 OK·변경 전 문자열 현재 파일과 일치). settings.json 48·57행 + towerguard.py 31·53행. 【권고】적용 【근거】PowerShell 도구로 게시하면 자물쇠·사칭방지 둘 다 우회됨(페이블 P1) 【위험】Desktop 재시작 필요",
+   "due": "2026-11-12",
+   "cmd": "notepad C:\\lifeinfo\\docs\\설정변경_PowerShell훅_20261112.md",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aroma-am-dg-011-approve-1112",
+   "added": "2026-11-12",
+   "what": "【권고】AM-DG-011 「지스타 2026 코레일 패키지 — 19·20일 부산행 13편 중 12편 재고 0」(디지털 콘텐츠·여가) 게시 승인. 예약 마감 11/15 자정 전 게시가 의미 있음. 【근거】관심: 자동완성 지스타 2026(예매·일정·라인업) + 지스타 공식 공지 11/5(KTX 패키지 57,700원부터, 예약 11/15 자정) · 뉴스에 없는 것: 코레일 화면 열차별 재고를 날짜별로 직접 집계(19~21일 왕편 재고 합 1·1·2석, 22일 당일 복편 8석 대 1박 259석) · V0 PASS 92(필수 수정 1건 반영 완료, 가격 합계 단정 없음) · 겹침 crossdup 최고 0.29 🟢 · 사진 BEXCO CC BY 4.0(AM-DG-010 과 같은 사진 재사용, 신규 다운로드 없음) · 임베드 벡스코 홍보영상 oembed 200(DG-010 과 같은 영상, URL 한 줄) · 제목 「코레일 패키지」는 자동완성 근거 약함(선두 키워드는 지스타 2026). 【위험】재고는 11/12 낮 시점값 — 게시 직전 11/19~21 행 재조회 필수, 크게 다르면 표 갱신 후 재V0. 코레일 패키지 합계금액 미확인(글에 명시).",
+   "due": "2026-11-13",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-DG-011_지스타코레일패키지재고.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:d7aa80ef"
   }
  ]
 }
