@@ -28749,6 +28749,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "mt50-session-stall-live",
+   "added": "2026-11-12",
+   "what": "MT-50 실가동 확인: 다음 실제 정체(읽은 뒤 30분 보고 없음+세션 잠듦) 때 towertick SESSION_STALL 1회·data/.session_stall.json 생성·leewake 깨움 1회가 실제로 났는지",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.sessionstall && type C:\\lifeinfo\\data\\.session_stall.json",
+   "owner": "claude",
+   "state": "wait",
+   "by": "정비"
   }
  ]
 }
