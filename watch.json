@@ -29047,6 +29047,16 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-13",
    "result": "16편 안전·수치 일치 ✅ / 47편 다른 표기 누락 ❌ → 정비 재지시(정정 16편은 무관)"
+  },
+  {
+   "id": "naver-tagfix-allow-1113",
+   "added": "2026-11-13",
+   "what": "네이버 태그 정정 16편 저장 — 이과장 --fix-tags --publish 가 자동 권한 검사에 막힘(시험은 성공: C2-20 뒤섞인 태그 빠지고 원고 태그 6개·본문 불변). 이과장 창에 「네이버 태그 정정 16편 --fix-tags --publish 허용」 한 줄 필요. 【권고】허용 【근거】03:15 결재 승인·시험 성공 【위험】태그 칸만 수정",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.batchboard order --id followup",
+   "owner": "user",
+   "state": "blocked",
+   "by": "세션:a7dca46f"
   }
  ]
 }
