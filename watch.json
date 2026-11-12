@@ -27806,8 +27806,10 @@
    "due": "2026-11-20",
    "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/관광진흥법/제12조의3\" --frames --wait 8 --max 2500",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "시행 2026-12-03(법률 제21741호 2026.6.2., 부칙 공포 후 6개월) · 제12조의3 제3항 신설 맞음(구 3항은 4항으로, 현행 페이지는 구 조문+시행전 병기) · 대상=외국인 단체관광객 유치 전담여행사 → 내국인 독자 불가 · 시행규칙 수수료 비율 입법예고 미등장 · docs/source_F-관광진흥법_20261112.md"
   },
   {
    "id": "ef10-telco-contract-1112",
@@ -27816,8 +27818,10 @@
    "due": "2026-11-20",
    "cmd": "ls docs/source_deep_scan10_EF_20261112.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "11-12 출처관: 방미통위 11-05 자료는 「자체적으로 추진한 개선 사례 공유」(시행일·사업자 없음). SKT 이용약관 개정 04-06 시행 완료(10개월 무사용 이용정지·정지 2개월 뒤 해지·6개월 내 원복, m.tworld 22708). KT 03-30~31 정지회선 직권해지 시행 완료 · KT 약관 개정 공지·LGU+ 이동전화 약관 개정 공지는 못 찾음(LGU+ 약관은 PDF 다운로드뿐). 날짜 훅 없음 → 탈락. 별건 KT 정지요금 3,850→4,400원 12-07 시행. docs/source_E-미사용회선약관_20261112.md"
   },
   {
    "id": "deep10-jeju-art-1112",
@@ -28078,6 +28082,158 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deep11-c-1112",
+   "added": "2026-11-12",
+   "what": "C 건강 11차 딥리드: 10차 미확보 출처(건보공단·질병청 직접목록·연말 접종/검진 마감·식약처 hwpx 첨부) 판정",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_deep_scan11_C_20261112.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "채택가능1(F1 건보 지사 점심시간 휴무 11-16 · 신규·DB0) · 조건부2(F2 자동이체 11-14·E1 안전상비 입법예고 갱신) · 탈락3(F3 환급금=C1-02 기발행 · F4 장기요양 13.14% 훅 과거 · G1 항암 시행 11-12) · 못얻음: 건강검진 연말마감·독감 무료접종 기한(nip 빈껍데기/404), 질병청 직접목록, 국립암센터 · 파일 docs/source_deep_scan11_C_20261112.md"
+  },
+  {
+   "id": "deep11-f-1112",
+   "added": "2026-11-12",
+   "what": "F 11차 심층 스캔(항공사·국토부/공항·코레일/SRT·해외입국제도·국립공원) 진행 중",
+   "due": "2026-11-12",
+   "cmd": "ls -la docs/source_deep_scan11_F_20261112.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "채택 0 · 조건부 2(괌·사이판 탑승객 서약서, 티웨이 국제선 수하물 변경 — 본문 미개봉) · 탈락 3 · 파일 docs/source_deep_scan11_F_20261112.md"
+  },
+  {
+   "id": "deep11-e-1112",
+   "added": "2026-11-12",
+   "what": "심층독해 11차 E 분야 — 통신3사·소비자원·공정위 구독·애플/삼성/구글/네이버/카카오·개인정보위/KISA 공식 공지 원문 읽기, 산출 docs/source_deep_scan11_E_20261112.md",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_deep_scan11_E_20261112.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "docs/source_deep_scan11_E_20261112.md 작성 · 채택 0 · 조건부 1(1-A 홈캠 IP카메라 보안, 훅=11-13 조간) · 통신3사·카카오 공지 목록 미획득(시도 기록) · 으뜸효율은 기존 미발행 초안 판정 충돌로 재확인 필요"
+  },
+  {
+   "id": "f-tourism-law-1112-progress",
+   "added": "2026-11-12",
+   "what": "관광진흥법 전담여행사 구매강요금지 1차출처 확인 진행: 시행일 2026-12-03 (law.go.kr 시행예정 본문 [시행일: 2026. 12. 3.] 제12조의3, 제3항 <신설 2026.6.2.>), 대상=외국인 단체관광객 전담여행사(inbound). 부칙·공포번호·입법예고 추가 확인 중",
+   "due": "2026-11-13",
+   "cmd": "docs/source_F-관광진흥법_20261112.md 확인",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "확인 완료 — 판정 불가(대상 외국인 단체관광 전담여행사), 파일 docs/source_F-관광진흥법_20261112.md"
+  },
+  {
+   "id": "c-anjeon-source-1112",
+   "added": "2026-11-12",
+   "what": "C-안전상비 판정 조사 진행: 입법예고 별첨2(고시안) 조문·부칙 Aside 뷰어로 확보(12-02 고시/12-22 시행령, 안전상비 부분은 고시안에만). 현행 약사법·고시·판매업소 찾기 확인 중. 산출 docs/source_C-안전상비_20261112.md",
+   "due": "2026-11-12",
+   "cmd": "type docs/source_C-안전상비_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep11-e-telecom-notice-gap",
+   "added": "2026-11-12",
+   "what": "통신3사(KT·LGU+)·카카오 공지 목록을 curl/WebFetch 로 못 얻음 — Aside 로 공지 URL 확보 필요",
+   "due": "2026-11-13",
+   "cmd": "ls docs/source_deep_scan11_E_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep11-f-anomaly-1112",
+   "added": "2026-11-12",
+   "what": "F 11차: 항공사 공지 목록에 2026년 12월 국내선 유류할증료 안내 게시(티웨이 11-06 목록, 진에어 공지) — 11-16 발표 대기 전제와 불일치",
+   "due": "2026-11-13",
+   "cmd": "python -m studio.dupcheck \"12월 국내선 유류할증료\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep11-hwacheon-1112",
+   "added": "2026-11-12",
+   "what": "화천 산천어축제 공식 도메인 미확보(hwacheon.go.kr curl 000·gangwon.travel 000·DDG 202) — 강원 관광 목록 등 다른 원문에서 공식 주소 얻어야 재시도",
+   "due": "2026-11-16",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://www.hwacheon.go.kr/",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "e1-recheck-1202",
+   "added": "2026-11-12",
+   "what": "안전상비의약품 입법예고 고시 의견기한 12-02 전 재확인(조건부 E1)",
+   "due": "2026-12-02",
+   "cmd": "python -X utf8 -I -c \"import urllib.request;print(urllib.request.urlopen('https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=1492521').status)\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "blogspot-address-reverify-1112",
+   "added": "2026-11-12",
+   "what": "사장님 14:08 블로그스팟 주소·내부길 재검증 — 4.(indexlab·measure) 진단 docs/재검증_주소_내부길_20261112.md → 시범 10편 수정안 결재 → 수정·색인요청 → 7~14일 뒤 inspect 로 효과 판정 → 확대",
+   "due": "2026-11-13",
+   "cmd": "ls docs/재검증_주소_내부길_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fuel11-confirm-1112",
+   "added": "2026-11-12",
+   "what": "연료 11차 — source 5건(보류3·건보·국내선유류) + deepread G 결과 도착 확인 후 이부장 보고·topicprop add",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_C-*20261112.md docs/source_F-*20261112.md docs/source_E-*20261112.md docs/source_deep_scan11_G_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep11-g-1112",
+   "added": "2026-11-12",
+   "what": "심층 독해 11차(G) 완료 — docs/source_deep_scan11_G_20261112.md · 조건부 3(운정불꽃·최남단방어·제주미술제) · 서울 겨울 4종 0건(진행중 1쪽) · 화천 미확보",
+   "due": "2026-11-12",
+   "cmd": "grep -c 조건부 docs/source_deep_scan11_G_20261112.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-12",
+   "result": "원문 파일 docs/source_deep_scan11_G_20261112.md 저장 · 채택 가능 0 · 조건부 3 · 서울 4종 0건 · 화천 미확보 · 국립공원 추첨제 0영지"
+  },
+  {
+   "id": "src-G-choenamdan-bangeo-1112",
+   "added": "2026-11-12",
+   "what": "최남단방어축제 1차출처 확정 작업 시작(visitjeju 상세·서귀포시·축제 누리집). 산출 docs/source_G-최남단방어축제_20261112.md",
+   "due": "2026-11-12",
+   "cmd": "cat docs/source_G-최남단방어축제_20261112.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "docs/source_G-최남단방어축제_20261112.md 작성. 일정·요금 확정, 주차/셔틀/우천/단위 미확보, 공식표=작년 표 날짜만 이동"
+  },
+  {
+   "id": "src-G-bangeo-notice-recheck-1117",
+   "added": "2026-11-12",
+   "what": "최남단방어축제 미확보: 주차·셔틀·교통통제·우천 공지, 2만원 단위(1인/1회), 방어회 판매가, 초대가수, 사전신청. 시도: 공식 누리집 전 페이지·공지 15건, visitjeju 상세, jeju.go.kr 쿼리검색(적용 미확인), seogwipo 메인, visitkorea 검색(0건). 미시도: 서귀포시·대정읍 게시판 검색, jeju.go.kr 폼 검색",
+   "due": "2026-11-17",
+   "cmd": "curl -s http://www.bangeofestival.com/skyboard/notice | grep -c 제26회 ; 157보다 큰 번호 공지 확인 ; 전화 064-794-8032(최남단방어축제위원회 사무국)에 20,000원 단위·주차·셔틀·우천 문의 후 날짜 기록 ; 글 초안은 docs/source_G-최남단방어축제_20261112.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
