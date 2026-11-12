@@ -27838,6 +27838,58 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "xlink-g332",
+   "added": "2026-11-12",
+   "what": "🔗 G3-32 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code G3-32",
+   "due": "2026-11-12",
+   "cmd": "python studio/blogger.py crosslink --code G3-32",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "g-okeeffe-source-1112",
+   "added": "2026-11-12",
+   "what": "오키프전 source·product 확인 → topicprop add",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_G-OKEEFFE_* docs/source_product_okeeffe_*",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "src-okeeffe-1112",
+   "added": "2026-11-12",
+   "what": "오키프전 source",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_G-OKEEFFE_20261112.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-12",
+   "result": "docs/source_G-OKEEFFE_20261112.md 작성 — 입장마감·수험표·현장구매 못 얻음, 예매목록 불일치 기록"
+  },
+  {
+   "id": "prod-okeeffe-1112",
+   "added": "2026-11-12",
+   "what": "오키프 product",
+   "due": "2026-11-12",
+   "cmd": "ls docs/source_product_okeeffe_20261112.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "g336-mmca-booking-call-1112",
+   "added": "2026-11-12",
+   "what": "G3-36 오키프전 예매 페이지 목록 불일치 — 과천관 02-2188-6000 확인 또는 booking 목록 재조회(발행 전)",
+   "due": "2026-11-13",
+   "cmd": "python tools/aside_read.py https://booking.mmca.go.kr/product/ko/performance/396 --wait 7",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
