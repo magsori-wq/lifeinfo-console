@@ -29139,6 +29139,46 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "dart-search-blank-1113",
+   "added": "2026-11-13",
+   "what": "DART 검색 페이지 파라미터 미반영·0건(11-13) — 삼성전기 오늘 공시 원문 미확인",
+   "due": "2026-11-14",
+   "cmd": "timeout 110 env PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://dart.fss.or.kr/dsab007/main.do?option=corp&textCrpNm=%EC%82%BC%EC%84%B1%EC%A0%84%EA%B8%B0\" --wait 8 --max 3000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "verify-splitguard-1113",
+   "added": "2026-11-13",
+   "what": "정비 0f6bf01ad 세션 분배 집행: settings.json PreToolUse matcher 에 Agent|Task|Read|Grep 없음 → Agent·Read·Grep 라이브 차단 미적용(함수 시험만 통과). 커밋된 matcher 는 Bash 만, PowerShell 은 미커밋 변경",
+   "due": "2026-11-13",
+   "cmd": "grep -n '\"matcher\"' /c/lifeinfo/.claude/settings.json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "d2-15-fuel-stale-1113",
+   "added": "2026-11-13",
+   "what": "D2-15 유류세 글 기간 낡음(11-11 비상경제회의: 2개월 연장=내년 1월말 · 12차 석유 최고가격 11-13 18시 발표 대기)",
+   "due": "2026-11-14",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import json;d=json.load(open('C:/lifeinfo/webapp/lifeinfo_db.txt',encoding='utf-8'));print([p.get('title') for p in d['posts'] if p.get('code')=='D2-15'])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "splitguard-matcher-boss-1113",
+   "added": "2026-11-13",
+   "what": "분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 — .claude/settings.json 의 PreToolUse 훅 matcher 를 \"Bash\" → \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(설정 파일은 사장님만 수정). 【권고】변경 【근거】검수: 함수·시험 705건 OK, 이과장 Agent source·작업세션 batch.json 직접 읽기를 함수는 막지만 훅이 그 도구에 안 불려 실제로는 안 막힘 【위험】훅이 Read·Grep 마다 돌아 약간 느려질 수 있음·미등록 세션은 그대로 통과",
+   "due": "2026-11-13",
+   "cmd": "grep -n matcher .claude/settings.json",
+   "owner": "user",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }

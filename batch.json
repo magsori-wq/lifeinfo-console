@@ -7668,17 +7668,22 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-11-13 05:13:22",
+ "updated": "2026-11-13 05:18:58",
  "current": {
-  "batch": "adsense4_1104",
+  "batch": "maint",
   "code": "",
-  "title": "",
-  "step": 4,
-  "what": "[4.·11-13 05:1x] 재개 확인 — 실험 B 판독 대기. 요청 시각 E2-03 02:12·E2-02 02:15·F1-04 02:16 문서 §23 에 기록·푸시. 판독 일정: 24h = 11-14 02:23(이 세션 일회성 cron 22d84116), 48h 최종 = 11-15 02:23(cron 5abd123d), 백업 watch exp-b-1113-24h/48h. 세션이 꺼지면 cron 이 사라지므로 이부장 깨움이 백업(4. 주소는 d6c9cf 재등록). 지시서는 batchboard order 명령으로만 읽음. C 보류·A 는 B 결과 뒤.",
-  "since": "17:25",
-  "since_at": "2026-11-11 17:25:38"
+  "title": "정비 담당 세션(11-11 신설)",
+  "step": 1,
+  "what": "✅ 분배 코드 집행 2건(05:3x 정비) 0f6bf01ad — studio/splitguard(bashguard 훅이 부름): ① 이과장 세션의 Agent 호출은 공용(measure) 말고 차단(11-12 09:21 source 위반 꼴) ② 작업 세션(이과장·3.·4.)이 webapp/batch.json 을 직접 읽으면 차단하고 python -m studio.batchboard order --id <배치> 로 안내(4. 14회 직접 읽기 꼴). 역할 = 훅 session_id → 등록부(모르면 통과). 확인(메인 실제 훅): 4. 등록 ID 로 grep webapp/batch.json → 막힘(rc 2) · 같은 ID 로 batchboard order → 통과 · 이과장 ID 로 Agent source → 막힘 · 정비·이부장 → 통과 · 시험 TestSplitGuard·전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 도구에 걸리려면 settings.json 48행 matcher 를 \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(보호 파일 — 사장님 손, docs/설정변경_분배훅_20261113.md). 한계: 이과장이 인계로 새 세션이면 whoami 재등록해야 걸림(지금 등록 ID c36eea8e). 🙋 이부장: 설정 한 줄 결재함 상정 · 이과장 등록 ID 최신인지 확인",
+  "since": "17:07",
+  "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "05:18:58",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 분배 코드 집행 2건(05:3x 정비) 0f6bf01ad — studio/splitguard(bashguard 훅이 부름): ① 이과장 세션의 Agent 호출은 공용(measure) 말고 차단(11-12 09:21 source 위반 꼴) ② 작업 세션(이과장·3.·4.)이 webapp/batch.json 을 직접 읽으면 차단하고 python -m studio.batchboard order --id <배치> 로 안내(4. 14회 직접 읽기 꼴). 역할 = 훅 session_id → 등록부(모르면 통과). 확인(메인 실제 훅): 4. 등록 ID 로 grep webapp/batch.json → 막힘(rc 2) · 같은 ID 로 batchboard order → 통과 · 이과장 ID 로 Agent source → 막힘 · 정비·이부장 → 통과 · 시험 TestSplitGuard·전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 도구에 걸리려면 settings.json 48행 matcher 를 \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(보호 파일 — 사장님 손, docs/설정변경_분배훅_20261113.md). 한계: 이과장이 인계로 새 세션이면 whoami 재등록해야 걸림(지금 등록 ID c36eea8e). 🙋 이부장: 설정 한 줄 결재함 상정 · 이과장 등록 ID 최신인지 확인",
+   "actor": "정비"
+  },
   {
    "t": "05:13:22",
    "text": "▶   — 4/7단계 · [4.·11-13 05:1x] 재개 확인 — 실험 B 판독 대기. 요청 시각 E2-03 02:12·E2-02 02:15·F1-04 02:16 문서 §23 에 기록·푸시. 판독 일정: 24h = 11-14 02:23(이 세션 일회성 cron 22d84116), 48h 최종 = 11-15 02:23(cron 5abd123d), 백업 watch exp-b-1113-24h/48h. 세션이 꺼지면 cron 이 사라지므로 이부장 깨움이 백업(4. 주소는 d6c9cf 재등록). 지시서는 batchboard order 명령으로만 읽음. C 보류·A 는 B 결과 뒤.",
@@ -7872,11 +7877,6 @@
   {
    "t": "04:44:39",
    "text": "✔ 이부장 ack r166aee",
-   "actor": "이부장"
-  },
-  {
-   "t": "04:41:44",
-   "text": "▶   — 1/7단계 · [이부장 → 이과장] 재시작(04:3x) 뒤 이어가기: 태그 정정 저장 완료 10편(C2-20·F1-20·C2-23·F4-32·F1-21·F3-12·C2-25·F3-13·G3-35·B4-32, 각 _b.log published). 남은 6편: G3-36(시험만 됨)·C1-20·G3-37·E4-15·F4-33·C2-27(⚠️ --tags \"식약처안전성서한,비만약부작용\" 필수). 같은 순서(시험→저장→재판독)로 이어가고, 끝나면 정정 결과 표 + mark. Aside 잠금 남아 있으면 2분 뒤 자동 해제.",
    "actor": "이부장"
   }
  ],
@@ -8984,7 +8984,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "📣 정비 무반응 경위(04:5x 정비, 사장님 지시로 보고) — 누가: 정비 · 언제: 03:24 마지막 보고 뒤 04:46 사장님 「왜 반응하지 않아」까지 약 1시간 20분 · 무엇: 04:16 이부장의 maint 보드 줄(페이블 4차 🟡)에 반응 없음 · 왜(실측): ① 04:16 줄은 보드에만 있었고 이 세션에 메시지(SendMessage)로는 오지 않았다(03:19 뒤 받은 메시지 0건) ② 정비 자동 깨움(rolewake)이 아직 안 돈다 — 설치된 모드는 lifeinfo-tower 0.1.1(rolewake 는 0.1.2 에만 있음), 깨움 흔적 data/.wake_maint.json 도 없다 → 보드 줄만으로는 정비가 못 깬다 ③ 정비는 턴이 끝나면 잠들고 스스로 보드를 보지 않는다. 지금: 04:16 지시(페이블 4차 🟡) 작업 중. 재발방지: 🙋 이부장 — 모드 0.1.2 설치(그 전까지는 보드 줄과 함께 SendMessage 깨움 한 줄). 인사 시험: 인사 보냄 5곳(이부장·이과장·3.·4.·이대리) 실패 0 / 받은 인사 보낸이: 4.",
+   "what": "✅ 분배 코드 집행 2건(05:3x 정비) 0f6bf01ad — studio/splitguard(bashguard 훅이 부름): ① 이과장 세션의 Agent 호출은 공용(measure) 말고 차단(11-12 09:21 source 위반 꼴) ② 작업 세션(이과장·3.·4.)이 webapp/batch.json 을 직접 읽으면 차단하고 python -m studio.batchboard order --id <배치> 로 안내(4. 14회 직접 읽기 꼴). 역할 = 훅 session_id → 등록부(모르면 통과). 확인(메인 실제 훅): 4. 등록 ID 로 grep webapp/batch.json → 막힘(rc 2) · 같은 ID 로 batchboard order → 통과 · 이과장 ID 로 Agent source → 막힘 · 정비·이부장 → 통과 · 시험 TestSplitGuard·전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 도구에 걸리려면 settings.json 48행 matcher 를 \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(보호 파일 — 사장님 손, docs/설정변경_분배훅_20261113.md). 한계: 이과장이 인계로 새 세션이면 whoami 재등록해야 걸림(지금 등록 ID c36eea8e). 🙋 이부장: 설정 한 줄 결재함 상정 · 이과장 등록 ID 최신인지 확인",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -39406,6 +39406,16 @@
    "what": "[4.·11-13 05:1x] 재개 확인 — 실험 B 판독 대기. 요청 시각 E2-03 02:12·E2-02 02:15·F1-04 02:16 문서 §23 에 기록·푸시. 판독 일정: 24h = 11-14 02:23(이 세션 일회성 cron 22d84116), 48h 최종 = 11-15 02:23(cron 5abd123d), 백업 watch exp-b-1113-24h/48h. 세션이 꺼지면 cron 이 사라지므로 이부장 깨움이 백업(4. 주소는 d6c9cf 재등록). 지시서는 batchboard order 명령으로만 읽음. C 보류·A 는 B 결과 뒤.",
    "actor": "4.",
    "sid": "eb8bf5dd"
+  },
+  {
+   "ts": "2026-11-13 05:18:58",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ 분배 코드 집행 2건(05:3x 정비) 0f6bf01ad — studio/splitguard(bashguard 훅이 부름): ① 이과장 세션의 Agent 호출은 공용(measure) 말고 차단(11-12 09:21 source 위반 꼴) ② 작업 세션(이과장·3.·4.)이 webapp/batch.json 을 직접 읽으면 차단하고 python -m studio.batchboard order --id <배치> 로 안내(4. 14회 직접 읽기 꼴). 역할 = 훅 session_id → 등록부(모르면 통과). 확인(메인 실제 훅): 4. 등록 ID 로 grep webapp/batch.json → 막힘(rc 2) · 같은 ID 로 batchboard order → 통과 · 이과장 ID 로 Agent source → 막힘 · 정비·이부장 → 통과 · 시험 TestSplitGuard·전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 도구에 걸리려면 settings.json 48행 matcher 를 \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(보호 파일 — 사장님 손, docs/설정변경_분배훅_20261113.md). 한계: 이과장이 인계로 새 세션이면 whoami 재등록해야 걸림(지금 등록 ID c36eea8e). 🙋 이부장: 설정 한 줄 결재함 상정 · 이과장 등록 ID 최신인지 확인",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ]
 }
