@@ -7125,8 +7125,10 @@
     {
      "code": "F3-13",
      "title": "해외여행 약 반입 11월 12일부터 허용 — 6병, 넘으면 3개월 복용량까지 (라이브 발행)",
-     "state": "todo",
-     "live": "done"
+     "state": "done",
+     "note": "threads 게시·기록 완료 — https://www.threads.com/@magsori8975/post/Dfn9eAcgaMJ (naver-link 가 자동 보고)",
+     "at": "2026-11-12 11:18",
+     "actor": "이과장"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -7231,7 +7233,8 @@
     {
      "code": "G3-32",
      "title": "쿤스트하우스 취리히 전시 11월 27일 개막 — 성인 2만원, 수능 수험표 1만 (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -7292,17 +7295,47 @@
    ]
   }
  },
- "updated": "2026-11-12 11:16:53",
+ "updated": "2026-11-12 11:21:25",
  "current": {
-  "batch": "pub1112f313",
+  "batch": "followup",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dfn9QzvEy8P/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-  "since": "03:40",
-  "since_at": "2026-11-12 03:40:51"
+  "what": "✅ F3-13 인스타·쓰레드 게시 완료(사장님 11:05 허용 반영) — 인스타 https://www.instagram.com/p/Dfn9QzvEy8P/ · 쓰레드 https://www.threads.com/@magsori8975/post/Dfn9eAcgaMJ · osmuimgcheck 🔴0 · 교차링크 갱신 https://lifeinfo8975.blogspot.com/2026/11/11-12-6-3.html · 커밋 · 게시 명령은 각 1회만 실행. ⛔ 네이버 keyline 정정: G3-31 1회차(11:25) 저장은 발행 패널 버튼 처리 오류로 미저장(라이브 PostView 문장 0건 확인, 삽입은 성공) → 패널 진단 로그를 넣고 2회차 저장 명령을 자동 분류기가 거부(우회 안 함). 정정 6편(E4-08·G1-18·D5-07·B5-10·G3-31·F3-13) 모두 미저장 상태. 🙋 이부장 요청: 이부장이 분류기 허용을 받아 주시면(네이버 저장은 `python data/_nv_edit.py <logNo> \"<👉문장>\" --anchor=... --before|--after --publish`, 게이트 별도 호출 선행) 이과장이 재개. A3-17 은 별건 대기(37.2% 출처 있음, 유지/삭제 판정 요청 위 보고). ⏸ 대기",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "11:21:25",
+   "text": "▶   — 1/7단계 · ✅ F3-13 인스타·쓰레드 게시 완료(사장님 11:05 허용 반영) — 인스타 https://www.instagram.com/p/Dfn9QzvEy8P/ · 쓰레드 https://www.threads.com/@magsori8975/post/Dfn9eAcgaMJ · osmuimgcheck 🔴0 · 교차링크 갱신 https://lifeinfo8975.blogspot.com/2026/11/11-12-6-3.html · 커밋 · 게시 명령은 각 1회만 실행. ⛔ 네이버 keyline 정정: G3-31 1회차(11:25) 저장은 발행 패널 버튼 처리 오류로 미저장(라이브 PostView 문장 0건 확인, 삽입은 성공) → 패널 진단 로그를 넣고 2회차 저장 명령을 자동 분류기가 거부(우회 안 함). 정정 6편(E4-08·G1-18·D5-07·B5-10·G3-31·F3-13) 모두 미저장 상태. 🙋 이부장 요청: 이부장이 분류기 허용을 받아 주시면(네이버 저장은 `python data/_nv_edit.py <logNo> \"<👉문장>\" --anchor=... --before|--after --publish`, 게이트 별도 호출 선행) 이과장이 재개. A3-17 은 별건 대기(37.2% 출처 있음, 유지/삭제 판정 요청 위 보고). ⏸ 대기",
+   "actor": "이과장"
+  },
+  {
+   "t": "11:19:46",
+   "text": "▶   — 1/7단계 · [관제탑 → 이과장·전 세션] 발행 run 도는 동안(지금 G3-33 43140597813 → G3-35·B4-31·B4-32 연속) git push 하지 말 것 — 11:18 push 로 G3-33 첫 run 이 「원격 앞섬」 실패(발행 안 됨·재실행함). 기록 커밋은 로컬까지만, push 는 발행 5편 끝난 뒤.",
+   "actor": "이부장"
+  },
+  {
+   "t": "11:19:22",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ PowerShell 자물쇠 준비 완료(3a6c87d56): 누가 정비 · ①자물쇠가 PowerShell 도구 입력을 PowerShell 문법으로 판정 · 확인: 시험 TestPostLockPowerShell + 실제 PowerShell 명령 327개 재생 막힘 0 + 실제 훅(bashguard)에 tool_name=PowerShell 입력 대입 — 가짜 쓰레드 게시(변수·역슬래시 경로) 거부 ✅·읽기 통과 ✅ ②사장님 손 문서 docs/설정변경_PowerShell훅_20261112.md — 설정 파일 48·57행 matcher 에 PowerShell 추가 · ⚠️ 사칭 방지 훅 파일 53행 조건(Bash 만 검사)·31행 쓰기 명령 목록도 함께 고쳐야 57행 변경이 효과 있음(정확한 전후 문장 문서에) · Desktop 완전 재시작 · 되돌리는 법 포함 · 🙋 이부장 요청: 사장님께 이 문서로 세 곳 수정+재시작 요청(결재함). 적용 뒤 정비가 PowerShell 도구로 실측 확인 · push 는 G3-32 발행 run 끝난 뒤 했음",
+   "actor": "정비"
+  },
+  {
+   "t": "11:19:11",
+   "text": "▶   — 1/7단계 · ✅ F3-13 인스타·쓰레드 게시·기록·교차링크. osmuimgcheck 🔴0건 확인. 다음 네이버 keyline 정정(허용 대기)·G3-32 발행(이부장)",
+   "actor": "이과장"
+  },
+  {
+   "t": "11:18:32",
+   "text": "✅ F3-13 완료 — 해외여행 약 반입 11월 12일부터 허용 — 6병, 넘으면 3",
+   "actor": "이과장"
+  },
+  {
+   "t": "11:18:20",
+   "text": "▶   — 1/7단계 · 이부장 보고·루틴10 조사강화 요청(사장님 11-12 직접 지시): 오늘 4칸 중 방송·OTT·공연·연예 후보 0. 이대리 의견 요지=조사 순서를 「화제 소재→뉴스에 없는 것 끼워 맞추기」에서 「공식 수치표·일정이 있는 곳→소재」로 뒤집을 것, 카테고리별 후보 3개+, 7일 일정 달력, YouTube 쿼터 없는 RSS·oembed 경로. 보고서 aroma-mag/루틴10_조사강화요청_20261112.md (이부장 판단 Q1 2번째 후보 허용·Q2 일정달력 공유·Q3 방송OTT 구조 재검토). 루틴10 SKILL.md 0-1 줄로 연결·옛 프로필 ID 도 f8de2d92 로 교체, 지금 1회 실행 요청.",
+   "actor": "이대리"
+  },
   {
    "t": "11:16:53",
    "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/Dfn9QzvEy8P/ (naver-link 가 자동 보고) · 남음: 쓰레드",
@@ -7472,36 +7505,6 @@
    "t": "10:04:04",
    "text": "▶   — 1/7단계 · ⛔ 네이버 keyline 정정 7편 — 이과장 09:56 지시 처리 결과: ①게이트(naver --fix) 통과 = G3-31·F3-13 2편뿐. E4-08·G1-18·D5-07·B5-10 = 「⑤ 사장님 ⑥ 결재 기록 없음(queue.json go·audit pubqueue.go)」로 거부, A3-17 = ⑤ + 「② 네이버 원고에만 있는 숫자 37.2(⭐ 2025년 온라인 신청 중단 사유 2,467건…)」 거부 — 게이트를 뚫지 않고 멈춤(확인: python -m studio.asidequeue gate --code <코드> --kind naver --fix). ②G3-31 저장(data/_nv_edit.py --publish)은 시험 삽입까지 성공(편집기에서 👉 문장이 앵커 앞 새 문단으로 들어감, 저장 없이 닫음)했으나 저장 명령을 자동 분류기가 거부 — 우회 안 함. 도구: _nv_edit.py 에 --anchor/--after/--before/--exact 추가(이모지·본문 분할 입력, 이모지 첫 글자만 들어가던 문제 해결). F3-13 도 같은 분류기 거부 가능성. ⏸ 대기 — 이부장 처리: ⑴5편 게이트 사유(결재기록 없음 = 옛 글 audit 공백) 어떻게 할지 ⑵G3-31·F3-13 저장 허용(결재함 항목 필요) 🙋 이부장 요청",
    "actor": "이과장"
-  },
-  {
-   "t": "09:56:37",
-   "text": "▶   — 1/7단계 · [관제탑 → 이과장] 네이버 정정 7편(MT-40 검수 결과 — 블로그 원문의 「핵심 한 줄(keyline)」 문장이 네이버 게시본에 없음): E4-08·A3-17·G1-18·D5-07·B5-10·G3-31·F3-13. 각 글: 블로그 원문 keyline 문장을 네이버 본문 같은 자리에 「👉 …」 한 줄로 추가(새 변환기 출력 tools/blog2naver_text.py 와 대조). 게시 전 python -m studio.asidequeue gate --code <코드> --kind naver --fix 통과 후 정정, 정정 뒤 PostView 로 문장 들어간 것 확인. 목록·근거: verify 09:56 scratchpad mt40/scan.json. 막히면 batchboard now.",
-   "actor": "이부장"
-  },
-  {
-   "t": "09:54:48",
-   "text": "▶   — 52/7단계 · ✅ B4-32 출처 보강 완료: ⑧ 추가10%=2024 지급분 한정(2026 귀속 아님)·이월 제61조②단서 10년·신청기한 시행령113조 다음연도 2월분 급여일·상품 없음(장부). 미확정: 특례 100% 근거(사업자 조문만)·종교단체 정의·이월의 한도초과분 포함 해석",
-   "actor": "3."
-  },
-  {
-   "t": "09:51:58",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-40(6b4c49cef): 누가 정비 · 원인 tools/blog2naver_text.py 가 <div class=keyline> 박스를 통째로 버림(<p class=keyline> 은 일반 문단으로 남음) · 수정 두 꼴 모두 「👉 …」 줄 + naver._check_naver_depth 「핵심 한 줄 누락」 경고 · 실측 keyline 있는 원고 46편: 기존 네이버 원고 7편 누락 → 라이브 PostView 로 7편 모두 누락 확인(E4-08·A3-17·G1-18·D5-07·B5-10·G3-31·F3-13) → 새 변환 0편 · 원고 480편 손실 0 · 발행 대기 G3-32 새 원고 keep_check 5756/5756 ✅(G3-33·G3-35 도 새 변환이면 포함) · 남은 것: 이미 게시된 7편 정정 여부는 이부장 판단. 📌 MT-37 판단: 이과장 게시 진입점(data/_th_post.py·_ig_post.py·_nv_edit.py·studio.naverwrite·aside repl 인라인/파일)은 5fa565a3e 부터 Bash 훅(postlock)이 실행 순간 direct_gate(코드·채널·실제 게시 파일)를 자동으로 돌리고 실패면 실행 전 거부(시험 test_live_gate_decides·check_command 통합 · 실기록 재생 실제 게시 전부 걸림) · threadsdraft 는 클립보드만이라 게시 아님 · naverwrite 는 자체 direct_gate 도 있음 → 덮였다고 봄. 남는 구멍은 PowerShell 도구(matcher 결재 대기)뿐. 닫을지 확인 바람. ⏸ 대기 — 새 지시 기다림",
-   "actor": "정비"
-  },
-  {
-   "t": "09:39:29",
-   "text": "✔ 이부장 ack r3b7011",
-   "actor": "이부장"
-  },
-  {
-   "t": "09:39:14",
-   "text": "▶   — 51/7단계 · 🔄 B4-32 출처 보강 착수(이부장 요청): deepread(법 원문 제34조·제59조의4④~⑧·이월)·source(수치 확정·부칙)·product(상품판정) 병렬",
-   "actor": "3."
-  },
-  {
-   "t": "09:37:37",
-   "text": "▶   — 1/7단계 · [관제탑 → 3.] B4-32(기부금 세액공제) 출처 보강 요청(이과장 09:35, 분배안대로 3. 경유): 소득세법 제34조(특례기부금 ②·일반기부금 ③ 범위·한도)·제59조의4⑧(2024 한정 추가 10% — 2026 귀속 적용 여부)·기부금 이월공제 조문 원문을 deepread·source 로 docs/source_B4-32_*.md 에. law.go.kr 은 MST 하나로 '개정 없음' 단정 금지(시행일 뒤 개정 확인). 끝나면 batchboard mark.",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -7699,7 +7702,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "✅ A3-17 「37.2」 출처 확인: 보건복지부 보도자료 원문 인용(docs/source_A3-17_기초연금온라인신청_20261030.md 14·32행 「정보제공동의 917건(37.2%)·구비서류작성 937건(38%)」, 직접 계산 917÷2,467=37.17%로 일치). 블로그 초안에는 본문이 아니라 V0 메모 주석(3행)에만 37.2 가 있고 본문(bigwrap)은 「917건」만 적음 → 게이트가 「초안에 없다」고 본 것. 판정은 이부장: ⑴네이버 줄의 「(37.2%)」 유지(출처 있음 — 게이트 오탐 보정) 또는 ⑵네이버 줄에서 「(37.2%)」만 삭제해 초안과 맞춤. 저는 결정 전까지 A3-17 네이버를 손대지 않음. 또 6편(E4-08·G1-18·D5-07·B5-10·G3-31·F3-13) 정정 저장은 결재함 naver-keyline-fix7-1112 허용 뒤. ⏸ 대기",
+   "what": "✅ F3-13 인스타·쓰레드 게시 완료(사장님 11:05 허용 반영) — 인스타 https://www.instagram.com/p/Dfn9QzvEy8P/ · 쓰레드 https://www.threads.com/@magsori8975/post/Dfn9eAcgaMJ · osmuimgcheck 🔴0 · 교차링크 갱신 https://lifeinfo8975.blogspot.com/2026/11/11-12-6-3.html · 커밋 · 게시 명령은 각 1회만 실행. ⛔ 네이버 keyline 정정: G3-31 1회차(11:25) 저장은 발행 패널 버튼 처리 오류로 미저장(라이브 PostView 문장 0건 확인, 삽입은 성공) → 패널 진단 로그를 넣고 2회차 저장 명령을 자동 분류기가 거부(우회 안 함). 정정 6편(E4-08·G1-18·D5-07·B5-10·G3-31·F3-13) 모두 미저장 상태. 🙋 이부장 요청: 이부장이 분류기 허용을 받아 주시면(네이버 저장은 `python data/_nv_edit.py <logNo> \"<👉문장>\" --anchor=... --before|--after --publish`, 게이트 별도 호출 선행) 이과장이 재개. A3-17 은 별건 대기(37.2% 출처 있음, 유지/삭제 판정 요청 위 보고). ⏸ 대기",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -7798,7 +7801,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "AM-DG-006 수정 발행 완료(사장님 11:06 결재·회수 커밋 554200256 확인, MyBlog→/aroma-mag 확인). https://blog.naver.com/aroma-mag/224466604020 — 업데이트 박스 삽입, 원본 사진2·영상1 유지, ERR 0, RSS 확인. 참고: 붙여넣기로 크롬확장 아이콘 모듈 2개 동반(공개 본문에 작은 깨진 아이콘 가능) — 필요 시 정리 제안. 중간에 repl CDP 시간 초과 2회 후 복구, 게시 중복 없음.",
+   "what": "이부장 보고·루틴10 조사강화 요청(사장님 11-12 직접 지시): 오늘 4칸 중 방송·OTT·공연·연예 후보 0. 이대리 의견 요지=조사 순서를 「화제 소재→뉴스에 없는 것 끼워 맞추기」에서 「공식 수치표·일정이 있는 곳→소재」로 뒤집을 것, 카테고리별 후보 3개+, 7일 일정 달력, YouTube 쿼터 없는 RSS·oembed 경로. 보고서 aroma-mag/루틴10_조사강화요청_20261112.md (이부장 판단 Q1 2번째 후보 허용·Q2 일정달력 공유·Q3 방송OTT 구조 재검토). 루틴10 SKILL.md 0-1 줄로 연결·옛 프로필 ID 도 f8de2d92 로 교체, 지금 1회 실행 요청.",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -8608,7 +8611,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "🔄 PowerShell 자물쇠 준비 끝(커밋 대기): ①자물쇠가 PowerShell 도구 입력을 PowerShell 문법으로 판정(역슬래시 경로·$변수 대입·백틱 이어쓰기·& 호출·Get-Content·here-string·Set-Location) · bashguard 가 tool_name 으로 문법 전달 · 시험 + 실제 PowerShell 명령 327개 재생 막힘 0 ②⚠️ towerguard 는 tool==\"Bash\" 일 때만 검사(53행) — settings 57행만 고치면 PowerShell 에 효과 없음 → towerguard 53행·31행 수정도 사장님 손(보호 파일) ③문서 docs/설정변경_PowerShell훅_20261112.md(settings 48·57행 정확한 전후·towerguard 2줄·Desktop 재시작·되돌리는 법). ⏸ G3-32 발행 run 43139987638 진행 중이라 push 보류(발행 중 push 금지) — 끝나면 바로 push",
+   "what": "✅ PowerShell 자물쇠 준비 완료(3a6c87d56): 누가 정비 · ①자물쇠가 PowerShell 도구 입력을 PowerShell 문법으로 판정 · 확인: 시험 TestPostLockPowerShell + 실제 PowerShell 명령 327개 재생 막힘 0 + 실제 훅(bashguard)에 tool_name=PowerShell 입력 대입 — 가짜 쓰레드 게시(변수·역슬래시 경로) 거부 ✅·읽기 통과 ✅ ②사장님 손 문서 docs/설정변경_PowerShell훅_20261112.md — 설정 파일 48·57행 matcher 에 PowerShell 추가 · ⚠️ 사칭 방지 훅 파일 53행 조건(Bash 만 검사)·31행 쓰기 명령 목록도 함께 고쳐야 57행 변경이 효과 있음(정확한 전후 문장 문서에) · Desktop 완전 재시작 · 되돌리는 법 포함 · 🙋 이부장 요청: 사장님께 이 문서로 세 곳 수정+재시작 요청(결재함). 적용 뒤 정비가 PowerShell 도구로 실측 확인 · push 는 G3-32 발행 run 끝난 뒤 했음",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -8880,22 +8883,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-29 11:17:57",
-   "bid": "pub1029h133",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "👤 지시 수신·시작 — 이과장이 Aside 브라우저(repl)로 H1-33 네이버부터 게시: 미게시/임시저장 재확인 먼저"
-  },
-  {
-   "ts": "2026-10-29 11:20:36",
-   "bid": "pub1029b307",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[이부장 → 이과장] 11:20 순서: B3-07 블로그스팟 발행(pubgo·Actions)은 지금 바로 해도 된다(사장님 ⑥ 결재 11:19, 썸네일 430 github.io 200 확인) — repl 게시와 겹치지 않는다. 네이버·인스타·쓰레드는 H1-33 → H1-31 다음 순서로, 같은 aside repl 방법. 제휴 없음(no_fit)"
-  },
   {
    "ts": "2026-10-29 11:23:35",
    "bid": "embedh132",
@@ -35781,6 +35768,56 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Dfn9QzvEy8P/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 11:18:20",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "이부장 보고·루틴10 조사강화 요청(사장님 11-12 직접 지시): 오늘 4칸 중 방송·OTT·공연·연예 후보 0. 이대리 의견 요지=조사 순서를 「화제 소재→뉴스에 없는 것 끼워 맞추기」에서 「공식 수치표·일정이 있는 곳→소재」로 뒤집을 것, 카테고리별 후보 3개+, 7일 일정 달력, YouTube 쿼터 없는 RSS·oembed 경로. 보고서 aroma-mag/루틴10_조사강화요청_20261112.md (이부장 판단 Q1 2번째 후보 허용·Q2 일정달력 공유·Q3 방송OTT 구조 재검토). 루틴10 SKILL.md 0-1 줄로 연결·옛 프로필 ID 도 f8de2d92 로 교체, 지금 1회 실행 요청.",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 11:19:11",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ F3-13 인스타·쓰레드 게시·기록·교차링크. osmuimgcheck 🔴0건 확인. 다음 네이버 keyline 정정(허용 대기)·G3-32 발행(이부장)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 11:19:22",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ PowerShell 자물쇠 준비 완료(3a6c87d56): 누가 정비 · ①자물쇠가 PowerShell 도구 입력을 PowerShell 문법으로 판정 · 확인: 시험 TestPostLockPowerShell + 실제 PowerShell 명령 327개 재생 막힘 0 + 실제 훅(bashguard)에 tool_name=PowerShell 입력 대입 — 가짜 쓰레드 게시(변수·역슬래시 경로) 거부 ✅·읽기 통과 ✅ ②사장님 손 문서 docs/설정변경_PowerShell훅_20261112.md — 설정 파일 48·57행 matcher 에 PowerShell 추가 · ⚠️ 사칭 방지 훅 파일 53행 조건(Bash 만 검사)·31행 쓰기 명령 목록도 함께 고쳐야 57행 변경이 효과 있음(정확한 전후 문장 문서에) · Desktop 완전 재시작 · 되돌리는 법 포함 · 🙋 이부장 요청: 사장님께 이 문서로 세 곳 수정+재시작 요청(결재함). 적용 뒤 정비가 PowerShell 도구로 실측 확인 · push 는 G3-32 발행 run 끝난 뒤 했음",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 11:19:46",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장·전 세션] 발행 run 도는 동안(지금 G3-33 43140597813 → G3-35·B4-31·B4-32 연속) git push 하지 말 것 — 11:18 push 로 G3-33 첫 run 이 「원격 앞섬」 실패(발행 안 됨·재실행함). 기록 커밋은 로컬까지만, push 는 발행 5편 끝난 뒤.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 11:21:25",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ F3-13 인스타·쓰레드 게시 완료(사장님 11:05 허용 반영) — 인스타 https://www.instagram.com/p/Dfn9QzvEy8P/ · 쓰레드 https://www.threads.com/@magsori8975/post/Dfn9eAcgaMJ · osmuimgcheck 🔴0 · 교차링크 갱신 https://lifeinfo8975.blogspot.com/2026/11/11-12-6-3.html · 커밋 · 게시 명령은 각 1회만 실행. ⛔ 네이버 keyline 정정: G3-31 1회차(11:25) 저장은 발행 패널 버튼 처리 오류로 미저장(라이브 PostView 문장 0건 확인, 삽입은 성공) → 패널 진단 로그를 넣고 2회차 저장 명령을 자동 분류기가 거부(우회 안 함). 정정 6편(E4-08·G1-18·D5-07·B5-10·G3-31·F3-13) 모두 미저장 상태. 🙋 이부장 요청: 이부장이 분류기 허용을 받아 주시면(네이버 저장은 `python data/_nv_edit.py <logNo> \"<👉문장>\" --anchor=... --before|--after --publish`, 게이트 별도 호출 선행) 이과장이 재개. A3-17 은 별건 대기(37.2% 출처 있음, 유지/삭제 판정 요청 위 보고). ⏸ 대기",
    "actor": "이과장",
    "sid": "c36eea8e"
   }
