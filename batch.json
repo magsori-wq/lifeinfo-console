@@ -2567,8 +2567,10 @@
     {
      "code": "FOLLOWUP",
      "title": "상시 — Aside 게시 완료 뒤 확인·기록, Aside 지시 초안",
-     "state": "todo",
-     "note": ""
+     "state": "done",
+     "note": "태그 정정 16편 마무리: 라이브 재판독 27편(대상 16 뒤섞임 0·비대상 11 변경 0)·점검 문서 정정 결과 열(fc07fda45)",
+     "at": "2026-11-13 06:53",
+     "actor": "이과장"
     }
    ],
    "owner": "이과장(작업 세션)",
@@ -7702,17 +7704,27 @@
    "order_at": "2026-11-13 05:55:47"
   }
  },
- "updated": "2026-11-13 06:18:07",
+ "updated": "2026-11-13 06:53:38",
  "current": {
-  "batch": "maint",
+  "batch": "followup",
   "code": "",
-  "title": "정비 담당 세션(11-11 신설)",
+  "title": "",
   "step": 1,
-  "what": "✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
-  "since": "17:07",
-  "since_at": "2026-11-11 17:07:53"
+  "what": "✅ 태그 정정 마무리 확인(06:5x 재확인): ① 라이브 재판독 27편 완료(05:3x) — 정정 대상 16편 남은 뒤섞임 0 · 비대상 11편 변경 0 · C2-21 은 개별 재판독으로 처음과 같음 ② docs/점검_네이버태그_전수_20261113.md 42행 「정정 결과」 열 추가·커밋 fc07fda45 ③ 막힌 것 없음 — 06:23 이부장 메시지에는 대화로만 답하고 보드 줄을 안 남겨 보고가 없어 보인 것(제 누락, 이후 보드에도 남김) ④ 같은 시간대 B4-33·A5-22 초안 2건 큐 적재 완료(각 draft1113b433·draft1113a522 mark done)",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "06:53:38",
+   "text": "✅ FOLLOWUP 완료 — 상시 — Aside 게시 완료 뒤 확인·기록, Aside 지시",
+   "actor": "이과장"
+  },
+  {
+   "t": "06:53:28",
+   "text": "▶   — 1/7단계 · ✅ 태그 정정 마무리 확인(06:5x 재확인): ① 라이브 재판독 27편 완료(05:3x) — 정정 대상 16편 남은 뒤섞임 0 · 비대상 11편 변경 0 · C2-21 은 개별 재판독으로 처음과 같음 ② docs/점검_네이버태그_전수_20261113.md 42행 「정정 결과」 열 추가·커밋 fc07fda45 ③ 막힌 것 없음 — 06:23 이부장 메시지에는 대화로만 답하고 보드 줄을 안 남겨 보고가 없어 보인 것(제 누락, 이후 보드에도 남김) ④ 같은 시간대 B4-33·A5-22 초안 2건 큐 적재 완료(각 draft1113b433·draft1113a522 mark done)",
+   "actor": "이과장"
+  },
   {
    "t": "06:18:07",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
@@ -7902,16 +7914,6 @@
    "t": "04:52:16",
    "text": "▶   — 1/7단계 · 04:5x 화이팅 수신 갱신: 이부장 · 정비 · 이과장 3곳 「화이팅!」 수신(3.·4.는 대기). 인사 수신 4/5(이부장 대기)·화이팅 수신 3/5. 답장 안 함",
    "actor": "이대리"
-  },
-  {
-   "t": "04:52:03",
-   "text": "▶   — 68/7단계 · 화이팅 보냄 5곳·실패 없음(이부장·이과장·4.·정비·이대리) / 받은 화이팅 보낸이: 이부장·이대리·정비·이과장 4곳(4.는 아직). 답장 안 함. 인사 시험은 보냄 5·받음 5곳 완료(이부장 인사는 화이팅 메시지로 대신 수신)",
-   "actor": "3."
-  },
-  {
-   "t": "04:51:51",
-   "text": "▶   — 1/7단계 · 화이팅 보냄 5곳 실패 0 / 받은 화이팅 보낸이: 정비 담당 세션(이부장 화이팅은 중계 메시지로 수신)",
-   "actor": "이과장"
   }
  ],
  "currents": {
@@ -8109,7 +8111,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "✅ 네이버 태그 정정 16편 전부 저장·재판독 완료(사장님 03:15 결재·04:09 허용·05:11 재개): 15편은 뒤섞인 태그 1~2개씩 삭제(C2-25 만 2개), C2-27 은 --tags 식약처안전성서한,비만약부작용 로 추천태그 4개(GLP1시신경·GLP1안전성서한·NAION·비만치료제주의) 추가해 6개. 각 편 시험(게시 없음)→저장 순서, RESULT 의 tagsExtra 없음·tagsDup false·bodySame true·liveMatch true 16/16(data/_tagfix_*_a.log·_b.log). 저장 뒤 전수 재판독 27편: 정정 대상 16편 남은 뒤섞임 0 · 비대상 11편 태그 변경 0(C2-21 은 1차 재판독 읽기 실패 → 개별 재판독으로 처음과 같음 확인). 중간 사고: F4-33 첫 저장 시도 step=panel CDP timeout(readyMs 34597) — 저장 전 단계라 라이브 변화 없음을 태그 재판독으로 확인 후 1회 재시도 성공. G3-37 은 Aside 미실행 1회 실패 후 재시도로 성공(첫 시도가 이미 반영돼 있었던 것으로 보임, before=final). 정정 결과 표는 docs/점검_네이버태그_전수_20261113.md 말미",
+   "what": "✅ 태그 정정 마무리 확인(06:5x 재확인): ① 라이브 재판독 27편 완료(05:3x) — 정정 대상 16편 남은 뒤섞임 0 · 비대상 11편 변경 0 · C2-21 은 개별 재판독으로 처음과 같음 ② docs/점검_네이버태그_전수_20261113.md 42행 「정정 결과」 열 추가·커밋 fc07fda45 ③ 막힌 것 없음 — 06:23 이부장 메시지에는 대화로만 답하고 보드 줄을 안 남겨 보고가 없어 보인 것(제 누락, 이후 보드에도 남김) ④ 같은 시간대 B4-33·A5-22 초안 2건 큐 적재 완료(각 draft1113b433·draft1113a522 mark done)",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -39544,6 +39546,16 @@
    "what": "✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 06:53:28",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "✅ 태그 정정 마무리 확인(06:5x 재확인): ① 라이브 재판독 27편 완료(05:3x) — 정정 대상 16편 남은 뒤섞임 0 · 비대상 11편 변경 0 · C2-21 은 개별 재판독으로 처음과 같음 ② docs/점검_네이버태그_전수_20261113.md 42행 「정정 결과」 열 추가·커밋 fc07fda45 ③ 막힌 것 없음 — 06:23 이부장 메시지에는 대화로만 답하고 보드 줄을 안 남겨 보고가 없어 보인 것(제 누락, 이후 보드에도 남김) ④ 같은 시간대 B4-33·A5-22 초안 2건 큐 적재 완료(각 draft1113b433·draft1113a522 mark done)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
