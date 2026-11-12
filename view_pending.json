@@ -1,11 +1,41 @@
 {
- "computed_at": "2026-11-13 04:44:12",
- "source_head": "2873dce4568d",
+ "computed_at": "2026-11-13 06:01:55",
+ "source_head": "40475267d9be",
  "ids": [
-  "c1-11-geon-yeonjang-check"
+  "B4-33",
+  "c1-11-geon-yeonjang-check",
+  "splitguard-matcher-boss-1113"
  ],
  "posts": [],
- "publish": [],
+ "publish": [
+  {
+   "code": "B4-33",
+   "title": "오피스텔 기준시가(안) 열람 12월 2일까지 — 전국 -0.47%, 서울 +2.07%, 의견은 온라인으로",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 오피스텔기준시가열람_글_HTML.txt",
+     "path": "오피스텔기준시가열람_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/509_officetel_standard_price.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/509_officetel_standard_price.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
+  }
+ ],
  "actions": [
   {
    "id": "c1-11-geon-yeonjang-check",
@@ -13,6 +43,14 @@
    "due": "2026-11-12",
    "cmd": "grep -c 어떤 사유로도 osmu/_live/C1-11.html",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "splitguard-matcher-boss-1113",
+   "what": "분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 — .claude/settings.json 의 PreToolUse 훅 matcher 를 \"Bash\" → \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(설정 파일은 사장님만 수정). 【권고】변경 【근거】검수: 함수·시험 705건 OK, 이과장 Agent source·작업세션 batch.json 직접 읽기를 함수는 막지만 훅이 그 도구에 안 불려 실제로는 안 막힘 【위험】훅이 Read·Grep 마다 돌아 약간 느려질 수 있음·미등록 세션은 그대로 통과",
+   "due": "2026-11-13",
+   "cmd": "grep -n matcher .claude/settings.json",
+   "state": "todo",
    "kind": "action"
   }
  ],
