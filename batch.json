@@ -7702,17 +7702,22 @@
    "order_at": "2026-11-13 05:55:47"
   }
  },
- "updated": "2026-11-13 06:12:42",
+ "updated": "2026-11-13 06:18:07",
  "current": {
-  "batch": "chkmon",
+  "batch": "maint",
   "code": "",
-  "title": "",
+  "title": "정비 담당 세션(11-11 신설)",
   "step": 1,
-  "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡4 — 즉시: V0 지연 A5-22 교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일; 사장님 ☑️조치 분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 · 묶음: 사건×3 반영 감사×1 (상세 python -m studio.chkmon show)",
-  "since": "18:12",
-  "since_at": "2026-11-05 18:12:35"
+  "what": "✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
+  "since": "17:07",
+  "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "06:18:07",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
+   "actor": "정비"
+  },
   {
    "t": "06:12:42",
    "text": "✔ 이부장 ack rf66444",
@@ -7907,11 +7912,6 @@
    "t": "04:51:51",
    "text": "▶   — 1/7단계 · 화이팅 보냄 5곳 실패 0 / 받은 화이팅 보낸이: 정비 담당 세션(이부장 화이팅은 중계 메시지로 수신)",
    "actor": "이과장"
-  },
-  {
-   "t": "04:51:33",
-   "text": "▶   — 1/7단계 · 04:5x 화이팅 메시지 보냄 5곳·실패 0(이부장·이과장·3.·4.·정비). 받은 메시지: 이부장 「[이부장] 화이팅! 💪」 1건(+인사 4곳 수신 누계)",
-   "actor": "이대리"
   }
  ],
  "currents": {
@@ -9018,7 +9018,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ 분배 코드 집행 2건(05:3x 정비) 0f6bf01ad — studio/splitguard(bashguard 훅이 부름): ① 이과장 세션의 Agent 호출은 공용(measure) 말고 차단(11-12 09:21 source 위반 꼴) ② 작업 세션(이과장·3.·4.)이 webapp/batch.json 을 직접 읽으면 차단하고 python -m studio.batchboard order --id <배치> 로 안내(4. 14회 직접 읽기 꼴). 역할 = 훅 session_id → 등록부(모르면 통과). 확인(메인 실제 훅): 4. 등록 ID 로 grep webapp/batch.json → 막힘(rc 2) · 같은 ID 로 batchboard order → 통과 · 이과장 ID 로 Agent source → 막힘 · 정비·이부장 → 통과 · 시험 TestSplitGuard·전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 도구에 걸리려면 settings.json 48행 matcher 를 \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(보호 파일 — 사장님 손, docs/설정변경_분배훅_20261113.md). 한계: 이과장이 인계로 새 세션이면 whoami 재등록해야 걸림(지금 등록 ID c36eea8e). 🙋 이부장: 설정 한 줄 결재함 상정 · 이과장 등록 ID 최신인지 확인",
+   "what": "✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -39534,6 +39534,16 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "rf66444"
+  },
+  {
+   "ts": "2026-11-13 06:18:07",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ 페이블 5차 🟡(06:3x 정비) 1c473a8bc — ① 추천태그 # 없는 줄은 쉼표 목록일 때만 태그·쉼표로만 나눔(표시 뒤 문장 줄을 쪼개던 것) · 원고 672편 분포 그대로·정정 16편 그대로 · 바뀐 원고 3편은 「KBS JTBC」 등이 한 태그로. ② splitguard: 읽기 명령만 판정 — git diff/status/commit·python -m studio.*·python studio/x.py·grep 검색어는 안 막음 · cat batch*.json·batch.jso?·batch_view.json·Grep path+glob 우회는 막음 · 등록부에 없는 세션의 Agent 호출은 막지 않고 처음 한 번 경고+data/splitguard_unregistered.log. 확인(메인 실제 훅, 4. ID): git diff -- webapp/batch.json 통과 · cat webapp/batch*.json 막힘 · 시험 전체 OK·enginemap 🔴0. 남은 것: Agent·Read·Grep 집행은 사장님 결재(splitguard-matcher-boss-1113) 설정 한 줄 뒤 · 페이블 ④(Aside [done] 보고 검색을 batchboard 로 대신할 수 있나)는 확인 못 함",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ]
 }
