@@ -7634,17 +7634,42 @@
    "order_at": "2026-11-12 17:44:06"
   }
  },
- "updated": "2026-11-12 23:29:46",
+ "updated": "2026-11-12 23:43:08",
  "current": {
-  "batch": "aroma",
+  "batch": "followup",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "23:27 시말서 2건 작성 완료(docs/시말서_20261112_이대리.md·루틴10.md, 사장님 23:20 지적 반영). 4편 조사 중 — 스포츠: K리그1 우승(SP-014)·승격/강등(SP-015) 이미 게시라 다른 소재(KOVO/KBL) 탐색, 방송·공연·디지털 Aside 읽기 진행",
-  "since": "14:53",
-  "since_at": "2026-10-29 14:53:41"
+  "what": "⏸ 🙋 이부장: C2-27 네이버 재시도(정비 de6c4958f 이후) 2회 — ① Aside 미실행(fetch failed) ② tags 단계 실패: tagLog 3개 모두 added 빈값·tagsSeen 0, catPick=BUTTON(카테고리 목록 LI 대신 버튼 선택) 그대로. 미게시(ok:false). 이번엔 tables 0·chars 4227 로 본문 붙여넣기도 이전(tables 10)과 달라짐. 정비가 category 선택(BUTTON→LI)과 태그 입력칸 포커스를 확인해야 함. 인스타·쓰레드·색인요청은 네이버 뒤라 대기",
+  "since": "16:10",
+  "since_at": "2026-10-24 16:10:44"
  },
  "log": [
+  {
+   "t": "23:43:08",
+   "text": "▶   — 1/7단계 · ⏸ 🙋 이부장: C2-27 네이버 재시도(정비 de6c4958f 이후) 2회 — ① Aside 미실행(fetch failed) ② tags 단계 실패: tagLog 3개 모두 added 빈값·tagsSeen 0, catPick=BUTTON(카테고리 목록 LI 대신 버튼 선택) 그대로. 미게시(ok:false). 이번엔 tables 0·chars 4227 로 본문 붙여넣기도 이전(tables 10)과 달라짐. 정비가 category 선택(BUTTON→LI)과 태그 입력칸 포커스를 확인해야 함. 인스타·쓰레드·색인요청은 네이버 뒤라 대기",
+   "actor": "이과장"
+  },
+  {
+   "t": "23:40:24",
+   "text": "▶   — 1/7단계 · 23:4x AM-PE-012(두 도시 이야기 3차 오픈 11/13 14:00 가격·취소 계산) 초안·썸네일(압구정역 PD사진)·미리보기 완료, 독립 V0 대기(fork는 에이전트 생성 불가) — 결재 상정 전",
+   "actor": "이대리"
+  },
+  {
+   "t": "23:39:32",
+   "text": "▶   — 1/7단계 · [이부장 답] 23:24 🙋 처리: ① C2-27 naverwrite → 정비 de6c4958f 수정, 재시도 지시 pub1112c227(23:38) ② E4-15·F4-33 색인요청 실패 → 이과장 등록한 재시도 watch 대로 진행(직접 게시 모드) ③ 시범 9편·E4-15·F4-33 완결 확인 완료(verify ✅·자동 확인).",
+   "actor": "이부장"
+  },
+  {
+   "t": "23:37:46",
+   "text": "▶   — 1/7단계 · [이부장 → 이과장] 정비 de6c4958f 로 naverwrite 태그 단계 보강(태그별 기록·빠진 태그 1회 재입력). C2-27 네이버 재시도 1회: 사전 점검 도장 뒤 python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish · tagsMissing 나오면 그 태그만 빼거나 바꿔 1회 더(4회 반복 금지) · tagLog 를 보드에. 그다음 인스타·쓰레드·색인요청.",
+   "actor": "이부장"
+  },
+  {
+   "t": "23:36:46",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ C2-27 naverwrite 태그(23:55 정비) de6c4958f: ① 카테고리(BUTTON)는 원인 아님 — 실기록상 BUTTON 카테고리 6편(한랭질환·연말정산·기부금·건강보험·편의점·유플러스) 정상 게시, C2-27 4회 모두 카테고리 일치. ② 옛 판정은 「몇 개 빠짐」만 알려 어느 태그가 안 붙었는지 몰랐다 → 태그별 기록(tagLog·tagsMissing)·안 붙은 태그 1회 재입력·기호/띄어쓰기 정리. 관문은 엄격 유지(빠진 태그 있으면 멈춤). 진짜 원인은 아직 미확정 — 다음 실행 RESULT 의 tagsMissing 이 이름으로 말한다. 🙋 이부장: 이과장 재시도 가능 — 사전 점검 도장(asidequeue gate) 뒤 같은 명령 1회: python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish · tagsMissing 이 나오면 그 태그만 빼거나 바꿔 1회 더(4회 반복 금지)·tagLog 를 보드에 붙여 줄 것. 재발방지: 실패 결과가 원인을 스스로 말하게(카테고리 단계도 이미 catList 를 남김)",
+   "actor": "정비"
+  },
   {
    "t": "23:29:46",
    "text": "▶   — 1/7단계 · [이부장 → 4.] 추가 재료: docs/조사_GSC메일2건_추가단서_20261112.md — 8월 유효성 검사 5건 중 통과 메일은 대체페이지76·발견됨32 뿐, 리디렉션 오류·크롤됨은 3개월째 미통과. 대조표에 「통과 유형 URL 꼴 vs 리디렉션 오류 URL 꼴」 비교와 09-08 리디렉션 검사 현재 화면(실패 예시 URL)을 넣을 것.",
@@ -7819,31 +7844,6 @@
    "t": "22:21:34",
    "text": "▶   — 1/4단계 · ⛔ 시범 미반영 도너 9편(B4-03·C2-01·C3-01·C3-03·C4-03·D2-04·D2-06·E2-05·F1-05) 22:2x 재시도 — 사전확인(라이브=준비 때 본문) ✅ → update-post dry-run ✅ → 실행 단계에서 blogger.py 결재 게이트 「사장님 승인이 결재함에 없다」(watch.json 에 이 코드들을 언급한 approve done 항목 없음)로 차단(B4-03·C2-01·C3-01 3편 실제 확인, 나머지 6편도 같은 사유로 17:5x 차단). --force-approve 안 씀. 현재 watch: blogspot-pilot10-approve-1112(approve done, what 에 B2-14 만)·pilot1112-allow(done=분류기 허용)·pilot1112-complete(todo). 사장님 22:18 「16시 보고건 아직인가」에 답할 사실: 18/20줄 아닌 도너 9편+B2-14 반영 완료(17:46~17:54), 9편은 결재 게이트 때문에 대기. 🙋 이부장: 게이트 통과 조건 = approve done 항목 what/id 에 그 9개 코드 포함 → ①blogspot-pilot10-approve-1112 what 에 9개 코드 추가(사장님 확인 후) 또는 ②새 approve 항목(「시범 10쌍 도너 9편 반영」, 코드 9개 명시) 등록·사장님 승인. 승인되면 준비 파일 data/_pilot/<코드>.new.html 로 즉시 9편 연속 반영(한 편씩 사전확인→dry-run→실행→getByPath 대조→§5-3-a 시각 기록, 약 8분). 그동안 4채널 후속(E4-15→F4-33→C2-27)을 이어감. ⏸ 대기",
    "actor": "이과장"
-  },
-  {
-   "t": "22:20:56",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [이부장 → 정비] MT-50(MT-46 다음 최우선): 세션 정체 감지 — 지시서를 읽었거나 진행 중인데 N분(30) 보고 없음 + 그 세션이 idle 이면 towertick 이 SESSION_STALL 로 이부장을 깨우고 자동 깨움 1회. 오늘 이과장 18:44~22:17 정체가 경보 0건이었다(ORDER_UNREAD 는 안 읽음만 본다). 회귀시험 + 설계도 사건 대입 기록.",
-   "actor": "이부장"
-  },
-  {
-   "t": "22:18:20",
-   "text": "▶   — 1/4단계 · [이부장 → 이과장] 👤 사장님 22:18 「16시 보고건 아직인가」 — 시범 10쌍 남은 도너 9편(B4-03·C2-01·C3-01·C3-03·C4-03·D2-04·D2-06·E2-05·F1-05)을 4채널 후속보다 먼저 끝내라. 한 편씩 dry-run→update-post→getByPath→§5-3 반영시각 기록, 끝나면 batchboard mark.",
-   "actor": "이부장"
-  },
-  {
-   "t": "22:17:35",
-   "text": "▶   — 1/7단계 · ▶ 동기 해소 확인(앞0·뒤0, E4-15·F4-33·C2-27 로컬 DB 반영) — 후속 4채널 착수: E4-15 → F4-33 → C2-27, 색인요청 묶음 포함. 18:29 이부장 지시(색인요청 기록) 이제 읽음 — 과거 10편은 gsc_requested 에 URL 로 기록돼 있음(로컬 커밋이 푸시 전이라 안 보였던 것).",
-   "actor": "이과장"
-  },
-  {
-   "t": "21:47:26",
-   "text": "▶   — 1/7단계 · 21:47 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS; 루틴10 23:08 결과 대기). 23:47 루틴10 결과 확인 예약 추가. CA 조회 미조회",
-   "actor": "이대리"
-  },
-  {
-   "t": "20:25:13",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
-   "actor": "정비"
   }
  ],
  "currents": {
@@ -8041,7 +8041,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장: pilot1112 도너 9편 반영 완료(22:35~22:40). E4-15 4채널 완결(네이버 224474864838·인스타 DfpMUsTkxFc·쓰레드 DfpMihigb3q), F4-33 4채널 완결(네이버 224474904340·인스타 DfpOqw0E-8r·쓰레드 DfpO0VUARne). 막힘 ① C2-27 네이버 naverwrite tags 단계 4회 실패(catPick BUTTON) — 정비 확인 필요, 인스타·쓰레드는 네이버 뒤라 대기 ② GSC 색인요청 E4-15 「제출 중 문제」·F4-33 combobox 못 찾음 — 재시도 watch 등록. E4-15 카드는 B4-31 과 같은 사진이라 USIM·스마트폰 사진으로 교체해 게시",
+   "what": "⏸ 🙋 이부장: C2-27 네이버 재시도(정비 de6c4958f 이후) 2회 — ① Aside 미실행(fetch failed) ② tags 단계 실패: tagLog 3개 모두 added 빈값·tagsSeen 0, catPick=BUTTON(카테고리 목록 LI 대신 버튼 선택) 그대로. 미게시(ok:false). 이번엔 tables 0·chars 4227 로 본문 붙여넣기도 이전(tables 10)과 달라짐. 정비가 category 선택(BUTTON→LI)과 태그 입력칸 포커스를 확인해야 함. 인스타·쓰레드·색인요청은 네이버 뒤라 대기",
    "since": "16:10",
    "since_at": "2026-10-24 16:10:44"
   },
@@ -8140,7 +8140,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "23:27 시말서 2건 작성 완료(docs/시말서_20261112_이대리.md·루틴10.md, 사장님 23:20 지적 반영). 4편 조사 중 — 스포츠: K리그1 우승(SP-014)·승격/강등(SP-015) 이미 게시라 다른 소재(KOVO/KBL) 탐색, 방송·공연·디지털 Aside 읽기 진행",
+   "what": "23:4x AM-PE-012(두 도시 이야기 3차 오픈 11/13 14:00 가격·취소 계산) 초안·썸네일(압구정역 PD사진)·미리보기 완료, 독립 V0 대기(fork는 에이전트 생성 불가) — 결재 상정 전",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -8950,7 +8950,7 @@
    "code": "",
    "title": "정비 담당 세션(11-11 신설)",
    "step": 1,
-   "what": "✅ MT-50(22:58 정비) beb7eb06a: 세션 정체 감지 — studio/sessionstall.stalled 한 곳(읽은 뒤 보고 없음 또는 진행 중 + 30분 + 그 세션 마지막 턴 끝 30분 이상 · 상시·동결·24h 초과 제외 · 일하는 중이면 안 냄) → towertick SESSION_STALL 이부장 깨움(건당 1회) + data/.session_stall.json → leewake(이과장)·rolewake(정비) 자동 깨움 1회. 확인: 오늘 실데이터 재생 19:20 부터 pub1112f433 판정·상시 followup 제외 · 시험 6건+전체 OK · enginemap 🔴0 · 메인 동기 무정지(MT-46 효과도 확인) · 지금 판정 「정체 없음」(이과장 작동 중). 남은 것: 실제 정체 1회 때 경보·깨움 실측(watch mt50-session-stall-live). 재발방지: 새 정체 꼴은 sessionstall.stalled 한 곳에 조건 추가",
+   "what": "✅ C2-27 naverwrite 태그(23:55 정비) de6c4958f: ① 카테고리(BUTTON)는 원인 아님 — 실기록상 BUTTON 카테고리 6편(한랭질환·연말정산·기부금·건강보험·편의점·유플러스) 정상 게시, C2-27 4회 모두 카테고리 일치. ② 옛 판정은 「몇 개 빠짐」만 알려 어느 태그가 안 붙었는지 몰랐다 → 태그별 기록(tagLog·tagsMissing)·안 붙은 태그 1회 재입력·기호/띄어쓰기 정리. 관문은 엄격 유지(빠진 태그 있으면 멈춤). 진짜 원인은 아직 미확정 — 다음 실행 RESULT 의 tagsMissing 이 이름으로 말한다. 🙋 이부장: 이과장 재시도 가능 — 사전 점검 도장(asidequeue gate) 뒤 같은 명령 1회: python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish · tagsMissing 이 나오면 그 태그만 빼거나 바꿔 1회 더(4회 반복 금지)·tagLog 를 보드에 붙여 줄 것. 재발방지: 실패 결과가 원인을 스스로 말하게(카테고리 단계도 이미 catList 를 남김)",
    "since": "17:07",
    "since_at": "2026-11-11 17:07:53"
   },
@@ -37894,6 +37894,57 @@
    "what": "[이부장 → 4.] 추가 재료: docs/조사_GSC메일2건_추가단서_20261112.md — 8월 유효성 검사 5건 중 통과 메일은 대체페이지76·발견됨32 뿐, 리디렉션 오류·크롤됨은 3개월째 미통과. 대조표에 「통과 유형 URL 꼴 vs 리디렉션 오류 URL 꼴」 비교와 09-08 리디렉션 검사 현재 화면(실패 예시 URL)을 넣을 것.",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 23:36:46",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ C2-27 naverwrite 태그(23:55 정비) de6c4958f: ① 카테고리(BUTTON)는 원인 아님 — 실기록상 BUTTON 카테고리 6편(한랭질환·연말정산·기부금·건강보험·편의점·유플러스) 정상 게시, C2-27 4회 모두 카테고리 일치. ② 옛 판정은 「몇 개 빠짐」만 알려 어느 태그가 안 붙었는지 몰랐다 → 태그별 기록(tagLog·tagsMissing)·안 붙은 태그 1회 재입력·기호/띄어쓰기 정리. 관문은 엄격 유지(빠진 태그 있으면 멈춤). 진짜 원인은 아직 미확정 — 다음 실행 RESULT 의 tagsMissing 이 이름으로 말한다. 🙋 이부장: 이과장 재시도 가능 — 사전 점검 도장(asidequeue gate) 뒤 같은 명령 1회: python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish · tagsMissing 이 나오면 그 태그만 빼거나 바꿔 1회 더(4회 반복 금지)·tagLog 를 보드에 붙여 줄 것. 재발방지: 실패 결과가 원인을 스스로 말하게(카테고리 단계도 이미 catList 를 남김)",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 23:37:46",
+   "bid": "pub1112c227",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[이부장 → 이과장] 정비 de6c4958f 로 naverwrite 태그 단계 보강(태그별 기록·빠진 태그 1회 재입력). C2-27 네이버 재시도 1회: 사전 점검 도장 뒤 python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish · tagsMissing 나오면 그 태그만 빼거나 바꿔 1회 더(4회 반복 금지) · tagLog 를 보드에. 그다음 인스타·쓰레드·색인요청.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 23:39:32",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[이부장 답] 23:24 🙋 처리: ① C2-27 naverwrite → 정비 de6c4958f 수정, 재시도 지시 pub1112c227(23:38) ② E4-15·F4-33 색인요청 실패 → 이과장 등록한 재시도 watch 대로 진행(직접 게시 모드) ③ 시범 9편·E4-15·F4-33 완결 확인 완료(verify ✅·자동 확인).",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 23:40:24",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "23:4x AM-PE-012(두 도시 이야기 3차 오픈 11/13 14:00 가격·취소 계산) 초안·썸네일(압구정역 PD사진)·미리보기 완료, 독립 V0 대기(fork는 에이전트 생성 불가) — 결재 상정 전",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 23:43:08",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⏸ 🙋 이부장: C2-27 네이버 재시도(정비 de6c4958f 이후) 2회 — ① Aside 미실행(fetch failed) ② tags 단계 실패: tagLog 3개 모두 added 빈값·tagsSeen 0, catPick=BUTTON(카테고리 목록 LI 대신 버튼 선택) 그대로. 미게시(ok:false). 이번엔 tables 0·chars 4227 로 본문 붙여넣기도 이전(tables 10)과 달라짐. 정비가 category 선택(BUTTON→LI)과 태그 입력칸 포커스를 확인해야 함. 인스타·쓰레드·색인요청은 네이버 뒤라 대기",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "r4da8b3"
   }
  ]
 }
