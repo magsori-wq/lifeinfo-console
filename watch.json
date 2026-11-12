@@ -28019,12 +28019,55 @@
   {
    "id": "xlink-b432",
    "added": "2026-11-12",
-   "what": "🔗 B4-32 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-32",
+   "what": "🔗 B4-32 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-32",
    "due": "2026-11-12",
    "cmd": "python studio/blogger.py crosslink --code B4-32",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "deploy-thumb-502",
+   "added": "2026-11-12",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(502_okeeffe_gwacheon.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-12",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "aside-lee-chat-rotate-1117",
+   "added": "2026-11-12",
+   "what": "Aside 이과장 전담 채팅 d96YcUgCUkyDa4vb 41MB(한도 20MB) — 지금은 직접 게시 모드(~11-18)·크레딧 소진으로 Aside 채팅 휴면이라 영향 없음. 모드를 aside 로 되돌릴 때 새 전담 생성·asidequeue CHAT/LEE_CHAT·asidestate KNOWN ID 교체(aside-mode-decision-1117 과 함께)",
+   "due": "2026-11-17",
+   "cmd": "python -m studio.asidestate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "git-lock-clear-1340",
+   "added": "2026-11-12",
+   "what": "13:40 .git/index.lock(13:27:34~) 주인 응답 없으면 해제 → syncorigin(reflect 로그 16줄 scratchpad reflect_add2.jsonl 보존·재추가) → watch.json 결재 기록 커밋(PE-010 썸네일 승인) → 해시를 이대리에 전달",
+   "due": "2026-11-12",
+   "cmd": "ls -la .git/index.lock",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-12",
+   "result": "13:41 빈 잠금 해제·보존 커밋 004d3cd37·이과장 stage 커밋 대기"
+  },
+  {
+   "id": "anthropic-api-key-1112",
+   "added": "2026-11-12",
+   "what": "API 크레딧 100달러(11/15 09:00 만료) 쓰려면 API 키 1개 필요 — console.anthropic.com → API Keys → Create Key(이름 lifeinfo-topicbatch) → 키를 메모장에 붙여 C:\\lifeinfo\\studio\\.secrets\\anthropic_api_key.txt 로 저장(커밋 안 되는 폴더). 키 값은 채팅에 붙이지 마십시오. 저장하시면 정비가 글감 대량 선별 도구를 돌립니다.",
+   "due": "2026-11-12",
+   "cmd": "notepad C:\\lifeinfo\\studio\\.secrets\\anthropic_api_key.txt",
+   "owner": "user",
+   "state": "todo",
+   "kind": "action",
+   "by": "세션:a7dca46f"
   }
  ]
 }
