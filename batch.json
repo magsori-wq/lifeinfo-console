@@ -7311,17 +7311,27 @@
    "confirm_note": "근거: G3-35 사장님 승인·publish.yml success·verify ✅(라이브 200·승인 제목·image_src 썸네일 200·DB 제목 일치) 11-12"
   }
  },
- "updated": "2026-11-12 12:01:31",
+ "updated": "2026-11-12 12:02:35",
  "current": {
-  "batch": "fuel1030",
+  "batch": "cadaily",
   "code": "",
   "title": "",
-  "step": 55,
-  "what": "✅ 연료 10차: G3-36 오키프전 제안 등록(출처 source_G-OKEEFFE·deep_scan10_G·product 없음). 불일치: 예매 목록에 오키프 미표시 → watch g336-mmca-booking-call-1112. C·E·F 채택 0",
-  "since": "13:35",
-  "since_at": "2026-10-30 13:35:23"
+  "step": 1,
+  "what": "🔄 CA-DAILY 11-12 회차 시작: ca_daily 11(일간) → ca_trend → sa_expose → kwgap (Aside 읽기 전용)",
+  "since": "16:39",
+  "since_at": "2026-10-13 16:39:44"
  },
  "log": [
+  {
+   "t": "12:02:35",
+   "text": "▶   — 1/6단계 · 🔄 CA-DAILY 11-12 회차 시작: ca_daily 11(일간) → ca_trend → sa_expose → kwgap (Aside 읽기 전용)",
+   "actor": "3."
+  },
+  {
+   "t": "12:02:09",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/DfoCfdWE0mg/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장"
+  },
   {
    "t": "12:01:31",
    "text": "▶   — 55/7단계 · ✅ 연료 10차: G3-36 오키프전 제안 등록(출처 source_G-OKEEFFE·deep_scan10_G·product 없음). 불일치: 예매 목록에 오키프 미표시 → watch g336-mmca-booking-call-1112. C·E·F 채택 0",
@@ -7511,16 +7521,6 @@
    "t": "11:10:37",
    "text": "✅ daily-email-briefing-1112 완료 — daily-email-briefing (A)",
    "actor": "미상:fe0ca7da"
-  },
-  {
-   "t": "11:10:03",
-   "text": "▶   — 1/7단계 · ⛔ 발행 승인 4편(G3-32 11:03·G3-33 11:03·G3-35 11:03·B4-31 11:04) 전부 pubready 「발행 트리거 가능」·진행 중 run 없음·origin..HEAD 0 확인(11:10). gh workflow run 은 분류기 거부 상태라 저는 실행 안 함(재시도 안 함). 🙋 이부장 요청: 이부장이 순서대로 실행(앞 run 끝나면 다음, 연속 push 금지 — 발행 중 webapp 커밋·푸시 금지) — ①G3-32 file='쿤스트하우스취리히전_글_HTML.txt' post_title='쿤스트하우스 취리히 전시 11월 27일 개막 — 성인 2만원, 수능 수험표 1만 4천원' ②G3-33 file='마리앙투아네트스타일_글_HTML.txt' post_title='마리 앙투아네트 스타일 12월 18일 개막 — 예매 12월 4일, 수능 수험표 5천원' ③G3-35 file='포항불빛축제_글_HTML.txt' post_title='포항 불빛축제 2026 — 11월 19~21일, 나이트워크 신청은 17일까지' ④B4-31 file='연말정산교육비세액공제_글_HTML.txt' post_title='연말정산 교육비 세액공제 — 학원비는 취학 전·9세 미만(초2 이하)까지, 한도 300만 원'. 공통 인자: gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=<코드> -f mode=live -f confirm=PUBLISH -f title='<짧은 제목>' . 각 run 뒤 라이브 200·og:image 알려 주시면 4채널 후속을 글 순서대로 이어감(G3-35 는 나이트워크 접수 11/17 마감이라 우선 검토 권고). ⏸ 대기",
-   "actor": "이과장"
-  },
-  {
-   "t": "11:09:10",
-   "text": "▶   — 1/7단계 · [관제탑 → 이과장] 멈춤 맞음(우회 금지). 발행 트리거는 분류기가 사장님 채팅 허용을 요구 — 이부장 창에서 허용 받으면 이부장이 G3-32→…→B4-32 순으로 실행, 이과장은 실행하지 말 것. 같은 이유로 👤 사장님 승인(11:05~11:06): F3-13 인스타 허용·네이버 keyline 정정 7편 허용 — 이과장 창에서 또 분류기에 막히면 멈추고 보고(이부장이 처리).",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -7636,8 +7636,8 @@
    "batch": "cadaily",
    "code": "",
    "title": "",
-   "step": 5,
-   "what": "17:40 CA 11-10 은 아직 안 내림(day 10 이 11-09 와 키워드·값 전부 동일) — 도구가 11-10 라벨로 저장했던 항목 1개를 제거하고 tools/ca_daily.py 에 중복 가드 추가(같으면 저장 안 함, 재실행으로 검증) · 새 재료 없음 → 추가 제안 없음(E3-06 은 이부장 선별 picked 상태) · 다음 갱신 11-11 오전",
+   "step": 1,
+   "what": "🔄 CA-DAILY 11-12 회차 시작: ca_daily 11(일간) → ca_trend → sa_expose → kwgap (Aside 읽기 전용)",
    "since": "16:39",
    "since_at": "2026-10-13 16:39:44"
   },
@@ -8843,7 +8843,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474131194 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfoCfdWE0mg/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "11:07",
    "since_at": "2026-11-12 11:07:06"
   }
@@ -35938,6 +35938,26 @@
    "title": "",
    "owner": "3.",
    "what": "✅ 연료 10차: G3-36 오키프전 제안 등록(출처 source_G-OKEEFFE·deep_scan10_G·product 없음). 불일치: 예매 목록에 오키프 미표시 → watch g336-mmca-booking-call-1112. C·E·F 채택 0",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-12 12:02:09",
+   "bid": "pub1112g332",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfoCfdWE0mg/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 12:02:35",
+   "bid": "cadaily",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "🔄 CA-DAILY 11-12 회차 시작: ca_daily 11(일간) → ca_trend → sa_expose → kwgap (Aside 읽기 전용)",
    "actor": "3.",
    "sid": "88de804b"
   }
