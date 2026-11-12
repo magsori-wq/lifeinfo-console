@@ -28981,6 +28981,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "gsc-exp-b-read-1114",
+   "added": "2026-11-13",
+   "what": "실험 B(E2-02·E2-03·F1-04 색인요청) 24h·48h 판독 — 3편 중 2편 이상 성공=글 이력 보호 / 2편 이상 실패=시점 전체 실패. 성공이면 실험 C(시범 도너 3편) 여부를 사장님께",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.searchconsole inspect",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "exp-b-1113-24h",
+   "added": "2026-11-13",
+   "what": "4. 실험 B(E2-02·E2-03·F1-04 색인요청) 24h 판독 — 요청 시각(이과장 gsc_log/보고) +24h 뒤 실행, 결과 §24, 사전 기준은 docs/대조_GSC힌트_우리주소_20261113.md §23",
+   "due": "2026-11-14",
+   "cmd": "python data/_exp_b_inspect_1113.py E2-02 E2-03 F1-04",
+   "owner": "claude",
+   "state": "wait",
+   "by": "4."
+  },
+  {
+   "id": "exp-b-1113-48h",
+   "added": "2026-11-13",
+   "what": "4. 실험 B 48h 판독(최종) — 24h 에 크롤 안 온 글 재판정, 결과 §24 · 이부장 보고(C 보류, B가 재크롤 성공이면 이부장이 사장님께 여쭘)",
+   "due": "2026-11-15",
+   "cmd": "python data/_exp_b_inspect_1113.py E2-02 E2-03 F1-04",
+   "owner": "claude",
+   "state": "wait",
+   "by": "4."
   }
  ]
 }
