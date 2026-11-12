@@ -7664,7 +7664,7 @@
    "confirm_note": "자동 확인: DB 4채널 실측"
   }
  },
- "updated": "2026-11-13 02:32:17",
+ "updated": "2026-11-13 02:53:59",
  "current": {
   "batch": "maint",
   "code": "",
@@ -7675,6 +7675,11 @@
   "since_at": "2026-11-11 17:07:53"
  },
  "log": [
+  {
+   "t": "02:53:59",
+   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · [이부장 → 정비] 정책 확인: osmu/CLAUDE.md 56행 네이버 원고 구성 끝 = [추천태그] — 원고 해시태그 줄이 곧 의도한 태그다. a7fa9832f 는 붙여넣기로 채워진 태그를 전부 지우고 --tags 만 넣어(C2-27 = 2개만) 의도한 추천태그를 버린다 → 고칠 것: 최종 태그 = 원고 [추천태그] 목록(+ --tags 합집합, 중복 제거)과 정확히 일치·뒤섞임 0. 시험 포함. 사장님 정정 결재 대기 중이니 정정 실행용 「태그 칸만 정확히 맞추기」 모드도(본문 불변).",
+   "actor": "이부장"
+  },
   {
    "t": "02:32:17",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 페이블 naverwrite 2차 🔴1(02:5x 정비) f40aa2dee — Aside 공용 잠금 studio/asidelock: O_EXCL 로 잡기(동시 둘 불가) · 실행 중 30초마다 갱신 · 2분 갱신 없으면 죽은 잠금 · 토큰으로 자기 것만 해제 · Aside 채팅 지시 진행 중(asidequeue.busy)이면 기다림. 연결: naverwrite · tools/aside_read·ca_daily·ca_login_check·ca_postrank·ca_trend·sa_expose 가 잠금을 잡고 repl · 잠금을 모르는 손 도우미(data/_th_post.py 등)·직접 aside repl 은 postlock 훅이 잠금 살아 있으면 실행 전 차단(저장소 도구는 안에서 기다리므로 제외 — asidequeue list 등 안 막힘). 🟡 publish_unknown=bool(publish). 확인: 시험 전체 OK(공용 잠금 5건 포함)·enginemap 🔴0·동기 무정지·실제 훅에 asidequeue list 통과. 남은 것: asideprobe·creditmeter(빈 탭 상태 점검)는 잠금 밖 · 태그 비우기 분기 동작 시험은 실제 편집기 필요",
@@ -7868,11 +7873,6 @@
   {
    "t": "00:59:18",
    "text": "▶   — 1/7단계 · 01:3x PE-012 승인 깨우기 수신 — 이미 00:36 게시 완료(https://blog.naver.com/aroma-mag/224475007455), RSS 중복 없음 재확인, 추가 게시 없음",
-   "actor": "이대리"
-  },
-  {
-   "t": "00:58:24",
-   "text": "▶   — 1/7단계 · 01:2x 4편 게시 완료 — PE-012 224475007455 · BO-009 224475012644 · DG-012 224475018364 · SP-016 224475022489 (모두 제목·카테고리·og:image=썸네일·태그 공개 URL 확인, 장부·커밋). 이슈: aside repl 120초 제한·타 세션 repl 동시실행으로 PE-012 5회 시간초과 후 6회째 성공(중복 0). 다음: 11/13 14:00 PE-012 오픈 결과·SP-016 11/14 경기 후 결과글 후보, DG-011 코레일 재고 재확인(11/15 전)",
    "actor": "이대리"
   }
  ],
@@ -38920,6 +38920,16 @@
    "what": "✅ 페이블 naverwrite 2차 🔴1(02:5x 정비) f40aa2dee — Aside 공용 잠금 studio/asidelock: O_EXCL 로 잡기(동시 둘 불가) · 실행 중 30초마다 갱신 · 2분 갱신 없으면 죽은 잠금 · 토큰으로 자기 것만 해제 · Aside 채팅 지시 진행 중(asidequeue.busy)이면 기다림. 연결: naverwrite · tools/aside_read·ca_daily·ca_login_check·ca_postrank·ca_trend·sa_expose 가 잠금을 잡고 repl · 잠금을 모르는 손 도우미(data/_th_post.py 등)·직접 aside repl 은 postlock 훅이 잠금 살아 있으면 실행 전 차단(저장소 도구는 안에서 기다리므로 제외 — asidequeue list 등 안 막힘). 🟡 publish_unknown=bool(publish). 확인: 시험 전체 OK(공용 잠금 5건 포함)·enginemap 🔴0·동기 무정지·실제 훅에 asidequeue list 통과. 남은 것: asideprobe·creditmeter(빈 탭 상태 점검)는 잠금 밖 · 태그 비우기 분기 동작 시험은 실제 편집기 필요",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 02:53:59",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] 정책 확인: osmu/CLAUDE.md 56행 네이버 원고 구성 끝 = [추천태그] — 원고 해시태그 줄이 곧 의도한 태그다. a7fa9832f 는 붙여넣기로 채워진 태그를 전부 지우고 --tags 만 넣어(C2-27 = 2개만) 의도한 추천태그를 버린다 → 고칠 것: 최종 태그 = 원고 [추천태그] 목록(+ --tags 합집합, 중복 제거)과 정확히 일치·뒤섞임 0. 시험 포함. 사장님 정정 결재 대기 중이니 정정 실행용 「태그 칸만 정확히 맞추기」 모드도(본문 불변).",
+   "actor": "이부장",
+   "sid": "a7dca46f"
   }
  ]
 }
