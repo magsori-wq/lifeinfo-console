@@ -29127,8 +29127,10 @@
    "due": "2026-11-16",
    "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/공무원보수규정/제28조\" --frames --wait 8 --max 3000",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-13",
+   "result": "대조 확정: 교사 70/50 은 현행(보수규정 제28조① 시행 10.2 판에 교공법 44①1·7의3 포함), 12-03 개정(제36547호)은 국공법 71②4의2 구절만 삽입. docs/source_A-교사난임휴직_20261113.md §2"
   },
   {
    "id": "deep14-k-1113",
@@ -29179,6 +29181,46 @@
    "owner": "user",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "src14-intldl-1113",
+   "added": "2026-11-13",
+   "what": "국제운전면허 문자 안내 원문 판정 파일 확인",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_F-국제운전면허문자_20261113.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "src14-nanim-1113",
+   "added": "2026-11-13",
+   "what": "교사 난임휴직 신구 확정 파일 확인",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_A-교사난임휴직_20261113.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "src14-intldl-recheck-1117",
+   "added": "2026-11-13",
+   "what": "국제운전면허 문자(11-16 시행) 실물·국가→재외공관 링크 반영 재확인. 11-13 시도: 팝업 selectDiGuide13Pop.do a태그 0·재외공관 URL 없음, 문자 실물 못 얻음",
+   "due": "2026-11-17",
+   "cmd": "curl -sL -A Mozilla/5.0 https://www.safedriving.or.kr/diGuide/selectDiGuide13Pop.do | grep -c '<a '",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "imyong-nanim-promul-1204",
+   "added": "2026-11-13",
+   "what": "공무원임용령 난임휴직 개정령(입법예고 공고 제2026-501호, 의견마감 10-27) 공포 여부 — 2026-11-13 law.go.kr 현행 임용령 난임 0건. 교사는 대상 아님(교육공무원임용령 별도)",
+   "due": "2026-12-04",
+   "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/공무원임용령\" --frames --wait 8 --max 400000 | grep -c 난임",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
