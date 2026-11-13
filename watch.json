@@ -29523,8 +29523,64 @@
    "due": "2026-11-13",
    "cmd": "python -m unittest discover -s tests",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-13",
+   "result": "검수 통과 14:40"
+  },
+  {
+   "id": "engine-pipe-live-color-check",
+   "added": "2026-11-13",
+   "what": "다음 발행 글이 4채널로 흐를 때 상황실 관 색이 예정 주체(직접 게시 모드=하늘색 #38BDF8)로 실제 칠해지는지 화면 확인 → 사장님 보고",
+   "due": "2026-11-14",
+   "cmd": "브라우저 127.0.0.1:8000/engine.html — document.querySelectorAll('.ed.flow.ex-lee,.ed.flow.ex-asd,.ed.flow.ex-unk').length",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "deep16-suneung-quake-annex",
+   "added": "2026-11-13",
+   "what": "수능 지진 대응 원고(156789140 · 11-19 수능) — 붙임 「지진 발생 시 국민행동요령」 PDF(fileId 198589505) 미파싱, 행동 문장 근거 없음",
+   "due": "2026-11-17",
+   "cmd": "test -f C:/lifeinfo/docs/source_suneung_quake_annex_20261113.md && echo OK || echo 붙임PDF미확인",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-13",
+   "result": "붙임 행동요령은 hwpx 내장 이미지(BinData image6·7)에서 읽음 — 원문 확인 완료"
+  },
+  {
+   "id": "deep16-edu-childcare-1125",
+   "added": "2026-11-13",
+   "what": "온동네 돌봄 12-01 시행(국가정책조정회의 156789192) — 교육부 초등돌봄 통합브랜드 추진방안 원문 미확인",
+   "due": "2026-11-25",
+   "cmd": "test -f C:/lifeinfo/docs/source_deep_scan16_20261113.md && grep -c 교육부 C:/lifeinfo/docs/source_deep_scan16_20261113.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-13",
+   "result": "잘못된 cmd(자기 파일 grep 은 항상 통과) — 새 id deep16-edu-childcare-source-1125 로 대체"
+  },
+  {
+   "id": "deep16-edu-childcare-source-1125",
+   "added": "2026-11-13",
+   "what": "온동네 돌봄 12-01 시행(국가정책조정회의 156789192) — 교육부 초등돌봄 통합브랜드 추진방안 원문 미확인",
+   "due": "2026-11-25",
+   "cmd": "ls C:/lifeinfo/docs/source_*돌봄* 2>/dev/null | grep -q . && echo OK || echo 교육부원문미확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep16-ministry-list-zero",
+   "added": "2026-11-13",
+   "what": "행안부·복지부·국세청·식약처 공지 목록 11-13 0건 — 날짜 형식·JS 껍데기 읽기 버그 의심, 판정 보류",
+   "due": "2026-11-16",
+   "cmd": "curl -s -A \"Mozilla/5.0\" https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do | grep -c 2026",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }

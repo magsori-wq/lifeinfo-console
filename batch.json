@@ -7818,17 +7818,32 @@
    "confirm_note": "이부장: 발행 run 성공·라이브 200·썸네일 200 직접 확인(4채널 후속은 followup 배치)"
   }
  },
- "updated": "2026-11-13 14:40:54",
+ "updated": "2026-11-13 15:08:52",
  "current": {
-  "batch": "maint",
+  "batch": "fuel1030",
   "code": "",
-  "title": "정비 담당 세션(11-11 신설)",
-  "step": 1,
-  "what": "✅ 페이블 정정2건 🟡 정정(7c995ed33) — 누가: 정비 · 언제: 11-13 14:4x · 어디서: studio/enginestate.py(planned_who·plan 굽기)·webapp/engine.html(edgeWho·flow 유지)·studio/towertick.py(wake_event)·studio/wakewatch.py·studio/whoami.py(resolve) · 왜(이해한 이유): 관 색이 도착한 다른 글 기준이었고, 모름일 때 흐름이 오히려 약해 보였고, 못 푼 주소에도 깨우라는 문장이 나갔다 · 무엇을: ② 관 = 아직 안 올라간 글의 예정 주체(직접 게시 모드→이과장·Aside 대기열/진행 지시→Aside·없음→회색, 섞이면 최근 발행 글) ③ 흐름 중 모름도 flow 클래스·굵기 유지, 색만 회색 ⑥ WAKE_SESSION·PRODUCT_TODO 는 못 풀면 「⛔ 주소 못 풂 · 깨우지 않음」, wakewatch 는 wake exit 0 일 때만 도장 ① resolve 는 Desktop 제목 못 읽으면 ok=False · 어떻게(실측): 본체 14:37 굽기 정상(exec_error '')·관제 틱 14:37 정상, 127.0.0.1:8000 지금 관 4개 = 흐르는 글 0 이라 기본색 3px · 흐르는 글 넣은 시험 렌더 lee→#38BDF8 3px 실선 / aside→#F472B6 3px 7·5 점선 / 모름→#6B7280 3px(굵기 유지) · 시험: origin/main 코드 사본 기준 759건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 재발방지: 동작 시험 6건 · 남은 구멍(기록만): ④ 같은 날 순서 ⑤ 같은 날 Aside 확인 지시가 이과장 게시를 덮을 가능성(실데이터 0건) · DB 읽기 실패는 exec_error 미표시 · ⏸ 대기 — 다음 maint 지시",
-  "since": "17:07",
-  "since_at": "2026-11-11 17:07:53"
+  "title": "",
+  "step": 80,
+  "what": "✅ 연료 16차 완료 — 제안 1건 D1-23(추천) 수능 지진 대응(수능 11-19·발행 11-18 이전 필수). source 확정 docs/source_D-수능지진대응_20261113.md · 스캔 docs/source_deep_scan16_20261113.md · affiliate none · 커밋. 탈락: 패스파인더(근거 1)·포인트(E2-10 중복)·호국영웅(유가족 한정)·표준계약서(시행일 미확인)·주택공급(신청 없음)·권익위(의견표명). 보류: 온동네 돌봄(교육부 원문 못 읽음). 이부장 선별 대기",
+  "since": "13:35",
+  "since_at": "2026-10-30 13:35:23"
  },
  "log": [
+  {
+   "t": "15:08:52",
+   "text": "▶   — 80/7단계 · ✅ 연료 16차 완료 — 제안 1건 D1-23(추천) 수능 지진 대응(수능 11-19·발행 11-18 이전 필수). source 확정 docs/source_D-수능지진대응_20261113.md · 스캔 docs/source_deep_scan16_20261113.md · affiliate none · 커밋. 탈락: 패스파인더(근거 1)·포인트(E2-10 중복)·호국영웅(유가족 한정)·표준계약서(시행일 미확인)·주택공급(신청 없음)·권익위(의견표명). 보류: 온동네 돌봄(교육부 원문 못 읽음). 이부장 선별 대기",
+   "actor": "3."
+  },
+  {
+   "t": "15:06:16",
+   "text": "▶   — 79/7단계 · 연료 16차 진행 — 오후분 스캔(docs/source_deep_scan16_20261113.md) 후보 2: 수능 지진 대응(근거 naverkw 「수능 지진」✅+수능 11-19 기한·dupcheck 🟢→ source 확정 중, 코드 D1-23 예정) · 스페이스 패스파인더(naverkw ❌·유입 0·기한 11-16만=근거 1개, 고교생 120명 한정이라 탈락)",
+   "actor": "3."
+  },
+  {
+   "t": "14:52:20",
+   "text": "▶   — 78/7단계 · 연료 16차 시작 — 이부장 요청: 11:50 이후 새 보도자료·공지 재훑기(관심 근거 2개 이상만). 11-12~13 목록 1~4쪽은 15차에서 읽음 → 이번엔 11-13 오후분·5쪽 이후·표준거래계약서 등 미독",
+   "actor": "3."
+  },
   {
    "t": "14:40:54",
    "text": "🏁 maint 이부장 확인 — 끝남",
@@ -8013,21 +8028,6 @@
    "t": "12:39:45",
    "text": "▶   — 75/7단계 · 👤 사장님 직접 지시: 「F1-04 보강 진행해」 · 대상 F1-04(국제운전면허) — 공식 수치 재확인(현장 수수료 8,500 vs 9,000·11-16 해외운전 문자) 뒤 보강안·미리보기 작성",
    "actor": "3."
-  },
-  {
-   "t": "12:39:07",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ⚠️ 정비 세션 C:\\lifeinfo 이동 실패 — 누가: 정비 · 언제: 11-13 12:4x · 어디서: mcp__ccd_directory__change_directory path=C:\\lifeinfo · 거부 원문: 「This session's working directory can't be moved (it runs in an isolated worktree, shares another session's folder, or runs on a remote host). Use request_directory to work with the folder from here instead.」 · ①커밋·push 는 끝남(0756b9477·2f3ee9251, 워크트리 미커밋 내 변경 없음) · 워크트리 폴더 그대로(rm 안 함) · 영향 줄인 것: 보드(batchboard)·세션 기록(sessionstate)은 이제 워크트리에서도 본체 C:\\lifeinfo\\webapp 에 씀(0756b9477, 12:33 maint 보고가 본체 session_state.json 에 남은 것 확인) · 남은 길: 사장님이 C:\\lifeinfo 에서 새 정비 세션을 여시거나(그 세션이 whoami --role 정비 로 등록), 지금처럼 워크트리에서 계속 · 🙋 이부장 요청: 어느 쪽으로 할지 결정해 주십시오 · ⏸ 대기 — 다음 maint 지시",
-   "actor": "정비"
-  },
-  {
-   "t": "12:38:34",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 상황실 4채널 실행 주체 색(2f3ee9251) — 누가: 정비 · 언제: 11-13 12:4x · 어디서: studio/enginestate.py(executor_map·supply_mode)·webapp/engine.html · 왜(이해한 이유): Aside 허브→종착지가 한 색이라 사장님이 이과장 직접 공급과 Aside 실행을 구분 못 함 · 무엇을: 주체는 기록에서만 — Aside=data/aside_orders.json done 지시(kind 또는 [done] 게시 문구, 정정 제외) · 이과장 직접=data/gate_pass.json used 도장(postlock) · 근거 없으면 회색 「주체 모름」 · 지금 흐르는 허브 관·입자=data/aside_mode.json(직접 게시 모드→이과장) · 이과장 #38BDF8 실선 ● · Aside #F472B6 점선 ◆ · 모름 #6B7280 · 범례 흐름도 위 한 줄 · 어떻게(실측): 127.0.0.1:8000/engine.html 에서 이과장 점 16·모름 8·Aside 0(최근 글은 직접 게시 모드라 Aside 기록 없음), 허브 관 4개 하늘색, 범례 「지금 공급 = 이과장 직접」 · Aside ◆·점선은 같은 데이터 who 만 바꾼 시험 렌더로 ◆3·점선(7px 5px)·분홍 확인(화면엔 안 씀) · 시험 OK·enginemap 🔴0 · 재발방지: 신규 — 해당 없음 · 남은 구멍: gate_pass 는 11-12 이후·최근 145개라 그 전 이과장 직접 게시는 회색, 블로그스팟(Actions 발행)은 색 구분 대상 밖 · 다음: 사장님 지시대로 정비 세션을 C:\\lifeinfo 로 이동",
-   "actor": "정비"
-  },
-  {
-   "t": "12:35:38",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · 👤 사장님 직접 지시(12:35): 「정비 세션 C:\\lifeinfo 에서 다시 열어」 — 이부장 지시: 정비는 ①지금 손대던 변경을 경로 지정 커밋·push(syncorigin) ②mcp__ccd_directory__change_directory 로 C:\\lifeinfo 로 이동(워크트리 rm 금지) ③이동 뒤 첫 턴에 pwd·git -C C:/lifeinfo log -1 로 위치 확인 후 batchboard now 보고 ④그 뒤 상황실 색 작업 이어서",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -8386,8 +8386,8 @@
    "batch": "fuel1030",
    "code": "",
    "title": "",
-   "step": 77,
-   "what": "✅ F1-04 보강 라이브 반영 완료(결재 approve-F1-04-reinforce-1113) — update-post OK · API getByPath+공개 curl 200 재확인: 9,000원 있음·8,500/12,000/독일 0건·11-16 문자 박스 반영·교차링크(네이버·쓰레드) 유지·div 균형. 미반영: 네이버 F1-04 본문 8,500원(이부장 판단)·약 133개국 문구 미확인. fuel1030 상시라 done 안 함",
+   "step": 80,
+   "what": "✅ 연료 16차 완료 — 제안 1건 D1-23(추천) 수능 지진 대응(수능 11-19·발행 11-18 이전 필수). source 확정 docs/source_D-수능지진대응_20261113.md · 스캔 docs/source_deep_scan16_20261113.md · affiliate none · 커밋. 탈락: 패스파인더(근거 1)·포인트(E2-10 중복)·호국영웅(유가족 한정)·표준계약서(시행일 미확인)·주택공급(신청 없음)·권익위(의견표명). 보류: 온동네 돌봄(교육부 원문 못 읽음). 이부장 선별 대기",
    "since": "13:35",
    "since_at": "2026-10-30 13:35:23"
   },
@@ -9613,38 +9613,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-30 14:49:15",
-   "bid": "pub1030a608",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "threads 게시·기록 완료 — https://www.threads.com/@magsori8975/post/DfG3LFQgZ2B (naver-link 가 자동 보고) · 남음: 채널은 다 찼다(항목 done 은 다시 찍지 않는다)"
-  },
-  {
-   "ts": "2026-10-30 14:54:30",
-   "bid": "pub1030h134",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "⏸ 대기 — H1-34 네이버 게시: 제휴 링크 발급 대기(affiliate propose 완료 docs/affiliate_H1-34.md·naver-draft 가 게시 보류 안내). 링크가 오면 naver→인스타→쓰레드 진행. 그동안 검색설명·색인 요청만 먼저 진행. 🙋 이부장 요청: H1-34 링크 발급(Aside 지시서 또는 사장님) 진행 여부 알려주세요 — 링크 없이 게시하는 것이 낫다고 판단하시면 알려주세요"
-  },
-  {
-   "ts": "2026-10-30 14:59:13",
-   "bid": "draft1030d119",
-   "code": "",
-   "title": "",
-   "owner": "이과장",
-   "what": "⏸ 대기(판단 요청) — D1-19: 올해 수험표 할인 공식 공지 확인 업체 0곳(source 에이전트 curl 전수: 박물관 1건은 작년 종료, 나머지 미공지/미독). 「확인된 곳만」 원칙이면 업체 표가 비어 글이 얇아짐. 선택: ①보류 후 11-12 이후 재조사(watch d119-suhumpyo-recheck-1112 등록함) ②주제 전환=수능 당일 수험표 체크리스트(KICE 요강 확인 함정 5개: 분실 시 입실 전 재교부·가채점표 신설·스티커 금지 등) ③할인 문구 없이 ‘올해 공지 대기’ 안내형. 이과장 권고 ①(이유: 올해 사실이 없는 글은 V0 원본가치 근거 부족, 11/12 전후 공지 예상). 결정 주시면 이어서 착수"
-  },
-  {
-   "ts": "2026-10-30 14:59:44",
-   "bid": "draft1030d119",
-   "code": "",
-   "title": "",
-   "owner": "이과장",
-   "what": "⏸ 보류 — 이부장 결정 14:59: 올해 수험표 할인 공식 공지 0곳, 11-12 이후 재조사(watch d119-suhumpyo-recheck-1112). H1-35 초안 먼저"
-  },
   {
    "ts": "2026-10-30 15:22:47",
    "bid": "pub1030h134",
@@ -40168,6 +40136,36 @@
    "what": "✅ 페이블 정정2건 🟡 정정(7c995ed33) — 누가: 정비 · 언제: 11-13 14:4x · 어디서: studio/enginestate.py(planned_who·plan 굽기)·webapp/engine.html(edgeWho·flow 유지)·studio/towertick.py(wake_event)·studio/wakewatch.py·studio/whoami.py(resolve) · 왜(이해한 이유): 관 색이 도착한 다른 글 기준이었고, 모름일 때 흐름이 오히려 약해 보였고, 못 푼 주소에도 깨우라는 문장이 나갔다 · 무엇을: ② 관 = 아직 안 올라간 글의 예정 주체(직접 게시 모드→이과장·Aside 대기열/진행 지시→Aside·없음→회색, 섞이면 최근 발행 글) ③ 흐름 중 모름도 flow 클래스·굵기 유지, 색만 회색 ⑥ WAKE_SESSION·PRODUCT_TODO 는 못 풀면 「⛔ 주소 못 풂 · 깨우지 않음」, wakewatch 는 wake exit 0 일 때만 도장 ① resolve 는 Desktop 제목 못 읽으면 ok=False · 어떻게(실측): 본체 14:37 굽기 정상(exec_error '')·관제 틱 14:37 정상, 127.0.0.1:8000 지금 관 4개 = 흐르는 글 0 이라 기본색 3px · 흐르는 글 넣은 시험 렌더 lee→#38BDF8 3px 실선 / aside→#F472B6 3px 7·5 점선 / 모름→#6B7280 3px(굵기 유지) · 시험: origin/main 코드 사본 기준 759건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 재발방지: 동작 시험 6건 · 남은 구멍(기록만): ④ 같은 날 순서 ⑤ 같은 날 Aside 확인 지시가 이과장 게시를 덮을 가능성(실데이터 0건) · DB 읽기 실패는 exec_error 미표시 · ⏸ 대기 — 다음 maint 지시",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 14:52:20",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "연료 16차 시작 — 이부장 요청: 11:50 이후 새 보도자료·공지 재훑기(관심 근거 2개 이상만). 11-12~13 목록 1~4쪽은 15차에서 읽음 → 이번엔 11-13 오후분·5쪽 이후·표준거래계약서 등 미독",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-13 15:06:16",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "연료 16차 진행 — 오후분 스캔(docs/source_deep_scan16_20261113.md) 후보 2: 수능 지진 대응(근거 naverkw 「수능 지진」✅+수능 11-19 기한·dupcheck 🟢→ source 확정 중, 코드 D1-23 예정) · 스페이스 패스파인더(naverkw ❌·유입 0·기한 11-16만=근거 1개, 고교생 120명 한정이라 탈락)",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-13 15:08:52",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "✅ 연료 16차 완료 — 제안 1건 D1-23(추천) 수능 지진 대응(수능 11-19·발행 11-18 이전 필수). source 확정 docs/source_D-수능지진대응_20261113.md · 스캔 docs/source_deep_scan16_20261113.md · affiliate none · 커밋. 탈락: 패스파인더(근거 1)·포인트(E2-10 중복)·호국영웅(유가족 한정)·표준계약서(시행일 미확인)·주택공급(신청 없음)·권익위(의견표명). 보류: 온동네 돌봄(교육부 원문 못 읽음). 이부장 선별 대기",
+   "actor": "3.",
+   "sid": "88de804b"
   }
  ]
 }
