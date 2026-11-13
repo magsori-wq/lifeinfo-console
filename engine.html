@@ -73,7 +73,7 @@ svg text{font-family:inherit;fill:var(--fg)}
 /* 🧳 수정 캐리어 선로 = 보라 */
 .pc.cr{stroke:color-mix(in srgb,var(--pu) 10%,var(--pipe))}.pc.cr.pu{stroke:color-mix(in srgb,var(--pu) 24%,var(--pipe))}
 /* 11-13 사장님 「어사이드를 통해 공급되면 색깔을 바꿔」 — 실행 주체 색. 상태색(초록·주황·빨강)과 안 겹치게, 색약 대비로 선·점 모양도 다르게 */
-.ed.ex-lee{stroke:#38BDF8;opacity:.9;stroke-dasharray:none}.ed.ex-asd{stroke:#F472B6;opacity:.9;stroke-dasharray:7 5}.ed.ex-unk{stroke:#6B7280;stroke-width:1px;stroke-dasharray:none}.pt.ex-unk{fill:#6B7280}
+.ed.ex-lee{stroke:#38BDF8;opacity:.9;stroke-dasharray:none}.ed.ex-asd{stroke:#F472B6;opacity:.9;stroke-dasharray:7 5}.ed.ex-unk{stroke:#6B7280;opacity:.9;stroke-dasharray:none}.pt.ex-unk{fill:#6B7280}
 .pt.ex-lee{fill:#38BDF8}.pt.ex-asd{fill:#F472B6}
 .dot .dm{display:none}svg .dot.ex-asd circle{display:none}svg .dot.ex-asd .dm{display:inline;fill:#F472B6;stroke:var(--panel);stroke-width:1}
 svg .dot.ex-lee circle{fill:#38BDF8}svg .dot.ex-unk circle{fill:#6B7280}   /* svg 접두 = 뒤에 오는 .dot.dn(초록)보다 우선 */
@@ -172,7 +172,7 @@ html.reduce *{animation:none!important;transition:none!important}
     <section class="panel" id="gpanel">
       <h2>🗺 지도 <small>마디·점·종착지를 누르면 오른쪽(폰은 아래) 목록의 그 자리로 이동합니다</small></h2>
       <div class="lane" id="supLane" aria-label="연료 공급자"></div>
-      <div class="exlg" id="exlg" aria-label="4채널 실행 주체 범례"><span><b class="k1">●</b> 이과장 직접(실선)</span><span><b class="k2">◆</b> Aside 실행(점선 · 이과장이 대기열로)</span><span><b class="k3">─</b> 주체 모름(기록 없음)</span><span>· 관 = 흐를 때 그 채널 가장 최근 글의 주체</span><span id="exmode"></span></div>
+      <div class="exlg" id="exlg" aria-label="4채널 실행 주체 범례"><span><b class="k1">●</b> 이과장 직접(실선)</span><span><b class="k2">◆</b> Aside 실행(점선 · 이과장이 대기열로)</span><span><b class="k3">─</b> 주체 모름(기록 없음)</span><span>· 관 = 지금 흐르는(아직 안 올라간) 글을 올릴 예정 주체</span><span id="exmode"></span></div>
       <svg id="map" role="img" aria-label="글이 출발에서 종착지 4곳으로 가는 흐름 지도"></svg>
       <div class="lane" id="drvLane" aria-label="운전자"></div>
       <div class="lane aplane" id="apLane" aria-label="결재함 축소판"></div>
@@ -366,12 +366,12 @@ document.addEventListener("visibilitychange",()=>{if(!document.hidden)kick()});
 
 function exCls(w){return w==="lee"?"ex-lee":w==="aside"?"ex-asd":"ex-unk"}
 function exMode(s){return s&&s.supply_mode==="lee"?"ex-lee":s&&s.supply_mode==="aside"?"ex-asd":"ex-unk"}   /* 범례 「지금 공급」 표기용 */
-/* 11-13 페이블 🔴1(이부장 결정): 관·입자는 전역 모드가 아니라 그 관을 지난 **가장 최근 글의 실제 주체**.
-   허브→채널 = 그 채널 오늘 사건(시각 있음) 중 마지막 → 없으면 그 채널 최근 도착 글 · 발행→허브 = 세 채널 중 가장 최근. 근거 없으면 회색. */
+/* 11-13 이부장 결정 ②(페이블 정정2건 🟡2): 관·입자 = **지금 그 관을 흐르는(아직 안 올라간) 글의 예정 주체** — 이미 도착한 글로 칠하지 않는다.
+   예정 주체는 enginestate.planned_who(직접 게시 모드 → 이과장 · Aside 대기열·진행 지시 → Aside · 근거 없음 → 회색)가 nodes.osmu[].plan 에 굽는다.
+   한 관에 섞이면 가장 최근 발행 글(pub). 발행→허브 = 세 채널 전부. */
 function edgeWho(s,key){
   const chs=key==="pub>hub"?["naver","insta","threads"]:(key.indexOf("hub>")===0?[key.slice(4)]:[]);if(!chs.length)return null;
-  const ev=(s.today_events||[]).filter(e=>chs.indexOf(e.stage)>=0&&e.at).sort((a,b)=>a.at<b.at?1:-1);if(ev.length)return exCls(ev[0].who);
-  let best=null;chs.forEach(k=>{const d=((s.channels||{})[k]||{}).done||[];if(d[0]&&(!best||String(d[0].at)>String(best.at)))best=d[0]});
+  let best=null;((s.nodes||{}).osmu||[]).forEach(x=>{chs.forEach(k=>{if((x.ch||{})[k]===false&&(!best||String(x.pub||"")>String(best.pub||"")))best={pub:x.pub,who:(x.plan||{})[k]}})});
   return best?exCls(best.who):"ex-unk"}
 function setDot(id,code,tx,ty,cls,from,onClick){
   const layer=document.getElementById("dots");let d=dots[id];
@@ -503,8 +503,8 @@ function render(s){
     if(b)st=(nlv[e[0]]==="rd")?"rd":((nlv[e[0]]==="am")?"am":"flow");
     if(!st&&e[0]==="hub"&&nlv.hub==="rd")st="rd";
     if(e[0]==="hub"&&nlv.hub==="rd"&&(b||f))st="rd";
-    const xm=st==="flow"?(edgeWho(s,key)||""):"";   /* 흐를 때만 주체 색 — 흐름 없음은 원래 기본색(구분 회복) · 빨강·주황 상태가 먼저 */
-    p.setAttribute("class","ed"+(xm?" "+xm:(st?" "+st:"")));document.getElementById("pc-"+id).setAttribute("class","pc"+(st?" "+st:""));
+    const xm=st==="flow"?(edgeWho(s,key)||""):"";   /* 흐를 때만 주체 색 — 흐름 없음은 원래 기본색 · 빨강·주황 상태가 먼저 */
+    p.setAttribute("class","ed"+(st?" "+st:"")+(xm?" "+xm:""));   /* ③ flow 클래스를 남기고 색만 얹는다 — 주체 모름이어도 흐름 굵기 그대로 */document.getElementById("pc-"+id).setAttribute("class","pc"+(st?" "+st:""));
     const fl=document.getElementById("fl-"+id);if(fl)fl.textContent=f?"오늘 "+f:"";
     let n=b?Math.min(7,1+b*2):0;if(st==="rd")n=Math.max(n,3);
     want[key]={n,lv:st==="rd"?"rd":st==="am"?"am":(st==="flow"?(edgeWho(s,key)||""):""),dur:Math.max(1.6,5.5-.6*b)};tot+=n});
