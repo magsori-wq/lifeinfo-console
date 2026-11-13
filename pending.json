@@ -1,9 +1,9 @@
 {
- "rev": "1445f60b0",
+ "rev": "3b2a17d82",
  "counts": {
   "total": 526,
-  "osmu_done": 525,
-  "osmu_pending": 1,
+  "osmu_done": 526,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 526,
   "index_requested": 165,
@@ -15,15 +15,16 @@
    "code": "D1-23",
    "title": "수능 지진 나면 어떻게 되나 — 진도 4~5 일시 중지",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
