@@ -29882,7 +29882,32 @@
    "due": "2026-11-13",
    "cmd": "git show --stat f779a19",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "verify ✅ 11-13 15:42 — 이대리 마지막 활동 15:24:38·detect_actor 이대리·pubdates 나이 기준 수정·520 tests OK (maint confirm 이 뒤 confirm 으로 덮여 해시가 사라져 재기록)"
+  },
+  {
+   "id": "verify-51bc81a-1113",
+   "added": "2026-11-14",
+   "what": "정비 51bc81a 검수(11-13 15:4x verify 에이전트 ✅ 기록 이관)",
+   "due": "2026-11-13",
+   "cmd": "git show --stat 51bc81a",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "verify ✅ 11-13 15:42 — 이대리 마지막 활동 15:24:38·detect_actor 이대리·pubdates 나이 기준 수정·520 tests OK (maint confirm 이 뒤 confirm 으로 덮여 해시가 사라져 재기록)"
+  },
+  {
+   "id": "aside-aroma-profile-1114",
+   "added": "2026-11-14",
+   "what": "Aside aroma 프로필 재연결 — 실측: 39c7ac1a(Lee Sanggon) disconnected · c0ae104a(Lee Sanggon (aroma)) connected 이나 네이버 로그인 화면(이대리 00:08 보고). 권고: aroma 네이버 계정이 로그인된 크롬 프로필 창을 한 번 열어 주시면 Aside 가 다시 붙음",
+   "due": "2026-11-14",
+   "cmd": "PC 에서 aroma 네이버 계정 크롬 프로필 창 열기(Aside 확장 켜진 채) → 확인: aside host profiles 에서 39c7ac1a 또는 c0ae104a 가 connected + 네이버 로그인 상태",
+   "owner": "user",
    "state": "todo",
+   "kind": "action",
    "by": "이부장"
   }
  ]
