@@ -8060,17 +8060,42 @@
    ]
   }
  },
- "updated": "2026-11-14 05:30:04",
+ "updated": "2026-11-14 05:50:55",
  "current": {
   "batch": "aroma",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "⏸ 05:3x 발행 대기 — aroma 프로필 c0ae104a 는 connected 이나 MyBlog.naver 가 nid.naver.com 로그인 화면으로 감(05:28·05:29 두 번 실측). 게시 직전 MyBlog→/aroma-mag 확인 규칙에 따라 발행 안 함. 승인 5건(DG-013 정오 시효 포함)은 대기. 필요: 사장님이 로그인한 크롬 창이 Aside 데몬에 연결된 프로필이어야 함(39c7ac1a 는 disconnected). 연결 프로필 재지정 또는 c0ae104a 창에서 aroma 로그인 필요.",
+  "what": "05:42 ✅ AM-DG-013 게시: https://blog.naver.com/aroma-mag/224476461900 (카테고리 11 디지털 콘텐츠·여가, 모바일 확인: 제목 일치·ERR_/localhost 0·og:image 썸네일 확인, RSS 1건). 태그 입력 진행, 다음 BO-010.",
   "since": "14:53",
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "05:50:55",
+   "text": "✔ 이부장 ack r6a741a",
+   "actor": "이부장"
+  },
+  {
+   "t": "05:42:51",
+   "text": "▶   — 1/7단계 · 05:42 ✅ AM-DG-013 게시: https://blog.naver.com/aroma-mag/224476461900 (카테고리 11 디지털 콘텐츠·여가, 모바일 확인: 제목 일치·ERR_/localhost 0·og:image 썸네일 확인, RSS 1건). 태그 입력 진행, 다음 BO-010.",
+   "actor": "이대리"
+  },
+  {
+   "t": "05:38:56",
+   "text": "▶   — 1/7단계 · 05:38 ✅ c0ae104a(Lee Sanggon (aroma)) MyBlog.naver → blog.naver.com/aroma-mag 확인(로그인됨, d529353a 직장 프로필 미사용). 발행 시작 — DG-013(지스타 정오 시효) → BO-010 → PE-013 → SP-017 → SP-018.",
+   "actor": "이대리"
+  },
+  {
+   "t": "05:35:26",
+   "text": "▶   — 1/7단계 · ⏸ 05:3x 발행 대기 계속: 사장님이 화면(블로그 aroma99 로그인된 Aside 창)을 보여주셨으나 repl 의 c0ae104a 에서는 MyBlog 가 여전히 로그인 화면(05:34 재실측). 로그인된 창이 데몬 연결 프로필(c0ae104a)과 다른 창일 가능성. 이대리 실수: 탭 목록 확인 명령에 직장 프로필 d529353a 를 함께 넣었다가 자동 차단됨(실행 안 됨, 재시도 안 함, 직장 프로필은 계속 미사용). 15분 재시도 예약 유지(5c1f7290).",
+   "actor": "이대리"
+  },
+  {
+   "t": "05:31:39",
+   "text": "✔ 이부장 ack ra1693a",
+   "actor": "이부장"
+  },
   {
    "t": "05:30:04",
    "text": "▶   — 1/7단계 · ⏸ 05:3x 발행 대기 — aroma 프로필 c0ae104a 는 connected 이나 MyBlog.naver 가 nid.naver.com 로그인 화면으로 감(05:28·05:29 두 번 실측). 게시 직전 MyBlog→/aroma-mag 확인 규칙에 따라 발행 안 함. 승인 5건(DG-013 정오 시효 포함)은 대기. 필요: 사장님이 로그인한 크롬 창이 Aside 데몬에 연결된 프로필이어야 함(39c7ac1a 는 disconnected). 연결 프로필 재지정 또는 c0ae104a 창에서 aroma 로그인 필요.",
@@ -8245,31 +8270,6 @@
    "t": "00:04:40",
    "text": "🏁 maint 이부장 확인 — 끝남",
    "actor": "이부장"
-  },
-  {
-   "t": "00:04:14",
-   "text": "정비: 시험이 잘못 쓴 maint 확인 기록 되돌림(confirm_note 원래 값·confirm_log 제거·confirmed_at 비움)",
-   "actor": "정비"
-  },
-  {
-   "t": "00:02:46",
-   "text": "🏁 maint 이부장 확인 — 끝남",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:01:02",
-   "text": "📄 maint 작업 지시 등록(9749자, 2026-11-14 00:01:02)",
-   "actor": "이부장"
-  },
-  {
-   "t": "23:30:22",
-   "text": "▶   — 1/7단계 · 야간 글감 4/4(11-13 23시): 방송·OTT AM-BO-010 디즈니 티빙 웨이브 번들 할인율 V0 PASS 88 · 공연·연예 AM-PE-013 놀티켓 예매수수료 11/16 인상 V0 재검 91(제목 수정 반영) · 스포츠 AM-SP-017 V리그 순위 11/14 V0 83 REVISE(사진 소재 무관 — SP-016 원본 재사용, 교체 여부 결재 때 판단) · 디지털 AM-DG-013 지스타 11/21 1부 패스 11/14 정오 재오픈 V0 PASS 87. 결재 4건 등록(aroma-am-*-approve-1113, 11-14 기한; DG-013 은 11/14 12시 전·SP-017 은 14시 전 게시 필요). 후보기록·일정달력 analysis/*_20261113.md. 공연 사춘기·방송 Tudum 흐름표·Steam/닌텐도는 못 얻음 — 후보기록에 시도 출처 기재. 영상: BO·DG 임베드, PE·SP 없음(KOVO 핸들 4종 404·NOL 채널 ID 미확인). 방송·OTT 이번 회차 채워짐",
-   "actor": "미상:6ce14294"
-  },
-  {
-   "t": "23:12:53",
-   "text": "✅ daily-email-briefing-1113-23-1113 완료 — daily-email-briefing-1113-23 (A)",
-   "actor": "미상:15d896b6"
   }
  ],
  "currents": {
@@ -8566,7 +8566,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⏸ 05:3x 발행 대기 — aroma 프로필 c0ae104a 는 connected 이나 MyBlog.naver 가 nid.naver.com 로그인 화면으로 감(05:28·05:29 두 번 실측). 게시 직전 MyBlog→/aroma-mag 확인 규칙에 따라 발행 안 함. 승인 5건(DG-013 정오 시효 포함)은 대기. 필요: 사장님이 로그인한 크롬 창이 Aside 데몬에 연결된 프로필이어야 함(39c7ac1a 는 disconnected). 연결 프로필 재지정 또는 c0ae104a 창에서 aroma 로그인 필요.",
+   "what": "05:42 ✅ AM-DG-013 게시: https://blog.naver.com/aroma-mag/224476461900 (카테고리 11 디지털 콘텐츠·여가, 모바일 확인: 제목 일치·ERR_/localhost 0·og:image 썸네일 확인, RSS 1건). 태그 입력 진행, 다음 BO-010.",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -40917,6 +40917,59 @@
    "actor": "이대리",
    "sid": "de614107",
    "req": "ra1693a"
+  },
+  {
+   "ts": "2026-11-14 05:31:39",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack ra1693a — 05:31 사장님 조치로 결재함 등록(aside-aroma-login-1114 — Aside 「Lee Sanggon (aroma)」 창에서 네이버 로그인)",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "ra1693a"
+  },
+  {
+   "ts": "2026-11-14 05:35:26",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "⏸ 05:3x 발행 대기 계속: 사장님이 화면(블로그 aroma99 로그인된 Aside 창)을 보여주셨으나 repl 의 c0ae104a 에서는 MyBlog 가 여전히 로그인 화면(05:34 재실측). 로그인된 창이 데몬 연결 프로필(c0ae104a)과 다른 창일 가능성. 이대리 실수: 탭 목록 확인 명령에 직장 프로필 d529353a 를 함께 넣었다가 자동 차단됨(실행 안 됨, 재시도 안 함, 직장 프로필은 계속 미사용). 15분 재시도 예약 유지(5c1f7290).",
+   "actor": "이대리",
+   "sid": "de614107",
+   "req": "r6a741a"
+  },
+  {
+   "ts": "2026-11-14 05:38:55",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "05:38 ✅ c0ae104a(Lee Sanggon (aroma)) MyBlog.naver → blog.naver.com/aroma-mag 확인(로그인됨, d529353a 직장 프로필 미사용). 발행 시작 — DG-013(지스타 정오 시효) → BO-010 → PE-013 → SP-017 → SP-018.",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-14 05:42:50",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "05:42 ✅ AM-DG-013 게시: https://blog.naver.com/aroma-mag/224476461900 (카테고리 11 디지털 콘텐츠·여가, 모바일 확인: 제목 일치·ERR_/localhost 0·og:image 썸네일 확인, RSS 1건). 태그 입력 진행, 다음 BO-010.",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-14 05:50:55",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r6a741a — 05:38 c0ae104a 로그인 확인·05:42 DG-013 게시로 해소",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r6a741a"
   }
  ]
 }
