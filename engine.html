@@ -73,7 +73,7 @@ svg text{font-family:inherit;fill:var(--fg)}
 /* 🧳 수정 캐리어 선로 = 보라 */
 .pc.cr{stroke:color-mix(in srgb,var(--pu) 10%,var(--pipe))}.pc.cr.pu{stroke:color-mix(in srgb,var(--pu) 24%,var(--pipe))}
 /* 11-13 사장님 「어사이드를 통해 공급되면 색깔을 바꿔」 — 실행 주체 색. 상태색(초록·주황·빨강)과 안 겹치게, 색약 대비로 선·점 모양도 다르게 */
-.ed.ex-lee{stroke:#38BDF8;opacity:.9;stroke-dasharray:none}.ed.ex-asd{stroke:#F472B6;opacity:.9;stroke-dasharray:7 5}
+.ed.ex-lee{stroke:#38BDF8;opacity:.9;stroke-dasharray:none}.ed.ex-asd{stroke:#F472B6;opacity:.9;stroke-dasharray:7 5}.ed.ex-unk{stroke:#6B7280;stroke-width:1px;stroke-dasharray:none}.pt.ex-unk{fill:#6B7280}
 .pt.ex-lee{fill:#38BDF8}.pt.ex-asd{fill:#F472B6}
 .dot .dm{display:none}svg .dot.ex-asd circle{display:none}svg .dot.ex-asd .dm{display:inline;fill:#F472B6;stroke:var(--panel);stroke-width:1}
 svg .dot.ex-lee circle{fill:#38BDF8}svg .dot.ex-unk circle{fill:#6B7280}   /* svg 접두 = 뒤에 오는 .dot.dn(초록)보다 우선 */
@@ -341,7 +341,7 @@ function setParticles(want){
     const w=want[key];let mine=parts.filter(p=>p.key===key);
     while(mine.length>w.n){const p=mine.pop();p.el.remove();parts.splice(parts.indexOf(p),1)}
     while(mine.length<w.n){const p={key,t:mine.length/Math.max(1,w.n),el:el("circle",{class:"pt",r:2.6},layer)};parts.push(p);mine.push(p)}
-    mine.forEach((p,i)=>{p.dur=w.dur;p.frozen=w.lv==="rd";p.el.setAttribute("class","pt "+(w.lv==="rd"?"rd":w.lv==="am"?"am":w.lv==="pu"?"pu":(w.lv==="ex-lee"||w.lv==="ex-asd")?w.lv:""));
+    mine.forEach((p,i)=>{p.dur=w.dur;p.frozen=w.lv==="rd";p.el.setAttribute("class","pt "+(w.lv==="rd"?"rd":w.lv==="am"?"am":w.lv==="pu"?"pu":(w.lv==="ex-lee"||w.lv==="ex-asd"||w.lv==="ex-unk")?w.lv:""));
       if(REDUCE||p.frozen){if(REDUCE)p.t=(i+.5)/w.n;placePt(p)}});
   }
   kick();
@@ -365,7 +365,7 @@ function frame(ts){
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)kick()});
 
 function exCls(w){return w==="lee"?"ex-lee":w==="aside"?"ex-asd":"ex-unk"}
-function exMode(s){return s&&s.supply_mode==="lee"?"ex-lee":s&&s.supply_mode==="aside"?"ex-asd":""}
+function exMode(s){return s&&s.supply_mode==="lee"?"ex-lee":s&&s.supply_mode==="aside"?"ex-asd":"ex-unk"}   /* 공급 모드 기록을 못 읽으면 회색 가는 실선 */
 function setDot(id,code,tx,ty,cls,from,onClick){
   const layer=document.getElementById("dots");let d=dots[id];
   if(!d){
