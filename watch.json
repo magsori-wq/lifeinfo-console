@@ -29705,6 +29705,28 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "xlink-d123",
+   "added": "2026-11-13",
+   "what": "🔗 D1-23 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-23",
+   "due": "2026-11-13",
+   "cmd": "python studio/blogger.py crosslink --code D1-23",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "verify-3b2a17d-1113",
+   "added": "2026-11-13",
+   "what": "audit 동시 기록 간헐 실패 수정 검수",
+   "due": "2026-11-13",
+   "cmd": "git show --stat 3b2a17d82",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-13",
+   "result": "verify ✅ 보호파일 변경 0(git show --stat: docs/엔진설계도.md·studio/audit.py·tests/test_studio_pure.py 3건) · origin/main 포함 · 원인 2건 실제 코드 수정(_Lock except PermissionError 기다림, record 보관분 _take_spill 고유이름 이동) · 개별 concurrent 시험 20회 20 OK · 부하(full test_studio_pure 동시) 20 OK · full test_studio_pure 527 OK · discover 777 OK · enginemap 🔴0 · 재지 못함: 커밋의 옛 코드 150회 중 6회 유실 수치"
   }
  ]
 }
