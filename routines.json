@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-13 22:30",
+ "generated": "2026-11-13 23:10",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/13 20:05",
-   "next": "11/13 23:00",
+   "last": "11/13 23:05",
+   "next": "11/14 08:00",
    "model": "sonnet-5-5",
    "report_day": "1113",
    "report": "11-13 11시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려 유지, 11-15 재요청 예정). 새 중요 메일: 콘솔 정합성 검사 실패 메일 다수(11-13 09:43~10:57 KST, lifeinfo-console) — gh 실측: 10:56 run 이 'approval 0 items·63 files' 로 실패, 직후 10:57 run 'approval 2 items·67 files' 성공 = 결재 파일 갱신 순서 일시 갈림, 최신 2회 성공(무해·지속 시 이부장 확인). GitHub 'Claude 앱 권한 업데이트 요청'(11-13 07:52 KST) = watch github-app-claude-perms 결정됨(done), 재상신 안 함. GSC 11-12 '색인 생성 문제 해결됨 32페이지'(URL 총계, 기보고). help-communities 답변 0건. 8975 수신 2건(GSC 기보고·MS 개인정보 정기통지 무조치)·aroma8975 0건(평소). 이어받은 것: 11-12 기보고분 / 새로 본 것: 정합성 검사 실패 사유\n▸ 11:08 11-13 11시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 READY·사이트 NEEDS_ATTENTION(11-15 재요청 예정). 콘솔 정합성 검사 실패 메일 다수(KST 09:43~10:57): 10:56 run 'approval 0 items' 실패 직후 10:57 성공=일시 갈림, 최신 2회 성공. GitHub Claude앱 권한요청=watch 결정됨. GSC 32페이지 해결(URL총계·기보고). help-communities 0건.",
    "runs": [
+    {
+     "at": "11/13 23:05",
+     "link": "claude://claude.ai/epitaxy/local_983c7612-447f-46c9-b418-3edf4fb1e01b",
+     "archived": false
+    },
     {
      "at": "11/13 20:08",
      "link": "claude://claude.ai/epitaxy/local_7a3299d3-48d8-459d-9f2f-398774142522",
@@ -31,11 +36,6 @@
      "at": "11/13 11:09",
      "link": "claude://claude.ai/epitaxy/local_e84e5562-ec90-46ae-8e74-91b62781bcf8",
      "archived": false
-    },
-    {
-     "at": "11/13 08:08",
-     "link": "claude://claude.ai/epitaxy/local_b54adef5-5cbd-455c-934c-16404cb34d98",
-     "archived": true
     }
    ]
   },
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/12 22:33",
+   "last": "11/13 22:33",
    "next": "11/14 22:30",
    "model": "sonnet-5-5",
-   "report_day": "1112",
-   "report": "11-12 야간검증: 오늘 발행 13편 중 B4-31·B4-32 본문 정독(내부 계산 정합 OK), 공식 대조는 law.go.kr DRF API 검증실패로 미결(대체 안 함). 오류 발견 0. 나머지 11편·위험순위 기존 글 미검증. 애드센스 NEEDS_ATTENTION(PENDING)",
+   "report_day": "1113",
+   "report": "11-13 야간검증: 오늘 발행 3편(A5-22·B4-33·D1-23) 산술·날짜 재계산 일치. law.go.kr sorry 리다이렉트로 공식 원문 재대조 못 함(미결·본문 미수정). 기존 글 검증은 출처 접속 불가로 이번 회차 보류. 이어받은 것 없음/새로 본 것: law.go.kr DRF 차단",
    "runs": [
+    {
+     "at": "11/13 22:37",
+     "link": "claude://claude.ai/epitaxy/local_3e7bd01e-9461-49b4-a39f-d84bd2864820",
+     "archived": false
+    },
     {
      "at": "11/12 22:38",
      "link": "claude://claude.ai/epitaxy/local_088ca724-e6fe-48c6-a196-2de3eaf0bf99",
@@ -182,11 +187,6 @@
     {
      "at": "11/09 22:42",
      "link": "claude://claude.ai/epitaxy/local_acce1fbb-6735-4b9f-bcd6-f32cc1a85baf",
-     "archived": true
-    },
-    {
-     "at": "11/08 22:38",
-     "link": "claude://claude.ai/epitaxy/local_8e664e49-8bad-4fad-b721-e16432812349",
      "archived": true
     }
    ]
@@ -348,12 +348,17 @@
    "name": "10-aroma 이대리 야간 글감(카테고리별 1편)",
    "id": "aroma-nightly-topics",
    "on": true,
-   "last": "11/12 23:09",
-   "next": "11/13 23:00",
+   "last": "11/13 23:09",
+   "next": "11/14 23:00",
    "model": "sonnet-5-5",
    "report_day": "",
    "report": "",
    "runs": [
+    {
+     "at": "11/13 23:09",
+     "link": "claude://claude.ai/epitaxy/local_dea4b398-60f2-420b-8af5-76acf345d60f",
+     "archived": false
+    },
     {
      "at": "11/12 23:15",
      "link": "claude://claude.ai/epitaxy/local_1a7f1283-232e-4469-b8bb-106fb63f148e",
@@ -372,11 +377,6 @@
     {
      "at": "11/11 23:12",
      "link": "claude://claude.ai/epitaxy/local_dc3ea396-cee0-48c6-86ce-62c3c2d147a7",
-     "archived": true
-    },
-    {
-     "at": "11/10 23:18",
-     "link": "claude://claude.ai/epitaxy/local_2491f296-bad8-42c6-8351-4c1fd79c075c",
      "archived": true
     }
    ]

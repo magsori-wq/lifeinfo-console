@@ -2167,6 +2167,17 @@
      "date": "2026-11-13",
      "at": "2026-11-13 21:17",
      "actor": "미상:ccfe114c"
+    },
+    {
+     "code": "lifeinfo-nightly-verify-1113",
+     "title": "lifeinfo-nightly-verify (E)",
+     "state": "done",
+     "note": "11-13 야간검증: 오늘 발행 3편(A5-22·B4-33·D1-23) 산술·날짜 재계산 일치. law.go.kr sorry 리다이렉트로 공식 원문 재대조 못 함(미결·본문 미수정). 기존 글 검증은 출처 접속 불가로 이번 회차 보류. 이어받은 것 없음/새로 본 것: law.go.kr DRF 차단",
+     "auto_daily": true,
+     "base_code": "lifeinfo-nightly-verify",
+     "date": "2026-11-13",
+     "at": "2026-11-13 22:35",
+     "actor": "미상:08e76a96"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -7991,7 +8002,7 @@
    "confirm_note": "H1-40 초안 큐 적재·v0 PASS(21:2x)·제목 정유사 공급가 명시(fixer)·썸네일 200·결재함 등록 · draft1113h140 은 d140 통합"
   }
  },
- "updated": "2026-11-13 21:53:08",
+ "updated": "2026-11-13 22:35:39",
  "current": {
   "batch": "aroma",
   "code": "",
@@ -8002,6 +8013,11 @@
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "22:35:39",
+   "text": "✅ lifeinfo-nightly-verify-1113 완료 — lifeinfo-nightly-verify (E)",
+   "actor": "미상:08e76a96"
+  },
   {
    "t": "21:53:08",
    "text": "🏁 draft1113h140 이부장 확인 — 끝남",
@@ -8196,11 +8212,6 @@
    "t": "19:32:10",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · 🔄 블로그스팟 제휴·교차링크 게이트 — ①③ 반영(cab007ca1), ② 진행 중 · 누가: 정비 · 어디서: studio/affiliate.blogspot_decision(판정 한 곳)·pubready(발행 트리거 직전 「블로그스팟 제휴」 ⛔)·approvalcount.aff_missing(결재 카드 🔴, approval.html·m.html)·dispatch 초안 골격 한 줄 · 판정: 붙일 것 없음(사유) → 통과 / 링크 있음 → 초안에 aff-disclosure 블록+등록 링크(이스케이프 포함) / 결정 없음·「링크 발급 대기」 → 막음 · 실측: 지시서가 예로 든 C2-26·B4-33·A5-22·D1-23 은 이미 「붙일 것 없음」 사유 기록이 있어 통과 — 「제휴 결정 기록 0」 은 데이터와 다름(D1-23 은 이미 큐에 없음) · 화면: 127.0.0.1:8000 m.html 카드 함수에 시험 항목을 넣어 🔴 문구 표시·미해당 때 미표시 확인, approval.html 새 코드 서빙·JS 오류 없음(지금 결재 카드 0건이라 실카드는 없음) · 시험 사본 781건 check-ignore 환경 1건 외 OK·ordercheck 22종 정상·enginemap 🔴0·시험 중 콘솔 push 없음 · 다음: ② 블로그스팟 교차링크 완결 판정(라이브 본문 확인·캐시·시작 경계 — 별도 커밋)",
    "actor": "정비"
-  },
-  {
-   "t": "19:24:46",
-   "text": "▶   — 1/7단계 · 19:2x 점검: 새 승인·요청·알림 0. 사우디전 결과 글 제목용 자동완성 확인 — 「사우디 대표팀」 → 「사우디 대표팀 라인업」(검색어 앞배치 후보). 경기 23:30 뒤 KFA·쿠팡플레이 공식 확인. 예약: 11/14 00:08 사우디전 결과 확인, 11/14 09:07 아침 종합(루틴10 후보기록 검증·NOL 재실측·DG-011 재고). 다음 정기 점검 21:24.",
-   "actor": "이대리"
   }
  ],
  "currents": {
