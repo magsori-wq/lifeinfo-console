@@ -29179,8 +29179,10 @@
    "due": "2026-11-13",
    "cmd": "grep -n matcher .claude/settings.json",
    "owner": "user",
-   "state": "todo",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-13",
+   "result": "사장님 11:51 matcher 변경 확인(48행)·JSON OK·시험: 이과장 source 차단 exit2·measure 허용·이과장 batch.json Read 차단·이부장 통과"
   },
   {
    "id": "src14-intldl-1113",
@@ -29298,6 +29300,26 @@
    "by": "미상",
    "done_at": "2026-11-13",
    "result": "사장님 11:47 충전 안 함 — 직접 게시 모드 12-31 까지 연장(이과장 aside repl 전담)"
+  },
+  {
+   "id": "aside-credit-reset-check",
+   "added": "2026-11-13",
+   "what": "Aside 크레딧 초기화됐는지 확인 — 초기화되면 data/aside_mode.json mode=aside 로 되돌림(사장님 11-13 「초기화 될때까지 클로드 전담」)",
+   "due": "2026-12-01",
+   "cmd": "python -m studio.asidestate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "f104-intl-license-sms-1116",
+   "added": "2026-11-13",
+   "what": "F1-04 국제운전면허 글에 11.16부터 발급자 문자안내 시행(korea.kr newsId=156789096, 재외동포청·경찰청·도로교통공단) — 보강 여부 이부장 판단",
+   "due": "2026-11-16",
+   "cmd": "python -m studio.dupcheck \"국제운전면허증 문자 안내 해외운전 유의사항\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
