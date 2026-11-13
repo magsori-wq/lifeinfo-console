@@ -1,6 +1,6 @@
 {
- "rev": "ef37f5a0a",
- "uncommitted": 822,
+ "rev": "9891ffe85",
+ "uncommitted": 823,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
-     "h": "ef37f5a0a",
-     "d": "11-13 18:54",
-     "s": "[이부장] 블로그스팟 제휴·교차링크 필수 규칙 반영(사장님 11-13 18:49)·문제기록"
+     "h": "9891ffe85",
+     "d": "11-13 20:27",
+     "s": "[에이전트] 4. 색인 일일 점검 11-13 — 526편 완주 색인 0, 리디렉션 오류 276→283(+7 전부 첫 크롤), §27"
     },
     {
-     "h": "9d377acef",
-     "d": "11-13 18:09",
-     "s": "[이과장] B4-33 색인요청 성공 기록"
+     "h": "fb5ebda4e",
+     "d": "11-13 20:01",
+     "s": "[에이전트] 정비: 8de265bac 정정 — TestSetgateIncomplete 가 새 규칙(발행일을 끝내 모르면 교차링크 검사 대상)에 걸려 실패한 채 커밋됐다(내 확인 누락: 실패 줄을 보고도 커밋 명령이 이어 실행됨) · 이 시험은 채널 판정만 보므로 xlinklive.missing_label 을 막아 분리(교차링크는 TestBlogspotCrosslinkRequired 가 본다) · 사본 전체 시험 check-ignore 환경 1건 외 OK"
     },
     {
-     "h": "3f043af4a",
-     "d": "11-13 18:06",
-     "s": "[이과장] D1-23 색인요청 기록"
+     "h": "127634e79",
+     "d": "11-13 19:53",
+     "s": "Merge remote-tracking branch 'origin/main'"
     }
    ],
-   "last": "11-13 18:54",
+   "last": "11-13 20:27",
    "state": "active"
   },
   {
@@ -36,9 +36,15 @@
    "role": "네이버·쓰레드 재가공·교차링크·확산 대기열",
    "owns": "naver.py · pipeline.py · 확산_대기열 · osmu/",
    "drives": "OSMU 확산 기능 에이전트 구동",
-   "recent": [],
-   "last": "—",
-   "state": "idle"
+   "recent": [
+    {
+     "h": "8de265bac",
+     "d": "11-13 19:59",
+     "s": "[에이전트] 정비: 교차링크 필수 검사 빈틈 — 당일 발행 글(D1-23)이 pub_dates.json 에 아직 없어 검사가 조용히 건너뛰어지던 것 · xlinklive.pub_date(pub_dates 없으면 DB osmu_at 중 가장 이른 날, 끝내 모르면 대상) · refresh(감시 틱)가 pub_dates 에 없는 발행 글을 보면 pubdates 재굽기(1시간에 한 번까지) · 실데이터 대상 3편(B4-33·A5-22·D1-23)·날짜 모름 0편 · 회귀 시험·설계도 기록"
+    }
+   ],
+   "last": "11-13 19:59",
+   "state": "active"
   },
   {
    "id": "H",
