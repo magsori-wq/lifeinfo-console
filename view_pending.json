@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-11-13 22:36:29",
- "source_head": "1161e0408273",
+ "computed_at": "2026-11-14 01:48:27",
+ "source_head": "ee53c109d900",
  "ids": [
   "H1-40",
+  "aside-aroma-profile-1114",
   "c1-11-geon-yeonjang-check"
  ],
  "posts": [],
@@ -10,7 +11,7 @@
   {
    "code": "H1-40",
    "title": "석유 최고가격제 12차 동결 — 11월 14일부터 4주, 정유사 공급가 휘발유 1,784·경유 1,773·등유 1,380원",
-   "go": false,
+   "go": true,
    "v0": "pass",
    "files": [
     {
@@ -32,7 +33,7 @@
      "exists": true
     }
    ],
-   "light": "todo"
+   "light": "ready"
   }
  ],
  "actions": [
@@ -42,6 +43,14 @@
    "due": "2026-11-12",
    "cmd": "grep -c 어떤 사유로도 osmu/_live/C1-11.html",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "aside-aroma-profile-1114",
+   "what": "Aside aroma 프로필 재연결 — 실측: 39c7ac1a(Lee Sanggon) disconnected · c0ae104a(Lee Sanggon (aroma)) connected 이나 네이버 로그인 화면(이대리 00:08 보고). 권고: aroma 네이버 계정이 로그인된 크롬 프로필 창을 한 번 열어 주시면 Aside 가 다시 붙음",
+   "due": "2026-11-14",
+   "cmd": "PC 에서 aroma 네이버 계정 크롬 프로필 창 열기(Aside 확장 켜진 채) → 확인: aside host profiles 에서 39c7ac1a 또는 c0ae104a 가 connected + 네이버 로그인 상태",
+   "state": "todo",
    "kind": "action"
   }
  ],
