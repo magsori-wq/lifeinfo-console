@@ -4312,6 +4312,22 @@
    "target": "gsc-mail-adsense-analysis-1112",
    "detail": "4. 11-12 14:00 완료 — 두 메일은 8월 유효성 검사 종료 통보(반려 뒤 도착)라 반려 사유 아님 · 이어 23:13 지시 GSC URL 659줄 대조·276편 주소 0/276 완료(docs/대조_GSC힌트_우리주소_20261113.md)",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-13T19:55:44",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-cab007c-1113",
+   "detail": "verify ✅ 45a7df03c 정정 반영 — 보호파일 변경 0·origin/main 포함 · missing_label 호출 3곳(setgate.incomplete·autoflow.remaining/auto_confirm) · 실측: fetch 실패+빈캐시 → 확인불가(미완결), 캐시 ok → 완결, 두 URL 다 있음 → ok, 하나 빠짐 → 없음, auto_confirm 미확인 → 끝남 안 함, check 는 확인불가만이면 통과+경고 · D1-23 시행일(pub_dates) 없어 범위 밖 → 교차링크 항목 없음 · unittest tests.test_studio_pure Ran 536 OK",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-13T20:05:01",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-8de265b-1113",
+   "detail": "verify ✅ 보호파일 0 · origin/main 포함 · in_scope 가짜당일 True/날짜없음 True(확인불가 처리)/11-13 이전 None · 실데이터 대상 B4-33·A5-22·D1-23 · 시험 538 OK · fb5ebda4e 시험 분리는 교차링크 시험(5991·6009)이 대신 봄",
+   "via": "cli"
   }
  ]
 }

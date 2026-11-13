@@ -29741,6 +29741,30 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "verify-cab007c-1113",
+   "added": "2026-11-13",
+   "what": "정비 cab007ca1·38edef3a8 검수 ❌: 교차링크(xlinklive) 네트워크 실패=unknown 이 게이트에서 완결 취급(fail-open)",
+   "due": "2026-11-13",
+   "cmd": "python -c \"import sys;sys.path.insert(0,'.');from studio import xlinklive as x;import json;p={'code':'A5-22','url':'x','osmu':{'naver':'a','threads':'b'}};print(x.state(p,live=True,now=1e10,fetch=lambda u,timeout=12:(_ for _ in ()).throw(OSError('n')),cache={}))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-13",
+   "result": "verify ✅ 45a7df03c 정정 반영 — 보호파일 변경 0·origin/main 포함 · missing_label 호출 3곳(setgate.incomplete·autoflow.remaining/auto_confirm) · 실측: fetch 실패+빈캐시 → 확인불가(미완결), 캐시 ok → 완결, 두 URL 다 있음 → ok, 하나 빠짐 → 없음, auto_confirm 미확인 → 끝남 안 함, check 는 확인불가만이면 통과+경고 · D1-23 시행일(pub_dates) 없어 범위 밖 → 교차링크 항목 없음 · unittest tests.test_studio_pure Ran 536 OK"
+  },
+  {
+   "id": "verify-8de265b-1113",
+   "added": "2026-11-13",
+   "what": "교차링크 검사 당일글 누락 수정 검수",
+   "due": "2026-11-13",
+   "cmd": "git show --stat 8de265bac fb5ebda4e",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-13",
+   "result": "verify ✅ 보호파일 0 · origin/main 포함 · in_scope 가짜당일 True/날짜없음 True(확인불가 처리)/11-13 이전 None · 실데이터 대상 B4-33·A5-22·D1-23 · 시험 538 OK · fb5ebda4e 시험 분리는 교차링크 시험(5991·6009)이 대신 봄"
   }
  ]
 }
