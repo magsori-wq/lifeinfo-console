@@ -706,6 +706,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   }
   var AO=a[13]||{orders:{}};
   var TUND={}; ((a[14]||{}).items||[]).forEach(function(i){ if(i.thumb_undeployed) TUND[i.id]=1; });
+  var AFFM={}; ((a[14]||{}).items||[]).forEach(function(i){ if(i.aff_missing) AFFM[i.id]=1; });   // 11-13 제휴 결정 없음(파이썬 approvalcount.aff_missing)
   var W=arr(a[7]), PEND=(a[8]||{}).actionable||[], OT=a[9]||{}, REPG=a[10]||{};
   // 🔴 파이썬이 구운 판정(approvalcount.flow). 없으면 아래 JS 판정으로 되돌아간다.
   var FLOW=a[11]||null;
@@ -1020,7 +1021,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     else if(v.verdict==='pass' && !q.go) boss.push({act:'publish_go',c:q.code,t:q.title,
       why:'발행 승인 대기(⑦) · V0 통과 — 이 원고를 지금 내는가',
       by:q.by||'',   // 🔴 이 원고를 큐에 올린 사람(2026-09-09) — studio/approvalcount.py _by_for() 와 같은 출처
-      thumbU:!!TUND[q.code],
+      thumbU:!!TUND[q.code], affM:!!AFFM[q.code],
       cmd:'python -m studio.pubqueue go --code '+q.code});
     // 🔴 **도장은 찍혔는데 안 나간 글** — 이 칸이 없어서 사장님이 휴대폰에서
     //    누를 것을 못 찾으셨다(2026-09-03 "발행승인 내용은 안 보이는데").
@@ -1047,7 +1048,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       boss.push({act:'publish_run',c:q.code,t:q.title,
       why:'⑧ 발행 대기 — 승인 완료('+String((q.go&&q.go.at)||'').slice(0,16).replace('T',' ')
           +') · 실행만 남았다',
-      waited:_waited, thumbU:!!TUND[q.code],
+      waited:_waited, thumbU:!!TUND[q.code], affM:!!AFFM[q.code],
       // 🔴 2026-10-24 사장님 「올린이가 나야?」 — 올린이 = 원고를 큐에 올린 사람(q.by).
       //    승인자는 따로 승인 칩(apr). studio/approvalcount.py _by_raw()·_approved_for() 와 같다.
       by:q.by||'',
@@ -1220,6 +1221,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
             +(_who?'<div style="font-size:13px;color:#9fb0cf;margin:0 0 6px">'+esc(_who)+'</div>':'');
         })())
       +(x.thumbU?'<div class="meta" style="color:#ff9b9b;font-weight:700">🔴 썸네일 미배포 — deploy.bat 먼저</div>':'')
+      +(x.affM?'<div class="meta" style="color:#ff9b9b;font-weight:700">🔴 제휴 결정 없음 — 블로그스팟 제휴 블록 또는 「붙일 것 없음」 기록 필요</div>':'')
       +'<div class="meta">'+esc(String(x.why).slice(0,150))+'</div>'
       // 🔴 판정은 **act 가 아니라 내용 유무로** 한다. act 로 걸면 승인완료·조치 카드처럼
       //    act 가 없는 줄에서 근거가 있어도 통째로 안 보인다(2026-08-31 실측 사고).

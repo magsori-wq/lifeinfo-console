@@ -29731,6 +29731,16 @@
    "by": "이부장",
    "done_at": "2026-11-13",
    "result": "verify ✅ 보호파일 변경 0(git show --stat: docs/엔진설계도.md·studio/audit.py·tests/test_studio_pure.py 3건) · origin/main 포함 · 원인 2건 실제 코드 수정(_Lock except PermissionError 기다림, record 보관분 _take_spill 고유이름 이동) · 개별 concurrent 시험 20회 20 OK · 부하(full test_studio_pure 동시) 20 OK · full test_studio_pure 527 OK · discover 777 OK · enginemap 🔴0 · 재지 못함: 커밋의 옛 코드 150회 중 6회 유실 수치"
+  },
+  {
+   "id": "d123-affiliate-1113",
+   "added": "2026-11-13",
+   "what": "D1-23 블로그스팟·네이버 제휴 — 3. 상품 조사 결과(propose 또는 none) → 링크 발급 → 블로그스팟 본문 블록 삽입은 라이브 수정이라 미리보기·사장님 go",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.affiliate show --code D1-23",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

@@ -181,6 +181,7 @@ function card(it){
     // 🔴 2026-10-24 「올린이가 나야?」 — 승인자는 올린이가 아니라 따로 승인 칩으로
     +(it.approved?'<div class="byline">✅ '+esc(it.approved)+'</div>':'')
     +(it.thumb_undeployed?'<div class="hardtag">🔴 썸네일 미배포 — deploy.bat 먼저</div>':'')
+    +(it.aff_missing?'<div class="hardtag">🔴 제휴 결정 없음 — 블로그스팟 제휴 블록 또는 「붙일 것 없음」 기록 필요</div>':'')
     +(it.who?'<div class="wholine">'+esc(it.who)+'</div>':'')
     +'<div class="cidline">'+esc(it.id||'')+'</div>'
     +'<p class="what">'+esc(subText)+'</p>'
