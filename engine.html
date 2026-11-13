@@ -72,6 +72,14 @@ svg text{font-family:inherit;fill:var(--fg)}
 .pt{fill:var(--bl)}.pt.am{fill:var(--am)}.pt.rd{fill:var(--rd)}.pt.pu{fill:var(--pu)}
 /* 🧳 수정 캐리어 선로 = 보라 */
 .pc.cr{stroke:color-mix(in srgb,var(--pu) 10%,var(--pipe))}.pc.cr.pu{stroke:color-mix(in srgb,var(--pu) 24%,var(--pipe))}
+/* 11-13 사장님 「어사이드를 통해 공급되면 색깔을 바꿔」 — 실행 주체 색. 상태색(초록·주황·빨강)과 안 겹치게, 색약 대비로 선·점 모양도 다르게 */
+.ed.ex-lee{stroke:#38BDF8;opacity:.9;stroke-dasharray:none}.ed.ex-asd{stroke:#F472B6;opacity:.9;stroke-dasharray:7 5}
+.pt.ex-lee{fill:#38BDF8}.pt.ex-asd{fill:#F472B6}
+.dot .dm{display:none}svg .dot.ex-asd circle{display:none}svg .dot.ex-asd .dm{display:inline;fill:#F472B6;stroke:var(--panel);stroke-width:1}
+svg .dot.ex-lee circle{fill:#38BDF8}svg .dot.ex-unk circle{fill:#6B7280}   /* svg 접두 = 뒤에 오는 .dot.dn(초록)보다 우선 */
+.spark.ex-lee{fill:#38BDF8}.spark.ex-asd{fill:#F472B6}.spark.ex-unk{fill:#6B7280}
+.exlg{font-size:.78rem;margin:2px 0 4px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
+.exlg b{font-weight:800}.exlg .k1{color:#38BDF8}.exlg .k2{color:#F472B6}.exlg .k3{color:#6B7280}
 .ed.cr{stroke:color-mix(in srgb,var(--pu) 30%,var(--pipe2));stroke-dasharray:6 5}.ed.cr.pu{stroke:var(--pu);opacity:.7;stroke-dasharray:none}
 .nd.cr rect.bx{stroke:color-mix(in srgb,var(--pu) 40%,var(--idle));stroke-dasharray:5 4}.nd.cr.live rect.bx{stroke:var(--pu);stroke-dasharray:none}
 .gauge.pu .gld{stroke:var(--pu)}.dot.pu circle{fill:var(--pu)}.rip.pu{stroke:var(--pu)}
@@ -164,6 +172,7 @@ html.reduce *{animation:none!important;transition:none!important}
     <section class="panel" id="gpanel">
       <h2>🗺 지도 <small>마디·점·종착지를 누르면 오른쪽(폰은 아래) 목록의 그 자리로 이동합니다</small></h2>
       <div class="lane" id="supLane" aria-label="연료 공급자"></div>
+      <div class="exlg" id="exlg" aria-label="4채널 실행 주체 범례"><span><b class="k1">●</b> 이과장 직접(실선)</span><span><b class="k2">◆</b> Aside 실행(점선 · 이과장이 대기열로)</span><span><b class="k3">─</b> 주체 모름(기록 없음)</span><span id="exmode"></span></div>
       <svg id="map" role="img" aria-label="글이 출발에서 종착지 4곳으로 가는 흐름 지도"></svg>
       <div class="lane" id="drvLane" aria-label="운전자"></div>
       <div class="lane aplane" id="apLane" aria-label="결재함 축소판"></div>
@@ -332,7 +341,7 @@ function setParticles(want){
     const w=want[key];let mine=parts.filter(p=>p.key===key);
     while(mine.length>w.n){const p=mine.pop();p.el.remove();parts.splice(parts.indexOf(p),1)}
     while(mine.length<w.n){const p={key,t:mine.length/Math.max(1,w.n),el:el("circle",{class:"pt",r:2.6},layer)};parts.push(p);mine.push(p)}
-    mine.forEach((p,i)=>{p.dur=w.dur;p.frozen=w.lv==="rd";p.el.setAttribute("class","pt "+(w.lv==="rd"?"rd":w.lv==="am"?"am":w.lv==="pu"?"pu":""));
+    mine.forEach((p,i)=>{p.dur=w.dur;p.frozen=w.lv==="rd";p.el.setAttribute("class","pt "+(w.lv==="rd"?"rd":w.lv==="am"?"am":w.lv==="pu"?"pu":(w.lv==="ex-lee"||w.lv==="ex-asd")?w.lv:""));
       if(REDUCE||p.frozen){if(REDUCE)p.t=(i+.5)/w.n;placePt(p)}});
   }
   kick();
@@ -355,10 +364,12 @@ function frame(ts){
 }
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)kick()});
 
+function exCls(w){return w==="lee"?"ex-lee":w==="aside"?"ex-asd":"ex-unk"}
+function exMode(s){return s&&s.supply_mode==="lee"?"ex-lee":s&&s.supply_mode==="aside"?"ex-asd":""}
 function setDot(id,code,tx,ty,cls,from,onClick){
   const layer=document.getElementById("dots");let d=dots[id];
   if(!d){
-    const g=el("g",{class:"dot"},layer);el("circle",{r:4,cx:0,cy:0},g);const t=el("text",{x:7,y:3.5},g);t.textContent=code;
+    const g=el("g",{class:"dot"},layer);el("circle",{r:4,cx:0,cy:0},g);el("rect",{class:"dm",x:-3.6,y:-3.6,width:7.2,height:7.2,transform:"rotate(45)"},g);const t=el("text",{x:7,y:3.5},g);t.textContent=code;
     g.addEventListener("click",ev=>{ev.stopPropagation();onClick?onClick():focusRow(code)});
     const o=from||{x:tx,y:ty};d=dots[id]={g,x:o.x,y:o.y,seen:true,raf:0};g.setAttribute("transform",`translate(${o.x} ${o.y})`);
   }
@@ -485,19 +496,21 @@ function render(s){
     if(b)st=(nlv[e[0]]==="rd")?"rd":((nlv[e[0]]==="am")?"am":"flow");
     if(!st&&e[0]==="hub"&&nlv.hub==="rd")st="rd";
     if(e[0]==="hub"&&nlv.hub==="rd"&&(b||f))st="rd";
-    p.setAttribute("class","ed"+(st?" "+st:""));document.getElementById("pc-"+id).setAttribute("class","pc"+(st?" "+st:""));
+    const xm=(key==="pub>hub"||e[0]==="hub")&&(!st||st==="flow")?exMode(s):"";
+    p.setAttribute("class","ed"+(xm?" "+xm:(st?" "+st:"")));document.getElementById("pc-"+id).setAttribute("class","pc"+(st?" "+st:""));
     const fl=document.getElementById("fl-"+id);if(fl)fl.textContent=f?"오늘 "+f:"";
     let n=b?Math.min(7,1+b*2):0;if(st==="rd")n=Math.max(n,3);
-    want[key]={n,lv:st==="rd"?"rd":st==="am"?"am":"",dur:Math.max(1.6,5.5-.6*b)};tot+=n});
+    want[key]={n,lv:st==="rd"?"rd":st==="am"?"am":((key==="pub>hub"||e[0]==="hub")?exMode(s):""),dur:Math.max(1.6,5.5-.6*b)};tot+=n});
   const cap=G.vert?40:64;if(tot>cap)for(const k in want)if(want[k].n)want[k].n=Math.max(1,Math.floor(want[k].n*cap/tot));
   setParticles(want);
   const cnt={};const slot=k=>{cnt[k]=(cnt[k]||0);return cnt[k]++};
   ["topic","proc","boss","pub"].forEach(k=>g[k].forEach(x=>{const p=cellPos(G.nodes[k],slot(k));if(p)setDot(x.code,x.code,p.x,p.y,x.lvl==="red"?"rd":x.lvl==="amber"?"am":"",null)}));
   const inTransit=new Set();
   osm.forEach(x=>{inTransit.add(x.code);TERM.forEach(([k])=>{const id=x.code+"|"+k,n=G.nodes[k],has=(x.ch||{})[k],src=k==="blog"?"pub":"hub";
-    if(has){const p=cellPos(n,slot(k));if(p)setDot(id,x.code,p.x,p.y,"dn",nodeCenter(src))}
+    if(has){const p=cellPos(n,slot(k));if(p)setDot(id,x.code,p.x,p.y,"dn"+(k!=="blog"?" "+exCls((x.who||{})[k]):""),nodeCenter(src))}
     else{const q=edgePt(src,k,.55),off=slot("e"+k)*6;setDot(id,x.code,q.x-4,q.y-4+off,x.lvl==="amber"?"am":"",nodeCenter(src))}})});
-  TERM.forEach(([k])=>{const n=G.nodes[k];((ch[k]||{}).done||[]).forEach(x=>{if(inTransit.has(x.code))return;const p=cellPos(n,slot(k));if(p)setDot("d|"+x.code+"|"+k,x.code,p.x,p.y,"dn",null)})});
+  TERM.forEach(([k])=>{const n=G.nodes[k];((ch[k]||{}).done||[]).forEach(x=>{if(inTransit.has(x.code))return;const p=cellPos(n,slot(k));if(p)setDot("d|"+x.code+"|"+k,x.code,p.x,p.y,"dn"+(k!=="blog"?" "+exCls(x.who):""),null)})});
+  {const em=document.getElementById("exmode");if(em)em.textContent=s.supply_mode==="lee"?"· 지금 공급 = 이과장 직접(직접 게시 모드)":s.supply_mode==="aside"?"· 지금 공급 = Aside 대기열":""}
   renderCarrier(s,slot);
   sweepDots();
   renderLanes(s);
@@ -647,7 +660,8 @@ function fire(e){
   const to=STAGE_NODE[e.stage];if(!to||!G.nodes[to])return;
   const term=G.nodes[to].term;
   if(term&&to!=="blog"){                             /* 채널 도착 = 허브를 거쳐 가는 불꽃 */
-    const sp={g:el("g",{},document.getElementById("rdots")),spark:true,x:0,y:0};el("circle",{class:"spark",r:3.6},sp.g);
+    const sp={g:el("g",{},document.getElementById("rdots")),spark:true,x:0,y:0};
+    if(e.who==="aside")el("rect",{class:"spark ex-asd",x:-3.4,y:-3.4,width:6.8,height:6.8,transform:"rotate(45)"},sp.g);else el("circle",{class:"spark "+exCls(e.who),r:3.6},sp.g);
     const st=PT["pub>hub"]?PT["pub>hub"][0]:[G.hub.x,G.hub.y];sp.x=st[0];sp.y=st[1];place(sp);
     moveAlong(sp,PT["pub>hub"].concat(PT["hub>"+to]),{x:G.nodes[to].gx,y:G.nodes[to].gy},1200,()=>{sp.g.remove();arrive(to)});return}
   let d=RP.dot[e.code];
