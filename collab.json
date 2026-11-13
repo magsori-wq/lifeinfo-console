@@ -1,6 +1,6 @@
 {
- "rev": "1161e0408",
- "uncommitted": 829,
+ "rev": "ee53c109d",
+ "uncommitted": 828,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
+     "h": "ee53c109d",
+     "d": "11-14 01:47",
+     "s": "[이부장] H1-40 발행 승인 — go 도장 origin 반영"
+    },
+    {
+     "h": "f903bf2a6",
+     "d": "11-14 00:07",
+     "s": "[에이전트] 정비: code_cleared 빈틈 — 상시 배치 maint 의 confirm_note 가 하루 여러 번 덮여 앞서 검수한 커밋(f779a1940·51bc81ad7)이 다시 CODE_UNVERIFIED · batchboard confirm 이 confirm_note(뜻 그대로)와 함께 confirm_log 이력(최근 200)을 쌓고 enginestate.code_cleared 가 이력 전체를 봄 · 회귀 시험(confirm 2회 뒤 첫 해시 인정 — 실제 보드에 없는 배치 id·임시 DATA·패치 확인 assert) · 설계도 기록"
+    },
+    {
      "h": "1161e0408",
      "d": "11-13 21:30",
      "s": "[에이전트] fixer: H1-40 제목에 정유사 공급가 명시(V0 권고)"
-    },
-    {
-     "h": "87c81be26",
-     "d": "11-13 21:28",
-     "s": "[이부장] H1-40 V0 통과 — 게이트 판정 동기화"
-    },
-    {
-     "h": "1aa48b4af",
-     "d": "11-13 21:26",
-     "s": "[이과장] H1-40 석유 최고가격 12차 초안·썸네일·pubqueue 적재·블로그스팟 제휴 none"
     }
    ],
-   "last": "11-13 21:30",
+   "last": "11-14 01:47",
    "state": "active"
   },
   {
