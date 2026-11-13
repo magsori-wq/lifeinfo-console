@@ -7629,19 +7629,65 @@
    "order_at": "2026-11-13 05:55:47",
    "confirmed_at": "2026-11-13 08:03:28",
    "confirm_note": "초안 큐 적재·V0 통과·결재함 상정·폰 미리보기 200 확인"
+  },
+  "tower1113": {
+   "title": "관제탑 11-13",
+   "note": "이부장 오늘 보드",
+   "items": [
+    {
+     "code": "TW1113-1",
+     "state": "todo",
+     "title": "[관제탑] 결재 대기 B4-33·A5-22 — 승인 시 발행·4채널 지시"
+    },
+    {
+     "code": "TW1113-2",
+     "state": "todo",
+     "title": "[관제탑] 사장님 settings matcher 한 줄(splitguard 실집행) 확인"
+    },
+    {
+     "code": "TW1113-3",
+     "state": "todo",
+     "title": "[관제탑] 4. 실험 B 24h 판독(11-14 02시대)·GSC 원인 확정 후 수정안 결재"
+    },
+    {
+     "code": "TW1113-4",
+     "state": "todo",
+     "title": "[관제탑] 재고 하한 3 — 루틴2(09:13)·3. 연료 결과 선별"
+    },
+    {
+     "code": "TW1113-5",
+     "state": "todo",
+     "title": "[관제탑] 11-15 애드센스 재요청 준비"
+    }
+   ]
   }
  },
- "updated": "2026-11-13 08:34:15",
+ "updated": "2026-11-13 09:02:43",
  "current": {
-  "batch": "maint",
+  "batch": "chkmon",
   "code": "",
-  "title": "정비 담당 세션(11-11 신설)",
+  "title": "",
   "step": 1,
-  "what": "✅ 페이블 7차 🟡 처리(정비, 11-13, 95e843247 push·syncorigin 맞춤) — studio/splitguard.py: 6차가 새로 연 우회 닫음(echo (Get-Content …) · Get-ChildItem|Get-Content · dir|%{Get-Content} · ls|xargs cat · echo ok < batch.json · cat <<E | python · python tools/x.py webapp/batch.json) · 오탐: git 하위 명령 자리만 봄(git commit -m \"…show…\" -- webapp/batch.json 통과, stash show·-C·-c 옵션 뒤 show/cat-file 차단). 확인: 차단 12·통과 10 사례 실측, 시험 TestFable7SplitguardScope 2건 · 465/715 OK · enginemap 🔴 없음. 설계도에 판단 한 줄: splitguard 는 실수 방지용 — glob·변수 조립 우회는 더 쫓지 않음. 재발방지: 새 우회 사례를 시험에 고정 · 남은 구멍: glob·변수 조립(의도적으로 둠) · sls -Path 앞자리(6차부터 같음) · Agent·Read·Grep 집행은 settings matcher 결재 대기. ⏸ 대기 — 다음 maint 지시",
-  "since": "17:07",
-  "since_at": "2026-11-11 17:07:53"
+  "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵3 🟡3 — 즉시: 이대리 요청 정체 idle; 사장님 결재 대기 B4-33 오피스텔 기준시가(안) 열람 12월 2일까지 — 전국; 사장님 결재 대기 A5-22 교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일; 사장님 ☑️조치 분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "09:02:43",
+   "text": "✔ 이부장 ack re35a2b",
+   "actor": "이부장"
+  },
+  {
+   "t": "09:01:31",
+   "text": "📋 배치 '관제탑 11-13' 등록 — 5항목",
+   "actor": "이부장"
+  },
+  {
+   "t": "09:00:43",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵3 🟡3 — 즉시: 이대리 요청 정체 idle; 사장님 결재 대기 B4-33 오피스텔 기준시가(안) 열람 12월 2일까지 — 전국; 사장님 결재 대기 A5-22 교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일; 사장님 ☑️조치 분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
   {
    "t": "08:34:15",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ 페이블 7차 🟡 처리(정비, 11-13, 95e843247 push·syncorigin 맞춤) — studio/splitguard.py: 6차가 새로 연 우회 닫음(echo (Get-Content …) · Get-ChildItem|Get-Content · dir|%{Get-Content} · ls|xargs cat · echo ok < batch.json · cat <<E | python · python tools/x.py webapp/batch.json) · 오탐: git 하위 명령 자리만 봄(git commit -m \"…show…\" -- webapp/batch.json 통과, stash show·-C·-c 옵션 뒤 show/cat-file 차단). 확인: 차단 12·통과 10 사례 실측, 시험 TestFable7SplitguardScope 2건 · 465/715 OK · enginemap 🔴 없음. 설계도에 판단 한 줄: splitguard 는 실수 방지용 — glob·변수 조립 우회는 더 쫓지 않음. 재발방지: 새 우회 사례를 시험에 고정 · 남은 구멍: glob·변수 조립(의도적으로 둠) · sls -Path 앞자리(6차부터 같음) · Agent·Read·Grep 집행은 settings matcher 결재 대기. ⏸ 대기 — 다음 maint 지시",
@@ -7826,21 +7872,6 @@
    "t": "05:06:32",
    "text": "▶   — 1/7단계 · 05:06:28 핑퐁 시험 완료 이대리 5/5 — PONG2 수신 이부장·3.·정비·이과장·4. 전부(보낸 05:04:35 기준, 수신 05:05~05:06대). 송신 PING2 5·수신 PING2 5·송신 PONG2 5. 기록 docs/pingpong_1113.txt(lifeinfo 공용 파일 기록은 사장님 명시 허락 대기)",
    "actor": "이대리"
-  },
-  {
-   "t": "05:06:21",
-   "text": "▶   — 4/7단계 · [4.·11-13 05:0x] 핑퐁2 완료 4. 5/5 — PONG2 받음 5곳(정비·이과장·3.·이부장·이대리, 모두 내가 보낸 t=05:04:30 회신), PING2 받아 PONG2 회신 5곳(이부장 05:04:25·정비 05:04:28·이과장 05:04:30·3. 05:04:30·이대리 05:04:35), 실패 없음. 기록 data/pingpong_1113.txt (RTT 줄 시각은 내가 확인한 시각이라 실제 도착보다 늦음).",
-   "actor": "4."
-  },
-  {
-   "t": "05:04:53",
-   "text": "▶   — 1/7단계 · 05:04:53 핑퐁 시험: 이대리 PING2 5곳 송신(05:04:35, 실패 0), PING2 수신 5/5 → PONG2 5곳 송신. PONG2 수신 대기(받으면 RTT 기록). 기록 파일은 C:\\lifeinfo 쓰기 금지 지침(CLAUDE.md)상 docs/pingpong_1113.txt 에 둠 — 공용 파일 기록이 꼭 필요하면 사장님 명시 지시 필요",
-   "actor": "이대리"
-  },
-  {
-   "t": "05:03:20",
-   "text": "✔ 이부장 ack rb0ae07",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -8308,7 +8339,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡4 — 즉시: V0 지연 A5-22 교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일; 사장님 ☑️조치 분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 · 묶음: 사건×3 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵3 🟡3 — 즉시: 이대리 요청 정체 idle; 사장님 결재 대기 B4-33 오피스텔 기준시가(안) 열람 12월 2일까지 — 전국; 사장님 결재 대기 A5-22 교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일; 사장님 ☑️조치 분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -39553,6 +39584,28 @@
    "what": "✅ 페이블 7차 🟡 처리(정비, 11-13, 95e843247 push·syncorigin 맞춤) — studio/splitguard.py: 6차가 새로 연 우회 닫음(echo (Get-Content …) · Get-ChildItem|Get-Content · dir|%{Get-Content} · ls|xargs cat · echo ok < batch.json · cat <<E | python · python tools/x.py webapp/batch.json) · 오탐: git 하위 명령 자리만 봄(git commit -m \"…show…\" -- webapp/batch.json 통과, stash show·-C·-c 옵션 뒤 show/cat-file 차단). 확인: 차단 12·통과 10 사례 실측, 시험 TestFable7SplitguardScope 2건 · 465/715 OK · enginemap 🔴 없음. 설계도에 판단 한 줄: splitguard 는 실수 방지용 — glob·변수 조립 우회는 더 쫓지 않음. 재발방지: 새 우회 사례를 시험에 고정 · 남은 구멍: glob·변수 조립(의도적으로 둠) · sls -Path 앞자리(6차부터 같음) · Agent·Read·Grep 집행은 settings matcher 결재 대기. ⏸ 대기 — 다음 maint 지시",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 09:00:43",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵3 🟡3 — 즉시: 이대리 요청 정체 idle; 사장님 결재 대기 B4-33 오피스텔 기준시가(안) 열람 12월 2일까지 — 전국; 사장님 결재 대기 A5-22 교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일; 사장님 ☑️조치 분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "re35a2b"
+  },
+  {
+   "ts": "2026-11-13 09:02:43",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack re35a2b — 결재 2건·설정 대기 · 이대리 정상",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "re35a2b"
   }
  ]
 }
