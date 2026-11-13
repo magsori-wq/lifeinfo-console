@@ -8060,7 +8060,7 @@
    ]
   }
  },
- "updated": "2026-11-14 06:00:52",
+ "updated": "2026-11-14 06:01:58",
  "current": {
   "batch": "chkmon",
   "code": "",
@@ -8071,6 +8071,11 @@
   "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "06:01:58",
+   "text": "✔ 이부장 ack r31e834",
+   "actor": "이부장"
+  },
   {
    "t": "06:00:52",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡1 — 즉시: 반영 어긋남 · 화면 생성물 신선도 · 묶음: 사건×1 (상세 python -m studio.chkmon show)",
@@ -8265,11 +8270,6 @@
    "t": "00:09:08",
    "text": "▶   — 1/7단계 · 11/14 00:0x 점검: 새 승인·요청·알림 0. 사우디전은 23:30 킥오프라 00:08 현재 경기 중(KFA 홈 결과 목록에 아직 없음, 다음 경기 표기 11/13 23:30 카타르 도하 친선경기) → 결과 글 보류, 01:37 재확인 예약. 🔎 aroma 프로필 39c7ac1a 가 00:08 disconnected 로 바뀜(c0ae104a 는 네이버 로그인 화면 — aroma 아님, 직장 d529353a 는 미사용) → 읽기는 WebFetch 로 대체, 발행 필요 시 프로필 재연결 필요(이부장 확인 요청). 참고: 후보기록_20261113.md 는 23:25 에 이미 생성됨(09:07 에 후보 수·대체경로 검증).",
    "actor": "이대리"
-  },
-  {
-   "t": "00:08:25",
-   "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ code_cleared confirm 이력(f903bf2a6) + ⛔ 내 과실 보고 — 누가: 정비 · 언제: 11-14 00:0x · 수정: batchboard confirm 이 confirm_note(뜻 그대로)와 함께 confirm_log 이력(최근 200)을 쌓고 enginestate.code_cleared 가 이력 전체를 본다(상시 배치 maint 처럼 하루 여러 번 덮여도 앞 검수 해시 인정) · 회귀 시험 OK·사본 794건 check-ignore 환경 1건 외 OK·enginemap 🔴0 · ⛔ 사고: 새 시험이 batchboard 보드 경로(DATA, import 때 본체로 굳음)를 임시로 안 돌려 실제 maint 배치에 가짜 confirm 2번(00:02·00:04) — confirm_note 「verify ✅ 98a49f95b 통과」·confirm_log 「verify ✅ f779a1940 통과」(가짜 검증 기록) · 조치: 두 번 다 즉시 batchboard 자체 load/save 로 되돌림(confirm_note = 시험 직전 실측값 「verify ✅ 98a49f95b 안쪽 bake 창 숨김·542 tests OK」, confirm_log 제거) · confirmed_at 은 이전 실제 시각을 복구할 근거가 없어(21:15~00:01 사이, 백업·기록 없음) 비웠다 — 상태판 판정은 같음(00:01 지시 기준 완료·확인 전) · 시험은 실제에 없는 배치 id·임시 DATA·쓰기 전 경로 assert 로 고쳤고 실제 보드 전후 동일 확인 · 🙋 이부장 요청: ①이번 지시(confirm 이력) 검수 뒤 maint 를 confirm 해 주십시오(confirmed_at 이 비어 있음) ②f779a1940·51bc81ad7 의 15:42 검수 메모는 이미 덮여 보드에 없다 — 다음 confirm --note 에 두 해시를 넣거나 watch verify-* done 으로 남겨 주시면 CODE_UNVERIFIED 가 꺼진다 · 재발방지: 보드에 쓰는 시험은 가짜 배치 id + 경로 assert · 남은 구멍: ②의 옛 메모 소급 불가 · ⏸ 대기 — 다음 maint 지시",
-   "actor": "정비"
   }
  ],
  "currents": {
@@ -40991,6 +40991,17 @@
    "actor": "사람",
    "sid": "",
    "req": "r31e834"
+  },
+  {
+   "ts": "2026-11-14 06:01:58",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r31e834 — 신선도: 06:01 화면 갱신 확인",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r31e834"
   }
  ]
 }
