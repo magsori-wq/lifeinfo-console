@@ -1,13 +1,62 @@
 {
- "computed_at": "2026-11-13 11:49:43",
- "source_head": "11cafcff4169",
+ "computed_at": "2026-11-13 11:52:54",
+ "source_head": "8a15968b2539",
  "ids": [
   "A5-22",
   "B4-33",
-  "c1-11-geon-yeonjang-check",
-  "splitguard-matcher-boss-1113"
+  "c1-11-geon-yeonjang-check"
  ],
  "posts": [
+  {
+   "code": "A5-22",
+   "title": "교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일반직, 교사는 그대로",
+   "slug": "교사난임휴직",
+   "eng": "teacher_infertility_leave",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_교사난임휴직.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/510_teacher_infertility_leave.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
+    },
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_교사난임휴직.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    },
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_교사난임휴직.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
+    }
+   }
+  },
   {
    "code": "B4-33",
    "title": "오피스텔 기준시가(안) 열람 12월 2일까지 — 전국 -0.47%, 서울 +2.07%, 의견은 온라인으로",
@@ -15,7 +64,7 @@
    "eng": "officetel_standard_price",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224475480170",
      "files": [
       {
        "label": "네이버 원고",
@@ -30,7 +79,7 @@
        "exists": true
       }
      ],
-     "light": "ready"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -59,35 +108,7 @@
    }
   }
  ],
- "publish": [
-  {
-   "code": "A5-22",
-   "title": "교사 난임휴직은 이미 됩니다 — 12월 3일 신설은 일반직, 교사는 그대로",
-   "go": true,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 교사난임휴직_글_HTML.txt",
-     "path": "교사난임휴직_글_HTML.txt",
-     "img": false,
-     "exists": true
-    },
-    {
-     "label": "썸네일",
-     "path": "thumbs/510_teacher_infertility_leave.png",
-     "img": true,
-     "exists": true
-    },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/510_teacher_infertility_leave.png",
-     "img": true,
-     "exists": true
-    }
-   ],
-   "light": "ready"
-  }
- ],
+ "publish": [],
  "actions": [
   {
    "id": "c1-11-geon-yeonjang-check",
@@ -95,14 +116,6 @@
    "due": "2026-11-12",
    "cmd": "grep -c 어떤 사유로도 osmu/_live/C1-11.html",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "splitguard-matcher-boss-1113",
-   "what": "분배 코드 집행(정비 0f6bf01ad) 실제 작동에 설정 한 줄 필요 — .claude/settings.json 의 PreToolUse 훅 matcher 를 \"Bash\" → \"Bash|PowerShell|Agent|Task|Read|Grep\" 로(설정 파일은 사장님만 수정). 【권고】변경 【근거】검수: 함수·시험 705건 OK, 이과장 Agent source·작업세션 batch.json 직접 읽기를 함수는 막지만 훅이 그 도구에 안 불려 실제로는 안 막힘 【위험】훅이 Read·Grep 마다 돌아 약간 느려질 수 있음·미등록 세션은 그대로 통과",
-   "due": "2026-11-13",
-   "cmd": "grep -n matcher .claude/settings.json",
-   "state": "todo",
    "kind": "action"
   }
  ],
