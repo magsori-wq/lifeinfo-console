@@ -29909,6 +29909,18 @@
    "state": "todo",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "verify-f903bf2-1114",
+   "added": "2026-11-14",
+   "what": "confirm 이력·시험 실파일 오염 검수",
+   "due": "2026-11-14",
+   "cmd": "git show --stat f903bf2a6",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "verify ✅ 보호파일 0줄·origin/main 포함 · cap 200 실측(205회 confirm→200, 첫 보존 h0005) · 첫 해시 인정 True · unittest 544 OK · batch.json md5 d00b6d2a 시험 전후 동일 · 실파일 쓰기 경로 없음(DATA·BOARD_ROOT·ROOT·_bake·is_tower_session 패치, 잠금 data/batch.lock 만 열림)"
   }
  ]
 }

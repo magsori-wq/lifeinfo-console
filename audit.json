@@ -4368,6 +4368,14 @@
    "target": "verify-51bc81a-1113",
    "detail": "verify ✅ 11-13 15:42 — 이대리 마지막 활동 15:24:38·detect_actor 이대리·pubdates 나이 기준 수정·520 tests OK (maint confirm 이 뒤 confirm 으로 덮여 해시가 사라져 재기록)",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-14T00:10:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-f903bf2-1114",
+   "detail": "verify ✅ 보호파일 0줄·origin/main 포함 · cap 200 실측(205회 confirm→200, 첫 보존 h0005) · 첫 해시 인정 True · unittest 544 OK · batch.json md5 d00b6d2a 시험 전후 동일 · 실파일 쓰기 경로 없음(DATA·BOARD_ROOT·ROOT·_bake·is_tower_session 패치, 잠금 data/batch.lock 만 열림)",
+   "via": "cli"
   }
  ]
 }
