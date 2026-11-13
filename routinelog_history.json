@@ -1279,7 +1279,107 @@
    "base_code": "lifeinfo-nightly-verify-1029",
    "date": "2026-10-29",
    "at": "2026-10-29 22:39"
+  },
+  {
+   "code": "lifeinfo-daily-publish-1030",
+   "title": "lifeinfo-daily-publish (F)",
+   "state": "done",
+   "note": "[조사장부] 목록 2 · 원문 1 · 후보 2 · 탈락 1 · 검색어 4 (바닥 미달: 목록 2<3·원문 1<5·후보 2<3 — korea.kr 정책뉴스·보도자료만 훑음, 기관 공지·kwgap 미실시, 시간 한계). · 주민등록 등·초본 계부·계모→세대원 — korea.kr 148974451 · 10/29 시행 · 탈락: 기발행 D1-10(DB 제목 grep; dupcheck 는 🟢로 놓침) · 출국납부금 환급 — 외교부 26-865 hwpx 직접 대조 · 환급 1,000원·2025-01-01 전 발권 후 출국자·10/30 09시 개시 · 채택(추천 D5-08, 단 소액이라 V0 위험, 신청기한·왕복 처리는 원문에 없어 본문 제외). topicprop 등록, docflow 에게 선별 위임(결과 미수신). 초안·V0 는 선별 뒤 다음 회차.\n▸ 00:13 후속: docflow 가 D5-08 pick(verify 통과1) → 초안 지시서 draft1030d508 자동 발급. 이부장 확인: ① D5(재해·비상지원) 코드가 환급 글과 맞는지(D1 등 재배정 여부) ② docs/source_D5-08_* 없음 — 원문 요지는 루틴 scratchpad src_refund.txt(외교부 26-865 hwpx 대조), source 에이전트로 정식 확보 필요. 제가 직접 재확인한 것은 hwpx 본문뿐, pick 결과는 에이전트 보고.",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-publish",
+   "date": "2026-10-30",
+   "at": "2026-10-30 00:13"
+  },
+  {
+   "code": "8-lifeinfo-issue-product-1030",
+   "title": "8-lifeinfo-issue-product (H)",
+   "state": "done",
+   "note": "🛒 빈손 — 신규 후보 없음. [조사장부] 목록 2 · 원문 0 · 후보 3 · 탈락 3 · 검색어 5 (바닥 미달: 상품 루틴이라 1차 출처 원문 없음, 토스 collect 294건·search 약 16낱말만, korea.kr·kwgap 미훑음)\n· 핫팩/가습기 — productprop search 상위가 이미 게시(hotpack1026·20261012-1): 탈락(기게시)\n· 감귤 서귀포 12brix 5kg 13,900 리뷰2,857 — naverkw ✅ 실검색어, 단 20261002-2 감귤 5kg 이미 쓰레드 게시(한 달 내 동종 재탕), 노지 출하 시즌 1차 확인 못 함: 탈락(보류, 11월 중순 재검토)\n· 김장매트·전기장판·온수매트·롱패딩·수험생 — 토스 인기목록에 없음(naverkw 김장/전기장판/수능선물 실검색어는 ✅): 탈락(상품 부재, 다나와 product 에이전트 조사 필요)\n이어받은 것: 어제 15:00 회차 빈손 / 새로 본 것: 감귤 노지 시즌 대기",
+   "auto_daily": true,
+   "base_code": "8-lifeinfo-issue-product",
+   "date": "2026-10-30",
+   "at": "2026-10-30 07:14"
+  },
+  {
+   "code": "daily-email-briefing-1030",
+   "title": "daily-email-briefing (A)",
+   "state": "done",
+   "note": "08:08 메일브리핑 10-30 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중·PENDING). 새 중요메일 없음: 이어받은 것=Google Cloud 약관(10-12 시행·기보고), OpenAI Codex 새 로그인 10-28 15:01 KST 성남(본인 추정·조치불요), 쿠팡파트너스 수신동의 안내(10-29 정보성). 🟡 GitHub 피드 드리프트 검사(lifeinfo-console) 10-27·28·29 연속 실패 — 사유 로그 미확인, 반복이라 이부장 확인 요망 / 발행 run 40809431080(10-29 02:58) 실패 후 재시도 3회 성공(사전점검 단계 로그에서 원인 미특정). GSC 7일 0건. 점검: magsori 5·m8975 0·aroma 0(직접), 커넥터 전달분 8975 구글뉴스 2건·aroma 0 정상\n▸ 20:11 20:08 메일브리핑 10-30 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중·PENDING). 새 중요메일 없음. 이어받은 것=Google Cloud 약관(10-12 시행)·쿠팡파트너스 수신동의 안내(정보성)·GitHub 실패 통지 기보고. 새로 본 것=10-30 10:41KST 글발행 run 40987028055 실패 사유 '[차단] A3-17 사장님 발행 승인 없음'(도장 원격 미반영 동기 지연 유형) → 2분 뒤 재실행 success, 이후 publish 5회 연속 success. 점검: 리더 magsori 5·m8975 0·aroma 0(평소), 커넥터 8975 전달분=구글뉴스 브리핑 2건뿐, GSC/AdSense 통지 없음.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing",
+   "date": "2026-10-30",
+   "at": "2026-10-30 20:11"
+  },
+  {
+   "code": "daily-email-briefing-1030-1030",
+   "title": "daily-email-briefing-1030 (A)",
+   "state": "done",
+   "note": "08:08 메일브리핑 10-30 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중). 새 중요메일 없음(Google Cloud 약관 기보고·OpenAI Codex 로그인 10-28 성남·쿠팡파트너스 수신동의 안내). 🟡 console 피드 드리프트 검사 10-27~29 연속 실패(사유 미확인, 이부장 확인 요망)·발행 run 40809431080 실패 후 재시도 성공(원인 미특정). GSC 7일 0건. magsori5·m8975 0·aroma 0\n▸ 20:11 20:08 메일브리핑 10-30 — 🟢 사장님 할 일 없음. 애드센스 GETTING_READY(심사중). 새 중요메일 없음(Google Cloud 약관·쿠팡 수신동의 정보성; 10:41 발행 run 실패=A3-17 도장 원격 지연, 2분 뒤 재실행 success). 리더 magsori5·m8975 0·aroma 0.",
+   "auto_daily": true,
+   "base_code": "daily-email-briefing-1030",
+   "date": "2026-10-30",
+   "at": "2026-10-30 20:11"
+  },
+  {
+   "code": "lifeinfo-publish-1030",
+   "title": "lifeinfo-publish (C)",
+   "state": "done",
+   "note": "빈손 — 큐 0건(pubqueue list)·⑦ go 도장 대상 없음·V0 254건 전부 pass라 신규 반려 없음, 최근 publish run 모두 success·진행 중 run 없음. 발행·결재 등록할 글 없음(재고 0/하한3 — 글감·초안 지시는 이부장 몫). 이어받은 것=orderwatch 주차 지시서(idx0zero·draft0926c502/c217 동결)는 새 변화 없어 재상신 안 함",
+   "auto_daily": true,
+   "base_code": "lifeinfo-publish",
+   "date": "2026-10-30",
+   "at": "2026-10-30 09:06"
+  },
+  {
+   "code": "lifeinfo-daily-topics-1030",
+   "title": "lifeinfo-daily-topics (B)",
+   "state": "done",
+   "note": "[조사장부] 목록 5 · 원문 5 · 후보 3 · 탈락 2 · 검색어 8 | 이어받은 것=직전 회차 note 미재탕, B3-07(퇴직연금 의무화) 기발행 확인 | 새로 본 것=복지부 10.30 보도 기초연금 온라인신청 간소화(오늘 시행) → A3-17 추천 1건 topicprop 등록(KW ✅·dupcheck 🟡0.50 A3-01과 역할분리). · 퇴직급여 사외적립 — korea.kr/148974546·moel 20160 — 연내 법통과 조건 — 탈락: B3-07 기발행 · 선제지원복지 하위법령 — mohw 1492352 — 시행령 개정안·KW ❌ — 탈락: 근거 부족 · 후보 alt 없음(내일저축계좌는 원문 미개봉이라 제안 안 함). 브리핑 오전브리핑_2026-10-30.md. docflow 에이전트로 ② 선별 진행 중",
+   "auto_daily": true,
+   "base_code": "lifeinfo-daily-topics",
+   "date": "2026-10-30",
+   "at": "2026-10-30 09:21"
+  },
+  {
+   "code": "9-lifeinfo-issue-product-pm-1030",
+   "title": "9-lifeinfo-issue-product-pm (I)",
+   "state": "done",
+   "note": "[조사장부] 목록 1 · 원문 0 · 후보 4 · 탈락 3 · 검색어 2 (바닥 미달: 상품 루틴이라 1차 출처 없음, 토스 collect 296건·search 17낱말) | 이어받은 것=전기요·핫팩·가습기·니삭스 기게시 | 새로 본 것=🛒 후보: 제주 서귀포 감귤 12brix 5kg · 13,900원 · 리뷰2857 · 왜 지금: 감귤 출하 시즌+자동완성 제주감귤 — 결재함 afflink-gamgyul1030 등록. 탈락: 담요·단감(리뷰175)·수능 엿(토스 목록에 없음)",
+   "auto_daily": true,
+   "base_code": "9-lifeinfo-issue-product-pm",
+   "date": "2026-10-30",
+   "at": "2026-10-30 15:18"
+  },
+  {
+   "code": "lifeinfo-travel-prep-1030",
+   "title": "lifeinfo-travel-prep (D)",
+   "state": "done",
+   "note": "빈손 — [조사장부] 목록 2 · 원문 0 · 후보 4 · 탈락 4 · 검색어 4 (바닥 미달: korea.kr 목록은 노이즈로 걸러지지 않았고 공식 원문은 못 열었다) | 이어받은 것=지스타 G3-11 기발행(dupcheck 1.00), 해운대빛축제 G3-24 발행됨, 불꽃·분청·마산국화·양산국화는 루트 초안 존재 | 탈락: 지스타 입장권(G3-11 중복), 부산불꽃축제·김해분청·마산국화(기존 초안), 부산 크리스마스트리(공식 점등일 미확인·naverkw 미측정) | 새로 본 것=없음. 재고 0/하한 3 이나 근거 2개 못 갖춰 억지 제안 안 함",
+   "auto_daily": true,
+   "base_code": "lifeinfo-travel-prep",
+   "date": "2026-10-30",
+   "at": "2026-10-30 21:16"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1030",
+   "title": "lifeinfo-nightly-verify (E)",
+   "state": "done",
+   "note": "오늘 발행 7편 중 3편(A3-17·B5-10·A6-08) 1차출처 대조 오류 0·라이브 수정 0 · 미검증 H1-34·H1-35·B2-23 · 기존글 위험순위 미실시 · 2b 배치 전부 동결/이과장 담당이라 생략 · 카톡 발송 · 이어받은 것=10-29 미검증 H1-31·33 미처리, 새로 본 것=오늘 7편 · 사장님 할 일 없음(결재 7건은 기존 aroma 건)",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify",
+   "date": "2026-10-30",
+   "at": "2026-10-30 22:46"
+  },
+  {
+   "code": "lifeinfo-nightly-verify-1030-1030",
+   "title": "lifeinfo-nightly-verify-1030 (E)",
+   "state": "done",
+   "note": "오늘 발행 7편 중 3편(A3-17·B5-10·A6-08) 1차출처 대조 오류 0·라이브 수정 0 · 미검증 H1-34·H1-35·B2-23 · 기존글 위험순위 미실시 · 2b 배치 전부 동결/이과장 담당이라 생략 · 이어받은 것=10-29 미검증 H1-31·33 미처리, 새로 본 것=오늘 7편 · 사장님 할 일 없음\n▸ 22:46 x\n▸ 22:47 오늘 발행 7편 중 3편(A3-17·B5-10·A6-08) 1차출처 대조 오류 0·라이브 수정 0 · 미검증 H1-34·H1-35·B2-23 · 기존글 위험순위 미실시 · 2b 배치 전부 동결/이과장 담당이라 생략 · 카톡 발송 · 이어받은 것=10-29 미검증 H1-31·33 미처리, 새로 본 것=오늘 7편 · 사장님 할 일 없음",
+   "auto_daily": true,
+   "base_code": "lifeinfo-nightly-verify-1030",
+   "date": "2026-10-30",
+   "at": "2026-10-30 22:47"
   }
  ],
- "updated": "2026-11-13 08:07:55"
+ "updated": "2026-11-14 08:07:29"
 }
