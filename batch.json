@@ -7769,17 +7769,22 @@
    "confirm_note": "이부장: 발행 run 성공·라이브 200·썸네일 200 직접 확인(4채널 후속은 followup 배치)"
   }
  },
- "updated": "2026-11-13 11:58:19",
+ "updated": "2026-11-13 12:00:18",
  "current": {
   "batch": "pub1113b433",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224475480170 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+  "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfqnC_yERRE/ (naver-link 가 자동 보고) · 남음: 쓰레드",
   "since": "11:37",
   "since_at": "2026-11-13 11:37:07"
  },
  "log": [
+  {
+   "t": "12:00:18",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/DfqnC_yERRE/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장"
+  },
   {
    "t": "11:58:19",
    "text": "📄 maint 작업 지시 등록(9733자, 2026-11-13 11:58:19)",
@@ -7974,11 +7979,6 @@
    "t": "10:41:49",
    "text": "▶  정비 담당 세션(11-11 신설) — 1/7단계 · ✅ test_batch_view 판정 갈림·confirm/진행률 확인(정비, 11-13 11:0x, 2e53fc036 push·syncorigin 맞춤) — ① 원인: studio/cpstate.status 가 실측 자동완료를 _live_state 로 그 자리에서 다시 재고, 화면 JS(cp_xlink.js)·batch_view 는 batchboard._save 가 남긴 live 칸을 봄 → 마지막 저장 뒤 seo_desc_status·DB 가 바뀐 동안 파이썬 closed·화면 doing 으로 갈림. 수정: cpstate 도 live 칸 하나로 셈(confirm 은 실행 판정이라 그 자리 실측 유지). 확인: 라이브 175배치 파이썬=JS 불일치 0 · 시험 TestCpstateUsesStoredLive 2(옛 코드면 실패) · test_batch_view 본 체크아웃 OK · 전체 OK · enginemap 🔴 없음. ② pub1111a231 은 산식 차이가 아니라 순서 — 관제탑 기록: 09:45:55 confirm 거부(A2-31 이 seo_desc_status 에 없음) → 09:46:33 seodesc scan --only A2-31 이 기록 → 그 뒤 show 100%. 단 진짜 산식 차이 1건 발견(보고만): 진행률은 blocked 를 처리됨(STATES[2]=True)으로 세고 confirm 은 done·skip 만 받음 — blocked 항목이 있으면 「100%」인데 confirm 거부가 또 생길 수 있다. 재발방지: 상태 판정 근거를 화면과 같은 칸 하나로 · 남은 구멍: 새 실측은 다음 batchboard 저장 때 반영(그 사이 화면·CP 숫자 모두 늦음, 서로는 같음) · blocked 진행률 산식은 이부장 결정 필요(처리됨으로 셀지). ⏸ 대기 — 다음 maint 지시",
    "actor": "정비"
-  },
-  {
-   "t": "10:34:37",
-   "text": "📄 maint 작업 지시 등록(9792자, 2026-11-13 10:34:37)",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -9499,7 +9499,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224475480170 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfqnC_yERRE/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "11:37",
    "since_at": "2026-11-13 11:37:07"
   }
@@ -9555,14 +9555,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-10-30 11:58:29",
-   "bid": "draft1030a608",
-   "code": "",
-   "title": "",
-   "owner": "이과장",
-   "what": "A6-08 착수 — 출처 파일 확인"
-  },
   {
    "ts": "2026-10-30 12:05:13",
    "bid": "pub1030b510",
@@ -39930,6 +39922,16 @@
    "title": "",
    "owner": "이과장(작업 세션)",
    "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224475480170 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-13 12:00:18",
+   "bid": "pub1113b433",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfqnC_yERRE/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "actor": "이과장",
    "sid": "c36eea8e"
   }
