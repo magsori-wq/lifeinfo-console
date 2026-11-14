@@ -30858,8 +30858,10 @@
    "due": "2026-11-14",
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "PASS 21:32"
   },
   {
    "id": "deploy-thumb-521",
@@ -30878,8 +30880,40 @@
    "due": "2026-11-14",
    "cmd": "python -m studio.v0check gate --code B1-12",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사 통과: 일몰 서술이 정부안 의안 2221925 계류 중(확정 아님)으로 도입·정리·2절·4절·6절·7절·마무리·바이라인에 일관(현행 2026.12.31 확정/2027 취득분 75만 한도·3년 추징 미확정 구분"
+  },
+  {
+   "id": "fix-b112-v0-1114",
+   "added": "2026-11-14",
+   "what": "B1-12 V0 반려 정정: 정부안 2221925 계류 중 반영·3억=건설사 명시·지방교육세/농특세 행 추가. bodydup 신규 0.046·heading OK·validate FAIL 0. 126줄 50% 표현 제거. 발행 직전 의안 2221925 진행단계 재확인 필요",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.heading --file 미분양아파트취득세감면_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0re-b112-1114",
+   "added": "2026-11-14",
+   "what": "B1-12 V0 재검사",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-h142-1114",
+   "added": "2026-11-14",
+   "what": "H1-42 V0",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
