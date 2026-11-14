@@ -30047,6 +30047,68 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "deep19b-h124-db-missing",
+   "added": "2026-11-14",
+   "what": "연료19B 심층독해: 지시서가 발행완료로 제외한 H1-24 가 lifeinfo_db.txt 에 레코드 0건(코드 H1-24 0건)",
+   "due": "2026-11-16",
+   "cmd": "grep -c H1-24 webapp/lifeinfo_db.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deep19b-d123-quake-update",
+   "added": "2026-11-14",
+   "what": "수능 지진 연기 후보는 D1-23 과 주제 중복(탈락) — D1-23 갱신(연기 조건) 검토 필요, D1-23 원문 출처 DB 미기록",
+   "due": "2026-11-16",
+   "cmd": "grep -n D1-23 webapp/topicprop.json | head -3",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "fuel19a-kal-intl-dec",
+   "added": "2026-11-14",
+   "what": "대한항공 국제선 12월 유류할증료 미공지(11-14 목록 1페이지 실측) — 공지 뜨면 원문 확인 후 F3-09 갱신 또는 신규 판정",
+   "due": "2026-11-17",
+   "cmd": "python tools/aside_read.py https://www.koreanair.com/contents/footer/customer-support/notice --wait 8 --max 4000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "fuel19a-skate-hours",
+   "added": "2026-11-14",
+   "what": "서울광장 스케이트장 운영시간 원문 불일치(요약 10:00~21:30(금,토 ~24:30) vs 세부 금·토 10:00~00:30) — 발행 전 확정",
+   "due": "2026-11-30",
+   "cmd": "python -X utf8 -I docs/../tools/aside_read.py --help",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-14",
+   "result": "cmd 오기로 등록 — 아래 fuel19a-skate-hours2 로 대체"
+  },
+  {
+   "id": "fuel19a-skate-hours2",
+   "added": "2026-11-14",
+   "what": "서울광장 스케이트장 운영시간 원문 불일치(요약 10:00~21:30(금,토 ~24:30) vs 세부 금·토 10:00~00:30) — 발행 전 확정",
+   "due": "2026-11-30",
+   "cmd": "curl -sL -A Mozilla/5.0 https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=355 | grep -o '운영시간[^<]*\\|10:00~[^<]*' | head -5",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "c214-naver-date-fix",
+   "added": "2026-11-14",
+   "what": "C2-14 네이버 사본(logNo 224405492563)에 9/16 조정 전 어르신 날짜(10/12·10/15·10/19) 잔존 — 블로그스팟 라이브는 정정됨",
+   "due": "2026-11-15",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224405492563\" | grep -c \"10월 19일\"",
+   "owner": "user",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
