@@ -1,13 +1,13 @@
 {
- "rev": "30042102f",
+ "rev": "b748a548c",
  "counts": {
   "total": 534,
-  "osmu_done": 533,
-  "osmu_pending": 1,
+  "osmu_done": 534,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 534,
-  "index_requested": 166,
-  "index_todo": 85,
+  "index_requested": 167,
+  "index_todo": 84,
   "index_benign": 283
  },
  "actionable": [
@@ -15,15 +15,16 @@
    "code": "B2-26",
    "title": "청약통장 소득공제 12월에 몰아 넣어도 될까 — 선납 ",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }

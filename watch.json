@@ -30320,8 +30320,10 @@
    "due": "2026-11-15",
    "cmd": "python -m studio.gsc_log dates | grep -c 1823",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "gsc_req_dates.json 에 G3-38·G3-39·D1-24·D1-25·B5-14 모두 2026-11-14 기록 확인(이과장 gsc_log add 후 dates 재생성), _gsc_requested.txt 에 1823 1건"
   },
   {
    "id": "xlink-g339",
@@ -30663,12 +30665,54 @@
   {
    "id": "xlink-b514",
    "added": "2026-11-14",
-   "what": "🔗 B5-14 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B5-14",
+   "what": "🔗 B5-14 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B5-14",
    "due": "2026-11-14",
    "cmd": "python studio/blogger.py crosslink --code B5-14",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "verify-b514-1114",
+   "added": "2026-11-14",
+   "what": "B5-14 완료보고 검수",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fable-verify-3378-7ca0",
+   "added": "2026-11-14",
+   "what": "3378a2510·7ca00ab01 독립 검증",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.gatecheck",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "Fable 독립 검증 승인(🔴0·🟡8). 후속 권고 2: 설계도 208행 남은 구멍에 live=False TTL 무시·towertick 의존 명시 / dbio 재시도 지터 검토"
+  },
+  {
+   "id": "gsc-b514-1114",
+   "added": "2026-11-14",
+   "what": "B5-14 GSC 색인요청 기록 없음(gsc_requested·_gsc_requested 0건) — 이과장 완료보고(17:38)와 불일치. B2-26 후속 뒤 B5-14·G3-38(날짜기록) 함께 색인요청·gsc_log add 확인",
+   "due": "2026-11-14",
+   "cmd": "grep -c 12-31_01652854127 webapp/gsc_requested.json _gsc_requested.txt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "maint-followup-fable-1114",
+   "added": "2026-11-14",
+   "what": "정비 소소한 후속 2건(Fable 권고): ①docs/엔진설계도.md 208행 '남은 구멍'에 live=False 는 만료 missing 을 그대로 돌려준다·towertick 꺼지면 CLI 전까지 안 메워진다 명시 ②studio/dbio.py 재시도에 지터 추가 검토(읽기 연속 시 굶음 가능, 현실 위험 낮음)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.gatecheck",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
