@@ -4632,6 +4632,166 @@
    "target": "v0reject-d1-25",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:06:18",
+   "actor": "v0",
+   "action": "v0check.fail",
+   "target": "B5-14",
+   "detail": "내용은 통과(함정·가상사례·달력계산·기간둘 분리·예정 표기·못찾은것 박스). 단 반려 3건: ①본문 맨 위 img alt 가 D1-25 문구(수시 합격 정시 지원 불가 등록 안 해도 막힘) 그대로 — 이 글 제목 취지로 교체 ②대부업법 '5년 이하 징역 또는 2억 원 이하 벌금'의 '또",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:06:35",
+   "actor": "v0",
+   "action": "v0check.pass",
+   "target": "D1-25",
+   "detail": "재검사 PASS: 반려 3곳(도입·1절·6절)이 원문(복수지원 금지사항 '산업대학·교육대학·전문대학 포함')대로 정정, 제외 대상은 6회·군별1회·정시등록후 추가모집 불가로 한정(source 67·74·80·82행 일치). 사례5 전문대 수시합격자 원문 인용 일치. 기계검사(headin",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:06:42",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-b514-1114",
+   "detail": "B5-14 V0 반려(alt 오기·'또는' 근거없음·보도자료 담당번호 안내) — v0check fail 기록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:06:45",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-d1-25",
+   "detail": "V0 통과로 해소 — 검사자 v0 · 재검사 PASS: 반려 3곳(도입·1절·6절)이 원문(복수지원 금지사항 '산업대학·교육대학·전문대학 포함')대로 정정, 제외 대상은 6회·군별1회·정시등록후 추가모집 불가로 한정(source 67·74·80·82행 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:06:53",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0re-d125-1114",
+   "detail": "PASS 도장",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:07:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-d1-25",
+   "detail": "수정(11161080f)·재V0 PASS 16:06 — 승인 카드 D1-25 로 대체",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:10:09",
+   "actor": "v0",
+   "action": "v0check.pass",
+   "target": "B5-14",
+   "detail": "재검사(2c1d80b9f diff만): alt=이 글 취지로 교체, 125행 5년 이하·2억 원 이하 source(5년↓·2억↓)와 일치·연결어 제거, 142행 112·경찰관서(source 신고 창구 문장)로 교체·02-3150-2037 원고 0건, 일수 60/180/13일째/47일 직",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:10:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-b5-14",
+   "detail": "V0 통과로 해소 — 검사자 v0 · 재검사(2c1d80b9f diff만): alt=이 글 취지로 교체, 125행 5년 이하·2억 원 이하 source(5년↓·2억↓)와 일치·연결어 제거, 142행 112·경찰관서(source 신고 창구 문장)로 교체·",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:10:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-b5-14",
+   "detail": "수정 2c1d80b9f·재V0 PASS — 승인 카드 B5-14 로 대체",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:21:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fable-verify-a0af5b9c7",
+   "detail": "Fable 독립 검증 승인(a0af5b9c7). 별개 결함 DB 비원자 저장 → maint1114db 로 정비 지시",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:35:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-maintdb-1114",
+   "detail": "합격(문서 표기 2건 경미)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:36:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-hometown-1114",
+   "detail": "docs/source_hometown_donation_20261114.md 작성. B1-06 수치 공식과 일치, 문구 보강 2건+2027 개편안(미확정). 조문·결제시각은 못 얻음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:45:46",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "D1-25",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:45:56",
+   "actor": "사장님",
+   "action": "pubqueue.go",
+   "target": "B5-14",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:49:24",
+   "actor": "v0",
+   "action": "v0check.fail",
+   "target": "B2-26",
+   "detail": "원본가치(계산 5+추징 3·함정 월25만≠공제한도·2024 vs 2026·탈락 사유·가상 사례 표시)·수치 대조 ①~⑧ 통과이나 기계적 결함 2건: (1) 맨 위 썸네일 img alt='수시 합격 정시 지원 불가 등록 안 해도 막힘' 은 수시합격정시지원불가 초안 alt 복붙(본문과 무관",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:49:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-b226-1114",
+   "detail": "B2-26 V0 반려(alt 복붙·2010년 가입 조건 출처 없음) — v0check fail 기록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:53:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-maintxl-1114",
+   "detail": "7/8 합격, TTL 구멍 1건 watch xlink-livefalse-ttl-1114 로 추적",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:53:59",
+   "actor": "v0",
+   "action": "v0check.pass",
+   "target": "B2-26",
+   "detail": "재검사(diff 만): 반려 2건 정정 확인 — alt 가 이 글 취지(청약통장 소득공제 12월 납입 선납 연 300만 원)로 교체, 1절 문장이 국세청 Q&A 「해당 연도 중 주택 보유이력 없는 세대의 세대주」와 일치하고 원고 전체에 '2010년 이후 가입' 조건 잔존 0. diff ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:54:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-b2-26",
+   "detail": "V0 통과로 해소 — 검사자 v0 · 재검사(diff 만): 반려 2건 정정 확인 — alt 가 이 글 취지(청약통장 소득공제 12월 납입 선납 연 300만 원)로 교체, 1절 문장이 국세청 Q&A 「해당 연도 중 주택 보유이력 없는 세대의 세대주」와 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-14T16:57:04",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-b2-26",
+   "detail": "수정 80170186e·재V0 PASS — 승인 카드 B2-26 로 대체",
+   "via": "cli"
   }
  ]
 }

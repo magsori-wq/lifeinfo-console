@@ -30376,7 +30376,247 @@
    "kind": "approve",
    "by": "이부장",
    "done_at": "2026-11-14",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "result": "수정(11161080f)·재V0 PASS 16:06 — 승인 카드 D1-25 로 대체"
+  },
+  {
+   "id": "v0-b514-1114",
+   "added": "2026-11-14",
+   "what": "B5-14 V0",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "B5-14 V0 반려(alt 오기·'또는' 근거없음·보도자료 담당번호 안내) — v0check fail 기록"
+  },
+  {
+   "id": "fix-d125-scope-1114",
+   "added": "2026-11-14",
+   "what": "D1-25 원고 적용범위 정정(수시 합격 정시·추가 불가는 산업대·전문대 포함, 제외는 6회·군별1회·정시등록후 추가불가), 대학마다→모집요강 확인, 210개교 라벨 집계 대학, 사례5 추가. bodydup 신규 0.052·heading OK. V0 재검 필요",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.bodydup --file 수시합격정시지원불가_글_HTML.txt --code D1-25 --live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0re-d125-1114",
+   "added": "2026-11-14",
+   "what": "D1-25 V0 재검사",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "PASS 도장"
+  },
+  {
+   "id": "v0reject-b5-14",
+   "added": "2026-11-14",
+   "what": "🔴 V0 반려 확인 요청 — B5-14 「불법사금융 신고 12월 31일까지 특별기간 — 피해자 경미한 위법은 훈방」. 검사자 v0 · 2026-11-14T16:06. 반려 사유(전문): 내용은 통과(함정·가상사례·달력계산·기간둘 분리·예정 표기·못찾은것 박스). 단 반려 3건: ①본문 맨 위 img alt 가 D1-25 문구(수시 합격 정시 지원 불가 등록 안 해도 막힘) 그대로 — 이 글 제목 취지로 교체 ②대부업법 '5년 이하 징역 또는 2억 원 이하 벌금'의 '또는'이 source 파일엔 '5년↓·2억↓' 뿐이라 근거 없음 — 원문(뷰어) 재대조 후 원문 연결어로 맞추거나 '5년 이하·2억 원 이하'로 ③사례2 문의처 02-3150-2037 은 보도자료 담당자 번호 — 신고·문의 창구로 안내하지 말고 112·경찰관서로 바꾸거나 '보도자료 담당 문의처' 명시. 선택 정정: sec2 '양 끝 포함' 문구는 47일(14일 제외)과 불일치, 정리 3번 '원문에 적힌 창구'는 금융위 보도자료 출처 구분. 재검사는 이 줄 diff 만 본다 (같은 내용: `python -m studio.v0check gate --code B5-14`) 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다. 【권고】고쳐서 재검사 — 승인하시면 관제탑이 수정 지시서를 냅니다. 【근거】반려 사유 위. 【위험】접으면 그 글 재고가 빠진다.",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check gate --code B5-14",
+   "owner": "user",
+   "state": "done",
+   "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "수정 2c1d80b9f·재V0 PASS — 승인 카드 B5-14 로 대체"
+  },
+  {
+   "id": "fix-b514-v0-1114",
+   "added": "2026-11-14",
+   "what": "B5-14 V0 반려 3건(alt 복붙 7행·징역 연결어 125행·사례2 문의처 142행)+선택 2건(97행 일수·70행 창구 출처) 정정. bodydup 신규 0.068, heading OK, validate_db FAIL 0. V0 재검 필요",
+   "due": "2026-11-15",
+   "cmd": "grep -c '수시 합격\\|또는 2억\\|3150-2037' C:/lifeinfo/불법사금융특별자수신고_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0re-b514-1114",
+   "added": "2026-11-14",
+   "what": "B5-14 V0 재검사",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fable-verify-a0af5b9c7",
+   "added": "2026-11-14",
+   "what": "a0af5b9c7 독립 검증",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.gatecheck",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "Fable 독립 검증 승인(a0af5b9c7). 별개 결함 DB 비원자 저장 → maint1114db 로 정비 지시"
+  },
+  {
+   "id": "china-visafree-ext-1120",
+   "added": "2026-11-14",
+   "what": "중국 한국인 무비자 2027 연장 공지 여부 — 11-14 검색 기준 미발표(F1-09 는 2026-12-31 까지). 발표되면 F1-09 갱신 또는 새 글감(기한 연장)",
+   "due": "2026-11-20",
+   "cmd": "WebSearch '중국 외교부 한국 무비자 2027 연장 발표' + 주한중국대사관 공지 1차 출처 확인",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "season-cands-1114",
+   "added": "2026-11-14",
+   "what": "시즌 기한형 글감 탐색",
+   "due": "2026-11-14",
+   "cmd": "ls docs/candidates_season_20261114.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "source-hometown-1114",
+   "added": "2026-11-14",
+   "what": "고향사랑 출처 확보",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_hometown_donation_20261114.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "docs/source_hometown_donation_20261114.md 작성. B1-06 수치 공식과 일치, 문구 보강 2건+2027 개편안(미확정). 조문·결제시각은 못 얻음"
+  },
+  {
+   "id": "source-cheongyak-1114",
+   "added": "2026-11-14",
+   "what": "청약저축 소득공제 출처 확보",
+   "due": "2026-11-14",
+   "cmd": "ls docs/source_cheongyak_deduction_20261114.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-maintdb-1114",
+   "added": "2026-11-14",
+   "what": "maint1114db 완료보고 검수",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.gatecheck",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "합격(문서 표기 2건 경미)"
+  },
+  {
+   "id": "hometown-law-text-1114",
+   "added": "2026-11-14",
+   "what": "고향사랑 조특법 제58조·고향사랑기부금법 제8조 조문 원문 확보. law.go.kr 점검(11-14 21:00까지)으로 DRF https/http·Aside 모두 점검 페이지에서 막힘",
+   "due": "2026-11-15",
+   "cmd": "curl -s -A Mozilla/5.0 'https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=%EA%B3%A0%ED%96%A5%EC%82%AC%EB%9E%91' | head -c 600",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "hometown-2027-reform-check",
+   "added": "2026-11-14",
+   "what": "고향사랑 2027 비수도권 우대안(55%/27.5%) 국회 통과·시행령 우대지역 확정 여부 확인. 확정되면 B1-06 후속/신규 글 판정",
+   "due": "2026-12-05",
+   "cmd": "WebSearch 고향사랑기부 세액공제 비수도권 우대지역 국회 본회의 통과; korea.kr 행안부 보도 확인",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "source-cheongyak-law87-retry",
+   "added": "2026-11-14",
+   "what": "조특법 제87조 조문 원문 재시도 — law.go.kr 점검(11-14 21:00까지)으로 DRF 302. 시도: DRF lawSearch, 국회법률정보시스템(404 점검). 수치는 국세청 Q&A·재경부 상세본으로 이미 확보",
+   "due": "2026-11-15",
+   "cmd": "curl -s 'https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=%EC%A1%B0%EC%84%B8%ED%8A%B9%EB%A1%80%EC%A0%9C%ED%95%9C%EB%B2%95' (시행일이 뒤인 개정은 MST가 다르니 목록 전체 확인)",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-b226-1114",
+   "added": "2026-11-14",
+   "what": "B2-26 V0",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "B2-26 V0 반려(alt 복붙·2010년 가입 조건 출처 없음) — v0check fail 기록"
+  },
+  {
+   "id": "deploy-thumb-519",
+   "added": "2026-11-14",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(519_cheongyak_deduction_dec.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-14",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "v0reject-b2-26",
+   "added": "2026-11-14",
+   "what": "🔴 V0 반려 확인 요청 — B2-26 「청약통장 소득공제 12월에 몰아 넣어도 될까 — 선납 포함 연 300만 」. 검사자 v0 · 2026-11-14T16:49. 반려 사유(전문): 원본가치(계산 5+추징 3·함정 월25만≠공제한도·2024 vs 2026·탈락 사유·가상 사례 표시)·수치 대조 ①~⑧ 통과이나 기계적 결함 2건: (1) 맨 위 썸네일 img alt='수시 합격 정시 지원 불가 등록 안 해도 막힘' 은 수시합격정시지원불가 초안 alt 복붙(본문과 무관) → alt 를 '청약통장 소득공제 12월 납입 선납 포함 연 300만 원 안내 썸네일' 류로 교체. (2) 1절 마지막 문단 '주택청약종합저축(2010년 이후 가입, 무주택 세대주만 공제)' 의 '2010년 이후 가입' 은 출처에 없는 조건(국세청은 청약저축 2010 이후 가입과 종합저축을 구분해 적었고 종합저축에 가입연도 조건 없음) → '(2010년 이후 가입' 삭제하고 '주택청약종합저축(해당 연도 중 주택 보유이력 없는 세대의 세대주만 공제)' 로. 두 줄 고치면 통과(재검사는 diff 만 봄). 별도: 라이브 썸네일 github.io 404 → deploy.bat 필요(V0 사유 아님) (같은 내용: `python -m studio.v0check gate --code B2-26`) 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다. 【권고】고쳐서 재검사 — 승인하시면 관제탑이 수정 지시서를 냅니다. 【근거】반려 사유 위. 【위험】접으면 그 글 재고가 빠진다.",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check gate --code B2-26",
+   "owner": "user",
+   "state": "done",
+   "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "수정 80170186e·재V0 PASS — 승인 카드 B2-26 로 대체"
+  },
+  {
+   "id": "verify-maintxl-1114",
+   "added": "2026-11-14",
+   "what": "maint1114xl 검수",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "7/8 합격, TTL 구멍 1건 watch xlink-livefalse-ttl-1114 로 추적"
+  },
+  {
+   "id": "fix-b226-v0-0114",
+   "added": "2026-11-14",
+   "what": "B2-26 V0 반려 2건 정정: 7줄 썸네일 alt 복붙(수시 합격…) 교체, 94줄 2010년 이후 가입 조건 삭제(국세청 Q&A 문구로). bodydup 0.058 신규, heading OK. 재V0 대기",
+   "due": "2026-11-15",
+   "cmd": "grep -c -E '수시|2010년 이후 가입' C:/lifeinfo/청약통장소득공제12월선납_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0re-b226-1114",
+   "added": "2026-11-14",
+   "what": "B2-26 V0 재검사",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-livefalse-ttl-1114",
+   "added": "2026-11-14",
+   "what": "xlinklive.state(live=False)가 missing 만료를 안 봄 — 4경로(crosslink·naver/threads/insta-link) 밖 삽입(Aside 브라우저 등)에서만 낡은 missing 유지. 발생하면 정비에게 live=False 도 TTL 적용 지시",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
