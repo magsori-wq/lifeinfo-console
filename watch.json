@@ -30647,6 +30647,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "deep-scan21-E-lawgokr-1114",
+   "added": "2026-11-14",
+   "what": "지방 미분양 취득세 감면 원문 미확보: law.go.kr 점검(11-13 21:00~11-14 21:00) 중이라 조문·감면율·일몰 0건 · 연장 법안 의안번호·상태 미확정",
+   "due": "2026-11-15",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://www.law.go.kr/법령/지방세특례제한법\" --frames --wait 8 --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
