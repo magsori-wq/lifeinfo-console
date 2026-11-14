@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-14 22:38",
+ "generated": "2026-11-14 23:09",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/14 20:04",
-   "next": "11/14 23:00",
+   "last": "11/14 23:04",
+   "next": "11/15 08:00",
    "model": "sonnet-5-5",
    "report_day": "1114",
    "report": "11-14 20시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 새 중요 메일 없음(구글 피드백 답·GSC·애드센스 11-14 신규 0, 기보고: GSC 색인문제 해결됨 11-12). 11-13 콘솔 정합성 검사 연속 실패 약 20통은 11-14 push 3회 success 로 해소 확인. gmailread scan 은 개인정보 플러그인이 차단해 커넥터 조회로 대체(aroma 전달 0건).",
    "runs": [
+    {
+     "at": "11/14 23:06",
+     "link": "claude://claude.ai/epitaxy/local_db3ad0ac-cd76-42e3-935c-983d737d8762",
+     "archived": false
+    },
     {
      "at": "11/14 20:06",
      "link": "claude://claude.ai/epitaxy/local_5c6eaca9-3acf-407d-a40b-8ea23f55f689",
@@ -30,11 +35,6 @@
     {
      "at": "11/14 11:06",
      "link": "claude://claude.ai/epitaxy/local_211b90e3-c7f8-4149-96c3-86a36c76d8cf",
-     "archived": false
-    },
-    {
-     "at": "11/14 08:08",
-     "link": "claude://claude.ai/epitaxy/local_f2149058-3f46-4f2c-99cc-01f811cc7f84",
      "archived": false
     }
    ]
@@ -348,12 +348,17 @@
    "name": "10-aroma 이대리 야간 글감(카테고리별 1편)",
    "id": "aroma-nightly-topics",
    "on": true,
-   "last": "11/13 23:09",
-   "next": "11/14 23:00",
+   "last": "11/14 23:08",
+   "next": "11/15 23:00",
    "model": "sonnet-5-5",
    "report_day": "",
    "report": "",
    "runs": [
+    {
+     "at": "11/14 23:08",
+     "link": "claude://claude.ai/epitaxy/local_0fc1e314-7a97-4f71-9c01-cb2b2a19f691",
+     "archived": false
+    },
     {
      "at": "11/13 23:31",
      "link": "claude://claude.ai/epitaxy/local_dea4b398-60f2-420b-8af5-76acf345d60f",
@@ -372,11 +377,6 @@
     {
      "at": "11/12 11:38",
      "link": "claude://claude.ai/epitaxy/local_9f768a77-2664-436e-ad6d-86a20d4d8c94",
-     "archived": true
-    },
-    {
-     "at": "11/11 23:12",
-     "link": "claude://claude.ai/epitaxy/local_dc3ea396-cee0-48c6-86ce-62c3c2d147a7",
      "archived": true
     }
    ]
