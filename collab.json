@@ -1,6 +1,6 @@
 {
- "rev": "a473ca91",
- "uncommitted": 17,
+ "rev": "3a1595272",
+ "uncommitted": 843,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
-     "h": "a473ca91",
-     "d": "11-14 12:47",
-     "s": "[사장님] 결재: watch_approve aroma-am-dg-011-update-1114 (운영콘솔)"
+     "h": "3a1595272",
+     "d": "11-14 12:58",
+     "s": "Merge remote-tracking branch 'origin/main'"
     },
     {
-     "h": "ffe5560a",
-     "d": "11-14 12:46",
-     "s": "[이부장] B4-34 발행 승인 — go 도장 origin 반영"
+     "h": "c72dda329",
+     "d": "11-14 12:58",
+     "s": "[이부장] 교차링크 캐시 충돌 — 원격본 채택(다음 틱에 다시 채워짐)"
     },
     {
-     "h": "8c690f01",
-     "d": "11-14 09:34",
-     "s": "[에이전트] fixer: B4-34 hwpx 출처 표기 고용노동부로 정정(V0 권고)"
+     "h": "42f678b72",
+     "d": "11-14 12:58",
+     "s": "[이부장] 원격 동기 전 로컬 원본 상태파일 보존(syncorigin)"
     }
    ],
-   "last": "11-14 12:47",
+   "last": "11-14 12:58",
    "state": "active"
   },
   {
@@ -36,15 +36,9 @@
    "role": "네이버·쓰레드 재가공·교차링크·확산 대기열",
    "owns": "naver.py · pipeline.py · 확산_대기열 · osmu/",
    "drives": "OSMU 확산 기능 에이전트 구동",
-   "recent": [
-    {
-     "h": "8de265ba",
-     "d": "11-13 19:59",
-     "s": "[에이전트] 정비: 교차링크 필수 검사 빈틈 — 당일 발행 글(D1-23)이 pub_dates.json 에 아직 없어 검사가 조용히 건너뛰어지던 것 · xlinklive.pub_date(pub_dates 없으면 DB osmu_at 중 가장 이른 날, 끝내 모르면 대상) · refresh(감시 틱)가 pub_dates 에 없는 발행 글을 보면 pubdates 재굽기(1시간에 한 번까지) · 실데이터 대상 3편(B4-33·A5-22·D1-23)·날짜 모름 0편 · 회귀 시험·설계도 기록"
-    }
-   ],
-   "last": "11-13 19:59",
-   "state": "active"
+   "recent": [],
+   "last": "—",
+   "state": "idle"
   },
   {
    "id": "H",
