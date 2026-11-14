@@ -30621,12 +30621,22 @@
   {
    "id": "xlink-d125",
    "added": "2026-11-14",
-   "what": "🔗 D1-25 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-25",
+   "what": "🔗 D1-25 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-25",
    "due": "2026-11-14",
    "cmd": "python studio/blogger.py crosslink --code D1-25",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "verify-d125-1114",
+   "added": "2026-11-14",
+   "what": "D1-25 완료보고 검수",
+   "due": "2026-11-14",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
