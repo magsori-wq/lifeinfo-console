@@ -8412,17 +8412,22 @@
    "order_at": "2026-11-14 16:47:28"
   }
  },
- "updated": "2026-11-14 16:53:02",
+ "updated": "2026-11-14 16:54:40",
  "current": {
-  "batch": "chkmon",
+  "batch": "draft1114b226",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡2 — 즉시: V0 지연 B2-26 청약통장 소득공제 12월에 몰아 넣어도 될까 — 선납; 사장님 🙋승인 🔴 V0 반려 확인 요청 — B2-26 「청약통장 소득공제 12월에 몰아 · 묶음: 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
-  "since": "18:12",
-  "since_at": "2026-11-05 18:12:35"
+  "step": 7,
+  "what": "B2-26 V0 반려 2건(썸네일 alt 복붙·'2010년 이후 가입' 출처 없음) 수정·dupcheck/bodydup/xlink/imghost 재통과·커밋 완료. 재검사(v0) 요청. 참고: 라이브 썸네일 519 github.io 404 → deploy.bat 은 이부장 몫",
+  "since": "16:54",
+  "since_at": "2026-11-14 16:54:40"
  },
  "log": [
+  {
+   "t": "16:54:40",
+   "text": "▶   — 7/7단계 · B2-26 V0 반려 2건(썸네일 alt 복붙·'2010년 이후 가입' 출처 없음) 수정·dupcheck/bodydup/xlink/imghost 재통과·커밋 완료. 재검사(v0) 요청. 참고: 라이브 썸네일 519 github.io 404 → deploy.bat 은 이부장 몫",
+   "actor": "이과장"
+  },
   {
    "t": "16:53:02",
    "text": "🏁 maint1114xl 이부장 확인 — 끝남",
@@ -8617,11 +8622,6 @@
    "t": "15:56:22",
    "text": "🏁 pub1114g339 이부장 확인 — 끝남",
    "actor": "사람"
-  },
-  {
-   "t": "15:50:37",
-   "text": "▶   — 1/7단계 · G3-38·G3-39 후속 끝, D1-25 초안 착수(원문 docs/source_deep_scan20_B_20261114 읽기)",
-   "actor": "이과장"
   }
  ],
  "currents": {
@@ -10262,6 +10262,15 @@
    "what": "검수 지적 2건 정정 끝: docs/엔진설계도.md 사건 기록 '0.1초×20'→'×50(최대 약 5초)'(dbio.RETRIES=50 과 일치) · '(아래 줄)'→'(위 줄)' · 커밋 37143b0c5 push·syncorigin ✅ · 본체 파일 grep 2건 확인 · ⏸ 대기 — 다음 maint 지시",
    "since": "16:36",
    "since_at": "2026-11-14 16:36:07"
+  },
+  "draft1114b226": {
+   "batch": "draft1114b226",
+   "code": "",
+   "title": "",
+   "step": 7,
+   "what": "B2-26 V0 반려 2건(썸네일 alt 복붙·'2010년 이후 가입' 출처 없음) 수정·dupcheck/bodydup/xlink/imghost 재통과·커밋 완료. 재검사(v0) 요청. 참고: 라이브 썸네일 519 github.io 404 → deploy.bat 은 이부장 몫",
+   "since": "16:54",
+   "since_at": "2026-11-14 16:54:40"
   }
  },
  "report_log": [
@@ -42212,6 +42221,16 @@
    "actor": "사람",
    "sid": "",
    "req": "rb8f777"
+  },
+  {
+   "ts": "2026-11-14 16:54:40",
+   "bid": "draft1114b226",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "B2-26 V0 반려 2건(썸네일 alt 복붙·'2010년 이후 가입' 출처 없음) 수정·dupcheck/bodydup/xlink/imghost 재통과·커밋 완료. 재검사(v0) 요청. 참고: 라이브 썸네일 519 github.io 404 → deploy.bat 은 이부장 몫",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
