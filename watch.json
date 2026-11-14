@@ -30109,6 +30109,58 @@
    "owner": "user",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "visa-kr-2027-check-1114",
+   "added": "2026-11-14",
+   "what": "중국 무비자(한국) 2026-12-31 만료 — 2026-08-26 免签政策通知 전문에 한국 포함 여부 미확인, 2027 연장 공지 여부 미확인 (source_deep_scan19_D_20261114.md C-1)",
+   "due": "2026-11-20",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://kr.china-embassy.gov.cn/chn/lsfw/hzlxzyw/zgqz/\" --wait 8 --max 6000 (2027 또는 延长 항목 확인; 없으면 F1-09 갱신 건)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "etias-f1-11-fix-1114",
+   "added": "2026-11-14",
+   "what": "F1-11 본문 'ETIAS 4분기 예정' 은 EU 공식 원문(시작일 미정, several months prior 공지)과 불일치 — 정정 필요 (source_deep_scan19_D_20261114.md D)",
+   "due": "2026-11-16",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"유럽 여행 EES 지문 등록\" ; grep 'ETIAS 4분기' webapp/lifeinfo_db.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "jp-fuel-dec-intl-1116",
+   "added": "2026-11-14",
+   "what": "12월 국제선 유류할증료 공지 미게시(11-14 아시아나 목록) — 공지 뒤 발권기간·금액 원문 발췌 후 채택 여부 (source_deep_scan19_D_20261114.md B, 조건부)",
+   "due": "2026-11-16",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://flyasiana.com/C/KR/KO/customer/notice/list\" --wait 10 --max 60000 --click \"유류할증료\" (2026년 12월 한국 출발 국제선 확인)",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-14",
+   "result": "재등록: 대한항공 포함 jp-fuel-dec-intl-1116b (source_deep_scan19_D_20261114.md B-6)"
+  },
+  {
+   "id": "skate-hours-fri-1214",
+   "added": "2026-11-14",
+   "what": "서울광장 스케이트장 2026-27 금요일·공휴일·성탄전야/송년제야 운영시간 미확정(서울광장 누리집 일~금 21:30 vs 서울문화포털 금 00:30). 시도: plaza.seoul.go.kr/archives/18943, festival.seoul.go.kr festacode=355, 서울시 보도자료, seoulskate.kr(NXDOMAIN)",
+   "due": "2026-12-16",
+   "cmd": "서울시 개장 보도자료(mediahub.seoul.go.kr)와 plaza.seoul.go.kr/archives/18943 재조회, 또는 체육정책과 02-2133-2689 통화(날짜·부서 기록). 근거 docs/source_G-서울광장스케이트장_20261114.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "jp-fuel-dec-intl-1116b",
+   "added": "2026-11-14",
+   "what": "12월 국제선 유류할증료 미게시(11-14 아시아나 목록 · 대한항공 공지 미확인) — 공지 뒤 발권기간·금액 원문 발췌 후 채택 여부 (source_deep_scan19_D_20261114.md B, 조건부)",
+   "due": "2026-11-16",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://flyasiana.com/C/KR/KO/customer/notice/list\" --wait 10 --max 60000 --click \"유류할증료\" ; 대한항공은 Aside 로 공지 메뉴 직접 열기 (2612-infuel 패턴 시도 — koreanair notice 2612-infuel)",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
