@@ -30917,8 +30917,10 @@
    "due": "2026-11-14",
    "cmd": "python -m studio.v0check list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "PASS 21:40"
   },
   {
    "id": "fix-h142-v0rec-1114",
@@ -30927,8 +30929,32 @@
    "due": "2026-11-15",
    "cmd": "python -m studio.xlinkcheck --file 배달앱과징금공정위제재_글_HTML.txt",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-14",
+   "result": "권고 3건 반영 확인(xlinkcheck 이상 없음)"
+  },
+  {
+   "id": "aroma-am-pe-014-approve-1114",
+   "added": "2026-11-14",
+   "what": "【권고】AM-PE-014 「2026 청룡영화상 후보 — 호프 10개·가능한 사랑 8개·왕과 사는 남자 7개」(공연·연예, 11/25 시상식 전 게시) 승인. 【근거】자동완성 「2026 청룡영화상 후보」 1순위·「청룡영화상 투표」 / 공식 사이트 11/25 수 여의도 KBS홀·후보 명단 전문 / 뉴스에 없는 것: 75자리 상위 3편 33% 점유 계산·남우 두 부문 후보 배우 2명(구교환·조인성) 교차 / V0 PASS 88(2회차, 1회차 REVISE 82 후 수정) / crossdup 전부 🟢(최고 lifeinfo H1-14 0.27) / 썸네일: KBS 사옥 사진(InSapphoWeTrust, CC BY-SA 2.0, 첫 시도 별관 사진은 외벽 광고 인물 때문에 교체)·이전 글과 다름 / 임베드 없음 — 공식 사이트 영상은 작년(46회) 것 / 사진 다운로드: Commons CC 사진 사용(캡션 표기). 【위험】수상 예측 아님·투표 종료일 미확인 문구 포함. 시의성은 11/25 까지 여유.",
+   "due": "2026-11-15",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-PE-014_청룡영화상후보분포.html\"",
+   "owner": "user",
+   "kind": "approve",
    "state": "todo",
-   "by": "이부장"
+   "by": "세션:cacd0e24"
+  },
+  {
+   "id": "aroma-am-bo-011-approve-1114",
+   "added": "2026-11-14",
+   "what": "【권고】AM-BO-011 「넷플릭스 순위 한국 — 영화 7편 교체, 1위는 Possible Love」(방송·OTT, 11/17 갱신 전 게시) 승인. 【근거】자동완성 「넷플릭스 순위」 1순위·「가능한 사랑 넷플릭스」 / Tudum 한국 Top 10 11/2~11/8 표(기간 표기 확인)를 지난 표(AM-BO-004)와 합쳐 순위 이동·신규 7편·탈락·주 수 +1 검증 / 뉴스에 없는 것: 두 주 비교 계산 / V0 PASS 92(2회차, 1회차 REVISE 83) / crossdup aroma BO-004 🔴0.60(같은 표 글이나 지난주 비교 각도, V0 허용) · lifeinfo 🟢0.33 / 썸네일: Netflix 간판 사진(Sry85, CC BY-SA 4.0, 이전 글과 다름) / 임베드: Netflix K-Content 채널(채널명 기준) 영상 rJHG-K8_sPI. 【위험】11/17 새 표 갱신 시 낡음 — 11/16 까지 게시 권장. Possible Love=가능한 사랑은 Tudum 기사·청룡 기사 대조(본문에 명시).",
+   "due": "2026-11-15",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-BO-011_넷플릭스한국Top10이동표.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:cacd0e24"
   }
  ]
 }
