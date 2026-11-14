@@ -30196,6 +30196,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "deep-scan20-A-sedae-dup-1114",
+   "added": "2026-11-14",
+   "what": "세대점검 과태료 유예 후보 탈락(주제 중복 D3-11·D3-15). 2026-11-30 유예 종료 전 추가 연장 공지 유무 미확인, 2차 보도(11-14) 원문 미확인, korea.kr newsId=148911155 는 2023 영상 페이지",
+   "due": "2026-11-30",
+   "cmd": "curl -sL -A \"Mozilla/5.0\" \"https://www.nfa.go.kr/nfa/news/pressrelease/press/?boardId=bbs_0000000000000010\" | grep -c 세대점검",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
