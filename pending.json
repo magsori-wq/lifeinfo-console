@@ -1,9 +1,9 @@
 {
- "rev": "0979c6b3c",
+ "rev": "dede91579",
  "counts": {
   "total": 535,
-  "osmu_done": 534,
-  "osmu_pending": 1,
+  "osmu_done": 535,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 535,
   "index_requested": 168,
@@ -15,15 +15,16 @@
    "code": "B1-12",
    "title": "미분양 아파트 취득세 25% 감면, 12월 31일까지입",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
