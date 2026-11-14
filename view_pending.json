@@ -1,12 +1,11 @@
 {
- "computed_at": "2026-11-15 04:04:16",
- "source_head": "8c8bc8349a94",
+ "computed_at": "2026-11-15 04:07:39",
+ "source_head": "6c226b9c6e0b",
  "ids": [
   "B1-12",
   "H1-41",
   "H1-42",
-  "c1-11-geon-yeonjang-check",
-  "c214-naver-date-fix"
+  "c1-11-geon-yeonjang-check"
  ],
  "posts": [
   {
@@ -40,22 +39,28 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_미분양아파트취득세감면.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_B1-12_unsold_apt.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/p/Dfu6x1Dk_kK/",
      "files": [
       {
        "label": "인스타 캡션",
        "path": "insta/캡션_미분양아파트취득세감면.txt",
        "img": false,
-       "exists": false
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "done"
     }
    }
   }
@@ -123,14 +128,6 @@
    "due": "2026-11-12",
    "cmd": "grep -c 어떤 사유로도 osmu/_live/C1-11.html",
    "state": "wait",
-   "kind": "action"
-  },
-  {
-   "id": "c214-naver-date-fix",
-   "what": "C2-14 네이버 사본(logNo 224405492563)에 9/16 조정 전 어르신 날짜(10/12·10/15·10/19) 잔존 — 블로그스팟 라이브는 정정됨",
-   "due": "2026-11-15",
-   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224405492563\" | grep -c \"10월 19일\"",
-   "state": "todo",
    "kind": "action"
   }
  ],
