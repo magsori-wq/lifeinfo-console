@@ -1,6 +1,6 @@
 {
- "rev": "7af55a0db",
- "uncommitted": 894,
+ "rev": "7ca00ab01",
+ "uncommitted": 886,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
-     "h": "7af55a0db",
+     "h": "7ca00ab01",
+     "d": "11-14 16:47",
+     "s": "[에이전트] 정비 maint1114xl: 교차링크 판정 캐시의 낡은 missing — 넣은 뒤에도 30분 동안 setgate·readycheck·loopcheck·chkmon 이 「블로그스팟 교차링크 없음」으로 오판(오늘 2회 재현) → xlinklive.invalidate·recheck 신설(blogger crosslink 삽입 직후 지우고 라이브 재측정 · naver.cmd_link 기록 시 지움) · missing TTL 30분→3분 · setgate CLI live=True(최근 4편 만료분만) · 시험·설계도 기록"
+    },
+    {
+     "h": "272b00095",
+     "d": "11-14 16:46",
+     "s": "[이과장] B2-26 초안·썸네일·pubqueue 등록 — 청약통장 소득공제 12월 선납(국세청 Q&A·국토부·재경부 원문 대조)"
+    },
+    {
+     "h": "2da741c15",
      "d": "11-14 16:45",
-     "s": "[이부장] D1-25 발행 승인 — go 도장 origin 반영"
-    },
-    {
-     "h": "37143b0c5",
-     "d": "11-14 16:35",
-     "s": "[에이전트] 정비 maint1114db 후속: 설계도 사건 기록 정정(이부장 검수) — 재시도 0.1초×20 → 코드와 같은 ×50(최대 약 5초) · 닫힘 표시 (아래 줄) → (위 줄)"
-    },
-    {
-     "h": "3378a2510",
-     "d": "11-14 16:31",
-     "s": "[에이전트] 정비 maint1114db: lifeinfo_db.txt 원자 저장 — 쓰는 곳 전수 3곳(naver._save_db·pipeline._save_db·register_post.py)이 open('w') 로 0바이트로 만든 뒤 437KB 를 써서 그 틈에 읽는 쪽이 빈/반쪽 DB 를 보던 것(11-14 15:08 gatecheck 오탐 근본 원인) → 공용 studio/dbio.save_db(같은 폴더 임시파일·fsync·os.replace·Windows PermissionError 0.1초×50 재시도·실패 시 옛 DB 유지) · 포맷 동일(LF 통일) · 설계도 남은 구멍 닫음 · 시험(동시 읽기 스레드·재시도·전수 배선)"
+     "s": "[이부장] B5-14 발행 승인 — go 도장 origin 반영"
     }
    ],
-   "last": "11-14 16:45",
+   "last": "11-14 16:47",
    "state": "active"
   },
   {
