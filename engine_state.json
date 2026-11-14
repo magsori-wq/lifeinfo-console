@@ -1,5 +1,5 @@
 {
- "at": "2026-11-14 17:26:33",
+ "at": "2026-11-14 17:30:15",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -35,24 +35,24 @@
     "code": "B5-14",
     "title": "불법사금융 신고 12월 31일까지 특별기간 — 피해자 ",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-14",
-    "last_at": "",
+    "last_at": "2026-11-14",
     "lvl": "amber"
    }
   ],
@@ -873,7 +873,7 @@
  },
  "index": {
   "requested": 166,
-  "todo": 83,
+  "todo": 85,
   "indexed": 0
  },
  "limit": {
@@ -993,8 +993,8 @@
    "who": "3.세션",
    "kind": "글감",
    "ran": true,
-   "at": "17:24",
-   "note": "🔄 이부장 재료(candidates_season) 중 #3 미분양 취득세 감면 deepread(Haiku) 투입 — naver",
+   "at": "17:28",
+   "note": "⏸ 대기 — 미분양 취득세 감면: deepread 원문 0건(law.go.kr 점검 ~11-14 21시)→감면율·요건·일몰·연",
    "today": 6,
    "order": null,
    "lvl": "ok"
@@ -1059,7 +1059,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 3,
-   "last_min": 3,
+   "last_min": 7,
    "cur": "🚀 B2-26 발행 — 청약통장 소득공제 12월에 몰아 넣어도",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -1068,7 +1068,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 901,
+   "last_min": 905,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -1113,7 +1113,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 3,
-   "last_min": 3,
+   "last_min": 7,
    "cur": "🚀 B2-26 발행 — 청약통장 소득공제 12월에 몰아 넣어도",
    "lvl": "ok"
   },
@@ -1129,7 +1129,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 901,
+   "last_min": 905,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok"
   },
@@ -1137,7 +1137,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 6,
    "cur": "17:24 점검 — 새 승인 0·이부장 새 요청 0·사장님 새",
    "lvl": "ok"
   },
@@ -1534,6 +1534,13 @@
      "who": "lee"
     },
     {
+     "code": "B5-14",
+     "title": "불법사금융 신고 12월 31일까지 특별기간 — 피해자 ",
+     "url": "https://blog.naver.com/magsori8975/224477000112",
+     "at": "2026-11-14",
+     "who": "lee"
+    },
+    {
      "code": "D1-24",
      "title": "수능 가채점표, 종료령 뒤에 쓰면 부정행위 — 시험 중",
      "url": "https://blog.naver.com/magsori8975/224476879517",
@@ -1811,10 +1818,6 @@
     {
      "code": "B2-26",
      "title": "청약통장 소득공제 12월에 몰아 넣어도 될까 — 선납 "
-    },
-    {
-     "code": "B5-14",
-     "title": "불법사금융 신고 12월 31일까지 특별기간 — 피해자 "
     }
    ]
   },
@@ -2657,6 +2660,13 @@
   },
   {
    "code": "B5-14",
+   "stage": "naver",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)",
+   "who": "lee"
+  },
+  {
+   "code": "B5-14",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -3115,12 +3125,12 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 3,
+  "state": "stale",
+  "ok": 6,
   "stale": 1,
-  "bad": 1,
-  "na": 2,
-  "at": "2026-11-14 08:25:46",
+  "bad": 0,
+  "na": 0,
+  "at": "2026-11-14 17:30:20",
   "age_min": 0
  },
  "design_signals": [
@@ -3193,7 +3203,7 @@
  "fired": [
   {
    "day": "2026-11-14",
-   "total": 157,
+   "total": 160,
    "kinds": [
     [
      "CHKMON_REPORT",
@@ -3205,7 +3215,7 @@
     ],
     [
      "ASIDE_ALERT",
-     15
+     16
     ],
     [
      "NEW_BOSS_ITEM",
@@ -3216,15 +3226,15 @@
      10
     ],
     [
+     "PUBLISH_RUN_DONE",
+     8
+    ],
+    [
+     "ASIDE_DRAFT",
+     7
+    ],
+    [
      "CONFIRM_BACKLOG",
-     7
-    ],
-    [
-     "DRAFT_READY",
-     7
-    ],
-    [
-     "FUEL_LOW",
      7
     ]
    ]
