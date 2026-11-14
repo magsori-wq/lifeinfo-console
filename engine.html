@@ -702,9 +702,12 @@ function urlsFor(code){
   TERM.forEach(([k,nm])=>{((ch[k]||{}).done||[]).forEach(x=>{if(x.code===code&&x.url&&x.url!=="#")out.push(`<a href=${hq(x.url)} target="_blank" rel="noopener">${esc(nm)} ↗</a>`)})});
   return out.join(" · ");
 }
+/* 11-14 사장님 「제휴링크 선정에서 발급현황 엔진상황실에 추가해!」 — 글별 제휴 단계(파이썬 affiliate.stage_rows 가 굽는다) */
+function affBadge(code){const a=((S&&S.affiliate)||{}).by_code||{},r=a[code];if(!r)return "";
+  const n=r.links?` ${r.stage==="live"?r.live:r.attached}/${r.links}`:"";return ` · <span class="aff aff-${r.stage}" title="제휴 ${esc(r.label)}">${r.icon} 제휴 ${esc(r.label)}${n}</span>`}
 function rowHtml(x,extra){
   const u=urlsFor(x.code);
-  return `<li class="${x.lvl==="red"?"rd":x.lvl==="amber"?"am":""}" data-code="${esc(x.code)}"><span class="c">${esc(x.code)}</span> ${esc(x.title||"")}<div class="w">${esc(x.who||"")}${extra||""}${x.min!=null?` · <span class="m" data-min="${x.min}">경과 ${fmtMin(x.min)}</span>`:""}</div>`+
+  return `<li class="${x.lvl==="red"?"rd":x.lvl==="amber"?"am":""}" data-code="${esc(x.code)}"><span class="c">${esc(x.code)}</span> ${esc(x.title||"")}<div class="w">${esc(x.who||"")}${extra||""}${affBadge(x.code)}${x.min!=null?` · <span class="m" data-min="${x.min}">경과 ${fmtMin(x.min)}</span>`:""}</div>`+
    `<div class="dtl"><b>${esc(x.code)}</b> · ${esc(x.title||"")} <a class="apo" href=${hq("approval.html#c-"+x.code)}>🖊 결재함에서 보기</a><br>누가: ${esc(x.who||"-")}<br>상태: ${x.lvl==="red"?"🚨 멈춤":x.lvl==="amber"?"⚠ 지연":"정상 진행"}${x.min!=null?" · 서 있은 지 "+fmtMin(x.min):""}${u?"<br>게시된 곳: "+u:"<br>게시된 곳: 아직 없음"}</div></li>`}
 function renderText(s,g){
   const k=s.kpi||{},tw=s.tower||{},as=s.aside||{},cnt=k.incidents_by_code||{},inc=(s.incidents||[]).length;
@@ -713,7 +716,9 @@ function renderText(s,g){
    `<span class="${k.boss_wait?"am":"ok"}">결재 대기 <b>${k.boss_wait||0}</b></span>`+
    `<span class="${inc?(cnt[0]||cnt[1]?"rd":"am"):"ok"}">열린 사건 <b>${inc}</b></span>`+
    `<span class="${tw.age_min==null||tw.age_min>=15?"rd":tw.age_min<5?"ok":"am"}">감시 <b>${tw.age_min==null?"?":(tw.age_min<5?"생존":tw.age_min+"분")}</b></span>`+
-   `<span class="${as.lvl==="red"?"rd":as.lvl==="amber"?"am":"ok"}">Aside <b>${as.busy?"일함":(as.lvl==="red"?"멈춤":"대기")}</b></span>`;
+   `<span class="${as.lvl==="red"?"rd":as.lvl==="amber"?"am":"ok"}">Aside <b>${as.busy?"일함":(as.lvl==="red"?"멈춤":"대기")}</b></span>`+
+   (()=>{const m=((s.affiliate||{}).summary)||{};if(m.links==null)return "";
+     return `<span class="${m.unattached?"rd":"ok"}" title="제휴 링크 발급 ${m.links}개(${m.posts_issued||0}편) · 원고에 안 붙은 링크 ${m.unattached}개 · 라이브(네이버) 확인 ${m.live_posts||0}편">제휴 발급 <b>${m.links}</b> · 원고 미부착 <b>${m.unattached}</b> · 라이브 <b>${m.live_posts||0}편</b></span>`})();
   const open=new Set([...document.querySelectorAll("#steps li.open")].map(e=>e.dataset.code));
   const sec=(id,n,t,a,fn,empty)=>`<h3 id="st-${id}">${n} ${t}<span class="n">${a.length}</span></h3><ul id="ul-${id}">${a.length?a.map(fn).join(""):`<li class="empty">${empty||"비어 있음"}</li>`}</ul>`;
   document.getElementById("steps").innerHTML=
