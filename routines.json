@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-15 07:11",
+ "generated": "2026-11-15 08:06",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/14 23:04",
-   "next": "11/15 08:00",
+   "last": "11/15 08:05",
+   "next": "11/15 11:00",
    "model": "sonnet-5-5",
-   "report_day": "1114",
-   "report": "11-14 20시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 새 중요 메일 없음(구글 피드백 답·GSC·애드센스 11-14 신규 0, 기보고: GSC 색인문제 해결됨 11-12). 11-13 콘솔 정합성 검사 연속 실패 약 20통은 11-14 push 3회 success 로 해소 확인. gmailread scan 은 개인정보 플러그인이 차단해 커넥터 조회로 대체(aroma 전달 0건).",
+   "report_day": "1115",
+   "report": "11-15 08시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(API, 7차 반려 후 11-15 재요청 대기 상태 그대로). 새 중요 메일 없음: 구글 피드백 답(help-communities)·GSC·애드센스 통지 0건(2일). GitHub 콘솔 정합성 검사 실패 통지는 11-13 01~08시(KST 아님 UTC) 19건 이후 추가 없음(기보고·무해). 구글 로그인 보안알림 11-13 20:24Z 기보고. aroma 전달 0건(평소). gmailread 리더는 개인정보 플러그인이 막아 이번 회차 미실행 — 커넥터 조회만 수행",
    "runs": [
+    {
+     "at": "11/15 08:06",
+     "link": "claude://claude.ai/epitaxy/local_9fcad7b9-14d4-48ba-9a9a-945ae51e17ee",
+     "archived": false
+    },
     {
      "at": "11/14 23:06",
      "link": "claude://claude.ai/epitaxy/local_db3ad0ac-cd76-42e3-935c-983d737d8762",
@@ -30,11 +35,6 @@
     {
      "at": "11/14 14:06",
      "link": "claude://claude.ai/epitaxy/local_cf69a4f8-5119-4909-9120-b6450cebe090",
-     "archived": false
-    },
-    {
-     "at": "11/14 11:06",
-     "link": "claude://claude.ai/epitaxy/local_211b90e3-c7f8-4149-96c3-86a36c76d8cf",
      "archived": false
     }
    ]
