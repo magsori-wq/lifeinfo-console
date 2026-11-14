@@ -31148,7 +31148,7 @@
   {
    "id": "xlink-h141",
    "added": "2026-11-15",
-   "what": "🔗 H1-41 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-41",
+   "what": "🔗 H1-41 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-41",
    "due": "2026-11-15",
    "cmd": "python studio/blogger.py crosslink --code H1-41",
    "owner": "claude",
@@ -31164,6 +31164,46 @@
    "owner": "claude",
    "state": "wait",
    "by": "3.분석"
+  },
+  {
+   "id": "verify-h141-1115",
+   "added": "2026-11-15",
+   "what": "H1-41 완료보고 검수",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.setgate",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "gsc-retry-h141-1115",
+   "added": "2026-11-15",
+   "what": "H1-41 GSC 색인요청 — 11-15 04:58 「일일 할당량 초과」로 미요청. 2시간 간격 재시도(성공 문구 확인 뒤 gsc_log add H1-41)",
+   "due": "2026-11-15",
+   "cmd": "python data/_gsc_req.py https://lifeinfo8975.blogspot.com/2026/11/94650mgkg-104-12.html --request",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "gsc-h141-1115",
+   "added": "2026-11-15",
+   "what": "H1-41 GSC 색인요청 기록 없음(검수 05:00) — 이과장 완료보고와 불일치. 두 번째 재발(B5-14 선례): 4채널 완료 보고 전 색인요청 기록 grep 를 자체 확인에 넣을 것",
+   "due": "2026-11-15",
+   "cmd": "grep -c 94650mgkg-104-12 webapp/gsc_requested.json _gsc_requested.txt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "gsc-h141-retry-1115",
+   "added": "2026-11-15",
+   "what": "H1-41(와 B5-14 이후 미요청분) GSC 색인 생성 요청 — 05:01 「일일 할당량 초과」. 정책: 내일로 미루지 않고 2시간 간격 재시도(할당량은 일정하지 않음, 시간이 지나면 다시 받아질 때가 있음 — 10-22 사장님). 07:00 이후 이과장이 재시도하고 gsc_log add",
+   "due": "2026-11-15",
+   "cmd": "grep -c 94650mgkg-104-12 webapp/gsc_requested.json _gsc_requested.txt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
