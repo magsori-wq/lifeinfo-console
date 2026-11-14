@@ -30968,9 +30968,11 @@
    "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-DG-014_스위치2SelectOne세트계산.html\"",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
+   "state": "done",
    "by": "세션:cacd0e24",
-   "preview": "aromapv_AM-DG-014.html"
+   "preview": "aromapv_AM-DG-014.html",
+   "done_at": "2026-11-15",
+   "result": "사장님 채팅 「승인: aroma-am-dg-014-approve-1114 (권고】AM-DG-014 「닌텐도 스위치2 가격 ) (폰 탭 03:51)」 03:51 — 이부장 회수 · 폰 승인 회수(이부장 CLI)"
   },
   {
    "id": "aroma-am-sp-020-approve-1114",
@@ -31049,6 +31051,16 @@
    "owner": "user",
    "state": "todo",
    "kind": "approve",
+   "by": "이부장"
+  },
+  {
+   "id": "v0re-h142-1115",
+   "added": "2026-11-15",
+   "what": "H1-42 수정분 V0 차이 재검사",
+   "due": "2026-11-15",
+   "cmd": "python -m studio.v0check list",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
