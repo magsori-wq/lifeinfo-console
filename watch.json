@@ -31182,8 +31182,10 @@
    "due": "2026-11-15",
    "cmd": "python data/_gsc_req.py https://lifeinfo8975.blogspot.com/2026/11/94650mgkg-104-12.html --request",
    "owner": "claude",
-   "state": "wait",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-11-15",
+   "result": "13:0x H1-41 색인 생성 요청됨 확인(할당량 해소)"
   },
   {
    "id": "gsc-h141-1115",
@@ -31434,18 +31436,30 @@
    "due": "2026-11-15",
    "cmd": "python data/_gsc_req.py https://lifeinfo8975.blogspot.com/2026/11/12-20-2021-12-31.html --request",
    "owner": "claude",
-   "state": "wait",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-11-15",
+   "result": "13:0x D1-26·H1-41·B4-35 색인 생성 요청됨 확인"
   },
   {
    "id": "xlink-b435",
    "added": "2026-11-15",
-   "what": "🔗 B4-35 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-35",
+   "what": "🔗 B4-35 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-35",
    "due": "2026-11-15",
    "cmd": "python studio/blogger.py crosslink --code B4-35",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "lh-gochang-notice-1120",
+   "added": "2026-11-15",
+   "what": "LH청약플러스 고양창릉 S-2BL 지분적립형 입주자모집공고(공고일·접수일·자격) 게시 확인 — B2-27 발행 전 필수, 공고 나오면 날짜 반영",
+   "due": "2026-11-20",
+   "cmd": "ls docs/source_deep_scan29_A_20261115.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
