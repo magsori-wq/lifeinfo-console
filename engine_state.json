@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15 16:41:17",
+ "at": "2026-11-15 16:44:18",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,24 +11,24 @@
     "code": "F1-22",
     "title": "대만 입국신고서 입국 7일 전부터 — 종이 신고서 폐지",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-15",
-    "last_at": "",
+    "last_at": "2026-11-15",
     "lvl": "amber"
    }
   ],
@@ -1049,7 +1049,7 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 4,
-   "last_min": 47,
+   "last_min": 50,
    "cur": "🛠 라이브 기존 글 정정 4묶음(사장님 10-19 22:16 ",
    "lvl": "amber",
    "role": "②처리·④발행 운전"
@@ -1058,7 +1058,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 189,
+   "last_min": 193,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -1103,7 +1103,7 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 4,
-   "last_min": 47,
+   "last_min": 50,
    "cur": "🛠 라이브 기존 글 정정 4묶음(사장님 10-19 22:16 ",
    "lvl": "amber"
   },
@@ -1111,7 +1111,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 73,
+   "last_min": 76,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -1119,7 +1119,7 @@
    "who": "4.세션",
    "state": "대기(상시 업무만)",
    "jobs": 1,
-   "last_min": 189,
+   "last_min": 193,
    "cur": "🎯 4. 애드센스 — 구글이 우리 글을 어떻게 보는가(측정·해",
    "lvl": "ok"
   },
@@ -1127,7 +1127,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 77,
+   "last_min": 80,
    "cur": "15:24 점검 — 새 승인 0·이부장 새 요청 0·사장님 새",
    "lvl": "ok"
   },
@@ -1532,6 +1532,13 @@
      "who": "lee"
     },
     {
+     "code": "F1-22",
+     "title": "대만 입국신고서 입국 7일 전부터 — 종이 신고서 폐지",
+     "url": "https://blog.naver.com/magsori8975/224477976763",
+     "at": "2026-11-15",
+     "who": "lee"
+    },
+    {
      "code": "F3-14",
      "title": "일본 출국세 3,000엔 — 7월 1일부터 1,000엔",
      "url": "https://blog.naver.com/magsori8975/224477806494",
@@ -1791,12 +1798,7 @@
      "who": "aside"
     }
    ],
-   "wait": [
-    {
-     "code": "F1-22",
-     "title": "대만 입국신고서 입국 7일 전부터 — 종이 신고서 폐지"
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -2660,6 +2662,13 @@
   },
   {
    "code": "F1-22",
+   "stage": "naver",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)",
+   "who": "lee"
+  },
+  {
+   "code": "F1-22",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -3092,12 +3101,12 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 5,
+  "state": "stale",
+  "ok": 6,
   "stale": 1,
-  "bad": 1,
+  "bad": 0,
   "na": 0,
-  "at": "2026-11-15 16:40:27",
+  "at": "2026-11-15 16:44:13",
   "age_min": 0
  },
  "design_signals": [
@@ -3170,7 +3179,7 @@
  "fired": [
   {
    "day": "2026-11-15",
-   "total": 303,
+   "total": 304,
    "kinds": [
     [
      "TOWER_OWED",
@@ -3197,12 +3206,12 @@
      10
     ],
     [
-     "WAKE_SESSION",
+     "PUBLISH_RUN_DONE",
      8
     ],
     [
-     "ASIDE_DRAFT",
-     7
+     "WAKE_SESSION",
+     8
     ]
    ]
   },

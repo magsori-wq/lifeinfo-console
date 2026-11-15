@@ -2,8 +2,8 @@
  "rev": "7b7f7d82c",
  "counts": {
   "total": 542,
-  "osmu_done": 541,
-  "osmu_pending": 1,
+  "osmu_done": 542,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 542,
   "index_requested": 167,
@@ -15,15 +15,16 @@
    "code": "F1-22",
    "title": "대만 입국신고서 입국 7일 전부터 — 종이 신고서 폐지",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
