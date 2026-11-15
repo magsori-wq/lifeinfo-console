@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-15 18:32",
+ "generated": "2026-11-15 20:14",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/15 14:05",
-   "next": "11/15 20:00",
+   "last": "11/15 20:05",
+   "next": "11/16 08:00",
    "model": "sonnet-5-5",
    "report_day": "1115",
-   "report": "11-15 08시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(API, 7차 반려 후 11-15 재요청 대기 상태 그대로). 새 중요 메일 없음: 구글 피드백 답(help-communities)·GSC·애드센스 통지 0건(2일). GitHub 콘솔 정합성 검사 실패 통지는 11-13 01~08시(KST 아님 UTC) 19건 이후 추가 없음(기보고·무해). 구글 로그인 보안알림 11-13 20:24Z 기보고. aroma 전달 0건(평소). gmailread 리더는 개인정보 플러그인이 막아 이번 회차 미실행 — 커넥터 조회만 수행\n▸ 11:05 11-15 11시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려 상태, 11-15 재요청은 별도 지시). 새 중요 메일 없음(2일창: 구글/AdSense/GSC/Anthropic/help-communities 0건). GitHub lifeinfo-console 정합성 검사 실패 17건(11-13 03~08시 UTC, 이후 없음 — 11-13 몰림·재발 없음). 구글 로그인 보안알림 11-13 20:24 Windows 새 로그인(기보고류). magsori8975·aroma8975 전달분: 8975 구글뉴스 2건·복구메일 사본 1건, aroma 0건(평소). 점검기록: gmailread.py 리더는 privacy 훅이 거부해 미실행(커넥터 조회만).\n▸ 14:06 11-15 14시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY(검토·준비 중, adsense.py 실측). 11-15 11시 이후 새 중요 메일 0건(커넥터 2d·7d 조회). 기보고: 구글 커뮤니티 답 11-08(PE 2건), GSC 색인문제 해결 11-09·11-12, 콘솔 정합성 검사 실패 11-13 9건→11-15 최근 run 전부 success. 8975 전달분 3건(뉴스·보안알림 일반), aroma8975 0건. 점검: gmailread.py 는 개인정보 훅이 거부해 못 돌림(커넥터로 대체).",
+   "report": "11-15 20시 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 GETTING_READY. 새 중요 메일 없음(help-communities·GSC·애드센스·Anthropic 0건). 보안알림 Windows 새 로그인 2건(11-13·11-15, 이전과 동일 패턴), GitHub sudo 코드 1건(11-14), 8975 전달=구글뉴스·보안사본, aroma8975 0건. gmailread scan 은 권한 정책으로 거부돼 커넥터로 대체.",
    "runs": [
+    {
+     "at": "11/15 20:07",
+     "link": "claude://claude.ai/epitaxy/local_0a84c383-026f-4542-b714-8289a643c707",
+     "archived": false
+    },
     {
      "at": "11/15 14:06",
      "link": "claude://claude.ai/epitaxy/local_b0391271-1f86-4655-8c5d-7ba75bc7344b",
@@ -30,11 +35,6 @@
     {
      "at": "11/14 23:06",
      "link": "claude://claude.ai/epitaxy/local_db3ad0ac-cd76-42e3-935c-983d737d8762",
-     "archived": true
-    },
-    {
-     "at": "11/14 20:06",
-     "link": "claude://claude.ai/epitaxy/local_5c6eaca9-3acf-407d-a40b-8ea23f55f689",
      "archived": true
     }
    ]
