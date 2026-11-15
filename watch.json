@@ -31312,8 +31312,10 @@
    "due": "2026-11-15",
    "cmd": "docs/source_D1-26_20261115.md 확인",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-15",
+   "result": "확정 ①②③⑤(법령 원문·시행령 36785호/법 21580호 시행 2026-10-29) · ④ 부분(작년 보도자료만, 올해 안내 미발표 범위 내). docs/source_D1-26_20261115.md"
   },
   {
    "id": "v0-d126-1115",
@@ -31322,8 +31324,10 @@
    "due": "2026-11-15",
    "cmd": "python -m studio.v0check gate --code D1-26",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-15",
+   "result": "V0 PASS 도장 확인(v0check gate)"
   },
   {
    "id": "deploy-thumb-523",
@@ -31334,6 +31338,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "d126-2027-notice-recheck-1127",
+   "added": "2026-11-15",
+   "what": "D1-26 미확보: 2027학년도 교육부 취학통지·예비소집 안내(정부24 발급 시작일·우편송부 시작일·시도별 예비소집). 시도: 교육부 보도자료 목록 p1~3(10-29~11-15)·함께학교 정책알림 목록·정책브리핑 보도자료 p1·go.kr 한정 WebSearch → 모두 2027학년도분 0건(작년 보도 11-26). DRF OC=test 는 사용자검증 실패. 교육부 보도자료 form.submit 검색 불가",
+   "due": "2026-11-27",
+   "cmd": "python tools/aside_read.py \"https://www.moe.go.kr/boardCnts/listRenew.do?boardID=294&m=020402&s=moe\" --frames --max 4000 (page=2 포함) 에서 「2027학년도 초등학교 취학통지」 제목 확인 후 korea.kr 보도자료 문서뷰어로 원문, docs/source_D1-26_20261115.md §4 갱신",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "finincome-tax-bill-1202",
+   "added": "2026-11-15",
+   "what": "금융소득종합과세·고배당 분리과세 — 2026 세제개편안(분리과세 '27.1.1 이후 지급 배당분) 국회 통과 여부 + 소득세법 제55조 세율표·지방소득세 15.4%·제17조③ 배당가산 2026 지급분 확인. 통과·확정되면 후보(B4 레인), 안 상태면 글 금지",
+   "due": "2026-12-03",
+   "cmd": "ls docs/source_deep_scan26_B_20261115.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
   }
  ]
 }
