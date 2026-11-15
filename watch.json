@@ -31745,6 +31745,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "weekly-limit-release-1119",
+   "added": "2026-11-15",
+   "what": "주간 한도 절약 해제 — 11-19 01:00 KST 초기화 뒤: 루틴 4·5·8·9·10 다시 켜기, 1번 메일 브리핑 08·11·14·17·20·23 복구(cron 0 8,11,14,17,20,23 * * *), 세션정체점검 크론 복구, wklimit1115 해제 지시(사장님 11-15 목요일까지 쓰게)",
+   "due": "2026-11-19",
+   "cmd": "python -m studio.routines",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
