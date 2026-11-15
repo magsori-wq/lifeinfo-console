@@ -31700,6 +31700,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "lf2-g319-festival-ended-1116",
+   "added": "2026-11-15",
+   "what": "G3-19 양산국화축제 2026(10/30~11/15)은 11-15 마지막 날 — 11-16 이후 라이브 상단에 「행사 종료」 안내 박스 추가(G2-05 와 같은 방식, update-post dry-run→실행→getByPath 재확인)",
+   "due": "2026-11-16",
+   "cmd": "python studio/blogger.py update-post --code G3-19 --file <상단 안내 박스 넣은 본문> --dry-run (먼저 라이브 본문에서 개막·마감 문구 확인)",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
   }
  ]
 }
