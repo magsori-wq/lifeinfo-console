@@ -31394,6 +31394,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이과장"
+  },
+  {
+   "id": "d126-label-fix-1116",
+   "added": "2026-11-15",
+   "what": "D1-26 라이브 상단 박스 라벨 「…2027학년도 취학」 뒤 큰 글씨 「취학통지…」로 이어져 어색(사실 오류 아님·이과장 12:27 발견) — 라이브 수정은 dry-run·미리보기·사장님 go 필요, 다른 정정과 묶어 판단",
+   "due": "2026-11-16",
+   "cmd": "curl -s https://lifeinfo8975.blogspot.com/2026/11/12-20-2021-12-31.html | grep -o 'class=\"lab\">[^<]*'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
