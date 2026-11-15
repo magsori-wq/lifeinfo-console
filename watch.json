@@ -31690,6 +31690,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "a205-boost-nuri-1116",
+   "added": "2026-11-15",
+   "what": "A2-05(문화누리카드 총정리) 보강 후보 — 라이브 본문에 없는 「잔액은 국가로 자동 반납·이월 안 됨, 본인충전금은 카드사 환불」 한 문단(원문 docs/source_deep_scan31_A_20261115.md S4). 발급 마감 11-30(D-15)이라 시의성 있음. 문체부 시행계획 원문은 못 읽은 상태 → 출처 재확인 후 라이브 수정은 dry-run·미리보기·사장님 go 절차(결재 카드 【권고】【근거】【위험】)",
+   "due": "2026-11-16",
+   "cmd": "python -m studio.dupcheck 문화누리카드 && grep -c 이월 docs/source_deep_scan31_A_20261115.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
