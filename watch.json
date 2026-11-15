@@ -31563,8 +31563,20 @@
    "due": "2026-11-15",
    "cmd": "python -m studio.v0check gate --code B2-27",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-15",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "fix-b227-v0-1115",
+   "added": "2026-11-15",
+   "what": "B2-27 V0 반려 4곳 수정(108행 124만원 임차인 비교로 정정·상대표현·79만원 재산정 문장·사례3/7절 한계). 수정 후 heading/layout 확인, 커밋 안 함",
+   "due": "2026-11-15",
+   "cmd": "git diff --stat -- 고양창릉지분적립형분양12월_글_HTML.txt && python -m studio.heading 고양창릉지분적립형분양12월_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
