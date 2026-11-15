@@ -31408,12 +31408,34 @@
   {
    "id": "xlink-d126",
    "added": "2026-11-15",
-   "what": "🔗 D1-26 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-26",
+   "what": "🔗 D1-26 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-26",
    "due": "2026-11-15",
    "cmd": "python studio/blogger.py crosslink --code D1-26",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "source-f314-1115",
+   "added": "2026-11-15",
+   "what": "F3-14 일본 출국세 3000엔 1차출처 재확인(e-Gov 법령·재무성·국세청·관광청·JNTO). 진행 중",
+   "due": "2026-11-15",
+   "cmd": "docs/source_F3-14_20261115.md 확인",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-15",
+   "result": "F3-14 1차 출처 재확인 완료: docs/source_F3-14_20261115.md (확정·시행중. 미확득: 승객환급규정 원문없음·외교부/JNTO한국어)"
+  },
+  {
+   "id": "gsc-retry-d126-1115",
+   "added": "2026-11-15",
+   "what": "D1-26 GSC 색인요청 12:5x 일일 할당량 초과 — 2시간 간격 재시도(H1-41과 함께), 성공 문구 확인 뒤 gsc_log add",
+   "due": "2026-11-15",
+   "cmd": "python data/_gsc_req.py https://lifeinfo8975.blogspot.com/2026/11/12-20-2021-12-31.html --request",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
   }
  ]
 }
