@@ -1,40 +1,64 @@
 {
- "computed_at": "2026-11-16 15:09:44",
- "source_head": "bb7ecb9a63b6",
+ "computed_at": "2026-11-16 07:31:00",
+ "source_head": "3d964dfed2fb",
  "ids": [
   "D2-21",
+  "aroma-bo-structure-review-1112",
   "c1-11-geon-yeonjang-check"
  ],
- "posts": [],
- "publish": [
+ "posts": [
   {
    "code": "D2-21",
    "title": "교통 과태료 고지서 11월 18일부터 카카오톡·PASS로 — 24시간 안 열면 PASS, 또 안 열면 종이",
-   "go": false,
-   "v0": "pass",
-   "files": [
-    {
-     "label": "초안 교통과태료전자고지카카오PASS_글_HTML.txt",
-     "path": "교통과태료전자고지카카오PASS_글_HTML.txt",
-     "img": false,
-     "exists": true
+   "slug": "교통과태료전자고지카카오PASS",
+   "eng": "traffic_fine_notice",
+   "ch": {
+    "naver": {
+     "url": null,
+     "files": [
+      {
+       "label": "네이버 원고",
+       "path": "osmu/네이버용_교통과태료전자고지카카오PASS.txt",
+       "img": false,
+       "exists": false
+      },
+      {
+       "label": "첨부 이미지",
+       "path": "thumbs_naver/530_traffic_fine_notice.png",
+       "img": true,
+       "exists": true
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일",
-     "path": "thumbs/530_traffic_fine_notice.png",
-     "img": true,
-     "exists": true
+    "threads": {
+     "url": null,
+     "files": [
+      {
+       "label": "쓰레드 캡션",
+       "path": "osmu/쓰레드용_교통과태료전자고지카카오PASS.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     },
-    {
-     "label": "썸네일(네이버)",
-     "path": "thumbs_naver/530_traffic_fine_notice.png",
-     "img": true,
-     "exists": true
+    "instagram": {
+     "url": null,
+     "files": [
+      {
+       "label": "인스타 캡션",
+       "path": "insta/캡션_교통과태료전자고지카카오PASS.txt",
+       "img": false,
+       "exists": false
+      }
+     ],
+     "light": "todo"
     }
-   ],
-   "light": "todo"
+   }
   }
  ],
+ "publish": [],
  "actions": [
   {
    "id": "c1-11-geon-yeonjang-check",
@@ -42,6 +66,14 @@
    "due": "2026-11-12",
    "cmd": "grep -c 어떤 사유로도 osmu/_live/C1-11.html",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "aroma-bo-structure-review-1112",
+   "what": "aroma 방송·OTT 카테고리 구조 재검토(이대리 상정) — ①유지·후보 방식 변경 ②다른 카테고리와 합침 ③현행 유지. 【권고】이번 주 안 결정, 루틴10 강화 재실행 결과 먼저 보고 판단 가능 【근거】11/02 이후 BO-004~007 4편 모두 같은 틀(표·공개달력·요금), 11/11·11/12 새 후보 0(넷플릭스 Top10=BO-004 틀, 공식 공개일정 화면 없음, YouTube 쿼터 소진) 【위험】합치면 템플릿·메뉴 변경(10-29 결정 번복), 유지하면 빈칸 지속",
+   "due": "2026-11-16",
+   "cmd": "type C:\\naver-blog\\aroma-mag\\루틴10_조사강화요청_20261112.md",
+   "state": "todo",
    "kind": "action"
   }
  ],
