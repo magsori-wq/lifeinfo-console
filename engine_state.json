@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16 13:03:50",
+ "at": "2026-11-16 13:16:10",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -653,8 +653,8 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 4,
-   "last_min": 2,
-   "cur": "🚀 D4-16 발행 — 미용실·피부관리 분쟁 상반기 898건,",
+   "last_min": 6,
+   "cur": "D4-16 4채널 후속",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
   },
@@ -701,15 +701,15 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 4,
-   "last_min": 2,
-   "cur": "🚀 D4-16 발행 — 미용실·피부관리 분쟁 상반기 898건,",
+   "last_min": 6,
+   "cur": "D4-16 4채널 후속",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 1295,
+   "last_min": 1308,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -725,7 +725,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 84,
+   "last_min": 96,
    "cur": "이부장 ack rbae480 — aroma PE-015·구조재",
    "lvl": "ok"
   },
@@ -1481,8 +1481,8 @@
   {
    "code": "D4-16",
    "stage": "insta",
-   "at": "",
-   "src": "DB osmu_at(날짜뿐)",
+   "at": "2026-11-16 13:04:29",
+   "src": "now_log 게시 URL",
    "who": "lee"
   },
   {
@@ -1719,13 +1719,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "stale",
-  "ok": 6,
-  "stale": 1,
+  "state": "ok",
+  "ok": 7,
+  "stale": 0,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-16 13:03:43",
-  "age_min": 0
+  "at": "2026-11-16 13:13:24",
+  "age_min": 2
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1797,7 +1797,7 @@
  "fired": [
   {
    "day": "2026-11-16",
-   "total": 49,
+   "total": 52,
    "kinds": [
     [
      "CHKMON_REPORT",
@@ -1805,11 +1805,19 @@
     ],
     [
      "BOSS_REMIND",
-     4
+     5
     ],
     [
      "PUBLISH_RUN_DONE",
      4
+    ],
+    [
+     "TOWER_OWED",
+     4
+    ],
+    [
+     "ASIDE_ALERT",
+     3
     ],
     [
      "BOSS_APPROVAL",
@@ -1822,14 +1830,6 @@
     [
      "ROUTINE_DONE",
      3
-    ],
-    [
-     "TOWER_OWED",
-     3
-    ],
-    [
-     "ASIDE_ALERT",
-     2
     ]
    ]
   },
