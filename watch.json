@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "items": [
   {
    "id": "intro-numbers",
@@ -31954,6 +31954,16 @@
    "preview": "aromapv_AM-SP-020u2.html",
    "done_at": "2026-11-16",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "suneung-smart-recheck-1117",
+   "added": "2026-11-17",
+   "what": "수능 스마트기기 반납·와이파이 차단은 11-16 국무조정실 「추진」 기사뿐, 평가원 공지 미갱신 — 실측 기준 ②③ PDF 는 1교시 전 제출만 명시. 신고센터 연락처 미확인",
+   "due": "2026-11-18",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://www.suneung.re.kr/main.do\" -o /dev/null -w \"%{http_code}\" && echo 공지목록 새 항목(반납·와이파이·신고센터) 확인은 Aside 로 suneung.re.kr 알림마당 공지사항을 연다",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:e863963c"
   }
  ]
 }
