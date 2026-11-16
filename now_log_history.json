@@ -6175,7 +6175,87 @@
    "title": "",
    "owner": "Aside",
    "what": "[Aside][doing] 수신 2026-11-02 12:28 — 지시 #557 B4-25 인스타 시작"
+  },
+  {
+   "ts": "2026-11-02 12:35:03",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [B4-25] #557 인스타 게시 완료. 카드 3장 순서(표지→대상판정→출산입양)·원본비율·3/3 라이브 확인. 캡션 원문 일치(830문자, UI 837자), 블로그·네이버 링크·사진출처 확인. 게시물 464→465, 중복 없음. 작업 탭 닫음, 총 탭 3개. · https://www.instagram.com/magsori8975/p/DfOWerdCSx3/"
+  },
+  {
+   "ts": "2026-11-02 12:36:01",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "✅ 루틴10 지침 수정 완료(이부장 Q1~Q3 반영, 공식출처 21곳 Aside 확인·지스타 정답 www.gstar.or.kr). 사장님 11-02: 카테고리 템플릿 글자 19/16/15 표준 적용·aroma2 지시는 카테고리 4칸 분류(지시서 반영). ⚠ aroma 프로필 네이버 로그아웃 — 11/3 게시 전 재로그인 필요"
+  },
+  {
+   "ts": "2026-11-02 12:36:18",
+   "bid": "ledger1030",
+   "code": "",
+   "title": "",
+   "owner": "4.",
+   "what": "🙋 이부장 요청: 【문제】studio/towertick.py:790-804(n%9==4 규칙)가 상시 배치 cadaily·ledger1030 을 'last_report 가 오늘 날짜로 시작하지 않음' 하나만 보고 매일 12시 이후 WAKE_SESSION 을 낸다. 지시서가 갱신되지 않고(ledger1030 은 10-30 13:57 그대로·3일째) 항목이 전부 done+confirmed_at 인데도 매일 깨워서 '없음' 보고만 반복(10-31·11-01·11-02 실측 3회) = 토큰 낭비. 같은 파일 278행은 '상시' 제목을 정체 판정에서 빼는데 790행은 상시만 잡아 서로 엇갈린다. 【수정 요청】①설계도(docs/엔진설계도.md)에 이 깨움 마디를 먼저 적고 ②790행 규칙에 조건 추가: 배치 items 가 전부 done 이고 confirmed_at 이 있고 order_at 이후 새 지시가 없으면 WAKE_SESSION 을 내지 않는다(새 지시서 발급=order_at 변경 시 자동 재개) ③cadaily 도 같은 조건(단 cadaily 는 매일 데이터 갱신 일감이라 items 가 done 으로 닫히는지 먼저 확인) ④고친 뒤 enginemap 대조·테스트. 【제 쪽 한계】towertick 은 이부장 관할이라 4. 가 직접 수정하지 않음. 【대안】수정이 어렵다면 이부장이 상시 지시서를 매일 재발급(수작업 증가)"
+  },
+  {
+   "ts": "2026-11-02 12:36:44",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-02 12:36 — 지시 #558 B4-25 쓰레드 시작"
+  },
+  {
+   "ts": "2026-11-02 12:38:10",
+   "bid": "pub1102b425",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ (naver-link 가 자동 보고) · 남음: 쓰레드"
+  },
+  {
+   "ts": "2026-11-02 12:38:17",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #557 B4-25 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfOWerdCSx3/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ child_tax_credit_01.png  MAD 0.0 · dHas / ✅ 인스타 카드 2 ↔ child_tax_credit_02.png  MAD 0.1 · dHas / ✅ 인스타 카드 3 ↔ child_tax_credit_03.png  MAD 0.1 · dHas) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인"
+  },
+  {
+   "ts": "2026-11-02 12:38:48",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [B4-25] #558 쓰레드 게시 완료 — 본문 원문 일치(353자+끝개행), 실사진 1장·사진출처·블로그/네이버 링크 확인. 자동 링크카드 2개 닫음. 새로 연 실제 URL HTTP 200 확인. 작업 탭 닫음, 총 탭 3개. · https://www.threads.com/@magsori8975/post/DfOW-ragVea"
+  },
+  {
+   "ts": "2026-11-02 12:39:21",
+   "bid": "ledger1030",
+   "code": "",
+   "title": "",
+   "owner": "4.",
+   "what": "이부장 반영 12:45 (ba81e06f5): 설계도 WD 마디 + towertick.standing_settled — 항목 전부 done·confirmed_at≥order_at 이면 일일 WAKE 생략(ledger1030 True·cadaily False 실측). 새 지시서 발급 시 자동 재개. 4. 제안 ①②④ 반영, ③ cadaily 는 todo 상시라 그대로"
+  },
+  {
+   "ts": "2026-11-02 12:40:07",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #558 B4-25 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfOW-ragVea · ✅ 쓰레드 이미지 ↔ thread_B4-25_child_tax_credit.png  MAD 0) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인"
+  },
+  {
+   "ts": "2026-11-02 12:42:40",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #559 수신 — B4-25 색인 요청 시작"
   }
  ],
- "updated": "2026-11-16 12:31:24"
+ "updated": "2026-11-16 12:42:42"
 }
