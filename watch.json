@@ -31992,8 +31992,20 @@
    "due": "2026-11-17",
    "cmd": "python -m studio.v0check gate --code C2-28",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-17",
+   "result": "V0 통과로 해소 — 검사자 v0 · 재검사(diff): 바이라인 11월 16일로 정정해 본문과 일치, S2 현행 수수료 단정 제거, S4·S6 보호자 온라인 신청 여부를 원문 구분 불명확으로 정리(서식 대리인=친권자 등 법정대리인 vs 제9조의2 신청"
+  },
+  {
+   "id": "fix-c228-source-0117",
+   "added": "2026-11-17",
+   "what": "C2-28 원고 3곳 정정(byline 11-16 배포일·S2 현행 수수료 언급 없음·S4/S6 보호자 대리 신청 충돌 정리). 커밋 안 함. 남은 것: 이부장 확인·커밋",
+   "due": "2026-11-18",
+   "cmd": "grep -c '11월 16일 정책브리핑' C:/lifeinfo/학생건강기록부정부24발급출석인정_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
