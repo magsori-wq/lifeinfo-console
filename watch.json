@@ -31835,6 +31835,27 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "card-point-local-currency-pressrelease-1116",
+   "added": "2026-11-16",
+   "what": "카드포인트 지역화폐 전환 추진방안(2026.11.13 정책브리핑): 국무조정실 원 보도자료 본문·첨부 미확보 — korea.kr pressReleaseView 가 오류 페이지(WebFetch 삭제 안내 · curl 200 33KB). 기발행 E2-10 과 주제 중복(조건부)",
+   "due": "2026-12-15",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://www.korea.kr/briefing/pressReleaseView.do?newsId=148975668\" | grep -c 삭제되었거나",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1116,
+   "by": "세션:0f5632a2"
+  },
+  {
+   "id": "wolgup-seebeob-kukhoe-1116",
+   "added": "2026-11-16",
+   "what": "월급방위대 세법 3건(월세 1200·EITC 맞벌이 5200/360·부양가족 300) 국회 통과 여부 미확인 — 정부안 2026.8.3 확정·발표, 적용 27.1.1 이후 / 모두의카드 2027 예산안 원문 미확보 / 기발행 B4-22·A1-03·B4-24·D5-06 과 주제 중복",
+   "due": "2026-12-02",
+   "cmd": "python tools/aside_read.py \"https://likms.assembly.go.kr/bill/main.do\" --wait 6 --max 4000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:0f5632a2"
   }
  ]
 }
