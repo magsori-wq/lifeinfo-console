@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16 12:42:36",
+ "at": "2026-11-16 12:46:10",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -9,7 +9,7 @@
    {
     "code": "D4-16",
     "title": "🔄 발행 중 · 미용실·피부관리 분쟁 상반기 898건, 전년",
-    "min": 15,
+    "min": 18,
     "lvl": "ok"
    }
   ],
@@ -18,20 +18,19 @@
     "code": "E4-16",
     "title": "홈캠 영상 유출 가능성, 10개 중 3개 '미흡' — ",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
     "who": {
-     "naver": "lee"
+     "naver": "lee",
+     "insta": "lee"
     },
     "plan": {
-     "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-16",
@@ -641,8 +640,8 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 3,
-   "cur": "E4-16 4채널 후속",
+   "last_min": 2,
+   "cur": "🚀 E4-16 발행 — 홈캠 영상 유출 가능성, 10개 중 3",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
   },
@@ -689,15 +688,15 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 3,
-   "cur": "E4-16 4채널 후속",
+   "last_min": 2,
+   "cur": "🚀 E4-16 발행 — 홈캠 영상 유출 가능성, 10개 중 3",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 1274,
+   "last_min": 1278,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -713,7 +712,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 62,
+   "last_min": 66,
    "cur": "이부장 ack rbae480 — aroma PE-015·구조재",
    "lvl": "ok"
   },
@@ -1071,6 +1070,13 @@
   "insta": {
    "done": [
     {
+     "code": "E4-16",
+     "title": "홈캠 영상 유출 가능성, 10개 중 3개 '미흡' — ",
+     "url": "https://www.instagram.com/p/Dfya4j6EfiM/",
+     "at": "2026-11-16",
+     "who": "lee"
+    },
+    {
      "code": "B1-12",
      "title": "미분양 아파트 취득세 25% 감면, 12월 31일까지입",
      "url": "https://www.instagram.com/p/Dfu6x1Dk_kK/",
@@ -1211,12 +1217,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "E4-16",
-     "title": "홈캠 영상 유출 가능성, 10개 중 3개 '미흡' — "
-    }
-   ]
+   "wait": []
   },
   "threads": {
    "done": [
@@ -1421,6 +1422,13 @@
   {
    "code": "E4-16",
    "stage": "naver",
+   "at": "2026-11-16 12:43:56",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
+   "code": "E4-16",
+   "stage": "insta",
    "at": "",
    "src": "DB osmu_at(날짜뿐)",
    "who": "lee"
@@ -1655,13 +1663,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 6,
+  "state": "ok",
+  "ok": 7,
   "stale": 0,
-  "bad": 1,
+  "bad": 0,
   "na": 0,
-  "at": "2026-11-16 12:40:29",
-  "age_min": 2
+  "at": "2026-11-16 12:46:19",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
