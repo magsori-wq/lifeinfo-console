@@ -32017,6 +32017,47 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:71449a25"
+  },
+  {
+   "id": "gift1000-tax-dup-1117",
+   "added": "2026-11-17",
+   "what": "증여세 1000만원 후보 주제중복(B4-01·B4-09), 원문 영상페이지 금액 없음, 상증법 제26조 세율표 미확보",
+   "due": "2026-11-18",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"부모님께 받은 1,000만 원 증여세\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:71449a25"
+  },
+  {
+   "id": "yearend-correction-notice-2027",
+   "added": "2026-11-17",
+   "what": "국세청 2026-11-16 카드(적극행정 우수사례) 연말정산 부양가족 공제 오류 정정 안내 — 2026 신고기간 5.1~6.1 경과, 2027 재시행 여부 원문 미표기. B4-24 보강 소재 여부 이부장 판단",
+   "due": "2027-04-30",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"연말정산 부양가족 공제 오류 정정\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:71449a25"
+  },
+  {
+   "id": "fin-income-tax-55-14-check",
+   "added": "2026-11-17",
+   "what": "금융소득 종합과세: 소득세법 제55조 세율 미확보·국세청 신고기한·NHIS 피부양자 요건 미확보·B4-35 기발행 중복",
+   "due": "2026-11-18",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://www.law.go.kr/법령/소득세법/제55조\" --frames --wait 8 --max 300000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:71449a25"
+  },
+  {
+   "id": "aside-aroma-login-1117",
+   "added": "2026-11-17",
+   "what": "【권고】aroma 프로필(c0ae104a, Lee Sanggon (aroma))의 네이버 로그인이 풀렸습니다. 11/17 09:24 MyBlog.naver 가 로그인 화면(nid.naver.com)으로 가고 Creator Advisor 도 로그인 요구. aroma99 계정으로 로그인해 주세요(아이디·비밀번호는 사장님이 직접 입력, 이대리는 입력하지 않음). 【근거】로그인 전에는 게시·라이브 수정·조회수 읽기를 모두 못 함 — 11/17 낮 BO-011 업데이트, 11/18 01:37 카타르전 결과 글이 대기. 【위험】로그인 지연 시 11/17 일정형 글 시의성 손실.",
+   "due": "2026-11-17",
+   "cmd": "로그인 완료 후 「로그인 완료」 한 줄만",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:de614107"
   }
  ]
 }
