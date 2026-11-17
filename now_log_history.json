@@ -6647,7 +6647,431 @@
    "title": "",
    "owner": "이부장",
    "what": "글감 후보 경영안정바우처 — source 확보(사용기한 12/31 확정·12/18 은 신청 잠정마감)했으나 이미 발행된 A2-27 「소상공인 경영안정 바우처 25만원 … 12월 31일 안 쓰면 국고 회수」와 같은 글 → 제외. 루틴2 dupcheck 🟢 는 질의어 차이로 놓침(watch dupcheck-miss-c216-1101 같은 유형)"
+  },
+  {
+   "ts": "2026-11-03 10:22:18",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F09 단계 1/4: batchboard rc 무시 호출부 확인 시작"
+  },
+  {
+   "ts": "2026-11-03 10:23:21",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F30 진행 12/12: 12편 모두 진짜 빔(오탐 0), 윈도우 밖 H1-31·H1-33 도 빔"
+  },
+  {
+   "ts": "2026-11-03 10:24:07",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F31 진행 6/6: 6편 모두 라이브에 교차링크 블록 없음(진짜), 결과 docs/audit1102/K_F30_F31.md"
+  },
+  {
+   "ts": "2026-11-03 10:24:29",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F24/F25 단계 1/5: 코드·재료 확인 — towertick FUEL_LOW 줄 680·fuel_decide, 3. 재료=webapp/naver_analytics.json(kwgap 읽는 원본), 마지막 보고=sessionstate fuel1030"
+  },
+  {
+   "ts": "2026-11-03 10:25:30",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F09 단계 1/4 끝: rc 무시 6곳 재현 확인(실행 위치 2곳은 stdout/stderr DEVNULL → 기록 남기기 필요) · 단계 2/4 수정 시작"
+  },
+  {
+   "ts": "2026-11-03 10:27:03",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F24/F25 단계 2/5: 설계도 — F24 새 마디 AP(APPROVE_SERVER_DOWN), F25 FW 행에 3. 깨움 생략 조건 추가"
+  },
+  {
+   "ts": "2026-11-03 10:29:01",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F27 단계 1/4: 원인 확정 — dupcheck.sig 가 공백 기준 토큰이라 「경영안정바우처」(한 낱말)↔「경영안정 바우처」(두 낱말) 교집합 0, 「코로나」↔「코로나19」도 다른 낱말"
+  },
+  {
+   "ts": "2026-11-03 10:29:08",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F09 단계 2/4 끝: asidechain·asideprobe·topicprop·pubqueue·aside_confirm.sh 수정, py_compile·bash -n OK · 단계 3/4 사본 테스트 시작"
+  },
+  {
+   "ts": "2026-11-03 10:29:26",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F24/F25 단계 3/5: 설계도 반영 끝(마디 AP 신설·FW 행 3. 깨움 생략·사건 대입 1줄) — towertick 순수함수 구현 중"
+  },
+  {
+   "ts": "2026-11-03 10:29:50",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F27 단계 2/4: 수정 — dupcheck._joins(인접 낱말 2~3개 합성) 상대 base 와 정확일치만 교집합에 추가 + SYNONYM 코로나/코로나19, falsepos 규칙 _r_dupcheck_spacing_compound_1103"
+  },
+  {
+   "ts": "2026-11-03 10:31:28",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "D3-12 발행 run 41560132424 트리거(10:30) — 완료 대기"
+  },
+  {
+   "ts": "2026-11-03 10:33:23",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F24/F25 단계 4/5: 구현 끝(server_ping·server_decide·fuel_is_remind·fuel_wake3) · enginemap 🔴0 · 실데이터 fuel_wake3=생략(11-02 12:12 빈손·재료 03:08) — 테스트 중"
+  },
+  {
+   "ts": "2026-11-03 10:35:05",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F09 단계 3/4 끝: 사본 테스트 py 40/40·sh 4경우 PASS, validate FAIL 0, test_studio_pure 139 OK · 단계 4/4 보고서"
+  },
+  {
+   "ts": "2026-11-03 10:35:17",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F09 단계 4/4 끝: 보고서 docs/audit1102/I_F09.md · 5파일+보고서 git add · watch fix-boardrc-1103 · 이부장 검토 대기"
+  },
+  {
+   "ts": "2026-11-03 10:35:31",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "D3-12 라이브 발행 완료(run 41560132424 ✓·URL 200·썸네일 200·og:title 일치) · 검색설명 Aside 대기열 등록. 다음: 네이버 원고(제휴 afflink-eyewarm1103 결재 별건)"
+  },
+  {
+   "ts": "2026-11-03 10:36:10",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F24/F25 단계 4/5: 테스트 — tests/test_studio_pure 144 OK(TestServerDecide·TestFuelWake3 신설) · validate_db FAIL 0 · enginemap 🔴0"
+  },
+  {
+   "ts": "2026-11-03 10:36:14",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F27 단계 3/4: 회귀 — 463편 자기대조 판정분포 전후 동일(new277·related139·strong47), 점수변화 1편(G3-11 🟢유지). 경영안정바우처→A2-27 🔴1.00, 75세 코로나→C2-16 🔴0.67. falsepos 🔴0, unittest 144 OK, validate FAIL 0"
+  },
+  {
+   "ts": "2026-11-03 10:36:51",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F27 단계 4/4: 보고서 docs/audit1102/L_F27.md · git add 완료(커밋 안 함)"
+  },
+  {
+   "ts": "2026-11-03 10:37:24",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F24/F25 단계 5/5: 보고서 docs/audit1102/J_F24_F25.md · watch fix-f24f25-1103 · git add 4파일 · 이부장 검토 대기"
+  },
+  {
+   "ts": "2026-11-03 10:38:21",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-03 10:35 — 지시 #566 D3-12 검색설명 시작. 최초 브라우저 Page.enable timeout 발생, 연결 점검 중"
+  },
+  {
+   "ts": "2026-11-03 10:39:05",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "Aside 지시 초안 준비: docs/aside_drafts/D3-12_네이버게시.txt · 네이버 원고(제목 29자 통과)·서식본(4767자 보존)·447n 썸네일 푸시 완료. 🙋 이부장 요청: naverrich 대조·pre-cleared 줄 넣어 등록(제휴는 기록 없음 — afflink-eyewarm1103 별건). 검색설명은 Aside 대기열에 등록됨(10:36)"
+  },
+  {
+   "ts": "2026-11-03 10:41:06",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [D3-12] #566 라이브 meta description 지정 문구 113자 정확히 일치 확인. 검색 설명만 업데이트, 본문·제목 동일. 작업 탭 2개 모두 closeTab 완료. 총 탭 9개(시작 기준), 종료 후 전체수 조회는 Page.enable timeout으로 미확인. 기존 사용자 탭 미변경. · https://lifeinfo8975.blogspot.com/2026/11/16-7.html"
+  },
+  {
+   "ts": "2026-11-03 10:42:04",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [D3-12] #566 라이브 meta description 지정 문구 113자 일치 확인. 검색 설명만 업데이트·본문/제목 동일. 작업 탭 2개 닫음. 총 탭 9개(시작 기준), 종료 전체수 조회는 Page.enable timeout으로 미확인. 기존 사용자 탭 미변경. · https://lifeinfo8975.blogspot.com/2026/11/16-7.html"
+  },
+  {
+   "ts": "2026-11-03 10:46:44",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #567 수신 — D3-12 네이버 게시 시작"
+  },
+  {
+   "ts": "2026-11-03 10:49:49",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][blocked] #567 blocked — D3-12 네이버 게시 못 함(발행·글쓰기 탭 열기 전 중단, 올린 것 0건). 원인: 안전 점검(preflight)에서 Lee 탭 「CP · 생활정보 모음」(localhost:8000, 제목 🔴(5))이 응답 없음(2회, 45초 간격, 읽기도 시간 초과). 내 탭 아님·사용자 탭이라 닫거나 새로고침 안 함. 필요: Lee가 그 CP 탭을 새로고침하거나 닫아 주면 바로 재개. 사전 점검(서식본·RSS 중복 없음·이미지 200)은 OK · 총 탭 9개"
+  },
+  {
+   "ts": "2026-11-03 10:53:10",
+   "bid": "draft1030f118",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "👤 사장님 직접 지시: F1-18 초안 시작해 · 대상 F1-18. 착수 — source 에이전트가 mofa.tour-refund.kr 신청절차·기한·왕복 처리를 Aside 로 재확인 중(병렬), 결과 오면 본문"
+  },
+  {
+   "ts": "2026-11-03 10:53:42",
+   "bid": "draft1030f118",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⚠️ F1-18 은 이미 발행·4채널 완결(블로그 2026/10/1000-2025.html, 네이버 224458524129, 10-30 04:09 커밋 1e139ba13) — 초안 재작성 안 함. 사장님 「F1-18 초안 시작해」는 낡은 지시서 표기로 보임, 새 보강·재발행 요청이면 지시 바람. 조사 에이전트 중단"
+  },
+  {
+   "ts": "2026-11-03 10:55:38",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #568 수신 — D3-12 네이버 게시 시작(#567과 같은 내용 재지시)"
+  },
+  {
+   "ts": "2026-11-03 10:59:21",
+   "bid": "draft1030f118",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⛔ 이부장 10:59 — 멈춤: F1-18 은 10-30 이미 발행·4채널 완료(https://lifeinfo8975.blogspot.com/2026/10/1000-2025.html, pub1030f118 끝남). 새 초안을 쓰면 같은 글 중복. 사장님께 의도 확인 중(정정·보강인지) — 답 전까지 본문 작성 중지"
+  },
+  {
+   "ts": "2026-11-03 11:00:13",
+   "bid": "draft1030f118",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "🏁 사장님 11:0x 답: 취소(잘못 누름) — F1-18 새 초안 쓰지 않음. 이과장 착수분(source 조사)은 파일로만 보존"
+  },
+  {
+   "ts": "2026-11-03 11:00:56",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [D3-12] #568 네이버 새 글 게시 — 제목「탄소중립포인트 가입, 16종 늘었는데 새 2종 단가는?」·카테고리 달라지는 제도·지원금(라이브 상단 표시)·전체공개·표 13개·대표 이미지 첫 블록. 발행 1회(RSS 11:00:18) · https://blog.naver.com/magsori8975/224463237038"
+  },
+  {
+   "ts": "2026-11-03 11:01:13",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [D3-12] #568 확인: 본문 4911자 서식본과 일치(편집 중 제목이 본문 앞에 한 번 섞여 들어가 삭제 후 일치 확인, 라이브 본문 첫 줄 ★ 정상)·제휴/대가성 문구 없음(지시대로)·블로그 원문 링크·함께 보면 좋은 글 링크 2개 있음·깨진 블록 없음·태그 5개는 발행 패널에서 확인 · 총 탭 7개 · https://blog.naver.com/magsori8975/224463237038"
+  },
+  {
+   "ts": "2026-11-03 11:02:09",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224463237038 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타"
+  },
+  {
+   "ts": "2026-11-03 11:02:47",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #568 D3-12 naver 확인 ✅ (naverfind --gate D3-12 → ✅ 네이버 게시 감지·기록: https://blog.naver.com/magsori8975/224463237038) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안"
+  },
+  {
+   "ts": "2026-11-03 11:03:02",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "D3-12 네이버 ✅(224463237038)·검색설명 ✅(447편) · 인스타 카드3·캡션·쓰레드 원고·실사진 완료, Aside 대기열 등록(인스타→쓰레드). 🙋 이부장: pre-cleared 대조. F1-18 취소 확인(사장님 답)"
+  },
+  {
+   "ts": "2026-11-03 11:05:47",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][blocked] #569 blocked — ②3 지정 캡션 URL은 캡션_수험표할인2026.txt이며 실제 내용도 D1-19 수능할인 835자. 탄소중립포인트 본문 및 16-7.html·224463237038 링크 둘 다 없음. 올바른 D3-12 캡션 URL로 지시서 정정 필요. 탭 미개방·게시 없음."
+  },
+  {
+   "ts": "2026-11-03 11:06:43",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-03 11:05 — 지시 #570 D3-12 쓰레드 시작·지정 본문 확인"
+  },
+  {
+   "ts": "2026-11-03 11:07:16",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][blocked] #570 blocked — ②1 본문 URL(쓰레드용_수험표할인2026.txt)의 실제 내용은 D1-19 수능할인 349자이며 D3-12 블로그/네이버 링크 없음. ③의 탄소중립포인트16종 파일명과 충돌. 또한 선행 #569 인스타 blocked·미게시. 본문 URL 정정 및 인스타 완료 후 재지시 필요. 탭 미개방·게시 없음."
+  },
+  {
+   "ts": "2026-11-03 11:08:13",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #571 수신 — D3-12 인스타 시작"
+  },
+  {
+   "ts": "2026-11-03 11:12:19",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [D3-12] #571 인스타 게시 — 카드 3장(표지→한 가지만 하면→2배 적립·32주)·캡션 770자 일치. 공유 1회, 새 프로필 탭에서 게시물 466→467·맨 위 https://www.instagram.com/p/DfQx4hLk1GG/ · https://www.instagram.com/p/DfQx4hLk1GG/"
+  },
+  {
+   "ts": "2026-11-03 11:12:25",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] #571 확인: 점 3개, 블로그(16-7)·네이버(224463237038) 링크·Pexels 출처 줄·#저장각 라이브에 있음, Threads·Facebook 동시공유 꺼짐, 제휴 문구 없음(지시대로), 지정 파일 3종 내용이 D3-12와 일치함 확인 · 총 탭 7개 · https://www.instagram.com/p/DfQx4hLk1GG/"
+  },
+  {
+   "ts": "2026-11-03 11:13:17",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #572 수신 — D3-12 쓰레드 시작"
+  },
+  {
+   "ts": "2026-11-03 11:13:50",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfQx4hLk1GG/ (naver-link 가 자동 보고) · 남음: 쓰레드"
+  },
+  {
+   "ts": "2026-11-03 11:13:55",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #571 D3-12 insta 확인 ✅ (https://www.instagram.com/p/DfQx4hLk1GG/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ carbon_point_16_01.png  MAD 0.0 · dHash / ✅ 인스타 카드 2 ↔ carbon_point_16_02.png  MAD 0.0 · dHash / ✅ 인스타 카드 3 ↔ carbon_point_16_03.png  MAD 0.1 · dHash) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인"
+  },
+  {
+   "ts": "2026-11-03 11:15:48",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] #572 쓰레드 게시 — 이미지 확인: 사진 1장 붙음·링크 카드 없음(2개 모두 닫음)·본문 339자 원문 일치(D3-12 내용 확인). 게시 1회, 새 프로필 탭에서 실제 주소 읽음·curl 200 · https://www.threads.com/@magsori8975/post/DfQyQNsgXKo"
+  },
+  {
+   "ts": "2026-11-03 11:16:26",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [D3-12] #572 확인: 링크 2개(블로그 16-7·네이버 224463237038) 앵커 대상 정확·Pexels 출처 줄 있음·제휴 문구 없음(지시대로) · 총 탭 7개 · https://www.threads.com/@magsori8975/post/DfQyQNsgXKo"
+  },
+  {
+   "ts": "2026-11-03 11:17:59",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #572 D3-12 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfQyQNsgXKo · ✅ 쓰레드 이미지 ↔ thread_D3-12_carbon_point_16.png  MAD 0.) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인"
+  },
+  {
+   "ts": "2026-11-03 11:20:42",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] #573 수신 2026-11-03 11:18 — D3-12 색인 요청 시작"
+  },
+  {
+   "ts": "2026-11-03 11:22:57",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [D3-12] #573 색인 요청 1/1건 완료 — 요청 전: Google에 아직 알려지지 않은 URL·최근 크롤링 해당사항 없음. 「색인 생성 요청됨/우선순위 크롤링 대기열 추가」 확인, 할당량 초과 없음. 유효성검사·사이트맵 미조작. 작업 탭 닫음, 총 탭7개. 보고시각 2026-11-03 11:22:57 · https://lifeinfo8975.blogspot.com/2026/11/16-7.html"
+  },
+  {
+   "ts": "2026-11-03 11:23:38",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "⚠️ 이부장 정정 11:24: #573 확인 메모의 「gsc_log 기록 확인」은 틀림 — _gsc_requested.txt 에 D3-12 URL 0건(미기록). 기록은 이과장에게 요청"
+  },
+  {
+   "ts": "2026-11-03 11:24:50",
+   "bid": "pub1103d312",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "D3-12 GSC 색인요청 기록 완료 — gsc_log.py add D3-12 로 _gsc_requested.txt 489행 16-7.html 추가(총 320건), 커밋·푸시. 4채널·교차링크·색인요청 전부 끝"
+  },
+  {
+   "ts": "2026-11-03 11:25:29",
+   "bid": "tower1103",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "👤 사장님 11:25: 「이부장은 규칙을 정하는 관리자 — 오케스트레이터로 조율해야 막힘이 없고 빨라진다」 → 손일(지시서 손편집·재등록) 중지. 반복 손일은 게이트로: F38(pre-cleared 대조)·F44(지시서 경로 코드 일치) 를 asidequeue add 게이트로 — 에이전트 착수"
+  },
+  {
+   "ts": "2026-11-03 11:27:05",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "F38/F44 단계 1/5: 현행 asidequeue.cmd_add 읽기·사고 재현 시작"
   }
  ],
- "updated": "2026-11-17 09:25:43"
+ "updated": "2026-11-17 11:30:59"
 }
