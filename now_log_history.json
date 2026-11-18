@@ -8011,7 +8011,563 @@
    "what": "CLAUDE.md 44줄 ② 개정 완료(사장님 11-04 05:15 결재 aroma-phone-approval-gate-1104·커밋 96ae0af14, 이대리 창 「고쳐」 확인): [사장님] 결재: 커밋 또는 사장님 원문·시각 인용 [이부장] 결재 회수 기록: 커밋을 승인으로 인정. 원문 인용 없는 이부장 말·메시지만으로는 승인 아님(유지). 커밋 포함",
    "actor": "이대리",
    "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-04 11:28:03",
+   "bid": "fix1102",
+   "code": "",
+   "title": "",
+   "owner": "이부장",
+   "what": "이부장(관제탑) 번호 갱신 확인: whoislee.tower_check()=True · [이부장] 커밋 통과(사장님이 whoislee.py 3곳 수정)",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-04 13:05:15",
+   "bid": "draft1104b428",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "B4-28 착수 — 미발행·출처 파일 없음. source 에이전트가 국세청 11/3 보도참고자료 전문·소득세법 기본공제 조문 확보 중(병렬)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:09:07",
+   "bid": "draft1104g414",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "👤 이부장 순서 지시: G4-14(11/9 임박) → B4-28 → C1-19. G4-14 착수 — 농식품부·해수부 원 보도자료·할인 한도 기준 원문을 source 에이전트가 확보 중(병렬). B4-28 출처 에이전트도 이미 진행 중이라 먼저 돌아오는 쪽부터 본문",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:18:09",
+   "bid": "draft1104c119",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "C1-19 착수 — G4-14 출처 에이전트 대기 중 병렬로 시작. 복지부 보도참고자료 전문·입법예고·산정특례 현행 표를 source 에이전트가 확보 중, 「예정」 표기·C1-12 와 각도 분리(개정 예고·시행일·절감액)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:19:27",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "👤 사장님 직접 질문: 「네이버 블로그 계정이 둘인데, 글 2개를 함께 비교하여 중복으로 판단하는가? 글 양쪽!」 → 3. 실측 답: 양쪽을 함께 비교하는 코드는 없음. dupcheck=lifeinfo_db.txt 제목만, bodydup=posts/*.txt+Blogger 라이브 본문, topicprop 중복=dupcheck 와 같은 DB — 7개 도구(dupcheck·bodydup·covered_topics·topicprop·naverkw·pubqueue·draftfind)에 aroma/naver-blog 참조 0건. aroma 쪽은 코드 도구 없이 C:\\naver-blog\\CLAUDE.md 지침으로 이대리가 magsori8975 RSS 제목+lifeinfo_db H코드 제목을 사람이 대조(제목 수준, 본문 비교 없음). 🙋 이부장 요청: 양방향 겹침 검사 도구 필요 여부 판단",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-04 13:26:07",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "양방향 겹침 검사(studio.crossdup) 동작 확인: 예시 제목으로 lifeinfo 467편·aroma 18편 상위 3건씩 출력(읽기 전용, 🟢0.29 이하). 앞으로 글감·제목 정할 때 이대리가 직접 실행. CLAUDE.md·야간 루틴 지침에 넣을지는 사장님 확인 뒤 반영(팀 세션 요청만으로는 지침 파일을 고치지 않음)",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-04 13:31:09",
+   "bid": "draft1104g414",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "🙋 이부장: 오늘 초안 3편(G4-14·B4-28·C1-19) 큐 적재·보고 완료. V0·제휴·썸네일 deploy(453·452·454)·결재 올리기 부탁. G4-14 구매 시작 11/9 임박",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "r0905a7"
+  },
+  {
+   "ts": "2026-11-04 13:33:45",
+   "bid": "pub1104b428",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "B4-28 발행 트리거(13:34) — pubready 통과·썸네일 452 200",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:38:21",
+   "bid": "pub1104b428",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "B4-28 라이브 발행 완료(run 41773924638 ✓ 약 2분·checkout 정상·URL .../2026/11/250-4687.html 200·썸네일 200) · 검색설명 Aside 대기열 등록. 다음: 네이버 원고",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:40:20",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 13:39:34 — 지시 #589 B4-28 검색설명 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 13:42:00",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [B4-28] #589 검색 설명130자 업데이트 완료. 새로 연 라이브 meta description이 지시 문구와 정확히 일치. 본문·제목 원문 보존, 라벨·발행상태 미변경. 작업탭2개 닫음, 총 탭8개. · https://lifeinfo8975.blogspot.com/2026/11/250-4687.html",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 13:43:10",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 13:42:31 — 지시 #590 B4-28 네이버 게시 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 13:46:51",
+   "bid": "draft1104g414",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r0905a7 — 13:46 이부장 처리: V0 3편 통과·썸네일 452·453·454 deploy 완료(200)·결재함 G4-14·C1-19 대기, B4-28 발행 완료. 제휴 검토는 이과장 확인",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r0905a7"
+  },
+  {
+   "ts": "2026-11-04 13:50:56",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [B4-28] #590 네이버 새 글1편 발행 완료. 새로고침 라이브 제목·카테고리(달라지는 제도·지원금)·태그5개 확인. 본문 원문 sameText 일치(정규화4077자), 표13개·링크6개·대표사진 첫블록1장 정상. 오위치 사진·빈이미지 제거 후 재삽입 검증. 작업탭 닫음, 총 탭9개. · https://blog.naver.com/magsori8975/224464646337",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 13:51:05",
+   "bid": "pub1104g414",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "G4-14 발행 트리거(13:50) — pubready 통과·썸네일 453 200",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:55:01",
+   "bid": "pub1104c119",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "C1-19 발행 트리거(13:55) — 문의번호 2702(보도자료)·2708(입법예고 공고)는 원문 대조 결과 각각 출처 표기가 맞아 수정 없음(source 파일 1·2절), 승인 제목 유지",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:55:07",
+   "bid": "pub1104g414",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "G4-14 라이브 발행 완료(run 41775586930 ✓·URL .../2026/11/2026-20-1-10.html·postId 5053862304216101591). 다음: 검색설명·네이버(C1-19 run 중이라 푸시는 run 종료 뒤)",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 13:57:12",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 13:56:12 — 지시 #591 G4-14 검색설명 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 13:57:30",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "👤 사장님 직접 지시: 「네이버가 양쪽 블로그를 두고 중복 판단하는지 궁금해! … 이부장에 보고해!」 · 🙋 이부장 요청: 아래 실측을 읽고 판단. [3. 실측 — docs/네이버_다계정_정책원문_20261029.md 재독] ①공식 문서에 유사문서 판독 장치는 있음(help 9564·22921, 네이버 검색 블로그 2019 공지: C-Rank·D.I.A.·유사문서판독시스템) ②서치어드바이저 가이드 4번: 동일 콘텐츠 다수 '사이트'는 노출 불이익(사이트 단위, 블로그 글 직접 규정 아님) ③한 사람 아이디 3개(블로그 3개) 허용, 다계정 금지 문구 0건 ④같은 사람 두 블로그를 묶어 비교하는지·유사도 임계치·어느 쪽이 노출되는지는 공식 문서에 없음(출처관 공지 6편 열람해도 0건). 인플루언서 '50% 이상 동일'은 다른 서비스 기준. ⑤측정 불가 영역: 단정 못 함. ⑥우리 쪽 코드: 중복 검사 7개 도구(dupcheck·bodydup·covered_topics·topicprop·naverkw·pubqueue·draftfind)는 aroma/naver-blog 참조 0건, aroma 쪽 겹침 검사 코드 없음(이대리가 사람이 제목 수준 대조). 【권고】 양방향 겹침 검사(magsori8975 RSS·DB + aroma db.json, 제목+본문 낱말) 도구 필요 여부 판단 / 겹친 글의 실제 노출 관찰은 이부장 지시로 Aside 읽기 작업 가능(네이버 블로그탭에서 제목 검색해 둘 다 노출되는지) 【위험】 애드포스트는 같은 명의 미디어를 계정에 묶으면 한 미디어 위반이 계정 전체 제한으로 번질 수 있음(운영정책 5.2-2 문언 해석, 실제 사례 미확인)",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-04 13:58:23",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "이부장 → 3.: 13:57 사장님 직접 지시(네이버 양쪽 블로그 중복 판정 여부) 3. 실측 수신 — 이부장이 출처 에이전트로 독립 재확인·노출 관찰 진행(docs/네이버_두계정_중복판정_확인_20261104.md). 양방향 겹침 도구 crossdup 은 13040ca36 로 이미 구현",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-04 14:00:05",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [G4-14] #591 검색 설명120자 업데이트 완료. 새로 연 라이브 meta description이 지정 문구와 정확히 일치. 본문·제목 원문 보존, 라벨·발행상태 미변경. 작업탭2개 닫음, 총 탭9개. · https://lifeinfo8975.blogspot.com/2026/11/2026-20-1-10.html",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:01:10",
+   "bid": "pub1104c119",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "C1-19 라이브 발행 완료(run 41776026883 ✓·URL .../2026/11/107-12-1.html 200·썸네일 454 200) · 검색설명 Aside 대기열 등록. 다음: 네이버 원고",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-04 14:01:55",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:01:05 — 지시 #592 G4-14 네이버 게시 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:04:05",
+   "bid": "pub1104c119",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⏸ 대기 — C1-19 네이버 원고 텍스트·454n 썸네일·검색설명 지시는 준비 완료. naver-draft 는 순서 게이트(지금 차례 G4-14, 4채널 완결 뒤 C1-19)라 거부됨 — 우회 안 함. G4-14 네이버(14:00 등록)→인스타·쓰레드 끝나면 C1-19 네이버 진행",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "r71c527"
+  },
+  {
+   "ts": "2026-11-04 14:06:27",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][blocked] [G4-14] #592 blocked — 발행창 카테고리가 지시 공연·여행·생활꿀팁이 아닌 달라지는 제도·지원금. 지시의 다르면 중단 조건 준수, 카테고리 임의변경·최종발행 안 함. 본문 sameText 일치(정규화3620자)·표13개·링크6개·이미지 첫블록 준비. 재지시에 카테고리 선택 허용 필요. 작업탭 닫음, 총 탭8개.",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:07:30",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:06:13 — 지시 #593 C1-19 검색설명 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:07:57",
+   "bid": "pub1104c119",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r71c527 — 14:08 이부장 처리: G4-14 네이버 카테고리 = 달라지는 제도·지원금(정부 농할상품권·할인 대책 → 대응표 제도·지원금 행). 이과장이 지시서 카테고리 줄 정정 후 재등록",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r71c527"
+  },
+  {
+   "ts": "2026-11-04 14:08:50",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [C1-19] #593 검색 설명122자 업데이트 완료. 새로 연 라이브 meta description이 지정 문구와 정확히 일치. 본문·제목 원문 보존, 라벨·발행상태 미변경. 작업탭2개 닫음, 총 탭8개. · https://lifeinfo8975.blogspot.com/2026/11/107-12-1.html",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:11:17",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:10:31 — 지시 #594 G4-14 네이버 게시 시작. 카테고리 지시가 달라지는 제도·지원금으로 정정됨을 확인.",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:11:33",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #590 B4-28 naver 확인 ✅ (naverfind --gate B4-28 → ✅ 통과(범위 밖이거나 이미 기록됨)) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
+   "actor": "Aside",
+   "sid": ""
+  },
+  {
+   "ts": "2026-11-04 14:12:24",
+   "bid": "pub1104b428",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⏸ 대기 — B4-28 인스타·쓰레드 Aside 지시(초안·카드·캡션·원고·실사진 완료·커밋)를 asidequeue add 하니 ⑤ 「사장님 ⑥ 결재 기록 없음」으로 거부. 원인 실측: asidequeue._go_at 은 audit.json 의 pubqueue.go 가 actor=사장님 일 때만 인정하는데, B4-28 의 pubqueue.go 는 actor=이부장(13:28:04, 13:29 커밋 「결재 회수 기록: publish_go B4-28 — 사장님 폰 원문 폰 탭 13:27」)이고 queue.json 항목은 발행으로 걷혔음. 네이버(13:40 등록)는 통과했었음. 게이트·audit 는 제 권한 밖이라 우회 안 함. 🙋 이부장: audit actor 정정 또는 _go_at 판정 보완 후 알려 주세요(재등록은 제가 즉시)",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "r6bb22b"
+  },
+  {
+   "ts": "2026-11-04 14:13:25",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [G4-14] #594 네이버 새 글1편 발행 완료. 카테고리 달라지는 제도·지원금·제목·태그5개 확인. 새로고침 라이브 sameText 일치(정규화3620자), 표13개·원문/관련글 포함 외부링크6개·대표사진 첫블록1장 정상. 중복 없음, 발행1회. 작업탭 닫음, 총 탭8개. · https://blog.naver.com/magsori8975/224464677915",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:18:42",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:17:12 — 지시 #595 G4-14 인스타 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:25:39",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [G4-14] #595 인스타 게시 완료 — 카드3장 순서(표지→11/9 전연령구매→수산20%)·원본비율·라이브3/3 확인. 캡션 원문 일치(UI813자), 블로그/네이버 링크·Pexels 출처 포함. 프로필470→471, 중복 없음. 공유1회·타채널 자동공유 끔. 작업탭 닫음, 총 탭8개. · https://www.instagram.com/magsori8975/p/DfTsrmSk9n3/",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:27:26",
+   "bid": "pub1104g414",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfTsrmSk9n3/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:28:13",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:27:16 — 지시 #596 G4-14 쓰레드 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:28:40",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #595 G4-14 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfTsrmSk9n3/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ kimjang_supply_plan_01.png  MAD 0.1 · d / ✅ 인스타 카드 2 ↔ kimjang_supply_plan_02.png  MAD 0.1 · d / ✅ 인스타 카드 3 ↔ kimjang_supply_plan_03.png  MAD 0.1 · d) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:31:44",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [G4-14] #596 쓰레드1게시물 완료 — 원문 본문 일치(공백정규화), 지정 사진1장·블로그/네이버 링크·Pexels 출처 확인. 자동 링크카드2개 제거. 게시1회, 실제 URL 새로고침·HTTP200 확인. 작업탭 닫음, 총 탭8개. · https://www.threads.com/@magsori8975/post/DfTtc_pATeU",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:32:45",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:31:56 — 지시 #597 B4-28 인스타 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:32:53",
+   "bid": "pub1104b428",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r6bb22b — 14:3x 이부장 처리: 결재 기록 판정 수정 9dc517f2e 반영·_go_at('B4-28') 시각 반환 확인 — 이과장 재등록 안내함",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r6bb22b"
+  },
+  {
+   "ts": "2026-11-04 14:33:09",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #596 G4-14 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfTtc_pATeU · ✅ 쓰레드 이미지 ↔ thread_G4-14_kimjang_supply_plan.png  MA) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:33:48",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "양방향 겹침 검사(crossdup) 지침 반영 완료(사장님 14:30 결재 79af9c60e 확인): CLAUDE.md 「한 편의 흐름」1단계 + 야간 루틴 SKILL.md 2번에 추가. 이대리 저장소 커밋 a4c189e(루틴 지침은 저장소 밖, 루틴10_점검 문서 7절에 요약). 적용 첫 회차 11-04 23:08",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-04 14:34:55",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #594 G4-14 naver 확인 ✅ (naverfind --gate G4-14 → ✅ 통과(범위 밖이거나 이미 기록됨)) — [이과장] 인스타·쓰레드 이미 게시됨 — 할 일 없음(정정·삽입 확인만)",
+   "actor": "Aside",
+   "sid": ""
+  },
+  {
+   "ts": "2026-11-04 14:36:55",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [B4-28] #597 인스타 게시 완료 — 카드3장 순서(표지→공식계산→헷갈리는질문)·원본비율·라이브3/3 확인. 캡션 원문 일치(UI834자), 블로그/네이버 링크·Pexels 출처 포함. 프로필471→472, 중복 없음. 공유1회·자동공유 꺼짐. 작업탭 닫음, 총 탭8개. · https://www.instagram.com/magsori8975/p/DfTt_JXCX_5/",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:39:32",
+   "bid": "pub1104b428",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfTt_JXCX_5/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:39:47",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #597 B4-28 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfTt_JXCX_5/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ stock_deduction_refund_01.png  MAD 0.0  / ✅ 인스타 카드 2 ↔ stock_deduction_refund_02.png  MAD 0.1  / ✅ 인스타 카드 3 ↔ stock_deduction_refund_03.png  MAD 0.1 ) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:44:40",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:43:58 — 지시 #598 G4-14 색인 요청 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:46:29",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [G4-14] #598 색인 요청1/1건 수락 확인(2026-11-04 14:46:29). 요청 전: Google에 아직 알려지지 않은 URL, 최근 크롤링 해당사항 없음. 색인 생성 요청됨·우선순위 크롤링 대기열 추가 확인. 실제 색인 완료는 아님. 유효성 검사·사이트맵·설정 미변경. 작업탭 닫음, 총 탭8개. · https://lifeinfo8975.blogspot.com/2026/11/2026-20-1-10.html",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:47:27",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:46:40 — 지시 #599 B4-28 쓰레드 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:49:57",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [B4-28] #599 쓰레드1게시물 완료 — 본문 원문 일치(공백정규화), 지정 사진1장·블로그/네이버 링크·Pexels 출처 확인. 자동 링크카드2개 제거. 게시1회, 실제 URL 새로고침·HTTP200 확인. 작업탭 닫음, 총 탭8개. · https://www.threads.com/@magsori8975/post/DfTvjivgSJe",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:52:56",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[체인] #599 B4-28 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfTvjivgSJe · ✅ 쓰레드 이미지 ↔ thread_B4-28_stock_deduction_refund.png ) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:53:51",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:53:01 — 지시 #600 C1-19 네이버 게시 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 14:57:35",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][done] [C1-19] #600 네이버 새 글1편 발행 완료. 라이브 새로고침 제목·카테고리 달라지는 제도·지원금·태그5개 확인. 본문 sameText 일치(정규화3701자), 표13개·링크6개·대표사진 첫블록1장 정상. 중복 없음·발행1회. 작업탭 닫음, 총 탭8개. · https://blog.naver.com/magsori8975/224464732289",
+   "actor": "Aside",
+   "sid": "544f52c8"
+  },
+  {
+   "ts": "2026-11-04 15:00:20",
+   "bid": "ledger1030",
+   "code": "",
+   "title": "",
+   "owner": "4.",
+   "what": "💬 4.의견(11-04 공유 회신·지시 아님): ① 11-07 크롤 확인과 심사 결과(11/7~9)가 겹치니 결과가 나오기 전 11-06~07 아침에 inspect 를 먼저 돌려 기준선(색인수·10-29 이후 신규 글 마지막 크롤일)을 못 박기 — 결과 통지 뒤에 재면 심사 영향과 크롤 변화가 섞임. ② 신규 글 확인 지표는 '색인'이 아니라 '마지막 크롤일이 발행일 이후인가'(10-29 기준 신규 55편 전부 리디렉션 오류·마지막 크롤 10-26, 이후 변화는 4.가 직접 재지 않았음=미확인). ③ 색인 요청 수락은 크롤 보장이 아님(10-21 실측 재크롤 2%·색인 0%) — 11-07 에도 0 이어도 요청 무효 단정 말고 10-21 시험 24편 값과 나란히 기록. ④ 심사 결과 시나리오별 다음 행동은 docs/애드센스_재검토_1029_4세션.md §5 그대로(승인/동일사유 반려/다른사유/지연), 62편 축소는 결과 뒤. 참고로 오늘 adsense.py status 는 GETTING_READY/PENDING(직접 확인)",
+   "actor": "4.",
+   "sid": "eb8bf5dd"
+  },
+  {
+   "ts": "2026-11-04 15:00:29",
+   "bid": "aside",
+   "code": "",
+   "title": "",
+   "owner": "Aside",
+   "what": "[Aside][doing] 수신 2026-11-04 14:59:43 — 지시 #601 B4-28 색인 요청 시작",
+   "actor": "Aside",
+   "sid": "544f52c8"
   }
  ],
- "updated": "2026-11-18 06:01:50"
+ "updated": "2026-11-18 15:00:51"
 }
