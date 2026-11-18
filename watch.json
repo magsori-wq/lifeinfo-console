@@ -32154,6 +32154,16 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "fix-a126-halfyear-neutral-1119",
+   "added": "2026-11-19",
+   "what": "A1-26 원고 V0 지적 반영: 상반기 6/30 마감(보도자료 기준)으로 한정, 하반기 추가 발급 미확인 명시(62·64·71·81·93·109·136·140행+8절 1줄). validate_db FAIL 0. git add 완료, 커밋 대기",
+   "due": "2026-11-20",
+   "cmd": "grep -c '하반기 추가 발급' 청년문화패스12월31일7월31일미사용_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
