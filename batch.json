@@ -9512,7 +9512,8 @@
     {
      "code": "C2-28",
      "title": "학생건강기록부 정부24 발급, 정기진료 결석은 출석인정 — 입법예고 12월 28 (라이브 발행)",
-     "state": "todo"
+     "state": "todo",
+     "live": "done"
     }
    ],
    "owner": "이과장",
@@ -9520,17 +9521,32 @@
    "order_at": "2026-11-17 11:44:06"
   }
  },
- "updated": "2026-11-19 03:01:26",
+ "updated": "2026-11-19 04:29:57",
  "current": {
   "batch": "chkmon",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡3 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
+  "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡4 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정; 반영 어긋남 · 로컬↔github.io; 사장님 🙋승인 【권고】aroma 프로필(c0ae104a, Lee Sanggon (aro · 묶음: 사건×3 반영 감사×1 (상세 python -m studio.chkmon show)",
   "since": "18:12",
   "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "04:29:57",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡4 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정; 반영 어긋남 · 로컬↔github.io; 사장님 🙋승인 【권고】aroma 프로필(c0ae104a, Lee Sanggon (aro · 묶음: 사건×3 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "04:26:26",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡3 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정; 사장님 🙋승인 【권고】aroma 프로필(c0ae104a, Lee Sanggon (aro · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "04:25:23",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — 11/19 04:2x 복귀 보고: 11/17 09:30 이후 이대리 활동 공백(주간 한도 소진, 11/19 01:00 초기화) + aroma 프로필 네이버 로그인 또 풀림(MyBlog→로그인 화면; 11/17 11:51 사장님 로그인 승인 뒤 재발). 못 한 일: 11/17 BO-011 Tudum 업데이트·11/18 01:37 카타르전 결과 후속·11/17·18 밤 선정. 조치: 사장님 로그인 카드 aside-aroma-login-1119, 정기 점검 예약 f590952e 재생성(09:47부터), 야간 선정 예약 삭제(11/18 종료), idaerireq aroma-two-per-day-1118 회신. 로그인 복구되면 CA 읽기→후속 글 재개.",
+   "actor": "이대리"
+  },
   {
    "t": "03:01:26",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡3 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
@@ -9714,21 +9730,6 @@
   {
    "t": "00:25:28",
    "text": "📄 draft1117c228 작업 지시 등록(11541자, 2026-11-17 00:25:28)",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:24:23",
-   "text": "📄 draft1117c228 작업 지시 등록(11509자, 2026-11-17 00:24:23)",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:22:41",
-   "text": "✔ 이부장 ack rb28d07",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:22:32",
-   "text": "✔ 이부장 ack re2f9b3",
    "actor": "이부장"
   }
  ],
@@ -10026,7 +10027,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "09:3x 정정 — 로그인 카드 aside-aroma-login-1117 문구의 「aroma99 계정」은 이대리 추측(블로그 별명 기준)이라 「aroma-mag 블로그 운영 계정」으로 고쳐 다시 올림(사장님 지적). 로그인 대기는 그대로.",
+   "what": "⏸ 대기 — 11/19 04:2x 복귀 보고: 11/17 09:30 이후 이대리 활동 공백(주간 한도 소진, 11/19 01:00 초기화) + aroma 프로필 네이버 로그인 또 풀림(MyBlog→로그인 화면; 11/17 11:51 사장님 로그인 승인 뒤 재발). 못 한 일: 11/17 BO-011 Tudum 업데이트·11/18 01:37 카타르전 결과 후속·11/17·18 밤 선정. 조치: 사장님 로그인 카드 aside-aroma-login-1119, 정기 점검 예약 f590952e 재생성(09:47부터), 야간 선정 예약 삭제(11/18 종료), idaerireq aroma-two-per-day-1118 회신. 로그인 복구되면 CA 읽기→후속 글 재개.",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -10197,7 +10198,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡3 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡4 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정; 반영 어긋남 · 로컬↔github.io; 사장님 🙋승인 【권고】aroma 프로필(c0ae104a, Lee Sanggon (aro · 묶음: 사건×3 반영 감사×1 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -11675,106 +11676,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-05 03:08:30",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [B5-12] #612 인스타 게시 완료. 카드 3장(표지→가상 월 수익→내 집은 될까)·미리보기 점 3개·캡션 원문 838자(IG UTF-16 845) 확인. 공유 1회·완료 문구 확인. 새 프로필 473→474, 실제 URL·라이브 캡션 전체/두 링크/Pexels 출처·점 3개 확인. 동시공유 꺼짐. 작업 탭 닫음 · 총 탭 6개 · https://www.instagram.com/p/DfVDLVnE-8m/",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:09:33",
-   "bid": "pub1105b512",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfVDLVnE-8m/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:09:40",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #612 B5-12 insta 확인 ✅ (https://www.instagram.com/p/DfVDLVnE-8m/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ safe_trust_lease_01.png  MAD 0.0 · dHas / ✅ 인스타 카드 2 ↔ safe_trust_lease_02.png  MAD 0.1 · dHas / ✅ 인스타 카드 3 ↔ safe_trust_lease_03.png  MAD 0.0 · dHas) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:09:55",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] #613 수신 2026-11-05 03:09:16 — B5-12 쓰레드 시작",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:27:25",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [B5-12] #613 쓰레드 게시 완료. 본문 357자(파일 끝 줄바꿈 포함 358) 일치·링크 카드 2개 제거·지정 사진 1장 미리보기 확인 후 게시 1회. 새 프로필에서 실제 URL 확인·HTTP 200·라이브 본문 전체와 두 링크 대상/Pexels 출처/사진 링크 확인. 작업 탭 닫음 · 총 탭 6개 · https://www.threads.com/@magsori8975/post/DfVFrB-AW32",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:28:22",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #613 B5-12 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfVFrB-AW32 · ✅ 쓰레드 이미지 ↔ thread_B5-12_safe_trust_lease.png  MAD 0) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:33:17",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][blocked] [B5-12] 수신 2026-11-05 03:30:52 — #614 blocked, 실행자 아님. 전체267배치 확인, 관련 기존 보고 없음. 스킬 허용 실행자fZcN6UTcB4PoZVYk와 현재3piqDmwWDz7VLUkM 불일치가 여전함. Search Console 미조작·색인 요청0건, 상태/마지막 크롤링 미확인. 지정 실행자 채팅으로 전달 필요. · https://lifeinfo8975.blogspot.com/2026/11/11-4-435-hug.html",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:34:03",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][blocked] [B5-12] #614 재알림 재확인: 최신 지시 2026-11-05 03:30:52, 전체267배치. 기존 blocked(03:33:17) 확인. 실행자 지정 미정정으로 실행자 아님. Search Console 미조작, 이 세션 색인 요청0건. 지정 실행자 채팅으로 전달 요청. 총 탭 수는 REPL의 기존 탭 소멸 오류로 미확인(새 탭 안 엶).",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:34:55",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] #615 수신 2026-11-05 03:34:18 — B5-12 색인 요청 시작",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-05 03:43:37",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [B5-12] #615 색인 요청 1/1건 완료 — 11-05 03:42 KST 색인 생성 요청됨 확인(우선순위 크롤링 대기열 추가). 요청 전: Google 미등록·아직 알려지지 않은 URL, 최근 크롤링 해당사항 없음. 오늘 중복 기록 없음·유효성 검사/사이트맵 미조작·실제 색인 완료와는 다름. 작업 탭 닫음 · 총 탭 6개 · https://lifeinfo8975.blogspot.com/2026/11/11-4-435-hug.html",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
   {
    "ts": "2026-11-05 04:48:48",
    "bid": "aside",
@@ -43266,6 +43167,39 @@
    "actor": "사람",
    "sid": "",
    "req": "rd843ad"
+  },
+  {
+   "ts": "2026-11-19 04:25:23",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "⏸ 대기 — 11/19 04:2x 복귀 보고: 11/17 09:30 이후 이대리 활동 공백(주간 한도 소진, 11/19 01:00 초기화) + aroma 프로필 네이버 로그인 또 풀림(MyBlog→로그인 화면; 11/17 11:51 사장님 로그인 승인 뒤 재발). 못 한 일: 11/17 BO-011 Tudum 업데이트·11/18 01:37 카타르전 결과 후속·11/17·18 밤 선정. 조치: 사장님 로그인 카드 aside-aroma-login-1119, 정기 점검 예약 f590952e 재생성(09:47부터), 야간 선정 예약 삭제(11/18 종료), idaerireq aroma-two-per-day-1118 회신. 로그인 복구되면 CA 읽기→후속 글 재개.",
+   "actor": "이대리",
+   "sid": "de614107",
+   "req": "r8e5a9e"
+  },
+  {
+   "ts": "2026-11-19 04:26:26",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡3 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정; 사장님 🙋승인 【권고】aroma 프로필(c0ae104a, Lee Sanggon (aro · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "re4d5fe"
+  },
+  {
+   "ts": "2026-11-19 04:29:57",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡4 — 즉시: 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정; 반영 어긋남 · 로컬↔github.io; 사장님 🙋승인 【권고】aroma 프로필(c0ae104a, Lee Sanggon (aro · 묶음: 사건×3 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r702824"
   }
  ]
 }
