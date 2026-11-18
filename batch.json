@@ -9520,7 +9520,7 @@
    "order_at": "2026-11-17 11:44:06"
   }
  },
- "updated": "2026-11-18 15:00:51",
+ "updated": "2026-11-18 18:01:42",
  "current": {
   "batch": "chkmon",
   "code": "",
@@ -9531,6 +9531,11 @@
   "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "18:01:42",
+   "text": "▶   — 6/7단계 · [자동 → 4.] 색인 일일 점검(2026-11-18) — indexlab 에이전트로 python -m studio.searchconsole inspect · 재크롤/색인 변화 측정, 전날보다 줄었으면 「🙋 이부장 요청: 색인 감소 <숫자·근거>」 로 보고",
+   "actor": "사람"
+  },
   {
    "t": "09:00:30",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴2 🔵0 🟡3 — 즉시: 이대리 요청 정체 idle; 결재 뒤 미발행 C2-28 학생건강기록부 정부24 발급, 정기진료 결석은 출석인정 · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
@@ -9725,11 +9730,6 @@
    "t": "00:19:57",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡4 — 즉시: 반영 어긋남 · 화면 생성물 신선도 · 묶음: 사건×3 반영 감사×1 (상세 python -m studio.chkmon show)",
    "actor": "사람"
-  },
-  {
-   "t": "00:18:11",
-   "text": "🏷️ draft1117c228 담당=이과장",
-   "actor": "미상:e863963c"
   }
  ],
  "currents": {
@@ -11675,188 +11675,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-04 15:02:15",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [B4-28] #601 색인 요청1/1건 수락 확인(2026-11-04 15:02:14). 요청 전: 발견됨-현재 색인이 생성되지 않음, 최근 크롤링 해당사항 없음. Google 색인 생성 요청됨·우선순위 크롤링 대기열 추가 확인. 실제 색인 완료는 아님. 유효성 검사·사이트맵·설정 미변경. 작업탭 닫음, 총 탭8개. · https://lifeinfo8975.blogspot.com/2026/11/250-4687.html",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:18:04",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #600 C1-19 naver 확인 ✅ (naverfind --gate C1-19 → ✅ 통과(범위 밖이거나 이미 기록됨)) — [이과장] 지금 바로 인스타·쓰레드 원고·실사진 → Aside 초안",
-   "actor": "Aside",
-   "sid": ""
-  },
-  {
-   "ts": "2026-11-04 15:20:21",
-   "bid": "pub1104c119",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "C1-19 네이버 ✅(224464732289) · 인스타 카드3·캡션·쓰레드 원고·실사진 완료 후 Aside 대기열 등록(인스타→쓰레드). 카테고리 정정 3편(B4-25·B4-26·B4-28 → 세금·연말정산·보험료) 지시서도 대기열(우선 3)에 등록. 다음: C1-19 4채널 후 교차링크·색인요청",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
-  {
-   "ts": "2026-11-04 15:27:50",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-11-04 15:26:59 — 지시 #602 C1-19 인스타 시작",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:31:35",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [C1-19] #602 인스타 게시 완료 — 카드3장 순서(표지→가상계산→7%가 안바뀌는것)·원본비율·라이브3/3 확인. 캡션 원문 일치(UI838자), 블로그/네이버 링크·Pexels 출처 포함. 프로필472→473, 중복 없음. 공유1회·자동공유 꺼짐. 작업탭 닫음, 총 탭8개. · https://www.instagram.com/magsori8975/p/DfT0RFtE2uD/",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:32:42",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-11-04 15:31:47 — 지시 #603 C1-19 쓰레드 시작",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:33:26",
-   "bid": "pub1104c119",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DfT0RFtE2uD/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:34:06",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #602 C1-19 insta 확인 ✅ (https://www.instagram.com/magsori8975/p/DfT0RFtE2uD/ · ✅ 인스타 장수 라이브 3 · 로컬 3 (sidecar 3장) / ✅ 인스타 카드 1 ↔ rare_disease_copay_7_01.png  MAD 0.1 ·  / ✅ 인스타 카드 2 ↔ rare_disease_copay_7_02.png  MAD 0.0 ·  / ✅ 인스타 카드 3 ↔ rare_disease_copay_7_03.png  MAD 0.1 · ) — [이과장] 기록 완료(체인 자동 insta-link) → 4채널 완결 확인",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:35:26",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [C1-19] #603 쓰레드1게시물 완료 — 본문 원문 일치(공백정규화), 지정 사진1장·블로그/네이버 링크·Pexels 출처 확인. 자동 링크카드2개 제거. 게시1회, 실제 URL 새로고침·HTTP200 확인. 작업탭 닫음, 총 탭8개. · https://www.threads.com/@magsori8975/post/DfT0wdWgftP",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:37:29",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #603 C1-19 threads 확인 ✅ (https://www.threads.com/@magsori8975/post/DfT0wdWgftP · ✅ 쓰레드 이미지 ↔ thread_C1-19_rare_disease_copay_7.png  M) — [이과장] 기록 완료(체인 자동 threads-link) → 4채널 완결 확인",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:38:31",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-11-04 15:37:40 — 지시 #604 네이버 카테고리 정정3편 시작. 인스타/쓰레드 전 지시 완료 확인, 카테고리만 변경.",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:45:28",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] #604 카테고리 정정3/3 완료 — B4-25(224462102767)·B4-26(224463427250)·B4-28(224464646337) 세금·연말정산·보험료. 각 저장직전 칸값·저장후 새로고침 확인. 제목·본문·이미지·링크·표·태그 전후 일치, 공개설정 보존. 카테고리 선택시 주제는 비즈니스·경제로 자동연동됨. 작업탭 닫음, 총 탭8개. · https://blog.naver.com/magsori8975/224464646337",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:47:29",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-11-04 15:46:40 — 지시 #605 C1-19 색인 요청 시작",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 15:49:08",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [C1-19] #605 색인 요청1/1건 수락 확인(2026-11-04 15:49:08). 요청 전: 발견됨-현재 색인이 생성되지 않음, 최근 크롤링 해당사항 없음. Google 색인 생성 요청됨·우선순위 크롤링 대기열 추가 확인. 실제 색인 완료는 아님. 유효성 검사·사이트맵·설정 미변경. 작업탭 닫음, 총 탭8개. · https://lifeinfo8975.blogspot.com/2026/11/107-12-1.html",
-   "actor": "Aside",
-   "sid": "544f52c8"
-  },
-  {
-   "ts": "2026-11-04 17:03:43",
-   "bid": "draft1104d313",
-   "code": "",
-   "title": "",
-   "owner": "이과장",
-   "what": "D3-13 착수 — 미발행·출처 파일(docs/source_전세사기최소보장_20261104.md) 읽음. D 템플릿(블록 고정·순서 변주)로 본문, 법제처 요약과 조문 차이·미확인 항목은 박스",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
-  {
-   "ts": "2026-11-04 17:04:30",
-   "bid": "draft1104d313",
-   "code": "",
-   "title": "",
-   "owner": "이과장",
-   "what": "⚠️ 중복 주의(진행은 계속): 기존 라이브 A4-07 「전세사기특별법 개정, 임차보증금 최소보장제 11월 13일 시행 — 신청방법·제외 대상」(09-28 발행)이 법 제25조의9~11 구조·1/3·90일·제외 3유형·반납을 이미 다룸(시행령은 「2024년 판이라 미반영」으로 못 봄). dupcheck 는 🟢 이었음. D3-13 은 A4-07 에 없는 것에 집중: ① 시행령 제4조의4 산식(1/3 − 배당액 − 회수액 − 법 지원액) 계산 ② 공공임대 지원 불가(최소지원금 vs 공공임대 선택) ③ LH 위탁(시행령 제5조②) ④ 법제처 요약(자동 지원)과 조문 차이. 기존 글은 수정 안 함(애드센스 심사). bodydup 수치 보고 예정",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
-  {
-   "ts": "2026-11-04 17:16:45",
-   "bid": "a407fix1104",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "⏸ 대기 — A4-07 보강본(docs/A4-07_보강본_20261104.html, 5~7절 추가·시행령 정정·기존 구조 유지, dry-run 통과)과 수정 전 라이브 스냅샷(docs/A4-07_라이브스냅샷_20261104.html)은 준비·커밋 완료. 라이브 patch(blogger.py update-post --code A4-07)는 Claude Code 권한 분류기가 거부(External System Writes). CLAUDE.md 「update-post/crosslink 권한 allow 는 사장님이 넣는다」 — 우회 안 함. 🙋 이부장: 사장님이 update-post 허용 규칙을 넣으시면 알려 주세요, 즉시 patch→getByPath 재확인→crosslink 재삽입",
-   "actor": "이과장",
-   "sid": "c36eea8e",
-   "req": "r0bc176"
-  },
-  {
-   "ts": "2026-11-04 17:18:03",
-   "bid": "a407fix1104",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "이부장 ack r0bc176 — 17:2x 이부장 처리: 권한 허용은 사장님 몫 — 결재함에 좁은 규칙 한 줄(allow-update-post-a407-1104) 올림. 허용되면 알림",
-   "actor": "이부장",
-   "sid": "a7dca46f",
-   "ack": "r0bc176"
-  },
   {
    "ts": "2026-11-04 23:21:12",
    "bid": "aroma",
@@ -43586,6 +43404,16 @@
    "actor": "사람",
    "sid": "",
    "req": "r3eaa24"
+  },
+  {
+   "ts": "2026-11-18 18:01:42",
+   "bid": "adsense4_1104",
+   "code": "",
+   "title": "",
+   "owner": "4.",
+   "what": "[자동 → 4.] 색인 일일 점검(2026-11-18) — indexlab 에이전트로 python -m studio.searchconsole inspect · 재크롤/색인 변화 측정, 전날보다 줄었으면 「🙋 이부장 요청: 색인 감소 <숫자·근거>」 로 보고",
+   "actor": "사람",
+   "sid": ""
   }
  ]
 }
