@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 04:41:00",
+ "at": "2026-11-19 04:45:02",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -233,9 +233,9 @@
   {
    "who": "3.세션",
    "kind": "글감",
-   "ran": false,
-   "at": "16:42",
-   "note": "⏸ 16:50 이부장 16:41 재촉 수령 — fuel1116 은 16:00(4단계)에 결과 보고 완료: topicprop a",
+   "ran": true,
+   "at": "04:44",
+   "note": "⏸ 05:20 장학금 1차(kosaf 1·2쪽 최상단 11-17)·교육부 초등돌봄(moe 4쪽 40건 최상단 11-18) 둘 ",
    "today": 0,
    "order": null,
    "lvl": "ok"
@@ -300,7 +300,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 3,
-   "last_min": 5,
+   "last_min": 9,
    "cur": "C2-28 학생건강기록부 4채널 후속",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -347,7 +347,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 3,
-   "last_min": 5,
+   "last_min": 9,
    "cur": "C2-28 학생건강기록부 4채널 후속",
    "lvl": "ok"
   },
@@ -355,8 +355,8 @@
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 3,
-   "cur": "📊 크리에이터 어드바이저 유입·관심사 매일 갱신 (3. 상시)",
+   "last_min": -1,
+   "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
   {
@@ -371,8 +371,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 1,
-   "cur": "05:0x 카타르전 결과 후속 글 AM-SP-021(홈판형) ",
+   "last_min": 3,
+   "cur": "05:3x 결재 상정 aroma-am-sp-021-approv",
    "lvl": "ok"
   },
   {
@@ -544,8 +544,8 @@
   {
    "code": "C2-28",
    "stage": "insta",
-   "at": "",
-   "src": "DB osmu_at(날짜뿐)",
+   "at": "2026-11-19 04:41:41",
+   "src": "now_log 게시 URL",
    "who": "lee"
   },
   {
@@ -616,12 +616,12 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "ok",
-  "ok": 7,
-  "stale": 0,
+  "state": "stale",
+  "ok": 6,
+  "stale": 1,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-19 04:40:42",
+  "at": "2026-11-19 04:45:00",
   "age_min": 0
  },
  "design_signals": [
@@ -694,11 +694,15 @@
  "fired": [
   {
    "day": "2026-11-19",
-   "total": 21,
+   "total": 23,
    "kinds": [
     [
      "CHKMON_REPORT",
-     4
+     5
+    ],
+    [
+     "NEW_BOSS_ITEM",
+     3
     ],
     [
      "TOWER_OWED",
@@ -710,10 +714,6 @@
     ],
     [
      "LANE_IDLE",
-     2
-    ],
-    [
-     "NEW_BOSS_ITEM",
      2
     ],
     [
