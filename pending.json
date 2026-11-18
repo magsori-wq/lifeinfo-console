@@ -1,9 +1,9 @@
 {
- "rev": "66e80ee9f",
+ "rev": "e5b22c133",
  "counts": {
   "total": 546,
-  "osmu_done": 545,
-  "osmu_pending": 1,
+  "osmu_done": 546,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 546,
   "index_requested": 162,
@@ -15,15 +15,16 @@
    "code": "C2-28",
    "title": "학생건강기록부 정부24 발급, 정기진료 결석은 출석인정",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }

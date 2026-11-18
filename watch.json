@@ -31755,8 +31755,10 @@
    "due": "2026-11-19",
    "cmd": "python -m studio.routines",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-19",
+   "result": "11-19 04:3x 이부장 복구: 루틴 4·5·8·9 enabled=true, 1번 cron 0 8,11,14,17,20,23 * * * (list 로 확인). 루틴10(aroma 야간)은 이대리가 야간 선정 예약을 삭제해 꺼 둔 채 유지. 세션 stall-check cron 은 유지"
   },
   {
    "id": "aroma-am-sp-020-update-1115",
@@ -32083,6 +32085,16 @@
    "by": "세션:de614107",
    "done_at": "2026-11-19",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "c228-followup-check-1119",
+   "added": "2026-11-19",
+   "what": "C2-28 4채널 후속(post1119c228) 이과장 보고 확인 후 confirm",
+   "due": "2026-11-19",
+   "cmd": "python -m studio.osmu_manifest table --code C2-28",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
