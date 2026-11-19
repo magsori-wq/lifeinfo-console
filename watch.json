@@ -33042,6 +33042,18 @@
    "due": "2026-11-20",
    "cmd": "ls docs/verify_share5_20261120.md && head -5 docs/verify_share5_20261120.md",
    "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "독립 검증 완료: 불일치 8(보통2 회귀·경미6), 이부장 직접 재현 확인 → maint1119share6 지시(11-20 01:57, msg 1d35e968)"
+  },
+  {
+   "id": "maint1119share6-check",
+   "added": "2026-11-20",
+   "what": "정비 share6(share5 검증 새 불일치 8건) 완료 확인: mark 근거 + 보통 2건 aroma_slot_of 직접 재실행 + 독립 검증 재요청",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard order --id maint1119share6 | head -3; python -m studio.batchboard show | grep share6",
+   "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
   }
