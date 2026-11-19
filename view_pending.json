@@ -1,7 +1,9 @@
 {
- "computed_at": "2026-11-19 18:04:45",
- "source_head": "9f028f1c5afb",
+ "computed_at": "2026-11-19 18:39:04",
+ "source_head": "c80bb4a9cda8",
  "ids": [
+  "aside-credit-t2623",
+  "aside-credit-t2624",
   "c1-11-geon-yeonjang-check"
  ],
  "posts": [],
@@ -13,6 +15,22 @@
    "due": "2026-11-12",
    "cmd": "grep -c 어떤 사유로도 osmu/_live/C1-11.html",
    "state": "wait",
+   "kind": "action"
+  },
+  {
+   "id": "aside-credit-t2623",
+   "what": "Aside 크레딧 소진(402 Insufficient credits) — Aside 설정 화면에서 크레딧 충전 후 이 항목을 완료로 눌러 주십시오. 완료하면 멈춘 Aside 대기열이 저절로 다시 흐릅니다(그동안 Aside 지시는 대기열에서 기다림)",
+   "due": "2026-11-19",
+   "cmd": "python -m studio.asidequeue list",
+   "state": "todo",
+   "kind": "action"
+  },
+  {
+   "id": "aside-credit-t2624",
+   "what": "Aside 크레딧 소진(402 Insufficient credits) — Aside 설정 화면에서 크레딧 충전 후 이 항목을 완료로 눌러 주십시오. 완료하면 멈춘 Aside 대기열이 저절로 다시 흐릅니다(그동안 Aside 지시는 대기열에서 기다림)",
+   "due": "2026-11-19",
+   "cmd": "python -m studio.asidequeue list",
+   "state": "todo",
    "kind": "action"
   }
  ],
