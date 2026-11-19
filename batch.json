@@ -11161,17 +11161,22 @@
    "order_at": "2026-11-20 04:41:26"
   }
  },
- "updated": "2026-11-20 04:41:26",
+ "updated": "2026-11-20 04:42:17",
  "current": {
-  "batch": "maint1119share9",
+  "batch": "pub1120h143",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "✅ 통과 수(본체 직접): unittest discover 895건 OK 실패 0 · test_studio_pure 645건 OK · plugin test 26 pass 0 fail · enginemap 신호 65·코드 38·🔴 0. 실카드 aroma_state → errors [] · 오늘 슬롯 AM-SP-020 12:30~13:00 1건·off/불일치 없음(정식 서식·amber 없음) · 장부 unread 0 odd 0 URL 2건. 시험 전후 webapp/data 비교 변경 15개 = 관제 엔진 주기 파일 13 + _reflect_live_log(+474B)·_advisor_calls_cache(5분 주기 감사), 원본 상태 파일 변화 없음·새 파일 0. git add 만(enginestate.py·test_studio_pure.py·엔진설계도.md·엔진설계도_이대리.md), 커밋은 이부장. 슬롯 판정 수정은 이것으로 종료.",
-  "since": "04:14",
-  "since_at": "2026-11-20 04:14:40"
+  "what": "H1-43 발행 트리거 직전 — pubready exit0·pace/setgate 통과·origin 0/0",
+  "since": "04:42",
+  "since_at": "2026-11-20 04:42:17"
  },
  "log": [
+  {
+   "t": "04:42:17",
+   "text": "▶   — 1/7단계 · H1-43 발행 트리거 직전 — pubready exit0·pace/setgate 통과·origin 0/0",
+   "actor": "이과장"
+  },
   {
    "t": "04:41:26",
    "text": "📄 pub1120h143 작업 지시 등록(11505자, 2026-11-20 04:41:26)",
@@ -11365,11 +11370,6 @@
   {
    "t": "02:06:16",
    "text": "✅ SH6-1 완료 — [보통]1 괄호 안 진짜 게시일 읽기(11/20 12:30~1",
-   "actor": "미상:330b96b0"
-  },
-  {
-   "t": "01:58:06",
-   "text": "▶   — 1/7단계 · 📋 복창: share5 독립검증 새 불일치 8건(보통2 회귀 먼저: 괄호 속 진짜 게시일·연도 붙은 게시일) 수정 · 하지 않을 것: 라이브·배포·커밋(이부장 몫, git add 만) · 끝나면 검증 입력 전부 시험에 그대로 + 단위·플러그인·enginemap 수 + 시험 전후 git status 를 mark 에 적는다",
    "actor": "미상:330b96b0"
   }
  ],
@@ -13641,6 +13641,15 @@
    "what": "✅ 통과 수(본체 직접): unittest discover 895건 OK 실패 0 · test_studio_pure 645건 OK · plugin test 26 pass 0 fail · enginemap 신호 65·코드 38·🔴 0. 실카드 aroma_state → errors [] · 오늘 슬롯 AM-SP-020 12:30~13:00 1건·off/불일치 없음(정식 서식·amber 없음) · 장부 unread 0 odd 0 URL 2건. 시험 전후 webapp/data 비교 변경 15개 = 관제 엔진 주기 파일 13 + _reflect_live_log(+474B)·_advisor_calls_cache(5분 주기 감사), 원본 상태 파일 변화 없음·새 파일 0. git add 만(enginestate.py·test_studio_pure.py·엔진설계도.md·엔진설계도_이대리.md), 커밋은 이부장. 슬롯 판정 수정은 이것으로 종료.",
    "since": "04:14",
    "since_at": "2026-11-20 04:14:40"
+  },
+  "pub1120h143": {
+   "batch": "pub1120h143",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "H1-43 발행 트리거 직전 — pubready exit0·pace/setgate 통과·origin 0/0",
+   "since": "04:42",
+   "since_at": "2026-11-20 04:42:17"
   }
  },
  "report_log": [
@@ -46201,6 +46210,16 @@
    "what": "✅ 통과 수(본체 직접): unittest discover 895건 OK 실패 0 · test_studio_pure 645건 OK · plugin test 26 pass 0 fail · enginemap 신호 65·코드 38·🔴 0. 실카드 aroma_state → errors [] · 오늘 슬롯 AM-SP-020 12:30~13:00 1건·off/불일치 없음(정식 서식·amber 없음) · 장부 unread 0 odd 0 URL 2건. 시험 전후 webapp/data 비교 변경 15개 = 관제 엔진 주기 파일 13 + _reflect_live_log(+474B)·_advisor_calls_cache(5분 주기 감사), 원본 상태 파일 변화 없음·새 파일 0. git add 만(enginestate.py·test_studio_pure.py·엔진설계도.md·엔진설계도_이대리.md), 커밋은 이부장. 슬롯 판정 수정은 이것으로 종료.",
    "actor": "미상:330b96b0",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-20 04:42:17",
+   "bid": "pub1120h143",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "H1-43 발행 트리거 직전 — pubready exit0·pace/setgate 통과·origin 0/0",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
