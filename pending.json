@@ -1,16 +1,33 @@
 {
- "rev": "74fb089c9",
+ "rev": "74fb089c",
  "counts": {
-  "total": 549,
+  "total": 550,
   "osmu_done": 549,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 549,
+  "index_pending": 550,
   "index_requested": 165,
-  "index_todo": 83,
+  "index_todo": 84,
   "index_benign": 301
  },
  "actionable": [
+  {
+   "code": "A3-18",
+   "title": "국민연금 첫 보험료 지원 2027년 1월 시행 — 20",
+   "need": [
+    "OSMU",
+    "색인요청"
+   ],
+   "action": "OSMU 확산",
+   "osmu": false,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": false,
+    "t": false,
+    "i": false
+   }
+  },
   {
    "code": "A1-18",
    "title": "노인일자리 2027년 118만 개 확대(복지부 계획) ",
@@ -206,22 +223,6 @@
   {
    "code": "A5-15",
    "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
-   "need": [
-    "색인요청"
-   ],
-   "action": "색인 요청",
-   "osmu": true,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": true,
-    "t": true,
-    "i": true
-   }
-  },
-  {
-   "code": "A5-16",
-   "title": "4시간 근무 휴게시간 30분 생략 가능 — 12월 10",
    "need": [
     "색인요청"
    ],
