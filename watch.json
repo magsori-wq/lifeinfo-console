@@ -33176,6 +33176,86 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "h143-followup-0120",
+   "added": "2026-11-20",
+   "what": "H1-43 4채널 후속(검색설명·네이버·인스타·쓰레드·색인) 이과장 진행 확인 — 12:20 전 네이버까지",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.autoflow | grep H1-43",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-1d583aa41",
+   "added": "2026-11-20",
+   "what": "1d583aa41 코드 검증 — maint1119share8 독립 검증/직접 재현",
+   "due": "2026-11-20",
+   "cmd": "echo docs/verify_share8_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "검증 완료 1d583aa41 — docs/verify_share8_20261120.md (이후 불일치는 다음 share 로 이관·최종 share9 종결)"
+  },
+  {
+   "id": "verify-e67e37fc6",
+   "added": "2026-11-20",
+   "what": "e67e37fc6 코드 검증 — maint1119share9 독립 검증/직접 재현",
+   "due": "2026-11-20",
+   "cmd": "echo 이부장 직접 재현(중1 done=승인 오독 해소, enginestate.py 1456 조건 확인)·645건·enginemap",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "검증 완료 e67e37fc6 — 이부장 직접 재현(중1 done=승인 오독 해소, enginestate.py 1456 조건 확인)·645건·enginemap (이후 불일치는 다음 share 로 이관·최종 share9 종결)"
+  },
+  {
+   "id": "verify-f66168c44",
+   "added": "2026-11-20",
+   "what": "f66168c44 코드 검증 — maint1119share7 독립 검증/직접 재현",
+   "due": "2026-11-20",
+   "cmd": "echo docs/verify_share7_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "검증 완료 f66168c44 — docs/verify_share7_20261120.md (이후 불일치는 다음 share 로 이관·최종 share9 종결)"
+  },
+  {
+   "id": "verify-a41a55a17",
+   "added": "2026-11-20",
+   "what": "a41a55a17 코드 검증 — maint1119share6 독립 검증/직접 재현",
+   "due": "2026-11-20",
+   "cmd": "echo docs/verify_share6_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "검증 완료 a41a55a17 — docs/verify_share6_20261120.md (이후 불일치는 다음 share 로 이관·최종 share9 종결)"
+  },
+  {
+   "id": "verify-a0e4b01d6",
+   "added": "2026-11-20",
+   "what": "a0e4b01d6 코드 검증 — maint1119share5 독립 검증/직접 재현",
+   "due": "2026-11-20",
+   "cmd": "echo docs/verify_share5_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "검증 완료 a0e4b01d6 — docs/verify_share5_20261120.md (이후 불일치는 다음 share 로 이관·최종 share9 종결)"
+  },
+  {
+   "id": "followup3-0120",
+   "added": "2026-11-20",
+   "what": "H1-43→A6-11→C2-29 4채널 후속 순서 진행 확인(네이버 게시 12:20 전 H1-43까지)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.autoflow | head -6",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }

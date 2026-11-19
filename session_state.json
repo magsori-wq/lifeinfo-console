@@ -2087,12 +2087,12 @@
   },
   "cadaily": {
    "state": "working",
-   "reads_since_report": 0,
+   "reads_since_report": 1,
    "last_report": "2026-11-19 04:42:33",
    "last_what": "✅ 11-19 05:05 cadaily 11-16·17·18분 일괄 실행(3.) — 11-17~18은 지시서 갱신 지연·세션 대기로 누락(11-16 15:00 이후 첫 실행): ca_daily 16 17 18 --m",
-   "reads": 19,
+   "reads": 20,
    "last_order_at": "2026-11-07 12:52:22",
-   "last_read": "2026-11-19 04:37:37",
+   "last_read": "2026-11-20 05:02:24",
    "owner": "3."
   },
   "pub1013h128": {
@@ -3844,8 +3844,8 @@
   "aroma": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-20 04:47:28",
-   "last_what": "⏸ 04:47 SP-020 쓰레드 — watch.json 카드는 done(사장님 「전부 승인이」 04:40경 이부장 회수 기록)으로 바뀌었으나 git 회수 커밋은 아직 없음(미커밋 변경). 커밋 확인 즉시 12:30",
+   "last_report": "2026-11-20 04:56:32",
+   "last_what": "04:56 SP-020 쓰레드 승인 근거 확인 완료(watch done + 회수 커밋 fea2d2f17 원문 「전부 승인이」). 11/20 12:32 예약 걸어 12:30~13:00 슬롯에 게시 직전 재확인 후 게시",
    "reads": 1,
    "last_order_at": "2026-10-29 14:36",
    "last_read": "2026-10-29 14:36",
@@ -3967,15 +3967,16 @@
    "owner": "이과장"
   },
   "fuel1030": {
-   "reads": 1,
-   "reads_since_report": 0,
+   "reads": 3,
+   "reads_since_report": 2,
    "last_order_at": "2026-11-19 20:47:33",
-   "last_read": "2026-11-19 21:27:18",
+   "last_read": "2026-11-20 05:02:15",
    "owner": "3.",
-   "state": "working",
+   "state": "waiting",
    "last_report": "2026-11-19 21:27:18",
    "last_what": "📋 21:4x 제안 등록 — A6-11 「배달 라이더 안전교육 12월 3일부터 의무 — 3시간, 교육 안 받으면 계약 못 합니다」(info, rec) · 근거: 법·시행규칙 부칙 12.3 시행 + naverkw ✅ ",
-   "read_by": "report"
+   "read_by": "report",
+   "waiting_since": "2026-11-20 05:02"
   },
   "ledger1030": {
    "reads": 4,
@@ -4022,8 +4023,8 @@
   "tower1030": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-20 01:57:57",
-   "last_what": "🔄 01:58 share5(a0e4b01d6) 독립 검증: 632건·enginemap 통과, 새 불일치 8건(보통 2 회귀 — 이부장 직접 재현) → maint1119share6 발급, 보통 12:00·경미 18:0"
+   "last_report": "2026-11-20 04:55:50",
+   "last_what": "👤 사장님 직접 지시: 「폰에서 시인성확보해줘」(11-20 04:5x, 캡처 첨부) · 대상 webapp/engine.html → 정비 maint1120phone 발급, 마감 11:00"
   },
   "pub1030h135": {
    "state": "working",
@@ -6959,14 +6960,14 @@
    "last_what": "✅ 통과 수(본체 직접): unittest discover 895건 OK 실패 0 · test_studio_pure 645건 OK · plugin test 26 pass 0 fail · enginemap 신호 65·"
   },
   "pub1120h143": {
-   "reads": 1,
+   "reads": 2,
    "reads_since_report": 0,
-   "last_order_at": "2026-11-20 04:41:26",
-   "last_read": "2026-11-20 04:41:40",
+   "last_order_at": "2026-11-20 04:57:37",
+   "last_read": "2026-11-20 04:58:24",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-20 04:49:56",
-   "last_what": "⚠️ H1-43 발행 완료(URL 200)·후속 시작 전 — syncorigin 이 data/xlink_live.json(A3-19 라이브검사 캐시, 남의 세션이 계속 다시 씀)에서 멈춤. 파생이라 1회 checko"
+   "last_report": "2026-11-20 05:05:31",
+   "last_what": "✅ push 해소(ahead 0/behind 0). A6-11(12-3-3)·C2-29(5) 은 이부장이 발행해 라이브 200 확인. H1-43 은 검색설명 대기열 등록·네이버 원고/Aside 초안 준비 완료 — 이"
   },
   "pub1120a611": {
    "reads": 1,
@@ -6987,7 +6988,17 @@
    "reads_since_report": 0,
    "last_report": "2026-11-20 04:51:54",
    "last_what": "⏸ 대기 — A6-11 과 같은 push 막힘(xlink_live.json). A6-11 run 끝난 뒤 이어서 발행"
+  },
+  "maint1120phone": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-20 04:55:33",
+   "last_read": "2026-11-20 04:56:01",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-20 04:56:19",
+   "last_what": "📋 복창: webapp/engine.html 폰(412px) 시인성 5결함(4채널 카드·Aside·원 안 숫자·코드 칩 겹침·작은 글자) CSS 수정 · 하지 않을 것: 새 도구·커밋 · 끝나면 대비비 숫자·스크린샷"
   }
  },
- "updated": "2026-11-20 04:51"
+ "updated": "2026-11-20 05:05"
 }
