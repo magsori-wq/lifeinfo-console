@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 13:29:27",
+ "at": "2026-11-19 13:32:06",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,20 +11,19 @@
     "code": "A2-32",
     "title": "스포츠강좌이용권 12월 10일 결제 마감 — 월 10만",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
     "who": {
-     "naver": "lee"
+     "naver": "lee",
+     "insta": "lee"
     },
     "plan": {
-     "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-19",
@@ -349,7 +348,7 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 4,
-   "last_min": 51,
+   "last_min": 54,
    "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
    "lvl": "amber",
    "role": "②처리·④발행 운전"
@@ -399,7 +398,7 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 4,
-   "last_min": 51,
+   "last_min": 54,
    "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
    "lvl": "amber"
   },
@@ -407,7 +406,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 35,
+   "last_min": 37,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -423,8 +422,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
-   "cur": "PE-015 첫 게시본(224479020356) 사라진 경위 ",
+   "last_min": 0,
+   "cur": "SEO 공식 근거 추가 조사(사장님 지시) — 서치어드바이저 ",
    "lvl": "ok"
   },
   {
@@ -598,6 +597,13 @@
      "who": "lee"
     },
     {
+     "code": "A2-32",
+     "title": "스포츠강좌이용권 12월 10일 결제 마감 — 월 10만",
+     "url": "https://www.instagram.com/p/Df6OkQJkWc_/",
+     "at": "2026-11-19",
+     "who": "lee"
+    },
+    {
      "code": "C2-28",
      "title": "학생건강기록부 정부24 발급, 정기진료 결석은 출석인정",
      "url": "https://www.instagram.com/magsori8975/p/Df5RlZAEyMC/",
@@ -633,12 +639,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "A2-32",
-     "title": "스포츠강좌이용권 12월 10일 결제 마감 — 월 10만"
-    }
-   ]
+   "wait": []
   },
   "threads": {
    "done": [
@@ -809,6 +810,13 @@
    "src": "now_log 발행 완료"
   },
   {
+   "code": "A2-32",
+   "stage": "naver",
+   "at": "2026-11-19 13:30:21",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
    "code": "A1-26",
    "stage": "threads",
    "at": "",
@@ -817,7 +825,7 @@
   },
   {
    "code": "A2-32",
-   "stage": "naver",
+   "stage": "insta",
    "at": "",
    "src": "DB osmu_at(날짜뿐)",
    "who": "lee"
@@ -933,7 +941,7 @@
   "stale": 1,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-19 13:29:29",
+  "at": "2026-11-19 13:32:11",
   "age_min": 0
  },
  "design_signals": [
@@ -1006,11 +1014,11 @@
  "fired": [
   {
    "day": "2026-11-19",
-   "total": 161,
+   "total": 162,
    "kinds": [
     [
      "TOWER_OWED",
-     70
+     71
     ],
     [
      "CHKMON_REPORT",
