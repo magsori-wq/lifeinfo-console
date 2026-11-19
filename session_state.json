@@ -3844,8 +3844,8 @@
   "aroma": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-20 05:22:52",
-   "last_what": "11/20 보고 — SP-020 쓰레드 승인 근거 확인 완료(watch done + 회수 커밋 fea2d2f17). 12:32 예약(660fc0b8)으로 12:30~13:00 슬롯 게시 직전 재확인 후 게시 예정, ",
+   "last_report": "2026-11-20 06:02:27",
+   "last_what": "11/20 06:0x 점검 — ⚠️ 야간 루틴10(aroma-nightly-topics)이 비활성(11/14 이후 미실행)이라 11/15~19 후보 선별이 멈춰 있었음. 이대리가 직접 후보 점검 시작: 방송·OTT/",
    "reads": 1,
    "last_order_at": "2026-10-29 14:36",
    "last_read": "2026-10-29 14:36",
@@ -3968,15 +3968,14 @@
   },
   "fuel1030": {
    "reads": 3,
-   "reads_since_report": 2,
+   "reads_since_report": 0,
    "last_order_at": "2026-11-20 05:36:16",
    "last_read": "2026-11-20 05:49:22",
    "owner": "3.",
-   "state": "waiting",
-   "last_report": "2026-11-20 05:46:48",
-   "last_what": "05:48 법령 세부 확인 끝(docs/source_law_0101_detail_20261120.md): ①고용보험법 소득기준 금액 — 현행 시행령(시행 2026.9.18) 본문에 금액 조항 없음, 금액 확인 못 함",
-   "read_by": "report",
-   "waiting_since": "2026-11-20 05:49"
+   "state": "working",
+   "last_report": "2026-11-20 05:59:26",
+   "last_what": "✅ 06:10 cadaily 재실행 성공(정비 두 번째 수정본): 「주제 32/32 · 성별연령 22/22 · 검색어 660줄 · 실패 없음」, 「주제 판정: OK — 정상 · 목록 출처=저장된 목록(화면이 주제 목",
+   "read_by": "report"
   },
   "ledger1030": {
    "reads": 4,
@@ -6771,15 +6770,15 @@
    "last_read": "2026-11-20 05:43:19",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-20 05:46:21",
-   "last_what": "[원인 분석 — indexlab 결과 수신 05:46, 4.가 원본 대조] 확인됨 ✅: studio/gsc_log.py cmd_add 는 같은 URL 이면 [이미있음]만 출력하고 파일에 안 쓴다 → 11-19 재요청",
+   "last_report": "2026-11-20 05:57:11",
+   "last_what": "[05:57 판독 · 4.] API 재판독(05:56): D5-09 Redirect error·마지막 크롤 11-19 21:16 · G4-14 Redirect error·21:17 · C4-01@m SUCCESSFU",
    "read_by": "report"
   },
   "expreq1119": {
-   "reads": 1,
-   "reads_since_report": 0,
+   "reads": 2,
+   "reads_since_report": 1,
    "last_order_at": "2026-11-19 18:32:19",
-   "last_read": "2026-11-19 18:41:22",
+   "last_read": "2026-11-20 05:54:29",
    "owner": "이과장",
    "state": "working",
    "last_report": "2026-11-19 18:42:08",
@@ -6838,10 +6837,10 @@
    "owner": "정비"
   },
   "expreq1119b": {
-   "reads": 3,
-   "reads_since_report": 2,
+   "reads": 4,
+   "reads_since_report": 3,
    "last_order_at": "2026-11-19 21:01:33",
-   "last_read": "2026-11-20 05:37:25",
+   "last_read": "2026-11-20 05:54:30",
    "owner": "이과장",
    "state": "waiting",
    "last_report": "2026-11-19 22:13:42",
@@ -7017,9 +7016,19 @@
    "last_read": "2026-11-20 05:32:32",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-20 05:33:43",
-   "last_what": "시험(단위, 본체): 신규 TestCaTrendTopicsNeverSilentMaint1120 3건 — 정상 / 빈 응답(주제 목록 0·h3 0개 → 못 읽음) / 구조 바뀐 응답(저장된 목록으로 불렀지만 응답 0 "
+   "last_report": "2026-11-20 05:58:18",
+   "last_what": "🔧 3.의 재실행 오류(05:57 exit 2: page.evaluate 인자 둘) 재수정 — tools/ca_trend.py 가 evaluate 를 인자 하나(배열 [date, fb])로 호출, 시험(JS 에 ev"
+  },
+  "maint1120loop": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-20 05:52:08",
+   "last_read": "2026-11-20 05:52:47",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-20 05:56:43",
+   "last_what": "docs/엔진설계도.md 에 TO4(REPORT_UNACKED 10분·접수 흔적 정의·주체 미상은 판정 못 함으로 보임)·TO5(DELIVERY_OVERDUE watch tower-promise-<세션>-<HHMM>"
   }
  },
- "updated": "2026-11-20 05:49"
+ "updated": "2026-11-20 06:02"
 }

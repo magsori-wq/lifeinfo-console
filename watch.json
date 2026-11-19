@@ -33260,7 +33260,7 @@
   {
    "id": "xlink-h143",
    "added": "2026-11-20",
-   "what": "🔗 H1-43 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-43",
+   "what": "🔗 H1-43 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-43",
    "due": "2026-11-20",
    "cmd": "python studio/blogger.py crosslink --code H1-43",
    "owner": "claude",
@@ -33393,6 +33393,26 @@
    "what": "이대리 12:32 게시 URL 오면 이부장 라이브 확인 10분 → 슬롯 종료 기록",
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | head -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-jeongbi-1000-catrend",
+   "added": "2026-11-20",
+   "what": "정비 ca_trend page.evaluate 재수정 10:00 마감(앞당김) — 09:30 에 이부장이 진행 확인·3. 재실행 확인",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep catrend",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-phone3-0800",
+   "added": "2026-11-20",
+   "what": "정비 phone3 08:00 마감 — 07:30 진행 확인, 완료 시 Aside 4조합 직접 재측정·deploy",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep phone3",
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
