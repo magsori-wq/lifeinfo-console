@@ -33416,6 +33416,17 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "routine10-reenable-1120",
+   "added": "2026-11-20",
+   "what": "【권고】루틴10(aroma-nightly-topics, 매일 23:08) 재가동 — 지금 꺼져 있음(11-14 23:08 마지막 실행). 사장님이 11-14 에 일부러 끈 것이면 유지. 【근거】이대리 보고(06:02): 11/15~19 aroma 후보 선별이 5일 멈췄고 이대리가 직접 점검을 시작했다. 스케줄 목록 실측: enabled=false·lastRunAt 11-14. 【위험】재가동 시 매일 밤 이대리 세션 1회 실행(토큰)·Aside 공용 프로필 사용(23시대 네이버 로그인 풀림 전례 11-02). 끄면 이대리가 낮에 직접 후보를 맡는다. 승인하시면 이부장이 스케줄 enabled=true 로 바꾸고 첫 실행(오늘 23:08)을 확인합니다",
+   "due": "2026-11-20",
+   "cmd": "echo routine10 enable (이부장이 scheduled-tasks 로 실행)",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "세션:a7dca46f"
   }
  ]
 }
