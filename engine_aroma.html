@@ -4,89 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>이대리 상황실</title>
-<style>
-:root{--bg:#fff;--fg:#111827;--mut:#5b6472;--line:#d6dbe3;--card:#f6f8fb;--ok:#137a3d;--okbg:#e9f7ee;--warn:#9a6700;--warnbg:#fff4d6;--bad:#c22b1c;--badbg:#fdecea;--info:#2f6fe4;--infobg:#e6f0ff;--dim:#8a94a6}
-@media(prefers-color-scheme:dark){:root{--bg:#12151a;--fg:#f1f3f6;--mut:#a3adbd;--line:#333b48;--card:#1a1f27;--ok:#58d68d;--okbg:#143024;--warn:#e6b422;--warnbg:#3a3014;--bad:#ff7a6b;--badbg:#3b1b18;--info:#6ea2ff;--infobg:#16263f;--dim:#6b7587}}
-*{box-sizing:border-box}
-body{margin:0;padding:0 14px 60px;font:16px/1.5 system-ui,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;background:var(--bg);color:var(--fg);-webkit-text-size-adjust:100%}
-.wrap{max-width:780px;margin:0 auto}
-h1{font-size:1.25rem;margin:14px 0 2px}
-h1 small{display:block;color:var(--mut);font-weight:400;font-size:.8rem;margin-top:2px}
-h2{font-size:1.05rem;margin:22px 0 8px;padding:8px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
-a{color:var(--info)}
-.links{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
-.links a{font-size:.9rem;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--fg);text-decoration:none}
-.badge{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--mut);margin-left:6px;vertical-align:middle}
-.card{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--dim);border-radius:12px;padding:10px 12px;margin:0 0 8px}
-.card.ok{border-left-color:var(--ok)}.card.warn{border-left-color:var(--warn)}.card.bad{border-left-color:var(--bad)}.card.info{border-left-color:var(--info)}
-.row1{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
-.code{font-weight:700}
-.chip{font-size:.8rem;padding:1px 9px;border-radius:999px;font-weight:600;white-space:nowrap}
-.chip.ok{background:var(--okbg);color:var(--ok)}.chip.warn{background:var(--warnbg);color:var(--warn)}.chip.bad{background:var(--badbg);color:var(--bad)}.chip.info{background:var(--infobg);color:var(--info)}.chip.dim{background:var(--card);color:var(--mut);border:1px solid var(--line)}
-.sub{color:var(--mut);font-size:.85rem;word-break:break-all}
-.bar{display:flex;align-items:center;gap:8px;margin:4px 0}
-.bar .l{width:8.5em;font-size:.9rem}.bar .t{flex:1;height:14px;background:var(--card);border:1px solid var(--line);border-radius:7px;overflow:hidden}.bar .t i{display:block;height:100%;background:var(--info)}.bar .n{width:2.2em;text-align:right;font-weight:700}
-details{margin:6px 0}summary{cursor:pointer;color:var(--mut)}
-.err{background:var(--badbg);color:var(--bad);border:1px solid var(--bad);border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.9rem}
-.empty{color:var(--mut);padding:8px 2px}
-.foot{color:var(--mut);font-size:.8rem;margin-top:22px}
-</style>
 </head>
 <body>
-<div class="wrap">
-<h1>이대리 상황실 <span class="badge">읽기 전용</span><small id="at">불러오는 중…</small></h1>
-<div class="links"><a href="engine.html">← 우리 상황판</a><a href="engine_aroma_flow.html" id="flow">🗺 신호체계 흐름도(2장)</a></div>
-<div id="errs"></div>
-<h2>🧑‍💼 이대리 지금</h2><div id="unit"></div>
-<h2>📍 지금 어디 — 미게시 글</h2><div id="rows"></div>
-<h2>🔧 수정 선로 결재 대기</h2><div id="rev"></div>
-<h2>⚡ 신호 — 마디 옆 최근 발생</h2><div id="sig"></div>
-<h2>📊 카테고리 4개 · 최근 <span id="win">14</span>일 게시</h2><div id="cats"></div>
-<h2>🧵 쓰레드 공유</h2><div id="thr"></div>
-<h2>✅ 최근 게시 <span class="badge" id="ptot"></span></h2><div id="pubs"></div>
-<div class="foot">판정은 aroma-mag 의 drafts/·previews/·db.json 과 CP 의 watch.json·git 에서 읽은 것만 — 못 읽은 것은 「미확인」. 설계도 docs/엔진설계도_이대리.md 가 진실원. <code>C:\naver-blog</code> 는 읽기만 한다.</div>
-</div>
+<!-- 이대리 상황실 = 본사 상황실(engine.html)과 같은 렌더러. 방 이름만 알려 주고 engine.html 을 그대로 불러 쓴다(복제 없음 — engine.html 이 바뀌면 둘이 함께 바뀐다). -->
 <script>
-const $=id=>document.getElementById(id);
-const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const STAGE={published:["ok","게시됨"],approved:["warn","승인됨·게시 전"],approved_unverified:["warn","승인 확인 중"],boss_wait:["bad","결재 대기"],v0:["info","V0"],draft:["dim","초안"],preview_only:["warn","미리보기만"],unknown:["dim","미확인"]};
-const UNIT={"현장(진행)":"ok","지연·확인 필요":"warn"};
-function days(s){if(!s)return null;const t=Date.parse(s.replace(" ","T"));return isNaN(t)?null:Math.floor((Date.now()-t)/86400000)}
-function render(s){
-  $("at").textContent="갱신 "+s.at+" · 60초마다 새로 읽음";
-  $("errs").innerHTML=(s.errors||[]).map(e=>'<div class="err">⚠️ 읽기 실패: '+esc(e)+'</div>').join("");
-  const u=s.unit;
-  $("unit").innerHTML=u?('<div class="card '+(u.lvl==="amber"?"warn":"ok")+'"><div class="row1"><span class="code">이대리</span><span class="chip '+(UNIT[u.state]||"dim")+'">'+esc(u.state)+'</span></div>'
-    +'<div class="sub">일감 '+esc(u.jobs)+'건 · 마지막 보고 '+(u.last_min==null?"기록 없음":esc(u.last_min)+'분 전')+(u.cur?' · '+esc(u.cur):"")+'</div>'
-    +(s.open_requests&&s.open_requests.length?s.open_requests.map(r=>'<div class="sub">📌 열린 요청 '+esc(r.id)+' ('+esc(r.at)+') '+esc(r.text)+'</div>').join(""):'<div class="sub">이부장 열린 요청 0건</div>')+'</div>')
-    :'<div class="empty">미확인 — 상황판(engine_state.json)의 이대리 유닛을 못 받았다</div>';
-  $("rows").innerHTML=(s.rows&&s.rows.length?s.rows.map(r=>{
-    const st=STAGE[r.stage]||["dim",r.label];const age=days(r.last_file_at);
-    const cls=r.stage==="boss_wait"?"bad":(r.stage==="approved"||r.stage==="approved_unverified"?"warn":(r.stage==="v0"?"info":""));
-    return '<div class="card '+cls+'"><div class="row1"><span class="code">'+esc(r.code)+'</span><span class="chip '+st[0]+'">'+esc(r.label)+'</span></div>'
-      +'<div class="sub">'+esc(r.detail)+(age!=null?' · 마지막 파일 '+age+'일 전':'')+'</div>'
-      +(r.approvals&&r.approvals.length?'<div class="sub">결재: '+r.approvals.map(a=>esc(a.id)+'('+esc(a.state)+')').join(" · ")+'</div>':'')+'</div>';
-  }).join(""):'<div class="empty">지금 진행 중인 미게시 글 없음</div>')
-  +((s.old_inflight&&s.old_inflight.length)?'<details><summary>오래 멈춘 미게시 '+s.old_inflight.length+'건</summary>'+s.old_inflight.map(o=>'<div class="sub">'+esc(o.code)+' · '+esc(o.stage)+' · '+esc(o.last_file_at)+'</div>').join("")+'</details>':'');
-  $("rev").innerHTML=(s.rev_wait&&s.rev_wait.length)?s.rev_wait.map(r=>'<div class="card warn"><span class="code">'+esc(r.code)+'</span><div class="sub">'+r.ids.map(esc).join(" · ")+'</div></div>').join(""):'<div class="empty">수정·썸네일 결재 대기 없음</div>';
-  $("sig").innerHTML=(s.signals||[]).map(g=>{
-    const stale=g.note&&/갱신 없음|미확인/.test(g.note);
-    return '<div class="card '+(stale?"warn":"info")+'"><div class="row1"><span class="code">'+esc(g.name)+'</span><span class="chip '+(g.last_at?(stale?"warn":"ok"):"dim")+'">'+(g.last_at?esc(g.last_at):"시각 기록 없음")+'</span></div>'
-      +'<div class="sub">'+esc(g.node)+' · 출처 '+esc(g.src)+(g.today_n!=null?' · 오늘 '+esc(g.today_n)+'회':'')+(g.note?' · '+esc(g.note):'')+'</div></div>';
-  }).join("");
-  const c=s.cats;
-  $("win").textContent=c?c.window:"14";
-  $("cats").innerHTML=c?(c.rows.map(r=>'<div class="bar"><span class="l">'+esc(r[0])+'</span><span class="t"><i style="width:'+(c.total?Math.round(r[1]*100/Math.max(1,Math.max(...c.rows.map(x=>x[1])))):0)+'%"></i></span><span class="n">'+esc(r[1])+'</span></div>').join("")+'<div class="sub">합계 '+esc(c.total)+'편 · 일률분배 몫 '+(c.total/c.rows.length).toFixed(1)+'편</div>'):'<div class="empty">미확인 — 집계를 못 읽었다</div>';
-  const t=s.threads||{};
-  $("thr").innerHTML='<div class="card '+(t.state==="dormant"?"":"info")+'"><span class="chip '+(t.state==="dormant"?"dim":"ok")+'">'+(t.state==="dormant"?"휴면":(t.state==="active"?"움직임":"미확인"))+'</span> <span class="sub">'+esc(t.label||"")+'</span></div>';
-  $("ptot").textContent="전체 "+(s.published_total!=null?s.published_total:"?")+"편";
-  $("pubs").innerHTML=(s.recent_published||[]).map(r=>'<div class="card ok"><div class="row1"><span class="code">'+esc(r.code)+'</span><span class="chip ok">'+esc(r.detail)+'</span></div></div>').join("")||'<div class="empty">없음</div>';
-}
-async function load(){
-  try{const r=await fetch("engine_aroma_state.json?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);render(await r.json())}
-  catch(e){$("at").textContent="상태 파일을 못 읽었다("+e.message+") — python -m studio.enginestate 로 다시 굽는다"}
-}
-load();setInterval(load,60000);
+window.ENGINE_ROOM="aroma";
+fetch("engine.html",{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.text()}).then(function(t){
+  t=t.replace("<head>","<head><script>window.ENGINE_ROOM='aroma'<\/script>");
+  document.open();document.write(t);document.close();
+}).catch(function(e){document.body.textContent="engine.html 을 못 불러왔다: "+e.message});
 </script>
 </body>
 </html>

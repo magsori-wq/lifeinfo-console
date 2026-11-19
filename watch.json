@@ -32537,6 +32537,26 @@
    "by": "이부장",
    "done_at": "2026-11-19",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "measure-threads-share-1119",
+   "added": "2026-11-19",
+   "what": "aroma 공유 글(DfMa07dAU4Y) 반응 실측 2026-11-19: 공유 글 조회 3·조회한 사람 2·답글 0·좋아요/리포스트 숫자 미확인. 생활정보 쓰레드 최근 20편 조회 평균 9.0·중앙값 6.0(게시 1시간~5일, 미확정). 공유 전 5편 평균 0.6 vs 후 5편 평균 10.6(n=5, 인과 불가). 🔴 공유 글 페이지 시각은 11-01 01:33 인데 사장님 말씀은 18:34 — 불일치. 쓰레드→블로그 유입은 11-01 이후 데이터 없음(잴 수 없음). 재료: docs/measure_threads_share_20261119.md",
+   "due": "2026-12-01",
+   "cmd": "/c/Users/magso/AppData/Local/Aside/CLI/current/aside.exe repl \"$(cat /c/lifeinfo/docs/measure_threads_share_20261119_insight.js)\" | grep -E '조회수|조회한 사람|답글'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "threads-inflow-report-1119",
+   "added": "2026-11-19",
+   "what": "쓰레드 공유 유입 수치(생활정보 CA 측정 에이전트 + 이대리 CA 회신 idaeri-1119-164525) 도착하면 파일 열어 확인 뒤 사장님께 보고, 쓰레드 공유 재개 여부 결재 카드(aroma-threads-share-review-1115 판정)로 상정",
+   "due": "2026-11-19",
+   "cmd": "python -m studio.idaerireq list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }

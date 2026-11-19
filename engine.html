@@ -157,9 +157,9 @@ html.reduce *{animation:none!important;transition:none!important}
 <div class="wrap">
   <div id="top">
     <div class="row1">
-      <h1><svg class="radar" id="radar" viewBox="0 0 24 24" aria-hidden="true"><circle class="rr" cx="12" cy="12" r="10.5"/><circle class="rr" cx="12" cy="12" r="5.5"/><line class="rx" x1="1.5" y1="12" x2="22.5" y2="12"/><line class="rx" x1="12" y1="1.5" x2="12" y2="22.5"/><g class="sw"><path d="M12 12L12 1.5A10.5 10.5 0 0 1 19.4 4.6Z"/></g><circle class="bp" id="blip" cx="16.5" cy="7.5" r="1.7"/></svg>엔진 상황실 <span class="live" id="live" title="감시 장치·상태 파일 생존">LIVE</span></h1>
-      <a class="btn" href="engine_flow.html" target="_blank" rel="noopener">🗺 신호체계 흐름도 ↗</a>
-      <a class="btn" href="engine_aroma.html" target="_blank" rel="noopener">🧑‍💼 이대리 상황실 ↗</a>
+      <h1><svg class="radar" id="radar" viewBox="0 0 24 24" aria-hidden="true"><circle class="rr" cx="12" cy="12" r="10.5"/><circle class="rr" cx="12" cy="12" r="5.5"/><line class="rx" x1="1.5" y1="12" x2="22.5" y2="12"/><line class="rx" x1="12" y1="1.5" x2="12" y2="22.5"/><g class="sw"><path d="M12 12L12 1.5A10.5 10.5 0 0 1 19.4 4.6Z"/></g><circle class="bp" id="blip" cx="16.5" cy="7.5" r="1.7"/></svg><span id="h1t">엔진 상황실</span> <span class="live" id="live" title="감시 장치·상태 파일 생존">LIVE</span></h1>
+      <a class="btn" id="navFlow" href="engine_flow.html" target="_blank" rel="noopener">🗺 신호체계 흐름도 ↗</a>
+      <a class="btn" id="navOther" href="engine_aroma.html" target="_blank" rel="noopener">🧑‍💼 이대리 상황실 ↗</a>
       <button class="btn" id="tg" type="button">아래에 펼치기</button>
       <span class="clock" id="clock"></span>
     </div>
@@ -190,6 +190,7 @@ html.reduce *{animation:none!important;transition:none!important}
     </section>
   </div>
 
+  <div id="roomExtra"></div>
   <details class="strip" id="strip"><summary id="ssum">사건·유닛</summary><div id="sbody"></div></details>
   <details class="strip" id="dsig"><summary id="dsum">📘 설계도 신호 (불러오는 중…)</summary><div id="dbody"></div></details>
 </div>
@@ -210,13 +211,36 @@ function fmtMin(m){if(m==null)return "";return m>=60?Math.floor(m/60)+"시간 "+
 const NS="http://www.w3.org/2000/svg";
 function el(n,a,p){const e=document.createElementNS(NS,n);for(const k in a||{})e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
 
-const MAIN=[["topic","① 글감 선정"],["proc","② 처리(초안·V0)"],["boss","③ 결재·준비"],["pub","④ 발행"]];
-const TERM=[["blog","🅑 블로그스팟"],["naver","🅝 네이버"],["insta","🅘 인스타"],["threads","🅣 쓰레드"]];
+/* 🏠 방(ROOM) — 같은 렌더러로 두 프로젝트 상황실을 그린다(11-19 maint1119aromamap, 사장님 「이대리 엔진상황실도 이런 구조로」).
+   본사 = 이 파일 그대로(engine_state.json) · 이대리 = engine_aroma.html 이 window.ENGINE_ROOM="aroma" 를 주고 이 파일을 불러 쓴다(engine_aroma_state.json).
+   마디 id(topic·proc·boss·pub·blog·naver·insta·threads·hub·eq·ed·ea)와 지도 모양은 두 방이 같고, 이름·운전자·목록 제목·상태 파일만 방마다 다르다. */
+const ROOM_ID=window.ENGINE_ROOM||"main";
+const ROOMS={
+ main:{state:"engine_state.json",title:"엔진 상황실",
+  nav:{flow:["engine_flow.html","🗺 신호체계 흐름도 ↗"],other:["engine_aroma.html","🧑‍💼 이대리 상황실 ↗"]},hide:[],
+  MAIN:[["topic","① 글감 선정"],["proc","② 처리(초안·V0)"],["boss","③ 결재·준비"],["pub","④ 발행"]],TERM:[["blog","🅑 블로그스팟"],["naver","🅝 네이버"],["insta","🅘 인스타"],["threads","🅣 쓰레드"]],CRN:[["eq","🧳 트렁크"],["ed","✍ 작성"],["ea","🔁 반영"]],
+  DRV_AT:{topic:[["이부장(감시)","이부장 선별"]],proc:[["이과장","이과장 초안"],["이부장(감시)","이부장 V0"]],
+  boss:[["사장님","사장님 결재"]],pub:[["이과장","이과장 발행"]],hub:[["Aside","Aside 배송"]],
+  ed:[["이과장","이과장·에이전트 작성"]],ea:[["이과장","이과장"],["Aside","Aside 정정"]]},
+  ED:[["queue","🧳 트렁크(대기)","계획된 대상"],["draft","✍ 개선안 작성","이과장"],["boss","🖊 결재","사장님"],["naver","🔁 블로그 반영·네이버 정정","이과장·Aside"],["sns","📱 인스타·쓰레드 정정","Aside(결재 후)"],["done","✅ 오늘 끝남",""]],
+  sec:{topic:["①","글감 선정 — 3.세션·루틴 → 이부장","제안 대기 없음"],proc:["②","처리 중 — 이과장 초안 → V0"],boss:["③","결재·준비 — 사장님 결재 · 썸네일 배포"],pub:["④","발행 — publish.yml"],osmu:["⑤","4채널 진행 — 종착지 도착 대기"]}},
+ aroma:{state:"engine_aroma_state.json",title:"이대리 상황실",
+  nav:{flow:["engine_aroma_flow.html","🗺 신호체계 흐름도 ↗"],other:["engine.html","🚨 본사 상황실 ↗"]},hide:["rflt","exlg","dsig"],
+  MAIN:[["topic","① 글감·겹침 검사"],["proc","② 초안·V0"],["boss","③ CP 결재"],["pub","④ 게시(Aside)"]],
+  TERM:[["blog","— 해당 없음"],["naver","🅝 aroma-mag 블로그"],["insta","— 인스타 없음"],["threads","🅣 쓰레드 공유(휴면)"]],
+  CRN:[["eq","🧳 rev 저장"],["ed","✍ 수정 작성"],["ea","🔁 반영"]],
+  DRV_AT:{topic:[["이대리","이대리 글감"]],proc:[["이대리","이대리 초안·V0"]],boss:[["사장님","사장님 결재"]],pub:[["Aside","Aside 발행챗"]],hub:[["Aside","Aside 배송"]],ed:[["이대리","이대리 수정"]],ea:[["이대리","이대리"],["Aside","Aside 정정"]]},
+  ED:[["queue","🧳 rev 저장(대기)","미확인"],["draft","✍ 수정안 작성","이대리"],["boss","🖊 수정 결재","사장님"],["naver","🔁 반영·재확인","이대리·Aside"],["sns","📱 쓰레드 정정","휴면"],["done","✅ 오늘 끝남",""]],
+  sec:{topic:["①","글감 — 이대리 자기점검·CA 검색어·일정 박스·사장님 지시","표시할 글감 기록 없음(미확인)"],proc:["②","초안·V0 — 이대리 → V0 에이전트"],boss:["③","CP 결재 — 사장님 · 미리보기 필수"],pub:["④","게시 — Aside 발행 전용 챗 → 공개 URL 확인"],osmu:["⑤","(이대리는 4채널 없음)"]}}
+};
+const RM=ROOMS[ROOM_ID]||ROOMS.main;
+const MAIN=RM.MAIN;
+const TERM=RM.TERM;
 const LIMK={proc:"v0",boss:"boss",pub:"publish"};   /* 마디 → engine_state.limit 키(경고·위험 분) */
 const CAP=3;                                          /* 링 가득 = 3건(병목 경보와 같은 값) */
 let G=null,PT={},parts=[],ripples=[],counters={},prevDone=null,RP=null,pendingS=null,raf=0,lastT=0;
 /* 🧳 두 선로 한 지도(사장님 10-23): 위 = 새 글(①→④) · 아래 = 수정 캐리어(트렁크→작성→결재→반영). 두 선로가 ③결재·Aside 허브·종착지 4곳을 함께 쓴다 */
-const CRN=[["eq","🧳 트렁크"],["ed","✍ 작성"],["ea","🔁 반영"]];
+const CRN=RM.CRN;
 const EDN={queue:"eq",draft:"ed",boss:"boss",naver:"ea",sns:"ea"};   /* edits[].stage → 지도 마디(done 은 숫자만) */
 function layout(vert){
   const L={vert,nodes:{},edges:[],vb:vert?[360,868]:[960,490],cell:40,hub:null};
@@ -306,9 +330,7 @@ function build(vert){
     const g=el("g",{class:"drv",id:"drv-"+k},db);const t=el("text",{x,y:k==="hub"&&!G.vert?n.cy+34:(k==="hub"?n.cy+30:y),"text-anchor":k==="hub"&&G.vert?"middle":a},g);t.textContent="🚗 "+lab.map(d=>d[1]).join(" · ")});
 }
 /* 마디 → 운전자(누가 그 과정에 개입하나). 운전자 이름은 engine_state.drivers 의 who 와 같다 */
-const DRV_AT={topic:[["이부장(감시)","이부장 선별"]],proc:[["이과장","이과장 초안"],["이부장(감시)","이부장 V0"]],
-  boss:[["사장님","사장님 결재"]],pub:[["이과장","이과장 발행"]],hub:[["Aside","Aside 배송"]],
-  ed:[["이과장","이과장·에이전트 작성"]],ea:[["이과장","이과장"],["Aside","Aside 정정"]]};
+const DRV_AT=RM.DRV_AT;
 function cellPos(n,i){
   const x0=n.dx!=null?n.dx:n.cx-n.w/2+8,cols=Math.max(1,Math.floor((n.cx+n.w/2-x0-4)/G.cell));const col=i%cols,row=Math.floor(i/cols);
   if(row>=n.rows)return null;
@@ -487,7 +509,7 @@ function render(s){
     if(prevDone&&c.done.length>(prevDone[k]||0))ripple(k)});
   prevDone=done;
   document.getElementById("hub").setAttribute("class","hub"+(nlv.hub?" "+nlv.hub:""));
-  const as=s.aside||{};document.getElementById("hubt").textContent=(as.busy?"일하는 중":(as.lvl==="red"?"멈춤":"대기"))+(as.queue?" · 큐 "+as.queue:"");
+  const as=s.aside||{};document.getElementById("hubt").textContent=(as.unknown?"미확인":as.busy?"일하는 중":(as.lvl==="red"?"멈춤":"대기"))+(as.queue?" · 큐 "+as.queue:"");
   const osm=(s.nodes&&s.nodes.osmu)||[];
   const need={blog:0,naver:0,insta:0,threads:0};osm.forEach(x=>{Object.keys(need).forEach(k=>{if(!(x.ch||{})[k])need[k]++})});
   const traf={"topic>proc":g.proc.length,"proc>boss":g.boss.length,"boss>pub":g.pub.length,"pub>hub":need.naver+need.insta+need.threads,"pub>blog":need.blog,
@@ -523,7 +545,7 @@ function render(s){
   sweepDots();
   renderLanes(s);
   renderReplayBar(s);setLive();
-  renderText(s,g);renderDetail();renderStrip(s);tickMin();
+  renderText(s,g);renderDetail();renderStrip(s);renderExtra(s);tickMin();
 }
 
 /* ---------- 🛢 연료 공급자 · 🚗 운전자 (사장님 10-23 「연료공급자와 운전자를 분리하고 엔진흐름지도에 보여야」) ----------
@@ -574,7 +596,7 @@ function renderLanes(s){
       (x.note?`<div class="nt">${esc(x.note)}</div>`:"")+`</div>`).join("");
   /* ✏ 글 수정 흐름 — 보라색 별도 선로(사장님 10-23 「글수정에 관련한 지도 흐름에도 다른색으로」). 새 글 흐름과 섞지 않는다.
      화살표는 다음 칸에 지금 글이 있을 때만 흐른다(지나간 완료는 정지). */
-  const ED=[["queue","🧳 트렁크(대기)","계획된 대상"],["draft","✍ 개선안 작성","이과장"],["boss","🖊 결재","사장님"],["naver","🔁 블로그 반영·네이버 정정","이과장·Aside"],["sns","📱 인스타·쓰레드 정정","Aside(결재 후)"],["done","✅ 오늘 끝남",""]];
+  const ED=RM.ED;
   const eds=s.edits||[];
   document.getElementById("editLane").innerHTML=`<div class="lh">🧳 수정 캐리어 상세(지도 아래 선로의 텍스트) — 대상 ${eds.length}편 = 대기 ${eds.filter(e=>e.stage==="queue").length} · 진행 ${eds.filter(e=>e.stage!=="done"&&e.stage!=="queue").length} · 오늘 끝남 ${eds.filter(e=>e.stage==="done").length}${(()=>{const h=eds.filter(e=>e.hold||e.stall_h!==undefined&&e.stage!=="done"&&e.stage!=="queue");return h.length?` · <b style="color:#b42318">🔴 멈춤 ${h.length} (${h.map(e=>esc(e.code)+" "+esc(e.packer||"")+(e.stall_h!=null?" · 보고 "+e.stall_h+"시간 없음":"")).join(", ")})</b>`:""})()}</div><div class="erow">`+
     ED.map(([k,nm,who],i)=>{const a=eds.filter(e=>e.stage===k);
@@ -717,17 +739,17 @@ function renderText(s,g){
    `<span class="${k.boss_wait?"am":"ok"}">결재 대기 <b>${k.boss_wait||0}</b></span>`+
    `<span class="${inc?(cnt[0]||cnt[1]?"rd":"am"):"ok"}">열린 사건 <b>${inc}</b></span>`+
    `<span class="${tw.age_min==null||tw.age_min>=15?"rd":tw.age_min<5?"ok":"am"}">감시 <b>${tw.age_min==null?"?":(tw.age_min<5?"생존":tw.age_min+"분")}</b></span>`+
-   `<span class="${as.lvl==="red"?"rd":as.lvl==="amber"?"am":"ok"}">Aside <b>${as.busy?"일함":(as.lvl==="red"?"멈춤":"대기")}</b></span>`+
+   `<span class="${as.lvl==="red"?"rd":as.lvl==="amber"?"am":"ok"}">Aside <b>${as.unknown?"미확인":as.busy?"일함":(as.lvl==="red"?"멈춤":"대기")}</b></span>`+
    (()=>{const m=((s.affiliate||{}).summary)||{};if(m.links==null)return "";
      return `<span class="${m.unattached?"rd":"ok"}" title="제휴 링크 발급 ${m.links}개(${m.posts_issued||0}편) · 원고에 안 붙은 링크 ${m.unattached}개 · 라이브(네이버) 확인 ${m.live_posts||0}편">제휴 발급 <b>${m.links}</b> · 원고 미부착 <b>${m.unattached}</b> · 라이브 <b>${m.live_posts||0}편</b></span>`})();
   const open=new Set([...document.querySelectorAll("#steps li.open")].map(e=>e.dataset.code));
   const sec=(id,n,t,a,fn,empty)=>`<h3 id="st-${id}">${n} ${t}<span class="n">${a.length}</span></h3><ul id="ul-${id}">${a.length?a.map(fn).join(""):`<li class="empty">${empty||"비어 있음"}</li>`}</ul>`;
   document.getElementById("steps").innerHTML=
-    sec("topic","①","글감 선정 — 3.세션·루틴 → 이부장",g.topic,x=>rowHtml(x),"제안 대기 없음")+
-    sec("proc","②","처리 중 — 이과장 초안 → V0",g.proc,x=>rowHtml(x))+
-    sec("boss","③","결재·준비 — 사장님 결재 · 썸네일 배포",g.boss,x=>rowHtml(x))+
-    sec("pub","④","발행 — publish.yml",g.pub,x=>rowHtml(x))+
-    sec("osmu","⑤","4채널 진행 — 종착지 도착 대기",g.osmu,x=>rowHtml(x,` · 블로그${x.ch&&x.ch.blog?"✓":"…"} 네이버${x.ch&&x.ch.naver?"✓":"…"} 인스타${x.ch&&x.ch.insta?"✓":"…"} 쓰레드${x.ch&&x.ch.threads?"✓":"…"}`));
+    sec("topic",RM.sec.topic[0],RM.sec.topic[1],g.topic,x=>rowHtml(x),RM.sec.topic[2])+
+    sec("proc",RM.sec.proc[0],RM.sec.proc[1],g.proc,x=>rowHtml(x))+
+    sec("boss",RM.sec.boss[0],RM.sec.boss[1],g.boss,x=>rowHtml(x))+
+    sec("pub",RM.sec.pub[0],RM.sec.pub[1],g.pub,x=>rowHtml(x))+
+    sec("osmu",RM.sec.osmu[0],RM.sec.osmu[1],g.osmu,x=>rowHtml(x,` · 블로그${x.ch&&x.ch.blog?"✓":"…"} 네이버${x.ch&&x.ch.naver?"✓":"…"} 인스타${x.ch&&x.ch.insta?"✓":"…"} 쓰레드${x.ch&&x.ch.threads?"✓":"…"}`));
   document.querySelectorAll("#steps li[data-code]").forEach(li=>{if(open.has(li.dataset.code))li.classList.add("open");li.onclick=ev=>{if(ev.target.tagName==="A")return;li.classList.toggle("open")}});
 }
 function flash(e){if(!e)return;e.classList.add("flash");setTimeout(()=>e.classList.remove("flash"),2200)}
@@ -806,13 +828,25 @@ function demo(s){
   if(st===5){c.aside=Object.assign({},c.aside,{lvl:"red",busy:false,state:"멈춤 — 보고 없음 20분"+T});c.units=(c.units||[]).map(u=>u.who==="Aside"?Object.assign({},u,{state:"멈춤",lvl:"red"}):u)}
   c.at=s.at+" · 🧪 시험 "+st+"/7 — "+DEMO_LAB[st];
   demoStep++;return c}
+function applyRoom(){
+  document.title=RM.title;const h=document.getElementById("h1t");if(h)h.textContent=RM.title;
+  const a=document.getElementById("navFlow"),b=document.getElementById("navOther");
+  if(a){a.href=RM.nav.flow[0];a.textContent=RM.nav.flow[1]}if(b){b.href=RM.nav.other[0];b.textContent=RM.nav.other[1]}
+  (RM.hide||[]).forEach(id=>{const e=document.getElementById(id);if(e)e.style.display="none"});
+}
+/* 방별 추가 목록 — 지도에 못 싣는 상세(카테고리 분포·신호 시각·최근 게시 등). 상태 파일이 제목·행만 주면 그린다 */
+function renderExtra(s){
+  const x=document.getElementById("roomExtra");if(!x)return;const secs=s.room_extra||[];
+  x.innerHTML=secs.map(c=>`<section class="panel"><h2>${esc(c.title)}${c.sub?` <small>${esc(c.sub)}</small>`:""}</h2>`+
+    `<div class="lane">`+((c.rows||[]).map(r=>`<div class="cp ${esc(r.lvl||"ok")}"><b>${esc(r.head)}</b>${r.chip?` <span style="font-weight:700;color:var(--muted)">${esc(r.chip)}</span>`:""}${r.sub?`<div class="nt">${esc(r.sub)}</div>`:""}</div>`).join("")||`<div class="cp idle">${esc(c.empty||"없음")}</div>`)+`</div></section>`).join("");
+}
 async function load(){
-  try{const r=await fetch("engine_state.json?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);const s=await r.json();fetchOk=true;pingRadar();render(DEMO?demo(s):s)}
+  try{const r=await fetch(RM.state+"?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);const s=await r.json();fetchOk=true;pingRadar();render(DEMO?demo(s):s)}
   catch(e){fetchOk=false;setLive();document.getElementById("at").textContent="상태 파일을 못 읽음("+e.message+") — 로컬 CP(localhost:8000)에서 열거나 배포 후 확인"}
 }
 document.getElementById("alarm").addEventListener("click",goAlert);
 document.getElementById("alarm").addEventListener("keydown",ev=>{if(ev.key==="Enter")goAlert()});
-document.getElementById("tg").onclick=()=>{const f=document.getElementById("flowfr");const on=f.style.display!=="block";if(on&&!f.src)f.src="engine_flow.html";f.style.display=on?"block":"none";document.getElementById("tg").textContent=on?"접기":"아래에 펼치기"};
+document.getElementById("tg").onclick=()=>{const f=document.getElementById("flowfr");const on=f.style.display!=="block";if(on&&!f.src)f.src=RM.nav.flow[0];f.style.display=on?"block":"none";document.getElementById("tg").textContent=on?"접기":"아래에 펼치기"};
 function tick(){const d=new Date(),p=n=>String(n).padStart(2,"0");document.getElementById("clock").textContent=p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds());tickMin();setLive()}
 let rz=0;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{if(S&&!RP){const v=document.getElementById("gpanel").clientWidth<620;if(curLayout!==(v?"v":"h"))render(S)}},200)});
 /* 🔗 결재함 → 상황실(engine.html#코드) — 그 글 줄을 펼치고 수정 캐리어면 그 가방도 깜빡 */
@@ -821,7 +855,7 @@ function goHashEng(){const c=decodeURIComponent((location.hash||"").slice(1));if
   const inRows=[...document.querySelectorAll('#steps li[data-code]')].some(e=>e.dataset.code===c);
   if(inRows)focusRow(c);else if((S.edits||[]).some(e=>e.code===c))focusEdit(c);else showCode(c);}
 addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashEng,1000);
-tick();setInterval(tick,1000);load();setInterval(load,DEMO&&!/^[0-7]$/.test(DEMO)?4500:20000);
+applyRoom();tick();setInterval(tick,1000);load();setInterval(load,DEMO&&!/^[0-7]$/.test(DEMO)?4500:20000);
 </script>
 </body>
 </html>
