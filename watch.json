@@ -32765,8 +32765,10 @@
    "cmd": "승인: aroma-threads-sp020-1120",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
-   "by": "이대리"
+   "state": "done",
+   "by": "이대리",
+   "done_at": "2026-11-20",
+   "result": "사장님 채팅 「전부 승인이」 04:46 — 이부장 회수 · 사장님 2026-11-20 04:40경 채팅 원문 「전부 승인이」(결재함 6건 목록 제시 직후) — AM-SP-020 11/20 12:30~13:00 슬롯 게시"
   },
   {
    "id": "verify-idwake2-1119",
@@ -33157,6 +33159,16 @@
    "what": "C2-29 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): ============\nerror: failed to push some refs to 'https://github.com/magsori-wq/lifeinfo-source.git'",
    "due": "2026-11-20",
    "cmd": "git push origin main && python -m studio.pubready --code C2-29",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gatesync-push-fail-11200446",
+   "added": "2026-11-20",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): syncorigin 원본 충돌(exit 3) — 사람이 봐야 함: e the remote changes, use\nhint: 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n",
+   "due": "2026-11-20",
+   "cmd": "git status -sb && python -m studio.gatesync",
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
