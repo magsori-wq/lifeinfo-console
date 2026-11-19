@@ -33578,6 +33578,60 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-retry-phone45-0120",
+   "added": "2026-11-20",
+   "what": "폰 시인성 4+5 deploy.bat 재실행 — 07:45 실행이 시험 3건 실패로 막힘. 시험 초록 확인 직후 이부장이 재실행 + github.io engine_build 확인 + 카톡",
+   "due": "2026-11-20",
+   "cmd": "python -m unittest tests.test_studio_pure 2>&1 | tail -3",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "07:51 deploy.bat 성공·라이브 engine.html 정규화 일치·build 394782a37f1f·시험 672 OK·카톡 발송"
+  },
+  {
+   "id": "verify-catrend-fixpack-0815",
+   "added": "2026-11-20",
+   "what": "catrend·fixpack verify 결과 읽고 confirm 후 정비에 통지",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.chkmon show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-a611v2-phone6-0820",
+   "added": "2026-11-20",
+   "what": "A6-11 정정본·phone6 verify 결과 읽고 이과장·정비에 가부 통지, phone6 합격이면 deploy.bat",
+   "due": "2026-11-20",
+   "cmd": "ls docs/verify_A6-11_naver_v2_20261120.md docs/verify_phone6_20261120.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-A6-11-1120",
+   "added": "2026-11-20",
+   "what": "A6-11 정정본 조건문장 검사 오탐 0 아님 — 메타 문장 1건(남은 일수 계산과 가상 사례는 본 글의 직접 작성이며…)",
+   "due": "2026-11-20",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import io,sys;sys.path.insert(0,'C:/lifeinfo');from studio import asidequeue as a;print(len(a.missing_conditions(io.open('C:/lifeinfo/배달라이더안전교육12월3일의무3시간_글_HTML.txt',encoding='utf-8').read(),io.open('C:/lifeinfo/네이버초안_A6-11.txt',encoding='utf-8').read())))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "재분류 ✅: .go.kr 3·관련글 2 동일. 자기 원문 링크 2곳(L102·L111)은 Aside ⑥이 요구하는 추가, 썸네일 png 는 링크 범위 밖. 문자 그대로 동일은 아니나 의도된 변경"
+  },
+  {
+   "id": "verify-A6-11-order-1120",
+   "added": "2026-11-20",
+   "what": "A6-11 Aside 지시서가 「새 글 게시」·「osmu.naver 비어 있음」인데 네이버 224484259201 은 이미 게시완료(라이브 200, 정정 전 본문: M1·M2 없음, K1 044-201-4158 있음). 정정은 기존 글 수정으로만",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.osmu_manifest table --code A6-11",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }

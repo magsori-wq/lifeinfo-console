@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-20 07:11",
+ "generated": "2026-11-20 08:10",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/19 23:04",
-   "next": "11/20 08:00",
+   "last": "11/20 08:04",
+   "next": "11/20 11:00",
    "model": "sonnet-5-5",
-   "report_day": "1119",
-   "report": "11-19 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 커넥터 magsori 2일 중요메일 0(구글뉴스·광고만), GSC 7일 0건, 8975 전달=구글뉴스 1건, aroma 0건(평소). gmailread scan 은 도구 권한 거부(개인정보 플러그인)로 미실행. 사장님 할 일 없음",
+   "report_day": "1120",
+   "report": "11-20 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 새 구글 피드백(help-communities)·AdSense·GSC 메일 0. 🟡 lifeinfo-console '콘솔 정합성 검사' 11-19 22시대 연속 15건 실패 — 원인 확정: console_check [HTML 참조] 깨진 로컬 참조 1건 batch.html -> stored (나머지 통과10·경고2). 정비/이부장 확인 필요. 11-19 03:17 publish 실패 1건은 '원격 앞섬(PC 커밋과 충돌) 가드' 정상작동, 이후 재실행분 별도. gmailread.py scan 은 개인정보 훅이 거부해 미실행(커넥터 조회로 대체).",
    "runs": [
+    {
+     "at": "11/20 08:07",
+     "link": "claude://claude.ai/epitaxy/local_f089065c-d757-4322-ba30-bc99d1567a14",
+     "archived": false
+    },
     {
      "at": "11/19 23:07",
      "link": "claude://claude.ai/epitaxy/local_35a06201-f6a8-41a6-8005-33e5db9e0a29",
@@ -30,11 +35,6 @@
     {
      "at": "11/19 14:07",
      "link": "claude://claude.ai/epitaxy/local_d819790c-67f5-4750-b5dd-474172e70b89",
-     "archived": true
-    },
-    {
-     "at": "11/19 11:07",
-     "link": "claude://claude.ai/epitaxy/local_604b61b2-a450-41cd-ac95-f376d92362ee",
      "archived": true
     }
    ]
