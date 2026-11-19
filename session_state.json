@@ -6764,14 +6764,14 @@
    "last_what": "정비(나)·11-19 17:58·커밋 112503637(원인 수정)+564b4c8f4(화면 표시 정정) push·syncorigin·본체 굽기. 원인 확정: 이대리가 장부 threads/분석.md 에 열 구성이 다른"
   },
   "exp1119m1": {
-   "reads": 1,
+   "reads": 2,
    "reads_since_report": 0,
-   "last_order_at": "2026-11-19 21:01:46",
-   "last_read": "2026-11-19 21:05:56",
+   "last_order_at": "2026-11-19 21:06:56",
+   "last_read": "2026-11-19 22:08:15",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-19 21:05:56",
-   "last_what": "▶ clean 요청 2건 21:03~21:04 수락(D5-09 21:03·G4-14 21:04, 화면 문구 「색인 생성 요청됨」)",
+   "last_report": "2026-11-19 22:13:19",
+   "last_what": "▶ 이부장 답 22:16: 「기록 누락」이 아니다 — gsc_log add 는 URL 중복 제거라 D5-09·G4-14 는 11-04 요청분이 이미 파일에 있어(491·501행, # 2026-11-04 add 아래)",
    "read_by": "report"
   },
   "expreq1119": {
@@ -6843,8 +6843,8 @@
    "last_read": "2026-11-19 21:02:01",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-19 21:05:42",
-   "last_what": "clean URL 색인 생성 요청 2건 수락(화면 「색인 생성 요청됨」 확인): D5-09 /2026/11/blog-post.html 21:03 · G4-14 /2026/11/2026-20-1-10.html 21:0"
+   "last_report": "2026-11-19 22:13:42",
+   "last_what": "▶ 이부장 정정 22:16: 21:08 완료 확인에서 _gsc_requested.txt 491·501행을 11-19 기록으로 잘못 읽었다(11-04 요청분). gsc_log 는 URL 중복 제거라 재요청은 새 줄이 "
   },
   "maint1119leak": {
    "reads": 2,
@@ -6884,9 +6884,20 @@
    "last_read": "2026-11-19 21:57:54",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-19 21:58:20",
-   "last_what": "읽음 — A6-11 썸네일 539 큰 글씨 교체 중"
+   "last_report": "2026-11-19 22:01:42",
+   "last_what": "thumbs/539_rider_safety_edu.png 교체(21:5x): 큰 글씨 「배달 라이더 안전교육 12월 3일부터」, 강조색 부제 「새로 계약하려면 3시간 · 계약 체결 전에」, 「의무」·「계약 못 합니다"
+  },
+  "maint1119share4": {
+   "reads": 2,
+   "last_order_at": "2026-11-19 21:14:21",
+   "last_read": "2026-11-19 22:16:40",
+   "read_by": "report",
+   "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-11-19 22:17:14",
+   "last_what": "📋 복창: 불일치 10건 — 1 superseded 가 소실로 세지는 새 결함(최우선)·2 게시 지연 승인 시각을 신호(aroma_approval_time)와 같게·3 슬롯 판정·경미(죽은 상수·장부 파서·정정·설계",
+   "owner": "정비"
   }
  },
- "updated": "2026-11-19 21:58"
+ "updated": "2026-11-19 22:17"
 }
