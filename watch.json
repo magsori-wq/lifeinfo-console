@@ -33256,6 +33256,66 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "xlink-h143",
+   "added": "2026-11-20",
+   "what": "🔗 H1-43 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-43",
+   "due": "2026-11-20",
+   "cmd": "python studio/blogger.py crosslink --code H1-43",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "catrend-topic-recheck-1120",
+   "added": "2026-11-20",
+   "what": "ca_trend 주제 0/0 정비(maint1120catrend) 수정 뒤 cadaily 재실행으로 주제 32개·kwgap --trend 기준일 갱신 실측",
+   "due": "2026-11-21",
+   "cmd": "python tools/ca_trend.py; python -m studio.kwgap --trend | head -3",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "exp1119m1-wake-0630",
+   "added": "2026-11-20",
+   "what": "4. 11-20 06:30 마감 확인(EXP-M1-1·2·3 표) — 없으면 깨우기",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep exp1119m1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "exp1119m1-wake-1130",
+   "added": "2026-11-20",
+   "what": "4. 11-20 11:30 원인 정리 초안 확인·12:00 보고 깨우기",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep exp1119m1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "exp1119m1-wake-m1-48h",
+   "added": "2026-11-20",
+   "what": "4. 11-21 18:35 ?m=1 +48h 판독 깨우기",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard show | grep exp1119m1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "exp1119m1-wake-clean-48h",
+   "added": "2026-11-20",
+   "what": "4. 11-21 21:03 클린 +48h 판독 깨우기",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard show | grep exp1119m1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
