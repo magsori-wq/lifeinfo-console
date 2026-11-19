@@ -32207,6 +32207,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "fix-f315-v0-0119",
+   "added": "2026-11-19",
+   "what": "F3-15 V0 필수수정: 90행 첫칸 11월 30일까지 -> 11월 1일 ~ 11월 30일, 114행 2025년 9월 낡은소제목 언급 삭제. validate_db FAIL 0. 커밋 안 함(관제탑)",
+   "due": "2026-11-20",
+   "cmd": "grep -c '11월 1일 ~ 11월 30일' 12월유류할증료인하발권일환급불가_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-rv-f315-1119",
+   "added": "2026-11-19",
+   "what": "F3-15 원고 보기 페이지(rv_F3-15_*.html) github.io 반영 — 12:11 deploy 직후라 12:30 뒤 deploy.bat 1회(연속 push 한도)",
+   "due": "2026-11-19",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://magsori-wq.github.io/lifeinfo-console/rv_F3-15_d971e3079c7d4964.html",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
