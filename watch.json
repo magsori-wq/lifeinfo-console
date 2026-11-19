@@ -33505,6 +33505,37 @@
    "owner": "claude",
    "state": "todo",
    "by": "4."
+  },
+  {
+   "id": "xlink-a611",
+   "added": "2026-11-20",
+   "what": "🔗 A6-11 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A6-11",
+   "due": "2026-11-20",
+   "cmd": "python studio/blogger.py crosslink --code A6-11",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "tower-promise-a611naver-0800",
+   "added": "2026-11-20",
+   "what": "A6-11 네이버 정정본 07:45 도착 → 이부장 verify 재대조 15분 → 08:00 전 게시 가부 통지(이과장)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep pub1120a611",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "naver-a611-fix-1120",
+   "added": "2026-11-20",
+   "what": "【권고】승인 — 이미 라이브인 A6-11 네이버 글(blog.naver.com/magsori8975/224484259201)의 본문을 정정본으로 교체(승인된 블로그스팟 초안과 같은 내용으로 되돌리기). 【근거】이과장이 V0 수정 전 낡은 파일로 네이버 원고를 만들어 07:09 에 게시함. verify 대조(docs/verify_A6-11_naver_20261120.md)에서 조건 3곳 누락(「같은 업체와 계속 일하는 경우에 한해」·새 계약/재작성 시 새 체결 가능성 행·마무리 경고) + 근거 없는 문의처 귀속 1곳 — 그대로 두면 「이미 계약한 사람은 교육 대상 아님」으로 단정해 읽힙니다(과태료·계약 문제). 정정본은 승인 초안과 전 줄 대조 후 교체. 【위험】본문 교체(교체 전 백업 보관·교체 후 PostView 재확인), 인스타·쓰레드는 정정 뒤 게시. 거부하면 현재 글 유지(오독 위험 그대로)",
+   "due": "2026-11-20",
+   "cmd": "echo 이과장이 naverwrite --fix 로 정정본 교체(이부장 지시)",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "세션:a7dca46f"
   }
  ]
 }
