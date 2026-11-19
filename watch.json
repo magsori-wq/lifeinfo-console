@@ -33354,8 +33354,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | head -5",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "06:50 이부장 점검: 4. 06:30 표 3개가 보드에 아직 없음(마지막 보고 05:57, 0/5) — 약속(표 도착 시 검토)이 아니라 4. 의 표 지연. 06:30 깨우기를 이부장이 놓침(과실). 07:15 마감으로 재지시, 검토 07:30 전"
   },
   {
    "id": "tower-promise-3-0930",
@@ -33473,6 +33475,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-4-0730",
+   "added": "2026-11-20",
+   "what": "4. 표 3개(EXP-M1-1·2·3) 07:15 도착 → 이부장 검토 15분 → 보완 지시서 07:30 전. 07:15 에 안 오면 07:20 깨움 재확인",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep exp1119m1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "expA3-clean-4h",
+   "added": "2026-11-20",
+   "what": "exp1119m1 클린 재요청 D5-09(06:58:38)·G4-14(07:00:33) +4h 판독(기준: 수락 시각)",
+   "due": "2026-11-20",
+   "cmd": "PYTHONIOENCODING=utf-8 python data/_exp_b_inspect_1113.py D5-09 G4-14 C4-01@m D2-05@m D1-02@m",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
+  },
+  {
+   "id": "expA3-clean-48h",
+   "added": "2026-11-20",
+   "what": "exp1119m1 클린 재요청 +48h 판독(기준: 11-20 06:58·07:00 수락)",
+   "due": "2026-11-22",
+   "cmd": "PYTHONIOENCODING=utf-8 python data/_exp_b_inspect_1113.py D5-09 G4-14 C4-01@m D2-05@m D1-02@m",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
   }
  ]
 }

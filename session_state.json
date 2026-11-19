@@ -4022,8 +4022,8 @@
   "tower1030": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-20 06:11:01",
-   "last_what": "폰 시인성 3차 검수 착수(verify 에이전트)"
+   "last_report": "2026-11-20 07:07:10",
+   "last_what": "A6-11 네이버 원고 수치 대조 착수(verify)"
   },
   "pub1030h135": {
    "state": "working",
@@ -6764,14 +6764,14 @@
    "last_what": "정비(나)·11-19 17:58·커밋 112503637(원인 수정)+564b4c8f4(화면 표시 정정) push·syncorigin·본체 굽기. 원인 확정: 이대리가 장부 threads/분석.md 에 열 구성이 다른"
   },
   "exp1119m1": {
-   "reads": 3,
+   "reads": 5,
    "reads_since_report": 0,
    "last_order_at": "2026-11-20 05:35:22",
-   "last_read": "2026-11-20 05:43:19",
+   "last_read": "2026-11-20 06:55:06",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-20 05:57:11",
-   "last_what": "[05:57 판독 · 4.] API 재판독(05:56): D5-09 Redirect error·마지막 크롤 11-19 21:16 · G4-14 Redirect error·21:17 · C4-01@m SUCCESSFU",
+   "last_report": "2026-11-20 07:05:21",
+   "last_what": "이부장 접수 07:05 — 4. 06:58 표 3개 완료 보고 접수·검토 완료(EXP-M1-1·2·3 합격, 요청 시각 확인 불가 명시 승인). 새 지시: 이과장 expreq1120(클린 2건 증거 재요청, 마감 1",
    "read_by": "report"
   },
   "expreq1119": {
@@ -6976,8 +6976,8 @@
    "last_read": "2026-11-20 05:05:39",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-20 05:23:05",
-   "last_what": "⏸ 대기 — A6-11 검색설명은 대기열 등록(1120050643865_A6-11_기타)·네이버 원고 파일 작성 완료. naver-draft 는 세트 순서 게이트(지금 차례 H1-43)가 막음 — H1-43 네이버·"
+   "last_report": "2026-11-20 07:06:55",
+   "last_what": "이부장 접수 07:08 — 이과장 A6-11 네이버 게시 초안(aside_drafts/A6-11_네이버게시.txt) 접수. 검토: 수치·단정 대조를 verify 에이전트에 맡김(착수 07:07, 결과 07:30 전)"
   },
   "pub1120c229": {
    "reads": 1,
@@ -6986,8 +6986,8 @@
    "read_by": "report",
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-20 04:51:54",
-   "last_what": "⏸ 대기 — A6-11 과 같은 push 막힘(xlink_live.json). A6-11 run 끝난 뒤 이어서 발행"
+   "last_report": "2026-11-20 06:53:47",
+   "last_what": "이부장 확인 보류 06:53 — C2-29 라이브 발행 확인(05:05)은 끝, 4채널 후속은 세트 순서(H1-43 완결 → A6-11 → C2-29)로 대기 중. 이과장이 C2-29 네이버~쓰레드를 끝내면 conf"
   },
   "maint1120phone": {
    "reads": 1,
@@ -7046,8 +7046,8 @@
    "last_read": "2026-11-20 06:10:07",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-20 06:38:39",
-   "last_what": "이부장 접수 06:39 — 정비 rhealth RH-2~5 완료 보고 접수. 검토: 이부장은 실측을 verify 에이전트로 맡김(07:00 전 착수), 루틴10 원인 조사 결과(세션 7e9bc74c 가 11-15 1"
+   "last_report": "2026-11-20 06:52:49",
+   "last_what": "이부장 접수 06:53 — 정비 06:41 「장부 형식 정합」(routinehealth.paused_map 이 CLAUDE.md 장부 형식과 일치) 접수. 검토: 합격 방향, 실측은 verify 에이전트로 07:30"
   },
   "maint1120phone4": {
    "reads": 1,
@@ -7058,7 +7058,27 @@
    "state": "working",
    "last_report": "2026-11-20 06:38:51",
    "last_what": "이부장 접수 06:39 — 정비 phone4 PH4-1~4 완료 보고 접수. 검토: phone3 검수 불합격 2건은 phone5 로 분리 발급(마감 09:00), phone4·phone5 를 같은 배포에 묶어 ver"
+  },
+  "maint1120phone5": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-20 06:38:08",
+   "last_read": "2026-11-20 06:39:21",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-20 06:53:18",
+   "last_what": "이부장 접수 06:53 — 정비 phone5 복창(펄스 글자 opacity 0.85 이상·로드 직후 칩 숨김→배치 후 표시)과 PH5-1~4 완료 보고 접수. 검토: 지시서 일치, verify 재검수는 phone4 "
+  },
+  "expreq1120": {
+   "reads": 2,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-20 06:55:35",
+   "last_read": "2026-11-20 07:01:29",
+   "owner": "이과장",
+   "state": "working",
+   "last_report": "2026-11-20 07:01:52",
+   "last_what": "✅ 클린 URL 2건 재요청 수락 — D5-09 06:58:38·G4-14 07:00:33(KST), 스크린샷 docs/exp1119m1_req_D5-09_0658.png(196195B)·docs/exp1119m1_"
   }
  },
- "updated": "2026-11-20 06:38"
+ "updated": "2026-11-20 07:07"
 }
