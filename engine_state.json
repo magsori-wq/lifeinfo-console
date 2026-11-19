@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 15:01:48",
+ "at": "2026-11-19 15:04:48",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,20 +11,19 @@
     "code": "A5-23",
     "title": "청년일자리도약장려금 2026 — 12월 31일은 신청 ",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
     "who": {
-     "naver": "lee"
+     "naver": "lee",
+     "insta": "lee"
     },
     "plan": {
-     "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-19",
@@ -387,10 +386,10 @@
  "drivers": [
   {
    "who": "이과장",
-   "state": "대기(보고 완료·다음 지시 기다림)",
+   "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 144,
-   "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
+   "last_min": 1,
+   "cur": "🚀 A5-23 발행 — 청년일자리도약장려금 2026 — 12월",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
   },
@@ -439,17 +438,17 @@
  "units": [
   {
    "who": "이과장",
-   "state": "대기(보고 완료·다음 지시 기다림)",
+   "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 144,
-   "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
+   "last_min": 1,
+   "cur": "🚀 A5-23 발행 — 청년일자리도약장려금 2026 — 12월",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 19,
+   "last_min": 22,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -465,7 +464,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 5,
+   "last_min": 8,
    "cur": "엔진설계도 문의 회신②~④ ②쓰레드 공유: 지금은 중단 — A",
    "lvl": "ok"
   },
@@ -698,6 +697,13 @@
      "who": "lee"
     },
     {
+     "code": "A5-23",
+     "title": "청년일자리도약장려금 2026 — 12월 31일은 신청 ",
+     "url": "https://www.instagram.com/p/Df6ZIiNEQZo/",
+     "at": "2026-11-19",
+     "who": "lee"
+    },
+    {
      "code": "C2-28",
      "title": "학생건강기록부 정부24 발급, 정기진료 결석은 출석인정",
      "url": "https://www.instagram.com/magsori8975/p/Df5RlZAEyMC/",
@@ -733,12 +739,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "A5-23",
-     "title": "청년일자리도약장려금 2026 — 12월 31일은 신청 "
-    }
-   ]
+   "wait": []
   },
   "threads": {
    "done": [
@@ -987,6 +988,13 @@
    "src": "결재 도장"
   },
   {
+   "code": "A5-23",
+   "stage": "naver",
+   "at": "2026-11-19 15:03:01",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
    "code": "A1-26",
    "stage": "threads",
    "at": "",
@@ -1015,7 +1023,7 @@
   },
   {
    "code": "A5-23",
-   "stage": "naver",
+   "stage": "insta",
    "at": "",
    "src": "DB osmu_at(날짜뿐)",
    "who": "lee"
@@ -1150,13 +1158,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 5,
+  "state": "stale",
+  "ok": 6,
   "stale": 1,
-  "bad": 1,
+  "bad": 0,
   "na": 0,
-  "at": "2026-11-19 14:59:47",
-  "age_min": 2
+  "at": "2026-11-19 15:04:42",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
