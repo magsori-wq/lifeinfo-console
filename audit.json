@@ -5944,6 +5944,22 @@
    "target": "A6-11",
    "detail": "재검사(diff): 지적1 이직·재작성 행 추가+같은 업체 단서·마무리 박스 정합, 지적2 전화 4157·4158 공고 문의처로 정정(원문정리 일치), 지적3 제목 41자 조건형·큐 제목 동기. 기계검사 4종 정상. 권고: 썸네일 큰 글씨 '의무' 문구 제목과 통일",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-19T22:23:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-leak-1119",
+   "detail": "이부장 22:25: 0de22d5ed diff 열어 확인(enginestate.build() out_path=호출 시점 W), TestStateLeakMaint1119 2건 직접 실행 OK, 정비 재현·원인 기록(LEAK-1·2)과 일치. 남은 구멍(towertick STATE 등 import 시점 경로 상수)은 maint1119leak 노트에 있음 — 새 시험 추가 시 같은 함정 주의",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-19T22:38:13",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "expA2-m1-4h-1119",
+   "detail": "4h 판독 22:37: ?m=1 3건 중 2건 크롤 도착(C4-01 18:37·D2-05 18:41), D1-02 미도착(07-10 그대로), 3건 모두 색인 아님(Crawled-미색인), 일반 주소 3건 lastCrawl 불변",
+   "via": "cli"
   }
  ]
 }

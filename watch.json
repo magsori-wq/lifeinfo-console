@@ -32647,8 +32647,10 @@
    "due": "2026-11-20",
    "cmd": "python data/_exp_b_inspect_1113.py C4-01@m D1-02@m D2-05@m C4-01 D1-02 D2-05",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-11-19",
+   "result": "4h 판독 22:37: ?m=1 3건 중 2건 크롤 도착(C4-01 18:37·D2-05 18:41), D1-02 미도착(07-10 그대로), 3건 모두 색인 아님(Crawled-미색인), 일반 주소 3건 lastCrawl 불변"
   },
   {
    "id": "expA2-m1-48h-1119",
@@ -32974,8 +32976,10 @@
    "due": "2026-11-19",
    "cmd": "git show 0de22d5ed --stat",
    "owner": "claude",
-   "state": "todo",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-19",
+   "result": "이부장 22:25: 0de22d5ed diff 열어 확인(enginestate.build() out_path=호출 시점 W), TestStateLeakMaint1119 2건 직접 실행 OK, 정비 재현·원인 기록(LEAK-1·2)과 일치. 남은 구멍(towertick STATE 등 import 시점 경로 상수)은 maint1119leak 노트에 있음 — 새 시험 추가 시 같은 함정 주의"
   }
  ]
 }
