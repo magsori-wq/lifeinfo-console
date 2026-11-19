@@ -1,0 +1,218 @@
+{
+ "at": "2026-11-19 16:31:43",
+ "errors": [],
+ "rows": [
+  {
+   "code": "AM-DG-003",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-003-approve-1031",
+     "state": "done",
+     "kind": "approve"
+    }
+   ],
+   "last_file_at": "2026-10-31 23:18",
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 3704df6cf"
+  }
+ ],
+ "old_inflight": [],
+ "recent_published": [
+  {
+   "code": "AM-SP-021",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-021-approve-1119",
+     "state": "done",
+     "kind": "approve"
+    }
+   ],
+   "last_file_at": "2026-11-19 04:51",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-19"
+  },
+  {
+   "code": "AM-PE-015",
+   "approvals": [
+    {
+     "id": "aroma-am-pe-015-approve-1115",
+     "state": "done",
+     "kind": "approve"
+    }
+   ],
+   "last_file_at": "2026-11-16 14:15",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-16"
+  },
+  {
+   "code": "AM-BO-011",
+   "approvals": [
+    {
+     "id": "aroma-am-bo-011-approve-1114",
+     "state": "done",
+     "kind": "approve"
+    }
+   ],
+   "last_file_at": "2026-11-15 04:13",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-15"
+  },
+  {
+   "code": "AM-DG-014",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-014-approve-1114",
+     "state": "done",
+     "kind": "approve"
+    }
+   ],
+   "last_file_at": "2026-11-15 04:09",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-15"
+  },
+  {
+   "code": "AM-PE-014",
+   "approvals": [
+    {
+     "id": "aroma-am-pe-014-approve-1114",
+     "state": "done",
+     "kind": "approve"
+    }
+   ],
+   "last_file_at": "2026-11-15 04:11",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-15"
+  },
+  {
+   "code": "AM-SP-020",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-020-approve-1114",
+     "state": "done",
+     "kind": "approve"
+    },
+    {
+     "id": "aroma-am-sp-020-update-1115",
+     "state": "done",
+     "kind": "update"
+    },
+    {
+     "id": "aroma-am-sp-020-update2-1116",
+     "state": "done",
+     "kind": "update2"
+    },
+    {
+     "id": "aroma-am-sp-020-update3-1119",
+     "state": "done",
+     "kind": "update3"
+    }
+   ],
+   "last_file_at": "2026-11-19 04:34",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-15"
+  }
+ ],
+ "published_total": 60,
+ "rev_wait": [],
+ "cats": {
+  "window": 14,
+  "rows": [
+   [
+    "방송·OTT",
+    7
+   ],
+   [
+    "공연·연예",
+    11
+   ],
+   [
+    "스포츠",
+    10
+   ],
+   [
+    "디지털 콘텐츠·여가",
+    9
+   ]
+  ],
+  "total": 37
+ },
+ "threads": {
+  "state": "dormant",
+  "label": "휴면 — 마지막 파일 분석.md(11-01 18:34, 17일 전)",
+  "files": 3
+ },
+ "signals": [
+  {
+   "name": "IDAERI_WAKE",
+   "node": "승인 → 이대리 깨움",
+   "last_at": "2026-11-13 04:29:29",
+   "src": ".idaeri_wake.json last_run",
+   "today_n": null,
+   "note": "하루 넘게 갱신 없음 — 깨움 모드가 안 도는지 확인 필요"
+  },
+  {
+   "name": "AROMA_PUBLISH_STALL",
+   "node": "승인 → 게시(240분)",
+   "last_at": "",
+   "src": "시각 저장 없음(진행 중 0건)",
+   "today_n": 0,
+   "note": ""
+  },
+  {
+   "name": "AROMA_PUBLISH_RESOLVED",
+   "node": "승인 → 게시 해소",
+   "last_at": "",
+   "src": "시각 저장 없음",
+   "today_n": 0,
+   "note": ""
+  },
+  {
+   "name": "IDAERI_STALL",
+   "node": "요청 → 이행(30분)·활동 공백(3시간)",
+   "last_at": "2026-11-19 09:00",
+   "src": "idaeri_idle_at(공백 알림만)",
+   "today_n": 1,
+   "note": "열린 요청 0건"
+  },
+  {
+   "name": "TOWER_OWED",
+   "node": "이대리 🙋·⏸ → 이부장 15분",
+   "last_at": "",
+   "src": "tick owed(aroma 건)",
+   "today_n": 113,
+   "note": "횟수는 아래 세션 전체"
+  },
+  {
+   "name": "ASIDE_ALERT",
+   "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
+   "last_at": "2026-11-19 04:25:23",
+   "src": "now_log(bid=aroma)",
+   "today_n": 8,
+   "note": "횟수는 전체 세션"
+  },
+  {
+   "name": "ROUTINE_DONE",
+   "node": "루틴10 → CP",
+   "last_at": "",
+   "src": "시각 저장 없음(루틴10 꺼짐은 설계도 기재)",
+   "today_n": 4,
+   "note": "횟수는 lifeinfo 루틴 전체"
+  }
+ ],
+ "unit": {
+  "who": "이대리",
+  "state": "대기",
+  "jobs": 0,
+  "last_min": 44,
+  "cur": "11/19 15:47 정기 점검 — 새 결재·요청 없음, 로그",
+  "lvl": "ok"
+ },
+ "open_requests": []
+}

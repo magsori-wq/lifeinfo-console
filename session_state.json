@@ -6545,8 +6545,8 @@
   "tower1119": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 14:54:10",
-   "last_what": "👤 사장님 직접 지시 14:48 「우리 프로젝트처럼 이대리 엔진상황실과 신호체계흐름도 만들어줘」 — 이부장이 docs/엔진설계도_이대리.md(흐름도) 작성, 상황실 화면은 정비 지시서, 이대리에는 문의(지시 아님)"
+   "last_report": "2026-11-19 16:29:22",
+   "last_what": "👤 사장님 직접 지시 16:28 「쓰레드 공유 숫자부터 재도록 해」 — measure(Haiku) 가 AM-SP-005 공유 글 반응 vs 생활정보 쓰레드 20편 + 공유 전후 + 유입 데이터 유무를 읽기 전용으로 "
   },
   "post1119a232": {
    "reads": 1,
@@ -6619,10 +6619,10 @@
    "last_what": "실측: A5-23 발행(run 44468290730 success·라이브 200 https://lifeinfo8975.blogspot.com/2026/11/2026-12-31-1-720.html)+4채널 완결 — 네"
   },
   "livefix1119a312": {
-   "reads": 1,
-   "reads_since_report": 0,
+   "reads": 2,
+   "reads_since_report": 1,
    "last_order_at": "2026-11-19 15:11:25",
-   "last_read": "2026-11-19 15:16:18",
+   "last_read": "2026-11-19 16:23:34",
    "owner": "이과장",
    "state": "working",
    "last_report": "2026-11-19 15:18:32",
@@ -6646,8 +6646,8 @@
    "last_read": "2026-11-19 16:01:50",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-19 16:03:47",
-   "last_what": "📋 복창: enginestate 생성기 확장 — _flow_page 가 설계도 파일·출력 인자를 받아 engine_aroma_flow.html 굽기 + aroma 상태(engine_aroma_state.json: 글"
+   "last_report": "2026-11-19 16:23:23",
+   "last_what": "정비(나)·11-19 16:25·커밋 0d7575f6e push·syncorigin 성공·본체 굽기 완료. 왜=사장님 14:48 「이대리 엔진상황실과 신호체계흐름도」. 한 일(studio/enginestate.py)"
   },
   "pub1119a319": {
    "reads": 1,
@@ -6656,9 +6656,29 @@
    "read_by": "report",
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 16:14:34",
-   "last_what": "instagram 게시·기록 완료 — https://www.instagram.com/p/Df6hBoTEf09/ (naver-link 가 자동 보고) · 남음: 쓰레드"
+   "last_report": "2026-11-19 16:22:24",
+   "last_what": "실측: A3-19 발행 run 44476584421 success·라이브 200, 4채널 후속은 post1119a319 에 기록"
+  },
+  "post1119a319": {
+   "reads": 1,
+   "last_order_at": "2026-11-19 16:07:34",
+   "last_read": "2026-11-19 16:22:18",
+   "read_by": "report",
+   "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-11-19 16:22:18",
+   "last_what": "실측: A3-19 발행(run 44476584421 success·라이브 200 https://lifeinfo8975.blogspot.com/2026/11/2027-1-1-12-2026.html)+4채널 완결 — 네"
+  },
+  "livefix1119a313": {
+   "reads": 3,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-19 16:10:52",
+   "last_read": "2026-11-19 16:23:37",
+   "owner": "이과장",
+   "state": "working",
+   "last_report": "2026-11-19 16:25:28",
+   "last_what": "실측(dry-run까지·라이브 미수정): 갱신본 data/_a313_new.html·변경 전 data/_a313_old.html·diff data/_a313_diff.txt, update-post --dry-run "
   }
  },
- "updated": "2026-11-19 16:14"
+ "updated": "2026-11-19 16:29"
 }
