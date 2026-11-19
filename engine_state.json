@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 14:29:27",
+ "at": "2026-11-19 14:31:27",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,20 +11,19 @@
     "code": "A3-18",
     "title": "국민연금 첫 보험료 지원 2027년 1월 시행 — 20",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
     "who": {
-     "naver": "lee"
+     "naver": "lee",
+     "insta": "lee"
     },
     "plan": {
-     "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-19",
@@ -367,11 +366,11 @@
  "drivers": [
   {
    "who": "이과장",
-   "state": "대기(보고 완료·다음 지시 기다림)",
+   "state": "지연·확인 필요",
    "jobs": 5,
-   "last_min": 111,
+   "last_min": 113,
    "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
-   "lvl": "ok",
+   "lvl": "amber",
    "role": "②처리·④발행 운전"
   },
   {
@@ -418,17 +417,17 @@
  "units": [
   {
    "who": "이과장",
-   "state": "대기(보고 완료·다음 지시 기다림)",
+   "state": "지연·확인 필요",
    "jobs": 5,
-   "last_min": 111,
+   "last_min": 113,
    "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
-   "lvl": "ok"
+   "lvl": "amber"
   },
   {
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 95,
+   "last_min": 97,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -444,7 +443,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 41,
+   "last_min": 43,
    "cur": "11/19 13:47 정기 점검 — 새 결재·요청 없음, 로그",
    "lvl": "ok"
   },
@@ -655,6 +654,13 @@
      "who": "lee"
     },
     {
+     "code": "A3-18",
+     "title": "국민연금 첫 보험료 지원 2027년 1월 시행 — 20",
+     "url": "https://www.instagram.com/p/Df6VX_SkTjB/",
+     "at": "2026-11-19",
+     "who": "lee"
+    },
+    {
      "code": "C2-28",
      "title": "학생건강기록부 정부24 발급, 정기진료 결석은 출석인정",
      "url": "https://www.instagram.com/magsori8975/p/Df5RlZAEyMC/",
@@ -690,12 +696,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "A3-18",
-     "title": "국민연금 첫 보험료 지원 2027년 1월 시행 — 20"
-    }
-   ]
+   "wait": []
   },
   "threads": {
    "done": [
@@ -917,6 +918,13 @@
    "src": "topicprop 선별"
   },
   {
+   "code": "A3-18",
+   "stage": "naver",
+   "at": "2026-11-19 14:30:10",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
    "code": "A1-26",
    "stage": "threads",
    "at": "",
@@ -932,7 +940,7 @@
   },
   {
    "code": "A3-18",
-   "stage": "naver",
+   "stage": "insta",
    "at": "",
    "src": "DB osmu_at(날짜뿐)",
    "who": "lee"
@@ -1066,13 +1074,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 5,
+  "state": "stale",
+  "ok": 6,
   "stale": 1,
-  "bad": 1,
+  "bad": 0,
   "na": 0,
-  "at": "2026-11-19 14:26:30",
-  "age_min": 2
+  "at": "2026-11-19 14:31:26",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
