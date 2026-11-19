@@ -2087,9 +2087,9 @@
   },
   "cadaily": {
    "state": "working",
-   "reads_since_report": 1,
-   "last_report": "2026-11-19 04:42:33",
-   "last_what": "✅ 11-19 05:05 cadaily 11-16·17·18분 일괄 실행(3.) — 11-17~18은 지시서 갱신 지연·세션 대기로 누락(11-16 15:00 이후 첫 실행): ca_daily 16 17 18 --m",
+   "reads_since_report": 0,
+   "last_report": "2026-11-20 05:06:23",
+   "last_what": "11-20 05:10 cadaily 실행(11-19분): ①유입검색어 100건 저장·조회167·검색유입률95.6%·판독일 오늘 ②서치어드바이저 기준 11-18 클릭42(7일)·노출8390·CTR0.5% ③⚠️트렌드 ",
    "reads": 20,
    "last_order_at": "2026-11-07 12:52:22",
    "last_read": "2026-11-20 05:02:24",
@@ -3967,10 +3967,10 @@
    "owner": "이과장"
   },
   "fuel1030": {
-   "reads": 3,
-   "reads_since_report": 2,
+   "reads": 5,
+   "reads_since_report": 4,
    "last_order_at": "2026-11-19 20:47:33",
-   "last_read": "2026-11-20 05:02:15",
+   "last_read": "2026-11-20 05:11:52",
    "owner": "3.",
    "state": "waiting",
    "last_report": "2026-11-19 21:27:18",
@@ -4023,8 +4023,8 @@
   "tower1030": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-20 04:55:50",
-   "last_what": "👤 사장님 직접 지시: 「폰에서 시인성확보해줘」(11-20 04:5x, 캡처 첨부) · 대상 webapp/engine.html → 정비 maint1120phone 발급, 마감 11:00"
+   "last_report": "2026-11-20 05:06:02",
+   "last_what": "✅ 05:05 H1-43·A6-11·C2-29 라이브 발행 확인(200·og:title·og:image·썸네일 538~540 200) — 4채널 후속 이과장 순서 H1-43→A6-11→C2-29 지시, 재고 0 → "
   },
   "pub1030h135": {
    "state": "working",
@@ -4438,8 +4438,8 @@
   "chkmon": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 22:30:12",
-   "last_what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵3 🟡4 — 즉시: 사장님 결재 대기 H1-43 해외직구 건강식품 139개 중 95개 유해성분 — 관세; 사장님 결재 대기 A6-11 배달 라이더 안전교육 12월 3일부터 — "
+   "last_report": "2026-11-20 05:08:20",
+   "last_what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡6 — 즉시: 반영 어긋남 · 화면 생성물 신선도 · 묶음: 사건×2 반영 감사×1 기타×3 (상세 python -m studio.chkmon show)"
   },
   "draft1106d121": {
    "reads": 4,
@@ -6970,14 +6970,14 @@
    "last_what": "✅ push 해소(ahead 0/behind 0). A6-11(12-3-3)·C2-29(5) 은 이부장이 발행해 라이브 200 확인. H1-43 은 검색설명 대기열 등록·네이버 원고/Aside 초안 준비 완료 — 이"
   },
   "pub1120a611": {
-   "reads": 1,
+   "reads": 2,
    "reads_since_report": 0,
    "last_order_at": "2026-11-20 04:43:26",
-   "last_read": "2026-11-20 04:51:06",
+   "last_read": "2026-11-20 05:05:39",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-20 04:51:43",
-   "last_what": "⏸ 대기 — A6-11·C2-29 발행 도장이 origin 에 아직 없음(pubready ⛔ 「go 도장 원격 없음」). 원인: 로컬 앞 6·뒤 1, syncorigin 이 data/xlink_live.json(남의"
+   "last_report": "2026-11-20 05:07:20",
+   "last_what": "⏸ 대기 — A6-11 검색설명은 대기열 등록(1120050643865_A6-11_기타)·네이버 원고 파일 작성 완료. naver-draft 는 세트 순서 게이트(지금 차례 H1-43)가 막음 — H1-43 네이버·"
   },
   "pub1120c229": {
    "reads": 1,
@@ -6996,9 +6996,19 @@
    "last_read": "2026-11-20 04:56:01",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-20 04:56:19",
-   "last_what": "📋 복창: webapp/engine.html 폰(412px) 시인성 5결함(4채널 카드·Aside·원 안 숫자·코드 칩 겹침·작은 글자) CSS 수정 · 하지 않을 것: 새 도구·커밋 · 끝나면 대비비 숫자·스크린샷"
+   "last_report": "2026-11-20 05:06:57",
+   "last_what": "Aside 대신 내장 브라우저(Aside 도구가 이 세션에 없음)로 http://127.0.0.1:8000/engine.html 을 412px 폭·다크/라이트 에뮬로 열어 확인: ①JS 로 192개 텍스트 글자색·배"
+  },
+  "maint1120phone2": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-20 05:11:29",
+   "last_read": "2026-11-20 05:11:58",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-20 05:16:23",
+   "last_what": "내장 브라우저(Aside 도구가 이 세션에 없음)로 http://127.0.0.1:8000/engine.html 412px 다크·라이트 에뮬, 접힌 상세(details) 펼친 상태: ①본문 텍스트 312개 대비 4."
   }
  },
- "updated": "2026-11-20 05:05"
+ "updated": "2026-11-20 05:16"
 }

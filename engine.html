@@ -35,9 +35,9 @@ h1{font-size:1.1rem;margin:0;display:flex;align-items:center;gap:6px}
 .eflow{margin:8px 0;--pu:#a46bff}.eflow .lh{font-size:.78rem;font-weight:800;color:var(--pu);margin-bottom:4px}.eflow .erow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;overflow-x:auto}.eflow .est{flex:1 1 0;min-width:0;overflow-wrap:anywhere;border:1px solid var(--line);border-top:3px solid var(--idle);border-radius:6px;padding:4px 6px;background:var(--panel2);font-size:.72rem;line-height:1.3}.eflow .est b{display:block;font-size:.74rem}.eflow .est small{color:var(--muted)}.eflow .est.has{border-top-color:var(--pu);box-shadow:0 0 0 1px var(--pu) inset}.eflow .est.dn.has{border-top-color:var(--ok);box-shadow:none}.eflow .ec span{display:inline-block;will-change:transform;margin:2px 3px 0 0;padding:0 4px;border-radius:4px;background:var(--pu);color:#fff;font-weight:700;font-size:.7rem}.eflow .est.dn .ec span{background:var(--ok)}.eflow .cr i{display:block;font-style:normal;font-weight:600;font-size:.62rem;opacity:.9}.eflow .ear{flex:0 0 18px;align-self:center;height:4px;margin:0 2px;background:var(--line);border-radius:2px;position:relative;overflow:hidden}.eflow .ear.on{background:linear-gradient(90deg,transparent 0,var(--pu) 40%,transparent 80%);background-size:200% 100%;animation:eflow 1s linear infinite}@keyframes eflow{0%{background-position:100% 0}100%{background-position:-100% 0}}html.reduce .eflow .ear.on{animation:none;background:var(--pu)}@media (max-width:560px){.eflow .est{font-size:.62rem;padding:3px 3px}.eflow .est b{font-size:.64rem}.eflow .ear{flex-basis:8px;margin:0 1px}.eflow .ec span{font-size:.6rem;padding:0 2px}}
 /* 📱 갤럭시 S23 울트라(QHD+ 1440×3088, CSS 412×882 @3.5x) 최적화 — 사장님 10-23. 지도를 한두 화면 안에, 글자는 실제 9px 밑으로 안 내려가게 */@media (max-width:560px){.lane{gap:4px;margin:4px 0}.lane .cp{flex:1 1 31%;padding:3px 5px;font-size:.68rem;line-height:1.3}.lane .cp b{font-size:.72rem}.lane .cp .nt{display:none}.lane .cp.feed .fd{font-size:.66rem}.lane .lh{font-size:.72rem}#map .fl{font-size:12px}#map .drv text{font-size:12px}#map .dot text{font-size:12px}#map .hub text{font-size:12px}#map #hubt{font-size:12px!important}#map .t2{font-size:13px}#map .t2.sm{font-size:12px}}
 .tank{position:relative;min-width:100%;height:22px;border:2px solid var(--line);border-radius:11px;background:var(--panel2);overflow:hidden;margin:2px 0 4px}.tank .tfill{position:absolute;left:0;top:0;bottom:0;border-radius:9px 0 0 9px;transition:width .8s ease}.tank .tpend{position:absolute;top:3px;bottom:3px;border:2px dashed var(--bl);border-left:none;border-radius:0 6px 6px 0;animation:tpend 1.2s ease-in-out infinite}@keyframes tpend{0%,100%{opacity:.9}50%{opacity:.35}}.tank .tmin{position:absolute;top:-2px;bottom:-2px;width:3px;background:var(--rd)}.tank .tlab{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:.74rem;font-weight:800;color:var(--fg);text-shadow:0 0 3px var(--panel)}html.reduce .tank .tpend{animation:none}
-#alarm.rd{display:block;background:var(--rd);color:#fff;animation:alarm 1s steps(2) infinite}
-#alarm.am{display:block;background:var(--am);color:#1a1200}
-#alarm small{font-weight:400;opacity:.9}
+#alarm.rd{display:block;background:#b3261e;color:#fff;animation:alarm 1s steps(2) infinite}
+#alarm.am{display:block;background:#ffb02e;color:#1a1200}
+#alarm small{font-weight:400;opacity:1;font-size:.86rem}
 #flowfr{display:none;width:100%;height:70vh;border:1px solid var(--line);border-radius:6px;background:#fff}
 .main{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
 @media (min-width:1300px){.main{grid-template-columns:minmax(0,3fr) minmax(0,2fr);align-items:start}#tpanel{position:sticky;top:96px;max-height:calc(100vh - 110px);overflow-y:auto}}
@@ -101,7 +101,7 @@ svg .dot.ex-lee circle{fill:#38BDF8}svg .dot.ex-unk circle{fill:#6B7280}   /* sv
 .dot{cursor:pointer}
 .dot circle{fill:var(--bl);stroke:var(--panel);stroke-width:1}.dot text{font-size:10px;font-weight:700}
 .dot.am circle{fill:var(--am)}.dot.rd circle{fill:var(--rd)}.dot.dn circle{fill:var(--ok)}
-.dot.mv circle{animation:pulse 1s ease-in-out infinite}
+.dot.mv circle{animation:pulse 1s ease-in-out infinite}.dot.hid{display:none}
 .dot.rd{animation:blink .8s steps(2) infinite}
 #dots,#parts{transition:opacity .4s}
 svg#map.replaying #dots{opacity:.1}svg#map.replaying #parts{opacity:.2}
@@ -158,7 +158,7 @@ html.reduce *{animation:none!important;transition:none!important}
 :root{--muted:#4a5b69}
 @media not (prefers-color-scheme:dark){:root{--am:#8a5200;--pu:#6a3dcb;--ok:#0b7a45;--bl:#1565b0;--rd:#c62828}.eflow{--pu:#6a3dcb}.exlg .k1{color:#0369a1}.exlg .k2{color:#be185d}}
 @media (prefers-color-scheme:dark){:root{--muted:#a3b6c4}.exlg .k3{color:#a3adba}}
-@media (max-width:560px){.lane .cp{font-size:.86rem}.lane .cp b{font-size:.9rem}.lane .lh{font-size:.86rem}.eflow .lh{font-size:.86rem}.eflow .est{font-size:.86rem}.eflow .est b{font-size:.9rem}.eflow .cr i{font-size:.86rem;opacity:1}.eflow .ec span{font-size:.86rem}.steps li .w,.steps li .m,.steps li .dtl,.steps li .aff{font-size:.86rem}.tank .tlab,.tlab,.lg,.rpnote,small,.SMALL{font-size:.86rem}#map .gv{font-weight:900}#map .nd .t1.sm{font-size:12px}.panel h2 small,.exlg{font-size:.86rem}.kp span,.steps li,#detail li,details.strip li,.btn,.mo,.mo *{font-size:.86rem}.steps li .c{font-size:.9rem}}
+@media (max-width:560px){.lane .cp{font-size:.86rem}.lane .cp b{font-size:.9rem}.lane .lh{font-size:.86rem}.eflow .lh{font-size:.86rem}.eflow .est{font-size:.86rem}.eflow .est b{font-size:.9rem}.eflow .cr i{font-size:.86rem;opacity:1}.eflow .ec span{font-size:.86rem}.steps li .w,.steps li .m,.steps li .dtl,.steps li .aff{font-size:.86rem}.tank .tlab,.tlab,.lg,.rpnote,small,.SMALL{font-size:.86rem}#map .gv{font-weight:900}.live,.meta,.row1 a,.row1 .A,h3,.fd2,.fd2 b,code,.CODE,.lane .cp.idle{font-size:.86rem}.lane .cp.idle{opacity:1}details h3,details code,details .fd2,details .fd2 *{font-size:.86rem!important}#map .nd .t1.sm{font-size:12px}.panel h2 small,.exlg{font-size:.86rem}.kp span,.steps li,#detail li,details.strip li,.btn,.mo,.mo *{font-size:.86rem}.steps li .c{font-size:.9rem}}
 /* 보라·초록 칩은 흰 글자 대비 4.5 이상이 되게 어두운 쌍 색 */
 .eflow .ec span{background:#6a3dcb;color:#fff}.eflow .est.dn .ec span{background:#0b7a45;color:#fff}
 </style>
@@ -255,7 +255,7 @@ let G=null,PT={},parts=[],ripples=[],counters={},prevDone=null,RP=null,pendingS=
 const CRN=RM.CRN;
 const EDN={queue:"eq",draft:"ed",boss:"boss",naver:"ea",sns:"ea"};   /* edits[].stage → 지도 마디(done 은 숫자만) */
 function layout(vert){
-  const L={vert,nodes:{},edges:[],vb:vert?[360,868]:[960,490],cell:vert?56:40,hub:null};
+  const L={vert,nodes:{},edges:[],vb:vert?[360,884]:[960,490],cell:vert?56:40,hub:null};
   if(!vert){
     MAIN.forEach((m,i)=>{const cx=80+i*160,cy=214;L.nodes[m[0]]={k:m[0],name:m[1],cx,cy,w:140,h:120,rows:3,gx:cx,gy:cy-22,r:30}});
     TERM.forEach((m,i)=>{const cx=852,cy=58+i*112;L.nodes[m[0]]={k:m[0],name:m[1],cx,cy,w:176,h:76,rows:2,term:true,gx:cx-60,gy:cy-2,r:19,tx:cx-33}});
@@ -265,7 +265,7 @@ function layout(vert){
     MAIN.forEach((m,i)=>{const cy=44+i*122;L.nodes[m[0]]={k:m[0],name:m[1],cx:168,cy,w:316,h:64,rows:3,gx:40,gy:cy,r:24,tx:76,dx:92}});
     TERM.forEach((m,i)=>{const cx=46+i*89,cy=780;L.nodes[m[0]]={k:m[0],name:m[1],cx,cy,w:84,h:92,rows:2,term:true,gx:cx,gy:cy-22,r:17,sm:true}});
     L.hub={x:180,y:684};
-    [128,218,308].forEach((cx,i)=>{const m=CRN[i],cy=566;L.nodes[m[0]]={k:m[0],name:m[1],cx,cy,w:84,h:124,rows:4,cr:true,sm:true,gx:cx,gy:cy-40,r:16,x0:cx-34,cell:0,cols:1,y0:cy+16}});
+    [128,218,308].forEach((cx,i)=>{const m=CRN[i],cy=566;L.nodes[m[0]]={k:m[0],name:m[1],cx,cy,w:84,h:124,rows:3,cr:true,sm:true,gx:cx,gy:cy-40,r:16,x0:cx-34,cell:0,cols:1,y0:cy+16}});
   }
   const N=L.nodes,h=L.hub;
   const out=n=>vert?[n.gx,n.gy+n.r+3]:[n.gx+n.r+3,n.gy], inn=n=>vert?[n.gx,n.gy-n.r-3]:[n.gx-n.r-3,n.gy];
@@ -292,7 +292,7 @@ function layout(vert){
     ["ea","hub",`M312 630C312 664,260 ${h.y},${h.x+16} ${h.y}`,"cr"]);
   return L;
 }
-function crPos(n,i){const col=i%n.cols,row=Math.floor(i/n.cols);if(row>=n.rows)return null;return {x:n.x0+col*n.cell,y:n.y0+row*(G.vert?14:13)}}
+function crPos(n,i){const col=i%n.cols,row=Math.floor(i/n.cols);if(row>=n.rows)return null;return {x:n.x0+col*n.cell,y:n.y0+row*(G.vert?18:13)}}
 const P=(gx,gy,R,a)=>[gx+R*Math.sin(a*Math.PI/180),gy-R*Math.cos(a*Math.PI/180)];
 function arc(gx,gy,R,a0,a1){const p=P(gx,gy,R,a0),q=P(gx,gy,R,a1);return `M${p[0].toFixed(2)} ${p[1].toFixed(2)}A${R} ${R} 0 ${a1-a0>180?1:0} 1 ${q[0].toFixed(2)} ${q[1].toFixed(2)}`}
 function gauge(n,key,parent,go){
@@ -331,7 +331,7 @@ function build(vert){
     if(e[0]!=="hub"&&!e[3]){const m=PT[e[0]+">"+e[1]][G.vert&&e[0]==="pub"?(e[1]==="blog"?4:9):24];   /* 폰: 발행 아래 글자는 캐리어 선로 위 틈에 */const t=el("text",{class:"fl",id:"fl-"+id,x:G.vert?m[0]+10:m[0],y:G.vert?m[1]+3:m[1]-11,"text-anchor":G.vert?"start":"middle"},pl);t.textContent=""}});
   el("g",{id:"parts",filter:"url(#glw)"},svg);
   const gl=el("g",{id:"gauges"},svg);Object.values(G.nodes).forEach(n=>gauge(n,n.k,gl,n.go));
-  const hg=el("g",{class:"hub",id:"hub",tabindex:"0",role:"button","aria-label":"Aside 허브 상세"},svg);el("circle",{cx:G.hub.x,cy:G.hub.y,r:G.vert?21:16},hg);const ht=el("text",{x:G.hub.x,y:G.hub.y+3},hg);ht.textContent="Aside";
+  const hg=el("g",{class:"hub",id:"hub",tabindex:"0",role:"button","aria-label":"Aside 허브 상세"},svg);el("circle",{cx:G.hub.x,cy:G.hub.y,r:G.vert?19:16},hg);const ht=el("text",{x:G.hub.x,y:G.hub.y+3},hg);ht.textContent="Aside";
   hg.addEventListener("click",()=>focusStep("hub"));hg.addEventListener("keydown",ev=>{if(ev.key==="Enter"){ev.preventDefault();focusStep("hub")}});
   el("text",G.vert?{x:G.hub.x,y:G.hub.y-27,"text-anchor":"middle",id:"hubt",style:"font-size:11px;fill:var(--muted)"}:{x:G.hub.x,y:G.hub.y-22,"text-anchor":"middle",id:"hubt",style:"font-size:11px;fill:var(--muted)"},svg);
   el("g",{id:"ripl"},svg);el("g",{id:"dots"},svg);el("g",{id:"rdots"},svg);
@@ -346,7 +346,7 @@ const DRV_AT=RM.DRV_AT;
 function cellPos(n,i){
   const x0=n.dx!=null?n.dx:n.cx-n.w/2+8,cols=Math.max(1,Math.floor((n.cx+n.w/2-x0-4)/G.cell));const col=i%cols,row=Math.floor(i/cols);
   if(row>=n.rows)return null;
-  return {x:x0+col*G.cell,y:n.cy+n.h/2+14+row*(G.vert?15:13)};
+  return {x:x0+col*G.cell,y:n.cy+n.h/2+14+row*(G.vert?18:13)};
 }
 function edgePt(a,b,t){const p=document.getElementById("ed-"+a+"-"+b);if(!p)return {x:0,y:0};const q=p.getPointAtLength(p.getTotalLength()*t);return {x:q.x,y:q.y}}
 function nodeCenter(k){if(k==="hub")return G.hub;const n=G.nodes[k];return {x:n.gx,y:n.gy}}
@@ -547,10 +547,14 @@ function render(s){
   setParticles(want);
   const cnt={};const slot=k=>{cnt[k]=(cnt[k]||0);return cnt[k]++};
   ["topic","proc","boss","pub"].forEach(k=>g[k].forEach(x=>{const p=cellPos(G.nodes[k],slot(k));if(p)setDot(x.code,x.code,p.x,p.y,x.lvl==="red"?"rd":x.lvl==="amber"?"am":"",null)}));
-  const inTransit=new Set();
+  const inTransit=new Set();const trN={};osm.forEach(x=>TERM.forEach(([k])=>{if(!(x.ch||{})[k])trN[k]=(trN[k]||0)+1}));   /* 채널별 이동 중 글 수 — 폰은 카드 위 두 줄(1개+「+N」)로 접는다(6px 간격 세로 겹침 방지) */
   osm.forEach(x=>{inTransit.add(x.code);TERM.forEach(([k])=>{const id=x.code+"|"+k,n=G.nodes[k],has=(x.ch||{})[k],src=k==="blog"?"pub":"hub";
     if(has){const p=cellPos(n,slot(k));if(p)setDot(id,x.code,p.x,p.y,"dn"+(k!=="blog"?" "+exCls((x.who||{})[k]):""),nodeCenter(src))}
-    else{const q=edgePt(src,k,.55),off=slot("e"+k)*6;setDot(id,x.code,q.x-4,q.y-4+off,x.lvl==="amber"?"am":"",nodeCenter(src))}})});
+    else{const i=slot("e"+k),tot=trN[k]||1;
+      if(G.vert){const sum=tot>2&&i===1,hid=i>=(tot>2?2:3),px=n.cx-n.w/2+(n.cx>G.hub.x?26:6),py=n.cy-n.h/2-8-Math.min(i,1)*18;
+        setDot(id,x.code,px,py,(x.lvl==="amber"?"am":"")+(hid?" hid":""),nodeCenter(src));
+        const tx=dots[id]&&dots[id].g.querySelector("text");if(tx)tx.textContent=sum?"+"+(tot-1):x.code}
+      else{const q=edgePt(src,k,.55);setDot(id,x.code,q.x-4,q.y-4+i*14,x.lvl==="amber"?"am":"",nodeCenter(src))}}})});
   TERM.forEach(([k])=>{const n=G.nodes[k];((ch[k]||{}).done||[]).forEach(x=>{if(inTransit.has(x.code))return;const p=cellPos(n,slot(k));if(p)setDot("d|"+x.code+"|"+k,x.code,p.x,p.y,"dn"+(k!=="blog"?" "+exCls(x.who):""),null)})});
   {const em=document.getElementById("exmode");if(em){em.textContent=s.exec_error?"⚠️ 주체 기록 읽기 실패 — 전부 회색으로 표시("+s.exec_error+")":(s.supply_mode==="lee"?"· 지금 공급 = 이과장 직접(직접 게시 모드)":s.supply_mode==="aside"?"· 지금 공급 = Aside 대기열":"· 지금 공급 모드 모름");em.style.color=s.exec_error?"var(--rd)":""}}
   renderCarrier(s,slot);

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 05:04:56",
+ "at": "2026-11-20 05:19:44",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -226,7 +226,7 @@
  "boss_extra": [],
  "aside": {
   "state": "휴면 — 이과장 직접 게시(aside repl) · 2026-12-31 재연결",
-  "queue": 3,
+  "queue": 4,
   "busy": false,
   "lvl": "ok",
   "credit_hold": "aside-credit-t2624",
@@ -238,7 +238,7 @@
  },
  "index": {
   "requested": 168,
-  "todo": 84,
+  "todo": 86,
   "indexed": 0
  },
  "limit": {
@@ -356,9 +356,9 @@
   {
    "who": "3.세션",
    "kind": "글감",
-   "ran": false,
-   "at": "21:27",
-   "note": "📋 21:4x 제안 등록 — A6-11 「배달 라이더 안전교육 12월 3일부터 의무 — 3시간, 교육 안 받으면 계약 못 합니",
+   "ran": true,
+   "at": "05:06",
+   "note": "11-20 05:10 cadaily 실행(11-19분): ①유입검색어 100건 저장·조회167·검색유입률95.6%·판독일 오늘",
    "today": 0,
    "order": null,
    "lvl": "ok"
@@ -423,8 +423,8 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 1,
-   "cur": "🚀 H1-43 발행 — 해외직구 건강식품 139개 중 95개 ",
+   "last_min": 12,
+   "cur": "🚀 A6-11 발행 — 배달 라이더 안전교육 12월 3일부터 ",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
   },
@@ -432,7 +432,7 @@
    "who": "4.세션",
    "state": "지연·확인 필요",
    "jobs": 1,
-   "last_min": 386,
+   "last_min": 401,
    "cur": "색인 실험 A 재현 + 리디렉션 오류 원인 확정 [담당:4.]",
    "lvl": "amber",
    "role": "애드센스 정비"
@@ -440,7 +440,7 @@
   {
    "who": "Aside",
    "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 3,
+   "jobs": 4,
    "lvl": "ok",
    "role": "허브·4종착 배송"
   },
@@ -472,23 +472,23 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 1,
-   "cur": "🚀 H1-43 발행 — 해외직구 건강식품 139개 중 95개 ",
+   "last_min": 12,
+   "cur": "🚀 A6-11 발행 — 배달 라이더 안전교육 12월 3일부터 ",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 2,
-   "cur": "📊 크리에이터 어드바이저 유입·관심사 매일 갱신 (3. 상시)",
+   "last_min": 7,
+   "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
   {
    "who": "4.세션",
    "state": "지연·확인 필요",
    "jobs": 1,
-   "last_min": 386,
+   "last_min": 401,
    "cur": "색인 실험 A 재현 + 리디렉션 오류 원인 확정 [담당:4.]",
    "lvl": "amber"
   },
@@ -496,14 +496,14 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 8,
+   "last_min": 23,
    "cur": "04:56 SP-020 쓰레드 승인 근거 확인 완료(watch",
    "lvl": "ok"
   },
   {
    "who": "Aside",
    "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 3,
+   "jobs": 4,
    "lvl": "ok"
   },
   {
@@ -975,12 +975,12 @@
  "exec_error": "",
  "reflect": {
   "state": "bad",
-  "ok": 3,
+  "ok": 5,
   "stale": 1,
   "bad": 1,
-  "na": 2,
-  "at": "2026-11-19 20:03:08",
-  "age_min": 1
+  "na": 0,
+  "at": "2026-11-20 05:19:37",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1052,7 +1052,7 @@
  "fired": [
   {
    "day": "2026-11-20",
-   "total": 37,
+   "total": 44,
    "kinds": [
     [
      "BOSS_APPROVAL",
@@ -1060,11 +1060,19 @@
     ],
     [
      "ASIDE_ALERT",
-     4
+     5
     ],
     [
      "CODE_UNVERIFIED",
      4
+    ],
+    [
+     "TOWER_OWED",
+     4
+    ],
+    [
+     "ASIDE_DRAFT",
+     3
     ],
     [
      "CONFIRM_BACKLOG",
@@ -1075,15 +1083,7 @@
      3
     ],
     [
-     "ASIDE_DRAFT",
-     2
-    ],
-    [
      "BOSS_REMIND",
-     2
-    ],
-    [
-     "LANE_IDLE",
      2
     ]
    ]
