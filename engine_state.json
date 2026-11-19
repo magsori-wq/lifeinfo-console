@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 16:07:27",
+ "at": "2026-11-19 16:11:12",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,24 +11,24 @@
     "code": "A3-19",
     "title": "2027년 1월 1일 이후 전역하면 군 복무 전 기간이",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-19",
-    "last_at": "",
+    "last_at": "2026-11-19",
     "lvl": "amber"
    }
   ],
@@ -408,8 +408,8 @@
   {
    "who": "이과장",
    "state": "대기(보고 완료·다음 지시 기다림)",
-   "jobs": 5,
-   "last_min": 209,
+   "jobs": 6,
+   "last_min": 213,
    "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -461,8 +461,8 @@
   {
    "who": "이과장",
    "state": "대기(보고 완료·다음 지시 기다림)",
-   "jobs": 5,
-   "last_min": 209,
+   "jobs": 6,
+   "last_min": 213,
    "cur": "🚀 A1-26 발행 — 청년문화패스 12월 31일까지 — 7월",
    "lvl": "ok"
   },
@@ -470,7 +470,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 40,
+   "last_min": 43,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -486,7 +486,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 20,
+   "last_min": 23,
    "cur": "11/19 15:47 정기 점검 — 새 결재·요청 없음, 로그",
    "lvl": "ok"
   },
@@ -666,6 +666,13 @@
      "who": "lee"
     },
     {
+     "code": "A3-19",
+     "title": "2027년 1월 1일 이후 전역하면 군 복무 전 기간이",
+     "url": "https://blog.naver.com/magsori8975/224483552413",
+     "at": "2026-11-19",
+     "who": "lee"
+    },
+    {
      "code": "A5-23",
      "title": "청년일자리도약장려금 2026 — 12월 31일은 신청 ",
      "url": "https://blog.naver.com/magsori8975/224483460038",
@@ -708,12 +715,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "A3-19",
-     "title": "2027년 1월 1일 이후 전역하면 군 복무 전 기간이"
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -1102,6 +1104,13 @@
   },
   {
    "code": "A3-19",
+   "stage": "naver",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)",
+   "who": "lee"
+  },
+  {
+   "code": "A3-19",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -1252,12 +1261,12 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 5,
+  "state": "stale",
+  "ok": 6,
   "stale": 1,
-  "bad": 1,
+  "bad": 0,
   "na": 0,
-  "at": "2026-11-19 16:07:46",
+  "at": "2026-11-19 16:11:12",
   "age_min": 0
  },
  "design_signals": [
@@ -1330,11 +1339,11 @@
  "fired": [
   {
    "day": "2026-11-19",
-   "total": 241,
+   "total": 247,
    "kinds": [
     [
      "TOWER_OWED",
-     107
+     110
     ],
     [
      "CHKMON_REPORT",
@@ -1358,7 +1367,7 @@
     ],
     [
      "PUBLISH_RUN_DONE",
-     7
+     8
     ],
     [
      "ASIDE_DRAFT",
