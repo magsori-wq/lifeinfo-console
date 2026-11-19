@@ -1860,12 +1860,12 @@
      "code": "daily-email-briefing-1119",
      "title": "daily-email-briefing (A)",
      "state": "done",
-     "note": "11-19 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 커넥터 magsori 2일 중요메일 0(구글뉴스·광고만), GSC 7일 0건, 8975 전달=구글뉴스 1건, aroma 0건(평소). 🟡 gmailread.py scan 은 도구 권한 거부(개인정보 플러그인)로 못 돌림 — 3계정 직접 리더 미실행. 사장님 할 일 없음\n▸ 11:06 11-19 11시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 커넥터(magsori) 2일: 구글뉴스 요약 1통(무관)뿐, GSC 7일 0·GitHub 0·help-communities 0·중요 0·8975/aroma 전달 0. gh run 최근 12건 실패 0(cancelled 1건 11-16 무해). gmailread scan 은 개인정보 플러그인이 거부해 미실행(3계정 리더 미확인). 사장님 할 일 없음.\n▸ 14:06 11-19 14시 메일브리핑: 커넥터 조회만(리더·adsense status는 개인정보 훅에 막혀 미실행 — 시도했는데 못 얻음). 새 중요 메일 없음. GitHub 발행 run 44450361023 12:17 KST 실패 = 원격 선행 확인 스텝(체크아웃 60fefdde != origin 4740e868, PC 커밋 직후 경합) 무해·이후 A2-32 발행 성공 커밋 확인. GSC 7일 0건, 8975/aroma 전달분은 구글뉴스 1건뿐, help-communities 없음.",
+     "note": "11-19 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 커넥터 magsori 2일 중요메일 0(구글뉴스·광고만), GSC 7일 0건, 8975 전달=구글뉴스 1건, aroma 0건(평소). 🟡 gmailread.py scan 은 도구 권한 거부(개인정보 플러그인)로 못 돌림 — 3계정 직접 리더 미실행. 사장님 할 일 없음\n▸ 11:06 11-19 11시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 커넥터(magsori) 2일: 구글뉴스 요약 1통(무관)뿐, GSC 7일 0·GitHub 0·help-communities 0·중요 0·8975/aroma 전달 0. gh run 최근 12건 실패 0(cancelled 1건 11-16 무해). gmailread scan 은 개인정보 플러그인이 거부해 미실행(3계정 리더 미확인). 사장님 할 일 없음.\n▸ 14:06 11-19 14시 메일브리핑: 커넥터 조회만(리더·adsense status는 개인정보 훅에 막혀 미실행 — 시도했는데 못 얻음). 새 중요 메일 없음. GitHub 발행 run 44450361023 12:17 KST 실패 = 원격 선행 확인 스텝(체크아웃 60fefdde != origin 4740e868, PC 커밋 직후 경합) 무해·이후 A2-32 발행 성공 커밋 확인. GSC 7일 0건, 8975/aroma 전달분은 구글뉴스 1건뿐, help-communities 없음.\n▸ 17:06 11-19 17시 메일브리핑: 애드센스 READY·사이트 GETTING_READY(심사 중). 새 중요메일 0(커넥터 magsori: GitHub 발행 run 실패 1건=03:17Z 원격 선행확인 불일치, 1분 뒤 재실행 성공·무해 / 8975·aroma 전달 Google뉴스 1통뿐). help-communities·GSC·애드센스 신규 0. gmailread 리더는 개인정보 플러그인 차단으로 못 돌림(시도했는데 못 얻음)",
      "auto_daily": true,
      "base_code": "daily-email-briefing",
      "date": "2026-11-19",
-     "at": "2026-11-19 14:06",
-     "actor": "미상:84e8b949"
+     "at": "2026-11-19 17:06",
+     "actor": "미상:13bbf29e"
     },
     {
      "code": "daily-email-briefing-1119-1119",
@@ -10150,17 +10150,27 @@
    "order_at": "2026-11-19 16:53:49"
   }
  },
- "updated": "2026-11-19 17:03:50",
+ "updated": "2026-11-19 17:07:00",
  "current": {
-  "batch": "maint1119aromamap",
+  "batch": "tower1119",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "📋 복창: engine.html 렌더러를 상태 JSON+마디 정의를 받는 한 벌로 일반화(복제 안 함)해 본사·이대리가 같이 씀 · 먼저 본사 화면 전후 동일(칸 수·스크린샷) 확인 · 이대리 마디=설계도_이대리 흐름도·판정은 실제 파일만, 못 읽으면 미확인 · C:/naver-blog 읽기 전용 · 기존 카드형 정보(카테고리·최근게시·신호시각)는 상세 목록으로 이전 · deploy.bat 안 함 · 두 화면 127.0.0.1 에서 칸 수·잘림·스크린샷 확인",
-  "since": "16:48",
-  "since_at": "2026-11-19 16:48:44"
+  "what": "👤 사장님 직접 지시 17:07: 「공유해! 문제점도 보완해!」 = 쓰레드 공유(aroma→magsori8975) 재개 + 측정에서 드러난 문제점 보완 · 대상 watch threads-share-hold-1119 / aroma-threads-share-review-1115",
+  "since": "13:28",
+  "since_at": "2026-11-19 13:28:21"
  },
  "log": [
+  {
+   "t": "17:07:00",
+   "text": "▶   — 1/7단계 · 👤 사장님 직접 지시 17:07: 「공유해! 문제점도 보완해!」 = 쓰레드 공유(aroma→magsori8975) 재개 + 측정에서 드러난 문제점 보완 · 대상 watch threads-share-hold-1119 / aroma-threads-share-review-1115",
+   "actor": "이부장"
+  },
+  {
+   "t": "17:06:02",
+   "text": "✅ daily-email-briefing-1119 완료 — daily-email-briefing (A)",
+   "actor": "미상:13bbf29e"
+  },
   {
    "t": "17:03:50",
    "text": "✅ MT-AROMAMAP 완료 — 이대리 상황실을 본사 상황실과 같은 지도 구조로 다시 만들기(",
@@ -10349,16 +10359,6 @@
   {
    "t": "16:10:40",
    "text": "📋 배치 'A3-13 출산크레딧 글 라이브 갱신 — 개정법 법률 제22096호 반영(사장님 결재 뒤 실행)' 등록 — 1항목",
-   "actor": "이부장"
-  },
-  {
-   "t": "16:09:32",
-   "text": "🏁 livefix1119a312 이부장 확인 — 끝남",
-   "actor": "이부장"
-  },
-  {
-   "t": "16:07:34",
-   "text": "📄 post1119a319 작업 지시 등록(11384자, 2026-11-19 16:07:34)",
    "actor": "이부장"
   }
  ],
@@ -12312,7 +12312,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "👤 사장님 직접 지시 16:28 「쓰레드 공유 숫자부터 재도록 해」 — measure(Haiku) 가 AM-SP-005 공유 글 반응 vs 생활정보 쓰레드 20편 + 공유 전후 + 유입 데이터 유무를 읽기 전용으로 측정 중, 결과 docs/measure_threads_share_20261119.md → 오면 결재 카드로 전용 계정/재개 판정 상정(watch aroma-threads-share-review-1115)",
+   "what": "👤 사장님 직접 지시 17:07: 「공유해! 문제점도 보완해!」 = 쓰레드 공유(aroma→magsori8975) 재개 + 측정에서 드러난 문제점 보완 · 대상 watch threads-share-hold-1119 / aroma-threads-share-review-1115",
    "since": "13:28",
    "since_at": "2026-11-19 13:28:21"
   },
@@ -12485,16 +12485,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-05 17:00:27",
-   "bid": "tower1105",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "FUEL_LOW 재알림 16:58 — 새 재료 확인: kwgap 글감 후보 23건(11-05 판독) → 3.(fuel1030)에게 local_ ID 로 깨움(근거 2개 갖춘 것만 topicprop add, 빈손 허용). 결과 오면 pick·verify",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
   {
    "ts": "2026-11-05 18:12:35",
    "bid": "chkmon",
@@ -44282,6 +44272,16 @@
    "what": "📋 복창: engine.html 렌더러를 상태 JSON+마디 정의를 받는 한 벌로 일반화(복제 안 함)해 본사·이대리가 같이 씀 · 먼저 본사 화면 전후 동일(칸 수·스크린샷) 확인 · 이대리 마디=설계도_이대리 흐름도·판정은 실제 파일만, 못 읽으면 미확인 · C:/naver-blog 읽기 전용 · 기존 카드형 정보(카테고리·최근게시·신호시각)는 상세 목록으로 이전 · deploy.bat 안 함 · 두 화면 127.0.0.1 에서 칸 수·잘림·스크린샷 확인",
    "actor": "미상:330b96b0",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-19 17:07:00",
+   "bid": "tower1119",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "👤 사장님 직접 지시 17:07: 「공유해! 문제점도 보완해!」 = 쓰레드 공유(aroma→magsori8975) 재개 + 측정에서 드러난 문제점 보완 · 대상 watch threads-share-hold-1119 / aroma-threads-share-review-1115",
+   "actor": "이부장",
+   "sid": "a7dca46f"
   }
  ]
 }

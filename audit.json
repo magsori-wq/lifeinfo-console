@@ -5792,6 +5792,22 @@
    "target": "a313-livefix-approve-1119",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-19T17:04:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "threads-inflow-report-1119",
+   "detail": "생활정보 CA(25일)·aroma CA(20일) 둘 다 파일 열어 확인. 11-01 이후 쓰레드 유입 보인 범위 0 / aroma 11-01 하루 1건 추정. 결재 카드 threads-share-hold-1119 로 상정",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-19T17:07:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "aroma-threads-share-review-1115",
+   "detail": "판정: 사장님 11-19 17:07 재개 결정(근거 docs/measure_threads_inflow_20261119.md). 재측정은 watch threads-share-recheck-1126",
+   "via": "cli"
   }
  ]
 }
