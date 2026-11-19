@@ -4022,8 +4022,8 @@
   "tower1030": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-20 07:07:10",
-   "last_what": "A6-11 네이버 원고 수치 대조 착수(verify)"
+   "last_report": "2026-11-20 07:31:37",
+   "last_what": "폰 시인성 4+5 재검수 착수(verify)"
   },
   "pub1030h135": {
    "state": "working",
@@ -6770,8 +6770,8 @@
    "last_read": "2026-11-20 06:55:06",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-20 07:05:21",
-   "last_what": "이부장 접수 07:05 — 4. 06:58 표 3개 완료 보고 접수·검토 완료(EXP-M1-1·2·3 합격, 요청 시각 확인 불가 명시 승인). 새 지시: 이과장 expreq1120(클린 2건 증거 재요청, 마감 1",
+   "last_report": "2026-11-20 07:24:24",
+   "last_what": "이부장 접수 07:24 — 4. 07:17 확인 보고(새 시계 +4h 11:00·+48h 11-22 07:00, 12:00 원인 보고에 포함) 접수. 추가 지시 없음, 11:05 이부장이 깨움",
    "read_by": "report"
   },
   "expreq1119": {
@@ -6976,8 +6976,8 @@
    "last_read": "2026-11-20 05:05:39",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-20 07:10:11",
-   "last_what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224484259201 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타"
+   "last_report": "2026-11-20 07:12:24",
+   "last_what": "이부장 접수 07:15 — 이과장 「A6-11 네이버 이미 라이브(224484259201)」 보고 접수. 사고: 낡은 data/_a611_body.html(V0 수정 전)에서 네이버 원고 추출 → 조건 3곳 누락·귀"
   },
   "pub1120c229": {
    "reads": 1,
@@ -7046,8 +7046,8 @@
    "last_read": "2026-11-20 06:10:07",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-20 06:52:49",
-   "last_what": "이부장 접수 06:53 — 정비 06:41 「장부 형식 정합」(routinehealth.paused_map 이 CLAUDE.md 장부 형식과 일치) 접수. 검토: 합격 방향, 실측은 verify 에이전트로 07:30"
+   "last_report": "2026-11-20 07:37:46",
+   "last_what": "이부장 07:40 검토 결과 — verify 실측 불합격(R1 STALE 미작동·R2 오표시). 완료 보고를 합격으로 확인하지 않음, 보정 지시서 maint1120fixpack 발급(마감 18:00)"
   },
   "maint1120phone4": {
    "reads": 1,
@@ -7076,9 +7076,29 @@
    "last_read": "2026-11-20 07:01:29",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-20 07:01:52",
-   "last_what": "✅ 클린 URL 2건 재요청 수락 — D5-09 06:58:38·G4-14 07:00:33(KST), 스크린샷 docs/exp1119m1_req_D5-09_0658.png(196195B)·docs/exp1119m1_"
+   "last_report": "2026-11-20 07:14:43",
+   "last_what": "이부장 접수 07:16 — 이과장 클린 URL 2건 재요청 완료 보고 접수·검토 합격: 증거 파일 직접 확인(docs/exp1119m1_req_D5-09_0658.png 196KB·G4-14_0700.png 197K"
+  },
+  "maint1120naversrc": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-20 07:12:41",
+   "last_read": "2026-11-20 07:13:05",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-20 07:38:01",
+   "last_what": "이부장 07:40 검토 결과 — verify 실측 불합격(N1 종료코드·N2 원천·N3 조건 문장). 완료 보고를 합격으로 확인하지 않음, 보정 지시서 maint1120fixpack 발급(마감 18:00)"
+  },
+  "maint1120fixpack": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-20 07:37:18",
+   "last_read": "2026-11-20 07:38:11",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-20 07:39:07",
+   "last_what": "📋 복창(내 이전 보고가 틀렸음을 인정): R1 stale 은 nextRunAt 과 무관하게 마지막 실행>주기×2(주기=cron 의 실제 최대 간격) · pending 은 재가동 24h 이내만·readycheck 에"
   }
  },
- "updated": "2026-11-20 07:10"
+ "updated": "2026-11-20 07:39"
 }
