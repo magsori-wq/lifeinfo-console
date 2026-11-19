@@ -5872,6 +5872,22 @@
    "target": "gsc-exp-b-read-1114",
    "detail": "이부장 11-19 18:35 실측(index_status.json 11-19 09:41): 실험 B 3편 E2-02·E2-03·F1-04 모두 마지막 크롤 07-14~15 그대로(요청 뒤 크롤 도착 0/3), 상태 Crawled-not-indexed — 4.세션 11-19 보고(48h 크롤 안 옴)와 일치. 5일 늦게 확인. 실험 C(시범 도너)는 권고하지 않음: 일반 주소 요청 자체가 크롤을 못 부름 → 원인 확정(exp1119m1) 뒤 판단",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-19T18:45:03",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-req-check-1119",
+   "detail": "이부장 18:46 실측: _gsc_requested.txt 628~630행에 C4-01·D1-02·D2-05 ?m=1 3건 기록, 이과장 보고 18:42(수락 18:33·18:34·18:36, 화면 「색인 생성 요청됨」) — 마감 19:00 안",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-19T18:47:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-aroma-share-screen-1119",
+   "detail": "docs/verify_aroma_share_screen_20261119.md: 278a64cb7·491875ae5·112503637·564b4c8f4·734dcbe70 검증 완료, 불일치 13건(중4·보통5·경미4)은 maint1119share3 로 수정 지시",
+   "via": "cli"
   }
  ]
 }
