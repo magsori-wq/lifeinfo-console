@@ -33416,8 +33416,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | grep phone3",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "08:20 phone3 confirm(phone4~6 해소·라이브 58a9391cd92d), phone6 verify·deploy 08:2x 완료, 정비 통지 완료"
   },
   {
    "id": "routine10-reenable-1120",
@@ -33525,8 +33527,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | grep pub1120a611",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "08:07 verify 재대조 ✅ 게시 가능(정정으로만) 이과장 통지 완료, 라이브 교체는 결재 naver-a611-fix-1120 승인 뒤"
   },
   {
    "id": "naver-a611-fix-1120",
@@ -33639,6 +33643,16 @@
    "what": "lifeinfo-console 콘솔 정합성 검사 연속 실패(11-19 22시~) 원인 batch.html→stored 깨진 참조 — 정비 수리 확인",
    "due": "2026-11-20",
    "cmd": "gh run list -R magsori-wq/lifeinfo-console --limit 3",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-phone4-1120-stalebuild",
+   "added": "2026-11-20",
+   "what": "maint1120phone4 검수: 낡음 띠 · 3분/11분 동작 확인 · 마지막 갱신 글자 10.64px(데스크톱) — 412px 폰 기준 재확인 필요",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.watch show verify-phone4-1120-stalebuild",
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
