@@ -33102,6 +33102,30 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | grep share8",
    "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "정비 4/4·재실행 645건 OK·enginemap 이상 없음·share8 커밋, 독립 검증 verify-share8-0120"
+  },
+  {
+   "id": "verify-share8-0120",
+   "added": "2026-11-20",
+   "what": "share8 독립 검증(Fable) docs/verify_share8_20261120.md — 조용한 누락 0·정상 입력 오탐 0 이면 maint1119share8 confirm·코드 검증 종결, 아니면 마지막 판단",
+   "due": "2026-11-20",
+   "cmd": "head -3 docs/verify_share8_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "불일치 5(중1·경4) → share9 마무리 발급, 한계 3건 설계도 기록"
+  },
+  {
+   "id": "maint1119share9-check",
+   "added": "2026-11-20",
+   "what": "정비 share9 완료 확인 → 이부장 재실행·커밋 → 독립 검증 없이 종결 여부는 중1 닫힘 직접 재현으로 판정",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep share9",
+   "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
   }

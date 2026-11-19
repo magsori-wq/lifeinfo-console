@@ -6024,6 +6024,22 @@
    "target": "verify-share7-0120",
    "detail": "불일치 5(중1·경4, 신규 누락 0) → share8 발급",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-20T04:01:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "maint1119share8-check",
+   "detail": "정비 4/4·재실행 645건 OK·enginemap 이상 없음·share8 커밋, 독립 검증 verify-share8-0120",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-20T04:08:49",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-share8-0120",
+   "detail": "불일치 5(중1·경4) → share9 마무리 발급, 한계 3건 설계도 기록",
+   "via": "cli"
   }
  ]
 }
