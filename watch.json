@@ -32876,6 +32876,46 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:f2f70dfa"
+  },
+  {
+   "id": "g-christmas-hyundai-1119",
+   "added": "2026-11-19",
+   "what": "G-크리스마스: 더현대 서울 크리스마스 빌리지 공식 일정 미확인(이벤트 목록엔 없음, 검색결과는 판매상품)·롯데월드몰 연결 실패(curl 000)",
+   "due": "2026-11-21",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://hi.thehyundai.com/search?keyword=%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4\" --wait 8 --max 12000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:f2f70dfa"
+  },
+  {
+   "id": "delivery-edu-guideline-1124",
+   "added": "2026-11-19",
+   "what": "A6-11 배달 종사자 교통안전교육 — 입법예고 개정안(주행실습·재이수 1년/3년, 공고 제2026-1291호 접수 11-23 마감) 확정 여부 및 교육 위탁·운영 지침(행정예고 제2026-1326호) 위탁기관·신청처·수강료 확인. 초안 단계에서 확정값만 쓰도록 이과장에 전달",
+   "due": "2026-11-24",
+   "cmd": "python tools/aside_read.py https://www.molit.go.kr/atmo/USR/law/m_36525/dtl.jsp?r_id=10086 에서 지침 본문(PDF 뷰어 이미지뿐이면 생활물류정책팀 044-201-4157 문의 필요로 보고)",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "draft1119h143-check-1120",
+   "added": "2026-11-19",
+   "what": "H1-43 초안(draft1119h143) — 이과장 초안·썸네일·pubqueue add 진행 확인 → V0(v0 에이전트) → 결재. 수치 95/139·범주별 건수는 hwpx 원문(docs/source_H-직구건강식품_20261119.md)과 초안 대조(source 에이전트), 「선별 표본이라 시중 비율 아님」 함정 문구 유지",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "draft1119a611-check-1120",
+   "added": "2026-11-19",
+   "what": "A6-11 배달 라이더 안전교육 초안(draft1119a611, H1-43 뒤) — 초안·썸네일·pubqueue add 확인 → V0 → 결재. 못 읽은 항목(위탁기관·수강료·과태료 금액·인증 요건)이 글에 없는지, 입법예고(공고 제2026-1291호, 접수 11-23) 개정안은 확정 전 박스로 분리됐는지 원문 대조",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
