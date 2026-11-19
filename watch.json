@@ -32936,6 +32936,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-a611-v0-1119",
+   "added": "2026-11-19",
+   "what": "A6-11 V0 지적 반영(이직행 추가·전화번호 정정·문의처 추가·제목 41자). 검사 4종 통과. 큐 제목은 수정 서브커맨드 없어 미변경, 이부장 판단 대기",
+   "due": "2026-11-20",
+   "cmd": "grep -c 044-201-4157 배달라이더안전교육12월3일의무3시간_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-a611-endbox-1119",
+   "added": "2026-11-19",
+   "what": "A6-11 마무리 박스(154행) 단서 보완(V0 지적1) 완료 · heading/layout/bodydup/validate 통과 · git add 까지, 커밋은 관제탑",
+   "due": "2026-11-20",
+   "cmd": "grep -c '같은 업체와 계속 일하는 경우에 한해' 배달라이더안전교육12월3일의무3시간_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fix-h143-v0recheck-1119",
+   "added": "2026-11-19",
+   "what": "H1-43 초안 V0 재검사 반영: 3·92·131·162행 (1,000개→2,000개·약 4.8%, 공개 자료→제가 읽은 보도자료와 첨부). validate FAIL0·heading·layout·bodydup 🟢0.048. git add 완료, 커밋은 관제탑",
+   "due": "2026-11-20",
+   "cmd": "grep -cE '1,000개|9\\.5%' 해외직구건강식품관세청유해성분95개_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
