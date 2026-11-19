@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 16:13:32",
+ "at": "2026-11-19 16:15:51",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -469,7 +469,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 46,
+   "last_min": 48,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -485,7 +485,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 26,
+   "last_min": 28,
    "cur": "11/19 15:47 정기 점검 — 새 결재·요청 없음, 로그",
    "lvl": "ok"
   },
@@ -1084,6 +1084,13 @@
    "who": "lee"
   },
   {
+   "code": "A3-19",
+   "stage": "insta",
+   "at": "2026-11-19 16:14:20",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
    "code": "A1-26",
    "stage": "threads",
    "at": "",
@@ -1109,13 +1116,6 @@
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
-  },
-  {
-   "code": "A3-19",
-   "stage": "insta",
-   "at": "",
-   "src": "DB osmu_at(날짜뿐)",
-   "who": "lee"
   },
   {
    "code": "A3-19",
@@ -1275,7 +1275,7 @@
   "bad": 0,
   "na": 0,
   "at": "2026-11-19 16:13:27",
-  "age_min": 0
+  "age_min": 2
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1347,11 +1347,11 @@
  "fired": [
   {
    "day": "2026-11-19",
-   "total": 247,
+   "total": 248,
    "kinds": [
     [
      "TOWER_OWED",
-     110
+     111
     ],
     [
      "CHKMON_REPORT",
