@@ -33463,6 +33463,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-maint1120phone3-1120",
+   "added": "2026-11-20",
+   "what": "폰 시인성 3차(maint1120phone3) 검수 불합격 — 12px 미만 47요소(채널카드 .sm 11.7px), 🚗 운전자 펄스 프레임 대비 4.5 미만, 칩 겹침 1/4 샘플",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show ; 재측정: Aside repl 로 docs/verify_phone3_20261120.md 의 절차 재실행",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }

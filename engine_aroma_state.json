@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 06:08:00",
+ "at": "2026-11-20 06:38:44",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -54,7 +54,7 @@
     },
     {
      "id": "aroma-am-bo-011-update-1120",
-     "state": "todo",
+     "state": "done",
      "kind": "update",
      "at": "2026-11-20"
     }
@@ -63,10 +63,7 @@
    "last_file_at": "2026-11-20 06:06",
    "stage": "published",
    "label": "게시됨",
-   "detail": "2026-11-15",
-   "rev_wait": [
-    "aroma-am-bo-011-update-1120"
-   ]
+   "detail": "2026-11-15"
   },
   {
    "code": "AM-DG-014",
@@ -136,14 +133,7 @@
   }
  ],
  "published_total": 60,
- "rev_wait": [
-  {
-   "code": "AM-BO-011",
-   "ids": [
-    "aroma-am-bo-011-update-1120"
-   ]
-  }
- ],
+ "rev_wait": [],
  "cats": {
   "window": 14,
   "rows": [
@@ -272,7 +262,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 06:08:02",
+   "last_at": "2026-11-20 06:38:36",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -346,8 +336,8 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 5,
-  "cur": "11/20 06:0x 점검 — ⚠️ 야간 루틴10(aroma-",
+  "last_min": 22,
+  "cur": "이부장 접수 06:17 — 이대리 06:02 점검 보고(루틴1",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -709,7 +699,7 @@
   "today": "2026-11-20",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -725,7 +715,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -733,8 +723,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 5,
-   "cur": "11/20 06:0x 점검 — ⚠️ 야간 루틴10(aroma-",
+   "last_min": 22,
+   "cur": "이부장 접수 06:17 — 이대리 06:02 점검 보고(루틴1",
    "lvl": "ok"
   },
   {
@@ -748,8 +738,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 5,
-   "cur": "11/20 06:0x 점검 — ⚠️ 야간 루틴10(aroma-",
+   "last_min": 22,
+   "cur": "이부장 접수 06:17 — 이대리 06:02 점검 보고(루틴1",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -769,7 +759,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -801,23 +791,8 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-bo-011-update-1120",
-   "what": "【권고】AM-BO-011(라이브 넷플릭스 순위 글)에 11/20 업데이트 박스 1개 추가 승인. 내용: Tudum 11/9~11/15 주간 표(",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
- "edits": [
-  {
-   "code": "AM-BO-011",
-   "title": "넷플릭스 순위 한국 — 영화 7편 교체, 1위는 Possible Love",
-   "stage": "boss",
-   "packer": ""
-  }
- ],
+ "approvals": [],
+ "edits": [],
  "today_events": [
   {
    "code": "AM-BO-011",
@@ -829,6 +804,12 @@
    "code": "쓰레드 공유 AM-SP-020",
    "stage": "boss",
    "at": "2026-11-20 04:47:17",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-BO-011",
+   "stage": "boss",
+   "at": "2026-11-20 06:08:59",
    "src": "결재 커밋 시각"
   }
  ],
@@ -865,7 +846,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 06:08:02",
+     "chip": "2026-11-20 06:38:36",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
