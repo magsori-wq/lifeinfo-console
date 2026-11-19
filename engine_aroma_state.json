@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 06:04:30",
+ "at": "2026-11-20 06:07:20",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -54,7 +54,7 @@
     }
    ],
    "title": "넷플릭스 순위 한국 — 영화 7편 교체, 1위는 Possible Love",
-   "last_file_at": "2026-11-15 04:13",
+   "last_file_at": "2026-11-20 06:06",
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-15"
@@ -256,7 +256,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 06:04:01",
+   "last_at": "2026-11-20 06:07:01",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -319,10 +319,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-19 12:21",
+   "last_at": "2026-11-20 06:06",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 47개",
+   "note": "복사된 미리보기 48개",
    "at_node": "boss"
   }
  ],
@@ -330,7 +330,7 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 1,
+  "last_min": 4,
   "cur": "11/20 06:0x 점검 — ⚠️ 야간 루틴10(aroma-",
   "lvl": "ok"
  },
@@ -717,7 +717,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 1,
+   "last_min": 4,
    "cur": "11/20 06:0x 점검 — ⚠️ 야간 루틴10(aroma-",
    "lvl": "ok"
   },
@@ -732,7 +732,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 1,
+   "last_min": 4,
    "cur": "11/20 06:0x 점검 — ⚠️ 야간 루틴10(aroma-",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -760,12 +760,12 @@
   {
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
-   "ran": false,
-   "at": "",
-   "today": 0,
-   "lvl": "idle",
+   "ran": true,
+   "at": "06:06",
+   "today": 1,
+   "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 0편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 1편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -779,13 +779,21 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 0편",
-   "codes": []
+   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 1편",
+   "codes": [
+    "AM-BO-011"
+   ]
   }
  ],
  "approvals": [],
  "edits": [],
  "today_events": [
+  {
+   "code": "AM-BO-011",
+   "stage": "proc",
+   "at": "2026-11-20 06:06:35",
+   "src": "파일 수정 시각"
+  },
   {
    "code": "쓰레드 공유 AM-SP-020",
    "stage": "boss",
@@ -826,7 +834,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 06:04:01",
+     "chip": "2026-11-20 06:07:01",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -868,8 +876,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-19 12:21",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 47개"
+     "chip": "2026-11-20 06:06",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 48개"
     }
    ]
   },
