@@ -33012,6 +33012,28 @@
    "owner": "claude",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "verify-share4-1120",
+   "added": "2026-11-20",
+   "what": "정비 7efe89882(maint1119share4) 독립 검증 완료 — 불일치 10건(중0·보통2·경미8), 슬롯 판정 수정이 새 결함(3회 연속) → maint1119share5 로 재지시",
+   "due": "2026-11-20",
+   "cmd": "type docs\\verify_share4_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "docs/verify_share4_20261120.md: 7efe89882 검증 완료 — 가짜 소실 경보(registry_gaps)·승인 시각 기준(경계값 239~4321 신호와 일치)은 고쳐짐, 시험 625건·플러그인 26 통과. 슬롯 판정 새 결함·후보 조건 불일치 등 보통2·경미8 은 maint1119share5 로 재지시"
+  },
+  {
+   "id": "fix-c229v0-1120",
+   "added": "2026-11-20",
+   "what": "C2-29 V0 지적 ①②③+사소 반영(병과·조문 확인범위 분리·휴대반입 tip 박스·사례① 팔았다·구매자칸). validate FAIL0·heading OK·layout 0·bodydup 0.041. 재검사(V0 diff+기계4종) 남음",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.layout --file 위고비중고거래직구해외반입재판매5년이하징역_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
