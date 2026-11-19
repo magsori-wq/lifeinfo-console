@@ -32966,6 +32966,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-leak-1119",
+   "added": "2026-11-19",
+   "what": "정비 0de22d5ed(maint1119leak) 검증 — 이부장 직접: 수정 diff(build() 출력 경로를 호출 시점 W 로, 7줄)·누수 시험 2건 직접 실행 통과(OK)·정비 재현 기록(시험 2건 실행 전후 engine_state.json 에 픽스처 유입) 확인. 독립 Fable 검증은 변경이 작아(경로 한 줄+시험) 생략",
+   "due": "2026-11-19",
+   "cmd": "git show 0de22d5ed --stat",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
