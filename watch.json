@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "items": [
   {
    "id": "intro-numbers",
@@ -8022,8 +8022,8 @@
   {
    "id": "naver-capture-refresh",
    "added": "2026-10-05",
-   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **4일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
-   "due": "2026-11-19",
+   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **5일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
+   "due": "2026-11-20",
    "cmd": "start https://creator-advisor.naver.com/naver_blog/main",
    "owner": "user",
    "verify": "python -m studio.kwgap",
@@ -32980,6 +32980,38 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-19",
    "result": "이부장 22:25: 0de22d5ed diff 열어 확인(enginestate.build() out_path=호출 시점 W), TestStateLeakMaint1119 2건 직접 실행 OK, 정비 재현·원인 기록(LEAK-1·2)과 일치. 남은 구멍(towertick STATE 등 import 시점 경로 상수)은 maint1119leak 노트에 있음 — 새 시험 추가 시 같은 함정 주의"
+  },
+  {
+   "id": "verify-idwake-ed7f1b8d5-1120",
+   "added": "2026-11-20",
+   "what": "정비 ed7f1b8d5(maint1119idwake) 독립 검증 완료 — docs/verify_idwake_20261119.md(불일치 8건: 원인 서술·재발 경로 등) → fc1afe4db(idwake2)·509c5c9c3(idwake3)로 수정, 재검증 docs/verify_idwake2_20261119.md·verify_share3_idwake3_20261119.md",
+   "due": "2026-11-20",
+   "cmd": "type docs\\verify_idwake_20261119.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "ed7f1b8d5 는 11-19 18:30 독립 검증(docs/verify_idwake_20261119.md, 불일치 8건 🔴2·🟡6) 대상이었고 지적은 fc1afe4db·509c5c9c3 에서 고쳐져 재검증 통과(docs/verify_idwake2·verify_share3_idwake3)"
+  },
+  {
+   "id": "draft1120c229-check-1120",
+   "added": "2026-11-20",
+   "what": "C2-29 위고비 중고거래·직구 초안(draft1120c229, 이과장 00:13 착수) — 초안·썸네일·pubqueue add 확인 → V0(약사법 제44·61조 조문 원문 대조 필수: 미확인 항목이라 source 에이전트로 먼저 확보, 구매 금지 단정·기한/금액 지어내기 금지) → 결재",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-thumb-540",
+   "added": "2026-11-20",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(540_glp1_resale.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-20",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
