@@ -5992,6 +5992,22 @@
    "target": "verify-share5-0120",
    "detail": "독립 검증 완료: 불일치 8(보통2 회귀·경미6), 이부장 직접 재현 확인 → maint1119share6 지시(11-20 01:57, msg 1d35e968)",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-20T02:22:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "maint1119share6-check",
+   "detail": "정비 8/8 완료 보고 → 이부장 직접 재실행: 검증 입력 10종 전부 오늘 판정 OK·638건·enginemap 이상 없음, a41a55a17 커밋, 독립 검증 재요청(verify-share6-0120)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-20T02:29:54",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-share6-0120",
+   "detail": "독립 검증: 새 불일치 7(중2·경5), 이전 입력 41개 회귀 0 → share7 발급(방식 전환)",
+   "via": "cli"
   }
  ]
 }

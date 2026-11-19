@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 02:17:35",
+ "at": "2026-11-20 02:48:16",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -165,10 +165,9 @@
       "done_at": "",
       "slot": "12:30~13:00",
       "today": true,
-      "guess": false,
-      "date_note": "",
+      "off": true,
       "unread": false,
-      "raw": ""
+      "raw": "【권고】AM-SP-020 쓰레드 공유 11/20 12:30~13:00 슬롯(이부장 지정) 게시. 원고: aroma-mag/threads/AM-SP-020_threads.md 그대로(첫 줄 Aroma Mag, 링크 a"
      }
     ],
     "posted": false
@@ -184,8 +183,7 @@
       "done_at": "2026-11-19",
       "slot": "17:40~18:00",
       "today": false,
-      "guess": false,
-      "date_note": "",
+      "off": false,
       "unread": false,
       "raw": ""
      }
@@ -203,8 +201,7 @@
       "done_at": "2026-11-01",
       "slot": "",
       "today": false,
-      "guess": false,
-      "date_note": "",
+      "off": false,
       "unread": false,
       "raw": ""
      }
@@ -233,7 +230,9 @@
     "state": "todo",
     "posted": false,
     "posted_at": "",
-    "tz": ""
+    "tz": "",
+    "off": true,
+    "raw": "【권고】AM-SP-020 쓰레드 공유 11/20 12:30~13:00 슬롯(이부장 지정) 게시. 원고: aroma-mag/threads/AM-SP-020_threads.md 그대로(첫 줄 Aroma Mag, 링크 a"
    }
   ],
   "ledger_last": "AM-SP-021 · 2026-11-19 17:40 · 약 오전 0:40(11-19) · https://www.threads.com/@magsori8975/post/Df6rLxRgTnE · 사장님 aroma-threads-sp021-1119(3c1cd458e)·프로필 허용 idaeri-classifier-allow-sp021-1119(e521abc9f) · 없음(원고 그대로, 텍스트만) · 11-20 이후 일별 기록(예약 43",
@@ -256,7 +255,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 02:17:14",
+   "last_at": "2026-11-20 02:48:15",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -330,7 +329,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 269,
+  "last_min": 300,
   "cur": "11/19 21:47 정기 점검 — 새 결재·요청 없음, SP",
   "lvl": "ok"
  },
@@ -704,7 +703,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 0,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
@@ -712,7 +711,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 269,
+   "last_min": 300,
    "cur": "11/19 21:47 정기 점검 — 새 결재·요청 없음, SP",
    "lvl": "ok"
   },
@@ -727,7 +726,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 269,
+   "last_min": 300,
    "cur": "11/19 21:47 정기 점검 — 새 결재·요청 없음, SP",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -822,7 +821,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 02:17:14",
+     "chip": "2026-11-20 02:48:15",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -882,8 +881,8 @@
     {
      "head": "② 오늘 슬롯",
      "chip": "1건",
-     "lvl": "idle",
-     "sub": "AM-SP-020 12:30~13:00(결재 대기)"
+     "lvl": "amber",
+     "sub": "AM-SP-020 서식 밖 — 사람이 확인(원문: 【권고】AM-SP-020 쓰레드 공유 11/20 12:30~13:00 슬롯(이부장 지정) 게시. 원고: aroma-mag/threads/AM-SP-020_threads.md 그대로(첫 줄 Aroma Mag, 링크 a) · 읽은 값 12:30~13:00(결재 대기)"
     },
     {
      "head": "③ AM-SP-020",

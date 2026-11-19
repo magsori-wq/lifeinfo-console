@@ -33054,6 +33054,30 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard order --id maint1119share6 | head -3; python -m studio.batchboard show | grep share6",
    "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "정비 8/8 완료 보고 → 이부장 직접 재실행: 검증 입력 10종 전부 오늘 판정 OK·638건·enginemap 이상 없음, a41a55a17 커밋, 독립 검증 재요청(verify-share6-0120)"
+  },
+  {
+   "id": "verify-share6-0120",
+   "added": "2026-11-20",
+   "what": "a41a55a17 share6 독립 검증(Fable) docs/verify_share6_20261120.md — 불일치 0 이면 maint1119share5·6 confirm, 있으면 7차 지시",
+   "due": "2026-11-20",
+   "cmd": "head -3 docs/verify_share6_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "독립 검증: 새 불일치 7(중2·경5), 이전 입력 41개 회귀 0 → share7 발급(방식 전환)"
+  },
+  {
+   "id": "maint1119share7-check",
+   "added": "2026-11-20",
+   "what": "정비 share7(방식 전환: 정식 서식+서식 밖 amber) 완료 확인 → 이부장 직접 재실행 + 독립 검증(7차)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep share7",
+   "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
   }
