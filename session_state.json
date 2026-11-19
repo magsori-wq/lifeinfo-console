@@ -3844,8 +3844,8 @@
   "aroma": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 17:22:33",
-   "last_what": "⏸ 대기 — 쓰레드 AM-SP-021 게시: 결재 완료(사장님 17:20 aroma-threads-sp021-1119, 커밋 3c1cd458e)·aroma 프로필 c0ae104a 에 @magsori8975 로그인 확",
+   "last_report": "2026-11-19 17:47:35",
+   "last_what": "11/19 17:47 정기 점검 — 17:41 이후 새 결재·이부장 요청 없음, 로그인 유지(MyBlog→/aroma-mag), CA 새 일자 없음(11/18=18회 그대로, 11/19 값은 11/20 반영). 쓰레",
    "reads": 1,
    "last_order_at": "2026-10-29 14:36",
    "last_read": "2026-10-29 14:36",
@@ -6722,14 +6722,15 @@
   },
   "share1119": {
    "reads": 2,
-   "reads_since_report": 0,
-   "last_order_at": "2026-11-19 17:18:11",
-   "last_read": "2026-11-19 17:18:38",
+   "reads_since_report": 2,
+   "last_order_at": "2026-11-19 17:42:34",
+   "last_read": "2026-11-19 17:42:49",
    "owner": "이과장",
-   "state": "working",
+   "state": "waiting",
    "read_by": "report",
    "last_report": "2026-11-19 17:22:45",
-   "last_what": "이부장 17:20 지시 반영 — aroma 공유 원고·텍스트 전용 게시 스크립트 삭제(커밋·push), 장부 AM-SP-021 항목 메모만 정정(status 「이대리 게시」), 시각 불일치 해소 기록(태평양시). 쓰"
+   "last_what": "이부장 17:20 지시 반영 — aroma 공유 원고·텍스트 전용 게시 스크립트 삭제(커밋·push), 장부 AM-SP-021 항목 메모만 정정(status 「이대리 게시」), 시각 불일치 해소 기록(태평양시). 쓰",
+   "waiting_since": "2026-11-19 17:42"
   },
   "maint1119idwake": {
    "reads": 1,
@@ -6738,18 +6739,29 @@
    "last_read": "2026-11-19 17:13:40",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-19 17:27:55",
-   "last_what": "🙋 이부장 요청: maint1119share 지시서가 보드에 없다(order --id maint1119share → 「등록된 적이 없거나 이름이 다르다」, 17:29 두 번 확인). 비슷한 배치는 share1119("
+   "last_report": "2026-11-19 17:45:07",
+   "last_what": "▶ 이부장 답 17:45: maint1119share 는 17:27 등록됐고 정비가 17:39 AROMA-SCR-1·2 완료 보고함(경보 17:29 는 등록 직전 시각). 이어서 maint1119share2(상황실 "
   },
   "maint1119share": {
    "reads": 4,
-   "reads_since_report": 4,
+   "reads_since_report": 0,
    "last_order_at": "2026-11-19 17:27:38",
    "last_read": "2026-11-19 17:28:11",
    "owner": "정비",
-   "state": "waiting",
-   "waiting_since": "2026-11-19 17:28"
+   "state": "working",
+   "last_report": "2026-11-19 17:40:04",
+   "last_what": "정비(나)·11-19 17:40·커밋 278a64cb7 + 491875ae5. 독립 검증(docs/verify_aroma_screen_20261119.md) 불일치 수정: ①TOWER_OWED 시각=경보가 울린 시각"
+  },
+  "maint1119share2": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-19 17:43:59",
+   "last_read": "2026-11-19 17:44:14",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-19 17:53:09",
+   "last_what": "정비(나)·11-19 17:58·커밋 112503637(원인 수정)+564b4c8f4(화면 표시 정정) push·syncorigin·본체 굽기. 원인 확정: 이대리가 장부 threads/분석.md 에 열 구성이 다른"
   }
  },
- "updated": "2026-11-19 17:28"
+ "updated": "2026-11-19 17:53"
 }

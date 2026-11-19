@@ -142,6 +142,7 @@ details.strip li.c0,details.strip li.c1{border-left-color:var(--rd)}details.stri
 details.strip h3{margin:10px 0 2px;font-size:.78rem;color:var(--muted)}
 #rflt{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}#rflt .rfl{font-weight:800;font-size:.86rem}#rflt .rfl.ok{color:var(--ok)}#rflt .rfl.stale{color:var(--am)}#rflt .rfl.bad{color:var(--rd)}#rflt .rfl.na{color:var(--idle)}#rflt a{color:var(--bl);font-weight:700;text-decoration:none;white-space:nowrap}
 #dbody .sg{display:flex;flex-wrap:wrap;gap:4px 6px;margin:6px 0}#dbody code{font-size:.74rem;background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:0 5px;overflow-wrap:anywhere}#dbody .fd2{font-size:.8rem;margin:2px 0;overflow-wrap:anywhere}
+#roomExtra .lane .cp.wd{flex:1 1 100%}#roomExtra .xs{font-size:.78rem;color:var(--muted);overflow-wrap:anywhere;margin-top:2px;line-height:1.35}#roomExtra .xs a{margin-left:6px}
 @keyframes blink{50%{opacity:.35}}
 @keyframes alarm{50%{background:#8f1d1d}}
 @keyframes nodered{50%{stroke:transparent}}
@@ -217,6 +218,7 @@ function el(n,a,p){const e=document.createElementNS(NS,n);for(const k in a||{})e
 const ROOM_ID=window.ENGINE_ROOM||"main";
 const ROOMS={
  main:{state:"engine_state.json",title:"엔진 상황실",
+  who:{draft:"이과장(초안)",v0:"V0 검사",boss:"사장님 결재",deploy:"썸네일 배포",pub:"publish.yml"},alab:[["proc","처리"],["boss","결재·준비"],["pub","발행"]],doneLab:"최근 3일 도착",
   nav:{flow:["engine_flow.html","🗺 신호체계 흐름도 ↗"],other:["engine_aroma.html","🧑‍💼 이대리 상황실 ↗"]},hide:[],
   MAIN:[["topic","① 글감 선정"],["proc","② 처리(초안·V0)"],["boss","③ 결재·준비"],["pub","④ 발행"]],TERM:[["blog","🅑 블로그스팟"],["naver","🅝 네이버"],["insta","🅘 인스타"],["threads","🅣 쓰레드"]],CRN:[["eq","🧳 트렁크"],["ed","✍ 작성"],["ea","🔁 반영"]],
   DRV_AT:{topic:[["이부장(감시)","이부장 선별"]],proc:[["이과장","이과장 초안"],["이부장(감시)","이부장 V0"]],
@@ -225,12 +227,13 @@ const ROOMS={
   ED:[["queue","🧳 트렁크(대기)","계획된 대상"],["draft","✍ 개선안 작성","이과장"],["boss","🖊 결재","사장님"],["naver","🔁 블로그 반영·네이버 정정","이과장·Aside"],["sns","📱 인스타·쓰레드 정정","Aside(결재 후)"],["done","✅ 오늘 끝남",""]],
   sec:{topic:["①","글감 선정 — 3.세션·루틴 → 이부장","제안 대기 없음"],proc:["②","처리 중 — 이과장 초안 → V0"],boss:["③","결재·준비 — 사장님 결재 · 썸네일 배포"],pub:["④","발행 — publish.yml"],osmu:["⑤","4채널 진행 — 종착지 도착 대기"]}},
  aroma:{state:"engine_aroma_state.json",title:"이대리 상황실",
+  who:{draft:"이대리(초안)",v0:"V0 에이전트",boss:"사장님 결재(CP)",deploy:"",pub:"게시 대기(Aside 발행챗)"},alab:[["proc","초안·V0"],["boss","CP 결재"],["pub","게시"]],doneLab:"도착(전체)",
   nav:{flow:["engine_aroma_flow.html","🗺 신호체계 흐름도 ↗"],other:["engine.html","🚨 본사 상황실 ↗"]},hide:["rflt","exlg","dsig"],
   MAIN:[["topic","① 글감·겹침 검사"],["proc","② 초안·V0"],["boss","③ CP 결재"],["pub","④ 게시(Aside)"]],
-  TERM:[["blog","— 해당 없음"],["naver","🅝 aroma-mag 블로그"],["insta","— 인스타 없음"],["threads","🅣 쓰레드 공유(휴면)"]],
+  TERM:[["blog","— 해당 없음"],["naver","🅝 aroma-mag 블로그"],["insta","— 인스타 없음"],["threads","🅣 쓰레드 공유"]],
   CRN:[["eq","🧳 rev 저장"],["ed","✍ 수정 작성"],["ea","🔁 반영"]],
   DRV_AT:{topic:[["이대리","이대리 글감"]],proc:[["이대리","이대리 초안·V0"]],boss:[["사장님","사장님 결재"]],pub:[["Aside","Aside 발행챗"]],hub:[["Aside","Aside 배송"]],ed:[["이대리","이대리 수정"]],ea:[["이대리","이대리"],["Aside","Aside 정정"]]},
-  ED:[["queue","🧳 rev 저장(대기)","미확인"],["draft","✍ 수정안 작성","이대리"],["boss","🖊 수정 결재","사장님"],["naver","🔁 반영·재확인","이대리·Aside"],["sns","📱 쓰레드 정정","휴면"],["done","✅ 오늘 끝남",""]],
+  ED:[["queue","🧳 rev 저장(대기)","미확인"],["draft","✍ 수정안 작성","이대리"],["boss","🖊 수정 결재","사장님"],["naver","🔁 반영·재확인","이대리·Aside"],["sns","📱 쓰레드 정정","이대리(결재 후)"],["done","✅ 오늘 끝남",""]],
   sec:{topic:["①","글감 — 이대리 자기점검·CA 검색어·일정 박스·사장님 지시","표시할 글감 기록 없음(미확인)"],proc:["②","초안·V0 — 이대리 → V0 에이전트"],boss:["③","CP 결재 — 사장님 · 미리보기 필수"],pub:["④","게시 — Aside 발행 전용 챗 → 공개 URL 확인"],osmu:["⑤","(이대리는 4채널 없음)"]}}
 };
 const RM=ROOMS[ROOM_ID]||ROOMS.main;
@@ -439,14 +442,14 @@ function groups(s){
   const topics=(s.topics||[]).filter(t=>t.state==="제안").map(t=>({code:t.code,title:t.title,min:null,lvl:"ok",who:t.src||"3.세션·루틴"}));
   const tag=(a,w)=>(a||[]).map(x=>Object.assign({},x,{who:w}));
   return {topic:topics,
-    proc:tag(nd.draft,"이과장(초안)").concat(tag(nd.v0,"V0 검사")),
-    boss:tag(nd.boss,"사장님 결재").concat(tag(nd.deploy,"썸네일 배포")),
-    pub:tag(nd.publish,"publish.yml"),
+    proc:tag(nd.draft,RM.who.draft).concat(tag(nd.v0,RM.who.v0)),
+    boss:tag(nd.boss,RM.who.boss).concat(tag(nd.deploy,RM.who.deploy)),
+    pub:tag(nd.publish,RM.who.pub),
     osmu:(nd.osmu||[]).map(x=>Object.assign({},x,{who:"Aside·이과장 · "+(x.left||[]).join("·")+" 남음",lvl:(x.last_at&&today&&x.last_at<today)?"amber":"ok"}))};
 }
 function alerts(s,g){
   const A=[];const add=(lv,what,min,node,code)=>A.push({lv,what,min,node,code});
-  [["proc","처리"],["boss","결재·준비"],["pub","발행"]].forEach(([k,lab])=>{
+  RM.alab.forEach(([k,lab])=>{
     g[k].forEach(x=>{if(x.lvl==="red")add("rd",`${lab} 멈춤 ${x.code} ${x.title||""}`,x.min,k,x.code);else if(x.lvl==="amber")add("am",`${lab} 지연 ${x.code} ${x.title||""}`,x.min,k,x.code)});
     if(g[k].length>=3)add("am",`병목 — ${lab}에 ${g[k].length}건 쌓임`,maxMin(g[k]),k)});
   g.osmu.forEach(x=>{if(x.lvl==="amber")add("am",`4채널 미완(어제 이전 발행) ${x.code}`,null,"hub",x.code)});
@@ -743,7 +746,8 @@ function renderText(s,g){
    (()=>{const m=((s.affiliate||{}).summary)||{};if(m.links==null)return "";
      return `<span class="${m.unattached?"rd":"ok"}" title="제휴 링크 발급 ${m.links}개(${m.posts_issued||0}편) · 원고에 안 붙은 링크 ${m.unattached}개 · 라이브(네이버) 확인 ${m.live_posts||0}편">제휴 발급 <b>${m.links}</b> · 원고 미부착 <b>${m.unattached}</b> · 라이브 <b>${m.live_posts||0}편</b></span>`})();
   const open=new Set([...document.querySelectorAll("#steps li.open")].map(e=>e.dataset.code));
-  const sec=(id,n,t,a,fn,empty)=>`<h3 id="st-${id}">${n} ${t}<span class="n">${a.length}</span></h3><ul id="ul-${id}">${a.length?a.map(fn).join(""):`<li class="empty">${empty||"비어 있음"}</li>`}</ul>`;
+  const sig=id=>(s.signals||[]).filter(g=>g.at_node===id).map(g=>`<li class="sgl"><b>⚡ ${esc(g.name)}</b> ${g.last_at?esc(g.last_at):"시각 기록 없음"}${g.today_n!=null?` · 오늘 ${esc(g.today_n)}회`:""}<div class="w">${esc(g.node)}${g.note?" · "+esc(g.note):""}</div></li>`).join("");
+  const sec=(id,n,t,a,fn,empty)=>`<h3 id="st-${id}">${n} ${t}<span class="n">${a.length}</span></h3><ul id="ul-${id}">${a.length?a.map(fn).join(""):`<li class="empty">${empty||"비어 있음"}</li>`}${sig(id)}</ul>`;
   document.getElementById("steps").innerHTML=
     sec("topic",RM.sec.topic[0],RM.sec.topic[1],g.topic,x=>rowHtml(x),RM.sec.topic[2])+
     sec("proc",RM.sec.proc[0],RM.sec.proc[1],g.proc,x=>rowHtml(x))+
@@ -779,7 +783,7 @@ function renderDetail(){
   const d=document.getElementById("detail");if(!selTerm||!S){if(selTerm===null&&!d.dataset.code){d.hidden=true;d.innerHTML=""}return}
   const c=((S.channels||{})[selTerm])||{done:[],wait:[]},nm=TERM.find(t=>t[0]===selTerm)[1];
   d.hidden=false;
-  d.innerHTML=`<h3>${nm} — 최근 3일 도착 ${c.done.length}편 · 대기 ${c.wait.length}편 <button class="btn" type="button" id="dclose">닫기</button></h3>`+
+  d.innerHTML=`<h3>${nm} — ${RM.doneLab} ${c.done.length}편 · 대기 ${c.wait.length}편 <button class="btn" type="button" id="dclose">닫기</button></h3>`+
    `<h4>✅ 도착(게시 완료)</h4><ul>${c.done.length?c.done.map(x=>`<li><b>${esc(x.code)}</b> ${esc(x.title)} · ${esc((x.at||"").slice(5))} · <a href=${hq(x.url)} target="_blank" rel="noopener">열기 ↗</a></li>`).join(""):'<li class="w">아직 없음</li>'}</ul>`+
    `<h4>⏳ 아직 안 도착</h4><ul>${c.wait.length?c.wait.map(x=>`<li class="w"><b>${esc(x.code)}</b> ${esc(x.title)}</li>`).join(""):'<li class="w">대기 없음</li>'}</ul>`;
   document.getElementById("dclose").onclick=()=>pickTerm(selTerm);
@@ -838,7 +842,7 @@ function applyRoom(){
 function renderExtra(s){
   const x=document.getElementById("roomExtra");if(!x)return;const secs=s.room_extra||[];
   x.innerHTML=secs.map(c=>`<section class="panel"><h2>${esc(c.title)}${c.sub?` <small>${esc(c.sub)}</small>`:""}</h2>`+
-    `<div class="lane">`+((c.rows||[]).map(r=>`<div class="cp ${esc(r.lvl||"ok")}"><b>${esc(r.head)}</b>${r.chip?` <span style="font-weight:700;color:var(--muted)">${esc(r.chip)}</span>`:""}${r.sub?`<div class="nt">${esc(r.sub)}</div>`:""}</div>`).join("")||`<div class="cp idle">${esc(c.empty||"없음")}</div>`)+`</div></section>`).join("");
+    `<div class="lane">`+((c.rows||[]).map(r=>`<div class="cp ${esc(r.lvl||"ok")}${r.sub?" wd":""}"><b>${esc(r.head)}</b>${r.chip?` <span style="font-weight:700;color:var(--muted)">${esc(r.chip)}</span>`:""}${r.sub?`<div class="xs">${esc(r.sub)}${r.href?` <a href=${hq(r.href)} target="_blank" rel="noopener">열기 ↗</a>`:""}</div>`:""}</div>`).join("")||`<div class="cp idle">${esc(c.empty||"없음")}</div>`)+`</div></section>`).join("");
 }
 async function load(){
   try{const r=await fetch(RM.state+"?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);const s=await r.json();fetchOk=true;pingRadar();render(DEMO?demo(s):s)}

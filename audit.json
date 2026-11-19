@@ -5816,6 +5816,38 @@
    "target": "aroma-threads-sp021-1119",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-19T17:29:45",
+   "actor": "사장님",
+   "action": "watch.done",
+   "target": "idaeri-classifier-allow-sp021-1119",
+   "detail": "운영콘솔 전자결재함에서 사장님 승인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-19T17:36:55",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "idwake-armed-check-1119",
+   "detail": "17:36 확인: webapp/.idaeri_wake.json last_run 이 17:18:40(내 수동 실행) → 17:33:10 → 17:36:10 으로 30초 주기로 스스로 갱신 — 이대리 세션이 등록 후 모드를 켰다(설치본 0.1.1 로도 동작)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-19T17:42:43",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "share1119-verify-1119",
+   "detail": "이대리 게시 Df6rLxRgTnE: Aside 읽기로 본문=원고·네이버 링크 카드·페이지 12:41 PT(17:41 KST) 확인, 이미지 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-19T17:46:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-aroma-screen-1119",
+   "detail": "검증 문서 docs/verify_aroma_screen_20261119.md — 0d7575f6e·aaa14d349·5324d8a64 대조 완료, 불일치 11건(중3·보통5·경미3) 정비 지시서 maint1119share/share2 에 반영",
+   "via": "cli"
   }
  ]
 }

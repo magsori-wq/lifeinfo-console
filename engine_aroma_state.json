@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 17:29:25",
+ "at": "2026-11-19 17:59:41",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -152,49 +152,127 @@
  },
  "threads": {
   "state": "active",
-  "label": "움직임 있음 — AM-SP-020_threads.md(11-19 17:08, 0일 전)",
+  "label": "움직임 있음 — 분석.md(11-19 17:41, 0일 전)",
   "files": 5
+ },
+ "share": {
+  "state": "active",
+  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-19 17:08)",
+  "drafts": [
+   {
+    "code": "AM-SP-020",
+    "head": "AM-SP-020 쓰레드 원고 (제안, 11/20 낮 게시용, 결재 전)",
+    "mtime": "2026-11-19 17:08",
+    "cards": [],
+    "posted": false
+   },
+   {
+    "code": "AM-SP-021",
+    "head": "AM-SP-021 쓰레드 원고 (제안, 결재 전)",
+    "mtime": "2026-11-19 17:08",
+    "cards": [
+     {
+      "id": "aroma-threads-sp021-1119",
+      "state": "done",
+      "done_at": "2026-11-19",
+      "slot": "17:40~18:00",
+      "today": true
+     }
+    ],
+    "posted": true
+   },
+   {
+    "code": "AM-SP-005",
+    "head": "AM-SP-005 쓰레드 원고 (결재 대기)",
+    "mtime": "2026-11-01 18:22",
+    "cards": [
+     {
+      "id": "aroma-threads-sp005-1101",
+      "state": "done",
+      "done_at": "2026-11-01",
+      "slot": "",
+      "today": false
+     }
+    ],
+    "posted": true
+   }
+  ],
+  "posted": [
+   {
+    "code": "AM-SP-005",
+    "at": "2026-11-01 18:33",
+    "url": "https://www.threads.com/@magsori8975/post/DfMa07dAU4Y"
+   },
+   {
+    "code": "AM-SP-021",
+    "at": "2026-11-19 17:40",
+    "url": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE"
+   }
+  ],
+  "slots": [
+   {
+    "code": "AM-SP-021",
+    "slot": "17:40~18:00",
+    "state": "done",
+    "posted": true,
+    "posted_at": "2026-11-19 17:40"
+   }
+  ],
+  "ledger_last": "AM-SP-021 · 2026-11-19 17:40 · 약 오전 0:40(11-19) · https://www.threads.com/@magsori8975/post/Df6rLxRgTnE · 사장님 aroma-threads-sp021-1119(3c1cd458e)·프로필 허용 idaeri-classifier-allow-sp021-1119(e521abc9f) · 없음(원고 그대로, 텍스트만) · 11-20 이후 일별 기록(예약 43"
+ },
+ "consts": {
+  "stall_min": 240,
+  "remind_min": 60,
+  "giveup_h": 72,
+  "owed_min": 15,
+  "owed_remind": 30,
+  "stale_min": 30
  },
  "signals": [
   {
    "name": "IDAERI_WAKE",
-   "node": "승인 → 이대리 깨움",
-   "last_at": "2026-11-19 17:18:40",
+   "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
+   "last_at": "2026-11-19 17:59:41",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
-   "note": ""
+   "note": "",
+   "at_node": "boss"
   },
   {
    "name": "AROMA_PUBLISH_STALL",
-   "node": "승인 → 게시(240분)",
+   "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
    "src": "시각 저장 없음(진행 중 0건)",
    "today_n": 0,
-   "note": ""
+   "note": "",
+   "at_node": "pub"
   },
   {
    "name": "AROMA_PUBLISH_RESOLVED",
-   "node": "승인 → 게시 해소",
+   "node": "승인 → 게시 해소(게시 기록이 생기면 1회)",
    "last_at": "",
    "src": "시각 저장 없음",
    "today_n": 0,
-   "note": ""
+   "note": "",
+   "at_node": "pub"
   },
   {
    "name": "IDAERI_STALL",
-   "node": "요청 → 이행(30분)·활동 공백(3시간)",
+   "node": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회)",
    "last_at": "2026-11-19 09:00",
    "src": "idaeri_idle_at(공백 알림만)",
    "today_n": 1,
-   "note": "열린 요청 0건"
+   "note": "열린 요청 0건",
+   "at_node": ""
   },
   {
    "name": "TOWER_OWED",
-   "node": "이대리 🙋·⏸ → 이부장 15분",
-   "last_at": "2026-11-19 17:22:21",
+   "node": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림)",
+   "last_at": "2026-11-19 17:37:33",
    "src": "tick owed(aroma 건)",
-   "today_n": 127,
-   "note": "횟수는 아래 세션 전체"
+   "today_n": 136,
+   "note": "횟수는 아래 세션 전체",
+   "at_node": ""
   },
   {
    "name": "ASIDE_ALERT",
@@ -202,7 +280,8 @@
    "last_at": "2026-11-19 17:22:21",
    "src": "now_log(bid=aroma)",
    "today_n": 11,
-   "note": "횟수는 전체 세션"
+   "note": "횟수는 전체 세션",
+   "at_node": ""
   },
   {
    "name": "ROUTINE_DONE",
@@ -210,15 +289,16 @@
    "last_at": "",
    "src": "시각 저장 없음(루틴10 꺼짐은 설계도 기재)",
    "today_n": 4,
-   "note": "횟수는 lifeinfo 루틴 전체"
+   "note": "횟수는 lifeinfo 루틴 전체",
+   "at_node": ""
   }
  ],
  "unit": {
   "who": "이대리",
-  "state": "⏸ 대기(남의 차례)",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 6,
-  "cur": "⏸ 대기 — 쓰레드 AM-SP-021 게시: 결재 완료(사장님",
+  "last_min": 12,
+  "cur": "11/19 17:47 정기 점검 — 17:41 이후 새 결재·",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -240,7 +320,20 @@
    "wait": []
   },
   "threads": {
-   "done": [],
+   "done": [
+    {
+     "code": "AM-SP-005",
+     "title": "",
+     "url": "https://www.threads.com/@magsori8975/post/DfMa07dAU4Y",
+     "at": "2026-11-01 18:33"
+    },
+    {
+     "code": "AM-SP-021",
+     "title": "",
+     "url": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE",
+     "at": "2026-11-19 17:40"
+    }
+   ],
    "wait": []
   },
   "naver": {
@@ -550,7 +643,12 @@
   }
  },
  "topics": [],
- "limit": {},
+ "limit": {
+  "publish": [
+   240,
+   4320
+  ]
+ },
  "kpi": {
   "today": "2026-11-19",
   "done_today": 1,
@@ -577,16 +675,10 @@
  "units": [
   {
    "who": "이대리",
-   "state": "⏸ 대기(남의 차례)",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 6,
-   "cur": "⏸ 대기 — 쓰레드 AM-SP-021 게시: 결재 완료(사장님",
-   "lvl": "ok"
-  },
-  {
-   "who": "Aside",
-   "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 2,
+   "last_min": 12,
+   "cur": "11/19 17:47 정기 점검 — 17:41 이후 새 결재·",
    "lvl": "ok"
   },
   {
@@ -598,25 +690,24 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "⏸ 대기(남의 차례)",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 6,
-   "cur": "⏸ 대기 — 쓰레드 AM-SP-021 게시: 결재 완료(사장님",
+   "last_min": 12,
+   "cur": "11/19 17:47 정기 점검 — 17:41 이후 새 결재·",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
-  },
-  {
-   "who": "Aside",
-   "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 2,
-   "lvl": "ok",
-   "role": "발행 전용 챗(게시)"
   },
   {
    "who": "이부장(감시)",
    "state": "살아 있음",
    "lvl": "ok",
    "role": "어드바이저·감시"
+  },
+  {
+   "who": "Aside",
+   "role": "발행 전용 챗(게시)",
+   "lvl": "ok",
+   "state": "미확인(aroma 발행챗 상태는 읽는 길이 없다)"
   },
   {
    "who": "사장님",
@@ -728,32 +819,32 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-19 17:18:40",
-     "sub": "승인 → 이대리 깨움 · 출처 .idaeri_wake.json last_run"
+     "chip": "2026-11-19 17:59:41",
+     "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(240분) · 출처 시각 저장 없음(진행 중 0건) · 오늘 0회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 0회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시 해소 · 출처 시각 저장 없음 · 오늘 0회"
+     "sub": "승인 → 게시 해소(게시 기록이 생기면 1회) · 출처 시각 저장 없음 · 오늘 0회"
     },
     {
      "head": "IDAERI_STALL",
      "lvl": "ok",
      "chip": "2026-11-19 09:00",
-     "sub": "요청 → 이행(30분)·활동 공백(3시간) · 출처 idaeri_idle_at(공백 알림만) · 오늘 1회 · 열린 요청 0건"
+     "sub": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회) · 출처 idaeri_idle_at(공백 알림만) · 오늘 1회 · 열린 요청 0건"
     },
     {
      "head": "TOWER_OWED",
      "lvl": "ok",
-     "chip": "2026-11-19 17:22:21",
-     "sub": "이대리 🙋·⏸ → 이부장 15분 · 출처 tick owed(aroma 건) · 오늘 127회 · 횟수는 아래 세션 전체"
+     "chip": "2026-11-19 17:37:33",
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · 오늘 136회 · 횟수는 아래 세션 전체"
     },
     {
      "head": "ASIDE_ALERT",
@@ -771,11 +862,56 @@
   },
   {
    "title": "🧵 쓰레드 공유",
+   "sub": "aroma-mag/threads·watch aroma-threads-* — 읽기 전용",
    "rows": [
     {
-     "head": "움직임",
+     "head": "① 상태",
+     "chip": "가동",
      "lvl": "ok",
-     "sub": "움직임 있음 — AM-SP-020_threads.md(11-19 17:08, 0일 전)"
+     "sub": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-19 17:08)"
+    },
+    {
+     "head": "② 오늘 슬롯",
+     "chip": "1건",
+     "sub": "AM-SP-021 17:40~18:00(게시 완료 17:40 KST)"
+    },
+    {
+     "head": "③ AM-SP-020",
+     "chip": "원고만(결재 카드 없음)",
+     "lvl": "idle",
+     "sub": "AM-SP-020 쓰레드 원고 (제안, 11/20 낮 게시용, 결재 전) · 원고 11-19 17:08"
+    },
+    {
+     "head": "③ AM-SP-021",
+     "chip": "게시됨",
+     "lvl": "ok",
+     "sub": "AM-SP-021 쓰레드 원고 (제안, 결재 전) · 원고 11-19 17:08 · 카드 aroma-threads-sp021-1119(done 11-19)"
+    },
+    {
+     "head": "③ AM-SP-005",
+     "chip": "게시됨",
+     "lvl": "ok",
+     "sub": "AM-SP-005 쓰레드 원고 (결재 대기) · 원고 11-01 18:22 · 카드 aroma-threads-sp005-1101(done 11-01)"
+    },
+    {
+     "head": "④ AM-SP-005",
+     "chip": "게시 2026-11-01 18:33 KST",
+     "lvl": "ok",
+     "sub": "https://www.threads.com/@magsori8975/post/DfMa07dAU4Y",
+     "href": "https://www.threads.com/@magsori8975/post/DfMa07dAU4Y"
+    },
+    {
+     "head": "④ AM-SP-021",
+     "chip": "게시 2026-11-19 17:40 KST",
+     "lvl": "ok",
+     "sub": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE",
+     "href": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE"
+    },
+    {
+     "head": "⑤ 장부 최신 행",
+     "chip": "분석.md",
+     "lvl": "idle",
+     "sub": "AM-SP-021 · 2026-11-19 17:40 · 약 오전 0:40(11-19) · https://www.threads.com/@magsori8975/post/Df6rLxRgTnE · 사장님 aroma-threads-sp021-1119(3c1cd458e)·프로필 허용 idaeri-classifier-allow-sp021-1119(e521abc9f) · 없음(원고 그대로, 텍스트만) · 11-20 이후 일별 기록(예약 43"
     }
    ]
   },

@@ -32569,8 +32569,10 @@
    "due": "2026-11-19",
    "cmd": "python -c \"print(open('C:/naver-blog/aroma-mag/threads/분석.md',encoding='utf-8').read()[:2500])\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-19",
+   "result": "이대리 게시 Df6rLxRgTnE: Aside 읽기로 본문=원고·네이버 링크 카드·페이지 12:41 PT(17:41 KST) 확인, 이미지 없음"
   },
   {
    "id": "threads-share-recheck-1126",
@@ -32602,8 +32604,10 @@
    "due": "2026-11-19",
    "cmd": "python -c \"import json;print(json.load(open('webapp/.idaeri_wake.json',encoding='utf-8'))['last_run'])\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:330b96b0"
+   "state": "done",
+   "by": "세션:330b96b0",
+   "done_at": "2026-11-19",
+   "result": "17:36 확인: webapp/.idaeri_wake.json last_run 이 17:18:40(내 수동 실행) → 17:33:10 → 17:36:10 으로 30초 주기로 스스로 갱신 — 이대리 세션이 등록 후 모드를 켰다(설치본 0.1.1 로도 동작)"
   },
   {
    "id": "idaeri-classifier-allow-sp021-1119",
@@ -32617,6 +32621,18 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-19",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "verify-aroma-screen-1119",
+   "added": "2026-11-19",
+   "what": "이대리 상황실 독립 검증(Fable 에이전트, 읽기 전용) — 커밋 0d7575f6e·aaa14d349·5324d8a64 코드↔설계도 대조, 불일치 11건은 maint1119share·share2 로 수정 지시",
+   "due": "2026-11-19",
+   "cmd": "type docs\\verify_aroma_screen_20261119.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-19",
+   "result": "검증 문서 docs/verify_aroma_screen_20261119.md — 0d7575f6e·aaa14d349·5324d8a64 대조 완료, 불일치 11건(중3·보통5·경미3) 정비 지시서 maint1119share/share2 에 반영"
   }
  ]
 }
