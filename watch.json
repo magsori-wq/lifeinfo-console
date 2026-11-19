@@ -32426,12 +32426,33 @@
   {
    "id": "xlink-a523",
    "added": "2026-11-19",
-   "what": "🔗 A5-23 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-23",
+   "what": "🔗 A5-23 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A5-23",
    "due": "2026-11-19",
    "cmd": "python studio/blogger.py crosslink --code A5-23",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "a312-pension-rate-2033-fix",
+   "added": "2026-11-19",
+   "what": "A3-12 본문이 '13%설은 사실과 다름·최종 2032년 12.5%'라고 쓰나, 국민연금법 제88조③④(1천분의 65·130)와 복지부 보도자료(2025-03-20 '2033년 13%')는 2033년 13% 확인 — 정정 후보. 또 '매년 1월부터' 월 시작 시점 1차 문장은 못 찾음(부칙 연도 단위만·정책브리핑 148957270 '내년부터'만)",
+   "due": "2026-11-21",
+   "cmd": "docs/source_deep_scan38_pensionrate_20261119.md 읽고 A3-12 정정 여부 판단; 월 시작 시점은 국민연금공단 1355 문의",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "afflink-squidjeot1119",
+   "added": "2026-11-19",
+   "what": "🛒 제휴 링크 발급 요청 — squidjeot1119. 상품: 푸드앳홈 오징어 젓갈, 1kg, 1팩 (10,900원 · 리뷰 5,295 · 평점 4.5). 관련성: 김장철(11월 중순~12월) 김치 양념·밥반찬 수요 · 네이버 자동완성 오징어젓갈 실검색어 · 리뷰 5,295 평점 4.5. 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-11-19",
+   "cmd": "python -m studio.tosslink link 1240674855",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
