@@ -3967,15 +3967,16 @@
    "owner": "이과장"
   },
   "fuel1030": {
-   "reads": 1,
-   "reads_since_report": 0,
+   "reads": 3,
+   "reads_since_report": 2,
    "last_order_at": "2026-11-20 05:36:16",
-   "last_read": "2026-11-20 05:37:35",
+   "last_read": "2026-11-20 05:49:22",
    "owner": "3.",
-   "state": "working",
-   "last_report": "2026-11-20 05:40:42",
-   "last_what": "05:41 갈래(a) 2027-01-01 법령 조사 끝(docs/source_law_0101_20261120.md, 파일 확인): 목록 120행·88종 중 채택후보 2건, 둘 다 금액·시행일 미확정이라 이번엔 제안 ",
-   "read_by": "report"
+   "state": "waiting",
+   "last_report": "2026-11-20 05:46:48",
+   "last_what": "05:48 법령 세부 확인 끝(docs/source_law_0101_detail_20261120.md): ①고용보험법 소득기준 금액 — 현행 시행령(시행 2026.9.18) 본문에 금액 조항 없음, 금액 확인 못 함",
+   "read_by": "report",
+   "waiting_since": "2026-11-20 05:49"
   },
   "ledger1030": {
    "reads": 4,
@@ -6764,14 +6765,14 @@
    "last_what": "정비(나)·11-19 17:58·커밋 112503637(원인 수정)+564b4c8f4(화면 표시 정정) push·syncorigin·본체 굽기. 원인 확정: 이대리가 장부 threads/분석.md 에 열 구성이 다른"
   },
   "exp1119m1": {
-   "reads": 2,
+   "reads": 3,
    "reads_since_report": 0,
    "last_order_at": "2026-11-20 05:35:22",
-   "last_read": "2026-11-20 05:37:00",
+   "last_read": "2026-11-20 05:43:19",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-20 05:40:32",
-   "last_what": "🙋 이부장 요청: 원인 분석 착수 — 모르는 채 보고만 하고 멈췄다(사장님 지적). ① 일반 주소 재요청 2건이 13분 뒤 크롤됐는데 다시 Redirect error — 크롤러가 받은 응답/리디렉션 경로가 무엇인지 ",
+   "last_report": "2026-11-20 05:46:21",
+   "last_what": "[원인 분석 — indexlab 결과 수신 05:46, 4.가 원본 대조] 확인됨 ✅: studio/gsc_log.py cmd_add 는 같은 URL 이면 [이미있음]만 출력하고 파일에 안 쓴다 → 11-19 재요청",
    "read_by": "report"
   },
   "expreq1119": {
@@ -6966,8 +6967,8 @@
    "last_read": "2026-11-20 04:58:24",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-20 05:24:55",
-   "last_what": "✅ H1-43 네이버 게시 완료 https://blog.naver.com/magsori8975/224484215399 (PostView 200·제목·블로그원문 링크 확인, naver-link 기록). 다음 인스타→쓰"
+   "last_report": "2026-11-20 05:43:16",
+   "last_what": "✅ H1-43 인스타 게시 https://www.instagram.com/magsori8975/p/Df79dS3k6Ei/ (curl 200·블로그 링크 포함 확인, insta-link 기록). 다음 쓰레드(12:20"
   },
   "pub1120a611": {
    "reads": 2,
@@ -7020,5 +7021,5 @@
    "last_what": "시험(단위, 본체): 신규 TestCaTrendTopicsNeverSilentMaint1120 3건 — 정상 / 빈 응답(주제 목록 0·h3 0개 → 못 읽음) / 구조 바뀐 응답(저장된 목록으로 불렀지만 응답 0 "
   }
  },
- "updated": "2026-11-20 05:40"
+ "updated": "2026-11-20 05:49"
 }

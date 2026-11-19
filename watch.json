@@ -33260,7 +33260,7 @@
   {
    "id": "xlink-h143",
    "added": "2026-11-20",
-   "what": "🔗 H1-43 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-43",
+   "what": "🔗 H1-43 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-43",
    "due": "2026-11-20",
    "cmd": "python studio/blogger.py crosslink --code H1-43",
    "owner": "claude",
@@ -33343,6 +33343,56 @@
    "what": "3. 12:00 후보 누적 확인(3편 미만이면 표)",
    "due": "2026-11-20",
    "cmd": "python -m studio.topicprop table | head -8",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-4-0650",
+   "added": "2026-11-20",
+   "what": "4. 06:30 표 3개 도착 시 이부장 검토 15분 → 보완 지시서 06:50 전 전달",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | head -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-3-0930",
+   "added": "2026-11-20",
+   "what": "3. 후보 올라오면 선별 10분 → 초안 지시서 15분 안(예상 09:30)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | head -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-4-1230",
+   "added": "2026-11-20",
+   "what": "4. 12:00 원인 보고 검토 20분 → 후속 지시서 12:30 전",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | head -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-jeongbi-1200",
+   "added": "2026-11-20",
+   "what": "정비 catrend 완료 시 이부장 시험 10분 → 불일치면 보정 지시서 20분 안(12:00 전)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | head -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "tower-promise-idaeri-1245",
+   "added": "2026-11-20",
+   "what": "이대리 12:32 게시 URL 오면 이부장 라이브 확인 10분 → 슬롯 종료 기록",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | head -5",
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
