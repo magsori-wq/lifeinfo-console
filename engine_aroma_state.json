@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 04:46:37",
+ "at": "2026-11-20 04:48:49",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -152,7 +152,7 @@
  },
  "share": {
   "state": "active",
-  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-19 17:40)",
+  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 00:00)",
   "drafts": [
    {
     "code": "AM-SP-020",
@@ -161,8 +161,8 @@
     "cards": [
      {
       "id": "aroma-threads-sp020-1120",
-      "state": "todo",
-      "done_at": "",
+      "state": "done",
+      "done_at": "2026-11-20",
       "slot": "12:30~13:00",
       "today": true,
       "off": false,
@@ -230,7 +230,7 @@
    {
     "code": "AM-SP-020",
     "slot": "12:30~13:00",
-    "state": "todo",
+    "state": "done",
     "posted": false,
     "posted_at": "",
     "tz": ""
@@ -242,7 +242,7 @@
  },
  "threads": {
   "state": "active",
-  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-19 17:40)"
+  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 00:00)"
  },
  "consts": {
   "stall_min": 240,
@@ -256,7 +256,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 04:46:25",
+   "last_at": "2026-11-20 04:48:25",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -295,15 +295,15 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 0분째 (15분 넘으면 경보)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 2건 · 가장 오래된 3분째 (15분 넘으면 경보)",
    "at_node": ""
   },
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-20 04:45:47",
+   "last_at": "2026-11-20 04:47:13",
    "src": "now_log(bid=aroma)",
-   "today_n": 0,
+   "today_n": 2,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -330,7 +330,7 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 1,
-  "last_min": 0,
+  "last_min": 1,
   "cur": "AM-SP-020 쓰레드 공유 사장님 승인 완료(11-20 0",
   "lvl": "ok"
  },
@@ -373,9 +373,14 @@
      "at": "2026-11-19 17:40"
     }
    ],
-   "wait": [],
-   "state": "active",
-   "label": "가동"
+   "wait": [
+    {
+     "code": "AM-SP-020",
+     "title": "AM-SP-020 쓰레드 원고 (제안, 11/20 낮 게시용, 결재 전)"
+    }
+   ],
+   "state": "waiting",
+   "label": "대기(승인·게시 전)"
   },
   "naver": {
    "done": [
@@ -694,7 +699,7 @@
   "today": "2026-11-20",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -718,7 +723,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 0,
+   "last_min": 1,
    "cur": "AM-SP-020 쓰레드 공유 사장님 승인 완료(11-20 0",
    "lvl": "ok"
   },
@@ -733,7 +738,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 0,
+   "last_min": 1,
    "cur": "AM-SP-020 쓰레드 공유 사장님 승인 완료(11-20 0",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -754,7 +759,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -784,17 +789,16 @@
    "codes": []
   }
  ],
- "approvals": [
+ "approvals": [],
+ "edits": [],
+ "today_events": [
   {
-   "kind": "aroma",
-   "id": "aroma-threads-sp020-1120",
-   "what": "【권고】AM-SP-020 쓰레드 공유 게시일 11/20 · 슬롯 12:30~13:00 (이부장 지정) 게시. 원고: aroma-mag/threa",
-   "by": "이대리",
-   "waited": ""
+   "code": "쓰레드 공유 AM-SP-020",
+   "stage": "boss",
+   "at": "2026-11-20 04:47:17",
+   "src": "결재 커밋 시각"
   }
  ],
- "edits": [],
- "today_events": [],
  "incidents": [],
  "stage_of": {},
  "design_signals": [],
@@ -828,7 +832,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 04:46:25",
+     "chip": "2026-11-20 04:48:25",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -853,13 +857,13 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 0분째 (15분 넘으면 경보)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 2건 · 가장 오래된 3분째 (15분 넘으면 경보)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-20 04:45:47",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 0회 · 횟수는 전체 세션"
+     "chip": "2026-11-20 04:47:13",
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 2회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
@@ -883,19 +887,19 @@
      "head": "① 상태",
      "chip": "가동",
      "lvl": "ok",
-     "sub": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-19 17:40)"
+     "sub": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 00:00)"
     },
     {
      "head": "② 오늘 슬롯",
      "chip": "1건",
      "lvl": "idle",
-     "sub": "AM-SP-020 12:30~13:00(결재 대기)"
+     "sub": "AM-SP-020 12:30~13:00(승인됨)"
     },
     {
      "head": "③ AM-SP-020",
-     "chip": "결재 대기",
+     "chip": "승인됨·게시 대기",
      "lvl": "amber",
-     "sub": "결재 카드 대기 중 · 원고 11-19 17:08 · 카드 aroma-threads-sp020-1120(todo)"
+     "sub": "승인됨 — 게시 기록 아직 없음 · 원고 11-19 17:08 · 카드 aroma-threads-sp020-1120(done 11-20)"
     },
     {
      "head": "③ AM-SP-021",
