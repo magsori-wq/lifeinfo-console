@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 05:35:44",
+ "at": "2026-11-20 05:41:31",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -59,20 +59,19 @@
     "code": "H1-43",
     "title": "해외직구 건강식품 139개 중 95개 유해성분 — 관세",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
     "who": {
-     "naver": "lee"
+     "naver": "lee",
+     "insta": "lee"
     },
     "plan": {
-     "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-20",
@@ -357,8 +356,8 @@
    "who": "3.세션",
    "kind": "글감",
    "ran": true,
-   "at": "05:35",
-   "note": "05:45 갈래(c) 후속 조사 끝(docs/source_followup_20261120.md, 제가 파일 전문 확인): 5주",
+   "at": "05:40",
+   "note": "05:41 갈래(a) 2027-01-01 법령 조사 끝(docs/source_law_0101_20261120.md, 파일 확인",
    "today": 0,
    "order": null,
    "lvl": "ok"
@@ -423,7 +422,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 10,
+   "last_min": 16,
    "cur": "🚀 H1-43 발행 — 해외직구 건강식품 139개 중 95개 ",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -432,7 +431,7 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": -1,
+   "last_min": 0,
    "cur": "색인 실험 A 재현 + 리디렉션 오류 원인 확정 [담당:4.]",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -472,7 +471,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 10,
+   "last_min": 16,
    "cur": "🚀 H1-43 발행 — 해외직구 건강식품 139개 중 95개 ",
    "lvl": "ok"
   },
@@ -488,16 +487,16 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": -1,
+   "last_min": 0,
    "cur": "색인 실험 A 재현 + 리디렉션 오류 원인 확정 [담당:4.]",
    "lvl": "ok"
   },
   {
    "who": "이대리",
-   "state": "대기(보고 완료·다음 지시 기다림)",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 13,
-   "cur": "11/20 보고 — SP-020 쓰레드 승인 근거 확인 완료(",
+   "last_min": 1,
+   "cur": "이부장 ack rf663fb — 이부장 05:41: 회수 커밋",
    "lvl": "ok"
   },
   {
@@ -683,6 +682,13 @@
   "insta": {
    "done": [
     {
+     "code": "H1-43",
+     "title": "해외직구 건강식품 139개 중 95개 유해성분 — 관세",
+     "url": "https://www.instagram.com/magsori8975/p/Df79dS3k6Ei/",
+     "at": "2026-11-20",
+     "who": "lee"
+    },
+    {
      "code": "A1-26",
      "title": "청년문화패스 12월 31일까지 — 7월 31일까지 한 ",
      "url": "https://www.instagram.com/p/Df6IHWkkYMo/",
@@ -740,10 +746,6 @@
     {
      "code": "C2-29",
      "title": "위고비 중고거래·직구 괜찮을까? 해외에서 사 온 비만약"
-    },
-    {
-     "code": "H1-43",
-     "title": "해외직구 건강식품 139개 중 95개 유해성분 — 관세"
     }
    ]
   },
@@ -876,6 +878,13 @@
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
+  },
+  {
+   "code": "H1-43",
+   "stage": "insta",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)",
+   "who": "lee"
   }
  ],
  "approvals": [],
@@ -984,13 +993,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "ok",
-  "ok": 7,
-  "stale": 0,
+  "state": "stale",
+  "ok": 6,
+  "stale": 1,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-20 05:28:05",
-  "age_min": 7
+  "at": "2026-11-20 05:36:51",
+  "age_min": 4
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1062,19 +1071,19 @@
  "fired": [
   {
    "day": "2026-11-20",
-   "total": 48,
+   "total": 51,
    "kinds": [
     [
      "ASIDE_ALERT",
-     6
+     7
+    ],
+    [
+     "TOWER_OWED",
+     7
     ],
     [
      "BOSS_APPROVAL",
      6
-    ],
-    [
-     "TOWER_OWED",
-     5
     ],
     [
      "ASIDE_DRAFT",

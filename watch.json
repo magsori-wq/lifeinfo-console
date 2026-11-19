@@ -33316,6 +33316,36 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fuel1030-wake-0630",
+   "added": "2026-11-20",
+   "what": "3. 06:30 시작한 갈래·읽은 원문 보고 확인(없으면 깨우기)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.topicprop table | head -8",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fuel1030-wake-0900",
+   "added": "2026-11-20",
+   "what": "3. 09:00 첫 후보 또는 버린 사유 표 확인",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.topicprop table | head -8",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fuel1030-wake-1200",
+   "added": "2026-11-20",
+   "what": "3. 12:00 후보 누적 확인(3편 미만이면 표)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.topicprop table | head -8",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
