@@ -4436,8 +4436,8 @@
   "chkmon": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 19:57:57",
-   "last_what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡7 — 즉시: 정체 감지 실패 y1y6; 관제탑 감시 red (null분); 사장님 🙋승인 【권고】AM-SP-020 쓰레드 공유 11/20 12:30~13:00 슬 · 묶"
+   "last_report": "2026-11-19 21:07:55",
+   "last_what": "🙋 이부장 요청: [점검모니터] 🔴3 🔵1 🟡6 — 즉시: 이대리 요청 정체 idle; 정체 감지 실패 y1y6; 관제탑 감시 red (null분); 사장님 🙋승인 【권고】AM-SP-020 쓰레드 공유 11/20 1"
   },
   "draft1106d121": {
    "reads": 4,
@@ -6764,13 +6764,13 @@
   },
   "exp1119m1": {
    "reads": 1,
-   "reads_since_report": 1,
-   "last_order_at": "2026-11-19 20:47:16",
-   "last_read": "2026-11-19 20:48:15",
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-19 21:01:46",
+   "last_read": "2026-11-19 21:05:56",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-19 20:44:48",
-   "last_what": "⏸ 라이브 URL 테스트 착수 대기 — Aside 공용 잠금(source-traffic1203, 20:44)이 걸려 있어 풀리면 바로 실행. 대상: 리디렉션 오류 D5-09·G4-14(11-03/04 구글 크롤) +",
+   "last_report": "2026-11-19 21:05:56",
+   "last_what": "▶ clean 요청 2건 21:03~21:04 수락(D5-09 21:03·G4-14 21:04, 화면 문구 「색인 생성 요청됨」)",
    "read_by": "report"
   },
   "expreq1119": {
@@ -6830,11 +6830,32 @@
    "last_read": "2026-11-19 20:44:31",
    "read_by": "report",
    "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-11-19 20:56:13",
+   "last_what": "설계도 엔진설계도.md 사건 기록의 「whoami.py load 107~111·save 114~117」을 「수정 전 whoami.load() 의 except 폴백 + save() 의 비원자 쓰기 — 줄번호는 낡으니 ",
+   "owner": "정비"
+  },
+  "expreq1119b": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-19 21:01:33",
+   "last_read": "2026-11-19 21:02:01",
+   "owner": "이과장",
+   "state": "working",
+   "last_report": "2026-11-19 21:05:42",
+   "last_what": "clean URL 색인 생성 요청 2건 수락(화면 「색인 생성 요청됨」 확인): D5-09 /2026/11/blog-post.html 21:03 · G4-14 /2026/11/2026-20-1-10.html 21:0"
+  },
+  "maint1119leak": {
+   "reads": 2,
+   "last_order_at": "2026-11-19 21:11:00",
+   "last_read": "2026-11-19 21:12:07",
+   "read_by": "report",
+   "state": "working",
    "reads_since_report": 1,
-   "last_report": "2026-11-19 20:44:15",
+   "last_report": "2026-11-19 21:12:05",
    "last_what": "읽음 — 지시서 확인 후 복창",
    "owner": "정비"
   }
  },
- "updated": "2026-11-19 20:50"
+ "updated": "2026-11-19 21:12"
 }

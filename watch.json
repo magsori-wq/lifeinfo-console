@@ -32838,8 +32838,44 @@
    "due": "2026-11-20",
    "cmd": "git log --since=2026-11-19T19:30 --format=%h%x20%s -- studio/enginestate.py webapp/engine.html",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-19",
+   "result": "21:20 앞당겨 verify-share3-idwake3-1119 로 처리"
+  },
+  {
+   "id": "expreq1119b-check-1119",
+   "added": "2026-11-19",
+   "what": "이과장 expreq1119b — clean URL 색인 요청 2건(D5-09·G4-14) 22:00 마감: _gsc_requested.txt 에 2건 기록·exp1119m1 now 에 요청 시각 보고·4.가 22:10 확인했는지",
+   "due": "2026-11-19",
+   "cmd": "findstr /C:\"2026/11/blog-post.html\" /C:\"2026-20-1-10.html\" _gsc_requested.txt",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-19",
+   "result": "이부장 21:08 실측: _gsc_requested.txt 에 D5-09·G4-14 clean 2건 기록, 이과장 보고 21:03·21:04 수락(화면 「색인 생성 요청됨」), 마감 22:00 안"
+  },
+  {
+   "id": "verify-share3-idwake3-1119",
+   "added": "2026-11-19",
+   "what": "정비 1f4aa431b(maint1119share3)·509c5c9c3(maint1119idwake3) 독립 검증 완료 — 불일치 10건(중0·보통3·경미7), 후속 maint1119share4",
+   "due": "2026-11-19",
+   "cmd": "type docs\\verify_share3_idwake3_20261119.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-19",
+   "result": "docs/verify_share3_idwake3_20261119.md: 1f4aa431b·509c5c9c3 검증 완료 — share3 13건 중 11 고쳐짐·2 부분, idwake3 6건 모두 고쳐짐, 시험(Aroma 40·Idaeri 22·전체 617·플러그인 26) 통과. 보통3·경미7 은 maint1119share4 로 수정 지시"
+  },
+  {
+   "id": "source-hdirect-health-1119",
+   "added": "2026-11-19",
+   "what": "관세청 해외직구 건강식품 139개 보도: 상세 본문은 docViewer iframe(curl 불가)이라 hwpx 첨부로 대체 읽음, pdf 는 인코딩 깨짐. 글 채택 전 숫자(95/139/68.3%, 마약류9·의약품54·식품사용불가32, 보도시점 2026.11.18 09:00) source 확정 필요. 기발행 C2-22 와 훅 인접",
+   "due": "2026-11-26",
+   "cmd": "python -m studio.dupcheck \"해외직구 건강식품 139개 안전성 분석\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:f2f70dfa"
   }
  ]
 }
