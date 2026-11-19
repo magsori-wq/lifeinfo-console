@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 12:32:46",
+ "at": "2026-11-19 12:36:26",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,20 +11,19 @@
     "code": "A1-26",
     "title": "청년문화패스 12월 31일까지 — 7월 31일까지 한 ",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
     "who": {
-     "naver": "lee"
+     "naver": "lee",
+     "insta": "lee"
     },
     "plan": {
-     "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-19",
@@ -273,8 +272,8 @@
    "who": "3.세션",
    "kind": "글감",
    "ran": true,
-   "at": "12:23",
-   "note": "[자동 → 3.] PRODUCT_TODO F3-15 — brandconnect 에이전트로 네이버 커넥트 상품 조사 → 맞으면 ",
+   "at": "12:35",
+   "note": "🔄 12:50 이부장 3갈래 회신 수령 → deepread 3개 병렬 가동: ①12/1 시행 확정(36_C) ②해외·여행 정례",
    "today": 2,
    "order": null,
    "lvl": "ok"
@@ -339,7 +338,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 4,
-   "last_min": 3,
+   "last_min": 6,
    "cur": "A1-26 청년문화패스 4채널 후속",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -388,15 +387,15 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 4,
-   "last_min": 3,
+   "last_min": 6,
    "cur": "A1-26 청년문화패스 4채널 후속",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
-   "state": "대기(상시 업무만)",
+   "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 33,
+   "last_min": 0,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -412,7 +411,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 45,
+   "last_min": 48,
    "cur": "11/19 11:47 정기 점검 — 새 결재·요청 없음, 로그",
    "lvl": "ok"
   },
@@ -555,6 +554,13 @@
   "insta": {
    "done": [
     {
+     "code": "A1-26",
+     "title": "청년문화패스 12월 31일까지 — 7월 31일까지 한 ",
+     "url": "https://www.instagram.com/p/Df6IHWkkYMo/",
+     "at": "2026-11-19",
+     "who": "lee"
+    },
+    {
      "code": "C2-28",
      "title": "학생건강기록부 정부24 발급, 정기진료 결석은 출석인정",
      "url": "https://www.instagram.com/magsori8975/p/Df5RlZAEyMC/",
@@ -584,10 +590,6 @@
     }
    ],
    "wait": [
-    {
-     "code": "A1-26",
-     "title": "청년문화패스 12월 31일까지 — 7월 31일까지 한 "
-    },
     {
      "code": "F3-15",
      "title": "12월 유류할증료 인하 — 11월에 끊은 항공권은 차액"
@@ -709,6 +711,13 @@
   {
    "code": "A1-26",
    "stage": "naver",
+   "at": "2026-11-19 12:34:07",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
+   "code": "A1-26",
+   "stage": "insta",
    "at": "",
    "src": "DB osmu_at(날짜뿐)",
    "who": "lee"
@@ -803,13 +812,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 5,
+  "state": "stale",
+  "ok": 6,
   "stale": 1,
-  "bad": 1,
+  "bad": 0,
   "na": 0,
-  "at": "2026-11-19 12:30:52",
-  "age_min": 1
+  "at": "2026-11-19 12:36:32",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -881,11 +890,11 @@
  "fired": [
   {
    "day": "2026-11-19",
-   "total": 124,
+   "total": 126,
    "kinds": [
     [
      "TOWER_OWED",
-     57
+     58
     ],
     [
      "CHKMON_REPORT",
@@ -901,7 +910,7 @@
     ],
     [
      "ASIDE_ALERT",
-     5
+     6
     ],
     [
      "CONFIRM_BACKLOG",
