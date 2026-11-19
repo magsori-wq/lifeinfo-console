@@ -76,7 +76,10 @@ def check_html_refs():
         refs = set()
         for pat in (r"fetch\(\s*'([^']+)'",
                     r'fetch\(\s*"([^"]+)"',
-                    r'(?:src|href)=["\']([^"\']+)["\']'):
+                    # 🔴 src/href 는 **태그 안**의 속성만 참조다 (2026-11-20 오탐 수정). 보고문 본문에 인용된
+                    #    `cats_src='stored'` 의 `src='stored'` 를 파일로 읽어 11-19 22시대부터 모든 push 가 RED 였다
+                    #    (batch.html -> stored). 태그 여는 꺾쇠 뒤(같은 태그 안)에 있는 속성만 센다.
+                    r'<[a-zA-Z][^<>]*?\s(?:src|href)=["\']([^"\']+)["\']'):
             for mo in re.finditer(pat, scan):
                 m = mo.group(1)
                 # 🔴 JS 문자열 연결의 조각은 참조가 아니다 (2026-09-27 오탐 수정).
