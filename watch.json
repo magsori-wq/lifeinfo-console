@@ -31527,8 +31527,10 @@
    "due": "2026-11-17",
    "cmd": "python data/_exp_b_inspect_1113.py H1-01 H1-01@m",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-11-19",
+   "result": "11-19 18:18 판독: H1-01@m 마지막 크롤 11-15 13:34 KST(요청 직후)로 갱신·SUCCESSFUL=유효, 색인은 아직 Crawled-미색인, clean 주소 크롤 불변"
   },
   {
    "id": "xlink-f314",
@@ -32633,6 +32635,26 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-19",
    "result": "검증 문서 docs/verify_aroma_screen_20261119.md — 0d7575f6e·aaa14d349·5324d8a64 대조 완료, 불일치 11건(중3·보통5·경미3) 정비 지시서 maint1119share/share2 에 반영"
+  },
+  {
+   "id": "expA2-m1-4h-1119",
+   "added": "2026-11-19",
+   "what": "실험A 재현(C4-01·D1-02·D2-05 ?m=1 요청) 4시간 뒤 크롤 도착 판독 · 지시서 exp1119m1",
+   "due": "2026-11-20",
+   "cmd": "python data/_exp_b_inspect_1113.py C4-01@m D1-02@m D2-05@m C4-01 D1-02 D2-05",
+   "owner": "claude",
+   "state": "wait",
+   "by": "4."
+  },
+  {
+   "id": "expA2-m1-48h-1119",
+   "added": "2026-11-19",
+   "what": "실험A 재현(C4-01·D1-02·D2-05 ?m=1 요청) 48시간 뒤 최종 판독(크롤 도착·색인 여부) · 지시서 exp1119m1",
+   "due": "2026-11-21",
+   "cmd": "python data/_exp_b_inspect_1113.py C4-01@m D1-02@m D2-05@m C4-01 D1-02 D2-05",
+   "owner": "claude",
+   "state": "wait",
+   "by": "4."
   }
  ]
 }
