@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 17:18:47",
+ "at": "2026-11-19 17:20:21",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -191,7 +191,7 @@
   {
    "name": "TOWER_OWED",
    "node": "이대리 🙋·⏸ → 이부장 15분",
-   "last_at": "",
+   "last_at": "2026-11-19 17:19:23",
    "src": "tick owed(aroma 건)",
    "today_n": 125,
    "note": "횟수는 아래 세션 전체"
@@ -199,7 +199,7 @@
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-19 04:25:23",
+   "last_at": "2026-11-19 17:19:23",
    "src": "now_log(bid=aroma)",
    "today_n": 8,
    "note": "횟수는 전체 세션"
@@ -215,10 +215,10 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "현장(진행)",
+  "state": "⏸ 대기(남의 차례)",
   "jobs": 0,
-  "last_min": 6,
-  "cur": "쓰레드 공유 확정 수신(이부장): 오늘 17:40 AM-SP-",
+  "last_min": 0,
+  "cur": "⏸ 대기 — 쓰레드 AM-SP-021 17:40 게시: 이부장",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -571,16 +571,16 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 0,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 6,
-   "cur": "쓰레드 공유 확정 수신(이부장): 오늘 17:40 AM-SP-",
+   "last_min": 0,
+   "cur": "⏸ 대기 — 쓰레드 AM-SP-021 17:40 게시: 이부장",
    "lvl": "ok"
   },
   {
@@ -598,10 +598,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 6,
-   "cur": "쓰레드 공유 확정 수신(이부장): 오늘 17:40 AM-SP-",
+   "last_min": 0,
+   "cur": "⏸ 대기 — 쓰레드 AM-SP-021 17:40 게시: 이부장",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -659,15 +659,15 @@
  "edits": [],
  "today_events": [
   {
-   "code": "AM-SP-021",
-   "stage": "proc",
-   "at": "2026-11-19 04:40:19",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-SP-020",
    "stage": "proc",
    "at": "2026-11-19 04:34:57",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-021",
+   "stage": "proc",
+   "at": "2026-11-19 04:40:19",
    "src": "파일 수정 시각"
   },
   {
@@ -678,6 +678,12 @@
   },
   {
    "code": "AM-SP-021",
+   "stage": "boss",
+   "at": "",
+   "src": "watch done_at"
+  },
+  {
+   "code": "aroma-threads-sp021-1119",
    "stage": "boss",
    "at": "",
    "src": "watch done_at"
@@ -746,13 +752,13 @@
     {
      "head": "TOWER_OWED",
      "lvl": "ok",
-     "chip": "시각 기록 없음",
+     "chip": "2026-11-19 17:19:23",
      "sub": "이대리 🙋·⏸ → 이부장 15분 · 출처 tick owed(aroma 건) · 오늘 125회 · 횟수는 아래 세션 전체"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-19 04:25:23",
+     "chip": "2026-11-19 17:19:23",
      "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 8회 · 횟수는 전체 세션"
     },
     {
