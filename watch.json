@@ -32561,6 +32561,26 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-19",
    "result": "생활정보 CA(25일)·aroma CA(20일) 둘 다 파일 열어 확인. 11-01 이후 쓰레드 유입 보인 범위 0 / aroma 11-01 하루 1건 추정. 결재 카드 threads-share-hold-1119 로 상정"
+  },
+  {
+   "id": "threads-share-recheck-1126",
+   "added": "2026-11-19",
+   "what": "쓰레드 공유 재개 1주 재측정 — 공유 장부(data/aroma_threads_share_log.json) 글별 쓰레드 조회·반응 + 생활정보 CA 유입경로 l.threads.com 일별 + 이대리 CA 회신, 전과 비교해 확대/중단 권고 (재료: docs/measure_threads_inflow_20261119.md)",
+   "due": "2026-11-26",
+   "cmd": "python -m studio.watch list | findstr threads-share ; type data\\aroma_threads_share_log.json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "share1119-verify-1119",
+   "added": "2026-11-19",
+   "what": "AM-SP-021 쓰레드 공유 게시 확인 — 장부 항목(status done·페이지 시각)·쓰레드 URL curl 200·본문이 원고와 일치(첫 줄 Aroma Mag·URL 224482853486)·사진 없음",
+   "due": "2026-11-19",
+   "cmd": "python -c \"import json;print(open('data/aroma_threads_share_log.json',encoding='utf-8').read()[:1500])\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
