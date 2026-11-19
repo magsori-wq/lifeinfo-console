@@ -3,8 +3,8 @@
   "routinelog": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 19:47:55",
-   "last_what": "이부장 19:55 루틴4(21:09) 사전 메모 — 오늘 3. 이 5갈래로 이미 본 것(기발행 중복·원문 미확보로 제안 0건): 후보문서 4건(A6-05·A1-21·B1-10·A6-02)·에너지바우처 속편·수능 이의",
+   "last_report": "2026-11-19 20:06:38",
+   "last_what": "11-19 20시 메일브리핑: 🟢 사장님 할 일 없음 · 애드센스 계정READY·사이트GETTING_READY(검토 중) · 새 중요 메일 없음(구글 피드백·GSC·애드센스 통지 0건) · 참고: GitHub 발행 ",
    "reads": 94,
    "last_order_at": "2026-10-18 12:26",
    "last_read": "2026-11-15 04:43:25",
@@ -3844,8 +3844,8 @@
   "aroma": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 19:48:24",
-   "last_what": "11/19 19:47 정기 점검 — 새 결재·이부장 요청 없음(마지막 승인 threads-sp021 이후 변동 없음), 로그인 유지(MyBlog→/aroma-mag), CA 새 일자 없음(11/19 값은 11/20)",
+   "last_report": "2026-11-19 19:53:07",
+   "last_what": "이부장 지시 접수 — 11/20 12:30~13:00 SP-020 쓰레드 슬롯. 결재 카드 aroma-threads-sp020-1120 상정(사장님 승인 후 게시)",
    "reads": 1,
    "last_order_at": "2026-10-29 14:36",
    "last_read": "2026-10-29 14:36",
@@ -3967,14 +3967,15 @@
    "owner": "이과장"
   },
   "fuel1030": {
-   "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-11-19 19:10:56",
-   "last_read": "2026-11-19 19:11:19",
+   "reads": 2,
+   "reads_since_report": 2,
+   "last_order_at": "2026-11-19 20:10:15",
+   "last_read": "2026-11-19 20:10:41",
    "owner": "3.",
-   "state": "working",
+   "state": "waiting",
    "last_report": "2026-11-19 19:26:10",
-   "last_what": "📋 19:3x 5갈래 결과(제안 0건, 마감 21:00 전 조기 보고) — ①후보문서4건(A6-05·A1-21·B1-10·A6-02)=전부 기발행 중복·현행 원문과 수치 일치(deepscan37_A) ②에너지바우처 "
+   "last_what": "📋 19:3x 5갈래 결과(제안 0건, 마감 21:00 전 조기 보고) — ①후보문서4건(A6-05·A1-21·B1-10·A6-02)=전부 기발행 중복·현행 원문과 수치 일치(deepscan37_A) ②에너지바우처 ",
+   "waiting_since": "2026-11-19 20:10"
   },
   "ledger1030": {
    "reads": 4,
@@ -4436,8 +4437,8 @@
   "chkmon": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-19 19:18:53",
-   "last_what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡5 — 즉시: 사장님 결재 대기 1건 · 묶음: 사건×4 반영 감사×1 (상세 python -m studio.chkmon show)"
+   "last_report": "2026-11-19 19:57:57",
+   "last_what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡7 — 즉시: 정체 감지 실패 y1y6; 관제탑 감시 red (null분); 사장님 🙋승인 【권고】AM-SP-020 쓰레드 공유 11/20 12:30~13:00 슬 · 묶"
   },
   "draft1106d121": {
    "reads": 4,
@@ -6802,7 +6803,28 @@
    "state": "working",
    "last_report": "2026-11-19 19:05:25",
    "last_what": "A3-13 검색설명 주입(19:0x): 편집화면 검색 설명 비움 확인(\"\") → 새 문구 103자 입력 일치(typed true) → 업데이트. 라이브 /2026/09/15-2026.html meta descript"
+  },
+  "maint1119share3": {
+   "reads": 2,
+   "last_order_at": "2026-11-19 18:47:28",
+   "last_read": "2026-11-19 19:52:05",
+   "read_by": "report",
+   "state": "working",
+   "reads_since_report": 0,
+   "last_report": "2026-11-19 20:07:13",
+   "last_what": "10 ③ 보조 글을 상태에 맞게(게시·승인·대기별, 카드 없을 때만 원고 첫 줄 — 실화면 확인). 11 설계도↔코드 어긋남 목록(코드 변경 안 함, 이부장 판단): ⓐ 설계도에 없는 화면 기준 AROMA_SHARE",
+   "owner": "정비"
+  },
+  "livefix1119c": {
+   "reads": 3,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-19 20:09:34",
+   "last_read": "2026-11-19 20:10:12",
+   "owner": "이과장",
+   "state": "working",
+   "last_report": "2026-11-19 20:18:24",
+   "last_what": "▶ 이부장 검토 20:22(TOWER_REVIEW livefix1119c-approve-1119): 4건 diff 전부 열어 확인 — F1-11(표 한 줄·본문 한 줄·제목 괄호 4분기→시행일 미정, 출처·열람일 명"
   }
  },
- "updated": "2026-11-19 19:50"
+ "updated": "2026-11-19 20:18"
 }

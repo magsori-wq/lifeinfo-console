@@ -123,6 +123,7 @@ svg#map.replaying #dots{opacity:.1}svg#map.replaying #parts{opacity:.2}
 .steps h3{margin:10px 0 3px;font-size:.88rem;display:flex;gap:6px;align-items:baseline;padding:2px 4px;border-radius:4px}
 .steps h3 .n{margin-left:auto;font-weight:800;font-variant-numeric:tabular-nums}
 .steps li{font-size:.82rem;overflow-wrap:anywhere;background:var(--panel2);border-radius:4px;padding:3px 8px;border-left:4px solid var(--ok);cursor:pointer}
+.steps li.sgl{border-left-color:var(--bl);cursor:default}
 .steps li.am{border-left-color:var(--am);background:color-mix(in srgb,var(--am) 14%,var(--panel2))}
 .steps li.rd{border-left-color:var(--rd);background:color-mix(in srgb,var(--rd) 18%,var(--panel2));animation:blink .9s steps(2) infinite}
 .steps li .c{font-weight:800}.steps li .w{color:var(--muted);font-size:.74rem}
@@ -233,7 +234,7 @@ const ROOMS={
   TERM:[["blog","— 해당 없음"],["naver","🅝 aroma-mag 블로그"],["insta","— 인스타 없음"],["threads","🅣 쓰레드 공유"]],
   CRN:[["eq","🧳 rev 저장"],["ed","✍ 수정 작성"],["ea","🔁 반영"]],
   DRV_AT:{topic:[["이대리","이대리 글감"]],proc:[["이대리","이대리 초안·V0"]],boss:[["사장님","사장님 결재"]],pub:[["Aside","Aside 발행챗"]],hub:[["Aside","Aside 배송"]],ed:[["이대리","이대리 수정"]],ea:[["이대리","이대리"],["Aside","Aside 정정"]]},
-  ED:[["queue","🧳 rev 저장(대기)","미확인"],["draft","✍ 수정안 작성","이대리"],["boss","🖊 수정 결재","사장님"],["naver","🔁 반영·재확인","이대리·Aside"],["sns","📱 쓰레드 정정","이대리(결재 후)"],["done","✅ 오늘 끝남",""]],
+  ED:[["queue","🧳 rev 저장(대기)","미확인"],["draft","✍ 수정안 작성","이대리"],["boss","🖊 수정 결재","사장님"],["naver","🔁 반영·재확인","이대리·Aside"],["sns","📱 쓰레드 정정",""],["done","✅ 오늘 끝남",""]],
   sec:{topic:["①","글감 — 이대리 자기점검·CA 검색어·일정 박스·사장님 지시","표시할 글감 기록 없음(미확인)"],proc:["②","초안·V0 — 이대리 → V0 에이전트"],boss:["③","CP 결재 — 사장님 · 미리보기 필수"],pub:["④","게시 — Aside 발행 전용 챗 → 공개 URL 확인"],osmu:["⑤","(이대리는 4채널 없음)"]}}
 };
 const RM=ROOMS[ROOM_ID]||ROOMS.main;
@@ -506,7 +507,7 @@ function render(s){
   TERM.forEach(([k])=>{const n=document.getElementById("nd-"+k),c=ch[k]||{done:[],wait:[]};
     n.setAttribute("class","nd term"+(k===selTerm?" sel":"")+(c.wait.length?" live":"")+(nlv.hub&&k!=="blog"?" "+nlv.hub:""));
     document.getElementById("t2-"+k).textContent="도착 "+c.done.length+"편";
-    document.getElementById("t3-"+k).textContent="대기 "+c.wait.length+"편"+(!G.vert&&todayArr[k]?" · 오늘 +"+todayArr[k]:"");
+    document.getElementById("t3-"+k).textContent="대기 "+c.wait.length+"편"+(c.label?" · "+c.label:"")+(!G.vert&&todayArr[k]?" · 오늘 +"+todayArr[k]:"");
     const tot=c.done.length+c.wait.length,lv=(nlv.hub&&k!=="blog")?nlv.hub:(tot?"ok":"idle");
     setGauge(k,c.done.length,tot?c.done.length/tot:0,lv,null,null);done[k]=c.done.length;
     if(prevDone&&c.done.length>(prevDone[k]||0))ripple(k)});
@@ -600,9 +601,9 @@ function renderLanes(s){
   /* ✏ 글 수정 흐름 — 보라색 별도 선로(사장님 10-23 「글수정에 관련한 지도 흐름에도 다른색으로」). 새 글 흐름과 섞지 않는다.
      화살표는 다음 칸에 지금 글이 있을 때만 흐른다(지나간 완료는 정지). */
   const ED=RM.ED;
-  const eds=s.edits||[];
+  const eds=s.edits||[];const thl=((s.channels||{}).threads||{}).label;
   document.getElementById("editLane").innerHTML=`<div class="lh">🧳 수정 캐리어 상세(지도 아래 선로의 텍스트) — 대상 ${eds.length}편 = 대기 ${eds.filter(e=>e.stage==="queue").length} · 진행 ${eds.filter(e=>e.stage!=="done"&&e.stage!=="queue").length} · 오늘 끝남 ${eds.filter(e=>e.stage==="done").length}${(()=>{const h=eds.filter(e=>e.hold||e.stall_h!==undefined&&e.stage!=="done"&&e.stage!=="queue");return h.length?` · <b style="color:#b42318">🔴 멈춤 ${h.length} (${h.map(e=>esc(e.code)+" "+esc(e.packer||"")+(e.stall_h!=null?" · 보고 "+e.stall_h+"시간 없음":"")).join(", ")})</b>`:""})()}</div><div class="erow">`+
-    ED.map(([k,nm,who],i)=>{const a=eds.filter(e=>e.stage===k);
+    ED.map(([k,nm,who0],i)=>{const a=eds.filter(e=>e.stage===k);const who=(k==="sns"&&ROOM_ID==="aroma"&&thl)?"쓰레드 "+thl:who0;
       return (i?`<div class="ear${a.length&&k!=="done"&&k!=="queue"?" on":""}" aria-hidden="true"></div>`:"")+
         `<div class="est${a.length?" has":""}${k==="done"?" dn":""}"><b>${nm}</b>${who?`<small>${esc(who)}</small>`:""}<div class="ec">${a.map(e=>`<span class="cr" data-c="${esc(e.code)}" title="${esc(e.title||"")}">🧳${esc(e.code)}${e.packer?`<i>📦${esc(e.packer)}</i>`:""}</span>`).join("")||"—"}</div></div>`}).join("")+`</div>`;
   carrierMove(eds);
