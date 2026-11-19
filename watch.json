@@ -32455,6 +32455,46 @@
    "by": "이부장",
    "done_at": "2026-11-19",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "nps-credit-decree-recheck-1228",
+   "added": "2026-11-19",
+   "what": "2027-01-01 시행 군복무·출산 크레딧: 시행령 제24조의3 개정(상한 폐지)·공단 크레딧 페이지(getOHAF0048M0 tab8) 갱신 못 찾음. 시도: law.go.kr 시행령 본문(제35602호 그대로)·웹검색 1회·공단 페이지(구표기). 또 2026년중 첫째·둘째 연속출산/셋째 조합·입양 기준일 공식 문장 못 찾음",
+   "due": "2026-12-28",
+   "cmd": "docs/source_deep_scan38_credit_20261119.md 의 ④⑤ 재확인: Aside repl 로 law.go.kr/법령/국민연금법시행령 제24조의3 + nps.or.kr 크레딧 제도 페이지, 필요시 1355",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "a313-credit-update-1119",
+   "added": "2026-11-19",
+   "what": "A3-13 출산크레딧 글이 낡음 — 「둘째 15개월은 정책 구상」 단정을 개정법(법률 제22096호 공포 2026-10-20, 2027 이후 둘째부터 2명 27개월)에 맞춰 시행 시점별 분기로 갱신. 근거 docs/source_deep_scan38_credit_20261119.md. A3-12 정정(livefix1119a312) 뒤 이과장 지시서로",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-thumb-537",
+   "added": "2026-11-19",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(537_military_pension_credit.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-19",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-a319-v0r1r4-1119",
+   "added": "2026-11-19",
+   "what": "A3-19 초안 V0 지적 R1~R4 반영(A3-13 링크 제거·부칙3조 첫째 2025이전 단서·군복무/출산 예시 비교 금지 문구·시행령 문장 147행 정합). heading·layout 통과. 커밋 전(git add만)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.heading --file 2027년전역군복무국민연금가입기간크레딧_글_HTML.txt && grep -c 15-2026.html 2027년전역군복무국민연금가입기간크레딧_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
