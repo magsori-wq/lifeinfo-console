@@ -5856,6 +5856,22 @@
    "target": "expA-m1-H101-1115",
    "detail": "11-19 18:18 판독: H1-01@m 마지막 크롤 11-15 13:34 KST(요청 직후)로 갱신·SUCCESSFUL=유효, 색인은 아직 Crawled-미색인, clean 주소 크롤 불변",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-19T18:31:51",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "crawl-check-newposts-1107",
+   "detail": "이부장 11-19 18:35 실측(index_status.json 11-19 10:33 인스펙트): 11-04 요청 새 글 D5-09·D5-10·G4-14·B4-28·C1-19 5편 모두 구글이 11-03~04 에 크롤했으나 전부 Redirect error(REDIRECT_ERROR) — 요청 수락≠색인, 일반 주소 크롤이 리디렉션에서 실패. 12일 늦게 확인(재발방지: 기한 넘긴 확인은 now 로 보고). 후속 = exp1119m1",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-19T18:31:53",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "gsc-exp-b-read-1114",
+   "detail": "이부장 11-19 18:35 실측(index_status.json 11-19 09:41): 실험 B 3편 E2-02·E2-03·F1-04 모두 마지막 크롤 07-14~15 그대로(요청 뒤 크롤 도착 0/3), 상태 Crawled-not-indexed — 4.세션 11-19 보고(48h 크롤 안 옴)와 일치. 5일 늦게 확인. 실험 C(시범 도너)는 권고하지 않음: 일반 주소 요청 자체가 크롤을 못 부름 → 원인 확정(exp1119m1) 뒤 판단",
+   "via": "cli"
   }
  ]
 }
