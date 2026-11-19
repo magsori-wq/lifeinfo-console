@@ -32563,24 +32563,45 @@
    "result": "생활정보 CA(25일)·aroma CA(20일) 둘 다 파일 열어 확인. 11-01 이후 쓰레드 유입 보인 범위 0 / aroma 11-01 하루 1건 추정. 결재 카드 threads-share-hold-1119 로 상정"
   },
   {
+   "id": "share1119-verify-1119",
+   "added": "2026-11-19",
+   "what": "AM-SP-021 쓰레드 공유 게시 확인(이대리 게시, 17:40~18:00 슬롯) — 이대리 보고의 쓰레드 URL curl 200·본문이 원고와 일치(첫 줄 Aroma Mag·URL 224482853486)·장부 C:/naver-blog/aroma-mag/threads/분석.md 행 추가(한국시각 병기). 끝나면 share1119 에 「슬롯 종료」 한 줄",
+   "due": "2026-11-19",
+   "cmd": "python -c \"print(open('C:/naver-blog/aroma-mag/threads/분석.md',encoding='utf-8').read()[:2500])\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
    "id": "threads-share-recheck-1126",
    "added": "2026-11-19",
-   "what": "쓰레드 공유 재개 1주 재측정 — 공유 장부(data/aroma_threads_share_log.json) 글별 쓰레드 조회·반응 + 생활정보 CA 유입경로 l.threads.com 일별 + 이대리 CA 회신, 전과 비교해 확대/중단 권고 (재료: docs/measure_threads_inflow_20261119.md)",
+   "what": "쓰레드 공유 재개 1주 재측정 — 이대리 장부(분석.md) 글별 쓰레드 조회·반응 + 생활정보 CA l.threads.com 일별 + 이대리 CA 회신 비교(전 기록 docs/measure_threads_inflow_20261119.md)",
    "due": "2026-11-26",
-   "cmd": "python -m studio.watch list | findstr threads-share ; type data\\aroma_threads_share_log.json",
+   "cmd": "python -c \"print(open('C:/naver-blog/aroma-mag/threads/분석.md',encoding='utf-8').read()[:3000])\"",
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
   },
   {
-   "id": "share1119-verify-1119",
+   "id": "aroma-threads-sp021-1119",
    "added": "2026-11-19",
-   "what": "AM-SP-021 쓰레드 공유 게시 확인 — 장부 항목(status done·페이지 시각)·쓰레드 URL curl 200·본문이 원고와 일치(첫 줄 Aroma Mag·URL 224482853486)·사진 없음",
+   "what": "【권고】AM-SP-021 카타르전 글을 @magsori8975 쓰레드에 공유(17:40~18:00, 이대리 게시). 원고 전문: Aroma Mag ⚽ 카타르전 1-0, 선발 7명을 바꾸고도 이겼다  오세훈이 전반 43분 헤더골을 넣었습니다. 사우디전 2-3 패배 뒤 로테이션을 크게 돌린 결과인데, 두 경기에서 무엇이 달랐는지 비교해 정리했습니다.  https://blog.naver.com/aroma-mag/224482853486  【근거】이부장 전달 사장님 17:07 「공유해!」·17:17 「이대리쪽 쓰레드도 이과장이 발급하나? 그건 아니겠지?」는 중계 메시지뿐이라 결재함·회수 커밋 근거가 없어 이대리가 게시를 못 함. 11-01 규칙(글마다 결재)도 있음. 사실 이부장 대조 완료(라이브 글 200·수치 원고 일치). 【위험】공개 게시라 되돌리기는 삭제뿐, 쓰레드 계정(생활정보 공용)에 aroma 글 노출. 사진은 글자 카드 아닌 실사진(Lusail 항공, CC BY) 사용 예정.",
    "due": "2026-11-19",
-   "cmd": "python -c \"import json;print(open('data/aroma_threads_share_log.json',encoding='utf-8').read()[:1500])\"",
+   "cmd": "승인: aroma-threads-sp021-1119",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
+  },
+  {
+   "id": "idwake-armed-check-1119",
+   "added": "2026-11-19",
+   "what": "maint1119idwake: 이대리 세션(de614107)을 등록부에 등록했다 — 이대리 세션의 다음 턴에 설치된 모드(0.1.1)가 armIdaeri 로 켜지면 webapp/.idaeri_wake.json last_run 이 30초마다 갱신된다. 안 갱신되면 모드 미적재(플러그인 0.1.1 → 갱신·/reload-plugins 필요)",
+   "due": "2026-11-19",
+   "cmd": "python -c \"import json;print(json.load(open('webapp/.idaeri_wake.json',encoding='utf-8'))['last_run'])\"",
    "owner": "claude",
    "state": "wait",
-   "by": "세션:a7dca46f"
+   "by": "세션:330b96b0"
   }
  ]
 }

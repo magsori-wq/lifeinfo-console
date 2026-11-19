@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19 17:14:46",
+ "at": "2026-11-19 17:18:47",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -159,10 +159,10 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움",
-   "last_at": "2026-11-13 04:29:29",
+   "last_at": "2026-11-19 17:18:40",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
-   "note": "하루 넘게 갱신 없음 — 원인: 세션 등록부(session_names.json)에 role=이대리 세션이 없어 깨움 모드가 켜지지 않는다(이대리 세션에서 python -m studio.whoami --role 이대리)"
+   "note": ""
   },
   {
    "name": "AROMA_PUBLISH_STALL",
@@ -193,7 +193,7 @@
    "node": "이대리 🙋·⏸ → 이부장 15분",
    "last_at": "",
    "src": "tick owed(aroma 건)",
-   "today_n": 124,
+   "today_n": 125,
    "note": "횟수는 아래 세션 전체"
   },
   {
@@ -217,7 +217,7 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 2,
+  "last_min": 6,
   "cur": "쓰레드 공유 확정 수신(이부장): 오늘 17:40 AM-SP-",
   "lvl": "ok"
  },
@@ -558,7 +558,7 @@
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
-   "1": 1,
+   "1": 0,
    "2": 0,
    "3": 0
   }
@@ -571,7 +571,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -579,7 +579,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 6,
    "cur": "쓰레드 공유 확정 수신(이부장): 오늘 17:40 AM-SP-",
    "lvl": "ok"
   },
@@ -600,7 +600,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 6,
    "cur": "쓰레드 공유 확정 수신(이부장): 오늘 17:40 AM-SP-",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -689,15 +689,7 @@
    "src": "db.json published(날짜만)"
   }
  ],
- "incidents": [
-  {
-   "p": 1,
-   "kind": "idaeri_wake_stale",
-   "id": "IDAERI_WAKE",
-   "what": "IDAERI_WAKE 깨움 기록 2026-11-13 04:29:29 에서 멈춤 — 하루 넘게 갱신 없음 — 원인: 세션 등록부(session_names.json)에 role=이대리 세션이 없어 깨움 모드가 켜지지 않는다(이대리 세션에서 python -m studio.whoami --role 이대리)",
-   "min": null
-  }
- ],
+ "incidents": [],
  "stage_of": {},
  "design_signals": [],
  "room_extra": [
@@ -729,9 +721,9 @@
    "rows": [
     {
      "head": "IDAERI_WAKE",
-     "lvl": "amber",
-     "chip": "2026-11-13 04:29:29",
-     "sub": "승인 → 이대리 깨움 · 출처 .idaeri_wake.json last_run · 하루 넘게 갱신 없음 — 원인: 세션 등록부(session_names.json)에 role=이대리 세션이 없어 깨움 모드가 켜지지 않는다(이대리 세션에서 python -m studio.whoami --role 이대리)"
+     "lvl": "ok",
+     "chip": "2026-11-19 17:18:40",
+     "sub": "승인 → 이대리 깨움 · 출처 .idaeri_wake.json last_run"
     },
     {
      "head": "AROMA_PUBLISH_STALL",
@@ -755,7 +747,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장 15분 · 출처 tick owed(aroma 건) · 오늘 124회 · 횟수는 아래 세션 전체"
+     "sub": "이대리 🙋·⏸ → 이부장 15분 · 출처 tick owed(aroma 건) · 오늘 125회 · 횟수는 아래 세션 전체"
     },
     {
      "head": "ASIDE_ALERT",
