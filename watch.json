@@ -33448,9 +33448,21 @@
    "cmd": "승인: aroma-am-bo-011-update-1120",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
+   "state": "done",
    "by": "이대리",
-   "preview": "aromapv_AM-BO-011u.html"
+   "preview": "aromapv_AM-BO-011u.html",
+   "done_at": "2026-11-20",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "tower-promise-rhealth-1800",
+   "added": "2026-11-20",
+   "what": "정비 rhealth 18:00 마감 — 23:08 루틴10 첫 실행 전, 17:30 진행 확인",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep rhealth",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
