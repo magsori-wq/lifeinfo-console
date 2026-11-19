@@ -33078,6 +33078,30 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | grep share7",
    "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "정비 4/4 완료 → 이부장 재실행 641건 OK·enginemap 이상 없음·f66168c44 커밋·sp020 카드 정식 서식으로 정정(amber 제거)·독립 검증 verify-share7-0120"
+  },
+  {
+   "id": "verify-share7-0120",
+   "added": "2026-11-20",
+   "what": "f66168c44 share7 독립 검증(Fable) docs/verify_share7_20261120.md — 조용한 누락 0 이면 maint1119share7 confirm·코드 검증 해제, 있으면 마지막 판단(방식 재고)",
+   "due": "2026-11-20",
+   "cmd": "head -3 docs/verify_share7_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "불일치 5(중1·경4, 신규 누락 0) → share8 발급"
+  },
+  {
+   "id": "maint1119share8-check",
+   "added": "2026-11-20",
+   "what": "정비 share8 완료 확인 → 이부장 재실행·커밋 → 독립 검증 최종(조용한 누락 0 이면 종료)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show | grep share8",
+   "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
   }
