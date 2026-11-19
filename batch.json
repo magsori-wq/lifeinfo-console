@@ -10021,17 +10021,22 @@
    "order_at": "2026-11-19 16:10:52"
   }
  },
- "updated": "2026-11-19 16:10:52",
+ "updated": "2026-11-19 16:12:11",
  "current": {
-  "batch": "maint1119aroma",
+  "batch": "pub1119a319",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "📋 복창: enginestate 생성기 확장 — _flow_page 가 설계도 파일·출력 인자를 받아 engine_aroma_flow.html 굽기 + aroma 상태(engine_aroma_state.json: 글 코드별 단계·신호 시각·이대리 유닛·카테고리 14일·쓰레드 휴면) → webapp/engine_aroma.html(폰 412px) · 단계 판정은 실제 파일(drafts·previews·watch·db.json·git)에서만, 못 읽으면 「미확인」 · C:/naver-blog 읽기 전용 · 새 최상위 도구 안 만듦 · deploy.bat 안 함 · 끝나면 127.0.0.1 에서 열어 칸 수·링크 200·스크린샷 보고",
-  "since": "16:03",
-  "since_at": "2026-11-19 16:03:33"
+  "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224483552413 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+  "since": "16:12",
+  "since_at": "2026-11-19 16:12:11"
  },
  "log": [
+  {
+   "t": "16:12:11",
+   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224483552413 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장"
+  },
   {
    "t": "16:10:52",
    "text": "📄 livefix1119a313 작업 지시 등록(11977자, 2026-11-19 16:10:52)",
@@ -10226,11 +10231,6 @@
    "t": "14:59:27",
    "text": "🏁 pub1119a523 이부장 확인 — 끝남",
    "actor": "이부장"
-  },
-  {
-   "t": "14:56:10",
-   "text": "▶   — 1/7단계 · 엔진설계도 문의 회신②~④ ②쓰레드 공유: 지금은 중단 — AM-SP-005(11/1~2) 한 건뿐, 이후 실행 기록 없음, 2주 판정 카드 aroma-threads-share-review-1115 wait(「큰 이슈 하루 1건」은 현재 운영 아님, 재개는 판정·결재 뒤). ③단계 판정: drafts/ 파일=초안, drafts/_v0_*.md=V0, previews/aromapv_*+watch aroma-am-<코드>-approve-* wait=결재 대기, 승인=watch done+[사장님]/회수 커밋 둘 다, db.json url 있음=게시됨(게시 후 verify). ④루틴10 꺼진 동안 글감 공급자=이대리(2시간 자기점검 cron f590952e·CA 검색어·일정 기반 업데이트 박스·사장님 지시). 루틴10 원복은 watch aroma-two-per-day-1118 판단 대기.",
-   "actor": "이대리"
   }
  ],
  "currents": {
@@ -12258,6 +12258,15 @@
    "what": "📋 복창: enginestate 생성기 확장 — _flow_page 가 설계도 파일·출력 인자를 받아 engine_aroma_flow.html 굽기 + aroma 상태(engine_aroma_state.json: 글 코드별 단계·신호 시각·이대리 유닛·카테고리 14일·쓰레드 휴면) → webapp/engine_aroma.html(폰 412px) · 단계 판정은 실제 파일(drafts·previews·watch·db.json·git)에서만, 못 읽으면 「미확인」 · C:/naver-blog 읽기 전용 · 새 최상위 도구 안 만듦 · deploy.bat 안 함 · 끝나면 127.0.0.1 에서 열어 칸 수·링크 200·스크린샷 보고",
    "since": "16:03",
    "since_at": "2026-11-19 16:03:33"
+  },
+  "pub1119a319": {
+   "batch": "pub1119a319",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224483552413 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "since": "16:12",
+   "since_at": "2026-11-19 16:12:11"
   }
  },
  "report_log": [
@@ -12311,46 +12320,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-05 16:05:45",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-11-05 16:04:49 — #626 A6-08 인스타 캡션 입력·저장 시작. 최신 지시의 10편 한정 Aside 저장 승인 적용.",
-   "actor": "Aside",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-05 16:07:25",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [A6-08] 수신 2026-11-05 16:04:49 — #626 인스타 캡션 입력·저장 완료. 기존0자→정정본 유니코드781자 정확일치(UI789/2200, UTF-16 차이). 블로그·네이버 링크2개 검증 후 완료1회. 새 탭 재열람에서 전문 일치(레이아웃 공백 제외)·링크2개 확인. 이미지·사람태그·위치 미변경. 작업탭2개 닫음, 총 탭12개. · https://www.instagram.com/p/DfG2BkEESkT/",
-   "actor": "Aside",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-05 16:07:39",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[체인] #626 A6-08 insta 정정·답글 완료 — 새 게시 검사(이미지·링크 기록) 건너뜀 · [이과장] 라이브 문구 확인",
-   "actor": "Aside",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-05 16:10:49",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-11-05 16:09:45 — #627 H1-34 인스타 캡션 입력·저장 시작. 최신 지시의 10편 한정 Aside 저장 승인 적용.",
-   "actor": "Aside",
-   "sid": "a7dca46f"
-  },
   {
    "ts": "2026-11-05 16:12:47",
    "bid": "aside",
@@ -44207,6 +44176,16 @@
    "what": "📋 복창: enginestate 생성기 확장 — _flow_page 가 설계도 파일·출력 인자를 받아 engine_aroma_flow.html 굽기 + aroma 상태(engine_aroma_state.json: 글 코드별 단계·신호 시각·이대리 유닛·카테고리 14일·쓰레드 휴면) → webapp/engine_aroma.html(폰 412px) · 단계 판정은 실제 파일(drafts·previews·watch·db.json·git)에서만, 못 읽으면 「미확인」 · C:/naver-blog 읽기 전용 · 새 최상위 도구 안 만듦 · deploy.bat 안 함 · 끝나면 127.0.0.1 에서 열어 칸 수·링크 200·스크린샷 보고",
    "actor": "미상:330b96b0",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-19 16:12:11",
+   "bid": "pub1119a319",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224483552413 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
