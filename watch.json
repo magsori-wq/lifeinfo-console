@@ -32820,6 +32820,26 @@
    "by": "이과장",
    "req_by": "이과장",
    "note": " | 이부장 20:27 diff 4건 열어 확인 뒤 결재함으로 올림(TOWER_REVIEW)"
+  },
+  {
+   "id": "nts-simplified-open-1210",
+   "added": "2026-11-19",
+   "what": "2026 귀속 연말정산 간소화 개통일 공지 확인 — 11-19 nts·홈택스 비로그인 화면에서 개통 문장 0건(작년값 2025귀속만 있음). 공지가 뜨면 기한형 글감 후보",
+   "due": "2026-12-10",
+   "cmd": "python tools/aside_read.py https://www.nts.go.kr 에서 연말정산 간소화 개통일 문장(2026년 귀속)을 읽고, 있으면 topicprop add 검토",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "verify-share3-1120",
+   "added": "2026-11-19",
+   "what": "정비 maint1119share3 커밋(이대리 상황실 불일치 13건 수정) 독립 검증(Fable, 읽기 전용) — 이전 verify_aroma_share_screen 불일치 13건이 코드에서 실제로 고쳐졌는지·실데이터(날짜뿐 done_at)·본사 회귀 확인 후 verify-* 기록 연결",
+   "due": "2026-11-20",
+   "cmd": "git log --since=2026-11-19T19:30 --format=%h%x20%s -- studio/enginestate.py webapp/engine.html",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
