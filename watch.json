@@ -34253,6 +34253,36 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fuel1030-1930",
+   "added": "2026-11-20",
+   "what": "fuel1030 19:30 진행 한 줄(이부장 19:04 지시)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "fuel1030-1945",
+   "added": "2026-11-20",
+   "what": "fuel1030 19:45 최종 보고(이부장 19:04 지시)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "exp1119m1-onepager-1122",
+   "added": "2026-11-20",
+   "what": "exp1119m1 최종 한 장(확정/가설/모름) — 11-22 15:06+ alternate 판독(5편 미만이면 11-27 연장) 뒤 작성, 블로그스팟 투자 가치 결정 상정(adsite1120 종합과 합침)",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.watch | grep -E 'expS5-1122|theme-alt-48h'",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
