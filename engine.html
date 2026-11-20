@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<script>(function(){try{var K="engTheme2",q=new URLSearchParams(location.search).get("theme"),r=document.documentElement;localStorage.removeItem("engTheme");if(q==="auto"||q==="light"||q==="dark")localStorage.setItem(K,q);var t=localStorage.getItem(K);/* 11-20 12:2x 기본 = 어둡게(상황판) — 폰 강제 다크가 밝은 테마의 SVG 칠·글자를 엇갈리게 뒤집어 흰 카드·연한 글자가 됐다(사장님 12:08 캡처). 옛 키 engTheme(밝게 저장분)는 버린다 */if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else if(t!=="auto")r.setAttribute("data-theme","dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})()</script>
+<script>(function(){try{var K="engTheme2",q=new URLSearchParams(location.search).get("theme"),r=document.documentElement;localStorage.removeItem("engTheme");if(q==="auto"||q==="light"||q==="dark")localStorage.setItem(K,q);var t=localStorage.getItem(K);/* 11-20 12:2x 기본 = 어둡게(상황판) — 폰 강제 다크가 밝은 테마의 SVG 칠·글자를 엇갈리게 뒤집어 흰 카드·연한 글자가 됐다(사장님 12:08 캡처). 옛 키 engTheme(밝게 저장분)는 버린다 */if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else if(t!=="auto")r.setAttribute("data-theme","dark");var th=r.getAttribute("data-theme");if(th){var mm=document.querySelector('meta[name=color-scheme]');if(mm)mm.setAttribute("content",th==="dark"?"dark":"light")}}catch(e){document.documentElement.setAttribute("data-theme","dark")}})()</script>
 <title>엔진 상황실</title>
 <style>
 /* 엔진 상황실 V4 — 그래픽(흐름의 시각화) = 입구, 텍스트(흐름의 상세) = 상세. V4: 파이프·입자(오늘 흐름량) · 마디 게이지(부하 링·최장 시간 바늘) · 종착지 도착 물결 · 오늘 하루 재생 · 레이더(감시 생존). 노드·점·경보를 누르면 텍스트의 그 마디/그 글로 이동·펼침. engine_state.json(studio/enginestate.py) 20초마다. 외부 라이브러리 없음 */
@@ -176,6 +176,22 @@ html.reduce *{animation:none!important;transition:none!important}
 .fl,.drv text,#hubt{paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}
 .dot text{paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}
 </style>
+<style id="themeLock">
+/* 11-20 12:5x 강제 다크/라이트가 와도 SVG 칠·글자가 같은 방향 — 값은 :root 변수와 같은 명시 색(!important), forced-color-adjust 끔 */
+html,html *{forced-color-adjust:none}
+:root[data-theme=dark]{color-scheme:dark}
+:root[data-theme=dark] #map .nd rect.bx,:root[data-theme=dark] #map .hub circle{fill:#121d29!important}
+:root[data-theme=dark] #map .nd.sel rect.bx{fill:#1a3247!important}
+:root[data-theme=dark] #map .gbg{fill:#0e1620!important}
+:root[data-theme=dark] #map .gauge.am .gbg{fill:#262521!important}:root[data-theme=dark] #map .gauge.rd .gbg{fill:#301e26!important}
+:root[data-theme=dark] #map .nd text.t1,:root[data-theme=dark] #map .gv,:root[data-theme=dark] #map .hub text,:root[data-theme=dark] #map .dot text{fill:#d8e6f0!important}
+:root[data-theme=dark] #map .nd text.t2{fill:#a3b6c4}
+:root[data-theme=light]{color-scheme:only light}
+:root[data-theme=light] #map .nd rect.bx,:root[data-theme=light] #map .hub circle{fill:#f0f4f8!important}
+:root[data-theme=light] #map .gbg{fill:#ffffff!important}
+:root[data-theme=light] #map .nd text.t1,:root[data-theme=light] #map .gv,:root[data-theme=light] #map .hub text,:root[data-theme=light] #map .dot text{fill:#15222e!important}
+#diag{font-size:12px;line-height:1.4;color:var(--fg);background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 6px;margin:3px 0;word-break:break-all}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -191,6 +207,7 @@ html.reduce *{animation:none!important;transition:none!important}
     </div>
     <div class="meta" id="at">불러오는 중…</div>
     <div class="meta" id="fresh">마지막 갱신 —</div>
+    <div id="diag">진단 측정 중…</div>
     <div id="stale" role="alert"></div>
     <div class="meta" id="rflt" aria-label="반영 감사 신호등"><span class="rfl na" id="rfls">⚪ 반영 감사 — 불러오는 중…</span> <a href="reflect.html" target="_blank" rel="noopener">반영 감사 ↗</a> <a href="reflect1105.html" target="_blank" rel="noopener">체크리스트·작업 진행 ↗</a> <a href="engine_flow.html" target="_blank" rel="noopener">흐름도 ↗</a></div>
     <div id="alarm" role="alert" tabindex="0"></div>
@@ -902,7 +919,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="dee05fdab611";let hiddenAt=0,buildStuck="";
+const BUILD="aca9c6e396e0";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
@@ -935,5 +952,8 @@ addEventListener("pageshow",e=>{if(e.persisted)location.reload()});
 freshTick();setInterval(freshTick,5000);buildCheck();setInterval(buildCheck,60000);
 applyRoom();tick();setInterval(tick,1000);load();setInterval(load,DEMO&&!/^[0-7]$/.test(DEMO)?4500:20000);
 </script>
+<script>(function(){function d(){try{var r=document.documentElement,g=function(sel,pr){var e=document.querySelector(sel);return e?getComputedStyle(e)[pr]:"-"},h=function(c){var m=String(c).match(/[\d.]+/g);if(!m||m.length<3)return String(c);return "#"+m.slice(0,3).map(function(v){return ("0"+(+v|0).toString(16)).slice(-2)}).join("")},mm=document.querySelector("meta[name=color-scheme]");
+document.getElementById("diag").textContent="진단 · 테마 "+(r.getAttribute("data-theme")||"auto")+" · 시스템 "+(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")+" · meta "+(mm?mm.content:"-")+" · 배경 "+h(getComputedStyle(document.body).backgroundColor)+" · 카드칠 "+h(g("#nd-blog rect.bx","fill"))+" · 링칠 "+h(g("#map .gbg","fill"))+" · 글자 "+h(g("#nd-blog .t1","fill"))+" · 관 "+h(g("#map .pc","stroke"))}catch(e){document.getElementById("diag").textContent="진단 실패 "+e}}
+setTimeout(d,1500);setInterval(d,20000)})()</script>
 </body>
 </html>
