@@ -33998,6 +33998,38 @@
    "due": "2026-11-20",
    "cmd": "curl -sA 'Mozilla/5.0' 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224367700258' | grep -c '정정 안내'",
    "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "이부장 14:3x PostView 직접 curl: 제목 ETIAS 시행일 미정·옛 문구 0·정정 박스·본문 수정문장 ✅"
+  },
+  {
+   "id": "indexlab-population-1120",
+   "added": "2026-11-20",
+   "what": "색인 모집단 분포 재측정(546편 RED/CNI/DNI/UNK·월별·크롤일·302 전수 샘플) — docs/indexlab_population_20261120.md",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -I -X utf8 C:/lifeinfo/data/indexlab_history_20261120.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "blogger-official-mobile-doc-1120",
+   "added": "2026-11-20",
+   "what": "Blogger 공식 도움말(모바일 템플릿/?m=1) 못 찾음. 시도: support.google.com 검색(Blogger ?m=1 mobile template redirect) → 커뮤니티 가이드 2건만(공식 아님); developers.google.com separate-urls 경로 2개 404, 옛 mobile-seo/separate-urls 는 301 로 mobile-first 문서. 근거 docs/source_google_index_docs_20261120.md",
+   "due": "2026-11-27",
+   "cmd": "support.google.com/blogger 도움말 센터를 Aside 로 열어 '모바일' '?m=1' '리디렉션' 검색 후 공식 문서 유무 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "theme-alternate-test-1120",
+   "added": "2026-11-20",
+   "what": "【결재】 블로그 테마 head 에 rel=alternate(모바일 URL 연결) 1줄 추가 시험 — 【권고】 승인(되돌리기 가능·1회·시각 기록 후 48h 비교) 【근거】 구글 공식 문서가 별도 모바일 URL 구성에 요구하는 표기가 우리 페이지 6/6 에 없음(docs/source_google_index_docs_20261120.md 표 6번) 【위험】 사이트 전체 적용·Blogger 가 ?m=1 을 자체 처리해 충돌 여부 문서에 없음·리디렉션 오류의 원인이라는 문서 근거는 없음·07-29 테마 변경 선례(교란 우려)라 테마 백업 후 이 1줄만 변경",
+   "due": "2026-11-20",
+   "cmd": "이부장 창에 입력: 테마 alternate 시험 승인",
+   "owner": "user",
    "state": "wait",
    "by": "세션:a7dca46f"
   }
