@@ -11983,17 +11983,32 @@
    "order_at": "2026-11-20 12:14:46"
   }
  },
- "updated": "2026-11-20 13:01:24",
+ "updated": "2026-11-20 13:07:13",
  "current": {
   "batch": "maint1120naversrc",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🔄 12:59 사장님 직접 지시(칠·글자 짝 고정) 12:58 분에 합쳐 반영(webapp/engine.html·tools/gen_svglock.py, 미커밋·git add): ① gen_svglock 를 SVG 만이 아니라 HTML color·background 의 var() 규칙까지 확장 → 141규칙→282개 테마별 명시색 !important(생성물 var( 0개). 칠이 밝은 곳 전수(다크 테마 밝은 칠 = 점·진행 틱·탱크 채움·미배정 칩 / 라이트 테마 밝은 칠 = 패널·박스·링·버튼·코드 등 모두 어두운 글자 #15222e 계열)를 목록으로 스캔. ② 실제 어긋남 2건 수정: 다크 「🧳미배정」 칩(밝은 보라 #a46bff 위 흰 글자 3.43)→다크 어두운 글자(#15222e), 라이트 흰 글자 유지 · 탱크 라벨이 채움(빨강) 위에 얹혀 흔들리던 것→라벨 자체에 패널색 알약 바탕. ③ 렌더 배경 기준 글자 329개 대비<4.5 다크 0·라이트 0. 증거 스크린샷(눈 확인, 412px 다크, 사장님 캡처 위치): C:/Users/magso/.claude/projects/C--lifeinfo--claude-worktrees-priceless-mayer-55f981/330b96b0-ff0a-4c70-bd39-ab1aa090bca5/tool-results/mcp-Claude_Browser-blob-1795147261835-76bkoe.jpg (②~④ 마디·4채널 카드·트렁크 칩 전부 어두운 남색 바탕+밝은 글자). 한계: 폰 강제 변환이 색 값 자체를 뒤집으면 명시색도 영향 — 폰 진단줄 캡처 필요.",
+  "what": "✅ 13:08 이부장 13:05 요청 완료(engine.html 동결 — 링크 1개만 추가, 미커밋·git add): tools/engine_snap.py(Chrome 헤드리스 1000px·?theme=dark → webapp/engine_pc.png 굽고 하단 빈 배경 자름, engine_pc.html 의 구운 시각·이미지 버전 갱신, 수동 실행 python tools/engine_snap.py, deploy.bat 미연동) · webapp/engine_pc.html(이미지 한 장·「PC 화면 그대로 · 구운 시각 13:05」 16px·누르면 2배 확대·실시간 상황실 링크) · engine.html 마지막 갱신 줄 아래 「🖼️ PC 화면 그대로 보기」 링크 1개. 실측: PNG 1000×2058 444KB, 화면 확인(지도·4채널·목록 전부 다크, 진단줄 포함), localhost:8000 engine_pc.html 200·png 200, deploy.bat robocopy 가 *.html *.png 포함이라 deploy 때 같이 나감. 단위시험·enginemap 결과는 이 mark 직전 실행(enginemap 🔴0). 이부장이 필요할 때 python tools/engine_snap.py 뒤 deploy.",
   "since": "07:13",
   "since_at": "2026-11-20 07:13:28"
  },
  "log": [
+  {
+   "t": "13:07:13",
+   "text": "▶   — 1/7단계 · ✅ 13:08 이부장 13:05 요청 완료(engine.html 동결 — 링크 1개만 추가, 미커밋·git add): tools/engine_snap.py(Chrome 헤드리스 1000px·?theme=dark → webapp/engine_pc.png 굽고 하단 빈 배경 자름, engine_pc.html 의 구운 시각·이미지 버전 갱신, 수동 실행 python tools/engine_snap.py, deploy.bat 미연동) · webapp/engine_pc.html(이미지 한 장·「PC 화면 그대로 · 구운 시각 13:05」 16px·누르면 2배 확대·실시간 상황실 링크) · engine.html 마지막 갱신 줄 아래 「🖼️ PC 화면 그대로 보기」 링크 1개. 실측: PNG 1000×2058 444KB, 화면 확인(지도·4채널·목록 전부 다크, 진단줄 포함), localhost:8000 engine_pc.html 200·png 200, deploy.bat robocopy 가 *.html *.png 포함이라 deploy 때 같이 나감. 단위시험·enginemap 결과는 이 mark 직전 실행(enginemap 🔴0). 이부장이 필요할 때 python tools/engine_snap.py 뒤 deploy.",
+   "actor": "미상:330b96b0"
+  },
+  {
+   "t": "13:04:13",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/Df8vyPoke7Z/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장"
+  },
+  {
+   "t": "13:03:39",
+   "text": "▶   — 3/7단계 · 👤 사장님 직접 지시 13:03: 「pc화면처럼 보이게 하면 안되냐? 뭘자꾸수정하는데!」 → engine.html 13:15 분 이후 동결, 폰 보증용 PC 화면 스크린샷 페이지(engine_pc.html·PNG, Edge 헤드리스) 정비 요청 13:20",
+   "actor": "이부장"
+  },
   {
    "t": "13:01:24",
    "text": "▶   — 1/7단계 · 🔄 12:59 사장님 직접 지시(칠·글자 짝 고정) 12:58 분에 합쳐 반영(webapp/engine.html·tools/gen_svglock.py, 미커밋·git add): ① gen_svglock 를 SVG 만이 아니라 HTML color·background 의 var() 규칙까지 확장 → 141규칙→282개 테마별 명시색 !important(생성물 var( 0개). 칠이 밝은 곳 전수(다크 테마 밝은 칠 = 점·진행 틱·탱크 채움·미배정 칩 / 라이트 테마 밝은 칠 = 패널·박스·링·버튼·코드 등 모두 어두운 글자 #15222e 계열)를 목록으로 스캔. ② 실제 어긋남 2건 수정: 다크 「🧳미배정」 칩(밝은 보라 #a46bff 위 흰 글자 3.43)→다크 어두운 글자(#15222e), 라이트 흰 글자 유지 · 탱크 라벨이 채움(빨강) 위에 얹혀 흔들리던 것→라벨 자체에 패널색 알약 바탕. ③ 렌더 배경 기준 글자 329개 대비<4.5 다크 0·라이트 0. 증거 스크린샷(눈 확인, 412px 다크, 사장님 캡처 위치): C:/Users/magso/.claude/projects/C--lifeinfo--claude-worktrees-priceless-mayer-55f981/330b96b0-ff0a-4c70-bd39-ab1aa090bca5/tool-results/mcp-Claude_Browser-blob-1795147261835-76bkoe.jpg (②~④ 마디·4채널 카드·트렁크 칩 전부 어두운 남색 바탕+밝은 글자). 한계: 폰 강제 변환이 색 값 자체를 뒤집으면 명시색도 영향 — 폰 진단줄 캡처 필요.",
@@ -12178,21 +12193,6 @@
    "t": "12:19:51",
    "text": "▶   — 16/7단계 · 12:25 이부장 접수 확인 — 14:00 최종 보고 그대로 두고, 18:00 슬롯에 ②(기존 인기글 후속)·④(확정 공지 미리 쓰기) 를 넓혀 탐색한다. 등록: watch fuel1030-1800-widen.",
    "actor": "3."
-  },
-  {
-   "t": "12:19:38",
-   "text": "▶   — 1/7단계 · 📨 이부장 12:25 접수·검토 — 3. 12:00 보고(신규 0·사유 표) 접수, 14:00 최종 보고·내 재확인 14:05, 18:00 슬롯 갈래 ②④ 재확장 지시",
-   "actor": "이부장"
-  },
-  {
-   "t": "12:19:23",
-   "text": "▶   — 4/7단계 · 📨 이부장 12:25 접수·검토 — 4. 12:01 원인 보고·+4h 판독 접수(원인 미확정), 추가 1편 요청 승인(4. 가 선택·한도 합산), +48h 일정 유지, 이부장 11-22 07:05 읽음",
-   "actor": "이부장"
-  },
-  {
-   "t": "12:18:40",
-   "text": "▶   — 1/7단계 · 👤 사장님 직접 지시 12:14 반영 — 정정글 박스(이유·정정일자) 이과장에 지시 12:20: 문안·네이버 정정 2건(승인 12:13~14)·블로그스팟 4건 박스 추가·템플릿화, 네이버 교체는 Aside 보류 13:10 이후",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -14577,7 +14577,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🔄 12:59 사장님 직접 지시(칠·글자 짝 고정) 12:58 분에 합쳐 반영(webapp/engine.html·tools/gen_svglock.py, 미커밋·git add): ① gen_svglock 를 SVG 만이 아니라 HTML color·background 의 var() 규칙까지 확장 → 141규칙→282개 테마별 명시색 !important(생성물 var( 0개). 칠이 밝은 곳 전수(다크 테마 밝은 칠 = 점·진행 틱·탱크 채움·미배정 칩 / 라이트 테마 밝은 칠 = 패널·박스·링·버튼·코드 등 모두 어두운 글자 #15222e 계열)를 목록으로 스캔. ② 실제 어긋남 2건 수정: 다크 「🧳미배정」 칩(밝은 보라 #a46bff 위 흰 글자 3.43)→다크 어두운 글자(#15222e), 라이트 흰 글자 유지 · 탱크 라벨이 채움(빨강) 위에 얹혀 흔들리던 것→라벨 자체에 패널색 알약 바탕. ③ 렌더 배경 기준 글자 329개 대비<4.5 다크 0·라이트 0. 증거 스크린샷(눈 확인, 412px 다크, 사장님 캡처 위치): C:/Users/magso/.claude/projects/C--lifeinfo--claude-worktrees-priceless-mayer-55f981/330b96b0-ff0a-4c70-bd39-ab1aa090bca5/tool-results/mcp-Claude_Browser-blob-1795147261835-76bkoe.jpg (②~④ 마디·4채널 카드·트렁크 칩 전부 어두운 남색 바탕+밝은 글자). 한계: 폰 강제 변환이 색 값 자체를 뒤집으면 명시색도 영향 — 폰 진단줄 캡처 필요.",
+   "what": "✅ 13:08 이부장 13:05 요청 완료(engine.html 동결 — 링크 1개만 추가, 미커밋·git add): tools/engine_snap.py(Chrome 헤드리스 1000px·?theme=dark → webapp/engine_pc.png 굽고 하단 빈 배경 자름, engine_pc.html 의 구운 시각·이미지 버전 갱신, 수동 실행 python tools/engine_snap.py, deploy.bat 미연동) · webapp/engine_pc.html(이미지 한 장·「PC 화면 그대로 · 구운 시각 13:05」 16px·누르면 2배 확대·실시간 상황실 링크) · engine.html 마지막 갱신 줄 아래 「🖼️ PC 화면 그대로 보기」 링크 1개. 실측: PNG 1000×2058 444KB, 화면 확인(지도·4채널·목록 전부 다크, 진단줄 포함), localhost:8000 engine_pc.html 200·png 200, deploy.bat robocopy 가 *.html *.png 포함이라 deploy 때 같이 나감. 단위시험·enginemap 결과는 이 mark 직전 실행(enginemap 🔴0). 이부장이 필요할 때 python tools/engine_snap.py 뒤 deploy.",
    "since": "07:13",
    "since_at": "2026-11-20 07:13:28"
   },
@@ -14595,7 +14595,7 @@
    "code": "",
    "title": "",
    "step": 3,
-   "what": "👤 사장님 직접 지시 12:59: 「밝은 바탕을 사용했으면 어두운 텍스트를 사용해!」 → 정비에 칠·글자색 짝 고정(밝은 칠=어두운 글씨) 전수 요청",
+   "what": "👤 사장님 직접 지시 13:03: 「pc화면처럼 보이게 하면 안되냐? 뭘자꾸수정하는데!」 → engine.html 13:15 분 이후 동결, 폰 보증용 PC 화면 스크린샷 페이지(engine_pc.html·PNG, Edge 헤드리스) 정비 요청 13:20",
    "since": "08:01",
    "since_at": "2026-11-20 08:01:24"
   },
@@ -14631,7 +14631,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "📨 이부장 13:03 — 원격 동기 완료(병합 515d5e042·push), Aside 보류 해제 유지, B4-36 네이버 원고 직접 검토 통과(대통령령 6·확인못 5·5억 이하/대주주 요건 없이 0·꺾쇠 0) 게시 승인, F1-23 네이버 이어서",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/Df8vyPoke7Z/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "12:21",
    "since_at": "2026-11-20 12:21:49"
   }
@@ -14687,36 +14687,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-06 13:02:33",
-   "bid": "pub1106b429",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "🔄 이부장 13:02 지시 수신 — syncorigin 성공(뒤0·푸시). B4-29 후속 ①검색설명 확인부터 이어감",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
-  {
-   "ts": "2026-11-06 13:03:42",
-   "bid": "pub1106b429",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "Aside 지시 초안 준비: docs/aside_drafts/B4-29_검색설명.txt (이부장 등록 요청 · 이과장 전담 Aside 채팅 소실) — 다음 네이버 원고",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
-  {
-   "ts": "2026-11-06 13:06:02",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] #642 수신 2026-11-06 13:05:07 — B4-29 검색설명 시작",
-   "actor": "Aside",
-   "sid": ""
-  },
   {
    "ts": "2026-11-06 13:07:44",
    "bid": "pub1106b429",
@@ -48744,6 +48714,36 @@
    "title": "",
    "owner": "정비",
    "what": "🔄 12:59 사장님 직접 지시(칠·글자 짝 고정) 12:58 분에 합쳐 반영(webapp/engine.html·tools/gen_svglock.py, 미커밋·git add): ① gen_svglock 를 SVG 만이 아니라 HTML color·background 의 var() 규칙까지 확장 → 141규칙→282개 테마별 명시색 !important(생성물 var( 0개). 칠이 밝은 곳 전수(다크 테마 밝은 칠 = 점·진행 틱·탱크 채움·미배정 칩 / 라이트 테마 밝은 칠 = 패널·박스·링·버튼·코드 등 모두 어두운 글자 #15222e 계열)를 목록으로 스캔. ② 실제 어긋남 2건 수정: 다크 「🧳미배정」 칩(밝은 보라 #a46bff 위 흰 글자 3.43)→다크 어두운 글자(#15222e), 라이트 흰 글자 유지 · 탱크 라벨이 채움(빨강) 위에 얹혀 흔들리던 것→라벨 자체에 패널색 알약 바탕. ③ 렌더 배경 기준 글자 329개 대비<4.5 다크 0·라이트 0. 증거 스크린샷(눈 확인, 412px 다크, 사장님 캡처 위치): C:/Users/magso/.claude/projects/C--lifeinfo--claude-worktrees-priceless-mayer-55f981/330b96b0-ff0a-4c70-bd39-ab1aa090bca5/tool-results/mcp-Claude_Browser-blob-1795147261835-76bkoe.jpg (②~④ 마디·4채널 카드·트렁크 칩 전부 어두운 남색 바탕+밝은 글자). 한계: 폰 강제 변환이 색 값 자체를 뒤집으면 명시색도 영향 — 폰 진단줄 캡처 필요.",
+   "actor": "미상:330b96b0",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-20 13:03:39",
+   "bid": "maint1120phone6",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "👤 사장님 직접 지시 13:03: 「pc화면처럼 보이게 하면 안되냐? 뭘자꾸수정하는데!」 → engine.html 13:15 분 이후 동결, 폰 보증용 PC 화면 스크린샷 페이지(engine_pc.html·PNG, Edge 헤드리스) 정비 요청 13:20",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-20 13:04:13",
+   "bid": "pub1120b436",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/Df8vyPoke7Z/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-20 13:07:12",
+   "bid": "maint1120naversrc",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "✅ 13:08 이부장 13:05 요청 완료(engine.html 동결 — 링크 1개만 추가, 미커밋·git add): tools/engine_snap.py(Chrome 헤드리스 1000px·?theme=dark → webapp/engine_pc.png 굽고 하단 빈 배경 자름, engine_pc.html 의 구운 시각·이미지 버전 갱신, 수동 실행 python tools/engine_snap.py, deploy.bat 미연동) · webapp/engine_pc.html(이미지 한 장·「PC 화면 그대로 · 구운 시각 13:05」 16px·누르면 2배 확대·실시간 상황실 링크) · engine.html 마지막 갱신 줄 아래 「🖼️ PC 화면 그대로 보기」 링크 1개. 실측: PNG 1000×2058 444KB, 화면 확인(지도·4채널·목록 전부 다크, 진단줄 포함), localhost:8000 engine_pc.html 200·png 200, deploy.bat robocopy 가 *.html *.png 포함이라 deploy 때 같이 나감. 단위시험·enginemap 결과는 이 mark 직전 실행(enginemap 🔴0). 이부장이 필요할 때 python tools/engine_snap.py 뒤 deploy.",
    "actor": "미상:330b96b0",
    "sid": "330b96b0"
   }

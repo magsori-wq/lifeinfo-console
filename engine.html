@@ -492,6 +492,7 @@ html,html *{forced-color-adjust:none}
     </div>
     <div class="meta" id="at">불러오는 중…</div>
     <div class="meta" id="fresh">마지막 갱신 —</div>
+    <div class="meta"><a href="engine_pc.html" style="font-size:14px;font-weight:700">🖼️ PC 화면 그대로 보기</a></div>
     <div id="diag">진단 측정 중…</div>
     <div id="stale" role="alert"></div>
     <div class="meta" id="rflt" aria-label="반영 감사 신호등"><span class="rfl na" id="rfls">⚪ 반영 감사 — 불러오는 중…</span> <a href="reflect.html" target="_blank" rel="noopener">반영 감사 ↗</a> <a href="reflect1105.html" target="_blank" rel="noopener">체크리스트·작업 진행 ↗</a> <a href="engine_flow.html" target="_blank" rel="noopener">흐름도 ↗</a></div>
@@ -1204,7 +1205,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="f2996741abef";let hiddenAt=0,buildStuck="";
+const BUILD="fa33337c4aa5";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
