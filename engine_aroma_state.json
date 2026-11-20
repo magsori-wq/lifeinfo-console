@@ -1,7 +1,16 @@
 {
- "at": "2026-11-20 14:53:48",
+ "at": "2026-11-20 15:10:53",
  "errors": [],
- "rows": [
+ "rows": [],
+ "old_inflight": [],
+ "discarded": [
+  {
+   "code": "AM-DG-003",
+   "detail": "폐기-대체",
+   "note": "11-19 기록: 승인(10-31) 뒤 magsori8975 224438160731 과 겹침 확인으로 보류, 같은 소재를 계산 각도로 바꾼 AM-DG-010(224472391441, 11-11 게시)로 대체. 게시 빠진 것이 아님."
+  }
+ ],
+ "recent_published": [
   {
    "code": "AM-PE-016",
    "approvals": [
@@ -12,22 +21,12 @@
      "at": "2026-11-20"
     }
    ],
-   "title": "MAMA라인업일차",
-   "last_file_at": "2026-11-20 14:51",
-   "stage": "approved_unverified",
-   "label": "승인 확인 중",
-   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
-  }
- ],
- "old_inflight": [],
- "discarded": [
-  {
-   "code": "AM-DG-003",
-   "detail": "폐기-대체",
-   "note": "11-19 기록: 승인(10-31) 뒤 magsori8975 224438160731 과 겹침 확인으로 보류, 같은 소재를 계산 각도로 바꾼 AM-DG-010(224472391441, 11-11 게시)로 대체. 게시 빠진 것이 아님."
-  }
- ],
- "recent_published": [
+   "title": "2026 MAMA 라인업 몇 일차? 빅뱅은 21일, 패닉 후배 무대는 날짜 불명",
+   "last_file_at": "2026-11-20 14:54",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-20"
+  },
   {
    "code": "AM-SP-021",
    "approvals": [
@@ -113,43 +112,9 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-15"
-  },
-  {
-   "code": "AM-SP-020",
-   "approvals": [
-    {
-     "id": "aroma-am-sp-020-approve-1114",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-15"
-    },
-    {
-     "id": "aroma-am-sp-020-update-1115",
-     "state": "done",
-     "kind": "update",
-     "at": "2026-11-15"
-    },
-    {
-     "id": "aroma-am-sp-020-update2-1116",
-     "state": "done",
-     "kind": "update2",
-     "at": "2026-11-16"
-    },
-    {
-     "id": "aroma-am-sp-020-update3-1119",
-     "state": "done",
-     "kind": "update3",
-     "at": "2026-11-19"
-    }
-   ],
-   "title": "여자배구 순위 — 현대건설·SOOP 0승 4패끼리 11/18 맞대결",
-   "last_file_at": "2026-11-19 04:34",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-15"
   }
  ],
- "published_total": 60,
+ "published_total": 61,
  "rev_wait": [],
  "cats": {
   "window": 14,
@@ -160,7 +125,7 @@
    ],
    [
     "공연·연예",
-    9
+    10
    ],
    [
     "스포츠",
@@ -171,7 +136,7 @@
     7
    ]
   ],
-  "total": 32
+  "total": 33
  },
  "share": {
   "state": "active",
@@ -285,7 +250,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 14:53:43",
+   "last_at": "2026-11-20 15:10:45",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -332,7 +297,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-20 04:47:13",
    "src": "now_log(bid=aroma)",
-   "today_n": 23,
+   "today_n": 24,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -359,8 +324,8 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 0,
-  "cur": "14:56 🙋 결재 카드 aroma-am-pe-016-1120",
+  "last_min": 11,
+  "cur": "📨 이부장 15:03 접수·확인 — 이대리 14:59 AM-P",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -369,14 +334,7 @@
   "v0": [],
   "boss": [],
   "deploy": [],
-  "publish": [
-   {
-    "code": "AM-PE-016",
-    "title": "MAMA라인업일차 · 게시 승인 꼴 결재가 없거나 보류·취소·사장님 승인 아님 — 게시 지연 판정 해당 없음",
-    "min": null,
-    "lvl": "ok"
-   }
-  ],
+  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -415,6 +373,11 @@
   },
   "naver": {
    "done": [
+    {
+     "code": "AM-PE-016",
+     "title": "2026 MAMA 라인업 몇 일차? 빅뱅은 21일, 패닉 후배 무대는 날짜 불명",
+     "url": "https://blog.naver.com/aroma-mag/224484785664"
+    },
     {
      "code": "AM-SP-021",
      "title": "카타르전 결과 1-0 — 선발 7명 바꾼 한국, 오세훈 전반 43분 헤더골",
@@ -716,11 +679,7 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": [
-    {
-     "code": "AM-PE-016"
-    }
-   ]
+   "wait": []
   }
  },
  "topics": [],
@@ -732,8 +691,8 @@
  },
  "kpi": {
   "today": "2026-11-20",
-  "done_today": 0,
-  "published_today": 0,
+  "done_today": 1,
+  "published_today": 1,
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
@@ -750,7 +709,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 0,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
@@ -758,8 +717,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 0,
-   "cur": "14:56 🙋 결재 카드 aroma-am-pe-016-1120",
+   "last_min": 11,
+   "cur": "📨 이부장 15:03 접수·확인 — 이대리 14:59 AM-P",
    "lvl": "ok"
   },
   {
@@ -773,8 +732,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 0,
-   "cur": "14:56 🙋 결재 카드 aroma-am-pe-016-1120",
+   "last_min": 11,
+   "cur": "📨 이부장 15:03 접수·확인 — 이대리 14:59 AM-P",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -802,7 +761,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "14:51",
+   "at": "14:54",
    "today": 2,
    "lvl": "ok",
    "order": null,
@@ -820,7 +779,7 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 2편",
+   "made": "오늘 새 글 게시 1편 · 파일이 움직인 글 2편",
    "codes": [
     "AM-BO-011",
     "AM-PE-016"
@@ -857,8 +816,14 @@
   {
    "code": "AM-PE-016",
    "stage": "boss",
+   "at": "2026-11-20 14:54:08",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-PE-016",
+   "stage": "naver",
    "at": "",
-   "src": "watch done_at(날짜뿐)"
+   "src": "db.json published(날짜만)"
   }
  ],
  "incidents": [],
@@ -867,7 +832,7 @@
  "room_extra": [
   {
    "title": "📊 카테고리 4개 · 최근 14일 게시",
-   "sub": "합계 32편 · 일률분배 몫 8.0편",
+   "sub": "합계 33편 · 일률분배 몫 8.2편",
    "rows": [
     {
      "head": "방송·OTT",
@@ -875,7 +840,7 @@
     },
     {
      "head": "공연·연예",
-     "chip": "9편"
+     "chip": "10편"
     },
     {
      "head": "스포츠",
@@ -894,7 +859,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 14:53:43",
+     "chip": "2026-11-20 15:10:45",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -925,7 +890,7 @@
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-20 04:47:13",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 23회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 24회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
@@ -1022,9 +987,14 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 60편",
+   "title": "✅ 최근 게시 · 전체 61편",
    "empty": "게시 기록 없음",
    "rows": [
+    {
+     "head": "AM-PE-016",
+     "chip": "2026-11-20",
+     "sub": "2026 MAMA 라인업 몇 일차? 빅뱅은 21일, 패닉 후배 무대는 날짜 불명"
+    },
     {
      "head": "AM-SP-021",
      "chip": "2026-11-19",
@@ -1049,11 +1019,6 @@
      "head": "AM-PE-014",
      "chip": "2026-11-15",
      "sub": "2026 청룡영화상 후보 — 호프 10개·가능한 사랑 8개·왕과 사는 남자 7개"
-    },
-    {
-     "head": "AM-BO-011",
-     "chip": "2026-11-15",
-     "sub": "넷플릭스 순위 한국 — 영화 7편 교체, 1위는 Possible Love"
     }
    ]
   }
