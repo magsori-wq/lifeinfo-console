@@ -34407,8 +34407,30 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.v0check gate --code H1-44",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "V0 통과로 해소 — 검사자 v0 에이전트 재검사(이부장 의뢰·이부장 diff·출처 대조 확인) · 재검사 통과: 1차 지적 4곳 반영(전국→수도권·절감 하객 조건과 90명 예·패키지 합 68.5%·상담 3배 기준) 숫자 출처 일치·산술 확인, 선택 다듬기 2건(제 해석으로는·제 검산 약 2.9배) 반영 후 이부장"
+  },
+  {
+   "id": "fix-h144-numbers-1120",
+   "added": "2026-11-20",
+   "what": "H1-44 초안 4곳 정정(수도권 표기·절감 조건과 90명 예·패키지 68.5% 미확인 추가·5절 2번 원문 표현·3배=2024→2025). heading OK·layout OK·bodydup 신규 0.040. 변경 전 사본 data/_h144_before_20261120.html, git add 만",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.heading --file 결혼식보증인원스드메사진파일163만원_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "v0-h144-recheck-2240",
+   "added": "2026-11-20",
+   "what": "H1-44 V0 재검사 결과 → 이부장이 근거 열어 v0check pass/fail(통과면 deploy.bat 로 썸네일 543 배포·200 확인, topicprop kakao·결재함 상정, 카톡 한 줄)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.v0check list | grep H1-44 | tail -2; curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/543_wedding_guarantee.png",
+   "owner": "claude",
+   "state": "wait",
    "by": "세션:a7dca46f"
   }
  ]
