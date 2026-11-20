@@ -33699,6 +33699,78 @@
    "state": "todo",
    "kind": "approve",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "energy-voucher-dec-1120",
+   "added": "2026-11-20",
+   "what": "에너지바우처 등유·LPG 14만7000원: 부처 보도자료 원문 미확보(korea.kr 보도자료 URL 삭제 응답), 22만(F)·21만(E) 가구 수 불일치, 카드 종류 불일치, 12/9 는 「다음 달 9일」 예정. 1인 248,200원은 공식 원문 0건",
+   "due": "2026-12-09",
+   "cmd": "curl -s -A \"Mozilla/5.0\" https://www.energyv.or.kr/info/apl_info.do | grep -c \"2026년 12월 31일\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "culturepass-a126-verify-1120",
+   "added": "2026-11-20",
+   "what": "A1-26 청년문화패스 기사: 7/31·8/1 사용불가 조항 및 6/30 마감이 읽은 공식 페이지(korea.kr 11.18, mcst 02.09 본문)에 없음·첨부 hwpx 미열람·youthculturepass.or.kr 대기열만 응답",
+   "due": "2026-11-25",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show culturepass-a126-verify-1120",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "teacher-infertility-leave-src",
+   "added": "2026-11-20",
+   "what": "교사 난임치료휴가 1차 출처 미확인: 공무원 복무규정 law.go.kr 4경로 실패(11-09·11-20), 일수·유급·신청 미확인",
+   "due": "2026-11-27",
+   "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/공무원복무규정\" --frames --wait 8 --max 3000",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-20",
+   "result": "국가공무원 복무규정 법령명으로 원문 취득 — 난임치료시술휴가 제20조⑫(2026-11-20). 교원 적용은 제24조의2 교육부장관 특례 확인 필요 → 신규 watch teacher-leave-kyo-rule"
+  },
+  {
+   "id": "teacher-leave-kyo-rule",
+   "added": "2026-11-20",
+   "what": "교사 난임치료휴가: 국가공무원 복무규정 제24조의2(교원 휴가 특례) 교육부 하위 규정 미확인 · 국가공무원 복무규정 개정 여부 재확인",
+   "due": "2026-12-03",
+   "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/국가공무원 복무규정\" --frames --wait 8 --max 80000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deploy-thumb-541",
+   "added": "2026-11-20",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(541_indonesia_haze.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-20",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "gobo-sigryeong-1220",
+   "added": "2026-11-20",
+   "what": "고용보험 적용기준 월 80만원 — 시행령 제3조 2027.1.1 공포본 확인(법률 제21473호 제10조 2027.1.1 시행은 확인)",
+   "due": "2026-12-20",
+   "cmd": "python tools/aside_read.py \"https://www.law.go.kr/법령/고용보험법시행령\" --wait 8 --max 20000",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "fix-f123-v0reco-1120",
+   "added": "2026-11-20",
+   "what": "F1-23 초안 V0 권고 2건 반영: 도입 sum 에 발리·자카르타 1단계 문장(해석 표기, 신규 b 없음) 71행 추가 · 5절 사례 3번(131행) 출발 전 2회 확인 보강. heading OK·layout 🔴0·bodydup 🟢0.049. 미커밋(git add 만)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.bodydup --file 인도네시아중부칼리만탄특별여행주의보해제_글_HTML.txt --code F1-23 --live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
