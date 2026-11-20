@@ -33839,6 +33839,46 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-C2-29-1120",
+   "added": "2026-11-20",
+   "what": "C2-29 네이버 원고 검수 불합격: 휴대반입 허용범위 단서 박스·큰숫자 caption 단서·AI 공개문 누락, naver_src 기록 없음",
+   "due": "2026-11-20",
+   "cmd": "grep -c 휴대 반입은 따로 정해진 허용 범위 osmu/네이버용_위고비중고거래직구해외반입재판매.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "c229-naver-resubmit-1130",
+   "added": "2026-11-20",
+   "what": "이과장 C2-29 네이버 원고 복원·재제출 확인(휴대반입 박스 grep -c 1)",
+   "due": "2026-11-20",
+   "cmd": "grep -c '휴대 반입은 따로 정해진 허용 범위' osmu/네이버용_위고비중고거래직구해외반입재판매.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "verify-C2-29-1120b",
+   "added": "2026-11-20",
+   "what": "C2-29 네이버 원고 재검수 불합격: 서식 변환 찌꺼기 b>043-719-1089 · /b>입니다 · br>2026년 11월 12일 (꺾쇠 누락, 서식본에 화면 노출) — 복원 후 재확인",
+   "due": "2026-11-20",
+   "cmd": "grep -c 'b>043-719-1089\\|br>2026' osmu/네이버용_위고비중고거래직구해외반입재판매.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "c229-naver-post-1215",
+   "added": "2026-11-20",
+   "what": "이과장 C2-29 네이버 게시(12:20 Aside 보류 전) — 게시 URL·og·naver-link 기록 확인",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.osmu_manifest table --code C2-29",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
