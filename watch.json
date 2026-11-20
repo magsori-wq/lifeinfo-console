@@ -33692,8 +33692,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard order --id fuel1030",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-20",
+   "result": "18:00 최종 보드 게시(step 23) — 후보 0편"
   },
   {
    "id": "verify-livefix1119c-1120",
@@ -33926,8 +33928,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard order --id fuel1030",
    "owner": "claude",
-   "state": "todo",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-20",
+   "result": "18:00 최종 보드 게시(step 23, 18:47) — 후보 0편, 갈래별 사유 표 기재"
   },
   {
    "id": "idx-extra-req-check-1530",
@@ -34229,6 +34233,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "4."
+  },
+  {
+   "id": "site12-a1-03-basis",
+   "added": "2026-11-20",
+   "what": "A1-03 근로장려금 본문 기준일 불일치 — 도입 「2026년 기준」 vs 재산 기준 「2025년 6월 1일 기준」, 금액·지급일 예고 출처 미표기 (docs/site12/A1-03.md 확인 못 함)",
+   "due": "2026-11-27",
+   "cmd": "curl -s -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" https://lifeinfo8975.blogspot.com/2026/06/blog-post_152.html | grep -c \"2025년 6월 1일 기준\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
+  },
+  {
+   "id": "fuel1030-wake-1920",
+   "added": "2026-11-20",
+   "what": "3. 18:51 깨움 후 응답 확인 — fuel1030 최종 보고(후보 또는 못 얻은 사유 표) 도착 여부",
+   "due": "2026-11-20",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('fuel1030'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
