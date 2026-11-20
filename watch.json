@@ -34522,6 +34522,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "maint1120fix-verify-1121",
+   "added": "2026-11-21",
+   "what": "커밋 394030525(정비 MF-1~4) 독립 검증 — fable 로 diff 한정 재검증(O-1 장부·R-1 일시중지·O-2 원자 쓰기·T-1 감시 신호·Z2 git 종료코드), 결과 문서에 해시 포함 + 판정 줄 확인. MF-5~7 끝나면 한 번에 묶어도 됨",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }

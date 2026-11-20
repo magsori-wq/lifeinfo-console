@@ -12335,20 +12335,26 @@
     {
      "code": "MF-5",
      "title": "R-2·R-3 주기·복구 예정일을 못 읽으면 판정 못 함으로",
-     "state": "todo",
-     "note": "routinehealth.py:141·233·246"
+     "state": "done",
+     "note": "R-2·R-3: routinehealth — period_hours 가 cron 의 / 단계(*/3→3h·8-23/3→9h)와 월 단위 cron(일 칸 지정→744h)을 읽고, 그래도 못 읽으면 judge 가 state=unread(주기를 못 읽어 낡음 판정 못 함)로 올림(예전엔 ✅). 일시중지 날짜는 _pause_date(YYYY-MM-DD·.·/·연도 없는 MM-DD=올해) 로 읽고 끈 시각/복구 예정일이 읽히지 않으면 stale(못 읽음 — 판정 못 함, 다시 확인), 연도 없는 11-19 는 지남 판정. 시험 2개 추가(주기 6꼴+200시간 정지 stale·월 1회 ok, 날짜 오타 3꼴·연도 없음) + 기존 시험 1줄 갱신(*/2 는 이제 2.0 — 읽게 한 것이 목적). 전체 unittest 693개 전부 OK(오류 0), enginemap 🔴0·🟡0, 라이브 routinehealth 루틴10 기존 🟡 그대로. 설계도 TO7 MF-5 기록 먼저. 경로 지정 add: docs/엔진설계도.md studio/routinehealth.py tests/test_studio_pure.py. 다음: MF-6. 재발방지: 못 읽은 값은 정상도 지남도 아닌 판정 못 함 · 남은 구멍: 요일·월 목록 cron 은 168h 로 뭉뚱그림",
+     "at": "2026-11-21 00:14",
+     "actor": "정비"
     },
     {
      "code": "MF-6",
      "title": "N-1·N-2 naver.cmd_draft 꺾쇠 게이트 fail-closed·정규식 / 앞 글자 처리, A-1 결재 직후 예외 처리",
-     "state": "todo",
-     "note": "naver.py:815-819 외"
+     "state": "done",
+     "note": "N-1·N-2·A-1: naver.cmd_draft 꺾쇠 검사가 예외로 못 돌면 거부(exit 1·예외 종류 출력, fail-closed; 예전 fail-open) · naverrich._STRAY_TAG_RX 가 정상 닫는 태그 </b></span></p></a> 를 안 잡고(여는 이름 앞 글자 제외에 / 추가) 꺾쇠 빠진 조각은 그대로 잡음(실측 br> b> /b> /span> 잡힘·<b>굵게</b> 안 잡힘) · osmu_manifest.stale_basis_gap 신설+asidequeue.preclear ② 가 결재 직후 제목 맞춤으로 초안 시각이 빠지고 V0 기록도 없을 때 「낡음 판정 못 함 — 기준 없음」 경고(차단 아님). 시험 3개 추가(정규식 정상/조각 11꼴·cmd_draft 실제 호출에서 검사 예외 시 rc=1+원고 파일 미생성·stale_basis_gap 5경우). 전체 unittest 696개 중 오류 1건=TestDbAtomicSaveMaint1114(MF-7 대상 — 간헐), 기존 실원고 stray 0건 시험 통과, enginemap 🔴0·🟡0, 설계도 TO9 MF-6 기록 먼저. 경로 지정 add: docs/엔진설계도.md studio/naver.py studio/naverrich.py studio/osmu_manifest.py studio/asidequeue.py tests/test_studio_pure.py. 다음: MF-7. 재발방지: 검사 실패·기준 없음은 통과가 아닌 신호 · 남은 구멍: 속성 붙은 태그 조각·대문자(N-3) 못 잡음",
+     "at": "2026-11-21 00:18",
+     "actor": "정비"
     },
     {
      "code": "MF-7",
      "title": "_git_last 창 숨김 옵션·stamp_engine_build 실패 표시·TestDbAtomicSaveMaint1114 실패(dbio.write_atomic os.replace)",
-     "state": "todo",
-     "note": "범위 밖 항목 포함"
+     "state": "done",
+     "note": "_git_last: routinehealth._hidden_kw()(nowin._hidden) 로 창 숨김 옵션 부착(시험으로 startupinfo 전달 확인) · stamp_engine_build 실패: build() 가 사건 stall_detect_fail(id build_stamp, 예외 종류·줄)로 상황판에 올림(실제 build 호출 시험) · TestDbAtomicSaveMaint1114 간헐 실패 원인=dbio.write_atomic 의 os.replace 재시도 0.1초x50회는 읽기 3개가 3ms 간격으로 상시 열 때 틈을 잡을 표본이 적음(격리 실행 5회 중 1회 PermissionError) → 같은 약 5초를 0.01초x500회로(수정 후 같은 클래스 10회 연속 통과, 시험 상수 검사 추가). 전체 unittest 699개 전부 OK(오류 0), enginemap 🔴0·🟡0, validate PASS15·WARN4·FAIL0, 라이브 장부 naver_src 3건. 설계도 MF-7 기록 먼저. 경로 지정 add: docs/엔진설계도.md studio/dbio.py studio/enginestate.py studio/routinehealth.py tests/test_studio_pure.py (MF-5·6 분량 studio/naver.py studio/naverrich.py studio/osmu_manifest.py studio/asidequeue.py 도 이미 add 됨 — MF-5~7 한 번에 커밋 대상). 전체 MF-1~7 완료: 이부장 확인·재검증(fable) 대상. 재발방지: 재시도는 총 시간이 아니라 표본 수 · 남은 구멍: Z2 검증 문서 91개 통째 읽기(제안 5)",
+     "at": "2026-11-21 00:28",
+     "actor": "정비"
     }
    ],
    "steps": [
@@ -12362,17 +12368,37 @@
    "order_at": "2026-11-20 23:33:54"
   }
  },
- "updated": "2026-11-21 00:06:17",
+ "updated": "2026-11-21 00:28:46",
  "current": {
-  "batch": "tower1114",
+  "batch": "maint1120fix",
   "code": "",
   "title": "",
   "step": 3,
-  "what": "📨 이부장 00:15 LANE_IDLE(루틴2 A/B 7일째 제안 0) 처리 — 확인: 루틴2 11-20 회차는 후보 0·탈락 8(전부 기발행, 사유 열거)로 빈손 사유는 있음. 근본: A/B 레인 소재 고갈+발굴이 korea.kr 위주, 출입처 문서 docs/출입처_*는 건강방송·경제디지털·여행우리동네 3종뿐(A 정부지원·복지·B 세금금융 출입처 문서 없음 — 이부장이 실측). 처방: A·B 출입처 문서 신설(국세청·기재부·고용부·복지부·행안부 공식 목록 URL 중 curl 로 읽히는 것만) — 11-21 07:00 연료 재확인(watch fuel0-recheck-1121-0700) 때 3. 지시서로 포함. Aside 복구·법령 DRF 불가 상태라 curl 가능한 목록 위주",
-  "since": "23:17",
-  "since_at": "2026-11-20 23:17:00"
+  "what": "📨 이부장 00:10 MF-1~4 접수·커밋 — 정비 23:36 복창·MF-1~4 완료 mark 접수. 이부장 직접 확인: 장부 3건·백업, 해당 시험 17건, 전체 시험 691건 중 오류 1건(별개 MF-7 TestDbAtomicSaveMaint1114, MF-4 시험은 통과). 경로 지정 커밋 394030525(8파일: naver_src.json·엔진설계도·enginestate·osmu_manifest·routinehealth·towertick·시험·blog2naver_text). 새 코드 커밋이라 독립 검증 대상 — watch maint1120fix-verify-1121. 남은 MF-5~7 계속(정비), 새 지시 불필요",
+  "since": "23:34",
+  "since_at": "2026-11-20 23:34:50"
  },
  "log": [
+  {
+   "t": "00:28:46",
+   "text": "✅ MF-7 완료 — _git_last 창 숨김 옵션·stamp_engine_bui",
+   "actor": "정비"
+  },
+  {
+   "t": "00:18:46",
+   "text": "✅ MF-6 완료 — N-1·N-2 naver.cmd_draft 꺾쇠 게이트 fai",
+   "actor": "정비"
+  },
+  {
+   "t": "00:14:48",
+   "text": "✅ MF-5 완료 — R-2·R-3 주기·복구 예정일을 못 읽으면 판정 못 함으로",
+   "actor": "정비"
+  },
+  {
+   "t": "00:10:11",
+   "text": "▶   — 3/4단계 · 📨 이부장 00:10 MF-1~4 접수·커밋 — 정비 23:36 복창·MF-1~4 완료 mark 접수. 이부장 직접 확인: 장부 3건·백업, 해당 시험 17건, 전체 시험 691건 중 오류 1건(별개 MF-7 TestDbAtomicSaveMaint1114, MF-4 시험은 통과). 경로 지정 커밋 394030525(8파일: naver_src.json·엔진설계도·enginestate·osmu_manifest·routinehealth·towertick·시험·blog2naver_text). 새 코드 커밋이라 독립 검증 대상 — watch maint1120fix-verify-1121. 남은 MF-5~7 계속(정비), 새 지시 불필요",
+   "actor": "이부장"
+  },
   {
    "t": "00:06:17",
    "text": "▶   — 3/7단계 · 📨 이부장 00:15 LANE_IDLE(루틴2 A/B 7일째 제안 0) 처리 — 확인: 루틴2 11-20 회차는 후보 0·탈락 8(전부 기발행, 사유 열거)로 빈손 사유는 있음. 근본: A/B 레인 소재 고갈+발굴이 korea.kr 위주, 출입처 문서 docs/출입처_*는 건강방송·경제디지털·여행우리동네 3종뿐(A 정부지원·복지·B 세금금융 출입처 문서 없음 — 이부장이 실측). 처방: A·B 출입처 문서 신설(국세청·기재부·고용부·복지부·행안부 공식 목록 URL 중 curl 로 읽히는 것만) — 11-21 07:00 연료 재확인(watch fuel0-recheck-1121-0700) 때 3. 지시서로 포함. Aside 복구·법령 DRF 불가 상태라 curl 가능한 목록 위주",
@@ -12552,26 +12578,6 @@
    "t": "22:16:23",
    "text": "▶   — 6/7단계 · 📨 이부장 22:22 V0 결과 접수 — v0 에이전트 판정 조건부(고칠 곳 3+1, 숫자는 출처와 일치). 이부장이 원고 L93·L97~104·L126 직접 대조로 ①전국/수도권 오기 ②절감액 하객 수 조건 누락 ③패키지 차감 합 68.5% 확인. v0check fail(🟡) 기록 → fixer 에게 원고 수정 의뢰(출처 문서 대조 포함). 이과장은 이 초안을 수정하지 말 것(충돌 방지), 수정 뒤 이부장이 재검해 pass → 결재함",
    "actor": "이부장"
-  },
-  {
-   "t": "22:13:33",
-   "text": "▶   — 5/7단계 · 📨 이부장 22:17 접수·검토 — 이과장 22:11 🙋 3건 처리: ①V0 = 이부장이 v0 에이전트 의뢰(22:14), 결과 오면 이부장이 열어 pass/fail ②브랜드커넥트 검색 = Aside 미연결로 불가, 이 글은 소비자원 조사 해석·계약 점검 글이라 제휴 관련성이 약해 이부장이 affiliate none 기록(--why 사유, 22:16) ③승인 도장 = 사장님 ⑥ 결재 뒤(이과장은 스스로 go 금지), V0 통과 뒤 이부장이 결재함에 올림. 새 지시: 이과장은 V0 결과 전까지 네이버 원고·인스타·쓰레드 준비만(게시는 결재 뒤), 답장 불필요",
-   "actor": "이부장"
-  },
-  {
-   "t": "22:11:05",
-   "text": "▶   — 3/7단계 · ▶ H1-44 초안·썸네일 543·pubqueue add 완료(dupcheck🟢·bodydup🟢0.036·layout/heading ✅). 🙋 이부장 요청: ①V0 검사 ②네이버 글 브랜드커넥트 검색(brandconnect·Aside 미연결로 보류 — 그 전엔 affiliate none 못 기록) ③제휴 결정 후 승인 도장",
-   "actor": "이과장"
-  },
-  {
-   "t": "22:10:36",
-   "text": "▶   — 4/7단계 · 📨 이부장 22:14 — 이과장 H1-44 초안 큐 적재 접수(결혼식보증인원스드메사진파일163만원_글_HTML.txt, 썸네일 543_wedding_guarantee.png, 68.3% vs 63.8% 검산 표기). 작성자 아닌 v0 에이전트에 원본가치 반박 검사 맡김(22:14, 숫자 출처 대조·가정 표기·재정리 여부·기준일·중복). 결과 오면 이부장이 열어 확인 후 v0check pass/fail → 결재함",
-   "actor": "이부장"
-  },
-  {
-   "t": "22:00:59",
-   "text": "▶   — 1/7단계 · ▶ H1-44 지시서 읽음 — 출처 파일 열람 후 초안 착수(Aside 불필요 단계만)",
-   "actor": "이과장"
   }
  ],
  "currents": {
@@ -15082,7 +15088,7 @@
    "code": "",
    "title": "",
    "step": 3,
-   "what": "📨 이부장 23:59 접수·확인 — 정비 23:36 복창·23:40~23:48 MF-1·MF-2·MF-3 완료 mark 접수. 이부장 직접 확인: data/naver_src.json 3건(실제 원고 3건 보존·임시 경로 키 0)·백업 data/_naver_src_before_정리.json(304KB) ✅. 커밋: 설계도·tests 에 MF-4 진행분(TO10·TestScanFailMaint1120fix)이 미스테이지로 섞여 있어 지금 경로 지정 커밋하면 미완성 MF-4 가 들어감 → 정비가 MF-4 를 마친 뒤 MF-1~4 를 한 번에 이부장이 커밋. 전체 시험은 이부장이 직접 실행 중(결과 오면 판정). 새 지시: MF-4 끝나면 mark·전체 시험 수치 보고",
+   "what": "📨 이부장 00:10 MF-1~4 접수·커밋 — 정비 23:36 복창·MF-1~4 완료 mark 접수. 이부장 직접 확인: 장부 3건·백업, 해당 시험 17건, 전체 시험 691건 중 오류 1건(별개 MF-7 TestDbAtomicSaveMaint1114, MF-4 시험은 통과). 경로 지정 커밋 394030525(8파일: naver_src.json·엔진설계도·enginestate·osmu_manifest·routinehealth·towertick·시험·blog2naver_text). 새 코드 커밋이라 독립 검증 대상 — watch maint1120fix-verify-1121. 남은 MF-5~7 계속(정비), 새 지시 불필요",
    "since": "23:34",
    "since_at": "2026-11-20 23:34:50"
   }
@@ -50417,6 +50423,16 @@
    "title": "",
    "owner": "이부장",
    "what": "📨 이부장 00:15 LANE_IDLE(루틴2 A/B 7일째 제안 0) 처리 — 확인: 루틴2 11-20 회차는 후보 0·탈락 8(전부 기발행, 사유 열거)로 빈손 사유는 있음. 근본: A/B 레인 소재 고갈+발굴이 korea.kr 위주, 출입처 문서 docs/출입처_*는 건강방송·경제디지털·여행우리동네 3종뿐(A 정부지원·복지·B 세금금융 출입처 문서 없음 — 이부장이 실측). 처방: A·B 출입처 문서 신설(국세청·기재부·고용부·복지부·행안부 공식 목록 URL 중 curl 로 읽히는 것만) — 11-21 07:00 연료 재확인(watch fuel0-recheck-1121-0700) 때 3. 지시서로 포함. Aside 복구·법령 DRF 불가 상태라 curl 가능한 목록 위주",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-21 00:10:11",
+   "bid": "maint1120fix",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "📨 이부장 00:10 MF-1~4 접수·커밋 — 정비 23:36 복창·MF-1~4 완료 mark 접수. 이부장 직접 확인: 장부 3건·백업, 해당 시험 17건, 전체 시험 691건 중 오류 1건(별개 MF-7 TestDbAtomicSaveMaint1114, MF-4 시험은 통과). 경로 지정 커밋 394030525(8파일: naver_src.json·엔진설계도·enginestate·osmu_manifest·routinehealth·towertick·시험·blog2naver_text). 새 코드 커밋이라 독립 검증 대상 — watch maint1120fix-verify-1121. 남은 MF-5~7 계속(정비), 새 지시 불필요",
    "actor": "이부장",
    "sid": "a7dca46f"
   }
