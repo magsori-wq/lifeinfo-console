@@ -33654,7 +33654,50 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.watch show verify-phone4-1120-stalebuild",
    "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "Aside 실측 2026-11-20 08:45: 412px 낡음띠 3분=am(노랑 #ffb02e/#1a1200 10.1:1)·11분=rd(빨강 #b3261e/#fff 6.5:1)·정상=띠 없음·마지막 갱신 12.04px·top 127px(첫 화면) · 가려짐 10초 무재로드·200초 재로드 · BUILD 불일치 재로드 · pageshow persisted 재로드 · fetch 실패 am/rd · 뒤로 0 복귀"
+  },
+  {
+   "id": "fuel1030-1200",
+   "added": "2026-11-20",
+   "what": "fuel1030 12:00 중간 표(신규 제안 3건 미만 시)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "fuel1030-1800",
+   "added": "2026-11-20",
+   "what": "fuel1030 18:00 최종 보고",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "verify-livefix1119c-1120",
+   "added": "2026-11-20",
+   "what": "livefix1119c A6-05 mark 기록 '9천 7백 3건(3곳)' 실측 4건(라이브 본문 4회, diff 3줄) — 기록 수치 정정 필요, 본문 정정은 이상 없음",
+   "due": "2026-11-20",
+   "cmd": "python -c \"import re,html,urllib.request;h=urllib.request.urlopen(urllib.request.Request('https://lifeinfo8975.blogspot.com/2026/09/75-2026.html',headers={'User-Agent':'Mozilla/5.0'})).read().decode('utf-8','replace');print(len(re.findall('9천 7백',h)))\"",
+   "owner": "claude",
    "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "naver-f111-fix-1120",
+   "added": "2026-11-20",
+   "what": "【권고】승인 — 이미 라이브인 F1-11 네이버 글(blog.naver.com/magsori8975/224367700258)의 「ETIAS 4분기 예정」 단정을 「시행일 미정」으로 정정(제목·본문 6~7곳, 블로그스팟은 08:xx 정정 완료). 【근거】블로그스팟 F1-11 은 이미 「시행일 미정」으로 정정돼 라이브 대조 통과(이과장 mark). 네이버 글에는 옛 제목 「…ETIAS 4분기 예정」과 본문 「4분기 예정」 6건이 그대로라 같은 글인데 채널마다 사실이 다릅니다. 블로그스팟 교차링크 문구에도 옛 제목이 남아 있습니다. 【위험】제목·본문 교체(교체 전 백업·교체 후 PostView 재확인), 제목 변경은 네이버 검색 노출에 영향 가능. 거부하면 현재 글 유지(미확정을 확정처럼 읽힐 위험 그대로)",
+   "due": "2026-11-20",
+   "cmd": "echo 이과장이 F1-11 네이버 정정본(제목·본문) 준비 후 naverwrite --fix 로 교체(이부장 지시)",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
    "by": "세션:a7dca46f"
   }
  ]
