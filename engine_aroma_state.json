@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 15:52:19",
+ "at": "2026-11-20 15:52:44",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -115,7 +115,14 @@
   }
  ],
  "published_total": 61,
- "rev_wait": [],
+ "rev_wait": [
+  {
+   "code": "AM-BO-006",
+   "ids": [
+    "aroma-am-bo-006-update-1120"
+   ]
+  }
+ ],
  "cats": {
   "window": 14,
   "rows": [
@@ -313,7 +320,7 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-20 15:51",
+   "last_at": "2026-11-20 15:52",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
    "note": "복사된 미리보기 50개",
@@ -693,7 +700,7 @@
   "today": "2026-11-20",
   "done_today": 1,
   "published_today": 1,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -709,7 +716,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -753,7 +760,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -787,25 +794,40 @@
    ]
   }
  ],
- "approvals": [],
- "edits": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-bo-006-update-1120",
+   "what": "【권고】라이브 글 AM-BO-006(굿파트너2, 검색형 업데이트 박스) 수정 승인 — 제목 줄 「🔄 11월 20일 업데이트 — 오늘 밤 9시 5",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
+ "edits": [
+  {
+   "code": "AM-BO-006",
+   "title": "굿파트너2, 시즌1과 무엇이 달라졌나 — 공식 소개 문구는 「천직·처음」에서 「체질·진심」으로, 출연진 표기는 6명에서 4명으로",
+   "stage": "boss",
+   "packer": ""
+  }
+ ],
  "today_events": [
   {
    "code": "AM-BO-006",
    "stage": "proc",
-   "at": "2026-11-20 15:51:10",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-BO-011",
-   "stage": "proc",
-   "at": "2026-11-20 06:06:35",
+   "at": "2026-11-20 15:52:00",
    "src": "파일 수정 시각"
   },
   {
    "code": "AM-PE-016",
    "stage": "proc",
    "at": "2026-11-20 14:48:18",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-011",
+   "stage": "proc",
+   "at": "2026-11-20 06:06:35",
    "src": "파일 수정 시각"
   },
   {
@@ -908,7 +930,7 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-20 15:51",
+     "chip": "2026-11-20 15:52",
      "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 50개"
     }
    ]
