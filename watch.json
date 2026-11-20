@@ -34287,6 +34287,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "fuel0-recheck-1121-0700",
+   "added": "2026-11-20",
+   "what": "재고 0 지속 확인 — 11-21 07:00 에도 발행대기 재고가 하한(3) 미만이면 3.·루틴 갈래 확장을 이부장이 다시 지시(루틴4 21:09·루틴6 23:55 결과 포함)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.pace | tail -3; python -m studio.topicprop table | head -5",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
