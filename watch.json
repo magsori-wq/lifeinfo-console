@@ -34456,6 +34456,27 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "z2-detect-recheck-1121",
+   "added": "2026-11-20",
+   "what": "Z2 감지 실패(23:10 일시·빈 메시지) 재발 확인 + bca11a861 독립 검증 문서 확인(docs/검증_fable_bca11a861_20261120.md) → 판정에 따라 정비 지시서",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "aroma-am-bo-012-approve-1121",
+   "added": "2026-11-20",
+   "what": "【권고】AM-BO-012 「천천히 강렬하게 12월 11일 오후 5시 공개 — 공식 소개 시대 표기가 다르다」(방송·OTT·홈판형·44자) 게시 승인. 【근거】관심: 자동완성 「천천히 강렬하게」「등장인물」「몇부작」「작가」 + 공개일 12/11 D-21 / 출처: 넷플릭스 뉴스룸(about.netflix.com/ko/news/tantara-date-announcement, 2026-10-22)·netflix.com/tantara(11-20 직접 읽음) / V0 PASS 89점(별도 에이전트, 드래프트 _v0_AM-BO-012_1120.md) / 뉴스에 없는 것: 공식 두 곳 시대 표기 교차(1960~80년대 vs 1970s)·19+ 표기·배역표·공개 후 55시간 계산 / crossdup 전부 🟢(aroma 최고 BO-006 0.15) / 썸네일: 자체 그래픽(작품 사진 아님, 이전 글과 다름) / 사진: 본문에는 Wikimedia Commons 「Portable HMV LP… record player」(CC0) 1장 후보 — 다운로드 허락 요청(없으면 사진 없이 게시, 이유: 작품·배우 사진 사용 불가) / 임베드 없음 — 시도: Netflix K-Content 채널 RSS 최신 15건에 이 작품 영상 없음. 【위험】공개일·시각은 10/22 자료 기준이라 게시 직전 재확인, 몇 부작·러닝타임은 공식 미확인이라 쓰지 않음",
+   "due": "2026-11-21",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-BO-012_천천히강렬하게공개일.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:cb4cda81"
   }
  ]
 }
