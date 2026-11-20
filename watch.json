@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "items": [
   {
    "id": "intro-numbers",
@@ -34509,6 +34509,16 @@
    "what": "정비 maint1120fix MF-4 완료 mark 뒤 이부장이 MF-1~4 를 경로 지정 커밋(data/naver_src.json·studio/osmu_manifest.py·studio/routinehealth.py·studio/towertick.py·studio/enginestate.py·tests/test_studio_pure.py·docs/엔진설계도.md 등 git status 로 확인) → 전체 시험 재실행 → 필요하면 fable 재검증",
    "due": "2026-11-21",
    "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "lane-ab-sources-1121",
+   "added": "2026-11-21",
+   "what": "루틴2 A/B 레인 7일째 제안 0(LANE_IDLE) 처방 — docs/출입처_정부복지세금금융 신설(국세청·기재부·고용부·복지부·행안부 공식 목록 중 curl 로 읽히는 URL 만, 이부장 직접 확인 후 3. fuel1030 지시서에 포함). 11-21 07:00 연료 재확인과 함께 판단",
+   "due": "2026-11-21",
+   "cmd": "ls docs/출입처_*",
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
