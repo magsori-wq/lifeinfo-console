@@ -34502,6 +34502,16 @@
    "state": "todo",
    "by": "세션:cb4cda81",
    "preview": "aromapv_DG-015.html"
+  },
+  {
+   "id": "maint1120fix-commit",
+   "added": "2026-11-20",
+   "what": "정비 maint1120fix MF-4 완료 mark 뒤 이부장이 MF-1~4 를 경로 지정 커밋(data/naver_src.json·studio/osmu_manifest.py·studio/routinehealth.py·studio/towertick.py·studio/enginestate.py·tests/test_studio_pure.py·docs/엔진설계도.md 등 git status 로 확인) → 전체 시험 재실행 → 필요하면 fable 재검증",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }

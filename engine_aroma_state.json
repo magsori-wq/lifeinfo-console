@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 23:27:42",
+ "at": "2026-11-20 23:58:45",
  "errors": [],
  "rows": [
   {
@@ -20,6 +20,23 @@
    "no_preview": false
   },
   {
+   "code": "AM-DG-015",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-015-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-20"
+    }
+   ],
+   "title": "GTA6에디션가격",
+   "last_file_at": "2026-11-20 23:27",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-dg-015-approve-1121",
+   "no_preview": false
+  },
+  {
    "code": "AM-PE-017",
    "approvals": [
     {
@@ -35,15 +52,6 @@
    "label": "결재 대기",
    "detail": "aroma-am-pe-017-approve-1121",
    "no_preview": false
-  },
-  {
-   "code": "AM-DG-015",
-   "approvals": [],
-   "title": "GTA6에디션가격",
-   "last_file_at": "2026-11-20 23:25",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-DG-015_1120_r3.md · PASS 88점"
   }
  ],
  "old_inflight": [],
@@ -294,7 +302,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 23:27:37",
+   "last_at": "2026-11-20 23:58:41",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -339,7 +347,7 @@
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-20 22:17:54",
+   "last_at": "2026-11-20 23:29:19",
    "src": "now_log(bid=aroma)",
    "today_n": 29,
    "note": "횟수는 전체 세션",
@@ -357,43 +365,42 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-20 23:25",
+   "last_at": "2026-11-20 23:27",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 52개",
+   "note": "복사된 미리보기 53개",
    "at_node": "boss"
   }
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 68,
-  "cur": "이부장 ack r1f5593 — 이부장 22:21 처리 — 이",
+  "last_min": 22,
+  "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [],
-  "v0": [
-   {
-    "code": "AM-DG-015",
-    "title": "GTA6에디션가격",
-    "min": 2,
-    "lvl": "ok"
-   }
-  ],
+  "v0": [],
   "boss": [
    {
     "code": "AM-BO-012",
     "title": "천천히강렬하게공개일",
-    "min": 2,
+    "min": 33,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-DG-015",
+    "title": "GTA6에디션가격",
+    "min": 31,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-017",
     "title": "멜론티켓수수료인상",
-    "min": 2,
+    "min": 33,
     "lvl": "ok"
    }
   ],
@@ -757,7 +764,7 @@
   "today": "2026-11-20",
   "done_today": 1,
   "published_today": 1,
-  "boss_wait": 2,
+  "boss_wait": 3,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -773,16 +780,16 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 14,
+  "age_min": 5,
   "lvl": "amber"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 68,
-   "cur": "이부장 ack r1f5593 — 이부장 22:21 처리 — 이",
+   "last_min": 22,
+   "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
    "lvl": "ok"
   },
   {
@@ -794,10 +801,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 68,
-   "cur": "이부장 ack r1f5593 — 이부장 22:21 처리 — 이",
+   "last_min": 22,
+   "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -817,7 +824,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 2건"
+   "state": "결재 대기 3건"
   }
  ],
  "suppliers": [
@@ -825,7 +832,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "23:25",
+   "at": "23:27",
    "today": 6,
    "lvl": "ok",
    "order": null,
@@ -868,34 +875,17 @@
    "what": "【권고】AM-PE-017 「멜론티켓 수수료 12월 21일 인상 — 공연 4매 8,000원에서 12,000원」(공연·연예·검색형·44자) 게시 승",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-015-approve-1121",
+   "what": "【권고】AM-DG-015 「GTA6 가격 PS5 89,800원 vs 112,800원, 212GB 먼저 확인」(디지털 콘텐츠·여가·검색형·44자)",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-BO-011",
-   "stage": "proc",
-   "at": "2026-11-20 06:06:35",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-015",
-   "stage": "proc",
-   "at": "2026-11-20 23:23:41",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-BO-012",
-   "stage": "proc",
-   "at": "2026-11-20 23:22:14",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-016",
-   "stage": "proc",
-   "at": "2026-11-20 14:48:18",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-PE-017",
    "stage": "proc",
@@ -906,6 +896,30 @@
    "code": "AM-BO-006",
    "stage": "proc",
    "at": "2026-11-20 15:52:00",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-016",
+   "stage": "proc",
+   "at": "2026-11-20 14:48:18",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-012",
+   "stage": "proc",
+   "at": "2026-11-20 23:22:14",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-011",
+   "stage": "proc",
+   "at": "2026-11-20 06:06:35",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-015",
+   "stage": "proc",
+   "at": "2026-11-20 23:23:41",
    "src": "파일 수정 시각"
   },
   {
@@ -972,7 +986,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 23:27:37",
+     "chip": "2026-11-20 23:58:41",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1002,7 +1016,7 @@
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-20 22:17:54",
+     "chip": "2026-11-20 23:29:19",
      "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 29회 · 횟수는 전체 세션"
     },
     {
@@ -1014,8 +1028,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-20 23:25",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 52개"
+     "chip": "2026-11-20 23:27",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 53개"
     }
    ]
   },
