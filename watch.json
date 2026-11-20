@@ -34475,9 +34475,11 @@
    "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-BO-012_천천히강렬하게공개일.html\"",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
+   "state": "done",
    "by": "세션:cb4cda81",
-   "preview": "aromapv_BO-012.html"
+   "preview": "aromapv_BO-012.html",
+   "done_at": "2026-11-21",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "aroma-am-pe-017-approve-1121",
@@ -34553,6 +34555,28 @@
    "what": "정비 maint1121fix2(MF-8~11) 수리·시험·커밋 보고 확인 → 독립 검증 의뢰",
    "due": "2026-11-21",
    "cmd": "python -m studio.batchboard order --id maint1121fix2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "maint1121fix2-fable-0720",
+   "added": "2026-11-21",
+   "what": "fable 독립 재검증 a80afb5c7 결과(docs/검증_fable_a80afb5c7_20261121.md) 확인 → 통과면 batchboard confirm maint1121fix2",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard order --id maint1121fix2",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-21",
+   "result": "05:1x fable 도착 조건부·🔴0, 후속 maint1121fix3"
+  },
+  {
+   "id": "maint1121fix3-due",
+   "added": "2026-11-21",
+   "what": "정비 maint1121fix3(MF-12~14) 수리 보고 확인(시험 실행·diff)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard order --id maint1121fix3",
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
