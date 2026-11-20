@@ -33811,8 +33811,10 @@
    "due": "2026-11-20",
    "cmd": "python tools/ca_daily.py 20 --month 11 && python tools/ca_trend.py && python -m studio.kwgap --trend | head -3",
    "owner": "claude",
-   "state": "wait",
-   "by": "3.분석"
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-21",
+   "result": "11-20 일간 재판독 성공 — 100건 저장, kwgap 판독 확인"
   },
   {
    "id": "kwgap-trend-date-1121",
@@ -34357,8 +34359,10 @@
    "due": "2026-11-21",
    "cmd": "C:/Users/magso/AppData/Local/Aside/CLI/current/aside.exe host profiles",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-21",
+   "result": "05:5x PC 재부팅 후 Aside CDP 21420 LISTENING(제가 netstat 확인) + 이대리가 aside 로 AM-BO-012 게시 성공 보고(이대리 보고, 제가 직접 재현은 안 함). 이과장·이부장 전담 채팅 2개는 asidestate errored — 별도 확인"
   },
   {
    "id": "aside-open-boss-1121",
@@ -34582,8 +34586,10 @@
    "due": "2026-11-21",
    "cmd": "python -m studio.batchboard order --id maint1121fix3",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-21",
+   "result": "05:4x 정비 MF-12~14 확인 완료, ffab02bdd"
   },
   {
    "id": "h144-publish-trigger-1121",
