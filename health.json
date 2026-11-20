@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-11-20T10:26:38",
+ "checked_at": "2026-11-20T03:25:44",
  "light": "yellow",
- "pass": 15,
+ "pass": 14,
  "warn": 4,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 555편"
+   "msg": "count 일치: 557편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 555/555"
+   "msg": "thumb 1:1 정합 통과: 557/557"
   },
   {
    "level": "PASS",
@@ -31,11 +31,11 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 554개 코드 모두 DB.osmu 일치"
+   "msg": "매니페스트 신선도 통과: 557편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "posts_index 신선도 통과: 555편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 557편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -43,7 +43,7 @@
   },
   {
    "level": "PASS",
-   "msg": "원본가치 게이트 통과: 407편(신규 글, 148편은 기존 글로 예외)"
+   "msg": "원본가치 게이트 통과: 409편(신규 글, 148편은 기존 글로 예외)"
   },
   {
    "level": "PASS",
@@ -51,11 +51,7 @@
   },
   {
    "level": "PASS",
-   "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
-  },
-  {
-   "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 431종"
+   "msg": "초안 코드 1:1 통과: 430종"
   },
   {
    "level": "PASS",
@@ -63,7 +59,7 @@
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 1052개 .py"
+   "msg": "소스 구문 통과: 1045개 .py"
   },
   {
    "level": "WARN",
@@ -71,15 +67,15 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 316개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
+   "msg": "미사용 썸네일 307개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
   },
   {
    "level": "WARN",
-   "msg": "중분류 27/35개가 6~7편 초과 — 분가 검토(규칙 §5): H1 39편, G3 37편, F4 32편, B4 31편, D1 24편, C2 24편, B2 24편, A2 23편, A1 23편, F1 22편, A5 22편, G1 18편, D2 18편, F2 16편, E2 16편, G4 15편, F3 15편, D4 15편, A3 15편, D3 14편, C1 14편, E4 13편, B1 12편, C4 10편, C3 9편, A4 9편, B5 8편"
+   "msg": "중분류 27/35개가 6~7편 초과 — 분가 검토(규칙 §5): H1 39편, G3 37편, F4 32편, B4 32편, D1 24편, C2 24편, B2 24편, F1 23편, A2 23편, A1 23편, A5 22편, G1 18편, D2 18편, F2 16편, E2 16편, G4 15편, F3 15편, D4 15편, A3 15편, D3 14편, C1 14편, E4 13편, B1 12편, C4 10편, C3 9편, A4 9편, B5 8편"
   },
   {
    "level": "WARN",
-   "msg": "매니페스트 신선도: 제목·URL·썸네일 불일치 1건 → 'python -m studio.pipeline manifest' 재생성 권장"
+   "msg": "채널정합: C2-29 threads 게시 URL 이 보드 note(pub1120c229)에는 있는데 DB.osmu 에 없음 → 중복게시 가드가 눈이 먼다. 기록: python -m studio.pipeline threads-link --code C2-29 --url https://www.threads.com/@magsori8975/post/Df8iLMagXA7"
   }
  ]
 }
