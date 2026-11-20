@@ -34127,6 +34127,38 @@
    "preview": "aromapv_AM-BO-006u.html",
    "done_at": "2026-11-20",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "themealt-d221-gsc-retry",
+   "added": "2026-11-20",
+   "what": "D2-21 클린 URL GSC 색인 요청(4. exp1119m1 가설 검증용, 이부장 15:58) — A5-09 클린 URL 재시도 다음 순서(A5-09→D2-21), 2시간 간격 watch. 수락 화면 문구·시각을 gsc_log 와 now 에 남긴다(4.가 그 시각으로 판독 계산). 11-20 일일 할당량 소진 상태",
+   "due": "2026-11-20",
+   "cmd": "https://lifeinfo8975.blogspot.com/2026/11/11-18-pass-24-pass.html 을 GSC URL 검사→색인 생성 요청(aside repl, 스크립트 Temp/gs_A5-09.js 형태로 URL 교체) 후 python -m studio.gsc_log add D2-21, 수락 문구·시각을 batchboard now --batch exp1119m1 에 기록",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
+  },
+  {
+   "id": "mobredir1120-read",
+   "added": "2026-11-20",
+   "what": "4. Blogger 모바일 리디렉션 조사 결과 읽고 사장님께 권고 보고(지시서 mobredir1120, 기한 17:30)",
+   "due": "2026-11-20",
+   "cmd": "ls docs/source_blogger_mobile_redirect_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "기한을 17:00 으로 변경 — 새 watch 로 대체"
+  },
+  {
+   "id": "mobredir1120-read-1700",
+   "added": "2026-11-20",
+   "what": "4. Blogger 모바일 리디렉션 조사 최종(17:00) 읽고 사장님께 권고 보고(사장님 16:12 17시까지)",
+   "due": "2026-11-20",
+   "cmd": "ls docs/source_blogger_mobile_redirect_20261120.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
