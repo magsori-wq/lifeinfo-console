@@ -34165,12 +34165,38 @@
   {
    "id": "exact10-1120",
    "added": "2026-11-20",
-   "what": "크롤됨-미색인 10편 완전일치 검색: 대상표(docs/exact_match_targets_20261120.md)→이과장 지시서→결과 한 장. 네이버 사본이 나오면 글 단위 중복, 없으면 사이트 단위",
-   "due": "2026-11-21",
-   "cmd": "ls docs/exact_match_*_20261120.md",
+   "what": "exact1120 완전일치 검색 10편 결과 판독 (4. 조사)",
+   "due": "2026-11-20",
+   "cmd": "cat docs/exact_match_result_20261120.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-11-20",
+   "result": "완전일치 검색 1차(4. 임의 10편)·2차(5편×2종) 완료: 우리 블로그스팟·우리 네이버 모두 정확일치 상위10 0건 → 네이버 사본 선택 가설 근거 없음, 사이트/글 단위는 못 가름. 10번 본문 magsori8975 = 인스타 검색 결과 표시줄(링크 아님)"
+  },
+  {
+   "id": "exact1120-due",
+   "added": "2026-11-20",
+   "what": "4. exact1120 보고 17:38 기한 — 안 오면 이부장이 독촉·원인 확인, 오면 결과 파일 열어 판독",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard order --id exact1120 >/dev/null; ls docs/exact_match_result_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "4. 2차·10번 확인 보고 17:49 도착, 이부장 17:55 파일·보드 직접 열람"
+  },
+  {
+   "id": "exact1120-r2-1755",
+   "added": "2026-11-20",
+   "what": "사장님 17:55 보고 약속 — 4. exact1120 보완(2차: 5편·상위10·우리 주소 글자 그대로) 결과를 열어 읽고 보고. 안 오면 미보고 사유 확인·독촉",
+   "due": "2026-11-20",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('exact1120'))\"; tail -c 1500 docs/exact_match_result_20261120.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "17:55 사장님 보고 이행"
   }
  ]
 }
