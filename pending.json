@@ -1,13 +1,13 @@
 {
- "rev": "6f8e9014",
+ "rev": "b74d1235c",
  "counts": {
-  "total": 557,
-  "osmu_done": 554,
-  "osmu_pending": 3,
+  "total": 555,
+  "osmu_done": 555,
+  "osmu_pending": 0,
   "indexed": 0,
-  "index_pending": 557,
+  "index_pending": 555,
   "index_requested": 170,
-  "index_todo": 86,
+  "index_todo": 84,
   "index_benign": 301
  },
  "actionable": [
@@ -25,57 +25,6 @@
    "ch": {
     "g": true,
     "n": true,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "B4-36",
-   "title": "국외전출세 2027년 1월 1일 이후 출국부터 — 해외",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "C2-29",
-   "title": "위고비 중고거래·직구 괜찮을까? 해외에서 사 온 비만약",
-   "need": [
-    "OSMU",
-    "색인대기"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "req",
-   "ch": {
-    "g": true,
-    "n": false,
-    "t": false,
-    "i": false
-   }
-  },
-  {
-   "code": "F1-23",
-   "title": "인도네시아 중부칼리만탄 특별여행주의보 해제 — 1단계 ",
-   "need": [
-    "OSMU",
-    "색인요청"
-   ],
-   "action": "OSMU 확산",
-   "osmu": false,
-   "idxst": "todo",
-   "ch": {
-    "g": true,
-    "n": false,
     "t": false,
     "i": false
    }
@@ -227,6 +176,54 @@
   {
    "code": "A4-09",
    "title": "긴급복지 동절기 연료비 월 15만원 — 에너지바우처와 ",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A5-13",
+   "title": "2027년 고용보험료율 2.0% 인상 추진 — 월급 실",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A5-14",
+   "title": "난임치료휴가 유급 2일에서 4일로 — 11월 27일 시",
+   "need": [
+    "색인요청"
+   ],
+   "action": "색인 요청",
+   "osmu": true,
+   "idxst": "todo",
+   "ch": {
+    "g": true,
+    "n": true,
+    "t": true,
+    "i": true
+   }
+  },
+  {
+   "code": "A5-15",
+   "title": "대지급금 부정수급 신고포상금 상한 1억→2억, 2027",
    "need": [
     "색인요청"
    ],

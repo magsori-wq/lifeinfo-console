@@ -33899,6 +33899,49 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "publish-trigger-f123-b436-1120",
+   "added": "2026-11-20",
+   "what": "【권고】허용 — F1-23·B4-36 발행 트리거(gh workflow run publish.yml) 실행 허용. 【근거】사장님 ⑥ 승인 도장 완료(12:13), pubready 「발행 트리거 가능」 전 항목 ✅(V0·원격 일치·진행 중 run 없음). 자동 분류기가 이부장의 gh workflow run 을 막음. 【위험】라이브 블로그스팟에 글 2편 발행(되돌리기는 삭제/수정). F1-23 먼저, 끝나면 B4-36 순서",
+   "due": "2026-11-20",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F1-23 -f mode=live -f confirm=PUBLISH",
+   "owner": "user",
+   "state": "done",
+   "kind": "approve",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "fuel1030-1800-widen",
+   "added": "2026-11-20",
+   "what": "fuel1030 18:00 최종 — 재고 하한 밑이라 ②(기존 인기글 후속)·④(확정 공지 미리 쓰기) 로 넓혀 후보 탐색 후 보고(이부장 12:25 지시)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "idx-extra-req-check-1530",
+   "added": "2026-11-20",
+   "what": "4. 추가 1편 GSC 요청(고른 URL·이유·시각) mark 확인, 이과장 C2-29 색인 요청과 한도 합산",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "classifier-publish-h1-1120",
+   "added": "2026-11-20",
+   "what": "발행 트리거 분류기 거부 원인 가설 H1(실측 11-20): a7dca46f 발행 호출 74건 중 거부 9건. 거부 직전 대화에 해당 코드 승인 문구가 없었고 승인은 CP 파일 도장뿐이었다(11-20 03:15 UTC = 12:15 KST, F1-23, 사유 태그 Destructive or Unwanted Actions, 묶음 명령 batchboard+sleep+gh run list 동봉). 다음 거부 때 직전 메시지에 승인 문구가 있었는지 대조해 H1 을 확정하거나 기각한다.",
+   "due": "2026-11-23",
+   "cmd": "PYTHONIOENCODING=utf-8 python C:/Users/magso/AppData/Local/Temp/claude/d127bbacf628e9d6/a7dca46f-f53c-4660-a070-cda6cdeb5140/scratchpad/scan2.py a7dca46f-f53c-4660-a070-cda6cdeb5140",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
