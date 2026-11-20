@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 10:53:01",
+ "at": "2026-11-20 10:59:01",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -244,7 +244,7 @@
   ],
   "ledger_last": "AM-SP-021 · 2026-11-19 17:40 · 약 오전 0:40(11-19) · https://www.threads.com/@magsori8975/post/Df6rLxRgTnE · 사장님 aroma-threads-sp021-1119(3c1cd458e)·프로필 허용 idaeri-classifier-allow-sp021-1119(e521abc9f) · 없음(원고 그대로, 텍스트만) · 11-20 이후 일별 기록(예약 43",
   "ledger_unread": 0,
-  "ledger_odd": 0
+  "ledger_odd": 1
  },
  "threads": {
   "state": "active",
@@ -262,7 +262,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 10:52:54",
+   "last_at": "2026-11-20 10:58:55",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -334,10 +334,10 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 52,
-  "cur": "📨 이부장 10:00 접수 — 이대리 09:50 정기 점검(새",
+  "last_min": 4,
+  "cur": "📨 이부장 11:03 접수 — 이대리 10:57 쓰레드 유입 ",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -721,10 +721,10 @@
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 52,
-   "cur": "📨 이부장 10:00 접수 — 이대리 09:50 정기 점검(새",
+   "last_min": 4,
+   "cur": "📨 이부장 11:03 접수 — 이대리 10:57 쓰레드 유입 ",
    "lvl": "ok"
   },
   {
@@ -736,10 +736,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 52,
-   "cur": "📨 이부장 10:00 접수 — 이대리 09:50 정기 점검(새",
+   "last_min": 4,
+   "cur": "📨 이부장 11:03 접수 — 이대리 10:57 쓰레드 유입 ",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -846,7 +846,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 10:52:54",
+     "chip": "2026-11-20 10:58:55",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -940,6 +940,12 @@
      "lvl": "ok",
      "sub": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE",
      "href": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE"
+    },
+    {
+     "head": "⑤ 알아보지 못한 표·줄",
+     "chip": "1개",
+     "lvl": "idle",
+     "sub": "분석.md 에서 장부 행으로 읽지 못한 표·줄(AM 코드·URL·게시 시각이 없는 표, 또는 표 밖에서 AM 코드와 쓰레드 URL 이 함께 적힌 줄) — 장부가 아니거나 새 형식이다(행은 세지 않음)"
     },
     {
      "head": "⑤ 장부 최신 행",
