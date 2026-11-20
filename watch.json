@@ -34584,6 +34584,29 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "h144-publish-trigger-1121",
+   "added": "2026-11-21",
+   "what": "test",
+   "due": "2026-11-21",
+   "cmd": "x",
+   "owner": "user",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "이부장 시험 입력(test) 오등록 정정 — 아래 새 항목으로 대체"
+  },
+  {
+   "id": "h144-publish-trigger-1121b",
+   "added": "2026-11-21",
+   "what": "H1-44 발행 트리거가 자동 분류기에 막힘 — 사장님 ⑦ 승인 도장·V0 통과·원격 일치·진행 run 없음 확인됨. 채팅에 「허용」 한 줄 주시면 이부장이 실행(또는 PowerShell 에서 아래 명령 그대로). 【권고】허용 【근거】pubready 「발행 트리거 가능」 6항목 ✅ 【위험】라이브 글 1편 게시(게시 뒤 수정은 가능)",
+   "due": "2026-11-21",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=H1-44 -f mode=live -f confirm=PUBLISH -f file=결혼식보증인원스드메사진파일163만원_글_HTML.txt -f title='H1-44 결혼식 보증인원 스드메 사진파일 163만 원' -f post_title='결혼식 보증인원 줄일 수 있나 — 스튜디오 사진파일 따로 사면 163만 원'",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }

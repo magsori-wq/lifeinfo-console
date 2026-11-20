@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 05:36:02",
+ "at": "2026-11-21 05:40:20",
  "errors": [],
  "rows": [
   {
@@ -7,51 +7,48 @@
    "approvals": [
     {
      "id": "aroma-am-bo-012-approve-1121",
-     "state": "todo",
+     "state": "done",
      "kind": "approve",
-     "at": "2026-11-20"
+     "at": "2026-11-21"
     }
    ],
    "title": "천천히강렬하게공개일",
    "last_file_at": "2026-11-20 23:25",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-bo-012-approve-1121",
-   "no_preview": false
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 3ccbea9f3"
   },
   {
    "code": "AM-DG-015",
    "approvals": [
     {
      "id": "aroma-am-dg-015-approve-1121",
-     "state": "todo",
+     "state": "done",
      "kind": "approve",
-     "at": "2026-11-20"
+     "at": "2026-11-21"
     }
    ],
    "title": "GTA6에디션가격",
    "last_file_at": "2026-11-20 23:27",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-dg-015-approve-1121",
-   "no_preview": false
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 5800d112e"
   },
   {
    "code": "AM-PE-017",
    "approvals": [
     {
      "id": "aroma-am-pe-017-approve-1121",
-     "state": "todo",
+     "state": "done",
      "kind": "approve",
-     "at": "2026-11-20"
+     "at": "2026-11-21"
     }
    ],
    "title": "멜론티켓수수료인상",
    "last_file_at": "2026-11-20 23:25",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-pe-017-approve-1121",
-   "no_preview": false
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 bd116f4fc"
   }
  ],
  "old_inflight": [],
@@ -293,7 +290,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-21 05:35:41",
+   "last_at": "2026-11-21 05:37:11",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -367,7 +364,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 359,
+  "last_min": 364,
   "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
   "lvl": "ok"
  },
@@ -375,28 +372,28 @@
  "nodes": {
   "draft": [],
   "v0": [],
-  "boss": [
+  "boss": [],
+  "deploy": [],
+  "publish": [
    {
     "code": "AM-BO-012",
     "title": "천천히강렬하게공개일",
-    "min": 371,
+    "min": 3,
     "lvl": "ok"
    },
    {
     "code": "AM-DG-015",
     "title": "GTA6에디션가격",
-    "min": 369,
+    "min": 3,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-017",
     "title": "멜론티켓수수료인상",
-    "min": 371,
+    "min": 2,
     "lvl": "ok"
    }
   ],
-  "deploy": [],
-  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -741,7 +738,17 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "AM-BO-012"
+    },
+    {
+     "code": "AM-DG-015"
+    },
+    {
+     "code": "AM-PE-017"
+    }
+   ]
   }
  },
  "topics": [],
@@ -755,7 +762,7 @@
   "today": "2026-11-21",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 3,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -771,15 +778,15 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 2,
-  "lvl": "ok"
+  "age_min": 6,
+  "lvl": "amber"
  },
  "units": [
   {
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 359,
+   "last_min": 364,
    "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
    "lvl": "ok"
   },
@@ -794,7 +801,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 359,
+   "last_min": 364,
    "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -815,7 +822,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 3건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -845,31 +852,28 @@
    "codes": []
   }
  ],
- "approvals": [
+ "approvals": [],
+ "edits": [],
+ "today_events": [
   {
-   "kind": "aroma",
-   "id": "aroma-am-bo-012-approve-1121",
-   "what": "【권고】AM-BO-012 「천천히 강렬하게 12월 11일 오후 5시 공개 — 공식 소개 시대 표기가 다르다」(방송·OTT·홈판형·44자) 게시 ",
-   "by": "이대리",
-   "waited": ""
+   "code": "AM-BO-012",
+   "stage": "boss",
+   "at": "2026-11-21 05:36:56",
+   "src": "결재 커밋 시각"
   },
   {
-   "kind": "aroma",
-   "id": "aroma-am-pe-017-approve-1121",
-   "what": "【권고】AM-PE-017 「멜론티켓 수수료 12월 21일 인상 — 공연 4매 8,000원에서 12,000원」(공연·연예·검색형·44자) 게시 승",
-   "by": "이대리",
-   "waited": ""
+   "code": "AM-PE-017",
+   "stage": "boss",
+   "at": "2026-11-21 05:37:44",
+   "src": "결재 커밋 시각"
   },
   {
-   "kind": "aroma",
-   "id": "aroma-am-dg-015-approve-1121",
-   "what": "【권고】AM-DG-015 「GTA6 가격 PS5 89,800원 vs 112,800원, 212GB 먼저 확인」(디지털 콘텐츠·여가·검색형·44자)",
-   "by": "이대리",
-   "waited": ""
+   "code": "AM-DG-015",
+   "stage": "boss",
+   "at": "2026-11-21 05:37:20",
+   "src": "결재 커밋 시각"
   }
  ],
- "edits": [],
- "today_events": [],
  "incidents": [],
  "stage_of": {},
  "design_signals": [],
@@ -903,7 +907,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-21 05:35:41",
+     "chip": "2026-11-21 05:37:11",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
