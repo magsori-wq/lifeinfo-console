@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 12:30:24",
+ "at": "2026-11-20 12:45:08",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -158,7 +158,7 @@
  },
  "share": {
   "state": "active",
-  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 00:00)",
+  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 12:34)",
   "drafts": [
    {
     "code": "AM-SP-020",
@@ -177,7 +177,7 @@
       "raw": ""
      }
     ],
-    "posted": false
+    "posted": true
    },
    {
     "code": "AM-SP-021",
@@ -230,6 +230,12 @@
     "at": "2026-11-19 17:40",
     "tz": "KST",
     "url": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE"
+   },
+   {
+    "code": "AM-SP-020",
+    "at": "2026-11-20 12:34",
+    "tz": "KST",
+    "url": "https://www.threads.com/@magsori8975/post/Df8s0ULgX0B"
    }
   ],
   "slots": [
@@ -237,18 +243,18 @@
     "code": "AM-SP-020",
     "slot": "12:30~13:00",
     "state": "done",
-    "posted": false,
-    "posted_at": "",
-    "tz": ""
+    "posted": true,
+    "posted_at": "2026-11-20 12:34",
+    "tz": "KST"
    }
   ],
-  "ledger_last": "AM-SP-021 · 2026-11-19 17:40 · 약 오전 0:40(11-19) · https://www.threads.com/@magsori8975/post/Df6rLxRgTnE · 사장님 aroma-threads-sp021-1119(3c1cd458e)·프로필 허용 idaeri-classifier-allow-sp021-1119(e521abc9f) · 없음(원고 그대로, 텍스트만) · 11-20 이후 일별 기록(예약 43",
+  "ledger_last": "AM-SP-020 · 2026-11-20 12:34 · 약 오후 7:34(11-19) · https://www.threads.com/@magsori8975/post/Df8s0ULgX0B · 사장님 aroma-threads-sp020-1120(회수 커밋 fea2d2f17, 「전부 승인이」) · 없음(원고 그대로, 텍스트만) · 11-21 이후 일별 기록(예약 434f2bfc)",
   "ledger_unread": 0,
   "ledger_odd": 1
  },
  "threads": {
   "state": "active",
-  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 00:00)"
+  "label": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 12:34)"
  },
  "consts": {
   "stall_min": 240,
@@ -262,7 +268,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 12:30:02",
+   "last_at": "2026-11-20 12:45:03",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -309,7 +315,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-20 04:47:13",
    "src": "now_log(bid=aroma)",
-   "today_n": 15,
+   "today_n": 18,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -336,7 +342,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 41,
+  "last_min": 56,
   "cur": "📨 이부장 11:50 접수 — 이대리 11:52 정기 점검(새",
   "lvl": "ok"
  },
@@ -371,16 +377,17 @@
      "title": "",
      "url": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE",
      "at": "2026-11-19 17:40"
-    }
-   ],
-   "wait": [
+    },
     {
      "code": "AM-SP-020",
-     "title": "AM-SP-020 쓰레드 원고 (제안, 11/20 낮 게시용, 결재 전)"
+     "title": "",
+     "url": "https://www.threads.com/@magsori8975/post/Df8s0ULgX0B",
+     "at": "2026-11-20 12:34"
     }
    ],
-   "state": "waiting",
-   "label": "대기(승인·게시 전)"
+   "wait": [],
+   "state": "active",
+   "label": "가동"
   },
   "naver": {
    "done": [
@@ -723,7 +730,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 41,
+   "last_min": 56,
    "cur": "📨 이부장 11:50 접수 — 이대리 11:52 정기 점검(새",
    "lvl": "ok"
   },
@@ -738,7 +745,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 41,
+   "last_min": 56,
    "cur": "📨 이부장 11:50 접수 — 이대리 11:52 정기 점검(새",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -846,7 +853,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 12:30:02",
+     "chip": "2026-11-20 12:45:03",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -877,7 +884,7 @@
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-20 04:47:13",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 15회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 18회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
@@ -901,19 +908,19 @@
      "head": "① 상태",
      "chip": "가동",
      "lvl": "ok",
-     "sub": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 00:00)"
+     "sub": "가동 — 최근 7일 안에 원고·결재 움직임(마지막 11-20 12:34)"
     },
     {
      "head": "② 오늘 슬롯",
      "chip": "1건",
      "lvl": "idle",
-     "sub": "AM-SP-020 12:30~13:00(승인됨)"
+     "sub": "AM-SP-020 12:30~13:00(게시 완료 12:34 KST)"
     },
     {
      "head": "③ AM-SP-020",
-     "chip": "승인됨·게시 대기",
-     "lvl": "amber",
-     "sub": "승인됨 — 게시 기록 아직 없음 · 원고 11-19 17:08 · 카드 aroma-threads-sp020-1120(done 11-20)"
+     "chip": "게시됨",
+     "lvl": "ok",
+     "sub": "장부에 게시 기록 2026-11-20 12:34 · 원고 11-19 17:08 · 카드 aroma-threads-sp020-1120(done 11-20)"
     },
     {
      "head": "③ AM-SP-021",
@@ -942,6 +949,13 @@
      "href": "https://www.threads.com/@magsori8975/post/Df6rLxRgTnE"
     },
     {
+     "head": "④ AM-SP-020",
+     "chip": "게시 2026-11-20 12:34 KST",
+     "lvl": "ok",
+     "sub": "https://www.threads.com/@magsori8975/post/Df8s0ULgX0B",
+     "href": "https://www.threads.com/@magsori8975/post/Df8s0ULgX0B"
+    },
+    {
      "head": "⑤ 알아보지 못한 표·줄",
      "chip": "1개",
      "lvl": "idle",
@@ -951,7 +965,7 @@
      "head": "⑤ 장부 최신 행",
      "chip": "분석.md",
      "lvl": "idle",
-     "sub": "AM-SP-021 · 2026-11-19 17:40 · 약 오전 0:40(11-19) · https://www.threads.com/@magsori8975/post/Df6rLxRgTnE · 사장님 aroma-threads-sp021-1119(3c1cd458e)·프로필 허용 idaeri-classifier-allow-sp021-1119(e521abc9f) · 없음(원고 그대로, 텍스트만) · 11-20 이후 일별 기록(예약 43"
+     "sub": "AM-SP-020 · 2026-11-20 12:34 · 약 오후 7:34(11-19) · https://www.threads.com/@magsori8975/post/Df8s0ULgX0B · 사장님 aroma-threads-sp020-1120(회수 커밋 fea2d2f17, 「전부 승인이」) · 없음(원고 그대로, 텍스트만) · 11-21 이후 일별 기록(예약 434f2bfc)"
     }
    ]
   },
