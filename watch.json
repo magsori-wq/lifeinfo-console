@@ -34510,8 +34510,10 @@
    "due": "2026-11-21",
    "cmd": "python -m studio.batchboard show",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-21",
+   "result": "MF-1~4 394030525·MF-5~7 19ce631d1 커밋, 독립 검증(fable) 의뢰 04:46"
   },
   {
    "id": "lane-ab-sources-1121",
@@ -34529,6 +34531,28 @@
    "what": "커밋 394030525(정비 MF-1~4) 독립 검증 — fable 로 diff 한정 재검증(O-1 장부·R-1 일시중지·O-2 원자 쓰기·T-1 감시 신호·Z2 git 종료코드), 결과 문서에 해시 포함 + 판정 줄 확인. MF-5~7 끝나면 한 번에 묶어도 됨",
    "due": "2026-11-21",
    "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "maint1120fix-fable2-0700",
+   "added": "2026-11-21",
+   "what": "MF-1~7 독립 검증(fable) 결과 문서 확인 → 판정이 통과면 maint1120fix confirm, 조건부면 정비 지시서로 갱신. 알림 CODE_UNVERIFIED 394030525·19ce631d1 은 이 문서의 해시로 해소됨",
+   "due": "2026-11-21",
+   "cmd": "ls docs/검증_fable_394030525_19ce631d1_20261121.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-21",
+   "result": "04:5x fable 재검증 도착·조건부, 후속 maint1121fix2"
+  },
+  {
+   "id": "maint1121fix2-due",
+   "added": "2026-11-21",
+   "what": "정비 maint1121fix2(MF-8~11) 수리·시험·커밋 보고 확인 → 독립 검증 의뢰",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard order --id maint1121fix2",
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"

@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-11-20T22:34:30",
+ "checked_at": "2026-11-21T05:06:25",
  "light": "yellow",
- "pass": 14,
- "warn": 5,
+ "pass": 15,
+ "warn": 4,
  "fail": 0,
  "checks": [
   {
@@ -51,6 +51,10 @@
   },
   {
    "level": "PASS",
+   "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
+  },
+  {
+   "level": "PASS",
    "msg": "초안 코드 1:1 통과: 432종"
   },
   {
@@ -76,10 +80,6 @@
   {
    "level": "WARN",
    "msg": "매니페스트 신선도: 누락 2편(B4-36, F1-23) · 제목·URL·썸네일 불일치 1건 → 'python -m studio.pipeline manifest' 재생성 권장"
-  },
-  {
-   "level": "WARN",
-   "msg": "채널정합 검사 건너뜀()"
   }
  ]
 }
