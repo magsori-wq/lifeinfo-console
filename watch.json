@@ -33475,8 +33475,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | grep rhealth",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "18:03 이부장 직접 확인: RH-1~5 done·시험 8 OK·enginemap 🔴0·routinehealth 10행 출력, confirm 완료. (17:30 진행 확인은 놓쳤음 — 인정)"
   },
   {
    "id": "verify-maint1120phone3-1120",
@@ -34197,6 +34199,36 @@
    "by": "세션:a7dca46f",
    "done_at": "2026-11-20",
    "result": "17:55 사장님 보고 이행"
+  },
+  {
+   "id": "rhealth-r10-2308",
+   "added": "2026-11-20",
+   "what": "루틴10 23:08 첫 실행 뒤 routinehealth 10번 ✅ 전환 확인(🟡 138h 해소)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.routinehealth | tail -2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "adsite1120-due",
+   "added": "2026-11-20",
+   "what": "4. adsite1120 중간 18:40·최종 19:00 — 결과 파일(docs/site_review_*_20261120.md)을 이부장이 직접 열어 확인한 뒤 사장님께 고칠 것 보고. 안 오면 독촉",
+   "due": "2026-11-20",
+   "cmd": "ls docs/site_review_*_20261120.md; python -c \"from studio import sessionstate as s;print(s.read_info('adsite1120'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "site12-b402-penalty-mismatch",
+   "added": "2026-11-20",
+   "what": "B4-02 라이브 본문: 납부지연 금액(11,000/37,840/64,680)이 본문 공식 200만×0.022%×일수와 1일씩 어긋남, 기준일 2026년7월 vs URL 2026/06 · 8월3일 확인 표기 모순. 원문 미대조",
+   "due": "2026-11-27",
+   "cmd": "curl -s -A 'Mozilla/5.0' https://lifeinfo8975.blogspot.com/2026/06/1-2026.html | grep -c '37,840'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
   }
  ]
 }
