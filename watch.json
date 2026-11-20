@@ -33899,6 +33899,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "publish-trigger-f123-b436-1120",
+   "added": "2026-11-20",
+   "what": "【권고】허용 — F1-23·B4-36 발행 트리거(gh workflow run publish.yml) 실행 허용. 【근거】사장님 ⑥ 승인 도장 완료(12:13), pubready 「발행 트리거 가능」 전 항목 ✅(V0·원격 일치·진행 중 run 없음). 자동 분류기가 이부장의 gh workflow run 을 막음. 【위험】라이브 블로그스팟에 글 2편 발행(되돌리기는 삭제/수정). F1-23 먼저, 끝나면 B4-36 순서",
+   "due": "2026-11-20",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=F1-23 -f mode=live -f confirm=PUBLISH",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "세션:a7dca46f"
   }
  ]
 }
