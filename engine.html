@@ -186,11 +186,296 @@ html,html *{forced-color-adjust:none}
 :root[data-theme=dark] #map .gauge.am .gbg{fill:#262521!important}:root[data-theme=dark] #map .gauge.rd .gbg{fill:#301e26!important}
 :root[data-theme=dark] #map .nd text.t1,:root[data-theme=dark] #map .gv,:root[data-theme=dark] #map .hub text,:root[data-theme=dark] #map .dot text{fill:#d8e6f0!important}
 :root[data-theme=dark] #map .nd text.t2{fill:#a3b6c4}
-:root[data-theme=light]{color-scheme:only light}
+:root[data-theme=dark] #hubt{fill:#a3b6c4!important}:root[data-theme=light] #hubt{fill:#4a5b69!important}/* 칠·글자 짝 고정(사장님 11-20 12:59): 탱크 라벨은 채움(빨강·주황) 위에 얹혀 대비가 흔들렸다 → 라벨 자체에 어두운(라이트는 밝은) 알약 바탕 */.tank .tlab{background:var(--panel);padding:0 7px;border-radius:9px;text-shadow:none}:root[data-theme=dark] .eflow .ec span,:root[data-theme=dark] .eflow .ec span *{color:#15222e!important}:root[data-theme=light] .eflow .ec span,:root[data-theme=light] .eflow .ec span *{color:#ffffff!important}:root[data-theme=light]{color-scheme:only light}
 :root[data-theme=light] #map .nd rect.bx,:root[data-theme=light] #map .hub circle{fill:#f0f4f8!important}
 :root[data-theme=light] #map .gbg{fill:#ffffff!important}
 :root[data-theme=light] #map .nd text.t1,:root[data-theme=light] #map .gv,:root[data-theme=light] #map .hub text,:root[data-theme=light] #map .dot text{fill:#15222e!important}
 #diag{font-size:12px;line-height:1.4;color:var(--fg);background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 6px;margin:3px 0;word-break:break-all}
+</style>
+<style id="svgLock">
+/* 자동 생성 — tools/gen_svglock.py (사장님 11-20 12:56: SVG 칠을 변수 없이 명시색으로) */
+:root[data-theme=dark] html,:root[data-theme=dark] body{background:#070b10!important;color:#d8e6f0!important}
+:root[data-theme=dark] #top{background:#070b10!important}
+:root[data-theme=dark] .radar .rr{stroke:#2fe08a!important}
+:root[data-theme=dark] .radar .rx{stroke:#2fe08a!important}
+:root[data-theme=dark] .radar .sw path{fill:#2fe08a!important}
+:root[data-theme=dark] .radar .bp{fill:#2fe08a!important}
+:root[data-theme=dark] .radar.dead .sw path{fill:#4a5b69!important}
+:root[data-theme=dark] .radar.dead .rr,:root[data-theme=dark] .radar.dead .rx{stroke:#4a5b69!important}
+:root[data-theme=dark] .live{color:#2fe08a!important}
+:root[data-theme=dark] .live.dead{color:#4a5b69!important}
+:root[data-theme=dark] .meta{color:#a3b6c4!important}
+:root[data-theme=dark] .clock{color:#4db3ff!important}
+:root[data-theme=dark] .btn{color:#4db3ff!important;background:#0e1620!important}
+:root[data-theme=dark] .lane .lh{color:#a3b6c4!important}
+:root[data-theme=dark] .lane .cp{background:#121d29!important}
+:root[data-theme=dark] .lane .cp .nt{color:#a3b6c4!important}
+:root[data-theme=dark] .lane .unr{color:#ffb02e!important}
+:root[data-theme=dark] .apo{color:#4db3ff!important}
+:root[data-theme=dark] .drv text{fill:#a3b6c4!important}
+:root[data-theme=dark] .drv.on text{fill:#4db3ff!important}
+:root[data-theme=dark] .lane .cp.feed{background:linear-gradient(90deg,#121d29 0%,rgba(77,179,255,.18) 50%,#121d29 100%)!important}
+:root[data-theme=dark] .lane .fd{color:#4db3ff!important}
+:root[data-theme=dark] #nd-topic.fueling .bx{stroke:#4db3ff!important}
+:root[data-theme=dark] .eflow .lh{color:#a46bff!important}
+:root[data-theme=dark] .eflow .est{background:#121d29!important}
+:root[data-theme=dark] .eflow .est small{color:#a3b6c4!important}
+:root[data-theme=dark] .eflow .ec span{background:#a46bff!important}
+:root[data-theme=dark] .eflow .est.dn .ec span{background:#2fe08a!important}
+:root[data-theme=dark] .eflow .ear{background:#1f3040!important}
+:root[data-theme=dark] .eflow .ear.on{background:linear-gradient(90deg,transparent 0,#a46bff 40%,transparent 80%)!important}
+:root[data-theme=dark] html.reduce .eflow .ear.on{background:#a46bff!important}
+:root[data-theme=dark] .tank{background:#121d29!important}
+:root[data-theme=dark] .tank .tmin{background:#ff4d4d!important}
+:root[data-theme=dark] .tank .tlab{color:#d8e6f0!important}
+:root[data-theme=dark] .panel{background:#0e1620!important}
+:root[data-theme=dark] .panel h2 small{color:#a3b6c4!important}
+:root[data-theme=dark] svg text{fill:#d8e6f0!important}
+:root[data-theme=dark] .nd rect.bx{fill:#121d29!important;stroke:#4a5b69!important}
+:root[data-theme=dark] .nd .t2{fill:#a3b6c4!important}
+:root[data-theme=dark] .nd.live rect.bx{stroke:#4db3ff!important}
+:root[data-theme=dark] .nd.am rect.bx{stroke:#ffb02e!important}
+:root[data-theme=dark] .nd.am .t2{fill:#ffb02e!important}
+:root[data-theme=dark] .nd.rd rect.bx{stroke:#ff4d4d!important}
+:root[data-theme=dark] .nd.rd .t2{fill:#ff4d4d!important}
+:root[data-theme=dark] .nd:hover rect.bx,:root[data-theme=dark] .nd:focus rect.bx{stroke:#4db3ff!important}
+:root[data-theme=dark] .nd.sel rect.bx{stroke:#4db3ff!important;fill:#1a3247!important}
+:root[data-theme=dark] .nd.rd:hover rect.bx{stroke:#ff4d4d!important}
+:root[data-theme=dark] .nd.pk rect.bx{stroke:#4db3ff!important}
+:root[data-theme=dark] .hub circle{fill:#121d29!important;stroke:#4a5b69!important}
+:root[data-theme=dark] .hub.rd circle{stroke:#ff4d4d!important}
+:root[data-theme=dark] .hub.am circle{stroke:#ffb02e!important}
+:root[data-theme=dark] .hub.pk circle{stroke:#4db3ff!important}
+:root[data-theme=dark] .pc{stroke:#111c27!important}
+:root[data-theme=dark] .pc.flow{stroke:#1b344a!important}
+:root[data-theme=dark] .pc.am{stroke:#453d29!important}
+:root[data-theme=dark] .pc.rd{stroke:#582b32!important}
+:root[data-theme=dark] .ed{stroke:#1d2c3b!important}
+:root[data-theme=dark] .ed.flow{stroke:#4db3ff!important}
+:root[data-theme=dark] .ed.am{stroke:#ffb02e!important}
+:root[data-theme=dark] .ed.rd{stroke:#ff4d4d!important}
+:root[data-theme=dark] .fl{fill:#a3b6c4!important}
+:root[data-theme=dark] .pt{fill:#4db3ff!important}
+:root[data-theme=dark] .pt.am{fill:#ffb02e!important}
+:root[data-theme=dark] .pt.rd{fill:#ff4d4d!important}
+:root[data-theme=dark] .pt.pu{fill:#a46bff!important}
+:root[data-theme=dark] .pc.cr{stroke:#20243d!important}
+:root[data-theme=dark] .pc.cr.pu{stroke:#342f5b!important}
+:root[data-theme=dark] svg .dot.ex-asd .dm{stroke:#0e1620!important}
+:root[data-theme=dark] .exlg{color:#a3b6c4!important}
+:root[data-theme=dark] .ed.cr{stroke:#463f76!important}
+:root[data-theme=dark] .ed.cr.pu{stroke:#a46bff!important}
+:root[data-theme=dark] .nd.cr rect.bx{stroke:#6e61a5!important}
+:root[data-theme=dark] .nd.cr.live rect.bx{stroke:#a46bff!important}
+:root[data-theme=dark] .gauge.pu .gld{stroke:#a46bff!important}
+:root[data-theme=dark] .dot.pu circle{fill:#a46bff!important}
+:root[data-theme=dark] .rip.pu{stroke:#a46bff!important}
+:root[data-theme=dark] .gbg{fill:#0e1620!important}
+:root[data-theme=dark] .gtr{stroke:#1f3040!important}
+:root[data-theme=dark] .gld{stroke:#4a5b69!important}
+:root[data-theme=dark] .gauge.ok .gld{stroke:#4db3ff!important}
+:root[data-theme=dark] .gauge.term.ok .gld{stroke:#2fe08a!important}
+:root[data-theme=dark] .gauge.am .gld{stroke:#ffb02e!important}
+:root[data-theme=dark] .gauge.rd .gld{stroke:#ff4d4d!important}
+:root[data-theme=dark] .gauge.rd .gbg{fill:#301e26!important}
+:root[data-theme=dark] .gauge.am .gbg{fill:#262521!important}
+:root[data-theme=dark] .gdl{stroke:#1f3040!important}
+:root[data-theme=dark] .gza{stroke:#ffb02e!important}
+:root[data-theme=dark] .gzr{stroke:#ff4d4d!important}
+:root[data-theme=dark] .gnd{stroke:#d8e6f0!important}
+:root[data-theme=dark] .gauge.idle .gv{fill:#a3b6c4!important}
+:root[data-theme=dark] .rip{stroke:#2fe08a!important}
+:root[data-theme=dark] .dot circle{fill:#4db3ff!important;stroke:#0e1620!important}
+:root[data-theme=dark] .dot.am circle{fill:#ffb02e!important}
+:root[data-theme=dark] .dot.rd circle{fill:#ff4d4d!important}
+:root[data-theme=dark] .dot.dn circle{fill:#2fe08a!important}
+:root[data-theme=dark] .rdot circle{fill:#4db3ff!important;stroke:#0e1620!important}
+:root[data-theme=dark] .rdot.dn circle{fill:#2fe08a!important}
+:root[data-theme=dark] .spark{fill:#2fe08a!important}
+:root[data-theme=dark] .rpbar{background:#121d29!important}
+:root[data-theme=dark] .rpfill{background:rgba(77,179,255,.3)!important}
+:root[data-theme=dark] .rptk{background:#a3b6c4!important}
+:root[data-theme=dark] .rptk.s-blog,:root[data-theme=dark] .rptk.s-naver,:root[data-theme=dark] .rptk.s-insta,:root[data-theme=dark] .rptk.s-threads{background:#2fe08a!important}
+:root[data-theme=dark] .rptk.s-pub{background:#4db3ff!important}
+:root[data-theme=dark] .rptk.s-boss{background:#ffb02e!important}
+:root[data-theme=dark] .rpt{color:#4db3ff!important}
+:root[data-theme=dark] .rpnote,:root[data-theme=dark] .lg{color:#a3b6c4!important}
+:root[data-theme=dark] #detail h4{color:#a3b6c4!important}
+:root[data-theme=dark] #detail li{background:#121d29!important}
+:root[data-theme=dark] #detail a,:root[data-theme=dark] .steps a{color:#4db3ff!important}
+:root[data-theme=dark] .steps li{background:#121d29!important}
+:root[data-theme=dark] .steps li.am{background:#33322a!important}
+:root[data-theme=dark] .steps li.rd{background:#3d262f!important}
+:root[data-theme=dark] .steps li .w{color:#a3b6c4!important}
+:root[data-theme=dark] .steps li.empty{color:#a3b6c4!important}
+:root[data-theme=dark] .flash{background:#4a3d12!important}
+:root[data-theme=dark] .kp span{background:#121d29!important}
+:root[data-theme=dark] .kp .rd b{color:#ff4d4d!important}
+:root[data-theme=dark] .kp .am b{color:#ffb02e!important}
+:root[data-theme=dark] .kp .ok b{color:#2fe08a!important}
+:root[data-theme=dark] details.strip{background:#0e1620!important}
+:root[data-theme=dark] details.strip li{background:#121d29!important}
+:root[data-theme=dark] details.strip h3{color:#a3b6c4!important}
+:root[data-theme=dark] #rflt .rfl.ok{color:#2fe08a!important}
+:root[data-theme=dark] #rflt .rfl.stale{color:#ffb02e!important}
+:root[data-theme=dark] #rflt .rfl.bad{color:#ff4d4d!important}
+:root[data-theme=dark] #rflt .rfl.na{color:#4a5b69!important}
+:root[data-theme=dark] #rflt a{color:#4db3ff!important}
+:root[data-theme=dark] #dbody code{background:#121d29!important}
+:root[data-theme=dark] #roomExtra .xs{color:#a3b6c4!important}
+:root[data-theme=dark] .mo{color:#a3b6c4!important}
+:root[data-theme=dark] .exlg .k1{color:#38bdf8!important}
+:root[data-theme=dark] .exlg .k2{color:#f472b6!important}
+:root[data-theme=dark] .exlg .k3{color:#a3adba!important}
+:root[data-theme=dark] .nd text{stroke:#121d29!important}
+:root[data-theme=dark] .nd.sel text{stroke:#1a3247!important}
+:root[data-theme=dark] .gauge .gv{stroke:#0e1620!important}
+:root[data-theme=dark] .gauge.rd .gv{stroke:#301e26!important}
+:root[data-theme=dark] .gauge.am .gv{stroke:#262521!important}
+:root[data-theme=dark] .hub text{stroke:#121d29!important}
+:root[data-theme=dark] .fl,:root[data-theme=dark] .drv text,:root[data-theme=dark] #hubt{stroke:#0e1620!important}
+:root[data-theme=dark] .dot text{stroke:#0e1620!important}
+:root[data-theme=light] html,:root[data-theme=light] body{background:#f4f7fa!important;color:#15222e!important}
+:root[data-theme=light] #top{background:#f4f7fa!important}
+:root[data-theme=light] .radar .rr{stroke:#0b7a45!important}
+:root[data-theme=light] .radar .rx{stroke:#0b7a45!important}
+:root[data-theme=light] .radar .sw path{fill:#0b7a45!important}
+:root[data-theme=light] .radar .bp{fill:#0b7a45!important}
+:root[data-theme=light] .radar.dead .sw path{fill:#9aa9b6!important}
+:root[data-theme=light] .radar.dead .rr,:root[data-theme=light] .radar.dead .rx{stroke:#9aa9b6!important}
+:root[data-theme=light] .live{color:#0b7a45!important}
+:root[data-theme=light] .live.dead{color:#9aa9b6!important}
+:root[data-theme=light] .meta{color:#4a5b69!important}
+:root[data-theme=light] .clock{color:#1565b0!important}
+:root[data-theme=light] .btn{color:#1565b0!important;background:#ffffff!important}
+:root[data-theme=light] .lane .lh{color:#4a5b69!important}
+:root[data-theme=light] .lane .cp{background:#f0f4f8!important}
+:root[data-theme=light] .lane .cp .nt{color:#4a5b69!important}
+:root[data-theme=light] .lane .unr{color:#8a5200!important}
+:root[data-theme=light] .apo{color:#1565b0!important}
+:root[data-theme=light] .drv text{fill:#4a5b69!important}
+:root[data-theme=light] .drv.on text{fill:#1565b0!important}
+:root[data-theme=light] .lane .cp.feed{background:linear-gradient(90deg,#f0f4f8 0%,rgba(77,179,255,.18) 50%,#f0f4f8 100%)!important}
+:root[data-theme=light] .lane .fd{color:#1565b0!important}
+:root[data-theme=light] #nd-topic.fueling .bx{stroke:#1565b0!important}
+:root[data-theme=light] .eflow .lh{color:#6a3dcb!important}
+:root[data-theme=light] .eflow .est{background:#f0f4f8!important}
+:root[data-theme=light] .eflow .est small{color:#4a5b69!important}
+:root[data-theme=light] .eflow .ec span{background:#6a3dcb!important}
+:root[data-theme=light] .eflow .est.dn .ec span{background:#0b7a45!important}
+:root[data-theme=light] .eflow .ear{background:#d5dee7!important}
+:root[data-theme=light] .eflow .ear.on{background:linear-gradient(90deg,transparent 0,#6a3dcb 40%,transparent 80%)!important}
+:root[data-theme=light] html.reduce .eflow .ear.on{background:#6a3dcb!important}
+:root[data-theme=light] .tank{background:#f0f4f8!important}
+:root[data-theme=light] .tank .tmin{background:#c62828!important}
+:root[data-theme=light] .tank .tlab{color:#15222e!important}
+:root[data-theme=light] .panel{background:#ffffff!important}
+:root[data-theme=light] .panel h2 small{color:#4a5b69!important}
+:root[data-theme=light] svg text{fill:#15222e!important}
+:root[data-theme=light] .nd rect.bx{fill:#f0f4f8!important;stroke:#9aa9b6!important}
+:root[data-theme=light] .nd .t2{fill:#4a5b69!important}
+:root[data-theme=light] .nd.live rect.bx{stroke:#1565b0!important}
+:root[data-theme=light] .nd.am rect.bx{stroke:#8a5200!important}
+:root[data-theme=light] .nd.am .t2{fill:#8a5200!important}
+:root[data-theme=light] .nd.rd rect.bx{stroke:#c62828!important}
+:root[data-theme=light] .nd.rd .t2{fill:#c62828!important}
+:root[data-theme=light] .nd:hover rect.bx,:root[data-theme=light] .nd:focus rect.bx{stroke:#1565b0!important}
+:root[data-theme=light] .nd.sel rect.bx{stroke:#1565b0!important;fill:#d1e0ee!important}
+:root[data-theme=light] .nd.rd:hover rect.bx{stroke:#c62828!important}
+:root[data-theme=light] .nd.pk rect.bx{stroke:#1565b0!important}
+:root[data-theme=light] .hub circle{fill:#f0f4f8!important;stroke:#9aa9b6!important}
+:root[data-theme=light] .hub.rd circle{stroke:#c62828!important}
+:root[data-theme=light] .hub.am circle{stroke:#8a5200!important}
+:root[data-theme=light] .hub.pk circle{stroke:#1565b0!important}
+:root[data-theme=light] .pc{stroke:#e2e9f0!important}
+:root[data-theme=light] .pc.flow{stroke:#c1d4e6!important}
+:root[data-theme=light] .pc.am{stroke:#cfc8bb!important}
+:root[data-theme=light] .pc.rd{stroke:#daafb4!important}
+:root[data-theme=light] .ed{stroke:#cdd8e3!important}
+:root[data-theme=light] .ed.flow{stroke:#1565b0!important}
+:root[data-theme=light] .ed.am{stroke:#8a5200!important}
+:root[data-theme=light] .ed.rd{stroke:#c62828!important}
+:root[data-theme=light] .fl{fill:#4a5b69!important}
+:root[data-theme=light] .pt{fill:#1565b0!important}
+:root[data-theme=light] .pt.am{fill:#8a5200!important}
+:root[data-theme=light] .pt.rd{fill:#c62828!important}
+:root[data-theme=light] .pt.pu{fill:#6a3dcb!important}
+:root[data-theme=light] .pc.cr{stroke:#d6d8ec!important}
+:root[data-theme=light] .pc.cr.pu{stroke:#c5c0e7!important}
+:root[data-theme=light] svg .dot.ex-asd .dm{stroke:#ffffff!important}
+:root[data-theme=light] .exlg{color:#4a5b69!important}
+:root[data-theme=light] .ed.cr{stroke:#afaadc!important}
+:root[data-theme=light] .ed.cr.pu{stroke:#6a3dcb!important}
+:root[data-theme=light] .nd.cr rect.bx{stroke:#877ebe!important}
+:root[data-theme=light] .nd.cr.live rect.bx{stroke:#6a3dcb!important}
+:root[data-theme=light] .gauge.pu .gld{stroke:#6a3dcb!important}
+:root[data-theme=light] .dot.pu circle{fill:#6a3dcb!important}
+:root[data-theme=light] .rip.pu{stroke:#6a3dcb!important}
+:root[data-theme=light] .gbg{fill:#ffffff!important}
+:root[data-theme=light] .gtr{stroke:#d5dee7!important}
+:root[data-theme=light] .gld{stroke:#9aa9b6!important}
+:root[data-theme=light] .gauge.ok .gld{stroke:#1565b0!important}
+:root[data-theme=light] .gauge.term.ok .gld{stroke:#0b7a45!important}
+:root[data-theme=light] .gauge.am .gld{stroke:#8a5200!important}
+:root[data-theme=light] .gauge.rd .gld{stroke:#c62828!important}
+:root[data-theme=light] .gauge.rd .gbg{fill:#f7e1e1!important}
+:root[data-theme=light] .gauge.am .gbg{fill:#f3eee6!important}
+:root[data-theme=light] .gdl{stroke:#d5dee7!important}
+:root[data-theme=light] .gza{stroke:#8a5200!important}
+:root[data-theme=light] .gzr{stroke:#c62828!important}
+:root[data-theme=light] .gnd{stroke:#15222e!important}
+:root[data-theme=light] .gauge.idle .gv{fill:#4a5b69!important}
+:root[data-theme=light] .rip{stroke:#0b7a45!important}
+:root[data-theme=light] .dot circle{fill:#1565b0!important;stroke:#ffffff!important}
+:root[data-theme=light] .dot.am circle{fill:#8a5200!important}
+:root[data-theme=light] .dot.rd circle{fill:#c62828!important}
+:root[data-theme=light] .dot.dn circle{fill:#0b7a45!important}
+:root[data-theme=light] .rdot circle{fill:#1565b0!important;stroke:#ffffff!important}
+:root[data-theme=light] .rdot.dn circle{fill:#0b7a45!important}
+:root[data-theme=light] .spark{fill:#0b7a45!important}
+:root[data-theme=light] .rpbar{background:#f0f4f8!important}
+:root[data-theme=light] .rpfill{background:rgba(21,101,176,.3)!important}
+:root[data-theme=light] .rptk{background:#4a5b69!important}
+:root[data-theme=light] .rptk.s-blog,:root[data-theme=light] .rptk.s-naver,:root[data-theme=light] .rptk.s-insta,:root[data-theme=light] .rptk.s-threads{background:#0b7a45!important}
+:root[data-theme=light] .rptk.s-pub{background:#1565b0!important}
+:root[data-theme=light] .rptk.s-boss{background:#8a5200!important}
+:root[data-theme=light] .rpt{color:#1565b0!important}
+:root[data-theme=light] .rpnote,:root[data-theme=light] .lg{color:#4a5b69!important}
+:root[data-theme=light] #detail h4{color:#4a5b69!important}
+:root[data-theme=light] #detail li{background:#f0f4f8!important}
+:root[data-theme=light] #detail a,:root[data-theme=light] .steps a{color:#1565b0!important}
+:root[data-theme=light] .steps li{background:#f0f4f8!important}
+:root[data-theme=light] .steps li.am{background:#e2ddd5!important}
+:root[data-theme=light] .steps li.rd{background:#e8cfd3!important}
+:root[data-theme=light] .steps li .w{color:#4a5b69!important}
+:root[data-theme=light] .steps li.empty{color:#4a5b69!important}
+:root[data-theme=light] .flash{background:#fff2c2!important}
+:root[data-theme=light] .kp span{background:#f0f4f8!important}
+:root[data-theme=light] .kp .rd b{color:#c62828!important}
+:root[data-theme=light] .kp .am b{color:#8a5200!important}
+:root[data-theme=light] .kp .ok b{color:#0b7a45!important}
+:root[data-theme=light] details.strip{background:#ffffff!important}
+:root[data-theme=light] details.strip li{background:#f0f4f8!important}
+:root[data-theme=light] details.strip h3{color:#4a5b69!important}
+:root[data-theme=light] #rflt .rfl.ok{color:#0b7a45!important}
+:root[data-theme=light] #rflt .rfl.stale{color:#8a5200!important}
+:root[data-theme=light] #rflt .rfl.bad{color:#c62828!important}
+:root[data-theme=light] #rflt .rfl.na{color:#9aa9b6!important}
+:root[data-theme=light] #rflt a{color:#1565b0!important}
+:root[data-theme=light] #dbody code{background:#f0f4f8!important}
+:root[data-theme=light] #roomExtra .xs{color:#4a5b69!important}
+:root[data-theme=light] .mo{color:#4a5b69!important}
+:root[data-theme=light] .exlg .k1{color:#0369a1!important}
+:root[data-theme=light] .exlg .k2{color:#be185d!important}
+:root[data-theme=light] .exlg .k3{color:#6b7280!important}
+:root[data-theme=light] .nd text{stroke:#f0f4f8!important}
+:root[data-theme=light] .nd.sel text{stroke:#d1e0ee!important}
+:root[data-theme=light] .gauge .gv{stroke:#ffffff!important}
+:root[data-theme=light] .gauge.rd .gv{stroke:#f7e1e1!important}
+:root[data-theme=light] .gauge.am .gv{stroke:#f3eee6!important}
+:root[data-theme=light] .hub text{stroke:#f0f4f8!important}
+:root[data-theme=light] .fl,:root[data-theme=light] .drv text,:root[data-theme=light] #hubt{stroke:#ffffff!important}
+:root[data-theme=light] .dot text{stroke:#ffffff!important}
 </style>
 </head>
 <body>
@@ -919,7 +1204,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="aca9c6e396e0";let hiddenAt=0,buildStuck="";
+const BUILD="f2996741abef";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
