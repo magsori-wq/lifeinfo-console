@@ -34297,6 +34297,28 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "adsite1120-wake-2110",
+   "added": "2026-11-20",
+   "what": "4. 20:46 깨움 후 응답 확인 — adsite1120 CNI 비교·(b)군 14편 결과 도착 여부(21:00 최종)",
+   "due": "2026-11-20",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('adsite1120'))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "4. 20:43 응답 도착(누락 인정·재개), 기한 21:40 으로 조정"
+  },
+  {
+   "id": "adsite1120-final-2140",
+   "added": "2026-11-20",
+   "what": "4. adsite1120 최종 21:40 — CNI 5편 vs 9~10월 5편 비교표·(b)군 14편 판정 결과 파일을 이부장이 열어 확인, 안 오면 독촉",
+   "due": "2026-11-20",
+   "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('adsite1120'))\"; tail -c 1500 docs/adsite_review_20261120.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "세션:a7dca46f"
   }
  ]
 }
