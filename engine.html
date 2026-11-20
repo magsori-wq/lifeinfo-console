@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<script>(function(){try{var q=new URLSearchParams(location.search).get("theme"),r=document.documentElement;if(q==="auto")localStorage.removeItem("engTheme");else if(q==="light"||q==="dark")localStorage.setItem("engTheme",q);var t=localStorage.getItem("engTheme");if(t==="light"||t==="dark")r.setAttribute("data-theme",t)}catch(e){}})()</script>
+<script>(function(){try{var K="engTheme2",q=new URLSearchParams(location.search).get("theme"),r=document.documentElement;localStorage.removeItem("engTheme");if(q==="auto"||q==="light"||q==="dark")localStorage.setItem(K,q);var t=localStorage.getItem(K);/* 11-20 12:2x 기본 = 어둡게(상황판) — 폰 강제 다크가 밝은 테마의 SVG 칠·글자를 엇갈리게 뒤집어 흰 카드·연한 글자가 됐다(사장님 12:08 캡처). 옛 키 engTheme(밝게 저장분)는 버린다 */if(t==="light"||t==="dark")r.setAttribute("data-theme",t);else if(t!=="auto")r.setAttribute("data-theme","dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}})()</script>
 <title>엔진 상황실</title>
 <style>
 /* 엔진 상황실 V4 — 그래픽(흐름의 시각화) = 입구, 텍스트(흐름의 상세) = 상세. V4: 파이프·입자(오늘 흐름량) · 마디 게이지(부하 링·최장 시간 바늘) · 종착지 도착 물결 · 오늘 하루 재생 · 레이더(감시 생존). 노드·점·경보를 누르면 텍스트의 그 마디/그 글로 이동·펼침. engine_state.json(studio/enginestate.py) 20초마다. 외부 라이브러리 없음 */
@@ -273,7 +273,7 @@ let G=null,PT={},parts=[],ripples=[],counters={},prevDone=null,RP=null,pendingS=
 const CRN=RM.CRN;
 const EDN={queue:"eq",draft:"ed",boss:"boss",naver:"ea",sns:"ea"};   /* edits[].stage → 지도 마디(done 은 숫자만) */
 function layout(vert){
-  const L={vert,nodes:{},edges:[],vb:vert?[360,884]:[960,490],cell:vert?56:40,hub:null};
+  const L={vert,nodes:{},edges:[],vb:vert?[360,884]:[960,490],cell:vert?64:40,hub:null};
   if(!vert){
     MAIN.forEach((m,i)=>{const cx=80+i*160,cy=214;L.nodes[m[0]]={k:m[0],name:m[1],cx,cy,w:140,h:120,rows:3,gx:cx,gy:cy-22,r:30}});
     TERM.forEach((m,i)=>{const cx=852,cy=58+i*112;L.nodes[m[0]]={k:m[0],name:m[1],cx,cy,w:176,h:76,rows:2,term:true,gx:cx-60,gy:cy-2,r:19,tx:cx-33}});
@@ -759,7 +759,7 @@ document.getElementById("mobtn").addEventListener("click",()=>{try{localStorage.
   mb.addEventListener("click",()=>{try{localStorage.setItem("engMotion",REDUCE?"on":"off")}catch(e){}location.reload()});
   const tb=document.getElementById("thbtn"),r=document.documentElement;const cur=()=>r.getAttribute("data-theme")||"auto";
   const lab={auto:"🎨 테마: 자동(폰 설정)",light:"🎨 테마: 밝게",dark:"🎨 테마: 어둡게"};tb.textContent=lab[cur()];
-  tb.addEventListener("click",()=>{const n={auto:"light",light:"dark",dark:"auto"}[cur()];try{if(n==="auto")localStorage.removeItem("engTheme");else localStorage.setItem("engTheme",n)}catch(e){}
+  tb.addEventListener("click",()=>{const n={auto:"light",light:"dark",dark:"auto"}[cur()];try{localStorage.setItem("engTheme2",n)}catch(e){}
     if(n==="auto")r.removeAttribute("data-theme");else r.setAttribute("data-theme",n);tb.textContent=lab[n]})})();
 
 /* ---------- 텍스트 ---------- */
@@ -902,7 +902,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="09af97621d30";let hiddenAt=0,buildStuck="";
+const BUILD="dee05fdab611";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
