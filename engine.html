@@ -477,6 +477,19 @@ html,html *{forced-color-adjust:none}
 :root[data-theme=light] .fl,:root[data-theme=light] .drv text,:root[data-theme=light] #hubt{stroke:#ffffff!important}
 :root[data-theme=light] .dot text{stroke:#ffffff!important}
 </style>
+<style id="s23">
+/* 11-20 Galaxy S23 Ultra 최적화(CSS 412px·DPR3.5) 마지막 1회 — 본문 12px↑ · 터치 44px↑ · 노치·제스처 여백 */
+@media (max-width:560px){
+body{padding-top:env(safe-area-inset-top,0px)}
+.wrap{padding-bottom:max(32px,calc(env(safe-area-inset-bottom,0px) + 24px))}
+.btn,button.btn,a.btn{min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.row1 a,a.A,.apo,.row1 .A{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;box-sizing:border-box}
+summary,.ssum,.dsum{min-height:44px;box-sizing:border-box;display:flex;align-items:center}
+.lane .cp.feed .fd,.fd{font-size:12px!important;line-height:1.35}
+#map .hub circle{r:22.5px}
+#rflt a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;box-sizing:border-box}
+}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -492,7 +505,6 @@ html,html *{forced-color-adjust:none}
     </div>
     <div class="meta" id="at">불러오는 중…</div>
     <div class="meta" id="fresh">마지막 갱신 —</div>
-    <div class="meta"><a href="engine_pc.html" style="font-size:14px;font-weight:700">🖼️ PC 화면 그대로 보기</a></div>
     <div id="diag">진단 측정 중…</div>
     <div id="stale" role="alert"></div>
     <div class="meta" id="rflt" aria-label="반영 감사 신호등"><span class="rfl na" id="rfls">⚪ 반영 감사 — 불러오는 중…</span> <a href="reflect.html" target="_blank" rel="noopener">반영 감사 ↗</a> <a href="reflect1105.html" target="_blank" rel="noopener">체크리스트·작업 진행 ↗</a> <a href="engine_flow.html" target="_blank" rel="noopener">흐름도 ↗</a></div>
@@ -1205,7 +1217,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="fa33337c4aa5";let hiddenAt=0,buildStuck="";
+const BUILD="0de7a7943b07";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
