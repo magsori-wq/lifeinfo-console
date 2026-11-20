@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 23:26:18",
+ "at": "2026-11-20 23:27:42",
  "errors": [],
  "rows": [
   {
@@ -20,6 +20,23 @@
    "no_preview": false
   },
   {
+   "code": "AM-PE-017",
+   "approvals": [
+    {
+     "id": "aroma-am-pe-017-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-20"
+    }
+   ],
+   "title": "멜론티켓수수료인상",
+   "last_file_at": "2026-11-20 23:25",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-pe-017-approve-1121",
+   "no_preview": false
+  },
+  {
    "code": "AM-DG-015",
    "approvals": [],
    "title": "GTA6에디션가격",
@@ -27,15 +44,6 @@
    "stage": "v0",
    "label": "V0 단계",
    "detail": "_v0_AM-DG-015_1120_r3.md · PASS 88점"
-  },
-  {
-   "code": "AM-PE-017",
-   "approvals": [],
-   "title": "멜론티켓수수료인상",
-   "last_file_at": "2026-11-20 23:25",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-PE-017_1120.md · PASS 93점"
   }
  ],
  "old_inflight": [],
@@ -286,7 +294,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 23:26:07",
+   "last_at": "2026-11-20 23:27:37",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -360,7 +368,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 67,
+  "last_min": 68,
   "cur": "이부장 ack r1f5593 — 이부장 22:21 처리 — 이",
   "lvl": "ok"
  },
@@ -371,13 +379,7 @@
    {
     "code": "AM-DG-015",
     "title": "GTA6에디션가격",
-    "min": 1,
-    "lvl": "ok"
-   },
-   {
-    "code": "AM-PE-017",
-    "title": "멜론티켓수수료인상",
-    "min": 1,
+    "min": 2,
     "lvl": "ok"
    }
   ],
@@ -385,7 +387,13 @@
    {
     "code": "AM-BO-012",
     "title": "천천히강렬하게공개일",
-    "min": 1,
+    "min": 2,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-PE-017",
+    "title": "멜론티켓수수료인상",
+    "min": 2,
     "lvl": "ok"
    }
   ],
@@ -749,7 +757,7 @@
   "today": "2026-11-20",
   "done_today": 1,
   "published_today": 1,
-  "boss_wait": 1,
+  "boss_wait": 2,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -765,7 +773,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 13,
+  "age_min": 14,
   "lvl": "amber"
  },
  "units": [
@@ -773,7 +781,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 67,
+   "last_min": 68,
    "cur": "이부장 ack r1f5593 — 이부장 22:21 처리 — 이",
    "lvl": "ok"
   },
@@ -788,7 +796,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 67,
+   "last_min": 68,
    "cur": "이부장 ack r1f5593 — 이부장 22:21 처리 — 이",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -809,7 +817,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "결재 대기 2건"
   }
  ],
  "suppliers": [
@@ -853,16 +861,17 @@
    "what": "【권고】AM-BO-012 「천천히 강렬하게 12월 11일 오후 5시 공개 — 공식 소개 시대 표기가 다르다」(방송·OTT·홈판형·44자) 게시 ",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-pe-017-approve-1121",
+   "what": "【권고】AM-PE-017 「멜론티켓 수수료 12월 21일 인상 — 공연 4매 8,000원에서 12,000원」(공연·연예·검색형·44자) 게시 승",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-DG-015",
-   "stage": "proc",
-   "at": "2026-11-20 23:23:41",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-BO-011",
    "stage": "proc",
@@ -870,15 +879,9 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-BO-006",
+   "code": "AM-DG-015",
    "stage": "proc",
-   "at": "2026-11-20 15:52:00",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-017",
-   "stage": "proc",
-   "at": "2026-11-20 23:24:26",
+   "at": "2026-11-20 23:23:41",
    "src": "파일 수정 시각"
   },
   {
@@ -891,6 +894,18 @@
    "code": "AM-PE-016",
    "stage": "proc",
    "at": "2026-11-20 14:48:18",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-017",
+   "stage": "proc",
+   "at": "2026-11-20 23:24:26",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-006",
+   "stage": "proc",
+   "at": "2026-11-20 15:52:00",
    "src": "파일 수정 시각"
   },
   {
@@ -957,7 +972,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 23:26:07",
+     "chip": "2026-11-20 23:27:37",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
