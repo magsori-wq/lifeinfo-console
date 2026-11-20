@@ -1,15 +1,22 @@
 {
- "at": "2026-11-20 14:52:02",
+ "at": "2026-11-20 14:53:48",
  "errors": [],
  "rows": [
   {
    "code": "AM-PE-016",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-pe-016-1120",
+     "state": "done",
+     "kind": "1120",
+     "at": "2026-11-20"
+    }
+   ],
    "title": "MAMA라인업일차",
    "last_file_at": "2026-11-20 14:51",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-PE-016_1120b.md · REVISE"
+   "stage": "approved_unverified",
+   "label": "승인 확인 중",
+   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
   }
  ],
  "old_inflight": [],
@@ -278,7 +285,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-20 14:51:44",
+   "last_at": "2026-11-20 14:53:43",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -325,7 +332,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-20 04:47:13",
    "src": "now_log(bid=aroma)",
-   "today_n": 22,
+   "today_n": 23,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -353,23 +360,23 @@
   "state": "현장(진행)",
   "jobs": 0,
   "last_min": 0,
-  "cur": "📨 이부장 14:58 접수 — 이대리 14:56 MAMA 20",
+  "cur": "14:56 🙋 결재 카드 aroma-am-pe-016-1120",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [],
-  "v0": [
+  "v0": [],
+  "boss": [],
+  "deploy": [],
+  "publish": [
    {
     "code": "AM-PE-016",
-    "title": "MAMA라인업일차",
-    "min": 1,
+    "title": "MAMA라인업일차 · 게시 승인 꼴 결재가 없거나 보류·취소·사장님 승인 아님 — 게시 지연 판정 해당 없음",
+    "min": null,
     "lvl": "ok"
    }
   ],
-  "boss": [],
-  "deploy": [],
-  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -709,7 +716,11 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "AM-PE-016"
+    }
+   ]
   }
  },
  "topics": [],
@@ -739,7 +750,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -748,7 +759,7 @@
    "state": "현장(진행)",
    "jobs": 0,
    "last_min": 0,
-   "cur": "📨 이부장 14:58 접수 — 이대리 14:56 MAMA 20",
+   "cur": "14:56 🙋 결재 카드 aroma-am-pe-016-1120",
    "lvl": "ok"
   },
   {
@@ -763,7 +774,7 @@
    "state": "현장(진행)",
    "jobs": 0,
    "last_min": 0,
-   "cur": "📨 이부장 14:58 접수 — 이대리 14:56 MAMA 20",
+   "cur": "14:56 🙋 결재 카드 aroma-am-pe-016-1120",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -842,6 +853,12 @@
    "stage": "boss",
    "at": "2026-11-20 06:08:59",
    "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-PE-016",
+   "stage": "boss",
+   "at": "",
+   "src": "watch done_at(날짜뿐)"
   }
  ],
  "incidents": [],
@@ -877,7 +894,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-20 14:51:44",
+     "chip": "2026-11-20 14:53:43",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -908,7 +925,7 @@
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-20 04:47:13",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 22회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 23회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
