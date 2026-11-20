@@ -34319,6 +34319,36 @@
    "owner": "claude",
    "state": "wait",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "kca-wedding-ratio-1120",
+   "added": "2026-11-20",
+   "what": "KCA 예식장 보증인원 보도자료 내부 불일치: 최소보증인원 하향불가 본문 63.8%(239곳) vs 붙임2 표 68.3%(239곳)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.watch show kca-wedding-ratio-1120",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:2b7b1f61"
+  },
+  {
+   "id": "f-airline-dup-f307-1120",
+   "added": "2026-11-20",
+   "what": "항공약관 원문(KCA 2026-10-21) 주제 중복: F3-07(결항·지연 배상·면책) 기발행 — 신규 글 탈락, F3-07 보강(22개사 실태조사 수치)만 조건부. 시정 여부·시행일 원문 미기재",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.dupcheck \"항공기 결항 배상 약관 불가항력 면책\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:2b7b1f61"
+  },
+  {
+   "id": "vanuatu-visa-0404-1120",
+   "added": "2026-11-20",
+   "what": "바누아투 사증면제·입국카드 원문 미확인(0404 사증면제 클릭 CDP 타임아웃·국가정보 daemon 미연결). 메인 캐러셀 게시일 2026-07-20 vs 상세 등록일 2026-11-20 불일치",
+   "due": "2026-11-23",
+   "cmd": "python tools/aside_read.py \"https://www.0404.go.kr/bbs/safetyNtc/9/detail2?ntnCd=310\" --wait 6 --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:2b7b1f61"
   }
  ]
 }
