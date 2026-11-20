@@ -33775,6 +33775,70 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:a7dca46f"
+  },
+  {
+   "id": "cadaily-rerun-1120",
+   "added": "2026-11-20",
+   "what": "3. cadaily 를 수리된 ca_trend 로 재실행해 kwgap --trend 기준일 11-20 확인",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.kwgap --trend",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "10:04 3. 재실행 실측: 주제 32/32·성별연령 22/22·검색어 1080줄·실패 없음. kwgap --trend 기준일 11-19 는 CA 가 전일 데이터를 주는 구조일 가능성(확인 못 함) — 내일 아침 기준일 11-20 이 되는지로 판정"
+  },
+  {
+   "id": "cadaily-1120-retry",
+   "added": "2026-11-20",
+   "what": "cadaily 11-20 데이터 재시도 — CA 가 11-20 일간을 내리면 기준일 11-20 갱신",
+   "due": "2026-11-20",
+   "cmd": "python tools/ca_daily.py 20 --month 11 && python tools/ca_trend.py && python -m studio.kwgap --trend | head -3",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "kwgap-trend-date-1121",
+   "added": "2026-11-20",
+   "what": "kwgap --trend 기준일이 11-20 로 올라갔는지(11-19 에 머물면 CA 전일 제공 구조인지 3.에게 확인)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.kwgap --trend",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-20",
+   "result": "10:17 3. 실측: CA 는 전일 데이터를 준다(11-20 05:06 판독이 11-19 일간) — 기준일 11-19 정상, 내일 11-20 은 자연 갱신"
+  },
+  {
+   "id": "b436-draft-check-1045",
+   "added": "2026-11-20",
+   "what": "이과장 B4-36 초안 착수 확인(초안 파일·mark)",
+   "due": "2026-11-20",
+   "cmd": "python -m studio.draftfind B4-36",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
+  },
+  {
+   "id": "deploy-thumb-542",
+   "added": "2026-11-20",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(542_exit_tax_overseas_stock.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-20",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-b436-v0cond-1120",
+   "added": "2026-11-20",
+   "what": "B4-36 V0 조건 반영: 도입부 정리박스·판정표에 (대통령령으로 정하는 것) 단서, 1절 해외주식만 가진 경우 박스, 7절 맞춤, source 정정주석. heading/layout/bodydup 통과(0.044). 커밋·배포 안 함",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.bodydup --file 국외전출세2027년1월1일출국해외주식_글_HTML.txt --code B4-36 --live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:a7dca46f"
   }
  ]
 }
