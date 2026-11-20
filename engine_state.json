@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20 13:17:30",
+ "at": "2026-11-20 13:18:11",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -35,24 +35,24 @@
     "code": "F1-23",
     "title": "인도네시아 중부칼리만탄 특별여행주의보 해제 — 1단계 ",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-20",
-    "last_at": "",
+    "last_at": "2026-11-20",
     "lvl": "amber"
    }
   ],
@@ -712,6 +712,13 @@
      "who": "lee"
     },
     {
+     "code": "F1-23",
+     "title": "인도네시아 중부칼리만탄 특별여행주의보 해제 — 1단계 ",
+     "url": "https://blog.naver.com/magsori8975/224484658439",
+     "at": "2026-11-20",
+     "who": "lee"
+    },
+    {
      "code": "H1-43",
      "title": "해외직구 건강식품 139개 중 95개 유해성분 — 관세",
      "url": "https://blog.naver.com/magsori8975/224484215399",
@@ -768,12 +775,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "F1-23",
-     "title": "인도네시아 중부칼리만탄 특별여행주의보 해제 — 1단계 "
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -1100,6 +1102,13 @@
   },
   {
    "code": "F1-23",
+   "stage": "naver",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)",
+   "who": "lee"
+  },
+  {
+   "code": "F1-23",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -1242,7 +1251,7 @@
   "bad": 0,
   "na": 0,
   "at": "2026-11-20 13:14:58",
-  "age_min": 2
+  "age_min": 3
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1322,7 +1331,7 @@
  "fired": [
   {
    "day": "2026-11-20",
-   "total": 190,
+   "total": 191,
    "kinds": [
     [
      "REPORT_UNACKED",
@@ -1334,7 +1343,7 @@
     ],
     [
      "ASIDE_DRAFT",
-     15
+     16
     ],
     [
      "CONFIRM_BACKLOG",
