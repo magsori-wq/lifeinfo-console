@@ -34067,8 +34067,52 @@
    "cmd": "python -m studio.tosslink link 748235733",
    "owner": "user",
    "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-20",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "themealt-a509-gsc-retry",
+   "added": "2026-11-20",
+   "what": "테마 시험 샘플 A5-09 GSC 색인 요청 — 첫 시도 제출 오류·재시도 「일일 할당량 초과」(11-20 15:1x). 2시간 간격 재시도(한도는 일정하지 않음, 사장님 10-22)",
+   "due": "2026-11-20",
+   "cmd": "https://lifeinfo8975.blogspot.com/2026/08/2026-9-18.html?m=1 을 GSC URL 검사→색인 생성 요청(aside repl, 스크립트 Temp/gs_A5-09.js 형태) 후 python -m studio.gsc_log add A5-09",
+   "owner": "claude",
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-11-20",
+   "result": "클린 URL 로 재등록(이부장 15:23 지시)"
+  },
+  {
+   "id": "expS5-1122",
+   "added": "2026-11-20",
+   "what": "exp1119m1 샘플 5편(A5-09·D1-05·B4-07·D3-06·G2-05) 색인 요청 후 판독 — 기준 시각 11-22 15:06 이후(이부장 15:18 지시)",
+   "due": "2026-11-22",
+   "cmd": "PYTHONIOENCODING=utf-8 python data/_exp_b_inspect_1113.py A5-09 D1-05 B4-07 D3-06 G2-05",
+   "owner": "claude",
    "state": "todo",
-   "by": "이부장"
+   "by": "4."
+  },
+  {
+   "id": "fuel1030-dec-moum-1127",
+   "added": "2026-11-20",
+   "what": "fuel1030 — 정책브리핑 12월 시행 모음 보도자료 게시 여부 재시도(이부장 15:23 지시, 월말 11-27~30 게시 편)",
+   "due": "2026-11-27",
+   "cmd": "python tools/aside_read.py \"https://www.korea.kr/search/searchResult.do?query=12%EC%9B%94%EB%B6%80%ED%84%B0%20%EB%8B%AC%EB%9D%BC%EC%A7%91%EB%8B%88%EB%8B%A4\" --wait 8 --max 15000 | grep -n \"12월\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "3.분석"
+  },
+  {
+   "id": "themealt-a509-gsc-retry2",
+   "added": "2026-11-20",
+   "what": "A5-09 GSC 색인 요청 재시도 — 클린 URL(https://lifeinfo8975.blogspot.com/2026/08/2026-9-18.html, ?m=1 아님: 클린 주소 RED 가 시험 대상, 이부장 15:23). 11-20 15:1x 「일일 할당량 초과」 → 2시간 간격 재시도",
+   "due": "2026-11-20",
+   "cmd": "https://lifeinfo8975.blogspot.com/2026/08/2026-9-18.html 을 GSC URL 검사→색인 생성 요청(aside repl, Temp/gs_A5-09.js 형태) 후 python -m studio.gsc_log add A5-09",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이과장"
   }
  ]
 }
