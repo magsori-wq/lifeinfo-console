@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 05:40:20",
+ "at": "2026-11-21 05:41:25",
  "errors": [],
  "rows": [
   {
@@ -12,8 +12,8 @@
      "at": "2026-11-21"
     }
    ],
-   "title": "천천히강렬하게공개일",
-   "last_file_at": "2026-11-20 23:25",
+   "title": "seg1",
+   "last_file_at": "2026-11-21 05:41",
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 3ccbea9f3"
@@ -364,7 +364,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 364,
+  "last_min": 365,
   "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
   "lvl": "ok"
  },
@@ -377,20 +377,20 @@
   "publish": [
    {
     "code": "AM-BO-012",
-    "title": "천천히강렬하게공개일",
-    "min": 3,
+    "title": "seg1",
+    "min": 4,
     "lvl": "ok"
    },
    {
     "code": "AM-DG-015",
     "title": "GTA6에디션가격",
-    "min": 3,
+    "min": 4,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-017",
     "title": "멜론티켓수수료인상",
-    "min": 2,
+    "min": 3,
     "lvl": "ok"
    }
   ],
@@ -778,7 +778,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 6,
+  "age_min": 7,
   "lvl": "amber"
  },
  "units": [
@@ -786,7 +786,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 364,
+   "last_min": 365,
    "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
    "lvl": "ok"
   },
@@ -801,7 +801,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 364,
+   "last_min": 365,
    "cur": "📨 이부장 23:41 접수·검토(어드바이저) — 이대리 23:",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -829,12 +829,12 @@
   {
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
-   "ran": false,
-   "at": "",
-   "today": 0,
-   "lvl": "idle",
+   "ran": true,
+   "at": "05:41",
+   "today": 1,
+   "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 0편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 1편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -848,13 +848,21 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 0편",
-   "codes": []
+   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 1편",
+   "codes": [
+    "AM-BO-012"
+   ]
   }
  ],
  "approvals": [],
  "edits": [],
  "today_events": [
+  {
+   "code": "AM-BO-012",
+   "stage": "proc",
+   "at": "2026-11-21 05:41:17",
+   "src": "파일 수정 시각"
+  },
   {
    "code": "AM-BO-012",
    "stage": "boss",
