@@ -35137,6 +35137,16 @@
    "by": "이부장",
    "done_at": "2026-11-21",
    "result": "V0 통과(17:16) 직후 결재함 A1-27 카드가 자동 상정됨(코드 흐름) — 02:00 수동 상정 불필요. 일일 시계 02:00 대기 규칙과 어긋난 코드 갭은 정비 지시"
+  },
+  {
+   "id": "routine-snapshot-refresh-1122",
+   "added": "2026-11-21",
+   "what": "루틴 스케줄러 스냅샷 갱신(36시간 넘으면 ROUTINE_UNREAD) — list_scheduled_tasks 결과를 routinehealth snapshot --from-json 으로 저장. 3번 오늘 09:01 예정이 12:15 에 돈 지연 원인도 같이 확인",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.routinehealth",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
