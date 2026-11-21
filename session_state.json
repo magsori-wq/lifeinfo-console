@@ -7255,8 +7255,8 @@
    "last_read": "2026-11-21 05:48:10",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-21 06:22:52",
-   "last_what": "▶ H1-44 합침 대기 중 로컬로 가능한 것 완료: 네이버 원고(osmu/네이버용_결혼식보증인원스드메163만원.txt)·인스타 카드 3장·쓰레드 사진·naverrich --dump 정상. 커밋 완료. 합침 알림 오"
+   "last_report": "2026-11-21 13:01:58",
+   "last_what": "13:0x [이부장 → 이과장] 병합 상황: 이부장 직접 병합 3회 실패(충돌 4파일 batch/session_state/osmu_files/xlink·Windows 잠금) → 정비 maint1121merge(13:"
   },
   "maint1121aside": {
    "reads": 2,
@@ -7277,7 +7277,17 @@
    "state": "working",
    "last_report": "2026-11-21 12:56:46",
    "last_what": "⏸ 대기 12:5x — A2-33 승인 도장은 로컬에만 있고 원격 origin/main 에 없음 + 초안 파일도 원격에 없음 → pubready ⛔ 트리거 불가(러너가 못 읽음). 원인: 로컬 main 이 origi"
+  },
+  "maint1121merge": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-21 13:00:16",
+   "last_read": "2026-11-21 13:00:28",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-21 13:03:12",
+   "last_what": "13:0x [이부장] 사장님 채팅 「허용」(13:02, 원격 병합·푸시 진행) 접수 — 정비에 전달, 병합은 정비가 합집합 방식으로 실행(이부장은 중복 시도 안 함), 완료 후 pubready A2-33 확인"
   }
  },
- "updated": "2026-11-21 12:59"
+ "updated": "2026-11-21 13:03"
 }
