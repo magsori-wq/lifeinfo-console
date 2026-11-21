@@ -1,15 +1,23 @@
 {
- "at": "2026-11-21 14:35:32",
+ "at": "2026-11-21 14:36:01",
  "errors": [],
  "rows": [
   {
    "code": "AM-BC-001",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-bc-001-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-21"
+    }
+   ],
    "title": "크리스마스트리비교",
    "last_file_at": "2026-11-21 14:35",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-BC-001_1121.md · REVISE"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-bc-001-approve-1121",
+   "no_preview": false
   }
  ],
  "old_inflight": [],
@@ -332,15 +340,15 @@
  ],
  "nodes": {
   "draft": [],
-  "v0": [
+  "v0": [],
+  "boss": [
    {
     "code": "AM-BC-001",
     "title": "크리스마스트리비교",
-    "min": 0,
+    "min": 1,
     "lvl": "ok"
    }
   ],
-  "boss": [],
   "deploy": [],
   "publish": [],
   "osmu": []
@@ -716,7 +724,7 @@
   "today": "2026-11-21",
   "done_today": 3,
   "published_today": 3,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -732,7 +740,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 0,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
@@ -776,7 +784,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -812,9 +820,23 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-bc-001-approve-1121",
+   "what": "【권고】AM-BC-001 「크리스마스트리 150cm vs 180cm, 가격차 15,900원 구성 표기 다름」(브랜드커넥트 카테고리·검색형·44자",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
+  {
+   "code": "AM-DG-015",
+   "stage": "proc",
+   "at": "2026-11-21 05:53:12",
+   "src": "파일 수정 시각"
+  },
   {
    "code": "AM-SP-020",
    "stage": "proc",
@@ -831,12 +853,6 @@
    "code": "AM-PE-017",
    "stage": "proc",
    "at": "2026-11-21 05:50:38",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-015",
-   "stage": "proc",
-   "at": "2026-11-21 05:53:12",
    "src": "파일 수정 시각"
   },
   {
