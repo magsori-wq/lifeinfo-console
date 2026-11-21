@@ -34709,7 +34709,7 @@
   {
    "id": "xlink-a233",
    "added": "2026-11-21",
-   "what": "🔗 A2-33 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-33",
+   "what": "🔗 A2-33 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-33",
    "due": "2026-11-21",
    "cmd": "python studio/blogger.py crosslink --code A2-33",
    "owner": "claude",
@@ -34728,6 +34728,16 @@
    "by": "이부장",
    "done_at": "2026-11-21",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "insta-h144-dup-delete-verify-1121",
+   "added": "2026-11-21",
+   "what": "H1-44 인스타 Df_ZDKAEWNf 삭제 이행 확인 — 이과장 보고(pub1121h144) 뒤 프로필 1건·osmu_manifest 기록 Df_Yjp9keCV 단일 확인 / A2-33 인스타 재게시 없음(Df_bsdzETld 1건)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.osmu_manifest table --code H1-44",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
