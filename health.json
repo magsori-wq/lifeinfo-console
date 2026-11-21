@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-11-21T12:43:33",
+ "checked_at": "2026-11-20T03:25:44",
  "light": "yellow",
- "pass": 16,
- "warn": 3,
+ "pass": 14,
+ "warn": 4,
  "fail": 0,
  "checks": [
   {
@@ -23,15 +23,11 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (1668개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (1657개 확산링크)"
   },
   {
    "level": "PASS",
    "msg": "대분류 9개 (7±2 이내)"
-  },
-  {
-   "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 557개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
@@ -55,11 +51,7 @@
   },
   {
    "level": "PASS",
-   "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
-  },
-  {
-   "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 433종"
+   "msg": "초안 코드 1:1 통과: 430종"
   },
   {
    "level": "PASS",
@@ -67,7 +59,7 @@
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 1061개 .py"
+   "msg": "소스 구문 통과: 1045개 .py"
   },
   {
    "level": "WARN",
@@ -75,11 +67,15 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 317개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
+   "msg": "미사용 썸네일 307개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
   },
   {
    "level": "WARN",
    "msg": "중분류 27/35개가 6~7편 초과 — 분가 검토(규칙 §5): H1 39편, G3 37편, F4 32편, B4 32편, D1 24편, C2 24편, B2 24편, F1 23편, A2 23편, A1 23편, A5 22편, G1 18편, D2 18편, F2 16편, E2 16편, G4 15편, F3 15편, D4 15편, A3 15편, D3 14편, C1 14편, E4 13편, B1 12편, C4 10편, C3 9편, A4 9편, B5 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "채널정합: C2-29 threads 게시 URL 이 보드 note(pub1120c229)에는 있는데 DB.osmu 에 없음 → 중복게시 가드가 눈이 먼다. 기록: python -m studio.pipeline threads-link --code C2-29 --url https://www.threads.com/@magsori8975/post/Df8iLMagXA7"
   }
  ]
 }
