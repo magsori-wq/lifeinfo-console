@@ -34681,8 +34681,20 @@
    "due": "2026-11-21",
    "cmd": "python -m studio.v0check gate --code A2-33",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "12:4x 이부장 처리 — 사장님 결정 사항 아님: 반려 사유(사례 0개)는 fixer 에이전트가 초안 수정 중, 수정 후 재V0 → 통과 시 결재함. 사장님은 할 일 없음"
+  },
+  {
+   "id": "deploy-thumb-544-recheck",
+   "added": "2026-11-21",
+   "what": "A2-33 썸네일 544 github.io 200 확인(deploy.bat 12:44 푸시 후 Pages 반영 1~2분)",
+   "due": "2026-11-21",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/544_democracy_merit_law.png",
+   "owner": "claude",
+   "state": "wait",
    "by": "이부장"
   }
  ]
