@@ -34718,6 +34718,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "gatesync-push-fail-11211253",
+   "added": "2026-11-21",
+   "what": "게이트 도장 원격 반영 실패 — 러너가 옛 판정을 본다(발행이 V0 미검사로 막힐 수 있음): syncorigin 원본 충돌(exit 3) — 사람이 봐야 함: e the remote changes,\nhint: use 'git pull' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n",
+   "due": "2026-11-21",
+   "cmd": "git status -sb && python -m studio.gatesync",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
+  },
+  {
+   "id": "gostamp-push-fail-a2-33-11211255",
+   "added": "2026-11-21",
+   "what": "A2-33 go 도장 origin 미반영 — push 실패(발행 run 진행 중이면 pre-push 가 막는다): l' before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.",
+   "due": "2026-11-21",
+   "cmd": "git push origin main && python -m studio.pubready --code A2-33",
+   "owner": "claude",
+   "state": "todo",
+   "by": "에이전트"
   }
  ]
 }
