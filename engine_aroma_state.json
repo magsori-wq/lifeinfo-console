@@ -1,30 +1,7 @@
 {
- "at": "2026-11-22 05:26:56",
+ "at": "2026-11-22 05:36:32",
  "errors": [],
- "rows": [
-  {
-   "code": "AM-PE-018",
-   "approvals": [
-    {
-     "id": "aroma-am-pe-018-approve-1121",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-22"
-    },
-    {
-     "id": "aroma-am-pe-018-hedge-1122",
-     "state": "done",
-     "kind": "hedge",
-     "at": "2026-11-22"
-    }
-   ],
-   "title": "seg1",
-   "last_file_at": "2026-11-22 05:26",
-   "stage": "approved",
-   "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 7cd8acc23"
-  }
- ],
+ "rows": [],
  "old_inflight": [],
  "discarded": [
   {
@@ -62,6 +39,28 @@
    ],
    "title": "AGF 2026 티켓 3일권 65,000원 — 1일권 3장보다 22,000원 싸다",
    "last_file_at": "2026-11-22 04:32",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-22"
+  },
+  {
+   "code": "AM-PE-018",
+   "approvals": [
+    {
+     "id": "aroma-am-pe-018-approve-1121",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-22"
+    },
+    {
+     "id": "aroma-am-pe-018-hedge-1122",
+     "state": "done",
+     "kind": "hedge",
+     "at": "2026-11-22"
+    }
+   ],
+   "title": "아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이",
+   "last_file_at": "2026-11-22 05:26",
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-22"
@@ -119,25 +118,9 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-21"
-  },
-  {
-   "code": "AM-DG-015",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-015-approve-1121",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-21"
-    }
-   ],
-   "title": "GTA6 가격 PS5 89,800원 vs 112,800원, 212GB 먼저 확인",
-   "last_file_at": "2026-11-21 05:53",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-21"
   }
  ],
- "published_total": 68,
+ "published_total": 69,
  "rev_wait": [],
  "cats": {
   "window": 14,
@@ -264,7 +247,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-22 05:26:42",
+   "last_at": "2026-11-22 05:36:13",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -274,7 +257,7 @@
    "name": "AROMA_PUBLISH_STALL",
    "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
-   "src": "시각 저장 없음(진행 중 1건)",
+   "src": "시각 저장 없음(진행 중 0건)",
    "today_n": 0,
    "note": "",
    "at_node": "pub"
@@ -338,8 +321,8 @@
   "who": "이대리",
   "state": "대기(보고 완료·다음 지시 기다림)",
   "jobs": 0,
-  "last_min": 47,
-  "cur": "✅ 11/22 승인 5건 중 4건 게시·검증 완료: SP-02",
+  "last_min": 7,
+  "cur": "✅ AM-PE-018 게시·검증 완료(224486661919,",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -348,14 +331,7 @@
   "v0": [],
   "boss": [],
   "deploy": [],
-  "publish": [
-   {
-    "code": "AM-PE-018",
-    "title": "seg1",
-    "min": 64,
-    "lvl": "ok"
-   }
-  ],
+  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -408,6 +384,11 @@
      "code": "AM-BC-002",
      "title": "무릎담요 크기 비교 미니 5,900원 vs 똑딱이 10,400원(배송비 포함)",
      "url": "https://blog.naver.com/aroma-mag/224486640052"
+    },
+    {
+     "code": "AM-PE-018",
+     "title": "아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이",
+     "url": "https://blog.naver.com/aroma-mag/224486661919"
     },
     {
      "code": "AM-BO-012",
@@ -735,11 +716,7 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": [
-    {
-     "code": "AM-PE-018"
-    }
-   ]
+   "wait": []
   }
  },
  "topics": [],
@@ -751,8 +728,8 @@
  },
  "kpi": {
   "today": "2026-11-22",
-  "done_today": 3,
-  "published_today": 3,
+  "done_today": 4,
+  "published_today": 4,
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
@@ -777,8 +754,8 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 47,
-   "cur": "✅ 11/22 승인 5건 중 4건 게시·검증 완료: SP-02",
+   "last_min": 7,
+   "cur": "✅ AM-PE-018 게시·검증 완료(224486661919,",
    "lvl": "ok"
   },
   {
@@ -792,8 +769,8 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 47,
-   "cur": "✅ 11/22 승인 5건 중 4건 게시·검증 완료: SP-02",
+   "last_min": 7,
+   "cur": "✅ AM-PE-018 게시·검증 완료(224486661919,",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -839,7 +816,7 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 3편 · 파일이 움직인 글 4편",
+   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 4편",
    "codes": [
     "AM-BC-002",
     "AM-DG-016",
@@ -858,15 +835,15 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-022",
-   "stage": "proc",
-   "at": "2026-11-22 04:29:50",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-PE-018",
    "stage": "proc",
    "at": "2026-11-22 04:38:35",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-022",
+   "stage": "proc",
+   "at": "2026-11-22 04:29:50",
    "src": "파일 수정 시각"
   },
   {
@@ -928,6 +905,12 @@
    "stage": "naver",
    "at": "",
    "src": "db.json published(날짜만)"
+  },
+  {
+   "code": "AM-PE-018",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
   }
  ],
  "incidents": [],
@@ -963,14 +946,14 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-22 05:26:42",
+     "chip": "2026-11-22 05:36:13",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 1건) · 오늘 0회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 0회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
@@ -1091,7 +1074,7 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 68편",
+   "title": "✅ 최근 게시 · 전체 69편",
    "empty": "게시 기록 없음",
    "rows": [
     {
@@ -1110,6 +1093,11 @@
      "sub": "무릎담요 크기 비교 미니 5,900원 vs 똑딱이 10,400원(배송비 포함)"
     },
     {
+     "head": "AM-PE-018",
+     "chip": "2026-11-22",
+     "sub": "아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이"
+    },
+    {
      "head": "AM-BO-012",
      "chip": "2026-11-21",
      "sub": "천천히 강렬하게 12월 11일 오후 5시 공개 — 공식 소개 시대 표기가 다르다"
@@ -1118,11 +1106,6 @@
      "head": "AM-PE-017",
      "chip": "2026-11-21",
      "sub": "멜론티켓 수수료 12월 21일 인상 — 공연 4매 8,000원에서 12,000원"
-    },
-    {
-     "head": "AM-DG-015",
-     "chip": "2026-11-21",
-     "sub": "GTA6 가격 PS5 89,800원 vs 112,800원, 212GB 먼저 확인"
     }
    ]
   }
