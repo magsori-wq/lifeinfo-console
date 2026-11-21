@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 19:18:56",
+ "at": "2026-11-21 19:37:43",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -115,7 +115,14 @@
   }
  ],
  "published_total": 65,
- "rev_wait": [],
+ "rev_wait": [
+  {
+   "code": "AM-SP-020",
+   "ids": [
+    "aroma-am-sp-020-update-1121b"
+   ]
+  }
+ ],
  "cats": {
   "window": 14,
   "rows": [
@@ -241,7 +248,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-21 19:18:56",
+   "last_at": "2026-11-21 19:37:27",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -304,10 +311,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-21 16:01",
+   "last_at": "2026-11-21 19:37",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 56개",
+   "note": "복사된 미리보기 57개",
    "at_node": "boss"
   }
  ],
@@ -315,7 +322,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 44,
+  "last_min": 63,
   "cur": "[이부장 접수 18:38] 이대리 18:23 SP-020 후속",
   "lvl": "ok"
  },
@@ -704,7 +711,7 @@
   "today": "2026-11-21",
   "done_today": 4,
   "published_today": 4,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -728,7 +735,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 44,
+   "last_min": 63,
    "cur": "[이부장 접수 18:38] 이대리 18:23 SP-020 후속",
    "lvl": "ok"
   },
@@ -743,7 +750,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 44,
+   "last_min": 63,
    "cur": "[이부장 접수 18:38] 이대리 18:23 SP-020 후속",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -764,7 +771,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -772,7 +779,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "16:01",
+   "at": "19:37",
    "today": 5,
    "lvl": "ok",
    "order": null,
@@ -800,25 +807,28 @@
    ]
   }
  ],
- "approvals": [],
- "edits": [],
- "today_events": [
+ "approvals": [
   {
-   "code": "AM-PE-017",
-   "stage": "proc",
-   "at": "2026-11-21 05:50:38",
-   "src": "파일 수정 시각"
-  },
+   "kind": "aroma",
+   "id": "aroma-am-sp-020-update-1121b",
+   "what": "【권고】AM-SP-020(여자배구 순위, 라이브 224477466833) 상단에 「🔄 11월 21일 저녁 업데이트 — SOOP 2:3 정관장, ",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
+ "edits": [
+  {
+   "code": "AM-SP-020",
+   "title": "여자배구 순위 — 현대건설·SOOP 0승 4패끼리 11/18 맞대결",
+   "stage": "boss",
+   "packer": ""
+  }
+ ],
+ "today_events": [
   {
    "code": "AM-DG-015",
    "stage": "proc",
    "at": "2026-11-21 05:53:12",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-020",
-   "stage": "proc",
-   "at": "2026-11-21 06:06:08",
    "src": "파일 수정 시각"
   },
   {
@@ -828,9 +838,21 @@
    "src": "파일 수정 시각"
   },
   {
+   "code": "AM-PE-017",
+   "stage": "proc",
+   "at": "2026-11-21 05:50:38",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-BC-001",
    "stage": "proc",
    "at": "2026-11-21 14:31:07",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-020",
+   "stage": "proc",
+   "at": "2026-11-21 06:06:08",
    "src": "파일 수정 시각"
   },
   {
@@ -927,7 +949,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-21 19:18:56",
+     "chip": "2026-11-21 19:37:27",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -969,8 +991,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-21 16:01",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 56개"
+     "chip": "2026-11-21 19:37",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 57개"
     }
    ]
   },
