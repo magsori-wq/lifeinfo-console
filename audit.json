@@ -6664,6 +6664,30 @@
    "target": "A2-33",
    "detail": "사실·수치 일치하나 사례 0개 — 「가상 사례」 표시 시나리오 1개 필요(docs/v0_A2-33_20261121.md 고칠 곳 1), 1절 확인표 ① 문구 완화(권고)",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-21T12:46:47",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-a2-33",
+   "detail": "12:4x 이부장 처리 — 사장님 결정 사항 아님: 반려 사유(사례 0개)는 fixer 에이전트가 초안 수정 중, 수정 후 재V0 → 통과 시 결재함. 사장님은 할 일 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T12:48:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-544-recheck",
+   "detail": "12:4x 썸네일 544 github.io 200 확인(deploy.bat 12:44 푸시 반영)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T12:53:00",
+   "actor": "v0에이전트(제3자) 최종",
+   "action": "v0check.pass",
+   "target": "A2-33",
+   "detail": "133행 정정 diff 1줄·새 문장 출처 6행·본문 69/92/95/106행과 모순 없음(docs/v0_A2-33_최종_20261121.md, 이부장이 문서·문장 직접 확인)",
+   "via": "cli"
   }
  ]
 }

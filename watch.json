@@ -34685,7 +34685,7 @@
    "kind": "approve",
    "by": "이부장",
    "done_at": "2026-11-21",
-   "result": "12:4x 이부장 처리 — 사장님 결정 사항 아님: 반려 사유(사례 0개)는 fixer 에이전트가 초안 수정 중, 수정 후 재V0 → 통과 시 결재함. 사장님은 할 일 없음"
+   "result": "V0 통과로 해소 — 검사자 v0에이전트(제3자) 최종 · 133행 정정 diff 1줄·새 문장 출처 6행·본문 69/92/95/106행과 모순 없음(docs/v0_A2-33_최종_20261121.md, 이부장이 문서·문장 직접 확인)"
   },
   {
    "id": "deploy-thumb-544-recheck",
@@ -34694,7 +34694,29 @@
    "due": "2026-11-21",
    "cmd": "curl -s -o /dev/null -w '%{http_code}' https://magsori-wq.github.io/lifeinfo-console/thumbs/544_democracy_merit_law.png",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "12:4x 썸네일 544 github.io 200 확인(deploy.bat 12:44 푸시 반영)"
+  },
+  {
+   "id": "fix-a233v0-1121",
+   "added": "2026-11-21",
+   "what": "A2-33 V0 반려 반영: 3절 끝에 가상 사례(h3+quiet박스+표) 추가·1절 확인표 ①을 보상정책과 문의로 완화. heading OK·layout 🔴0(bigwrap 🟡 기존)·bodydup 🟢0.045. 백업 data/_a233_before_20261121.html. 커밋·재V0 남음",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.heading --file 민주유공자법내년6월등록635명대입해당없음_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "fix-a233-line133-1121",
+   "added": "2026-11-21",
+   "what": "A2-33 133행 마지막 문장 유족 포함 모순 정정(V0 재검사 반려 사유 1건). 백업 data/_a233_before2_20261121.html, heading OK, 커밋·발행 안 함",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.heading --file 민주유공자법내년6월등록635명대입해당없음_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
