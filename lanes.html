@@ -38,6 +38,9 @@ main{flex:1 1 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300
 .it.done .k,.it.done small{opacity:.55}
 .it.urgent .t{font-weight:800;color:var(--urg)}
 .none{color:var(--mut);padding:2px 0}
+.warn{color:#fff;background:#b45309;border-radius:999px;padding:1px 10px;font-weight:800;font-size:var(--fs-small)}
+body.stale .dot.work,body.stale .boss.hot{animation:none}
+body.stale .lane.urgent{animation:none;border:3px solid var(--urg);border-left-width:8px;background:rgba(220,38,38,.12)}
 .err{padding:14px;color:var(--urg);font-weight:700}
 @media (max-width:480px){main{grid-template-columns:1fr}}
 </style></head><body>
@@ -55,7 +58,10 @@ function render(d){
   var b=document.getElementById('boss');
   if(d.boss_n==null){b.textContent='사장님 몫 모름';b.className='boss unk';}
   else{b.textContent='사장님 몫 '+d.boss_n+'건';b.className='boss'+(d.boss_n>0?' hot':'');}
-  document.getElementById('upd').textContent='갱신 '+String(d.generated||'').slice(5,16);
+  var g=Date.parse(String(d.generated||'').replace(' ','T')), mins=isNaN(g)?null:Math.floor((Date.now()-g)/60000);
+  var stale=(mins==null)||mins>10;                                           // 굽는 순간 값이 낡았나(작업중 점·임박 약속·17:00 문구는 굽는 시각 기준) — 낡으면 깜빡임을 멈추고 알린다
+  document.body.classList.toggle('stale',stale);
+  document.getElementById('upd').innerHTML=(stale?'<span class="warn">⚠️ '+(mins==null?'시각 모름':mins+'분 전 데이터')+'</span> ':'')+'갱신 '+esc(String(d.generated||'').slice(5,16));
   document.getElementById('clk').textContent=d.clock?('⏰ '+d.clock):'';
   document.querySelectorAll('.lane').forEach(function(s){var l=s.querySelector('.lst');if(l)scrollTop[s.getAttribute('data-lane')]=l.scrollTop;});
   var ls=(d.lanes||[]).slice();
@@ -72,6 +78,8 @@ function render(d){
 function load(){
   fetch('lanes.json?t='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(render).catch(function(e){
     document.getElementById('lanes').innerHTML='<div class="err">lanes.json 을 못 읽었다 ('+esc(e.message)+') — 지휘판을 믿지 말고 batch 보드를 직접 본다</div>';
+    var b=document.getElementById('boss');b.textContent='사장님 몫 모름';b.className='boss unk';                  // 직전 성공값(0건 녹색)을 남기지 않는다
+    document.getElementById('upd').innerHTML='<span class="warn">⚠️ 갱신 실패</span>';document.body.classList.add('stale');
   });
 }
 load();setInterval(load,30000);

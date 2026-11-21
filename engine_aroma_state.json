@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 16:04:14",
+ "at": "2026-11-21 16:34:47",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -22,7 +22,7 @@
     },
     {
      "id": "aroma-am-bc-001-update-1121",
-     "state": "todo",
+     "state": "done",
      "kind": "update",
      "at": "2026-11-21"
     }
@@ -31,10 +31,7 @@
    "last_file_at": "2026-11-21 16:01",
    "stage": "published",
    "label": "게시됨",
-   "detail": "2026-11-21",
-   "rev_wait": [
-    "aroma-am-bc-001-update-1121"
-   ]
+   "detail": "2026-11-21"
   },
   {
    "code": "AM-BO-012",
@@ -118,14 +115,7 @@
   }
  ],
  "published_total": 65,
- "rev_wait": [
-  {
-   "code": "AM-BC-001",
-   "ids": [
-    "aroma-am-bc-001-update-1121"
-   ]
-  }
- ],
+ "rev_wait": [],
  "cats": {
   "window": 14,
   "rows": [
@@ -251,7 +241,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-21 16:03:48",
+   "last_at": "2026-11-21 16:34:19",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -290,15 +280,15 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 7회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 8회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-21 14:42:20",
+   "last_at": "2026-11-21 16:04:21",
    "src": "now_log(bid=aroma)",
-   "today_n": 12,
+   "today_n": 13,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -323,10 +313,10 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 81,
-  "cur": "👤 이부장 14:46 접수·확인: 이대리 AM-BC-001 게",
+  "last_min": 24,
+  "cur": "[이부장 접수 16:12] 이대리 AM-BC-001 v2 적용",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -714,7 +704,7 @@
   "today": "2026-11-21",
   "done_today": 4,
   "published_today": 4,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -736,10 +726,10 @@
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 81,
-   "cur": "👤 이부장 14:46 접수·확인: 이대리 AM-BC-001 게",
+   "last_min": 24,
+   "cur": "[이부장 접수 16:12] 이대리 AM-BC-001 v2 적용",
    "lvl": "ok"
   },
   {
@@ -751,10 +741,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 81,
-   "cur": "👤 이부장 14:46 접수·확인: 이대리 AM-BC-001 게",
+   "last_min": 24,
+   "cur": "[이부장 접수 16:12] 이대리 AM-BC-001 v2 적용",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -774,7 +764,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -810,40 +800,13 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-bc-001-update-1121",
-   "what": "【권고】AM-BC-001(크리스마스트리 쇼핑커넥트, 라이브 224485983543) 수정본 v2 적용 승인 — 사장님 11-21 15:5x 직접",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
- "edits": [
-  {
-   "code": "AM-BC-001",
-   "title": "크리스마스트리 150cm vs 180cm, 가격차 15,900원 구성 표기 다름",
-   "stage": "boss",
-   "packer": ""
-  }
- ],
+ "approvals": [],
+ "edits": [],
  "today_events": [
-  {
-   "code": "AM-SP-020",
-   "stage": "proc",
-   "at": "2026-11-21 06:06:08",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-PE-017",
    "stage": "proc",
    "at": "2026-11-21 05:50:38",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-015",
-   "stage": "proc",
-   "at": "2026-11-21 05:53:12",
    "src": "파일 수정 시각"
   },
   {
@@ -856,6 +819,18 @@
    "code": "AM-BO-012",
    "stage": "proc",
    "at": "2026-11-21 05:41:17",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-015",
+   "stage": "proc",
+   "at": "2026-11-21 05:53:12",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-020",
+   "stage": "proc",
+   "at": "2026-11-21 06:06:08",
    "src": "파일 수정 시각"
   },
   {
@@ -886,6 +861,12 @@
    "code": "AM-BC-001",
    "stage": "boss",
    "at": "2026-11-21 14:36:22",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-BC-001",
+   "stage": "boss",
+   "at": "2026-11-21 16:05:02",
    "src": "결재 커밋 시각"
   },
   {
@@ -946,7 +927,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-21 16:03:48",
+     "chip": "2026-11-21 16:34:19",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -971,13 +952,13 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 7회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 8회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-21 14:42:20",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 12회 · 횟수는 전체 세션"
+     "chip": "2026-11-21 16:04:21",
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 13회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
