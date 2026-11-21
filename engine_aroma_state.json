@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22 04:27:18",
+ "at": "2026-11-22 04:27:59",
  "errors": [],
  "rows": [
   {
@@ -35,6 +35,22 @@
    "detail": "watch done + 커밋 7cd8acc23"
   },
   {
+   "code": "AM-SP-022",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-022-approve-1121",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-22"
+    }
+   ],
+   "title": "K리그1강등구도",
+   "last_file_at": "2026-11-21 23:28",
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 8cfaee2ce"
+  },
+  {
    "code": "AM-BC-002",
    "approvals": [
     {
@@ -49,23 +65,6 @@
    "stage": "boss_wait",
    "label": "결재 대기",
    "detail": "aroma-am-bc-002-approve-1122",
-   "no_preview": false
-  },
-  {
-   "code": "AM-SP-022",
-   "approvals": [
-    {
-     "id": "aroma-am-sp-022-approve-1121",
-     "state": "todo",
-     "kind": "approve",
-     "at": "2026-11-21"
-    }
-   ],
-   "title": "K리그1강등구도",
-   "last_file_at": "2026-11-21 23:28",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-sp-022-approve-1121",
    "no_preview": false
   }
  ],
@@ -382,7 +381,7 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 1,
-  "last_min": 7,
+  "last_min": 8,
   "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
   "lvl": "ok"
  },
@@ -402,12 +401,6 @@
     "title": "무릎담요크기비교",
     "min": 139,
     "lvl": "ok"
-   },
-   {
-    "code": "AM-SP-022",
-    "title": "K리그1강등구도",
-    "min": 299,
-    "lvl": "ok"
    }
   ],
   "deploy": [],
@@ -415,13 +408,19 @@
    {
     "code": "AM-DG-016",
     "title": "AGF2026티켓가격",
-    "min": 0,
+    "min": 1,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-018",
     "title": "아이브앙코르가격일정",
-    "min": 4,
+    "min": 5,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-SP-022",
+    "title": "K리그1강등구도",
+    "min": 0,
     "lvl": "ok"
    }
   ],
@@ -795,6 +794,9 @@
     },
     {
      "code": "AM-PE-018"
+    },
+    {
+     "code": "AM-SP-022"
     }
    ]
   }
@@ -810,7 +812,7 @@
   "today": "2026-11-22",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 2,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -834,7 +836,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 7,
+   "last_min": 8,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok"
   },
@@ -849,7 +851,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 7,
+   "last_min": 8,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -870,7 +872,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 2건"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -905,13 +907,6 @@
  "approvals": [
   {
    "kind": "aroma",
-   "id": "aroma-am-sp-022-approve-1121",
-   "what": "【권고】AM-SP-022 「K리그 승강플레이오프 — 광주 12위 확정, 김천은 규정상 자동 강등」(스포츠·홈판형·38자) 게시 승인. 【근거】관",
-   "by": "이대리",
-   "waited": ""
-  },
-  {
-   "kind": "aroma",
    "id": "aroma-am-bc-002-approve-1122",
    "what": "【권고】AM-BC-002 「무릎담요 크기 비교 미니 5,900원 vs 똑딱이 10,400원(배송비 포함)」(브랜드커넥트 카테고리 14·쇼핑커넥트",
    "by": "이대리",
@@ -942,6 +937,12 @@
    "code": "AM-DG-016",
    "stage": "boss",
    "at": "2026-11-22 04:26:51",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-SP-022",
+   "stage": "boss",
+   "at": "2026-11-22 04:27:36",
    "src": "결재 커밋 시각"
   }
  ],
