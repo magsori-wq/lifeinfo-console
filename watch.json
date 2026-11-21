@@ -35439,8 +35439,41 @@
    "due": "2026-11-22",
    "cmd": "ls -la docs/source_mofa_travelalert_20261121.md docs/source_heating_support_20261122.md docs/source_ftc_consumer_guideline_20261122.md",
    "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-22",
+   "result": "확보 1건(E2-19) · 제외 2건(중복) · 확인 대기 1건(여행경보) · 기록 1차 파일 docs/source_ftc_consumer_guideline_20261122.md · docs/source_heating_support_20261122.md"
+  },
+  {
+   "id": "fuel1030-lawgokr-3",
+   "added": "2026-11-22",
+   "what": "fuel1030 법제처 2027-01-01 시행예정 전수 — source 에이전트 결과 확인(docs/source_lawgokr_effective_20270101_20261122.md)",
+   "due": "2026-11-22",
+   "cmd": "ls -la docs/source_lawgokr_effective_20270101_20261122.md",
+   "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "fuel1030-deep-3",
+   "added": "2026-11-22",
+   "what": "fuel1030 법령 심층 3건(소득세법 시행령·국민연금법·고용보험법) 결과 확인",
+   "due": "2026-11-22",
+   "cmd": "ls -la docs/source_sodeuk_sigyeong_20270101_20261122.md docs/source_gukmin_yeongeum_20270101_20261122.md docs/source_gomyong_boheom_20270101_20261122.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "afflink-daebonggam1122",
+   "added": "2026-11-22",
+   "what": "🛒 제휴 링크 발급 요청 — daebonggam1122. 상품: 대봉감, 27과 내외, 5kg, 1박스 (11,900원 · 리뷰 779 · 평점 4.2). 관련성: 대봉감 11월 후숙·홍시 제철(naverkw 대봉감 보관법·후숙·홍시·10kg 자동완성 확인), 토스 리뷰779·평점4.2·11,900원, 쓰레. 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.tosslink link 2677153369",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
