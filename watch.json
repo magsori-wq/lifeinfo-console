@@ -35039,6 +35039,68 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "sitefix-pilot10-order-1121",
+   "added": "2026-11-21",
+   "what": "시범10 승인 도장 확인되면 이과장에게 라이브 수정 지시서 발급(sitefix1121) — 17:00 전 또는 내일 12시 이후 판단",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.watch",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-a127-1121",
+   "added": "2026-11-21",
+   "what": "A1-27 V0(v0 에이전트) 결과 확인 → 통과면 v0check pass·결재함 상정(02:00 시계 또는 즉시 판단), 반려면 fixer 로 수정 지시",
+   "due": "2026-11-21",
+   "cmd": "ls docs/v0_A1-27_20261121.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "V0 조건부 통과 17:02(docs/v0_A1-27_20261121.md): 필수 수정 6·권고 4 → fixer 반영 지시 17:08, 반영 뒤 수정 줄 재검사 → v0check pass"
+  },
+  {
+   "id": "brandconnect-a127-naver-1121",
+   "added": "2026-11-21",
+   "what": "A1-27 네이버용 브랜드커넥트 검색(brandconnect 에이전트) — 결재 승인 뒤 네이버 원고 전에, 없으면 affiliate none --why 에 검색 근거(키워드·건수)",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.affiliate show --code A1-27",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "a127-fixer-recheck-1121",
+   "added": "2026-11-21",
+   "what": "A1-27 fixer 반영 확인 → 수정 줄 재검사(v0) → v0check pass → 02:00 결재함 상정",
+   "due": "2026-11-22",
+   "cmd": "git log -3 --format=%h%x20%s -- 신청주의개선입법예고12월9일직권신청3가지_글_HTML.txt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-545",
+   "added": "2026-11-21",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(545_sinchungjuui_gwonjin.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-21",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-a127-v0fixes-1121",
+   "added": "2026-11-21",
+   "what": "A1-27 원고 V0 필수수정 6건+권고 3건 반영(커밋 b87c891b9). heading OK·bodydup 0.048 신규·layout 🔴0. 남은 것: 3번째 공식 링크 의견제출 경로(URL 미확인), 4절 '5쪽의 사례 박스' 표기, v0check pass(이부장)·썸네일 deploy",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.bodydup --file 신청주의개선입법예고12월9일직권신청3가지_글_HTML.txt --code A1-27 --live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
