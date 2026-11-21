@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 13:49:40",
+ "at": "2026-11-21 14:00:20",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,24 +11,24 @@
     "code": "A2-33",
     "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "",
-    "last_at": "",
+    "last_at": "2026-11-21",
     "lvl": "amber"
    }
   ],
@@ -410,8 +410,8 @@
    "who": "3.세션",
    "kind": "글감",
    "ran": true,
-   "at": "13:36",
-   "note": "13:3x [이부장 접수·검토] 3. 13:2x·14:00 보고 접수(원문 직접 열람): 후보 0 유지이나 갈래별 사유 표 제",
+   "at": "13:51",
+   "note": "⏸ 대기 — 13:5x 재알림 확인: 지시서 13:05:53 그대로(변경 없음). 제안 0 · 재고 0(H1-44 이후 pac",
    "today": 0,
    "order": null,
    "lvl": "ok"
@@ -475,8 +475,8 @@
   {
    "who": "이과장",
    "state": "현장(진행)",
-   "jobs": 7,
-   "last_min": 13,
+   "jobs": 6,
+   "last_min": 0,
    "cur": "🚀 A2-33 발행 — 민주유공자법 내용 — 내년 6월 등록,",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -485,7 +485,7 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 4,
+   "last_min": 7,
    "cur": "4. 우리 사이트 내용 직접 점검 — 무엇을 고칠까 (사장님 ",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -523,8 +523,8 @@
   {
    "who": "이과장",
    "state": "현장(진행)",
-   "jobs": 7,
-   "last_min": 13,
+   "jobs": 6,
+   "last_min": 0,
    "cur": "🚀 A2-33 발행 — 민주유공자법 내용 — 내년 6월 등록,",
    "lvl": "ok"
   },
@@ -532,7 +532,7 @@
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 13,
+   "last_min": 8,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -540,7 +540,7 @@
    "who": "4.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 4,
+   "last_min": 7,
    "cur": "4. 우리 사이트 내용 직접 점검 — 무엇을 고칠까 (사장님 ",
    "lvl": "ok"
   },
@@ -548,7 +548,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 1,
+   "last_min": 11,
    "cur": "13:5x [이부장 접수] 이대리 13:47 점검 보고 접수(",
    "lvl": "ok"
   },
@@ -695,6 +695,13 @@
   "naver": {
    "done": [
     {
+     "code": "A2-33",
+     "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·",
+     "url": "https://blog.naver.com/magsori8975/224485946111",
+     "at": "2026-11-21",
+     "who": "lee"
+    },
+    {
      "code": "H1-44",
      "title": "결혼식 보증인원 줄일 수 있나 — 스튜디오 사진파일 따",
      "url": "https://blog.naver.com/magsori8975/224485920222",
@@ -786,12 +793,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "A2-33",
-     "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·"
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -1053,6 +1055,13 @@
    "at": "2026-11-21 13:46:51",
    "src": "now_log 게시 URL",
    "who": "lee"
+  },
+  {
+   "code": "A2-33",
+   "stage": "naver",
+   "at": "2026-11-21 13:59:56",
+   "src": "now_log 게시 URL",
+   "who": "lee"
   }
  ],
  "approvals": [],
@@ -1197,13 +1206,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "bad",
-  "ok": 3,
+  "state": "stale",
+  "ok": 6,
   "stale": 1,
-  "bad": 1,
-  "na": 2,
-  "at": "2026-11-21 04:22:44",
-  "age_min": 26
+  "bad": 0,
+  "na": 0,
+  "at": "2026-11-21 13:59:28",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1284,11 +1293,11 @@
  "fired": [
   {
    "day": "2026-11-21",
-   "total": 80,
+   "total": 84,
    "kinds": [
     [
      "REPORT_UNACKED",
-     18
+     19
     ],
     [
      "BOSS_APPROVAL",
@@ -1296,11 +1305,15 @@
     ],
     [
      "ASIDE_ALERT",
-     5
+     6
     ],
     [
      "CHKMON_REPORT",
-     5
+     6
+    ],
+    [
+     "ASIDE_DRAFT",
+     4
     ],
     [
      "BOSS_REMIND",
@@ -1313,10 +1326,6 @@
     [
      "NEW_BOSS_ITEM",
      4
-    ],
-    [
-     "ASIDE_DRAFT",
-     3
     ]
    ]
   },

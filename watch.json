@@ -34695,6 +34695,37 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "fuel-recheck-1121-1530",
+   "added": "2026-11-21",
+   "what": "연료 재확인 15:30 — 재고·제안 0 이면 3. 중간 결과 확인과 루틴 갈래 확장 지시",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-a233",
+   "added": "2026-11-21",
+   "what": "🔗 A2-33 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-33",
+   "due": "2026-11-21",
+   "cmd": "python studio/blogger.py crosslink --code A2-33",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "insta-h144-dup-delete-1121",
+   "added": "2026-11-21",
+   "what": "🙋 인스타 H1-44 중복 게시물 삭제 승인 — 13:34 첫 게시(Df_Yjp9keCV, 기록된 것)와 13:38 중복(Df_ZDKAEWNf)이 올라가 있습니다. 승인하면 이과장이 Aside 로 중복 Df_ZDKAEWNf 만 삭제(인스타 최근 삭제함에 30일 보관)하고 프로필에서 확인합니다. 【권고】승인(나중에 올라간 중복 삭제·먼저 것 유지) 【근거】글×채널 1회 규칙(OSMU 중복게시 방지)·두 게시물 모두 라이브 200 확인 【위험】공개 게시물 삭제(30일 내 복구 가능)·먼저 것이 아닌 것을 지우지 않게 이과장이 주소를 확인 후 삭제",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard now --batch pub1121h144 --step 7 --what \"👤 사장님 승인(결재함): 인스타 H1-44 중복 게시물 Df_ZDKAEWNf(13:38) 삭제 — 먼저 것 Df_Yjp9keCV 유지, 이과장이 Aside 로 삭제 후 프로필 확인\"",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
