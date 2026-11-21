@@ -34709,7 +34709,7 @@
   {
    "id": "xlink-a233",
    "added": "2026-11-21",
-   "what": "🔗 A2-33 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-33",
+   "what": "🔗 A2-33 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-33",
    "due": "2026-11-21",
    "cmd": "python studio/blogger.py crosslink --code A2-33",
    "owner": "claude",
@@ -34735,6 +34735,110 @@
    "what": "H1-44 인스타 Df_ZDKAEWNf 삭제 이행 확인 — 이과장 보고(pub1121h144) 뒤 프로필 1건·osmu_manifest 기록 Df_Yjp9keCV 단일 확인 / A2-33 인스타 재게시 없음(Df_bsdzETld 1건)",
    "due": "2026-11-21",
    "cmd": "python -m studio.osmu_manifest table --code H1-44",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "이과장 보고 + 이부장 curl 로 Df_ZDKAEWNf og 메타 소실·Df_Yjp9keCV og 정상, manifest 단일"
+  },
+  {
+   "id": "xmas-tree-affiliate-1121",
+   "added": "2026-11-21",
+   "what": "👤 사장님 14:07 지시: 크리스마스트리 제휴 — ①쓰레드 단독(product 조사→결재함, 승인 뒤 게시) ②이대리 네이버 쇼핑커넥트 추천(brandconnect 조사→idaerireq add→aroma 배치 권고). 조사 결과 docs/상품조사_크리스마스트리_*_20261121.md 확인 후 진행",
+   "due": "2026-11-21",
+   "cmd": "ls docs/상품조사_크리스마스트리_*_20261121.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "조사 2건 완료(파일 확인): 쇼핑커넥트→이대리 권고 전달(idaeri-1121-141030), 쓰레드→xmas1121 지시(이과장 쿠팡 리뷰 읽기)"
+  },
+  {
+   "id": "xmas-tree-followup-1121",
+   "added": "2026-11-21",
+   "what": "크리스마스트리: ①이대리 수용 회신(aroma 배치·idaeri-1121-141030) ②xmas1121 이과장 쿠팡 리뷰 보고 → 이부장이 1순위 선택 → 링크 발급 지시 → 쓰레드 결재함",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.idaerireq list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "exp1119m1-clean-4h-1121",
+   "added": "2026-11-21",
+   "what": "4. 클린 URL(A5-09·D2-21·H1-44) 4h 판독 — 요청 13:53 기준 17:55, 4. 깨우기·표 확인",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard order --id exp1119m1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "exp1119m1-clean-48h-1123",
+   "added": "2026-11-21",
+   "what": "4. 클린 URL(A5-09·D2-21 13:55·H1-44 13:50) 48h 판독 11-23 — 4. 깨우기",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.batchboard order --id exp1119m1",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "exp1119m1-4h-1121",
+   "added": "2026-11-21",
+   "what": "EXP-M1 4h 판독: 색인 요청 A5-09·D2-21 (요청 11-21 13:53) 크롤 시각·리디렉션 오류 여부를 표로",
+   "due": "2026-11-21",
+   "cmd": "python data/_exp_b_inspect_1113.py A5-09 D2-21",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
+  },
+  {
+   "id": "exp1119m1-48h-a5d2-1123",
+   "added": "2026-11-21",
+   "what": "EXP-M1 48h 판독: A5-09·D2-21 (요청 11-21 13:53)",
+   "due": "2026-11-23",
+   "cmd": "python data/_exp_b_inspect_1113.py A5-09 D2-21",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
+  },
+  {
+   "id": "exp1119m1-48h-h144-1123",
+   "added": "2026-11-21",
+   "what": "EXP-M1 48h 판독: H1-44 (요청 11-21 13:49)",
+   "due": "2026-11-23",
+   "cmd": "python data/_exp_b_inspect_1113.py H1-44",
+   "owner": "claude",
+   "state": "todo",
+   "by": "4."
+  },
+  {
+   "id": "clock-1630-1121",
+   "added": "2026-11-21",
+   "what": "일일 시계 첫날 점검 16:30 — 3.(fuel1030)·4.(adsite1120) 보고 도착, 이과장 xmas1121 1단계 16:00 보고, 17:00 안에 끝난 것·못 끝난 것 목록",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel1030-1630",
+   "added": "2026-11-21",
+   "what": "fuel1030 16:30 최종 보고(사장님 일일 시계 14:29 갱신) — 후보 수와 24:00 전 낼 수 있는 수 포함",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "clock-0200-1122",
+   "added": "2026-11-21",
+   "what": "일일 시계 02:00 결재함 상정(임시 수동) — 24:00 안 후보 중 선별·초안·V0 통과분 결재함에 올리기. 코드(maint1121time CK-3)가 자동화되기 전까지 이부장이 확인",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.topicprop table",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
