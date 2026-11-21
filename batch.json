@@ -13166,17 +13166,27 @@
    "order_at": "2026-11-22 04:13:50"
   }
  },
- "updated": "2026-11-22 04:14:06",
+ "updated": "2026-11-22 04:16:25",
  "current": {
-  "batch": "maint1122watchloss",
+  "batch": "sitefix1121",
   "code": "",
   "title": "",
-  "step": 2,
-  "what": "🔄 복구 완료: watch.json 3012→3039건(04:04:02 배포 저장소 a63bb6b8e 사본 합집합·커밋 abfd81988 로컬) · 원인 추적 중(syncorigin 은 watch.json 을 커밋·되돌림 대상 아님을 코드로 확인 — 04:04~04:05 사이 다른 쓰기 주체 찾는 중)",
-  "since": "04:11",
-  "since_at": "2026-11-22 04:11:16"
+  "step": 1,
+  "what": "⏸ 대기 — 지시서 읽음(04:2x). 순서 규정대로 pub1122c230h145·A1-27 4채널 후속(현재 네이버 게시가 분류기 거부로 대기)이 먼저, 적용은 12:00~16:00. 사전 확인만: docs/site_fix_pilot10/pilot10_dryrun.md·tone_fix_3.md 존재 여부 점검 예정",
+  "since": "04:16",
+  "since_at": "2026-11-22 04:16:25"
  },
  "log": [
+  {
+   "t": "04:16:25",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — 지시서 읽음(04:2x). 순서 규정대로 pub1122c230h145·A1-27 4채널 후속(현재 네이버 게시가 분류기 거부로 대기)이 먼저, 적용은 12:00~16:00. 사전 확인만: docs/site_fix_pilot10/pilot10_dryrun.md·tone_fix_3.md 존재 여부 점검 예정",
+   "actor": "이과장"
+  },
+  {
+   "t": "04:14:34",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — A1-27 네이버 게시(naverwrite)가 자동 분류기에 거부됨(Destructive or Unwanted). 원고·네이버 전용 썸네일(545n_sinchungjuui_gwonjin.png)·서식본 글자 4226자 보존 ✅ 준비 완료. 풀리는 조건: 채팅 허용 한 줄 + 게시 명령 실행(이부장 판단). 네이버 게시 전엔 인스타·쓰레드 원고 안 낸다(규칙)",
+   "actor": "이과장"
+  },
   {
    "t": "04:14:06",
    "text": "▶   — 2/7단계 · 🔄 복구 완료: watch.json 3012→3039건(04:04:02 배포 저장소 a63bb6b8e 사본 합집합·커밋 abfd81988 로컬) · 원인 추적 중(syncorigin 은 watch.json 을 커밋·되돌림 대상 아님을 코드로 확인 — 04:04~04:05 사이 다른 쓰기 주체 찾는 중)",
@@ -13366,16 +13376,6 @@
    "t": "00:21:24",
    "text": "▶   — 1/7단계 · 조사 완료(구현 안 함): ①pick 주체 필드 없음(topicprop 항목에 by 없음) — 00:10:11 add→00:11:02 pick(state_at)·decision 문구는 루틴공통절 「제안뒤선별」 docflow 경로와 일치(추정, 기록상 확정 불가) ②topicprop.py:750 pick→_auto_draft_order(770)→needs_draft_order(764)는 draftfind.has·열린 배치 코드만 본다 — 제안자 src(lifeinfo-daily-publish·travel-prep=직접 초안 쓰는 레인)는 안 본다, 00:11 에 queue 에 초안 없었으니 건너뛰기 검사 통과 불가피 ③권고=자동 발급 쪽을 고친다: needs_draft_order 에 src 인자 — 직접 초안 쓰는 레인이고 제안 6h 이내면 지시서 생략+watch(due 2h·cmd draftfind <코드>) 등록(B2-24 정체 방지), 루틴공통절 ④' 대행 지시서가 이미 폴백. 시험=TestPickAutoOrder 에 src별 3건+실 pick 드라이런. 설계도 먼저.",
    "actor": "정비"
-  },
-  {
-   "t": "00:20:22",
-   "text": "▶   — 4/7단계 · [이부장 00:32] V0 🟡 조건부(원본가치 충분 — 24/48/5 구분표·열 내린 시각별 4행 표·5일 혼동 함정). 필수 수정 4건(5절 법정 감염병 인용 원문 구조·84행 ③행↔74행 모순·80행 일본 5일 삭제·83행 가상 사례) fixer 반영 중. 작성 세션 원고 수정 금지",
-   "actor": "이부장"
-  },
-  {
-   "t": "00:19:40",
-   "text": "▶   — 3/7단계 · [이부장 접수 00:25] 이과장 00:2x 보고 접수: 루틴6 세션(ddf2537c)이 같은 초안을 00:15 적재한 것을 발견·중복 방지로 직접 작성 안 함·점검만(heading ✅·layout 🔴0·bodydup 0.032). 검토: 올바른 판단. 지시서 draft1122c230 은 이중 발급(원인 조사 maint1122pickdup). V0 는 이부장 진행 중(v0 에이전트). 이과장 새 지시 불필요",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -16084,7 +16084,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⏸ A1-27 후속 대기 — 발행·라이브 200 완료. 동기 막힘: xlink_live 는 경로 지정 커밋(a8923c87b)으로 해소, 그러나 syncorigin merge 가 Windows unlink 오류(webapp/lifeinfo_db.txt → 재시도 batch.json 'Invalid argument', read-tree failed)로 2회 실패 — 다른 프로세스가 webapp 파일을 잡고 있는 듯. 저장소는 온전(diverged 3/1, 중단 상태 아님). 재시도로 못 뚫어 멈춤. 풀리는 조건: 파일 잠금 해소 후 syncorigin 재실행(이부장/정비 판단)",
+   "what": "⏸ 대기 — A1-27 네이버 게시(naverwrite)가 자동 분류기에 거부됨(Destructive or Unwanted). 원고·네이버 전용 썸네일(545n_sinchungjuui_gwonjin.png)·서식본 글자 4226자 보존 ✅ 준비 완료. 풀리는 조건: 채팅 허용 한 줄 + 게시 명령 실행(이부장 판단). 네이버 게시 전엔 인스타·쓰레드 원고 안 낸다(규칙)",
    "since": "04:02",
    "since_at": "2026-11-22 04:02:00"
   },
@@ -16096,6 +16096,15 @@
    "what": "🔄 복구 완료: watch.json 3012→3039건(04:04:02 배포 저장소 a63bb6b8e 사본 합집합·커밋 abfd81988 로컬) · 원인 추적 중(syncorigin 은 watch.json 을 커밋·되돌림 대상 아님을 코드로 확인 — 04:04~04:05 사이 다른 쓰기 주체 찾는 중)",
    "since": "04:11",
    "since_at": "2026-11-22 04:11:16"
+  },
+  "sitefix1121": {
+   "batch": "sitefix1121",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "⏸ 대기 — 지시서 읽음(04:2x). 순서 규정대로 pub1122c230h145·A1-27 4채널 후속(현재 네이버 게시가 분류기 거부로 대기)이 먼저, 적용은 12:00~16:00. 사전 확인만: docs/site_fix_pilot10/pilot10_dryrun.md·tone_fix_3.md 존재 여부 점검 예정",
+   "since": "04:16",
+   "since_at": "2026-11-22 04:16:25"
   }
  },
  "report_log": [
@@ -51309,6 +51318,28 @@
    "what": "🔄 복구 완료: watch.json 3012→3039건(04:04:02 배포 저장소 a63bb6b8e 사본 합집합·커밋 abfd81988 로컬) · 원인 추적 중(syncorigin 은 watch.json 을 커밋·되돌림 대상 아님을 코드로 확인 — 04:04~04:05 사이 다른 쓰기 주체 찾는 중)",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-22 04:14:34",
+   "bid": "pub1122a127",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⏸ 대기 — A1-27 네이버 게시(naverwrite)가 자동 분류기에 거부됨(Destructive or Unwanted). 원고·네이버 전용 썸네일(545n_sinchungjuui_gwonjin.png)·서식본 글자 4226자 보존 ✅ 준비 완료. 풀리는 조건: 채팅 허용 한 줄 + 게시 명령 실행(이부장 판단). 네이버 게시 전엔 인스타·쓰레드 원고 안 낸다(규칙)",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "rec26ce"
+  },
+  {
+   "ts": "2026-11-22 04:16:25",
+   "bid": "sitefix1121",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⏸ 대기 — 지시서 읽음(04:2x). 순서 규정대로 pub1122c230h145·A1-27 4채널 후속(현재 네이버 게시가 분류기 거부로 대기)이 먼저, 적용은 12:00~16:00. 사전 확인만: docs/site_fix_pilot10/pilot10_dryrun.md·tone_fix_3.md 존재 여부 점검 예정",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "rb9658a"
   }
  ]
 }
