@@ -34856,6 +34856,60 @@
    "preview": "aromapv_AM-BC-001.html",
    "done_at": "2026-11-21",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "lee-skills-audit-1121",
+   "added": "2026-11-21",
+   "what": "👤 사장님 14:40 질문: 이과장 반복 작업이 스킬로 만들어져 쓰이고 있는지 — measure 에이전트 점검 결과 docs/이과장_반복작업_스킬화_점검_20261121.md 확인 후 사장님께 보고",
+   "due": "2026-11-21",
+   "cmd": "ls docs/이과장_반복작업_스킬화_점검_20261121.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "measure 점검 완료 — docs/이과장_반복작업_스킬화_점검_20261121.md"
+  },
+  {
+   "id": "fable-verify-549685729-1121",
+   "added": "2026-11-21",
+   "what": "페이블 독립 검증 549685729(MG-3 derivedguard·syncorigin) — 결과 docs/검증_fable_549685729_20261121.md 판정 확인, 🔴 있으면 정비 지시",
+   "due": "2026-11-21",
+   "cmd": "ls docs/검증_fable_549685729_20261121.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-21",
+   "result": "판정 조건부(🔴2) — maint1121syncfix 지시"
+  },
+  {
+   "id": "lanes-page-1121",
+   "added": "2026-11-21",
+   "what": "👤 사장님 14:50 시인성 요청 — 정비 maint1121lanes lanes.html 완성·화면 검증 후 오른쪽 브라우저 패널에 띄우고 사장님께 보고(split view 안내 포함)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard order --id maint1121lanes",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "selfcheck-red-1121",
+   "added": "2026-11-21",
+   "what": "selfcheck 종료코드 1 (조치 필요 9건). 세션 보고 🔴14: 지시서 빈 5곳(cp1013 tower1030 tower1031 tower1101 tower1102). 재확인 대기 861건 오늘 도래. 보드 정체 155건. 제휴 링크 3건 죽음(F4-01 G1-07 G3-05). 판정기 오탐 의심 4건. 규칙 지도 1건 어긋남. 루프 정체 이음매 35건.",
+   "due": "2026-11-21",
+   "cmd": "PYTHONIOENCODING=utf-8 python studio/selfcheck.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "lee-xmas-stall-1121",
+   "added": "2026-11-21",
+   "what": "이과장 xmas1121 정체(14:33 이후 무보고) 재깨움 15:06 — 15:40 에도 보고 없으면 상황 확인(Aside 점유·세션 상태)",
+   "due": "2026-11-21",
+   "cmd": "python -c \"from studio import sessionstate as s; print(s.read_info('xmas1121'))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
