@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-21 22:41",
+ "generated": "2026-11-21 23:08",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/21 20:04",
-   "next": "11/21 23:00",
+   "last": "11/21 23:04",
+   "next": "11/22 08:00",
    "model": "sonnet-5-5",
    "report_day": "1121",
    "report": "11-21 12시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음(구글커뮤니티·Anthropic·GSC 7일 0건). 🟡 lifeinfo-console 콘솔 정합성 검사 실패 17건+피드 드리프트 1건(사유 미열람, 기존 watch drift-fail-1021 계열). gmailread scan 은 개인정보 훅 거부로 못 돌림(커넥터로 대체). magsori8975 전달 3건(뉴스·Gemini 공지, 조치 없음), aroma8975 0건(평소)\n▸ 12:20 11-21 12시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음. 🟡 lifeinfo-console 정합성 검사 실패 메일 17건+드리프트 1건(사유 미열람, watch drift-fail-1021 계열). gmailread scan 은 개인정보 훅 거부로 못 돌림(커넥터로 대체). magsori8975 전달 3건 조치 없음, aroma8975 0건",
    "runs": [
+    {
+     "at": "11/21 23:06",
+     "link": "claude://claude.ai/epitaxy/local_eef8de75-4566-4d52-a5ae-4a5e6cdc7792",
+     "archived": false
+    },
     {
      "at": "11/21 20:07",
      "link": "claude://claude.ai/epitaxy/local_0df8f41a-ad7a-4bf5-aec3-8d162a1a6e8e",
@@ -31,11 +36,6 @@
      "at": "11/21 12:21",
      "link": "claude://claude.ai/epitaxy/local_e4576511-80bc-4588-a29c-9a7fd2d93b94",
      "archived": false
-    },
-    {
-     "at": "11/20 23:08",
-     "link": "claude://claude.ai/epitaxy/local_5641a991-f061-4375-ad52-a05a6434b048",
-     "archived": true
     }
    ]
   },
@@ -165,7 +165,7 @@
    "report": "11-21 야간검증: 오늘 발행 A2-33·H1-44 + 기존 C3-05 대조 — 오류 0·라이브 수정 0. 상세 note. 사장님 할 일 없음. 참고: 제휴 링크 3건 404(F4-01·G1-07·G3-05) 재발급 필요(selfcheck 27)",
    "runs": [
     {
-     "at": "11/21 22:41",
+     "at": "11/21 22:42",
      "link": "claude://claude.ai/epitaxy/local_dc14227b-8d26-4af7-aeb8-8153d62f1474",
      "archived": false
     },
@@ -348,12 +348,17 @@
    "name": "10-aroma 이대리 야간 글감(카테고리별 1편)",
    "id": "aroma-nightly-topics",
    "on": true,
-   "last": "11/20 23:10",
-   "next": "11/21 23:00",
+   "last": "11/21 23:08",
+   "next": "11/22 23:00",
    "model": "sonnet-5-5",
    "report_day": "",
    "report": "",
    "runs": [
+    {
+     "at": "11/21 23:08",
+     "link": "claude://claude.ai/epitaxy/local_fe9bf4d6-9c1d-46d3-ac8d-854ab111c431",
+     "archived": false
+    },
     {
      "at": "11/20 23:30",
      "link": "claude://claude.ai/epitaxy/local_7ba83d7f-1c2d-46f8-a2b2-d5a551e16149",
@@ -372,11 +377,6 @@
     {
      "at": "11/12 23:15",
      "link": "claude://claude.ai/epitaxy/local_1a7f1283-232e-4469-b8bb-106fb63f148e",
-     "archived": true
-    },
-    {
-     "at": "11/12 12:21",
-     "link": "claude://claude.ai/epitaxy/local_9eca0b3c-eed3-4b06-8bd3-45e502180625",
      "archived": true
     }
    ]
