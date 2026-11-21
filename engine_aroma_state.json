@@ -1,7 +1,23 @@
 {
- "at": "2026-11-22 04:27:59",
+ "at": "2026-11-22 04:38:26",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-BC-002",
+   "approvals": [
+    {
+     "id": "aroma-am-bc-002-approve-1122",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-22"
+    }
+   ],
+   "title": "seg1",
+   "last_file_at": "2026-11-22 04:34",
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 d8c719100"
+  },
   {
    "code": "AM-DG-016",
    "approvals": [
@@ -13,7 +29,7 @@
     }
    ],
    "title": "AGF2026티켓가격",
-   "last_file_at": "2026-11-21 23:27",
+   "last_file_at": "2026-11-22 04:32",
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 1ef2b7322"
@@ -29,7 +45,7 @@
     }
    ],
    "title": "아이브앙코르가격일정",
-   "last_file_at": "2026-11-21 23:28",
+   "last_file_at": "2026-11-22 04:29",
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 7cd8acc23"
@@ -45,27 +61,10 @@
     }
    ],
    "title": "K리그1강등구도",
-   "last_file_at": "2026-11-21 23:28",
+   "last_file_at": "2026-11-22 04:29",
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 8cfaee2ce"
-  },
-  {
-   "code": "AM-BC-002",
-   "approvals": [
-    {
-     "id": "aroma-am-bc-002-approve-1122",
-     "state": "todo",
-     "kind": "approve",
-     "at": "2026-11-22"
-    }
-   ],
-   "title": "무릎담요크기비교",
-   "last_file_at": "2026-11-22 02:08",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-bc-002-approve-1122",
-   "no_preview": false
   }
  ],
  "old_inflight": [],
@@ -317,7 +316,7 @@
    "name": "AROMA_PUBLISH_STALL",
    "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
-   "src": "시각 저장 없음(진행 중 0건)",
+   "src": "시각 저장 없음(진행 중 4건)",
    "today_n": 0,
    "note": "",
    "at_node": "pub"
@@ -346,7 +345,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 15분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -379,9 +378,9 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "⏸ 대기(남의 차례)",
+  "state": "현장(진행)",
   "jobs": 1,
-  "last_min": 8,
+  "last_min": 6,
   "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
   "lvl": "ok"
  },
@@ -395,32 +394,31 @@
  "nodes": {
   "draft": [],
   "v0": [],
-  "boss": [
-   {
-    "code": "AM-BC-002",
-    "title": "무릎담요크기비교",
-    "min": 139,
-    "lvl": "ok"
-   }
-  ],
+  "boss": [],
   "deploy": [],
   "publish": [
    {
+    "code": "AM-BC-002",
+    "title": "seg1",
+    "min": 10,
+    "lvl": "ok"
+   },
+   {
     "code": "AM-DG-016",
     "title": "AGF2026티켓가격",
-    "min": 1,
+    "min": 11,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-018",
     "title": "아이브앙코르가격일정",
-    "min": 5,
+    "min": 15,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-022",
     "title": "K리그1강등구도",
-    "min": 0,
+    "min": 10,
     "lvl": "ok"
    }
   ],
@@ -790,6 +788,9 @@
    ],
    "wait": [
     {
+     "code": "AM-BC-002"
+    },
+    {
      "code": "AM-DG-016"
     },
     {
@@ -812,7 +813,7 @@
   "today": "2026-11-22",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -828,15 +829,15 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 3,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "⏸ 대기(남의 차례)",
+   "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 8,
+   "last_min": 6,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok"
   },
@@ -849,9 +850,9 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "⏸ 대기(남의 차례)",
+   "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 8,
+   "last_min": 6,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -872,7 +873,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -880,11 +881,11 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "02:08",
-   "today": 1,
+   "at": "04:34",
+   "today": 4,
    "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 1편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 4편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -898,27 +899,40 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 1편",
+   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 4편",
    "codes": [
-    "AM-BC-002"
+    "AM-BC-002",
+    "AM-DG-016",
+    "AM-PE-018",
+    "AM-SP-022"
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-bc-002-approve-1122",
-   "what": "【권고】AM-BC-002 「무릎담요 크기 비교 미니 5,900원 vs 똑딱이 10,400원(배송비 포함)」(브랜드커넥트 카테고리 14·쇼핑커넥트",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
+ "approvals": [],
  "edits": [],
  "today_events": [
+  {
+   "code": "AM-PE-018",
+   "stage": "proc",
+   "at": "2026-11-22 04:29:50",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-022",
+   "stage": "proc",
+   "at": "2026-11-22 04:29:50",
+   "src": "파일 수정 시각"
+  },
   {
    "code": "AM-BC-002",
    "stage": "proc",
    "at": "2026-11-22 02:06:32",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-016",
+   "stage": "proc",
+   "at": "2026-11-22 04:29:50",
    "src": "파일 수정 시각"
   },
   {
@@ -943,6 +957,12 @@
    "code": "AM-SP-022",
    "stage": "boss",
    "at": "2026-11-22 04:27:36",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-BC-002",
+   "stage": "boss",
+   "at": "2026-11-22 04:28:13",
    "src": "결재 커밋 시각"
   }
  ],
@@ -986,7 +1006,7 @@
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 0회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 4건) · 오늘 0회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
@@ -1004,7 +1024,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 15분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
