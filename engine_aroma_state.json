@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 15:47:27",
+ "at": "2026-11-21 16:02:53",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -22,7 +22,7 @@
     }
    ],
    "title": "크리스마스트리 150cm vs 180cm, 가격차 15,900원 구성 표기 다름",
-   "last_file_at": "2026-11-21 14:38",
+   "last_file_at": "2026-11-21 16:01",
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-21"
@@ -235,7 +235,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-21 15:47:17",
+   "last_at": "2026-11-21 16:02:48",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -274,7 +274,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 7회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -298,10 +298,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-21 14:35",
+   "last_at": "2026-11-21 16:01",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 55개",
+   "note": "복사된 미리보기 56개",
    "at_node": "boss"
   }
  ],
@@ -309,7 +309,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 64,
+  "last_min": 80,
   "cur": "👤 이부장 14:46 접수·확인: 이대리 AM-BC-001 게",
   "lvl": "ok"
  },
@@ -722,7 +722,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 64,
+   "last_min": 80,
    "cur": "👤 이부장 14:46 접수·확인: 이대리 AM-BC-001 게",
    "lvl": "ok"
   },
@@ -737,7 +737,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 64,
+   "last_min": 80,
    "cur": "👤 이부장 14:46 접수·확인: 이대리 AM-BC-001 게",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -766,7 +766,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "14:38",
+   "at": "16:01",
    "today": 5,
    "lvl": "ok",
    "order": null,
@@ -798,18 +798,6 @@
  "edits": [],
  "today_events": [
   {
-   "code": "AM-BC-001",
-   "stage": "proc",
-   "at": "2026-11-21 14:31:07",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-017",
-   "stage": "proc",
-   "at": "2026-11-21 05:50:38",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-DG-015",
    "stage": "proc",
    "at": "2026-11-21 05:53:12",
@@ -819,6 +807,18 @@
    "code": "AM-BO-012",
    "stage": "proc",
    "at": "2026-11-21 05:41:17",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-017",
+   "stage": "proc",
+   "at": "2026-11-21 05:50:38",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BC-001",
+   "stage": "proc",
+   "at": "2026-11-21 14:31:07",
    "src": "파일 수정 시각"
   },
   {
@@ -915,7 +915,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-21 15:47:17",
+     "chip": "2026-11-21 16:02:48",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -940,7 +940,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 7회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
@@ -957,8 +957,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-21 14:35",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 55개"
+     "chip": "2026-11-21 16:01",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 56개"
     }
    ]
   },
