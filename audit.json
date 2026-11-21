@@ -6920,6 +6920,30 @@
    "target": "fuel1030-source-3",
    "detail": "확보 1건(E2-19) · 제외 2건(중복) · 확인 대기 1건(여행경보) · 기록 1차 파일 docs/source_ftc_consumer_guideline_20261122.md · docs/source_heating_support_20261122.md",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-22T07:15:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fuel1030-deep-3",
+   "detail": "소득세법 시행령 제외(시행 조문 미특정·시행일 충돌) · 국민연금·고용보험 결과 대기 중이라 항목은 유지(완료 아님)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T07:17:34",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fuel1030-deep-3",
+   "detail": "법제처 생활 제도 3건 심층 결과: 소득세법 제외·국민연금 제외·고용보험 보류(시행령 미확보). 신규 후보 0편. 근거 docs/source_sodeuk_sigyeong_20270101_20261122.md · source_gukmin_yeongeum_20270101_20261122.md · source_gomyong_boheom_20270101_20261122.md",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T07:26:23",
+   "actor": "v0 에이전트(이부장 호출, 작성자 이과장·수정 fixer 와 분리)",
+   "action": "v0check.pass",
+   "target": "E2-19",
+   "detail": "1차 🟡 필수수정 4건(법 시행 중 단정·세 가지·시행일 부칙 기준·인용부호)이 b640f81a8 로 해소, 재검 🟢(docs/v0_E2-19_recheck_20261122.md)·공식 원문 hwpx 대조·시행일 확정 표현 없음",
+   "via": "cli"
   }
  ]
 }
