@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-22 07:30",
+ "generated": "2026-11-22 08:08",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/21 23:04",
-   "next": "11/22 08:00",
+   "last": "11/22 08:04",
+   "next": "11/22 11:00",
    "model": "sonnet-5-5",
-   "report_day": "1121",
-   "report": "11-21 12시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음(구글커뮤니티·Anthropic·GSC 7일 0건). 🟡 lifeinfo-console 콘솔 정합성 검사 실패 17건+피드 드리프트 1건(사유 미열람, 기존 watch drift-fail-1021 계열). gmailread scan 은 개인정보 훅 거부로 못 돌림(커넥터로 대체). magsori8975 전달 3건(뉴스·Gemini 공지, 조치 없음), aroma8975 0건(평소)\n▸ 12:20 11-21 12시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음. 🟡 lifeinfo-console 정합성 검사 실패 메일 17건+드리프트 1건(사유 미열람, watch drift-fail-1021 계열). gmailread scan 은 개인정보 훅 거부로 못 돌림(커넥터로 대체). magsori8975 전달 3건 조치 없음, aroma8975 0건",
+   "report_day": "1122",
+   "report": "11-22 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중·RESULT PENDING) · 사장님 할 일 없음 · 새 구글/Anthropic/GSC 메일 0 · GitHub 발행 run 1건 실패=11-21 19:01 동시 dispatch 중 origin/main 이 앞서가 선행확인 스텝 차단(원인 확인, 직후 2회 성공 — 무해) · 콘솔 정합성/피드드리프트 실패 3건은 이후 run 성공 · Play ₩2,400 Google One 월갱신 정상 · m8975 구글뉴스 2통 전달 작동 · aroma8975 0건(평소) · gmailread 리더는 개인정보 훅이 막아 미실행(커넥터로 대체)",
    "runs": [
+    {
+     "at": "11/22 08:07",
+     "link": "claude://claude.ai/epitaxy/local_a8fd1148-4a69-4fbf-94db-55d1e489770c",
+     "archived": false
+    },
     {
      "at": "11/21 23:06",
      "link": "claude://claude.ai/epitaxy/local_eef8de75-4566-4d52-a5ae-4a5e6cdc7792",
@@ -30,11 +35,6 @@
     {
      "at": "11/21 14:08",
      "link": "claude://claude.ai/epitaxy/local_570d4dc2-58d6-4378-b804-28369860d7bf",
-     "archived": false
-    },
-    {
-     "at": "11/21 12:21",
-     "link": "claude://claude.ai/epitaxy/local_e4576511-80bc-4588-a29c-9a7fd2d93b94",
      "archived": false
     }
    ]
