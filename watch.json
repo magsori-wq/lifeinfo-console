@@ -35259,8 +35259,10 @@
    "due": "2026-11-22",
    "cmd": "ls docs/v0_C2-30_20261122.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "V0 🟡 조건부 00:2x(docs/v0_C2-30_20261122.md): 원본가치 충분·필수 4(법정 감염병 인용 구조·48시간 모순·일본 5일 삭제·가상 사례 표시) → fixer 00:3x, 반영 뒤 재검사·v0check pass·썸네일 547 배포 1회"
   },
   {
    "id": "v0reject-c2-30",
@@ -35269,9 +35271,31 @@
    "due": "2026-11-22",
    "cmd": "python -m studio.v0check gate --code C2-30",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "세션:ddf2537c"
+   "by": "세션:ddf2537c",
+   "done_at": "2026-11-22",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 2차: 필수수정 4건 해소(5절 3행 법정=출석인정·비법정만 학교장 인정·독감 분류는 공문/학교 확인, 3절 일본 5일 삭제, 4절 ③행 '이 글의 보수적 가정 계산' 표시, 4절 '가상 사례' 명시). 훼손 없음."
+  },
+  {
+   "id": "deploy-thumb-547",
+   "added": "2026-11-22",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(547_flu_school_return.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-22",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "c230-fixer-recheck-1122",
+   "added": "2026-11-22",
+   "what": "C2-30 fixer 반영 확인 → v0 재검사 → v0check pass → deploy.bat(547) 1회",
+   "due": "2026-11-22",
+   "cmd": "git log -2 --format=%h%x20%s -- 독감등교기준해열후24시간해열제48시간_글_HTML.txt",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
