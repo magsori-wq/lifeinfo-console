@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22 04:38:26",
+ "at": "2026-11-22 04:38:51",
  "errors": [],
  "rows": [
   {
@@ -42,10 +42,16 @@
      "state": "done",
      "kind": "approve",
      "at": "2026-11-22"
+    },
+    {
+     "id": "aroma-am-pe-018-hedge-1122",
+     "state": "todo",
+     "kind": "hedge",
+     "at": "2026-11-22"
     }
    ],
    "title": "아이브앙코르가격일정",
-   "last_file_at": "2026-11-22 04:29",
+   "last_file_at": "2026-11-22 04:38",
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 7cd8acc23"
@@ -369,10 +375,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-22 02:08",
+   "last_at": "2026-11-22 04:38",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 61개",
+   "note": "복사된 미리보기 62개",
    "at_node": "boss"
   }
  ],
@@ -380,7 +386,7 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 1,
-  "last_min": 6,
+  "last_min": 7,
   "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
   "lvl": "ok"
  },
@@ -406,19 +412,19 @@
    {
     "code": "AM-DG-016",
     "title": "AGF2026티켓가격",
-    "min": 11,
+    "min": 12,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-018",
     "title": "아이브앙코르가격일정",
-    "min": 15,
+    "min": 16,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-022",
     "title": "K리그1강등구도",
-    "min": 10,
+    "min": 11,
     "lvl": "ok"
    }
   ],
@@ -813,7 +819,7 @@
   "today": "2026-11-22",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -829,7 +835,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -837,7 +843,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 6,
+   "last_min": 7,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok"
   },
@@ -852,7 +858,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 1,
-   "last_min": 6,
+   "last_min": 7,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -873,7 +879,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -881,7 +887,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "04:34",
+   "at": "04:38",
    "today": 4,
    "lvl": "ok",
    "order": null,
@@ -908,15 +914,17 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-pe-018-hedge-1122",
+   "what": "【권고】AM-PE-018 아이브 콘서트 글 게시 전 소제목 한 줄만 완화. 방금 승인하신 원본의 소제목 「1차·2차」가 아니라 「국내·글로벌」은",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-PE-018",
-   "stage": "proc",
-   "at": "2026-11-22 04:29:50",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-SP-022",
    "stage": "proc",
@@ -927,6 +935,12 @@
    "code": "AM-BC-002",
    "stage": "proc",
    "at": "2026-11-22 02:06:32",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-018",
+   "stage": "proc",
+   "at": "2026-11-22 04:38:35",
    "src": "파일 수정 시각"
   },
   {
@@ -1041,8 +1055,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-22 02:08",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 61개"
+     "chip": "2026-11-22 04:38",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 62개"
     }
    ]
   },
