@@ -1,7 +1,23 @@
 {
- "at": "2026-11-22 04:26:23",
+ "at": "2026-11-22 04:27:18",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-DG-016",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-016-approve-1121",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-22"
+    }
+   ],
+   "title": "AGF2026티켓가격",
+   "last_file_at": "2026-11-21 23:27",
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 1ef2b7322"
+  },
   {
    "code": "AM-PE-018",
    "approvals": [
@@ -33,23 +49,6 @@
    "stage": "boss_wait",
    "label": "결재 대기",
    "detail": "aroma-am-bc-002-approve-1122",
-   "no_preview": false
-  },
-  {
-   "code": "AM-DG-016",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-016-approve-1121",
-     "state": "todo",
-     "kind": "approve",
-     "at": "2026-11-21"
-    }
-   ],
-   "title": "AGF2026티켓가격",
-   "last_file_at": "2026-11-21 23:27",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-dg-016-approve-1121",
    "no_preview": false
   },
   {
@@ -309,7 +308,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-22 04:26:11",
+   "last_at": "2026-11-22 04:26:41",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -348,7 +347,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 14분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 15분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -383,7 +382,7 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 1,
-  "last_min": 6,
+  "last_min": 7,
   "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
   "lvl": "ok"
  },
@@ -401,28 +400,28 @@
    {
     "code": "AM-BC-002",
     "title": "무릎담요크기비교",
-    "min": 138,
-    "lvl": "ok"
-   },
-   {
-    "code": "AM-DG-016",
-    "title": "AGF2026티켓가격",
-    "min": 299,
+    "min": 139,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-022",
     "title": "K리그1강등구도",
-    "min": 298,
+    "min": 299,
     "lvl": "ok"
    }
   ],
   "deploy": [],
   "publish": [
    {
+    "code": "AM-DG-016",
+    "title": "AGF2026티켓가격",
+    "min": 0,
+    "lvl": "ok"
+   },
+   {
     "code": "AM-PE-018",
     "title": "아이브앙코르가격일정",
-    "min": 3,
+    "min": 4,
     "lvl": "ok"
    }
   ],
@@ -792,6 +791,9 @@
    ],
    "wait": [
     {
+     "code": "AM-DG-016"
+    },
+    {
      "code": "AM-PE-018"
     }
    ]
@@ -808,7 +810,7 @@
   "today": "2026-11-22",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 3,
+  "boss_wait": 2,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -824,7 +826,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 2,
+  "age_min": 3,
   "lvl": "ok"
  },
  "units": [
@@ -832,7 +834,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 6,
+   "last_min": 7,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok"
   },
@@ -847,7 +849,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 6,
+   "last_min": 7,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -868,7 +870,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 3건"
+   "state": "결재 대기 2건"
   }
  ],
  "suppliers": [
@@ -903,13 +905,6 @@
  "approvals": [
   {
    "kind": "aroma",
-   "id": "aroma-am-dg-016-approve-1121",
-   "what": "【권고】AM-DG-016 「AGF 2026 티켓 3일권 65,000원 — 1일권 3장보다 22,000원 싸다」(디지털 콘텐츠·여가·검색형·45자",
-   "by": "이대리",
-   "waited": ""
-  },
-  {
-   "kind": "aroma",
    "id": "aroma-am-sp-022-approve-1121",
    "what": "【권고】AM-SP-022 「K리그 승강플레이오프 — 광주 12위 확정, 김천은 규정상 자동 강등」(스포츠·홈판형·38자) 게시 승인. 【근거】관",
    "by": "이대리",
@@ -941,6 +936,12 @@
    "code": "AM-PE-018",
    "stage": "boss",
    "at": "2026-11-22 04:22:47",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-DG-016",
+   "stage": "boss",
+   "at": "2026-11-22 04:26:51",
    "src": "결재 커밋 시각"
   }
  ],
@@ -977,7 +978,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-22 04:26:11",
+     "chip": "2026-11-22 04:26:41",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1002,7 +1003,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 14분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 15분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
