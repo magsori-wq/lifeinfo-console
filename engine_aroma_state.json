@@ -1,7 +1,24 @@
 {
- "at": "2026-11-22 02:08:28",
+ "at": "2026-11-22 02:39:04",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-BC-002",
+   "approvals": [
+    {
+     "id": "aroma-am-bc-002-approve-1122",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-22"
+    }
+   ],
+   "title": "무릎담요크기비교",
+   "last_file_at": "2026-11-22 02:08",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-bc-002-approve-1122",
+   "no_preview": false
+  },
   {
    "code": "AM-DG-016",
    "approvals": [
@@ -52,15 +69,6 @@
    "label": "결재 대기",
    "detail": "aroma-am-sp-022-approve-1121",
    "no_preview": false
-  },
-  {
-   "code": "AM-BC-002",
-   "approvals": [],
-   "title": "무릎담요크기비교",
-   "last_file_at": "2026-11-22 02:08",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-BC-002_1122_r2.md · REVISE"
   }
  ],
  "old_inflight": [],
@@ -309,7 +317,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-22 02:08:07",
+   "last_at": "2026-11-22 02:38:38",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -381,40 +389,39 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 147,
-  "cur": "[이부장 접수 23:42] 이대리 야간 글감 3/4(루틴10 ",
+  "last_min": 18,
+  "cur": "🟪 이대리 02:3x 상정 보고 접수(이부장 02:2x) — ",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [],
-  "v0": [
+  "v0": [],
+  "boss": [
    {
     "code": "AM-BC-002",
     "title": "무릎담요크기비교",
-    "min": 0,
+    "min": 31,
     "lvl": "ok"
-   }
-  ],
-  "boss": [
+   },
    {
     "code": "AM-DG-016",
     "title": "AGF2026티켓가격",
-    "min": 161,
+    "min": 192,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-018",
     "title": "아이브앙코르가격일정",
-    "min": 160,
+    "min": 191,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-022",
     "title": "K리그1강등구도",
-    "min": 160,
+    "min": 191,
     "lvl": "ok"
    }
   ],
@@ -798,7 +805,7 @@
   "today": "2026-11-22",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 4,
+  "boss_wait": 5,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -814,16 +821,16 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 9,
-  "lvl": "amber"
+  "age_min": 1,
+  "lvl": "ok"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 147,
-   "cur": "[이부장 접수 23:42] 이대리 야간 글감 3/4(루틴10 ",
+   "last_min": 18,
+   "cur": "🟪 이대리 02:3x 상정 보고 접수(이부장 02:2x) — ",
    "lvl": "ok"
   },
   {
@@ -835,10 +842,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 147,
-   "cur": "[이부장 접수 23:42] 이대리 야간 글감 3/4(루틴10 ",
+   "last_min": 18,
+   "cur": "🟪 이대리 02:3x 상정 보고 접수(이부장 02:2x) — ",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -858,7 +865,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 4건"
+   "state": "결재 대기 5건"
   }
  ],
  "suppliers": [
@@ -918,6 +925,13 @@
    "what": "【권고】AM-SP-022 「K리그 승강플레이오프 — 광주 12위 확정, 김천은 규정상 자동 강등」(스포츠·홈판형·38자) 게시 승인. 【근거】관",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-bc-002-approve-1122",
+   "what": "【권고】AM-BC-002 「무릎담요 크기 비교 미니 5,900원 vs 똑딱이 10,400원(배송비 포함)」(브랜드커넥트 카테고리 14·쇼핑커넥트",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [
@@ -969,7 +983,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-22 02:08:07",
+     "chip": "2026-11-22 02:38:38",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
