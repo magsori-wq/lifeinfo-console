@@ -13166,17 +13166,22 @@
    "order_at": "2026-11-22 04:13:50"
   }
  },
- "updated": "2026-11-22 04:16:25",
+ "updated": "2026-11-22 04:19:44",
  "current": {
-  "batch": "sitefix1121",
+  "batch": "aroma",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "⏸ 대기 — 지시서 읽음(04:2x). 순서 규정대로 pub1122c230h145·A1-27 4채널 후속(현재 네이버 게시가 분류기 거부로 대기)이 먼저, 적용은 12:00~16:00. 사전 확인만: docs/site_fix_pilot10/pilot10_dryrun.md·tone_fix_3.md 존재 여부 점검 예정",
-  "since": "04:16",
-  "since_at": "2026-11-22 04:16:25"
+  "what": "⏸ 대기 — SP-020 update-1121b: watch.json 은 done(사장님 원문·03:56 인용, 04:18 이부장 회수)이나 git 회수 기록 커밋이 아직 없음(watch.json 미커밋 M) → 커밋 확인 즉시 게시 직전 재확인(순위·MyBlog·백업) 후 게시. PE-018·DG-016·SP-022·BC-002 는 카드 todo 그대로 보류",
+  "since": "14:53",
+  "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "04:19:44",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — SP-020 update-1121b: watch.json 은 done(사장님 원문·03:56 인용, 04:18 이부장 회수)이나 git 회수 기록 커밋이 아직 없음(watch.json 미커밋 M) → 커밋 확인 즉시 게시 직전 재확인(순위·MyBlog·백업) 후 게시. PE-018·DG-016·SP-022·BC-002 는 카드 todo 그대로 보류",
+   "actor": "이대리"
+  },
   {
    "t": "04:16:25",
    "text": "▶   — 1/7단계 · ⏸ 대기 — 지시서 읽음(04:2x). 순서 규정대로 pub1122c230h145·A1-27 4채널 후속(현재 네이버 게시가 분류기 거부로 대기)이 먼저, 적용은 12:00~16:00. 사전 확인만: docs/site_fix_pilot10/pilot10_dryrun.md·tone_fix_3.md 존재 여부 점검 예정",
@@ -13370,11 +13375,6 @@
   {
    "t": "00:21:39",
    "text": "✅ PD-1 완료 — 🟡 topicprop pick 의 초안 지시서 자동 발급이 제",
-   "actor": "정비"
-  },
-  {
-   "t": "00:21:24",
-   "text": "▶   — 1/7단계 · 조사 완료(구현 안 함): ①pick 주체 필드 없음(topicprop 항목에 by 없음) — 00:10:11 add→00:11:02 pick(state_at)·decision 문구는 루틴공통절 「제안뒤선별」 docflow 경로와 일치(추정, 기록상 확정 불가) ②topicprop.py:750 pick→_auto_draft_order(770)→needs_draft_order(764)는 draftfind.has·열린 배치 코드만 본다 — 제안자 src(lifeinfo-daily-publish·travel-prep=직접 초안 쓰는 레인)는 안 본다, 00:11 에 queue 에 초안 없었으니 건너뛰기 검사 통과 불가피 ③권고=자동 발급 쪽을 고친다: needs_draft_order 에 src 인자 — 직접 초안 쓰는 레인이고 제안 6h 이내면 지시서 생략+watch(due 2h·cmd draftfind <코드>) 등록(B2-24 정체 방지), 루틴공통절 ④' 대행 지시서가 이미 폴백. 시험=TestPickAutoOrder 에 src별 3건+실 pick 드라이런. 설계도 먼저.",
    "actor": "정비"
   }
  ],
@@ -13672,7 +13672,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⏸ 대기 — idaeri-1122-041145 재확인(깨우기): [사장님] 결재·원문 인용 회수 기록 커밋 아직 없음 → 5건 게시 보류 유지. 이부장 회수 기록 커밋 대기",
+   "what": "⏸ 대기 — SP-020 update-1121b: watch.json 은 done(사장님 원문·03:56 인용, 04:18 이부장 회수)이나 git 회수 기록 커밋이 아직 없음(watch.json 미커밋 M) → 커밋 확인 즉시 게시 직전 재확인(순위·MyBlog·백업) 후 게시. PE-018·DG-016·SP-022·BC-002 는 카드 todo 그대로 보류",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -51340,6 +51340,17 @@
    "actor": "이과장",
    "sid": "c36eea8e",
    "req": "rb9658a"
+  },
+  {
+   "ts": "2026-11-22 04:19:44",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "⏸ 대기 — SP-020 update-1121b: watch.json 은 done(사장님 원문·03:56 인용, 04:18 이부장 회수)이나 git 회수 기록 커밋이 아직 없음(watch.json 미커밋 M) → 커밋 확인 즉시 게시 직전 재확인(순위·MyBlog·백업) 후 게시. PE-018·DG-016·SP-022·BC-002 는 카드 todo 그대로 보류",
+   "actor": "이대리",
+   "sid": "de614107",
+   "req": "r242b28"
   }
  ]
 }

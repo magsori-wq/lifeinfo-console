@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22 04:18:49",
+ "at": "2026-11-22 04:20:57",
  "errors": [],
  "rows": [
   {
@@ -184,14 +184,7 @@
   }
  ],
  "published_total": 65,
- "rev_wait": [
-  {
-   "code": "AM-SP-020",
-   "ids": [
-    "aroma-am-sp-020-update-1121b"
-   ]
-  }
- ],
+ "rev_wait": [],
  "cats": {
   "window": 14,
   "rows": [
@@ -317,7 +310,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-22 04:18:40",
+   "last_at": "2026-11-22 04:20:40",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -356,15 +349,15 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 2건 · 가장 오래된 6분째 (15분 넘으면 경보)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 8분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-22 04:12:52",
+   "last_at": "2026-11-22 04:19:44",
    "src": "now_log(bid=aroma)",
-   "today_n": 5,
+   "today_n": 6,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -391,7 +384,7 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 1,
-  "last_min": 5,
+  "last_min": 0,
   "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
   "lvl": "ok"
  },
@@ -409,25 +402,25 @@
    {
     "code": "AM-BC-002",
     "title": "무릎담요크기비교",
-    "min": 130,
+    "min": 132,
     "lvl": "ok"
    },
    {
     "code": "AM-DG-016",
     "title": "AGF2026티켓가격",
-    "min": 291,
+    "min": 293,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-018",
     "title": "아이브앙코르가격일정",
-    "min": 290,
+    "min": 292,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-022",
     "title": "K리그1강등구도",
-    "min": 290,
+    "min": 292,
     "lvl": "ok"
    }
   ],
@@ -811,7 +804,7 @@
   "today": "2026-11-22",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 5,
+  "boss_wait": 4,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -827,7 +820,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -835,7 +828,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 5,
+   "last_min": 0,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok"
   },
@@ -850,7 +843,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 5,
+   "last_min": 0,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -871,7 +864,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 5건"
+   "state": "결재 대기 4건"
   }
  ],
  "suppliers": [
@@ -906,13 +899,6 @@
  "approvals": [
   {
    "kind": "aroma",
-   "id": "aroma-am-sp-020-update-1121b",
-   "what": "【권고】AM-SP-020(여자배구 순위, 라이브 224477466833) 상단에 「🔄 11월 21일 저녁 업데이트 — SOOP 2:3 정관장, ",
-   "by": "이대리",
-   "waited": ""
-  },
-  {
-   "kind": "aroma",
    "id": "aroma-am-pe-018-approve-1121",
    "what": "【권고】AM-PE-018 「아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이」(공연·연예·검색형·44자) 게시 승",
    "by": "이대리",
@@ -940,20 +926,19 @@
    "waited": ""
   }
  ],
- "edits": [
-  {
-   "code": "AM-SP-020",
-   "title": "여자배구 순위 — 현대건설·SOOP 0승 4패끼리 11/18 맞대결",
-   "stage": "boss",
-   "packer": ""
-  }
- ],
+ "edits": [],
  "today_events": [
   {
    "code": "AM-BC-002",
    "stage": "proc",
    "at": "2026-11-22 02:06:32",
    "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-020",
+   "stage": "boss",
+   "at": "2026-11-22 04:19:33",
+   "src": "결재 커밋 시각"
   }
  ],
  "incidents": [],
@@ -989,7 +974,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-22 04:18:40",
+     "chip": "2026-11-22 04:20:40",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1014,13 +999,13 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 2건 · 가장 오래된 6분째 (15분 넘으면 경보)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 3건 · 가장 오래된 8분째 (15분 넘으면 경보) · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-22 04:12:52",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 5회 · 횟수는 전체 세션"
+     "chip": "2026-11-22 04:19:44",
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 6회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
