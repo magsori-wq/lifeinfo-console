@@ -1217,7 +1217,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="0de7a7943b07";let hiddenAt=0,buildStuck="";
+const BUILD="582231ba6789";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
@@ -1253,5 +1253,11 @@ applyRoom();tick();setInterval(tick,1000);load();setInterval(load,DEMO&&!/^[0-7]
 <script>(function(){function d(){try{var r=document.documentElement,g=function(sel,pr){var e=document.querySelector(sel);return e?getComputedStyle(e)[pr]:"-"},h=function(c){var m=String(c).match(/[\d.]+/g);if(!m||m.length<3)return String(c);return "#"+m.slice(0,3).map(function(v){return ("0"+(+v|0).toString(16)).slice(-2)}).join("")},mm=document.querySelector("meta[name=color-scheme]");
 document.getElementById("diag").textContent="진단 · 테마 "+(r.getAttribute("data-theme")||"auto")+" · 시스템 "+(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")+" · meta "+(mm?mm.content:"-")+" · 배경 "+h(getComputedStyle(document.body).backgroundColor)+" · 카드칠 "+h(g("#nd-blog rect.bx","fill"))+" · 링칠 "+h(g("#map .gbg","fill"))+" · 글자 "+h(g("#nd-blog .t1","fill"))+" · 관 "+h(g("#map .pc","stroke"))}catch(e){document.getElementById("diag").textContent="진단 실패 "+e}}
 setTimeout(d,1500);setInterval(d,20000)})()</script>
+<script id="safeMode">/* 11-22 maint1122phonefx 방어판 ?safe=1 — 기본판은 그대로. 지도·카드의 계산된 다크 색을 인라인 !important 로 박아 고정(변수·스타일 규칙 경로 제거) + color-scheme dark. 폰 비교 시험용(사장님 폰이 시험대) */
+(function(){try{if(new URLSearchParams(location.search).get("safe")!=="1")return;var r=document.documentElement;r.setAttribute("data-safe","1");r.style.setProperty("color-scheme","dark","important");var mm=document.querySelector("meta[name=color-scheme]");if(mm)mm.setAttribute("content","dark");
+var b=document.createElement("div");b.id="safeBanner";b.textContent="🛡 방어판(?safe=1) — 색을 고정한 시험판";b.style.cssText="position:sticky;top:0;z-index:99999;background:#4a3d12;color:#ffe9a8;font:700 13px sans-serif;padding:4px 8px;text-align:center";document.body.insertBefore(b,document.body.firstChild);
+var SV={fill:1,stroke:1,"stop-color":1};function lock(){var all=document.body.querySelectorAll("*"),i,e,k,j;for(i=0;i<all.length;i++){e=all[i];if(e._sl){for(j=0;j<e._sl.length;j++)e.style.removeProperty(e._sl[j]);e._sl=null}}var W=[];for(i=0;i<all.length;i++){e=all[i];if(e.id==="safeBanner")continue;var c=getComputedStyle(e),w=[];if(c.animationName!=="none"){W.push([e,w]);continue}if(e instanceof SVGElement){["fill","stroke","stop-color"].forEach(function(k){var v=c.getPropertyValue(k);if(v&&v!=="none"&&v!=="normal")w.push([k,v])})}else{var bg=c.backgroundColor;if(bg&&bg!=="rgba(0, 0, 0, 0)")w.push(["background-color",bg]);w.push(["color",c.color]);if(parseFloat(c.borderTopWidth)>0)w.push(["border-color",c.borderTopColor])}W.push([e,w])}for(i=0;i<W.length;i++){e=W[i][0];e._sl=[];for(j=0;j<W[i][1].length;j++){k=W[i][1][j];e.style.setProperty(k[0],k[1],"important");e._sl.push(k[0])}}}
+var t=null;function later(){clearTimeout(t);t=setTimeout(lock,250)}
+lock();new MutationObserver(later).observe(document.body,{childList:true,subtree:true,characterData:true})}catch(e){}})()</script>
 </body>
 </html>
