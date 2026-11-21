@@ -1,42 +1,74 @@
 {
- "at": "2026-11-22 04:11:56",
+ "at": "2026-11-22 04:13:24",
  "errors": [],
  "rows": [
   {
    "code": "AM-BC-002",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-bc-002-approve-1122",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-22"
+    }
+   ],
    "title": "무릎담요크기비교",
    "last_file_at": "2026-11-22 02:08",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-BC-002_1122_r2.md · REVISE"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-bc-002-approve-1122",
+   "no_preview": false
   },
   {
    "code": "AM-DG-016",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-dg-016-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-21"
+    }
+   ],
    "title": "AGF2026티켓가격",
    "last_file_at": "2026-11-21 23:27",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-DG-016_1121.md · PASS 94점"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-dg-016-approve-1121",
+   "no_preview": false
   },
   {
    "code": "AM-PE-018",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-pe-018-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-21"
+    }
+   ],
    "title": "아이브앙코르가격일정",
    "last_file_at": "2026-11-21 23:28",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-PE-018_1121_r2.md · PASS"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-pe-018-approve-1121",
+   "no_preview": false
   },
   {
    "code": "AM-SP-022",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-sp-022-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-21"
+    }
+   ],
    "title": "K리그1강등구도",
    "last_file_at": "2026-11-21 23:28",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-SP-022_1121_r2.md · PASS 91점"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-sp-022-approve-1121",
+   "no_preview": false
   }
  ],
  "old_inflight": [],
@@ -152,7 +184,14 @@
   }
  ],
  "published_total": 65,
- "rev_wait": [],
+ "rev_wait": [
+  {
+   "code": "AM-SP-020",
+   "ids": [
+    "aroma-am-sp-020-update-1121b"
+   ]
+  }
+ ],
  "cats": {
   "window": 14,
   "rows": [
@@ -278,7 +317,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-22 04:11:40",
+   "last_at": "2026-11-22 04:13:10",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -317,15 +356,15 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음",
+   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 1분째 (15분 넘으면 경보)",
    "at_node": ""
   },
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-21 19:49:04",
+   "last_at": "2026-11-22 04:12:52",
    "src": "now_log(bid=aroma)",
-   "today_n": 1,
+   "today_n": 2,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -350,9 +389,9 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "현장(진행)",
+  "state": "⏸ 대기(남의 차례)",
   "jobs": 1,
-  "last_min": 110,
+  "last_min": 0,
   "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
   "lvl": "ok"
  },
@@ -365,33 +404,33 @@
  ],
  "nodes": {
   "draft": [],
-  "v0": [
+  "v0": [],
+  "boss": [
    {
     "code": "AM-BC-002",
     "title": "무릎담요크기비교",
-    "min": 123,
+    "min": 125,
     "lvl": "ok"
    },
    {
     "code": "AM-DG-016",
     "title": "AGF2026티켓가격",
-    "min": 284,
+    "min": 286,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-018",
     "title": "아이브앙코르가격일정",
-    "min": 283,
+    "min": 285,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-022",
     "title": "K리그1강등구도",
-    "min": 283,
+    "min": 285,
     "lvl": "ok"
    }
   ],
-  "boss": [],
   "deploy": [],
   "publish": [],
   "osmu": []
@@ -772,7 +811,7 @@
   "today": "2026-11-22",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 0,
+  "boss_wait": 5,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -794,9 +833,9 @@
  "units": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 110,
+   "last_min": 0,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok"
   },
@@ -809,9 +848,9 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "⏸ 대기(남의 차례)",
    "jobs": 1,
-   "last_min": 110,
+   "last_min": 0,
    "cur": "사장님 폰 승인 03:56~03:58 전달: AM-SP-020",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -832,7 +871,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 5건"
   }
  ],
  "suppliers": [
@@ -864,8 +903,51 @@
    ]
   }
  ],
- "approvals": [],
- "edits": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-sp-020-update-1121b",
+   "what": "【권고】AM-SP-020(여자배구 순위, 라이브 224477466833) 상단에 「🔄 11월 21일 저녁 업데이트 — SOOP 2:3 정관장, ",
+   "by": "이대리",
+   "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-pe-018-approve-1121",
+   "what": "【권고】AM-PE-018 「아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이」(공연·연예·검색형·44자) 게시 승",
+   "by": "이대리",
+   "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-016-approve-1121",
+   "what": "【권고】AM-DG-016 「AGF 2026 티켓 3일권 65,000원 — 1일권 3장보다 22,000원 싸다」(디지털 콘텐츠·여가·검색형·45자",
+   "by": "이대리",
+   "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-sp-022-approve-1121",
+   "what": "【권고】AM-SP-022 「K리그 승강플레이오프 — 광주 12위 확정, 김천은 규정상 자동 강등」(스포츠·홈판형·38자) 게시 승인. 【근거】관",
+   "by": "이대리",
+   "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-bc-002-approve-1122",
+   "what": "【권고】AM-BC-002 「무릎담요 크기 비교 미니 5,900원 vs 똑딱이 10,400원(배송비 포함)」(브랜드커넥트 카테고리 14·쇼핑커넥트",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
+ "edits": [
+  {
+   "code": "AM-SP-020",
+   "title": "여자배구 순위 — 현대건설·SOOP 0승 4패끼리 11/18 맞대결",
+   "stage": "boss",
+   "packer": ""
+  }
+ ],
  "today_events": [
   {
    "code": "AM-BC-002",
@@ -907,7 +989,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-22 04:11:40",
+     "chip": "2026-11-22 04:13:10",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -932,13 +1014,13 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 1분째 (15분 넘으면 경보)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-21 19:49:04",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 1회 · 횟수는 전체 세션"
+     "chip": "2026-11-22 04:12:52",
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 2회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
