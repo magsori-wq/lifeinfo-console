@@ -6840,6 +6840,206 @@
    "target": "aroma-am-bc-001-update-1121",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-21T16:16:17",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "lanes2-fix-verify-1121",
+   "detail": "16:18 확인 완료 daf3ff17a",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T16:34:06",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fuel1030-1630",
+   "detail": "16:30 최종 보고 게시(step 36) — 후보 0편, 오늘 24:00 전 낼 수 있는 후보 0편 · 실측 topicprop table 0건·pace 재고 0",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T16:45:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "source-mohw-sinchung-1121",
+   "detail": "source 에이전트 16:44 파일 확보(docs/source_mohw_sinchungjuui_20261121.md): 6법 2027.1.21 시행·하위법령 입법예고 마감 12-09·A1-20 중복 0.80 — 각도는 입법예고 조건",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:03:41",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-a127-1121",
+   "detail": "V0 조건부 통과 17:02(docs/v0_A1-27_20261121.md): 필수 수정 6·권고 4 → fixer 반영 지시 17:08, 반영 뒤 수정 줄 재검사 → v0check pass",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:08:57",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-545",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:08:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-490",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:09:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-491",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:09:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-492",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:14:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fable-verify-lanes2-1121",
+   "detail": "페이블 판정 통과: 🔴3 수리 확인(재현 A·B 해소·실데이터 두 칸 중복 0·is_block 실데이터 32+3 전부 잡음)·🟡6(경고 10분 문턱·낡아도 녹색 배지·굽는 빈도 미측정 등) — 이번엔 수리 안 함, 파일에 기록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:15:37",
+   "actor": "v0 에이전트(이부장 호출, 작성자 이과장·수정 fixer 와 분리)",
+   "action": "v0check.pass",
+   "target": "A1-27",
+   "detail": "함정=보도자료↔시행령안 조문 대조(최근 1년 이내는 1·3호에만 있고 2호엔 없음)+확인 못 한 것의 함정 전환(7절), 사례=복지부 10-01 보도참고자료 B씨(출처 표기·비단정), 필수 6건+사소 5건 반영 재검사(v0 에이전트 🟢, 판정서 docs/v0_A1-27_*.md)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:16:17",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a127-fixer-recheck-1121",
+   "detail": "fixer 3회 반영(커밋 b87c891b9·1ce05e800·135350085)·v0 재검사 🟢·v0check pass 17:16 → 02:00 결재함 상정 대기",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:18:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "a127-kakao-0200-1122",
+   "detail": "V0 통과(17:16) 직후 결재함 A1-27 카드가 자동 상정됨(코드 흐름) — 02:00 수동 상정 불필요. 일일 시계 02:00 대기 규칙과 어긋난 코드 갭은 정비 지시",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T18:11:36",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-4h-1121",
+   "detail": "4. 18:00 판독 + 이부장 18:12 표 직접 확인: A5-09 Redirect error·크롤 13:54 도착, D2-21 Redirect error·요청 뒤 크롤 없음(마지막 11-16)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T21:33:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-h145-1121",
+   "detail": "V0 🟡 조건부 21:3x(docs/v0_H1-45_20261121.md): 원본가치 충분·필수 4(현행 단정·구간 불일치·가상 사례 표시·제목 행정예고)→fixer 21:36 지시, 반영 뒤 재검사·v0check pass",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T21:43:31",
+   "actor": "v0 에이전트(이부장 호출, 작성자 이과장·수정 fixer 와 분리)",
+   "action": "v0check.pass",
+   "target": "H1-45",
+   "detail": "함정=현행 약관값 미확인·구간 신설 여부 확인 못 함 박스+할인운임·정기권 계산 함정, 계산=70·100·130분 구간표·가상 사례 표시(22,500원·40만 원 검산), 필수 4건+재검사 2건 반영(v0 에이전트 재검사, 판정서 docs/v0_H1-45_*.md)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T21:46:46",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-546",
+   "detail": "deploy.bat 21:5x 실행: 썸네일 559개 github.io 200(546 포함)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T21:46:48",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "h145-fixer-recheck-1121",
+   "detail": "fixer 2회(e6bbae46b·c8b228ffb)·재검사·v0check pass 21:4x·deploy 완료",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T00:18:19",
+   "actor": "V0검사관",
+   "action": "v0check.fail",
+   "target": "C2-30",
+   "detail": "원본가치(24/48/5 구분표·시각별 계산표·공식vs실제)는 성립하나 5절 표 3행 오독: 원문(star.moe.go.kr 2023기재요령 초51~52쪽)은 '법정 감염병 등(학교장이 필요하다고 인정하는 비법정 감염병 포함)으로 출석하지 못한 경우 출석 인정'인데 글은 법정감염병도 학교",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T00:20:22",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0-c230-1122",
+   "detail": "V0 🟡 조건부 00:2x(docs/v0_C2-30_20261122.md): 원본가치 충분·필수 4(법정 감염병 인용 구조·48시간 모순·일본 5일 삭제·가상 사례 표시) → fixer 00:3x, 반영 뒤 재검사·v0check pass·썸네일 547 배포 1회",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T00:21:41",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "C2-30",
+   "detail": "2차: 필수수정 4건 해소(5절 3행 법정=출석인정·비법정만 학교장 인정·독감 분류는 공문/학교 확인, 3절 일본 5일 삭제, 4절 ③행 '이 글의 보수적 가정 계산' 표시, 4절 '가상 사례' 명시). 훼손 없음. heading·dupcheck 0.030·bodydup 0.030 통과",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T00:22:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "v0reject-c2-30",
+   "detail": "V0 통과로 해소 — 검사자 V0검사관 · 2차: 필수수정 4건 해소(5절 3행 법정=출석인정·비법정만 학교장 인정·독감 분류는 공문/학교 확인, 3절 일본 5일 삭제, 4절 ③행 '이 글의 보수적 가정 계산' 표시, 4절 '가상 사례' 명시). 훼손 없음.",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T00:28:15",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-547",
+   "detail": "deploy.bat 00:3x 실행(559개 200)·547 라이브 200 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T00:28:18",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "c230-fixer-recheck-1122",
+   "detail": "fixer cd9b9eee9·v0 재검사 🟢(docs/v0_C2-30_recheck_20261122.md)·V0 도장 00:21(V0검사관) 유효",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T03:55:12",
+   "actor": "세션(CLI)",
+   "action": "pubqueue.go",
+   "target": "A1-27",
+   "detail": "",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T04:03:36",
+   "actor": "세션(CLI)",
+   "action": "pubqueue.go",
+   "target": "C2-30",
+   "detail": "",
+   "via": "cli"
   }
  ]
 }
