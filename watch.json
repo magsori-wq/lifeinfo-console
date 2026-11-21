@@ -35044,9 +35044,11 @@
    "due": "2026-11-21",
    "cmd": "승인되면 이부장이 이과장에게 시범 10편 라이브 수정 지시서(batchboard order, dry-run 표 기준·diff 파일·curl 확인) 발급",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "사장님 채팅 「승인: sitefix-pilot10-go-1121 (블로그스팟 기존 글 시범 10편 + 단정완화 3) (폰 탭 03:56)」 04:16 — 이부장 회수 · 폰 승인 회수(이부장 CLI)"
   },
   {
    "id": "sitefix-pilot10-order-1121",
@@ -35156,9 +35158,11 @@
    "cmd": "승인: aroma-am-sp-020-update-1121b",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
+   "state": "done",
    "by": "이대리",
-   "preview": "aromapv_AM-SP-020u5.html"
+   "preview": "aromapv_AM-SP-020u5.html",
+   "done_at": "2026-11-22",
+   "result": "사장님 채팅 「승인: aroma-am-sp-020-update-1121b (권고】AM-SP-020(여자배구 순위, 라이브 ) (폰 탭 03:56)」 04:18 — 이부장 회수 · 폰 승인 회수(이부장 CLI)"
   },
   {
    "id": "ftc-consumer-dispute-std-1203",
@@ -35342,6 +35346,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "에이전트"
+  },
+  {
+   "id": "a127-naver-post-0422",
+   "added": "2026-11-22",
+   "what": "A1-27 네이버 게시 — naverwrite 가 분류기에 거부됨. 원고·썸네일 준비 완료. 【권고】게시 실행 【근거】⑥ 결재 03:55 · 글자 보존 ✅ · 제목 실검색어 ✅ 【위험】게시 후 수정은 사장님 손",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.naverwrite --code A1-27 --title \"직권신청 대상 3가지 — 동의 없이 복지 신청, 12/9 마감\" --category \"달라지는 제도·지원금\" --image thumbs_naver/545n_sinchungjuui_gwonjin.png --publish",
+   "owner": "claude",
+   "state": "blocked",
+   "by": "이과장"
   }
  ]
 }
