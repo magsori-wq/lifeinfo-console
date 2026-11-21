@@ -6872,6 +6872,54 @@
    "target": "v0-a127-1121",
    "detail": "V0 조건부 통과 17:02(docs/v0_A1-27_20261121.md): 필수 수정 6·권고 4 → fixer 반영 지시 17:08, 반영 뒤 수정 줄 재검사 → v0check pass",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:08:57",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-545",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:08:59",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-490",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:09:02",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-491",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:09:05",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-492",
+   "detail": "deploy.bat 17:1x 실행: 썸네일 559개 github.io 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:14:33",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "fable-verify-lanes2-1121",
+   "detail": "페이블 판정 통과: 🔴3 수리 확인(재현 A·B 해소·실데이터 두 칸 중복 0·is_block 실데이터 32+3 전부 잡음)·🟡6(경고 10분 문턱·낡아도 녹색 배지·굽는 빈도 미측정 등) — 이번엔 수리 안 함, 파일에 기록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-21T17:15:37",
+   "actor": "v0 에이전트(이부장 호출, 작성자 이과장·수정 fixer 와 분리)",
+   "action": "v0check.pass",
+   "target": "A1-27",
+   "detail": "함정=보도자료↔시행령안 조문 대조(최근 1년 이내는 1·3호에만 있고 2호엔 없음)+확인 못 한 것의 함정 전환(7절), 사례=복지부 10-01 보도참고자료 B씨(출처 표기·비단정), 필수 6건+사소 5건 반영 재검사(v0 에이전트 🟢, 판정서 docs/v0_A1-27_*.md)",
+   "via": "cli"
   }
  ]
 }
