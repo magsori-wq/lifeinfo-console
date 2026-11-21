@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22 04:04:00",
+ "at": "2026-11-22 04:05:05",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -7,7 +7,7 @@
    {
     "code": "H1-45",
     "title": "열차 지연 보상 90분 75%·120분 전액 — 소비자",
-    "min": 380,
+    "min": 381,
     "lvl": "red"
    }
   ],
@@ -16,13 +16,13 @@
    {
     "code": "A1-27",
     "title": "신청주의 개선 입법예고 12월 9일 마감 — 동의 없이",
-    "min": 8,
+    "min": 9,
     "lvl": "ok"
    },
    {
     "code": "C2-30",
     "title": "독감 등교 기준 — 해열 후 24시간, 해열제 먹었다면",
-    "min": 0,
+    "min": 1,
     "lvl": "ok"
    }
   ],
@@ -389,7 +389,7 @@
   {
    "p": 1,
    "what": "사장님 결재 대기 H1-45 열차 지연 보상 90분 75%·120분 전액 — 소비자",
-   "min": 380,
+   "min": 381,
    "owner": "사장님"
   },
   {
@@ -549,8 +549,8 @@
   {
    "who": "이과장",
    "state": "지연·확인 필요",
-   "jobs": 4,
-   "last_min": 2158,
+   "jobs": 5,
+   "last_min": 2159,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "amber",
    "role": "②처리·④발행 운전"
@@ -559,7 +559,7 @@
    "who": "4.세션",
    "state": "지연·확인 필요",
    "jobs": 2,
-   "last_min": 803,
+   "last_min": 804,
    "cur": "4. 우리 사이트 내용 직접 점검 — 무엇을 고칠까 (사장님 ",
    "lvl": "amber",
    "role": "애드센스 정비"
@@ -596,8 +596,8 @@
   {
    "who": "이과장",
    "state": "지연·확인 필요",
-   "jobs": 4,
-   "last_min": 2158,
+   "jobs": 5,
+   "last_min": 2159,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "amber"
   },
@@ -605,7 +605,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 800,
+   "last_min": 801,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -613,7 +613,7 @@
    "who": "4.세션",
    "state": "지연·확인 필요",
    "jobs": 2,
-   "last_min": 803,
+   "last_min": 804,
    "cur": "4. 우리 사이트 내용 직접 점검 — 무엇을 고칠까 (사장님 ",
    "lvl": "amber"
   },
@@ -621,8 +621,8 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 719,
-   "cur": "🙋 결재 상정 16:0x aroma-am-bc-001-upda",
+   "last_min": 104,
+   "cur": "🟪 이대리 02:3x 상정 보고 접수(이부장 02:2x) — ",
    "lvl": "ok"
   },
   {
@@ -1299,9 +1299,9 @@
     "live": null
    },
    "C2-30": {
-    "stage": "no_fit",
-    "icon": "☑️",
-    "label": "붙일 것 없음",
+    "stage": "none",
+    "icon": "⬜",
+    "label": "미조사",
     "links": 0,
     "attached": 0,
     "live": null
@@ -1362,7 +1362,7 @@
   "bad": 1,
   "na": 2,
   "at": "2026-11-21 04:22:44",
-  "age_min": 881
+  "age_min": 882
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1447,8 +1447,12 @@
  "fired": [
   {
    "day": "2026-11-22",
-   "total": 18,
+   "total": 19,
    "kinds": [
+    [
+     "BOSS_APPROVAL",
+     3
+    ],
     [
      "NEW_BOSS_ITEM",
      3
@@ -1456,10 +1460,6 @@
     [
      "REPORT_UNACKED",
      3
-    ],
-    [
-     "BOSS_APPROVAL",
-     2
     ],
     [
      "BOSS_REMIND",

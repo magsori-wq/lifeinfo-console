@@ -13074,17 +13074,22 @@
    "order_at": "2026-11-22 03:55:38"
   }
  },
- "updated": "2026-11-22 04:02:00",
+ "updated": "2026-11-22 04:05:33",
  "current": {
   "batch": "pub1122a127",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "🔄 A1-27 발행 run 44938328730 성공 · 라이브 200 https://lifeinfo8975.blogspot.com/2026/11/12-9-3.html · syncorigin 이 data/xlink_live.json(내 파일 아님, 미커밋 M)에서 멈춤 — 로컬이 origin 보다 1커밋 뒤(b1c299aa6). 후속(네이버 원고·인스타·쓰레드) 전 동기 필요",
+  "what": "⏸ A1-27 후속 대기 — 발행·라이브 200 완료. 동기 막힘: xlink_live 는 경로 지정 커밋(a8923c87b)으로 해소, 그러나 syncorigin merge 가 Windows unlink 오류(webapp/lifeinfo_db.txt → 재시도 batch.json 'Invalid argument', read-tree failed)로 2회 실패 — 다른 프로세스가 webapp 파일을 잡고 있는 듯. 저장소는 온전(diverged 3/1, 중단 상태 아님). 재시도로 못 뚫어 멈춤. 풀리는 조건: 파일 잠금 해소 후 syncorigin 재실행(이부장/정비 판단)",
   "since": "04:02",
   "since_at": "2026-11-22 04:02:00"
  },
  "log": [
+  {
+   "t": "04:05:33",
+   "text": "▶   — 1/7단계 · ⏸ A1-27 후속 대기 — 발행·라이브 200 완료. 동기 막힘: xlink_live 는 경로 지정 커밋(a8923c87b)으로 해소, 그러나 syncorigin merge 가 Windows unlink 오류(webapp/lifeinfo_db.txt → 재시도 batch.json 'Invalid argument', read-tree failed)로 2회 실패 — 다른 프로세스가 webapp 파일을 잡고 있는 듯. 저장소는 온전(diverged 3/1, 중단 상태 아님). 재시도로 못 뚫어 멈춤. 풀리는 조건: 파일 잠금 해소 후 syncorigin 재실행(이부장/정비 판단)",
+   "actor": "이과장"
+  },
   {
    "t": "04:02:00",
    "text": "▶   — 1/7단계 · 🔄 A1-27 발행 run 44938328730 성공 · 라이브 200 https://lifeinfo8975.blogspot.com/2026/11/12-9-3.html · syncorigin 이 data/xlink_live.json(내 파일 아님, 미커밋 M)에서 멈춤 — 로컬이 origin 보다 1커밋 뒤(b1c299aa6). 후속(네이버 원고·인스타·쓰레드) 전 동기 필요",
@@ -13279,11 +13284,6 @@
    "t": "23:05:48",
    "text": "✅ daily-email-briefing-1121 완료 — daily-email-briefing (A)",
    "actor": "미상:4392c93b"
-  },
-  {
-   "t": "22:41:12",
-   "text": "✅ lifeinfo-nightly-verify-1121 완료 — lifeinfo-nightly-verify (E)",
-   "actor": "미상:f236ed84"
   }
  ],
  "currents": {
@@ -15992,7 +15992,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🔄 A1-27 발행 run 44938328730 성공 · 라이브 200 https://lifeinfo8975.blogspot.com/2026/11/12-9-3.html · syncorigin 이 data/xlink_live.json(내 파일 아님, 미커밋 M)에서 멈춤 — 로컬이 origin 보다 1커밋 뒤(b1c299aa6). 후속(네이버 원고·인스타·쓰레드) 전 동기 필요",
+   "what": "⏸ A1-27 후속 대기 — 발행·라이브 200 완료. 동기 막힘: xlink_live 는 경로 지정 커밋(a8923c87b)으로 해소, 그러나 syncorigin merge 가 Windows unlink 오류(webapp/lifeinfo_db.txt → 재시도 batch.json 'Invalid argument', read-tree failed)로 2회 실패 — 다른 프로세스가 webapp 파일을 잡고 있는 듯. 저장소는 온전(diverged 3/1, 중단 상태 아님). 재시도로 못 뚫어 멈춤. 풀리는 조건: 파일 잠금 해소 후 syncorigin 재실행(이부장/정비 판단)",
    "since": "04:02",
    "since_at": "2026-11-22 04:02:00"
   }
@@ -51155,6 +51155,17 @@
    "what": "🔄 A1-27 발행 run 44938328730 성공 · 라이브 200 https://lifeinfo8975.blogspot.com/2026/11/12-9-3.html · syncorigin 이 data/xlink_live.json(내 파일 아님, 미커밋 M)에서 멈춤 — 로컬이 origin 보다 1커밋 뒤(b1c299aa6). 후속(네이버 원고·인스타·쓰레드) 전 동기 필요",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-22 04:05:33",
+   "bid": "pub1122a127",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⏸ A1-27 후속 대기 — 발행·라이브 200 완료. 동기 막힘: xlink_live 는 경로 지정 커밋(a8923c87b)으로 해소, 그러나 syncorigin merge 가 Windows unlink 오류(webapp/lifeinfo_db.txt → 재시도 batch.json 'Invalid argument', read-tree failed)로 2회 실패 — 다른 프로세스가 webapp 파일을 잡고 있는 듯. 저장소는 온전(diverged 3/1, 중단 상태 아님). 재시도로 못 뚫어 멈춤. 풀리는 조건: 파일 잠금 해소 후 syncorigin 재실행(이부장/정비 판단)",
+   "actor": "이과장",
+   "sid": "c36eea8e",
+   "req": "r2964c4"
   }
  ]
 }
