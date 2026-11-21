@@ -1,24 +1,40 @@
 {
- "at": "2026-11-21 23:28:23",
+ "at": "2026-11-21 23:28:46",
  "errors": [],
  "rows": [
   {
    "code": "AM-DG-016",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-dg-016-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-21"
+    }
+   ],
    "title": "AGF2026티켓가격",
    "last_file_at": "2026-11-21 23:27",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-DG-016_1121.md · PASS 94점"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-dg-016-approve-1121",
+   "no_preview": false
   },
   {
    "code": "AM-PE-018",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-pe-018-approve-1121",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-21"
+    }
+   ],
    "title": "아이브앙코르가격일정",
    "last_file_at": "2026-11-21 23:28",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-PE-018_1121_r2.md · PASS"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-pe-018-approve-1121",
+   "no_preview": false
   },
   {
    "code": "AM-SP-022",
@@ -276,7 +292,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-21 23:28:04",
+   "last_at": "2026-11-21 23:28:34",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -339,7 +355,7 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-21 23:27",
+   "last_at": "2026-11-21 23:28",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
    "note": "복사된 미리보기 60개",
@@ -359,6 +375,14 @@
   "draft": [],
   "v0": [
    {
+    "code": "AM-SP-022",
+    "title": "K리그1강등구도",
+    "min": 0,
+    "lvl": "ok"
+   }
+  ],
+  "boss": [
+   {
     "code": "AM-DG-016",
     "title": "AGF2026티켓가격",
     "min": 1,
@@ -369,15 +393,8 @@
     "title": "아이브앙코르가격일정",
     "min": 0,
     "lvl": "ok"
-   },
-   {
-    "code": "AM-SP-022",
-    "title": "K리그1강등구도",
-    "min": 0,
-    "lvl": "ok"
    }
   ],
-  "boss": [],
   "deploy": [],
   "publish": [],
   "osmu": []
@@ -758,7 +775,7 @@
   "today": "2026-11-21",
   "done_today": 4,
   "published_today": 4,
-  "boss_wait": 1,
+  "boss_wait": 3,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -774,7 +791,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -818,7 +835,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "결재 대기 3건"
   }
  ],
  "suppliers": [
@@ -864,6 +881,20 @@
    "what": "【권고】AM-SP-020(여자배구 순위, 라이브 224477466833) 상단에 「🔄 11월 21일 저녁 업데이트 — SOOP 2:3 정관장, ",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-pe-018-approve-1121",
+   "what": "【권고】AM-PE-018 「아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이」(공연·연예·검색형·44자) 게시 승",
+   "by": "이대리",
+   "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-016-approve-1121",
+   "what": "【권고】AM-DG-016 「AGF 2026 티켓 3일권 65,000원 — 1일권 3장보다 22,000원 싸다」(디지털 콘텐츠·여가·검색형·45자",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [
@@ -876,9 +907,33 @@
  ],
  "today_events": [
   {
+   "code": "AM-DG-015",
+   "stage": "proc",
+   "at": "2026-11-21 05:53:12",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-PE-018",
    "stage": "proc",
    "at": "2026-11-21 23:26:30",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-022",
+   "stage": "proc",
+   "at": "2026-11-21 23:26:30",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-016",
+   "stage": "proc",
+   "at": "2026-11-21 23:26:38",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BC-001",
+   "stage": "proc",
+   "at": "2026-11-21 14:31:07",
    "src": "파일 수정 시각"
   },
   {
@@ -894,33 +949,9 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-015",
-   "stage": "proc",
-   "at": "2026-11-21 05:53:12",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-016",
-   "stage": "proc",
-   "at": "2026-11-21 23:26:38",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-PE-017",
    "stage": "proc",
    "at": "2026-11-21 05:50:38",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-022",
-   "stage": "proc",
-   "at": "2026-11-21 23:26:30",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-BC-001",
-   "stage": "proc",
-   "at": "2026-11-21 14:31:07",
    "src": "파일 수정 시각"
   },
   {
@@ -1017,7 +1048,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-21 23:28:04",
+     "chip": "2026-11-21 23:28:34",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1059,7 +1090,7 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-21 23:27",
+     "chip": "2026-11-21 23:28",
      "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 60개"
     }
    ]
