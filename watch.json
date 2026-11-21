@@ -34373,8 +34373,10 @@
    "due": "2026-11-21",
    "cmd": "C:/Users/magso/AppData/Local/Aside/CLI/current/aside.exe host profiles",
    "owner": "user",
-   "state": "todo",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-21",
+   "result": "Aside 창 열림·CDP 21420 LISTENING·이대리 aside 게시 성공(05:3x~12:4x)·직접 게시 모드 정상 — 사장님 조치 완료. (05:5x 완료 처리가 13:12 병합 중 되돌아가 재처리)"
   },
   {
    "id": "draft1120h144-check-2300",
@@ -34651,6 +34653,46 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "merge-done-check-1121",
+   "added": "2026-11-21",
+   "what": "정비 maint1121merge 병합·푸시 완료 확인 → pubready A2-33·H1-44 후속 이과장 알림",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.pubready --code A2-33",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel1030-1800-21",
+   "added": "2026-11-21",
+   "what": "fuel1030 18:00 최종 보고(시도 전부 표로)",
+   "due": "2026-11-21",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "xlink-h144",
+   "added": "2026-11-21",
+   "what": "🔗 H1-44 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-44",
+   "due": "2026-11-21",
+   "cmd": "python studio/blogger.py crosslink --code H1-44",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "syncorigin-retry-1121-1400",
+   "added": "2026-11-21",
+   "what": "syncorigin 재실행 — 정비 스테이징(docs/복구재료_소실원본·설계도 등) 커밋 후 동기, 로컬 DB 에 A2-33 반영·PUBLISH_STALL 해소 확인",
+   "due": "2026-11-21",
+   "cmd": "python tools/syncorigin.py",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
