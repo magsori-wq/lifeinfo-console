@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21 08:05:01",
+ "at": "2026-11-21 12:36:51",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -109,14 +109,7 @@
   }
  ],
  "published_total": 64,
- "rev_wait": [
-  {
-   "code": "AM-SP-020",
-   "ids": [
-    "aroma-am-sp-020-update-1121"
-   ]
-  }
- ],
+ "rev_wait": [],
  "cats": {
   "window": 14,
   "rows": [
@@ -242,7 +235,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-21 08:04:47",
+   "last_at": "2026-11-21 12:36:36",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -269,9 +262,9 @@
   {
    "name": "IDAERI_STALL",
    "node": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회)",
-   "last_at": "2026-11-20 09:13",
+   "last_at": "2026-11-21 12:33",
    "src": "idaeri_idle_at(공백 알림만)",
-   "today_n": 0,
+   "today_n": 1,
    "note": "열린 요청 0건",
    "at_node": ""
   },
@@ -281,7 +274,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -298,7 +291,7 @@
    "node": "루틴10 → CP",
    "last_at": "",
    "src": "시각 저장 없음(루틴10 꺼짐은 설계도 기재)",
-   "today_n": 0,
+   "today_n": 2,
    "note": "횟수는 lifeinfo 루틴 전체",
    "at_node": ""
   },
@@ -316,7 +309,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 117,
+  "last_min": 388,
   "cur": "06:1x [이부장 접수] 이대리 SP-020 11/21 업데",
   "lvl": "ok"
  },
@@ -700,7 +693,7 @@
   "today": "2026-11-21",
   "done_today": 3,
   "published_today": 3,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -724,7 +717,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 117,
+   "last_min": 388,
    "cur": "06:1x [이부장 접수] 이대리 SP-020 11/21 업데",
    "lvl": "ok"
   },
@@ -739,7 +732,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 117,
+   "last_min": 388,
    "cur": "06:1x [이부장 접수] 이대리 SP-020 11/21 업데",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -760,7 +753,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -795,36 +788,9 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-sp-020-update-1121",
-   "what": "【권고】AM-SP-020(여자배구 순위, 라이브 224477466833) 상단에 「🔄 11월 21일 업데이트 — 도로공사 3:1 IBK, 도로공",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
- "edits": [
-  {
-   "code": "AM-SP-020",
-   "title": "여자배구 순위 — 현대건설·SOOP 0승 4패끼리 11/18 맞대결",
-   "stage": "boss",
-   "packer": ""
-  }
- ],
+ "approvals": [],
+ "edits": [],
  "today_events": [
-  {
-   "code": "AM-PE-017",
-   "stage": "proc",
-   "at": "2026-11-21 05:50:38",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-020",
-   "stage": "proc",
-   "at": "2026-11-21 06:06:08",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-DG-015",
    "stage": "proc",
@@ -835,6 +801,18 @@
    "code": "AM-BO-012",
    "stage": "proc",
    "at": "2026-11-21 05:41:17",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-017",
+   "stage": "proc",
+   "at": "2026-11-21 05:50:38",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-020",
+   "stage": "proc",
+   "at": "2026-11-21 06:06:08",
    "src": "파일 수정 시각"
   },
   {
@@ -853,6 +831,12 @@
    "code": "AM-DG-015",
    "stage": "boss",
    "at": "2026-11-21 05:37:20",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-SP-020",
+   "stage": "boss",
+   "at": "2026-11-21 12:30:21",
    "src": "결재 커밋 시각"
   },
   {
@@ -907,7 +891,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-21 08:04:47",
+     "chip": "2026-11-21 12:36:36",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -925,14 +909,14 @@
     {
      "head": "IDAERI_STALL",
      "lvl": "ok",
-     "chip": "2026-11-20 09:13",
-     "sub": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회) · 출처 idaeri_idle_at(공백 알림만) · 오늘 0회 · 열린 요청 0건"
+     "chip": "2026-11-21 12:33",
+     "sub": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회) · 출처 idaeri_idle_at(공백 알림만) · 오늘 1회 · 열린 요청 0건"
     },
     {
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
@@ -944,7 +928,7 @@
      "head": "ROUTINE_DONE",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 0회 · 횟수는 lifeinfo 루틴 전체"
+     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 2회 · 횟수는 lifeinfo 루틴 전체"
     },
     {
      "head": "aromapv 자동 동기",

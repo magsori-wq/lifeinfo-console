@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-21 08:00",
+ "generated": "2026-11-21 12:35",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/20 23:04",
-   "next": "11/21 11:00",
+   "last": "11/21 12:15",
+   "next": "11/21 14:00",
    "model": "sonnet-5-5",
-   "report_day": "1120",
-   "report": "11-20 23시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 사장님 할 일 없음. GitHub 콘솔 정합성검사 실패 메일 17통(최신 run success 복구)·11-19 03:17 publish 실패 1건(이후 run 전부 success). 네이버페이 Google One 2,400원 결제(참고). 구글 커뮤니티·애드센스·GSC 메일 없음. 8975 전달 3건 무해·aroma 0건. 🟡 gmailread scan 이 개인정보 훅에 거부돼 3계정 리더 미실행(커넥터로 대체)",
+   "report_day": "1121",
+   "report": "11-21 12시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음(구글커뮤니티·Anthropic·GSC 7일 0건). 🟡 lifeinfo-console 콘솔 정합성 검사 실패 17건+피드 드리프트 1건(사유 미열람, 기존 watch drift-fail-1021 계열). gmailread scan 은 개인정보 훅 거부로 못 돌림(커넥터로 대체). magsori8975 전달 3건(뉴스·Gemini 공지, 조치 없음), aroma8975 0건(평소)\n▸ 12:20 11-21 12시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음. 🟡 lifeinfo-console 정합성 검사 실패 메일 17건+드리프트 1건(사유 미열람, watch drift-fail-1021 계열). gmailread scan 은 개인정보 훅 거부로 못 돌림(커넥터로 대체). magsori8975 전달 3건 조치 없음, aroma8975 0건",
    "runs": [
+    {
+     "at": "11/21 12:21",
+     "link": "claude://claude.ai/epitaxy/local_e4576511-80bc-4588-a29c-9a7fd2d93b94",
+     "archived": false
+    },
     {
      "at": "11/20 23:08",
      "link": "claude://claude.ai/epitaxy/local_5641a991-f061-4375-ad52-a05a6434b048",
@@ -31,11 +36,6 @@
      "at": "11/20 14:07",
      "link": "claude://claude.ai/epitaxy/local_5f78c146-5050-4da7-b927-fa1fe5878e52",
      "archived": true
-    },
-    {
-     "at": "11/20 11:07",
-     "link": "claude://claude.ai/epitaxy/local_d310149d-19be-4d23-857e-737492369738",
-     "archived": true
     }
    ]
   },
@@ -44,12 +44,17 @@
    "name": "2-Lifeinfo daily topics",
    "id": "lifeinfo-daily-topics",
    "on": true,
-   "last": "11/20 09:13",
-   "next": "11/21 09:00",
+   "last": "11/21 12:15",
+   "next": "11/22 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1120",
-   "report": "[이부장 09:50] 막힘 해소 아닌 이관 — 루틴2 A/B 후보 0·탈락 8(전부 기발행) 접수, 3.에게 fuel1030 으로 A/B 신규 소재 원문 읽기·2027 법령 후보 대통령령 확인 지시(09:22) → 결과: 09:35 B4-36 선별·초안 지시서 draft1120b436 발급, 고용보험 후보 보류(시행령 미공포). 추적은 fuel1030(12:05 재확인)\n▸ 09:49 [이부장 09:50] 이관 완료 — 루틴2 A/B 후보 0 → 3.(fuel1030)에 원문 읽기·대통령령 확인 지시, 결과 B4-36 선별·draft1120b436, 고용보험 보류. 추적 fuel1030(12:05)",
+   "report_day": "1121",
+   "report": "[조사장부] 목록 3(korea.kr 정책뉴스·보도자료·kwgap) · 원문 1(docs/source_A2-33_민주유공자법_20261121.md) · 후보 1 · 탈락 4 · 검색어 6 · 유입 1 · 이어받은 것: 11-13 가지급금(B4-30 기발행) · 새로: 추천 A2-33 민주유공자법(11-20 국회 의결·내년 6월 시행, 보훈부 보도 11-20 17:34, 대상 635명=137+498, 대입 특전 없음). docflow 가 pick+verify 통과, 지시서 draft1121a233 발급. · 탈락: 라이더안전교육=A6-11 기발행(dupcheck), 문화청년패스·교사 난임휴직=실검색어 O·1차 출처 미열람, 당좌대출=원문 미확인. ⚠️ verify 가 중분류 A2(생계·바우처) 적합성 확인 요청 — 이부장 판단 필요(A2-11 국가유공자는 A2). 다음 topicprop kakao 는 이부장 몫",
    "runs": [
+    {
+     "at": "11/21 12:23",
+     "link": "claude://claude.ai/epitaxy/local_1a0162af-5d24-4600-892f-ce7b76691e81",
+     "archived": false
+    },
     {
      "at": "11/20 09:18",
      "link": "claude://claude.ai/epitaxy/local_6fba02be-47d3-40a7-b62f-f879113b5e3a",
@@ -69,11 +74,6 @@
      "at": "11/17 09:26",
      "link": "claude://claude.ai/epitaxy/local_f5d5ff05-e665-4130-9db9-187dc4742f13",
      "archived": true
-    },
-    {
-     "at": "11/16 09:22",
-     "link": "claude://claude.ai/epitaxy/local_a92f4220-89da-49d2-ab2f-66a9410dc14f",
-     "archived": true
     }
    ]
   },
@@ -82,12 +82,17 @@
    "name": "3-Lifeinfo publish",
    "id": "lifeinfo-publish",
    "on": true,
-   "last": "11/20 09:01",
-   "next": "11/21 09:00",
+   "last": "11/21 12:15",
+   "next": "11/22 09:00",
    "model": "sonnet-5-5",
    "report_day": "1110",
    "report": "빈손 — 큐 0건·승인 도장 글 없음(pubqueue list 0, pace 오늘 0편). 이어받음: 11-09 H1-39·A5-20·A5-21 발행 완료. 새로 본 것: 진행 중 publish run 없음, 발행 트리거 대상 없음. 정체 지시서는 주차(⏸)만",
    "runs": [
+    {
+     "at": "11/21 12:20",
+     "link": "claude://claude.ai/epitaxy/local_67cc0b75-2b22-477d-84c8-df10f4887f95",
+     "archived": false
+    },
     {
      "at": "11/20 09:03",
      "link": "claude://claude.ai/epitaxy/local_fbfcf50c-3555-4a54-9995-54618f13b568",
@@ -106,11 +111,6 @@
     {
      "at": "11/17 09:03",
      "link": "claude://claude.ai/epitaxy/local_f892df2c-3121-4241-b542-b131a5afbbf7",
-     "archived": true
-    },
-    {
-     "at": "11/16 09:02",
-     "link": "claude://claude.ai/epitaxy/local_89bba9ef-ee2e-4c68-8663-03e3495a8cfc",
      "archived": true
     }
    ]
