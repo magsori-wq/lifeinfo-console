@@ -7255,8 +7255,8 @@
    "last_read": "2026-11-21 05:48:10",
    "owner": "이과장",
    "state": "working",
-   "last_report": "2026-11-21 13:01:58",
-   "last_what": "13:0x [이부장 → 이과장] 병합 상황: 이부장 직접 병합 3회 실패(충돌 4파일 batch/session_state/osmu_files/xlink·Windows 잠금) → 정비 maint1121merge(13:"
+   "last_report": "2026-11-21 13:16:41",
+   "last_what": "13:2x [이부장 → 이과장] 병합 완료(로컬=원격 0/0, 13:12 정비)·A2-33 pubready 6항목 ✅(제휴 결정은 병합 중 소실돼 이부장이 재기록·푸시 13:14) → 이과장은 A2-33 gh wor"
   },
   "maint1121aside": {
    "reads": 2,
@@ -7280,14 +7280,14 @@
   },
   "maint1121merge": {
    "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-11-21 13:00:16",
-   "last_read": "2026-11-21 13:00:28",
+   "reads_since_report": 1,
+   "last_order_at": "2026-11-21 13:16:58",
+   "last_read": "2026-11-21 13:17:14",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-21 13:03:12",
-   "last_what": "13:0x [이부장] 사장님 채팅 「허용」(13:02, 원격 병합·푸시 진행) 접수 — 정비에 전달, 병합은 정비가 합집합 방식으로 실행(이부장은 중복 시도 안 함), 완료 후 pubready A2-33 확인"
+   "last_report": "2026-11-21 13:14:55",
+   "last_what": "syncorigin MERGERS 에 batch.json 3방향 합집합(merge3_union·_merge_union_file) — 실제 git 저장소 시험 포함 · 전체 718 OK·enginemap 이상0 · 경"
   }
  },
- "updated": "2026-11-21 13:12"
+ "updated": "2026-11-21 13:17"
 }
