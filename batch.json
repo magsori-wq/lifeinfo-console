@@ -13418,17 +13418,22 @@
    ]
   }
  },
- "updated": "2026-11-22 12:00:20",
+ "updated": "2026-11-22 12:01:59",
  "current": {
   "batch": "sitefix1121",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "⏸ 부분 대기 — blogger.py update-post 승인 게이트가 watch.json approve/done 항목에 글 코드 문자열이 있어야 통과하는데, sitefix-pilot10-go-1121 카드에는 D2-06·A4-04 만 적혀 있고 시범10편 코드(G2-03·A1-09·B4-02·F4-23·G3-11·F4-16·G3-04·F4-30·H1-17·H1-36)와 G1-03 이 없다. --force-approve 는 쓰지 않는다. 풀려면: 이부장/정비가 카드 what 에 코드 12개를 넣거나(사장님 승인 문구 불변 유지) 게이트가 id 를 인정하게 조치. 그동안 D2-06·A4-04 는 통과하므로 이 둘부터 진행.",
+  "step": 2,
+  "what": "D2-06 적용 완료 — 합계 문구 1곳 치환(diff docs/site_fix_pilot10/diff_D2-06.txt), 라이브 신문장 확인. 다음 A4-04",
   "since": "04:16",
   "since_at": "2026-11-22 04:16:25"
  },
  "log": [
+  {
+   "t": "12:01:59",
+   "text": "▶   — 2/7단계 · D2-06 적용 완료 — 합계 문구 1곳 치환(diff docs/site_fix_pilot10/diff_D2-06.txt), 라이브 신문장 확인. 다음 A4-04",
+   "actor": "이과장"
+  },
   {
    "t": "12:00:20",
    "text": "▶   — 1/7단계 · ⏸ 부분 대기 — blogger.py update-post 승인 게이트가 watch.json approve/done 항목에 글 코드 문자열이 있어야 통과하는데, sitefix-pilot10-go-1121 카드에는 D2-06·A4-04 만 적혀 있고 시범10편 코드(G2-03·A1-09·B4-02·F4-23·G3-11·F4-16·G3-04·F4-30·H1-17·H1-36)와 G1-03 이 없다. --force-approve 는 쓰지 않는다. 풀려면: 이부장/정비가 카드 what 에 코드 12개를 넣거나(사장님 승인 문구 불변 유지) 게이트가 id 를 인정하게 조치. 그동안 D2-06·A4-04 는 통과하므로 이 둘부터 진행.",
@@ -13622,11 +13627,6 @@
   {
    "t": "08:15:51",
    "text": "✔ 이부장 ack r0fca21",
-   "actor": "이부장"
-  },
-  {
-   "t": "08:15:35",
-   "text": "✔ 이부장 ack r1d4a35",
    "actor": "이부장"
   }
  ],
@@ -16353,8 +16353,8 @@
    "batch": "sitefix1121",
    "code": "",
    "title": "",
-   "step": 1,
-   "what": "⏸ 부분 대기 — blogger.py update-post 승인 게이트가 watch.json approve/done 항목에 글 코드 문자열이 있어야 통과하는데, sitefix-pilot10-go-1121 카드에는 D2-06·A4-04 만 적혀 있고 시범10편 코드(G2-03·A1-09·B4-02·F4-23·G3-11·F4-16·G3-04·F4-30·H1-17·H1-36)와 G1-03 이 없다. --force-approve 는 쓰지 않는다. 풀려면: 이부장/정비가 카드 what 에 코드 12개를 넣거나(사장님 승인 문구 불변 유지) 게이트가 id 를 인정하게 조치. 그동안 D2-06·A4-04 는 통과하므로 이 둘부터 진행.",
+   "step": 2,
+   "what": "D2-06 적용 완료 — 합계 문구 1곳 치환(diff docs/site_fix_pilot10/diff_D2-06.txt), 라이브 신문장 확인. 다음 A4-04",
    "since": "04:16",
    "since_at": "2026-11-22 04:16:25"
   },
@@ -51548,6 +51548,16 @@
    "actor": "이과장",
    "sid": "c36eea8e",
    "req": "re8d820"
+  },
+  {
+   "ts": "2026-11-22 12:01:59",
+   "bid": "sitefix1121",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "D2-06 적용 완료 — 합계 문구 1곳 치환(diff docs/site_fix_pilot10/diff_D2-06.txt), 라이브 신문장 확인. 다음 A4-04",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ]
 }
