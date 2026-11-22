@@ -1739,12 +1739,12 @@
      "code": "daily-email-briefing-1122",
      "title": "daily-email-briefing (A)",
      "state": "done",
-     "note": "11-22 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중·RESULT PENDING) · 사장님 할 일 없음 · 새 구글/Anthropic/GSC 메일 0 · GitHub 발행 run 1건 실패=11-21 19:01 동시 dispatch 중 origin/main 이 앞서가 선행확인 스텝 차단(원인 확인, 직후 2회 성공 — 무해) · 콘솔 정합성/피드드리프트 실패 3건은 이후 run 성공 · Play ₩2,400 Google One 월갱신 정상 · m8975 구글뉴스 2통 전달 작동 · aroma8975 0건(평소) · gmailread 리더는 개인정보 훅이 막아 미실행(커넥터로 대체)\n▸ 11:06 11-22 11시 메일브리핑: 🟢 사장님 할 일 없음 · 애드센스 계정READY·사이트GETTING_READY(심사 중, 7차 반려 뒤 11-15 재요청 진행 상태 그대로) · 새 중요 메일 없음 · GitHub 실패 3건 모두 무해: 발행 run 44938345407(11-22 03:57 KST) = 「체크아웃≠origin/main(PC 커밋 동시)」 가드 중단, 직후 19:16·19:20 run 성공 / 콘솔 정합성·피드 드리프트 실패는 이후 재실행 success · help-communities·GSC·AdSense 신규 0 · Google Play 11-21 구글원 100GB ₩2,400 정기결제(정상) · 점검기록: gmailread scan 은 플러그인 개인정보 훅이 거부해 못 돌림(커넥터 조회로 대체), magsori8975 전달 2건(구글뉴스 브리핑)·aroma8975 0건",
+     "note": "11-22 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중·RESULT PENDING) · 사장님 할 일 없음 · 새 구글/Anthropic/GSC 메일 0 · GitHub 발행 run 1건 실패=11-21 19:01 동시 dispatch 중 origin/main 이 앞서가 선행확인 스텝 차단(원인 확인, 직후 2회 성공 — 무해) · 콘솔 정합성/피드드리프트 실패 3건은 이후 run 성공 · Play ₩2,400 Google One 월갱신 정상 · m8975 구글뉴스 2통 전달 작동 · aroma8975 0건(평소) · gmailread 리더는 개인정보 훅이 막아 미실행(커넥터로 대체)\n▸ 11:06 11-22 11시 메일브리핑: 🟢 사장님 할 일 없음 · 애드센스 계정READY·사이트GETTING_READY(심사 중, 7차 반려 뒤 11-15 재요청 진행 상태 그대로) · 새 중요 메일 없음 · GitHub 실패 3건 모두 무해: 발행 run 44938345407(11-22 03:57 KST) = 「체크아웃≠origin/main(PC 커밋 동시)」 가드 중단, 직후 19:16·19:20 run 성공 / 콘솔 정합성·피드 드리프트 실패는 이후 재실행 success · help-communities·GSC·AdSense 신규 0 · Google Play 11-21 구글원 100GB ₩2,400 정기결제(정상) · 점검기록: gmailread scan 은 플러그인 개인정보 훅이 거부해 못 돌림(커넥터 조회로 대체), magsori8975 전달 2건(구글뉴스 브리핑)·aroma8975 0건\n▸ 14:06 11-22 14시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 새 중요메일 없음(구글 피드백 답·GSC·애드센스 통지 0). GitHub 실패2건=무해: 발행run 11-21 18:57 '원격 앞섬' 가드(2초 뒤 같은 sha 재실행 성공)·console 피드드리프트 11-21 02:59 실패→11-22 01:55 성공 복구. 8975 전달=구글뉴스 브리핑뿐. gmailread.py 리더는 개인정보 훅이 거부해 미실행(커넥터만 사용).",
      "auto_daily": true,
      "base_code": "daily-email-briefing",
      "date": "2026-11-22",
-     "at": "2026-11-22 11:06",
-     "actor": "미상:c5620833"
+     "at": "2026-11-22 14:06",
+     "actor": "미상:49814f13"
     },
     {
      "code": "lifeinfo-daily-topics-1122",
@@ -13599,7 +13599,7 @@
    "order_at": "2026-11-22 14:05:08"
   }
  },
- "updated": "2026-11-22 14:05:08",
+ "updated": "2026-11-22 14:06:15",
  "current": {
   "batch": "fuel1030",
   "code": "",
@@ -13610,6 +13610,11 @@
   "since_at": "2026-10-30 13:35:23"
  },
  "log": [
+  {
+   "t": "14:06:15",
+   "text": "✅ daily-email-briefing-1122 완료 — daily-email-briefing (A)",
+   "actor": "미상:49814f13"
+  },
   {
    "t": "14:05:08",
    "text": "📄 maint1122fresh 작업 지시 등록(10824자, 2026-11-22 14:05:08)",
@@ -13804,11 +13809,6 @@
    "t": "13:10:16",
    "text": "📄 maint1122gitsync 작업 지시 등록(11789자, 2026-11-22 13:10:16)",
    "actor": "이부장"
-  },
-  {
-   "t": "13:08:29",
-   "text": "▶   — 1/7단계 · ⚠️ 1~2단계 완료·3단계 멈춤. ①측정: intent-to-add(' A') 2832건(data 1915·osmu 340·webapp 201·docs 151…) · 진짜 빈 blob 4건은 별개(HEAD 에 있는 빈 파일). ②index 만 풀었다: git rm --cached --pathspec-from-file(워크트리 무접촉) — ls-files 16379→13547(=-2832) · 풀린 뒤 ' A' 0건 · .agents/skills/link-rot-check/SKILL.md 디스크에 있음. 단서: AGENTS.md·.agents/skills 가 존재(codex 계열 도구가 add -N 한 흔적 추정, 확정 못 함). ③syncorigin 재실행: 이제 'not uptodate' 는 사라졌고 **원본 충돌 data/xlink_live.json 에서 병합 취소·멈춤**(뒤3·앞14). 이 파일은 라이브 캐시(재생성)이고 선례 0f26cebfe([이과장] 원격본 채택)가 있으나 syncorigin 규칙이 '사람이 본다'라 제가 임의로 고르지 않았다. 수동 git merge 시험은 webapp/batch.json 'unable to unlink(Invalid argument)'(다른 세션이 쓰는 중)로 중단·변경 없음(MERGE_HEAD 없음·batch.json 정상). 요청(이부장): ⓐ xlink_live.json 을 원격본으로 채택해도 되는지 지시(선례대로면 제가 git checkout origin/main -- 그 파일 후 재동기) ⓑ batch.json 쓰는 세션이 잠깐 멈추는 시점 확인. ④재발방지(syncorigin 이 병합 전 intent-to-add 개수 세어 멈춤+시험)는 설계도 먼저라 ⓐ 처리 뒤 이어서 하겠다. phonefx(j) 는 e23ff4b4b 커밋·보고 완료(로컬·미배포).",
-   "actor": "정비"
   }
  ],
  "currents": {
