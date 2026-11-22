@@ -35645,6 +35645,38 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "a404-calc-card-1122",
+   "added": "2026-11-22",
+   "what": "A4-04 가상 사례 계산 3곳 수정(제안 A: 약 199만 원 기준·약 597만 원, docs/site_fix_pilot10/A4-04_calc_proposal.md) — 사장님 sitefix-pilot10-scope-1122 카드 처리 뒤 결재함에 올려 승인받고 이과장에게 적용 지시",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.approvalcount | grep -c sitefix-pilot10-scope",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "cadaily-wake-after-aside-1122",
+   "added": "2026-11-22",
+   "what": "Aside 대기열(F1-20·G3-30·EXP-M1-4·A6-11·D2-21)이 비면 3. 에게 cadaily 즉시 실행 깨우기 — 3. 은 스스로 폴링하지 못함(12:17 보고). 큐 비면 batchboard order --id cadaily 읽기 한 줄",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "Aside 채팅 휴면(직접 게시 모드)이라 큐 충돌은 실제가 아님 — 3. 에게 즉시 실행 재지시 12:2x"
+  },
+  {
+   "id": "cadaily-ca-retry-1122",
+   "added": "2026-11-22",
+   "what": "크리에이터 어드바이저 유입 갱신 재시도(11-22 네이버 장애로 보류)",
+   "due": "2026-11-23",
+   "cmd": "python tools/aside_read.py \"https://creator-advisor.naver.com/naver_blog/main\" --wait 10 --max 3000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
