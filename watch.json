@@ -36065,8 +36065,20 @@
    "due": "2026-11-23",
    "cmd": "python -m studio.v0check gate --code C2-32",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-23",
+   "result": "V0 통과로 해소 — 검사자 v0 · 재검사: 필수4건 해소(안심단정 삭제·판단표 조건 한정·바이라인 일치·치사율 원문표기+붙임 읽음범위). 원본가치=공식 사례 타임라인·함정·판단표·가상 사례 날짜 계산"
+  },
+  {
+   "id": "fix-c232-v0-1123",
+   "added": "2026-11-23",
+   "what": "C2-32 초안 V0 필수 4건+권고 a~e 반영(커밋 9ca8c2ecf), bodydup 🟢 0.039·layout 🔴0·heading OK. 재검 V0 대기",
+   "due": "2026-11-24",
+   "cmd": "python -m studio.bodydup --file 콜레라국내발생추정증상병원언제_글_HTML.txt --code C2-32 --live",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
