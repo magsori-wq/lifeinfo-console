@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23 04:30:34",
+ "at": "2026-11-23 04:33:18",
  "errors": [],
  "rows": [
   {
@@ -62,9 +62,9 @@
    ],
    "title": "광주부천결과2위구도",
    "last_file_at": "2026-11-22 23:29",
-   "stage": "approved_unverified",
-   "label": "승인 확인 중",
-   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 7dda54fc9"
   }
  ],
  "old_inflight": [],
@@ -386,7 +386,7 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 0,
-  "last_min": 1,
+  "last_min": 4,
   "cur": "⏸ 대기 — AM-BO-013 승인(aroma-am-bo-01",
   "lvl": "ok"
  },
@@ -400,7 +400,7 @@
    {
     "code": "AM-BO-013",
     "title": "seg1",
-    "min": 3,
+    "min": 5,
     "lvl": "ok"
    },
    {
@@ -412,14 +412,14 @@
    {
     "code": "AM-PE-019",
     "title": "임영웅영화객단가",
-    "min": 2,
+    "min": 5,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-023",
-    "title": "광주부천결과2위구도 · ⚠️ 승인 시각 미상(커밋·처음 본 시각 없음 — 지연 판정 불가)",
-    "min": null,
-    "lvl": "amber"
+    "title": "광주부천결과2위구도",
+    "min": 1,
+    "lvl": "ok"
    }
   ],
   "osmu": []
@@ -849,15 +849,15 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 4,
-  "lvl": "ok"
+  "age_min": 7,
+  "lvl": "amber"
  },
  "units": [
   {
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 1,
+   "last_min": 4,
    "cur": "⏸ 대기 — AM-BO-013 승인(aroma-am-bo-01",
    "lvl": "ok"
   },
@@ -872,7 +872,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 1,
+   "last_min": 4,
    "cur": "⏸ 대기 — AM-BO-013 승인(aroma-am-bo-01",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -930,15 +930,15 @@
  "edits": [],
  "today_events": [
   {
-   "code": "AM-PE-019",
-   "stage": "proc",
-   "at": "2026-11-23 04:29:36",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-BO-013",
    "stage": "proc",
    "at": "2026-11-23 04:29:35",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-019",
+   "stage": "proc",
+   "at": "2026-11-23 04:29:36",
    "src": "파일 수정 시각"
   },
   {
@@ -962,8 +962,8 @@
   {
    "code": "AM-SP-023",
    "stage": "boss",
-   "at": "",
-   "src": "watch done_at(날짜뿐)"
+   "at": "2026-11-23 04:32:13",
+   "src": "결재 커밋 시각"
   }
  ],
  "incidents": [],

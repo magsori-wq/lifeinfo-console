@@ -36114,6 +36114,17 @@
    "by": "이부장",
    "done_at": "2026-11-23",
    "result": "verify ✅ 876d86927 — 766/1026 OK·합성 7경우 PASS·설계도 반영"
+  },
+  {
+   "id": "publish-c232-allow-1123",
+   "added": "2026-11-23",
+   "what": "【권고】C2-32 발행 트리거 실행 허용 — 채팅에 「허용」 한 단어 【근거】사장님 04:26 승인 도장·pubready 전 칸 ✅(시계·도장 원격·V0·초안 일치·제휴 none·진행 run 없음)·F4-34 는 같은 방식으로 04:28 발행 성공(run 45060928309·라이브 200) — C2-32 gh workflow run 만 자동 분류기가 거부해 멈춤 【위험】발행은 되돌릴 수 없음 — 이미 결재하신 글 그대로이고 허용 없이는 세션이 우회하지 않고 멈춰 있음",
+   "due": "2026-11-23",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=C2-32 -f mode=live -f confirm=PUBLISH -f file='콜레라국내발생추정증상병원언제_글_HTML.txt' -f title='C2-32 콜레라 국내 발생 추정' -f post_title='콜레라 증상 — 10년 만의 국내 발생 추정, 병원은 언제?'",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
