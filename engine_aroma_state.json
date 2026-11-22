@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22 23:29:39",
+ "at": "2026-11-23 00:00:09",
  "errors": [],
  "rows": [
   {
@@ -55,12 +55,20 @@
   },
   {
    "code": "AM-SP-023",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-sp-023-approve-1122",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-22"
+    }
+   ],
    "title": "광주부천결과2위구도",
    "last_file_at": "2026-11-22 23:29",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-SP-023_1122.md · REVISE 83점"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-sp-023-approve-1122",
+   "no_preview": false
   }
  ],
  "old_inflight": [],
@@ -192,7 +200,7 @@
    ],
    [
     "공연·연예",
-    8
+    7
    ],
    [
     "스포츠",
@@ -203,7 +211,7 @@
     5
    ]
   ],
-  "total": 25
+  "total": 24
  },
  "share": {
   "state": "active",
@@ -308,7 +316,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-22 23:29:29",
+   "last_at": "2026-11-23 00:00:00",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -337,7 +345,7 @@
    "node": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회)",
    "last_at": "2026-11-22 09:00",
    "src": "idaeri_idle_at(공백 알림만)",
-   "today_n": 1,
+   "today_n": 0,
    "note": "열린 요청 0건",
    "at_node": ""
   },
@@ -347,7 +355,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 40회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음",
    "at_node": ""
   },
   {
@@ -355,7 +363,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-22 04:19:44",
    "src": "now_log(bid=aroma)",
-   "today_n": 21,
+   "today_n": 0,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -364,56 +372,55 @@
    "node": "루틴10 → CP",
    "last_at": "",
    "src": "시각 저장 없음(루틴10 꺼짐은 설계도 기재)",
-   "today_n": 6,
+   "today_n": 0,
    "note": "횟수는 lifeinfo 루틴 전체",
    "at_node": ""
   },
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-22 23:26",
+   "last_at": "2026-11-22 23:29",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 65개",
+   "note": "복사된 미리보기 66개",
    "at_node": "boss"
   }
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 60,
-  "cur": "🔄 이부장 22:29 접수·검토 — 이대리 21:47 점검 보",
+  "last_min": 18,
+  "cur": "🔄 이부장 23:42 접수·검토 — 이대리 야간 글감 4/4(",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [],
-  "v0": [
-   {
-    "code": "AM-SP-023",
-    "title": "광주부천결과2위구도",
-    "min": 0,
-    "lvl": "ok"
-   }
-  ],
+  "v0": [],
   "boss": [
    {
     "code": "AM-BO-013",
     "title": "푸른길몇부작러닝타임",
-    "min": 3,
+    "min": 34,
     "lvl": "ok"
    },
    {
     "code": "AM-DG-017",
     "title": "PS블프결제이벤트비교",
-    "min": 3,
+    "min": 34,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-019",
     "title": "임영웅영화객단가",
-    "min": 3,
+    "min": 34,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-SP-023",
+    "title": "광주부천결과2위구도",
+    "min": 31,
     "lvl": "ok"
    }
   ],
@@ -814,10 +821,10 @@
   ]
  },
  "kpi": {
-  "today": "2026-11-22",
-  "done_today": 4,
-  "published_today": 4,
-  "boss_wait": 3,
+  "today": "2026-11-23",
+  "done_today": 0,
+  "published_today": 0,
+  "boss_wait": 4,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -839,10 +846,10 @@
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 60,
-   "cur": "🔄 이부장 22:29 접수·검토 — 이대리 21:47 점검 보",
+   "last_min": 18,
+   "cur": "🔄 이부장 23:42 접수·검토 — 이대리 야간 글감 4/4(",
    "lvl": "ok"
   },
   {
@@ -854,10 +861,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 60,
-   "cur": "🔄 이부장 22:29 접수·검토 — 이대리 21:47 점검 보",
+   "last_min": 18,
+   "cur": "🔄 이부장 23:42 접수·검토 — 이대리 야간 글감 4/4(",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -877,19 +884,19 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 3건"
+   "state": "결재 대기 4건"
   }
  ],
  "suppliers": [
   {
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
-   "ran": true,
-   "at": "23:29",
-   "today": 8,
-   "lvl": "ok",
+   "ran": false,
+   "at": "",
+   "today": 0,
+   "lvl": "idle",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 8편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 0편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -903,17 +910,8 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 8편",
-   "codes": [
-    "AM-BC-002",
-    "AM-BO-013",
-    "AM-DG-016",
-    "AM-DG-017",
-    "AM-PE-018",
-    "AM-PE-019",
-    "AM-SP-022",
-    "AM-SP-023"
-   ]
+   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 0편",
+   "codes": []
   }
  ],
  "approvals": [
@@ -937,126 +935,24 @@
    "what": "【권고】AM-DG-017 블랙프라이데이 플스 — LG U+ 5만원당 5천원 vs 카카오페이 8천P 승인(디지털, 검색형) 【근거】PlayStat",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-sp-023-approve-1122",
+   "what": "【권고】AM-SP-023 K리그 순위 광주 4-2 부천에도 12위 — 7점 뒤진 채 남은 승점은 6 승인(스포츠, 홈판형·36R 직후, 11/2",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [],
- "today_events": [
-  {
-   "code": "AM-BO-013",
-   "stage": "proc",
-   "at": "2026-11-22 23:25:32",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-023",
-   "stage": "proc",
-   "at": "2026-11-22 23:29:01",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-019",
-   "stage": "proc",
-   "at": "2026-11-22 23:24:57",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-017",
-   "stage": "proc",
-   "at": "2026-11-22 23:25:45",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-022",
-   "stage": "proc",
-   "at": "2026-11-22 04:29:50",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-BC-002",
-   "stage": "proc",
-   "at": "2026-11-22 02:06:32",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-018",
-   "stage": "proc",
-   "at": "2026-11-22 04:38:35",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-016",
-   "stage": "proc",
-   "at": "2026-11-22 04:29:50",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-020",
-   "stage": "boss",
-   "at": "2026-11-22 04:19:33",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-PE-018",
-   "stage": "boss",
-   "at": "2026-11-22 04:22:47",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-DG-016",
-   "stage": "boss",
-   "at": "2026-11-22 04:26:51",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-SP-022",
-   "stage": "boss",
-   "at": "2026-11-22 04:27:36",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-BC-002",
-   "stage": "boss",
-   "at": "2026-11-22 04:28:13",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-PE-018",
-   "stage": "boss",
-   "at": "2026-11-22 05:25:33",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-SP-022",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  },
-  {
-   "code": "AM-DG-016",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  },
-  {
-   "code": "AM-BC-002",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  },
-  {
-   "code": "AM-PE-018",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  }
- ],
+ "today_events": [],
  "incidents": [],
  "stage_of": {},
  "design_signals": [],
  "room_extra": [
   {
    "title": "📊 카테고리 4개 · 최근 14일 게시",
-   "sub": "합계 25편 · 일률분배 몫 6.2편",
+   "sub": "합계 24편 · 일률분배 몫 6.0편",
    "rows": [
     {
      "head": "방송·OTT",
@@ -1064,7 +960,7 @@
     },
     {
      "head": "공연·연예",
-     "chip": "8편"
+     "chip": "7편"
     },
     {
      "head": "스포츠",
@@ -1083,7 +979,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-22 23:29:29",
+     "chip": "2026-11-23 00:00:00",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1102,31 +998,31 @@
      "head": "IDAERI_STALL",
      "lvl": "ok",
      "chip": "2026-11-22 09:00",
-     "sub": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회) · 출처 idaeri_idle_at(공백 알림만) · 오늘 1회 · 열린 요청 0건"
+     "sub": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회) · 출처 idaeri_idle_at(공백 알림만) · 오늘 0회 · 열린 요청 0건"
     },
     {
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 40회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-22 04:19:44",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 21회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 0회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 6회 · 횟수는 lifeinfo 루틴 전체"
+     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 0회 · 횟수는 lifeinfo 루틴 전체"
     },
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-22 23:26",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 65개"
+     "chip": "2026-11-22 23:29",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 66개"
     }
    ]
   },
