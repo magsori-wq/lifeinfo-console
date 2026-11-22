@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22 13:20:19",
+ "at": "2026-11-22 13:27:37",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -59,20 +59,19 @@
     "code": "E2-19",
     "title": "구독 해지 막는 다크패턴, 위반 예시 4가지 — 전자상",
     "left": [
-     "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
      "naver": true,
-     "insta": false,
+     "insta": true,
      "threads": false
     },
     "who": {
-     "naver": "lee"
+     "naver": "lee",
+     "insta": ""
     },
     "plan": {
-     "insta": "lee",
      "threads": "lee"
     },
     "pub": "",
@@ -653,7 +652,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 8,
-   "last_min": 12,
+   "last_min": 5,
    "cur": "🚀 E2-19 발행 — 구독 해지 막는 다크패턴, 위반 예시 ",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -662,7 +661,7 @@
    "who": "4.세션",
    "state": "지연·확인 필요",
    "jobs": 2,
-   "last_min": 1359,
+   "last_min": 1367,
    "cur": "4. 우리 사이트 내용 직접 점검 — 무엇을 고칠까 (사장님 ",
    "lvl": "amber",
    "role": "애드센스 정비"
@@ -705,7 +704,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 8,
-   "last_min": 12,
+   "last_min": 5,
    "cur": "🚀 E2-19 발행 — 구독 해지 막는 다크패턴, 위반 예시 ",
    "lvl": "ok"
   },
@@ -713,7 +712,7 @@
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 7,
+   "last_min": 15,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -721,7 +720,7 @@
    "who": "4.세션",
    "state": "지연·확인 필요",
    "jobs": 2,
-   "last_min": 1359,
+   "last_min": 1367,
    "cur": "4. 우리 사이트 내용 직접 점검 — 무엇을 고칠까 (사장님 ",
    "lvl": "amber"
   },
@@ -729,7 +728,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 81,
+   "last_min": 89,
    "cur": "[이부장 접수 11:5x] 이대리 11:47 점검 보고 접수(",
    "lvl": "ok"
   },
@@ -1095,6 +1094,13 @@
      "who": ""
     },
     {
+     "code": "E2-19",
+     "title": "구독 해지 막는 다크패턴, 위반 예시 4가지 — 전자상",
+     "url": "https://www.instagram.com/magsori8975/p/DgB8ZoYked1/",
+     "at": "2026-11-22",
+     "who": ""
+    },
+    {
      "code": "H1-45",
      "title": "열차 지연 보상 90분 75%·120분 전액 — 소비자",
      "url": "https://www.instagram.com/magsori8975/p/DgBKZZOE2Wr/",
@@ -1208,10 +1214,6 @@
     {
      "code": "C2-31",
      "title": "어린이 독감 접종 무료 14세까지 확대 — 우리 아이 "
-    },
-    {
-     "code": "E2-19",
-     "title": "구독 해지 막는 다크패턴, 위반 예시 4가지 — 전자상"
     }
    ]
   },
@@ -1520,6 +1522,13 @@
    "src": "now_log 발행 완료"
   },
   {
+   "code": "E2-19",
+   "stage": "naver",
+   "at": "2026-11-22 13:21:54",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
    "code": "A1-27",
    "stage": "blog",
    "at": "",
@@ -1533,10 +1542,10 @@
   },
   {
    "code": "E2-19",
-   "stage": "naver",
+   "stage": "insta",
    "at": "",
    "src": "DB osmu_at(날짜뿐)",
-   "who": "lee"
+   "who": ""
   },
   {
    "code": "H1-45",
@@ -1758,12 +1767,12 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "stale",
-  "ok": 6,
-  "stale": 1,
+  "state": "ok",
+  "ok": 7,
+  "stale": 0,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-22 13:16:31",
+  "at": "2026-11-22 13:23:52",
   "age_min": 3
  },
  "design_signals": [
@@ -1850,11 +1859,11 @@
  "fired": [
   {
    "day": "2026-11-22",
-   "total": 177,
+   "total": 178,
    "kinds": [
     [
      "REPORT_UNACKED",
-     34
+     35
     ],
     [
      "TOWER_OWED",
