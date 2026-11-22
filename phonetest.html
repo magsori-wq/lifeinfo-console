@@ -18,10 +18,11 @@ h1{font-size:16px;margin:4px 0 6px}
 .cell .v{font-size:11px;color:#a3b6c4;margin-top:4px;word-break:break-all}
 .box{height:56px;border-radius:6px;background:#121d29;color:#d8e6f0;display:flex;align-items:center;justify-content:center;font-weight:700}
 svg{display:block;width:100%;height:64px}
+:root{--v13:#121d29}
 </style>
 </head>
 <body>
-<h1>폰 칠 시험 — 같은 어두운 칠 #121d29</h1>
+<h1>폰 칠 시험 v2 — 같은 어두운 칠 #121d29</h1>
 <div class="info" id="env">환경 읽는 중…</div>
 <div class="note">보는 법: 아래 칸이 모두 <b>어두운 남색</b>이어야 정상입니다. <b>어떤 칸이 연한 회색이면 그 구성을 폰 렌더러가 바꾸는 것</b>입니다. 맨 위 기준 견본 두 칸(어두운 값·밝은 값)과 비교하세요. 이 화면 전체를 캡처해 보내 주시면 됩니다.</div>
 <div class="ref"><div style="background:#121d29;color:#d8e6f0;border:1px solid #1f3040">기준 어두움 #121d29</div><div style="background:#b4bdc8;color:#15222e">기준 밝음 #b4bdc8</div></div>
@@ -38,11 +39,25 @@ var cells=[
  ["⑦ 대조: div 만(특수 속성 없음)","<div class='box' id='c7' style='color:#d8e6f0'>대조 div</div>","c7","backgroundColor"],
  ["⑧ div 위 밝은 글자","<div class='box' id='c8' style='color:#fff;font-size:18px'>밝은 글자 ABC 123</div>","c8","color"]
 ];
+function sv(inner){return "<svg viewBox='0 0 100 64'>"+inner+"</svg>"}
+var TX="<text x='50' y='38' text-anchor='middle' fill='#d8e6f0' font-size='12' font-weight='700'>";
+cells=cells.concat([
+ ["⑨ circle(style 칠)",sv("<circle id='c9' cx='50' cy='32' r='28' style='fill:#121d29'/>"+TX+"style</text>"),"c9","fill"],
+ ["⑩ ellipse",sv("<ellipse id='c10' cx='50' cy='32' rx='28' ry='28' fill='#121d29'/>"+TX+"ellipse</text>"),"c10","fill"],
+ ["⑪ path(arc 두 개로 원)",sv("<path id='c11' d='M22 32a28 28 0 1 0 56 0a28 28 0 1 0 -56 0z' fill='#121d29'/>"+TX+"path arc</text>"),"c11","fill"],
+ ["⑫ rect rx=반지름(원 모양)",sv("<rect id='c12' x='22' y='4' width='56' height='56' rx='28' ry='28' fill='#121d29'/>"+TX+"rect 원</text>"),"c12","fill"],
+ ["⑬ circle + CSS 변수 칠",sv("<circle id='c13' cx='50' cy='32' r='28' style='fill:var(--v13)'/>"+TX+"var()</text>"),"c13","fill"],
+ ["⑭ circle + 어두운 stroke",sv("<circle id='c14' cx='50' cy='32' r='24' fill='#121d29' stroke='#1d2c3b' stroke-width='6'/>"+TX+"stroke</text>"),"c14","fill"],
+ ["⑮ circle fill !important",sv("<circle id='c15' cx='50' cy='32' r='28' style='fill:#121d29!important'/>"+TX+"!important</text>"),"c15","fill"],
+ ["⑯ 관: path 어두운 stroke",sv("<path id='c16' d='M8 32H92' fill='none' stroke='#1d2c3b' stroke-width='14' stroke-linecap='round'/>"+TX+"path stroke</text>"),"c16","stroke"],
+ ["⑰ line 어두운 stroke",sv("<line id='c17' x1='8' y1='32' x2='92' y2='32' stroke='#1d2c3b' stroke-width='14' stroke-linecap='round'/>"+TX+"line stroke</text>"),"c17","stroke"],
+ ["⑱ rect 어두운 stroke(칠 없음)",sv("<rect id='c18' x='12' y='8' width='76' height='48' rx='8' fill='none' stroke='#1d2c3b' stroke-width='8'/>"+TX+"rect stroke</text>"),"c18","stroke"]
+]);
 var g=document.getElementById("g"),i;
 for(i=0;i<cells.length;i++){var c=cells[i],d=document.createElement("div");d.className="cell";d.innerHTML="<div class='t'>"+c[0]+"</div>"+c[1]+"<div class='v' id='v"+i+"'></div>";g.appendChild(d)}
 function hex(c){var m=String(c).match(/[\d.]+/g);if(!m||m.length<3)return String(c);return "#"+m.slice(0,3).map(function(x){var n=Math.round(+x).toString(16);return n.length<2?"0"+n:n}).join("")}
 function read(){
- for(var i=0;i<cells.length;i++){var e=document.getElementById(cells[i][2]);document.getElementById("v"+i).textContent="계산값 "+cells[i][3]+" = "+(e?hex(getComputedStyle(e)[cells[i][3]]):"-")+" (기대 "+(cells[i][3]==="color"?"#ffffff":"#121d29")+")"}
+ for(var i=0;i<cells.length;i++){var e=document.getElementById(cells[i][2]);document.getElementById("v"+i).textContent="계산값 "+cells[i][3]+" = "+(e?hex(getComputedStyle(e)[cells[i][3]]):"-")+" (기대 "+(cells[i][3]==="color"?"#ffffff":(cells[i][3]==="stroke"?"#1d2c3b":"#121d29"))+")"}
  var mq=function(q){try{return matchMedia(q).matches}catch(e){return "?"}};
  document.getElementById("env").textContent="UA "+navigator.userAgent.slice(0,80)+" · 시스템 다크 "+(mq("(prefers-color-scheme:dark)")?"예":"아니오")+" · DPR "+window.devicePixelRatio+" · 창 "+innerWidth+"x"+innerHeight+" · 앱창 "+(mq("(display-mode:standalone)")?"standalone":"브라우저")+" · "+new Date().toTimeString().slice(0,8);
 }

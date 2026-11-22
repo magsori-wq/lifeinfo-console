@@ -62,7 +62,7 @@ svg text{font-family:inherit;fill:var(--fg)}
 .nd.pk rect.bx{stroke:var(--bl);stroke-width:6}
 .nd:focus{outline:none}
 .hub{cursor:pointer}
-.hub circle{fill:var(--panel2);stroke:var(--idle);stroke-width:2}.hub.rd circle{stroke:var(--rd);stroke-width:4;animation:nodered .9s steps(2) infinite}.hub.am circle{stroke:var(--am);stroke-width:3}.hub text{font-size:10px;font-weight:700;text-anchor:middle;pointer-events:none}
+.hub .hc{fill:var(--panel2);stroke:var(--idle);stroke-width:2}.hub.rd circle{stroke:var(--rd);stroke-width:4;animation:nodered .9s steps(2) infinite}.hub.am circle{stroke:var(--am);stroke-width:3}.hub text{font-size:10px;font-weight:700;text-anchor:middle;pointer-events:none}
 .hub.pk circle{stroke:var(--bl);stroke-width:6}
 /* 파이프 = 바깥 관(pc) + 안쪽 심(ed, 상태 클래스) · 입자(pt) */
 .pc{fill:none;stroke:var(--pipe);stroke-width:12;stroke-linecap:round}
@@ -177,14 +177,14 @@ html.reduce *{animation:none!important;transition:none!important}
 /* 11-20 12:5x 강제 다크/라이트가 와도 SVG 칠·글자가 같은 방향 — 값은 :root 변수와 같은 명시 색(!important), forced-color-adjust 끔 */
 html,html *{forced-color-adjust:none}
 :root[data-theme=dark]{color-scheme:dark}
-:root[data-theme=dark] #map .nd rect.bx,:root[data-theme=dark] #map .hub circle{fill:#121d29!important}
+:root[data-theme=dark] #map .nd rect.bx,:root[data-theme=dark] #map .hub .hc{fill:#121d29!important}
 :root[data-theme=dark] #map .nd.sel rect.bx{fill:#1a3247!important}
 :root[data-theme=dark] #map .gbg{fill:#0e1620!important}
 :root[data-theme=dark] #map .gauge.am .gbg{fill:#262521!important}:root[data-theme=dark] #map .gauge.rd .gbg{fill:#301e26!important}
 :root[data-theme=dark] #map .nd text.t1,:root[data-theme=dark] #map .gv,:root[data-theme=dark] #map .hub text,:root[data-theme=dark] #map .dot text{fill:#d8e6f0!important}
 :root[data-theme=dark] #map .nd text.t2{fill:#a3b6c4}
 :root[data-theme=dark] #hubt{fill:#a3b6c4!important}:root[data-theme=light] #hubt{fill:#4a5b69!important}/* 칠·글자 짝 고정(사장님 11-20 12:59): 탱크 라벨은 채움(빨강·주황) 위에 얹혀 대비가 흔들렸다 → 라벨 자체에 어두운(라이트는 밝은) 알약 바탕 */.tank .tlab{background:var(--panel);padding:0 7px;border-radius:9px;text-shadow:none}:root[data-theme=dark] .eflow .ec span,:root[data-theme=dark] .eflow .ec span *{color:#15222e!important}:root[data-theme=light] .eflow .ec span,:root[data-theme=light] .eflow .ec span *{color:#ffffff!important}:root[data-theme=light]{color-scheme:only light}
-:root[data-theme=light] #map .nd rect.bx,:root[data-theme=light] #map .hub circle{fill:#f0f4f8!important}
+:root[data-theme=light] #map .nd rect.bx,:root[data-theme=light] #map .hub .hc{fill:#f0f4f8!important}
 :root[data-theme=light] #map .gbg{fill:#ffffff!important}
 :root[data-theme=light] #map .nd text.t1,:root[data-theme=light] #map .gv,:root[data-theme=light] #map .hub text,:root[data-theme=light] #map .dot text{fill:#15222e!important}
 #diag{font-size:12px;line-height:1.4;color:var(--fg);background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 6px;margin:3px 0;word-break:break-all}
@@ -239,7 +239,7 @@ html,html *{forced-color-adjust:none}
 :root[data-theme=dark] .nd.sel rect.bx{stroke:#4db3ff!important;fill:#1a3247!important}
 :root[data-theme=dark] .nd.rd:hover rect.bx{stroke:#ff4d4d!important}
 :root[data-theme=dark] .nd.pk rect.bx{stroke:#4db3ff!important}
-:root[data-theme=dark] .hub circle{fill:#121d29!important;stroke:#4a5b69!important}
+:root[data-theme=dark] .hub .hc{fill:#121d29!important;stroke:#4a5b69!important}
 :root[data-theme=dark] .hub.rd circle{stroke:#ff4d4d!important}
 :root[data-theme=dark] .hub.am circle{stroke:#ffb02e!important}
 :root[data-theme=dark] .hub.pk circle{stroke:#4db3ff!important}
@@ -324,14 +324,6 @@ html,html *{forced-color-adjust:none}
 :root[data-theme=dark] .exlg .k1{color:#38bdf8!important}
 :root[data-theme=dark] .exlg .k2{color:#f472b6!important}
 :root[data-theme=dark] .exlg .k3{color:#a3adba!important}
-:root[data-theme=dark] .nd text{stroke:#121d29!important}
-:root[data-theme=dark] .nd.sel text{stroke:#1a3247!important}
-:root[data-theme=dark] .gauge .gv{stroke:#0e1620!important}
-:root[data-theme=dark] .gauge.rd .gv{stroke:#301e26!important}
-:root[data-theme=dark] .gauge.am .gv{stroke:#262521!important}
-:root[data-theme=dark] .hub text{stroke:#121d29!important}
-:root[data-theme=dark] .fl,:root[data-theme=dark] .drv text,:root[data-theme=dark] #hubt{stroke:#0e1620!important}
-:root[data-theme=dark] .dot text{stroke:#0e1620!important}
 :root[data-theme=light] html,:root[data-theme=light] body{background:#f4f7fa!important;color:#15222e!important}
 :root[data-theme=light] #top{background:#f4f7fa!important}
 :root[data-theme=light] .radar .rr{stroke:#0b7a45!important}
@@ -380,7 +372,7 @@ html,html *{forced-color-adjust:none}
 :root[data-theme=light] .nd.sel rect.bx{stroke:#1565b0!important;fill:#d1e0ee!important}
 :root[data-theme=light] .nd.rd:hover rect.bx{stroke:#c62828!important}
 :root[data-theme=light] .nd.pk rect.bx{stroke:#1565b0!important}
-:root[data-theme=light] .hub circle{fill:#f0f4f8!important;stroke:#9aa9b6!important}
+:root[data-theme=light] .hub .hc{fill:#f0f4f8!important;stroke:#9aa9b6!important}
 :root[data-theme=light] .hub.rd circle{stroke:#c62828!important}
 :root[data-theme=light] .hub.am circle{stroke:#8a5200!important}
 :root[data-theme=light] .hub.pk circle{stroke:#1565b0!important}
@@ -465,14 +457,6 @@ html,html *{forced-color-adjust:none}
 :root[data-theme=light] .exlg .k1{color:#0369a1!important}
 :root[data-theme=light] .exlg .k2{color:#be185d!important}
 :root[data-theme=light] .exlg .k3{color:#6b7280!important}
-:root[data-theme=light] .nd text{stroke:#f0f4f8!important}
-:root[data-theme=light] .nd.sel text{stroke:#d1e0ee!important}
-:root[data-theme=light] .gauge .gv{stroke:#ffffff!important}
-:root[data-theme=light] .gauge.rd .gv{stroke:#f7e1e1!important}
-:root[data-theme=light] .gauge.am .gv{stroke:#f3eee6!important}
-:root[data-theme=light] .hub text{stroke:#f0f4f8!important}
-:root[data-theme=light] .fl,:root[data-theme=light] .drv text,:root[data-theme=light] #hubt{stroke:#ffffff!important}
-:root[data-theme=light] .dot text{stroke:#ffffff!important}
 </style>
 <style id="s23">
 /* 11-20 Galaxy S23 Ultra 최적화(CSS 412px·DPR3.5) 마지막 1회 — 본문 12px↑ · 터치 44px↑ · 노치·제스처 여백 */
@@ -483,7 +467,7 @@ body{padding-top:env(safe-area-inset-top,0px)}
 .row1 a,a.A,.apo,.row1 .A{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;box-sizing:border-box}
 summary,.ssum,.dsum{min-height:44px;box-sizing:border-box;display:flex;align-items:center}
 .lane .cp.feed .fd,.fd{font-size:12px!important;line-height:1.35}
-#map .hub circle{r:22.5px}
+
 #rflt a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;box-sizing:border-box}
 }
 </style>
@@ -628,7 +612,8 @@ const P=(gx,gy,R,a)=>[gx+R*Math.sin(a*Math.PI/180),gy-R*Math.cos(a*Math.PI/180)]
 function arc(gx,gy,R,a0,a1){const p=P(gx,gy,R,a0),q=P(gx,gy,R,a1);return `M${p[0].toFixed(2)} ${p[1].toFixed(2)}A${R} ${R} 0 ${a1-a0>180?1:0} 1 ${q[0].toFixed(2)} ${q[1].toFixed(2)}`}
 function gauge(n,key,parent,go){
   const g=el("g",{class:"gauge idle"+(n.term?" term":""),id:"gg-"+key,tabindex:"-1"},parent),{gx,gy,r}=n;
-  el("circle",{class:"gbg",cx:gx,cy:gy,r:r+3},g);el("circle",{class:"gtr",cx:gx,cy:gy,r},g);
+  el("rect",{class:"gbg",x:gx-(r+3),y:gy-(r+3),width:2*(r+3),height:2*(r+3),rx:r+3,ry:r+3},g);   /* 11-22 폰이 어두운 circle 칠만 밝게 바꿔 그린다(실측) — 시각이 같은 둥근 rect */
+  el("circle",{class:"gtr",cx:gx,cy:gy,r},g);
   el("circle",{class:"gld",id:"gl-"+key,cx:gx,cy:gy,r,"stroke-dasharray":"0 999",transform:`rotate(-90 ${gx} ${gy})`},g);
   if(LIMK[key]){const R=r-8;el("path",{class:"gdl",d:arc(gx,gy,R,-135,135)},g);el("path",{class:"gza",id:"gz-"+key,d:""},g);el("path",{class:"gzr",d:arc(gx,gy,R,124,135)},g);
     const nd=el("line",{class:"gnd",id:"gn-"+key,x1:gx,y1:gy-(r-14),x2:gx,y2:gy-(r-3)},g);nd.style.transformOrigin=gx+"px "+gy+"px";nd.style.transform="rotate(-135deg)";nd.style.opacity="0"}
@@ -663,7 +648,7 @@ function build(vert){
     if(e[0]!=="hub"&&!e[3]){const m=PT[e[0]+">"+e[1]][G.vert&&e[0]==="pub"?(e[1]==="blog"?4:9):24];   /* 폰: 발행 아래 글자는 캐리어 선로 위 틈에 */const t=el("text",{class:"fl",id:"fl-"+id,x:G.vert?m[0]+10:m[0],y:G.vert?m[1]+3:m[1]-11,"text-anchor":G.vert?"start":"middle"},pl);t.textContent=""}});
   el("g",{id:"parts",filter:"url(#glw)"},svg);
   const gl=el("g",{id:"gauges"},svg);Object.values(G.nodes).forEach(n=>gauge(n,n.k,gl,n.go));
-  const hg=el("g",{class:"hub",id:"hub",tabindex:"0",role:"button","aria-label":"Aside 허브 상세"},svg);el("circle",{cx:G.hub.x,cy:G.hub.y,r:G.vert?19:16},hg);const ht=el("text",{x:G.hub.x,y:G.hub.y+3},hg);ht.textContent="Aside";
+  const hg=el("g",{class:"hub",id:"hub",tabindex:"0",role:"button","aria-label":"Aside 허브 상세"},svg);{const HR=matchMedia("(max-width:560px)").matches?22.5:(G.vert?19:16);el("rect",{class:"hc",x:G.hub.x-HR,y:G.hub.y-HR,width:2*HR,height:2*HR,rx:HR,ry:HR},hg)}const ht=el("text",{x:G.hub.x,y:G.hub.y+3},hg);ht.textContent="Aside";
   hg.addEventListener("click",()=>focusStep("hub"));hg.addEventListener("keydown",ev=>{if(ev.key==="Enter"){ev.preventDefault();focusStep("hub")}});
   el("text",G.vert?{x:G.hub.x,y:G.hub.y-27,"text-anchor":"middle",id:"hubt",style:"font-size:11px;fill:var(--muted)"}:{x:G.hub.x,y:G.hub.y-22,"text-anchor":"middle",id:"hubt",style:"font-size:11px;fill:var(--muted)"},svg);
   el("g",{id:"ripl"},svg);el("g",{id:"dots"},svg);el("g",{id:"rdots"},svg);
@@ -1227,7 +1212,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="692903a42472";let hiddenAt=0,buildStuck="";
+const BUILD="daeb716dc035";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
