@@ -35816,12 +35816,12 @@
   {
    "id": "statefeed-size-1129",
    "added": "2026-11-22",
-   "what": "lifeinfo-state 저장소 커밋 이력 크기 일주일 뒤 재측정(정비 제안: 하루 약 480커밋·force 없이 정리 불가) — 비대해지면 결재 카드로 저장소 재생성 상정, 하트비트 180→120초는 필요 시 한 줄 변경",
+   "what": "상태 저장소 lifeinfo-state 이력 크기·커밋 수 재측정(maint1122fresh 4부 약속) — 하루 최대 약 480커밋 예상, 비대해지면 사장님 결재로 저장소 재생성 제안",
    "due": "2026-11-29",
-   "cmd": "gh api repos/magsori-wq/lifeinfo-state --jq '.size'",
+   "cmd": "gh api repos/magsori-wq/lifeinfo-state --jq .size; git -C C:/lifeinfo-state rev-list --count HEAD; python -m studio.statefeed status",
    "owner": "claude",
    "state": "wait",
-   "by": "이부장"
+   "by": "정비"
   },
   {
    "id": "deploy-thumb-551",
