@@ -487,6 +487,7 @@ summary,.ssum,.dsum{min-height:44px;box-sizing:border-box;display:flex;align-ite
     </div>
     <div class="meta" id="at">불러오는 중…</div>
     <div class="meta" id="fresh">마지막 갱신 —</div>
+    <div class="meta" id="bld" style="font-weight:700">화면 빌드 —</div>
     <div id="diag">진단 측정 중…</div>
     <div id="stale" role="alert"></div>
     <div class="meta" id="rflt" aria-label="반영 감사 신호등"><span class="rfl na" id="rfls">⚪ 반영 감사 — 불러오는 중…</span> <a href="reflect.html" target="_blank" rel="noopener">반영 감사 ↗</a> <a href="reflect1105.html" target="_blank" rel="noopener">체크리스트·작업 진행 ↗</a> <a href="engine_flow.html" target="_blank" rel="noopener">흐름도 ↗</a></div>
@@ -1212,13 +1213,14 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="daeb716dc035";let hiddenAt=0,buildStuck="";
+const BUILD="4b5819b70b3b";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
   const now=Date.now(),loadSec=Math.max(0,(now-loadedAt)/1000),st=S?stAge(S):0,age=Math.max(loadSec,st>1e8?0:st),min=Math.max(1,Math.round(age/60));
   const d=new Date(loadedAt);
   document.getElementById("fresh").textContent="마지막 갱신 "+pad2(d.getHours())+":"+pad2(d.getMinutes())+":"+pad2(d.getSeconds())+" ("+(loadSec<60?"방금":Math.round(loadSec/60)+"분 전")+")"+(st>STALE_SEC&&st<1e8?" · 상태 파일 기준 "+Math.round(st/60)+"분 전":"")+" · 버전 "+BUILD.slice(0,6);   // 11-20 이부장 요청: 캡처로 새 화면인지 가린다 — 마지막 갱신 줄 끝(.meta 글자 크기·색 그대로)
+  {const bl=document.getElementById("bld");if(bl)bl.textContent="화면 빌드 "+BUILD+(buildStuck?" · 새 버전 "+buildStuck+" 대기(캐시)":"")}   /* 11-22 maint1122phonefx(m): 폰 캡처 한 장으로 새 화면인지 옛 화면인지 가린다 */
   const b=document.getElementById("stale");let cls="",txt="";
   if(buildStuck){cls="am";txt="⚠️ 이 화면 파일이 새 버전과 다릅니다 — 브라우저 캐시(사이트 데이터)를 지우고 다시 여세요"}
   else if(!fetchOk){cls=loadSec>STALE_RED_SEC?"rd":"am";txt="⚠️ 상태 파일을 못 읽는 중입니다 — 이 화면은 "+Math.max(1,Math.round(loadSec/60))+"분 전 데이터입니다"}
