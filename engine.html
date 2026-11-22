@@ -566,6 +566,7 @@ const MAIN=RM.MAIN;
 const TERM=RM.TERM;
 const LIMK={proc:"v0",boss:"boss",pub:"publish"};   /* 마디 → engine_state.limit 키(경고·위험 분) */
 const CAP=3;                                          /* 링 가득 = 3건(병목 경보와 같은 값) */
+const NOFX=new URLSearchParams(location.search).get("nofx")==="1";
 let G=null,PT={},parts=[],ripples=[],counters={},prevDone=null,RP=null,pendingS=null,raf=0,lastT=0;
 /* 🧳 두 선로 한 지도(사장님 10-23): 위 = 새 글(①→④) · 아래 = 수정 캐리어(트렁크→작성→결재→반영). 두 선로가 ③결재·Aside 허브·종착지 4곳을 함께 쓴다 */
 const CRN=RM.CRN;
@@ -647,7 +648,7 @@ function build(vert){
   G.edges.forEach(e=>{const id=e[0]+"-"+e[1],cr=e[3]?" cr":"";el("path",{d:e[2],class:"pc"+cr,id:"pc-"+id},pl);const c=el("path",{d:e[2],class:"ed"+cr,id:"ed-"+id},pl);
     PT[e[0]+">"+e[1]]=sample(c,48);
     if(e[0]!=="hub"&&!e[3]){const m=PT[e[0]+">"+e[1]][G.vert&&e[0]==="pub"?(e[1]==="blog"?4:9):24];   /* 폰: 발행 아래 글자는 캐리어 선로 위 틈에 */const t=el("text",{class:"fl",id:"fl-"+id,x:G.vert?m[0]+10:m[0],y:G.vert?m[1]+3:m[1]-11,"text-anchor":G.vert?"start":"middle"},pl);t.textContent=""}});
-  el("g",{id:"parts",filter:"url(#glw)"},svg);
+  el("g",NOFX?{id:"parts"}:{id:"parts",filter:"url(#glw)"},svg);   /* 11-22 (t): ?nofx=1 = 번짐 필터 없이(폰 회색 원인 시험용, 기본 무변경) */
   const gl=el("g",{id:"gauges"},svg);Object.values(G.nodes).forEach(n=>gauge(n,n.k,gl,n.go));
   const hg=el("g",{class:"hub",id:"hub",tabindex:"0",role:"button","aria-label":"Aside 허브 상세"},svg);{const HR=matchMedia("(max-width:560px)").matches?22.5:(G.vert?19:16);el("rect",{class:"hc",x:G.hub.x-HR,y:G.hub.y-HR,width:2*HR,height:2*HR,rx:HR,ry:HR},hg)}const ht=el("text",{x:G.hub.x,y:G.hub.y+3},hg);ht.textContent="Aside";
   hg.addEventListener("click",()=>focusStep("hub"));hg.addEventListener("keydown",ev=>{if(ev.key==="Enter"){ev.preventDefault();focusStep("hub")}});
@@ -1213,7 +1214,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="2451a323bf67";let hiddenAt=0,buildStuck="";
+const BUILD="3ecd5100f2d1";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
