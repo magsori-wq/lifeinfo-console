@@ -35391,6 +35391,306 @@
    "preview": "aromapv_AM-PE-018.html",
    "done_at": "2026-11-22",
    "result": "사장님 채팅 「승인: aroma-am-pe-018-hedge-1122 (권고】AM-PE-018 아이브 콘서트 글 게시 ) (폰 탭 05:22 · 05:24 두 번)」 05:25 — 이부장 회수 · 폰 승인 회수(이부장 CLI)"
+  },
+  {
+   "id": "xlink-a127",
+   "added": "2026-11-22",
+   "what": "🔗 A1-27 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A1-27",
+   "due": "2026-11-22",
+   "cmd": "python studio/blogger.py crosslink --code A1-27",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "a127-index-req-1122",
+   "added": "2026-11-22",
+   "what": "A1-27 4채널 완결 — GSC 색인 생성 요청(이과장이 asidequeue 에 넣고 Aside 가 실행·gsc_log 기록) 확인",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-c230",
+   "added": "2026-11-22",
+   "what": "🔗 C2-30 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code C2-30",
+   "due": "2026-11-22",
+   "cmd": "python studio/blogger.py crosslink --code C2-30",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "xlink-h145",
+   "added": "2026-11-22",
+   "what": "🔗 H1-45 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code H1-45",
+   "due": "2026-11-22",
+   "cmd": "python studio/blogger.py crosslink --code H1-45",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "fuel1030-source-3",
+   "added": "2026-11-22",
+   "what": "fuel1030 1차 원문 3건 source 에이전트 결과 확인(docs/source_mofa_travelalert_20261121.md · source_heating_support_20261122.md · source_ftc_consumer_guideline_20261122.md)",
+   "due": "2026-11-22",
+   "cmd": "ls -la docs/source_mofa_travelalert_20261121.md docs/source_heating_support_20261122.md docs/source_ftc_consumer_guideline_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-22",
+   "result": "확보 1건(E2-19) · 제외 2건(중복) · 확인 대기 1건(여행경보) · 기록 1차 파일 docs/source_ftc_consumer_guideline_20261122.md · docs/source_heating_support_20261122.md"
+  },
+  {
+   "id": "fuel1030-lawgokr-3",
+   "added": "2026-11-22",
+   "what": "fuel1030 법제처 2027-01-01 시행예정 전수 — source 에이전트 결과 확인(docs/source_lawgokr_effective_20270101_20261122.md)",
+   "due": "2026-11-22",
+   "cmd": "ls -la docs/source_lawgokr_effective_20270101_20261122.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "fuel1030-deep-3",
+   "added": "2026-11-22",
+   "what": "fuel1030 법령 심층 3건(소득세법 시행령·국민연금법·고용보험법) 결과 확인",
+   "due": "2026-11-22",
+   "cmd": "ls -la docs/source_sodeuk_sigyeong_20270101_20261122.md docs/source_gukmin_yeongeum_20270101_20261122.md docs/source_gomyong_boheom_20270101_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-22",
+   "result": "법제처 생활 제도 3건 심층 결과: 소득세법 제외·국민연금 제외·고용보험 보류(시행령 미확보). 신규 후보 0편. 근거 docs/source_sodeuk_sigyeong_20270101_20261122.md · source_gukmin_yeongeum_20270101_20261122.md · source_gomyong_boheom_20270101_20261122.md"
+  },
+  {
+   "id": "afflink-daebonggam1122",
+   "added": "2026-11-22",
+   "what": "🛒 제휴 링크 발급 요청 — daebonggam1122. 상품: 대봉감, 27과 내외, 5kg, 1박스 (11,900원 · 리뷰 779 · 평점 4.2). 관련성: 대봉감 11월 후숙·홍시 제철(naverkw 대봉감 보관법·후숙·홍시·10kg 자동완성 확인), 토스 리뷰779·평점4.2·11,900원, 쓰레. 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.tosslink link 2677153369",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "deploy-thumb-548",
+   "added": "2026-11-22",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(548_subscription_cancel.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-22",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "bc-e219-1122",
+   "added": "2026-11-22",
+   "what": "E2-19 브랜드커넥트 검색 결과 요약: 가계부(총 223, 가계부 자체는 해지 절차 글과 연결 근거 없음) · 구독(총 7,793, 정기배송 식품·영양제뿐) → no_fit. 링크 발급·게시 없음",
+   "owner": "claude",
+   "state": "done",
+   "by": "brandconnect에이전트"
+  },
+  {
+   "id": "v0-e219-1122",
+   "added": "2026-11-22",
+   "what": "E2-19 V0 검사 결과 파일 docs/v0_E2-19_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "v0에이전트"
+  },
+  {
+   "id": "fix-e219v0-1122",
+   "added": "2026-11-22",
+   "what": "E2-19 원고 V0 필수수정 4건+권고 4건 반영(커밋 b640f81a8). heading OK·bodydup 0.065 신규·validate FAIL 0. 남은 것: 이부장 V0 재검(diff)·v0check 도장",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.heading --file 구독해지다크패턴위반예시4가지전자상거래지침개정안_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-e219-recheck-1122",
+   "added": "2026-11-22",
+   "what": "E2-19 V0 재검 결과 파일 docs/v0_E2-19_recheck_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "v0에이전트"
+  },
+  {
+   "id": "fuel1030-deep-4",
+   "added": "2026-11-22",
+   "what": "fuel1030 심층 4건(도로교통법 시행규칙·임금채권보장법 시행령·지방세법·모자보건법) 결과 확인",
+   "due": "2026-11-22",
+   "cmd": "ls -la docs/source_dosu_sigyuchik_20270101_20261122.md docs/source_imgchaegwon_sigyeong_20270101_20261122.md docs/source_jibangsse_sigyeong_20270101_20261122.md docs/source_moja_bohum_sigyeong_20270101_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "3.분석",
+   "done_at": "2026-11-22",
+   "result": "도로교통법 시행규칙 제외(2027-01-01 실질 변경 없음, 별표 28 은 2027-02-25) · 임금채권보장법 시행령 탈락(A5-15 중복) · 모자보건법 탈락(근거 조문 없음) · 지방세법 탈락(B4-36 중복). 신규 후보 0편(이번 라운드). 근거 파일 4건 docs/source_*_20270101_20261122.md"
+  },
+  {
+   "id": "fuel1030-lawout-16",
+   "added": "2026-11-22",
+   "what": "fuel1030 법령 밖 갈래(독감 2026-27 원문·연말정산 2026 원문) 결과 확인 → 16:30 최종 보고",
+   "due": "2026-11-22",
+   "cmd": "ls -la docs/source_flu_2026_27_20261122.md docs/source_yeonmal_2026_20261122.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "yeonmal2026-recheck-1201",
+   "added": "2026-11-22",
+   "what": "연말정산 2026 귀속 국세청 발표 여부 재확인 — 12월 국세청 보도자료 목록(bbsId=1028)과 종합 안내 페이지에 2026 귀속 연말정산 자료가 올라왔는지(3. 요청 08:13, 원문 docs/source_yeonmal_2026_20261122.md). 올라오면 3. 에게 글감 근거 확보 지시",
+   "due": "2026-12-01",
+   "cmd": "curl -s -A 'Mozilla/5.0' 'https://www.nts.go.kr/nts/na/ntt/selectNttList.do?mi=2201&bbsId=1028' | grep -c 연말정산",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-c231-1122",
+   "added": "2026-11-22",
+   "what": "C2-31 V0 검사 결과 파일 docs/v0_C2-31_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "v0에이전트"
+  },
+  {
+   "id": "bc-c231-1122",
+   "added": "2026-11-22",
+   "what": "C2-31 브랜드커넥트 검색 결과 요약: 가습기(5,506 제외) · 어린이 마스크(291) → 메디케이알 데일리핏 KF94 소형 100매 1개 후보(할인가 15,800·수수료 8%·4.81·리뷰 41,428), 링크 미발급",
+   "owner": "claude",
+   "state": "done",
+   "by": "brandconnect에이전트"
+  },
+  {
+   "id": "deploy-thumb-549",
+   "added": "2026-11-22",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(549_kids_flu_shot.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-22",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-c231-v0-1122",
+   "added": "2026-11-22",
+   "what": "C2-31 원고 V0 필수수정 3건(무료 비용문장·앞당김 대상 정정·2절 1회만 접종 사례)+권고(마감 출처병기·6개월 계산·5절 어르신 링크화) 반영, 커밋 a474ed3d8. heading OK·bodydup 0.052. 남은 것: 이부장 v0check pass 재판정",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.bodydup --file 어린이독감접종무료14세확대4월30일마감_글_HTML.txt --code C2-31 --live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "src-b437-1122",
+   "added": "2026-11-22",
+   "what": "B4-37 근로장려금 확대안 기재부 원문 확보 결과: 재경부 8.3 세제개편안 개조식 p9-10·상세본 p25-26 원문 확보(최대 180/310/360, 소득요건 2600/3700/5200, 적용 27.1.1 이후 개시 과세기간). 국회 의안 2221039 계류·소관위상정(11-22), 법제처 공포 반영 없음 = 정부안 단계. 못 얻음: 신구조문·부칙·소위 일정. 파일 docs/source_B4-37_근로장려금2027확대_기재부원문_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "source에이전트"
+  },
+  {
+   "id": "memory-index-compact-1122",
+   "added": "2026-11-22",
+   "what": "메모리 색인(MEMORY.md) 183줄 — 200줄 읽기 한도 근접. 17:00 이후 한가할 때 consolidate-memory 로 140줄 안으로 압축(중복 병합·낡은 항목 정리, 내용 삭제는 근거 확인 뒤)",
+   "due": "2026-11-23",
+   "cmd": "python -c \"print(sum(1 for _ in open(r'C:/Users/magso/.claude/projects/C--lifeinfo/memory/MEMORY.md',encoding='utf-8')))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-b437-1122",
+   "added": "2026-11-22",
+   "what": "B4-37 V0 검사 결과 파일 docs/v0_B4-37_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "v0에이전트"
+  },
+  {
+   "id": "fix-b437v0-1122",
+   "added": "2026-11-22",
+   "what": "B4-37 원고 V0 필수수정 3건(40일 뒤 삭제·관련글 라벨 날짜 제거·대안반영폐기 삭제)+권고(제목 정부안·내년부터 제거·2025귀속 병기) 반영. heading·bodydup 0.038 통과. 남은 것: 검색설명 초안 없음, 큐 제목 이부장 정렬, 가구유형 정의·AI문구·정책뉴스 링크 권고 미반영",
+   "due": "2026-11-23",
+   "cmd": "grep -c '40일 뒤\\|대안반영폐기\\|11월 30일' C:/lifeinfo/근로장려금2027확대안단독180홑벌이310정부안_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "sitefix-wake-1200-1122",
+   "added": "2026-11-22",
+   "what": "12:00 이후 이과장에게 sitefix1121(시범10 라이브 수정) 시작 깨우기 — 이과장은 스스로 폴링하지 못함. 12:0x 세션 정체 점검 때 batchboard order --id sitefix1121 읽기 한 줄로 깨운다(17:00 이후 새 트리거 없음, 적용은 16:00 전 완료 목표)",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.cpstate --list | grep sitefix1121",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "sitefix-pilot10-scope-1122",
+   "added": "2026-11-22",
+   "what": "🛠 블로그스팟 시범 10편 수정 — 승인 범위 글 코드 확정 (03:56 승인 카드의 글 목록을 코드로 적은 것) — 시범 10편 G2-03(통도사)·A1-09(국가장학금)·B4-02(부가세 1기)·F4-23(단풍)·G3-11(지스타)·F4-16(템플스테이)·G3-04(BIFF)·F4-30(포스트시즌 예매)·H1-17(심수봉 원주)·H1-36(코리아 그랜드 페스티벌) + 단정완화 3곳 D2-06·A4-04·G1-03(부산진구 구비 줄). 문장 제안표 docs/site_fix_pilot10/pilot10_dryrun.md · tone_fix_3.md 그대로, 새 문장은 없음. 【권고】승인 — 03:56 폰 승인하신 카드가 가리킨 문서의 10편을 DB 코드와 대조해 옮겨 적은 것이라 범위가 늘지 않습니다(이부장이 코드↔글 주소를 대조). 【근거】라이브 수정 승인 게이트가 승인 카드 글자에 글 코드가 있어야 통과하는데 03:56 카드는 문서 이름만 적혀 있어 D2-06·A4-04 만 통과 — 이과장이 나머지 10편을 못 고치고 대기 중 【위험】승인하시면 12편 문장만 바뀌고(편마다 전후 diff·curl 확인) 되돌릴 수 있음. 승인 안 하시면 시범 10편은 오늘 적용 못 하고 단정완화 2곳만 나갑니다.",
+   "due": "2026-11-22",
+   "cmd": "승인되면 이부장이 이과장에게 sitefix1121 12편 전체 적용 진행 알림(batchboard order 갱신)",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "a404-calc-card-1122",
+   "added": "2026-11-22",
+   "what": "A4-04 가상 사례 계산 3곳 수정(제안 A: 약 199만 원 기준·약 597만 원, docs/site_fix_pilot10/A4-04_calc_proposal.md) — 사장님 sitefix-pilot10-scope-1122 카드 처리 뒤 결재함에 올려 승인받고 이과장에게 적용 지시",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.approvalcount | grep -c sitefix-pilot10-scope",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "cadaily-wake-after-aside-1122",
+   "added": "2026-11-22",
+   "what": "Aside 대기열(F1-20·G3-30·EXP-M1-4·A6-11·D2-21)이 비면 3. 에게 cadaily 즉시 실행 깨우기 — 3. 은 스스로 폴링하지 못함(12:17 보고). 큐 비면 batchboard order --id cadaily 읽기 한 줄",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "Aside 채팅 휴면(직접 게시 모드)이라 큐 충돌은 실제가 아님 — 3. 에게 즉시 실행 재지시 12:2x"
+  },
+  {
+   "id": "cadaily-ca-retry-1122",
+   "added": "2026-11-22",
+   "what": "크리에이터 어드바이저 유입 갱신 재시도(11-22 네이버 장애로 보류)",
+   "due": "2026-11-23",
+   "cmd": "python tools/aside_read.py \"https://creator-advisor.naver.com/naver_blog/main\" --wait 10 --max 3000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "fuel1030-final-1630",
+   "added": "2026-11-22",
+   "what": "fuel1030 16:30 최종 보고(법제처 잔여·연말정산 12월 재확인·갈래별 사유 표)",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
   }
  ]
 }
