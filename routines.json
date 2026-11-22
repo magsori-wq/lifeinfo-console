@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-22 08:08",
+ "generated": "2026-11-22 09:03",
  "routines": [
   {
    "num": 1,
@@ -45,7 +45,7 @@
    "id": "lifeinfo-daily-topics",
    "on": true,
    "last": "11/21 12:15",
-   "next": "11/22 09:00",
+   "next": "11/23 09:00",
    "model": "sonnet-5-5",
    "report_day": "1121",
    "report": "[조사장부] 목록 3(korea.kr 정책뉴스·보도자료·kwgap) · 원문 1(docs/source_A2-33_민주유공자법_20261121.md) · 후보 1 · 탈락 4 · 검색어 6 · 유입 1 · 이어받은 것: 11-13 가지급금(B4-30 기발행) · 새로: 추천 A2-33 민주유공자법(11-20 국회 의결·내년 6월 시행, 보훈부 보도 11-20 17:34, 대상 635명=137+498, 대입 특전 없음). docflow 가 pick+verify 통과, 지시서 draft1121a233 발급. · 탈락: 라이더안전교육=A6-11 기발행(dupcheck), 문화청년패스·교사 난임휴직=실검색어 O·1차 출처 미열람, 당좌대출=원문 미확인. ⚠️ verify 가 중분류 A2(생계·바우처) 적합성 확인 요청 — 이부장 판단 필요(A2-11 국가유공자는 A2). 다음 topicprop kakao 는 이부장 몫",
@@ -82,12 +82,17 @@
    "name": "3-Lifeinfo publish",
    "id": "lifeinfo-publish",
    "on": true,
-   "last": "11/21 12:15",
-   "next": "11/22 09:00",
+   "last": "11/22 09:01",
+   "next": "11/23 09:00",
    "model": "sonnet-5-5",
    "report_day": "1110",
    "report": "빈손 — 큐 0건·승인 도장 글 없음(pubqueue list 0, pace 오늘 0편). 이어받음: 11-09 H1-39·A5-20·A5-21 발행 완료. 새로 본 것: 진행 중 publish run 없음, 발행 트리거 대상 없음. 정체 지시서는 주차(⏸)만",
    "runs": [
+    {
+     "at": "11/22 09:03",
+     "link": "claude://claude.ai/epitaxy/local_1f767c74-b0f0-4f79-a79c-0e6c8c279343",
+     "archived": false
+    },
     {
      "at": "11/21 12:20",
      "link": "claude://claude.ai/epitaxy/local_67cc0b75-2b22-477d-84c8-df10f4887f95",
@@ -106,11 +111,6 @@
     {
      "at": "11/18 09:02",
      "link": "claude://claude.ai/epitaxy/local_24cfa76a-dad8-4322-8406-303d7b9a17c5",
-     "archived": true
-    },
-    {
-     "at": "11/17 09:03",
-     "link": "claude://claude.ai/epitaxy/local_f892df2c-3121-4241-b542-b131a5afbbf7",
      "archived": true
     }
    ]
