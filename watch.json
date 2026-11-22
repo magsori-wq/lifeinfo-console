@@ -36080,6 +36080,30 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "verify-maint1122unitlast-w-1123",
+   "added": "2026-11-23",
+   "what": "정비 15885bfd8·3092904fa 독립 검수 통과",
+   "due": "2026-11-24",
+   "cmd": "git show --stat 15885bfd8",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-23",
+   "result": "3092904fa 소식 계산 → 15885bfd8 순수 함수화+행동 시험 A~H, 독립 검수 통과 — unittest discover 1022 OK, enginemap 🔴0, 직접 호출 A·B·C·E 출력 일치"
+  },
+  {
+   "id": "verify-maint1122phonefx-x-1123",
+   "added": "2026-11-23",
+   "what": "정비 (x) 876d86927 검수",
+   "due": "2026-11-23",
+   "cmd": "python -m unittest tests.test_studio_pure",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-23",
+   "result": "verify ✅ 876d86927 — 766/1026 OK·합성 7경우 PASS·설계도 반영"
   }
  ]
 }

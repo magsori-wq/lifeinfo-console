@@ -13890,17 +13890,42 @@
    ]
   }
  },
- "updated": "2026-11-23 00:43:28",
+ "updated": "2026-11-23 01:11:13",
  "current": {
-  "batch": "pub1123d127",
+  "batch": "maint1122phonefx",
   "code": "",
   "title": "",
-  "step": 2,
-  "what": "🔄 이부장 00:38 TOWER_OWED 확인 — D1-27 네이버 게시 ⏸ 은 사장님 채팅 「허용」 대기(결재함 카드 naver-write-allow-d127-1123·카톡 00:23 발송, 아직 답 없음). 이과장 대기 유지·우회 안 함·도장 만료(~01:40) 시 gate 재실행",
-  "since": "00:15",
-  "since_at": "2026-11-23 00:15:01"
+  "step": 7,
+  "what": "[이부장 접수 01:14] (x) 876d86927 verify ✅ — 코드 변경(studio)만이라 배포 불필요 · 다음 지시 없음 · 답장 불필요",
+  "since": "06:09",
+  "since_at": "2026-11-22 06:09:21"
  },
  "log": [
+  {
+   "t": "01:11:13",
+   "text": "▶   — 7/7단계 · [이부장 접수 01:14] (x) 876d86927 verify ✅ — 코드 변경(studio)만이라 배포 불필요 · 다음 지시 없음 · 답장 불필요",
+   "actor": "이부장"
+  },
+  {
+   "t": "01:06:58",
+   "text": "✔ 이부장 ack re7a360",
+   "actor": "이부장"
+  },
+  {
+   "t": "00:50:57",
+   "text": "▶   — 7/7단계 · ✅ (x) 커밋 완료 — 배포는 이부장. 소비처 표(고치기 전 grep, last_report 읽는 곳): ①enginestate _unit_news(운전자 소식)·carrier_ready(작성 단계 「지시 뒤 담당 보고」)·2113~2115·2202 CONFIRM 적체 — 이부장 접수 줄이 세션 보고로 세어 소식이 짧게·「보고 도착」이 거짓으로 나오던 것이 바로잡힘 ②loopcheck 550 「보고 후 정체」 — 접수 줄이 시계를 초기화해 정체를 가리던 것 해소 ③wake 153·255·wakewatch 「깨움 닿음」 — 이부장 접수가 깨움 성공으로 잡히던 것 해소(세션 read/보고만 닿음) ④sessionstall 97·sessionwatch 130~163·orderwatch 197·timeline 124·reports 285(CP 보고 정렬·오늘 건수)·cpstate 60·towertick fuel_wake3(이미 이부장 줄 제외)·2344·2348 — 같은 방향(세션 보고만 셈). 읽음 판정(orderwatch·readycheck·loopcheck ⑦ 지시서 읽음)은 reads/last_read 를 쓰며 이번 수정은 이부장 줄의 읽음 표시도 안 남기지만 이부장은 원래 implied_read 제외라 달라지는 것 없음. 수정: 쓰는 쪽 두 곳(now·mark)을 batchboard.touch_report 한 곳으로 모으고, 실행 주체=이부장 + 그 배치 담당이 비어 있지 않고 이부장 아님이면 touch_work 를 부르지 않음(state·reads_since_report·waiting_since 도 안 건드림). 이부장 자신의 배치(owner 에 이부장)·담당 미상은 기존대로 보고로 셈. 시험: 행동 4건(이부장 줄만→last_report 없음, 세션 보고 섞임→세션 시각 유지, 지시 줄·자기 배치) + 깨진 TestDirectiveLine.test_wired 를 touch_report 구조로 교체, python -m unittest discover -s tests = 1026 OK, falsepos 「보고 시각」 규칙을 touch_report 도 인정하게 갱신. 남은 것(건드리지 않음·보고): 이부장 now 줄은 currents(지금 진행 중 표시)도 덮는다 — 3.세션 진행 표시가 이부장 접수 줄로 바뀔 수 있음, 별도 판단. 기존 17:26 기록은 소급 안 됨.",
+   "actor": "정비"
+  },
+  {
+   "t": "00:47:04",
+   "text": "▶   — 3/7단계 · 🔄 이부장 00:48 — (w) 독립 검수 ✅(verify 에이전트·3092904fa·15885bfd8, 소식 계산 분리 동일·행동 시험 A~H·1022 OK)·검증 기록 verify-maint1122unitlast-w-1123 완료. (x) 작업 중 Stop 하네스 TestDirectiveLine.test_wired 실패(소스 문자열 시험이 touch_report 로 바뀐 batchboard.py 와 어긋남) — 정비에 사실 공유(🤝), (x) 커밋 때 시험도 함께 고치도록",
+   "actor": "이부장"
+  },
+  {
+   "t": "00:45:27",
+   "text": "▶   — 3/7단계 · 🔄 이부장 00:47 — C2-32 V0 재검사 🟢 통과·도장 원격 반영(cfa339315)·deploy.bat 완료·라이브 확인: 썸네일 553_cholera_domestic.png 200·원고 페이지 rv_C2-32_43f9fac0a09380a7.html 200(본문 사진 없음). 결재 카드 올라가 있음. 남은 것: 제휴 결정(발행 전)",
+   "actor": "이부장"
+  },
   {
    "t": "00:43:28",
    "text": "📄 maint1122phonefx 작업 지시 등록(89179자, 2026-11-23 00:43:28)",
@@ -14075,31 +14100,6 @@
    "t": "23:27:20",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵2 🟡3 — 즉시: 사장님 결재 대기 F4-34 산천어축제 2027 예약·체험료 — 1월 9일 개막,; 사장님 🙋승인 【권고】AM-BO-013 푸른길 몇부작 8부작 — 전편 약 6시간 7분, · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
    "actor": "사람"
-  },
-  {
-   "t": "23:06:36",
-   "text": "✅ daily-email-briefing-1122 완료 — daily-email-briefing (A)",
-   "actor": "미상:c571a73b"
-  },
-  {
-   "t": "23:04:50",
-   "text": "✔ 이부장 ack r9f078c",
-   "actor": "이부장"
-  },
-  {
-   "t": "23:03:20",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 결재 대기 F4-34 산천어축제 2027 예약·체험료 — 1월 9일 개막, · 묶음: 사건×3 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
-  },
-  {
-   "t": "22:41:43",
-   "text": "✅ lifeinfo-nightly-verify-1122 완료 — lifeinfo-nightly-verify (E)",
-   "actor": "미상:c5c6eb8f"
-  },
-  {
-   "t": "22:38:14",
-   "text": "▶   — 5/7단계 · 🔄 이부장 22:45 — deploy.bat 완료·F4-34 라이브 확인: 썸네일 552_hwacheon_2027.png 200·본문 사진 body_F4-34_01.jpg 200·폰 원고 페이지 rv_F4-34_713dd7e7e4213d87.html 200. 결재 카드 올라가 있음(사장님 내일 12시 이후 확인). 남은 것: 제휴 결정(3.세션 상품조사) — 발행 전까지",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -16843,8 +16843,8 @@
    "batch": "maint1122phonefx",
    "code": "",
    "title": "",
-   "step": 6,
-   "what": "✅ (w) 커밋 완료 — 배포는 이부장. 소식 계산을 순수 함수 enginestate._unit_news(act, infos, nowlog, keys, who, now) 로 분리(build 안은 호출 한 줄), 규칙 변경 없음. 행동 시험 test_news_scenarios_A_to_H 로 A~H 고정(+읽기 실패=모름 1건), 소스 문자열 시험은 삭제·교체. 시험: python -m unittest discover -s tests = Ran 1022 tests OK · enginemap 🔴 없음 · validate FAIL 0. [질문 답 — 원인만, 고치지 않음] 330b96b0 은 이 정비 세션의 id 이고 등록부(whoami)에는 정비가 07ebc0 로 올라 있어 actor 가 「미상:330b96b0」(85건: maint·maint1120* 배치, 마지막 11-20 14:49)로 기록됐다 — 운전자 4칸(이과장·3.·4.·이대리)과 무관해 소식에서 빠져도 영향 없음. de614107 18건은 aroma 배치(이대리 옛 세션, 마지막 11-13). 3.세션 소식 396 vs now_log 427 어긋남은 미상 때문이 아니다: 상황실 값은 열린 배치 fuel1030 의 last_report 17:26:23(이부장 「접수 답」 줄이 보고로 셈) 에서, now_log 3. actor 최신은 16:55:43 — 이부장이 3.세션 배치에 쓴 접수 답이 3.세션의 「보고」로 읽히는 sessionstate 판정 때문. 고치려면 sessionstate 의 last_report 산정에서 actor=이부장 줄을 빼야 하는데 그것은 별도 판단(지시 시 진행).",
+   "step": 7,
+   "what": "[이부장 접수 01:14] (x) 876d86927 verify ✅ — 코드 변경(studio)만이라 배포 불필요 · 다음 지시 없음 · 답장 불필요",
    "since": "06:09",
    "since_at": "2026-11-22 06:09:21"
   },
@@ -16996,8 +16996,8 @@
    "batch": "draft1123c232",
    "code": "",
    "title": "",
-   "step": 1,
-   "what": "🔄 이부장 00:38 접수·검토 — 이과장 C2-32 초안 시작·완료 보고 접수. V0 00:35 FAIL(건강 YMYL 정확성 필수 4건·원본가치 충족) → fixer 수정 중(이과장은 초안 파일 문장 건드리지 마라). 통과 후 deploy·결재 상정. 새 지시 불필요",
+   "step": 3,
+   "what": "🔄 이부장 00:47 — C2-32 V0 재검사 🟢 통과·도장 원격 반영(cfa339315)·deploy.bat 완료·라이브 확인: 썸네일 553_cholera_domestic.png 200·원고 페이지 rv_C2-32_43f9fac0a09380a7.html 200(본문 사진 없음). 결재 카드 올라가 있음. 남은 것: 제휴 결정(발행 전)",
    "since": "00:24",
    "since_at": "2026-11-23 00:24:54"
   }
@@ -51833,6 +51833,57 @@
    "title": "",
    "owner": "이과장",
    "what": "🔄 이부장 00:38 TOWER_OWED 확인 — D1-27 네이버 게시 ⏸ 은 사장님 채팅 「허용」 대기(결재함 카드 naver-write-allow-d127-1123·카톡 00:23 발송, 아직 답 없음). 이과장 대기 유지·우회 안 함·도장 만료(~01:40) 시 gate 재실행",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-23 00:45:27",
+   "bid": "draft1123c232",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "🔄 이부장 00:47 — C2-32 V0 재검사 🟢 통과·도장 원격 반영(cfa339315)·deploy.bat 완료·라이브 확인: 썸네일 553_cholera_domestic.png 200·원고 페이지 rv_C2-32_43f9fac0a09380a7.html 200(본문 사진 없음). 결재 카드 올라가 있음. 남은 것: 제휴 결정(발행 전)",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-23 00:47:04",
+   "bid": "maint1122phonefx",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "🔄 이부장 00:48 — (w) 독립 검수 ✅(verify 에이전트·3092904fa·15885bfd8, 소식 계산 분리 동일·행동 시험 A~H·1022 OK)·검증 기록 verify-maint1122unitlast-w-1123 완료. (x) 작업 중 Stop 하네스 TestDirectiveLine.test_wired 실패(소스 문자열 시험이 touch_report 로 바뀐 batchboard.py 와 어긋남) — 정비에 사실 공유(🤝), (x) 커밋 때 시험도 함께 고치도록",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-23 00:50:57",
+   "bid": "maint1122phonefx",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "✅ (x) 커밋 완료 — 배포는 이부장. 소비처 표(고치기 전 grep, last_report 읽는 곳): ①enginestate _unit_news(운전자 소식)·carrier_ready(작성 단계 「지시 뒤 담당 보고」)·2113~2115·2202 CONFIRM 적체 — 이부장 접수 줄이 세션 보고로 세어 소식이 짧게·「보고 도착」이 거짓으로 나오던 것이 바로잡힘 ②loopcheck 550 「보고 후 정체」 — 접수 줄이 시계를 초기화해 정체를 가리던 것 해소 ③wake 153·255·wakewatch 「깨움 닿음」 — 이부장 접수가 깨움 성공으로 잡히던 것 해소(세션 read/보고만 닿음) ④sessionstall 97·sessionwatch 130~163·orderwatch 197·timeline 124·reports 285(CP 보고 정렬·오늘 건수)·cpstate 60·towertick fuel_wake3(이미 이부장 줄 제외)·2344·2348 — 같은 방향(세션 보고만 셈). 읽음 판정(orderwatch·readycheck·loopcheck ⑦ 지시서 읽음)은 reads/last_read 를 쓰며 이번 수정은 이부장 줄의 읽음 표시도 안 남기지만 이부장은 원래 implied_read 제외라 달라지는 것 없음. 수정: 쓰는 쪽 두 곳(now·mark)을 batchboard.touch_report 한 곳으로 모으고, 실행 주체=이부장 + 그 배치 담당이 비어 있지 않고 이부장 아님이면 touch_work 를 부르지 않음(state·reads_since_report·waiting_since 도 안 건드림). 이부장 자신의 배치(owner 에 이부장)·담당 미상은 기존대로 보고로 셈. 시험: 행동 4건(이부장 줄만→last_report 없음, 세션 보고 섞임→세션 시각 유지, 지시 줄·자기 배치) + 깨진 TestDirectiveLine.test_wired 를 touch_report 구조로 교체, python -m unittest discover -s tests = 1026 OK, falsepos 「보고 시각」 규칙을 touch_report 도 인정하게 갱신. 남은 것(건드리지 않음·보고): 이부장 now 줄은 currents(지금 진행 중 표시)도 덮는다 — 3.세션 진행 표시가 이부장 접수 줄로 바뀔 수 있음, 별도 판단. 기존 17:26 기록은 소급 안 됨.",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-23 01:06:58",
+   "bid": "pub1123d127",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack re7a360 — 결재함 naver-write-allow-d127-1123 등록 + 카톡 01:10 발송 완료. 사장님 「허용」 채팅 대기(분류기 거부는 우회하지 않음). 도장 ~01:40 만료 시 asidequeue gate 재발급",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "re7a360"
+  },
+  {
+   "ts": "2026-11-23 01:11:13",
+   "bid": "maint1122phonefx",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "[이부장 접수 01:14] (x) 876d86927 verify ✅ — 코드 변경(studio)만이라 배포 불필요 · 다음 지시 없음 · 답장 불필요",
    "actor": "이부장",
    "sid": "a7dca46f"
   }
