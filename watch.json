@@ -35596,6 +35596,34 @@
    "owner": "claude",
    "state": "done",
    "by": "source에이전트"
+  },
+  {
+   "id": "memory-index-compact-1122",
+   "added": "2026-11-22",
+   "what": "메모리 색인(MEMORY.md) 183줄 — 200줄 읽기 한도 근접. 17:00 이후 한가할 때 consolidate-memory 로 140줄 안으로 압축(중복 병합·낡은 항목 정리, 내용 삭제는 근거 확인 뒤)",
+   "due": "2026-11-23",
+   "cmd": "python -c \"print(sum(1 for _ in open(r'C:/Users/magso/.claude/projects/C--lifeinfo/memory/MEMORY.md',encoding='utf-8')))\"",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "v0-b437-1122",
+   "added": "2026-11-22",
+   "what": "B4-37 V0 검사 결과 파일 docs/v0_B4-37_20261122.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "v0에이전트"
+  },
+  {
+   "id": "fix-b437v0-1122",
+   "added": "2026-11-22",
+   "what": "B4-37 원고 V0 필수수정 3건(40일 뒤 삭제·관련글 라벨 날짜 제거·대안반영폐기 삭제)+권고(제목 정부안·내년부터 제거·2025귀속 병기) 반영. heading·bodydup 0.038 통과. 남은 것: 검색설명 초안 없음, 큐 제목 이부장 정렬, 가구유형 정의·AI문구·정책뉴스 링크 권고 미반영",
+   "due": "2026-11-23",
+   "cmd": "grep -c '40일 뒤\\|대안반영폐기\\|11월 30일' C:/lifeinfo/근로장려금2027확대안단독180홑벌이310정부안_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
