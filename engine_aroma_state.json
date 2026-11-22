@@ -1,40 +1,7 @@
 {
- "at": "2026-11-23 04:39:39",
+ "at": "2026-11-23 05:04:41",
  "errors": [],
- "rows": [
-  {
-   "code": "AM-DG-017",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-017-approve-1122",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-23"
-    }
-   ],
-   "title": "PS블프결제이벤트비교",
-   "last_file_at": "2026-11-22 23:26",
-   "stage": "approved",
-   "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 c6fd36b7b"
-  },
-  {
-   "code": "AM-SP-023",
-   "approvals": [
-    {
-     "id": "aroma-am-sp-023-approve-1122",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-23"
-    }
-   ],
-   "title": "광주부천결과2위구도",
-   "last_file_at": "2026-11-22 23:29",
-   "stage": "approved",
-   "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 7dda54fc9"
-  }
- ],
+ "rows": [],
  "old_inflight": [],
  "discarded": [
   {
@@ -61,6 +28,22 @@
    "detail": "2026-11-23"
   },
   {
+   "code": "AM-DG-017",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-017-approve-1122",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "블랙프라이데이 플스 — LG U+ 5만원당 5천원 vs 카카오페이 8천P",
+   "last_file_at": "2026-11-23 04:42",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-23"
+  },
+  {
    "code": "AM-PE-019",
    "approvals": [
     {
@@ -72,6 +55,22 @@
    ],
    "title": "임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원",
    "last_file_at": "2026-11-23 04:34",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-23"
+  },
+  {
+   "code": "AM-SP-023",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-023-approve-1122",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "K리그 순위 광주 4-2 부천에도 12위 — 7점 뒤진 채 남은 승점은 6",
+   "last_file_at": "2026-11-23 04:40",
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-23"
@@ -107,47 +106,9 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-22"
-  },
-  {
-   "code": "AM-PE-018",
-   "approvals": [
-    {
-     "id": "aroma-am-pe-018-approve-1121",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-22"
-    },
-    {
-     "id": "aroma-am-pe-018-hedge-1122",
-     "state": "done",
-     "kind": "hedge",
-     "at": "2026-11-22"
-    }
-   ],
-   "title": "아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이",
-   "last_file_at": "2026-11-22 05:26",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-22"
-  },
-  {
-   "code": "AM-SP-022",
-   "approvals": [
-    {
-     "id": "aroma-am-sp-022-approve-1121",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-22"
-    }
-   ],
-   "title": "K리그 승강플레이오프 — 광주 12위 확정, 김천은 규정상 자동 강등",
-   "last_file_at": "2026-11-22 04:29",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-22"
   }
  ],
- "published_total": 71,
+ "published_total": 73,
  "rev_wait": [],
  "cats": {
   "window": 14,
@@ -274,7 +235,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-23 04:29:08",
+   "last_at": "2026-11-23 05:04:40",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -284,7 +245,7 @@
    "name": "AROMA_PUBLISH_STALL",
    "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
-   "src": "시각 저장 없음(진행 중 4건)",
+   "src": "시각 저장 없음(진행 중 0건)",
    "today_n": 0,
    "note": "",
    "at_node": "pub"
@@ -313,7 +274,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 10분째 (15분 넘으면 경보) · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -348,8 +309,8 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": -1,
-  "cur": "AM-BO-013(224487757827)·AM-PE-019(",
+  "last_min": 18,
+  "cur": "이부장 ack r7b75f9 — AM-BO-013 결재 커밋 ",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -358,20 +319,7 @@
   "v0": [],
   "boss": [],
   "deploy": [],
-  "publish": [
-   {
-    "code": "AM-DG-017",
-    "title": "PS블프결제이벤트비교",
-    "min": 3,
-    "lvl": "ok"
-   },
-   {
-    "code": "AM-SP-023",
-    "title": "광주부천결과2위구도",
-    "min": 7,
-    "lvl": "ok"
-   }
-  ],
+  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -419,6 +367,16 @@
      "code": "AM-PE-019",
      "title": "임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원",
      "url": "https://blog.naver.com/aroma-mag/224487760407"
+    },
+    {
+     "code": "AM-SP-023",
+     "title": "K리그 순위 광주 4-2 부천에도 12위 — 7점 뒤진 채 남은 승점은 6",
+     "url": "https://blog.naver.com/aroma-mag/224487761674"
+    },
+    {
+     "code": "AM-DG-017",
+     "title": "블랙프라이데이 플스 — LG U+ 5만원당 5천원 vs 카카오페이 8천P",
+     "url": "https://blog.naver.com/aroma-mag/224487763050"
     },
     {
      "code": "AM-SP-022",
@@ -766,14 +724,7 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": [
-    {
-     "code": "AM-DG-017"
-    },
-    {
-     "code": "AM-SP-023"
-    }
-   ]
+   "wait": []
   }
  },
  "topics": [],
@@ -785,8 +736,8 @@
  },
  "kpi": {
   "today": "2026-11-23",
-  "done_today": 2,
-  "published_today": 2,
+  "done_today": 4,
+  "published_today": 4,
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
@@ -811,8 +762,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": -1,
-   "cur": "AM-BO-013(224487757827)·AM-PE-019(",
+   "last_min": 18,
+   "cur": "이부장 ack r7b75f9 — AM-BO-013 결재 커밋 ",
    "lvl": "ok"
   },
   {
@@ -826,8 +777,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": -1,
-   "cur": "AM-BO-013(224487757827)·AM-PE-019(",
+   "last_min": 18,
+   "cur": "이부장 ack r7b75f9 — AM-BO-013 결재 커밋 ",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -855,11 +806,11 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "04:34",
-   "today": 2,
+   "at": "04:42",
+   "today": 4,
    "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 2편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 4편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -873,10 +824,12 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 2편 · 파일이 움직인 글 2편",
+   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 4편",
    "codes": [
     "AM-BO-013",
-    "AM-PE-019"
+    "AM-DG-017",
+    "AM-PE-019",
+    "AM-SP-023"
    ]
   }
  ],
@@ -884,15 +837,27 @@
  "edits": [],
  "today_events": [
   {
+   "code": "AM-BO-013",
+   "stage": "proc",
+   "at": "2026-11-23 04:29:35",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-PE-019",
    "stage": "proc",
    "at": "2026-11-23 04:29:36",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-BO-013",
+   "code": "AM-SP-023",
    "stage": "proc",
-   "at": "2026-11-23 04:29:35",
+   "at": "2026-11-23 04:40:00",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-017",
+   "stage": "proc",
+   "at": "2026-11-23 04:40:01",
    "src": "파일 수정 시각"
   },
   {
@@ -927,6 +892,18 @@
   },
   {
    "code": "AM-PE-019",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
+  },
+  {
+   "code": "AM-SP-023",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
+  },
+  {
+   "code": "AM-DG-017",
    "stage": "naver",
    "at": "",
    "src": "db.json published(날짜만)"
@@ -965,14 +942,14 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-23 04:29:08",
+     "chip": "2026-11-23 05:04:40",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 4건) · 오늘 0회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 0회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
@@ -990,7 +967,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 10분째 (15분 넘으면 경보) · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
@@ -1093,7 +1070,7 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 71편",
+   "title": "✅ 최근 게시 · 전체 73편",
    "empty": "게시 기록 없음",
    "rows": [
     {
@@ -1107,6 +1084,16 @@
      "sub": "임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원"
     },
     {
+     "head": "AM-SP-023",
+     "chip": "2026-11-23",
+     "sub": "K리그 순위 광주 4-2 부천에도 12위 — 7점 뒤진 채 남은 승점은 6"
+    },
+    {
+     "head": "AM-DG-017",
+     "chip": "2026-11-23",
+     "sub": "블랙프라이데이 플스 — LG U+ 5만원당 5천원 vs 카카오페이 8천P"
+    },
+    {
      "head": "AM-SP-022",
      "chip": "2026-11-22",
      "sub": "K리그 승강플레이오프 — 광주 12위 확정, 김천은 규정상 자동 강등"
@@ -1115,16 +1102,6 @@
      "head": "AM-DG-016",
      "chip": "2026-11-22",
      "sub": "AGF 2026 티켓 3일권 65,000원 — 1일권 3장보다 22,000원 싸다"
-    },
-    {
-     "head": "AM-BC-002",
-     "chip": "2026-11-22",
-     "sub": "무릎담요 크기 비교 미니 5,900원 vs 똑딱이 10,400원(배송비 포함)"
-    },
-    {
-     "head": "AM-PE-018",
-     "chip": "2026-11-22",
-     "sub": "아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이"
     }
    ]
   }
