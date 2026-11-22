@@ -1197,8 +1197,20 @@ function renderExtra(s){
   x.innerHTML=secs.map(c=>`<section class="panel"><h2>${esc(c.title)}${c.sub?` <small>${esc(c.sub)}</small>`:""}</h2>`+
     `<div class="lane">`+((c.rows||[]).map(r=>`<div class="cp ${esc(r.lvl||"ok")}${r.sub?" wd":""}"><b>${esc(r.head)}</b>${r.chip?` <span style="font-weight:700;color:var(--muted)">${esc(r.chip)}</span>`:""}${r.sub?`<div class="xs">${esc(r.sub)}${r.href?` <a href=${hq(r.href)} target="_blank" rel="noopener">열기 ↗</a>`:""}</div>`:""}</div>`).join("")||`<div class="cp idle">${esc(c.empty||"없음")}</div>`)+`</div></section>`).join("");
 }
+const RAWB="https://raw.githubusercontent.com/magsori-wq/lifeinfo-console/main/",ONPAGES=/\.github\.io$/.test(location.hostname);let dataSrc="";
+/* 11-22 maint1122fresh 2부: github.io 에서는 raw.githubusercontent(main — 푸시 직후 Pages 빌드보다 먼저 갱신)와 Pages 사본을 함께 받아 at 이 더 새로운 쪽을 쓴다. 로컬은 실시간 파일 그대로 */
+async function getState(){
+  const pg=fetch(RM.state+"?ts="+Date.now(),{cache:"no-store"}).then(async r=>{if(!r.ok)throw new Error(r.status);return{j:await r.json(),lm:r.headers.get("last-modified")||"",src:"pages"}});
+  if(!ONPAGES){const x=await pg;return x}
+  const rw=fetch(RAWB+RM.state,{cache:"no-store"}).then(async r=>{if(!r.ok)throw new Error(r.status);return{j:await r.json(),lm:"",src:"raw"}});
+  const [a,b]=await Promise.allSettled([rw,pg]);
+  const ok=[a,b].filter(x=>x.status==="fulfilled"&&x.value.j&&x.value.j.at).map(x=>x.value);
+  if(!ok.length)throw (b.reason||a.reason||new Error("읽기 실패"));
+  ok.sort((p,q)=>String(q.j.at).localeCompare(String(p.j.at)));
+  return ok[0];
+}
 async function load(){
-  try{const r=await fetch(RM.state+"?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);try{srvMod=r.headers.get("last-modified")||""}catch(e){}const s=await r.json();fetchOk=true;pingRadar();render(DEMO?demo(s):s)}
+  try{const x=await getState();srvMod=x.lm;dataSrc=x.src;const s=x.j;fetchOk=true;pingRadar();render(DEMO?demo(s):s)}
   catch(e){fetchOk=false;setLive();document.getElementById("at").textContent="상태 파일을 못 읽음("+e.message+") — 로컬 CP(localhost:8000)에서 열거나 배포 후 확인"}
 }
 document.getElementById("alarm").addEventListener("click",goAlert);
@@ -1215,7 +1227,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="dc78a647e8cf";let hiddenAt=0,buildStuck="";
+const BUILD="692903a42472";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
@@ -1228,7 +1240,7 @@ function freshTick(){
   else if(age>STALE_SEC){cls=age>STALE_RED_SEC?"rd":"am";
     /* 11-22 maint1122fresh: 새로고침해도 서버(github.io)에 새 푸시가 올라와야 값이 바뀐다 — 캐시 오해 방지로 데이터 시각·서버 반영 시각을 적는다 */
     let dt="",sm="";try{const q=new Date(String(S&&S.at||"").slice(0,19).replace(" ","T"));if(!isNaN(q))dt=pad2(q.getHours())+":"+pad2(q.getMinutes());if(srvMod){const m=new Date(srvMod);if(!isNaN(m))sm=pad2(m.getHours())+":"+pad2(m.getMinutes())}}catch(e){}
-    txt="⚠️ 데이터 시각 "+(dt||"?")+"("+min+"분 전)"+(sm?" · 서버 반영 "+sm:"")+" — 새 푸시가 올라와야 바뀝니다(새로고침해도 같은 값일 수 있음)"}
+    txt="⚠️ 데이터 시각 "+(dt||"?")+"("+min+"분 전)"+(sm?" · 서버 반영 "+sm:"")+(dataSrc?" · 경로 "+dataSrc:"")+" — 새 푸시가 올라와야 바뀝니다(새로고침해도 같은 값일 수 있음)"}
   b.className=cls;
   if(b.dataset.t!==txt){b.dataset.t=txt;b.innerHTML=txt?esc(txt)+'<button type="button" id="stbtn">지금 새로고침</button>':""}
 }
