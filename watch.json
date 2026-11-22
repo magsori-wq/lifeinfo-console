@@ -35874,12 +35874,54 @@
   {
    "id": "hwacheon-2027-fee",
    "added": "2026-11-22",
-   "what": "2027 화천산천어 체험료·환급·예약일 공식 미확정(공식 wr_id=89 준비중, 보도 2만5천 추진)",
+   "what": "2027 화천산천어 체험료·환급·예약일 공식 미확정 (공식 wr_id=89 '업데이트 준비중' 문구 사라지면 갱신 확인)",
    "due": "2026-12-01",
-   "cmd": "curl -s -L -A Mozilla/5.0 https://www.narafestival.com/01_icenara/?wr_id=89 | grep -c 2027",
+   "cmd": "curl -s -L -A Mozilla/5.0 'https://www.narafestival.com/01_icenara/?wr_id=89' | grep -c '업데이트 준비중'",
    "owner": "claude",
    "state": "todo",
    "by": "세션:0b5378e6"
+  },
+  {
+   "id": "docflow-1122-F434",
+   "added": "2026-11-22",
+   "what": "F4-34 선별 pick 완료·verify 🟡(출처URL 칸 비어있음). 다음: 지시서(③)·source 보강(체험료 확정 여부)",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.now",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:0b5378e6"
+  },
+  {
+   "id": "verify-maint1122phonefx-v-1122",
+   "added": "2026-11-22",
+   "what": "정비 520e7762c 독립 검수 통과",
+   "due": "2026-11-23",
+   "cmd": "git show --stat 520e7762c",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "520e7762c 독립 검수 통과 — 변경 2파일(enginestate.py 4행·test 6행), _cutoff_wait 9개 케이스 전부 기대값 일치, discover 1022 OK"
+  },
+  {
+   "id": "deploy-thumb-552",
+   "added": "2026-11-22",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(552_hwacheon_2027.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-22",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-f434-v0text-1122",
+   "added": "2026-11-22",
+   "what": "F4-34 초안 V0 필수수정 문장 6건 반영(커밋 6a18dd7c2) · bodydup 신규 0.047 · layout/heading OK · 남은: 사진/캡션/제목은 타 담당",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.bodydup --file 화천산천어축제2027체험료추진안_글_HTML.txt --code F4-34 --live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
