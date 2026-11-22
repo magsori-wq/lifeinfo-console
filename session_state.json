@@ -3,8 +3,8 @@
   "routinelog": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-22 14:06:27",
-   "last_what": "11-22 14시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 새 중요메일 없음(구글 피드백 답·GSC·애드센스 통지 0). GitHub 실패2건=무해: 발행run 11-21 18:5",
+   "last_report": "2026-11-22 17:06:41",
+   "last_what": "11-22 17시 브리핑: 애드센스 READY·사이트 GETTING_READY(심사 중). 새 중요 메일 없음. GitHub 발행 실패 1건(11-22 03:57 KST, run 44938345407) 사유=실행 중",
    "reads": 96,
    "last_order_at": "2026-10-18 12:26",
    "last_read": "2026-11-22 08:05:41",
@@ -3969,15 +3969,14 @@
   },
   "fuel1030": {
    "reads": 2,
-   "reads_since_report": 2,
+   "reads_since_report": 0,
    "last_order_at": "2026-11-22 16:52:30",
    "last_read": "2026-11-22 16:52:48",
    "owner": "3.",
-   "state": "waiting",
-   "last_report": "2026-11-22 16:49:47",
-   "last_what": "🟢 16:5x 후보 1건 제안: D4-17 「2027학년도 정시 원서접수 일정 한눈에 — 가·나·다군 날짜표」(lane info · alt · dupcheck 🟢 0.33 · 실검색어 「정시 원서 접수 일정」 ✅).",
-   "read_by": "report",
-   "waiting_since": "2026-11-22 16:52"
+   "state": "working",
+   "last_report": "2026-11-22 16:55:57",
+   "last_what": "✅ 16:55 이부장 재배정 지시 이행: D4-17 제외(topicprop drop, 사유 기록) → D1-27 로 같은 근거 재제안(topicprop add 완료 · 🟢 0.33 · 승인대기). 다음: 24:00 ",
+   "read_by": "report"
   },
   "ledger1030": {
    "reads": 4,
@@ -4439,8 +4438,8 @@
   "chkmon": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-22 16:01:59",
-   "last_what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡1 — 즉시: 반영 어긋남 · 코드↔설계도 · 묶음: 사건×1 (상세 python -m studio.chkmon show)"
+   "last_report": "2026-11-22 17:08:26",
+   "last_what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡3 — 즉시: V0 지연 D1-27 2027학년도 정시 원서접수 1월 4~7일 — 군별 날 · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkm"
   },
   "draft1106d121": {
    "reads": 4,
@@ -7417,9 +7416,9 @@
   },
   "maint1122phonefx": {
    "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-11-22 15:49:02",
-   "last_read": "2026-11-22 15:49:27",
+   "reads_since_report": 1,
+   "last_order_at": "2026-11-22 16:06:24",
+   "last_read": "2026-11-22 17:08:27",
    "owner": "정비",
    "state": "working",
    "last_report": "2026-11-22 15:55:24",
@@ -7499,8 +7498,8 @@
    "last_read": "2026-11-22 16:24:56",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-22 16:47:11",
-   "last_what": "🔄 이부장 접수·확인(16:4x): 정비 4부 완료 접수 — deploy.bat 완료, 라이브 화면 빌드 2451a323bf67 확인·상태 저장소 raw at 16:45:46(1분 전) 확인. 8분 최악 지연(목표 "
+   "last_report": "2026-11-22 17:09:03",
+   "last_what": "정비 1~4부 완료·이부장 배포(빌드 2451a323bf67)·상태 저장소 raw at 1분 전 실측·verify 에이전트 독립 검수 8/8 ✅(force 없음·두 파일만·간격 120/180초·틱 보호·토큰 저장 없"
   },
   "pub1122b437": {
    "reads": 1,
@@ -7530,9 +7529,20 @@
    "last_read": "2026-11-22 16:05:08",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-22 16:19:32",
-   "last_what": "🔄 이부장 접수 답(16:2x): 정비 소식 시각 수리 보고 접수 — 이과장 2879→63분 확인, 정비가 짚은 이부장 오판(4.세션은 정상 시계 대기 아님) 인정 → adsite1120·exact1120 장부 정리"
+   "last_report": "2026-11-22 17:13:55",
+   "last_what": "정비 3092904fa·verify 에이전트 독립 검수: 소식=열린 배치∪now_log actor 최근 ts(이과장 13분·3.세션 16분·4.세션 1390분·이대리 73분 스냅샷 대조)·시계 대기 예외·3.세션/이"
+  },
+  "draft1122d127": {
+   "reads": 2,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-22 17:00:11",
+   "last_read": "2026-11-22 17:09:44",
+   "owner": "이과장",
+   "state": "working",
+   "last_report": "2026-11-22 17:10:52",
+   "last_what": "지시 갱신(17:00) 반영 — 대교협 개정 2026.7.31 기준·변경 가능 한 줄 추가, bodydup 재통과, 커밋",
+   "read_by": "report"
   }
  },
- "updated": "2026-11-22 16:52"
+ "updated": "2026-11-22 17:13"
 }
