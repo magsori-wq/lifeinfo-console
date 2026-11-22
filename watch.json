@@ -35858,8 +35858,10 @@
    "due": "2026-11-23",
    "cmd": "python -m studio.pubready --code D1-27",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-23",
+   "result": "00:07 이부장 직접 트리거(run 45036492265 성공 3m46s)·라이브 200·og:title 일치·og:image PNG 200·썸네일 200 확인. 후속 pub1123d127 이과장 발급"
   },
   {
    "id": "verify-maint1122phonefx-1122",
@@ -36001,6 +36003,49 @@
    "cmd": "python -m unittest tests.test_studio_pure.TestUnitLastNewsMaint1122 -v",
    "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "source-D-cert-rental-20261123",
+   "added": "2026-11-23",
+   "what": "국가기술자격증 대여 단속 원문 독해: 본문 취소 vs 붙임1 취소 또는 정지 불일치, 과태료·취업제한 기간 원문 부재, 자진신고 마감 11-30",
+   "due": "2026-11-30",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.watch show source-D-cert-rental-20261123 && type C:\\lifeinfo\\docs\\source_D_자격증불법대여단속_20261123.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:48588a4e"
+  },
+  {
+   "id": "glp1-source-1120-dup-fix",
+   "added": "2026-11-23",
+   "what": "docs/source_C_GLP1비만치료제불법판매_20261120.md 의 중복 판정 「신규」가 틀림 — 기발행 C2-29(11-20 발행)와 같은 발표·같은 훅. 판정 탈락(주제 중복). 실측: C2-29 초안에 TF·1089·nedrug·1대1 채팅 등 원문 항목 전부 있음",
+   "due": "2026-11-23",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"GLP-1 계열 비만치료제 온라인 불법 판매 집중 점검\" && grep -c C2-29 docs/source_C_GLP1불법판매점검_20261123.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "세션:48588a4e",
+   "done_at": "2026-11-23",
+   "result": "정정: 11-20 deepread 는 C2-29 의 입력이었고 당시 판정은 신규. 현행 판정 = 주제 중복(C2-29, 같은 11-19 보도자료). 원문 자체 오류 아님. 파일: docs/source_C_GLP1불법판매점검_20261123.md"
+  },
+  {
+   "id": "source-cholera-1123-gap",
+   "added": "2026-11-23",
+   "what": "콜레라 원문(질병청 11.20): 잠복기 본문 '수 시간에서 5일' vs 붙임1 '1~5일' 불일치, 세계 발생 수치는 이미지라 미독해, 식중독 수칙 C2-04 와 강한중복",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"식중독 예방 수칙 손씻기 익혀먹기\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:48588a4e"
+  },
+  {
+   "id": "naver-write-allow-d127-1123",
+   "added": "2026-11-23",
+   "what": "【권고】D1-27 네이버 게시 실행 허용 — 채팅에 「허용」 한 단어 【근거】발행 완료(라이브 00:10)·네이버 원고 4061자 글자보존 ✅·제목 34자·사전점검·도장(asidequeue gate) 통과, 마지막 실행 단계(naverwrite --publish)만 자동 분류기가 거부해 멈춤 — 4채널 완결(17:00 완료선)이 이 한 단계에 걸려 있음 【위험】네이버 게시는 수정 시 재게시 부담이 있고 도장 60분(~01:40) 안에 못 하면 gate 재실행 — 허용 없이는 세션이 우회하지 않고 멈춰 있음",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.naverwrite --code D1-27 --publish",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
    "by": "이부장"
   }
  ]
