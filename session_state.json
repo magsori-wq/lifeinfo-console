@@ -3845,8 +3845,8 @@
   "aroma": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-22 15:47:34",
-   "last_what": "15:47 점검: 새 승인·요청 없음, MAMA 수상 결과 미게재(최신 11/20), 후보 24:00 전 상정",
+   "last_report": "2026-11-22 15:58:29",
+   "last_what": "🔄 이부장 접수 답(15:5x): 이대리 15:47 점검 접수 — 새 승인·요청 없음·MAMA 미게재·후보 24:00 전 상정, 문의·권고 없음",
    "reads": 1,
    "last_order_at": "2026-10-29 14:36",
    "last_read": "2026-10-29 14:36",
@@ -4438,8 +4438,8 @@
   "chkmon": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-22 15:45:23",
-   "last_what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡1 — 즉시: 사장님 🙋승인 폰 상황실 데이터를 3~7분 안에 맞추는 방법 승인 — 별도 상태 저장소 · 묶음: 사건×1 (상세 python -m studio.chkmon"
+   "last_report": "2026-11-22 16:01:59",
+   "last_what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡1 — 즉시: 반영 어긋남 · 코드↔설계도 · 묶음: 사건×1 (상세 python -m studio.chkmon show)"
   },
   "draft1106d121": {
    "reads": 4,
@@ -7493,14 +7493,13 @@
   },
   "maint1122fresh": {
    "reads": 2,
-   "reads_since_report": 2,
+   "reads_since_report": 0,
    "last_order_at": "2026-11-22 15:54:04",
    "last_read": "2026-11-22 15:54:26",
    "owner": "정비",
-   "state": "waiting",
-   "last_report": "2026-11-22 14:21:57",
-   "last_what": "🔄 이부장 접수 답(14:2x): 정비 14:10 실측 보고(원인=푸시 주기+Pages 빌드, 캐시 아님) 접수 — state 브랜치 force-push 안은 거절·raw 우선 읽기만 채택(지시서 14:12:51),",
-   "waiting_since": "2026-11-22 15:54"
+   "state": "working",
+   "last_report": "2026-11-22 16:04:59",
+   "last_what": "⛔ 3부 1단계 멈춤(권한 거부) — 공개 저장소 생성이 자동 분류기에 거부됐다: 「gh repo create magsori-wq/lifeinfo-state --public」 → Sensitive Informatio"
   },
   "pub1122b437": {
    "reads": 1,
@@ -7522,7 +7521,15 @@
    "state": "working",
    "last_report": "2026-11-22 14:45:58",
    "last_what": "🔄 이부장 접수 답(14:4x): 이과장 대봉감 쓰레드 단독 게시 완료 접수 — 직접 확인 200·본문 수정본·1건, 새 지시 불필요"
+  },
+  "maint1122unitlast": {
+   "reads": 1,
+   "reads_since_report": 1,
+   "last_order_at": "2026-11-22 16:04:31",
+   "last_read": "2026-11-22 16:05:08",
+   "owner": "정비",
+   "state": "working"
   }
  },
- "updated": "2026-11-22 15:55"
+ "updated": "2026-11-22 16:05"
 }
