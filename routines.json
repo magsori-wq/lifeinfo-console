@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23 08:05",
+ "generated": "2026-11-23 08:09",
  "routines": [
   {
    "num": 1,
@@ -9,11 +9,11 @@
    "last": "11/23 08:05",
    "next": "11/23 11:00",
    "model": "sonnet-5-5",
-   "report_day": "1122",
-   "report": "11-22 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중·RESULT PENDING) · 사장님 할 일 없음 · 새 구글/Anthropic/GSC 메일 0 · GitHub 발행 run 1건 실패=11-21 19:01 동시 dispatch 중 origin/main 이 앞서가 선행확인 스텝 차단(원인 확인, 직후 2회 성공 — 무해) · 콘솔 정합성/피드드리프트 실패 3건은 이후 run 성공 · Play ₩2,400 Google One 월갱신 정상 · m8975 구글뉴스 2통 전달 작동 · aroma8975 0건(평소) · gmailread 리더는 개인정보 훅이 막아 미실행(커넥터로 대체)\n▸ 11:06 11-22 11시 메일브리핑: 🟢 사장님 할 일 없음 · 애드센스 계정READY·사이트GETTING_READY(심사 중, 7차 반려 뒤 11-15 재요청 진행 상태 그대로) · 새 중요 메일 없음 · GitHub 실패 3건 모두 무해: 발행 run 44938345407(11-22 03:57 KST) = 「체크아웃≠origin/main(PC 커밋 동시)」 가드 중단, 직후 19:16·19:20 run 성공 / 콘솔 정합성·피드 드리프트 실패는 이후 재실행 success · help-communities·GSC·AdSense 신규 0 · Google Play 11-21 구글원 100GB ₩2,400 정기결제(정상) · 점검기록: gmailread scan 은 플러그인 개인정보 훅이 거부해 못 돌림(커넥터 조회로 대체), magsori8975 전달 2건(구글뉴스 브리핑)·aroma8975 0건\n▸ 14:06 11-22 14시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 새 중요메일 없음(구글 피드백 답·GSC·애드센스 통지 0). GitHub 실패2건=무해: 발행run 11-21 18:57 '원격 앞섬' 가드(2초 뒤 같은 sha 재실행 성공)·console 피드드리프트 11-21 02:59 실패→11-22 01:55 성공 복구. 8975 전달=구글뉴스 브리핑뿐. gmailread.py 리더는 개인정보 훅이 거부해 미실행(커넥터만 사용).\n▸ 17:06 11-22 17시 브리핑: 애드센스 READY·사이트 GETTING_READY(심사 중). 새 중요 메일 없음. GitHub 발행 실패 1건(11-22 03:57 KST, run 44938345407) 사유=실행 중 origin/main 이 앞서가 '원격 동기 확인' 스텝 차단(PC 커밋 경합·게이트 정상), 오늘 6편 발행됨. console 피드 드리프트 검사 11-21 실패 1건 기보고 유형. Google Play 100GB 월2,400원 갱신(11-21, 정상). 8975 뉴스브리핑만, aroma 0건. gmailread 스캔은 플러그인 privacy 훅이 거부해 커넥터 조회로 대체\n▸ 20:06 11-22 20시 메일브리핑: 🟢사장님 할 일 없음. 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요 메일 없음 — GitHub 실패 2건은 해소 확인(source publish 11-21 19:01 UTC 실패 사유=원격이 앞섬 체크(PC 커밋 직후 충돌방지 게이트, 정상 작동), 15분 뒤 재실행 연속 success / console 피드드리프트 11-21 02:59 실패 뒤 11-22 01:55 success). GSC·애드센스·help-communities 신규 0건, 8975는 구글뉴스 브리핑 2통만, aroma 0건. 리더(gmailread)는 개인정보 플러그인이 명령 거부해 미실행 — 커넥터 magsori만 조회(8975 전달분 포함)\n▸ 23:06 11-22 23시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 커넥터(magsori) 2일: GitHub 실패 2건 — 발행 run 11-21 18:57Z 사유=원격 선행 확인(origin/main 불일치, 재시도 3회 성공·무해)·console 피드드리프트 1건(이후 console run 전부 success). GSC 7일 0건·구글 help-communities 답 0건·8975 전달 구글뉴스 브리핑 2건·aroma 0건. gmailread scan --body 는 privacy 플러그인이 거부해 못 돌림(시도했으나 못 얻음).",
+   "report_day": "1123",
+   "report": "11-23 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음(Gemini 공지·Play 영수증·뉴스 브리핑뿐, GSC 7일 0건, help-communities 0건). GitHub 실패 2건은 11-21 밤 것: publish run 44938345407 = 원격 앞섬 확인 스텝(PC 커밋 직후 충돌 방지)으로 실패, 19:20 재실행 성공 · console 피드드리프트 검사는 이후 통과. 8975 전달분=뉴스 2건(정상), aroma8975 0건(평소). 3계정 gmailread scan 은 개인정보 훅이 막아 못 돌림(시도했으나 못 얻음)",
    "runs": [
     {
-     "at": "11/23 08:05",
+     "at": "11/23 08:08",
      "link": "claude://claude.ai/epitaxy/local_8018098d-5490-4f37-b97e-495b44efcfc0",
      "archived": false
     },
