@@ -1,23 +1,7 @@
 {
- "at": "2026-11-23 04:33:18",
+ "at": "2026-11-23 04:39:39",
  "errors": [],
  "rows": [
-  {
-   "code": "AM-BO-013",
-   "approvals": [
-    {
-     "id": "aroma-am-bo-013-approve-1122",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-23"
-    }
-   ],
-   "title": "seg1",
-   "last_file_at": "2026-11-23 04:29",
-   "stage": "approved",
-   "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 24781bfd6"
-  },
   {
    "code": "AM-DG-017",
    "approvals": [
@@ -30,25 +14,9 @@
    ],
    "title": "PS블프결제이벤트비교",
    "last_file_at": "2026-11-22 23:26",
-   "stage": "approved_unverified",
-   "label": "승인 확인 중",
-   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
-  },
-  {
-   "code": "AM-PE-019",
-   "approvals": [
-    {
-     "id": "aroma-am-pe-019-approve-1122",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-23"
-    }
-   ],
-   "title": "임영웅영화객단가",
-   "last_file_at": "2026-11-23 04:29",
    "stage": "approved",
    "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 b719e1e7e"
+   "detail": "watch done + 커밋 c6fd36b7b"
   },
   {
    "code": "AM-SP-023",
@@ -76,6 +44,38 @@
   }
  ],
  "recent_published": [
+  {
+   "code": "AM-BO-013",
+   "approvals": [
+    {
+     "id": "aroma-am-bo-013-approve-1122",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "푸른길 몇부작 8부작 — 전편 약 6시간 7분, 회차 35분~57분",
+   "last_file_at": "2026-11-23 04:29",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-23"
+  },
+  {
+   "code": "AM-PE-019",
+   "approvals": [
+    {
+     "id": "aroma-am-pe-019-approve-1122",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원",
+   "last_file_at": "2026-11-23 04:34",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-23"
+  },
   {
    "code": "AM-BC-002",
    "approvals": [
@@ -145,47 +145,9 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-22"
-  },
-  {
-   "code": "AM-BC-001",
-   "approvals": [
-    {
-     "id": "aroma-am-bc-001-approve-1121",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-21"
-    },
-    {
-     "id": "aroma-am-bc-001-update-1121",
-     "state": "done",
-     "kind": "update",
-     "at": "2026-11-21"
-    }
-   ],
-   "title": "크리스마스트리 150cm vs 180cm, 가격차 15,900원 구성 표기 다름",
-   "last_file_at": "2026-11-21 16:01",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-21"
-  },
-  {
-   "code": "AM-BO-012",
-   "approvals": [
-    {
-     "id": "aroma-am-bo-012-approve-1121",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-21"
-    }
-   ],
-   "title": "천천히 강렬하게 12월 11일 오후 5시 공개 — 공식 소개 시대 표기가 다르다",
-   "last_file_at": "2026-11-21 05:41",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-21"
   }
  ],
- "published_total": 69,
+ "published_total": 71,
  "rev_wait": [],
  "cats": {
   "window": 14,
@@ -322,7 +284,7 @@
    "name": "AROMA_PUBLISH_STALL",
    "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
-   "src": "시각 저장 없음(진행 중 0건)",
+   "src": "시각 저장 없음(진행 중 4건)",
    "today_n": 0,
    "note": "",
    "at_node": "pub"
@@ -351,7 +313,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 10분째 (15분 넘으면 경보) · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -359,7 +321,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-23 04:28:40",
    "src": "now_log(bid=aroma)",
-   "today_n": 1,
+   "today_n": 2,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -384,10 +346,10 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "⏸ 대기(남의 차례)",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 4,
-  "cur": "⏸ 대기 — AM-BO-013 승인(aroma-am-bo-01",
+  "last_min": -1,
+  "cur": "AM-BO-013(224487757827)·AM-PE-019(",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -398,27 +360,15 @@
   "deploy": [],
   "publish": [
    {
-    "code": "AM-BO-013",
-    "title": "seg1",
-    "min": 5,
-    "lvl": "ok"
-   },
-   {
     "code": "AM-DG-017",
-    "title": "PS블프결제이벤트비교 · ⚠️ 승인 시각 미상(커밋·처음 본 시각 없음 — 지연 판정 불가)",
-    "min": null,
-    "lvl": "amber"
-   },
-   {
-    "code": "AM-PE-019",
-    "title": "임영웅영화객단가",
-    "min": 5,
+    "title": "PS블프결제이벤트비교",
+    "min": 3,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-023",
     "title": "광주부천결과2위구도",
-    "min": 1,
+    "min": 7,
     "lvl": "ok"
    }
   ],
@@ -460,6 +410,16 @@
   },
   "naver": {
    "done": [
+    {
+     "code": "AM-BO-013",
+     "title": "푸른길 몇부작 8부작 — 전편 약 6시간 7분, 회차 35분~57분",
+     "url": "https://blog.naver.com/aroma-mag/224487757827"
+    },
+    {
+     "code": "AM-PE-019",
+     "title": "임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원",
+     "url": "https://blog.naver.com/aroma-mag/224487760407"
+    },
     {
      "code": "AM-SP-022",
      "title": "K리그 승강플레이오프 — 광주 12위 확정, 김천은 규정상 자동 강등",
@@ -808,13 +768,7 @@
    ],
    "wait": [
     {
-     "code": "AM-BO-013"
-    },
-    {
      "code": "AM-DG-017"
-    },
-    {
-     "code": "AM-PE-019"
     },
     {
      "code": "AM-SP-023"
@@ -831,8 +785,8 @@
  },
  "kpi": {
   "today": "2026-11-23",
-  "done_today": 0,
-  "published_today": 0,
+  "done_today": 2,
+  "published_today": 2,
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
@@ -849,16 +803,16 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 7,
-  "lvl": "amber"
+  "age_min": 1,
+  "lvl": "ok"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "⏸ 대기(남의 차례)",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 4,
-   "cur": "⏸ 대기 — AM-BO-013 승인(aroma-am-bo-01",
+   "last_min": -1,
+   "cur": "AM-BO-013(224487757827)·AM-PE-019(",
    "lvl": "ok"
   },
   {
@@ -870,10 +824,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "⏸ 대기(남의 차례)",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 4,
-   "cur": "⏸ 대기 — AM-BO-013 승인(aroma-am-bo-01",
+   "last_min": -1,
+   "cur": "AM-BO-013(224487757827)·AM-PE-019(",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -901,7 +855,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "04:29",
+   "at": "04:34",
    "today": 2,
    "lvl": "ok",
    "order": null,
@@ -919,7 +873,7 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 2편",
+   "made": "오늘 새 글 게시 2편 · 파일이 움직인 글 2편",
    "codes": [
     "AM-BO-013",
     "AM-PE-019"
@@ -930,15 +884,15 @@
  "edits": [],
  "today_events": [
   {
-   "code": "AM-BO-013",
-   "stage": "proc",
-   "at": "2026-11-23 04:29:35",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-PE-019",
    "stage": "proc",
    "at": "2026-11-23 04:29:36",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-013",
+   "stage": "proc",
+   "at": "2026-11-23 04:29:35",
    "src": "파일 수정 시각"
   },
   {
@@ -956,14 +910,26 @@
   {
    "code": "AM-DG-017",
    "stage": "boss",
-   "at": "",
-   "src": "watch done_at(날짜뿐)"
+   "at": "2026-11-23 04:35:40",
+   "src": "결재 커밋 시각"
   },
   {
    "code": "AM-SP-023",
    "stage": "boss",
    "at": "2026-11-23 04:32:13",
    "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-BO-013",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
+  },
+  {
+   "code": "AM-PE-019",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
   }
  ],
  "incidents": [],
@@ -1006,7 +972,7 @@
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 0회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 4건) · 오늘 0회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
@@ -1024,13 +990,13 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 10분째 (15분 넘으면 경보) · 오늘 2회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-23 04:28:40",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 1회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 2회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
@@ -1127,9 +1093,19 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 69편",
+   "title": "✅ 최근 게시 · 전체 71편",
    "empty": "게시 기록 없음",
    "rows": [
+    {
+     "head": "AM-BO-013",
+     "chip": "2026-11-23",
+     "sub": "푸른길 몇부작 8부작 — 전편 약 6시간 7분, 회차 35분~57분"
+    },
+    {
+     "head": "AM-PE-019",
+     "chip": "2026-11-23",
+     "sub": "임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원"
+    },
     {
      "head": "AM-SP-022",
      "chip": "2026-11-22",
@@ -1149,16 +1125,6 @@
      "head": "AM-PE-018",
      "chip": "2026-11-22",
      "sub": "아이브 콘서트 2027 앙코르 VIP 198,000원, 일반석과 4.4만원 차이"
-    },
-    {
-     "head": "AM-BO-012",
-     "chip": "2026-11-21",
-     "sub": "천천히 강렬하게 12월 11일 오후 5시 공개 — 공식 소개 시대 표기가 다르다"
-    },
-    {
-     "head": "AM-PE-017",
-     "chip": "2026-11-21",
-     "sub": "멜론티켓 수수료 12월 21일 인상 — 공연 4매 8,000원에서 12,000원"
     }
    ]
   }
