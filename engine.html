@@ -170,11 +170,8 @@ html.reduce *{animation:none!important;transition:none!important}
 #stale button{font:inherit;font-weight:800;margin-left:8px;border:2px solid currentColor;border-radius:5px;background:transparent;color:inherit;padding:1px 8px;cursor:pointer}
 #fresh{font-variant-numeric:tabular-nums}
 /* 폰 방어(11-20 maint1120phone3): 글자 둘레에 그 자리 바탕색 띠 — 칠과 글자색이 어긋나도(강제 다크·색 계산 차이) 읽힌다 */
-.nd text{paint-order:stroke;stroke:var(--panel2);stroke-width:3px;stroke-linejoin:round}.nd.sel text{stroke:var(--mx-sel)}
-.gauge .gv{paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}.gauge.rd .gv{stroke:var(--mx-gbg-rd)}.gauge.am .gv{stroke:var(--mx-gbg-am)}
-.hub text{paint-order:stroke;stroke:var(--panel2);stroke-width:3px;stroke-linejoin:round}
-.fl,.drv text,#hubt{paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}
-.dot text{paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}
+/* 11-22 maint1122phonefx(j): 글자 테두리(paint-order+stroke 3px) 제거 - 폰 캡처에서 글자가 밝은 두꺼운 테두리에 덮여 뭉개졌다. 가독은 명시 #hex 글자색(themeLock)으로 */
+#map text{paint-order:normal!important;stroke:none!important;stroke-width:0!important}.gauge .gv,.fl,#hubt{stroke:none!important;stroke-width:0!important}
 </style>
 <style id="themeLock">
 /* 11-20 12:5x 강제 다크/라이트가 와도 SVG 칠·글자가 같은 방향 — 값은 :root 변수와 같은 명시 색(!important), forced-color-adjust 끔 */
@@ -1218,7 +1215,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="60f47ea55e8f";let hiddenAt=0,buildStuck="";
+const BUILD="4675fbf1d73a";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){

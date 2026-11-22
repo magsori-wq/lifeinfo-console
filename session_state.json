@@ -7415,14 +7415,14 @@
    "last_what": "H1-45 발행은 이부장 트리거(run 44940400949 ✓, 라이브 200) · 후속 4채널은 pub1122c230h145 완료 기록 참조"
   },
   "maint1122phonefx": {
-   "reads": 1,
+   "reads": 2,
    "reads_since_report": 0,
-   "last_order_at": "2026-11-22 07:00:18",
-   "last_read": "2026-11-22 07:00:37",
+   "last_order_at": "2026-11-22 13:01:52",
+   "last_read": "2026-11-22 13:03:12",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-22 07:32:37",
-   "last_what": "[이부장 07:3x] 정비 (i) 같은 창 열기 접수 — a8092945c 푸시·deploy 07:2x 포함, 라이브 index 버튼 target 없음 확인. 사장님 폰 재시험 요청(CP 앱 엔진·이대리 버튼)",
+   "last_report": "2026-11-22 13:06:19",
+   "last_what": "(j) 글자 테두리 제거 커밋 완료(로컬·미배포). 바꾼 것: engine.html 의 SVG 글자 paint-order+stroke 3px 5곳 제거(#map text stroke none). 근거: 13:00 캡",
    "read_by": "report"
   },
   "draft1122e219": {
@@ -7457,18 +7457,19 @@
   },
   "pub1122e219": {
    "reads": 2,
-   "reads_since_report": 2,
+   "reads_since_report": 0,
    "last_order_at": "2026-11-22 12:25:03",
    "last_read": "2026-11-22 12:27:49",
    "owner": "이과장",
-   "state": "waiting",
-   "waiting_since": "2026-11-22 12:27"
+   "state": "working",
+   "last_report": "2026-11-22 13:08:06",
+   "last_what": "⚠️ 문제 — python tools/syncorigin.py 가 12:50~13:07 계속 완주 못 함(뒤 3·앞 14 그대로). 매번 「먼저 커밋(원본): batch.json·session_state.json·w"
   },
   "tower1122": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-22 12:49:23",
-   "last_what": "E2-19 발행 완료(run 44980593050 success) · C2-31 발행 run 44982124779 진행(12:46) · B4-37 은 그 뒤 이부장 트리거 · 이과장 지시서(pub1122c231·b4"
+   "last_report": "2026-11-22 13:05:46",
+   "last_what": "PUBLISH_STALL/CHKMON 거짓 경보 원인 = 로컬 git 인덱스 intent-to-add 2832건이 syncorigin 병합을 막음(발행 3편은 원격에 반영됨) → 정비 maint1122gitsync "
   },
   "pub1122c231": {
    "reads": 1,
@@ -7477,7 +7478,15 @@
    "last_read": "2026-11-22 12:50:02",
    "owner": "이과장",
    "state": "working"
+  },
+  "maint1122gitsync": {
+   "reads": 1,
+   "reads_since_report": 1,
+   "last_order_at": "2026-11-22 13:05:05",
+   "last_read": "2026-11-22 13:06:22",
+   "owner": "정비",
+   "state": "working"
   }
  },
- "updated": "2026-11-22 12:54"
+ "updated": "2026-11-22 13:08"
 }
