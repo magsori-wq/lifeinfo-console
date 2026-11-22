@@ -34229,8 +34229,10 @@
    "due": "2026-11-20",
    "cmd": "ls docs/site_review_*_20261120.md; python -c \"from studio import sessionstate as s;print(s.read_info('adsite1120'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-22",
+   "result": "이부장 15:xx: 4. 점검 결과 docs/adsite_review_20261120.md 직접 열람·종합·시범 적용 완료(옛 18:40 시계 종료)"
   },
   {
    "id": "site12-b402-penalty-mismatch",
@@ -34327,8 +34329,10 @@
    "due": "2026-11-20",
    "cmd": "python -c \"from studio import sessionstate as s;print(s.read_info('adsite1120'))\"; tail -c 1500 docs/adsite_review_20261120.md",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-22",
+   "result": "이부장 15:xx: 최종 결과 반영됨(docs/adsite_review_20261120.md·종합 11-21) — 옛 11-20 21:40 시계 종료"
   },
   {
    "id": "kca-wedding-ratio-1120",
