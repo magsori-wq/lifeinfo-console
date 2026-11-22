@@ -35850,6 +35850,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "publish-d127-0000",
+   "added": "2026-11-22",
+   "what": "D1-27 자정 이후 발행 트리거 — 사장님 11-22 18:44 승인, 17:00 시계가 자정에 풀림(세션 예약 크론 00:07 이 놓치면 이 watch 가 안전망). pubready 전 항목 ✅ 뒤 gh workflow run publish.yml",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.pubready --code D1-27",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

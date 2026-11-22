@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>상황실 div 시험판</title>
+<style>
+/* 엔진 상황실(폰 세로 배치)의 회피안 시험판 — 노드·게이지 바탕·허브를 svg 도형이 아니라 일반 div(모서리 반지름)로 올렸다.
+   엔진 화면(engine.html)은 건드리지 않는다. 폰에서 원·박스가 어두운 남색이면 회피안 성공. 데이터는 모양 확인용 고정값 */
+html,body{margin:0;background:#070b10;color:#d8e6f0;font:14px/1.45 "Noto Sans KR",system-ui,sans-serif}
+body{padding:8px 10px 40px}
+.info{font-size:12px;color:#a3b6c4;margin:3px 0;word-break:break-all}
+.bld{font-size:12px;font-weight:700;color:#d8e6f0;margin:3px 0}
+.note{background:#1a1500;border:1px solid #6a5a12;color:#ffe9a8;border-radius:6px;padding:6px 8px;font-size:13px;margin:6px 0}
+#stage{position:relative;width:100%;max-width:520px;margin:6px auto 0}
+#stage svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible}
+.nodebox{position:absolute;box-sizing:border-box;background:#121d29;border:1.5px solid #4a5b69;border-radius:10px}
+.nodebox.live{border-color:#4db3ff}
+.nodebox.am{border-color:#ffb02e;border-width:3px}
+.nodebox .t1{position:absolute;white-space:nowrap;font-weight:800;color:#d8e6f0}
+.nodebox .t2{position:absolute;white-space:nowrap;color:#a3b6c4}
+.gbg{position:absolute;box-sizing:border-box;border-radius:50%;background:#0e1620}
+.gbg.am{background:#262521}
+.gv{position:absolute;text-align:center;font-weight:800;color:#d8e6f0;font-variant-numeric:tabular-nums}
+.hubc{position:absolute;box-sizing:border-box;border-radius:50%;background:#121d29;border:2px solid #4a5b69;color:#d8e6f0;font-weight:700;text-align:center}
+.flt{position:absolute;white-space:nowrap;font-size:12px;font-weight:700;color:#a3b6c4}
+.pc{fill:none;stroke:#111c27;stroke-width:12;stroke-linecap:round}
+.ed{fill:none;stroke:#1d2c3b;stroke-width:3;stroke-linecap:round}
+.ed.flow{stroke:#4db3ff;opacity:.55}
+.ring{fill:none;stroke:#1f3040;stroke-width:5}
+.arc{fill:none;stroke:#4db3ff;stroke-width:5;stroke-linecap:round}
+.cr{stroke-dasharray:6 5}
+</style>
+</head>
+<body>
+<div class="bld">시험판 빌드 engine-div-test-20261122-1915 · 엔진 화면과 같은 위치·크기, 박스·원 칠만 일반 div</div>
+<div class="info" id="env">환경 읽는 중…</div>
+<div class="note">보는 법: ① 큰 박스 4개·작은 박스·왼쪽 원(게이지 바탕)·가운데 「Aside」 원이 모두 <b>어두운 남색</b>이어야 성공입니다. ② 연한 회색이면 이 방법도 소용없다는 뜻입니다. ③ 관(굵은 선)이 연한 회색인지도 같이 봐 주세요(관은 svg 선이라 이번 시험에서 그대로 둡니다). 앱 안 링크와 카톡 링크 두 경로 모두 한 장씩 캡처.</div>
+<div id="stage"></div>
+<div class="info" id="calc"></div>
+<script>
+(function(){
+var W=360,H=884,st=document.getElementById("stage"),S=1,els=[];
+var MAIN=[["topic","① 글감 선정","대기 2편"],["proc","② 처리(초안·V0)","대기 1편"],["boss","③ 결재·준비","대기 0편"],["pub","④ 발행","대기 0편"]];
+var TERM=[["blog","🅑 블로그스팟"],["naver","🅝 네이버"],["insta","🅘 인스타"],["threads","🅣 쓰레드"]];
+var CRN=[["eq","🧳 트렁크"],["ed","✍ 작성"],["ea","🔁 반영"]];
+var nodes={};
+MAIN.forEach(function(m,i){var cy=44+i*122;nodes[m[0]]={k:m[0],name:m[1],sub:m[2],cx:168,cy:cy,w:316,h:64,gx:40,gy:cy,r:24,tx:76}});
+TERM.forEach(function(m,i){var cx=46+i*89,cy=780;nodes[m[0]]={k:m[0],name:m[1],sub:"도착 "+(i+3)+"편",cx:cx,cy:cy,w:84,h:92,gx:cx,gy:cy-22,r:17,term:true}});
+CRN.forEach(function(m,i){var cx=[128,218,308][i],cy=566;nodes[m[0]]={k:m[0],name:m[1],sub:"0건",cx:cx,cy:cy,w:84,h:124,gx:cx,gy:cy-40,r:16,cr:true}});
+var hub={x:180,y:684},HR=22.5;
+var live={proc:1,boss:0.34,pub:0},amb={boss:1};
+function box(css){var d=document.createElement("div");d.style.cssText=css||"";st.appendChild(d);els.push(d);return d}
+function px(v){return (v*S).toFixed(1)+"px"}
+function draw(){
+ S=st.clientWidth/W;st.style.height=(H*S)+"px";els=[];st.innerHTML="";
+ var N=nodes,h=hub,svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("viewBox","0 0 "+W+" "+H);st.appendChild(svg);
+ function path(d,cls){var p=document.createElementNS("http://www.w3.org/2000/svg","path");p.setAttribute("d",d);p.setAttribute("class",cls);svg.appendChild(p)}
+ function out(n){return [n.gx,n.gy+n.r+3]}function inn(n){return [n.gx,n.gy-n.r-3]}
+ function cub(a,b){var m=(a[1]+b[1])/2;return "M"+a[0]+" "+a[1]+"C"+a[0]+" "+m+","+b[0]+" "+m+","+b[0]+" "+b[1]}
+ var hin=[h.x,h.y-16],hout=[h.x,h.y+16];
+ var E=[["topic","proc",cub(out(N.topic),inn(N.proc))],["proc","boss",cub(out(N.proc),inn(N.boss))],["boss","pub",cub(out(N.boss),inn(N.pub))],["pub","blog",cub(out(N.pub),inn(N.blog))],["pub","hub","M40 437L40 655C40 676,120 684,"+(h.x-16)+" "+h.y]];
+ ["naver","insta","threads"].forEach(function(k){E.push(["hub",k,cub(hout,inn(N[k]))])});
+ E.forEach(function(e){path(e[2],"pc");path(e[2],"ed"+(e[0]==="proc"?" flow":""))});
+ [["M144 526L202 526"],["M218 502C218 494,240 494,280 494L322 494C340 494,340 488,340 474L340 300C340 290,336 288,328 288"],["M328 296C350 296,354 300,354 312L354 486C354 498,308 494,308 502"],["M312 630C312 664,260 "+h.y+","+(h.x+16)+" "+h.y]].forEach(function(e){path(e[0],"ed cr")});
+ /* 노드 박스 = div */
+ Object.keys(N).forEach(function(k){var n=N[k];
+  var b=box("left:"+px(n.cx-n.w/2)+";top:"+px(n.cy-n.h/2)+";width:"+px(n.w)+";height:"+px(n.h));b.className="nodebox"+(live[k]!=null?" live":"")+(amb[k]?" am":"");b.id="nb-"+k;
+  var t1=document.createElement("div"),t2=document.createElement("div");t1.className="t1";t2.className="t2";t1.textContent=n.name;t2.textContent=n.sub;b.appendChild(t1);b.appendChild(t2);
+  var f1=(n.term||n.cr)?11:15,f2=(n.term||n.cr)?11:12;t1.style.fontSize=px(f1);t2.style.fontSize=px(f2);
+  if(n.term||n.cr){t1.style.left="50%";t1.style.transform="translateX(-50%)";t1.style.top=px(n.term?n.h/2+4:n.h/2-14);t2.style.left="50%";t2.style.transform="translateX(-50%)";t2.style.top=px(n.term?n.h/2+22:n.h/2+4)}
+  else{t1.style.left=px(n.tx-(n.cx-n.w/2));t1.style.top=px(n.h/2-20);t2.style.left=px(n.tx-(n.cx-n.w/2));t2.style.top=px(n.h/2);}
+ });
+ /* 게이지 바탕 = div 원 → 그 위에 링(svg 선만) → 숫자 */
+ Object.keys(N).forEach(function(k){var n=N[k],R=n.r+3;
+  var g=box("left:"+px(n.gx-R)+";top:"+px(n.gy-R)+";width:"+px(2*R)+";height:"+px(2*R));g.className="gbg"+(amb[k]?" am":"");g.id="gb-"+k;
+ });
+ var svg2=document.createElementNS("http://www.w3.org/2000/svg","svg");svg2.setAttribute("viewBox","0 0 "+W+" "+H);svg2.style.pointerEvents="none";st.appendChild(svg2);
+ Object.keys(N).forEach(function(k){var n=N[k];
+  var c=2*Math.PI*n.r,fr=live[k]||0;
+  var ring=document.createElementNS("http://www.w3.org/2000/svg","circle");ring.setAttribute("cx",n.gx);ring.setAttribute("cy",n.gy);ring.setAttribute("r",n.r);ring.setAttribute("class","ring");svg2.appendChild(ring);
+  if(fr>0){var a=document.createElementNS("http://www.w3.org/2000/svg","circle");a.setAttribute("cx",n.gx);a.setAttribute("cy",n.gy);a.setAttribute("r",n.r);a.setAttribute("class","arc");a.setAttribute("stroke-dasharray",(c*fr).toFixed(1)+" "+c.toFixed(1));a.setAttribute("transform","rotate(-90 "+n.gx+" "+n.gy+")");svg2.appendChild(a)}
+  var fs=Math.round(n.r*.62),v=box("left:"+px(n.gx-n.r)+";top:"+px(n.gy-fs*.62)+";width:"+px(2*n.r)+";font-size:"+px(fs));v.className="gv";v.textContent=live[k]!=null?String(Math.round(live[k]*3)):"0";
+ });
+ /* 허브 = div 원 */
+ var hb=box("left:"+px(h.x-HR)+";top:"+px(h.y-HR)+";width:"+px(2*HR)+";height:"+px(2*HR)+";font-size:"+px(10)+";line-height:"+px(2*HR-4));hb.className="hubc";hb.id="hubc";hb.textContent="Aside";
+}
+function hex(c){var m=String(c).match(/[\d.]+/g);if(!m||m.length<3)return String(c);return "#"+m.slice(0,3).map(function(x){var n=Math.round(+x).toString(16);return n.length<2?"0"+n:n}).join("")}
+function read(){
+ var q=function(id,p){var e=document.getElementById(id);return e?hex(getComputedStyle(e)[p]):"-"};
+ var mq=function(s){try{return matchMedia(s).matches}catch(e){return "?"}};
+ document.getElementById("env").textContent="UA "+navigator.userAgent.slice(0,80)+" · 시스템 다크 "+(mq("(prefers-color-scheme:dark)")?"예":"아니오")+" · DPR "+window.devicePixelRatio+" · 창 "+innerWidth+"x"+innerHeight+" · 앱창 "+(mq("(display-mode:standalone)")?"standalone":"브라우저")+" · "+new Date().toTimeString().slice(0,8);
+ document.getElementById("calc").textContent="계산값 — 박스 "+q("nb-topic","backgroundColor")+" · 게이지 바탕 "+q("gb-topic","backgroundColor")+" · 허브 "+q("hubc","backgroundColor")+" (기대 #121d29 · #0e1620 · #121d29)";
+}
+draw();read();setInterval(read,10000);
+var rt;window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){draw();read()},150)});
+})();
+</script>
+</body>
+</html>

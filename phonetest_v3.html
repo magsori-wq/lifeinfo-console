@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>폰 칠 시험 v3</title>
+<style>
+html,body{margin:0;background:#070b10;color:#d8e6f0;font:14px/1.45 sans-serif}
+body{padding:10px 12px 40px}
+h1{font-size:16px;margin:4px 0 6px}
+.info{font-size:12px;color:#a3b6c4;margin:4px 0;word-break:break-all}
+.note{background:#1a1500;border:1px solid #6a5a12;color:#ffe9a8;border-radius:6px;padding:6px 8px;font-size:13px;margin:8px 0}
+.ref{display:flex;gap:6px;margin:8px 0}
+.ref div{flex:1;padding:8px 4px;text-align:center;font-size:12px;border-radius:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cell{border:1px solid #1f3040;border-radius:8px;padding:6px;background:#0e1620}
+.cell .t{font-weight:700;font-size:13px;margin-bottom:4px}
+.cell .v{font-size:11px;color:#a3b6c4;margin-top:4px;word-break:break-all}
+svg{display:block;width:100%;height:64px}
+svg text{fill:#d8e6f0}
+/* 4번 칸 — 엔진 테마 잠금과 같은 방식: 속성이 아니라 규칙이 칠을 강제 지정한다 */
+:root[data-theme=dark] #c5{fill:#121d29!important}
+/* 5번 칸 — 엔진 마디 그룹과 같은 방식: 탭 포커스·포인터 */
+.nd{cursor:pointer}.nd:focus{outline:none}
+/* 2번 칸 — 엔진 경보 박스와 같은 방식: 선 깜박임 애니메이션 */
+@keyframes nodered{50%{stroke:transparent}}
+#c3{stroke:#4a5b69;stroke-width:3;animation:nodered .9s steps(2) infinite}
+</style>
+</head>
+<body>
+<h1>폰 칠 시험 v3 — 엔진 화면 조건 좁히기 (같은 어두운 칠 #121d29)</h1>
+<div class="info" id="env">환경 읽는 중…</div>
+<div class="info" style="font-weight:700;color:#d8e6f0">시험 화면 빌드 phonetest-v3-20261122-1905 (칸 6개 = v3 · 이 줄이 없으면 옛 화면)</div>
+<div class="note">보는 법: 모든 칸은 <b>같은 어두운 남색 사각형 하나</b>에 <b>엔진 화면에만 있는 조건을 한 가지씩만</b> 더한 것입니다. <b>어떤 칸만 연한 회색이면 그 조건이 원인</b>입니다. 1번(대조)이 어두우면 시험 방법은 정상입니다. 앱 안 링크(홈 「🧪 칠 시험」)와 카톡 링크 두 경로로 열어 한 장씩 캡처해 주세요.</div>
+<div class="ref"><div style="background:#121d29;color:#d8e6f0;border:1px solid #1f3040">기준 어두움 #121d29</div><div style="background:#b4bdc8;color:#15222e">기준 밝음 #b4bdc8</div></div>
+<div class="grid" id="g"></div>
+<script>
+(function(){
+function sv(inner){return "<svg viewBox='0 0 100 64'>"+inner+"</svg>"}
+var TX=function(s){return "<text x='50' y='38' text-anchor='middle' font-size='11' font-weight='700'>"+s+"</text>"};
+var cells=[
+ ["1 대조 rect(아무 조건 없음)",sv("<rect id='c1' x='6' y='4' width='88' height='56' rx='10' fill='#121d29'/>"+TX("대조")),"c1","fill"],
+ ["2 + 선 깜박임 애니메이션",sv("<rect id='c3' x='6' y='4' width='88' height='56' rx='10' fill='#121d29'/>"+TX("애니메이션")),"c3","fill"],
+ ["3 + 번짐 필터 그룹이 같은 svg 안에",sv("<defs><filter id='glw' x='-60%' y='-60%' width='220%' height='220%'><feGaussianBlur stdDeviation='1.8' result='b'/><feMerge><feMergeNode in='b'/><feMergeNode in='SourceGraphic'/></feMerge></filter></defs><rect id='c4' x='6' y='4' width='88' height='56' rx='10' fill='#121d29'/>"+TX("필터")+"<g filter='url(#glw)'><circle cx='88' cy='10' r='3' fill='#4db3ff'/></g>"),"c4","fill"],
+ ["4 + 규칙이 칠을 강제(!important)",sv("<rect id='c5' x='6' y='4' width='88' height='56' rx='10'/>"+TX("규칙 칠")),"c5","fill"],
+ ["5 + 탭 포커스·버튼 역할 그룹",sv("<g class='nd' tabindex='0' role='button' aria-label='시험'><rect id='c6' x='6' y='4' width='88' height='56' rx='10' fill='#121d29'/>"+TX("버튼 역할")+"</g>"),"c6","fill"],
+ ["6 + 위 전부 한꺼번에(엔진 모양)",sv("<defs><filter id='glw2' x='-60%' y='-60%' width='220%' height='220%'><feGaussianBlur stdDeviation='1.8' result='b'/><feMerge><feMergeNode in='b'/><feMergeNode in='SourceGraphic'/></feMerge></filter></defs><g class='nd' tabindex='0' role='button'><rect id='c7' class='bx' x='6' y='4' width='88' height='56' rx='10'/>"+TX("전부")+"</g><g filter='url(#glw2)'><circle cx='88' cy='10' r='3' fill='#4db3ff'/></g>"),"c7","fill"]
+];
+var g=document.getElementById("g"),i;
+for(i=0;i<cells.length;i++){var c=cells[i],d=document.createElement("div");d.className="cell";d.innerHTML="<div class='t'>"+c[0]+"</div>"+c[1]+"<div class='v' id='v"+i+"'></div>";g.appendChild(d)}
+/* 6번 칸은 4번 칸의 규칙과 2번 칸의 애니메이션을 함께 받는다 */
+var st=document.createElement("style");st.textContent=":root[data-theme=dark] #c7{fill:#121d29!important}#c7{stroke:#4a5b69;stroke-width:3;animation:nodered .9s steps(2) infinite}";document.head.appendChild(st);
+function hex(c){var m=String(c).match(/[\d.]+/g);if(!m||m.length<3)return String(c);return "#"+m.slice(0,3).map(function(x){var n=Math.round(+x).toString(16);return n.length<2?"0"+n:n}).join("")}
+function read(){
+ for(var i=0;i<cells.length;i++){var e=document.getElementById(cells[i][2]);document.getElementById("v"+i).textContent="계산값 fill = "+(e?hex(getComputedStyle(e).fill):"-")+" (기대 #121d29)"}
+ var mq=function(q){try{return matchMedia(q).matches}catch(e){return "?"}};
+ document.getElementById("env").textContent="UA "+navigator.userAgent.slice(0,80)+" · 시스템 다크 "+(mq("(prefers-color-scheme:dark)")?"예":"아니오")+" · DPR "+window.devicePixelRatio+" · 창 "+innerWidth+"x"+innerHeight+" · 앱창 "+(mq("(display-mode:standalone)")?"standalone":"브라우저")+" · "+new Date().toTimeString().slice(0,8);
+}
+read();setInterval(read,10000);
+})();
+</script>
+</body>
+</html>

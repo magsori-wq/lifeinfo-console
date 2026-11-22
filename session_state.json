@@ -4438,8 +4438,8 @@
   "chkmon": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-22 18:27:26",
-   "last_what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡2 — 즉시: 반영 어긋남 · 화면 생성물 신선도; 사장님 결재 대기 D1-27 2027학년도 정시 원서접수 1월 4~7일 — 군별 날 · 묶음: 사건×2 (상세 pyth"
+   "last_report": "2026-11-22 18:59:21",
+   "last_what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡2 — 즉시: 결재 뒤 미발행 D1-27 2027학년도 정시 원서접수 1월 4~7일 — 군별 날 · 묶음: 사건×2 (상세 python -m studio.chkmon sh"
   },
   "draft1106d121": {
    "reads": 4,
@@ -7415,14 +7415,14 @@
    "last_what": "H1-45 발행은 이부장 트리거(run 44940400949 ✓, 라이브 200) · 후속 4채널은 pub1122c230h145 완료 기록 참조"
   },
   "maint1122phonefx": {
-   "reads": 2,
+   "reads": 1,
    "reads_since_report": 0,
-   "last_order_at": "2026-11-22 16:06:24",
-   "last_read": "2026-11-22 17:40:01",
+   "last_order_at": "2026-11-22 18:51:59",
+   "last_read": "2026-11-22 18:52:39",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-22 17:41:22",
-   "last_what": "🔄 이부장 접수 답(17:4x): 정비 17:40 ⏸ 대기 접수 — 이 건 더 쫓지 않음(카톡 링크 정상·데이터 지연 해소), 정체 아님. 사장님 CP 앱 캡처가 올 때만 재개",
+   "last_report": "2026-11-22 18:58:25",
+   "last_what": "✅ (r) 시험판 2종 커밋 43fce51b0 — 배포는 이부장. 주소: github.io/lifeinfo-console/phonetest_v3.html (엔진에만 있는 조건 한 가지씩 6칸) · engine_div",
    "read_by": "report"
   },
   "draft1122e219": {
@@ -7468,8 +7468,8 @@
   "tower1122": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-22 13:05:46",
-   "last_what": "PUBLISH_STALL/CHKMON 거짓 경보 원인 = 로컬 git 인덱스 intent-to-add 2832건이 syncorigin 병합을 막음(발행 3편은 원격에 반영됨) → 정비 maint1122gitsync "
+   "last_report": "2026-11-22 19:00:48",
+   "last_what": "정비 (r) 보고 접수 18:59 — 시험판 2종(phonetest_v3·engine_div_test) 커밋 43fce51b0. 이부장이 deploy.bat 실행 중(18:59) → 200 확인 뒤 사장님께 카톡 링"
   },
   "pub1122c231": {
    "reads": 1,
@@ -7550,17 +7550,19 @@
    "last_read": "2026-11-22 18:04:45",
    "owner": "4.",
    "state": "working",
-   "last_report": "2026-11-22 18:28:33",
-   "last_what": "⏳ 색인 전체 점검 재실행 중: 첫 실행은 84/565 에서 조용히 끝나 불완전(webapp/index_status.json 에 11-22 18:17 조회 75편만 반영, 나머지 471편은 11-19 값). 재실행 "
+   "last_report": "2026-11-22 18:47:27",
+   "last_what": "🔄 이부장 접수 답(18:4x): 4. 색인 전체 점검 재실행 중 보고(첫 실행 84/565 에서 조용히 끝나 불완전) 접수 — 완주(565) 뒤 숫자만 보고, 불완전 값은 쓰지 않는다"
   },
   "pub1122d127": {
    "reads": 1,
-   "reads_since_report": 1,
+   "reads_since_report": 0,
    "last_order_at": "2026-11-22 18:44:11",
    "last_read": "2026-11-22 18:44:29",
    "owner": "이과장",
-   "state": "working"
+   "state": "working",
+   "last_report": "2026-11-22 18:47:17",
+   "last_what": "🔄 이부장 접수 답(18:4x): 이과장 18:44 D1-27 승인 자동 지시서 확인 보고 접수 — 맞다, 발행은 이부장이 자정 이후(00:07 예약·watch publish-d127-0000)에 트리거, 후속은 새"
   }
  },
- "updated": "2026-11-22 18:44"
+ "updated": "2026-11-22 19:00"
 }
