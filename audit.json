@@ -7104,6 +7104,38 @@
    "target": "D1-27",
    "detail": "계산예시(남은 일수 표)+함정(14시/18시·22시 시각)+가상 사례 표시, 날짜 원문 일치(대교협 2027 기본사항), 필수 수정 2곳·권고 1줄 fixer 반영(860db5365) — 이부장 diff 직접 확인",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-22T18:09:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-wake-clean-48h",
+   "detail": "11-22 18:08 D5-09·G4-14 +48h 판독 완료: 여전히 리디렉션 오류 (docs/exp1119m1_req_log.md)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T18:09:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-wake-new48h-1122",
+   "detail": "11-22 18:08 새 시계 +48h(D5-09·G4-14) 판독 완료: 리디렉션 오류 그대로 (docs/exp1119m1_req_log.md)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T18:09:39",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-onepager-1122",
+   "detail": "11-22 18:08 최종 한 장 docs/exp1119m1_onepager_20261122.md 작성(확정/가설/모름). 테마 숫자 비교·샘플 요청 시각은 미확인 명시",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-22T18:10:12",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "expS5-1122",
+   "detail": "11-22 18:07 샘플5편 판독 완료(Redirect error 5/5). 단 요청 시각이 기록에 없어 「15:06 이후 요청」 조건은 확인 못 함 — docs/exp1119m1_req_log.md 판독 절 명시",
+   "via": "cli"
   }
  ]
 }
