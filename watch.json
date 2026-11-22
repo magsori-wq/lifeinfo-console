@@ -35624,6 +35624,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "sitefix-wake-1200-1122",
+   "added": "2026-11-22",
+   "what": "12:00 이후 이과장에게 sitefix1121(시범10 라이브 수정) 시작 깨우기 — 이과장은 스스로 폴링하지 못함. 12:0x 세션 정체 점검 때 batchboard order --id sitefix1121 읽기 한 줄로 깨운다(17:00 이후 새 트리거 없음, 적용은 16:00 전 완료 목표)",
+   "due": "2026-11-22",
+   "cmd": "python -m studio.cpstate --list | grep sitefix1121",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
