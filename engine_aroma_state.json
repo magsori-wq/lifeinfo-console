@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23 04:22:52",
+ "at": "2026-11-23 04:26:55",
  "errors": [],
  "rows": [
   {
@@ -7,17 +7,16 @@
    "approvals": [
     {
      "id": "aroma-am-bo-013-approve-1122",
-     "state": "todo",
+     "state": "done",
      "kind": "approve",
-     "at": "2026-11-22"
+     "at": "2026-11-23"
     }
    ],
    "title": "푸른길몇부작러닝타임",
    "last_file_at": "2026-11-22 23:26",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-bo-013-approve-1122",
-   "no_preview": false
+   "stage": "approved_unverified",
+   "label": "승인 확인 중",
+   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
   },
   {
    "code": "AM-DG-017",
@@ -316,7 +315,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-23 04:22:38",
+   "last_at": "2026-11-23 04:26:38",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -390,7 +389,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 281,
+  "last_min": 285,
   "cur": "🔄 이부장 23:42 접수·검토 — 이대리 야간 글감 4/4(",
   "lvl": "ok"
  },
@@ -400,32 +399,33 @@
   "v0": [],
   "boss": [
    {
-    "code": "AM-BO-013",
-    "title": "푸른길몇부작러닝타임",
-    "min": 296,
-    "lvl": "ok"
-   },
-   {
     "code": "AM-DG-017",
     "title": "PS블프결제이벤트비교",
-    "min": 296,
+    "min": 300,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-019",
     "title": "임영웅영화객단가",
-    "min": 296,
+    "min": 300,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-023",
     "title": "광주부천결과2위구도",
-    "min": 293,
+    "min": 297,
     "lvl": "ok"
    }
   ],
   "deploy": [],
-  "publish": [],
+  "publish": [
+   {
+    "code": "AM-BO-013",
+    "title": "푸른길몇부작러닝타임 · ⚠️ 승인 시각 미상(커밋·처음 본 시각 없음 — 지연 판정 불가)",
+    "min": null,
+    "lvl": "amber"
+   }
+  ],
   "osmu": []
  },
  "channels": {
@@ -810,7 +810,11 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "AM-BO-013"
+    }
+   ]
   }
  },
  "topics": [],
@@ -824,7 +828,7 @@
   "today": "2026-11-23",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 4,
+  "boss_wait": 3,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -848,7 +852,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 281,
+   "last_min": 285,
    "cur": "🔄 이부장 23:42 접수·검토 — 이대리 야간 글감 4/4(",
    "lvl": "ok"
   },
@@ -863,7 +867,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 281,
+   "last_min": 285,
    "cur": "🔄 이부장 23:42 접수·검토 — 이대리 야간 글감 4/4(",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -884,7 +888,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 4건"
+   "state": "결재 대기 3건"
   }
  ],
  "suppliers": [
@@ -917,13 +921,6 @@
  "approvals": [
   {
    "kind": "aroma",
-   "id": "aroma-am-bo-013-approve-1122",
-   "what": "【권고】AM-BO-013 푸른길 몇부작 8부작 — 전편 약 6시간 7분, 회차 35분~57분 승인(방송·OTT, 검색형) 【근거】자동완성 「푸른",
-   "by": "이대리",
-   "waited": ""
-  },
-  {
-   "kind": "aroma",
    "id": "aroma-am-pe-019-approve-1122",
    "what": "【권고】AM-PE-019 임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원 승인(공연·연예, 홈판형) 【근거】KOBIS ",
    "by": "이대리",
@@ -945,7 +942,14 @@
   }
  ],
  "edits": [],
- "today_events": [],
+ "today_events": [
+  {
+   "code": "AM-BO-013",
+   "stage": "boss",
+   "at": "",
+   "src": "watch done_at(날짜뿐)"
+  }
+ ],
  "incidents": [],
  "stage_of": {},
  "design_signals": [],
@@ -979,7 +983,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-23 04:22:38",
+     "chip": "2026-11-23 04:26:38",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
