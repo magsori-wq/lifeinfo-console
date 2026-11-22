@@ -13523,8 +13523,10 @@
     {
      "code": "B4-37",
      "title": "근로장려금 2027 확대안(정부안) — 단독 180만·홑벌이 310만, 국회 의 (라이브 발행)",
-     "state": "todo",
-     "live": "done"
+     "state": "done",
+     "note": "threads 게시·기록 완료 — https://www.threads.com/@magsori8975/post/DgCB3veAaXp (naver-link 가 자동 보고)",
+     "at": "2026-11-22 14:18",
+     "actor": "이과장"
     }
    ],
    "owner": "이과장",
@@ -13609,17 +13611,37 @@
    ]
   }
  },
- "updated": "2026-11-22 14:16:45",
+ "updated": "2026-11-22 14:19:30",
  "current": {
-  "batch": "maint1122fresh",
+  "batch": "maint1122phonefx",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "✅ 2부 완료(로컬 커밋·미푸시·미배포 — 띠 문구 커밋 92eb31108 과 한 번의 deploy.bat 으로 묶어 주세요). 실측: raw.githubusercontent main/engine_state.json 은 Access-Control-Allow-Origin * · localhost 브라우저 fetch 200·JSON 확인 · 같은 시각 raw at=14:12:19 vs Pages 사본 14:08:39(약 3분40초 뒤) · raw 는 쿼리를 키에 안 넣어 ?ts 무의미(HIT) · max-age=300. 한 것: github.io 에서만 raw 와 Pages 를 함께 받아 at 이 더 새로운 쪽을 사용(로컬은 실시간 파일 그대로), 둘 다 실패해야 못읽음 · 띠에 경로(raw/pages) 표기 · BUILD 692903a42472 · 읽기만 변경(푸시·Pages 빌드·OTHER_WINDOW_SEC 불변). 지시와 다른 점 한 가지: 「raw 먼저·실패 시 폴백」순차 대신 둘을 병렬로 받아 새 쪽 선택 — raw 가 푸시 뒤 최대 300초 묵을 수 있어 그 구간엔 빌드가 끝난 Pages 가 더 새로울 수 있기 때문(이유는 설계도에 적음). 비용: 20초마다 요청 2개(각 약 50KB). 순차로 바꾸길 원하시면 알려 주세요. 로컬 검증: 시험 793 OK·enginemap 0·validate FAIL0·콘솔 오류 0·raw 선택 경로 모의 실행 확인. 못 잰 것: 폰 실기기·github.io 원점에서의 동작(배포 후 확인 필요). 일일_문제기록 에 cd 위반 한 줄 남김. 설계도는 코드보다 먼저 적었다.",
-  "since": "14:10",
-  "since_at": "2026-11-22 14:10:11"
+  "step": 3,
+  "what": "⚠️ 정정: 직전 (k) 보고의 「로컬 커밋」은 그 시점에 사실이 아니었다(새 파일이라 git add 누락으로 커밋 실패 — 제가 결과 확인 전에 보고). 지금 git add 후 경로 지정 커밋 완료. 확인: git log -1 이 (k) 커밋, webapp/phonetest.html·index.html 변경 없음(깨끗). 나머지 보고 내용은 그대로.",
+  "since": "06:09",
+  "since_at": "2026-11-22 06:09:21"
  },
  "log": [
+  {
+   "t": "14:19:30",
+   "text": "▶   — 3/7단계 · ⚠️ 정정: 직전 (k) 보고의 「로컬 커밋」은 그 시점에 사실이 아니었다(새 파일이라 git add 누락으로 커밋 실패 — 제가 결과 확인 전에 보고). 지금 git add 후 경로 지정 커밋 완료. 확인: git log -1 이 (k) 커밋, webapp/phonetest.html·index.html 변경 없음(깨끗). 나머지 보고 내용은 그대로.",
+   "actor": "정비"
+  },
+  {
+   "t": "14:19:05",
+   "text": "▶   — 3/7단계 · ✅ (k) 시험 화면 완료(로컬 커밋·미배포 — maint1122fresh 2부(c3afb6a1c)·92eb31108 과 같은 deploy.bat 에 묶임; 이쪽이 마지막 커밋). 파일 webapp/phonetest.html(엔진 무영향): ①일반 div ②svg rect ③svg circle ④circle+opacity ⑤div+color-scheme:dark ⑥div+forced-color-adjust:none ⑦대조 div ⑧div 위 밝은 글자 — 모두 #121d29 칠, 칸마다 계산값·기대값 한 줄, 맨 위 UA 80자·시스템 다크·DPR·창·앱창(standalone 여부)·시각, 설명(연한 회색 칸 = 그 구성을 렌더러가 바꾸는 것), 기준 견본 2칸(어두움·밝음). 로컬 412px 확인: 8칸 모두 어두움·계산값 #121d29. 사장님 열기: ⓐ주소 https://magsori-wq.github.io/lifeinfo-console/phonetest.html 을 폰 Chrome 에서 열어 전체 캡처 ⓑCP 앱 창에서는 홈 상단 엔진 버튼 줄 오른쪽 「🧪 칠 시험」 버튼(같은 창으로 열림, 주소창 없는 앱에서도 가능) — 가능하면 ⓐⓑ 둘 다 캡처하면 경로 차이도 가려진다. 이 건과 별개로 index.html 에 버튼 1개 추가(시험 뒤 삭제 가능). 시험 793 OK·enginemap 0·validate FAIL0·로컬 200. 다음: 캡처로 연해지는 칸이 가려지면 그 근거로만 engine.html 칠 수정.",
+   "actor": "정비"
+  },
+  {
+   "t": "14:18:32",
+   "text": "▶   — 1/7단계 · ⚠️ 문제 — 내 실수: B4-37 쓰레드를 t_B4-37.js 로 게시한 뒤 게시 여부 확인 중 같은 스크립트를 한 번 더 실행해 중복 게시됨(DgCB3veAaXp 먼저·DgCCBsPARfN 나중, 내용 동일). 기록은 먼저 것으로. 나중 것 삭제 여부는 이부장 판단(삭제는 공개 계정 변경이라 내가 하지 않음). 재발방지: 게시 스크립트는 확인용으로 재실행하지 않고 읽기 전용 스크립트(th_url.js)만 쓴다",
+   "actor": "이과장"
+  },
+  {
+   "t": "14:18:22",
+   "text": "✅ B4-37 완료 — 근로장려금 2027 확대안(정부안) — 단독 180만·홑벌이 ",
+   "actor": "이과장"
+  },
   {
    "t": "14:16:45",
    "text": "▶   — 1/7단계 · ✅ 2부 완료(로컬 커밋·미푸시·미배포 — 띠 문구 커밋 92eb31108 과 한 번의 deploy.bat 으로 묶어 주세요). 실측: raw.githubusercontent main/engine_state.json 은 Access-Control-Allow-Origin * · localhost 브라우저 fetch 200·JSON 확인 · 같은 시각 raw at=14:12:19 vs Pages 사본 14:08:39(약 3분40초 뒤) · raw 는 쿼리를 키에 안 넣어 ?ts 무의미(HIT) · max-age=300. 한 것: github.io 에서만 raw 와 Pages 를 함께 받아 at 이 더 새로운 쪽을 사용(로컬은 실시간 파일 그대로), 둘 다 실패해야 못읽음 · 띠에 경로(raw/pages) 표기 · BUILD 692903a42472 · 읽기만 변경(푸시·Pages 빌드·OTHER_WINDOW_SEC 불변). 지시와 다른 점 한 가지: 「raw 먼저·실패 시 폴백」순차 대신 둘을 병렬로 받아 새 쪽 선택 — raw 가 푸시 뒤 최대 300초 묵을 수 있어 그 구간엔 빌드가 끝난 Pages 가 더 새로울 수 있기 때문(이유는 설계도에 적음). 비용: 20초마다 요청 2개(각 약 50KB). 순차로 바꾸길 원하시면 알려 주세요. 로컬 검증: 시험 793 OK·enginemap 0·validate FAIL0·콘솔 오류 0·raw 선택 경로 모의 실행 확인. 못 잰 것: 폰 실기기·github.io 원점에서의 동작(배포 후 확인 필요). 일일_문제기록 에 cd 위반 한 줄 남김. 설계도는 코드보다 먼저 적었다.",
@@ -13798,26 +13820,6 @@
   {
    "t": "13:30:47",
    "text": "✅ H1-43-seodesc 완료 — H1-43 검색설명 — 라이브에 아직 안 붙었다",
-   "actor": "이부장"
-  },
-  {
-   "t": "13:29:07",
-   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DgB8ZoYked1/ (naver-link 가 자동 보고) · 남음: 쓰레드",
-   "actor": "이과장"
-  },
-  {
-   "t": "13:22:10",
-   "text": "▶   — 5/7단계 · E2-19 네이버 게시 완료 224486954876 (제목 31자·서식본 4588자 보존·전용 썸네일), naver-link 기록. 다음 인스타→쓰레드",
-   "actor": "이과장"
-  },
-  {
-   "t": "13:21:54",
-   "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224486954876 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-   "actor": "이과장"
-  },
-  {
-   "t": "13:19:33",
-   "text": "✔ 이부장 ack r9eb16a",
    "actor": "이부장"
   }
  ],
@@ -16563,7 +16565,7 @@
    "code": "",
    "title": "",
    "step": 3,
-   "what": "이부장 13:2x deploy.bat 실행 완료 — (j) 글자 테두리 제거 라이브 반영 확인(engine.html #map text 있음·stroke-width:3px 없음, 썸네일 565 200). 사장님 폰 재시험 대기",
+   "what": "⚠️ 정정: 직전 (k) 보고의 「로컬 커밋」은 그 시점에 사실이 아니었다(새 파일이라 git add 누락으로 커밋 실패 — 제가 결과 확인 전에 보고). 지금 git add 후 경로 지정 커밋 완료. 확인: git log -1 이 (k) 커밋, webapp/phonetest.html·index.html 변경 없음(깨끗). 나머지 보고 내용은 그대로.",
    "since": "06:09",
    "since_at": "2026-11-22 06:09:21"
   },
@@ -16635,7 +16637,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "instagram 게시·기록 완료 — https://www.instagram.com/magsori8975/p/DgCBj6GEYLk/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "what": "⚠️ 문제 — 내 실수: B4-37 쓰레드를 t_B4-37.js 로 게시한 뒤 게시 여부 확인 중 같은 스크립트를 한 번 더 실행해 중복 게시됨(DgCB3veAaXp 먼저·DgCCBsPARfN 나중, 내용 동일). 기록은 먼저 것으로. 나중 것 삭제 여부는 이부장 판단(삭제는 공개 계정 변경이라 내가 하지 않음). 재발방지: 게시 스크립트는 확인용으로 재실행하지 않고 읽기 전용 스크립트(th_url.js)만 쓴다",
    "since": "14:09",
    "since_at": "2026-11-22 14:09:40"
   },
@@ -16700,26 +16702,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-08 14:19:11",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][done] [B2-25] 수신 2026-11-08 13:44:19 — #699 쓰레드1회 게시(13:48). 링크카드2개 제거·사진1장 미리보기 확인·본문 235자 일치. 공개 글 재확인: 본문·사진1장·블로그/네이버 링크·출처 일치, 재게시 없음. 늦은 보고(브라우저 세션 끊김 후 복구). · https://www.threads.com/@magsori8975/post/Dfd7zOtgfgB",
-   "actor": "Aside",
-   "sid": ""
-  },
-  {
-   "ts": "2026-11-08 14:19:24",
-   "bid": "aside",
-   "code": "",
-   "title": "",
-   "owner": "Aside",
-   "what": "[Aside][doing] 수신 2026-11-08 14:17:03 — 지시 #700 B2-25 색인 요청 시작",
-   "actor": "Aside",
-   "sid": ""
-  },
   {
    "ts": "2026-11-08 14:21:33",
    "bid": "pub1108b225",
@@ -51912,6 +51894,36 @@
    "title": "",
    "owner": "정비",
    "what": "✅ 2부 완료(로컬 커밋·미푸시·미배포 — 띠 문구 커밋 92eb31108 과 한 번의 deploy.bat 으로 묶어 주세요). 실측: raw.githubusercontent main/engine_state.json 은 Access-Control-Allow-Origin * · localhost 브라우저 fetch 200·JSON 확인 · 같은 시각 raw at=14:12:19 vs Pages 사본 14:08:39(약 3분40초 뒤) · raw 는 쿼리를 키에 안 넣어 ?ts 무의미(HIT) · max-age=300. 한 것: github.io 에서만 raw 와 Pages 를 함께 받아 at 이 더 새로운 쪽을 사용(로컬은 실시간 파일 그대로), 둘 다 실패해야 못읽음 · 띠에 경로(raw/pages) 표기 · BUILD 692903a42472 · 읽기만 변경(푸시·Pages 빌드·OTHER_WINDOW_SEC 불변). 지시와 다른 점 한 가지: 「raw 먼저·실패 시 폴백」순차 대신 둘을 병렬로 받아 새 쪽 선택 — raw 가 푸시 뒤 최대 300초 묵을 수 있어 그 구간엔 빌드가 끝난 Pages 가 더 새로울 수 있기 때문(이유는 설계도에 적음). 비용: 20초마다 요청 2개(각 약 50KB). 순차로 바꾸길 원하시면 알려 주세요. 로컬 검증: 시험 793 OK·enginemap 0·validate FAIL0·콘솔 오류 0·raw 선택 경로 모의 실행 확인. 못 잰 것: 폰 실기기·github.io 원점에서의 동작(배포 후 확인 필요). 일일_문제기록 에 cd 위반 한 줄 남김. 설계도는 코드보다 먼저 적었다.",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-22 14:18:32",
+   "bid": "pub1122b437",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⚠️ 문제 — 내 실수: B4-37 쓰레드를 t_B4-37.js 로 게시한 뒤 게시 여부 확인 중 같은 스크립트를 한 번 더 실행해 중복 게시됨(DgCB3veAaXp 먼저·DgCCBsPARfN 나중, 내용 동일). 기록은 먼저 것으로. 나중 것 삭제 여부는 이부장 판단(삭제는 공개 계정 변경이라 내가 하지 않음). 재발방지: 게시 스크립트는 확인용으로 재실행하지 않고 읽기 전용 스크립트(th_url.js)만 쓴다",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-22 14:19:05",
+   "bid": "maint1122phonefx",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "✅ (k) 시험 화면 완료(로컬 커밋·미배포 — maint1122fresh 2부(c3afb6a1c)·92eb31108 과 같은 deploy.bat 에 묶임; 이쪽이 마지막 커밋). 파일 webapp/phonetest.html(엔진 무영향): ①일반 div ②svg rect ③svg circle ④circle+opacity ⑤div+color-scheme:dark ⑥div+forced-color-adjust:none ⑦대조 div ⑧div 위 밝은 글자 — 모두 #121d29 칠, 칸마다 계산값·기대값 한 줄, 맨 위 UA 80자·시스템 다크·DPR·창·앱창(standalone 여부)·시각, 설명(연한 회색 칸 = 그 구성을 렌더러가 바꾸는 것), 기준 견본 2칸(어두움·밝음). 로컬 412px 확인: 8칸 모두 어두움·계산값 #121d29. 사장님 열기: ⓐ주소 https://magsori-wq.github.io/lifeinfo-console/phonetest.html 을 폰 Chrome 에서 열어 전체 캡처 ⓑCP 앱 창에서는 홈 상단 엔진 버튼 줄 오른쪽 「🧪 칠 시험」 버튼(같은 창으로 열림, 주소창 없는 앱에서도 가능) — 가능하면 ⓐⓑ 둘 다 캡처하면 경로 차이도 가려진다. 이 건과 별개로 index.html 에 버튼 1개 추가(시험 뒤 삭제 가능). 시험 793 OK·enginemap 0·validate FAIL0·로컬 200. 다음: 캡처로 연해지는 칸이 가려지면 그 근거로만 engine.html 칠 수정.",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-22 14:19:30",
+   "bid": "maint1122phonefx",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "⚠️ 정정: 직전 (k) 보고의 「로컬 커밋」은 그 시점에 사실이 아니었다(새 파일이라 git add 누락으로 커밋 실패 — 제가 결과 확인 전에 보고). 지금 git add 후 경로 지정 커밋 완료. 확인: git log -1 이 (k) 커밋, webapp/phonetest.html·index.html 변경 없음(깨끗). 나머지 보고 내용은 그대로.",
    "actor": "정비",
    "sid": "330b96b0"
   }
