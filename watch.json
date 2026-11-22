@@ -35860,6 +35860,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "verify-maint1122phonefx-1122",
+   "added": "2026-11-22",
+   "what": "검수 ❌: _cutoff_wait 17:00 이후 시점에 어제 승인분이 자정 기준(00:00부터)이 아니라 승인 시각부터 셈(17:01 → 1337분, 기대 약 1021분). 정비 수정 필요",
+   "due": "2026-11-22",
+   "cmd": "python -c \"from studio import enginestate as es;import datetime as d;print(es._cutoff_wait('2026-11-21T18:44:00',d.datetime(2026,11,22,17,1)))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
