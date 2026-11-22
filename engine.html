@@ -1183,12 +1183,12 @@ function renderExtra(s){
   x.innerHTML=secs.map(c=>`<section class="panel"><h2>${esc(c.title)}${c.sub?` <small>${esc(c.sub)}</small>`:""}</h2>`+
     `<div class="lane">`+((c.rows||[]).map(r=>`<div class="cp ${esc(r.lvl||"ok")}${r.sub?" wd":""}"><b>${esc(r.head)}</b>${r.chip?` <span style="font-weight:700;color:var(--muted)">${esc(r.chip)}</span>`:""}${r.sub?`<div class="xs">${esc(r.sub)}${r.href?` <a href=${hq(r.href)} target="_blank" rel="noopener">열기 ↗</a>`:""}</div>`:""}</div>`).join("")||`<div class="cp idle">${esc(c.empty||"없음")}</div>`)+`</div></section>`).join("");
 }
-const RAWB="https://raw.githubusercontent.com/magsori-wq/lifeinfo-console/main/",ONPAGES=/\.github\.io$/.test(location.hostname);let dataSrc="";
-/* 11-22 maint1122fresh 2부: github.io 에서는 raw.githubusercontent(main — 푸시 직후 Pages 빌드보다 먼저 갱신)와 Pages 사본을 함께 받아 at 이 더 새로운 쪽을 쓴다. 로컬은 실시간 파일 그대로 */
+const RAWB="https://raw.githubusercontent.com/magsori-wq/lifeinfo-state/main/",ONPAGES=/\.github\.io$/.test(location.hostname);let dataSrc="";
+/* 11-22 maint1122fresh 4부: github.io 에서는 상태 저장소(lifeinfo-state raw — studio/statefeed 가 2~3분마다 올림·Pages 빌드 안 씀)와 Pages 사본을 함께 받아 at 이 더 새로운 쪽을 쓴다. 로컬은 실시간 파일 그대로 */
 async function getState(){
   const pg=fetch(RM.state+"?ts="+Date.now(),{cache:"no-store"}).then(async r=>{if(!r.ok)throw new Error(r.status);return{j:await r.json(),lm:r.headers.get("last-modified")||"",src:"pages"}});
   if(!ONPAGES){const x=await pg;return x}
-  const rw=fetch(RAWB+RM.state,{cache:"no-store"}).then(async r=>{if(!r.ok)throw new Error(r.status);return{j:await r.json(),lm:"",src:"raw"}});
+  const rw=fetch(RAWB+RM.state,{cache:"no-store"}).then(async r=>{if(!r.ok)throw new Error(r.status);return{j:await r.json(),lm:"",src:"state"}});
   const [a,b]=await Promise.allSettled([rw,pg]);
   const ok=[a,b].filter(x=>x.status==="fulfilled"&&x.value.j&&x.value.j.at).map(x=>x.value);
   if(!ok.length)throw (b.reason||a.reason||new Error("읽기 실패"));
@@ -1213,7 +1213,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="4b5819b70b3b";let hiddenAt=0,buildStuck="";
+const BUILD="2451a323bf67";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){
