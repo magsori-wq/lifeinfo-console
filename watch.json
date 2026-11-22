@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-22",
+ "updated": "2026-11-23",
  "items": [
   {
    "id": "intro-numbers",
@@ -8022,8 +8022,8 @@
   {
    "id": "naver-capture-refresh",
    "added": "2026-10-05",
-   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **7일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
-   "due": "2026-11-22",
+   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **8일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
+   "due": "2026-11-23",
    "cmd": "start https://creator-advisor.naver.com/naver_blog/main",
    "owner": "user",
    "verify": "python -m studio.kwgap",
@@ -35859,6 +35859,148 @@
    "cmd": "python -m studio.pubready --code D1-27",
    "owner": "claude",
    "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-maint1122phonefx-1122",
+   "added": "2026-11-22",
+   "what": "검수 ❌: _cutoff_wait 17:00 이후 시점에 어제 승인분이 자정 기준(00:00부터)이 아니라 승인 시각부터 셈(17:01 → 1337분, 기대 약 1021분). 정비 수정 필요",
+   "due": "2026-11-22",
+   "cmd": "python -c \"from studio import enginestate as es;import datetime as d;print(es._cutoff_wait('2026-11-21T18:44:00',d.datetime(2026,11,22,17,1)))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-23",
+   "result": "0053eb1bd 검수 ❌(분수 버그 1건) → 정비 (v) 520e7762c 수정 → 독립 재검수 ✅(verify-maint1122phonefx-v-1122, 이부장 직접 재실행 일치)"
+  },
+  {
+   "id": "hwacheon-2027-fee",
+   "added": "2026-11-22",
+   "what": "2027 화천산천어 체험료·환급·예약일 공식 미확정 (공식 wr_id=89 '업데이트 준비중' 문구 사라지면 갱신 확인)",
+   "due": "2026-12-01",
+   "cmd": "curl -s -L -A Mozilla/5.0 'https://www.narafestival.com/01_icenara/?wr_id=89' | grep -c '업데이트 준비중'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:0b5378e6"
+  },
+  {
+   "id": "docflow-1122-F434",
+   "added": "2026-11-22",
+   "what": "F4-34 선별 pick 완료·verify 🟡(출처URL 칸 비어있음). 다음: 지시서(③)·source 보강(체험료 확정 여부)",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.now",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:0b5378e6"
+  },
+  {
+   "id": "verify-maint1122phonefx-v-1122",
+   "added": "2026-11-22",
+   "what": "정비 520e7762c 독립 검수 통과",
+   "due": "2026-11-23",
+   "cmd": "git show --stat 520e7762c",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-22",
+   "result": "520e7762c 독립 검수 통과 — 변경 2파일(enginestate.py 4행·test 6행), _cutoff_wait 9개 케이스 전부 기대값 일치, discover 1022 OK"
+  },
+  {
+   "id": "deploy-thumb-552",
+   "added": "2026-11-22",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(552_hwacheon_2027.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-22",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "fix-f434-v0text-1122",
+   "added": "2026-11-22",
+   "what": "F4-34 초안 V0 필수수정 문장 6건 반영(커밋 6a18dd7c2) · bodydup 신규 0.047 · layout/heading OK · 남은: 사진/캡션/제목은 타 담당",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.bodydup --file 화천산천어축제2027체험료추진안_글_HTML.txt --code F4-34 --live",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "fix-f434-caption-links-1122",
+   "added": "2026-11-22",
+   "what": "F4-34 본문 사진 캡션에 Commons·Flickr·CC BY-SA 2.0 링크 3개 입힘(V0 필수수정 3), 촬영일 2023-01-09 병기. bodydup 신규 0.047·layout 0건. 커밋 394ad9252. 남은 것: V0 재검사",
+   "due": "2026-11-23",
+   "cmd": "grep -c 'creativecommons.org/licenses/by-sa/2.0' 화천산천어축제2027체험료추진안_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-bo-013-approve-1122",
+   "added": "2026-11-22",
+   "what": "【권고】AM-BO-013 푸른길 몇부작 8부작 — 전편 약 6시간 7분, 회차 35분~57분 승인(방송·OTT, 검색형) 【근거】자동완성 「푸른길 몇부작」·넷플릭스 작품 페이지 8회차 러닝타임 합계 22,015초·뉴스룸 교차확인, 뉴스에 없는 것: 시작시각별 종료표·분할 시청 계산·보도자료엔 회차 수 없음, V0 PASS 89(필수 0), crossdup lifeinfo 겹침 없음·aroma 0.11, 영상 Netflix K-Content 「The Blue Road | Now Playing」(채널명 기준), 썸네일 자체 그래픽(사진 없음 — Commons 무관·작품 이미지는 금지 사유 기록) 【위험】러닝타임 표시값 변동 시 게시 직전 재확인 필요, 줄거리·결말 미포함",
+   "due": "2026-11-23",
+   "cmd": "start \"\" \"C:/naver-blog/aroma-mag/drafts/AM-BO-013_푸른길몇부작러닝타임.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:ce3170ec",
+   "preview": "aromapv_AM-BO-013.html"
+  },
+  {
+   "id": "aroma-am-pe-019-approve-1122",
+   "added": "2026-11-22",
+   "what": "【권고】AM-PE-019 임영웅 영화 박스오피스 — 관객 5위, 매출 3위, 1인당 29,174원 승인(공연·연예, 홈판형) 【근거】KOBIS 11/21 표 직접 재계산(관객 1명당 매출 임영웅 29,174 vs 나머지 9,642~11,391·스크린당 2위·회차당 폭설과 0.2명 차), 뉴스에 없는 것: 객단가·스크린당·회차당 계산, V0 PASS 92(필수 0), crossdup lifeinfo 0.15·aroma PE-011 0.18, 영상 임영웅 공식 채널 메인 예고편(oembed 200), 썸네일 자체 그래픽 — 사진 허락 필요 후보 Commons 「Megabox Cineplex Seoul.jpg」(CC BY-SA 2.0, Doo Ho Kim, 임영웅 사진 아님 표기) 【위험】11/21 하루 표라 시의성 하락·11/22 집계 미반영, 요금 이유는 단정하지 않음",
+   "due": "2026-11-23",
+   "cmd": "start \"\" \"C:/naver-blog/aroma-mag/drafts/AM-PE-019_임영웅영화객단가.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:ce3170ec",
+   "preview": "aromapv_AM-PE-019.html"
+  },
+  {
+   "id": "aroma-am-dg-017-approve-1122",
+   "added": "2026-11-22",
+   "what": "【권고】AM-DG-017 블랙프라이데이 플스 — LG U+ 5만원당 5천원 vs 카카오페이 8천P 승인(디지털, 검색형) 【근거】PlayStation 코리아 이벤트 3페이지 직접 대조, 뉴스에 없는 것: 결제액별 혜택표·99,000원=카카오 0원 함정·조건 교차, V0 PASS 92(필수 0), crossdup aroma DG-005 0.29(각도 다름), 영상 임베드 없음 — PS Korea RSS 12건에 해당 영상 없음, 썸네일 자체 그래픽 — 사진 허락 필요 후보 Commons 「Playstation 5 DualSense controller in Midnight Black, 2026-02-07 (front).jpg」(CC BY-SA 4.0, Crisco 1492) 【위험】이벤트 11/30 종료·선착순 소진·페이지 문구 변경, 게시 직전 재확인 필요",
+   "due": "2026-11-23",
+   "cmd": "start \"\" \"C:/naver-blog/aroma-mag/drafts/AM-DG-017_PS블프결제이벤트비교.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:ce3170ec",
+   "preview": "aromapv_AM-DG-017.html"
+  },
+  {
+   "id": "aroma-am-sp-023-approve-1122",
+   "added": "2026-11-22",
+   "what": "【권고】AM-SP-023 K리그 순위 광주 4-2 부천에도 12위 — 7점 뒤진 채 남은 승점은 6 승인(스포츠, 홈판형·36R 직후, 11/23 오전 게시 권장) 【근거】K리그 공식 순위·결과 JSON·대회요강 제7·30조 직접 재대조, 뉴스에 없는 것: 파이널A 729가지 중 2위 경우의 수(울산 429·대전 243·동률 57)·다득점 우선 규정 대입(대전 58골>울산 57골), V0 PASS 91(1차 REVISE 83 → 필수 3건 수정 후 재검사), crossdup aroma SP-022 0.33(각도: 결과 후 새 승점·2위 구도), 영상 K리그 하이라이트 광주 vs 부천(oembed 200), 썸네일 자체 그래픽 — 사진 허락 필요 후보 Commons 「Gwangju World Cup Stadium.jpg」(CC BY 2.0, Michael Howe-Ely, 이번 경기 사진 아님 표기) 【위험】순위·일정은 게시 직전 재확인, 승인된 버전과 다르게 고치면 재승인",
+   "due": "2026-11-23",
+   "cmd": "start \"\" \"C:/naver-blog/aroma-mag/drafts/AM-SP-023_광주부천결과2위구도.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:ce3170ec",
+   "preview": "aromapv_AM-SP-023.html"
+  },
+  {
+   "id": "routine10-stale-falsepos-1123",
+   "added": "2026-11-22",
+   "what": "ROUTINE_STALE 10번(aroma-nightly-topics) 오탐 의심 — 11-22 23:37 알림은 마지막 실행 11-20 23:10 이라 했지만 같은 루틴 세션이 11-21 23:30(KST)에도 있었고 오늘 23:30 야간 글감 4/4 보고가 왔다. routinehealth 가 루틴10의 실행 자취를 못 읽는지 정비가 확인",
+   "due": "2026-11-23",
+   "cmd": "python -m studio.routinehealth",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-maint1122unitlast-1123",
+   "added": "2026-11-23",
+   "what": "정비 3092904fa 독립 검수 ❌ — 소식 시각 계산의 행동 시험 없음(test_news_uses_reporter_actor_not_tower_lines 는 소스 문자열 검사), 열린배치 read·now_log actor·둘 다 없음 시나리오 미시험",
+   "due": "2026-11-23",
+   "cmd": "python -m unittest tests.test_studio_pure.TestUnitLastNewsMaint1122 -v",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
