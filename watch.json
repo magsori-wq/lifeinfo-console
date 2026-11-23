@@ -36135,6 +36135,16 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:d70caeb0"
+  },
+  {
+   "id": "drift-f430-title-1123",
+   "added": "2026-11-23",
+   "what": "피드 드리프트 실패 원인 실측(11-23 11:19): F4-30 제목 불일치 1건 — 라이브는 sitefix1121(11-21 13:12) 제목 「2026 포스트시즌 예매 안내(보관용·시즌 종료)」, DB 는 옛 제목. 라이브가 의도된 최신이므로 DB 제목을 라이브에 맞춘다(담당: 정비·이과장 중 sitefix 담당이 DB 반영 누락). drift-fail-1021 의 옛 원인과 별개일 수 있음",
+   "due": "2026-11-24",
+   "cmd": "python -m studio.feeddrift 2>&1 | tail -8",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
