@@ -34800,8 +34800,10 @@
    "due": "2026-11-23",
    "cmd": "python -m studio.batchboard order --id exp1119m1",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-23",
+   "result": "11-23 18:08 실측: 클린 URL 3편(H1-44·A5-09·D2-21) 모두 Redirect error 유지 — 재요청은 리디렉션 오류를 해소하지 못함. 기록: docs/exp1119m1_req_log.md"
   },
   {
    "id": "exp1119m1-4h-1121",
@@ -34822,8 +34824,10 @@
    "due": "2026-11-23",
    "cmd": "python data/_exp_b_inspect_1113.py A5-09 D2-21",
    "owner": "claude",
-   "state": "todo",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-11-23",
+   "result": "11-23 18:08 실측: A5-09·D2-21 Redirect error 유지(A5-09 최근 크롤 11-21 13:54, D2-21 11-16). 예정 13:55 대비 4시간 늦음. docs/exp1119m1_req_log.md 기록"
   },
   {
    "id": "exp1119m1-48h-h144-1123",
@@ -34832,8 +34836,10 @@
    "due": "2026-11-23",
    "cmd": "python data/_exp_b_inspect_1113.py H1-44",
    "owner": "claude",
-   "state": "todo",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-11-23",
+   "result": "11-23 18:08 실측: H1-44 Redirect error 유지(최근 크롤 11-21 13:54). 예정 13:50 대비 4시간 늦음. docs/exp1119m1_req_log.md 기록"
   },
   {
    "id": "clock-1630-1121",

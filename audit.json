@@ -7320,6 +7320,30 @@
    "target": "F4-35",
    "detail": "",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-23T18:08:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-48h-a5d2-1123",
+   "detail": "11-23 18:08 실측: A5-09·D2-21 Redirect error 유지(A5-09 최근 크롤 11-21 13:54, D2-21 11-16). 예정 13:55 대비 4시간 늦음. docs/exp1119m1_req_log.md 기록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-23T18:09:01",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-48h-h144-1123",
+   "detail": "11-23 18:08 실측: H1-44 Redirect error 유지(최근 크롤 11-21 13:54). 예정 13:50 대비 4시간 늦음. docs/exp1119m1_req_log.md 기록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-23T18:09:07",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-clean-48h-1123",
+   "detail": "11-23 18:08 실측: 클린 URL 3편(H1-44·A5-09·D2-21) 모두 Redirect error 유지 — 재요청은 리디렉션 오류를 해소하지 못함. 기록: docs/exp1119m1_req_log.md",
+   "via": "cli"
   }
  ]
 }
