@@ -1,13 +1,13 @@
 {
- "rev": "90c2f727e",
+ "rev": "9e89838f0",
  "counts": {
   "total": 568,
-  "osmu_done": 567,
-  "osmu_pending": 1,
+  "osmu_done": 568,
+  "osmu_pending": 0,
   "indexed": 0,
   "index_pending": 568,
-  "index_requested": 180,
-  "index_todo": 87,
+  "index_requested": 181,
+  "index_todo": 86,
   "index_benign": 301
  },
  "actionable": [
@@ -15,15 +15,16 @@
    "code": "C2-32",
    "title": "콜레라 증상 — 10년 만의 국내 발생 추정, 병원은 ",
    "need": [
-    "OSMU",
+    "인스타",
+    "쓰레드",
     "색인요청"
    ],
-   "action": "OSMU 확산",
-   "osmu": false,
+   "action": "색인 요청",
+   "osmu": true,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": false,
+    "n": true,
     "t": false,
     "i": false
    }
