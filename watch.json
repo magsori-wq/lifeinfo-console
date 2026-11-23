@@ -36125,6 +36125,16 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "yearend-tax-premise-1123",
+   "added": "2026-11-23",
+   "what": "연말정산 세법변경 후보: 세제개편안 근로항목 적용시기 대부분 '27.1.1 이후(2027귀속) — 2026귀속 premise 불일치. 국회 통과·시행령 입법예고 미확인",
+   "due": "2026-11-30",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck 세제개편안 연말정산 ; docs/source_연말정산세법변경_20261123.md 9절 재확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:d70caeb0"
   }
  ]
 }
