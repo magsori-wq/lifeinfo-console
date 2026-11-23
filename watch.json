@@ -36258,6 +36258,18 @@
    "cmd": "구글 커뮤니티 후속 답글 게시 승인 (docs/aside_drafts/문의_구글커뮤니티_리디렉션_20261123.txt 그대로, 직접 게시 모드라 이과장 aside repl)",
    "owner": "user",
    "kind": "approve",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-23",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "tickscan-memerr-1123",
+   "added": "2026-11-23",
+   "what": "towertick batch.json 읽기 MemoryError(18:17 TICK_SCAN_FAIL) — batch.json 16MB, 단독 로드는 0.4초 정상이라 일시적 메모리 압박으로 보임. 재발 여부 확인",
+   "due": "2026-11-24",
+   "cmd": "python -m studio.towertick --help",
+   "owner": "claude",
    "state": "todo",
    "by": "이부장"
   }
