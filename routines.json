@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-23 17:00",
+ "generated": "2026-11-23 17:18",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/23 14:05",
+   "last": "11/23 17:14",
    "next": "11/23 20:00",
    "model": "sonnet-5-5",
    "report_day": "1123",
-   "report": "11-23 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음(Gemini 공지·Play 영수증·뉴스 브리핑뿐, GSC 7일 0건, help-communities 0건). GitHub 실패 2건은 11-21 밤 것: publish run 44938345407 = 원격 앞섬 확인 스텝(PC 커밋 직후 충돌 방지)으로 실패, 19:20 재실행 성공 · console 피드드리프트 검사는 이후 통과. 8975 전달분=뉴스 2건(정상), aroma8975 0건(평소). 3계정 gmailread scan 은 개인정보 훅이 막아 못 돌림(시도했으나 못 얻음)\n▸ 11:22 11-23 11시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중) · 사장님 할 일 없음 · 신규 중요메일 없음(Gemini 개인정보 설정 공지·Google One 100GB 월2,400원 갱신영수 11-21 — 모두 정보성) · help-communities/GSC/애드센스 통지 7일 0건 · 8975·aroma 전달 0건 · 콘솔 피드드리프트검사 연속 실패 지속(watch drift-fail-1021 추적중) · 11-21 발행 run 실패1건은 원격 선행 확인(PC커밋 경합) 후 재실행 성공 · gmailread 리더는 cc-plugin-privacy 훅에 거부돼 실행 못 함(시도했으나 미실행, 커넥터 조회로 대체)\n▸ 14:06 11-23 14시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중) · 사장님 할 일 없음 · 새 중요메일 없음(Gemini 업데이트·Play 영수증 11-21·뉴스 브리핑 2건 — 무해) · GitHub 실패2건=11-21 19:02 UTC 글발행 run(이후 publish 6회 연속 success, 해소)·11-23 02:20 UTC console 피드드리프트검사(후속 console 정합성검사 success, 드리프트 워크플로 재실행은 미확인) · GSC 7일 0건·help-communities 0건 · m8975 전달 뉴스2건·aroma8975 0건(평소) · gmailread scan은 환경 훅 거부로 못 돌림(시도했으나 미실행)",
+   "report": "11-23 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중). 새 중요메일 없음(Gemini 공지·Play 영수증·뉴스 브리핑뿐, GSC 7일 0건, help-communities 0건). GitHub 실패 2건은 11-21 밤 것: publish run 44938345407 = 원격 앞섬 확인 스텝(PC 커밋 직후 충돌 방지)으로 실패, 19:20 재실행 성공 · console 피드드리프트 검사는 이후 통과. 8975 전달분=뉴스 2건(정상), aroma8975 0건(평소). 3계정 gmailread scan 은 개인정보 훅이 막아 못 돌림(시도했으나 못 얻음)\n▸ 11:22 11-23 11시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중) · 사장님 할 일 없음 · 신규 중요메일 없음(Gemini 개인정보 설정 공지·Google One 100GB 월2,400원 갱신영수 11-21 — 모두 정보성) · help-communities/GSC/애드센스 통지 7일 0건 · 8975·aroma 전달 0건 · 콘솔 피드드리프트검사 연속 실패 지속(watch drift-fail-1021 추적중) · 11-21 발행 run 실패1건은 원격 선행 확인(PC커밋 경합) 후 재실행 성공 · gmailread 리더는 cc-plugin-privacy 훅에 거부돼 실행 못 함(시도했으나 미실행, 커넥터 조회로 대체)\n▸ 14:06 11-23 14시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사 중) · 사장님 할 일 없음 · 새 중요메일 없음(Gemini 업데이트·Play 영수증 11-21·뉴스 브리핑 2건 — 무해) · GitHub 실패2건=11-21 19:02 UTC 글발행 run(이후 publish 6회 연속 success, 해소)·11-23 02:20 UTC console 피드드리프트검사(후속 console 정합성검사 success, 드리프트 워크플로 재실행은 미확인) · GSC 7일 0건·help-communities 0건 · m8975 전달 뉴스2건·aroma8975 0건(평소) · gmailread scan은 환경 훅 거부로 못 돌림(시도했으나 미실행)\n▸ 17:16 11-23 17시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(심사중). 새 중요메일 없음. GitHub 실패2건=원인확인(피드드리프트 F4-30 라이브제목(보관용)↔DB 불일치 11-21부터 반복, 발행run 11-21 19:01 원격앞섬 가드→이후 발행 전부 success). gmailread scan은 이 세션 훅이 차단해 커넥터로만 확인(magsori8975 전달 2건 뉴스브리핑)",
    "runs": [
+    {
+     "at": "11/23 17:17",
+     "link": "claude://claude.ai/epitaxy/local_78a2a155-13be-4b96-8058-a28791fcba16",
+     "archived": false
+    },
     {
      "at": "11/23 14:07",
      "link": "claude://claude.ai/epitaxy/local_9ce18563-9ed6-4d8b-96f1-affff19e5ed6",
@@ -30,11 +35,6 @@
     {
      "at": "11/22 23:07",
      "link": "claude://claude.ai/epitaxy/local_3bceca44-b8ad-4c12-bf01-09ae476e1d16",
-     "archived": true
-    },
-    {
-     "at": "11/22 20:07",
-     "link": "claude://claude.ai/epitaxy/local_14b92878-4d22-4a61-870c-579f890e948a",
      "archived": true
     }
    ]
