@@ -36283,6 +36283,16 @@
    "kind": "approve",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "f435-hotpack-link-1124",
+   "added": "2026-11-23",
+   "what": "F4-35 네이버 글에 핫팩 제휴 링크 삽입 여부(이과장, 내일 12:00 까지)",
+   "due": "2026-11-24",
+   "cmd": "curl -s -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224488546823' | grep -c 'naver.me'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
