@@ -1,7 +1,24 @@
 {
- "at": "2026-11-23 23:33:19",
+ "at": "2026-11-23 23:33:58",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-BO-014",
+   "approvals": [
+    {
+     "id": "aroma-am-bo-014-approve-1123",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "데블스플랜데드어게인러닝타임",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-bo-014-approve-1123",
+   "no_preview": false
+  },
   {
    "code": "AM-SP-024",
    "approvals": [
@@ -18,15 +35,6 @@
    "label": "결재 대기",
    "detail": "aroma-am-sp-024-approve-1123",
    "no_preview": false
-  },
-  {
-   "code": "AM-BO-014",
-   "approvals": [],
-   "title": "데블스플랜데드어게인러닝타임",
-   "last_file_at": "2026-11-23 23:32",
-   "stage": "draft",
-   "label": "초안",
-   "detail": "1개 파일"
   },
   {
    "code": "AM-DG-018",
@@ -280,7 +288,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-23 23:32:50",
+   "last_at": "2026-11-23 23:33:50",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -354,19 +362,13 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 43,
+  "last_min": 44,
   "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [
-   {
-    "code": "AM-BO-014",
-    "title": "데블스플랜데드어게인러닝타임",
-    "min": 1,
-    "lvl": "ok"
-   },
    {
     "code": "AM-DG-018",
     "title": "PSPlus블프12개월손익분기",
@@ -382,6 +384,12 @@
   ],
   "v0": [],
   "boss": [
+   {
+    "code": "AM-BO-014",
+    "title": "데블스플랜데드어게인러닝타임",
+    "min": 1,
+    "lvl": "ok"
+   },
    {
     "code": "AM-SP-024",
     "title": "K리그2PO4팀확정3위구도",
@@ -809,7 +817,7 @@
   "today": "2026-11-23",
   "done_today": 4,
   "published_today": 4,
-  "boss_wait": 1,
+  "boss_wait": 2,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -833,7 +841,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 43,
+   "last_min": 44,
    "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
    "lvl": "ok"
   },
@@ -848,7 +856,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 43,
+   "last_min": 44,
    "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -869,7 +877,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "결재 대기 2건"
   }
  ],
  "suppliers": [
@@ -915,40 +923,17 @@
    "what": "【권고】AM-SP-024 K리그2 순위 PO 4팀 확정(제 계산) — 3위는 대구 59점·서울E 58점 (스포츠·홈판형) 승인 【근거】관심: 자",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-bo-014-approve-1123",
+   "what": "【권고】AM-BO-014 데블스 플랜 데드 어게인 몇부작, 등록 10편 14시간 15분·6화 106분 (방송·OTT·검색형) 승인 【근거】관심:",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-SP-024",
-   "stage": "proc",
-   "at": "2026-11-23 23:32:13",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-019",
-   "stage": "proc",
-   "at": "2026-11-23 04:29:36",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-018",
-   "stage": "proc",
-   "at": "2026-11-23 23:32:14",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-020",
-   "stage": "proc",
-   "at": "2026-11-23 23:32:14",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-023",
-   "stage": "proc",
-   "at": "2026-11-23 04:40:00",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-BO-014",
    "stage": "proc",
@@ -962,9 +947,39 @@
    "src": "파일 수정 시각"
   },
   {
+   "code": "AM-PE-019",
+   "stage": "proc",
+   "at": "2026-11-23 04:29:36",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-020",
+   "stage": "proc",
+   "at": "2026-11-23 23:32:14",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-024",
+   "stage": "proc",
+   "at": "2026-11-23 23:32:13",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-018",
+   "stage": "proc",
+   "at": "2026-11-23 23:32:14",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-BO-013",
    "stage": "proc",
    "at": "2026-11-23 04:29:35",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-023",
+   "stage": "proc",
+   "at": "2026-11-23 04:40:00",
    "src": "파일 수정 시각"
   },
   {
@@ -1049,7 +1064,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-23 23:32:50",
+     "chip": "2026-11-23 23:33:50",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
