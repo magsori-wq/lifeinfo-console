@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23 13:53:50",
+ "at": "2026-11-23 13:55:10",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -35,24 +35,24 @@
     "code": "D1-27",
     "title": "2027학년도 정시 원서접수 1월 4~7일 — 군별 날",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-23",
-    "last_at": "",
+    "last_at": "2026-11-23",
     "lvl": "amber"
    },
    {
@@ -357,8 +357,8 @@
   "lvl": "ok"
  },
  "index": {
-  "requested": 167,
-  "todo": 85,
+  "requested": 173,
+  "todo": 94,
   "indexed": 0
  },
  "limit": {
@@ -470,8 +470,8 @@
    "who": "3.세션",
    "kind": "글감",
    "ran": true,
-   "at": "12:03",
-   "note": "⏸ 대기 — 크리에이터 어드바이저 오늘 갱신 실패: Aside 로 열었으나 네이버 「잠시 후 다시 확인해주세요 · 지금 이 서",
+   "at": "13:54",
+   "note": "📋 복창: 재고 0(하한 3) → 빈손 금지 · 06:5x 지시대로 원문 확보 2건 병렬(source 에이전트 · 공정위 소비",
    "today": 0,
    "order": null,
    "lvl": "ok"
@@ -536,7 +536,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 1,
+   "last_min": 2,
    "cur": "🚀 D1-27 발행 후속 — 2027학년도 정시 원서접수 군별",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -545,7 +545,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 1097,
+   "last_min": 1098,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -585,7 +585,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 5,
-   "last_min": 1,
+   "last_min": 2,
    "cur": "🚀 D1-27 발행 후속 — 2027학년도 정시 원서접수 군별",
    "lvl": "ok"
   },
@@ -601,7 +601,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 1097,
+   "last_min": 1098,
    "cur": "",
    "lvl": "ok"
   },
@@ -609,7 +609,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 5,
+   "last_min": 7,
    "cur": "13:47 점검: 새 승인·요청 없음. 후보 확보 — 제47회",
    "lvl": "ok"
   },
@@ -768,6 +768,13 @@
   "naver": {
    "done": [
     {
+     "code": "D1-27",
+     "title": "2027학년도 정시 원서접수 1월 4~7일 — 군별 날",
+     "url": "https://blog.naver.com/magsori8975/224488331180",
+     "at": "2026-11-23",
+     "who": "lee"
+    },
+    {
      "code": "A1-27",
      "title": "신청주의 개선 입법예고 12월 9일 마감 — 동의 없이",
      "url": "https://blog.naver.com/magsori8975/224486661603",
@@ -863,10 +870,6 @@
     {
      "code": "C2-32",
      "title": "콜레라 증상 — 10년 만의 국내 발생 추정, 병원은 "
-    },
-    {
-     "code": "D1-27",
-     "title": "2027학년도 정시 원서접수 1월 4~7일 — 군별 날"
     },
     {
      "code": "F4-34",
@@ -1135,6 +1138,13 @@
    "stage": "blog",
    "at": "2026-11-23 04:34:24",
    "src": "now_log 발행 완료"
+  },
+  {
+   "code": "D1-27",
+   "stage": "naver",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)",
+   "who": "lee"
   }
  ],
  "approvals": [],
@@ -1298,12 +1308,12 @@
  "exec_error": "",
  "reflect": {
   "state": "bad",
-  "ok": 3,
+  "ok": 5,
   "stale": 1,
   "bad": 1,
-  "na": 2,
-  "at": "2026-11-23 04:47:58",
-  "age_min": 5
+  "na": 0,
+  "at": "2026-11-23 13:55:17",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
