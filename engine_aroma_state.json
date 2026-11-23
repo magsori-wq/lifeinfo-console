@@ -1,7 +1,52 @@
 {
- "at": "2026-11-23 23:05:31",
+ "at": "2026-11-23 23:32:38",
  "errors": [],
- "rows": [],
+ "rows": [
+  {
+   "code": "AM-SP-024",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-024-approve-1123",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "K리그2PO4팀확정3위구도",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-sp-024-approve-1123",
+   "no_preview": false
+  },
+  {
+   "code": "AM-BO-014",
+   "approvals": [],
+   "title": "데블스플랜데드어게인러닝타임",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "draft",
+   "label": "초안",
+   "detail": "1개 파일"
+  },
+  {
+   "code": "AM-DG-018",
+   "approvals": [],
+   "title": "PSPlus블프12개월손익분기",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "draft",
+   "label": "초안",
+   "detail": "1개 파일"
+  },
+  {
+   "code": "AM-PE-020",
+   "approvals": [],
+   "title": "임영웅영화개봉5일추이",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "draft",
+   "label": "초안",
+   "detail": "1개 파일"
+  }
+ ],
  "old_inflight": [],
  "discarded": [
   {
@@ -235,7 +280,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-23 23:05:20",
+   "last_at": "2026-11-23 23:32:20",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -298,26 +343,52 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-22 23:29",
+   "last_at": "2026-11-23 23:32",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 66개",
+   "note": "복사된 미리보기 70개",
    "at_node": "boss"
   }
  ],
  "unit": {
   "who": "이대리",
-  "state": "현장(진행)",
+  "state": "대기",
   "jobs": 0,
-  "last_min": 15,
+  "last_min": 43,
   "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
-  "draft": [],
+  "draft": [
+   {
+    "code": "AM-BO-014",
+    "title": "데블스플랜데드어게인러닝타임",
+    "min": 0,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-DG-018",
+    "title": "PSPlus블프12개월손익분기",
+    "min": 0,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-PE-020",
+    "title": "임영웅영화개봉5일추이",
+    "min": 0,
+    "lvl": "ok"
+   }
+  ],
   "v0": [],
-  "boss": [],
+  "boss": [
+   {
+    "code": "AM-SP-024",
+    "title": "K리그2PO4팀확정3위구도",
+    "min": 0,
+    "lvl": "ok"
+   }
+  ],
   "deploy": [],
   "publish": [],
   "osmu": []
@@ -738,7 +809,7 @@
   "today": "2026-11-23",
   "done_today": 4,
   "published_today": 4,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -760,9 +831,9 @@
  "units": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "대기",
    "jobs": 0,
-   "last_min": 15,
+   "last_min": 43,
    "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
    "lvl": "ok"
   },
@@ -775,9 +846,9 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "대기",
    "jobs": 0,
-   "last_min": 15,
+   "last_min": 43,
    "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -798,7 +869,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -806,11 +877,11 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "04:42",
-   "today": 4,
+   "at": "23:32",
+   "today": 8,
    "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 4편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 8편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -824,28 +895,40 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 4편",
+   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 8편",
    "codes": [
     "AM-BO-013",
+    "AM-BO-014",
     "AM-DG-017",
+    "AM-DG-018",
     "AM-PE-019",
-    "AM-SP-023"
+    "AM-PE-020",
+    "AM-SP-023",
+    "AM-SP-024"
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-sp-024-approve-1123",
+   "what": "【권고】AM-SP-024 K리그2 순위 PO 4팀 확정(제 계산) — 3위는 대구 59점·서울E 58점 (스포츠·홈판형) 승인 【근거】관심: 자",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
   {
-   "code": "AM-BO-013",
+   "code": "AM-DG-018",
    "stage": "proc",
-   "at": "2026-11-23 04:29:35",
+   "at": "2026-11-23 23:32:14",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-019",
+   "code": "AM-PE-020",
    "stage": "proc",
-   "at": "2026-11-23 04:29:36",
+   "at": "2026-11-23 23:32:14",
    "src": "파일 수정 시각"
   },
   {
@@ -855,9 +938,33 @@
    "src": "파일 수정 시각"
   },
   {
+   "code": "AM-BO-014",
+   "stage": "proc",
+   "at": "2026-11-23 23:32:14",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-019",
+   "stage": "proc",
+   "at": "2026-11-23 04:29:36",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-DG-017",
    "stage": "proc",
    "at": "2026-11-23 04:40:01",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-024",
+   "stage": "proc",
+   "at": "2026-11-23 23:32:13",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-013",
+   "stage": "proc",
+   "at": "2026-11-23 04:29:35",
    "src": "파일 수정 시각"
   },
   {
@@ -942,7 +1049,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-23 23:05:20",
+     "chip": "2026-11-23 23:32:20",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -984,8 +1091,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-22 23:29",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 66개"
+     "chip": "2026-11-23 23:32",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 70개"
     }
    ]
   },
