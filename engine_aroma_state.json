@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23 23:33:58",
+ "at": "2026-11-24 00:02:28",
  "errors": [],
  "rows": [
   {
@@ -20,6 +20,40 @@
    "no_preview": false
   },
   {
+   "code": "AM-DG-018",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-018-approve-1123",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "PSPlus블프12개월손익분기",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-dg-018-approve-1123",
+   "no_preview": false
+  },
+  {
+   "code": "AM-PE-020",
+   "approvals": [
+    {
+     "id": "aroma-am-pe-020-approve-1123",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-23"
+    }
+   ],
+   "title": "임영웅영화개봉5일추이",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-pe-020-approve-1123",
+   "no_preview": false
+  },
+  {
    "code": "AM-SP-024",
    "approvals": [
     {
@@ -35,24 +69,6 @@
    "label": "결재 대기",
    "detail": "aroma-am-sp-024-approve-1123",
    "no_preview": false
-  },
-  {
-   "code": "AM-DG-018",
-   "approvals": [],
-   "title": "PSPlus블프12개월손익분기",
-   "last_file_at": "2026-11-23 23:32",
-   "stage": "draft",
-   "label": "초안",
-   "detail": "1개 파일"
-  },
-  {
-   "code": "AM-PE-020",
-   "approvals": [],
-   "title": "임영웅영화개봉5일추이",
-   "last_file_at": "2026-11-23 23:32",
-   "stage": "draft",
-   "label": "초안",
-   "detail": "1개 파일"
   }
  ],
  "old_inflight": [],
@@ -168,7 +184,7 @@
   "rows": [
    [
     "방송·OTT",
-    5
+    4
    ],
    [
     "공연·연예",
@@ -176,14 +192,14 @@
    ],
    [
     "스포츠",
-    7
+    6
    ],
    [
     "디지털 콘텐츠·여가",
     5
    ]
   ],
-  "total": 24
+  "total": 22
  },
  "share": {
   "state": "active",
@@ -288,7 +304,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-23 23:33:50",
+   "last_at": "2026-11-24 00:02:21",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -317,7 +333,7 @@
    "node": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회)",
    "last_at": "2026-11-23 22:47",
    "src": "idaeri_idle_at(공백 알림만)",
-   "today_n": 2,
+   "today_n": 0,
    "note": "열린 요청 0건",
    "at_node": ""
   },
@@ -327,7 +343,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음",
    "at_node": ""
   },
   {
@@ -335,7 +351,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-23 04:28:40",
    "src": "now_log(bid=aroma)",
-   "today_n": 14,
+   "today_n": 0,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -344,7 +360,7 @@
    "node": "루틴10 → CP",
    "last_at": "",
    "src": "시각 저장 없음(루틴10 꺼짐은 설계도 기재)",
-   "today_n": 4,
+   "today_n": 0,
    "note": "횟수는 lifeinfo 루틴 전체",
    "at_node": ""
   },
@@ -360,40 +376,39 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 44,
-  "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
+  "last_min": 25,
+  "cur": "[이부장 접수 23:40 · 어드바이저] 이대리 야간 글감 4",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
-  "draft": [
-   {
-    "code": "AM-DG-018",
-    "title": "PSPlus블프12개월손익분기",
-    "min": 1,
-    "lvl": "ok"
-   },
-   {
-    "code": "AM-PE-020",
-    "title": "임영웅영화개봉5일추이",
-    "min": 1,
-    "lvl": "ok"
-   }
-  ],
+  "draft": [],
   "v0": [],
   "boss": [
    {
     "code": "AM-BO-014",
     "title": "데블스플랜데드어게인러닝타임",
-    "min": 1,
+    "min": 30,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-DG-018",
+    "title": "PSPlus블프12개월손익분기",
+    "min": 30,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-PE-020",
+    "title": "임영웅영화개봉5일추이",
+    "min": 30,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-024",
     "title": "K리그2PO4팀확정3위구도",
-    "min": 1,
+    "min": 30,
     "lvl": "ok"
    }
   ],
@@ -814,10 +829,10 @@
   ]
  },
  "kpi": {
-  "today": "2026-11-23",
-  "done_today": 4,
-  "published_today": 4,
-  "boss_wait": 2,
+  "today": "2026-11-24",
+  "done_today": 0,
+  "published_today": 0,
+  "boss_wait": 4,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -839,10 +854,10 @@
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 44,
-   "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
+   "last_min": 25,
+   "cur": "[이부장 접수 23:40 · 어드바이저] 이대리 야간 글감 4",
    "lvl": "ok"
   },
   {
@@ -854,10 +869,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 44,
-   "cur": "[이부장 접수 22:55 · 어드바이저] 이대리 회신 접수 —",
+   "last_min": 25,
+   "cur": "[이부장 접수 23:40 · 어드바이저] 이대리 야간 글감 4",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -877,19 +892,19 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 2건"
+   "state": "결재 대기 4건"
   }
  ],
  "suppliers": [
   {
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
-   "ran": true,
-   "at": "23:32",
-   "today": 8,
-   "lvl": "ok",
+   "ran": false,
+   "at": "",
+   "today": 0,
+   "lvl": "idle",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 8편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 0편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -903,17 +918,8 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 8편",
-   "codes": [
-    "AM-BO-013",
-    "AM-BO-014",
-    "AM-DG-017",
-    "AM-DG-018",
-    "AM-PE-019",
-    "AM-PE-020",
-    "AM-SP-023",
-    "AM-SP-024"
-   ]
+   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 0편",
+   "codes": []
   }
  ],
  "approvals": [
@@ -930,118 +936,35 @@
    "what": "【권고】AM-BO-014 데블스 플랜 데드 어게인 몇부작, 등록 10편 14시간 15분·6화 106분 (방송·OTT·검색형) 승인 【근거】관심:",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-pe-020-approve-1123",
+   "what": "【권고】AM-PE-020 임영웅 영화 관객 5일 61,861명 — 일요일은 토요일보다 23% 줄었다 (공연·연예·홈판형) 승인 【근거】관심: 자",
+   "by": "이대리",
+   "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-018-approve-1123",
+   "what": "【권고】AM-DG-018 PS Plus 프리미엄 12개월 114,570원 — 6개월 쓰면 월결제보다 쌉니다 (디지털·검색형) 승인 【근거】관심:",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [],
- "today_events": [
-  {
-   "code": "AM-BO-014",
-   "stage": "proc",
-   "at": "2026-11-23 23:32:14",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-017",
-   "stage": "proc",
-   "at": "2026-11-23 04:40:01",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-019",
-   "stage": "proc",
-   "at": "2026-11-23 04:29:36",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-020",
-   "stage": "proc",
-   "at": "2026-11-23 23:32:14",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-024",
-   "stage": "proc",
-   "at": "2026-11-23 23:32:13",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-018",
-   "stage": "proc",
-   "at": "2026-11-23 23:32:14",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-BO-013",
-   "stage": "proc",
-   "at": "2026-11-23 04:29:35",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-023",
-   "stage": "proc",
-   "at": "2026-11-23 04:40:00",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-BO-013",
-   "stage": "boss",
-   "at": "2026-11-23 04:27:30",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-PE-019",
-   "stage": "boss",
-   "at": "2026-11-23 04:28:15",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-DG-017",
-   "stage": "boss",
-   "at": "2026-11-23 04:35:40",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-SP-023",
-   "stage": "boss",
-   "at": "2026-11-23 04:32:13",
-   "src": "결재 커밋 시각"
-  },
-  {
-   "code": "AM-BO-013",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  },
-  {
-   "code": "AM-PE-019",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  },
-  {
-   "code": "AM-SP-023",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  },
-  {
-   "code": "AM-DG-017",
-   "stage": "naver",
-   "at": "",
-   "src": "db.json published(날짜만)"
-  }
- ],
+ "today_events": [],
  "incidents": [],
  "stage_of": {},
  "design_signals": [],
  "room_extra": [
   {
    "title": "📊 카테고리 4개 · 최근 14일 게시",
-   "sub": "합계 24편 · 일률분배 몫 6.0편",
+   "sub": "합계 22편 · 일률분배 몫 5.5편",
    "rows": [
     {
      "head": "방송·OTT",
-     "chip": "5편"
+     "chip": "4편"
     },
     {
      "head": "공연·연예",
@@ -1049,7 +972,7 @@
     },
     {
      "head": "스포츠",
-     "chip": "7편"
+     "chip": "6편"
     },
     {
      "head": "디지털 콘텐츠·여가",
@@ -1064,7 +987,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-23 23:33:50",
+     "chip": "2026-11-24 00:02:21",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1083,25 +1006,25 @@
      "head": "IDAERI_STALL",
      "lvl": "ok",
      "chip": "2026-11-23 22:47",
-     "sub": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회) · 출처 idaeri_idle_at(공백 알림만) · 오늘 2회 · 열린 요청 0건"
+     "sub": "요청 → 이행(30분)·활동 공백(09~23시 중 3시간 · 열린 요청 STALL 이 없을 때만 1회) · 출처 idaeri_idle_at(공백 알림만) · 오늘 0회 · 열린 요청 0건"
     },
     {
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-23 04:28:40",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 14회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 0회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 4회 · 횟수는 lifeinfo 루틴 전체"
+     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 0회 · 횟수는 lifeinfo 루틴 전체"
     },
     {
      "head": "aromapv 자동 동기",
