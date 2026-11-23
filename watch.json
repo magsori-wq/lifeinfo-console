@@ -36166,9 +36166,31 @@
    "due": "2026-11-23",
    "cmd": "python -m studio.batchboard order --id fuel1030",
    "owner": "claude",
-   "state": "todo",
+   "state": "done",
    "note": 0,
-   "by": "3.분석"
+   "by": "3.분석",
+   "done_at": "2026-11-23",
+   "result": "1/2 확보(공정위 — 확정 전 안이라 후보 보류), 난방비 진행 중"
+  },
+  {
+   "id": "xlink-d127",
+   "added": "2026-11-23",
+   "what": "🔗 D1-27 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D1-27",
+   "due": "2026-11-23",
+   "cmd": "python studio/blogger.py crosslink --code D1-27",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "verify-maint1122phonefx-y-1123",
+   "added": "2026-11-23",
+   "what": "정비 (y) 55cf2a91f 검수",
+   "due": "2026-11-23",
+   "cmd": "python -m unittest tests.test_studio_pure",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
