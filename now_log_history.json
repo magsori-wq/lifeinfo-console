@@ -4441,7 +4441,101 @@
    "actor": "이과장",
    "sid": "c36eea8e",
    "req": "r2b7f34"
+  },
+  {
+   "ts": "2026-11-09 18:15:36",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡5 — 즉시: Aside 막힘 #748 H1-39; 막힌 항목 routinelog/8-lifeinfo-issue-product-1109 · 8-lifeinfo-issue-product (H) — 사유: 지시(watch oyster-; 사장님 🙋승인 D4-04 프로야구 예매 글 사실 정정(라이브 본문 5문장 교체·낮춤, · 묶음: 막힌 보드 항목×3 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r26398d"
+  },
+  {
+   "ts": "2026-11-09 18:16:37",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵1 🟡5 — 즉시: Aside 막힘 #748 H1-39; 막힌 항목 routinelog/8-lifeinfo-issue-product-1109 · 8-lifeinfo-issue-product (H) — 사유: 지시(watch oyster-; 사장님 🙋승인 D4-05 영화 호프 예매 글 사실 정정(라이브 FAQ 1문장 교체, 새 · 묶음: 막힌 보드 항목×3 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r7d4f65"
+  },
+  {
+   "ts": "2026-11-09 18:16:42",
+   "bid": "fix1109d405",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "[이부장 → 이과장] D4-05 정정안 go — 검토(18:17): 바뀐 문장 1개(FAQ 「한국 배우 중심·더빙판 없음」→「자막판·더빙판 구분을 확인하지 못했습니다」)·새 숫자 없음·사라진 숫자 없음·나머지 문장 그대로. update-post 게이트가 사장님 결재를 요구하므로 이부장이 결재함에 approve-d4-05 를 올렸다(미리보기 fixpv_D4-05.html). 결재 뒤 라이브 반영→getByPath 재확인→mark. 그동안 C1-11 dry-run 계속",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-09 18:17:21",
+   "bid": "fix1109facts",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "C1-11 시작 — 스냅샷·조문 대조",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-09 18:17:47",
+   "bid": "fix1109facts",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "[이부장 → 이과장] 사장님 결재 완료 — approve-d4-04(18:16)·approve-d4-05(18:17) 승인(CP 운영콘솔 결재 커밋). 지금 update-post 로 D4-04·D4-05 라이브 반영 → getByPath·스냅샷 대조(바뀐 문장 목록 그대로) → crosslink 재삽입 확인 → mark 보고. 한 편씩(D4-04 먼저). C1-11 dry-run 은 그 뒤 순서",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-09 18:18:34",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r26398d — 즉시 3건: #748 재측정 완료·D4-04/05 사장님 승인→이과장 반영 지시·생굴 막힘 해소",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r26398d"
+  },
+  {
+   "ts": "2026-11-09 18:18:40",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r7d4f65 — 즉시 3건: #748 재측정 완료·D4-04/05 사장님 승인→이과장 반영 지시·생굴 막힘 해소",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r7d4f65"
+  },
+  {
+   "ts": "2026-11-09 18:18:52",
+   "bid": "fix1109d405",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "✅확인근거 D4-05 라이브 반영(사장님 결재 approve-d4-05 done) — 200·og:title 불변·정정 문장 라이브 반영·수정안 문장 중 라이브에 없는 것은 말미 교차링크 블록 1개뿐(crosslink 재삽입 완료, 교차링크 블록 존재). factaudit0812 는 이부장이 닫는다",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-09 18:18:57",
+   "bid": "fix1109facts",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "✅확인근거 D4-04 라이브 반영(결재 approve-d4-04 done) — 200·og:title 불변·정정 문장(「확인하지 못했습니다」) 라이브 반영·수정안과 라이브 불일치는 말미 교차링크 블록 1개뿐(crosslink 재삽입·존재 확인). 다음 C1-11 dry-run 진행 중",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ],
- "updated": "2026-11-23 18:14:41"
+ "updated": "2026-11-23 18:19:05"
 }
