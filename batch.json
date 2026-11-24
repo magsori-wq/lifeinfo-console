@@ -17548,6 +17548,15 @@
    "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224489538477 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
    "since": "09:43",
    "since_at": "2026-11-24 09:43:14"
+  },
+  "maint1124sync": {
+   "batch": "maint1124sync",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "✅ ①② 완료 — 커밋 3b26558ea(①) · 236159019(②). ①원인 실측: data/xlink_live.json = studio/xlinklive.py 교차링크 라이브 확인 캐시. 쓰는 쪽 둘: 감시 틱(towertick xlinklive.refresh, 만료분 없음 3분·모름 10분마다 다시 재며 시각 'at' 까지 적음 → 로컬에서 계속 변함) · 발행 러너(publish 커밋마다 같은 파일 커밋: e708f5417 D1-28·b55a3da01 H1-46·681698f49 F4-35·2fa6cdb2c D1-27) → 둘이 같은 파일이라 겹침이 구조적. 조치: tools/syncorigin.py DERIVED_OUTSIDE 에 data/xlink_live.json 추가 = 파생 캐시 B급(기존 _reflect_live_cache 와 같은 방식 — 원격 쪽으로 처리, 원본 상태 파일은 그대로 되돌리지 않음). 쓰는 쪽은 막지 않음(감시의 라이브 재측정은 필요). ②readycheck 「커널 메모리」: 시스템 총량만(PerfOS_Memory CommitLimit·Committed, 프로세스 조회 없음), tokcheck.ps1 -Raw 에 COMMITLIMITGB 추가, 줄 예 「커밋 27.3/47.8GB · 가용 20.5GB」, 가용<3GB 🟡·<1.5GB 🔴(11-23 21:17 = 47.1/47.8 → 가용 0.7GB 🔴 시험으로 고정), 한도를 못 읽는 옛 출력은 기존 줄 그대로. 시험: ① test_xlink_live_cache_is_derived · ② 행동 3건, python -m unittest discover -s tests = Ran 1037 tests OK · enginemap 🔴 없음 · validate FAIL 0. 재발방지: syncorigin 이 이 파일에서 멈추는 구조 해소 / 남은 구멍: 같은 방식의 파생 캐시가 data/ 에 더 생기면 DERIVED_OUTSIDE 에 한 줄씩 추가해야 함(자동 분류 없음) · 참고: 작업트리에서 data/_th_react_read.js 가 사라져 있음(내 변경 아님, validate WARN) · falsepos 새 🔴 gcomm1123 낡은 승인표시(GC-1·GC-2)는 다른 세션 몫.",
+   "since": "10:04",
+   "since_at": "2026-11-24 10:04:42"
   }
  },
  "report_log": [
