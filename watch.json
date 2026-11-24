@@ -36894,6 +36894,38 @@
    "owner": "claude",
    "state": "todo",
    "by": "미상"
+  },
+  {
+   "id": "pub-b229-0825",
+   "added": "2026-11-24",
+   "what": "B2-29 불법추심 신고 판정표 — 사장님 승인 도장 17:32 완료·V0 🟢·제휴 none. 17시 시계 때문에 내일 오전 발행 트리거(이부장, 00:00 이후·진행 중 run 없음·pubready 통과 확인 뒤)",
+   "due": "2026-11-25",
+   "cmd": "python -m studio.pubready --code B2-29",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-cron-1747-1124",
+   "added": "2026-11-24",
+   "what": "이대리 17:47 정기 점검 크론 실제 실행 확인(15:47 누락·11-23 21:47 누락에 이은 3번째 점검) — aroma 배치에 17:47~17:55 점검 보고가 올라오는가",
+   "due": "2026-11-24",
+   "cmd": "python -m studio.batchboard unread --id aroma",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-24",
+   "result": "17:47 이대리 점검 보고 실제 도착(aroma 배치 17:47) — 크론 정상 가동 확인"
+  },
+  {
+   "id": "dt3-ready-check-1125",
+   "added": "2026-11-24",
+   "what": "DT-3(킬스위치 해제) 준비 판정: 클릭 기반 그림자 기록 1건 확보(B2-29 17:35, 시계만 불허), 훅 적용 완료(7445ca75c). 낮 시간대 승인 클릭 1건 더 그림자 기록(would_trigger true)을 확인한 뒤 CP 결재 카드로 사장님께 DT-3 상정",
+   "due": "2026-11-26",
+   "cmd": "tail -3 data/direct_publish.jsonl",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
