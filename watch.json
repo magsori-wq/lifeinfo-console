@@ -36153,8 +36153,10 @@
    "due": "2026-11-24",
    "cmd": "python -m studio.feeddrift 2>&1 | tail -8",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-24",
+   "result": "11-24 maint1124drift: DB 제목을 라이브에 맞춤(studio.feeddrift --apply, 제목 드리프트 0), 근원 수리(blogger update-post DB 동기 import·종료코드 3). 옛 cmd python -m studio.feeddrift 가 이제 실제 모듈로 존재(읽기 전용 재확인에 사용)"
   },
   {
    "id": "cadaily-ca-retry-1123",
@@ -36665,6 +36667,27 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "naver-c111-livecheck-1124",
+   "added": "2026-11-24",
+   "what": "C1-11 네이버 글 224344129193 PostView 에서 옛 문구 0 확인(이과장 편집 뒤)",
+   "due": "2026-11-24",
+   "cmd": "curl -s -A 'Mozilla/5.0' 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224344129193' | grep -c 어떤 사유로도",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "이부장"
+  },
+  {
+   "id": "feed-drift-recheck-1125",
+   "added": "2026-11-24",
+   "what": "11-25 07:00 피드 드리프트 검사(배포 저장소 feed-drift.yml)가 통과하는가 — 11-24 DB 제목 교정(F4-30)이 deploy.bat 로 배포된 뒤여야 함",
+   "due": "2026-11-25",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-console --workflow feed-drift.yml -L 2",
+   "owner": "claude",
+   "state": "wait",
+   "by": "정비"
   }
  ]
 }

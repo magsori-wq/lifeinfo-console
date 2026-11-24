@@ -7536,6 +7536,22 @@
    "target": "naver-c111-fix-1124",
    "detail": "운영콘솔 전자결재함에서 사장님 승인",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-24T11:17:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "naver-c111-handedit-1124",
+   "detail": "11:20 사장님 직접 지시 「이과장에 수정지시해」 — 사장님 손 카드 철회, 이과장이 다른 방법(트리플클릭 선택)으로 최대 2회 재시도(지시서 livefix1124c111)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T11:21:17",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "drift-f430-title-1123",
+   "detail": "11-24 maint1124drift: DB 제목을 라이브에 맞춤(studio.feeddrift --apply, 제목 드리프트 0), 근원 수리(blogger update-post DB 동기 import·종료코드 3). 옛 cmd python -m studio.feeddrift 가 이제 실제 모듈로 존재(읽기 전용 재확인에 사용)",
+   "via": "cli"
   }
  ]
 }
