@@ -1,19 +1,37 @@
 {
- "at": "2026-11-24 23:55:29",
+ "at": "2026-11-25 00:07:59",
  "nodes": {
   "draft": [],
   "v0": [],
   "boss": [],
   "deploy": [],
-  "publish": [
+  "publish": [],
+  "osmu": [
    {
     "code": "B2-29",
-    "title": "⏳ 자정 발행 예정 · 불법추심 신고 어디로 — 1332·지자체·경",
-    "min": 383,
-    "lvl": "ok"
+    "title": "불법추심 신고 어디로 — 1332·지자체·경찰 상황별 ",
+    "left": [
+     "네이버",
+     "인스타",
+     "쓰레드"
+    ],
+    "ch": {
+     "blog": true,
+     "naver": false,
+     "insta": false,
+     "threads": false
+    },
+    "who": {},
+    "plan": {
+     "naver": "lee",
+     "insta": "lee",
+     "threads": "lee"
+    },
+    "pub": "2026-11-25",
+    "last_at": "",
+    "lvl": "amber"
    }
   ],
-  "osmu": [],
   "done": [
    {
     "code": "A1-27",
@@ -53,26 +71,6 @@
     "plan": {},
     "pub": "2026-11-24",
     "last_at": "2026-11-24",
-    "lvl": "ok"
-   },
-   {
-    "code": "A2-33",
-    "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·",
-    "left": [],
-    "ch": {
-     "blog": true,
-     "naver": true,
-     "insta": true,
-     "threads": true
-    },
-    "who": {
-     "naver": "lee",
-     "insta": "",
-     "threads": "lee"
-    },
-    "plan": {},
-    "pub": "2026-11-21",
-    "last_at": "2026-11-21",
     "lvl": "ok"
    },
    {
@@ -276,26 +274,6 @@
     "lvl": "ok"
    },
    {
-    "code": "H1-44",
-    "title": "결혼식 보증인원 줄일 수 있나 — 스튜디오 사진파일 따",
-    "left": [],
-    "ch": {
-     "blog": true,
-     "naver": true,
-     "insta": true,
-     "threads": true
-    },
-    "who": {
-     "naver": "lee",
-     "insta": "lee",
-     "threads": "lee"
-    },
-    "plan": {},
-    "pub": "2026-11-21",
-    "last_at": "2026-11-21",
-    "lvl": "ok"
-   },
-   {
     "code": "H1-45",
     "title": "열차 지연 보상 90분 75%·120분 전액 — 소비자",
     "left": [],
@@ -400,6 +378,13 @@
  "incidents": [
   {
    "p": 1,
+   "kind": "lane_idle",
+   "id": "lifeinfo-travel-prep",
+   "what": "담당 lifeinfo-travel-prep(FGH) 마지막 제안 2026-11-22 (3일째 0건) — 처방: 출입처 보강(docs/출입처_*)·지침 발굴 출발점 점검·원문 직접 조회 여부 확인",
+   "min": null
+  },
+  {
+   "p": 1,
    "what": "사장님 🙋승인 【권고】AM-SP-025 2026 KBO 시상식 — MVP 후보 14명,",
    "min": null,
    "owner": "사장님"
@@ -431,19 +416,25 @@
    "min": null
   },
   {
-   "p": 2,
+   "p": 1,
    "kind": "fuel_low",
    "id": "fuel",
-   "stock": 1,
-   "what": "⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다",
+   "stock": 0,
+   "what": "⛽ 연료 없음 — 발행대기 재고 0편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다",
    "min": null
+  },
+  {
+   "p": 2,
+   "what": "4채널 미완 B2-29 불법추심 신고 어디로 — 1332·지자체·경찰 상황별 ",
+   "min": null,
+   "owner": "이과장"
   }
  ],
  "fuel": {
-  "stock": 1,
+  "stock": 0,
   "min": 3,
   "proposed": 0,
-  "lvl": "amber"
+  "lvl": "red"
  },
  "edits": [
   {
@@ -493,10 +484,10 @@
   {
    "who": "3.세션",
    "kind": "글감",
-   "ran": true,
+   "ran": false,
    "at": "23:37",
    "note": "[이부장 접수 23:40] 3. 23:31 최종 판정 접수 — 오늘 후보 0건·건별 사유 표로 24:00 마감 갈음(소방세대점",
-   "today": 3,
+   "today": 0,
    "order": null,
    "lvl": "ok"
   },
@@ -512,47 +503,47 @@
   {
    "who": "루틴2 글감(정보)",
    "kind": "글감",
-   "ran": true,
-   "at": "09:31",
-   "note": "[조사장부] 목록 4(korea.kr 정책뉴스·보도자료 1~3p·kwgap·kwgap --trend/--sa) · 원문 3(d",
-   "today": 2,
-   "lvl": "ok"
+   "ran": false,
+   "at": "",
+   "note": "",
+   "today": 0,
+   "lvl": "idle"
   },
   {
    "who": "루틴4 글감(여행·행사)",
    "kind": "글감",
-   "ran": true,
-   "at": "21:17",
-   "note": "[조사장부] 목록 5(kwgap·kwgap --trend·법무부 출입국 공지·소비자원·금감원 목록) · 원문 1(docs/so",
+   "ran": false,
+   "at": "",
+   "note": "",
    "today": 0,
-   "lvl": "ok"
+   "lvl": "idle"
   },
   {
    "who": "루틴6 글감·발행보조",
    "kind": "글감",
-   "ran": true,
-   "at": "00:20",
-   "note": "[조사장부] 목록 4(korea.kr 정책뉴스·보도자료·kwgap·kwgap --sa) · 원문 2(docs/source_D_",
-   "today": 1,
-   "lvl": "ok"
+   "ran": false,
+   "at": "",
+   "note": "",
+   "today": 0,
+   "lvl": "idle"
   },
   {
    "who": "루틴8 상품(아침)",
    "kind": "상품",
-   "ran": true,
-   "at": "07:11",
-   "note": "[조사장부] 목록 0 · 원문 0 · 후보 1 · 탈락 5 · 검색어 2 · 유입 0 | collect 1(신규105·누적29",
+   "ran": false,
+   "at": "",
+   "note": "",
    "today": 0,
-   "lvl": "ok"
+   "lvl": "idle"
   },
   {
    "who": "루틴9 상품(오후)",
    "kind": "상품",
-   "ran": true,
-   "at": "15:11",
-   "note": "[조사장부] 목록 0 · 원문 0 · 후보 0 · 탈락 4 · 검색어 1 · 유입 0 / collect 1(신규29·누적299",
+   "ran": false,
+   "at": "",
+   "note": "",
    "today": 0,
-   "lvl": "ok"
+   "lvl": "idle"
   }
  ],
  "drivers": [
@@ -560,7 +551,7 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 7,
-   "last_min": 155,
+   "last_min": 168,
    "cur": "🧵 xmas1121 쓰레드 단독 상품글 게시(승인 도장 11-",
    "lvl": "amber",
    "role": "②처리·④발행 운전"
@@ -569,7 +560,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 389,
+   "last_min": 401,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -591,13 +582,9 @@
  "producers": [
   {
    "who": "이과장",
-   "made": "새 글 초안·발행 5편 · 개선 반영 0편",
+   "made": "새 글 초안·발행 1편 · 개선 반영 0편",
    "codes": [
-    "A1-28",
-    "A2-34",
-    "B2-29",
-    "D1-28",
-    "H1-46"
+    "B2-29"
    ]
   },
   {
@@ -611,15 +598,15 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 7,
-   "last_min": 155,
+   "last_min": 168,
    "cur": "🧵 xmas1121 쓰레드 단독 상품글 게시(승인 도장 11-",
    "lvl": "amber"
   },
   {
    "who": "3.세션",
-   "state": "현장(진행)",
+   "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 24,
+   "last_min": 36,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -627,7 +614,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 389,
+   "last_min": 401,
    "cur": "",
    "lvl": "ok"
   },
@@ -635,7 +622,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 17,
+   "last_min": 29,
    "cur": "23:4x 이부장 겹침 권고(idaeri-1124-234100",
    "lvl": "ok"
   },
@@ -651,64 +638,16 @@
    "lvl": "ok"
   }
  ],
- "topics": [
-  {
-   "code": "B2-29",
-   "title": "불법추심 피해 신고 어디로 — 1332·서민금융1332·지자체 대부업 신",
-   "src": "3.",
-   "state": "선별",
-   "at": "2026-11-24T17:22"
-  },
-  {
-   "code": "B5-15",
-   "title": "불법추심 피해 신고 어디로 — 1332·서민금융1332·지자체 대부업 신",
-   "src": "3.",
-   "state": "버림",
-   "at": "2026-11-24T17:20"
-  },
-  {
-   "code": "A2-34",
-   "title": "국민연금 군복무·출산 크레딧 확대 — 2027년 1월 1일부터 몇 개월 ",
-   "src": "3.",
-   "state": "소진",
-   "at": "2026-11-24T12:14"
-  },
-  {
-   "code": "B2-28",
-   "title": "은행 약관 이 문구 있으면 부당합니다 — 해지는 영업점만·별도 통지 없이",
-   "src": "lifeinfo-daily-topics",
-   "state": "버림",
-   "at": "2026-11-24T09:32"
-  },
-  {
-   "code": "A1-28",
-   "title": "2027 국가장학금 1학기 신청 1월 7일 마감 — 9구간까지 늘고 10",
-   "src": "lifeinfo-daily-topics",
-   "state": "소진",
-   "at": "2026-11-24T09:29"
-  },
-  {
-   "code": "D1-28",
-   "title": "수능 부정행위 신고 포상금 1억~5억 — 신고만 하면 받나? 지급 조건과",
-   "src": "lifeinfo-daily-publish",
-   "state": "소진",
-   "at": "2026-11-24T00:13"
-  }
- ],
+ "topics": [],
  "kpi": {
-  "today": "2026-11-24",
-  "done_today": 4,
-  "done_codes": [
-   "A1-28",
-   "A2-34",
-   "D1-28",
-   "H1-46"
-  ],
-  "published_today": 4,
+  "today": "2026-11-25",
+  "done_today": 0,
+  "done_codes": [],
+  "published_today": 1,
   "boss_wait": 3,
   "incidents_by_code": {
    "0": 0,
-   "1": 5,
+   "1": 7,
    "2": 1,
    "3": 0
   }
@@ -716,6 +655,13 @@
  "channels": {
   "blog": {
    "done": [
+    {
+     "code": "B2-29",
+     "title": "불법추심 신고 어디로 — 1332·지자체·경찰 상황별 ",
+     "url": "https://lifeinfo8975.blogspot.com/2026/11/1332-2026.html",
+     "at": "2026-11-25",
+     "who": ""
+    },
     {
      "code": "A1-28",
      "title": "2027 국가장학금 신청 — 1월 7일 18시 마감, ",
@@ -813,28 +759,9 @@
      "url": "https://lifeinfo8975.blogspot.com/2026/11/90-75120-12-3.html",
      "at": "2026-11-22",
      "who": ""
-    },
-    {
-     "code": "A2-33",
-     "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·",
-     "url": "https://lifeinfo8975.blogspot.com/2026/11/6-635.html",
-     "at": "2026-11-21",
-     "who": ""
-    },
-    {
-     "code": "H1-44",
-     "title": "결혼식 보증인원 줄일 수 있나 — 스튜디오 사진파일 따",
-     "url": "https://lifeinfo8975.blogspot.com/2026/11/163.html",
-     "at": "2026-11-21",
-     "who": ""
     }
    ],
-   "wait": [
-    {
-     "code": "B2-29",
-     "title": "⏳ 자정 발행 예정 · 불법추심 신고 어디로 — 1332·지자체·경"
-    }
-   ]
+   "wait": []
   },
   "naver": {
    "done": [
@@ -935,23 +862,14 @@
      "url": "https://blog.naver.com/magsori8975/224486672558",
      "at": "2026-11-22",
      "who": "lee"
-    },
-    {
-     "code": "A2-33",
-     "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·",
-     "url": "https://blog.naver.com/magsori8975/224485946111",
-     "at": "2026-11-21",
-     "who": "lee"
-    },
-    {
-     "code": "H1-44",
-     "title": "결혼식 보증인원 줄일 수 있나 — 스튜디오 사진파일 따",
-     "url": "https://blog.naver.com/magsori8975/224485920222",
-     "at": "2026-11-21",
-     "who": "lee"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "B2-29",
+     "title": "불법추심 신고 어디로 — 1332·지자체·경찰 상황별 "
+    }
+   ]
   },
   "insta": {
    "done": [
@@ -1052,23 +970,14 @@
      "url": "https://www.instagram.com/magsori8975/p/DgBKZZOE2Wr/",
      "at": "2026-11-22",
      "who": ""
-    },
-    {
-     "code": "A2-33",
-     "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·",
-     "url": "https://www.instagram.com/magsori8975/p/Df_bsdzETld/",
-     "at": "2026-11-21",
-     "who": ""
-    },
-    {
-     "code": "H1-44",
-     "title": "결혼식 보증인원 줄일 수 있나 — 스튜디오 사진파일 따",
-     "url": "https://www.instagram.com/magsori8975/p/Df_Yjp9keCV/",
-     "at": "2026-11-21",
-     "who": "lee"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "B2-29",
+     "title": "불법추심 신고 어디로 — 1332·지자체·경찰 상황별 "
+    }
+   ]
   },
   "threads": {
    "done": [
@@ -1169,220 +1078,19 @@
      "url": "https://www.threads.com/@magsori8975/post/DgBK1hUAcxc",
      "at": "2026-11-22",
      "who": ""
-    },
-    {
-     "code": "A2-33",
-     "title": "민주유공자법 내용 — 내년 6월 등록, 대상 635명·",
-     "url": "https://www.threads.com/@magsori8975/post/Df_cBqqAYkV",
-     "at": "2026-11-21",
-     "who": "lee"
-    },
-    {
-     "code": "H1-44",
-     "title": "결혼식 보증인원 줄일 수 있나 — 스튜디오 사진파일 따",
-     "url": "https://www.threads.com/@magsori8975/post/Df_ZhGJgRLx",
-     "at": "2026-11-21",
-     "who": "lee"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "B2-29",
+     "title": "불법추심 신고 어디로 — 1332·지자체·경찰 상황별 "
+    }
+   ]
   }
  },
  "today_events": [
   {
-   "code": "H1-46",
-   "stage": "blog",
-   "at": "2026-11-24 00:06:22",
-   "src": "now_log 발행 완료"
-  },
-  {
-   "code": "H1-46",
-   "stage": "naver",
-   "at": "2026-11-24 00:10:11",
-   "src": "now_log 게시 URL",
-   "who": "lee"
-  },
-  {
-   "code": "D1-28",
-   "stage": "topic",
-   "at": "2026-11-24 00:12:47",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "D1-28",
-   "stage": "proc",
-   "at": "2026-11-24 00:13:44",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "H1-46",
-   "stage": "insta",
-   "at": "2026-11-24 00:15:22",
-   "src": "now_log 게시 URL",
-   "who": ""
-  },
-  {
-   "code": "H1-46",
-   "stage": "threads",
-   "at": "2026-11-24 00:20:33",
-   "src": "now_log 게시 URL",
-   "who": ""
-  },
-  {
-   "code": "D1-28",
-   "stage": "boss",
-   "at": "2026-11-24 00:20:39",
-   "src": "V0 통과"
-  },
-  {
-   "code": "A1-28",
-   "stage": "topic",
-   "at": "2026-11-24 09:27:32",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "B2-28",
-   "stage": "topic",
-   "at": "2026-11-24 09:27:59",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "A1-28",
-   "stage": "proc",
-   "at": "2026-11-24 09:29:05",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "D1-28",
-   "stage": "naver",
-   "at": "2026-11-24 09:51:28",
-   "src": "now_log 게시 URL",
-   "who": "lee"
-  },
-  {
-   "code": "A1-28",
-   "stage": "boss",
-   "at": "2026-11-24 09:58:37",
-   "src": "V0 통과"
-  },
-  {
-   "code": "D1-28",
-   "stage": "insta",
-   "at": "2026-11-24 10:06:19",
-   "src": "now_log 게시 URL",
-   "who": ""
-  },
-  {
-   "code": "A1-28",
-   "stage": "naver",
-   "at": "2026-11-24 10:16:57",
-   "src": "now_log 게시 URL",
-   "who": "lee"
-  },
-  {
-   "code": "A1-28",
-   "stage": "insta",
-   "at": "2026-11-24 10:22:00",
-   "src": "now_log 게시 URL",
-   "who": ""
-  },
-  {
-   "code": "A2-34",
-   "stage": "topic",
-   "at": "2026-11-24 12:07:24",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "A2-34",
-   "stage": "proc",
-   "at": "2026-11-24 12:14:35",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "A2-34",
-   "stage": "boss",
-   "at": "2026-11-24 12:57:45",
-   "src": "V0 통과"
-  },
-  {
-   "code": "A2-34",
-   "stage": "naver",
-   "at": "2026-11-24 13:23:51",
-   "src": "now_log 게시 URL",
-   "who": "lee"
-  },
-  {
-   "code": "A2-34",
-   "stage": "insta",
-   "at": "2026-11-24 13:29:06",
-   "src": "now_log 게시 URL",
-   "who": ""
-  },
-  {
-   "code": "B5-15",
-   "stage": "topic",
-   "at": "2026-11-24 17:13:32",
-   "src": "topicprop 제안"
-  },
-  {
    "code": "B2-29",
-   "stage": "topic",
-   "at": "2026-11-24 17:22:04",
-   "src": "topicprop 제안"
-  },
-  {
-   "code": "B2-29",
-   "stage": "proc",
-   "at": "2026-11-24 17:22:41",
-   "src": "topicprop 선별"
-  },
-  {
-   "code": "B2-29",
-   "stage": "boss",
-   "at": "2026-11-24 17:30:26",
-   "src": "V0 통과"
-  },
-  {
-   "code": "B2-29",
-   "stage": "pub",
-   "at": "2026-11-24 17:32:20",
-   "src": "결재 도장"
-  },
-  {
-   "code": "A1-28",
-   "stage": "threads",
-   "at": "",
-   "src": "DB osmu_at(날짜뿐)",
-   "who": ""
-  },
-  {
-   "code": "A1-28",
-   "stage": "blog",
-   "at": "",
-   "src": "pub_dates(날짜뿐)"
-  },
-  {
-   "code": "A2-34",
-   "stage": "threads",
-   "at": "",
-   "src": "DB osmu_at(날짜뿐)",
-   "who": ""
-  },
-  {
-   "code": "A2-34",
-   "stage": "blog",
-   "at": "",
-   "src": "pub_dates(날짜뿐)"
-  },
-  {
-   "code": "D1-28",
-   "stage": "threads",
-   "at": "",
-   "src": "DB osmu_at(날짜뿐)",
-   "who": ""
-  },
-  {
-   "code": "D1-28",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -1391,14 +1099,6 @@
  "approvals": [
   {
    "no": 1,
-   "kind": "🚀⑧발행실행",
-   "id": "B2-29",
-   "what": "🔴6시간째 불법추심 신고 어디로 — 1332·지자체·경찰 상황별 판정표 (2026)",
-   "by": "이과장",
-   "waited": "🔴6시간째"
-  },
-  {
-   "no": 2,
    "kind": "🙋승인",
    "id": "aroma-am-sp-025-approve-1125",
    "what": "【권고】AM-SP-025 2026 KBO 시상식 — MVP 후보 14명,",
@@ -1406,7 +1106,7 @@
    "waited": ""
   },
   {
-   "no": 3,
+   "no": 2,
    "kind": "🙋승인",
    "id": "aroma-am-pe-021-approve-1125",
    "what": "【권고】AM-PE-021 변우석 팬미팅 앙코르 — 전석 110,000원,",
@@ -1414,7 +1114,7 @@
    "waited": ""
   },
   {
-   "no": 4,
+   "no": 3,
    "kind": "🙋승인",
    "id": "aroma-am-dg-019-approve-1125",
    "what": "【권고】AM-DG-019 GTA6 플레이타임 평균 17.4시간 — PS5",
@@ -1423,10 +1123,9 @@
   }
  ],
  "stage_of": {
-  "B2-29": "발행",
+  "B2-29": "4채널",
   "A1-27": "완결",
   "A1-28": "완결",
-  "A2-33": "완결",
   "A2-34": "완결",
   "B4-37": "완결",
   "C2-30": "완결",
@@ -1437,7 +1136,6 @@
   "E2-19": "완결",
   "F4-34": "완결",
   "F4-35": "완결",
-  "H1-44": "완결",
   "H1-45": "완결",
   "H1-46": "완결"
  },
@@ -1460,26 +1158,10 @@
     "attached": 0,
     "live": null
    },
-   "A2-33": {
-    "stage": "no_fit",
-    "icon": "☑️",
-    "label": "붙일 것 없음",
-    "links": 0,
-    "attached": 0,
-    "live": null
-   },
    "A2-34": {
     "stage": "no_fit",
     "icon": "☑️",
     "label": "붙일 것 없음",
-    "links": 0,
-    "attached": 0,
-    "live": null
-   },
-   "B2-28": {
-    "stage": "none",
-    "icon": "⬜",
-    "label": "미조사",
     "links": 0,
     "attached": 0,
     "live": null
@@ -1493,14 +1175,6 @@
     "live": null
    },
    "B4-37": {
-    "stage": "none",
-    "icon": "⬜",
-    "label": "미조사",
-    "links": 0,
-    "attached": 0,
-    "live": null
-   },
-   "B5-15": {
     "stage": "none",
     "icon": "⬜",
     "label": "미조사",
@@ -1572,14 +1246,6 @@
     "attached": 0,
     "live": null
    },
-   "H1-44": {
-    "stage": "no_fit",
-    "icon": "☑️",
-    "label": "붙일 것 없음",
-    "links": 0,
-    "attached": 0,
-    "live": null
-   },
    "H1-45": {
     "stage": "no_fit",
     "icon": "☑️",
@@ -1606,13 +1272,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "stale",
-  "ok": 6,
+  "state": "bad",
+  "ok": 3,
   "stale": 1,
-  "bad": 0,
-  "na": 0,
-  "at": "2026-11-24 23:51:24",
-  "age_min": 4
+  "bad": 1,
+  "na": 2,
+  "at": "2026-11-24 15:06:08",
+  "age_min": 1
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1699,6 +1365,36 @@
  ],
  "fired": [
   {
+   "day": "2026-11-25",
+   "total": 7,
+   "kinds": [
+    [
+     "CODE_UNVERIFIED",
+     2
+    ],
+    [
+     "FUEL_LOW",
+     1
+    ],
+    [
+     "LANE_IDLE",
+     1
+    ],
+    [
+     "PUBLISH_RUN_DONE",
+     1
+    ],
+    [
+     "REPORT_UNACKED",
+     1
+    ],
+    [
+     "WAKE_SESSION",
+     1
+    ]
+   ]
+  },
+  {
    "day": "2026-11-24",
    "total": 197,
    "kinds": [
@@ -1773,48 +1469,20 @@
      5
     ]
    ]
-  },
-  {
-   "day": "2026-11-22",
-   "total": 304,
-   "kinds": [
-    [
-     "REPORT_UNACKED",
-     74
-    ],
-    [
-     "TOWER_OWED",
-     40
-    ],
-    [
-     "CHKMON_REPORT",
-     26
-    ],
-    [
-     "BOSS_APPROVAL",
-     23
-    ],
-    [
-     "ASIDE_ALERT",
-     21
-    ],
-    [
-     "NEW_BOSS_ITEM",
-     21
-    ],
-    [
-     "BOSS_REMIND",
-     7
-    ],
-    [
-     "CONFIRM_BACKLOG",
-     7
-    ]
-   ]
   }
  ],
  "fired_note": "건별 발화 이력은 저장되지 않음 — 일일 종류별 횟수(towertick counts)만 있음",
  "log": [
+  {
+   "at": "2026-11-25 00:07:24",
+   "sig": "[\"담당 lifeinfo-travel-prep(FGH) 마지막 제안 2026-11-22 (3일째 0건) — 처방: 출입처 보강(docs/출입처_*)·지침 발굴 출발점 점검·원문 직접 조회 여부 확인\", \"사장님 🙋승인 【권고】AM-SP-025 2026 KBO 시상식 — MVP 후보 14명,\", \"사장님 🙋승인 【권고】AM-PE-021 변우석 팬미팅 앙코르 — 전석 110,000원,\", \"사장님 🙋승인 【권고】AM-DG-019 GTA6 플레이타임 평균 17.4시간 — PS5\", \"코드 검증 안 됨 7445ca75c 2026-11-24 17:44 — [이부장] 사장님이 직접 적용한 DT 훅 패치(17:43) 기록 — settings.json matcher  (이부장: 페이블 독립 검증 맡기기)\", \"코드 검증 안 됨 b455baaa2 2026-11-24 17:15 — [에이전트] 정비 maint1124direct: _trigger_and_wait 큐 항목 없음 분기도 3-튜 (이부장: 페이블 독립 검증 맡기기)\", \"⛽ 연료 없음 — 발행대기 재고 0편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\", \"4채널 미완 B2-29 불법추심 신고 어디로 — 1332·지자체·경찰 상황별 \"]",
+   "n": 8
+  },
+  {
+   "at": "2026-11-25 00:00:12",
+   "sig": "[\"담당 lifeinfo-travel-prep(FGH) 마지막 제안 2026-11-22 (3일째 0건) — 처방: 출입처 보강(docs/출입처_*)·지침 발굴 출발점 점검·원문 직접 조회 여부 확인\", \"사장님 🙋승인 【권고】AM-SP-025 2026 KBO 시상식 — MVP 후보 14명,\", \"사장님 🙋승인 【권고】AM-PE-021 변우석 팬미팅 앙코르 — 전석 110,000원,\", \"사장님 🙋승인 【권고】AM-DG-019 GTA6 플레이타임 평균 17.4시간 — PS5\", \"코드 검증 안 됨 7445ca75c 2026-11-24 17:44 — [이부장] 사장님이 직접 적용한 DT 훅 패치(17:43) 기록 — settings.json matcher  (이부장: 페이블 독립 검증 맡기기)\", \"코드 검증 안 됨 b455baaa2 2026-11-24 17:15 — [에이전트] 정비 maint1124direct: _trigger_and_wait 큐 항목 없음 분기도 3-튜 (이부장: 페이블 독립 검증 맡기기)\", \"⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\"]",
+   "n": 7
+  },
   {
    "at": "2026-11-24 23:25:50",
    "sig": "[\"사장님 🙋승인 【권고】AM-SP-025 2026 KBO 시상식 — MVP 후보 14명,\", \"사장님 🙋승인 【권고】AM-PE-021 변우석 팬미팅 앙코르 — 전석 110,000원,\", \"사장님 🙋승인 【권고】AM-DG-019 GTA6 플레이타임 평균 17.4시간 — PS5\", \"코드 검증 안 됨 7445ca75c 2026-11-24 17:44 — [이부장] 사장님이 직접 적용한 DT 훅 패치(17:43) 기록 — settings.json matcher  (이부장: 페이블 독립 검증 맡기기)\", \"코드 검증 안 됨 b455baaa2 2026-11-24 17:15 — [에이전트] 정비 maint1124direct: _trigger_and_wait 큐 항목 없음 분기도 3-튜 (이부장: 페이블 독립 검증 맡기기)\", \"⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\"]",
@@ -1878,16 +1546,6 @@
   {
    "at": "2026-11-24 17:39:47",
    "sig": "[\"이대리 활동 232분째 없음 — 마지막 2026-11-24 13:47 (요청이 없어도 09~23시 중 3시간 넘게 활동 없음 · 별도 프로젝트 현황 파악용 — 이대리에게는 지시가 아니라 문의로 전하고 사장님께 보고)\", \"⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\"]",
-   "n": 2
-  },
-  {
-   "at": "2026-11-24 17:38:25",
-   "sig": "[\"이대리 활동 231분째 없음 — 마지막 2026-11-24 13:47 (요청이 없어도 09~23시 중 3시간 넘게 활동 없음 · 별도 프로젝트 현황 파악용 — 이대리에게는 지시가 아니라 문의로 전하고 사장님께 보고)\", \"⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\"]",
-   "n": 2
-  },
-  {
-   "at": "2026-11-24 17:37:48",
-   "sig": "[\"이대리 활동 230분째 없음 — 마지막 2026-11-24 13:47 (요청이 없어도 09~23시 중 3시간 넘게 활동 없음 · 별도 프로젝트 현황 파악용 — 이대리에게는 지시가 아니라 문의로 전하고 사장님께 보고)\", \"⛽ 연료 부족 — 발행대기 재고 1편(하한 3)·제안 대기 0건: 글감 선별·초안이 들어와야 엔진이 돈다\"]",
    "n": 2
   }
  ]
