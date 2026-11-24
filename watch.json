@@ -32667,8 +32667,10 @@
    "due": "2026-11-21",
    "cmd": "python data/_exp_b_inspect_1113.py C4-01@m D1-02@m D2-05@m C4-01 D1-02 D2-05",
    "owner": "claude",
-   "state": "wait",
-   "by": "4."
+   "state": "done",
+   "by": "4.",
+   "done_at": "2026-11-24",
+   "result": "11-22 판독(data/_inspect_run_1122_1830.log 21·77행): ?m=1 C4-01·D2-05 = Crawled - currently not indexed. 정규 URL 은 ?m=1 로 잡힘(로그 상태 문자열 기준). 대조표 docs/exp1119m1_req_log.md 「실파일 대조표」"
   },
   {
    "id": "exp1119m1-req-check-1119",
@@ -33292,8 +33294,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | grep exp1119m1",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-24",
+   "result": "11-20 06:30 EXP-M1-1·2·3 표 — 디스크에 해당 절 없음. 확인 못 함"
   },
   {
    "id": "exp1119m1-wake-1130",
@@ -33312,8 +33316,10 @@
    "due": "2026-11-21",
    "cmd": "python -m studio.batchboard show | grep exp1119m1",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-24",
+   "result": "?m=1 +48h 판독 = expA2-m1-48h-1119 와 같은 판독(11-22 로그 21·77행). 별도 11-21 18:35 측정 파일은 없음 — 확인 못 함 표기"
   },
   {
    "id": "exp1119m1-wake-clean-48h",
@@ -33576,8 +33582,10 @@
    "due": "2026-11-20",
    "cmd": "python -m studio.batchboard show | grep exp1119m1",
    "owner": "claude",
-   "state": "wait",
-   "by": "세션:a7dca46f"
+   "state": "done",
+   "by": "세션:a7dca46f",
+   "done_at": "2026-11-24",
+   "result": "D5-09·G4-14 4h 판독 값 파일 없음 — 못 쟀다. 실파일 크롤 시각은 docs/exp1119m1_req_log.md 「실파일 대조표」(D5-09 11-20 07:07 · G4-14 07:16)"
   },
   {
    "id": "exp1119m1-wake-new48h-1122",
@@ -34796,8 +34804,10 @@
    "due": "2026-11-21",
    "cmd": "python -m studio.batchboard order --id exp1119m1",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-24",
+   "result": "4h 판독 값 파일 없음 — 못 쟀다. 대신 48h 판독(11-23 18:08) 기록: docs/exp1119m1_req_log.md 「48h 판독 — 클린 URL 요청분」"
   },
   {
    "id": "exp1119m1-clean-48h-1123",
@@ -36846,9 +36856,11 @@
    "due": "2026-11-25",
    "cmd": "python -m unittest tests.test_studio_pure 2>&1 | tail -3",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "kind": "action",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-24",
+   "result": "17:17 이부장: docs/검증_DT2_직접발행_20261124.md 에 c5c1df72a 독립 검증(조건부, 필수 3건) 기록·필수 수정은 e50b73f77 에서 ✅ 재검증(docs/검증_DT2수정_e50b73f77_20261124.md)"
   },
   {
    "id": "verify-86e1cfc35-hookpatch",
@@ -36862,6 +36874,26 @@
    "by": "이부장",
    "done_at": "2026-11-24",
    "result": "15:2x 이부장 직접 검증: apply --check RC 0 · dtguard_rule 시험 5건 OK · approve_server 라우트 /api/approve(1034)·/api/dt_token(1021) 일치. 한계: 패치 적용 뒤 새 세션 수동 시험은 사장님 적용 후"
+  },
+  {
+   "id": "verify-exp1122read-1124",
+   "added": "2026-11-24",
+   "what": "exp1122read 검수 ❌ 4건: 밀린 판독 13URL 절 부재(req_log)·11-22 판독 절 미추가·판독 대응 watch 미닫힘(expA2-m1-48h-1119·exp1119m1-wake-m1-48h·exp1119m1-clean-4h-1121·theme-alt-48h-1122 외)·원고 확정 크롤시각 출처 부재",
+   "due": "2026-11-24",
+   "cmd": "grep -n 밀린 판독 docs/exp1119m1_req_log.md; python -m studio.watch | grep -E 'exp1119m1|expA2|theme-alt'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-559",
+   "added": "2026-11-24",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(559_illegal_collection.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }

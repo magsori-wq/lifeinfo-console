@@ -7656,6 +7656,70 @@
    "target": "verify-86e1cfc35-hookpatch",
    "detail": "15:2x 이부장 직접 검증: apply --check RC 0 · dtguard_rule 시험 5건 OK · approve_server 라우트 /api/approve(1034)·/api/dt_token(1021) 일치. 한계: 패치 적용 뒤 새 세션 수동 시험은 사장님 적용 후",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:15:06",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "expA2-m1-48h-1119",
+   "detail": "11-22 판독(data/_inspect_run_1122_1830.log 21·77행): ?m=1 C4-01·D2-05 = Crawled - currently not indexed. 정규 URL 은 ?m=1 로 잡힘(로그 상태 문자열 기준). 대조표 docs/exp1119m1_req_log.md 「실파일 대조표」",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:15:16",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-wake-m1-48h",
+   "detail": "?m=1 +48h 판독 = expA2-m1-48h-1119 와 같은 판독(11-22 로그 21·77행). 별도 11-21 18:35 측정 파일은 없음 — 확인 못 함 표기",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:15:24",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-clean-4h-1121",
+   "detail": "4h 판독 값 파일 없음 — 못 쟀다. 대신 48h 판독(11-23 18:08) 기록: docs/exp1119m1_req_log.md 「48h 판독 — 클린 URL 요청분」",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:15:32",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-wake-new4h-1100",
+   "detail": "D5-09·G4-14 4h 판독 값 파일 없음 — 못 쟀다. 실파일 크롤 시각은 docs/exp1119m1_req_log.md 「실파일 대조표」(D5-09 11-20 07:07 · G4-14 07:16)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:15:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "exp1119m1-wake-0630",
+   "detail": "11-20 06:30 EXP-M1-1·2·3 표 — 디스크에 해당 절 없음. 확인 못 함",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:16:00",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-c5c1df72a-dt2",
+   "detail": "17:17 이부장: docs/검증_DT2_직접발행_20261124.md 에 c5c1df72a 독립 검증(조건부, 필수 3건) 기록·필수 수정은 e50b73f77 에서 ✅ 재검증(docs/검증_DT2수정_e50b73f77_20261124.md)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:21:50",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "B5-15",
+   "detail": "코드 재배정 — B5(주거금융·보증) 아닌 B2(금융·은행)로 B2-28 재등록",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-24T17:30:26",
+   "actor": "v0 에이전트(이부장 호출)",
+   "action": "v0check.pass",
+   "target": "B2-29",
+   "detail": "판단형 비교(상황별 신고처 판정표 5행, 1332·시청구청·112·경찰 지능범죄수사팀) + 함정 3개(사설업체 수수료·소멸시효 5년·변제 입증) + 가상 사례 표시된 기록 일지에서 9시~8시 판정을 시각(22:23·07:40)으로 적용. 연락처 6개·조문·벌칙 원문 일치, 접수 후 절차",
+   "via": "cli"
   }
  ]
 }
