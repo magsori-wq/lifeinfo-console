@@ -37038,12 +37038,22 @@
   {
    "id": "xlink-b229",
    "added": "2026-11-25",
-   "what": "🔗 B2-29 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B2-29",
+   "what": "🔗 B2-29 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B2-29",
    "due": "2026-11-25",
    "cmd": "python studio/blogger.py crosslink --code B2-29",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "sedae-after1130-1125",
+   "added": "2026-11-25",
+   "what": "소방세대점검 과태료 유예 11-30 종료 뒤 — 소방청·부산119 공지로 연장/종료/완화 확정 여부 확인, 확정되면 새 각도 글감(D3-11 과 겹치지 않게 '유예 끝난 뒤')",
+   "due": "2026-12-01",
+   "cmd": "python -m studio.dupcheck '세대 소방점검 과태료 유예 연장'",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
