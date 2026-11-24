@@ -36763,6 +36763,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "publish-allow-a234-1124",
+   "added": "2026-11-24",
+   "what": "【A2-34 발행 트리거 허용】 A2-34 「국민연금 10년 문턱 — 군복무·출산 크레딧 판정표 (2027)」 는 사장님이 12:58 CP 로 발행 승인(도장 완료)했고 V0 🟡 통과·pubready 전 항목 ✅인데, 자동 모드 분류기가 발행 트리거(gh workflow run publish.yml)를 「Destructive or Unwanted」로 막았습니다. 【권고】허용 — 승인 완료 글의 발행 실행입니다(아침 D1-28·A1-28 은 같은 명령이 통과). 【근거】도장·V0·원격 일치·제휴 기록·17:00 시계 안(pubready). 【위험】라이브 발행은 되돌릴 수 없으나 원고는 사장님 승인본 + V0 통과본이고 제목·내용 변경 없음 · 승인 뒤 바뀐 것은 115줄 안내 문구 한 줄(V0 제안 문구, 사실 불변)뿐입니다. ※ 이 분류기는 CP 결재만으로 안 풀릴 수 있어 채팅에도 「A2-34 발행 허용」 한 줄이 필요할 수 있습니다.",
+   "due": "2026-11-24",
+   "cmd": "gh workflow run publish.yml -R magsori-wq/lifeinfo-source -f code=A2-34 -f mode=live -f confirm=PUBLISH -f file='국민연금10년문턱군복무출산크레딧2027_글_HTML.txt' -f title='국민연금 10년 문턱 판정표' -f post_title='국민연금 10년 문턱 — 군복무·출산 크레딧 판정표 (2027)'",
+   "owner": "user",
+   "state": "wait",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
