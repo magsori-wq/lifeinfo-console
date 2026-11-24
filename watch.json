@@ -36804,12 +36804,23 @@
   {
    "id": "xlink-a234",
    "added": "2026-11-24",
-   "what": "🔗 A2-34 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-34",
+   "what": "🔗 A2-34 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-34",
    "due": "2026-11-24",
    "cmd": "python studio/blogger.py crosslink --code A2-34",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "dt-hook-approve-1124",
+   "added": "2026-11-24",
+   "what": "【발행 자동 실행 안전장치 — 세션의 호출 차단 훅 추가 승인】 「CP 승인 → 서버 직접 발행」 설계(어드바이저 검증 반영, 설계도 DT)에서 사장님 클릭과 세션의 curl 을 못 가르는 구멍을 막는 마지막 층입니다: PreToolUse 훅(towerguard/bashguard)에 「세션이 127.0.0.1:8011 의 publish_go 를 호출하는 명령」을 실행 전에 막는 규칙을 넣습니다. 훅·설정 파일은 보호 파일이라 세션(정비 포함)이 고칠 수 없고 사장님만 적용할 수 있습니다. 【권고】승인 — 이 규칙이 들어가야 「분류기 우회 아님」이 사실이 됩니다(없으면 자동 발행을 켜지 않습니다). 승인하시면 정비가 패치 파일(docs/patch_towerguard_dt_1124.txt, 적용은 안 함)을 만들고 적용 방법을 한 줄로 드립니다. 【근거】어드바이저 검증: _local_only 는 이 PC 의 모든 프로세스가 8011 을 부를 수 있어 세션이 curl 한 줄로 라이브 발행을 일으킬 수 있음. 【위험】훅이 너무 넓으면 정상 CP 사용까지 막을 수 있어 규칙은 publish_go 호출 문자열만 겨냥하고 시험을 붙입니다 · 승인 전에는 아무것도 바뀌지 않습니다.",
+   "due": "2026-11-25",
+   "cmd": "정비가 docs/patch_towerguard_dt_1124.txt 작성(승인 뒤) — 적용은 사장님",
+   "owner": "user",
+   "state": "wait",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
