@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-11-24T15:06:12",
+ "checked_at": "2026-11-25T00:42:56",
  "light": "yellow",
  "pass": 15,
- "warn": 3,
+ "warn": 4,
  "fail": 0,
  "checks": [
   {
@@ -23,11 +23,15 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (1716개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (1719개 확산링크)"
   },
   {
    "level": "PASS",
    "msg": "대분류 9개 (7±2 이내)"
+  },
+  {
+   "level": "PASS",
+   "msg": "OSMU 교차링크 연계 통과: 574개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
@@ -47,15 +51,11 @@
   },
   {
    "level": "PASS",
-   "msg": "작업트리 손실 없음: 사라진 추적파일 0개"
-  },
-  {
-   "level": "PASS",
    "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
   },
   {
    "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 448종"
+   "msg": "초안 코드 1:1 통과: 450종"
   },
   {
    "level": "PASS",
@@ -63,7 +63,7 @@
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 1078개 .py"
+   "msg": "소스 구문 통과: 1087개 .py"
   },
   {
    "level": "WARN",
@@ -71,11 +71,15 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 314개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
+   "msg": "미사용 썸네일 326개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
   },
   {
    "level": "WARN",
    "msg": "중분류 27/35개가 6~7편 초과 — 분가 검토(규칙 §5): H1 42편, G3 37편, F4 34편, B4 33편, C2 27편, D1 26편, B2 25편, A2 25편, A1 25편, F1 23편, A5 22편, G1 18편, D2 18편, E2 17편, F2 16편, G4 15편, F3 15편, D4 15편, A3 15편, D3 14편, C1 14편, E4 13편, B1 12편, C4 10편, C3 9편, A4 9편, B5 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "추적파일 1개가 작업트리에서 사라짐 — 의도한 삭제면 git rm 로 스테이징할 것"
   }
  ]
 }
