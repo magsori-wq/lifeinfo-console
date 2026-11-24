@@ -36994,6 +36994,56 @@
    "state": "todo",
    "by": "세션:4c58b6cc",
    "preview": "aromapv_AM-DG-019.html"
+  },
+  {
+   "id": "rare77-attach-20261125",
+   "added": "2026-11-25",
+   "what": "희귀질환 77개 신규 지정: 질병청 보도자료 첨부·명단 미확보(korea.kr 첨부 0, kdca 목록 404). 산정특례 심의(11월 말) 결과도 대기",
+   "due": "2026-11-30",
+   "cmd": "python tools/aside_read.py \"https://www.korea.kr/news/policyNewsView.do?newsId=148976393\" --wait 6 --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:6467e3fa"
+  },
+  {
+   "id": "nfa-sedae-after-1130",
+   "added": "2026-11-25",
+   "what": "소방청 세대점검 과태료 유예 2026-11-30 종료 뒤 추가 연장·10만원 완화 확정 여부 미확인(보도자료 2025-12-19 만 확보, 부산소방 119.busan.go.kr curl SSL 실패 후 Aside 미시도)",
+   "due": "2026-12-01",
+   "cmd": "nfa.go.kr 보도자료 게시판 최신쪽에서 세대점검 제목 확인 + 소방시설법 시행규칙 별표 과태료",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "source-e-ai-cheat-tip-1125",
+   "added": "2026-11-25",
+   "what": "국가자격시험 AI 부정행위 대책(11-24 노동부): 제보센터 연락처·신고 URL 원문에 없음, 전파탐지기 등 추진형",
+   "due": "2026-12-02",
+   "cmd": "curl -sL -A Mozilla/5.0 https://www.korea.kr/news/policyNewsView.do?newsId=148976381 | grep -c 제보센터",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:6467e3fa"
+  },
+  {
+   "id": "korail-seol2027-notice",
+   "added": "2026-11-25",
+   "what": "코레일 2027 설 승차권 예매 공지 미게시(11-25 확인: info.korail.com 보도자료 bbsNo=199·공지 bbsNo=200 최신 목록에 없음). korail.com 쪽은 Aside 잠금으로 못 엶",
+   "due": "2026-12-15",
+   "cmd": "curl -s -A Mozilla/5.0 'https://info.korail.com/info/selectBbsNttList.do?bbsNo=199&key=911' 에서 설 승차권 제목 확인",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "xlink-b229",
+   "added": "2026-11-25",
+   "what": "🔗 B2-29 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B2-29",
+   "due": "2026-11-25",
+   "cmd": "python studio/blogger.py crosslink --code B2-29",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }

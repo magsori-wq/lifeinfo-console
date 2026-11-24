@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24 23:55",
+ "generated": "2026-11-25 00:15",
  "routines": [
   {
    "num": 1,
@@ -85,8 +85,8 @@
    "last": "11/24 09:01",
    "next": "11/25 09:00",
    "model": "sonnet-5-5",
-   "report_day": "1110",
-   "report": "빈손 — 큐 0건·승인 도장 글 없음(pubqueue list 0, pace 오늘 0편). 이어받음: 11-09 H1-39·A5-20·A5-21 발행 완료. 새로 본 것: 진행 중 publish run 없음, 발행 트리거 대상 없음. 정체 지시서는 주차(⏸)만",
+   "report_day": "",
+   "report": "",
    "runs": [
     {
      "at": "11/24 09:03",
@@ -196,12 +196,17 @@
    "name": "6-Lifeinfo daily publish",
    "id": "lifeinfo-daily-publish",
    "on": true,
-   "last": "11/24 00:06",
+   "last": "11/25 00:07",
    "next": "11/25 23:55",
    "model": "sonnet-5-5",
-   "report_day": "1124",
-   "report": "[조사장부] 목록 4(korea.kr 정책뉴스·보도자료·kwgap·kwgap --sa) · 원문 2(docs/source_D_수능부정행위신고포상금_20261124.md · docs/source_E_한전개인정보유출_20261124.md) · 후보 2 · 탈락 1 · 검색어 5 · 유입 1. 채택: D1-28 수능 부정행위 신고 포상금(권익위 11-23, 자동완성 '수능 부정행위 1억' ✅, 포상금 기발행 0건) → pick·verify·초안·썸네일556·pubqueue·affiliate none·V0 🟢pass(V0검사관) → 결재함 발행카드 상정됨. 하한1억 조문근거·가산산식·신청기한은 원문에 없어 본문에 공개. 탈락: 한전 개인정보 유출(조사 착수 11-23) — 기발행 E4-08·E2-16 과 훅 겹침, 조건부(watch han-jeon-leak-review-1124). 이과장 draft1124d128 은 중복 작성 금지로 기록함. 재고 하한 3 대비 1.",
+   "report_day": "1125",
+   "report": "[조사장부] 목록 6(korea.kr 정책뉴스·보도자료·식약처·복지부·건보공단·kwgap/--trend/--sa; 질병청·과기부 미열림) · 원문 2(docs/source_C_희귀질환77_20261125.md · docs/source_E_자격시험AI부정행위_20261125.md) · 후보 2 · 탈락 3 · 검색어 5 · 유입 0. 제안: D1-29 국가자격시험 부정행위 응시제한 3→10년(고용부 11-24, 즉시적용 vs 계획 구분, 실검색어 자동완성 ✅). 탈락: 희귀질환 77개 신규지정(명단·신청기한 원문 못 얻음 — 질병청 404·첨부 0, 본인부담 7% 부분은 C1-19 중복, watch rare77-attach-20261125) · 공무원 난임휴직(A5-18 기발행) · 수능 부정행위 포상금(D1-28 기발행). 재고 0<하한 3. 초안·선별은 이부장 몫.",
    "runs": [
+    {
+     "at": "11/25 00:15",
+     "link": "claude://claude.ai/epitaxy/local_ccb7880f-6ced-461d-a5c3-255b6a7b1e4a",
+     "archived": false
+    },
     {
      "at": "11/24 00:21",
      "link": "claude://claude.ai/epitaxy/local_2b61d34a-a0fb-4b7e-9ab5-6f91370a0757",
@@ -220,11 +225,6 @@
     {
      "at": "11/21 00:09",
      "link": "claude://claude.ai/epitaxy/local_f5c59c36-7aac-4f34-b3b5-da6adaf83a86",
-     "archived": true
-    },
-    {
-     "at": "11/20 00:17",
-     "link": "claude://claude.ai/epitaxy/local_993cda7f-e5fc-4a08-ad23-d63ac124d39a",
      "archived": true
     }
    ]
