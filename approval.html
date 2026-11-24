@@ -451,9 +451,14 @@ async function send(a,c,why,el){
   var back = el.dataset.old || el.textContent;      // 무장 전 원래 글씨
   el.disabled=true; el.textContent='처리 중…';
   try{
+    var tok=null;
+    if(a==='publish_go'){   // 설계도 DT — 이 클릭만 쥔 일회용 토큰(서버가 Origin 확인 후 발급·60초). 못 받으면 도장만 찍힌다.
+      try{ var tr=await fetch(API+'/api/dt_token',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({code:c})}); var td=await tr.json(); if(td.ok) tok=td.token; }catch(e){}
+    }
     var r=await fetch(API+'/api/approve',{method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({action:a,code:c,why:why})});
+      body:JSON.stringify({action:a,code:c,why:why,dt_token:tok})});
     var d=await r.json();
     if(d.ok && d.already){
       // 🔴 2026-09-10 사장님 지적: "두번,세번 다 누르면 명령이 실행되네! 버그야?"
