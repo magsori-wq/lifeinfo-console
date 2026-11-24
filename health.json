@@ -1,13 +1,13 @@
 {
- "checked_at": "2026-11-24T06:00:42",
+ "checked_at": "2026-11-24T00:42:04",
  "light": "yellow",
  "pass": 15,
- "warn": 4,
+ "warn": 3,
  "fail": 0,
  "checks": [
   {
    "level": "PASS",
-   "msg": "count 일치: 570편"
+   "msg": "count 일치: 571편"
   },
   {
    "level": "PASS",
@@ -15,7 +15,7 @@
   },
   {
    "level": "PASS",
-   "msg": "thumb 1:1 정합 통과: 570/570"
+   "msg": "thumb 1:1 정합 통과: 571/571"
   },
   {
    "level": "PASS",
@@ -31,15 +31,11 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU 교차링크 연계 통과: 570개 코드 모두 DB.osmu 일치"
+   "msg": "매니페스트 신선도 통과: 571편 DB와 일치"
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 570편 DB와 일치"
-  },
-  {
-   "level": "PASS",
-   "msg": "posts_index 신선도 통과: 570편 DB와 일치"
+   "msg": "posts_index 신선도 통과: 571편 DB와 일치"
   },
   {
    "level": "PASS",
@@ -47,7 +43,11 @@
   },
   {
    "level": "PASS",
-   "msg": "원본가치 게이트 통과: 422편(신규 글, 148편은 기존 글로 예외)"
+   "msg": "원본가치 게이트 통과: 423편(신규 글, 148편은 기존 글로 예외)"
+  },
+  {
+   "level": "PASS",
+   "msg": "작업트리 손실 없음: 사라진 추적파일 0개"
   },
   {
    "level": "PASS",
@@ -55,7 +55,7 @@
   },
   {
    "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 445종"
+   "msg": "초안 코드 1:1 통과: 444종"
   },
   {
    "level": "PASS",
@@ -63,7 +63,7 @@
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 1078개 .py"
+   "msg": "소스 구문 통과: 1070개 .py"
   },
   {
    "level": "WARN",
@@ -71,15 +71,11 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 325개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
+   "msg": "미사용 썸네일 314개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
   },
   {
    "level": "WARN",
-   "msg": "중분류 27/35개가 6~7편 초과 — 분가 검토(규칙 §5): H1 42편, G3 37편, F4 34편, B4 33편, C2 27편, D1 25편, B2 24편, A2 24편, A1 24편, F1 23편, A5 22편, G1 18편, D2 18편, E2 17편, F2 16편, G4 15편, F3 15편, D4 15편, A3 15편, D3 14편, C1 14편, E4 13편, B1 12편, C4 10편, C3 9편, A4 9편, B5 8편"
-  },
-  {
-   "level": "WARN",
-   "msg": "추적파일 1개가 작업트리에서 사라짐 — 의도한 삭제면 git rm 로 스테이징할 것"
+   "msg": "중분류 27/35개가 6~7편 초과 — 분가 검토(규칙 §5): H1 42편, G3 37편, F4 34편, B4 33편, C2 27편, D1 26편, B2 24편, A2 24편, A1 24편, F1 23편, A5 22편, G1 18편, D2 18편, E2 17편, F2 16편, G4 15편, F3 15편, D4 15편, A3 15편, D3 14편, C1 14편, E4 13편, B1 12편, C4 10편, C3 9편, A4 9편, B5 8편"
   }
  ]
 }
