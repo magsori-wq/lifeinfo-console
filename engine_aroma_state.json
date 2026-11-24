@@ -1,7 +1,23 @@
 {
- "at": "2026-11-24 09:33:04",
+ "at": "2026-11-24 09:34:08",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-SP-024",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-024-approve-1123",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-24"
+    }
+   ],
+   "title": "K리그2PO4팀확정3위구도",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 aba489c6b"
+  },
   {
    "code": "AM-BO-014",
    "approvals": [
@@ -51,23 +67,6 @@
    "stage": "boss_wait",
    "label": "결재 대기",
    "detail": "aroma-am-pe-020-approve-1123",
-   "no_preview": false
-  },
-  {
-   "code": "AM-SP-024",
-   "approvals": [
-    {
-     "id": "aroma-am-sp-024-approve-1123",
-     "state": "todo",
-     "kind": "approve",
-     "at": "2026-11-23"
-    }
-   ],
-   "title": "K리그2PO4팀확정3위구도",
-   "last_file_at": "2026-11-23 23:32",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-sp-024-approve-1123",
    "no_preview": false
   }
  ],
@@ -378,7 +377,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 31,
+  "last_min": 32,
   "cur": "[이부장 09:05 · 어드바이저] 이대리 활동 564분 알림",
   "lvl": "ok"
  },
@@ -390,30 +389,31 @@
    {
     "code": "AM-BO-014",
     "title": "데블스플랜데드어게인러닝타임",
-    "min": 601,
+    "min": 602,
     "lvl": "ok"
    },
    {
     "code": "AM-DG-018",
     "title": "PSPlus블프12개월손익분기",
-    "min": 601,
+    "min": 602,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-020",
     "title": "임영웅영화개봉5일추이",
-    "min": 601,
-    "lvl": "ok"
-   },
-   {
-    "code": "AM-SP-024",
-    "title": "K리그2PO4팀확정3위구도",
-    "min": 601,
+    "min": 602,
     "lvl": "ok"
    }
   ],
   "deploy": [],
-  "publish": [],
+  "publish": [
+   {
+    "code": "AM-SP-024",
+    "title": "K리그2PO4팀확정3위구도",
+    "min": 0,
+    "lvl": "ok"
+   }
+  ],
   "osmu": []
  },
  "channels": {
@@ -818,7 +818,11 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "AM-SP-024"
+    }
+   ]
   }
  },
  "topics": [],
@@ -832,7 +836,7 @@
   "today": "2026-11-24",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 4,
+  "boss_wait": 3,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -848,7 +852,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 2,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
@@ -856,7 +860,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 31,
+   "last_min": 32,
    "cur": "[이부장 09:05 · 어드바이저] 이대리 활동 564분 알림",
    "lvl": "ok"
   },
@@ -871,7 +875,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 31,
+   "last_min": 32,
    "cur": "[이부장 09:05 · 어드바이저] 이대리 활동 564분 알림",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -892,7 +896,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 4건"
+   "state": "결재 대기 3건"
   }
  ],
  "suppliers": [
@@ -925,13 +929,6 @@
  "approvals": [
   {
    "kind": "aroma",
-   "id": "aroma-am-sp-024-approve-1123",
-   "what": "【권고】AM-SP-024 K리그2 순위 PO 4팀 확정(제 계산) — 3위는 대구 59점·서울E 58점 (스포츠·홈판형) 승인 【근거】관심: 자",
-   "by": "이대리",
-   "waited": ""
-  },
-  {
-   "kind": "aroma",
    "id": "aroma-am-bo-014-approve-1123",
    "what": "【권고】AM-BO-014 데블스 플랜 데드 어게인 몇부작, 등록 10편 14시간 15분·6화 106분 (방송·OTT·검색형) 승인 【근거】관심:",
    "by": "이대리",
@@ -953,7 +950,14 @@
   }
  ],
  "edits": [],
- "today_events": [],
+ "today_events": [
+  {
+   "code": "AM-SP-024",
+   "stage": "boss",
+   "at": "2026-11-24 09:34:00",
+   "src": "결재 커밋 시각"
+  }
+ ],
  "incidents": [],
  "stage_of": {},
  "design_signals": [],
