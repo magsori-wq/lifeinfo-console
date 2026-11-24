@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25 01:44:30",
+ "at": "2026-11-25 02:15:12",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -7,7 +7,7 @@
    {
     "code": "D1-29",
     "title": "국가자격시험 부정행위 응시 제한 3년→10년? 이미 적",
-    "min": 62,
+    "min": 92,
     "lvl": "amber"
    }
   ],
@@ -381,7 +381,7 @@
   {
    "p": 1,
    "what": "사장님 결재 대기 D1-29 국가자격시험 부정행위 응시 제한 3년→10년? 이미 적",
-   "min": 62,
+   "min": 92,
    "owner": "사장님"
   },
   {
@@ -553,7 +553,7 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 5,
-   "last_min": 61,
+   "last_min": 92,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "amber",
    "role": "②처리·④발행 운전"
@@ -562,7 +562,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 498,
+   "last_min": 528,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -601,7 +601,7 @@
    "who": "이과장",
    "state": "지연·확인 필요",
    "jobs": 5,
-   "last_min": 61,
+   "last_min": 92,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "amber"
   },
@@ -609,7 +609,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 89,
+   "last_min": 119,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -617,7 +617,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 498,
+   "last_min": 528,
    "cur": "",
    "lvl": "ok"
   },
@@ -625,7 +625,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 94,
+   "last_min": 125,
    "cur": "[이부장 접수 00:12] 이대리 23:4x 겹침 권고 회신·",
    "lvl": "ok"
   },
@@ -1368,13 +1368,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "ok",
-  "ok": 7,
+  "state": "bad",
+  "ok": 6,
   "stale": 0,
-  "bad": 0,
+  "bad": 1,
   "na": 0,
-  "at": "2026-11-25 01:41:44",
-  "age_min": 2
+  "at": "2026-11-25 02:09:05",
+  "age_min": 6
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1462,7 +1462,7 @@
  "fired": [
   {
    "day": "2026-11-25",
-   "total": 22,
+   "total": 23,
    "kinds": [
     [
      "REPORT_UNACKED",
@@ -1485,15 +1485,15 @@
      1
     ],
     [
+     "DAYCLOCK_APPROVAL",
+     1
+    ],
+    [
      "DEPLOY_NEEDED",
      1
     ],
     [
      "DRAFT_READY",
-     1
-    ],
-    [
-     "FUEL_LOW",
      1
     ]
    ]
