@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-24 22:34",
+ "generated": "2026-11-24 23:10",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/24 20:05",
-   "next": "11/24 23:00",
+   "last": "11/24 23:05",
+   "next": "11/25 08:00",
    "model": "sonnet-5-5",
    "report_day": "1124",
    "report": "11-24 08시 메일브리핑: 애드센스 계정READY·사이트GETTING_READY(검토중). 🟡 구글 Blogger 커뮤니티 답 2건(11-23 후속질문에 다이아몬드 PE Adam: 리다이렉트 문제는 저가치 콘텐츠의 결과·품질 개선이 해법·구체 지적 페이지 없음 / 11-08 골드 PE Abel: 품질 개선 뒤 재요청 권고). GitHub console 피드드리프트 검사 11-23 실패 1건(원인 미확인). gmailread.py 는 보안 플러그인이 차단해 커넥터로 대체(8975 전달분 구글뉴스·개인정보확인 알림뿐, aroma 0건).\n▸ 08:06 11-24 08시 메일브리핑: 애드센스 사이트 GETTING_READY(검토중). 구글 Blogger 커뮤니티 답 2건(다이아몬드 PE: 리다이렉트 문제는 저가치 콘텐츠 결과·품질 개선이 해법, 골드 PE: 품질 개선 뒤 재요청) 구체 지적 페이지 없음. GitHub console 피드드리프트 검사 11-23 실패 1건 원인 미확인.",
    "runs": [
+    {
+     "at": "11/24 23:06",
+     "link": "claude://claude.ai/epitaxy/local_6278f002-e9ee-4f9b-bd8b-68962d714188",
+     "archived": false
+    },
     {
      "at": "11/24 20:07",
      "link": "claude://claude.ai/epitaxy/local_196e1617-debe-4e2e-8b1f-aabc743ad481",
@@ -30,11 +35,6 @@
     {
      "at": "11/24 11:07",
      "link": "claude://claude.ai/epitaxy/local_359d736e-17f9-46e3-ac47-3aadccc0bb99",
-     "archived": true
-    },
-    {
-     "at": "11/24 08:08",
-     "link": "claude://claude.ai/epitaxy/local_ffd9ba74-ef44-4a54-8838-6d307e975df8",
      "archived": true
     }
    ]
@@ -161,11 +161,11 @@
    "last": "11/24 22:33",
    "next": "11/25 22:30",
    "model": "sonnet-5-5",
-   "report_day": "1123",
-   "report": "11-23 야간검증: 오늘 발행 4편 중 D1-27·F4-34 본문 점검, 오류 징후 0·공식 원문 재대조는 사이트 JS/302 로 못 함(미결, Aside 필요). C2-32·F4-35 다음 회차. 재고 1<하한3.",
+   "report_day": "1124",
+   "report": "오늘 발행 3편(D1-28·A1-28·A2-34) 검증: 오류 0, 핵심수치 공식 검색결과와 일치. 한계: law.go.kr API 검증실패로 조문원문 미대조, A2-34·H1-46·기존글 0편 미검증. 사장님 할 일 없음",
    "runs": [
     {
-     "at": "11/24 22:33",
+     "at": "11/24 22:42",
      "link": "claude://claude.ai/epitaxy/local_d3107457-e43c-4ed0-93ad-e6b5c9fca0a7",
      "archived": false
     },
@@ -348,12 +348,17 @@
    "name": "10-aroma 이대리 야간 글감(카테고리별 1편)",
    "id": "aroma-nightly-topics",
    "on": true,
-   "last": "11/23 23:08",
-   "next": "11/24 23:00",
+   "last": "11/24 23:09",
+   "next": "11/25 23:00",
    "model": "sonnet-5-5",
    "report_day": "",
    "report": "",
    "runs": [
+    {
+     "at": "11/24 23:09",
+     "link": "claude://claude.ai/epitaxy/local_d6be2d72-c002-497a-aaa7-0b1999c7c675",
+     "archived": false
+    },
     {
      "at": "11/23 23:36",
      "link": "claude://claude.ai/epitaxy/local_74823ac6-8f36-45a1-9c9d-750fb88b13bd",
@@ -372,11 +377,6 @@
     {
      "at": "11/20 23:30",
      "link": "claude://claude.ai/epitaxy/local_7ba83d7f-1c2d-46f8-a2b2-d5a551e16149",
-     "archived": true
-    },
-    {
-     "at": "11/14 23:39",
-     "link": "claude://claude.ai/epitaxy/local_0fc1e314-7a97-4f71-9c01-cb2b2a19f691",
      "archived": true
     }
    ]
