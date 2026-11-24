@@ -34133,8 +34133,10 @@
    "due": "2026-11-20",
    "cmd": "https://lifeinfo8975.blogspot.com/2026/08/2026-9-18.html 을 GSC URL 검사→색인 생성 요청(aside repl, Temp/gs_A5-09.js 형태) 후 python -m studio.gsc_log add A5-09",
    "owner": "claude",
-   "state": "wait",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-11-24",
+   "result": "11-24 14:36 A5-09 클린URL GSC 「색인 생성 요청됨」 확인·gsc_log add"
   },
   {
    "id": "aroma-am-bo-006-update-1120",
@@ -34157,8 +34159,10 @@
    "due": "2026-11-20",
    "cmd": "https://lifeinfo8975.blogspot.com/2026/11/11-18-pass-24-pass.html 을 GSC URL 검사→색인 생성 요청(aside repl, 스크립트 Temp/gs_A5-09.js 형태로 URL 교체) 후 python -m studio.gsc_log add D2-21, 수락 문구·시각을 batchboard now --batch exp1119m1 에 기록",
    "owner": "claude",
-   "state": "wait",
-   "by": "이과장"
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-11-24",
+   "result": "11-24 14:43 D2-21 클린URL GSC 「색인 생성 요청됨」(같은 화면에 「일시적인 처리 오류」 문구도 있었으나 요청됨 다이얼로그 확인)·gsc_log add"
   },
   {
    "id": "mobredir1120-read",
@@ -36830,6 +36834,17 @@
    "what": "재부팅(14:00) 뒤 가상 메모리 자동 관리 실측: 커밋 한도 21.8GB(RAM 15.8+페이지파일 6.0GB 시작값), 사용 14.5→16.4GB로 상승 중·가용 5.4GB — 이전 고정 32GB 때(한도 47.8GB, 가용 18.6GB)보다 여유가 적다. 자동 관리가 부하 때 파일을 키우는지 14:30·16:00·18:00 에 가용 GB 를 재고, 가용 3GB 미만이면 사장님께 직접 지정(초기 16384·최대 49152MB) 권고",
    "due": "2026-11-25",
    "cmd": "python -m studio.readycheck",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-c5c1df72a-dt2",
+   "added": "2026-11-24",
+   "what": "DT-2 구현 c5c1df72a 독립 검증(코드 리뷰) — 승인 서버 직접 발행: 토큰 유효성·1회용·Origin 검사·킬스위치 기본값·해시 3종 가드·그림자 모드·세션 호출 경로 없음. 완료 전에는 킬스위치를 지우지 않는다(DT-3 보류)",
+   "due": "2026-11-25",
+   "cmd": "python -m unittest tests.test_studio_pure 2>&1 | tail -3",
    "owner": "claude",
    "state": "wait",
    "kind": "action",
