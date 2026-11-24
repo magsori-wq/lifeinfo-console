@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24 11:27:34",
+ "at": "2026-11-24 11:46:34",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -483,9 +483,9 @@
  "drivers": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 7,
-   "last_min": 16,
+   "last_min": 35,
    "cur": "🚀 D1-28 발행 후속 — 수능 부정행위 신고 포상금 4채널",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -494,7 +494,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 837,
+   "last_min": 856,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -532,9 +532,9 @@
  "units": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 7,
-   "last_min": 16,
+   "last_min": 35,
    "cur": "🚀 D1-28 발행 후속 — 수능 부정행위 신고 포상금 4채널",
    "lvl": "ok"
   },
@@ -542,7 +542,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 77,
+   "last_min": 96,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -550,7 +550,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 837,
+   "last_min": 856,
    "cur": "",
    "lvl": "ok"
   },
@@ -558,7 +558,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 33,
+   "last_min": 52,
    "cur": "[이부장 접수 10:55 · 어드바이저] 쓰레드 유입 11-2",
    "lvl": "ok"
   },
@@ -1346,12 +1346,12 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "stale",
-  "ok": 5,
-  "stale": 2,
+  "state": "ok",
+  "ok": 7,
+  "stale": 0,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-24 11:27:31",
+  "at": "2026-11-24 11:46:32",
   "age_min": 0
  },
  "design_signals": [
@@ -1439,14 +1439,14 @@
  "fired": [
   {
    "day": "2026-11-24",
-   "total": 73,
+   "total": 74,
    "kinds": [
     [
-     "BOSS_APPROVAL",
-     9
+     "REPORT_UNACKED",
+     10
     ],
     [
-     "REPORT_UNACKED",
+     "BOSS_APPROVAL",
      9
     ],
     [
