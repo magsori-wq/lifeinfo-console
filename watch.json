@@ -36849,6 +36849,19 @@
    "state": "wait",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "verify-86e1cfc35-hookpatch",
+   "added": "2026-11-24",
+   "what": "검증 86e1cfc35 — 훅 패치 파일(docs/patch_towerguard_dt_1124.txt)·studio/dtguard_rule.py: git apply --check RC 0(작업본에 깨끗이 적용됨, 적용은 안 함)·tests.test_dtguard_rule 5건 OK·승인 서버 실제 경로(/api/approve·/api/dt_token) 일치 확인",
+   "due": "2026-11-24",
+   "cmd": "git apply --check --ignore-whitespace docs/patch_towerguard_dt_1124.txt; python -m unittest tests.test_dtguard_rule",
+   "owner": "claude",
+   "state": "done",
+   "kind": "action",
+   "by": "이부장",
+   "done_at": "2026-11-24",
+   "result": "15:2x 이부장 직접 검증: apply --check RC 0 · dtguard_rule 시험 5건 OK · approve_server 라우트 /api/approve(1034)·/api/dt_token(1021) 일치. 한계: 패치 적용 뒤 새 세션 수동 시험은 사장님 적용 후"
   }
  ]
 }
