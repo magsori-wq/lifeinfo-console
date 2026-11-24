@@ -36719,6 +36719,27 @@
    "state": "wait",
    "kind": "action",
    "by": "이부장"
+  },
+  {
+   "id": "ca-outage-recheck-1124",
+   "added": "2026-11-24",
+   "what": "크리에이터 어드바이저 장애 재확인 — 3. cadaily 갱신 3종이 풀렸는지(15:00)",
+   "due": "2026-11-24",
+   "cmd": "python -m studio.batchboard order --id cadaily",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-558",
+   "added": "2026-11-24",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(558_npension_credit_2027.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-24",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
   }
  ]
 }
