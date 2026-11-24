@@ -1,7 +1,23 @@
 {
- "at": "2026-11-24 09:34:08",
+ "at": "2026-11-24 09:34:23",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-BO-014",
+   "approvals": [
+    {
+     "id": "aroma-am-bo-014-approve-1123",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-24"
+    }
+   ],
+   "title": "데블스플랜데드어게인러닝타임",
+   "last_file_at": "2026-11-23 23:32",
+   "stage": "approved_unverified",
+   "label": "승인 확인 중",
+   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
+  },
   {
    "code": "AM-SP-024",
    "approvals": [
@@ -17,23 +33,6 @@
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 aba489c6b"
-  },
-  {
-   "code": "AM-BO-014",
-   "approvals": [
-    {
-     "id": "aroma-am-bo-014-approve-1123",
-     "state": "todo",
-     "kind": "approve",
-     "at": "2026-11-23"
-    }
-   ],
-   "title": "데블스플랜데드어게인러닝타임",
-   "last_file_at": "2026-11-23 23:32",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-bo-014-approve-1123",
-   "no_preview": false
   },
   {
    "code": "AM-DG-018",
@@ -387,12 +386,6 @@
   "v0": [],
   "boss": [
    {
-    "code": "AM-BO-014",
-    "title": "데블스플랜데드어게인러닝타임",
-    "min": 602,
-    "lvl": "ok"
-   },
-   {
     "code": "AM-DG-018",
     "title": "PSPlus블프12개월손익분기",
     "min": 602,
@@ -407,6 +400,12 @@
   ],
   "deploy": [],
   "publish": [
+   {
+    "code": "AM-BO-014",
+    "title": "데블스플랜데드어게인러닝타임 · ⚠️ 승인 시각 미상(커밋·처음 본 시각 없음 — 지연 판정 불가)",
+    "min": null,
+    "lvl": "amber"
+   },
    {
     "code": "AM-SP-024",
     "title": "K리그2PO4팀확정3위구도",
@@ -820,6 +819,9 @@
    ],
    "wait": [
     {
+     "code": "AM-BO-014"
+    },
+    {
      "code": "AM-SP-024"
     }
    ]
@@ -836,7 +838,7 @@
   "today": "2026-11-24",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 3,
+  "boss_wait": 2,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -896,7 +898,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 3건"
+   "state": "결재 대기 2건"
   }
  ],
  "suppliers": [
@@ -929,13 +931,6 @@
  "approvals": [
   {
    "kind": "aroma",
-   "id": "aroma-am-bo-014-approve-1123",
-   "what": "【권고】AM-BO-014 데블스 플랜 데드 어게인 몇부작, 등록 10편 14시간 15분·6화 106분 (방송·OTT·검색형) 승인 【근거】관심:",
-   "by": "이대리",
-   "waited": ""
-  },
-  {
-   "kind": "aroma",
    "id": "aroma-am-pe-020-approve-1123",
    "what": "【권고】AM-PE-020 임영웅 영화 관객 5일 61,861명 — 일요일은 토요일보다 23% 줄었다 (공연·연예·홈판형) 승인 【근거】관심: 자",
    "by": "이대리",
@@ -956,6 +951,12 @@
    "stage": "boss",
    "at": "2026-11-24 09:34:00",
    "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-BO-014",
+   "stage": "boss",
+   "at": "",
+   "src": "watch done_at(날짜뿐)"
   }
  ],
  "incidents": [],
