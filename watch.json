@@ -36688,6 +36688,37 @@
    "owner": "claude",
    "state": "wait",
    "by": "정비"
+  },
+  {
+   "id": "npension-source-20261124",
+   "added": "2026-11-24",
+   "what": "국민연금법 22096호: 법 전체 시행 2026.10.20(작업지시 2027.1.1 은 제18·19조만). 제정개정이유·신구대비 팝업 미확보",
+   "due": "2026-11-25",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://www.law.go.kr/법령/국민연금법\" --frames --wait 8 --max 6000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "nhi-decree-b2-5-2-20261124",
+   "added": "2026-11-24",
+   "what": "국민건강보험법 시행령 36675호: 별표2 제5호의2(2027.1.1 시행) 표 미취득 — 금액·대상 미확인",
+   "due": "2026-11-30",
+   "cmd": "PYTHONIOENCODING=utf-8 python tools/aside_read.py \"https://www.law.go.kr/법령/국민건강보험법시행령\" --frames --wait 8 --max 300000",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "reboot-window-1124",
+   "added": "2026-11-24",
+   "what": "재부팅 안전 시점 알림 — 이과장 A2-34 초안·V0 끝나면 사장님께 카톡(세션 닫아도 되는 시점)",
+   "due": "2026-11-24",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "wait",
+   "kind": "action",
+   "by": "이부장"
   }
  ]
 }
