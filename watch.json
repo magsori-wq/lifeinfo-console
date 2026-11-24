@@ -36926,6 +36926,36 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "f124-mlit-pdf-unreadable",
+   "added": "2026-11-24",
+   "what": "F1-24: 관광청 리플릿 PDF 001990233(3.1MB)·002029075 텍스트 0자(이미지 PDF) — 다국어 리플릿 수치 미확인",
+   "due": "2026-11-25",
+   "cmd": "pdftotext -layout /c/Users/magso/AppData/Local/Temp/claude/d127bbacf628e9d6/29f490b2-2c6d-4397-9a60-2d0d90239f29/scratchpad/mlit.pdf - | wc -c",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:29f490b2"
+  },
+  {
+   "id": "f124-dup-f310",
+   "added": "2026-11-24",
+   "what": "F1-24 일본 면세 환급방식 = 기발행 F3-10(2026/10) 주제 중복 — 탈락, F3-10 갱신 후보만",
+   "due": "2026-11-25",
+   "cmd": "python -m studio.dupcheck 일본 면세 리펀드",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:29f490b2"
+  },
+  {
+   "id": "fuel-check-2330-1124",
+   "added": "2026-11-24",
+   "what": "3. fuel1030 후보 마감(24:00) 전 확인 — topicprop 신규 후보 또는 건별 사유 표",
+   "due": "2026-11-24",
+   "cmd": "python -m studio.batchboard unread --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
