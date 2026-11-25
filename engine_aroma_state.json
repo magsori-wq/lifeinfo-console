@@ -1,7 +1,23 @@
 {
- "at": "2026-11-25 11:09:42",
+ "at": "2026-11-25 11:40:07",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-DG-019",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-019-approve-1125",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-25"
+    }
+   ],
+   "title": "GTA6플레이타임공식수치",
+   "last_file_at": "2026-11-24 23:24",
+   "stage": "approved_unverified",
+   "label": "승인 확인 중",
+   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
+  },
   {
    "code": "AM-PE-021",
    "approvals": [
@@ -14,9 +30,9 @@
    ],
    "title": "변우석팬미팅앙코르예매",
    "last_file_at": "2026-11-24 23:24",
-   "stage": "approved_unverified",
-   "label": "승인 확인 중",
-   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 49c83b8ae"
   },
   {
    "code": "AM-SP-025",
@@ -30,26 +46,9 @@
    ],
    "title": "KBO시상식후보수비상",
    "last_file_at": "2026-11-24 23:24",
-   "stage": "approved_unverified",
-   "label": "승인 확인 중",
-   "detail": "watch done 이나 [사장님]/회수 커밋 못 찾음(미확인)"
-  },
-  {
-   "code": "AM-DG-019",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-019-approve-1125",
-     "state": "todo",
-     "kind": "approve",
-     "at": "2026-11-24"
-    }
-   ],
-   "title": "GTA6플레이타임공식수치",
-   "last_file_at": "2026-11-24 23:24",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-dg-019-approve-1125",
-   "no_preview": false
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 3e9e8f75f"
   }
  ],
  "old_inflight": [],
@@ -285,7 +284,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-25 11:09:32",
+   "last_at": "2026-11-25 11:40:03",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -295,7 +294,7 @@
    "name": "AROMA_PUBLISH_STALL",
    "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
-   "src": "시각 저장 없음(진행 중 0건)",
+   "src": "시각 저장 없음(진행 중 3건)",
    "today_n": 0,
    "note": "",
    "at_node": "pub"
@@ -359,7 +358,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 71,
+  "last_min": 102,
   "cur": "[이부장 접수 09:58] 이대리 09:47 점검 접수 — 크",
   "lvl": "ok"
  },
@@ -367,26 +366,25 @@
  "nodes": {
   "draft": [],
   "v0": [],
-  "boss": [
-   {
-    "code": "AM-DG-019",
-    "title": "GTA6플레이타임공식수치",
-    "min": 705,
-    "lvl": "ok"
-   }
-  ],
+  "boss": [],
   "deploy": [],
   "publish": [
    {
+    "code": "AM-DG-019",
+    "title": "GTA6플레이타임공식수치",
+    "min": 27,
+    "lvl": "ok"
+   },
+   {
     "code": "AM-PE-021",
-    "title": "변우석팬미팅앙코르예매 · ⚠️ 승인 시각 미상(커밋·처음 본 시각 없음 — 지연 판정 불가)",
-    "min": null,
-    "lvl": "amber"
+    "title": "변우석팬미팅앙코르예매",
+    "min": 30,
+    "lvl": "ok"
    },
    {
     "code": "AM-SP-025",
     "title": "KBO시상식후보수비상",
-    "min": 0,
+    "min": 30,
     "lvl": "ok"
    }
   ],
@@ -816,6 +814,9 @@
    ],
    "wait": [
     {
+     "code": "AM-DG-019"
+    },
+    {
      "code": "AM-PE-021"
     },
     {
@@ -835,7 +836,7 @@
   "today": "2026-11-25",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -859,7 +860,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 71,
+   "last_min": 102,
    "cur": "[이부장 접수 09:58] 이대리 09:47 점검 접수 — 크",
    "lvl": "ok"
   },
@@ -874,7 +875,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 71,
+   "last_min": 102,
    "cur": "[이부장 접수 09:58] 이대리 09:47 점검 접수 — 크",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -895,7 +896,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -925,15 +926,7 @@
    "codes": []
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-dg-019-approve-1125",
-   "what": "【권고】AM-DG-019 GTA6 플레이타임 평균 17.4시간 — PS5 플레이어 3,900만 명 이상 (디지털·홈판형, 11/25 게시) 승인",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
+ "approvals": [],
  "edits": [],
  "today_events": [
   {
@@ -944,6 +937,12 @@
   },
   {
    "code": "AM-PE-021",
+   "stage": "boss",
+   "at": "2026-11-25 11:10:00",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-DG-019",
    "stage": "boss",
    "at": "",
    "src": "watch done_at(날짜뿐)"
@@ -982,14 +981,14 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-25 11:09:32",
+     "chip": "2026-11-25 11:40:03",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 0회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 3건) · 오늘 0회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
