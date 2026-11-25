@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 21:11",
+ "generated": "2026-11-25 22:33",
  "routines": [
   {
    "num": 1,
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/24 22:33",
-   "next": "11/25 22:30",
+   "last": "11/25 22:32",
+   "next": "11/26 22:30",
    "model": "sonnet-5-5",
    "report_day": "1124",
    "report": "오늘 발행 3편(D1-28·A1-28·A2-34) 검증: 오류 0, 핵심수치 공식 검색결과와 일치. 한계: law.go.kr API 검증실패로 조문원문 미대조, A2-34·H1-46·기존글 0편 미검증. 사장님 할 일 없음",
    "runs": [
+    {
+     "at": "11/25 22:33",
+     "link": "claude://claude.ai/epitaxy/local_7cf16081-34ba-4cde-8dc3-f5d70c0db010",
+     "archived": false
+    },
     {
      "at": "11/24 22:42",
      "link": "claude://claude.ai/epitaxy/local_d3107457-e43c-4ed0-93ad-e6b5c9fca0a7",
@@ -182,11 +187,6 @@
     {
      "at": "11/21 22:42",
      "link": "claude://claude.ai/epitaxy/local_dc14227b-8d26-4af7-aeb8-8153d62f1474",
-     "archived": true
-    },
-    {
-     "at": "11/20 22:43",
-     "link": "claude://claude.ai/epitaxy/local_dc1224be-472c-44fe-b643-4daf2f95c5ee",
      "archived": true
     }
    ]
