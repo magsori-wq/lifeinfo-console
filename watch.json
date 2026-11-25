@@ -8022,8 +8022,8 @@
   {
    "id": "naver-capture-refresh",
    "added": "2026-10-05",
-   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **10일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
-   "due": "2026-11-25",
+   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **11일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
+   "due": "2026-11-26",
    "cmd": "start https://creator-advisor.naver.com/naver_blog/main",
    "owner": "user",
    "verify": "python -m studio.kwgap",
@@ -37176,6 +37176,26 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "recall-benzopyrene-1126",
+   "added": "2026-11-26",
+   "what": "식품안전나라 향미유 회수공고 미확인(로트·판매처·회수등급 원문 없음) · 첨부 hwpx 본문은 읽음",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.watch show recall-benzopyrene-1126",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:1c1e2e8a"
+  },
+  {
+   "id": "moolcard-teen-recheck-1201",
+   "added": "2026-11-26",
+   "what": "모두의카드 청소년 12-01 시행 기사 확인 — 공식 환급기준 페이지(intro.do)에 청소년 칸 없음(11-26 실측), 기준은 기사 「예정」 표기, 원 보도자료 미확인",
+   "due": "2026-12-01",
+   "cmd": "curl -sL -A Mozilla/5.0 https://korea-pass.kr/info/intro.do | grep -c 청소년",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:1c1e2e8a"
   }
  ]
 }
