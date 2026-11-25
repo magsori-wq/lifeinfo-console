@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 04:51",
+ "generated": "2026-11-26 07:12",
  "routines": [
   {
    "num": 1,
@@ -272,12 +272,17 @@
    "name": "8-Lifeinfo issue product",
    "id": "8-lifeinfo-issue-product",
    "on": true,
-   "last": "11/25 07:10",
-   "next": "11/26 07:00",
+   "last": "11/26 07:09",
+   "next": "11/27 07:00",
    "model": "sonnet-5-5",
-   "report_day": "1124",
-   "report": "[조사장부] 목록 0 · 원문 0 · 후보 1 · 탈락 5 · 검색어 2 · 유입 0 | collect 1(신규105·누적2961)·search 8낱말. 🛒 후보: 제주 서귀포 감귤 12brix 5kg · 13,900원 · 리뷰2,857·평점4.5 · 왜 지금: 노지감귤 11~12월 제철 · naverkw 감귤→제주감귤·감귤10kg 자동완성 · 갈래① 쓰레드 단독. 기게시 아님(solo 0건). 단 pick·kakao 는 미실행 — 승인됨 미게시 kimjang1120·xmas1121 + 승인대기 solo-20261122-1 이 이미 3건 대기라 적체 가중 방지, 이부장 판단. 탈락: 고구마(리뷰3323·평점4.0·건당790 낮음)·손난로(리뷰167)·블프/전기요금/롱패딩/핫초코/제설(토스 목록 없음). 이어받은 것 11-23 회차(가습기·전기장판 탈락)",
+   "report_day": "1126",
+   "report": "[조사장부] 목록 1 · 원문 0 · 후보 0 · 탈락 2 · 검색어 0 — 🔴 새 막힘: productprop collect 가 토스 상품정보 API 거부(11-26 07:1x) errorCode SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED 「상품 정보 API는 인증된 거래처만 사용할 수 있어요. sharelink-biz@toss.im 으로 연락」. 11-25 07:11 회차는 정상 수집(신규22)이었다 → 하루 사이 권한 변경. /health 는 ok. 영향: 인기순위 새 수집 불가(기존 누적 목록 검색만 가능), 루틴9 15:00 도 같은 실패 예상. 풀리는 조건: 토스 쉐어링크 거래처 인증(문의 sharelink-biz@toss.im · 문서 https://sharelink-docs.toss.im/guide/open-api/). 링크 발급 API 도 같은지 이부장 확인 필요. / search 10낱말(크리스마스·트리·가습기·전기장판·달력·다이어리·연말선물·털슬리퍼·무릎담요·립밤) 누적목록 기준 신규 후보 0: 가습기(오퓨리엠 13,900·리뷰415)·전기장판(한일 30,900·리뷰122) 리뷰 얇고 급등 근거 없음 탈락, 나머지 목록 없음/무관 / 이어받은 것 11-25 07시·11-23 15시 회차(핫팩·귤 기게시, kimjang1120 승인 미게시)",
    "runs": [
+    {
+     "at": "11/26 07:12",
+     "link": "claude://claude.ai/epitaxy/local_90a79824-4d25-4111-8213-569331e392ea",
+     "archived": false
+    },
     {
      "at": "11/25 07:11",
      "link": "claude://claude.ai/epitaxy/local_a824ed6d-00f5-407e-b7bd-a3b5a0e0392a",
@@ -296,11 +301,6 @@
     {
      "at": "11/22 07:15",
      "link": "claude://claude.ai/epitaxy/local_c51b910f-8345-4ce0-acec-a6efcf70f2ad",
-     "archived": true
-    },
-    {
-     "at": "11/21 07:12",
-     "link": "claude://claude.ai/epitaxy/local_7f4e6857-4e6a-404f-ba6b-67046967f4cd",
      "archived": true
     }
    ]
