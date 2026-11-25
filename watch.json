@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "items": [
   {
    "id": "intro-numbers",
@@ -37135,6 +37135,16 @@
    "cmd": "grep -c '1억\\|9억\\|아직 발표되지' C:/lifeinfo/부양의무자폐지2027중증장애인가구판정표_글_HTML.txt",
    "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "pub-retry-d129-a235-1126",
+   "added": "2026-11-26",
+   "what": "D1-29·A2-35 발행 트리거 재시도 — 11-26 01:06 gh workflow run HTTP 500 2회(GitHub 장애: Actions degraded·Git partial outage). 장애 풀리면 D1-29 → A2-35 순서로(17:00 전)",
+   "due": "2026-11-26",
+   "cmd": "python -m studio.pubready --code D1-29",
+   "owner": "claude",
+   "state": "blocked",
    "by": "이부장"
   }
  ]
