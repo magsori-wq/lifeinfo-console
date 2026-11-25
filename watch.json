@@ -37160,12 +37160,22 @@
   {
    "id": "xlink-a235",
    "added": "2026-11-26",
-   "what": "🔗 A2-35 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-35",
+   "what": "🔗 A2-35 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-35",
    "due": "2026-11-26",
    "cmd": "python studio/blogger.py crosslink --code A2-35",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "mark-dupcode-gap-1126",
+   "added": "2026-11-26",
+   "what": "batchboard mark 가 같은 코드 여러 항목 배치에서 첫 항목만 닫는다 — pub* 후속 지시서(같은 코드 3~4줄)가 실작업 완결 뒤에도 todo 로 남아 LEDGER_DRIFT·확인 적체를 만든다. 정비 개선 후보(항목 번호 지정 또는 같은 코드 일괄)",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard mark --help",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
