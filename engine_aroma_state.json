@@ -1,24 +1,7 @@
 {
- "at": "2026-11-26 12:11:21",
+ "at": "2026-11-26 12:19:34",
  "errors": [],
- "rows": [
-  {
-   "code": "AM-DG-020",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-020-approve-1126",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-26"
-    }
-   ],
-   "title": "seg1",
-   "last_file_at": "2026-11-26 12:10",
-   "stage": "approved",
-   "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 0701162df"
-  }
- ],
+ "rows": [],
  "old_inflight": [],
  "discarded": [
   {
@@ -56,6 +39,22 @@
    ],
    "title": "GTA6 플레이타임 평균 17.4시간 — PS5 플레이어 3,900만 명 이상",
    "last_file_at": "2026-11-26 01:14",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-26"
+  },
+  {
+   "code": "AM-DG-020",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-020-approve-1126",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-26"
+    }
+   ],
+   "title": "스팀 세일 기간 11월 — 블프는 공식 세일 아님, 겨울 세일은 12/17부터",
+   "last_file_at": "2026-11-26 12:10",
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-26"
@@ -107,25 +106,9 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-26"
-  },
-  {
-   "code": "AM-SP-026",
-   "approvals": [
-    {
-     "id": "aroma-am-sp-026-approve-1126",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-26"
-    }
-   ],
-   "title": "2027 KBO FA 명단 22명 — C등급 6명은 보상선수 없이 연봉 150%",
-   "last_file_at": "2026-11-26 11:54",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-26"
   }
  ],
- "published_total": 83,
+ "published_total": 84,
  "rev_wait": [],
  "cats": {
   "window": 14,
@@ -144,10 +127,10 @@
    ],
    [
     "디지털 콘텐츠·여가",
-    3
+    4
    ]
   ],
-  "total": 20
+  "total": 21
  },
  "share": {
   "state": "active",
@@ -252,7 +235,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-26 12:10:52",
+   "last_at": "2026-11-26 12:19:22",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -262,7 +245,7 @@
    "name": "AROMA_PUBLISH_STALL",
    "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
-   "src": "시각 저장 없음(진행 중 3건)",
+   "src": "시각 저장 없음(진행 중 0건)",
    "today_n": 3,
    "note": "",
    "at_node": "pub"
@@ -326,8 +309,8 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 1,
-  "cur": "[이부장 접수 12:14] 이대리 SP-026·PE-022 게",
+  "last_min": 5,
+  "cur": "[이부장 접수 12:17] 이대리 AM-DG-020 게시(22",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -336,14 +319,7 @@
   "v0": [],
   "boss": [],
   "deploy": [],
-  "publish": [
-   {
-    "code": "AM-DG-020",
-    "title": "seg1",
-    "min": 28,
-    "lvl": "ok"
-   }
-  ],
+  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -411,6 +387,11 @@
      "code": "AM-SP-026",
      "title": "2027 KBO FA 명단 22명 — C등급 6명은 보상선수 없이 연봉 150%",
      "url": "https://blog.naver.com/aroma-mag/224492875162"
+    },
+    {
+     "code": "AM-DG-020",
+     "title": "스팀 세일 기간 11월 — 블프는 공식 세일 아님, 겨울 세일은 12/17부터",
+     "url": "https://blog.naver.com/aroma-mag/224492880559"
     },
     {
      "code": "AM-SP-024",
@@ -798,11 +779,7 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": [
-    {
-     "code": "AM-DG-020"
-    }
-   ]
+   "wait": []
   }
  },
  "topics": [],
@@ -814,8 +791,8 @@
  },
  "kpi": {
   "today": "2026-11-26",
-  "done_today": 6,
-  "published_today": 6,
+  "done_today": 7,
+  "published_today": 7,
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
@@ -832,7 +809,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -840,8 +817,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 1,
-   "cur": "[이부장 접수 12:14] 이대리 SP-026·PE-022 게",
+   "last_min": 5,
+   "cur": "[이부장 접수 12:17] 이대리 AM-DG-020 게시(22",
    "lvl": "ok"
   },
   {
@@ -855,8 +832,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 1,
-   "cur": "[이부장 접수 12:14] 이대리 SP-026·PE-022 게",
+   "last_min": 5,
+   "cur": "[이부장 접수 12:17] 이대리 AM-DG-020 게시(22",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -902,7 +879,7 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 6편 · 파일이 움직인 글 8편",
+   "made": "오늘 새 글 게시 7편 · 파일이 움직인 글 8편",
    "codes": [
     "AM-BO-015",
     "AM-DG-019",
@@ -925,25 +902,13 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-019",
-   "stage": "proc",
-   "at": "2026-11-26 01:08:22",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-SP-025",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-022",
-   "stage": "proc",
-   "at": "2026-11-26 11:29:46",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-021",
+   "code": "AM-DG-019",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
@@ -952,6 +917,12 @@
    "code": "AM-SP-026",
    "stage": "proc",
    "at": "2026-11-26 11:30:36",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-022",
+   "stage": "proc",
+   "at": "2026-11-26 11:29:46",
    "src": "파일 수정 시각"
   },
   {
@@ -964,6 +935,12 @@
    "code": "AM-PE-014",
    "stage": "proc",
    "at": "2026-11-26 09:53:58",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-021",
+   "stage": "proc",
+   "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
   },
   {
@@ -1037,6 +1014,12 @@
    "stage": "naver",
    "at": "",
    "src": "db.json published(날짜만)"
+  },
+  {
+   "code": "AM-DG-020",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
   }
  ],
  "incidents": [],
@@ -1045,7 +1028,7 @@
  "room_extra": [
   {
    "title": "📊 카테고리 4개 · 최근 14일 게시",
-   "sub": "합계 20편 · 일률분배 몫 5.0편",
+   "sub": "합계 21편 · 일률분배 몫 5.2편",
    "rows": [
     {
      "head": "방송·OTT",
@@ -1061,7 +1044,7 @@
     },
     {
      "head": "디지털 콘텐츠·여가",
-     "chip": "3편"
+     "chip": "4편"
     }
    ]
   },
@@ -1072,14 +1055,14 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-26 12:10:52",
+     "chip": "2026-11-26 12:19:22",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 3건) · 오늘 3회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 3회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
@@ -1200,7 +1183,7 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 83편",
+   "title": "✅ 최근 게시 · 전체 84편",
    "empty": "게시 기록 없음",
    "rows": [
     {

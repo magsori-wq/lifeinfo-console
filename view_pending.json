@@ -1,11 +1,10 @@
 {
- "computed_at": "2026-11-26 03:14:19",
- "source_head": "d8e3b6f4c3de",
+ "computed_at": "2026-11-26 12:19:37",
+ "source_head": "e0c73978e569",
  "ids": [
   "A5-24",
   "D5-15",
-  "H1-47",
-  "toss-openapi-unauthorized-1126"
+  "H1-47"
  ],
  "posts": [
   {
@@ -90,6 +89,12 @@
        "path": "osmu/쓰레드용_연차수당소멸서면촉구확인법.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_A5-24_annual_leave_pay.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
@@ -140,35 +145,41 @@
        "path": "osmu/쓰레드용_모두의카드청소년12월부터환급계산.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_D5-15_moducard_teen.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/p/DgMHtQoE1ZI/",
      "files": [
       {
        "label": "인스타 캡션",
        "path": "insta/캡션_모두의카드청소년12월부터환급계산.txt",
        "img": false,
-       "exists": false
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "done"
     }
    }
   }
  ],
  "publish": [],
- "actions": [
+ "actions": [],
+ "actionsFuture": [
   {
    "id": "toss-openapi-unauthorized-1126",
    "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 문안 docs/토스_거래처인증_문의_20261126.md(빈칸 2곳) 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 · 링크 발급 API 는 11:36 정상(새꼬막 링크 발급 성공) 【위험】인기순위 새 수집 불가 → 루틴8·9 후보는 누적 목록 검색만",
-   "due": "2026-11-26",
+   "due": "2026-11-28",
    "cmd": "python -c \"from studio.tosslink import best;print(best(1))\"",
    "state": "blocked",
    "kind": "action"
   }
- ],
- "actionsFuture": []
+ ]
 }
