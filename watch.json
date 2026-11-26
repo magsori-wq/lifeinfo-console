@@ -37632,6 +37632,18 @@
    "state": "todo",
    "note": 1,
    "by": "이부장"
+  },
+  {
+   "id": "token-autocompact-1126",
+   "added": "2026-11-26",
+   "what": "【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.claude/settings.json env 에 CLAUDE_CODE_AUTO_COMPACT_WINDOW=300k. 【근거】 3일 실측: 토큰 97%가 약 40만 컨텍스트를 깨울 때마다 다시 읽는 값. 30만 압축 시뮬레이션 이부장 -30%·이과장 -22%·전체 약 15%(추정). 설정 이름은 공식 문서 env-vars 확인. 【위험】 ① 사용자 설정이라 이 PC 모든 프로젝트(통도 ERP·naver-blog)에 걸림 ② Desktop Code 탭 적용 여부는 문서에 없음 → 켠 뒤 /context 로 확인 ③ 압축 요약에서 맥락이 빠질 수 있음. 설정은 사장님 몫.",
+   "due": "2026-11-26",
+   "cmd": "승인 시 사장님이 ~/.claude/settings.json env 에 \"CLAUDE_CODE_AUTO_COMPACT_WINDOW\": \"300k\" 추가 — 근거 docs/토큰_실측_20261126.md ②-1",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "note": 1,
+   "by": "이부장"
   }
  ]
 }
