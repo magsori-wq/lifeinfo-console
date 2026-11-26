@@ -1705,13 +1705,35 @@
     {
      "code": "lifeinfo-daily-publish-1127",
      "title": "lifeinfo-daily-publish (F)",
-     "state": "blocked",
-     "note": "[루틴6 · 11-27 00:07] 재고 2편(하한 3) → 후보 제안 0건. 검토 후보(C·D·E): ①희귀·중증난치질환 본인부담 10→7%(12/1) — C1-19 기발행 동일 주제 → 탈락 ②2026 전기요금 개편 — A2-14 강중복·공식 원문 미확인 → 탈락 ③보이스피싱 환급 — E4-07 강중복·기한 3영업일/30영업일 출처 상충 → 탈락 ④연말정산 간소화 — 세금(B 레인, 담당 아님) → 탈락 ⑤휴대폰 선택약정 — E1-02 중복·공식 미확인 → 탈락. 웹검색만 함: 공식 도메인(mohw·nts·motie·fss) 직접 조회 안 함 — 다음 회차에 1차 출처 직접 조회 필요. 초안·썸네일·pubqueue 적재 없음. 결재함 올릴 것 없음. 사장님 손 필요 없음.",
+     "state": "done",
+     "note": "[루틴6 · 11-27 00:07] 재고 2편(하한 3) → 후보 제안 0건. 검토 후보(C·D·E): ①희귀·중증난치질환 본인부담 10→7%(12/1) — C1-19 기발행 동일 주제 → 탈락 ②2026 전기요금 개편 — A2-14 강중복·공식 원문 미확인 → 탈락 ③보이스피싱 환급 — E4-07 강중복·기한 3영업일/30영업일 출처 상충 → 탈락 ④연말정산 간소화 — 세금(B 레인, 담당 아님) → 탈락 ⑤휴대폰 선택약정 — E1-02 중복·공식 미확인 → 탈락. 웹검색만 함: 공식 도메인(mohw·nts·motie·fss) 직접 조회 안 함 — 다음 회차에 1차 출처 직접 조회 필요. 초안·썸네일·pubqueue 적재 없음. 결재함 올릴 것 없음. 사장님 손 필요 없음.\n▸ 00:39 [이부장 00:40 정리] 막힘 아님 — 후보 0 회차 종료, 재고 연료는 루틴2·3. fuel1030 몫(09:30 확인)",
      "auto_daily": true,
      "base_code": "lifeinfo-daily-publish",
      "date": "2026-11-27",
-     "at": "2026-11-27 00:08",
-     "actor": "미상:86d115a4"
+     "at": "2026-11-27 00:39",
+     "actor": "이부장"
+    },
+    {
+     "code": "lifeinfo-daily-publish-1127-1127",
+     "title": "lifeinfo-daily-publish-1127 (F)",
+     "state": "done",
+     "note": "[이부장 00:40 정리] 막힘 아님 — 루틴6 회차는 후보 0(5건 탈락 사유표)으로 끝남. 재고 2/3 연료는 오늘 루틴2(오전)·3. fuel1030 지시서 몫으로 넘김(이부장 09:30 확인)\n▸ 00:39 [이부장 00:40 정리] 막힘 아님 — 후보 0 회차 종료, 재고 연료는 루틴2·3. fuel1030 몫(09:30 확인)",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-publish-1127",
+     "date": "2026-11-27",
+     "at": "2026-11-27 00:39",
+     "actor": "이부장"
+    },
+    {
+     "code": "lifeinfo-daily-publish-1127-1127-1127",
+     "title": "lifeinfo-daily-publish-1127-1127 (F)",
+     "state": "skip",
+     "note": "중복 생성(이부장 mark 오기) — 원본 lifeinfo-daily-publish-1127 로 닫음",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-publish-1127-1127",
+     "date": "2026-11-27",
+     "at": "2026-11-27 00:40",
+     "actor": "이부장"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -15963,7 +15985,7 @@
    "order_at": "2026-11-26 18:23:15"
   }
  },
- "updated": "2026-11-27 00:10:03",
+ "updated": "2026-11-27 00:40:08",
  "current": {
   "batch": "aroma",
   "code": "",
@@ -15974,6 +15996,21 @@
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "00:40:08",
+   "text": "⚪ lifeinfo-daily-publish-1127-1127-1127 판정완료·해당없음 — lifeinfo-daily-publish-1127-1127 (",
+   "actor": "이부장"
+  },
+  {
+   "t": "00:39:58",
+   "text": "✅ lifeinfo-daily-publish-1127 완료 — lifeinfo-daily-publish (F)",
+   "actor": "이부장"
+  },
+  {
+   "t": "00:39:21",
+   "text": "✅ lifeinfo-daily-publish-1127-1127 완료 — lifeinfo-daily-publish-1127 (F)",
+   "actor": "이부장"
+  },
   {
    "t": "00:10:03",
    "text": "✔ 이부장 접수 routinelog",
@@ -16158,21 +16195,6 @@
    "t": "18:34:21",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡4 — 즉시: V0 지연 D3-16 에너지효율개선사업 최대 330만 원 — 보일러·창호 자; 사장님 🙋승인 🔴 V0 반려 확인 요청 — D3-16 「에너지효율개선사업 최대 330만 · 묶음: 에이전트×1 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
    "actor": "사람"
-  },
-  {
-   "t": "18:33:52",
-   "text": "▶   — 1/7단계 · ⚠️ D3-16 18:21 갱신판 반영(제목 37자 「에너지효율개선사업 보일러·창호 공사 최대 330만 원, 자부담 0원」·계산표·출처 박스 URL·썸네일 문구 교체, bodydup --live 0.045·layout/heading/xlinkcheck 0건, 커밋 1e6893aaf) · 큐 제목은 옛 제목 그대로 — pubqueue add --force 로 덮어쓰려다 자동 분류기가 거부(Undermining Oversight)해 멈춤. 🙋 이부장: 큐 제목 갱신 판단 필요(ungo/remove 후 재add 또는 이부장 처리)",
-   "actor": "이과장"
-  },
-  {
-   "t": "18:29:54",
-   "text": "✅ D3-16 완료 — 저소득층 단열·창호·보일러 지원 최대 330만 원 — 자부담 ",
-   "actor": "이과장"
-  },
-  {
-   "t": "18:28:19",
-   "text": "✔ 이부장 ack rc54976",
-   "actor": "이부장"
   }
  ],
  "currents": {

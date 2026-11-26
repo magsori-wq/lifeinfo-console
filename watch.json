@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "items": [
   {
    "id": "intro-numbers",
@@ -38083,6 +38083,16 @@
    "what": "GSC 메일 11-26 22:35·23:11: 유효성 검사 '수정됨' 리디렉션 2·발견됨-미색인 32·404 1(+새 이유 리디렉션 오류) — 수정됨≠색인됨, 다음 inspect 에서 색인 생성 수 변화 확인",
    "due": "2026-11-27",
    "cmd": "python -m studio.searchconsole inspect",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "maint-rlog-mark-suffix-1127",
+   "added": "2026-11-27",
+   "what": "batchboard mark --id routinelog 가 이미 날짜 붙은 코드(lifeinfo-daily-publish-1127)에 -1127 을 또 붙여 새 항목을 만든다 — 11-27 00:40 이부장 정리 중 중복 2줄 생김(-1127-1127 done·-1127-1127-1127 skip, 원본은 done). 정비: 접미사 중복 방지 + 중복 2줄 정리",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard show",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
