@@ -16206,17 +16206,22 @@
    ]
   }
  },
- "updated": "2026-11-27 08:06:23",
+ "updated": "2026-11-27 08:19:07",
  "current": {
-  "batch": "adsgsc1127",
+  "batch": "aroma",
   "code": "",
   "title": "",
-  "step": 4,
-  "what": "전수 inspect 완주(582/582 · 오류 0 · partial 아님). 11-26 대비 리디렉션 324→330 · 벗어난 편 0 · 색인 0 · 검증 2편은 메일에 URL 없어 특정 불가. 결론은 docs/source_gsc_mail_1126.md 5·6절",
-  "since": "05:18",
-  "since_at": "2026-11-27 05:18:02"
+  "step": 1,
+  "what": "⏸ 자가점검 08:19: 할 일 0 · 사장님 대기 aroma-dg-021-affiliate-1127(DG-021 게시 방식 ①승인본/②충전독 링크, 기한 11/29 — 12개월 할인 11/30 종료)",
+  "since": "14:53",
+  "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "08:19:07",
+   "text": "▶   — 1/7단계 · ⏸ 자가점검 08:19: 할 일 0 · 사장님 대기 aroma-dg-021-affiliate-1127(DG-021 게시 방식 ①승인본/②충전독 링크, 기한 11/29 — 12개월 할인 11/30 종료)",
+   "actor": "이대리"
+  },
   {
    "t": "08:06:23",
    "text": "✅ daily-email-briefing-1127 완료 — daily-email-briefing (A)",
@@ -16411,11 +16416,6 @@
    "t": "05:35:20",
    "text": "▶   — 4/7단계 · ✅ GSC 메일 조사 결론(실측): 메일 3건(11-26 22:35 404 1 · 23:11 리디렉션 2·발견됨 32·404 1 · 23:11 「새 이유 리디렉션 오류」). 「새 이유 리디렉션 오류」는 새 원인이 아님 — 스냅샷(11-26 09:36)에 이미 REDIRECT_ERROR 324편. 검증은 리디렉션 2편뿐 → 322편 미검증. 애드센스 반려와의 연결은 판정 불가(근거 조항 없음). 원문·대조: docs/source_gsc_mail_1126.md. 미확인: 메일 URL 목록 없음 → URL 단위 대조 못 함, 새 inspect 미실행(전체 576편·index_status 덮어씀 — 이부장 지시 시 실행). 다음 사람: 이부장이 inspect 실행 여부 결정 · 항목 닫기(mark 항목 코드 확인 필요).",
    "actor": "4."
-  },
-  {
-   "t": "05:35:09",
-   "text": "📄 fuel1030 지시서 덧붙임(2026-11-27 05:35:09)",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -16712,7 +16712,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "⏸ 자가점검 06:19: 사장님 대기 aroma-dg-021-affiliate-1127(DG-021 게시 방식, 기한 11/29) — DG-021 승인본은 이 결정까지 보류. 할 일 0",
+   "what": "⏸ 자가점검 08:19: 할 일 0 · 사장님 대기 aroma-dg-021-affiliate-1127(DG-021 게시 방식 ①승인본/②충전독 링크, 기한 11/29 — 12개월 할인 11/30 종료)",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -19855,56 +19855,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-13 07:21:16",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "[이부장 → 정비] 🔴 페이블 6차(docs/검증_페이블_20261113_naverwrite_6.md): splitguard 퇴행 — 역슬래시 경로 통과(Get-Content webapp\\batch.json · python -c open(r'webapp\\batch.json') · type webapp\\batch.json · cat .\\batch.json) + git show/cat-file HEAD:webapp/batch.json 통과. _BATCH 정규식에 \\ 포함·명령 전체 \\→/ 정규화·git show/cat-file 은 읽기로 판정. 시험에 역슬래시·PowerShell 사례 추가. 🟡: 남은 glob 우회·ls/stat/echo/heredoc 오탐·Glob pattern 실제 키·테스트가 라이브 data/splitguard_unregistered.log 에 쓰는 것. 지금 실제로 걸린 집행의 구멍이라 우선.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-13 07:26:59",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "[이부장 → 정비] (낮은 우선) ASIDE_CHAT_BIG 이 몇 시간마다 반복 울림 — 이과장 전담 Aside 채팅 d96YcUgCUkyDa4vb 41MB(한도 20MB). 직접 게시 모드(~11-18)라 지금은 안 쓰는 채팅. watch aside-leechat-rotate-1118(기한 11-17)에 새 전담 생성·asidequeue CHAT/LEE_CHAT·asidestate KNOWN ID 교체를 묶고, 그 전까지 이 경보가 직접 게시 모드 중엔 하루 1회만 울리게(소음 줄이기). splitguard 🔴 다음 순서.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-13 07:27:44",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "✅ 페이블 6차 🔴 처리(정비, 11-13 07:27, 5e539a2f1 push·syncorigin 맞춤) — studio/splitguard.py: 역슬래시 경로(Get-Content webapp\\batch.json·type·python -c open(r'..\\batch.json')) 다시 차단 · git show/cat-file·grep --include= 도 읽기 · 오탐 제거(따옴표 안 ; · 환경변수 앞머리 · ls/stat/echo · cat/tee heredoc 글 · python tools/x.py) · Glob pattern 키 · 시험이 라이브 로그에 쓰던 것 → SPLITGUARD_UNREG_LOG 임시경로. 확인: 차단 9·통과 10 사례 함수 실측, 시험 462/712 OK, enginemap 🔴 없음, 설계도 기록 1줄. 재발방지: 역슬래시 사례를 시험에 고정(TestFable6SplitguardBackslash) · 남은 구멍: bat*.json·*.json 넓은 와일드카드·변수 조립(알려진 한계) · 쉼표 든 문장 줄 추천태그(합성만, 실물 0) · 현행 관제탑 ID a7dca46f 미등록(matcher 변경 뒤 경고 1회 — whoami 등록은 이부장 몫) · 라이브 splitguard_unregistered.log 의 시험 흔적 1줄(nobody-registered)은 손대지 않음. 다음: ASIDE_CHAT_BIG 반복 경보 착수",
-   "actor": "정비",
-   "sid": "330b96b0"
-  },
-  {
-   "ts": "2026-11-13 07:31:01",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "✅ ASIDE_CHAT_BIG 반복 경보 소음 처리(정비, 11-13, 521af1287 push·syncorigin 맞춤) — studio/towertick.py chat_big_remind_min: 직접 게시 모드(data/aside_mode.json lee_direct ~11-18) 동안 같은 채팅 재알림 6시간→24시간, 모드 끝나면 6시간 복귀, 넘은 첫 알림은 그대로. 왜: 안 쓰는 이과장 전담 d96Y 41MB 경보가 몇 시간마다 반복. 확인: 시험 TestChatBigDirectModeQuiet(7h 조용·24h 1회·모드 끝 6h) · 463/713 OK · enginemap 🔴 없음 · 설계도 N2 갱신. 실제 tick 에 반영됐는지는 확인 못 함(towertick 이 오래 사는 프로세스면 다시 읽을 때부터). 재발방지: 간격 규칙을 순수함수·시험으로 고정 · 남은 구멍: 채팅 교체 자체는 watch aside-leechat-rotate-1118(기한 11-17, Aside 에서 새 전담 생성 필요 — 정비는 ID 교체 코드만). ⏸ 대기 — 다음 maint 지시",
-   "actor": "정비",
-   "sid": "330b96b0"
-  },
-  {
-   "ts": "2026-11-13 07:37:26",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "07:4x 아침 점검: idaerireq 신규 0·aroma 신규 승인 0·알림 0. 후보=사우디전 결과 글(경기 11/13 23:30 뒤 KFA 확인, crossdup 🟢0.15)·PE-012 오픈 14:00 후 반응 글·한로로 PE-010 18:00 후속(자동완성 '한로로 콘서트 티켓팅' 확인). DG-011 코레일 재고는 11/14 오전 재확인 예정. 후보기록_20261113 은 루틴10 23:08 회차 뒤 검증. 다음 점검 09:24.",
-   "actor": "미상:de614107",
-   "sid": "de614107"
-  },
   {
    "ts": "2026-11-13 08:29:41",
    "bid": "maint",
@@ -46482,6 +46432,17 @@
    "what": "전수 inspect 완주(582/582 · 오류 0 · partial 아님). 11-26 대비 리디렉션 324→330 · 벗어난 편 0 · 색인 0 · 검증 2편은 메일에 URL 없어 특정 불가. 결론은 docs/source_gsc_mail_1126.md 5·6절",
    "actor": "4.",
    "sid": "eb8bf5dd"
+  },
+  {
+   "ts": "2026-11-27 08:19:07",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "⏸ 자가점검 08:19: 할 일 0 · 사장님 대기 aroma-dg-021-affiliate-1127(DG-021 게시 방식 ①승인본/②충전독 링크, 기한 11/29 — 12개월 할인 11/30 종료)",
+   "actor": "이대리",
+   "sid": "de614107",
+   "req": "re9cc7b"
   }
  ]
 }
