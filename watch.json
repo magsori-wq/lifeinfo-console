@@ -37640,10 +37640,12 @@
    "due": "2026-11-26",
    "cmd": "승인 시 사장님이 ~/.claude/settings.json env 에 \"CLAUDE_CODE_AUTO_COMPACT_WINDOW\": \"300k\" 추가 — 근거 docs/토큰_실측_20261126.md ②-1",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
    "note": 1,
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-26",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "token-claudemd-diet-1126",
@@ -37652,8 +37654,21 @@
    "due": "2026-11-27",
    "cmd": "승인 시 이부장이 초안·검토 후 차이를 결재로 다시 올림",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "note": 1,
+   "by": "이부장",
+   "done_at": "2026-11-26",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "token-baseline-recheck-1129",
+   "added": "2026-11-26",
+   "what": "토큰 절감 전후 비교 — 11-27~29 재측정(정비 maint1126token 반영 뒤), 기준 docs/토큰_실측_20261126.md(이부장 요청당 평균 캐시읽기 약 39~41만·턴 65% 모드 깨움)",
+   "due": "2026-11-29",
+   "cmd": "python C:/Users/magso/AppData/Local/Temp/claude/d127bbacf628e9d6/a7dca46f-f53c-4660-a070-cda6cdeb5140/scratchpad/usage3.py (기간 11-27~29로) — 스크립트가 지워졌으면 measure 에이전트로 같은 집계",
+   "owner": "claude",
+   "state": "wait",
    "note": 1,
    "by": "이부장"
   }

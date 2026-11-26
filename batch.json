@@ -15697,14 +15697,18 @@
     {
      "code": "TOK-1",
      "title": "towertick 같은 배치 알림성 깨움 5분 묶기(ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED) — 설계도 먼저·enginemap 0·fuel1030 재생 시험 1건",
-     "state": "todo",
-     "note": ""
+     "state": "done",
+     "note": "정비가 11-26 studio/towertick.py coalesce_events(설계도 TO13) — ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED 배치별 5분 고정 창·다른 사건 tick 엔 얹혀 나감·NEVER_DELAY(BOSS_APPROVAL·NEW_BOSS_ITEM·DRAFT_READY·ROUTINE_DONE·BOSS_ALARM_RANG·BOSS_REMIND) 장부 안 거침·본문 사장님 직접 지시·[Aside][blocked] 즉시 · fuel1030 11-26 4줄 20초 tick 재생 → 깨움 1번(4줄 전부) · 커밋 db29c61c6 origin/main 포함 · 산출물 studio/towertick.py · 다음: 이부장 11-29 재측정(.tower_tick.json counts 억제:깨움묶음) · 재발방지: 같은 배치 연속 보고 깨움 5분 1회 · 남은 구멍: 첫 알림 최대 5분 지연·⛔·막힘 줄도 묶임",
+     "at": "2026-11-26 15:38",
+     "actor": "정비"
     },
     {
      "code": "TOK-2",
      "title": "보고 접수 한 명령화 — batchboard 서브명령이 [이부장 접수] 보드 줄+SendMessage 문안 출력(REPORT_UNACKED 해소)",
-     "state": "todo",
-     "note": ""
+     "state": "done",
+     "note": "정비가 11-26 batchboard receipt --id <배치> --what <무엇> --next <HH:MM> 추가 — now_log 에 [이부장 접수 HH:MM] 줄(actor 이부장) + SendMessage 문안 출력 · 이부장 세션만(rc 3)·없는 배치 거부(rc 2) · 임시 보드 시험: towertick._loop_acked False→True · 커밋 7efd14e8b origin/main 포함 · 산출물 studio/batchboard.py · 다음: 이부장이 접수 때 receipt 한 줄 → 문안 그대로 전송 · 재발방지: 접수를 감시가 읽는 곳에 씀 · 남은 구멍: _loop_acked 는 actor 무관 머리만 봐도 접수로 읽음",
+     "at": "2026-11-26 15:38",
+     "actor": "정비"
     },
     {
      "code": "TOK-3",
@@ -15718,17 +15722,72 @@
    "order_at": "2026-11-26 15:25:45"
   }
  },
- "updated": "2026-11-26 15:28:00",
+ "updated": "2026-11-26 15:39:04",
  "current": {
-  "batch": "chkmon",
+  "batch": "maint1126token",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 ☑️조치 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
-  "since": "18:12",
-  "since_at": "2026-11-05 18:12:35"
+  "step": 3,
+  "what": "⚠️ TOK-3 중 발견: Stop 하네스(run_checks.py)가 tests/test_studio_pure.py 를 스크립트로 돌리는데 그 파일 8117행 중간에 if __name__ == '__main__': unittest.main(verbosity=2) 가 있어 그 뒤에 정의된 시험 클래스는 매 턴 하네스에서 안 돈다 — 실측 python tests/test_studio_pure.py Ran 654 · python -m unittest tests.test_studio_pure Ran 821(167개 누락, 시간 21초 vs 54초) · 지시서 「검사 항목·빈도 안 바꿈」이라 고치지 않음(main 을 끝으로 옮기면 매 턴 +33초) · 이부장 판단 요청: 끝으로 옮길지(사장님 결정 사안일 수 있음) · TOK-3 은 -q·stderr 로그로 계속",
+  "since": "15:26",
+  "since_at": "2026-11-26 15:26:58"
  },
  "log": [
+  {
+   "t": "15:39:04",
+   "text": "▶   — 3/7단계 · ⚠️ TOK-3 중 발견: Stop 하네스(run_checks.py)가 tests/test_studio_pure.py 를 스크립트로 돌리는데 그 파일 8117행 중간에 if __name__ == '__main__': unittest.main(verbosity=2) 가 있어 그 뒤에 정의된 시험 클래스는 매 턴 하네스에서 안 돈다 — 실측 python tests/test_studio_pure.py Ran 654 · python -m unittest tests.test_studio_pure Ran 821(167개 누락, 시간 21초 vs 54초) · 지시서 「검사 항목·빈도 안 바꿈」이라 고치지 않음(main 을 끝으로 옮기면 매 턴 +33초) · 이부장 판단 요청: 끝으로 옮길지(사장님 결정 사안일 수 있음) · TOK-3 은 -q·stderr 로그로 계속",
+   "actor": "정비"
+  },
+  {
+   "t": "15:38:39",
+   "text": "✅ TOK-2 완료 — 보고 접수 한 명령화 — batchboard 서브명령이 [이부",
+   "actor": "정비"
+  },
+  {
+   "t": "15:38:29",
+   "text": "✅ TOK-1 완료 — towertick 같은 배치 알림성 깨움 5분 묶기(ASIDE",
+   "actor": "정비"
+  },
+  {
+   "t": "15:36:28",
+   "text": "▶   — 2/7단계 · [이부장 접수 15:37] TOK-1 db29c61c6 확인 — 단위시험 821 OK·enginemap 0·NEVER_DELAY 목록 확인 · origin 푸시 완료 → mark done 하시오 · TOK-2·3 계속",
+   "actor": "이부장"
+  },
+  {
+   "t": "15:36:14",
+   "text": "✔ 이부장 ack r64d4e9",
+   "actor": "이부장"
+  },
+  {
+   "t": "15:35:47",
+   "text": "▶   — 2/7단계 · TOK-2 완료(커밋 7efd14e8b main, push 뒤 mark done) · 정비가 studio/batchboard.py 에 receipt 서브명령 추가: python -m studio.batchboard receipt --id <배치> --what <무엇> --next <HH:MM> → now_log 에 접수 줄(actor 이부장, 머리 [이부장 접수 HH:MM]) + stdout 에 「SendMessage 문안: … · 답장 불필요」 · is_tower_session 아니면 거부(rc 3)·없는 배치 거부(rc 2) · 시험 3개(임시 보드): 쓴 줄을 towertick._loop_acked 가 접수로 읽음(False→True) · Ran 1087 tests OK · enginemap 🔴 없음 · validate FAIL 0 · 이부장 사용법: 접수 때 SendMessage 대신 receipt 한 줄 → 출력 문안을 그대로 보냄 · 남은 구멍: _loop_acked 는 actor 무관하게 그 머리만 봐도 접수로 읽음(다른 세션 자기 접수 가능, 안 고침) · 다음 TOK-3",
+   "actor": "정비"
+  },
+  {
+   "t": "15:34:00",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵2 🟡3 — 즉시: 사장님 🙋승인 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c; 사장님 🙋승인 【권고】 CLAUDE.md 감량 약 51K→25K 토큰(경위·날짜·원문 · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
+  {
+   "t": "15:32:28",
+   "text": "▶   — 1/7단계 · TOK-1 완료(커밋 db29c61c6 main, push 뒤 mark done) · 정비가 studio/towertick.py coalesce_events(설계도 TO13 신설 먼저) — ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED 배치별 5분 고정 창 · 다른 사건 나가는 tick 엔 얹혀 나감 · NEVER_DELAY(BOSS_APPROVAL·NEW_BOSS_ITEM·DRAFT_READY·ROUTINE_DONE·BOSS_ALARM_RANG·BOSS_REMIND) 장부 안 거침 · 판단: 본문 「👤 사장님 직접 지시」「[Aside][blocked]」는 즉시, ⛔·막힘 줄은 묶음(5분 안) · 실측: fuel1030 11-26 15:18:07~15:21:14 3. 4줄 20초 tick 재생 → 깨움 1번(15:23:20, 4줄 전부) · 4분 간격 줄도 첫+5분에 나감(고정 창) · 시험 5개 · Ran 1084 tests OK · enginemap 🔴 없음 · validate FAIL 0 · 주의: 모드가 C:\\lifeinfo 코드로 tick 하므로 커밋 즉시 라이브 적용됨 · 효과 측정: .tower_tick.json counts 의 억제:깨움묶음 · 다음 TOK-2 착수",
+   "actor": "정비"
+  },
+  {
+   "t": "15:30:25",
+   "text": "✔ 이부장 ack r4490b6",
+   "actor": "이부장"
+  },
+  {
+   "t": "15:29:24",
+   "text": "▶   — 8/7단계 · [이부장 접수 15:33] Aside 재시도 결과 접수 · 새 지시 불필요 · 16:00 후보 0편 — 24:00 최종 표 대기",
+   "actor": "이부장"
+  },
+  {
+   "t": "15:29:11",
+   "text": "✔ 이부장 ack r561847",
+   "actor": "이부장"
+  },
   {
    "t": "15:28:00",
    "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 ☑️조치 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
@@ -15872,61 +15931,6 @@
   {
    "t": "14:57:24",
    "text": "📋 배치 '🔧 정비 — routinesync 에 새 공통 절(카테고리칸별1126) 등록' 등록 — 1항목",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:57:17",
-   "text": "📄 fuel1030 지시서 덧붙임(2026-11-26 14:57:17)",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:54:15",
-   "text": "📄 fuel1030 지시서 덧붙임(2026-11-26 14:54:15)",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:52:48",
-   "text": "📄 fuel1030 지시서 덧붙임(2026-11-26 14:52:48)",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:44:44",
-   "text": "✔ 이부장 ack rac1926",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:44:35",
-   "text": "✔ 이부장 ack rd58b90",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:44:26",
-   "text": "✔ 이부장 ack re107b8",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:44:12",
-   "text": "✔ 이부장 ack r135e23",
-   "actor": "이부장"
-  },
-  {
-   "t": "14:43:46",
-   "text": "▶   — 1/7단계 · aroma-kwtags-1126 결재 커밋 39be88281 확인 → 태그 반영 시작(1편 시험 후 첫날 15편)",
-   "actor": "이대리"
-  },
-  {
-   "t": "14:43:10",
-   "text": "▶   — 1/7단계 · ⏸ 대기 — aroma-kwtags-1126 watch.json done(사장님 승인) 확인, [사장님] 결재 커밋 아직 없음 → 커밋 확인 뒤 태그 반영 시작",
-   "actor": "이대리"
-  },
-  {
-   "t": "14:42:37",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵2 🟡3 — 즉시: 사장님 🙋승인 【권고】기존 글 73편에 관련 검색어 태그 231개 추가(본문 무변경,; 사장님 🙋승인 【권고】검색형 글 3편(BO-008 넷플릭스 추가회원·BO-009 웨이브 · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
-  },
-  {
-   "t": "14:42:24",
-   "text": "▶   — 1/7단계 · [이부장 접수 14:43] aroma-kwqa-1126(검색형 3편 Q&A 상자, V0 92·92·91) 카드 접수 — 사장님 결재 대기로 안내. 참고: 보고 머리 「15:0x」인데 실제 14:41 — 세 번째, 보고 시각 표기 방식 점검 바람 · 답장 불필요",
    "actor": "이부장"
   }
  ],
@@ -16287,7 +16291,7 @@
    "code": "",
    "title": "",
    "step": 8,
-   "what": "⏸ 15:3x 1회 재시도 결과(이부장 15:27 지시, aside_read 읽기 전용 1회씩): ① KBO — kbo.or.kr 은 DNS 없음(NXDOMAIN) → 공식 도메인 koreabaseball.com 열람: 메인에 「2026 신한 SOL KBO 시상식 팬 입장권 당첨자 발표」만 확인, 시상식 날짜·중계는 본문 미열람 → 제외(입장권 추첨은 이미 끝난 공지라 독자 행동 없음) ② K리그 — kleague.com 메인 열람: 승강 PO 일정 미표기 → 제외 ③ 국세청 — nts.go.kr 메인·공지 목록 열람: 2026 귀속 연말정산 일정 공지 미확인 → 제외 ④ 인천공항 — airport.kr 열람: 겨울·연말 혼잡 예보 미확인(혼잡도 메뉴만) → 제외 · 16:00 첫 후보 0편 유지, 24:00 까지 F 여행 칸 탐색",
+   "what": "[이부장 접수 15:33] Aside 재시도 결과 접수 · 새 지시 불필요 · 16:00 후보 0편 — 24:00 최종 표 대기",
    "since": "13:35",
    "since_at": "2026-10-30 13:35:23"
   },
@@ -16395,7 +16399,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 ☑️조치 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵2 🟡3 — 즉시: 사장님 🙋승인 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c; 사장님 🙋승인 【권고】 CLAUDE.md 감량 약 51K→25K 토큰(경위·날짜·원문 · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -19202,8 +19206,8 @@
    "batch": "maint1126token",
    "code": "",
    "title": "",
-   "step": 1,
-   "what": "📋 복창: TOK-1 towertick 같은 배치 ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED 5분 창 묶기(설계도 먼저·제외 목록 상수) → TOK-2 batchboard receipt 서브명령 → TOK-3 run_checks unittest -q·stderr 로그 · 하지 않을 것: 사장님·결재·사이렌 계열 지연, 하네스 빈도·항목 변경, push · 끝나면 TOK 별 mark 실측 한 줄",
+   "step": 3,
+   "what": "⚠️ TOK-3 중 발견: Stop 하네스(run_checks.py)가 tests/test_studio_pure.py 를 스크립트로 돌리는데 그 파일 8117행 중간에 if __name__ == '__main__': unittest.main(verbosity=2) 가 있어 그 뒤에 정의된 시험 클래스는 매 턴 하네스에서 안 돈다 — 실측 python tests/test_studio_pure.py Ran 654 · python -m unittest tests.test_studio_pure Ran 821(167개 누락, 시간 21초 vs 54초) · 지시서 「검사 항목·빈도 안 바꿈」이라 고치지 않음(main 을 끝으로 옮기면 매 턴 +33초) · 이부장 판단 요청: 끝으로 옮길지(사장님 결정 사안일 수 있음) · TOK-3 은 -q·stderr 로그로 계속",
    "since": "15:26",
    "since_at": "2026-11-26 15:26:58"
   }
@@ -19259,90 +19263,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-12 15:30:27",
-   "bid": "adsense4_1104",
-   "code": "",
-   "title": "",
-   "owner": "4.",
-   "what": "✅ [4.→이부장] 주소·내부 길 재검증 완료(15:33) · 누가 4.(indexlab·measure 에이전트 3개 병렬, 핵심 수치 4.가 재계산) · 어디서 docs/재검증_주소_내부길_20261112.md(커밋 푸시, 원자료 _work 3개) · 가설별 한 줄: H1 주소 어긋남=반박(라이브 517편 사슬·canonical 전부 동일 이탈 0, 사이트맵=DB 517, GSC 주소 511/511 일치, 옛 색인 120 주소 불변 — 재계산) · H2 글 사이 길 얇음=지지(본문+관련글 유입 0인 글 157편 30%, 새 글일수록 많음 10월 65·11월 38 — 0 버킷만 재계산, 1~2·3+ 개수는 에이전트) · H3 길이 얇아서 색인 안 됨=미확정(카테고리 nav 로 전 글 깊이 2, 8~9월은 유입 무관 Redirect 88~100%, 옛 색인 120편이 길 있어도 지금 미색인, referringUrls 는 크롤된 글 124/124 에 채워지는 값이라 길 증거 못 됨) · H4 Redirect error 원인=미확정 · 시범 10쌍(월·state·유입0 맞춘 짝, 처치 글은 손대지 않고 Crawled 도너 18편 관련글 박스에 링크 20줄) · 위험: 도너 18편이 7월 이후 재크롤 안 됨→관문 1(도너 lastCrawl 갱신)로 무효 판정, 대조 오염 감시 · 🙋 이부장 결정 3: ①시범 실행 여부(도너 「약」 적합 4곳은 이과장이 본문 보고 교체) ②14·28일 측정을 루틴7 주간 실측에 얹을지 ③B2-14 404 링크 교체 승인 · 참고: 11-15 재요청 3일 전에 오래된 글 18편이 수정되는 시점은 이부장 판단 · 「기존 글 수정 금지」 해제는 14:08 이부장 전달로 받음, update-post 실행 전 이부장이 CLAUDE.md 확인 · watch 등록: pilot-link-decision-1112·internal-link-b2-14-404",
-   "actor": "4.",
-   "sid": "eb8bf5dd"
-  },
-  {
-   "ts": "2026-11-12 15:31:58",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[관제탑 → 이과장] 동기 해소·푸시 완료(15:30). C2-26 발행 run 43168763258 진행(15:31) — 끝날 때까지 push 금지. C1-20·G3-37 4채널 후속 진행(stage 남기지 말 것).",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 15:33:50",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡6 — 즉시: 반영 어긋남 · 화면 생성물 신선도; 사장님 🙋승인 【권고】블로그스팟 시범 10쌍 실행 — 옛 글 18편 「함께 보면 좋은 · 묶음: 사건×3 반영 감사×1 기타×2 (상세 python -m studio.chkmon show)",
-   "actor": "사람",
-   "sid": "",
-   "req": "r1395fb"
-  },
-  {
-   "ts": "2026-11-12 15:34:49",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡6 — 즉시: 결재 뒤 미발행 C2-26 편의점 상비약 1회 1개·12세 미만 불가 — 군부대·; 사장님 🙋승인 【권고】블로그스팟 시범 10쌍 실행 — 옛 글 18편 「함께 보면 좋은 · 묶음: 사건×3 반영 감사×1 기타×2 (상세 python -m studio.chkmon show)",
-   "actor": "사람",
-   "sid": "",
-   "req": "r6ad94a"
-  },
-  {
-   "ts": "2026-11-12 15:36:54",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "이부장 ack r1395fb — 시범안 결재 대기·배포 반영",
-   "actor": "이부장",
-   "sid": "a7dca46f",
-   "ack": "r1395fb"
-  },
-  {
-   "ts": "2026-11-12 15:37:06",
-   "bid": "pub1112c120",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474411521 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
-  {
-   "ts": "2026-11-12 15:37:12",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "이부장 ack r6ad94a — 시범안 결재 대기·배포 반영",
-   "actor": "이부장",
-   "sid": "a7dca46f",
-   "ack": "r6ad94a"
-  },
-  {
-   "ts": "2026-11-12 15:39:01",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[관제탑 → 이과장] C1-20 검색설명 초안 확인 — 직접 입력·scan·set. C2-26 발행 끝(15:34 verify ✅) → 후속 4채널 C1-20 → G3-37 → C2-26 순.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
   {
    "ts": "2026-11-12 15:41:07",
    "bid": "maint",
@@ -46713,6 +46633,100 @@
    "actor": "사람",
    "sid": "",
    "req": "r4490b6"
+  },
+  {
+   "ts": "2026-11-26 15:29:11",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r561847 — 이부장 15:33 확인 — Aside 재시도 4건 제외 사유 타당, 24:00까지 F·엔터·H 계속",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r561847"
+  },
+  {
+   "ts": "2026-11-26 15:29:24",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "[이부장 접수 15:33] Aside 재시도 결과 접수 · 새 지시 불필요 · 16:00 후보 0편 — 24:00 최종 표 대기",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-26 15:30:25",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r4490b6 — 🔵 자동압축 카드 결재함 대기 · 🟡 fdc80db4f 검증 완료·fuel 3. 진행 중(24:00)·반영 동기 완료",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r4490b6"
+  },
+  {
+   "ts": "2026-11-26 15:32:28",
+   "bid": "maint1126token",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "TOK-1 완료(커밋 db29c61c6 main, push 뒤 mark done) · 정비가 studio/towertick.py coalesce_events(설계도 TO13 신설 먼저) — ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED 배치별 5분 고정 창 · 다른 사건 나가는 tick 엔 얹혀 나감 · NEVER_DELAY(BOSS_APPROVAL·NEW_BOSS_ITEM·DRAFT_READY·ROUTINE_DONE·BOSS_ALARM_RANG·BOSS_REMIND) 장부 안 거침 · 판단: 본문 「👤 사장님 직접 지시」「[Aside][blocked]」는 즉시, ⛔·막힘 줄은 묶음(5분 안) · 실측: fuel1030 11-26 15:18:07~15:21:14 3. 4줄 20초 tick 재생 → 깨움 1번(15:23:20, 4줄 전부) · 4분 간격 줄도 첫+5분에 나감(고정 창) · 시험 5개 · Ran 1084 tests OK · enginemap 🔴 없음 · validate FAIL 0 · 주의: 모드가 C:\\lifeinfo 코드로 tick 하므로 커밋 즉시 라이브 적용됨 · 효과 측정: .tower_tick.json counts 의 억제:깨움묶음 · 다음 TOK-2 착수",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-26 15:34:00",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵2 🟡3 — 즉시: 사장님 🙋승인 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c; 사장님 🙋승인 【권고】 CLAUDE.md 감량 약 51K→25K 토큰(경위·날짜·원문 · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r64d4e9"
+  },
+  {
+   "ts": "2026-11-26 15:35:47",
+   "bid": "maint1126token",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "TOK-2 완료(커밋 7efd14e8b main, push 뒤 mark done) · 정비가 studio/batchboard.py 에 receipt 서브명령 추가: python -m studio.batchboard receipt --id <배치> --what <무엇> --next <HH:MM> → now_log 에 접수 줄(actor 이부장, 머리 [이부장 접수 HH:MM]) + stdout 에 「SendMessage 문안: … · 답장 불필요」 · is_tower_session 아니면 거부(rc 3)·없는 배치 거부(rc 2) · 시험 3개(임시 보드): 쓴 줄을 towertick._loop_acked 가 접수로 읽음(False→True) · Ran 1087 tests OK · enginemap 🔴 없음 · validate FAIL 0 · 이부장 사용법: 접수 때 SendMessage 대신 receipt 한 줄 → 출력 문안을 그대로 보냄 · 남은 구멍: _loop_acked 는 actor 무관하게 그 머리만 봐도 접수로 읽음(다른 세션 자기 접수 가능, 안 고침) · 다음 TOK-3",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-26 15:36:14",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r64d4e9 — 🔵 결재 2건 사장님 대기 · 🟡 묶음 기존 처리분",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r64d4e9"
+  },
+  {
+   "ts": "2026-11-26 15:36:28",
+   "bid": "maint1126token",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "[이부장 접수 15:37] TOK-1 db29c61c6 확인 — 단위시험 821 OK·enginemap 0·NEVER_DELAY 목록 확인 · origin 푸시 완료 → mark done 하시오 · TOK-2·3 계속",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-26 15:39:04",
+   "bid": "maint1126token",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "⚠️ TOK-3 중 발견: Stop 하네스(run_checks.py)가 tests/test_studio_pure.py 를 스크립트로 돌리는데 그 파일 8117행 중간에 if __name__ == '__main__': unittest.main(verbosity=2) 가 있어 그 뒤에 정의된 시험 클래스는 매 턴 하네스에서 안 돈다 — 실측 python tests/test_studio_pure.py Ran 654 · python -m unittest tests.test_studio_pure Ran 821(167개 누락, 시간 21초 vs 54초) · 지시서 「검사 항목·빈도 안 바꿈」이라 고치지 않음(main 을 끝으로 옮기면 매 턴 +33초) · 이부장 판단 요청: 끝으로 옮길지(사장님 결정 사안일 수 있음) · TOK-3 은 -q·stderr 로그로 계속",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ]
 }
