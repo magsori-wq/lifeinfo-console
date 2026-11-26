@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-26 11:34:28",
- "source_head": "f66c3aaa800b",
+ "computed_at": "2026-11-26 11:39:45",
+ "source_head": "038f9aefd4fc",
  "ids": [
   "A5-24",
   "D5-15",
@@ -89,6 +89,12 @@
        "path": "osmu/쓰레드용_모두의카드청소년12월부터환급계산.txt",
        "img": false,
        "exists": false
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_D5-15_moducard_teen.png",
+       "img": true,
+       "exists": true
       }
      ],
      "light": "todo"
@@ -112,7 +118,7 @@
  "actions": [
   {
    "id": "toss-openapi-unauthorized-1126",
-   "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 사장님 계정 메일로 보내실지 결정 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 확인(/health 는 ok, 11-25 07:11 은 정상) 【위험】인기순위 새 수집 불가 → 루틴8·9 이슈상품 후보 0. 기존 누적 목록 검색·기발급 링크는 그대로. 링크 발급 API 영향은 미확인(시험 발급 안 함)",
+   "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 문안 docs/토스_거래처인증_문의_20261126.md(빈칸 2곳) 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 · 링크 발급 API 는 11:36 정상(새꼬막 링크 발급 성공) 【위험】인기순위 새 수집 불가 → 루틴8·9 후보는 누적 목록 검색만",
    "due": "2026-11-26",
    "cmd": "python -c \"from studio.tosslink import best;print(best(1))\"",
    "state": "blocked",
