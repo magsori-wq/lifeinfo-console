@@ -37222,7 +37222,7 @@
   {
    "id": "fuel1030-cand-1600",
    "added": "2026-11-26",
-   "what": "fuel1030 16:00 후보 ≥1 확인 — 미달이면 건별 사유 표를 24:00 전 보고(D5-15 는 루틴6 결재 대기라 제외)",
+   "what": "fuel1030 16:00 후보 ≥1 (재고 0·하한 3)",
    "due": "2026-11-26",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
@@ -37400,6 +37400,17 @@
    "state": "todo",
    "by": "세션:fb8fd0c0",
    "preview": "aromapv_AM-PE-022.html"
+  },
+  {
+   "id": "aroma-am-dg-020-approve-1126",
+   "added": "2026-11-26",
+   "what": "【권고】AM-DG-020 스팀 세일 기간 11월 — 블프는 공식 세일 아님, 겨울 세일은 12/17부터 승인 【근거】자동완성 「스팀 세일 기간 11월」 + Steamworks 공식 문서 2건(일정·할인 규칙), 뉴스에 없는 것=한국 시각 환산 11/27 03시~12/1 03시·블프 할인 게임의 겨울 세일 재할인 가능 판단·출시 쿨다운, V0 HOLD 78→정정→PASS 91, 영상 임베드 없음(Steam 채널 세일 영상 없음), crossdup 최고 0.33 🟢(무관 단어), 유형 홈판+검색형, 사진 없음(허락 필요 후보 Commons 게이밍 PC CC BY-SA 2.0) 【위험】블프 허브가 11/27 03시 시작 — 늦으면 시의성 감소",
+   "due": "2026-11-27",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-DG-020_스팀세일기간11월겨울세일.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:fb8fd0c0"
   }
  ]
 }
