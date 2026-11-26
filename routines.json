@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-26 20:00",
+ "generated": "2026-11-26 20:10",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/26 17:04",
+   "last": "11/26 20:04",
    "next": "11/26 23:00",
    "model": "haiku-5-5",
    "report_day": "1126",
    "report": "11-26 메일 브리핑: 🔴 애드센스 반려 통지 1건(adsense-noreply, 11-24 20:39 · magsori 수신 · 사이트 NEEDS_ATTENTION · API 상태 일치). 재요청은 사장님 판단(11-15 Aside 검토요청 예정 유지). 🟡 lifeinfo-source 글 발행 run 실패(ac498bf, 11-26 02:14): 사유=사전점검 '원격 앞섬' 가드(체크아웃 ac498bf ≠ origin 044c4f6a, run 도중 PC 푸시) — 코드 결함 아님, 재실행 여부 미확인. 🟢 Pages 배포 실패 2건(console b382fe9·7605b1d)=연속 push 무해. 🟢 8975 수신 1건=Microsoft 2단계 인증 안내(조치 불요). aroma8975 0건(평소). GSC 7일 통지 0건. gmailread scan 은 개인정보 훅이 차단해 미실행 — 커넥터 조회로 대체.",
    "runs": [
+    {
+     "at": "11/26 20:08",
+     "link": "claude://claude.ai/epitaxy/local_c535f5e0-cf41-4266-aaee-14dfffa26133",
+     "archived": false
+    },
     {
      "at": "11/26 17:09",
      "link": "claude://claude.ai/epitaxy/local_77b0e78d-efb2-4e84-9388-5874ac002d41",
@@ -30,11 +35,6 @@
     {
      "at": "11/26 08:07",
      "link": "claude://claude.ai/epitaxy/local_40eec2ab-2235-4f3b-be16-b0bbc433ef95",
-     "archived": true
-    },
-    {
-     "at": "11/25 23:05",
-     "link": "claude://claude.ai/epitaxy/local_79724557-f44d-4560-a5bc-8742cdc256a2",
      "archived": true
     }
    ]
