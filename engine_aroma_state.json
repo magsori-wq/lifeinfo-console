@@ -1,15 +1,23 @@
 {
- "at": "2026-11-27 06:00:01",
+ "at": "2026-11-27 06:00:32",
  "errors": [],
  "rows": [
   {
    "code": "AM-DG-021",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-dg-021-1127",
+     "state": "todo",
+     "kind": "1127",
+     "at": "2026-11-27"
+    }
+   ],
    "title": "PS플러스12월게임정가합계",
-   "last_file_at": "2026-11-27 05:54",
-   "stage": "draft",
-   "label": "초안",
-   "detail": "1개 파일"
+   "last_file_at": "2026-11-27 06:00",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-dg-021-1127",
+   "no_preview": false
   }
  ],
  "old_inflight": [],
@@ -290,7 +298,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 0분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 1분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -314,10 +322,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-27 05:58",
+   "last_at": "2026-11-27 06:00",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 83개",
+   "note": "복사된 미리보기 84개",
    "at_node": "boss"
   }
  ],
@@ -331,16 +339,16 @@
  },
  "open_requests": [],
  "nodes": {
-  "draft": [
+  "draft": [],
+  "v0": [],
+  "boss": [
    {
     "code": "AM-DG-021",
     "title": "PS플러스12월게임정가합계",
-    "min": 6,
+    "min": 0,
     "lvl": "ok"
    }
   ],
-  "v0": [],
-  "boss": [],
   "deploy": [],
   "publish": [],
   "osmu": []
@@ -816,7 +824,7 @@
   "today": "2026-11-27",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -876,7 +884,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -884,7 +892,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "05:58",
+   "at": "06:00",
    "today": 4,
    "lvl": "ok",
    "order": null,
@@ -911,9 +919,29 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-021-1127",
+   "what": "【권고】새 글 AM-DG-021 게시 승인 — 제목 「PS 플러스 12월 게임 정가 합계 64,600원, 에센셜 1개월 요금의 5.4배」(45자",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
+  {
+   "code": "AM-SP-007",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-021",
+   "stage": "proc",
+   "at": "2026-11-27 06:00:18",
+   "src": "파일 수정 시각"
+  },
   {
    "code": "AM-SP-025",
    "stage": "proc",
@@ -921,19 +949,7 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-021",
-   "stage": "proc",
-   "at": "2026-11-27 05:54:48",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-PE-005",
-   "stage": "proc",
-   "at": "2026-11-27 05:57:42",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-007",
    "stage": "proc",
    "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
@@ -953,8 +969,8 @@
   {
    "code": "AM-SP-007",
    "stage": "boss",
-   "at": "",
-   "src": "watch done_at(날짜뿐)"
+   "at": "2026-11-27 06:00:16",
+   "src": "결재 커밋 시각"
   }
  ],
  "incidents": [],
@@ -1015,7 +1031,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 0분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 1분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
@@ -1032,8 +1048,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-27 05:58",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 83개"
+     "chip": "2026-11-27 06:00",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 84개"
     }
    ]
   },
