@@ -38136,7 +38136,7 @@
   {
    "id": "xlink-d222",
    "added": "2026-11-27",
-   "what": "🔗 D2-22 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D2-22",
+   "what": "🔗 D2-22 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D2-22",
    "due": "2026-11-27",
    "cmd": "python studio/blogger.py crosslink --code D2-22",
    "owner": "claude",
@@ -38181,6 +38181,18 @@
    "by": "이부장",
    "done_at": "2026-11-27",
    "result": "이부장 등록 실수(빈 문구) — d222-imgserver-allow-1127 로 대체"
+  },
+  {
+   "id": "imgserver-allowrule-1127",
+   "added": "2026-11-27",
+   "what": "게시용 이미지 서버 영구 허용 규칙 — 사장님이 ~/.claude/settings.json allow 에 2줄 넣으셨는지 확인 → 넣으셨으면 이과장 D2-22 인스타·쓰레드 재개 지시(숨기지 않는 형태)",
+   "due": "2026-11-27",
+   "cmd": "python -c \"import json;print([r for r in json.load(open(r'C:/Users/magso/.claude/settings.json'))['permissions']['allow'] if 'http.server' in r])\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "04:47 사장님 반영 확인(allow 2줄) · 이과장 지시서 fu1127d222 발급·깨움 04:48 · 규칙 실효는 이과장 첫 실행으로 실측"
   }
  ]
 }
