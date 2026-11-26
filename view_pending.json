@@ -1,8 +1,10 @@
 {
- "computed_at": "2026-11-26 06:00:55",
- "source_head": "add8f250252b",
+ "computed_at": "2026-11-26 09:32:52",
+ "source_head": "d442ffbcd53c",
  "ids": [
-  "D5-15"
+  "A5-24",
+  "D5-15",
+  "toss-openapi-unauthorized-1126"
  ],
  "posts": [],
  "publish": [
@@ -32,8 +34,44 @@
     }
    ],
    "light": "todo"
+  },
+  {
+   "code": "A5-24",
+   "title": "연차수당, 소멸돼도 남는 경우 — 회사 서면 촉구 2번 확인법 (2026)",
+   "go": false,
+   "v0": null,
+   "files": [
+    {
+     "label": "초안 연차수당소멸서면촉구확인법_글_HTML.txt",
+     "path": "연차수당소멸서면촉구확인법_글_HTML.txt",
+     "img": false,
+     "exists": true
+    },
+    {
+     "label": "썸네일",
+     "path": "thumbs/563_annual_leave_pay.png",
+     "img": true,
+     "exists": true
+    },
+    {
+     "label": "썸네일(네이버)",
+     "path": "thumbs_naver/563_annual_leave_pay.png",
+     "img": true,
+     "exists": true
+    }
+   ],
+   "light": "todo"
   }
  ],
- "actions": [],
+ "actions": [
+  {
+   "id": "toss-openapi-unauthorized-1126",
+   "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 사장님 계정 메일로 보내실지 결정 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 확인(/health 는 ok, 11-25 07:11 은 정상) 【위험】인기순위 새 수집 불가 → 루틴8·9 이슈상품 후보 0. 기존 누적 목록 검색·기발급 링크는 그대로. 링크 발급 API 영향은 미확인(시험 발급 안 함)",
+   "due": "2026-11-26",
+   "cmd": "python -c \"from studio.tosslink import best;print(best(1))\"",
+   "state": "blocked",
+   "kind": "action"
+  }
+ ],
  "actionsFuture": []
 }
