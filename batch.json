@@ -757,61 +757,6 @@
      "at": "2026-09-12 20:14"
     },
     {
-     "code": "lifeinfo-daily-publish-1112",
-     "title": "lifeinfo-daily-publish (F)",
-     "state": "done",
-     "note": "[조사장부] 목록 3(korea.kr 정책뉴스·보도자료·kwgap) · 원문 1(docs/source_D5-13_20261112.md) · 후보 1 · 탈락 5 · 검색어 4 · 유입 1\n이어받은 것: 11-11 beat(육아휴직 업무분담지원금 보류·전세사기 A4-07·안심신탁 B5-12 기발행). 새로 본 것: 탈락 — 에너지바우처 A2-31(0.87)·유류세 D2-15(1.00)·PSAT E3-07 기발행·소방안전관리자 시험 E3-05 기발행(유입 소방안전관리자1급 시험일정과 겹침·별도 각도 없음). 제안 D5-13 한파쉼터 6.6만곳·응급대피소 342곳(행안부 11-11, 한파쉼터 자동완성 ✅·11/15 대책기간 시작) → docflow 가 drop(사유: 정부 운영기간이라 시민 기한 아님·시민 금액/쉼터 위치조회/기상청 기준 원문 못 얻음(Aside·curl·WebFetch·mois 시도)·재정리 위험·C2-25 G4-13 A2-31 E4-05 겹침). 재제안 조건: 행안부 보도자료 원문+쉼터 조회경로 확보(watch docflow-1112-d513). 초안 0건·큐 0·재고 0(하한 3).\n▸ 00:17 [조사장부] 목록 3 · 원문 1(docs/source_D5-13_20261112.md) · 후보 1 · 탈락 5 · 검색어 4 · 유입 1 — D5-13 한파쉼터 제안→docflow drop(시민 기한·금액·쉼터조회 원문 못 얻음, Aside·curl·WebFetch·mois 시도, 기발행 4건 겹침). 탈락: 에너지바우처 A2-31·유류세 D2-15·PSAT E3-07·소방안전관리자 E3-05 기발행. 초안 0·큐 0.",
-     "auto_daily": true,
-     "base_code": "lifeinfo-daily-publish",
-     "date": "2026-11-12",
-     "at": "2026-11-12 00:17",
-     "actor": "미상:d3f42422"
-    },
-    {
-     "code": "lifeinfo-daily-topics-1112",
-     "title": "lifeinfo-daily-topics (B)",
-     "state": "done",
-     "note": "[조사장부] 목록 8 · 원문 1 · 후보 8 · 탈락 6 · 검색어 6 · 유입 1 | 연 목록: korea.kr 정책뉴스·보도자료·kwgap(+trend)·복지부·국세청·고용부·금융위 | 원문 파일: docs/source_B4-31_연말정산교육비기부금_20261112.md (law.go.kr 소득세법 제59조의4, Aside 읽기 성공) · korea.kr 기사 2건(유류세·가상자산)은 본문 직접 열람했으나 기발행으로 파일 미작성 · 후보: 교육비 B4-31(채택·추천) · 기부금 B4-32(채택·후보) · 유류세 연장(탈락: dupcheck D2-15 0.91·D레인) · 가상자산 유예(탈락: B4-17 0.70·B4-29) · 장기요양(탈락: A6-09 0.80) · 증여 1천만원(탈락: B4-01·B4-09 인접) · 신용카드공제(탈락: 기발행) · 에너지바우처(탈락: 드래프트 보유). 이어받은 것: 직전 beat 없음. 새로 본 것: 법조문 ③ 교육비 2025-12 개정 표기. 한계: 시행령 미확보·verify 명령 120초 초과(백그라운드) — 선별 verify 재실행 필요. 이부장 확인: topicprop table(B4-31 추천함, 예비후보 1/5)",
-     "auto_daily": true,
-     "base_code": "lifeinfo-daily-topics",
-     "date": "2026-11-12",
-     "at": "2026-11-12 09:21",
-     "actor": "미상:9bda7863"
-    },
-    {
-     "code": "lifeinfo-index-check-1112-1112",
-     "title": "lifeinfo-index-check-1112 (G)",
-     "state": "done",
-     "note": "11-12 inspect 완주 511편(partial=False·오류0) · ①색인 0/511 · ②28일클릭 0(노출1) · ③네이버구글색인 61(측정 11-05, 7일 경과) · state RedirectErr266/Crawled124/Discovered90/unknown31(11-07 242/124/81/27) · 신규37(Redirect23·Discovered7·unknown7) · 색인 진입·이탈 0 · Crawled124 전부 lastCrawl 30일초과 · 재크롤 1편 D3-14→Redirect · adsense 사이트 NEEDS_ATTENTION(11-08 7차 반려와 일치, 화면 미확인·재요청 가능일 11-15) · 이어받은 것: idx0zero 49일 무갱신, 주간실측만 · 상세 전담자료 11-12절 · 재검토 시점은 사장님",
-     "auto_daily": true,
-     "base_code": "lifeinfo-index-check-1112",
-     "date": "2026-11-12",
-     "at": "2026-11-12 10:39",
-     "actor": "미상:05f8e855"
-    },
-    {
-     "code": "daily-email-briefing-1112",
-     "title": "daily-email-briefing (A)",
-     "state": "done",
-     "note": "11-12 11:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 새 구글 피드백 답 없음(11-08 PE 2건 기보고). 🟡 새 사실: console Pages 'Run failed at startup' 11건(11-12 05:26~05:55 KST, GitHub 쪽 일시 · 02:07Z 이후 run 전부 success로 회복) · 콘솔 정합성 검사 11-11 실패 6건은 이후 성공 · 발행 워크플로 11-11 실패 2건 사유=원격 선행 확인(PC 커밋과 충돌 방지 게이트, 재시도 성공). GSC 색인 문제 해결 통지 11-09(기보고). m8975 전달 3건(뉴스·MS 고지)·aroma 0건.\n▸ 14:07 11-12 14:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려, 11-15 재요청 예정). 신규: GSC 11-12 04:16 「페이지 색인 생성 문제 해결됨」 32페이지 유효성 통과(URL 총계·글 단위 아님; 기보고 8월 검사 종료 통보 계열). help-communities 신규 0. GitHub: 발행 실패 1건(02:18 UTC, 원격≠체크아웃 동기 지연 → 재실행 4회 모두 success), pages build 실패·콘솔 정합성 검사 실패 반복(기보고 무해/연속push 계열). 8975 전달 2건·aroma 0건\n▸ 17:07 11-12 17:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려 11-08, 11-15 재요청 예정). 새 메일: GSC 11-12 04:16 UTC 「페이지 색인 생성 문제 해결됨」[WNC-10030335] — 검증 대상 '현재 색인이 생성되지 않음' 32페이지 수정 확인(URL 총계 기준, 글 단위 아님; magsori·magsori8975 양쪽 수신). 구글 커뮤니티 답변은 11-08 이후 신규 없음(기보고). GitHub: 11-12 02:18 UTC 발행 run 43140398676 실패 사유 = 「체크아웃과 origin/main 이 다르다」(원격 선행 게이트·동기 지연, 재시도 대상) · console pages build 「No jobs were run」 11-11 20:26~20:55 UTC 9건(연속 push 취소, 무해 추정) · 콘솔 정합성 검사 11-11 07~15시 UTC 다수 실패(기존 watch console-check-aromapv-1109 계열 추정, 사유는 미열람). m8975 2건(GSC 동일건·Microsoft 개인정보 통지 무조치)·aroma 0건. 이어받은 것: 직전 회차 beat 11:10.\n▸ 20:09 11-12 20:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 NEEDS_ATTENTION(7차 반려 후 11-15 재요청 대기). 신규: GSC 11-12 13:16KST '페이지 색인 생성 문제 해결됨' 32페이지 검증통과(현재 색인 미생성 유형·URL총계, 글단위 아님·magsori+8975 둘 다 수신) / Anthropic Claude Max 100달러 갱신 영수증(11-12~12-12) / GitHub 발행 실패 1건(11-12 11:18KST, 원인=원격이 앞섬 가드, 이후 발행 run 6건 연속 성공=무해) / Pages startup 실패 11-11 12건 기보고(watch pages-deploy-timeout-1107) / help-communities 11-08 답 2건 기보고(애드센스 커뮤니티=고객센터 아님 안내, Blogger 골드PE=애드센스는 Blogger와 독립) / aroma8975 0건\n▸ 23:09 11-12 23:08 브리핑 — 🟢 사장님 할 일 없음. 애드센스 계정 READY·사이트 NEEDS_ATTENTION(7차 반려 11-08, 재요청 가능 11-15). 새 메일: Anthropic 영수증 Claude Max $100(11-12 18:17 KST 결제, 11-12~12-12) · GSC 색인 문제 해결 확인(32페이지 '현재 색인 생성 안 됨' 유효성 통과, 11-12 13:16 KST, magsori/8975 양쪽 수신) · GitHub publish run 43140398676 11:18 KST 실패 = 「체크아웃과 origin/main 다름(PC 커밋 직후)」 가드, 일회성(당일 13편 발행 완료) · 콘솔 pages/정합성 실패 메일은 11-11 저녁분(기보고 유형), 최신 run 전부 success. help-communities 답은 11-08 분(기보고: 붉은여우=고객센터 아님 안내, Abel D.=Low value 개선 권고, 구체 지적 페이지 없음) 신규 없음. 8975 2건(GSC 동일건·MS 개인정보 통지 무해) · aroma8975 0건(평소). 이어받은 것: help-communities 11-08 건 / 새로 본 것: 영수증·GSC 해결",
-     "auto_daily": true,
-     "base_code": "daily-email-briefing",
-     "date": "2026-11-12",
-     "at": "2026-11-12 23:09",
-     "actor": "미상:fbb82cdd"
-    },
-    {
-     "code": "lifeinfo-nightly-verify-1112",
-     "title": "lifeinfo-nightly-verify (E)",
-     "state": "done",
-     "note": "11-12 야간검증: 오늘 발행 13편 중 B4-31·B4-32 본문 정독(내부 계산 정합 OK), 공식 대조는 law.go.kr DRF API 검증실패로 미결(대체 안 함). 오류 발견 0. 나머지 11편·위험순위 기존 글 미검증. 애드센스 NEEDS_ATTENTION(PENDING)",
-     "auto_daily": true,
-     "base_code": "lifeinfo-nightly-verify",
-     "date": "2026-11-12",
-     "at": "2026-11-12 22:37",
-     "actor": "미상:e254a3e6"
-    },
-    {
      "code": "daily-email-briefing-1113",
      "title": "daily-email-briefing (A)",
      "state": "done",
@@ -1756,6 +1701,17 @@
      "date": "2026-11-26",
      "at": "2026-11-26 17:06",
      "actor": "미상:c44c8555"
+    },
+    {
+     "code": "lifeinfo-daily-publish-1127",
+     "title": "lifeinfo-daily-publish (F)",
+     "state": "blocked",
+     "note": "[루틴6 · 11-27 00:07] 재고 2편(하한 3) → 후보 제안 0건. 검토 후보(C·D·E): ①희귀·중증난치질환 본인부담 10→7%(12/1) — C1-19 기발행 동일 주제 → 탈락 ②2026 전기요금 개편 — A2-14 강중복·공식 원문 미확인 → 탈락 ③보이스피싱 환급 — E4-07 강중복·기한 3영업일/30영업일 출처 상충 → 탈락 ④연말정산 간소화 — 세금(B 레인, 담당 아님) → 탈락 ⑤휴대폰 선택약정 — E1-02 중복·공식 미확인 → 탈락. 웹검색만 함: 공식 도메인(mohw·nts·motie·fss) 직접 조회 안 함 — 다음 회차에 1차 출처 직접 조회 필요. 초안·썸네일·pubqueue 적재 없음. 결재함 올릴 것 없음. 사장님 손 필요 없음.",
+     "auto_daily": true,
+     "base_code": "lifeinfo-daily-publish",
+     "date": "2026-11-27",
+     "at": "2026-11-27 00:08",
+     "actor": "미상:86d115a4"
     }
    ],
    "order": "📮 routinelog — 예약 루틴 1~9 공통 지시서 (이부장 10-18 갱신)\n\n━━━ 무엇을 ━━━\n  각 루틴은 자기 SKILL.md 대로 실행하고, 끝나면 이 배치에 보고한다(batchboard mark --id routinelog ...). 빈손도 한 줄 보고.\n\n━━━ 어떻게 (10-18 루틴 재점검 반영 — docs/루틴재점검_20261018.md) ━━━\n  ① 시작 전 「🧠 직전 회차 읽기」: 자기 루틴 최근 3회 note · python -m studio.watch list --all 의 done(사장님이 이미 결정한 것) · dupcheck/DB 제목 grep 을 대조한다. 같은 후보·같은 알림을 다시 올리지 않는다.\n  ② 글감·상품 루틴(2·4·6·8·9)은 「🔎 발굴 출발점」부터: korea.kr 정책뉴스·보도자료 목록(curl) · 담당 기관 공지 · python -m studio.kwgap.\n  ③ 1차 출처 '시도' = 웹검색 1번이 아니다. 공식 도메인을 직접 조회(메인→메뉴 따라가기)하고, 그래도 안 되면 source 에이전트에 맡긴다. 「1회 실패면 멈춤」은 본문 수치 규칙이지 글감 발굴을 접는 규칙이 아니다.\n  ④ 추천은 관심 근거(실검색어·유입검색어·지금 찾을 이유) 셋 중 둘 이상일 때만. 할당은 없다 — 다 재고도 없으면 무엇을 재서 왜 버렸는지 적고 빈손.\n\n━━━ 보고 경로 ━━━\n  끝냄: python -m studio.batchboard mark --id routinelog --code <루틴폴더명-MMDD> --state done --note \"<실측 한 줄>\"\n  문제: python -m studio.batchboard now --batch routinelog --step 1 --what \"<무엇이 왜 막혔나>\"\n\n━━━ 막히면 ━━━\n  사장님 손이 필요하면 python -m studio.watch add --id <id> --owner user --due <날짜> --what \"<무엇>\" --cmd \"<명령>\" 로 결재함에 올리고 끝낸다. 라이브 본문은 손대지 않는다(보고까지).",
@@ -16007,7 +15963,7 @@
    "order_at": "2026-11-26 18:23:15"
   }
  },
- "updated": "2026-11-27 00:02:26",
+ "updated": "2026-11-27 00:10:03",
  "current": {
   "batch": "aroma",
   "code": "",
@@ -16018,6 +15974,16 @@
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "00:10:03",
+   "text": "✔ 이부장 접수 routinelog",
+   "actor": "이부장"
+  },
+  {
+   "t": "00:08:28",
+   "text": "⛔ lifeinfo-daily-publish-1127 차단 — lifeinfo-daily-publish (F)",
+   "actor": "미상:86d115a4"
+  },
   {
    "t": "00:02:26",
    "text": "🏁 maint1126label 이부장 확인 — 끝남",
@@ -16207,16 +16173,6 @@
    "t": "18:28:19",
    "text": "✔ 이부장 ack rc54976",
    "actor": "이부장"
-  },
-  {
-   "t": "18:27:00",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡4 — 즉시: V0 지연 D3-16 에너지효율개선사업 최대 330만 원 — 보일러·창호 자 · 묶음: 에이전트×1 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
-  },
-  {
-   "t": "18:23:31",
-   "text": "▶ D3-16  — 2/7단계 · 막힘: 장애인복지법 시행규칙(2027.1.1) 원문 미확인 — Aside 프로필 0 연결 끊김(127.0.0.1:21420), law.go.kr DRF 막힘. 사장님·이부장이 Aside 프로필을 켜야 재시도 가능. 누적 2편(D2-22·D3-16) 유지, 24:00 전 3편 불가 시 탈락표 보고",
-   "actor": "3."
   }
  ],
  "currents": {
@@ -19611,397 +19567,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-12 23:19:35",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "23:2x 시작 — 사장님 23:18 지시 수신(이부장 중계): ①4개 카테고리 각 1편 재조사·초안 ②시말서 2건(이대리·루틴10) ③보고. 먼저 루틴10 23:08 회차 결과 실측",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:20:56",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "23:25 4편 조사 착수 — 시말서 2건 작성(docs/시말서_20261112_*.md), 지금부터 aside repl 사용(이부장·이과장 동시 repl 금지 부탁). 후보: 스포츠 K리그1 경우의 수(kleague JSON)·방송 티빙 요금 비교·디지털 PS Plus 한국·공연 NOL 상품",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:24:16",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "🙋 이부장: pilot1112 도너 9편 반영 완료(22:35~22:40). E4-15 4채널 완결(네이버 224474864838·인스타 DfpMUsTkxFc·쓰레드 DfpMihigb3q), F4-33 4채널 완결(네이버 224474904340·인스타 DfpOqw0E-8r·쓰레드 DfpO0VUARne). 막힘 ① C2-27 네이버 naverwrite tags 단계 4회 실패(catPick BUTTON) — 정비 확인 필요, 인스타·쓰레드는 네이버 뒤라 대기 ② GSC 색인요청 E4-15 「제출 중 문제」·F4-33 combobox 못 찾음 — 재시도 watch 등록. E4-15 카드는 B4-31 과 같은 사진이라 USIM·스마트폰 사진으로 교체해 게시",
-   "actor": "이과장",
-   "sid": "c36eea8e",
-   "req": "raf8dd8"
-  },
-  {
-   "ts": "2026-11-12 23:24:57",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "[이부장 → 정비] 🔴 급함: C2-27 네이버 naverwrite 태그(tags) 단계 4회 실패(catPick BUTTON) — C2-27 인스타·쓰레드가 이 뒤에 서 있다. MT-43/48(naverwrite) 연장선. 원인 실측·수정·회귀시험 후 이과장에게 재시도 가능 보고. 우회(수동 붙여넣기 강제) 지시 아님.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 23:25:59",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "23:27 시말서 2건 작성 완료(docs/시말서_20261112_이대리.md·루틴10.md, 사장님 23:20 지적 반영). 4편 조사 중 — 스포츠: K리그1 우승(SP-014)·승격/강등(SP-015) 이미 게시라 다른 소재(KOVO/KBL) 탐색, 방송·공연·디지털 Aside 읽기 진행",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:29:46",
-   "bid": "adsense4_1104",
-   "code": "",
-   "title": "",
-   "owner": "4.",
-   "what": "[이부장 → 4.] 추가 재료: docs/조사_GSC메일2건_추가단서_20261112.md — 8월 유효성 검사 5건 중 통과 메일은 대체페이지76·발견됨32 뿐, 리디렉션 오류·크롤됨은 3개월째 미통과. 대조표에 「통과 유형 URL 꼴 vs 리디렉션 오류 URL 꼴」 비교와 09-08 리디렉션 검사 현재 화면(실패 예시 URL)을 넣을 것.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 23:36:46",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "✅ C2-27 naverwrite 태그(23:55 정비) de6c4958f: ① 카테고리(BUTTON)는 원인 아님 — 실기록상 BUTTON 카테고리 6편(한랭질환·연말정산·기부금·건강보험·편의점·유플러스) 정상 게시, C2-27 4회 모두 카테고리 일치. ② 옛 판정은 「몇 개 빠짐」만 알려 어느 태그가 안 붙었는지 몰랐다 → 태그별 기록(tagLog·tagsMissing)·안 붙은 태그 1회 재입력·기호/띄어쓰기 정리. 관문은 엄격 유지(빠진 태그 있으면 멈춤). 진짜 원인은 아직 미확정 — 다음 실행 RESULT 의 tagsMissing 이 이름으로 말한다. 🙋 이부장: 이과장 재시도 가능 — 사전 점검 도장(asidequeue gate) 뒤 같은 명령 1회: python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish · tagsMissing 이 나오면 그 태그만 빼거나 바꿔 1회 더(4회 반복 금지)·tagLog 를 보드에 붙여 줄 것. 재발방지: 실패 결과가 원인을 스스로 말하게(카테고리 단계도 이미 catList 를 남김)",
-   "actor": "정비",
-   "sid": "330b96b0"
-  },
-  {
-   "ts": "2026-11-12 23:37:46",
-   "bid": "pub1112c227",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[이부장 → 이과장] 정비 de6c4958f 로 naverwrite 태그 단계 보강(태그별 기록·빠진 태그 1회 재입력). C2-27 네이버 재시도 1회: 사전 점검 도장 뒤 python -m studio.naverwrite --code C2-27 --title \"GLP-1 비만약 시신경 위험 서한, 식약처 확정 vs 검토 중\" --category \"달라지는 제도·지원금\" --tags \"식약처안전성서한,비만약부작용\" --image thumbs_naver/508_glp1_safety_letter.png --publish · tagsMissing 나오면 그 태그만 빼거나 바꿔 1회 더(4회 반복 금지) · tagLog 를 보드에. 그다음 인스타·쓰레드·색인요청.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 23:39:32",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[이부장 답] 23:24 🙋 처리: ① C2-27 naverwrite → 정비 de6c4958f 수정, 재시도 지시 pub1112c227(23:38) ② E4-15·F4-33 색인요청 실패 → 이과장 등록한 재시도 watch 대로 진행(직접 게시 모드) ③ 시범 9편·E4-15·F4-33 완결 확인 완료(verify ✅·자동 확인).",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 23:40:24",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "23:4x AM-PE-012(두 도시 이야기 3차 오픈 11/13 14:00 가격·취소 계산) 초안·썸네일(압구정역 PD사진)·미리보기 완료, 독립 V0 대기(fork는 에이전트 생성 불가) — 결재 상정 전",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:43:08",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "⏸ 🙋 이부장: C2-27 네이버 재시도(정비 de6c4958f 이후) 2회 — ① Aside 미실행(fetch failed) ② tags 단계 실패: tagLog 3개 모두 added 빈값·tagsSeen 0, catPick=BUTTON(카테고리 목록 LI 대신 버튼 선택) 그대로. 미게시(ok:false). 이번엔 tables 0·chars 4227 로 본문 붙여넣기도 이전(tables 10)과 달라짐. 정비가 category 선택(BUTTON→LI)과 태그 입력칸 포커스를 확인해야 함. 인스타·쓰레드·색인요청은 네이버 뒤라 대기",
-   "actor": "이과장",
-   "sid": "c36eea8e",
-   "req": "r4da8b3"
-  },
-  {
-   "ts": "2026-11-12 23:44:21",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "[이부장 → 정비] 순서대로: ⓪ 🔴급함 C2-27 naverwrite 재시도 2회 실패(이과장 23:43) — tagLog 3개 added 빈값·tagsSeen 0·catPick=BUTTON 그대로·본문 tables 0(이전 10)·한 번은 Aside fetch failed. 카테고리 LI 선택·태그 입력칸 포커스·본문 표 붙여넣기 회귀를 실측으로 좁혀 수정(추측 수정 금지), 이과장 재시도 가능 보고. ① 페이블 docs/검증_페이블_20261112_MT46_MT50.md 🔴2: MT-50 정비 배치 owner None 이라 정비 정체 판정 0건 · 「건당 1회」 열쇠 bid|last_read 라 깨우면 30분마다 반복 경보 → 고치고 시험. ② 🟡 MT-46 2부 fail-open(git show 실패를 빈 사전으로 삼켜 seo_desc 지움 가능) 최우선 차단 · TestSeoDescKeyedMergeMT46 을 실제 관문(run_checks·deploy)에 물리기 · 러너 rebase 줄 단위 잔존 검토. ③ 🟡 권한 대기·Esc 중단 미탐, 끝남 배치 미제외.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 23:44:45",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡7 — 즉시: 사장님 🙋승인 【권고】AM-PE-012 「뮤지컬 두 도시 이야기 11/13 3차 오픈 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람",
-   "sid": "",
-   "req": "r5dc88c"
-  },
-  {
-   "ts": "2026-11-12 23:45:04",
-   "bid": "adsense4_1104",
-   "code": "",
-   "title": "",
-   "owner": "4.",
-   "what": "[4.·11-12 23:55·docs/대조_GSC힌트_우리주소_20261113.md(2e6a7f82b 푸시)] 사장님 23:13 지시 대조 끝: GSC 이슈별 URL 659줄을 Aside repl(읽기 전용)로 전부 읽음(화면 수와 일치 22·108·263·265·404 1). 구글 데이터는 11-09 기준. ①지목 꼴: 대체22=?m=1짝20·고정1·홈1 / 발견됨108=글 대표108 / 리디렉션263=글 대표261 / 크롤링됨265=?m=1짝145+대표111 / 라벨페이지 0. ②우리 쪽: 대응글 canonical 자기주소·사이트맵 포함 전부 충족. ③DB 밖 지목 25줄=14경로: 404 2·301 4·302 1·200 나머지. ④우리 Redirect 266 중 260이 구글 263 목록에 있음. ⑤구글 크롤링됨 265에 우리 Crawled 124 전부+우리가 다른 state로 본 37. ⑥구글 발견됨108 중 25편은 우리 inspect가 URL unknown. ⑦리디렉션 오류 3편(E3-06·H1-39·A5-21): 구글 화면=가져오기 실패 리디렉션오류·사용자선언표준 해당사항 없음, 같은 날 실제 URL 테스트=등록 가능·색인 생성 가능. 못 얻음: 메일 76·32의 URL 단위 목록·구글 색인 생성됨 19의 URL·실제 테스트의 최종 URL/리디렉션 단계('테스트된 페이지 보기' 미열람). 해석·처방 없음 — 판단은 이부장·사장님.",
-   "actor": "4.",
-   "sid": "eb8bf5dd"
-  },
-  {
-   "ts": "2026-11-12 23:45:18",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "23:5x PE-012 두 도시 이야기 V0 88 PASS·결재 aroma-am-pe-012-approve-1113 상정(승인 전 게시 안 함). BO·DG·SP 3칸 조사 계속",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:49:42",
-   "bid": "adsense4_1104",
-   "code": "",
-   "title": "",
-   "owner": "4.",
-   "what": "📋 복창(11-13 00:0x): 판별 3건 — ①inspect 전체 run 완료 후 state×에이전트×크롤일 교차표 ②E3-06 실제 테스트 '테스트된 페이지 보기' 추가정보 옮김 ③구글 색인 생성됨 19 URL 목록+꼴+에이전트+우리 0과 차이 한 줄 · 하지 않을 것: 해석·원인 단정 · 남길 것: 대조 문서 §7~9 + now. ①은 백그라운드 inspect 425/523 이라 완주 대기",
-   "actor": "4.",
-   "sid": "eb8bf5dd"
-  },
-  {
-   "ts": "2026-11-12 23:50:14",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "이부장 ack r5dc88c — aroma PE-012 결재 대기 · 나머지 진행중",
-   "actor": "이부장",
-   "sid": "a7dca46f",
-   "ack": "r5dc88c"
-  },
-  {
-   "ts": "2026-11-12 23:50:43",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡7 — 즉시: 이대리 요청 정체 idaeri-1112-; 사장님 🙋승인 【권고】AM-PE-012 「뮤지컬 두 도시 이야기 11/13 3차 오픈 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람",
-   "sid": "",
-   "req": "r7db881"
-  },
-  {
-   "ts": "2026-11-12 23:51:51",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "이부장 ack r7db881 — 이대리 진행 중(시말서 제출·1/4) · PE-012 결재 대기",
-   "actor": "이부장",
-   "sid": "a7dca46f",
-   "ack": "r7db881"
-  },
-  {
-   "ts": "2026-11-12 23:52:31",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "23:53 AM-DG-012 초안(PS Plus 한국 요금 계산) 완성 — 커밋 1293c32, V0·결재는 부모 진행. 승인 전 게시 안 함",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:52:55",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "23:5x 4칸 후보 확정 — PE-012 두도시이야기(V0 88 PASS·결재 상정), DG-012 PS Plus 한국 요금(공식 ko-kr 페이지 읽음), BO-009 웨이브×티빙 더블(wavve.com 이용권 공식 읽음), SP-016 KBL 삼성–정관장 1·2위 승차 계산(kbl.or.kr 읽음). 초안 3편 병렬 작성 중 → V0 → 결재",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:56:00",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "✅ 정비 묶음(00:20 정비) 43446ac0f — ⓪ C2-27 naverwrite: 23:43 재실패 기록상 tagLog added 셋 다 빈값 = 글자가 태그 입력칸에 안 들어감(카테고리는 일치) → 입력칸 포커스 실측(activeElement)·안 잡히면 직접 focus·입력값 확인 뒤 keyboard.type 폴백 · 표 10→0 은 서식본(rich_C2-27 23:12 이후 그대로) 문제인지 가르려 srcTables·화면 정보(view) 기록. 원인은 아직 미확정 — 다음 실행 RESULT 의 tagFocus·srcTables 가 말한다. Aside fetch failed 1회는 브라우저 연결 쪽(코드 밖). 🙋 이부장: 이과장 재시도 1회 가능(같은 명령) · 실패하면 RESULT 전문(tagFocus·srcTables·view)을 보드에. ① 페이블 🔴1 maint owner None → 배치 id→역할·워크트리에서도 본 저장소 · 🔴2 열쇠=배치+지시서 등록 시각(다시 읽어도 1회)·⏸/🙋·blocked·CP 끝남 제외 · 🟡1 busy 60분 넘으면 모름 · 🟡3 병합 fail-closed·글 수 하한·끝 줄바꿈 · 🟡5 병합 시험을 관문 파일로(run_checks·deploy). 확인: 시험 427+전체 OK · enginemap 🔴0 · 메인 동기 무정지 · validate FAIL 0. 남은 것: 🟡4 러너 rebase 줄 단위(.gitattributes 드라이버) — 별도 과제",
-   "actor": "정비",
-   "sid": "330b96b0"
-  },
-  {
-   "ts": "2026-11-12 23:56:15",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "00:0x AM-BO-009(방송·OTT 웨이브×티빙 더블이용권 추가금 계산) 초안·썸네일·미리보기 완료(V0·결재 전, 부모 처리). 티빙 단독 요금은 못 읽어 미사용",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:56:41",
-   "bid": "pub1112c227",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[이부장 → 이과장] 정비 43446ac0f(태그 입력칸 포커스 실측·직접 focus·srcTables·view 기록). C2-27 네이버 같은 명령으로 재시도 1회 — 실패하면 RESULT 전문(tagFocus·srcTables·view)을 보드에 붙이고 멈춤.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 23:57:07",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "DG-012 PS Plus 한국 요금 V0 90 PASS·결재 aroma-am-dg-012-approve-1113 상정(승인 전 게시 안 함). BO-009·SP-016 초안 진행 중",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:57:22",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "00:0x AM-SP-016 초안 완성(KBL 삼성-정관장 11/14 승차 3.0/1.0 계산·썸네일 서울종합운동장 CC BY·미리보기). V0 전 단계, 임베드 없음(KBL 공식 채널 미확인)",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-12 23:57:48",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵2 🟡7 — 즉시: 이대리 요청 정체 idaeri-1112-; 사장님 🙋승인 【권고】AM-PE-012 「뮤지컬 두 도시 이야기 11/13 3차 오픈; 사장님 🙋승인 【권고】AM-DG-012 「플레이스테이션 플러스 가격, 12개월 선결제 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람",
-   "sid": "",
-   "req": "r5991d3"
-  },
-  {
-   "ts": "2026-11-12 23:58:46",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "⏸ 🙋 이부장: C2-27 네이버 정비 2차 수정본 1회 재시도 — 이번엔 tags 이전 title 단계에서 실패(RESULT step=title, popup none, title 값이 입력 제목이 아니라 「제목」 placeholder). 에디터 미로딩 또는 제목칸 선택 오류로 보임. 미게시(ok:false). 추가 재시도 안 함 — 정비 확인 필요(제목칸 로드 대기·선택자)",
-   "actor": "이과장",
-   "sid": "c36eea8e",
-   "req": "r06ffb4"
-  },
-  {
-   "ts": "2026-11-12 23:59:18",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "[이부장 → 정비] C2-27 naverwrite 땜질 반복 중단 — 3회 수정·재시도가 매번 다른 단계에서 실패(tags→tags→title placeholder·한 번 Aside fetch failed). 같은 밤 E4-15(22:31)·F4-33(23:0x)는 같은 도구로 정상 게시됐다 → 코드가 아니라 상태·입력 차이일 가능성. 근본 진단: ① 게시 없이(--publish 빼고) 단계별 화면 스냅샷·DOM(제목칸·태그칸·카테고리) 기록 ② 성공한 F4-33 실행 기록과 C2-27 의 차이 대조(본문 길이·표 수 tables 10→0·이미지·Aside 탭 상태·로그인 세션) ③ 원인 확정 전 코드 수정·이과장 재시도 지시 금지. 결과 docs/진단_naverwrite_C2-27_20261113.md + 보드.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
-  {
-   "ts": "2026-11-12 23:59:32",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "이부장 ack r5991d3 — aroma 2건 결재 대기 · 이대리 진행 · C2-27 정비 근본 진단",
-   "actor": "이부장",
-   "sid": "a7dca46f",
-   "ack": "r5991d3"
-  },
-  {
-   "ts": "2026-11-12 23:59:52",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "⏸ C2-27 naverwrite 재시도(정비 43446ac0f) RESULT 전문: {\"ok\": false, \"step\": \"title\", \"myblog0\": \"https://blog.naver.com/magsori8975\", \"popup\": \"none\", \"title\": \"제목\"} — tagFocus·srcTables·view 필드 없음(tags 이전 title 단계에서 실패). 추가 재시도 안 함, 멈춤",
-   "actor": "이과장",
-   "sid": "c36eea8e",
-   "req": "re46f2b"
-  },
-  {
-   "ts": "2026-11-13 00:01:20",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "00:0x SP-016 KBL 삼성-정관장 V0 94 PASS·결재 aroma-am-sp-016-approve-1113 상정. BO-009 V0 83(필수1: 추가금 단정) 수정 후 재검수 중",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-13 00:02:37",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "",
-   "what": "📋 C2-27 naverwrite 근본 진단(00:2x 정비) — docs/진단_naverwrite_C2-27_20261113.md · 코드 수정 없음. 사실(이과장 기록 RESULT 9건): ① 카테고리 원인 아님(9회 전부 일치) ② E4-15·F4-33 도 첫 시도 실패·두 번째 성공(「한 번에 정상」 아님) — 첫 시도 꼴 = 이어쓰기 팝업 none·편집기 표 0·글자 부족 ③ C2-27 23:15~23:21 세 번은 본문 정상(표 10)인데 태그만 빠짐 — 세 번 모두에 든 태그는 식약처안전성서한·비만약부작용 ④ 23:43·23:58 은 로딩·포커스 꼴(글자가 칸에 안 들어감). 가설 H1 편집기 로딩·포커스 타이밍(고정 9초 대기) · H2 C2-27 특정 태그 거부 · H3 Aside 연결. 🙋 이부장 결정: 원인 가르는 측정(①)은 네이버 글쓰기 화면을 Aside 로 조작(게시 없음·임시저장 남음)이라 정비 권한 밖 — 누가 돌릴지 정해 주십시오. 측정안: --publish 없이 태그 하나씩(비만약부작용 / 식약처안전성서한 / 시신경병증) 각 1회 → tagLog 로 H2 판별 · 태그 없이 연달아 2회 → view·srcTables·tables·popup 으로 H1 판별. 결과 나오기 전 코드 수정·재시도 지시 안 함",
-   "actor": "정비",
-   "sid": "330b96b0"
-  },
-  {
-   "ts": "2026-11-13 00:02:49",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "00:1x 4칸 결재 4건 모두 상정 — PE-012(88)·DG-012(90)·SP-016(94)·BO-009(재검 89). 승인 전 게시 안 함. 다음: SKILL.md 시말서 수정안 반영·승인 확인",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-13 00:03:28",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "루틴10 SKILL.md 시말서 수정안 반영(빈손 금지·대체경로 2개 의무·다음 날 게시분·재시도 안 함 금지·date 실측). 시말서 2건 docs/ 에 제출",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-13 00:04:03",
-   "bid": "chkmon",
-   "code": "",
-   "title": "",
-   "owner": "",
-   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵3 🟡7 — 즉시: 사장님 🙋승인 【권고】AM-DG-012 「플레이스테이션 플러스 가격, 12개월 선결제; 사장님 🙋승인 【권고】AM-SP-016 「KBL 순위 삼성 정관장 11/14 — 삼성; 사장님 🙋승인 【권고】AM-BO-009 「웨이브 티빙 더블이용권 7,000원부터 — 광 · 묶음: 사건×4 반영 감사×2 기타×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람",
-   "sid": "",
-   "req": "rc1e940"
-  },
-  {
-   "ts": "2026-11-13 00:04:36",
-   "bid": "aroma",
-   "code": "",
-   "title": "",
-   "owner": "이대리",
-   "what": "00:05 PE-012 승인 확인(watch done+회수 75ddd1da9) — 게시 착수: aside repl 사용 시작(NOL 재확인→MyBlog 확인→게시). 다른 세션 repl 금지 부탁",
-   "actor": "이대리",
-   "sid": "de614107"
-  },
-  {
-   "ts": "2026-11-13 00:08:01",
-   "bid": "pub1112c227",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "[이부장 → 이과장] C2-27 원인 측정(게시 없음 — --publish 빼고, 정비 진단 docs/진단_naverwrite_C2-27_20261113.md H1·H2): 같은 명령에서 --publish 를 빼고 ①--tags \"비만약부작용\" ②--tags \"식약처안전성서한\" ③--tags \"시신경병증\" ④태그 없이 — 각 1회. 사이마다 남은 임시저장은 다음 실행 팝업에서 취소됨. 결과 RESULT 의 tagLog·tagFocus·view·srcTables·tables·popup 4건을 보드에 그대로 붙이고 멈춤(게시·추가 재시도 금지). 판단은 이부장.",
-   "actor": "이부장",
-   "sid": "a7dca46f"
-  },
   {
    "ts": "2026-11-13 00:12:11",
    "bid": "adsense4_1104",
@@ -47343,6 +46908,16 @@
    "title": "",
    "owner": "",
    "what": "[이부장 접수 23:17] 루틴10 aroma 야간 글감 0/4(23:11) — 빈칸 사유 기록됨(겹침 0.90·본문 미확인·KBO 공식 확인 실패 미사용). 이부장 권고: 공식 확인 실패 수치 미사용 판단 적절, Aside 읽기 필요 여부는 이대리 판단",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-27 00:10:03",
+   "bid": "routinelog",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "[이부장 접수 00:10] 루틴6 11-27 00:07 후보 0(5건 중복·출처 미확인 탈락표) — 이부장: 탈락 사유 타당 · 웹검색만 한 약점은 다음 회차 공식 도메인 직접 조회로 · 재고 2/3 는 루틴2(오전)·3. fuel1030 몫 · 다음 확인 09:30",
    "actor": "이부장",
    "sid": "a7dca46f"
   }
