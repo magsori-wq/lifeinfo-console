@@ -38329,6 +38329,29 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "verify-mv2-1127",
+   "added": "2026-11-27",
+   "what": "정비 MV-2 lifeinfo-tower 모드 verify 게이트 독립 검수: fad6a5d03(❌ 템플릿 오탐) → ca4c6e848(1~5 ✅·ALWAYS_OK 우회 경미) → 1b38912ba(6항목 ✅)",
+   "due": "2026-11-27",
+   "cmd": "claude plugin test tools/mods/lifeinfo-tower",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "verify 에이전트 3회 독립 검수 · 최종 1b38912ba 종합 ✅(시험 35/35·validate 실패0·enginemap 🔴0·validate_db FAIL0·정규식 node 실측 대상7/정상3) · fad6a5d03·ca4c6e848·1b38912ba 06:19 origin/main push"
+  },
+  {
+   "id": "afflink-20261127-kimjang",
+   "added": "2026-11-27",
+   "what": "🛒 제휴 링크 발급 요청 — 20261127-kimjang. 상품: 20년 장인김치 전라도식 배추김치, 10kg, 1박스 (28,990원 · 리뷰 17,417 · 평점 4.4). 관련성: 김장 본철(11월 말) — 20년 장인 배추김치 10kg, 리뷰 17,417·평점 4.4 (토스 인기 김치 중 리뷰 최다권). 김장재료 수급글과. 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.tosslink link 748235733",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
