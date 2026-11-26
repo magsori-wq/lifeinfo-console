@@ -3359,7 +3359,17 @@
    "title": "",
    "owner": "이과장",
    "what": "⚠️ solo 20260927-1(담요망토) 붙여넣기 3회 연속 무반응(포커스 정상·contenteditable=true, 클립보드 내용 3회 다 정확 — 충돌 아님). 이전 B4-15와 같은 증상. 3회 한도로 멈추고 탭 닫음. 관측만 남기고 다음(20260926-2)으로 넘어가지 않고 여기서 보고"
+  },
+  {
+   "ts": "2026-11-13 02:32:17",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ 페이블 naverwrite 2차 🔴1(02:5x 정비) f40aa2dee — Aside 공용 잠금 studio/asidelock: O_EXCL 로 잡기(동시 둘 불가) · 실행 중 30초마다 갱신 · 2분 갱신 없으면 죽은 잠금 · 토큰으로 자기 것만 해제 · Aside 채팅 지시 진행 중(asidequeue.busy)이면 기다림. 연결: naverwrite · tools/aside_read·ca_daily·ca_login_check·ca_postrank·ca_trend·sa_expose 가 잠금을 잡고 repl · 잠금을 모르는 손 도우미(data/_th_post.py 등)·직접 aside repl 은 postlock 훅이 잠금 살아 있으면 실행 전 차단(저장소 도구는 안에서 기다리므로 제외 — asidequeue list 등 안 막힘). 🟡 publish_unknown=bool(publish). 확인: 시험 전체 OK(공용 잠금 5건 포함)·enginemap 🔴0·동기 무정지·실제 훅에 asidequeue list 통과. 남은 것: asideprobe·creditmeter(빈 탭 상태 점검)는 잠금 밖 · 태그 비우기 분기 동작 시험은 실제 편집기 필요",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-10-12 15:49:50"
+ "updated": "2026-11-27 02:37:55"
 }
