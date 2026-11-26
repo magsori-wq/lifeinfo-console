@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 05:59:46",
+ "at": "2026-11-27 06:00:01",
  "errors": [],
  "rows": [
   {
@@ -125,14 +125,7 @@
   }
  ],
  "published_total": 84,
- "rev_wait": [
-  {
-   "code": "AM-SP-007",
-   "ids": [
-    "aroma-am-sp-007-upd-1127"
-   ]
-  }
- ],
+ "rev_wait": [],
  "cats": {
   "window": 14,
   "rows": [
@@ -297,7 +290,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 0분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -332,7 +325,7 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 0,
-  "last_min": -1,
+  "last_min": 0,
   "cur": "⏸ 대기 — aroma-am-sp-025-upd-1127 wa",
   "lvl": "ok"
  },
@@ -342,7 +335,7 @@
    {
     "code": "AM-DG-021",
     "title": "PS플러스12월게임정가합계",
-    "min": 5,
+    "min": 6,
     "lvl": "ok"
    }
   ],
@@ -823,7 +816,7 @@
   "today": "2026-11-27",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -847,7 +840,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": -1,
+   "last_min": 0,
    "cur": "⏸ 대기 — aroma-am-sp-025-upd-1127 wa",
    "lvl": "ok"
   },
@@ -862,7 +855,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": -1,
+   "last_min": 0,
    "cur": "⏸ 대기 — aroma-am-sp-025-upd-1127 wa",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -883,7 +876,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -918,30 +911,9 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-sp-007-upd-1127",
-   "what": "【권고】AM-SP-007(K리그 2위 싸움 글)에 11/27 업데이트 박스 추가 + 제목 교체 승인(한 건) — 새 제목 「2026 K리그 순위",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
- "edits": [
-  {
-   "code": "AM-SP-007",
-   "title": "K리그1 2위 싸움 승점 계산 — 울산 54점, 11월 8일 세 경기가 갈림길",
-   "stage": "boss",
-   "packer": ""
-  }
- ],
+ "approvals": [],
+ "edits": [],
  "today_events": [
-  {
-   "code": "AM-SP-007",
-   "stage": "proc",
-   "at": "2026-11-27 05:57:42",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-SP-025",
    "stage": "proc",
@@ -961,6 +933,12 @@
    "src": "파일 수정 시각"
   },
   {
+   "code": "AM-SP-007",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-SP-025",
    "stage": "boss",
    "at": "2026-11-27 05:59:17",
@@ -968,6 +946,12 @@
   },
   {
    "code": "AM-PE-005",
+   "stage": "boss",
+   "at": "2026-11-27 05:59:51",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-SP-007",
    "stage": "boss",
    "at": "",
    "src": "watch done_at(날짜뿐)"
@@ -1031,7 +1015,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 0분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
