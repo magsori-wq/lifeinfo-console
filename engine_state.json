@@ -1,12 +1,12 @@
 {
- "at": "2026-11-26 11:48:43",
+ "at": "2026-11-26 11:59:24",
  "nodes": {
   "draft": [],
   "v0": [
    {
     "code": "H1-47",
     "title": "필라테스 환불 규정, 등록 전 가격표 4가지 확인 — ",
-    "min": 708,
+    "min": 719,
     "lvl": "red"
    }
   ],
@@ -42,24 +42,24 @@
     "code": "D5-15",
     "title": "모두의카드 청소년 12월 1일부터 — 우리 아이 되나,",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-26",
-    "last_at": "",
+    "last_at": "2026-11-26",
     "lvl": "amber"
    }
   ],
@@ -300,7 +300,7 @@
  ],
  "aside": {
   "state": "휴면 — 이과장 직접 게시(aside repl) · 2026-12-31 재연결",
-  "queue": 7,
+  "queue": 6,
   "busy": false,
   "lvl": "ok",
   "credit_hold": "aside-credit-t2624",
@@ -345,7 +345,7 @@
   {
    "p": 1,
    "what": "V0 지연 H1-47 필라테스 환불 규정, 등록 전 가격표 4가지 확인 — ",
-   "min": 708,
+   "min": 719,
    "owner": "이부장"
   },
   {
@@ -511,7 +511,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 5,
+   "last_min": 15,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -519,7 +519,7 @@
   {
    "who": "Aside",
    "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 7,
+   "jobs": 6,
    "lvl": "ok",
    "role": "허브·4종착 배송"
   },
@@ -560,7 +560,7 @@
    "who": "3.세션",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 7,
+   "last_min": 18,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -568,22 +568,22 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 5,
+   "last_min": 15,
    "cur": "",
    "lvl": "ok"
   },
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 6,
-   "cur": "🙋 이대리: 야간 글감 4/4(11-25 23시 회차 재시도,",
+   "last_min": 4,
+   "cur": "[이부장 접수 11:55] 이대리 AM-BO-015 게시 완료",
    "lvl": "ok"
   },
   {
    "who": "Aside",
    "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 7,
+   "jobs": 6,
    "lvl": "ok"
   },
   {
@@ -745,6 +745,13 @@
      "who": "lee"
     },
     {
+     "code": "D5-15",
+     "title": "모두의카드 청소년 12월 1일부터 — 우리 아이 되나,",
+     "url": "https://blog.naver.com/magsori8975/224492854919",
+     "at": "2026-11-26",
+     "who": "lee"
+    },
+    {
      "code": "B2-29",
      "title": "불법추심 신고 어디로 — 1332·지자체·경찰 상황별 ",
      "url": "https://blog.naver.com/magsori8975/224490648955",
@@ -812,10 +819,6 @@
     {
      "code": "A5-24",
      "title": "연차수당, 소멸돼도 남는 경우 — 회사 서면 촉구 2번"
-    },
-    {
-     "code": "D5-15",
-     "title": "모두의카드 청소년 12월 1일부터 — 우리 아이 되나,"
     }
    ]
   },
@@ -1094,6 +1097,13 @@
    "src": "topicprop 선별"
   },
   {
+   "code": "D5-15",
+   "stage": "naver",
+   "at": "2026-11-26 11:55:54",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
    "code": "A2-35",
    "stage": "blog",
    "at": "",
@@ -1118,7 +1128,7 @@
    "kind": "🙋승인",
    "id": "v0reject-h1-47",
    "what": "🔴 V0 반려 확인 요청 — H1-47 「필라테스 환불 규정, 등록 전 ",
-   "by": "세션:7c5092aa",
+   "by": "이부장",
    "waited": ""
   }
  ],
@@ -1268,7 +1278,7 @@
   "stale": 1,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-26 11:46:59",
+  "at": "2026-11-26 11:58:06",
   "age_min": 1
  },
  "design_signals": [
@@ -1357,23 +1367,23 @@
  "fired": [
   {
    "day": "2026-11-26",
-   "total": 110,
+   "total": 120,
    "kinds": [
     [
      "ASIDE_ALERT",
-     10
+     12
+    ],
+    [
+     "REPORT_UNACKED",
+     11
     ],
     [
      "BOSS_APPROVAL",
      10
     ],
     [
-     "REPORT_UNACKED",
-     10
-    ],
-    [
      "NEW_BOSS_ITEM",
-     8
+     9
     ],
     [
      "CONFIRM_BACKLOG",
@@ -1381,14 +1391,14 @@
     ],
     [
      "ROUTINE_DONE",
+     7
+    ],
+    [
+     "TOWER_OWED",
      6
     ],
     [
      "PUBLISH_RUN_DONE",
-     5
-    ],
-    [
-     "TOWER_OWED",
      5
     ]
    ]

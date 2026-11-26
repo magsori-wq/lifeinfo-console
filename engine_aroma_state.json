@@ -1,23 +1,7 @@
 {
- "at": "2026-11-26 11:49:04",
+ "at": "2026-11-26 11:59:40",
  "errors": [],
  "rows": [
-  {
-   "code": "AM-BO-015",
-   "approvals": [
-    {
-     "id": "aroma-am-bo-015-approve-1126",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-26"
-    }
-   ],
-   "title": "seg1",
-   "last_file_at": "2026-11-26 11:42",
-   "stage": "approved",
-   "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 92d6d462b"
-  },
   {
    "code": "AM-DG-020",
    "approvals": [
@@ -44,8 +28,8 @@
      "at": "2026-11-26"
     }
    ],
-   "title": "혁오콘서트서울추가회차좌석",
-   "last_file_at": "2026-11-26 11:37",
+   "title": "seg1",
+   "last_file_at": "2026-11-26 11:54",
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 eac464b0b"
@@ -61,7 +45,7 @@
     }
    ],
    "title": "2027KBOFA명단등급보상",
-   "last_file_at": "2026-11-26 11:37",
+   "last_file_at": "2026-11-26 11:54",
    "stage": "approved",
    "label": "승인됨(게시 전)",
    "detail": "watch done + 커밋 9259c2730"
@@ -76,6 +60,22 @@
   }
  ],
  "recent_published": [
+  {
+   "code": "AM-BO-015",
+   "approvals": [
+    {
+     "id": "aroma-am-bo-015-approve-1126",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-26"
+    }
+   ],
+   "title": "넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위",
+   "last_file_at": "2026-11-26 11:42",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-26"
+  },
   {
    "code": "AM-DG-019",
    "approvals": [
@@ -155,32 +155,16 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-24"
-  },
-  {
-   "code": "AM-PE-020",
-   "approvals": [
-    {
-     "id": "aroma-am-pe-020-approve-1123",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-24"
-    }
-   ],
-   "title": "임영웅 영화 관객 5일 61,861명 — 일요일은 토요일보다 23% 줄었다",
-   "last_file_at": "2026-11-24 09:52",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-24"
   }
  ],
- "published_total": 80,
+ "published_total": 81,
  "rev_wait": [],
  "cats": {
   "window": 14,
   "rows": [
    [
     "방송·OTT",
-    3
+    4
    ],
    [
     "공연·연예",
@@ -195,7 +179,7 @@
     3
    ]
   ],
-  "total": 17
+  "total": 18
  },
  "share": {
   "state": "active",
@@ -300,7 +284,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-26 11:41:22",
+   "last_at": "2026-11-26 11:54:22",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -310,7 +294,7 @@
    "name": "AROMA_PUBLISH_STALL",
    "node": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖)",
    "last_at": "",
-   "src": "시각 저장 없음(진행 중 0건)",
+   "src": "시각 저장 없음(진행 중 3건)",
    "today_n": 3,
    "note": "",
    "at_node": "pub"
@@ -336,10 +320,10 @@
   {
    "name": "TOWER_OWED",
    "node": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림)",
-   "last_at": "",
+   "last_at": "2026-11-26 11:57:01",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 7분째 (15분 넘으면 경보) · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건 마지막 경보 2026-11-26 11:57:01 · 장부에 남은 aroma 건 1 · 오늘 6회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -347,7 +331,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-26 11:41:54",
    "src": "now_log(bid=aroma)",
-   "today_n": 10,
+   "today_n": 12,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -356,7 +340,7 @@
    "node": "루틴10 → CP",
    "last_at": "",
    "src": "시각 저장 없음(루틴10 꺼짐은 설계도 기재)",
-   "today_n": 6,
+   "today_n": 7,
    "note": "횟수는 lifeinfo 루틴 전체",
    "at_node": ""
   },
@@ -372,10 +356,10 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "현장(진행)",
+  "state": "대기(보고 완료·다음 지시 기다림)",
   "jobs": 0,
-  "last_min": 6,
-  "cur": "🙋 이대리: 야간 글감 4/4(11-25 23시 회차 재시도,",
+  "last_min": 4,
+  "cur": "[이부장 접수 11:55] 이대리 AM-BO-015 게시 완료",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -386,27 +370,21 @@
   "deploy": [],
   "publish": [
    {
-    "code": "AM-BO-015",
-    "title": "seg1",
-    "min": 7,
-    "lvl": "ok"
-   },
-   {
     "code": "AM-DG-020",
     "title": "스팀세일기간11월겨울세일",
-    "min": 5,
+    "min": 16,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-022",
-    "title": "혁오콘서트서울추가회차좌석",
-    "min": 6,
+    "title": "seg1",
+    "min": 16,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-026",
     "title": "2027KBOFA명단등급보상",
-    "min": 7,
+    "min": 17,
     "lvl": "ok"
    }
   ],
@@ -462,6 +440,11 @@
      "code": "AM-DG-019",
      "title": "GTA6 플레이타임 평균 17.4시간 — PS5 플레이어 3,900만 명 이상",
      "url": "https://blog.naver.com/aroma-mag/224492294589"
+    },
+    {
+     "code": "AM-BO-015",
+     "title": "넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위",
+     "url": "https://blog.naver.com/aroma-mag/224492850924"
     },
     {
      "code": "AM-SP-024",
@@ -851,9 +834,6 @@
    ],
    "wait": [
     {
-     "code": "AM-BO-015"
-    },
-    {
      "code": "AM-DG-020"
     },
     {
@@ -874,8 +854,8 @@
  },
  "kpi": {
   "today": "2026-11-26",
-  "done_today": 3,
-  "published_today": 3,
+  "done_today": 4,
+  "published_today": 4,
   "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
@@ -892,16 +872,16 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 4,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 6,
-   "cur": "🙋 이대리: 야간 글감 4/4(11-25 23시 회차 재시도,",
+   "last_min": 4,
+   "cur": "[이부장 접수 11:55] 이대리 AM-BO-015 게시 완료",
    "lvl": "ok"
   },
   {
@@ -913,10 +893,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 6,
-   "cur": "🙋 이대리: 야간 글감 4/4(11-25 23시 회차 재시도,",
+   "last_min": 4,
+   "cur": "[이부장 접수 11:55] 이대리 AM-BO-015 게시 완료",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -944,7 +924,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "11:42",
+   "at": "11:54",
    "today": 8,
    "lvl": "ok",
    "order": null,
@@ -962,7 +942,7 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 3편 · 파일이 움직인 글 8편",
+   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 8편",
    "codes": [
     "AM-BO-015",
     "AM-DG-019",
@@ -979,15 +959,9 @@
  "edits": [],
  "today_events": [
   {
-   "code": "AM-SP-025",
+   "code": "AM-DG-020",
    "stage": "proc",
-   "at": "2026-11-26 01:08:22",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-019",
-   "stage": "proc",
-   "at": "2026-11-26 01:08:22",
+   "at": "2026-11-26 11:29:45",
    "src": "파일 수정 시각"
   },
   {
@@ -1003,15 +977,9 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-020",
+   "code": "AM-DG-019",
    "stage": "proc",
-   "at": "2026-11-26 11:29:45",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-014",
-   "stage": "proc",
-   "at": "2026-11-26 09:53:58",
+   "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
   },
   {
@@ -1021,7 +989,19 @@
    "src": "파일 수정 시각"
   },
   {
+   "code": "AM-PE-014",
+   "stage": "proc",
+   "at": "2026-11-26 09:53:58",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-PE-021",
+   "stage": "proc",
+   "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-025",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
@@ -1079,6 +1059,12 @@
    "stage": "naver",
    "at": "",
    "src": "db.json published(날짜만)"
+  },
+  {
+   "code": "AM-BO-015",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
   }
  ],
  "incidents": [],
@@ -1087,11 +1073,11 @@
  "room_extra": [
   {
    "title": "📊 카테고리 4개 · 최근 14일 게시",
-   "sub": "합계 17편 · 일률분배 몫 4.2편",
+   "sub": "합계 18편 · 일률분배 몫 4.5편",
    "rows": [
     {
      "head": "방송·OTT",
-     "chip": "3편"
+     "chip": "4편"
     },
     {
      "head": "공연·연예",
@@ -1114,14 +1100,14 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-26 11:41:22",
+     "chip": "2026-11-26 11:54:22",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
      "head": "AROMA_PUBLISH_STALL",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 0건) · 오늘 3회"
+     "sub": "승인 → 게시(승인 뒤 240분 넘게 게시 없으면 · 재알림 60분 · 72시간 뒤 포기 · 취침 중 보류 · update/rev 결재는 감시 밖) · 출처 시각 저장 없음(진행 중 3건) · 오늘 3회"
     },
     {
      "head": "AROMA_PUBLISH_RESOLVED",
@@ -1138,20 +1124,20 @@
     {
      "head": "TOWER_OWED",
      "lvl": "ok",
-     "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 7분째 (15분 넘으면 경보) · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "chip": "2026-11-26 11:57:01",
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건 마지막 경보 2026-11-26 11:57:01 · 장부에 남은 aroma 건 1 · 오늘 6회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-26 11:41:54",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 10회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 12회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 6회 · 횟수는 lifeinfo 루틴 전체"
+     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 7회 · 횟수는 lifeinfo 루틴 전체"
     },
     {
      "head": "aromapv 자동 동기",
@@ -1242,7 +1228,7 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 80편",
+   "title": "✅ 최근 게시 · 전체 81편",
    "empty": "게시 기록 없음",
    "rows": [
     {
@@ -1261,6 +1247,11 @@
      "sub": "GTA6 플레이타임 평균 17.4시간 — PS5 플레이어 3,900만 명 이상"
     },
     {
+     "head": "AM-BO-015",
+     "chip": "2026-11-26",
+     "sub": "넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위"
+    },
+    {
      "head": "AM-SP-024",
      "chip": "2026-11-24",
      "sub": "K리그2 순위 PO 4팀 확정(제 계산) — 3위는 대구 59점·서울E 58점"
@@ -1269,11 +1260,6 @@
      "head": "AM-BO-014",
      "chip": "2026-11-24",
      "sub": "데블스 플랜 데드 어게인 몇부작, 등록 10편 14시간 15분·6화 106분"
-    },
-    {
-     "head": "AM-PE-020",
-     "chip": "2026-11-24",
-     "sub": "임영웅 영화 관객 5일 61,861명 — 일요일은 토요일보다 23% 줄었다"
     }
    ]
   }

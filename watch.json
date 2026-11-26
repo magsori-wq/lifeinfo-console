@@ -37448,8 +37448,50 @@
    "due": "2026-11-26",
    "cmd": "python -m studio.v0check gate --code H1-47",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-26",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사(diff b9ea0668f): 반려 3건 해소 — ①제목 변경·sum·bigwrap·2절 표머리·마무리의 34/46만원을 「헬스장·요가원(체육시설업 표) 기준·필라테스는 등록 신청서 확인」으로 한정해 3절과 "
+  },
+  {
+   "id": "asidequeue-stale-cleanup-1126",
+   "added": "2026-11-26",
+   "what": "aside_queue.json 옛 항목 6건(F1-20·G3-30 11-12, A6-11·D2-21·EXP-M1-4 11-20, F4-35 11-23) — 직접 게시 모드에선 소비 안 됨. 각 항목이 이미 끝났는지(seodesc scan·gsc 기록) 재고 drop 또는 이과장 직접 처리로 이관",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "fix-h147-v0-1126",
+   "added": "2026-11-26",
+   "what": "H1-47 V0 반려 반영(fixer): 제목 변경·34만원 4곳 헬스장·요가원 한정·1)항 표기·분쟁유형2 대체 문구·기간제 함정·맨위로 링크. bodydup 0.048·layout·heading OK·validate FAIL0. 남은 것: queue.json 제목이 옛 제목(go 때 _sync_draft_title 이 덮어씀) → 이부장/이과장 큐 제목 동기, 썸네일 564 옛 제목 글자 확인, V0 재검사",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.layout --file 필라테스환불규정가격표시4가지_글_HTML.txt && head -1 필라테스환불규정가격표시4가지_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "xlink-d515",
+   "added": "2026-11-26",
+   "what": "🔗 D5-15 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D5-15",
+   "due": "2026-11-26",
+   "cmd": "python studio/blogger.py crosslink --code D5-15",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
+  },
+  {
+   "id": "h147-queue-title-sync-1126",
+   "added": "2026-11-26",
+   "what": "H1-47 큐 제목을 새 제목(필라테스·요가 가격표시 의무 4가지 — 환불은 어느 기준? 3개월 60만원 예시)으로 맞추기 — pubqueue add --force 가 분류기 거부(11:58). 재V0 통과 뒤 결재함 카드에 이 명령 허용을 함께 올린다(go 전 필수: 안 맞추면 go 가 초안 첫 줄을 옛 제목으로 덮음)",
+   "due": "2026-11-26",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
