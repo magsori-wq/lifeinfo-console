@@ -16158,17 +16158,27 @@
    "order_at": "2026-11-27 05:58:26"
   }
  },
- "updated": "2026-11-27 05:58:26",
+ "updated": "2026-11-27 05:59:29",
  "current": {
   "batch": "aroma",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "selfcheck 판정 오판 수정·훅 빈틈 보강 커밋 d9f2159 (마지막 판정줄 기준 → PE-005·SP-007 REVISE 로 정상 표시). PE-005·SP-007 필수 반영 → 재검 V0 진행, DG-021 PS플러스12월 초안 완료 → V0 진행",
+  "what": "⏸ 대기 — aroma-am-sp-025-upd-1127 watch.json 은 done(「전자결재함에서 사장님 승인」)인데 lifeinfo git 에 [사장님] 결재 커밋 없음 → 규칙상 라이브 수정 보류, 커밋 생기면 즉시 실행. PE-005·SP-007 재검 PASS 95 → 결재 카드 올림(SP-007 기한 11/28 14시), DG-021 V0 PASS 92",
   "since": "14:53",
   "since_at": "2026-10-29 14:53:41"
  },
  "log": [
+  {
+   "t": "05:59:29",
+   "text": "▶   — 1/7단계 · ⏸ 대기 — aroma-am-sp-025-upd-1127 watch.json 은 done(「전자결재함에서 사장님 승인」)인데 lifeinfo git 에 [사장님] 결재 커밋 없음 → 규칙상 라이브 수정 보류, 커밋 생기면 즉시 실행. PE-005·SP-007 재검 PASS 95 → 결재 카드 올림(SP-007 기한 11/28 14시), DG-021 V0 PASS 92",
+   "actor": "이대리"
+  },
+  {
+   "t": "05:59:04",
+   "text": "▶   — 1/7단계 · 🟧정비 복창: MV-2 관제탑 세션에 완료 보고가 들어오면 lifeinfo-tower 모드가 VERIFY_DISPATCH 줄 주입 + 플래그 턴의 첫 직접 Bash·Read 1회 deny(verify 에이전트로) · 설계도 먼저 · register.test.ts · plugin validate/test",
+   "actor": "정비"
+  },
   {
    "t": "05:58:26",
    "text": "📄 maint1127verify 작업 지시 등록(10607자, 2026-11-27 05:58:26)",
@@ -16358,16 +16368,6 @@
    "t": "05:04:24",
    "text": "🏁 maint1127coop 이부장 확인 — 끝남",
    "actor": "이부장"
-  },
-  {
-   "t": "05:04:12",
-   "text": "📄 adsq1127 지시서 덧붙임(2026-11-27 05:04:12)",
-   "actor": "이부장"
-  },
-  {
-   "t": "05:03:35",
-   "text": "✅ COOP 완료 — COOP_STALE 상대미상 오탐 반복 중지",
-   "actor": "정비"
   }
  ],
  "currents": {
@@ -16664,7 +16664,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "selfcheck 판정 오판 수정·훅 빈틈 보강 커밋 d9f2159 (마지막 판정줄 기준 → PE-005·SP-007 REVISE 로 정상 표시). PE-005·SP-007 필수 반영 → 재검 V0 진행, DG-021 PS플러스12월 초안 완료 → V0 진행",
+   "what": "⏸ 대기 — aroma-am-sp-025-upd-1127 watch.json 은 done(「전자결재함에서 사장님 승인」)인데 lifeinfo git 에 [사장님] 결재 커밋 없음 → 규칙상 라이브 수정 보류, 커밋 생기면 즉시 실행. PE-005·SP-007 재검 PASS 95 → 결재 카드 올림(SP-007 기한 11/28 14시), DG-021 V0 PASS 92",
    "since": "14:53",
    "since_at": "2026-10-29 14:53:41"
   },
@@ -19745,6 +19745,15 @@
    "what": "⚠️ mark 실패 — 항목 코드(1·adsq1127)를 못 찾았다. 이부장이 항목을 done 으로 닫아 달라. 게시 자체는 완료: https://support.google.com/adsense/thread/479224358",
    "since": "05:20",
    "since_at": "2026-11-27 05:20:29"
+  },
+  "maint1127verify": {
+   "batch": "maint1127verify",
+   "code": "",
+   "title": "",
+   "step": 1,
+   "what": "🟧정비 복창: MV-2 관제탑 세션에 완료 보고가 들어오면 lifeinfo-tower 모드가 VERIFY_DISPATCH 줄 주입 + 플래그 턴의 첫 직접 Bash·Read 1회 deny(verify 에이전트로) · 설계도 먼저 · register.test.ts · plugin validate/test",
+   "since": "05:59",
+   "since_at": "2026-11-27 05:59:04"
   }
  },
  "report_log": [
@@ -46320,6 +46329,27 @@
    "what": "selfcheck 판정 오판 수정·훅 빈틈 보강 커밋 d9f2159 (마지막 판정줄 기준 → PE-005·SP-007 REVISE 로 정상 표시). PE-005·SP-007 필수 반영 → 재검 V0 진행, DG-021 PS플러스12월 초안 완료 → V0 진행",
    "actor": "이대리",
    "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-27 05:59:04",
+   "bid": "maint1127verify",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "🟧정비 복창: MV-2 관제탑 세션에 완료 보고가 들어오면 lifeinfo-tower 모드가 VERIFY_DISPATCH 줄 주입 + 플래그 턴의 첫 직접 Bash·Read 1회 deny(verify 에이전트로) · 설계도 먼저 · register.test.ts · plugin validate/test",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-27 05:59:29",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "⏸ 대기 — aroma-am-sp-025-upd-1127 watch.json 은 done(「전자결재함에서 사장님 승인」)인데 lifeinfo git 에 [사장님] 결재 커밋 없음 → 규칙상 라이브 수정 보류, 커밋 생기면 즉시 실행. PE-005·SP-007 재검 PASS 95 → 결재 카드 올림(SP-007 기한 11/28 14시), DG-021 V0 PASS 92",
+   "actor": "이대리",
+   "sid": "de614107",
+   "req": "r299c4b"
   }
  ]
 }
