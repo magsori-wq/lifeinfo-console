@@ -15709,7 +15709,79 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "r900374"
+  },
+  {
+   "ts": "2026-11-12 19:24:11",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "19:24 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS, 루틴10 23:08 후보기록 대기). CA 조회 미조회(repl 미사용). 다음 점검 21:4x",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 20:12:43",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "🔄 MT-46 착수(20:15 정비): 원인 확정 — data/_reflect_live_log.jsonl 을 로컬(reflectcheck)과 러너(publish.yml 의 git add -A) 둘 다 써서 커밋 → 발행마다 동기 충돌. 근본 수정 = 이 로그를 git 추적에서 빼고 .gitignore(로컬 전용) · 같은 꼴 engine_log.jsonl·_advisor_calls_cache.json 도. 로컬 추가분은 보존. 예상 20:40",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 20:16:43",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴4 🔵0 🟡3 — 즉시: 결재 뒤 미발행 F4-33 노고단 탐방 예약제 2027년 1월부터 주말·공휴일만; 결재 뒤 미발행 E4-15 유플러스 청소년 할인 12월 1일 종료 — 월 1만원,; 결재 뒤 미발행 C2-27 GLP-1 계열 비만·당뇨약 시신경(NAION) 안전성; 반영 어긋남 · 로컬↔github.io · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r608e7e"
+  },
+  {
+   "ts": "2026-11-12 20:16:54",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-46 근본 수정 푸시 889ff07af(20:31 정비): data/_reflect_live_log.jsonl 를 git 추적에서 빼고 .gitignore(로컬 전용) + engine_log.jsonl·_advisor_calls_cache.json 미리 제외 · 시험 659 OK · enginemap 🔴0. 확인: 방금 syncorigin 에서 이 로그는 더 이상 멈춤 사유가 아님. ⛔ 그런데 동기는 다른 이유로 또 멈춤 — webapp/seo_desc.json 원본 충돌(merge 취소·뒤4 앞4, 로컬 보존 커밋은 됨). 🙋 이부장 요청: seo_desc.json 충돌 정리(다른 세션 원본이라 정비가 안 건드림). 정리 전에 reflect 로그가 다시 수정돼 syncorigin 이 그 파일로 멈추면 git checkout -- data/_reflect_live_log.jsonl 해도 됨(로컬 53줄 백업 보관, 동기 끝나면 정비가 되살림). 재발방지: 런타임 로그 3종 ignore 로 러너 git add -A 에 다시 안 실림",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 20:17:53",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] MT-46 반쪽: 20:20 syncorigin 재시험 → reflect 로그는 풀렸으나 webapp/seo_desc.json 원본 충돌로 또 멈춤(뒤4·앞4). seo_desc.json 은 PC(seodesc set)와 러너가 둘 다 쓴다 — 단일 작성자 또는 키 단위 merge driver 로 근본 수정 + 회귀시험 + 실제 발행 1회 무정지 확인까지가 MT-46 완료. 이부장은 손으로 합치지 않는다.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 20:18:07",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r608e7e — 미발행 3건 오탐 · MT-46 seo_desc 충돌 잔존 정비 재지시",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r608e7e"
+  },
+  {
+   "ts": "2026-11-12 20:25:13",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-11-26 18:34:21"
+ "updated": "2026-11-26 21:07:39"
 }
