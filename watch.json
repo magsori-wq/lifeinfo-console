@@ -37733,8 +37733,10 @@
    "due": "2026-11-27",
    "cmd": "type docs\\검토_CLAUDE슬림안_20261126.md",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-26",
+   "result": "16:29 검토 수령·이부장 grep 재확인: 규칙 2건 유실(보고했으니·생략 안내/고유 URL 원본1 슬림0) · docs/rules 목적지 8개 없음 · seodesc-edit 10행 연결 · 슬림 43.8K(목표 25K) · 분류 ①11절 4.0K ②27절 14.5K ③59절 23.1K → 적용 불가, 순서 = 목적지 먼저 · 묶음 결재로 이관(boss-usage-skill-mod-1127)"
   },
   {
    "id": "adsense-support-inquiry-1127",
@@ -37779,6 +37781,38 @@
    "owner": "claude",
    "state": "todo",
    "by": "3.분석"
+  },
+  {
+   "id": "boss-usage-skill-mod-1127",
+   "added": "2026-11-26",
+   "what": "사장님 사용패턴 분석(에이전트 → docs/분석_사장님_사용패턴_20261126.md) → 스킬·모드화 제안을 슬림 검토 8번·연결도구 검토와 한 묶음 결재로(구현 = 정비/fixer 지시서)",
+   "due": "2026-11-27",
+   "cmd": "type docs\\분석_사장님_사용패턴_20261126.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-inquiry-draft-approve-1127",
+   "added": "2026-11-26",
+   "what": "애드센스 지원팀 문의 초안 승인 — 1단계 칸 62자: 「블로그 lifeinfo8975.blogspot.com 검토 재요청 전 색인 문제 문의(리디렉션 오류·색인 0편)」 + 본문(8차 반려·576편 중 색인 0·리디렉션 오류 324·미색인 124·질문 3개). 원문 docs/aside_drafts/adsense_support_inquiry_1126_form.txt",
+   "due": "2026-11-27",
+   "cmd": "【권고】 이 문안 승인 → Aside 가 양식에 입력하고 2·3단계 칸을 채운 뒤, 제출 직전 화면을 사장님께 한 번 더 보여드리고 제출합니다. 【근거】 숫자는 index_status 11-26 완주값과 이부장 대조 일치(324·124·576·0). 양식 1단계는 100자 제한 실측. 【위험】 2·3단계 칸은 입력 뒤에야 열려 아직 못 봤습니다 — 제한이 짧으면 본문을 나눠 넣습니다. 재요청(9차)은 보류 그대로.",
+   "owner": "user",
+   "state": "wait",
+   "by": "이부장",
+   "verify": "python -m studio.batchboard order --id adsense1126sup2",
+   "kind": "approve"
+  },
+  {
+   "id": "connector-off-guide-after-approval",
+   "added": "2026-11-26",
+   "what": "연결 도구 끄기 결재 나면 사장님께 상세 안내(claude.ai 계정 설정 경로·클릭 순서·끈 뒤 확인법 — Figma·Notion·Drive·Calendar·Stytch·Claude Docs) · 사장님 16:29 「결재후 상세히 안내해」",
+   "due": "2026-11-27",
+   "cmd": "type docs\\검토_연결도구_정리_20261126.md",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
