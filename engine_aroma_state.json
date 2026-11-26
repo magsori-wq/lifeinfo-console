@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26 12:03:07",
+ "at": "2026-11-26 12:08:58",
  "errors": [],
  "rows": [
   {
@@ -323,7 +323,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 6회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 7회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -331,7 +331,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-26 11:41:54",
    "src": "now_log(bid=aroma)",
-   "today_n": 12,
+   "today_n": 13,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -358,7 +358,7 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 2,
+  "last_min": 8,
   "cur": "이부장 ack r3dc9b3 — BO-015 결재 커밋 92d",
   "lvl": "ok"
  },
@@ -372,19 +372,19 @@
    {
     "code": "AM-DG-020",
     "title": "스팀세일기간11월겨울세일",
-    "min": 19,
+    "min": 25,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-022",
     "title": "seg1",
-    "min": 20,
+    "min": 26,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-026",
     "title": "2027KBOFA명단등급보상",
-    "min": 21,
+    "min": 27,
     "lvl": "ok"
    }
   ],
@@ -872,7 +872,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -880,7 +880,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 8,
    "cur": "이부장 ack r3dc9b3 — BO-015 결재 커밋 92d",
    "lvl": "ok"
   },
@@ -895,7 +895,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 8,
    "cur": "이부장 ack r3dc9b3 — BO-015 결재 커밋 92d",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -959,21 +959,21 @@
  "edits": [],
  "today_events": [
   {
-   "code": "AM-DG-019",
-   "stage": "proc",
-   "at": "2026-11-26 01:08:22",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-020",
-   "stage": "proc",
-   "at": "2026-11-26 11:29:45",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-PE-021",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-025",
+   "stage": "proc",
+   "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-014",
+   "stage": "proc",
+   "at": "2026-11-26 09:53:58",
    "src": "파일 수정 시각"
   },
   {
@@ -989,15 +989,15 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-025",
+   "code": "AM-DG-019",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-014",
+   "code": "AM-DG-020",
    "stage": "proc",
-   "at": "2026-11-26 09:53:58",
+   "at": "2026-11-26 11:29:45",
    "src": "파일 수정 시각"
   },
   {
@@ -1125,13 +1125,13 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 6회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 7회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-26 11:41:54",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 12회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 13회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",

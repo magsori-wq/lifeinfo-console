@@ -37233,7 +37233,7 @@
    "id": "toss-openapi-unauthorized-1126",
    "added": "2026-11-26",
    "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 문안 docs/토스_거래처인증_문의_20261126.md(빈칸 2곳) 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 · 링크 발급 API 는 11:36 정상(새꼬막 링크 발급 성공) 【위험】인기순위 새 수집 불가 → 루틴8·9 후보는 누적 목록 검색만",
-   "due": "2026-11-26",
+   "due": "2026-11-28",
    "cmd": "python -c \"from studio.tosslink import best;print(best(1))\"",
    "owner": "user",
    "state": "blocked",
@@ -37490,6 +37490,16 @@
    "what": "H1-47 큐 제목을 새 제목(필라테스·요가 가격표시 의무 4가지 — 환불은 어느 기준? 3개월 60만원 예시)으로 맞추기 — pubqueue add --force 가 분류기 거부(11:58). 재V0 통과 뒤 결재함 카드에 이 명령 허용을 함께 올린다(go 전 필수: 안 맞추면 go 가 초안 첫 줄을 옛 제목으로 덮음)",
    "due": "2026-11-26",
    "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "h147-publish-newtitle-1126",
+   "added": "2026-11-26",
+   "what": "H1-47 발행 — 사장님 12:03 결정 「새 제목으로 발행」: post_title='필라테스·요가 가격표시 의무 4가지 — 환불은 어느 기준? 3개월 60만원 예시'. 선행: 이과장 썸네일 564 재제작 → deploy.bat(썸네일·rv) 200 → pubready → 17:00 전 gh workflow run",
+   "due": "2026-11-26",
+   "cmd": "python -m studio.pubready --code H1-47",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
