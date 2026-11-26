@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26 11:38:10",
+ "at": "2026-11-26 11:47:52",
  "errors": [],
  "rows": [
   {
@@ -7,52 +7,64 @@
    "approvals": [
     {
      "id": "aroma-am-bo-015-approve-1126",
-     "state": "todo",
+     "state": "done",
      "kind": "approve",
      "at": "2026-11-26"
     }
    ],
-   "title": "넷플릭스순위1116 1122흐름",
+   "title": "seg1",
+   "last_file_at": "2026-11-26 11:42",
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 92d6d462b"
+  },
+  {
+   "code": "AM-DG-020",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-020-approve-1126",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-26"
+    }
+   ],
+   "title": "스팀세일기간11월겨울세일",
    "last_file_at": "2026-11-26 11:37",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-bo-015-approve-1126",
-   "no_preview": false
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 0701162df"
+  },
+  {
+   "code": "AM-PE-022",
+   "approvals": [
+    {
+     "id": "aroma-am-pe-022-approve-1126",
+     "state": "done",
+     "kind": "approve",
+     "at": "2026-11-26"
+    }
+   ],
+   "title": "혁오콘서트서울추가회차좌석",
+   "last_file_at": "2026-11-26 11:37",
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 eac464b0b"
   },
   {
    "code": "AM-SP-026",
    "approvals": [
     {
      "id": "aroma-am-sp-026-approve-1126",
-     "state": "todo",
+     "state": "done",
      "kind": "approve",
      "at": "2026-11-26"
     }
    ],
    "title": "2027KBOFA명단등급보상",
    "last_file_at": "2026-11-26 11:37",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-sp-026-approve-1126",
-   "no_preview": false
-  },
-  {
-   "code": "AM-DG-020",
-   "approvals": [],
-   "title": "스팀세일기간11월겨울세일",
-   "last_file_at": "2026-11-26 11:37",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-DG-020_1126_r2.md · PASS 91점"
-  },
-  {
-   "code": "AM-PE-022",
-   "approvals": [],
-   "title": "혁오콘서트서울추가회차좌석",
-   "last_file_at": "2026-11-26 11:37",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-PE-022_1126_r2.md · PASS 90점"
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 9259c2730"
   }
  ],
  "old_inflight": [],
@@ -288,7 +300,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-26 11:37:50",
+   "last_at": "2026-11-26 11:41:22",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -327,15 +339,15 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 6분째 (15분 넘으면 경보) · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-26 11:11:01",
+   "last_at": "2026-11-26 11:41:54",
    "src": "now_log(bid=aroma)",
-   "today_n": 7,
+   "today_n": 10,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -344,7 +356,7 @@
    "node": "루틴10 → CP",
    "last_at": "",
    "src": "시각 저장 없음(루틴10 꺼짐은 설계도 기재)",
-   "today_n": 5,
+   "today_n": 6,
    "note": "횟수는 lifeinfo 루틴 전체",
    "at_node": ""
   },
@@ -362,43 +374,42 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 4,
-  "cur": "[이부장 접수 11:33] 이대리 ⏸(결재 기록 없음) 접수 ",
+  "last_min": 5,
+  "cur": "🙋 이대리: 야간 글감 4/4(11-25 23시 회차 재시도,",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [],
-  "v0": [
+  "v0": [],
+  "boss": [],
+  "deploy": [],
+  "publish": [
+   {
+    "code": "AM-BO-015",
+    "title": "seg1",
+    "min": 6,
+    "lvl": "ok"
+   },
    {
     "code": "AM-DG-020",
     "title": "스팀세일기간11월겨울세일",
-    "min": 1,
+    "min": 4,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-022",
     "title": "혁오콘서트서울추가회차좌석",
-    "min": 1,
-    "lvl": "ok"
-   }
-  ],
-  "boss": [
-   {
-    "code": "AM-BO-015",
-    "title": "넷플릭스순위1116 1122흐름",
-    "min": 1,
+    "min": 5,
     "lvl": "ok"
    },
    {
     "code": "AM-SP-026",
     "title": "2027KBOFA명단등급보상",
-    "min": 1,
+    "min": 5,
     "lvl": "ok"
    }
   ],
-  "deploy": [],
-  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -838,7 +849,20 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "AM-BO-015"
+    },
+    {
+     "code": "AM-DG-020"
+    },
+    {
+     "code": "AM-PE-022"
+    },
+    {
+     "code": "AM-SP-026"
+    }
+   ]
   }
  },
  "topics": [],
@@ -852,7 +876,7 @@
   "today": "2026-11-26",
   "done_today": 3,
   "published_today": 3,
-  "boss_wait": 2,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -868,7 +892,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 3,
+  "age_min": 2,
   "lvl": "ok"
  },
  "units": [
@@ -876,8 +900,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 4,
-   "cur": "[이부장 접수 11:33] 이대리 ⏸(결재 기록 없음) 접수 ",
+   "last_min": 5,
+   "cur": "🙋 이대리: 야간 글감 4/4(11-25 23시 회차 재시도,",
    "lvl": "ok"
   },
   {
@@ -891,8 +915,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 4,
-   "cur": "[이부장 접수 11:33] 이대리 ⏸(결재 기록 없음) 접수 ",
+   "last_min": 5,
+   "cur": "🙋 이대리: 야간 글감 4/4(11-25 23시 회차 재시도,",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -912,7 +936,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 2건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -920,7 +944,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "11:37",
+   "at": "11:42",
    "today": 8,
    "lvl": "ok",
    "order": null,
@@ -951,30 +975,9 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-bo-015-approve-1126",
-   "what": "【권고】AM-BO-015 넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위 승인 【근거】자동완성 「넷플릭스 순위」「문무 넷플릭스",
-   "by": "이대리",
-   "waited": ""
-  },
-  {
-   "kind": "aroma",
-   "id": "aroma-am-sp-026-approve-1126",
-   "what": "【권고】AM-SP-026 2027 KBO FA 명단 22명 — C등급 6명은 보상선수 없이 연봉 150% 승인 【근거】자동완성 「2027 kbo",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
+ "approvals": [],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-SP-025",
-   "stage": "proc",
-   "at": "2026-11-26 01:08:22",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-DG-019",
    "stage": "proc",
@@ -988,21 +991,15 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-BO-015",
-   "stage": "proc",
-   "at": "2026-11-26 11:31:09",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-PE-014",
    "stage": "proc",
    "at": "2026-11-26 09:53:58",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-021",
+   "code": "AM-PE-022",
    "stage": "proc",
-   "at": "2026-11-26 01:08:22",
+   "at": "2026-11-26 11:29:46",
    "src": "파일 수정 시각"
   },
   {
@@ -1012,9 +1009,21 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-022",
+   "code": "AM-PE-021",
    "stage": "proc",
-   "at": "2026-11-26 11:29:46",
+   "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-025",
+   "stage": "proc",
+   "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-015",
+   "stage": "proc",
+   "at": "2026-11-26 11:31:09",
    "src": "파일 수정 시각"
   },
   {
@@ -1027,6 +1036,30 @@
    "code": "aroma-threads-expand-decision-1126",
    "stage": "boss",
    "at": "2026-11-26 11:08:34",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-BO-015",
+   "stage": "boss",
+   "at": "2026-11-26 11:41:20",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-SP-026",
+   "stage": "boss",
+   "at": "2026-11-26 11:41:58",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-PE-022",
+   "stage": "boss",
+   "at": "2026-11-26 11:42:43",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-DG-020",
+   "stage": "boss",
+   "at": "2026-11-26 11:43:16",
    "src": "결재 커밋 시각"
   },
   {
@@ -1081,7 +1114,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-26 11:37:50",
+     "chip": "2026-11-26 11:41:22",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1106,19 +1139,19 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 6분째 (15분 넘으면 경보) · 오늘 5회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-26 11:11:01",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 7회 · 횟수는 전체 세션"
+     "chip": "2026-11-26 11:41:54",
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 10회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 5회 · 횟수는 lifeinfo 루틴 전체"
+     "sub": "루틴10 → CP · 출처 시각 저장 없음(루틴10 꺼짐은 설계도 기재) · 오늘 6회 · 횟수는 lifeinfo 루틴 전체"
     },
     {
      "head": "aromapv 자동 동기",
