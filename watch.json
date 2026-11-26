@@ -37590,6 +37590,48 @@
    "preview": "aromapv_kwqa_1126.html",
    "done_at": "2026-11-26",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "routine-alt-gap-1126",
+   "added": "2026-11-26",
+   "what": "루틴2·4·6 이 11-26 추천만 내고 후보(alt) 0 — 재고<하한이면 상한이 풀리는데 오히려 후보를 안 냄. 오늘 밤 루틴4(21:00)·루틴6(23:55) 결과에서 후보 등록 여부 확인 → 계속 0이면 루틴공통절 「후보 1 필수(재고<하한)」 문구 보강 지시",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-category-coverage-1126",
+   "added": "2026-11-26",
+   "what": "루틴2(A·B)·6(C·D·E)·4(F·G·H) 담당 카테고리 전부를 회차마다 훑는지 — 11-26 실측: E 출입처 0곳·F 0404 404 뒤 대체 없음·B·C 1건씩. 출입처 규칙(루틴4 SKILL 「카테고리 출입처」 최소 3곳)이 루틴2·6 에는 없거나 지켜지지 않음 → 11-27 회차 장부 확인 후 루틴공통절에 「담당 카테고리별 출입처 1곳 이상·장부에 칸별 기록」 넣어 routinesync 배포",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard order --id routinelog",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "codemode-desktop-recheck-1210",
+   "added": "2026-11-26",
+   "what": "Code Mode Desktop 앱·Remote Control 지원 여부 재확인(지금은 Desktop·RC 미지원이라 lifeinfo 세션 적용 불가 — docs/검토_CodeMode_20261126.md)",
+   "due": "2026-12-10",
+   "cmd": "claude --version && echo 'changelog: https://code.claude.com/docs/en/changelog 에서 Code Mode Desktop 지원 줄 확인'",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "token-usage-audit-1126",
+   "added": "2026-11-26",
+   "what": "사장님 15:05 「토큰 사용량 줄이도록 확인·검증」 — 실측 에이전트가 docs/토큰_실측_20261126.md 작성 중 → 이부장 검증 후 레버별 지시(정비·지침)",
+   "due": "2026-11-26",
+   "cmd": "test -f docs/토큰_실측_20261126.md && head -40 docs/토큰_실측_20261126.md",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1,
+   "by": "이부장"
   }
  ]
 }
