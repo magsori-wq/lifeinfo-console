@@ -38008,6 +38008,27 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "fix-d316-v0reject-1126",
+   "added": "2026-11-26",
+   "what": "D3-16 에너지효율개선사업 공사 최대 330만 원, 자부담 0원 대상 판정: V0 1차 반려를 원고에 반영(6절 마감 문장·첫 줄 제목 주석·3절/4절 집주인 동의 문장·4·7절 소제목과 목차). 커밋 1e6a6526d. heading OK, bodydup 0.044, validate FAIL 0. 남은 것: queue.json 제목은 바꿀 서브커맨드가 없어 옛 제목 그대로, 마무리 박스에 '마감일이 따로 없고' 표현 남음",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.heading --file 에너지효율개선사업330만원자부담0원판정표_글_HTML.txt && grep -c '날짜로 정한 마감은 공개 자료에 없고' 에너지효율개선사업330만원자부담0원판정표_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "d316-queue-title-allow-1126",
+   "added": "2026-11-26",
+   "what": "x",
+   "due": "2026-11-26",
+   "cmd": "echo",
+   "owner": "user",
+   "state": "todo",
+   "note": 1,
+   "by": "이부장"
   }
  ]
 }
