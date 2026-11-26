@@ -15367,7 +15367,17 @@
    "what": "[관제탑 → 정비] 👤 사장님 16:15 원문: 「땜질조치는 용서 못해! 근본을 찾아 원천적으로 불가역적으로 조치하고 검증하길!」 → MT-46 을 「근본 원인 제거」로 재정의(최우선). 땜질(이부장이 7번 손으로 합침) 금지. ① 근본 원인 실측: data/_reflect_live_log.jsonl(쓰는 곳 studio/reflectcheck.py)·webapp/seo_desc.json(쓰는 곳 seodesc·pipeline·reindex 등)을 **PC 와 러너(publish.yml) 둘 다 쓰는지** 커밋 이력으로 확정 — 두 작성자가 같은 파일을 쓰는 구조 자체가 원인. ② 원천 조치(택1 이상, 이유와 함께): (a) 파일마다 작성자 하나로 — 러너가 쓸 필요 없는 PC 전용 로그는 git 밖(.gitignore·derivedguard 등록)으로, 러너 전용은 PC 가 안 씀 (b) 둘 다 써야 하면 .gitattributes merge 드라이버(jsonl=union, seo_desc=posts 키 단위 3방향 합침 스크립트)로 git 자체가 충돌을 안 내게 — 러너 체크아웃에도 적용 (c) syncorigin 이 이 두 파일에서 멈추지 않게. ③ 불가역 = 다시 같은 충돌이 생기면 코드가 막거나(검사) 자동 해소 — 회귀 시험(오늘 충돌 2종 재현: PC 쪽 C1-20 seo 기록 + 러너 쪽 C2-26 발행) + falsepos/validate 규칙 1줄 + 설계도 마디 기록. ④ 검증 = 시험 통과 후 실제 발행 1회에서 syncorigin 무중단 실측. 끝나면 페이블 검증에 넘김.",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 16:18:25",
+   "bid": "pub1112c226",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474467241 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ],
- "updated": "2026-11-26 16:16:55"
+ "updated": "2026-11-26 16:20:33"
 }
