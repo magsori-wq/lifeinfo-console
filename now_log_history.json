@@ -13645,7 +13645,57 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "r3b7011"
+  },
+  {
+   "ts": "2026-11-12 09:51:58",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-40(6b4c49cef): 누가 정비 · 원인 tools/blog2naver_text.py 가 <div class=keyline> 박스를 통째로 버림(<p class=keyline> 은 일반 문단으로 남음) · 수정 두 꼴 모두 「👉 …」 줄 + naver._check_naver_depth 「핵심 한 줄 누락」 경고 · 실측 keyline 있는 원고 46편: 기존 네이버 원고 7편 누락 → 라이브 PostView 로 7편 모두 누락 확인(E4-08·A3-17·G1-18·D5-07·B5-10·G3-31·F3-13) → 새 변환 0편 · 원고 480편 손실 0 · 발행 대기 G3-32 새 원고 keep_check 5756/5756 ✅(G3-33·G3-35 도 새 변환이면 포함) · 남은 것: 이미 게시된 7편 정정 여부는 이부장 판단. 📌 MT-37 판단: 이과장 게시 진입점(data/_th_post.py·_ig_post.py·_nv_edit.py·studio.naverwrite·aside repl 인라인/파일)은 5fa565a3e 부터 Bash 훅(postlock)이 실행 순간 direct_gate(코드·채널·실제 게시 파일)를 자동으로 돌리고 실패면 실행 전 거부(시험 test_live_gate_decides·check_command 통합 · 실기록 재생 실제 게시 전부 걸림) · threadsdraft 는 클립보드만이라 게시 아님 · naverwrite 는 자체 direct_gate 도 있음 → 덮였다고 봄. 남는 구멍은 PowerShell 도구(matcher 결재 대기)뿐. 닫을지 확인 바람. ⏸ 대기 — 새 지시 기다림",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 09:54:48",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "✅ B4-32 출처 보강 완료: ⑧ 추가10%=2024 지급분 한정(2026 귀속 아님)·이월 제61조②단서 10년·신청기한 시행령113조 다음연도 2월분 급여일·상품 없음(장부). 미확정: 특례 100% 근거(사업자 조문만)·종교단체 정의·이월의 한도초과분 포함 해석",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-12 09:56:37",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] 네이버 정정 7편(MT-40 검수 결과 — 블로그 원문의 「핵심 한 줄(keyline)」 문장이 네이버 게시본에 없음): E4-08·A3-17·G1-18·D5-07·B5-10·G3-31·F3-13. 각 글: 블로그 원문 keyline 문장을 네이버 본문 같은 자리에 「👉 …」 한 줄로 추가(새 변환기 출력 tools/blog2naver_text.py 와 대조). 게시 전 python -m studio.asidequeue gate --code <코드> --kind naver --fix 통과 후 정정, 정정 뒤 PostView 로 문장 들어간 것 확인. 목록·근거: verify 09:56 scratchpad mt40/scan.json. 막히면 batchboard now.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 10:04:04",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⛔ 네이버 keyline 정정 7편 — 이과장 09:56 지시 처리 결과: ①게이트(naver --fix) 통과 = G3-31·F3-13 2편뿐. E4-08·G1-18·D5-07·B5-10 = 「⑤ 사장님 ⑥ 결재 기록 없음(queue.json go·audit pubqueue.go)」로 거부, A3-17 = ⑤ + 「② 네이버 원고에만 있는 숫자 37.2(⭐ 2025년 온라인 신청 중단 사유 2,467건…)」 거부 — 게이트를 뚫지 않고 멈춤(확인: python -m studio.asidequeue gate --code <코드> --kind naver --fix). ②G3-31 저장(data/_nv_edit.py --publish)은 시험 삽입까지 성공(편집기에서 👉 문장이 앵커 앞 새 문단으로 들어감, 저장 없이 닫음)했으나 저장 명령을 자동 분류기가 거부 — 우회 안 함. 도구: _nv_edit.py 에 --anchor/--after/--before/--exact 추가(이모지·본문 분할 입력, 이모지 첫 글자만 들어가던 문제 해결). F3-13 도 같은 분류기 거부 가능성. ⏸ 대기 — 이부장 처리: ⑴5편 게이트 사유(결재기록 없음 = 옛 글 audit 공백) 어떻게 할지 ⑵G3-31·F3-13 저장 허용(결재함 항목 필요) 🙋 이부장 요청",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 10:05:23",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] MT-41: asidequeue gate --fix 가 옛 글(⑥ 결재 도장 제도 이전 발행 — E4-08·G1-18·D5-07·B5-10·A3-17)을 「⑤ 결재 기록 없음」으로 거부해 정정을 못 함. 정정(--fix)은 DB 에 발행 URL 이 있는 글이면 ⑤ 를 결재 대신 '발행 사실'로 인정(새 게시는 그대로 ⑤ 요구). A3-17 「② 네이버에만 있는 숫자 37.2」 는 정정과 무관한 기존 원고 문제 — 별도 표시.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
   }
  ],
- "updated": "2026-11-26 09:51:18"
+ "updated": "2026-11-26 10:05:47"
 }

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26 09:54:00",
+ "at": "2026-11-26 10:24:19",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -235,7 +235,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-26 09:53:44",
+   "last_at": "2026-11-26 10:24:15",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -309,8 +309,8 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 2,
-  "cur": "11:1x 점검: 새 승인·요청 없음, MyBlog→/arom",
+  "last_min": 18,
+  "cur": "[이부장 접수 10:05] 이대리 시각 정정(11:3x→09:",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -773,7 +773,7 @@
   "today": "2026-11-26",
   "done_today": 3,
   "published_today": 3,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -797,8 +797,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
-   "cur": "11:1x 점검: 새 승인·요청 없음, MyBlog→/arom",
+   "last_min": 18,
+   "cur": "[이부장 접수 10:05] 이대리 시각 정정(11:3x→09:",
    "lvl": "ok"
   },
   {
@@ -812,8 +812,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 2,
-   "cur": "11:1x 점검: 새 승인·요청 없음, MyBlog→/arom",
+   "last_min": 18,
+   "cur": "[이부장 접수 10:05] 이대리 시각 정정(11:3x→09:",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -833,7 +833,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -868,19 +868,27 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-pe-014u-approve-1126",
+   "what": "【권고】라이브 글 AM-PE-014 「2026 청룡영화상 후보 — 호프 10개·가능한 사랑 8개·왕과 사는 남자 7개」(224477468233,",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-PE-014",
-   "stage": "proc",
-   "at": "2026-11-26 09:53:58",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-SP-025",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-014",
+   "stage": "proc",
+   "at": "2026-11-26 09:53:58",
    "src": "파일 수정 시각"
   },
   {
@@ -947,7 +955,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-26 09:53:44",
+     "chip": "2026-11-26 10:24:15",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
