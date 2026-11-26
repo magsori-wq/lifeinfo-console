@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 02:46:03",
+ "at": "2026-11-27 03:17:03",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -466,18 +466,18 @@
  "drivers": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "지연·확인 필요",
    "jobs": 3,
-   "last_min": 3,
+   "last_min": 34,
    "cur": "🚀 D2-22 발행 — 면허정지·취소 감경, 음주 전력 있으면",
-   "lvl": "ok",
+   "lvl": "amber",
    "role": "②처리·④발행 운전"
   },
   {
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 461,
+   "last_min": 492,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -514,17 +514,17 @@
  "units": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "지연·확인 필요",
    "jobs": 3,
-   "last_min": 3,
+   "last_min": 34,
    "cur": "🚀 D2-22 발행 — 면허정지·취소 감경, 음주 전력 있으면",
-   "lvl": "ok"
+   "lvl": "amber"
   },
   {
    "who": "3.세션",
-   "state": "현장(진행)",
+   "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 4,
+   "last_min": 35,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -532,7 +532,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 461,
+   "last_min": 492,
    "cur": "",
    "lvl": "ok"
   },
@@ -540,7 +540,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 208,
+   "last_min": 239,
    "cur": "[이부장 접수 23:17] 루틴10 aroma 야간 글감 0/",
    "lvl": "ok"
   },
@@ -990,13 +990,13 @@
    "who": "lee"
   },
   {
-   "code": "D2-22",
+   "code": "D3-16",
    "stage": "blog",
-   "at": "",
-   "src": "pub_dates(날짜뿐)"
+   "at": "2026-11-27 03:09:28",
+   "src": "now_log 발행 완료"
   },
   {
-   "code": "D3-16",
+   "code": "D2-22",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -1078,12 +1078,12 @@
     "live": null
    },
    "D2-22": {
-    "stage": "attached",
-    "icon": "📝",
-    "label": "원고 부착",
+    "stage": "live",
+    "icon": "✅",
+    "label": "라이브 삽입(네이버)",
     "links": 1,
     "attached": 1,
-    "live": null
+    "live": 1
    },
    "D3-16": {
     "stage": "none",
@@ -1130,7 +1130,7 @@
    "links": 72,
    "unattached": 34,
    "posts_issued": 49,
-   "live_posts": 35
+   "live_posts": 36
   }
  },
  "exec_error": "",
@@ -1140,8 +1140,8 @@
   "stale": 0,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-27 02:39:25",
-  "age_min": 6
+  "at": "2026-11-27 03:14:38",
+  "age_min": 2
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1233,11 +1233,11 @@
  "fired": [
   {
    "day": "2026-11-27",
-   "total": 42,
+   "total": 46,
    "kinds": [
     [
      "COOP_STALE",
-     12
+     14
     ],
     [
      "ASIDE_DRAFT",
@@ -1248,15 +1248,15 @@
      3
     ],
     [
+     "REPORT_UNACKED",
+     3
+    ],
+    [
      "ASIDE_ALERT",
      2
     ],
     [
      "PUBLISH_RUN_DONE",
-     2
-    ],
-    [
-     "REPORT_UNACKED",
      2
     ],
     [
