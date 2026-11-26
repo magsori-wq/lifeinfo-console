@@ -1,7 +1,17 @@
 {
- "at": "2026-11-27 05:43:11",
+ "at": "2026-11-27 05:57:56",
  "errors": [],
- "rows": [],
+ "rows": [
+  {
+   "code": "AM-DG-021",
+   "approvals": [],
+   "title": "PS플러스12월게임정가합계",
+   "last_file_at": "2026-11-27 05:54",
+   "stage": "draft",
+   "label": "초안",
+   "detail": "1개 파일"
+  }
+ ],
  "old_inflight": [],
  "discarded": [
   {
@@ -99,17 +109,33 @@
      "state": "done",
      "kind": "approve",
      "at": "2026-11-25"
+    },
+    {
+     "id": "aroma-am-sp-025-upd-1127",
+     "state": "todo",
+     "kind": "upd",
+     "at": "2026-11-27"
     }
    ],
    "title": "2026 KBO 시상식 — MVP 후보 14명, 수비상 164명 중 10명",
    "last_file_at": "2026-11-27 05:43",
    "stage": "published",
    "label": "게시됨",
-   "detail": "2026-11-26"
+   "detail": "2026-11-26",
+   "rev_wait": [
+    "aroma-am-sp-025-upd-1127"
+   ]
   }
  ],
  "published_total": 84,
- "rev_wait": [],
+ "rev_wait": [
+  {
+   "code": "AM-SP-025",
+   "ids": [
+    "aroma-am-sp-025-upd-1127"
+   ]
+  }
+ ],
  "cats": {
   "window": 14,
   "rows": [
@@ -235,7 +261,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-27 05:42:42",
+   "last_at": "2026-11-27 05:57:43",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -309,13 +335,20 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 0,
-  "cur": "글감 추천(이대리 직접, 06:3x): ①SP-007 업데이트",
+  "last_min": 1,
+  "cur": "selfcheck 판정 오판 수정·훅 빈틈 보강 커밋 d9f2",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
-  "draft": [],
+  "draft": [
+   {
+    "code": "AM-DG-021",
+    "title": "PS플러스12월게임정가합계",
+    "min": 3,
+    "lvl": "ok"
+   }
+  ],
   "v0": [],
   "boss": [],
   "deploy": [],
@@ -793,7 +826,7 @@
   "today": "2026-11-27",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -809,7 +842,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
@@ -817,8 +850,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 0,
-   "cur": "글감 추천(이대리 직접, 06:3x): ①SP-007 업데이트",
+   "last_min": 1,
+   "cur": "selfcheck 판정 오판 수정·훅 빈틈 보강 커밋 d9f2",
    "lvl": "ok"
   },
   {
@@ -832,8 +865,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 0,
-   "cur": "글감 추천(이대리 직접, 06:3x): ①SP-007 업데이트",
+   "last_min": 1,
+   "cur": "selfcheck 판정 오판 수정·훅 빈틈 보강 커밋 d9f2",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -853,7 +886,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -861,11 +894,11 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "05:43",
-   "today": 1,
+   "at": "05:57",
+   "today": 4,
    "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 1편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 4편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -879,19 +912,55 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 1편",
+   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 4편",
    "codes": [
+    "AM-DG-021",
+    "AM-PE-005",
+    "AM-SP-007",
     "AM-SP-025"
    ]
   }
  ],
- "approvals": [],
- "edits": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-sp-025-upd-1127",
+   "what": "【권고】AM-SP-025(2026 KBO 시상식 후보 글)에 결과 업데이트 박스 1개 추가 승인 — MVP 김도영·신인상 허인서(포수 16년 만",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
+ "edits": [
+  {
+   "code": "AM-SP-025",
+   "title": "2026 KBO 시상식 — MVP 후보 14명, 수비상 164명 중 10명",
+   "stage": "boss",
+   "packer": ""
+  }
+ ],
  "today_events": [
+  {
+   "code": "AM-SP-007",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-021",
+   "stage": "proc",
+   "at": "2026-11-27 05:54:48",
+   "src": "파일 수정 시각"
+  },
   {
    "code": "AM-SP-025",
    "stage": "proc",
    "at": "2026-11-27 05:43:11",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-005",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
   }
  ],
@@ -928,7 +997,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-27 05:42:42",
+     "chip": "2026-11-27 05:57:43",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {

@@ -38213,8 +38213,10 @@
    "due": "2026-11-27",
    "cmd": "python -m studio.batchboard order --id aroma",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "05:43 결재카드 aroma-am-sp-025-upd-1127 상정 확인(CP 결재 대기 1건)"
   },
   {
    "id": "aroma-am-sp-025-upd-1127",
@@ -38237,6 +38239,27 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "aroma-selfcheck-v0-verdict-fix-1127",
+   "added": "2026-11-27",
+   "what": "이대리 selfcheck.py V0 판정 오판(PE-005 REVISE→PASS로 읽음) 수정 확인 — 고친 뒤 PE-005 가 'V0 REVISE'로 나와야 함",
+   "due": "2026-11-27",
+   "cmd": "cd /c/naver-blog && PYTHONIOENCODING=utf-8 python aroma-mag/tools/selfcheck.py",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-pe-005-upd-1127",
+   "added": "2026-11-27",
+   "what": "【권고】AM-PE-005(NCT WISH 고척돔 글)에 11/27 업데이트 박스 1개 추가 승인 — 1/14(목) 추가 회차·12/2~4 예매 일정·선예매 자격(국내 11/2·글로벌 11/3 인증자)·1/14 기준 취소 수수료 날짜 환산 【근거】멜론 티켓 공지 csoonId=13396(11/25)·상품 페이지 prodId=214071 직접 확인(11-27 Aside), 독립 V0 재검 PASS 95(1회차 REVISE 90 → 필수 1건 수정). 관련 검색어: nct wish 콘서트 추가 티켓팅·일반예매·공연시간·티켓팅(양도·티켓베이 제외). 뉴스에 없는 것: 1/14 회차 취소 수수료 날짜 환산·구매일별 무료 취소 마감·국문/영문 공지 인증 마감 차이 교차 확인. 유형 검색형(일정형 → 업데이트 박스). 라이브 백업 rev/AM-PE-005_20261127_before.html(구성요소 14·이미지 2). 임베드 추가 없음(기존 글 유지) 【위험】라이브 제목은 「1월 15·16일」 그대로(제목 변경은 별도 결재) · 12/2 선예매 전 반영 권고",
+   "due": "2026-11-27",
+   "cmd": "AM-PE-005 업데이트 박스 추가 승인",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
