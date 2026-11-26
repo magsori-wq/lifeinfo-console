@@ -37232,13 +37232,14 @@
   {
    "id": "toss-openapi-unauthorized-1126",
    "added": "2026-11-26",
-   "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 사장님 계정 메일로 보내실지 결정 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 확인(/health 는 ok, 11-25 07:11 은 정상) 【위험】인기순위 새 수집 불가 → 루틴8·9 이슈상품 후보 0. 기존 누적 목록 검색·기발급 링크는 그대로. 링크 발급 API 영향은 미확인(시험 발급 안 함)",
+   "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 문안 docs/토스_거래처인증_문의_20261126.md(빈칸 2곳) 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 · 링크 발급 API 는 11:36 정상(새꼬막 링크 발급 성공) 【위험】인기순위 새 수집 불가 → 루틴8·9 후보는 누적 목록 검색만",
    "due": "2026-11-26",
    "cmd": "python -c \"from studio.tosslink import best;print(best(1))\"",
    "owner": "user",
    "state": "blocked",
    "note": 0,
-   "by": "이부장"
+   "by": "이부장",
+   "kind": "action"
   },
   {
    "id": "a5-24-yeonchha-source",
@@ -37375,6 +37376,17 @@
    "owner": "claude",
    "state": "todo",
    "by": "세션:7c5092aa"
+  },
+  {
+   "id": "aroma-am-sp-026-approve-1126",
+   "added": "2026-11-26",
+   "what": "【권고】AM-SP-026 2027 KBO FA 명단 22명 — C등급 6명은 보상선수 없이 연봉 150% 승인 【근거】자동완성 「2027 kbo fa 명단·등급·일정·현황」 + KBO 공시 2건·별첨 docx 2개 직접 파싱, 뉴스에 없는 것=승인 기준 등급 A6·B10·C6·구단별 자격→승인·미신청 6명·보상 규정 대입, V0 REVISE 83→수정→PASS 93, 영상 임베드 없음(KBO 채널 FA 영상은 추측 토크), crossdup 최고 0.22 🟢, 유형 검색형, 사진 없음(허락 필요 후보 Commons 야구 글러브 CC BY-SA 2.0) 【위험】게시 직전 KBO FA 계약 승인 공시 재확인 필요",
+   "due": "2026-11-27",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-SP-026_2027KBOFA명단등급보상.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:fb8fd0c0"
   }
  ]
 }
