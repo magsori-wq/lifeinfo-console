@@ -38090,8 +38090,10 @@
    "due": "2026-11-27",
    "cmd": "python -m studio.searchconsole inspect",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "이부장 05:18 — 4. 조사 지시서 adsgsc1127 로 이관(메일 원문·inspect 대조·애드센스 연결 판정)"
   },
   {
    "id": "maint-rlog-mark-suffix-1127",
@@ -38193,6 +38195,47 @@
    "by": "이부장",
    "done_at": "2026-11-27",
    "result": "04:47 사장님 반영 확인(allow 2줄) · 이과장 지시서 fu1127d222 발급·깨움 04:48 · 규칙 실효는 이과장 첫 실행으로 실측"
+  },
+  {
+   "id": "adsq-answer-check-1128",
+   "added": "2026-11-27",
+   "what": "애드센스 커뮤니티 질문 글 답변 확인 — https://support.google.com/adsense/thread/479224358",
+   "due": "2026-11-28",
+   "cmd": "curl -s -A Mozilla/5.0 https://support.google.com/adsense/thread/479224358?hl=ko | grep -c 답변",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-sp025-card-0910",
+   "added": "2026-11-27",
+   "what": "이대리 SP-025 업데이트 박스 결재 카드(백업·V0·미리보기) 09시 상정 확인",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard order --id aroma",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-sp-025-upd-1127",
+   "added": "2026-11-27",
+   "what": "【권고】AM-SP-025(2026 KBO 시상식 후보 글)에 결과 업데이트 박스 1개 추가 승인 — MVP 김도영·신인상 허인서(포수 16년 만)·수비상 10명·박빙 3부문 【근거】KBO 공식 수상현황 PlayerPrize.aspx·11/18 bdSe=12246·11/19 bdSe=12248 직접 확인(11-27 Aside), 독립 V0 PASS 93(1회차 REVISE 84 → 필수 5건 수정). 관련 검색어 반영: 2026 kbo mvp 시상식·허인서 신인왕·허인서 수비상·kbo 수비상·2024 김도영 mvp(유니폼·4관왕은 제외). 뉴스에 없는 것: 박빙 순위 계산·16년 만 포수 신인상·SSG 수비상 3명 vs MVP 후보 0명. 라이브 백업 rev/AM-SP-025_20261127_before.html(구성요소 14·이미지 1). 유형 홈판형(결과 후속) 【위험】득표 수는 공식 미공개라 안 씀 · 결과 화제가 식기 전 오늘 오전 반영 권고",
+   "due": "2026-11-27",
+   "cmd": "AM-SP-025 업데이트 박스 추가 승인",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
+  },
+  {
+   "id": "adsgsc1127-report-relay",
+   "added": "2026-11-27",
+   "what": "4. adsgsc1127 GSC 메일 조사 결과 나오면 즉시 사장님께 보고(사장님 05:43 지시)",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard order --id adsgsc1127",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }

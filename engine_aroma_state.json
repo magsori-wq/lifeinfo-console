@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 05:14:28",
+ "at": "2026-11-27 05:43:11",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -102,7 +102,7 @@
     }
    ],
    "title": "2026 KBO 시상식 — MVP 후보 14명, 수비상 164명 중 10명",
-   "last_file_at": "2026-11-26 01:08",
+   "last_file_at": "2026-11-27 05:43",
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-26"
@@ -235,7 +235,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-27 05:14:11",
+   "last_at": "2026-11-27 05:42:42",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -274,7 +274,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -282,7 +282,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-26 14:43:10",
    "src": "now_log(bid=aroma)",
-   "today_n": 3,
+   "today_n": 6,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -298,19 +298,19 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-26 14:41",
+   "last_at": "2026-11-27 05:43",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 80개",
+   "note": "복사된 미리보기 81개",
    "at_node": "boss"
   }
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 356,
-  "cur": "[이부장 접수 23:17] 루틴10 aroma 야간 글감 0/",
+  "last_min": 0,
+  "cur": "글감 추천(이대리 직접, 06:3x): ①SP-007 업데이트",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -809,16 +809,16 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 0,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 356,
-   "cur": "[이부장 접수 23:17] 루틴10 aroma 야간 글감 0/",
+   "last_min": 0,
+   "cur": "글감 추천(이대리 직접, 06:3x): ①SP-007 업데이트",
    "lvl": "ok"
   },
   {
@@ -830,10 +830,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 356,
-   "cur": "[이부장 접수 23:17] 루틴10 aroma 야간 글감 0/",
+   "last_min": 0,
+   "cur": "글감 추천(이대리 직접, 06:3x): ①SP-007 업데이트",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -860,12 +860,12 @@
   {
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
-   "ran": false,
-   "at": "",
-   "today": 0,
-   "lvl": "idle",
+   "ran": true,
+   "at": "05:43",
+   "today": 1,
+   "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 0편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 1편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -879,13 +879,22 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 0편",
-   "codes": []
+   "made": "오늘 새 글 게시 0편 · 파일이 움직인 글 1편",
+   "codes": [
+    "AM-SP-025"
+   ]
   }
  ],
  "approvals": [],
  "edits": [],
- "today_events": [],
+ "today_events": [
+  {
+   "code": "AM-SP-025",
+   "stage": "proc",
+   "at": "2026-11-27 05:43:11",
+   "src": "파일 수정 시각"
+  }
+ ],
  "incidents": [],
  "stage_of": {},
  "design_signals": [],
@@ -919,7 +928,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-27 05:14:11",
+     "chip": "2026-11-27 05:42:42",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -944,13 +953,13 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 1회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 장부에 미처리 aroma 건 없음 · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-26 14:43:10",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 3회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 6회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
@@ -961,8 +970,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-26 14:41",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 80개"
+     "chip": "2026-11-27 05:43",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 81개"
     }
    ]
   },
