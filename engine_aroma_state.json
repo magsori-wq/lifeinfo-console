@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 06:02:06",
+ "at": "2026-11-27 06:03:59",
  "errors": [],
  "rows": [
   {
@@ -7,17 +7,16 @@
    "approvals": [
     {
      "id": "aroma-am-dg-021-1127",
-     "state": "todo",
+     "state": "done",
      "kind": "1127",
      "at": "2026-11-27"
     }
    ],
    "title": "PS플러스12월게임정가합계",
    "last_file_at": "2026-11-27 06:00",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-dg-021-1127",
-   "no_preview": false
+   "stage": "approved",
+   "label": "승인됨(게시 전)",
+   "detail": "watch done + 커밋 7a8a88231"
   }
  ],
  "old_inflight": [],
@@ -298,7 +297,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 2분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 4분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -333,7 +332,7 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 0,
-  "last_min": 2,
+  "last_min": 4,
   "cur": "⏸ 대기 — aroma-am-sp-025-upd-1127 wa",
   "lvl": "ok"
  },
@@ -341,16 +340,16 @@
  "nodes": {
   "draft": [],
   "v0": [],
-  "boss": [
+  "boss": [],
+  "deploy": [],
+  "publish": [
    {
     "code": "AM-DG-021",
-    "title": "PS플러스12월게임정가합계",
-    "min": 2,
+    "title": "PS플러스12월게임정가합계 · 게시 승인 꼴 결재가 없거나 보류·취소·사장님 승인 아님 — 게시 지연 판정 해당 없음",
+    "min": null,
     "lvl": "ok"
    }
   ],
-  "deploy": [],
-  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -810,7 +809,11 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": []
+   "wait": [
+    {
+     "code": "AM-DG-021"
+    }
+   ]
   }
  },
  "topics": [],
@@ -824,7 +827,7 @@
   "today": "2026-11-27",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -840,7 +843,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 2,
   "lvl": "ok"
  },
  "units": [
@@ -848,7 +851,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 4,
    "cur": "⏸ 대기 — aroma-am-sp-025-upd-1127 wa",
    "lvl": "ok"
   },
@@ -863,7 +866,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 4,
    "cur": "⏸ 대기 — aroma-am-sp-025-upd-1127 wa",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -884,7 +887,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -919,21 +922,13 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-dg-021-1127",
-   "what": "【권고】새 글 AM-DG-021 게시 승인 — 제목 「PS 플러스 12월 게임 정가 합계 64,600원, 에센셜 1개월 요금의 5.4배」(45자",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
+ "approvals": [],
  "edits": [],
  "today_events": [
   {
-   "code": "AM-SP-007",
+   "code": "AM-SP-025",
    "stage": "proc",
-   "at": "2026-11-27 05:57:42",
+   "at": "2026-11-27 05:43:11",
    "src": "파일 수정 시각"
   },
   {
@@ -943,15 +938,15 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-005",
+   "code": "AM-SP-007",
    "stage": "proc",
    "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-025",
+   "code": "AM-PE-005",
    "stage": "proc",
-   "at": "2026-11-27 05:43:11",
+   "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
   },
   {
@@ -970,6 +965,12 @@
    "code": "AM-SP-007",
    "stage": "boss",
    "at": "2026-11-27 06:00:16",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-DG-021",
+   "stage": "boss",
+   "at": "2026-11-27 06:02:53",
    "src": "결재 커밋 시각"
   }
  ],
@@ -1031,7 +1032,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 2분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 4분째 (15분 넘으면 경보) · 오늘 4회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",
