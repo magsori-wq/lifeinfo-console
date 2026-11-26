@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26 11:36:54",
+ "at": "2026-11-26 11:38:10",
  "errors": [],
  "rows": [
   {
@@ -13,17 +13,34 @@
     }
    ],
    "title": "넷플릭스순위1116 1122흐름",
-   "last_file_at": "2026-11-26 11:32",
+   "last_file_at": "2026-11-26 11:37",
    "stage": "boss_wait",
    "label": "결재 대기",
    "detail": "aroma-am-bo-015-approve-1126",
    "no_preview": false
   },
   {
+   "code": "AM-SP-026",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-026-approve-1126",
+     "state": "todo",
+     "kind": "approve",
+     "at": "2026-11-26"
+    }
+   ],
+   "title": "2027KBOFA명단등급보상",
+   "last_file_at": "2026-11-26 11:37",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-sp-026-approve-1126",
+   "no_preview": false
+  },
+  {
    "code": "AM-DG-020",
    "approvals": [],
    "title": "스팀세일기간11월겨울세일",
-   "last_file_at": "2026-11-26 11:36",
+   "last_file_at": "2026-11-26 11:37",
    "stage": "v0",
    "label": "V0 단계",
    "detail": "_v0_AM-DG-020_1126_r2.md · PASS 91점"
@@ -32,19 +49,10 @@
    "code": "AM-PE-022",
    "approvals": [],
    "title": "혁오콘서트서울추가회차좌석",
-   "last_file_at": "2026-11-26 11:36",
+   "last_file_at": "2026-11-26 11:37",
    "stage": "v0",
    "label": "V0 단계",
    "detail": "_v0_AM-PE-022_1126_r2.md · PASS 90점"
-  },
-  {
-   "code": "AM-SP-026",
-   "approvals": [],
-   "title": "2027KBOFA명단등급보상",
-   "last_file_at": "2026-11-26 11:36",
-   "stage": "v0",
-   "label": "V0 단계",
-   "detail": "_v0_AM-SP-026_1126_r2.md · PASS 93점"
   }
  ],
  "old_inflight": [],
@@ -280,7 +288,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-26 11:36:51",
+   "last_at": "2026-11-26 11:37:50",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -343,10 +351,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-26 11:32",
+   "last_at": "2026-11-26 11:37",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 75개",
+   "note": "복사된 미리보기 78개",
    "at_node": "boss"
   }
  ],
@@ -354,7 +362,7 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 3,
+  "last_min": 4,
   "cur": "[이부장 접수 11:33] 이대리 ⏸(결재 기록 없음) 접수 ",
   "lvl": "ok"
  },
@@ -365,19 +373,13 @@
    {
     "code": "AM-DG-020",
     "title": "스팀세일기간11월겨울세일",
-    "min": 0,
+    "min": 1,
     "lvl": "ok"
    },
    {
     "code": "AM-PE-022",
     "title": "혁오콘서트서울추가회차좌석",
-    "min": 0,
-    "lvl": "ok"
-   },
-   {
-    "code": "AM-SP-026",
-    "title": "2027KBOFA명단등급보상",
-    "min": 0,
+    "min": 1,
     "lvl": "ok"
    }
   ],
@@ -385,7 +387,13 @@
    {
     "code": "AM-BO-015",
     "title": "넷플릭스순위1116 1122흐름",
-    "min": 4,
+    "min": 1,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-SP-026",
+    "title": "2027KBOFA명단등급보상",
+    "min": 1,
     "lvl": "ok"
    }
   ],
@@ -844,7 +852,7 @@
   "today": "2026-11-26",
   "done_today": 3,
   "published_today": 3,
-  "boss_wait": 1,
+  "boss_wait": 2,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -860,7 +868,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 3,
   "lvl": "ok"
  },
  "units": [
@@ -868,7 +876,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 3,
+   "last_min": 4,
    "cur": "[이부장 접수 11:33] 이대리 ⏸(결재 기록 없음) 접수 ",
    "lvl": "ok"
   },
@@ -883,7 +891,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 3,
+   "last_min": 4,
    "cur": "[이부장 접수 11:33] 이대리 ⏸(결재 기록 없음) 접수 ",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -904,7 +912,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "결재 대기 2건"
   }
  ],
  "suppliers": [
@@ -912,7 +920,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "11:36",
+   "at": "11:37",
    "today": 8,
    "lvl": "ok",
    "order": null,
@@ -950,18 +958,19 @@
    "what": "【권고】AM-BO-015 넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위 승인 【근거】자동완성 「넷플릭스 순위」「문무 넷플릭스",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-sp-026-approve-1126",
+   "what": "【권고】AM-SP-026 2027 KBO FA 명단 22명 — C등급 6명은 보상선수 없이 연봉 150% 승인 【근거】자동완성 「2027 kbo",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [],
  "today_events": [
   {
-   "code": "AM-PE-022",
-   "stage": "proc",
-   "at": "2026-11-26 11:29:46",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-021",
+   "code": "AM-SP-025",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
@@ -973,21 +982,9 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-025",
+   "code": "AM-SP-026",
    "stage": "proc",
-   "at": "2026-11-26 01:08:22",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-014",
-   "stage": "proc",
-   "at": "2026-11-26 09:53:58",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-020",
-   "stage": "proc",
-   "at": "2026-11-26 11:29:45",
+   "at": "2026-11-26 11:30:36",
    "src": "파일 수정 시각"
   },
   {
@@ -997,9 +994,27 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-026",
+   "code": "AM-PE-014",
    "stage": "proc",
-   "at": "2026-11-26 11:30:36",
+   "at": "2026-11-26 09:53:58",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-021",
+   "stage": "proc",
+   "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-020",
+   "stage": "proc",
+   "at": "2026-11-26 11:29:45",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-022",
+   "stage": "proc",
+   "at": "2026-11-26 11:29:46",
    "src": "파일 수정 시각"
   },
   {
@@ -1066,7 +1081,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-26 11:36:51",
+     "chip": "2026-11-26 11:37:50",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1108,8 +1123,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-26 11:32",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 75개"
+     "chip": "2026-11-26 11:37",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 78개"
     }
    ]
   },
