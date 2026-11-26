@@ -38049,7 +38049,20 @@
    "due": "2026-11-26",
    "cmd": "python -m studio.batchboard order --id adsense1126sup2",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
+   "note": 1,
+   "by": "이부장",
+   "done_at": "2026-11-26",
+   "result": "4. 19:04 결과 보고: 웹사이트 비승인·그 외·계정 문제·웹사이트 상태·크롤러 오류 전부 커뮤니티만(문의 경로 없음), 인증 확인 미확인"
+  },
+  {
+   "id": "maint-coop-unknown-selfclose-1127",
+   "added": "2026-11-26",
+   "what": "towertick.coop_scan 오탐: 상대 미상 🤝 줄(4. adsense1126sup2 17:03)이 작성자 자신의 결과 줄(19:04) 뒤에도 LOOP_REMIND_MIN 마다 재경보 — 상대 미상이면 같은 배치 작성자의 뒤 줄로 닫게. 다음 정비 지시서에 묶는다(이부장 직접 수정 금지)",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard order --id maint1124direct",
+   "owner": "claude",
+   "state": "todo",
    "note": 1,
    "by": "이부장"
   }
