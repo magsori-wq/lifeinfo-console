@@ -38295,6 +38295,29 @@
    "preview": "aromapv_AM-DG-021_1127.html",
    "done_at": "2026-11-27",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "verify-MV2-1127",
+   "added": "2026-11-27",
+   "what": "MV-2 VERIFY_DISPATCH 검수: DONE_RE 가 DRAFT_READY·POST_COMPLETE 틱 줄(완료보고)에 걸려 정상 알림에도 관제탑 첫 시험이 1회 거절됨 — 판정 좁히기 필요",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.towertick >/dev/null 2>&1; cd /c/lifeinfo && python -m unittest tools.mods 2>/dev/null; cat tools/mods/lifeinfo-tower/hooks/register.ts | grep -n DONE_RE",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "verify 에이전트가 잘못된 --cmd(towertick 실행)로 등록 — 닫음. 재검은 maint1127verify 보완 뒤 verify 에이전트로"
+  },
+  {
+   "id": "aroma-dg-021-affiliate-1127",
+   "added": "2026-11-27",
+   "what": "【권고】DG-021(PS 플러스 12월) 게시 방식 결정 — ① 승인본 그대로 게시(수익은 애드포스트 광고만) 권고. 브랜드커넥트에 PS 플러스 이용권·PSN 기프트카드·드래곤볼 제노버스2·Hello Neighbor 가 0건이라 글 핵심과 맞는 제휴 상품이 없음 【근거】aroma 프로필 브랜드커넥트 검색 14개 검색어(analysis/_bc_AM-DG-021_1127.md). 연결 가능한 것은 PS5 주변기기뿐: 듀얼센스 충전독(호후 18,900원·평점 4.88·리뷰 146), 쿨링 차징 스탠드(조이트론 34,800원·4.84·995) 【위험】② 주변기기 링크 1개를 본문 끝 「참고」 칸에 대가성 문구와 함께 넣으면 수수료 수익 가능성은 생기지만 글 주제(구독 가치 계산)와 연결이 약함 · 12개월 할인 11/30 종료라 11/29까지 게시 필요",
+   "due": "2026-11-29",
+   "cmd": "① 승인본 그대로 게시 / ② 듀얼센스 충전독 제휴 링크 1개 추가 후 게시 — 결재 메모에 ①·② 적어 주세요",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
