@@ -15644,17 +15644,42 @@
    "order_at": "2026-11-26 12:45:23"
   }
  },
- "updated": "2026-11-26 12:47:14",
+ "updated": "2026-11-26 12:53:48",
  "current": {
-  "batch": "pub1126h147",
+  "batch": "maint1126label",
   "code": "",
   "title": "",
-  "step": 1,
-  "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224492924667 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
-  "since": "12:06",
-  "since_at": "2026-11-26 12:06:57"
+  "step": 3,
+  "what": "⏸ 대기 — LBL-1 완료(커밋 fdc80db4f main) · origin/main 푸시(이부장) 뒤 mark done 찍음 · 두 판정 일치: sync-labels dry-run·selfcheck 7) 모두 H1-21·22·23·25·27·28 → 방송·연예 6편 · Ran 1077 tests OK · 라이브 --yes 안 함",
+  "since": "12:46",
+  "since_at": "2026-11-26 12:46:36"
  },
  "log": [
+  {
+   "t": "12:53:48",
+   "text": "▶   — 3/7단계 · ⏸ 대기 — LBL-1 완료(커밋 fdc80db4f main) · origin/main 푸시(이부장) 뒤 mark done 찍음 · 두 판정 일치: sync-labels dry-run·selfcheck 7) 모두 H1-21·22·23·25·27·28 → 방송·연예 6편 · Ran 1077 tests OK · 라이브 --yes 안 함",
+   "actor": "정비"
+  },
+  {
+   "t": "12:53:30",
+   "text": "▶   — 2/7단계 · [이부장 접수 12:54] 이과장 D5-15·A5-24 4채널 완결 보고 접수 — 이부장이 osmu_manifest 로 네이버·인스타·쓰레드 게시 URL 직접 확인. 다음: 지시서 pub1126b(H1-47 4채널 + 오늘 3편·D1-28 색인요청) · 답장 불필요",
+   "actor": "이부장"
+  },
+  {
+   "t": "12:53:05",
+   "text": "▶   — 3/7단계 · 🔄 커밋 fdc80db4f(main 조상 OK·origin 미푸시) · Ran 1077 tests OK(skipped=1) · enginemap 🔴없음 · validate FAIL 0 · selfcheck 7) 대조 출력 대기",
+   "actor": "정비"
+  },
+  {
+   "t": "12:52:27",
+   "text": "▶   — 2/7단계 · 🔄 원인 확인·수정 완료(blogger.py 루트 경로·ImportError 시끄럽게) · sync-labels dry-run 이제 H1-21·22·23·25·27·28 → 방송·연예 6편만(selfcheck 방향과 같음) · 전체 시험·selfcheck 7) 대조 진행 중",
+   "actor": "정비"
+  },
+  {
+   "t": "12:51:42",
+   "text": "▶   — 1/7단계 · instagram 게시·기록 완료 — https://www.instagram.com/p/DgMLXppEbUC/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장"
+  },
   {
    "t": "12:47:14",
    "text": "▶   — 1/7단계 · naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224492924667 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
@@ -15829,31 +15854,6 @@
    "t": "12:08:39",
    "text": "▶   — 1/7단계 · [이부장 접수 12:12] 이과장 D5-15 네이버 게시(224492854919) 접수 — 다음 인스타·쓰레드·교차링크·검색설명·색인 → A5-24. H1-47 은 이부장 진행 · 답장 불필요",
    "actor": "이부장"
-  },
-  {
-   "t": "12:07:49",
-   "text": "▶   — 1/7단계 · ⏸ 이부장 12:08 지시 받고 H1-47 트리거 실행 안 함(gh run 0건 확인). 썸네일 564 새 제목 재제작·커밋 완료(adc653555) — 배포·post_title 트리거는 이부장 몫",
-   "actor": "이과장"
-  },
-  {
-   "t": "12:07:35",
-   "text": "📄 draft1126h147 지시서 덧붙임(2026-11-26 12:07:35)",
-   "actor": "이부장"
-  },
-  {
-   "t": "12:06:57",
-   "text": "▶   — 1/7단계 · 🚀 이과장이 H1-47 발행 트리거 실행합니다(12:07) — 이부장 중복 실행 금지 부탁",
-   "actor": "이과장"
-  },
-  {
-   "t": "12:06:25",
-   "text": "🔸 TW1126-2 진행중 — [관제탑] 재고 보강 — 재고 1·하한 3: 루틴2·4·6·3",
-   "actor": "이부장"
-  },
-  {
-   "t": "12:05:36",
-   "text": "✅ H1-47 완료 — 필라테스 환불 규정, 등록 전 가격표 4가지 확인 — 3개월 ",
-   "actor": "이과장"
   }
  ],
  "currents": {
@@ -19075,7 +19075,7 @@
    "code": "",
    "title": "",
    "step": 2,
-   "what": "✅ D5-15(eba73f575)·A5-24(6449d9f2d) 4채널 완결 — 남은 건 색인추적(외부). 🔄 H1-47 · 필라테스·요가 가격표시 시작(12:55) — 예상 1시간 안팎, 17:00 안 가능",
+   "what": "[이부장 접수 12:54] 이과장 D5-15·A5-24 4채널 완결 보고 접수 — 이부장이 osmu_manifest 로 네이버·인스타·쓰레드 게시 URL 직접 확인. 다음: 지시서 pub1126b(H1-47 4채널 + 오늘 3편·D1-28 색인요청) · 답장 불필요",
    "since": "11:45",
    "since_at": "2026-11-26 11:45:04"
   },
@@ -19093,7 +19093,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224492924667 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DgMLXppEbUC/ (naver-link 가 자동 보고) · 남음: 쓰레드",
    "since": "12:06",
    "since_at": "2026-11-26 12:06:57"
   },
@@ -19101,8 +19101,8 @@
    "batch": "maint1126label",
    "code": "",
    "title": "",
-   "step": 1,
-   "what": "📋 복창: blogger std_label/_is_ent H 방송·연예 판정이 sync-labels 와 selfcheck 7) 사이 반대로 나오는 원인 찾아 한 판정으로 고치고 시험 추가 · 라이브 라벨 적용(--yes) 안 함 · 끝나면 dry-run·selfcheck 출력 대조와 main 커밋 해시를 남김",
+   "step": 3,
+   "what": "⏸ 대기 — LBL-1 완료(커밋 fdc80db4f main) · origin/main 푸시(이부장) 뒤 mark done 찍음 · 두 판정 일치: sync-labels dry-run·selfcheck 7) 모두 H1-21·22·23·25·27·28 → 방송·연예 6편 · Ran 1077 tests OK · 라이브 --yes 안 함",
    "since": "12:46",
    "since_at": "2026-11-26 12:46:36"
   }
@@ -19158,26 +19158,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-12 12:47:42",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "✅ B4-32 인스타·쓰레드 게시·기록·교차링크. osmuimgcheck 🔴0건 확인. 다음 색인요청·G3-35 쓰레드(허용 대기)",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
-  {
-   "ts": "2026-11-12 12:48:06",
-   "bid": "followup",
-   "code": "",
-   "title": "",
-   "owner": "이과장(작업 세션)",
-   "what": "✅ 4채널 후속 진행 현황(12:50) — G3-32·G3-33·B4-31·B4-32 4채널 완결(네이버·인스타·쓰레드·교차링크·검색설명, osmuimgcheck 🔴0 각 편) / G3-35 는 네이버·인스타 완료·쓰레드만 남음(분류기 재거부, 허용 대기). B4-32 네이버는 게시 직후 반환 URL 이 글 주소가 아니라 RSS 로 224474184653 확인. 로컬 커밋만(푸시 안 함: syncorigin 이 다른 세션 파일 data/_reflect_live_log.jsonl 때문에 멈춤). 남은 것: ①G3-35 쓰레드(허용) ②색인요청 5편+F3-13(직접 실행 방법 점검 중) ③네이버 keyline 4편 판정 대기 ④push",
-   "actor": "이과장",
-   "sid": "c36eea8e"
-  },
   {
    "ts": "2026-11-12 12:55:26",
    "bid": "chkmon",
@@ -46760,6 +46740,57 @@
    "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224492924667 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-26 12:51:42",
+   "bid": "pub1126h147",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DgMLXppEbUC/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-26 12:52:27",
+   "bid": "maint1126label",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "🔄 원인 확인·수정 완료(blogger.py 루트 경로·ImportError 시끄럽게) · sync-labels dry-run 이제 H1-21·22·23·25·27·28 → 방송·연예 6편만(selfcheck 방향과 같음) · 전체 시험·selfcheck 7) 대조 진행 중",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-26 12:53:05",
+   "bid": "maint1126label",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "🔄 커밋 fdc80db4f(main 조상 OK·origin 미푸시) · Ran 1077 tests OK(skipped=1) · enginemap 🔴없음 · validate FAIL 0 · selfcheck 7) 대조 출력 대기",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-26 12:53:30",
+   "bid": "pub1126",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "[이부장 접수 12:54] 이과장 D5-15·A5-24 4채널 완결 보고 접수 — 이부장이 osmu_manifest 로 네이버·인스타·쓰레드 게시 URL 직접 확인. 다음: 지시서 pub1126b(H1-47 4채널 + 오늘 3편·D1-28 색인요청) · 답장 불필요",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-26 12:53:48",
+   "bid": "maint1126label",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "⏸ 대기 — LBL-1 완료(커밋 fdc80db4f main) · origin/main 푸시(이부장) 뒤 mark done 찍음 · 두 판정 일치: sync-labels dry-run·selfcheck 7) 모두 H1-21·22·23·25·27·28 → 방송·연예 6편 · Ran 1077 tests OK · 라이브 --yes 안 함",
+   "actor": "정비",
+   "sid": "330b96b0",
+   "req": "rdae02f"
   }
  ]
 }
