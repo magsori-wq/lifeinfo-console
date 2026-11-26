@@ -1,7 +1,44 @@
 {
- "at": "2026-11-26 11:20:50",
+ "at": "2026-11-26 11:31:21",
  "errors": [],
- "rows": [],
+ "rows": [
+  {
+   "code": "AM-BO-015",
+   "approvals": [],
+   "title": "넷플릭스순위1116 1122흐름",
+   "last_file_at": "2026-11-26 11:31",
+   "stage": "v0",
+   "label": "V0 단계",
+   "detail": "_v0_AM-BO-015_1126.md · PASS 87점"
+  },
+  {
+   "code": "AM-DG-020",
+   "approvals": [],
+   "title": "스팀세일기간11월겨울세일",
+   "last_file_at": "2026-11-26 11:30",
+   "stage": "v0",
+   "label": "V0 단계",
+   "detail": "_v0_AM-DG-020_1126.md · 판정 미확인"
+  },
+  {
+   "code": "AM-PE-022",
+   "approvals": [],
+   "title": "혁오콘서트서울추가회차좌석",
+   "last_file_at": "2026-11-26 11:30",
+   "stage": "v0",
+   "label": "V0 단계",
+   "detail": "_v0_AM-PE-022_1126.md · REVISE 84점"
+  },
+  {
+   "code": "AM-SP-026",
+   "approvals": [],
+   "title": "2027KBOFA명단등급보상",
+   "last_file_at": "2026-11-26 11:30",
+   "stage": "v0",
+   "label": "V0 단계",
+   "detail": "_v0_AM-SP-026_1126.md · REVISE 83점"
+  }
+ ],
  "old_inflight": [],
  "discarded": [
   {
@@ -274,7 +311,7 @@
    "last_at": "",
    "src": "tick owed(aroma 건)",
    "today_n": null,
-   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 9분째 (15분 넘으면 경보) · 오늘 3회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
+   "note": "aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 20분째 (15분 넘으면 경보) · 오늘 3회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)",
    "at_node": ""
   },
   {
@@ -309,14 +346,39 @@
   "who": "이대리",
   "state": "⏸ 대기(남의 차례)",
   "jobs": 0,
-  "last_min": 9,
+  "last_min": 20,
   "cur": "⏸ 11:08 대기 — aroma-am-pe-014u-appr",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [],
-  "v0": [],
+  "v0": [
+   {
+    "code": "AM-BO-015",
+    "title": "넷플릭스순위1116 1122흐름",
+    "min": 0,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-DG-020",
+    "title": "스팀세일기간11월겨울세일",
+    "min": 1,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-PE-022",
+    "title": "혁오콘서트서울추가회차좌석",
+    "min": 1,
+    "lvl": "ok"
+   },
+   {
+    "code": "AM-SP-026",
+    "title": "2027KBOFA명단등급보상",
+    "min": 1,
+    "lvl": "ok"
+   }
+  ],
   "boss": [],
   "deploy": [],
   "publish": [],
@@ -789,15 +851,15 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 6,
-  "lvl": "amber"
+  "age_min": 17,
+  "lvl": "red"
  },
  "units": [
   {
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 9,
+   "last_min": 20,
    "cur": "⏸ 11:08 대기 — aroma-am-pe-014u-appr",
    "lvl": "ok"
   },
@@ -812,7 +874,7 @@
    "who": "이대리",
    "state": "⏸ 대기(남의 차례)",
    "jobs": 0,
-   "last_min": 9,
+   "last_min": 20,
    "cur": "⏸ 11:08 대기 — aroma-am-pe-014u-appr",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -841,11 +903,11 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "09:53",
-   "today": 4,
+   "at": "11:31",
+   "today": 8,
    "lvl": "ok",
    "order": null,
-   "note": "오늘 파일(drafts·previews)이 움직인 글 4편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
+   "note": "오늘 파일(drafts·previews)이 움직인 글 8편 — 글감 제안 기록은 따로 읽는 길이 없다(미확인)"
   },
   {
    "who": "루틴10(aroma 야간 글감)",
@@ -859,12 +921,16 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 3편 · 파일이 움직인 글 4편",
+   "made": "오늘 새 글 게시 3편 · 파일이 움직인 글 8편",
    "codes": [
+    "AM-BO-015",
     "AM-DG-019",
+    "AM-DG-020",
     "AM-PE-014",
     "AM-PE-021",
-    "AM-SP-025"
+    "AM-PE-022",
+    "AM-SP-025",
+    "AM-SP-026"
    ]
   }
  ],
@@ -872,13 +938,43 @@
  "edits": [],
  "today_events": [
   {
+   "code": "AM-DG-019",
+   "stage": "proc",
+   "at": "2026-11-26 01:08:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-020",
+   "stage": "proc",
+   "at": "2026-11-26 11:29:45",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-015",
+   "stage": "proc",
+   "at": "2026-11-26 11:30:34",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-022",
+   "stage": "proc",
+   "at": "2026-11-26 11:29:46",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-026",
+   "stage": "proc",
+   "at": "2026-11-26 11:30:34",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-SP-025",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-019",
+   "code": "AM-PE-021",
    "stage": "proc",
    "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
@@ -887,12 +983,6 @@
    "code": "AM-PE-014",
    "stage": "proc",
    "at": "2026-11-26 09:53:58",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-021",
-   "stage": "proc",
-   "at": "2026-11-26 01:08:22",
    "src": "파일 수정 시각"
   },
   {
@@ -984,7 +1074,7 @@
      "head": "TOWER_OWED",
      "lvl": "ok",
      "chip": "시각 기록 없음",
-     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 9분째 (15분 넘으면 경보) · 오늘 3회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
+     "sub": "이대리 🙋·⏸ → 이부장(15분 안에 처리 기록이 없으면 · 같은 건 30분 간격 재알림) · 출처 tick owed(aroma 건) · aroma 건은 울린 적 없음 — 미처리 1건 · 가장 오래된 20분째 (15분 넘으면 경보) · 오늘 3회는 전체 세션 합계(aroma 몫은 따로 저장되지 않음)"
     },
     {
      "head": "ASIDE_ALERT",

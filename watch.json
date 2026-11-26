@@ -37333,6 +37333,37 @@
    "by": "이부장",
    "done_at": "2026-11-26",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "namsan-skyforest-src-1126",
+   "added": "2026-11-26",
+   "what": "남산 하늘숲길: 서울시 보도자료 개방일 2025-10-25 확인. 첨부 hwp 미개봉·pdf 한글 추출 실패. 운영시간·요금·주차·겨울통제 공식 문구 미확보",
+   "due": "2026-11-30",
+   "cmd": "python -m studio.watch show namsan-skyforest-src-1126",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:7c5092aa"
+  },
+  {
+   "id": "hyundai-xmas2026-official",
+   "added": "2026-11-26",
+   "what": "더현대 크리스마스 빌리지 2026: 공식(hi.thehyundai.com) 1차 원문 미확보, 2차 보도만 일치(11/10~12/31·5층·10:30~19:30·무료·2차예약 11/27~12/9 더현대Hi). 11/26·12/18 미운영",
+   "due": "2026-11-27",
+   "cmd": "ls -la docs/source_더현대크리스마스2026_20261126.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "세션:7c5092aa"
+  },
+  {
+   "id": "aroma-am-bo-015-approve-1126",
+   "added": "2026-11-26",
+   "what": "【권고】AM-BO-015 넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위 승인 【근거】자동완성 「넷플릭스 순위」「문무 넷플릭스 순위」 + Tudum 공식 Top10 두 주 대조 이동표, 뉴스에 없는 것=이동표·7주차 3편 동시 하락 해석, V0 PASS 87, 영상 Netflix K-Content 푸른길 클립, crossdup 최고 0.33 🟢, 유형 검색형, 썸네일 자체 그래픽(사진 없음 — 허락 필요 후보 Commons TV 리모컨 PD) 【위험】다음 주 Tudum 갱신 전까지만 시의성",
+   "due": "2026-11-27",
+   "cmd": "start \"\" \"C:\\naver-blog\\aroma-mag\\drafts\\AM-BO-015_넷플릭스순위1116_1122흐름.html\"",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "세션:fb8fd0c0"
   }
  ]
 }
