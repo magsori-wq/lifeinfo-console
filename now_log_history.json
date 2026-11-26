@@ -15317,7 +15317,57 @@
    "what": "✅ C1-20·G3-37 4채널 후속 완료(각 mark 보고: 네이버 224474411521/224474434294 · 인스타 DfobzSCEWdW/DfodjaqEY6q · 쓰레드 Dfob7llgVts/DfodtL2gbYs · 검색설명 라이브 일치 · 교차링크 · osmuimgcheck 🔴0 · GSC 색인 생성 요청됨). C2-26: 발행 run 43168763258 success(라이브 https://lifeinfo8975.blogspot.com/2026/11/1-112.html, 원격 DB 에서 확인). ⛔ C2-26 후속 시작 전 막힘: syncorigin 이 다시 「겹치는 로컬 변경이 원본 상태파일이 아님: data/_reflect_live_log.jsonl(다른 세션 미커밋)」으로 멈춤(뒤 1·앞 11) → 로컬 DB 에 C2-26 레코드 없음 → 검색설명 postId·naver-link·교차링크 불가. stage 는 0(남긴 것 없음). 🙋 이부장: reflect 로그 보존 뒤 syncorigin 으로 맞춰 주세요(주인 세션이 자주 건드려 반복됨 — 주인 세션이 커밋하도록 정리 검토). 맞춰지면 C2-26 4채널 즉시 시작. ⏸ 대기",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 16:12:56",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] 원격 동기 해소(16:14) — 로컬 DB 에 C2-26 들어옴. C2-26 4채널 후속 바로 진행. 끝나면 시범 10쌍(pilot1112).",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 16:14:44",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "연료 12차 착수(이부장 지시 16:14) — 11차 약함(국내선 유류할증료·KT 일시정지요금) 살릴 것 먼저, F·E 우선. 재고 0편",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-12 16:15:07",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] C2-26 검색설명 초안 확인 — 직접 입력·scan·set → 네이버→인스타→쓰레드. 네이버는 rich 200·글자수 먼저.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 16:15:45",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "연료 12차 에이전트 4개 병렬 투입 — F·E·C 신규 스캔(deepread) + 11차 약함 구제 판정(source). 결과 오면 source·상품 판정 붙여 topicprop add",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-12 16:15:57",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[관제탑 → 정비] 👤 사장님 16:15 원문: 「땜질조치는 용서 못해! 근본을 찾아 원천적으로 불가역적으로 조치하고 검증하길!」 → MT-46 을 「근본 원인 제거」로 재정의(최우선). 땜질(이부장이 7번 손으로 합침) 금지. ① 근본 원인 실측: data/_reflect_live_log.jsonl(쓰는 곳 studio/reflectcheck.py)·webapp/seo_desc.json(쓰는 곳 seodesc·pipeline·reindex 등)을 **PC 와 러너(publish.yml) 둘 다 쓰는지** 커밋 이력으로 확정 — 두 작성자가 같은 파일을 쓰는 구조 자체가 원인. ② 원천 조치(택1 이상, 이유와 함께): (a) 파일마다 작성자 하나로 — 러너가 쓸 필요 없는 PC 전용 로그는 git 밖(.gitignore·derivedguard 등록)으로, 러너 전용은 PC 가 안 씀 (b) 둘 다 써야 하면 .gitattributes merge 드라이버(jsonl=union, seo_desc=posts 키 단위 3방향 합침 스크립트)로 git 자체가 충돌을 안 내게 — 러너 체크아웃에도 적용 (c) syncorigin 이 이 두 파일에서 멈추지 않게. ③ 불가역 = 다시 같은 충돌이 생기면 코드가 막거나(검사) 자동 해소 — 회귀 시험(오늘 충돌 2종 재현: PC 쪽 C1-20 seo 기록 + 러너 쪽 C2-26 발행) + falsepos/validate 규칙 1줄 + 설계도 마디 기록. ④ 검증 = 시험 통과 후 실제 발행 1회에서 syncorigin 무중단 실측. 끝나면 페이블 검증에 넘김.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
   }
  ],
- "updated": "2026-11-26 16:08:57"
+ "updated": "2026-11-26 16:16:55"
 }
