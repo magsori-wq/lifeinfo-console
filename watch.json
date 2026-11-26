@@ -37932,7 +37932,7 @@
    "kind": "approve",
    "by": "이부장",
    "done_at": "2026-11-26",
-   "result": "운영콘솔 전자결재함에서 사장님 승인"
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 3차(diff 4e7dafef4) 통과: [가]164줄 모범운전자 감경=별표28 라.(2) 원문(법146조 표시장·봉사·정지집행 1/2·사고야기 벌점 포함시 제외)과 일치, 2절 음주감경과 별개로 명시 / [나]11"
   },
   {
    "id": "brandconnect-d2-22",
@@ -37950,6 +37950,27 @@
    "what": "D2-22 V0 반려 ①~⑦ 원고 반영(커밋 967dd4f85). 디스크 원고는 V0가 본 판보다 새 판(acb2ef464)이라 남은 것만 고침. heading OK·dupcheck 🟢·bodydup 0.039·layout []. 남은 것: V0 재검사(이부장)",
    "due": "2026-11-27",
    "cmd": "python -m studio.v0check gate --code D2-22",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "d316-pick-notify-1126",
+   "added": "2026-11-26",
+   "what": "D3-16 단열·창호·보일러 지원 선별 결과·지시서를 3.에 18:35까지 통보",
+   "due": "2026-11-26",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "fix-d2-22-v0r2-1126",
+   "added": "2026-11-26",
+   "what": "D2-22 원고 V0 2차 반려 [가]164 모범운전자 문단 교체(라.(2) 원문 대조) [나]110 처분 종류 가정 안 함·117 B씨 초범 예시로 50일 이동·114 (2026년 처분 기준) 추가 · heading OK·bodydup 0.036·validate FAIL0 · 커밋 4e7dafef4 · 남은 것 V0 재검사",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.heading --file 운전면허벌점121점취소감경기준_글_HTML.txt && git log -1 --format=%h -- 운전면허벌점121점취소감경기준_글_HTML.txt",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
