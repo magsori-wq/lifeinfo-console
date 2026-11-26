@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 05:57:56",
+ "at": "2026-11-27 05:58:14",
  "errors": [],
  "rows": [
   {
@@ -134,6 +134,12 @@
    "ids": [
     "aroma-am-sp-025-upd-1127"
    ]
+  },
+  {
+   "code": "AM-PE-005",
+   "ids": [
+    "aroma-am-pe-005-upd-1127"
+   ]
   }
  ],
  "cats": {
@@ -261,7 +267,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-27 05:57:43",
+   "last_at": "2026-11-27 05:58:13",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -324,10 +330,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-27 05:43",
+   "last_at": "2026-11-27 05:58",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 81개",
+   "note": "복사된 미리보기 83개",
    "at_node": "boss"
   }
  ],
@@ -345,7 +351,7 @@
    {
     "code": "AM-DG-021",
     "title": "PS플러스12월게임정가합계",
-    "min": 3,
+    "min": 4,
     "lvl": "ok"
    }
   ],
@@ -826,7 +832,7 @@
   "today": "2026-11-27",
   "done_today": 0,
   "published_today": 0,
-  "boss_wait": 1,
+  "boss_wait": 2,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -842,7 +848,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 0,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
@@ -886,7 +892,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "결재 대기 2건"
   }
  ],
  "suppliers": [
@@ -894,7 +900,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "05:57",
+   "at": "05:58",
    "today": 4,
    "lvl": "ok",
    "order": null,
@@ -928,6 +934,13 @@
    "what": "【권고】AM-SP-025(2026 KBO 시상식 후보 글)에 결과 업데이트 박스 1개 추가 승인 — MVP 김도영·신인상 허인서(포수 16년 만",
    "by": "이대리",
    "waited": ""
+  },
+  {
+   "kind": "aroma",
+   "id": "aroma-am-pe-005-upd-1127",
+   "what": "【권고】AM-PE-005(NCT WISH 고척돔 글)에 11/27 업데이트 박스 1개 추가 승인 — 1/14(목) 추가 회차·12/2~4 예매 ",
+   "by": "이대리",
+   "waited": ""
   }
  ],
  "edits": [
@@ -936,19 +949,25 @@
    "title": "2026 KBO 시상식 — MVP 후보 14명, 수비상 164명 중 10명",
    "stage": "boss",
    "packer": ""
+  },
+  {
+   "code": "AM-PE-005",
+   "title": "NCT WISH 고척돔 1월 15·16일 — VIP 22만 원·일반 16만 5천 원, 2매 총액과 취소 시점별 수수료",
+   "stage": "boss",
+   "packer": ""
   }
  ],
  "today_events": [
   {
-   "code": "AM-SP-007",
-   "stage": "proc",
-   "at": "2026-11-27 05:57:42",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-DG-021",
    "stage": "proc",
    "at": "2026-11-27 05:54:48",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-005",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
   },
   {
@@ -958,7 +977,7 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-005",
+   "code": "AM-SP-007",
    "stage": "proc",
    "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
@@ -997,7 +1016,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-27 05:57:43",
+     "chip": "2026-11-27 05:58:13",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1039,8 +1058,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-27 05:43",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 81개"
+     "chip": "2026-11-27 05:58",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 83개"
     }
    ]
   },
