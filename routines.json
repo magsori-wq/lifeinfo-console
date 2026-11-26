@@ -1,17 +1,22 @@
 {
- "generated": "2026-11-26 22:34",
+ "generated": "2026-11-26 23:06",
  "routines": [
   {
    "num": 1,
    "name": "1-Daily email briefing",
    "id": "daily-email-briefing",
    "on": true,
-   "last": "11/26 20:04",
-   "next": "11/26 23:00",
+   "last": "11/26 23:04",
+   "next": "11/27 08:00",
    "model": "haiku-5-5",
    "report_day": "1126",
    "report": "11-26 메일 브리핑: 🔴 애드센스 반려 통지 1건(adsense-noreply, 11-24 20:39 · magsori 수신 · 사이트 NEEDS_ATTENTION · API 상태 일치). 재요청은 사장님 판단(11-15 Aside 검토요청 예정 유지). 🟡 lifeinfo-source 글 발행 run 실패(ac498bf, 11-26 02:14): 사유=사전점검 '원격 앞섬' 가드(체크아웃 ac498bf ≠ origin 044c4f6a, run 도중 PC 푸시) — 코드 결함 아님, 재실행 여부 미확인. 🟢 Pages 배포 실패 2건(console b382fe9·7605b1d)=연속 push 무해. 🟢 8975 수신 1건=Microsoft 2단계 인증 안내(조치 불요). aroma8975 0건(평소). GSC 7일 통지 0건. gmailread scan 은 개인정보 훅이 차단해 미실행 — 커넥터 조회로 대체.",
    "runs": [
+    {
+     "at": "11/26 23:06",
+     "link": "claude://claude.ai/epitaxy/local_06cf68f4-5335-4990-9f68-c77760e1790e",
+     "archived": false
+    },
     {
      "at": "11/26 20:08",
      "link": "claude://claude.ai/epitaxy/local_c535f5e0-cf41-4266-aaee-14dfffa26133",
@@ -30,11 +35,6 @@
     {
      "at": "11/26 11:07",
      "link": "claude://claude.ai/epitaxy/local_30f58be2-169b-496e-94ed-1c9f16389cf6",
-     "archived": true
-    },
-    {
-     "at": "11/26 08:07",
-     "link": "claude://claude.ai/epitaxy/local_40eec2ab-2235-4f3b-be16-b0bbc433ef95",
      "archived": true
     }
    ]
@@ -162,10 +162,10 @@
    "next": "11/27 22:30",
    "model": "haiku-5-5",
    "report_day": "1126",
-   "report": "11-26 야간검증: 오늘 발행 4편(D1-29·A2-35·D5-15·A5-24) 1차출처 대조 오류 0 · 미확인 D5-15 1건(molit 307)·A2-35 3건(글이 자체 명시) · D1-29 정보기준 날짜 표기(11-25 vs 게시 11-24) 이부장 판단 · law.go.kr DRF OC=test 막힘→lsInfoR.do 우회 · 크롤 변화 11건(상태 이동만, 신규 색인 0) · 근거 docs/작업기록/야간검증_20261126_*.md",
+   "report": "11-26 야간검증: 오늘 발행 4편(D1-29·A2-35·D5-15·A5-24) 1차출처 대조 오류 0 · 미확인 D5-15 1건(molit 307)·A2-35 3건(글이 자체 명시) · D1-29 정보기준 날짜 표기(11-25 vs 게시 11-24) 이부장 판단 · law.go.kr DRF OC=test 막힘→lsInfoR.do 우회 · 크롤 변화 11건(상태 이동만, 신규 색인 0) · 근거 docs/작업기록/야간검증_20261126_*.md\n▸ 22:42 11-26 야간검증: 신규 2편(F2-22·H1-47) 대조 — F2-22 편명·창구·이관일 일치, 2027.6.30 면제 기한 미확인(미결) · H1-47 보도자료 2026.11.24 미확인(미결) · 라이브 수정 0 · 기존 글 미실시",
    "runs": [
     {
-     "at": "11/26 22:33",
+     "at": "11/26 22:46",
      "link": "claude://claude.ai/epitaxy/local_e798c749-9411-4a1b-b12d-74f8d6dcdc8e",
      "archived": false
     },
@@ -349,7 +349,7 @@
    "id": "aroma-nightly-topics",
    "on": true,
    "last": "11/25 23:08",
-   "next": "11/26 23:00",
+   "next": "11/27 23:00",
    "model": "haiku-5-5",
    "report_day": "",
    "report": "",

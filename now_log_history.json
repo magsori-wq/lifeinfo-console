@@ -15781,7 +15781,131 @@
    "what": "✅ MT-46 2부(20:35 정비): seo_desc.json 근본 수정 eccd8b105 — syncorigin 에 글 단위 3방향 병합(같은 글 같은 칸을 양쪽이 다르게 고친 진짜 충돌만 멈춤 · 오늘 실데이터 재생 충돌 0) · 시험 10건+전체 OK · enginemap 🔴0. 확인: 메인에 20:17 부터 멈춰 있던 동기 merge(UU 4파일)를 같은 규칙으로 마무리(887424bcb) → syncorigin 재실행 「맞춤 끝·뒤0·푸시 성공」 · validate FAIL 0 · reflect 로그 54줄 되살림(미추적·ignore). 남은 것: 실제 발행 1회 무정지 확인(watch mt46-publish-nostall-check). 재발방지: 러너·PC 공동 작성 파일은 MERGERS 로 키 단위 병합(reindex·seo_desc), 런타임 로그는 ignore",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 21:47:26",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "21:47 자기점검 — aroma 새 승인·idaerireq 신규 0, 새 글 후보 없음(시도: watch.json·idaerireq·RSS; 루틴10 23:08 결과 대기). 23:47 루틴10 결과 확인 예약 추가. CA 조회 미조회",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 22:17:35",
+   "bid": "pub1112e415",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "▶ 동기 해소 확인(앞0·뒤0, E4-15·F4-33·C2-27 로컬 DB 반영) — 후속 4채널 착수: E4-15 → F4-33 → C2-27, 색인요청 묶음 포함. 18:29 이부장 지시(색인요청 기록) 이제 읽음 — 과거 10편은 gsc_requested 에 URL 로 기록돼 있음(로컬 커밋이 푸시 전이라 안 보였던 것).",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 22:18:20",
+   "bid": "pilot1112",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "[이부장 → 이과장] 👤 사장님 22:18 「16시 보고건 아직인가」 — 시범 10쌍 남은 도너 9편(B4-03·C2-01·C3-01·C3-03·C4-03·D2-04·D2-06·E2-05·F1-05)을 4채널 후속보다 먼저 끝내라. 한 편씩 dry-run→update-post→getByPath→§5-3 반영시각 기록, 끝나면 batchboard mark.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 22:20:56",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] MT-50(MT-46 다음 최우선): 세션 정체 감지 — 지시서를 읽었거나 진행 중인데 N분(30) 보고 없음 + 그 세션이 idle 이면 towertick 이 SESSION_STALL 로 이부장을 깨우고 자동 깨움 1회. 오늘 이과장 18:44~22:17 정체가 경보 0건이었다(ORDER_UNREAD 는 안 읽음만 본다). 회귀시험 + 설계도 사건 대입 기록.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 22:21:34",
+   "bid": "pilot1112",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "⛔ 시범 미반영 도너 9편(B4-03·C2-01·C3-01·C3-03·C4-03·D2-04·D2-06·E2-05·F1-05) 22:2x 재시도 — 사전확인(라이브=준비 때 본문) ✅ → update-post dry-run ✅ → 실행 단계에서 blogger.py 결재 게이트 「사장님 승인이 결재함에 없다」(watch.json 에 이 코드들을 언급한 approve done 항목 없음)로 차단(B4-03·C2-01·C3-01 3편 실제 확인, 나머지 6편도 같은 사유로 17:5x 차단). --force-approve 안 씀. 현재 watch: blogspot-pilot10-approve-1112(approve done, what 에 B2-14 만)·pilot1112-allow(done=분류기 허용)·pilot1112-complete(todo). 사장님 22:18 「16시 보고건 아직인가」에 답할 사실: 18/20줄 아닌 도너 9편+B2-14 반영 완료(17:46~17:54), 9편은 결재 게이트 때문에 대기. 🙋 이부장: 게이트 통과 조건 = approve done 항목 what/id 에 그 9개 코드 포함 → ①blogspot-pilot10-approve-1112 what 에 9개 코드 추가(사장님 확인 후) 또는 ②새 approve 항목(「시범 10쌍 도너 9편 반영」, 코드 9개 명시) 등록·사장님 승인. 승인되면 준비 파일 data/_pilot/<코드>.new.html 로 즉시 9편 연속 반영(한 편씩 사전확인→dry-run→실행→getByPath 대조→§5-3-a 시각 기록, 약 8분). 그동안 4채널 후속(E4-15→F4-33→C2-27)을 이어감. ⏸ 대기",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 22:23:43",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡9 — 즉시: 사장님 결재 대기 1건 · 묶음: 사건×5 반영 감사×1 기타×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "rcf733b"
+  },
+  {
+   "ts": "2026-11-12 22:28:44",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡10 — 즉시: 반영 어긋남 · 화면 생성물 신선도; 사장님 🙋승인 시범 10쌍 남은 옛 글 9편 「함께 보면 좋은 글」 링크 1줄 추가 승 · 묶음: 사건×6 반영 감사×1 기타×3 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r7cbe0c"
+  },
+  {
+   "ts": "2026-11-12 22:30:43",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack rcf733b — 시범 9편 결재 대기 · 4채널 3편 이과장 순차 · 나머지 진행중 유지",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "rcf733b"
+  },
+  {
+   "ts": "2026-11-12 22:30:59",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r7cbe0c — 시범 9편 결재 대기 · 4채널 3편 이과장 순차 · 나머지 진행중 유지",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r7cbe0c"
+  },
+  {
+   "ts": "2026-11-12 22:31:49",
+   "bid": "pub1112e415",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224474864838 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 22:32:29",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ MT-50(22:58 정비) beb7eb06a: 세션 정체 감지 — studio/sessionstall.stalled 한 곳(읽은 뒤 보고 없음 또는 진행 중 + 30분 + 그 세션 마지막 턴 끝 30분 이상 · 상시·동결·24h 초과 제외 · 일하는 중이면 안 냄) → towertick SESSION_STALL 이부장 깨움(건당 1회) + data/.session_stall.json → leewake(이과장)·rolewake(정비) 자동 깨움 1회. 확인: 오늘 실데이터 재생 19:20 부터 pub1112f433 판정·상시 followup 제외 · 시험 6건+전체 OK · enginemap 🔴0 · 메인 동기 무정지(MT-46 효과도 확인) · 지금 판정 「정체 없음」(이과장 작동 중). 남은 것: 실제 정체 1회 때 경보·깨움 실측(watch mt50-session-stall-live). 재발방지: 새 정체 꼴은 sessionstall.stalled 한 곳에 조건 추가",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-12 22:33:01",
+   "bid": "pilot1112",
+   "code": "",
+   "title": "",
+   "owner": "이과장",
+   "what": "[이부장 → 이과장] 사장님 22:25 폰 결재 pilot1112-donors9-approve 승인(watch done) — 남은 9편 update-post 진행 가능. 한 편씩 dry-run→실행→getByPath→반영시각 기록, 끝나면 mark.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
   }
  ],
- "updated": "2026-11-26 21:07:39"
+ "updated": "2026-11-26 22:42:03"
 }
