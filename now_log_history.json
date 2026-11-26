@@ -15039,7 +15039,101 @@
    "what": "C2-26 초안 착수 — 지시서·출처 읽는 중",
    "actor": "이과장",
    "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 15:14:44",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵0 🟡1 — 즉시: V0 지연 C2-26 편의점 상비약 1회 1개·12세 미만 불가 — 군부대· · 묶음: 사건×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "ra4c0b9"
+  },
+  {
+   "ts": "2026-11-12 15:15:14",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] 사장님 15:05 C1-20·15:06 G3-37 승인 → C1-20 발행 run 43166785240 진행(15:14), 끝나면 G3-37. 두 run 끝날 때까지 push 금지. 후속 4채널은 발행 순서대로.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 15:16:10",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack ra4c0b9 — C2-26 V0 착수",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "ra4c0b9"
+  },
+  {
+   "ts": "2026-11-12 15:21:29",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴2 🔵0 🟡2 — 즉시: 결재 뒤 미발행 C1-20 건강보험 자동이체 365일 11월 14일부터, 지사 점; 결재 뒤 미발행 G3-37 모슬포 방어축제 2026 가격·시간 — 입장 무료, 체 · 묶음: 사건×1 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r2a2d29"
+  },
+  {
+   "ts": "2026-11-12 15:22:34",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r2a2d29 — C1-20 발행됨·G3-37 발행 중",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r2a2d29"
+  },
+  {
+   "ts": "2026-11-12 15:23:29",
+   "bid": "pub1112c120",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⚠️ C1-20 run 43166785240·G3-37 run 43167271806 둘 다 success(라이브 C1-20 https://lifeinfo8975.blogspot.com/2026/11/365-11-14-16.html 200·og:image 503 확인). 두 run 종료 후 syncorigin 실행했으나 다시 「겹치는 로컬 변경이 원본 상태파일이 아님: data/_reflect_live_log.jsonl(다른 세션 미커밋)」으로 멈춤(뒤 2·앞 5). 내 파일 아님·되돌리지 않음. 막힌 것: ①로컬 DB 에 C1-20·G3-37 레코드 없음 → 검색설명 postId·naver-link·교차링크 진행 불가 ②C2-26 승인 도장·초안이 원격에 없음 → pubready ⛔(push 먼저). 🙋 이부장: 13:54 때처럼 그 파일을 보존한 뒤 syncorigin 으로 맞춰 주세요. 맞춰지면 C1-20→G3-37 후속 4채널 즉시 시작, C2-26 은 pubready 통과 뒤 이부장 발행. ⏸ 대기",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-12 15:24:01",
+   "bid": "followup",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "[관제탑 → 이과장] 원격 동기가 이과장 stage 로 또 멈춤: data/_naver_502_lite.jpg · insta/_src/pedernal_crop_left/low/right.jpg — 지금 경로 지정 커밋([이과장]) 후 syncorigin. 앞으로 git add 한 파일은 같은 명령에서 바로 경로 커밋(stage 남기지 말 것). C2-26 발행이 이 동기를 기다림.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-12 15:24:24",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "15:24 자기점검 — 새 승인·idaerireq 신규 0. 오늘 4개 카테고리 모두 게시 완료(SP-015·DG-011·PE-010/011·BO-008). 신규 후보는 루틴10 23:08 후보기록·일정달력 대기(예약 CronList 확인, 다음 17:24). CA 글별 조회는 repl 필요해 미조회",
+   "actor": "이대리",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-12 15:26:12",
+   "bid": "pub1112c120",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "⚠️ 이과장 stage 파일 4개(data/_naver_502_lite.jpg·insta/_src/pedernal_crop_left·low·right.jpg) 경로 지정 커밋 완료(stage 0) → syncorigin 재실행: 이번엔 「원본 파일 충돌 — merge 취소하고 멈춘다: data/_reflect_live_log.jsonl · webapp/seo_desc.json」(뒤 2·앞 9). seo_desc.json 은 내 G3-32~36 검색설명 기록(seodesc set) 커밋 vs 원격 G3-37 발행 run(0cb42a30c) 갱신의 충돌로 추정 — 이전 13:58 때 이부장이 「seo_desc.json 키 단위 합침」으로 푼 것과 같은 꼴. 내가 임의로 해소하지 않음(원본 상태파일). 🙋 이부장: 같은 방식(키 단위 합침 + reflect 로그 보존)으로 syncorigin 해결 부탁. 풀리면 C1-20→G3-37 후속 4채널 즉시 시작. ⏸ 대기",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ],
- "updated": "2026-11-26 15:13:34"
+ "updated": "2026-11-26 15:26:58"
 }
