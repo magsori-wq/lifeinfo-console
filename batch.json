@@ -15718,17 +15718,22 @@
    "order_at": "2026-11-26 15:25:45"
   }
  },
- "updated": "2026-11-26 15:26:58",
+ "updated": "2026-11-26 15:28:00",
  "current": {
-  "batch": "maint1126token",
+  "batch": "chkmon",
   "code": "",
   "title": "",
   "step": 1,
-  "what": "📋 복창: TOK-1 towertick 같은 배치 ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED 5분 창 묶기(설계도 먼저·제외 목록 상수) → TOK-2 batchboard receipt 서브명령 → TOK-3 run_checks unittest -q·stderr 로그 · 하지 않을 것: 사장님·결재·사이렌 계열 지연, 하네스 빈도·항목 변경, push · 끝나면 TOK 별 mark 실측 한 줄",
-  "since": "15:26",
-  "since_at": "2026-11-26 15:26:58"
+  "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 ☑️조치 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "15:28:00",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 ☑️조치 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
   {
    "t": "15:26:58",
    "text": "▶   — 1/7단계 · 📋 복창: TOK-1 towertick 같은 배치 ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED 5분 창 묶기(설계도 먼저·제외 목록 상수) → TOK-2 batchboard receipt 서브명령 → TOK-3 run_checks unittest -q·stderr 로그 · 하지 않을 것: 사장님·결재·사이렌 계열 지연, 하네스 빈도·항목 변경, push · 끝나면 TOK 별 mark 실측 한 줄",
@@ -15923,11 +15928,6 @@
    "t": "14:42:24",
    "text": "▶   — 1/7단계 · [이부장 접수 14:43] aroma-kwqa-1126(검색형 3편 Q&A 상자, V0 92·92·91) 카드 접수 — 사장님 결재 대기로 안내. 참고: 보고 머리 「15:0x」인데 실제 14:41 — 세 번째, 보고 시각 표기 방식 점검 바람 · 답장 불필요",
    "actor": "이부장"
-  },
-  {
-   "t": "14:42:13",
-   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 🙋승인 【권고】기존 글 73편에 관련 검색어 태그 231개 추가(본문 무변경, · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
-   "actor": "사람"
   }
  ],
  "currents": {
@@ -16395,7 +16395,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵2 🟡3 — 즉시: 사장님 🙋승인 【권고】기존 글 73편에 관련 검색어 태그 231개 추가(본문 무변경,; 사장님 🙋승인 【권고】검색형 글 3편(BO-008 넷플릭스 추가회원·BO-009 웨이브 · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 ☑️조치 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -46702,6 +46702,17 @@
    "what": "📋 복창: TOK-1 towertick 같은 배치 ASIDE_ALERT·REPORT_UNACKED·TOWER_OWED 5분 창 묶기(설계도 먼저·제외 목록 상수) → TOK-2 batchboard receipt 서브명령 → TOK-3 run_checks unittest -q·stderr 로그 · 하지 않을 것: 사장님·결재·사이렌 계열 지연, 하네스 빈도·항목 변경, push · 끝나면 TOK 별 mark 실측 한 줄",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-26 15:28:00",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡3 — 즉시: 사장님 ☑️조치 【권고】 자동 압축을 더 일찍(약 30만 토큰) — 사용자 설정 ~/.c · 묶음: 사건×2 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r4490b6"
   }
  ]
 }
