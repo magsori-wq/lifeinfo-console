@@ -37671,6 +37671,60 @@
    "state": "wait",
    "note": 1,
    "by": "이부장"
+  },
+  {
+   "id": "token-autocompact-verify-1127",
+   "added": "2026-11-26",
+   "what": "자동압축 30만 설정이 Desktop Code 세션에 실제 먹는지 확인 — 새 세션·루틴 회차 전사에서 캐시읽기 최대가 약 30만 근처에서 꺾이는지",
+   "due": "2026-11-27",
+   "cmd": "measure 에이전트: 11-27 루틴·이과장 전사 cache_read_input_tokens 최대값·압축 이벤트(compact) 확인",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "stop-harness-skips-167-1126",
+   "added": "2026-11-26",
+   "what": "정비 TOK-3 중 발견: Stop 하네스가 tests/test_studio_pure.py 를 스크립트로 돌려 중간의 unittest.main 뒤 167개 시험이 매 턴 안 돈다(654 vs 821). main 을 끝으로 옮기면 턴마다 +33초 — 매 턴 대신 커밋·푸시 훅 등 다른 자리에서 전수 실행하는 안을 이부장이 설계도와 함께 판단",
+   "due": "2026-11-27",
+   "cmd": "python tests/test_studio_pure.py 2>&1 | tail -3; python -m unittest tests.test_studio_pure 2>&1 | tail -3",
+   "owner": "claude",
+   "state": "done",
+   "note": 1,
+   "by": "이부장",
+   "done_at": "2026-11-26",
+   "result": "TOK-4 53d6d5b1b 푸시 — 매 턴 654 유지, selfcheck 29) 전체 826, 뒤쪽 172개 실패 0"
+  },
+  {
+   "id": "fuel-1800-check-1126",
+   "added": "2026-11-26",
+   "what": "3. 글감 18:00 중간 점검 — 최소 1편 topicprop add 됐나(16:00 미달)",
+   "due": "2026-11-26",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-cand-cap-gap-1126",
+   "added": "2026-11-26",
+   "what": "재고 하한 미만인데 루틴2·4·6 이 추천만 3편·후보 0편 — 상한 해제(1+1 풀림) 규칙이 후보 제안으로 이어지지 않음. 정비 지시서(routinesync 공통절) 여부 판단",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "adsense-redirect-verdict-1127",
+   "added": "2026-11-26",
+   "what": "애드센스 9차 재요청 보류 권고 — themealt1120b(rel=alternate) 4. 판독·③ Aside 재측정(2주 미실행) 결과로 리디렉션 오류 감소 여부 판정",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard order --id themealt1120b",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
