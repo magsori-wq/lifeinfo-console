@@ -1,8 +1,8 @@
 {
- "checked_at": "2026-11-27T20:29:39",
+ "checked_at": "2026-11-28T06:00:25",
  "light": "yellow",
- "pass": 15,
- "warn": 3,
+ "pass": 14,
+ "warn": 5,
  "fail": 0,
  "checks": [
   {
@@ -23,7 +23,7 @@
   },
   {
    "level": "PASS",
-   "msg": "OSMU URL 유효·중복 통과 (1746개 확산링크)"
+   "msg": "OSMU URL 유효·중복 통과 (1749개 확산링크)"
   },
   {
    "level": "PASS",
@@ -31,7 +31,7 @@
   },
   {
    "level": "PASS",
-   "msg": "매니페스트 신선도 통과: 584편 DB와 일치"
+   "msg": "OSMU 교차링크 연계 통과: 584개 코드 모두 DB.osmu 일치"
   },
   {
    "level": "PASS",
@@ -47,15 +47,11 @@
   },
   {
    "level": "PASS",
-   "msg": "작업트리 손실 없음: 사라진 추적파일 0개"
-  },
-  {
-   "level": "PASS",
    "msg": "채널정합 통과: 보드 note 의 게시 URL 이 모두 DB.osmu 에 반영돼 있음"
   },
   {
    "level": "PASS",
-   "msg": "초안 코드 1:1 통과: 458종"
+   "msg": "초안 코드 1:1 통과: 459종"
   },
   {
    "level": "PASS",
@@ -63,7 +59,7 @@
   },
   {
    "level": "PASS",
-   "msg": "소스 구문 통과: 1093개 .py"
+   "msg": "소스 구문 통과: 1103개 .py"
   },
   {
    "level": "WARN",
@@ -71,11 +67,19 @@
   },
   {
    "level": "WARN",
-   "msg": "미사용 썸네일 324개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
+   "msg": "미사용 썸네일 336개: 100n_esta.png, 118n_lotteworld.png, 12n_bank.png, 12n_moim_naver.png, 134_ev_subsidy.png, 136_maternity_voucher.png, 137_housing_benefit.png, 138_disability_activity.png …"
   },
   {
    "level": "WARN",
    "msg": "중분류 28/35개가 6~7편 초과 — 분가 검토(규칙 §5): H1 43편, G3 37편, F4 34편, B4 33편, D1 27편, C2 27편, A2 27편, B2 25편, A1 25편, F1 23편, A5 23편, D2 19편, G1 18편, F2 17편, E2 17편, D3 16편, G4 15편, F3 15편, D4 15편, A3 15편, C1 14편, E4 13편, B1 12편, C4 10편, C3 9편, A4 9편, D5 8편, B5 8편"
+  },
+  {
+   "level": "WARN",
+   "msg": "매니페스트 신선도: 제목·URL·썸네일 불일치 1건 → 'python -m studio.pipeline manifest' 재생성 권장"
+  },
+  {
+   "level": "WARN",
+   "msg": "추적파일 1개가 작업트리에서 사라짐 — 의도한 삭제면 git rm 로 스테이징할 것"
   }
  ]
 }
