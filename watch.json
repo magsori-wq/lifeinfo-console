@@ -38813,6 +38813,60 @@
    "by": "이부장",
    "done_at": "2026-11-27",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "cp8000-vbs-after-reboot",
+   "added": "2026-11-27",
+   "what": "maint1127cp8000: VBS 교체(11-27 15:42) 뒤 첫 재부팅 — 8000 을 cpserve 가 띄웠나",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.readycheck | grep 'CP 화면'; grep 기동 data/cpserver.log | tail -1",
+   "owner": "claude",
+   "state": "todo",
+   "by": "정비"
+  },
+  {
+   "id": "seodesc-a402-92-1127",
+   "added": "2026-11-27",
+   "what": "A4-02 풍수해보험 검색설명 「최대 92%」 삭제 반영 확인(Aside 대기열 1127155111697_A4-02_기타)",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.seodesc scan --only A4-02",
+   "owner": "claude",
+   "state": "done",
+   "by": "이과장",
+   "done_at": "2026-11-27",
+   "result": "aside repl 직접 주입 16:0x · 라이브 meta·og:description 100자 새 문구(92% 0건) · seodesc set 후 scan mismatch 없음(state ok)"
+  },
+  {
+   "id": "asidequeue-directmode-gate-1128",
+   "added": "2026-11-27",
+   "what": "직접 게시 모드인데 asidequeue add 가 받아 줘서 11-11 부터 6건이 실행 안 된 채 쌓임 — add 가 직접 모드면 경고/거부하고 이과장 실행 경로를 안내하도록 정비 지시 검토",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.asidequeue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-D3-16-1127",
+   "added": "2026-11-27",
+   "what": "D3-16 색인요청 기록 검수 불합격: gsc_req_dates.json 에 D3-16 키 없음(URL 2026/11/330-0.html 은 gsc_requested.json 에만 있음, 날짜 미기록)",
+   "due": "2026-11-27",
+   "cmd": "python -c \"import json;print('D3-16' in json.load(open('webapp/gsc_req_dates.json',encoding='utf-8'))['dates'])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "f435-naver-affiliate-insert-1127",
+   "added": "2026-11-27",
+   "what": "F4-35 함평 겨울빛축제 네이버 글에 핫팩 제휴링크 사후 삽입 승인 — 【권고】 승인: 축제 12-18~31 겨울 야외 관람, 핫팩이 독자가 다음에 살 것과 맞음(1개만) 【근거】 docs/affiliate_F4-35.md 브랜드커넥트 조사·히트템 포유 핫팩 12,900원 https://naver.me/5kPG38Uj 등록됨 【위험】 라이브 네이버 글 수정(URL 그대로·되돌리기도 수정으로 가능) · 대가성 문구 맨 앞 필수 · 실행 = 승인 뒤 이과장 aside repl",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.affiliate block --code F4-35 --channel naver  # 승인 뒤 이과장이 https://blog.naver.com/magsori8975/224488546823 수정 → 본문 맨 앞에 출력 블록 삽입 → 저장",
+   "owner": "user",
+   "state": "todo",
+   "verify": "curl -s -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224488546823' | grep -c 5kPG38Uj",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
