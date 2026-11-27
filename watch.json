@@ -38831,8 +38831,10 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.readycheck | grep 'CP 화면'; grep 기동 data/cpserver.log | tail -1",
    "owner": "claude",
-   "state": "todo",
-   "by": "정비"
+   "state": "done",
+   "by": "정비",
+   "done_at": "2026-11-28",
+   "result": "11-28 04:48:46 재부팅(LastBootUpTime) 뒤 data/cpserver.log 「2026-11-28 04:51:48 pid=9848 기동 :::8000」 — VBS 교체 뒤 첫 재부팅에서 cpserve 가 8000 을 띄움 · readycheck ✅ CP 화면 127.0.0.1:8000 응답(07:3x 정비 실측)"
   },
   {
    "id": "seodesc-a402-92-1127",
@@ -39616,8 +39618,10 @@
    "due": "2026-11-29",
    "cmd": "grep -n \"2026-11-28\" webapp/approval.html",
    "owner": "claude",
-   "state": "todo",
-   "by": "정비"
+   "state": "done",
+   "by": "정비",
+   "done_at": "2026-11-28",
+   "result": "9ed37653f(origin/main): 굽기 대신 falsepos _r_card_start_literal_1128 이 approval.html 카드 시행일 리터럴 = topicquota.CARD_START 를 감시 — 지금 ['2026-11-28'] 일치 [] · CARD_START 모의 변경 시 🔴 · 시험 tests/test_falsepos_1128 CardStartLiteralTest 2건"
   },
   {
    "id": "fix-a238-v0nits-1128",
@@ -39703,6 +39707,84 @@
    "owner": "user",
    "state": "blocked",
    "by": "3.분석"
+  },
+  {
+   "id": "verify-faa2ed515-1128",
+   "added": "2026-11-28",
+   "what": "faa2ed515 검수 ❌: tests/test_topicquota_cli.py 의 batchboard LOCK(data/batch.lock) 미패치 — 라이브 잠금 파일을 연다(쓰기 흔적 없음·mtime 10-24 불변). 수정은 LOCK 도 tmp 로 패치",
+   "due": "2026-11-28",
+   "cmd": "python -m unittest tests.test_topicquota_cli && ls -l data/batch.lock",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-a4ee38dbb-enter-slot-1128",
+   "added": "2026-11-28",
+   "what": "a4ee38dbb 엔터 칸 판정 결함(H1-15 가 H 로 셈) 정비 수리 확인",
+   "due": "2026-11-28",
+   "cmd": "python -c \"import json,studio.topicquota as q;d=json.load(open('webapp/topicprop.json',encoding='utf-8'));print(q.slot_of([i for i in d['items'] if i['code']=='H1-15'][0]))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "450c924e0 verify ✅: slot_of(H1-15)=엔터, LABEL_OVERRIDE H 13편 전부 엔터(H1-13 topicprop 없음)"
+  },
+  {
+   "id": "verify-86db50b70-1128",
+   "added": "2026-11-28",
+   "what": "정비 86db50b70(maint1128nohand) 글감 카드 added 통일·/api/file 출처 열람 검수",
+   "due": "2026-11-28",
+   "cmd": "git branch -r --contains 86db50b70",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "verify ✅: origin 포함·세 곳 added>=2026-11-28 동일·/api/file 경로탈출 10종 403·test_topiccard 11 OK·falsepos🔴0·enginemap🔴0·validate FAIL0. 남은 것: falsepos _r_card_start_literal_1128 미커밋(정비에 통지)"
+  },
+  {
+   "id": "dt3-first-live-supervise-1128",
+   "added": "2026-11-28",
+   "what": "maint1124direct DT-3 첫 실발행 감독 — 다음 실발행(A2-38 승인 시)에 이부장이 지켜보며 정비가 독립 검증",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.pubready --code A2-38",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-f8f0ab81a-1128",
+   "added": "2026-11-28",
+   "what": "정비 f8f0ab81a 검수(초안게이트 alt 카드 제외·threadimg solo 재사용 fail-closed)",
+   "due": "2026-11-28",
+   "cmd": "git branch -r --contains f8f0ab81a",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "verify ✅: alt 카드만 제외·rec 은 계속 울림(모의)·solo 판정 실패=거부·소급 6건 시행일 전·threadimg 위반0·시험 21 OK·falsepos🔴0. 관찰: scan 은 미게시 글 solo 재사용을 안 봄(게이트 check 는 막음)"
+  },
+  {
+   "id": "verify-b4a10b7d1-1128",
+   "added": "2026-11-28",
+   "what": "정비 b4a10b7d1 검수(초안게이트 alt 카드 제외·threadimg solo 재사용 fail-closed)",
+   "due": "2026-11-28",
+   "cmd": "git branch -r --contains b4a10b7d1",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "verify ✅: solo_sid_ok 영숫자·하이픈만·잘못된 id·첨부0 모두 거부·시험 10 OK·ecf5f2c78 과 어긋남 없음"
+  },
+  {
+   "id": "rlog-dailytopics-1128-close",
+   "added": "2026-11-28",
+   "what": "routinelog lifeinfo-daily-topics-1128 A칸 후보 부족분 — 3.(fuel1030) 09:00 보고 받아 확보되면 done",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
