@@ -38659,6 +38659,36 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "cp8001-temp-revert-1127",
+   "added": "2026-11-27",
+   "what": "CP 임시 8001(이부장 세션 백그라운드 bggngsr97) → 8000 정리(cp8000-zombie-clear-1127) 뒤 8000 재기동·200 확인하고 8001 종료",
+   "due": "2026-11-28",
+   "cmd": "curl -s -o /dev/null -w %{http_code} http://127.0.0.1:8000/approval.html",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "ledger1030-confirm-1127",
+   "added": "2026-11-27",
+   "what": "CONFIRM_BACKLOG ledger1030 12:10 보고(4.) — 근거 열어 보고 batchboard confirm",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard order --id ledger1030",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cpdown-1127",
+   "added": "2026-11-27",
+   "what": "🖥️ CP 화면 서버(8000) 재기동 승인 — 【무엇이 막혔나】127.0.0.1:8000/index.html 이 refused(연속 2회·11-27 14:18부터) — 로컬 CP 화면·결재 화면·aroma 미리보기·네이버 서식본(rich_)이 안 열린다 · 【위험】포트를 쥔 채 멈춘 서버가 남아 있을 수 있다 — 세션은 프로세스를 조회·종료하지 않는다(CLAUDE.md), 새 서버를 또 띄우면 겹쳐 막힌다(11-27 원인) · 【재승인하면 무엇이 실행되나】멈춘 8000 서버 정리(PC 재시작이 가장 확실) 뒤 `python -m studio.cpserve` 1개만 기동 — 이미 누가 포트를 쥐고 있으면 그 기동은 스스로 실패하고 data/cpserver.log 에 남는다 · 【권고】승인 — 사장님 CP 화면이 이 서버다 · 【근거】towertick 자동 측정(HTTP 200 판정) · 로그 data/cpserver.log",
+   "due": "2026-11-27",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "towertick 자동(CP 서버 감시)"
   }
  ]
 }
