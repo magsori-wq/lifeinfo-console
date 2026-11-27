@@ -39122,9 +39122,11 @@
    "due": "2026-11-27",
    "cmd": "python -m studio.topicprop table",
    "owner": "claude",
-   "state": "wait",
+   "state": "done",
    "note": 1,
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "3. 21:13 중간 보고 수신 — 중국 무비자 건 F1-09 중복 판정·신규 0, 24:00 최종 보고로 이월"
   },
   {
    "id": "d215-fuel-ext-live-1130",
@@ -39161,6 +39163,16 @@
    "by": "이부장",
    "done_at": "2026-11-27",
    "result": "verify 19:12 — 미리보기 수치 원문 일치 ✅(❌는 3. 판정 문구 「현행으로만」이 원문과 다름, 미리보기 문제 아님). 결재 카드 approve-d215upd1128 상정"
+  },
+  {
+   "id": "fuel1030-2400-check-1127",
+   "added": "2026-11-27",
+   "what": "3. fuel1030 24:00 최종 보고 확인 — 신규 topicprop add ≥1 또는 탈락 사유표. 0건·무보고면 3. 재깨움 + 02:00 결재함 상정 불가 기록",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
