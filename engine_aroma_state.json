@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 16:55:26",
+ "at": "2026-11-27 16:55:48",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -41,13 +41,22 @@
      "state": "done",
      "kind": "approve",
      "at": "2026-11-26"
+    },
+    {
+     "id": "aroma-am-bo-015-upd-aff-1127",
+     "state": "todo",
+     "kind": "upd",
+     "at": "2026-11-27"
     }
    ],
    "title": "넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위",
    "last_file_at": "2026-11-27 16:50",
    "stage": "published",
    "label": "게시됨",
-   "detail": "2026-11-26"
+   "detail": "2026-11-26",
+   "rev_wait": [
+    "aroma-am-bo-015-upd-aff-1127"
+   ]
   },
   {
    "code": "AM-DG-019",
@@ -98,7 +107,7 @@
     },
     {
      "id": "aroma-am-pe-021-upd-aff-1127",
-     "state": "todo",
+     "state": "done",
      "kind": "upd",
      "at": "2026-11-27"
     }
@@ -107,10 +116,7 @@
    "last_file_at": "2026-11-27 16:50",
    "stage": "published",
    "label": "게시됨",
-   "detail": "2026-11-26",
-   "rev_wait": [
-    "aroma-am-pe-021-upd-aff-1127"
-   ]
+   "detail": "2026-11-26"
   },
   {
    "code": "AM-PE-022",
@@ -138,9 +144,9 @@
  "published_total": 85,
  "rev_wait": [
   {
-   "code": "AM-PE-021",
+   "code": "AM-BO-015",
    "ids": [
-    "aroma-am-pe-021-upd-aff-1127"
+    "aroma-am-bo-015-upd-aff-1127"
    ]
   },
   {
@@ -349,7 +355,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 48,
+  "last_min": 49,
   "cur": "이부장 ack rcde1bd — 16:06 이부장: 결재 회수",
   "lvl": "ok"
  },
@@ -862,7 +868,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 48,
+   "last_min": 49,
    "cur": "이부장 ack rcde1bd — 16:06 이부장: 결재 회수",
    "lvl": "ok"
   },
@@ -877,7 +883,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 48,
+   "last_min": 49,
    "cur": "이부장 ack rcde1bd — 16:06 이부장: 결재 회수",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -944,23 +950,23 @@
  "approvals": [
   {
    "kind": "aroma",
-   "id": "aroma-am-pe-021-upd-aff-1127",
-   "what": "【권고】AM-PE-021 라이브 글에 관련 상품 제휴 칸 추가(사장님 11-27 「다른 글들도 관련 상품 제휴 링크 붙여」). 제휴 상품: 니쿠",
+   "id": "aroma-am-bo-014-upd-aff-1127",
+   "what": "【권고】AM-BO-014 라이브 글에 관련 상품 제휴 칸 추가(사장님 11-27 「다른 글들도 관련 상품 제휴 링크 붙여」). 제휴 상품: 오브",
    "by": "이대리",
    "waited": ""
   },
   {
    "kind": "aroma",
-   "id": "aroma-am-bo-014-upd-aff-1127",
-   "what": "【권고】AM-BO-014 라이브 글에 관련 상품 제휴 칸 추가(사장님 11-27 「다른 글들도 관련 상품 제휴 링크 붙여」). 제휴 상품: 오브",
+   "id": "aroma-am-bo-015-upd-aff-1127",
+   "what": "【권고】AM-BO-015 라이브 글에 관련 상품 제휴 칸 추가(사장님 11-27 「다른 글들도 관련 상품 제휴 링크 붙여」). 제휴 상품: 오브",
    "by": "이대리",
    "waited": ""
   }
  ],
  "edits": [
   {
-   "code": "AM-PE-021",
-   "title": "변우석 팬미팅 앙코르 — 전석 110,000원, 선예매 12/7·일반 12/8",
+   "code": "AM-BO-015",
+   "title": "넷플릭스 순위 11/16~22, 문무 7위→4위·닥터X 2위→6위",
    "stage": "boss",
    "packer": ""
   },
@@ -973,15 +979,39 @@
  ],
  "today_events": [
   {
+   "code": "AM-SP-007",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-020",
+   "stage": "proc",
+   "at": "2026-11-27 16:50:20",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-PE-021",
    "stage": "proc",
    "at": "2026-11-27 16:50:21",
    "src": "파일 수정 시각"
   },
   {
+   "code": "AM-DG-021",
+   "stage": "proc",
+   "at": "2026-11-27 06:00:18",
+   "src": "파일 수정 시각"
+  },
+  {
    "code": "AM-BO-014",
    "stage": "proc",
    "at": "2026-11-27 16:50:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-025",
+   "stage": "proc",
+   "at": "2026-11-27 05:43:11",
    "src": "파일 수정 시각"
   },
   {
@@ -997,43 +1027,19 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-020",
-   "stage": "proc",
-   "at": "2026-11-27 16:50:20",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-021",
-   "stage": "proc",
-   "at": "2026-11-27 06:00:18",
-   "src": "파일 수정 시각"
-  },
-  {
    "code": "AM-PE-005",
    "stage": "proc",
    "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-025",
-   "stage": "proc",
-   "at": "2026-11-27 05:43:11",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-007",
-   "stage": "proc",
-   "at": "2026-11-27 05:57:42",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-026",
+   "code": "AM-SP-024",
    "stage": "proc",
    "at": "2026-11-27 16:50:21",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-024",
+   "code": "AM-SP-026",
    "stage": "proc",
    "at": "2026-11-27 16:50:21",
    "src": "파일 수정 시각"
@@ -1117,10 +1123,16 @@
    "src": "watch done_at(날짜뿐)"
   },
   {
-   "code": "AM-PE-022",
+   "code": "AM-PE-021",
    "stage": "boss",
    "at": "",
    "src": "watch done_at(날짜뿐)"
+  },
+  {
+   "code": "AM-PE-022",
+   "stage": "boss",
+   "at": "2026-11-27 16:55:34",
+   "src": "결재 커밋 시각"
   },
   {
    "code": "AM-DG-021",

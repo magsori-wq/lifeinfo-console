@@ -16722,7 +16722,7 @@
    ]
   }
  },
- "updated": "2026-11-27 16:55:25",
+ "updated": "2026-11-27 16:55:46",
  "current": {
   "batch": "chkmon",
   "code": "",
@@ -16733,6 +16733,11 @@
   "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "16:55:46",
+   "text": "✔ 이부장 ack rfb6a16",
+   "actor": "이부장"
+  },
   {
    "t": "16:55:25",
    "text": "✔ 이부장 ack ra0b770",
@@ -16926,11 +16931,6 @@
   {
    "t": "15:56:28",
    "text": "▶   — 3/7단계 · ✅ ec33982dc (origin/main 포함) — threadimg.solo_reuse: solo 첨부를 지난 모든 thread_*·thread_solo_*(자기 id 제외)와 가운데 dHash 비교, ≤8 이면 asidequeue preclear ⑥·threadsdraft --solo 가 거부 · 감귤 20261127-1↔20261002-2 거리 2 차단, gamgyul1105 최근접 15 통과 · 기게시 solo 소급 없음 · 판정 실패 fail-closed · 전체 시험 1150 OK · validate FAIL 0",
-   "actor": "정비"
-  },
-  {
-   "t": "15:56:16",
-   "text": "▶   — 3/7단계 · ✅ 05b1129a4 (origin/main 포함 · syncorigin 푸시) — STE-1 C:/Python314 파이프 재현: stdin cp949 인데 바이트→UTF-8 로 「사장님 하실 일」 줄 정상 판독 · 3.14 서브프로세스 시험이 check()=「결재함 카드로 올려라」 · STE-2 거부했·permission denied·「해소 안 됨」·머리줄 아래 목록 = 잡음, 「해소됨」·머리줄 뒤 문단 = 안 잡음 · STE-3 CPS 예외 → TICK_SCAN_FAIL CPSERVE · 시험 1150 OK(skip1) · 3.14 로도 17 OK · enginemap 🔴0 · validate FAIL 0",
    "actor": "정비"
   }
  ],
@@ -48154,6 +48154,17 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "ra0b770"
+  },
+  {
+   "ts": "2026-11-27 16:55:46",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack rfb6a16 — 🔵2 사장님 승인 완료 · 🟡 ledger1030·f8fe2594b 재지시 이월·fuel 3. 20:00 중간보고 대기",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "rfb6a16"
   }
  ]
 }
