@@ -38905,6 +38905,51 @@
    "by": "이부장",
    "done_at": "2026-11-27",
    "result": "2992458c583e24ecb77585eff3d757f71f8a3cc5 ✅ test_engine_termdone 7건 OK(node 실행 포함) · order_channel_done 시각 최신순·시각 없음=뒤·코드순 · phone 2칸+「+2」 클릭 · PC 8칸+「+3」 · 이동 중 칸 차감 확인"
+  },
+  {
+   "id": "verify-3097061-1127",
+   "added": "2026-11-27",
+   "what": "30970610c HOL-1 재작업 검수",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m unittest tests.test_permcard_stopask -v",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "30970610c ✅ — diff=_ASK_RE 1줄+시험2건(stopask·tests 2건만 변경) · test_permcard_stopask 19/19 · 전체 discover 1152 OK(skip1) · 사장님 요청 문장 2건 잡힘·금지 3건 None · enginemap 🔴0. 미재측정: 재생 136→676·270건·오탐0 수치"
+  },
+  {
+   "id": "verify-ad79b2e-1127",
+   "added": "2026-11-27",
+   "what": "ad79b2e6e HOL-1 오탐 수정 검수",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m unittest tests.test_permcard_stopask",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "ad79b2e6e ✅ 합격: show stat 3파일 보고와 일치 · test_permcard_stopask 20 OK · ask_problem 4케이스 기대대로(a None·b hit·c hit·d None) · deployneed parse 경고 0"
+  },
+  {
+   "id": "f435-naver-insert-notify-1127",
+   "added": "2026-11-27",
+   "what": "사장님 16:39 「F4-35 삽입 끝나면 알려줘」 — 이과장 삽입 보고 받으면 verify 검수 후 사장님께 결과 알림(대화+카톡). 17:00 까지 보고 없으면 이과장 상태 확인",
+   "due": "2026-11-27",
+   "cmd": "curl -s -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224488546823' | grep -c 5kPG38Uj",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-dg-020-upd-aff-1127",
+   "added": "2026-11-27",
+   "what": "【권고】AM-DG-020 라이브 글에 관련 상품 제휴 칸 추가(사장님 11-27 「다른 글들도 관련 상품 제휴 링크 붙여」). 제휴 상품: 조이트론 플라이디지 「베이더5 프로」 게임패드(PC·모바일, 무선/유선) 99,800원(정가 110,000원, 무료배송) 4.9 · 3,137건 · naver.me/F05CsNro(스팀 세일에 담는 패드 게임용 PC 패드); 제닉스 「타이탄 GP7」 게임패드(PC·닌텐도) 49,000원(정가 79,000원, 배송비 3,000원) 4.86 · 1,370건 · naver.me/59lsD7Wf(5만 원대 PC·스위치 겸용 패드). 조사 검색어: 스팀 게임패드, pc 게임패드, 블루투스 게임패드. 【근거】브랜드커넥트 발급 링크 curl 상품번호 일치, 스마트스토어 상품 페이지 11-27 확인, 독립 V0 91(analysis/_v0_aff_batch1_1127.md). 대가성 문구 맨 앞·링크 아래·출처 칸. 【위험】라이브 3곳만 끼워넣기(전체 삭제 없음), 백업 rev/AM-DG-020_20261127_aff_before.html, 시범 드라이런 DG-020 CHECK 통과. 게시 직전 가격 재확인. 수수료율·통계 미기재.",
+   "due": "2026-11-28",
+   "cmd": "승인: aroma-am-dg-020-upd-aff-1127",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }

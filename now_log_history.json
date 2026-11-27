@@ -4999,7 +4999,39 @@
    "actor": "이부장",
    "sid": "a7dca46f",
    "ack": "r212a69"
+  },
+  {
+   "ts": "2026-11-13 16:35:44",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡12 — 즉시: 사장님 결재 대기 D1-23 수능 지진 나면 어떻게 되나 — 진도 4~5 일시 중지 · 묶음: 사건×11 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r67000e"
+  },
+  {
+   "ts": "2026-11-13 16:36:51",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r67000e — 결재 전달·코드검증 판정 통일 정비 지시",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r67000e"
+  },
+  {
+   "ts": "2026-11-13 16:42:10",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 코드 검증 판정 두 곳 통일(68de7390c) — 누가: 정비 · 언제: 11-13 16:4x · 어디서: studio/enginestate.py(code_cleared 신설·unverified_commits·Z2 호출부)·studio/towertick.py(unverified_deferred → code_cleared) · 왜(이해한 이유): 감시 알림(towertick)은 끝난 verify watch·confirm 노트를 인정해 껐는데 상황실 Z2 는 페이블 문서만 봐서 같은 커밋을 점검모니터에 계속 올렸다 · 무엇을: 판정을 code_cleared 한 함수로(검증 문서·열린 미룸 watch·끝난 verify-* watch·confirm_note) 옮기고 양쪽이 같이 부름 · 어떻게(실측): 본체 데이터로 재계산 unverified_code 사건 0건 · 본체 상황실 새 굽기에서도 0건 · 회귀 시험(verify watch done·confirm 해시 → 사건 없음, 미검증 커밋만 남음, 양쪽 결과 동일) · origin/main 코드 사본 772건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 참고: 실데이터 확인 때 본체 data/engine_log.jsonl 에 16:39:15 한 줄이 추가됨(감시 틱도 쓰는 사건 서명 기록 — 무해) · 재발방지: 판정이 한 함수, 시험이 양쪽 결과 일치를 검사 · 남은 구멍: 없음 · ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-11-27 16:10:51"
+ "updated": "2026-11-27 16:47:33"
 }
