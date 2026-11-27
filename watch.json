@@ -38777,6 +38777,40 @@
    "by": "이부장",
    "done_at": "2026-11-27",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "f1-02-passport-fee-1127",
+   "added": "2026-11-27",
+   "what": "F1-02 여권 발급·F1-03 여권 재발급 본문의 국제교류기여금 15,000원(2026-03-01 인상) vs 외교부 안내 12,000원 — source 확정 뒤 본문 정정 지시(LF-1 성격, dry-run·미리보기·사장님 go)",
+   "due": "2026-11-27",
+   "cmd": "cat docs/source_F1-02_passport_fee_20261127.md | tail -3",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "source 에이전트 15:30: 현행 10년 복수 기여금 12,000원(시행령 별표1 2024.6.4 개정, 2024-07-01 시행·외교부 2026-02-23 보도자료·passport.go.kr 일치) — 본문 15,000원 오기 확인(이부장 직접 docs/source_F1-02_passport_fee_20261127.md·posts 41/80행 대조). 정정은 livefix1019 덧붙임 15:31"
+  },
+  {
+   "id": "verify-p8k4-1127",
+   "added": "2026-11-27",
+   "what": "P8K-4 bb6f73070 검수 ❌: startup_vbs.py --help 가 사용법을 내지 않고 보기 모드로 실행됨 (--apply 문구는 모듈 docstring 에만) — 기대: --help 출력에 --apply·data/backup",
+   "due": "2026-11-27",
+   "cmd": "python tools/cp/startup_vbs.py --help | grep -c -- --apply",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cp8000-startup-vbs-1127",
+   "added": "2026-11-27",
+   "what": "시작프로그램 8000 서버 교체 — 【무엇】재부팅 때 8000 을 띄우는 시작프로그램 Lifeinfo_Server_8000.vbs 가 겹침 방지 없는 python -m http.server 를 띄운다(오늘 재부팅 뒤 실측). 이것을 겹침 방지·기록이 있는 cpserve 로 바꾼다. 【권고】승인 — 이번 8000 접속 거부의 마지막 구멍이다. 【근거】정비 P8K-4(bb6f73070·c11977354) 검수 2회 ✅: 보기 모드는 파일 불변(sha256 동일), --apply 는 임시 사본 시험 통과, 시험 13건 OK. 【위험】낮음 — 원본을 data/backup 에 사본으로 남기고 바꾼 뒤 다시 읽어 확인한다. 효과는 다음 재부팅 때 나타난다. 되돌리기 = 사본을 시작프로그램 폴더에 다시 복사.",
+   "due": "2026-11-27",
+   "cmd": "python tools/cp/startup_vbs.py --apply",
+   "owner": "user",
+   "verify": "python tools/cp/startup_vbs.py",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
