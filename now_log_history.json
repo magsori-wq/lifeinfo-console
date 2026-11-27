@@ -4923,7 +4923,17 @@
    "what": "✅ 8de19539b 검수 ❌ 정정(630b64554) — 누가: 정비 · 언제: 11-13 15:2x · 어디서: studio/towertick.py must_ring·alert_once · 무엇을/왜: 같은 🙋 요청 2회차가 alert_once 에 삼켜졌다(지시 ⑤ 위반) → 🙋 이부장 요청·⏸ 대기·👤 사장님 직접 지시·[Aside][blocked]·막힘·⛔ 줄은 같은 내용이어도 매번 울림, 하루 한 번 억제는 일반 보고에만 · 어떻게(실측): 회귀 시험 — 위 6종 같은 내용 2회 → 2회 다 울림, 일반 보고 같은 내용 2회 → 1회 · origin/main 코드 사본 765건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 본체 감시 틱 새 코드로 정상 · 재발방지: 시험이 억제 제외 6종을 하나씩 검사 · 남은 구멍: 없음 · ⏸ 대기 — 다음 maint 지시",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 15:38:44",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 오탐·정체 2건 원인 수정(f779a1940·51bc81ad7) — 누가: 정비 · 언제: 11-13 15:3x · ① IDAERI_STALL 오탐 · 어디서: studio/batchboard.detect_actor·whoami.live_cwd·enginestate.idaeri_last_activity · 원인(실측): 이대리 세션 de614107 은 등록부에 줄이 없고, 05:12 까지는 셸 cwd 가 naver-blog 라 「이대리」였는데 07:37 부터 셸 cwd 가 바뀌어 「미상:de614107」 로 찍힘 → 이대리 활동이 09:24 로 계산 · 수정: actor 판정에 그 세션의 Desktop 세션 파일 프로젝트 폴더(originCwd = C:\\naver-blog) 추가, 이미 미상으로 남은 줄도 같은 판정으로 활동 인정 → 실데이터 마지막 활동 15:24:38 · ② PUBDATES_STALE · 어디서: studio/bake.py·enginestate · 실측: 12:57:42 bake 가 gates.json·library.json 을 같은 초에 써 그 사이 pubdates 단계를 1초 안에 지났는데 파일은 안 바뀜 = 건너뜀(수정시각 판정) 또는 즉시 실패 — 로그가 없어 둘 중 무엇인지 확정 못 함, 지금 수동 실행은 6.7초 성공 · 수정: 24시간 판정을 내용 generated 로, 재굽기 결과를 data/pubdates_last.json 에 기록, PUBDATES_STALE 사건에 그 사유를 실음 · 확인: 본체 15:38 상황실 굽기에 이대리 정체·발행일 사건 없음 · 시험: origin/main 코드 사본 770건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 재발방지: 회귀 시험 5건 · 남은 구멍: ② 원인 확정은 다음 발생 때 pubdates_last.json 으로, 이대리 등록부 줄 없음(python -m studio.whoami --role 이대리 등록은 이대리 몫 — 지사장이라 이부장이 권고만) · ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-11-27 15:27:22"
+ "updated": "2026-11-27 15:38:46"
 }
