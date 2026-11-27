@@ -39785,6 +39785,26 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "d215upd-record-fix-1128",
+   "added": "2026-11-28",
+   "what": "D2-15 정정 기록 보완(source 파일 2027 근거·정정 커밋) — 이과장 d215upd1128 덧붙임 08:21",
+   "due": "2026-11-28",
+   "cmd": "grep -c 2027 docs/source_D2-15_유류세연장_20261011.md; git log --oneline -3 --grep D2-15",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-0907-affimg-check-1128",
+   "added": "2026-11-28",
+   "what": "이대리 09:07 예약(d3b6da35) 제휴 이미지판 8건 게시 결과 · DG-018 결재 커밋 유무 확인",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard order --id aroma",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
