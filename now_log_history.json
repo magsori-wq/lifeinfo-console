@@ -4565,7 +4565,163 @@
    "what": "👤 사장님 직접 지시(12:35): 「정비 세션 C:\\lifeinfo 에서 다시 열어」 — 이부장 지시: 정비는 ①지금 손대던 변경을 경로 지정 커밋·push(syncorigin) ②mcp__ccd_directory__change_directory 로 C:\\lifeinfo 로 이동(워크트리 rm 금지) ③이동 뒤 첫 턴에 pwd·git -C C:/lifeinfo log -1 로 위치 확인 후 batchboard now 보고 ④그 뒤 상황실 색 작업 이어서",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-13 12:38:34",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 상황실 4채널 실행 주체 색(2f3ee9251) — 누가: 정비 · 언제: 11-13 12:4x · 어디서: studio/enginestate.py(executor_map·supply_mode)·webapp/engine.html · 왜(이해한 이유): Aside 허브→종착지가 한 색이라 사장님이 이과장 직접 공급과 Aside 실행을 구분 못 함 · 무엇을: 주체는 기록에서만 — Aside=data/aside_orders.json done 지시(kind 또는 [done] 게시 문구, 정정 제외) · 이과장 직접=data/gate_pass.json used 도장(postlock) · 근거 없으면 회색 「주체 모름」 · 지금 흐르는 허브 관·입자=data/aside_mode.json(직접 게시 모드→이과장) · 이과장 #38BDF8 실선 ● · Aside #F472B6 점선 ◆ · 모름 #6B7280 · 범례 흐름도 위 한 줄 · 어떻게(실측): 127.0.0.1:8000/engine.html 에서 이과장 점 16·모름 8·Aside 0(최근 글은 직접 게시 모드라 Aside 기록 없음), 허브 관 4개 하늘색, 범례 「지금 공급 = 이과장 직접」 · Aside ◆·점선은 같은 데이터 who 만 바꾼 시험 렌더로 ◆3·점선(7px 5px)·분홍 확인(화면엔 안 씀) · 시험 OK·enginemap 🔴0 · 재발방지: 신규 — 해당 없음 · 남은 구멍: gate_pass 는 11-12 이후·최근 145개라 그 전 이과장 직접 게시는 회색, 블로그스팟(Actions 발행)은 색 구분 대상 밖 · 다음: 사장님 지시대로 정비 세션을 C:\\lifeinfo 로 이동",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 12:39:07",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "⚠️ 정비 세션 C:\\lifeinfo 이동 실패 — 누가: 정비 · 언제: 11-13 12:4x · 어디서: mcp__ccd_directory__change_directory path=C:\\lifeinfo · 거부 원문: 「This session's working directory can't be moved (it runs in an isolated worktree, shares another session's folder, or runs on a remote host). Use request_directory to work with the folder from here instead.」 · ①커밋·push 는 끝남(0756b9477·2f3ee9251, 워크트리 미커밋 내 변경 없음) · 워크트리 폴더 그대로(rm 안 함) · 영향 줄인 것: 보드(batchboard)·세션 기록(sessionstate)은 이제 워크트리에서도 본체 C:\\lifeinfo\\webapp 에 씀(0756b9477, 12:33 maint 보고가 본체 session_state.json 에 남은 것 확인) · 남은 길: 사장님이 C:\\lifeinfo 에서 새 정비 세션을 여시거나(그 세션이 whoami --role 정비 로 등록), 지금처럼 워크트리에서 계속 · 🙋 이부장 요청: 어느 쪽으로 할지 결정해 주십시오 · ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 12:39:45",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "👤 사장님 직접 지시: 「F1-04 보강 진행해」 · 대상 F1-04(국제운전면허) — 공식 수치 재확인(현장 수수료 8,500 vs 9,000·11-16 해외운전 문자) 뒤 보강안·미리보기 작성",
+   "actor": "3.",
+   "sid": "88de804b"
+  },
+  {
+   "ts": "2026-11-13 12:40:05",
+   "bid": "adsense4_1104",
+   "code": "",
+   "title": "",
+   "owner": "4.",
+   "what": "⏸ 대기 — [4.·11-13 12:4x] 새 지시서 없음(adsense4_1104 등록 12:10:16 그대로 = 276편 대조, 끝냄). 기다리는 것: 실험 B 24h 판독(11-14 02:23)·이부장의 다음 지시서",
+   "actor": "4.",
+   "sid": "eb8bf5dd",
+   "req": "rf0a41f"
+  },
+  {
+   "ts": "2026-11-13 12:40:59",
+   "bid": "pub1113a522",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "A5-22 발행 확인(run 성공·syncorigin 0/0)·라이브 URL …/12-3.html → 후속 시작",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-13 12:41:11",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "11:3x 사장님 직접 허락: C:\\lifeinfo\\data\\pingpong_1113.txt 공용 파일 쓰기 OK + 「정보업데이트 강화」 지시. 조치: 핑퐁 기록 복사 완료, 이후 보고판 갱신을 점검마다+사건(14:00·18:00·23:30) 직전·직후+발행·승인·막힘 즉시로 늘림.",
+   "actor": "미상:de614107",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-13 12:41:24",
+   "bid": "adsense4_1104",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack rf0a41f — 이부장 확인 12:41 — 4.: 실험B 판독(11-14 02:23)까지 대기 정상 · 3.: 사장님 직접 지시 F1-04 보강 진행(라이브 수정은 미리보기→사장님 go) · 정비: 이동 불가→사장님께 새 세션 요청",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "rf0a41f"
+  },
+  {
+   "ts": "2026-11-13 12:43:21",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "3.",
+   "what": "🙋 이부장 요청: F1-04 보강안 완성(posts/F1-04_보강본문_20261113.html·dry-run 통과·커밋) — 사장님 11-13 채팅 「F1-04 보강 진행해」 받음. update-post 는 결재 게이트(watch approve-F1-04-reinforce-1113 done)가 막고 있어 라이브 미반영. 이부장이 카드 처리·이과장 실행 지시 부탁. 네이버 F1-04 본문 8,500원 정정은 별도(이부장 판단)",
+   "actor": "3.",
+   "sid": "88de804b",
+   "req": "r026f24"
+  },
+  {
+   "ts": "2026-11-13 12:43:45",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴1 🔵1 🟡9 — 즉시: 이대리 요청 정체 idle; 사장님 🙋승인 F1-04 국제운전면허증 라이브 본문 보강(블로그스팟) — ① 현장 수수 · 묶음: 사건×7 반영 감사×1 기타×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "r3fd9e4"
+  },
+  {
+   "ts": "2026-11-13 12:44:08",
+   "bid": "fuel1030",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r026f24 — 이부장 12:44 — F1-04 보강 결재카드 내용 확인(권고·근거·위험 갖춤) 후 사장님께 보고·결재 대기 · 이대리 idle 은 별도 프로젝트(11:24 보고상 14:00 대기) 문의 안 함",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r026f24"
+  },
+  {
+   "ts": "2026-11-13 12:44:20",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "이부장 ack r3fd9e4 — 이부장 12:44 — F1-04 보강 결재카드 내용 확인(권고·근거·위험 갖춤) 후 사장님께 보고·결재 대기 · 이대리 idle 은 별도 프로젝트(11:24 보고상 14:00 대기) 문의 안 함",
+   "actor": "이부장",
+   "sid": "a7dca46f",
+   "ack": "r3fd9e4"
+  },
+  {
+   "ts": "2026-11-13 12:45:57",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "사장님 「보고 철저히! 반드시!」 재지시 수신. 이행: 점검·사건(14:00 PE-012·18:00 PE-010·23:30 사우디전) 직전·직후·발행·승인·막힘마다 보고판+이부장 직접 메시지 병행, 각 줄에 변경점·수치·다음 시각 기재. 다음 보고 13:24.",
+   "actor": "미상:de614107",
+   "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-13 12:46:12",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 상황실 색 검수 ❌ 정정(621fbb8ad) — 누가: 정비 · 언제: 11-13 12:4x · 어디서: webapp/engine.html(exMode·.ed.ex-unk·.pt.ex-unk)·studio/enginestate.py(supply_mode) · 무엇을/왜: 「주체 모름」 회색이 점·불꽃에만 있고 관(edge)에 없었다 → exMode 가 공급 모드를 모르면 ex-unk, .ed.ex-unk = #6B7280·1px·실선 · 함께: supply_mode 가 aside_mode.json 을 못 읽으면 전엔 aside 로 기본값을 지어냈다 → \"\"(회색), 기한 지난 lee_direct 는 aside(규칙대로 Aside 경로로 복귀) · 어떻게(실측): 127.0.0.1:8000/engine.html 실제 관 4개 ex-lee 하늘색 유지(supply_mode=lee), supply_mode 를 비운 시험 렌더에서 관 4개 rgb(107,114,128)·1px·dash none · 시험 OK·enginemap 🔴0 · 재발방지: 시험이 .ed.ex-unk 규칙·exMode 의 ex-unk 반환을 검사 · 남은 구멍: 없음 · 참고: 사장님 12:42 지시 「나한테 묻지말고 이부장 직속으로」 — 정비는 앞으로 사장님께 묻지 않고 이부장께만 보고(앞 보고의 「사장님 하실 일: 새 세션」 문구 철회, C:\\lifeinfo 이동 결정은 이부장 몫) · ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 12:47:58",
+   "bid": "pub1113a522",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "naver 게시·기록 완료 — https://blog.naver.com/magsori8975/224475542577 (naver-link 가 자동 보고) · 남음: 쓰레드, 인스타",
+   "actor": "이과장",
+   "sid": "c36eea8e"
+  },
+  {
+   "ts": "2026-11-13 12:53:18",
+   "bid": "pub1113a522",
+   "code": "",
+   "title": "",
+   "owner": "이과장(작업 세션)",
+   "what": "instagram 게시·기록 완료 — https://www.instagram.com/p/DfqtIZtEQNA/ (naver-link 가 자동 보고) · 남음: 쓰레드",
+   "actor": "이과장",
+   "sid": "c36eea8e"
   }
  ],
- "updated": "2026-11-27 12:37:23"
+ "updated": "2026-11-27 12:54:08"
 }
