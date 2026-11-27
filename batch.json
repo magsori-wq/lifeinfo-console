@@ -16392,17 +16392,22 @@
    "order_at": "2026-11-27 13:36:04"
   }
  },
- "updated": "2026-11-27 13:42:45",
+ "updated": "2026-11-27 13:43:54",
  "current": {
-  "batch": "themealt1120b",
+  "batch": "maint1127nwgate",
   "code": "",
   "title": "",
   "step": 2,
-  "what": "⏸ 대기 — 🟦이과장 13:4x 지시서 다시 읽음(1/2). 남은 1건은 제목상 48h 판독(이부장 몫)으로 읽힘 — 이과장 몫 남은 일이 있는지 확인 못 함 · 🙋 이부장 요청: 이과장 몫이 남았으면 지시서 갱신해 주십시오. 재발방지: 없음 · 남은 구멍: 없음",
-  "since": "15:01",
-  "since_at": "2026-11-20 15:01:40"
+  "what": "✅ 🟧정비 nwgate 커밋 70c98ca20(push 대기·이부장 verify) — 실측: 새 글 ⑥ 도장 관문은 11-12 MT-34 direct_gate ⑤ 로 이미 있었다. 실데이터 4건(브라우저 실행만 막고): A2-36 exit 0 · 가짜 Z9-99 exit 2(⑤ 결재 없음) · B4-19 --fix --approval approve-b419fix1127 exit 0 · B4-19 --fix(카드 없음) exit 2 fix-approval. 구멍 수리: 정정이 「발행 사실」(MT-41)로 카드 없이 통과하던 것 → naverwrite 는 --approval 필수(대기열은 그대로 — 이부장이 뒤집을 수 있음). 시험 7/7·전체 1106 OK·enginemap 0·validate FAIL 0. 11-27 A2-36 정체 원인은 권한 분류기 → 상시 허용 한 줄은 사장님. 재발방지: 결재 없는 새 글·정정 모두 naverwrite 에서 거부 · 남은 구멍: aside repl 직접 게시는 postlock 도장으로만 막힘(이번 범위 밖)",
+  "since": "13:38",
+  "since_at": "2026-11-27 13:38:40"
  },
  "log": [
+  {
+   "t": "13:43:54",
+   "text": "▶   — 2/7단계 · ✅ 🟧정비 nwgate 커밋 70c98ca20(push 대기·이부장 verify) — 실측: 새 글 ⑥ 도장 관문은 11-12 MT-34 direct_gate ⑤ 로 이미 있었다. 실데이터 4건(브라우저 실행만 막고): A2-36 exit 0 · 가짜 Z9-99 exit 2(⑤ 결재 없음) · B4-19 --fix --approval approve-b419fix1127 exit 0 · B4-19 --fix(카드 없음) exit 2 fix-approval. 구멍 수리: 정정이 「발행 사실」(MT-41)로 카드 없이 통과하던 것 → naverwrite 는 --approval 필수(대기열은 그대로 — 이부장이 뒤집을 수 있음). 시험 7/7·전체 1106 OK·enginemap 0·validate FAIL 0. 11-27 A2-36 정체 원인은 권한 분류기 → 상시 허용 한 줄은 사장님. 재발방지: 결재 없는 새 글·정정 모두 naverwrite 에서 거부 · 남은 구멍: aside repl 직접 게시는 postlock 도장으로만 막힘(이번 범위 밖)",
+   "actor": "정비"
+  },
   {
    "t": "13:42:45",
    "text": "🏁 maint1127verify 이부장 확인 — 끝남",
@@ -16597,11 +16602,6 @@
    "t": "12:45:18",
    "text": "✅ A2-36 완료 — 보훈증명서 발급방법 11월 30일부터 무인민원발급기 무료 — ",
    "actor": "이부장"
-  },
-  {
-   "t": "12:44:45",
-   "text": "▶ D3-16  — 3/7단계 · 12:46 FU-추가 접수: B4-19 기한후신청 마감(11-30 vs 12.1) 원문 확보 — source 에이전트 기동, 결과는 docs/source_B4-19_기한후신청마감_20261127.md 로 내려받음. 신규 후보 탐색은 병행. 결론은 14:00 보고에 한 줄(정정 필요/불필요 + 원문 문장).",
-   "actor": "3."
   }
  ],
  "currents": {
@@ -20020,8 +20020,8 @@
    "batch": "maint1127nwgate",
    "code": "",
    "title": "",
-   "step": 1,
-   "what": "🟧정비 복창: naverwrite 새 글 게시 진입점에 ⑥ 결재 도장 관문(기존 pubready/asidequeue.gate 판정 재사용) — 없으면 exit 2 · 정정은 첫 줄 「정정」+결재 카드 done 통과 · 설계도 먼저·시험 3건(A2-36 통과·가짜 거부·B4-19 정정 통과)·falsepos 한 줄 · 착수 13:40",
+   "step": 2,
+   "what": "✅ 🟧정비 nwgate 커밋 70c98ca20(push 대기·이부장 verify) — 실측: 새 글 ⑥ 도장 관문은 11-12 MT-34 direct_gate ⑤ 로 이미 있었다. 실데이터 4건(브라우저 실행만 막고): A2-36 exit 0 · 가짜 Z9-99 exit 2(⑤ 결재 없음) · B4-19 --fix --approval approve-b419fix1127 exit 0 · B4-19 --fix(카드 없음) exit 2 fix-approval. 구멍 수리: 정정이 「발행 사실」(MT-41)로 카드 없이 통과하던 것 → naverwrite 는 --approval 필수(대기열은 그대로 — 이부장이 뒤집을 수 있음). 시험 7/7·전체 1106 OK·enginemap 0·validate FAIL 0. 11-27 A2-36 정체 원인은 권한 분류기 → 상시 허용 한 줄은 사장님. 재발방지: 결재 없는 새 글·정정 모두 naverwrite 에서 거부 · 남은 구멍: aside repl 직접 게시는 postlock 도장으로만 막힘(이번 범위 밖)",
    "since": "13:38",
    "since_at": "2026-11-27 13:38:40"
   }
@@ -46756,6 +46756,17 @@
    "what": "[이부장 접수 13:40] 남은 1건 이과장 몫 여부 문의 · 다음 확인 남은 건은 48h 판독 = 이부장 몫, 이과장 몫 없음",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-27 13:43:54",
+   "bid": "maint1127nwgate",
+   "code": "",
+   "title": "",
+   "owner": "정비",
+   "what": "✅ 🟧정비 nwgate 커밋 70c98ca20(push 대기·이부장 verify) — 실측: 새 글 ⑥ 도장 관문은 11-12 MT-34 direct_gate ⑤ 로 이미 있었다. 실데이터 4건(브라우저 실행만 막고): A2-36 exit 0 · 가짜 Z9-99 exit 2(⑤ 결재 없음) · B4-19 --fix --approval approve-b419fix1127 exit 0 · B4-19 --fix(카드 없음) exit 2 fix-approval. 구멍 수리: 정정이 「발행 사실」(MT-41)로 카드 없이 통과하던 것 → naverwrite 는 --approval 필수(대기열은 그대로 — 이부장이 뒤집을 수 있음). 시험 7/7·전체 1106 OK·enginemap 0·validate FAIL 0. 11-27 A2-36 정체 원인은 권한 분류기 → 상시 허용 한 줄은 사장님. 재발방지: 결재 없는 새 글·정정 모두 naverwrite 에서 거부 · 남은 구멍: aside repl 직접 게시는 postlock 도장으로만 막힘(이번 범위 밖)",
+   "actor": "정비",
+   "sid": "330b96b0",
+   "req": "rd16bcd"
   }
  ]
 }
