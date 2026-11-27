@@ -78,6 +78,7 @@ body.l1 .slot:nth-child(n+2){display:none}
 <div class="ab" id="ab" hidden></div>
 <div class="dp" id="dp" hidden></div>
 <div class="grid" id="grid"></div>
+<script src="cp_clip.js"></script>
 <script>
 var SRC=[
  ["fix1102.html","✅ 전체 점검 체크리스트 (fix1102)"],
@@ -214,7 +215,8 @@ function renderDetail(){
   dp.querySelectorAll("a[data-h]").forEach(function(a){a.onclick=function(e){e.preventDefault();var f=a.dataset.h,ix=-1;SRC.forEach(function(s,j){if(s[0]===f)ix=j;});if(ix>=0){slots[0]=ix;set(KEY,JSON.stringify(slots));build();}else{window.open(f,"_blank");}};});
 }
 function openDetail(auto){dp.hidden=false;renderDetail();if(auto)reportNow(true);}
-function copyText(t){try{if(navigator.clipboard)navigator.clipboard.writeText(t);}catch(e){}}
+// 11-28 정비: 공용 cpCopy(보안 컨텍스트 밖 폴백·실패 알림)로 — 직접 부르면 보안 컨텍스트 밖에서 무음 실패한다(falsepos 클립보드 폴백)
+function copyText(t){if(window.cpCopy)cpCopy(t,function(){});}
 function plainReport(items){var n=function(l){return items.filter(function(i){return i.lv===l;}).length;};return "🙋 이부장 요청: [점검모니터] 🔴"+n("r")+" 🔵"+n("b")+" 🟡"+n("y")+" — "+items.map(function(i){return (i.lv==="r"?"🔴":i.lv==="b"?"🔵":"🟡")+i.t;}).join("; ").slice(0,600);}
 function reportNow(auto){
   /* 자동 보고(auto) = 🔴·🔵 중 「최근 6시간 안에 보고 안 한 새 키」가 있을 때만, 클립보드는 건드리지 않고, 실패하면 5분 쉰다.

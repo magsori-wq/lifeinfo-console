@@ -39628,6 +39628,51 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "thumb570-200-1128",
+   "added": "2026-11-28",
+   "what": "A2-38 썸네일 570_udream_2027 github.io 200 확인 후 카톡(deploy.bat 06:40 실행·Pages 빌드 중)",
+   "due": "2026-11-28",
+   "cmd": "curl -s -o /dev/null -w %{http_code} https://magsori-wq.github.io/lifeinfo-console/thumbs/570_udream_2027.png",
+   "owner": "claude",
+   "state": "done",
+   "kind": "action",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "06:42 github.io 200 · 원고 9714d8018 푸시 · 카톡 발송"
+  },
+  {
+   "id": "verify-maint1127holes-1128",
+   "added": "2026-11-28",
+   "what": "HOL-3 검수: RealGamgyulTest 3건 전부 skip(gamgyul1105 첨부 파일 부재) — 실 감귤 회귀 미실행",
+   "due": "2026-11-28",
+   "cmd": "python -m unittest tests.test_threadimg_solo -v",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cashreceipt-deduct-src-1128",
+   "added": "2026-11-28",
+   "what": "현금영수증 소득공제: NTS 혜택 페이지 공제율·한도 확보, 2026 기준·신청기한 원문 없음, 조특법 제126조의2 조문 Aside 미캡처(제108조의3에서 끊김)",
+   "due": "2026-12-01",
+   "cmd": "python -m studio.dupcheck \"2026 연말 현금영수증 소득공제\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "verify-4fd7472bb-1128",
+   "added": "2026-11-28",
+   "what": "정비 4fd7472bb 글감 루틴 빈손 종료 게이트 독립 검수 → 정비에 결과 통보(07:30 전)",
+   "due": "2026-11-28",
+   "cmd": "git branch -r --contains 4fd7472bb",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "verify ✅ 시험16 OK·범위2·4·6·enginemap0·validate FAIL0 · CLI 배선 시험은 정비 addendum"
   }
  ]
 }
