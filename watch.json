@@ -8022,8 +8022,8 @@
   {
    "id": "naver-capture-refresh",
    "added": "2026-10-05",
-   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **12일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
-   "due": "2026-11-27",
+   "what": "📸 네이버 화면 캡처 — 유입 검색어 판독이 **13일째**입니다(마지막 2026-11-15). 이 데이터가 낡으면 글감 선별(kwgap)·보강 우선순위가 전부 낡은 근거로 돕니다. 【찍을 화면】 ①애드포스트 수입 ②Creator Advisor 유입분석(유입경로·유입검색어) ③통합데이터 방문분석 ④홈 실시간 조회순위. 저장은 평소 폴더면 이부장이 읽습니다.",
+   "due": "2026-11-28",
    "cmd": "start https://creator-advisor.naver.com/naver_blog/main",
    "owner": "user",
    "verify": "python -m studio.kwgap",
@@ -39673,6 +39673,36 @@
    "by": "이부장",
    "done_at": "2026-11-28",
    "result": "verify ✅ 시험16 OK·범위2·4·6·enginemap0·validate FAIL0 · CLI 배선 시험은 정비 addendum"
+  },
+  {
+   "id": "youthrent-dup-1128",
+   "added": "2026-11-28",
+   "what": "청년월세 후보 주제중복 A1-04 — dupcheck 가 제목 유사도로 신규 판정(근접 0)했으나 같은 사업 기발행",
+   "due": "2026-12-01",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m studio.dupcheck \"청년 월세 특별지원 신청 자격 총정리 2026\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "productprop-gamgyul-dedup-1128",
+   "added": "2026-11-28",
+   "what": "12brix 감귤 제안 3건 중복(20261024-1·20261127-9·gamgyul1030) — 하나로 정리 후 결재 상정(루틴8 11-28 07:13 보고)",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.productprop list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "postpartum-source-20261128",
+   "added": "2026-11-28",
+   "what": "산후조리비 국가 원문 미확보(복지부·정책브리핑·복지로·건강보험공단 curl/WebFetch/Aside 실패) · 후보 주제가 G1-14 와 겹침",
+   "due": "2026-12-05",
+   "cmd": "python -m studio.dupcheck \"산후조리비 지원 신청 방법 총정리 2026\"",
+   "owner": "user",
+   "state": "blocked",
+   "by": "3.분석"
   }
  ]
 }
