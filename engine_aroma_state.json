@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 14:01:50",
+ "at": "2026-11-27 14:03:57",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -19,13 +19,22 @@
      "state": "done",
      "kind": "1127",
      "at": "2026-11-27"
+    },
+    {
+     "id": "aroma-am-dg-021-upd-aff-1127",
+     "state": "todo",
+     "kind": "upd",
+     "at": "2026-11-27"
     }
    ],
    "title": "PS 플러스 12월 게임 정가 합계 64,600원, 에센셜 1개월 요금의 5.4배",
-   "last_file_at": "2026-11-27 14:00",
+   "last_file_at": "2026-11-27 14:01",
    "stage": "published",
    "label": "게시됨",
-   "detail": "2026-11-27"
+   "detail": "2026-11-27",
+   "rev_wait": [
+    "aroma-am-dg-021-upd-aff-1127"
+   ]
   },
   {
    "code": "AM-BO-015",
@@ -109,7 +118,14 @@
   }
  ],
  "published_total": 85,
- "rev_wait": [],
+ "rev_wait": [
+  {
+   "code": "AM-DG-021",
+   "ids": [
+    "aroma-am-dg-021-upd-aff-1127"
+   ]
+  }
+ ],
  "cats": {
   "window": 14,
   "rows": [
@@ -235,7 +251,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-27 14:01:37",
+   "last_at": "2026-11-27 14:03:37",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -298,7 +314,7 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-27 14:00",
+   "last_at": "2026-11-27 14:01",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
    "note": "복사된 미리보기 86개",
@@ -309,8 +325,8 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": -1,
-  "cur": "사장님 지적(애드포스트 미승인·관련상품 제휴) 반영 중: 지침",
+  "last_min": 0,
+  "cur": "DG-021 제휴 수정 결재 상정 aroma-am-dg-021",
   "lvl": "ok"
  },
  "open_requests": [],
@@ -798,7 +814,7 @@
   "today": "2026-11-27",
   "done_today": 1,
   "published_today": 1,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -814,7 +830,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 2,
   "lvl": "ok"
  },
  "units": [
@@ -822,8 +838,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": -1,
-   "cur": "사장님 지적(애드포스트 미승인·관련상품 제휴) 반영 중: 지침",
+   "last_min": 0,
+   "cur": "DG-021 제휴 수정 결재 상정 aroma-am-dg-021",
    "lvl": "ok"
   },
   {
@@ -837,8 +853,8 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": -1,
-   "cur": "사장님 지적(애드포스트 미승인·관련상품 제휴) 반영 중: 지침",
+   "last_min": 0,
+   "cur": "DG-021 제휴 수정 결재 상정 aroma-am-dg-021",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -858,7 +874,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -866,7 +882,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "14:00",
+   "at": "14:01",
    "today": 4,
    "lvl": "ok",
    "order": null,
@@ -893,9 +909,30 @@
    ]
   }
  ],
- "approvals": [],
- "edits": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-021-upd-aff-1127",
+   "what": "【권고】라이브 글 AM-DG-021(PS 플러스 12월 정가 합계) 제휴 링크 추가 수정 승인 — 사장님 11-27 지시 「직접 제품이 없으면 ",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
+ "edits": [
+  {
+   "code": "AM-DG-021",
+   "title": "PS 플러스 12월 게임 정가 합계 64,600원, 에센셜 1개월 요금의 5.4배",
+   "stage": "boss",
+   "packer": ""
+  }
+ ],
  "today_events": [
+  {
+   "code": "AM-PE-005",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
+   "src": "파일 수정 시각"
+  },
   {
    "code": "AM-SP-007",
    "stage": "proc",
@@ -912,12 +949,6 @@
    "code": "AM-SP-025",
    "stage": "proc",
    "at": "2026-11-27 05:43:11",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-005",
-   "stage": "proc",
-   "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
   },
   {
@@ -996,7 +1027,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-27 14:01:37",
+     "chip": "2026-11-27 14:03:37",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1038,7 +1069,7 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-27 14:00",
+     "chip": "2026-11-27 14:01",
      "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 86개"
     }
    ]

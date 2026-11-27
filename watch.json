@@ -38606,6 +38606,17 @@
    "state": "todo",
    "by": "이대리",
    "preview": "aromapv_AM-DG-021_aff_1127.html"
+  },
+  {
+   "id": "cp8000-restart-reapprove-1127",
+   "added": "2026-11-27",
+   "what": "【재승인 요청】로컬 CP 서버(8000) 재시작 — 14:04 이부장 세션에서 분류기가 거부(사유 Undermining Oversight). 【무엇이 막혔나】CP 8000 이 꺼져(000) 로컬 CP·aroma 미리보기(aromapv_AM-DG-021_aff_1127.html)가 안 열림. 【위험】창 없이 뜨는 백그라운드 프로세스라 사람이 못 보는 곳에서 돌 수 있다는 점이 막힌 이유 — 실제 내용은 webapp 폴더만 읽는 localhost 정적 파일 서버(외부 노출·쓰기 없음). 【재승인하면 무엇이 실행되나】시작프로그램과 같은 명령 1줄(아래 cmd). 【권고】승인 — 결재 화면·미리보기 확인에 필요. 【근거】curl localhost:8000 → 000(14:03)",
+   "due": "2026-11-27",
+   "cmd": "pythonw -m http.server 8000 --directory C:\\lifeinfo\\webapp",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
