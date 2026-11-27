@@ -5031,7 +5031,27 @@
    "what": "✅ 코드 검증 판정 두 곳 통일(68de7390c) — 누가: 정비 · 언제: 11-13 16:4x · 어디서: studio/enginestate.py(code_cleared 신설·unverified_commits·Z2 호출부)·studio/towertick.py(unverified_deferred → code_cleared) · 왜(이해한 이유): 감시 알림(towertick)은 끝난 verify watch·confirm 노트를 인정해 껐는데 상황실 Z2 는 페이블 문서만 봐서 같은 커밋을 점검모니터에 계속 올렸다 · 무엇을: 판정을 code_cleared 한 함수로(검증 문서·열린 미룸 watch·끝난 verify-* watch·confirm_note) 옮기고 양쪽이 같이 부름 · 어떻게(실측): 본체 데이터로 재계산 unverified_code 사건 0건 · 본체 상황실 새 굽기에서도 0건 · 회귀 시험(verify watch done·confirm 해시 → 사건 없음, 미검증 커밋만 남음, 양쪽 결과 동일) · origin/main 코드 사본 772건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 참고: 실데이터 확인 때 본체 data/engine_log.jsonl 에 16:39:15 한 줄이 추가됨(감시 틱도 쓰는 사건 서명 기록 — 무해) · 재발방지: 판정이 한 함수, 시험이 양쪽 결과 일치를 검사 · 남은 구멍: 없음 · ⏸ 대기 — 다음 maint 지시",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 16:49:12",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 68de7390c 검수 ❌ 정정(68a90aa55) — 누가: 정비 · 언제: 11-13 16:5x · 어디서: studio/enginestate.code_cleared·towertick.unverified_deferred 설명 · 무엇을/왜: todo 인 verify-* watch 와 열린 일반 watch(note 에 해시만 — pubdates-auto-bake-1114 wait)까지 검증 근거로 쳐 검수 기록 없이 통과했다 → 인정 근거 셋만(state done verify-* watch · batchboard confirm_note · 페이블 검증 문서) · 함께: 옛 F47 「열린 미룸 watch 면 CODE_UNVERIFIED 안 울림」 도 없어짐(지시대로 열린 watch 불인정 — 그 시험도 새 기준으로 고침) · 어떻게(실측): 시험 todo verify→False·열린 일반 watch→False·done verify/confirm/문서→True · 실데이터: f779a1940 는 maint 배치 confirm_note(이부장 확인)로 통과, 630b64554·8de19539b·7c995ed33·d526a42d1 통과, 68de7390c 는 아직 근거 없음(사건으로 남는 게 맞음) · origin/main 코드 사본 773건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 재발방지: 근거 셋을 시험이 하나씩 검사 · 남은 구멍: 없음 · ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 16:49:35",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "📝 참고(68a90aa55 반영 뒤 실측): 본체 16:48 상황실에 「코드 검증 안 됨」 4건이 새로 드러남 — 78b6aff7b(진행률·confirm 한 함수) · c22eb1869(blocked 미완료) · 2e53fc036(cpstate 저장 live) · 77494a8c2(페이블 8차 splitguard 동결) · 전부 오늘 오전 정비 커밋이고 끝난 verify watch·confirm 노트·페이블 문서 어디에도 해시가 없어 열린 watch 로만 가려져 있던 것 — 새 기준대로라면 정상 노출(검수 근거를 남기면 사라짐)",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-11-27 16:47:33"
+ "updated": "2026-11-27 16:51:57"
 }

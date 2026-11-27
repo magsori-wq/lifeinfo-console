@@ -16722,17 +16722,22 @@
    ]
   }
  },
- "updated": "2026-11-27 16:47:33",
+ "updated": "2026-11-27 16:51:57",
  "current": {
-  "batch": "maint1127holes",
+  "batch": "chkmon",
   "code": "",
   "title": "",
-  "step": 4,
-  "what": "[이부장 접수 16:47] 정비 HOL-1 재작업(30970610c·ad79b2e6e) 보고 접수 — verify ✅(test_permcard_stopask 20/20·deployneed 133 raw) 확인 끝 · HOL-2·3·4 는 11-28 그대로 · 답장 불필요",
-  "since": "16:01",
-  "since_at": "2026-11-27 16:01:22"
+  "step": 1,
+  "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡7 — 즉시: 사장님 🙋승인 【권고】AM-DG-020 라이브 글에 관련 상품 제휴 칸 추가(사장님 1 · 묶음: 사건×6 반영 감사×1 (상세 python -m studio.chkmon show)",
+  "since": "18:12",
+  "since_at": "2026-11-05 18:12:35"
  },
  "log": [
+  {
+   "t": "16:51:57",
+   "text": "▶   — 1/7단계 · 🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡7 — 즉시: 사장님 🙋승인 【권고】AM-DG-020 라이브 글에 관련 상품 제휴 칸 추가(사장님 1 · 묶음: 사건×6 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람"
+  },
   {
    "t": "16:47:33",
    "text": "▶   — 4/7단계 · [이부장 접수 16:47] 정비 HOL-1 재작업(30970610c·ad79b2e6e) 보고 접수 — verify ✅(test_permcard_stopask 20/20·deployneed 133 raw) 확인 끝 · HOL-2·3·4 는 11-28 그대로 · 답장 불필요",
@@ -16927,11 +16932,6 @@
    "t": "15:55:06",
    "text": "▶   — 1/7단계 · A4-02 풍수해보험 검색설명 정정 끝: 이부장 15:53 지시대로 aside repl 로 직접 주입(에디터 본문 7914자 로드 확인 → 기존 79자 비우고 0자 확인 → 100자 입력 exact=true → 업데이트) · curl 라이브 description·og:description 둘 다 새 문구(「최대 92%」 0건) · seodesc set 후 scan state ok·mismatch 없음 · 대기열 1127155111697_A4-02_기타 drop · DB desc 커밋 ac65c43c0",
    "actor": "이과장"
-  },
-  {
-   "t": "15:52:36",
-   "text": "📄 followup 지시서 덧붙임(2026-11-27 15:52:36)",
-   "actor": "이부장"
   }
  ],
  "currents": {
@@ -17399,7 +17399,7 @@
    "code": "",
    "title": "",
    "step": 1,
-   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡7 — 즉시: 사장님 🙋승인 F4-35 함평 겨울빛축제 네이버 글에 핫팩 제휴링크 사후 삽입 승인 — · 묶음: 사건×6 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡7 — 즉시: 사장님 🙋승인 【권고】AM-DG-020 라이브 글에 관련 상품 제휴 칸 추가(사장님 1 · 묶음: 사건×6 반영 감사×1 (상세 python -m studio.chkmon show)",
    "since": "18:12",
    "since_at": "2026-11-05 18:12:35"
   },
@@ -20452,26 +20452,6 @@
   }
  ],
  "now_log": [
-  {
-   "ts": "2026-11-13 16:49:12",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "정비",
-   "what": "✅ 68de7390c 검수 ❌ 정정(68a90aa55) — 누가: 정비 · 언제: 11-13 16:5x · 어디서: studio/enginestate.code_cleared·towertick.unverified_deferred 설명 · 무엇을/왜: todo 인 verify-* watch 와 열린 일반 watch(note 에 해시만 — pubdates-auto-bake-1114 wait)까지 검증 근거로 쳐 검수 기록 없이 통과했다 → 인정 근거 셋만(state done verify-* watch · batchboard confirm_note · 페이블 검증 문서) · 함께: 옛 F47 「열린 미룸 watch 면 CODE_UNVERIFIED 안 울림」 도 없어짐(지시대로 열린 watch 불인정 — 그 시험도 새 기준으로 고침) · 어떻게(실측): 시험 todo verify→False·열린 일반 watch→False·done verify/confirm/문서→True · 실데이터: f779a1940 는 maint 배치 confirm_note(이부장 확인)로 통과, 630b64554·8de19539b·7c995ed33·d526a42d1 통과, 68de7390c 는 아직 근거 없음(사건으로 남는 게 맞음) · origin/main 코드 사본 773건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 재발방지: 근거 셋을 시험이 하나씩 검사 · 남은 구멍: 없음 · ⏸ 대기 — 다음 maint 지시",
-   "actor": "정비",
-   "sid": "330b96b0"
-  },
-  {
-   "ts": "2026-11-13 16:49:35",
-   "bid": "maint",
-   "code": "",
-   "title": "정비 담당 세션(11-11 신설)",
-   "owner": "정비",
-   "what": "📝 참고(68a90aa55 반영 뒤 실측): 본체 16:48 상황실에 「코드 검증 안 됨」 4건이 새로 드러남 — 78b6aff7b(진행률·confirm 한 함수) · c22eb1869(blocked 미완료) · 2e53fc036(cpstate 저장 live) · 77494a8c2(페이블 8차 splitguard 동결) · 전부 오늘 오전 정비 커밋이고 끝난 verify watch·confirm 노트·페이블 문서 어디에도 해시가 없어 열린 watch 로만 가려져 있던 것 — 새 기준대로라면 정상 노출(검수 근거를 남기면 사라짐)",
-   "actor": "정비",
-   "sid": "330b96b0"
-  },
   {
    "ts": "2026-11-13 17:10:07",
    "bid": "maint",
@@ -48141,6 +48121,17 @@
    "what": "[이부장 접수 16:47] 정비 HOL-1 재작업(30970610c·ad79b2e6e) 보고 접수 — verify ✅(test_permcard_stopask 20/20·deployneed 133 raw) 확인 끝 · HOL-2·3·4 는 11-28 그대로 · 답장 불필요",
    "actor": "이부장",
    "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-27 16:51:57",
+   "bid": "chkmon",
+   "code": "",
+   "title": "",
+   "owner": "",
+   "what": "🙋 이부장 요청: [점검모니터] 🔴0 🔵1 🟡7 — 즉시: 사장님 🙋승인 【권고】AM-DG-020 라이브 글에 관련 상품 제휴 칸 추가(사장님 1 · 묶음: 사건×6 반영 감사×1 (상세 python -m studio.chkmon show)",
+   "actor": "사람",
+   "sid": "",
+   "req": "ra0b770"
   }
  ]
 }

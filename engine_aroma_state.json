@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 16:51:04",
+ "at": "2026-11-27 16:51:51",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -73,13 +73,22 @@
      "state": "done",
      "kind": "approve",
      "at": "2026-11-26"
+    },
+    {
+     "id": "aroma-am-dg-020-upd-aff-1127",
+     "state": "todo",
+     "kind": "upd",
+     "at": "2026-11-27"
     }
    ],
    "title": "스팀 세일 기간 11월 — 블프는 공식 세일 아님, 겨울 세일은 12/17부터",
    "last_file_at": "2026-11-27 16:50",
    "stage": "published",
    "label": "게시됨",
-   "detail": "2026-11-26"
+   "detail": "2026-11-26",
+   "rev_wait": [
+    "aroma-am-dg-020-upd-aff-1127"
+   ]
   },
   {
    "code": "AM-PE-021",
@@ -115,7 +124,14 @@
   }
  ],
  "published_total": 85,
- "rev_wait": [],
+ "rev_wait": [
+  {
+   "code": "AM-DG-020",
+   "ids": [
+    "aroma-am-dg-020-upd-aff-1127"
+   ]
+  }
+ ],
  "cats": {
   "window": 14,
   "rows": [
@@ -241,7 +257,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-27 16:50:40",
+   "last_at": "2026-11-27 16:51:40",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -315,7 +331,7 @@
   "who": "이대리",
   "state": "대기",
   "jobs": 0,
-  "last_min": 44,
+  "last_min": 45,
   "cur": "이부장 ack rcde1bd — 16:06 이부장: 결재 회수",
   "lvl": "ok"
  },
@@ -804,7 +820,7 @@
   "today": "2026-11-27",
   "done_today": 1,
   "published_today": 1,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -828,7 +844,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 44,
+   "last_min": 45,
    "cur": "이부장 ack rcde1bd — 16:06 이부장: 결재 회수",
    "lvl": "ok"
   },
@@ -843,7 +859,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 44,
+   "last_min": 45,
    "cur": "이부장 ack rcde1bd — 16:06 이부장: 결재 회수",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -864,7 +880,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -907,55 +923,28 @@
    ]
   }
  ],
- "approvals": [],
- "edits": [],
- "today_events": [
+ "approvals": [
   {
-   "code": "AM-SP-026",
-   "stage": "proc",
-   "at": "2026-11-27 16:50:21",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-025",
-   "stage": "proc",
-   "at": "2026-11-27 05:43:11",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-BO-014",
-   "stage": "proc",
-   "at": "2026-11-27 16:50:22",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-005",
-   "stage": "proc",
-   "at": "2026-11-27 05:57:42",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-PE-022",
-   "stage": "proc",
-   "at": "2026-11-27 16:50:22",
-   "src": "파일 수정 시각"
-  },
+   "kind": "aroma",
+   "id": "aroma-am-dg-020-upd-aff-1127",
+   "what": "【권고】AM-DG-020 라이브 글에 관련 상품 제휴 칸 추가(사장님 11-27 「다른 글들도 관련 상품 제휴 링크 붙여」). 제휴 상품: 조이",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
+ "edits": [
   {
    "code": "AM-DG-020",
-   "stage": "proc",
-   "at": "2026-11-27 16:50:20",
-   "src": "파일 수정 시각"
-  },
+   "title": "스팀 세일 기간 11월 — 블프는 공식 세일 아님, 겨울 세일은 12/17부터",
+   "stage": "boss",
+   "packer": ""
+  }
+ ],
+ "today_events": [
   {
    "code": "AM-PE-021",
    "stage": "proc",
    "at": "2026-11-27 16:50:21",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-021",
-   "stage": "proc",
-   "at": "2026-11-27 06:00:18",
    "src": "파일 수정 시각"
   },
   {
@@ -965,13 +954,25 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-018",
+   "code": "AM-SP-024",
    "stage": "proc",
    "at": "2026-11-27 16:50:21",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-SP-024",
+   "code": "AM-BO-014",
+   "stage": "proc",
+   "at": "2026-11-27 16:50:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-022",
+   "stage": "proc",
+   "at": "2026-11-27 16:50:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-018",
    "stage": "proc",
    "at": "2026-11-27 16:50:21",
    "src": "파일 수정 시각"
@@ -980,6 +981,36 @@
    "code": "AM-BO-015",
    "stage": "proc",
    "at": "2026-11-27 16:50:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-021",
+   "stage": "proc",
+   "at": "2026-11-27 06:00:18",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-025",
+   "stage": "proc",
+   "at": "2026-11-27 05:43:11",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-020",
+   "stage": "proc",
+   "at": "2026-11-27 16:50:20",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-026",
+   "stage": "proc",
+   "at": "2026-11-27 16:50:21",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-PE-005",
+   "stage": "proc",
+   "at": "2026-11-27 05:57:42",
    "src": "파일 수정 시각"
   },
   {
@@ -1064,7 +1095,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-27 16:50:40",
+     "chip": "2026-11-27 16:51:40",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
