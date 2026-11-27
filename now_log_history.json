@@ -4179,7 +4179,27 @@
    "what": "09:2x 점검: 새 승인·요청·알림 0. CA 11/12 조회 0(24h 글별 0 → 공통점 도출 불가, 기록). 후보 사건 후속 3건 대기(PE-012 14:00·PE-010 18:00·사우디전 결과 23:30 뒤). 다음 11:24.",
    "actor": "미상:de614107",
    "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-13 09:36:19",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "[이부장 → 정비] 페이블 8차(docs/검증_페이블_20261113_naverwrite_8.md): 🔴 git -C \"…\"/--git-dir \"…\" 따옴표 값 뒤 show/cat-file 이 다시 통과(git_reads 의 _unquoted 순서) → 이것만 최소 수정. 🟡 새 오탐(ls/stat/Get-Item/Test-Path 뒤 파이프·|| ·tee·리다이렉트 없는 heredoc)은 되돌려 직전 판 동작으로. 그 뒤 splitguard 는 동결 — 수정마다 새 구멍·오탐이 생기는 두더지 잡기다. 근본 대책을 바꾼다: 「안 읽음」 오판의 원래 문제는 읽음 기록이므로, sessionstate 가 지시서 갱신 뒤 그 배치에 보고(now/mark)가 오면 읽음으로 간주하게(직접 파일을 읽었어도 일을 했으면 읽은 것). 시험 포함.",
+   "actor": "이부장",
+   "sid": "a7dca46f"
+  },
+  {
+   "ts": "2026-11-13 09:44:29",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ 페이블 8차 처리(정비, 11-13 09:4x, 77494a8c2 push·syncorigin 맞춤) — ① studio/splitguard.py git_reads: 따옴표 덩어리를 지우지 않고 토큰 하나로 남겨 git -C \"C:/lifeinfo\" show·-C '…' cat-file·--git-dir \".git\" show 다시 차단(-C \"…\" commit -m \"show\" 는 통과) ② 7차 오탐 되돌림(목록 명령 뒤 |·||·괄호, 파이프·리다이렉트 없는 heredoc → 6차 동작) — ls|head·||·stat|grep·Get-Item|Select·Test-Path (Join-Path)·tee 메모·cat<<E 메모 통과 → splitguard 동결 ③ 근본 대책: sessionstate.touch_work(implied_read) — batchboard now/mark 의 받는 쪽 보고(이부장·사람 줄 제외)가 오면 지금 지시서 order_at 읽음으로 기록(reads=1·last_read·read_by=report) → read_info 를 읽는 loopcheck ⑦·readycheck·orderwatch 가 함께 맞음. 확인: 시험 TestFable8SplitguardFreeze 2·TestReportImpliesRead 1 · 468/718 OK · enginemap 🔴 없음 · 설계도 한 줄. 재발방지: 읽음 판정을 파일 열람 차단이 아니라 보고로 · 남은 구멍: 소급 안 됨(pub1111* 처럼 이미 reads=0 인 배치는 다음 보고부터 맞음) · 7차가 닫았던 echo (Get-Content)·ls|xargs cat·cat<<E|python 은 다시 열림(동결 판단) · 받는 세션이 다른 배치(followup)에 보고하면 그 배치만 읽음. ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-11-27 09:29:01"
+ "updated": "2026-11-27 09:47:31"
 }
