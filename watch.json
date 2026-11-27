@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "items": [
   {
    "id": "intro-numbers",
@@ -39182,6 +39182,37 @@
    "what": "루틴5 11-27 야간검증: law.go.kr DRF 가 「사용자검증」으로 실패(C3-05 공식 대조 불가). 하루짜리인지 OC=test 막힘인지 재확인 — 이틀 연속이면 정비 지시(출처 조사 경로 영향)",
    "due": "2026-11-28",
    "cmd": "curl -s \"https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95\" | head -c 400",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel1030-source3-1128",
+   "added": "2026-11-27",
+   "what": "3. 11-28 오전 source 에이전트 3건(가요대전 재방송·국토종주 인증센터·동백카드 양산 환승) 원문 확보·topicprop add 확인 — 12:00 까지 0이면 재깨움",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "fuel1030-1128-noon",
+   "added": "2026-11-27",
+   "what": "fuel1030 11-28 12:00 보고(source 3건 결과·add 또는 탈락표)",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "todo",
+   "note": 0,
+   "by": "3.분석"
+  },
+  {
+   "id": "verify-6a31602-1128",
+   "added": "2026-11-28",
+   "what": "정비 커밋 6a31602e6 독립 검증: PERM_REAPPROVE(towertick)·permcard·stopask 존재, test_permcard_stopask+test_cpserve 33건 OK",
+   "due": "2026-11-28",
+   "cmd": "git show --stat 6a31602e6",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
