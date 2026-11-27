@@ -38472,16 +38472,6 @@
    "by": "이부장"
   },
   {
-   "id": "a236-naver-allow-1127",
-   "added": "2026-11-27",
-   "what": "【권고】이과장 창에서 「A2-36 네이버 naverwrite 게시 허용」 한 줄 입력(권한 허용은 사장님만) 【근거】⑥ 결재(12:19) 난 A2-36 보훈증명서의 네이버 게시 명령을 권한 분류기가 거부(12:45) — 원고·서식본·썸네일 준비 완료 【위험】다른 세션으로 돌리면 권한 우회 · 뒤 채널이 이 뒤에 막혀 17:00 마감 위험",
-   "due": "2026-11-27",
-   "cmd": "이과장 세션 채팅: A2-36 네이버 naverwrite 게시 허용",
-   "owner": "user",
-   "state": "blocked",
-   "by": "이부장"
-  },
-  {
    "id": "d222-card-1127",
    "added": "2026-11-27",
    "what": "D2-22 네이버 제휴 링크 상품 이미지 카드(사장님 직접 지시 12:40) — 라이브 se-oglink ≥1 확인",
@@ -38525,6 +38515,28 @@
    "by": "이부장",
    "done_at": "2026-11-27",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "push-c0699812b-1127",
+   "added": "2026-11-27",
+   "what": "정비 MV-4 커밋 c0699812b(발행 이중 트리거 차단) verify 검수 뒤 push — 발행 run 없을 때, 14:00 전",
+   "due": "2026-11-27",
+   "cmd": "git log origin/main --oneline -1 -- studio/bashguard.py",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "verify ✅6/6(시험 1099 OK·enginemap 🔴0·validate FAIL0) 뒤 13:43 push 20b74916c..c0699812b"
+  },
+  {
+   "id": "livefix-themealt-decide-1127",
+   "added": "2026-11-27",
+   "what": "livefix1019 LF-3·4 갱신/중단 판단 + themealt1120b 48h 판독(이부장 몫) — 실측 docs/실측_livefix_themealt_20261127.md",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

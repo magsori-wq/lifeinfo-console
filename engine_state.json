@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 13:29:30",
+ "at": "2026-11-27 13:42:31",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -304,7 +304,7 @@
  ],
  "aside": {
   "state": "휴면 — 이과장 직접 게시(aside repl) · 2026-12-31 재연결",
-  "queue": 9,
+  "queue": 7,
   "busy": false,
   "lvl": "ok",
   "credit_hold": "aside-credit-t2624",
@@ -486,9 +486,9 @@
  "drivers": [
   {
    "who": "이과장",
-   "state": "대기(보고 완료·다음 지시 기다림)",
+   "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 35,
+   "last_min": 2,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -497,7 +497,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 78,
+   "last_min": 91,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -505,7 +505,7 @@
   {
    "who": "Aside",
    "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 9,
+   "jobs": 7,
    "lvl": "ok",
    "role": "허브·4종착 배송"
   },
@@ -535,9 +535,9 @@
  "units": [
   {
    "who": "이과장",
-   "state": "대기(보고 완료·다음 지시 기다림)",
+   "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 35,
+   "last_min": 2,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "ok"
   },
@@ -545,7 +545,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 43,
+   "last_min": 56,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -553,7 +553,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 78,
+   "last_min": 91,
    "cur": "",
    "lvl": "ok"
   },
@@ -561,14 +561,14 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 37,
+   "last_min": 50,
    "cur": "[이부장 접수 12:52] 이대리 12:35 자가점검: 할 일",
    "lvl": "ok"
   },
   {
    "who": "Aside",
    "state": "휴면(2026-12-31 재연결 · 게시는 이과장)",
-   "jobs": 9,
+   "jobs": 7,
    "lvl": "ok"
   },
   {
@@ -1238,13 +1238,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "ok",
-  "ok": 7,
-  "stale": 0,
+  "state": "stale",
+  "ok": 6,
+  "stale": 1,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-27 13:24:11",
-  "age_min": 5
+  "at": "2026-11-27 13:38:54",
+  "age_min": 3
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1303,6 +1303,7 @@
   "POST_COMPLETE",
   "PRODUCT_TODO",
   "PUBDATES_STALE",
+  "PUBLISH_BUSY",
   "PUBLISH_RUN_DONE",
   "PUBLISH_STALL",
   "REFLECT_DRIFT",
@@ -1337,7 +1338,7 @@
  "fired": [
   {
    "day": "2026-11-27",
-   "total": 150,
+   "total": 152,
    "kinds": [
     [
      "REPORT_UNACKED",
@@ -1348,12 +1349,12 @@
      20
     ],
     [
-     "NEW_BOSS_ITEM",
-     14
+     "ASIDE_ALERT",
+     15
     ],
     [
-     "ASIDE_ALERT",
-     13
+     "NEW_BOSS_ITEM",
+     14
     ],
     [
      "ASIDE_DRAFT",
