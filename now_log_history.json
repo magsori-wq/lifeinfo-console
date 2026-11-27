@@ -4199,7 +4199,37 @@
    "what": "✅ 페이블 8차 처리(정비, 11-13 09:4x, 77494a8c2 push·syncorigin 맞춤) — ① studio/splitguard.py git_reads: 따옴표 덩어리를 지우지 않고 토큰 하나로 남겨 git -C \"C:/lifeinfo\" show·-C '…' cat-file·--git-dir \".git\" show 다시 차단(-C \"…\" commit -m \"show\" 는 통과) ② 7차 오탐 되돌림(목록 명령 뒤 |·||·괄호, 파이프·리다이렉트 없는 heredoc → 6차 동작) — ls|head·||·stat|grep·Get-Item|Select·Test-Path (Join-Path)·tee 메모·cat<<E 메모 통과 → splitguard 동결 ③ 근본 대책: sessionstate.touch_work(implied_read) — batchboard now/mark 의 받는 쪽 보고(이부장·사람 줄 제외)가 오면 지금 지시서 order_at 읽음으로 기록(reads=1·last_read·read_by=report) → read_info 를 읽는 loopcheck ⑦·readycheck·orderwatch 가 함께 맞음. 확인: 시험 TestFable8SplitguardFreeze 2·TestReportImpliesRead 1 · 468/718 OK · enginemap 🔴 없음 · 설계도 한 줄. 재발방지: 읽음 판정을 파일 열람 차단이 아니라 보고로 · 남은 구멍: 소급 안 됨(pub1111* 처럼 이미 reads=0 인 배치는 다음 보고부터 맞음) · 7차가 닫았던 echo (Get-Content)·ls|xargs cat·cat<<E|python 은 다시 열림(동결 판단) · 받는 세션이 다른 배치(followup)에 보고하면 그 배치만 읽음. ⏸ 대기 — 다음 maint 지시",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 10:41:49",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ test_batch_view 판정 갈림·confirm/진행률 확인(정비, 11-13 11:0x, 2e53fc036 push·syncorigin 맞춤) — ① 원인: studio/cpstate.status 가 실측 자동완료를 _live_state 로 그 자리에서 다시 재고, 화면 JS(cp_xlink.js)·batch_view 는 batchboard._save 가 남긴 live 칸을 봄 → 마지막 저장 뒤 seo_desc_status·DB 가 바뀐 동안 파이썬 closed·화면 doing 으로 갈림. 수정: cpstate 도 live 칸 하나로 셈(confirm 은 실행 판정이라 그 자리 실측 유지). 확인: 라이브 175배치 파이썬=JS 불일치 0 · 시험 TestCpstateUsesStoredLive 2(옛 코드면 실패) · test_batch_view 본 체크아웃 OK · 전체 OK · enginemap 🔴 없음. ② pub1111a231 은 산식 차이가 아니라 순서 — 관제탑 기록: 09:45:55 confirm 거부(A2-31 이 seo_desc_status 에 없음) → 09:46:33 seodesc scan --only A2-31 이 기록 → 그 뒤 show 100%. 단 진짜 산식 차이 1건 발견(보고만): 진행률은 blocked 를 처리됨(STATES[2]=True)으로 세고 confirm 은 done·skip 만 받음 — blocked 항목이 있으면 「100%」인데 confirm 거부가 또 생길 수 있다. 재발방지: 상태 판정 근거를 화면과 같은 칸 하나로 · 남은 구멍: 새 실측은 다음 batchboard 저장 때 반영(그 사이 화면·CP 숫자 모두 늦음, 서로는 같음) · blocked 진행률 산식은 이부장 결정 필요(처리됨으로 셀지). ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 10:49:34",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ 진행률 산식 통일(정비, 11-13 10:5x, c22eb1869 push·syncorigin 맞춤) — 이해한 이유: 진행률이 blocked 를 완료로 세어 「100%」인데 confirm 은 거부해 이부장이 오판함. 수정: studio/batchboard.py STATES blocked 세 번째 칸(처리됨) True→False — _bake(722행)·show(3011행) 진행률이 done·skip·실측 live done 만 셈 = confirm(2708행)·cpstate·화면 JS 와 같은 조건. 그대로 둔 것: 끝남 판정(1027행, 원래 blocked 제외) · wakewatch 「남은 항목」(깨울 일감 — 뜻이 다름) · mark 뒤 인계(2972행). 확인: 지금 blocked 항목 있는 배치 1개(v0inject 2/15) — show 진행률에서 blocked 2건이 빠짐 · 시험 TestProgressBlockedNotFinished 2 · 전체 OK · enginemap 🔴 없음 · 설계도 한 줄. 재발방지: 완료 조건을 STATES 한 칸으로 confirm 과 맞춤 · 남은 구멍: 없음(confirm 은 STATES 대신 자체 조건식 — 같은 뜻이지만 두 곳). ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 10:56:06",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "",
+   "what": "✅ c22eb1869 검수 ❌ 정정(정비, 11-13 11:0x, 78b6aff7b push·syncorigin 맞춤) — 이해한 이유: 진행률은 auto_daily 를 빼고 confirm 은 안 빼서 done1+auto_daily todo1 이 100% 인데 거부. 수정: studio/batchboard.py 에 item_finished(item)·progress(items) 한 곳 신설 → _bake·show 진행률과 confirm 이 모두 progress 를 씀(auto_daily 제외 · done·skip·실측 live done 만 완료 · 셀 항목 0 이면 confirm 거부). 확인: 시험 TestProgressConfirmOneFunction 2(done+auto_daily todo=(1,1)·blocked=(1,2)·auto_daily 뿐=(0,0)·세 곳이 progress 호출) · 전체 OK · enginemap 🔴 없음 · 본 체크아웃 show 정상 출력 · 설계도 한 줄. 재발방지: 완료 판정 함수 하나로 묶고 호출 수를 시험으로 고정 · 남은 구멍: cpstate.status 는 별도 식(done·skip·live 칸)이며 auto_daily 를 빼지 않음 — 화면 JS 와 같게 둔 것(routinelog 는 상시 배치). ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-11-27 09:47:31"
+ "updated": "2026-11-27 11:03:14"
 }
