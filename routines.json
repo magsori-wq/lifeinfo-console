@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27 21:15",
+ "generated": "2026-11-27 22:44",
  "routines": [
   {
    "num": 1,
@@ -158,12 +158,17 @@
    "name": "5-Lifeinfo nightly verify",
    "id": "lifeinfo-nightly-verify",
    "on": true,
-   "last": "11/26 22:33",
-   "next": "11/27 22:30",
+   "last": "11/27 22:33",
+   "next": "11/28 22:30",
    "model": "haiku-5-5",
-   "report_day": "1126",
-   "report": "11-26 야간검증: 오늘 발행 4편(D1-29·A2-35·D5-15·A5-24) 1차출처 대조 오류 0 · 미확인 D5-15 1건(molit 307)·A2-35 3건(글이 자체 명시) · D1-29 정보기준 날짜 표기(11-25 vs 게시 11-24) 이부장 판단 · law.go.kr DRF OC=test 막힘→lsInfoR.do 우회 · 크롤 변화 11건(상태 이동만, 신규 색인 0) · 근거 docs/작업기록/야간검증_20261126_*.md\n▸ 22:42 11-26 야간검증: 신규 2편(F2-22·H1-47) 대조 — F2-22 편명·창구·이관일 일치, 2027.6.30 면제 기한 미확인(미결) · H1-47 보도자료 2026.11.24 미확인(미결) · 라이브 수정 0 · 기존 글 미실시",
+   "report_day": "1127",
+   "report": "야간검증 11-27: C3-05 공식 대조 실패(law.go.kr DRF 사용자검증) → 미결·수정 0. crawl_watch 25편 시간초과 중단. 2b 보강: 동결 외 미완 콘텐츠 보강 배치 없음(v0inject·factaudit0812·naverdup0819 모두 동결).",
    "runs": [
+    {
+     "at": "11/27 22:43",
+     "link": "claude://claude.ai/epitaxy/local_a5352828-043b-46ff-8432-532be7deed90",
+     "archived": true
+    },
     {
      "at": "11/26 22:46",
      "link": "claude://claude.ai/epitaxy/local_e798c749-9411-4a1b-b12d-74f8d6dcdc8e",
@@ -182,11 +187,6 @@
     {
      "at": "11/23 22:36",
      "link": "claude://claude.ai/epitaxy/local_87f559fa-c003-461e-875c-42e0cd0c315a",
-     "archived": true
-    },
-    {
-     "at": "11/22 22:42",
-     "link": "claude://claude.ai/epitaxy/local_36ed636e-4637-4761-9741-cb73958fd341",
      "archived": true
     }
    ]

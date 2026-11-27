@@ -39173,6 +39173,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "lawdrf-userverify-1128",
+   "added": "2026-11-27",
+   "what": "루틴5 11-27 야간검증: law.go.kr DRF 가 「사용자검증」으로 실패(C3-05 공식 대조 불가). 하루짜리인지 OC=test 막힘인지 재확인 — 이틀 연속이면 정비 지시(출처 조사 경로 영향)",
+   "due": "2026-11-28",
+   "cmd": "curl -s \"https://www.law.go.kr/DRF/lawSearch.do?OC=test&target=law&type=XML&query=%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95\" | head -c 400",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
