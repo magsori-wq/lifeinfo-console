@@ -8968,6 +8968,38 @@
    "target": "verify-4fd7472bb-1128",
    "detail": "verify ✅ 시험16 OK·범위2·4·6·enginemap0·validate FAIL0 · CLI 배선 시험은 정비 addendum",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-28T07:33:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "cp8000-vbs-after-reboot",
+   "detail": "11-28 04:48:46 재부팅(LastBootUpTime) 뒤 data/cpserver.log 「2026-11-28 04:51:48 pid=9848 기동 :::8000」 — VBS 교체 뒤 첫 재부팅에서 cpserve 가 8000 을 띄움 · readycheck ✅ CP 화면 127.0.0.1:8000 응답(07:3x 정비 실측)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T07:35:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-86db50b70-1128",
+   "detail": "verify ✅: origin 포함·세 곳 added>=2026-11-28 동일·/api/file 경로탈출 10종 403·test_topiccard 11 OK·falsepos🔴0·enginemap🔴0·validate FAIL0. 남은 것: falsepos _r_card_start_literal_1128 미커밋(정비에 통지)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T07:37:08",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "card-start-literal-drift-1128",
+   "detail": "9ed37653f(origin/main): 굽기 대신 falsepos _r_card_start_literal_1128 이 approval.html 카드 시행일 리터럴 = topicquota.CARD_START 를 감시 — 지금 ['2026-11-28'] 일치 [] · CARD_START 모의 변경 시 🔴 · 시험 tests/test_falsepos_1128 CardStartLiteralTest 2건",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T07:37:40",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-a4ee38dbb-enter-slot-1128",
+   "detail": "450c924e0 verify ✅: slot_of(H1-15)=엔터, LABEL_OVERRIDE H 13편 전부 엔터(H1-13 topicprop 없음)",
+   "via": "cli"
   }
  ]
 }
