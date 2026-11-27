@@ -4229,7 +4229,17 @@
    "what": "✅ c22eb1869 검수 ❌ 정정(정비, 11-13 11:0x, 78b6aff7b push·syncorigin 맞춤) — 이해한 이유: 진행률은 auto_daily 를 빼고 confirm 은 안 빼서 done1+auto_daily todo1 이 100% 인데 거부. 수정: studio/batchboard.py 에 item_finished(item)·progress(items) 한 곳 신설 → _bake·show 진행률과 confirm 이 모두 progress 를 씀(auto_daily 제외 · done·skip·실측 live done 만 완료 · 셀 항목 0 이면 confirm 거부). 확인: 시험 TestProgressConfirmOneFunction 2(done+auto_daily todo=(1,1)·blocked=(1,2)·auto_daily 뿐=(0,0)·세 곳이 progress 호출) · 전체 OK · enginemap 🔴 없음 · 본 체크아웃 show 정상 출력 · 설계도 한 줄. 재발방지: 완료 판정 함수 하나로 묶고 호출 수를 시험으로 고정 · 남은 구멍: cpstate.status 는 별도 식(done·skip·live 칸)이며 auto_daily 를 빼지 않음 — 화면 JS 와 같게 둔 것(routinelog 는 상시 배치). ⏸ 대기 — 다음 maint 지시",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 11:24:10",
+   "bid": "aroma",
+   "code": "",
+   "title": "",
+   "owner": "이대리",
+   "what": "11:2x 점검: 새 승인·요청·알림 0, CA 조회는 09:24 이후 갱신 없음(11/12 0). 후보는 14:00 PE-012 오픈 후·18:00 PE-010 오픈 후·23:30 사우디전 후 3건 대기(사건 전이라 쓸 수 없음). 다음 13:24(14:00 오픈 직전·직후 확인).",
+   "actor": "미상:de614107",
+   "sid": "de614107"
   }
  ],
- "updated": "2026-11-27 11:03:14"
+ "updated": "2026-11-27 11:25:58"
 }
