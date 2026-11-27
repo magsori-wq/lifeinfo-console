@@ -670,6 +670,7 @@ function build(vert){
 }
 /* 마디 → 운전자(누가 그 과정에 개입하나). 운전자 이름은 engine_state.drivers 의 who 와 같다 */
 const DRV_AT=RM.DRV_AT;
+function termFree(n,used){const x0=n.dx!=null?n.dx:n.cx-n.w/2+8,cols=Math.max(1,Math.floor((n.cx+n.w/2-x0-4)/G.cell));return Math.max(0,cols*n.rows-used)}   /* cellPos 와 같은 칸 계산 — 남은 칸 수 */
 function cellPos(n,i){
   const x0=n.dx!=null?n.dx:n.cx-n.w/2+8,cols=Math.max(1,Math.floor((n.cx+n.w/2-x0-4)/G.cell));const col=i%cols,row=Math.floor(i/cols);
   if(row>=n.rows)return null;
@@ -882,7 +883,9 @@ function render(s){
         setDot(id,x.code,px,py,(x.lvl==="amber"?"am":"")+(hid?" hid":""),nodeCenter(src));
         const tx=dots[id]&&dots[id].g.querySelector("text");if(tx)tx.textContent=sum?"+"+(tot-1):x.code}
       else{const q=edgePt(src,k,.55);setDot(id,x.code,q.x-4,q.y-4+i*14,x.lvl==="amber"?"am":"",nodeCenter(src))}}})});
-  TERM.forEach(([k])=>{const n=G.nodes[k];((ch[k]||{}).done||[]).forEach(x=>{if(inTransit.has(x.code))return;const p=cellPos(n,slot(k));if(p)setDot("d|"+x.code+"|"+k,x.code,p.x,p.y,"dn"+(k!=="blog"?" "+exCls(x.who):""),null)})});
+  TERM.forEach(([k])=>{const n=G.nodes[k],L=((ch[k]||{}).done||[]).filter(x=>!inTransit.has(x.code)),fr=termFree(n,cnt[k]||0),sh=L.length>fr?Math.max(0,fr-1):L.length;   /* 11-27 (z) 넘치면 마지막 칸 「+N」 — 조용히 안 그려지는 칸 0 */
+    L.slice(0,sh).forEach(x=>{const p=cellPos(n,slot(k));if(p)setDot("d|"+x.code+"|"+k,x.code,p.x,p.y,"dn"+(k!=="blog"?" "+exCls(x.who):""),null)});
+    if(sh<L.length&&fr>0){const p=cellPos(n,slot(k)),N=L.length-sh;if(p)setDot("d+|"+k+"|"+N,"+"+N,p.x,p.y,"dn more",null,()=>pickTerm(k))}});
   {const em=document.getElementById("exmode");if(em){em.textContent=s.exec_error?"⚠️ 주체 기록 읽기 실패 — 전부 회색으로 표시("+s.exec_error+")":(s.supply_mode==="lee"?"· 지금 공급 = 이과장 직접(직접 게시 모드)":s.supply_mode==="aside"?"· 지금 공급 = Aside 대기열":"· 지금 공급 모드 모름");em.style.color=s.exec_error?"var(--rd)":""}}
   renderCarrier(s,slot);
   sweepDots();
@@ -1222,7 +1225,7 @@ addEventListener("hashchange",()=>{hashDone="";goHashEng()});setInterval(goHashE
 /* ---------- 화면 낡음 방어(11-20 maint1120phone4) — 사장님 폰이 05:00 전 화면을 그대로 보고 「안 고쳐졌다」 고 오해한 사고 ----------
    ① 「마지막 갱신」 항상 표시 · 3분 넘게 낡으면 노란 띠(10분이면 빨강) ② 탭이 다시 보일 때 즉시 갱신 · 3분 넘게 숨었으면 reload · 페이지 복원(pageshow persisted)이면 reload
    ③ BUILD(bake 가 engine.html 내용 해시를 박는다) ≠ engine_build.txt 면 reload(10분 안 2회까지, 그래도 다르면 캐시 안내 띠) */
-const BUILD="7a4dab349c7f";let hiddenAt=0,buildStuck="";
+const BUILD="9ad501b91a40";let hiddenAt=0,buildStuck="";
 const STALE_SEC=180,STALE_RED_SEC=600;
 function pad2(n){return String(n).padStart(2,"0")}
 function freshTick(){

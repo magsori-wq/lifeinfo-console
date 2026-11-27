@@ -4843,7 +4843,27 @@
    "what": "14:1x PE-012 오픈 후 실측: NOL 페이지 14:12 기준 상태 표기 여전히 「예매대기」(기준선 13:3x 와 동일), 찜 2,513→2,521(+8), 뮤지컬 주간 20위 동일, 1인 4매 동일. 페이지 표기 갱신 지연인지 오픈 상태인지 미확정 → 판매 결과(매진·좌석) 단정 불가, 반응 글은 보류. 17:52 PE-010 18:00 직전 기준선 예약, 이후 15:24 정기 점검.",
    "actor": "미상:de614107",
    "sid": "de614107"
+  },
+  {
+   "ts": "2026-11-13 14:38:45",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 페이블 정정2건 🟡 정정(7c995ed33) — 누가: 정비 · 언제: 11-13 14:4x · 어디서: studio/enginestate.py(planned_who·plan 굽기)·webapp/engine.html(edgeWho·flow 유지)·studio/towertick.py(wake_event)·studio/wakewatch.py·studio/whoami.py(resolve) · 왜(이해한 이유): 관 색이 도착한 다른 글 기준이었고, 모름일 때 흐름이 오히려 약해 보였고, 못 푼 주소에도 깨우라는 문장이 나갔다 · 무엇을: ② 관 = 아직 안 올라간 글의 예정 주체(직접 게시 모드→이과장·Aside 대기열/진행 지시→Aside·없음→회색, 섞이면 최근 발행 글) ③ 흐름 중 모름도 flow 클래스·굵기 유지, 색만 회색 ⑥ WAKE_SESSION·PRODUCT_TODO 는 못 풀면 「⛔ 주소 못 풂 · 깨우지 않음」, wakewatch 는 wake exit 0 일 때만 도장 ① resolve 는 Desktop 제목 못 읽으면 ok=False · 어떻게(실측): 본체 14:37 굽기 정상(exec_error '')·관제 틱 14:37 정상, 127.0.0.1:8000 지금 관 4개 = 흐르는 글 0 이라 기본색 3px · 흐르는 글 넣은 시험 렌더 lee→#38BDF8 3px 실선 / aside→#F472B6 3px 7·5 점선 / 모름→#6B7280 3px(굵기 유지) · 시험: origin/main 코드 사본 기준 759건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 재발방지: 동작 시험 6건 · 남은 구멍(기록만): ④ 같은 날 순서 ⑤ 같은 날 Aside 확인 지시가 이과장 게시를 덮을 가능성(실데이터 0건) · DB 읽기 실패는 exec_error 미표시 · ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 14:38:45",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 페이블 정정2건 🟡 정정(7c995ed33) — 누가: 정비 · 언제: 11-13 14:4x · 어디서: studio/enginestate.py(planned_who·plan 굽기)·webapp/engine.html(edgeWho·flow 유지)·studio/towertick.py(wake_event)·studio/wakewatch.py·studio/whoami.py(resolve) · 왜(이해한 이유): 관 색이 도착한 다른 글 기준이었고, 모름일 때 흐름이 오히려 약해 보였고, 못 푼 주소에도 깨우라는 문장이 나갔다 · 무엇을: ② 관 = 아직 안 올라간 글의 예정 주체(직접 게시 모드→이과장·Aside 대기열/진행 지시→Aside·없음→회색, 섞이면 최근 발행 글) ③ 흐름 중 모름도 flow 클래스·굵기 유지, 색만 회색 ⑥ WAKE_SESSION·PRODUCT_TODO 는 못 풀면 「⛔ 주소 못 풂 · 깨우지 않음」, wakewatch 는 wake exit 0 일 때만 도장 ① resolve 는 Desktop 제목 못 읽으면 ok=False · 어떻게(실측): 본체 14:37 굽기 정상(exec_error '')·관제 틱 14:37 정상, 127.0.0.1:8000 지금 관 4개 = 흐르는 글 0 이라 기본색 3px · 흐르는 글 넣은 시험 렌더 lee→#38BDF8 3px 실선 / aside→#F472B6 3px 7·5 점선 / 모름→#6B7280 3px(굵기 유지) · 시험: origin/main 코드 사본 기준 759건 중 check-ignore 환경 1건 외 OK·enginemap 🔴0 · 재발방지: 동작 시험 6건 · 남은 구멍(기록만): ④ 같은 날 순서 ⑤ 같은 날 Aside 확인 지시가 이과장 게시를 덮을 가능성(실데이터 0건) · DB 읽기 실패는 exec_error 미표시 · ⏸ 대기 — 다음 maint 지시",
+   "actor": "정비",
+   "sid": "330b96b0"
   }
  ],
- "updated": "2026-11-27 14:14:59"
+ "updated": "2026-11-27 14:40:02"
 }

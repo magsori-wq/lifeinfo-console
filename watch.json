@@ -38689,6 +38689,36 @@
    "state": "todo",
    "kind": "approve",
    "by": "towertick 자동(CP 서버 감시)"
+  },
+  {
+   "id": "verify-maint1127cp8000-1127",
+   "added": "2026-11-27",
+   "what": "maint1127cp8000 P8K-1~3 검수: 서버실행_8000.bat 이 ASCII 아님(줄28 한글 12바이트, 커밋 전부터 존재·이 커밋이 만든 것 아님) — 기준은 ASCII·CRLF 라 ❌ · 설계도 엔트리의 cpserve.decide 는 실제로 towertick.server_decide",
+   "due": "2026-11-27",
+   "cmd": "python -c \"b=open('webapp/서버실행_8000.bat','rb').read();print('nonascii',sum(x>127 for x in b),'bareLF',b.count(b'\\n')-b.count(b'\\r\\n'))\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "reverify-maint1127-1127",
+   "added": "2026-11-27",
+   "what": "maint1127 정정 2건(0bfc7c575 cpserve·f8fe2594b stopask) 재검수",
+   "due": "2026-11-27",
+   "cmd": "cd /c/lifeinfo && python -m unittest tests.test_cpserve tests.test_permcard_stopask -v && python -m studio.enginemap",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "routine-snapshot-refresh-1128",
+   "added": "2026-11-27",
+   "what": "루틴 스케줄러 스냅샷 갱신(36시간 한도) — list_scheduled_tasks → routinehealth snapshot --from-json",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.routinehealth",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

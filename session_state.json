@@ -3845,8 +3845,8 @@
   "aroma": {
    "state": "working",
    "reads_since_report": 0,
-   "last_report": "2026-11-27 14:03:31",
-   "last_what": "DG-021 제휴 수정 결재 상정 aroma-am-dg-021-upd-aff-1127(미리보기 첨부): 관련 상품 2개(호후 충전독·조이트론 스탠드)+대가성 문구 3곳, V0 PASS 90·필수 0, 라이브 백업 완",
+   "last_report": "2026-11-27 14:20:28",
+   "last_what": "⏸ 대기 — 사장님 결재 aroma-am-dg-021-upd-aff-1127(DG-021 관련 상품 제휴 2개 추가, 기한 11/28). 자가점검 14:20 할 일 0건",
    "reads": 1,
    "last_order_at": "일시 기록 안 됨",
    "last_read": "2026-11-27 05:39:57",
@@ -7415,15 +7415,16 @@
    "last_what": "H1-45 발행은 이부장 트리거(run 44940400949 ✓, 라이브 200) · 후속 4채널은 pub1122c230h145 완료 기록 참조"
   },
   "maint1122phonefx": {
-   "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-11-23 13:51:46",
-   "last_read": "2026-11-23 13:52:13",
+   "reads": 3,
+   "reads_since_report": 3,
+   "last_order_at": "2026-11-27 14:43:45",
+   "last_read": "2026-11-27 14:44:05",
    "owner": "정비",
-   "state": "working",
-   "last_report": "2026-11-23 13:59:23",
-   "last_what": "✅ (y) 커밋 55cf2a91f — 배포는 이부장(화면 빌드 7a4dab349c7f). 엔진 상황실의 노드 박스·허브·채널 박스·게이지 바탕 23개 도형 칠을 div 층(#fillLayer, 지도 아래)으로 옮김:",
-   "read_by": "report"
+   "state": "waiting",
+   "last_report": "2026-11-27 14:42:57",
+   "last_what": "🟧정비 F4-34 누락 원인 확정(코드·실데이터): ① 폰 종착지 칸 = cellPos 1열×rows:2(engine.html 591행 rows:2·cell 64 → 열 1개) → 3번째부터 조용히 안 그림(+N 표",
+   "read_by": "report",
+   "waiting_since": "2026-11-27 14:44"
   },
   "draft1122e219": {
    "reads": 1,
@@ -8220,25 +8221,26 @@
    "last_what": "NW-1 시험 근거 보충: python -m unittest tests.test_naverwrite_gate → Ran 7 tests OK · python -m unittest discover -s tests → R"
   },
   "maint1127bossask": {
-   "reads": 1,
-   "reads_since_report": 0,
-   "last_order_at": "2026-11-27 13:50:47",
-   "last_read": "2026-11-27 13:52:56",
-   "owner": "정비",
-   "state": "working",
-   "last_report": "2026-11-27 14:08:37",
-   "last_what": "✅ BA-1 완료(커밋 6a31602e6, push 대기): ①설계도 TO14 ②towertick PERM_REAPPROVE — 막힘 보고(⏸⛔⚠🙋+분류기/권한 거부/denied+막힘 동사) → watch add -"
-  },
-  "maint1127cp8000": {
    "reads": 2,
    "reads_since_report": 0,
-   "last_order_at": "2026-11-27 14:14:30",
-   "last_read": "2026-11-27 14:14:49",
+   "last_order_at": "2026-11-27 14:15:23",
+   "last_read": "2026-11-27 14:24:55",
    "owner": "정비",
    "state": "working",
-   "last_report": "2026-11-27 14:15:09",
-   "last_what": "📋 복창(정비 14:16): P8K-1 CP 서버 기동 한 곳(cpserve, 재사용 끔+SO_EXCLUSIVEADDRUSE, 두 번째 기동은 로그 남기고 실패, data/cpserver.log) · P8K-2 re"
+   "last_report": "2026-11-27 14:37:27",
+   "last_what": "6a31602e6+f8fe2594b origin/main 포함 확인 · permcard(권한 거부 보고→결재함 재승인 카드 TO14)·stopask(이부장 Stop: 마지막 답변 「사장님 하실 일」에 창에+입력이면 "
+  },
+  "maint1127cp8000": {
+   "reads": 1,
+   "reads_since_report": 0,
+   "last_order_at": "2026-11-27 14:29:02",
+   "last_read": "2026-11-27 14:29:36",
+   "owner": "정비",
+   "state": "working",
+   "last_report": "2026-11-27 14:38:39",
+   "last_what": "설계안만(시스템 설정 무변경) docs/설계안_CP서버_상시기동_20261127.md — 커밋 90142ca56(git merge-base --is-ancestor 90142ca56 origin/main → ok) ",
+   "read_by": "report"
   }
  },
- "updated": "2026-11-27 14:15"
+ "updated": "2026-11-27 14:44"
 }
