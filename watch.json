@@ -9951,8 +9951,10 @@
    "due": "2026-10-12",
    "cmd": "git log -3 --format='%h %s' --grep='루틴6'; grep -n 'commit' C:/Users/magso/.claude/scheduled-tasks/lifeinfo-daily-publish/SKILL.md | head",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "C2-18 초안·네이버 원고·썸네일·인스타·쓰레드 원고가 git 에 커밋됨(f86f48a3c · 3296f0f81 · 발행 9222a4c98) — 커밋 안 된 채 큐만 있던 상태 해소(git log --grep=C2-18 실측)"
   },
   {
    "id": "v0reject-c2-18",
@@ -10698,8 +10700,10 @@
    "due": "2026-10-23",
    "cmd": "git ls-files -d | wc -l",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "git ls-files -d | wc -l = 0(11-28 실측) — 현재 추적 파일 삭제 0건. 재발은 validate_db 11 대량삭제 검사가 잡는다"
   },
   {
    "id": "naver-login-aside-1015",
@@ -16757,8 +16761,10 @@
    "due": "2026-11-08",
    "cmd": "python studio/adsense.py status",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "재검토 결과 도착: 11-26 8차 반려 NEEDS_ATTENTION(루틴7 d83944da7) · 11-28 adsense.py status = NEEDS_ATTENTION 실측. 11-19 한 번 GETTING_READY 였다가 반려로 되돌아감"
   },
   {
    "id": "xlink-h133",
@@ -16851,8 +16857,10 @@
    "due": "2026-10-30",
    "cmd": "git -C C:/lifeinfo-deploy status --porcelain thumbs/",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "git -C C:/lifeinfo-deploy status --porcelain thumbs/ = 0줄(11-28 실측) — 미추적 썸네일 없음"
   },
   {
    "id": "deploy-thumb-432",
@@ -17111,8 +17119,10 @@
    "due": "2026-10-30",
    "cmd": "python tools/rulemap.py",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "tools/rulemap.py 는 selfcheck.py 28) 에 배선돼 있다(grep 실측 11-28 · selfcheck 28)"
   },
   {
    "id": "xlink-g117",
@@ -39214,7 +39224,106 @@
    "due": "2026-11-28",
    "cmd": "git show --stat 6a31602e6",
    "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "✅ 코드 존재(towertick PERM_REAPPROVE 3곳·studio/permcard.py·stopask.py), unittest tests.test_permcard_stopask tests.test_cpserve → Ran 33 OK"
+  },
+  {
+   "id": "verify-f8fe259-1128",
+   "added": "2026-11-28",
+   "what": "정비 커밋 f8fe2594b 독립 검증: stopask.check 가 last_assistant_message 우선·transcript 폴백",
+   "due": "2026-11-28",
+   "cmd": "git show --stat f8fe2594b",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "✅ studio/stopask.py:108-111 last_assistant_message 먼저 읽음, test_check_last_assistant_message_first 포함 unittest 33건 OK"
+  },
+  {
+   "id": "verify-90142ca-1128",
+   "added": "2026-11-28",
+   "what": "정비 커밋 90142ca56 독립 검증: cpserve 배타 바인드·점유 시 exit 3·로그, towertick CPSERVE_DOWN",
+   "due": "2026-11-28",
+   "cmd": "git show --stat 90142ca56",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "✅ cpserve.py SO_EXCLUSIVEADDRUSE(:79-80)·test_main_busy_exits_3_and_logs 포함 unittest 33건 OK · towertick CPSERVE_DOWN 존재 · enginemap 신호 91/54, 🔴0"
+  },
+  {
+   "id": "verify-3ca19d1-1128",
+   "added": "2026-11-28",
+   "what": "정비 커밋 3ca19d133 독립 검증: cpserve stderr 로그를 python 기동에서도",
+   "due": "2026-11-28",
+   "cmd": "git show --stat 3ca19d133",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "✅ cpserve.py main() sys.stderr=_LogStream() 무조건 설정(:190-191, diff 확인), test_main_restores_stderr 포함 OK"
+  },
+  {
+   "id": "verify-ledger1030-1128",
+   "added": "2026-11-28",
+   "what": "배치 ledger1030 11-27 12:10 보고 검증 ❌: 보고 수치 174 닫힘/84 열림(합 258) ≠ 현재 파일 171/83(keep 254행)",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard order --id ledger1030",
+   "owner": "claude",
    "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "d317-draft-check-1128",
+   "added": "2026-11-28",
+   "what": "D3-17 초안 진행 확인 — 이과장 지시서 수신(읽음)·초안 파일·pubqueue add 여부. 01:30 까지 안 읽혔으면 재깨움, 초안 오면 v0 에이전트 → 결재 상정",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "d317-brandconnect-1128",
+   "added": "2026-11-28",
+   "what": "D3-17 「공공분양 일정 2027」 네이버 단계 전 브랜드커넥트 상품 검색(3. 몫·brandconnect 에이전트) — 이과장 affiliate none 은 블로그스팟 기준",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.affiliate",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-d317draft-1128",
+   "added": "2026-11-28",
+   "what": "D3-17 검수: 커밋 origin/main 포함 · 초안 파일 존재·첫줄 주석·코드후보 OK · 썸네일 파일 존재(우측하단 코드 육안 미확인) · pubqueue 적재 OK · bodydup 0.043 🟢 · affiliate none 기록 OK · 배치: d317draft1128 100% 1/1 (draft1128d130 은 D1-30 배치, 같은 날 0% 잔존 draft1128d317 1건)",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장"
+  },
+  {
+   "id": "deploy-thumb-569",
+   "added": "2026-11-28",
+   "what": "이부장: deploy.bat 실행 — 발행 대기 글 썸네일(569_public_housing_2027.png)이 github.io 404(V0 통과 뒤 미리보기와 묶어 1회)",
+   "due": "2026-11-28",
+   "cmd": "cmd /c \"C:\\lifeinfo\\deploy.bat <nul\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "미상"
+  },
+  {
+   "id": "v0reject-d3-17",
+   "added": "2026-11-28",
+   "what": "🔴 V0 반려 확인 요청 — D3-17 「공공분양 일정 2027 — 수도권 5만6000호, 우리 지구는 몇 분기?」. 검사자 v0 · 2026-11-28T00:28. 반려 사유(전문): [반려] 계산예시(남은일수 34/124/215/307·지분적립형 5.1억x25%)·분양vs임대 비교·함정은 있으나, 같은 보도(newsId 148976588) 본문 안 표 이미지 image05(분양 약3.5만, 33개 지구·지분적립형 괄호)·image06(임대 약2.1만, 약40개 지구)가 전 지구 물량을 싣고 있는데 원고는 '나머지 위치는 보도에 없다'고 단정(1절 박스·함정4·7절③④·정리 5번째 줄) — 52%/21% 계산 전제가 틀림. [통과 조건] ①image05·06 의 지구별 물량 전체 표를 넣고 52%/21% 박스·함정4 삭제·재작성(분기는 본문에 이름 나온 지구만 있고 나머지는 '보도 미기재'로, 분기 지어내지 말 것) ②7절③ 정정: 지분적립형 지구별 = 남양주왕숙 776·수원당수2 461·파주운정 419·파주운정3 736·평택고덕 313(합 2,705), 5절 '남양주왕숙·수원당수 등'에 파주운정·평택고덕 추가 ③2절 '서울 분양 중 이름 나온 곳은 방학역·쌍문역 두 곳' 정정(서울도봉 1,709·마곡 304도 표에 있음) ④본문 반올림값(왕숙 6,800·수원당수 3,200 등)과 표 정확값(6,777·837+2,347 등) 중 하나로 통일하고 어느 쪽인지 표기 ⑤1절 달력: 왕숙 분양을 2·4분기 행에, 안산장상을 4분기 행에, 임대 왕숙·부천대장을 4분기 행에도 넣기. 이미지 URL: https://www.korea.kr/newsWeb/resources/attaches/2026.11/26/image05.jpg · image06.jpg (source_D1-30 파일엔 없음 — 재검사 때 이 URL만 확인). 재대조 불필요(통과 확인됨): 일수 4개·5.1억 계산·25%/15%x5/20년·총량·지역 배분·임대 9,000/1만·18개월 가상 표시·바이라인·YMYL·heading·dupcheck·bodydup 0.043. (같은 내용: `python -m studio.v0check gate --code D3-17`) 고치면 이 항목은 재검사 통과 시 자동으로 닫힌다. 이 항목이 열려 있는 동안 그 글은 발행되지 않는다. 반려가 과하다고 보이면 관제탑에 말할 것 — 판정을 다시 본다. 【권고】고쳐서 재검사 — 승인하시면 관제탑이 수정 지시서를 냅니다. 【근거】반려 사유 위. 【위험】접으면 그 글 재고가 빠진다.",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.v0check gate --code D3-17",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
    "by": "이부장"
   }
  ]

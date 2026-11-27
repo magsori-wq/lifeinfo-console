@@ -8712,6 +8712,94 @@
    "target": "fuel1030-2400-check-1127",
    "detail": "3. 23:31 최종 보고 수신 — 신규 add 0·탈락표 9줄(원문 미확보 다수). 11-28 오전 source 에이전트 3건 추가 지시(addendum 23:48). 02:00 결재함 상정분 없음",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:03:21",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-6a31602-1128",
+   "detail": "✅ 코드 존재(towertick PERM_REAPPROVE 3곳·studio/permcard.py·stopask.py), unittest tests.test_permcard_stopask tests.test_cpserve → Ran 33 OK",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:03:25",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-f8fe259-1128",
+   "detail": "✅ studio/stopask.py:108-111 last_assistant_message 먼저 읽음, test_check_last_assistant_message_first 포함 unittest 33건 OK",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:03:30",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-90142ca-1128",
+   "detail": "✅ cpserve.py SO_EXCLUSIVEADDRUSE(:79-80)·test_main_busy_exits_3_and_logs 포함 unittest 33건 OK · towertick CPSERVE_DOWN 존재 · enginemap 신호 91/54, 🔴0",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:03:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-3ca19d1-1128",
+   "detail": "✅ cpserve.py main() sys.stderr=_LogStream() 무조건 설정(:190-191, diff 확인), test_main_restores_stderr 포함 OK",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:05:20",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "rulemap-selfcheck-wire-1030",
+   "detail": "tools/rulemap.py 는 selfcheck.py 28) 에 배선돼 있다(grep 실측 11-28 · selfcheck 28)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:05:26",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-untracked-thumb-1029",
+   "detail": "git -C C:/lifeinfo-deploy status --porcelain thumbs/ = 0줄(11-28 실측) — 미추적 썸네일 없음",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:05:31",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "files-vanished-1015",
+   "detail": "git ls-files -d | wc -l = 0(11-28 실측) — 현재 추적 파일 삭제 0건. 재발은 validate_db 11 대량삭제 검사가 잡는다",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:05:35",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "routine6-uncommitted-1012",
+   "detail": "C2-18 초안·네이버 원고·썸네일·인스타·쓰레드 원고가 git 에 커밋됨(f86f48a3c · 3296f0f81 · 발행 9222a4c98) — 커밋 안 된 채 큐만 있던 상태 해소(git log --grep=C2-18 실측)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:05:38",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "adsense-result-1108",
+   "detail": "재검토 결과 도착: 11-26 8차 반려 NEEDS_ATTENTION(루틴7 d83944da7) · 11-28 adsense.py status = NEEDS_ATTENTION 실측. 11-19 한 번 GETTING_READY 였다가 반려로 되돌아감",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:18:39",
+   "actor": "세션(CLI)",
+   "action": "topicprop.drop",
+   "target": "D1-30",
+   "detail": "중분류 오류(D1=증명·민원) — 같은 글감을 주거 중분류 D3-17 로 재배정(이부장 00:20). 버림 아님",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:28:38",
+   "actor": "v0",
+   "action": "v0check.fail",
+   "target": "D3-17",
+   "detail": "[반려] 계산예시(남은일수 34/124/215/307·지분적립형 5.1억x25%)·분양vs임대 비교·함정은 있으나, 같은 보도(newsId 148976588) 본문 안 표 이미지 image05(분양 약3.5만, 33개 지구·지분적립형 괄호)·image06(임대 약2.1만, 약40개 지구",
+   "via": "cli"
   }
  ]
 }
