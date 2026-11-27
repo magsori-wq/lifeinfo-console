@@ -39451,12 +39451,34 @@
   {
    "id": "xlink-d317",
    "added": "2026-11-28",
-   "what": "🔗 D3-17 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D3-17",
+   "what": "🔗 D3-17 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D3-17",
    "due": "2026-11-28",
    "cmd": "python studio/blogger.py crosslink --code D3-17",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "nohand-gate-verify-1128",
+   "added": "2026-11-28",
+   "what": "글감 루틴 빈손 종료 금지 — 정비 게이트(maint1128nohand) 적용 확인 + 루틴4 21:00·루틴6 23:55 회차가 추천1+후보1 을 냈는지",
+   "due": "2026-11-29",
+   "cmd": "python -m studio.batchboard order --id maint1128nohand && python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-pe-023-1128",
+   "added": "2026-11-28",
+   "what": "【권고】AM-PE-023 「2026 연말 시상식 일정, 가요대축제·가요대전 둘 다 서는 6팀」(36자, 공연·연예, 검색형) 게시 승인. 【근거】V0 1차 85 REVISE(시상식 아닌 가요제 구분) → 반영 후 재검 PASS 93·필수 0. 자동완성 「연말 시상식」 1위 「2026 연말 시상식 일정」 맨 앞. 제목 후보: ①본안 ②2026 연말 시상식 일정 — KBS 9팀 중 6팀이 SBS에도 ③가요대축제 방청 신청 12월 1일, 가요대전과 겹치는 6팀. 관련 검색어 반영: 일정·라인업·방청·2026 연말 가요제 / 뺀 것: 티켓팅(magsori 영역). 뉴스에 없는 것: SBS 공식 라인업 45개×KBS 공식 출연 9팀 직접 대조(겹침 6·KBS 단독 3) + KBS 방청 체크리스트(14시 교환·신분증 실물). crossdup 🟢0.33/0.12, magsori H1-33(SBS 단독 정보형)과 각도 다름. 썸네일: 자체 그래픽(두 원 겹침, 이전 글과 다름). 임베드: SBS NOW 공식 30주년 티저 BY0P1iER8Lk. 제휴: 오페라글라스(G7Njgk1U)·보조배터리(GvWImREB) — 방청·공연장 관람 독자, 상품 이미지 2장. 【위험】KBS·SBS 추가 라인업 발표 시 겹침 수 변동(글에 명시). MBC·골든디스크·AAA 일정은 「확인 못 함」. 게시 직전 상품 가격·평점·출연 명단 재확인.",
+   "due": "2026-11-28",
+   "cmd": "승인: aroma-am-pe-023-1128",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
