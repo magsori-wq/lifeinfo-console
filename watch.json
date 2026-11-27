@@ -39282,8 +39282,10 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.pubqueue list",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "초안 00:30 도착·V0 3차 통과 00:42·결재함 상정"
   },
   {
    "id": "d317-brandconnect-1128",
@@ -39337,8 +39339,10 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.batchboard order --id d317v0fix1128",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "3차 V0 🟢 00:42 · 결재함 1번"
   },
   {
    "id": "fix-d317-district-count-1128",
@@ -39347,8 +39351,10 @@
    "due": "2026-11-29",
    "cmd": "grep -c '분양 15곳\\|나머지 15개\\|분양 15개' 공공분양일정2027수도권5만6000호_글_HTML.txt",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "827974812 커밋·V0 3차 확인 · 「분양 15곳」 0건"
   }
  ]
 }
