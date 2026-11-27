@@ -8544,6 +8544,30 @@
    "target": "seodesc-a402-92-1127",
    "detail": "aside repl 직접 주입 16:0x · 라이브 meta·og:description 100자 새 문구(92% 0건) · seodesc set 후 scan mismatch 없음(state ok)",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-27T16:04:25",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-D3-16-1127",
+   "detail": "16:08 이부장: _gsc_requested.txt 에 '# 2026-11-27 add' 주석과 함께 기록돼 있었고, gsc_req_dates.json 만 재생성이 안 된 상태였다. gsc_log.py dates 실행 → D3-16=2026-11-27 확인",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-27T16:21:44",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-bb6f730-1127",
+   "detail": "bb6f73070bb6f7307018dbea547ce9361fd9347a0612c1ed7 ✅ test_cpserve 13건 OK(P8K-4 시험 3건 포함·--apply 는 temp 사본에서만) · --help 는 usage만 출력(--apply 미실행) · cpserve.owner_state/last_start/boot_time·readycheck 🟡 분기 diff 확인 · 주의: 실제 시작프로그램 VBS 는 16:21 현재 cpserve 로 교체된 상태(15:42, 결재 커밋 114f402ee 뒤) — 이 커밋이 한 것이 아님",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-27T16:21:56",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-2992458-1127",
+   "detail": "2992458c583e24ecb77585eff3d757f71f8a3cc5 ✅ test_engine_termdone 7건 OK(node 실행 포함) · order_channel_done 시각 최신순·시각 없음=뒤·코드순 · phone 2칸+「+2」 클릭 · PC 8칸+「+3」 · 이동 중 칸 차감 확인",
+   "via": "cli"
   }
  ]
 }

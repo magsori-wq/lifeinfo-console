@@ -38853,8 +38853,10 @@
    "due": "2026-11-27",
    "cmd": "python -c \"import json;print('D3-16' in json.load(open('webapp/gsc_req_dates.json',encoding='utf-8'))['dates'])\"",
    "owner": "claude",
-   "state": "todo",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "16:08 이부장: _gsc_requested.txt 에 '# 2026-11-27 add' 주석과 함께 기록돼 있었고, gsc_req_dates.json 만 재생성이 안 된 상태였다. gsc_log.py dates 실행 → D3-16=2026-11-27 확인"
   },
   {
    "id": "f435-naver-affiliate-insert-1127",
@@ -38863,10 +38865,46 @@
    "due": "2026-11-27",
    "cmd": "python -m studio.affiliate block --code F4-35 --channel naver  # 승인 뒤 이과장이 https://blog.naver.com/magsori8975/224488546823 수정 → 본문 맨 앞에 출력 블록 삽입 → 저장",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "verify": "curl -s -A Mozilla/5.0 'https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224488546823' | grep -c 5kPG38Uj",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "verify-HOL-1-1127",
+   "added": "2026-11-27",
+   "what": "HOL-1 검수 ❌: stopask.ask_problem 이 「남겨 주십시오」형 창 요청(예: 「이과장 창에서 「C2-14 … 」 남겨 주십시오」)을 못 잡음(실측 None). batchboard show 에 HOL-1 결과 수치(30/61/31) 없음 · maint1127holes 0/4",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -c \"import sys;sys.path.insert(0,'C:/lifeinfo');from studio import stopask as sa;print(sa.ask_problem('🔴 사장님 하실 일: 이과장 창에서 「C2-14 인스타 캡션·쓰레드 정정 허용」을 남겨 주십시오.'))\"",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "verify-bb6f730-1127",
+   "added": "2026-11-27",
+   "what": "bb6f73070 독립 검증",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m unittest tests.test_cpserve -v",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "bb6f73070bb6f7307018dbea547ce9361fd9347a0612c1ed7 ✅ test_cpserve 13건 OK(P8K-4 시험 3건 포함·--apply 는 temp 사본에서만) · --help 는 usage만 출력(--apply 미실행) · cpserve.owner_state/last_start/boot_time·readycheck 🟡 분기 diff 확인 · 주의: 실제 시작프로그램 VBS 는 16:21 현재 cpserve 로 교체된 상태(15:42, 결재 커밋 114f402ee 뒤) — 이 커밋이 한 것이 아님"
+  },
+  {
+   "id": "verify-2992458-1127",
+   "added": "2026-11-27",
+   "what": "2992458c5 독립 검증",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python -m unittest tests.test_engine_termdone -v",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "2992458c583e24ecb77585eff3d757f71f8a3cc5 ✅ test_engine_termdone 7건 OK(node 실행 포함) · order_channel_done 시각 최신순·시각 없음=뒤·코드순 · phone 2칸+「+2」 클릭 · PC 8칸+「+3」 · 이동 중 칸 차감 확인"
   }
  ]
 }
