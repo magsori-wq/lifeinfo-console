@@ -38468,8 +38468,10 @@
    "due": "2026-11-27",
    "cmd": "python -m studio.autoflow --limit 1",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "14:01 이부장 실측: 네이버 PostView 200·인스타 200·쓰레드 200·블로그스팟 본문에 네이버·쓰레드 링크 각 1·gsc_requested.json 에 URL 있음 → 4채널 완결(17:00 전)"
   },
   {
    "id": "d222-card-1127",
@@ -38566,12 +38568,43 @@
   {
    "id": "xlink-a236",
    "added": "2026-11-27",
-   "what": "🔗 A2-36 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-36",
+   "what": "🔗 A2-36 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code A2-36",
    "due": "2026-11-27",
    "cmd": "python studio/blogger.py crosslink --code A2-36",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "inspect-partial-overwrite-1127",
+   "added": "2026-11-27",
+   "what": "searchconsole inspect 전수(583편)가 백그라운드로 도는 중(11-27 14:01 현재 123/583) — 중간 저장이 webapp/index_status.json 을 덮어쓴다. 현재 파일 checked_at 2026-11-27, total 582, indexed 0 (불완전 파생 — 0 은 실측 결과가 아니다). 완료 전에 이 파일로 색인 판정·절반 판독을 하면 오판한다",
+   "due": "2026-11-27",
+   "cmd": "python -c \"import json;s=json.load(open('webapp/index_status.json',encoding='utf-8'));print(s['checked_at'],s['total'],s['indexed'])\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "nogovlink-feed-cap-1127",
+   "added": "2026-11-27",
+   "what": "studio/_nogovlink_check.py 가 출처 링크 0편을 냄 — 실측은 23편(외부 링크 0) · 박스(class=src) 없음 35편. 원인: 피드를 start-index 1·101·201·251 만 읽어 본문 348/583 만 확인(모수 오류). 전 페이지 재측정은 C:/Users/magso/AppData/Local/Temp/claude/d127bbacf628e9d6/a7dca46f-f53c-4660-a070-cda6cdeb5140/scratchpad/measure_byline.py",
+   "due": "2026-11-27",
+   "cmd": "PYTHONIOENCODING=utf-8 python C:/Users/magso/AppData/Local/Temp/claude/d127bbacf628e9d6/a7dca46f-f53c-4660-a070-cda6cdeb5140/scratchpad/measure_byline.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "aroma-am-dg-021-upd-aff-1127",
+   "added": "2026-11-27",
+   "what": "【권고】라이브 글 AM-DG-021(PS 플러스 12월 정가 합계) 제휴 링크 추가 수정 승인 — 사장님 11-27 지시 「직접 제품이 없으면 유사·관련 상품으로 조사해 첨부」 반영. ① 글 맨 앞·링크 아래·맨 끝 대가성 문구 ② 「출처·기준일」 칸 앞에 「🛒 드래곤볼 제노버스 2 오래 할 PS5 이용자라면 — 패드 충전 용품 2가지(제휴)」: 호후 듀얼센스 충전독 18,900원(4.88·리뷰 147, naver.me/GvWIj9iy) · 조이트론 PS5 쿨링 차징 스탠드 34,800원(4.84·리뷰 995, naver.me/Gmp5TVKj) ③ 출처 칸 「제휴 링크 없음」→제휴 2개 표기. 본문·표·사진 2·영상 1 그대로 【근거】브랜드커넥트 직접 상품(PS 플러스 이용권·PSN 카드·두 게임) 14개 검색어 0건 → 같은 독자(PS5 이용자) 관련 상품 중 평점 4.8↑·리뷰 100↑만 선정, 스마트스토어 상세 직접 확인, 단축링크→channelProductNo 대조 일치. 독립 V0 PASS 90·필수 0(권고 4건 반영). 수수료율은 글에 쓰지 않음. 라이브 백업 rev/AM-DG-021_20261127_aff_before.html(구성요소 20·이미지 2·영상 1). 참고: 애드포스트 미승인 → 이 블로그 수익은 제휴뿐(지침 반영) 【위험】PS4 이용자에겐 안 맞는 상품(본문 표기) · 호환품(정품 아님), 프로 호환·어댑터 포함 확인 못 함(본문 표기) · 가격 변동 → 수정 직전 재확인 · 본문 교체 방식이라 수정 후 이미지·영상 수 대조",
+   "due": "2026-11-28",
+   "cmd": "승인: aroma-am-dg-021-upd-aff-1127 (DG-021 관련 상품 제휴 2개 추가)",
+   "owner": "user",
+   "kind": "approve",
+   "state": "todo",
+   "by": "이대리"
   }
  ]
 }
