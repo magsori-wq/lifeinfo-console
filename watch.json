@@ -38675,8 +38675,10 @@
    "due": "2026-11-28",
    "cmd": "curl -s -o /dev/null -w %{http_code} http://127.0.0.1:8000/approval.html",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "재부팅 뒤 15:07 이부장 실측: 8000 approval/engine/m.html 200 · 8001 응답 없음(임시 서버 종료됨). 단 8000 은 시작프로그램 Lifeinfo_Server_8000.vbs 의 plain http.server 가 띄움(cpserve 아님) → maint1127cp8000 P8K-4 로 정정 지시"
   },
   {
    "id": "ledger1030-confirm-1127",
@@ -38727,6 +38729,37 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.routinehealth",
    "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-p8k4-vbs-1127",
+   "added": "2026-11-27",
+   "what": "정비 P8K-4: 시작프로그램 Lifeinfo_Server_8000.vbs 를 plain http.server 에서 cpserve 로 바꿨는지 검수",
+   "due": "2026-11-27",
+   "cmd": "cat \"$APPDATA/Microsoft/Windows/Start Menu/Programs/Startup/Lifeinfo_Server_8000.vbs\" | iconv -f utf-16 -t utf-8 | grep -n cpserve",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "lf3-1700-check-1127",
+   "added": "2026-11-27",
+   "what": "LF-3 출처 박스 17:00 마감 — 끝낸 편과 남은 편을 실측(getByPath)으로 확인",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.batchboard show | grep livefix1019",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "afflink-20261127-9",
+   "added": "2026-11-27",
+   "what": "🛒 제휴 링크 발급 요청 — 20261127-9. 상품: 제주 서귀포 감귤, 12brix 초고당도, 5kg, 1박스 (13,900원 · 리뷰 2,857 · 평점 4.5). 관련성: 겨울 감귤 수요 정점(연말 선물·겨울 과일) · 리뷰 2,857건·평점 4.5 · 같은 계열 10/2 하우스감귤 글과 다른 상품. 전환신뢰 순(제휴상품_판정기준.md B안)으로 고른 것이고, 리뷰수는 판매량이 아니라 대리 지표입니다. 권고: 토스 쉐어링크는 수수료 10%로 쿠팡(~3%)보다 높습니다 — 같은 상품이 여러 채널에 있으면 수수료가 높은 쪽이 유리하나, 가격차가 크면 안 팔리므로 화면에서 함께 보고 정하십시오.",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.tosslink link 2659903585",
+   "owner": "user",
+   "kind": "approve",
    "state": "todo",
    "by": "이부장"
   }
