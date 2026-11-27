@@ -4545,7 +4545,27 @@
    "what": "✅ 지시서 배달사고 근본 수정(8ac85503f·9bf94e891) — 누가: 정비 · 언제: 11-13 12:5x · 어디서: studio/whoami.py(OWNER_ALIAS·norm_owner 이전, resolve·resolve_line·tidy 신설)·batchboard(owner_route_lines·_default_owner·owner)·crew·towertick·loopcheck·autoflow·wake·falsepos · 왜(내가 이해한 이유): 지시서 쪽과 등록부 쪽이 담당 표기 사전을 따로 써서 「3.」↔「3.분석」이 안 이어졌고, 빈 담당·표기 갈래로 자동 깨움이 지시서를 못 봤다 · 무엇을: (가) 표 하나를 둘이 같이 씀 + 3.분석·4.·정비·maint 별칭, owner·빈 담당 자동 채움은 표준 표기로 저장(dispatch 수신자 「이과장(작업 세션)」 이 자동 채움에서 빠지던 것 포함) (나) 담당→등록부 세션ID→지금 ListAgents 이름·local_ 을 whoami.resolve 한 함수로, order·owner 실행 때 📮 줄 출력·못 풀면 🔴🔴🔴 경고(거부 안 함 — 사장님·Aside·루틴·이대리는 대상 아님 표시) (다) crew·towertick.session_addr·loopcheck 깨움 줄이 resolve 를 같이 부름 (라) whoami --tidy(dry-run 기본) — 라이브 등록부 dry-run 결과 정리할 것 없음(이부장 옛 줄·옛 이과장 eb42e59e 는 이미 superseded, 루틴9 변형 3줄은 다른 역할로 둠) · 어떻게(실측): 메인 checkout 에서 owner_route_lines 3.→「3.네이버… · local_c21ebebc」, 정비→local_9ed081f6, 이과장→「이과장 세션 인계 · local_d978f7db」, 빈 담당→🔴 경고 · 시험 734/484 OK·enginemap 🔴0 · 기존 batch.json 담당 값은 안 고침(읽을 때 맞춤) · ⑤ worktree 세션 파일 위치는 보고만(rm 안 함) · 재발방지: 표기 사전·주소 풀이가 각각 한 곳이고 지시서 등록 때 바로 경고 · 남은 구멍: 보호 파일 whoislee 의 LEE·LEE_NO 상수·main 출력과 ALIAS 는 그대로(관제탑·사장님 몫), 등록부 ref(대괄호 6자)는 낡을 수 있어 이름·세션ID 로만 보냄 · 다음 사람: 이부장이 order 실행 때 📮/🔴 줄을 보고 담당 확인 · ⏸ 대기 — 다음 maint 지시",
    "actor": "정비",
    "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 12:33:09",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "✅ 검수 ❌⑥ 정정(0756b9477) — 누가: 정비 · 언제: 11-13 12:3x · 어디서: studio/mainroot.py(신설)·sessionstate.py·batchboard.py · 무엇을/왜: sessionstate 가 __file__ 기준이라 워크트리에서 낡은 session_state.json 에 써 정비 보고가 CP 에 안 남았다 → 본체 경로 판정을 mainroot.main_root 한 함수로(batchboard._board_root 도 이것), 삼키던 except 3곳 stderr 경고 · 어떻게: 워크트리에서 sessionstate.DATA=C:\\lifeinfo\\webapp\\session_state.json 확인, 시험 487/737 OK·enginemap 🔴0 · __file__ 기준으로 webapp/ 에 쓰는 다른 모듈(정적 탐색, 단서 수준) 약 70개 — 배달 관련 핵심: whoami(등록부 session_names.json — 워크트리에서 등록하면 사본에 씀)·asidequeue·watch 연동 approvalcount·enginestate·towertick·leewake·idaeriwake · 고칠지는 이부장 판단 · crew 「정비 맡은 지시서 없음」= crew.duties 가 항목 state 미완만 세는데 maint 항목 MT-1~5 전부 done(새 지시는 지시서 본문뿐·항목 없음)이라 0 — cpstate 는 order_at·읽음으로 판정해 「진행」, 두 판정이 다름(항목을 추가하면 맞음) · 재발방지: 경로 한 함수·실패 경고 · 남은 구멍: 위 모듈 목록 · 다음: 상황실 색 구분 진행 중",
+   "actor": "정비",
+   "sid": "330b96b0"
+  },
+  {
+   "ts": "2026-11-13 12:35:38",
+   "bid": "maint",
+   "code": "",
+   "title": "정비 담당 세션(11-11 신설)",
+   "owner": "정비",
+   "what": "👤 사장님 직접 지시(12:35): 「정비 세션 C:\\lifeinfo 에서 다시 열어」 — 이부장 지시: 정비는 ①지금 손대던 변경을 경로 지정 커밋·push(syncorigin) ②mcp__ccd_directory__change_directory 로 C:\\lifeinfo 로 이동(워크트리 rm 금지) ③이동 뒤 첫 턴에 pwd·git -C C:/lifeinfo log -1 로 위치 확인 후 batchboard now 보고 ④그 뒤 상황실 색 작업 이어서",
+   "actor": "이부장",
+   "sid": "a7dca46f"
   }
  ],
- "updated": "2026-11-27 12:23:27"
+ "updated": "2026-11-27 12:37:23"
 }
