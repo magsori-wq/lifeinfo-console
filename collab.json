@@ -1,6 +1,6 @@
 {
- "rev": "86d145170",
- "uncommitted": 1651,
+ "rev": "1b38912ba",
+ "uncommitted": 1669,
  "agents": [
   {
    "id": "A",
@@ -11,22 +11,22 @@
    "drives": "발행·색인·안전망 기능 에이전트 구동",
    "recent": [
     {
-     "h": "86d145170",
-     "d": "11-27 06:00",
-     "s": "[사장님] 결재: watch_approve aroma-am-sp-007-upd-1127 (운영콘솔)"
+     "h": "1b38912ba",
+     "d": "11-27 06:15",
+     "s": "[에이전트] 정비 maint1127verify MV-2 재검2: 늘 통과 Bash 허용 문자에서 줄바꿈·$·백틱·< > 제외(줄바꿈·$()·백틱·리다이렉트로 다른 명령을 붙이면 대상) · 틱의 커밋 해시도 세션 보고 줄(REPORT_UNACKED·TOWER_OWED)에서만 — ASIDE_ALERT 같은 외부 문구 제외 · 시험 1건(우회 4종·외부 문구·보고 줄) · 설계도 VD·사건"
     },
     {
-     "h": "82c92f82d",
-     "d": "11-27 05:59",
-     "s": "[사장님] 결재: watch_approve aroma-am-pe-005-upd-1127 (운영콘솔)"
+     "h": "ca4c6e848",
+     "d": "11-27 06:12",
+     "s": "[에이전트] 정비 maint1127verify MV-2 재검 수리: 승인 감시 틱은 완료 신호 명시 줄만(REPORT_UNACKED 줄의 완료 낱말 · 「커밋 <해시7>」 줄) — DRAFT_READY·POST_COMPLETE 안내 템플릿의 「완료보고」로 정상 알림마다 발동하던 것 · 늘 통과 Bash 는 명령 전체가 batchboard/watch/now/wakeread 한 개일 때만(; && | 로 붙이면 대상) · 시험 2건 추가(템플릿 틱→주입 안 됨·REPORT_UNACKED/커밋 해시→주입·명령 전체 일치) · 설계도 VD·사건"
     },
     {
-     "h": "0fbe78db7",
-     "d": "11-27 05:59",
-     "s": "[사장님] 결재: watch_approve aroma-am-sp-025-upd-1127 (운영콘솔)"
+     "h": "fad6a5d03",
+     "d": "11-27 06:05",
+     "s": "[에이전트] 정비 maint1127verify MV-2: 관제탑 세션에 완료 보고(다른 세션 메시지·승인 감시 줄 + 커밋 해시·고쳤·반영·완료)가 들어오면 lifeinfo-tower 모드가 VERIFY_DISPATCH 줄을 문맥에 붙이고 그 턴 첫 직접 시험(Bash python·git show·naver-blog·Read)을 1회 거절 — verify 에이전트를 부르면 풀림·두 번째부터 통과·batchboard/watch/now/SendMessage 늘 통과 · 설계도 마디 VD · enginemap 이 모드 파일도 대조 · 시험 6건"
     }
    ],
-   "last": "11-27 06:00",
+   "last": "11-27 06:15",
    "state": "active"
   },
   {
