@@ -39103,6 +39103,28 @@
    "preview": "aromapv_AM-DG-020_aff_1127.html",
    "done_at": "2026-11-27",
    "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "aroma-aff-post-0907-1128",
+   "added": "2026-11-27",
+   "what": "aroma 제휴 이미지판 9편+미반영 8건 11-28 09:07 예약 게시 결과 확인(이대리 aroma 배치 보고·라이브)",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard order --id aroma",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "fuel1030-2100-check-1127",
+   "added": "2026-11-27",
+   "what": "3. fuel1030 21:00 확인 — 오늘 topicprop add ≥1 또는 버린 사유 표(17:11 추가지시), 없으면 재깨움",
+   "due": "2026-11-27",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1,
+   "by": "이부장"
   }
  ]
 }
