@@ -1,8 +1,9 @@
 {
- "computed_at": "2026-11-27 20:29:34",
- "source_head": "2df6f0012436",
+ "computed_at": "2026-11-28 05:51:37",
+ "source_head": "17d979daeddf",
  "ids": [
-  "D3-17"
+  "D3-17",
+  "toss-openapi-unauthorized-1126"
  ],
  "posts": [
   {
@@ -12,13 +13,13 @@
    "eng": "public_housing_2027",
    "ch": {
     "naver": {
-     "url": null,
+     "url": "https://blog.naver.com/magsori8975/224495416875",
      "files": [
       {
        "label": "네이버 원고",
        "path": "osmu/네이버용_공공분양일정2027수도권5만6000호.txt",
        "img": false,
-       "exists": false
+       "exists": true
       },
       {
        "label": "첨부 이미지",
@@ -27,7 +28,7 @@
        "exists": true
       }
      ],
-     "light": "todo"
+     "light": "done"
     },
     "threads": {
      "url": null,
@@ -36,29 +37,34 @@
        "label": "쓰레드 캡션",
        "path": "osmu/쓰레드용_공공분양일정2027수도권5만6000호.txt",
        "img": false,
-       "exists": false
+       "exists": true
+      },
+      {
+       "label": "실사진",
+       "path": "insta/thread/thread_D3-17_public_housing_2027.png",
+       "img": true,
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "ready"
     },
     "instagram": {
-     "url": null,
+     "url": "https://www.instagram.com/p/DgQlBmxE0pW/",
      "files": [
       {
        "label": "인스타 캡션",
        "path": "insta/캡션_공공분양일정2027수도권5만6000호.txt",
        "img": false,
-       "exists": false
+       "exists": true
       }
      ],
-     "light": "todo"
+     "light": "done"
     }
    }
   }
  ],
  "publish": [],
- "actions": [],
- "actionsFuture": [
+ "actions": [
   {
    "id": "toss-openapi-unauthorized-1126",
    "what": "【권고】토스 쉐어링크에 거래처 인증 문의(sharelink-biz@toss.im) — 문안 docs/토스_거래처인증_문의_20261126.md(빈칸 2곳) 【근거】11-26 07:1x부터 상품정보 API(인기순위) 거부 SHARELINK_OPENAPI_PARTNER_NOT_AUTHORIZED, 이부장 재현 · 링크 발급 API 는 11:36 정상(새꼬막 링크 발급 성공) 【위험】인기순위 새 수집 불가 → 루틴8·9 후보는 누적 목록 검색만",
@@ -67,5 +73,6 @@
    "state": "blocked",
    "kind": "action"
   }
- ]
+ ],
+ "actionsFuture": []
 }

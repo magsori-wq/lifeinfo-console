@@ -39367,6 +39367,96 @@
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
+  },
+  {
+   "id": "restore-deleted-1128",
+   "added": "2026-11-28",
+   "what": "【권고】재부팅 뒤 지워진 추적 파일 복구 — lifeinfo 1,749개(insta·thumbs·thumbs_naver·osmu·progress.html)·lifeinfo-deploy 77개. 이부장 복구 명령이 자동분류기에 막힘 【근거】git ls-files -d 1749 · deploy ' D' 77 · validate FAIL(thumb 없음) · bake 실패(progress.html 없음) 【위험】복구는 지워진 파일만 HEAD 에서 되살림(수정 중 파일·커밋 영향 없음). 안 하면 deploy.bat 실행 시 github.io 썸네일 삭제→라이브 글 이미지 404",
+   "due": "2026-11-28",
+   "cmd": "git ls-files -d -z -- insta thumbs thumbs_naver osmu webapp/progress.html | xargs -0 git checkout -- ; git -C C:/lifeinfo-deploy ls-files -d -z | xargs -0 git -C C:/lifeinfo-deploy checkout --",
+   "owner": "user",
+   "state": "done",
+   "note": 1,
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "05:38 사장님 승인(채팅 「복구허용」) 뒤 복구 — lifeinfo 1,748개(thumbs 63 포함)·deploy 77개 되살림, 남은 1개 aromapv_PE-011.html 은 미리보기 정상 삭제분"
+  },
+  {
+   "id": "deleted-files-cause-1128",
+   "added": "2026-11-28",
+   "what": "11-28 05:19경 lifeinfo insta·thumbs 등 1,749개·deploy thumbs 77개 삭제 원인 규명(날짜순 아님 · Temp 승인워크트리 없음) — 복구 전까지 deploy.bat 금지",
+   "due": "2026-11-28",
+   "cmd": "git ls-files -d | wc -l; git -C C:/lifeinfo-deploy ls-files -d | wc -l",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "routine2-rerun-1128",
+   "added": "2026-11-28",
+   "what": "사장님 05:30 지시 — 루틴2 재조사 재실행(local_05608ce5) 결과: A·B 글감 최소 2편 topicprop add 됐나 확인 후 선별·초안 지시",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "energy-voucher-a231-dec9-check",
+   "added": "2026-11-28",
+   "what": "A2-31 제목의 12월 9일 지급이 정책뉴스 2026.11.10 원문에 없음(본문 9일 0건) — 확인 필요",
+   "due": "2026-12-01",
+   "cmd": "grep -c 12월 9일 docs/source_에너지바우처동절기_20261128.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "b306-preview-window-1128",
+   "added": "2026-11-28",
+   "what": "B3-06 원문 갱신 필요: 국세청 뉴스레터 1184호·블로그 기준 연말정산 미리보기 운영 10/28~12/18 (docs/source_연말정산간소화_20261128.md), 기존 파일은 10/03 미공지 판정",
+   "due": "2026-12-01",
+   "cmd": "grep -n '12월 18일\\|10월 28일' C:/lifeinfo/docs/source_B3-06_연말정산미리보기_20261003.md",
+   "owner": "claude",
+   "state": "todo",
+   "by": "3.분석"
+  },
+  {
+   "id": "deepread-1128-scan-gap",
+   "added": "2026-11-28",
+   "what": "12월 시행 스캔: 보도목록 1~30쪽 중 11-20~11-28 12월 시행 후보 중복 확인 완료 · pressReleaseList 날짜필터(startDate) 무시 실측 · C1-19 희귀질환 본인부담 7% 원문 확정(의결 11-24) 갱신 필요",
+   "due": "2026-12-01",
+   "cmd": "python -m studio.dupcheck 희귀 중증난치 본인부담 7%",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1128,
+   "by": "3.분석"
+  },
+  {
+   "id": "aroma-am-bo-016-1128",
+   "added": "2026-11-28",
+   "what": "【권고】AM-BO-016 새 글 게시(방송·OTT, 홈판형): 「크로스2 공개일 12월 25일, 1편은 2주 1위·5주 TOP10이었다」(39자). 【근거】넷플릭스 뉴스룸 11-26 〈크로스 2〉 12/25 공개 발표. 자동완성(11-28 05:26): 크로스2·영화 크로스2·크로스2 공개일·크로스 2 개봉·크로스 2 넷플릭스. 관련 검색어 반영: 공개일·개봉·ott·정보(질문형 소제목). 뺀 것: 나무위키·촬영지·평점 등 글이 답하지 않는 말. 뉴스에 없는 것: 넷플릭스 공식 순위 사이트 Tudum 2024 주간표 5장 직접 확인(1·1·4·8·10위, 5주 합계 1,770만 회·3,070만 시간 제 계산), 공개 전 체크리스트. 제목 후보: ②영화 크로스2 넷플릭스 12/25 — 1편 5주 시청수 1,770만 회 ③크로스 2 개봉 아닌 넷플릭스 공개. 겹침 검사: lifeinfo 🟢0.08·aroma 🟢0.14, magsori8975 0건. 썸네일: 자체 그래픽(1편 주간 순위 막대, 이전 글과 다름). 영상: 넷플릭스 코리아 공식 티저(bAygxXqKlLk). 사진: 포스터·스틸 미사용. 제휴 상품: 오브룸 빔프로젝터·송강 무릎 담요(크리스마스 집에서 보는 영화, 상품 사진 포함, 대가성 문구 3곳). 독립 V0 PASS 94점·필수 0건(권고 2건 반영). 【위험】게시 직전 상품 가격·평점 재확인, 공개 시각은 발표문에 없어 쓰지 않음.",
+   "due": "2026-11-28",
+   "cmd": "승인: aroma-am-bo-016-1128",
+   "owner": "user",
+   "kind": "approve",
+   "state": "done",
+   "by": "이대리",
+   "preview": "aromapv_AM-BO-016.html",
+   "done_at": "2026-11-28",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
+  },
+  {
+   "id": "xlink-d317",
+   "added": "2026-11-28",
+   "what": "🔗 D3-17 교차링크 보완 — naver 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code D3-17",
+   "due": "2026-11-28",
+   "cmd": "python studio/blogger.py crosslink --code D3-17",
+   "owner": "claude",
+   "state": "todo",
+   "by": "naver-link"
   }
  ]
 }
