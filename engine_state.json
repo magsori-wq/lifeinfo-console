@@ -1,5 +1,5 @@
 {
- "at": "2026-11-27 13:43:19",
+ "at": "2026-11-27 13:53:33",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,24 +11,24 @@
     "code": "A2-36",
     "title": "보훈증명서 발급방법 11월 30일부터 무인민원발급기 무",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-27",
-    "last_at": "",
+    "last_at": "2026-11-27",
     "lvl": "amber"
    }
   ],
@@ -476,7 +476,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 3,
+   "last_min": 2,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -485,7 +485,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 92,
+   "last_min": 102,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -525,7 +525,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 3,
+   "last_min": 2,
    "cur": "테마 rel=alternate 시험 2단계 — 적용·확인(이과",
    "lvl": "ok"
   },
@@ -533,7 +533,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 57,
+   "last_min": 67,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -541,7 +541,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 92,
+   "last_min": 102,
    "cur": "",
    "lvl": "ok"
   },
@@ -549,7 +549,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 51,
+   "last_min": 61,
    "cur": "[이부장 접수 12:52] 이대리 12:35 자가점검: 할 일",
    "lvl": "ok"
   },
@@ -697,6 +697,13 @@
   "naver": {
    "done": [
     {
+     "code": "A2-36",
+     "title": "보훈증명서 발급방법 11월 30일부터 무인민원발급기 무",
+     "url": "https://blog.naver.com/magsori8975/224494542980",
+     "at": "2026-11-27",
+     "who": "lee"
+    },
+    {
      "code": "D2-22",
      "title": "면허정지·취소 감경, 음주 전력 있으면 2027년 2월",
      "url": "https://blog.naver.com/magsori8975/224493927337",
@@ -788,12 +795,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "A2-36",
-     "title": "보훈증명서 발급방법 11월 30일부터 무인민원발급기 무"
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -1066,6 +1068,13 @@
   },
   {
    "code": "A2-36",
+   "stage": "naver",
+   "at": "2026-11-27 13:50:18",
+   "src": "now_log 게시 URL",
+   "who": "lee"
+  },
+  {
+   "code": "A2-36",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -1231,8 +1240,8 @@
   "stale": 1,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-27 13:38:54",
-  "age_min": 4
+  "at": "2026-11-27 13:50:01",
+  "age_min": 3
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1326,7 +1335,7 @@
  "fired": [
   {
    "day": "2026-11-27",
-   "total": 152,
+   "total": 159,
    "kinds": [
     [
      "REPORT_UNACKED",
@@ -1338,27 +1347,27 @@
     ],
     [
      "ASIDE_ALERT",
-     15
+     18
     ],
     [
      "NEW_BOSS_ITEM",
      14
     ],
     [
+     "BOSS_APPROVAL",
+     11
+    ],
+    [
      "ASIDE_DRAFT",
      10
     ],
     [
-     "BOSS_APPROVAL",
-     10
+     "CHKMON_REPORT",
+     8
     ],
     [
      "TOWER_OWED",
      8
-    ],
-    [
-     "CHKMON_REPORT",
-     6
     ]
    ]
   },
