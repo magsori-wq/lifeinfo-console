@@ -39355,6 +39355,16 @@
    "by": "이부장",
    "done_at": "2026-11-28",
    "result": "827974812 커밋·V0 3차 확인 · 「분양 15곳」 0건"
+  },
+  {
+   "id": "dayclock-queued-falsepos-1128",
+   "added": "2026-11-28",
+   "what": "dayclock.approval_candidates 오탐: D3-17 은 pubqueue 적재·V0 🟢·결재함 1번 상정인데 「검증 안 됨」으로 못 올림 표시 — topicprop.active() 는 큐 적재분을 빼서 verify 가 picked 0건, dayclock 은 큐 적재분을 안 거른다. 정비 지시 대상(큐 적재·결재 상정 코드는 거르기 + falsepos 규칙)",
+   "due": "2026-11-28",
+   "cmd": "python -c \"import studio.dayclock\"",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
