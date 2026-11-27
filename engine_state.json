@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 01:12:45",
+ "at": "2026-11-28 01:43:27",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -7,7 +7,7 @@
    {
     "code": "D3-17",
     "title": "공공분양 일정 2027 — 수도권 5만6000호, 우리",
-    "min": 30,
+    "min": 60,
     "lvl": "amber"
    }
   ],
@@ -276,7 +276,7 @@
   {
    "p": 1,
    "what": "사장님 결재 대기 D3-17 공공분양 일정 2027 — 수도권 5만6000호, 우리",
-   "min": 30,
+   "min": 60,
    "owner": "사장님"
   },
   {
@@ -426,9 +426,9 @@
  "drivers": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "대기(시계 대기 — 판독 기한 전)",
    "jobs": 2,
-   "last_min": 29,
+   "last_min": 59,
    "cur": "🟦 D2-15 유류세 인하 연장 기한 정정 (이과장)",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -437,7 +437,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 66,
+   "last_min": 97,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -473,9 +473,9 @@
  "units": [
   {
    "who": "이과장",
-   "state": "현장(진행)",
+   "state": "대기(시계 대기 — 판독 기한 전)",
    "jobs": 2,
-   "last_min": 29,
+   "last_min": 59,
    "cur": "🟦 D2-15 유류세 인하 연장 기한 정정 (이과장)",
    "lvl": "ok"
   },
@@ -483,7 +483,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 84,
+   "last_min": 115,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -491,7 +491,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 66,
+   "last_min": 97,
    "cur": "",
    "lvl": "ok"
   },
@@ -499,7 +499,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 38,
+   "last_min": 69,
    "cur": "[이부장 접수 00:33] 루틴10 11-27 야간 0/4 원",
    "lvl": "ok"
   },
@@ -1012,13 +1012,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "stale",
-  "ok": 6,
-  "stale": 1,
+  "state": "ok",
+  "ok": 7,
+  "stale": 0,
   "bad": 0,
   "na": 0,
-  "at": "2026-11-28 01:07:30",
-  "age_min": 5
+  "at": "2026-11-28 01:41:24",
+  "age_min": 2
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1116,19 +1116,19 @@
  "fired": [
   {
    "day": "2026-11-28",
-   "total": 24,
+   "total": 25,
    "kinds": [
     [
      "ASIDE_ALERT",
      4
     ],
     [
-     "CODE_UNVERIFIED",
+     "CHKMON_REPORT",
      4
     ],
     [
-     "CHKMON_REPORT",
-     3
+     "CODE_UNVERIFIED",
+     4
     ],
     [
      "REPORT_UNACKED",
