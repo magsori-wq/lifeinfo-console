@@ -38648,6 +38648,17 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "approve-lf3-srcbox-1127",
+   "added": "2026-11-27",
+   "what": "【결재】LF-3 기존 글 17편 끝에 「출처」 박스 1개씩 추가(livefix1019) — E2-04 F1-02 F1-03 F1-04 F1-05 F3-03 F3-01 F3-02 F3-04 F3-05 F2-04 E2-05 G1-06 A3-02 A4-02 E2-02 E3-01 【무엇이 막혔나】라이브 본문 수정은 글 코드별 결재 카드가 있어야 열린다(blogger.py _approval_gate) — 10-19 「전부 진행」 결정은 있으나 이 17편 카드가 없어 이과장이 14:11 멈춤 【재승인하면 무엇이 실행되나】본문 그대로 두고 맨 끝(.end 앞)에 1차 출처 링크 박스(class=src)만 추가. 예 E2-04 dry-run 5939→6457자 · 출처 law.go.kr·fss.or.kr·counterscam112.go.kr(3곳 200 확인). 한 편씩 dry-run→실행→라이브 재확인, 출처 못 찾은 글은 건너뛰고 보고, 17:00 에 멈춤 【위험】옛 글 라이브 수정 — 본문이 깨질 수 있어 매 편 dry-run 차이·라이브 재확인으로 막는다. 제목·주소·다른 문단은 안 바꾼다 【권고】승인(출처 표기는 고유 가치·신뢰 보강)",
+   "due": "2026-11-27",
+   "cmd": "python studio/blogger.py update-post --help",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
