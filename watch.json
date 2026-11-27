@@ -38409,6 +38409,28 @@
    "state": "todo",
    "by": "이대리",
    "preview": "aromapv_extfix_1127.html"
+  },
+  {
+   "id": "ledger1030-rejudge-84",
+   "added": "2026-11-27",
+   "what": "판정 장부(10-30) keep 258건 재판정 — 174건은 이미 닫힘·84건은 아직 열림(todo 50·wait 30·blocked 4). 근거 확인 후 done/drop, 모르면 keep",
+   "due": "2026-11-28",
+   "cmd": "python -c \"import json;d=json.load(open('webapp/watch.json',encoding='utf-8'));print(sum(1 for x in (d.get('items',d) if isinstance(d,dict) else d) if x.get('state') in ('todo','wait','blocked')))\"",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1030,
+   "by": "4."
+  },
+  {
+   "id": "a121-npsregional-2027-budget",
+   "added": "2026-11-27",
+   "what": "A1-21 국민연금 지역가입자 보험료 지원 — 2027 확대(기준소득월액 100만 원 미만·98.5만 명)는 11-23 복지부 보도설명자료 기준 예산안 단계. 국회 예산 확정 뒤 확정 금액·시행일 원문 확보되면 A1-21 개정 또는 후속 글 판단(source docs/source_국민연금지역가입자보험료_20261127.md)",
+   "due": "2026-12-05",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1,
+   "by": "이부장"
   }
  ]
 }
