@@ -226,6 +226,24 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(m){
 // 🔴 **설명 본문 안의 URL 도 클릭되게 한다** (2026-09-04 사장님: "링크 걸어줘")
 //    사장님이 실제로 보시는 것은 `cmd` 가 아니라 카드 설명(full)이다.
 //    거기 적힌 주소(보안 확인 페이지 등)를 손으로 긁어 붙이고 계셨다.
+// 🗂️ 글감 카드(NE2) 1차 출처 — docs/source_*.md 는 8011 /api/file 로만 읽힌다(그 패턴만 허용 · approve_server.source_doc_ok)
+function srcLinks(h){
+  return String(h).replace(/docs\/source_[^\s"'<>()·,/\\]+\.md/g, function(p){
+    return '<a href="#" onclick="event.stopPropagation();openSrc(\''+p+'\');return false" '
+         + 'style="color:#7ab8ff;text-decoration:underline">'+p+'</a>';
+  });
+}
+async function openSrc(p){
+  var w=window.open('','_blank'); if(!w) return;
+  w.document.title=p; w.document.body.style.cssText='background:#111;color:#ddd;font:14px/1.6 sans-serif;padding:16px';
+  try{
+    var r=await fetch(API+'/api/file?path='+encodeURIComponent(p)); var d=await r.json();
+    var pre=w.document.createElement('pre'); pre.style.whiteSpace='pre-wrap';
+    pre.textContent = d.ok ? d.text : ('열 수 없습니다(HTTP '+r.status+'): '+(d.error||'')+'\n결재 서버(8011)가 이 기능 이전 세대면 다음 기동 뒤 열립니다.');
+    w.document.body.appendChild(pre);
+  }catch(e){ w.document.body.textContent='결재 서버(8011)에 닿지 못했습니다: '+e; }
+}
+
 function linkify(t){
   return String(t).replace(/(https?:\/\/[^\s"'<>()]+)/g, function(u){
     return '<a href="'+u+'" target="_blank" rel="noopener" '
@@ -832,6 +850,22 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
     //    (A3-12·B2-13·F2-17·C2-15 등 23건 전수). 이미 라이브에 있거나(byc[t.code].url)
     //    큐에 들어간 코드는 초안이 당연히 있는(또는 필요 없는) 것이다 — 이과장 몫으로
     //    다시 올리지 않는다. 판정은 `studio.topicprop.is_exhausted()` 와 같은 조건.
+    // 🗂️ 11-28 maint1128nohand ⑦(설계도 NE2) — 후보(alt) = 「글감 카드」(사장님 「카테고리별 1건 후보를 결재함에」·
+    //    「추천만 초안, 후보는 카드」). 초안 없이 제목·근거·1차 출처로 결재함에 오르고, 승인하면 topicprop approve 가
+    //    이과장 초안 지시서를 자동으로 낸다. 판정 = studio.topicquota.alt_card() 와 같은 조건(상정 = reported_at 도장,
+    //    시행 기준 = added ≥ CARD_START 2026-11-28 — 옛 후보는 이 분기에 안 들어오고 예전 흐름 그대로). ⚠️ 아래 「초안 없음 → 이과장」 분기보다 **먼저** 본다.
+    if(t.state==='picked' && t.rank==='alt' && String(t.added||'')>='2026-11-28' && !(byc[t.code]||{}).url && !byq[t.code]){
+      if(t.reported_at)
+        boss.push({act:'topic_card',c:t.code,t:t.title,
+          why:'🗂 글감 카드(후보) · '+(t.why||''),
+          sum:t.summary||'', facts:t.facts||'', by:t.src||'',
+          cmd:'python -m studio.topicprop approve --code '+t.code});
+      else if(!t.reported_at)
+        lee.push({act:'topic_card_wait',c:t.code,t:t.title,
+          why:'🗂 글감 카드 — 결재함 상정 대기(topicprop kakao 또는 02:00). 초안은 사장님 승인 뒤',
+          cmd:'python -m studio.topicprop kakao'});
+      return;
+    }
     if(t.state==='picked' && t.draft===false && !(byc[t.code]||{}).url && !byq[t.code]){
       lee.push({act:'topic_draft',c:t.code,t:t.title,
         why:'초안이 없다 — 이과장에게 초안을 지시하고, 나온 뒤에 사장님께 올린다',
@@ -1145,16 +1179,16 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    가장 급한데 맨 아래에 있었다 — 실측: deploy.bat 이 막혔다는 항목이 10번째로
   //    밀려 사장님 화면에서 스크롤해야 보였다. 되돌리기 어려운 발행승인(publish_go)
   //    다음 자리로 둔다.
-  var ORD={publish_run:0,publish_go:0,watch_blocked:1,watch_approve:2,topic_approve:3,watch_done:4,osmu:5};
+  var ORD={publish_run:0,publish_go:0,watch_blocked:1,watch_approve:2,topic_approve:3,topic_card:3,watch_done:4,osmu:5};
   // ⚠️ ORD[..]||9 로 쓰면 안 된다 — publish_go 의 0 이 falsy 라 9 로 밀려 맨 뒤로 간다
   //    (2026-08-23 실제로 그렇게 넣었다가 발행 승인 카드가 화면에서 사라졌다).
   function ord(a){return (a in ORD)?ORD[a]:9;}
   boss.sort(function(x,y){return ord(x.act)-ord(y.act);});
-  var BADGE={publish_run:'🚀 ⑧ 발행 실행',publish_go:'⑦ 발행',topic_approve:'③ 글감',
+  var BADGE={publish_run:'🚀 ⑧ 발행 실행',publish_go:'⑦ 발행',topic_approve:'③ 글감',topic_card:'🗂 글감 카드',
              watch_done:'🔧 조치',watch_approve:'🙋 승인',watch_blocked:'🚫 막힘',osmu:'📮 게시'};
   // 🔴 watch_done 문구는 "완료 처리"(=버튼이 일을 끝내는 것처럼 읽힘) 대신
   //    "이미 했으면 확인"(=사람이 실제로 끝낸 뒤 보고하는 것) 으로 — 2026-08-24 사장님 지적.
-  var LABEL={publish_go:'⑦ 발행 승인',topic_approve:'③ 글감 승인',watch_approve:'🙋 승인합니다',watch_done:'☑ 조치 끝냈으면 확인'};
+  var LABEL={publish_go:'⑦ 발행 승인',topic_approve:'③ 글감 승인',topic_card:'✅ 이 글감 쓰기(초안 지시)',watch_approve:'🙋 승인합니다',watch_done:'☑ 조치 끝냈으면 확인'};
   var BTN_CLS={watch_done:'confirm'};  // 나머지는 기존대로 승인 초록('ok')
   // 🔴 **읽자마자 무엇인지** — 2026-09-09 사장님 지적("읽고 확인하기가 어렵다").
   //    BADGE 는 8단계 번호(③⑦⑧)라 남겨 두되, 그 옆에 **사람 행동 문장**을 덧그린다.
@@ -1162,9 +1196,9 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
   //    fetch 해 오지 않는다 — 그건 bake 스냅샷이라 방금 go 도장을 받은 카드가 옛 kind 로
   //    남아 있을 수 있다(스테일). 이 화면이 이미 판정한 x.act 에서 **바로** 파생한다.
   var HUDO={publish_run:'🚀 발행합니다',publish_go:'📄 원고를 보고 승인',
-            topic_approve:'💡 글감 승인',osmu:'📝 네이버에 게시'};
+            topic_approve:'💡 글감 승인',topic_card:'🗂 이 글감을 쓸까요',osmu:'📝 네이버에 게시'};
   var HUWHO={publish_run:'승인 → 이과장이 발행',publish_go:'승인 → 이과장이 발행',
-             topic_approve:'승인 → 이과장이 진행',osmu:'✋ 사장님이 직접(세션은 네이버를 못 엽니다)'};
+             topic_approve:'승인 → 이과장이 진행',topic_card:'승인 → 이과장 초안 지시 자동',osmu:'✋ 사장님이 직접(세션은 네이버를 못 엽니다)'};
   var HANDS_ON_ACT={watch_blocked:1,watch_approve:1,watch_done:1};
   // 🔴 id 접두사 힌트(2026-09-09) — kind 만으로는 "네이버는 세션이 못 연다"가
   //    안 보이는 경우가 있다. 발행 직후 글은 📣네이버(osmu) 가 아니라 watch_done
@@ -1228,6 +1262,8 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +(x.thumbU?'<div class="meta" style="color:#ff9b9b;font-weight:700">🔴 썸네일 미배포 — deploy.bat 먼저</div>':'')
       +(x.affM?'<div class="meta" style="color:#ff9b9b;font-weight:700">🔴 제휴 결정 없음 — 블로그스팟 제휴 블록 또는 「붙일 것 없음」 기록 필요</div>':'')
       +'<div class="meta">'+esc(String(x.why).slice(0,150))+'</div>'
+      // 🗂️ 글감 카드(NE2) — 초안이 없으니 1차 출처를 접지 않고 바로 보인다(누르면 열리는 링크)
+      +(x.act==='topic_card'&&x.facts?'<div class="meta" style="color:#cfe3ff">🏛 1차 출처: '+srcLinks(linkify(esc(String(x.facts))))+'</div>':'')
       // 🔴 판정은 **act 가 아니라 내용 유무로** 한다. act 로 걸면 승인완료·조치 카드처럼
       //    act 가 없는 줄에서 근거가 있어도 통째로 안 보인다(2026-08-31 실측 사고).
       +((x.sum||x.facts)
@@ -1240,8 +1276,8 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
       +(x.act==='watch_done'?'<div class="meta" style="color:#7fb8e8">'
         +'☝️ 이 버튼은 <b>조치를 대신 해주지 않습니다</b> — 위 내용을 실제로 이미 끝내셨을 때만 눌러주세요.</div>':'')
       +(LABEL[x.act]?'<div style="margin-top:8px">'
-        +btn(x.act,x.c,LABEL[x.act],BTN_CLS[x.act]||'ok')
-        +(x.act==='topic_approve'?btn('topic_drop',x.c,'제외','no'):'')
+        +btn(x.act==='topic_card'?'topic_approve':x.act,x.c,LABEL[x.act],BTN_CLS[x.act]||'ok')
+        +((x.act==='topic_approve'||x.act==='topic_card')?btn('topic_drop',x.c,'제외','no'):'')
         // ⏸ 승인 카드에 「보류·거절」 — 10-30 사장님 「결재함에 보류된 제휴링크 그대로 있네·어디 있는데?」
         //    승인 버튼뿐이라 보류한 건을 닫을 길이 없었다. watch_done 에 사유를 실어 닫는다(사장님 env).
         +(x.act==='watch_approve'?btn('watch_hold',x.c,'⏸ 보류·거절(닫기)','no'):'')
@@ -1432,7 +1468,7 @@ findServer().then(function(url){ SRV=!!url; if(url) API=url;
 
   // ② 이부장 결재 + 반려 — 한 칸에 묶는다(둘 다 관제탑 몫)
   var leeBody = (lee.length? lee.map(function(x){return '<div class="card wait"><div class="hd">'
-      +'<span class="who w-lee">'+(x.act==='topic_pick'?'② 선별':x.act==='osmu'?'📣 OSMU':'⑥ V0')+'</span>'
+      +'<span class="who w-lee">'+(x.act==='topic_pick'?'② 선별':x.act==='osmu'?'📣 OSMU':x.act==='topic_card_wait'?'🗂 카드 상정 대기':'⑥ V0')+'</span>'
       +'<span class="ttl">'+esc(x.t||'')+'</span>'
       +'<span class="code">'+esc(x.c)+'</span></div>'
       +(function(){var oc=ordChips(x);return oc?'<div class="ordrow">'+oc+'</div>':'';})()
