@@ -38617,6 +38617,37 @@
    "state": "todo",
    "kind": "approve",
    "by": "이부장"
+  },
+  {
+   "id": "themealt-48h-read-1127",
+   "added": "2026-11-27",
+   "what": "themealt1120b 48h 판독 — alternate 유지 4편 실측 ✅(measure 14:05) · GSC 샘플 6편 실상태는 전수 inspect 완료 뒤 판독(A5-09·D1-05·B4-07·D3-06·G2-05·D2-21)",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.searchconsole inspect 결과 index_status.json checked_at 완료 확인 뒤 샘플 6편 coverage 대조",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-maint1127bossask-1127",
+   "added": "2026-11-27",
+   "what": "BA-1(6a31602e6) Stop 관문: last_assistant_message 만 준 입력은 차단 안 됨(코드는 transcript_path 만 읽음) — stopask.check 에 last_assistant_message 폴백 추가 필요",
+   "due": "2026-11-27",
+   "cmd": "grep -c last_assistant_message C:/lifeinfo/studio/stopask.py",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "cp8000-zombie-clear-1127",
+   "added": "2026-11-27",
+   "what": "【결재·조치】CP 화면(127.0.0.1:8000) 접속 거부 — 멈춘 서버 4개 정리 필요 【무엇이 막혔나】포트 8000 을 멈춘 파이썬 서버 4개가 함께 붙잡고 있어(윈도에서 겹쳐 바인드됨) 새로 띄운 서버도 접속을 못 받는다. 세션은 프로세스 조회·종료가 금지라 정리 못 함 【위험】그대로 두면 CP·폰 결재 미리보기가 계속 안 열린다. 정리할 때 다른 파이썬(8011 결재 서버·감시)을 같이 끄면 승인 감시가 멈춘다 【권고】PC 재부팅 — 커밋 메모리 62.4/63.8GB(한도 임박)도 함께 풀린다. 재부팅이 어려우면 작업관리자 → 세부 정보에서 명령줄에 「http.server 8000」이 있는 python/pythonw 만 끝내기 【끝나면】이부장이 startup 으로 CP 를 다시 띄우고 200 확인 · 재발방지 = 정비 maint1127cp8000(겹침 차단·감시)",
+   "due": "2026-11-27",
+   "cmd": "curl -s -o /dev/null -w %{http_code} http://127.0.0.1:8000/approval.html",
+   "owner": "user",
+   "state": "todo",
+   "kind": "approve",
+   "by": "이부장"
   }
  ]
 }
