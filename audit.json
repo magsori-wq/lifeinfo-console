@@ -8808,6 +8808,30 @@
    "target": "D3-17",
    "detail": "[반려·검사자명 정정 재기록] 같은 보도(newsId 148976588) 본문 안 표 이미지 image05(분양 33개 지구·지분적립형 괄호)·image06(임대 약40개 지구)가 전 지구 물량을 싣는데 원고는 '나머지 위치는 보도에 없다'고 단정(1절 박스·함정4·7절③④·정리 5번째",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:37:49",
+   "actor": "V0검사관",
+   "action": "v0check.fail",
+   "target": "D3-17",
+   "detail": "[2차 재검사·diff 0fafa1c4e] 1차 조건 ①~⑤ 모두 반영 확인: 첨부표 전체(분양 24·임대 38 — image05 표는 3열x8행=24칸, image06 은 13+13+12=38칸, 칸마다 지구 1개라 '24개 지구'·'38개 지구' 표기가 맞음; 1차 내 '33개'는 ",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:40:23",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "deploy-thumb-569",
+   "detail": "00:29 deploy.bat(228d6e42f) — Pages 빌드가 앞 push(725e1e229 errored)와 겹쳐 building 정체 → 00:40 gh api POST pages/builds 재빌드 → 00:42 thumbs/569_public_housing_2027.png 200",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T00:42:38",
+   "actor": "V0검사관",
+   "action": "v0check.pass",
+   "target": "D3-17",
+   "detail": "[3차 통과·827974812] 1차 🔴: 보도 첨부표(image05·06)가 있는데 '보도에 없다' 단정 → 2차(0fafa1c4e) 전체 지구표·지분적립형 2,705·서울 4곳·정확값/반올림 병기·달력 다분기 반영, 단 분기 미기재 분양 15개→실제 14개 오류 → 3차 72·85·",
+   "via": "cli"
   }
  ]
 }
