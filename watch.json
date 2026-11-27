@@ -38437,6 +38437,29 @@
    "state": "wait",
    "note": 1,
    "by": "이부장"
+  },
+  {
+   "id": "afflink-kimjang-dup-1127",
+   "added": "2026-11-27",
+   "what": "afflink-20261127-kimjang(사장님 12:19 승인) = 이미 있는 solo kimjang1120(승인됨·미게시)과 같은 상품·같은 쉐어링크 rSIekUSt(tosslink link 748235733 12:25 재발급 결과 동일). 같은 상품 10-03 쓰레드 게시(20261003-1). 새 solo 등록 안 함 — 게시 여부는 루틴8·9 kimjang1120 판정(기게시 상품 재게시 여부)으로",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.affiliate solo",
+   "owner": "claude",
+   "state": "wait",
+   "note": 1,
+   "by": "이부장"
+  },
+  {
+   "id": "a236-dup-run-1127",
+   "added": "2026-11-27",
+   "what": "A2-36 중복 발행 run 45933863804(이과장 12:23 트리거, 이부장 45933715448 와 중복) — 취소가 권한 거부됨. concurrency 대기 후 DB url 게이트·bodydup --live 로 실패해야 정상",
+   "due": "2026-11-27",
+   "cmd": "gh run view 45933863804 -R magsori-wq/lifeinfo-source --json conclusion",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-27",
+   "result": "12:30 run 45933863804 conclusion=failure(중복 게이트) · 라이브 1편만"
   }
  ]
 }
