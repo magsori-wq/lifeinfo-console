@@ -39807,16 +39807,48 @@
    "by": "이부장"
   },
   {
-   "id": "aroma-aff-adfix-1128",
+   "id": "verify-acd951a86-1128",
    "added": "2026-11-28",
-   "what": "【권고】제휴 이미지판 9편(SP-025·SP-026·SP-024·PE-021·PE-022·BO-014·BO-015·DG-020·DG-018) 하단 출처 문단의 「광고·협찬 없음. 」 한 구절만 삭제 승인. 【근거】오늘 09:27 제휴 이미지판 게시 후 공개 검증에서 9편 모두 쇼핑 커넥트 제휴 링크·대가성 문구가 있는데 하단에 옛 문구 「광고·협찬 없음」이 남아 서로 어긋남(편마다 1곳, 공개 페이지 실측). 사진·영상·표·링크·대가성 문구는 그대로. 수정 전 라이브 백업(rev/), 구성요소·이미지·영상 수 불변 대조 후 게시, 공개 페이지에서 해당 구절 0 확인. 미리보기에 9편 지금/바꾼 뒤 문장. 【위험】라이브 9편 재수정(문장 일부 삭제만), 승인 후 17시 전 완료.",
+   "what": "maint1128apprcommit APC-1 검수(_sync_push 동시결재 수리 acd951a86)",
    "due": "2026-11-28",
-   "cmd": "승인: aroma-aff-adfix-1128",
-   "owner": "user",
-   "kind": "approve",
-   "state": "todo",
-   "by": "이대리",
-   "preview": "aromapv_aff-adfix-1128.html"
+   "cmd": "python -m unittest tests.test_approve_concurrent_commit",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "❌ 1건: falsepos 규칙 본문 문자열 매칭으로 🔴0(보고는 🔴2) · 1·2·4 ✅(origin 포함·시험 Ran 3 OK·enginemap 🔴0·validate FAIL0) · DG-018 처음 done=6fc320a44 → 정비 addendum 09:33"
+  },
+  {
+   "id": "approve8011-restart-1128",
+   "added": "2026-11-28",
+   "what": "결재 서버 8011 새 코드(acd951a86 동시 결재 커밋 수리) 적용 — 재시작 전까지 옛 코드 · 프로세스 종료 금지 규칙이라 재시작 경로(정식 재기동 스크립트) 확인 뒤 판단",
+   "due": "2026-11-28",
+   "cmd": "git log -1 --format=%h -- studio/approve_server.py",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-aroma-affimg9-1128",
+   "added": "2026-11-28",
+   "what": "aroma 제휴 이미지판 9편 검수: watch 9건 done+결재/회수 커밋 확인, b624517(db.json 9편 revised·affiliate) 확인, 공개 9편 HTTP 200·naver.me 링크·고지 맨 앞 확인",
+   "due": "2026-11-28",
+   "cmd": "git -C C:/naver-blog show --stat b624517",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "✅ verify: 9편 watch done·결재/회수 커밋·b624517 장부 9코드 revised·공개 200·naver.me·대가성 문구 링크 앞 전부 맞음. 미측정: 가격 재확인·상품사진·링크 도착. DG-021(done·공개 224494430034)이 이번 보고에 없음 → 이대리에 문의"
+  },
+  {
+   "id": "recover-commit-1127-2cards-1128",
+   "added": "2026-11-28",
+   "what": "결재 회수 커밋 2건(cp8000-zombie-clear-1127·approve-lf3-srcbox-1127, audit 11-27 15:07:32 사장님) — 정비 falsepos 규칙 수정으로 🔴2 확인된 뒤 이부장이 남긴다",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
