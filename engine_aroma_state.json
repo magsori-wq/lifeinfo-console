@@ -1,20 +1,28 @@
 {
- "at": "2026-11-28 16:08:44",
+ "at": "2026-11-28 16:10:03",
  "errors": [],
  "rows": [
+  {
+   "code": "AM-SP-027",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-027-1128",
+     "state": "todo",
+     "kind": "1128",
+     "at": "2026-11-28"
+    }
+   ],
+   "title": "K리그득점왕순위동률기준",
+   "last_file_at": "2026-11-28 16:09",
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-sp-027-1128",
+   "no_preview": false
+  },
   {
    "code": "AM-DG-022",
    "approvals": [],
    "title": "seg1",
-   "last_file_at": "2026-11-28 16:05",
-   "stage": "draft",
-   "label": "초안",
-   "detail": "3개 파일"
-  },
-  {
-   "code": "AM-SP-027",
-   "approvals": [],
-   "title": "K리그득점왕순위동률기준",
    "last_file_at": "2026-11-28 16:05",
    "stage": "draft",
    "label": "초안",
@@ -272,7 +280,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-28 16:08:29",
+   "last_at": "2026-11-28 16:09:59",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -319,7 +327,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-28 12:50:14",
    "src": "now_log(bid=aroma)",
-   "today_n": 26,
+   "today_n": 27,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -335,7 +343,7 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-28 16:05",
+   "last_at": "2026-11-28 16:09",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
    "note": "복사된 미리보기 76개",
@@ -346,7 +354,7 @@
   "who": "이대리",
   "state": "대기(보고 완료·다음 지시 기다림)",
   "jobs": 0,
-  "last_min": 2,
+  "last_min": 3,
   "cur": "16:1x AM-SP-027(K리그 득점왕) 초안·썸네일·미리",
   "lvl": "ok"
  },
@@ -356,18 +364,19 @@
    {
     "code": "AM-DG-022",
     "title": "seg1",
-    "min": 3,
-    "lvl": "ok"
-   },
-   {
-    "code": "AM-SP-027",
-    "title": "K리그득점왕순위동률기준",
-    "min": 3,
+    "min": 5,
     "lvl": "ok"
    }
   ],
   "v0": [],
-  "boss": [],
+  "boss": [
+   {
+    "code": "AM-SP-027",
+    "title": "K리그득점왕순위동률기준",
+    "min": 1,
+    "lvl": "ok"
+   }
+  ],
   "deploy": [],
   "publish": [],
   "osmu": []
@@ -858,7 +867,7 @@
   "today": "2026-11-28",
   "done_today": 2,
   "published_today": 2,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -882,7 +891,7 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 3,
    "cur": "16:1x AM-SP-027(K리그 득점왕) 초안·썸네일·미리",
    "lvl": "ok"
   },
@@ -897,7 +906,7 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 2,
+   "last_min": 3,
    "cur": "16:1x AM-SP-027(K리그 득점왕) 초안·썸네일·미리",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -918,7 +927,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -926,7 +935,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "16:05",
+   "at": "16:09",
    "today": 4,
    "lvl": "ok",
    "order": null,
@@ -953,13 +962,21 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-sp-027-1128",
+   "what": "【권고】AM-SP-027 「K리그 득점왕 순위 야고 17골·클리말라 16골 — 동률이면 출전 적은 쪽이 1위」(45자, 스포츠, 검색형) 게시 ",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
   {
-   "code": "AM-SP-027",
+   "code": "AM-PE-023",
    "stage": "proc",
-   "at": "2026-11-28 16:05:05",
+   "at": "2026-11-28 05:59:41",
    "src": "파일 수정 시각"
   },
   {
@@ -969,15 +986,15 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-BO-016",
+   "code": "AM-SP-027",
    "stage": "proc",
-   "at": "2026-11-28 05:37:01",
+   "at": "2026-11-28 16:09:22",
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-023",
+   "code": "AM-BO-016",
    "stage": "proc",
-   "at": "2026-11-28 05:59:41",
+   "at": "2026-11-28 05:37:01",
    "src": "파일 수정 시각"
   },
   {
@@ -1062,7 +1079,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-28 16:08:29",
+     "chip": "2026-11-28 16:09:59",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1093,7 +1110,7 @@
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-28 12:50:14",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 26회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 27회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
@@ -1104,7 +1121,7 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-28 16:05",
+     "chip": "2026-11-28 16:09",
      "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 76개"
     }
    ]
