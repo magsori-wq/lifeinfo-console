@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 17:59:47",
+ "at": "2026-11-28 18:22:48",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -531,7 +531,7 @@
    "who": "이과장",
    "state": "대기",
    "jobs": 0,
-   "last_min": 18,
+   "last_min": 41,
    "cur": "",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -540,7 +540,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 1073,
+   "last_min": 1096,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -583,7 +583,7 @@
    "who": "이과장",
    "state": "대기",
    "jobs": 0,
-   "last_min": 18,
+   "last_min": 41,
    "cur": "",
    "lvl": "ok"
   },
@@ -591,7 +591,7 @@
    "who": "3.세션",
    "state": "대기(상시 업무만)",
    "jobs": 2,
-   "last_min": 90,
+   "last_min": 113,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -599,7 +599,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 1073,
+   "last_min": 1096,
    "cur": "",
    "lvl": "ok"
   },
@@ -607,7 +607,7 @@
    "who": "이대리",
    "state": "대기",
    "jobs": 0,
-   "last_min": 76,
+   "last_min": 99,
    "cur": "이부장 ack rc6bd0b — 카드 복구·결재함 상정 확인(",
    "lvl": "ok"
   },
@@ -1688,13 +1688,13 @@
  },
  "exec_error": "",
  "reflect": {
-  "state": "stale",
-  "ok": 5,
-  "stale": 2,
-  "bad": 0,
+  "state": "bad",
+  "ok": 6,
+  "stale": 0,
+  "bad": 1,
   "na": 0,
-  "at": "2026-11-28 17:56:22",
-  "age_min": 3
+  "at": "2026-11-28 18:15:39",
+  "age_min": 7
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1794,7 +1794,7 @@
  "fired": [
   {
    "day": "2026-11-28",
-   "total": 311,
+   "total": 315,
    "kinds": [
     [
      "REPORT_UNACKED",
@@ -1802,11 +1802,11 @@
     ],
     [
      "CHKMON_REPORT",
-     34
+     36
     ],
     [
      "ASIDE_ALERT",
-     31
+     32
     ],
     [
      "BOSS_APPROVAL",
