@@ -39862,9 +39862,11 @@
    "cmd": "승인: aroma-aff-adfix10-1128",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
+   "state": "done",
    "by": "이대리",
-   "preview": "aromapv_aff-adfix-1128.html"
+   "preview": "aromapv_aff-adfix-1128.html",
+   "done_at": "2026-11-28",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "aroma-aff-adfix-1128",
@@ -39874,9 +39876,11 @@
    "cmd": "승인: aroma-aff-adfix-1128",
    "owner": "user",
    "kind": "approve",
-   "state": "todo",
+   "state": "done",
    "by": "이대리",
-   "preview": "aromapv_aff-adfix-1128.html"
+   "preview": "aromapv_aff-adfix-1128.html",
+   "done_at": "2026-11-28",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "adfix9-dup-cleanup-1128",
@@ -40023,6 +40027,16 @@
    "what": "B2-30 불법사금융신고 온라인 원고 V0 반려 4건+권장3 반영(미확인 단서 4곳·60% 경계 2곳·업자 1,178명 각주·참고1 온라인 9단계·디지털상담부) + docs/source_B2-30_hwpx_20261128.md · heading OK·layout []·bodydup 0.037 · git add 까지(커밋·푸시는 관제탑) · 남은 것 = V0 재검사",
    "due": "2026-11-29",
    "cmd": "python -m studio.bodydup --file 불법사금융원스톱온라인신청_글_HTML.txt --code B2-30 --live && python -m studio.heading --file 불법사금융원스톱온라인신청_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
+  },
+  {
+   "id": "pub-chain-a238-b230-1128",
+   "added": "2026-11-28",
+   "what": "A2-38 발행 run 46100946948 끝나면 B2-30 pubready→트리거, 두 편 4채널 후속 지시서(이과장) 순서대로",
+   "due": "2026-11-28",
+   "cmd": "gh run list -R magsori-wq/lifeinfo-source -w publish.yml -L 2",
    "owner": "claude",
    "state": "todo",
    "by": "이부장"
