@@ -40171,7 +40171,7 @@
   {
    "id": "xlink-b442",
    "added": "2026-11-28",
-   "what": "🔗 B4-42 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-42",
+   "what": "🔗 B4-42 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B4-42",
    "due": "2026-11-28",
    "cmd": "python studio/blogger.py crosslink --code B4-42",
    "owner": "claude",
@@ -40184,6 +40184,38 @@
    "what": "3. fuel1030 A칸 추천1·후보1 제출 확인(14:17 깨움) — 빈손이면 이부장이 부족분 재지시",
    "due": "2026-11-28",
    "cmd": "python -m studio.topicprop table",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "toss-mail-reply-1128b",
+   "added": "2026-11-28",
+   "what": "토스 거래처 인증 문의 메일 — 14:25 Gmail 임시보관 생성(사장님 발송 대기) → 발송 후 토스 회신 확인",
+   "due": "2026-12-02",
+   "cmd": "python -m studio.tosslink",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "toss-mail-reply-1128",
+   "added": "2026-11-28",
+   "what": "(대체됨) cmd 따옴표 깨져 toss-mail-reply-1128b 로 다시 등록",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.watch list",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "중복·대체 — toss-mail-reply-1128b 가 같은 확인을 맡음(이부장 drop 으로 생긴 WATCH_LOSS 해소)"
+  },
+  {
+   "id": "b441-osmu-1128",
+   "added": "2026-11-28",
+   "what": "B4-41 식대 비과세 4채널 후속(네이버·인스타·쓰레드·교차링크·검색설명) 17:00 완료 확인",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.autoflow",
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
