@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 16:26:48",
+ "at": "2026-11-28 16:30:47",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -11,24 +11,24 @@
     "code": "A2-40",
     "title": "혼인지원금 100만 원 — 2027년 1월 혼인신고부터",
     "left": [
-     "네이버",
      "인스타",
      "쓰레드"
     ],
     "ch": {
      "blog": true,
-     "naver": false,
+     "naver": true,
      "insta": false,
      "threads": false
     },
-    "who": {},
+    "who": {
+     "naver": "lee"
+    },
     "plan": {
-     "naver": "lee",
      "insta": "lee",
      "threads": "lee"
     },
     "pub": "2026-11-28",
-    "last_at": "",
+    "last_at": "2026-11-28",
     "lvl": "amber"
    }
   ],
@@ -355,8 +355,8 @@
   "lvl": "ok"
  },
  "index": {
-  "requested": 175,
-  "todo": 83,
+  "requested": 181,
+  "todo": 84,
   "indexed": 0
  },
  "limit": {
@@ -476,8 +476,8 @@
    "who": "3.세션",
    "kind": "글감",
    "ran": true,
-   "at": "15:27",
-   "note": "✅ 15:3x 후보 등록: A2-40 「2027년 혼인신고 부부에게 100만 원 — 혼인지원금」 (alt, 중복 🟢 0.14,",
+   "at": "16:28",
+   "note": "⛔ 16:3x 추천 rec 막힘(24:00 마감 전 재시도): 후보 연말정산 미리보기(운영 12-18 까지 — 1차 nts 뉴",
    "today": 4,
    "order": null,
    "lvl": "ok"
@@ -542,7 +542,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 13,
+   "last_min": 17,
    "cur": "🚀 A2-40 발행 — 혼인지원금 100만 원 — 2027년 ",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -551,7 +551,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 980,
+   "last_min": 984,
    "cur": "",
    "lvl": "ok",
    "role": "애드센스 정비"
@@ -594,15 +594,15 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 13,
+   "last_min": 17,
    "cur": "🚀 A2-40 발행 — 혼인지원금 100만 원 — 2027년 ",
    "lvl": "ok"
   },
   {
    "who": "3.세션",
-   "state": "대기(상시 업무만)",
+   "state": "현장(진행)",
    "jobs": 2,
-   "last_min": 59,
+   "last_min": 1,
    "cur": "⛽ 3. 글감 연료 공급 상시(재고 하한 미만 시)",
    "lvl": "ok"
   },
@@ -610,7 +610,7 @@
    "who": "4.세션",
    "state": "대기",
    "jobs": 0,
-   "last_min": 980,
+   "last_min": 984,
    "cur": "",
    "lvl": "ok"
   },
@@ -618,8 +618,8 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 0,
-   "cur": "✅ AM-SP-027 K리그 득점왕 게시 https://blo",
+   "last_min": 3,
+   "cur": "[이부장 접수 16:27] 보고 접수(A2-40 발행·동기 완",
    "lvl": "ok"
   },
   {
@@ -881,6 +881,13 @@
      "who": "lee"
     },
     {
+     "code": "A2-40",
+     "title": "혼인지원금 100만 원 — 2027년 1월 혼인신고부터",
+     "url": "https://blog.naver.com/magsori8975/224496001200",
+     "at": "2026-11-28",
+     "who": "lee"
+    },
+    {
      "code": "A2-36",
      "title": "보훈증명서 발급방법 11월 30일부터 무인민원발급기 무",
      "url": "https://blog.naver.com/magsori8975/224494542980",
@@ -951,12 +958,7 @@
      "who": "lee"
     }
    ],
-   "wait": [
-    {
-     "code": "A2-40",
-     "title": "혼인지원금 100만 원 — 2027년 1월 혼인신고부터"
-    }
-   ]
+   "wait": []
   },
   "insta": {
    "done": [
@@ -1446,6 +1448,13 @@
   },
   {
    "code": "A2-40",
+   "stage": "naver",
+   "at": "",
+   "src": "DB osmu_at(날짜뿐)",
+   "who": "lee"
+  },
+  {
+   "code": "A2-40",
    "stage": "blog",
    "at": "",
    "src": "pub_dates(날짜뿐)"
@@ -1677,7 +1686,7 @@
   "bad": 1,
   "na": 0,
   "at": "2026-11-28 16:26:44",
-  "age_min": 0
+  "age_min": 4
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
