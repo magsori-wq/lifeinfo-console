@@ -39987,9 +39987,9 @@
   {
    "id": "verify-D2-15-1128",
    "added": "2026-11-28",
-   "what": "d215upd1128 검수: D2-15 DB short 라벨 '11월 30일' 잔존(title만 정정)",
+   "what": "D2-15 네이버 정정 라이브 본문에 결재 초안 밖 58,000 문장 잔존(단락 50) — 커밋 b4cc8dc6f 의 삭제는 원고 파일에만 반영",
    "due": "2026-11-28",
-   "cmd": "python -c \"import json;[print(r.get('short')) for r in json.load(open('webapp/lifeinfo_db.txt',encoding='utf-8'))['posts'] if r.get('code')=='D2-15']\"",
+   "cmd": "curl -s -A \"Mozilla/5.0\" \"https://blog.naver.com/PostView.naver?blogId=magsori8975&logNo=224437977554\" | grep -c 58,000",
    "owner": "claude",
    "state": "done",
    "by": "이부장",
@@ -40068,12 +40068,24 @@
   {
    "id": "xlink-b230",
    "added": "2026-11-28",
-   "what": "🔗 B2-30 교차링크 보완 — instagram 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B2-30",
+   "what": "🔗 B2-30 교차링크 보완 — threads 가 나중에 붙어 앞서 나간 채널에 그 링크가 없다. 블로그스팟 교차링크: python studio/blogger.py crosslink --code B2-30",
    "due": "2026-11-28",
    "cmd": "python studio/blogger.py crosslink --code B2-30",
    "owner": "claude",
    "state": "todo",
    "by": "naver-link"
+  },
+  {
+   "id": "verify-B2-30-1128",
+   "added": "2026-11-28",
+   "what": "B2-30 4채널 검수 ❌: gsc_req_dates.json 에 B2-30 키 없음(_gsc_requested.txt 에는 블로그스팟 URL 있음)",
+   "due": "2026-11-28",
+   "cmd": "python -c \"import json;print(json.load(open('webapp/gsc_req_dates.json',encoding='utf-8'))['dates'].get('B2-30'))\"",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "13:08 verify 재검수: gsc_req_dates B2-30=2026-11-28, 657b88b6a origin/main 포함 ✅"
   }
  ]
 }
