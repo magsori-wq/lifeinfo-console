@@ -1,30 +1,29 @@
 {
- "rev": "2918f49bb",
+ "rev": "2ce72ebcb",
  "counts": {
-  "total": 587,
+  "total": 588,
   "osmu_done": 587,
-  "osmu_pending": 0,
+  "osmu_pending": 1,
   "indexed": 0,
-  "index_pending": 587,
+  "index_pending": 588,
   "index_requested": 173,
-  "index_todo": 84,
+  "index_todo": 85,
   "index_benign": 330
  },
  "actionable": [
   {
-   "code": "B4-42",
-   "title": "종부세 분납 12월 15일 신청 — 250만 원 넘으면",
+   "code": "B4-41",
+   "title": "식대 비과세 월 20만 원 — 사내식당 밥 먹으면 식대",
    "need": [
-    "인스타",
-    "쓰레드",
+    "OSMU",
     "색인요청"
    ],
-   "action": "색인 요청",
-   "osmu": true,
+   "action": "OSMU 확산",
+   "osmu": false,
    "idxst": "todo",
    "ch": {
     "g": true,
-    "n": true,
+    "n": false,
     "t": false,
     "i": false
    }
