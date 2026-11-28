@@ -39897,6 +39897,28 @@
    "by": "이부장",
    "done_at": "2026-11-28",
    "result": "❌ 설계도 DG-018 칸 오류(이부장 09:32 지시 오류, 정답 79f2371c4)·falsepos CLI 진입점 결함 → maint1128apprcommit 10:01 덧붙임으로 재작업 · ✅ 함수·시험(Ran 4 OK)"
+  },
+  {
+   "id": "fuel1030-1100-report-1128",
+   "added": "2026-11-28",
+   "what": "3. fuel1030 루틴2 부족분(A칸 후보1·B칸 후보1·추천1) 11:00 결과 보고 확인 → 오면 verify·routinelog lifeinfo-daily-topics-1128 닫기",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
+  },
+  {
+   "id": "verify-f1ec4d59c-1128",
+   "added": "2026-11-28",
+   "what": "APC-1 2차 재작업 검수",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.falsepos",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "✅ 합격 — 진입점 4313행(뒤 RULES.append 0)·RULES 117·결재커밋 규칙 []·설계도 514행 79f2371c4·시험 5/5·전체 1213 OK·enginemap 🔴0·validate FAIL0"
   }
  ]
 }
