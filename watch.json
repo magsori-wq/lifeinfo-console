@@ -40005,8 +40005,20 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.v0check gate --code B2-30",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사(diff 204a28cb4): 11:46 반려 4건 반영 확인 — ①25.7.22 이후 계약 기준·7절 미확인 단서가 요약·6단계표②·가상②캡션·계약유형표 머리·마무리②에 붙음 ②4절·마무리 '한 달 5%면 "
+  },
+  {
+   "id": "fix-b230-v0-1128",
+   "added": "2026-11-28",
+   "what": "B2-30 불법사금융신고 온라인 원고 V0 반려 4건+권장3 반영(미확인 단서 4곳·60% 경계 2곳·업자 1,178명 각주·참고1 온라인 9단계·디지털상담부) + docs/source_B2-30_hwpx_20261128.md · heading OK·layout []·bodydup 0.037 · git add 까지(커밋·푸시는 관제탑) · 남은 것 = V0 재검사",
+   "due": "2026-11-29",
+   "cmd": "python -m studio.bodydup --file 불법사금융원스톱온라인신청_글_HTML.txt --code B2-30 --live && python -m studio.heading --file 불법사금융원스톱온라인신청_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
