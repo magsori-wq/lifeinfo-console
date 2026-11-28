@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 16:15:37",
+ "at": "2026-11-28 16:19:38",
  "errors": [],
  "rows": [
   {
@@ -20,12 +20,20 @@
   },
   {
    "code": "AM-DG-022",
-   "approvals": [],
+   "approvals": [
+    {
+     "id": "aroma-am-dg-022-1128",
+     "state": "todo",
+     "kind": "1128",
+     "at": "2026-11-28"
+    }
+   ],
    "title": "seg1",
    "last_file_at": "2026-11-28 16:15",
-   "stage": "draft",
-   "label": "초안",
-   "detail": "3개 파일"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-dg-022-1128",
+   "no_preview": false
   }
  ],
  "old_inflight": [],
@@ -279,7 +287,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-28 16:15:29",
+   "last_at": "2026-11-28 16:19:30",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -326,7 +334,7 @@
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
    "last_at": "2026-11-28 12:50:14",
    "src": "now_log(bid=aroma)",
-   "today_n": 27,
+   "today_n": 28,
    "note": "횟수는 전체 세션",
    "at_node": ""
   },
@@ -353,22 +361,22 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 4,
+  "last_min": 8,
   "cur": "📮 카드 상정: aroma-am-sp-027-1128(K리그 ",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
-  "draft": [
+  "draft": [],
+  "v0": [],
+  "boss": [
    {
     "code": "AM-DG-022",
     "title": "seg1",
-    "min": 0,
+    "min": 4,
     "lvl": "ok"
    }
   ],
-  "v0": [],
-  "boss": [],
   "deploy": [],
   "publish": [
    {
@@ -870,7 +878,7 @@
   "today": "2026-11-28",
   "done_today": 2,
   "published_today": 2,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -886,7 +894,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 0,
+  "age_min": 1,
   "lvl": "ok"
  },
  "units": [
@@ -894,7 +902,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 4,
+   "last_min": 8,
    "cur": "📮 카드 상정: aroma-am-sp-027-1128(K리그 ",
    "lvl": "ok"
   },
@@ -909,7 +917,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 4,
+   "last_min": 8,
    "cur": "📮 카드 상정: aroma-am-sp-027-1128(K리그 ",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -930,7 +938,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -965,13 +973,27 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-022-1128",
+   "what": "【권고】AM-DG-022 「더 게임 어워드 2026 후보작 GTA6 8개 최다, 붉은사막은 커뮤니티상 후보」(44자, 디지털 콘텐츠·여가, 홈판",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
   {
-   "code": "AM-PE-023",
+   "code": "AM-SP-027",
    "stage": "proc",
-   "at": "2026-11-28 05:59:41",
+   "at": "2026-11-28 16:09:22",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-DG-022",
+   "stage": "proc",
+   "at": "2026-11-28 16:15:35",
    "src": "파일 수정 시각"
   },
   {
@@ -981,15 +1003,9 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-DG-022",
+   "code": "AM-PE-023",
    "stage": "proc",
-   "at": "2026-11-28 16:05:20",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-SP-027",
-   "stage": "proc",
-   "at": "2026-11-28 16:09:22",
+   "at": "2026-11-28 05:59:41",
    "src": "파일 수정 시각"
   },
   {
@@ -1080,7 +1096,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-28 16:15:29",
+     "chip": "2026-11-28 16:19:30",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1111,7 +1127,7 @@
      "head": "ASIDE_ALERT",
      "lvl": "ok",
      "chip": "2026-11-28 12:50:14",
-     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 27회 · 횟수는 전체 세션"
+     "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 28회 · 횟수는 전체 세션"
     },
     {
      "head": "ROUTINE_DONE",
