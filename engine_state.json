@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 12:21:02",
+ "at": "2026-11-28 12:21:51",
  "nodes": {
   "draft": [],
   "v0": [],
@@ -433,8 +433,8 @@
    "who": "3.세션",
    "kind": "글감",
    "ran": true,
-   "at": "12:20",
-   "note": "국민연금 지역가입자 보험료 지원 1차 원문 확보 완료(source 에이전트): 대상 기준소득월액 80만 원 미만·재산세 과세표",
+   "at": "12:21",
+   "note": "13:00 결과 보고 전 확인: A칸 alt — 국민연금(제외, A1-21 중복) · 문화누리카드(A2-05 기발행) · 가상",
    "today": 3,
    "order": null,
    "lvl": "ok"
@@ -499,7 +499,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 7,
-   "last_min": 10,
+   "last_min": 11,
    "cur": "🚀 A2-38 발행 — 긴급복지 우선드림 30만 원 2027 ",
    "lvl": "ok",
    "role": "②처리·④발행 운전"
@@ -548,7 +548,7 @@
    "who": "이과장",
    "state": "현장(진행)",
    "jobs": 7,
-   "last_min": 10,
+   "last_min": 11,
    "cur": "🚀 A2-38 발행 — 긴급복지 우선드림 30만 원 2027 ",
    "lvl": "ok"
   },
@@ -1386,12 +1386,12 @@
  "exec_error": "",
  "reflect": {
   "state": "bad",
-  "ok": 3,
-  "stale": 0,
-  "bad": 2,
-  "na": 2,
-  "at": "2026-11-28 03:12:03",
-  "age_min": 8
+  "ok": 5,
+  "stale": 1,
+  "bad": 1,
+  "na": 0,
+  "at": "2026-11-28 12:21:31",
+  "age_min": 0
  },
  "design_signals": [
   "APPROVE_SERVER_DOWN",
@@ -1491,11 +1491,11 @@
  "fired": [
   {
    "day": "2026-11-28",
-   "total": 159,
+   "total": 168,
    "kinds": [
     [
      "REPORT_UNACKED",
-     26
+     28
     ],
     [
      "ASIDE_ALERT",
@@ -1503,26 +1503,26 @@
     ],
     [
      "CHKMON_REPORT",
-     16
+     17
+    ],
+    [
+     "BOSS_APPROVAL",
+     14
     ],
     [
      "NEW_BOSS_ITEM",
      14
     ],
     [
-     "BOSS_APPROVAL",
-     12
-    ],
-    [
      "CODE_UNVERIFIED",
      9
     ],
     [
-     "RLOG_BLOCKED_STALE",
-     7
+     "TOWER_OWED",
+     8
     ],
     [
-     "TOWER_OWED",
+     "RLOG_BLOCKED_STALE",
      7
     ]
    ]
