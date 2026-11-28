@@ -40137,8 +40137,20 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.v0check gate --code B4-41",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "V0 통과로 해소 — 검사자 V0검사관 · 재검사(diff 8681e7ebb, 3줄만): 71행 '30만 원 상향안 3건·25만 원 상향안 1건', 74·119행 '월 25만~30만 원 상향안 4건' — 출처 6-3(2202419·2205240·2207602"
+  },
+  {
+   "id": "fix-b441-pendingbills-1128",
+   "added": "2026-11-28",
+   "what": "B4-41 V0 반려 수정: 정리박스 71행·목차·5절 제목에서 계류 4건을 30만 3·25만 1로 정합(출처 6-3 대조 일치). heading exit0·bodydup --live 0.044 exit0. git add까지만 함. 커밋·푸시는 관제탑이 해야 함",
+   "due": "2026-11-29",
+   "cmd": "grep -c '국회 계류 4건\\|30만 원 인상' C:/lifeinfo/식대비과세월20만원사내식당_글_HTML.txt",
+   "owner": "claude",
+   "state": "todo",
    "by": "이부장"
   }
  ]
