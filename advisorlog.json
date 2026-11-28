@@ -149,12 +149,6 @@
    "advice": "페이블 조언 검증 방법: 직전 전달 오류 정정·줄별 대조(카톡 코드경로)·소각은 제안만·사례 대입표가 검증 본체·구현은 이부장 몫·한 문서로 고정",
    "applied": "docs/검증_이과장_이부장누락방지_20261030.md 작성(정정·판정표·사례대입·가시성 시제품 docs/agentwatch_proto_20261030.py)",
    "skip": "장부 소각 실행·agentwatch/towertick 코드 수정은 이과장 몫 밖이라 하지 않음"
-  },
-  {
-   "at": "2026-11-27 14:08",
-   "advice": "BA-1 완료 전: Stop 훅이 run_checks 를 부르는지·stdin 경합·끝까지 실행·호출자 멈춤·관제탑 ID 확인",
-   "applied": "settings Stop=run_checks 확인 · stdin 읽는 곳 stopask 하나 · 3경로 실행(null 0/관제탑 2+문구/active 0) · subprocess 호출자 없음 · ID a7dca46f 현행 일치",
-   "skip": ""
   }
  ]
 }
