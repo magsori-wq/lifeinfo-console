@@ -40086,6 +40086,27 @@
    "by": "이부장",
    "done_at": "2026-11-28",
    "result": "13:08 verify 재검수: gsc_req_dates B2-30=2026-11-28, 657b88b6a origin/main 포함 ✅"
+  },
+  {
+   "id": "fuel1030-fill-1400",
+   "added": "2026-11-28",
+   "what": "fuel1030 A칸 alt·추천 rec 미충족 — 14:00 보고",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard show",
+   "owner": "claude",
+   "state": "todo",
+   "note": 1400,
+   "by": "3.분석"
+  },
+  {
+   "id": "b442-affiliate-remote-1128",
+   "added": "2026-11-28",
+   "what": "B4-42 affiliate none 기록이 원격 origin 에 올라갔는지 — 발행 트리거 전 확인(로컬 affiliate.json 미커밋)",
+   "due": "2026-11-28",
+   "cmd": "git grep -c B4-42 origin/main -- webapp/affiliate.json",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }
