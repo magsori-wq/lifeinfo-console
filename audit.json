@@ -9040,6 +9040,22 @@
    "target": "verify-acd951a86-1128",
    "detail": "❌ 1건: falsepos 규칙 본문 문자열 매칭으로 🔴0(보고는 🔴2) · 1·2·4 ✅(origin 포함·시험 Ran 3 OK·enginemap 🔴0·validate FAIL0) · DG-018 처음 done=6fc320a44 → 정비 addendum 09:33",
    "via": "cli"
+  },
+  {
+   "at": "2026-11-28T10:02:14",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "verify-517ff1967-1128",
+   "detail": "❌ 설계도 DG-018 칸 오류(이부장 09:32 지시 오류, 정답 79f2371c4)·falsepos CLI 진입점 결함 → maint1128apprcommit 10:01 덧붙임으로 재작업 · ✅ 함수·시험(Ran 4 OK)",
+   "via": "cli"
+  },
+  {
+   "at": "2026-11-28T10:03:27",
+   "actor": "세션(CLI)",
+   "action": "watch.done",
+   "target": "recover-commit-1127-2cards-1128",
+   "detail": "회수 커밋 3421bc007(cp8000-zombie-clear-1127)·7b21856ea(approve-lf3-srcbox-1127) push 완료 · import 경로 check_rules 에서 「결재 커밋 누락」 행 사라짐 확인",
+   "via": "cli"
   }
  ]
 }
