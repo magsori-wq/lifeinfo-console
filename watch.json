@@ -38641,8 +38641,10 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.searchconsole inspect 결과 index_status.json checked_at 완료 확인 뒤 샘플 6편 coverage 대조",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "11-26 inspect 완주(partial 없음·576편) · 샘플 6편 모두 Redirect error 유지(lastCrawl 11-24 재크롤) · PASS 0→0 · 11-19 대비 상태 변화 없음. 단 DB 589편 중 11-26~28 발행 13편 미조회(다음 주간 inspect 에 포함)"
   },
   {
    "id": "verify-maint1127bossask-1127",
@@ -40358,6 +40360,16 @@
    "by": "이부장",
    "done_at": "2026-11-28",
    "result": "재검수 ✅: 1099c4b7c 존재·origin/main 포함, _gsc_requested.txt:706 에 100-2027-1-12 URL 1건, webapp/gsc_requested.json 에 URL 1건"
+  },
+  {
+   "id": "themealt-weekly-read-1205",
+   "added": "2026-11-28",
+   "what": "themealt1120b 다음 판독 — 루틴7 주간 inspect(신규 13편 포함) 뒤 샘플 6편 Redirect error 변화·PASS 수",
+   "due": "2026-12-05",
+   "cmd": "python -m studio.searchconsole inspect 결과 index_status.json checked_at 확인 뒤 샘플 6편 state 대조",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
