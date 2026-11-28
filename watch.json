@@ -40372,6 +40372,16 @@
    "owner": "claude",
    "state": "wait",
    "by": "이부장"
+  },
+  {
+   "id": "stock-1129-plan",
+   "added": "2026-11-28",
+   "what": "재고 0 → 11-29 발행분: 21:00 3. 선행 추천 1건 pick·이과장 초안 / 21:00 루틴4·23:55 루틴6·24:00 3. 최종 / 02:00 결재함 상정",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.topicprop table && python -m studio.pubqueue list",
+   "owner": "claude",
+   "state": "todo",
+   "by": "이부장"
   }
  ]
 }

@@ -1,25 +1,7 @@
 {
- "at": "2026-11-28 18:23:02",
+ "at": "2026-11-28 18:53:36",
  "errors": [],
- "rows": [
-  {
-   "code": "AM-DG-022",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-022-1128",
-     "state": "todo",
-     "kind": "1128",
-     "at": "2026-11-28"
-    }
-   ],
-   "title": "seg1",
-   "last_file_at": "2026-11-28 16:15",
-   "stage": "boss_wait",
-   "label": "결재 대기",
-   "detail": "aroma-am-dg-022-1128",
-   "no_preview": false
-  }
- ],
+ "rows": [],
  "old_inflight": [],
  "discarded": [
   {
@@ -29,6 +11,22 @@
   }
  ],
  "recent_published": [
+  {
+   "code": "AM-DG-022",
+   "approvals": [
+    {
+     "id": "aroma-am-dg-022-1128",
+     "state": "done",
+     "kind": "1128",
+     "at": "2026-11-28"
+    }
+   ],
+   "title": "더 게임 어워드 2026 후보작 GTA6 8개 최다, 붉은사막은 커뮤니티상 후보",
+   "last_file_at": "2026-11-28 18:32",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-28T18:3x"
+  },
   {
    "code": "AM-SP-027",
    "approvals": [
@@ -120,25 +118,9 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-26"
-  },
-  {
-   "code": "AM-DG-019",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-019-approve-1125",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-25"
-    }
-   ],
-   "title": "GTA6 플레이타임 평균 17.4시간 — PS5 플레이어 3,900만 명 이상",
-   "last_file_at": "2026-11-26 01:14",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-26"
   }
  ],
- "published_total": 88,
+ "published_total": 89,
  "rev_wait": [],
  "cats": {
   "window": 14,
@@ -265,7 +247,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-28 18:22:37",
+   "last_at": "2026-11-28 18:53:08",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -337,24 +319,17 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "대기",
+  "state": "현장(진행)",
   "jobs": 0,
-  "last_min": 99,
-  "cur": "이부장 ack rc6bd0b — 카드 복구·결재함 상정 확인(",
+  "last_min": 3,
+  "cur": "18:50 자가점검: 할 일 0·결재 대기 0 — 오늘 4개 ",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
   "draft": [],
   "v0": [],
-  "boss": [
-   {
-    "code": "AM-DG-022",
-    "title": "seg1",
-    "min": 128,
-    "lvl": "ok"
-   }
-  ],
+  "boss": [],
   "deploy": [],
   "publish": [],
   "osmu": []
@@ -395,6 +370,11 @@
   },
   "naver": {
    "done": [
+    {
+     "code": "AM-DG-022",
+     "title": "더 게임 어워드 2026 후보작 GTA6 8개 최다, 붉은사막은 커뮤니티상 후보",
+     "url": "https://blog.naver.com/aroma-mag/224496105760"
+    },
     {
      "code": "AM-SP-027",
      "title": "K리그 득점왕 순위 야고 17골·클리말라 16골 — 동률이면 출전 적은 쪽이 1위",
@@ -848,9 +828,9 @@
  },
  "kpi": {
   "today": "2026-11-28",
-  "done_today": 3,
-  "published_today": 3,
-  "boss_wait": 1,
+  "done_today": 4,
+  "published_today": 4,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -866,16 +846,16 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 0,
   "lvl": "ok"
  },
  "units": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 99,
-   "cur": "이부장 ack rc6bd0b — 카드 복구·결재함 상정 확인(",
+   "last_min": 3,
+   "cur": "18:50 자가점검: 할 일 0·결재 대기 0 — 오늘 4개 ",
    "lvl": "ok"
   },
   {
@@ -887,10 +867,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "대기",
+   "state": "현장(진행)",
    "jobs": 0,
-   "last_min": 99,
-   "cur": "이부장 ack rc6bd0b — 카드 복구·결재함 상정 확인(",
+   "last_min": 3,
+   "cur": "18:50 자가점검: 할 일 0·결재 대기 0 — 오늘 4개 ",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -910,7 +890,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -918,7 +898,7 @@
    "who": "이대리(자기점검·CA 검색어·일정 박스)",
    "kind": "글감",
    "ran": true,
-   "at": "16:15",
+   "at": "18:32",
    "today": 4,
    "lvl": "ok",
    "order": null,
@@ -936,7 +916,7 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 3편 · 파일이 움직인 글 4편",
+   "made": "오늘 새 글 게시 4편 · 파일이 움직인 글 4편",
    "codes": [
     "AM-BO-016",
     "AM-DG-022",
@@ -945,27 +925,13 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-am-dg-022-1128",
-   "what": "【권고】AM-DG-022 「더 게임 어워드 2026 후보작 GTA6 8개 최다, 붉은사막은 커뮤니티상 후보」(44자, 디지털 콘텐츠·여가, 홈판",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
+ "approvals": [],
  "edits": [],
  "today_events": [
   {
-   "code": "AM-SP-027",
+   "code": "AM-PE-023",
    "stage": "proc",
-   "at": "2026-11-28 16:09:22",
-   "src": "파일 수정 시각"
-  },
-  {
-   "code": "AM-DG-022",
-   "stage": "proc",
-   "at": "2026-11-28 16:15:35",
+   "at": "2026-11-28 05:59:41",
    "src": "파일 수정 시각"
   },
   {
@@ -975,9 +941,15 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-PE-023",
+   "code": "AM-DG-022",
    "stage": "proc",
-   "at": "2026-11-28 05:59:41",
+   "at": "2026-11-28 16:15:35",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-SP-027",
+   "stage": "proc",
+   "at": "2026-11-28 16:09:22",
    "src": "파일 수정 시각"
   },
   {
@@ -1021,6 +993,18 @@
    "stage": "boss",
    "at": "2026-11-28 16:11:21",
    "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-DG-022",
+   "stage": "boss",
+   "at": "2026-11-28 18:23:50",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "AM-DG-022",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
   },
   {
    "code": "AM-SP-027",
@@ -1074,7 +1058,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-28 18:22:37",
+     "chip": "2026-11-28 18:53:08",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1202,9 +1186,14 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 88편",
+   "title": "✅ 최근 게시 · 전체 89편",
    "empty": "게시 기록 없음",
    "rows": [
+    {
+     "head": "AM-DG-022",
+     "chip": "2026-11-28",
+     "sub": "더 게임 어워드 2026 후보작 GTA6 8개 최다, 붉은사막은 커뮤니티상 후보"
+    },
     {
      "head": "AM-SP-027",
      "chip": "2026-11-28",
@@ -1229,11 +1218,6 @@
      "head": "AM-SP-025",
      "chip": "2026-11-26",
      "sub": "2026 KBO 시상식 — MVP 후보 14명, 수비상 164명 중 10명"
-    },
-    {
-     "head": "AM-PE-021",
-     "chip": "2026-11-26",
-     "sub": "변우석 팬미팅 앙코르 — 전석 110,000원, 선예매 12/7·일반 12/8"
     }
    ]
   }
