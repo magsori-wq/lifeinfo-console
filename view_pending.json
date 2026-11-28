@@ -1,6 +1,6 @@
 {
- "computed_at": "2026-11-28 06:38:42",
- "source_head": "e8b55b794e03",
+ "computed_at": "2026-11-28 11:31:09",
+ "source_head": "cfc60e900a2f",
  "ids": [
   "A2-38",
   "toss-openapi-unauthorized-1126"
@@ -45,5 +45,14 @@
    "kind": "action"
   }
  ],
- "actionsFuture": []
+ "actionsFuture": [
+  {
+   "id": "postpartum-source-20261128",
+   "what": "산후조리비 국가 원문 미확보(복지부·정책브리핑·복지로·건강보험공단 curl/WebFetch/Aside 실패) · 후보 주제가 G1-14 와 겹침",
+   "due": "2026-12-05",
+   "cmd": "python -m studio.dupcheck \"산후조리비 지원 신청 방법 총정리 2026\"",
+   "state": "blocked",
+   "kind": "action"
+  }
+ ]
 }

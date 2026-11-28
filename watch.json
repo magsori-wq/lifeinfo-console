@@ -39905,8 +39905,10 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.batchboard order --id fuel1030",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "11:00 보고 = 10:56 원문 미확보·도움 요청 → source 에이전트 투입·마감 13:00 으로 넘김(fuel1030-1300-result-1128)"
   },
   {
    "id": "verify-f1ec4d59c-1128",
@@ -39931,6 +39933,28 @@
    "by": "이부장",
    "done_at": "2026-11-28",
    "result": "✅ 합격 — wake.py 무변경·jsonl 장치 실동작·falsepos 🔴0·naverwrite CREATE_NO_WINDOW·시험 3/3·enginemap 🔴0 (참고: d526a42d1 은 낱말만이 아니라 경로·비교도 바꿈, 등록부는 같은 파일)"
+  },
+  {
+   "id": "src-jongbu-2026-1128",
+   "added": "2026-11-28",
+   "what": "국세청 2026 종합부동산세 고지·납부 원문 확보(3. fuel1030 B칸)",
+   "due": "2026-11-28",
+   "cmd": "ls docs/source_종부세_2026*.md",
+   "owner": "claude",
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "확보: 국세청 보도참고자료 2026-11-26(nttSn=1356421) Synap 뷰어 18쪽 판독 → docs/source_종부세_2026_고지_20261128.md. 납부기한 12-15·고지 82만명 6.0조·분납 '27-06-15(기준 300만[농특세포함] vs 부록 250만 내부불일치)·카드납부 원문에 없음"
+  },
+  {
+   "id": "fuel1030-1300-result-1128",
+   "added": "2026-11-28",
+   "what": "3. fuel1030 13:00 결과(A칸 alt1·B칸 alt1·rec1) 확인 → verify·routinelog lifeinfo-daily-topics-1128 닫기",
+   "due": "2026-11-28",
+   "cmd": "python -m studio.batchboard order --id fuel1030",
+   "owner": "claude",
+   "state": "wait",
+   "by": "이부장"
   }
  ]
 }
