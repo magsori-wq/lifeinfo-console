@@ -1,31 +1,23 @@
 {
- "at": "2026-11-28 16:20:42",
+ "at": "2026-11-28 16:27:12",
  "errors": [],
  "rows": [
   {
-   "code": "AM-SP-027",
+   "code": "AM-DG-022",
    "approvals": [
     {
-     "id": "aroma-am-sp-027-1128",
-     "state": "done",
+     "id": "aroma-am-dg-022-1128",
+     "state": "todo",
      "kind": "1128",
      "at": "2026-11-28"
     }
    ],
-   "title": "K리그득점왕순위동률기준",
-   "last_file_at": "2026-11-28 16:09",
-   "stage": "approved",
-   "label": "승인됨(게시 전)",
-   "detail": "watch done + 커밋 5be5f9a9e"
-  },
-  {
-   "code": "AM-DG-022",
-   "approvals": [],
    "title": "seg1",
    "last_file_at": "2026-11-28 16:15",
-   "stage": "draft",
-   "label": "초안",
-   "detail": "3개 파일"
+   "stage": "boss_wait",
+   "label": "결재 대기",
+   "detail": "aroma-am-dg-022-1128",
+   "no_preview": false
   }
  ],
  "old_inflight": [],
@@ -37,6 +29,22 @@
   }
  ],
  "recent_published": [
+  {
+   "code": "AM-SP-027",
+   "approvals": [
+    {
+     "id": "aroma-am-sp-027-1128",
+     "state": "done",
+     "kind": "1128",
+     "at": "2026-11-28"
+    }
+   ],
+   "title": "K리그 득점왕 순위 야고 17골·클리말라 16골 — 동률이면 출전 적은 쪽이 1위",
+   "last_file_at": "2026-11-28 16:09",
+   "stage": "published",
+   "label": "게시됨",
+   "detail": "2026-11-28T16:1x"
+  },
   {
    "code": "AM-BO-016",
    "approvals": [
@@ -128,31 +136,9 @@
    "stage": "published",
    "label": "게시됨",
    "detail": "2026-11-26"
-  },
-  {
-   "code": "AM-DG-020",
-   "approvals": [
-    {
-     "id": "aroma-am-dg-020-approve-1126",
-     "state": "done",
-     "kind": "approve",
-     "at": "2026-11-26"
-    },
-    {
-     "id": "aroma-am-dg-020-upd-aff-1127",
-     "state": "done",
-     "kind": "upd",
-     "at": "2026-11-27"
-    }
-   ],
-   "title": "스팀 세일 기간 11월 — 블프는 공식 세일 아님, 겨울 세일은 12/17부터",
-   "last_file_at": "2026-11-27 17:13",
-   "stage": "published",
-   "label": "게시됨",
-   "detail": "2026-11-26"
   }
  ],
- "published_total": 87,
+ "published_total": 88,
  "rev_wait": [],
  "cats": {
   "window": 14,
@@ -279,7 +265,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-28 16:20:30",
+   "last_at": "2026-11-28 16:27:00",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -324,7 +310,7 @@
   {
    "name": "ASIDE_ALERT",
    "node": "이대리 🙋·⏸·👤 → 이부장 즉시",
-   "last_at": "2026-11-28 12:50:14",
+   "last_at": "2026-11-28 16:27:06",
    "src": "now_log(bid=aroma)",
    "today_n": 28,
    "note": "횟수는 전체 세션",
@@ -351,33 +337,26 @@
  ],
  "unit": {
   "who": "이대리",
-  "state": "현장(진행)",
+  "state": "대기(보고 완료·다음 지시 기다림)",
   "jobs": 0,
-  "last_min": 9,
-  "cur": "📮 카드 상정: aroma-am-sp-027-1128(K리그 ",
+  "last_min": 0,
+  "cur": "✅ AM-SP-027 K리그 득점왕 게시 https://blo",
   "lvl": "ok"
  },
  "open_requests": [],
  "nodes": {
-  "draft": [
+  "draft": [],
+  "v0": [],
+  "boss": [
    {
     "code": "AM-DG-022",
     "title": "seg1",
-    "min": 5,
+    "min": 12,
     "lvl": "ok"
    }
   ],
-  "v0": [],
-  "boss": [],
   "deploy": [],
-  "publish": [
-   {
-    "code": "AM-SP-027",
-    "title": "K리그득점왕순위동률기준 · 게시 승인 꼴 결재가 없거나 보류·취소·사장님 승인 아님 — 게시 지연 판정 해당 없음",
-    "min": null,
-    "lvl": "ok"
-   }
-  ],
+  "publish": [],
   "osmu": []
  },
  "channels": {
@@ -416,6 +395,11 @@
   },
   "naver": {
    "done": [
+    {
+     "code": "AM-SP-027",
+     "title": "K리그 득점왕 순위 야고 17골·클리말라 16골 — 동률이면 출전 적은 쪽이 1위",
+     "url": "https://blog.naver.com/aroma-mag/224495986684"
+    },
     {
      "code": "AM-BO-016",
      "title": "크로스2 공개일 12월 25일, 1편은 2주 1위·5주 TOP10이었다",
@@ -852,11 +836,7 @@
      "url": "https://blog.naver.com/aroma-mag/224454765191"
     }
    ],
-   "wait": [
-    {
-     "code": "AM-SP-027"
-    }
-   ]
+   "wait": []
   }
  },
  "topics": [],
@@ -868,9 +848,9 @@
  },
  "kpi": {
   "today": "2026-11-28",
-  "done_today": 2,
-  "published_today": 2,
-  "boss_wait": 0,
+  "done_today": 3,
+  "published_today": 3,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -892,10 +872,10 @@
  "units": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 9,
-   "cur": "📮 카드 상정: aroma-am-sp-027-1128(K리그 ",
+   "last_min": 0,
+   "cur": "✅ AM-SP-027 K리그 득점왕 게시 https://blo",
    "lvl": "ok"
   },
   {
@@ -907,10 +887,10 @@
  "drivers": [
   {
    "who": "이대리",
-   "state": "현장(진행)",
+   "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 9,
-   "cur": "📮 카드 상정: aroma-am-sp-027-1128(K리그 ",
+   "last_min": 0,
+   "cur": "✅ AM-SP-027 K리그 득점왕 게시 https://blo",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
   },
@@ -930,7 +910,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -956,7 +936,7 @@
  "producers": [
   {
    "who": "이대리",
-   "made": "오늘 새 글 게시 2편 · 파일이 움직인 글 4편",
+   "made": "오늘 새 글 게시 3편 · 파일이 움직인 글 4편",
    "codes": [
     "AM-BO-016",
     "AM-DG-022",
@@ -965,13 +945,21 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-am-dg-022-1128",
+   "what": "【권고】AM-DG-022 「더 게임 어워드 2026 후보작 GTA6 8개 최다, 붉은사막은 커뮤니티상 후보」(44자, 디지털 콘텐츠·여가, 홈판",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
   {
-   "code": "AM-SP-027",
+   "code": "AM-BO-016",
    "stage": "proc",
-   "at": "2026-11-28 16:09:22",
+   "at": "2026-11-28 05:37:01",
    "src": "파일 수정 시각"
   },
   {
@@ -981,9 +969,9 @@
    "src": "파일 수정 시각"
   },
   {
-   "code": "AM-BO-016",
+   "code": "AM-SP-027",
    "stage": "proc",
-   "at": "2026-11-28 05:37:01",
+   "at": "2026-11-28 16:09:22",
    "src": "파일 수정 시각"
   },
   {
@@ -1035,6 +1023,12 @@
    "src": "결재 커밋 시각"
   },
   {
+   "code": "AM-SP-027",
+   "stage": "naver",
+   "at": "",
+   "src": "db.json published(날짜만)"
+  },
+  {
    "code": "AM-BO-016",
    "stage": "naver",
    "at": "",
@@ -1080,7 +1074,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-28 16:20:30",
+     "chip": "2026-11-28 16:27:00",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1110,7 +1104,7 @@
     {
      "head": "ASIDE_ALERT",
      "lvl": "ok",
-     "chip": "2026-11-28 12:50:14",
+     "chip": "2026-11-28 16:27:06",
      "sub": "이대리 🙋·⏸·👤 → 이부장 즉시 · 출처 now_log(bid=aroma) · 오늘 28회 · 횟수는 전체 세션"
     },
     {
@@ -1208,9 +1202,14 @@
    ]
   },
   {
-   "title": "✅ 최근 게시 · 전체 87편",
+   "title": "✅ 최근 게시 · 전체 88편",
    "empty": "게시 기록 없음",
    "rows": [
+    {
+     "head": "AM-SP-027",
+     "chip": "2026-11-28",
+     "sub": "K리그 득점왕 순위 야고 17골·클리말라 16골 — 동률이면 출전 적은 쪽이 1위"
+    },
     {
      "head": "AM-BO-016",
      "chip": "2026-11-28",
@@ -1235,11 +1234,6 @@
      "head": "AM-PE-021",
      "chip": "2026-11-26",
      "sub": "변우석 팬미팅 앙코르 — 전석 110,000원, 선예매 12/7·일반 12/8"
-    },
-    {
-     "head": "AM-DG-019",
-     "chip": "2026-11-26",
-     "sub": "GTA6 플레이타임 평균 17.4시간 — PS5 플레이어 3,900만 명 이상"
     }
    ]
   }
