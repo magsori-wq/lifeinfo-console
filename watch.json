@@ -39492,9 +39492,11 @@
    "due": "2026-11-29",
    "cmd": "python -m studio.asidequeue add --file docs/aside_drafts/D2-15_네이버정정.txt --code D2-15 --kind naver --prio 1",
    "owner": "user",
-   "state": "todo",
+   "state": "done",
    "kind": "approve",
-   "by": "이부장"
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "운영콘솔 전자결재함에서 사장님 승인"
   },
   {
    "id": "verify-maint1128nohand",
@@ -39963,8 +39965,10 @@
    "due": "2026-11-28",
    "cmd": "python -c \"from studio.sessionstate import read_info;print(read_info('draft1128b230'))\"",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "초안 읽음·V0 통과"
   },
   {
    "id": "deploy-thumb-571",
@@ -39995,8 +39999,10 @@
    "due": "2026-11-28",
    "cmd": "python -m studio.pubready --code B2-30",
    "owner": "claude",
-   "state": "wait",
-   "by": "이부장"
+   "state": "done",
+   "by": "이부장",
+   "done_at": "2026-11-28",
+   "result": "V0 🟢 11:55·affiliate none 기록"
   },
   {
    "id": "v0reject-b2-30",
