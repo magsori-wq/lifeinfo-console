@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 12:37:51",
+ "at": "2026-11-28 12:39:05",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -253,7 +253,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-28 12:37:46",
+   "last_at": "2026-11-28 12:38:46",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -316,10 +316,10 @@
   {
    "name": "aromapv 자동 동기",
    "node": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사)",
-   "last_at": "2026-11-28 09:34",
+   "last_at": "2026-11-28 12:38",
    "src": "webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다)",
    "today_n": null,
-   "note": "복사된 미리보기 72개",
+   "note": "복사된 미리보기 73개",
    "at_node": "boss"
   }
  ],
@@ -327,7 +327,7 @@
   "who": "이대리",
   "state": "대기(보고 완료·다음 지시 기다림)",
   "jobs": 0,
-  "last_min": 10,
+  "last_min": 11,
   "cur": "[이부장 접수 12:27] 제휴 10편 「광고·협찬 없음」 삭",
   "lvl": "ok"
  },
@@ -826,7 +826,7 @@
   "today": "2026-11-28",
   "done_today": 2,
   "published_today": 2,
-  "boss_wait": 0,
+  "boss_wait": 1,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -842,7 +842,7 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
+  "age_min": 2,
   "lvl": "ok"
  },
  "units": [
@@ -850,7 +850,7 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 10,
+   "last_min": 11,
    "cur": "[이부장 접수 12:27] 제휴 10편 「광고·협찬 없음」 삭",
    "lvl": "ok"
   },
@@ -865,7 +865,7 @@
    "who": "이대리",
    "state": "대기(보고 완료·다음 지시 기다림)",
    "jobs": 0,
-   "last_min": 10,
+   "last_min": 11,
    "cur": "[이부장 접수 12:27] 제휴 10편 「광고·협찬 없음」 삭",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -886,7 +886,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "대기"
+   "state": "결재 대기 1건"
   }
  ],
  "suppliers": [
@@ -919,19 +919,27 @@
    ]
   }
  ],
- "approvals": [],
+ "approvals": [
+  {
+   "kind": "aroma",
+   "id": "aroma-aff-disc3-1128",
+   "what": "【권고】제휴 10편 하단에 대가성 문구 원문 「이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로, 판매 발생 시 수수료를 제공받습니다.」 한 줄을",
+   "by": "이대리",
+   "waited": ""
+  }
+ ],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-BO-016",
-   "stage": "proc",
-   "at": "2026-11-28 05:37:01",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-PE-023",
    "stage": "proc",
    "at": "2026-11-28 05:59:41",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-016",
+   "stage": "proc",
+   "at": "2026-11-28 05:37:01",
    "src": "파일 수정 시각"
   },
   {
@@ -1004,7 +1012,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-28 12:37:46",
+     "chip": "2026-11-28 12:38:46",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
@@ -1046,8 +1054,8 @@
     {
      "head": "aromapv 자동 동기",
      "lvl": "ok",
-     "chip": "2026-11-28 09:34",
-     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 72개"
+     "chip": "2026-11-28 12:38",
+     "sub": "미리보기 → CP 자동 복사(이대리는 C:/lifeinfo 쓰기 권한이 없다 — towertick 이 틱마다 이대리 previews 의 aromapv_*.html 을 webapp/ 으로 복사) · 출처 webapp/aromapv_*.html 수정 시각(복사 이벤트는 기록되지 않는다) · 복사된 미리보기 73개"
     }
    ]
   },
