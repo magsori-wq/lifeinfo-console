@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28 13:50:57",
+ "at": "2026-11-28 13:54:57",
  "errors": [],
  "rows": [],
  "old_inflight": [],
@@ -253,7 +253,7 @@
   {
    "name": "IDAERI_WAKE",
    "node": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외)",
-   "last_at": "2026-11-28 13:50:52",
+   "last_at": "2026-11-28 13:54:52",
    "src": ".idaeri_wake.json last_run",
    "today_n": null,
    "note": "",
@@ -327,7 +327,7 @@
   "who": "이대리",
   "state": "현장(진행)",
   "jobs": 0,
-  "last_min": -1,
+  "last_min": 3,
   "cur": "▶ aroma-aff-disc3-1128 실행 시작 13:50",
   "lvl": "ok"
  },
@@ -826,7 +826,7 @@
   "today": "2026-11-28",
   "done_today": 2,
   "published_today": 2,
-  "boss_wait": 1,
+  "boss_wait": 0,
   "incidents_by_code": {
    "0": 0,
    "1": 0,
@@ -842,15 +842,15 @@
   "state": "미확인(aroma 발행챗 상태는 이 방이 읽는 길이 없다)"
  },
  "tower": {
-  "age_min": 1,
-  "lvl": "ok"
+  "age_min": 5,
+  "lvl": "amber"
  },
  "units": [
   {
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": -1,
+   "last_min": 3,
    "cur": "▶ aroma-aff-disc3-1128 실행 시작 13:50",
    "lvl": "ok"
   },
@@ -865,7 +865,7 @@
    "who": "이대리",
    "state": "현장(진행)",
    "jobs": 0,
-   "last_min": -1,
+   "last_min": 3,
    "cur": "▶ aroma-aff-disc3-1128 실행 시작 13:50",
    "lvl": "ok",
    "role": "글감·초안·V0·게시 기록"
@@ -886,7 +886,7 @@
    "who": "사장님",
    "role": "③ CP 결재",
    "lvl": "ok",
-   "state": "결재 대기 1건"
+   "state": "대기"
   }
  ],
  "suppliers": [
@@ -919,27 +919,19 @@
    ]
   }
  ],
- "approvals": [
-  {
-   "kind": "aroma",
-   "id": "aroma-aff-disc3-1128",
-   "what": "【권고】제휴 10편 하단에 대가성 문구 원문 「이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로, 판매 발생 시 수수료를 제공받습니다.」 한 줄을",
-   "by": "이대리",
-   "waited": ""
-  }
- ],
+ "approvals": [],
  "edits": [],
  "today_events": [
-  {
-   "code": "AM-BO-016",
-   "stage": "proc",
-   "at": "2026-11-28 05:37:01",
-   "src": "파일 수정 시각"
-  },
   {
    "code": "AM-PE-023",
    "stage": "proc",
    "at": "2026-11-28 05:59:41",
+   "src": "파일 수정 시각"
+  },
+  {
+   "code": "AM-BO-016",
+   "stage": "proc",
+   "at": "2026-11-28 05:37:01",
    "src": "파일 수정 시각"
   },
   {
@@ -964,6 +956,12 @@
    "code": "aroma-aff-adfix-1128",
    "stage": "boss",
    "at": "2026-11-28 12:06:46",
+   "src": "결재 커밋 시각"
+  },
+  {
+   "code": "aroma-aff-disc3-1128",
+   "stage": "boss",
+   "at": "2026-11-28 13:52:05",
    "src": "결재 커밋 시각"
   },
   {
@@ -1012,7 +1010,7 @@
     {
      "head": "IDAERI_WAKE",
      "lvl": "ok",
-     "chip": "2026-11-28 13:50:52",
+     "chip": "2026-11-28 13:54:52",
      "sub": "승인 → 이대리 깨움(모드가 30초마다 확인 · 사장님 승인·aroma2 챗 보고·이부장 전달·직접 지시·새 요청 · 보류·승인 아님은 제외) · 출처 .idaeri_wake.json last_run"
     },
     {
